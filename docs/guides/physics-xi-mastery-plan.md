@@ -89,13 +89,13 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 58 | Rate of Heat Flow (5h) | Radiation: ideal radiator | `03-radiation-ideal-radiator.json` | **Completed** |
 | 59 | Rate of Heat Flow (5h) | Black-body radiation | `04-black-body-radiation.json` | **Completed** |
 | 60 | Rate of Heat Flow (5h) | Stefan-Boltzmann law | `04-stefan-boltzmann-law.json` | **Completed** |
-| 61 | Ideal Gas (5h) | Ideal gas equation | TBD | Not started |
-| 62 | Ideal Gas (5h) | Molecular properties of matter | TBD | Not started |
+| 61 | Ideal Gas (5h) | Ideal gas equation | `01-ideal-gas-equation.json` | **Completed** |
+| 62 | Ideal Gas (5h) | Molecular properties of matter | `02-molecular-properties-of-matter.json` | **Completed** |
 | 63 | Ideal Gas (5h) | Kinetic-molecular model of an ideal gas | TBD | Not started |
-| 64 | Ideal Gas (5h) | Derivation of pressure exerted by gas | TBD | Not started |
-| 65 | Ideal Gas (5h) | Average translational kinetic energy of gas molecule | TBD | Not started |
-| 66 | Ideal Gas (5h) | Boltzmann constant, root mean square speed | TBD | Not started |
-| 67 | Ideal Gas (5h) | Heat capacities of gases and solids | TBD | Not started |
+| 64 | Ideal Gas (5h) | Derivation of pressure exerted by gas | `04-derivation-of-pressure-exerted-by-gas.json` | **Completed** |
+| 65 | Ideal Gas (5h) | Average translational kinetic energy of gas molecule | `05-average-translational-kinetic-energy-of-gas-molecule.json` | **Completed** |
+| 66 | Ideal Gas (5h) | Boltzmann constant, root mean square speed | `06-boltzmann-constant-root-mean-square-speed.json` | **Completed** |
+| 67 | Ideal Gas (5h) | Heat capacities of gases and solids | `07-heat-capacities-of-gases-and-solids.json` | **Completed** |
 | 68 | Reflection at Curved Mirror (3h) | Real and virtual images | TBD | Not started |
 | 69 | Reflection at Curved Mirror (3h) | Mirror formula | TBD | Not started |
 | 70 | Refraction at Plane Surfaces (4h) | Laws of refraction: refractive index | TBD | Not started |
@@ -161,3 +161,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 10 — Unit 10 Thermal Expansion (4 topics) upgraded: linear expansion & measurement; superficial & cubical expansion with β=2α, γ=3α; liquid expansion (absolute & apparent) incl. anomalous expansion of water; Dulong & Petit method. Verified PYQs used: α definition 2019+2022 2m, rod numericals 2021 3m + 2024 2m, pendulum clock 2024 2m, anomalous expansion 2024 3m. Next: Unit 11 Quantity of Heat (6 topics).
 - Session 11 — Unit 11 Quantity of Heat (6 topics) upgraded: Newton's law of cooling; specific heat capacity & its measurement (method of mixtures); change of phases & latent heat; specific latent heat of fusion & vaporization with measurement (one canonical file serves both syllabus topics); triple point. Verified PYQs used: Q=mcΔT 2020 3m, definitions 2023 3m, Al block 2024 3m, latent heat fusion 2017 2m, fusion vs vaporization 2023 3m, steam numerical 2021 5m. Newton's cooling and triple point labelled NEB-style. Next: Unit 12 Rate of Heat Flow (5 topics).
 - Session 12 — Unit 12 Rate of Heat Flow (5 topics) upgraded: conduction, thermal conductivity & measurement (Fourier law); convection; radiation & ideal radiator; black-body radiation (Wien, Planck context); Stefan–Boltzmann law. Verified PYQs used (all 2024): three modes 3m, Fourier law 3m, rod numerical 3m, utensils/clothes 2m, Stefan law + 16× factor 3m. Next: Unit 13 Ideal Gas (7 topics).
+- Session 13 — Unit 13 Ideal Gas (7 topics) upgraded: ideal gas equation (Boyle+Charles+pressure law combination); molecular properties of matter; kinetic molecular model (statement + assumptions); derivation of gas pressure (six-step, P = ⅓ρc̄²); average translational KE ((3/2)kT); Boltzmann constant & rms speeds; heat capacities & equipartition (Cp−Cv = R). Verified PYQs used: gas-law combination 2024 3m, P=nRT/V 2024 2m, Charles numerical 2022 4m, kinetic theory 2023+2024 5m, KE per molecule 2024 2m, rms speed of O₂ 2022+2024 3m, equipartition 2021+2024 2m. Next: Unit 14 Reflection at Curved Mirror (2 topics).

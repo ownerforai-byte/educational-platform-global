@@ -5,96 +5,55 @@
   "topicTitle": "Ideal gas equation",
   "relevance": 100,
   "notes": [
-    "The ideal-gas equation combines Boyle’s, Charles’s and Avogadro’s laws: PV=nRT. P is absolute pressure, V volume, n amount in moles, T absolute temperature and R=8.314 J mol⁻¹ K⁻¹.",
-    "Always convert Celsius using T(K)=t(°C)+273.15 and use consistent units. For 1.00 mol at 300 K in 24.6 L, P≈(8.314×300)/0.0246=1.01×10⁵ Pa.",
-    "For fixed amount n, PV/T stays constant between equilibrium states: P1V1/T1=P2V2/T2. In a sealed rigid vessel heated from 300 K to 450 K, pressure rises by the factor 450/300=1.5.",
-    "The model assumes molecules have negligible volume and exert no long-range intermolecular forces except during elastic collisions. Real gases approach ideal behaviour at low pressure and high temperature.",
-    "Use absolute rather than gauge pressure in the equation. If a gauge pressure is given, add atmospheric pressure before substituting.",
-    "The ideal-gas equation links pressure, volume, amount and temperature. The temperature must be in kelvin. A celsius value used in P V = n R T is the usual error, and it matters most near the ice point where 0°C is 273 K, not a small correction.",
-    "# Ideal gas equation\n\n## 1. Introduction\nPhysical picture of **Ideal gas equation** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Ideal Gas fill pass.\n\n## 2. Concepts and laws\n### Ideal gas equation\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Ideal gas equation — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Ideal gas equation — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Ideal gas equation — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Ideal gas equation — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Gas Laws Combined\n\nBoyle, Charles and Gay-Lussac each froze one variable and watched two others. Combine their three laws and out falls PV = nRT — one equation that predicts the pressure, volume or temperature of any (ideal) gas from the other two plus the amount of gas.",
+    "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 The three empirical laws\n\n| Law | Statement | Formula (constant) |\n|---|---|---|\n| **Boyle's law** | At constant T, pressure ∝ 1/volume | $PV = $ const (T, n fixed) |\n| **Charles's law** | At constant P, volume ∝ absolute temperature | $V/T = $ const (P, n fixed) |\n| **Pressure (Gay-Lussac) law** | At constant V, pressure ∝ absolute temperature | $P/T = $ const (V, n fixed) |\n\n### 2.2 Combining into the ideal gas equation (NEB 2024)\n\nFrom the three laws, $P \\propto T/V$ for fixed n:\n$$\\frac{P_1V_1}{T_1} = \\frac{P_2V_2}{T_2} = \\text{const} \\Rightarrow \\boxed{PV = nRT}$$\n- $n$ = number of moles; $R = 8.31$ J mol⁻¹K⁻¹ = **universal gas constant**.\n- $R = N_A k_B$; $N_A = 6.022\\times10^{23}$ /mol, $k_B = 1.38\\times10^{-23}$ J/K.\n- In molecular form: $PV = Nk_BT$.\n- STP: T = 273.15 K, P = 1.013×10⁵ Pa; molar volume 22.4 L.\n\n### 2.3 Worked numericals\n\n**Q (2m, 2024):** Two moles of an ideal gas at 300 K occupy 0.05 m³. Calculate its pressure. (R = 8.31 J/mol·K)\n$$P = \\frac{nRT}{V} = \\frac{2 \\times 8.31 \\times 300}{0.05} = 9.97 \\times 10^4 \\text{ Pa} \\approx 1.0 \\times 10^5 \\text{ Pa}$$\n\n**Q (4m, 2022):** A gas at 27 °C and pressure 1.0×10⁵ Pa occupies 0.5 m³. Find its volume at 100 °C if the pressure remains constant.\n- Charles's law: $V_2 = V_1\\dfrac{T_2}{T_1} = 0.5 \\times \\dfrac{373}{300} = 0.62$ m³\n\n**Q (NEB-style):** A gas occupies 2 L at 1 atm and 300 K. Find its volume at 2 atm and 450 K.\n$V_2 = V_1 \\times \\dfrac{P_1}{P_2}\\times\\dfrac{T_2}{T_1} = 2 \\times \\dfrac{1}{2} \\times \\dfrac{450}{300} = 1.5$ L.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 63/64:** kinetic theory derives PV = ⅓Nmv̄² and matches it to PV = NkT — the microscopic origin of the gas laws.\n- **To real gases:** the equation holds only at low pressure and high temperature; real gases need van der Waals corrections.\n- **To Avogadro:** equal volumes of gases at same T, P contain equal numbers of molecules.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Heat | Ideal gas | A gas at 27 °C and pressure 1.0×10⁵ Pa occupies a volume of 0.5 m³. Find its volume at 100 °C if the pressure remains constant. | 4 | Numerical |\n| 2080/2024 | Heat | Ideal gas | State Boyle's law, Charles's law, and the pressure law. Combine them to obtain the ideal gas equation. | 3 | Derivation |\n| 2080/2024 | Heat | Ideal gas | Two moles of an ideal gas at 300 K occupy 0.05 m³. Calculate its pressure. (R = 8.31 J/mol·K) | 2 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Using Celsius temperature in gas laws — always kelvin.\n2. Forgetting to convert litres to m³ (1 m³ = 1000 L).\n3. Mixing n (moles) with N (molecules): PV = nRT vs PV = NkT."
   ],
   "confusion": [
-    "Never substitute Celsius into PV=nRT.",
-    "Gauge pressure is not absolute pressure.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Kelvin, always:** gas laws die at 0 °C input — convert T + 273 first.",
+    "**n vs N:** n = moles (use R); N = molecules (use k_B)."
   ],
   "practice": [
-    "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
-    "A gas at 100 kPa and 300 K is heated to 360 K at fixed volume. Find final pressure.",
-    "Why do real gases deviate near condensation?"
+    "Why does a sealed bottle left in the sun bulge?"
   ],
   "universalFacts": [
-    "Use absolute pressure and kelvin temperature.",
-    "1 L=10⁻³ m³; maintain consistent units.",
-    "The combined gas law assumes the amount of gas is fixed."
+    "At STP one mole of any ideal gas occupies 22.4 L — Avogadro's hypothesis in numbers."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
   "examples": [
-    "1 mol at 300 K in 24.6 L gives P≈1.01×10⁵ Pa.",
-    "Heating a sealed rigid gas from 300 K to 450 K multiplies pressure by 1.5.",
-    "The ideal-gas equation links pressure, volume, amount and temperature. The temperature must be in kelvin. A celsius value used in P V = n R T is the usual error, and it matters most near the ice point where 0°C is 273 K, not a small correction.",
-    "The working relations are P V = n R T and T must be in kelvin. Name each symbol, convert the data into SI units, and only then substitute.",
-    "0.50 mol of ideal gas is at 300 K in a volume of 0.012 m^3. Take R = 8.3 J/mol K. Find the pressure."
+    "***NEB 2022*** — 0.5 m³ at 27 °C → 100 °C (P const): V₂ = 0.62 m³."
   ],
   "practiceQuestions": [
-    "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
-    "A gas at 100 kPa and 300 K is heated to 360 K at fixed volume. Find final pressure.",
-    "Why do real gases deviate near condensation?"
+    "**Numerical (3m): A tyre is inflated to 2 atm at 17 °C. What is its pressure at 47 °C (volume constant)?** — P₂ = P₁T₂/T₁ = 2 × 320/290 = 2.21 atm."
   ],
   "formulas": [
-    "PV=nRT; R=8.314 J mol⁻¹ K⁻¹.",
-    "At fixed n: P1V1/T1=P2V2/T2; T is in kelvins."
+    "- PV = nRT; PV = Nk_BT\n- P₁V₁/T₁ = P₂V₂/T₂\n- R = 8.31 J mol⁻¹K⁻¹; k_B = R/N_A = 1.38×10⁻²³ J/K"
   ],
   "keyPoints": [
-    "Use absolute pressure and kelvin temperature.",
-    "1 L=10⁻³ m³; maintain consistent units.",
-    "The combined gas law assumes the amount of gas is fixed.",
-    "P V = n R T",
-    "T must be in kelvin",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "PV = nRT; R = 8.31 J mol⁻¹K⁻¹; PV = Nk_BT.",
+    "Boyle (T): PV const; Charles (P): V/T const; pressure law (V): P/T const."
   ],
-  "summary": "PV=nRT relates equilibrium gas variables when temperature and units are handled consistently. For fixed amount, PV/T is constant; real gases deviate near condensation and high pressure.",
+  "summary": "Three empirical laws anchor gas behaviour: **Boyle** ($PV$ = const at fixed T), **Charles** ($V/T$ = const at fixed P) and the **pressure law** ($P/T$ = const at fixed V). Combined for a fixed amount of gas they give $P_1V_1/T_1 = P_2V_2/T_2$, and with amount included the **ideal gas equation** $PV = nRT$ (R = 8.31 J mol⁻¹K⁻¹) or, per molecule, $PV = Nk_BT$. NEB 2024 asked for exactly this combination (3m) plus the numerical $P = nRT/V = 2\\times8.31\\times300/0.05 ≈ 1.0\\times10^5$ Pa (2m); NEB 2022's Charles-law problem heats 0.5 m³ from 27 °C to 100 °C to 0.62 m³ (4m). Temperatures must always be kelvin.",
   "specialNotes": [
     "Never substitute Celsius into PV=nRT.",
     "Gauge pressure is not absolute pressure."
   ],
   "importantStatements": [
-    "Use absolute pressure and kelvin temperature.",
-    "1 L=10⁻³ m³; maintain consistent units.",
-    "The combined gas law assumes the amount of gas is fixed."
+    "\"The ideal gas equation combines Boyle's, Charles's and the pressure law: PV = nRT.\""
   ],
   "importantNotes": [
-    "Use absolute pressure and kelvin temperature.",
-    "1 L=10⁻³ m³; maintain consistent units.",
-    "The combined gas law assumes the amount of gas is fixed."
+    "Verified PYQs: laws + combination 2024 3m; P = nRT/V 2024 2m; Charles numerical 2022 4m."
   ],
   "examShortTricks": [
-    "PV=nRT; R=8.314 J mol⁻¹ K⁻¹.",
-    "At fixed n: P1V1/T1=P2V2/T2; T is in kelvins."
+    "\"P₁V₁/T₁ = P₂V₂/T₂ — cancel what stays constant.\""
   ],
   "examNotes": [
-    "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
-    "A gas at 100 kPa and 300 K is heated to 360 K at fixed volume. Find final pressure.",
-    "Why do real gases deviate near condensation?"
+    "The 2024 3m asks for all three laws plus the combination — write each formula first."
   ],
   "importantConcepts": [
-    "Use absolute pressure and kelvin temperature.",
-    "1 L=10⁻³ m³; maintain consistent units.",
-    "The combined gas law assumes the amount of gas is fixed.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**The combined-gas shortcut:** P₁V₁/T₁ = P₂V₂/T₂ solves most numericals without finding n."
   ],
   "importantTasks": [
     "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
@@ -151,44 +110,92 @@
   ],
   "mcqs": [
     {
-      "question": "In P V = n R T, T is",
+      "question": "Boyle's law holds at constant:",
       "options": [
-        "In celsius",
-        "In kelvin",
-        "In Fahrenheit",
-        "A difference only, with no zero"
+        "Pressure",
+        "Volume",
+        "Temperature",
+        "Amount only"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "PV = const needs fixed T."
     },
     {
-      "question": "Boyle's law, at fixed T and n, says",
+      "question": "NEB 2024: 2 mol at 300 K in 0.05 m³. P ≈",
       "options": [
-        "P V is constant",
-        "P/V is constant",
-        "V/T is constant",
-        "P is constant"
+        "5×10³ Pa",
+        "1.0×10⁵ Pa",
+        "2.5×10⁵ Pa",
+        "5×10⁵ Pa"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "nRT/V = 99 720 Pa."
     },
     {
-      "question": "Charles's law needs",
+      "question": "NEB 2022: 0.5 m³ at 300 K → 373 K (P const). V₂ =",
       "options": [
-        "Fixed pressure",
-        "Fixed volume",
-        "No temperature scale",
-        "A solid"
+        "0.40 m³",
+        "0.50 m³",
+        "0.62 m³",
+        "0.75 m³"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "V×T₂/T₁."
     },
     {
-      "question": "0°C is",
+      "question": "R equals:",
       "options": [
-        "0 K",
-        "273 K",
-        "−273 K",
-        "100 K"
+        "1.38×10⁻²³ J/K",
+        "8.31 J mol⁻¹K⁻¹",
+        "6.022×10²³",
+        "4.186 J/g"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Universal gas constant."
+    },
+    {
+      "question": "The molecular form of the gas equation is:",
+      "options": [
+        "PV = nRT",
+        "PV = Nk_BT",
+        "PV = mgh",
+        "PV = ½mv²"
+      ],
+      "answer": "B",
+      "explanation": "N molecules, k_B each."
+    },
+    {
+      "question": "Gas law temperatures must be in:",
+      "options": [
+        "°C",
+        "K",
+        "°F",
+        "Any scale"
+      ],
+      "answer": "B",
+      "explanation": "Absolute temperature."
+    },
+    {
+      "question": "At STP one mole of ideal gas occupies:",
+      "options": [
+        "1 L",
+        "2.24 L",
+        "22.4 L",
+        "224 L"
+      ],
+      "answer": "C",
+      "explanation": "Molar volume."
+    },
+    {
+      "question": "k_B equals:",
+      "options": [
+        "R/N_A",
+        "N_A/R",
+        "R×N_A",
+        "R²"
+      ],
+      "answer": "A",
+      "explanation": "Boltzmann constant = R per molecule."
     }
   ],
   "exercises": [
@@ -204,5 +211,51 @@
       "answer": "1.04 × 10^5 Pa."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Gas Laws Combined\n\nBoyle, Charles and Gay-Lussac each froze one variable and watched two others. Combine their three laws and out falls PV = nRT — one equation that predicts the pressure, volume or temperature of any (ideal) gas from the other two plus the amount of gas.",
+      "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 The three empirical laws\n\n| Law | Statement | Formula (constant) |\n|---|---|---|\n| **Boyle's law** | At constant T, pressure ∝ 1/volume | $PV = $ const (T, n fixed) |\n| **Charles's law** | At constant P, volume ∝ absolute temperature | $V/T = $ const (P, n fixed) |\n| **Pressure (Gay-Lussac) law** | At constant V, pressure ∝ absolute temperature | $P/T = $ const (V, n fixed) |\n\n### 2.2 Combining into the ideal gas equation (NEB 2024)\n\nFrom the three laws, $P \\propto T/V$ for fixed n:\n$$\\frac{P_1V_1}{T_1} = \\frac{P_2V_2}{T_2} = \\text{const} \\Rightarrow \\boxed{PV = nRT}$$\n- $n$ = number of moles; $R = 8.31$ J mol⁻¹K⁻¹ = **universal gas constant**.\n- $R = N_A k_B$; $N_A = 6.022\\times10^{23}$ /mol, $k_B = 1.38\\times10^{-23}$ J/K.\n- In molecular form: $PV = Nk_BT$.\n- STP: T = 273.15 K, P = 1.013×10⁵ Pa; molar volume 22.4 L.\n\n### 2.3 Worked numericals\n\n**Q (2m, 2024):** Two moles of an ideal gas at 300 K occupy 0.05 m³. Calculate its pressure. (R = 8.31 J/mol·K)\n$$P = \\frac{nRT}{V} = \\frac{2 \\times 8.31 \\times 300}{0.05} = 9.97 \\times 10^4 \\text{ Pa} \\approx 1.0 \\times 10^5 \\text{ Pa}$$\n\n**Q (4m, 2022):** A gas at 27 °C and pressure 1.0×10⁵ Pa occupies 0.5 m³. Find its volume at 100 °C if the pressure remains constant.\n- Charles's law: $V_2 = V_1\\dfrac{T_2}{T_1} = 0.5 \\times \\dfrac{373}{300} = 0.62$ m³\n\n**Q (NEB-style):** A gas occupies 2 L at 1 atm and 300 K. Find its volume at 2 atm and 450 K.\n$V_2 = V_1 \\times \\dfrac{P_1}{P_2}\\times\\dfrac{T_2}{T_1} = 2 \\times \\dfrac{1}{2} \\times \\dfrac{450}{300} = 1.5$ L.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 63/64:** kinetic theory derives PV = ⅓Nmv̄² and matches it to PV = NkT — the microscopic origin of the gas laws.\n- **To real gases:** the equation holds only at low pressure and high temperature; real gases need van der Waals corrections.\n- **To Avogadro:** equal volumes of gases at same T, P contain equal numbers of molecules.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Heat | Ideal gas | A gas at 27 °C and pressure 1.0×10⁵ Pa occupies a volume of 0.5 m³. Find its volume at 100 °C if the pressure remains constant. | 4 | Numerical |\n| 2080/2024 | Heat | Ideal gas | State Boyle's law, Charles's law, and the pressure law. Combine them to obtain the ideal gas equation. | 3 | Derivation |\n| 2080/2024 | Heat | Ideal gas | Two moles of an ideal gas at 300 K occupy 0.05 m³. Calculate its pressure. (R = 8.31 J/mol·K) | 2 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Using Celsius temperature in gas laws — always kelvin.\n2. Forgetting to convert litres to m³ (1 m³ = 1000 L).\n3. Mixing n (moles) with N (molecules): PV = nRT vs PV = NkT."
+    ],
+    "confusion": [
+      "**Kelvin, always:** gas laws die at 0 °C input — convert T + 273 first.",
+      "**n vs N:** n = moles (use R); N = molecules (use k_B)."
+    ],
+    "keyPoints": [
+      "PV = nRT; R = 8.31 J mol⁻¹K⁻¹; PV = Nk_BT.",
+      "Boyle (T): PV const; Charles (P): V/T const; pressure law (V): P/T const."
+    ],
+    "importantConcepts": [
+      "**The combined-gas shortcut:** P₁V₁/T₁ = P₂V₂/T₂ solves most numericals without finding n."
+    ],
+    "examples": [
+      "***NEB 2022*** — 0.5 m³ at 27 °C → 100 °C (P const): V₂ = 0.62 m³."
+    ],
+    "universalFacts": [
+      "At STP one mole of any ideal gas occupies 22.4 L — Avogadro's hypothesis in numbers."
+    ],
+    "importantStatements": [
+      "\"The ideal gas equation combines Boyle's, Charles's and the pressure law: PV = nRT.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: laws + combination 2024 3m; P = nRT/V 2024 2m; Charles numerical 2022 4m."
+    ],
+    "examShortTricks": [
+      "\"P₁V₁/T₁ = P₂V₂/T₂ — cancel what stays constant.\""
+    ],
+    "examNotes": [
+      "The 2024 3m asks for all three laws plus the combination — write each formula first."
+    ],
+    "formulas": [
+      "- PV = nRT; PV = Nk_BT\n- P₁V₁/T₁ = P₂V₂/T₂\n- R = 8.31 J mol⁻¹K⁻¹; k_B = R/N_A = 1.38×10⁻²³ J/K"
+    ],
+    "practice": [
+      "Why does a sealed bottle left in the sun bulge?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A tyre is inflated to 2 atm at 17 °C. What is its pressure at 47 °C (volume constant)?** — P₂ = P₁T₂/T₁ = 2 × 320/290 = 2.21 atm."
+    ]
+  }
 }

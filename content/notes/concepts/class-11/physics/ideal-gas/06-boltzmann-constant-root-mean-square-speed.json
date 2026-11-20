@@ -5,45 +5,20 @@
   "topicTitle": "Boltzmann constant, root mean square speed",
   "relevance": 100,
   "notes": [
-    "**Boltzmann constant:** $k_B = R/N_A = 1.38 \\times 10^{-23}$ J/K. It connects microscopic and macroscopic thermodynamics. Named after Ludwig Boltzmann (1844-1906).",
-    "**RMS speed:** $v_{rms} = \\sqrt{3RT/M}$, where $M$ is molar mass in kg/mol. At STP (273 K), $v_{rms}$ for air is about 479 m/s. At 300 K, about 484 m/s. Lighter gases move faster on average.",
-    "**Most probable speed:** $v_p = \\sqrt{2RT/M}$. This is the speed at which the Maxwell-Boltzmann distribution peaks. At 300 K for air: $v_p \\approx 364$ m/s. At 300 K for Hâ‚‚: $v_p \\approx 1650$ m/s.",
-    "**Mean speed:** $v_{mean} = \\sqrt{8RT/\\pi M}$. The average of all molecular speeds. At 300 K for air: $v_{mean} \\approx 464$ m/s. At 300 K for Hâ‚‚: $v_{mean} \\approx 1760$ m/s.",
-    "**Heat capacities - monatomic gases:** $C_V = \\frac{3}{2}R$, $C_P = \\frac{5}{2}R$. The ratio $\\gamma = C_P/C_V = 5/3 \\approx 1.67$. Monatomic gases (He, Ne, Ar) only have translational degrees of freedom.",
-    "**Heat capacities - diatomic gases:** $C_V = \\frac{5}{2}R$, $C_P = \\frac{7}{2}R$ at ordinary temperatures ($\\gamma = 7/5 = 1.4$). Includes 3 translational + 2 rotational DOF. At high temperature, vibration adds more, so $C_V \\rightarrow 4R$, $C_P \\rightarrow 5R$, $\\gamma \\rightarrow 9/7 \\approx 1.29$.",
-    "**Dulong-Petit law for solids:** Molar heat capacity of most solid elements at room temperature $\\approx 3R \\approx 25$ J/(molÂ·K). This comes from 3 quadratic degrees of freedom per atom (one for each spatial axis), each contributing $R$ per mole of atoms.",
-    "**Why heat capacities differ:** The ratio $C_P/C_V = \\gamma$ matters for adiabatic processes ($PV^\\gamma = \\text{const}$). This affects everything from engine cycles to atmospheric science. $\\gamma \\approx 1.4$ for air is crucial in meteorology.",
-    "**Experimental verification:** Heat capacities were measured by Regnault and others in the 19th century. The agreement with kinetic theory predictions was one of the great successes of molecular physics.",
-    "**Units:** $k_B = 1.38 \\times 10^{-23}$ J/K. $C_P, C_V$ have units J/(molÂ·K). Gas constant R has the same units.",
-    "**Connection to energy:** Each degree of freedom contributes $\\frac{1}{2}R$ per mole or $\\frac{1}{2}k_B$ per molecule. 3 translational DOF $\rightarrow 3 \\times \\frac{1}{2}R = \\frac{3}{2}R$ for $C_V$",
-    "# Boltzmann constant, root mean square speed\n\n## 1. Introduction\nPhysical picture of **Boltzmann constant** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Ideal Gas fill pass.\n\n## 2. Concepts and laws\n### Boltzmann constant\n### root mean square speed\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Boltzmann constant — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Boltzmann constant — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Boltzmann constant — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Boltzmann constant — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Speed of a Molecule\n\nMolecules in a gas do not share one speed: they swarm across a distribution. Three averages describe it — rms, average and most-probable — and the Boltzmann constant k_B is the per-molecule currency in which temperature and energy are exchanged. NEB asks for the rms speed of oxygen at 27 °C almost every other year.",
+    "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 The Boltzmann constant\n\n$$k_B = \\frac{R}{N_A} = \\frac{8.31}{6.022\\times10^{23}} = 1.38 \\times 10^{-23} \\text{ J/K}$$\n— the gas constant **per molecule**: R is for a mole, k_B for one molecule. It converts temperature to energy: $k_BT$ is the energy scale of molecular physics.\n\n### 2.2 The three molecular speeds\n\nFrom $\\frac{1}{2}m\\bar{c^2} = \\frac{3}{2}k_BT$:\n\n| Speed | Formula | Value (O₂ at 300 K) |\n|---|---|---|\n| **rms speed** | $v_{rms} = \\sqrt{\\dfrac{3k_BT}{m}} = \\sqrt{\\dfrac{3RT}{M}}$ | 483 m/s |\n| **Average speed** | $\\bar{v} = \\sqrt{\\dfrac{8k_BT}{\\pi m}}$ | 445 m/s |\n| **Most probable speed** | $v_p = \\sqrt{\\dfrac{2k_BT}{m}}$ | 395 m/s |\n\nRatio $v_p : \\bar{v} : v_{rms} = \\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} = 1.414 : 1.596 : 1.732$.\nThe **Maxwell–Boltzmann distribution** spreads molecular speeds around these values; it flattens and shifts right as T rises.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2022 & 2024):** Calculate the rms speed of oxygen molecules at 27 °C. (M = 32 g/mol, R = 8.31 J/mol·K)\n$$v_{rms} = \\sqrt{\\frac{3RT}{M}} = \\sqrt{\\frac{3 \\times 8.31 \\times 300}{0.032}} = \\sqrt{2.34\\times10^5} = 483.5 \\text{ m/s}$$\n\n**Q (NEB-style):** At what temperature is the rms speed of oxygen double its value at 27 °C?\n$v_{rms} \\propto \\sqrt{T}$ → double speed needs $4T = 1200$ K.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 64/65:** rms speed is the direct readout of the KE–temperature relation.\n- **To escape velocity (Topic 37):** light gases (H₂, 1.9 km/s) approach planetary escape speeds — why Earth lost its hydrogen.\n- **To diffusion/effusion:** Graham's law — rate ∝ 1/√M, same √M dependence.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Heat | Ideal gas | Calculate the rms speed of oxygen molecules at 27 °C. (Molar mass of O₂ = 32 g/mol, R = 8.31 J/mol·K) | 3 | Numerical |\n| 2080/2024 | Heat | Ideal gas | Calculate the rms speed of oxygen molecules at 27 °C. (Molar mass of O₂ = 32 g/mol, R = 8.31 J/mol·K) | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define the Boltzmann constant and state its value (2m).\n2. Compare the three molecular speeds (2m).\n3. Temperature for doubled rms speed (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using molar mass in grams (32) instead of kg (0.032).\n2. Forgetting the 3 under the root.\n3. Confusing rms speed with average speed."
   ],
   "confusion": [
-    "The ratio $\\gamma = C_P/C_V$ is NOT always 5/3 or 7/5. It depends on temperature and molecular structure. At very high temperatures, vibrational modes activate, changing $\\gamma$.",
-    "The formula $C_V = \\frac{3}{2}R$ applies ONLY to monatomic ideal gases. For diatomic or polyatomic gases, rotational (and sometimes vibrational) modes contribute.",
-    "Dulong's law ($C \\approx 3R$) for solids works well at room temperature but fails at very low temperatures (quantum effects freeze out degrees of freedom). Einstein and Debye developed low-temperature models.",
-    "The Boltzmann constant $k_B$ is NOT the same as the gas constant R. $k_B = 1.38 \\times 10^{-23}$ J/K per molecule. R = 8.314 J/(molÂ·K) per mole. $R = N_A k_B$.",
-    "Most probable speed is NOT the average speed. For the Maxwell-Boltzmann distribution: $v_p \\cdot \\sqrt{2} < v_{mean} < v_{rms}$. The order is always $v_p < v_{mean} < v_{rms}$ at the same temperature."
+    "**M in kg/mol:** 32 g/mol must enter as 0.032 — the classic unit slip.",
+    "**Three speeds, one order:** v_p < v̄ < v_rms (√2 : √8/π : √3)."
   ],
   "practice": [
-    "Calculate the root-mean-square speed of nitrogen molecules (Nâ‚‚, M = 0.028 kg/mol) at 350 K. Solution: $v_{rms} = \\sqrt{3RT/M} = \\sqrt{3 \\times 8.314 \\times 350 / 0.028} = \\sqrt{3471.8 / 0.028} = \\sqrt{123,993} = 352$ m/s.",
-    "Find the most probable speed of helium atoms (He, M = 0.004 kg/mol) at 400 K. Solution: $v_p = \\sqrt{2RT/M} = \\sqrt{2 \\times 8.314 \\times 400 / 0.004} = \\sqrt{6651.2 / 0.004} = \\sqrt{1662800} = 1290$ m/s.",
-    "Calculate the mean speed of oxygen molecules (Oâ‚‚, M = 0.032 kg/mol) at 273 K. Solution: $v_{mean} = \\sqrt{8RT/\\pi M} = \\sqrt{8 \\times 8.314 \\times 273 / (\\pi \\times 0.032)} = \\sqrt{18136 / 0.1005} = \\sqrt{180,458} = 425$ m/s.",
-    "If the rms speed of helium at 300 K is 1250 m/s, what is the rms speed at 600 K? Solution: $v_{rms} \\propto \\sqrt{T}$. $v_{rms}(600) = v_{rms}(300) \\times \\sqrt{600/300} = 1250 \\times \\sqrt{2} = 1768$ m/s.",
-    "A container has 1 mol of gas at 300 K. What is the total internal energy for (a) monatomic gas? Solution: $U = \\frac{3}{2}nRT = \\frac{3}{2} \\times 1 \\times 8.314 \\times 300 = 3741$ J.",
-    "Find the heat capacity ratio $\\gamma$ for a diatomic gas at room temperature. Solution: $\\gamma = C_P/C_V = (7/2R)/(5/2R) = 7/5 = 1.4$."
+    "Why do light gases escape planets but heavy ones do not?"
   ],
   "universalFacts": [
-    "The Maxwell-Boltzmann distribution was first derived by James Clerk Maxwell in 1860 and later generalized by Ludwig Boltzmann. It describes the distribution of speeds in an ideal gas and is one of the most important results of kinetic theory.",
-    "At 300 K, the three speed measures for nitrogen (M=28 g/mol) are: most probable $v_p \\approx 422$ m/s, mean speed $v_{mean} \\approx 477$ m/s, and rms speed $v_{rms} \\approx 517$ m/s. The ratios are always $v_p : v_{mean} : v_{rms} = \\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} \\approx 1.414 : 1.596 : 1.732$.",
-    "The Boltzmann constant $k_B$ was first introduced by Max Planck in his derivation of the blackbody radiation formula (1900). He used it to connect the energy of oscillators to temperature: $E = k_BT$.",
-    "Dulong and Petit's law ($C \\approx 3R$ for solids) was discovered in 1819. It took nearly 150 years to understand why it works - the kinetic theory's 3 degrees of freedom per atom (1859-1870s) provided the explanation.",
-    "The ratio $\\gamma = C_P/C_V$ determines whether sound speed is faster in an adiabatic process: $v_{sound} = \\sqrt{\\gamma RT/M}$. For air ($\\gamma \\approx 1.4$), $v_{sound} \\approx 343$ m/s at 300 K. For helium ($\\gamma = 5/3 \\approx 1.67$), $v_{sound} \\approx 965$ m/s at 300 K."
+    "Hydrogen's rms speed (1.9 km/s at 300 K) approaches Earth's escape velocity (11.2 km/s) high in the thermosphere — planetary hydrogen loss."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
@@ -55,18 +30,258 @@
   ],
   "source": "skeleton-v2",
   "examShortTricks": [
-    "Trick 1: Constants: kB = R/NA = 1.38 × 10^-23 J/K — one derivation line earns the mark.",
-    "Trick 2: rms speed formulas — vrms = √(3RT/M) = √(3kBT/m); lighter gas → faster molecules (H2 vs O2 ratio √16 = 4).",
-    "Trick 3: Average KE per molecule = (3/2)kBT — depends ONLY on temperature, not on the gas; that line answers 'why do all gases at the same T have the same average KE'."
+    "\"√(3RT/M) with M in kg/mol; T in kelvin.\""
   ],
   "keyPoints": [
-    "Boltzmann constant kB = R/NA = 1.38 × 10^-23 J K^-1.",
-    "vrms = √(3kBT/m) = √(3RT/M).",
-    "Mean kinetic energy of a molecule = (3/2) kBT.",
-    "At fixed temperature lighter molecules move faster."
+    "k_B = R/N_A = 1.38×10⁻²³ J/K.",
+    "v_rms = √(3RT/M) — 483 m/s for O₂ at 27 °C."
   ],
   "practiceQuestions": [
-    "Q. Find the rms speed of O2 molecules at 27 °C (M = 32 g/mol). (3 marks) — v = √(3 × 8.314 × 300/0.032) ≈ 484 m/s.",
-    "Q. Compare rms speeds of H2 and O2 at the same temperature. (1 mark) — v(H2)/v(O2) = √(32/2) = 4."
+    "**Numerical (3m): Find the rms speed of nitrogen (M = 28 g/mol) at 27 °C.** — √(3×8.31×300/0.028) = 517 m/s."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Speed of a Molecule\n\nMolecules in a gas do not share one speed: they swarm across a distribution. Three averages describe it — rms, average and most-probable — and the Boltzmann constant k_B is the per-molecule currency in which temperature and energy are exchanged. NEB asks for the rms speed of oxygen at 27 °C almost every other year.",
+      "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 The Boltzmann constant\n\n$$k_B = \\frac{R}{N_A} = \\frac{8.31}{6.022\\times10^{23}} = 1.38 \\times 10^{-23} \\text{ J/K}$$\n— the gas constant **per molecule**: R is for a mole, k_B for one molecule. It converts temperature to energy: $k_BT$ is the energy scale of molecular physics.\n\n### 2.2 The three molecular speeds\n\nFrom $\\frac{1}{2}m\\bar{c^2} = \\frac{3}{2}k_BT$:\n\n| Speed | Formula | Value (O₂ at 300 K) |\n|---|---|---|\n| **rms speed** | $v_{rms} = \\sqrt{\\dfrac{3k_BT}{m}} = \\sqrt{\\dfrac{3RT}{M}}$ | 483 m/s |\n| **Average speed** | $\\bar{v} = \\sqrt{\\dfrac{8k_BT}{\\pi m}}$ | 445 m/s |\n| **Most probable speed** | $v_p = \\sqrt{\\dfrac{2k_BT}{m}}$ | 395 m/s |\n\nRatio $v_p : \\bar{v} : v_{rms} = \\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} = 1.414 : 1.596 : 1.732$.\nThe **Maxwell–Boltzmann distribution** spreads molecular speeds around these values; it flattens and shifts right as T rises.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2022 & 2024):** Calculate the rms speed of oxygen molecules at 27 °C. (M = 32 g/mol, R = 8.31 J/mol·K)\n$$v_{rms} = \\sqrt{\\frac{3RT}{M}} = \\sqrt{\\frac{3 \\times 8.31 \\times 300}{0.032}} = \\sqrt{2.34\\times10^5} = 483.5 \\text{ m/s}$$\n\n**Q (NEB-style):** At what temperature is the rms speed of oxygen double its value at 27 °C?\n$v_{rms} \\propto \\sqrt{T}$ → double speed needs $4T = 1200$ K.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 64/65:** rms speed is the direct readout of the KE–temperature relation.\n- **To escape velocity (Topic 37):** light gases (H₂, 1.9 km/s) approach planetary escape speeds — why Earth lost its hydrogen.\n- **To diffusion/effusion:** Graham's law — rate ∝ 1/√M, same √M dependence.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Heat | Ideal gas | Calculate the rms speed of oxygen molecules at 27 °C. (Molar mass of O₂ = 32 g/mol, R = 8.31 J/mol·K) | 3 | Numerical |\n| 2080/2024 | Heat | Ideal gas | Calculate the rms speed of oxygen molecules at 27 °C. (Molar mass of O₂ = 32 g/mol, R = 8.31 J/mol·K) | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define the Boltzmann constant and state its value (2m).\n2. Compare the three molecular speeds (2m).\n3. Temperature for doubled rms speed (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using molar mass in grams (32) instead of kg (0.032).\n2. Forgetting the 3 under the root.\n3. Confusing rms speed with average speed."
+    ],
+    "confusion": [
+      "**M in kg/mol:** 32 g/mol must enter as 0.032 — the classic unit slip.",
+      "**Three speeds, one order:** v_p < v̄ < v_rms (√2 : √8/π : √3)."
+    ],
+    "keyPoints": [
+      "k_B = R/N_A = 1.38×10⁻²³ J/K.",
+      "v_rms = √(3RT/M) — 483 m/s for O₂ at 27 °C."
+    ],
+    "importantConcepts": [
+      "**The rms speed is the speed of a molecule carrying the average kinetic energy.**"
+    ],
+    "examples": [
+      "***NEB 2022 & 2024*** — O₂ at 27 °C: √(3×8.31×300/0.032) = 483.5 m/s."
+    ],
+    "universalFacts": [
+      "Hydrogen's rms speed (1.9 km/s at 300 K) approaches Earth's escape velocity (11.2 km/s) high in the thermosphere — planetary hydrogen loss."
+    ],
+    "importantStatements": [
+      "\"The rms speed of gas molecules is proportional to the square root of the absolute temperature.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: rms speed of O₂ at 27 °C (2022, 2024 — 3m each)."
+    ],
+    "examShortTricks": [
+      "\"√(3RT/M) with M in kg/mol; T in kelvin.\""
+    ],
+    "examNotes": [
+      "The identical 3m numerical appeared in 2022 and 2024 — a near-certain repeat."
+    ],
+    "formulas": [
+      "- k_B = R/N_A = 1.38×10⁻²³ J/K\n- v_rms = √(3k_BT/m) = √(3RT/M) = √(3P/ρ)\n- v_p : v̄ : v_rms = √2 : √(8/π) : √3"
+    ],
+    "practice": [
+      "Why do light gases escape planets but heavy ones do not?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Find the rms speed of nitrogen (M = 28 g/mol) at 27 °C.** — √(3×8.31×300/0.028) = 517 m/s."
+    ]
+  },
+  "importantConcepts": [
+    "**The rms speed is the speed of a molecule carrying the average kinetic energy.**"
+  ],
+  "examples": [
+    "***NEB 2022 & 2024*** — O₂ at 27 °C: √(3×8.31×300/0.032) = 483.5 m/s."
+  ],
+  "importantStatements": [
+    "\"The rms speed of gas molecules is proportional to the square root of the absolute temperature.\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: rms speed of O₂ at 27 °C (2022, 2024 — 3m each)."
+  ],
+  "examNotes": [
+    "The identical 3m numerical appeared in 2022 and 2024 — a near-certain repeat."
+  ],
+  "formulas": [
+    "- k_B = R/N_A = 1.38×10⁻²³ J/K\n- v_rms = √(3k_BT/m) = √(3RT/M) = √(3P/ρ)\n- v_p : v̄ : v_rms = √2 : √(8/π) : √3"
+  ],
+  "summary": "The **Boltzmann constant** $k_B = R/N_A = 1.38\\times10^{-23}$ J/K is the gas constant per molecule — the exchange rate between temperature and molecular energy. Molecular speeds come in three averages from the Maxwell–Boltzmann distribution: **most probable** $\\sqrt{2k_BT/m}$, **average** $\\sqrt{8k_BT/\\pi m}$, and **rms** $\\sqrt{3k_BT/m} = \\sqrt{3RT/M}$ — in ratio 1.414 : 1.596 : 1.732. The rms speed of oxygen at 27 °C is $\\sqrt{3 \\times 8.31 \\times 300/0.032} = 483.5$ m/s (NEB 2022 and 2024, 3m each). Since $v_{rms} \\propto \\sqrt{T/M}$, doubling the speed needs four times the temperature, and light gases like hydrogen (1.9 km/s) flirt with planetary escape.",
+  "mcqs": [
+    {
+      "question": "The Boltzmann constant equals:",
+      "options": [
+        "8.31 J/mol·K",
+        "1.38×10⁻²³ J/K",
+        "6.022×10²³",
+        "1.6×10⁻¹⁹ C"
+      ],
+      "answer": "B",
+      "explanation": "R per molecule."
+    },
+    {
+      "question": "NEB 2024: v_rms of O₂ at 27 °C ≈",
+      "options": [
+        "183 m/s",
+        "483.5 m/s",
+        "683 m/s",
+        "1483 m/s"
+      ],
+      "answer": "B",
+      "explanation": "√(3×8.31×300/0.032)."
+    },
+    {
+      "question": "Which speed is largest?",
+      "options": [
+        "v_p",
+        "v̄",
+        "v_rms",
+        "All equal"
+      ],
+      "answer": "C",
+      "explanation": "√3 > √(8/π) > √2."
+    },
+    {
+      "question": "v_rms ∝",
+      "options": [
+        "T",
+        "√T",
+        "T²",
+        "1/T"
+      ],
+      "answer": "B",
+      "explanation": "Square-root dependence."
+    },
+    {
+      "question": "To double v_rms, temperature must:",
+      "options": [
+        "Double",
+        "Quadruple",
+        "Halve",
+        "Rise 16×"
+      ],
+      "answer": "B",
+      "explanation": "v ∝ √T."
+    },
+    {
+      "question": "At equal T, the gas with larger v_rms is:",
+      "options": [
+        "Heavier",
+        "Lighter",
+        "Same",
+        "Pressure-dependent"
+      ],
+      "answer": "B",
+      "explanation": "v ∝ 1/√M."
+    },
+    {
+      "question": "v_rms in terms of pressure and density:",
+      "options": [
+        "√(3P/ρ)",
+        "√(P/3ρ)",
+        "3P/ρ",
+        "√(Pρ/3)"
+      ],
+      "answer": "A",
+      "explanation": "From P = ⅓ρc̄²."
+    },
+    {
+      "question": "The energy scale k_BT at 300 K is about:",
+      "options": [
+        "4.14×10⁻²¹ J",
+        "6.21×10⁻²¹ J",
+        "1.38×10⁻²³ J",
+        "8.31 J"
+      ],
+      "answer": "A",
+      "explanation": "k_BT = 4.14×10⁻²¹ J; KE is 1.5× that."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "The Boltzmann constant equals:",
+      "options": [
+        "8.31 J/mol·K",
+        "1.38×10⁻²³ J/K",
+        "6.022×10²³",
+        "1.6×10⁻¹⁹ C"
+      ],
+      "answer": "B",
+      "explanation": "R per molecule."
+    },
+    {
+      "question": "NEB 2024: v_rms of O₂ at 27 °C ≈",
+      "options": [
+        "183 m/s",
+        "483.5 m/s",
+        "683 m/s",
+        "1483 m/s"
+      ],
+      "answer": "B",
+      "explanation": "√(3×8.31×300/0.032)."
+    },
+    {
+      "question": "Which speed is largest?",
+      "options": [
+        "v_p",
+        "v̄",
+        "v_rms",
+        "All equal"
+      ],
+      "answer": "C",
+      "explanation": "√3 > √(8/π) > √2."
+    },
+    {
+      "question": "v_rms ∝",
+      "options": [
+        "T",
+        "√T",
+        "T²",
+        "1/T"
+      ],
+      "answer": "B",
+      "explanation": "Square-root dependence."
+    },
+    {
+      "question": "To double v_rms, temperature must:",
+      "options": [
+        "Double",
+        "Quadruple",
+        "Halve",
+        "Rise 16×"
+      ],
+      "answer": "B",
+      "explanation": "v ∝ √T."
+    },
+    {
+      "question": "At equal T, the gas with larger v_rms is:",
+      "options": [
+        "Heavier",
+        "Lighter",
+        "Same",
+        "Pressure-dependent"
+      ],
+      "answer": "B",
+      "explanation": "v ∝ 1/√M."
+    },
+    {
+      "question": "v_rms in terms of pressure and density:",
+      "options": [
+        "√(3P/ρ)",
+        "√(P/3ρ)",
+        "3P/ρ",
+        "√(Pρ/3)"
+      ],
+      "answer": "A",
+      "explanation": "From P = ⅓ρc̄²."
+    },
+    {
+      "question": "The energy scale k_BT at 300 K is about:",
+      "options": [
+        "4.14×10⁻²¹ J",
+        "6.21×10⁻²¹ J",
+        "1.38×10⁻²³ J",
+        "8.31 J"
+      ],
+      "answer": "A",
+      "explanation": "k_BT = 4.14×10⁻²¹ J; KE is 1.5× that."
+    }
   ]
 }

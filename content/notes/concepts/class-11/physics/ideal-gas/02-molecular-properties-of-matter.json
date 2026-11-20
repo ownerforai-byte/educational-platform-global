@@ -5,46 +5,20 @@
   "topicTitle": "Molecular properties of matter",
   "relevance": 100,
   "notes": [
-    "**Kinetic theory of matter:** All matter is composed of tiny particles (atoms or molecules) that are in constant, random motion. The motion is thermal motion - faster at higher temperatures.",
-    "**States of matter and molecular spacing:** In gases, intermolecular spacing is much larger than molecular diameter (10Ã— or more), so molecules move freely. In liquids, spacing is about 1 molecular diameter. In solids, molecules are tightly packed in a regular arrangement.",
-    "**Intermolecular forces:** Attractive forces between molecules (van der Waals, hydrogen bonding, dipole-dipole). These forces are strongest in solids (holding molecules in fixed positions), moderate in liquids, and very weak in gases at ordinary conditions.",
-    "**Kinetic energy vs potential energy in matter:** In gases, kinetic energy dominates (molecules move freely). In solids, potential energy dominates (molecules held in fixed positions by strong intermolecular forces). At the melting/boiling point, energy input goes into breaking bonds (increasing PE) without changing temperature.",
-    "**Brownian motion:** Random zigzag motion of microscopic particles suspended in a fluid, first observed by Robert Brown (1827). Explained by Einstein (1905) as the result of unequal bombardment by fluid molecules - strong evidence for the kinetic theory.",
-    "**Diffusion:** The spontaneous mixing of particles due to random molecular motion. Occurs in all states but fastest in gases and slowest in solids. Fick's law: diffusion rate $\\propto$ concentration gradient. At higher temperature, diffusion is faster (faster molecules).",
-    "**Thermal expansion:** Matter expands when heated (generally). In gases, expansion is large (Charles's law). In liquids, expansion is moderate. In solids, expansion is small but measurable. Due to increased molecular vibration amplitudes at higher temperatures.",
-    "**Mean free path:** The average distance a molecule travels between collisions. $\\lambda = \\frac{1}{\\sqrt{2} n \\sigma}$, where $n$ is the number density and $\\sigma$ is the collision cross-section. At STP, the mean free path of air molecules is about 68 nm.",
-    "**Degrees of freedom:** The number of independent ways a molecule can store energy. Monatomic gas: 3 translational DOF. Diatomic: 5 (3 translational + 2 rotational). Polyatomic: 6 (3 translational + 3 rotational) at room temperature.",
-    "**Equipartition theorem:** Each quadratic degree of freedom contributes $\\frac{1}{2}k_BT$ of energy per molecule, or $\\frac{1}{2}RT$ per mole. For monatomic gas ($f=3$): $U = \\frac{3}{2}nRT$. For diatomic ($f=5$): $U = \\frac{5}{2}nRT$.",
-    "**Phase transitions and energy:** During melting or boiling, temperature stays constant even though heat is added. The energy goes into breaking intermolecular bonds (increasing PE), not increasing KE. This is latent heat: $Q = mL$ where $L$ is latent heat.",
-    "**Surface tension:** A consequence of intermolecular attractive forces. Molecules at the surface experience a net inward pull, creating a 'skin' effect. Surface tension $\\gamma$ has units of N/m or J/m$^2$. Water has high surface tension (72 mN/m at 25Â°C) due to hydrogen bonding.",
-    "**Viscosity:** A measure of a fluid's resistance to flow. Caused by intermolecular forces and molecular momentum transfer. Gases become more viscous at higher temperature (faster molecules, more momentum transfer). Liquids become less viscous at higher temperature (bonds break more easily).",
-    "# Molecular properties of matter\n\n## 1. Introduction\nPhysical picture of **Molecular properties of matter** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Ideal Gas fill pass.\n\n## 2. Concepts and laws\n### Molecular properties of matter\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Molecular properties of matter — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Molecular properties of matter — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Molecular properties of matter — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Molecular properties of matter — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Matter Made of Molecules\n\nEverything around you is a swarm of molecules: in solids they vibrate in place, in liquids they slide past each other, in gases they fly freely. Molecular properties — size, number, spacing, intermolecular forces — explain the three states of matter from one picture.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Molecular picture of matter\n\n- Matter consists of a very large number of molecules ($N_A = 6.022 \\times 10^{23}$ per mole) separated by spaces.\n- Molecules attract each other with forces that vary strongly with separation: negligible far apart, strong at close range (attractive, then strongly repulsive below ~10⁻¹⁰ m).\n- Molecules are in ceaseless random motion; the motion's character defines the state.\n\n### 2.2 The three states compared\n\n| Property | Solid | Liquid | Gas |\n|---|---|---|---|\n| Molecular spacing | Tightest (~10⁻¹⁰ m) | Intermediate | ~10× larger |\n| Motion | Vibration about fixed positions | Vibration + translation (sliding) | Rapid random translation |\n| Forces | Strong (lattice) | Moderate | Negligible |\n| Shape/Volume | Fixed/fixed | Fixed volume, takes container shape | Fills any container |\n| Compressibility | Negligible | Very small | Large |\n\n### 2.3 Molecular size and number (orders of magnitude)\n\n- A water molecule: ~3×10⁻¹⁰ m across; one drop of water holds ~10²¹ molecules.\n- Avogadro's number $N_A = 6.022\\times10^{23}$ /mol links microscopic and macroscopic: $n = N/N_A$.\n- Mean free path of air molecules at STP: ~10⁻⁷ m — a molecule travels ~100 molecular diameters between collisions.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** How many molecules are in 2 g of hydrogen (H₂, M = 2 g/mol)?\n$n = 1$ mol → $N = nN_A = 6.022 \\times 10^{23}$ molecules.\n\n**Q (NEB-style):** Estimate the number of molecules in 1 cm³ of an ideal gas at STP (Loschmidt number).\n$n = \\frac{PV}{RT} = \\frac{1.013\\times10^5 \\times 10^{-6}}{8.31 \\times 273} = 4.47\\times10^{-8}$ mol → $N = 2.7 \\times 10^{19}$ molecules/cm³.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 63:** the kinetic model quantifies the molecular motion into pressure and temperature.\n- **To Elasticity (Unit 8):** interatomic forces' linear region is Hooke's law.\n- **To latent heat (Unit 11):** phase changes are changes in intermolecular potential energy.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the molecular description, state comparisons and molecule-count numericals as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Describe the molecular model of solids, liquids and gases (3m).\n2. Compute the number of molecules in a given mass (2m).\n3. Role of intermolecular forces in the three states (2m).\n\n### 4.3 Common examination mistakes\n\n1. Forgetting to halve the molar mass for diatomic molecules (H₂, O₂).\n2. Confusing Avogadro's number (per mole) with the number of molecules in a sample.\n3. Claiming gas molecules exert large forces on each other — they are negligible except in collisions."
   ],
   "confusion": [
-    "Temperature measures the average kinetic energy of molecules, NOT the total energy. A hot object has higher average KE per molecule, but a large cold object may have more total thermal energy (more molecules).",
-    "Heat and temperature are NOT the same. Temperature is a measure of average molecular KE (intensive property). Heat is the transfer of thermal energy between objects due to temperature difference (extensive property). You can add heat without changing temperature (phase change).",
-    "Intermolecular forces are NOT the same as intramolecular (chemical) forces. Intermolecular forces hold molecules together in condensed phases (weak, ~1-100 kJ/mol). Intramolecular forces hold atoms together within a molecule (strong, ~100-1000 kJ/mol).",
-    "Diffusion in liquids is faster than in solids, but much slower than in gases. This is often confused with the rate of dissolving, which also involves convection and stirring.",
-    "A gas molecule at high altitude has LESS kinetic energy if it has risen (energy converts to gravitational PE). But temperature is a statistical property - individual molecules have a range of speeds given by the Maxwell-Boltzmann distribution, not a single speed."
+    "**Moles vs molecules:** divide mass by molar mass to get moles; multiply by N_A to get molecules.",
+    "**Diatomic masses:** H₂ is 2 g/mol, O₂ is 32 g/mol — count both atoms."
   ],
   "practice": [
-    "Estimate the average distance between molecules in air at STP. Solution: Number density $n = N_A/V_m = 6.022 \\times 10^{23} / 0.0224 = 2.69 \\times 10^{25}$ molecules/m$^3$. Average spacing $d \\approx n^{-1/3} = (2.69 \\times 10^{25})^{-1/3} = 3.3 \\times 10^{-9}$ m $= 3.3$ nm. This is about 10 molecular diameters.",
-    "Calculate the root-mean-square speed of O$_2$ at 300 K. $M_{O_2} = 0.032$ kg/mol. Solution: $v_{rms} = \\sqrt{3RT/M} = \\sqrt{3 \\times 8.314 \\times 300 / 0.032} = \\sqrt{7482.6 / 0.032} = \\sqrt{233,831} = 483.6$ m/s. About 1741 km/h!",
-    "A 100 g block of ice at 0Â°C melts to water at 0Â°C. How much energy is required? ($L_f = 334$ kJ/kg). Solution: $Q = mL = 0.1 \\times 334,000 = 33,400$ J = 33.4 kJ. Temperature doesn't change - all energy goes into breaking intermolecular bonds (increasing PE).",
-    "Compare the mean free path of gas molecules at STP (68 nm) vs at 1/10th the pressure. Solution: $\\lambda \\propto 1/P$. At $P/10$, $\\lambda = 680$ nm = 0.68 $\\mu$m. At very low pressure (vacuum), mean free path can be kilometers long.",
-    "Using equipartition, calculate the molar internal energy of CO$_2$ at room temperature (assume linear molecule with 4 active DOF: 3 translational + 1 rotational... wait, CO$_2$ is linear so 3 trans + 2 rot = 5 DOF). Solution: $U = \\frac{5}{2}RT = \\frac{5}{2} \\times 8.314 \\times 300 = 6235.5$ J/mol $= 6.24$ kJ/mol."
+    "Why can gases be compressed but solids not?"
   ],
   "universalFacts": [
-    "Einstein's 1905 paper on Brownian motion provided the first quantitative evidence for the existence of atoms and molecules. Jean Perrin experimentally confirmed Einstein's predictions in 1908, earning the Nobel Prize in 1926.",
-    "The kinetic theory was developed by Daniel Bernoulli in 1738 (in his Hydrodynamica), but was ignored until revived by Clausius, Maxwell, and Boltzmann in the 19th century. Bernoulli proposed that gas pressure comes from molecular collisions - centuries before it was accepted.",
-    "At room temperature, gas molecules move at hundreds of meters per second (sound speed!). But gas smells take time to travel across a room because molecules undergo billions of collisions per second (mean free path ~70 nm), resulting in a random walk.",
-    "The equipartition theorem fails at low temperatures, where quantum effects 'freeze out' certain degrees of freedom. This was one of the early successes of quantum mechanics - Planck's quantization explained why solids' heat capacity drops at low $T$ (Einstein model, 1907).",
-    "Water's high surface tension (due to hydrogen bonding) allows insects to walk on water, allows needles to float, and drives capillary action in plants - all critical for life on Earth."
+    "Air molecules at STP travel a mean free path of ~68 nm between collisions — colliding ~10⁹ times per second."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
@@ -56,18 +30,258 @@
   ],
   "source": "skeleton-v2",
   "examShortTricks": [
-    "Trick 1: Molecular picture in four points: matter made of molecules, intermolecular spacing decides state, molecules attract each other, molecules are in random motion whose KE measures temperature.",
-    "Trick 2: State differences by spacing and force: solid — close, strong force, fixed position; liquid — close, weaker, mobile; gas — far apart, negligible force, free motion.",
-    "Trick 3: Brownian motion and diffusion are the two EVIDENCES of molecular motion to quote if asked 'how do we know molecules move'."
+    "\"N = (mass/M) × N_A.\""
   ],
   "keyPoints": [
-    "Molecules are in continuous random motion; their average KE ∝ absolute temperature.",
-    "Intermolecular forces and spacing distinguish solids, liquids and gases.",
-    "Brownian motion and diffusion evidence molecular motion.",
-    "At absolute zero molecular motion is minimum."
+    "Matter = many molecules + spacing + intermolecular forces + ceaseless motion.",
+    "Solids vibrate; liquids slide; gases fly freely."
   ],
   "practiceQuestions": [
-    "Q. What happens to molecular motion as temperature rises? (1 mark) — average kinetic energy increases proportionally to absolute temperature.",
-    "Q. Give two evidences of molecular motion. (1 mark) — Brownian motion; diffusion."
+    "**Numerical (2m): Find the number of molecules in 4 g of oxygen (O₂, M = 32 g/mol).** — n = 4/32 = 0.125 mol → N = 0.125 × 6.022×10²³ = 7.5×10²² molecules."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Matter Made of Molecules\n\nEverything around you is a swarm of molecules: in solids they vibrate in place, in liquids they slide past each other, in gases they fly freely. Molecular properties — size, number, spacing, intermolecular forces — explain the three states of matter from one picture.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Molecular picture of matter\n\n- Matter consists of a very large number of molecules ($N_A = 6.022 \\times 10^{23}$ per mole) separated by spaces.\n- Molecules attract each other with forces that vary strongly with separation: negligible far apart, strong at close range (attractive, then strongly repulsive below ~10⁻¹⁰ m).\n- Molecules are in ceaseless random motion; the motion's character defines the state.\n\n### 2.2 The three states compared\n\n| Property | Solid | Liquid | Gas |\n|---|---|---|---|\n| Molecular spacing | Tightest (~10⁻¹⁰ m) | Intermediate | ~10× larger |\n| Motion | Vibration about fixed positions | Vibration + translation (sliding) | Rapid random translation |\n| Forces | Strong (lattice) | Moderate | Negligible |\n| Shape/Volume | Fixed/fixed | Fixed volume, takes container shape | Fills any container |\n| Compressibility | Negligible | Very small | Large |\n\n### 2.3 Molecular size and number (orders of magnitude)\n\n- A water molecule: ~3×10⁻¹⁰ m across; one drop of water holds ~10²¹ molecules.\n- Avogadro's number $N_A = 6.022\\times10^{23}$ /mol links microscopic and macroscopic: $n = N/N_A$.\n- Mean free path of air molecules at STP: ~10⁻⁷ m — a molecule travels ~100 molecular diameters between collisions.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** How many molecules are in 2 g of hydrogen (H₂, M = 2 g/mol)?\n$n = 1$ mol → $N = nN_A = 6.022 \\times 10^{23}$ molecules.\n\n**Q (NEB-style):** Estimate the number of molecules in 1 cm³ of an ideal gas at STP (Loschmidt number).\n$n = \\frac{PV}{RT} = \\frac{1.013\\times10^5 \\times 10^{-6}}{8.31 \\times 273} = 4.47\\times10^{-8}$ mol → $N = 2.7 \\times 10^{19}$ molecules/cm³.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 63:** the kinetic model quantifies the molecular motion into pressure and temperature.\n- **To Elasticity (Unit 8):** interatomic forces' linear region is Hooke's law.\n- **To latent heat (Unit 11):** phase changes are changes in intermolecular potential energy.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the molecular description, state comparisons and molecule-count numericals as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Describe the molecular model of solids, liquids and gases (3m).\n2. Compute the number of molecules in a given mass (2m).\n3. Role of intermolecular forces in the three states (2m).\n\n### 4.3 Common examination mistakes\n\n1. Forgetting to halve the molar mass for diatomic molecules (H₂, O₂).\n2. Confusing Avogadro's number (per mole) with the number of molecules in a sample.\n3. Claiming gas molecules exert large forces on each other — they are negligible except in collisions."
+    ],
+    "confusion": [
+      "**Moles vs molecules:** divide mass by molar mass to get moles; multiply by N_A to get molecules.",
+      "**Diatomic masses:** H₂ is 2 g/mol, O₂ is 32 g/mol — count both atoms."
+    ],
+    "keyPoints": [
+      "Matter = many molecules + spacing + intermolecular forces + ceaseless motion.",
+      "Solids vibrate; liquids slide; gases fly freely."
+    ],
+    "importantConcepts": [
+      "**One picture, three states:** spacing and force strength explain every macroscopic difference."
+    ],
+    "examples": [
+      "***One drop of water*** — ~10²¹ molecules, each ~3×10⁻¹⁰ m across."
+    ],
+    "universalFacts": [
+      "Air molecules at STP travel a mean free path of ~68 nm between collisions — colliding ~10⁹ times per second."
+    ],
+    "importantStatements": [
+      "\"Matter is composed of a large number of molecules separated by spaces and held by intermolecular forces.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (model 3m, molecule count 2m)."
+    ],
+    "examShortTricks": [
+      "\"N = (mass/M) × N_A.\""
+    ],
+    "examNotes": [
+      "The state-comparison table is the likely 3m answer format."
+    ],
+    "formulas": [
+      "- n = m/M; N = nN_A\n- N_A = 6.022×10²³ /mol\n- Loschmidt number ≈ 2.7×10¹⁹ /cm³ at STP"
+    ],
+    "practice": [
+      "Why can gases be compressed but solids not?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (2m): Find the number of molecules in 4 g of oxygen (O₂, M = 32 g/mol).** — n = 4/32 = 0.125 mol → N = 0.125 × 6.022×10²³ = 7.5×10²² molecules."
+    ]
+  },
+  "importantConcepts": [
+    "**One picture, three states:** spacing and force strength explain every macroscopic difference."
+  ],
+  "examples": [
+    "***One drop of water*** — ~10²¹ molecules, each ~3×10⁻¹⁰ m across."
+  ],
+  "importantStatements": [
+    "\"Matter is composed of a large number of molecules separated by spaces and held by intermolecular forces.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ; NEB-style practice (model 3m, molecule count 2m)."
+  ],
+  "examNotes": [
+    "The state-comparison table is the likely 3m answer format."
+  ],
+  "formulas": [
+    "- n = m/M; N = nN_A\n- N_A = 6.022×10²³ /mol\n- Loschmidt number ≈ 2.7×10¹⁹ /cm³ at STP"
+  ],
+  "summary": "Matter is a swarm of molecules: ~10²³ of them per mole ($N_A = 6.022\\times10^{23}$), each ~10⁻¹⁰ m across, attracting strongly at close range and repelling fiercely below that. The **state of matter** is set by spacing and force balance: solids vibrate about fixed lattice sites (fixed shape), liquids slide past neighbours (fixed volume, fluid shape), gases fly nearly freely through ~10× wider spaces (compressible, container-filling). A drop of water holds ~10²¹ molecules; a cubic centimetre of air at STP holds 2.7×10¹⁹. The kinetic theory of the next topics turns this picture into pressure and temperature.",
+  "mcqs": [
+    {
+      "question": "Avogadro's number is:",
+      "options": [
+        "6.022×10²³ /mol",
+        "1.38×10⁻²³ J/K",
+        "8.31 J/mol·K",
+        "3×10⁸ m/s"
+      ],
+      "answer": "A",
+      "explanation": "Molecules per mole."
+    },
+    {
+      "question": "Gas molecules are separated by roughly how many molecular diameters?",
+      "options": [
+        "~1",
+        "~10",
+        "~1000",
+        "Zero"
+      ],
+      "answer": "B",
+      "explanation": "~10× spacing — hence compressibility."
+    },
+    {
+      "question": "In solids, molecules mainly:",
+      "options": [
+        "Fly freely",
+        "Vibrate about fixed positions",
+        "Slide randomly",
+        "Disappear"
+      ],
+      "answer": "B",
+      "explanation": "Lattice vibration."
+    },
+    {
+      "question": "Intermolecular forces in an ideal gas are:",
+      "options": [
+        "Strong",
+        "Negligible except during collisions",
+        "Repulsive always",
+        "Zero at collisions"
+      ],
+      "answer": "B",
+      "explanation": "Idealisation of the kinetic model."
+    },
+    {
+      "question": "Molecules in 2 g of H₂ (M = 2 g/mol):",
+      "options": [
+        "3.01×10²³",
+        "6.022×10²³",
+        "1.2×10²⁴",
+        "6.022×10²¹"
+      ],
+      "answer": "B",
+      "explanation": "1 mol × N_A."
+    },
+    {
+      "question": "The number of molecules per cm³ of gas at STP is about:",
+      "options": [
+        "2.7×10¹⁹",
+        "6.022×10²³",
+        "10⁶",
+        "10³⁰"
+      ],
+      "answer": "A",
+      "explanation": "Loschmidt number."
+    },
+    {
+      "question": "Which state is highly compressible?",
+      "options": [
+        "Solid",
+        "Liquid",
+        "Gas",
+        "Plasma only"
+      ],
+      "answer": "C",
+      "explanation": "Large empty spaces."
+    },
+    {
+      "question": "Molecular size is of the order of:",
+      "options": [
+        "10⁻⁶ m",
+        "10⁻¹⁰ m",
+        "10⁻³ m",
+        "10⁻¹⁵ m"
+      ],
+      "answer": "B",
+      "explanation": "Ångström scale."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "Avogadro's number is:",
+      "options": [
+        "6.022×10²³ /mol",
+        "1.38×10⁻²³ J/K",
+        "8.31 J/mol·K",
+        "3×10⁸ m/s"
+      ],
+      "answer": "A",
+      "explanation": "Molecules per mole."
+    },
+    {
+      "question": "Gas molecules are separated by roughly how many molecular diameters?",
+      "options": [
+        "~1",
+        "~10",
+        "~1000",
+        "Zero"
+      ],
+      "answer": "B",
+      "explanation": "~10× spacing — hence compressibility."
+    },
+    {
+      "question": "In solids, molecules mainly:",
+      "options": [
+        "Fly freely",
+        "Vibrate about fixed positions",
+        "Slide randomly",
+        "Disappear"
+      ],
+      "answer": "B",
+      "explanation": "Lattice vibration."
+    },
+    {
+      "question": "Intermolecular forces in an ideal gas are:",
+      "options": [
+        "Strong",
+        "Negligible except during collisions",
+        "Repulsive always",
+        "Zero at collisions"
+      ],
+      "answer": "B",
+      "explanation": "Idealisation of the kinetic model."
+    },
+    {
+      "question": "Molecules in 2 g of H₂ (M = 2 g/mol):",
+      "options": [
+        "3.01×10²³",
+        "6.022×10²³",
+        "1.2×10²⁴",
+        "6.022×10²¹"
+      ],
+      "answer": "B",
+      "explanation": "1 mol × N_A."
+    },
+    {
+      "question": "The number of molecules per cm³ of gas at STP is about:",
+      "options": [
+        "2.7×10¹⁹",
+        "6.022×10²³",
+        "10⁶",
+        "10³⁰"
+      ],
+      "answer": "A",
+      "explanation": "Loschmidt number."
+    },
+    {
+      "question": "Which state is highly compressible?",
+      "options": [
+        "Solid",
+        "Liquid",
+        "Gas",
+        "Plasma only"
+      ],
+      "answer": "C",
+      "explanation": "Large empty spaces."
+    },
+    {
+      "question": "Molecular size is of the order of:",
+      "options": [
+        "10⁻⁶ m",
+        "10⁻¹⁰ m",
+        "10⁻³ m",
+        "10⁻¹⁵ m"
+      ],
+      "answer": "B",
+      "explanation": "Ångström scale."
+    }
   ]
 }

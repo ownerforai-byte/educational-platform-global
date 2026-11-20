@@ -5,66 +5,37 @@
   "topicTitle": "Derivation of pressure exerted by gas",
   "relevance": 100,
   "notes": [
-    "**Setup:** Consider a cubical container with side length $L$ containing $N$ molecules of mass $m$. The volume is $V = L^3$.",
-    "**Momentum change in one collision:** When a molecule with x-component of velocity $v_x$ hits the wall perpendicular to the x-axis, it rebounds with velocity $-v_x$. The change in momentum is $\\Delta p = p_f - p_i = m(-v_x) - m(v_x) = -2mv_x$. The magnitude is $2mv_x$.",
-    "**Time between collisions:** The molecule travels a distance $2L$ (to the opposite wall and back) at speed $|v_x|$. Time between collisions with the same wall is $\\Delta t = 2L/|v_x|$.",
-    "**Force from one molecule:** $F = \\frac{\\Delta p}{\\Delta t} = \\frac{2mv_x}{2L/|v_x|} = \\frac{2mv_x}{|v_x|} = \\frac{mv_x^2}{L}$. (Note: $|v_x| = v_x$ if $v_x > 0$, but we use magnitude for force magnitude).",
-    "**Pressure contribution:** Force per unit area is $P = F/A = \\frac{mv_x^2}{L} / L^2 = \\frac{mv_x^2}{L^3} = \\frac{mv_x^2}{V}$. This is the pressure contribution from a single molecule with x-velocity $v_x$.",
-    "**Averaging over all molecules:** The total force is the sum of forces from all molecules. Since the wall is perpendicular to x-axis, only $v_x$ components matter. Total pressure $P = \\frac{1}{A} \\sum F_i = \\frac{1}{L^2} \\sum (mv_{ix}^2/L) = \\frac{m}{L^3} \\sum v_{ix}^2 = \\frac{m}{V} \\langle v_x^2 \\rangle$.",
-    "**Relating to total kinetic energy:** The total kinetic energy is $K = \\frac{1}{2}m \\sum v_i^2 = \\frac{1}{2}mN\\langle v^2 \\rangle$. Since $\\langle v^2 \\rangle = \\langle v_x^2 \\rangle + \\langle v_y^2 \\rangle + \\langle v_z^2 \\rangle$ and by symmetry $\\langle v_x^2 \\rangle = \\langle v_y^2 \\rangle = \\langle v_z^2 \\rangle$, we have $\\langle v_x^2 \\rangle = \\frac{1}{3}\\langle v^2 \\rangle$.",
-    "**Final result:** Substituting back, $P = \\frac{m}{V} \\cdot \\frac{1}{3}\\langle v^2 \\rangle = \\frac{1}{3} \\frac{mN}{V} \\langle v^2 \\rangle = \\frac{2}{3} \\frac{N}{V} (\\frac{1}{2}m\\langle v^2 \\rangle) = \\frac{2}{3} \\frac{N}{V} \\langle K \\rangle$. Since $\\langle K \\rangle = \\frac{3}{2}k_BT$, we get $P = \\frac{N}{V} k_BT = \\frac{n}{V} RT = \\frac{nRT}{V}$.",
-    "**Pressure in terms of average KE:** $P = \\frac{2}{3} \\frac{N}{V} \\langle K \\rangle$. This shows the direct link between pressure and microscopic kinetic energy. The factor 2/3 comes from the 3 spatial dimensions (1/3 per dimension).",
-    "**Derivation steps recap:**",
-    "1. Momentum change: $\\Delta p = 2mv_x$",
-    "2. Time between collisions: $\\Delta t = 2L/|v_x|$",
-    "3. Force on wall: $F = \\frac{2mv_x^2}{L}$",
-    "4. Pressure: $P = F/A = \\frac{mv_x^2}{L^3} = \\frac{mv_x^2}{V}$",
-    "5. Average over all molecules: $P = \\frac{m}{V} \\langle v_x^2 \\rangle$",
-    "6. Relate to total KE: $\\langle v_x^2 \\rangle = \\frac{1}{3}\\langle v^2 \\rangle$, so $P = \\frac{m}{3V} \\langle v^2 \\rangle$",
-    "7. Substitute $\\langle K \\rangle = \\frac{1}{2}m\\langle v^2 \\rangle$: $P = \\frac{2}{3} \\frac{N}{V} \\langle K \\rangle$",
-    "# Derivation of pressure exerted by gas\n\n## 1. Introduction\nPhysical picture of **Derivation of pressure exerted by gas** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Ideal Gas fill pass.\n\n## 2. Concepts and laws\n### Derivation of pressure exerted by gas\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Derivation of pressure exerted by gas — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Derivation of pressure exerted by gas — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Derivation of pressure exerted by gas — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Derivation of pressure exerted by gas — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — From Collisions to Pressure\n\nThe kinetic theory's centrepiece is a calculation: track one molecule bouncing between walls, count its momentum transfers, multiply by N molecules, and the gas pressure appears as $\\frac{1}{3}\\rho \\bar{c^2}$. Matching this to PV = NkT then makes temperature a molecular quantity.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Derivation of $P = \\frac{1}{3}\\rho \\bar{c^2}$\n\nConsider a cubic box of side $l$ containing $N$ molecules, each of mass $m$, with the x-component of a typical molecule's velocity $u$.\n\n1. **One collision with the wall** perpendicular to x reverses $u$: momentum change $= mu - (-mu) = 2mu$.\n2. **Time between successive hits** on the same wall: the molecule travels $2l$ per round trip, so $\\Delta t = 2l/u$.\n3. **Rate of momentum transfer** to that wall by one molecule: $\\dfrac{2mu}{2l/u} = \\dfrac{mu^2}{l}$.\n4. **Sum over all N molecules** (x-components $u_1, u_2, \\ldots, u_N$): total rate $= \\dfrac{m}{l}\\sum u_i^2$.\n5. **Pressure** = force/area $= \\dfrac{m\\sum u_i^2}{l \\times l^2} = \\dfrac{mN\\bar{u^2}}{l^3} = \\dfrac{Nm\\bar{u^2}}{V}$ where $\\bar{u^2} = \\frac{1}{N}\\sum u_i^2$.\n6. **Randomness:** $\\bar{u^2} = \\bar{v^2} = \\bar{w^2} = \\frac{1}{3}\\bar{c^2}$ where $\\bar{c^2}$ is the mean square speed.\n$$\\boxed{P = \\frac{1}{3}\\frac{Nm}{V}\\bar{c^2} = \\frac{1}{3}\\rho\\bar{c^2}}$$\n\n### 2.2 Matching to the gas equation\n\nIdentifying $P = \\frac{1}{3}\\frac{Nm}{V}\\bar{c^2}$ with $PV = Nk_BT$:\n$$\\frac{1}{3}m\\bar{c^2} = k_BT \\Rightarrow \\bar{KE} = \\frac{1}{2}m\\bar{c^2} = \\frac{3}{2}k_BT$$\n— temperature is a direct measure of mean molecular kinetic energy.\n\n### 2.3 rms speed\n\n$$v_{rms} = \\sqrt{\\bar{c^2}} = \\sqrt{\\frac{3PV}{Nm}} = \\sqrt{\\frac{3P}{\\rho}} = \\sqrt{\\frac{3k_BT}{m}}$$\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** Find the rms speed of nitrogen (M = 28 g/mol) at 300 K.\n$$v_{rms} = \\sqrt{\\frac{3RT}{M}} = \\sqrt{\\frac{3 \\times 8.31 \\times 300}{0.028}} = \\sqrt{2.67\\times10^5} = 517 \\text{ m/s}$$",
+    "## 3. Conceptual Relationships\n\n- **To Topic 63:** this derivation executes the model's assumptions.\n- **To Topic 61:** matching with PV = NkT identifies temperature.\n- **To Topic 65:** the KE–temperature relation follows in one line.\n- **To momentum/impulse (Unit 4):** each wall collision is an impulse 2mu.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact derivation in the bank (the related rms-speed and KE numericals belong to Topics 65–66). Practise the 6-step derivation as **NEB-style practice** (4–5m).\n\n### 4.2 Likely question forms\n\n1. Derive $P = \\frac{1}{3}\\rho\\bar{c^2}$ (5m).\n2. Show that $\\bar{KE} = \\frac{3}{2}k_BT$ (3m).\n3. rms-speed numerical (3m).\n\n### 4.3 Common examination mistakes\n\n1. Using $\\bar{u^2}$ instead of $\\bar{c^2}$ in the final step (forgetting the ⅓ from the three dimensions).\n2. Skipping the round-trip time $2l/u$.\n3. Writing pressure as force over volume instead of force over area."
   ],
   "confusion": [
-    "The derivation assumes the wall is perpendicular to the x-axis. For a wall at an angle, the momentum change and force calculation would be different.",
-    "The factor 1/3 comes from the three spatial dimensions. In 2D, it would be 1/2, and in n-dimensions, it would be 1/n. Students often forget this geometric factor.",
-    "The derivation assumes the wall is stationary. If the wall were moving (e.g., piston), the relative velocity would need to be used, and the derivation would be more complex.",
-    "The derivation applies to ideal gases where collisions are perfectly elastic. In real gases with inelastic collisions, energy is lost and the derivation needs modification."
+    "**The ⅓ comes from three dimensions:** u² = v² = w² = c̄²/3 on average.",
+    "**Round trip 2l, not l:** the molecule must return before hitting the same wall again."
   ],
   "practice": [
-    "A gas molecule with mass 3.34 × 10⁻²⁶ kg (mass of N₂) has an x-component of velocity of 500 m/s. Calculate the force it exerts on a wall of area 0.01 m². Solution: $F = \\frac{mv_x^2}{L}$. First find $L = V^{1/3} = (0.01)^{1/3} = 0.215$ m. $F = \\frac{3.34 \\times 10^{-26} \\times 500^2}{0.215} = \\frac{3.34 \\times 10^{-26} \\times 250000}{0.215} = \\frac{8.35 \\times 10^{-21}}{0.215} = 3.88 \\times 10^{-20}$ N. Pressure = $F/A = 3.88 \\times 10^{-20} / 0.01 = 3.88 \\times 10^{-18}$ Pa.",
-    "A gas container has side length 0.1 m. A molecule with x-velocity 400 m/s hits the wall. Calculate the time between collisions with the same wall. Solution: $\\Delta t = 2L/|v_x| = 2 \\times 0.1 / 400 = 0.2 / 400 = 0.0005$ s = 5 × 10⁻⁴ s.",
-    "If the average kinetic energy per molecule is 6.21 × 10⁻²¹ J (from previous problem), what is the average vₓ²? Since $\\langle K \\rangle = \\frac{1}{2}m\\langle v^2 \\rangle = \\frac{1}{2}m(3\\langle v_x^2 \\rangle)$, then $\\langle v_x^2 \\rangle = \\frac{3\\langle K \\rangle}{m}$. For m = 3.34 × 10⁻²⁶ kg, $\\langle v_x^2 \\rangle = \\frac{3 \\times 6.21 \\times 10^{-21}}{3.34 \\times 10^{-26}} = 5.57 \\times 10^5$ m²/s².",
-    "A container with 1000 molecules has total kinetic energy 6.21 J. What is the average kinetic energy per molecule? Solution: 6.21 J / 1000 = 6.21 × 10⁻³ J per molecule. This is $\\langle K \\rangle = \\frac{3}{2}k_BT$, so we can find T if needed.",
-    "A molecule with mass 28 u (N₂) has rms speed of 480 m/s. Calculate its average kinetic energy. Solution: $K = \\frac{1}{2}mv^2$. Mass in kg: 28 × 1.66 × 10⁻²⁷ = 4.648 × 10⁻²⁶ kg. $K = 0.5 × 4.648 \\times 10^{-26} \\times 480^2 = 0.5 × 4.648 \\times 10^{-26} \\times 230400 = 5.35 × 10^{-21}$ J."
+    "Why does the derivation not need to track molecular paths in detail?"
   ],
   "universalFacts": [
-    "The kinetic theory was developed in the 19th century by Rudolf Clausius (1850s), James Clerk Maxwell (1860s), and Ludwig Boltzmann (1870s). Maxwell's equations for the distribution of speeds were a major breakthrough.",
-    "The Maxwell-Boltzmann distribution was first derived by James Clerk Maxwell in 1860 for gas molecules. Ludwig Boltzmann later provided a statistical interpretation and connected it to entropy (S = k_B ln Ω).",
-    "At room temperature (300 K), the average speed of a nitrogen molecule (N₂, molar mass 28 g/mol) is about 517 m/s, while the most probable speed is about 470 m/s. The distribution has a long tail to high speeds.",
-    "The kinetic theory explains why the speed of sound is higher in solids and liquids than in gases: in solids, molecules are closer together, so momentum transfer (sound waves) is more efficient even though individual molecules move slower.",
-    "The kinetic theory is foundational to statistical mechanics, which connects microscopic behavior to macroscopic thermodynamics. It was a key step in establishing thermodynamics as a branch of physics rather than just engineering."
+    "Oxygen's rms speed at room temperature is ~480 m/s — yet diffusion seems slow because of countless collisions."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
-  "examples": [],
+  "examples": [
+    "***N₂ at 300 K*** — v_rms = 517 m/s, faster than a jetliner."
+  ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Derivation of pressure exerted by gas.",
-    "Q3. Differentiate between various aspects of Derivation of pressure exerted by gas.",
-    "Q4. Derive the key formula related to Derivation of pressure exerted by gas.",
-    "Q5. What are the applications of Derivation of pressure exerted by gas?"
+    "**Numerical (3m): Find the rms speed of hydrogen molecules (M = 2 g/mol) at 300 K.** — v_rms = √(3×8.31×300/0.002) = √(3.74×10⁶) = 1934 m/s ≈ 1.9 km/s — why hydrogen escapes Earth's upper atmosphere."
   ],
   "formulas": [
-    "$PV = \\frac{1}{3}Nmc^2 = \\frac{1}{3}M_{gas}c_{rms}^2$, and $P = \\frac{1}{3}\\rho c_{rms}^2$."
+    "- P = Nm c̄²/3V = ⅓ρc̄²\n- ½m c̄² = (3/2)k_BT\n- v_rms = √(3P/ρ) = √(3RT/M)"
   ],
   "keyPoints": [
-    "The ⅓ comes from averaging the velocity components along three axes, not from any property of the container."
+    "P = ⅓ρc̄² = Nm c̄²/3V.",
+    "Matching with PV = NkT gives KE = (3/2)k_BT."
   ],
-  "summary": "Derivation of pressure exerted by gas is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "The kinetic-theory pressure derivation proceeds in six steps: one wall collision reverses momentum $mu \\to -mu$ (transfer $2mu$); the round trip takes $2l/u$; one molecule delivers momentum at rate $mu^2/l$; summing over N molecules gives force $m\\sum u_i^2/l$; dividing by the wall area $l^2$ gives $P = Nm\\bar{u^2}/V$; and isotropy ($\\bar{u^2} = \\bar{c^2}/3$) yields the boxed result $P = \\frac{1}{3}\\rho\\bar{c^2}$. Equating with $PV = Nk_BT$ makes temperature molecular: $\\bar{KE} = \\frac{3}{2}k_BT$, and the **rms speed** $v_{rms} = \\sqrt{3RT/M}$ follows — 517 m/s for nitrogen, 1.9 km/s for hydrogen at 300 K.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Derivation of pressure exerted by gas applies",
     "Note 2: Derivation of pressure exerted by gas connects to multiple other topics in Science",
@@ -72,25 +43,17 @@
     "Note 4: Remember the units and dimensions involved in Derivation of pressure exerted by gas",
     "Note 5: Derivation of pressure exerted by gas frequently appears in examination questions"
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"The pressure of an ideal gas is two-thirds of the translational kinetic energy per unit volume.\""
+  ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Derivation of pressure exerted by gas",
-    "Note 3: Derivation of pressure exerted by gas has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Derivation of pressure exerted by gas",
-    "Note 5: Cross-check your answers using alternative methods for Derivation of pressure exerted by gas"
+    "No verified PYQ for the derivation; NEB-style practice (5m derivation, 3m numerical)."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Derivation of pressure exerted by gas formula",
-    "Trick 2: Elimination technique for Derivation of pressure exerted by gas MCQs",
-    "Trick 3: Dimensional analysis shortcut for Derivation of pressure exerted by gas",
-    "Trick 4: Memory aid for Derivation of pressure exerted by gas formulas",
-    "Trick 5: Time-saving approach for Derivation of pressure exerted by gas problems"
+    "\"Six steps: collision → momentum → time → rate → sum → ⅓.\""
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Derivation of pressure exerted by gas",
-    "Exam Tip 2: Practice previous year questions on Derivation of pressure exerted by gas",
-    "Exam Tip 4: Learn the derivations for Derivation of pressure exerted by gas thoroughly",
-    "Exam Tip 5: Review common mistakes related to Derivation of pressure exerted by gas"
+    "Write all six steps; the ⅓ and the averaging are where marks live."
   ],
   "mcs": [
     {
@@ -135,11 +98,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Derivation of pressure exerted by gas",
-    "Concept 2: Key theorem or principle in Derivation of pressure exerted by gas",
-    "Concept 3: Important application area of Derivation of pressure exerted by gas",
-    "Concept 4: Fundamental relationship in Derivation of pressure exerted by gas",
-    "Concept 5: Connection between Derivation of pressure exerted by gas and other topics"
+    "**Momentum per collision = 2mu; time per round trip = 2l/u** — the two numbers that build the derivation."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Derivation of pressure exerted by gas",
@@ -148,5 +107,141 @@
     "Task 4: Practice previous year exam questions on Derivation of pressure exerted by gas",
     "Task 5: Explain Derivation of pressure exerted by gas to a peer or study group"
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — From Collisions to Pressure\n\nThe kinetic theory's centrepiece is a calculation: track one molecule bouncing between walls, count its momentum transfers, multiply by N molecules, and the gas pressure appears as $\\frac{1}{3}\\rho \\bar{c^2}$. Matching this to PV = NkT then makes temperature a molecular quantity.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Derivation of $P = \\frac{1}{3}\\rho \\bar{c^2}$\n\nConsider a cubic box of side $l$ containing $N$ molecules, each of mass $m$, with the x-component of a typical molecule's velocity $u$.\n\n1. **One collision with the wall** perpendicular to x reverses $u$: momentum change $= mu - (-mu) = 2mu$.\n2. **Time between successive hits** on the same wall: the molecule travels $2l$ per round trip, so $\\Delta t = 2l/u$.\n3. **Rate of momentum transfer** to that wall by one molecule: $\\dfrac{2mu}{2l/u} = \\dfrac{mu^2}{l}$.\n4. **Sum over all N molecules** (x-components $u_1, u_2, \\ldots, u_N$): total rate $= \\dfrac{m}{l}\\sum u_i^2$.\n5. **Pressure** = force/area $= \\dfrac{m\\sum u_i^2}{l \\times l^2} = \\dfrac{mN\\bar{u^2}}{l^3} = \\dfrac{Nm\\bar{u^2}}{V}$ where $\\bar{u^2} = \\frac{1}{N}\\sum u_i^2$.\n6. **Randomness:** $\\bar{u^2} = \\bar{v^2} = \\bar{w^2} = \\frac{1}{3}\\bar{c^2}$ where $\\bar{c^2}$ is the mean square speed.\n$$\\boxed{P = \\frac{1}{3}\\frac{Nm}{V}\\bar{c^2} = \\frac{1}{3}\\rho\\bar{c^2}}$$\n\n### 2.2 Matching to the gas equation\n\nIdentifying $P = \\frac{1}{3}\\frac{Nm}{V}\\bar{c^2}$ with $PV = Nk_BT$:\n$$\\frac{1}{3}m\\bar{c^2} = k_BT \\Rightarrow \\bar{KE} = \\frac{1}{2}m\\bar{c^2} = \\frac{3}{2}k_BT$$\n— temperature is a direct measure of mean molecular kinetic energy.\n\n### 2.3 rms speed\n\n$$v_{rms} = \\sqrt{\\bar{c^2}} = \\sqrt{\\frac{3PV}{Nm}} = \\sqrt{\\frac{3P}{\\rho}} = \\sqrt{\\frac{3k_BT}{m}}$$\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** Find the rms speed of nitrogen (M = 28 g/mol) at 300 K.\n$$v_{rms} = \\sqrt{\\frac{3RT}{M}} = \\sqrt{\\frac{3 \\times 8.31 \\times 300}{0.028}} = \\sqrt{2.67\\times10^5} = 517 \\text{ m/s}$$",
+      "## 3. Conceptual Relationships\n\n- **To Topic 63:** this derivation executes the model's assumptions.\n- **To Topic 61:** matching with PV = NkT identifies temperature.\n- **To Topic 65:** the KE–temperature relation follows in one line.\n- **To momentum/impulse (Unit 4):** each wall collision is an impulse 2mu.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact derivation in the bank (the related rms-speed and KE numericals belong to Topics 65–66). Practise the 6-step derivation as **NEB-style practice** (4–5m).\n\n### 4.2 Likely question forms\n\n1. Derive $P = \\frac{1}{3}\\rho\\bar{c^2}$ (5m).\n2. Show that $\\bar{KE} = \\frac{3}{2}k_BT$ (3m).\n3. rms-speed numerical (3m).\n\n### 4.3 Common examination mistakes\n\n1. Using $\\bar{u^2}$ instead of $\\bar{c^2}$ in the final step (forgetting the ⅓ from the three dimensions).\n2. Skipping the round-trip time $2l/u$.\n3. Writing pressure as force over volume instead of force over area."
+    ],
+    "confusion": [
+      "**The ⅓ comes from three dimensions:** u² = v² = w² = c̄²/3 on average.",
+      "**Round trip 2l, not l:** the molecule must return before hitting the same wall again."
+    ],
+    "keyPoints": [
+      "P = ⅓ρc̄² = Nm c̄²/3V.",
+      "Matching with PV = NkT gives KE = (3/2)k_BT."
+    ],
+    "importantConcepts": [
+      "**Momentum per collision = 2mu; time per round trip = 2l/u** — the two numbers that build the derivation."
+    ],
+    "examples": [
+      "***N₂ at 300 K*** — v_rms = 517 m/s, faster than a jetliner."
+    ],
+    "universalFacts": [
+      "Oxygen's rms speed at room temperature is ~480 m/s — yet diffusion seems slow because of countless collisions."
+    ],
+    "importantStatements": [
+      "\"The pressure of an ideal gas is two-thirds of the translational kinetic energy per unit volume.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ for the derivation; NEB-style practice (5m derivation, 3m numerical)."
+    ],
+    "examShortTricks": [
+      "\"Six steps: collision → momentum → time → rate → sum → ⅓.\""
+    ],
+    "examNotes": [
+      "Write all six steps; the ⅓ and the averaging are where marks live."
+    ],
+    "formulas": [
+      "- P = Nm c̄²/3V = ⅓ρc̄²\n- ½m c̄² = (3/2)k_BT\n- v_rms = √(3P/ρ) = √(3RT/M)"
+    ],
+    "practice": [
+      "Why does the derivation not need to track molecular paths in detail?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Find the rms speed of hydrogen molecules (M = 2 g/mol) at 300 K.** — v_rms = √(3×8.31×300/0.002) = √(3.74×10⁶) = 1934 m/s ≈ 1.9 km/s — why hydrogen escapes Earth's upper atmosphere."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "The pressure of an ideal gas equals:",
+      "options": [
+        "⅓ρc̄²",
+        "½ρc̄²",
+        "ρc̄²",
+        "3ρc̄²"
+      ],
+      "answer": "A",
+      "explanation": "From the three-dimensional average."
+    },
+    {
+      "question": "The momentum transferred per wall collision is:",
+      "options": [
+        "mu",
+        "2mu",
+        "½mu",
+        "Zero"
+      ],
+      "answer": "B",
+      "explanation": "Reversal of the velocity component."
+    },
+    {
+      "question": "The factor ⅓ arises because:",
+      "options": [
+        "Of wall area",
+        "Motion is three-dimensional",
+        "Molecules are heavy",
+        "Of temperature"
+      ],
+      "answer": "B",
+      "explanation": "u² = v² = w² = c̄²/3."
+    },
+    {
+      "question": "The time between hits on the same wall is:",
+      "options": [
+        "l/u",
+        "2l/u",
+        "u/2l",
+        "l/2u"
+      ],
+      "answer": "B",
+      "explanation": "Full round trip across the box."
+    },
+    {
+      "question": "Matching P = ⅓ρc̄² with PV = NkT gives:",
+      "options": [
+        "KE = kT",
+        "KE = (3/2)kT",
+        "KE = 3kT",
+        "KE = 0"
+      ],
+      "answer": "B",
+      "explanation": "Temperature is molecular KE."
+    },
+    {
+      "question": "v_rms of a gas equals:",
+      "options": [
+        "√(3P/ρ)",
+        "√(P/3ρ)",
+        "3P/ρ",
+        "√(Pρ/3)"
+      ],
+      "answer": "A",
+      "explanation": "From P = ⅓ρc̄²."
+    },
+    {
+      "question": "v_rms of N₂ (M = 28 g/mol) at 300 K ≈",
+      "options": [
+        "117 m/s",
+        "517 m/s",
+        "1934 m/s",
+        "483 m/s"
+      ],
+      "answer": "B",
+      "explanation": "√(3RT/M)."
+    },
+    {
+      "question": "v_rms of H₂ at 300 K ≈",
+      "options": [
+        "483 m/s",
+        "517 m/s",
+        "1934 m/s",
+        "300 m/s"
+      ],
+      "answer": "C",
+      "explanation": "Light molecules move fastest."
+    }
+  ]
 }
