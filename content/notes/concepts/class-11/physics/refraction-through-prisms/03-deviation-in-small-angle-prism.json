@@ -5,19 +5,10 @@
   "topicTitle": "Deviation in small-angle prism",
   "relevance": 100,
   "notes": [
-    "Small-Angle Prism: A prism with small refracting angle A (typically < 10°). For such prisms, the deviation is small and approximately independent of angle of incidence.",
-    "Small Angle Deviation Formula: D ≈ (μ - 1)A where μ is refractive index of prism material and A is prism angle (in radians). Derived from D_min formula using small angle approximations sin θ ≈ θ.",
-    "Derivation: At minimum deviation for small angles: sin((A+D)/2) ≈ (A+D)/2 and sin(A/2) ≈ A/2. So μ ≈ ((A+D)/2)/(A/2) = (A+D)/A = 1 + D/A. Therefore D ≈ (μ - 1)A.",
-    "Independence from Incidence: For small-angle prisms, deviation is nearly constant for a range of incidence angles — unlike large-angle prisms where D varies significantly with i.",
-    "Direct Vision Spectroscope: Uses small-angle crown and flint prisms arranged to produce dispersion without net deviation (direct vision) or deviation without dispersion (achromatic combination).",
-    "Applications: Simple spectroscopes, direct vision prisms, small angle deviation measurements in optics.",
-    "Limitations: Formula breaks down for large A (> 15-20°) or when angles are not small. Full prism formula must be used.",
-    "# Deviation in small-angle prism\n\n## 1. Introduction\nPhysical picture of **Deviation in small-angle prism** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Refraction through Prisms fill pass.\n\n## 2. Concepts and laws\n### Deviation in small-angle prism\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Deviation in small-angle prism — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Deviation in small-angle prism — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Deviation in small-angle prism — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Deviation in small-angle prism — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Thin-Prism Shortcut\n\nFor a slim prism with a small refracting angle, the full prism formula collapses to one tidy line: δ = (n − 1)A. It depends only on the prism angle and the refractive index — the reason thin prisms are so easy to design into optical instruments.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Derivation of δ = (n − 1)A (NEB 2024, 2m)\n\nFor a **small-angled prism** at near-normal incidence, all angles are small, so Snell's law linearises (sin θ ≈ θ in radians):\n- At the first face: $i ≈ n r_1$\n- At the second face: $e ≈ n r_2$\n\nTotal deviation:\n$$\\delta = (i - r_1) + (e - r_2) = (n r_1 - r_1) + (n r_2 - r_2) = (n-1)(r_1 + r_2)$$\nand since $r_1 + r_2 = A$:\n$$\\boxed{\\delta = (n - 1)A}$$\n\n### 2.2 Features of the result\n\n- δ depends **only on n and A** — not on the angle of incidence (for small i).\n- The **deviating power** of a small prism is quoted as (n − 1)A.\n- Valid for small angles in radians; typical thin prisms have A ≈ 1–10°.\n\n### 2.3 Worked numerical\n\n**Q (NEB-style):** A thin prism of angle 4° is made of glass with n = 1.5. Find the deviation.\n$$\\delta = (n-1)A = 0.5 \\times 4° = 2°$$\n\n**Q (NEB-style):** A thin prism produces a deviation of 1.5° at n = 1.5. Find its angle.\n$A = \\dfrac{\\delta}{n-1} = \\dfrac{1.5°}{0.5} = 3°$.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 75:** δ = (n − 1)A is the small-angle limit of the prism formula.\n- **To dispersion:** δ_violet − δ_red = (n_v − n_r)A — thin prisms separate colours gently.\n- **To ophthalmic prisms:** optometrists specify prism power in prism dioptres using exactly this relation.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Optics | Prism | Show that for a small-angled prism, the deviation is δ = (n − 1)A. | 2 | Derivation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Numerical: find δ given A and n (2m).\n2. Find A given δ and n (2m).\n3. State the conditions of validity (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using degrees inside sin θ ≈ θ — the approximation holds only in **radians**.\n2. Forgetting the factor (n − 1) and writing δ = nA.\n3. Applying the formula to large-angle prisms (A = 60°) where it fails."
   ],
   "specificConditions": [
     "Small Angle Requirement: A must be small (< 10°) and angles small for sin θ ≈ θ approximation.",
@@ -25,70 +16,38 @@
     "Monochromatic Light: μ depends on wavelength — formula applies to one color at a time."
   ],
   "formulas": [
-    "Small angle deviation: D ≈ (μ - 1)A",
-    "Small angle prism formula: μ ≈ 1 + D/A",
-    "Full prism formula: μ = sin((A + D_min)/2) / sin(A/2)",
-    "Small angle sin approximation: sin θ ≈ θ (θ in radians)"
+    "- δ = (n − 1)A\n- i ≈ n r₁; e ≈ n r₂ (small angles)\n- r₁ + r₂ = A"
   ],
   "keyPoints": [
-    "Small-angle prism: D ≈ (μ - 1)A.",
-    "Deviation nearly independent of incidence angle.",
-    "Valid for A < 10° and small incidence angles.",
-    "μ ≈ 1 + D/A for quick calculation.",
-    "Breaks down for large angles — use full prism formula."
+    "δ = (n − 1)A for small-angle prisms."
   ],
   "importantStatements": [
-    "Statement 1: For small-angle prism, deviation D ≈ (μ - 1)A.",
-    "Statement 2: Deviation is approximately independent of angle of incidence for small-angle prisms.",
-    "Statement 3: Formula derived using sin θ ≈ θ small angle approximation.",
-    "Statement 4: Valid for prism angle A < 10° approximately.",
-    "Statement 5: μ ≈ 1 + D/A gives refractive index from measured deviation."
+    "\"For a small-angled prism the deviation is independent of the angle of incidence and equals (n − 1)A.\""
   ],
   "importantNotes": [
-    "Convert A to radians if using D = (μ-1)A with dimensional consistency (though degrees work if consistent).",
-    "Approximation error grows as A increases — use full formula for precision.",
-    "This is why small prisms are used in direct vision spectroscopes — predictable deviation."
+    "Verified PYQ: derivation of δ = (n − 1)A (2024, 2m)."
   ],
   "examShortTricks": [
-    "D = (μ-1)A — memorize for small angle prism.",
-    "Valid only for small A (< 10°).",
-    "μ = 1 + D/A — invert to find μ.",
-    "Full formula needed for large A prisms."
+    "\"δ = 0.5 × A for crown glass (n = 1.5).\""
   ],
   "examNotes": [
-    "NEB asks for derivation of D = (μ-1)A from full prism formula.",
-    "Numericals on small angle prism deviation.",
-    "Distinguish when to use small angle vs full prism formula."
+    "Quote the validity conditions (small A, small i, radians) for full marks."
   ],
   "examples": [
-    "Prism A = 5°, μ = 1.5: D = (1.5-1)×5° = 2.5°.",
-    "Prism A = 3°, D measured = 1.2°: μ = 1 + 1.2/3 = 1.4.",
-    "Compare: Full formula for A = 5°, D = 2.5°: μ = sin(3.75°)/sin(2.5°) = 0.0654/0.0436 = 1.50 — matches small angle approx.",
-    "Large angle A = 60°, D_min = 38°: small angle formula gives D = (1.5-1)×60 = 30° — wrong (actual 38°). Shows approximation breakdown."
+    "***A = 4°, n = 1.5*** → δ = 2°."
   ],
   "practiceQuestions": [
-    "Q1. Derive D ≈ (μ - 1)A for small-angle prism from the prism formula.",
-    "Q2. State the conditions under which small-angle approximation is valid.",
-    "Q3. Calculate deviation for a 4° prism of μ = 1.5.",
-    "Q4. Explain why deviation is nearly independent of incidence for small-angle prisms.",
-    "Q5. Compare small-angle result with full prism formula for A = 30°."
+    "**Numerical (2m): A thin prism of A = 6° has n = 1.52. Find δ.** — δ = (1.52 − 1) × 6° = 0.52 × 6° = 3.12°."
   ],
   "practice": [
-    "Calculate D = (μ-1)A for small prisms.",
-    "Derive small angle formula from full prism equation.",
-    "Compare results for small vs large angle prisms.",
-    "Find μ from measured D and known A."
+    "Why do opticians use thin prisms rather than thick ones?"
   ],
   "universalFacts": [
-    "Small angle prisms are used in direct vision spectroscopes where the beam direction is unchanged but spectrum is visible.",
-    "The approximation sin θ ≈ θ has error < 1% for θ < 10° — justifies small angle prism use.",
-    "Amici prisms (direct vision) combine crown and flint glass small prisms for zero net deviation with dispersion."
+    "Optometrists prescribe prism correction in prism dioptres — the same (n − 1)A physics."
   ],
   "confusion": [
-    "Using D = (μ-1)A for large angle prisms: Significant error — only valid for small A.",
-    "Thinking deviation is exactly independent of incidence: Only approximately true for small-angle prisms.",
-    "Forgetting radian/degree consistency in formulas.",
-    "Confusing small-angle deviation with minimum deviation of large prism."
+    "**Radians, not degrees:** sin θ ≈ θ underpins the derivation — the final δ, however, comes out in whatever unit A is quoted in.",
+    "**δ = (n − 1)A is independent of the angle of incidence** — for small i."
   ],
   "mcs": [
     {
@@ -139,6 +98,144 @@
   "animation3D": "small-angle-prism",
   "motionGraphics": "prism-deviation-small",
   "visualType": "small-angle-prism",
-  "summary": "Small-angle prism deviation D ≈ (μ-1)A for A < 10°. Deviation nearly independent of incidence angle. Derived from sin θ ≈ θ approximation. Full prism formula needed for large angles.",
-  "source": "skeleton-v2"
+  "summary": "For a **small-angled prism** at near-normal incidence, Snell's law linearises (sin θ ≈ θ, radians): i ≈ nr₁ and e ≈ nr₂. The total deviation then collapses to $\\delta = (n-1)(r_1 + r_2) = (n-1)A$ — **δ = (n − 1)A** (NEB 2024, 2m). The result is independent of the angle of incidence, scales with the prism angle and with (n − 1), and defines a thin prism's **deviating power**. A 4° prism of n = 1.5 deviates by 2°; reversing the formula recovers A from a measured δ. Validity: small A, small i, radians.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Thin-Prism Shortcut\n\nFor a slim prism with a small refracting angle, the full prism formula collapses to one tidy line: δ = (n − 1)A. It depends only on the prism angle and the refractive index — the reason thin prisms are so easy to design into optical instruments.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Derivation of δ = (n − 1)A (NEB 2024, 2m)\n\nFor a **small-angled prism** at near-normal incidence, all angles are small, so Snell's law linearises (sin θ ≈ θ in radians):\n- At the first face: $i ≈ n r_1$\n- At the second face: $e ≈ n r_2$\n\nTotal deviation:\n$$\\delta = (i - r_1) + (e - r_2) = (n r_1 - r_1) + (n r_2 - r_2) = (n-1)(r_1 + r_2)$$\nand since $r_1 + r_2 = A$:\n$$\\boxed{\\delta = (n - 1)A}$$\n\n### 2.2 Features of the result\n\n- δ depends **only on n and A** — not on the angle of incidence (for small i).\n- The **deviating power** of a small prism is quoted as (n − 1)A.\n- Valid for small angles in radians; typical thin prisms have A ≈ 1–10°.\n\n### 2.3 Worked numerical\n\n**Q (NEB-style):** A thin prism of angle 4° is made of glass with n = 1.5. Find the deviation.\n$$\\delta = (n-1)A = 0.5 \\times 4° = 2°$$\n\n**Q (NEB-style):** A thin prism produces a deviation of 1.5° at n = 1.5. Find its angle.\n$A = \\dfrac{\\delta}{n-1} = \\dfrac{1.5°}{0.5} = 3°$.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 75:** δ = (n − 1)A is the small-angle limit of the prism formula.\n- **To dispersion:** δ_violet − δ_red = (n_v − n_r)A — thin prisms separate colours gently.\n- **To ophthalmic prisms:** optometrists specify prism power in prism dioptres using exactly this relation.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Optics | Prism | Show that for a small-angled prism, the deviation is δ = (n − 1)A. | 2 | Derivation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Numerical: find δ given A and n (2m).\n2. Find A given δ and n (2m).\n3. State the conditions of validity (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using degrees inside sin θ ≈ θ — the approximation holds only in **radians**.\n2. Forgetting the factor (n − 1) and writing δ = nA.\n3. Applying the formula to large-angle prisms (A = 60°) where it fails."
+    ],
+    "confusion": [
+      "**Radians, not degrees:** sin θ ≈ θ underpins the derivation — the final δ, however, comes out in whatever unit A is quoted in.",
+      "**δ = (n − 1)A is independent of the angle of incidence** — for small i."
+    ],
+    "keyPoints": [
+      "δ = (n − 1)A for small-angle prisms."
+    ],
+    "importantConcepts": [
+      "**Deviating power = (n − 1)A** — the product that rates a thin prism."
+    ],
+    "examples": [
+      "***A = 4°, n = 1.5*** → δ = 2°."
+    ],
+    "universalFacts": [
+      "Optometrists prescribe prism correction in prism dioptres — the same (n − 1)A physics."
+    ],
+    "importantStatements": [
+      "\"For a small-angled prism the deviation is independent of the angle of incidence and equals (n − 1)A.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: derivation of δ = (n − 1)A (2024, 2m)."
+    ],
+    "examShortTricks": [
+      "\"δ = 0.5 × A for crown glass (n = 1.5).\""
+    ],
+    "examNotes": [
+      "Quote the validity conditions (small A, small i, radians) for full marks."
+    ],
+    "formulas": [
+      "- δ = (n − 1)A\n- i ≈ n r₁; e ≈ n r₂ (small angles)\n- r₁ + r₂ = A"
+    ],
+    "practice": [
+      "Why do opticians use thin prisms rather than thick ones?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (2m): A thin prism of A = 6° has n = 1.52. Find δ.** — δ = (1.52 − 1) × 6° = 0.52 × 6° = 3.12°."
+    ]
+  },
+  "importantConcepts": [
+    "**Deviating power = (n − 1)A** — the product that rates a thin prism."
+  ],
+  "mcqs": [
+    {
+      "question": "For a small-angle prism, δ equals:",
+      "options": [
+        "nA",
+        "(n−1)A",
+        "(n+1)A",
+        "A/n"
+      ],
+      "answer": "B",
+      "explanation": "Thin-prism formula."
+    },
+    {
+      "question": "NEB 2024 asked the derivation of δ = (n−1)A for:",
+      "options": [
+        "2 marks",
+        "5 marks",
+        "4 marks",
+        "3 marks"
+      ],
+      "answer": "A",
+      "explanation": "2024 paper."
+    },
+    {
+      "question": "The small-angle approximation sin θ ≈ θ requires:",
+      "options": [
+        "Degrees",
+        "Radians",
+        "Gradians",
+        "Any unit"
+      ],
+      "answer": "B",
+      "explanation": "Radian measure only."
+    },
+    {
+      "question": "A = 4°, n = 1.5 ⇒ δ =",
+      "options": [
+        "2°",
+        "4°",
+        "6°",
+        "0.5°"
+      ],
+      "answer": "A",
+      "explanation": "0.5 × 4°."
+    },
+    {
+      "question": "δ = 1.5°, n = 1.5 ⇒ A =",
+      "options": [
+        "1°",
+        "2°",
+        "3°",
+        "6°"
+      ],
+      "answer": "C",
+      "explanation": "A = δ/(n−1)."
+    },
+    {
+      "question": "For a thin prism, δ depends on:",
+      "options": [
+        "i",
+        "n and A only",
+        "Colour only",
+        "Thickness"
+      ],
+      "answer": "B",
+      "explanation": "Independent of i."
+    },
+    {
+      "question": "The formula fails when:",
+      "options": [
+        "A is small",
+        "i is large",
+        "n is large",
+        "Light is monochromatic"
+      ],
+      "answer": "B",
+      "explanation": "Needs small angles."
+    },
+    {
+      "question": "r₁ + r₂ inside the prism equals:",
+      "options": [
+        "δ",
+        "i",
+        "A",
+        "e"
+      ],
+      "answer": "C",
+      "explanation": "Prism geometry identity."
+    }
+  ]
 }

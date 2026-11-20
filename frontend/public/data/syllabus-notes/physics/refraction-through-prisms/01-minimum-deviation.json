@@ -5,74 +5,33 @@
   "topicTitle": "Minimum Deviation Condition",
   "relevance": 100,
   "notes": [
-    "**Minimum Deviation Condition:** This topic covers the fundamental concepts of minimum deviation condition in the physics curriculum.",
-    "Understanding minimum deviation condition is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to minimum deviation condition should be memorized and practiced regularly.",
-    "**Deviation angle (δ):** When a ray of light passes through a prism, it bends at both faces. The total angle between the incident ray's original direction and the emergent ray's direction is called the angle of deviation, $\\delta$.",
-    "**Formula for deviation:** $\\delta = i + e - A$, where $i$ is the angle of incidence, $e$ is the angle of emergence, and $A$ is the prism angle (refracting angle).",
-    "**Minimum deviation (δ_min):** As you vary the angle of incidence $i$, the deviation $\\delta$ changes. There is a unique value of $i$ that gives the SMALLEST possible deviation, called the angle of minimum deviation, $\\delta_{min}$.",
-    "**Symmetric path condition:** At minimum deviation, the ray passes SYMMETRICALLY through the prism: $i = e$ (angle of incidence equals angle of emergence) and $r_1 = r_2 = r$ (angles of refraction at both faces are equal).",
-    "**Geometric consequence:** At minimum deviation, the ray inside the prism is parallel to the base of the prism (for an isosceles prism). This is the shortest path through the prism.",
-    "**Finding δ_min experimentally:** Rotate the prism on a spectrometer table while viewing the emergent ray. The deviation angle decreases to a minimum and then increases. The minimum point is marked by the ray momentarily stopping and reversing direction.",
-    "**Why minimum deviation matters:** At $\\delta_{min}$, the prism formula $n = \\frac{\\sin\\frac{A+\\delta_{min}}{2}}{\\sin\\frac{A}{2}}$ is exact and doesn't require knowing the internal ray path. This makes it the most accurate way to measure refractive index.",
-    "**Curve of δ vs. i:** Plotting deviation $\\delta$ against angle of incidence $i$ gives a U-shaped curve. The lowest point is $\\delta_{min}$. The curve is symmetric about the minimum point (since swapping $i$ and $e$ gives the same deviation).",
-    "**Physical intuition:** At minimum deviation, the light takes the \"path of least resistance\" through the prism. Any deviation from the symmetric path increases the total bending because one face does more bending while the other does less, and the net effect is larger.",
-    "**Small prism approximation:** For a thin prism (small $A$), the minimum deviation is approximately $\\delta_{min} \\approx (n - 1)A$. This is useful for estimating deviation without precise measurements.",
-    "**Dispersion at minimum deviation:** Since refractive index $n$ depends on wavelength ($n_{violet} > n_{red}$), each color has a different $\\delta_{min}$. Violet light deviates more than red light, producing a spectrum.",
-    "**Spectrometer measurement:** In a laboratory spectrometer, $\\delta_{min}$ is found by rotating the prism table until the image of the slit stops moving and reverses direction. The angle between the incident and emergent ray at this point is $\\delta_{min}$.",
-    "**NEB exam focus:** State the condition for minimum deviation ($i = e$, $r_1 = r_2$). Draw the ray diagram showing the symmetric path. Explain why minimum deviation gives the most accurate refractive index measurement.",
-    "**Connection to prisms in optics:** Minimum deviation is used in spectrometers, monochromators, and prism-based optical instruments. It provides the most well-defined relationship between angle and refractive index."
+    "## 1. Topic Introduction — The Prism's Sweet Spot\n\nTurn a prism slowly and the emerging ray swings — the deviation shrinks, reaches a lowest value, then grows again. That lowest value, the **minimum deviation**, happens when the ray passes symmetrically, and it is the key to measuring refractive index in the spectrometer.",
+    "## 2. Fundamental Concepts (NEB 2020, 2021, 2023, 2024)\n\n### 2.1 What is a prism? (NEB 2021)\n\nA **prism** is a transparent refracting element with two plane refracting faces that are **not parallel**. **Two types:** triangular prism (spectrometers, dispersion) and right-angled (totally reflecting) prism (periscopes, binoculars). The **angle of the prism A** is the angle between the two refracting faces.\n\n### 2.2 Deviation and the i–δ curve (NEB 2024)\n\nA prism bends light towards its base by the **angle of deviation** δ = i + e − A. As i increases:\n- δ falls steeply, bottoms out at **minimum deviation δm**, then rises slowly — a **U-shaped curve**.\n- There is a **single minimum** because δ(i) is symmetric about the symmetric path (i = e); moving i either way increases δ (NEB 2024, 2m).\n\n**Condition for minimum deviation (NEB 2023):** the ray passes **symmetrically** through the prism:\n$$i = e \\quad\\text{and}\\quad r_1 = r_2 = \\frac{A}{2}$$\nThe ray inside the prism is then **parallel to the base** (for an isosceles prism).\n\n### 2.3 Minimum deviation and the parallel-to-base ray (NEB 2020, 4m)\n\n**Definition:** minimum deviation is the smallest angle of deviation produced by the prism for given material and light, obtained when the ray passes symmetrically (i = e).\n\n**Derivation sketch:** at minimum deviation the passage is reversible — reversing the emergent ray retraces the incident one. This symmetry forces $r_1 = r_2$, and since $r_1 + r_2 = A$, each equals A/2. With the internal ray making equal angles with both faces, it runs **parallel to the base** of an isosceles prism.\n\n### 2.4 Factors affecting δm (NEB 2024, 2m)\n\nδm increases with (1) the **prism angle A** and (2) the **refractive index n** of the material; it is smaller for longer wavelengths (red deviates least).",
+    "## 3. Conceptual Relationships\n\n- **To Topic 75:** δm feeds directly into the prism formula n = sin((A+δm)/2)/sin(A/2).\n- **To Topic 76:** for small A, δm ≈ (n − 1)A.\n- **To dispersion:** n depends on colour, so δm does too — violet bends more than red.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Optics | Prism | The angle of deviation produced by a prism is: (a) always minimum when the ray passes symmetrically … | 1 | MCQ |\n| 2076/2020 | Optics | Prism | Define minimum deviation and derive that the ray inside the prism is parallel to the base of the prism at minimum deviation. | 4 | Definition + derivation |\n| 2080/2024 | Optics | Prism | Draw the i–δ curve for a prism and explain why there is only one angle of minimum deviation. | 2 | Reasoning |\n| 2080/2024 | Optics | Prism | What is angle of minimum deviation? Write two factors affecting it. | 2 | Definition + factors |\n\n### 4.2 Common examination mistakes\n\n1. Writing i = e as the *definition* of δm without saying \"minimum deviation\".\n2. Forgetting r₁ = r₂ = A/2 in the symmetric case.\n3. Missing the reversibility argument in the parallel-to-base derivation."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in minimum deviation condition.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding.",
-    "❌ Minimum deviation occurs when the ray passes straight through the prism without bending. ✅ Minimum deviation still involves bending — it's the SMALLEST possible total deviation, not zero deviation. The ray still refracts at both surfaces.",
-    "❌ At minimum deviation, the ray is perpendicular to both prism faces. ✅ At minimum deviation, the ray inside the prism is parallel to the BASE (for an isosceles prism), not perpendicular to the faces. The angles of incidence and emergence are equal but not necessarily 90°.",
-    "❌ Any angle of incidence gives the same deviation. ✅ Deviation varies with angle of incidence. Only at one specific value of $i$ does the deviation reach its minimum. For other values of $i$, the deviation is larger.",
-    "❌ The angle of minimum deviation is zero for a prism. ✅ For a prism with $A > 0$ and $n > 1$, the minimum deviation is always positive. Zero deviation would require no refraction, which is impossible for a prism in air.",
-    "❌ Minimum deviation means the ray doesn't bend at all. ✅ \"Minimum\" means the smallest possible, not zero. The ray still bends — it's just the configuration that produces the least total bending.",
-    "❌ At minimum deviation, $r_1 \\neq r_2$. ✅ At minimum deviation, $r_1 = r_2 = A/2$. This is one of the key conditions that defines minimum deviation.",
-    "❌ You can find δ_min without a spectrometer. ✅ While you can approximate δ_min with a simple setup, precise measurement requires a spectrometer to accurately measure the angle between incident and emergent rays."
+    "**Symmetry = minimum:** i = e is the condition at δm, not a general identity.",
+    "**The i–δ curve is U-shaped** — every other angle of incidence gives a larger deviation."
   ],
   "practice": [
-    "Solve at least 5 problems on minimum deviation condition from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type.",
-    "A prism has angle $A = 60°$ and refractive index $n = 1.5$. Find the angle of minimum deviation. At minimum deviation: $n = \\frac{\\sin\\frac{A+\\delta_{min}}{2}}{\\sin\\frac{A}{2}}$. $1.5 = \\frac{\\sin\\frac{60+\\delta_{min}}{2}}{\\sin 30°} = \\frac{\\sin\\frac{60+\\delta_{min}}{2}}{0.5}$. So $\\sin\\frac{60+\\delta_{min}}{2} = 0.75$. $\\frac{60+\\delta_{min}}{2} = \\arcsin(0.75) = 48.59°$. $\\delta_{min} = 97.18 - 60 = 37.18°$.",
-    "Show that at minimum deviation, $r = A/2$. At minimum deviation, $i = e$ and by symmetry $r_1 = r_2$. From the prism geometry: $A = r_1 + r_2 = 2r$. Therefore $r = A/2$. For $A = 60°$, $r = 30°$.",
-    "A glass prism ($n = 1.6$) has minimum deviation $\\delta_{min} = 40°$. Find the prism angle $A$. From $n = \\frac{\\sin\\frac{A+\\delta_{min}}{2}}{\\sin\\frac{A}{2}}$: $1.6 = \\frac{\\sin\\frac{A+40}{2}}{\\sin\\frac{A}{2}}$. Let $x = A/2$: $1.6 \\sin x = \\sin(x + 20°)$. Solving numerically: $x \\approx 30°$, so $A \\approx 60°$.",
-    "Why is the minimum deviation method more accurate than measuring deviation at arbitrary incidence? At minimum deviation, the ray path is symmetric, making the measurement less sensitive to small errors in reading the angles. Also, the deviation is at a stationary point (minimum), so small errors in prism orientation have minimal effect on the measured angle.",
-    "A ray passes through a prism with $A = 50°$ and $n = 1.52$. Find the angle of incidence that produces minimum deviation. At minimum deviation: $r = A/2 = 25°$. By Snell's law at the first face: $\\sin i = n \\sin r = 1.52 \\times \\sin 25° = 1.52 \\times 0.4226 = 0.6424$. $i = \\arcsin(0.6424) = 40.0°$.",
-    "Prove that for a given prism, the angle of incidence that gives minimum deviation is unique. The deviation function $\\delta(i)$ is convex (U-shaped) with a single minimum. This can be shown by taking the derivative $d\\delta/di$ and showing it equals zero at exactly one value of $i$ (where $i = e$)."
+    "Why does a spectrometer measure n at minimum deviation?"
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding minimum deviation condition builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of minimum deviation condition span engineering, physics, economics, and computer science.",
-    "The minimum deviation condition was first studied systematically by Isaac Newton in his optical experiments. He used a prism to separate white light into colors and measured the deviation of each color.",
-    "Spectrometers used in chemistry and physics labs are designed to measure angles of minimum deviation with high precision (to within 1 arcminute or better). This allows determination of refractive index to 4-5 significant figures.",
-    "The concept of minimum deviation applies not just to prisms but to any refracting or reflecting system. Mirrors, lenses, and diffraction gratings all have similar minimum-deflection configurations.",
-    "In fiber optics, the concept of minimum deviation is related to the critical angle and total internal reflection. Light entering an optical fiber at certain angles experiences minimum loss.",
-    "The minimum deviation angle depends on the wavelength of light (dispersion). This is why prisms produce rainbows — different colors have different refractive indices and therefore different minimum deviation angles."
+    "Red light has a smaller δm than violet in the same prism — the seed of dispersion."
   ],
   "animation3D": "refraction-through-prisms",
   "motionGraphics": "refraction-through-prisms",
   "examples": [
-    "Real-world application of Minimum Deviation Condition",
-    "Practical demonstration of Minimum Deviation Condition concepts",
-    "Diagram-based question on Minimum Deviation Condition",
-    "Application in daily life involving Minimum Deviation Condition"
+    "***Spectrometer*** — measuring δm gives n via the prism formula."
   ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Minimum Deviation Condition.",
-    "Q3. Differentiate between various aspects of Minimum Deviation Condition.",
-    "Q4. Derive the key formula related to Minimum Deviation Condition.",
-    "Q5. What are the applications of Minimum Deviation Condition?"
+    "**Reasoning (2m): Why is the deviation at minimum independent of small errors in i?** — Near the minimum the δ(i) curve is flat (slope zero), so small changes in i hardly change δ — measurements are most accurate there."
   ],
-  "formulas": [],
-  "summary": "Minimum Deviation Condition is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "formulas": [
+    "- δ = i + e − A\n- At δm: i = e, r₁ = r₂ = A/2"
+  ],
+  "summary": "A **prism** is a transparent element with two non-parallel refracting faces (triangular or right-angled types), whose **angle A** is the angle between them (NEB 2021). The deviation it produces, δ = i + e − A, traces a **U-shaped curve** with the angle of incidence, dipping to a single **minimum deviation δm** (NEB 2024, 2m). The minimum occurs when the ray passes **symmetrically**: i = e and r₁ = r₂ = A/2, so the internal ray runs parallel to the base of an isosceles prism — proved by reversibility of the light path (NEB 2020, 4m). δm grows with A and with n, and is smaller for red than violet (NEB 2024, 2m) — the gateway to the prism formula and dispersion.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Minimum Deviation Condition applies",
     "Note 2: Minimum Deviation Condition connects to multiple other topics in Science",
@@ -81,23 +40,13 @@
     "Note 5: Minimum Deviation Condition frequently appears in examination questions"
   ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Minimum Deviation Condition",
-    "Note 3: Minimum Deviation Condition has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Minimum Deviation Condition",
-    "Note 5: Cross-check your answers using alternative methods for Minimum Deviation Condition"
+    "Verified PYQs: symmetrical-ray MCQ 2023 1m; definition + parallel-to-base derivation 2020 4m; i–δ curve 2024 2m; δm + factors 2024 2m."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Minimum Deviation Condition formula",
-    "Trick 2: Elimination technique for Minimum Deviation Condition MCQs",
-    "Trick 3: Dimensional analysis shortcut for Minimum Deviation Condition",
-    "Trick 4: Memory aid for Minimum Deviation Condition formulas",
-    "Trick 5: Time-saving approach for Minimum Deviation Condition problems"
+    "\"At δm: i = e, r₁ = r₂ = A/2.\""
   ],
   "examNotes": [
-    "Focus on numerical problems from Minimum Deviation Condition",
-    "Practice previous year questions on Minimum Deviation Condition",
-    "Learn the derivations for Minimum Deviation Condition thoroughly",
-    "Review common mistakes related to Minimum Deviation Condition"
+    "The 2020 4m derivation is the classic — reversibility + symmetry + r₁ + r₂ = A."
   ],
   "mcs": [
     {
@@ -142,11 +91,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Minimum Deviation Condition",
-    "Concept 2: Key theorem or principle in Minimum Deviation Condition",
-    "Concept 3: Important application area of Minimum Deviation Condition",
-    "Concept 4: Fundamental relationship in Minimum Deviation Condition",
-    "Concept 5: Connection between Minimum Deviation Condition and other topics"
+    "**Reversibility proves symmetry:** retracing the emergent ray must retrace the incident one, forcing i = e at the minimum."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Minimum Deviation Condition",
@@ -156,6 +101,147 @@
     "Task 5: Explain Minimum Deviation Condition to a peer or study group"
   ],
   "visualType": "min-deviation",
-  "keyPoints": [],
-  "importantStatements": []
+  "keyPoints": [
+    "At δm: i = e, r₁ = r₂ = A/2, ray parallel to base.",
+    "Single minimum: δ(i) symmetric about the symmetric path."
+  ],
+  "importantStatements": [
+    "\"Minimum deviation is the smallest angle of deviation produced by a prism, obtained when the ray passes symmetrically (i = e).\""
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Prism's Sweet Spot\n\nTurn a prism slowly and the emerging ray swings — the deviation shrinks, reaches a lowest value, then grows again. That lowest value, the **minimum deviation**, happens when the ray passes symmetrically, and it is the key to measuring refractive index in the spectrometer.",
+      "## 2. Fundamental Concepts (NEB 2020, 2021, 2023, 2024)\n\n### 2.1 What is a prism? (NEB 2021)\n\nA **prism** is a transparent refracting element with two plane refracting faces that are **not parallel**. **Two types:** triangular prism (spectrometers, dispersion) and right-angled (totally reflecting) prism (periscopes, binoculars). The **angle of the prism A** is the angle between the two refracting faces.\n\n### 2.2 Deviation and the i–δ curve (NEB 2024)\n\nA prism bends light towards its base by the **angle of deviation** δ = i + e − A. As i increases:\n- δ falls steeply, bottoms out at **minimum deviation δm**, then rises slowly — a **U-shaped curve**.\n- There is a **single minimum** because δ(i) is symmetric about the symmetric path (i = e); moving i either way increases δ (NEB 2024, 2m).\n\n**Condition for minimum deviation (NEB 2023):** the ray passes **symmetrically** through the prism:\n$$i = e \\quad\\text{and}\\quad r_1 = r_2 = \\frac{A}{2}$$\nThe ray inside the prism is then **parallel to the base** (for an isosceles prism).\n\n### 2.3 Minimum deviation and the parallel-to-base ray (NEB 2020, 4m)\n\n**Definition:** minimum deviation is the smallest angle of deviation produced by the prism for given material and light, obtained when the ray passes symmetrically (i = e).\n\n**Derivation sketch:** at minimum deviation the passage is reversible — reversing the emergent ray retraces the incident one. This symmetry forces $r_1 = r_2$, and since $r_1 + r_2 = A$, each equals A/2. With the internal ray making equal angles with both faces, it runs **parallel to the base** of an isosceles prism.\n\n### 2.4 Factors affecting δm (NEB 2024, 2m)\n\nδm increases with (1) the **prism angle A** and (2) the **refractive index n** of the material; it is smaller for longer wavelengths (red deviates least).",
+      "## 3. Conceptual Relationships\n\n- **To Topic 75:** δm feeds directly into the prism formula n = sin((A+δm)/2)/sin(A/2).\n- **To Topic 76:** for small A, δm ≈ (n − 1)A.\n- **To dispersion:** n depends on colour, so δm does too — violet bends more than red.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Optics | Prism | The angle of deviation produced by a prism is: (a) always minimum when the ray passes symmetrically … | 1 | MCQ |\n| 2076/2020 | Optics | Prism | Define minimum deviation and derive that the ray inside the prism is parallel to the base of the prism at minimum deviation. | 4 | Definition + derivation |\n| 2080/2024 | Optics | Prism | Draw the i–δ curve for a prism and explain why there is only one angle of minimum deviation. | 2 | Reasoning |\n| 2080/2024 | Optics | Prism | What is angle of minimum deviation? Write two factors affecting it. | 2 | Definition + factors |\n\n### 4.2 Common examination mistakes\n\n1. Writing i = e as the *definition* of δm without saying \"minimum deviation\".\n2. Forgetting r₁ = r₂ = A/2 in the symmetric case.\n3. Missing the reversibility argument in the parallel-to-base derivation."
+    ],
+    "confusion": [
+      "**Symmetry = minimum:** i = e is the condition at δm, not a general identity.",
+      "**The i–δ curve is U-shaped** — every other angle of incidence gives a larger deviation."
+    ],
+    "keyPoints": [
+      "At δm: i = e, r₁ = r₂ = A/2, ray parallel to base.",
+      "Single minimum: δ(i) symmetric about the symmetric path."
+    ],
+    "importantConcepts": [
+      "**Reversibility proves symmetry:** retracing the emergent ray must retrace the incident one, forcing i = e at the minimum."
+    ],
+    "examples": [
+      "***Spectrometer*** — measuring δm gives n via the prism formula."
+    ],
+    "universalFacts": [
+      "Red light has a smaller δm than violet in the same prism — the seed of dispersion."
+    ],
+    "importantStatements": [
+      "\"Minimum deviation is the smallest angle of deviation produced by a prism, obtained when the ray passes symmetrically (i = e).\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: symmetrical-ray MCQ 2023 1m; definition + parallel-to-base derivation 2020 4m; i–δ curve 2024 2m; δm + factors 2024 2m."
+    ],
+    "examShortTricks": [
+      "\"At δm: i = e, r₁ = r₂ = A/2.\""
+    ],
+    "examNotes": [
+      "The 2020 4m derivation is the classic — reversibility + symmetry + r₁ + r₂ = A."
+    ],
+    "formulas": [
+      "- δ = i + e − A\n- At δm: i = e, r₁ = r₂ = A/2"
+    ],
+    "practice": [
+      "Why does a spectrometer measure n at minimum deviation?"
+    ],
+    "practiceQuestions": [
+      "**Reasoning (2m): Why is the deviation at minimum independent of small errors in i?** — Near the minimum the δ(i) curve is flat (slope zero), so small changes in i hardly change δ — measurements are most accurate there."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "At minimum deviation through a prism:",
+      "options": [
+        "i > e",
+        "i = e",
+        "r₁ > r₂",
+        "δ = 0"
+      ],
+      "answer": "B",
+      "explanation": "Symmetric passage."
+    },
+    {
+      "question": "At δm the internal ray is:",
+      "options": [
+        "Perpendicular to base",
+        "Parallel to base",
+        "At angle A/2 to base",
+        "Curved"
+      ],
+      "answer": "B",
+      "explanation": "r₁ = r₂ = A/2."
+    },
+    {
+      "question": "The i–δ curve is:",
+      "options": [
+        "Straight line",
+        "U-shaped with one minimum",
+        "Always increasing",
+        "Flat"
+      ],
+      "answer": "B",
+      "explanation": "Single turning point."
+    },
+    {
+      "question": "NEB 2023 MCQ: deviation is always minimum when the ray passes:",
+      "options": [
+        "Asymmetrically",
+        "Symmetrically",
+        "Grazingly",
+        "Through the apex"
+      ],
+      "answer": "B",
+      "explanation": "i = e condition."
+    },
+    {
+      "question": "δm increases with:",
+      "options": [
+        "Increasing A and n",
+        "Decreasing A",
+        "Wavelength",
+        "Intensity"
+      ],
+      "answer": "A",
+      "explanation": "Both prism angle and index."
+    },
+    {
+      "question": "Which colour has the smallest δm?",
+      "options": [
+        "Violet",
+        "Green",
+        "Red",
+        "All equal"
+      ],
+      "answer": "C",
+      "explanation": "Red bends least."
+    },
+    {
+      "question": "The relation r₁ + r₂ equals:",
+      "options": [
+        "δ",
+        "A",
+        "i",
+        "e"
+      ],
+      "answer": "B",
+      "explanation": "Prism geometry."
+    },
+    {
+      "question": "At minimum deviation, which equality holds?",
+      "options": [
+        "i = A",
+        "e = A",
+        "i = e",
+        "r₁ = e"
+      ],
+      "answer": "C",
+      "explanation": "Symmetric ray."
+    }
+  ]
 }

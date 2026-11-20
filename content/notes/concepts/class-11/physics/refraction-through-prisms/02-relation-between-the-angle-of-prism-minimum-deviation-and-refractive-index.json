@@ -5,20 +5,10 @@
   "topicTitle": "Relation between the angle of prism, minimum deviation and refractive index",
   "relevance": 100,
   "notes": [
-    "Prism: A transparent optical element with flat, polished surfaces that refract light. Triangular prism has two refracting surfaces inclined at angle A (angle of prism).",
-    "Deviation: Angle between incident ray direction and emergent ray direction. Depends on angle of incidence i, prism angle A, and refractive index μ.",
-    "Minimum Deviation: At a particular angle of incidence, deviation D is minimum (D_min). At this position, ray passes symmetrically: i = e, r₁ = r₂ = r, and ray inside prism is parallel to base.",
-    "Prism Formula at Minimum Deviation: μ = sin((A + D_min)/2) / sin(A/2). This is the most important relation for determining refractive index of prism material.",
-    "Small Angle Prism: For thin prism (small A) and small angles: D_min ≈ (μ - 1)A. Deviation is independent of angle of incidence for small angles.",
-    "Relation r₁ + r₂ = A: At any incidence, sum of refraction angles at two faces equals prism angle.",
-    "Deviation Formula: D = i + e - A where i = incidence angle, e = emergence angle, A = prism angle.",
-    "Factors Affecting Deviation: Deviation depends on prism angle A, refractive index μ, wavelength of light (dispersion), and angle of incidence.",
-    "# Relation between the angle of prism, minimum deviation and refractive index\n\n## 1. Introduction\nPhysical picture of **Relation between the angle of prism** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Refraction through Prisms fill pass.\n\n## 2. Concepts and laws\n### Relation between the angle of prism\n### minimum deviation and refractive index\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Relation between the angle of prism — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Relation between the angle of prism — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Relation between the angle of prism — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Relation between the angle of prism — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Prism Formula\n\nCombine prism geometry with minimum-deviation symmetry and a powerful result drops out: $n = \\frac{\\sin\\frac{A+\\delta_m}{2}}{\\sin\\frac{A}{2}}$. It is how spectrometers measure refractive index, and NEB 2024 carried it as a 5-mark derivation plus a numerical.",
+    "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 Deviation relation δ = i + e − A (NEB 2024, 4m)\n\nAt the first face the ray deviates by (i − r₁); at the second by (e − r₂). Total deviation:\n$$\\delta = (i - r_1) + (e - r_2) = (i + e) - (r_1 + r_2)$$\nFrom the quadrilateral geometry inside the prism (the two normals meet at the prism angle A):\n$$r_1 + r_2 = A \\Rightarrow \\boxed{\\delta = i + e - A}$$\n\n### 2.2 The prism formula (NEB 2024, 5m)\n\nAt minimum deviation: i = e and r₁ = r₂ = r = A/2. So δm = 2i − A → i = (A + δm)/2. Snell's law at the first face:\n$$n = \\frac{\\sin i}{\\sin r} = \\frac{\\sin\\frac{A + \\delta_m}{2}}{\\sin\\frac{A}{2}}$$\n— the **prism formula**; a spectrometer measures A and δm to obtain n.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2024):** A prism of angle 60° has refractive index 1.5. Calculate its angle of minimum deviation.\n$$\\sin\\frac{60° + \\delta_m}{2} = 1.5 \\times \\sin 30° = 0.75$$\n$$\\frac{60° + \\delta_m}{2} = \\sin^{-1}(0.75) = 48.6° \\Rightarrow \\delta_m ≈ 37.2°$$\n\n**Q (4m, 2022):** A prism of refracting angle 60° has n = 1.5. If the angle of incidence is 40° and the internal angle of refraction at the first face is 30°, find the angle of emergence and the deviation.\n- $r_2 = A - r_1 = 60° - 30° = 30°$\n- Emergence: $\\sin e = 1.5 \\times \\sin 30° = 0.75$ → $e = 48.6°$\n- $\\delta = i + e - A = 40° + 48.6° - 60° = 28.6°$\n\n**Q (NEB-style):** A 10° prism gives δm = 2°. Find n.\n$n = \\frac{\\sin(6°)}{\\sin(5°)} = \\frac{0.1045}{0.0872} ≈ 1.20$.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 74:** the formula is built on the δm symmetry conditions.\n- **To Topic 76:** for small A, the formula linearises to δ = (n − 1)A.\n- **To dispersion:** repeating the measurement for different colours gives n(λ) — the spectrometer's real power.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Optics | Prism | A prism of refracting angle 60° has n = 1.5. If i = 40° and the internal angle of refraction r₁ = 30°, find the angle of emergence and the deviation. | 4 | Numerical |\n| 2080/2024 | Optics | Prism | Derive the relation δ = i + e − A for refraction through a prism. | 4 | Derivation |\n| 2080/2024 | Optics | Prism | Derive the expression for the refractive index of a prism in terms of the angle of minimum deviation. | 5 | Derivation |\n| 2080/2024 | Optics | Prism | A prism of angle 60° has refractive index 1.5. Calculate its angle of minimum deviation. | 3 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Using degrees inside trig functions inconsistently — keep the calculator in degree mode.\n2. Forgetting r₁ + r₂ = A in the δ derivation.\n3. Writing δm = i − A instead of δm = 2i − A at minimum deviation."
   ],
   "specificConditions": [
     "Minimum Deviation Condition: i = e, r₁ = r₂ = A/2, ray inside parallel to base — only at this symmetric position is D = D_min.",
@@ -26,77 +16,38 @@
     "Transparent Prism: Material must be transparent in the wavelength range used; absorption affects deviation measurement."
   ],
   "formulas": [
-    "Deviation: D = i + e - A",
-    "Angle relation: r₁ + r₂ = A",
-    "Minimum deviation: μ = sin((A + D_min)/2) / sin(A/2)",
-    "Small angle prism: D_min ≈ (μ - 1)A",
-    "At minimum deviation: i = e, r₁ = r₂ = A/2"
+    "- δ = i + e − A; r₁ + r₂ = A\n- δm = 2i − A at minimum\n- n = sin((A+δm)/2)/sin(A/2)"
   ],
   "keyPoints": [
-    "Prism angle A = r₁ + r₂ at any incidence.",
-    "Deviation D = i + e - A.",
-    "At minimum deviation: i = e, r₁ = r₂ = A/2.",
-    "μ = sin((A + D_min)/2) / sin(A/2) — prism formula.",
-    "Small angle prism: D ≈ (μ - 1)A.",
-    "Deviation depends on μ, A, wavelength, and incidence angle."
+    "δ = i + e − A; n = sin((A+δm)/2)/sin(A/2)."
   ],
   "importantStatements": [
-    "Statement 1: At minimum deviation, refracted ray passes symmetrically through prism (i = e, r₁ = r₂).",
-    "Statement 2: Refractive index μ = sin((A + D_min)/2) / sin(A/2).",
-    "Statement 3: For small-angled prism, D_min ≈ (μ - 1)A.",
-    "Statement 4: Deviation D = i + e - A where i and e are incidence and emergence angles.",
-    "Statement 5: r₁ + r₂ = A at the two refracting surfaces."
+    "\"The refractive index of the prism material is given by the sine ratio of half the sum (A + δm) to half the prism angle.\""
   ],
   "importantNotes": [
-    "Minimum deviation position gives most accurate μ measurement.",
-    "D_min depends on wavelength — dispersion causes different colors to deviate differently.",
-    "The symmetric position (ray parallel to base) is easy to identify experimentally.",
-    "Small angle approximation simplifies calculations but loses accuracy for large A."
+    "Verified PYQs: δ = i + e − A 2024 4m; prism formula 2024 5m; δm numerical 2024 3m; e and δ numerical 2022 4m."
   ],
   "examShortTricks": [
-    "At D_min: i = e, r = A/2 — use this to simplify.",
-    "μ = sin((A+D_min)/2)/sin(A/2) — memorize this prism formula.",
-    "Small angle: D = (μ-1)A — quick estimate.",
-    "D = i + e - A — general deviation formula."
+    "\"Memorise n = sin((A+δm)/2)/sin(A/2) and quote sin⁻¹(0.75) = 48.6°.\""
   ],
   "examNotes": [
-    "NEB frequently asks to derive prism formula μ = sin((A+D_min)/2)/sin(A/2).",
-    "Experimental determination of μ using spectrometer and minimum deviation method.",
-    "Small angle prism numericals using D = (μ-1)A.",
-    "Distinguish deviation (angle through which ray turns) from D_min."
+    "The 2024 5m derivation expects: symmetry conditions → δm = 2i − A → Snell → formula."
   ],
   "examples": [
-    "Glass prism A = 60°, D_min = 37°. μ = sin((60+37)/2)/sin(60/2) = sin(48.5°)/sin(30°) = 0.749/0.5 = 1.498 ≈ 1.5.",
-    "Small angle prism A = 5°, μ = 1.5: D_min ≈ (1.5-1)×5° = 2.5°.",
-    "Prism A = 45°, D_min = 30°: μ = sin(37.5°)/sin(22.5°) = 0.609/0.383 = 1.59."
+    "***NEB 2024*** — A = 60°, n = 1.5: δm ≈ 37.2°."
   ],
   "practiceQuestions": [
-    "Q1. Derive the prism formula μ = sin((A + D_min)/2) / sin(A/2).",
-    "Q2. What is minimum deviation? What is special about the ray path at minimum deviation?",
-    "Q3. For a small angled prism, show that D_min ≈ (μ - 1)A.",
-    "Q4. A prism of angle 60° gives minimum deviation of 38°. Find refractive index.",
-    "Q5. Derive D = i + e - A for deviation through a prism.",
-    "Q6. How does deviation depend on wavelength of light?"
+    "**Numerical (4m): A prism of A = 60° and n = 1.6 is set at minimum deviation. Find δm.** — sin((60+δm)/2) = 1.6 sin 30° = 0.8 → (60+δm)/2 = 53.13° → δm = 46.3°."
   ],
   "practice": [
-    "Calculate μ from A and D_min using prism formula.",
-    "Derive prism formula geometrically.",
-    "Apply small angle approximation D = (μ-1)A.",
-    "Draw ray diagram at minimum deviation position.",
-    "Explain dispersion using deviation-wavelength dependence."
+    "Why is the prism method more accurate than the glass-slab method for n?"
   ],
   "universalFacts": [
-    "The spectrometer with prism is the classic instrument for measuring refractive index accurately.",
-    "Dispersion (μ varies with λ) causes white light to split into colors — violet deviates most, red least.",
-    "Rainbow formation involves refraction, internal reflection, and refraction again in water droplets.",
-    "Prism binoculars and periscopes use total internal reflection in prisms instead of mirrors."
+    "Precision spectrometers measure n to 5 decimal places using this formula — the foundation of historical glassmaking tables."
   ],
   "confusion": [
-    "Confusing deviation angle D with prism angle A.",
-    "Thinking minimum deviation occurs at any incidence: Only at symmetric position (i = e).",
-    "Using small angle formula D = (μ-1)A for large A: Only valid for small A.",
-    "Confusing angle of refraction r with angle of deviation D.",
-    "Forgetting that D_min depends on wavelength (dispersion)."
+    "**r₁ + r₂ = A** — the prism-angle identity that converts two-face geometry into one equation.",
+    "**At δm:** δm = 2i − A, so i = (A + δm)/2 — half-angles everywhere in the prism formula."
   ],
   "mcs": [
     {
@@ -158,6 +109,144 @@
   "animation3D": "prism-deviation",
   "motionGraphics": "prism-ray-diagram",
   "visualType": "prism-minimum-deviation",
-  "summary": "Prism deviation D = i + e - A with r₁ + r₂ = A. At minimum deviation (symmetric passage, i = e, r = A/2): μ = sin((A+D_min)/2)/sin(A/2). Small angle prism: D ≈ (μ-1)A. Deviation depends on μ, A, wavelength.",
-  "source": "skeleton-v2"
+  "summary": "Prism optics rest on two relations. First, the **deviation relation**: δ = (i − r₁) + (e − r₂) with the geometry identity $r_1 + r_2 = A$ gives $\\delta = i + e - A$ (NEB 2024, 4m). Second, at minimum deviation the symmetric passage (i = e, r₁ = r₂ = A/2) plus Snell's law yields the **prism formula** $n = \\frac{\\sin\\frac{A+\\delta_m}{2}}{\\sin\\frac{A}{2}}$ (NEB 2024, 5m). Numerically: a 60° prism with n = 1.5 has δm ≈ 37.2° (NEB 2024, 3m); with i = 40°, r₁ = 30°, the emergent angle is 48.6° and δ = 28.6° (NEB 2022, 4m). This formula is how spectrometers measure refractive index.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Prism Formula\n\nCombine prism geometry with minimum-deviation symmetry and a powerful result drops out: $n = \\frac{\\sin\\frac{A+\\delta_m}{2}}{\\sin\\frac{A}{2}}$. It is how spectrometers measure refractive index, and NEB 2024 carried it as a 5-mark derivation plus a numerical.",
+      "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 Deviation relation δ = i + e − A (NEB 2024, 4m)\n\nAt the first face the ray deviates by (i − r₁); at the second by (e − r₂). Total deviation:\n$$\\delta = (i - r_1) + (e - r_2) = (i + e) - (r_1 + r_2)$$\nFrom the quadrilateral geometry inside the prism (the two normals meet at the prism angle A):\n$$r_1 + r_2 = A \\Rightarrow \\boxed{\\delta = i + e - A}$$\n\n### 2.2 The prism formula (NEB 2024, 5m)\n\nAt minimum deviation: i = e and r₁ = r₂ = r = A/2. So δm = 2i − A → i = (A + δm)/2. Snell's law at the first face:\n$$n = \\frac{\\sin i}{\\sin r} = \\frac{\\sin\\frac{A + \\delta_m}{2}}{\\sin\\frac{A}{2}}$$\n— the **prism formula**; a spectrometer measures A and δm to obtain n.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2024):** A prism of angle 60° has refractive index 1.5. Calculate its angle of minimum deviation.\n$$\\sin\\frac{60° + \\delta_m}{2} = 1.5 \\times \\sin 30° = 0.75$$\n$$\\frac{60° + \\delta_m}{2} = \\sin^{-1}(0.75) = 48.6° \\Rightarrow \\delta_m ≈ 37.2°$$\n\n**Q (4m, 2022):** A prism of refracting angle 60° has n = 1.5. If the angle of incidence is 40° and the internal angle of refraction at the first face is 30°, find the angle of emergence and the deviation.\n- $r_2 = A - r_1 = 60° - 30° = 30°$\n- Emergence: $\\sin e = 1.5 \\times \\sin 30° = 0.75$ → $e = 48.6°$\n- $\\delta = i + e - A = 40° + 48.6° - 60° = 28.6°$\n\n**Q (NEB-style):** A 10° prism gives δm = 2°. Find n.\n$n = \\frac{\\sin(6°)}{\\sin(5°)} = \\frac{0.1045}{0.0872} ≈ 1.20$.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 74:** the formula is built on the δm symmetry conditions.\n- **To Topic 76:** for small A, the formula linearises to δ = (n − 1)A.\n- **To dispersion:** repeating the measurement for different colours gives n(λ) — the spectrometer's real power.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Optics | Prism | A prism of refracting angle 60° has n = 1.5. If i = 40° and the internal angle of refraction r₁ = 30°, find the angle of emergence and the deviation. | 4 | Numerical |\n| 2080/2024 | Optics | Prism | Derive the relation δ = i + e − A for refraction through a prism. | 4 | Derivation |\n| 2080/2024 | Optics | Prism | Derive the expression for the refractive index of a prism in terms of the angle of minimum deviation. | 5 | Derivation |\n| 2080/2024 | Optics | Prism | A prism of angle 60° has refractive index 1.5. Calculate its angle of minimum deviation. | 3 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Using degrees inside trig functions inconsistently — keep the calculator in degree mode.\n2. Forgetting r₁ + r₂ = A in the δ derivation.\n3. Writing δm = i − A instead of δm = 2i − A at minimum deviation."
+    ],
+    "confusion": [
+      "**r₁ + r₂ = A** — the prism-angle identity that converts two-face geometry into one equation.",
+      "**At δm:** δm = 2i − A, so i = (A + δm)/2 — half-angles everywhere in the prism formula."
+    ],
+    "keyPoints": [
+      "δ = i + e − A; n = sin((A+δm)/2)/sin(A/2)."
+    ],
+    "importantConcepts": [
+      "**The prism formula is Snell's law dressed in minimum-deviation symmetry** — the spectrometer's measuring principle."
+    ],
+    "examples": [
+      "***NEB 2024*** — A = 60°, n = 1.5: δm ≈ 37.2°."
+    ],
+    "universalFacts": [
+      "Precision spectrometers measure n to 5 decimal places using this formula — the foundation of historical glassmaking tables."
+    ],
+    "importantStatements": [
+      "\"The refractive index of the prism material is given by the sine ratio of half the sum (A + δm) to half the prism angle.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: δ = i + e − A 2024 4m; prism formula 2024 5m; δm numerical 2024 3m; e and δ numerical 2022 4m."
+    ],
+    "examShortTricks": [
+      "\"Memorise n = sin((A+δm)/2)/sin(A/2) and quote sin⁻¹(0.75) = 48.6°.\""
+    ],
+    "examNotes": [
+      "The 2024 5m derivation expects: symmetry conditions → δm = 2i − A → Snell → formula."
+    ],
+    "formulas": [
+      "- δ = i + e − A; r₁ + r₂ = A\n- δm = 2i − A at minimum\n- n = sin((A+δm)/2)/sin(A/2)"
+    ],
+    "practice": [
+      "Why is the prism method more accurate than the glass-slab method for n?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (4m): A prism of A = 60° and n = 1.6 is set at minimum deviation. Find δm.** — sin((60+δm)/2) = 1.6 sin 30° = 0.8 → (60+δm)/2 = 53.13° → δm = 46.3°."
+    ]
+  },
+  "importantConcepts": [
+    "**The prism formula is Snell's law dressed in minimum-deviation symmetry** — the spectrometer's measuring principle."
+  ],
+  "mcqs": [
+    {
+      "question": "The relation between i, e, A and δ is:",
+      "options": [
+        "δ = i + e + A",
+        "δ = i + e − A",
+        "δ = A − i − e",
+        "δ = i − e"
+      ],
+      "answer": "B",
+      "explanation": "r₁ + r₂ = A."
+    },
+    {
+      "question": "Inside a prism, r₁ + r₂ equals:",
+      "options": [
+        "i",
+        "e",
+        "A",
+        "δ"
+      ],
+      "answer": "C",
+      "explanation": "Quadrilateral geometry."
+    },
+    {
+      "question": "NEB 2024: A = 60°, n = 1.5 ⇒ δm ≈",
+      "options": [
+        "30°",
+        "37.2°",
+        "40°",
+        "48.6°"
+      ],
+      "answer": "B",
+      "explanation": "sin⁻¹(0.75) = 48.6°."
+    },
+    {
+      "question": "NEB 2022: i = 40°, e = 48.6°, A = 60° ⇒ δ =",
+      "options": [
+        "18.6°",
+        "28.6°",
+        "48.6°",
+        "88.6°"
+      ],
+      "answer": "B",
+      "explanation": "i + e − A."
+    },
+    {
+      "question": "At minimum deviation, δm =",
+      "options": [
+        "i − A",
+        "2i − A",
+        "i + A",
+        "A − i"
+      ],
+      "answer": "B",
+      "explanation": "i = e."
+    },
+    {
+      "question": "The prism formula gives:",
+      "options": [
+        "δ in terms of i",
+        "n in terms of A and δm",
+        "A in terms of n",
+        "e in terms of r"
+      ],
+      "answer": "B",
+      "explanation": "Spectrometer measurement."
+    },
+    {
+      "question": "In the prism formula the denominator is:",
+      "options": [
+        "sin(A/2)",
+        "sin A",
+        "sin((A+δm)/2)",
+        "cos(A/2)"
+      ],
+      "answer": "A",
+      "explanation": "Half-angle at the second face."
+    },
+    {
+      "question": "The prism formula is used in:",
+      "options": [
+        "Barometers",
+        "Spectrometers",
+        "Calorimeters",
+        "Voltmeters"
+      ],
+      "answer": "B",
+      "explanation": "Measuring n of glass."
+    }
+  ]
 }
