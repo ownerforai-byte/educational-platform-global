@@ -5,96 +5,54 @@
   "topicTitle": "Power of a lens",
   "relevance": 100,
   "notes": [
-    "Lens power measures convergence or divergence: P=1/f when f is in metres. Its SI-derived unit is the dioptre, 1 D=1 m⁻¹. A converging lens has positive power and a diverging lens negative power in air.",
-    "Worked example: f=+25 cm=+0.25 m gives P=+4 D. A diverging lens with f=−50 cm=−0.50 m has P=−2 D.",
-    "Thin lenses in contact have additive powers. A +4 D lens and −1.5 D lens make Peq=+2.5 D, so feq=1/2.5=0.40 m.",
-    "Power is not magnification: focal length determines power, while image size and orientation also depend on object distance through the lens equation.",
-    "For separated lenses the equivalent power includes separation; the simple algebraic sum applies only when thin lenses are in contact or separation is negligible.",
-    "The lens-maker formula uses the relative index. In water the factor (μ_glass/μ_water − 1) is smaller than (μ_glass − 1) in air, so the same glass lens has a longer focal length and a smaller power. A glass lens does not keep its air power when it is submerged.",
-    "# Power of a lens\n\n## 1. Introduction\nPhysical picture of **Power of a lens** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Lenses fill pass.\n\n## 2. Concepts and laws\n### Power of a lens\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Power of a lens — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Power of a lens — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Power of a lens — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Power of a lens — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Measuring a Lens in Dioptres\n\nOpticians never quote focal lengths; they quote **power** — the reciprocal of focal length in dioptres. A +3 D lens bends light three times as strongly as a +1 D lens, and contact prescriptions, camera lenses and spectacles all speak this language.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Power of a lens\n\n$$P = \\frac{1}{f} \\quad \\text{(f in metres)}, \\qquad \\text{unit: dioptre (D)} = \\text{m}^{-1}$$\n- Convex (converging) lens → **positive** power; concave (diverging) → **negative**.\n- A shorter focal length means a **stronger** lens: f = 25 cm → P = +4 D; f = 50 cm → P = +2 D.\n- Physically, power measures the angle through which the lens bends a ray at height h from the axis.\n\n### 2.2 Combination of thin lenses in contact\n\nFor two or more thin lenses touching, powers simply **add**:\n$$P = P_1 + P_2 + \\cdots \\qquad \\frac{1}{F} = \\frac{1}{f_1} + \\frac{1}{f_2}$$\n— the reason optometrists can stack lens powers in a trial frame.\n\n### 2.3 Vision correction (NEB 2024, 3m)\n\n- **Myopia (near-sight):** eyeball too long — distant objects focus **in front of** the retina. Corrected with a **concave (diverging)** lens of negative power, pushing the image back onto the retina.\n- **Hypermetropia (far-sight):** eyeball too short — near objects focus **behind** the retina. Corrected with a **convex (converging)** lens of positive power, pulling the focus forward.\n\n### 2.4 Worked numericals\n\n**Q (2m, 2024):** Two thin lenses of powers +5 D and −2 D are placed in contact. Find the power and focal length of the combination.\n$$P = +5 + (-2) = +3 \\text{ D (net converging)} \\qquad f = \\frac{100}{P(\\text{in D})} = \\frac{100}{3} ≈ 33.3 \\text{ cm}$$\n\n**Q (NEB-style):** A person needs glasses of power −2.5 D. What defect do they have and what is the focal length?\nNegative power → concave lens → **myopia**; f = −100/2.5 = −40 cm.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 77:** P = 1/f converts between the two lens \"currencies\".\n- **To Topic 78:** the lens maker's formula gives f, hence P, at design time.\n- **To combinations:** adding powers is the optical analogue of adding conductances in parallel.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Optics | Lenses | Two thin lenses of powers +5 D and −2 D are placed in contact. Find the power and focal length of the combination. | 2 | Numerical |\n| 2080/2024 | Optics | Lenses | What are myopia and hypermetropia? Which lenses correct them? | 3 | Definitions |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define power of a lens and its unit (2m).\n2. f = 25 cm → power? (1–2m)\n3. Find the combined focal length of two lenses in contact (2–3m).\n\n### 4.3 Common examination mistakes\n\n1. Mixing units: f must be in **metres** before inverting (or use f(cm) = 100/P).\n2. Forgetting the sign of a diverging lens's power.\n3. Saying myopia needs a convex lens — it is the opposite."
   ],
   "confusion": [
-    "Using centimetres directly produces a power 100 times too large.",
-    "Separated or thick lens systems require an additional relation.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Dioptres need metres:** f = 20 cm → P = +5 D, not +0.05 D.",
+    "**Myopia → concave (−); hypermetropia → convex (+).**"
   ],
   "practice": [
-    "Find power for f=−40 cm.",
-    "Two thin lenses of +3 D and −5 D are in contact. Find feq.",
-    "Why is lens power not magnification?"
+    "Why can an optometrist just add prescription powers?"
   ],
   "universalFacts": [
-    "Convert focal length to metres before calculating dioptres.",
-    "Add powers algebraically only for thin lenses in contact.",
-    "The sign distinguishes convergence from divergence."
+    "Spectacle prescriptions are written in dioptres: −2.5 D myopia correction, +1.75 D hypermetropia correction."
   ],
   "animation3D": "lenses",
   "motionGraphics": "lenses",
   "examples": [
-    "f=+0.25 m gives +4 D; f=−0.50 m gives −2 D.",
-    "+4 D and −1.5 D in contact give +2.5 D, feq=0.40 m.",
-    "The lens-maker formula uses the relative index. In water the factor (μ_glass/μ_water − 1) is smaller than (μ_glass − 1) in air, so the same glass lens has a longer focal length and a smaller power. A glass lens does not keep its air power when it is submerged.",
-    "The working relations are P = 1/f and A lens in water is weaker if the glass index is closer to the water index. Name each symbol, convert the data into SI units, and only then substitute.",
-    "A glass lens has P = 5.0 D in air, from (μ − 1) = 0.50. In water the relative factor becomes 0.17 instead of 0.50. Estimate the power in water."
+    "***NEB 2024*** — +5 D and −2 D in contact: +3 D, f ≈ 33.3 cm."
   ],
   "practiceQuestions": [
-    "Find power for f=−40 cm.",
-    "Two thin lenses of +3 D and −5 D are in contact. Find feq.",
-    "Why is lens power not magnification?"
+    "**Numerical (2m): Two lenses of powers +4 D and +2 D in contact. Find the combined focal length.** — P = 6 D → f = 1/6 m ≈ 16.7 cm."
   ],
   "formulas": [
-    "P=1/f with f in metres; 1 D=1 m⁻¹.",
-    "Contact thin lenses: Peq=ΣPi and feq=1/Peq."
+    "- P = 1/f (dioptre, f in m)\n- P = P₁ + P₂ (contact)\n- f(cm) = 100/P"
   ],
   "keyPoints": [
-    "Convert focal length to metres before calculating dioptres.",
-    "Add powers algebraically only for thin lenses in contact.",
-    "The sign distinguishes convergence from divergence.",
-    "P = 1/f",
-    "A lens in water is weaker if the glass index is closer to the water index",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "P = 1/f (metres), unit dioptre; powers add in contact."
   ],
-  "summary": "Lens power is signed reciprocal focal length in metres. Contact lens powers add, but magnification still depends on object position.",
+  "summary": "The **power** of a lens is $P = 1/f$ with f in metres, measured in **dioptres** (D): convex lenses positive, concave negative; a shorter focal length is a stronger lens. Thin lenses in contact simply **add powers**: P = P₁ + P₂ — NEB 2024's +5 D and −2 D pair gives +3 D, f = 100/3 ≈ 33.3 cm (2m). Power language powers vision correction: **myopia** (eyeball too long, image in front of the retina) needs a **concave** lens; **hypermetropia** (eyeball too short, image behind the retina) needs a **convex** lens (NEB 2024, 3m).",
   "specialNotes": [
     "Using centimetres directly produces a power 100 times too large.",
     "Separated or thick lens systems require an additional relation."
   ],
   "importantStatements": [
-    "Convert focal length to metres before calculating dioptres.",
-    "Add powers algebraically only for thin lenses in contact.",
-    "The sign distinguishes convergence from divergence."
+    "\"The power of a lens is the reciprocal of its focal length expressed in metres.\""
   ],
   "importantNotes": [
-    "Convert focal length to metres before calculating dioptres.",
-    "Add powers algebraically only for thin lenses in contact.",
-    "The sign distinguishes convergence from divergence."
+    "Verified PYQs: combination of powers 2024 2m; myopia and hypermetropia 2024 3m."
   ],
   "examShortTricks": [
-    "P=1/f with f in metres; 1 D=1 m⁻¹.",
-    "Contact thin lenses: Peq=ΣPi and feq=1/Peq."
+    "\"f(cm) = 100/P — a 2 dioptre lens has f = 50 cm.\""
   ],
   "examNotes": [
-    "Find power for f=−40 cm.",
-    "Two thin lenses of +3 D and −5 D are in contact. Find feq.",
-    "Why is lens power not magnification?"
+    "Name the corrective lens *and* its sign for the 3m vision question."
   ],
   "importantConcepts": [
-    "Convert focal length to metres before calculating dioptres.",
-    "Add powers algebraically only for thin lenses in contact.",
-    "The sign distinguishes convergence from divergence.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Power measures bending strength** — shorter focus, stronger lens, higher dioptres."
   ],
   "importantTasks": [
     "Find power for f=−40 cm.",
@@ -152,44 +110,92 @@
   ],
   "mcqs": [
     {
-      "question": "Submerging a glass lens in water",
+      "question": "Power of a lens is:",
       "options": [
-        "Increases its power",
-        "Decreases its power",
-        "Does not change f",
-        "Makes it a mirror"
+        "f",
+        "1/f",
+        "f²",
+        "1/f²"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "f in metres."
     },
     {
-      "question": "The reason is",
+      "question": "The unit of lens power is:",
       "options": [
-        "A smaller relative index",
-        "A change of mass",
-        "Spherical aberration only",
-        "The colour"
+        "Watt",
+        "Dioptre",
+        "Candela",
+        "Lumen"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "m⁻¹."
     },
     {
-      "question": "Power is",
+      "question": "A converging lens has power that is:",
       "options": [
-        "1/f in metres",
-        "f in centimetres",
-        "The radius",
-        "μ only"
+        "Negative",
+        "Positive",
+        "Zero",
+        "Infinite"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Convex convention."
     },
     {
-      "question": "The shape in this comparison",
+      "question": "NEB 2024: +5 D and −2 D in contact give:",
       "options": [
-        "Is unchanged",
-        "Must be re-ground",
-        "Loses both radii",
-        "Becomes flat"
+        "+7 D",
+        "+3 D",
+        "−3 D",
+        "10 D"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Powers add."
+    },
+    {
+      "question": "NEB 2024: the combination's focal length ≈",
+      "options": [
+        "33.3 cm",
+        "20 cm",
+        "50 cm",
+        "3.33 cm"
+      ],
+      "answer": "A",
+      "explanation": "100/3."
+    },
+    {
+      "question": "Myopia is corrected with:",
+      "options": [
+        "Convex lens",
+        "Concave lens",
+        "Cylindrical lens",
+        "Prism"
+      ],
+      "answer": "B",
+      "explanation": "Diverging correction."
+    },
+    {
+      "question": "Hypermetropia: images focus",
+      "options": [
+        "In front of retina",
+        "Behind the retina",
+        "On the cornea",
+        "At infinity"
+      ],
+      "answer": "B",
+      "explanation": "Eyeball too short."
+    },
+    {
+      "question": "A lens of f = 25 cm has power:",
+      "options": [
+        "+2 D",
+        "+4 D",
+        "+0.04 D",
+        "+25 D"
+      ],
+      "answer": "B",
+      "explanation": "1/0.25."
     }
   ],
   "exercises": [
@@ -205,5 +211,50 @@
       "answer": "About 1.7 D in water."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Measuring a Lens in Dioptres\n\nOpticians never quote focal lengths; they quote **power** — the reciprocal of focal length in dioptres. A +3 D lens bends light three times as strongly as a +1 D lens, and contact prescriptions, camera lenses and spectacles all speak this language.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Power of a lens\n\n$$P = \\frac{1}{f} \\quad \\text{(f in metres)}, \\qquad \\text{unit: dioptre (D)} = \\text{m}^{-1}$$\n- Convex (converging) lens → **positive** power; concave (diverging) → **negative**.\n- A shorter focal length means a **stronger** lens: f = 25 cm → P = +4 D; f = 50 cm → P = +2 D.\n- Physically, power measures the angle through which the lens bends a ray at height h from the axis.\n\n### 2.2 Combination of thin lenses in contact\n\nFor two or more thin lenses touching, powers simply **add**:\n$$P = P_1 + P_2 + \\cdots \\qquad \\frac{1}{F} = \\frac{1}{f_1} + \\frac{1}{f_2}$$\n— the reason optometrists can stack lens powers in a trial frame.\n\n### 2.3 Vision correction (NEB 2024, 3m)\n\n- **Myopia (near-sight):** eyeball too long — distant objects focus **in front of** the retina. Corrected with a **concave (diverging)** lens of negative power, pushing the image back onto the retina.\n- **Hypermetropia (far-sight):** eyeball too short — near objects focus **behind** the retina. Corrected with a **convex (converging)** lens of positive power, pulling the focus forward.\n\n### 2.4 Worked numericals\n\n**Q (2m, 2024):** Two thin lenses of powers +5 D and −2 D are placed in contact. Find the power and focal length of the combination.\n$$P = +5 + (-2) = +3 \\text{ D (net converging)} \\qquad f = \\frac{100}{P(\\text{in D})} = \\frac{100}{3} ≈ 33.3 \\text{ cm}$$\n\n**Q (NEB-style):** A person needs glasses of power −2.5 D. What defect do they have and what is the focal length?\nNegative power → concave lens → **myopia**; f = −100/2.5 = −40 cm.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 77:** P = 1/f converts between the two lens \"currencies\".\n- **To Topic 78:** the lens maker's formula gives f, hence P, at design time.\n- **To combinations:** adding powers is the optical analogue of adding conductances in parallel.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Optics | Lenses | Two thin lenses of powers +5 D and −2 D are placed in contact. Find the power and focal length of the combination. | 2 | Numerical |\n| 2080/2024 | Optics | Lenses | What are myopia and hypermetropia? Which lenses correct them? | 3 | Definitions |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define power of a lens and its unit (2m).\n2. f = 25 cm → power? (1–2m)\n3. Find the combined focal length of two lenses in contact (2–3m).\n\n### 4.3 Common examination mistakes\n\n1. Mixing units: f must be in **metres** before inverting (or use f(cm) = 100/P).\n2. Forgetting the sign of a diverging lens's power.\n3. Saying myopia needs a convex lens — it is the opposite."
+    ],
+    "confusion": [
+      "**Dioptres need metres:** f = 20 cm → P = +5 D, not +0.05 D.",
+      "**Myopia → concave (−); hypermetropia → convex (+).**"
+    ],
+    "keyPoints": [
+      "P = 1/f (metres), unit dioptre; powers add in contact."
+    ],
+    "importantConcepts": [
+      "**Power measures bending strength** — shorter focus, stronger lens, higher dioptres."
+    ],
+    "examples": [
+      "***NEB 2024*** — +5 D and −2 D in contact: +3 D, f ≈ 33.3 cm."
+    ],
+    "universalFacts": [
+      "Spectacle prescriptions are written in dioptres: −2.5 D myopia correction, +1.75 D hypermetropia correction."
+    ],
+    "importantStatements": [
+      "\"The power of a lens is the reciprocal of its focal length expressed in metres.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: combination of powers 2024 2m; myopia and hypermetropia 2024 3m."
+    ],
+    "examShortTricks": [
+      "\"f(cm) = 100/P — a 2 dioptre lens has f = 50 cm.\""
+    ],
+    "examNotes": [
+      "Name the corrective lens *and* its sign for the 3m vision question."
+    ],
+    "formulas": [
+      "- P = 1/f (dioptre, f in m)\n- P = P₁ + P₂ (contact)\n- f(cm) = 100/P"
+    ],
+    "practice": [
+      "Why can an optometrist just add prescription powers?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (2m): Two lenses of powers +4 D and +2 D in contact. Find the combined focal length.** — P = 6 D → f = 1/6 m ≈ 16.7 cm."
+    ]
+  }
 }

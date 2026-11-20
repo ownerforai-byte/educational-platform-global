@@ -5,20 +5,10 @@
   "topicTitle": "Spherical lenses, angular magnification",
   "relevance": 100,
   "notes": [
-    "Spherical Lens: A lens is a transparent medium bounded by two spherical surfaces (or one plane and one spherical). Convex lens (converging) is thicker at center; concave lens (diverging) is thinner at center.",
-    "Lens Maker's Formula: $\\frac{1}{f} = (\\mu - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$ where $\\mu$ is refractive index of lens material relative to medium, $R_1$ and $R_2$ are radii of curvature (Cartesian sign convention).",
-    "Lens Formula: $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$ using sign convention (u negative for object on left). Magnification $m = v/u = h_i/h_o$.",
-    "Power of Lens: $P = 1/f$ (f in metres). Unit: dioptre (D). Convex lens has positive power; concave has negative power. Lenses in contact: $P = P_1 + P_2$.",
-    "Combination of Lenses: Two lenses separated by distance d: equivalent focal length $\\frac{1}{F} = \\frac{1}{f_1} + \\frac{1}{f_2} - \\frac{d}{f_1 f_2}$. Power: $P = P_1 + P_2 - d P_1 P_2$.",
-    "Angular Magnification: For a simple magnifier, angular magnification $M = \\theta_i/\\theta_o$. When image at near point: $M = 1 + D/f$; when image at infinity: $M = D/f$, where $D = 25\\text{ cm}$ (least distance of distinct vision).",
-    "Compound Microscope: Total magnification $M = m_o \\times m_e = (v_o/u_o)(1 + D/f_e)$ (final image at near point) or $(v_o/u_o)(D/f_e)$ (at infinity).",
-    "Astronomical Telescope: Angular magnification $M = f_o/f_e$ (normal adjustment, final at infinity) or $M = (f_o/f_e)(1 + f_e/D)$ (final at near point). Length $L = f_o + f_e$.",
-    "# Spherical lenses, angular magnification\n\n## 1. Introduction\nPhysical picture of **Spherical lenses** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Lenses fill pass.\n\n## 2. Concepts and laws\n### Spherical lenses\n### angular magnification\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Spherical lenses — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Spherical lenses — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Spherical lenses — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Spherical lenses — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Lens Formula\n\nA lens bends light twice — once entering, once leaving — and the combined effect focuses rays to an image. The lens formula $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$, its magnification $m = v/u$, and the angular magnification of a magnifier make up the working toolkit of all simple optics.",
+    "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 Spherical lenses\n\nA **spherical lens** has two spherical refracting surfaces. **Convex (converging)** lenses are thicker in the middle; **concave (diverging)** lenses thinner. Key points: optical centre O, principal foci F and F′, focal length f (positive for convex, negative for concave).\n\n### 2.2 Lens formula and magnification\n\n$$\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f} \\qquad m = \\frac{v}{u} = \\frac{h'}{h}$$\n(Cartesian convention: distances measured from the lens; real object u negative, real image v positive for a convex lens; f positive for convex.)\n\n### 2.3 Angular magnification\n\n**Angular magnification** = angle subtended at the eye with the instrument ÷ angle subtended by the unaided eye. A **simple microscope** (single short-focus convex lens, object just inside F) with the image at the near point D gives:\n$$m = 1 + \\frac{D}{f} \\quad (D ≈ 25 \\text{ cm})$$\nand for relaxed viewing at infinity, m ≈ D/f (NEB 2024, 2m).\n\n### 2.4 Worked numericals\n\n**Q (3m, 2024):** An object is placed 30 cm from a convex lens of focal length 20 cm. Find the image distance and magnification.\n$$\\frac{1}{v} = \\frac{1}{f} + \\frac{1}{u}\\text{-form: } \\frac{1}{v} = \\frac{1}{20} - \\frac{1}{-30} = \\frac{1}{20} + \\frac{1}{30} = \\frac{5}{60} \\Rightarrow v = 60 \\text{ cm}$$\n$$m = \\frac{v}{u} = \\frac{60}{-30} = -2$$\n— real image 60 cm behind the lens, inverted and twice as large.\n\n**Q (4m, 2023):** A convex lens of focal length 15 cm forms a real image twice the size of the object. Find the positions of the object and the image.\n- Real image → inverted → m = −2 → v = 2u (with signs: u = −x, v = +2x)\n- $\\frac{1}{2x} + \\frac{1}{x} = \\frac{1}{15}$ → $\\frac{3}{2x} = \\frac{1}{15}$ → x = 22.5 cm\n- Object 22.5 cm in front; image 45 cm behind the lens.\n\n**Q (2m, 2024):** A simple microscope has f = 5 cm; find its magnifying power with the image at the near point.\n$m = 1 + \\frac{D}{f} = 1 + \\frac{25}{5} = 6$.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 78:** the lens maker's formula predicts f from the surfaces' radii.\n- **To Topic 79:** P = 1/f in dioptres; lens combinations add powers.\n- **To the mirror formula (Topic 69):** same algebra, different signs — minus in the lens formula, plus in the mirror formula.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Optics | Lenses | A convex lens of focal length 15 cm forms a real image which is twice the size of the object. Find the positions of the object and the image. | 4 | Numerical |\n| 2080/2024 | Optics | Lenses | An object is placed 30 cm from a convex lens of focal length 20 cm. Find the image distance and magnification. | 3 | Numerical |\n| 2080/2024 | Optics | Lenses | What is a simple microscope? Write its magnifying power when the image forms at the near point. | 2 | Definition |\n\n### 4.2 Common examination mistakes\n\n1. Sign chaos: the lens formula has **1/v − 1/u**, not 1/v + 1/u.\n2. Forgetting that a real image in a lens is on the *opposite* side from the object.\n3. Using m = v/u without the sign — inverted images need m < 0."
   ],
   "specificConditions": [
     "Sign Convention: Light travels left to right. Distances measured from optical centre. Object distance u is negative (object on left), focal length f positive for convex, negative for concave.",
@@ -26,73 +16,38 @@
     "Paraxial Rays: Formulas valid for rays close to principal axis making small angles."
   ],
   "formulas": [
-    "Lens maker: $\\frac{1}{f} = (\\mu - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$",
-    "Lens formula: $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$",
-    "Magnification: $m = v/u = h_i/h_o$",
-    "Power: $P = 1/f$ (dioptre, f in m)",
-    "Lenses in contact: $P = P_1 + P_2$",
-    "Angular magnification (image at D): $M = 1 + D/f$",
-    "Angular magnification (image at infinity): $M = D/f$",
-    "Compound microscope: $M = (v_o/u_o)(1 + D/f_e)$",
-    "Telescope: $M = f_o/f_e$ (normal adjustment)"
+    "- 1/v − 1/u = 1/f\n- m = v/u = h'/h\n- Simple microscope: m = 1 + D/f (near point); m ≈ D/f (relaxed)"
   ],
   "keyPoints": [
-    "Convex lens converges; concave lens diverges.",
-    "Lens maker's formula relates f to μ, R₁, R₂.",
-    "Power P = 1/f in dioptres; positive for convex, negative for concave.",
-    "Angular magnification: M = 1 + D/f (near point), M = D/f (infinity).",
-    "Telescope magnification: M = fₒ/fₑ."
+    "1/v − 1/u = 1/f; m = v/u; angular magnification m = 1 + D/f (near point)."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"The angular magnification of a simple microscope is 1 + D/f with the image at the near point.\""
+  ],
   "importantNotes": [
-    "Always apply sign convention: u negative for real object, f positive for convex lens.",
-    "D = 25 cm is the standard least distance of distinct vision for normal eye.",
-    "For lenses in contact, powers add directly: P = P₁ + P₂.",
-    "Real images are inverted (m negative); virtual images are erect (m positive)."
+    "Verified PYQs: lens numerical 2023 4m and 2024 3m; simple microscope 2024 2m."
   ],
   "examShortTricks": [
-    "Convex lens: f positive, P positive. Concave lens: f negative, P negative.",
-    "For magnifier: image at D → M = 1 + D/f; image at ∞ → M = D/f.",
-    "Telescope: M = fₒ/fₑ — long objective, short eyepiece for high magnification.",
-    "Lenses in contact: add powers, not focal lengths."
+    "\"1/v = 1/f + 1/u with signs; m = v/u carries the sign of the image.\""
   ],
   "examNotes": [
-    "NEB frequently asks for lens maker's formula derivation and lens formula numericals.",
-    "Simple magnifier and telescope magnification are standard exam topics.",
-    "Power of lens and combination of lenses are common short-answer questions.",
-    "Sign convention errors lose marks — always state it clearly."
+    "State image nature (real/virtual, erect/inverted) after every lens numerical."
   ],
   "examples": [
-    "A convex lens has f = 20 cm. Power P = 1/0.20 = 5 D.",
-    "Lens with μ = 1.5, R₁ = +30 cm, R₂ = -30 cm (biconvex): 1/f = (1.5-1)(1/30 - 1/(-30)) = 0.5 × 2/30 = 1/30, so f = 30 cm.",
-    "Simple magnifier f = 5 cm. Image at D = 25 cm: M = 1 + 25/5 = 6. Image at infinity: M = 25/5 = 5.",
-    "Telescope fₒ = 100 cm, fₑ = 5 cm: M = 100/5 = 20×, length L = 105 cm."
+    "***NEB 2024*** — u = 30 cm, f = 20 cm → v = 60 cm, m = −2."
   ],
   "practiceQuestions": [
-    "Q1. State and derive lens maker's formula.",
-    "Q3. A convex lens of focal length 15 cm forms an image of an object placed 30 cm away. Find image position and magnification.",
-    "Q4. Calculate angular magnification of a simple microscope with f = 5 cm for normal adjustment.",
-    "Q5. Two lenses of powers +2 D and -3 D are in contact. Find equivalent focal length.",
-    "Q6. An astronomical telescope has fₒ = 120 cm and fₑ = 6 cm. Find magnification and length."
+    "**Numerical (4m): A convex lens of f = 12 cm forms a real image 3× the object's size. Find u and v.** — m = −3 → v = 3u (signs: u = −x, v = 3x). 1/(3x) + 1/x = 1/12 → 4/(3x) = 1/12 → x = 16 cm. Object 16 cm in front, image 48 cm behind."
   ],
   "practice": [
-    "Apply lens maker's formula to find f from μ, R₁, R₂.",
-    "Use lens formula to find v, m for given u and f.",
-    "Calculate power of lenses and combinations.",
-    "Compute angular magnification for magnifier, microscope, telescope.",
-    "Solve numericals on lens combinations in contact."
+    "Why does a magnifying glass work better with the object just inside the focus?"
   ],
   "universalFacts": [
-    "The human eye has a variable-focus lens (accommodation) and forms images on the retina.",
-    "Cameras use convex lens systems to focus light onto sensors/film.",
-    "Galileo's telescope used a convex objective and concave eyepiece; Kepler's design uses two convex lenses.",
-    "The magnifying power depends on the angle subtended at the eye, not the size of the image on the retina."
+    "The eye's own lens changes focal length (accommodation) to keep images on the retina — a variable-focus lens."
   ],
   "confusion": [
-    "Confusing lens formula sign: 1/v - 1/u = 1/f vs mirror formula 1/v + 1/u = 1/f.",
-    "Thinking magnification m = v/u applies to angular magnification: Linear m = v/u, angular M = θ'/θ — different concepts.",
-    "Believing power adds for separated lenses: Powers add only for lenses in contact (d = 0).",
-    "Using D = 25 cm for all eyes: D varies with age and individual (near point changes)."
+    "**Lens vs mirror formula:** 1/v − 1/u = 1/f for lenses; 1/v + 1/u = 1/f for mirrors — a minus-sign apart.",
+    "**Real image through a lens forms on the far side** — light actually passes through the lens."
   ],
   "mcs": [
     {
@@ -154,6 +109,144 @@
   "animation3D": "lenses",
   "motionGraphics": "ray-diagrams-lens",
   "visualType": "spherical-lens",
-  "summary": "Spherical lenses converge (convex) or diverge (concave) light. Lens maker's formula gives f from μ, R₁, R₂. Power P = 1/f in dioptres. Angular magnification for magnifier: M = 1 + D/f (near point) or D/f (infinity). Telescope: M = fₒ/fₑ.",
-  "source": "skeleton-v2"
+  "summary": "**Spherical lenses** refract light twice: convex lenses converge (f > 0), concave lenses diverge (f < 0). The **lens formula** $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$ with $m = v/u$ locates and sizes images; real images form on the far side and are inverted. NEB 2024's case (u = 30 cm, f = 20 cm) gives v = 60 cm, m = −2 (3m); NEB 2023's real image twice the size with f = 15 cm puts the object at 22.5 cm and the image at 45 cm (4m). **Angular magnification** — the ratio of angles subtended with and without the instrument — for a simple microscope at the near point is $m = 1 + D/f$ with D ≈ 25 cm (NEB 2024, 2m): a 5 cm lens magnifies ×6.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Lens Formula\n\nA lens bends light twice — once entering, once leaving — and the combined effect focuses rays to an image. The lens formula $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$, its magnification $m = v/u$, and the angular magnification of a magnifier make up the working toolkit of all simple optics.",
+      "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 Spherical lenses\n\nA **spherical lens** has two spherical refracting surfaces. **Convex (converging)** lenses are thicker in the middle; **concave (diverging)** lenses thinner. Key points: optical centre O, principal foci F and F′, focal length f (positive for convex, negative for concave).\n\n### 2.2 Lens formula and magnification\n\n$$\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f} \\qquad m = \\frac{v}{u} = \\frac{h'}{h}$$\n(Cartesian convention: distances measured from the lens; real object u negative, real image v positive for a convex lens; f positive for convex.)\n\n### 2.3 Angular magnification\n\n**Angular magnification** = angle subtended at the eye with the instrument ÷ angle subtended by the unaided eye. A **simple microscope** (single short-focus convex lens, object just inside F) with the image at the near point D gives:\n$$m = 1 + \\frac{D}{f} \\quad (D ≈ 25 \\text{ cm})$$\nand for relaxed viewing at infinity, m ≈ D/f (NEB 2024, 2m).\n\n### 2.4 Worked numericals\n\n**Q (3m, 2024):** An object is placed 30 cm from a convex lens of focal length 20 cm. Find the image distance and magnification.\n$$\\frac{1}{v} = \\frac{1}{f} + \\frac{1}{u}\\text{-form: } \\frac{1}{v} = \\frac{1}{20} - \\frac{1}{-30} = \\frac{1}{20} + \\frac{1}{30} = \\frac{5}{60} \\Rightarrow v = 60 \\text{ cm}$$\n$$m = \\frac{v}{u} = \\frac{60}{-30} = -2$$\n— real image 60 cm behind the lens, inverted and twice as large.\n\n**Q (4m, 2023):** A convex lens of focal length 15 cm forms a real image twice the size of the object. Find the positions of the object and the image.\n- Real image → inverted → m = −2 → v = 2u (with signs: u = −x, v = +2x)\n- $\\frac{1}{2x} + \\frac{1}{x} = \\frac{1}{15}$ → $\\frac{3}{2x} = \\frac{1}{15}$ → x = 22.5 cm\n- Object 22.5 cm in front; image 45 cm behind the lens.\n\n**Q (2m, 2024):** A simple microscope has f = 5 cm; find its magnifying power with the image at the near point.\n$m = 1 + \\frac{D}{f} = 1 + \\frac{25}{5} = 6$.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 78:** the lens maker's formula predicts f from the surfaces' radii.\n- **To Topic 79:** P = 1/f in dioptres; lens combinations add powers.\n- **To the mirror formula (Topic 69):** same algebra, different signs — minus in the lens formula, plus in the mirror formula.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Optics | Lenses | A convex lens of focal length 15 cm forms a real image which is twice the size of the object. Find the positions of the object and the image. | 4 | Numerical |\n| 2080/2024 | Optics | Lenses | An object is placed 30 cm from a convex lens of focal length 20 cm. Find the image distance and magnification. | 3 | Numerical |\n| 2080/2024 | Optics | Lenses | What is a simple microscope? Write its magnifying power when the image forms at the near point. | 2 | Definition |\n\n### 4.2 Common examination mistakes\n\n1. Sign chaos: the lens formula has **1/v − 1/u**, not 1/v + 1/u.\n2. Forgetting that a real image in a lens is on the *opposite* side from the object.\n3. Using m = v/u without the sign — inverted images need m < 0."
+    ],
+    "confusion": [
+      "**Lens vs mirror formula:** 1/v − 1/u = 1/f for lenses; 1/v + 1/u = 1/f for mirrors — a minus-sign apart.",
+      "**Real image through a lens forms on the far side** — light actually passes through the lens."
+    ],
+    "keyPoints": [
+      "1/v − 1/u = 1/f; m = v/u; angular magnification m = 1 + D/f (near point)."
+    ],
+    "importantConcepts": [
+      "**A lens refracts twice** — the formula sums the two surface effects."
+    ],
+    "examples": [
+      "***NEB 2024*** — u = 30 cm, f = 20 cm → v = 60 cm, m = −2."
+    ],
+    "universalFacts": [
+      "The eye's own lens changes focal length (accommodation) to keep images on the retina — a variable-focus lens."
+    ],
+    "importantStatements": [
+      "\"The angular magnification of a simple microscope is 1 + D/f with the image at the near point.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: lens numerical 2023 4m and 2024 3m; simple microscope 2024 2m."
+    ],
+    "examShortTricks": [
+      "\"1/v = 1/f + 1/u with signs; m = v/u carries the sign of the image.\""
+    ],
+    "examNotes": [
+      "State image nature (real/virtual, erect/inverted) after every lens numerical."
+    ],
+    "formulas": [
+      "- 1/v − 1/u = 1/f\n- m = v/u = h'/h\n- Simple microscope: m = 1 + D/f (near point); m ≈ D/f (relaxed)"
+    ],
+    "practice": [
+      "Why does a magnifying glass work better with the object just inside the focus?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (4m): A convex lens of f = 12 cm forms a real image 3× the object's size. Find u and v.** — m = −3 → v = 3u (signs: u = −x, v = 3x). 1/(3x) + 1/x = 1/12 → 4/(3x) = 1/12 → x = 16 cm. Object 16 cm in front, image 48 cm behind."
+    ]
+  },
+  "importantConcepts": [
+    "**A lens refracts twice** — the formula sums the two surface effects."
+  ],
+  "mcqs": [
+    {
+      "question": "The lens formula is:",
+      "options": [
+        "1/v + 1/u = 1/f",
+        "1/v − 1/u = 1/f",
+        "v + u = f",
+        "vu = f"
+      ],
+      "answer": "B",
+      "explanation": "Thin-lens equation."
+    },
+    {
+      "question": "NEB 2024: u = 30 cm, f = 20 cm ⇒ v =",
+      "options": [
+        "12 cm",
+        "60 cm",
+        "50 cm",
+        "10 cm"
+      ],
+      "answer": "B",
+      "explanation": "1/v = 1/20 + 1/30."
+    },
+    {
+      "question": "NEB 2023: f = 15 cm, real image 2× object. Object at:",
+      "options": [
+        "15 cm",
+        "22.5 cm",
+        "30 cm",
+        "45 cm"
+      ],
+      "answer": "B",
+      "explanation": "3/(2x) = 1/15."
+    },
+    {
+      "question": "A convex lens has focal length:",
+      "options": [
+        "Negative",
+        "Positive",
+        "Zero",
+        "Infinite"
+      ],
+      "answer": "B",
+      "explanation": "Converging convention."
+    },
+    {
+      "question": "A real image formed by a convex lens is:",
+      "options": [
+        "Erect",
+        "Inverted",
+        "Always virtual",
+        "Same size always"
+      ],
+      "answer": "B",
+      "explanation": "m negative."
+    },
+    {
+      "question": "The magnifying power of a simple microscope at the near point is:",
+      "options": [
+        "D/f",
+        "1 + D/f",
+        "f/D",
+        "1 − D/f"
+      ],
+      "answer": "B",
+      "explanation": "NEB 2024."
+    },
+    {
+      "question": "With D = 25 cm and f = 5 cm, magnifying power is:",
+      "options": [
+        "5",
+        "6",
+        "20",
+        "30"
+      ],
+      "answer": "B",
+      "explanation": "1 + 25/5."
+    },
+    {
+      "question": "Angular magnification compares:",
+      "options": [
+        "Image heights",
+        "Angles subtended at the eye",
+        "Focal lengths",
+        "Apertures"
+      ],
+      "answer": "B",
+      "explanation": "Angle ratio."
+    }
+  ]
 }

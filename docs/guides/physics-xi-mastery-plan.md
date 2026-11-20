@@ -105,9 +105,9 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 74 | Refraction through Prisms (4h) | Minimum deviation condition | `01-minimum-deviation.json` | **Completed** |
 | 75 | Refraction through Prisms (4h) | Relation between the angle of prism, minimum deviation and refractive index | `01-minimum-deviation.json` | **Completed** |
 | 76 | Refraction through Prisms (4h) | Deviation in small-angle prism | `03-deviation-in-small-angle-prism.json` | **Completed** |
-| 77 | Lenses (4h) | Spherical lenses, angular magnification | TBD | Not started |
-| 78 | Lenses (4h) | Lens maker's formula | TBD | Not started |
-| 79 | Lenses (4h) | Power of a lens | TBD | Not started |
+| 77 | Lenses (4h) | Spherical lenses, angular magnification | `01-spherical-lenses-angular-magnification.json` | **Completed** |
+| 78 | Lenses (4h) | Lens maker's formula | `02-lens-maker-s-formula.json` | **Completed** |
+| 79 | Lenses (4h) | Power of a lens | `03-power-of-a-lens.json` | **Completed** |
 | 80 | Dispersion (3h) | Pure spectrum and dispersive power | TBD | Not started |
 | 81 | Dispersion (3h) | Chromatic and spherical aberration | TBD | Not started |
 | 82 | Dispersion (3h) | Achromatism and its applications | TBD | Not started |
@@ -165,3 +165,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 14 — Unit 14 Reflection at Curved Mirror (2 topics) upgraded: real and virtual images (concave vs convex, object-position ladder, uses); mirror formula (sign convention, f = R/2 derivation, mirror formula derivation, magnification, numericals). Verified PYQs used: image at infinity 2023 3m, concave vs convex 2020 3m, sign convention 2021 3m, magnification+focal length 2022 3m, 30cm/10cm numerical 2022 4m, uses 2024 2m, headlight 2024 2m, mirror formula 2024 5m, f=R/2 2024 4m, 10cm/15cm numerical 2024 3m, magnification definition 2024 2m. Next: Unit 15 Refraction at Plane Surfaces (4 topics).
 - Session 15 — Unit 15 Refraction at Plane Surfaces (4 topics) upgraded: laws of refraction & refractive index; relation between refractive indices (apparent depth); lateral shift; total internal reflection (critical angle, prisms, fibres). Verified PYQs used: Snell + speed 2023 3m & 2024 3m, water-glass 60° 2024 3m, fish apparent depth 2024 3m, lateral-shift factors 2024 2m, TIR + conditions 2022 2m & 2024 2m, critical angle 1.5 2024 2m, C=42° → n 2021 2m, reflecting prisms 2024 3m. Next: Unit 16 Refraction through Prisms (3 topics).
 - Session 16 — Unit 16 Refraction through Prisms (3 topics) upgraded: minimum deviation condition (symmetric ray, i–δ curve, parallel-to-base derivation); prism formula (δ = i + e − A, n = sin((A+δm)/2)/sin(A/2), numericals); small-angle prism (δ = (n−1)A). Verified PYQs used: symmetrical-ray MCQ 2023 1m, min deviation + parallel base 2020 4m, i–δ curve 2024 2m, δm + factors 2024 2m, δ = i + e − A 2024 4m, prism formula 2024 5m, δm numerical 2024 3m, e and δ numerical 2022 4m, δ = (n−1)A 2024 2m. Next: Unit 17 Lenses (3 topics).
+- Session 17 — Unit 17 Lenses (3 topics) upgraded: spherical lenses & angular magnification (lens formula, magnification, simple microscope); lens maker’s formula (derivation, numericals); power of a lens (dioptres, combinations, myopia/hypermetropia). Verified PYQs used: lens numerical 2023 4m & 2024 3m, simple microscope 2024 2m, lens maker derivation 2022 5m & 2024 5m, radii numerical 2024 3m, power combination 2024 2m, myopia/hypermetropia 2024 3m. Next: Unit 18 Dispersion (3 topics).

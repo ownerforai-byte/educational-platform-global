@@ -5,96 +5,54 @@
   "topicTitle": "Lens maker's formula",
   "relevance": 100,
   "notes": [
-    "The lens-maker relation predicts focal length from material and curvature. For a thin lens in air, 1/f=(n−1)(1/R1−1/R2), where n is lens refractive index and R1,R2 are signed radii in a stated convention.",
-    "For light travelling left to right, a biconvex lens commonly has R1>0 and R2<0, so the curvature contributions add to positive converging power. Do not substitute unsigned radii into a signed formula.",
-    "Worked example: n=1.50, R1=+20 cm and R2=−20 cm give 1/f=0.50(1/20+1/20)=0.05 cm⁻¹, hence f=+20 cm.",
-    "In a surrounding medium use relative index nrel=nlens/nmedium. As nrel approaches 1, the lens bends light less and |f| increases; a lens can change sign if the surrounding medium has a larger index.",
-    "The formula assumes a thin lens and paraxial rays. Thick lenses require principal-plane treatment, and very wide ray bundles show aberrations.",
-    "A plano-convex lens has one flat face, so one radius is infinite and that term vanishes. The whole converging power then comes from the curved face. Power is still 1/f once f has been converted to metres.",
-    "# Lens maker's formula\n\n## 1. Introduction\nPhysical picture of **Lens maker's formula** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Lenses fill pass.\n\n## 2. Concepts and laws\n### Lens maker's formula\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Lens maker's formula — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Lens maker's formula — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Lens maker's formula — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Lens maker's formula — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Designing a Lens on Paper\n\nGiven two spherical surfaces and a glass of known refractive index, the lens maker's formula tells you the focal length before the lens is even ground. NEB 2024 asked for it twice — a 5-mark derivation and a 3-mark numerical.",
+    "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 Statement\n\nFor a thin lens in air:\n$$\\frac{1}{f} = (n - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$$\n- n = refractive index of the lens material (relative to surroundings).\n- R₁, R₂ = radii of curvature of the first and second surfaces (Cartesian signs: convex towards the incident light → positive).\n- f depends on the **material (n)** and the **geometry (R₁, R₂)** — not on where the object is.\n\n### 2.2 Derivation sketch (NEB 2022, 2024, 5m)\n\nRefraction at a single spherical surface: $\\frac{n_2}{v} - \\frac{n_1}{u} = \\frac{n_2 - n_1}{R}$.\n\n1. **First surface:** light from air (n₁ = 1) into glass (n₂ = n) forms an intermediate image at distance v′:\n$$\\frac{n}{v'} - \\frac{1}{u} = \\frac{n - 1}{R_1}$$\n2. **Second surface:** the intermediate image acts as the object; light leaves glass into air:\n$$\\frac{1}{v} - \\frac{n}{v'} = \\frac{1 - n}{R_2} = -\\frac{(n-1)}{R_2}$$\n3. **Adding** the two equations eliminates v′:\n$$\\frac{1}{v} - \\frac{1}{u} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right) = \\frac{1}{f}$$\nusing $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$ for a thin lens.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2024):** A convex lens has surfaces of radii 20 cm and −20 cm and n = 1.5. Calculate its focal length.\n$$\\frac{1}{f} = (1.5 - 1)\\left(\\frac{1}{20} - \\frac{1}{-20}\\right) = 0.5 \\times \\left(\\frac{1}{20} + \\frac{1}{20}\\right) = 0.5 \\times 0.1 = 0.05$$\n$$f = 20 \\text{ cm}$$\n\n**Q (NEB-style):** A biconvex lens of equal radii 25 cm has f = 20 cm in air. Find n.\n$\\frac{1}{f} = (n-1)\\times\\frac{2}{25}$ → $0.05 = (n-1)\\times 0.08$ → $n = 1.625$.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 77:** the formula's right side *is* the lens formula's 1/f.\n- **To Topic 79:** with f known, P = 1/f follows immediately.\n- **To immersion:** surrounded by liquid (n_medium > 1), the effective (n−1) shrinks and f grows — a lens loses power in water.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Optics | Lenses | State the thin lens maker's formula. Derive it for a convex lens. | 5 | Derivation |\n| 2080/2024 | Optics | Lenses | State the lens maker's formula and derive it for a thin convex lens. | 5 | Derivation |\n| 2080/2024 | Optics | Lenses | A convex lens has surfaces of radii 20 cm and −20 cm and n = 1.5. Calculate its focal length using the lens maker's formula. | 3 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Writing (1/R₂ − 1/R₁) — the order matters with the signs.\n2. Dropping the (n − 1) factor.\n3. Forgetting that R is negative for a surface concave towards the incident light."
   ],
   "confusion": [
-    "The formula assumes a thin lens and paraxial rays.",
-    "Do not replace signed radii by their magnitudes.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**The lens works because n ≠ surroundings:** in a liquid with n equal to the glass, the lens stops focusing.",
+    "**Signs of R:** convex towards incident light → positive; concave → negative."
   ],
   "practice": [
-    "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
-    "Why do radii carry signs?",
-    "How does immersion in a higher-index liquid change lens power?"
+    "Why does a lens have a different focal length in water than in air?"
   ],
   "universalFacts": [
-    "Focal length depends on curvature and relative refractive index.",
-    "A consistent sign convention is essential.",
-    "The thin-lens formula neglects centre thickness."
+    "The human eye loses focusing power underwater (n_water ≈ n_cornea) — goggles restore the air-glass boundary."
   ],
   "animation3D": "lenses",
   "motionGraphics": "lenses",
   "examples": [
-    "n=1.50, R1=+20 cm and R2=−20 cm give f=+20 cm.",
-    "If relative index tends to 1, lens power tends to zero and focal length magnitude grows.",
-    "A plano-convex lens has one flat face, so one radius is infinite and that term vanishes. The whole converging power then comes from the curved face. Power is still 1/f once f has been converted to metres.",
-    "The working relations are 1/f = (μ − 1)(1/R1 − 1/R2) and Power P = 1/f in metres. Name each symbol, convert the data into SI units, and only then substitute.",
-    "A plano-convex lens has μ = 1.60 and curved radius 20 cm, with the flat face of infinite radius. Find f and the power."
+    "***NEB 2024*** — R₁ = 20, R₂ = −20, n = 1.5 → f = 20 cm."
   ],
   "practiceQuestions": [
-    "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
-    "Why do radii carry signs?",
-    "How does immersion in a higher-index liquid change lens power?"
+    "**Numerical (3m): A plano-convex lens (R₁ = 15 cm, R₂ = ∞) has n = 1.5. Find f.** — 1/f = 0.5 × (1/15 − 0) = 1/30 → f = 30 cm."
   ],
   "formulas": [
-    "Thin lens in air: 1/f=(n−1)(1/R1−1/R2).",
-    "In a medium use nrel=nlens/nmedium; keep length units consistent."
+    "- 1/f = (n − 1)(1/R₁ − 1/R₂)\n- Single surface: n₂/v − n₁/u = (n₂ − n₁)/R"
   ],
   "keyPoints": [
-    "Focal length depends on curvature and relative refractive index.",
-    "A consistent sign convention is essential.",
-    "The thin-lens formula neglects centre thickness.",
-    "1/f = (μ − 1)(1/R1 − 1/R2)",
-    "Power P = 1/f in metres",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "1/f = (n − 1)(1/R₁ − 1/R₂)."
   ],
-  "summary": "The lens-maker formula links curvature and relative refractive index to focal length. Signed radii and the surrounding medium determine the correct optical power.",
+  "summary": "The **lens maker's formula** for a thin lens in air is $\\frac{1}{f} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$: focal length is fixed by the material's refractive index and the two surface radii. The derivation (NEB 2022, 2024, 5m) applies single-surface refraction $\\frac{n_2}{v} - \\frac{n_1}{u} = \\frac{n_2-n_1}{R}$ at each surface and adds the equations, cancelling the intermediate image distance. NEB 2024's numerical (R₁ = 20 cm, R₂ = −20 cm, n = 1.5) gives 1/f = 0.5 × 0.1 = 0.05 → f = 20 cm (3m). The formula explains why lenses weaken in water and why the eye needs goggles underwater.",
   "specialNotes": [
     "The formula assumes a thin lens and paraxial rays.",
     "Do not replace signed radii by their magnitudes."
   ],
   "importantStatements": [
-    "Focal length depends on curvature and relative refractive index.",
-    "A consistent sign convention is essential.",
-    "The thin-lens formula neglects centre thickness."
+    "\"The focal length of a thin lens is determined by the refractive index of its material and the radii of curvature of its surfaces.\""
   ],
   "importantNotes": [
-    "Focal length depends on curvature and relative refractive index.",
-    "A consistent sign convention is essential.",
-    "The thin-lens formula neglects centre thickness."
+    "Verified PYQs: derivation 2022 5m and 2024 5m; numerical 2024 3m."
   ],
   "examShortTricks": [
-    "Thin lens in air: 1/f=(n−1)(1/R1−1/R2).",
-    "In a medium use nrel=nlens/nmedium; keep length units consistent."
+    "\"Biconvex equal radii: 1/f = (n−1) × 2/R.\""
   ],
   "examNotes": [
-    "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
-    "Why do radii carry signs?",
-    "How does immersion in a higher-index liquid change lens power?"
+    "The 5m derivation appeared in 2022 and 2024 — a repeat favourite."
   ],
   "importantConcepts": [
-    "Focal length depends on curvature and relative refractive index.",
-    "A consistent sign convention is essential.",
-    "The thin-lens formula neglects centre thickness.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Two refractions in series** — the intermediate image at the first surface is the object for the second."
   ],
   "importantTasks": [
     "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
@@ -151,44 +109,92 @@
   ],
   "mcqs": [
     {
-      "question": "A flat face contributes",
+      "question": "The lens maker's formula gives:",
       "options": [
-        "1/R = 0",
-        "The whole power",
-        "A negative index",
-        "A prism"
+        "Magnification",
+        "Focal length",
+        "Power only",
+        "Aperture"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "From n and radii."
     },
     {
-      "question": "Power uses f in",
+      "question": "1/f equals:",
       "options": [
-        "Centimetres",
-        "Metres",
-        "Dioptres with no conversion",
-        "Millimetres"
+        "(n−1)(1/R₁ − 1/R₂)",
+        "(n−1)(1/R₂ − 1/R₁)",
+        "(n+1)(1/R₁)",
+        "n/R₁R₂"
       ],
-      "answer": "B"
+      "answer": "A",
+      "explanation": "Standard form."
     },
     {
-      "question": "μ = 1.60 means",
+      "question": "NEB 2024: R₁ = 20, R₂ = −20, n = 1.5 ⇒ f =",
       "options": [
-        "The lens is weaker than μ = 1.50 for the same shape",
-        "The lens is stronger than μ = 1.50 for the same shape",
-        "f is infinite",
-        "The lens is a mirror"
+        "10 cm",
+        "20 cm",
+        "40 cm",
+        "∞"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "0.5 × 0.1 = 0.05."
     },
     {
-      "question": "P and f are",
+      "question": "The lens maker's formula depends on:",
       "options": [
-        "Reciprocals when f is in metres",
-        "Equal",
-        "Both in centimetres",
-        "Unrelated"
+        "Object position",
+        "Material and geometry",
+        "Image size",
+        "Aperture"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "n, R₁, R₂."
+    },
+    {
+      "question": "The derivation uses refraction at:",
+      "options": [
+        "One surface",
+        "Two surfaces",
+        "Three surfaces",
+        "No surface"
+      ],
+      "answer": "B",
+      "explanation": "Intermediate image cancels."
+    },
+    {
+      "question": "A plano-convex lens has R₂ =",
+      "options": [
+        "0",
+        "∞",
+        "R₁",
+        "−R₁"
+      ],
+      "answer": "B",
+      "explanation": "Flat second face."
+    },
+    {
+      "question": "Immersed in water, a glass lens:",
+      "options": [
+        "Stronger",
+        "Weaker (longer f)",
+        "Unchanged",
+        "Reversed"
+      ],
+      "answer": "B",
+      "explanation": "Effective (n−1) shrinks."
+    },
+    {
+      "question": "The 5m lens-maker derivation appeared in:",
+      "options": [
+        "2021 and 2023",
+        "2022 and 2024",
+        "2020 only",
+        "Never"
+      ],
+      "answer": "B",
+      "explanation": "Repeat favourite."
     }
   ],
   "exercises": [
@@ -204,5 +210,50 @@
       "answer": "f = 33 cm, power 3.0 D."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Designing a Lens on Paper\n\nGiven two spherical surfaces and a glass of known refractive index, the lens maker's formula tells you the focal length before the lens is even ground. NEB 2024 asked for it twice — a 5-mark derivation and a 3-mark numerical.",
+      "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 Statement\n\nFor a thin lens in air:\n$$\\frac{1}{f} = (n - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$$\n- n = refractive index of the lens material (relative to surroundings).\n- R₁, R₂ = radii of curvature of the first and second surfaces (Cartesian signs: convex towards the incident light → positive).\n- f depends on the **material (n)** and the **geometry (R₁, R₂)** — not on where the object is.\n\n### 2.2 Derivation sketch (NEB 2022, 2024, 5m)\n\nRefraction at a single spherical surface: $\\frac{n_2}{v} - \\frac{n_1}{u} = \\frac{n_2 - n_1}{R}$.\n\n1. **First surface:** light from air (n₁ = 1) into glass (n₂ = n) forms an intermediate image at distance v′:\n$$\\frac{n}{v'} - \\frac{1}{u} = \\frac{n - 1}{R_1}$$\n2. **Second surface:** the intermediate image acts as the object; light leaves glass into air:\n$$\\frac{1}{v} - \\frac{n}{v'} = \\frac{1 - n}{R_2} = -\\frac{(n-1)}{R_2}$$\n3. **Adding** the two equations eliminates v′:\n$$\\frac{1}{v} - \\frac{1}{u} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right) = \\frac{1}{f}$$\nusing $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$ for a thin lens.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2024):** A convex lens has surfaces of radii 20 cm and −20 cm and n = 1.5. Calculate its focal length.\n$$\\frac{1}{f} = (1.5 - 1)\\left(\\frac{1}{20} - \\frac{1}{-20}\\right) = 0.5 \\times \\left(\\frac{1}{20} + \\frac{1}{20}\\right) = 0.5 \\times 0.1 = 0.05$$\n$$f = 20 \\text{ cm}$$\n\n**Q (NEB-style):** A biconvex lens of equal radii 25 cm has f = 20 cm in air. Find n.\n$\\frac{1}{f} = (n-1)\\times\\frac{2}{25}$ → $0.05 = (n-1)\\times 0.08$ → $n = 1.625$.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 77:** the formula's right side *is* the lens formula's 1/f.\n- **To Topic 79:** with f known, P = 1/f follows immediately.\n- **To immersion:** surrounded by liquid (n_medium > 1), the effective (n−1) shrinks and f grows — a lens loses power in water.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Optics | Lenses | State the thin lens maker's formula. Derive it for a convex lens. | 5 | Derivation |\n| 2080/2024 | Optics | Lenses | State the lens maker's formula and derive it for a thin convex lens. | 5 | Derivation |\n| 2080/2024 | Optics | Lenses | A convex lens has surfaces of radii 20 cm and −20 cm and n = 1.5. Calculate its focal length using the lens maker's formula. | 3 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Writing (1/R₂ − 1/R₁) — the order matters with the signs.\n2. Dropping the (n − 1) factor.\n3. Forgetting that R is negative for a surface concave towards the incident light."
+    ],
+    "confusion": [
+      "**The lens works because n ≠ surroundings:** in a liquid with n equal to the glass, the lens stops focusing.",
+      "**Signs of R:** convex towards incident light → positive; concave → negative."
+    ],
+    "keyPoints": [
+      "1/f = (n − 1)(1/R₁ − 1/R₂)."
+    ],
+    "importantConcepts": [
+      "**Two refractions in series** — the intermediate image at the first surface is the object for the second."
+    ],
+    "examples": [
+      "***NEB 2024*** — R₁ = 20, R₂ = −20, n = 1.5 → f = 20 cm."
+    ],
+    "universalFacts": [
+      "The human eye loses focusing power underwater (n_water ≈ n_cornea) — goggles restore the air-glass boundary."
+    ],
+    "importantStatements": [
+      "\"The focal length of a thin lens is determined by the refractive index of its material and the radii of curvature of its surfaces.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: derivation 2022 5m and 2024 5m; numerical 2024 3m."
+    ],
+    "examShortTricks": [
+      "\"Biconvex equal radii: 1/f = (n−1) × 2/R.\""
+    ],
+    "examNotes": [
+      "The 5m derivation appeared in 2022 and 2024 — a repeat favourite."
+    ],
+    "formulas": [
+      "- 1/f = (n − 1)(1/R₁ − 1/R₂)\n- Single surface: n₂/v − n₁/u = (n₂ − n₁)/R"
+    ],
+    "practice": [
+      "Why does a lens have a different focal length in water than in air?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A plano-convex lens (R₁ = 15 cm, R₂ = ∞) has n = 1.5. Find f.** — 1/f = 0.5 × (1/15 − 0) = 1/30 → f = 30 cm."
+    ]
+  }
 }
