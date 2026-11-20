@@ -59,11 +59,11 @@ Every upgraded topic note fills the note JSON with:
 | 19 | Introductory Microbiology | Virus, bacteriophage | `02-virus-general-introduction-structure-and-importance-of-virus-bacteriophage.json` | **Completed** |
 | 20 | Introductory Microbiology | Biotechnology impacts in microbiology | `02-impacts-of-biotechnology-in-the-field-of-microbiology.json` | **Completed** |
 | 21 | Ecology (11) | Ecosystem ecology; species interactions | `01-ecosystem-ecology.json` | Not started |
-| 22 | Ecology | Pond and forest ecosystem | `01-ecosystem-ecology.json` (merged) | Not started |
-| 23 | Ecology | Food chain, food web, pyramids, productivity | `02-food-chain-web.json` | Not started |
-| 24 | Ecology | Carbon and nitrogen cycles; succession | `03-biogeochemical-cycles.json` | Not started |
-| 25 | Ecology | Hydrophytes and xerophytes | `04-ecological-adaptation.json` | Not started |
-| 26 | Ecology | Ecological imbalances | `05-ecological-imbalances.json` | Not started |
+| 22 | Ecology | Pond and forest ecosystem | `01-ecosystem-ecology.json` (merged) | **Completed** |
+| 23 | Ecology | Food chain, food web, pyramids, productivity | `02-food-chain-web.json` | **Completed** |
+| 24 | Ecology | Carbon and nitrogen cycles; succession | `03-biogeochemical-cycles.json` | **Completed** |
+| 25 | Ecology | Hydrophytes and xerophytes | `04-ecological-adaptation.json` | **Completed** |
+| 26 | Ecology | Ecological imbalances | `05-ecological-imbalances.json` | **Completed** |
 | 27 | Vegetation (3) | Vegetation types in Nepal | `01-vegetation-types.json` | Not started |
 | 28 | Vegetation | In-situ and ex-situ conservation | `02-conservation-in-situ-ex-situ.json` | Not started |
 | 29 | Vegetation | Vegetation and human activities | `02-conservation-in-situ-ex-situ.json` (merged) | Not started |
@@ -106,3 +106,5 @@ canonical files — their upgrade must cover every mapped syllabus topic.)*
 - Next: Unit 3 Introductory Microbiology (3 topics) — resolve canonical files via the manifest matcher first.
 - Session 4 — Unit 3 Introductory Microbiology (Topics 18–20: Monera/bacteria; Virus/bacteriophage; Biotechnology impacts) upgraded. Verified PYQs used: 2023+2024 bacteria characteristics (3m), 2024 Gram staining (3m), 2024 cyanobacteria N-fixation (3m), 2024 microbial economics (2m), 2022 T2 phage structure/reproduction (3m), 2024 borderline-of-life (3m), 2024 lytic cycle (4m). Canonical files: unit 3 maps to full-slug files 01-monera-general-introduction…, 02-virus-general-introduction…, 02-impacts-of-biotechnology… (dup short files 01-monera-bacteria, 02-virus, 03-biotech-microbiology are NOT canonical). Remaining-unit canonical mapping resolved for ecology, vegetation, introduction-to-biology, evolutionary-biology, faunal-diversity, biota-and-environment, conservation-biology (matcher replicated standalone: filename/topicSlug match + lowest duplicateType wins).
 - Next: Unit 4 Ecology (6 topics) — canonical files 01-ecosystem-ecology…, 02-food-chain-food-web…, 02-concept-of-ecosystem…, 04-biogeochemical-cycles…, 04-ecological-adaptation…, 06-ecological-imbalances….
+- Session 5 — Unit 4 Ecology (Topics 21–26: concept/biotic-abiotic/interactions; food chain-web-pyramids-productivity; ecosystem structure pond/forest; biogeochemical cycles + succession; ecological adaptation hydrophytes/xerophytes; ecological imbalances + eutrophication) upgraded. Verified PYQs used: 2024 interactions (3m), 2024 food chain vs web + 10% law (3m), 2024 energy pyramid upright (3m), 2023 numbers vs biomass inversion (2m), 2022 NPP numerical (3m), 2023+2024 ecosystem structure 5m, 2022+2024 succession/xerosere (3m), 2024 eutrophication (3m).
+- Next: Unit 5 Vegetation (3 topics) — canonical files 01-vegetation-introduction…, 02-in-situ-protected-areas…, 03-natural-environment-vegetation-and-human-activities.
