@@ -17,6 +17,7 @@ import {
   getCloudflareAiKey,
   getCloudflareAccountId,
   DEFAULT_FREE_GEMINI_MODEL,
+  getGeminiModelFallbacks,
   DIAGRAM_HUB_PROVIDER,
   getDiagramHubKey,
   getDiagramHubModel,
@@ -1187,6 +1188,8 @@ class CerebrasProvider implements AIProvider {
 class GeminiProvider implements AIProvider {
   name = "gemini";
   private model: string;
+  /** Other free Flash models to try when `model` is 503ing (see modelChain). */
+  private fallbackModels: string[];
   private apiKey: string;
   private timeoutMs: number;
   private temperature: number;
@@ -1203,13 +1206,143 @@ class GeminiProvider implements AIProvider {
    */
   constructor(
     apiKey: string,
-    opts: { name?: string; model?: string; temperature?: number } = {},
+    opts: { name?: string; model?: string; temperature?: number; fallbackModels?: string[] } = {},
   ) {
     this.name = opts.name ?? "gemini";
     this.apiKey = apiKey;
     this.model = opts.model ?? (process.env.GEMINI_MODEL || DEFAULT_FREE_GEMINI_MODEL);
+    this.fallbackModels = opts.fallbackModels ?? getGeminiModelFallbacks(this.model);
     this.temperature = opts.temperature ?? REPLY_TEMPERATURE;
-    this.timeoutMs = Number(process.env.GEMINI_TIMEOUT_MS || 60000);
+    // 45s per ATTEMPT (not per call): the chain may try several free models, so
+    // a congestion timeout must hand over quickly instead of spending the whole
+    // request budget on one 503ing id.
+    this.timeoutMs = Number(process.env.GEMINI_TIMEOUT_MS || 45000);
+  }
+
+  /**
+   * Models to try, in order (primary first). The free tier overloads one Flash
+   * id at a time — Google answers 503 "experiencing high demand" for that id
+   * while a sibling answers fine — so a single pinned model is a single point
+   * of failure. Walking this chain turns a dead lane into a working one.
+   */
+  private modelChain(): string[] {
+    return [this.model, ...this.fallbackModels].filter(
+      (model, i, all) => Boolean(model) && all.indexOf(model) === i,
+    );
+  }
+
+  /**
+   * True for the failures that mean "this MODEL is unavailable right now"
+   * (503 high demand, 429 quota, a timeout, or a 404 for a retired id) — the
+   * only kind worth retrying on a sibling model. A bad key or a malformed
+   * request fails fast instead of burning the whole chain.
+   */
+  private static isModelUnavailable(err: unknown): boolean {
+    const message = err instanceof Error ? err.message : String(err);
+    return /\b(404|429|503)\b|high demand|overloaded|unavailable|aborted|timeout/i.test(message);
+  }
+
+  /** One generateContent attempt against ONE model id. */
+  private async generateOnce(model: string, payload: unknown): Promise<string> {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${this.apiKey}`;
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Gemini error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    const data = await res.json();
+    if (data && data.error) {
+      throw new Error(`Gemini error: ${data.error.message || JSON.stringify(data.error)}`);
+    }
+    const candidate = data && data.candidates && data.candidates[0];
+    const finish = candidate && candidate.finishReason;
+    this.lastFinishReason = finish === "MAX_TOKENS" ? "length" : String(finish || "");
+    const text = candidate && candidate.content && candidate.content.parts
+      ? (candidate.content.parts as Array<{ text?: string }>).map((p) => p.text || "").join("")
+      : "";
+    if (!text || !text.trim()) throw new Error("Empty Gemini response");
+    return text;
+  }
+
+  async chat(messages: AIChatMessage[]): Promise<string> {
+    if (!this.apiKey) throw new Error("Missing Gemini API key");
+    const payload = this.buildGeminiPayload(messages);
+    let lastError: unknown = null;
+    for (const model of this.modelChain()) {
+      try {
+        const text = await this.generateOnce(model, payload);
+        // Remember the model that actually answered, so later calls start there
+        // instead of re-discovering the outage on every request.
+        this.model = model;
+        return text;
+      } catch (err) {
+        lastError = err;
+        if (!GeminiProvider.isModelUnavailable(err)) throw err;
+        console.warn(
+          `[AI] gemini model "${model}" unavailable, trying next free model:`,
+          err instanceof Error ? err.message.slice(0, 120) : err,
+        );
+      }
+    }
+    throw lastError instanceof Error ? lastError : new Error("Gemini error: no free model answered");
+  }
+
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    if (!this.apiKey) throw new Error("Missing Gemini API key");
+    this.lastFinishReason = "";
+    const payload = this.buildGeminiPayload(messages);
+    let lastError: unknown = null;
+
+    for (const model of this.modelChain()) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${this.apiKey}`;
+      let res: Response;
+      try {
+        res = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+          signal: AbortSignal.timeout(this.timeoutMs),
+        });
+      } catch (err) {
+        lastError = err;
+        if (!GeminiProvider.isModelUnavailable(err)) throw err;
+        continue;
+      }
+
+      if (!res.ok) {
+        const text = await res.text();
+        lastError = new Error(`Gemini stream error: ${res.status} ${text.slice(0, 200)}`);
+        if (!GeminiProvider.isModelUnavailable(lastError)) throw lastError;
+        continue;
+      }
+
+      this.model = model;
+      for await (const event of sseEvents(res)) {
+        const candidate = event && event.candidates && event.candidates[0];
+        const finish = candidate && candidate.finishReason;
+        if (finish) {
+          this.lastFinishReason = finish === "MAX_TOKENS" ? "length" : String(finish);
+        }
+        const parts = candidate && candidate.content && candidate.content.parts;
+        if (Array.isArray(parts)) {
+          for (const p of parts) {
+            if (typeof p.text === "string" && p.text) {
+              yield p.text;
+            }
+          }
+        }
+      }
+      return;
+    }
+
+    throw lastError instanceof Error ? lastError : new Error("Gemini stream error: no free model answered");
   }
 
   private buildGeminiPayload(messages: AIChatMessage[]) {
@@ -1285,72 +1418,6 @@ class GeminiProvider implements AIProvider {
     }
 
     return payload;
-  }
-
-  async chat(messages: AIChatMessage[]): Promise<string> {
-    if (!this.apiKey) throw new Error("Missing Gemini API key");
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent?key=${this.apiKey}`;
-    const payload = this.buildGeminiPayload(messages);
-
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(this.timeoutMs),
-    });
-
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Gemini error: ${res.status} ${text.slice(0, 200)}`);
-    }
-
-    const data = await res.json();
-    if (data && data.error) {
-      throw new Error(`Gemini error: ${data.error.message || JSON.stringify(data.error)}`);
-    }
-    const candidate = data && data.candidates && data.candidates[0];
-    const finish = candidate && candidate.finishReason;
-    this.lastFinishReason = finish === "MAX_TOKENS" ? "length" : String(finish || "");
-    const text = candidate && candidate.content && candidate.content.parts
-      ? (candidate.content.parts as Array<{ text?: string }>).map((p) => p.text || "").join("")
-      : "";
-    if (!text || !text.trim()) throw new Error("Empty Gemini response");
-    return text;
-  }
-
-  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
-    if (!this.apiKey) throw new Error("Missing Gemini API key");
-    this.lastFinishReason = "";
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:streamGenerateContent?alt=sse&key=${this.apiKey}`;
-    const payload = this.buildGeminiPayload(messages);
-
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(this.timeoutMs),
-    });
-
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Gemini stream error: ${res.status} ${text.slice(0, 200)}`);
-    }
-
-    for await (const event of sseEvents(res)) {
-      const candidate = event && event.candidates && event.candidates[0];
-      const finish = candidate && candidate.finishReason;
-      if (finish) {
-        this.lastFinishReason = finish === "MAX_TOKENS" ? "length" : String(finish);
-      }
-      const parts = candidate && candidate.content && candidate.content.parts;
-      if (Array.isArray(parts)) {
-        for (const p of parts) {
-          if (typeof p.text === "string" && p.text) {
-            yield p.text;
-          }
-        }
-      }
-    }
   }
 
   async search(query: string): Promise<AISearchResponse> {

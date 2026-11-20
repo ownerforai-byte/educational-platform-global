@@ -171,12 +171,18 @@ export function getWorkLaneProvider(work: AiWorkType): SupportedProviderName | "
  * of drawings never queues behind tutor chat (owner 2026-10-25: "one api key
  * for one type … so no delays in work").
  *
- * Model choice: Gemini 3.8 Flash is the current Flash model recommended for
- * new projects, and on the Gemini API Free Tier its input, output AND context
- * caching are all "Free of charge" — a real API key with no paid usage.
- * Grounding with Google Search is NOT available on that free tier, so diagram
- * research stays SERVER-SIDE: buildProfessorContext() / fetchDiagramContext()
- * supply real reference figures before the model ever sees the request.
+ * Model choice: the free-tier Flash models are used in a FALLBACK CHAIN rather
+ * than one pinned id. Google's free tier 503s a whole model ("This model is
+ * currently experiencing high demand") for hours at a time while sibling Flash
+ * models answer normally — verified 2026-11-20: gemini-3.8-flash and
+ * gemini-3.7-flash returned 503 on every attempt while 3.5-flash answered. A
+ * single pinned id therefore made the Diagram Hub fail outright; the provider
+ * now walks {@link FREE_GEMINI_MODELS} and uses the first one that answers.
+ * On that tier input, output AND context caching are all "Free of charge" — a
+ * real API key with no paid usage. Grounding with Google Search is NOT
+ * available on the free tier, so diagram research stays SERVER-SIDE:
+ * buildProfessorContext() / fetchDiagramContext() supply real reference figures
+ * before the model ever sees the request.
  *
  * This provider is deliberately NOT part of AI_WORK_LANES (which still owns
  * the image-facts "diagram" work type) and NOT part of AI_CHAIN_ORDER: it
@@ -184,8 +190,29 @@ export function getWorkLaneProvider(work: AiWorkType): SupportedProviderName | "
  */
 export const DIAGRAM_HUB_PROVIDER = "diagram-hub";
 
-/** Google's current recommended Flash model; free of charge on the free tier. */
-export const DEFAULT_FREE_GEMINI_MODEL = "gemini-3.8-flash";
+/**
+ * Free-tier Flash models in preference order. Google retires/overloads one id at
+ * a time on the free tier, so the answer is a chain, not a single pin.
+ */
+export const FREE_GEMINI_MODELS: readonly string[] = [
+  "gemini-3.5-flash",
+  "gemini-3.6-flash",
+  "gemini-3.1-flash-lite",
+  "gemini-3.8-flash",
+];
+
+/** Preferred free Flash model (first link of {@link FREE_GEMINI_MODELS}). */
+export const DEFAULT_FREE_GEMINI_MODEL = FREE_GEMINI_MODELS[0];
+
+/**
+ * The other free Flash models to try when `primary` is unavailable (503/429 or
+ * a timeout). Never includes `primary` itself. A model is only ever *tried*, so
+ * an id Google has retired costs one fast 404 and the chain moves on.
+ */
+export function getGeminiModelFallbacks(primary?: string): string[] {
+  const first = (primary ?? DEFAULT_FREE_GEMINI_MODEL).trim();
+  return FREE_GEMINI_MODELS.filter((model) => model !== first);
+}
 
 /** Dedicated key, falling back to the shared Gemini key for zero-config setups. */
 export function getDiagramHubKey(): string | undefined {
