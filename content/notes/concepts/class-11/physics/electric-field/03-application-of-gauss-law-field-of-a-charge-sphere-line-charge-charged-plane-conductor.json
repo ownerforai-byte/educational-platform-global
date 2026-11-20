@@ -5,19 +5,10 @@
   "topicTitle": "Application of Gauss law: field of a charge sphere, line charge, charged plane conductor",
   "relevance": 100,
   "notes": [
-    "Gauss's Law: Total electric flux through any closed Gaussian surface equals enclosed charge divided by $\\varepsilon_0$: $\\Phi_E = \\oint\\vec{E}\\cdot d\\vec{A} = Q_\\text{enc}/\\varepsilon_0$.",
-    "Charged Spherical Shell (conducting): Outside ($r > R$): $E = kQ/r^2$ (as if all charge at center). Inside ($r < R$): $E = 0$. On surface ($r = R$): $E = kQ/R^2$ (maximum).",
-    "Solid Insulating Sphere (uniform charge density): Outside ($r > R$): $E = kQ/r^2$. Inside ($r < R$): $E = kQr/R^3 = \\rho r/(3\\varepsilon_0)$ (linear in r, zero at center).",
-    "Infinite Line Charge: Linear charge density $\\lambda$. Cylindrical Gaussian surface gives $E = \\lambda/(2\\pi\\varepsilon_0 r) = 2k\\lambda/r$. Field falls as $1/r$, directed radially outward for $\\lambda > 0$.",
-    "Infinite Plane Sheet of Charge: Surface charge density $\\sigma$. Pillbox Gaussian surface gives $E = \\sigma/(2\\varepsilon_0)$ on each side — uniform, independent of distance.",
-    "Charged Conducting Plane/Surface: Just outside conductor surface: $E = \\sigma/\\varepsilon_0$ (twice the sheet value because charge resides on both surfaces of isolated sheet, but conductor has charge only on outer surface). Inside conductor: $E = 0$.",
-    "Gaussian Surface Selection: Choose surface where $\\vec{E}$ is either parallel or perpendicular to $d\\vec{A}$ and $|\\vec{E}|$ is constant on flux-contributing parts.",
-    "# Application of Gauss law: field of a charge sphere, line charge, charged plane conductor\n\n## 1. Introduction\nPhysical picture of **Application of Gauss law** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Electric Field fill pass.\n\n## 2. Concepts and laws\n### Application of Gauss law: field of a charge sphere\n### line charge\n### charged plane conductor\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Application of Gauss law — field, flux or wave construction (authored SVG)\n- **D2** — Application of Gauss law — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Application of Gauss law — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Application of Gauss law — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Three Results Every Physicist Knows\n\nGauss's law plus symmetry delivers the three canonical fields: a charged **sphere** (acts like a point outside, zero inside), an infinite **line** (falls as 1/r), and a charged **conducting plane** (σ/ε₀, constant). These are the 5-mark derivations NEB keeps returning to.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Uniformly charged spherical shell (NEB 2024, 5m)\n\nShell of radius R carrying charge Q:\n- **Outside (r > R):** spherical Gaussian surface encloses all Q:\n$$E \\cdot 4\\pi r^2 = \\frac{Q}{\\varepsilon_0} \\Rightarrow E = \\frac{Q}{4\\pi\\varepsilon_0 r^2}$$\n— the shell acts as if all charge sat at its centre.\n- **Inside (r < R):** the Gaussian surface encloses no charge → $E = 0$ everywhere inside.\n- On the surface: E = Q/4πε₀R² (maximum).\n\n### 2.2 Infinite line charge\n\nLinear density λ, cylindrical Gaussian surface of radius r, length l:\n$$E \\cdot 2\\pi r l = \\frac{\\lambda l}{\\varepsilon_0} \\Rightarrow E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r}$$\n— falls as **1/r**, radial direction.\n\n### 2.3 Charged conducting plane (conductor surface)\n\nFor a conductor's surface with charge density σ, the field just outside:\n$$E = \\frac{\\sigma}{\\varepsilon_0}$$\n— twice the infinite-sheet value, because all flux leaves through the *outer* face only (no field inside the conductor).\n\n### 2.4 Worked numericals\n\n**Q (NEB-style):** A shell of radius 10 cm carries 4 μC. Find E at r = 20 cm and at the centre.\n- Outside: $E = \\frac{9\\times10^9 \\times 4\\times10^{-6}}{0.04} = 9\\times10^5$ N/C\n- Inside: **E = 0**.\n\n**Q (NEB-style):** A long wire has λ = 2 μC/m. Find E at 5 cm.\n$E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r} = \\frac{2\\times10^{-6}}{2\\pi \\times 8.85\\times10^{-12} \\times 0.05} ≈ 7.2\\times10^5$ N/C.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 88:** each result is the flux identity ∮E·dA = q/ε₀ with a symmetry-matched surface.\n- **To conductors:** E = 0 inside any conductor in equilibrium — the basis of electrostatic shielding.\n- **To Topic 87:** outside a sphere, the field matches a point charge — Coulomb's law recovered.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Electricity | Gauss | Use Gauss's law to find the electric field due to a uniformly charged spherical shell of radius R carrying charge Q, at points outside and inside the shell. | 5 | Derivation |\n| 2080/2024 | Electricity | Gauss | Why is the electric field zero everywhere inside a conductor in electrostatic equilibrium? | 2 | Reasoning |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Derive E for an infinite line charge (5m).\n2. Field of a charged conducting plane (3m).\n3. Shell numericals inside/outside (3m).\n\n### 4.3 Common examination mistakes\n\n1. Writing E = σ/2ε₀ for a *conductor's* surface — it is σ/ε₀ (single face).\n2. Forgetting the shell's inside field is zero, not kQ/R².\n3. Mixing up the line charge's 2πrl surface area."
   ],
   "specificConditions": [
     "Symmetry Required: Gauss's law is always true but practically useful only for spherical, cylindrical, or planar symmetry where E is constant over the Gaussian surface.",
@@ -25,83 +16,38 @@
     "Infinite Approximation: Line charge formula $E = \\lambda/(2\\pi\\varepsilon_0 r)$ assumes infinite length — valid near middle of long wire, not near ends."
   ],
   "formulas": [
-    "Gauss's law: $\\oint\\vec{E}\\cdot d\\vec{A} = Q_\\text{enc}/\\varepsilon_0$",
-    "Spherical shell outside: $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r^2}$",
-    "Spherical shell inside: $E = 0$",
-    "Solid insulating sphere inside: $E = \\frac{\\rho r}{3\\varepsilon_0} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Qr}{R^3}$",
-    "Solid insulating sphere outside: $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r^2}$",
-    "Infinite line charge: $E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r} = \\frac{2k\\lambda}{r}$",
-    "Infinite plane sheet: $E = \\frac{\\sigma}{2\\varepsilon_0}$",
-    "Conductor surface: $E = \\frac{\\sigma}{\\varepsilon_0}$"
+    "- Shell: E = Q/4πε₀r² (r > R); E = 0 (r < R)\n- Line: E = λ/2πε₀r\n- Conductor surface: E = σ/ε₀"
   ],
   "keyPoints": [
-    "Gauss's law: flux through closed surface = $Q_\\text{enc}/\\varepsilon_0$.",
-    "Charged conducting shell: $E = 0$ inside, $E = kQ/r^2$ outside.",
-    "Solid insulating sphere: $E \\propto r$ inside, $E \\propto 1/r^2$ outside.",
-    "Infinite line charge: $E \\propto 1/r$ (not $1/r^2$).",
-    "Infinite plane sheet: $E = \\sigma/(2\\varepsilon_0)$ — uniform, independent of distance.",
-    "Conductor surface just outside: $E = \\sigma/\\varepsilon_0$."
+    "Shell: E = Q/4πε₀r² outside, 0 inside. Line: λ/2πε₀r. Conductor surface: σ/ε₀."
   ],
   "importantStatements": [
-    "Statement 1: Gauss's law states $\\oint\\vec{E}\\cdot d\\vec{A} = Q_\\text{enc}/\\varepsilon_0$ for any closed surface.",
-    "Statement 2: For a charged conducting spherical shell, electric field is zero inside and $kQ/r^2$ outside.",
-    "Statement 3: For a uniformly charged solid insulating sphere, field inside varies linearly with distance from center.",
-    "Statement 4: Electric field due to infinite line charge falls as $1/r$: $E = \\lambda/(2\\pi\\varepsilon_0 r)$.",
-    "Statement 5: Electric field due to infinite plane sheet is uniform: $E = \\sigma/(2\\varepsilon_0)$, independent of distance."
+    "\"The electric field inside a charged conducting shell is zero at every point.\""
   ],
   "importantNotes": [
-    "Gauss's law is always valid but computationally useful only with high symmetry (spherical, cylindrical, planar).",
-    "For conductor, all excess charge moves to outer surface; E = 0 inside conducting material.",
-    "The $1/r$ dependence for line charge differs from point charge's $1/r^2$ — dimensionality matters.",
-    "Plane sheet field is constant regardless of distance — an idealization for infinite sheets."
+    "Verified PYQs: shell inside/outside 2024 5m; zero field inside conductor 2024 2m."
   ],
   "examShortTricks": [
-    "Conducting shell: E = 0 inside, kQ/r² outside — treat as point charge at center outside.",
-    "Line charge: E ∝ 1/r (cylindrical symmetry), not 1/r².",
-    "Plane sheet: E is constant — same near or far from sheet.",
-    "Solid sphere inside: E = kQr/R³ — linear, zero at center, max at surface.",
-    "Gaussian surface must match symmetry of charge distribution."
+    "\"Write the flux identity first, then solve for E — marks for the setup.\""
   ],
   "examNotes": [
-    "NEB frequently asks to derive E for spherical shell, solid sphere, line charge, and plane sheet using Gauss's law.",
-    "Distinguish conducting vs insulating sphere — crucial difference in field inside.",
-    "Draw Gaussian surface and show flux calculation clearly for derivation questions.",
-    "Remember: field just outside conductor surface is $\\sigma/\\varepsilon_0$, not $\\sigma/(2\\varepsilon_0)$."
+    "State directions (radial outward for Q > 0) and the r-dependence in words."
   ],
   "examples": [
-    "A conducting sphere of radius 10 cm carries charge $+5\\,\\mu\\text{C}$. Field at 20 cm from center: $E = kQ/r^2 = (9\\times 10^9)(5\\times 10^{-6})/0.04 = 1.125 \\times 10^6\\text{ N/C}$. Inside: E = 0.",
-    "A long wire has $\\lambda = 10\\,\\mu\\text{C/m}$. Field at 5 cm from wire: $E = \\lambda/(2\\pi\\varepsilon_0 r) = 2k\\lambda/r = 2(9\\times 10^9)(10\\times 10^{-6})/0.05 = 3.6 \\times 10^6\\text{ N/C}$.",
-    "A large plane sheet has $\\sigma = 5\\,\\mu\\text{C/m}^2$. Field near sheet: $E = \\sigma/(2\\varepsilon_0) = (5\\times 10^{-6})/(2 \\times 8.85\\times 10^{-12}) = 2.82 \\times 10^5\\text{ N/C}$.",
-    "Solid insulating sphere R = 15 cm, uniform charge Q = $10\\,\\mu\\text{C}$. Field at r = 5 cm (inside): $E = kQr/R^3 = (9\\times 10^9)(10\\times 10^{-6})(0.05)/(0.15)^3 = 1.33 \\times 10^5\\text{ N/C}$."
+    "***Faraday cage*** — E = 0 inside a conductor shields whatever is inside."
   ],
   "practiceQuestions": [
-    "Q1. State Gauss's law and derive electric field due to a charged spherical shell (inside and outside).",
-    "Q2. Using Gauss's law, find electric field due to an infinite line charge.",
-    "Q3. Derive electric field due to an infinite plane sheet of charge using Gauss's law.",
-    "Q4. Distinguish between electric field inside a conducting sphere and an insulating sphere with uniform charge.",
-    "Q5. A solid insulating sphere of radius R has total charge Q. Find E at r = R/2 and r = 2R.",
-    "Q6. Explain why field just outside a conductor surface is $\\sigma/\\varepsilon_0$ while for a plane sheet it is $\\sigma/(2\\varepsilon_0)$."
+    "**Numerical (3m): A shell of radius 5 cm carries 2 μC. Find E at 10 cm from the centre.** — Outside: E = 9×10⁹ × 2×10⁻⁶/0.01 = 1.8×10⁶ N/C, radial outward."
   ],
   "practice": [
-    "Apply Gauss's law to find E for spherical, cylindrical, planar charge distributions.",
-    "Compare E inside conducting vs insulating charged spheres.",
-    "Calculate field at various distances from line charge and plane sheet.",
-    "Choose appropriate Gaussian surface for given charge symmetry.",
-    "Solve numerical problems using derived field expressions."
+    "How does a car protect occupants from lightning?"
   ],
   "universalFacts": [
-    "Gauss's law is one of Maxwell's four equations — fundamental to classical electromagnetism.",
-    "The fact that E = 0 inside a conductor enables electrostatic shielding (Faraday cage).",
-    "The inverse-square law for point charges is mathematically equivalent to Gauss's law — if Coulomb's law were not exactly 1/r², Gauss's law would fail.",
-    "Gravitational field obeys an analogous Gauss's law: $\\oint\\vec{g}\\cdot d\\vec{A} = -4\\pi GM_\\text{enc}$.",
-    "Gauss's law works for any closed surface regardless of shape — only enclosed charge matters for total flux."
+    "Outside a uniformly charged shell the field is exactly that of a point charge at the centre — the electrostatic analogue of Newton's shell theorem."
   ],
   "confusion": [
-    "Thinking E = 0 inside shell means no field anywhere inside: E = 0 only inside the conducting material and hollow cavity; field exists outside.",
-    "Believing line charge field follows 1/r² like point charge: Line charge has cylindrical symmetry → E ∝ 1/r.",
-    "Confusing plane sheet ($\\sigma/2\\varepsilon_0$) with conductor surface ($\\sigma/\\varepsilon_0$): Factor of 2 difference due to charge distribution on one vs both surfaces.",
-    "Assuming Gauss's law can always be used to find E: Only works with sufficient symmetry to pull E outside the integral.",
-    "Thinking enclosed charge determines local E at surface: Total flux depends on Q_enc, but local E includes contributions from all charges."
+    "**Sheet vs conductor:** infinite sheet gives σ/2ε₀ (both sides); a *conducting* surface gives σ/ε₀ (one side only).",
+    "**Inside a shell E = 0** — the shell theorem's most surprising half."
   ],
   "mcs": [
     {
@@ -163,6 +109,144 @@
   "animation3D": "gauss-law-applications",
   "motionGraphics": "gaussian-surfaces",
   "visualType": "gauss-law",
-  "summary": "Gauss's law ($\\oint\\vec{E}\\cdot d\\vec{A} = Q_\\text{enc}/\\varepsilon_0$) gives electric field for symmetric charge distributions: conducting shell (E = 0 inside, kQ/r² outside), solid insulating sphere (E ∝ r inside), infinite line charge (E ∝ 1/r), and infinite plane sheet (E constant). Conducting surface field is $\\sigma/\\varepsilon_0$.",
-  "source": "skeleton-v2"
+  "summary": "Gauss's law's standard applications: a **uniformly charged spherical shell** (Q, radius R) gives $E = Q/4\\pi\\varepsilon_0 r^2$ outside — as if the charge were a point at the centre — and **E = 0 everywhere inside** (NEB 2024, 5m); free electrons in a conductor in equilibrium move until the internal field vanishes, which is why conductors shield their interiors and charge resides on the outer surface (NEB 2024, 2m). An **infinite line charge** (λ) gives $E = \\lambda/2\\pi\\varepsilon_0 r$ (1/r falloff), and a **charged conducting plane** gives $E = \\sigma/\\varepsilon_0$ just outside — double the infinite-sheet value because flux leaves through one face only. Symmetry plus one flux identity replaces pages of integration.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Three Results Every Physicist Knows\n\nGauss's law plus symmetry delivers the three canonical fields: a charged **sphere** (acts like a point outside, zero inside), an infinite **line** (falls as 1/r), and a charged **conducting plane** (σ/ε₀, constant). These are the 5-mark derivations NEB keeps returning to.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Uniformly charged spherical shell (NEB 2024, 5m)\n\nShell of radius R carrying charge Q:\n- **Outside (r > R):** spherical Gaussian surface encloses all Q:\n$$E \\cdot 4\\pi r^2 = \\frac{Q}{\\varepsilon_0} \\Rightarrow E = \\frac{Q}{4\\pi\\varepsilon_0 r^2}$$\n— the shell acts as if all charge sat at its centre.\n- **Inside (r < R):** the Gaussian surface encloses no charge → $E = 0$ everywhere inside.\n- On the surface: E = Q/4πε₀R² (maximum).\n\n### 2.2 Infinite line charge\n\nLinear density λ, cylindrical Gaussian surface of radius r, length l:\n$$E \\cdot 2\\pi r l = \\frac{\\lambda l}{\\varepsilon_0} \\Rightarrow E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r}$$\n— falls as **1/r**, radial direction.\n\n### 2.3 Charged conducting plane (conductor surface)\n\nFor a conductor's surface with charge density σ, the field just outside:\n$$E = \\frac{\\sigma}{\\varepsilon_0}$$\n— twice the infinite-sheet value, because all flux leaves through the *outer* face only (no field inside the conductor).\n\n### 2.4 Worked numericals\n\n**Q (NEB-style):** A shell of radius 10 cm carries 4 μC. Find E at r = 20 cm and at the centre.\n- Outside: $E = \\frac{9\\times10^9 \\times 4\\times10^{-6}}{0.04} = 9\\times10^5$ N/C\n- Inside: **E = 0**.\n\n**Q (NEB-style):** A long wire has λ = 2 μC/m. Find E at 5 cm.\n$E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r} = \\frac{2\\times10^{-6}}{2\\pi \\times 8.85\\times10^{-12} \\times 0.05} ≈ 7.2\\times10^5$ N/C.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 88:** each result is the flux identity ∮E·dA = q/ε₀ with a symmetry-matched surface.\n- **To conductors:** E = 0 inside any conductor in equilibrium — the basis of electrostatic shielding.\n- **To Topic 87:** outside a sphere, the field matches a point charge — Coulomb's law recovered.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Electricity | Gauss | Use Gauss's law to find the electric field due to a uniformly charged spherical shell of radius R carrying charge Q, at points outside and inside the shell. | 5 | Derivation |\n| 2080/2024 | Electricity | Gauss | Why is the electric field zero everywhere inside a conductor in electrostatic equilibrium? | 2 | Reasoning |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Derive E for an infinite line charge (5m).\n2. Field of a charged conducting plane (3m).\n3. Shell numericals inside/outside (3m).\n\n### 4.3 Common examination mistakes\n\n1. Writing E = σ/2ε₀ for a *conductor's* surface — it is σ/ε₀ (single face).\n2. Forgetting the shell's inside field is zero, not kQ/R².\n3. Mixing up the line charge's 2πrl surface area."
+    ],
+    "confusion": [
+      "**Sheet vs conductor:** infinite sheet gives σ/2ε₀ (both sides); a *conducting* surface gives σ/ε₀ (one side only).",
+      "**Inside a shell E = 0** — the shell theorem's most surprising half."
+    ],
+    "keyPoints": [
+      "Shell: E = Q/4πε₀r² outside, 0 inside. Line: λ/2πε₀r. Conductor surface: σ/ε₀."
+    ],
+    "importantConcepts": [
+      "**Match the Gaussian surface to the symmetry** — sphere for a shell, cylinder for a line, pillbox for a plane."
+    ],
+    "examples": [
+      "***Faraday cage*** — E = 0 inside a conductor shields whatever is inside."
+    ],
+    "universalFacts": [
+      "Outside a uniformly charged shell the field is exactly that of a point charge at the centre — the electrostatic analogue of Newton's shell theorem."
+    ],
+    "importantStatements": [
+      "\"The electric field inside a charged conducting shell is zero at every point.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: shell inside/outside 2024 5m; zero field inside conductor 2024 2m."
+    ],
+    "examShortTricks": [
+      "\"Write the flux identity first, then solve for E — marks for the setup.\""
+    ],
+    "examNotes": [
+      "State directions (radial outward for Q > 0) and the r-dependence in words."
+    ],
+    "formulas": [
+      "- Shell: E = Q/4πε₀r² (r > R); E = 0 (r < R)\n- Line: E = λ/2πε₀r\n- Conductor surface: E = σ/ε₀"
+    ],
+    "practice": [
+      "How does a car protect occupants from lightning?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A shell of radius 5 cm carries 2 μC. Find E at 10 cm from the centre.** — Outside: E = 9×10⁹ × 2×10⁻⁶/0.01 = 1.8×10⁶ N/C, radial outward."
+    ]
+  },
+  "importantConcepts": [
+    "**Match the Gaussian surface to the symmetry** — sphere for a shell, cylinder for a line, pillbox for a plane."
+  ],
+  "mcqs": [
+    {
+      "question": "Outside a charged shell, E equals:",
+      "options": [
+        "Zero",
+        "Q/4πε₀r²",
+        "Q/4πε₀R²",
+        "σ/2ε₀"
+      ],
+      "answer": "B",
+      "explanation": "Point-charge equivalent."
+    },
+    {
+      "question": "Inside a charged shell, E is:",
+      "options": [
+        "Maximum",
+        "Zero",
+        "kQ/R²",
+        "Infinite"
+      ],
+      "answer": "B",
+      "explanation": "No enclosed charge."
+    },
+    {
+      "question": "NEB 2024's 5m Gauss derivation found the field of:",
+      "options": [
+        "A line",
+        "A spherical shell",
+        "A dipole",
+        "A ring"
+      ],
+      "answer": "B",
+      "explanation": "Inside and outside."
+    },
+    {
+      "question": "Field just outside a conducting plane:",
+      "options": [
+        "σ/2ε₀",
+        "σ/ε₀",
+        "2σ/ε₀",
+        "Zero"
+      ],
+      "answer": "B",
+      "explanation": "Single-face flux."
+    },
+    {
+      "question": "The field of an infinite line charge falls as:",
+      "options": [
+        "1/r²",
+        "1/r",
+        "1/r³",
+        "Constant"
+      ],
+      "answer": "B",
+      "explanation": "Cylindrical symmetry."
+    },
+    {
+      "question": "NEB 2024: E = 0 inside a conductor because:",
+      "options": [
+        "Charge vanishes",
+        "Free electrons rearrange until no net field",
+        "Conductors absorb fields",
+        "Of gravity"
+      ],
+      "answer": "B",
+      "explanation": "Electrostatic equilibrium."
+    },
+    {
+      "question": "E for a line charge is:",
+      "options": [
+        "λ/2πε₀r",
+        "λ/4πε₀r²",
+        "λr/2ε₀",
+        "2πλr"
+      ],
+      "answer": "A",
+      "explanation": "Standard result."
+    },
+    {
+      "question": "A Gaussian surface must be chosen to:",
+      "options": [
+        "Enclose everything",
+        "Match the symmetry",
+        "Be spherical always",
+        "Touch the charges"
+      ],
+      "answer": "B",
+      "explanation": "E constant over surface."
+    }
+  ]
 }
