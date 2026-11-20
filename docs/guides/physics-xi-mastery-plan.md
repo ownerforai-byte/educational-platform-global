@@ -108,9 +108,9 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 77 | Lenses (4h) | Spherical lenses, angular magnification | `01-spherical-lenses-angular-magnification.json` | **Completed** |
 | 78 | Lenses (4h) | Lens maker's formula | `02-lens-maker-s-formula.json` | **Completed** |
 | 79 | Lenses (4h) | Power of a lens | `03-power-of-a-lens.json` | **Completed** |
-| 80 | Dispersion (3h) | Pure spectrum and dispersive power | TBD | Not started |
-| 81 | Dispersion (3h) | Chromatic and spherical aberration | TBD | Not started |
-| 82 | Dispersion (3h) | Achromatism and its applications | TBD | Not started |
+| 80 | Dispersion (3h) | Pure spectrum and dispersive power | `01-pure-spectrum-and-dispersive-power.json` | **Completed** |
+| 81 | Dispersion (3h) | Chromatic and spherical aberration | `02-chromatic-and-spherical-aberration.json` | **Completed** |
+| 82 | Dispersion (3h) | Achromatism and its applications | `03-achromatism-and-its-applications.json` | **Completed** |
 | 83 | Electric Charges (4h) | Electric charges | TBD | Not started |
 | 84 | Electric Charges (4h) | Charging by induction | TBD | Not started |
 | 85 | Electric Charges (4h) | Coulomb's law: force between two point charges | TBD | Not started |
@@ -166,3 +166,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 15 — Unit 15 Refraction at Plane Surfaces (4 topics) upgraded: laws of refraction & refractive index; relation between refractive indices (apparent depth); lateral shift; total internal reflection (critical angle, prisms, fibres). Verified PYQs used: Snell + speed 2023 3m & 2024 3m, water-glass 60° 2024 3m, fish apparent depth 2024 3m, lateral-shift factors 2024 2m, TIR + conditions 2022 2m & 2024 2m, critical angle 1.5 2024 2m, C=42° → n 2021 2m, reflecting prisms 2024 3m. Next: Unit 16 Refraction through Prisms (3 topics).
 - Session 16 — Unit 16 Refraction through Prisms (3 topics) upgraded: minimum deviation condition (symmetric ray, i–δ curve, parallel-to-base derivation); prism formula (δ = i + e − A, n = sin((A+δm)/2)/sin(A/2), numericals); small-angle prism (δ = (n−1)A). Verified PYQs used: symmetrical-ray MCQ 2023 1m, min deviation + parallel base 2020 4m, i–δ curve 2024 2m, δm + factors 2024 2m, δ = i + e − A 2024 4m, prism formula 2024 5m, δm numerical 2024 3m, e and δ numerical 2022 4m, δ = (n−1)A 2024 2m. Next: Unit 17 Lenses (3 topics).
 - Session 17 — Unit 17 Lenses (3 topics) upgraded: spherical lenses & angular magnification (lens formula, magnification, simple microscope); lens maker’s formula (derivation, numericals); power of a lens (dioptres, combinations, myopia/hypermetropia). Verified PYQs used: lens numerical 2023 4m & 2024 3m, simple microscope 2024 2m, lens maker derivation 2022 5m & 2024 5m, radii numerical 2024 3m, power combination 2024 2m, myopia/hypermetropia 2024 3m. Next: Unit 18 Dispersion (3 topics).
+- Session 18 — Unit 18 Dispersion (3 topics) upgraded: pure spectrum & dispersive power (angular dispersion, ω formula, rainbow); chromatic & spherical aberration; achromatism & applications (achromatic combination condition). Verified PYQs used: dispersion + reason 2022 3m & 2024 3m, deviation vs dispersion 2020 3m, ω derivation 2021 4m, definitions 2024 3m, ω numerical 2024 3m, rainbow 2024 3m, red/violet 2024 2m, achromatic combination 2024 3m. Next: Unit 19 Electric Charges (4 topics).

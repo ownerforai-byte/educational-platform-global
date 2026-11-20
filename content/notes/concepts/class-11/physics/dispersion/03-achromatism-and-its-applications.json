@@ -5,96 +5,54 @@
   "topicTitle": "Achromatism and its applications",
   "relevance": 100,
   "notes": [
-    "An optical pair is achromatic for two chosen colours when their wavelength-dependent deviations cancel and both colours share a final focus. The lenses remain dispersive individually; their effects compensate.",
-    "For two thin lenses in contact with signed focal lengths f1,f2 and dispersive powers ω1,ω2, primary achromatism requires ω1/f1+ω2/f2=0. A crown converging lens is commonly paired with a more dispersive flint diverging lens.",
-    "Worked design: f1=+20 cm, ω1=0.02 and ω2=0.04 require 0.02/20+0.04/f2=0, giving f2=−40 cm. The negative sign identifies a diverging flint element.",
-    "The net power is 1/F=1/f1+1/f2, so the doublet can remain converging while cancelling colour spread. Camera, telescope and microscope objectives use achromatic groups to reduce coloured fringes.",
-    "Primary achromatism corrects two selected wavelengths; other colours may still form a secondary spectrum. More elaborate apochromatic systems correct additional wavelengths.",
-    "Two thin lenses in contact are achromatic for the mean colours when ω1/f1 + ω2/f2 = 0. The flint lens has the higher dispersive power, so it can cancel the colour of a stronger crown lens even though its own power is smaller. The combination still converges.",
-    "# Achromatism and its applications\n\n## 1. Introduction\nPhysical picture of **Achromatism and its applications** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Dispersion fill pass.\n\n## 2. Concepts and laws\n### Achromatism and its applications\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Achromatism and its applications — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Achromatism and its applications — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Achromatism and its applications — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Achromatism and its applications — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Cancelling Colour\n\nPair a crown-glass prism with an oppositely oriented flint-glass prism and the colours recombine while the light still bends — an **achromatic combination**. The same trick in lens form built the achromatic doublet that saved photography and astronomy from colour fringes.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Achromatic combination of prisms (NEB 2024, 3m)\n\nTwo prisms of **different glasses** (different dispersive powers) cemented with their refracting edges **oppositely oriented**:\n- Their dispersions are equal and opposite → colours recombine (white stays white).\n- Their mean deviations add (small net bending).\n\n**Condition for achromatism:**\n$$(\\delta_v - \\delta_r)_1 = (\\delta_v - \\delta_r)_2 \\quad\\Rightarrow\\quad \\omega_1 \\delta_{y1} = \\omega_2 \\delta_{y2}$$\nSince ω differs between glasses, the prism angles are chosen unequal (A₂ = A₁ω₁/ω₂) to satisfy it.\n\n### 2.2 Achromatic doublet (lenses)\n\nTwo thin lenses in contact — a **convex crown-glass** lens and a **concave flint-glass** lens — chosen so their chromatic aberrations cancel:\n$$\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0$$\nThe combination still converges (net positive power) but focuses all colours together. **Applications:** telescope and camera objectives, microscope objectives, eyepieces.\n\n### 2.3 Applications of achromatism\n\n- **Achromatic telescope objectives:** sharp star images without colour fringes.\n- **Camera lenses:** multiple elements, each correcting the others' colour errors.\n- **Spectacle lenses and microscopes:** doublets keep images colour-clean.\n- Note: achromatism corrects **two** chosen colours (e.g. red and violet/blue); residual \"secondary spectrum\" remains.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** A crown prism (ω₁ = 0.02, δ_y = 4°) is paired with a flint prism (ω₂ = 0.04). Find the flint prism's mean deviation for achromatism.\n$\\omega_1\\delta_{y1} = \\omega_2\\delta_{y2}$ → $\\delta_{y2} = \\frac{0.02 \\times 4°}{0.04} = 2°$.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 80:** the condition ω₁δ_y1 = ω₂δ_y2 comes straight from the dispersive-power definition.\n- **To Topic 81:** achromatism is the systematic cure for chromatic aberration.\n- **To lens combinations (Topic 79):** powers add in contact — the doublet exploits the same algebra with opposite signs.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Optics | Dispersion | What is an achromatic combination of prisms? Write its condition. | 3 | Definition + condition |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. What is an achromatic doublet? Why does it remove colour fringes? (3m)\n2. Condition-of-achromatism numerical (3m).\n3. Why can't a single prism ever be achromatic? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Saying the combination has zero deviation — only the *dispersion* cancels; a net deviation remains.\n2. Writing the condition with equal angles instead of equal dispersions.\n3. Forgetting that the prisms must be of *different* glasses and oppositely oriented."
   ],
   "confusion": [
-    "Do not omit the negative focal length of the diverging lens.",
-    "The simple condition assumes thin lenses in contact.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Achromatic ≠ undeviated:** dispersion cancels, the net deviation survives.",
+    "**Different glasses are essential** — two prisms of the same glass cannot cancel dispersion."
   ],
   "practice": [
-    "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
-    "Why can an achromatic doublet still converge?",
-    "Does primary achromatism correct every visible wavelength?"
+    "Why do good camera lenses contain many elements?"
   ],
   "universalFacts": [
-    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
-    "Keep focal-length signs in the achromatism equation.",
-    "Two-colour correction can leave secondary spectrum."
+    "Dollond's 1758 achromatic doublet patent launched modern refracting telescopes."
   ],
   "animation3D": "dispersion",
   "motionGraphics": "dispersion",
   "examples": [
-    "f1=+20 cm, ω1=0.02 and ω2=0.04 require f2=−40 cm.",
-    "A pair with powers +5 D and −2 D has net +3 D and F≈+0.333 m.",
-    "Two thin lenses in contact are achromatic for the mean colours when ω1/f1 + ω2/f2 = 0. The flint lens has the higher dispersive power, so it can cancel the colour of a stronger crown lens even though its own power is smaller. The combination still converges.",
-    "The working relations are For two thin lenses in contact, ω1/f1 + ω2/f2 = 0 and A crown convex lens is paired with a flint concave lens. Name each symbol, convert the data into SI units, and only then substitute.",
-    "A crown lens has ω1 = 0.020 and f1 = +10 cm. Flint has ω2 = 0.040. Find f2 for an achromatic pair in contact."
+    "***Telescope objective*** — crown + flint doublet gives colour-sharp star images."
   ],
   "practiceQuestions": [
-    "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
-    "Why can an achromatic doublet still converge?",
-    "Does primary achromatism correct every visible wavelength?"
+    "**Short (2m): Why must the two prisms of an achromatic combination be of different materials?** — Equal and opposite dispersion requires different dispersive powers ω; with the same ω, equal dispersion would force equal deviation, cancelling the useful bending too and never correcting colour."
   ],
   "formulas": [
-    "Contact thin doublet: ω1/f1+ω2/f2=0.",
-    "Net power: 1/F=1/f1+1/f2."
+    "- ω₁δ_y1 = ω₂δ_y2 (achromatism)\n- A₂ = A₁ω₁/ω₂ (prism angles)\n- Doublet: ω₁/f₁ + ω₂/f₂ = 0"
   ],
   "keyPoints": [
-    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
-    "Keep focal-length signs in the achromatism equation.",
-    "Two-colour correction can leave secondary spectrum.",
-    "For two thin lenses in contact, ω1/f1 + ω2/f2 = 0",
-    "A crown convex lens is paired with a flint concave lens",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "Condition: ω₁δ_y1 = ω₂δ_y2 (equal and opposite angular dispersions)."
   ],
-  "summary": "An achromatic doublet balances wavelength dispersion with signed lens powers: ω1/f1+ω2/f2=0. It reduces but does not eliminate every colour error.",
+  "summary": "An **achromatic combination** pairs two prisms of different glasses (crown + flint) with their edges oppositely oriented so that their angular dispersions are equal and opposite — colours recombine while a net deviation remains. The condition is $\\omega_1\\delta_{y1} = \\omega_2\\delta_{y2}$, fixed by choosing unequal angles (A₂ = A₁ω₁/ω₂) (NEB 2024, 3m). In lenses the same logic builds the **achromatic doublet** — a convex crown lens with a concave flint lens in contact satisfying $\\omega_1/f_1 + \\omega_2/f_2 = 0$ — the colour-corrected heart of telescope, camera and microscope objectives. Achromatism kills the *chromatic* defect while leaving the useful bending intact.",
   "specialNotes": [
     "Do not omit the negative focal length of the diverging lens.",
     "The simple condition assumes thin lenses in contact."
   ],
   "importantStatements": [
-    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
-    "Keep focal-length signs in the achromatism equation.",
-    "Two-colour correction can leave secondary spectrum."
+    "\"An achromatic combination produces dispersion-free deviation: the angular dispersions of its parts are equal and opposite.\""
   ],
   "importantNotes": [
-    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
-    "Keep focal-length signs in the achromatism equation.",
-    "Two-colour correction can leave secondary spectrum."
+    "Verified PYQ: achromatic combination + condition (2024, 3m)."
   ],
   "examShortTricks": [
-    "Contact thin doublet: ω1/f1+ω2/f2=0.",
-    "Net power: 1/F=1/f1+1/f2."
+    "\"State: different glasses, opposite orientation, ω₁δ₁ = ω₂δ₂.\""
   ],
   "examNotes": [
-    "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
-    "Why can an achromatic doublet still converge?",
-    "Does primary achromatism correct every visible wavelength?"
+    "The 2024 3m wants definition + condition — two sentences and one equation."
   ],
   "importantConcepts": [
-    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
-    "Keep focal-length signs in the achromatism equation.",
-    "Two-colour correction can leave secondary spectrum.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Cancel the spread, keep the bend** — the design principle of every colour-corrected optical system."
   ],
   "importantTasks": [
     "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
@@ -152,44 +110,92 @@
   ],
   "mcqs": [
     {
-      "question": "Achromatic contact lenses satisfy",
+      "question": "An achromatic combination cancels:",
       "options": [
-        "ω1/f1 + ω2/f2 = 0",
-        "f1 = f2",
-        "ω1 = ω2 and f1 = f2",
-        "Both powers positive and equal"
+        "Deviation",
+        "Dispersion",
+        "Both",
+        "Reflection"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Net deviation remains."
     },
     {
-      "question": "Flint is used as",
+      "question": "The achromatism condition is:",
       "options": [
-        "The converging lens",
-        "The diverging lens with larger ω",
-        "A mirror",
-        "A slit"
+        "ω₁δ₁ = ω₂δ₂",
+        "ω₁ = ω₂",
+        "δ₁ = δ₂",
+        "A₁ = A₂"
       ],
-      "answer": "B"
+      "answer": "A",
+      "explanation": "Equal and opposite dispersions."
     },
     {
-      "question": "The combination of a stronger crown convex lens and a weaker flint concave lens",
+      "question": "The prisms must be of:",
       "options": [
-        "Must diverge",
-        "Can still converge",
-        "Has zero power always",
-        "Has no focal length"
+        "Same glass",
+        "Different glasses",
+        "Same angle",
+        "Same size"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Different ω needed."
     },
     {
-      "question": "ω of flint is",
+      "question": "An achromatic doublet typically combines:",
       "options": [
-        "Lower than crown",
-        "Higher than crown",
-        "Zero",
-        "Negative"
+        "Two convex crown lenses",
+        "Convex crown + concave flint",
+        "Two concave flints",
+        "Two mirrors"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Net converging, colour-free."
+    },
+    {
+      "question": "For lenses in contact, achromatism requires:",
+      "options": [
+        "ω₁/f₁ + ω₂/f₂ = 0",
+        "f₁ = f₂",
+        "P₁ = P₂",
+        "ω₁ = ω₂"
+      ],
+      "answer": "A",
+      "explanation": "Signed powers cancel colour."
+    },
+    {
+      "question": "NEB 2024 asked the achromatic condition for:",
+      "options": [
+        "2 marks",
+        "3 marks",
+        "5 marks",
+        "1 mark"
+      ],
+      "answer": "B",
+      "explanation": "Definition + condition."
+    },
+    {
+      "question": "Achromatism corrects:",
+      "options": [
+        "All colours perfectly",
+        "Two chosen colours",
+        "No colours",
+        "Only red"
+      ],
+      "answer": "B",
+      "explanation": "Secondary spectrum remains."
+    },
+    {
+      "question": "The main application of achromatic doublets is:",
+      "options": [
+        "Prism spectrometers",
+        "Telescope and camera objectives",
+        "Mirrors",
+        "Fibre optics"
+      ],
+      "answer": "B",
+      "explanation": "Colour-corrected imaging."
     }
   ],
   "exercises": [
@@ -205,5 +211,50 @@
       "answer": "f2 = −20 cm."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Cancelling Colour\n\nPair a crown-glass prism with an oppositely oriented flint-glass prism and the colours recombine while the light still bends — an **achromatic combination**. The same trick in lens form built the achromatic doublet that saved photography and astronomy from colour fringes.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Achromatic combination of prisms (NEB 2024, 3m)\n\nTwo prisms of **different glasses** (different dispersive powers) cemented with their refracting edges **oppositely oriented**:\n- Their dispersions are equal and opposite → colours recombine (white stays white).\n- Their mean deviations add (small net bending).\n\n**Condition for achromatism:**\n$$(\\delta_v - \\delta_r)_1 = (\\delta_v - \\delta_r)_2 \\quad\\Rightarrow\\quad \\omega_1 \\delta_{y1} = \\omega_2 \\delta_{y2}$$\nSince ω differs between glasses, the prism angles are chosen unequal (A₂ = A₁ω₁/ω₂) to satisfy it.\n\n### 2.2 Achromatic doublet (lenses)\n\nTwo thin lenses in contact — a **convex crown-glass** lens and a **concave flint-glass** lens — chosen so their chromatic aberrations cancel:\n$$\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0$$\nThe combination still converges (net positive power) but focuses all colours together. **Applications:** telescope and camera objectives, microscope objectives, eyepieces.\n\n### 2.3 Applications of achromatism\n\n- **Achromatic telescope objectives:** sharp star images without colour fringes.\n- **Camera lenses:** multiple elements, each correcting the others' colour errors.\n- **Spectacle lenses and microscopes:** doublets keep images colour-clean.\n- Note: achromatism corrects **two** chosen colours (e.g. red and violet/blue); residual \"secondary spectrum\" remains.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** A crown prism (ω₁ = 0.02, δ_y = 4°) is paired with a flint prism (ω₂ = 0.04). Find the flint prism's mean deviation for achromatism.\n$\\omega_1\\delta_{y1} = \\omega_2\\delta_{y2}$ → $\\delta_{y2} = \\frac{0.02 \\times 4°}{0.04} = 2°$.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 80:** the condition ω₁δ_y1 = ω₂δ_y2 comes straight from the dispersive-power definition.\n- **To Topic 81:** achromatism is the systematic cure for chromatic aberration.\n- **To lens combinations (Topic 79):** powers add in contact — the doublet exploits the same algebra with opposite signs.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Optics | Dispersion | What is an achromatic combination of prisms? Write its condition. | 3 | Definition + condition |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. What is an achromatic doublet? Why does it remove colour fringes? (3m)\n2. Condition-of-achromatism numerical (3m).\n3. Why can't a single prism ever be achromatic? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Saying the combination has zero deviation — only the *dispersion* cancels; a net deviation remains.\n2. Writing the condition with equal angles instead of equal dispersions.\n3. Forgetting that the prisms must be of *different* glasses and oppositely oriented."
+    ],
+    "confusion": [
+      "**Achromatic ≠ undeviated:** dispersion cancels, the net deviation survives.",
+      "**Different glasses are essential** — two prisms of the same glass cannot cancel dispersion."
+    ],
+    "keyPoints": [
+      "Condition: ω₁δ_y1 = ω₂δ_y2 (equal and opposite angular dispersions)."
+    ],
+    "importantConcepts": [
+      "**Cancel the spread, keep the bend** — the design principle of every colour-corrected optical system."
+    ],
+    "examples": [
+      "***Telescope objective*** — crown + flint doublet gives colour-sharp star images."
+    ],
+    "universalFacts": [
+      "Dollond's 1758 achromatic doublet patent launched modern refracting telescopes."
+    ],
+    "importantStatements": [
+      "\"An achromatic combination produces dispersion-free deviation: the angular dispersions of its parts are equal and opposite.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: achromatic combination + condition (2024, 3m)."
+    ],
+    "examShortTricks": [
+      "\"State: different glasses, opposite orientation, ω₁δ₁ = ω₂δ₂.\""
+    ],
+    "examNotes": [
+      "The 2024 3m wants definition + condition — two sentences and one equation."
+    ],
+    "formulas": [
+      "- ω₁δ_y1 = ω₂δ_y2 (achromatism)\n- A₂ = A₁ω₁/ω₂ (prism angles)\n- Doublet: ω₁/f₁ + ω₂/f₂ = 0"
+    ],
+    "practice": [
+      "Why do good camera lenses contain many elements?"
+    ],
+    "practiceQuestions": [
+      "**Short (2m): Why must the two prisms of an achromatic combination be of different materials?** — Equal and opposite dispersion requires different dispersive powers ω; with the same ω, equal dispersion would force equal deviation, cancelling the useful bending too and never correcting colour."
+    ]
+  }
 }

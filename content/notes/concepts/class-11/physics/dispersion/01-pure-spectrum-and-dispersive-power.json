@@ -5,96 +5,55 @@
   "topicTitle": "Pure spectrum and dispersive power",
   "relevance": 100,
   "notes": [
-    "A prism forms a spectrum because refractive index varies with wavelength. In normal dispersion, violet has a larger index and deviation than red. A pure spectrum has narrow, well-separated colour images with little overlap.",
-    "For a thin prism, angular dispersion is Δδ=(nv−nr)A and yellow mean deviation is δy=(ny−1)A. Their ratio is ω=Δδ/δy=(nv−nr)/(ny−1).",
-    "Worked example: if δy=3° and ω=0.06, the red–violet spread is Δδ=0.18°. A material with twice the dispersive power gives twice the spread at the same mean deviation.",
-    "To obtain a purer spectrum, use a narrow slit, collimate the incident beam and focus the dispersed rays with a lens. A wide slit broadens each colour image and causes neighbouring bands to overlap.",
-    "A spectrometer uses a collimator slit and telescope to form and inspect a sharp spectrum. Resolution improves when the source image is narrow and the optical alignment is correct.",
-    "A pure spectrum is formed when each colour is brought to its own sharp image and those images do not overlap. A slit at the focus of a collimating lens sends parallel light into the prism, and a telescope then focuses each colour separately.",
-    "# Pure spectrum and dispersive power\n\n## 1. Introduction\nPhysical picture of **Pure spectrum and dispersive power** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Dispersion fill pass.\n\n## 2. Concepts and laws\n### Pure spectrum and dispersive power\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Constants and values**\n\n| Constant or quantity | Value (CODATA/SI 2019) | Where used | Validity note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Pure spectrum and dispersive power — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Pure spectrum and dispersive power — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Pure spectrum and dispersive power — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Pure spectrum and dispersive power — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Unweaving the Rainbow\n\nA prism fans white light into a rainbow of colours because glass slows each wavelength differently. Measuring that spread — the **dispersive power** — is how optical glass is graded, and it explains why prisms make spectra and lenses make chromatic mistakes.",
+    "## 2. Fundamental Concepts (NEB 2020, 2021, 2022, 2024)\n\n### 2.1 Dispersion and its cause (NEB 2022, 2024)\n\n**Dispersion:** the splitting of white light into its constituent colours (VIBGYOR) as it passes through a dispersive medium such as a prism.\n\n**Cause (NEB 2024, 3m):** the refractive index of glass depends on wavelength (Cauchy's relation $n = a + b/\\lambda^2$). Violet (shortest λ) has the largest n and is deviated most; red (longest λ) has the smallest n and is deviated least — the beam fans into a spectrum (NEB 2024, 2m).\n\n**Deviation vs dispersion (NEB 2020, 3m):** deviation is the bending of a *single* ray ($\\delta = i + e - A$) — it occurs even for monochromatic light; dispersion is the *splitting of colours* — it needs a mixture of wavelengths.\n\n### 2.2 Pure spectrum\n\nA **pure spectrum** has the colours sharply separated without overlap — produced with a narrow slit, a collimating lens (parallel rays), a prism and a telescope (the spectroscope). An impure spectrum has overlapping, blurred colours.\n\n### 2.3 Angular dispersion and dispersive power (NEB 2021, 2024)\n\n- **Angular dispersion:** $\\delta_v - \\delta_r$ — the angle between the extreme violet and red rays.\n- **Dispersive power** ω = spread ÷ mean deviation:\n$$\\omega = \\frac{\\delta_v - \\delta_r}{\\delta_y} = \\frac{n_v - n_r}{n_y - 1}$$\n— a pure number characterising the glass (NEB 2021, 4m derivation via δ = (n−1)A for a thin prism; NEB 2024, 3m definition).\n\n### 2.4 Worked numericals\n\n**Q (3m, 2024):** For a glass, n_v = 1.53, n_r = 1.51 and n_y = 1.52. Calculate its dispersive power.\n$$\\omega = \\frac{n_v - n_r}{n_y - 1} = \\frac{1.53 - 1.51}{1.52 - 1} = \\frac{0.02}{0.52} ≈ 0.0385$$\n\n**Q (NEB-style):** A thin prism of A = 5° has n_v = 1.523, n_r = 1.513. Find the angular dispersion.\n$\\delta_v - \\delta_r = (n_v - n_r)A = 0.010 \\times 5° = 0.05°$.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 76:** the thin-prism formula δ = (n−1)A is the engine of the dispersive-power derivation.\n- **To Topic 81:** chromatic aberration in lenses is dispersion's defect; the rainbow is dispersion's spectacle.\n- **To spectroscopy:** the pure spectrum is the principle of the spectroscope and atomic physics.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2076/2020 | Optics | Dispersion | Differentiate between deviation of light and dispersion of light. | 3 | Differentiate |\n| 2078/2022 | Optics | Dispersion | What is meant by dispersion of light? Why does white light disperse into seven colours when passed through a glass prism? | 3 | Definition + reason |\n| 2077/2021 | Optics | Dispersion | Derive the expression for dispersive power of a prism in terms of refractive indices. | 4 | Derivation |\n| 2080/2024 | Optics | Dispersion | What is dispersion of light? Explain its cause with reference to refractive index. | 3 | Definition + reason |\n| 2080/2024 | Optics | Dispersion | Define angular dispersion and dispersive power of a prism. Write the formula for dispersive power. | 3 | Definition |\n| 2080/2024 | Optics | Dispersion | For a glass, nv = 1.53, nr = 1.51, and ny = 1.52. Calculate its dispersive power. | 3 | Numerical |\n| 2080/2024 | Optics | Dispersion | Explain the formation of the primary rainbow. | 3 | Reasoning |\n| 2080/2024 | Optics | Dispersion | Why does red light deviate least and violet most through a prism? | 2 | Reasoning |\n\n### 4.2 Common examination mistakes\n\n1. Confusing dispersion (splitting of colours) with deviation (bending of a ray).\n2. Writing ω = (n_v − n_r)/n_y instead of dividing by (n_y − 1).\n3. Saying dispersion happens in a parallel slab — parallel faces recombine the colours."
   ],
   "confusion": [
-    "Do not equate a broad rainbow with a pure spectrum; slit width affects purity.",
-    "The thin-prism ratio assumes small deviations.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Deviation ≠ dispersion:** a monochromatic ray deviates without dispersing; white light does both.",
+    "**ω divides by (n_y − 1)**, not by n_y — the mean deviation needs the (−1)."
   ],
   "practice": [
-    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
-    "Name two adjustments that improve spectral purity.",
-    "Why does a wide entrance slit reduce spectral purity?"
+    "Why is a pure spectrum preferred in spectroscopy?"
   ],
   "universalFacts": [
-    "A pure spectrum minimises overlap of adjacent colour images.",
-    "Dispersive power is relative spread, not absolute deviation.",
-    "Narrow slits improve resolution at the cost of brightness."
+    "Flint glass (ω ≈ 0.02) disperses twice as strongly as crown glass (ω ≈ 0.01) — the pairing behind achromatic lenses."
   ],
   "animation3D": "dispersion",
   "motionGraphics": "dispersion",
   "examples": [
-    "δy=3° and ω=0.06 give Δδ=0.18°.",
-    "Reducing slit width sharpens spectral lines but also reduces light intensity.",
-    "A pure spectrum is formed when each colour is brought to its own sharp image and those images do not overlap. A slit at the focus of a collimating lens sends parallel light into the prism, and a telescope then focuses each colour separately.",
-    "The working relations are A pure spectrum separates colours without overlap. and ω = (μ_v − μ_r)/(μ − 1). Name each symbol, convert the data into SI units, and only then substitute.",
-    "Crown glass has μ_v = 1.53, μ_r = 1.51 and mean μ = 1.52. Find ω and say what a pure spectrum requires."
+    "***NEB 2024*** — n_v = 1.53, n_r = 1.51, n_y = 1.52 → ω ≈ 0.0385."
   ],
   "practiceQuestions": [
-    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
-    "Name two adjustments that improve spectral purity.",
-    "Why does a wide entrance slit reduce spectral purity?"
+    "**Reasoning (3m): Explain the formation of the primary rainbow.** — Sunlight refracts into a raindrop, disperses (violet bends most), reflects once by TIR inside, and refracts out; each colour emerges at its own angle near 42°, violet innermost and red outermost — a circular spectrum centred on the antisolar point (NEB 2024)."
   ],
   "formulas": [
-    "Δδ=(nv−nr)A; δy=(ny−1)A.",
-    "ω=Δδ/δy=(nv−nr)/(ny−1)."
+    "- ω = (δv − δr)/δ_y = (n_v − n_r)/(n_y − 1)\n- δ_v − δ_r = (n_v − n_r)A (thin prism)\n- Cauchy: n = a + b/λ²"
   ],
   "keyPoints": [
-    "A pure spectrum minimises overlap of adjacent colour images.",
-    "Dispersive power is relative spread, not absolute deviation.",
-    "Narrow slits improve resolution at the cost of brightness.",
-    "A pure spectrum separates colours without overlap.",
-    "ω = (μ_v − μ_r)/(μ − 1)",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "ω = (δv − δr)/δ_y = (n_v − n_r)/(n_y − 1).",
+    "Cause: n varies with wavelength (violet largest, red smallest)."
   ],
-  "summary": "A pure spectrum requires narrow, collimated light and well-separated colour images. Thin-prism dispersive power is ω=(nv−nr)/(ny−1).",
+  "summary": "**Dispersion** splits white light into VIBGYOR because a medium's refractive index depends on wavelength ($n = a + b/\\lambda^2$): violet (largest n) deviates most, red least (NEB 2022, 2024). Deviation — bending of one ray — happens even for monochromatic light; dispersion needs mixed wavelengths (NEB 2020). A **pure spectrum** (sharp, non-overlapping colours) comes from slit + collimator + prism + telescope. Quantitatively, **angular dispersion** is δ_v − δ_r and the **dispersive power** is $\\omega = \\frac{\\delta_v-\\delta_r}{\\delta_y} = \\frac{n_v-n_r}{n_y-1}$ (NEB 2021, 2024) — for n_v = 1.53, n_r = 1.51, n_y = 1.52, ω ≈ 0.0385 (NEB 2024, 3m). The primary rainbow is the same physics inside a raindrop: refraction, one TIR, refraction — a 42° cone with violet inside (NEB 2024, 3m).",
   "specialNotes": [
     "Do not equate a broad rainbow with a pure spectrum; slit width affects purity.",
     "The thin-prism ratio assumes small deviations."
   ],
   "importantStatements": [
-    "A pure spectrum minimises overlap of adjacent colour images.",
-    "Dispersive power is relative spread, not absolute deviation.",
-    "Narrow slits improve resolution at the cost of brightness."
+    "\"Dispersion is the splitting of white light into its constituent colours; its cause is the dependence of refractive index on wavelength.\""
   ],
   "importantNotes": [
-    "A pure spectrum minimises overlap of adjacent colour images.",
-    "Dispersive power is relative spread, not absolute deviation.",
-    "Narrow slits improve resolution at the cost of brightness."
+    "Verified PYQs: dispersion + reason 2022 3m and 2024 3m; deviation vs dispersion 2020 3m; dispersive power derivation 2021 4m; definitions 2024 3m; ω numerical 2024 3m; rainbow 2024 3m; red/violet reasoning 2024 2m."
   ],
   "examShortTricks": [
-    "Δδ=(nv−nr)A; δy=(ny−1)A.",
-    "ω=Δδ/δy=(nv−nr)/(ny−1)."
+    "\"ω = 0.02/0.52 type arithmetic — keep three decimals.\""
   ],
   "examNotes": [
-    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
-    "Name two adjustments that improve spectral purity.",
-    "Why does a wide entrance slit reduce spectral purity?"
+    "The rainbow answer: refraction + one TIR + refraction in a raindrop, 42° cone, violet inner, red outer."
   ],
   "importantConcepts": [
-    "A pure spectrum minimises overlap of adjacent colour images.",
-    "Dispersive power is relative spread, not absolute deviation.",
-    "Narrow slits improve resolution at the cost of brightness.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Dispersive power is the spread per unit mean deviation** — a material property, a pure number."
   ],
   "importantTasks": [
     "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
@@ -152,44 +111,92 @@
   ],
   "mcqs": [
     {
-      "question": "A pure spectrum has",
+      "question": "Dispersion is the splitting of:",
       "options": [
-        "Overlapping colours",
-        "Each colour focused separately",
-        "No prism",
-        "One index for every colour"
+        "A single colour",
+        "White light into colours",
+        "Polarised light",
+        "Laser beams"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Wavelength-dependent refraction."
     },
     {
-      "question": "The collimator makes the light",
+      "question": "NEB 2024: ω for n_v = 1.53, n_r = 1.51, n_y = 1.52 ≈",
       "options": [
-        "Converge on the prism",
-        "Parallel through the prism",
-        "White again",
-        "Circularly polarised"
+        "0.013",
+        "0.0385",
+        "0.075",
+        "0.52"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "0.02/0.52."
     },
     {
-      "question": "ω equals",
+      "question": "Which colour deviates most in a prism?",
       "options": [
-        "(μ_v − μ_r)/(μ − 1)",
-        "μ_v + μ_r",
-        "A",
-        "The slit width"
+        "Red",
+        "Green",
+        "Violet",
+        "Yellow"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "Largest n for shortest λ."
     },
     {
-      "question": "An impure spectrum is caused by",
+      "question": "Dispersive power is:",
       "options": [
-        "Overlap of colour images",
-        "A narrow slit used correctly",
-        "Parallel rays",
-        "A single wavelength"
+        "(n_v−n_r)/(n_y−1)",
+        "(n_v−n_r)n_y",
+        "n_v/n_r",
+        "(n_y−1)/(n_v−n_r)"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Spread per mean deviation."
+    },
+    {
+      "question": "Deviation without dispersion occurs for:",
+      "options": [
+        "White light",
+        "Monochromatic light",
+        "Sunlight",
+        "Never"
+      ],
+      "answer": "B",
+      "explanation": "Single wavelength cannot split."
+    },
+    {
+      "question": "NEB 2021 derived ω using:",
+      "options": [
+        "Snell's law only",
+        "δ = (μ−1)A for a thin prism",
+        "Fermat's principle",
+        "Huygens' principle"
+      ],
+      "answer": "B",
+      "explanation": "Thin-prism deviations."
+    },
+    {
+      "question": "The primary rainbow's colours emerge near:",
+      "options": [
+        "20°",
+        "42°",
+        "60°",
+        "90°"
+      ],
+      "answer": "B",
+      "explanation": "One internal reflection."
+    },
+    {
+      "question": "In the primary rainbow, the inner edge is:",
+      "options": [
+        "Red",
+        "Violet",
+        "Yellow",
+        "White"
+      ],
+      "answer": "B",
+      "explanation": "Violet bends most."
     }
   ],
   "exercises": [
@@ -205,5 +212,51 @@
       "answer": "0.038. A pure spectrum needs a slit, a collimator and a focusing lens so colours do not overlap."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Unweaving the Rainbow\n\nA prism fans white light into a rainbow of colours because glass slows each wavelength differently. Measuring that spread — the **dispersive power** — is how optical glass is graded, and it explains why prisms make spectra and lenses make chromatic mistakes.",
+      "## 2. Fundamental Concepts (NEB 2020, 2021, 2022, 2024)\n\n### 2.1 Dispersion and its cause (NEB 2022, 2024)\n\n**Dispersion:** the splitting of white light into its constituent colours (VIBGYOR) as it passes through a dispersive medium such as a prism.\n\n**Cause (NEB 2024, 3m):** the refractive index of glass depends on wavelength (Cauchy's relation $n = a + b/\\lambda^2$). Violet (shortest λ) has the largest n and is deviated most; red (longest λ) has the smallest n and is deviated least — the beam fans into a spectrum (NEB 2024, 2m).\n\n**Deviation vs dispersion (NEB 2020, 3m):** deviation is the bending of a *single* ray ($\\delta = i + e - A$) — it occurs even for monochromatic light; dispersion is the *splitting of colours* — it needs a mixture of wavelengths.\n\n### 2.2 Pure spectrum\n\nA **pure spectrum** has the colours sharply separated without overlap — produced with a narrow slit, a collimating lens (parallel rays), a prism and a telescope (the spectroscope). An impure spectrum has overlapping, blurred colours.\n\n### 2.3 Angular dispersion and dispersive power (NEB 2021, 2024)\n\n- **Angular dispersion:** $\\delta_v - \\delta_r$ — the angle between the extreme violet and red rays.\n- **Dispersive power** ω = spread ÷ mean deviation:\n$$\\omega = \\frac{\\delta_v - \\delta_r}{\\delta_y} = \\frac{n_v - n_r}{n_y - 1}$$\n— a pure number characterising the glass (NEB 2021, 4m derivation via δ = (n−1)A for a thin prism; NEB 2024, 3m definition).\n\n### 2.4 Worked numericals\n\n**Q (3m, 2024):** For a glass, n_v = 1.53, n_r = 1.51 and n_y = 1.52. Calculate its dispersive power.\n$$\\omega = \\frac{n_v - n_r}{n_y - 1} = \\frac{1.53 - 1.51}{1.52 - 1} = \\frac{0.02}{0.52} ≈ 0.0385$$\n\n**Q (NEB-style):** A thin prism of A = 5° has n_v = 1.523, n_r = 1.513. Find the angular dispersion.\n$\\delta_v - \\delta_r = (n_v - n_r)A = 0.010 \\times 5° = 0.05°$.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 76:** the thin-prism formula δ = (n−1)A is the engine of the dispersive-power derivation.\n- **To Topic 81:** chromatic aberration in lenses is dispersion's defect; the rainbow is dispersion's spectacle.\n- **To spectroscopy:** the pure spectrum is the principle of the spectroscope and atomic physics.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2076/2020 | Optics | Dispersion | Differentiate between deviation of light and dispersion of light. | 3 | Differentiate |\n| 2078/2022 | Optics | Dispersion | What is meant by dispersion of light? Why does white light disperse into seven colours when passed through a glass prism? | 3 | Definition + reason |\n| 2077/2021 | Optics | Dispersion | Derive the expression for dispersive power of a prism in terms of refractive indices. | 4 | Derivation |\n| 2080/2024 | Optics | Dispersion | What is dispersion of light? Explain its cause with reference to refractive index. | 3 | Definition + reason |\n| 2080/2024 | Optics | Dispersion | Define angular dispersion and dispersive power of a prism. Write the formula for dispersive power. | 3 | Definition |\n| 2080/2024 | Optics | Dispersion | For a glass, nv = 1.53, nr = 1.51, and ny = 1.52. Calculate its dispersive power. | 3 | Numerical |\n| 2080/2024 | Optics | Dispersion | Explain the formation of the primary rainbow. | 3 | Reasoning |\n| 2080/2024 | Optics | Dispersion | Why does red light deviate least and violet most through a prism? | 2 | Reasoning |\n\n### 4.2 Common examination mistakes\n\n1. Confusing dispersion (splitting of colours) with deviation (bending of a ray).\n2. Writing ω = (n_v − n_r)/n_y instead of dividing by (n_y − 1).\n3. Saying dispersion happens in a parallel slab — parallel faces recombine the colours."
+    ],
+    "confusion": [
+      "**Deviation ≠ dispersion:** a monochromatic ray deviates without dispersing; white light does both.",
+      "**ω divides by (n_y − 1)**, not by n_y — the mean deviation needs the (−1)."
+    ],
+    "keyPoints": [
+      "ω = (δv − δr)/δ_y = (n_v − n_r)/(n_y − 1).",
+      "Cause: n varies with wavelength (violet largest, red smallest)."
+    ],
+    "importantConcepts": [
+      "**Dispersive power is the spread per unit mean deviation** — a material property, a pure number."
+    ],
+    "examples": [
+      "***NEB 2024*** — n_v = 1.53, n_r = 1.51, n_y = 1.52 → ω ≈ 0.0385."
+    ],
+    "universalFacts": [
+      "Flint glass (ω ≈ 0.02) disperses twice as strongly as crown glass (ω ≈ 0.01) — the pairing behind achromatic lenses."
+    ],
+    "importantStatements": [
+      "\"Dispersion is the splitting of white light into its constituent colours; its cause is the dependence of refractive index on wavelength.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: dispersion + reason 2022 3m and 2024 3m; deviation vs dispersion 2020 3m; dispersive power derivation 2021 4m; definitions 2024 3m; ω numerical 2024 3m; rainbow 2024 3m; red/violet reasoning 2024 2m."
+    ],
+    "examShortTricks": [
+      "\"ω = 0.02/0.52 type arithmetic — keep three decimals.\""
+    ],
+    "examNotes": [
+      "The rainbow answer: refraction + one TIR + refraction in a raindrop, 42° cone, violet inner, red outer."
+    ],
+    "formulas": [
+      "- ω = (δv − δr)/δ_y = (n_v − n_r)/(n_y − 1)\n- δ_v − δ_r = (n_v − n_r)A (thin prism)\n- Cauchy: n = a + b/λ²"
+    ],
+    "practice": [
+      "Why is a pure spectrum preferred in spectroscopy?"
+    ],
+    "practiceQuestions": [
+      "**Reasoning (3m): Explain the formation of the primary rainbow.** — Sunlight refracts into a raindrop, disperses (violet bends most), reflects once by TIR inside, and refracts out; each colour emerges at its own angle near 42°, violet innermost and red outermost — a circular spectrum centred on the antisolar point (NEB 2024)."
+    ]
+  }
 }
