@@ -5,81 +5,33 @@
   "topicTitle": "Total Internal Reflection",
   "relevance": 100,
   "notes": [
-    "**Total Internal Reflection:** This topic covers the fundamental concepts of total internal reflection in the physics curriculum.",
-    "Understanding total internal reflection is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to total internal reflection should be memorized and practiced regularly.",
-    "**Definition:** Total internal reflection (TIR) occurs when a ray of light traveling in a denser medium strikes the boundary with a rarer medium at an angle of incidence greater than the critical angle. All the light is reflected back into the denser medium — no refraction occurs.",
-    "**Two essential conditions:** (1) Light must travel from a DENSER medium to a RARER medium ($n_1 > n_2$). (2) The angle of incidence must EXCEED the critical angle ($i > \\theta_c$).",
-    "**Critical angle formula:** $\\sin\\theta_c = \\frac{n_2}{n_1}$, where $n_1$ is the refractive index of the denser medium and $n_2$ is the refractive index of the rarer medium. At the critical angle, the refracted ray travels along the boundary ($r = 90°$).",
-    "**Critical angle for common materials:** Glass-to-air ($n = 1.52$): $\\theta_c = \\arcsin(1/1.52) = 41.1°$. Water-to-air ($n = 1.33$): $\\theta_c = \\arcsin(1/1.33) = 48.8°$. Diamond-to-air ($n = 2.42$): $\\theta_c = \\arcsin(1/2.42) = 24.4°$.",
-    "**What happens at different angles:** If $i < \\theta_c$: partial reflection + refraction (most light transmits). If $i = \\theta_c$: refraction at 90° (along the boundary). If $i > \\theta_c$: TOTAL internal reflection (100% reflection, no transmission).",
-    "**Why TIR is \total:** Unlike mirror reflection (which absorbs 5–15% of light), TIR reflects 100% of the light. This makes it far more efficient than metallic mirrors for bending light paths in optical instruments.",
-    "**Optical fibre principle:** An optical fibre consists of a core (high $n$) surrounded by cladding (lower $n$). Light entering the core at angles greater than the critical angle undergoes repeated TIR, traveling kilometers with minimal loss. This is the basis of modern telecommunications.",
-    "**Diamond sparkle:** Diamond's high refractive index ($n = 2.42$) gives a very small critical angle (24.4°). Light entering a well-cut diamond undergoes multiple TIR events before exiting, creating the characteristic brilliant flashes of color (fire).",
-    "**Mirage phenomenon:** On a hot road, air near the surface is hotter and less dense (lower $n$) than air above. Light from the sky bends away from the normal as it passes through increasingly rarer layers. At a certain height, the angle exceeds the critical angle and TIR occurs, creating the illusion of water on the road.",
-    "**Prism binoculars:** Porro prisms in binoculars use TIR at the hypotenuse face (glass-to-air at 45°, which exceeds the critical angle of ~42° for glass). This provides reflection without the need for a silvered coating — brighter images with no degradation.",
-    "**NEB exam focus:** State the two conditions for TIR. Derive the critical angle formula. Calculate critical angles for common material pairs. Explain optical fibres and mirages using TIR. Draw ray diagrams showing TIR in prisms and fibres.",
-    "**Fibre optic numbers — acceptance angle:** The maximum angle at which light can enter an optical fibre and still undergo TIR is called the acceptance angle. $\\sin\\theta_a = \\sqrt{n_{core}^2 - n_{clad}^2}$. For typical fibres ($n_{core} = 1.48$, $n_{clad} = 1.46$): $\\theta_a \\approx 16°$.",
-    "**Optical fibre types:** (1) Step-index fibre: core and cladding have uniform but different indices. (2) Graded-index fibre: the core's index gradually decreases from center to edge, causing light to follow curved paths and reducing modal dispersion.",
-    "**Applications of TIR:** (1) Optical fibres for communication and endoscopy. (2) Prism reflectors in binoculars and periscopes. (3) Diamond cutting for maximum brilliance. (4) Automotive rain sensors (TIR is disrupted by water droplets on the windshield). (5) Fiber-optic sensors for temperature and pressure.",
-    "**Partial reflection at TIR:** In reality, at angles just above the critical angle, a small evanescent wave penetrates into the rarer medium (decaying exponentially over a distance of about one wavelength). This is the principle behind frustrated TIR and near-field optical microscopy.",
-    "**Energy conservation in TIR:** Since no light is transmitted, all the incident energy is reflected. The intensity of the reflected ray equals the intensity of the incident ray (ignoring absorption in the medium). This is why TIR prisms are preferred over silvered mirrors in precision optics."
+    "## 1. Topic Introduction — Light Trapped Inside\n\nPast a certain angle, light hitting the inside of a glass–air boundary doesn't escape at all — it reflects perfectly, better than any mirror. Total internal reflection powers optical fibres, the glitter of diamonds and the prisms in binoculars.",
+    "## 2. Fundamental Concepts (NEB 2021, 2022, 2024)\n\n### 2.1 From refraction to total reflection\n\nAs the angle of incidence i (in the denser medium) grows, the angle of refraction r grows faster. At the **critical angle** C, the refracted ray grazes along the surface (r = 90°). Beyond C there is no refracted ray — the light is completely returned: **total internal reflection**.\n\n$$\\sin C = \\frac{n_2}{n_1} = \\frac{1}{n_{12}} \\qquad (n_1 > n_2)$$\n\nFor glass → air (n = 1.5): $\\sin C = 1/1.5$ → C ≈ 41.8°. For diamond (n = 2.42): C ≈ 24.4°.\n\n### 2.2 Two conditions (NEB 2022, 2024)\n\n1. Light must travel from a **denser to a rarer** medium ($n_1 > n_2$).\n2. The **angle of incidence must exceed the critical angle** ($i > C$).\n\nTotal internal reflection is a *perfect* reflection — no absorption losses, unlike metallic mirrors.\n\n### 2.3 Applications\n\n- **Totally reflecting prisms (NEB 2024, 3m):** right-angled isosceles glass prisms turn light by 90° or 180° through TIR instead of silvered mirrors — no absorption losses. **Uses:** periscopes (two prisms), binoculars (folding a long path into a short body), SLR camera viewfinders.\n- **Optical fibres:** light zig-zags along a thin glass core by repeated TIR — the backbone of telecom and endoscopy.\n- **Brilliance of diamonds:** tiny critical angle (24.4°) traps light until it exits through the top.\n- **Mirages:** hot air layers near the road refract/reflect light upward, creating \"pools\" of sky.\n\n### 2.4 Worked numericals\n\n**Q (2m, 2024):** Find the critical angle for a glass–air boundary if the refractive index of glass is 1.5.\n$$\\sin C = \\frac{1}{n} = \\frac{1}{1.5} = 0.6667 \\Rightarrow C = 41.8°$$\nAny ray inside glass striking the boundary above 41.8° is totally reflected.\n\n**Q (2m, 2021):** The critical angle of glass is 42°. Find the refractive index of glass.\n$$n = \\frac{1}{\\sin C} = \\frac{1}{\\sin 42°} = \\frac{1}{0.669} ≈ 1.49$$",
+    "## 3. Conceptual Relationships\n\n- **To Topic 70/71:** the critical angle is Snell's law with r = 90°.\n- **To Topic 72:** a slab beyond C becomes a mirror — the basis of light guides.\n- **To modern physics:** fibre-optic TIR carries the internet across oceans.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Optics | Refraction | The critical angle of glass is 42°. Find the refractive index of glass. | 2 | Numerical |\n| 2078/2022 | Optics | Refraction | What is total internal reflection? State two conditions for it to occur. | 2 | Definition |\n| 2080/2024 | Optics | Refraction | What is total internal reflection? State two conditions for it to occur. | 2 | Definition |\n| 2080/2024 | Optics | Refraction | Find the critical angle for a glass–air boundary if the refractive index of glass is 1.5. | 2 | Numerical |\n| 2080/2024 | Optics | Refraction | What are totally reflecting prisms? Write two of their uses. | 3 | Definition + uses |\n\n### 4.2 Common examination mistakes\n\n1. Omitting the denser→rarer condition — TIR cannot happen from air into glass.\n2. Writing sin C = n instead of sin C = 1/n.\n3. Confusing total internal reflection with ordinary partial reflection."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in total internal reflection.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding.",
-    "❌ TIR can occur when light goes from rarer to denser medium. ✅ TIR ONLY occurs when light travels from DENSER to RARER medium ($n_1 > n_2$). From rarer to denser, the ray always bends toward the normal and always enters the second medium.",
-    "❌ The critical angle exists for any pair of media. ✅ The critical angle only exists when $n_1 > n_2$. If light goes from air to glass ($n_1 < n_2$), there is no critical angle — refraction always occurs.",
-    "❌ At the critical angle, all light is reflected. ✅ At the critical angle ($i = \\theta_c$), the refracted ray travels ALONG the boundary ($r = 90°$). TIR begins only when $i > \\theta_c$, not at $i = \\theta_c$.",
-    "❌ TIR produces a dimmer reflection than a mirror. ✅ TIR reflects 100% of the light — it is BRIGHTER than any metallic mirror, which typically absorbs 5–15% of incident light.",
-    "❌ Optical fibres work because light is \"trapped\" by the cladding. ✅ Optical fibres work because of TIR at the core-cladding interface. The cladding has a LOWER refractive index than the core, creating the condition for TIR.",
-    "❌ The critical angle for diamond is about 42°. ✅ Diamond's critical angle is about 24.4° (much smaller than glass's 42°). This small critical angle is what makes diamonds so brilliant — light undergoes multiple TIR events before exiting.",
-    "❌ TIR can occur at any interface, including solid-solid interfaces. ✅ TIR requires a boundary between two media with DIFFERENT refractive indices. It can occur at any such boundary (glass-air, water-glass, fibre core-cladding) as long as light travels from the higher-index to the lower-index medium."
+    "**Denser → rarer only:** light going from air into glass can never totally internally reflect.",
+    "**sin C = 1/n** — the critical angle shrinks as the refractive index grows."
   ],
   "practice": [
-    "Solve at least 5 problems on total internal reflection from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type.",
-    "Find the critical angle for light going from glass ($n = 1.52$) to water ($n = 1.33$). $\\sin\\theta_c = n_2/n_1 = 1.33/1.52 = 0.875$. $\\theta_c = \\arcsin(0.875) = 61.0°$. Light going from water to glass would not have a critical angle (it's going to a denser medium).",
-    "A ray in water ($n = 1.33$) strikes the water-air interface at 40°. Does TIR occur? The critical angle is $\\theta_c = \\arcsin(1/1.33) = 48.8°$. Since $i = 40° < 48.8°$, TIR does NOT occur. The ray is partially reflected and partially refracted into the air.",
-    "A ray in water ($n = 1.33$) strikes the water-air interface at 60°. Does TIR occur? Since $i = 60° > 48.8° = \\theta_c$, TIR DOES occur. All light is reflected back into the water. This is why underwater swimmers looking up see a mirror-like surface at steep angles.",
-    "Calculate the critical angle for a diamond ($n = 2.42$) in air. $\\sin\\theta_c = 1/2.42 = 0.4132$. $\\theta_c = \\arcsin(0.4132) = 24.4°$. This small critical angle means light entering a diamond at most angles undergoes TIR, contributing to its brilliance.",
-    "An optical fibre has core index 1.48 and cladding index 1.46. Find the acceptance angle. $\\sin\\theta_a = \\sqrt{n_{core}^2 - n_{clad}^2} = \\sqrt{1.48^2 - 1.46^2} = \\sqrt{2.1904 - 2.1316} = \\sqrt{0.0588} = 0.2425$. $\\theta_a = \\arcsin(0.2425) = 14.0°$. Light must enter within 14° of the fibre axis to be guided.",
-    "Explain why a crack in a glass window appears silvery when viewed from certain angles. Light traveling inside the glass reaches the crack (which is filled with air) at angles that may exceed the critical angle for glass-air ($\\theta_c \\approx 42°$). When this happens, TIR occurs at the crack surface, making it appear shiny and silvery — like a mirror."
+    "Why do optical fibres keep light inside even when bent?"
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding total internal reflection builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of total internal reflection span engineering, physics, economics, and computer science.",
-    "The phenomenon of total internal reflection was first observed and described by Augustin-Jean Fresnel in 1818. His mathematical treatment of TIR predicted the evanescent wave that penetrates into the rarer medium.",
-    "Optical fibre communication, invented by Charles Kao in the 1960s, revolutionized global communications. Kao won the Nobel Prize in Physics in 2009 for his work. A single fibre can carry terabits of data per second over thousands of kilometers.",
-    "The \"sparkle\" of a cut diamond is directly related to its small critical angle (24.4°). A poorly cut diamond allows light to escape through the bottom, making it appear dull. Expert cutters angle the facets to maximize TIR and light return to the viewer's eye.",
-    "Frustrated total internal reflection occurs when a third medium is brought very close (within a wavelength) to the interface where TIR is occurring. The evanescent wave can then couple into the third medium, allowing a small amount of light to \"tunnel\" across the gap.",
-    "TIRprisms are used in high-quality binoculars because they reflect 100% of the light (compared to ~95% for silvered mirrors). This makes the image significantly brighter, especially in low-light conditions."
+    "Fibre-optic cables carry internet traffic by total internal reflection across thousands of kilometres of glass."
   ],
   "animation3D": "refraction-at-plane-surfaces",
   "motionGraphics": "refraction-at-plane-surfaces",
   "examples": [
-    "Real-world application of Total Internal Reflection",
-    "Practical demonstration of Total Internal Reflection concepts",
-    "Diagram-based question on Total Internal Reflection",
-    "Application in daily life involving Total Internal Reflection"
+    "***Diamond*** — C = 24.4° traps light, creating brilliance."
   ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Total Internal Reflection.",
-    "Q3. Differentiate between various aspects of Total Internal Reflection.",
-    "Q4. Derive the key formula related to Total Internal Reflection.",
-    "Q5. What are the applications of Total Internal Reflection?"
+    "**Numerical (2m): The critical angle of a medium is 30°. Find its refractive index.** — n = 1/sin 30° = 1/0.5 = 2.0."
   ],
   "formulas": [
-    "Key Formula 2: Mathematical expression of Total Internal Reflection",
-    "Key Formula 3: Application formula for Total Internal Reflection",
-    "Key Formula 4: Derivation result for Total Internal Reflection",
-    "Key Formula 5: Important relation in Total Internal Reflection"
+    "- sin C = 1/n = n₂/n₁\n- Glass-air: C ≈ 41.8°; diamond: C ≈ 24.4°"
   ],
-  "summary": "Total Internal Reflection is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "When light in a denser medium meets a rarer boundary, the refracted ray bends away; at the **critical angle** C it grazes the surface ($\\sin C = 1/n$), and beyond C the light is **totally internally reflected** — returned completely into the denser medium. Two conditions: travel **denser → rarer** and **i > C** (NEB 2022, 2024, 2m). For glass (n = 1.5) C ≈ 41.8° (NEB 2024, 2m); a measured C = 42° gives n ≈ 1.49 (NEB 2021, 2m). Because TIR is lossless it powers **totally reflecting prisms** (periscopes, binoculars — NEB 2024, 3m), optical fibres, diamond brilliance and mirages.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Total Internal Reflection applies",
     "Note 2: Total Internal Reflection connects to multiple other topics in Science",
@@ -88,23 +40,13 @@
     "Note 5: Total Internal Reflection frequently appears in examination questions"
   ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Total Internal Reflection",
-    "Note 3: Total Internal Reflection has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Total Internal Reflection",
-    "Note 5: Cross-check your answers using alternative methods for Total Internal Reflection"
+    "Verified PYQs: TIR + conditions 2022 2m and 2024 2m; critical angle 1.5 2024 2m; critical angle 42° → n 2021 2m; reflecting prisms 2024 3m."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Total Internal Reflection formula",
-    "Trick 2: Elimination technique for Total Internal Reflection MCQs",
-    "Trick 3: Dimensional analysis shortcut for Total Internal Reflection",
-    "Trick 4: Memory aid for Total Internal Reflection formulas",
-    "Trick 5: Time-saving approach for Total Internal Reflection problems"
+    "\"n = 1/sin C and C = sin⁻¹(1/n) — both directions asked.\""
   ],
   "examNotes": [
-    "Focus on numerical problems from Total Internal Reflection",
-    "Practice previous year questions on Total Internal Reflection",
-    "Learn the derivations for Total Internal Reflection thoroughly",
-    "Review common mistakes related to Total Internal Reflection"
+    "The 2024 paper asked TIR twice (2m + 3m prisms) — a heavily weighted topic."
   ],
   "mcs": [
     {
@@ -149,11 +91,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Total Internal Reflection",
-    "Concept 2: Key theorem or principle in Total Internal Reflection",
-    "Concept 3: Important application area of Total Internal Reflection",
-    "Concept 4: Fundamental relationship in Total Internal Reflection",
-    "Concept 5: Connection between Total Internal Reflection and other topics"
+    "**The critical angle is where refraction dies** — sin C = 1/n comes straight from Snell's law with r = 90°."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Total Internal Reflection",
@@ -164,16 +102,146 @@
   ],
   "visualType": "tir",
   "keyPoints": [
-    "Key Point 2: Essential theorem or principle related to Total Internal Reflection",
-    "Key Point 3: Important condition or constraint for Total Internal Reflection",
-    "Key Point 4: Common applications of Total Internal Reflection",
-    "Key Point 5: Connection to other topics in Science"
+    "Conditions: denser→rarer; i > C. sin C = 1/n.",
+    "TIR is lossless — better than any silvered mirror."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Total Internal Reflection",
-    "Statement 2: Theorem related to Total Internal Reflection",
-    "Statement 3: Condition for Total Internal Reflection to be valid",
-    "Statement 4: Principle governing Total Internal Reflection",
-    "Statement 5: Corollary or consequence of Total Internal Reflection"
+    "\"When light travels from a denser to a rarer medium at an angle greater than the critical angle, it is totally reflected back into the denser medium.\""
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Light Trapped Inside\n\nPast a certain angle, light hitting the inside of a glass–air boundary doesn't escape at all — it reflects perfectly, better than any mirror. Total internal reflection powers optical fibres, the glitter of diamonds and the prisms in binoculars.",
+      "## 2. Fundamental Concepts (NEB 2021, 2022, 2024)\n\n### 2.1 From refraction to total reflection\n\nAs the angle of incidence i (in the denser medium) grows, the angle of refraction r grows faster. At the **critical angle** C, the refracted ray grazes along the surface (r = 90°). Beyond C there is no refracted ray — the light is completely returned: **total internal reflection**.\n\n$$\\sin C = \\frac{n_2}{n_1} = \\frac{1}{n_{12}} \\qquad (n_1 > n_2)$$\n\nFor glass → air (n = 1.5): $\\sin C = 1/1.5$ → C ≈ 41.8°. For diamond (n = 2.42): C ≈ 24.4°.\n\n### 2.2 Two conditions (NEB 2022, 2024)\n\n1. Light must travel from a **denser to a rarer** medium ($n_1 > n_2$).\n2. The **angle of incidence must exceed the critical angle** ($i > C$).\n\nTotal internal reflection is a *perfect* reflection — no absorption losses, unlike metallic mirrors.\n\n### 2.3 Applications\n\n- **Totally reflecting prisms (NEB 2024, 3m):** right-angled isosceles glass prisms turn light by 90° or 180° through TIR instead of silvered mirrors — no absorption losses. **Uses:** periscopes (two prisms), binoculars (folding a long path into a short body), SLR camera viewfinders.\n- **Optical fibres:** light zig-zags along a thin glass core by repeated TIR — the backbone of telecom and endoscopy.\n- **Brilliance of diamonds:** tiny critical angle (24.4°) traps light until it exits through the top.\n- **Mirages:** hot air layers near the road refract/reflect light upward, creating \"pools\" of sky.\n\n### 2.4 Worked numericals\n\n**Q (2m, 2024):** Find the critical angle for a glass–air boundary if the refractive index of glass is 1.5.\n$$\\sin C = \\frac{1}{n} = \\frac{1}{1.5} = 0.6667 \\Rightarrow C = 41.8°$$\nAny ray inside glass striking the boundary above 41.8° is totally reflected.\n\n**Q (2m, 2021):** The critical angle of glass is 42°. Find the refractive index of glass.\n$$n = \\frac{1}{\\sin C} = \\frac{1}{\\sin 42°} = \\frac{1}{0.669} ≈ 1.49$$",
+      "## 3. Conceptual Relationships\n\n- **To Topic 70/71:** the critical angle is Snell's law with r = 90°.\n- **To Topic 72:** a slab beyond C becomes a mirror — the basis of light guides.\n- **To modern physics:** fibre-optic TIR carries the internet across oceans.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Optics | Refraction | The critical angle of glass is 42°. Find the refractive index of glass. | 2 | Numerical |\n| 2078/2022 | Optics | Refraction | What is total internal reflection? State two conditions for it to occur. | 2 | Definition |\n| 2080/2024 | Optics | Refraction | What is total internal reflection? State two conditions for it to occur. | 2 | Definition |\n| 2080/2024 | Optics | Refraction | Find the critical angle for a glass–air boundary if the refractive index of glass is 1.5. | 2 | Numerical |\n| 2080/2024 | Optics | Refraction | What are totally reflecting prisms? Write two of their uses. | 3 | Definition + uses |\n\n### 4.2 Common examination mistakes\n\n1. Omitting the denser→rarer condition — TIR cannot happen from air into glass.\n2. Writing sin C = n instead of sin C = 1/n.\n3. Confusing total internal reflection with ordinary partial reflection."
+    ],
+    "confusion": [
+      "**Denser → rarer only:** light going from air into glass can never totally internally reflect.",
+      "**sin C = 1/n** — the critical angle shrinks as the refractive index grows."
+    ],
+    "keyPoints": [
+      "Conditions: denser→rarer; i > C. sin C = 1/n.",
+      "TIR is lossless — better than any silvered mirror."
+    ],
+    "importantConcepts": [
+      "**The critical angle is where refraction dies** — sin C = 1/n comes straight from Snell's law with r = 90°."
+    ],
+    "examples": [
+      "***Diamond*** — C = 24.4° traps light, creating brilliance."
+    ],
+    "universalFacts": [
+      "Fibre-optic cables carry internet traffic by total internal reflection across thousands of kilometres of glass."
+    ],
+    "importantStatements": [
+      "\"When light travels from a denser to a rarer medium at an angle greater than the critical angle, it is totally reflected back into the denser medium.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: TIR + conditions 2022 2m and 2024 2m; critical angle 1.5 2024 2m; critical angle 42° → n 2021 2m; reflecting prisms 2024 3m."
+    ],
+    "examShortTricks": [
+      "\"n = 1/sin C and C = sin⁻¹(1/n) — both directions asked.\""
+    ],
+    "examNotes": [
+      "The 2024 paper asked TIR twice (2m + 3m prisms) — a heavily weighted topic."
+    ],
+    "formulas": [
+      "- sin C = 1/n = n₂/n₁\n- Glass-air: C ≈ 41.8°; diamond: C ≈ 24.4°"
+    ],
+    "practice": [
+      "Why do optical fibres keep light inside even when bent?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (2m): The critical angle of a medium is 30°. Find its refractive index.** — n = 1/sin 30° = 1/0.5 = 2.0."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "Total internal reflection requires:",
+      "options": [
+        "Rarer to denser",
+        "Denser to rarer",
+        "Any direction",
+        "Normal incidence"
+      ],
+      "answer": "B",
+      "explanation": "First condition."
+    },
+    {
+      "question": "sin C equals:",
+      "options": [
+        "n",
+        "1/n",
+        "n²",
+        "1−n"
+      ],
+      "answer": "B",
+      "explanation": "r = 90° in Snell's law."
+    },
+    {
+      "question": "NEB 2024: C for glass–air (n = 1.5) ≈",
+      "options": [
+        "24.8°",
+        "41.8°",
+        "48.8°",
+        "60°"
+      ],
+      "answer": "B",
+      "explanation": "sin⁻¹(2/3)."
+    },
+    {
+      "question": "NEB 2021: C = 42° ⇒ n ≈",
+      "options": [
+        "1.33",
+        "1.49",
+        "1.5",
+        "2.42"
+      ],
+      "answer": "B",
+      "explanation": "1/sin 42°."
+    },
+    {
+      "question": "Which reflection is lossless?",
+      "options": [
+        "Silvered mirror",
+        "Total internal reflection",
+        "Scattered reflection",
+        "Diffuse reflection"
+      ],
+      "answer": "B",
+      "explanation": "No absorption."
+    },
+    {
+      "question": "Periscopes use totally reflecting prisms that turn light by:",
+      "options": [
+        "45°",
+        "90°",
+        "180° only",
+        "360°"
+      ],
+      "answer": "B",
+      "explanation": "Two prisms give 180° total."
+    },
+    {
+      "question": "Optical fibres guide light by:",
+      "options": [
+        "Refraction out",
+        "Repeated TIR",
+        "Absorption",
+        "Polarisation"
+      ],
+      "answer": "B",
+      "explanation": "Core-cladding TIR."
+    },
+    {
+      "question": "Diamond's small critical angle (24.4°) causes:",
+      "options": [
+        "Dullness",
+        "Brilliance by trapped light",
+        "Green colour",
+        "Magnetism"
+      ],
+      "answer": "B",
+      "explanation": "Light exits only through the top."
+    }
   ]
 }

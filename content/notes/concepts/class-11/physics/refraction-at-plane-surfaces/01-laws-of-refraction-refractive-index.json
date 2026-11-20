@@ -5,19 +5,10 @@
   "topicTitle": "Laws of refraction: refractive index",
   "relevance": 100,
   "notes": [
-    "Refraction: Bending of light when it passes from one transparent medium to another due to change in speed of light in different media.",
-    "Laws of Refraction (Snell's Laws): (1) Incident ray, refracted ray, and normal at point of incidence all lie in the same plane. (2) The ratio of sine of angle of incidence to sine of angle of refraction is constant for a given pair of media: sin i / sin r = constant = ₂₁μ (refractive index of second medium w.r.t. first).",
-    "Refractive Index: ₂₁μ = v₁/v₂ = sin i / sin r. Absolute refractive index μ = c/v (ratio of speed in vacuum to speed in medium). μ ≥ 1, μ_vacuum = 1, μ_air ≈ 1.0003, μ_water ≈ 1.33, μ_glass ≈ 1.5, μ_diamond ≈ 2.42.",
-    "Optical Density: Medium with higher refractive index is optically denser. Light bends towards normal when entering denser medium, away from normal when entering rarer medium.",
-    "Lateral Shift: When light passes through a parallel-sided glass slab, emergent ray is parallel to incident ray but laterally displaced. Shift S = t·sin(i-r)/cos r where t = thickness.",
-    "Real and Apparent Depth: Object in denser medium viewed from rarer appears nearer: apparent depth = real depth / μ. Conversely, object in rarer viewed from denser appears farther: apparent depth = μ × real depth.",
-    "Refraction Through Multiple Media: sin i / sin r = constant at each interface. For parallel interfaces, emergent ray direction depends only on first and last medium: sin i₁ / sin r_final = μ_final/μ_initial.",
-    "# Laws of refraction: refractive index\n\n## 1. Introduction\nPhysical picture of **Laws of refraction** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Refraction at Plane Surfaces fill pass.\n\n## 2. Concepts and laws\n### Laws of refraction: refractive index\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Laws of refraction — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Laws of refraction — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Laws of refraction — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Laws of refraction — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Light Changes Direction (and Speed)\n\nLight bends entering water because it slows down. Refraction's two laws — and the refractive index that measures the slowing — govern lenses, prisms, mirages, fibre optics and why a swimming pool looks shallower than it is.",
+    "## 2. Fundamental Concepts (NEB 2022, 2023, 2024)\n\n### 2.1 Laws of refraction\n\n1. **First law:** the incident ray, the refracted ray and the normal at the point of incidence lie in the **same plane**.\n2. **Second law (Snell's law):** the ratio of the sine of the angle of incidence to the sine of the angle of refraction is a constant for a given pair of media and colour of light:\n$$\\frac{\\sin i}{\\sin r} = n_{21} = \\text{constant} \\quad\\text{or}\\quad n_1\\sin i = n_2\\sin r$$\n\n### 2.2 Refractive index\n\n- **Absolute refractive index** of a medium: $n = \\dfrac{c}{v}$ — the ratio of the speed of light in vacuum to its speed in the medium (n ≥ 1).\n- **Relative refractive index:** $n_{21} = \\dfrac{n_2}{n_1} = \\dfrac{v_1}{v_2}$.\n- Typical values: vacuum 1, air 1.0003, water 4/3, glass 1.5, diamond 2.42.\n- **Denser medium** = larger n = slower light.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2023 & 2024):** State Snell's law of refraction. If the refractive index of glass is 1.5, find the speed of light in glass.\n- Snell's law: $n_1\\sin i = n_2\\sin r$ — the ratio sin i/sin r is constant for a given pair of media.\n- $v = \\dfrac{c}{n} = \\dfrac{3\\times10^8}{1.5} = 2\\times10^8$ m/s.\n\n**Q (3m, 2024):** State Snell's law. A ray of light travelling in water (n = 4/3) is incident on glass (n = 3/2) at an angle of incidence 60°. Find the angle of refraction.\n- $n_w\\sin i = n_g\\sin r$: $\\frac{4}{3}\\sin 60° = \\frac{3}{2}\\sin r$\n- $\\sin r = \\frac{4}{3}\\times 0.866 \\times \\frac{2}{3} = 0.770$ → $r ≈ 50.3°$\n\n**Q (NEB-style):** Light enters from air into a medium at 45° and refracts at 30°. Find the refractive index and speed of light in it.\n$n = \\frac{\\sin 45°}{\\sin 30°} = \\frac{0.707}{0.5} = 1.41$; $v = \\frac{3\\times10^8}{1.41} ≈ 2.1\\times10^8$ m/s.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 71:** the relative index n₂₁ = v₁/v₂ chains across media.\n- **To Topic 73:** Snell's law with sin r = 1 defines the critical angle.\n- **To Fermat/least time:** light bends because it \"chooses\" the fastest path — refraction is a speed effect.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Optics | Refraction | State Snell's law of refraction. If the refractive index of glass is 1.5, find the speed of light in glass. | 3 | Statement + numerical |\n| 2080/2024 | Optics | Refraction | State Snell's law. A ray of light travelling in water (n = 4/3) is incident on glass (n = 3/2) at an angle of incidence 60°. Find the angle of refraction. | 3 | Statement + numerical |\n\n### 4.2 Common examination mistakes\n\n1. Confusing the angle with the normal — all angles in refraction are measured from the normal.\n2. Using n = v/c instead of n = c/v.\n3. Forgetting that Snell's law constant depends on the *pair* of media and the colour of light."
   ],
   "specificConditions": [
     "Snell's Law Validity: Applies to isotropic media, light ray (not wavefront), and transparent interface. Not valid for anisotropic crystals or absorbing media.",
@@ -25,79 +16,39 @@
     "Normal Incidence: i = 0 → r = 0 — no bending at normal incidence, only speed changes."
   ],
   "formulas": [
-    "Snell's law: sin i / sin r = ₂₁μ = v₁/v₂",
-    "Absolute refractive index: μ = c/v",
-    "Lateral shift: S = t·sin(i-r)/cos r",
-    "Apparent depth: d_app = d_real/μ (viewing from rarer)",
-    "Apparent depth: d_app = μ·d_real (viewing from denser)",
-    "Speed in medium: v = c/μ"
+    "- n₁ sin i = n₂ sin r\n- n = c/v; n₂₁ = n₂/n₁ = v₁/v₂\n- n_water = 4/3; n_glass = 1.5; n_diamond = 2.42"
   ],
   "keyPoints": [
-    "Refraction: bending due to speed change at interface.",
-    "Snell's law: sin i/sin r = constant (refractive index).",
-    "Absolute index μ = c/v ≥ 1.",
-    "Towards normal entering denser; away from normal entering rarer.",
-    "Lateral shift through parallel slab: emergent parallel to incident.",
-    "Apparent depth: d_app = d_real/μ (denser to rarer viewing)."
+    "Snell's law: n₁ sin i = n₂ sin r; n = c/v.",
+    "Light bends towards the normal entering a denser (higher-n) medium."
   ],
   "importantStatements": [
-    "Statement 1: Snell's law — sin i/sin r = constant for given pair of media.",
-    "Statement 2: Refractive index μ = c/v — ratio of speed in vacuum to speed in medium.",
-    "Statement 3: Light bends towards normal entering optically denser medium.",
-    "Statement 4: Through parallel-sided slab, emergent ray is parallel to incident ray with lateral shift.",
-    "Statement 5: Apparent depth = real depth/μ when viewed from rarer medium."
+    "\"The ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media and colour of light.\""
   ],
   "importantNotes": [
-    "Frequency remains constant during refraction; wavelength and speed change.",
-    "Refractive index depends on wavelength (dispersion) — blue bends more than red.",
-    "μ is dimensionless and characteristic of the medium-wavelength pair.",
-    "Normal incidence: no deviation, but speed and wavelength change."
+    "Verified PYQs: Snell + speed in glass 2023 3m and 2024 3m; Snell + water-glass numerical 2024 3m."
   ],
   "examShortTricks": [
-    "Denser medium: bends towards normal (r < i). Rarer medium: bends away (r > i).",
-    "Apparent depth = real depth / μ (object in water viewed from air).",
-    "Lateral shift through glass slab: emergent ∥ incident, shifted sideways.",
-    "μ = c/v — higher μ means slower light in medium."
+    "\"v = c/n is the one-line speed answer; keep sin 60° = 0.866 handy.\""
   ],
   "examNotes": [
-    "NEB frequently asks for Snell's law statement and verification experiment.",
-    "Calculate refractive index from real/apparent depth.",
-    "Lateral shift through glass slab numericals.",
-    "Draw ray diagrams for refraction at plane surfaces."
+    "State the law in words AND symbols — both parts carry marks."
   ],
   "examples": [
-    "Light enters water (μ = 1.33) from air at i = 45°. sin r = sin 45°/1.33 = 0.707/1.33 = 0.532, r = 32.1°. Bends towards normal.",
-    "Object at bottom of pond 1 m deep viewed from air: apparent depth = 1/1.33 = 0.75 m.",
-    "Glass slab t = 6 cm, μ = 1.5, i = 60°: sin r = sin 60°/1.5 = 0.577, r = 35.3°. S = 6 × sin(24.7°)/cos(35.3°) = 6 × 0.418/0.816 = 3.07 cm.",
-    "Speed of light in glass (μ = 1.5): v = c/1.5 = 3×10⁸/1.5 = 2×10⁸ m/s."
+    "***NEB 2024*** — water (4/3) → glass (3/2) at i = 60°: r ≈ 50.3°."
   ],
   "practiceQuestions": [
-    "Q1. State Snell's laws of refraction and define refractive index.",
-    "Q2. Derive the relation between refractive index and speed of light: μ = c/v.",
-    "Q3. Explain lateral shift through a parallel-sided glass slab.",
-    "Q4. A fish at depth 2 m in water (μ = 1.33) appears at what depth when viewed from air?",
-    "Q5. Why does a pencil look bent when partially immersed in water?",
-    "Q6. Calculate the refractive index of glass if light travels at 2×10⁸ m/s in it."
+    "**Numerical (2m): The speed of light in a liquid is 2.25×10⁸ m/s. Find its refractive index.** — n = c/v = 3×10⁸/2.25×10⁸ = 1.33 ≈ 4/3 (the liquid is water-like)."
   ],
   "practice": [
-    "Apply Snell's law to find angle of refraction.",
-    "Calculate refractive index from speed or angles.",
-    "Compute apparent depth and real depth.",
-    "Calculate lateral shift through glass slab.",
-    "Draw ray diagrams for air-glass-air refraction."
+    "Why does a straight pole look bent at the water surface?"
   ],
   "universalFacts": [
-    "Diamond's high refractive index (2.42) and small critical angle (24.4°) make it brilliant — multiple internal reflections trap light.",
-    "Mirages are caused by refraction in air layers of different temperatures/densities.",
-    "Atmospheric refraction makes the sun visible before actual sunrise and after sunset.",
-    "The refractive index of air varies with temperature and density — causes star twinkling (astronomical scintillation)."
+    "Diamond's n = 2.42 gives a critical angle of only 24.4° — light bounces inside almost completely, creating the sparkle."
   ],
   "confusion": [
-    "Confusing bending direction: Towards normal when entering denser (slower) medium; away when entering rarer.",
-    "Thinking apparent depth formula works both ways: d_app = d_real/μ only when viewing from rarer medium.",
-    "Believing frequency changes in refraction: Frequency stays constant; speed and wavelength change.",
-    "Confusing refractive index μ with relative index ₂₁μ.",
-    "Forgetting incident ray, refracted ray, normal are coplanar (first law)."
+    "**Angles from the normal, never from the surface.**",
+    "**Denser ≠ heavier:** 'optically denser' means larger n and slower light — not mass density."
   ],
   "mcs": [
     {
@@ -159,6 +110,145 @@
   "animation3D": "refraction",
   "motionGraphics": "snell-law",
   "visualType": "refraction-plane-surface",
-  "summary": "Refraction is bending of light at medium interface due to speed change. Snell's law: sin i/sin r = μ. Absolute index μ = c/v. Light bends towards normal in denser medium. Parallel slab produces lateral shift. Apparent depth = real depth/μ (viewing from rarer).",
-  "source": "skeleton-v2"
+  "summary": "**Refraction** obeys two laws: the incident ray, refracted ray and normal are coplanar, and **Snell's law** holds — $\\frac{\\sin i}{\\sin r} = n_{21}$, a constant for the given pair of media and colour. The **refractive index** $n = c/v$ compares light's vacuum speed with its speed in the medium: glass (n = 1.5) slows light to $2\\times10^8$ m/s (NEB 2023 and 2024, 3m). For a ray crossing water (4/3) into glass (3/2) at 60°, Snell's law gives r ≈ 50.3° (NEB 2024, 3m). Denser optics mean slower light, bending towards the normal; the index chains across media and sets the critical angle for total internal reflection.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Light Changes Direction (and Speed)\n\nLight bends entering water because it slows down. Refraction's two laws — and the refractive index that measures the slowing — govern lenses, prisms, mirages, fibre optics and why a swimming pool looks shallower than it is.",
+      "## 2. Fundamental Concepts (NEB 2022, 2023, 2024)\n\n### 2.1 Laws of refraction\n\n1. **First law:** the incident ray, the refracted ray and the normal at the point of incidence lie in the **same plane**.\n2. **Second law (Snell's law):** the ratio of the sine of the angle of incidence to the sine of the angle of refraction is a constant for a given pair of media and colour of light:\n$$\\frac{\\sin i}{\\sin r} = n_{21} = \\text{constant} \\quad\\text{or}\\quad n_1\\sin i = n_2\\sin r$$\n\n### 2.2 Refractive index\n\n- **Absolute refractive index** of a medium: $n = \\dfrac{c}{v}$ — the ratio of the speed of light in vacuum to its speed in the medium (n ≥ 1).\n- **Relative refractive index:** $n_{21} = \\dfrac{n_2}{n_1} = \\dfrac{v_1}{v_2}$.\n- Typical values: vacuum 1, air 1.0003, water 4/3, glass 1.5, diamond 2.42.\n- **Denser medium** = larger n = slower light.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2023 & 2024):** State Snell's law of refraction. If the refractive index of glass is 1.5, find the speed of light in glass.\n- Snell's law: $n_1\\sin i = n_2\\sin r$ — the ratio sin i/sin r is constant for a given pair of media.\n- $v = \\dfrac{c}{n} = \\dfrac{3\\times10^8}{1.5} = 2\\times10^8$ m/s.\n\n**Q (3m, 2024):** State Snell's law. A ray of light travelling in water (n = 4/3) is incident on glass (n = 3/2) at an angle of incidence 60°. Find the angle of refraction.\n- $n_w\\sin i = n_g\\sin r$: $\\frac{4}{3}\\sin 60° = \\frac{3}{2}\\sin r$\n- $\\sin r = \\frac{4}{3}\\times 0.866 \\times \\frac{2}{3} = 0.770$ → $r ≈ 50.3°$\n\n**Q (NEB-style):** Light enters from air into a medium at 45° and refracts at 30°. Find the refractive index and speed of light in it.\n$n = \\frac{\\sin 45°}{\\sin 30°} = \\frac{0.707}{0.5} = 1.41$; $v = \\frac{3\\times10^8}{1.41} ≈ 2.1\\times10^8$ m/s.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 71:** the relative index n₂₁ = v₁/v₂ chains across media.\n- **To Topic 73:** Snell's law with sin r = 1 defines the critical angle.\n- **To Fermat/least time:** light bends because it \"chooses\" the fastest path — refraction is a speed effect.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Optics | Refraction | State Snell's law of refraction. If the refractive index of glass is 1.5, find the speed of light in glass. | 3 | Statement + numerical |\n| 2080/2024 | Optics | Refraction | State Snell's law. A ray of light travelling in water (n = 4/3) is incident on glass (n = 3/2) at an angle of incidence 60°. Find the angle of refraction. | 3 | Statement + numerical |\n\n### 4.2 Common examination mistakes\n\n1. Confusing the angle with the normal — all angles in refraction are measured from the normal.\n2. Using n = v/c instead of n = c/v.\n3. Forgetting that Snell's law constant depends on the *pair* of media and the colour of light."
+    ],
+    "confusion": [
+      "**Angles from the normal, never from the surface.**",
+      "**Denser ≠ heavier:** 'optically denser' means larger n and slower light — not mass density."
+    ],
+    "keyPoints": [
+      "Snell's law: n₁ sin i = n₂ sin r; n = c/v.",
+      "Light bends towards the normal entering a denser (higher-n) medium."
+    ],
+    "importantConcepts": [
+      "**Refraction is a speed change:** n compares light's speed in vacuum with its speed in the medium."
+    ],
+    "examples": [
+      "***NEB 2024*** — water (4/3) → glass (3/2) at i = 60°: r ≈ 50.3°."
+    ],
+    "universalFacts": [
+      "Diamond's n = 2.42 gives a critical angle of only 24.4° — light bounces inside almost completely, creating the sparkle."
+    ],
+    "importantStatements": [
+      "\"The ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media and colour of light.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: Snell + speed in glass 2023 3m and 2024 3m; Snell + water-glass numerical 2024 3m."
+    ],
+    "examShortTricks": [
+      "\"v = c/n is the one-line speed answer; keep sin 60° = 0.866 handy.\""
+    ],
+    "examNotes": [
+      "State the law in words AND symbols — both parts carry marks."
+    ],
+    "formulas": [
+      "- n₁ sin i = n₂ sin r\n- n = c/v; n₂₁ = n₂/n₁ = v₁/v₂\n- n_water = 4/3; n_glass = 1.5; n_diamond = 2.42"
+    ],
+    "practice": [
+      "Why does a straight pole look bent at the water surface?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (2m): The speed of light in a liquid is 2.25×10⁸ m/s. Find its refractive index.** — n = c/v = 3×10⁸/2.25×10⁸ = 1.33 ≈ 4/3 (the liquid is water-like)."
+    ]
+  },
+  "importantConcepts": [
+    "**Refraction is a speed change:** n compares light's speed in vacuum with its speed in the medium."
+  ],
+  "mcqs": [
+    {
+      "question": "Snell's law states:",
+      "options": [
+        "i = r",
+        "n₁ sin i = n₂ sin r",
+        "sin i/sin r varies",
+        "i + r = 90°"
+      ],
+      "answer": "B",
+      "explanation": "Second law of refraction."
+    },
+    {
+      "question": "NEB 2023/2024: speed of light in glass (n = 1.5) =",
+      "options": [
+        "1.5×10⁸ m/s",
+        "2×10⁸ m/s",
+        "3×10⁸ m/s",
+        "2.25×10⁸ m/s"
+      ],
+      "answer": "B",
+      "explanation": "c/n."
+    },
+    {
+      "question": "Refractive index is defined as:",
+      "options": [
+        "c/v",
+        "v/c",
+        "cv",
+        "v−c"
+      ],
+      "answer": "A",
+      "explanation": "n ≥ 1 always."
+    },
+    {
+      "question": "NEB 2024: water→glass, i = 60°, r ≈",
+      "options": [
+        "30°",
+        "40.5°",
+        "50.3°",
+        "60°"
+      ],
+      "answer": "C",
+      "explanation": "sin r = 0.770."
+    },
+    {
+      "question": "When light enters an optically denser medium it:",
+      "options": [
+        "Speeds up and bends away from normal",
+        "Slows and bends towards normal",
+        "Does not bend",
+        "Reflects fully"
+      ],
+      "answer": "B",
+      "explanation": "n increases, r < i."
+    },
+    {
+      "question": "The refractive index of water is:",
+      "options": [
+        "1",
+        "4/3",
+        "3/2",
+        "2.42"
+      ],
+      "answer": "B",
+      "explanation": "≈1.33."
+    },
+    {
+      "question": "The laws of refraction require angles measured from:",
+      "options": [
+        "The surface",
+        "The normal",
+        "The horizon",
+        "The ray itself"
+      ],
+      "answer": "B",
+      "explanation": "Standard convention."
+    },
+    {
+      "question": "Snell's law constant depends on:",
+      "options": [
+        "Intensity",
+        "Pair of media and colour",
+        "Polarisation only",
+        "Temperature of source"
+      ],
+      "answer": "B",
+      "explanation": "n₂₁ = constant for the pair."
+    }
+  ]
 }

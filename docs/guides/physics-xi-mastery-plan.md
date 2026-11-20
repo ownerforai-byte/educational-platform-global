@@ -98,10 +98,10 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 67 | Ideal Gas (5h) | Heat capacities of gases and solids | `07-heat-capacities-of-gases-and-solids.json` | **Completed** |
 | 68 | Reflection at Curved Mirror (3h) | Real and virtual images | `01-real-and-virtual-images.json` | **Completed** |
 | 69 | Reflection at Curved Mirror (3h) | Mirror formula | `02-mirror-formula.json` | **Completed** |
-| 70 | Refraction at Plane Surfaces (4h) | Laws of refraction: refractive index | TBD | Not started |
-| 71 | Refraction at Plane Surfaces (4h) | Relation between refractive indices | TBD | Not started |
-| 72 | Refraction at Plane Surfaces (4h) | Lateral shift | TBD | Not started |
-| 73 | Refraction at Plane Surfaces (4h) | Total internal reflection | TBD | Not started |
+| 70 | Refraction at Plane Surfaces (4h) | Laws of refraction: refractive index | `01-laws-of-refraction-refractive-index.json` | **Completed** |
+| 71 | Refraction at Plane Surfaces (4h) | Relation between refractive indices | `02-relation-between-refractive-indices.json` | **Completed** |
+| 72 | Refraction at Plane Surfaces (4h) | Lateral shift | `02-lateral-shift.json` | **Completed** |
+| 73 | Refraction at Plane Surfaces (4h) | Total internal reflection | `03-total-internal-reflection.json` | **Completed** |
 | 74 | Refraction through Prisms (4h) | Minimum deviation condition | TBD | Not started |
 | 75 | Refraction through Prisms (4h) | Relation between the angle of prism, minimum deviation and refractive index | TBD | Not started |
 | 76 | Refraction through Prisms (4h) | Deviation in small-angle prism | TBD | Not started |
@@ -163,3 +163,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 12 — Unit 12 Rate of Heat Flow (5 topics) upgraded: conduction, thermal conductivity & measurement (Fourier law); convection; radiation & ideal radiator; black-body radiation (Wien, Planck context); Stefan–Boltzmann law. Verified PYQs used (all 2024): three modes 3m, Fourier law 3m, rod numerical 3m, utensils/clothes 2m, Stefan law + 16× factor 3m. Next: Unit 13 Ideal Gas (7 topics).
 - Session 13 — Unit 13 Ideal Gas (7 topics) upgraded: ideal gas equation (Boyle+Charles+pressure law combination); molecular properties of matter; kinetic molecular model (statement + assumptions); derivation of gas pressure (six-step, P = ⅓ρc̄²); average translational KE ((3/2)kT); Boltzmann constant & rms speeds; heat capacities & equipartition (Cp−Cv = R). Verified PYQs used: gas-law combination 2024 3m, P=nRT/V 2024 2m, Charles numerical 2022 4m, kinetic theory 2023+2024 5m, KE per molecule 2024 2m, rms speed of O₂ 2022+2024 3m, equipartition 2021+2024 2m. Next: Unit 14 Reflection at Curved Mirror (2 topics).
 - Session 14 — Unit 14 Reflection at Curved Mirror (2 topics) upgraded: real and virtual images (concave vs convex, object-position ladder, uses); mirror formula (sign convention, f = R/2 derivation, mirror formula derivation, magnification, numericals). Verified PYQs used: image at infinity 2023 3m, concave vs convex 2020 3m, sign convention 2021 3m, magnification+focal length 2022 3m, 30cm/10cm numerical 2022 4m, uses 2024 2m, headlight 2024 2m, mirror formula 2024 5m, f=R/2 2024 4m, 10cm/15cm numerical 2024 3m, magnification definition 2024 2m. Next: Unit 15 Refraction at Plane Surfaces (4 topics).
+- Session 15 — Unit 15 Refraction at Plane Surfaces (4 topics) upgraded: laws of refraction & refractive index; relation between refractive indices (apparent depth); lateral shift; total internal reflection (critical angle, prisms, fibres). Verified PYQs used: Snell + speed 2023 3m & 2024 3m, water-glass 60° 2024 3m, fish apparent depth 2024 3m, lateral-shift factors 2024 2m, TIR + conditions 2022 2m & 2024 2m, critical angle 1.5 2024 2m, C=42° → n 2021 2m, reflecting prisms 2024 3m. Next: Unit 16 Refraction through Prisms (3 topics).

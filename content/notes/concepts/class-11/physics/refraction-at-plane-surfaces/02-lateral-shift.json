@@ -5,80 +5,33 @@
   "topicTitle": "Lateral Shift",
   "relevance": 100,
   "notes": [
-    "**Lateral Shift:** This topic covers the fundamental concepts of lateral shift in the physics curriculum.",
-    "Understanding lateral shift is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to lateral shift should be memorized and practiced regularly.",
-    "**Definition:** When a ray of light passes through a parallel-sided transparent slab (like a glass slab), it emerges parallel to the original direction but displaced sideways. This perpendicular displacement is called the lateral shift (or lateral displacement).",
-    "**Formula:** $d = t \\cdot \\frac{\\sin(i - r)}{\\cos r}$, where $t$ is the thickness of the slab, $i$ is the angle of incidence, and $r$ is the angle of refraction.",
-    "**Derivation:** Inside the slab, the ray travels at angle $r$ to the normal. The horizontal distance traveled inside the slab is $t/\\cos r$. The lateral shift is this distance multiplied by $\\sin(i - r)$: $d = (t/\\cos r) \\cdot \\sin(i - r)$.",
-    "**Special case — normal incidence:** When $i = 0°$, $d = 0$. The ray passes straight through without any lateral shift. This is consistent with Snell's law: $r = 0$ when $i = 0$.",
-    "**Dependence on thickness:** The lateral shift is directly proportional to the slab thickness $t$. A thicker slab produces a larger shift. Doubling the thickness doubles the shift.",
-    "**Dependence on angle of incidence:** As $i$ increases from 0°, the lateral shift increases. At grazing incidence ($i \\to 90°$), the shift approaches the thickness $t$ (the ray travels almost parallel to the slab faces).",
-    "**Dependence on refractive index:** For a fixed angle of incidence, a higher refractive index means a larger refraction angle $r$ is smaller, so $(i - r)$ is larger, and the shift is larger. Denser materials produce more lateral shift.",
-    "**No angular deviation:** The emergent ray is PARALLEL to the incident ray. The slab causes a lateral displacement but no change in direction. This is because the two refractions (entry and exit) cancel each other's angular effect.",
-    "**Apparent shift of objects:** When you look through a glass window at an angle, objects appear slightly displaced from their true positions. This is due to lateral shift. The effect is small for thin windows but noticeable with thick glass blocks.",
-    "**Multiple slabs:** If light passes through multiple parallel slabs of different materials, the total lateral shift is the sum of individual shifts: $d_{total} = \\sum t_k \\cdot \\frac{\\sin(i_k - r_k)}{\\cos r_k}$, where each $i_k$ and $r_k$ is determined by Snell's law at each interface.",
-    "**NEB exam focus:** Derive the lateral shift formula. Calculate the shift for given values of $t$, $i$, and $n$. Explain why the emergent ray is parallel to the incident ray. Draw ray diagrams showing the shift.",
-    "**Numerical example:** A glass slab ($n = 1.5$) of thickness 10 cm is illuminated by a ray at $i = 60°$. First find $r$: $\\sin r = \\sin 60°/1.5 = 0.866/1.5 = 0.5774$, so $r = 35.3°$. Then $d = 10 \\cdot \\frac{\\sin(60° - 35.3°)}{\\cos 35.3°} = 10 \\cdot \\frac{\\sin 24.7°}{0.816} = 10 \\cdot \\frac{0.418}{0.816} = 5.12$ cm.",
-    "**Why the emergent ray is parallel:** At the first interface, the ray bends toward the normal by angle $(i - r)$. At the second interface, it bends away from the normal by the same angle $(i - r)$ because the surfaces are parallel and the geometry is symmetric. Net angular change = 0.",
-    "**Application — periscopes and binoculars:** Parallel-sided glass blocks are used in optical instruments to displace the light path without changing its direction. This allows compact instrument design while maintaining the line of sight.",
-    "**Connection to prism:** A prism has non-parallel faces, so the emergent ray is NOT parallel to the incident ray — it is deviated by angle $\\delta = i + e - A$. The lateral shift formula does not apply to prisms."
+    "## 1. Topic Introduction — The Slab That Shifts but Doesn't Bend\n\nLight through a thick glass window comes out parallel to where it started — yet shifted sideways. That **lateral shift** explains why a thick slab never quite lines up with itself and why refracted images through panes look slightly displaced.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Refraction through a parallel-sided slab\n\nA ray striking a glass slab of thickness t:\n1. Bends **towards the normal** entering glass (air → glass: r < i).\n2. Travels inside and meets the second face.\n3. Bends **away from the normal** leaving glass (glass → air: e = i).\n\nSince the faces are **parallel**, the internal angle r at the second face equals the internal angle at the first — Snell's law then forces the emergent angle to equal the incident angle: the emergent ray is **parallel to the incident ray**.\n\n### 2.2 Lateral shift\n\nThe only change is a sideways displacement measured perpendicular to the original path:\n$$x = \\frac{t\\sin(i - r)}{\\cos r}$$\n- Grows with **thickness t** of the slab.\n- Grows with **angle of incidence i** (zero at normal incidence).\n- Grows with **refractive index n** of the glass (larger n → smaller r → bigger numerator).\n- For a **thin** slab (t → 0), x → 0 — the shift is ignored in thin-lens optics.\n\n### 2.3 Worked numerical\n\n**Q (NEB-style):** A ray strikes a 6 cm thick glass slab (n = 1.5) at 60°. Find the lateral shift.\n- $\\sin r = \\frac{\\sin 60°}{1.5} = \\frac{0.866}{1.5} = 0.577$ → r = 35.3°\n- $x = \\frac{6 \\times \\sin(60° - 35.3°)}{\\cos 35.3°} = \\frac{6 \\times \\sin 24.7°}{\\cos 35.3°} = \\frac{6 \\times 0.418}{0.816} ≈ 3.07$ cm",
+    "## 3. Conceptual Relationships\n\n- **To Topic 70:** the slab works because Snell's law is reversible — air→glass and glass→air with the same r cancel.\n- **To Topic 73:** if the internal angle exceeded the critical angle, the second face would totally reflect — the slab becomes a light guide.\n- **To prisms (Unit 16):** non-parallel faces stop the cancellation, producing net deviation and dispersion.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Optics | Refraction | On what factors does the lateral shift of a ray through a glass slab depend? | 2 | Factors |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Show that the emergent ray from a glass slab is parallel to the incident ray (3m).\n2. Lateral-shift numerical (3m).\n3. Why is the shift zero at normal incidence? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Saying the ray \"bends\" overall — net deviation is zero; only the parallel shift remains.\n2. Writing x = t sin(i − r) without dividing by cos r.\n3. Claiming the shift grows without limit with i — it saturates near grazing incidence."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in lateral shift.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding.",
-    "❌ The emergent ray is deviated from the original direction. ✅ The emergent ray is PARALLEL to the incident ray. A parallel-sided slab causes lateral shift but NO angular deviation.",
-    "❌ Lateral shift depends on the refractive index of the slab material only. ✅ Lateral shift depends on ALL THREE: thickness $t$, angle of incidence $i$, AND refractive index $n$ (through the refraction angle $r$).",
-    "❌ At normal incidence, there is a lateral shift. ✅ At normal incidence ($i = 0°$), the lateral shift is ZERO. The ray passes straight through without any displacement.",
-    "❌ The lateral shift formula $d = t\\sin(i-r)/\\cos r$ works for prisms. ✅ This formula is ONLY for parallel-sided slabs. Prisms have non-parallel faces, so the emergent ray is deviated, not just shifted.",
-    "❌ A thicker slab always produces a proportionally larger shift for the same angle. ✅ Yes, the shift IS directly proportional to thickness: $d \\propto t$. But the proportionality constant depends on $i$ and $n$.",
-    "❌ The lateral shift is the same as the deviation angle. ✅ Lateral shift is a DISTANCE (measured in cm or m). Deviation angle is an ANGLE (measured in degrees). They are completely different quantities.",
-    "❌ Light passing through a glass slab changes its frequency. ✅ The frequency of light does NOT change when it passes through any medium. Only the speed and wavelength change: $v = c/n$ and $\\lambda = \\lambda_0/n$."
+    "**Parallel, not coincident:** the emergent ray keeps the incident direction but sits displaced sideways by x.",
+    "**i = e for a slab** — the two refractions cancel in angle, not in position."
   ],
   "practice": [
-    "Solve at least 5 problems on lateral shift from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type.",
-    "A glass slab of thickness 5 cm ($n = 1.5$) is struck by a ray at $i = 45°$. Find the lateral shift. $\\sin r = \\sin 45°/1.5 = 0.7071/1.5 = 0.4714$, so $r = 28.1°$. $d = 5 \\cdot \\frac{\\sin(45° - 28.1°)}{\\cos 28.1°} = 5 \\cdot \\frac{\\sin 16.9°}{0.883} = 5 \\cdot \\frac{0.291}{0.883} = 1.65$ cm.",
-    "Show that for small angles of incidence, the lateral shift is approximately $d \\approx t \\cdot i \\cdot (1 - 1/n)$. For small $i$ and $r$: $\\sin(i-r) \\approx i - r$ and $\\cos r \\approx 1$. From Snell's law: $r \\approx i/n$. Therefore $d \\approx t(i - i/n) = t \\cdot i \\cdot (1 - 1/n)$. This linear approximation is useful for paraxial optics.",
-    "A ray passes through a glass slab and emerges with a lateral shift of 2 cm. If the slab thickness is doubled to 10 cm (same material, same angle of incidence), what is the new lateral shift? Since $d \\propto t$, doubling the thickness doubles the shift: $d_{new} = 2 \\times 2 = 4$ cm.",
-    "A transparent slab of thickness 3 cm produces a lateral shift of 1 cm for a ray incident at 60°. Find the refractive index of the slab. $d = t\\sin(i-r)/\\cos r$. $1 = 3\\sin(60°-r)/\\cos r$. $\\sin(60°-r) = \\cos r/3$. Using the identity $\\sin(60°-r) = \\sin 60°\\cos r - \\cos 60°\\sin r$: $0.866\\cos r - 0.5\\sin r = \\cos r/3$. Solving: $r \\approx 30°$. Then $n = \\sin 60°/\\sin 30° = 0.866/0.5 = 1.73$. This is a high-index glass or crystal.",
-    "Why does a fish in water appear displaced when viewed from above at an angle? Light from the fish refracts at the water-air interface. The emergent ray appears to come from a point closer to the surface (apparent depth effect) AND laterally shifted. The combined effect makes the fish appear at a different position than its actual location.",
-    "A ray enters a parallel-sided slab of refractive index $n$ at angle $i$. Show that the lateral shift is maximum when $i \\to 90°$ (grazing incidence). As $i \\to 90°$, $r \\to \\arcsin(1/n)$. The shift $d = t\\sin(i-r)/\\cos r \\to t\\sin(90°-r)/\\cos r = t\\cos r/\\cos r = t$. The maximum lateral shift equals the slab thickness."
+    "Why do optical instruments use thin windows?"
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding lateral shift builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of lateral shift span engineering, physics, economics, and computer science.",
-    "The lateral shift through a parallel-sided slab is a fundamental result in geometrical optics. It demonstrates that refraction at parallel interfaces produces displacement without deviation — a principle used in many optical instruments.",
-    "In architectural glass, lateral shift is usually negligible for thin panes (a few mm). But in thick glass blocks used in art installations or optical tables, the shift can be several centimeters and must be accounted for in precise alignments.",
-    "The concept of lateral shift generalizes to any number of parallel interfaces. In a multi-layer coating (anti-reflective coatings on lenses), each layer contributes a small lateral shift, and the total effect determines the phase relationship between reflected waves.",
-    "In fiber optics, the concept of lateral shift is related to the \"beam wander\" that occurs when light enters a fiber at an angle. Proper coupling requires minimizing the lateral displacement at the fiber end face.",
-    "Leonhard Euler studied the optics of parallel-sided plates in the 1740s, deriving the lateral shift formula and showing its relationship to the delay introduced by the plate — a precursor to modern optical path length calculations."
+    "At normal incidence (i = 0), sin(i − r) = 0 and the shift vanishes — the ray passes straight through."
   ],
   "animation3D": "refraction-at-plane-surfaces",
   "motionGraphics": "refraction-at-plane-surfaces",
   "examples": [
-    "Real-world application of Lateral Shift",
-    "Practical demonstration of Lateral Shift concepts",
-    "Diagram-based question on Lateral Shift",
-    "Application in daily life involving Lateral Shift"
+    "***Thick window pane*** — objects seen through it sit slightly off-line."
   ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Lateral Shift.",
-    "Q3. Differentiate between various aspects of Lateral Shift.",
-    "Q4. Derive the key formula related to Lateral Shift.",
-    "Q5. What are the applications of Lateral Shift?"
+    "**Short (2m): Why is the lateral shift zero at normal incidence?** — At i = 0 the ray enters without bending (r = 0); the incident and emergent paths are collinear, so sin(i − r) = 0 and x = 0."
   ],
   "formulas": [
-    "Key Formula 2: Mathematical expression of Lateral Shift",
-    "Key Formula 3: Application formula for Lateral Shift",
-    "Key Formula 4: Derivation result for Lateral Shift",
-    "Key Formula 5: Important relation in Lateral Shift"
+    "- x = t sin(i − r)/cos r\n- i = e (slab); r same at both faces"
   ],
-  "summary": "Lateral Shift is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "A ray passing through a **parallel-sided slab** refracts towards the normal at the first face and away at the second; because the faces are parallel the internal angles match, so the emergent angle equals the incident angle (i = e) and the emergent ray is **parallel** to the incident one. The path is, however, displaced sideways by the **lateral shift** $x = \\dfrac{t\\sin(i-r)}{\\cos r}$, which grows with the **thickness** of the slab, the **angle of incidence** and the **refractive index** of the glass (NEB 2024, 2m), and vanishes at normal incidence. Prisms break this cancellation by using non-parallel faces — the seed of dispersion.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Lateral Shift applies",
     "Note 2: Lateral Shift connects to multiple other topics in Science",
@@ -87,23 +40,13 @@
     "Note 5: Lateral Shift frequently appears in examination questions"
   ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Lateral Shift",
-    "Note 3: Lateral Shift has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Lateral Shift",
-    "Note 5: Cross-check your answers using alternative methods for Lateral Shift"
+    "Verified PYQ: factors of lateral shift (2024, 2m)."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Lateral Shift formula",
-    "Trick 2: Elimination technique for Lateral Shift MCQs",
-    "Trick 3: Dimensional analysis shortcut for Lateral Shift",
-    "Trick 4: Memory aid for Lateral Shift formulas",
-    "Trick 5: Time-saving approach for Lateral Shift problems"
+    "\"Name the three factors: thickness, angle of incidence, refractive index.\""
   ],
   "examNotes": [
-    "Focus on numerical problems from Lateral Shift",
-    "Practice previous year questions on Lateral Shift",
-    "Learn the derivations for Lateral Shift thoroughly",
-    "Review common mistakes related to Lateral Shift"
+    "The 2024 2m expects the factor list — a compact memorised answer."
   ],
   "mcs": [
     {
@@ -148,11 +91,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Lateral Shift",
-    "Concept 2: Key theorem or principle in Lateral Shift",
-    "Concept 3: Important application area of Lateral Shift",
-    "Concept 4: Fundamental relationship in Lateral Shift",
-    "Concept 5: Connection between Lateral Shift and other topics"
+    "**Parallel faces cancel the bending but not the displacement** — the essence of slab refraction."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Lateral Shift",
@@ -163,16 +102,144 @@
   ],
   "visualType": "lateral-shift",
   "keyPoints": [
-    "Key Point 2: Essential theorem or principle related to Lateral Shift",
-    "Key Point 3: Important condition or constraint for Lateral Shift",
-    "Key Point 4: Common applications of Lateral Shift",
-    "Key Point 5: Connection to other topics in Science"
+    "x = t sin(i − r)/cos r; emergent ray ∥ incident ray."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Lateral Shift",
-    "Statement 2: Theorem related to Lateral Shift",
-    "Statement 3: Condition for Lateral Shift to be valid",
-    "Statement 4: Principle governing Lateral Shift",
-    "Statement 5: Corollary or consequence of Lateral Shift"
+    "\"The lateral shift produced by a parallel-sided slab increases with thickness, angle of incidence and refractive index.\""
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Slab That Shifts but Doesn't Bend\n\nLight through a thick glass window comes out parallel to where it started — yet shifted sideways. That **lateral shift** explains why a thick slab never quite lines up with itself and why refracted images through panes look slightly displaced.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Refraction through a parallel-sided slab\n\nA ray striking a glass slab of thickness t:\n1. Bends **towards the normal** entering glass (air → glass: r < i).\n2. Travels inside and meets the second face.\n3. Bends **away from the normal** leaving glass (glass → air: e = i).\n\nSince the faces are **parallel**, the internal angle r at the second face equals the internal angle at the first — Snell's law then forces the emergent angle to equal the incident angle: the emergent ray is **parallel to the incident ray**.\n\n### 2.2 Lateral shift\n\nThe only change is a sideways displacement measured perpendicular to the original path:\n$$x = \\frac{t\\sin(i - r)}{\\cos r}$$\n- Grows with **thickness t** of the slab.\n- Grows with **angle of incidence i** (zero at normal incidence).\n- Grows with **refractive index n** of the glass (larger n → smaller r → bigger numerator).\n- For a **thin** slab (t → 0), x → 0 — the shift is ignored in thin-lens optics.\n\n### 2.3 Worked numerical\n\n**Q (NEB-style):** A ray strikes a 6 cm thick glass slab (n = 1.5) at 60°. Find the lateral shift.\n- $\\sin r = \\frac{\\sin 60°}{1.5} = \\frac{0.866}{1.5} = 0.577$ → r = 35.3°\n- $x = \\frac{6 \\times \\sin(60° - 35.3°)}{\\cos 35.3°} = \\frac{6 \\times \\sin 24.7°}{\\cos 35.3°} = \\frac{6 \\times 0.418}{0.816} ≈ 3.07$ cm",
+      "## 3. Conceptual Relationships\n\n- **To Topic 70:** the slab works because Snell's law is reversible — air→glass and glass→air with the same r cancel.\n- **To Topic 73:** if the internal angle exceeded the critical angle, the second face would totally reflect — the slab becomes a light guide.\n- **To prisms (Unit 16):** non-parallel faces stop the cancellation, producing net deviation and dispersion.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Optics | Refraction | On what factors does the lateral shift of a ray through a glass slab depend? | 2 | Factors |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Show that the emergent ray from a glass slab is parallel to the incident ray (3m).\n2. Lateral-shift numerical (3m).\n3. Why is the shift zero at normal incidence? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Saying the ray \"bends\" overall — net deviation is zero; only the parallel shift remains.\n2. Writing x = t sin(i − r) without dividing by cos r.\n3. Claiming the shift grows without limit with i — it saturates near grazing incidence."
+    ],
+    "confusion": [
+      "**Parallel, not coincident:** the emergent ray keeps the incident direction but sits displaced sideways by x.",
+      "**i = e for a slab** — the two refractions cancel in angle, not in position."
+    ],
+    "keyPoints": [
+      "x = t sin(i − r)/cos r; emergent ray ∥ incident ray."
+    ],
+    "importantConcepts": [
+      "**Parallel faces cancel the bending but not the displacement** — the essence of slab refraction."
+    ],
+    "examples": [
+      "***Thick window pane*** — objects seen through it sit slightly off-line."
+    ],
+    "universalFacts": [
+      "At normal incidence (i = 0), sin(i − r) = 0 and the shift vanishes — the ray passes straight through."
+    ],
+    "importantStatements": [
+      "\"The lateral shift produced by a parallel-sided slab increases with thickness, angle of incidence and refractive index.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: factors of lateral shift (2024, 2m)."
+    ],
+    "examShortTricks": [
+      "\"Name the three factors: thickness, angle of incidence, refractive index.\""
+    ],
+    "examNotes": [
+      "The 2024 2m expects the factor list — a compact memorised answer."
+    ],
+    "formulas": [
+      "- x = t sin(i − r)/cos r\n- i = e (slab); r same at both faces"
+    ],
+    "practice": [
+      "Why do optical instruments use thin windows?"
+    ],
+    "practiceQuestions": [
+      "**Short (2m): Why is the lateral shift zero at normal incidence?** — At i = 0 the ray enters without bending (r = 0); the incident and emergent paths are collinear, so sin(i − r) = 0 and x = 0."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "The emergent ray from a glass slab is:",
+      "options": [
+        "Bent towards the normal",
+        "Parallel to the incident ray",
+        "Absorbed",
+        "Perpendicular to the incident ray"
+      ],
+      "answer": "B",
+      "explanation": "i = e."
+    },
+    {
+      "question": "Lateral shift increases with:",
+      "options": [
+        "Decreasing t",
+        "Increasing t",
+        "Decreasing n",
+        "Decreasing i"
+      ],
+      "answer": "B",
+      "explanation": "x ∝ t sin(i−r)/cos r."
+    },
+    {
+      "question": "At normal incidence the lateral shift is:",
+      "options": [
+        "Maximum",
+        "Zero",
+        "t",
+        "Infinite"
+      ],
+      "answer": "B",
+      "explanation": "sin(i−r) = 0."
+    },
+    {
+      "question": "Lateral shift formula:",
+      "options": [
+        "t sin(i−r)/cos r",
+        "t cos(i−r)/sin r",
+        "t sin r/cos i",
+        "t cos r"
+      ],
+      "answer": "A",
+      "explanation": "Standard result."
+    },
+    {
+      "question": "NEB 2024 asked the factors of lateral shift for:",
+      "options": [
+        "2 marks",
+        "5 marks",
+        "3 marks",
+        "4 marks"
+      ],
+      "answer": "A",
+      "explanation": "2024 paper, 2m."
+    },
+    {
+      "question": "Inside the slab the ray travels:",
+      "options": [
+        "Parallel to the surface",
+        "Along the normal",
+        "At angle r to the normal",
+        "At angle i"
+      ],
+      "answer": "C",
+      "explanation": "Refracted internally."
+    },
+    {
+      "question": "A thin slab shows negligible shift because:",
+      "options": [
+        "n is small",
+        "t is small",
+        "i is small",
+        "r is large"
+      ],
+      "answer": "B",
+      "explanation": "x ∝ t."
+    },
+    {
+      "question": "If the second face were not parallel, the emergent ray would:",
+      "options": [
+        "Remain parallel",
+        "Deviate permanently",
+        "Stop",
+        "Reverse"
+      ],
+      "answer": "B",
+      "explanation": "That is a prism."
+    }
   ]
 }
