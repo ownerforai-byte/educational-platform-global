@@ -11,70 +11,35 @@
   "visualType": "stress-strain",
   "enrichedContent": {
     "notes": [
-      "**Stress (σ):** the internal resisting force per unit area set up in a body when external forces are applied: σ = F/A. Empirical units are N/m² or Pa (pascal). Normal stress = force perpendicular to the area (tension/compression); shear stress = force parallel to the area.",
-      "**Strain (ε):** the fractional deformation produced: strain = change in dimension / original dimension. It is dimensionless. Linear strain = Δl/l, shear strain = θ (angle of shear), volumetric strain = ΔV/V.",
-      "**Elasticity and plasticity:** elasticity is the property of a body to regain its original shape and size when the deforming force is removed. Plasticity is the property of remaining permanently deformed after the deforming force is removed. Bodies are elastic below the elastic limit and plastic beyond it.",
-      "**Hooke's law in stress-strain form:** within the elastic limit, stress ∝ strain: σ = Eε, where E is Young's modulus (N/m²). This is the generalised Hooke's law — stress and strain are proportional until the elastic limit.",
-      "**Stress-strain curve regions:** (1) linear (proportional) region up to the proportional limit; (2) elastic region up to the elastic limit (still recovers fully); (3) yielding at the yield point (permanent deformation begins); (4) plastic deformation region where the material flows; (5) ultimate tensile strength (maximum stress), then (6) fracture/breaking point.",
-      "**Worked example — a wire under tension:** a steel wire of length 2 m and cross-section 1 mm² (10⁻⁶ m²) carries a 20 kg load. F = 196 N, σ = 196/10⁻⁶ = 1.96 × 10⁸ Pa. If E_steel = 2 × 10¹¹ Pa, strain ε = σ/E = 9.8 × 10⁻⁴, so extension Δl = 9.8 × 10⁻⁴ × 2 = 1.96 mm.",
-      "**Thermal Stress:** If a wire is constrained and temperature changes, stress develops: $σ = EαΔT$, where α is the coefficient of linear expansion. This is crucial in bridge construction and railway tracks.",
-      "**Types of stress & strain (NEB focus):** tensile/compressive (longitudinal), shear (tangential), and volume (hydrostatic). Each has its own modulus: Young's modulus E = σ_t/ε_l, shear modulus G = τ/θ, bulk modulus B = −P/(ΔV/V).",
-      "**Ductile vs brittle materials:** ductile (copper, mild steel) show a long plastic region — they deform before breaking and are used for wires. Brittle (glass, cast iron) show little or no plastic region — they break suddenly near the elastic limit, which is why glass shatters."
+      "## 1. Topic Introduction — How Materials Respond to Load\n\nPull on any solid and it deforms. Stress normalises the pull by area, strain normalises the deformation by size — together they describe the *material*, not the specimen. Their ratio is Young's modulus, and their graph tells the whole story from elastic stretch to fracture.",
+      "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 Definitions\n\n**Stress:** force per unit area acting on a body.\n$$\\sigma = \\frac{F}{A} \\quad \\text{(N/m}^2 = \\text{Pa)}$$\nTypes: **longitudinal (tensile/compressive)**, **shear** (tangential force), **volume (bulk)** (uniform pressure).\n\n**Strain:** the fractional deformation produced — dimensionless.\n- Longitudinal strain: $\\epsilon = \\Delta L / L$\n- Shear strain: $\\theta$ (angle of deformation)\n- Volume strain: $\\Delta V / V$\n\n**Elasticity:** the property by which a body regains its original shape when the deforming force is removed. **Plasticity:** the property of retaining the deformed shape permanently.\n\n### 2.2 Young's modulus\n\n$$Y = \\frac{\\text{longitudinal stress}}{\\text{longitudinal strain}} = \\frac{F/A}{\\Delta L/L} = \\frac{FL}{A\\,\\Delta L} \\quad \\text{(Pa)}$$\n\n**Q (3m, 2023 & 2024):** Stress = force per unit area (Pa); strain = fractional change in dimension (dimensionless); Young's modulus = ratio of longitudinal stress to longitudinal strain (Pa).\n\n### 2.3 Worked numericals\n\n**Q (3m, 2022 & 2024):** A steel wire of cross-sectional area 2 mm² is stretched by a 100 N force. Calculate the stress. If Young's modulus of steel is 2×10¹¹ Pa, find the strain.\n- $\\sigma = F/A = 100 / (2\\times10^{-6}) = 5 \\times 10^7$ Pa\n- $\\epsilon = \\sigma/Y = 5\\times10^7 / 2\\times10^{11} = 2.5 \\times 10^{-4}$\n\n**Q (4m, 2020):** A copper wire of length 2 m and cross-sectional area 2×10⁻⁵ m² is stretched by 2 mm when a force of 200 N is applied. Find Young's modulus of copper.\n$$Y = \\frac{FL}{A\\Delta L} = \\frac{200 \\times 2}{2\\times10^{-5} \\times 2\\times10^{-3}} = \\frac{400}{4\\times10^{-8}} = 1 \\times 10^{10} \\text{ Pa}$$\n\n**Q (3m, 2024):** A steel cable of cross-sectional area 5 mm² has a breaking stress of 8×10⁸ Pa. What maximum mass can it lift? (g = 10 m/s²)\n- $F_{max} = \\sigma_{break} \\times A = 8\\times10^8 \\times 5\\times10^{-6} = 4000$ N\n- $m = F/g = 400$ kg",
+      "## 3. Conceptual Relationships\n\n- **To Topic 38:** $k = YA/L$ — object stiffness from material stiffness.\n- **To Topic 41:** Poisson's ratio links lateral to longitudinal strain.\n- **Stress–strain graph regions:** proportional limit (Hooke) → elastic limit → yield → ultimate stress → fracture. The area under the curve to fracture is toughness; under the elastic part, resilience.\n- **To breaking stress:** engineering safety factor = breaking stress / working stress.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Mechanics | Elasticity | Define stress, strain, and Young's modulus. What are their SI units? | 3 | Definition |\n| 2080/2024 | Mechanics | Elasticity | Define stress, strain, and Young's modulus. What are their SI units? | 3 | Definition |\n| 2078/2022 | Mechanics | Elasticity | A steel wire of cross-sectional area 2 mm² is stretched by 100 N force. Calculate the stress. If Young's modulus for steel is 2×10¹¹ Pa, what is the strain? | 3 | Numerical |\n| 2076/2020 | Mechanics | Elasticity | A copper wire of length 2 m and cross-sectional area 2×10⁻⁵ m² is stretched by 2 mm when a force of 200 N is applied. Find Young's modulus of copper. | 4 | Numerical |\n| 2080/2024 | Mechanics | Elasticity | A steel cable of cross-sectional area 5 mm² has a breaking stress of 8×10⁸ Pa. What maximum mass can it lift? (g = 10 m/s²) | 3 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Forgetting to convert mm² → m² (1 mm² = 10⁻⁶ m²).\n2. Calling strain a quantity with units — it is dimensionless.\n3. Using area in cm² in stress calculations.\n4. Confusing breaking stress with elastic limit."
     ],
     "confusion": [
-      "❌ 'Stress and pressure are the same.' ✅ Both have units N/m², but stress is the INTERNAL resisting force per unit area produced in a body, while pressure is an EXTERNAL force per unit area applied by a fluid.",
-      "❌ 'Strain has units.' ✅ Strain is dimensionless — it is a ratio of lengths (or volumes/angles). This is essential for dimensional analysis.",
-      "❌ 'Elasticity means materials are always elastic.' ✅ Every material is elastic only up to its elastic limit; beyond it, plastic deformation occurs.",
-      "❌ 'Stress equals force.' ✅ Stress is force PER unit area (σ = F/A). Doubling the area halves the stress for the same force.",
-      "❌ 'The stress–strain graph is a straight line everywhere.' ✅ Only up to the proportional limit. After that it curves at the yield point and beyond.",
-      "❌ 'A ductile material breaks near the elastic limit.' ✅ DUCTILE materials deform plastically and stretch before fracturing; brittle materials break with little warning near the elastic limit."
+      "**Stress is not force:** it is force divided by area — a thin wire breaks under the same force that a thick rod survives.",
+      "**Strain is dimensionless** — a ratio of like quantities."
     ],
     "practice": [
-      "A 5 m copper wire of area 2 mm² hangs a 50 kg mass. Find the stress and strain given E = 1.1 × 10¹¹ N/m².",
-      "A rod of cross-section 4 cm² supports a load of 8000 N. Find the stress.",
-      "A bar is stretched so that its length changes from 1.000 m to 1.002 m. Find the strain.",
-      "A brick wall of area 10 m² supports a force of 2×10⁵ N. Find the compressive stress.",
-      "A steel cable (E = 2×10¹¹ N/m²) must carry 10⁴ N with strain < 10⁻³. Find the minimum cross-section.",
-      "Sketch and label the stress–strain curve for mild steel: proportional limit, elastic limit, yield point, ultimate strength, fracture."
+      "Why are ropes for cranes made of many thin wires braided together?"
     ],
     "universalFacts": [
-      "Stress and strain were first quantified by Robert Hooke and later generalised by Thomas Young, after whom Young's modulus is named.",
-      "The area under the stress–strain curve equals the energy absorbed per unit volume (toughness) — important for crash safety design.",
-      "Stress is a tensor, not a scalar — it has components for tension, compression and shear in every direction.",
-      "Bone is an adaptation of stress engineering: it is strongest in compression and weakest in shear, matching the stresses the body faces.",
-      "The elastic limit and yield point coincide for many materials; for mild steel there is a distinct upper and lower yield point.",
-      "**Fatigue:** Repeated loading and unloading can cause failure below the ultimate strength. This is why airplane wings and bridges are designed for fatigue life, not just static strength."
+      "Steel's Y ≈ 2×10¹¹ Pa; copper's ≈ 1.1×10¹¹ Pa; human bone ≈ 1.6×10¹⁰ Pa."
     ],
     "examples": [
-      "Stress: A 1000 N force on a 5 cm² bar gives σ = 1000/(5×10⁻⁴) = 2×10⁶ Pa.",
-      "Strain: A wire stretched from 2.00 m to 2.01 m has ε = 0.01/2 = 5×10⁻³.",
-      "Young's modulus: σ = 1.96×10⁸ Pa, ε = 9.8×10⁻⁴ → E = 2×10¹¹ N/m² (steel).",
-      "Shear: A force parallel to the top face of a cube displaces it — shear stress τ = F/A, shear strain θ.",
-      "Volume: Pressure P on a sphere → B = −P/(ΔV/V). For water, B ≈ 2.2×10⁹ Pa."
+      "***NEB 2022/2024*** — 100 N on 2 mm²: σ = 5×10⁷ Pa, ε = 2.5×10⁻⁴."
     ],
     "practiceQuestions": [
-      "A steel rod of length 3 m and area 2 cm² is stretched by a 6000 N force. Given E = 2×10¹¹ N/m², find stress, strain and extension.",
-      "A rubber band of original length 10 cm stretches to 12 cm. Find the strain and the percentage elongation.",
-      "A column of area 0.25 m² supports a weight of 2.5×10⁵ N. Find the compressive stress.",
-      "A mild steel wire of area 1 mm² breaks when the stress reaches 4×10⁸ Pa. Find the breaking (maximum) load.",
-      "A body under 10⁵ Pa pressure suffers a volume strain of 2×10⁻⁴. Find its bulk modulus.",
-      "Distinguish, with examples, between a ductile and a brittle material using their stress–strain curves."
+      "**Numerical (3m): A wire of length 3 m and radius 0.5 mm extends 1.5 mm under 200 N. Find Y.** — A = πr² = 7.85×10⁻⁷ m²; Y = FL/(AΔL) = 200×3/(7.85×10⁻⁷×1.5×10⁻³) = 600/1.18×10⁻⁹ = 5.1×10¹¹ Pa."
     ],
     "formulas": [
-      "Stress: σ = F/A (N/m² or Pa)",
-      "Strain: ε = Δl/l (dimensionless; ε_V = ΔV/V, shear ε = θ)",
-      "Hooke's law in stress–strain form: σ = Eε",
-      "Young's modulus: E = (F/A)/(Δl/l) = Fl/(AΔl)",
-      "Bulk modulus: B = −P/(ΔV/V); Shear modulus: G = τ/θ"
+      "- σ = F/A; ε = ΔL/L\n- Y = FL/(AΔL)\n- Breaking force = breaking stress × A"
     ],
     "keyPoints": [
-      "Stress is force per unit area; strain is fractional deformation (dimensionless).",
-      "Elasticity = recovery of shape when the force is removed; plasticity = permanent deformation.",
-      "Stress is proportional to strain only within the elastic limit (Hooke's law, σ = Eε).",
-      "The stress–strain curve has six regions: proportional, elastic, yield, plastic, ultimate, fracture.",
-      "Ductile materials deform plastically before breaking; brittle ones break suddenly near the elastic limit."
+      "σ = F/A (Pa); ε = ΔL/L (dimensionless); Y = σ/ε = FL/(AΔL).",
+      "Elasticity = regains shape; plasticity = keeps deformed shape."
     ],
-    "summary": "Stress (σ = F/A) and strain (ε = Δl/l) describe how solids respond to deforming forces. Within the elastic limit, σ = Eε (Hooke's law). Elastic bodies recover their shape; plastic bodies deform permanently. The stress–strain curve shows the proportional limit, elastic limit, yield point, ultimate strength and fracture — ductile materials deform plastically first, brittle materials shatter suddenly.",
+    "summary": "**Stress** $\\sigma = F/A$ (Pa) is force per unit area; **strain** $\\epsilon = \\Delta L/L$ is the dimensionless fractional deformation; **Young's modulus** $Y = FL/(A\\Delta L)$ is their ratio within the elastic limit. Elasticity means full shape recovery on unloading; plasticity means permanent deformation. NEB repeats the definition question (2023, 2024) and the numericals: 100 N on a 2 mm² steel wire gives $\\sigma = 5\\times10^7$ Pa and $\\epsilon = 2.5\\times10^{-4}$ (2022, 2024); a copper wire stretching 2 mm under 200 N gives $Y = 1\\times10^{10}$ Pa (2020); a 5 mm² cable with breaking stress 8×10⁸ Pa lifts at most 4000 N → 400 kg (2024).",
     "specialNotes": [
       "Strain is dimensionless — never attach units.",
       "Stress and pressure share the N/m² unit but are different concepts (internal vs external).",
@@ -83,32 +48,16 @@
       "NEB frequently asks to label the stress–strain curve and to calculate E from a numerical."
     ],
     "importantStatements": [
-      "Stress is the internal force per unit area resisting deformation: σ = F/A.",
-      "Strain is the fractional change in dimension and is dimensionless: ε = Δl/l.",
-      "Within the elastic limit stress is proportional to strain (Hooke's law): σ = Eε.",
-      "Elasticity is the property of recovering original shape; plasticity is permanent deformation.",
-      "Young's modulus E = Fl/(AΔl) quantifies the stiffness of a material in tension."
+      "\"Young's modulus is the ratio of longitudinal stress to longitudinal strain within the elastic limit.\""
     ],
     "importantNotes": [
-      "Always distinguish stress (F/A) from strain (Δl/l) — one has units, one is dimensionless.",
-      "The elastic limit is the boundary between recoverable (elastic) and permanent (plastic) deformation.",
-      "σ = Eε is the stress–strain form of Hooke's law and holds only within the elastic limit.",
-      "The area under the stress–strain curve is the toughness — the energy absorbed per unit volume.",
-      "Ductility and brittleness are read directly from the length of the plastic region of the curve."
+      "Verified PYQs: definitions (2023, 2024 — 3m); steel-wire numerical (2022, 2024 — 3m); copper-wire Y (2020 — 4m); cable mass (2024 — 3m)."
     ],
     "examShortTricks": [
-      "Remember: strain has NO units — a quick sanity check for MCQs.",
-      "To find E: rearrange to E = Fl/(AΔl) — compute σ then divide by ε.",
-      "Stress–strain curve order: proportional → elastic → yield → plastic → ultimate → fracture.",
-      "Compression increases density; bulk modulus B = −P/(ΔV/V) is positive because ΔV is negative.",
-      "For breaking load: F_max = σ_break × A — stress times the area."
+      "\"1 mm² = 10⁻⁶ m² — the #1 conversion trap.\""
     ],
     "examNotes": [
-      "Stress and strain numericals are a guaranteed exam topic — practice unit conversions (mm² → m²).",
-      "Labeling the stress–strain curve and identifying regions carries direct marks.",
-      "Young's modulus problems (extension of a wire) appear almost every year.",
-      "Bulk modulus and shear modulus are often asked as short-answer comparisons.",
-      "Safety factor = ultimate stress / working stress — a common applied question."
+      "Definitions repeat (2023, 2024); numericals appear nearly every year — practise all three patterns."
     ],
     "mcs": [
       {
@@ -163,11 +112,7 @@
       }
     ],
     "importantConcepts": [
-      "Stress σ = F/A is the internal force per unit area resisting deformation.",
-      "Strain ε = Δl/l is the dimensionless fractional deformation.",
-      "Hooke's law: σ = Eε inside the elastic limit.",
-      "Elasticity recovers shape; plasticity causes permanent deformation.",
-      "Moduli: E (Young), G (shear), B (bulk) each relate a stress to its corresponding strain."
+      "**Stress and strain belong to the material;** force and extension belong to the specimen — that is why engineers tabulate Y, not k."
     ],
     "importantTasks": [
       "Calculate stress, strain and Young's modulus for a loaded wire with correct unit conversions.",
@@ -355,68 +300,33 @@
     ]
   },
   "notes": [
-    "**Stress (σ):** the internal resisting force per unit area set up in a body when external forces are applied: σ = F/A. Empirical units are N/m² or Pa (pascal). Normal stress = force perpendicular to the area (tension/compression); shear stress = force parallel to the area.",
-    "**Strain (ε):** the fractional deformation produced: strain = change in dimension / original dimension. It is dimensionless. Linear strain = Δl/l, shear strain = θ (angle of shear), volumetric strain = ΔV/V.",
-    "**Elasticity and plasticity:** elasticity is the property of a body to regain its original shape and size when the deforming force is removed. Plasticity is the property of remaining permanently deformed after the deforming force is removed. Bodies are elastic below the elastic limit and plastic beyond it.",
-    "**Hooke's law in stress-strain form:** within the elastic limit, stress ∝ strain: σ = Eε, where E is Young's modulus (N/m²). This is the generalised Hooke's law — stress and strain are proportional until the elastic limit.",
-    "**Stress-strain curve regions:** (1) linear (proportional) region up to the proportional limit; (2) elastic region up to the elastic limit (still recovers fully); (3) yielding at the yield point (permanent deformation begins); (4) plastic deformation region where the material flows; (5) ultimate tensile strength (maximum stress), then (6) fracture/breaking point.",
-    "**Worked example — a wire under tension:** a steel wire of length 2 m and cross-section 1 mm² (10⁻⁶ m²) carries a 20 kg load. F = 196 N, σ = 196/10⁻⁶ = 1.96 × 10⁸ Pa. If E_steel = 2 × 10¹¹ Pa, strain ε = σ/E = 9.8 × 10⁻⁴, so extension Δl = 9.8 × 10⁻⁴ × 2 = 1.96 mm.",
-    "**Thermal Stress:** If a wire is constrained and temperature changes, stress develops: $σ = EαΔT$, where α is the coefficient of linear expansion. This is crucial in bridge construction and railway tracks.",
-    "**Types of stress & strain (NEB focus):** tensile/compressive (longitudinal), shear (tangential), and volume (hydrostatic). Each has its own modulus: Young's modulus E = σ_t/ε_l, shear modulus G = τ/θ, bulk modulus B = −P/(ΔV/V).",
-    "**Ductile vs brittle materials:** ductile (copper, mild steel) show a long plastic region — they deform before breaking and are used for wires. Brittle (glass, cast iron) show little or no plastic region — they break suddenly near the elastic limit, which is why glass shatters."
+    "## 1. Topic Introduction — How Materials Respond to Load\n\nPull on any solid and it deforms. Stress normalises the pull by area, strain normalises the deformation by size — together they describe the *material*, not the specimen. Their ratio is Young's modulus, and their graph tells the whole story from elastic stretch to fracture.",
+    "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 Definitions\n\n**Stress:** force per unit area acting on a body.\n$$\\sigma = \\frac{F}{A} \\quad \\text{(N/m}^2 = \\text{Pa)}$$\nTypes: **longitudinal (tensile/compressive)**, **shear** (tangential force), **volume (bulk)** (uniform pressure).\n\n**Strain:** the fractional deformation produced — dimensionless.\n- Longitudinal strain: $\\epsilon = \\Delta L / L$\n- Shear strain: $\\theta$ (angle of deformation)\n- Volume strain: $\\Delta V / V$\n\n**Elasticity:** the property by which a body regains its original shape when the deforming force is removed. **Plasticity:** the property of retaining the deformed shape permanently.\n\n### 2.2 Young's modulus\n\n$$Y = \\frac{\\text{longitudinal stress}}{\\text{longitudinal strain}} = \\frac{F/A}{\\Delta L/L} = \\frac{FL}{A\\,\\Delta L} \\quad \\text{(Pa)}$$\n\n**Q (3m, 2023 & 2024):** Stress = force per unit area (Pa); strain = fractional change in dimension (dimensionless); Young's modulus = ratio of longitudinal stress to longitudinal strain (Pa).\n\n### 2.3 Worked numericals\n\n**Q (3m, 2022 & 2024):** A steel wire of cross-sectional area 2 mm² is stretched by a 100 N force. Calculate the stress. If Young's modulus of steel is 2×10¹¹ Pa, find the strain.\n- $\\sigma = F/A = 100 / (2\\times10^{-6}) = 5 \\times 10^7$ Pa\n- $\\epsilon = \\sigma/Y = 5\\times10^7 / 2\\times10^{11} = 2.5 \\times 10^{-4}$\n\n**Q (4m, 2020):** A copper wire of length 2 m and cross-sectional area 2×10⁻⁵ m² is stretched by 2 mm when a force of 200 N is applied. Find Young's modulus of copper.\n$$Y = \\frac{FL}{A\\Delta L} = \\frac{200 \\times 2}{2\\times10^{-5} \\times 2\\times10^{-3}} = \\frac{400}{4\\times10^{-8}} = 1 \\times 10^{10} \\text{ Pa}$$\n\n**Q (3m, 2024):** A steel cable of cross-sectional area 5 mm² has a breaking stress of 8×10⁸ Pa. What maximum mass can it lift? (g = 10 m/s²)\n- $F_{max} = \\sigma_{break} \\times A = 8\\times10^8 \\times 5\\times10^{-6} = 4000$ N\n- $m = F/g = 400$ kg",
+    "## 3. Conceptual Relationships\n\n- **To Topic 38:** $k = YA/L$ — object stiffness from material stiffness.\n- **To Topic 41:** Poisson's ratio links lateral to longitudinal strain.\n- **Stress–strain graph regions:** proportional limit (Hooke) → elastic limit → yield → ultimate stress → fracture. The area under the curve to fracture is toughness; under the elastic part, resilience.\n- **To breaking stress:** engineering safety factor = breaking stress / working stress.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Mechanics | Elasticity | Define stress, strain, and Young's modulus. What are their SI units? | 3 | Definition |\n| 2080/2024 | Mechanics | Elasticity | Define stress, strain, and Young's modulus. What are their SI units? | 3 | Definition |\n| 2078/2022 | Mechanics | Elasticity | A steel wire of cross-sectional area 2 mm² is stretched by 100 N force. Calculate the stress. If Young's modulus for steel is 2×10¹¹ Pa, what is the strain? | 3 | Numerical |\n| 2076/2020 | Mechanics | Elasticity | A copper wire of length 2 m and cross-sectional area 2×10⁻⁵ m² is stretched by 2 mm when a force of 200 N is applied. Find Young's modulus of copper. | 4 | Numerical |\n| 2080/2024 | Mechanics | Elasticity | A steel cable of cross-sectional area 5 mm² has a breaking stress of 8×10⁸ Pa. What maximum mass can it lift? (g = 10 m/s²) | 3 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Forgetting to convert mm² → m² (1 mm² = 10⁻⁶ m²).\n2. Calling strain a quantity with units — it is dimensionless.\n3. Using area in cm² in stress calculations.\n4. Confusing breaking stress with elastic limit."
   ],
   "confusion": [
-    "❌ 'Stress and pressure are the same.' ✅ Both have units N/m², but stress is the INTERNAL resisting force per unit area produced in a body, while pressure is an EXTERNAL force per unit area applied by a fluid.",
-    "❌ 'Strain has units.' ✅ Strain is dimensionless — it is a ratio of lengths (or volumes/angles). This is essential for dimensional analysis.",
-    "❌ 'Elasticity means materials are always elastic.' ✅ Every material is elastic only up to its elastic limit; beyond it, plastic deformation occurs.",
-    "❌ 'Stress equals force.' ✅ Stress is force PER unit area (σ = F/A). Doubling the area halves the stress for the same force.",
-    "❌ 'The stress–strain graph is a straight line everywhere.' ✅ Only up to the proportional limit. After that it curves at the yield point and beyond.",
-    "❌ 'A ductile material breaks near the elastic limit.' ✅ DUCTILE materials deform plastically and stretch before fracturing; brittle materials break with little warning near the elastic limit."
+    "**Stress is not force:** it is force divided by area — a thin wire breaks under the same force that a thick rod survives.",
+    "**Strain is dimensionless** — a ratio of like quantities."
   ],
   "practice": [
-    "A 5 m copper wire of area 2 mm² hangs a 50 kg mass. Find the stress and strain given E = 1.1 × 10¹¹ N/m².",
-    "A rod of cross-section 4 cm² supports a load of 8000 N. Find the stress.",
-    "A bar is stretched so that its length changes from 1.000 m to 1.002 m. Find the strain.",
-    "A brick wall of area 10 m² supports a force of 2×10⁵ N. Find the compressive stress.",
-    "A steel cable (E = 2×10¹¹ N/m²) must carry 10⁴ N with strain < 10⁻³. Find the minimum cross-section.",
-    "Sketch and label the stress–strain curve for mild steel: proportional limit, elastic limit, yield point, ultimate strength, fracture."
+    "Why are ropes for cranes made of many thin wires braided together?"
   ],
   "universalFacts": [
-    "Stress and strain were first quantified by Robert Hooke and later generalised by Thomas Young, after whom Young's modulus is named.",
-    "The area under the stress–strain curve equals the energy absorbed per unit volume (toughness) — important for crash safety design.",
-    "Stress is a tensor, not a scalar — it has components for tension, compression and shear in every direction.",
-    "Bone is an adaptation of stress engineering: it is strongest in compression and weakest in shear, matching the stresses the body faces.",
-    "The elastic limit and yield point coincide for many materials; for mild steel there is a distinct upper and lower yield point.",
-    "**Fatigue:** Repeated loading and unloading can cause failure below the ultimate strength. This is why airplane wings and bridges are designed for fatigue life, not just static strength."
+    "Steel's Y ≈ 2×10¹¹ Pa; copper's ≈ 1.1×10¹¹ Pa; human bone ≈ 1.6×10¹⁰ Pa."
   ],
   "examples": [
-    "Stress: A 1000 N force on a 5 cm² bar gives σ = 1000/(5×10⁻⁴) = 2×10⁶ Pa.",
-    "Strain: A wire stretched from 2.00 m to 2.01 m has ε = 0.01/2 = 5×10⁻³.",
-    "Young's modulus: σ = 1.96×10⁸ Pa, ε = 9.8×10⁻⁴ → E = 2×10¹¹ N/m² (steel).",
-    "Shear: A force parallel to the top face of a cube displaces it — shear stress τ = F/A, shear strain θ.",
-    "Volume: Pressure P on a sphere → B = −P/(ΔV/V). For water, B ≈ 2.2×10⁹ Pa."
+    "***NEB 2022/2024*** — 100 N on 2 mm²: σ = 5×10⁷ Pa, ε = 2.5×10⁻⁴."
   ],
   "practiceQuestions": [
-    "A steel rod of length 3 m and area 2 cm² is stretched by a 6000 N force. Given E = 2×10¹¹ N/m², find stress, strain and extension.",
-    "A rubber band of original length 10 cm stretches to 12 cm. Find the strain and the percentage elongation.",
-    "A column of area 0.25 m² supports a weight of 2.5×10⁵ N. Find the compressive stress.",
-    "A mild steel wire of area 1 mm² breaks when the stress reaches 4×10⁸ Pa. Find the breaking (maximum) load.",
-    "A body under 10⁵ Pa pressure suffers a volume strain of 2×10⁻⁴. Find its bulk modulus.",
-    "Distinguish, with examples, between a ductile and a brittle material using their stress–strain curves."
+    "**Numerical (3m): A wire of length 3 m and radius 0.5 mm extends 1.5 mm under 200 N. Find Y.** — A = πr² = 7.85×10⁻⁷ m²; Y = FL/(AΔL) = 200×3/(7.85×10⁻⁷×1.5×10⁻³) = 600/1.18×10⁻⁹ = 5.1×10¹¹ Pa."
   ],
   "formulas": [
-    "Stress: σ = F/A (N/m² or Pa)",
-    "Strain: ε = Δl/l (dimensionless; ε_V = ΔV/V, shear ε = θ)",
-    "Hooke's law in stress–strain form: σ = Eε",
-    "Young's modulus: E = (F/A)/(Δl/l) = Fl/(AΔl)",
-    "Bulk modulus: B = −P/(ΔV/V); Shear modulus: G = τ/θ"
+    "- σ = F/A; ε = ΔL/L\n- Y = FL/(AΔL)\n- Breaking force = breaking stress × A"
   ],
   "keyPoints": [
-    "Stress is force per unit area; strain is fractional deformation (dimensionless).",
-    "Elasticity = recovery of shape when the force is removed; plasticity = permanent deformation.",
-    "Stress is proportional to strain only within the elastic limit (Hooke's law, σ = Eε).",
-    "The stress–strain curve has six regions: proportional, elastic, yield, plastic, ultimate, fracture.",
-    "Ductile materials deform plastically before breaking; brittle ones break suddenly near the elastic limit."
+    "σ = F/A (Pa); ε = ΔL/L (dimensionless); Y = σ/ε = FL/(AΔL).",
+    "Elasticity = regains shape; plasticity = keeps deformed shape."
   ],
   "specialNotes": [
     "Strain is dimensionless — never attach units.",
@@ -426,39 +336,19 @@
     "NEB frequently asks to label the stress–strain curve and to calculate E from a numerical."
   ],
   "importantStatements": [
-    "Stress is the internal force per unit area resisting deformation: σ = F/A.",
-    "Strain is the fractional change in dimension and is dimensionless: ε = Δl/l.",
-    "Within the elastic limit stress is proportional to strain (Hooke's law): σ = Eε.",
-    "Elasticity is the property of recovering original shape; plasticity is permanent deformation.",
-    "Young's modulus E = Fl/(AΔl) quantifies the stiffness of a material in tension."
+    "\"Young's modulus is the ratio of longitudinal stress to longitudinal strain within the elastic limit.\""
   ],
   "importantNotes": [
-    "Always distinguish stress (F/A) from strain (Δl/l) — one has units, one is dimensionless.",
-    "The elastic limit is the boundary between recoverable (elastic) and permanent (plastic) deformation.",
-    "σ = Eε is the stress–strain form of Hooke's law and holds only within the elastic limit.",
-    "The area under the stress–strain curve is the toughness — the energy absorbed per unit volume.",
-    "Ductility and brittleness are read directly from the length of the plastic region of the curve."
+    "Verified PYQs: definitions (2023, 2024 — 3m); steel-wire numerical (2022, 2024 — 3m); copper-wire Y (2020 — 4m); cable mass (2024 — 3m)."
   ],
   "examShortTricks": [
-    "Remember: strain has NO units — a quick sanity check for MCQs.",
-    "To find E: rearrange to E = Fl/(AΔl) — compute σ then divide by ε.",
-    "Stress–strain curve order: proportional → elastic → yield → plastic → ultimate → fracture.",
-    "Compression increases density; bulk modulus B = −P/(ΔV/V) is positive because ΔV is negative.",
-    "For breaking load: F_max = σ_break × A — stress times the area."
+    "\"1 mm² = 10⁻⁶ m² — the #1 conversion trap.\""
   ],
   "examNotes": [
-    "Stress and strain numericals are a guaranteed exam topic — practice unit conversions (mm² → m²).",
-    "Labeling the stress–strain curve and identifying regions carries direct marks.",
-    "Young's modulus problems (extension of a wire) appear almost every year.",
-    "Bulk modulus and shear modulus are often asked as short-answer comparisons.",
-    "Safety factor = ultimate stress / working stress — a common applied question."
+    "Definitions repeat (2023, 2024); numericals appear nearly every year — practise all three patterns."
   ],
   "importantConcepts": [
-    "Stress σ = F/A is the internal force per unit area resisting deformation.",
-    "Strain ε = Δl/l is the dimensionless fractional deformation.",
-    "Hooke's law: σ = Eε inside the elastic limit.",
-    "Elasticity recovers shape; plasticity causes permanent deformation.",
-    "Moduli: E (Young), G (shear), B (bulk) each relate a stress to its corresponding strain."
+    "**Stress and strain belong to the material;** force and extension belong to the specimen — that is why engineers tabulate Y, not k."
   ],
   "importantTasks": [
     "Calculate stress, strain and Young's modulus for a loaded wire with correct unit conversions.",
@@ -467,7 +357,7 @@
     "Compare ductile vs brittle behaviour with two real examples each.",
     "Compute the safe (working) load using a given safety factor."
   ],
-  "summary": "Stress (σ = F/A) and strain (ε = Δl/l) describe how solids respond to deforming forces. Within the elastic limit, σ = Eε (Hooke's law). Elastic bodies recover their shape; plastic bodies deform permanently. The stress–strain curve shows the proportional limit, elastic limit, yield point, ultimate strength and fracture — ductile materials deform plastically first, brittle materials shatter suddenly.",
+  "summary": "**Stress** $\\sigma = F/A$ (Pa) is force per unit area; **strain** $\\epsilon = \\Delta L/L$ is the dimensionless fractional deformation; **Young's modulus** $Y = FL/(A\\Delta L)$ is their ratio within the elastic limit. Elasticity means full shape recovery on unloading; plasticity means permanent deformation. NEB repeats the definition question (2023, 2024) and the numericals: 100 N on a 2 mm² steel wire gives $\\sigma = 5\\times10^7$ Pa and $\\epsilon = 2.5\\times10^{-4}$ (2022, 2024); a copper wire stretching 2 mm under 200 N gives $Y = 1\\times10^{10}$ Pa (2020); a 5 mm² cable with breaking stress 8×10⁸ Pa lifts at most 4000 N → 400 kg (2024).",
   "mcs": [
     {
       "question": "The SI unit of stress is:",
@@ -518,6 +408,96 @@
         "10⁶"
       ],
       "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The SI unit of stress is:",
+      "options": [
+        "N",
+        "N/m",
+        "Pa",
+        "N·m"
+      ],
+      "answer": "C",
+      "explanation": "N/m² = pascal."
+    },
+    {
+      "question": "Strain has:",
+      "options": [
+        "Units of m",
+        "Units of Pa",
+        "No units",
+        "Units of N/kg"
+      ],
+      "answer": "C",
+      "explanation": "Ratio of like quantities."
+    },
+    {
+      "question": "NEB 2022: 100 N on 2 mm² gives stress:",
+      "options": [
+        "5×10⁵ Pa",
+        "5×10⁷ Pa",
+        "2×10¹¹ Pa",
+        "2.5×10⁻⁴ Pa"
+      ],
+      "answer": "B",
+      "explanation": "100/2×10⁻⁶."
+    },
+    {
+      "question": "NEB 2020: Y of the copper wire is:",
+      "options": [
+        "1×10¹⁰ Pa",
+        "2×10¹¹ Pa",
+        "1×10⁷ Pa",
+        "4×10⁸ Pa"
+      ],
+      "answer": "A",
+      "explanation": "FL/(AΔL) = 400/4×10⁻⁸."
+    },
+    {
+      "question": "1 mm² equals:",
+      "options": [
+        "10⁻³ m²",
+        "10⁻⁴ m²",
+        "10⁻⁶ m²",
+        "10⁻² m²"
+      ],
+      "answer": "C",
+      "explanation": "(10⁻³)² = 10⁻⁶."
+    },
+    {
+      "question": "NEB 2024: cable A = 5 mm², breaking stress 8×10⁸ Pa lifts max:",
+      "options": [
+        "40 kg",
+        "400 kg",
+        "4000 kg",
+        "4 kg"
+      ],
+      "answer": "B",
+      "explanation": "F = 4000 N → m = 400 kg."
+    },
+    {
+      "question": "Plasticity means:",
+      "options": [
+        "Full recovery",
+        "Permanent deformation",
+        "Increased strength",
+        "Thermal expansion"
+      ],
+      "answer": "B",
+      "explanation": "Shape retained after unloading."
+    },
+    {
+      "question": "Young's modulus is defined within:",
+      "options": [
+        "The plastic region",
+        "The elastic limit",
+        "The fracture point",
+        "Any region"
+      ],
+      "answer": "B",
+      "explanation": "Linear stress–strain region."
     }
   ]
 }

@@ -11,69 +11,35 @@
   "visualType": "hooke-spring-force",
   "enrichedContent": {
     "notes": [
-      "**Hooke's law statement:** For small deformations, the extension (or compression) of an elastic body is directly proportional to the applied force: F = kx, where F is the applied force, x is the deformation, and k is the spring (force) constant. This linear region is governed by the interatomic potential energy well, where atoms act as if connected by springs. The proportionality limit is the point where this linear relationship breaks down, while the elastic limit is the point beyond which deformation becomes permanent (plastic).",
-      "**Force (spring) constant k:** k = F/x, measured in N/m. It measures the stiffness of the spring — a stiffer spring has a larger k and needs a bigger force for the same extension. k depends on the material, the wire diameter, the number of coils and the length of the spring. For a wire: $k = EA/L$, where E is Young's modulus, A is cross-sectional area, and L is length. For a helical spring, $k = Gd^4 / (8nD^3)$, where $G$ is shear modulus, $d$ is wire diameter, $n$ is number of coils, and $D$ is coil diameter.",
-      "**Restoring Force:** The spring exerts a restoring force $F = -kx$ that always opposes the displacement. This is the basis of simple harmonic motion when combined with inertia.",
-      "**What Spring constant really means:** a spring of k = 200 N/m requires 200 N to stretch it by 1 metre. To stretch by any x, you need F = 200x N. It is the slope of the F–x graph in the linear (Hookean) region.",
-      "**Two ways to combine springs:** series: 1/k = 1/k₁ + 1/k₂ (softer than either); parallel: k = k₁ + k₂ (stiffer than either). Series springs stretch more for the same load — think of a long telephone-cord spring vs two short springs joined.",
-      "**Worked example:** a force of 40 N stretches a spring by 8 cm. k = F/x = 40/0.08 = 500 N/m. A 100 N force will then stretch it by x = 100/500 = 0.2 m = 20 cm.",
-      "**Hooke's law on a graph:** the F–x graph is a straight line through the origin while the elastic limit is respected. Beyond it, the graph curves; after plastic deformation, a larger force is needed for the same extension or the body does not return to its original length.",
-      "**Application — weight balance (spring balance):** the extension of a calibrated spring measures the applied weight. Since F = kx and weight = mg, the scale can be marked directly in newtons or kilograms.",
-      "**Conditions for Hooke's law to hold:** the deformation must be small, elastic (the body returns to original shape when the load is removed), and within the proportional limit. Overstretching a spring permanently changes its k."
+      "## 1. Topic Introduction — The Spring's Straight Line\n\nStretch a wire a little and it pushes back in exact proportion — Hooke's law. That innocent-looking proportionality underlies spring balances, shock absorbers, atomic bonds and the definition of the elastic limit, beyond which the straight line ends forever.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Statement\n\n**Within the elastic limit, the extension produced in a body is directly proportional to the applied force (or stress).**\n$$F \\propto x \\Rightarrow F = kx$$\n$k$ = **force constant (spring constant)** — force per unit extension, SI unit N/m. A large $k$ means a stiff spring.\n\n### 2.2 Elastic behaviour and the limit\n\n- **Elastic limit:** the maximum stress up to which the body returns completely to its original shape when unloaded.\n- Beyond it, permanent (plastic) deformation sets in; Hooke's law no longer holds.\n- Elastic behaviour arises from interatomic forces — atoms displaced from equilibrium positions experience a restoring force that is nearly linear for small displacements.\n\n### 2.3 Worked numerical (NEB 2024)\n\n**Q (3m, 2024):** State Hooke's law. A 2 m wire extends by 2 mm under a 50 N load. Calculate the force constant of the wire.\n- Law: extension ∝ force within the elastic limit ($F = kx$).\n- $k = \\dfrac{F}{x} = \\dfrac{50}{2\\times10^{-3}} = 2.5 \\times 10^4$ N/m\n\n**Q (NEB-style):** A spring stretches 5 cm under 10 N. Two such springs are connected in series and pulled with 10 N. Find the total extension.\n$k = 200$ N/m; series: $1/k_{eq} = 1/200 + 1/200 → k_{eq} = 100$ N/m; $x = 10/100 = 0.1$ m = 10 cm.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 39:** stress–strain is the material version of force–extension; $k = YA/L$ for a wire.\n- **To Topic 42:** the energy stored follows from integrating Hooke's law: $U = \\frac{1}{2}kx^2$.\n- **To Simple harmonic motion:** $F = -kx$ is the SHM restoring force.\n- **To interatomic potential:** Hooke's law is the linear Taylor term of the bond-energy curve near equilibrium.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Mechanics | Elasticity | State Hooke's law. A 2 m wire extends by 2 mm under a 50 N load. Calculate the force constant of the wire. | 3 | Definition + numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Series and parallel spring combinations (3m).\n2. Graph of F vs x; meaning of slope (2m).\n3. Why does a spring balance measure force? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Using extension in cm in $k = F/x$ — convert to metres.\n2. Confusing the force constant $k$ (N/m) with bulk modulus $K$ (Pa).\n3. Applying Hooke's law beyond the elastic limit."
     ],
     "confusion": [
-      "❌ 'F = kx means force depends on extension.' ✅ Precisely that — for a spring, doubling the extension doubles the stretching force needed. The spring PULLS back with force kx (restoring force) opposite to the applied load.",
-      "❌ 'k is a property only of the material.' ✅ k depends on the geometry too (length, coil radius, number of coils, wire thickness). It is the material property (Young's modulus) together with geometry that fixes k.",
-      "❌ 'A stiffer spring stretches more.' ✅ A stiffer spring stretches LESS for the same force — it has a larger k, so x = F/k is smaller.",
-      "❌ 'Extension is proportional to force at all loads.' ✅ Only within the elastic (proportional) limit. Beyond it the graph bends, and past the yield point the spring deforms permanently.",
-      "❌ 'Series springs are stiffer.' ✅ Series springs are SOFTER (smaller total k). Two identical springs in series have k/2; in parallel they have 2k.",
-      "❌ 'Force constant and friction constant (μ) are the same.' ✅ k (N/m) relates force to displacement of a spring; μ is a dimensionless friction coefficient relating friction to normal reaction."
+      "**k (N/m) vs Y (Pa):** k belongs to a specific object; Y belongs to the material — k = YA/L connects them.",
+      "**Elastic limit ≠ breaking point:** plastic deformation starts at the elastic limit; fracture comes later."
     ],
     "practice": [
-      "A spring of length 20 cm stretches to 24 cm under a 30 N load. Find k.",
-      "Two springs k₁ = 100 N/m and k₂ = 200 N/m are joined (a) in series, (b) in parallel. Find the total k in each case.",
-      "A body of mass 0.5 kg hangs from a spring (k = 200 N/m). Find the extension it causes.",
-      "Find the force needed to compress a spring (k = 400 N/m) by 5 cm.",
-      "A spring balance reads 196 N for an unknown mass. What is the mass? (g = 9.8 m/s²)",
-      "A spring is cut in half. What happens to its force constant?"
+      "Why does a wire become harder to stretch as it approaches its elastic limit?"
     ],
     "universalFacts": [
-      "Hooke (1635–1703) announced his law in 1676 as the anagram 'ceiiinosssttuv' which decoded to 'ut tensio, sic vis' — 'as the extension, so the force'.",
-      "Hooke's law is the basis of every spring, weighing machine, shock absorber, and suspension system. It is the first-order Taylor expansion of any potential energy function $U(x)$ near a stable equilibrium point.",
-      "Below about 0.1% strain, almost every solid — steel, glass, bone — behaves approximately according to Hooke's law.",
-      "Combining springs in series or parallel follows rules identical to combining capacitors (series = reciprocal sum) and resistors (parallel = reciprocal sum).",
-      "The elastic potential energy stored in a stretched spring, ½kx², is exactly the region under the F–x graph.",
-      "**Hertz Contact Theory:** When two spheres touch, the contact area is not a point but a small circle. Hertz developed the theory for this, which is crucial for ball bearings and gear design."
+      "Spring balances, car suspensions and atomic-force microscopes all read force through Hooke's law."
     ],
     "examples": [
-      "F = kx: A 25 N force stretches a spring by 5 cm → k = 25/0.05 = 500 N/m.",
-      "Mass on spring: A 2 kg mass (weight 19.6 N) on a spring of k = 490 N/m sinks x = 19.6/490 = 0.04 m = 4 cm.",
-      "Series combination: k₁ = 300, k₂ = 600 → 1/k = 1/300 + 1/600 = 1/200 → k = 200 N/m (softer).",
-      "Parallel combination: k₁ = 300, k₂ = 600 → k = 900 N/m (stiffer).",
-      "Cutting in half: k_double; two halves in parallel restore the original k."
+      "***NEB 2024 wire*** — 50 N, 2 mm: k = 25 000 N/m."
     ],
     "practiceQuestions": [
-      "A spring stretches by 6 cm when a 30 N force is applied. Find the spring constant and the energy stored.",
-      "Two springs of k = 120 N/m and k = 80 N/m are connected in series and hung with a 12 N weight. Find the total extension.",
-      "Same two springs are now connected in parallel and loaded with 12 N. Find the extension.",
-      "An 80 g mass hangs from a spring (k = 40 N/m). If it is pulled down 2 cm and released, find the maximum acceleration.",
-      "A spring (k = 500 N/m) is compressed by 4 cm and used to launch a 50 g ball. Find the launch speed."
+      "**Numerical (3m): A spring of k = 300 N/m is stretched 8 cm. Find the force and the stored energy.** — F = kx = 24 N; U = ½kx² = ½×300×0.064 = 9.6 J."
     ],
     "formulas": [
-      "Hooke's law: F = kx",
-      "Spring constant: k = F/x (units N/m)",
-      "Series springs: 1/k = 1/k₁ + 1/k₂",
-      "Parallel springs: k = k₁ + k₂",
-      "Elastic potential energy: U = ½kx²; oscillation ω = √(k/m)"
+      "- F = kx\n- k = YA/L (wire of length L, area A)\n- Series: 1/k = 1/k₁ + 1/k₂; Parallel: k = k₁ + k₂"
     ],
     "keyPoints": [
-      "F = kx holds only within the elastic limit — marked by the straight-line region of the F–x graph.",
-      "k measures stiffness in N/m; a larger k is a stiffer spring.",
-      "Series springs combine like 1/k = 1/k₁ + 1/k₂ (softer).",
-      "Parallel springs combine like k = k₁ + k₂ (stiffer).",
-      "Energy stored in a stretched spring is ½kx² — the triangle under the F–x graph."
+      "$F = kx$ within the elastic limit; k in N/m.",
+      "NEB 2024: 50 N over 2 mm → k = 2.5×10⁴ N/m."
     ],
-    "summary": "Hooke's law (F = kx) states that deformation is proportional to applied force within the elastic limit. The spring constant k (N/m) measures stiffness. Springs combine in series (reciprocal sum, softer) and parallel (direct sum, stiffer). The stored elastic energy is ½kx², and the law underpins spring balances, suspension systems, and simple harmonic motion.",
+    "summary": "**Hooke's law** states that within the elastic limit the extension of a body is directly proportional to the applied force: $F = kx$, where the **force constant** $k$ (N/m) measures stiffness. The law is the macroscopic echo of linear interatomic restoring forces and fails beyond the elastic limit, where deformation becomes plastic. For a wire $k = YA/L$, tying it to Young's modulus; for springs in series and parallel the rules mirror resistors. NEB 2024's wire extending 2 mm under 50 N gives $k = 2.5 \\times 10^4$ N/m, and the energy stored in stretching it — the integral of force over extension — is $\\frac{1}{2}kx^2$.",
     "specialNotes": [
       "The restoring force of a spring is −kx: it always opposes the displacement from equilibrium.",
       "A cut spring doubles its k — shorter springs are stiffer for the same material and geometry.",
@@ -82,32 +48,16 @@
       "NEB often asks to find k from a graph (slope of the linear portion) or to combine springs."
     ],
     "importantStatements": [
-      "Hooke's law: F = kx within the elastic limit.",
-      "The spring constant k measures the force per unit deformation (N/m).",
-      "Series springs: 1/k_eq = 1/k₁ + 1/k₂ (combination is softer).",
-      "Parallel springs: k_eq = k₁ + k₂ (combination is stiffer).",
-      "The energy stored in a deformed spring is ½kx²."
+      "\"Within the elastic limit, extension is directly proportional to the applied force.\""
     ],
     "importantNotes": [
-      "Hooke's law F = kx is valid only in the linear region of the F–x graph, up to the proportionality limit.",
-      "k depends on both material and geometry: shorter springs and thicker wires give larger k.",
-      "Series springs are softer: 1/k_total = 1/k₁ + 1/k₂.",
-      "Parallel springs are stiffer: k_total = k₁ + k₂.",
-      "A mass on a spring executes SHM with ω = √(k/m) — Hooke's law is the foundation."
+      "Verified PYQ: Hooke's law + k (2024, 3m)."
     ],
     "examShortTricks": [
-      "Spring constant from graph: k = slope of F–x line in the linear region.",
-      "Series/parallel: use the same rule as capacitors (series) and resistors (parallel).",
-      "Extension is x = F/k — always convert cm to m before calculating.",
-      "Energy shortcut: U = ½kx² — no need to derive from the graph.",
-      "Cut a spring into n equal parts: each has k × n."
+      "\"k = F/x — always convert mm to m.\""
     ],
     "examNotes": [
-      "The force required to extend a spring doubles when the extension doubles (F = kx).",
-      "Combinations of springs are a guaranteed numerical question.",
-      "Finding k from a graph slope is a frequent NEB short question.",
-      "The energy stored (½kx²) connects to SHM: v_max = A√(k/m).",
-      "Spring balance calibration uses F = kx with F = mg."
+      "The 2024 question pairs the statement with a one-step calculation."
     ],
     "mcs": [
       {
@@ -162,11 +112,7 @@
       }
     ],
     "importantConcepts": [
-      "Hooke's law: F = kx holds up to the proportionality limit, which is within the elastic limit.",
-      "The spring constant k is the force per unit extension (N/m), a measure of stiffness.",
-      "Series springs soften the combination; parallel springs stiffen it.",
-      "The restoring force is −kx, producing SHM with ω = √(k/m).",
-      "Elastic potential energy stored is ½kx²."
+      "**Hooke's law is the linear approximation** of interatomic restoring forces — valid only for small deformations."
     ],
     "importantTasks": [
       "Plot an F–x graph from experimental data and read k from its slope.",
@@ -353,73 +299,33 @@
     ]
   },
   "notes": [
-    "**Hooke's law statement:** For small deformations, the extension (or compression) of an elastic body is directly proportional to the applied force: F = kx, where F is the applied force, x is the deformation, and k is the spring (force) constant. This linear region is governed by the interatomic potential energy well, where atoms act as if connected by springs. The proportionality limit is the point where this linear relationship breaks down, while the elastic limit is the point beyond which deformation becomes permanent (plastic).",
-    "**Force (spring) constant k:** k = F/x, measured in N/m. It measures the stiffness of the spring — a stiffer spring has a larger k and needs a bigger force for the same extension. k depends on the material, the wire diameter, the number of coils and the length of the spring. For a wire: $k = EA/L$, where E is Young's modulus, A is cross-sectional area, and L is length. For a helical spring, $k = Gd^4 / (8nD^3)$, where $G$ is shear modulus, $d$ is wire diameter, $n$ is number of coils, and $D$ is coil diameter.",
-    "**Restoring Force:** The spring exerts a restoring force $F = -kx$ that always opposes the displacement. This is the basis of simple harmonic motion when combined with inertia.",
-    "**What Spring constant really means:** a spring of k = 200 N/m requires 200 N to stretch it by 1 metre. To stretch by any x, you need F = 200x N. It is the slope of the F–x graph in the linear (Hookean) region.",
-    "**Two ways to combine springs:** series: 1/k = 1/k₁ + 1/k₂ (softer than either); parallel: k = k₁ + k₂ (stiffer than either). Series springs stretch more for the same load — think of a long telephone-cord spring vs two short springs joined.",
-    "**Worked example:** a force of 40 N stretches a spring by 8 cm. k = F/x = 40/0.08 = 500 N/m. A 100 N force will then stretch it by x = 100/500 = 0.2 m = 20 cm.",
-    "**Hooke's law on a graph:** the F–x graph is a straight line through the origin while the elastic limit is respected. Beyond it, the graph curves; after plastic deformation, a larger force is needed for the same extension or the body does not return to its original length.",
-    "**Application — weight balance (spring balance):** the extension of a calibrated spring measures the applied weight. Since F = kx and weight = mg, the scale can be marked directly in newtons or kilograms.",
-    "**Conditions for Hooke's law to hold:** the deformation must be small, elastic (the body returns to original shape when the load is removed), and within the proportional limit. Overstretching a spring permanently changes its k.",
-    "# Hooke's law: force constant\n\n## 1. Introduction\nPhysical picture of **Hooke's law** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Elasticity fill pass.\n\n## 2. Concepts and laws\n### Hooke's law: force constant\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Hooke's law — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Hooke's law — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Hooke's law — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Hooke's law — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Spring's Straight Line\n\nStretch a wire a little and it pushes back in exact proportion — Hooke's law. That innocent-looking proportionality underlies spring balances, shock absorbers, atomic bonds and the definition of the elastic limit, beyond which the straight line ends forever.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Statement\n\n**Within the elastic limit, the extension produced in a body is directly proportional to the applied force (or stress).**\n$$F \\propto x \\Rightarrow F = kx$$\n$k$ = **force constant (spring constant)** — force per unit extension, SI unit N/m. A large $k$ means a stiff spring.\n\n### 2.2 Elastic behaviour and the limit\n\n- **Elastic limit:** the maximum stress up to which the body returns completely to its original shape when unloaded.\n- Beyond it, permanent (plastic) deformation sets in; Hooke's law no longer holds.\n- Elastic behaviour arises from interatomic forces — atoms displaced from equilibrium positions experience a restoring force that is nearly linear for small displacements.\n\n### 2.3 Worked numerical (NEB 2024)\n\n**Q (3m, 2024):** State Hooke's law. A 2 m wire extends by 2 mm under a 50 N load. Calculate the force constant of the wire.\n- Law: extension ∝ force within the elastic limit ($F = kx$).\n- $k = \\dfrac{F}{x} = \\dfrac{50}{2\\times10^{-3}} = 2.5 \\times 10^4$ N/m\n\n**Q (NEB-style):** A spring stretches 5 cm under 10 N. Two such springs are connected in series and pulled with 10 N. Find the total extension.\n$k = 200$ N/m; series: $1/k_{eq} = 1/200 + 1/200 → k_{eq} = 100$ N/m; $x = 10/100 = 0.1$ m = 10 cm.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 39:** stress–strain is the material version of force–extension; $k = YA/L$ for a wire.\n- **To Topic 42:** the energy stored follows from integrating Hooke's law: $U = \\frac{1}{2}kx^2$.\n- **To Simple harmonic motion:** $F = -kx$ is the SHM restoring force.\n- **To interatomic potential:** Hooke's law is the linear Taylor term of the bond-energy curve near equilibrium.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Mechanics | Elasticity | State Hooke's law. A 2 m wire extends by 2 mm under a 50 N load. Calculate the force constant of the wire. | 3 | Definition + numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Series and parallel spring combinations (3m).\n2. Graph of F vs x; meaning of slope (2m).\n3. Why does a spring balance measure force? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Using extension in cm in $k = F/x$ — convert to metres.\n2. Confusing the force constant $k$ (N/m) with bulk modulus $K$ (Pa).\n3. Applying Hooke's law beyond the elastic limit."
   ],
   "confusion": [
-    "❌ 'F = kx means force depends on extension.' ✅ Precisely that — for a spring, doubling the extension doubles the stretching force needed. The spring PULLS back with force kx (restoring force) opposite to the applied load.",
-    "❌ 'k is a property only of the material.' ✅ k depends on the geometry too (length, coil radius, number of coils, wire thickness). It is the material property (Young's modulus) together with geometry that fixes k.",
-    "❌ 'A stiffer spring stretches more.' ✅ A stiffer spring stretches LESS for the same force — it has a larger k, so x = F/k is smaller.",
-    "❌ 'Extension is proportional to force at all loads.' ✅ Only within the elastic (proportional) limit. Beyond it the graph bends, and past the yield point the spring deforms permanently.",
-    "❌ 'Series springs are stiffer.' ✅ Series springs are SOFTER (smaller total k). Two identical springs in series have k/2; in parallel they have 2k.",
-    "❌ 'Force constant and friction constant (μ) are the same.' ✅ k (N/m) relates force to displacement of a spring; μ is a dimensionless friction coefficient relating friction to normal reaction."
+    "**k (N/m) vs Y (Pa):** k belongs to a specific object; Y belongs to the material — k = YA/L connects them.",
+    "**Elastic limit ≠ breaking point:** plastic deformation starts at the elastic limit; fracture comes later."
   ],
   "practice": [
-    "A spring of length 20 cm stretches to 24 cm under a 30 N load. Find k.",
-    "Two springs k₁ = 100 N/m and k₂ = 200 N/m are joined (a) in series, (b) in parallel. Find the total k in each case.",
-    "A body of mass 0.5 kg hangs from a spring (k = 200 N/m). Find the extension it causes.",
-    "Find the force needed to compress a spring (k = 400 N/m) by 5 cm.",
-    "A spring balance reads 196 N for an unknown mass. What is the mass? (g = 9.8 m/s²)",
-    "A spring is cut in half. What happens to its force constant?"
+    "Why does a wire become harder to stretch as it approaches its elastic limit?"
   ],
   "universalFacts": [
-    "Hooke (1635–1703) announced his law in 1676 as the anagram 'ceiiinosssttuv' which decoded to 'ut tensio, sic vis' — 'as the extension, so the force'.",
-    "Hooke's law is the basis of every spring, weighing machine, shock absorber, and suspension system. It is the first-order Taylor expansion of any potential energy function $U(x)$ near a stable equilibrium point.",
-    "Below about 0.1% strain, almost every solid — steel, glass, bone — behaves approximately according to Hooke's law.",
-    "Combining springs in series or parallel follows rules identical to combining capacitors (series = reciprocal sum) and resistors (parallel = reciprocal sum).",
-    "The elastic potential energy stored in a stretched spring, ½kx², is exactly the region under the F–x graph.",
-    "**Hertz Contact Theory:** When two spheres touch, the contact area is not a point but a small circle. Hertz developed the theory for this, which is crucial for ball bearings and gear design."
+    "Spring balances, car suspensions and atomic-force microscopes all read force through Hooke's law."
   ],
   "examples": [
-    "F = kx: A 25 N force stretches a spring by 5 cm → k = 25/0.05 = 500 N/m.",
-    "Mass on spring: A 2 kg mass (weight 19.6 N) on a spring of k = 490 N/m sinks x = 19.6/490 = 0.04 m = 4 cm.",
-    "Series combination: k₁ = 300, k₂ = 600 → 1/k = 1/300 + 1/600 = 1/200 → k = 200 N/m (softer).",
-    "Parallel combination: k₁ = 300, k₂ = 600 → k = 900 N/m (stiffer).",
-    "Cutting in half: k_double; two halves in parallel restore the original k."
+    "***NEB 2024 wire*** — 50 N, 2 mm: k = 25 000 N/m."
   ],
   "practiceQuestions": [
-    "A spring stretches by 6 cm when a 30 N force is applied. Find the spring constant and the energy stored.",
-    "Two springs of k = 120 N/m and k = 80 N/m are connected in series and hung with a 12 N weight. Find the total extension.",
-    "Same two springs are now connected in parallel and loaded with 12 N. Find the extension.",
-    "An 80 g mass hangs from a spring (k = 40 N/m). If it is pulled down 2 cm and released, find the maximum acceleration.",
-    "A spring (k = 500 N/m) is compressed by 4 cm and used to launch a 50 g ball. Find the launch speed."
+    "**Numerical (3m): A spring of k = 300 N/m is stretched 8 cm. Find the force and the stored energy.** — F = kx = 24 N; U = ½kx² = ½×300×0.064 = 9.6 J."
   ],
   "formulas": [
-    "Hooke's law: F = kx",
-    "Spring constant: k = F/x (units N/m)",
-    "Series springs: 1/k = 1/k₁ + 1/k₂",
-    "Parallel springs: k = k₁ + k₂",
-    "Elastic potential energy: U = ½kx²; oscillation ω = √(k/m)"
+    "- F = kx\n- k = YA/L (wire of length L, area A)\n- Series: 1/k = 1/k₁ + 1/k₂; Parallel: k = k₁ + k₂"
   ],
   "keyPoints": [
-    "F = kx holds only within the elastic limit — marked by the straight-line region of the F–x graph.",
-    "k measures stiffness in N/m; a larger k is a stiffer spring.",
-    "Series springs combine like 1/k = 1/k₁ + 1/k₂ (softer).",
-    "Parallel springs combine like k = k₁ + k₂ (stiffer).",
-    "Energy stored in a stretched spring is ½kx² — the triangle under the F–x graph."
+    "$F = kx$ within the elastic limit; k in N/m.",
+    "NEB 2024: 50 N over 2 mm → k = 2.5×10⁴ N/m."
   ],
   "specialNotes": [
     "The restoring force of a spring is −kx: it always opposes the displacement from equilibrium.",
@@ -429,39 +335,19 @@
     "NEB often asks to find k from a graph (slope of the linear portion) or to combine springs."
   ],
   "importantStatements": [
-    "Hooke's law: F = kx within the elastic limit.",
-    "The spring constant k measures the force per unit deformation (N/m).",
-    "Series springs: 1/k_eq = 1/k₁ + 1/k₂ (combination is softer).",
-    "Parallel springs: k_eq = k₁ + k₂ (combination is stiffer).",
-    "The energy stored in a deformed spring is ½kx²."
+    "\"Within the elastic limit, extension is directly proportional to the applied force.\""
   ],
   "importantNotes": [
-    "Hooke's law F = kx is valid only in the linear region of the F–x graph, up to the proportionality limit.",
-    "k depends on both material and geometry: shorter springs and thicker wires give larger k.",
-    "Series springs are softer: 1/k_total = 1/k₁ + 1/k₂.",
-    "Parallel springs are stiffer: k_total = k₁ + k₂.",
-    "A mass on a spring executes SHM with ω = √(k/m) — Hooke's law is the foundation."
+    "Verified PYQ: Hooke's law + k (2024, 3m)."
   ],
   "examShortTricks": [
-    "Spring constant from graph: k = slope of F–x line in the linear region.",
-    "Series/parallel: use the same rule as capacitors (series) and resistors (parallel).",
-    "Extension is x = F/k — always convert cm to m before calculating.",
-    "Energy shortcut: U = ½kx² — no need to derive from the graph.",
-    "Cut a spring into n equal parts: each has k × n."
+    "\"k = F/x — always convert mm to m.\""
   ],
   "examNotes": [
-    "The force required to extend a spring doubles when the extension doubles (F = kx).",
-    "Combinations of springs are a guaranteed numerical question.",
-    "Finding k from a graph slope is a frequent NEB short question.",
-    "The energy stored (½kx²) connects to SHM: v_max = A√(k/m).",
-    "Spring balance calibration uses F = kx with F = mg."
+    "The 2024 question pairs the statement with a one-step calculation."
   ],
   "importantConcepts": [
-    "Hooke's law: F = kx holds up to the proportionality limit, which is within the elastic limit.",
-    "The spring constant k is the force per unit extension (N/m), a measure of stiffness.",
-    "Series springs soften the combination; parallel springs stiffen it.",
-    "The restoring force is −kx, producing SHM with ω = √(k/m).",
-    "Elastic potential energy stored is ½kx²."
+    "**Hooke's law is the linear approximation** of interatomic restoring forces — valid only for small deformations."
   ],
   "importantTasks": [
     "Plot an F–x graph from experimental data and read k from its slope.",
@@ -470,7 +356,7 @@
     "Derive the energy stored ½kx² as the area under the F–x graph.",
     "Design a spring balance calibration table from F = kx and F = mg."
   ],
-  "summary": "Hooke's law (F = kx) states that deformation is proportional to applied force within the elastic limit. The spring constant k (N/m) measures stiffness. Springs combine in series (reciprocal sum, softer) and parallel (direct sum, stiffer). The stored elastic energy is ½kx², and the law underpins spring balances, suspension systems, and simple harmonic motion.",
+  "summary": "**Hooke's law** states that within the elastic limit the extension of a body is directly proportional to the applied force: $F = kx$, where the **force constant** $k$ (N/m) measures stiffness. The law is the macroscopic echo of linear interatomic restoring forces and fails beyond the elastic limit, where deformation becomes plastic. For a wire $k = YA/L$, tying it to Young's modulus; for springs in series and parallel the rules mirror resistors. NEB 2024's wire extending 2 mm under 50 N gives $k = 2.5 \\times 10^4$ N/m, and the energy stored in stretching it — the integral of force over extension — is $\\frac{1}{2}kx^2$.",
   "mcs": [
     {
       "question": "A spring stretches 4 cm under a 20 N load. Its spring constant is:",
@@ -523,5 +409,95 @@
       "answer": "B"
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "mcqs": [
+    {
+      "question": "Hooke's law holds:",
+      "options": [
+        "Always",
+        "Within the elastic limit",
+        "Beyond fracture",
+        "Only for gases"
+      ],
+      "answer": "B",
+      "explanation": "Linearity fails past the elastic limit."
+    },
+    {
+      "question": "The SI unit of the force constant is:",
+      "options": [
+        "N",
+        "N/m",
+        "N/m²",
+        "J"
+      ],
+      "answer": "B",
+      "explanation": "Force per unit extension."
+    },
+    {
+      "question": "NEB 2024: 50 N stretches a wire 2 mm. k =",
+      "options": [
+        "25 N/m",
+        "2500 N/m",
+        "25000 N/m",
+        "100000 N/m"
+      ],
+      "answer": "C",
+      "explanation": "50/0.002 = 2.5×10⁴ N/m."
+    },
+    {
+      "question": "For a wire, k equals:",
+      "options": [
+        "YA/L",
+        "YL/A",
+        "LA/Y",
+        "YAL"
+      ],
+      "answer": "A",
+      "explanation": "k = YA/L."
+    },
+    {
+      "question": "Two identical springs in parallel have combined k:",
+      "options": [
+        "k/2",
+        "k",
+        "2k",
+        "k²"
+      ],
+      "answer": "C",
+      "explanation": "Parallel springs add."
+    },
+    {
+      "question": "Beyond the elastic limit a body:",
+      "options": [
+        "Returns exactly",
+        "Deforms plastically",
+        "Breaks at once",
+        "Expands thermally"
+      ],
+      "answer": "B",
+      "explanation": "Permanent deformation."
+    },
+    {
+      "question": "The slope of an F–x graph gives:",
+      "options": [
+        "Energy",
+        "Force constant",
+        "Strain",
+        "Stress"
+      ],
+      "answer": "B",
+      "explanation": "F/x = k."
+    },
+    {
+      "question": "A large force constant means the spring is:",
+      "options": [
+        "Soft",
+        "Stiff",
+        "Long",
+        "Light"
+      ],
+      "answer": "B",
+      "explanation": "More force per unit extension."
+    }
+  ]
 }

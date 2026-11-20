@@ -7,125 +7,129 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Stress and strain.** Stress is the restoring force per unit area (F/A) and strain is the fractional deformation (ΔL/L); within the elastic limit, stress is proportional to strain (Hooke's law).",
-    "**Young's modulus.** Y = longitudinal stress ÷ longitudinal strain = FL/AΔL; it measures a material's resistance to stretching or compression along its length.",
-    "**Bulk modulus.** K = −P ÷ (ΔV/V); the negative sign shows volume decreases under pressure, and its reciprocal is the compressibility of the material.",
-    "**Shear modulus.** G = shear stress ÷ shear strain = (F/A) ÷ (Δx/L); it measures resistance to change of shape at constant volume.",
-    "**Poisson's ratio.** σ = −(lateral strain ÷ longitudinal strain); for most stable materials it lies between 0 and 0.5, and elastic potential energy per unit volume is ½ stress × strain.",
-    "Young modulus is tensile stress over tensile strain and describes a wire. Bulk modulus describes a volume squeezed from all sides, and the minus sign makes B positive because the volume falls as the pressure rises. Shear modulus describes a shape change with no volume change.",
-    "# Elastic modulus: Young modulus, bulk modulus, shear modulus\n\n## 1. Introduction\nPhysical picture of **Elastic modulus** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Elasticity fill pass.\n\n## 2. Concepts and laws\n### Elastic modulus: Young modulus\n### bulk modulus\n### shear modulus\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Elastic modulus — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Elastic modulus — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Elastic modulus — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Elastic modulus — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Three Ways to Squeeze a Solid\n\nPull a rod, press a block, twist a shaft — three deformations, three moduli. Young's modulus answers stretching, bulk modulus answers compression, and the shear (rigidity) modulus answers twisting. Together they form the complete elastic fingerprint of a material.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Young's modulus Y (longitudinal)\n\n$$Y = \\frac{\\text{longitudinal stress}}{\\text{longitudinal strain}} = \\frac{FL}{A\\,\\Delta L}$$\nResponse to stretching/compression along one direction. Steel ≈ 2×10¹¹ Pa.\n\n### 2.2 Bulk modulus K (volume)\n\nUnder uniform pressure change $\\Delta P$, volume changes by $\\Delta V$:\n$$K = -\\frac{\\Delta P}{\\Delta V / V} \\quad \\text{(Pa)}$$\nThe minus sign: pressure increase causes volume decrease; K is reported positive. **Compressibility** = $1/K$.\nSolids: K ~ 10¹¹ Pa; liquids ~ 10⁹ Pa (water 2.1×10⁹); gases ~ 10⁵ Pa (easily compressed).\n\n### 2.3 Shear (rigidity) modulus η\n\nTangential force F on top face of a block (area A, height L) tilts it by angle θ:\n$$\\eta = \\frac{\\text{shear stress}}{\\text{shear strain}} = \\frac{F/A}{\\theta} \\quad \\text{(Pa, θ in radians)}$$\n\n### 2.4 Relations and facts\n\n- **Only two moduli are independent** for an isotropic solid; they interrelate through Poisson's ratio.\n- Order for any material: $\\eta < Y < K$ typically... actually for isotropic solids $Y = 3K(1-2\\sigma)/2 = 2\\eta(1+\\sigma)$; commonly K > Y > η.\n- Liquids have K but no Y or η (they flow — no shape rigidity).\n- A perfect elastic body deforms fully reversibly; a perfect plastic body never returns.\n\n### 2.5 Worked numericals\n\n**Q (NEB-style):** A cube of side 10 cm is subjected to a shearing force of 500 N on its top face. If η = 5×10¹⁰ Pa, find the shear angle.\n$\\theta = \\dfrac{F/A}{\\eta} = \\dfrac{500/(0.01)}{5\\times10^{10}} = \\dfrac{5\\times10^4}{5\\times10^{10}} = 10^{-6}$ rad.\n\n**Q (NEB-style):** Find the pressure needed to compress a water sample by 0.1% (K = 2.1×10⁹ Pa).\n$\\Delta P = K \\times \\Delta V/V = 2.1\\times10^9 \\times 10^{-3} = 2.1 \\times 10^6$ Pa ≈ 21 atm.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 39:** Y is one of the three moduli, all defined as stress/strain.\n- **To Topic 41:** σ (Poisson) connects lateral and longitudinal strains, linking Y, K, η.\n- **To Fluid mechanics:** K governs sound speed ($v = \\sqrt{K/\\rho}$ in fluids).\n- **To Torsion:** η governs the torsional rigidity of shafts and wires.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Mechanics | Elasticity | Define bulk modulus and Poisson's ratio. Why is Poisson's ratio dimensionless? | 3 | Definition |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define the three moduli with formulas (4m).\n2. Why do liquids have bulk modulus but no Young's modulus? (2m)\n3. Shear-angle numerical (3m).\n\n### 4.3 Common examination mistakes\n\n1. Dropping the minus sign discussion in K — state why it appears.\n2. Using degrees instead of radians for shear strain.\n3. Claiming liquids have Young's modulus."
   ],
   "confusion": [
-    "❌ skip the key fact → ✅ stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain..",
-    "❌ 'All three moduli have different units.' ✅ All three are measured in N/m² (Pa) — same units, different deformation types.",
-    "❌ 'Bulk modulus applies only to liquids.' ✅ It applies to solids and gases too — any material under uniform pressure.",
-    "❌ 'Shear strain is a length ratio.' ✅ Shear strain is the ANGLE of displacement θ (radians), not a length ratio.",
-    "❌ 'Young's modulus and stiffness k are the same.' ✅ Y and k connect through geometry: E = Fl/(AΔl) while k = F/Δl, so E = kL/A.",
-    "❌ 'Liquids have Young's modulus.' ✅ Liquids flow; they have NO shear modulus and no Young's modulus for stretching — only bulk modulus.",
-    "❌ 'B increases when you compress a solid.' ✅ B is a constant MATERIAL property within the elastic range; it does not change with the applied pressure."
+    "**Three moduli, one idea:** each is stress ÷ strain for a different deformation type — stretch (Y), squeeze (K), twist (η).",
+    "**Liquids have K only** — they resist compression but not shape change."
   ],
   "bounds": [
     "Limit to remember: stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain."
   ],
   "practice": [
-    "one worked example for \"Elastic modulus: Young modulus, bulk modulus, shear modulus\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid.",
-    "A steel wire (L = 3 m, A = 2 mm²) extends 1.5 mm under a 300 N load. Find E.",
-    "A force of 2000 N produces a shear stress on a 5 cm² face with shear angle 0.002 rad. Find G.",
-    "Pressure of 2×10⁶ Pa reduces the volume of 2 m³ of oil by 1.2 L. Find B.",
-    "Given E = 2×10¹¹ and G = 8×10¹⁰ for steel, find Poisson's ratio. (Use E = 2G(1+σ)).",
-    "Convert: a water column adds 5×10⁵ Pa at its bottom. If B_water = 2.2×10⁹ Pa, find the fractional volume change.",
-    "Explain why gases are far more compressible than solids using bulk modulus values."
+    "Why is rubber's bulk modulus high even though it deforms easily?"
   ],
   "universalFacts": [
-    "Stress = F/A, strain = ΔL/L (dimensionless). Hooke's law (elastic limit): stress ∝ strain.",
-    "Elastic moduli: Young's Y = (F/A)/(ΔL/L); Bulk K = −P/(ΔV/V); Shear G = (F/A)/(Δx/L).",
-    "Elastic potential energy U = ½FΔL = ½kx². Poisson's ratio σ = −(lateral strain)/(longitudinal strain) ≈ 0.25–0.35 for most metals.",
-    "Thomas Young established the concept of the modulus of elasticity in 1807 — his modulus E is one of the most fundamental material constants.",
-    "Rigidity (shear) modulus explains why liquids flow: their G = 0 — they cannot resist shear.",
-    "Diamond has the largest E of all materials (≈ 1.2×10¹² N/m²), which is why it is used for cutting tools.",
-    "Rubber has a low E but a very high elastic limit — it can stretch hundreds of percent before breaking.",
-    "Ultrasound techniques measure tissue Young's modulus for medical diagnosis (elastography).",
-    "**Anisotropic Materials:** In crystals and composites, elastic moduli depend on direction. Wood is much stronger along the grain than across it. This is described by the stiffness tensor with up to 21 independent constants for the most general anisotropic material."
+    "Sound speed in a fluid is √(K/ρ) — bulk modulus sets how fast pressure waves travel."
   ],
   "examples": [
-    "Young: A 1 mm² wire, 2 m long, carrying 200 N extends 2 mm → E = (200/10⁻⁶)/(2×10⁻³/2) = 2×10¹¹ N/m².",
-    "Bulk: 3×10⁶ Pa pressure shrinks 1 m³ of steel by 1.9×10⁻⁵ m³ → B = 1.6×10¹¹ Pa.",
-    "Shear: A 2×10⁴ N force shears a 10⁻³ m² face by 2.5×10⁻³ rad → G = (2×10⁴/10⁻³)/2.5×10⁻³ = 8×10⁹ N/m².",
-    "Relation check: E = 2G(1+σ) for steel: 2×10¹¹ = 2×8×10¹⁰(1+σ) → σ = 0.25.",
-    "Compressibility: water k = 1/B = 1/2.2×10⁹ = 4.5×10⁻¹⁰ Pa⁻¹."
+    "***Water compression*** — 0.1% squeeze needs ΔP = 2.1×10⁶ Pa ≈ 21 atm."
   ],
   "practiceQuestions": [
-    "Write Y = stress / longitudinal strain and name the symbols.",
-    "What does Bulk modulus B = −ΔP / (ΔV/V) tell you?",
-    "Which unit must be converted before the substitution?"
+    "**Numerical (3m): A solid cube of side 20 cm is sheared by 800 N on its top face; η = 4×10¹⁰ Pa. Find θ.** — F/A = 800/0.04 = 2×10⁴ Pa; θ = 2×10⁴/4×10¹⁰ = 5×10⁻⁷ rad."
   ],
   "formulas": [
-    "Y = FL/(A ΔL)",
-    "K = −P/(ΔV/V)",
-    "U = ½kx²",
-    "Young's modulus: E = (F/A)/(Δl/l) = Fl/(AΔl)",
-    "Bulk modulus: B = −P/(ΔV/V)",
-    "Shear modulus: G = (F/A)/θ = τ/θ",
-    "Relation: E = 2G(1 + σ) = 3B(1 − 2σ)",
-    "Combined: E = 9BG/(3B + G); compressibility k = 1/B"
+    "- Y = FL/(AΔL)\n- K = −ΔP/(ΔV/V); compressibility = 1/K\n- η = F/(Aθ)"
   ],
   "numericals": [
     "A wire of area 1.0 × 10^−6 m^2 and length 2.0 m stretches by 1.0 mm under 200 N. Find Young modulus."
   ],
   "keyPoints": [
-    "E, B, G all have units N/m² (Pa) — they differ by the type of deformation they describe.",
-    "E (stretching), B (volume), G (shape) measure the corresponding resistance of a material.",
-    "The three moduli are linked: E = 2G(1+σ) and E = 3B(1−2σ).",
-    "Liquids and gases have G = 0 (they cannot resist shear) — only solids have a shear modulus.",
-    "Compressibility is the reciprocal of B."
+    "Y = FL/(AΔL); K = −ΔP/(ΔV/V); η = (F/A)/θ.",
+    "Compressibility = 1/K; K_water = 2.1×10⁹ Pa."
   ],
-  "summary": "The three elastic moduli — Young's (E), bulk (B), and shear (G) — quantify how materials resist stretching, uniform compression, and shape change respectively. Each is stress/strain with units N/m². They are related by E = 2G(1+σ) = 3B(1−2σ). Solids possess all three; fluids have only bulk modulus.",
+  "summary": "A material resists three kinds of deformation with three moduli, each stress-over-strain: **Young's modulus** $Y = FL/(A\\Delta L)$ for stretching, **bulk modulus** $K = -\\Delta P/(\\Delta V/V)$ for uniform compression (minus sign because pressure up means volume down; compressibility = 1/K), and **shear modulus** $\\eta = (F/A)/\\theta$ for twisting, with the strain measured as an angle in radians. NEB 2024 asks for the bulk modulus definition alongside Poisson's ratio. Compressing water by 0.1% takes 2.1×10⁶ Pa ≈ 21 atm; a 500 N shear on a 10 cm cube with η = 5×10¹⁰ Pa tilts it by just 10⁻⁶ rad. Liquids possess only K — they flow under shape-changing forces.",
   "mcqs": [
     {
-      "question": "Young modulus is",
+      "question": "Bulk modulus is defined as:",
       "options": [
-        "Stress over longitudinal strain",
-        "Force times extension",
-        "Bulk pressure",
-        "Shear strain only"
+        "ΔP×V/ΔV",
+        "−ΔP/(ΔV/V)",
+        "F/Aθ",
+        "FL/AΔL"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Volumetric stress over volumetric strain."
     },
     {
-      "question": "The minus sign in the bulk modulus",
+      "question": "Compressibility is:",
       "options": [
-        "Makes B negative",
-        "Makes B positive when volume falls",
-        "Removes the pressure",
-        "Is optional decoration"
+        "K",
+        "1/K",
+        "K²",
+        "−K"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Reciprocal of bulk modulus."
     },
     {
-      "question": "Shear changes",
+      "question": "Which modulus does a liquid possess?",
       "options": [
-        "Only the volume",
-        "The shape, at constant volume in the ideal case",
-        "The mass",
-        "The temperature by definition"
+        "Y only",
+        "K only",
+        "η only",
+        "All three"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Liquids resist compression, not shape change."
     },
     {
-      "question": "Strain has",
+      "question": "Shear strain is measured in:",
       "options": [
-        "The unit pascal",
-        "No unit",
-        "The unit newton",
-        "The unit metre"
+        "Metres",
+        "Pascals",
+        "Radians",
+        "Newtons"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "It is the tilt angle."
+    },
+    {
+      "question": "η = 5×10¹⁰ Pa, F = 500 N on 10 cm² face → θ =",
+      "options": [
+        "10⁻⁶ rad",
+        "10⁻⁴ rad",
+        "10⁻⁸ rad",
+        "5×10⁻¹⁰ rad"
+      ],
+      "answer": "A",
+      "explanation": "(5×10⁴)/(5×10¹⁰)."
+    },
+    {
+      "question": "The minus sign in K = −ΔP/(ΔV/V) appears because:",
+      "options": [
+        "Pressure is negative",
+        "Volume decreases as pressure increases",
+        "Strain is negative",
+        "Convention only, no reason"
+      ],
+      "answer": "B",
+      "explanation": "It keeps K positive."
+    },
+    {
+      "question": "Water's bulk modulus ≈",
+      "options": [
+        "2.1×10⁹ Pa",
+        "2×10¹¹ Pa",
+        "10⁵ Pa",
+        "1.6×10¹⁰ Pa"
+      ],
+      "answer": "A",
+      "explanation": "Liquids ~10⁹ Pa."
+    },
+    {
+      "question": "Sound speed in a fluid depends on:",
+      "options": [
+        "Y and ρ",
+        "K and ρ",
+        "η and ρ",
+        "K only"
+      ],
+      "answer": "B",
+      "explanation": "v = √(K/ρ)."
     }
   ],
   "specialNotes": [
@@ -136,39 +140,19 @@
     "NEB commonly asks to compute one modulus from two others using the linking relations."
   ],
   "importantStatements": [
-    "Young's modulus E = Fl/(AΔl) measures resistance to longitudinal deformation.",
-    "Bulk modulus B = −P/(ΔV/V) measures resistance to uniform compression.",
-    "Shear modulus G = τ/θ measures resistance to change of shape.",
-    "All three moduli have the units N/m² and are related by E = 2G(1+σ) = 3B(1−2σ).",
-    "Fluids have G = 0 and no Young's modulus — only bulk modulus."
+    "\"Bulk modulus is the ratio of volumetric stress to volumetric strain.\""
   ],
   "importantNotes": [
-    "Each modulus = stress/strain: E (longitudinal), B (volume), G (shear) — pick by the deformation type.",
-    "E, B and G are linked by Poisson's ratio σ: E = 2G(1+σ) = 3B(1−2σ).",
-    "Materials with low E (rubber) stretch easily; high E (diamond) resists deformation.",
-    "Fluids have no shear modulus — they flow in response to shear stress.",
-    "Compressibility k = 1/B is used to gauge how easily a substance is squeezed."
+    "Verified PYQ: bulk modulus + Poisson's ratio definitions (2024, 3m)."
   ],
   "examShortTricks": [
-    "unit memory: all three moduli are in N/m² (Pa).",
-    "For Young's modulus: rearrange E = Fl/(AΔl) to solve any one variable.",
-    "For bulk modulus: B = −P/(ΔV/V) — use the minus sign only once (final positive).",
-    "If you know E and G, find σ = E/(2G) − 1.",
-    "Convert mm² → 10⁻⁶ m² and cm² → 10⁻⁴ m² before stress calculations."
+    "\"Shear strain is an angle — keep it in radians.\""
   ],
   "examNotes": [
-    "E, B, G definitions and units are certainty for short-answer questions.",
-    "Young's modulus wire problems remain the most-tested numerical.",
-    "The relation E = 2G(1+σ) is frequently used to find Poisson's ratio.",
-    "Comparing bulk moduli of solids, liquids, gases comes up in conceptual questions.",
-    "NEB often provides two moduli and asks for the third using the linking relation."
+    "The 2024 definition question covers bulk modulus and Poisson's ratio — know both cold."
   ],
   "importantConcepts": [
-    "Young's modulus E = Fl/(AΔl) describes stretching/compression stiffness.",
-    "Bulk modulus B = −P/(ΔV/V) describes compression under uniform pressure.",
-    "Shear modulus G = τ/θ describes change of shape under tangential stress.",
-    "The three moduli are interrelated: E = 2G(1+σ) = 3B(1−2σ).",
-    "Fluids possess only bulk modulus; compressibility = 1/B."
+    "**The minus sign in K:** pressure up → volume down; the sign makes K itself positive."
   ],
   "importantTasks": [
     "Compute Young's modulus from a wire experiment data set.",
@@ -234,69 +218,35 @@
   "visualType": "young-modulus",
   "enrichedContent": {
     "notes": [
-      "**Young's modulus (E):** the ratio of longitudinal stress to longitudinal strain: E = (F/A)/(Δl/l) = Fl/(AΔl). It measures resistance to stretching/compression. For steel, E ≈ 2×10¹¹ N/m²; for aluminium ≈ 7×10¹⁰ N/m²; for rubber ≈ 5×10⁶ N/m².",
-      "**Bulk modulus (B):** the ratio of volume stress (pressure) to volume strain: B = −P/(ΔV/V). It measures resistance to uniform compression. The minus sign keeps B positive (ΔV is negative under pressure). For water B ≈ 2.2×10⁹ Pa; steel B ≈ 1.6×10¹¹ Pa.",
-      "**Shear modulus / modulus of rigidity (G or η):** the ratio of shear stress to shear strain: G = τ/θ = (F/A)/θ. It measures resistance to change of shape without change of volume. For steel G ≈ 8×10¹⁰ N/m².",
-      "**Key relation between moduli (for isotropic materials):** E = 2G(1 + σ) and E = 3B(1 − 2σ), where σ is Poisson's ratio. Combining them: 9/B = 3/G + 1/E or E = 9BG/(3B + G). These links let you compute one modulus from the others.",
-      "**Worked example — Young's modulus:** a wire of length 2 m and area 1 mm² extends 1 mm under a 50 kg load. F = 490 N, σ = 490/10⁻⁶ = 4.9×10⁸ Pa, ε = 10⁻³/2 = 5×10⁻⁴, E = 4.9×10⁸/5×10⁻⁴ = 9.8×10¹¹ ≈ 10¹¹ N/m².",
-      "**Worked example — bulk modulus:** 10⁵ Pa pressure on 1 m³ of water changes its volume by 4.5×10⁻⁵ m³. B = 10⁵/(4.5×10⁻⁵) = 2.2×10⁹ Pa.",
-      "**Compressibility:** the reciprocal of bulk modulus: k = 1/B. Fluids with high B are hard to compress; gases have very low B.",
-      "**Which modulus to use?** stretching a wire → Young's modulus; squeezing a sphere → bulk modulus; twisting/sliding layers → shear modulus. Choose by the type of deformation."
+      "## 1. Topic Introduction — Three Ways to Squeeze a Solid\n\nPull a rod, press a block, twist a shaft — three deformations, three moduli. Young's modulus answers stretching, bulk modulus answers compression, and the shear (rigidity) modulus answers twisting. Together they form the complete elastic fingerprint of a material.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Young's modulus Y (longitudinal)\n\n$$Y = \\frac{\\text{longitudinal stress}}{\\text{longitudinal strain}} = \\frac{FL}{A\\,\\Delta L}$$\nResponse to stretching/compression along one direction. Steel ≈ 2×10¹¹ Pa.\n\n### 2.2 Bulk modulus K (volume)\n\nUnder uniform pressure change $\\Delta P$, volume changes by $\\Delta V$:\n$$K = -\\frac{\\Delta P}{\\Delta V / V} \\quad \\text{(Pa)}$$\nThe minus sign: pressure increase causes volume decrease; K is reported positive. **Compressibility** = $1/K$.\nSolids: K ~ 10¹¹ Pa; liquids ~ 10⁹ Pa (water 2.1×10⁹); gases ~ 10⁵ Pa (easily compressed).\n\n### 2.3 Shear (rigidity) modulus η\n\nTangential force F on top face of a block (area A, height L) tilts it by angle θ:\n$$\\eta = \\frac{\\text{shear stress}}{\\text{shear strain}} = \\frac{F/A}{\\theta} \\quad \\text{(Pa, θ in radians)}$$\n\n### 2.4 Relations and facts\n\n- **Only two moduli are independent** for an isotropic solid; they interrelate through Poisson's ratio.\n- Order for any material: $\\eta < Y < K$ typically... actually for isotropic solids $Y = 3K(1-2\\sigma)/2 = 2\\eta(1+\\sigma)$; commonly K > Y > η.\n- Liquids have K but no Y or η (they flow — no shape rigidity).\n- A perfect elastic body deforms fully reversibly; a perfect plastic body never returns.\n\n### 2.5 Worked numericals\n\n**Q (NEB-style):** A cube of side 10 cm is subjected to a shearing force of 500 N on its top face. If η = 5×10¹⁰ Pa, find the shear angle.\n$\\theta = \\dfrac{F/A}{\\eta} = \\dfrac{500/(0.01)}{5\\times10^{10}} = \\dfrac{5\\times10^4}{5\\times10^{10}} = 10^{-6}$ rad.\n\n**Q (NEB-style):** Find the pressure needed to compress a water sample by 0.1% (K = 2.1×10⁹ Pa).\n$\\Delta P = K \\times \\Delta V/V = 2.1\\times10^9 \\times 10^{-3} = 2.1 \\times 10^6$ Pa ≈ 21 atm.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 39:** Y is one of the three moduli, all defined as stress/strain.\n- **To Topic 41:** σ (Poisson) connects lateral and longitudinal strains, linking Y, K, η.\n- **To Fluid mechanics:** K governs sound speed ($v = \\sqrt{K/\\rho}$ in fluids).\n- **To Torsion:** η governs the torsional rigidity of shafts and wires.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Mechanics | Elasticity | Define bulk modulus and Poisson's ratio. Why is Poisson's ratio dimensionless? | 3 | Definition |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define the three moduli with formulas (4m).\n2. Why do liquids have bulk modulus but no Young's modulus? (2m)\n3. Shear-angle numerical (3m).\n\n### 4.3 Common examination mistakes\n\n1. Dropping the minus sign discussion in K — state why it appears.\n2. Using degrees instead of radians for shear strain.\n3. Claiming liquids have Young's modulus."
     ],
     "confusion": [
-      "❌ 'All three moduli have different units.' ✅ All three are measured in N/m² (Pa) — same units, different deformation types.",
-      "❌ 'Bulk modulus applies only to liquids.' ✅ It applies to solids and gases too — any material under uniform pressure.",
-      "❌ 'Shear strain is a length ratio.' ✅ Shear strain is the ANGLE of displacement θ (radians), not a length ratio.",
-      "❌ 'Young's modulus and stiffness k are the same.' ✅ Y and k connect through geometry: E = Fl/(AΔl) while k = F/Δl, so E = kL/A.",
-      "❌ 'Liquids have Young's modulus.' ✅ Liquids flow; they have NO shear modulus and no Young's modulus for stretching — only bulk modulus.",
-      "❌ 'B increases when you compress a solid.' ✅ B is a constant MATERIAL property within the elastic range; it does not change with the applied pressure."
+      "**Three moduli, one idea:** each is stress ÷ strain for a different deformation type — stretch (Y), squeeze (K), twist (η).",
+      "**Liquids have K only** — they resist compression but not shape change."
     ],
     "practice": [
-      "A steel wire (L = 3 m, A = 2 mm²) extends 1.5 mm under a 300 N load. Find E.",
-      "A force of 2000 N produces a shear stress on a 5 cm² face with shear angle 0.002 rad. Find G.",
-      "Pressure of 2×10⁶ Pa reduces the volume of 2 m³ of oil by 1.2 L. Find B.",
-      "Given E = 2×10¹¹ and G = 8×10¹⁰ for steel, find Poisson's ratio. (Use E = 2G(1+σ)).",
-      "Convert: a water column adds 5×10⁵ Pa at its bottom. If B_water = 2.2×10⁹ Pa, find the fractional volume change.",
-      "Explain why gases are far more compressible than solids using bulk modulus values."
+      "Why is rubber's bulk modulus high even though it deforms easily?"
     ],
     "universalFacts": [
-      "Thomas Young established the concept of the modulus of elasticity in 1807 — his modulus E is one of the most fundamental material constants.",
-      "Rigidity (shear) modulus explains why liquids flow: their G = 0 — they cannot resist shear.",
-      "Diamond has the largest E of all materials (≈ 1.2×10¹² N/m²), which is why it is used for cutting tools.",
-      "Rubber has a low E but a very high elastic limit — it can stretch hundreds of percent before breaking.",
-      "Ultrasound techniques measure tissue Young's modulus for medical diagnosis (elastography).",
-      "**Anisotropic Materials:** In crystals and composites, elastic moduli depend on direction. Wood is much stronger along the grain than across it. This is described by the stiffness tensor with up to 21 independent constants for the most general anisotropic material."
+      "Sound speed in a fluid is √(K/ρ) — bulk modulus sets how fast pressure waves travel."
     ],
     "examples": [
-      "Young: A 1 mm² wire, 2 m long, carrying 200 N extends 2 mm → E = (200/10⁻⁶)/(2×10⁻³/2) = 2×10¹¹ N/m².",
-      "Bulk: 3×10⁶ Pa pressure shrinks 1 m³ of steel by 1.9×10⁻⁵ m³ → B = 1.6×10¹¹ Pa.",
-      "Shear: A 2×10⁴ N force shears a 10⁻³ m² face by 2.5×10⁻³ rad → G = (2×10⁴/10⁻³)/2.5×10⁻³ = 8×10⁹ N/m².",
-      "Relation check: E = 2G(1+σ) for steel: 2×10¹¹ = 2×8×10¹⁰(1+σ) → σ = 0.25.",
-      "Compressibility: water k = 1/B = 1/2.2×10⁹ = 4.5×10⁻¹⁰ Pa⁻¹."
+      "***Water compression*** — 0.1% squeeze needs ΔP = 2.1×10⁶ Pa ≈ 21 atm."
     ],
     "practiceQuestions": [
-      "A 2 m copper wire of area 1 mm² extends by 1.2 mm under a 40 N load. Find Young's modulus for copper.",
-      "Calculate the bulk modulus of a liquid if 2×10⁶ Pa pressure reduces 1.5 m³ of it by 0.75×10⁻³ m³.",
-      "A shear force of 5000 N acts on a 4 cm² face producing a shear angle of 0.01 rad. Find the shear modulus.",
-      "Steel has E = 2×10¹¹ N/m² and G = 8×10¹⁰ N/m². Find Poisson's ratio from E = 2G(1+σ).",
-      "A 10 m steel cable (E = 2×10¹¹) of area 2 cm² must not stretch more than 5 mm under load. Find the maximum load.",
-      "Explain why it is easier to compress a gas than a liquid or solid, using B values."
+      "**Numerical (3m): A solid cube of side 20 cm is sheared by 800 N on its top face; η = 4×10¹⁰ Pa. Find θ.** — F/A = 800/0.04 = 2×10⁴ Pa; θ = 2×10⁴/4×10¹⁰ = 5×10⁻⁷ rad."
     ],
     "formulas": [
-      "Young's modulus: E = (F/A)/(Δl/l) = Fl/(AΔl)",
-      "Bulk modulus: B = −P/(ΔV/V)",
-      "Shear modulus: G = (F/A)/θ = τ/θ",
-      "Relation: E = 2G(1 + σ) = 3B(1 − 2σ)",
-      "Combined: E = 9BG/(3B + G); compressibility k = 1/B"
+      "- Y = FL/(AΔL)\n- K = −ΔP/(ΔV/V); compressibility = 1/K\n- η = F/(Aθ)"
     ],
     "keyPoints": [
-      "E, B, G all have units N/m² (Pa) — they differ by the type of deformation they describe.",
-      "E (stretching), B (volume), G (shape) measure the corresponding resistance of a material.",
-      "The three moduli are linked: E = 2G(1+σ) and E = 3B(1−2σ).",
-      "Liquids and gases have G = 0 (they cannot resist shear) — only solids have a shear modulus.",
-      "Compressibility is the reciprocal of B."
+      "Y = FL/(AΔL); K = −ΔP/(ΔV/V); η = (F/A)/θ.",
+      "Compressibility = 1/K; K_water = 2.1×10⁹ Pa."
     ],
-    "summary": "The three elastic moduli — Young's (E), bulk (B), and shear (G) — quantify how materials resist stretching, uniform compression, and shape change respectively. Each is stress/strain with units N/m². They are related by E = 2G(1+σ) = 3B(1−2σ). Solids possess all three; fluids have only bulk modulus.",
+    "summary": "A material resists three kinds of deformation with three moduli, each stress-over-strain: **Young's modulus** $Y = FL/(A\\Delta L)$ for stretching, **bulk modulus** $K = -\\Delta P/(\\Delta V/V)$ for uniform compression (minus sign because pressure up means volume down; compressibility = 1/K), and **shear modulus** $\\eta = (F/A)/\\theta$ for twisting, with the strain measured as an angle in radians. NEB 2024 asks for the bulk modulus definition alongside Poisson's ratio. Compressing water by 0.1% takes 2.1×10⁶ Pa ≈ 21 atm; a 500 N shear on a 10 cm cube with η = 5×10¹⁰ Pa tilts it by just 10⁻⁶ rad. Liquids possess only K — they flow under shape-changing forces.",
     "specialNotes": [
       "Choose the modulus by the type of deformation: stretch → E, squeeze → B, twist → G.",
       "The sign in B = −P/(ΔV/V) makes the modulus positive since ΔV is negative under compression.",
@@ -305,32 +255,16 @@
       "NEB commonly asks to compute one modulus from two others using the linking relations."
     ],
     "importantStatements": [
-      "Young's modulus E = Fl/(AΔl) measures resistance to longitudinal deformation.",
-      "Bulk modulus B = −P/(ΔV/V) measures resistance to uniform compression.",
-      "Shear modulus G = τ/θ measures resistance to change of shape.",
-      "All three moduli have the units N/m² and are related by E = 2G(1+σ) = 3B(1−2σ).",
-      "Fluids have G = 0 and no Young's modulus — only bulk modulus."
+      "\"Bulk modulus is the ratio of volumetric stress to volumetric strain.\""
     ],
     "importantNotes": [
-      "Each modulus = stress/strain: E (longitudinal), B (volume), G (shear) — pick by the deformation type.",
-      "E, B and G are linked by Poisson's ratio σ: E = 2G(1+σ) = 3B(1−2σ).",
-      "Materials with low E (rubber) stretch easily; high E (diamond) resists deformation.",
-      "Fluids have no shear modulus — they flow in response to shear stress.",
-      "Compressibility k = 1/B is used to gauge how easily a substance is squeezed."
+      "Verified PYQ: bulk modulus + Poisson's ratio definitions (2024, 3m)."
     ],
     "examShortTricks": [
-      "unit memory: all three moduli are in N/m² (Pa).",
-      "For Young's modulus: rearrange E = Fl/(AΔl) to solve any one variable.",
-      "For bulk modulus: B = −P/(ΔV/V) — use the minus sign only once (final positive).",
-      "If you know E and G, find σ = E/(2G) − 1.",
-      "Convert mm² → 10⁻⁶ m² and cm² → 10⁻⁴ m² before stress calculations."
+      "\"Shear strain is an angle — keep it in radians.\""
     ],
     "examNotes": [
-      "E, B, G definitions and units are certainty for short-answer questions.",
-      "Young's modulus wire problems remain the most-tested numerical.",
-      "The relation E = 2G(1+σ) is frequently used to find Poisson's ratio.",
-      "Comparing bulk moduli of solids, liquids, gases comes up in conceptual questions.",
-      "NEB often provides two moduli and asks for the third using the linking relation."
+      "The 2024 definition question covers bulk modulus and Poisson's ratio — know both cold."
     ],
     "mcs": [
       {
@@ -385,11 +319,7 @@
       }
     ],
     "importantConcepts": [
-      "Young's modulus E = Fl/(AΔl) describes stretching/compression stiffness.",
-      "Bulk modulus B = −P/(ΔV/V) describes compression under uniform pressure.",
-      "Shear modulus G = τ/θ describes change of shape under tangential stress.",
-      "The three moduli are interrelated: E = 2G(1+σ) = 3B(1−2σ).",
-      "Fluids possess only bulk modulus; compressibility = 1/B."
+      "**The minus sign in K:** pressure up → volume down; the sign makes K itself positive."
     ],
     "importantTasks": [
       "Compute Young's modulus from a wire experiment data set.",
