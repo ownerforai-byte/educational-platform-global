@@ -55,9 +55,9 @@ Every upgraded topic note fills the note JSON with:
 | 15 | Floral Diversity | Angiosperm morphology | `11-angiosperm-morphology-of-root-stem-leaves-inflorescences-flowers-and-fruit.json` | **Completed** |
 | 16 | Floral Diversity | Taxonomic study | `12-taxonomic-study-definition-taxonomic-hierarchy-classification-systems-artificial-natural-and-phylogenetic-o.json` | **Completed** |
 | 17 | Floral Diversity | Angiosperm families | `13-angiosperm-families-with-economic-importance-brassicaceae-fabaceae-solanaceae-and-liliaceae.json` | **Completed** |
-| 18 | Introductory Microbiology (5) | Monera: bacteria, cyanobacteria | `01-monera-bacteria.json` | Not started |
-| 19 | Introductory Microbiology | Virus, bacteriophage | `02-virus.json` | Not started |
-| 20 | Introductory Microbiology | Biotechnology impacts in microbiology | `03-biotech-microbiology.json` | Not started |
+| 18 | Introductory Microbiology (5) | Monera: bacteria, cyanobacteria | `01-monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano.json` | **Completed** |
+| 19 | Introductory Microbiology | Virus, bacteriophage | `02-virus-general-introduction-structure-and-importance-of-virus-bacteriophage.json` | **Completed** |
+| 20 | Introductory Microbiology | Biotechnology impacts in microbiology | `02-impacts-of-biotechnology-in-the-field-of-microbiology.json` | **Completed** |
 | 21 | Ecology (11) | Ecosystem ecology; species interactions | `01-ecosystem-ecology.json` | Not started |
 | 22 | Ecology | Pond and forest ecosystem | `01-ecosystem-ecology.json` (merged) | Not started |
 | 23 | Ecology | Food chain, food web, pyramids, productivity | `02-food-chain-web.json` | Not started |
@@ -104,3 +104,5 @@ canonical files — their upgrade must cover every mapped syllabus topic.)*
 - Next: Unit 2 Floral Diversity (13 topics) — verify each topic's canonical file via the manifest matcher before editing.
 - Session 3 — Unit 2, Topics 7–17 (Fungi; Mucor/Yeast; Mushrooms; Lichen; Algae/Spirogyra; Bryophyta/Marchantia; Pteridophyta/Dryopteris; Gymnosperm/Pinus; Angiosperm morphology; Taxonomic study; Angiosperm families) upgraded. Unit 2 complete. Verified PYQs used: 2024 fungi (2m), 2024 algae classes (3m), 2024 gymnosperm vs angiosperm (3m), 2021 bryophytes-amphibians (2m), 2022+2024 Bryophyta characteristics (3m), 2024 Pteridophyta characteristics (3m), 2022 dicot vs monocot (2m). All other practice questions labelled NEB-style. Build (134 entries) + validate-content (4627 files, 0 broken) passed.
 - Next: Unit 3 Introductory Microbiology (3 topics) — resolve canonical files via the manifest matcher first.
+- Session 4 — Unit 3 Introductory Microbiology (Topics 18–20: Monera/bacteria; Virus/bacteriophage; Biotechnology impacts) upgraded. Verified PYQs used: 2023+2024 bacteria characteristics (3m), 2024 Gram staining (3m), 2024 cyanobacteria N-fixation (3m), 2024 microbial economics (2m), 2022 T2 phage structure/reproduction (3m), 2024 borderline-of-life (3m), 2024 lytic cycle (4m). Canonical files: unit 3 maps to full-slug files 01-monera-general-introduction…, 02-virus-general-introduction…, 02-impacts-of-biotechnology… (dup short files 01-monera-bacteria, 02-virus, 03-biotech-microbiology are NOT canonical). Remaining-unit canonical mapping resolved for ecology, vegetation, introduction-to-biology, evolutionary-biology, faunal-diversity, biota-and-environment, conservation-biology (matcher replicated standalone: filename/topicSlug match + lowest duplicateType wins).
+- Next: Unit 4 Ecology (6 topics) — canonical files 01-ecosystem-ecology…, 02-food-chain-food-web…, 02-concept-of-ecosystem…, 04-biogeochemical-cycles…, 04-ecological-adaptation…, 06-ecological-imbalances….

@@ -8,119 +8,122 @@
   "motionGraphics": "chemistry",
   "mcqs": [
     {
-      "question": "The enzyme used to join DNA fragments in rDNA is:",
+      "question": "Restriction endonucleases are called molecular scissors because they:",
       "options": [
-        "Restriction enzyme",
+        "Join DNA fragments",
+        "Cut DNA at specific sequences",
+        "Copy DNA",
+        "Repair DNA"
+      ],
+      "answer": "B",
+      "explanation": "They recognise specific palindromic sequences (e.g. EcoRI at GAATTC) and cut there."
+    },
+    {
+      "question": "Human insulin (Humulin) is produced using:",
+      "options": [
+        "Cow pancreas",
+        "Engineered E. coli",
+        "Yeast fermentation of grain",
+        "Chemical synthesis"
+      ],
+      "answer": "B",
+      "explanation": "The human insulin gene inserted into E. coli (1982) was the first recombinant-DNA drug."
+    },
+    {
+      "question": "PCR amplifies DNA using the enzyme:",
+      "options": [
         "DNA ligase",
-        "Polymerase",
-        "Helicase"
+        "Taq polymerase",
+        "Restriction enzyme",
+        "Reverse transcriptase"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Thermostable Taq polymerase from Thermus aquaticus survives the heating cycles of PCR."
     },
     {
-      "question": "A plasmid vector must contain:",
+      "question": "Bt cotton is resistant to:",
       "options": [
-        "An origin of replication (ori)",
-        "A capsid",
-        "A flagellum",
-        "A nucleoid"
+        "Fungi",
+        "Bollworm insects",
+        "Drought",
+        "Virus"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The Bacillus thuringiensis toxin gene kills bollworm larvae feeding on the plant."
     },
     {
-      "question": "Human insulin is produced using which host organism?",
+      "question": "The oil-eating 'superbug' used in bioremediation is:",
       "options": [
-        "Yeast",
         "E. coli",
-        "Mammalian cell only",
-        "Bread mould"
+        "Pseudomonas putida",
+        "Lactobacillus",
+        "Bacillus subtilis"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Engineered Pseudomonas putida degrades petroleum hydrocarbons in oil spills."
     },
     {
-      "question": "CRISPR-Cas9 is:",
+      "question": "Biogas is produced mainly by:",
       "options": [
-        "A restriction enzyme",
-        "A programmable gene-editing tool",
-        "A vector",
-        "A host cell"
+        "Cyanobacteria",
+        "Methanogens",
+        "Yeasts",
+        "Nitrosomonas"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Methane-producing archaea ferment organic matter anaerobically in biogas digesters."
     },
     {
-      "question": "A common examiner point on \"Impacts of biotechnology in the field of microbiology\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "DNA fragments are separated by size using:",
       "options": [
-        "True",
-        "False"
+        "Centrifugation",
+        "Gel electrophoresis",
+        "Chromatography",
+        "PCR"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Gel electrophoresis migrates fragments through a matrix — smaller fragments travel farther."
+    },
+    {
+      "question": "Golden rice is engineered to produce:",
+      "options": [
+        "Iron",
+        "β-carotene (pro-vitamin A)",
+        "Protein",
+        "Vitamin C"
+      ],
+      "answer": "B",
+      "explanation": "Golden rice carries β-carotene biosynthesis genes to combat vitamin-A deficiency."
     }
   ],
   "visualType": "biotech-microbe-applications",
   "enrichedContent": {
     "notes": [
-      "DETAILED RECOMBINANT DNA (rDNA) TECHNOLOGY AND ITS APPLICATIONS.",
-      "rDNA (gene cloning) — 7 steps:",
-      "Step 1 — Identification + isolation: the gene of interest (e.g., human insulin) is identified and isolated from the source DNA (or synthesised by PCR).",
-      "Step 2 — Cutting: restriction endonucleases (e.g., EcoRI, BamHI) cut both the source DNA and the vector (plasmid) at specific recognition sites, producing sticky (or blunt) ends.",
-      "Step 3 — Insertion (ligation): DNA ligase joins the gene into the vector (plasmid), forming recombinant DNA (rDNA).",
-      "Step 4 — Transformation: the rDNA is introduced into a competent host cell (E. coli) by heat shock, electroporation, or a calcium-chloride method.",
-      "Step 5 — Selection: the host is grown on a selective medium (e.g., ampicillin); only cells with the plasmid (carrying the antibiotic-resistance gene) survive; blue-white screening (lacZ) identifies recombinants.",
-      "Step 6 — Expression: the host cell transcribes + translates the inserted gene, producing the desired protein (e.g., insulin).",
-      "Step 7 — Harvest + purification: the protein is secreted into the culture medium (or inside the cell), harvested, purified (chromatography), and formulated.",
-      "Vectors: plasmids (most common), bacteriophages, cosmids, BACs, YACs; features: origin of replication (ori), selectable marker (antibiotic resistance), multiple cloning site (MCS), and a high copy number.",
-      "Host cells: E. coli (prokaryotic, fast, cheap), yeast (eukaryotic, for proteins needing glycosylation), mammalian cells (for complex human proteins).",
-      "Applications in medicine: recombinant insulin (E. coli, 1982), growth hormone, hepatitis B + HPV vaccines, monoclonal antibodies, gene therapy.",
-      "Applications in agriculture: Bt cotton (Cry toxin gene → insect resistance), herbicide-tolerant soybean, tissue culture (rapid propagation), biofertilisers (Rhizobium, Azotobacter), biopesticides.",
-      "Applications in industry: enzyme production (amylase, protease in detergents), bioremediation (oil degradation by Pseudomonas), biofuels (ethanol by yeast), biogas (methanogens).",
-      "Gene therapy: a functional copy of a defective gene is delivered to the patient's cells via a viral vector (e.g., adeno-associated virus); examples: SCID (1990), cystic fibrosis (trials).",
-      "Gene editing (CRISPR-Cas9): a programmable nuclease cuts DNA at a specific site; the cell's repair machinery introduces the desired change; derived from the bacterial immune system (2012 Nobel).",
-      "Ethical considerations: GMO food safety, gene patenting, genetic privacy, environmental release of transgenics, and the creation of \"designer babies.\"",
-      "NEB focus: detailed rDNA steps, vectors, host cells, insulin production, gene therapy, CRISPR, and the ethical issues of biotechnology."
+      "## 1. Topic Introduction — Engineering Life\n\nBiotechnology applies living systems (or their components) to make useful products. Microbiology and biotechnology merged when scientists learned to cut, paste and multiply DNA inside bacteria. This topic covers the impacts of biotechnology in the field of microbiology — from genetic engineering tools to industrial fermentation, medicine, agriculture and the environment.",
+      "## 2. Fundamental Concepts — Tools of Genetic Engineering\n\n| Tool | What it does | Example |\n|---|---|---|\n| **Restriction endonucleases** | Cut DNA at specific palindromic sequences (\"molecular scissors\") | EcoRI cuts GAATTC |\n| **DNA ligase** | Joins DNA fragments (\"molecular glue\") | Seals insert into vector |\n| **Vectors** | Carry foreign DNA into host cells | Plasmids, bacteriophages, cosmids |\n| **Host organisms** | Multiply the engineered DNA | *E. coli*, yeast |\n| **PCR (Polymerase Chain Reaction)** | Amplifies DNA in vitro exponentially | Thermus aquaticus Taq polymerase |\n| **Gel electrophoresis** | Separates DNA fragments by size | DNA fingerprinting |\n| **DNA probes / sequencing** | Detect and read DNA sequences | Human Genome Project |\n\n**Recombinant DNA technology in five steps:** isolate the gene → cut gene and vector with the same restriction enzyme → ligate into the vector (recombinant DNA) → transform the host (*E. coli*) → select, clone and express the product.",
+      "## 3. Impacts of Biotechnology in Microbiology (field by field)\n\n### 3.1 Medicine and health\n\n| Product | Made by/using | Use |\n|---|---|---|\n| **Human insulin (Humulin)** | *E. coli* carrying the human insulin gene (1982 — first rDNA drug) | Diabetes |\n| Growth hormone, interferons, blood factors | Engineered bacteria/yeast | Dwarfism, antiviral, haemophilia |\n| **Vaccines** | Hepatitis B vaccine from engineered yeast | Disease prevention |\n| **Antibiotics** | Fermentation by *Streptomyces*, *Penicillium* | Infection control |\n| Gene therapy & DNA vaccines | Vector-delivered genes | Emerging treatments |\n\n### 3.2 Agriculture\n\n| Application | Detail |\n|---|---|\n| **Bt crops** | *Bacillus thuringiensis* toxin gene in cotton, maize — insect resistance |\n| **Golden rice** | β-carotene (vitamin A precursor) engineered into rice |\n| Roundup-ready soybean | Herbicide tolerance |\n| **Biofertilisers** | *Rhizobium*, *Azotobacter*, cyanobacteria cultures as inoculants |\n| **Biopesticides** | Bt sprays, viral pesticides (baculovirus) |\n| **Transgenic animals/plants** | Improved yield, shelf life (Flavr Savr tomato) |\n\n### 3.3 Industry and food\n\n| Application | Detail |\n|---|---|\n| **Fermentation industry** | Beer, wine, bread (yeast); vinegar, lactic acid, citric acid |\n| **Enzyme production** | Detergent proteases/lipases, amylases from microbes |\n| **Single-cell protein (SCP)** | *Spirulina*, yeast biomass as protein source |\n| Dairy | Curd, cheese by *Lactobacillus*, *Streptococcus* |\n| Biofuels | Ethanol from fermentation; biogas from methanogens |\n\n### 3.4 Environment\n\n| Application | Detail |\n|---|---|\n| **Sewage treatment** | Aerobic and anaerobic microbial digestion of organic waste |\n| **Bioremediation** | *Pseudomonas putida* (\"superbug\") degrades oil spills |\n| **Biogas** | Methanogens produce methane from dung and sludge |\n| Biosensors | Microbes detect pollutants |",
+      "## 4. Impacts — A Balanced View\n\n| Positive impacts | Concerns |\n|---|---|\n| Cheap, pure human proteins (insulin without animal pancreas) | **Ethics:** tampering with life, \"playing God\" |\n| Higher food yield, nutrition (golden rice) | **Safety:** allergens, gene flow to wild plants (\"superweeds\") |\n| Cleaner environment (bioremediation, biofuels) | **Bioterrorism:** engineered pathogens |\n| Rapid disease diagnosis (PCR, ELISA) | **Patent/ownership** of living organisms; cost access |\n| Conservation (cryopreservation, tissue culture) | Antibiotic-resistance genes escaping |",
+      "## 5. Conceptual Relationships\n\n- **Topic 18 → here:** plasmids, *E. coli* and fermentation are bacterial biology industrialised.\n- **Topic 19 → here:** bacteriophages are vectors; phage resistance genes built early rDNA work.\n- **Here → ecology (Unit 4):** bioremediation and biogas are applied nutrient cycling.\n- **Here → conservation (Unit 10):** tissue culture and gene banks conserve endangered flora.\n- **Here → Class 12 genetics:** the tools here operate on the DNA principles studied there.",
+      "## 6. Exam Orientation\n\n### 6.1 Previous year questions\n\nNo biotechnology question exists in the authored bank. Questions below are **NEB-style practice**, clearly labelled.\n\n### 6.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — What is recombinant DNA technology? List its steps.**\nAnswer: Recombinant DNA technology joins DNA from two different sources (typically a human gene and a bacterial plasmid) to create a construct expressed in a host. Steps: (1) isolate the target gene; (2) cut gene and vector with the **same restriction enzyme**; (3) join with **DNA ligase** to form recombinant DNA; (4) transform the host (*E. coli*); (5) select clones and express/harvest the product (e.g. human insulin).\n\n**Q2 (2m) — Name two medically important products of biotechnology.**\nAnswer: (1) **Human insulin (Humulin)** — produced by engineered *E. coli* for diabetes; (2) **Hepatitis B vaccine** — produced by engineered yeast. (Also acceptable: growth hormone, interferon.)\n\n**Q3 (3m) — Explain the impacts of biotechnology in agriculture.**\nAnswer: (1) **Bt crops** — the *Bacillus thuringiensis* toxin gene confers insect resistance in cotton and maize, cutting pesticide use; (2) **Golden rice** — β-carotene-engineered rice fights vitamin-A deficiency; (3) **biofertilisers and biopesticides** — *Rhizobium* cultures and Bt sprays replace chemicals; (4) herbicide-tolerant and longer-shelf-life transgenic crops raise yields.\n\n**Q4 (2m) — What is bioremediation? Give an example.**\nAnswer: The use of microorganisms to degrade pollutants. Example: *Pseudomonas putida* (\"superbug\") cleans up oil spills; microbial sewage treatment and methanogen biogas digesters are related applications.\n\n### 6.3 Common examination mistakes\n\n1. Writing restriction enzymes \"join DNA\" — they **cut**; **ligase** joins.\n2. Confusing PCR (amplification) with cloning (multiplication in hosts).\n3. Saying insulin is extracted from pancreases in modern industry — it is **rDNA-produced** since 1982.\n4. Omitting both benefits and concerns when asked for \"impacts\" — the word includes risks."
     ],
     "confusion": [
-      "Restriction enzymes CUT DNA at specific sequences; DNA ligase JOINS DNA fragments; they are different tools.",
-      "A plasmid is a small circular DNA molecule used as a VECTOR; it is NOT the gene of interest itself.",
-      "Transformation (in rDNA) = introducing foreign DNA into a competent cell; it is DIFFERENT from transformation (natural DNA uptake in bacteria).",
-      "Gene therapy treats a disease by CORRECTING a faulty gene in the patient's cells; gene editing (CRISPR) is a TOOL to make that correction.",
-      "Bt toxin (from Bacillus thuringiensis) is harmless to humans but lethal to specific insect larvae; it is used in Bt crops.",
-      "Monoclonal antibodies are produced by a single B-cell clone; they are highly specific and used in diagnostics + therapy.",
-      "CRISPR-Cas9 is a programmable nuclease; it is NOT the same as a restriction enzyme (which cuts at a fixed, natural sequence).",
-      "A transgenic organism (GMO) carries a gene from a DIFFERENT species; it is created in the laboratory."
+      "**Restriction enzyme vs ligase:** restriction endonuclease cuts DNA at specific sites; DNA ligase seals fragments together.",
+      "**Vector vs host:** vector = the DNA carrier (plasmid/phage); host = the organism multiplied (E. coli).",
+      "**Bt gene vs Bt spray:** same Bacillus thuringiensis toxin — engineered into crops (Bt cotton) or sprayed as biopesticide."
     ],
     "practice": [
-      "Explain the 7 steps of rDNA technology in detail.",
-      "Describe the structure of a plasmid vector (ori, selectable marker, MCS, copy number).",
-      "Explain the production of human insulin using E. coli.",
-      "Differentiate gene therapy from gene editing (CRISPR).",
-      "Explain the use of Bt crops in pest management.",
-      "Discuss the ethical issues of GMOs (3 points).",
-      "Explain the role of restriction enzymes + ligase in rDNA."
+      "Why must the gene and plasmid be cut by the same restriction enzyme?"
     ],
     "universalFacts": [
-      "Recombinant human insulin was the first biotech drug approved for human use (1982).",
-      "The HPV vaccine, derived from recombinant virus-like particles, can prevent cervical cancer.",
-      "CRISPR-Cas9 gene editing, derived from bacterial immune systems, revolutionised genetics in 2012 (Nobel Prize 2020 to Doudna + Charpentier).",
-      "Bt cotton reduced pesticide use by ~50% in India after its introduction in 2002."
+      "PCR can amplify a single DNA molecule to billions of copies in about two hours."
     ],
     "examples": [
-      "rDNA steps: isolate → cut (EcoRI) → ligate → transform → select (ampicillin) → express → harvest (insulin).",
-      "Plasmid vector: pBR322 (ori, ampR, tetR, MCS); pUC19 (lacZ for blue-white screening).",
-      "Insulin production: human insulin gene → E. coli → fermentation → purification → insulin.",
-      "Hepatitis B vaccine: yeast expressing HBsAg protein → purified → vaccine.",
-      "Bt cotton: Bt toxin gene (Cry protein) → cotton plant → resistance to bollworm.",
-      "Gene therapy: healthy gene → viral vector (AAV) → patient cell → expression → treatment (SCID, 1990).",
-      "CRISPR-Cas9: guide RNA + Cas9 → cut DNA at a specific site → cell repair → desired change."
+      "***Humulin*** — first rDNA drug (1982); human insulin from E. coli.",
+      "***Bt cotton*** — insect-resistant transgenic cotton.",
+      "***Pseudomonas putida*** — oil-eating \"superbug\" of bioremediation."
     ],
     "practiceQuestions": [
-      "Describe the 7 steps of rDNA technology in detail.",
-      "Explain the structure of a plasmid vector.",
-      "How is human insulin produced using rDNA?",
-      "Differentiate gene therapy from gene editing (CRISPR).",
-      "What is the use of Bt crops in pest management?",
-      "Discuss the ethical issues of GMOs.",
-      "Explain the role of restriction enzymes and ligase in rDNA."
+      "**Short answer (2m): What is PCR?** — Polymerase Chain Reaction: in vitro enzymatic amplification of a DNA segment through repeated heating/priming/extension cycles using thermostable Taq polymerase, producing millions of copies for diagnosis and research."
     ],
     "formulas": [
       "rDNA: isolate → cut (restriction enzyme) → ligate (DNA ligase) → transform → select → express → harvest",
@@ -129,16 +132,13 @@
       "CRISPR: guide RNA + Cas9 → cut DNA → repair → desired change"
     ],
     "keyPoints": [
-      "rDNA: 7 steps (isolate, cut, ligate, transform, select, express, harvest).",
-      "Vectors: plasmids, phages, cosmids, BACs, YACs; features: ori, selectable marker, MCS.",
-      "Host cells: E. coli (prokaryotic), yeast (eukaryotic), mammalian cells.",
-      "Medical: insulin (1982), vaccines (HBV, HPV), monoclonal antibodies, gene therapy.",
-      "Agricultural: Bt crops, herbicide-tolerant crops, tissue culture, biofertilisers.",
-      "Industrial: enzymes, bioremediation, biofuels, biogas.",
-      "Gene therapy (correct a faulty gene) vs gene editing (CRISPR tool).",
-      "Ethical: GMO safety, patenting, privacy, environment, designer babies."
+      "Tools: restriction enzymes (EcoRI), DNA ligase, plasmid/phage vectors, E. coli host, PCR (Taq polymerase), gel electrophoresis.",
+      "rDNA steps: isolate gene → cut with same enzyme → ligate → transform host → select and express.",
+      "Medicine: Humulin insulin (E. coli, 1982), hepatitis B vaccine (yeast), antibiotics (Streptomyces), interferons.",
+      "Agriculture: Bt cotton/maize, golden rice, Rhizobium biofertiliser, biopesticides.",
+      "Environment: sewage treatment, bioremediation (Pseudomonas putida oil spills), biogas (methanogens)."
     ],
-    "summary": "Recombinant DNA (rDNA) technology follows 7 detailed steps: isolate the gene, cut it with restriction enzymes, ligate it into a vector, transform a host cell, select the transformants, express the gene, and harvest the product. Plasmids are the most common vectors (ori, selectable marker, MCS). E. coli is the standard host for simple proteins; yeast and mammalian cells are used for complex, glycosylated proteins. Applications span medicine (insulin, vaccines, gene therapy), agriculture (Bt crops, tissue culture, biofertilisers), and industry (enzymes, bioremediation, biofuels). Gene therapy corrects faulty genes in the patient's cells; gene editing (CRISPR-Cas9) is the tool that makes the correction. Ethical issues (GMO safety, patenting, privacy, environment) are integral to the field. NEB focuses on the detailed rDNA steps, vectors, host cells, insulin production, gene therapy, CRISPR, and the ethical issues of biotechnology.",
+    "summary": "Biotechnology reshaped microbiology by turning bacteria into factories. Restriction enzymes cut, DNA ligase glues, plasmids and phages ship, and E. coli grows — recombinant DNA in five steps. The impacts: medicine gains human insulin, hepatitis B vaccine, interferons and antibiotics; agriculture gains Bt cotton, golden rice and Rhizobium biofertilisers; industry gains fermentation products, enzymes and single-cell protein; the environment gains sewage treatment, biogas and oil-eating Pseudomonas. The same power raises concerns — allergens, superweeds, bioterrorism and the ethics of patenting life. Biotechnology's promise and peril are the same thing: life, deliberately rewritten.",
     "specialNotes": [
       "NEB expects the 7 rDNA steps clearly, with the role of each tool (restriction enzyme, ligase, vector, host).",
       "The plasmid vector structure (ori, selectable marker, MCS, copy number) is a common exam point.",
@@ -149,37 +149,16 @@
       "Monoclonal antibodies: single B-cell clone; highly specific; diagnostics + therapy."
     ],
     "importantStatements": [
-      "Recombinant DNA technology is the cornerstone of modern biotechnology.",
-      "The rDNA process follows 7 detailed steps.",
-      "Human insulin produced by E. coli was the first biotech drug (1982).",
-      "CRISPR-Cas9 is a programmable gene-editing tool derived from the bacterial immune system."
+      "\"Biotechnology is microbiology with a purpose — and a patent.\""
     ],
     "importantNotes": [
-      "Memorise the 7 rDNA steps with the tools involved.",
-      "Learn the plasmid vector structure (ori, marker, MCS).",
-      "Know the host cells (E. coli, yeast, mammalian).",
-      "Explain the insulin production pathway.",
-      "Differentiate gene therapy from gene editing (CRISPR).",
-      "List medical, agricultural, and industrial applications.",
-      "Discuss the ethical issues of GMOs."
+      "\"Impacts\" answers need both benefits and concerns — list at least one ethical/safety concern for full marks."
     ],
     "examShortTricks": [
-      "rDNA = 7 steps: Isolate, Cut, Ligate, Transform, Select, Express, Harvest.",
-      "Plasmid = ori + marker + MCS + copy number.",
-      "Insulin = E. coli = bacteria make human protein.",
-      "Gene therapy = give the gene; Gene editing = cut + paste the gene (CRISPR).",
-      "Bt = Bacillus thuringiensis = insect toxin = transgenic crop.",
-      "GMO = Gene from another organism → Modified."
+      "\"Cut–Glue–Ship–Grow\": cut (restriction), glue (ligase), ship (vector), grow (host)."
     ],
     "examNotes": [
-      "Describe the 7 steps of rDNA technology in detail.",
-      "Explain the structure of a plasmid vector.",
-      "Explain the production of human insulin using rDNA.",
-      "Differentiate gene therapy from gene editing (CRISPR).",
-      "Explain the use of Bt crops in pest management.",
-      "Discuss the ethical issues of GMOs.",
-      "Explain the role of restriction enzymes and ligase in rDNA.",
-      "What are monoclonal antibodies and how are they produced?"
+      "Most-tested in exams: recombinant DNA steps, named products (insulin, vaccine), Bt crops, bioremediation."
     ],
     "mcs": [
       {
@@ -224,16 +203,7 @@
       }
     ],
     "importantConcepts": [
-      "rDNA 7 steps",
-      "Restriction enzymes + ligase",
-      "Plasmid vectors (ori, marker, MCS)",
-      "Host cells (E. coli, yeast, mammalian)",
-      "Insulin production",
-      "Gene therapy",
-      "CRISPR-Cas9",
-      "Bt crops",
-      "Monoclonal antibodies",
-      "Ethical issues of GMOs"
+      "**One enzyme, one cut:** the same restriction enzyme cutting both gene and vector creates matching sticky ends — the molecular hinge of all genetic engineering."
     ],
     "importantTasks": [
       "Describe rDNA 7 steps",
@@ -473,94 +443,31 @@
     }
   },
   "notes": [
-    "DETAILED RECOMBINANT DNA (rDNA) TECHNOLOGY AND ITS APPLICATIONS.",
-    "rDNA (gene cloning) — 7 steps:",
-    "Step 1 — Identification + isolation: the gene of interest (e.g., human insulin) is identified and isolated from the source DNA (or synthesised by PCR).",
-    "Step 2 — Cutting: restriction endonucleases (e.g., EcoRI, BamHI) cut both the source DNA and the vector (plasmid) at specific recognition sites, producing sticky (or blunt) ends.",
-    "Step 3 — Insertion (ligation): DNA ligase joins the gene into the vector (plasmid), forming recombinant DNA (rDNA).",
-    "Step 4 — Transformation: the rDNA is introduced into a competent host cell (E. coli) by heat shock, electroporation, or a calcium-chloride method.",
-    "Step 5 — Selection: the host is grown on a selective medium (e.g., ampicillin); only cells with the plasmid (carrying the antibiotic-resistance gene) survive; blue-white screening (lacZ) identifies recombinants.",
-    "Step 6 — Expression: the host cell transcribes + translates the inserted gene, producing the desired protein (e.g., insulin).",
-    "Step 7 — Harvest + purification: the protein is secreted into the culture medium (or inside the cell), harvested, purified (chromatography), and formulated.",
-    "Vectors: plasmids (most common), bacteriophages, cosmids, BACs, YACs; features: origin of replication (ori), selectable marker (antibiotic resistance), multiple cloning site (MCS), and a high copy number.",
-    "Host cells: E. coli (prokaryotic, fast, cheap), yeast (eukaryotic, for proteins needing glycosylation), mammalian cells (for complex human proteins).",
-    "Applications in medicine: recombinant insulin (E. coli, 1982), growth hormone, hepatitis B + HPV vaccines, monoclonal antibodies, gene therapy.",
-    "Applications in agriculture: Bt cotton (Cry toxin gene → insect resistance), herbicide-tolerant soybean, tissue culture (rapid propagation), biofertilisers (Rhizobium, Azotobacter), biopesticides.",
-    "Applications in industry: enzyme production (amylase, protease in detergents), bioremediation (oil degradation by Pseudomonas), biofuels (ethanol by yeast), biogas (methanogens).",
-    "Gene therapy: a functional copy of a defective gene is delivered to the patient's cells via a viral vector (e.g., adeno-associated virus); examples: SCID (1990), cystic fibrosis (trials).",
-    "Gene editing (CRISPR-Cas9): a programmable nuclease cuts DNA at a specific site; the cell's repair machinery introduces the desired change; derived from the bacterial immune system (2012 Nobel).",
-    "Ethical considerations: GMO food safety, gene patenting, genetic privacy, environmental release of transgenics, and the creation of \"designer babies.\"",
-    "NEB focus: detailed rDNA steps, vectors, host cells, insulin production, gene therapy, CRISPR, and the ethical issues of biotechnology.",
-    "The use of microbial biotechnology is described below: 1.",
-    "In Medicine: The concept of microbial biotechnology is used in human and veterinary medicine by the following ways: a.",
-    "Antibiotics: Antibiotics are substances obtained from microorganisms that help in controlling different types of diseases.",
-    "They are obtained from different types of microorganisms.",
-    "Vaccines: Vaccines are the substances derived from microorganisms used to immunize against disease.",
-    "Vaccines are produced by using the concept of fermentation technology and recombinant DNA technology.",
-    "The use of vaccines such as smallpox, polio, tetanus etc.",
-    "led to the virtual elimination of these diseases in regions of the world where the vaccines have been deployed."
+    "## 1. Topic Introduction — Engineering Life\n\nBiotechnology applies living systems (or their components) to make useful products. Microbiology and biotechnology merged when scientists learned to cut, paste and multiply DNA inside bacteria. This topic covers the impacts of biotechnology in the field of microbiology — from genetic engineering tools to industrial fermentation, medicine, agriculture and the environment.",
+    "## 2. Fundamental Concepts — Tools of Genetic Engineering\n\n| Tool | What it does | Example |\n|---|---|---|\n| **Restriction endonucleases** | Cut DNA at specific palindromic sequences (\"molecular scissors\") | EcoRI cuts GAATTC |\n| **DNA ligase** | Joins DNA fragments (\"molecular glue\") | Seals insert into vector |\n| **Vectors** | Carry foreign DNA into host cells | Plasmids, bacteriophages, cosmids |\n| **Host organisms** | Multiply the engineered DNA | *E. coli*, yeast |\n| **PCR (Polymerase Chain Reaction)** | Amplifies DNA in vitro exponentially | Thermus aquaticus Taq polymerase |\n| **Gel electrophoresis** | Separates DNA fragments by size | DNA fingerprinting |\n| **DNA probes / sequencing** | Detect and read DNA sequences | Human Genome Project |\n\n**Recombinant DNA technology in five steps:** isolate the gene → cut gene and vector with the same restriction enzyme → ligate into the vector (recombinant DNA) → transform the host (*E. coli*) → select, clone and express the product.",
+    "## 3. Impacts of Biotechnology in Microbiology (field by field)\n\n### 3.1 Medicine and health\n\n| Product | Made by/using | Use |\n|---|---|---|\n| **Human insulin (Humulin)** | *E. coli* carrying the human insulin gene (1982 — first rDNA drug) | Diabetes |\n| Growth hormone, interferons, blood factors | Engineered bacteria/yeast | Dwarfism, antiviral, haemophilia |\n| **Vaccines** | Hepatitis B vaccine from engineered yeast | Disease prevention |\n| **Antibiotics** | Fermentation by *Streptomyces*, *Penicillium* | Infection control |\n| Gene therapy & DNA vaccines | Vector-delivered genes | Emerging treatments |\n\n### 3.2 Agriculture\n\n| Application | Detail |\n|---|---|\n| **Bt crops** | *Bacillus thuringiensis* toxin gene in cotton, maize — insect resistance |\n| **Golden rice** | β-carotene (vitamin A precursor) engineered into rice |\n| Roundup-ready soybean | Herbicide tolerance |\n| **Biofertilisers** | *Rhizobium*, *Azotobacter*, cyanobacteria cultures as inoculants |\n| **Biopesticides** | Bt sprays, viral pesticides (baculovirus) |\n| **Transgenic animals/plants** | Improved yield, shelf life (Flavr Savr tomato) |\n\n### 3.3 Industry and food\n\n| Application | Detail |\n|---|---|\n| **Fermentation industry** | Beer, wine, bread (yeast); vinegar, lactic acid, citric acid |\n| **Enzyme production** | Detergent proteases/lipases, amylases from microbes |\n| **Single-cell protein (SCP)** | *Spirulina*, yeast biomass as protein source |\n| Dairy | Curd, cheese by *Lactobacillus*, *Streptococcus* |\n| Biofuels | Ethanol from fermentation; biogas from methanogens |\n\n### 3.4 Environment\n\n| Application | Detail |\n|---|---|\n| **Sewage treatment** | Aerobic and anaerobic microbial digestion of organic waste |\n| **Bioremediation** | *Pseudomonas putida* (\"superbug\") degrades oil spills |\n| **Biogas** | Methanogens produce methane from dung and sludge |\n| Biosensors | Microbes detect pollutants |",
+    "## 4. Impacts — A Balanced View\n\n| Positive impacts | Concerns |\n|---|---|\n| Cheap, pure human proteins (insulin without animal pancreas) | **Ethics:** tampering with life, \"playing God\" |\n| Higher food yield, nutrition (golden rice) | **Safety:** allergens, gene flow to wild plants (\"superweeds\") |\n| Cleaner environment (bioremediation, biofuels) | **Bioterrorism:** engineered pathogens |\n| Rapid disease diagnosis (PCR, ELISA) | **Patent/ownership** of living organisms; cost access |\n| Conservation (cryopreservation, tissue culture) | Antibiotic-resistance genes escaping |",
+    "## 5. Conceptual Relationships\n\n- **Topic 18 → here:** plasmids, *E. coli* and fermentation are bacterial biology industrialised.\n- **Topic 19 → here:** bacteriophages are vectors; phage resistance genes built early rDNA work.\n- **Here → ecology (Unit 4):** bioremediation and biogas are applied nutrient cycling.\n- **Here → conservation (Unit 10):** tissue culture and gene banks conserve endangered flora.\n- **Here → Class 12 genetics:** the tools here operate on the DNA principles studied there.",
+    "## 6. Exam Orientation\n\n### 6.1 Previous year questions\n\nNo biotechnology question exists in the authored bank. Questions below are **NEB-style practice**, clearly labelled.\n\n### 6.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — What is recombinant DNA technology? List its steps.**\nAnswer: Recombinant DNA technology joins DNA from two different sources (typically a human gene and a bacterial plasmid) to create a construct expressed in a host. Steps: (1) isolate the target gene; (2) cut gene and vector with the **same restriction enzyme**; (3) join with **DNA ligase** to form recombinant DNA; (4) transform the host (*E. coli*); (5) select clones and express/harvest the product (e.g. human insulin).\n\n**Q2 (2m) — Name two medically important products of biotechnology.**\nAnswer: (1) **Human insulin (Humulin)** — produced by engineered *E. coli* for diabetes; (2) **Hepatitis B vaccine** — produced by engineered yeast. (Also acceptable: growth hormone, interferon.)\n\n**Q3 (3m) — Explain the impacts of biotechnology in agriculture.**\nAnswer: (1) **Bt crops** — the *Bacillus thuringiensis* toxin gene confers insect resistance in cotton and maize, cutting pesticide use; (2) **Golden rice** — β-carotene-engineered rice fights vitamin-A deficiency; (3) **biofertilisers and biopesticides** — *Rhizobium* cultures and Bt sprays replace chemicals; (4) herbicide-tolerant and longer-shelf-life transgenic crops raise yields.\n\n**Q4 (2m) — What is bioremediation? Give an example.**\nAnswer: The use of microorganisms to degrade pollutants. Example: *Pseudomonas putida* (\"superbug\") cleans up oil spills; microbial sewage treatment and methanogen biogas digesters are related applications.\n\n### 6.3 Common examination mistakes\n\n1. Writing restriction enzymes \"join DNA\" — they **cut**; **ligase** joins.\n2. Confusing PCR (amplification) with cloning (multiplication in hosts).\n3. Saying insulin is extracted from pancreases in modern industry — it is **rDNA-produced** since 1982.\n4. Omitting both benefits and concerns when asked for \"impacts\" — the word includes risks."
   ],
   "confusion": [
-    "Restriction enzymes CUT DNA at specific sequences; DNA ligase JOINS DNA fragments; they are different tools.",
-    "A plasmid is a small circular DNA molecule used as a VECTOR; it is NOT the gene of interest itself.",
-    "Transformation (in rDNA) = introducing foreign DNA into a competent cell; it is DIFFERENT from transformation (natural DNA uptake in bacteria).",
-    "Gene therapy treats a disease by CORRECTING a faulty gene in the patient's cells; gene editing (CRISPR) is a TOOL to make that correction.",
-    "Bt toxin (from Bacillus thuringiensis) is harmless to humans but lethal to specific insect larvae; it is used in Bt crops.",
-    "Monoclonal antibodies are produced by a single B-cell clone; they are highly specific and used in diagnostics + therapy.",
-    "CRISPR-Cas9 is a programmable nuclease; it is NOT the same as a restriction enzyme (which cuts at a fixed, natural sequence).",
-    "A transgenic organism (GMO) carries a gene from a DIFFERENT species; it is created in the laboratory.",
-    "Distinguish between key concepts in Biotechnology in Microbiology.",
-    "Understand the differences between similar topics.",
-    "Practice identifying the correct application of principles."
+    "**Restriction enzyme vs ligase:** restriction endonuclease cuts DNA at specific sites; DNA ligase seals fragments together.",
+    "**Vector vs host:** vector = the DNA carrier (plasmid/phage); host = the organism multiplied (E. coli).",
+    "**Bt gene vs Bt spray:** same Bacillus thuringiensis toxin — engineered into crops (Bt cotton) or sprayed as biopesticide."
   ],
   "practice": [
-    "Explain the 7 steps of rDNA technology in detail.",
-    "Describe the structure of a plasmid vector (ori, selectable marker, MCS, copy number).",
-    "Explain the production of human insulin using E. coli.",
-    "Differentiate gene therapy from gene editing (CRISPR).",
-    "Explain the use of Bt crops in pest management.",
-    "Discuss the ethical issues of GMOs (3 points).",
-    "Explain the role of restriction enzymes + ligase in rDNA.",
-    "one worked example for \"Impacts of biotechnology in the field of microbiology\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid.",
-    "Review the main points from Biotechnology in Microbiology.",
-    "Practice answering questions from this topic.",
-    "Connect concepts to other topics in the chapter."
+    "Why must the gene and plasmid be cut by the same restriction enzyme?"
   ],
   "universalFacts": [
-    "Recombinant human insulin was the first biotech drug approved for human use (1982).",
-    "The HPV vaccine, derived from recombinant virus-like particles, can prevent cervical cancer.",
-    "CRISPR-Cas9 gene editing, derived from bacterial immune systems, revolutionised genetics in 2012 (Nobel Prize 2020 to Doudna + Charpentier).",
-    "Bt cotton reduced pesticide use by ~50% in India after its introduction in 2002.",
-    "answer pattern for \"Impacts of biotechnology in the field of microbiology\": define → method → result. Structure earns the marks on 6–10 mark questions.",
-    "Biotechnology in Microbiology is a fundamental concept in biology.",
-    "Understanding Biotechnology in Microbiology helps explain biological phenomena.",
-    "Biotechnology in Microbiology connects to other areas of science."
+    "PCR can amplify a single DNA molecule to billions of copies in about two hours."
   ],
   "examples": [
-    "rDNA steps: isolate → cut (EcoRI) → ligate → transform → select (ampicillin) → express → harvest (insulin).",
-    "Plasmid vector: pBR322 (ori, ampR, tetR, MCS); pUC19 (lacZ for blue-white screening).",
-    "Insulin production: human insulin gene → E. coli → fermentation → purification → insulin.",
-    "Hepatitis B vaccine: yeast expressing HBsAg protein → purified → vaccine.",
-    "Bt cotton: Bt toxin gene (Cry protein) → cotton plant → resistance to bollworm.",
-    "Gene therapy: healthy gene → viral vector (AAV) → patient cell → expression → treatment (SCID, 1990).",
-    "CRISPR-Cas9: guide RNA + Cas9 → cut DNA at a specific site → cell repair → desired change.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
-    "Example of Biotechnology in Microbiology in nature",
-    "Real-world scenario involving Biotechnology in Microbiology"
+    "***Humulin*** — first rDNA drug (1982); human insulin from E. coli.",
+    "***Bt cotton*** — insect-resistant transgenic cotton.",
+    "***Pseudomonas putida*** — oil-eating \"superbug\" of bioremediation."
   ],
   "practiceQuestions": [
-    "Describe the 7 steps of rDNA technology in detail.",
-    "Explain the structure of a plasmid vector.",
-    "How is human insulin produced using rDNA?",
-    "Differentiate gene therapy from gene editing (CRISPR).",
-    "What is the use of Bt crops in pest management?",
-    "Discuss the ethical issues of GMOs.",
-    "Explain the role of restriction enzymes and ligase in rDNA.",
-    "state + explain the main idea of \"Impacts of biotechnology in the field of microbiology\" with one example.",
-    "compare \"Impacts of biotechnology in the field of microbiology\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Impacts of biotechnology in the field of microbiology\" and verify the answer is plausible.",
-    "Describe the key features of Biotechnology in Microbiology."
+    "**Short answer (2m): What is PCR?** — Polymerase Chain Reaction: in vitro enzymatic amplification of a DNA segment through repeated heating/priming/extension cycles using thermostable Taq polymerase, producing millions of copies for diagnosis and research."
   ],
   "formulas": [
     "rDNA: isolate → cut (restriction enzyme) → ligate (DNA ligase) → transform → select → express → harvest",
@@ -569,22 +476,13 @@
     "CRISPR: guide RNA + Cas9 → cut DNA → repair → desired change"
   ],
   "keyPoints": [
-    "rDNA: 7 steps (isolate, cut, ligate, transform, select, express, harvest).",
-    "Vectors: plasmids, phages, cosmids, BACs, YACs; features: ori, selectable marker, MCS.",
-    "Host cells: E. coli (prokaryotic), yeast (eukaryotic), mammalian cells.",
-    "Medical: insulin (1982), vaccines (HBV, HPV), monoclonal antibodies, gene therapy.",
-    "Agricultural: Bt crops, herbicide-tolerant crops, tissue culture, biofertilisers.",
-    "Industrial: enzymes, bioremediation, biofuels, biogas.",
-    "Gene therapy (correct a faulty gene) vs gene editing (CRISPR tool).",
-    "Ethical: GMO safety, patenting, privacy, environment, designer babies.",
-    "• Impacts of biotechnology in the field of microbiology",
-    "The use of microbial biotechnology is described below: 1.",
-    "In Medicine: The concept of microbial biotechnology is used in human and veterinary medicine by the following ways: a.",
-    "Antibiotics: Antibiotics are substances obtained from microorganisms that help in controlling different types of diseases.",
-    "They are obtained from different types of microorganisms.",
-    "Vaccines: Vaccines are the substances derived from microorganisms used to immunize against disease."
+    "Tools: restriction enzymes (EcoRI), DNA ligase, plasmid/phage vectors, E. coli host, PCR (Taq polymerase), gel electrophoresis.",
+    "rDNA steps: isolate gene → cut with same enzyme → ligate → transform host → select and express.",
+    "Medicine: Humulin insulin (E. coli, 1982), hepatitis B vaccine (yeast), antibiotics (Streptomyces), interferons.",
+    "Agriculture: Bt cotton/maize, golden rice, Rhizobium biofertiliser, biopesticides.",
+    "Environment: sewage treatment, bioremediation (Pseudomonas putida oil spills), biogas (methanogens)."
   ],
-  "summary": "Recombinant DNA (rDNA) technology follows 7 detailed steps: isolate the gene, cut it with restriction enzymes, ligate it into a vector, transform a host cell, select the transformants, express the gene, and harvest the product. Plasmids are the most common vectors (ori, selectable marker, MCS). E. coli is the standard host for simple proteins; yeast and mammalian cells are used for complex, glycosylated proteins. Applications span medicine (insulin, vaccines, gene therapy), agriculture (Bt crops, tissue culture, biofertilisers), and industry (enzymes, bioremediation, biofuels). Gene therapy corrects faulty genes in the patient's cells; gene editing (CRISPR-Cas9) is the tool that makes the correction. Ethical issues (GMO safety, patenting, privacy, environment) are integral to the field. NEB focuses on the detailed rDNA steps, vectors, host cells, insulin production, gene therapy, CRISPR, and the ethical issues of biotechnology. Impacts of biotechnology in the field of microbiology (Introductory Microbiology, Biology, class-11-notes) covers Impacts of biotechnology in the field of microbiology. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these. The use of microbial biotechnology is described below:\n1. In Medicine:\nThe concept  of  microbial  biotechnology  is  used  in human  and  veterinary  medicine  by the\nfollowing ways:\na. Antibiotics:\nAntibiotics  are  substances obtained  from  microorganisms   that  help  in  controlling\ndifferent types of diseases. They are obtained from different types of microorganisms.\nb. Vaccines:\nVaccines  are  the substances derived from  microorganisms  used to immunize  against\ndisease.",
+  "summary": "Biotechnology reshaped microbiology by turning bacteria into factories. Restriction enzymes cut, DNA ligase glues, plasmids and phages ship, and E. coli grows — recombinant DNA in five steps. The impacts: medicine gains human insulin, hepatitis B vaccine, interferons and antibiotics; agriculture gains Bt cotton, golden rice and Rhizobium biofertilisers; industry gains fermentation products, enzymes and single-cell protein; the environment gains sewage treatment, biogas and oil-eating Pseudomonas. The same power raises concerns — allergens, superweeds, bioterrorism and the ethics of patenting life. Biotechnology's promise and peril are the same thing: life, deliberately rewritten.",
   "specialNotes": [
     "NEB expects the 7 rDNA steps clearly, with the role of each tool (restriction enzyme, ligase, vector, host).",
     "The plasmid vector structure (ori, selectable marker, MCS, copy number) is a common exam point.",
@@ -597,48 +495,16 @@
     "Connect this topic to other biological concepts."
   ],
   "importantStatements": [
-    "Recombinant DNA technology is the cornerstone of modern biotechnology.",
-    "The rDNA process follows 7 detailed steps.",
-    "Human insulin produced by E. coli was the first biotech drug (1982).",
-    "CRISPR-Cas9 is a programmable gene-editing tool derived from the bacterial immune system.",
-    "The use of microbial biotechnology is described below: 1.",
-    "In Medicine: The concept of microbial biotechnology is used in human and veterinary medicine by the following ways: a.",
-    "Antibiotics: Antibiotics are substances obtained from microorganisms that help in controlling different types of diseases."
+    "\"Biotechnology is microbiology with a purpose — and a patent.\""
   ],
   "importantNotes": [
-    "Memorise the 7 rDNA steps with the tools involved.",
-    "Learn the plasmid vector structure (ori, marker, MCS).",
-    "Know the host cells (E. coli, yeast, mammalian).",
-    "Explain the insulin production pathway.",
-    "Differentiate gene therapy from gene editing (CRISPR).",
-    "List medical, agricultural, and industrial applications.",
-    "Discuss the ethical issues of GMOs.",
-    "The use of microbial biotechnology is described below: 1.",
-    "In Medicine: The concept of microbial biotechnology is used in human and veterinary medicine by the following ways: a.",
-    "Antibiotics: Antibiotics are substances obtained from microorganisms that help in controlling different types of diseases.",
-    "They are obtained from different types of microorganisms."
+    "\"Impacts\" answers need both benefits and concerns — list at least one ethical/safety concern for full marks."
   ],
   "examShortTricks": [
-    "rDNA = 7 steps: Isolate, Cut, Ligate, Transform, Select, Express, Harvest.",
-    "Plasmid = ori + marker + MCS + copy number.",
-    "Insulin = E. coli = bacteria make human protein.",
-    "Gene therapy = give the gene; Gene editing = cut + paste the gene (CRISPR).",
-    "Bt = Bacillus thuringiensis = insect toxin = transgenic crop.",
-    "GMO = Gene from another organism → Modified.",
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Biotechnology in Microbiology."
+    "\"Cut–Glue–Ship–Grow\": cut (restriction), glue (ligase), ship (vector), grow (host)."
   ],
   "examNotes": [
-    "Describe the 7 steps of rDNA technology in detail.",
-    "Explain the structure of a plasmid vector.",
-    "Explain the production of human insulin using rDNA.",
-    "Differentiate gene therapy from gene editing (CRISPR).",
-    "Explain the use of Bt crops in pest management.",
-    "Discuss the ethical issues of GMOs.",
-    "Explain the role of restriction enzymes and ligase in rDNA.",
-    "What are monoclonal antibodies and how are they produced?",
-    "Biotechnology in Microbiology is frequently tested.",
-    "Practice writing detailed answers."
+    "Most-tested in exams: recombinant DNA steps, named products (insulin, vaccine), Bt crops, bioremediation."
   ],
   "mcs": [
     {
@@ -683,21 +549,7 @@
     }
   ],
   "importantConcepts": [
-    "rDNA 7 steps",
-    "Restriction enzymes + ligase",
-    "Plasmid vectors (ori, marker, MCS)",
-    "Host cells (E. coli, yeast, mammalian)",
-    "Insulin production",
-    "Gene therapy",
-    "CRISPR-Cas9",
-    "Bt crops",
-    "Monoclonal antibodies",
-    "Ethical issues of GMOs",
-    "The use of microbial biotechnology is described below: 1.",
-    "In Medicine: The concept of microbial biotechnology is used in human and veterinary medicine by the following ways: a.",
-    "Antibiotics: Antibiotics are substances obtained from microorganisms that help in controlling different types of diseases.",
-    "They are obtained from different types of microorganisms.",
-    "Vaccines: Vaccines are the substances derived from microorganisms used to immunize against disease."
+    "**One enzyme, one cut:** the same restriction enzyme cutting both gene and vector creates matching sticky ends — the molecular hinge of all genetic engineering."
   ],
   "importantTasks": [
     "Describe rDNA 7 steps",
