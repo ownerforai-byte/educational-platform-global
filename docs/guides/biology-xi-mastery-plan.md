@@ -70,11 +70,11 @@ Every upgraded topic note fills the note JSON with:
 | 30 | Introduction to Biology (2) | Scope and fields of biology | `01-scope-fields-biology.json` | Not started |
 | 31 | Introduction to Biology | Relation with other sciences | `02-relation-other-sciences.json` | **Completed** |
 | 32 | Evolutionary Biology (15) | Origin of life; Oparin-Haldane; Miller-Urey | `01-origin-life.json` | Not started |
-| 33 | Evolutionary Biology | Evidences of evolution | `02-evidences-evolution.json` | Not started |
-| 34 | Evolutionary Biology | Lamarckism, Darwinism, Neo-Darwinism | `03-theories-evolution.json` | Not started |
-| 35 | Evolutionary Biology | Human evolution; position of man | `04-human-evolution.json` | Not started |
-| 36 | Evolutionary Biology | New vs old world monkeys, apes, man | `04-human-evolution.json` (merged) | Not started |
-| 37 | Evolutionary Biology | Evolution of modern man | `04-human-evolution.json` (merged) | Not started |
+| 33 | Evolutionary Biology | Evidences of evolution | `02-evidences-evolution.json` | **Completed** |
+| 34 | Evolutionary Biology | Lamarckism, Darwinism, Neo-Darwinism | `03-theories-evolution.json` | **Completed** |
+| 35 | Evolutionary Biology | Human evolution; position of man | `04-human-evolution.json` | **Completed** |
+| 36 | Evolutionary Biology | New vs old world monkeys, apes, man | `04-human-evolution.json` (merged) | **Completed** |
+| 37 | Evolutionary Biology | Evolution of modern man | `04-human-evolution.json` (merged) | **Completed** |
 | 38 | Faunal Diversity (34) | Protista; Protozoa classification | `01-protista-protozoa.json` | Not started |
 | 39 | Faunal Diversity | Paramecium and Plasmodium | `01-protista-protozoa.json` (merged) | Not started |
 | 40 | Faunal Diversity | Economic importance of P. falciparum | `01-protista-protozoa.json` (merged) | Not started |
@@ -112,3 +112,5 @@ canonical files — their upgrade must cover every mapped syllabus topic.)*
 - Next: Unit 6 Introduction to Biology (2 topics) — canonical files 01-introduction-to-biology-scope-and-fields-of-biology, 02-relation-of-biology-with-other-sciences.
 - Session 7 — Unit 6 Introduction to Biology (Topics 30–31: scope and fields of biology; relation with other sciences + biological method) upgraded. Verified PYQs used: 2021 five branches 3m, 2023 basic vs applied 2m, 2024 four branches 2m, 2022 method 5m, 2024 method 2m.
 - Next: Unit 7 Evolutionary Biology (7 topics) — canonical files 01-life-and-its-origin…, 02-evidences-of-evolution…, 03-theories-of-evolution…, 04-human-evolution-position-of-man-in-animal-kingdom, 05-differences-between-new-world-monkeys…, 06-evolution-of-modern-man….
+- Session 8 — Unit 7 Evolutionary Biology (6 syllabus topics, not 7: life and its origin/Miller-Urey; evidences of evolution; theories of evolution; human evolution/position of man; new world vs old world monkeys/apes/man; evolution of modern man from anthropoid ancestor) upgraded. Verified PYQs used: 2022 Miller-Urey 3m, 2021 homologous vs analogous 3m, 2022+2024 evidences 3m, 2024 homologous vs analogous 2m, 2023+2024 Darwin 5m, 2024 Lamarck vs Darwin 3m, 2024 Hardy-Weinberg 3m, 2024 human evolution stages 3m.
+- Next: Unit 8 Faunal Diversity (10 topics) — canonical files 01-protista-outline-classification…, 02-paramecium…, 03-economic-importance-of-p-falciparum, 02-animalia-level-of-organization… (full slug), 05-diagnostic-features…, 06-earthworm-pheretima…, 07-earthworm-excretory…, 08-earthworm-reproductive…, 09-frog-rana-tigrina…, 10-frog-blood-vascular….

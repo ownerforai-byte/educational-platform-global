@@ -8,92 +8,117 @@
   "motionGraphics": "chemistry",
   "mcqs": [
     {
-      "question": "The wings of a bat and the wings of a bird are:",
+      "question": "The forelimbs of human, whale and bat are:",
+      "options": [
+        "Analogous",
+        "Homologous",
+        "Vestigial",
+        "Atavistic"
+      ],
+      "answer": "B",
+      "explanation": "Same skeletal plan and origin, different functions — homologous organs from a common ancestor."
+    },
+    {
+      "question": "Wings of butterfly and bird are:",
       "options": [
         "Homologous",
         "Analogous",
-        "Vestigial",
-        "Fossils"
+        "Both",
+        "Neither"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Different structures/origins, same function (flight) — analogous, showing convergent evolution."
     },
     {
-      "question": "Archaeopteryx is significant because it:",
+      "question": "Which is the better evidence of common ancestry?",
       "options": [
-        "Is a living fossil",
-        "Shows features of both reptiles and birds",
-        "Is a mammal",
-        "Has no feathers"
+        "Analogous organs",
+        "Homologous organs",
+        "Both equally",
+        "Neither"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Shared structural plans can only come from shared ancestry (NEB 2021)."
     },
     {
-      "question": "The appendix in humans is an example of a:",
+      "question": "Archaeopteryx is a connecting link between:",
       "options": [
-        "Homologous organ",
-        "Analogous organ",
-        "Vestigial organ",
-        "Fossil"
+        "Fish and amphibian",
+        "Reptiles and birds",
+        "Annelids and arthropods",
+        "Plants and animals"
       ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "Feathers plus reptilian teeth, clawed fingers and bony tail."
     },
     {
-      "question": "The similarity of cytochrome c across species is:",
+      "question": "Which human organ is vestigial?",
       "options": [
-        "Morphological evidence",
-        "Molecular evidence",
-        "Fossil evidence",
-        "Embryological evidence"
+        "Liver",
+        "Appendix",
+        "Heart",
+        "Kidney"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "The appendix is a reduced remnant of a larger herbivorous caecum in ancestors."
+    },
+    {
+      "question": "Fossil dating by radioactive isotopes gives:",
+      "options": [
+        "Relative age",
+        "Absolute age",
+        "Neither",
+        "Both equally"
+      ],
+      "answer": "B",
+      "explanation": "Radioactive decay clocks (C-14, U-Pb, K-Ar) yield absolute ages in years."
+    },
+    {
+      "question": "Cytochrome c comparisons show that humans are closest to:",
+      "options": [
+        "Yeast",
+        "Insects",
+        "Chimpanzees",
+        "Frogs"
+      ],
+      "answer": "C",
+      "explanation": "Identical cytochrome c with chimpanzees — molecular trees mirror anatomical ones."
+    },
+    {
+      "question": "Similar early embryos of fish, chick and human are evidence from:",
+      "options": [
+        "Paleontology",
+        "Embryology",
+        "Biogeography",
+        "Physiology"
+      ],
+      "answer": "B",
+      "explanation": "Shared embryonic stages (gill pouches, tail) reveal common ancestry."
     }
   ],
   "visualType": "avogadros-law-deduction",
   "enrichedContent": {
     "notes": [
-      "Evidence of evolution: morphological, anatomical, paleontological (fossil), embryological, and biochemical/molecular.",
-      "Homologous organs (divergent evolution): similar structure, different function, common ancestry — e.g. forelimbs of whale, bat, human, horse.",
-      "Analogous organs (convergent evolution): similar function, different structure/origin — e.g. wings of bird vs insect; eyes of octopus vs vertebrate.",
-      "Vestigial organs: reduced, non-functional remnants of ancestral organs — e.g. appendix, coccyx, wings of flightless birds, pelvic bones in whales.",
-      "Fossil evidence: progressive increase in complexity over time; transitional fossils (e.g. Archaeopteryx: reptilian + bird features) link groups.",
-      "Embryological evidence: early embryos of different vertebrates are very similar (pharyngeal slits, tail), then diverge.",
-      "Biochemical evidence: universal genetic code, similar proteins (cytochrome c) across species; closer species share more similar DNA/proteins.",
-      "Molecular clock: rate of genetic mutation can estimate divergence time between species."
+      "## 1. Topic Introduction — The Case for Evolution\n\nEvolution is not believed on authority; it is inferred from evidence — anatomical, fossil, embryological and biochemical. Each line of evidence is an independent witness, and they all agree: life shares common ancestry and has changed through time. NEB has asked this topic three years running (2021, 2022, 2024).",
+      "## 2. The Five Lines of Evidence\n\n### 2.1 Morphological and anatomical evidences (NEB 2021, 2022, 2024)\n\n| Evidence | Definition | Example | What it shows |\n|---|---|---|---|\n| **Homologous organs** | Same basic structure and origin, **different functions** | Forelimbs of human (grasping), whale (swimming), bat (flying), horse (running) — same bones: humerus, radius-ulna, carpals, digits | **Divergent evolution** from a common ancestor |\n| **Analogous organs** | Different structures and origins, **same function** | Wings of butterfly (chitin membrane) vs bird (feathered bone-limb); eyes of octopus vs mammal | **Convergent evolution** — similar selection pressures |\n| **Vestigial organs** | Reduced, functionless remnants of useful ancestral organs | Human appendix, coccyx, wisdom teeth, nictitating membrane; whale pelvic bones | Ancestors used them; structures persist as history |\n| **Connecting links** | Organisms bridging two groups | *Archaeopteryx* (reptile–bird), *Peripatus* (annelid–arthropod), *Euglena* (plant–animal) | Transition between groups |\n\n**Which is better evidence — NEB 2021:** **homologous organs are stronger evidence** because shared structural plans (same bones, same embryonic origin) point to **common ancestry** — the core claim of evolution. Analogous organs show only that similar environments produce similar solutions (convergence), not descent.\n\n### 2.2 Paleontological evidence (NEB 2022, 2024)\n\n| Aspect | Detail |\n|---|---|\n| Fossil | Any preserved remains or traces of past life (bones, shells, impressions, footprints, amber, petrification) |\n| Dating | **Relative** (stratigraphy — deeper is older); **absolute** (radioactive dating — C-14 for <50,000 yr; U-Pb, K-Ar for older rocks) |\n| Sequence | Simple prokaryotes (3.5 bya) → eukaryotes → invertebrates → fish → amphibians → reptiles → birds/mammals → humans: complexity increases with time |\n| Transitional fossils | *Archaeopteryx* (reptile→bird: feathers + teeth/tail), *Tiktaalik* (fish→tetrapod), whale series (*Pakicetus* → *Basilosaurus*) |\n| Significance | Fossils are the **direct historical record** — they show life changing through time in the exact order evolution predicts |\n\n### 2.3 Embryological evidence\n\nEarly embryos of fish, salamander, chick and human are strikingly similar — gill pouches (pharyngeal arches), tail, notochord — diverging later (von Baer). **Haeckel's \"ontogeny recapitulates phylogeny\"** is overstated, but shared embryonic stages still reveal common ancestry (human gill-pouch homologs become jaw, ear bones, throat structures).\n\n### 2.4 Biochemical (molecular) evidence\n\n| Comparison | Finding |\n|---|---|\n| Universal molecules | Same DNA code, ATP, 20 amino acids, same central dogma in all life |\n| Protein/DNA similarity | Human vs chimpanzee cytochrome c: identical; human vs rhesus: 1 difference; human vs yeast: many — **the molecular tree matches the fossil tree** |\n| Meaning | The closer two species, the more alike their molecules — common ancestry written in sequences |\n\n### 2.5 Biogeographical evidence\n\nIsolated regions evolve distinctive fauna/flora: marsupials radiated in Australia; Galápagos finches differ island by island (Darwin's observation); Nepal's altitude zones mirror latitude. Species are distributed by **ancestry plus geography**, not by environmental fit alone.",
+      "## 3. Conceptual Relationships\n\n- **Topic 32 → here:** fossils begin with the first cells — origin and evidence connect.\n- **Here → Topic 34:** evidence constrains theory — Darwin's mechanism explains the patterns the evidence shows.\n- **Here → Topic 36 (Hardy–Weinberg):** molecular evidence quantifies what population genetics models.\n- **Here → taxonomy (Topic 16):** classification's nested hierarchy is morphology's evidence systematised.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Evolutionary Biology | Evidences | Differentiate between homologous and analogous organs with one example of each, and state which organ is better evidence of evolution and why. | 3 | Difference + reasoning |\n| 2078/2022 | Evolutionary Biology | Evidences | What are the evidences of evolution? Explain with one example each from morphological and paleontological studies. | 3 | Short answer |\n| 2080/2024 | Evolutionary Biology | Evidences | What are the evidences of evolution? Explain with one example each from morphological and paleontological studies. | 3 | Short answer (repeated) |\n| 2080/2024 | Evolutionary Biology | Evidences | Distinguish between homologous and analogous organs with one example of each. | 2 | Difference |\n\n### 4.2 Model answers\n\n**Q1 (3m, 2021) — Homologous vs analogous + which is better evidence.**\nAnswer: **Homologous organs** share the same basic structure and embryonic origin but perform different functions — e.g. the forelimbs of a human, whale, bat and horse all contain humerus, radius–ulna and digits despite grasping, swimming, flying and running. **Analogous organs** have different structures and origins but perform the same function — e.g. the wings of a butterfly (chitinous membrane) and a bird (feathered forelimb) both fly. **Homologous organs are the better evidence of evolution** because their shared structural plan can only be explained by **common ancestry** (divergent evolution); analogous organs merely show that similar environments independently produce similar adaptations (convergent evolution).\n\n**Q2 (3m, 2022 & 2024) — Evidences with one morphological and one paleontological example.**\nAnswer: Evolution is supported by **morphological/anatomical** evidence — homologous organs (forelimbs of human, whale, bat, horse: same bones, different functions → common ancestry), analogous organs, vestigial organs (human appendix) and connecting links — and by **paleontological** evidence — fossils, the preserved remains of past life, dated by stratigraphy and radioactive methods, showing simple prokaryotes before eukaryotes and invertebrates before vertebrates, with transitional forms such as *Archaeopteryx* (reptilian teeth and tail plus bird feathers) bridging reptiles and birds. Both lines independently confirm that life has descended with modification.\n\n**Q3 (2m, 2024) — Homologous vs analogous with examples.**\nAnswer: **Homologous** — same structure and origin, different function (human arm vs whale flipper — same bones); evidence of **divergent evolution** from a common ancestor. **Analogous** — different structure and origin, same function (butterfly wing vs bird wing); evidence of **convergent evolution** under similar selection.\n\n### 4.3 Common examination mistakes\n\n1. Calling analogous organs evidence of common ancestry — they show **convergence**, not descent.\n2. Swapping the definitions (homologous = same function) — check: **homo = same structure**.\n3. Naming vestigial organs that are actually functional (e.g. \"tonsils\" is debatable) — use appendix, coccyx, wisdom teeth.\n4. Giving fossils without the sequence logic — the point is **order through time**.\n5. Forgetting *Archaeopteryx* as the connecting-link example examiners expect."
     ],
     "confusion": [
-      "Homologous = same origin, different function (divergent); Analogous = different origin, same function (convergent).",
-      "Vestigial organs are evidence of common ancestry, not of \"uselessness\" in an absolute sense.",
-      "Fossils are not just \"old bones\"; they include traces (footprints, burrows), impressions, and molecular fossils.",
-      "Archaeopteryx shows both reptilian (teeth, long bony tail, claws) and avian (feathers, wing) features — a transitional form.",
-      "Embryological similarity reflects common ancestry; the differences develop later as embryos mature.",
-      "A \"universal genetic code\" (same codons → same amino acids) across all life is strong evidence of common descent."
+      "**Homologous vs analogous:** homologous = same bones, different jobs (divergence); analogous = different parts, same job (convergence). Memory: \"Homo = same anatomy; Analog = same action.\"",
+      "**Vestigial vs atavistic:** vestigial = permanently reduced remnant (appendix); atavistic = rare reappearance of an ancestral trait (human tail)."
     ],
     "practice": [
-      "Differentiate homologous and analogous organs with two examples each.",
-      "List three types of vestigial organs in humans.",
-      "Explain the significance of Archaeopteryx as a transitional fossil.",
-      "Describe the embryological evidence for evolution in vertebrates.",
-      "Explain how protein/DNA similarity (cytochrome c) supports evolution."
+      "Why does the universal genetic code argue for a single origin of life?"
     ],
     "universalFacts": [
-      "Archaeopteryx lithographica (1861, Germany) is the classic bird-reptile transitional fossil.",
-      "Humans and chimpanzees share ~98.8% of their DNA.",
-      "The universal genetic code is nearly identical in all known organisms (a few exceptions exist).",
-      "Cytochrome c, a respiratory protein, is very similar in all aerobes, reflecting common ancestry."
+      "Human and chimpanzee genomes are about 98–99% identical — molecular evidence agreeing with anatomy."
     ],
     "examples": [
-      "Homologous: forelimbs of human (arm), bat (wing), whale (flipper), horse (leg) — same bone pattern, different use.",
-      "Analogous: wings of bird (feather, bone) vs insect (chitin, no bone) — both fly, different origin.",
-      "Vestigial: human appendix, coccyx (tailbone), wisdom teeth; whale pelvic bones.",
-      "Transitional: Archaeopteryx; Tiktaalik (fish-amphibian link); Australopithecus (human ancestor).",
-      "Molecular: cytochrome c in horse vs human differs by only a few amino acids."
+      "***Archaeopteryx*** — Jurassic fossil with feathers AND teeth, clawed wings, bony tail: the reptile–bird link."
     ],
     "practiceQuestions": [
-      "How do homologous organs support evolution?",
-      "Differentiate homologous from analogous organs.",
-      "What are vestigial organs and why are they evidence of evolution?",
-      "Explain the significance of Archaeopteryx.",
-      "How does the molecular/cytoplasmic evidence (DNA, proteins) support evolution?"
+      "**Short answer (2m): What are vestigial organs?** — Reduced, functionless remnants of organs useful in ancestors (human appendix, coccyx, wisdom teeth; whale pelvic bones) — historical evidence of descent with modification."
     ],
     "formulas": [
       "Homologous: same structure, different function, common origin (divergent evolution)",
@@ -102,15 +127,11 @@
       "Molecular: DNA/protein similarity inversely related to evolutionary distance"
     ],
     "keyPoints": [
-      "Five types of evidence: morphological, anatomical, fossil, embryological, biochemical.",
-      "Homologous (divergent) vs analogous (convergent) organs.",
-      "Vestigial organs = reduced ancestral remnants.",
-      "Fossils show progressive complexity; transitional forms link groups.",
-      "Embryos of vertebrates are similar early, diverge later.",
-      "Universal genetic code + similar proteins (cytochrome c) = molecular evidence.",
-      "Molecular clock estimates divergence time."
+      "Morphological: homologous (forelimb of human/whale/bat/horse — divergent, common ancestry), analogous (butterfly vs bird wing — convergent), vestigial (appendix, coccyx), connecting links (Archaeopteryx, Peripatus).",
+      "Paleontological: fossils dated by stratigraphy and radioisotopes; sequence simple→complex; transitional fossils (Archaeopteryx, Tiktaalik).",
+      "Embryological: shared early embryos (gill pouches, tail). Biochemical: same genetic code; cytochrome c similarity tracks relatedness. Biogeographical: marsupials of Australia, Galápagos finches."
     ],
-    "summary": "Evolution is supported by multiple independent lines of evidence. Homologous organs (common origin, divergent function), analogous organs (convergent evolution), and vestigial structures reveal common ancestry. Fossils document the progressive increase in complexity and transitional forms like Archaeopteryx. Embryological similarity among vertebrates and molecular evidence (universal genetic code, similar proteins such as cytochrome c) provide the strongest modern confirmation that all life shares a common origin.",
+    "summary": "Evolution is inferred, not assumed. Morphology shows homologous organs — the same bones serving different lives in human, whale, bat and horse — proving divergent evolution from common ancestry; analogous wings of butterfly and bird show convergence instead; vestigial appendix and coccyx are inherited footnotes; *Archaeopteryx* bridges reptile and bird. Paleontology supplies the direct record: fossils dated by strata and radioisotopes appear in exactly the order evolution predicts, from stromatolites to *Tiktaalik*. Embryology shows fish, chick and human sharing gill pouches and tails; biochemistry finds the same genetic code everywhere, with cytochrome c diverging exactly as relatedness requires; biogeography scatters marsupials and finches along ancestral lines. Five witnesses, one verdict: descent with modification.",
     "specialNotes": [
       "NEB frequently asks for homologous vs analogous organs with examples.",
       "Vestigial organs in humans (appendix, coccyx) are a common short-answer.",
@@ -118,30 +139,16 @@
       "Molecular evidence (DNA similarity, cytochrome c) is increasingly tested."
     ],
     "importantStatements": [
-      "Homologous structures indicate common descent with divergent evolution.",
-      "Analogous structures result from convergent evolution under similar selection pressures.",
-      "Vestigial organs are remnants of structures that were functional in ancestors.",
-      "The universal genetic code is powerful evidence for a single common ancestor of all life."
+      "\"Evolution is confirmed by every independent line of evidence that has ever been examined.\""
     ],
     "importantNotes": [
-      "Memorise 2 homologous and 2 analogous examples.",
-      "List 3 vestigial organs in humans.",
-      "Learn the features of Archaeopteryx (reptilian + avian).",
-      "Explain the embryological similarity of vertebrates.",
-      "Describe molecular evidence (cytochrome c, DNA similarity)."
+      "Asked in 2021, 2022 and 2024 — the most repeated evolution topic. Master the homologous/analogous distinction cold."
     ],
     "examShortTricks": [
-      "Homo = same origin; Ana = same function.",
-      "Vestigial = \"Vest\" (a leftover vest of evolution).",
-      "Archaeopteryx = Archae (ancient) + pteryx (wing) = ancient bird.",
-      "DNA similarity: closer species = more similar DNA."
+      "\"Same bones, new jobs = homologous; new bones, same job = analogous.\""
     ],
     "examNotes": [
-      "Differentiate homologous and analogous organs (with examples).",
-      "Explain vestigial organs as evidence of evolution.",
-      "Describe the significance of Archaeopteryx.",
-      "State the embryological evidence for evolution.",
-      "Explain the molecular/biochemical evidence (cytochrome c, DNA)."
+      "Most-tested: homologous vs analogous (2021, 2024), evidences with morphological + paleontological examples (2022, 2024)."
     ],
     "mcs": [
       {
@@ -186,14 +193,7 @@
       }
     ],
     "importantConcepts": [
-      "Homologous vs analogous",
-      "Vestigial organs",
-      "Fossil evidence",
-      "Archaeopteryx",
-      "Embryological evidence",
-      "Molecular evidence",
-      "Universal genetic code",
-      "Molecular clock"
+      "**Convergent vs divergent evolution:** homologous structures diverge from one ancestor; analogous structures converge from different ancestors — the same two words explain both sides of the comparison question."
     ],
     "importantTasks": [
       "Differentiate homologous vs analogous",
@@ -392,74 +392,26 @@
     }
   },
   "notes": [
-    "Evidence of evolution: morphological, anatomical, paleontological (fossil), embryological, and biochemical/molecular.",
-    "Homologous organs (divergent evolution): similar structure, different function, common ancestry — e.g. forelimbs of whale, bat, human, horse.",
-    "Analogous organs (convergent evolution): similar function, different structure/origin — e.g. wings of bird vs insect; eyes of octopus vs vertebrate.",
-    "Vestigial organs: reduced, non-functional remnants of ancestral organs — e.g. appendix, coccyx, wings of flightless birds, pelvic bones in whales.",
-    "Fossil evidence: progressive increase in complexity over time; transitional fossils (e.g. Archaeopteryx: reptilian + bird features) link groups.",
-    "Embryological evidence: early embryos of different vertebrates are very similar (pharyngeal slits, tail), then diverge.",
-    "Biochemical evidence: universal genetic code, similar proteins (cytochrome c) across species; closer species share more similar DNA/proteins.",
-    "Molecular clock: rate of genetic mutation can estimate divergence time between species.",
-    "evolvere = unrolling/unfolding) is a gradual and orderly change from one state to another.",
-    "Charles Darwin defined it as \"descent with modification\".",
-    "It's important to note that evolution isn't about changes happening to one individual during its lifetime; rather, it's about how entire groups of organisms change over many generations.",
-    "Simple organisms in the past evolved to present-day complex organisms adapting to Earth's changing environment.",
-    "Evolution can also be defined as a slow, continuous, and irreversible journey from primitive life forms to today's advanced organisms.",
-    "The father of organic evolution is Charles Darwin.",
-    "The term ‘evolution’ was coined by Herbert spencer.",
-    "# Evidences of evolution: Morphological, Anatomical, Paleontological, Embryological and Biochemical\n\n## 1. Introduction\nOpening frame for **Evidences of evolution** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Evolutionary Biology fill pass.\n\n## 2. Hierarchy body — every syllabus sub-point\n### Evidences of evolution: Morphological\n### Anatomical\n### Paleontological\n### Embryological and Biochemical\n\nFill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.",
-    "## 3. Classified tables\n\n**Table 1 — Characteristics**\n\n| Part | Structure | Function | Exam note |\n| --- | --- | --- | --- |\n\n**Table 2 — Key ideas and worked angles**\n\n| Idea | Statement | Where used | Worked example |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB marks trend |\n| --- | --- | --- |\n\nTables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).",
-    "## 4. Diagrams and figures\n- **D1** — Evidences of evolution — structure (authored SVG — English labels, viewBox 900×640)\n- **D2** — Evidences of evolution — process or life-cycle flow (authored SVG — English labels)\n- **D3** — Evidences of evolution — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Evidences of evolution — comparison or application figure (curated external — license recorded at fill)\n\nFigure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.",
-    "## 5. Worked examples and applications\n≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.\n\n## 6. Key terms and statements\nEvery new term defined once; exam-grade definitions live here and in keyPoints (block VI).",
-    "## 7. Exam Zone\nNEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.",
-    "## 8. Summary and self-check\n5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Case for Evolution\n\nEvolution is not believed on authority; it is inferred from evidence — anatomical, fossil, embryological and biochemical. Each line of evidence is an independent witness, and they all agree: life shares common ancestry and has changed through time. NEB has asked this topic three years running (2021, 2022, 2024).",
+    "## 2. The Five Lines of Evidence\n\n### 2.1 Morphological and anatomical evidences (NEB 2021, 2022, 2024)\n\n| Evidence | Definition | Example | What it shows |\n|---|---|---|---|\n| **Homologous organs** | Same basic structure and origin, **different functions** | Forelimbs of human (grasping), whale (swimming), bat (flying), horse (running) — same bones: humerus, radius-ulna, carpals, digits | **Divergent evolution** from a common ancestor |\n| **Analogous organs** | Different structures and origins, **same function** | Wings of butterfly (chitin membrane) vs bird (feathered bone-limb); eyes of octopus vs mammal | **Convergent evolution** — similar selection pressures |\n| **Vestigial organs** | Reduced, functionless remnants of useful ancestral organs | Human appendix, coccyx, wisdom teeth, nictitating membrane; whale pelvic bones | Ancestors used them; structures persist as history |\n| **Connecting links** | Organisms bridging two groups | *Archaeopteryx* (reptile–bird), *Peripatus* (annelid–arthropod), *Euglena* (plant–animal) | Transition between groups |\n\n**Which is better evidence — NEB 2021:** **homologous organs are stronger evidence** because shared structural plans (same bones, same embryonic origin) point to **common ancestry** — the core claim of evolution. Analogous organs show only that similar environments produce similar solutions (convergence), not descent.\n\n### 2.2 Paleontological evidence (NEB 2022, 2024)\n\n| Aspect | Detail |\n|---|---|\n| Fossil | Any preserved remains or traces of past life (bones, shells, impressions, footprints, amber, petrification) |\n| Dating | **Relative** (stratigraphy — deeper is older); **absolute** (radioactive dating — C-14 for <50,000 yr; U-Pb, K-Ar for older rocks) |\n| Sequence | Simple prokaryotes (3.5 bya) → eukaryotes → invertebrates → fish → amphibians → reptiles → birds/mammals → humans: complexity increases with time |\n| Transitional fossils | *Archaeopteryx* (reptile→bird: feathers + teeth/tail), *Tiktaalik* (fish→tetrapod), whale series (*Pakicetus* → *Basilosaurus*) |\n| Significance | Fossils are the **direct historical record** — they show life changing through time in the exact order evolution predicts |\n\n### 2.3 Embryological evidence\n\nEarly embryos of fish, salamander, chick and human are strikingly similar — gill pouches (pharyngeal arches), tail, notochord — diverging later (von Baer). **Haeckel's \"ontogeny recapitulates phylogeny\"** is overstated, but shared embryonic stages still reveal common ancestry (human gill-pouch homologs become jaw, ear bones, throat structures).\n\n### 2.4 Biochemical (molecular) evidence\n\n| Comparison | Finding |\n|---|---|\n| Universal molecules | Same DNA code, ATP, 20 amino acids, same central dogma in all life |\n| Protein/DNA similarity | Human vs chimpanzee cytochrome c: identical; human vs rhesus: 1 difference; human vs yeast: many — **the molecular tree matches the fossil tree** |\n| Meaning | The closer two species, the more alike their molecules — common ancestry written in sequences |\n\n### 2.5 Biogeographical evidence\n\nIsolated regions evolve distinctive fauna/flora: marsupials radiated in Australia; Galápagos finches differ island by island (Darwin's observation); Nepal's altitude zones mirror latitude. Species are distributed by **ancestry plus geography**, not by environmental fit alone.",
+    "## 3. Conceptual Relationships\n\n- **Topic 32 → here:** fossils begin with the first cells — origin and evidence connect.\n- **Here → Topic 34:** evidence constrains theory — Darwin's mechanism explains the patterns the evidence shows.\n- **Here → Topic 36 (Hardy–Weinberg):** molecular evidence quantifies what population genetics models.\n- **Here → taxonomy (Topic 16):** classification's nested hierarchy is morphology's evidence systematised.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Evolutionary Biology | Evidences | Differentiate between homologous and analogous organs with one example of each, and state which organ is better evidence of evolution and why. | 3 | Difference + reasoning |\n| 2078/2022 | Evolutionary Biology | Evidences | What are the evidences of evolution? Explain with one example each from morphological and paleontological studies. | 3 | Short answer |\n| 2080/2024 | Evolutionary Biology | Evidences | What are the evidences of evolution? Explain with one example each from morphological and paleontological studies. | 3 | Short answer (repeated) |\n| 2080/2024 | Evolutionary Biology | Evidences | Distinguish between homologous and analogous organs with one example of each. | 2 | Difference |\n\n### 4.2 Model answers\n\n**Q1 (3m, 2021) — Homologous vs analogous + which is better evidence.**\nAnswer: **Homologous organs** share the same basic structure and embryonic origin but perform different functions — e.g. the forelimbs of a human, whale, bat and horse all contain humerus, radius–ulna and digits despite grasping, swimming, flying and running. **Analogous organs** have different structures and origins but perform the same function — e.g. the wings of a butterfly (chitinous membrane) and a bird (feathered forelimb) both fly. **Homologous organs are the better evidence of evolution** because their shared structural plan can only be explained by **common ancestry** (divergent evolution); analogous organs merely show that similar environments independently produce similar adaptations (convergent evolution).\n\n**Q2 (3m, 2022 & 2024) — Evidences with one morphological and one paleontological example.**\nAnswer: Evolution is supported by **morphological/anatomical** evidence — homologous organs (forelimbs of human, whale, bat, horse: same bones, different functions → common ancestry), analogous organs, vestigial organs (human appendix) and connecting links — and by **paleontological** evidence — fossils, the preserved remains of past life, dated by stratigraphy and radioactive methods, showing simple prokaryotes before eukaryotes and invertebrates before vertebrates, with transitional forms such as *Archaeopteryx* (reptilian teeth and tail plus bird feathers) bridging reptiles and birds. Both lines independently confirm that life has descended with modification.\n\n**Q3 (2m, 2024) — Homologous vs analogous with examples.**\nAnswer: **Homologous** — same structure and origin, different function (human arm vs whale flipper — same bones); evidence of **divergent evolution** from a common ancestor. **Analogous** — different structure and origin, same function (butterfly wing vs bird wing); evidence of **convergent evolution** under similar selection.\n\n### 4.3 Common examination mistakes\n\n1. Calling analogous organs evidence of common ancestry — they show **convergence**, not descent.\n2. Swapping the definitions (homologous = same function) — check: **homo = same structure**.\n3. Naming vestigial organs that are actually functional (e.g. \"tonsils\" is debatable) — use appendix, coccyx, wisdom teeth.\n4. Giving fossils without the sequence logic — the point is **order through time**.\n5. Forgetting *Archaeopteryx* as the connecting-link example examiners expect."
   ],
   "confusion": [
-    "Homologous = same origin, different function (divergent); Analogous = different origin, same function (convergent).",
-    "Vestigial organs are evidence of common ancestry, not of \"uselessness\" in an absolute sense.",
-    "Fossils are not just \"old bones\"; they include traces (footprints, burrows), impressions, and molecular fossils.",
-    "Archaeopteryx shows both reptilian (teeth, long bony tail, claws) and avian (feathers, wing) features — a transitional form.",
-    "Embryological similarity reflects common ancestry; the differences develop later as embryos mature.",
-    "A \"universal genetic code\" (same codons → same amino acids) across all life is strong evidence of common descent.",
-    "Distinguish between key concepts in Evidences of Evolution.",
-    "Understand the differences between similar topics.",
-    "Practice identifying the correct application of principles."
+    "**Homologous vs analogous:** homologous = same bones, different jobs (divergence); analogous = different parts, same job (convergence). Memory: \"Homo = same anatomy; Analog = same action.\"",
+    "**Vestigial vs atavistic:** vestigial = permanently reduced remnant (appendix); atavistic = rare reappearance of an ancestral trait (human tail)."
   ],
   "practice": [
-    "Differentiate homologous and analogous organs with two examples each.",
-    "List three types of vestigial organs in humans.",
-    "Explain the significance of Archaeopteryx as a transitional fossil.",
-    "Describe the embryological evidence for evolution in vertebrates.",
-    "Explain how protein/DNA similarity (cytochrome c) supports evolution.",
-    "Review the main points from Evidences of Evolution.",
-    "Practice answering questions from this topic.",
-    "Connect concepts to other topics in the chapter."
+    "Why does the universal genetic code argue for a single origin of life?"
   ],
   "universalFacts": [
-    "Archaeopteryx lithographica (1861, Germany) is the classic bird-reptile transitional fossil.",
-    "Humans and chimpanzees share ~98.8% of their DNA.",
-    "The universal genetic code is nearly identical in all known organisms (a few exceptions exist).",
-    "Cytochrome c, a respiratory protein, is very similar in all aerobes, reflecting common ancestry.",
-    "Evidences of Evolution is a fundamental concept in biology.",
-    "Understanding Evidences of Evolution helps explain biological phenomena.",
-    "Evidences of Evolution connects to other areas of science."
+    "Human and chimpanzee genomes are about 98–99% identical — molecular evidence agreeing with anatomy."
   ],
   "examples": [
-    "Homologous: forelimbs of human (arm), bat (wing), whale (flipper), horse (leg) — same bone pattern, different use.",
-    "Analogous: wings of bird (feather, bone) vs insect (chitin, no bone) — both fly, different origin.",
-    "Vestigial: human appendix, coccyx (tailbone), wisdom teeth; whale pelvic bones.",
-    "Transitional: Archaeopteryx; Tiktaalik (fish-amphibian link); Australopithecus (human ancestor).",
-    "Molecular: cytochrome c in horse vs human differs by only a few amino acids.",
-    "Example of Evidences of Evolution in nature",
-    "Real-world scenario involving Evidences of Evolution"
+    "***Archaeopteryx*** — Jurassic fossil with feathers AND teeth, clawed wings, bony tail: the reptile–bird link."
   ],
   "practiceQuestions": [
-    "How do homologous organs support evolution?",
-    "Differentiate homologous from analogous organs.",
-    "What are vestigial organs and why are they evidence of evolution?",
-    "Explain the significance of Archaeopteryx.",
-    "How does the molecular/cytoplasmic evidence (DNA, proteins) support evolution?",
-    "Describe the key features of Evidences of Evolution."
+    "**Short answer (2m): What are vestigial organs?** — Reduced, functionless remnants of organs useful in ancestors (human appendix, coccyx, wisdom teeth; whale pelvic bones) — historical evidence of descent with modification."
   ],
   "formulas": [
     "Homologous: same structure, different function, common origin (divergent evolution)",
@@ -468,20 +420,11 @@
     "Molecular: DNA/protein similarity inversely related to evolutionary distance"
   ],
   "keyPoints": [
-    "Five types of evidence: morphological, anatomical, fossil, embryological, biochemical.",
-    "Homologous (divergent) vs analogous (convergent) organs.",
-    "Vestigial organs = reduced ancestral remnants.",
-    "Fossils show progressive complexity; transitional forms link groups.",
-    "Embryos of vertebrates are similar early, diverge later.",
-    "Universal genetic code + similar proteins (cytochrome c) = molecular evidence.",
-    "Molecular clock estimates divergence time.",
-    "evolvere = unrolling/unfolding) is a gradual and orderly change from one state to another.",
-    "Charles Darwin defined it as \"descent with modification\".",
-    "It's important to note that evolution isn't about changes happening to one individual during its lifetime; rather, it's about how entire groups of organisms change over many generations.",
-    "Simple organisms in the past evolved to present-day complex organisms adapting to Earth's changing environment.",
-    "Evolution can also be defined as a slow, continuous, and irreversible journey from primitive life forms to today's advanced organisms."
+    "Morphological: homologous (forelimb of human/whale/bat/horse — divergent, common ancestry), analogous (butterfly vs bird wing — convergent), vestigial (appendix, coccyx), connecting links (Archaeopteryx, Peripatus).",
+    "Paleontological: fossils dated by stratigraphy and radioisotopes; sequence simple→complex; transitional fossils (Archaeopteryx, Tiktaalik).",
+    "Embryological: shared early embryos (gill pouches, tail). Biochemical: same genetic code; cytochrome c similarity tracks relatedness. Biogeographical: marsupials of Australia, Galápagos finches."
   ],
-  "summary": "Evolution is supported by multiple independent lines of evidence. Homologous organs (common origin, divergent function), analogous organs (convergent evolution), and vestigial structures reveal common ancestry. Fossils document the progressive increase in complexity and transitional forms like Archaeopteryx. Embryological similarity among vertebrates and molecular evidence (universal genetic code, similar proteins such as cytochrome c) provide the strongest modern confirmation that all life shares a common origin. Evolution (L. evolvere = unrolling/unfolding)  is a gradual and orderly change from one state\nto another. Charles Darwin defined it as \"descent with modification\". It's important to note that\nevolution isn't about changes happening to one individual during its lifetime;  rather, it's about\nhow entire groups of organisms change over many generations.\nSimple  organisms  in the past evolved to present-day complex  organisms  adapting to Earth's\nchanging  environment. Evolution  can also be def",
+  "summary": "Evolution is inferred, not assumed. Morphology shows homologous organs — the same bones serving different lives in human, whale, bat and horse — proving divergent evolution from common ancestry; analogous wings of butterfly and bird show convergence instead; vestigial appendix and coccyx are inherited footnotes; *Archaeopteryx* bridges reptile and bird. Paleontology supplies the direct record: fossils dated by strata and radioisotopes appear in exactly the order evolution predicts, from stromatolites to *Tiktaalik*. Embryology shows fish, chick and human sharing gill pouches and tails; biochemistry finds the same genetic code everywhere, with cytochrome c diverging exactly as relatedness requires; biogeography scatters marsupials and finches along ancestral lines. Five witnesses, one verdict: descent with modification.",
   "specialNotes": [
     "NEB frequently asks for homologous vs analogous organs with examples.",
     "Vestigial organs in humans (appendix, coccyx) are a common short-answer.",
@@ -491,41 +434,16 @@
     "Connect this topic to other biological concepts."
   ],
   "importantStatements": [
-    "Homologous structures indicate common descent with divergent evolution.",
-    "Analogous structures result from convergent evolution under similar selection pressures.",
-    "Vestigial organs are remnants of structures that were functional in ancestors.",
-    "The universal genetic code is powerful evidence for a single common ancestor of all life.",
-    "evolvere = unrolling/unfolding) is a gradual and orderly change from one state to another.",
-    "Charles Darwin defined it as \"descent with modification\".",
-    "It's important to note that evolution isn't about changes happening to one individual during its lifetime; rather, it's about how entire groups of organisms change over many generations."
+    "\"Evolution is confirmed by every independent line of evidence that has ever been examined.\""
   ],
   "importantNotes": [
-    "Memorise 2 homologous and 2 analogous examples.",
-    "List 3 vestigial organs in humans.",
-    "Learn the features of Archaeopteryx (reptilian + avian).",
-    "Explain the embryological similarity of vertebrates.",
-    "Describe molecular evidence (cytochrome c, DNA similarity).",
-    "evolvere = unrolling/unfolding) is a gradual and orderly change from one state to another.",
-    "Charles Darwin defined it as \"descent with modification\".",
-    "It's important to note that evolution isn't about changes happening to one individual during its lifetime; rather, it's about how entire groups of organisms change over many generations.",
-    "Simple organisms in the past evolved to present-day complex organisms adapting to Earth's changing environment."
+    "Asked in 2021, 2022 and 2024 — the most repeated evolution topic. Master the homologous/analogous distinction cold."
   ],
   "examShortTricks": [
-    "Homo = same origin; Ana = same function.",
-    "Vestigial = \"Vest\" (a leftover vest of evolution).",
-    "Archaeopteryx = Archae (ancient) + pteryx (wing) = ancient bird.",
-    "DNA similarity: closer species = more similar DNA.",
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Evidences of Evolution."
+    "\"Same bones, new jobs = homologous; new bones, same job = analogous.\""
   ],
   "examNotes": [
-    "Differentiate homologous and analogous organs (with examples).",
-    "Explain vestigial organs as evidence of evolution.",
-    "Describe the significance of Archaeopteryx.",
-    "State the embryological evidence for evolution.",
-    "Explain the molecular/biochemical evidence (cytochrome c, DNA).",
-    "Evidences of Evolution is frequently tested.",
-    "Practice writing detailed answers."
+    "Most-tested: homologous vs analogous (2021, 2024), evidences with morphological + paleontological examples (2022, 2024)."
   ],
   "mcs": [
     {
@@ -570,19 +488,7 @@
     }
   ],
   "importantConcepts": [
-    "Homologous vs analogous",
-    "Vestigial organs",
-    "Fossil evidence",
-    "Archaeopteryx",
-    "Embryological evidence",
-    "Molecular evidence",
-    "Universal genetic code",
-    "Molecular clock",
-    "evolvere = unrolling/unfolding) is a gradual and orderly change from one state to another.",
-    "Charles Darwin defined it as \"descent with modification\".",
-    "It's important to note that evolution isn't about changes happening to one individual during its lifetime; rather, it's about how entire groups of organisms change over many generations.",
-    "Simple organisms in the past evolved to present-day complex organisms adapting to Earth's changing environment.",
-    "Evolution can also be defined as a slow, continuous, and irreversible journey from primitive life forms to today's advanced organisms."
+    "**Convergent vs divergent evolution:** homologous structures diverge from one ancestor; analogous structures converge from different ancestors — the same two words explain both sides of the comparison question."
   ],
   "importantTasks": [
     "Differentiate homologous vs analogous",
