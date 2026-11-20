@@ -5,22 +5,10 @@
   "topicTitle": "Electromotive force of a source, internal resistance",
   "relevance": 100,
   "notes": [
-    "EMF Definition: Electromotive force (EMF, $\\mathcal{E}$) is the energy supplied by a source per unit charge to move charge through the complete circuit. It is NOT a force but a potential difference measured in volts. $\\mathcal{E} = W/q$ where $W$ is work done by the source and $q$ is charge moved.",
-    "Terminal Potential Difference: When current $I$ flows, the terminal voltage $V$ across the source terminals is $V = \\mathcal{E} - Ir$, where $r$ is internal resistance. The voltage drop $Ir$ inside the source is called lost volts.",
-    "Internal Resistance: Every real source (cell, battery, generator) has internal resistance $r$ due to electrolyte resistance, electrode resistance, and chemical factors. It causes the terminal voltage to drop below EMF when current is drawn.",
-    "Open Circuit: When $I = 0$ (open circuit), $V = \\mathcal{E}$ — the terminal voltage equals the EMF since there is no internal voltage drop.",
-    "Short Circuit: When terminals are shorted ($R = 0$), $I = \\mathcal{E}/r$ — maximum current flows, limited only by internal resistance. This can damage the source.",
-    "Cells in Series: For $n$ identical cells each of EMF $\\mathcal{E}$ and internal resistance $r$ in series: total EMF $= n\\mathcal{E}$, total internal resistance $= nr$, equivalent $V = n\\mathcal{E} - Inr$.",
-    "Cells in Parallel: For $n$ identical cells each of EMF $\\mathcal{E}$ and internal resistance $r$ in parallel: equivalent EMF $= \\mathcal{E}$, equivalent internal resistance $= r/n$ (current capacity increases).",
-    "Mixed Grouping: Cells in series-parallel combinations balance voltage and current requirements for specific applications.",
-    "Determination of EMF and Internal Resistance: Measure terminal voltage $V$ for different currents $I$. Plot $V$ vs $I$: y-intercept $= \\mathcal{E}$, slope $= -r$. Alternatively use a potentiometer for accurate EMF measurement.",
-    "Power Delivered: Power delivered to external load $R$ is $P = I^2R = (\\mathcal{E}/(R+r))^2 R$. Maximum power transfer occurs when $R = r$, with $P_\\text{max} = \\mathcal{E}^2/4r$.",
-    "# Electromotive force of a source, internal resistance\n\n## 1. Introduction\nPhysical picture of **Electromotive force of a source** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the DC Circuits fill pass.\n\n## 2. Concepts and laws\n### Electromotive force of a source\n### internal resistance\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Electromotive force of a source — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Electromotive force of a source — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Electromotive force of a source — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Electromotive force of a source — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Why Batteries Sag Under Load\n\nA battery's label promises 1.5 V or 12 V, but the voltage you measure drops when it works hard. The hidden culprit is **internal resistance** — and Kirchhoff's laws are the tools that track every volt and every ampere around a real circuit.",
+    "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 EMF and terminal voltage\n\n- **EMF (E):** the work done per unit charge by the source in driving charge around the *whole* circuit — the open-circuit terminal voltage.\n- **Terminal voltage (V):** the actual potential difference across the terminals when current I flows:\n$$V = E - Ir$$\n— the internal drop Ir is \"lost\" inside the source. (When charging, V = E + Ir.)\n\n### 2.2 Kirchhoff's laws (NEB 2022, 2024, 5m)\n\n1. **Current law (KCL):** the algebraic sum of currents at a junction is zero — **conservation of charge**.\n2. **Voltage law (KVL):** the algebraic sum of emfs round any closed loop equals the sum of IR drops — **conservation of energy**.\n\n**Application (NEB 2024):** a battery of emf 5 V with internal resistance 2 Ω drives a 5 Ω external resistor. Single loop: E = I(R + r) → I = 5/(5 + 2) = **0.71 A**.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2024):** A cell of emf 2 V and internal resistance 0.5 Ω is connected to a 3.5 Ω resistor. Calculate the terminal voltage.\n- $I = \\frac{E}{R + r} = \\frac{2}{3.5 + 0.5} = 0.5$ A\n- $V = E - Ir = 2 - (0.5)(0.5) = $ **1.75 V** (equivalently V = IR = 0.5 × 3.5 = 1.75 V ✓)\n\n**Q (NEB-style):** A 12 V battery with r = 0.5 Ω delivers 10 A to a starter motor. Find the terminal voltage.\nV = 12 − 10 × 0.5 = 7 V — the dimming headlights when starting a car.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 101:** Kirchhoff's laws generalise the series/parallel rules to any network.\n- **To Topic 102:** the potentiometer reads E directly by avoiding the Ir drop.\n- **To Topic 104:** the internal drop wastes power as heat inside the battery.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Electricity | DC circuits | State Kirchhoff's laws. Use them to solve for current in a simple circuit. | 5 | Statement + application |\n| 2080/2024 | Electricity | DC circuits | State Kirchhoff's laws. A battery of 5 V total emf with 2 Ω total internal resistance drives a 5 Ω external resistor. Find the current. | 5 | Statement + numerical |\n| 2080/2024 | Electricity | DC circuits | A cell of emf 2 V and internal resistance 0.5 Ω is connected to a 3.5 Ω resistor. Calculate the terminal voltage of the cell. | 3 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Forgetting to add r to the external resistance when finding the current.\n2. Sign errors in KVL loops — pick a direction and stay consistent.\n3. Confusing emf (open circuit) with terminal voltage (under load)."
   ],
   "specificConditions": [
     "EMF vs Terminal Voltage: EMF $\\mathcal{E}$ is the open-circuit terminal voltage ($I=0$). Terminal voltage $V = \\mathcal{E} - Ir$ drops as current increases due to internal resistance.",
@@ -28,84 +16,38 @@
     "Maximum Power Transfer: Maximum power is delivered to load when load resistance equals internal resistance ($R = r$). This is important for matching circuits but not for efficiency (efficiency is only 50% at this point)."
   ],
   "formulas": [
-    "EMF: $\\mathcal{E} = W/q$",
-    "Terminal voltage: $V = \\mathcal{E} - Ir$",
-    "Lost volts: $V_\\text{lost} = Ir$",
-    "Circuit current: $I = \\mathcal{E}/(R + r)$",
-    "Cells in series: $\\mathcal{E}_\\text{eq} = n\\mathcal{E}$, $r_\\text{eq} = nr$",
-    "Cells in parallel: $\\mathcal{E}_\\text{eq} = \\mathcal{E}$, $r_\\text{eq} = r/n$",
-    "Power to load: $P = I^2R = (\\mathcal{E}/(R+r))^2 R$",
-    "Maximum power condition: $R = r$",
-    "Maximum power: $P_\\text{max} = \\mathcal{E}^2/4r$"
+    "- V = E − Ir (discharge); V = E + Ir (charging)\n- I = E/(R + r)\n- KCL: ΣI = 0 at a junction; KVL: ΣE = ΣIR in a loop"
   ],
   "keyPoints": [
-    "EMF is energy per unit charge supplied by the source; measured in volts.",
-    "Terminal voltage $V = \\mathcal{E} - Ir$; internal drop $Ir$ is called lost volts.",
-    "Open circuit: $V = \\mathcal{E}$; short circuit: $I = \\mathcal{E}/r$.",
-    "Cells in series add EMF and internal resistance; parallel cells reduce effective internal resistance.",
-    "Maximum power transfer when external resistance equals internal resistance ($R = r$)."
+    "V = E − Ir; I = E/(R + r); KCL junctions, KVL loops."
   ],
   "importantStatements": [
-    "Statement 1: EMF is the energy supplied by a source per unit charge circulated through the complete circuit.",
-    "Statement 2: Terminal potential difference is $V = \\mathcal{E} - Ir$, where $r$ is internal resistance.",
-    "Statement 3: Internal resistance causes voltage drop and power loss inside real sources.",
-    "Statement 4: Cells in series: total EMF adds, total internal resistance adds. Cells in parallel: EMF unchanged, internal resistance divides.",
-    "Statement 5: Maximum power is delivered to load when $R = r$ (load resistance equals internal resistance)."
+    "\"Kirchhoff's voltage law: the algebraic sum of the emfs in a closed loop equals the algebraic sum of the potential drops.\""
   ],
   "importantNotes": [
-    "EMF is measured in open circuit ($I=0$); terminal voltage is measured under load ($I \\neq 0$).",
-    "Internal resistance increases as a cell ages or discharges — old batteries have higher $r$ and lower terminal voltage under load.",
-    "Short-circuit current $I = \\mathcal{E}/r$ can be very large and damage the source — never short a battery.",
-    "EMF is not a force despite the name — it is energy per unit charge (volts)."
+    "Verified PYQs: Kirchhoff + circuit (2022, 2024 — 5m each); terminal voltage (2024, 3m)."
   ],
   "examShortTricks": [
-    "Open circuit: terminal voltage = EMF. Closed circuit: terminal voltage = EMF - Ir.",
-    "Series cells: EMFs add, internal resistances add. Parallel cells: EMF same, internal resistance divides.",
-    "Max power transfer: load R = internal r. Efficiency at max power = 50%.",
-    "Plot V vs I: y-intercept = EMF, slope magnitude = internal resistance r."
+    "\"I = E/(R + r); V = IR = E − Ir — compute both ways as a check.\""
   ],
   "examNotes": [
-    "NEB frequently asks to derive $V = \\mathcal{E} - Ir$ and explain internal resistance effects.",
-    "Numericals on cells in series/parallel are common — calculate equivalent EMF and internal resistance.",
-    "Maximum power transfer condition ($R = r$) is a favourite conceptual question.",
-    "Potentiometer method for measuring EMF accurately (no current drawn from cell)."
+    "State the conservation principle behind each Kirchhoff law — examiners look for it."
   ],
   "examples": [
-    "A cell has EMF $1.5\\text{ V}$ and internal resistance $0.5\\,\\Omega$. Connected to a $4\\,\\Omega$ resistor: $I = 1.5/(4+0.5) = 0.333\\text{ A}$, terminal $V = 1.5 - 0.333\\times0.5 = 1.33\\text{ V}$. Lost volts = $0.17\\text{ V}$.",
-    "Three cells of EMF $2\\text{ V}$ each and $r = 0.2\\,\\Omega$ each in series: $\\mathcal{E}_\\text{total} = 6\\text{ V}$, $r_\\text{total} = 0.6\\,\\Omega$.",
-    "Three identical cells ($\\mathcal{E} = 1.5\\text{ V}$, $r = 0.3\\,\\Omega$) in parallel: $\\mathcal{E}_\\text{eq} = 1.5\\text{ V}$, $r_\\text{eq} = 0.1\\,\\Omega$.",
-    "A battery of EMF $12\\text{ V}$ and $r = 0.5\\,\\Omega$ delivers max power when $R = 0.5\\,\\Omega$. $P_\\text{max} = 12^2/(4\\times0.5) = 72\\text{ W}$."
+    "***NEB 2024*** — E = 2 V, r = 0.5 Ω, R = 3.5 Ω: V = 1.75 V."
   ],
   "practiceQuestions": [
-    "Q1. Define EMF and terminal potential difference. How do they differ?",
-    "Q2. Derive the relation $V = \\mathcal{E} - Ir$ for a cell supplying current to an external circuit.",
-    "Q3. Three cells each of EMF $2\\text{ V}$ and internal resistance $0.5\\,\\Omega$ are connected in series. Find equivalent EMF and internal resistance.",
-    "Q4. Three identical cells of EMF $1.5\\text{ V}$ and $r = 0.3\\,\\Omega$ are connected in parallel. Find equivalent EMF and internal resistance.",
-    "Q5. A battery of EMF $10\\text{ V}$ and $r = 1\\,\\Omega$ is connected to $R = 9\\,\\Omega$. Find current, terminal voltage, and power delivered.",
-    "Q6. State the condition for maximum power transfer and find max power for $\\mathcal{E} = 12\\text{ V}$, $r = 2\\,\\Omega$.",
-    "Q7. How would you determine EMF and internal resistance of a cell experimentally?"
+    "**Numerical (3m): E = 9 V, r = 1 Ω, R = 8 Ω. Find I, V and the internal drop.** — I = 1 A; V = 8 V; internal drop = 1 V (dissipated inside the battery)."
   ],
   "practice": [
-    "Calculate terminal voltage for given EMF, internal resistance, and load current.",
-    "Determine equivalent EMF and internal resistance for series/parallel cell combinations.",
-    "Apply maximum power transfer condition ($R = r$) to circuit problems.",
-    "Use V-I graph method to find EMF (intercept) and internal resistance (slope).",
-    "Compute power delivered to load and power wasted in internal resistance.",
-    "Solve problems involving mixed series-parallel cell groupings."
+    "Why does a battery feel warm after heavy use?"
   ],
   "universalFacts": [
-    "EMF is not a force — despite the name, it is energy supplied per unit charge (volts).",
-    "A real cell's internal resistance increases as it discharges — old batteries sag under load.",
-    "Maximum power transfer occurs at $R = r$ but efficiency is only 50% — for efficiency, use $R \\gg r$.",
-    "The potential difference across a cell being charged is $V = \\mathcal{E} + Ir$ (charging current adds to EMF).",
-    "Potentiometer measures true EMF because it draws no current from the cell at balance point."
+    "Car headlights dim at starting because the starter's huge current makes Ir eat the battery's emf."
   ],
   "confusion": [
-    "Confusing EMF with terminal voltage: EMF is open-circuit voltage; terminal voltage drops under load due to $Ir$.",
-    "Thinking EMF is a force: EMF is energy per unit charge (volts), not a mechanical force.",
-    "Believing parallel cells add EMF: Parallel identical cells have same EMF as one cell; only current capacity increases.",
-    "Assuming max power = max efficiency: At $R = r$, power is max but efficiency is only 50%.",
-    "Ignoring internal resistance: Real sources always have internal resistance affecting terminal voltage."
+    "**EMF ≠ terminal voltage:** V = E − Ir once current flows; they coincide only when I = 0.",
+    "**KCL conserves charge; KVL conserves energy** — quote both physics reasons."
   ],
   "mcs": [
     {
@@ -167,6 +109,144 @@
   "animation3D": "emf-internal-resistance",
   "motionGraphics": "cell-circuit",
   "visualType": "battery-internal-resistance",
-  "summary": "EMF is the energy supplied per unit charge by a source; terminal voltage $V = \\mathcal{E} - Ir$ drops due to internal resistance. Cells in series add EMF and internal resistance; parallel cells keep EMF same but divide internal resistance. Maximum power transfer occurs when load resistance equals internal resistance.",
-  "source": "skeleton-v2"
+  "summary": "A real source has **internal resistance** r. Its **emf** E is the work per unit charge driving charge around the whole circuit (the open-circuit voltage); the **terminal voltage** under current I is $V = E - Ir$ — the internal drop is lost inside. Kirchhoff's laws organise any circuit: **KCL** (ΣI = 0 at a junction — charge conservation) and **KVL** (ΣE = ΣIR round a loop — energy conservation). NEB 2022 and 2024 both asked the 5m statement-plus-application: 5 V emf, 2 Ω internal, 5 Ω load → I = 5/7 ≈ 0.71 A. The 2024 3m numerical: E = 2 V, r = 0.5 Ω, R = 3.5 Ω gives I = 0.5 A and V = 1.75 V.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Why Batteries Sag Under Load\n\nA battery's label promises 1.5 V or 12 V, but the voltage you measure drops when it works hard. The hidden culprit is **internal resistance** — and Kirchhoff's laws are the tools that track every volt and every ampere around a real circuit.",
+      "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 EMF and terminal voltage\n\n- **EMF (E):** the work done per unit charge by the source in driving charge around the *whole* circuit — the open-circuit terminal voltage.\n- **Terminal voltage (V):** the actual potential difference across the terminals when current I flows:\n$$V = E - Ir$$\n— the internal drop Ir is \"lost\" inside the source. (When charging, V = E + Ir.)\n\n### 2.2 Kirchhoff's laws (NEB 2022, 2024, 5m)\n\n1. **Current law (KCL):** the algebraic sum of currents at a junction is zero — **conservation of charge**.\n2. **Voltage law (KVL):** the algebraic sum of emfs round any closed loop equals the sum of IR drops — **conservation of energy**.\n\n**Application (NEB 2024):** a battery of emf 5 V with internal resistance 2 Ω drives a 5 Ω external resistor. Single loop: E = I(R + r) → I = 5/(5 + 2) = **0.71 A**.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2024):** A cell of emf 2 V and internal resistance 0.5 Ω is connected to a 3.5 Ω resistor. Calculate the terminal voltage.\n- $I = \\frac{E}{R + r} = \\frac{2}{3.5 + 0.5} = 0.5$ A\n- $V = E - Ir = 2 - (0.5)(0.5) = $ **1.75 V** (equivalently V = IR = 0.5 × 3.5 = 1.75 V ✓)\n\n**Q (NEB-style):** A 12 V battery with r = 0.5 Ω delivers 10 A to a starter motor. Find the terminal voltage.\nV = 12 − 10 × 0.5 = 7 V — the dimming headlights when starting a car.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 101:** Kirchhoff's laws generalise the series/parallel rules to any network.\n- **To Topic 102:** the potentiometer reads E directly by avoiding the Ir drop.\n- **To Topic 104:** the internal drop wastes power as heat inside the battery.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Electricity | DC circuits | State Kirchhoff's laws. Use them to solve for current in a simple circuit. | 5 | Statement + application |\n| 2080/2024 | Electricity | DC circuits | State Kirchhoff's laws. A battery of 5 V total emf with 2 Ω total internal resistance drives a 5 Ω external resistor. Find the current. | 5 | Statement + numerical |\n| 2080/2024 | Electricity | DC circuits | A cell of emf 2 V and internal resistance 0.5 Ω is connected to a 3.5 Ω resistor. Calculate the terminal voltage of the cell. | 3 | Numerical |\n\n### 4.2 Common examination mistakes\n\n1. Forgetting to add r to the external resistance when finding the current.\n2. Sign errors in KVL loops — pick a direction and stay consistent.\n3. Confusing emf (open circuit) with terminal voltage (under load)."
+    ],
+    "confusion": [
+      "**EMF ≠ terminal voltage:** V = E − Ir once current flows; they coincide only when I = 0.",
+      "**KCL conserves charge; KVL conserves energy** — quote both physics reasons."
+    ],
+    "keyPoints": [
+      "V = E − Ir; I = E/(R + r); KCL junctions, KVL loops."
+    ],
+    "importantConcepts": [
+      "**The internal drop Ir is the voltage the circuit never sees.**"
+    ],
+    "examples": [
+      "***NEB 2024*** — E = 2 V, r = 0.5 Ω, R = 3.5 Ω: V = 1.75 V."
+    ],
+    "universalFacts": [
+      "Car headlights dim at starting because the starter's huge current makes Ir eat the battery's emf."
+    ],
+    "importantStatements": [
+      "\"Kirchhoff's voltage law: the algebraic sum of the emfs in a closed loop equals the algebraic sum of the potential drops.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: Kirchhoff + circuit (2022, 2024 — 5m each); terminal voltage (2024, 3m)."
+    ],
+    "examShortTricks": [
+      "\"I = E/(R + r); V = IR = E − Ir — compute both ways as a check.\""
+    ],
+    "examNotes": [
+      "State the conservation principle behind each Kirchhoff law — examiners look for it."
+    ],
+    "formulas": [
+      "- V = E − Ir (discharge); V = E + Ir (charging)\n- I = E/(R + r)\n- KCL: ΣI = 0 at a junction; KVL: ΣE = ΣIR in a loop"
+    ],
+    "practice": [
+      "Why does a battery feel warm after heavy use?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): E = 9 V, r = 1 Ω, R = 8 Ω. Find I, V and the internal drop.** — I = 1 A; V = 8 V; internal drop = 1 V (dissipated inside the battery)."
+    ]
+  },
+  "importantConcepts": [
+    "**The internal drop Ir is the voltage the circuit never sees.**"
+  ],
+  "mcqs": [
+    {
+      "question": "Terminal voltage under load is:",
+      "options": [
+        "E + Ir",
+        "E − Ir",
+        "E always",
+        "Ir"
+      ],
+      "answer": "B",
+      "explanation": "Internal drop subtracts."
+    },
+    {
+      "question": "NEB 2024: E = 5 V, r = 2 Ω, R = 5 Ω ⇒ I =",
+      "options": [
+        "0.71 A",
+        "1 A",
+        "2.5 A",
+        "0.5 A"
+      ],
+      "answer": "A",
+      "explanation": "5/(5+2)."
+    },
+    {
+      "question": "NEB 2024: E = 2 V, r = 0.5 Ω, R = 3.5 Ω ⇒ V =",
+      "options": [
+        "2 V",
+        "1.75 V",
+        "1.5 V",
+        "0.25 V"
+      ],
+      "answer": "B",
+      "explanation": "V = IR = 1.75."
+    },
+    {
+      "question": "KCL expresses conservation of:",
+      "options": [
+        "Energy",
+        "Charge",
+        "Momentum",
+        "Mass"
+      ],
+      "answer": "B",
+      "explanation": "Junction rule."
+    },
+    {
+      "question": "KVL expresses conservation of:",
+      "options": [
+        "Charge",
+        "Energy",
+        "Current",
+        "Flux"
+      ],
+      "answer": "B",
+      "explanation": "Loop rule."
+    },
+    {
+      "question": "Emf equals terminal voltage when:",
+      "options": [
+        "I is large",
+        "I = 0",
+        "r is large",
+        "Charging"
+      ],
+      "answer": "B",
+      "explanation": "Open circuit."
+    },
+    {
+      "question": "The 5m Kirchhoff question appeared in:",
+      "options": [
+        "2021 and 2023",
+        "2022 and 2024",
+        "2020 only",
+        "Never"
+      ],
+      "answer": "B",
+      "explanation": "Repeat favourite."
+    },
+    {
+      "question": "Internal resistance causes headlight dimming because:",
+      "options": [
+        "V = E + Ir",
+        "Large I makes Ir large",
+        "E falls",
+        "R falls"
+      ],
+      "answer": "B",
+      "explanation": "Starter current."
+    }
+  ]
 }

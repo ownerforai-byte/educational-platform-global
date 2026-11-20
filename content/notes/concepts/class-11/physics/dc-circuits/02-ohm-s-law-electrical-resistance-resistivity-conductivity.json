@@ -5,44 +5,20 @@
   "topicTitle": "Ohm's law; electrical resistance; resistivity; conductivity",
   "relevance": 100,
   "notes": [
-    "**Ohmic conductor:** obeys Ohm's law. The $I$-$V$ graph is a straight line through the origin. Resistance is constant.",
-    "**Non-ohmic conductor:** does not obey Ohm's law. The $I$-$V$ graph is curved. Resistance changes with voltage or current.",
-    "**Examples of non-ohmic:** diode (conducts easily in one direction only), filament lamp (resistance increases with temperature as current increases), thermistor (resistance decreases with temperature).",
-    "**Why filament lamp is non-ohmic:** as current increases, the filament heats up, increasing its resistivity. The $I$-$V$ curve bends because $R$ is not constant.",
-    "**Dynamic resistance:** $R_d = dV/dI$ at a point on the $I$-$V$ curve. For non-ohmic devices, this is the useful measure of resistance at a specific operating point.",
-    "**Forward bias diode:** current flows easily once the voltage exceeds the threshold ($\\\\\\\\approx 0.7$ V for silicon, $\\\\\\\\approx 0.3$ V for germanium). Below threshold, very little current flows.",
-    "**Reverse bias diode:** almost no current flows (except a tiny leakage current). At the breakdown voltage, current increases sharply and the diode may be damaged.",
-    "**Thermistor:** a semiconductor device whose resistance decreases sharply with temperature (NTC type). Used as temperature sensors and inrush current limiters.",
-    "**Zener diode:** operates in reverse breakdown at a precise voltage. It maintains a nearly constant voltage across it, used as a voltage regulator.",
-    "**Filament lamp $I$-$V$ curve:** starts linearly at low voltage (cool filament, low resistance). At higher voltages, the curve bends toward the voltage axis as the filament heats and resistance increases.",
-    "**Temperature coefficient of filament:** tungsten has $\\\\\\\\alpha \\\\\\\\approx 0.0045$ $^{\\\\\\\\circ}$C$^{-1}$. A 100 W, 230 V bulb has cold resistance of about $50\\\\\\\\,\\\\\\\\Omega$ but hot resistance of $529\\\\\\\\,\\\\\\\\Omega$.",
-    "# Ohm's law; electrical resistance; resistivity; conductivity\n\n## 1. Introduction\nPhysical picture of **Ohm's law; electrical resistance; resistivity; conductivity** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the DC Circuits fill pass.\n\n## 2. Concepts and laws\n### Ohm's law\n### electrical resistance\n### resistivity\n### conductivity\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Circuit elements and combinations**\n\n| Element or combo | Diagram ref | Equivalent value | Remark |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Ohm's law; electrical resistance; resistivity; conductivity — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Ohm's law; electrical resistance; resistivity; conductivity — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Ohm's law; electrical resistance; resistivity; conductivity — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Ohm's law; electrical resistance; resistivity; conductivity — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Law of the Linear Circuit\n\nFor a metal wire at steady temperature, doubling the voltage doubles the current. That proportionality — Ohm's law — and its material constants (resistivity, conductivity) turn circuit design into arithmetic.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Ohm's law\n\n**Statement:** at constant temperature, the current through a conductor is directly proportional to the potential difference across it:\n$$V \\propto I \\Rightarrow V = IR$$\n- R, the **electrical resistance**, is the constant of proportionality (unit: ohm, Ω = V/A).\n- Valid for **metallic conductors at constant temperature** — not for diodes, electrolytes or lamps while heating.\n\n### 2.2 Resistance, resistivity, conductivity\n\n- **Resistance of a wire:** $R = \\rho\\dfrac{l}{A}$ — longer is harder, fatter is easier.\n- **Resistivity ρ** (Ω·m): a *material* property, independent of size; copper ≈ 1.7×10⁻⁸ Ω·m.\n- **Conductivity σ = 1/ρ** (S/m): the ease of conduction.\n- Temperature: metals' resistance rises with T (more lattice vibration); semiconductors' falls.\n\n### 2.3 Factors affecting resistance\n\nLength l (∝), cross-section A (∝ 1/A), material (ρ), and temperature. Geometry affects R through l/A; the material sets ρ.\n\n### 2.4 Worked numericals\n\n**Q (NEB-style):** A wire of length 2 m, area 0.5 mm², ρ = 2×10⁻⁷ Ω·m. Find R.\n$$R = \\frac{\\rho l}{A} = \\frac{2\\times10^{-7} \\times 2}{0.5\\times10^{-6}} = 0.8 \\text{ Ω}$$\n\n**Q (NEB-style):** A wire is stretched to double its length. Find the new resistance.\nVolume fixed: A halves. $R' = \\rho\\frac{2l}{A/2} = 4R$ — **four times**.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 98:** Ohm's law emerges from drift: v_d = μE gives I ∝ E ∝ V.\n- **To Topic 100:** Ohmic conductors keep R constant; non-ohmic ones don't.\n- **To series/parallel (Topic 101):** R values combine via the rules.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the statement, the R = ρl/A numericals and the stretching problem as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. State Ohm's law and its limitations (3m).\n2. R = ρl/A numerical (2–3m).\n3. Stretched-wire ratio problem (2m).\n\n### 4.3 Common examination mistakes\n\n1. Applying Ohm's law to non-ohmic devices without comment.\n2. Forgetting mm² → m² conversion (10⁻⁶).\n3. Missing the ×4 in the stretched-wire problem (both l and 1/A change)."
   ],
   "confusion": [
-    "Ohm's law $V = IR$ is a definition of resistance, not a law that all materials obey. Only ohmic conductors have a linear $I$-$V$ relationship. For non-ohmic devices, $R = V/I$ is still defined but varies.",
-    "A filament lamp becomes a better conductor (lower resistance) when cold. This is why bulbs often burn out at the moment they are switched on - the initial current surge is 10 times the steady-state current.",
-    "The dynamic resistance $dV/dI$ is different from the static resistance $V/I$. For a non-ohmic device, the static resistance is $V/I$ while the dynamic resistance is the slope of the $I$-$V$ curve at that point.",
-    "A diode is not simply a 'one-way valve' for current. In reverse bias, a tiny leakage current (nA to $\\\\\\mu$A range) still flows. In forward bias, the current is exponentially related to voltage, not linearly.",
-    "Thermistors are not simply temperature-dependent resistors. Their resistance changes exponentially with temperature: $R = R_0 e^{\\\beta(1/T - 1/T_0)}$, which makes them highly sensitive to small temperature changes."
+    "**Ohm's law is conditional:** constant temperature — a glowing filament defies it.",
+    "**Resistivity belongs to the material; resistance to the object.**"
   ],
   "practice": [
-    "A filament lamp has a resistance of $20\\\\\\\\,\\\\\\\\Omega$ when cold and $240\\\\\\\\,\\\\\\\\Omega$ when glowing at full brightness. If connected to a 12 V supply, find the current when cold and when glowing. Solution: Cold: $I = V/R = 12/20 = 0.6$ A. Glowing: $I = V/R = 12/240 = 0.05$ A. The inrush current is 12 times the steady-state current.",
-    "A silicon diode has a forward voltage drop of 0.7 V at a current of 10 mA. It is connected in series with a 500 $\\\\\\Omega$ resistor and a 5 V battery. Find the current. Solution: The diode drops 0.7 V, so the resistor sees $5 - 0.7 = 4.3$ V. $I = 4.3/500 = 8.6$ mA.",
-    "A thermistor has resistance $R_0 = 10\\\\\\\\,\\\text{k}\\\\\\\\Omega$ at 25$^{\\\\\\\\circ}$C and $R = 2\\\\\\\\,\\\text{k}\\\\\\\\Omega$ at 50$^{\\\\\\\\circ}$C. Find the resistance at 0$^{\\\\\\\\circ}$C assuming a linear temperature coefficient. Solution: $\\\\\\\\alpha = (R_0 - R)/(R \\\\\\\\cdot \\\\\\\\Delta T) = (10000 - 2000)/(2000 \\\times 25) = 0.16$ $^{\\\\\\\\circ}$C$^{-1}$. At 0$^{\\\\\\\\circ}$C: $R = R_0/(1 + \\\\\\\\alpha \\\\\\\\cdot 25) = 10000/(1 + 4) = 2000\\\\\\\\,\\\\\\\\Omega$.",
-    "A $I$-$V$ graph of a device shows that at $V = 3$ V, the current is 0.15 A, and the tangent at that point has slope $dI/dV = 0.02$ A/V. Find the static resistance and dynamic resistance. Solution: Static resistance $R_s = V/I = 3/0.15 = 20\\\\\\\\,\\\\\\\\Omega$. Dynamic resistance $R_d = 1/(dI/dV) = 1/0.02 = 50\\\\\\\\,\\\\\\\\Omega$.",
-    "A Zener diode with breakdown voltage 6 V is connected in parallel with a load resistor of 1 k$\\\\\\Omega$ across a 10 V battery with series resistor of 500 $\\\\\\Omega$. Find the current through the Zener diode. Solution: Voltage across load: 6 V (clamped by Zener). Current through 500 $\\\\\\Omega$: $I = (10 - 6)/500 = 8$ mA. Current through load: $I_L = 6/1000 = 6$ mA. Current through Zener: $I_Z = 8 - 6 = 2$ mA."
+    "Why are transmission cables thick?"
   ],
   "universalFacts": [
-    "A tungsten filament lamp has a resistance that changes by a factor of 10-15 between cold and hot, making it a classic example of non-ohmic behavior due to temperature-dependent resistivity.",
-    "The threshold voltage of a silicon diode is approximately 0.7 V because this is the energy needed to overcome the potential barrier of the p-n junction, corresponding to the band gap energy of silicon.",
-    "Semiconductors have a negative temperature coefficient of resistance (NTC thermistors) because more charge carriers are thermally excited across the band gap, increasing conductivity.",
-    "Ohmic materials include most metals at constant temperature. Non-ohmic materials include all semiconductors, electrolytes, and any device where temperature or other conditions change with current.",
-    "The $I$-$V$ characteristic of a diode is exponential: $I = I_0(e^{eV/kT} - 1)$, where $I_0$ is the reverse saturation current, $k$ is Boltzmann's constant, and $T$ is temperature."
+    "Superconductors drop to exactly zero resistance below a critical temperature — ohm's law with R = 0."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
@@ -56,19 +32,256 @@
   "visualType": "ohms-law",
   "source": "skeleton-v2",
   "examShortTricks": [
-    "Trick 1: Law statement with condition: V ∝ I at constant temperature — 'constant temperature' is the scoring phrase because resistance drifts when hot.",
-    "Trick 2: R = ρl/A; conductivity σ = 1/ρ — combine to R = l/(σA); every wire numerical is one substitution.",
-    "Trick 3: Stretching a wire to n times its length: R multiplies by n² (length n, area 1/n) — the classic 2-mark numerical.",
-    "Trick 4: V–I graph of an ohmic conductor is a straight line through the origin whose slope is R."
+    "\"R' = R × (l'/l) × (A/A') — handle stretch problems factor by factor.\""
   ],
   "keyPoints": [
-    "Ohm's law: V = IR at constant temperature.",
-    "Resistance R = ρ l/A; resistivity ρ is a material property.",
-    "Conductivity σ = 1/ρ; unit siemens per metre.",
-    "Resistance increases with temperature for metals."
+    "V = IR; R = ρl/A; σ = 1/ρ."
   ],
   "practiceQuestions": [
-    "Q. A wire is stretched to double its length. What happens to its resistance? (2 marks) — R' = 4R (length doubles, area halves).",
-    "Q. Find R of a 2 m copper wire, A = 1 mm², ρ = 1.7 × 10^-8 Ωm. (2 marks) — R = 1.7e-8 × 2/1e-6 = 0.034 Ω."
+    "**Numerical (2m): A wire of R = 4 Ω is stretched to twice its length. Find the new resistance.** — R' = 4 × 2² = 16 Ω."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Law of the Linear Circuit\n\nFor a metal wire at steady temperature, doubling the voltage doubles the current. That proportionality — Ohm's law — and its material constants (resistivity, conductivity) turn circuit design into arithmetic.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Ohm's law\n\n**Statement:** at constant temperature, the current through a conductor is directly proportional to the potential difference across it:\n$$V \\propto I \\Rightarrow V = IR$$\n- R, the **electrical resistance**, is the constant of proportionality (unit: ohm, Ω = V/A).\n- Valid for **metallic conductors at constant temperature** — not for diodes, electrolytes or lamps while heating.\n\n### 2.2 Resistance, resistivity, conductivity\n\n- **Resistance of a wire:** $R = \\rho\\dfrac{l}{A}$ — longer is harder, fatter is easier.\n- **Resistivity ρ** (Ω·m): a *material* property, independent of size; copper ≈ 1.7×10⁻⁸ Ω·m.\n- **Conductivity σ = 1/ρ** (S/m): the ease of conduction.\n- Temperature: metals' resistance rises with T (more lattice vibration); semiconductors' falls.\n\n### 2.3 Factors affecting resistance\n\nLength l (∝), cross-section A (∝ 1/A), material (ρ), and temperature. Geometry affects R through l/A; the material sets ρ.\n\n### 2.4 Worked numericals\n\n**Q (NEB-style):** A wire of length 2 m, area 0.5 mm², ρ = 2×10⁻⁷ Ω·m. Find R.\n$$R = \\frac{\\rho l}{A} = \\frac{2\\times10^{-7} \\times 2}{0.5\\times10^{-6}} = 0.8 \\text{ Ω}$$\n\n**Q (NEB-style):** A wire is stretched to double its length. Find the new resistance.\nVolume fixed: A halves. $R' = \\rho\\frac{2l}{A/2} = 4R$ — **four times**.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 98:** Ohm's law emerges from drift: v_d = μE gives I ∝ E ∝ V.\n- **To Topic 100:** Ohmic conductors keep R constant; non-ohmic ones don't.\n- **To series/parallel (Topic 101):** R values combine via the rules.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the statement, the R = ρl/A numericals and the stretching problem as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. State Ohm's law and its limitations (3m).\n2. R = ρl/A numerical (2–3m).\n3. Stretched-wire ratio problem (2m).\n\n### 4.3 Common examination mistakes\n\n1. Applying Ohm's law to non-ohmic devices without comment.\n2. Forgetting mm² → m² conversion (10⁻⁶).\n3. Missing the ×4 in the stretched-wire problem (both l and 1/A change)."
+    ],
+    "confusion": [
+      "**Ohm's law is conditional:** constant temperature — a glowing filament defies it.",
+      "**Resistivity belongs to the material; resistance to the object.**"
+    ],
+    "keyPoints": [
+      "V = IR; R = ρl/A; σ = 1/ρ."
+    ],
+    "importantConcepts": [
+      "**Stretching a wire to n times its length multiplies R by n²** — both l and A change."
+    ],
+    "examples": [
+      "***Copper wiring*** — ρ ≈ 1.7×10⁻⁸ Ω·m: low resistivity makes it the standard conductor."
+    ],
+    "universalFacts": [
+      "Superconductors drop to exactly zero resistance below a critical temperature — ohm's law with R = 0."
+    ],
+    "importantStatements": [
+      "\"The current through a metallic conductor is proportional to the potential difference across it, provided physical conditions remain constant.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (statement 3m, R = ρl/A numericals 2–3m)."
+    ],
+    "examShortTricks": [
+      "\"R' = R × (l'/l) × (A/A') — handle stretch problems factor by factor.\""
+    ],
+    "examNotes": [
+      "State the temperature condition — it carries a mark."
+    ],
+    "formulas": [
+      "- V = IR (Ω = V/A)\n- R = ρl/A; σ = 1/ρ\n- Stretch to n×: R' = n²R"
+    ],
+    "practice": [
+      "Why are transmission cables thick?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (2m): A wire of R = 4 Ω is stretched to twice its length. Find the new resistance.** — R' = 4 × 2² = 16 Ω."
+    ]
+  },
+  "importantConcepts": [
+    "**Stretching a wire to n times its length multiplies R by n²** — both l and A change."
+  ],
+  "examples": [
+    "***Copper wiring*** — ρ ≈ 1.7×10⁻⁸ Ω·m: low resistivity makes it the standard conductor."
+  ],
+  "importantStatements": [
+    "\"The current through a metallic conductor is proportional to the potential difference across it, provided physical conditions remain constant.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ; NEB-style practice (statement 3m, R = ρl/A numericals 2–3m)."
+  ],
+  "examNotes": [
+    "State the temperature condition — it carries a mark."
+  ],
+  "formulas": [
+    "- V = IR (Ω = V/A)\n- R = ρl/A; σ = 1/ρ\n- Stretch to n×: R' = n²R"
+  ],
+  "summary": "**Ohm's law**: at constant temperature, V ∝ I in a metallic conductor, or V = IR with R the **resistance** (ohm). Resistance grows with length and shrinks with area: $R = \\rho l/A$, where **resistivity** ρ (Ω·m) is a material property (copper 1.7×10⁻⁸) and **conductivity** σ = 1/ρ its inverse. Temperature raises metals' resistance and lowers semiconductors'. Stretching a wire to double its length halves its area — resistance quadruples. The law's limits (non-ohmic devices, heating filaments) matter as much as its statement.",
+  "mcqs": [
+    {
+      "question": "Ohm's law states:",
+      "options": [
+        "V ∝ I at constant temperature",
+        "V ∝ I always",
+        "R ∝ V",
+        "I ∝ R"
+      ],
+      "answer": "A",
+      "explanation": "Conditional proportionality."
+    },
+    {
+      "question": "The unit of resistance is:",
+      "options": [
+        "Volt",
+        "Ohm",
+        "Ampere",
+        "Siemens"
+      ],
+      "answer": "B",
+      "explanation": "V/A."
+    },
+    {
+      "question": "Resistivity depends on:",
+      "options": [
+        "Length",
+        "Area",
+        "Material",
+        "Shape"
+      ],
+      "answer": "C",
+      "explanation": "Material property."
+    },
+    {
+      "question": "R = ρl/A: doubling the area at fixed length gives:",
+      "options": [
+        "2R",
+        "R/2",
+        "4R",
+        "R/4"
+      ],
+      "answer": "B",
+      "explanation": "Inverse area."
+    },
+    {
+      "question": "Conductivity σ equals:",
+      "options": [
+        "1/ρ",
+        "ρ",
+        "1/R",
+        "ρl"
+      ],
+      "answer": "A",
+      "explanation": "Inverse resistivity."
+    },
+    {
+      "question": "A wire stretched to double length has resistance:",
+      "options": [
+        "2R",
+        "4R",
+        "R/2",
+        "Unchanged"
+      ],
+      "answer": "B",
+      "explanation": "l doubles, A halves."
+    },
+    {
+      "question": "Ohm's law fails for:",
+      "options": [
+        "Copper at 20 °C",
+        "A diode",
+        "Aluminium wire",
+        "Constantan"
+      ],
+      "answer": "B",
+      "explanation": "Non-ohmic device."
+    },
+    {
+      "question": "Metals' resistance with rising temperature:",
+      "options": [
+        "Falls",
+        "Rises",
+        "Constant",
+        "Oscillates"
+      ],
+      "answer": "B",
+      "explanation": "More lattice vibration."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "Ohm's law states:",
+      "options": [
+        "V ∝ I at constant temperature",
+        "V ∝ I always",
+        "R ∝ V",
+        "I ∝ R"
+      ],
+      "answer": "A",
+      "explanation": "Conditional proportionality."
+    },
+    {
+      "question": "The unit of resistance is:",
+      "options": [
+        "Volt",
+        "Ohm",
+        "Ampere",
+        "Siemens"
+      ],
+      "answer": "B",
+      "explanation": "V/A."
+    },
+    {
+      "question": "Resistivity depends on:",
+      "options": [
+        "Length",
+        "Area",
+        "Material",
+        "Shape"
+      ],
+      "answer": "C",
+      "explanation": "Material property."
+    },
+    {
+      "question": "R = ρl/A: doubling the area at fixed length gives:",
+      "options": [
+        "2R",
+        "R/2",
+        "4R",
+        "R/4"
+      ],
+      "answer": "B",
+      "explanation": "Inverse area."
+    },
+    {
+      "question": "Conductivity σ equals:",
+      "options": [
+        "1/ρ",
+        "ρ",
+        "1/R",
+        "ρl"
+      ],
+      "answer": "A",
+      "explanation": "Inverse resistivity."
+    },
+    {
+      "question": "A wire stretched to double length has resistance:",
+      "options": [
+        "2R",
+        "4R",
+        "R/2",
+        "Unchanged"
+      ],
+      "answer": "B",
+      "explanation": "l doubles, A halves."
+    },
+    {
+      "question": "Ohm's law fails for:",
+      "options": [
+        "Copper at 20 °C",
+        "A diode",
+        "Aluminium wire",
+        "Constantan"
+      ],
+      "answer": "B",
+      "explanation": "Non-ohmic device."
+    },
+    {
+      "question": "Metals' resistance with rising temperature:",
+      "options": [
+        "Falls",
+        "Rises",
+        "Constant",
+        "Oscillates"
+      ],
+      "answer": "B",
+      "explanation": "More lattice vibration."
+    }
   ]
 }

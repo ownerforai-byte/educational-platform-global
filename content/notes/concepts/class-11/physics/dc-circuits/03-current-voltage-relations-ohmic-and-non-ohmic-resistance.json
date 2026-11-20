@@ -5,21 +5,10 @@
   "topicTitle": "Current-voltage relations; ohmic and non-ohmic resistance",
   "relevance": 100,
   "notes": [
-    "Ohm's Law: For an ohmic conductor at constant physical conditions (especially temperature), the current $I$ flowing through it is directly proportional to the potential difference $V$ across its ends: $V = IR$, where $R$ is the resistance. The graph of $V$ vs $I$ is a straight line through the origin.",
-    "Resistance Definition: Resistance $R$ of a conductor is defined as the ratio of potential difference across it to the current through it: $R = V/I$. SI unit: ohm ($\\Omega = \text{V/A} = \text{V}^2/\text{W}$). Dimensions: $[M L^2 T^{-3} I^{-2}]$.",
-    "Resistivity: The resistance of a uniform conductor depends on its geometry and material: $R = \\rho L/A$, where $\\rho$ is resistivity (material property), $L$ is length, and $A$ is cross-sectional area. SI unit of $\\rho$: $\\Omega\\cdot\text{m}$. Conductivity $\\sigma = 1/\\rho$.",
-    "Ohmic Conductors: Conductors that obey Ohm's law ($V$-$I$ graph is linear) are called ohmic. Examples: metals at constant temperature, electrolytes, carbon resistors. Their resistance is independent of $V$ and $I$ (within limits).",
-    "Non-Ohmic Conductors: Conductors that do NOT obey Ohm's law ($V$-$I$ graph is non-linear). Examples: diode, transistor, thermistor, filament lamp, vacuum tube, electrolyte at high voltage. Their resistance varies with $V$ or $I$ (dynamic resistance $r_d = dV/dI$).",
-    "Temperature Dependence: For metals, resistance increases with temperature: $R_T = R_0(1 + \\alpha\\Delta T)$, where $\\alpha$ is temperature coefficient of resistance (positive for metals). For semiconductors, $\\alpha$ is negative (resistance decreases with temperature).",
-    "Filament Lamp: A filament lamp is non-ohmic because its temperature rises as current increases, changing its resistance. Cold resistance is lower than hot resistance.",
-    "Diode: A p-n junction diode conducts easily in forward bias (small resistance) and blocks in reverse bias (large resistance). Its $V$-$I$ characteristic is highly non-linear.",
-    "Superconductors: Below a critical temperature $T_c$, certain materials exhibit zero electrical resistance ($R = 0$) and expel magnetic fields (Meissner effect). Examples: mercury ($T_c \\approx 4.2\\text{ K}$), niobium-titanium alloys.",
-    "# Current-voltage relations; ohmic and non-ohmic resistance\n\n## 1. Introduction\nPhysical picture of **Current-voltage relations; ohmic and non-ohmic resistance** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the DC Circuits fill pass.\n\n## 2. Concepts and laws\n### Current-voltage relations\n### ohmic and non-ohmic resistance\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Circuit elements and combinations**\n\n| Element or combo | Diagram ref | Equivalent value | Remark |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Current-voltage relations; ohmic and non-ohmic resistance — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Current-voltage relations; ohmic and non-ohmic resistance — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Current-voltage relations; ohmic and non-ohmic resistance — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Current-voltage relations; ohmic and non-ohmic resistance — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Straight Lines and Curves\n\nPlot current against voltage: a metal wire gives a straight line, a diode gives a kinked curve, a bulb's filament bends downward. The shape of the I–V graph sorts conductors into **ohmic** and **non-ohmic** — and reveals where Ohm's law ends.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Ohmic conductors\n\nAn **ohmic conductor** obeys Ohm's law: I ∝ V at constant temperature, giving a **straight I–V line through the origin**. R = V/I is constant. Examples: metals at steady temperature, manganin, constantan (alloys with tiny temperature coefficients).\n\n### 2.2 Non-ohmic conductors\n\n**Non-ohmic** conductors show I–V curves — R = V/I varies with V:\n- **Filament lamp:** current heats the filament; resistance rises with temperature — the curve flattens at high V.\n- **Semiconductor diode:** conducts strongly only in forward bias beyond ~0.7 V; nearly blocking in reverse — an asymmetric curve.\n- **Electrolytes and thermistors:** non-linear, often with falling R as current heats them.\n\n### 2.3 Distinguishing feature\n\nThe test is the **I–V graph**: straight line through the origin ⇒ ohmic; any curvature or asymmetry ⇒ non-ohmic. Resistance \"at a point\" on a curve is often quoted as **dynamic resistance** dV/dI.\n\n### 2.4 Worked reasoning\n\n**Q (NEB-style):** Why does the resistance of a filament lamp increase as it glows?\nCurrent heats the tungsten filament to ~2500 K; lattice vibrations intensify, impeding electron drift more strongly. Since R grows with temperature, the I–V curve bends — the lamp is non-ohmic while glowing (though nearly ohmic when cold and at low current).\n\n**Q (NEB-style):** Sketch and compare the I–V characteristics of a metal wire and a diode.\nMetal: straight line through the origin in both directions. Diode: essentially zero reverse current; sharp forward rise beyond the knee voltage — a one-way valve.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 99:** ohmic behaviour is the validity condition of Ohm's law.\n- **To Topic 98:** temperature changes the drift-lattice collision rate — the microscopic cause of curvature.\n- **To thermistors:** falling-R devices enable temperature sensing.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise I–V graph interpretation and the lamp/diode comparisons as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. Distinguish ohmic and non-ohmic conductors with graphs (3m).\n2. Why does a filament's resistance rise? (2m)\n3. Sketch a diode's I–V curve (2m).\n\n### 4.3 Common examination mistakes\n\n1. Calling all conductors ohmic — temperature ruins the linearity.\n2. Forgetting the origin on the ohmic I–V line.\n3. Confusing dynamic resistance (dV/dI) with static ratio V/I on curves."
   ],
   "specificConditions": [
     "Ohm's Law Validity: Ohm's law $V = IR$ holds only for ohmic materials at constant temperature and other physical conditions. It is NOT a fundamental law of nature but an empirical observation valid for many conductors.",
@@ -27,89 +16,38 @@
     "Temperature Must Be Constant: Ohm's law assumes temperature stays constant. As current flows, Joule heating ($I^2R$) raises temperature, changing resistance — this is why filament lamps are non-ohmic."
   ],
   "formulas": [
-    "Ohm's law: $V = IR$",
-    "Resistance: $R = V/I$",
-    "Resistance of uniform conductor: $R = \\rho L/A$",
-    "Resistivity: $\\rho = RA/L$",
-    "Conductivity: $\\sigma = 1/\\rho$",
-    "Temperature dependence: $R_T = R_0(1 + \\alpha\\Delta T)$",
-    "Power: $P = VI = I^2R = V^2/R$",
-    "Dynamic resistance: $r_d = dV/dI$",
-    "Current density: $J = I/A = \\sigma E$",
-    "Microscopic Ohm's law: $\\vec{J} = \\sigma\\vec{E}$"
+    "- Ohmic: I = V/R (R constant)\n- Dynamic resistance: r = dV/dI\n- Filament: R ∝ T (roughly)"
   ],
   "keyPoints": [
-    "Ohm's law: $V = IR$ for ohmic conductors at constant temperature.",
-    "Resistance $R = V/I$; SI unit ohm ($\\Omega$).",
-    "Resistance depends on geometry and material: $R = \\rho L/A$.",
-    "Ohmic conductors have linear V-I graphs; non-ohmic have non-linear graphs.",
-    "Examples of non-ohmic: diode, filament lamp, thermistor, transistor.",
-    "Temperature coefficient $\\alpha$ is positive for metals, negative for semiconductors.",
-    "Dynamic resistance $r_d = dV/dI$ differs from static resistance $V/I$ for non-ohmic devices."
+    "Ohmic: I–V straight line, R constant. Non-ohmic: lamp, diode, thermistor."
   ],
   "importantStatements": [
-    "Statement 1: Ohm's law states that at constant temperature, current through a conductor is directly proportional to the potential difference across it: $V \\propto I$.",
-    "Statement 2: Resistance is defined as $R = V/I$; its SI unit is the ohm ($\\Omega$).",
-    "Statement 3: Ohmic conductors obey Ohm's law (linear V-I characteristic); non-ohmic conductors do not.",
-    "Statement 4: The resistance of a uniform wire is $R = \\rho L/A$, where $\\rho$ is resistivity.",
-    "Statement 5: Temperature coefficient of resistance $\\alpha$ is positive for metals and negative for semiconductors.",
-    "Statement 6: For non-ohmic devices, dynamic resistance $r_d = dV/dI$ differs from static resistance $V/I$."
+    "\"Conductors whose I–V graph is a straight line through the origin obey Ohm's law; others are non-ohmic.\""
   ],
   "importantNotes": [
-    "Ohm's law is an empirical law, not fundamental — it applies only to ohmic materials at constant physical conditions.",
-    "Always distinguish between static resistance ($V/I$) and dynamic resistance ($dV/dI$) for non-ohmic devices.",
-    "Temperature changes during current flow can make an ohmic material behave non-ohmically (e.g., filament lamp).",
-    "Resistivity $\\rho$ is a material property independent of dimensions; resistance $R$ depends on both material and geometry."
+    "No verified PYQ; NEB-style practice (graphs and comparisons 2–3m)."
   ],
   "examShortTricks": [
-    "Ohmic = linear V-I graph through origin; Non-ohmic = curved V-I graph.",
-    "Use $R = \\rho L/A$ — resistance increases with length, decreases with area.",
-    "Temperature effect: metals $R \\uparrow$ with $T \\uparrow$; semiconductors $R \\downarrow$ with $T \\uparrow$.",
-    "For diode in forward bias: resistance is small; reverse bias: resistance is very large.",
-    "Remember: $\\Omega = \\text{V/A}$; $\\rho$ unit is $\\Omega\\cdot\\text{m}$."
+    "\"Draw both graphs side by side; label the diode knee.\""
   ],
   "examNotes": [
-    "NEB frequently asks to state Ohm's law, define resistance and resistivity, and distinguish ohmic from non-ohmic conductors.",
-    "Numerical problems often involve $R = \\rho L/A$ with unit conversions (mm² to m²).",
-    "V-I graph analysis: slope gives resistance; identify ohmic vs non-ohmic from linearity.",
-    "Temperature coefficient problems: use $R_T = R_0(1 + \\alpha\\Delta T)$."
+    "Mention manganin/constantan as ohmic standard-resistor alloys."
   ],
   "examples": [
-    "A copper wire has resistance $5\\,\\Omega$ at $20^\\circ\\text{C}$. If $\\alpha = 4.3 \\times 10^{-3}\\text{ K}^{-1}$, find resistance at $50^\\circ\\text{C}$. Solution: $R_{50} = 5[1 + 4.3\\times 10^{-3}(50-20)] = 5[1 + 0.129] = 5.645\\,\\Omega$.",
-    "A wire of length $2\\text{ m}$ and cross-section $1\\text{ mm}^2$ has resistance $4\\,\\Omega$. Find its resistivity. Solution: $\\rho = RA/L = (4 \\times 10^{-6})/2 = 2 \\times 10^{-6}\\,\\Omega\\cdot\text{m}$.",
-    "A $12\\text{ V}$ battery drives $2\\text{ A}$ through a resistor. Find resistance and power. Solution: $R = V/I = 12/2 = 6\\,\\Omega$; $P = VI = 12 \\times 2 = 24\\text{ W}$.",
-    "A filament lamp draws $0.5\\text{ A}$ at $6\\text{ V}$ when cold but $0.2\\text{ A}$ at $6\\text{ V}$ when hot. Cold $R = 12\\,\\Omega$, hot $R = 30\\,\\Omega$ — non-ohmic behavior due to temperature change."
+    "***Diode*** — forward knee ~0.7 V; reverse blocking: the extreme non-ohmic device."
   ],
   "practiceQuestions": [
-    "Q1. State Ohm's law and define resistance. Give its SI unit and dimensional formula.",
-    "Q2. Derive the expression $R = \\rho L/A$ for the resistance of a uniform conductor.",
-    "Q3. Distinguish between ohmic and non-ohmic conductors with examples.",
-    "Q4. A wire of length $3\\text{ m}$ and area $2\\text{ mm}^2$ has resistance $6\\,\\Omega$. Find its resistivity.",
-    "Q5. Explain why a filament lamp is non-ohmic.",
-    "Q6. The resistance of a metal is $10\\,\\Omega$ at $20^\\circ\\text{C}$ and $12\\,\\Omega$ at $70^\\circ\\text{C}$. Find the temperature coefficient of resistance.",
-    "Q7. What is dynamic resistance? How does it differ from static resistance for a diode?"
+    "**Reasoning (2m): Why does a filament lamp's I–V curve flatten at high voltage?** — Higher current heats the filament; rising temperature raises resistance, so current grows less than proportionally — the curve bends toward the V axis."
   ],
   "practice": [
-    "Calculate resistance from $V$ and $I$ measurements for ohmic and non-ohmic devices.",
-    "Use $R = \\rho L/A$ to find resistance, resistivity, length, or area.",
-    "Analyze V-I graphs to classify materials as ohmic or non-ohmic.",
-    "Apply $R_T = R_0(1 + \\alpha\\Delta T)$ for temperature-dependent resistance problems.",
-    "Compute power dissipation $P = VI = I^2R = V^2/R$ in circuits.",
-    "Determine dynamic resistance from V-I curve slope for non-ohmic devices."
+    "Why is manganin used for standard resistors?"
   ],
   "universalFacts": [
-    "Ohm's law is an empirical observation, valid for many but not all materials — it is not a fundamental law like conservation of energy.",
-    "All materials become non-ohmic at sufficiently high electric fields or temperatures where breakdown occurs.",
-    "Superconductors have exactly zero resistance below their critical temperature — a macroscopic quantum phenomenon.",
-    "The temperature coefficient of resistance is positive for metals (lattice scattering increases) but negative for semiconductors (more carriers generated).",
-    "Semiconductor devices (diodes, transistors) are inherently non-ohmic and form the basis of modern electronics."
+    "Thermistors exploit non-ohmic behaviour deliberately — falling resistance with temperature makes them thermometers."
   ],
   "confusion": [
-    "Confusing ohmic with linear: Ohm's law requires linearity AND constant temperature; a heated metal is not ohmic even if its V-I graph looks linear at low currents.",
-    "Believing $R = V/I$ is always constant: For non-ohmic devices, $V/I$ changes with operating point; only $dV/dI$ (dynamic resistance) is meaningful locally.",
-    "Thinking resistivity changes with dimensions: $\\rho$ is an intrinsic material property; only $R$ changes with $L$ and $A$.",
-    "Assuming all metals obey Ohm's law perfectly: At very low temperatures or high fields, even metals deviate.",
-    "Confusing resistance with resistivity: Resistance depends on geometry; resistivity does not."
+    "**The I–V graph is the test:** straight through the origin = ohmic; any bend = non-ohmic.",
+    "**A glowing filament is non-ohmic** — self-heating changes R."
   ],
   "mcs": [
     {
@@ -171,6 +109,144 @@
   "animation3D": "ohmic-nonohmic",
   "motionGraphics": "vi-graph",
   "visualType": "vi-characteristic",
-  "summary": "Ohm's law ($V = IR$) defines resistance for ohmic conductors with linear V-I characteristics at constant temperature. Resistance depends on geometry and material via $R = \\rho L/A$. Non-ohmic conductors (diodes, filament lamps, thermistors) have non-linear V-I graphs where dynamic resistance $dV/dI$ differs from static resistance $V/I$. Temperature coefficient of resistance is positive for metals and negative for semiconductors.",
-  "source": "skeleton-v2"
+  "summary": "**Ohmic conductors** — metals at steady temperature, manganin, constantan — give a straight I–V line through the origin: R = V/I constant. **Non-ohmic** conductors bend the graph: a filament lamp's resistance rises as current heats it; a diode conducts only in forward bias beyond a knee; thermistors' resistance falls with temperature. The graph is the test, and self-heating is the usual cause of curvature. Dynamic resistance dV/dI replaces the simple ratio on curved characteristics. Recognising where Ohm's law applies — and where it silently fails — is the point of this topic.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Straight Lines and Curves\n\nPlot current against voltage: a metal wire gives a straight line, a diode gives a kinked curve, a bulb's filament bends downward. The shape of the I–V graph sorts conductors into **ohmic** and **non-ohmic** — and reveals where Ohm's law ends.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Ohmic conductors\n\nAn **ohmic conductor** obeys Ohm's law: I ∝ V at constant temperature, giving a **straight I–V line through the origin**. R = V/I is constant. Examples: metals at steady temperature, manganin, constantan (alloys with tiny temperature coefficients).\n\n### 2.2 Non-ohmic conductors\n\n**Non-ohmic** conductors show I–V curves — R = V/I varies with V:\n- **Filament lamp:** current heats the filament; resistance rises with temperature — the curve flattens at high V.\n- **Semiconductor diode:** conducts strongly only in forward bias beyond ~0.7 V; nearly blocking in reverse — an asymmetric curve.\n- **Electrolytes and thermistors:** non-linear, often with falling R as current heats them.\n\n### 2.3 Distinguishing feature\n\nThe test is the **I–V graph**: straight line through the origin ⇒ ohmic; any curvature or asymmetry ⇒ non-ohmic. Resistance \"at a point\" on a curve is often quoted as **dynamic resistance** dV/dI.\n\n### 2.4 Worked reasoning\n\n**Q (NEB-style):** Why does the resistance of a filament lamp increase as it glows?\nCurrent heats the tungsten filament to ~2500 K; lattice vibrations intensify, impeding electron drift more strongly. Since R grows with temperature, the I–V curve bends — the lamp is non-ohmic while glowing (though nearly ohmic when cold and at low current).\n\n**Q (NEB-style):** Sketch and compare the I–V characteristics of a metal wire and a diode.\nMetal: straight line through the origin in both directions. Diode: essentially zero reverse current; sharp forward rise beyond the knee voltage — a one-way valve.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 99:** ohmic behaviour is the validity condition of Ohm's law.\n- **To Topic 98:** temperature changes the drift-lattice collision rate — the microscopic cause of curvature.\n- **To thermistors:** falling-R devices enable temperature sensing.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise I–V graph interpretation and the lamp/diode comparisons as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. Distinguish ohmic and non-ohmic conductors with graphs (3m).\n2. Why does a filament's resistance rise? (2m)\n3. Sketch a diode's I–V curve (2m).\n\n### 4.3 Common examination mistakes\n\n1. Calling all conductors ohmic — temperature ruins the linearity.\n2. Forgetting the origin on the ohmic I–V line.\n3. Confusing dynamic resistance (dV/dI) with static ratio V/I on curves."
+    ],
+    "confusion": [
+      "**The I–V graph is the test:** straight through the origin = ohmic; any bend = non-ohmic.",
+      "**A glowing filament is non-ohmic** — self-heating changes R."
+    ],
+    "keyPoints": [
+      "Ohmic: I–V straight line, R constant. Non-ohmic: lamp, diode, thermistor."
+    ],
+    "importantConcepts": [
+      "**Self-heating is the usual culprit** — current changes temperature changes resistance."
+    ],
+    "examples": [
+      "***Diode*** — forward knee ~0.7 V; reverse blocking: the extreme non-ohmic device."
+    ],
+    "universalFacts": [
+      "Thermistors exploit non-ohmic behaviour deliberately — falling resistance with temperature makes them thermometers."
+    ],
+    "importantStatements": [
+      "\"Conductors whose I–V graph is a straight line through the origin obey Ohm's law; others are non-ohmic.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (graphs and comparisons 2–3m)."
+    ],
+    "examShortTricks": [
+      "\"Draw both graphs side by side; label the diode knee.\""
+    ],
+    "examNotes": [
+      "Mention manganin/constantan as ohmic standard-resistor alloys."
+    ],
+    "formulas": [
+      "- Ohmic: I = V/R (R constant)\n- Dynamic resistance: r = dV/dI\n- Filament: R ∝ T (roughly)"
+    ],
+    "practice": [
+      "Why is manganin used for standard resistors?"
+    ],
+    "practiceQuestions": [
+      "**Reasoning (2m): Why does a filament lamp's I–V curve flatten at high voltage?** — Higher current heats the filament; rising temperature raises resistance, so current grows less than proportionally — the curve bends toward the V axis."
+    ]
+  },
+  "importantConcepts": [
+    "**Self-heating is the usual culprit** — current changes temperature changes resistance."
+  ],
+  "mcqs": [
+    {
+      "question": "An ohmic conductor's I–V graph is:",
+      "options": [
+        "A curve",
+        "A straight line through the origin",
+        "A parabola",
+        "Vertical"
+      ],
+      "answer": "B",
+      "explanation": "Constant R."
+    },
+    {
+      "question": "Which is non-ohmic?",
+      "options": [
+        "Copper wire",
+        "Constantan",
+        "Semiconductor diode",
+        "Manganin"
+      ],
+      "answer": "C",
+      "explanation": "Knee curve."
+    },
+    {
+      "question": "A filament lamp's resistance rises because:",
+      "options": [
+        "Voltage adds resistance",
+        "Temperature rises with current",
+        "Electrons vanish",
+        "Of the diode knee"
+      ],
+      "answer": "B",
+      "explanation": "Self-heating."
+    },
+    {
+      "question": "The dynamic resistance is:",
+      "options": [
+        "V/I on a curve",
+        "dV/dI",
+        "Always constant",
+        "I/V"
+      ],
+      "answer": "B",
+      "explanation": "Slope of the characteristic."
+    },
+    {
+      "question": "A diode conducts strongly in:",
+      "options": [
+        "Reverse bias",
+        "Forward bias beyond the knee",
+        "Both directions",
+        "Neither"
+      ],
+      "answer": "B",
+      "explanation": "One-way valve."
+    },
+    {
+      "question": "Standard resistors use manganin because its resistance:",
+      "options": [
+        "Rises sharply",
+        "Is nearly temperature-independent",
+        "Falls with heat",
+        "Is zero"
+      ],
+      "answer": "B",
+      "explanation": "Tiny temperature coefficient."
+    },
+    {
+      "question": "A thermistor's resistance:",
+      "options": [
+        "Rises with temperature",
+        "Falls with temperature",
+        "Is constant",
+        "Is infinite"
+      ],
+      "answer": "B",
+      "explanation": "Semiconductor behaviour."
+    },
+    {
+      "question": "The ohmic I–V line must pass through:",
+      "options": [
+        "The origin",
+        "(1,1)",
+        "Any intercept",
+        "The V axis only"
+      ],
+      "answer": "A",
+      "explanation": "Zero V ⇒ zero I."
+    }
+  ]
 }

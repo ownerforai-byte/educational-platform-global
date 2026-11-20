@@ -5,68 +5,33 @@
   "topicTitle": "Potential Divider",
   "relevance": 100,
   "notes": [
-    "**Potential Divider:** This topic covers the fundamental concepts of potential divider in the physics curriculum.",
-    "Understanding potential divider is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to potential divider should be memorized and practiced regularly.",
-    "**Definition:** two or more resistors in series across a voltage source, used to obtain a fraction of the source voltage.",
-    "**Output voltage:** $V_{out} = V_{in} \\\frac{R_2}{R_1 + R_2}$, where $R_2$ is the resistor across which the output is taken.",
-    "**Why useful:** allows you to set any voltage between 0 and $V_{in}$ by adjusting the ratio of resistances.",
-    "**Loading effect:** if a load resistor $R_L$ is connected across $R_2$, the output voltage changes because $R_2$ is now in parallel with $R_L$, reducing the effective resistance.",
-    "**Potentiometer:** a continuous potential divider using a uniform resistance wire. The output voltage is proportional to the length of wire between the wiper and one end.",
-    "**Voltage divider rule:** for $n$ resistors in series, the voltage across resistor $R_i$ is $V_i = V_{total} \\\\\\\\cdot R_i / R_{total}$.",
-    "**Unloaded divider:** when no current is drawn from the output, the output voltage is exactly $V_{in} \\\\\\\\cdot R_2/(R_1 + R_2)$.",
-    "**Loaded divider analysis:** with load $R_L$ across $R_2$, the effective resistance of the lower branch becomes $R_2' = R_2 R_L/(R_2 + R_L)$. The new output is $V_{out} = V_{in} \\\\\\\\cdot R_2'/(R_1 + R_2')$.",
-    "**Design rule:** to minimize loading effects, choose $R_1, R_2 \\\\\\\\ll R_L$ so the divider draws much more current than the load.",
-    "**Potentiometer as voltage source:** a potentiometer can provide any fraction of the input voltage from 0 to $V_{in}$. The three terminals are the two ends of the resistive track and the sliding wiper.",
-    "**Current through the divider:** even with no load, the divider draws current $I = V_{in}/(R_1 + R_2)$, which causes power dissipation $P = V_{in}^2/(R_1 + R_2)$."
+    "## 1. Topic Introduction — Tapping a Fraction of a Voltage\n\nTwo resistors in series across a battery form a voltage tap: the junction sits at a fixed fraction of the supply. Slide the tap (a rheostat) and you have a volume control, a dimmer, a sensor readout — the potential divider is electronics' most humble workhorse.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The divider formula\n\nTwo resistors R₁ and R₂ in series across a source V. The same current I = V/(R₁+R₂) flows through both; the voltage across R₂ is:\n$$V_{out} = V \\times \\frac{R_2}{R_1 + R_2}$$\n— the output is a fixed *fraction* of the input, set purely by the resistance ratio.\n\n### 2.2 The potentiometer (variable divider)\n\nReplace the pair with a **rheostat/potentiometer** — a resistive track with a sliding contact:\n- The slider divides the track resistance continuously → V_out sweeps smoothly from 0 to V.\n- Volume knobs, lamp dimmers and joystick axes are all potentiometers.\n\n### 2.3 The potentiometer as an instrument (NEB 2024, 3m)\n\nThe **potentiometer** measures emf by null deflection: for a uniform wire carrying steady current, the potential drop per unit length is constant — the balancing length is proportional to emf. Each cell in turn is balanced against the wire (no galvanometer current):\n$$\\frac{E_1}{E_2} = \\frac{l_1}{l_2}$$\nBecause readings are taken at **null** (the cell supplies no current), the true emf — not the terminal voltage — is compared. This is the divider principle made exact.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** A 12 V supply feeds R₁ = 4 kΩ and R₂ = 2 kΩ in series. Find V_out across R₂.\n$$V_{out} = 12 \\times \\frac{2}{4+2} = 4 \\text{ V}$$\n\n**Q (NEB-style):** In a potentiometer, a cell balances at 150 cm; a standard 1.5 V cell balances at 100 cm. Find the unknown emf.\n$E = 1.5 \\times \\frac{150}{100} = 2.25$ V.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 101:** the divider is a series pair; the current is common.\n- **To Topic 103:** the potentiometer beats a voltmeter because it draws no current — no internal-resistance error.\n- **To sensors:** LDRs and thermistors in a divider convert light and heat into voltage.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Electricity | DC circuits | State the principle of a potentiometer. How is it used to compare the emfs of two cells? | 3 | Statement + method |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Divider numerical: find V_out (2m).\n2. Why does a potentiometer measure the true emf? (2m)\n3. Design a divider for a given output (3m).\n\n### 4.3 Common examination mistakes\n\n1. Inverting the ratio (R₁/(R₁+R₂) for the R₂ output).\n2. Forgetting that the potentiometer's null method avoids internal-resistance error.\n3. Loading the divider with a comparable resistance and expecting the unloaded fraction."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in potential divider.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding.",
-    "The output voltage of a potential divider changes when a load is connected. The simple formula $V_{out} = V_{in} \\\\\\\\cdot R_2/(R_1 + R_2)$ is only valid for the unloaded case.",
-    "A potential divider should not be used as a voltage source for high-current loads because the output voltage drops significantly. Use a voltage regulator or op-amp buffer instead.",
-    "The potential divider formula does not depend on the total voltage - only the ratio of resistances matters. Doubling all resistor values keeps the same output voltage but halves the current draw.",
-    "When using a potentiometer as a voltage divider, connecting the output to a load reduces the voltage because the load is in parallel with the lower portion of the potentiometer.",
-    "The power rating of the resistors in a potential divider matters. If $R_1 = R_2 = 1\\\\\\\\,\\\text{k}\\\\\\\\Omega$ across 12 V, each dissipates $P = V^2/R = 144/1000 = 0.144$ W. Standard 0.25 W resistors are adequate."
+    "**V_out sits across R₂** — the fraction uses the *output* resistor in the numerator.",
+    "**The potentiometer's null method** reads the true emf — no current, no internal drop."
   ],
   "practice": [
-    "Solve at least 5 problems on potential divider from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type.",
-    "A potential divider with $R_1 = 4\\\\\\\\,\\\text{k}\\\\\\\\Omega$ and $R_2 = 6\\\\\\\\,\\\text{k}\\\\\\\\Omega$ is connected across a 12 V battery. Find the output voltage across $R_2$ and the current through the divider. Solution: $V_{out} = 12 \\\times 6/(4+6) = 7.2$ V. $I = 12/(4+6) = 1.2$ mA. Check: $V_{R1} = 1.2 \\\times 4 = 4.8$ V, so $V_{out} = 12 - 4.8 = 7.2$ V.",
-    "The same divider above is loaded with a $12\\\\\\\\,\\\text{k}\\\\\\\\Omega$ resistor across $R_2$. Find the new output voltage. Solution: $R_2' = (6 \\\times 12)/(6+12) = 4\\\\\\\\,\\\text{k}\\\\\\\\Omega$. $V_{out} = 12 \\\times 4/(4+4) = 6$ V. The voltage dropped from 7.2 V to 6 V due to loading.",
-    "Design a potential divider from a 12 V source to provide 5 V with no load. The current drawn should not exceed 1 mA. Solution: $R_1 + R_2 = 12/0.001 = 12\\\\\\\\,\\\text{k}\\\\\\\\Omega$. $V_{out} = 12 \\\\\\\\cdot R_2/12000 = 5$, so $R_2 = 5000\\\\\\\\,\\\\\\\\Omega$, $R_1 = 7000\\\\\\\\,\\\\\\\\Omega$.",
-    "A potentiometer wire of length 100 cm and total resistance 10 $\\\\\\Omega$ is connected across a 2 V cell. A secondary cell of 1.5 V is balanced at 60 cm from one end. Find the internal resistance of the secondary cell. Solution: Potential gradient $= 2/100 = 0.02$ V/cm. Balancing length $l = 60$ cm gives $V_{bal} = 1.2$ V. Using the potentiometer principle, $r = R(1 - l_1/l_2)$. If $l_1$ is the balancing length with known voltage: this requires more setup - $r = R(\\\\\\\\mathcal{E}/V_{bal} - 1) = 10(1.5/1.2 - 1) = 10(0.25) = 2.5\\\\\\\\,\\\\\\\\Omega$.",
-    "A potential divider is made with $R_1 = 2\\\\\\\\,\\\text{k}\\\\\\\\Omega$ and $R_2 = 3\\\\\\\\,\\\text{k}\\\\\\\\Omega$ across 15 V. A voltmeter of resistance 10 $\\\text{k}\\\\\\\\Omega$ is connected across $R_2$. Find the voltmeter reading. Solution: $R_2' = (3 \\\times 10)/(3+10) = 2.31\\\\\\\\,\\\text{k}\\\\\\\\Omega$. $V_{out} = 15 \\\times 2.31/(2+2.31) = 15 \\\times 2.31/4.31 = 8.04$ V. Without the voltmeter, $V_{out} = 15 \\\times 3/5 = 9$ V. The voltmeter reading is lower due to its finite resistance."
+    "Why does a divider's output sag when a load is connected?"
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding potential divider builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of potential divider span engineering, physics, economics, and computer science.",
-    "The potential divider is one of the most useful circuits in electronics. It appears in volume controls, sensor interfaces, bias networks for transistors, and reference voltage generation.",
-    "A potentiometer used as a voltage divider has three terminals: two fixed ends and one sliding contact. The sliding contact divides the total resistance in any ratio.",
-    "The loading effect of a potential divider is minimized when the divider resistance is much smaller than the load resistance, but this increases power consumption. There is always a trade-off.",
-    "Potentiometers can also measure unknown voltages or internal resistances with high accuracy because at the balancing point, no current flows through the galvanometer.",
-    "A voltage divider using equal resistors ($R_1 = R_2$) produces exactly half the input voltage, regardless of the values chosen. This is the simplest potential divider."
+    "Sensor readouts (LDR, thermistor dividers) are the interface between physics and microcontrollers."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
   "examples": [
-    "Real-world application of Potential Divider",
-    "Practical demonstration of Potential Divider concepts",
-    "Diagram-based question on Potential Divider",
-    "Application in daily life involving Potential Divider"
+    "***Volume knob*** — a slider sweeping the divider fraction 0→1."
   ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Potential Divider.",
-    "Q3. Differentiate between various aspects of Potential Divider.",
-    "Q4. Derive the key formula related to Potential Divider.",
-    "Q5. What are the applications of Potential Divider?"
+    "**Numerical (2m): 10 V across 3 kΩ and 2 kΩ in series. Find the voltage across the 2 kΩ.** — V = 10 × 2/5 = 4 V."
   ],
-  "formulas": [],
-  "summary": "Potential Divider is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "formulas": [
+    "- V_out = V R₂/(R₁+R₂)\n- Potentiometer: E₁/E₂ = l₁/l₂\n- Drop per length k = IR_uniform"
+  ],
+  "summary": "A **potential divider** — two series resistors across a source — delivers an output fraction of the input: $V_{out} = V\\frac{R_2}{R_1+R_2}$; a potentiometer makes the fraction continuously adjustable (volume controls, dimmers). As an instrument, the **potentiometer** exploits a uniform wire's constant drop per unit length: balancing each cell against the wire at null deflection compares emfs by lengths, $E_1/E_2 = l_1/l_2$ (NEB 2024, 3m) — accurate because at null the cell supplies no current, so no internal-resistance drop corrupts the reading. Dividers also translate sensor resistance into voltage, the front door of every measurement chain.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Potential Divider applies",
     "Note 2: Potential Divider connects to multiple other topics in Science",
@@ -75,23 +40,13 @@
     "Note 5: Potential Divider frequently appears in examination questions"
   ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Potential Divider",
-    "Note 3: Potential Divider has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Potential Divider",
-    "Note 5: Cross-check your answers using alternative methods for Potential Divider"
+    "Verified PYQ: potentiometer principle + emf comparison (2024, 3m)."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Potential Divider formula",
-    "Trick 2: Elimination technique for Potential Divider MCQs",
-    "Trick 3: Dimensional analysis shortcut for Potential Divider",
-    "Trick 4: Memory aid for Potential Divider formulas",
-    "Trick 5: Time-saving approach for Potential Divider problems"
+    "\"E₁/E₂ = l₁/l₂ — lengths replace emfs.\""
   ],
   "examNotes": [
-    "Focus on numerical problems from Potential Divider",
-    "Practice previous year questions on Potential Divider",
-    "Learn the derivations for Potential Divider thoroughly",
-    "Review common mistakes related to Potential Divider"
+    "Mention 'null deflection' and 'no current drawn' — the reason for accuracy."
   ],
   "mcs": [
     {
@@ -136,11 +91,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Potential Divider",
-    "Concept 2: Key theorem or principle in Potential Divider",
-    "Concept 3: Important application area of Potential Divider",
-    "Concept 4: Fundamental relationship in Potential Divider",
-    "Concept 5: Connection between Potential Divider and other topics"
+    "**A divider taps a fraction; a potentiometer taps any fraction continuously.**"
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Potential Divider",
@@ -155,6 +106,145 @@
     "**Design Trade-off:** To minimize loading effects, the divider resistance ($R_1 + R_2$) should be much smaller than $R_L$. However, this increases power dissipation ($P = V_{in}^2/(R_1 + R_2)$). The designer must balance voltage stability against power efficiency."
   ],
   "visualType": "potential-divider",
-  "keyPoints": [],
-  "importantStatements": []
+  "keyPoints": [
+    "V_out = V × R₂/(R₁+R₂); potentiometer: E ∝ balancing length."
+  ],
+  "importantStatements": [
+    "\"For a uniform potentiometer wire carrying steady current, the potential drop per unit length is constant.\""
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Tapping a Fraction of a Voltage\n\nTwo resistors in series across a battery form a voltage tap: the junction sits at a fixed fraction of the supply. Slide the tap (a rheostat) and you have a volume control, a dimmer, a sensor readout — the potential divider is electronics' most humble workhorse.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The divider formula\n\nTwo resistors R₁ and R₂ in series across a source V. The same current I = V/(R₁+R₂) flows through both; the voltage across R₂ is:\n$$V_{out} = V \\times \\frac{R_2}{R_1 + R_2}$$\n— the output is a fixed *fraction* of the input, set purely by the resistance ratio.\n\n### 2.2 The potentiometer (variable divider)\n\nReplace the pair with a **rheostat/potentiometer** — a resistive track with a sliding contact:\n- The slider divides the track resistance continuously → V_out sweeps smoothly from 0 to V.\n- Volume knobs, lamp dimmers and joystick axes are all potentiometers.\n\n### 2.3 The potentiometer as an instrument (NEB 2024, 3m)\n\nThe **potentiometer** measures emf by null deflection: for a uniform wire carrying steady current, the potential drop per unit length is constant — the balancing length is proportional to emf. Each cell in turn is balanced against the wire (no galvanometer current):\n$$\\frac{E_1}{E_2} = \\frac{l_1}{l_2}$$\nBecause readings are taken at **null** (the cell supplies no current), the true emf — not the terminal voltage — is compared. This is the divider principle made exact.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** A 12 V supply feeds R₁ = 4 kΩ and R₂ = 2 kΩ in series. Find V_out across R₂.\n$$V_{out} = 12 \\times \\frac{2}{4+2} = 4 \\text{ V}$$\n\n**Q (NEB-style):** In a potentiometer, a cell balances at 150 cm; a standard 1.5 V cell balances at 100 cm. Find the unknown emf.\n$E = 1.5 \\times \\frac{150}{100} = 2.25$ V.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 101:** the divider is a series pair; the current is common.\n- **To Topic 103:** the potentiometer beats a voltmeter because it draws no current — no internal-resistance error.\n- **To sensors:** LDRs and thermistors in a divider convert light and heat into voltage.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Electricity | DC circuits | State the principle of a potentiometer. How is it used to compare the emfs of two cells? | 3 | Statement + method |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Divider numerical: find V_out (2m).\n2. Why does a potentiometer measure the true emf? (2m)\n3. Design a divider for a given output (3m).\n\n### 4.3 Common examination mistakes\n\n1. Inverting the ratio (R₁/(R₁+R₂) for the R₂ output).\n2. Forgetting that the potentiometer's null method avoids internal-resistance error.\n3. Loading the divider with a comparable resistance and expecting the unloaded fraction."
+    ],
+    "confusion": [
+      "**V_out sits across R₂** — the fraction uses the *output* resistor in the numerator.",
+      "**The potentiometer's null method** reads the true emf — no current, no internal drop."
+    ],
+    "keyPoints": [
+      "V_out = V × R₂/(R₁+R₂); potentiometer: E ∝ balancing length."
+    ],
+    "importantConcepts": [
+      "**A divider taps a fraction; a potentiometer taps any fraction continuously.**"
+    ],
+    "examples": [
+      "***Volume knob*** — a slider sweeping the divider fraction 0→1."
+    ],
+    "universalFacts": [
+      "Sensor readouts (LDR, thermistor dividers) are the interface between physics and microcontrollers."
+    ],
+    "importantStatements": [
+      "\"For a uniform potentiometer wire carrying steady current, the potential drop per unit length is constant.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: potentiometer principle + emf comparison (2024, 3m)."
+    ],
+    "examShortTricks": [
+      "\"E₁/E₂ = l₁/l₂ — lengths replace emfs.\""
+    ],
+    "examNotes": [
+      "Mention 'null deflection' and 'no current drawn' — the reason for accuracy."
+    ],
+    "formulas": [
+      "- V_out = V R₂/(R₁+R₂)\n- Potentiometer: E₁/E₂ = l₁/l₂\n- Drop per length k = IR_uniform"
+    ],
+    "practice": [
+      "Why does a divider's output sag when a load is connected?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (2m): 10 V across 3 kΩ and 2 kΩ in series. Find the voltage across the 2 kΩ.** — V = 10 × 2/5 = 4 V."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "The divider output across R₂ is:",
+      "options": [
+        "V R₁/(R₁+R₂)",
+        "V R₂/(R₁+R₂)",
+        "V(R₁+R₂)/R₂",
+        "VR₁R₂"
+      ],
+      "answer": "B",
+      "explanation": "Ratio of output resistor."
+    },
+    {
+      "question": "A potentiometer measures emf accurately because:",
+      "options": [
+        "It is digital",
+        "No current is drawn at null",
+        "It uses AC",
+        "Of low cost"
+      ],
+      "answer": "B",
+      "explanation": "No internal drop error."
+    },
+    {
+      "question": "NEB 2024: the potentiometer compares emfs via:",
+      "options": [
+        "Current ratio",
+        "Balancing lengths",
+        "Resistance ratio",
+        "Power ratio"
+      ],
+      "answer": "B",
+      "explanation": "E ∝ l."
+    },
+    {
+      "question": "The potentiometer's wire must be:",
+      "options": [
+        "Thick",
+        "Uniform",
+        "Short",
+        "Insulated"
+      ],
+      "answer": "B",
+      "explanation": "Constant drop per length."
+    },
+    {
+      "question": "At null deflection the galvanometer current is:",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Half",
+        "Negative"
+      ],
+      "answer": "B",
+      "explanation": "Balanced."
+    },
+    {
+      "question": "A cell balancing at 150 cm vs 100 cm for 1.5 V gives:",
+      "options": [
+        "1.0 V",
+        "2.25 V",
+        "3.0 V",
+        "1.5 V"
+      ],
+      "answer": "B",
+      "explanation": "1.5 × 1.5."
+    },
+    {
+      "question": "12 V across 4 kΩ and 2 kΩ: output across 2 kΩ =",
+      "options": [
+        "8 V",
+        "4 V",
+        "6 V",
+        "2 V"
+      ],
+      "answer": "B",
+      "explanation": "12 × 2/6."
+    },
+    {
+      "question": "Divider outputs sag under load because:",
+      "options": [
+        "The source weakens",
+        "The load draws current, changing the division",
+        "Resistance falls",
+        "Of heating only"
+      ],
+      "answer": "B",
+      "explanation": "Loading effect."
+    }
+  ]
 }

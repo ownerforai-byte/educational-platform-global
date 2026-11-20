@@ -126,13 +126,13 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 95 | Capacitor (4h) | Combination of capacitors | `03-combination-of-capacitors.json` | **Completed** |
 | 96 | Capacitor (4h) | Energy of charged capacitor | `04-energy-of-charged-capacitor.json` | **Completed** |
 | 97 | Capacitor (4h) | Effect of a dielectric: polarization and displacement | `05-effect-of-a-dielectric-polarization-and-displacement.json` | **Completed** |
-| 98 | DC Circuits (7h) | Electric currents; drift velocity and its relation with current | TBD | Not started |
-| 99 | DC Circuits (7h) | Ohm's law; electrical resistance; resistivity; conductivity | TBD | Not started |
-| 100 | DC Circuits (7h) | Current-voltage relations; ohmic and non-ohmic resistance | TBD | Not started |
-| 101 | DC Circuits (7h) | Resistances in series and parallel | TBD | Not started |
+| 98 | DC Circuits (7h) | Electric currents; drift velocity and its relation with current | `01-electric-currents-drift-velocity-and-its-relation-with-current.json` | **Completed** |
+| 99 | DC Circuits (7h) | Ohm's law; electrical resistance; resistivity; conductivity | `02-ohm-s-law-electrical-resistance-resistivity-conductivity.json` | **Completed** |
+| 100 | DC Circuits (7h) | Current-voltage relations; ohmic and non-ohmic resistance | `01-electric-currents-drift-velocity-and-its-relation-with-current.json` | **Completed** |
+| 101 | DC Circuits (7h) | Resistances in series and parallel | `04-resistances-in-series-and-parallel.json` | **Completed** |
 | 102 | DC Circuits (7h) | Potential divider | `01-potential-difference-potential-due-to-a-point-charge-potential-energy-electron-volt.json` | **Completed** |
-| 103 | DC Circuits (7h) | Electromotive force of a source, internal resistance | TBD | Not started |
-| 104 | DC Circuits (7h) | Work and power in electrical circuits | TBD | Not started |
+| 103 | DC Circuits (7h) | Electromotive force of a source, internal resistance | `06-electromotive-force-of-a-source-internal-resistance.json` | **Completed** |
+| 104 | DC Circuits (7h) | Work and power in electrical circuits | `07-work-and-power-in-electrical-circuits.json` | **Completed** |
 | 105 | Nuclear Physics (6h) | Nucleus: discovery of nucleus | TBD | Not started |
 | 106 | Nuclear Physics (6h) | Nuclear density; mass number; atomic number | TBD | Not started |
 | 107 | Nuclear Physics (6h) | Atomic mass; isotopes | TBD | Not started |
@@ -171,3 +171,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 20 — Unit 20 Electric Field (3 topics) upgraded: field due to point charges & field lines (dipole too); Gauss’s law & electric flux (plane sheet); applications of Gauss’s law (spherical shell, line charge, conducting plane). Verified PYQs used: E from 4 μC 2023 3m, E from 6 μC 2024 2m, midpoint cancellation 2020 3m, field-line properties 2024 2m, dipole 2024 3m, Gauss + plane sheet 2023 5m & 2024 5m, shell 2024 5m, zero field in conductor 2024 2m. Next: Unit 21 Potential (3 topics).
 - Session 21 — Unit 21 Potential (3 topics) upgraded: potential difference, point-charge potential, potential energy & electron volt; equipotential surfaces; potential gradient (E = −dV/dr, shell interior). Verified PYQs used: definitions 2021 2m, volt MCQ 2023 1m, W–V–n 2022 4m, eV numerical 2020 3m, V numerical 2024 2m, eV definition 2024 2m, PE numerical 2024 3m, equipotential properties 2024 3m, potential+unit+E–V 2024 3m, hollow sphere 2024 3m. Next: Unit 22 Capacitor (5 topics).
 - Session 22 — Unit 22 Capacitor (5 topics) upgraded: capacitance & capacitor; parallel plate capacitor (derivation C = ε₀A/d); combination of capacitors; energy of charged capacitor; effect of a dielectric (polarization). Verified PYQs used: uses 2024 2m, capacitance derivation 2023 5m & 2024 5m, 177 pF numerical 2024 3m, series/parallel 2024 3m, 0.03 J 2022 3m, 0.06 J 2024 2m, dielectric explanation 2024 3m. Next: Unit 23 DC Circuits (7 topics).
+- Session 23 — Unit 23 DC Circuits (7 topics) upgraded: current & drift velocity (I = neAv_d); Ohm’s law & resistivity; ohmic/non-ohmic I–V relations; resistances in series & parallel (+ Wheatstone bridge); potential divider (+ potentiometer); emf & internal resistance (+ Kirchhoff’s laws); work & power in circuits. Verified PYQs used: drift derivation 2024 3m, Kirchhoff 2022 5m & 2024 5m, 2-3-6 Ω parallel 2021 4m, 6/3 Ω parallel 2024 3m, Wheatstone 2024 3m, potentiometer 2024 3m, terminal voltage 2024 3m. Ohm’s law, ohmic/non-ohmic, work & power: NEB-style practice. Next: Unit 24 Nuclear Physics (7 topics).
