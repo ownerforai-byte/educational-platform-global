@@ -30,5 +30,21 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Two causes, two directions — high pressure: molecular volume matters (V_observed > V_ideal); low temperature: attraction matters (P_observed < P_ideal).",
+    "Trick 2: Compressibility Z = PV/nRT: Z = 1 ideal, Z > 1 repulsion-dominated, Z < 1 attraction-dominated — quote Z to classify any deviation.",
+    "Trick 3: Boyle temperature: the one temperature where a real gas behaves ideally over a pressure range (Z = 1).",
+    "Trick 4: van der Waals corrections in one line: (P + a n²/V²)(V − nb) = nRT — 'a' for attraction, 'b' for molecular size."
+  ],
+  "keyPoints": [
+    "Real gases deviate from PV = nRT at high pressure and low temperature.",
+    "Positive deviation: repulsive forces dominate; negative: attractive forces dominate.",
+    "Compressibility factor Z = PV/nRT measures ideality.",
+    "van der Waals equation adds attraction (a) and volume (b) corrections."
+  ],
+  "practiceQuestions": [
+    "Q. Why do real gases deviate at high pressure? (2 marks) — molecules occupy a finite volume; the free volume is less than V, so PV/nRT > 1.",
+    "Q. What is the compressibility factor for an ideal gas? (1 mark) — Z = 1."
   ]
 }

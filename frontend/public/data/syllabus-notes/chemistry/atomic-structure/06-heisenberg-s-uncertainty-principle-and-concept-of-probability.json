@@ -45,5 +45,19 @@
       ],
       "answer": "B"
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Δx·Δp ≥ h/4π — the h/4π (not h/2π) constant is the classic 1-mark trap.",
+    "Trick 2: Significance in one line: exact position and exact momentum of an electron cannot be known together — hence orbits become orbitals (probability pictures).",
+    "Trick 3: Numerical: given Δx, find Δv — Δp = mΔv, so Δv = h/(4π·m·Δx)."
+  ],
+  "keyPoints": [
+    "It is impossible to determine position and momentum of a microscopic particle simultaneously with certainty.",
+    "Δx · Δp ≥ h/4π.",
+    "Consequence: atomic pictures use orbitals — regions of maximum probability (ψ²)."
+  ],
+  "practiceQuestions": [
+    "Q. Why did the uncertainty principle reject Bohr's orbits? (1 mark) — Bohr fixed both radius (position) and velocity (momentum) exactly, which is forbidden.",
+    "Q. Calculate Δv if Δx = 1 Å for an electron. (2 marks) — Δv = 6.63e-34/(4π × 9.1e-31 × 1e-10) ≈ 5.8 × 10^5 m/s."
   ]
 }

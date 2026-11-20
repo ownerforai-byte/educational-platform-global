@@ -41,5 +41,20 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: % → grams (take 100 g) → divide each % by atomic mass → divide all by the SMALLEST quotient → simplest whole-number ratio = empirical formula.",
+    "Trick 2: If a ratio lands near .5, .33 or .67, multiply ALL numbers by 2, 3 or 3 respectively — never round 0.5 to 0 or 1.",
+    "Trick 3: n = molecular mass / empirical-formula mass; molecular formula = (empirical formula)n.",
+    "Trick 4: Combustion data: moles of CO2 = moles of C; half the moles of H2O = moles of H2 (each H2O carries 2 H)."
+  ],
+  "keyPoints": [
+    "Empirical formula = simplest whole-number atom ratio; molecular formula = actual number of atoms.",
+    "Molecular formula = n × empirical formula, n = M / (empirical formula mass).",
+    "Percent-to-mole: divide mass % by atomic mass, then normalise to the smallest."
+  ],
+  "practiceQuestions": [
+    "Q. A compound has C 40%, H 6.67%, O 53.33%; M = 180. Find the molecular formula. (4 marks) — ratios 3.33 : 6.67 : 3.33 → 1:2:1 → CH2O; n = 180/30 = 6 → C6H12O6.",
+    "Q. 0.2 g of an organic compound on combustion gives 0.294 g CO2 and 0.12 g H2O. Find the empirical formula. (3 marks) — C = 0.294 × 12/44 = 0.08 g; H = 0.12 × 2/18 = 0.0133 g; ratio C:H ≈ 1:1 → CH."
   ]
 }

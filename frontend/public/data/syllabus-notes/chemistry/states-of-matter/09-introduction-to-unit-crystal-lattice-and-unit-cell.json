@@ -30,5 +30,20 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Definitions in one line each — lattice: 3-D array of points; unit cell: smallest repeating unit that builds the whole crystal by translation.",
+    "Trick 2: Seven crystal systems by edge/angle parameters (a,b,c; α,β,γ); cubic is the exam default (a = b = c, α = β = γ = 90°).",
+    "Trick 3: Atom counts per cubic cell: simple = 1 (8 × 1/8), BCC = 2 (8 × 1/8 + 1), FCC = 4 (8 × 1/8 + 6 × 1/2)."
+  ],
+  "keyPoints": [
+    "Crystal lattice: regular 3-D arrangement of points representing the pattern of particles.",
+    "Unit cell: the smallest portion which, repeated in space, generates the whole lattice.",
+    "Seven primitive crystal systems; cubic, tetragonal, orthorhombic are common.",
+    "Particles per unit cell: sc = 1, bcc = 2, fcc = 4."
+  ],
+  "practiceQuestions": [
+    "Q. Define unit cell with one example. (1 mark) — smallest repeating block; NaCl cubic unit cell.",
+    "Q. Calculate the number of atoms per BCC unit cell. (2 marks) — 8 corners × 1/8 + 1 body centre = 2."
   ]
 }

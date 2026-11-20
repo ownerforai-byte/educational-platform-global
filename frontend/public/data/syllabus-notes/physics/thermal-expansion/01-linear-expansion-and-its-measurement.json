@@ -54,5 +54,19 @@
   "animation3D": "thermal-expansion",
   "motionGraphics": "thermal-expansion",
   "visualType": "thermal-expansion",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "examShortTricks": [
+    "Trick 1: One formula family: l = l0(1 + αΔT); Δl = l0αΔT. Given any three of l, l0, α, ΔT, substitute directly — always keep temperatures in the SAME scale (difference is same in °C and K).",
+    "Trick 2: α of the material decides the gap problem: a rod expands Δl = lαΔT; if a gap is smaller than Δl the rod buckles — classic 2-mark reasoning.",
+    "Trick 3: For a pendulum, length increase slows the clock: T ∝ √l; quote 'pendulum clocks lose time in summer' as the application."
+  ],
+  "keyPoints": [
+    "Linear expansion: Δl = l0 α ΔT, α = coefficient of linear expansion.",
+    "Area expansion: ΔA = 2α A0 ΔT; volume: ΔV = 3α V0 ΔT (β = 3α).",
+    "Applications: bimetallic strips, expansion gaps in rails and bridges."
+  ],
+  "practiceQuestions": [
+    "Q. A steel rod is 1 m at 0 °C; α = 1.2 × 10^-5 K^-1. Find its length at 40 °C. (2 marks) — l = 1(1 + 1.2e-5 × 40) = 1.00048 m.",
+    "Q. Why are small gaps left between railway rails? (1 mark) — to allow thermal expansion in summer without buckling."
+  ]
 }

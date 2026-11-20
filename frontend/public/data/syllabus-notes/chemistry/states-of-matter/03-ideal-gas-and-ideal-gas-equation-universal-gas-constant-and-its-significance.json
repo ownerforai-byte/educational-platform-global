@@ -41,5 +41,21 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: PV = nRT with R = 0.0821 L atm K^-1 mol^-1 when P in atm and V in litres; SI value 8.314 J K^-1 mol^-1 — pick R to match the units given.",
+    "Trick 2: Same-gas comparison: P1V1/T1 = P2V2/T2 (n cancels); different-gas comparison: use PV = nRT and solve for the missing variable.",
+    "Trick 3: Density form: PM = dRT — molar mass from density, or density from M, in one substitution.",
+    "Trick 4: Significance of R: work done per mole per kelvin — same for ALL gases (universal)."
+  ],
+  "keyPoints": [
+    "Ideal gas equation: PV = nRT.",
+    "R = 8.314 J K^-1 mol^-1 = 0.0821 L atm K^-1 mol^-1 = 2 cal K^-1 mol^-1.",
+    "Universal gas constant has the same value for every gas.",
+    "PM = dRT links density and molar mass."
+  ],
+  "practiceQuestions": [
+    "Q. 2 g of a gas occupies 1.12 L at STP. Find M. (2 marks) — n = 1.12/22.4 = 0.05; M = 2/0.05 = 40 g/mol.",
+    "Q. Find the pressure of 0.5 mol gas in 10 L at 27 °C. (2 marks) — P = nRT/V = 0.5 × 0.0821 × 300/10 = 1.23 atm."
   ]
 }

@@ -55,5 +55,20 @@
   "animation3D": "rate-of-heat-flow",
   "motionGraphics": "rate-of-heat-flow",
   "visualType": "vsepr-theory",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "examShortTricks": [
+    "Trick 1: Define in one line: heat transfer by actual movement of fluid particles (density change with temperature) — the word 'actual movement' separates it from conduction.",
+    "Trick 2: Natural vs forced: natural convection is density-driven (sea breeze, room heater); forced uses a pump/fan — one example pair earns both marks.",
+    "Trick 3: Newton's law of cooling: dQ/dt = k(θ − θ0) — quote for the quantitative side and the 'rate proportional to temperature difference' phrase."
+  ],
+  "keyPoints": [
+    "Convection: heat carried by the bulk motion of the fluid itself.",
+    "Hot fluid expands, becomes lighter and rises; cooler fluid sinks — a convection current.",
+    "Natural convection needs no external agency; forced convection uses fans/pumps.",
+    "Cannot occur in solids; needs a fluid medium."
+  ],
+  "practiceQuestions": [
+    "Q. Why do liquids and gases mainly transfer heat by convection? (1 mark) — their particles can move freely; conduction is poor in fluids.",
+    "Q. What creates a sea breeze? (2 marks) — land heats faster; warm air over land rises, cool sea air flows in to replace it."
+  ]
 }

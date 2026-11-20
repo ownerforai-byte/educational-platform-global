@@ -41,5 +41,21 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Fill by (n + l) rule; for equal (n + l), lower n fills first — that is why 4s (4+0) fills before 3d (3+2).",
+    "Trick 2: Hund's rule in one phrase: degenerate orbitals fill singly first, with parallel spins, before pairing.",
+    "Trick 3: Exceptional configurations are guaranteed 2-mark questions: Cr = [Ar]3d5 4s1 and Cu = [Ar]3d10 4s1 — reason: exactly half-filled and fully-filled d subshells gain extra stability (exchange energy).",
+    "Trick 4: Pauli check: no two electrons in the same orbital share all four quantum numbers — max 2 per orbital, opposite spins."
+  ],
+  "keyPoints": [
+    "Aufbau: orbitals fill in increasing energy order (n + l rule).",
+    "Pauli: an orbital holds at most two electrons with opposite spins.",
+    "Hund: pairing in degenerate orbitals starts only after each has one electron.",
+    "Cr and Cu show half-filled/fully-filled d-subshell stability."
+  ],
+  "practiceQuestions": [
+    "Q. Write the electronic configuration of Cr (Z = 24) and explain the exception. (3 marks) — [Ar] 3d5 4s1; half-filled d5 plus 4s1 maximises exchange energy and symmetry.",
+    "Q. Why is 4s filled before 3d? (1 mark) — lower (n + l) value: 4s has 4, 3d has 5."
   ]
 }

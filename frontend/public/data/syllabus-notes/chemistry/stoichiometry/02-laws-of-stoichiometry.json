@@ -26,5 +26,14 @@
     "See individual topic files for detailed explanations and examples."
   ],
   "summary": "Overview reference for the five laws of stoichiometry. Detailed content is available in the individual concept files for each law.",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "examShortTricks": [
+    "Trick 1: Match law to example in one line — conservation of mass: 2H2 + O2 -> 2H2O (mass of reactants = mass of products); definite proportions: pure water is always H2O in 1:8 ratio; multiple proportions: CO and CO2.",
+    "Trick 2: For multiple proportions, fix the mass of ONE element and compare the variable element — in CO and CO2, 12 g C combines with 16 g and 32 g O: ratio 16:32 = 1:2 (simple whole number).",
+    "Trick 3: Reciprocal proportions: two elements combining with a THIRD in simple ratios also combine with each other in simple ratios — C:H = 3:1 (CH4), H:O = 1:8 (H2O), so C:O = 3:8 (CO2)."
+  ],
+  "practiceQuestions": [
+    "Q. CO and CO2 illustrate which law? Show the calculation. (2 marks) — Multiple proportions: fixed 12 g C combines with 16 g O (CO) and 32 g O (CO2); 16:32 = 1:2.",
+    "Q. 1.375 g of cupric oxide gave 1.100 g Cu on reduction; 1.79 g of copper gave 2.245 g cupric oxide. Show the law illustrated. (3 marks) — Cu:O ratio is the same (≈ 4:1) in both samples → law of definite proportions."
+  ]
 }

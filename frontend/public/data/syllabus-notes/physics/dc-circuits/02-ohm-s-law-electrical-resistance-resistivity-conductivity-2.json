@@ -54,5 +54,21 @@
     "**Conductivity Definition:** Conductivity ($\\sigma = 1/\rho$) is the proportionality constant in the microscopic Ohm's law $\\vec{J} = \\sigma \\vec{E}$, where $\\vec{J}$ is current density and $\\vec{E}$ is the electric field. This form is valid for homogeneous, isotropic materials."
   ],
   "visualType": "ohms-law",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "examShortTricks": [
+    "Trick 1: Law statement with condition: V ∝ I at constant temperature — 'constant temperature' is the scoring phrase because resistance drifts when hot.",
+    "Trick 2: R = ρl/A; conductivity σ = 1/ρ — combine to R = l/(σA); every wire numerical is one substitution.",
+    "Trick 3: Stretching a wire to n times its length: R multiplies by n² (length n, area 1/n) — the classic 2-mark numerical.",
+    "Trick 4: V–I graph of an ohmic conductor is a straight line through the origin whose slope is R."
+  ],
+  "keyPoints": [
+    "Ohm's law: V = IR at constant temperature.",
+    "Resistance R = ρ l/A; resistivity ρ is a material property.",
+    "Conductivity σ = 1/ρ; unit siemens per metre.",
+    "Resistance increases with temperature for metals."
+  ],
+  "practiceQuestions": [
+    "Q. A wire is stretched to double its length. What happens to its resistance? (2 marks) — R' = 4R (length doubles, area halves).",
+    "Q. Find R of a 2 m copper wire, A = 1 mm², ρ = 1.7 × 10^-8 Ωm. (2 marks) — R = 1.7e-8 × 2/1e-6 = 0.034 Ω."
+  ]
 }

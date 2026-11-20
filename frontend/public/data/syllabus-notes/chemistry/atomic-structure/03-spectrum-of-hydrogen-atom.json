@@ -68,5 +68,19 @@
       ],
       "answer": "A"
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Name the series by the FALL-TO orbit: Lyman → n=1 (UV), Balmer → n=2 (visible), Paschen → n=3, Brackett → n=4, Pfund → n=5 (all IR).",
+    "Trick 2: Rydberg numerical: 1/λ = R(1/n1² − 1/n2²), R = 1.097 × 10^7 m^-1 — plug n1 (lower) and n2 (higher) directly.",
+    "Trick 3: Balmer's first line (Hα, 3→2) is 6563 Å (red) — quoting it saves the full calculation in 'name the line' questions."
+  ],
+  "keyPoints": [
+    "Hydrogen spectrum is a line spectrum explained by electron jumps between quantised orbits.",
+    "Five series: Lyman (UV), Balmer (visible), Paschen, Brackett, Pfund (infrared).",
+    "Wavenumber obeys 1/λ = R_H (1/n1² − 1/n2²)."
+  ],
+  "practiceQuestions": [
+    "Q. Which transition gives the first line of the Balmer series and its colour? (2 marks) — n=3 → n=2, red, λ = 6563 Å.",
+    "Q. Calculate λ for the transition n=2 → n=1 in hydrogen. (3 marks) — 1/λ = 1.097e7 (1 − 1/4) = 8.23e6 → λ ≈ 1.215 × 10^-7 m (Lyman, UV)."
   ]
 }

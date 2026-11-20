@@ -10,96 +10,160 @@
   "tabGroup": "04-cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances",
   "mcqs": [
     {
-      "question": "In Anaphase I of meiosis, what separates?",
+      "question": "DNA replication occurs during which phase of the cell cycle?",
+      "options": [
+        "G₁ phase",
+        "S phase",
+        "G₂ phase",
+        "M phase"
+      ],
+      "answer": "B",
+      "explanation": "The synthesis (S) phase replicates DNA so each chromosome becomes two sister chromatids; G₁ grows, G₂ prepares for division."
+    },
+    {
+      "question": "Chromosomes align on the equatorial plate during:",
+      "options": [
+        "Prophase",
+        "Metaphase",
+        "Anaphase",
+        "Telophase"
+      ],
+      "answer": "B",
+      "explanation": "Metaphase lines chromosomes at the equator with spindle fibres attached — the best stage for chromosome counting/karyotyping."
+    },
+    {
+      "question": "During anaphase I of meiosis, what separates?",
       "options": [
         "Sister chromatids",
         "Homologous chromosomes",
         "Centromeres",
-        "Nuclear envelopes"
+        "Nucleoli"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Anaphase I pulls whole homologous chromosomes to opposite poles; centromeres do NOT split until anaphase II."
     },
     {
-      "question": "Cytokinesis in animal cells occurs by:",
+      "question": "Crossing over occurs during which substage of prophase I?",
       "options": [
-        "Cell plate",
-        "Cleavage furrow",
-        "Binary fission",
-        "Growth"
+        "Leptotene",
+        "Zygotene",
+        "Pachytene",
+        "Diakinesis"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "Pachytene: recombination nodules appear and non-sister chromatids exchange segments; chiasmata become visible at diplotene."
     },
     {
-      "question": "The two sources of meiotic variation are:",
+      "question": "Synapsis of homologous chromosomes occurs during:",
       "options": [
-        "Crossing over + independent assortment",
-        "Mutation + drift",
-        "G1 + S",
-        "Anaphase + telophase"
+        "Leptotene",
+        "Zygotene",
+        "Diplotene",
+        "Telophase I"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Zygotene pairs homologs (synapsis) with formation of the synaptonemal complex, creating bivalents."
     },
     {
-      "question": "Down syndrome is caused by:",
+      "question": "Plant cytokinesis differs from animal cytokinesis because plants form:",
       "options": [
-        "Mitotic error",
-        "Meiotic non-disjunction (trisomy 21)",
-        "A virus",
-        "Poor diet"
+        "A cleavage furrow",
+        "A cell plate from Golgi vesicles",
+        "A contractile ring",
+        "Four daughter cells"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Golgi vesicles fuse at the equator forming the cell plate, growing outward to become the new wall; the rigid wall cannot be pinched like an animal membrane."
+    },
+    {
+      "question": "How many cells result from one meiotic event?",
+      "options": [
+        "2 identical diploid",
+        "2 haploid",
+        "4 identical haploid",
+        "4 genetically different haploid"
+      ],
+      "answer": "D",
+      "explanation": "One replication + two divisions yield four haploid cells, each genetically unique because of crossing over and independent assortment."
+    },
+    {
+      "question": "Interkinesis is the stage between:",
+      "options": [
+        "G₁ and S",
+        "Meiosis I and meiosis II",
+        "Prophase and metaphase",
+        "Two mitotic cycles"
+      ],
+      "answer": "B",
+      "explanation": "Interkinesis (with no DNA replication) separates meiosis I from meiosis II."
+    },
+    {
+      "question": "Which cells typically remain in G₀ and rarely divide?",
+      "options": [
+        "Skin cells",
+        "Bone marrow cells",
+        "Mature neurons",
+        "Intestinal lining cells"
+      ],
+      "answer": "C",
+      "explanation": "Mature neurons and cardiac muscle cells are permanent G₀ cells; skin, marrow and gut lining divide constantly."
+    },
+    {
+      "question": "Amitosis differs from mitosis because it:",
+      "options": [
+        "Forms a spindle",
+        "Condenses chromosomes precisely",
+        "Divides the nucleus by simple constriction",
+        "Produces four cells"
+      ],
+      "answer": "C",
+      "explanation": "Amitosis (Remak, 1841) is direct nuclear constriction without spindle or precise chromosome behaviour — chromatin distribution is unequal."
     }
   ],
   "visualType": "mitosis-vs-meiosis",
   "enrichedContent": {
     "notes": [
-      "DETAILED CELL DIVISION: the full cell cycle and every mitotic/meiotic phase.",
-      "Interphase (90% of the cycle): G1 (growth, organelle duplication, protein synthesis), S (DNA replication — each chromosome now has 2 sister chromatids), G2 (preparation for mitosis, checkpoint).",
-      "Checkpoints: G1/S (DNA damage, nutrients), G2/M (replication complete), M (spindle attachment) — failures cause cancer.",
-      "Mitosis phases (PMAT): Prophase (chromatin → chromosomes, spindle forms, nuclear envelope breaks), Metaphase (chromosomes align at the equatorial plate, spindle fibres attached to centromeres), Anaphase (centromeres split, sister chromatids pulled to opposite poles), Telophase (chromosomes decondense, nuclear envelopes reform, cytokinesis).",
-      "Cytokinesis: animal cells — cleavage furrow (actin); plant cells — cell plate → new wall.",
-      "Meiosis: two divisions. Meiosis I (reductional): Prophase I (chromosomes pair = synapsis; crossing over between non-sister chromatids), Metaphase I (homologous pairs at the equator; independent assortment), Anaphase I (homologs separate), Telophase I. Meiosis II (equational): like mitosis but no DNA replication; sister chromatids separate.",
-      "Outcome: meiosis → 4 haploid (n) genetically distinct cells; mitosis → 2 diploid (2n) identical cells.",
-      "Crossing over (Prophase I) + independent assortment (Metaphase I) = the two sources of meiotic variation.",
-      "Amitosis (direct division): simple karyokinesis; rare — described in some protozoans, yeasts/some fungi and certain pathological or regenerating cells.",
-      "Errors: mitotic errors → uncontrolled division = cancer; meiotic non-disjunction → aneuploidy (e.g., Down syndrome = usually trisomy 21).",
-      "Significance: mitosis = growth, repair, asexual reproduction; meiosis = gamete formation + genetic diversity.",
-      "NEB focus: the full cell cycle, all mitotic and meiotic phases, variation, and errors."
+      "## 1. Topic Introduction — How Life Copies Itself at the Cellular Level\n\nA cell's life is a cycle of growth, DNA copying and division. Every scar that heals, every root that grows, every sperm and egg that carries your genes to the next generation is the result of **cell division**.\n\n- **Why it matters:** growth, repair, reproduction and heredity all pass through this topic; it also explains cancer (uncontrolled division) and genetic variation (crossing over).\n- **The one-sentence core:** **mitosis copies a cell exactly; meiosis halves the chromosome number and shuffles genes.**\n- **Connections:** chromosomes from Topic 3 are the actors here; meiosis connects directly to heredity and evolution (variation), and mitosis to growth and healing.",
+      "## 2. The Cell Cycle — The Cell's Life Story\n\n### 2.1 Definition and the grand division\n\nThe **cell cycle** (Howard and Pelc, 1953) is the sequence of events from the formation of a cell to its own division into two daughter cells. It has two great phases:\n\n$$\\text{Cell cycle} = \\underbrace{I_1 + S + I_2}_{\\text{Interphase (I-phase)}} + \\underbrace{\\text{M phase}}_{\\text{Division}} + C \\text{(cytokinesis)}$$\n\n| Phase | Name | Duration (typical 24 h human cell) | What happens |\n|---|---|---|---|\n| **G₁** | First gap (post-mitotic) | ~11 h | Growth; RNA and proteins synthesised; organelles multiply; cell decides to divide or exit (G₀) |\n| **S** | Synthesis | ~8 h | **DNA replication** — each chromosome is duplicated into two sister chromatids; histones synthesised |\n| **G₂** | Second gap (pre-mitotic) | ~4 h | Further growth; spindle proteins, microtubules and RNA made; cell checks DNA for errors |\n| **M** | Mitotic phase | ~1 h | Karyokinesis (nuclear division): prophase → metaphase → anaphase → telophase, then **cytokinesis** |\n\n**Interphase misconception:** interphase is NOT a resting phase — it is the most metabolically active period (DNA replication and growth happen here); only *division* is absent.\n\n### 2.2 Checkpoints and G₀\n\n- **Checkpoints** (G₁/S, G2/M, spindle checkpoint) verify that DNA is intact and complete before the next step — the cell's quality control.\n- Cells that permanently leave the cycle enter **G₀** (quiescent phase): mature neurons and muscle cells stay in G₀; liver cells can re-enter the cycle on injury.\n- **Cancer = checkpoint failure:** cells escape control and divide endlessly. This single sentence is the conceptual bridge between cell division and oncology.",
+      "## 3. Amitosis — Direct Division\n\n**Definition:** direct, simple splitting of the nucleus (and then cytoplasm) **without spindle formation, without chromosome condensation** — described by Remak (1841).\n\n| Feature | Detail |\n|---|---|\n| Where | Prokaryotes, some yeast, degenerating/old cells, foetal membranes, cartilage cells |\n| Mechanism | Nucleus elongates, constricts in the middle; cytoplasm divides; two nuclei form |\n| Result | Two cells with roughly equal but imprecisely distributed nuclear material |\n| Significance | Fast, low-cost division for simple/fast-growing or dying tissues |\n| Drawback | Unequal distribution of chromatin; no genetic precision |",
+      "## 4. Mitosis — Equational Division\n\n### 4.1 Definition\n\n**Mitosis** (Flemming, 1882; Greek *mitos* = thread) is the division of a somatic cell into **two daughter cells with the same chromosome number as the parent** (2n → 2n). It has **karyokinesis** (nuclear division) followed by **cytokinesis** (cytoplasmic division).\n\n### 4.2 The four stages — what happens and why\n\n| Stage | Key events | Structures to name |\n|---|---|---|\n| **Prophase** | Chromatin condenses into visible chromosomes (each = 2 sister chromatids joined at the centromere); nucleolus disappears; nuclear envelope breaks down; spindle begins; centrioles move to poles (animals) | Sister chromatids, centromere, spindle |\n| **Metaphase** | Chromosomes line up on the **equatorial (metaphase) plate**; spindle fibres from both poles attach to kinetochores; the best stage to count and study chromosomes (karyotyping) | Equatorial plate, kinetochore fibres, polar fibres |\n| **Anaphase** | **Centromeres split**; sister chromatids separate and move to opposite poles (appears V-, J- or L-shaped by centromere position); poles move apart | Daughter chromosomes, spindle elongation |\n| **Telophase** | Chromosomes decondense; nuclear envelopes reform around each set; nucleoli reappear; spindle dissolves | Two daughter nuclei |\n\n### 4.3 Cytokinesis — two different solutions\n\n| Basis | Plant cytokinesis | Animal cytokinesis |\n|---|---|---|\n| Mechanism | **Cell plate** forms from Golgi vesicles at the equator, growing outward until it fuses with the wall | **Cleavage furrow**: actin–myosin ring contracts, pinching the membrane inward |\n| Direction | Centripetal (inside → outside) | Centripetal (outside → inside) |\n| Why the difference | Rigid wall cannot be pinched | No wall, flexible membrane |\n\n### 4.4 Significance of mitosis (exam list — give the reason with each)\n\n1. **Growth** of multicellular organisms (zygote → body by repeated mitosis).\n2. **Repair and healing** — replacement of worn-out and wounded cells.\n3. **Genetic stability** — exact copies: daughter cells keep the same chromosome number and gene set.\n4. **Asexual reproduction** — binary fission, budding, vegetative propagation are mitotic.\n5. **Regeneration** — replacement of lost parts (lizard tail, planaria).\n6. **Maintains the surface-area-to-volume ratio** of tissues by renewing cells.",
+      "## 5. Meiosis — Reductional Division\n\n### 5.1 Definition\n\n**Meiosis** (Farmer and Moore, 1905; Greek *meion* = to lessen) is a **single DNA replication followed by two divisions**, producing **four haploid (n) cells** from one diploid (2n) cell. It occurs only in **germ (reproductive) cells** — sporocytes in plants, gamete-forming cells in animals. It consists of **meiosis I (reductional)** and **meiosis II (equational)**, with a brief **interkinesis** between them (no DNA replication in interkinesis — key point).\n\n### 5.2 Meiosis I — the reduction\n\n| Stage | Key events |\n|---|---|\n| **Prophase I** (longest, most complex — 5 substages) | See below |\n| **Metaphase I** | **Homologous pairs (bivalents/tetrads)** align on the equatorial plate in **two rows**; spindle attaches to kinetochores of homologs (not sister chromatids) |\n| **Anaphase I** | **Whole homologous chromosomes separate** to opposite poles — **centromeres do NOT split**; sister chromatids stay together |\n| **Telophase I** | Haploid set (each chromosome still double-stranded) reaches each pole; nuclear envelope may re-form; cytokinesis follows |\n\n**Prophase I substages (the most examined sequence in this topic):**\n\n| Substage | Events |\n|---|---|\n| **Leptotene** | Chromosomes condense and become visible |\n| **Zygotene** | **Synapsis** — homologous chromosomes pair; a **synaptonemal complex** forms |\n| **Pachytene** | **Crossing over** — non-sister chromatids of the bivalent exchange segments at **recombination nodules**; visible **chiasmata** appear; recombinase (Reca) enzymes act |\n| **Diplotene** | Synaptonemal complex dissolves; chiasmata clearly visible; homologs begin to separate (oocytes of some vertebrates stay here for years — dictyotene) |\n| **Diakinesis** | Terminalisation of chiasmata; chromosomes fully condensed; nucleolus and envelope disappear; spindle forms |\n\n### 5.3 Meiosis II — the equational division\n\nAfter interkinesis (no DNA replication), each haploid cell divides like a mitosis: **prophase II → metaphase II (chromosomes in single row) → anaphase II (centromeres split, sister chromatids separate) → telophase II**. Result: **four haploid cells**.\n\n### 5.4 Significance of meiosis (exam list)\n\n1. **Maintains the chromosome number constant** across generations — 2n gamete-forming cells → n gametes; fertilisation restores 2n.\n2. **Creates genetic variation** by crossing over (pachytene) and independent assortment (metaphase I orientation) — the raw material of evolution.\n3. **Forms gametes/spores** for sexual reproduction.\n4. **Repairs defects and aids adaptation** through recombination.\n5. **Aids speciation** — variation on which natural selection acts.\n\n### 5.5 Mitosis vs Meiosis — the guaranteed master table\n\n| Basis | Mitosis | Meiosis |\n|---|---|---|\n| Occurrence | Somatic (body) cells, throughout life | Germ cells, only at reproduction |\n| Divisions | One (DNA replicated once, divided once) | Two (DNA replicated once, divided twice) |\n| Daughter cells | 2 | 4 |\n| Chromosome number | Conserved (2n → 2n) — equational | Halved (2n → n) — reductional |\n| Pairing of homologs | No synapsis | Synapsis and bivalent formation |\n| Crossing over | Absent | Present (pachytene) — variation |\n| Metaphase arrangement | Chromosomes in one row | Meiosis I: pairs in two rows; Meiosis II: one row |\n| Anaphase separation | Sister chromatids (centromere splits) | I: homologs (centromere intact); II: sister chromatids |\n| Duration of prophase | Short, simple | Long, five substages |\n| Genetic result | Identical daughter cells | Genetically different haploid cells |\n| Role | Growth, repair, asexual reproduction | Gamete/spore formation, variation |",
+      "## 6. Conceptual Relationships\n\n- **Topic 3 → here:** the spindle is built from microtubules; the Golgi makes the plant cell plate; chromosomes come from nuclear chromatin.\n- **Here → heredity (Class 12):** segregation of homologs (meiosis I) and independent assortment are the physical basis of Mendel's laws.\n- **Here → evolution:** crossing over and independent assortment generate the variation natural selection acts on.\n- **Here → health:** loss of mitotic control = cancer; failure of meiotic segregation (nondisjunction) = chromosomal disorders (Down syndrome, trisomy 21).\n- **Here → reproduction:** gametogenesis in animals and sporogenesis in plants are meiotic; fertilisation reverses the reduction.",
+      "## 7. Exam Orientation\n\n### 7.1 Previous year questions\n\nNo cell-division question is present in the authored solved-paper bank for class 11 biology (the 2021–2024 bank questions for this unit cover biomolecules, cells and enzymes). The questions below are **NEB-style practice questions, not verified PYQs** — clearly distinguished as required.\n\n### 7.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Define the cell cycle. Describe the events of interphase.**\nAnswer: The cell cycle is the sequence of changes a cell undergoes from its formation to its own division. **Interphase** (the metabolically active \"resting\" phase, ~23 h of a 24 h cycle) has three sub-phases: **G₁** — growth, RNA/protein synthesis, organelle multiplication; **S** — DNA replication, producing two sister chromatids per chromosome; **G₂** — spindle-protein synthesis and final preparation for mitosis.\n\n**Q2 (5m) — Describe the stages of mitosis with diagrams.**\nAnswer: Draw the four stages. **Prophase:** condensation into two-chromatid chromosomes, nuclear envelope and nucleolus disappear, spindle forms. **Metaphase:** chromosomes align on the equatorial plate, kinetochore fibres from both poles attach. **Anaphase:** centromeres split, sister chromatids move to opposite poles. **Telophase:** envelopes and nucleoli reform, chromosomes decondense. End with cytokinesis: cell plate (plants) vs cleavage furrow (animals).\n\n**Q3 (5m) — Describe prophase I of meiosis and state its significance.**\nAnswer: Five substages — **leptotene** (chromosomes visible), **zygotene** (synapsis of homologs, synaptonemal complex), **pachytene** (crossing over at recombination nodules, chiasmata appear), **diplotene** (complex dissolves, chiasmata visible), **diakinesis** (terminalisation, spindle forms). Significance: crossing over produces new gene combinations — the source of genetic variation.\n\n**Q4 (3m) — Give four differences between mitosis and meiosis.**\nAnswer: Any four table rows — occurrence (somatic vs germ cells), divisions (one vs two), products (2 identical 2n vs 4 varied n cells), crossing over (absent vs present), metaphase arrangement (one row vs pairs in two rows).\n\n**Q5 (3m) — Why is meiosis significant for a species?**\nAnswer: (1) It halves the chromosome number so fertilisation can restore it — chromosome constancy across generations; (2) crossing over and independent assortment create genetic variation; (3) variation gives natural selection material to act on, enabling adaptation and evolution.\n\n**Q6 (2m) — Why is interphase not a \"resting phase\"?**\nAnswer: Because DNA replication (S phase), massive protein/RNA synthesis and growth (G₁, G₂) all occur then — the cell is metabolically at its busiest; only nuclear division is absent.\n\n**Q7 (2m) — How does cytokinesis differ in plant and animal cells?**\nAnswer: Plants: a **cell plate** of Golgi vesicles forms at the equator and grows outward (centripetal) to become the middle lamella + wall. Animals: an **actin–myosin contractile ring** pinches the membrane inward as a cleavage furrow.\n\n### 7.3 Common examination mistakes\n\n1. Saying DNA replicates \"before meiosis II\" — replication happens **only before meiosis I**; interkinesis has none.\n2. Splitting centromeres in anaphase I — homologs separate whole; centromeres split only in anaphase II (and mitosis).\n3. Drawing metaphase I chromosomes in a single row — they align as **pairs in two rows**.\n4. Confusing **chiasmata** (visible X-shaped contact points) with **crossing over** (the exchange event at pachytene).\n5. Writing \"meiosis produces gametes\" for plants without mentioning **spores** (meiosis makes spores in plants; gametes form by mitosis in the gametophyte).\n6. Calling amitosis the main division of prokaryotes without noting its imprecision (unequal chromatin distribution)."
     ],
     "confusion": [
-      "Mitosis maintains the chromosome number (2n → 2n); meiosis halves it (2n → n).",
-      "Crossing over and independent assortment occur in MEIOSIS only, not mitosis.",
-      "In Anaphase I of meiosis, HOMOLOGOUS chromosomes separate; in Anaphase of mitosis and Anaphase II of meiosis, SISTER CHROMATIDs separate.",
-      "DNA replication happens ONLY in the S phase; meiosis has one S phase then two divisions.",
-      "G2 is not a \"resting\" phase; DNA has already doubled in S and the cell is preparing for M.",
-      "Non-disjunction = a homologous pair (or chromatid pair) fails to separate → one cell gets both, the other gets none."
+      "**Chromatid vs chromosome:** after S phase, each chromosome consists of two sister chromatids joined at one centromere — it is still ONE chromosome. The count changes only when centromeres split (anaphase).",
+      "**Mitosis vs meiosis II:** both split centromeres and separate sister chromatids, but meiosis II starts from haploid, recombined cells and follows meiosis I without new DNA replication.",
+      "**Crossing over vs independent assortment:** crossing over = physical exchange between non-sister chromatids (pachytene); independent assortment = random orientation of bivalents at metaphase I. Both create variation, by different mechanisms.",
+      "**Interkinesis vs interphase:** interkinesis between meiosis I and II has NO DNA replication; interphase of the cell cycle always includes S phase.",
+      "**Amitosis vs binary fission:** related but not identical — amitosis is the imprecise direct nuclear division seen in some eukaryotic cells; bacterial binary fission is precise DNA replication followed by septation."
     ],
     "practice": [
-      "Draw the four phases of mitosis with labelled chromosomes.",
-      "Draw a full meiosis diagram and mark crossing over + independent assortment.",
-      "Tabulate mitosis vs meiosis (6 differences).",
-      "Explain the role of each checkpoint in preventing cancer.",
-      "Calculate the chromosome/chromatid count at each meiotic stage (2n = 4 example)."
+      "A cell has 2n = 8. How many chromosomes and chromatids does it have in G₂, and in each daughter cell after meiosis II?",
+      "Why can a skin cell and a nerve cell of the same person have identical DNA but completely different structures?",
+      "Why must gamete-forming cells divide meiotically rather than mitotically for a species to survive?"
     ],
     "universalFacts": [
-      "Interphase occupies ~90% of the cell cycle; mitosis is brief.",
-      "A human cell with 46 chromosomes yields two 46-chromosome cells after mitosis and four 23-chromosome cells after meiosis.",
-      "Crossing over can occur at multiple points per chromosome pair in Prophase I.",
-      "Cancer is fundamentally uncontrolled mitosis due to failed checkpoints (e.g., p53 mutations)."
+      "Typical human cell cycle ≈ 24 h: G₁ 11 h, S 8 h, G₂ 4 h, M 1 h.",
+      "Flemming observed and named mitosis (1882); term \"meiosis\" — Farmer and Moore (1905).",
+      "Crossing over occurs at pachytene; visible chiasmata from diplotene."
     ],
     "examples": [
-      "Onion root tip: classic mitotic figures (prophase, metaphase, anaphase, telophase).",
-      "Spermatogenesis: 1 primary (2n) → 2 secondary (n) → 4 spermatids (n) → 4 sperm.",
-      "Oogenesis: 1 primary (2n) → 1 secondary (n) + 1 polar body → 1 functional ovum (n) + usually 2–3 polar bodies (meiosis II completes only if fertilization occurs).",
-      "Down syndrome: usually full trisomy 21 from meiotic non-disjunction (~95% of cases; translocation and mosaic forms also occur).",
-      "Amitosis: direct division without a spindle; described in some protozoans and yeasts."
+      "**Bone marrow** — mitotic factory replacing blood cells (~200 billion RBCs/day).",
+      "**Healing skin wound** — mitosis fills the gap from the wound edge.",
+      "**Human spermatogenesis** — meiosis I + II convert one spermatogonium into 4 haploid spermatids.",
+      "**Lily anther sporocytes** — classic meiosis-I slide material; pollen grains are the haploid products."
     ],
     "practiceQuestions": [
-      "How is Anaphase I of meiosis different from Anaphase of mitosis?",
-      "Explain why meiosis produces genetic variation (two mechanisms).",
-      "What would happen if the S phase did not occur?",
-      "Describe the G1/S, G2/M, and M checkpoints and their role in preventing cancer.",
-      "Define non-disjunction and give a human disease example."
+      "**Short answer (2m): Define cell cycle.** — The sequence of events by which a cell grows, replicates its DNA and divides into two daughter cells; it comprises interphase (G₁, S, G₂) and the M phase with cytokinesis.",
+      "**Short answer (2m): What is crossing over?** — The exchange of corresponding segments between non-sister chromatids of homologous chromosomes during pachytene of prophase I, producing recombined chromosomes and genetic variation.",
+      "**Short answer (2m): What is a bivalent?** — The pair of homologous chromosomes (four chromatids, hence \"tetrad\") formed by synapsis during zygotene of prophase I.",
+      "**Short answer (2m): What is the G₀ phase?** — A quiescent state outside the active cycle into which cells withdraw after mitosis (e.g. mature neurons); they remain metabolically active but do not divide, though some can re-enter the cycle on stimulus.",
+      "**Long answer (5m): Describe the stages of mitosis with labelled diagrams and state its significance.** — Prophase (condensation, spindle, envelope loss) → metaphase (equatorial plate, spindle attachment) → anaphase (centromere split, chromatids to poles) → telophase (re-formation of nuclei) → cytokinesis (cell plate vs furrow). Significance: growth, repair, genetic stability, asexual reproduction, regeneration.",
+      "**Long answer (5m): Describe meiosis I with diagrams and state how it reduces the chromosome number.** — Prophase I with five substages (synapsis, crossing over), metaphase I (bivalents in two rows), anaphase I (whole homologs separate — centromere intact), telophase I (haploid nuclei). Reduction happens because each pole receives one chromosome of every homologous pair, while each chromosome still has two chromatids.",
+      "**Conceptual (3m): Why does meiosis create variation while mitosis does not?** — Mitosis copies an existing genome exactly (no pairing, no exchange). Meiosis adds two sources of novelty: crossing over recombines maternal and paternal alleles within chromosomes (pachytene), and independent assortment randomises which homolog of each pair reaches which pole (metaphase I). Each gamete therefore carries a unique combination.",
+      "**Conceptual (3m): \"Cancer is a disease of the cell cycle.\" Explain.** — Normal division is stopped at checkpoints by control genes (proto-oncogenes, tumour suppressors such as p53). When mutations disable these brakes, cells skip G₁/S and spindle checkpoints and divide without restraint, invading tissues — uncontrolled mitosis is the mechanism of tumour growth.",
+      "**Application (2m): Why do antibiotics/chemotherapy drugs that block spindle formation stop tumour growth?** — Drugs like colchicine and vinblastine prevent microtubule assembly, so the mitotic spindle cannot form; cells arrest in metaphase and cannot complete division. Rapidly dividing tumour cells are hit hardest."
     ],
     "formulas": [
       "Mitosis: 2n → 2 daughter cells of 2n",
@@ -108,105 +172,152 @@
       "Chromosome count: after S each chromosome = 2 chromatids"
     ],
     "keyPoints": [
-      "Cell cycle: G1, S, G2 (interphase) + M; checkpoints prevent errors.",
-      "PMAT = Prophase, Metaphase, Anaphase, Telophase of mitosis.",
-      "Meiosis: two divisions; crossing over (Prophase I) + independent assortment (Metaphase I) create variation.",
-      "Anaphase I separates homologs; Anaphase (mitosis) + Anaphase II separate sister chromatids.",
-      "Cytokinesis: animal (cleavage furrow) vs plant (cell plate).",
-      "Mitotic errors → cancer; meiotic errors → aneuploidy (Down syndrome).",
-      "Significance: mitosis = growth/repair; meiosis = gametes + diversity."
+      "Cell cycle = interphase (G₁ growth, S DNA synthesis, G₂ preparation) + M phase (mitosis) + cytokinesis; checkpoints guard the transitions; G₀ = quiescent exit.",
+      "Interphase is the most active phase — DNA replication and growth happen there.",
+      "Amitosis: direct splitting, no spindle, imprecise (Remak, 1841).",
+      "Mitosis (Flemming, 1882): prophase → metaphase → anaphase → telophase; centromeres split in anaphase; 2 identical 2n daughters; growth, repair, asexual reproduction.",
+      "Cytokinesis: cell plate (plants, centripetal from Golgi vesicles) vs cleavage furrow (animals, actin–myosin).",
+      "Meiosis (Farmer & Moore, 1905): one replication + two divisions → 4 haploid varied cells; only in germ cells.",
+      "Prophase I: leptotene → zygotene (synapsis) → pachytene (crossing over, chiasmata) → diplotene → diakinesis.",
+      "Anaphase I separates whole homologs (centromere intact); anaphase II splits centromeres.",
+      "Meiosis significance: chromosome-number constancy + genetic variation + gamete/spore formation."
     ],
-    "summary": "The cell cycle (G1, S, G2, M) is controlled by checkpoints. Mitosis (PMAT) produces two genetically identical diploid cells for growth, repair, and asexual reproduction; cytokinesis differs between animal (cleavage furrow) and plant (cell plate) cells. Meiosis is a two-division process that halves the chromosome number and, through crossing over and independent assortment, generates the genetic diversity needed for sexual reproduction. Amitosis is a rare direct division. Mitotic errors lead to cancer; meiotic non-disjunction causes aneuploidies such as Down syndrome. NEB focuses on the full cell cycle, all mitotic and meiotic phases, the sources of variation, and the consequences of errors.",
+    "summary": "The cell cycle runs through interphase — G₁ growth, S DNA replication, G₂ preparation — into the M phase. Amitosis is a rare, imprecise direct splitting. Mitosis (prophase → metaphase → anaphase → telophase, then cytokinesis by cell plate in plants or cleavage furrow in animals) produces two genetically identical diploid cells for growth, repair and asexual reproduction. Meiosis — one replication followed by two divisions — produces four genetically unique haploid cells: prophase I (leptotene, zygotene synapsis, pachytene crossing over, diplotene, diakinesis), metaphase I with bivalents in two rows, anaphase I separating whole homologs, then the equational meiosis II. Meiosis keeps chromosome numbers constant across generations and generates the variation on which evolution acts; its failure (nondisjunction) and mitosis's failure (checkpoint loss → cancer) show why precise division matters.",
     "specialNotes": [
-      "NEB expects labelled mitosis diagrams plus a full meiosis diagram with crossing over marked.",
-      "The mitosis vs meiosis comparison table (6 points) is a very common question.",
-      "Explain the two sources of meiotic variation (crossing over + independent assortment).",
-      "Relate checkpoint failure to cancer and non-disjunction to Down syndrome.",
-      "Distinguish what separates in Anaphase I vs Anaphase (mitosis/II).",
-      "Note the cytokinesis difference (furrow vs cell plate)."
+      "No verified cell-division PYQ exists in the current solved-paper bank for class 11 biology; all questions in this note are NEB-style practice and labelled as such."
     ],
     "importantStatements": [
-      "Mitosis maintains a species' diploid chromosome number.",
-      "Meiosis halves the genome and shuffles alleles, creating variation.",
-      "The cell cycle is controlled by checkpoints that stop M phase if DNA is damaged.",
-      "Crossing over occurs only in Prophase I of meiosis."
+      "\"Mitosis preserves the individual; meiosis preserves the species — and gives it room to evolve.\"",
+      "\"Interphase is the working phase; mitosis is the distributing phase.\""
     ],
     "importantNotes": [
-      "Learn the PMAT sequence and draw each phase from memory.",
-      "Keep a mitosis vs meiosis comparison table (6 points).",
-      "Memorise that crossing over occurs in Prophase I.",
-      "Relate checkpoint failure to cancer and non-disjunction to aneuploidy.",
-      "Note the cytokinesis difference (animal furrow vs plant cell plate)."
+      "For \"describe mitosis\" (5m): one labelled diagram + four stages in order with 2–3 events each + cytokinesis sentence. For \"describe prophase I\": name all five substages in order with one event each — the order itself carries marks."
     ],
     "examShortTricks": [
-      "PMAT = Prophase, Metaphase, Anaphase, Telophase.",
-      "MITO = 2 identical (2n); MEI = 4 different (n).",
-      "Crossing over = Prophase I only.",
-      "Anaphase I = homologs separate; Anaphase (mitosis/II) = chromatids separate.",
-      "No S phase → no DNA duplication → division fails.",
-      "Animal = furrow; Plant = cell plate."
+      "Prophase I order: \"**L**eap **Z**ebra **P**igs **D**ance **D**aily\" — Leptotene, Zygotene, Pachytene, Diplotene, Diakinesis.",
+      "\"Mitosis = Multiplication (identical); Meiosis = Me-half\" — number halved.",
+      "\"Centromere splits in A-II, not A-I\" — the single most-dropped mark in meiosis answers."
     ],
     "examNotes": [
-      "Draw and label all four mitotic phases.",
-      "Draw a full meiosis diagram (mark crossing over + independent assortment).",
-      "Tabulate mitosis vs meiosis (6 points).",
-      "Explain how meiosis creates variation (two mechanisms).",
-      "Describe cell-cycle checkpoints and the cause of cancer.",
-      "Define non-disjunction with a human example (Down syndrome)."
+      "Most-tested: mitosis stages, prophase I substages, mitosis vs meiosis table, significance lists.",
+      "Diagram-worthy: all four mitosis stages, metaphase I (two rows) vs metaphase II (one row), crossing over with chiasma, cell plate vs cleavage furrow."
     ],
     "mcs": [
       {
-        "question": "In Anaphase I of meiosis, what separates?",
+        "question": "DNA replication occurs during which phase of the cell cycle?",
+        "options": [
+          "G₁ phase",
+          "S phase",
+          "G₂ phase",
+          "M phase"
+        ],
+        "answer": "B",
+        "explanation": "The synthesis (S) phase replicates DNA so each chromosome becomes two sister chromatids; G₁ grows, G₂ prepares for division."
+      },
+      {
+        "question": "Chromosomes align on the equatorial plate during:",
+        "options": [
+          "Prophase",
+          "Metaphase",
+          "Anaphase",
+          "Telophase"
+        ],
+        "answer": "B",
+        "explanation": "Metaphase lines chromosomes at the equator with spindle fibres attached — the best stage for chromosome counting/karyotyping."
+      },
+      {
+        "question": "During anaphase I of meiosis, what separates?",
         "options": [
           "Sister chromatids",
           "Homologous chromosomes",
           "Centromeres",
-          "Nuclear envelopes"
+          "Nucleoli"
         ],
-        "answer": "B"
+        "answer": "B",
+        "explanation": "Anaphase I pulls whole homologous chromosomes to opposite poles; centromeres do NOT split until anaphase II."
       },
       {
-        "question": "Cytokinesis in animal cells occurs by:",
+        "question": "Crossing over occurs during which substage of prophase I?",
         "options": [
-          "Cell plate",
-          "Cleavage furrow",
-          "Binary fission",
-          "Growth"
+          "Leptotene",
+          "Zygotene",
+          "Pachytene",
+          "Diakinesis"
         ],
-        "answer": "B"
+        "answer": "C",
+        "explanation": "Pachytene: recombination nodules appear and non-sister chromatids exchange segments; chiasmata become visible at diplotene."
       },
       {
-        "question": "The two sources of meiotic variation are:",
+        "question": "Synapsis of homologous chromosomes occurs during:",
         "options": [
-          "Crossing over + independent assortment",
-          "Mutation + drift",
-          "G1 + S",
-          "Anaphase + telophase"
+          "Leptotene",
+          "Zygotene",
+          "Diplotene",
+          "Telophase I"
         ],
-        "answer": "A"
+        "answer": "B",
+        "explanation": "Zygotene pairs homologs (synapsis) with formation of the synaptonemal complex, creating bivalents."
       },
       {
-        "question": "Down syndrome is caused by:",
+        "question": "Plant cytokinesis differs from animal cytokinesis because plants form:",
         "options": [
-          "Mitotic error",
-          "Meiotic non-disjunction (trisomy 21)",
-          "A virus",
-          "Poor diet"
+          "A cleavage furrow",
+          "A cell plate from Golgi vesicles",
+          "A contractile ring",
+          "Four daughter cells"
         ],
-        "answer": "B"
+        "answer": "B",
+        "explanation": "Golgi vesicles fuse at the equator forming the cell plate, growing outward to become the new wall; the rigid wall cannot be pinched like an animal membrane."
+      },
+      {
+        "question": "How many cells result from one meiotic event?",
+        "options": [
+          "2 identical diploid",
+          "2 haploid",
+          "4 identical haploid",
+          "4 genetically different haploid"
+        ],
+        "answer": "D",
+        "explanation": "One replication + two divisions yield four haploid cells, each genetically unique because of crossing over and independent assortment."
+      },
+      {
+        "question": "Interkinesis is the stage between:",
+        "options": [
+          "G₁ and S",
+          "Meiosis I and meiosis II",
+          "Prophase and metaphase",
+          "Two mitotic cycles"
+        ],
+        "answer": "B",
+        "explanation": "Interkinesis (with no DNA replication) separates meiosis I from meiosis II."
+      },
+      {
+        "question": "Which cells typically remain in G₀ and rarely divide?",
+        "options": [
+          "Skin cells",
+          "Bone marrow cells",
+          "Mature neurons",
+          "Intestinal lining cells"
+        ],
+        "answer": "C",
+        "explanation": "Mature neurons and cardiac muscle cells are permanent G₀ cells; skin, marrow and gut lining divide constantly."
+      },
+      {
+        "question": "Amitosis differs from mitosis because it:",
+        "options": [
+          "Forms a spindle",
+          "Condenses chromosomes precisely",
+          "Divides the nucleus by simple constriction",
+          "Produces four cells"
+        ],
+        "answer": "C",
+        "explanation": "Amitosis (Remak, 1841) is direct nuclear constriction without spindle or precise chromosome behaviour — chromatin distribution is unequal."
       }
     ],
     "importantConcepts": [
-      "Cell cycle (G1, S, G2, M)",
-      "Checkpoints",
-      "PMAT phases",
-      "Meiosis I & II",
-      "Crossing over",
-      "Independent assortment",
-      "Cytokinesis (furrow vs cell plate)",
-      "Non-disjunction",
-      "Cancer",
-      "Amitosis"
+      "**Reduction then equation:** meiosis I halves the number (homologs separate); meiosis II halves the chromatid count (centromeres split) — together they convert one 2n cell into four n cells.",
+      "**Variation machinery:** crossing over (pachytene) + independent assortment (metaphase I) are the two engines of genetic diversity.",
+      "**Cancer = cell-cycle control failure:** checkpoints lost → endless mitosis; the clinical shadow of this topic."
     ],
     "importantTasks": [
       "Label the 4 mitotic phases",
@@ -235,53 +346,47 @@
   },
   "originalContent": {
     "notes": [
-      "DETAILED CELL DIVISION: the full cell cycle and every mitotic/meiotic phase.",
-      "Interphase (90% of the cycle): G1 (growth, organelle duplication, protein synthesis), S (DNA replication — each chromosome now has 2 sister chromatids), G2 (preparation for mitosis, checkpoint).",
-      "Checkpoints: G1/S (DNA damage, nutrients), G2/M (replication complete), M (spindle attachment) — failures cause cancer.",
-      "Mitosis phases (PMAT): Prophase (chromatin → chromosomes, spindle forms, nuclear envelope breaks), Metaphase (chromosomes align at the equatorial plate, spindle fibres attached to centromeres), Anaphase (centromeres split, sister chromatids pulled to opposite poles), Telophase (chromosomes decondense, nuclear envelopes reform, cytokinesis).",
-      "Cytokinesis: animal cells — cleavage furrow (actin); plant cells — cell plate → new wall.",
-      "Meiosis: two divisions. Meiosis I (reductional): Prophase I (chromosomes pair = synapsis; crossing over between non-sister chromatids), Metaphase I (homologous pairs at the equator; independent assortment), Anaphase I (homologs separate), Telophase I. Meiosis II (equational): like mitosis but no DNA replication; sister chromatids separate.",
-      "Outcome: meiosis → 4 haploid (n) genetically distinct cells; mitosis → 2 diploid (2n) identical cells.",
-      "Crossing over (Prophase I) + independent assortment (Metaphase I) = the two sources of meiotic variation.",
-      "Amitosis (direct division): simple karyokinesis; rare — described in some protozoans, yeasts/some fungi and certain pathological or regenerating cells.",
-      "Errors: mitotic errors → uncontrolled division = cancer; meiotic non-disjunction → aneuploidy (e.g., Down syndrome = usually trisomy 21).",
-      "Significance: mitosis = growth, repair, asexual reproduction; meiosis = gamete formation + genetic diversity.",
-      "NEB focus: the full cell cycle, all mitotic and meiotic phases, variation, and errors."
+      "## 1. Topic Introduction — How Life Copies Itself at the Cellular Level\n\nA cell's life is a cycle of growth, DNA copying and division. Every scar that heals, every root that grows, every sperm and egg that carries your genes to the next generation is the result of **cell division**.\n\n- **Why it matters:** growth, repair, reproduction and heredity all pass through this topic; it also explains cancer (uncontrolled division) and genetic variation (crossing over).\n- **The one-sentence core:** **mitosis copies a cell exactly; meiosis halves the chromosome number and shuffles genes.**\n- **Connections:** chromosomes from Topic 3 are the actors here; meiosis connects directly to heredity and evolution (variation), and mitosis to growth and healing.",
+      "## 2. The Cell Cycle — The Cell's Life Story\n\n### 2.1 Definition and the grand division\n\nThe **cell cycle** (Howard and Pelc, 1953) is the sequence of events from the formation of a cell to its own division into two daughter cells. It has two great phases:\n\n$$\\text{Cell cycle} = \\underbrace{I_1 + S + I_2}_{\\text{Interphase (I-phase)}} + \\underbrace{\\text{M phase}}_{\\text{Division}} + C \\text{(cytokinesis)}$$\n\n| Phase | Name | Duration (typical 24 h human cell) | What happens |\n|---|---|---|---|\n| **G₁** | First gap (post-mitotic) | ~11 h | Growth; RNA and proteins synthesised; organelles multiply; cell decides to divide or exit (G₀) |\n| **S** | Synthesis | ~8 h | **DNA replication** — each chromosome is duplicated into two sister chromatids; histones synthesised |\n| **G₂** | Second gap (pre-mitotic) | ~4 h | Further growth; spindle proteins, microtubules and RNA made; cell checks DNA for errors |\n| **M** | Mitotic phase | ~1 h | Karyokinesis (nuclear division): prophase → metaphase → anaphase → telophase, then **cytokinesis** |\n\n**Interphase misconception:** interphase is NOT a resting phase — it is the most metabolically active period (DNA replication and growth happen here); only *division* is absent.\n\n### 2.2 Checkpoints and G₀\n\n- **Checkpoints** (G₁/S, G2/M, spindle checkpoint) verify that DNA is intact and complete before the next step — the cell's quality control.\n- Cells that permanently leave the cycle enter **G₀** (quiescent phase): mature neurons and muscle cells stay in G₀; liver cells can re-enter the cycle on injury.\n- **Cancer = checkpoint failure:** cells escape control and divide endlessly. This single sentence is the conceptual bridge between cell division and oncology.",
+      "## 3. Amitosis — Direct Division\n\n**Definition:** direct, simple splitting of the nucleus (and then cytoplasm) **without spindle formation, without chromosome condensation** — described by Remak (1841).\n\n| Feature | Detail |\n|---|---|\n| Where | Prokaryotes, some yeast, degenerating/old cells, foetal membranes, cartilage cells |\n| Mechanism | Nucleus elongates, constricts in the middle; cytoplasm divides; two nuclei form |\n| Result | Two cells with roughly equal but imprecisely distributed nuclear material |\n| Significance | Fast, low-cost division for simple/fast-growing or dying tissues |\n| Drawback | Unequal distribution of chromatin; no genetic precision |",
+      "## 4. Mitosis — Equational Division\n\n### 4.1 Definition\n\n**Mitosis** (Flemming, 1882; Greek *mitos* = thread) is the division of a somatic cell into **two daughter cells with the same chromosome number as the parent** (2n → 2n). It has **karyokinesis** (nuclear division) followed by **cytokinesis** (cytoplasmic division).\n\n### 4.2 The four stages — what happens and why\n\n| Stage | Key events | Structures to name |\n|---|---|---|\n| **Prophase** | Chromatin condenses into visible chromosomes (each = 2 sister chromatids joined at the centromere); nucleolus disappears; nuclear envelope breaks down; spindle begins; centrioles move to poles (animals) | Sister chromatids, centromere, spindle |\n| **Metaphase** | Chromosomes line up on the **equatorial (metaphase) plate**; spindle fibres from both poles attach to kinetochores; the best stage to count and study chromosomes (karyotyping) | Equatorial plate, kinetochore fibres, polar fibres |\n| **Anaphase** | **Centromeres split**; sister chromatids separate and move to opposite poles (appears V-, J- or L-shaped by centromere position); poles move apart | Daughter chromosomes, spindle elongation |\n| **Telophase** | Chromosomes decondense; nuclear envelopes reform around each set; nucleoli reappear; spindle dissolves | Two daughter nuclei |\n\n### 4.3 Cytokinesis — two different solutions\n\n| Basis | Plant cytokinesis | Animal cytokinesis |\n|---|---|---|\n| Mechanism | **Cell plate** forms from Golgi vesicles at the equator, growing outward until it fuses with the wall | **Cleavage furrow**: actin–myosin ring contracts, pinching the membrane inward |\n| Direction | Centripetal (inside → outside) | Centripetal (outside → inside) |\n| Why the difference | Rigid wall cannot be pinched | No wall, flexible membrane |\n\n### 4.4 Significance of mitosis (exam list — give the reason with each)\n\n1. **Growth** of multicellular organisms (zygote → body by repeated mitosis).\n2. **Repair and healing** — replacement of worn-out and wounded cells.\n3. **Genetic stability** — exact copies: daughter cells keep the same chromosome number and gene set.\n4. **Asexual reproduction** — binary fission, budding, vegetative propagation are mitotic.\n5. **Regeneration** — replacement of lost parts (lizard tail, planaria).\n6. **Maintains the surface-area-to-volume ratio** of tissues by renewing cells.",
+      "## 5. Meiosis — Reductional Division\n\n### 5.1 Definition\n\n**Meiosis** (Farmer and Moore, 1905; Greek *meion* = to lessen) is a **single DNA replication followed by two divisions**, producing **four haploid (n) cells** from one diploid (2n) cell. It occurs only in **germ (reproductive) cells** — sporocytes in plants, gamete-forming cells in animals. It consists of **meiosis I (reductional)** and **meiosis II (equational)**, with a brief **interkinesis** between them (no DNA replication in interkinesis — key point).\n\n### 5.2 Meiosis I — the reduction\n\n| Stage | Key events |\n|---|---|\n| **Prophase I** (longest, most complex — 5 substages) | See below |\n| **Metaphase I** | **Homologous pairs (bivalents/tetrads)** align on the equatorial plate in **two rows**; spindle attaches to kinetochores of homologs (not sister chromatids) |\n| **Anaphase I** | **Whole homologous chromosomes separate** to opposite poles — **centromeres do NOT split**; sister chromatids stay together |\n| **Telophase I** | Haploid set (each chromosome still double-stranded) reaches each pole; nuclear envelope may re-form; cytokinesis follows |\n\n**Prophase I substages (the most examined sequence in this topic):**\n\n| Substage | Events |\n|---|---|\n| **Leptotene** | Chromosomes condense and become visible |\n| **Zygotene** | **Synapsis** — homologous chromosomes pair; a **synaptonemal complex** forms |\n| **Pachytene** | **Crossing over** — non-sister chromatids of the bivalent exchange segments at **recombination nodules**; visible **chiasmata** appear; recombinase (Reca) enzymes act |\n| **Diplotene** | Synaptonemal complex dissolves; chiasmata clearly visible; homologs begin to separate (oocytes of some vertebrates stay here for years — dictyotene) |\n| **Diakinesis** | Terminalisation of chiasmata; chromosomes fully condensed; nucleolus and envelope disappear; spindle forms |\n\n### 5.3 Meiosis II — the equational division\n\nAfter interkinesis (no DNA replication), each haploid cell divides like a mitosis: **prophase II → metaphase II (chromosomes in single row) → anaphase II (centromeres split, sister chromatids separate) → telophase II**. Result: **four haploid cells**.\n\n### 5.4 Significance of meiosis (exam list)\n\n1. **Maintains the chromosome number constant** across generations — 2n gamete-forming cells → n gametes; fertilisation restores 2n.\n2. **Creates genetic variation** by crossing over (pachytene) and independent assortment (metaphase I orientation) — the raw material of evolution.\n3. **Forms gametes/spores** for sexual reproduction.\n4. **Repairs defects and aids adaptation** through recombination.\n5. **Aids speciation** — variation on which natural selection acts.\n\n### 5.5 Mitosis vs Meiosis — the guaranteed master table\n\n| Basis | Mitosis | Meiosis |\n|---|---|---|\n| Occurrence | Somatic (body) cells, throughout life | Germ cells, only at reproduction |\n| Divisions | One (DNA replicated once, divided once) | Two (DNA replicated once, divided twice) |\n| Daughter cells | 2 | 4 |\n| Chromosome number | Conserved (2n → 2n) — equational | Halved (2n → n) — reductional |\n| Pairing of homologs | No synapsis | Synapsis and bivalent formation |\n| Crossing over | Absent | Present (pachytene) — variation |\n| Metaphase arrangement | Chromosomes in one row | Meiosis I: pairs in two rows; Meiosis II: one row |\n| Anaphase separation | Sister chromatids (centromere splits) | I: homologs (centromere intact); II: sister chromatids |\n| Duration of prophase | Short, simple | Long, five substages |\n| Genetic result | Identical daughter cells | Genetically different haploid cells |\n| Role | Growth, repair, asexual reproduction | Gamete/spore formation, variation |",
+      "## 6. Conceptual Relationships\n\n- **Topic 3 → here:** the spindle is built from microtubules; the Golgi makes the plant cell plate; chromosomes come from nuclear chromatin.\n- **Here → heredity (Class 12):** segregation of homologs (meiosis I) and independent assortment are the physical basis of Mendel's laws.\n- **Here → evolution:** crossing over and independent assortment generate the variation natural selection acts on.\n- **Here → health:** loss of mitotic control = cancer; failure of meiotic segregation (nondisjunction) = chromosomal disorders (Down syndrome, trisomy 21).\n- **Here → reproduction:** gametogenesis in animals and sporogenesis in plants are meiotic; fertilisation reverses the reduction.",
+      "## 7. Exam Orientation\n\n### 7.1 Previous year questions\n\nNo cell-division question is present in the authored solved-paper bank for class 11 biology (the 2021–2024 bank questions for this unit cover biomolecules, cells and enzymes). The questions below are **NEB-style practice questions, not verified PYQs** — clearly distinguished as required.\n\n### 7.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Define the cell cycle. Describe the events of interphase.**\nAnswer: The cell cycle is the sequence of changes a cell undergoes from its formation to its own division. **Interphase** (the metabolically active \"resting\" phase, ~23 h of a 24 h cycle) has three sub-phases: **G₁** — growth, RNA/protein synthesis, organelle multiplication; **S** — DNA replication, producing two sister chromatids per chromosome; **G₂** — spindle-protein synthesis and final preparation for mitosis.\n\n**Q2 (5m) — Describe the stages of mitosis with diagrams.**\nAnswer: Draw the four stages. **Prophase:** condensation into two-chromatid chromosomes, nuclear envelope and nucleolus disappear, spindle forms. **Metaphase:** chromosomes align on the equatorial plate, kinetochore fibres from both poles attach. **Anaphase:** centromeres split, sister chromatids move to opposite poles. **Telophase:** envelopes and nucleoli reform, chromosomes decondense. End with cytokinesis: cell plate (plants) vs cleavage furrow (animals).\n\n**Q3 (5m) — Describe prophase I of meiosis and state its significance.**\nAnswer: Five substages — **leptotene** (chromosomes visible), **zygotene** (synapsis of homologs, synaptonemal complex), **pachytene** (crossing over at recombination nodules, chiasmata appear), **diplotene** (complex dissolves, chiasmata visible), **diakinesis** (terminalisation, spindle forms). Significance: crossing over produces new gene combinations — the source of genetic variation.\n\n**Q4 (3m) — Give four differences between mitosis and meiosis.**\nAnswer: Any four table rows — occurrence (somatic vs germ cells), divisions (one vs two), products (2 identical 2n vs 4 varied n cells), crossing over (absent vs present), metaphase arrangement (one row vs pairs in two rows).\n\n**Q5 (3m) — Why is meiosis significant for a species?**\nAnswer: (1) It halves the chromosome number so fertilisation can restore it — chromosome constancy across generations; (2) crossing over and independent assortment create genetic variation; (3) variation gives natural selection material to act on, enabling adaptation and evolution.\n\n**Q6 (2m) — Why is interphase not a \"resting phase\"?**\nAnswer: Because DNA replication (S phase), massive protein/RNA synthesis and growth (G₁, G₂) all occur then — the cell is metabolically at its busiest; only nuclear division is absent.\n\n**Q7 (2m) — How does cytokinesis differ in plant and animal cells?**\nAnswer: Plants: a **cell plate** of Golgi vesicles forms at the equator and grows outward (centripetal) to become the middle lamella + wall. Animals: an **actin–myosin contractile ring** pinches the membrane inward as a cleavage furrow.\n\n### 7.3 Common examination mistakes\n\n1. Saying DNA replicates \"before meiosis II\" — replication happens **only before meiosis I**; interkinesis has none.\n2. Splitting centromeres in anaphase I — homologs separate whole; centromeres split only in anaphase II (and mitosis).\n3. Drawing metaphase I chromosomes in a single row — they align as **pairs in two rows**.\n4. Confusing **chiasmata** (visible X-shaped contact points) with **crossing over** (the exchange event at pachytene).\n5. Writing \"meiosis produces gametes\" for plants without mentioning **spores** (meiosis makes spores in plants; gametes form by mitosis in the gametophyte).\n6. Calling amitosis the main division of prokaryotes without noting its imprecision (unequal chromatin distribution)."
     ],
     "confusion": [
-      "Mitosis maintains the chromosome number (2n → 2n); meiosis halves it (2n → n).",
-      "Crossing over and independent assortment occur in MEIOSIS only, not mitosis.",
-      "In Anaphase I of meiosis, HOMOLOGOUS chromosomes separate; in Anaphase of mitosis and Anaphase II of meiosis, SISTER CHROMATIDs separate.",
-      "DNA replication happens ONLY in the S phase; meiosis has one S phase then two divisions.",
-      "G2 is not a \"resting\" phase; DNA has already doubled in S and the cell is preparing for M.",
-      "Non-disjunction = a homologous pair (or chromatid pair) fails to separate → one cell gets both, the other gets none."
+      "**Chromatid vs chromosome:** after S phase, each chromosome consists of two sister chromatids joined at one centromere — it is still ONE chromosome. The count changes only when centromeres split (anaphase).",
+      "**Mitosis vs meiosis II:** both split centromeres and separate sister chromatids, but meiosis II starts from haploid, recombined cells and follows meiosis I without new DNA replication.",
+      "**Crossing over vs independent assortment:** crossing over = physical exchange between non-sister chromatids (pachytene); independent assortment = random orientation of bivalents at metaphase I. Both create variation, by different mechanisms.",
+      "**Interkinesis vs interphase:** interkinesis between meiosis I and II has NO DNA replication; interphase of the cell cycle always includes S phase.",
+      "**Amitosis vs binary fission:** related but not identical — amitosis is the imprecise direct nuclear division seen in some eukaryotic cells; bacterial binary fission is precise DNA replication followed by septation."
     ],
     "practice": [
-      "Draw the four phases of mitosis with labelled chromosomes.",
-      "Draw a full meiosis diagram and mark crossing over + independent assortment.",
-      "Tabulate mitosis vs meiosis (6 differences).",
-      "Explain the role of each checkpoint in preventing cancer.",
-      "Calculate the chromosome/chromatid count at each meiotic stage (2n = 4 example)."
+      "A cell has 2n = 8. How many chromosomes and chromatids does it have in G₂, and in each daughter cell after meiosis II?",
+      "Why can a skin cell and a nerve cell of the same person have identical DNA but completely different structures?",
+      "Why must gamete-forming cells divide meiotically rather than mitotically for a species to survive?"
     ],
     "universalFacts": [
-      "Interphase occupies ~90% of the cell cycle; mitosis is brief.",
-      "A human cell with 46 chromosomes yields two 46-chromosome cells after mitosis and four 23-chromosome cells after meiosis.",
-      "Crossing over can occur at multiple points per chromosome pair in Prophase I.",
-      "Cancer is fundamentally uncontrolled mitosis due to failed checkpoints (e.g., p53 mutations)."
+      "Typical human cell cycle ≈ 24 h: G₁ 11 h, S 8 h, G₂ 4 h, M 1 h.",
+      "Flemming observed and named mitosis (1882); term \"meiosis\" — Farmer and Moore (1905).",
+      "Crossing over occurs at pachytene; visible chiasmata from diplotene."
     ],
     "examples": [
-      "Onion root tip: classic mitotic figures (prophase, metaphase, anaphase, telophase).",
-      "Spermatogenesis: 1 primary (2n) → 2 secondary (n) → 4 spermatids (n) → 4 sperm.",
-      "Oogenesis: 1 primary (2n) → 1 secondary (n) + 1 polar body → 1 functional ovum (n) + usually 2–3 polar bodies (meiosis II completes only if fertilization occurs).",
-      "Down syndrome: usually full trisomy 21 from meiotic non-disjunction (~95% of cases; translocation and mosaic forms also occur).",
-      "Amitosis: direct division without a spindle; described in some protozoans and yeasts."
+      "**Bone marrow** — mitotic factory replacing blood cells (~200 billion RBCs/day).",
+      "**Healing skin wound** — mitosis fills the gap from the wound edge.",
+      "**Human spermatogenesis** — meiosis I + II convert one spermatogonium into 4 haploid spermatids.",
+      "**Lily anther sporocytes** — classic meiosis-I slide material; pollen grains are the haploid products."
     ],
     "practiceQuestions": [
-      "How is Anaphase I of meiosis different from Anaphase of mitosis?",
-      "Explain why meiosis produces genetic variation (two mechanisms).",
-      "What would happen if the S phase did not occur?",
-      "Describe the G1/S, G2/M, and M checkpoints and their role in preventing cancer.",
-      "Define non-disjunction and give a human disease example."
+      "**Short answer (2m): Define cell cycle.** — The sequence of events by which a cell grows, replicates its DNA and divides into two daughter cells; it comprises interphase (G₁, S, G₂) and the M phase with cytokinesis.",
+      "**Short answer (2m): What is crossing over?** — The exchange of corresponding segments between non-sister chromatids of homologous chromosomes during pachytene of prophase I, producing recombined chromosomes and genetic variation.",
+      "**Short answer (2m): What is a bivalent?** — The pair of homologous chromosomes (four chromatids, hence \"tetrad\") formed by synapsis during zygotene of prophase I.",
+      "**Short answer (2m): What is the G₀ phase?** — A quiescent state outside the active cycle into which cells withdraw after mitosis (e.g. mature neurons); they remain metabolically active but do not divide, though some can re-enter the cycle on stimulus.",
+      "**Long answer (5m): Describe the stages of mitosis with labelled diagrams and state its significance.** — Prophase (condensation, spindle, envelope loss) → metaphase (equatorial plate, spindle attachment) → anaphase (centromere split, chromatids to poles) → telophase (re-formation of nuclei) → cytokinesis (cell plate vs furrow). Significance: growth, repair, genetic stability, asexual reproduction, regeneration.",
+      "**Long answer (5m): Describe meiosis I with diagrams and state how it reduces the chromosome number.** — Prophase I with five substages (synapsis, crossing over), metaphase I (bivalents in two rows), anaphase I (whole homologs separate — centromere intact), telophase I (haploid nuclei). Reduction happens because each pole receives one chromosome of every homologous pair, while each chromosome still has two chromatids.",
+      "**Conceptual (3m): Why does meiosis create variation while mitosis does not?** — Mitosis copies an existing genome exactly (no pairing, no exchange). Meiosis adds two sources of novelty: crossing over recombines maternal and paternal alleles within chromosomes (pachytene), and independent assortment randomises which homolog of each pair reaches which pole (metaphase I). Each gamete therefore carries a unique combination.",
+      "**Conceptual (3m): \"Cancer is a disease of the cell cycle.\" Explain.** — Normal division is stopped at checkpoints by control genes (proto-oncogenes, tumour suppressors such as p53). When mutations disable these brakes, cells skip G₁/S and spindle checkpoints and divide without restraint, invading tissues — uncontrolled mitosis is the mechanism of tumour growth.",
+      "**Application (2m): Why do antibiotics/chemotherapy drugs that block spindle formation stop tumour growth?** — Drugs like colchicine and vinblastine prevent microtubule assembly, so the mitotic spindle cannot form; cells arrest in metaphase and cannot complete division. Rapidly dividing tumour cells are hit hardest."
     ],
     "formulas": [
       "Mitosis: 2n → 2 daughter cells of 2n",
@@ -290,105 +395,152 @@
       "Chromosome count: after S each chromosome = 2 chromatids"
     ],
     "keyPoints": [
-      "Cell cycle: G1, S, G2 (interphase) + M; checkpoints prevent errors.",
-      "PMAT = Prophase, Metaphase, Anaphase, Telophase of mitosis.",
-      "Meiosis: two divisions; crossing over (Prophase I) + independent assortment (Metaphase I) create variation.",
-      "Anaphase I separates homologs; Anaphase (mitosis) + Anaphase II separate sister chromatids.",
-      "Cytokinesis: animal (cleavage furrow) vs plant (cell plate).",
-      "Mitotic errors → cancer; meiotic errors → aneuploidy (Down syndrome).",
-      "Significance: mitosis = growth/repair; meiosis = gametes + diversity."
+      "Cell cycle = interphase (G₁ growth, S DNA synthesis, G₂ preparation) + M phase (mitosis) + cytokinesis; checkpoints guard the transitions; G₀ = quiescent exit.",
+      "Interphase is the most active phase — DNA replication and growth happen there.",
+      "Amitosis: direct splitting, no spindle, imprecise (Remak, 1841).",
+      "Mitosis (Flemming, 1882): prophase → metaphase → anaphase → telophase; centromeres split in anaphase; 2 identical 2n daughters; growth, repair, asexual reproduction.",
+      "Cytokinesis: cell plate (plants, centripetal from Golgi vesicles) vs cleavage furrow (animals, actin–myosin).",
+      "Meiosis (Farmer & Moore, 1905): one replication + two divisions → 4 haploid varied cells; only in germ cells.",
+      "Prophase I: leptotene → zygotene (synapsis) → pachytene (crossing over, chiasmata) → diplotene → diakinesis.",
+      "Anaphase I separates whole homologs (centromere intact); anaphase II splits centromeres.",
+      "Meiosis significance: chromosome-number constancy + genetic variation + gamete/spore formation."
     ],
-    "summary": "The cell cycle (G1, S, G2, M) is controlled by checkpoints. Mitosis (PMAT) produces two genetically identical diploid cells for growth, repair, and asexual reproduction; cytokinesis differs between animal (cleavage furrow) and plant (cell plate) cells. Meiosis is a two-division process that halves the chromosome number and, through crossing over and independent assortment, generates the genetic diversity needed for sexual reproduction. Amitosis is a rare direct division. Mitotic errors lead to cancer; meiotic non-disjunction causes aneuploidies such as Down syndrome. NEB focuses on the full cell cycle, all mitotic and meiotic phases, the sources of variation, and the consequences of errors.",
+    "summary": "The cell cycle runs through interphase — G₁ growth, S DNA replication, G₂ preparation — into the M phase. Amitosis is a rare, imprecise direct splitting. Mitosis (prophase → metaphase → anaphase → telophase, then cytokinesis by cell plate in plants or cleavage furrow in animals) produces two genetically identical diploid cells for growth, repair and asexual reproduction. Meiosis — one replication followed by two divisions — produces four genetically unique haploid cells: prophase I (leptotene, zygotene synapsis, pachytene crossing over, diplotene, diakinesis), metaphase I with bivalents in two rows, anaphase I separating whole homologs, then the equational meiosis II. Meiosis keeps chromosome numbers constant across generations and generates the variation on which evolution acts; its failure (nondisjunction) and mitosis's failure (checkpoint loss → cancer) show why precise division matters.",
     "specialNotes": [
-      "NEB expects labelled mitosis diagrams plus a full meiosis diagram with crossing over marked.",
-      "The mitosis vs meiosis comparison table (6 points) is a very common question.",
-      "Explain the two sources of meiotic variation (crossing over + independent assortment).",
-      "Relate checkpoint failure to cancer and non-disjunction to Down syndrome.",
-      "Distinguish what separates in Anaphase I vs Anaphase (mitosis/II).",
-      "Note the cytokinesis difference (furrow vs cell plate)."
+      "No verified cell-division PYQ exists in the current solved-paper bank for class 11 biology; all questions in this note are NEB-style practice and labelled as such."
     ],
     "importantStatements": [
-      "Mitosis maintains a species' diploid chromosome number.",
-      "Meiosis halves the genome and shuffles alleles, creating variation.",
-      "The cell cycle is controlled by checkpoints that stop M phase if DNA is damaged.",
-      "Crossing over occurs only in Prophase I of meiosis."
+      "\"Mitosis preserves the individual; meiosis preserves the species — and gives it room to evolve.\"",
+      "\"Interphase is the working phase; mitosis is the distributing phase.\""
     ],
     "importantNotes": [
-      "Learn the PMAT sequence and draw each phase from memory.",
-      "Keep a mitosis vs meiosis comparison table (6 points).",
-      "Memorise that crossing over occurs in Prophase I.",
-      "Relate checkpoint failure to cancer and non-disjunction to aneuploidy.",
-      "Note the cytokinesis difference (animal furrow vs plant cell plate)."
+      "For \"describe mitosis\" (5m): one labelled diagram + four stages in order with 2–3 events each + cytokinesis sentence. For \"describe prophase I\": name all five substages in order with one event each — the order itself carries marks."
     ],
     "examShortTricks": [
-      "PMAT = Prophase, Metaphase, Anaphase, Telophase.",
-      "MITO = 2 identical (2n); MEI = 4 different (n).",
-      "Crossing over = Prophase I only.",
-      "Anaphase I = homologs separate; Anaphase (mitosis/II) = chromatids separate.",
-      "No S phase → no DNA duplication → division fails.",
-      "Animal = furrow; Plant = cell plate."
+      "Prophase I order: \"**L**eap **Z**ebra **P**igs **D**ance **D**aily\" — Leptotene, Zygotene, Pachytene, Diplotene, Diakinesis.",
+      "\"Mitosis = Multiplication (identical); Meiosis = Me-half\" — number halved.",
+      "\"Centromere splits in A-II, not A-I\" — the single most-dropped mark in meiosis answers."
     ],
     "examNotes": [
-      "Draw and label all four mitotic phases.",
-      "Draw a full meiosis diagram (mark crossing over + independent assortment).",
-      "Tabulate mitosis vs meiosis (6 points).",
-      "Explain how meiosis creates variation (two mechanisms).",
-      "Describe cell-cycle checkpoints and the cause of cancer.",
-      "Define non-disjunction with a human example (Down syndrome)."
+      "Most-tested: mitosis stages, prophase I substages, mitosis vs meiosis table, significance lists.",
+      "Diagram-worthy: all four mitosis stages, metaphase I (two rows) vs metaphase II (one row), crossing over with chiasma, cell plate vs cleavage furrow."
     ],
     "mcs": [
       {
-        "question": "In Anaphase I of meiosis, what separates?",
+        "question": "DNA replication occurs during which phase of the cell cycle?",
+        "options": [
+          "G₁ phase",
+          "S phase",
+          "G₂ phase",
+          "M phase"
+        ],
+        "answer": "B",
+        "explanation": "The synthesis (S) phase replicates DNA so each chromosome becomes two sister chromatids; G₁ grows, G₂ prepares for division."
+      },
+      {
+        "question": "Chromosomes align on the equatorial plate during:",
+        "options": [
+          "Prophase",
+          "Metaphase",
+          "Anaphase",
+          "Telophase"
+        ],
+        "answer": "B",
+        "explanation": "Metaphase lines chromosomes at the equator with spindle fibres attached — the best stage for chromosome counting/karyotyping."
+      },
+      {
+        "question": "During anaphase I of meiosis, what separates?",
         "options": [
           "Sister chromatids",
           "Homologous chromosomes",
           "Centromeres",
-          "Nuclear envelopes"
+          "Nucleoli"
         ],
-        "answer": "B"
+        "answer": "B",
+        "explanation": "Anaphase I pulls whole homologous chromosomes to opposite poles; centromeres do NOT split until anaphase II."
       },
       {
-        "question": "Cytokinesis in animal cells occurs by:",
+        "question": "Crossing over occurs during which substage of prophase I?",
         "options": [
-          "Cell plate",
-          "Cleavage furrow",
-          "Binary fission",
-          "Growth"
+          "Leptotene",
+          "Zygotene",
+          "Pachytene",
+          "Diakinesis"
         ],
-        "answer": "B"
+        "answer": "C",
+        "explanation": "Pachytene: recombination nodules appear and non-sister chromatids exchange segments; chiasmata become visible at diplotene."
       },
       {
-        "question": "The two sources of meiotic variation are:",
+        "question": "Synapsis of homologous chromosomes occurs during:",
         "options": [
-          "Crossing over + independent assortment",
-          "Mutation + drift",
-          "G1 + S",
-          "Anaphase + telophase"
+          "Leptotene",
+          "Zygotene",
+          "Diplotene",
+          "Telophase I"
         ],
-        "answer": "A"
+        "answer": "B",
+        "explanation": "Zygotene pairs homologs (synapsis) with formation of the synaptonemal complex, creating bivalents."
       },
       {
-        "question": "Down syndrome is caused by:",
+        "question": "Plant cytokinesis differs from animal cytokinesis because plants form:",
         "options": [
-          "Mitotic error",
-          "Meiotic non-disjunction (trisomy 21)",
-          "A virus",
-          "Poor diet"
+          "A cleavage furrow",
+          "A cell plate from Golgi vesicles",
+          "A contractile ring",
+          "Four daughter cells"
         ],
-        "answer": "B"
+        "answer": "B",
+        "explanation": "Golgi vesicles fuse at the equator forming the cell plate, growing outward to become the new wall; the rigid wall cannot be pinched like an animal membrane."
+      },
+      {
+        "question": "How many cells result from one meiotic event?",
+        "options": [
+          "2 identical diploid",
+          "2 haploid",
+          "4 identical haploid",
+          "4 genetically different haploid"
+        ],
+        "answer": "D",
+        "explanation": "One replication + two divisions yield four haploid cells, each genetically unique because of crossing over and independent assortment."
+      },
+      {
+        "question": "Interkinesis is the stage between:",
+        "options": [
+          "G₁ and S",
+          "Meiosis I and meiosis II",
+          "Prophase and metaphase",
+          "Two mitotic cycles"
+        ],
+        "answer": "B",
+        "explanation": "Interkinesis (with no DNA replication) separates meiosis I from meiosis II."
+      },
+      {
+        "question": "Which cells typically remain in G₀ and rarely divide?",
+        "options": [
+          "Skin cells",
+          "Bone marrow cells",
+          "Mature neurons",
+          "Intestinal lining cells"
+        ],
+        "answer": "C",
+        "explanation": "Mature neurons and cardiac muscle cells are permanent G₀ cells; skin, marrow and gut lining divide constantly."
+      },
+      {
+        "question": "Amitosis differs from mitosis because it:",
+        "options": [
+          "Forms a spindle",
+          "Condenses chromosomes precisely",
+          "Divides the nucleus by simple constriction",
+          "Produces four cells"
+        ],
+        "answer": "C",
+        "explanation": "Amitosis (Remak, 1841) is direct nuclear constriction without spindle or precise chromosome behaviour — chromatin distribution is unequal."
       }
     ],
     "importantConcepts": [
-      "Cell cycle (G1, S, G2, M)",
-      "Checkpoints",
-      "PMAT phases",
-      "Meiosis I & II",
-      "Crossing over",
-      "Independent assortment",
-      "Cytokinesis (furrow vs cell plate)",
-      "Non-disjunction",
-      "Cancer",
-      "Amitosis"
+      "**Reduction then equation:** meiosis I halves the number (homologs separate); meiosis II halves the chromatid count (centromeres split) — together they convert one 2n cell into four n cells.",
+      "**Variation machinery:** crossing over (pachytene) + independent assortment (metaphase I) are the two engines of genetic diversity.",
+      "**Cancer = cell-cycle control failure:** checkpoints lost → endless mitosis; the clinical shadow of this topic."
     ],
     "importantTasks": [
       "Label the 4 mitotic phases",
@@ -416,53 +568,47 @@
     }
   },
   "notes": [
-    "DETAILED CELL DIVISION: the full cell cycle and every mitotic/meiotic phase.",
-    "Interphase (90% of the cycle): G1 (growth, organelle duplication, protein synthesis), S (DNA replication — each chromosome now has 2 sister chromatids), G2 (preparation for mitosis, checkpoint).",
-    "Checkpoints: G1/S (DNA damage, nutrients), G2/M (replication complete), M (spindle attachment) — failures cause cancer.",
-    "Mitosis phases (PMAT): Prophase (chromatin → chromosomes, spindle forms, nuclear envelope breaks), Metaphase (chromosomes align at the equatorial plate, spindle fibres attached to centromeres), Anaphase (centromeres split, sister chromatids pulled to opposite poles), Telophase (chromosomes decondense, nuclear envelopes reform, cytokinesis).",
-    "Cytokinesis: animal cells — cleavage furrow (actin); plant cells — cell plate → new wall.",
-    "Meiosis: two divisions. Meiosis I (reductional): Prophase I (chromosomes pair = synapsis; crossing over between non-sister chromatids), Metaphase I (homologous pairs at the equator; independent assortment), Anaphase I (homologs separate), Telophase I. Meiosis II (equational): like mitosis but no DNA replication; sister chromatids separate.",
-    "Outcome: meiosis → 4 haploid (n) genetically distinct cells; mitosis → 2 diploid (2n) identical cells.",
-    "Crossing over (Prophase I) + independent assortment (Metaphase I) = the two sources of meiotic variation.",
-    "Amitosis (direct division): simple karyokinesis; rare — described in some protozoans, yeasts/some fungi and certain pathological or regenerating cells.",
-    "Errors: mitotic errors → uncontrolled division = cancer; meiotic non-disjunction → aneuploidy (e.g., Down syndrome = usually trisomy 21).",
-    "Significance: mitosis = growth, repair, asexual reproduction; meiosis = gamete formation + genetic diversity.",
-    "NEB focus: the full cell cycle, all mitotic and meiotic phases, variation, and errors."
+    "## 1. Topic Introduction — How Life Copies Itself at the Cellular Level\n\nA cell's life is a cycle of growth, DNA copying and division. Every scar that heals, every root that grows, every sperm and egg that carries your genes to the next generation is the result of **cell division**.\n\n- **Why it matters:** growth, repair, reproduction and heredity all pass through this topic; it also explains cancer (uncontrolled division) and genetic variation (crossing over).\n- **The one-sentence core:** **mitosis copies a cell exactly; meiosis halves the chromosome number and shuffles genes.**\n- **Connections:** chromosomes from Topic 3 are the actors here; meiosis connects directly to heredity and evolution (variation), and mitosis to growth and healing.",
+    "## 2. The Cell Cycle — The Cell's Life Story\n\n### 2.1 Definition and the grand division\n\nThe **cell cycle** (Howard and Pelc, 1953) is the sequence of events from the formation of a cell to its own division into two daughter cells. It has two great phases:\n\n$$\\text{Cell cycle} = \\underbrace{I_1 + S + I_2}_{\\text{Interphase (I-phase)}} + \\underbrace{\\text{M phase}}_{\\text{Division}} + C \\text{(cytokinesis)}$$\n\n| Phase | Name | Duration (typical 24 h human cell) | What happens |\n|---|---|---|---|\n| **G₁** | First gap (post-mitotic) | ~11 h | Growth; RNA and proteins synthesised; organelles multiply; cell decides to divide or exit (G₀) |\n| **S** | Synthesis | ~8 h | **DNA replication** — each chromosome is duplicated into two sister chromatids; histones synthesised |\n| **G₂** | Second gap (pre-mitotic) | ~4 h | Further growth; spindle proteins, microtubules and RNA made; cell checks DNA for errors |\n| **M** | Mitotic phase | ~1 h | Karyokinesis (nuclear division): prophase → metaphase → anaphase → telophase, then **cytokinesis** |\n\n**Interphase misconception:** interphase is NOT a resting phase — it is the most metabolically active period (DNA replication and growth happen here); only *division* is absent.\n\n### 2.2 Checkpoints and G₀\n\n- **Checkpoints** (G₁/S, G2/M, spindle checkpoint) verify that DNA is intact and complete before the next step — the cell's quality control.\n- Cells that permanently leave the cycle enter **G₀** (quiescent phase): mature neurons and muscle cells stay in G₀; liver cells can re-enter the cycle on injury.\n- **Cancer = checkpoint failure:** cells escape control and divide endlessly. This single sentence is the conceptual bridge between cell division and oncology.",
+    "## 3. Amitosis — Direct Division\n\n**Definition:** direct, simple splitting of the nucleus (and then cytoplasm) **without spindle formation, without chromosome condensation** — described by Remak (1841).\n\n| Feature | Detail |\n|---|---|\n| Where | Prokaryotes, some yeast, degenerating/old cells, foetal membranes, cartilage cells |\n| Mechanism | Nucleus elongates, constricts in the middle; cytoplasm divides; two nuclei form |\n| Result | Two cells with roughly equal but imprecisely distributed nuclear material |\n| Significance | Fast, low-cost division for simple/fast-growing or dying tissues |\n| Drawback | Unequal distribution of chromatin; no genetic precision |",
+    "## 4. Mitosis — Equational Division\n\n### 4.1 Definition\n\n**Mitosis** (Flemming, 1882; Greek *mitos* = thread) is the division of a somatic cell into **two daughter cells with the same chromosome number as the parent** (2n → 2n). It has **karyokinesis** (nuclear division) followed by **cytokinesis** (cytoplasmic division).\n\n### 4.2 The four stages — what happens and why\n\n| Stage | Key events | Structures to name |\n|---|---|---|\n| **Prophase** | Chromatin condenses into visible chromosomes (each = 2 sister chromatids joined at the centromere); nucleolus disappears; nuclear envelope breaks down; spindle begins; centrioles move to poles (animals) | Sister chromatids, centromere, spindle |\n| **Metaphase** | Chromosomes line up on the **equatorial (metaphase) plate**; spindle fibres from both poles attach to kinetochores; the best stage to count and study chromosomes (karyotyping) | Equatorial plate, kinetochore fibres, polar fibres |\n| **Anaphase** | **Centromeres split**; sister chromatids separate and move to opposite poles (appears V-, J- or L-shaped by centromere position); poles move apart | Daughter chromosomes, spindle elongation |\n| **Telophase** | Chromosomes decondense; nuclear envelopes reform around each set; nucleoli reappear; spindle dissolves | Two daughter nuclei |\n\n### 4.3 Cytokinesis — two different solutions\n\n| Basis | Plant cytokinesis | Animal cytokinesis |\n|---|---|---|\n| Mechanism | **Cell plate** forms from Golgi vesicles at the equator, growing outward until it fuses with the wall | **Cleavage furrow**: actin–myosin ring contracts, pinching the membrane inward |\n| Direction | Centripetal (inside → outside) | Centripetal (outside → inside) |\n| Why the difference | Rigid wall cannot be pinched | No wall, flexible membrane |\n\n### 4.4 Significance of mitosis (exam list — give the reason with each)\n\n1. **Growth** of multicellular organisms (zygote → body by repeated mitosis).\n2. **Repair and healing** — replacement of worn-out and wounded cells.\n3. **Genetic stability** — exact copies: daughter cells keep the same chromosome number and gene set.\n4. **Asexual reproduction** — binary fission, budding, vegetative propagation are mitotic.\n5. **Regeneration** — replacement of lost parts (lizard tail, planaria).\n6. **Maintains the surface-area-to-volume ratio** of tissues by renewing cells.",
+    "## 5. Meiosis — Reductional Division\n\n### 5.1 Definition\n\n**Meiosis** (Farmer and Moore, 1905; Greek *meion* = to lessen) is a **single DNA replication followed by two divisions**, producing **four haploid (n) cells** from one diploid (2n) cell. It occurs only in **germ (reproductive) cells** — sporocytes in plants, gamete-forming cells in animals. It consists of **meiosis I (reductional)** and **meiosis II (equational)**, with a brief **interkinesis** between them (no DNA replication in interkinesis — key point).\n\n### 5.2 Meiosis I — the reduction\n\n| Stage | Key events |\n|---|---|\n| **Prophase I** (longest, most complex — 5 substages) | See below |\n| **Metaphase I** | **Homologous pairs (bivalents/tetrads)** align on the equatorial plate in **two rows**; spindle attaches to kinetochores of homologs (not sister chromatids) |\n| **Anaphase I** | **Whole homologous chromosomes separate** to opposite poles — **centromeres do NOT split**; sister chromatids stay together |\n| **Telophase I** | Haploid set (each chromosome still double-stranded) reaches each pole; nuclear envelope may re-form; cytokinesis follows |\n\n**Prophase I substages (the most examined sequence in this topic):**\n\n| Substage | Events |\n|---|---|\n| **Leptotene** | Chromosomes condense and become visible |\n| **Zygotene** | **Synapsis** — homologous chromosomes pair; a **synaptonemal complex** forms |\n| **Pachytene** | **Crossing over** — non-sister chromatids of the bivalent exchange segments at **recombination nodules**; visible **chiasmata** appear; recombinase (Reca) enzymes act |\n| **Diplotene** | Synaptonemal complex dissolves; chiasmata clearly visible; homologs begin to separate (oocytes of some vertebrates stay here for years — dictyotene) |\n| **Diakinesis** | Terminalisation of chiasmata; chromosomes fully condensed; nucleolus and envelope disappear; spindle forms |\n\n### 5.3 Meiosis II — the equational division\n\nAfter interkinesis (no DNA replication), each haploid cell divides like a mitosis: **prophase II → metaphase II (chromosomes in single row) → anaphase II (centromeres split, sister chromatids separate) → telophase II**. Result: **four haploid cells**.\n\n### 5.4 Significance of meiosis (exam list)\n\n1. **Maintains the chromosome number constant** across generations — 2n gamete-forming cells → n gametes; fertilisation restores 2n.\n2. **Creates genetic variation** by crossing over (pachytene) and independent assortment (metaphase I orientation) — the raw material of evolution.\n3. **Forms gametes/spores** for sexual reproduction.\n4. **Repairs defects and aids adaptation** through recombination.\n5. **Aids speciation** — variation on which natural selection acts.\n\n### 5.5 Mitosis vs Meiosis — the guaranteed master table\n\n| Basis | Mitosis | Meiosis |\n|---|---|---|\n| Occurrence | Somatic (body) cells, throughout life | Germ cells, only at reproduction |\n| Divisions | One (DNA replicated once, divided once) | Two (DNA replicated once, divided twice) |\n| Daughter cells | 2 | 4 |\n| Chromosome number | Conserved (2n → 2n) — equational | Halved (2n → n) — reductional |\n| Pairing of homologs | No synapsis | Synapsis and bivalent formation |\n| Crossing over | Absent | Present (pachytene) — variation |\n| Metaphase arrangement | Chromosomes in one row | Meiosis I: pairs in two rows; Meiosis II: one row |\n| Anaphase separation | Sister chromatids (centromere splits) | I: homologs (centromere intact); II: sister chromatids |\n| Duration of prophase | Short, simple | Long, five substages |\n| Genetic result | Identical daughter cells | Genetically different haploid cells |\n| Role | Growth, repair, asexual reproduction | Gamete/spore formation, variation |",
+    "## 6. Conceptual Relationships\n\n- **Topic 3 → here:** the spindle is built from microtubules; the Golgi makes the plant cell plate; chromosomes come from nuclear chromatin.\n- **Here → heredity (Class 12):** segregation of homologs (meiosis I) and independent assortment are the physical basis of Mendel's laws.\n- **Here → evolution:** crossing over and independent assortment generate the variation natural selection acts on.\n- **Here → health:** loss of mitotic control = cancer; failure of meiotic segregation (nondisjunction) = chromosomal disorders (Down syndrome, trisomy 21).\n- **Here → reproduction:** gametogenesis in animals and sporogenesis in plants are meiotic; fertilisation reverses the reduction.",
+    "## 7. Exam Orientation\n\n### 7.1 Previous year questions\n\nNo cell-division question is present in the authored solved-paper bank for class 11 biology (the 2021–2024 bank questions for this unit cover biomolecules, cells and enzymes). The questions below are **NEB-style practice questions, not verified PYQs** — clearly distinguished as required.\n\n### 7.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Define the cell cycle. Describe the events of interphase.**\nAnswer: The cell cycle is the sequence of changes a cell undergoes from its formation to its own division. **Interphase** (the metabolically active \"resting\" phase, ~23 h of a 24 h cycle) has three sub-phases: **G₁** — growth, RNA/protein synthesis, organelle multiplication; **S** — DNA replication, producing two sister chromatids per chromosome; **G₂** — spindle-protein synthesis and final preparation for mitosis.\n\n**Q2 (5m) — Describe the stages of mitosis with diagrams.**\nAnswer: Draw the four stages. **Prophase:** condensation into two-chromatid chromosomes, nuclear envelope and nucleolus disappear, spindle forms. **Metaphase:** chromosomes align on the equatorial plate, kinetochore fibres from both poles attach. **Anaphase:** centromeres split, sister chromatids move to opposite poles. **Telophase:** envelopes and nucleoli reform, chromosomes decondense. End with cytokinesis: cell plate (plants) vs cleavage furrow (animals).\n\n**Q3 (5m) — Describe prophase I of meiosis and state its significance.**\nAnswer: Five substages — **leptotene** (chromosomes visible), **zygotene** (synapsis of homologs, synaptonemal complex), **pachytene** (crossing over at recombination nodules, chiasmata appear), **diplotene** (complex dissolves, chiasmata visible), **diakinesis** (terminalisation, spindle forms). Significance: crossing over produces new gene combinations — the source of genetic variation.\n\n**Q4 (3m) — Give four differences between mitosis and meiosis.**\nAnswer: Any four table rows — occurrence (somatic vs germ cells), divisions (one vs two), products (2 identical 2n vs 4 varied n cells), crossing over (absent vs present), metaphase arrangement (one row vs pairs in two rows).\n\n**Q5 (3m) — Why is meiosis significant for a species?**\nAnswer: (1) It halves the chromosome number so fertilisation can restore it — chromosome constancy across generations; (2) crossing over and independent assortment create genetic variation; (3) variation gives natural selection material to act on, enabling adaptation and evolution.\n\n**Q6 (2m) — Why is interphase not a \"resting phase\"?**\nAnswer: Because DNA replication (S phase), massive protein/RNA synthesis and growth (G₁, G₂) all occur then — the cell is metabolically at its busiest; only nuclear division is absent.\n\n**Q7 (2m) — How does cytokinesis differ in plant and animal cells?**\nAnswer: Plants: a **cell plate** of Golgi vesicles forms at the equator and grows outward (centripetal) to become the middle lamella + wall. Animals: an **actin–myosin contractile ring** pinches the membrane inward as a cleavage furrow.\n\n### 7.3 Common examination mistakes\n\n1. Saying DNA replicates \"before meiosis II\" — replication happens **only before meiosis I**; interkinesis has none.\n2. Splitting centromeres in anaphase I — homologs separate whole; centromeres split only in anaphase II (and mitosis).\n3. Drawing metaphase I chromosomes in a single row — they align as **pairs in two rows**.\n4. Confusing **chiasmata** (visible X-shaped contact points) with **crossing over** (the exchange event at pachytene).\n5. Writing \"meiosis produces gametes\" for plants without mentioning **spores** (meiosis makes spores in plants; gametes form by mitosis in the gametophyte).\n6. Calling amitosis the main division of prokaryotes without noting its imprecision (unequal chromatin distribution)."
   ],
   "confusion": [
-    "Mitosis maintains the chromosome number (2n → 2n); meiosis halves it (2n → n).",
-    "Crossing over and independent assortment occur in MEIOSIS only, not mitosis.",
-    "In Anaphase I of meiosis, HOMOLOGOUS chromosomes separate; in Anaphase of mitosis and Anaphase II of meiosis, SISTER CHROMATIDs separate.",
-    "DNA replication happens ONLY in the S phase; meiosis has one S phase then two divisions.",
-    "G2 is not a \"resting\" phase; DNA has already doubled in S and the cell is preparing for M.",
-    "Non-disjunction = a homologous pair (or chromatid pair) fails to separate → one cell gets both, the other gets none."
+    "**Chromatid vs chromosome:** after S phase, each chromosome consists of two sister chromatids joined at one centromere — it is still ONE chromosome. The count changes only when centromeres split (anaphase).",
+    "**Mitosis vs meiosis II:** both split centromeres and separate sister chromatids, but meiosis II starts from haploid, recombined cells and follows meiosis I without new DNA replication.",
+    "**Crossing over vs independent assortment:** crossing over = physical exchange between non-sister chromatids (pachytene); independent assortment = random orientation of bivalents at metaphase I. Both create variation, by different mechanisms.",
+    "**Interkinesis vs interphase:** interkinesis between meiosis I and II has NO DNA replication; interphase of the cell cycle always includes S phase.",
+    "**Amitosis vs binary fission:** related but not identical — amitosis is the imprecise direct nuclear division seen in some eukaryotic cells; bacterial binary fission is precise DNA replication followed by septation."
   ],
   "practice": [
-    "Draw the four phases of mitosis with labelled chromosomes.",
-    "Draw a full meiosis diagram and mark crossing over + independent assortment.",
-    "Tabulate mitosis vs meiosis (6 differences).",
-    "Explain the role of each checkpoint in preventing cancer.",
-    "Calculate the chromosome/chromatid count at each meiotic stage (2n = 4 example)."
+    "A cell has 2n = 8. How many chromosomes and chromatids does it have in G₂, and in each daughter cell after meiosis II?",
+    "Why can a skin cell and a nerve cell of the same person have identical DNA but completely different structures?",
+    "Why must gamete-forming cells divide meiotically rather than mitotically for a species to survive?"
   ],
   "universalFacts": [
-    "Interphase occupies ~90% of the cell cycle; mitosis is brief.",
-    "A human cell with 46 chromosomes yields two 46-chromosome cells after mitosis and four 23-chromosome cells after meiosis.",
-    "Crossing over can occur at multiple points per chromosome pair in Prophase I.",
-    "Cancer is fundamentally uncontrolled mitosis due to failed checkpoints (e.g., p53 mutations)."
+    "Typical human cell cycle ≈ 24 h: G₁ 11 h, S 8 h, G₂ 4 h, M 1 h.",
+    "Flemming observed and named mitosis (1882); term \"meiosis\" — Farmer and Moore (1905).",
+    "Crossing over occurs at pachytene; visible chiasmata from diplotene."
   ],
   "examples": [
-    "Onion root tip: classic mitotic figures (prophase, metaphase, anaphase, telophase).",
-    "Spermatogenesis: 1 primary (2n) → 2 secondary (n) → 4 spermatids (n) → 4 sperm.",
-    "Oogenesis: 1 primary (2n) → 1 secondary (n) + 1 polar body → 1 functional ovum (n) + usually 2–3 polar bodies (meiosis II completes only if fertilization occurs).",
-    "Down syndrome: usually full trisomy 21 from meiotic non-disjunction (~95% of cases; translocation and mosaic forms also occur).",
-    "Amitosis: direct division without a spindle; described in some protozoans and yeasts."
+    "**Bone marrow** — mitotic factory replacing blood cells (~200 billion RBCs/day).",
+    "**Healing skin wound** — mitosis fills the gap from the wound edge.",
+    "**Human spermatogenesis** — meiosis I + II convert one spermatogonium into 4 haploid spermatids.",
+    "**Lily anther sporocytes** — classic meiosis-I slide material; pollen grains are the haploid products."
   ],
   "practiceQuestions": [
-    "How is Anaphase I of meiosis different from Anaphase of mitosis?",
-    "Explain why meiosis produces genetic variation (two mechanisms).",
-    "What would happen if the S phase did not occur?",
-    "Describe the G1/S, G2/M, and M checkpoints and their role in preventing cancer.",
-    "Define non-disjunction and give a human disease example."
+    "**Short answer (2m): Define cell cycle.** — The sequence of events by which a cell grows, replicates its DNA and divides into two daughter cells; it comprises interphase (G₁, S, G₂) and the M phase with cytokinesis.",
+    "**Short answer (2m): What is crossing over?** — The exchange of corresponding segments between non-sister chromatids of homologous chromosomes during pachytene of prophase I, producing recombined chromosomes and genetic variation.",
+    "**Short answer (2m): What is a bivalent?** — The pair of homologous chromosomes (four chromatids, hence \"tetrad\") formed by synapsis during zygotene of prophase I.",
+    "**Short answer (2m): What is the G₀ phase?** — A quiescent state outside the active cycle into which cells withdraw after mitosis (e.g. mature neurons); they remain metabolically active but do not divide, though some can re-enter the cycle on stimulus.",
+    "**Long answer (5m): Describe the stages of mitosis with labelled diagrams and state its significance.** — Prophase (condensation, spindle, envelope loss) → metaphase (equatorial plate, spindle attachment) → anaphase (centromere split, chromatids to poles) → telophase (re-formation of nuclei) → cytokinesis (cell plate vs furrow). Significance: growth, repair, genetic stability, asexual reproduction, regeneration.",
+    "**Long answer (5m): Describe meiosis I with diagrams and state how it reduces the chromosome number.** — Prophase I with five substages (synapsis, crossing over), metaphase I (bivalents in two rows), anaphase I (whole homologs separate — centromere intact), telophase I (haploid nuclei). Reduction happens because each pole receives one chromosome of every homologous pair, while each chromosome still has two chromatids.",
+    "**Conceptual (3m): Why does meiosis create variation while mitosis does not?** — Mitosis copies an existing genome exactly (no pairing, no exchange). Meiosis adds two sources of novelty: crossing over recombines maternal and paternal alleles within chromosomes (pachytene), and independent assortment randomises which homolog of each pair reaches which pole (metaphase I). Each gamete therefore carries a unique combination.",
+    "**Conceptual (3m): \"Cancer is a disease of the cell cycle.\" Explain.** — Normal division is stopped at checkpoints by control genes (proto-oncogenes, tumour suppressors such as p53). When mutations disable these brakes, cells skip G₁/S and spindle checkpoints and divide without restraint, invading tissues — uncontrolled mitosis is the mechanism of tumour growth.",
+    "**Application (2m): Why do antibiotics/chemotherapy drugs that block spindle formation stop tumour growth?** — Drugs like colchicine and vinblastine prevent microtubule assembly, so the mitotic spindle cannot form; cells arrest in metaphase and cannot complete division. Rapidly dividing tumour cells are hit hardest."
   ],
   "formulas": [
     "Mitosis: 2n → 2 daughter cells of 2n",
@@ -471,105 +617,152 @@
     "Chromosome count: after S each chromosome = 2 chromatids"
   ],
   "keyPoints": [
-    "Cell cycle: G1, S, G2 (interphase) + M; checkpoints prevent errors.",
-    "PMAT = Prophase, Metaphase, Anaphase, Telophase of mitosis.",
-    "Meiosis: two divisions; crossing over (Prophase I) + independent assortment (Metaphase I) create variation.",
-    "Anaphase I separates homologs; Anaphase (mitosis) + Anaphase II separate sister chromatids.",
-    "Cytokinesis: animal (cleavage furrow) vs plant (cell plate).",
-    "Mitotic errors → cancer; meiotic errors → aneuploidy (Down syndrome).",
-    "Significance: mitosis = growth/repair; meiosis = gametes + diversity."
+    "Cell cycle = interphase (G₁ growth, S DNA synthesis, G₂ preparation) + M phase (mitosis) + cytokinesis; checkpoints guard the transitions; G₀ = quiescent exit.",
+    "Interphase is the most active phase — DNA replication and growth happen there.",
+    "Amitosis: direct splitting, no spindle, imprecise (Remak, 1841).",
+    "Mitosis (Flemming, 1882): prophase → metaphase → anaphase → telophase; centromeres split in anaphase; 2 identical 2n daughters; growth, repair, asexual reproduction.",
+    "Cytokinesis: cell plate (plants, centripetal from Golgi vesicles) vs cleavage furrow (animals, actin–myosin).",
+    "Meiosis (Farmer & Moore, 1905): one replication + two divisions → 4 haploid varied cells; only in germ cells.",
+    "Prophase I: leptotene → zygotene (synapsis) → pachytene (crossing over, chiasmata) → diplotene → diakinesis.",
+    "Anaphase I separates whole homologs (centromere intact); anaphase II splits centromeres.",
+    "Meiosis significance: chromosome-number constancy + genetic variation + gamete/spore formation."
   ],
-  "summary": "The cell cycle (G1, S, G2, M) is controlled by checkpoints. Mitosis (PMAT) produces two genetically identical diploid cells for growth, repair, and asexual reproduction; cytokinesis differs between animal (cleavage furrow) and plant (cell plate) cells. Meiosis is a two-division process that halves the chromosome number and, through crossing over and independent assortment, generates the genetic diversity needed for sexual reproduction. Amitosis is a rare direct division. Mitotic errors lead to cancer; meiotic non-disjunction causes aneuploidies such as Down syndrome. NEB focuses on the full cell cycle, all mitotic and meiotic phases, the sources of variation, and the consequences of errors.",
+  "summary": "The cell cycle runs through interphase — G₁ growth, S DNA replication, G₂ preparation — into the M phase. Amitosis is a rare, imprecise direct splitting. Mitosis (prophase → metaphase → anaphase → telophase, then cytokinesis by cell plate in plants or cleavage furrow in animals) produces two genetically identical diploid cells for growth, repair and asexual reproduction. Meiosis — one replication followed by two divisions — produces four genetically unique haploid cells: prophase I (leptotene, zygotene synapsis, pachytene crossing over, diplotene, diakinesis), metaphase I with bivalents in two rows, anaphase I separating whole homologs, then the equational meiosis II. Meiosis keeps chromosome numbers constant across generations and generates the variation on which evolution acts; its failure (nondisjunction) and mitosis's failure (checkpoint loss → cancer) show why precise division matters.",
   "specialNotes": [
-    "NEB expects labelled mitosis diagrams plus a full meiosis diagram with crossing over marked.",
-    "The mitosis vs meiosis comparison table (6 points) is a very common question.",
-    "Explain the two sources of meiotic variation (crossing over + independent assortment).",
-    "Relate checkpoint failure to cancer and non-disjunction to Down syndrome.",
-    "Distinguish what separates in Anaphase I vs Anaphase (mitosis/II).",
-    "Note the cytokinesis difference (furrow vs cell plate)."
+    "No verified cell-division PYQ exists in the current solved-paper bank for class 11 biology; all questions in this note are NEB-style practice and labelled as such."
   ],
   "importantStatements": [
-    "Mitosis maintains a species' diploid chromosome number.",
-    "Meiosis halves the genome and shuffles alleles, creating variation.",
-    "The cell cycle is controlled by checkpoints that stop M phase if DNA is damaged.",
-    "Crossing over occurs only in Prophase I of meiosis."
+    "\"Mitosis preserves the individual; meiosis preserves the species — and gives it room to evolve.\"",
+    "\"Interphase is the working phase; mitosis is the distributing phase.\""
   ],
   "importantNotes": [
-    "Learn the PMAT sequence and draw each phase from memory.",
-    "Keep a mitosis vs meiosis comparison table (6 points).",
-    "Memorise that crossing over occurs in Prophase I.",
-    "Relate checkpoint failure to cancer and non-disjunction to aneuploidy.",
-    "Note the cytokinesis difference (animal furrow vs plant cell plate)."
+    "For \"describe mitosis\" (5m): one labelled diagram + four stages in order with 2–3 events each + cytokinesis sentence. For \"describe prophase I\": name all five substages in order with one event each — the order itself carries marks."
   ],
   "examShortTricks": [
-    "PMAT = Prophase, Metaphase, Anaphase, Telophase.",
-    "MITO = 2 identical (2n); MEI = 4 different (n).",
-    "Crossing over = Prophase I only.",
-    "Anaphase I = homologs separate; Anaphase (mitosis/II) = chromatids separate.",
-    "No S phase → no DNA duplication → division fails.",
-    "Animal = furrow; Plant = cell plate."
+    "Prophase I order: \"**L**eap **Z**ebra **P**igs **D**ance **D**aily\" — Leptotene, Zygotene, Pachytene, Diplotene, Diakinesis.",
+    "\"Mitosis = Multiplication (identical); Meiosis = Me-half\" — number halved.",
+    "\"Centromere splits in A-II, not A-I\" — the single most-dropped mark in meiosis answers."
   ],
   "examNotes": [
-    "Draw and label all four mitotic phases.",
-    "Draw a full meiosis diagram (mark crossing over + independent assortment).",
-    "Tabulate mitosis vs meiosis (6 points).",
-    "Explain how meiosis creates variation (two mechanisms).",
-    "Describe cell-cycle checkpoints and the cause of cancer.",
-    "Define non-disjunction with a human example (Down syndrome)."
+    "Most-tested: mitosis stages, prophase I substages, mitosis vs meiosis table, significance lists.",
+    "Diagram-worthy: all four mitosis stages, metaphase I (two rows) vs metaphase II (one row), crossing over with chiasma, cell plate vs cleavage furrow."
   ],
   "mcs": [
     {
-      "question": "In Anaphase I of meiosis, what separates?",
+      "question": "DNA replication occurs during which phase of the cell cycle?",
+      "options": [
+        "G₁ phase",
+        "S phase",
+        "G₂ phase",
+        "M phase"
+      ],
+      "answer": "B",
+      "explanation": "The synthesis (S) phase replicates DNA so each chromosome becomes two sister chromatids; G₁ grows, G₂ prepares for division."
+    },
+    {
+      "question": "Chromosomes align on the equatorial plate during:",
+      "options": [
+        "Prophase",
+        "Metaphase",
+        "Anaphase",
+        "Telophase"
+      ],
+      "answer": "B",
+      "explanation": "Metaphase lines chromosomes at the equator with spindle fibres attached — the best stage for chromosome counting/karyotyping."
+    },
+    {
+      "question": "During anaphase I of meiosis, what separates?",
       "options": [
         "Sister chromatids",
         "Homologous chromosomes",
         "Centromeres",
-        "Nuclear envelopes"
+        "Nucleoli"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Anaphase I pulls whole homologous chromosomes to opposite poles; centromeres do NOT split until anaphase II."
     },
     {
-      "question": "Cytokinesis in animal cells occurs by:",
+      "question": "Crossing over occurs during which substage of prophase I?",
       "options": [
-        "Cell plate",
-        "Cleavage furrow",
-        "Binary fission",
-        "Growth"
+        "Leptotene",
+        "Zygotene",
+        "Pachytene",
+        "Diakinesis"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "Pachytene: recombination nodules appear and non-sister chromatids exchange segments; chiasmata become visible at diplotene."
     },
     {
-      "question": "The two sources of meiotic variation are:",
+      "question": "Synapsis of homologous chromosomes occurs during:",
       "options": [
-        "Crossing over + independent assortment",
-        "Mutation + drift",
-        "G1 + S",
-        "Anaphase + telophase"
+        "Leptotene",
+        "Zygotene",
+        "Diplotene",
+        "Telophase I"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Zygotene pairs homologs (synapsis) with formation of the synaptonemal complex, creating bivalents."
     },
     {
-      "question": "Down syndrome is caused by:",
+      "question": "Plant cytokinesis differs from animal cytokinesis because plants form:",
       "options": [
-        "Mitotic error",
-        "Meiotic non-disjunction (trisomy 21)",
-        "A virus",
-        "Poor diet"
+        "A cleavage furrow",
+        "A cell plate from Golgi vesicles",
+        "A contractile ring",
+        "Four daughter cells"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Golgi vesicles fuse at the equator forming the cell plate, growing outward to become the new wall; the rigid wall cannot be pinched like an animal membrane."
+    },
+    {
+      "question": "How many cells result from one meiotic event?",
+      "options": [
+        "2 identical diploid",
+        "2 haploid",
+        "4 identical haploid",
+        "4 genetically different haploid"
+      ],
+      "answer": "D",
+      "explanation": "One replication + two divisions yield four haploid cells, each genetically unique because of crossing over and independent assortment."
+    },
+    {
+      "question": "Interkinesis is the stage between:",
+      "options": [
+        "G₁ and S",
+        "Meiosis I and meiosis II",
+        "Prophase and metaphase",
+        "Two mitotic cycles"
+      ],
+      "answer": "B",
+      "explanation": "Interkinesis (with no DNA replication) separates meiosis I from meiosis II."
+    },
+    {
+      "question": "Which cells typically remain in G₀ and rarely divide?",
+      "options": [
+        "Skin cells",
+        "Bone marrow cells",
+        "Mature neurons",
+        "Intestinal lining cells"
+      ],
+      "answer": "C",
+      "explanation": "Mature neurons and cardiac muscle cells are permanent G₀ cells; skin, marrow and gut lining divide constantly."
+    },
+    {
+      "question": "Amitosis differs from mitosis because it:",
+      "options": [
+        "Forms a spindle",
+        "Condenses chromosomes precisely",
+        "Divides the nucleus by simple constriction",
+        "Produces four cells"
+      ],
+      "answer": "C",
+      "explanation": "Amitosis (Remak, 1841) is direct nuclear constriction without spindle or precise chromosome behaviour — chromatin distribution is unequal."
     }
   ],
   "importantConcepts": [
-    "Cell cycle (G1, S, G2, M)",
-    "Checkpoints",
-    "PMAT phases",
-    "Meiosis I & II",
-    "Crossing over",
-    "Independent assortment",
-    "Cytokinesis (furrow vs cell plate)",
-    "Non-disjunction",
-    "Cancer",
-    "Amitosis"
+    "**Reduction then equation:** meiosis I halves the number (homologs separate); meiosis II halves the chromatid count (centromeres split) — together they convert one 2n cell into four n cells.",
+    "**Variation machinery:** crossing over (pachytene) + independent assortment (metaphase I) are the two engines of genetic diversity.",
+    "**Cancer = cell-cycle control failure:** checkpoints lost → endless mitosis; the clinical shadow of this topic."
   ],
   "importantTasks": [
     "Label the 4 mitotic phases",

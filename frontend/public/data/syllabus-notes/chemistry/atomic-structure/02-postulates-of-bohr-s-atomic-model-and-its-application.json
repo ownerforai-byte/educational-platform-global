@@ -96,5 +96,20 @@
       ],
       "answer": "C"
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Bohr's three numbered postulates in exam order — (1) fixed circular orbits with fixed energy, (2) angular momentum mvr = nh/2π (quantised), (3) radiation only on jump: ΔE = hν.",
+    "Trick 2: Radius and energy formulas for hydrogen: rn ∝ n² (0.529 n² Å) and En = −13.6/n² eV — every numerical is a one-line substitution.",
+    "Trick 3: Energy of ANY orbit from ground state: E_n = −13.6/n² eV; ionisation from orbit n = +13.6/n² eV."
+  ],
+  "keyPoints": [
+    "Electrons revolve only in fixed orbits (stationary states) without radiating energy.",
+    "Angular momentum is quantised: mvr = nh/2π.",
+    "Energy is emitted/absorbed only during a jump: hν = E2 − E1.",
+    "For hydrogen: rn = 0.529 n² Å; En = −13.6/n² eV."
+  ],
+  "practiceQuestions": [
+    "Q. Calculate the radius and energy of the 2nd orbit of hydrogen. (2 marks) — r = 0.529 × 4 = 2.116 Å; E = −13.6/4 = −3.4 eV.",
+    "Q. How much energy is needed to ionise a hydrogen atom in the ground state? (1 mark) — 13.6 eV (2.18 × 10^-18 J)."
   ]
 }

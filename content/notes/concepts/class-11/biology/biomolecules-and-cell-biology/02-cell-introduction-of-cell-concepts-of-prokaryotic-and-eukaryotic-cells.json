@@ -6,268 +6,320 @@
   "source": "authored-v2",
   "generatedAt": "2026-10-28T17:20:32.972Z",
   "notes": [
-    "# Cell: Introduction of cell, concepts of prokaryotic and eukaryotic cells\n\n## 1. Introduction\nThe **cell** is the structural and functional unit of life: the smallest thing that shows all seven life processes together. A bacterium, an onion peel cell, your cheek cell scraped with a toothpick — each is a membrane-bound compartment where biomolecules meet organisation, and organisation becomes life. Everything in this syllabus — tissues, organs, genetics, disease — is cells behaving singly or together.\n\nThe discovery story is short and examinable. Robert Hooke (1665) saw dead cork \"cells\"; Leeuwenhoek's lenses revealed living animalcules; Schleiden (plants, 1838) and Schwann (animals, 1839) declared all organisms cellular; Virchow (1855) added *omnis cellula e cellula* — every cell from a pre-existing cell. Then Chatton (1925) coined *prokaryote/eukaryote*, Dougherty (1957) proposed the two organisations as a deep divide, and Stanier and van Niel (1962) popularised the dichotomy that still frames this topic.\n\n**What you will learn:** (i) the cell concept and cell theory; (ii) cell size range and why cells stay small; (iii) the prokaryotic organisation (correct, modern version — mesosomes retired); (iv) the eukaryotic organisation; (v) the full comparison; (vi) exceptions that prove the rule (viruses, RBCs).\n\n**Learning outcomes.** You can: state cell theory with authors; compare prokaryotic and eukaryotic cells on eight features; explain the surface-area-to-volume reason for smallness; and correct the mesosome and \"largest/smallest cell\" statements.",
-    "## 2. Hierarchy body — the cell idea, then the two organisations\n\n### What a cell is, and cell theory\n1. **Definition.** A cell is the membrane-enclosed unit of structure and function of living organisms, containing hereditary material and the machinery to use it.\n2. **Cell theory (exam core).** Schleiden and Schwann: all living things are made of cells and cell products; Virchow: all cells arise from pre-existing cells. Modern addition: the cell is the unit of heredity and the site of energy flow — genetics and metabolism live inside cell theory now.\n3. **How big are cells?** Most are microscopic (bacteria ~1 µm, human cheek cell ~60 µm, human ovum ~0.12 mm — just visible). The largest known cell is the unfertilised ostrich ovum; mycoplasmas are among the smallest known free-living cells (~0.2–0.4 µm). A human body holds on the order of 3×10¹³ cells (published estimate; counts vary with body size).\n4. **Why so small?** Surface area grows as the square, volume as the cube: a big cell starves at its centre because supply crosses the surface. Smallness is a transport law, not an accident — the surface-area-to-volume ratio is the standard 2-mark explanation.\n5. **Not everything cellular is a cell.** Viruses are acellular (nucleic acid + protein coat, no metabolism outside a host); mature mammalian red blood cells and sieve-tube elements lose their nuclei to do their jobs better.\n\n### The prokaryotic cell (modern account)\n1. **Definition.** Organisation without a membrane-bound nucleus or organelles: DNA lies in a nucleoid, ribosomes are 70S, cell division is by binary fission.\n2. **Envelope.** Capsule/slime layer (some) → cell wall (peptidoglycan in most bacteria; absent in mycoplasmas) → plasma membrane, across which respiratory electron transport occurs in aerobes.\n3. **Validity note — mesosomes retired.** Older books (and older notes) said membrane folds called mesosomes are the sites of respiration. Mesosomes are now known to be fixation artifacts of electron microscopy — the correction tested in this unit. Write: respiration enzymes sit in the plasma membrane itself.\n4. **Cytoplasmic kit.** 70S ribosomes, storage granules, plasmids (small extra DNA rings carrying antibiotic resistance), and in photosynthetic forms chromatophores/thylakoid membranes; flagella (simple filament) and pili/fimbriae in some.\n5. **Examples.** *Escherichia coli* (gut), cyanobacteria (photosynthetic, e.g., *Nostoc*), mycoplasmas (wall-less, among the smallest free-living cells).",
-    "### The eukaryotic cell\n1. **Definition.** Organisation with a true membrane-bound nucleus (nuclear envelope + nucleolus + chromatin) and membrane-bound organelles — mitochondria, plastids (plants), ER, Golgi, lysosomes, vacuoles.\n2. **Ribosomes and division.** 80S ribosomes in the cytosol (70S inside mitochondria and chloroplasts — the endosymbiotic clue). Division is by mitosis/meiosis with a spindle, not simple fission.\n3. **Two great lineages.** Plant cells add wall, large central vacuole and plastids; animal cells add centrioles and lysosomes and lack the wall — the next topic draws every organelle.\n4. **Where the two meet.** Mitochondria and chloroplasts carry their own small DNA and 70S ribosomes: former free-living prokaryotes now living inside eukaryotes (endosymbiotic theory) — the bridge between this topic and the next.\n\n### The comparison (learn as pairs, not lists)\nProkaryote ↔ eukaryote on eight fixed features: genetic material (naked nucleoid ↔ chromatin in nucleus); nuclear envelope (absent ↔ present); membrane organelles (absent ↔ present); ribosomes (70S ↔ 80S cytosolic); wall chemistry (peptidoglycan, or absent ↔ cellulose/chitin, or absent in animals); division (binary fission ↔ mitosis/meiosis); size (mostly 0.2–10 µm ↔ mostly 10–100 µm); examples (*E. coli*, cyanobacteria ↔ onion cell, cheek cell).",
-    "## 3. Classified tables\n\n**Table 1 — Prokaryotic vs eukaryotic cells**\n\n| Feature | Prokaryotic | Eukaryotic |\n|---|---|---|\n| Nuclear envelope | Absent (nucleoid) | Present (true nucleus) |\n| Membrane-bound organelles | Absent | Present (mitochondria, ER, Golgi…) |\n| Ribosomes | 70S | 80S in cytosol (70S in mitochondria/chloroplasts) |\n| Cell wall | Peptidoglycan (absent in mycoplasmas) | Cellulose/chitin (absent in animal cells) |\n| Division | Binary fission | Mitosis / meiosis |\n| Size | Mostly 0.2–10 µm | Mostly 10–100 µm |\n| Flagella | Simple filament | Complex 9+2 axoneme |\n| Examples | *E. coli*, cyanobacteria | Onion peel, cheek cell |\n\n**Table 2 — Cell sizes (validity-checked)**\n\n| Cell | Size | Note |\n|---|---|---|\n| Mycoplasma | ~0.2–0.4 µm | Among smallest free-living cells |\n| Typical bacterium | ~1–5 µm | *E. coli* ≈ 2 µm |\n| Human cheek cell | ~60 µm | Squamous epithelium |\n| Human ovum | ~0.12 mm | Just visible to the eye |\n| Ostrich ovum (unfertilised) | ~15 cm shell | Largest known single cell |\n| Human body total | ~3×10¹³ cells | Published estimate; varies |\n\n**Table 3 — Instrument and stain links**\n\n| Tool | What it shows | Example in this topic |\n|---|---|---|\n| Light microscope | Cells and nuclei | Cheek cell + methylene blue |\n| Electron microscope | Membranes, ribosomes | 70S vs 80S, envelope |\n| Staining | Contrast for parts | Gram stain splits bacteria |\n\n**Table 4 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB marks trend |\n|---|---|---|\n| Cell theory | Schleiden/Schwann + Virchow | Authors + statement |\n| Prokaryote | No nucleus, 70S, fission | Features + examples |\n| Eukaryote | Nucleus + organelles, 80S | Features + plant/animal split |\n| Comparison | Eight-feature table | The standard long answer |\n| Mesosome/size facts | Artifact retired; 0.2 µm–15 cm range | Correction-type reason questions |",
-    "## 4. Diagrams and figures\n\nFig. 4.1 — Prokaryotic vs eukaryotic cell (authored SVG; compare left ↔ right).\n\n```svg Prokaryotic versus eukaryotic cell comparison\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Prokaryotic versus eukaryotic cell</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<text x=\"225\" y=\"50\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#0f172a\">PROKARYOTIC (bacterium)</text>\n<text x=\"675\" y=\"50\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#0f172a\">EUKARYOTIC (animal cell)</text>\n<ellipse cx=\"225\" cy=\"330\" rx=\"150\" ry=\"190\" fill=\"#fef9c3\" stroke=\"#a16207\" stroke-width=\"3\"/>\n<text x=\"225\" y=\"330\" text-anchor=\"middle\" font-size=\"15\" fill=\"#713f12\">nucleoid (naked DNA)</text>\n<circle cx=\"150\" cy=\"430\" r=\"8\" fill=\"#1d4ed8\"/><circle cx=\"300\" cy=\"430\" r=\"8\" fill=\"#1d4ed8\"/><circle cx=\"225\" cy=\"470\" r=\"8\" fill=\"#1d4ed8\"/>\n<text x=\"225\" y=\"510\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">70S ribosomes (dots)</text>\n<text x=\"225\" y=\"170\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">wall + membrane</text>\n<path d=\"M375 330 Q430 330 440 280\" fill=\"none\" stroke=\"#7c2d12\" stroke-width=\"4\"/>\n<text x=\"445\" y=\"270\" font-size=\"14\" fill=\"#7c2d12\">flagellum</text>\n<ellipse cx=\"675\" cy=\"330\" rx=\"150\" ry=\"190\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/>\n<circle cx=\"675\" cy=\"300\" r=\"55\" fill=\"#fae8ff\" stroke=\"#a21caf\" stroke-width=\"2\"/>\n<text x=\"675\" y=\"295\" text-anchor=\"middle\" font-size=\"14\" fill=\"#701a75\">nucleus</text>\n<text x=\"675\" y=\"315\" text-anchor=\"middle\" font-size=\"13\" fill=\"#701a75\">+ nucleolus</text>\n<ellipse cx=\"600\" cy=\"420\" rx=\"34\" ry=\"20\" fill=\"#fdba74\" stroke=\"#9a3412\" stroke-width=\"2\"/>\n<text x=\"600\" y=\"425\" text-anchor=\"middle\" font-size=\"12\" fill=\"#7c2d12\">mitochondrion</text>\n<ellipse cx=\"755\" cy=\"420\" rx=\"30\" ry=\"30\" fill=\"#fda4af\" stroke=\"#9f1239\" stroke-width=\"2\"/>\n<text x=\"755\" y=\"425\" text-anchor=\"middle\" font-size=\"12\" fill=\"#7f1d1d\">lysosome</text>\n<text x=\"675\" y=\"180\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">membrane only (no wall)</text>\n<text x=\"675\" y=\"545\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">80S ribosomes · ER · Golgi (not drawn)</text>\n<text x=\"450\" y=\"600\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Nucleus + organelles + 80S vs nucleoid + 70S: the whole dichotomy in one glance</text>\n</svg>\n```\n\nFig. 4.2 — Cell-size scale (authored SVG; note the visible threshold).\n\n```svg Cell size scale from mycoplasma to egg\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Cell size scale</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<line x1=\"80\" y1=\"500\" x2=\"820\" y2=\"500\" stroke=\"#334155\" stroke-width=\"3\"/>\n<g font-size=\"14\" text-anchor=\"middle\" fill=\"#0f172a\">\n<line x1=\"140\" y1=\"480\" x2=\"140\" y2=\"520\" stroke=\"#334155\" stroke-width=\"3\"/><text x=\"140\" y=\"550\">mycoplasma ~0.3 µm</text>\n<line x1=\"300\" y1=\"480\" x2=\"300\" y2=\"520\" stroke=\"#334155\" stroke-width=\"3\"/><text x=\"300\" y=\"550\">bacterium ~2 µm</text>\n<line x1=\"460\" y1=\"480\" x2=\"460\" y2=\"520\" stroke=\"#334155\" stroke-width=\"3\"/><text x=\"460\" y=\"550\">cheek cell ~60 µm</text>\n<line x1=\"620\" y1=\"480\" x2=\"620\" y2=\"520\" stroke=\"#334155\" stroke-width=\"3\"/><text x=\"620\" y=\"550\">ovum ~0.12 mm ★</text>\n<line x1=\"780\" y1=\"480\" x2=\"780\" y2=\"520\" stroke=\"#334155\" stroke-width=\"3\"/><text x=\"780\" y=\"550\">ostrich egg ~15 cm</text>\n</g>\n<line x1=\"560\" y1=\"120\" x2=\"560\" y2=\"470\" stroke=\"#dc2626\" stroke-width=\"2\" stroke-dasharray=\"8 6\"/>\n<text x=\"560\" y=\"100\" text-anchor=\"middle\" font-size=\"15\" fill=\"#7f1d1d\">★ naked-eye threshold (~0.1 mm)</text>\n<rect x=\"90\" y=\"150\" width=\"720\" height=\"180\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#15803d\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"190\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#14532d\">Why cells stay small</text>\n<text x=\"450\" y=\"225\" text-anchor=\"middle\" font-size=\"15\" fill=\"#14532d\">surface area ∝ r² · volume ∝ r³ — supply crosses the surface,</text>\n<text x=\"450\" y=\"255\" text-anchor=\"middle\" font-size=\"15\" fill=\"#14532d\">demand fills the volume: big cells starve at the centre.</text>\n<text x=\"450\" y=\"600\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Five orders of magnitude, one transport law</text>\n</svg>\n```\n\nFig. 4.3 — Prokaryote/eukaryote comparison plate (curated external).\n\n![Side-by-side comparison of a eukaryotic cell and a prokaryotic cell](https://commons.wikimedia.org/wiki/Special:FilePath/Celltypes.svg)\n*Fig. 4.3 — Eukaryotic vs prokaryotic cell (NCBI Science Primer). Source: Wikimedia Commons, \"Celltypes.svg\" (U.S. federal government work — public domain; vectorised by Mortadelo2005). File page: https://commons.wikimedia.org/wiki/File:Celltypes.svg*\n\nFig. 4.4 — Typical animal cell, labelled (curated external).\n\n![Labelled diagram of a typical animal cell with organelles](https://commons.wikimedia.org/wiki/Special:FilePath/Animal%20Cell.svg)\n*Fig. 4.4 — Animal cell with nucleus, ER, Golgi, mitochondrion, lysosome and membrane. Source: Wikimedia Commons, \"Animal Cell.svg\" by Kelvinsong; license CC0 1.0 Universal. File page: https://commons.wikimedia.org/wiki/File:Animal_Cell.svg*",
-    "## 5. Worked examples and applications\n1. **Cheek-cell mount.** Scrape inside of cheek, smear, methylene-blue stain, focus 10× then 40×: flat irregular cells, dark central nuclei — your own eukaryotes in ten minutes.\n2. **Onion peel.** Peel epidermis, stain with safranin: brick-wall rectangular cells with walls and big vacuoles — the plant version in the same period.\n3. **Curd under the lens.** A drop of curd shows *Lactobacillus* rods (~2 µm): prokaryotes you ate for breakfast, no nucleus in sight.\n4. **Why no giant bacteria?** A 1 mm bacterium would have 1/1000th the surface per volume of a 1 µm one — diffusion could not feed it. Size answers structure.\n5. **Antibiotic logic.** Penicillin blocks peptidoglycan wall-building (prokaryote-only structure); streptomycin hits 70S ribosomes (human cytosol uses 80S) — the comparison table is pharmacology.\n6. **RBC design.** Mammalian red cells eject the nucleus to carry more haemoglobin — losing the defining eukaryotic feature for function; exceptions prove the rule.\n7. **Yoghurt vs antibiotic.** Antibiotics kill gut bacteria (prokaryotes) while sparing gut lining (eukaryote 80S) — selective toxicity read straight off Table 1.",
-    "## 6. Key terms and statements\n- **Cell** — membrane-bound structural and functional unit of life.\n- **Cell theory** — all organisms are cellular; every cell comes from a pre-existing cell (Schleiden, Schwann, Virchow).\n- **Prokaryote** — cell without membrane-bound nucleus or organelles; 70S ribosomes; binary fission.\n- **Eukaryote** — cell with true nucleus and membrane organelles; 80S cytosolic ribosomes; mitosis/meiosis.\n- **Nucleoid** — naked circular DNA region of prokaryotes (no envelope).\n- **Mesosome note** — membrane folds once called respiratory sites are fixation artifacts; respiration enzymes sit in the plasma membrane itself.\n- **70S vs 80S** — prokaryotic (and mitochondrial/chloroplast) vs eukaryotic cytosolic ribosomes — the antibiotic target difference.\n- **Binary fission** — direct prokaryotic division: replicate DNA, split in two.\n- **Omnis cellula e cellula** — Virchow's dictum: every cell from a cell.\n- **Endosymbiotic clue** — organelle 70S ribosomes + own DNA point to prokaryote ancestors.",
-    "## 7. Exam Zone\n**NEB map.** Cell theory (authors + statement) is a guaranteed short note. The eight-feature comparison table is the standard 5-mark long answer; add Fig. 4.1/4.3 as the labelled-diagram requirement. Reason questions target: why cells are small (surface/volume), why mesosomes are rejected, why RBCs lack nuclei, why antibiotics spare us.\n\n**Short tricks.** \"Schleiden–Schwann–Virchow 1838–39–55\" (plant, animal, from-cells). \"70-pro, 80-eu\". \"Naked, single and small = prokaryote\". Size ladder: *mycoplasma → bacterium → cheek → ovum → ostrich*.\n\n**Sources for the facts above:** Raven Biology §4.2.1 (prokaryotic structure); OpenStax Microbiology §8.3 (respiration); Sapp (2005) on the prokaryote–eukaryote dichotomy; Dougherty history (PMC4574257); BioNumbers (cell sizes); Bianconi/Sender–Milo (body cell counts); unit validation card (corrected claims kept verbatim in sense).\n\n## 8. Summary and self-check\nThe cell is life's unit; cell theory (Schleiden, Schwann, Virchow) plus modern heredity/energy additions frames it. Prokaryotes pack naked DNA (nucleoid), 70S ribosomes and a wall into ~1 µm and divide by fission — with respiration across the plasma membrane (mesosomes retired as artifacts). Eukaryotes add a true nucleus, membrane organelles and 80S ribosomes at ~10–100 µm and divide by mitosis/meiosis. Size spans mycoplasma (~0.3 µm) to ostrich egg, ruled by surface-to-volume law. Organelle DNA/70S whispers the endosymbiotic past. Figures: comparison schematic, size scale, NCBI comparison plate, labelled animal cell.\n\n**Self-check.** (1) State cell theory with one author per clause. (2) Reproduce the eight-feature comparison from memory. (3) A student writes \"mesosomes respire\" — correct her in two sentences. (4) Why can you see an ovum but not a mycoplasma? (5) How does the 70S/80S split explain antibiotic safety?\n\n**Common confusions.** Prokaryote ≠ only bacteria (includes cyanobacteria; mycoplasmas lack walls) · nucleoid ≠ nucleus (no envelope) · 70S also inside mitochondria/chloroplasts · viruses are acellular, not prokaryotic · largest cell = ostrich ovum (unfertilised), not whale cells."
+    "## 1. Topic Introduction — Why Start Biology With the Cell?\n\nEverything you study after this topic — tissues, organs, digestion, heredity, evolution — is built on one organising idea: **the cell is the smallest unit of life**. Nothing smaller than a cell is alive; everything alive is made of one or more cells.\n\n- **Why it matters:** every biomolecule you studied in Topic 1 exists *inside* cells, organised into compartments (organelles) that separate reactions and make complex life possible.\n- **Where it leads:** Topic 3 dissects the eukaryotic cell organelle-by-organelle; Topic 4 explains how cells reproduce. Prokaryote vs eukaryote is the single most-asked comparison in this unit's NEB papers.\n- **Historical thread:** cells were invisible until instruments made them visible — the story of cell discovery is the story of the microscope.",
+    "## 2. Fundamental Conceptual Understanding — What a Cell Actually Is\n\n### 2.1 Definition and the essential idea\n\nA **cell** is the smallest, basic **structural, functional and biological unit** of all living organisms — a mass of cytoplasm bound by a membrane, containing genetic material and capable of independent existence and reproduction. Two words carry the whole concept:\n\n- **Structural unit** — every organism is *built* of cells (bricks of a building).\n- **Functional unit** — every property of life (metabolism, growth, response, reproduction) happens *inside* cells, not between them.\n\nAn organism can be **unicellular** (the single cell does every job — Amoeba, Chlamydomonas, bacteria) or **multicellular** (cells specialise and divide the labour — muscle cell, nerve cell, guard cell). Specialisation is possible only because all cells carry the same complete genome.\n\n### 2.2 The history of cell discovery — who saw what, and when\n\n| Year | Scientist | Discovery | Significance |\n|---|---|---|---|\n| 1665 | **Robert Hooke** (England) | Saw dead cork cells with his crude microscope; named them \"cells\" (little rooms) | First description of cells — but only the empty cell *walls* |\n| 1674 | **Anton van Leeuwenhoek** (Holland) | First to see **living** cells — bacteria, protozoa, sperm (\"animalcules\") | First observation of living cells |\n| 1831 | **Robert Brown** (Scotland) | Discovered the **nucleus** in orchid cells | Identified the control centre |\n| 1838–39 | **Schleiden & Schwann** (Germany) | Cell theory for plants (Schleiden) and animals (Schwann) | Cells as the universal unit of life |\n| 1855 | **Rudolf Virchow** | *Omnis cellula e cellula* — all cells arise from pre-existing cells | Completed cell theory; killed spontaneous generation |\n| 1931–present | Electron microscopy | Ultrastructure — organelles, membranes, ribosomes revealed | Modern cell biology |\n\n**Conceptual point:** Hooke saw cell *walls* of dead cork; Leeuwenhoek saw living contents. The cell *theory* came two centuries later because theory needed better microscopes and comparative study.\n\n### 2.3 Cell theory — statement and exceptions\n\n**Cell theory (Schleiden 1838, Schwann 1839, Virchow 1855):**\n\n1. All living organisms are composed of one or more cells.\n2. The cell is the basic structural and functional unit of life.\n3. All cells arise from pre-existing cells by division.\n\n**Modern additions:** hereditary information passes from cell to cell (DNA); all cells are fundamentally alike in chemistry; energy flow occurs within cells.\n\n**Exceptions / limitations (asked in NEB 2024):**\n\n| Exception | Why it is an exception |\n|---|---|\n| Viruses | Acellular — no cell membrane, no cytoplasm, no metabolism of their own; alive only inside a host |\n| Viroids and prions | Even simpler — naked RNA (viroids) or only protein (prions) |\n| Coenocytes / syncytia | Some \"cells\" are multinucleate masses (fungal hyphae, muscle fibres) — one body, many nuclei |\n| Mitochondria and chloroplasts | Contain their own DNA and ribosomes and arise only by division of pre-existing organelles (endosymbiotic origin) |\n\n### 2.4 Cell size, shape and number — why cells are small\n\nCells vary enormously in size and shape, always matched to function:\n\n| Cell | Size | Why this size/shape |\n|---|---|---|\n| Mycoplasma (PPLO) | ~0.1–0.3 µm | Smallest known cell |\n| Human red blood cell | ~7–8 µm | Small + biconcave = maximum O₂ diffusion surface |\n| Amoeba | ~1 mm | Irregular — pseudopodia for movement |\n| Ostrich egg | ~15–18 cm | Largest single cell (yolk = stored food) |\n| Nerve cell | up to ~1 m long | Long processes carry impulses across the body |\n\n**Why are cells so small? (surface-area-to-volume reasoning — a favourite conceptual question):** as a cell grows, its **volume grows faster than its surface area** (volume ∝ length³, surface ∝ length²). A large cell could not absorb nutrients or expel wastes fast enough through its membrane for its interior. Small size keeps every part of the cytoplasm close to the surface and keeps diffusion fast. Large organisms solve the problem by having **many small cells**, not few big ones.\n\n### 2.5 Basic components every cell shares\n\nWhatever its type, every living cell has:\n\n1. **Cell membrane** — the selective boundary (plasma lemma).\n2. **Cytoplasm** — aqueous colloidal medium (cytosol + organelles) where metabolism happens.\n3. **Genetic material** — DNA organised as nucleoid (prokaryote) or nucleus (eukaryote).\n4. **Ribosomes** — protein synthesis machinery (universal: 70S in prokaryotes, 80S in eukaryote cytoplasm).\n\nEverything else — cell wall, plastids, mitochondria, ER, Golgi — differs between groups, and those differences are exactly what the next sections classify.",
+    "## 3. Prokaryotic Cells — Life Before Organelles\n\n### 3.1 Definition and who the prokaryotes are\n\n**Prokaryotes** (Greek *pro* = primitive, *karyon* = nucleus) are cells that **lack a true nucleus and any membrane-bound organelles**. Their genetic material lies naked in the cytoplasm in a region called the **nucleoid**. Domain Bacteria (and Archaea) — bacteria, cyanobacteria (blue-green algae), mycoplasma — are all prokaryotes. They appeared ~3.5 billion years ago, the earliest forms of life.\n\n### 3.2 Structure of a prokaryotic (bacterial) cell — component by component\n\n| Structure | Nature | Function |\n|---|---|---|\n| Cell wall | Rigid, of **peptidoglycan** (murin) — NOT cellulose | Shape, protection, prevents bursting in hypotonic media |\n| Plasma membrane | Lipoprotein bilayer with **mesosomes** (infoldings) | Permeability; mesosomes aid respiration and cell division |\n| Nucleoid | Single circular **DNA, naked** (no histones, no nuclear envelope) | Heredity; replication by binary fission |\n| Plasmids | Small circular extra DNA | Extra genes (antibiotic resistance); used in genetic engineering |\n| **70S ribosomes** | Free in cytoplasm (70S = 50S + 30S subunits) | Protein synthesis |\n| Gas vacuoles / inclusion bodies | Storage granules (glycogen, PHB), gas vesicles | Storage; buoyancy in aquatic bacteria |\n| Flagella | Protein (flagellin) filaments, no 9+2 arrangement | Locomotion |\n| Pili and fimbriae | Surface protein filaments | Attachment; conjugation (gene transfer) |\n| Photosynthetic membranes (cyanobacteria) | Thylakoid-like lamellae, **no chloroplast** | Photosynthesis with chlorophyll *a* |\n\n**Key conceptual idea:** prokaryotes achieve *compartmentalisation by invagination and inclusion*, not by membrane-bound organelles. Respiration happens on mesosomes/plasma membrane; photosynthesis on internal lamellae — the same chemistry as eukaryotes, at the membrane surface instead of inside organelles.\n\n### 3.3 Prokaryotic special features (exam list)\n\n- **No true nucleus** — no nuclear envelope, no nucleolus.\n- **No membrane-bound organelles** — no mitochondria, ER, Golgi, lysosomes, plastids.\n- **70S ribosomes** (eukaryote cytoplasm has 80S) — this difference is why many antibiotics (streptomycin, tetracycline) attack bacterial ribosomes but not ours.\n- **Circular naked DNA** + plasmids.\n- **Peptidoglycan cell wall** (mycoplasma lacks even the wall — smallest cells).\n- **Binary fission** — no mitosis/meiosis, no spindle.\n- **Coupled transcription–translation:** mRNA is translated while still being transcribed — possible only because there is no nuclear envelope separating the two.",
+    "## 4. Eukaryotic Cells — The Compartmentalised Cell\n\n### 4.1 Definition and who the eukaryotes are\n\n**Eukaryotes** (Greek *eu* = true) have a **true nucleus** — DNA enclosed in a double nuclear envelope with a nucleolus — plus **membrane-bound organelles** (mitochondria, ER, Golgi, lysosomes, plastids). Protists, fungi, plants and animals are eukaryotes; they appeared ~1.5–2 billion years ago.\n\n### 4.2 The compartmentalisation principle (the deep idea of this topic)\n\nEukaryotic life is organised around **division of labour inside the cell**:\n\n- Membrane-bound compartments allow **incompatible chemistries to coexist** — lysosomes digest at pH ~5 while the cytosol works at pH ~7.2.\n- The **nuclear envelope** separates transcription from translation, enabling RNA processing and complex gene regulation.\n- **Endomembrane system** (ER → Golgi → vesicles → membrane) manufactures and ships proteins.\n- **Endosymbiotic theory:** mitochondria and chloroplasts were once free-living prokaryotes engulfed by a host cell — evidence: their own circular DNA, 70S ribosomes, double membranes and fission-style division. This theory is the conceptual bridge between the two cell types.\n\n### 4.3 Plant cell vs animal cell — the second guaranteed comparison\n\n| Basis | Plant cell | Animal cell |\n|---|---|---|\n| Cell wall | Present — cellulose (outside the membrane) | Absent |\n| Plastids | Present (chloroplasts, chromoplasts, leucoplasts) | Absent |\n| Central vacuole | Large, permanent, tonoplast-bound (up to 90% of volume) | Small, temporary vesicles |\n| Centrosome / centrioles | Absent (higher plants) | Present, forms spindle |\n| Mitochondria | Fewer, less active | Numerous, very active |\n| Lysosomes | Rare (vacuole does the digesting) | Numerous |\n| Glyoxysomes | Common (fat metabolism in seeds) | Absent |\n| Reserve carbohydrate | Starch | Glycogen |\n| Shape | Fixed, often angular (wall) | Flexible, irregular |\n| Plasmodesmata | Present (intercellular connections) | Absent (gap junctions instead) |",
+    "## 5. Master Comparison — Prokaryotic vs Eukaryotic Cell (the NEB classic)\n\n| Basis | Prokaryotic cell | Eukaryotic cell |\n|---|---|---|\n| Definition | Cell without a true nucleus; DNA naked in the nucleoid | Cell with a true nucleus enclosed by a nuclear envelope |\n| Size | Small — 0.1–5 µm | Large — 10–100 µm |\n| Organisms | Bacteria, cyanobacteria, mycoplasma, archaea | Protists, fungi, plants, animals |\n| Nuclear envelope | Absent | Present (double membrane with pores) |\n| Nucleolus | Absent | Present |\n| Genetic material | Single circular DNA, **naked (no histones)** | Linear chromosomes, DNA + **histone proteins** |\n| Number of chromosomes | One (plus plasmids) | Two or more (diploid sets) |\n| Membrane-bound organelles | **Absent** | Mitochondria, ER, Golgi, lysosomes, plastids |\n| Ribosomes | **70S** (50S + 30S) | **80S** (60S + 40S) in cytoplasm; 70S inside organelles |\n| Cell wall | Peptidoglycan (bacteria); absent in mycoplasma | Cellulose (plants), chitin (fungi); absent in animals |\n| Mesosomes | Present (some) | Absent |\n| Respiration site | Plasma membrane / mesosomes | Mitochondria (+ cytosol for glycolysis) |\n| Photosynthesis site | Internal thylakoid lamellae, no chloroplast | Chloroplasts |\n| Cell division | **Binary fission** (no spindle, no mitosis) | **Mitosis / meiosis** with spindle |\n| Transcription–translation | Coupled (same compartment) | Separated (nucleus vs cytoplasm) |\n| Cytoskeleton | Primitive (no tubulin/actin system) | Well-developed (microtubules, microfilaments) |\n| Examples | *E. coli*, *Anabaena*, *Mycoplasma* | *Amoeba*, mango leaf cell, human liver cell |\n\n**Memory hooks:** \"Pro = primitive (no nucleus, no organelles, 70S, binary fission)\"; \"Eu = true (envelope, organelles, 80S, mitosis)\".\n\n### 5.1 Similarities (never forget the shared core)\n\nBoth have: plasma membrane, cytoplasm, ribosomes (protein synthesis), DNA as genetic material, and the same genetic code — which is why genetic engineering can make bacteria express human genes.",
+    "## 6. Conceptual Relationships\n\n- **Topic 1 → here:** all the biomolecules are now seen *in place* — phospholipids build the membrane, DNA sits in the nucleoid/nucleus, enzymes float in the cytosol.\n- **Here → Topic 3:** the eukaryotic organelles mentioned by name here (mitochondria, plastids, ER, Golgi, lysosomes, ribosomes, nucleus) are dissected in detail next.\n- **Here → Topic 4:** prokaryotes divide by binary fission; eukaryotes by the cell cycle, mitosis and meiosis.\n- **Endosymbiosis → evolution (Unit 7):** the prokaryote→eukaryote transition is the deepest example of cooperation in evolution.\n- **Antibiotics:** the 70S vs 80S ribosome difference is the molecular reason selective toxicity is possible — a direct health application.\n- **Viruses (Unit 3):** viruses are not cells at all — they expose the boundary of cell theory.",
+    "## 7. Exam Orientation and Previous Year Questions (NEB)\n\n### 7.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Biomolecules & Cell Biology | Cell | Differentiate between prokaryotic and eukaryotic cells (any three points). | 3 | Difference |\n| 2081/2024 | Introduction to Biology (bank) | Cell theory | State the cell theory. Who proposed it, and what are its exceptions? | 3 | Short answer |\n| 2078/2022 | Biomolecules & Cell Biology | Cell organelles | Why is the mitochondrion called the powerhouse of the cell? | 2 | Very short / reasoning |\n\n### 7.2 Model answers\n\n**Q1 (3m) — Differentiate prokaryotic and eukaryotic cells (any three points).**\nAnswer as a table:\n\n| Basis | Prokaryotic cell | Eukaryotic cell |\n|---|---|---|\n| Nucleus | No true nucleus; naked circular DNA in the nucleoid | True nucleus; DNA + histones inside a nuclear envelope |\n| Organelles | No membrane-bound organelles; 70S ribosomes | Membrane-bound organelles (mitochondria, ER, Golgi); 80S ribosomes |\n| Cell division | Binary fission | Mitosis and meiosis with spindle |\n\n*(Any three clear bases with both sides stated = full marks.)*\n\n**Q2 (3m) — Cell theory, proposers, exceptions.**\nAnswer: **Schleiden (1838) and Schwann (1839)** proposed that all organisms are made of cells, the cell being the structural and functional unit of life; **Virchow (1855)** added that all cells arise from pre-existing cells (*omnis cellula e cellula*). **Exceptions:** viruses (acellular, no metabolism), viroids/prions, multinucleate coenocytes/syncytia, and mitochondria/chloroplasts (own DNA, arise by fission).\n\n**Q3 (2m) — Why is the mitochondrion the powerhouse of the cell?**\nAnswer: Because it is the site of **aerobic respiration** — the Krebs cycle and oxidative phosphorylation on its cristae generate most of the cell's **ATP** (the energy currency), which powers all cellular work. Cells with high energy demand (muscle, liver) have many mitochondria.\n\n### 7.3 Common examination mistakes\n\n1. Saying prokaryotes have \"no nucleus\" without adding **no nuclear envelope / nucleoid** — the precise statement scores.\n2. Confusing 70S/80S ribosomes or writing \"prokaryotes have no ribosomes\" (they do — 70S).\n3. Calling the bacterial wall cellulose — it is **peptidoglycan**.\n4. Listing viruses as prokaryotes — viruses are **acellular**, outside the cell concept entirely.\n5. Forgetting similarities (membrane, cytoplasm, ribosomes, DNA, genetic code) when a question asks \"compare\"."
   ],
   "examNotes": [
-    "Prokaryote/eukaryote comparison table is a very common short-answer.",
-    "State cell theory fully (3 postulates + names).",
-    "Describe the structure of a typical bacterium with a labelled diagram.",
-    "Explain why viruses are not considered living cells.",
-    "Cell: Introduction is frequently tested.",
-    "Practice writing detailed answers."
+    "Most-tested: prokaryote vs eukaryote differences (2021), cell theory + exceptions (2024), powerhouse question (2022).",
+    "Diagram-worthy: labelled prokaryotic cell (nucleoid, plasmid, 70S ribosomes, mesosome, pili, flagellum) and a generic eukaryotic cell."
   ],
   "examShortTricks": [
-    "PRO = small, NO nucleus; EU = nucleus + organelles.",
-    "Ribosome 7-0 (seventy) = prokaryote; 8-0 = eukaryote.",
-    "Cell wall: Plant (cellulose), Fungi (chitin), Bacteria (peptidoglycan), Animal (none).",
-    "Largest cell = ostrich egg; smallest living cell = Mycoplasma.",
-    "Focus on definitions and classifications.",
-    "Use diagrams to understand Cell: Introduction.",
-    "Authors ladder: Hooke 1665 (dead cells) → Schleiden/Schwann 1838–39 → Virchow 1855 (from cells) → Chatton 1925 (terms) → Stanier–van Niel 1962 (dichotomy)."
+    "\"Pro-Primitive, Eu-True\" — no envelope vs envelope.",
+    "\"Pro-70, Eu-80\" — ribosome types.",
+    "\"Hooke saw dead, Leeuwenhoek saw living\" — the discovery order."
   ],
   "practiceQuestions": [
-    "Why are prokaryotes called \"lower\" organisms?",
-    "State two features present only in eukaryotes.",
-    "If a specimen has a cell wall, chloroplasts and a nucleus, is it plant, animal or fungal? Justify.",
-    "Explain the significance of the plasma membrane being selectively permeable.",
-    "Compare the 70S and 80S ribosomes.",
-    "state + explain the main idea of \"Cell: Introduction of cell, concepts of prokaryotic and e…\" with one example.",
-    "compare \"Cell\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Cell: Introduction of cell, concepts of prokaryotic and e…\" and verify the answer is plausible.",
-    "Describe the key features of Cell: Introduction.",
-    "SHORT (2 marks): State the cell theory with its authors.",
-    "SHORT (2 marks): Why do cells remain small? Explain with the surface-area-to-volume ratio.",
-    "SHORT (2 marks): What are mesosomes? Why is the old respiratory account rejected?",
-    "SHORT (3 marks): Give the corrected account of the largest and smallest known cells.",
-    "SHORT (2 marks): Distinguish nucleoid from nucleus.",
-    "LONG (5 marks): Compare prokaryotic and eukaryotic cells with a table and a labelled diagram.",
-    "LONG (5 marks): Describe the prokaryotic cell with reference to envelope, cytoplasm and division."
+    "**Short answer (2m): Define a cell.** — The cell is the smallest basic structural, functional and biological unit of all living organisms: a mass of cytoplasm surrounded by a membrane, containing genetic material, capable of independent existence and reproduction.",
+    "**Short answer (2m): Name the scientists associated with the cell theory and their contributions.** — Schleiden (1838): all plants made of cells; Schwann (1839): all animals made of cells; Virchow (1855): all cells arise from pre-existing cells.",
+    "**Short answer (2m): What are plasmids and why are they important?** — Small, self-replicating circular DNA molecules in prokaryotes, separate from the main chromosome; they carry accessory genes (e.g. antibiotic resistance) and are the standard vectors of genetic engineering.",
+    "**Short answer (2m): What is a nucleoid?** — The irregular, non-membrane-bound region of a prokaryotic cytoplasm where the single circular naked DNA chromosome is located.",
+    "**Long answer (5m): Differentiate between prokaryotic and eukaryotic cells.** — Build the full 8–10 row comparison table (nucleus, organelles, ribosomes, DNA form, cell wall chemistry, division, size, transcription–translation coupling, examples) and close with the similarities (membrane, cytoplasm, ribosomes, DNA, genetic code).",
+    "**Long answer (5m): Describe the structure of a bacterial cell with a labelled diagram.** — Cell wall (peptidoglycan) → plasma membrane with mesosomes → nucleoid (circular DNA) + plasmids → 70S ribosomes → inclusion bodies/gas vacuoles → flagella (flagellin), pili and fimbriae. State one function per structure.",
+    "**Conceptual (3m): \"The eukaryotic cell is a compartmentalised cell.\" Explain.** — Membrane-bound organelles create separate internal environments: lysosomes (pH ~5) vs cytosol (pH ~7.2); nuclear envelope separates transcription from translation; mitochondria concentrate respiration enzymes. Compartmentalisation raises efficiency and permits larger cells and specialisation.",
+    "**Conceptual (3m): Why do cells remain small even in large organisms?** — Surface area grows as the square of length but volume as the cube; a large cell's interior would outrun its membrane's exchange capacity. Nutrient uptake and waste removal depend on diffusion, which is fast only over micrometres. Large organisms therefore use many small specialised cells.",
+    "**Application (3m): A new antibiotic inhibits 70S ribosomes. Why is it likely safe for humans, and what limitation must it have?** — Human cytoplasmic ribosomes are 80S, so the drug selectively blocks bacterial protein synthesis. Limitation: human mitochondria carry 70S ribosomes, so high doses can harm mitochondria-rich tissues — the basis of some antibiotic side effects."
   ],
   "practice": [
-    "Tabulate 6 differences between a prokaryotic and a eukaryotic cell.",
-    "Label a simple bacterium: capsule, cell wall, plasma membrane, cytoplasm, nucleoid, ribosomes, pili, flagellum.",
-    "Explain why the cell is the smallest unit of life.",
-    "State the three postulates of cell theory and their originators.",
-    "Distinguish the nucleoid from a true nucleus.",
-    "one worked example for \"Cell: Introduction of cell, concepts of prokaryotic and e…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid.",
-    "Review the main points from Cell: Introduction.",
-    "Practice answering questions from this topic.",
-    "Connect concepts to other topics in the chapter."
+    "Why can mRNA be translated while it is still being transcribed in bacteria but not in humans?",
+    "Why do antibiotics like streptomycin not stop human protein synthesis?",
+    "A cell grows to twice its linear size. What happens to its surface-area-to-volume ratio and why does this limit cell size?",
+    "Why are mitochondria and chloroplasts considered evidence for endosymbiosis?"
   ],
   "mcs": [
     {
-      "question": "Which feature is present only in eukaryotic cells?",
+      "question": "Who first observed and named 'cells'?",
       "options": [
-        "Ribosomes",
-        "Plasma membrane",
-        "Nuclear membrane",
-        "Genetic material"
+        "Leeuwenhoek",
+        "Robert Hooke",
+        "Robert Brown",
+        "Schleiden"
       ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "Hooke (1665) saw dead cork cell walls in his microscope and named the boxes 'cells'. Leeuwenhoek first saw living cells; Brown discovered the nucleus."
     },
     {
-      "question": "The smallest known living cell is:",
+      "question": "'Omnis cellula e cellula' was stated by:",
       "options": [
-        "Mycoplasma",
-        "Rickettsia",
-        "Neurospora",
-        "Chlamydia"
+        "Schwann",
+        "Virchow",
+        "Hooke",
+        "Schleiden"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Virchow (1855) added the third tenet of cell theory — all cells arise from pre-existing cells."
     },
     {
-      "question": "The cell wall of bacteria is made of:",
+      "question": "Which is present in a prokaryotic cell?",
+      "options": [
+        "Nuclear envelope",
+        "70S ribosomes",
+        "Mitochondria",
+        "Histone-bound chromosomes"
+      ],
+      "answer": "B",
+      "explanation": "Prokaryotes have 70S ribosomes free in the cytoplasm; they lack the nuclear envelope, mitochondria and histones."
+    },
+    {
+      "question": "The bacterial cell wall is made of:",
       "options": [
         "Cellulose",
         "Chitin",
         "Peptidoglycan",
-        "Silica"
-      ],
-      "answer": "C"
-    },
-    {
-      "question": "The scientist who proposed that \"all cells arise from pre-existing cells\" was:",
-      "options": [
-        "Schleiden",
-        "Schwann",
-        "Virchow",
-        "Hooke"
-      ],
-      "answer": "C"
-    },
-    {
-      "question": "\"Omnis cellula e cellula\" was stated by",
-      "options": [
-        "Schleiden",
-        "Schwann",
-        "Virchow",
-        "Hooke"
+        "Lignin"
       ],
       "answer": "C",
-      "explanation": "Virchow (1855): every cell arises from a pre-existing cell."
+      "explanation": "Bacterial walls are peptidoglycan (murin). Cellulose is plant, chitin is fungal/arthropod."
     },
     {
-      "question": "Mesosomes are now regarded as",
+      "question": "Which structure is absent in prokaryotes but present in eukaryotes?",
       "options": [
-        "Respiratory sites",
-        "Photosynthetic sites",
-        "Fixation artifacts of microscopy",
-        "Plasmids"
-      ],
-      "answer": "C",
-      "explanation": "They were artifacts of chemical fixation; respiration sits in the membrane."
-    },
-    {
-      "question": "Prokaryotic ribosomes are",
-      "options": [
-        "80S",
-        "70S",
-        "60S",
-        "50S"
-      ],
-      "answer": "B",
-      "explanation": "70S (50S + 30S); eukaryote cytosol uses 80S."
-    },
-    {
-      "question": "Cells stay small mainly because of",
-      "options": [
-        "Lack of DNA",
-        "Surface-area-to-volume ratio",
-        "Absence of enzymes",
-        "Low temperature"
-      ],
-      "answer": "B",
-      "explanation": "Supply crosses surface (r²) while demand fills volume (r³)."
-    },
-    {
-      "question": "Which lacks a cell wall?",
-      "options": [
-        "Onion cell",
-        "E. coli",
-        "Mycoplasma",
-        "Nostoc"
-      ],
-      "answer": "C",
-      "explanation": "Mycoplasmas are wall-less bacteria."
-    },
-    {
-      "question": "Mature mammalian red blood cells lack",
-      "options": [
-        "Haemoglobin",
         "Plasma membrane",
-        "Nucleus",
-        "Enzymes"
+        "Ribosomes",
+        "DNA",
+        "Endoplasmic reticulum"
+      ],
+      "answer": "D",
+      "explanation": "ER is a membrane-bound organelle — absent in prokaryotes. Membrane, ribosomes and DNA are universal."
+    },
+    {
+      "question": "Which cell feature supports the endosymbiotic origin of mitochondria?",
+      "options": [
+        "Single membrane",
+        "80S ribosomes",
+        "Own circular DNA",
+        "Linear chromosomes"
       ],
       "answer": "C",
-      "explanation": "The nucleus is ejected to carry more haemoglobin."
+      "explanation": "Mitochondria have their own circular DNA, 70S ribosomes and a double membrane — signatures of a free-living prokaryotic ancestor."
     },
     {
-      "question": "The terms prokaryote/eukaryote were coined by",
+      "question": "The smallest known cells belong to:",
       "options": [
-        "Chatton",
-        "Darwin",
-        "Hooke",
-        "Leeuwenhoek"
-      ],
-      "answer": "A",
-      "explanation": "Chatton (1925); the dichotomy was popularised by Stanier and van Niel (1962)."
-    },
-    {
-      "question": "Endosymbiotic theory is supported by mitochondria having",
-      "options": [
-        "80S ribosomes",
-        "Own DNA and 70S ribosomes",
-        "A cell wall",
-        "Chlorophyll"
+        "Viruses",
+        "Mycoplasma",
+        "Cyanobacteria",
+        "Red blood cells"
       ],
       "answer": "B",
-      "explanation": "Own small DNA + 70S ribosomes recall free-living prokaryotes."
+      "explanation": "Mycoplasma (~0.1–0.3 µm) is the smallest living cell; viruses are acellular, not cells."
+    },
+    {
+      "question": "Which is NOT an exception to cell theory?",
+      "options": [
+        "Virus",
+        "Coenocytic fungal hypha",
+        "Bacterial cell",
+        "Prion"
+      ],
+      "answer": "C",
+      "explanation": "A bacterial cell is a normal cell. Viruses, prions, viroids and multinucleate coenocytes challenge cell theory."
+    },
+    {
+      "question": "Which ribosome subunit combination is correct for a eukaryotic cytoplasmic ribosome?",
+      "options": [
+        "50S + 30S",
+        "60S + 40S",
+        "70S + 10S",
+        "80S + 20S"
+      ],
+      "answer": "B",
+      "explanation": "80S = 60S + 40S; prokaryotic 70S = 50S + 30S."
+    },
+    {
+      "question": "Plant cells differ from animal cells in having:",
+      "options": [
+        "Mitochondria",
+        "A cellulose cell wall and plastids",
+        "Plasma membrane",
+        "Ribosomes"
+      ],
+      "answer": "B",
+      "explanation": "Wall, plastids and central vacuole are plant-specific; membrane, mitochondria and ribosomes are shared."
     }
   ],
   "mcqs": [
     {
-      "question": "Which feature is present only in eukaryotic cells?",
+      "question": "Who first observed and named 'cells'?",
       "options": [
-        "Ribosomes",
-        "Plasma membrane",
-        "Nuclear membrane",
-        "Genetic material"
+        "Leeuwenhoek",
+        "Robert Hooke",
+        "Robert Brown",
+        "Schleiden"
       ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "Hooke (1665) saw dead cork cell walls in his microscope and named the boxes 'cells'. Leeuwenhoek first saw living cells; Brown discovered the nucleus."
     },
     {
-      "question": "The smallest known living cell is:",
+      "question": "'Omnis cellula e cellula' was stated by:",
       "options": [
-        "Mycoplasma",
-        "Rickettsia",
-        "Neurospora",
-        "Chlamydia"
+        "Schwann",
+        "Virchow",
+        "Hooke",
+        "Schleiden"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Virchow (1855) added the third tenet of cell theory — all cells arise from pre-existing cells."
     },
     {
-      "question": "The cell wall of bacteria is made of:",
+      "question": "Which is present in a prokaryotic cell?",
+      "options": [
+        "Nuclear envelope",
+        "70S ribosomes",
+        "Mitochondria",
+        "Histone-bound chromosomes"
+      ],
+      "answer": "B",
+      "explanation": "Prokaryotes have 70S ribosomes free in the cytoplasm; they lack the nuclear envelope, mitochondria and histones."
+    },
+    {
+      "question": "The bacterial cell wall is made of:",
       "options": [
         "Cellulose",
         "Chitin",
         "Peptidoglycan",
-        "Silica"
+        "Lignin"
       ],
-      "answer": "C"
+      "answer": "C",
+      "explanation": "Bacterial walls are peptidoglycan (murin). Cellulose is plant, chitin is fungal/arthropod."
     },
     {
-      "question": "The scientist who proposed that \"all cells arise from pre-existing cells\" was:",
+      "question": "Which structure is absent in prokaryotes but present in eukaryotes?",
       "options": [
-        "Schleiden",
-        "Schwann",
-        "Virchow",
-        "Hooke"
+        "Plasma membrane",
+        "Ribosomes",
+        "DNA",
+        "Endoplasmic reticulum"
       ],
-      "answer": "C"
+      "answer": "D",
+      "explanation": "ER is a membrane-bound organelle — absent in prokaryotes. Membrane, ribosomes and DNA are universal."
     },
     {
-      "question": "Which of the following is a distinct sub-topic under \"Cell: Introduction of cell, concepts of prokaryotic and e…\"?",
+      "question": "Which cell feature supports the endosymbiotic origin of mitochondria?",
       "options": [
-        "Cell",
-        "Introduction of cell",
-        "Unrelated topic",
-        "None of the above"
+        "Single membrane",
+        "80S ribosomes",
+        "Own circular DNA",
+        "Linear chromosomes"
       ],
-      "answer": "Cell",
-      "explanation": "Cell is listed among the official sub-ideas of Cell: Introduction of cell, concepts of prokaryotic and e…; the others are not part of this topic."
+      "answer": "C",
+      "explanation": "Mitochondria have their own circular DNA, 70S ribosomes and a double membrane — signatures of a free-living prokaryotic ancestor."
     },
     {
-      "question": "A common examiner point on \"Cell: Introduction of cell, concepts of prokaryotic and e…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The smallest known cells belong to:",
       "options": [
-        "True",
-        "False"
+        "Viruses",
+        "Mycoplasma",
+        "Cyanobacteria",
+        "Red blood cells"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Mycoplasma (~0.1–0.3 µm) is the smallest living cell; viruses are acellular, not cells."
+    },
+    {
+      "question": "Which is NOT an exception to cell theory?",
+      "options": [
+        "Virus",
+        "Coenocytic fungal hypha",
+        "Bacterial cell",
+        "Prion"
+      ],
+      "answer": "C",
+      "explanation": "A bacterial cell is a normal cell. Viruses, prions, viroids and multinucleate coenocytes challenge cell theory."
+    },
+    {
+      "question": "Which ribosome subunit combination is correct for a eukaryotic cytoplasmic ribosome?",
+      "options": [
+        "50S + 30S",
+        "60S + 40S",
+        "70S + 10S",
+        "80S + 20S"
+      ],
+      "answer": "B",
+      "explanation": "80S = 60S + 40S; prokaryotic 70S = 50S + 30S."
+    },
+    {
+      "question": "Plant cells differ from animal cells in having:",
+      "options": [
+        "Mitochondria",
+        "A cellulose cell wall and plastids",
+        "Plasma membrane",
+        "Ribosomes"
+      ],
+      "answer": "B",
+      "explanation": "Wall, plastids and central vacuole are plant-specific; membrane, mitochondria and ribosomes are shared."
     }
   ],
   "confusion": [
-    "Mycoplasma size is ~0.2–0.4 µm (a range, not a point) — and 'among the smallest', not absolutely smallest.",
-    "Human body cell count (~3×10¹³) is a published estimate that varies with body size, not a constant.",
-    "Animal cells lack walls; mycoplasmas lack walls too — 'no wall' does not make a cell eukaryotic."
+    "**\"Prokaryotes have no nucleus\" vs \"no DNA\":** prokaryotes have DNA — just no nuclear envelope around it. The nucleoid is DNA + cytoplasm, not a membrane compartment.",
+    "**Viruses are NOT prokaryotes:** viruses are acellular (no membrane, no cytoplasm, no ribosomes); prokaryotes are complete living cells. This is also why viruses are exceptions to cell theory.",
+    "**70S vs 80S:** the S (Svedberg) unit measures sedimentation rate, not size — 70S ribosomes are not \"smaller than 80S by 10\"; they differ in subunit composition (50S+30S vs 60S+40S).",
+    "**Cell wall vs cell membrane:** every cell has a membrane; only some have a wall. The wall is outside the membrane, fully permeable; the membrane is the selective barrier.",
+    "**Binary fission vs mitosis:** binary fission has no spindle, no chromosome condensation, no nuclear envelope breakdown — it is simpler DNA replication + splitting."
   ],
   "keyPoints": [
-    "Cell theory: Schleiden/Schwann (all organisms cellular) + Virchow (cells from cells).",
-    "Prokaryote: nucleoid, 70S, fission, peptidoglycan wall (or none); eukaryote: nucleus, organelles, 80S, mitosis/meiosis.",
-    "Mesosomes = fixation artifacts; respiration enzymes lie in the plasma membrane."
+    "Cell = smallest structural + functional unit of life; unicellular organisms do everything with one cell.",
+    "Discovery chain: Hooke (1665, dead cork, named \"cell\") → Leeuwenhoek (1674, living cells) → Brown (1831, nucleus) → Schleiden & Schwann (1838–39, theory) → Virchow (1855, cells from cells).",
+    "Cell theory: (1) organisms made of cells, (2) cell = structural + functional unit, (3) cells arise from pre-existing cells. Exceptions: viruses, viroids/prions, coenocytes, mitochondria/chloroplasts.",
+    "Cells are small because volume grows faster than surface area — diffusion would fail in a big cell.",
+    "Every cell has: membrane, cytoplasm, ribosomes, DNA, same genetic code.",
+    "Prokaryote: no nuclear envelope, no membrane-bound organelles, 70S ribosomes, naked circular DNA + plasmids, peptidoglycan wall, binary fission.",
+    "Eukaryote: true nucleus + nucleolus, membrane-bound organelles, 80S ribosomes, histone-bound linear chromosomes, mitosis/meiosis.",
+    "Endosymbiotic theory explains mitochondria/chloroplasts: own circular DNA, 70S ribosomes, double membrane.",
+    "Plant vs animal cells: wall, plastids, central vacuole, centrioles are the four standard differences."
   ],
   "examples": [
-    "Cheek-cell mount with methylene blue: flat cells, dark nuclei in ten minutes.",
-    "Curd drop: Lactobacillus rods as breakfast prokaryotes.",
-    "Penicillin vs streptomycin: wall and 70S targets spare human 80S cells."
+    "***Mycoplasma*** — smallest known cell (~0.1 µm), no cell wall, prokaryote.",
+    "**Ostrich egg** — largest single cell (~15–18 cm).",
+    "**Human RBC** — ~7–8 µm, biconcave, loses nucleus at maturity to maximise O₂ carriage.",
+    "***E. coli*** — rod-shaped bacterium; nucleoid + plasmids; model prokaryote of genetics.",
+    "***Anabaena*** — filamentous cyanobacterium; photosynthetic lamellae, heterocysts fix nitrogen."
   ],
-  "summary": "The cell is life's structural and functional unit. Cell theory: Schleiden and Schwann (all organisms cellular) + Virchow (omnis cellula e cellula). Prokaryotes carry naked nucleoid DNA, 70S ribosomes and (usually) peptidoglycan walls at ~1 µm, dividing by binary fission, with respiratory enzymes in the plasma membrane — mesosomes retired as fixation artifacts. Eukaryotes add a true nucleus, membrane organelles and 80S ribosomes at ~10–100 µm, dividing by mitosis/meiosis. Sizes run from mycoplasma (~0.2–0.4 µm) to the ostrich ovum, ruled by the surface-area-to-volume law; the body holds ~3×10¹³ cells (estimate). Exceptions: viruses (acellular), RBCs (no nucleus). Organelle DNA + 70S point to endosymbiosis. Figures: comparison schematic, size scale, NCBI comparison plate, labelled animal cell."
+  "summary": "The cell is the smallest structural and functional unit of life — discovered by Hooke (1665), theorised by Schleiden, Schwann and Virchow, and limited in size by the surface-area-to-volume ratio. Every cell shares a membrane, cytoplasm, ribosomes and DNA, but two great designs exist: prokaryotic cells (bacteria, cyanobacteria) keep their naked circular DNA in a nucleoid, have no membrane-bound organelles, use 70S ribosomes and divide by binary fission; eukaryotic cells enclose their histone-bound chromosomes in a true nucleus, run their chemistry inside membrane-bound organelles (endosymbiotic mitochondria and chloroplasts), use 80S ribosomes and divide by mitosis and meiosis. Plant and animal eukaryotic cells differ mainly in cell wall, plastids, central vacuole and centrioles. These differences — especially 70S vs 80S ribosomes — are the molecular basis of selective antibiotic action.",
+  "universalFacts": [
+    "Robert Hooke coined the word \"cell\" in 1665 (Micrographia).",
+    "Prokaryotes appeared ~3.5 billion years ago; eukaryotes ~1.5–2 billion years ago.",
+    "70S = 50S + 30S subunits; 80S = 60S + 40S subunits.",
+    "Human body ≈ 30 trillion cells (adult estimate)."
+  ],
+  "formulas": [
+    "General size: prokaryote ~ 1-10 µm; eukaryote ~ 10-100 µm",
+    "Magnification = image size ÷ real size"
+  ],
+  "specialNotes": [
+    "Cell theory exceptions is a rising favourite (asked 2024): memorise all four exception categories with one-line reasons."
+  ],
+  "importantStatements": [
+    "\"The cell is not just a unit of structure — it is the unit of function, heredity and evolution.\"",
+    "\"Eukaryotic success is the success of internal membranes.\""
+  ],
+  "importantNotes": [
+    "For \"differentiate\" questions, present a table with named bases; the 2021 paper asked for \"any three points\" — give exactly three well-labelled rows plus a fourth as safety."
+  ],
+  "importantConcepts": [
+    "**Compartmentalisation** — membranes create internal environments so incompatible reactions coexist; the defining advantage of eukaryotic organisation.",
+    "**Surface-area-to-volume limit** — the physical reason for cell size and multicellularity.",
+    "**Selective toxicity** — 70S vs 80S ribosomes let antibiotics kill bacteria without harming human cells."
+  ],
+  "importantTasks": [
+    "Tabulate prokaryote vs eukaryote (6 points)",
+    "Label a bacterium",
+    "State cell theory postulates",
+    "Explain selective permeability",
+    "Justify the cell as the unit of life"
+  ]
 }

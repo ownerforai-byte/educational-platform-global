@@ -39,5 +39,22 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: All four trends in one sentence — across a period: radius ↓, IE ↑, EA ↑ (more negative), EN ↑; down a group: exactly the reverse.",
+    "Trick 2: Exceptions that earn marks: noble gases have NO electron affinity (stable octet); Be/N have higher IE than B/O (2s/2p stability); IE3 >> IE2 >> IE1.",
+    "Trick 3: Cation < parent atom < anion in size — compare isoelectronic series by Z: more protons → smaller (Al3+ < Mg2+ < Na+ < F− < O2− < N3−).",
+    "Trick 4: IE units — quote kJ/mol and the successive-IE jump as evidence of the shell being emptied."
+  ],
+  "keyPoints": [
+    "Atomic radius decreases across a period (Zeff ↑) and increases down a group (new shells).",
+    "Ionization energy rises across a period; successive IEs always increase.",
+    "Electron affinity: energy released on adding an electron; Cl > F due to small size repulsion.",
+    "Electronegativity: tendency to attract shared pair; F is the most electronegative (4.0)."
+  ],
+  "practiceQuestions": [
+    "Q. Arrange Na, Mg, Al in increasing ionization energy and explain the Be/B-type exception if asked. (2 marks) — Na < Mg < Al? Actually Al < Mg (3p electron easier to remove than 3s pair) — quote this exception.",
+    "Q. Why is the electron affinity of F lower than that of Cl? (2 marks) — very small F atom: added electron suffers repulsion from compact 2p shell.",
+    "Q. Arrange Al3+, Mg2+, Na+, O2−, N3− in increasing size. (2 marks) — all 10-electron species; size grows as Z falls: Al3+ < Mg2+ < Na+ < O2− < N3−."
   ]
 }

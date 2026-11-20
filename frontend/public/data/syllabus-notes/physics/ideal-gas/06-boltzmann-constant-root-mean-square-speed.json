@@ -53,5 +53,20 @@
     "**Speed Hierarchy:** For the Maxwell-Boltzmann distribution: $v_p = \\sqrt{2RT/M}$, $\bar{v} = \\sqrt{8RT/\\pi M}$, $v_{rms} = \\sqrt{3RT/M}$. The order is always $v_p < \bar{v} < v_{rms}$ with ratios $\\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} \\approx 1.414 : 1.596 : 1.732$.",
     "**Heat Capacity and DOF:** $C_V = \frac{f}{2}R$, $C_P = C_V + R = \frac{f+2}{2}R$, where $f$ is active degrees of freedom. Monatomic: $f=3$ (translational only). Diatomic: $f=5$ (3 trans + 2 rot) at room temp. Vibrational modes activate at high temperatures."
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "examShortTricks": [
+    "Trick 1: Constants: kB = R/NA = 1.38 × 10^-23 J/K — one derivation line earns the mark.",
+    "Trick 2: rms speed formulas — vrms = √(3RT/M) = √(3kBT/m); lighter gas → faster molecules (H2 vs O2 ratio √16 = 4).",
+    "Trick 3: Average KE per molecule = (3/2)kBT — depends ONLY on temperature, not on the gas; that line answers 'why do all gases at the same T have the same average KE'."
+  ],
+  "keyPoints": [
+    "Boltzmann constant kB = R/NA = 1.38 × 10^-23 J K^-1.",
+    "vrms = √(3kBT/m) = √(3RT/M).",
+    "Mean kinetic energy of a molecule = (3/2) kBT.",
+    "At fixed temperature lighter molecules move faster."
+  ],
+  "practiceQuestions": [
+    "Q. Find the rms speed of O2 molecules at 27 °C (M = 32 g/mol). (3 marks) — v = √(3 × 8.314 × 300/0.032) ≈ 484 m/s.",
+    "Q. Compare rms speeds of H2 and O2 at the same temperature. (1 mark) — v(H2)/v(O2) = √(32/2) = 4."
+  ]
 }

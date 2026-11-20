@@ -47,5 +47,20 @@
     "Fact (Scale): Doping with just 1 part per billion (ppb) of arsenic in silicon changes the resistivity from $2.3\\\times 10^5\\\\\\\\,\\\\\\\\Omega\\\\\\\\cdot\\\text{cm}$ (intrinsic) to $0.01\\\\\\\\,\\\\\\\\Omega\\\\\\\\cdot\\\text{cm}$ (extrinsic). An incredibly sensitive control.",
     "Fact (Origin): The donor level in n-type and the acceptor level in p-type lie just below the conduction band and above the valence band, respectively. These \"midgap\" states (actually near-band, not midgap) are crucial for devices like LEDs, lasers, and photodetectors."
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "examShortTricks": [
+    "Trick 1: Intrinsic = PURE Si/Ge: electrons and holes equal (n = p), conductivity rises with temperature (negative temperature coefficient) — opposite to metals.",
+    "Trick 2: Extrinsic = DOPED: pentavalent (As, Sb) → n-type (electrons majority); trivalent (B, In) → p-type (holes majority) — one line each with an example dopant.",
+    "Trick 3: Both types are NEUTRAL overall — doping adds atoms, not net charge; the common misconception is the mark."
+  ],
+  "keyPoints": [
+    "Intrinsic semiconductor: pure crystal, n = p, few charge carriers.",
+    "Doping with pentavalent impurity gives n-type (electrons majority).",
+    "Doping with trivalent impurity gives p-type (holes majority).",
+    "Extrinsic conductivity is far higher and doping-controlled."
+  ],
+  "practiceQuestions": [
+    "Q. What happens when Si is doped with arsenic? (2 marks) — n-type; each As donates a free electron (four bonds + one spare).",
+    "Q. Are n-type semiconductors negatively charged? (1 mark) — no; they are electrically neutral (electrons balanced by fixed donor ions)."
+  ]
 }

@@ -58,5 +58,19 @@
       ],
       "answer": "B"
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: de Broglie numerical is one line: λ = h/mv (h = 6.63 × 10^-34 Js) — mass in kg, velocity in m/s.",
+    "Trick 2: λ = h/√(2mKE) when kinetic energy is given — memorise this variant; board questions alternate between the two forms.",
+    "Trick 3: Why waves are not seen for large bodies: mass enters the denominator — a cricket ball's λ is ~10^-34 m, undetectable."
+  ],
+  "keyPoints": [
+    "Every moving particle has an associated wave: λ = h/mv = h/p.",
+    "The wave is significant only for particles of atomic mass.",
+    "Justifies quantised orbits: an orbit is allowed when it contains a whole number of wavelengths (2πr = nλ)."
+  ],
+  "practiceQuestions": [
+    "Q. Calculate λ for an electron moving at 10^6 m/s (m = 9.1 × 10^-31 kg). (2 marks) — λ = 6.63e-34/(9.1e-31 × 1e6) = 7.28 × 10^-10 m.",
+    "Q. Why is the wave nature of a moving cricket ball not observed? (1 mark) — λ = h/mv is negligibly small for macroscopic mass."
   ]
 }

@@ -52,5 +52,22 @@
   "source": "ravikishan",
   "duplicateType": 1,
   "tabGroup": "Chemical-Bonding-Learner-Notes",
-  "filename": "09-bond-characteristics-bond-length-ionic-character-dipole-moment.json"
+  "filename": "09-bond-characteristics-bond-length-ionic-character-dipole-moment.json",
+  "examShortTricks": [
+    "Trick 1: Dipole-moment order for board exams: HF > HCl > HBr > HI (ΔEN falls) — and μ = q × d with direction from + to −.",
+    "Trick 2: % ionic character rises with ΔEN; a ΔEN ≥ 1.7 bond is taken as ionic, ≤ 0.4 as covalent — quick classification trick.",
+    "Trick 3: Bond length order: triple < double < single (C≡C < C=C < C–C); larger atoms → longer bonds (H–Cl < H–Br < H–I).",
+    "Trick 4: Zero dipole despite polar bonds = symmetric molecule (CO2, BF3, CCl4) — the vector sum cancels."
+  ],
+  "keyPoints": [
+    "Bond length: equilibrium distance between nuclei of bonded atoms; decreases with higher bond order.",
+    "Dipole moment μ = charge × distance; vector from the positive to the negative end.",
+    "Ionic character increases with electronegativity difference.",
+    "Symmetric molecules with polar bonds can have μ = 0."
+  ],
+  "practiceQuestions": [
+    "Q. Arrange HF, HCl, HBr, HI in increasing dipole moment. (1 mark) — HI < HBr < HCl < HF.",
+    "Q. CO2 has polar bonds but zero dipole moment — why? (2 marks) — linear molecule; the two equal bond dipoles point opposite and cancel.",
+    "Q. Which is longer, C–C or C=C, and why? (1 mark) — C–C; greater s-character/bond order pulls nuclei closer."
+  ]
 }

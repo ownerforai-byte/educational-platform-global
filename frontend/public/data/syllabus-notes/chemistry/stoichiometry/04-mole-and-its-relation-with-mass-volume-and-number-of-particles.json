@@ -41,5 +41,20 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: The mole triangle — moles = mass/M = particles/6.022e23 = volume(L at STP)/22.4. Write the triangle first in every numerical; every question gives one corner and asks another.",
+    "Trick 2: For ionic solids and atoms use mass ↔ particles only (no 22.4 L); the 22.4 L shortcut is for GASES at STP only.",
+    "Trick 3: Number of moles of atoms vs molecules — 1 mole H2SO4 contains 7 moles of atoms (2H + 1S + 4O); exam asks 'total atoms' — multiply molecules by atoms per molecule."
+  ],
+  "keyPoints": [
+    "One mole = 6.022 × 10^23 particles = gram molecular/atomic mass.",
+    "Number of moles n = given mass (g) / molar mass (g/mol).",
+    "For gases at STP: n = volume (L) / 22.4.",
+    "Number of particles = n × 6.022 × 10^23."
+  ],
+  "practiceQuestions": [
+    "Q. Calculate the number of molecules in 4.9 g H2SO4. (2 marks) — M = 98; n = 4.9/98 = 0.05; molecules = 0.05 × 6.022e23 = 3.011 × 10^22.",
+    "Q. How many moles of atoms are in 0.5 mole H2SO4? (1 mark) — 0.5 × 7 = 3.5 moles of atoms."
   ]
 }

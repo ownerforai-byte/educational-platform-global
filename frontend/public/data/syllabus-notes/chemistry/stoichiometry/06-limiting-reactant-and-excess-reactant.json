@@ -30,5 +30,19 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Convert BOTH reactants to moles, divide each by its stoichiometric coefficient — the SMALLER quotient is the limiting reactant. Never compare masses directly.",
+    "Trick 2: Product yield is always computed from the LIMITING reactant, never from the excess one.",
+    "Trick 3: Amount of excess left over = initial moles of excess − moles consumed (consumed = limiting moles × mole ratio)."
+  ],
+  "keyPoints": [
+    "The limiting reactant is completely consumed and controls the maximum product formed.",
+    "Excess reactant remains partly unreacted after the reaction stops.",
+    "Identify it by comparing moles/coefficient, not masses."
+  ],
+  "practiceQuestions": [
+    "Q. 2 mol H2 reacts with 2 mol O2: 2H2 + O2 -> 2H2O. Find the limiting reactant and water formed. (3 marks) — H2: 2/2 = 1; O2: 2/1 = 2 → H2 limiting; water = 2 mol (36 g).",
+    "Q. 8 g H2 and 32 g O2 explode. What remains and how much? (3 marks) — H2 = 4 mol, O2 = 1 mol → O2 limiting; H2 used = 2 mol → 2 mol (4 g) H2 remains."
   ]
 }

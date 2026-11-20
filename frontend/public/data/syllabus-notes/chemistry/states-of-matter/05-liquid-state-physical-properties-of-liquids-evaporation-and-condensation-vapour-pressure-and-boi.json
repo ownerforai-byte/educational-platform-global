@@ -39,5 +39,21 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Boiling point rises when vapour pressure falls — solutes, strong IMFs and external pressure all raise b.p.; quote 'VP = atmospheric pressure' as the boiling condition.",
+    "Trick 2: Vapour pressure vs temperature is exponential (Clausius) — VP always increases with T, never linearly.",
+    "Trick 3: Surface tension falls with temperature and vanishes at the critical temperature; viscosity also falls with T (opposite to gases).",
+    "Trick 4: Evaporation is surface cooling → causes condensation on a cold mirror — link evaporation, VP and b.p. in one chain."
+  ],
+  "keyPoints": [
+    "Vapour pressure: pressure exerted by vapour in equilibrium with its liquid at a given temperature.",
+    "Boiling occurs when vapour pressure equals the external pressure.",
+    "Surface tension and viscosity decrease with rising temperature.",
+    "Evaporation is endothermic and increases with temperature and surface area."
+  ],
+  "practiceQuestions": [
+    "Q. Why does water boil below 100 °C on Mount Everest? (1 mark) — lower atmospheric pressure; VP reaches it earlier.",
+    "Q. Why does salt raise the boiling point of water? (2 marks) — solute lowers vapour pressure, so a higher temperature is needed to reach 1 atm."
   ]
 }

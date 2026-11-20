@@ -55,5 +55,20 @@
   ],
   "animation3D": "rate-of-heat-flow",
   "motionGraphics": "rate-of-heat-flow",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "examShortTricks": [
+    "Trick 1: Four properties in exam order — needs no medium, travels at light speed, obeys inverse-square law, can pass through vacuum — the first property is the definition mark.",
+    "Trick 2: Stefan's law numerical: P = σAeT^4, σ = 5.67 × 10^-8 — doubling the absolute temperature multiplies radiation 16 times.",
+    "Trick 3: Ideal radiator = ideal absorber = black body (a = 1); a good reflector is a poor radiator — one line, and Kirchhoff's law ties them."
+  ],
+  "keyPoints": [
+    "Radiation: heat transfer by electromagnetic waves without a material medium.",
+    "Stefan–Boltzmann: P = σ A e T^4.",
+    "A black body is both the best absorber and the best radiator (Kirchhoff's law).",
+    "Wien's law: λm T = constant — hotter bodies radiate shorter wavelengths."
+  ],
+  "practiceQuestions": [
+    "Q. Why is a thermos flask's silvered surface used? (1 mark) — to minimise heat loss by radiation (poor radiator/absorber).",
+    "Q. By what factor does radiated power increase if absolute temperature doubles? (2 marks) — 2^4 = 16 times (Stefan's law)."
+  ]
 }

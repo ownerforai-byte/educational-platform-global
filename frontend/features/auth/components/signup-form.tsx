@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Mail, Lock, Eye, EyeOff, User, Check, Info } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, User, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { signupAction } from "../actions";
@@ -17,7 +17,6 @@ import {
   rememberAccessOutcome,
   rememberPendingSignup,
 } from "../pending-signup-identity";
-import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
 import { AUTH_TRY_AGAIN } from "../public-messages";
 import { useAuthFormError } from "../use-auth-form-error";
 
@@ -84,13 +83,6 @@ export function SignupForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <p
-        data-testid="device-signup-notice"
-        className="flex items-start gap-2 rounded-xl border border-amber-500/30 bg-amber-500/[0.07] px-3.5 py-2.5 text-xs font-semibold leading-relaxed text-amber-600 dark:text-amber-400"
-      >
-        <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-        {DEVICE_SIGNUP_NOTICE}
-      </p>
       <AuthField
         id="fullName"
         label="Full name"

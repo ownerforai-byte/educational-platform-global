@@ -41,5 +41,19 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: % yield = (actual / theoretical) × 100 — compute theoretical from the LIMITING reactant, then plug the given experimental mass.",
+    "Trick 2: If % purity is given, first convert impure mass to pure mass (× purity fraction) BEFORE the mole calculation.",
+    "Trick 3: % yield > 100% in an exam answer means the product is wet/impure — state this as the reason if asked."
+  ],
+  "keyPoints": [
+    "Theoretical yield: maximum product from the limiting reactant (stoichiometry).",
+    "Actual (experimental) yield: mass actually obtained in the lab.",
+    "% yield = (actual yield / theoretical yield) × 100."
+  ],
+  "practiceQuestions": [
+    "Q. From 8 g CaO (M = 56 for CaCO3 route) — CaCO3 -> CaO + CO2; if 3.2 g CaO is obtained, find % yield. (3 marks) — theoretical = 8 × 56/100 = 4.48 g; % = 3.2/4.48 × 100 = 71.4%.",
+    "Q. Why can experimental yield never exceed theoretical yield for a pure dry product? (1 mark) — Law of conservation of mass; product cannot contain more matter than the limiting reactant supplies."
   ]
 }
