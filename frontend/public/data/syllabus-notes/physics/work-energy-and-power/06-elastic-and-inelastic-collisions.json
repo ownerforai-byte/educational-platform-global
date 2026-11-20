@@ -5,77 +5,38 @@
   "topicTitle": "Elastic and inelastic collisions",
   "relevance": 100,
   "notes": [
-    "**Elastic collision:** A collision in which both total momentum AND total kinetic energy are conserved. The bodies rebound without permanent deformation, no sound/heat is produced. The relative velocity of approach equals the relative velocity of separation: v₂ - v₁ = u₁ - u₂.",
-    "**Inelastic collision:** A collision in which momentum is conserved but kinetic energy is NOT conserved. Some kinetic energy is converted to internal energy (heat, sound, deformation). The coefficient of restitution e < 1.",
-    "**Perfectly inelastic collision:** The extreme case where the colliding bodies stick together after collision and move with a common velocity. Momentum is conserved; KE loss is maximum (but not 100% because momentum must be conserved, so some KE remains as center-of-mass motion).",
-    "**One-dimensional elastic collision formulas:** For masses m₁, m₂ with initial velocities u₁, u₂: v₁ = (m₁-m₂)u₁/(m₁+m₂) + 2m₂u₂/(m₁+m₂), v₂ = (m₂-m₁)u₂/(m₁+m₂) + 2m₁u₁/(m₁+m₂). These come from conservation of momentum + conservation of KE.",
-    "**Special case — equal masses (m₁ = m₂) in elastic collision:** The masses exchange velocities! v₁ = u₂, v₂ = u₁. If m₂ was initially at rest (u₂ = 0), then v₁ = 0 (first mass stops) and v₂ = u₁ (second mass moves off with the first mass's original speed).",
-    "**Special case — very massive m₁, stationary m₂ (m₁ ≫ m₂, u₂ = 0):** m₁ barely slows: v₁ ≈ u₁. m₂ shoots forward at v₂ ≈ 2u₁ (twice the initial speed). This is how a golf club hits a ball, or a bat hits a baseball.",
-    "**Coefficient of restitution (e):** e = (relative speed of separation) / (relative speed of approach) = (v₂ - v₁)/(u₁ - u₂). For perfectly elastic: e = 1. For perfectly inelastic: e = 0. For inelastic: 0 < e < 1. e depends on the materials (e.g., tennis ball on concrete: e ≈ 0.75; steel on steel: e ≈ 0.9; putty: e ≈ 0).",
-    "**Energy loss in inelastic collisions:** ΔK = K_f - K_i = -½ μ v_rel² (1 - e²), where μ = m₁m₂/(m₁+m₂) is the reduced mass and v_rel = u₁ - u₂ is the relative velocity. The energy lost goes to heat, sound, and permanent deformation.",
-    "**Two-dimensional collisions:** Momentum is conserved as a vector: p_x and p_y separately. For elastic collisions, KE is also conserved. The scattering angles depend on the impact parameter. Center-of-mass frame analysis often simplifies 2D collisions.",
-    "**Center-of-mass frame:** In the CM frame, total momentum is zero. In an elastic collision, the speeds of particles don't change, only their directions change. The scattering is isotropic for identical particles in the CM frame.",
-    "**Real-world applications:** Car crash safety (crumple zones increase collision time, reduce force — KE is dissipated controllably). Billiards (nearly elastic). Newton's cradle (demonstrates momentum and energy transfer through elastic collisions). Sports (baseball, tennis, golf — coefficient of restitution of ball/racket/club matters).",
-    "**Explosion — reverse collision:** An object at rest splits into fragments with kinetic energy. Momentum is conserved (total momentum before = 0, after = 0). KE after > KE before — the energy comes from internal chemical/nuclear energy stored in the object. This is a 'reverse' inelastic collision.",
-    "# Elastic and inelastic collisions\n\n## 1. Introduction\nPhysical picture of **Elastic and inelastic collisions** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Work, Energy and Power fill pass.\n\n## 2. Concepts and laws\n### Elastic and inelastic collisions\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Elastic and inelastic collisions — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Elastic and inelastic collisions — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Elastic and inelastic collisions — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Elastic and inelastic collisions — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — What Survives a Crash\n\nEvery collision conserves momentum; only some conserve kinetic energy. The classification — elastic, inelastic, perfectly inelastic — decides how the bodies separate, and powers billiards, crash engineering and particle detectors.",
+    "## 2. Fundamental Concepts (NEB 2020)\n\n| Type | Momentum | Kinetic energy | Separation | Example |\n|---|---|---|---|---|\n| **Elastic** | Conserved | Conserved | Bodies separate | Billiard balls, gas molecules, atomic collisions |\n| **Inelastic** | Conserved | Partly lost (heat, sound, deformation) | Bodies separate | Most real collisions; a dropped ball that bounces lower |\n| **Perfectly inelastic** | Conserved | Maximum possible KE loss | Bodies **stick together** | Bullet embedding in a block; clay lumps |\n\n**Momentum is conserved in all three** (isolated system); kinetic energy only in the first.\n\n### 2.1 Elastic collision in one dimension\n\nFor masses $m_1, m_2$ with initial velocities $u_1, u_2$ (m_2 at rest is the standard case), solving momentum and KE conservation together gives:\n\n$$v_1 = \\frac{(m_1 - m_2)u_1 + 2m_2u_2}{m_1 + m_2}, \\qquad v_2 = \\frac{(m_1 - m_2)u_2 + 2m_1u_1}{m_1 + m_2}$$\n\nWith $m_2$ initially at rest ($u_2 = 0$):\n$$v_1 = \\frac{m_1 - m_2}{m_1 + m_2}u_1, \\qquad v_2 = \\frac{2m_1}{m_1 + m_2}u_1$$\n\n**Special cases (u₂ = 0):**\n| Masses | Result |\n|---|---|\n| $m_1 = m_2$ | Velocities **exchange**: $v_1 = 0$, $v_2 = u_1$ |\n| $m_1 \\gg m_2$ | $m_1$ continues nearly unchanged; $m_2$ shoots off at ≈ $2u_1$ |\n| $m_1 \\ll m_2$ | $m_1$ **rebounds** at ≈ $-u_1$; $m_2$ barely moves |\n\n### 2.2 Perfectly inelastic collision\n\nBodies stick: common final velocity $v = \\dfrac{m_1u_1 + m_2u_2}{m_1 + m_2}$.\nKE lost = initial KE − final KE — the maximum possible consistent with momentum conservation.\n\n**Worked numerical (4m, 2022):** A bullet of mass 0.02 kg moving at 500 m/s embeds in a block of mass 4.98 kg at rest. Find the velocity of the system and the kinetic energy lost.\n$v = \\dfrac{0.02 \\times 500}{5.00} = 2$ m/s.\n$KE_i = \\frac{1}{2}(0.02)(500^2) = 2500$ J; $KE_f = \\frac{1}{2}(5)(4) = 10$ J.\n**KE lost = 2490 J (99.6%) — momentum kept, energy mostly gone.**",
+    "## 3. Conceptual Relationships\n\n- **To Topics 11–12:** momentum conservation is the universal collision law; this topic adds the energy bookkeeping.\n- **To Topic 20:** lost KE becomes heat — non-conservative dissipation inside the collision.\n- **To Kinetic Theory (Unit 13):** gas molecules collide elastically — the model's foundation.\n- **To real life:** car crumple zones maximise KE loss safely; neutron moderation in reactors exploits $m_1 = m_2$ velocity exchange (hydrogen moderators).",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2076/2020 | Mechanics | Collisions | Differentiate between elastic and inelastic collisions. | 3 | Difference |\n| 2078/2022 | Mechanics | Perfectly inelastic | A bullet of mass 0.02 kg moving with a velocity of 500 m/s is embedded in a block of mass 4.98 kg initially at rest on a smooth horizontal surface. Find the velocity of the block. | 4 | Numerical |\n\n### 4.2 Model answers\n\n**Q1 (3m, 2020):** In an **elastic collision** both total momentum and total kinetic energy are conserved and the bodies separate after impact — e.g. collisions between billiard balls or gas molecules. In an **inelastic collision** momentum is conserved but part of the kinetic energy converts to heat, sound or deformation, and the bodies may or may not separate — e.g. a ball bouncing to a lower height. In the limiting **perfectly inelastic** case the bodies stick together and move with a common velocity — e.g. a bullet embedding in a block — with the maximum possible loss of kinetic energy.\n\n**Q2 (4m, 2022):** see worked numerical in §2.2 — common velocity 2 m/s; 2490 J of the original 2500 J becomes heat and deformation.\n\n### 4.3 Common examination mistakes\n\n1. Claiming momentum is conserved only in elastic collisions — it is conserved in **all** of them.\n2. Using the elastic-collision formulas for a sticking collision.\n3. Forgetting the sign of $v_1$ when $m_1 < m_2$ (the projectile rebounds).\n4. Computing \"energy lost\" as $KE_i$ instead of $KE_i - KE_f$.\n5. Ignoring that the final mass in embedding problems is the sum."
   ],
   "confusion": [
-    "In a perfectly inelastic collision, the objects DO NOT lose ALL their kinetic energy. They lose the MAXIMUM possible KE consistent with momentum conservation. The center-of-mass kinetic energy (½Mv_cm²) MUST remain because momentum is conserved. Only the KE relative to the center of mass can be lost.",
-    "The coefficient of restitution e is NOT the ratio of final to initial KE. e = (v₂ - v₁)/(u₁ - u₂) is the ratio of relative speeds. The fraction of KE retained is e² (for equal masses) or a more complex formula for unequal masses. Many students confuse e with KE ratio.",
-    "Momentum is ALWAYS conserved in an isolated system (no external forces). Kinetic energy is ONLY conserved in perfectly elastic collisions. Students often think KE is always conserved in collisions — it is NOT. Real collisions are usually somewhat inelastic (0 < e < 1).",
-    "For a ball bouncing on the floor: The floor/earth is so massive it doesn't move. The ball's speed before and after impact relates by e = v_after/v_before. The ball loses (1-e²) of its KE each bounce. The floor provides the impulse to change momentum; the earth's recoil is negligible.",
-    "A collision where kinetic energy is 'gained' (superelastic) is possible if internal energy is released (explosion, chemical reaction, spring release). These are NOT standard collisions and require tracking internal energy changes."
+    "**Momentum vs KE conservation:** momentum survives every isolated collision; KE survives only elastic ones — the lost KE becomes heat and deformation.",
+    "**Elastic vs 'bouncy':** a real bouncy ball's collision is inelastic (it rebounds lower); only idealised collisions are elastic."
   ],
   "practice": [
-    "A 5 kg ball moving at 4 m/s collides elastically with a 3 kg ball at rest. Find their velocities after collision. Solution: m₁=5, m₂=3, u₁=4, u₂=0. v₁ = (5-3)/(5+3)×4 = 2/8×4 = 1 m/s. v₂ = 2×5/(5+3)×4 = 10/8×4 = 5 m/s. Check: KE_i = ½×5×16 = 40 J. KE_f = ½×5×1 + ½×3×25 = 2.5 + 37.5 = 40 J. Momentum: 5×4 = 5×1 + 3×5 = 20.",
-    "A 1000 kg car moving at 20 m/s rear-ends a stationary 1500 kg car. They stick together. Find (a) final velocity, (b) KE lost. Solution: (a) m₁u₁ = (m₁+m₂)v → 1000×20 = 2500v → v = 8 m/s. (b) KE_i = ½×1000×400 = 200,000 J. KE_f = ½×2500×64 = 80,000 J. Lost = 120,000 J = 60% of initial KE. Heat/sound/crushing.",
-    "A ball of mass m is dropped from height h onto a massive floor with coefficient of restitution e. To what height does it rebound? How many bounces until height < h/10? Solution: Rebound height h₁ = e²h. After n bounces: h_n = e^(2n)h. For h_n < h/10: e^(2n) < 0.1 → 2n ln e < ln 0.1 → n > ln(0.1)/(2 ln e). If e = 0.8: n > -2.3/(-0.44) = 5.2 → 6 bounces.",
-    "Two particles of mass m approach each other with equal speeds u in a perfectly elastic collision. One is deflected by 60° from its original direction. Find the final speeds. Solution: In CM frame, total momentum = 0. Elastic collision: speeds unchanged, only directions change. Initial CM speed = u. After: each has speed u. Angle between final velocities = 180° in CM frame. In lab frame, the deflection angle depends on initial configuration.",
-    "A golf club (m = 0.2 kg) moving at 50 m/s strikes a ball (m = 0.046 kg) at rest. e = 0.8. Find ball speed after impact. Solution: u₁ = 50, u₂ = 0. v₂ = (1+e)m₁u₁/(m₁+m₂) = 1.8×0.2×50/0.246 = 18/0.246 = 73.2 m/s. The ball travels faster than the club! This is why golf balls go so fast. v₁ = m₁u₁/m₁+m₂ × (1 - e×m₂/m₁) ≈ 40 m/s."
+    "Why does a neutron slow down fastest colliding with hydrogen?"
   ],
   "universalFacts": [
-    "The coefficient of restitution e was introduced by Newton in the Principia. For elastic collisions, e = 1, and the relative velocity of separation equals the relative velocity of approach. This is a consequence of both momentum and kinetic energy conservation.",
-    "In any isolated system, total momentum is ALWAYS conserved (if no external forces). Kinetic energy is NOT always conserved. The only perfectly elastic collisions in nature are between fundamental particles (or at the atomic/molecular level where quantum mechanics makes collisions elastic).",
-    "In a perfectly inelastic collision, the maximum possible kinetic energy loss is ΔK_max = -½ μ v_rel², where μ = m₁m₂/(m₁+m₂) is the reduced mass. This is the kinetic energy in the center-of-mass frame, which is entirely lost as heat.",
-    "Newton's cradle works because the collisions between identical spheres are nearly elastic, and the equal-mass exchange property (v₁ = u₂, v₂ = u₁) transfers momentum and energy cleanly from one end to the other.",
-    "The classification of collisions (elastic, inelastic, perfectly inelastic) is an idealization. Real collisions have 0 < e < 1. The value of e depends on the materials: rubber on concrete e ≈ 0.8, steel on steel e ≈ 0.9, glass on glass e ≈ 0.6, putty e ≈ 0."
+    "Gas molecules collide almost perfectly elastically — without that, the kinetic theory's pressure predictions would fail."
   ],
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power",
   "examples": [
-    "Equal mass elastic: A 2 kg ball at 6 m/s hits a stationary 2 kg ball. After collision: first ball stops, second ball moves at 6 m/s (velocities exchanged).",
-    "Perfectly inelastic: A 3 kg ball at 4 m/s hits a stationary 1 kg ball. They stick together. Common velocity = (3×4 + 0)/(3+1) = 3 m/s. KE lost = ½×3×16 − ½×4×9 = 24 − 18 = 6 J.",
-    "Coefficient of restitution: A ball dropped from 5 m rebounds to 3.2 m. e = √(3.2/5) = 0.8.",
-    "Golf club: A 0.2 kg club at 50 m/s hits a 0.046 kg ball at rest (e = 0.8). Ball speed = 73.2 m/s (faster than the club!).",
-    "Newton's cradle: Pull one ball, release — one ball flies out the other end at the same speed. Pull two balls, two fly out."
+    "***Bullet in block*** — 0.02 kg at 500 m/s into 4.98 kg: v = 2 m/s, 2490 J lost (NEB 2022)."
   ],
   "practiceQuestions": [
-    "A 4 kg ball moving at 5 m/s collides elastically with a 2 kg ball at rest. Find their velocities after collision.",
-    "A 5 kg ball moving at 6 m/s hits a stationary 3 kg ball in a perfectly inelastic collision. Find the common velocity and the KE lost.",
-    "A ball is dropped from 10 m and rebounds to 6.4 m. Find the coefficient of restitution and the fraction of energy lost.",
-    "A 1 kg ball moving at 8 m/s collides with a stationary 4 kg ball. If e = 0.6, find the final velocities.",
-    "Explain why the ball in a golf shot travels faster than the club head."
+    "**Numerical (4m): A 2 kg ball at 6 m/s collides elastically head-on with a 2 kg ball at rest. Find the final velocities.** — Equal masses exchange velocities: the first stops (v₁ = 0), the second moves off at 6 m/s. Momentum (12 kg·m/s) and KE (36 J) both conserved."
   ],
   "formulas": [
-    "Elastic collision (1D): v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₂−m₁)u₂ + 2m₁u₁]/(m₁+m₂)",
-    "Perfectly inelastic: m₁u₁ + m₂u₂ = (m₁+m₂)v (common velocity v)",
-    "Coefficient of restitution: e = (v₂ − v₁)/(u₁ − u₂) = relative speed of separation / relative speed of approach",
-    "KE loss in inelastic collision: ΔK = ½μv_rel²(1 − e²), where μ = m₁m₂/(m₁+m₂)",
-    "Equal mass elastic (one at rest): v₁ = 0, v₂ = u₁ (velocities exchanged)"
+    "- Elastic: v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₁−m₂)u₂ + 2m₁u₁]/(m₁+m₂)\n- u₂ = 0: v₁ = (m₁−m₂)u₁/(m₁+m₂); v₂ = 2m₁u₁/(m₁+m₂)\n- Perfectly inelastic: v = (m₁u₁+m₂u₂)/(m₁+m₂)\n- KE lost = KE_i − KE_f"
   ],
   "keyPoints": [
-    "Elastic collision: both momentum AND kinetic energy are conserved.",
-    "Inelastic collision: momentum conserved, kinetic energy NOT conserved (some → heat/sound).",
-    "Perfectly inelastic: bodies stick together, KE loss is maximum.",
-    "Coefficient of restitution e = 1 (elastic), e = 0 (perfectly inelastic), 0 < e < 1 (inelastic).",
-    "Equal-mass elastic collision (one at rest): the masses exchange velocities."
+    "All collisions conserve momentum; only elastic ones conserve KE.",
+    "Elastic (u₂ = 0): v₁ = (m₁−m₂)u₁/(m₁+m₂); v₂ = 2m₁u₁/(m₁+m₂); equal masses exchange velocities.",
+    "Perfectly inelastic: v = (m₁u₁+m₂u₂)/(m₁+m₂); maximum KE loss."
   ],
-  "summary": "In an elastic collision, both momentum and kinetic energy are conserved. In an inelastic collision, momentum is conserved but kinetic energy is not (some converts to heat/sound). In a perfectly inelastic collision, the bodies stick together and KE loss is maximum. The coefficient of restitution e measures the elasticity of the collision.",
+  "summary": "Collisions divide by what survives. **Momentum is always conserved** in an isolated collision; **kinetic energy only in elastic ones**. Elastic collisions (billiard balls, gas molecules) obey $v_1 = \\frac{(m_1-m_2)u_1 + 2m_2u_2}{m_1+m_2}$ — with equal masses the velocities simply exchange, a light projectile rebounds off a heavy target, and a heavy one ploughs through sending the light target off at nearly double speed. Inelastic collisions lose part of the KE to heat, sound and deformation; in the **perfectly inelastic** limit the bodies stick and move at $v = \\frac{m_1u_1 + m_2u_2}{m_1+m_2}$ — a 0.02 kg bullet embedding in a 4.98 kg block leaves the pair at 2 m/s, having converted 2490 J of its 2500 J into heat (NEB 2022).",
   "specialNotes": [
     "In a perfectly inelastic collision, the objects do NOT lose ALL their kinetic energy — only the KE relative to the center of mass can be lost.",
     "The coefficient of restitution e depends on the materials, not on the velocities of the colliding bodies.",
@@ -84,32 +45,16 @@
     "NEB collision problems: always check whether the collision is elastic (use both conservation laws) or inelastic (use only momentum conservation)."
   ],
   "importantStatements": [
-    "In an elastic collision, both total momentum and total kinetic energy are conserved.",
-    "In an inelastic collision, momentum is conserved but kinetic energy is not — some converts to internal energy.",
-    "In a perfectly inelastic collision, the colliding bodies stick together and move with a common velocity.",
-    "The coefficient of restitution e = (relative speed of separation)/(relative speed of approach).",
-    "In the center-of-mass frame, total momentum is zero — this simplifies collision analysis."
+    "\"Momentum always balances; kinetic energy only sometimes.\""
   ],
   "importantNotes": [
-    "In a perfectly inelastic collision, the objects do NOT lose ALL their kinetic energy — only the KE relative to the center of mass can be lost.",
-    "The coefficient of restitution e depends on the materials, not on the velocities of the colliding bodies.",
-    "In an elastic collision between equal masses where one is initially at rest, the masses exchange velocities.",
-    "Momentum is conserved in ALL collisions (elastic and inelastic) as long as no external force acts.",
-    "NEB collision problems: always check whether the collision is elastic (use both conservation laws) or inelastic (use only momentum conservation)."
+    "Verified PYQs: elastic vs inelastic difference (2020, 3m); bullet-block numerical (2022, 4m)."
   ],
   "examShortTricks": [
-    "Equal mass shortcut: if m₁ = m₂ and the collision is elastic, the masses exchange velocities.",
-    "Perfectly inelastic shortcut: bodies stick together → use m₁u₁ + m₂u₂ = (m₁ + m₂)v to find the common velocity.",
-    "KE loss shortcut: ΔK = ½μv_rel²(1 − e²) — maximum when e = 0 (perfectly inelastic).",
-    "e = 1 → elastic (KE conserved); e = 0 → perfectly inelastic (maximum KE loss); 0 < e < 1 → inelastic.",
-    "CM frame shortcut: in the center-of-mass frame, total momentum is zero — simplifies 2D collision analysis."
+    "\"Sticking → common velocity = total p / total m.\""
   ],
   "examNotes": [
-    "One-dimensional elastic collision formulas are standard — know how to derive and apply them.",
-    "Equal-mass elastic collision (one at rest): the moving mass stops, the stationary one moves off at the original speed.",
-    "Perfectly inelastic collision: find the common velocity using momentum conservation, then compute KE loss.",
-    "Coefficient of restitution problems: e = (v₂ − v₁)/(u₁ − u₂) — just the ratio of relative speeds.",
-    "NEB asks both numerical problems and conceptual questions about energy loss in collisions."
+    "Most-tested: the difference question (2020) and embedding numerical (2022). Learn the three special cases of the elastic formulas."
   ],
   "mcs": [
     {
@@ -164,11 +109,7 @@
     }
   ],
   "importantConcepts": [
-    "In an elastic collision, both momentum and kinetic energy are conserved.",
-    "In an inelastic collision, momentum is conserved but kinetic energy is not (some converts to heat/sound).",
-    "In a perfectly inelastic collision, the bodies stick together and KE loss is maximum.",
-    "The coefficient of restitution e = (relative speed of separation)/(relative speed of approach).",
-    "In the center-of-mass frame, total momentum is zero — simplifies collision analysis."
+    "**Equal masses exchange velocities:** the elastic-collision signature — and the reason hydrogen moderates neutrons in reactors."
   ],
   "importantTasks": [
     "Solve 5 one-dimensional elastic collision problems using the standard formulas.",
@@ -203,5 +144,142 @@
     ]
   },
   "visualType": "elastic-collisions",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — What Survives a Crash\n\nEvery collision conserves momentum; only some conserve kinetic energy. The classification — elastic, inelastic, perfectly inelastic — decides how the bodies separate, and powers billiards, crash engineering and particle detectors.",
+      "## 2. Fundamental Concepts (NEB 2020)\n\n| Type | Momentum | Kinetic energy | Separation | Example |\n|---|---|---|---|---|\n| **Elastic** | Conserved | Conserved | Bodies separate | Billiard balls, gas molecules, atomic collisions |\n| **Inelastic** | Conserved | Partly lost (heat, sound, deformation) | Bodies separate | Most real collisions; a dropped ball that bounces lower |\n| **Perfectly inelastic** | Conserved | Maximum possible KE loss | Bodies **stick together** | Bullet embedding in a block; clay lumps |\n\n**Momentum is conserved in all three** (isolated system); kinetic energy only in the first.\n\n### 2.1 Elastic collision in one dimension\n\nFor masses $m_1, m_2$ with initial velocities $u_1, u_2$ (m_2 at rest is the standard case), solving momentum and KE conservation together gives:\n\n$$v_1 = \\frac{(m_1 - m_2)u_1 + 2m_2u_2}{m_1 + m_2}, \\qquad v_2 = \\frac{(m_1 - m_2)u_2 + 2m_1u_1}{m_1 + m_2}$$\n\nWith $m_2$ initially at rest ($u_2 = 0$):\n$$v_1 = \\frac{m_1 - m_2}{m_1 + m_2}u_1, \\qquad v_2 = \\frac{2m_1}{m_1 + m_2}u_1$$\n\n**Special cases (u₂ = 0):**\n| Masses | Result |\n|---|---|\n| $m_1 = m_2$ | Velocities **exchange**: $v_1 = 0$, $v_2 = u_1$ |\n| $m_1 \\gg m_2$ | $m_1$ continues nearly unchanged; $m_2$ shoots off at ≈ $2u_1$ |\n| $m_1 \\ll m_2$ | $m_1$ **rebounds** at ≈ $-u_1$; $m_2$ barely moves |\n\n### 2.2 Perfectly inelastic collision\n\nBodies stick: common final velocity $v = \\dfrac{m_1u_1 + m_2u_2}{m_1 + m_2}$.\nKE lost = initial KE − final KE — the maximum possible consistent with momentum conservation.\n\n**Worked numerical (4m, 2022):** A bullet of mass 0.02 kg moving at 500 m/s embeds in a block of mass 4.98 kg at rest. Find the velocity of the system and the kinetic energy lost.\n$v = \\dfrac{0.02 \\times 500}{5.00} = 2$ m/s.\n$KE_i = \\frac{1}{2}(0.02)(500^2) = 2500$ J; $KE_f = \\frac{1}{2}(5)(4) = 10$ J.\n**KE lost = 2490 J (99.6%) — momentum kept, energy mostly gone.**",
+      "## 3. Conceptual Relationships\n\n- **To Topics 11–12:** momentum conservation is the universal collision law; this topic adds the energy bookkeeping.\n- **To Topic 20:** lost KE becomes heat — non-conservative dissipation inside the collision.\n- **To Kinetic Theory (Unit 13):** gas molecules collide elastically — the model's foundation.\n- **To real life:** car crumple zones maximise KE loss safely; neutron moderation in reactors exploits $m_1 = m_2$ velocity exchange (hydrogen moderators).",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2076/2020 | Mechanics | Collisions | Differentiate between elastic and inelastic collisions. | 3 | Difference |\n| 2078/2022 | Mechanics | Perfectly inelastic | A bullet of mass 0.02 kg moving with a velocity of 500 m/s is embedded in a block of mass 4.98 kg initially at rest on a smooth horizontal surface. Find the velocity of the block. | 4 | Numerical |\n\n### 4.2 Model answers\n\n**Q1 (3m, 2020):** In an **elastic collision** both total momentum and total kinetic energy are conserved and the bodies separate after impact — e.g. collisions between billiard balls or gas molecules. In an **inelastic collision** momentum is conserved but part of the kinetic energy converts to heat, sound or deformation, and the bodies may or may not separate — e.g. a ball bouncing to a lower height. In the limiting **perfectly inelastic** case the bodies stick together and move with a common velocity — e.g. a bullet embedding in a block — with the maximum possible loss of kinetic energy.\n\n**Q2 (4m, 2022):** see worked numerical in §2.2 — common velocity 2 m/s; 2490 J of the original 2500 J becomes heat and deformation.\n\n### 4.3 Common examination mistakes\n\n1. Claiming momentum is conserved only in elastic collisions — it is conserved in **all** of them.\n2. Using the elastic-collision formulas for a sticking collision.\n3. Forgetting the sign of $v_1$ when $m_1 < m_2$ (the projectile rebounds).\n4. Computing \"energy lost\" as $KE_i$ instead of $KE_i - KE_f$.\n5. Ignoring that the final mass in embedding problems is the sum."
+    ],
+    "confusion": [
+      "**Momentum vs KE conservation:** momentum survives every isolated collision; KE survives only elastic ones — the lost KE becomes heat and deformation.",
+      "**Elastic vs 'bouncy':** a real bouncy ball's collision is inelastic (it rebounds lower); only idealised collisions are elastic."
+    ],
+    "keyPoints": [
+      "All collisions conserve momentum; only elastic ones conserve KE.",
+      "Elastic (u₂ = 0): v₁ = (m₁−m₂)u₁/(m₁+m₂); v₂ = 2m₁u₁/(m₁+m₂); equal masses exchange velocities.",
+      "Perfectly inelastic: v = (m₁u₁+m₂u₂)/(m₁+m₂); maximum KE loss."
+    ],
+    "importantConcepts": [
+      "**Equal masses exchange velocities:** the elastic-collision signature — and the reason hydrogen moderates neutrons in reactors."
+    ],
+    "examples": [
+      "***Bullet in block*** — 0.02 kg at 500 m/s into 4.98 kg: v = 2 m/s, 2490 J lost (NEB 2022)."
+    ],
+    "universalFacts": [
+      "Gas molecules collide almost perfectly elastically — without that, the kinetic theory's pressure predictions would fail."
+    ],
+    "importantStatements": [
+      "\"Momentum always balances; kinetic energy only sometimes.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: elastic vs inelastic difference (2020, 3m); bullet-block numerical (2022, 4m)."
+    ],
+    "examShortTricks": [
+      "\"Sticking → common velocity = total p / total m.\""
+    ],
+    "examNotes": [
+      "Most-tested: the difference question (2020) and embedding numerical (2022). Learn the three special cases of the elastic formulas."
+    ],
+    "formulas": [
+      "- Elastic: v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₁−m₂)u₂ + 2m₁u₁]/(m₁+m₂)\n- u₂ = 0: v₁ = (m₁−m₂)u₁/(m₁+m₂); v₂ = 2m₁u₁/(m₁+m₂)\n- Perfectly inelastic: v = (m₁u₁+m₂u₂)/(m₁+m₂)\n- KE lost = KE_i − KE_f"
+    ],
+    "practice": [
+      "Why does a neutron slow down fastest colliding with hydrogen?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (4m): A 2 kg ball at 6 m/s collides elastically head-on with a 2 kg ball at rest. Find the final velocities.** — Equal masses exchange velocities: the first stops (v₁ = 0), the second moves off at 6 m/s. Momentum (12 kg·m/s) and KE (36 J) both conserved."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "In which collisions is momentum conserved?",
+      "options": [
+        "Elastic only",
+        "Inelastic only",
+        "All isolated collisions",
+        "None"
+      ],
+      "answer": "C",
+      "explanation": "Momentum conservation needs only isolation — not elasticity."
+    },
+    {
+      "question": "In an elastic collision between equal masses (one at rest), the projectile:",
+      "options": [
+        "Rebounds",
+        "Stops and transfers all velocity",
+        "Continues at half speed",
+        "Doubles speed"
+      ],
+      "answer": "B",
+      "explanation": "Equal masses exchange velocities."
+    },
+    {
+      "question": "A 0.02 kg bullet at 500 m/s embeds in a 4.98 kg block. Common velocity:",
+      "options": [
+        "1 m/s",
+        "2 m/s",
+        "5 m/s",
+        "10 m/s"
+      ],
+      "answer": "B",
+      "explanation": "v = (0.02×500)/5 = 2 m/s (NEB 2022)."
+    },
+    {
+      "question": "The KE lost in that collision is about:",
+      "options": [
+        "10 J",
+        "490 J",
+        "2490 J",
+        "2500 J"
+      ],
+      "answer": "C",
+      "explanation": "2500 − 10 = 2490 J — 99.6% dissipated."
+    },
+    {
+      "question": "A very light body elastically hits a very heavy one at rest. It:",
+      "options": [
+        "Continues forward",
+        "Rebounds with nearly the same speed",
+        "Stops",
+        "Carries the heavy body with it"
+      ],
+      "answer": "B",
+      "explanation": "m₁ ≪ m₂ → v₁ ≈ −u₁."
+    },
+    {
+      "question": "In a perfectly inelastic collision the bodies:",
+      "options": [
+        "Separate elastically",
+        "Stick together",
+        "Exchange velocities",
+        "Lose all momentum"
+      ],
+      "answer": "B",
+      "explanation": "Common final velocity — maximum KE loss."
+    },
+    {
+      "question": "Which is approximately elastic in practice?",
+      "options": [
+        "Car crash",
+        "Clay balls colliding",
+        "Gas molecules colliding",
+        "Bullet in sand"
+      ],
+      "answer": "C",
+      "explanation": "Molecular collisions are nearly perfectly elastic."
+    },
+    {
+      "question": "The maximum KE loss consistent with momentum conservation occurs when:",
+      "options": [
+        "The collision is elastic",
+        "The bodies stick together",
+        "Masses are equal",
+        "The collision is one-dimensional"
+      ],
+      "answer": "B",
+      "explanation": "Perfectly inelastic — common velocity minimises final KE."
+    }
+  ]
 }

@@ -44,12 +44,12 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 13 | Dynamics (6h) | Application of Newton's laws | `03-application-of-newton-s-laws.json` | **Completed** |
 | 14 | Dynamics (6h) | Moment, torque and equilibrium | `04-moment-torque-and-equilibrium.json` | **Completed** |
 | 15 | Dynamics (6h) | Solid friction: laws of solid friction and their verifications | `05-solid-friction-laws-of-solid-friction-and-their-verifications.json` | **Completed** |
-| 16 | Work, Energy and Power (6h) | Work done by a constant force and a variable force | TBD | Not started |
-| 17 | Work, Energy and Power (6h) | Power | TBD | Not started |
-| 18 | Work, Energy and Power (6h) | Work-energy theorem; kinetic and potential energy | TBD | Not started |
-| 19 | Work, Energy and Power (6h) | Conservation of energy | TBD | Not started |
-| 20 | Work, Energy and Power (6h) | Conservative and non-conservative forces | TBD | Not started |
-| 21 | Work, Energy and Power (6h) | Elastic and inelastic collisions | TBD | Not started |
+| 16 | Work, Energy and Power (6h) | Work done by a constant force and a variable force | `01-work-done-by-a-constant-force-and-a-variable-force.json` | **Completed** |
+| 17 | Work, Energy and Power (6h) | Power | `02-power.json` | **Completed** |
+| 18 | Work, Energy and Power (6h) | Work-energy theorem; kinetic and potential energy | `03-work-energy-theorem-kinetic-and-potential-energy.json` | **Completed** |
+| 19 | Work, Energy and Power (6h) | Conservation of energy | `04-conservation-of-energy.json` | **Completed** |
+| 20 | Work, Energy and Power (6h) | Conservative and non-conservative forces | `05-conservative-and-non-conservative-forces.json` | **Completed** |
+| 21 | Work, Energy and Power (6h) | Elastic and inelastic collisions | `06-elastic-and-inelastic-collisions.json` | **Completed** |
 | 22 | Circular Motion (6h) | Angular displacement, velocity and acceleration | TBD | Not started |
 | 23 | Circular Motion (6h) | Relation between angular and linear velocity and acceleration | TBD | Not started |
 | 24 | Circular Motion (6h) | Centripetal acceleration and centripetal force | TBD | Not started |
@@ -153,3 +153,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 2 — Unit 2 Vectors (3 topics) upgraded: triangle/parallelogram/polygon laws; resolution & unit vectors; scalar & vector products. Verified PYQs used: 2021 parallelogram numerical 5m + component addition 3m, 2020 scalar vs vector 2m, 2024 rectangular components 3m, 2023 dot/cross definitions 3m. Next: Unit 3 Kinematics (5 topics).
 - Session 3 — Unit 3 Kinematics (5 topics) upgraded: instantaneous velocity/acceleration; relative velocity; equations of motion (graphical); freely falling body; projectile motion. Verified PYQs used: 2024 position/velocity/acceleration definitions 2m, 2014 car numerical 3m, 2017 relative velocity 2m, 2023 car numerical 3m, 2023 dropped-stone 3m, 2024 projectile 3m, 2022 complementary-angles 3m + horizontal projection 5m + vertical projection 4m, 2019 T=2·t_up derivation 3m. Next: Unit 4 Dynamics (5 topics).
 - Session 4 — Unit 4 Dynamics (5 topics) upgraded: linear momentum & impulse; conservation of linear momentum; application of Newton’s laws; moment/torque/equilibrium; solid friction. Verified PYQs used: 2024 gun recoil 3m, 2023 force numerical 3m, 2018 conservation derivation 3m, 2022 bullet-block 4m, 2021+2022+2024 three laws 3m each, 2020 mass vs weight 2m, 2014 second law 2m, 2021 terminal velocity 2m, 2023 static friction 3m, 2021 incline friction 3m, 2024 angle of repose 3m. No PYQ for torque (NEB-style labelled). Next: Unit 5 Work, Energy and Power (6 topics).
+- Session 5 — Unit 5 Work, Energy and Power (6 topics) upgraded: work (constant/variable); power; work-energy theorem & KE/PE; conservation of energy; conservative vs non-conservative forces; elastic & inelastic collisions. Verified PYQs used: 2024 spring work 3m + motor 3m + car power 3m + kWh 2m + mechanical-energy conservation 3m + WET proof 5m, 2022 motor 3m + staircase 3m, 2021 definitions 3m, 2023 WET proof 5m + falling-body KE 4m, 2020 WET statement 3m + conservation verification 3m + elastic vs inelastic 3m, 2022 bullet-block 4m. No PYQ for conservative forces (NEB-style labelled). Next: Unit 6 Circular Motion (6 topics).

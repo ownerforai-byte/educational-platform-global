@@ -5,19 +5,10 @@
   "topicTitle": "Work done by a constant force and a variable force",
   "relevance": 100,
   "notes": [
-    "Work by Constant Force: W = F·d·cosθ = Fd cosθ where F is force magnitude, d is displacement, θ is angle between force and displacement vectors. SI unit: joule (J = N·m). Scalar quantity — can be positive, negative, or zero.",
-    "Work by Variable Force: When force varies with position, W = ∫F(x)·dx from x₁ to x₂. Graphically, W = area under F-x curve between limits. For F = kx (spring): W = ½kx².",
-    "Positive Work: Force component in direction of displacement (0° ≤ θ < 90°). Example: gravity on falling object, applied force pushing object forward.",
-    "Negative Work: Force component opposite to displacement (90° < θ ≤ 180°). Example: friction on sliding object, gravity on object thrown upward.",
-    "Zero Work: θ = 90° (force perpendicular to displacement) or d = 0 or F = 0. Example: centripetal force in circular motion, carrying object while walking horizontally.",
-    "Work-Energy Theorem: Net work on object equals change in kinetic energy: W_net = ΔK = ½mv_f² - ½mv_i². Valid for constant and variable forces, conservative and non-conservative.",
-    "Units: 1 J = 1 N·m = 1 kg·m²/s². Erg (CGS): 1 erg = 10⁻⁷ J. Electronvolt: 1 eV = 1.602×10⁻¹⁹ J.",
-    "# Work done by a constant force and a variable force\n\n## 1. Introduction\nPhysical picture of **Work done by a constant force and a variable force** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Work, Energy and Power fill pass.\n\n## 2. Concepts and laws\n### Work done by a constant force and a variable force\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Work done by a constant force and a variable force — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Work done by a constant force and a variable force — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Work done by a constant force and a variable force — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Work done by a constant force and a variable force — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Force That Transfers Energy\n\nWork is force's energy invoice: $W = \\vec F\\cdot\\vec s$. Pushing a wall does no work; lifting a bucket does. This topic covers work by constant and variable forces, the spring as the standard variable-force example, and the definitions of work, energy and power (NEB 2021).",
+    "## 2. Fundamental Concepts (NEB 2021)\n\n| Quantity | Definition | Formula | SI unit |\n|---|---|---|---|\n| **Work** | Energy transferred when a force moves its point of application | $W = \\vec F\\cdot\\vec s = Fs\\cos\\theta$ | joule (J) = N·m |\n| **Energy** | Capacity to do work | — | joule |\n| **Power** | Rate of doing work | $P = W/t$ | watt (W) = J/s |\n\n**Key points about work:**\n- Work is a **scalar**; it can be positive (force along displacement), negative (force against displacement — friction), or **zero** (force perpendicular to displacement: circular motion, carrying a load horizontally).\n- $1\\,\\text{joule}$ = work done by 1 N over 1 m along the force.\n\n### 2.1 Work by a variable force\n\nFor a force changing with position, sum infinitesimal contributions:\n$$W = \\int_{x_i}^{x_f} F\\,dx$$\nGraphically, work = **area under the force–displacement graph**.\n\n**Spring (Hooke's law):** restoring force $F = kx$; external force to stretch by x is $kx$:\n$$W = \\int_0^x kx'\\,dx' = \\frac{1}{2}kx^2$$\n\n**Worked numerical (3m, 2024):** Calculate the work done in stretching a spring of force constant 200 N/m by 0.1 m.\n$W = \\frac{1}{2}kx^2 = \\frac{1}{2}(200)(0.1)^2 = \\frac{1}{2}(200)(0.01) = $ **1 J**.\n\n### 2.2 Work by a constant force at an angle\n\n$W = Fs\\cos\\theta$: pulling a 20 kg crate 10 m with 50 N at 60° above horizontal gives $W = 50 \\times 10 \\times 0.5 = 250$ J — only the horizontal component works.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 17:** power divides work by time — the delivery rate.\n- **To Topic 18:** the work–energy theorem connects net work to kinetic energy; spring work becomes elastic PE.\n- **To Topic 20:** gravity and springs are conservative (work path-independent, stored as PE); friction is not.\n- **To Elasticity (Unit 9):** the spring's $\\frac{1}{2}kx^2$ reappears as elastic potential energy and Young's modulus material.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Work & Energy | Spring | Calculate the work done in stretching a spring of force constant 200 N/m by 0.1 m from its unstretched position. | 3 | Numerical |\n| 2077/2021 | Work & Energy | Definitions | Define work, energy and power with their SI units. | 3 | Definition |\n\n### 4.2 Model answers\n\n**Q1 (3m, 2024):** For a spring obeying Hooke's law, the external force to stretch it by x is $F = kx$, so the work is $W = \\int_0^x kx\\,dx = \\frac{1}{2}kx^2 = \\frac{1}{2}(200)(0.1)^2 = 1$ J. This work is stored as elastic potential energy in the spring.\n\n**Q2 (3m, 2021):** **Work** is the energy transferred when a force displaces its point of application — $W = Fs\\cos\\theta$, SI unit joule (J). **Energy** is the capacity to do work, also measured in joules. **Power** is the rate of doing work — $P = W/t$, SI unit watt (W = J/s).\n\n### 4.3 Common examination mistakes\n\n1. Counting work when force is perpendicular to displacement (carrying a bag horizontally does no work against gravity).\n2. Writing $W = Fx$ for a spring instead of $\\frac{1}{2}kx^2$ — the force grows with x.\n3. Ignoring the angle in $Fs\\cos\\theta$.\n4. Calling work a vector.\n5. Sign errors: friction does negative work; the net work can be negative."
   ],
   "specificConditions": [
     "Dot Product: W = F·d·cosθ — only force component parallel to displacement does work.",
@@ -25,73 +16,40 @@
     "Angle Definition: θ is angle between force and displacement vectors (tail-to-tail)."
   ],
   "formulas": [
-    "Constant force: W = Fd cosθ",
-    "Variable force: W = ∫F(x)·dx",
-    "Spring work: W = ½kx²",
-    "Work-energy theorem: W_net = ΔK = ½mv_f² − ½mv_i²",
-    "Dot product: W = F→ · d→",
-    "1 eV = 1.602 × 10⁻¹⁹ J"
+    "- W = Fs cos θ\n- Variable force: W = ∫F dx\n- Spring: W = ½kx²\n- P = W/t"
   ],
   "keyPoints": [
-    "W = Fd cosθ for constant force — scalar, can be +/-/zero.",
-    "Variable force: W = area under F-x curve = ∫F dx.",
-    "Spring: W = ½kx².",
-    "Work-energy theorem: W_net = ΔK (always valid).",
-    "Zero work when force ⟂ displacement (θ = 90°)."
+    "W = F⃗·s⃗ = Fs cos θ — scalar; joule = N·m.",
+    "Variable force: W = ∫F dx = area under F–x graph.",
+    "Spring: W = ½kx² (200 N/m stretched 0.1 m → 1 J)."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"No displacement, no work — no matter how hard you push.\""
+  ],
   "importantNotes": [
-    "Work is scalar — use dot product, not simple multiplication unless force ∥ displacement.",
-    "Friction always does negative work (opposes motion).",
-    "Work-energy theorem works even with non-conservative forces (friction).",
-    "Holding a heavy object stationary does no work on it (d = 0) despite physiological effort."
+    "Verified PYQs: spring work (2024, 3m); work/energy/power definitions (2021, 3m)."
   ],
   "examShortTricks": [
-    "W = Fd cosθ — check angle between force and displacement.",
-    "Area under F-x graph = work for variable force.",
-    "Spring: W = ½kx² (area under linear F-x triangle).",
-    "W_net = ΔK — works with friction too.",
-    "Perpendicular force = zero work."
+    "\"Perpendicular force does zero work; spring work is half k x squared.\""
   ],
   "examNotes": [
-    "NEB frequently asks for work-energy theorem derivation and numericals on constant/variable force.",
-    "Distinguish work done by individual forces vs net work.",
-    "Calculate work from F-x graph area.",
-    "Spring compression/extension work problems."
+    "Most-tested: spring numerical (2024) and the definition triplet (2021). Area under F–x graphs is the variable-force tool."
   ],
   "examples": [
-    "Force 10 N at 30° to displacement 5 m: W = 10 × 5 × cos30° = 43.3 J.",
-    "Friction μk = 0.2, N = 50 N, distance 10 m: W_f = -0.2 × 50 × 10 = -100 J.",
-    "Spring k = 200 N/m compressed 0.1 m: W = ½ × 200 × 0.01 = 1 J.",
-    "Gravity on 2 kg falling 5 m: W = mgh = 2 × 9.8 × 5 = 98 J (force ∥ displacement).",
-    "Centripetal force on circular motion: W = 0 (force ⟂ velocity)."
+    "***Spring stretch*** — ½kx² with k = 200 N/m, x = 0.1 m gives 1 J (NEB 2024)."
   ],
   "practiceQuestions": [
-    "Q2. Derive W = Fd cosθ and discuss positive, negative, zero work cases.",
-    "Q3. How is work done by a variable force calculated? Give graphical interpretation.",
-    "Q4. State and prove work-energy theorem.",
-    "Q5. Calculate work done in stretching a spring (k = 100 N/m) by 0.2 m.",
-    "Q6. A 5 kg block is pulled 10 m by force 40 N at 30° to horizontal. Find work done."
+    "**Numerical (3m): A 20 kg crate is dragged 10 m by a 50 N force at 60° above the horizontal. Find the work done by the force.** — W = Fs cos θ = 50 × 10 × cos 60° = 250 J; only the horizontal 25 N component acts along the motion."
   ],
   "practice": [
-    "Calculate W = Fd cosθ for various angles.",
-    "Compute work from F-x graph area.",
-    "Apply work-energy theorem to find final speed.",
-    "Calculate spring work W = ½kx².",
-    "Distinguish work by individual forces vs net work."
+    "Why does the work done stretching a spring grow as x²?"
   ],
   "universalFacts": [
-    "James Joule established the mechanical equivalent of heat: 1 cal = 4.186 J, linking work and energy.",
-    "No work is done by centripetal force — yet it's essential for circular motion.",
-    "Human body does work even when holding a weight stationary (muscle fibers contract/release internally), but mechanical work on the weight is zero.",
-    "The electronvolt (eV) is natural unit in atomic/nuclear physics — energy of one electron through 1 V potential."
+    "The joule is a derived unit: 1 J = 1 kg·m²/s² — energy's dimensions are mass × velocity²."
   ],
   "confusion": [
-    "Confusing force component parallel vs perpendicular to displacement: Only parallel component does work.",
-    "Thinking holding a weight stationary does work: d = 0 → W = 0 mechanically.",
-    "Using W = Fd without cosθ when force not parallel to displacement.",
-    "Believing friction always does negative work: Yes, kinetic friction always opposes relative motion → negative work.",
-    "Confusing work done by net force vs individual forces: W_net = ΔK; individual works sum to W_net."
+    "**Work vs energy:** work is energy in transit (a process); energy is the capacity (a state) — both measured in joules.",
+    "**Zero work cases:** force perpendicular to displacement (circular motion) or zero displacement (pushing a wall) — no transfer either way."
   ],
   "mcs": [
     {
@@ -153,6 +111,146 @@
   "animation3D": "work-energy",
   "motionGraphics": "work-force-displacement",
   "visualType": "work-energy-theorem",
-  "summary": "Work by constant force W = Fd cosθ; by variable force W = ∫F dx = area under F-x graph. Work-energy theorem W_net = ΔK always holds. Spring work W = ½kx². Work is scalar, zero when force ⟂ displacement.",
-  "source": "skeleton-v2"
+  "summary": "Work is the energy a force transfers along a displacement: $W = \\vec F\\cdot\\vec s = Fs\\cos\\theta$ — a scalar, zero for perpendicular forces, negative for friction. Work by a **variable force** integrates: $W = \\int F\\,dx$, read as the area under the force–displacement graph; the spring is the standard case, $W = \\frac{1}{2}kx^2$ — stretching k = 200 N/m by 0.1 m stores 1 J (NEB 2024). Energy is the capacity to do work (joules); power is its rate (watts) — the definition triplet NEB asked in 2021. Every later topic — kinetic energy, potential energy, collisions — prices energy through this definition.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Force That Transfers Energy\n\nWork is force's energy invoice: $W = \\vec F\\cdot\\vec s$. Pushing a wall does no work; lifting a bucket does. This topic covers work by constant and variable forces, the spring as the standard variable-force example, and the definitions of work, energy and power (NEB 2021).",
+      "## 2. Fundamental Concepts (NEB 2021)\n\n| Quantity | Definition | Formula | SI unit |\n|---|---|---|---|\n| **Work** | Energy transferred when a force moves its point of application | $W = \\vec F\\cdot\\vec s = Fs\\cos\\theta$ | joule (J) = N·m |\n| **Energy** | Capacity to do work | — | joule |\n| **Power** | Rate of doing work | $P = W/t$ | watt (W) = J/s |\n\n**Key points about work:**\n- Work is a **scalar**; it can be positive (force along displacement), negative (force against displacement — friction), or **zero** (force perpendicular to displacement: circular motion, carrying a load horizontally).\n- $1\\,\\text{joule}$ = work done by 1 N over 1 m along the force.\n\n### 2.1 Work by a variable force\n\nFor a force changing with position, sum infinitesimal contributions:\n$$W = \\int_{x_i}^{x_f} F\\,dx$$\nGraphically, work = **area under the force–displacement graph**.\n\n**Spring (Hooke's law):** restoring force $F = kx$; external force to stretch by x is $kx$:\n$$W = \\int_0^x kx'\\,dx' = \\frac{1}{2}kx^2$$\n\n**Worked numerical (3m, 2024):** Calculate the work done in stretching a spring of force constant 200 N/m by 0.1 m.\n$W = \\frac{1}{2}kx^2 = \\frac{1}{2}(200)(0.1)^2 = \\frac{1}{2}(200)(0.01) = $ **1 J**.\n\n### 2.2 Work by a constant force at an angle\n\n$W = Fs\\cos\\theta$: pulling a 20 kg crate 10 m with 50 N at 60° above horizontal gives $W = 50 \\times 10 \\times 0.5 = 250$ J — only the horizontal component works.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 17:** power divides work by time — the delivery rate.\n- **To Topic 18:** the work–energy theorem connects net work to kinetic energy; spring work becomes elastic PE.\n- **To Topic 20:** gravity and springs are conservative (work path-independent, stored as PE); friction is not.\n- **To Elasticity (Unit 9):** the spring's $\\frac{1}{2}kx^2$ reappears as elastic potential energy and Young's modulus material.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Work & Energy | Spring | Calculate the work done in stretching a spring of force constant 200 N/m by 0.1 m from its unstretched position. | 3 | Numerical |\n| 2077/2021 | Work & Energy | Definitions | Define work, energy and power with their SI units. | 3 | Definition |\n\n### 4.2 Model answers\n\n**Q1 (3m, 2024):** For a spring obeying Hooke's law, the external force to stretch it by x is $F = kx$, so the work is $W = \\int_0^x kx\\,dx = \\frac{1}{2}kx^2 = \\frac{1}{2}(200)(0.1)^2 = 1$ J. This work is stored as elastic potential energy in the spring.\n\n**Q2 (3m, 2021):** **Work** is the energy transferred when a force displaces its point of application — $W = Fs\\cos\\theta$, SI unit joule (J). **Energy** is the capacity to do work, also measured in joules. **Power** is the rate of doing work — $P = W/t$, SI unit watt (W = J/s).\n\n### 4.3 Common examination mistakes\n\n1. Counting work when force is perpendicular to displacement (carrying a bag horizontally does no work against gravity).\n2. Writing $W = Fx$ for a spring instead of $\\frac{1}{2}kx^2$ — the force grows with x.\n3. Ignoring the angle in $Fs\\cos\\theta$.\n4. Calling work a vector.\n5. Sign errors: friction does negative work; the net work can be negative."
+    ],
+    "confusion": [
+      "**Work vs energy:** work is energy in transit (a process); energy is the capacity (a state) — both measured in joules.",
+      "**Zero work cases:** force perpendicular to displacement (circular motion) or zero displacement (pushing a wall) — no transfer either way."
+    ],
+    "keyPoints": [
+      "W = F⃗·s⃗ = Fs cos θ — scalar; joule = N·m.",
+      "Variable force: W = ∫F dx = area under F–x graph.",
+      "Spring: W = ½kx² (200 N/m stretched 0.1 m → 1 J)."
+    ],
+    "importantConcepts": [
+      "**Only the force component along displacement works:** the cos θ factor prices every push."
+    ],
+    "examples": [
+      "***Spring stretch*** — ½kx² with k = 200 N/m, x = 0.1 m gives 1 J (NEB 2024)."
+    ],
+    "universalFacts": [
+      "The joule is a derived unit: 1 J = 1 kg·m²/s² — energy's dimensions are mass × velocity²."
+    ],
+    "importantStatements": [
+      "\"No displacement, no work — no matter how hard you push.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: spring work (2024, 3m); work/energy/power definitions (2021, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Perpendicular force does zero work; spring work is half k x squared.\""
+    ],
+    "examNotes": [
+      "Most-tested: spring numerical (2024) and the definition triplet (2021). Area under F–x graphs is the variable-force tool."
+    ],
+    "formulas": [
+      "- W = Fs cos θ\n- Variable force: W = ∫F dx\n- Spring: W = ½kx²\n- P = W/t"
+    ],
+    "practice": [
+      "Why does the work done stretching a spring grow as x²?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A 20 kg crate is dragged 10 m by a 50 N force at 60° above the horizontal. Find the work done by the force.** — W = Fs cos θ = 50 × 10 × cos 60° = 250 J; only the horizontal 25 N component acts along the motion."
+    ]
+  },
+  "importantConcepts": [
+    "**Only the force component along displacement works:** the cos θ factor prices every push."
+  ],
+  "mcqs": [
+    {
+      "question": "The work done in stretching a spring (k = 200 N/m) by 0.1 m is:",
+      "options": [
+        "0.5 J",
+        "1 J",
+        "2 J",
+        "20 J"
+      ],
+      "answer": "B",
+      "explanation": "W = ½kx² = ½ × 200 × 0.01 = 1 J (NEB 2024)."
+    },
+    {
+      "question": "Work done by a force perpendicular to displacement is:",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Negative",
+        "Fs"
+      ],
+      "answer": "B",
+      "explanation": "cos 90° = 0 — no energy transferred along the motion."
+    },
+    {
+      "question": "The SI unit of work is:",
+      "options": [
+        "Watt",
+        "Newton",
+        "Joule",
+        "Pascal"
+      ],
+      "answer": "C",
+      "explanation": "1 J = 1 N·m (NEB 2021)."
+    },
+    {
+      "question": "Work is a:",
+      "options": [
+        "Vector",
+        "Scalar",
+        "Tensor",
+        "Unit vector"
+      ],
+      "answer": "B",
+      "explanation": "The dot product of two vectors is a scalar."
+    },
+    {
+      "question": "For a variable force, work equals:",
+      "options": [
+        "F × x always",
+        "The area under the F–x graph",
+        "The slope of the F–x graph",
+        "F/x"
+      ],
+      "answer": "B",
+      "explanation": "W = ∫F dx — graphical area."
+    },
+    {
+      "question": "A 50 N force at 60° moves a crate 10 m. Work done is:",
+      "options": [
+        "500 J",
+        "250 J",
+        "433 J",
+        "0 J"
+      ],
+      "answer": "B",
+      "explanation": "W = 50 × 10 × cos 60° = 250 J."
+    },
+    {
+      "question": "Negative work is done when:",
+      "options": [
+        "Force aids motion",
+        "Force opposes displacement",
+        "Displacement is zero",
+        "Angle is 0°"
+      ],
+      "answer": "B",
+      "explanation": "cos θ < 0 for θ > 90° — friction does negative work."
+    },
+    {
+      "question": "Power is defined as:",
+      "options": [
+        "Work × time",
+        "Work per unit time",
+        "Force per unit area",
+        "Energy per unit mass"
+      ],
+      "answer": "B",
+      "explanation": "P = W/t, in watts (NEB 2021)."
+    }
+  ]
 }
