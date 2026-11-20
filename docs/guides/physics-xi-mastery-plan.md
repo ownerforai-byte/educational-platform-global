@@ -39,11 +39,11 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 8 | Kinematics (5h) | Equation of motion (graphical treatment) | `03-equation-of-motion-graphical-treatment.json` | **Completed** |
 | 9 | Kinematics (5h) | Motion of a freely falling body | `04-motion-of-a-freely-falling-body.json` | **Completed** |
 | 10 | Kinematics (5h) | Projectile motion and its applications | `05-projectile-motion-and-its-applications.json` | **Completed** |
-| 11 | Dynamics (6h) | Linear momentum, impulse | TBD | Not started |
-| 12 | Dynamics (6h) | Conservation of linear momentum | TBD | Not started |
-| 13 | Dynamics (6h) | Application of Newton's laws | TBD | Not started |
-| 14 | Dynamics (6h) | Moment, torque and equilibrium | TBD | Not started |
-| 15 | Dynamics (6h) | Solid friction: laws of solid friction and their verifications | TBD | Not started |
+| 11 | Dynamics (6h) | Linear momentum, impulse | `01-linear-momentum-and-impulse.json` | **Completed** |
+| 12 | Dynamics (6h) | Conservation of linear momentum | `02-conservation-of-linear-momentum.json` | **Completed** |
+| 13 | Dynamics (6h) | Application of Newton's laws | `03-application-of-newton-s-laws.json` | **Completed** |
+| 14 | Dynamics (6h) | Moment, torque and equilibrium | `04-moment-torque-and-equilibrium.json` | **Completed** |
+| 15 | Dynamics (6h) | Solid friction: laws of solid friction and their verifications | `05-solid-friction-laws-of-solid-friction-and-their-verifications.json` | **Completed** |
 | 16 | Work, Energy and Power (6h) | Work done by a constant force and a variable force | TBD | Not started |
 | 17 | Work, Energy and Power (6h) | Power | TBD | Not started |
 | 18 | Work, Energy and Power (6h) | Work-energy theorem; kinetic and potential energy | TBD | Not started |
@@ -152,3 +152,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 1 — Plan created; Unit 1 (Physical Quantities, 2 topics) upgraded: precision & significant figures; dimensions & dimensional analysis. Verified PYQs from `content/practice/questions/class-11/physics/` year files (neb-2014…neb-2024) matched per topic. Next: Unit 2 Vectors (3 topics).
 - Session 2 — Unit 2 Vectors (3 topics) upgraded: triangle/parallelogram/polygon laws; resolution & unit vectors; scalar & vector products. Verified PYQs used: 2021 parallelogram numerical 5m + component addition 3m, 2020 scalar vs vector 2m, 2024 rectangular components 3m, 2023 dot/cross definitions 3m. Next: Unit 3 Kinematics (5 topics).
 - Session 3 — Unit 3 Kinematics (5 topics) upgraded: instantaneous velocity/acceleration; relative velocity; equations of motion (graphical); freely falling body; projectile motion. Verified PYQs used: 2024 position/velocity/acceleration definitions 2m, 2014 car numerical 3m, 2017 relative velocity 2m, 2023 car numerical 3m, 2023 dropped-stone 3m, 2024 projectile 3m, 2022 complementary-angles 3m + horizontal projection 5m + vertical projection 4m, 2019 T=2·t_up derivation 3m. Next: Unit 4 Dynamics (5 topics).
+- Session 4 — Unit 4 Dynamics (5 topics) upgraded: linear momentum & impulse; conservation of linear momentum; application of Newton’s laws; moment/torque/equilibrium; solid friction. Verified PYQs used: 2024 gun recoil 3m, 2023 force numerical 3m, 2018 conservation derivation 3m, 2022 bullet-block 4m, 2021+2022+2024 three laws 3m each, 2020 mass vs weight 2m, 2014 second law 2m, 2021 terminal velocity 2m, 2023 static friction 3m, 2021 incline friction 3m, 2024 angle of repose 3m. No PYQ for torque (NEB-style labelled). Next: Unit 5 Work, Energy and Power (6 topics).
