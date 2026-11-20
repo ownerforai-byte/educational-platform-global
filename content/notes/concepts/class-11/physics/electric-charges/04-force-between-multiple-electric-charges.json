@@ -7,27 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Superposition principle.** The force on any one charge due to several others equals the vector sum of the individual pairwise forces, each calculated as if the rest were absent.",
-    "**Method.** Draw each Coulomb force on the chosen charge, resolve into components along convenient axes, sum the components, then combine for the net force.",
-    "**Collinear charges.** For three charges on a line the middle charge feels opposing forces; the net force points toward the weaker side and vanishes only in a carefully balanced position.",
-    "**Link to electric field.** The net force can be written F = qE, where E is the total field produced at the charge's position by all the other charges.",
-    "**System energy.** The potential energy of a charge system is the sum of the pairwise terms kqᵢqⱼ/rᵢⱼ — counted once per pair, never twice.",
-    "Three charges are handled one pair at a time. The net force on one charge is the vector sum of the forces from the others. Equal perpendicular forces of magnitude F give a resultant F√2 at 45°, not 2F.",
-    "# Force between multiple electric charges\n\n## 1. Introduction\nPhysical picture of **Force between multiple electric charges** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Electric Charges fill pass.\n\n## 2. Concepts and laws\n### Force between multiple electric charges\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Force between multiple electric charges — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Force between multiple electric charges — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Force between multiple electric charges — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Force between multiple electric charges — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Superposition: Adding Forces Vectorially\n\nWith three or more charges, every pair interacts independently. Coulomb's law plus the **principle of superposition** — add all pairwise forces as vectors — handles any configuration, from electron clouds to charged spheres.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Principle of superposition\n\nThe force on any charge in a system equals the **vector sum** of the forces each other charge would exert alone:\n$$\\vec{F}_1 = \\vec{F}_{12} + \\vec{F}_{13} + \\vec{F}_{14} + \\cdots$$\n- Each pairwise force obeys Coulomb's law independently — the presence of other charges does not modify any single pair's force.\n- Forces add **as vectors**: resolve into components when directions differ.\n\n### 2.2 Worked numericals\n\n**Q (NEB-style):** Charges q₁ = +2 μC and q₂ = +2 μC sit 0.2 m apart on the x-axis; q₃ = +1 μC sits at the midpoint. Find the net force on q₃.\n- Forces from q₁ and q₂ on q₃: equal magnitude, opposite directions → **cancel**.\n- $F_{13} = F_{23} = \\frac{9\\times10^9 \\times 2\\times10^{-6}\\times10^{-6}}{(0.1)^2} = 1.8$ N each, opposite → net force = **0**.\n\n**Q (NEB-style):** Two charges +4 μC and −4 μC are 0.3 m apart. Find the field point force on a +1 μC test charge placed 0.1 m from +4 μC along the line beyond the −4 μC charge... simpler: find the net force on a charge placed at the midpoint of an *unlike* pair.\n- Unlike pair ±4 μC, 0.3 m apart, midpoint: both forces point the same way (toward the negative).\n- $F_{each} = \\frac{9\\times10^9 \\times 4\\times10^{-6}\\times1\\times10^{-6}}{(0.15)^2} = 1.6$ N → net = **3.2 N toward the negative charge**.\n\n**Q (NEB-style):** Three equal charges q at the corners of an equilateral triangle: force on each?\nEach charge feels two forces of magnitude $\\frac{kq^2}{a^2}$ at 60° apart; the resultant has magnitude $\\sqrt{3}\\frac{kq^2}{a^2}$ directed away from the triangle's centre (for like charges).",
+    "## 3. Conceptual Relationships\n\n- **To Topic 85:** superposition takes Coulomb's two-charge law as its building block.\n- **To electric field (Unit 20):** the same superposition principle applies to field vectors.\n- **To vectors (Unit 2):** component resolution is the practical tool.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise superposition numericals and the equilateral-triangle result as **NEB-style practice** (3–4m).\n\n### 4.2 Likely question forms\n\n1. State the principle of superposition (2m).\n2. Net force at the midpoint/vertex of a charge arrangement (3–4m).\n3. Zero-force point problems (3m).\n\n### 4.3 Common examination mistakes\n\n1. Adding force magnitudes instead of vectors.\n2. Forgetting that a symmetric pair can cancel (net zero).\n3. Using the wrong separation in kq₁q₂/r² (e.g. total span instead of pair distance)."
   ],
   "confusion": [
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition..",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Forces are vectors:** equal and opposite pairwise forces cancel even though each is large.",
+    "**Independence of pairs:** other charges never \"screen\" a pairwise Coulomb force."
   ],
   "bounds": [
     "Covers only: force between multiple electric charges (within Electric Charges).",
@@ -36,109 +23,135 @@
     "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
   ],
   "practice": [
-    "Write Net force is the vector sum of the Coulomb forces and say what each symbol means.",
-    "Mark the known values, then substitute one step at a time.",
-    "Finish with the number, the unit, and the direction when the quantity has one."
+    "Where could a third charge sit at zero net force between two like charges?"
   ],
   "universalFacts": [
-    "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
-    "Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
-    "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+    "The same superposition principle later builds electric fields, potentials and even quantum amplitudes."
   ],
   "examples": [
-    "Three charges are handled one pair at a time. The net force on one charge is the vector sum of the forces from the others. Equal perpendicular forces of magnitude F give a resultant F√2 at 45°, not 2F.",
-    "The working relations are Net force is the vector sum of the Coulomb forces and Perpendicular forces add by Pythagoras. Name each symbol, convert the data into SI units, and only then substitute.",
-    "A 1.0 μC charge at the origin feels 3.0 × 10^−3 N east from one charge and 4.0 × 10^−3 N north from another. Find the net force."
+    "***Midpoint of a like pair*** — net force zero by symmetry."
   ],
   "practiceQuestions": [
-    "Write Net force is the vector sum of the Coulomb forces and name the symbols.",
-    "What does Perpendicular forces add by Pythagoras tell you?",
-    "Which unit must be converted before the substitution?"
+    "**Numerical (3m): Charges +9 μC and +4 μC are 0.5 m apart. Where on the line between them is the net force on a third charge zero?** — 9/x² = 4/(0.5−x)² → 3/x = 2/(0.5−x) → x = 0.3 m from the 9 μC charge."
   ],
   "formulas": [
-    "F = k q₁q₂/r²",
-    "E = F/q",
-    "∮E·dA = Q/ε₀",
-    "V = kq/r"
+    "- F₁ = Σ F₁ᵢ (vector sum)\n- F = kq₁q₂/r² per pair\n- Equilateral triangle (like q): F_each = √3 kq²/a²"
   ],
   "numericals": [
     "A 1.0 μC charge at the origin feels 3.0 × 10^−3 N east from one charge and 4.0 × 10^−3 N north from another. Find the net force."
   ],
   "keyPoints": [
-    "Net force is the vector sum of the Coulomb forces",
-    "Perpendicular forces add by Pythagoras",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "F_net = vector sum of pairwise Coulomb forces."
   ],
-  "summary": "The net force is the vector sum. Perpendicular pushes of 3.0 mN and 4.0 mN give 5.0 mN at 53° north of east. Adding the magnitudes would be wrong.",
+  "summary": "The **principle of superposition** extends Coulomb's law to many charges: the force on any one charge is the **vector sum** of the independent pairwise forces $\\frac{kq_iq_j}{r_{ij}^2}$ exerted by all the others — no pair is affected by a third charge's presence. Symmetry simplifies everything: at the midpoint of a like pair the two forces cancel; at the midpoint of an unlike pair they add (3.2 N on 1 μC between ±4 μC, 0.3 m apart); each charge of an equilateral triangle of like charges feels $\\sqrt{3}kq^2/a^2$. Component resolution plus Coulomb's law solves any arrangement.",
   "mcqs": [
     {
-      "question": "Forces in different directions are",
+      "question": "Superposition says the net force on a charge is:",
       "options": [
-        "Added as magnitudes",
-        "Added as vectors",
-        "Multiplied",
-        "Ignored"
+        "The arithmetic sum of magnitudes",
+        "The vector sum of pairwise forces",
+        "Zero in a pair",
+        "Always along x"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Vectors add."
     },
     {
-      "question": "Two equal perpendicular forces F give",
+      "question": "A third charge at the midpoint of a like pair feels:",
       "options": [
-        "2F",
-        "F√2",
-        "Zero",
-        "F/2"
+        "Double force",
+        "Zero net force",
+        "Infinite force",
+        "Half force"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Symmetric cancellation."
     },
     {
-      "question": "A charge does not exert",
+      "question": "The force between one pair is affected by a third charge:",
       "options": [
-        "A force on a neighbour",
-        "A net force on itself",
-        "A force along the line of centres",
-        "An inverse-square force"
+        "Always",
+        "Never",
+        "Only if close",
+        "Only if equal"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Pairwise independence."
     },
     {
-      "question": "A negative component means",
+      "question": "Forces must be added as vectors because they have:",
       "options": [
-        "The force is imaginary",
-        "That component is opposite the chosen axis",
-        "The charge is zero",
-        "Pythagoras has failed"
+        "Magnitude only",
+        "Direction",
+        "Charge",
+        "Mass"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Vector nature."
+    },
+    {
+      "question": "Each charge of an equilateral like-charge triangle feels:",
+      "options": [
+        "kq²/a²",
+        "√3 kq²/a²",
+        "2kq²/a²",
+        "Zero"
+      ],
+      "answer": "B",
+      "explanation": "60° pair geometry."
+    },
+    {
+      "question": "The unit of force in these numericals is:",
+      "options": [
+        "N",
+        "C",
+        "V",
+        "D"
+      ],
+      "answer": "A",
+      "explanation": "Newton."
+    },
+    {
+      "question": "A zero-force point between two unlike charges lies:",
+      "options": [
+        "Between them",
+        "Outside, nearer the smaller charge",
+        "At midpoint",
+        "Nowhere"
+      ],
+      "answer": "B",
+      "explanation": "Signs force outside solutions."
+    },
+    {
+      "question": "Superposition applies to:",
+      "options": [
+        "Forces only",
+        "Fields too",
+        "Potentials too",
+        "All of these"
+      ],
+      "answer": "D",
+      "explanation": "Linear theory."
     }
   ],
   "importantStatements": [
-    "Three charges are handled one pair at a time. The net force on one charge is the vector sum of the forces from the others. Equal perpendicular forces of magnitude F give a resultant F√2 at 45°, not 2F.",
-    "The working relations are Net force is the vector sum of the Coulomb forces and Perpendicular forces add by Pythagoras. Name each symbol, convert the data into SI units, and only then substitute.",
-    "A 1.0 μC charge at the origin feels 3.0 × 10^−3 N east from one charge and 4.0 × 10^−3 N north from another. Find the net force. The forces are perpendicular. R = √(3.0^2 + 4.0^2) × 10^−3 = 5.0 × 10^−3 N."
+    "\"The force on any charge is the vector sum of the forces exerted on it by each of the other charges individually.\""
   ],
   "examNotes": [
-    "Definition, then formula, then substitution.",
-    "A vector answer is incomplete without its direction."
+    "State the principle explicitly before computing — the definition carries marks."
   ],
   "examShortTricks": [
-    "SI units first, then the formula.",
-    "The last line is the number, the unit, and the direction if there is one."
+    "\"Resolve into x and y components; check symmetry for cancellations first.\""
   ],
   "specialNotes": [
     "A sketched sign convention is part of the data.",
     "A dimensionless ratio still needs the two quantities named."
   ],
   "importantNotes": [
-    "Do not skip the unit conversion.",
-    "Match the formula to the situation drawn, not to a neighbouring topic."
+    "No verified PYQ; NEB-style practice (superposition numericals 3–4m)."
   ],
   "importantConcepts": [
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Superposition is electrostatics' algebra** — every multi-charge problem reduces to two-charge laws plus vector addition."
   ],
   "importantTasks": [
     "Copy the worked example and hide the result until the last step.",
@@ -198,5 +211,50 @@
       ],
       "answer": "5.0 × 10^−3 N at 53° north of east."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Superposition: Adding Forces Vectorially\n\nWith three or more charges, every pair interacts independently. Coulomb's law plus the **principle of superposition** — add all pairwise forces as vectors — handles any configuration, from electron clouds to charged spheres.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Principle of superposition\n\nThe force on any charge in a system equals the **vector sum** of the forces each other charge would exert alone:\n$$\\vec{F}_1 = \\vec{F}_{12} + \\vec{F}_{13} + \\vec{F}_{14} + \\cdots$$\n- Each pairwise force obeys Coulomb's law independently — the presence of other charges does not modify any single pair's force.\n- Forces add **as vectors**: resolve into components when directions differ.\n\n### 2.2 Worked numericals\n\n**Q (NEB-style):** Charges q₁ = +2 μC and q₂ = +2 μC sit 0.2 m apart on the x-axis; q₃ = +1 μC sits at the midpoint. Find the net force on q₃.\n- Forces from q₁ and q₂ on q₃: equal magnitude, opposite directions → **cancel**.\n- $F_{13} = F_{23} = \\frac{9\\times10^9 \\times 2\\times10^{-6}\\times10^{-6}}{(0.1)^2} = 1.8$ N each, opposite → net force = **0**.\n\n**Q (NEB-style):** Two charges +4 μC and −4 μC are 0.3 m apart. Find the field point force on a +1 μC test charge placed 0.1 m from +4 μC along the line beyond the −4 μC charge... simpler: find the net force on a charge placed at the midpoint of an *unlike* pair.\n- Unlike pair ±4 μC, 0.3 m apart, midpoint: both forces point the same way (toward the negative).\n- $F_{each} = \\frac{9\\times10^9 \\times 4\\times10^{-6}\\times1\\times10^{-6}}{(0.15)^2} = 1.6$ N → net = **3.2 N toward the negative charge**.\n\n**Q (NEB-style):** Three equal charges q at the corners of an equilateral triangle: force on each?\nEach charge feels two forces of magnitude $\\frac{kq^2}{a^2}$ at 60° apart; the resultant has magnitude $\\sqrt{3}\\frac{kq^2}{a^2}$ directed away from the triangle's centre (for like charges).",
+      "## 3. Conceptual Relationships\n\n- **To Topic 85:** superposition takes Coulomb's two-charge law as its building block.\n- **To electric field (Unit 20):** the same superposition principle applies to field vectors.\n- **To vectors (Unit 2):** component resolution is the practical tool.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise superposition numericals and the equilateral-triangle result as **NEB-style practice** (3–4m).\n\n### 4.2 Likely question forms\n\n1. State the principle of superposition (2m).\n2. Net force at the midpoint/vertex of a charge arrangement (3–4m).\n3. Zero-force point problems (3m).\n\n### 4.3 Common examination mistakes\n\n1. Adding force magnitudes instead of vectors.\n2. Forgetting that a symmetric pair can cancel (net zero).\n3. Using the wrong separation in kq₁q₂/r² (e.g. total span instead of pair distance)."
+    ],
+    "confusion": [
+      "**Forces are vectors:** equal and opposite pairwise forces cancel even though each is large.",
+      "**Independence of pairs:** other charges never \"screen\" a pairwise Coulomb force."
+    ],
+    "keyPoints": [
+      "F_net = vector sum of pairwise Coulomb forces."
+    ],
+    "importantConcepts": [
+      "**Superposition is electrostatics' algebra** — every multi-charge problem reduces to two-charge laws plus vector addition."
+    ],
+    "examples": [
+      "***Midpoint of a like pair*** — net force zero by symmetry."
+    ],
+    "universalFacts": [
+      "The same superposition principle later builds electric fields, potentials and even quantum amplitudes."
+    ],
+    "importantStatements": [
+      "\"The force on any charge is the vector sum of the forces exerted on it by each of the other charges individually.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (superposition numericals 3–4m)."
+    ],
+    "examShortTricks": [
+      "\"Resolve into x and y components; check symmetry for cancellations first.\""
+    ],
+    "examNotes": [
+      "State the principle explicitly before computing — the definition carries marks."
+    ],
+    "formulas": [
+      "- F₁ = Σ F₁ᵢ (vector sum)\n- F = kq₁q₂/r² per pair\n- Equilateral triangle (like q): F_each = √3 kq²/a²"
+    ],
+    "practice": [
+      "Where could a third charge sit at zero net force between two like charges?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Charges +9 μC and +4 μC are 0.5 m apart. Where on the line between them is the net force on a third charge zero?** — 9/x² = 4/(0.5−x)² → 3/x = 2/(0.5−x) → x = 0.3 m from the 9 μC charge."
+    ]
+  }
 }

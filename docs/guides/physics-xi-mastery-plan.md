@@ -111,10 +111,10 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 80 | Dispersion (3h) | Pure spectrum and dispersive power | `01-pure-spectrum-and-dispersive-power.json` | **Completed** |
 | 81 | Dispersion (3h) | Chromatic and spherical aberration | `02-chromatic-and-spherical-aberration.json` | **Completed** |
 | 82 | Dispersion (3h) | Achromatism and its applications | `03-achromatism-and-its-applications.json` | **Completed** |
-| 83 | Electric Charges (4h) | Electric charges | TBD | Not started |
-| 84 | Electric Charges (4h) | Charging by induction | TBD | Not started |
-| 85 | Electric Charges (4h) | Coulomb's law: force between two point charges | TBD | Not started |
-| 86 | Electric Charges (4h) | Force between multiple electric charges | TBD | Not started |
+| 83 | Electric Charges (4h) | Electric charges | `01-electric-charges.json` | **Completed** |
+| 84 | Electric Charges (4h) | Charging by induction | `02-charging-by-induction.json` | **Completed** |
+| 85 | Electric Charges (4h) | Coulomb's law: force between two point charges | `03-coulomb-s-law-force-between-two-point-charges.json` | **Completed** |
+| 86 | Electric Charges (4h) | Force between multiple electric charges | `04-force-between-multiple-electric-charges.json` | **Completed** |
 | 87 | Electric Field (5h) | Electric field due to point charges; field lines | TBD | Not started |
 | 88 | Electric Field (5h) | Gauss law: electric flux | TBD | Not started |
 | 89 | Electric Field (5h) | Application of Gauss law: field of a charge sphere, line charge, charged plane conductor | TBD | Not started |
@@ -167,3 +167,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 16 — Unit 16 Refraction through Prisms (3 topics) upgraded: minimum deviation condition (symmetric ray, i–δ curve, parallel-to-base derivation); prism formula (δ = i + e − A, n = sin((A+δm)/2)/sin(A/2), numericals); small-angle prism (δ = (n−1)A). Verified PYQs used: symmetrical-ray MCQ 2023 1m, min deviation + parallel base 2020 4m, i–δ curve 2024 2m, δm + factors 2024 2m, δ = i + e − A 2024 4m, prism formula 2024 5m, δm numerical 2024 3m, e and δ numerical 2022 4m, δ = (n−1)A 2024 2m. Next: Unit 17 Lenses (3 topics).
 - Session 17 — Unit 17 Lenses (3 topics) upgraded: spherical lenses & angular magnification (lens formula, magnification, simple microscope); lens maker’s formula (derivation, numericals); power of a lens (dioptres, combinations, myopia/hypermetropia). Verified PYQs used: lens numerical 2023 4m & 2024 3m, simple microscope 2024 2m, lens maker derivation 2022 5m & 2024 5m, radii numerical 2024 3m, power combination 2024 2m, myopia/hypermetropia 2024 3m. Next: Unit 18 Dispersion (3 topics).
 - Session 18 — Unit 18 Dispersion (3 topics) upgraded: pure spectrum & dispersive power (angular dispersion, ω formula, rainbow); chromatic & spherical aberration; achromatism & applications (achromatic combination condition). Verified PYQs used: dispersion + reason 2022 3m & 2024 3m, deviation vs dispersion 2020 3m, ω derivation 2021 4m, definitions 2024 3m, ω numerical 2024 3m, rainbow 2024 3m, red/violet 2024 2m, achromatic combination 2024 3m. Next: Unit 19 Electric Charges (4 topics).
+- Session 19 — Unit 19 Electric Charges (4 topics) upgraded: electric charges (quantisation, conservation, additivity); charging by induction (four-step process); Coulomb’s law (statement + numericals); force between multiple charges (superposition). Verified PYQs used: quantisation 2021 3m, Coulomb law + 5.4 N 2024 3m, 0.15 N attractive MCQ 2022 1m. Induction and superposition topics: NEB-style practice. Next: Unit 20 Electric Field (3 topics).

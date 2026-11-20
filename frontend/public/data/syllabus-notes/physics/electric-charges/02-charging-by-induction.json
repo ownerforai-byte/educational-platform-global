@@ -7,38 +7,30 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Electric Charge & Elementary Charge:** Electric charge is an intrinsic physical property of elementary matter that governs all electromagnetic interactions. Charges exist in two polarities designated by Benjamin Franklin as positive (carried by protons, $+e$) and negative (carried by electrons, $-e$). The elementary charge quantum is $e \\approx 1.602 \\times 10^{-19}\\,\\text{C}$. Charge is a scalar quantity with SI unit Coulomb ($\\text{C} = \\text{A}\\cdot\\text{s}$) and dimensions $[I\\,T]$.",
-    "**Quantization of Charge:** Electric charge is not continuous; it exists only in discrete integral multiples of the elementary electronic charge: $q = \\pm n e$, where $n \\in \\{0, 1, 2, 3, \\dots\\}$. Quantization was first demonstrated macroscopically by Robert Millikan's oil-drop experiment (1909). At macroscopic scales involving microcoulombs, the graininess is obscured ($1\\,\\mu\\text{C} \\approx 6.24 \\times 10^{12}$ electrons), allowing charge to be treated as continuous.",
-    "**Conservation & Additivity of Charge:** In any isolated thermodynamic system, the algebraic sum of all electric charges remains strictly constant regardless of physical or chemical transformations: $\\sum q_{initial} = \\sum q_{final}$. In addition, charge is additive (total charge of an extended body is the scalar algebraic sum $\\sum q_i$) and relativistically invariant (the magnitude of charge is independent of the reference frame speed, unlike mass).",
-    "**Methods of Charging — Friction & Conduction:** Neutral matter is charged by electron transfer: (1) **Triboelectric effect (Friction):** When two differing materials (e.g., glass and silk, or amber and wool) are rubbed, work function differences drive electron transfer from the lower to higher work function material; (2) **Conduction (Contact):** Direct contact between a charged conductor and a neutral conductor allows electron flow until both bodies achieve identical electrostatic potentials.",
-    "**Charging by Electrostatic Induction:** Charging by induction produces a net static charge on a conductor without physical contact with the charging source. Bringing a positively charged rod near an isolated neutral conductor repels positive ions conceptually while attracting mobile free conduction electrons toward the near face (polarization). Grounding the far face discharges positive potential by drawing electrons from Earth. Severing the ground connection before withdrawing the rod permanently traps an opposite negative charge on the conductor.",
-    "**Gold-Leaf Electroscope & Charge Detection:** The gold-leaf electroscope is a classical electrostatic apparatus comprising a brass rod, brass disc, and two ultra-thin gold leaves housed in an evacuated glass enclosure. Divergence of the leaves signals the presence of charge via mutual electrostatic repulsion. The electroscope can identify charge sign by observing leaf divergence when an unknown charge is brought near a pre-charged electroscope.",
-    "# Charging by induction\n\n## 1. Introduction\nPhysical picture of **Charging by induction** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Electric Charges fill pass.\n\n## 2. Concepts and laws\n### Charging by induction\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Charging by induction — field, flux or wave construction (authored SVG)\n- **D2** — Charging by induction — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Charging by induction — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Charging by induction — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Charging Without Touching\n\nBring a charged rod near a metal sphere and the sphere's own charges rearrange: the near side turns opposite, the far side same. Earth the sphere at the right moment and it keeps a permanent charge — all without contact. That is induction, the trick behind electrostatic generators and lightning safety.",
+    "## 2. Fundamental Concepts\n\n### 2.1 What is charging by induction?\n\n**Induction** charges a body **without contact** with a charged object: a nearby charge *redistributes* the free electrons of a conductor. The net charge of the pair is unchanged — induction separates charge, it never creates it.\n\n### 2.2 The four-step process\n\nCharging a metal sphere positively with a negatively charged rod:\n1. Bring the charged rod **near** (not touching) the sphere — electrons in the sphere are repelled to the far side; the near side becomes positive (charge **polarisation**).\n2. **Earth** the far side — repelled electrons flow away to the ground through the earth wire.\n3. **Remove the earth connection** first — the sphere is left electron-deficient.\n4. **Remove the rod** — the sphere is left with a uniform **positive** charge.\n\nKey sequencing: earth *while* the rod is near; disconnect the earth *before* removing the rod.\n\n### 2.3 Everyday evidence\n\n- A charged comb attracts neutral paper: the paper's charges polarise, the nearer opposite charge feels a stronger pull.\n- A charged balloon sticks to a neutral wall.\n- Electrostatic induction underlies the Wimshurst/van de Graaff generators and the gold-leaf electroscope's response.\n\n### 2.4 Worked reasoning\n\n**Q (NEB-style):** Why does a negatively charged rod attract a neutral conducting ball?\nThe rod's negative charge repels free electrons to the ball's far side, leaving positive charge on the near side. The nearer positive charge feels a stronger attraction than the farther negative charge feels repulsion — net attraction.\n\n**Q (NEB-style):** Why must the earth wire be removed before the charged rod?\nRemoving the rod first would let electrons flow back from the earth and neutralise the sphere — the induced charge exists only while the rod's field is present.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 83:** induction conserves charge — it only separates it.\n- **To conductors vs insulators:** induction needs mobile electrons; insulators polarise only molecularly.\n- **To lightning protection:** earthing provides a charge reservoir — the same physics in reverse.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the step-by-step induction process and the \"attracts neutral bodies\" reasoning as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. Describe charging a conductor positively by induction (3m).\n2. Why does a charged rod attract a neutral paper? (2m)\n3. Why is earthing done while the rod is nearby? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Saying induction \"transfers charge from the rod\" — the rod never touches and keeps its charge.\n2. Getting the order wrong: earth first, disconnect earth, then remove the rod.\n3. Claiming insulators charge easily by induction — they lack free electrons."
   ],
-  "confusion": [],
+  "confusion": [
+    "**Induction separates charge; it never creates or transfers it** — the rod keeps its charge throughout.",
+    "**Order matters:** earth while the rod is near, disconnect the earth, then remove the rod."
+  ],
   "bounds": [],
   "practice": [
-    "one worked example for \"Charging by induction\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Why does a charged balloon stick to a wall?"
   ],
   "universalFacts": [
-    "answer pattern for \"Charging by induction\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "The gold-leaf electroscope detects charge by induction-driven leaf divergence."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***Comb and paper*** — induced polarisation gives net attraction."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Charging by induction\" with one example.",
-    "compare \"Charging by induction\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Charging by induction\" and verify the answer is plausible."
+    "**Reasoning (2m): A negatively charged rod is brought near a neutral sphere touching no earth. Describe the charge distribution.** — Near side becomes positive, far side negative; the sphere stays overall neutral, and the rod attracts it (near-side attraction dominates)."
   ],
   "formulas": [
-    "Governing equation for \"Charging by induction\" — state with units, then use in one numerical."
+    "- Net charge of sphere + rod: conserved\n- Induced near-side charge = −(inducing charge sign)"
   ],
   "numericals": [
     "Set up the defining equation for \"Charging by induction\", substitute simple values, and compute the result with units.",
@@ -46,23 +38,247 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Charging by induction"
+    "Induction = charging without contact via charge redistribution + earthing."
   ],
-  "summary": "Charging by induction (Electric Charges, Physics, class-11-notes) covers Charging by induction. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "**Charging by induction** gives a conductor a permanent charge **without contact**: a nearby charged rod polarises the conductor's free electrons; earthing lets the repelled charge escape to ground; disconnecting the earth and then removing the rod leaves a net charge of the opposite sign to the rod. Charge is only redistributed — never created (conservation). The same polarisation explains why a charged comb attracts neutral paper and why electroscopes and electrostatic generators work. Order is everything: earth while the inducer is present, disconnect the earth before removing the inducer.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Charging by induction\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Charging by induction requires:",
       "options": [
-        "True",
-        "False"
+        "Contact",
+        "No contact with the charged body",
+        "Friction",
+        "Heating"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Only proximity + earthing."
+    },
+    {
+      "question": "During induction, the charged rod:",
+      "options": [
+        "Loses charge",
+        "Gains charge",
+        "Keeps its charge",
+        "Doubles charge"
+      ],
+      "answer": "C",
+      "explanation": "Charge merely redistributes."
+    },
+    {
+      "question": "A charged rod attracts neutral paper because of:",
+      "options": [
+        "Conduction",
+        "Polarisation (induction)",
+        "Gravity",
+        "Magnetism"
+      ],
+      "answer": "B",
+      "explanation": "Induced opposite near-charge."
+    },
+    {
+      "question": "The earth connection is removed:",
+      "options": [
+        "Before bringing the rod",
+        "While the rod is still near",
+        "After removing the rod",
+        "Never"
+      ],
+      "answer": "B",
+      "explanation": "Traps the induced charge."
+    },
+    {
+      "question": "A sphere charged by a negative rod via induction becomes:",
+      "options": [
+        "Negative",
+        "Positive",
+        "Neutral",
+        "Grounded"
+      ],
+      "answer": "B",
+      "explanation": "Opposite sign."
+    },
+    {
+      "question": "Induction works best on:",
+      "options": [
+        "Insulators",
+        "Conductors",
+        "Vacuum",
+        "Magnets"
+      ],
+      "answer": "B",
+      "explanation": "Needs free electrons."
+    },
+    {
+      "question": "If the rod is removed before disconnecting the earth, the sphere:",
+      "options": [
+        "Stays charged",
+        "Becomes neutral again",
+        "Gains more charge",
+        "Becomes negative"
+      ],
+      "answer": "B",
+      "explanation": "Electrons flow back."
+    },
+    {
+      "question": "Induction conserves:",
+      "options": [
+        "Mass only",
+        "Total charge",
+        "Number of electrons on the rod",
+        "Energy only"
+      ],
+      "answer": "B",
+      "explanation": "Charge only separates."
     }
   ],
   "examShortTricks": [
-    "Trick 1: The four-step answer earns full marks — bring charged rod NEAR (not touching) → charges separate in the sphere → earth the far side (opposite charge escapes... same sign as rod escapes) → remove earth, then remove rod; sphere is left with charge OPPOSITE to the rod.",
-    "Trick 2: Sign rule: the induced charge on the NEAR side has the same sign as the charging body; the far side (and the final charged body after earthing) has the opposite sign.",
-    "Trick 3: Induction needs NO contact and leaves the charging body's charge unchanged — contrast with charging by conduction."
+    "\"Four steps: bring near → earth → disconnect earth → remove rod.\""
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Charging Without Touching\n\nBring a charged rod near a metal sphere and the sphere's own charges rearrange: the near side turns opposite, the far side same. Earth the sphere at the right moment and it keeps a permanent charge — all without contact. That is induction, the trick behind electrostatic generators and lightning safety.",
+      "## 2. Fundamental Concepts\n\n### 2.1 What is charging by induction?\n\n**Induction** charges a body **without contact** with a charged object: a nearby charge *redistributes* the free electrons of a conductor. The net charge of the pair is unchanged — induction separates charge, it never creates it.\n\n### 2.2 The four-step process\n\nCharging a metal sphere positively with a negatively charged rod:\n1. Bring the charged rod **near** (not touching) the sphere — electrons in the sphere are repelled to the far side; the near side becomes positive (charge **polarisation**).\n2. **Earth** the far side — repelled electrons flow away to the ground through the earth wire.\n3. **Remove the earth connection** first — the sphere is left electron-deficient.\n4. **Remove the rod** — the sphere is left with a uniform **positive** charge.\n\nKey sequencing: earth *while* the rod is near; disconnect the earth *before* removing the rod.\n\n### 2.3 Everyday evidence\n\n- A charged comb attracts neutral paper: the paper's charges polarise, the nearer opposite charge feels a stronger pull.\n- A charged balloon sticks to a neutral wall.\n- Electrostatic induction underlies the Wimshurst/van de Graaff generators and the gold-leaf electroscope's response.\n\n### 2.4 Worked reasoning\n\n**Q (NEB-style):** Why does a negatively charged rod attract a neutral conducting ball?\nThe rod's negative charge repels free electrons to the ball's far side, leaving positive charge on the near side. The nearer positive charge feels a stronger attraction than the farther negative charge feels repulsion — net attraction.\n\n**Q (NEB-style):** Why must the earth wire be removed before the charged rod?\nRemoving the rod first would let electrons flow back from the earth and neutralise the sphere — the induced charge exists only while the rod's field is present.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 83:** induction conserves charge — it only separates it.\n- **To conductors vs insulators:** induction needs mobile electrons; insulators polarise only molecularly.\n- **To lightning protection:** earthing provides a charge reservoir — the same physics in reverse.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the step-by-step induction process and the \"attracts neutral bodies\" reasoning as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. Describe charging a conductor positively by induction (3m).\n2. Why does a charged rod attract a neutral paper? (2m)\n3. Why is earthing done while the rod is nearby? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Saying induction \"transfers charge from the rod\" — the rod never touches and keeps its charge.\n2. Getting the order wrong: earth first, disconnect earth, then remove the rod.\n3. Claiming insulators charge easily by induction — they lack free electrons."
+    ],
+    "confusion": [
+      "**Induction separates charge; it never creates or transfers it** — the rod keeps its charge throughout.",
+      "**Order matters:** earth while the rod is near, disconnect the earth, then remove the rod."
+    ],
+    "keyPoints": [
+      "Induction = charging without contact via charge redistribution + earthing."
+    ],
+    "importantConcepts": [
+      "**Polarisation explains attraction of neutral bodies** — nearer opposite charge wins."
+    ],
+    "examples": [
+      "***Comb and paper*** — induced polarisation gives net attraction."
+    ],
+    "universalFacts": [
+      "The gold-leaf electroscope detects charge by induction-driven leaf divergence."
+    ],
+    "importantStatements": [
+      "\"Charging by induction redistributes the charges of a conductor without any transfer of charge between the charged body and the conductor.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (process 3m, reasoning 2m)."
+    ],
+    "examShortTricks": [
+      "\"Four steps: bring near → earth → disconnect earth → remove rod.\""
+    ],
+    "examNotes": [
+      "Draw the charge distribution at each step if a diagram is allowed."
+    ],
+    "formulas": [
+      "- Net charge of sphere + rod: conserved\n- Induced near-side charge = −(inducing charge sign)"
+    ],
+    "practice": [
+      "Why does a charged balloon stick to a wall?"
+    ],
+    "practiceQuestions": [
+      "**Reasoning (2m): A negatively charged rod is brought near a neutral sphere touching no earth. Describe the charge distribution.** — Near side becomes positive, far side negative; the sphere stays overall neutral, and the rod attracts it (near-side attraction dominates)."
+    ]
+  },
+  "importantConcepts": [
+    "**Polarisation explains attraction of neutral bodies** — nearer opposite charge wins."
+  ],
+  "importantStatements": [
+    "\"Charging by induction redistributes the charges of a conductor without any transfer of charge between the charged body and the conductor.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ; NEB-style practice (process 3m, reasoning 2m)."
+  ],
+  "examNotes": [
+    "Draw the charge distribution at each step if a diagram is allowed."
+  ],
+  "mcs": [
+    {
+      "question": "Charging by induction requires:",
+      "options": [
+        "Contact",
+        "No contact with the charged body",
+        "Friction",
+        "Heating"
+      ],
+      "answer": "B",
+      "explanation": "Only proximity + earthing."
+    },
+    {
+      "question": "During induction, the charged rod:",
+      "options": [
+        "Loses charge",
+        "Gains charge",
+        "Keeps its charge",
+        "Doubles charge"
+      ],
+      "answer": "C",
+      "explanation": "Charge merely redistributes."
+    },
+    {
+      "question": "A charged rod attracts neutral paper because of:",
+      "options": [
+        "Conduction",
+        "Polarisation (induction)",
+        "Gravity",
+        "Magnetism"
+      ],
+      "answer": "B",
+      "explanation": "Induced opposite near-charge."
+    },
+    {
+      "question": "The earth connection is removed:",
+      "options": [
+        "Before bringing the rod",
+        "While the rod is still near",
+        "After removing the rod",
+        "Never"
+      ],
+      "answer": "B",
+      "explanation": "Traps the induced charge."
+    },
+    {
+      "question": "A sphere charged by a negative rod via induction becomes:",
+      "options": [
+        "Negative",
+        "Positive",
+        "Neutral",
+        "Grounded"
+      ],
+      "answer": "B",
+      "explanation": "Opposite sign."
+    },
+    {
+      "question": "Induction works best on:",
+      "options": [
+        "Insulators",
+        "Conductors",
+        "Vacuum",
+        "Magnets"
+      ],
+      "answer": "B",
+      "explanation": "Needs free electrons."
+    },
+    {
+      "question": "If the rod is removed before disconnecting the earth, the sphere:",
+      "options": [
+        "Stays charged",
+        "Becomes neutral again",
+        "Gains more charge",
+        "Becomes negative"
+      ],
+      "answer": "B",
+      "explanation": "Electrons flow back."
+    },
+    {
+      "question": "Induction conserves:",
+      "options": [
+        "Mass only",
+        "Total charge",
+        "Number of electrons on the rod",
+        "Energy only"
+      ],
+      "answer": "B",
+      "explanation": "Charge only separates."
+    }
   ]
 }

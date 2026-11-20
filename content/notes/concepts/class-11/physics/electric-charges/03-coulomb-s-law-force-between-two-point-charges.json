@@ -7,27 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Coulomb's law.** The force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance: F = (1/4πε₀)q₁q₂/r².",
-    "**Direction.** The force acts along the line joining the charges — repulsive for like charges, attractive for unlike charges — and obeys Newton's third law.",
-    "**Permittivity.** In a medium of dielectric constant K the force falls to F = q₁q₂/4πε₀Kr²; for vacuum K = 1 and ε₀ = 8.85 × 10⁻¹² C² N⁻¹ m⁻².",
-    "**Vector form.** F₁₂ = (q₁q₂/4πε₀) × (r₂ − r₁)/|r₂ − r₁|³ gives both magnitude and direction automatically, with the sign of the charges deciding attraction or repulsion.",
-    "**Limitations.** The law holds for point charges at rest and for spherically symmetric charge distributions; it is an inverse-square law like gravitation but far stronger.",
-    "Coulomb's law is an inverse-square law for point charges at rest. The force is unchanged if the two charges are swapped, and a medium of dielectric constant K divides the vacuum force by K.",
-    "# Coulomb's law: force between two point charges\n\n## 1. Introduction\nPhysical picture of **Coulomb's law** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Electric Charges fill pass.\n\n## 2. Concepts and laws\n### Coulomb's law: force between two point charges\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Coulomb's law — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Coulomb's law — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Coulomb's law — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Coulomb's law — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Inverse Square Law of Charge\n\nTwo centuries before electrons were discovered, Coulomb measured with a torsion balance how charged bodies push and pull: a force proportional to each charge, inversely proportional to the square of the separation. That law is the electrostatic twin of Newton's gravitation.",
+    "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 Statement and formula\n\n**Coulomb's law:** the electrostatic force between two point charges acts along the line joining them, is proportional to the product of the charges and inversely proportional to the square of their separation:\n$$F = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1q_2}{r^2} = k\\frac{q_1q_2}{r^2}$$\n- $k = 9\\times10^9$ N m²C⁻² (in air/vacuum); $\\varepsilon_0 = 8.85\\times10^{-12}$ C²N⁻¹m⁻² (permittivity of free space).\n- **Like charges repel, unlike attract** — the sign of the product sets the direction.\n- In a dielectric medium: $F = \\frac{1}{4\\pi\\varepsilon_0\\varepsilon_r}\\frac{q_1q_2}{r^2}$ — the force shrinks by the relative permittivity.\n\n### 2.2 Comparison with gravitation\n\n| Feature | Coulomb force | Gravitational force |\n|---|---|---|\n| Source | Charge | Mass |\n| Sign | Attractive or repulsive | Always attractive |\n| Strength | ~10³⁹ times stronger (for e pairs) | Very weak |\n| Dependence | 1/r² | 1/r² |\n| Medium | Affected by dielectric | Unaffected |\n\n### 2.3 Worked numericals\n\n**Q (3m, 2024):** State Coulomb's law. Calculate the force between two charges of 2 μC and 3 μC placed 0.1 m apart in air.\n$$F = \\frac{9\\times10^9 \\times 2\\times10^{-6} \\times 3\\times10^{-6}}{(0.1)^2} = \\frac{5.4\\times10^{-2}}{10^{-2}} = 5.4 \\text{ N (repulsive)}$$\n\n**Q (1m, 2022 — MCQ):** Two charges of +2 μC and −3 μC are 0.6 m apart. The force between them is:\n$$F = 9\\times10^9 \\times \\frac{6\\times10^{-12}}{0.36} = 0.15 \\text{ N — attractive}$$\n\n**Q (NEB-style):** How far apart must two 1 C charges be for the force to be 1 N?\n$r = \\sqrt{kq_1q_2/F} = \\sqrt{9\\times10^9} ≈ 9.5\\times10^4$ m — nearly 95 km!",
+    "## 3. Conceptual Relationships\n\n- **To Topic 83:** the law quantifies the interactions of quantised, conserved charges.\n- **To Topic 86:** superposition extends the two-charge law to systems.\n- **To gravitation (Unit 7):** same inverse-square mathematics, different source and strength.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Electricity | Coulomb | Two charges of +2 μC and −3 μC are placed 0.6 m apart. The force between them is: (a) 0.15 N attractive … | 1 | MCQ |\n| 2080/2024 | Electricity | Coulomb | State Coulomb's law. Calculate the force between two charges of 2 μC and 3 μC placed 0.1 m apart in air. | 3 | Statement + numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Compare Coulomb's law with Newton's law of gravitation (3m).\n2. Distance-ratio numerical (2m).\n3. Effect of a dielectric medium (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using μC directly without converting (1 μC = 10⁻⁶ C).\n2. Forgetting to square r.\n3. Quoting k as 9×10⁹ without units."
   ],
   "confusion": [
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition..",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Micro means 10⁻⁶:** 2 μC = 2×10⁻⁶ C — the standard conversion slip.",
+    "**Inverse square:** double the distance → force ÷ 4."
   ],
   "bounds": [
     "Covers only: coulomb's law: force between two point charges (within Electric Charges).",
@@ -36,110 +23,135 @@
     "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
   ],
   "practice": [
-    "Write F = k |q1 q2| / r^2 and say what each symbol means.",
-    "Mark the known values, then substitute one step at a time.",
-    "Finish with the number, the unit, and the direction when the quantity has one."
+    "Why don't we feel electrostatic forces in daily life despite their strength?"
   ],
   "universalFacts": [
-    "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
-    "Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
-    "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+    "The electrostatic force between an electron and proton is ~10³⁹ times their gravitational attraction — gravity is negligible inside atoms."
   ],
   "examples": [
-    "Coulomb's law is an inverse-square law for point charges at rest. The force is unchanged if the two charges are swapped, and a medium of dielectric constant K divides the vacuum force by K.",
-    "The working relations are F = k |q1 q2| / r^2 and k = 9.0 × 10^9. Name each symbol, convert the data into SI units, and only then substitute.",
-    "Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9."
+    "***NEB 2024*** — 2 μC and 3 μC at 0.1 m: F = 5.4 N repulsive."
   ],
   "practiceQuestions": [
-    "Write F = k |q1 q2| / r^2 and name the symbols.",
-    "What does k = 9.0 × 10^9 tell you?",
-    "Which unit must be converted before the substitution?"
+    "**Numerical (3m): Two identical charges 5 cm apart repel with 0.36 N. Find each charge.** — q² = Fr²/k = 0.36 × 0.0025/9×10⁹ = 10⁻¹³ → q = 3.16×10⁻⁷ C ≈ 0.32 μC."
   ],
   "formulas": [
-    "F = k q₁q₂/r²",
-    "E = F/q",
-    "∮E·dA = Q/ε₀",
-    "V = kq/r"
+    "- F = (1/4πε₀) q₁q₂/r²; k = 9×10⁹ N m²C⁻²\n- ε₀ = 8.85×10⁻¹² C²N⁻¹m⁻²\n- In medium: F = k q₁q₂/(ε_r r²)"
   ],
   "numericals": [
     "Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9."
   ],
   "keyPoints": [
-    "• Coulomb's law: force between two point charges",
-    "F = k |q1 q2| / r^2",
-    "k = 9.0 × 10^9",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "F = kq₁q₂/r²; k = 9×10⁹ N m²C⁻²; like repel, unlike attract."
   ],
-  "summary": "Two point charges repel or attract with k |q1 q2| / r^2. These 2.0 μC and 4.0 μC charges, 0.20 m apart, repel with 1.8 N, and each feels that same magnitude.",
+  "summary": "**Coulomb's law** gives the force between point charges: $F = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1q_2}{r^2}$, along the line joining them — repulsive for like charges, attractive for unlike — with $k = 9\\times10^9$ N m²C⁻². NEB 2024's pair (2 μC, 3 μC, 0.1 m) repels at 5.4 N (3m); NEB 2022's MCQ (+2 μC, −3 μC, 0.6 m) gives 0.15 N attractive (1m). The law shares gravitation's inverse-square form but differs in sign behaviour, in being ~10³⁹ stronger for elementary particles, and in being weakened by dielectric media through ε_r.",
   "mcqs": [
     {
-      "question": "Doubling r multiplies F by",
+      "question": "Coulomb's law: F =",
       "options": [
-        "2",
-        "1/4",
-        "4",
-        "1/2"
+        "kq₁q₂/r",
+        "kq₁q₂/r²",
+        "kq₁q₂r²",
+        "k(q₁+q₂)/r²"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Inverse square."
     },
     {
-      "question": "Like charges",
+      "question": "k equals:",
       "options": [
-        "Repel",
-        "Attract",
-        "Feel unequal forces",
-        "Have F proportional to r"
+        "6.67×10⁻¹¹",
+        "9×10⁹ N m²C⁻²",
+        "8.85×10⁻¹²",
+        "1.6×10⁻¹⁹"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "1/4πε₀."
     },
     {
-      "question": "A dielectric K",
+      "question": "NEB 2024: 2 μC and 3 μC at 0.1 m →",
       "options": [
-        "Multiplies the force by K",
-        "Divides the force by K",
-        "Removes r",
-        "Sets F to k"
+        "0.54 N",
+        "5.4 N",
+        "54 N",
+        "0.15 N"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Repulsive."
     },
     {
-      "question": "The forces on the two charges are",
+      "question": "NEB 2022: +2 μC and −3 μC at 0.6 m →",
       "options": [
-        "Equal and opposite",
-        "Larger on the larger charge",
-        "Zero",
-        "Perpendicular"
+        "0.15 N attractive",
+        "0.15 N repulsive",
+        "1.5 N attractive",
+        "0.015 N"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Opposite signs attract."
+    },
+    {
+      "question": "Doubling the distance changes F to:",
+      "options": [
+        "F/2",
+        "F/4",
+        "2F",
+        "4F"
+      ],
+      "answer": "B",
+      "explanation": "Inverse square."
+    },
+    {
+      "question": "In a dielectric of ε_r = 4, the force:",
+      "options": [
+        "Quadruples",
+        "Halves",
+        "Drops to F/4",
+        "Unchanged"
+      ],
+      "answer": "C",
+      "explanation": "F/ε_r."
+    },
+    {
+      "question": "ε₀ has value:",
+      "options": [
+        "8.85×10⁻¹² C²N⁻¹m⁻²",
+        "9×10⁹",
+        "1.6×10⁻¹⁹",
+        "6.67×10⁻¹¹"
+      ],
+      "answer": "A",
+      "explanation": "Permittivity of free space."
+    },
+    {
+      "question": "Coulomb's law holds strictly for:",
+      "options": [
+        "Extended bodies",
+        "Point charges",
+        "Currents",
+        "Magnets"
+      ],
+      "answer": "B",
+      "explanation": "Point-charge idealisation."
     }
   ],
   "importantStatements": [
-    "Coulomb's law is an inverse-square law for point charges at rest. The force is unchanged if the two charges are swapped, and a medium of dielectric constant K divides the vacuum force by K.",
-    "The working relations are F = k |q1 q2| / r^2 and k = 9.0 × 10^9. Name each symbol, convert the data into SI units, and only then substitute.",
-    "Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9. q1 q2 = 8.0 × 10^−12. r^2 = 0.040."
+    "\"The force between two point charges is proportional to the product of the charges and inversely proportional to the square of their separation.\""
   ],
   "examNotes": [
-    "Definition, then formula, then substitution.",
-    "A vector answer is incomplete without its direction."
+    "State the law in words first, then compute — the 2024 3m awards marks for both."
   ],
   "examShortTricks": [
-    "SI units first, then the formula.",
-    "The last line is the number, the unit, and the direction if there is one."
+    "\"F = 9×10⁹ q₁q₂/r² with charges in coulombs, r in metres.\""
   ],
   "specialNotes": [
     "A sketched sign convention is part of the data.",
     "A dimensionless ratio still needs the two quantities named."
   ],
   "importantNotes": [
-    "Do not skip the unit conversion.",
-    "Match the formula to the situation drawn, not to a neighbouring topic."
+    "Verified PYQs: law + 5.4 N numerical (2024, 3m); 0.15 N attractive MCQ (2022, 1m)."
   ],
   "importantConcepts": [
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Coulomb's law is Newton's gravitation with charge in place of mass** — plus the possibility of repulsion."
   ],
   "importantTasks": [
     "Copy the worked example and hide the result until the last step.",
@@ -199,5 +211,50 @@
       ],
       "answer": "1.8 N, repulsive."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Inverse Square Law of Charge\n\nTwo centuries before electrons were discovered, Coulomb measured with a torsion balance how charged bodies push and pull: a force proportional to each charge, inversely proportional to the square of the separation. That law is the electrostatic twin of Newton's gravitation.",
+      "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 Statement and formula\n\n**Coulomb's law:** the electrostatic force between two point charges acts along the line joining them, is proportional to the product of the charges and inversely proportional to the square of their separation:\n$$F = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1q_2}{r^2} = k\\frac{q_1q_2}{r^2}$$\n- $k = 9\\times10^9$ N m²C⁻² (in air/vacuum); $\\varepsilon_0 = 8.85\\times10^{-12}$ C²N⁻¹m⁻² (permittivity of free space).\n- **Like charges repel, unlike attract** — the sign of the product sets the direction.\n- In a dielectric medium: $F = \\frac{1}{4\\pi\\varepsilon_0\\varepsilon_r}\\frac{q_1q_2}{r^2}$ — the force shrinks by the relative permittivity.\n\n### 2.2 Comparison with gravitation\n\n| Feature | Coulomb force | Gravitational force |\n|---|---|---|\n| Source | Charge | Mass |\n| Sign | Attractive or repulsive | Always attractive |\n| Strength | ~10³⁹ times stronger (for e pairs) | Very weak |\n| Dependence | 1/r² | 1/r² |\n| Medium | Affected by dielectric | Unaffected |\n\n### 2.3 Worked numericals\n\n**Q (3m, 2024):** State Coulomb's law. Calculate the force between two charges of 2 μC and 3 μC placed 0.1 m apart in air.\n$$F = \\frac{9\\times10^9 \\times 2\\times10^{-6} \\times 3\\times10^{-6}}{(0.1)^2} = \\frac{5.4\\times10^{-2}}{10^{-2}} = 5.4 \\text{ N (repulsive)}$$\n\n**Q (1m, 2022 — MCQ):** Two charges of +2 μC and −3 μC are 0.6 m apart. The force between them is:\n$$F = 9\\times10^9 \\times \\frac{6\\times10^{-12}}{0.36} = 0.15 \\text{ N — attractive}$$\n\n**Q (NEB-style):** How far apart must two 1 C charges be for the force to be 1 N?\n$r = \\sqrt{kq_1q_2/F} = \\sqrt{9\\times10^9} ≈ 9.5\\times10^4$ m — nearly 95 km!",
+      "## 3. Conceptual Relationships\n\n- **To Topic 83:** the law quantifies the interactions of quantised, conserved charges.\n- **To Topic 86:** superposition extends the two-charge law to systems.\n- **To gravitation (Unit 7):** same inverse-square mathematics, different source and strength.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Electricity | Coulomb | Two charges of +2 μC and −3 μC are placed 0.6 m apart. The force between them is: (a) 0.15 N attractive … | 1 | MCQ |\n| 2080/2024 | Electricity | Coulomb | State Coulomb's law. Calculate the force between two charges of 2 μC and 3 μC placed 0.1 m apart in air. | 3 | Statement + numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Compare Coulomb's law with Newton's law of gravitation (3m).\n2. Distance-ratio numerical (2m).\n3. Effect of a dielectric medium (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using μC directly without converting (1 μC = 10⁻⁶ C).\n2. Forgetting to square r.\n3. Quoting k as 9×10⁹ without units."
+    ],
+    "confusion": [
+      "**Micro means 10⁻⁶:** 2 μC = 2×10⁻⁶ C — the standard conversion slip.",
+      "**Inverse square:** double the distance → force ÷ 4."
+    ],
+    "keyPoints": [
+      "F = kq₁q₂/r²; k = 9×10⁹ N m²C⁻²; like repel, unlike attract."
+    ],
+    "importantConcepts": [
+      "**Coulomb's law is Newton's gravitation with charge in place of mass** — plus the possibility of repulsion."
+    ],
+    "examples": [
+      "***NEB 2024*** — 2 μC and 3 μC at 0.1 m: F = 5.4 N repulsive."
+    ],
+    "universalFacts": [
+      "The electrostatic force between an electron and proton is ~10³⁹ times their gravitational attraction — gravity is negligible inside atoms."
+    ],
+    "importantStatements": [
+      "\"The force between two point charges is proportional to the product of the charges and inversely proportional to the square of their separation.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: law + 5.4 N numerical (2024, 3m); 0.15 N attractive MCQ (2022, 1m)."
+    ],
+    "examShortTricks": [
+      "\"F = 9×10⁹ q₁q₂/r² with charges in coulombs, r in metres.\""
+    ],
+    "examNotes": [
+      "State the law in words first, then compute — the 2024 3m awards marks for both."
+    ],
+    "formulas": [
+      "- F = (1/4πε₀) q₁q₂/r²; k = 9×10⁹ N m²C⁻²\n- ε₀ = 8.85×10⁻¹² C²N⁻¹m⁻²\n- In medium: F = k q₁q₂/(ε_r r²)"
+    ],
+    "practice": [
+      "Why don't we feel electrostatic forces in daily life despite their strength?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Two identical charges 5 cm apart repel with 0.36 N. Find each charge.** — q² = Fr²/k = 0.36 × 0.0025/9×10⁹ = 10⁻¹³ → q = 3.16×10⁻⁷ C ≈ 0.32 μC."
+    ]
+  }
 }
