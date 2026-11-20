@@ -84,11 +84,11 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 53 | Quantity of Heat (5h) | Specific latent heat of fusion and vaporization | `05-measurement-of-specific-latent-heat-of-fusion-and-vaporization.json` | **Completed** |
 | 54 | Quantity of Heat (5h) | Measurement of specific latent heat of fusion and vaporization | `02-measurement-of-specific-heat-capacity-of-solids-and-liquids.json` | **Completed** |
 | 55 | Quantity of Heat (5h) | Triple point | `04-triple-point.json` | **Completed** |
-| 56 | Rate of Heat Flow (5h) | Conduction: thermal conductivity and measurement | TBD | Not started |
-| 57 | Rate of Heat Flow (5h) | Convection | TBD | Not started |
-| 58 | Rate of Heat Flow (5h) | Radiation: ideal radiator | TBD | Not started |
-| 59 | Rate of Heat Flow (5h) | Black-body radiation | TBD | Not started |
-| 60 | Rate of Heat Flow (5h) | Stefan-Boltzmann law | TBD | Not started |
+| 56 | Rate of Heat Flow (5h) | Conduction: thermal conductivity and measurement | `01-conduction-thermal-conductivity.json` | **Completed** |
+| 57 | Rate of Heat Flow (5h) | Convection | `02-convection.json` | **Completed** |
+| 58 | Rate of Heat Flow (5h) | Radiation: ideal radiator | `03-radiation-ideal-radiator.json` | **Completed** |
+| 59 | Rate of Heat Flow (5h) | Black-body radiation | `04-black-body-radiation.json` | **Completed** |
+| 60 | Rate of Heat Flow (5h) | Stefan-Boltzmann law | `04-stefan-boltzmann-law.json` | **Completed** |
 | 61 | Ideal Gas (5h) | Ideal gas equation | TBD | Not started |
 | 62 | Ideal Gas (5h) | Molecular properties of matter | TBD | Not started |
 | 63 | Ideal Gas (5h) | Kinetic-molecular model of an ideal gas | TBD | Not started |
@@ -160,3 +160,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 9 — Unit 9 Heat and Temperature (3 topics) upgraded: molecular concept of thermal energy, heat & temperature, cause & direction of heat flow; thermal equilibrium & zeroth law; thermal equilibrium as the working principle of a mercury thermometer. Verified PYQs used: heat vs temperature 2021+2022+2024 2m, zeroth law statement+numbering 2023+2024 2m, A-C-B reasoning 2024 2m, faulty thermometer 2023 3m. Next: Unit 10 Thermal Expansion (4 topics).
 - Session 10 — Unit 10 Thermal Expansion (4 topics) upgraded: linear expansion & measurement; superficial & cubical expansion with β=2α, γ=3α; liquid expansion (absolute & apparent) incl. anomalous expansion of water; Dulong & Petit method. Verified PYQs used: α definition 2019+2022 2m, rod numericals 2021 3m + 2024 2m, pendulum clock 2024 2m, anomalous expansion 2024 3m. Next: Unit 11 Quantity of Heat (6 topics).
 - Session 11 — Unit 11 Quantity of Heat (6 topics) upgraded: Newton's law of cooling; specific heat capacity & its measurement (method of mixtures); change of phases & latent heat; specific latent heat of fusion & vaporization with measurement (one canonical file serves both syllabus topics); triple point. Verified PYQs used: Q=mcΔT 2020 3m, definitions 2023 3m, Al block 2024 3m, latent heat fusion 2017 2m, fusion vs vaporization 2023 3m, steam numerical 2021 5m. Newton's cooling and triple point labelled NEB-style. Next: Unit 12 Rate of Heat Flow (5 topics).
+- Session 12 — Unit 12 Rate of Heat Flow (5 topics) upgraded: conduction, thermal conductivity & measurement (Fourier law); convection; radiation & ideal radiator; black-body radiation (Wien, Planck context); Stefan–Boltzmann law. Verified PYQs used (all 2024): three modes 3m, Fourier law 3m, rod numerical 3m, utensils/clothes 2m, Stefan law + 16× factor 3m. Next: Unit 13 Ideal Gas (7 topics).
