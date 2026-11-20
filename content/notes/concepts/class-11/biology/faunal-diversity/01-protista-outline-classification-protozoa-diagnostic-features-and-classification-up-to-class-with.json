@@ -14,84 +14,98 @@
       "desc": "Four protozoan classes by locomotion: pseudopodia, flagella, cilia, or none, with one example each."
     },
     "notes": [
-      "Protista is the kingdom of eukaryotic organisms that are mostly unicellular and do not sit cleanly inside plants, animals or fungi. An outline of the kingdom, as used in this course, takes in the photosynthetic and fungus-like groups as well as the animal-like ones: chrysophytes such as diatoms, dinoflagellates, euglenoids, slime moulds, and the protozoa. The rest of this note is the protozoa, because that is the group classified to class.",
-      "Protozoa are unicellular eukaryotes, microscopic, without a cellulose cell wall. A pellicle or a naked membrane bounds the cell. They live in fresh water, in the sea, in damp soil, or inside a host. Nutrition is holozoic, by engulfing food, or saprozoic, by absorbing dissolved food, or parasitic. A few, such as Euglena, are also photosynthetic in the light. Reproduction is asexual by binary fission or multiple fission, and some groups add a sexual process such as conjugation or the fusion of gametes.",
-      "The classes are separated by how the cell moves, or by the absence of any locomotor organ. Class Rhizopoda, also called Sarcodina, moves and feeds with pseudopodia. Amoeba is the example. The body shape changes. There is no fixed mouth.",
-      "Class Flagellata, or Mastigophora, moves with one or more flagella. Euglena has a flagellum and can photosynthesise. Trypanosoma, the sleeping-sickness parasite, is a flagellate with no photosynthesis. Having a flagellum is the class character. Being green is not.",
-      "Class Ciliata moves with many short cilia, has a definite shape, and usually has two kinds of nucleus: a large macronucleus for day-to-day control and a small micronucleus for sexual exchange. Paramecium caudatum is the example. The cilia also sweep food into a cell mouth.",
-      "Class Sporozoa has no locomotor organelle in the adult stage. Members are parasites and they reproduce by spores, often with multiple fission. Plasmodium, the malaria parasite, is the example. It is placed here because it lacks cilia, flagella and pseudopodia, not because it causes a famous disease. The disease is a consequence of that parasitic life."
+      "## 1. Topic Introduction — The Single-Celled Kingdom\n\nProtista gathers eukaryotes that are not plants, animals or fungi: mostly single-celled organisms living in water or moist environments. The syllabus focuses on **Protozoa** — the animal-like protists — and their classification up to class with examples.",
+      "## 2. General Characteristics of Protista\n\n| Feature | Detail |\n|---|---|\n| Cell type | **Eukaryotic**, mostly unicellular; some colonial |\n| Habitat | Aquatic, moist soil; parasites inside hosts |\n| Nutrition | Autotrophic (algae), heterotrophic (protozoa), or mixotrophic (euglenoids) |\n| Organelles | True nucleus and membrane-bound organelles; specialized organelles replace organs (contractile vacuole, pellicle) |\n| Reproduction | Asexual (binary fission, multiple fission) and sexual (conjugation, syngamy) |\n| Locomotion | Pseudopodia, flagella, cilia, or none |\n\n### 2.1 Classification of Protozoa up to class\n\n| Class (subphylum Sarcomastigophora etc.) | Locomotor organ | Example |\n|---|---|---|\n| **Rhizopoda (Sarcodina)** | Pseudopodia (\"false feet\") | *Amoeba*, *Entamoeba* |\n| **Mastigophora (Zoomastigina/Flagellata)** | Flagella | *Trypanosoma*, *Giardia* |\n| **Ciliophora (Ciliata)** | Cilia; two nuclei (macro- and micronucleus) | *Paramecium*, *Vorticella* |\n| **Sporozoa (Apicomplexa)** | No locomotor organelle in adult; parasitic | *Plasmodium*, *Eimeria* |\n\nAll four classes are unicellular eukaryotes; they differ chiefly in locomotion and nutrition. Sporozoa are entirely parasitic with a complex life cycle involving alternating sexual and asexual phases in a host.",
+      "## 3. Conceptual Relationships\n\n- **Topic 1–4 → here:** protozoa are eukaryotic cells — the organelles of Unit 1 are their \"organs\".\n- **Here → Topics 39–40:** *Paramecium* (Ciliophora) and *Plasmodium* (Sporozoa) are the syllabus specimens from two of these classes.\n- **Here → floral diversity:** protists parallel algae; some protists are algal in nutrition.\n- **Here → health:** three of the four classes contain human parasites — protozoal disease is a global health burden.",
+      "## 4. Exam Orientation\n\n### 4.1 Previous year questions\n\nNo protista question exists in the authored bank. Questions below are **NEB-style practice**, clearly labelled.\n\n### 4.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Classify Protozoa up to class with one example of each.**\nAnswer: (1) **Rhizopoda (Sarcodina)** — move by pseudopodia; *Amoeba*. (2) **Mastigophora (Flagellata)** — move by flagella; *Trypanosoma*. (3) **Ciliophora** — move by cilia, with macro- and micronuclei; *Paramecium*. (4) **Sporozoa** — non-motile adult parasites with complex life cycles; *Plasmodium*.\n\n**Q2 (2m) — Why is *Euglena* placed in Protista and not in Plantae?**\nAnswer: *Euglena* is unicellular, lacks a cell wall of cellulose, and though it has chloroplasts it can also feed heterotrophically in darkness — a mix of plant-like and animal-like characters that fits neither Plantae nor Animalia, so it is placed in Protista.\n\n### 4.3 Common examination mistakes\n\n1. Calling protozoa prokaryotes — they are **eukaryotes** (contrast with Monera).\n2. Assigning flagella to Sporozoa — adult sporozoans are **non-motile**; locomotion by gliding/flagellated gametes at most.\n3. Forgetting the **two nuclei** of Ciliophora (macro- and micronucleus).\n4. Writing *Paramecium* as a sporozoan — it is a **ciliate**."
+    ],
+    "confusion": [
+      "**Pseudopodia vs cilia vs flagella:** pseudopodia are flowing cell extensions (Rhizopoda); cilia are many short oars (Ciliophora); flagella are few long whips (Mastigophora).",
+      "**Protista vs Monera:** protists are eukaryotic with a true nucleus; Monera are prokaryotic."
+    ],
+    "keyPoints": [
+      "Protista: eukaryotic, mostly unicellular, aquatic; autotrophic or heterotrophic.",
+      "Protozoa classes: Rhizopoda (pseudopodia — Amoeba), Mastigophora (flagella — Trypanosoma), Ciliophora (cilia, two nuclei — Paramecium), Sporozoa (non-motile parasites — Plasmodium)."
+    ],
+    "importantConcepts": [
+      "**Locomotion classifies protozoa:** the four classes are distinguished chiefly by their locomotor organelle — pseudopodia, flagella, cilia or none."
+    ],
+    "examples": [
+      "***Amoeba proteus*** — rhizopod moving by pseudopodia.",
+      "***Paramecium caudatum*** — ciliate with macro- and micronucleus.",
+      "***Plasmodium vivax*** — sporozoan; malarial parasite."
+    ],
+    "universalFacts": [
+      "Protozoa were among the first eukaryotes to evolve, over a billion years before multicellular animals."
+    ],
+    "importantStatements": [
+      "\"A protozoan is a cell that had to be a whole animal.\""
+    ],
+    "importantNotes": [
+      "Classification questions expect class name + locomotor organ + example — all three together."
+    ],
+    "examShortTricks": [
+      "\"Pseudopodia, Flagella, Cilia, None — Rhizopoda, Mastigophora, Ciliophora, Sporozoa.\""
+    ],
+    "examNotes": [
+      "No verified PYQ in the bank; practise the four-class classification with examples as NEB-style practice."
+    ],
+    "practice": [
+      "Why are sporozoans the only protozoan class without locomotor organelles?"
+    ],
+    "practiceQuestions": [
+      "**Short answer (2m): What is a contractile vacuole?** — An organelle in freshwater protozoa (e.g. Paramecium, Amoeba) that collects and expels excess water, osmoregulating the cell against swelling.",
+      "**Long answer (5m): Classify Protozoa up to class with diagnostic features and examples.** — Rhizopoda (pseudopodia; Amoeba, Entamoeba), Mastigophora (flagella; Trypanosoma, Giardia), Ciliophora (cilia, macro- and micronucleus; Paramecium, Vorticella), Sporozoa (non-motile obligate parasites, complex life cycle; Plasmodium, Eimeria) — with one diagnostic feature and one example each."
     ]
   },
   "notes": [
-    "Protista is the kingdom of eukaryotic organisms that are mostly unicellular and do not sit cleanly inside plants, animals or fungi. An outline of the kingdom, as used in this course, takes in the photosynthetic and fungus-like groups as well as the animal-like ones: chrysophytes such as diatoms, dinoflagellates, euglenoids, slime moulds, and the protozoa. The rest of this note is the protozoa, because that is the group classified to class.",
-    "Protozoa are unicellular eukaryotes, microscopic, without a cellulose cell wall. A pellicle or a naked membrane bounds the cell. They live in fresh water, in the sea, in damp soil, or inside a host. Nutrition is holozoic, by engulfing food, or saprozoic, by absorbing dissolved food, or parasitic. A few, such as Euglena, are also photosynthetic in the light. Reproduction is asexual by binary fission or multiple fission, and some groups add a sexual process such as conjugation or the fusion of gametes.",
-    "The classes are separated by how the cell moves, or by the absence of any locomotor organ. Class Rhizopoda, also called Sarcodina, moves and feeds with pseudopodia. Amoeba is the example. The body shape changes. There is no fixed mouth.",
-    "Class Flagellata, or Mastigophora, moves with one or more flagella. Euglena has a flagellum and can photosynthesise. Trypanosoma, the sleeping-sickness parasite, is a flagellate with no photosynthesis. Having a flagellum is the class character. Being green is not.",
-    "Class Ciliata moves with many short cilia, has a definite shape, and usually has two kinds of nucleus: a large macronucleus for day-to-day control and a small micronucleus for sexual exchange. Paramecium caudatum is the example. The cilia also sweep food into a cell mouth.",
-    "Class Sporozoa has no locomotor organelle in the adult stage. Members are parasites and they reproduce by spores, often with multiple fission. Plasmodium, the malaria parasite, is the example. It is placed here because it lacks cilia, flagella and pseudopodia, not because it causes a famous disease. The disease is a consequence of that parasitic life.",
-    "# Protista: Outline classification. Protozoa: diagnostic features and classification up to class with examples\n\n## 1. Introduction\nOpening frame for **Protista** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Faunal Diversity fill pass.\n\n## 2. Hierarchy body — every syllabus sub-point\n### Protista: Outline classification. Protozoa: diagnostic features and classification up to class with examples\n\nFill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.",
-    "## 3. Classified tables\n\n**Table 1 — Classification at a glance**\n\n| Group | Diagnostic features | Examples (≥ 2) | Economic importance |\n| --- | --- | --- | --- |\n\n**Table 2 — Characteristics**\n\n| Part | Structure | Function | Exam note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB marks trend |\n| --- | --- | --- |\n\nTables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).",
-    "## 4. Diagrams and figures\n- **D1** — Paramecium structure (authored SVG — English labels, viewBox 900×640)\n- **D2** — Protista — process or life-cycle flow (authored SVG — English labels)\n- **D3** — Protista — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Protista — comparison or application figure (curated external — license recorded at fill)\n\nFigure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.",
-    "## 5. Worked examples and applications\n≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.\n\n## 6. Key terms and statements\nEvery new term defined once; exam-grade definitions live here and in keyPoints (block VI).",
-    "## 7. Exam Zone\nNEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.",
-    "## 8. Summary and self-check\n5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Single-Celled Kingdom\n\nProtista gathers eukaryotes that are not plants, animals or fungi: mostly single-celled organisms living in water or moist environments. The syllabus focuses on **Protozoa** — the animal-like protists — and their classification up to class with examples.",
+    "## 2. General Characteristics of Protista\n\n| Feature | Detail |\n|---|---|\n| Cell type | **Eukaryotic**, mostly unicellular; some colonial |\n| Habitat | Aquatic, moist soil; parasites inside hosts |\n| Nutrition | Autotrophic (algae), heterotrophic (protozoa), or mixotrophic (euglenoids) |\n| Organelles | True nucleus and membrane-bound organelles; specialized organelles replace organs (contractile vacuole, pellicle) |\n| Reproduction | Asexual (binary fission, multiple fission) and sexual (conjugation, syngamy) |\n| Locomotion | Pseudopodia, flagella, cilia, or none |\n\n### 2.1 Classification of Protozoa up to class\n\n| Class (subphylum Sarcomastigophora etc.) | Locomotor organ | Example |\n|---|---|---|\n| **Rhizopoda (Sarcodina)** | Pseudopodia (\"false feet\") | *Amoeba*, *Entamoeba* |\n| **Mastigophora (Zoomastigina/Flagellata)** | Flagella | *Trypanosoma*, *Giardia* |\n| **Ciliophora (Ciliata)** | Cilia; two nuclei (macro- and micronucleus) | *Paramecium*, *Vorticella* |\n| **Sporozoa (Apicomplexa)** | No locomotor organelle in adult; parasitic | *Plasmodium*, *Eimeria* |\n\nAll four classes are unicellular eukaryotes; they differ chiefly in locomotion and nutrition. Sporozoa are entirely parasitic with a complex life cycle involving alternating sexual and asexual phases in a host.",
+    "## 3. Conceptual Relationships\n\n- **Topic 1–4 → here:** protozoa are eukaryotic cells — the organelles of Unit 1 are their \"organs\".\n- **Here → Topics 39–40:** *Paramecium* (Ciliophora) and *Plasmodium* (Sporozoa) are the syllabus specimens from two of these classes.\n- **Here → floral diversity:** protists parallel algae; some protists are algal in nutrition.\n- **Here → health:** three of the four classes contain human parasites — protozoal disease is a global health burden.",
+    "## 4. Exam Orientation\n\n### 4.1 Previous year questions\n\nNo protista question exists in the authored bank. Questions below are **NEB-style practice**, clearly labelled.\n\n### 4.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Classify Protozoa up to class with one example of each.**\nAnswer: (1) **Rhizopoda (Sarcodina)** — move by pseudopodia; *Amoeba*. (2) **Mastigophora (Flagellata)** — move by flagella; *Trypanosoma*. (3) **Ciliophora** — move by cilia, with macro- and micronuclei; *Paramecium*. (4) **Sporozoa** — non-motile adult parasites with complex life cycles; *Plasmodium*.\n\n**Q2 (2m) — Why is *Euglena* placed in Protista and not in Plantae?**\nAnswer: *Euglena* is unicellular, lacks a cell wall of cellulose, and though it has chloroplasts it can also feed heterotrophically in darkness — a mix of plant-like and animal-like characters that fits neither Plantae nor Animalia, so it is placed in Protista.\n\n### 4.3 Common examination mistakes\n\n1. Calling protozoa prokaryotes — they are **eukaryotes** (contrast with Monera).\n2. Assigning flagella to Sporozoa — adult sporozoans are **non-motile**; locomotion by gliding/flagellated gametes at most.\n3. Forgetting the **two nuclei** of Ciliophora (macro- and micronucleus).\n4. Writing *Paramecium* as a sporozoan — it is a **ciliate**."
   ],
   "confusion": [
-    "Euglena is a flagellate even though it is green. Photosynthesis does not move it into the plants for this classification.",
-    "Paramecium is not a flagellate. Its organelles are cilia, and it has two nuclei.",
-    "Plasmodium is a sporozoan. It does not crawl on pseudopodia inside the blood.",
-    "Protista is not only protozoa. Diatoms, dinoflagellates and slime moulds are in the kingdom outline too."
+    "**Pseudopodia vs cilia vs flagella:** pseudopodia are flowing cell extensions (Rhizopoda); cilia are many short oars (Ciliophora); flagella are few long whips (Mastigophora).",
+    "**Protista vs Monera:** protists are eukaryotic with a true nucleus; Monera are prokaryotic."
   ],
   "keyPoints": [
-    "Protozoa: unicellular eukaryotes, no cell wall, locomotion or parasitism defines the class.",
-    "Rhizopoda: pseudopodia, Amoeba.",
-    "Flagellata: flagella, Euglena and Trypanosoma.",
-    "Ciliata: cilia and two nuclei, Paramecium.",
-    "Sporozoa: no locomotor organ, parasitic, spores, Plasmodium."
+    "Protista: eukaryotic, mostly unicellular, aquatic; autotrophic or heterotrophic.",
+    "Protozoa classes: Rhizopoda (pseudopodia — Amoeba), Mastigophora (flagella — Trypanosoma), Ciliophora (cilia, two nuclei — Paramecium), Sporozoa (non-motile parasites — Plasmodium)."
   ],
   "importantStatements": [
-    "Locomotion is the classification character for the first three classes.",
-    "Sporozoa are defined by what they lack and by their spore-forming parasitism.",
-    "A macronucleus plus a micronucleus is the nuclear pattern to associate with ciliates."
+    "\"A protozoan is a cell that had to be a whole animal.\""
   ],
   "examples": [
-    "Amoeba engulfs a bacterium with a pseudopodium.",
-    "Trypanosoma swims in blood with a flagellum.",
-    "Plasmodium multiplies inside liver cells and red blood cells without cilia or flagella."
+    "***Amoeba proteus*** — rhizopod moving by pseudopodia.",
+    "***Paramecium caudatum*** — ciliate with macro- and micronucleus.",
+    "***Plasmodium vivax*** — sporozoan; malarial parasite."
   ],
   "universalFacts": [
-    "Binary fission in Paramecium is transverse. In Euglena it is longitudinal.",
-    "Euglena is mixotrophic: photosynthetic in light, and able to take organic food in the dark."
+    "Protozoa were among the first eukaryotes to evolve, over a billion years before multicellular animals."
   ],
   "formulas": [
     "Rhizopoda pseudopodia, Flagellata flagella, Ciliata cilia, Sporozoa none.",
     "Ciliate nuclei: macronucleus for vegetative control, micronucleus for genetic exchange."
   ],
   "practice": [
-    "Place Amoeba, Euglena, Paramecium and Plasmodium in their classes and name the locomotor structure.",
-    "Give three diagnostic features shared by protozoa.",
-    "Say why Euglena is not removed from Flagellata for being green."
+    "Why are sporozoans the only protozoan class without locomotor organelles?"
   ],
   "practiceQuestions": [
-    "What nuclear feature separates a ciliate from an amoeba?",
-    "Why is Plasmodium not put with the flagellates?",
-    "Name two protist groups that are not protozoa."
+    "**Short answer (2m): What is a contractile vacuole?** — An organelle in freshwater protozoa (e.g. Paramecium, Amoeba) that collects and expels excess water, osmoregulating the cell against swelling.",
+    "**Long answer (5m): Classify Protozoa up to class with diagnostic features and examples.** — Rhizopoda (pseudopodia; Amoeba, Entamoeba), Mastigophora (flagella; Trypanosoma, Giardia), Ciliophora (cilia, macro- and micronucleus; Paramecium, Vorticella), Sporozoa (non-motile obligate parasites, complex life cycle; Plasmodium, Eimeria) — with one diagnostic feature and one example each."
   ],
   "examNotes": [
-    "Write the four classes as a table: class, locomotion, one example. That is the whole classification question.",
-    "Add 'no cell wall, unicellular, eukaryotic' when the question says diagnostic features."
+    "No verified PYQ in the bank; practise the four-class classification with examples as NEB-style practice."
   ],
   "examShortTricks": [
-    "Amoeba feet, Euglena whip, Paramecium hairs, Plasmodium none.",
-    "Two nuclei means ciliate."
+    "\"Pseudopodia, Flagella, Cilia, None — Rhizopoda, Mastigophora, Ciliophora, Sporozoa.\""
   ],
   "specialNotes": [
     "Class names have older synonyms: Sarcodina for Rhizopoda, Mastigophora for Flagellata. Either pair is acceptable if the example matches.",
     "Do not invent extra classes. These four cover the course."
   ],
   "importantNotes": [
-    "Slime moulds and diatoms belong in the kingdom outline and not in the four protozoan classes.",
-    "Multiple fission is the asexual pattern to mention for Plasmodium. Binary fission is the pattern for Amoeba and Paramecium."
+    "Classification questions expect class name + locomotor organ + example — all three together."
   ],
   "mcs": [
     {
@@ -136,11 +150,7 @@
     }
   ],
   "importantConcepts": [
-    "Kingdom Protista outline",
-    "Diagnostic features of protozoa",
-    "Four classes by locomotion",
-    "Dual nuclei of ciliates",
-    "Parasitic sporozoa"
+    "**Locomotion classifies protozoa:** the four classes are distinguished chiefly by their locomotor organelle — pseudopodia, flagella, cilia or none."
   ],
   "importantTasks": [
     "Make the four-row classification table.",
@@ -158,47 +168,84 @@
       "answer": "Rhizopoda, Flagellata, Ciliata, Sporozoa, in that organism order."
     }
   ],
-  "summary": "Protista includes unicellular eukaryotes such as diatoms, dinoflagellates, euglenoids, slime moulds and protozoa. Protozoa have no cell wall and are classified to class by locomotion: Rhizopoda by pseudopodia (Amoeba), Flagellata by flagella (Euglena, Trypanosoma), Ciliata by cilia and two nuclei (Paramecium), and Sporozoa by the lack of those organs and a spore-forming parasitic life (Plasmodium).",
+  "summary": "Protista holds the eukaryotes that are neither plants, animals nor fungi — mostly single-celled aquatic organisms. Protozoa, their animal-like members, are classified by locomotion: Rhizopoda creep on pseudopodia (Amoeba), Mastigophora swim on flagella (Trypanosoma), Ciliophora row on cilia with two nuclei (Paramecium), and Sporozoa glide as non-motile obligate parasites with complex life cycles (Plasmodium). All are eukaryotic cells whose organelles do the work of organs — contractile vacuoles osmoregulate, pellicles shape, pseudopodia feed. The four classes supply the syllabus specimens Paramecium and Plasmodium and most of the protozoal diseases of humans.",
   "mcqs": [
     {
-      "question": "Amoeba is placed in",
+      "question": "Which protozoan class moves by pseudopodia?",
       "options": [
-        "Ciliata",
         "Rhizopoda",
-        "Sporozoa",
-        "The diatoms"
+        "Mastigophora",
+        "Ciliophora",
+        "Sporozoa"
       ],
-      "answer": "B"
+      "answer": "A",
+      "explanation": "Rhizopoda (Sarcodina) such as Amoeba move by flowing pseudopodia."
     },
     {
-      "question": "Paramecium moves by",
+      "question": "Paramecium belongs to which class?",
+      "options": [
+        "Rhizopoda",
+        "Ciliophora",
+        "Sporozoa",
+        "Mastigophora"
+      ],
+      "answer": "B",
+      "explanation": "Paramecium moves by cilia and has macro- and micronuclei — Ciliophora."
+    },
+    {
+      "question": "Plasmodium belongs to which protozoan class?",
+      "options": [
+        "Ciliophora",
+        "Sporozoa",
+        "Mastigophora",
+        "Rhizopoda"
+      ],
+      "answer": "B",
+      "explanation": "Plasmodium is a non-motile obligate parasite with a complex life cycle — Sporozoa."
+    },
+    {
+      "question": "Ciliophora are characterised by:",
+      "options": [
+        "Pseudopodia only",
+        "Two types of nuclei",
+        "Flagella only",
+        "No nucleus"
+      ],
+      "answer": "B",
+      "explanation": "Ciliates have both a macronucleus and one or more micronuclei, plus cilia."
+    },
+    {
+      "question": "Protozoa differ from bacteria in that protozoa:",
+      "options": [
+        "Lack a cell membrane",
+        "Are eukaryotic",
+        "Reproduce only sexually",
+        "Have cell walls of peptidoglycan"
+      ],
+      "answer": "B",
+      "explanation": "Protozoa are eukaryotic; bacteria are prokaryotic with 70S ribosomes and peptidoglycan walls."
+    },
+    {
+      "question": "Trypanosoma moves by means of:",
       "options": [
         "Pseudopodia",
         "Cilia",
-        "No organelle at all",
-        "A single flagellum only"
+        "Flagella",
+        "Gliding only as an adult"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "Trypanosoma is a mastigophoran (flagellate) that swims with a flagellum."
     },
     {
-      "question": "Plasmodium is a sporozoan because it",
+      "question": "Which protozoan class is entirely parasitic?",
       "options": [
-        "Has a prehensile tail",
-        "Lacks locomotor organelles and forms spores as a parasite",
-        "Has a macronucleus and a micronucleus like Paramecium",
-        "Is a green plant"
+        "Rhizopoda",
+        "Mastigophora",
+        "Ciliophora",
+        "Sporozoa"
       ],
-      "answer": "B"
-    },
-    {
-      "question": "Euglena is classified by its",
-      "options": [
-        "Green colour alone, as a plant",
-        "Flagellum, as a flagellate",
-        "Cilia",
-        "Pseudopodia"
-      ],
-      "answer": "B"
+      "answer": "D",
+      "explanation": "Sporozoa (Apicomplexa) are obligate parasites with complex life cycles."
     }
   ]
 }
