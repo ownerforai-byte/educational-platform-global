@@ -91,7 +91,7 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 60 | Rate of Heat Flow (5h) | Stefan-Boltzmann law | `04-stefan-boltzmann-law.json` | **Completed** |
 | 61 | Ideal Gas (5h) | Ideal gas equation | `01-ideal-gas-equation.json` | **Completed** |
 | 62 | Ideal Gas (5h) | Molecular properties of matter | `02-molecular-properties-of-matter.json` | **Completed** |
-| 63 | Ideal Gas (5h) | Kinetic-molecular model of an ideal gas | TBD | Not started |
+| 63 | Ideal Gas (5h) | Kinetic-molecular model of an ideal gas | `02-kinetic-molecular-model.json` | **Completed** |
 | 64 | Ideal Gas (5h) | Derivation of pressure exerted by gas | `04-derivation-of-pressure-exerted-by-gas.json` | **Completed** |
 | 65 | Ideal Gas (5h) | Average translational kinetic energy of gas molecule | `05-average-translational-kinetic-energy-of-gas-molecule.json` | **Completed** |
 | 66 | Ideal Gas (5h) | Boltzmann constant, root mean square speed | `06-boltzmann-constant-root-mean-square-speed.json` | **Completed** |
