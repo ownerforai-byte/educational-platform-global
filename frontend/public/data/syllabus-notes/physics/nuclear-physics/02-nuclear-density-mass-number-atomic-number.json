@@ -5,20 +5,10 @@
   "topicTitle": "Nuclear density; mass number; atomic number",
   "relevance": 100,
   "notes": [
-    "Mass Number (A): Total number of nucleons (protons + neutrons) in nucleus. A = Z + N. Dimensionless integer. Nuclei with same A but different Z are isobars.",
-    "Atomic Number (Z): Number of protons in nucleus = number of electrons in neutral atom. Determines element identity and chemical properties. Nuclei with same Z but different N are isotopes.",
-    "Neutron Number (N): Number of neutrons = A - Z. Nuclei with same N but different Z are isotones.",
-    "Nuclear Density: Density ρ = mass/volume. Nuclear mass ≈ A × m_p (m_p ≈ 1.67 × 10⁻²⁷ kg). Volume = (4/3)πR³ = (4/3)π(R₀A^(1/3))³ = (4/3)πR₀³A. Density ρ = A·m_p / ((4/3)πR₀³A) = 3m_p/(4πR₀³) — INDEPENDENT of A!",
-    "Nuclear Density Value: ρ ≈ 2.3 × 10¹⁷ kg/m³ — about 10¹⁴ times denser than ordinary matter. Comparable to neutron star density.",
-    "Nuclear Size: Radius R = R₀A^(1/3), R₀ ≈ 1.2 × 10⁻¹⁵ m. Volume ∝ A — nucleus grows linearly with nucleon count, explaining constant density.",
-    "Isobars, Isotopes, Isotones: Isobars: same A, different Z. Isotopes: same Z, different A (same element). Isotones: same N, different Z.",
-    "Nuclear Mass vs Atomic Mass: Nuclear mass = atomic mass - mass of Z electrons + binding energy of electrons/c² (electron binding negligible, ~eV scale vs MeV nuclear).",
-    "# Nuclear density; mass number; atomic number\n\n## 1. Introduction\nPhysical picture of **Nuclear density; mass number; atomic number** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Nuclear Physics fill pass.\n\n## 2. Concepts and laws\n### Nuclear density\n### mass number\n### atomic number\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Constants and values**\n\n| Constant or quantity | Value (CODATA/SI 2019) | Where used | Validity note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Nuclear density; mass number; atomic number — decay or band-structure plot (authored SVG, plotted from note data)\n- **D2** — Nuclear density; mass number; atomic number — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Nuclear density; mass number; atomic number — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Nuclear density; mass number; atomic number — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Atom's ID Card\n\nTwo integers — Z and A — identify any nucleus completely. Z fixes the element and its chemistry; A fixes the isotope and its nuclear behaviour. And the pair explains why all nuclear matter packs to the same astonishing density.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Atomic number and mass number\n\n- **Atomic number Z:** the number of protons — defines the element and its position in the periodic table; equals the nuclear charge +Ze and, for a neutral atom, the electron count.\n- **Mass number A:** the total number of nucleons (protons + neutrons); A = Z + N.\n- Notation: $_{Z}^{A}X$ — e.g. $_{92}^{238}U$ has Z = 92, A = 238, N = 146.\n\n### 2.2 Nuclear radius and density\n\nNuclear radius grows with the cube root of mass number:\n$$R = R_0 A^{1/3}, \\qquad R_0 ≈ 1.2 \\text{ fm} = 1.2\\times10^{-15} \\text{ m}$$\nNuclear volume $V = \\frac{4}{3}\\pi R^3 \\propto A$, and mass ∝ A, so:\n$$\\rho = \\frac{Am_n}{\\frac{4}{3}\\pi R_0^3 A} = \\frac{m_n}{\\frac{4}{3}\\pi R_0^3} ≈ 2\\times10^{17} \\text{ kg/m}^3 \\quad \\text{(constant!)}$$\n— nuclear matter is incompressible: every nucleus packs nucleons at the same density.\n\n### 2.3 Worked numericals\n\n**Q (NEB-style):** Find the radius of the $_{92}^{238}U$ nucleus.\n$$R = 1.2\\times10^{-15} \\times 238^{1/3} = 1.2\\times10^{-15} \\times 6.2 ≈ 7.4\\times10^{-15} \\text{ m} = 7.4 \\text{ fm}$$\n\n**Q (NEB-style):** Compare the densities of $_{1}^{1}H$ and $_{92}^{238}U$ nuclei.\nBoth ≈ 2×10¹⁷ kg/m³ — density is independent of A; only the radius grows.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 105:** Rutherford's discovery motivates R ∝ A^(1/3) from scattering data.\n- **To Topic 107:** same Z, different A = isotopes; same A, different Z = isobars.\n- **To Topic 109:** A and Z enter the mass-defect formula directly.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the R = R₀A^(1/3) numericals and the constant-density argument as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. Define Z and A with an example (2m).\n2. Show nuclear density is independent of A (3m).\n3. Radius numerical for a named nucleus (2–3m).\n\n### 4.3 Common examination mistakes\n\n1. Using R ∝ A instead of R ∝ A^(1/3).\n2. Confusing Z (protons) with A (nucleons).\n3. Forgetting fm = 10⁻¹⁵ m in radius calculations."
   ],
   "specificConditions": [
     "Constant Nuclear Density: The result ρ ≈ constant applies to all nuclei (light and heavy) — strong evidence that nuclear force saturates and nucleons are tightly packed.",
@@ -26,74 +16,38 @@
     "Atomic Mass Unit: 1 u = 1.6605 × 10⁻²⁷ kg = 931.5 MeV/c². Carbon-12 defined as exactly 12 u."
   ],
   "formulas": [
-    "Mass number: A = Z + N",
-    "Neutron number: N = A - Z",
-    "Nuclear radius: R = R₀A^(1/3), R₀ ≈ 1.2 fm",
-    "Nuclear volume: V = (4/3)πR₀³A",
-    "Nuclear density: ρ = 3m_p/(4πR₀³) ≈ 2.3 × 10¹⁷ kg/m³",
-    "1 u = 1.6605 × 10⁻²⁷ kg = 931.5 MeV/c²",
-    "Atomic mass ≈ nuclear mass + Z·m_e"
+    "- A = Z + N\n- R = 1.2×10⁻¹⁵ A^(1/3) m\n- ρ = 3m_n/(4πR₀³) ≈ 2×10¹⁷ kg/m³"
   ],
   "keyPoints": [
-    "A = Z + N: mass number = protons + neutrons.",
-    "Z determines element identity; N determines neutron count.",
-    "Nuclear density ≈ 2.3 × 10¹⁷ kg/m³ — same for all nuclei.",
-    "Nuclear density is INDEPENDENT of mass number A.",
-    "Isotopes: same Z; Isobars: same A; Isotones: same N.",
-    "R = R₀A^(1/3): nuclear volume grows linearly with A."
+    "A = Z + N; R = 1.2A^(1/3) fm; ρ ≈ 2×10¹⁷ kg/m³ for all nuclei."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"The mass number A equals the number of protons plus neutrons; the atomic number Z equals the number of protons.\""
+  ],
   "importantNotes": [
-    "Nuclear density being constant means nuclear force is short-range and saturates — each nucleon interacts only with nearest neighbors.",
-    "1 u = 931.5 MeV/c² is the key conversion for nuclear energy calculations.",
-    "Isotopes have same chemical properties (same Z/electron configuration) but different nuclear properties.",
-    "Nuclear density (~10¹⁷ kg/m³) is vastly greater than atomic density (~10³ kg/m³) because atom is mostly empty space."
+    "No verified PYQ; NEB-style practice (definitions 2m, density 3m, radius 2–3m)."
   ],
   "examShortTricks": [
-    "Nuclear density is the SAME for all nuclei — memorize ≈ 2.3 × 10¹⁷ kg/m³.",
-    "R = R₀A^(1/3) — volume ∝ A, radius ∝ A^(1/3).",
-    "Isotopes: same Z; Isobars: same A; Isotones: same N.",
-    "1 u = 931.5 MeV/c² for mass-energy conversions.",
-    "N = A - Z for neutron count."
+    "\"R/R₀ = A^(1/3) — cube-root the mass number.\""
   ],
   "examNotes": [
-    "NEB frequently asks for nuclear density calculation and why it is constant.",
-    "Distinguish isotopes, isobars, isotones — common conceptual question.",
-    "Calculate nuclear radius from mass number.",
-    "Understand atomic mass unit and MeV/c² conversion."
+    "Show the density derivation in two lines: mass ∝ A, volume ∝ A."
   ],
   "examples": [
-    "Nuclear density: ρ = 3(1.67×10⁻²⁷)/(4π(1.2×10⁻¹⁵)³) ≈ 2.3 × 10¹⁷ kg/m³.",
-    "Carbon-12: Z = 6, A = 12, N = 6. Radius R = 1.2 × 12^(1/3) ≈ 2.7 fm.",
-    "Uranium-238: Z = 92, A = 238, N = 146. Radius R = 1.2 × 238^(1/3) ≈ 7.4 fm.",
-    "Isotopes of hydrogen: ¹H (Z=1,N=0), ²H/D (Z=1,N=1), ³H/T (Z=1,N=2)."
+    "***Uranium-238*** — Z = 92, N = 146, R ≈ 7.4 fm."
   ],
   "practiceQuestions": [
-    "Q2. Show that nuclear density is independent of mass number A.",
-    "Q3. Calculate nuclear density and compare with ordinary matter density.",
-    "Q4. Distinguish between isotopes, isobars, and isotones with examples.",
-    "Q5. Calculate radius of gold nucleus (A = 197) and uranium nucleus (A = 238).",
-    "Q6. Convert 1 u to kg and to MeV/c²."
+    "**Numerical (2m): Find the radius of $_{6}^{12}C$.** — R = 1.2 × 12^(1/3) = 1.2 × 2.29 ≈ 2.7 fm."
   ],
   "practice": [
-    "Calculate Z, N, A for given nuclides.",
-    "Compute nuclear density from fundamental constants.",
-    "Find nuclear radius using R = R₀A^(1/3).",
-    "Classify nuclides as isotopes/isobars/isotones.",
-    "Convert between u, kg, and MeV/c²."
+    "Why don't nuclei collapse further?"
   ],
   "universalFacts": [
-    "All nuclei have essentially the same density — unlike atoms whose densities vary widely.",
-    "Neutron stars have densities comparable to nuclear density — they are essentially giant nuclei held by gravity.",
-    "The constancy of nuclear density implies nuclear force saturates — each nucleon interacts with only a few neighbors.",
-    "1 u is defined such that carbon-12 atom has mass exactly 12 u."
+    "A sugar-cube of nuclear matter would mass about a billion tonnes."
   ],
   "confusion": [
-    "Confusing mass number A with atomic mass: A is integer count; atomic mass is in u (includes mass defect).",
-    "Thinking isotopes have different chemical properties: Same Z → same electrons → same chemistry.",
-    "Believing nuclear density varies with element: It is constant (~10¹⁷ kg/m³) for all nuclei.",
-    "Confusing isobars (same A) with isotopes (same Z).",
-    "Thinking neutrons contribute to chemical properties: Neutrons affect mass/nuclear stability, not chemistry."
+    "**Z defines the element; A defines the isotope** — chemistry follows Z, nuclear behaviour follows A.",
+    "**Radius grows as A^(1/3), not A** — that cube root is why density stays constant."
   ],
   "mcs": [
     {
@@ -155,6 +109,144 @@
   "animation3D": "nuclear-structure",
   "motionGraphics": "nucleus-composition",
   "visualType": "nucleus-composition",
-  "summary": "Mass number A = Z + N; atomic number Z defines element. Nuclear density ≈ 2.3 × 10¹⁷ kg/m³ is constant for all nuclei and independent of A. Nuclear radius R = R₀A^(1/3). Isotopes (same Z), isobars (same A), isotones (same N) classify nuclides.",
-  "source": "skeleton-v2"
+  "summary": "Every nucleus is labelled by **atomic number Z** (protons — fixes the element and chemistry) and **mass number A** (protons + neutrons; A = Z + N), written $_{Z}^{A}X$ (uranium-238: Z = 92, N = 146). Scattering data show the radius grows as $R = 1.2A^{1/3}$ fm, so volume ∝ A while mass ∝ A — hence **nuclear density ≈ 2×10¹⁷ kg/m³ is the same for every nucleus**: nuclear matter is effectively incompressible. A uranium nucleus (R ≈ 7.4 fm) and a carbon nucleus (R ≈ 2.7 fm) differ in size, not in density.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Atom's ID Card\n\nTwo integers — Z and A — identify any nucleus completely. Z fixes the element and its chemistry; A fixes the isotope and its nuclear behaviour. And the pair explains why all nuclear matter packs to the same astonishing density.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Atomic number and mass number\n\n- **Atomic number Z:** the number of protons — defines the element and its position in the periodic table; equals the nuclear charge +Ze and, for a neutral atom, the electron count.\n- **Mass number A:** the total number of nucleons (protons + neutrons); A = Z + N.\n- Notation: $_{Z}^{A}X$ — e.g. $_{92}^{238}U$ has Z = 92, A = 238, N = 146.\n\n### 2.2 Nuclear radius and density\n\nNuclear radius grows with the cube root of mass number:\n$$R = R_0 A^{1/3}, \\qquad R_0 ≈ 1.2 \\text{ fm} = 1.2\\times10^{-15} \\text{ m}$$\nNuclear volume $V = \\frac{4}{3}\\pi R^3 \\propto A$, and mass ∝ A, so:\n$$\\rho = \\frac{Am_n}{\\frac{4}{3}\\pi R_0^3 A} = \\frac{m_n}{\\frac{4}{3}\\pi R_0^3} ≈ 2\\times10^{17} \\text{ kg/m}^3 \\quad \\text{(constant!)}$$\n— nuclear matter is incompressible: every nucleus packs nucleons at the same density.\n\n### 2.3 Worked numericals\n\n**Q (NEB-style):** Find the radius of the $_{92}^{238}U$ nucleus.\n$$R = 1.2\\times10^{-15} \\times 238^{1/3} = 1.2\\times10^{-15} \\times 6.2 ≈ 7.4\\times10^{-15} \\text{ m} = 7.4 \\text{ fm}$$\n\n**Q (NEB-style):** Compare the densities of $_{1}^{1}H$ and $_{92}^{238}U$ nuclei.\nBoth ≈ 2×10¹⁷ kg/m³ — density is independent of A; only the radius grows.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 105:** Rutherford's discovery motivates R ∝ A^(1/3) from scattering data.\n- **To Topic 107:** same Z, different A = isotopes; same A, different Z = isobars.\n- **To Topic 109:** A and Z enter the mass-defect formula directly.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the R = R₀A^(1/3) numericals and the constant-density argument as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. Define Z and A with an example (2m).\n2. Show nuclear density is independent of A (3m).\n3. Radius numerical for a named nucleus (2–3m).\n\n### 4.3 Common examination mistakes\n\n1. Using R ∝ A instead of R ∝ A^(1/3).\n2. Confusing Z (protons) with A (nucleons).\n3. Forgetting fm = 10⁻¹⁵ m in radius calculations."
+    ],
+    "confusion": [
+      "**Z defines the element; A defines the isotope** — chemistry follows Z, nuclear behaviour follows A.",
+      "**Radius grows as A^(1/3), not A** — that cube root is why density stays constant."
+    ],
+    "keyPoints": [
+      "A = Z + N; R = 1.2A^(1/3) fm; ρ ≈ 2×10¹⁷ kg/m³ for all nuclei."
+    ],
+    "importantConcepts": [
+      "**Nuclear matter is incompressible** — mass ∝ volume at fixed density."
+    ],
+    "examples": [
+      "***Uranium-238*** — Z = 92, N = 146, R ≈ 7.4 fm."
+    ],
+    "universalFacts": [
+      "A sugar-cube of nuclear matter would mass about a billion tonnes."
+    ],
+    "importantStatements": [
+      "\"The mass number A equals the number of protons plus neutrons; the atomic number Z equals the number of protons.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (definitions 2m, density 3m, radius 2–3m)."
+    ],
+    "examShortTricks": [
+      "\"R/R₀ = A^(1/3) — cube-root the mass number.\""
+    ],
+    "examNotes": [
+      "Show the density derivation in two lines: mass ∝ A, volume ∝ A."
+    ],
+    "formulas": [
+      "- A = Z + N\n- R = 1.2×10⁻¹⁵ A^(1/3) m\n- ρ = 3m_n/(4πR₀³) ≈ 2×10¹⁷ kg/m³"
+    ],
+    "practice": [
+      "Why don't nuclei collapse further?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (2m): Find the radius of $_{6}^{12}C$.** — R = 1.2 × 12^(1/3) = 1.2 × 2.29 ≈ 2.7 fm."
+    ]
+  },
+  "importantConcepts": [
+    "**Nuclear matter is incompressible** — mass ∝ volume at fixed density."
+  ],
+  "mcqs": [
+    {
+      "question": "Atomic number Z counts:",
+      "options": [
+        "Neutrons",
+        "Protons",
+        "Nucleons",
+        "Electrons only"
+      ],
+      "answer": "B",
+      "explanation": "Defines the element."
+    },
+    {
+      "question": "Mass number A equals:",
+      "options": [
+        "Z",
+        "N",
+        "Z + N",
+        "Z − N"
+      ],
+      "answer": "C",
+      "explanation": "Nucleon count."
+    },
+    {
+      "question": "Nuclear radius scales as:",
+      "options": [
+        "A",
+        "A^(1/3)",
+        "A²",
+        "A^(1/2)"
+      ],
+      "answer": "B",
+      "explanation": "R = 1.2A^(1/3) fm."
+    },
+    {
+      "question": "Nuclear density is:",
+      "options": [
+        "Higher for heavy nuclei",
+        "Nearly constant",
+        "Lower for heavy nuclei",
+        "Zero"
+      ],
+      "answer": "B",
+      "explanation": "Mass ∝ volume."
+    },
+    {
+      "question": "U-238 has how many neutrons?",
+      "options": [
+        "92",
+        "238",
+        "146",
+        "330"
+      ],
+      "answer": "C",
+      "explanation": "238 − 92."
+    },
+    {
+      "question": "1 fm equals:",
+      "options": [
+        "10⁻⁹ m",
+        "10⁻¹² m",
+        "10⁻¹⁵ m",
+        "10⁻¹⁸ m"
+      ],
+      "answer": "C",
+      "explanation": "Femtometre."
+    },
+    {
+      "question": "Carbon-12's nuclear radius ≈",
+      "options": [
+        "2.7 fm",
+        "7.4 fm",
+        "1.2 fm",
+        "12 fm"
+      ],
+      "answer": "A",
+      "explanation": "1.2 × 12^(1/3)."
+    },
+    {
+      "question": "For a neutral atom, Z also equals:",
+      "options": [
+        "The neutron count",
+        "The electron count",
+        "The mass number",
+        "The density"
+      ],
+      "answer": "B",
+      "explanation": "Charge balance."
+    }
+  ]
 }

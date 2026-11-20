@@ -133,13 +133,13 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 102 | DC Circuits (7h) | Potential divider | `04-potential-divider.json` | **Completed** |
 | 103 | DC Circuits (7h) | Electromotive force of a source, internal resistance | `06-electromotive-force-of-a-source-internal-resistance.json` | **Completed** |
 | 104 | DC Circuits (7h) | Work and power in electrical circuits | `07-work-and-power-in-electrical-circuits.json` | **Completed** |
-| 105 | Nuclear Physics (6h) | Nucleus: discovery of nucleus | TBD | Not started |
-| 106 | Nuclear Physics (6h) | Nuclear density; mass number; atomic number | TBD | Not started |
-| 107 | Nuclear Physics (6h) | Atomic mass; isotopes | TBD | Not started |
-| 108 | Nuclear Physics (6h) | Einstein's mass-energy relation | TBD | Not started |
-| 109 | Nuclear Physics (6h) | Mass defect, packing fraction, binding energy per nucleon | TBD | Not started |
-| 110 | Nuclear Physics (6h) | Creation and annihilation | TBD | Not started |
-| 111 | Nuclear Physics (6h) | Nuclear fission and fusion | TBD | Not started |
+| 105 | Nuclear Physics (6h) | Nucleus: discovery of nucleus | `01-nucleus-discovery-of-nucleus.json` | **Completed** |
+| 106 | Nuclear Physics (6h) | Nuclear density; mass number; atomic number | `02-nuclear-density-mass-number-atomic-number.json` | **Completed** |
+| 107 | Nuclear Physics (6h) | Atomic mass; isotopes | `02-atomic-mass-isotopes.json` | **Completed** |
+| 108 | Nuclear Physics (6h) | Einstein's mass-energy relation | `04-einstein-s-mass-energy-relation.json` | **Completed** |
+| 109 | Nuclear Physics (6h) | Mass defect, packing fraction, binding energy per nucleon | `05-mass-defect-packing-fraction-binding-energy-per-nucleon.json` | **Completed** |
+| 110 | Nuclear Physics (6h) | Creation and annihilation | `06-creation-and-annihilation.json` | **Completed** |
+| 111 | Nuclear Physics (6h) | Nuclear fission and fusion | `07-nuclear-fission-and-fusion.json` | **Completed** |
 | 112 | Solids (2h) | Energy bands in solids (qualitative ideas) | TBD | Not started |
 | 113 | Solids (2h) | Difference between metals, insulators and semiconductors using band theory | TBD | Not started |
 | 114 | Solids (2h) | Intrinsic and extrinsic semiconductors | TBD | Not started |
@@ -172,3 +172,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 21 — Unit 21 Potential (3 topics) upgraded: potential difference, point-charge potential, potential energy & electron volt; equipotential surfaces; potential gradient (E = −dV/dr, shell interior). Verified PYQs used: definitions 2021 2m, volt MCQ 2023 1m, W–V–n 2022 4m, eV numerical 2020 3m, V numerical 2024 2m, eV definition 2024 2m, PE numerical 2024 3m, equipotential properties 2024 3m, potential+unit+E–V 2024 3m, hollow sphere 2024 3m. Next: Unit 22 Capacitor (5 topics).
 - Session 22 — Unit 22 Capacitor (5 topics) upgraded: capacitance & capacitor; parallel plate capacitor (derivation C = ε₀A/d); combination of capacitors; energy of charged capacitor; effect of a dielectric (polarization). Verified PYQs used: uses 2024 2m, capacitance derivation 2023 5m & 2024 5m, 177 pF numerical 2024 3m, series/parallel 2024 3m, 0.03 J 2022 3m, 0.06 J 2024 2m, dielectric explanation 2024 3m. Next: Unit 23 DC Circuits (7 topics).
 - Session 23 — Unit 23 DC Circuits (7 topics) upgraded: current & drift velocity (I = neAv_d); Ohm’s law & resistivity; ohmic/non-ohmic I–V relations; resistances in series & parallel (+ Wheatstone bridge); potential divider (+ potentiometer); emf & internal resistance (+ Kirchhoff’s laws); work & power in circuits. Verified PYQs used: drift derivation 2024 3m, Kirchhoff 2022 5m & 2024 5m, 2-3-6 Ω parallel 2021 4m, 6/3 Ω parallel 2024 3m, Wheatstone 2024 3m, potentiometer 2024 3m, terminal voltage 2024 3m. Ohm’s law, ohmic/non-ohmic, work & power: NEB-style practice. Next: Unit 24 Nuclear Physics (7 topics).
+- Session 24 — Unit 24 Nuclear Physics (7 topics) upgraded: Rutherford discovery of the nucleus; nuclear density & Z/A; atomic mass & isotopes (+ radioactive half-life); Einstein’s mass–energy relation; mass defect, packing fraction & BE/nucleon; pair creation & annihilation; fission vs fusion. Verified PYQs used: decay constant 2024 2m, half-life fraction + activity 2023 3m, (1/2)ⁿ MCQ 2020 1m, mass defect & binding energy 2023 3m, fission vs fusion 2022 3m. Rutherford, density, Einstein, creation/annihilation: NEB-style practice. Next: Unit 25 Solids (3 topics).

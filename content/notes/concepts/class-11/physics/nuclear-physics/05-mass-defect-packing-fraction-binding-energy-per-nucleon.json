@@ -5,19 +5,10 @@
   "topicTitle": "Mass defect, packing fraction, binding energy per nucleon",
   "relevance": 100,
   "notes": [
-    "Mass Defect: The mass defect Δm is the difference between the sum of individual nucleon masses and the actual nuclear mass: Δm = Z·m_p + N·m_n - M_nucleus. This \"missing mass\" is converted to binding energy when the nucleus forms.",
-    "Binding Energy: The energy required to completely separate a nucleus into its constituent nucleons: BE = Δm·c². It is also the energy released when the nucleus forms from separate nucleons. MEV scale: BE ≈ Δm(u) × 931.5 MeV.",
-    "Binding Energy per Nucleon: BE/A — average energy holding each nucleon in the nucleus. Values range from ~1 MeV (light nuclei) to ~8.8 MeV (Fe-56) to ~7.6 MeV (uranium). Higher BE/A = more stable nucleus.",
-    "Packing Fraction: f = (M - A)/A × 10⁴ where M is atomic mass in u and A is mass number. Can be positive or negative. Related to stability — lower (more negative) packing fraction generally means more stable.",
-    "BE/A Curve: Rises steeply for light nuclei, peaks at Fe-56 (~8.8 MeV), then slowly decreases for heavy nuclei. Explains why fusion (light → medium) and fission (heavy → medium) both release energy.",
-    "Nuclear Stability: Nuclei with BE/A near maximum (Fe-56 region) are most stable. Very light and very heavy nuclei are less stable and can undergo fusion/fission respectively.",
-    "Semi-Empirical Mass Formula: BE = a_v·A - a_s·A^(2/3) - a_c·Z²/A^(1/3) - a_a·(A-2Z)²/A + pairing term. Volume, surface, Coulomb, asymmetry, pairing contributions.",
-    "# Mass defect, packing fraction, binding energy per nucleon\n\n## 1. Introduction\nPhysical picture of **Mass defect** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Nuclear Physics fill pass.\n\n## 2. Concepts and laws\n### Mass defect\n### packing fraction\n### binding energy per nucleon\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Constants and values**\n\n| Constant or quantity | Value (CODATA/SI 2019) | Where used | Validity note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Mass defect — decay or band-structure plot (authored SVG, plotted from note data)\n- **D2** — Mass defect — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Mass defect — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Mass defect — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Missing Mass That Holds Nuclei Together\n\nWeigh a helium nucleus: its parts weigh more than the whole. The missing 0.76% — the **mass defect** — left as binding energy, is the glue of every nucleus and the ledger behind fission and fusion.",
+    "## 2. Fundamental Concepts (NEB 2023)\n\n### 2.1 Mass defect\n\n**Mass defect** is the difference between the sum of the masses of the individual nucleons and the actual mass of the nucleus (NEB 2023, 3m):\n$$\\Delta m = \\left[Zm_p + (A-Z)m_n\\right] - M_{nucleus}$$\n— always positive for bound nuclei: the assembled nucleus weighs *less* than its parts.\n\n### 2.2 Binding energy\n\nThe **binding energy** is the energy equivalent of the mass defect — the work needed to pull the nucleus completely apart:\n$$BE = \\Delta m \\times c^2 \\quad \\text{(in u: } BE \\text{ MeV} = \\Delta m \\times 931.5)$$\nHigher binding energy per nucleon → more stable nucleus.\n\n### 2.3 Packing fraction and BE per nucleon\n\n- **Packing fraction:** $f = \\dfrac{\\Delta m}{A} = \\dfrac{M_{nucleus} - A}{A}$ (in u per nucleon) — negative f means the nucleus is bound (mass less than A nucleons); the more negative, the tighter the packing.\n- **Binding energy per nucleon:** $BE/A = \\dfrac{\\Delta m c^2}{A}$ — the stability measure. It peaks at **~8.8 MeV near iron-56 (A ≈ 56)**, then declines slowly toward uranium.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** For $_{2}^{4}He$: m_p = 1.0073 u, m_n = 1.0087 u, M = 4.0015 u. Find Δm and BE.\n- Δm = [2(1.0073) + 2(1.0087)] − 4.0015 = 4.0320 − 4.0015 = **0.0305 u**\n- BE = 0.0305 × 931.5 ≈ **28.4 MeV** → BE/A ≈ 7.1 MeV/nucleon\n\n### 2.5 The binding-energy curve\n\nRising steeply from light nuclei, peaking at iron-56, declining for heavy nuclei. **Energy is released by any move up the curve**: fusion of light nuclei, fission of heavy ones — both walk toward the iron peak.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 108:** BE = Δmc² is Einstein's relation applied to nuclei.\n- **To Topic 110:** rest energies of particles set the energy scales of creation/annihilation.\n- **To Topic 111:** the curve's shape explains why fission and fusion both release energy.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Nuclear physics | Mass defect & binding energy | What is mass defect? How is it related to binding energy? | 3 | Definition + relation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Helium-4 binding-energy numerical (3m).\n2. Sketch and explain the BE/A curve (3m).\n3. Why is iron the most stable nucleus? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Subtracting the nucleon masses from the nucleus mass in the wrong order (Δm must come out positive).\n2. Forgetting the 931.5 MeV/u factor.\n3. Saying heavier nuclei are always more stable — BE/A *falls* beyond iron."
   ],
   "specificConditions": [
     "Atomic vs Nuclear Mass: Atomic mass includes electrons; for BE calculation use nuclear mass. Electron masses cancel if using atomic masses consistently (Z electrons on both sides).",
@@ -25,78 +16,38 @@
     "Packing Fraction Sign: Negative packing fraction means mass < A (mass defect) — bound nucleus. Positive means unstable relative to nucleons."
   ],
   "formulas": [
-    "Mass defect: Δm = Z·m_p + N·m_n - M",
-    "Binding energy: BE = Δm·c² = Δm(u) × 931.5 MeV",
-    "BE per nucleon: BE/A",
-    "Packing fraction: f = (M - A)/A × 10⁴",
-    "Nuclear mass: M = Z·m_p + N·m_n - Δm",
-    "Semi-empirical: BE = a_v·A - a_s·A^(2/3) - a_c·Z²/A^(1/3) - a_a·(A-2Z)²/A + δ"
+    "- Δm = Zm_p + (A−Z)m_n − M\n- BE = Δmc² = Δm × 931.5 MeV (u)\n- Packing fraction f = (M − A)/A\n- BE/A peaks ≈ 8.8 MeV at ⁵⁶Fe"
   ],
   "keyPoints": [
-    "Mass defect Δm = sum of nucleon masses - actual nuclear mass.",
-    "Binding energy BE = Δm·c² — energy to separate nucleus into nucleons.",
-    "BE/A peaks at Fe-56 (~8.8 MeV) — most stable nucleus.",
-    "Packing fraction f = (M - A)/A × 10⁴.",
-    "Fusion (light → Fe) and fission (heavy → Fe) both release energy."
+    "Δm = [Zm_p + (A−Z)m_n] − M; BE = Δm × 931.5 MeV per u; BE/A peaks ~8.8 MeV at A ≈ 56."
   ],
   "importantStatements": [
-    "Statement 1: Mass defect Δm = Z·m_p + N·m_n - M_nucleus.",
-    "Statement 2: Binding energy BE = Δm·c² holds nucleus together.",
-    "Statement 3: Binding energy per nucleon BE/A indicates nuclear stability.",
-    "Statement 4: BE/A peaks at iron-56 (~8.8 MeV/nucleon).",
-    "Statement 5: Packing fraction f = (M - A)/A × 10⁴."
+    "\"Mass defect is the difference between the sum of the masses of the individual nucleons and the actual nuclear mass; binding energy is its energy equivalent.\""
   ],
   "importantNotes": [
-    "BE/A, not total BE, determines stability — compare nuclei of different sizes using BE/A.",
-    "Using atomic masses: electron masses cancel in Δm calculation if consistent.",
-    "Fe-56 is the most stable nucleus — end point of both fusion and fission energy release.",
-    "Heavy nuclei (A > 200) can release energy by fission; light nuclei (A < 20) by fusion."
+    "Verified PYQ: mass defect + binding energy relation (2023, 3m)."
   ],
   "examShortTricks": [
-    "BE(MeV) = Δm(u) × 931.5 — quick conversion.",
-    "BE/A peak at Fe-56 = ~8.8 MeV — memorize.",
-    "Fusion releases energy for light nuclei; fission for heavy nuclei.",
-    "Packing fraction negative → bound/stable nucleus."
+    "\"BE (MeV) = Δm (u) × 931.5.\""
   ],
   "examNotes": [
-    "NEB frequently asks for mass defect and binding energy calculations.",
-    "Draw and interpret BE/A curve — standard exam question.",
-    "Explain why fusion and fission both release energy using BE/A curve.",
-    "Calculate packing fraction from atomic mass data."
+    "Sketch the BE/A curve with the iron peak labelled — it carries marks."
   ],
   "examples": [
-    "Helium-4: 2p + 2n mass = 2(1.007825) + 2(1.008665) = 4.03298 u; actual M = 4.00260 u; Δm = 0.03038 u; BE = 0.03038 × 931.5 = 28.3 MeV; BE/A = 7.07 MeV.",
-    "Uranium-238: Δm ≈ 1.9 u; BE ≈ 1.9 × 931.5 ≈ 1770 MeV; BE/A ≈ 7.4 MeV.",
-    "Iron-56: BE/A ≈ 8.8 MeV — maximum on curve.",
-    "Packing fraction for ¹⁶O: M = 15.9949 u, A = 16: f = (15.9949 - 16)/16 × 10⁴ = -32."
+    "***Helium-4*** — Δm = 0.0305 u → BE ≈ 28.4 MeV, 7.1 MeV per nucleon."
   ],
   "practiceQuestions": [
-    "Q1. Define mass defect and binding energy. Derive BE = Δm·c².",
-    "Q2. Calculate binding energy per nucleon for ⁴He given masses.",
-    "Q3. Explain the binding energy per nucleon curve and its significance.",
-    "Q4. Define packing fraction and calculate it for ¹²C (M = 12.0000 u).",
-    "Q5. Why do both nuclear fission and fusion release energy?",
-    "Q6. Calculate BE/A for ²³⁸U and compare with ⁵⁶Fe."
+    "**Numerical (3m): For $_{2}^{4}He$ find Δm and BE.** — Δm = 4.0320 − 4.0015 = 0.0305 u; BE = 0.0305 × 931.5 ≈ 28.4 MeV (7.1 MeV/nucleon)."
   ],
   "practice": [
-    "Calculate mass defect from individual nucleon masses and nuclear mass.",
-    "Compute BE and BE/A for various nuclei.",
-    "Draw BE/A vs A curve and identify stable region.",
-    "Calculate packing fraction from atomic masses.",
-    "Apply semi-empirical mass formula qualitatively."
+    "Why does uranium fission release energy if heavy nuclei are \"full\"?"
   ],
   "universalFacts": [
-    "Binding energy per nucleon (~8 MeV) is a million times larger than chemical bond energy (~eV) — nuclear energy density is enormous.",
-    "Iron-56 (BE/A = 8.8 MeV) is the most stable nucleus — stellar nucleosynthesis ends at iron.",
-    "The sun's energy comes from hydrogen fusion (H → He) because BE/A increases from H to He.",
-    "Nuclear fission of uranium releases ~200 MeV per nucleus — mostly as kinetic energy of fragments."
+    "Fusion in stars and fission in reactors both climb the BE/A curve toward iron."
   ],
   "confusion": [
-    "Confusing total BE with BE/A: Total BE increases with A but stability depends on BE/A.",
-    "Thinking mass defect is 'lost' mass: It's converted to binding energy — mass-energy conserved.",
-    "Using nuclear masses vs atomic masses inconsistently: Electron masses must cancel.",
-    "Believing all heavy nuclei fission: Only certain isotopes (U-235, Pu-239) are fissile with thermal neutrons.",
-    "Confusing packing fraction sign convention."
+    "**Δm is positive for bound nuclei** — the whole weighs LESS than the sum of its parts.",
+    "**Iron-56 is the stability peak** — energy is released moving toward it from either side."
   ],
   "mcs": [
     {
@@ -158,6 +109,144 @@
   "animation3D": "binding-energy-curve",
   "motionGraphics": "mass-defect",
   "visualType": "binding-energy",
-  "summary": "Mass defect Δm = Z·m_p + N·m_n - M; binding energy BE = Δm·c². BE/A peaks at Fe-56 (~8.8 MeV) indicating maximum stability. Packing fraction f = (M-A)/A × 10⁴. Fusion (light→Fe) and fission (heavy→Fe) both release energy.",
-  "source": "skeleton-v2"
+  "summary": "The **mass defect** Δm = [Zm_p + (A−Z)m_n] − M is the shortfall between the free nucleons' total mass and the actual nuclear mass (NEB 2023, 3m) — bound nuclei weigh less than their parts. Its energy equivalent, **BE = Δmc²** (Δm × 931.5 MeV per u), is the energy to dismantle the nucleus; the **packing fraction** Δm/A and **BE per nucleon** measure stability. Helium-4: Δm = 0.0305 u → BE ≈ 28.4 MeV (7.1 MeV/nucleon). The BE/A curve rises to ~8.8 MeV at iron-56 then declines — so **fusion of light nuclei and fission of heavy nuclei both release energy** by moving toward the iron peak.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Missing Mass That Holds Nuclei Together\n\nWeigh a helium nucleus: its parts weigh more than the whole. The missing 0.76% — the **mass defect** — left as binding energy, is the glue of every nucleus and the ledger behind fission and fusion.",
+      "## 2. Fundamental Concepts (NEB 2023)\n\n### 2.1 Mass defect\n\n**Mass defect** is the difference between the sum of the masses of the individual nucleons and the actual mass of the nucleus (NEB 2023, 3m):\n$$\\Delta m = \\left[Zm_p + (A-Z)m_n\\right] - M_{nucleus}$$\n— always positive for bound nuclei: the assembled nucleus weighs *less* than its parts.\n\n### 2.2 Binding energy\n\nThe **binding energy** is the energy equivalent of the mass defect — the work needed to pull the nucleus completely apart:\n$$BE = \\Delta m \\times c^2 \\quad \\text{(in u: } BE \\text{ MeV} = \\Delta m \\times 931.5)$$\nHigher binding energy per nucleon → more stable nucleus.\n\n### 2.3 Packing fraction and BE per nucleon\n\n- **Packing fraction:** $f = \\dfrac{\\Delta m}{A} = \\dfrac{M_{nucleus} - A}{A}$ (in u per nucleon) — negative f means the nucleus is bound (mass less than A nucleons); the more negative, the tighter the packing.\n- **Binding energy per nucleon:** $BE/A = \\dfrac{\\Delta m c^2}{A}$ — the stability measure. It peaks at **~8.8 MeV near iron-56 (A ≈ 56)**, then declines slowly toward uranium.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** For $_{2}^{4}He$: m_p = 1.0073 u, m_n = 1.0087 u, M = 4.0015 u. Find Δm and BE.\n- Δm = [2(1.0073) + 2(1.0087)] − 4.0015 = 4.0320 − 4.0015 = **0.0305 u**\n- BE = 0.0305 × 931.5 ≈ **28.4 MeV** → BE/A ≈ 7.1 MeV/nucleon\n\n### 2.5 The binding-energy curve\n\nRising steeply from light nuclei, peaking at iron-56, declining for heavy nuclei. **Energy is released by any move up the curve**: fusion of light nuclei, fission of heavy ones — both walk toward the iron peak.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 108:** BE = Δmc² is Einstein's relation applied to nuclei.\n- **To Topic 110:** rest energies of particles set the energy scales of creation/annihilation.\n- **To Topic 111:** the curve's shape explains why fission and fusion both release energy.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Nuclear physics | Mass defect & binding energy | What is mass defect? How is it related to binding energy? | 3 | Definition + relation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Helium-4 binding-energy numerical (3m).\n2. Sketch and explain the BE/A curve (3m).\n3. Why is iron the most stable nucleus? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Subtracting the nucleon masses from the nucleus mass in the wrong order (Δm must come out positive).\n2. Forgetting the 931.5 MeV/u factor.\n3. Saying heavier nuclei are always more stable — BE/A *falls* beyond iron."
+    ],
+    "confusion": [
+      "**Δm is positive for bound nuclei** — the whole weighs LESS than the sum of its parts.",
+      "**Iron-56 is the stability peak** — energy is released moving toward it from either side."
+    ],
+    "keyPoints": [
+      "Δm = [Zm_p + (A−Z)m_n] − M; BE = Δm × 931.5 MeV per u; BE/A peaks ~8.8 MeV at A ≈ 56."
+    ],
+    "importantConcepts": [
+      "**Binding energy is the missing mass** — the energy that would be needed to unbuild the nucleus."
+    ],
+    "examples": [
+      "***Helium-4*** — Δm = 0.0305 u → BE ≈ 28.4 MeV, 7.1 MeV per nucleon."
+    ],
+    "universalFacts": [
+      "Fusion in stars and fission in reactors both climb the BE/A curve toward iron."
+    ],
+    "importantStatements": [
+      "\"Mass defect is the difference between the sum of the masses of the individual nucleons and the actual nuclear mass; binding energy is its energy equivalent.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: mass defect + binding energy relation (2023, 3m)."
+    ],
+    "examShortTricks": [
+      "\"BE (MeV) = Δm (u) × 931.5.\""
+    ],
+    "examNotes": [
+      "Sketch the BE/A curve with the iron peak labelled — it carries marks."
+    ],
+    "formulas": [
+      "- Δm = Zm_p + (A−Z)m_n − M\n- BE = Δmc² = Δm × 931.5 MeV (u)\n- Packing fraction f = (M − A)/A\n- BE/A peaks ≈ 8.8 MeV at ⁵⁶Fe"
+    ],
+    "practice": [
+      "Why does uranium fission release energy if heavy nuclei are \"full\"?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): For $_{2}^{4}He$ find Δm and BE.** — Δm = 4.0320 − 4.0015 = 0.0305 u; BE = 0.0305 × 931.5 ≈ 28.4 MeV (7.1 MeV/nucleon)."
+    ]
+  },
+  "importantConcepts": [
+    "**Binding energy is the missing mass** — the energy that would be needed to unbuild the nucleus."
+  ],
+  "mcqs": [
+    {
+      "question": "Mass defect is:",
+      "options": [
+        "Nucleus mass minus nucleon masses",
+        "Sum of nucleon masses minus nuclear mass",
+        "Always negative",
+        "Zero"
+      ],
+      "answer": "B",
+      "explanation": "Positive for bound nuclei."
+    },
+    {
+      "question": "NEB 2023: binding energy equals:",
+      "options": [
+        "Δm × c",
+        "Δm × c²",
+        "Δm/c²",
+        "Δm²c"
+      ],
+      "answer": "B",
+      "explanation": "E = Δmc²."
+    },
+    {
+      "question": "1 u of mass defect gives:",
+      "options": [
+        "9.31 MeV",
+        "93.15 MeV",
+        "931.5 MeV",
+        "9315 MeV"
+      ],
+      "answer": "C",
+      "explanation": "Conversion constant."
+    },
+    {
+      "question": "BE/A peaks at about:",
+      "options": [
+        "8.8 MeV near iron",
+        "2 MeV near hydrogen",
+        "20 MeV near uranium",
+        "1 MeV everywhere"
+      ],
+      "answer": "A",
+      "explanation": "A ≈ 56."
+    },
+    {
+      "question": "Helium-4's BE is about:",
+      "options": [
+        "28.4 MeV",
+        "2.8 MeV",
+        "284 MeV",
+        "7.1 MeV total"
+      ],
+      "answer": "A",
+      "explanation": "0.0305 × 931.5."
+    },
+    {
+      "question": "Energy is released in fusion because:",
+      "options": [
+        "Light nuclei are unstable",
+        "BE/A rises toward iron",
+        "Mass increases",
+        "Photons escape"
+      ],
+      "answer": "B",
+      "explanation": "Up the curve."
+    },
+    {
+      "question": "Packing fraction is negative when:",
+      "options": [
+        "The nucleus is unbound",
+        "Mass < A u",
+        "A is odd",
+        "Z is even"
+      ],
+      "answer": "B",
+      "explanation": "Bound state."
+    },
+    {
+      "question": "Beyond iron, heavier nuclei:",
+      "options": [
+        "Grow more stable",
+        "Grow less stable per nucleon",
+        "Are unbound",
+        "Have zero BE"
+      ],
+      "answer": "B",
+      "explanation": "BE/A declines."
+    }
+  ]
 }
