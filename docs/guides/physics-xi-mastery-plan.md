@@ -66,8 +66,8 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 35 | Gravitation (7h) | Potential and kinetic energy of the satellite | `08-potential-and-kinetic-energy-of-the-satellite.json` | **Completed** |
 | 36 | Gravitation (7h) | Geostationary satellite | `09-geostationary-satellite.json` | **Completed** |
 | 37 | Gravitation (7h) | GPS | `10-gps.json` | **Completed** |
-| 38 | Elasticity (4h) | Hooke's law: force constant | TBD | Not started |
-| 39 | Elasticity (4h) | Stress; strain; elasticity and plasticity | TBD | Not started |
+| 38 | Elasticity (4h) | Hooke's law: force constant | `01-hooke-s-law-force-constant.json` | **Completed** |
+| 39 | Elasticity (4h) | Stress; strain; elasticity and plasticity | `02-stress-strain-elasticity.json` | **Completed** |
 | 40 | Elasticity (4h) | Elastic modulus: Young modulus, bulk modulus, shear modulus | `03-elastic-modulus-young-modulus-bulk-modulus-shear-modulus.json` | **Completed** |
 | 41 | Elasticity (4h) | Poisson's ratio | `04-poisson-s-ratio.json` | **Completed** |
 | 42 | Elasticity (4h) | Elastic potential energy | `05-elastic-potential-energy.json` | **Completed** |
