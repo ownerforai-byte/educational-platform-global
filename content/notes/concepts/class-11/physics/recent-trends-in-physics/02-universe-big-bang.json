@@ -5,58 +5,36 @@
   "topicTitle": "Universe and Big Bang",
   "relevance": 100,
   "notes": [
-    "**Big Bang model.** The universe began about 13.8 billion years ago in an extremely hot, dense state and has been expanding and cooling ever since; space itself expands, galaxies recede from each other.",
-    "**Hubble's evidence.** Galaxies show redshift proportional to distance (v = H₀d) — the expansion law that founded observational cosmology.",
-    "**Cosmic microwave background.** The faint 2.7 K microwave glow filling the sky is the cooled remnant of the fireball, released when atoms formed about 380,000 years after the Big Bang.",
-    "**Primordial nucleosynthesis.** In the first minutes, nuclear fusion made hydrogen, helium and traces of lithium; all heavier elements were forged later inside stars.",
-    "**Timeline.** Inflation → matter–radiation equality → recombination and CMB → first stars and galaxies → solar system (about 9 Gyr later) → planets and life.",
-    "Hubble's observation is that distant galaxies recede, and the recession speed is roughly proportional to the distance. Running that expansion backward leads to a hot, dense early state. The cosmic microwave background is the leftover radiation from that state, now cooled to about 2.7 K."
+    "## 1. Topic Introduction — The Expanding Universe\n\nEvery distant galaxy recedes, and the farther it is, the faster it flees — Hubble's law. Run the film backwards and everything converges ~13.8 billion years ago: the **Big Bang**, whose echo still fills the sky as the cosmic microwave background.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Hubble's law\n\nRecession speed is proportional to distance:\n$$v = H_0 d \\qquad H_0 ≈ 70 \\text{ km s}^{-1}\\text{/Mpc}$$\n- Measured from galactic **redshift**: light stretched by expansion shifts to longer wavelengths; z = Δλ/λ ≈ v/c for small speeds.\n- Hubble's law does not mean we sit at the centre — *every* observer sees the same recession pattern: space itself expands.\n\n### 2.2 The Big Bang\n\nThe universe began ~13.8 billion years ago from an extremely hot, dense state and has been expanding and cooling ever since:\n- **10⁻⁶ s:** quarks and leptons; pairs annihilate, leaving a slight matter excess.\n- **3 min:** nuclei form (mostly H and He) — nucleosynthesis.\n- **380,000 yr:** atoms form; the universe turns transparent — the released radiation cools into today's **cosmic microwave background (CMB)** at 2.7 K.\n- **Galaxies form** within the first billion years; expansion continues and, observations say, accelerates (dark energy).\n\n### 2.3 Evidence for the Big Bang\n\n1. **Hubble's recession law** — the expanding universe.\n2. **CMB radiation** — the cooled primordial glow, uniform to ~1 part in 10⁵.\n3. **Light-element abundances** — ~75% H, ~25% He, exactly as nucleosynthesis predicts.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** A galaxy 100 Mpc away recedes at what speed?\n$$v = H_0 d = 70 \\times 100 = 7000 \\text{ km/s}$$\n— its light is redshifted by z ≈ v/c ≈ 0.023.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 115:** the Big Bang's first second produced the particle families.\n- **To Topic 117:** dark matter and dark energy dominate the universe's fate.\n- **To Doppler effect (Unit 4):** redshift is the same physics applied to light.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise Hubble's law, the Big Bang timeline and the three evidence pillars as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. State Hubble's law and its significance (2–3m).\n2. Describe the Big Bang and its evidence (3m).\n3. Recession-speed numerical (2m).\n\n### 4.3 Common examination mistakes\n\n1. Interpreting Hubble's law as an explosion *into* space rather than an expansion *of* space.\n2. Forgetting the CMB as evidence.\n3. Mixing up Mpc and km in Hubble numericals."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in universe and big bang.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**The Big Bang is an expansion OF space, not an explosion INTO space** — there is no centre.",
+    "**The CMB is the Big Bang's afterglow**, cooled to 2.7 K over 13.8 billion years."
   ],
   "practice": [
-    "Solve at least 5 problems on universe and big bang from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Why do all observers see the same Hubble law?"
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding universe and big bang builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of universe and big bang span engineering, physics, economics, and computer science."
+    "Expansion is accelerating — attributed to dark energy, ~70% of the universe's content."
   ],
   "animation3D": "recent-trends-in-physics",
   "motionGraphics": "recent-trends-in-physics",
   "examples": [
-    "Practical demonstration of Universe and Big Bang concepts",
-    "Diagram-based question on Universe and Big Bang",
-    "Application in daily life involving Universe and Big Bang"
+    "***A 100 Mpc galaxy*** — recedes at 7000 km/s."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Universe and Big Bang with suitable example.",
-    "Q2. Solve problems related to Universe and Big Bang.",
-    "Q3. Differentiate between various aspects of Universe and Big Bang.",
-    "Q4. Derive the key formula related to Universe and Big Bang.",
-    "Q5. What are the applications of Universe and Big Bang?"
+    "**NEB-style (2m): A galaxy 50 Mpc away recedes at what speed?** — v = 70 × 50 = 3500 km/s."
   ],
   "formulas": [
-    "Application formula for Universe and Big Bang",
-    "Derivation result for Universe and Big Bang"
+    "- v = H₀d, H₀ ≈ 70 km s⁻¹/Mpc\n- z = Δλ/λ ≈ v/c\n- Age ≈ 13.8 billion years"
   ],
   "keyPoints": [
-    "Galaxy recession speed is about H times distance",
-    "The cosmic microwave background is the cooled glow of the early universe",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "v = H₀d (H₀ ≈ 70 km/s/Mpc); CMB 2.7 K; ~75% H, ~25% He."
   ],
-  "summary": "Universe and Big Bang is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "**Hubble's law**, v = H₀d with H₀ ≈ 70 km s⁻¹/Mpc, makes every galaxy recede with speed proportional to distance — evidence that **space itself expands** (measured via redshift, z ≈ v/c). Running expansion backwards gives the **Big Bang** ~13.8 billion years ago: quarks and leptons in the first microsecond, nucleosynthesis of H and He by 3 minutes, and at 380,000 years the release of radiation that cools into today's **cosmic microwave background** at 2.7 K. Three pillars support the model: Hubble's law, the CMB, and the ~75% H / ~25% He primordial abundances; current observations show the expansion accelerating.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Universe and Big Bang applies",
     "Note 2: Universe and Big Bang connects to multiple other topics in Science",
@@ -65,29 +43,16 @@
     "Note 5: Universe and Big Bang frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Hubble's observation is that distant galaxies recede, and the recession speed is roughly proportional to the distance. Running that expansion backward leads to a hot, dense early state. The cosmic microwave background is the leftover radiation from that state, now cooled to about 2.7 K.",
-    "The working relations are Galaxy recession speed is about H times distance and The cosmic microwave background is the cooled glow of the early universe. Name each symbol, convert the data into SI units, and only then substitute.",
-    "Take H = 70 km/s per megaparsec. Estimate the recession speed of a galaxy 10 megaparsecs away. v ≈ H d. d = 10 Mpc."
+    "\"The recession velocity of a galaxy is proportional to its distance from any observer.\""
   ],
   "importantNotes": [
-    "Note 1: Universe and Big Bang is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Universe and Big Bang",
-    "Note 3: Universe and Big Bang has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Universe and Big Bang",
-    "Note 5: Cross-check your answers using alternative methods for Universe and Big Bang"
+    "No verified PYQ; NEB-style practice (Hubble 2–3m, Big Bang evidence 3m)."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Universe and Big Bang formula",
-    "Trick 2: Elimination technique for Universe and Big Bang MCQs",
-    "Trick 3: Dimensional analysis shortcut for Universe and Big Bang",
-    "Trick 4: Memory aid for Universe and Big Bang formulas",
-    "Trick 5: Time-saving approach for Universe and Big Bang problems"
+    "\"v (km/s) = 70 × d (Mpc).\""
   ],
   "examNotes": [
-    "Focus on numerical problems from Universe and Big Bang",
-    "Practice previous year questions on Universe and Big Bang",
-    "Learn the derivations for Universe and Big Bang thoroughly",
-    "Review common mistakes related to Universe and Big Bang"
+    "List all three evidence items — one mark each in a 3m answer."
   ],
   "mcs": [
     {
@@ -132,11 +97,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Universe and Big Bang",
-    "Concept 2: Key theorem or principle in Universe and Big Bang",
-    "Concept 3: Important application area of Universe and Big Bang",
-    "Concept 4: Fundamental relationship in Universe and Big Bang",
-    "Concept 5: Connection between Universe and Big Bang and other topics"
+    "**Three evidence pillars** — recession law, CMB, light-element abundances."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Universe and Big Bang",
@@ -147,44 +108,92 @@
   ],
   "mcqs": [
     {
-      "question": "Recession speed is roughly",
+      "question": "Hubble's law states:",
       "options": [
-        "H times distance",
-        "Distance over H",
-        "The same for every galaxy",
-        "Zero"
+        "v = H₀d",
+        "v = H₀/d",
+        "d = H₀v",
+        "v = H₀d²"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Proportional recession."
     },
     {
-      "question": "The microwave background is",
+      "question": "H₀ is about:",
       "options": [
-        "Starlight from last night",
-        "Cooled radiation from the hot early universe",
-        "A radio station",
-        "The ozone layer"
+        "70 km/s/Mpc",
+        "70 km/s",
+        "3×10⁸ m/s",
+        "70 Mpc/s"
       ],
-      "answer": "B"
+      "answer": "A",
+      "explanation": "Units matter."
     },
     {
-      "question": "Its temperature now is about",
+      "question": "The CMB temperature is:",
       "options": [
         "2.7 K",
-        "6000 K",
-        "0 K exactly as a theorem",
-        "10^6 K"
+        "270 K",
+        "5800 K",
+        "0 K"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Primordial afterglow."
     },
     {
-      "question": "A galaxy twice as far recedes",
+      "question": "The Big Bang happened about:",
       "options": [
-        "At about twice the speed",
-        "At the same speed",
-        "Toward us",
-        "Not at all"
+        "13.8 billion years ago",
+        "4.6 billion years ago",
+        "6000 years ago",
+        "100 million years ago"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Cosmic age."
+    },
+    {
+      "question": "CMB was released when:",
+      "options": [
+        "Atoms formed (380,000 yr)",
+        "Nuclei formed (3 min)",
+        "Quarks formed",
+        "Galaxies formed"
+      ],
+      "answer": "A",
+      "explanation": "Universe became transparent."
+    },
+    {
+      "question": "Primordial helium abundance is about:",
+      "options": [
+        "75%",
+        "25%",
+        "50%",
+        "2%"
+      ],
+      "answer": "B",
+      "explanation": "Nucleosynthesis."
+    },
+    {
+      "question": "Redshift z ≈",
+      "options": [
+        "v/c",
+        "c/v",
+        "vc",
+        "v·c²"
+      ],
+      "answer": "A",
+      "explanation": "Small speeds."
+    },
+    {
+      "question": "A 100 Mpc galaxy recedes at:",
+      "options": [
+        "70 km/s",
+        "700 km/s",
+        "7000 km/s",
+        "70,000 km/s"
+      ],
+      "answer": "C",
+      "explanation": "70 × 100."
     }
   ],
   "exercises": [
@@ -199,5 +208,50 @@
       ],
       "answer": "700 km/s."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Expanding Universe\n\nEvery distant galaxy recedes, and the farther it is, the faster it flees — Hubble's law. Run the film backwards and everything converges ~13.8 billion years ago: the **Big Bang**, whose echo still fills the sky as the cosmic microwave background.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Hubble's law\n\nRecession speed is proportional to distance:\n$$v = H_0 d \\qquad H_0 ≈ 70 \\text{ km s}^{-1}\\text{/Mpc}$$\n- Measured from galactic **redshift**: light stretched by expansion shifts to longer wavelengths; z = Δλ/λ ≈ v/c for small speeds.\n- Hubble's law does not mean we sit at the centre — *every* observer sees the same recession pattern: space itself expands.\n\n### 2.2 The Big Bang\n\nThe universe began ~13.8 billion years ago from an extremely hot, dense state and has been expanding and cooling ever since:\n- **10⁻⁶ s:** quarks and leptons; pairs annihilate, leaving a slight matter excess.\n- **3 min:** nuclei form (mostly H and He) — nucleosynthesis.\n- **380,000 yr:** atoms form; the universe turns transparent — the released radiation cools into today's **cosmic microwave background (CMB)** at 2.7 K.\n- **Galaxies form** within the first billion years; expansion continues and, observations say, accelerates (dark energy).\n\n### 2.3 Evidence for the Big Bang\n\n1. **Hubble's recession law** — the expanding universe.\n2. **CMB radiation** — the cooled primordial glow, uniform to ~1 part in 10⁵.\n3. **Light-element abundances** — ~75% H, ~25% He, exactly as nucleosynthesis predicts.\n\n### 2.4 Worked numerical\n\n**Q (NEB-style):** A galaxy 100 Mpc away recedes at what speed?\n$$v = H_0 d = 70 \\times 100 = 7000 \\text{ km/s}$$\n— its light is redshifted by z ≈ v/c ≈ 0.023.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 115:** the Big Bang's first second produced the particle families.\n- **To Topic 117:** dark matter and dark energy dominate the universe's fate.\n- **To Doppler effect (Unit 4):** redshift is the same physics applied to light.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise Hubble's law, the Big Bang timeline and the three evidence pillars as **NEB-style practice** (2–3m).\n\n### 4.2 Likely question forms\n\n1. State Hubble's law and its significance (2–3m).\n2. Describe the Big Bang and its evidence (3m).\n3. Recession-speed numerical (2m).\n\n### 4.3 Common examination mistakes\n\n1. Interpreting Hubble's law as an explosion *into* space rather than an expansion *of* space.\n2. Forgetting the CMB as evidence.\n3. Mixing up Mpc and km in Hubble numericals."
+    ],
+    "confusion": [
+      "**The Big Bang is an expansion OF space, not an explosion INTO space** — there is no centre.",
+      "**The CMB is the Big Bang's afterglow**, cooled to 2.7 K over 13.8 billion years."
+    ],
+    "keyPoints": [
+      "v = H₀d (H₀ ≈ 70 km/s/Mpc); CMB 2.7 K; ~75% H, ~25% He."
+    ],
+    "importantConcepts": [
+      "**Three evidence pillars** — recession law, CMB, light-element abundances."
+    ],
+    "examples": [
+      "***A 100 Mpc galaxy*** — recedes at 7000 km/s."
+    ],
+    "universalFacts": [
+      "Expansion is accelerating — attributed to dark energy, ~70% of the universe's content."
+    ],
+    "importantStatements": [
+      "\"The recession velocity of a galaxy is proportional to its distance from any observer.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (Hubble 2–3m, Big Bang evidence 3m)."
+    ],
+    "examShortTricks": [
+      "\"v (km/s) = 70 × d (Mpc).\""
+    ],
+    "examNotes": [
+      "List all three evidence items — one mark each in a 3m answer."
+    ],
+    "formulas": [
+      "- v = H₀d, H₀ ≈ 70 km s⁻¹/Mpc\n- z = Δλ/λ ≈ v/c\n- Age ≈ 13.8 billion years"
+    ],
+    "practice": [
+      "Why do all observers see the same Hubble law?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): A galaxy 50 Mpc away recedes at what speed?** — v = 70 × 50 = 3500 km/s."
+    ]
+  }
 }
