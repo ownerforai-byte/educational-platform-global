@@ -58,26 +58,26 @@ Every upgraded topic note fills the note JSON with:
 | 18 | Introductory Microbiology (5) | Monera: bacteria, cyanobacteria | `01-monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano.json` | **Completed** |
 | 19 | Introductory Microbiology | Virus, bacteriophage | `02-virus-general-introduction-structure-and-importance-of-virus-bacteriophage.json` | **Completed** |
 | 20 | Introductory Microbiology | Biotechnology impacts in microbiology | `02-impacts-of-biotechnology-in-the-field-of-microbiology.json` | **Completed** |
-| 21 | Ecology (11) | Ecosystem ecology; species interactions | `01-ecosystem-ecology.json` | Not started |
-| 22 | Ecology | Pond and forest ecosystem | `01-ecosystem-ecology.json` (merged) | **Completed** |
-| 23 | Ecology | Food chain, food web, pyramids, productivity | `02-food-chain-web.json` | **Completed** |
-| 24 | Ecology | Carbon and nitrogen cycles; succession | `03-biogeochemical-cycles.json` | **Completed** |
-| 25 | Ecology | Hydrophytes and xerophytes | `04-ecological-adaptation.json` | **Completed** |
-| 26 | Ecology | Ecological imbalances | `05-ecological-imbalances.json` | **Completed** |
-| 27 | Vegetation (3) | Vegetation types in Nepal | `01-vegetation-types.json` | Not started |
-| 28 | Vegetation | In-situ and ex-situ conservation | `02-conservation-in-situ-ex-situ.json` | **Completed** |
-| 29 | Vegetation | Vegetation and human activities | `02-conservation-in-situ-ex-situ.json` (merged) | **Completed** |
-| 30 | Introduction to Biology (2) | Scope and fields of biology | `01-scope-fields-biology.json` | Not started |
-| 31 | Introduction to Biology | Relation with other sciences | `02-relation-other-sciences.json` | **Completed** |
-| 32 | Evolutionary Biology (15) | Origin of life; Oparin-Haldane; Miller-Urey | `01-origin-life.json` | Not started |
-| 33 | Evolutionary Biology | Evidences of evolution | `02-evidences-evolution.json` | **Completed** |
-| 34 | Evolutionary Biology | Lamarckism, Darwinism, Neo-Darwinism | `03-theories-evolution.json` | **Completed** |
-| 35 | Evolutionary Biology | Human evolution; position of man | `04-human-evolution.json` | **Completed** |
-| 36 | Evolutionary Biology | New vs old world monkeys, apes, man | `04-human-evolution.json` (merged) | **Completed** |
-| 37 | Evolutionary Biology | Evolution of modern man | `04-human-evolution.json` (merged) | **Completed** |
-| 38 | Faunal Diversity (34) | Protista; Protozoa classification | `01-protista-protozoa.json` | Not started |
-| 39 | Faunal Diversity | Paramecium and Plasmodium | `01-protista-protozoa.json` (merged) | Not started |
-| 40 | Faunal Diversity | Economic importance of P. falciparum | `01-protista-protozoa.json` (merged) | Not started |
+| 21 | Ecology (11) | Ecosystem ecology; species interactions | `01-ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem.json` | **Completed** |
+| 22 | Ecology | Pond and forest ecosystem | `02-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem.json` | **Completed** |
+| 23 | Ecology | Food chain, food web, pyramids, productivity | `02-food-chain-food-web-trophic-level-ecological-pyramids-productivity.json` | **Completed** |
+| 24 | Ecology | Carbon and nitrogen cycles; succession | `04-biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession.json` | **Completed** |
+| 25 | Ecology | Hydrophytes and xerophytes | `04-ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes.json` | **Completed** |
+| 26 | Ecology | Ecological imbalances | `06-ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-a.json` | **Completed** |
+| 27 | Vegetation (3) | Vegetation types in Nepal | `01-vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities.json` | **Completed** |
+| 28 | Vegetation | In-situ and ex-situ conservation | `02-in-situ-protected-areas-and-ex-situ-botanical-garden-seed-bank-conservation.json` | **Completed** |
+| 29 | Vegetation | Vegetation and human activities | `03-natural-environment-vegetation-and-human-activities.json` | **Completed** |
+| 30 | Introduction to Biology (2) | Scope and fields of biology | `01-introduction-to-biology-scope-and-fields-of-biology.json` | **Completed** |
+| 31 | Introduction to Biology | Relation with other sciences | `02-relation-of-biology-with-other-sciences.json` | **Completed** |
+| 32 | Evolutionary Biology (15) | Origin of life; Oparin-Haldane; Miller-Urey | `01-life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment.json` | **Completed** |
+| 33 | Evolutionary Biology | Evidences of evolution | `02-evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical.json` | **Completed** |
+| 34 | Evolutionary Biology | Lamarckism, Darwinism, Neo-Darwinism | `03-theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism.json` | **Completed** |
+| 35 | Evolutionary Biology | Human evolution; position of man | `04-human-evolution-position-of-man-in-animal-kingdom.json` | **Completed** |
+| 36 | Evolutionary Biology | New vs old world monkeys, apes, man | `05-differences-between-new-world-monkeys-and-old-world-monkeys-apes-and-man.json` | **Completed** |
+| 37 | Evolutionary Biology | Evolution of modern man | `06-evolution-of-modern-man-starting-from-anthropoid-ancestor.json` | **Completed** |
+| 38 | Faunal Diversity (34) | Protista; Protozoa classification | `01-protista-outline-classification-protozoa-diagnostic-features-and-classification-up-to-class-with.json` | Not started |
+| 39 | Faunal Diversity | Paramecium and Plasmodium | `02-paramecium-caudatum-plasmodium-vivax-habits-and-habitat-structure-reproduction-life-cycle.json` | Not started |
+| 40 | Faunal Diversity | Economic importance of P. falciparum | `03-economic-importance-of-p-falciparum.json` | Not started |
 | 41 | Faunal Diversity | Animalia: organization, symmetry, body plans | `02-animalia-phyla.json` | Not started |
 | 42 | Faunal Diversity | Phyla classification (Porifera → Chordata) | `02-animalia-phyla.json` (merged) | Not started |
 | 43 | Faunal Diversity | Earthworm: external + digestive | `03-earthworm.json` | Not started |
