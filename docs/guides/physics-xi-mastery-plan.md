@@ -59,9 +59,9 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 28 | Gravitation (7h) | Newton's law of gravitation | `01-newton-s-law-of-gravitation.json` | **Completed** |
 | 29 | Gravitation (7h) | Gravitational field strength | `02-gravitational-field-strength.json` | **Completed** |
 | 30 | Gravitation (7h) | Gravitational potential; gravitational potential energy | `03-gravitational-potential-gravitational-potential-energy.json` | **Completed** |
-| 31 | Gravitation (7h) | Variation in value of 'g' due to altitude and depth | TBD | Not started |
+| 31 | Gravitation (7h) | Variation in value of 'g' due to altitude and depth | `04-variation-in-value-of-g-due-to-altitude-and-depth.json` | **Completed** |
 | 32 | Gravitation (7h) | Centre of mass and centre of gravity | `05-centre-of-mass-and-centre-of-gravity.json` | **Completed** |
-| 33 | Gravitation (7h) | Motion of a satellite: orbital velocity and time period of the satellite | TBD | Not started |
+| 33 | Gravitation (7h) | Motion of a satellite: orbital velocity and time period of the satellite | `06-motion-of-a-satellite-orbital-velocity-and-time-period-of-the-satellite.json` | **Completed** |
 | 34 | Gravitation (7h) | Escape velocity | `07-escape-velocity.json` | **Completed** |
 | 35 | Gravitation (7h) | Potential and kinetic energy of the satellite | `08-potential-and-kinetic-energy-of-the-satellite.json` | **Completed** |
 | 36 | Gravitation (7h) | Geostationary satellite | `09-geostationary-satellite.json` | **Completed** |
