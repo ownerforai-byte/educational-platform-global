@@ -5,79 +5,37 @@
   "topicTitle": "Centripetal acceleration and centripetal force",
   "relevance": 100,
   "notes": [
-    "**Centripetal acceleration (a_c):** the acceleration directed toward the centre of a circular path that keeps a body moving in a circle. Magnitude: a_c = v²/r = rω². Direction: always toward the centre (hence 'centripetal' = 'centre-seeking'). It changes the direction of velocity, not its magnitude.",
-    "**Centripetal force (F_c):** the net force required to produce centripetal acceleration: F_c = mv²/r = mrω². It is NOT a new force — it is the RESULTANT of real forces (tension, gravity, friction, normal) pointing toward the centre.",
-    "**Why centripetal force is not a separate force:** the centripetal force is always provided by one or more real forces. For a car turning on a flat road, friction provides F_c. For a planet orbiting the Sun, gravity provides F_c. For a ball on a string, tension provides F_c.",
-    "**Derivation of a_c = v²/r:** consider a body moving at constant speed v in a circle of radius r. In a small time Δt, it moves from A to B. The change in velocity Δv points toward the centre. From similar triangles: Δv/v = Δs/r → Δv = vΔs/r. Acceleration a = Δv/Δt = v²/r (since Δs/Δt = v).",
-    "**Worked example — car turning:** a 1000 kg car turns a flat curve of radius 50 m at 20 m/s. Required friction: F_c = mv²/r = 1000 × 400/50 = 8000 N. If μ_s = 0.6, max friction = 0.6 × 1000 × 9.8 = 5880 N — the car skids (8000 > 5880).",
-    "**Worked example — ball on a string:** a 0.5 kg ball on a 1.5 m string rotates at 4 m/s. Tension = mv²/r = 0.5 × 16/1.5 = 5.33 N. If the string breaks at 10 N, max speed = √(10 × 1.5/0.5) = 5.48 m/s.",
-    "**Worked example — planet orbit:** Earth orbits the Sun at 30 km/s at a distance of 1.5 × 10¹¹ m. Centripetal acceleration = v²/r = (3×10⁴)²/(1.5×10¹¹) = 6 × 10⁻³ m/s². This is provided by the Sun's gravity.",
-    "**NEB exam focus:** calculating centripetal force/acceleration; identifying which real force provides F_c; maximum speed problems (string breaking, car skidding); linking v, ω, r, and a_c.",
-    "**Centripetal force is not a force — it is a role:** the term 'centripetal force' describes the NET force pointing toward the center. It is always provided by some real force or combination of forces: tension (string), gravity (planets), friction (car on road), normal force (banked road), magnetic force (charged particle). Always draw an FBD and identify WHICH real force plays this role.",
-    "**Centrifugal force in rotating frames:** in a reference frame attached to the rotating body (e.g., a car turning), passengers feel pushed outward. This is called centrifugal force. It is a pseudo-force — it arises from the inertia of the body wanting to move in a straight line. In an inertial (non-accelerating) frame, there is NO outward force — only the inward centripetal force.",
-    "**Derivation via vector diagram:** consider a particle moving at constant speed v around a circle of radius r. After a small time Δt, it moves through angle Δθ = vΔt/r. The velocity vectors change direction by Δθ. From the similar triangles formed by position vectors and velocity vectors: |Δv|/v = |Δr|/r = Δs/r = vΔt/r. Therefore a = |Δv|/Δt = v²/r.",
-    "**Worked example — satellite orbit:** a satellite orbits Earth at altitude 400 km (r = 6771 km) with speed 7.67 km/s. Centripetal acceleration: a_c = v²/r = (7670)²/6771000 = 8.69 m/s². This equals the local gravitational acceleration at that altitude, confirming that gravity provides the centripetal force.",
-    "**Common NEB trap — direction of acceleration:** students often confuse the direction of centripetal acceleration (toward center) with the direction of velocity (tangential). Remember: a_c changes the DIRECTION of v, not its magnitude. If speed is changing too, there is also a tangential component a_t.",
-    "# Centripetal acceleration and centripetal force\n\n## 1. Introduction\nPhysical picture of **Centripetal acceleration and centripetal force** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Circular Motion fill pass.\n\n## 2. Concepts and laws\n### Centripetal acceleration and centripetal force\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Centripetal acceleration and centripetal force — motion graphs with slope and area marked (authored SVG, plotted from note data)\n- **D2** — Centripetal acceleration and centripetal force — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Centripetal acceleration and centripetal force — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Centripetal acceleration and centripetal force — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Force That Bends Motion\n\nUniform circular motion needs an acceleration even though the speed never changes — because the *direction* of velocity changes every instant. That inward acceleration, and the force behind it, governs every turning car, whirling stone and orbiting satellite.",
+    "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 Definition\n\n**Centripetal acceleration** is the acceleration of a body in uniform circular motion, directed along the radius **towards the centre**, of magnitude $a_c = \\dfrac{v^2}{r} = \\omega^2 r$. **Centripetal force** is the net force producing it: $F_c = \\dfrac{mv^2}{r} = m\\omega^2 r$.\n\n### 2.2 Derivation of $a_c = v^2/r$ (the 5m NEB derivation)\n\nConsider a particle moving with constant speed $v$ in a circle of radius $r$. In a short time $\\Delta t$ it moves from A to B, sweeping angle $\\Delta\\theta$; the velocity vector rotates from $\\vec v_A$ to $\\vec v_B$ by the same angle $\\Delta\\theta$.\n\n1. $|\\vec v_A| = |\\vec v_B| = v$; the chord AB has length $AB = v\\Delta t$ (arc ≈ chord for small $\\Delta\\theta$).\n2. The arc subtended: $AB = r\\Delta\\theta$ (small-angle), so $v\\Delta t = r\\Delta\\theta$.\n3. The change in velocity $\\Delta\\vec v = \\vec v_B - \\vec v_A$ forms a triangle similar to the (isosceles) triangles in the geometry: the velocity triangle with sides $v, v, \\Delta v$ is similar to the position triangle with sides $r, r, AB$.\n4. Hence $\\dfrac{\\Delta v}{v} = \\dfrac{AB}{r} = \\dfrac{v\\Delta t}{r}$, giving $\\dfrac{\\Delta v}{\\Delta t} = \\dfrac{v^2}{r}$.\n5. In the limit $\\Delta t \\to 0$: $a_c = \\dfrac{v^2}{r}$, directed along the radius towards the centre (since $\\Delta\\vec v$ points inward as $\\Delta\\theta \\to 0$).\n\nWith $v = r\\omega$: $a_c = \\omega^2 r$. Force: $F_c = ma_c = \\dfrac{mv^2}{r} = m\\omega^2 r$.\n\n**Key properties:** $F_c$ is *not a new kind of force* — it is the name for whatever real force plays this role (tension, gravity, friction, normal force).\n\n### 2.3 Worked numericals\n\n**Q (3m, 2022 & 2024):** Car, r = 50 m, v = 10 m/s: $a_c = v^2/r = 2$ m/s²; $F_c = m \\times 2$ per unit mass; $\\omega = 0.2$ rad/s.\n\n**Q (NEB-style):** A 0.5 kg stone is whirled on a 1 m string at 4 m/s. Find the tension.\n$T = mv^2/r = 0.5 \\times 16/1 = 8$ N.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 23:** $a_c = v^2/r = \\omega^2 r$ — the two forms.\n- **To Topic 26/27:** at the top of a vertical circle and on banked roads, gravity/friction/normal supply $F_c$.\n- **To Newton's second law:** $F_c = ma_c$ is just $F = ma$ applied along the radius.\n- **\"Centrifugal force\"** is a rotating-frame artifact, not a real force — in an inertial frame only the inward force exists.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Mechanics | Circular motion | Define centripetal acceleration. Derive an expression for it. | 5 | Definition + derivation |\n| 2080/2024 | Mechanics | Circular motion | Define centripetal acceleration. Derive an expression for it. | 5 | Definition + derivation |\n| 2078/2022 | Mechanics | Circular motion | A car takes a turn of radius 50 m at a speed of 10 m/s. What is the angular velocity and centripetal acceleration? | 3 | Numerical |\n| 2080/2024 | Mechanics | Circular motion | A car takes a turn of radius 50 m at a speed of 10 m/s. What is its angular velocity and centripetal acceleration? | 3 | Numerical |\n\n### 4.2 Model answer skeleton for the 5m derivation\n\nDefinition (1m) → diagram with A, B, $\\vec v_A$, $\\vec v_B$, $\\Delta\\theta$ (1m) → similarity of triangles / chord relation (1m–2m) → $\\Delta v/\\Delta t = v^2/r$ (1m) → direction towards centre + $F_c = mv^2/r$ (1m).\n\n### 4.3 Common examination mistakes\n\n1. Calling centripetal force a separate force acting outward/inward in addition to tension or gravity.\n2. Deriving with the full arc length instead of the small-angle approximation.\n3. Omitting the direction (towards the centre) — the definition is incomplete without it.\n4. Using $v = \\omega r$ with inconsistent units."
   ],
   "confusion": [
-    "❌ 'Centrifugal force pulls the body outward.' ✅ Centrifugal force is a pseudo-force that appears only in a rotating reference frame. In an inertial frame, there is only centripetal force toward the centre.",
-    "❌ 'Centripetal force is a new type of force.' ✅ Centripetal force is the RESULTANT of real forces (tension, gravity, friction). It is not a separate force you add to the FBD.",
-    "❌ 'The body in circular motion is in equilibrium.' ✅ The body accelerates toward the centre (a_c = v²/r). It is NOT in equilibrium — the net force is mv²/r toward the centre.",
-    "❌ 'Centripetal acceleration changes the speed.' ✅ Centripetal acceleration changes only the DIRECTION of velocity. Tangential acceleration (if present) changes the speed.",
-    "❌ 'Centripetal force acts outward.' ✅ Centripetal force acts INWARD, toward the centre. The tendency to move outward is inertia, not a force.",
-    "❌ 'If the string breaks, the body moves radially outward.' ✅ If the string breaks, the body moves TANGENT to the circle (in the direction of its velocity at that instant), not radially."
+    "**Centripetal vs centrifugal:** only the inward force is real; centrifugal is a rotating-frame illusion.",
+    "**$F_c$ is not a new force:** it is whichever real force (tension, gravity, friction) points inward."
   ],
   "practice": [
-    "Solve 5 problems calculating centripetal force/acceleration for different scenarios (car, ball, planet).",
-    "Solve 5 maximum-speed problems (string breaking, car skidding) using F_c = mv²/r.",
-    "Solve 3 problems identifying which real force provides the centripetal force.",
-    "Solve 3 problems linking linear and angular quantities (a_c = rω²).",
-    "Solve 2 problems involving centripetal force in rotating reference frames (centrifugal pseudo-force)."
+    "What supplies the centripetal force for a car turning on a flat road?"
   ],
   "universalFacts": [
-    "Centripetal force is not a new force — it is the resultant of real forces pointing toward the centre.",
-    "The direction of centripetal acceleration is always toward the centre — it changes velocity direction, not magnitude.",
-    "Centrifugal force is a pseudo-force that appears only in rotating reference frames.",
-    "If the centripetal force is removed, the body moves tangent to the circle (Newton's first law).",
-    "Centripetal force is proportional to v² — doubling the speed quadruples the required force."
+    "Satellites are in free fall — gravity is their centripetal force; no engine holds them up."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion",
   "examples": [
-    "Car turning: A 1200 kg car turns a flat curve of radius 60 m at 15 m/s. F_c = 1200 × 225/60 = 4500 N (provided by friction).",
-    "Ball on string: A 0.3 kg ball on a 2 m string rotates at 6 m/s. Tension = 0.3 × 36/2 = 5.4 N.",
-    "Planet orbit: A satellite orbits Earth at 8 km/s at a radius of 7000 km. a_c = (8000)²/(7×10⁶) = 9.14 m/s².",
-    "Maximum speed: A 0.4 kg ball on a 1.5 m string (max tension 15 N). v_max = √(15 × 1.5/0.4) = 7.5 m/s.",
-    "Conical pendulum: A 0.2 kg bob rotates at 3 m/s in a horizontal circle of radius 0.8 m. F_c = 0.2 × 9/0.8 = 2.25 N."
+    "***Stone on string*** — 0.5 kg at 4 m/s on 1 m: T = 8 N supplies F_c."
   ],
   "practiceQuestions": [
-    "A 1500 kg car turns a flat curve of radius 80 m at 25 m/s. Find the minimum coefficient of friction needed to prevent skidding.",
-    "A 0.6 kg ball on a 2 m string rotates at 5 m/s. Find the tension. If the string breaks at 12 N, find the maximum speed.",
-    "A satellite orbits Earth at 7 km/s at a radius of 6800 km. Find the centripetal acceleration.",
-    "A cyclist turns a curve of radius 30 m at 12 m/s. At what angle must the cyclist lean to avoid falling?",
-    "Explain why passengers feel pushed outward when a car takes a sharp turn, and identify the real forces involved."
+    "**Derivation (5m): Derive a_c = v²/r for uniform circular motion.** — Particle moves A→B in time Δt sweeping Δθ; velocity rotates by the same Δθ. Chord AB = vΔt ≈ rΔθ. The velocity triangle (v, v, Δv) is similar to the position triangle (r, r, AB): Δv/v = AB/r = vΔt/r. So Δv/Δt = v²/r; as Δt→0, a_c = v²/r, directed towards the centre. With v = rω, a_c = ω²r and F_c = mv²/r."
   ],
   "formulas": [
-    "Centripetal acceleration: $a_c = v^2/r = r\\omega^2$ (directed toward the centre)",
-    "Centripetal force: $F_c = mv^2/r = mr\\omega^2$ (resultant of real forces toward centre)",
-    "Maximum speed (string): $v_{max} = \\sqrt{T_{max} \\times r/m}$ — when tension reaches breaking point",
-    "Maximum speed (flat curve): $v_{max} = \\sqrt{\\mu_s rg}$ — when friction reaches its maximum",
-    "Cyclist lean angle: $\\tan \\theta = v^2/(rg)$ — the angle needed to balance torque"
+    "- a_c = v²/r = ω²r = 4π²r/T²\n- F_c = mv²/r = mω²r"
   ],
   "keyPoints": [
-    "Centripetal force is NOT a new force — it is the resultant of real forces (tension, gravity, friction).",
-    "Centripetal acceleration changes only the direction of velocity, not its magnitude.",
-    "Centrifugal force is a pseudo-force that appears only in rotating reference frames.",
-    "If the centripetal force is removed, the body moves tangent to the circle.",
-    "Centripetal force is proportional to v² — doubling speed quadruples the required force."
+    "$a_c = v^2/r = \\omega^2 r$, directed to the centre; $F_c = mv^2/r = m\\omega^2 r$.",
+    "Uniform circular motion: speed constant, velocity direction changing, net force inward."
   ],
-  "summary": "Centripetal acceleration (a_c = v²/r = rω²) is directed toward the centre of a circular path. The centripetal force (F_c = mv²/r) is the resultant of real forces (tension, gravity, friction) — not a new force. Maximum-speed problems (string breaking, car skidding) and identifying which real force provides F_c are the key NEB topics.",
+  "summary": "In uniform circular motion the speed is constant but the velocity vector rotates, so an acceleration must act: **centripetal acceleration** $a_c = v^2/r = \\omega^2 r$, always directed to the centre. The derivation (NEB 2023, 2024, 5m) uses the similarity between the velocity triangle and the position triangle: $\\Delta v/v = v\\Delta t/r$, hence $a_c = v^2/r$. The net inward force $F_c = mv^2/r$ is not a new force — tension, gravity, friction or the normal force plays the role. A car on a 50 m turn at 10 m/s needs $a_c = 2$ m/s² supplied by road friction (NEB 2022, 2024); a stone on a 1 m string at 4 m/s needs 8 N of tension. \"Centrifugal force\" is only a rotating-frame bookkeeping device.",
   "specialNotes": [
     "Always identify which real force provides the centripetal force — never add 'centripetal force' as a separate force in the FBD.",
     "Centrifugal force is a pseudo-force — it appears only in rotating reference frames, not in inertial frames.",
@@ -86,32 +44,16 @@
     "NEB frequently asks: 'Find the maximum speed' — use v_max = √(μ_s rg) for curves, v_max = √(T_max r/m) for strings."
   ],
   "importantStatements": [
-    "Centripetal acceleration is directed toward the centre of the circular path: a_c = v²/r = rω².",
-    "Centripetal force is the resultant of real forces pointing toward the centre — it is not a new force.",
-    "Centrifugal force is a pseudo-force that appears only in rotating reference frames.",
-    "If the centripetal force is removed, the body moves tangent to the circle (Newton's first law).",
-    "Centripetal force is proportional to v² — doubling the speed quadruples the required force."
+    "\"Centripetal force always acts towards the centre along the radius.\""
   ],
   "importantNotes": [
-    "Centripetal force is NOT a new force — it is the resultant of real forces (tension, gravity, friction).",
-    "Centrifugal force is a pseudo-force — it appears only in rotating reference frames.",
-    "If the centripetal force is removed, the body moves tangent to the circle (Newton's first law).",
-    "Maximum-speed problems: set F_c = mv²/r equal to the maximum available force and solve for v.",
-    "NEB frequently asks: 'Find the maximum speed' — use v_max = √(μ_s rg) for curves, v_max = √(T_max r/m) for strings."
+    "Verified PYQs: derivation (2023, 2024 — 5m each); car-turn numerical (2022, 2024 — 3m)."
   ],
   "examShortTricks": [
-    "Force identification trick: always ask 'which real force points toward the centre?' — that's your F_c.",
-    "Maximum speed shortcut: v_max = √(μ_s rg) for flat curves, v_max = √(T_max r/m) for strings.",
-    "Cyclist lean shortcut: tan θ = v²/(rg) — the lean angle depends on v²/r, not on mass.",
-    "Centripetal acceleration shortcut: a_c = rω² — if you know ω, this is faster than v²/r.",
-    "Breaking condition: the string breaks when mv²/r > T_max — solve for v_max."
+    "\"Write the definition with direction — it carries marks.\""
   ],
   "examNotes": [
-    "Maximum-speed problems (string breaking, car skidding) are the most common type.",
-    "Always identify which real force provides the centripetal force — never add it as a separate force.",
-    "Centrifugal force is a pseudo-force — use it only in rotating reference frames.",
-    "Cyclist lean angle problems: tan θ = v²/(rg) — a classic NEB question.",
-    "NEB asks both numerical problems and conceptual questions about centripetal vs centrifugal force."
+    "The derivation appeared in two consecutive years (2023, 2024) — learn it with the diagram."
   ],
   "mcs": [
     {
@@ -166,11 +108,7 @@
     }
   ],
   "importantConcepts": [
-    "Centripetal acceleration (a_c = v²/r = rω²) is directed toward the centre of the circular path.",
-    "Centripetal force is the resultant of real forces pointing toward the centre — it is not a new force.",
-    "Centrifugal force is a pseudo-force that appears only in rotating reference frames.",
-    "If the centripetal force is removed, the body moves tangent to the circle.",
-    "Centripetal force is proportional to v² — doubling the speed quadruples the required force."
+    "**The 5m derivation:** velocity triangle similar to position triangle → Δv/v = vΔt/r → a_c = v²/r (NEB 2023, 2024)."
   ],
   "importantTasks": [
     "Solve 5 problems calculating centripetal force/acceleration for different scenarios.",
@@ -284,5 +222,141 @@
     "**Radius Variation:** If the path radius $r$ changes during the motion, the centripetal force requirement $F_c = mv^2/r$ must adjust instantaneously based on the new radius and speed at that instant."
   ],
   "tabGroup": "centripetal-acceleration-force",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Force That Bends Motion\n\nUniform circular motion needs an acceleration even though the speed never changes — because the *direction* of velocity changes every instant. That inward acceleration, and the force behind it, governs every turning car, whirling stone and orbiting satellite.",
+      "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 Definition\n\n**Centripetal acceleration** is the acceleration of a body in uniform circular motion, directed along the radius **towards the centre**, of magnitude $a_c = \\dfrac{v^2}{r} = \\omega^2 r$. **Centripetal force** is the net force producing it: $F_c = \\dfrac{mv^2}{r} = m\\omega^2 r$.\n\n### 2.2 Derivation of $a_c = v^2/r$ (the 5m NEB derivation)\n\nConsider a particle moving with constant speed $v$ in a circle of radius $r$. In a short time $\\Delta t$ it moves from A to B, sweeping angle $\\Delta\\theta$; the velocity vector rotates from $\\vec v_A$ to $\\vec v_B$ by the same angle $\\Delta\\theta$.\n\n1. $|\\vec v_A| = |\\vec v_B| = v$; the chord AB has length $AB = v\\Delta t$ (arc ≈ chord for small $\\Delta\\theta$).\n2. The arc subtended: $AB = r\\Delta\\theta$ (small-angle), so $v\\Delta t = r\\Delta\\theta$.\n3. The change in velocity $\\Delta\\vec v = \\vec v_B - \\vec v_A$ forms a triangle similar to the (isosceles) triangles in the geometry: the velocity triangle with sides $v, v, \\Delta v$ is similar to the position triangle with sides $r, r, AB$.\n4. Hence $\\dfrac{\\Delta v}{v} = \\dfrac{AB}{r} = \\dfrac{v\\Delta t}{r}$, giving $\\dfrac{\\Delta v}{\\Delta t} = \\dfrac{v^2}{r}$.\n5. In the limit $\\Delta t \\to 0$: $a_c = \\dfrac{v^2}{r}$, directed along the radius towards the centre (since $\\Delta\\vec v$ points inward as $\\Delta\\theta \\to 0$).\n\nWith $v = r\\omega$: $a_c = \\omega^2 r$. Force: $F_c = ma_c = \\dfrac{mv^2}{r} = m\\omega^2 r$.\n\n**Key properties:** $F_c$ is *not a new kind of force* — it is the name for whatever real force plays this role (tension, gravity, friction, normal force).\n\n### 2.3 Worked numericals\n\n**Q (3m, 2022 & 2024):** Car, r = 50 m, v = 10 m/s: $a_c = v^2/r = 2$ m/s²; $F_c = m \\times 2$ per unit mass; $\\omega = 0.2$ rad/s.\n\n**Q (NEB-style):** A 0.5 kg stone is whirled on a 1 m string at 4 m/s. Find the tension.\n$T = mv^2/r = 0.5 \\times 16/1 = 8$ N.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 23:** $a_c = v^2/r = \\omega^2 r$ — the two forms.\n- **To Topic 26/27:** at the top of a vertical circle and on banked roads, gravity/friction/normal supply $F_c$.\n- **To Newton's second law:** $F_c = ma_c$ is just $F = ma$ applied along the radius.\n- **\"Centrifugal force\"** is a rotating-frame artifact, not a real force — in an inertial frame only the inward force exists.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Mechanics | Circular motion | Define centripetal acceleration. Derive an expression for it. | 5 | Definition + derivation |\n| 2080/2024 | Mechanics | Circular motion | Define centripetal acceleration. Derive an expression for it. | 5 | Definition + derivation |\n| 2078/2022 | Mechanics | Circular motion | A car takes a turn of radius 50 m at a speed of 10 m/s. What is the angular velocity and centripetal acceleration? | 3 | Numerical |\n| 2080/2024 | Mechanics | Circular motion | A car takes a turn of radius 50 m at a speed of 10 m/s. What is its angular velocity and centripetal acceleration? | 3 | Numerical |\n\n### 4.2 Model answer skeleton for the 5m derivation\n\nDefinition (1m) → diagram with A, B, $\\vec v_A$, $\\vec v_B$, $\\Delta\\theta$ (1m) → similarity of triangles / chord relation (1m–2m) → $\\Delta v/\\Delta t = v^2/r$ (1m) → direction towards centre + $F_c = mv^2/r$ (1m).\n\n### 4.3 Common examination mistakes\n\n1. Calling centripetal force a separate force acting outward/inward in addition to tension or gravity.\n2. Deriving with the full arc length instead of the small-angle approximation.\n3. Omitting the direction (towards the centre) — the definition is incomplete without it.\n4. Using $v = \\omega r$ with inconsistent units."
+    ],
+    "confusion": [
+      "**Centripetal vs centrifugal:** only the inward force is real; centrifugal is a rotating-frame illusion.",
+      "**$F_c$ is not a new force:** it is whichever real force (tension, gravity, friction) points inward."
+    ],
+    "keyPoints": [
+      "$a_c = v^2/r = \\omega^2 r$, directed to the centre; $F_c = mv^2/r = m\\omega^2 r$.",
+      "Uniform circular motion: speed constant, velocity direction changing, net force inward."
+    ],
+    "importantConcepts": [
+      "**The 5m derivation:** velocity triangle similar to position triangle → Δv/v = vΔt/r → a_c = v²/r (NEB 2023, 2024)."
+    ],
+    "examples": [
+      "***Stone on string*** — 0.5 kg at 4 m/s on 1 m: T = 8 N supplies F_c."
+    ],
+    "universalFacts": [
+      "Satellites are in free fall — gravity is their centripetal force; no engine holds them up."
+    ],
+    "importantStatements": [
+      "\"Centripetal force always acts towards the centre along the radius.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: derivation (2023, 2024 — 5m each); car-turn numerical (2022, 2024 — 3m)."
+    ],
+    "examShortTricks": [
+      "\"Write the definition with direction — it carries marks.\""
+    ],
+    "examNotes": [
+      "The derivation appeared in two consecutive years (2023, 2024) — learn it with the diagram."
+    ],
+    "formulas": [
+      "- a_c = v²/r = ω²r = 4π²r/T²\n- F_c = mv²/r = mω²r"
+    ],
+    "practice": [
+      "What supplies the centripetal force for a car turning on a flat road?"
+    ],
+    "practiceQuestions": [
+      "**Derivation (5m): Derive a_c = v²/r for uniform circular motion.** — Particle moves A→B in time Δt sweeping Δθ; velocity rotates by the same Δθ. Chord AB = vΔt ≈ rΔθ. The velocity triangle (v, v, Δv) is similar to the position triangle (r, r, AB): Δv/v = AB/r = vΔt/r. So Δv/Δt = v²/r; as Δt→0, a_c = v²/r, directed towards the centre. With v = rω, a_c = ω²r and F_c = mv²/r."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "Centripetal acceleration is directed:",
+      "options": [
+        "Along the tangent",
+        "Outward",
+        "Towards the centre",
+        "Downward"
+      ],
+      "answer": "C",
+      "explanation": "It points along the radius to the centre."
+    },
+    {
+      "question": "A 0.5 kg stone on a 1 m string at 4 m/s needs tension:",
+      "options": [
+        "2 N",
+        "4 N",
+        "8 N",
+        "16 N"
+      ],
+      "answer": "C",
+      "explanation": "T = mv²/r = 8 N."
+    },
+    {
+      "question": "If speed doubles at fixed r, F_c becomes:",
+      "options": [
+        "2×",
+        "4×",
+        "Half",
+        "Unchanged"
+      ],
+      "answer": "B",
+      "explanation": "F_c ∝ v²."
+    },
+    {
+      "question": "Centripetal force is provided by:",
+      "options": [
+        "A special outward force",
+        "Whatever real force acts inward",
+        "Friction only",
+        "Gravity only"
+      ],
+      "answer": "B",
+      "explanation": "Tension, gravity, friction or normal force can play the role."
+    },
+    {
+      "question": "In uniform circular motion the quantity that stays constant is:",
+      "options": [
+        "Velocity",
+        "Acceleration",
+        "Speed",
+        "Momentum"
+      ],
+      "answer": "C",
+      "explanation": "Velocity and momentum change direction; speed doesn't."
+    },
+    {
+      "question": "a_c in terms of period T is:",
+      "options": [
+        "4π²r/T²",
+        "2πr/T",
+        "vT/r",
+        "r/T²"
+      ],
+      "answer": "A",
+      "explanation": "v = 2πr/T → a_c = 4π²r/T²."
+    },
+    {
+      "question": "The work done by the centripetal force in one revolution is:",
+      "options": [
+        "mv²",
+        "Zero",
+        "2πr·F_c",
+        "mv²/2"
+      ],
+      "answer": "B",
+      "explanation": "Force ⊥ displacement at every instant."
+    },
+    {
+      "question": "A satellite stays in orbit because:",
+      "options": [
+        "Its engines push it outward",
+        "Gravity supplies the centripetal force",
+        "It has no acceleration",
+        "Atmosphere holds it"
+      ],
+      "answer": "B",
+      "explanation": "Free fall around Earth."
+    }
+  ]
 }

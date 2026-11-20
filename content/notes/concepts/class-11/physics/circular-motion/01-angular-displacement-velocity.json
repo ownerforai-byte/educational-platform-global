@@ -5,109 +5,39 @@
   "topicTitle": "Angular Displacement, Velocity and Acceleration",
   "relevance": 100,
   "notes": [
-    "**Angular displacement ($\\Delta \\theta$):** the angle through which a body rotates about a fixed axis. Measured in radians (rad). 1 rad = 57.3°, 2$\\pi$ rad = 360°. Angular displacement is a vector along the axis (right-hand rule): positive for anticlockwise rotation.",
-    "**Angular velocity ($\\omega$):** the rate of change of angular displacement: $\\omega = d\\theta/dt$ (instantaneous), $\\omega = \\Delta\\theta/t$ (average). Unit: rad/s. Direction: along the axis (right-hand rule). For uniform circular motion, $\\omega$ is constant.",
-    "**Angular acceleration ($\\alpha$):** the rate of change of angular velocity: $\\alpha = d\\omega/dt = d^2\\theta/dt^2$. Unit: rad/s$^2$. When $\\alpha$ is constant, the kinematic equations mirror linear motion.",
-    "**Relationship between linear and angular quantities (for circular motion):** $v = r\\omega$ (linear speed = radius $\\times$ angular speed), $a_t = r\\alpha$ (tangential acceleration), $a_c = v^2/r = r\\omega^2$ (centripetal acceleration). These links connect rotational and translational motion.",
-    "**Kinematic equations for constant angular acceleration (mirror linear $v = u + at$, etc.):** $\\omega = \\omega_0 + \\alpha t$; $\\theta = \\omega_0t + \\frac{1}{2}\\alpha t^2$; $\\omega^2 = \\omega_0^2 + 2\\alpha\\theta$; $\\theta = (\\omega + \\omega_0)t/2$. The structure is identical to linear motion — just swap $x \rightarrow \\theta$, $v \rightarrow \\omega$, $a \rightarrow \\alpha$.",
-    "**Worked example — spinning wheel:** a wheel starts from rest and accelerates uniformly at 2 rad/s$^2$ for 5 s. Angular displacement: $\\theta = 0 + \\frac{1}{2} \\times 2 \\times 25 = 25$ rad. Final angular velocity: $\\omega = 0 + 2 \\times 5 = 10$ rad/s. Number of revolutions: $25/(2\\pi) \\approx 3.98$ rev.",
-    "**Worked example — decelerating fan:** a fan blade rotating at 120 rpm ($120 \\times 2\\pi/60 = 12.57$ rad/s) comes to rest in 8 s. Angular acceleration: $\\alpha = (0 - 12.57)/8 = -1.57$ rad/s$^2$. Angular displacement: $\\theta = 12.57 \\times 8/2 = 50.27$ rad $\\approx 8$ rev.",
-    "**NEB exam focus:** converting between rpm and rad/s; applying the kinematic equations for constant angular acceleration; linking linear and angular quantities ($v = r\\omega$, $a = r\\omega^2$); finding number of revolutions from angular displacement.",
-    "**Right-hand rule for angular quantities:** curl the fingers of your right hand in the direction of rotation; your thumb points along the angular velocity/acceleration vector. For anticlockwise rotation (as viewed from above), the vector points upward; for clockwise, it points downward.",
-    "**Angular displacement is NOT a simple angle:** while measured in radians, angular displacement has direction (along the axis). For rotations greater than 2$\\pi$, the magnitude keeps increasing — unlike a simple angle which resets after 360°. This is why angular displacement is a true vector quantity.",
-    "**Non-uniform circular motion:** when angular acceleration $\\alpha \\neq 0$, both tangential acceleration ($a_t = r\\alpha$) and centripetal acceleration ($a_c = r\\omega^2$) are present. The total acceleration is the vector sum: $a = \\sqrt{a_t^2 + a_c^2}$. The direction of total acceleration is at angle $\\phi = \\arctan(a_c/a_t)$ from the tangential direction.",
-    "**Small angle approximation:** for oscillatory motion (pendulums, springs), when $\\theta$ is small ($\\theta < 0.1$ rad $\\approx 6^\\circ$), we can approximate $\\sin \\theta \\approx \\theta$ and $\\cos \\theta \\approx 1$. This linearizes the equations and makes them solvable analytically.",
-    "**Angular quantities as vectors — addition is NOT commutative for large angles:** while infinitesimal angular displacements $d\\theta$ are vectors (they commute), finite angular displacements do NOT commute. Rotating 90° about x then 90° about y gives a different result than rotating 90° about y then 90° about x. This is why angular velocity is a true vector but finite angular displacement is not.",
-    "**Angular displacement $\\theta$:** the angle through which a point on a rotating body moves, measured in radians. $\\theta = s/r$, where $s$ is arc length and $r$ is radius.",
-    "**Angular velocity $\\omega$:** rate of change of angular displacement. $\\omega = d\\theta/dt$. Units: rad/s.",
-    "**Angular acceleration $\\alpha$:** rate of change of angular velocity. $\\alpha = d\\omega/dt$. Units: rad/s$^2$.",
-    "**Connection to linear motion:** $v = r\\omega$ and $a_t = r\\alpha$, where $v$ is tangential speed and $a_t$ is tangential acceleration.",
-    "**Direction:** angular velocity and acceleration are vectors along the axis of rotation, given by the right-hand rule.",
-    "**Uniform circular motion:** when $\\omega$ is constant, angular displacement $\\theta = \\omega t$, angular acceleration $\\alpha = 0$, but centripetal acceleration $a_c = r\\omega^2$ is nonzero.",
-    "**Constant angular acceleration:** rotational kinematic equations mirror translational ones: $\\omega^2 = \\omega_0^2 + 2\\alpha\\theta$, $\\theta = \\omega_0 t + \\frac{1}{2}\\alpha t^2$, $\\omega = \\omega_0 + \\alpha t$.",
-    "**Radian measure:** one complete revolution $= 2\\pi$ radians $= 360^{\\circ}$. All circular motion formulas require angles in radians, not degrees.",
-    "**Frequency and period:** frequency $f = \\omega/(2\\pi)$ in Hz (revolutions per second). Period $T = 1/f = 2\\pi/\\omega$ is the time for one revolution.",
-    "**Angular velocity in RPM:** to convert from revolutions per minute (RPM) to rad/s: $\\omega = 2\\pi N/60$, where $N$ is RPM.",
-    "**Physical significance:** angular acceleration tells you how quickly the rotation speeds up or slows down. A spinning bicycle wheel with constant $\\omega$ has $\\alpha = 0$ but nonzero centripetal acceleration."
+    "## 1. Topic Introduction — Describing Spin\n\nA particle moving in a circle is best described by *angle* instead of distance. Angular displacement, angular velocity and angular acceleration are the rotational twins of displacement, velocity and acceleration — and the bridge between them is the radius.",
+    "## 2. Fundamental Concepts\n\n| Linear (translational) | Angular (rotational) | Relation |\n|---|---|---|\n| Displacement $s$ (m) | Angular displacement $\\theta$ (rad) | $s = r\\theta$ |\n| Velocity $v$ (m/s) | Angular velocity $\\omega$ (rad/s) | $v = r\\omega$ |\n| Acceleration $a$ (m/s²) | Angular acceleration $\\alpha$ (rad/s²) | $a = r\\alpha$ |\n\n**Angular displacement ($\\theta$):** the angle swept by the position vector, measured in **radians** (dimensionless: $2\\pi$ rad = 360°). Anticlockwise is positive by convention.\n\n**Angular velocity ($\\omega$):** rate of change of angular displacement, $\\omega = \\dfrac{d\\theta}{dt}$; SI unit rad/s. For $n$ revolutions per second, $\\omega = 2\\pi n$; for $N$ rpm, $\\omega = \\dfrac{2\\pi N}{60}$.\n\n**Angular acceleration ($\\alpha$):** rate of change of angular velocity, $\\alpha = \\dfrac{d\\omega}{dt}$; SI unit rad/s².\n\n**Period and frequency:** $T = \\dfrac{2\\pi}{\\omega}$, $f = \\dfrac{1}{T} = \\dfrac{\\omega}{2\\pi}$.",
+    "## 3. Worked Numericals (NEB 2023, 2024)\n\n**Q (4m, 2023):** A flywheel of radius 0.5 m rotates at a constant speed of 300 revolutions per minute. Find its angular velocity and the linear speed of a point on its rim.\n- $\\omega = \\dfrac{2\\pi N}{60} = \\dfrac{2\\pi \\times 300}{60} = 10\\pi = 31.4$ rad/s\n- $v = \\omega r = 31.4 \\times 0.5 = 15.7$ m/s\n- (bonus) $a_c = \\omega^2 r = (31.4)^2 \\times 0.5 \\approx 4.9 \\times 10^2$ m/s²\n\n**Q (3m, 2024):** A wheel of diameter 0.8 m rotates at 300 revolutions per minute. Find its angular velocity and the linear speed of a point on its rim.\n- $r = 0.4$ m; $\\omega = \\dfrac{2\\pi \\times 300}{60} = 31.4$ rad/s\n- $v = \\omega r = 31.4 \\times 0.4 = 12.6$ m/s",
+    "## 4. Conceptual Relationships\n\n- **To Kinematics (Unit 3):** identical structure — $\\theta, \\omega, \\alpha$ play the roles of $s, v, a$; the rotational equations of motion ($\\omega = \\omega_0 + \\alpha t$, etc.) mirror $v = v_0 + at$.\n- **To Topic 24:** $v = r\\omega$ is the seed of centripetal acceleration $a_c = \\omega^2 r = v^2/r$.\n- **Radian:** dimensionless because it is arc length ÷ radius.",
+    "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Mechanics | Circular motion | A flywheel of radius 0.5 m rotates at a constant speed of 300 revolutions per minute. Find its angular velocity, the linear speed of a point on the rim. | 4 | Numerical |\n| 2080/2024 | Mechanics | Circular motion | A wheel of diameter 0.8 m rotates at 300 revolutions per minute. Find its angular velocity and the linear speed of a point on its rim. | 3 | Numerical |\n\n### 5.2 Common examination mistakes\n\n1. Using diameter as radius in $v = \\omega r$ (2024's trap).\n2. Forgetting to convert rpm → rad/s ($\\times 2\\pi/60$).\n3. Writing rad/s as m/s — radians are dimensionless but angular and linear speeds differ by $r$."
   ],
   "confusion": [
-    "❌ 'Angular displacement and angle are the same.' ✅ Angular displacement is a vector (along the axis), while angle is a scalar. For a full revolution, angular displacement = 2π rad, but the body returns to its starting position.",
-    "❌ 'Angular velocity is always constant in circular motion.' ✅ Only in UNIFORM circular motion is ω constant. In non-uniform circular motion, ω changes and there is angular acceleration.",
-    "❌ 'The direction of angular velocity is tangential.' ❌ The direction of angular velocity is ALONG THE AXIS of rotation (right-hand rule), not tangential. Tangential velocity is v = rω, but ω itself points along the axis.",
-    "❌ 'Angular acceleration means the body is speeding up.' ✅ Angular acceleration is the rate of change of angular velocity. If α and ω have the same sign, the body speeds up; if opposite signs, it slows down.",
-    "❌ 'The kinematic equations for rotation are different from linear motion.' ✅ They are IDENTICAL in form: just replace x with θ, v with ω, and a with α. The same problem-solving approach works.",
-    "❌ 'rpm and rad/s are the same.' ✅ 1 rpm = 2π/60 rad/s ≈ 0.105 rad/s. Always convert rpm to rad/s before using formulas.",
-    "Angular velocity $\\omega$ is in rad/s, not m/s. The linear speed $v = r\\omega$ converts angular velocity to linear speed at distance $r$ from the axis.",
-    "A body can have angular velocity without any linear velocity at all — every point on a body rotating about its own centre has zero linear velocity of the centre.",
-    "Angular acceleration $\\alpha$ is zero in uniform circular motion, even though centripetal acceleration $a_c = r\\omega^2$ is not. $\\alpha$ changes the speed; $a_c$ changes the direction.",
-    "One full revolution $= 2\\pi$ rad $= 360^{\\circ}$. When using formulas like $\\theta = \\omega t$, angles must be in radians, not degrees.",
-    "The sign of $\\omega$ or $\\alpha$ indicates direction of rotation: positive for counterclockwise, negative for clockwise (by convention in the standard coordinate system)."
+    "**rpm vs rad/s:** 300 rpm is 5 revolutions per second = 10π rad/s — always convert before using $v = \\omega r$.",
+    "**Radian has no dimensions:** angular quantities carry 'rad' as a label, not a base unit — $v = \\omega r$ still works dimensionally."
   ],
   "practice": [
-    "Solve 5 problems converting between rpm, rad/s, and revolutions.",
-    "Solve 5 problems using the kinematic equations for constant angular acceleration.",
-    "Solve 5 problems linking linear and angular quantities (v = rω, a = rω²).",
-    "Solve 3 problems finding the number of revolutions from angular displacement.",
-    "Solve 2 problems involving non-uniform circular motion with both tangential and centripetal acceleration.",
-    "A flywheel spinning at 300 RPM accelerates uniformly to 900 RPM in 10 seconds. Find the angular acceleration and total angular displacement. Solution: $\\omega_0 = 300 \\times 2\\pi/60 = 10\\pi$ rad/s, $\\omega = 900 \\times 2\\pi/60 = 30\\pi$ rad/s. $\\alpha = (30\\pi - 10\\pi)/10 = 2\\pi$ rad/s$^2$. $\\theta = \\omega_0 t + \\frac{1}{2}\\alpha t^2 = 10\\pi \\times 10 + \\frac{1}{2} \\times 2\\pi \\times 100 = 100\\pi + 100\\pi = 200\\pi$ rad $\\approx 628$ rad.",
-    "A wheel of radius 0.5 m rotates with $\\omega = 10$ rad/s and $\\alpha = 4$ rad/s$^2$. Find the tangential speed, centripetal acceleration, and tangential acceleration. Solution: $v = r\\omega = 0.5 \\times 10 = 5$ m/s. $a_c = r\\omega^2 = 0.5 \\times 100 = 50$ m/s$^2$. $a_t = r\\alpha = 0.5 \\times 4 = 2$ m/s$^2$.",
-    "The period of a rotating fan is 0.25 s. Find its angular velocity and frequency. Solution: $\\omega = 2\\pi/T = 2\\pi/0.25 = 8\\pi \\approx 25.13$ rad/s. $f = 1/T = 4$ Hz.",
-    "A disc starts from rest and reaches 1200 RPM in 4 s with uniform angular acceleration. Find $\\alpha$ and the number of revolutions. Solution: $\\omega = 1200 \\times 2\\pi/60 = 40\\pi$ rad/s. $\\alpha = 40\\pi/4 = 10\\pi$ rad/s$^2$. $\\theta = \\frac{1}{2} \\times 10\\pi \\times 16 = 80\\pi$ rad $= 40$ revolutions.",
-    "A point on a rim is at radius 0.3 m from the axis. After rotating through $6\\pi$ radians, how far has this point traveled? Solution: $s = r\\theta = 0.3 \\times 6\\pi = 1.8\\pi \\approx 5.65$ m."
+    "A point at half the rim radius of the 2023 flywheel — what is its linear speed?"
   ],
   "universalFacts": [
-    "Angular velocity is a vector along the axis of rotation — its direction is given by the right-hand rule.",
-    "The kinematic equations for constant angular acceleration are identical in form to those for linear motion.",
-    "v = rω links linear speed to angular speed — this is why the outside of a rotating disc moves faster than the inside.",
-    "Angular acceleration is caused by torque (rotational analogue of force): τ = Iα, where I is the moment of inertia.",
-    "The number of revolutions is θ/(2π) — always divide angular displacement in radians by 2π to get revolutions.",
-    "The radian is the natural unit for angular measurements in physics because it directly relates arc length to radius: $s = r\\theta$. Using degrees in formulas would introduce extra conversion factors.",
-    "Angular velocity is a vector directed along the rotation axis by the right-hand rule. Two gears meshing in opposite directions have angular velocities of opposite signs.",
-    "In uniform circular motion, angular velocity is constant ($\\alpha = 0$) but the object still has centripetal acceleration because the direction of velocity continuously changes.",
-    "The period $T$ and frequency $f$ are inversely related: $f = 1/T$. The SI unit of frequency is the hertz (Hz), where $1\\,\\text{Hz} = 1\\,\\text{s}^{-1}$.",
-    "Rotational kinematic equations have exact analogs to translational kinematics: replace $x$ with $\\theta$, $v$ with $\\omega$, and $a$ with $\\alpha$."
+    "Every point of a rigid rotating body shares the same ω, but v = ωr grows with distance from the axis — the rim moves fastest."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion",
   "examples": [
-    "rpm to rad/s: A wheel rotates at 180 rpm. ω = 180 × 2π/60 = 18.85 rad/s.",
-    "Kinematic equation: A wheel starts from rest and accelerates at 3 rad/s². After 4 s: ω = 12 rad/s, θ = 24 rad, revolutions = 24/2π ≈ 3.82 rev.",
-    "Linear-angular link: A disc of radius 0.5 m rotates at 10 rad/s. Linear speed at the edge: v = 0.5 × 10 = 5 m/s. Centripetal acceleration: a = 0.5 × 100 = 50 m/s².",
-    "Deceleration: A fan at 90 rpm stops in 6 s. ω₀ = 9.42 rad/s. α = −1.57 rad/s². θ = 9.42 × 6/2 = 28.27 rad ≈ 4.5 rev.",
-    "Non-uniform motion: A particle moves in a circle of radius 2 m with ω = 3t rad/s. At t = 2 s: v = 12 m/s, a_t = 6 m/s², a_c = 72 m/s².",
-    "Real-world application of Angular displacement, velocity and acceleration",
-    "Practical demonstration of Angular displacement, velocity and acceleration concepts",
-    "Diagram-based question on Angular displacement, velocity and acceleration",
-    "Application in daily life involving Angular displacement, velocity and acceleration"
+    "***Flywheel 2023*** — r = 0.5 m at 300 rpm: ω = 31.4 rad/s, v = 15.7 m/s."
   ],
   "practiceQuestions": [
-    "A wheel rotates at 240 rpm. Find its angular velocity in rad/s.",
-    "A disc starts from rest and accelerates uniformly at 4 rad/s² for 6 s. Find the final angular velocity and the number of revolutions.",
-    "A fan blade rotating at 150 rpm comes to rest in 10 s. Find the angular acceleration and the angular displacement.",
-    "A particle moves in a circle of radius 3 m with angular velocity ω = 2t rad/s. Find the linear speed, tangential acceleration, and centripetal acceleration at t = 3 s.",
-    "A wheel of radius 0.4 m rotates at 30 rad/s. Find the linear speed at the edge and the centripetal acceleration.",
-    "Q2. Solve problems related to Angular displacement, velocity and acceleration.",
-    "Q3. Differentiate between various aspects of Angular displacement, velocity and acceleration.",
-    "Q4. Derive the key formula related to Angular displacement, velocity and acceleration.",
-    "Q5. What are the applications of Angular displacement, velocity and acceleration?"
+    "**Numerical (3m): A disc of radius 0.2 m spins at 1200 rpm. Find ω, the rim speed and the period.** — ω = 2π(1200)/60 = 125.7 rad/s; v = ωr = 25.1 m/s; T = 2π/ω = 0.05 s."
   ],
   "formulas": [
-    "Angular velocity: ω = dθ/dt (instantaneous), ω = Δθ/t (average)",
-    "Angular acceleration: α = dω/dt = d²θ/dt²",
-    "Kinematic equations (constant α): ω = ω₀ + αt; θ = ω₀t + ½αt²; ω² = ω₀² + 2αθ",
-    "Linear-angular links: v = rω; a_t = rα; a_c = v²/r = rω²",
-    "rpm conversion: ω (rad/s) = rpm × 2π/60; revolutions = θ/(2π)",
-    "Application formula for Angular displacement, velocity and acceleration",
-    "Derivation result for Angular displacement, velocity and acceleration"
+    "- ω = dθ/dt; α = dω/dt\n- ω = 2πn = 2πN/60 (n rev/s, N rpm)\n- s = rθ; v = rω; a = rα\n- T = 2π/ω; f = ω/2π"
   ],
   "keyPoints": [
-    "Angular displacement is measured in radians; 2π rad = 360° = 1 revolution.",
-    "Angular velocity is a vector along the axis (right-hand rule), not tangential.",
-    "The kinematic equations for rotation mirror linear motion: x→θ, v→ω, a→α.",
-    "v = rω links linear and angular speed — the basis of all circular motion problems.",
-    "Always convert rpm to rad/s before using formulas: multiply by 2π/60."
+    "$\\theta$ (rad), $\\omega = d\\theta/dt$ (rad/s), $\\alpha = d\\omega/dt$ (rad/s²).",
+    "$s = r\\theta$, $v = r\\omega$, $a = r\\alpha$; $\\omega = 2\\pi N/60$ for N rpm.",
+    "$T = 2\\pi/\\omega$, $f = \\omega/2\\pi$."
   ],
-  "summary": "Angular displacement (θ), angular velocity (ω = dθ/dt), and angular acceleration (α = dω/dt) describe rotational motion. For constant angular acceleration, the kinematic equations mirror linear motion. The links v = rω and a_c = rω² connect rotational and translational quantities. rpm is converted to rad/s by multiplying by 2π/60. Angular displacement, velocity and acceleration is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Circular motion is described rotationally: **angular displacement** $\\theta$ (radians), **angular velocity** $\\omega = d\\theta/dt$ and **angular acceleration** $\\alpha = d\\omega/dt$. They convert to linear quantities through the radius: $s = r\\theta$, $v = r\\omega$, $a = r\\alpha$. A machine rated at $N$ rpm spins at $\\omega = 2\\pi N/60$ rad/s — a 0.5 m flywheel at 300 rpm has $\\omega = 31.4$ rad/s and rim speed 15.7 m/s (NEB 2023); a 0.8 m-diameter wheel at the same rate has rim speed 12.6 m/s (NEB 2024). Every point of a rigid body shares ω; only v scales with r. Period and frequency follow: $T = 2\\pi/\\omega$, $f = \\omega/2\\pi$.",
   "specialNotes": [
     "Angular velocity points ALONG THE AXIS (right-hand rule), not tangentially — this is the most common confusion.",
     "The kinematic equations for rotation are IDENTICAL in form to linear motion — just swap the variables.",
@@ -121,45 +51,16 @@
     "Note 5: Angular displacement, velocity and acceleration frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Angular velocity is the rate of change of angular displacement: ω = dθ/dt, with direction along the axis (right-hand rule).",
-    "For constant angular acceleration, the kinematic equations are: ω = ω₀ + αt, θ = ω₀t + ½αt², ω² = ω₀² + 2αθ.",
-    "Linear speed and angular speed are linked by v = rω — this is why the outside of a disc moves faster than the inside.",
-    "Centripetal acceleration a_c = v²/r = rω² is directed toward the center of the circular path.",
-    "rpm is converted to rad/s by multiplying by 2π/60 — always do this conversion before using formulas."
+    "\"Angular quantities are the same for the whole wheel; linear quantities depend on r.\""
   ],
   "importantNotes": [
-    "Angular velocity is a vector along the axis (right-hand rule), not tangential — this is the most common confusion.",
-    "The kinematic equations for rotation are identical in form to linear motion — just swap x→θ, v→ω, a→α.",
-    "Always convert rpm to rad/s before using formulas — multiply by 2π/60.",
-    "The number of revolutions is θ/(2π) — divide angular displacement in radians by 2π.",
-    "NEB frequently asks both conversion problems and kinematic equation problems.",
-    "Note 2: Remember the distinction between different types in Angular displacement, velocity and acceleration",
-    "Note 3: Angular displacement, velocity and acceleration has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Angular displacement, velocity and acceleration",
-    "Note 5: Cross-check your answers using alternative methods for Angular displacement, velocity and acceleration"
+    "Verified PYQs: flywheel numerical (2023, 4m); wheel-of-diameter numerical (2024, 3m)."
   ],
   "examShortTricks": [
-    "rpm shortcut: multiply by 2π/60 to get rad/s — memorize this conversion factor.",
-    "Revolutions shortcut: divide θ (in radians) by 2π — no conversion needed.",
-    "Kinematic shortcut: the four equations mirror linear motion — use the same problem-solving approach.",
-    "Linear-angular shortcut: v = rω and a_c = rω² — these two formulas solve most circular motion problems.",
-    "Direction shortcut: angular velocity points along the axis (right-hand rule), not tangentially.",
-    "Trick 1: Quick method to identify applicable Angular displacement, velocity and acceleration formula",
-    "Trick 2: Elimination technique for Angular displacement, velocity and acceleration MCQs",
-    "Trick 3: Dimensional analysis shortcut for Angular displacement, velocity and acceleration",
-    "Trick 4: Memory aid for Angular displacement, velocity and acceleration formulas",
-    "Trick 5: Time-saving approach for Angular displacement, velocity and acceleration problems"
+    "\"Diameter given? Halve it first.\""
   ],
   "examNotes": [
-    "rpm to rad/s conversion is tested every year — know the factor 2π/60.",
-    "Kinematic equation problems (constant α) are standard — practice all four equations.",
-    "Linear-angular link problems (v = rω, a = rω²) are common — know both formulas.",
-    "Number of revolutions problems: use θ/(2π), not θ in radians.",
-    "NEB asks both numerical problems and conceptual questions about angular quantities.",
-    "Focus on numerical problems from Angular displacement, velocity and acceleration",
-    "Practice previous year questions on Angular displacement, velocity and acceleration",
-    "Learn the derivations for Angular displacement, velocity and acceleration thoroughly",
-    "Review common mistakes related to Angular displacement, velocity and acceleration"
+    "Most-tested: rpm→rad/s conversion plus v = ωr (2023, 2024). Expect a_c as a bonus part."
   ],
   "mcs": [
     {
@@ -254,16 +155,7 @@
     }
   ],
   "importantConcepts": [
-    "Angular velocity (ω = dθ/dt) is the rate of change of angular displacement, with direction along the axis.",
-    "The kinematic equations for constant angular acceleration mirror linear motion: ω = ω₀ + αt, θ = ω₀t + ½αt², ω² = ω₀² + 2αθ.",
-    "Linear speed and angular speed are linked by v = rω — the basis of circular motion problems.",
-    "Centripetal acceleration a_c = v²/r = rω² is directed toward the center of the circular path.",
-    "rpm is converted to rad/s by multiplying by 2π/60 — revolutions = θ/(2π).",
-    "Concept 1: Core definition of Angular displacement, velocity and acceleration",
-    "Concept 2: Key theorem or principle in Angular displacement, velocity and acceleration",
-    "Concept 3: Important application area of Angular displacement, velocity and acceleration",
-    "Concept 4: Fundamental relationship in Angular displacement, velocity and acceleration",
-    "Concept 5: Connection between Angular displacement, velocity and acceleration and other topics"
+    "**One conversion unlocks every circular-motion numerical:** $\\omega = 2\\pi N/60$ turns rpm into rad/s."
   ],
   "importantTasks": [
     "Solve 5 problems converting between rpm, rad/s, and revolutions.",
@@ -389,5 +281,143 @@
     "**Kinematic Equations Applicability:** The kinematic equations (analogs of $v = u + at$) for angular motion are strictly valid *only* for constant angular acceleration ($\\alpha = \text{constant}$). For time-varying $\\alpha(t)$, direct integration of $d\\omega/dt$ is required.",
     "**Reference Frame:** Angular velocity is defined in an inertial frame. If observing from a rotating reference frame, non-inertial (fictitious) forces like centrifugal or Coriolis forces appear, which must be accounted for if analyzing dynamics in that frame."
   ],
-  "visualType": "angular-motion"
+  "visualType": "angular-motion",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Describing Spin\n\nA particle moving in a circle is best described by *angle* instead of distance. Angular displacement, angular velocity and angular acceleration are the rotational twins of displacement, velocity and acceleration — and the bridge between them is the radius.",
+      "## 2. Fundamental Concepts\n\n| Linear (translational) | Angular (rotational) | Relation |\n|---|---|---|\n| Displacement $s$ (m) | Angular displacement $\\theta$ (rad) | $s = r\\theta$ |\n| Velocity $v$ (m/s) | Angular velocity $\\omega$ (rad/s) | $v = r\\omega$ |\n| Acceleration $a$ (m/s²) | Angular acceleration $\\alpha$ (rad/s²) | $a = r\\alpha$ |\n\n**Angular displacement ($\\theta$):** the angle swept by the position vector, measured in **radians** (dimensionless: $2\\pi$ rad = 360°). Anticlockwise is positive by convention.\n\n**Angular velocity ($\\omega$):** rate of change of angular displacement, $\\omega = \\dfrac{d\\theta}{dt}$; SI unit rad/s. For $n$ revolutions per second, $\\omega = 2\\pi n$; for $N$ rpm, $\\omega = \\dfrac{2\\pi N}{60}$.\n\n**Angular acceleration ($\\alpha$):** rate of change of angular velocity, $\\alpha = \\dfrac{d\\omega}{dt}$; SI unit rad/s².\n\n**Period and frequency:** $T = \\dfrac{2\\pi}{\\omega}$, $f = \\dfrac{1}{T} = \\dfrac{\\omega}{2\\pi}$.",
+      "## 3. Worked Numericals (NEB 2023, 2024)\n\n**Q (4m, 2023):** A flywheel of radius 0.5 m rotates at a constant speed of 300 revolutions per minute. Find its angular velocity and the linear speed of a point on its rim.\n- $\\omega = \\dfrac{2\\pi N}{60} = \\dfrac{2\\pi \\times 300}{60} = 10\\pi = 31.4$ rad/s\n- $v = \\omega r = 31.4 \\times 0.5 = 15.7$ m/s\n- (bonus) $a_c = \\omega^2 r = (31.4)^2 \\times 0.5 \\approx 4.9 \\times 10^2$ m/s²\n\n**Q (3m, 2024):** A wheel of diameter 0.8 m rotates at 300 revolutions per minute. Find its angular velocity and the linear speed of a point on its rim.\n- $r = 0.4$ m; $\\omega = \\dfrac{2\\pi \\times 300}{60} = 31.4$ rad/s\n- $v = \\omega r = 31.4 \\times 0.4 = 12.6$ m/s",
+      "## 4. Conceptual Relationships\n\n- **To Kinematics (Unit 3):** identical structure — $\\theta, \\omega, \\alpha$ play the roles of $s, v, a$; the rotational equations of motion ($\\omega = \\omega_0 + \\alpha t$, etc.) mirror $v = v_0 + at$.\n- **To Topic 24:** $v = r\\omega$ is the seed of centripetal acceleration $a_c = \\omega^2 r = v^2/r$.\n- **Radian:** dimensionless because it is arc length ÷ radius.",
+      "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Mechanics | Circular motion | A flywheel of radius 0.5 m rotates at a constant speed of 300 revolutions per minute. Find its angular velocity, the linear speed of a point on the rim. | 4 | Numerical |\n| 2080/2024 | Mechanics | Circular motion | A wheel of diameter 0.8 m rotates at 300 revolutions per minute. Find its angular velocity and the linear speed of a point on its rim. | 3 | Numerical |\n\n### 5.2 Common examination mistakes\n\n1. Using diameter as radius in $v = \\omega r$ (2024's trap).\n2. Forgetting to convert rpm → rad/s ($\\times 2\\pi/60$).\n3. Writing rad/s as m/s — radians are dimensionless but angular and linear speeds differ by $r$."
+    ],
+    "confusion": [
+      "**rpm vs rad/s:** 300 rpm is 5 revolutions per second = 10π rad/s — always convert before using $v = \\omega r$.",
+      "**Radian has no dimensions:** angular quantities carry 'rad' as a label, not a base unit — $v = \\omega r$ still works dimensionally."
+    ],
+    "keyPoints": [
+      "$\\theta$ (rad), $\\omega = d\\theta/dt$ (rad/s), $\\alpha = d\\omega/dt$ (rad/s²).",
+      "$s = r\\theta$, $v = r\\omega$, $a = r\\alpha$; $\\omega = 2\\pi N/60$ for N rpm.",
+      "$T = 2\\pi/\\omega$, $f = \\omega/2\\pi$."
+    ],
+    "importantConcepts": [
+      "**One conversion unlocks every circular-motion numerical:** $\\omega = 2\\pi N/60$ turns rpm into rad/s."
+    ],
+    "examples": [
+      "***Flywheel 2023*** — r = 0.5 m at 300 rpm: ω = 31.4 rad/s, v = 15.7 m/s."
+    ],
+    "universalFacts": [
+      "Every point of a rigid rotating body shares the same ω, but v = ωr grows with distance from the axis — the rim moves fastest."
+    ],
+    "importantStatements": [
+      "\"Angular quantities are the same for the whole wheel; linear quantities depend on r.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: flywheel numerical (2023, 4m); wheel-of-diameter numerical (2024, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Diameter given? Halve it first.\""
+    ],
+    "examNotes": [
+      "Most-tested: rpm→rad/s conversion plus v = ωr (2023, 2024). Expect a_c as a bonus part."
+    ],
+    "formulas": [
+      "- ω = dθ/dt; α = dω/dt\n- ω = 2πn = 2πN/60 (n rev/s, N rpm)\n- s = rθ; v = rω; a = rα\n- T = 2π/ω; f = ω/2π"
+    ],
+    "practice": [
+      "A point at half the rim radius of the 2023 flywheel — what is its linear speed?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A disc of radius 0.2 m spins at 1200 rpm. Find ω, the rim speed and the period.** — ω = 2π(1200)/60 = 125.7 rad/s; v = ωr = 25.1 m/s; T = 2π/ω = 0.05 s."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "The SI unit of angular velocity is:",
+      "options": [
+        "m/s",
+        "rad/s",
+        "rev/s",
+        "rad"
+      ],
+      "answer": "B",
+      "explanation": "ω = dθ/dt with θ in radians."
+    },
+    {
+      "question": "300 rpm equals:",
+      "options": [
+        "5 rad/s",
+        "10π rad/s",
+        "30π rad/s",
+        "50 rad/s"
+      ],
+      "answer": "B",
+      "explanation": "ω = 2π(300)/60 = 10π ≈ 31.4 rad/s."
+    },
+    {
+      "question": "A wheel of diameter 0.8 m at 300 rpm has rim speed:",
+      "options": [
+        "6.3 m/s",
+        "12.6 m/s",
+        "15.7 m/s",
+        "25.1 m/s"
+      ],
+      "answer": "B",
+      "explanation": "r = 0.4 m; v = ωr = 31.4 × 0.4 (NEB 2024)."
+    },
+    {
+      "question": "2π radians equal:",
+      "options": [
+        "90°",
+        "180°",
+        "270°",
+        "360°"
+      ],
+      "answer": "D",
+      "explanation": "One full revolution."
+    },
+    {
+      "question": "For a rigid rotating body, which quantity is the same at all radii?",
+      "options": [
+        "Linear speed",
+        "Centripetal acceleration",
+        "Angular velocity",
+        "Tangential displacement"
+      ],
+      "answer": "C",
+      "explanation": "v = ωr varies with r; ω is common."
+    },
+    {
+      "question": "If ω is constant, the angular acceleration is:",
+      "options": [
+        "Zero",
+        "ω/T",
+        "2πω",
+        "Constant nonzero"
+      ],
+      "answer": "A",
+      "explanation": "α = dω/dt = 0 for uniform rotation."
+    },
+    {
+      "question": "The period of a rotation at ω = 10π rad/s is:",
+      "options": [
+        "0.2 s",
+        "0.5 s",
+        "2 s",
+        "5 s"
+      ],
+      "answer": "A",
+      "explanation": "T = 2π/ω = 2π/10π = 0.2 s."
+    },
+    {
+      "question": "Angular displacement of 1 revolution in radians is:",
+      "options": [
+        "π",
+        "2π",
+        "π/2",
+        "4π"
+      ],
+      "answer": "B",
+      "explanation": "360° = 2π rad."
+    }
+  ]
 }

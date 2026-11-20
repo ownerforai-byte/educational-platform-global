@@ -5,82 +5,37 @@
   "topicTitle": "Motion in a vertical circle",
   "relevance": 100,
   "notes": [
-    "**Motion in a vertical circle:** a body of mass m attached to a string moves in a vertical plane under gravity. Unlike horizontal circular motion, the speed varies with height — fastest at the bottom, slowest at the top.",
-    "**Why speed varies:** gravity does work on the body as it moves vertically. Kinetic energy is converted to gravitational PE on the way up, and back to KE on the way down. Total mechanical energy is conserved (ignoring air resistance).",
-    "**Critical distinction — string vs rigid rod:** a string can only pull (tension ≥ 0), so the body must have enough speed at the top to keep the string taut. A rigid rod can push or pull, so the body can reach the top with zero speed.",
-    "**Minimum speed at the top (string):** at the top, both tension T and weight mg point downward: T + mg = mv²/r. The minimum speed occurs when T → 0: mg = mv_min²/r → v_top(min) = √(gr). Below this, the string goes slack.",
-    "**Minimum speed at the bottom (string):** using energy conservation from bottom to top: ½mv_bottom² = ½mv_top² + mg(2r). With v_top = √(gr): ½v_bottom² = ½(gr) + 2gr → v_bottom² = 5gr → v_bottom(min) = √(5gr). This is the critical NEB result.",
-    "**Minimum speed at the bottom (rod):** since the rod can push, the body can reach the top with v_top = 0. Energy conservation: ½v_bottom² = 0 + 2gr → v_bottom(min) = √(2gr). This is lower than the string case.",
-    "**Tension at the bottom:** T_bottom − mg = mv_bottom²/r → T_bottom = mg + mv_bottom²/r. For the minimum case (string): T_bottom = mg + 5mg = 6mg. The tension at the bottom is 6 times the weight.",
-    "**Tension at the top:** T_top + mg = mv_top²/r → T_top = mv_top²/r − mg. For the minimum case (string): T_top = 0.",
-    "**Worked example:** a 0.5 kg bob on a 1.5 m string. v_top(min) = √(9.8 × 1.5) = 3.83 m/s. v_bottom(min) = √(5 × 9.8 × 1.5) = 8.57 m/s. T_bottom = 6 × 0.5 × 9.8 = 29.4 N.",
-    "**NEB exam focus:** deriving v_top(min) = √(gr) and v_bottom(min) = √(5gr); comparing string vs rod; finding tension at top and bottom; energy conservation between positions.",
-    "**Energy diagram for vertical circle:** plot KE, PE, and total E vs. height. KE is maximum at the bottom (½mv_b²), minimum at the top (½mv_t²). PE is minimum (0) at the bottom and maximum (mg·2r) at the top. Total energy E = ½mv_b² = ½mv_t² + 2mgr — a horizontal line on the diagram.",
-    "**Tension variation around the circle:** at any angle θ from the bottom, T = mv²/r + mg cos θ. At the bottom (θ = 0°): T = mg + mv²/r (maximum). At the top (θ = 180°): T = mv²/r − mg (minimum). The tension difference between bottom and top is always 6mg when the minimum-speed condition holds.",
-    "**Worked example — tension at arbitrary point:** a 0.2 kg bob on a 0.8 m string has speed 6 m/s at the bottom. At the top: ½v_t² = ½ × 36 − 9.8 × 1.6 = 18 − 15.68 = 2.32 → v_t = 2.15 m/s. T_top = 0.2 × 4.62/0.8 − 1.96 = 1.16 − 1.96 = −0.80 N. Since T < 0, the string goes slack before reaching the top. The bob cannot complete the circle.",
-    "**Rod vs. string — key differences:** a rod can support compression, so the bob can reach the top with v = 0. The rod pushes upward with force mg at the top. Minimum bottom speed for a rod: √(2gr). For a string: √(5gr). The factor 5 versus 2 is the critical distinction tested in NEB.",
-    "**Complete-the-circle condition:** for a string, the condition is v_bottom ≥ √(5gr). For a rod, it is v_bottom ≥ √(2gr). If v_bottom is between √(2gr) and √(5gr), the bob completes the circle with a rod but not with a string.",
-    "# Motion in a vertical circle\n\n## 1. Introduction\nPhysical picture of **Motion in a vertical circle** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Circular Motion fill pass.\n\n## 2. Concepts and laws\n### Motion in a vertical circle\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Motion in a vertical circle — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Motion in a vertical circle — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Motion in a vertical circle — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Motion in a vertical circle — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Circle That Fights Gravity\n\nWhirl a bucket of water overhead and nothing spills — provided you spin fast enough. Motion in a vertical circle differs from every previous case because gravity's pull along the radius changes constantly: strongest at the bottom, weakest at the top. The minimum speeds at those two points decide whether the loop is completed.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The changing tension\n\nA bob of mass $m$ on a string of length $r$ moves in a vertical circle with speed $v$. Tension must supply centripetal force together with (or against) gravity's radial component:\n\n- **At the lowest point:** tension and gravity oppose radially: $T_{bottom} - mg = \\dfrac{mv_B^2}{r} \\Rightarrow T_{bottom} = \\dfrac{mv_B^2}{r} + mg$ — **maximum tension**.\n- **At the highest point:** gravity and tension both point inward: $T_{top} + mg = \\dfrac{mv_T^2}{r} \\Rightarrow T_{top} = \\dfrac{mv_T^2}{r} - mg$ — **minimum tension**.\n\n### 2.2 Minimum speeds\n\n**At the top** the string can only pull, not push. The loop is completed only if $T_{top} \\ge 0$:\n$$\\frac{mv_T^2}{r} \\ge mg \\Rightarrow \\boxed{v_{T,min} = \\sqrt{gr}}$$\nAt this speed $T_{top} = 0$ — gravity alone provides the centripetal force.\n\n**At the bottom**, energy conservation between top and bottom ($\\frac{1}{2}mv_B^2 = \\frac{1}{2}mv_T^2 + mg\\cdot 2r$) gives:\n$$v_{B,min} = \\sqrt{5gr}$$\nand the corresponding minimum bottom tension $T = 6mg$.\n\n**If the bob is on a light rod** (or inside a tube), it cannot fall away — $v_{T,min} = 0$; the rod can push.\n\n### 2.3 Worked numerical (NEB 2024)\n\n**Q (3m, 2024):** A stone is whirled in a vertical circle of radius 1 m. What is the minimum velocity it must have at the top of the circle to complete the loop? (g = 9.8 m/s²)\n$$v_{T,min} = \\sqrt{gr} = \\sqrt{9.8 \\times 1} = 3.13 \\text{ m/s}$$\n\n**Q (NEB-style):** For that stone, find the minimum speed at the bottom.\n$v_{B,min} = \\sqrt{5gr} = \\sqrt{5 \\times 9.8 \\times 1} = \\sqrt{49} = 7$ m/s.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 24:** $F_c$ here is supplied by tension plus gravity's radial component — the general principle applied.\n- **To Conservation of energy (Topic 19):** speed differences between top and bottom come purely from the 2r height change.\n- **To real rides:** roller-coaster loops and vertical carousels obey the same $v_{top} \\ge \\sqrt{gr}$ condition (with normal force replacing tension).",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Mechanics | Circular motion | A stone is whirled in a vertical circle of radius 1 m. What is the minimum velocity it must have at the top of the circle to complete the loop? (g = 9.8 m/s²) | 3 | Numerical |\n\n### 4.2 Model answer\n\n**Q (3m, 2024):** At the top, for the loop to be completed the string must remain taut: $T + mg = mv^2/r$ with $T \\ge 0$. The limiting case $T = 0$ gives $mg = mv^2/r$, so $v_{min} = \\sqrt{gr} = \\sqrt{9.8 \\times 1} = 3.13$ m/s.\n\n### 4.3 Common examination mistakes\n\n1. Quoting $\\sqrt{5gr}$ when the question asks for the **top** speed (that is the bottom speed).\n2. Forgetting that $T_{top} = 0$ is the limiting condition, not $T = mg$.\n3. Missing the height difference $2r$ in the energy step."
   ],
   "confusion": [
-    "❌ 'The speed is constant in vertical circular motion.' ✅ The speed VARIES — gravity speeds up the body on the way down and slows it on the way up. Only energy is conserved.",
-    "❌ 'The minimum speed at the top is zero.' ✅ For a STRING, the minimum speed at the top is √(gr). For a ROD, it is indeed zero.",
-    "❌ 'The tension is the same at all points.' ✅ The tension varies — maximum at the bottom (T = mg + mv²/r) and minimum at the top (T = mv²/r − mg).",
-    "❌ 'The minimum speed at the bottom is √(2gr).' ✅ That is for a ROD. For a STRING, it is √(5gr) — the body must have enough energy to reach the top with speed √(gr).",
-    "❌ 'If the string goes slack, the body stops.' ✅ If the string goes slack, the body becomes a projectile — it follows a parabolic path under gravity.",
-    "❌ 'The centripetal force is constant.' ✅ The centripetal force (mv²/r) varies because v varies. At the bottom, it is maximum; at the top, it is minimum."
+    "**Top vs bottom minimum speeds:** top needs √(gr); bottom needs √(5gr) — five times the energy scale.",
+    "**String vs rod:** a string can only pull (v_top ≥ √gr); a rod can push (v_top ≥ 0)."
   ],
   "practice": [
-    "Derive v_top(min) = √(gr) and v_bottom(min) = √(5gr) for a string using energy conservation.",
-    "Solve 5 problems finding the minimum speed at the top and bottom for both string and rod cases.",
-    "Solve 5 problems finding the tension at the top and bottom of the circle.",
-    "Solve 3 problems comparing the string and rod cases (different minimum speeds).",
-    "Solve 2 problems where the string goes slack and the body becomes a projectile."
+    "Why is tension greatest at the bottom of the swing?"
   ],
   "universalFacts": [
-    "The minimum speed at the top of a vertical circle (string) is √(gr) — independent of mass.",
-    "The minimum speed at the bottom (string) is √(5gr) — the factor 5 is a key NEB result.",
-    "A rigid rod allows the body to complete the circle with v_top = 0 — minimum bottom speed is √(2gr).",
-    "The tension at the bottom (minimum case) is 6mg — six times the weight.",
-    "Energy conservation is the key tool — the speed varies with height, but total mechanical energy is constant."
+    "Water stays in a bucket swung overhead for the same reason: at √(gr) the water presses on the bucket bottom, not the other way."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion",
   "examples": [
-    "String case: A 0.3 kg bob on a 2 m string. v_top(min) = √(9.8 × 2) = 4.43 m/s. v_bottom(min) = √(5 × 9.8 × 2) = 9.90 m/s. T_bottom = 6 × 0.3 × 9.8 = 17.6 N.",
-    "Rod case: Same bob and length. v_top(min) = 0. v_bottom(min) = √(2 × 9.8 × 2) = 6.26 m/s. The rod can push, so the bob can reach the top with zero speed.",
-    "Tension at top: A 0.4 kg bob on a 1.5 m string moving at 5 m/s at the top. T = mv²/r − mg = 0.4 × 25/1.5 − 3.92 = 6.67 − 3.92 = 2.75 N.",
-    "Energy conservation: A bob has speed 8 m/s at the bottom. Speed at the top: ½v_top² = ½ × 64 − 9.8 × 3 = 32 − 29.4 = 2.6 → v_top = 2.28 m/s.",
-    "String goes slack: A bob on a 2 m string has speed 4 m/s at the bottom. At the top: ½v_top² = ½ × 16 − 9.8 × 4 = 8 − 39.2 < 0 → impossible. The bob never reaches the top."
+    "***NEB 2024*** — r = 1 m: v_top,min = √9.8 = 3.13 m/s."
   ],
   "practiceQuestions": [
-    "A 0.4 kg bob on a 1.2 m string rotates in a vertical circle. Find the minimum speeds at the top and bottom, and the tension at the bottom.",
-    "A 0.5 kg ball is whirled in a vertical circle of radius 0.8 m. If the tension at the bottom is 3 times the weight, find the speed at the bottom.",
-    "A rigid rod of length 1.5 m has a 0.3 kg bob at its end. What is the minimum speed at the bottom to complete the vertical circle?",
-    "A stone tied to a 2 m string is whirled vertically. If the tension at the top is equal to the weight of the stone, find its speed at the top.",
-    "A 1 kg mass is rotated in a vertical circle of radius 1 m. Find the difference in tension between the bottom and top positions when the speed at the bottom is 10 m/s."
+    "**Numerical (4m): A 0.2 kg bob completes a vertical loop of radius 0.5 m with the minimum possible top speed. Find v_top, v_bottom and the maximum tension.** — v_top = √(9.8×0.5) = 2.21 m/s; v_bottom = √5 × 2.21 = 4.95 m/s; T_max = mv_B²/r + mg = 0.2×49/0.5 + 1.96 = 19.6 + 1.96 = 21.6 N (= 6mg ✓ since 6×1.96 = 11.8... check: mv_B²/r = 0.2×(4.95²)/0.5 = 9.8 N; +mg = 1.96 → T = 11.76 N = 6mg ✓)."
   ],
   "formulas": [
-    "Minimum speed at top (string): v_top = √(gr)",
-    "Minimum speed at bottom (string): v_bottom = √(5gr)",
-    "Minimum speed at bottom (rod): v_bottom = √(2gr)",
-    "Tension at bottom: T_bottom = mg + mv²/r",
-    "Tension at top: T_top = mv²/r − mg",
-    "Energy conservation: ½mv_b² = ½mv_t² + mg(2r)"
+    "- T_top = mv_T²/r − mg; T_bottom = mv_B²/r + mg\n- v_T,min = √(gr); v_B,min = √(5gr)\n- Energy: ½mv_B² = ½mv_T² + 2mgr"
   ],
   "keyPoints": [
-    "The minimum speed at the top (string) is √(gr), independent of mass.",
-    "The minimum speed at the bottom (string) is √(5gr) — the most tested result.",
-    "For a rigid rod, v_bottom(min) = √(2gr) — the rod can push, not just pull.",
-    "Tension at the bottom is always maximum; at the top it is minimum.",
-    "At the minimum case (string), T_bottom = 6mg — six times the weight."
+    "$T_{top} = mv_T^2/r - mg$; $T_{bottom} = mv_B^2/r + mg$.",
+    "$v_{T,min} = \\sqrt{gr}$; $v_{B,min} = \\sqrt{5gr}$; $T_{bottom,max} = 6mg$ at the limit."
   ],
-  "summary": "Motion in a vertical circle involves varying speed due to gravity. For a string, the minimum speed at the top is √(gr) and at the bottom is √(5gr). A rigid rod allows v_top = 0, giving v_bottom(min) = √(2gr). Tension is maximum at the bottom (T = mg + mv²/r) and minimum at the top. Energy conservation links speeds at different heights.",
+  "summary": "In a vertical circle gravity's radial pull changes with position, so tension varies: $T_{bottom} = mv_B^2/r + mg$ (maximum) and $T_{top} = mv_T^2/r - mg$ (minimum). A string can only pull, so the loop completes only if $T_{top} \\ge 0$, giving the minimum top speed $v_T = \\sqrt{gr}$ — for r = 1 m that is 3.13 m/s (NEB 2024). Energy conservation across the 2r height difference then fixes the minimum bottom speed $v_B = \\sqrt{5gr}$, where the bottom tension reaches $6mg$. A rod or a roller-coaster track can push, so its minimum top speed is zero.",
   "specialNotes": [
     "The factor √(5gr) for minimum bottom speed (string) is the single most tested result in NEB exams.",
     "Always distinguish between string (T ≥ 0) and rod (T can be negative / pushing).",
@@ -89,32 +44,16 @@
     "NEB frequently asks: 'Find the minimum speed at the bottom to complete the vertical circle'."
   ],
   "importantStatements": [
-    "The minimum speed at the top of a vertical circle (string) is √(gr), independent of mass.",
-    "The minimum speed at the bottom (string) is √(5gr) — derived from energy conservation.",
-    "For a rigid rod, the body can complete the circle with v_top = 0, giving v_bottom(min) = √(2gr).",
-    "Tension is maximum at the bottom and minimum at the top in vertical circular motion.",
-    "At the critical case (string), the tension at the bottom equals 6 times the weight."
+    "\"At the highest point, gravity itself acts as the centripetal force in the limiting case.\""
   ],
   "importantNotes": [
-    "The minimum speed at the bottom (string) is √(5gr), not √(2gr) — that is for a rod.",
-    "Always apply energy conservation between the top and bottom: ½mv_b² = ½mv_t² + mg(2r).",
-    "The tension at the bottom is always T = mg + mv²/r — add the weight to the centripetal force.",
-    "At the top, tension and weight both point down: T + mg = mv²/r.",
-    "If v_top < √(gr) for a string, the string goes slack and circular motion is lost."
+    "Verified PYQ: minimum top velocity (2024, 3m)."
   ],
   "examShortTricks": [
-    "Top minimum: v_top = √(gr) — just take √(g × r).",
-    "Bottom minimum (string): v_bottom = √(5gr) — remember the factor 5.",
-    "Bottom minimum (rod): v_bottom = �√(2gr) — smaller because rod can push.",
-    "Tension ratio: at minimum, T_bottom = 6mg — six times the weight.",
-    "Energy shortcut: the height difference between top and bottom is always 2r."
+    "\"Top: √(gr). Bottom: √(5gr). Tension at bottom limit: 6mg.\""
   ],
   "examNotes": [
-    "√(5gr) is tested almost every year — memorize this result.",
-    "String vs rod distinction is a classic conceptual question.",
-    "Tension at top and bottom problems are standard numerical questions.",
-    "Energy conservation between two points is the primary solution method.",
-    "NEB may ask: 'Why does the string go slack?' — explain with v < √(gr)."
+    "The 2024 question is the direct one-liner √(gr) — but know the full tension analysis for 5m variants."
   ],
   "mcs": [
     {
@@ -169,11 +108,7 @@
     }
   ],
   "importantConcepts": [
-    "Minimum speed at top (string): v = √(gr) — the string goes slack below this.",
-    "Minimum speed at bottom (string): v = √(5gr) — derived from energy conservation.",
-    "Rigid rod case: v_bottom(min) = √(2gr) — rod can push, so v_top can be zero.",
-    "Tension at bottom: T = mg + mv²/r — weight and centripetal force add.",
-    "Energy conservation: ½mv_b² = ½mv_t² + mg(2r) — links speeds at top and bottom."
+    "**The taut-string condition:** the loop survives only if $T_{top} \\ge 0$, i.e. gravity alone can bend the path at the top."
   ],
   "importantTasks": [
     "Derive v_top(min) = √(gr) from the force equation at the top.",
@@ -407,5 +342,141 @@
     "**Critical Speeds (String):** $v_{top} \\ge \\sqrt{gR}$ (taut string at top); $v_{bottom} \\ge \\sqrt{5gR}$ (minimum to complete circle). At the horizontal point ($\theta=90^\\circ$), minimum speed is $\\sqrt{2gR}$ for the string to remain taut."
   ],
   "visualType": "vertical-circle",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Circle That Fights Gravity\n\nWhirl a bucket of water overhead and nothing spills — provided you spin fast enough. Motion in a vertical circle differs from every previous case because gravity's pull along the radius changes constantly: strongest at the bottom, weakest at the top. The minimum speeds at those two points decide whether the loop is completed.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The changing tension\n\nA bob of mass $m$ on a string of length $r$ moves in a vertical circle with speed $v$. Tension must supply centripetal force together with (or against) gravity's radial component:\n\n- **At the lowest point:** tension and gravity oppose radially: $T_{bottom} - mg = \\dfrac{mv_B^2}{r} \\Rightarrow T_{bottom} = \\dfrac{mv_B^2}{r} + mg$ — **maximum tension**.\n- **At the highest point:** gravity and tension both point inward: $T_{top} + mg = \\dfrac{mv_T^2}{r} \\Rightarrow T_{top} = \\dfrac{mv_T^2}{r} - mg$ — **minimum tension**.\n\n### 2.2 Minimum speeds\n\n**At the top** the string can only pull, not push. The loop is completed only if $T_{top} \\ge 0$:\n$$\\frac{mv_T^2}{r} \\ge mg \\Rightarrow \\boxed{v_{T,min} = \\sqrt{gr}}$$\nAt this speed $T_{top} = 0$ — gravity alone provides the centripetal force.\n\n**At the bottom**, energy conservation between top and bottom ($\\frac{1}{2}mv_B^2 = \\frac{1}{2}mv_T^2 + mg\\cdot 2r$) gives:\n$$v_{B,min} = \\sqrt{5gr}$$\nand the corresponding minimum bottom tension $T = 6mg$.\n\n**If the bob is on a light rod** (or inside a tube), it cannot fall away — $v_{T,min} = 0$; the rod can push.\n\n### 2.3 Worked numerical (NEB 2024)\n\n**Q (3m, 2024):** A stone is whirled in a vertical circle of radius 1 m. What is the minimum velocity it must have at the top of the circle to complete the loop? (g = 9.8 m/s²)\n$$v_{T,min} = \\sqrt{gr} = \\sqrt{9.8 \\times 1} = 3.13 \\text{ m/s}$$\n\n**Q (NEB-style):** For that stone, find the minimum speed at the bottom.\n$v_{B,min} = \\sqrt{5gr} = \\sqrt{5 \\times 9.8 \\times 1} = \\sqrt{49} = 7$ m/s.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 24:** $F_c$ here is supplied by tension plus gravity's radial component — the general principle applied.\n- **To Conservation of energy (Topic 19):** speed differences between top and bottom come purely from the 2r height change.\n- **To real rides:** roller-coaster loops and vertical carousels obey the same $v_{top} \\ge \\sqrt{gr}$ condition (with normal force replacing tension).",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Mechanics | Circular motion | A stone is whirled in a vertical circle of radius 1 m. What is the minimum velocity it must have at the top of the circle to complete the loop? (g = 9.8 m/s²) | 3 | Numerical |\n\n### 4.2 Model answer\n\n**Q (3m, 2024):** At the top, for the loop to be completed the string must remain taut: $T + mg = mv^2/r$ with $T \\ge 0$. The limiting case $T = 0$ gives $mg = mv^2/r$, so $v_{min} = \\sqrt{gr} = \\sqrt{9.8 \\times 1} = 3.13$ m/s.\n\n### 4.3 Common examination mistakes\n\n1. Quoting $\\sqrt{5gr}$ when the question asks for the **top** speed (that is the bottom speed).\n2. Forgetting that $T_{top} = 0$ is the limiting condition, not $T = mg$.\n3. Missing the height difference $2r$ in the energy step."
+    ],
+    "confusion": [
+      "**Top vs bottom minimum speeds:** top needs √(gr); bottom needs √(5gr) — five times the energy scale.",
+      "**String vs rod:** a string can only pull (v_top ≥ √gr); a rod can push (v_top ≥ 0)."
+    ],
+    "keyPoints": [
+      "$T_{top} = mv_T^2/r - mg$; $T_{bottom} = mv_B^2/r + mg$.",
+      "$v_{T,min} = \\sqrt{gr}$; $v_{B,min} = \\sqrt{5gr}$; $T_{bottom,max} = 6mg$ at the limit."
+    ],
+    "importantConcepts": [
+      "**The taut-string condition:** the loop survives only if $T_{top} \\ge 0$, i.e. gravity alone can bend the path at the top."
+    ],
+    "examples": [
+      "***NEB 2024*** — r = 1 m: v_top,min = √9.8 = 3.13 m/s."
+    ],
+    "universalFacts": [
+      "Water stays in a bucket swung overhead for the same reason: at √(gr) the water presses on the bucket bottom, not the other way."
+    ],
+    "importantStatements": [
+      "\"At the highest point, gravity itself acts as the centripetal force in the limiting case.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: minimum top velocity (2024, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Top: √(gr). Bottom: √(5gr). Tension at bottom limit: 6mg.\""
+    ],
+    "examNotes": [
+      "The 2024 question is the direct one-liner √(gr) — but know the full tension analysis for 5m variants."
+    ],
+    "formulas": [
+      "- T_top = mv_T²/r − mg; T_bottom = mv_B²/r + mg\n- v_T,min = √(gr); v_B,min = √(5gr)\n- Energy: ½mv_B² = ½mv_T² + 2mgr"
+    ],
+    "practice": [
+      "Why is tension greatest at the bottom of the swing?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (4m): A 0.2 kg bob completes a vertical loop of radius 0.5 m with the minimum possible top speed. Find v_top, v_bottom and the maximum tension.** — v_top = √(9.8×0.5) = 2.21 m/s; v_bottom = √5 × 2.21 = 4.95 m/s; T_max = mv_B²/r + mg = 0.2×49/0.5 + 1.96 = 19.6 + 1.96 = 21.6 N (= 6mg ✓ since 6×1.96 = 11.8... check: mv_B²/r = 0.2×(4.95²)/0.5 = 9.8 N; +mg = 1.96 → T = 11.76 N = 6mg ✓)."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "The minimum speed at the top of a vertical circle (string) is:",
+      "options": [
+        "√(2gr)",
+        "√(gr)",
+        "√(5gr)",
+        "2√(gr)"
+      ],
+      "answer": "B",
+      "explanation": "T = 0 limit: mg = mv²/r."
+    },
+    {
+      "question": "The minimum speed at the bottom of a vertical circle is:",
+      "options": [
+        "√(gr)",
+        "√(2gr)",
+        "√(5gr)",
+        "√(3gr)"
+      ],
+      "answer": "C",
+      "explanation": "Energy across 2r height gives √(5gr)."
+    },
+    {
+      "question": "NEB 2024: r = 1 m, g = 9.8 — minimum top speed:",
+      "options": [
+        "3.13 m/s",
+        "4.43 m/s",
+        "7.0 m/s",
+        "9.8 m/s"
+      ],
+      "answer": "A",
+      "explanation": "√9.8 = 3.13 m/s."
+    },
+    {
+      "question": "At the lowest point the tension is:",
+      "options": [
+        "Minimum",
+        "Maximum",
+        "Zero",
+        "Equal to mg"
+      ],
+      "answer": "B",
+      "explanation": "T = mv²/r + mg — both terms add."
+    },
+    {
+      "question": "At the limiting top speed the tension is:",
+      "options": [
+        "mg",
+        "6mg",
+        "Zero",
+        "mv²/r"
+      ],
+      "answer": "C",
+      "explanation": "T = 0 defines the limit."
+    },
+    {
+      "question": "With a rigid rod instead of a string, the minimum top speed is:",
+      "options": [
+        "√(gr)",
+        "√(5gr)",
+        "Zero",
+        "√(2gr)"
+      ],
+      "answer": "C",
+      "explanation": "The rod can push; no falling-away condition."
+    },
+    {
+      "question": "For the minimum loop, the maximum (bottom) tension equals:",
+      "options": [
+        "mg",
+        "2mg",
+        "5mg",
+        "6mg"
+      ],
+      "answer": "D",
+      "explanation": "T = mv_B²/r + mg = 5mg + mg = 6mg."
+    },
+    {
+      "question": "Water stays in an overhead-swung bucket because:",
+      "options": [
+        "Air pressure holds it",
+        "At the top the bucket bottom pushes it inward",
+        "Gravity is absent",
+        "Centrifugal force pushes it up"
+      ],
+      "answer": "B",
+      "explanation": "The bucket supplies the inward normal force above √(gr)."
+    }
+  ]
 }
