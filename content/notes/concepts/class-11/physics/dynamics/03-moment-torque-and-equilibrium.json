@@ -1,59 +1,43 @@
 {
   "title": "Moment, Torque & Conditions of Equilibrium",
   "notes": [
-    "The moment, or torque, of a force about a point is τ = r F sinθ. Here r is the distance from the point to the line of action, and θ is the angle between the position vector and the force. The perpendicular distance from the point to the line of the force is the moment arm.",
-    "A force through the pivot has zero moment arm, so it produces no torque about that pivot. That is why a hinge force can be removed from a torque equation by taking torques about the hinge.",
-    "Translational equilibrium means the body does not start to accelerate linearly. The vector sum of the forces is zero. In a plane this is two equations, one horizontal and one vertical.",
-    "Rotational equilibrium means the body does not start to rotate. The sum of the clockwise moments equals the sum of the anticlockwise moments about any point. Together with the force equations, this is the condition for complete equilibrium.",
-    "The sign of a torque is a choice. Clockwise negative and anticlockwise positive is a clear convention, as long as it is used for every force.",
-    "A light rod or beam is often taken to have no weight. If the beam is uniform, its weight acts at the midpoint. Leaving that weight out is a different problem from the one that was asked."
+    "## 1. Topic Introduction — Why Handles Are Long and Seesaws Balance\n\nForce alone does not describe turning: the same 20 N opens a door easily at the handle and barely at the hinge. The turning effect is the **moment (torque)**, and its balance — the **principle of moments** — explains seesaws, levers, beam balances and every statics problem.",
+    "## 2. Fundamental Concepts\n\n| Term | Definition | Formula | Unit |\n|---|---|---|---|\n| **Moment of force (torque)** | Turning effect = force × perpendicular distance from the axis to the line of action | $\\tau = F \\times d$ (vector: $\\vec\\tau = \\vec r \\times \\vec F$) | N·m |\n| **Moment arm (lever arm)** | Perpendicular distance from the pivot to the force's line of action | $d$ | m |\n| **Couple** | Two equal, opposite, parallel forces whose lines of action differ | $\\tau = F \\times$ separation | N·m |\n| **Translational equilibrium** | Net force zero: $\\sum \\vec F = 0$ (no acceleration of centre of mass) | — | — |\n| **Rotational equilibrium** | Net torque zero: $\\sum \\tau = 0$ (no angular acceleration) | — | — |\n| **Complete (static) equilibrium** | Both conditions hold | — | — |\n\n**Principle of moments:** for a body in rotational equilibrium about a pivot,\n$$\\sum \\text{clockwise moments} = \\sum \\text{anticlockwise moments}$$\n\n**Sign convention:** forces tending to rotate anticlockwise are positive (or vice versa — be consistent).\n\n**Worked numerical:** A uniform metre rule pivoted at its centre (50 cm) has a 2 N weight hung at 20 cm. Where must a 3 N weight hang to balance?\nAnticlockwise moment: $2 \\times (50 - 20) = 60$ N·cm. Clockwise: $3 \\times (x - 50) = 60 → x = 70$ cm. **The 3 N weight hangs at the 70 cm mark.**\n\n**Worked numerical (non-uniform support):** A uniform rod of weight 10 N and length 2 m is carried by two people at its ends. Find the force each bears.\nBy symmetry, each bears 5 N. If one person holds at 0.5 m from one end: taking moments about the far end — $F_1 \\times 2 = 10 \\times 1 → F_1 = 5$ N, and $F_2 = 5$ N. For asymmetric holds, both equilibrium conditions ($\\sum F = 0$, $\\sum \\tau = 0$) are needed.",
+    "## 3. Why the Position of Force Matters\n\nTorque depends on the **perpendicular** distance, not the actual distance: a force applied at an angle contributes $F d\\sin\\theta$. This is why:\n- Door handles sit far from hinges (maximum moment arm).\n- Spanners are long; cheater bars extend them.\n- A force along the line through the pivot (d = 0) produces **no torque**.\n\n**Couple:** equal, opposite, parallel forces (like turning a steering wheel) produce pure rotation — zero net force, non-zero torque independent of the pivot chosen.",
+    "## 4. Conceptual Relationships\n\n- **To Topic 13:** equilibrium conditions are Newton's first and second laws specialized to zero acceleration (force and torque versions).\n- **To Circular Motion:** torque causes angular acceleration — $\\tau = I\\alpha$ (Class 12 extension).\n- **To Gravitation:** centre of gravity is where the total weight's moment acts; centre of mass and centre of gravity coincide in uniform g.\n- **To real life:** beam balances, wheelbarrows, bottle openers and crane loads are all principle-of-moments problems.",
+    "## 5. Exam Orientation\n\n### 5.1 Previous year questions\n\nNo moment/torque question exists in the authored bank. Questions below are **NEB-style practice**, clearly labelled.\n\n### 5.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Define moment of a force and state the principle of moments.**\nAnswer: The **moment of a force** about an axis is the product of the force and the perpendicular distance from the axis to its line of action: $\\tau = Fd$ (unit N·m) — the turning effect. The **principle of moments** states that for a body in rotational equilibrium about a pivot, the sum of clockwise moments equals the sum of anticlockwise moments.\n\n**Q2 (3m) — A uniform metre rule pivoted at 50 cm balances a 4 N weight at the 20 cm mark with an unknown weight W at the 80 cm mark. Find W.**\nAnticlockwise: $4 \\times 30 = 120$ N·cm; clockwise: $W \\times 30$. Balance: $W = 4$ N.\n\n**Q3 (2m) — What is a couple?**\nAnswer: A pair of equal, opposite, parallel forces whose lines of action do not coincide; it produces pure rotation (no translation), with torque $F \\times$ separation, independent of the pivot.\n\n### 5.3 Common examination mistakes\n\n1. Using the actual distance instead of the **perpendicular** distance (moment arm).\n2. Ignoring the rule's own weight when it is not pivoted at its centre of gravity.\n3. Mixing clockwise and anticlockwise signs inconsistently.\n4. Confusing N·m (torque) with joules (N·m = J for work) — same dimensions, different quantities.\n5. Forgetting the second equilibrium condition ($\\sum F = 0$) when asked for support reactions."
   ],
   "examples": [
-    "The moment, or torque, of a force about a point is τ = r F sinθ. Here r is the distance from the point to the line of action, and θ is the angle between the position vector and the force. The perpendicular distance from the point to the line of the force is the moment arm.",
-    "A force through the pivot has zero moment arm, so it produces no torque about that pivot. That is why a hinge force can be removed from a torque equation by taking torques about the hinge.",
-    "A light rod 2.0 m long is supported at its ends. A 40 N weight hangs 0.50 m from the left end. Find the two support forces."
+    "***Metre rule balance*** — 2 N at 20 cm vs 3 N at 70 cm about the 50 cm pivot."
   ],
   "practiceQuestions": [
-    "Q1. Define Moment, Torque & Conditions of Equilibrium.",
-    "Q3. Problem on Moment, Torque & Conditions of Equilibrium.",
-    "What two conditions make a rigid body fully in equilibrium?",
-    "Why take torques about a hinge?",
-    "Where does the weight of a uniform beam act?"
+    "**Numerical (3m): A uniform 200 N ladder of 5 m rests against a smooth wall at 60° to the ground. Find the wall's reaction.** — Taking moments about the foot: N_wall × 5 sin 60° = 200 × 2.5 cos 60° → N_wall = (500 × 0.5)/(5 × 0.866) = 57.7 N; the ground supplies the friction balancing it."
   ],
   "formulas": [
-    "τ = r F sinθ",
-    "For equilibrium: ΣF = 0 and Στ = 0"
+    "- τ = F × d (d = perpendicular distance); vector τ⃗ = r⃗ × F⃗\n- Equilibrium: ΣF⃗ = 0 and Στ⃗ = 0\n- Couple torque: F × separation"
   ],
   "keyPoints": [
-    "Connection of Moment, Torque & Conditions of Equilibrium to other topics",
-    "Torque is force times the perpendicular lever arm.",
-    "Translational equilibrium: net force zero.",
-    "Rotational equilibrium: net torque zero.",
-    "The choice of pivot does not change a true equilibrium."
+    "Torque τ = F × d (perpendicular distance); unit N·m.",
+    "Equilibrium: ΣF = 0 (translational) and Στ = 0 (rotational).",
+    "Principle of moments: clockwise moments = anticlockwise moments.",
+    "Couple: equal/opposite/parallel forces → pure rotation, pivot-independent torque."
   ],
-  "summary": "Moment, Torque & Conditions of Equilibrium covers essential principles and applications.",
+  "summary": "The turning effect of a force is its **moment (torque)**: τ = F × d, with d the perpendicular distance from the axis to the force's line of action — the reason door handles sit far from hinges and a force through the pivot turns nothing. A body is in **translational equilibrium** when $\\sum \\vec F = 0$ and in **rotational equilibrium** when $\\sum \\vec\\tau = 0$; both together give static equilibrium, expressed as the **principle of moments**: clockwise moments equal anticlockwise moments — 2 N at 20 cm of a centre-pivoted metre rule balances 3 N at 70 cm. A **couple** — equal, opposite, parallel forces — produces pure rotation whose torque is pivot-independent. Every lever, balance and crane leans on this arithmetic.",
   "specialNotes": [
     "A light beam means its weight is neglected.",
     "Couple: two equal opposite forces with different lines of action, net force zero, net torque not zero."
   ],
   "importantStatements": [
-    "The moment, or torque, of a force about a point is τ = r F sinθ. Here r is the distance from the point to the line of action, and θ is the angle between the position vector and the force. The perpendicular distance from the point to the line of the force is the moment arm.",
-    "A force through the pivot has zero moment arm, so it produces no torque about that pivot. That is why a hinge force can be removed from a torque equation by taking torques about the hinge.",
-    "Translational equilibrium means the body does not start to accelerate linearly. The vector sum of the forces is zero. In a plane this is two equations, one horizontal and one vertical."
+    "\"It is not the force but where you apply it that turns the world.\""
   ],
   "importantNotes": [
-    "Moment, Torque & Conditions of Equilibrium is based on fundamental principles.",
-    "State the pivot before writing moments.",
-    "Distances must be in the same unit on both sides."
+    "No verified PYQ in the bank; practise principle-of-moments numericals and equilibrium conditions as NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Moment, Torque & Conditions of Equilibrium.",
-    "Choose the pivot at an unknown force to remove it.",
-    "sinθ = 1 when the force is perpendicular to the arm."
+    "\"Perpendicular distance or no torque.\""
   ],
   "examNotes": [
-    "Definition, then formula, then substitution.",
-    "A vector answer is incomplete without its direction."
+    "Most likely items: define moment/torque; principle of moments; metre-rule balance numerical; couple."
   ],
   "mcs": [
     {
@@ -98,74 +82,113 @@
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Moment, Torque & Conditions of Equilibrium.",
-    "Moment arm",
-    "Torque",
-    "Force equilibrium",
-    "Torque equilibrium"
+    "**The moment arm rules:** a small force with a long arm beats a large force with a short one — the entire technology of levers."
   ],
   "importantTasks": [
     "Copy the worked example and hide the result until the last step.",
     "Name the unit of every term in the formula."
   ],
   "confusion": [
-    "A balanced see-saw can have large forces. The net force and the net torque are what must vanish.",
-    "Torque is not force. A force at the pivot gives no torque.",
-    "Equilibrium does not mean every force is zero.",
-    "The moment arm is the perpendicular distance, not always the length of the rod."
+    "**Torque vs work:** both N·m dimensionally, but torque is a vector turning effect (N·m, not joules) while work is scalar energy transfer (joules).",
+    "**Centre of mass vs centre of gravity:** identical in uniform gravity; the centre of gravity is where weight's moment acts."
   ],
   "practice": [
-    "Write τ = r F sinθ and say what each symbol means.",
-    "Mark the known values, then substitute one step at a time.",
-    "Finish with the number, the unit, and the direction when the quantity has one."
+    "Why is a force through the pivot unable to turn the body?"
   ],
   "universalFacts": [
-    "τ = r F sinθ",
-    "For equilibrium: ΣF = 0 and Στ = 0"
+    "Archimedes' lever claim — \"give me a place to stand\" — is the principle of moments stated as ambition."
   ],
   "animation3D": "physics",
   "motionGraphics": "physics",
   "duplicateType": 1,
   "mcqs": [
     {
-      "question": "Torque has the form",
+      "question": "The moment of a force is measured in:",
       "options": [
-        "r F sinθ",
-        "F/r",
-        "mv",
-        "mgh"
+        "N",
+        "N·m",
+        "J only",
+        "N/m"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Force × perpendicular distance → N·m."
     },
     {
-      "question": "A force through the chosen pivot",
+      "question": "A force acting through the pivot produces:",
       "options": [
-        "Gives the largest torque",
-        "Gives zero torque about that pivot",
-        "Must be vertical",
-        "Breaks equilibrium"
+        "Maximum torque",
+        "Zero torque",
+        "Uniform rotation",
+        "Friction"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "The perpendicular distance is zero — no turning effect."
     },
     {
-      "question": "Complete equilibrium of a rigid body needs",
+      "question": "For rotational equilibrium:",
       "options": [
-        "Net force zero only",
-        "Net torque zero only",
-        "Net force zero and net torque zero",
-        "Equal masses"
+        "ΣF = 0",
+        "Στ = 0",
+        "Both ΣF = 0 and Στ = 0",
+        "Only Σv = 0"
       ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "Rotational equilibrium needs net torque zero; complete equilibrium adds ΣF = 0."
     },
     {
-      "question": "The weight of a uniform beam acts at",
+      "question": "A 2 N weight at the 20 cm mark of a centre-pivoted metre rule is balanced by 3 N at:",
       "options": [
-        "Either end",
-        "The midpoint",
-        "The pivot only",
-        "Nowhere"
+        "60 cm",
+        "70 cm",
+        "80 cm",
+        "50 cm"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "2 × 30 = 3 × (x − 50) → x = 70 cm."
+    },
+    {
+      "question": "A couple produces:",
+      "options": [
+        "Pure translation",
+        "Pure rotation",
+        "Both",
+        "Neither"
+      ],
+      "answer": "B",
+      "explanation": "Net force zero, net torque non-zero — pure rotation."
+    },
+    {
+      "question": "The torque of a 10 N force applied at 30° to a 2 m spanner arm is:",
+      "options": [
+        "20 N·m",
+        "10 N·m",
+        "17.3 N·m",
+        "5 N·m"
+      ],
+      "answer": "B",
+      "explanation": "τ = F d sin θ = 10 × 2 × 0.5 = 10 N·m."
+    },
+    {
+      "question": "The principle of moments states:",
+      "options": [
+        "Energy is conserved",
+        "Clockwise moments equal anticlockwise moments in equilibrium",
+        "Momentum is conserved",
+        "Force equals mass times acceleration"
+      ],
+      "answer": "B",
+      "explanation": "The balance condition about any pivot."
+    },
+    {
+      "question": "A longer spanner loosens a bolt more easily because it:",
+      "options": [
+        "Increases friction",
+        "Increases the moment arm",
+        "Increases the force",
+        "Reduces the bolt's mass"
+      ],
+      "answer": "B",
+      "explanation": "Same force, longer arm → larger torque."
     }
   ],
   "exercises": [
@@ -184,5 +207,54 @@
   "relevance": 94,
   "unitSlug": "dynamics",
   "topicSlug": "03-moment-torque-and-equilibrium",
-  "topicTitle": "Moment, Torque & Conditions of Equilibrium"
+  "topicTitle": "Moment, Torque & Conditions of Equilibrium",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Why Handles Are Long and Seesaws Balance\n\nForce alone does not describe turning: the same 20 N opens a door easily at the handle and barely at the hinge. The turning effect is the **moment (torque)**, and its balance — the **principle of moments** — explains seesaws, levers, beam balances and every statics problem.",
+      "## 2. Fundamental Concepts\n\n| Term | Definition | Formula | Unit |\n|---|---|---|---|\n| **Moment of force (torque)** | Turning effect = force × perpendicular distance from the axis to the line of action | $\\tau = F \\times d$ (vector: $\\vec\\tau = \\vec r \\times \\vec F$) | N·m |\n| **Moment arm (lever arm)** | Perpendicular distance from the pivot to the force's line of action | $d$ | m |\n| **Couple** | Two equal, opposite, parallel forces whose lines of action differ | $\\tau = F \\times$ separation | N·m |\n| **Translational equilibrium** | Net force zero: $\\sum \\vec F = 0$ (no acceleration of centre of mass) | — | — |\n| **Rotational equilibrium** | Net torque zero: $\\sum \\tau = 0$ (no angular acceleration) | — | — |\n| **Complete (static) equilibrium** | Both conditions hold | — | — |\n\n**Principle of moments:** for a body in rotational equilibrium about a pivot,\n$$\\sum \\text{clockwise moments} = \\sum \\text{anticlockwise moments}$$\n\n**Sign convention:** forces tending to rotate anticlockwise are positive (or vice versa — be consistent).\n\n**Worked numerical:** A uniform metre rule pivoted at its centre (50 cm) has a 2 N weight hung at 20 cm. Where must a 3 N weight hang to balance?\nAnticlockwise moment: $2 \\times (50 - 20) = 60$ N·cm. Clockwise: $3 \\times (x - 50) = 60 → x = 70$ cm. **The 3 N weight hangs at the 70 cm mark.**\n\n**Worked numerical (non-uniform support):** A uniform rod of weight 10 N and length 2 m is carried by two people at its ends. Find the force each bears.\nBy symmetry, each bears 5 N. If one person holds at 0.5 m from one end: taking moments about the far end — $F_1 \\times 2 = 10 \\times 1 → F_1 = 5$ N, and $F_2 = 5$ N. For asymmetric holds, both equilibrium conditions ($\\sum F = 0$, $\\sum \\tau = 0$) are needed.",
+      "## 3. Why the Position of Force Matters\n\nTorque depends on the **perpendicular** distance, not the actual distance: a force applied at an angle contributes $F d\\sin\\theta$. This is why:\n- Door handles sit far from hinges (maximum moment arm).\n- Spanners are long; cheater bars extend them.\n- A force along the line through the pivot (d = 0) produces **no torque**.\n\n**Couple:** equal, opposite, parallel forces (like turning a steering wheel) produce pure rotation — zero net force, non-zero torque independent of the pivot chosen.",
+      "## 4. Conceptual Relationships\n\n- **To Topic 13:** equilibrium conditions are Newton's first and second laws specialized to zero acceleration (force and torque versions).\n- **To Circular Motion:** torque causes angular acceleration — $\\tau = I\\alpha$ (Class 12 extension).\n- **To Gravitation:** centre of gravity is where the total weight's moment acts; centre of mass and centre of gravity coincide in uniform g.\n- **To real life:** beam balances, wheelbarrows, bottle openers and crane loads are all principle-of-moments problems.",
+      "## 5. Exam Orientation\n\n### 5.1 Previous year questions\n\nNo moment/torque question exists in the authored bank. Questions below are **NEB-style practice**, clearly labelled.\n\n### 5.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Define moment of a force and state the principle of moments.**\nAnswer: The **moment of a force** about an axis is the product of the force and the perpendicular distance from the axis to its line of action: $\\tau = Fd$ (unit N·m) — the turning effect. The **principle of moments** states that for a body in rotational equilibrium about a pivot, the sum of clockwise moments equals the sum of anticlockwise moments.\n\n**Q2 (3m) — A uniform metre rule pivoted at 50 cm balances a 4 N weight at the 20 cm mark with an unknown weight W at the 80 cm mark. Find W.**\nAnticlockwise: $4 \\times 30 = 120$ N·cm; clockwise: $W \\times 30$. Balance: $W = 4$ N.\n\n**Q3 (2m) — What is a couple?**\nAnswer: A pair of equal, opposite, parallel forces whose lines of action do not coincide; it produces pure rotation (no translation), with torque $F \\times$ separation, independent of the pivot.\n\n### 5.3 Common examination mistakes\n\n1. Using the actual distance instead of the **perpendicular** distance (moment arm).\n2. Ignoring the rule's own weight when it is not pivoted at its centre of gravity.\n3. Mixing clockwise and anticlockwise signs inconsistently.\n4. Confusing N·m (torque) with joules (N·m = J for work) — same dimensions, different quantities.\n5. Forgetting the second equilibrium condition ($\\sum F = 0$) when asked for support reactions."
+    ],
+    "confusion": [
+      "**Torque vs work:** both N·m dimensionally, but torque is a vector turning effect (N·m, not joules) while work is scalar energy transfer (joules).",
+      "**Centre of mass vs centre of gravity:** identical in uniform gravity; the centre of gravity is where weight's moment acts."
+    ],
+    "keyPoints": [
+      "Torque τ = F × d (perpendicular distance); unit N·m.",
+      "Equilibrium: ΣF = 0 (translational) and Στ = 0 (rotational).",
+      "Principle of moments: clockwise moments = anticlockwise moments.",
+      "Couple: equal/opposite/parallel forces → pure rotation, pivot-independent torque."
+    ],
+    "importantConcepts": [
+      "**The moment arm rules:** a small force with a long arm beats a large force with a short one — the entire technology of levers."
+    ],
+    "examples": [
+      "***Metre rule balance*** — 2 N at 20 cm vs 3 N at 70 cm about the 50 cm pivot."
+    ],
+    "universalFacts": [
+      "Archimedes' lever claim — \"give me a place to stand\" — is the principle of moments stated as ambition."
+    ],
+    "importantStatements": [
+      "\"It is not the force but where you apply it that turns the world.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ in the bank; practise principle-of-moments numericals and equilibrium conditions as NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"Perpendicular distance or no torque.\""
+    ],
+    "examNotes": [
+      "Most likely items: define moment/torque; principle of moments; metre-rule balance numerical; couple."
+    ],
+    "formulas": [
+      "- τ = F × d (d = perpendicular distance); vector τ⃗ = r⃗ × F⃗\n- Equilibrium: ΣF⃗ = 0 and Στ⃗ = 0\n- Couple torque: F × separation"
+    ],
+    "practice": [
+      "Why is a force through the pivot unable to turn the body?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A uniform 200 N ladder of 5 m rests against a smooth wall at 60° to the ground. Find the wall's reaction.** — Taking moments about the foot: N_wall × 5 sin 60° = 200 × 2.5 cos 60° → N_wall = (500 × 0.5)/(5 × 0.866) = 57.7 N; the ground supplies the friction balancing it."
+    ]
+  }
 }

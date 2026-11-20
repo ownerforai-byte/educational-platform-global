@@ -6,41 +6,23 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:14.738Z",
   "notes": [
-    "# Linear momentum, impulse\n\n## 1. Introduction\nPhysical picture of **Linear momentum** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Dynamics fill pass.\n\n## 2. Concepts and laws\n### Linear momentum\n### impulse\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Linear momentum — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Linear momentum — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Linear momentum — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Linear momentum — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Mass in Motion\n\nMomentum ($\\vec p = m\\vec v$) is \"quantity of motion\" — the conserved currency of collisions, explosions and rocketry. Impulse is momentum's change per push. This topic defines both and sets up conservation (next topic).",
+    "## 2. Fundamental Concepts\n\n| Quantity | Definition | Formula | Unit | Nature |\n|---|---|---|---|---|\n| **Linear momentum** | Product of mass and velocity | $\\vec p = m\\vec v$ | kg·m/s (= N·s) | Vector |\n| **Impulse** | Product of force and the time it acts | $\\vec J = \\vec F\\,\\Delta t = \\Delta\\vec p$ | N·s | Vector |\n| **Impulse–momentum theorem** | Impulse equals the change in momentum | $\\vec F\\Delta t = m\\vec v - m\\vec u$ | — | — |\n\n**Newton's second law in momentum form:** $\\vec F = d\\vec p/dt$ — force is the rate of change of momentum. For constant mass this reduces to $\\vec F = m\\vec a$.\n\n**Why impulse matters:** for a fixed momentum change, a **longer contact time means smaller force** — the physics of airbags, crumple zones, catching a ball with moving hands, and bending knees on landing.",
+    "## 3. Worked Numericals\n\n**Q1 (3m, 2024):** A gun of mass 5 kg fires a bullet of mass 10 g with velocity 400 m/s. Calculate the recoil velocity of the gun.\n*Given:* $m_g = 5$ kg, $m_b = 0.01$ kg, $v_b = 400$ m/s; initial momentum zero.\n*Conservation:* $m_g v_g + m_b v_b = 0 → v_g = -m_b v_b/m_g = -(0.01 \\times 400)/5 = -0.8$ m/s.\n*Answer:* **gun recoils at 0.8 m/s opposite the bullet.**\n\n**Q2 (3m, 2023):** A body of mass 5 kg changes velocity from 2 m/s to 10 m/s in 4 s under constant net force. Find the force.\n*Substitution:* $\\Delta p = 5(10 - 2) = 40$ kg·m/s; $F = \\Delta p/\\Delta t = 40/4 = 10$ N.\n*Answer:* **F = 10 N.**\n\n**Q3:** A cricketer draws back his hands while catching a ball of momentum 6 kg·m/s, stopping it in 0.3 s instead of 0.1 s. Compare forces.\n$F_1 = 6/0.1 = 60$ N; $F_2 = 6/0.3 = 20$ N — tripling the contact time cuts the force to one-third.",
+    "## 4. Conceptual Relationships\n\n- **To Topic 12:** conservation of momentum is this topic's central payoff — the recoil and collision numericals all use it.\n- **To Topic 13:** $F = dp/dt$ is Newton's second law in its original form; applications follow.\n- **To Topic 21 (collisions):** momentum conservation decides what collisions conserve and what they don't.\n- **To real life:** rocket propulsion, recoil, seatbelts and sports all trade force against contact time.",
+    "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Mechanics | Momentum | A gun of mass 5 kg fires a bullet of mass 10 g with a velocity of 400 m/s. Calculate the recoil velocity of the gun. | 3 | Numerical |\n| 2079/2023 | Mechanics | Force/momentum | A body of mass 5 kg moving under a constant net force changes its velocity from 2 m/s to 10 m/s in 4 s. Calculate the force acting on it. | 3 | Numerical |\n\n### 5.2 Model answers — see worked numericals in §3.\n\n### 5.3 Common examination mistakes\n\n1. Treating momentum as a scalar — direction matters; recoil is **opposite** to the bullet.\n2. Confusing impulse (N·s) with force (N).\n3. Forgetting that the gun–bullet system starts with zero total momentum.\n4. Using $F = ma$ when the mass changes (rockets) — $F = dp/dt$ is the general law.\n5. Unit slips: 10 g must be 0.01 kg before substitution."
   ],
   "examNotes": [
-    "Exam Tip 1: Theory answers should state BOTH $J = F\\Delta t$ and $J = \\Delta p$ and connect them — one-line answers lose marks.",
-    "Exam Tip 2: In numericals, convert grams to kg and quote directions ('opposite to initial motion') with magnitudes.",
-    "Exam Tip 3: Graph-reading impulse questions: label the base and height you used to compute the area.",
-    "Exam Tip 4: Safety-device explanations score full marks only with the chain: fixed $\\Delta p$ → longer $\\Delta t$ → smaller $F_{avg}$."
+    "Most-tested: recoil numerical (2024). Always convert grams to kilograms before substituting."
   ],
   "examShortTricks": [
-    "Trick 1: Rebounds: add the speeds in $\\Delta p = m(v_f + v_i)$ — sign flip doubles the effect.",
-    "Trick 2: 'Soft landing' MCQs: longer $\\Delta t$ ⇒ smaller $F$ ⇒ pick the option that stretches the time.",
-    "Trick 3: Recoil from rest: $V = mv/M$ instantly, with $V$ opposite the bullet.",
-    "Trick 4: Machine-gun/stream problems: average force = mass flow rate × exit speed ($n\\,mv$).",
-    "Trick 5: If a force–time curve has no nice shape, the answer is still its AREA — estimate with boxes if needed.",
-    "Trick 6: Impulsive force problems: always look for the 'short time' keyword — it implies $F_{avg} = \\Delta p/\\Delta t$ is the intended approach."
+    "\"FΔt = Δp — the longer the push, the gentler the force.\""
   ],
   "practiceQuestions": [
-    "Q2. Show that Newton's second law can be written as $F = dp/dt$ and state when this reduces to $F = ma$.",
-    "Q3. A 0.3 kg ball moving at 15 m/s is hit back along the same path at 25 m/s. Find the impulse delivered.",
-    "Q4. Explain, using the impulse–momentum theorem, why a crumple zone reduces injury in a crash.",
-    "Q5. From a given force–time graph (triangle), determine the final velocity of the struck body.",
-    "Q6. A 2 kg object is subjected to a force $F = 10t$ N. Find the change in momentum in 3 seconds.",
-    "Q7. Compare the impulse delivered by a constant force of 10 N for 5 s and a force $F = 2t$ for 5 s."
+    "**Numerical (3m): A 60 g ball hits a bat at 20 m/s and returns along the same line at 30 m/s. If contact lasts 0.02 s, find the average force.** — Take the return direction positive: Δp = m(v−u) = 0.06(30 − (−20)) = 0.06 × 50 = 3 kg·m/s; F = Δp/Δt = 3/0.02 = 150 N. Direction reversal doubles the momentum change."
   ],
   "practice": [
-    "A 60 kg runner at 8 m/s is stopped in 0.5 s. Find the impulse and the average force. — $J = 480$ kg·m/s; $F = 960$ N.",
-    "A 0.5 kg ball hits a wall at 12 m/s and rebounds at 8 m/s. Find the impulse. — $\\Delta p = 0.5(8+12) = 10$ kg·m/s BACKWARD (note the sign reversal!).",
-    "From a triangular $F$–$t$ pulse peaking at 400 N over 0.02 s, find the impulse delivered to a 0.2 kg ball at rest. — Area $= \\frac{1}{2}(0.02)(400) = 4$ N·s → $v = 20$ m/s.",
-    "A 1000 kg car at 20 m/s crashes into a barrier that stops it in 0.4 s. Find the average force, and compare with a crumple-zone stop in 1.0 s. — 50 kN vs 20 kN.",
-    "A machine-gun fires 30 g bullets at 400 m/s, 10 per second. Find the average recoil force. — $F = n\\,mv = 10 \\times 12 = 120$ N."
+    "Why does a cricketer lower his hands while catching a fast ball?"
   ],
   "mcs": [
     {
@@ -92,6 +74,172 @@
         "The ball's mass"
       ],
       "answer": "C"
+    }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Mass in Motion\n\nMomentum ($\\vec p = m\\vec v$) is \"quantity of motion\" — the conserved currency of collisions, explosions and rocketry. Impulse is momentum's change per push. This topic defines both and sets up conservation (next topic).",
+      "## 2. Fundamental Concepts\n\n| Quantity | Definition | Formula | Unit | Nature |\n|---|---|---|---|---|\n| **Linear momentum** | Product of mass and velocity | $\\vec p = m\\vec v$ | kg·m/s (= N·s) | Vector |\n| **Impulse** | Product of force and the time it acts | $\\vec J = \\vec F\\,\\Delta t = \\Delta\\vec p$ | N·s | Vector |\n| **Impulse–momentum theorem** | Impulse equals the change in momentum | $\\vec F\\Delta t = m\\vec v - m\\vec u$ | — | — |\n\n**Newton's second law in momentum form:** $\\vec F = d\\vec p/dt$ — force is the rate of change of momentum. For constant mass this reduces to $\\vec F = m\\vec a$.\n\n**Why impulse matters:** for a fixed momentum change, a **longer contact time means smaller force** — the physics of airbags, crumple zones, catching a ball with moving hands, and bending knees on landing.",
+      "## 3. Worked Numericals\n\n**Q1 (3m, 2024):** A gun of mass 5 kg fires a bullet of mass 10 g with velocity 400 m/s. Calculate the recoil velocity of the gun.\n*Given:* $m_g = 5$ kg, $m_b = 0.01$ kg, $v_b = 400$ m/s; initial momentum zero.\n*Conservation:* $m_g v_g + m_b v_b = 0 → v_g = -m_b v_b/m_g = -(0.01 \\times 400)/5 = -0.8$ m/s.\n*Answer:* **gun recoils at 0.8 m/s opposite the bullet.**\n\n**Q2 (3m, 2023):** A body of mass 5 kg changes velocity from 2 m/s to 10 m/s in 4 s under constant net force. Find the force.\n*Substitution:* $\\Delta p = 5(10 - 2) = 40$ kg·m/s; $F = \\Delta p/\\Delta t = 40/4 = 10$ N.\n*Answer:* **F = 10 N.**\n\n**Q3:** A cricketer draws back his hands while catching a ball of momentum 6 kg·m/s, stopping it in 0.3 s instead of 0.1 s. Compare forces.\n$F_1 = 6/0.1 = 60$ N; $F_2 = 6/0.3 = 20$ N — tripling the contact time cuts the force to one-third.",
+      "## 4. Conceptual Relationships\n\n- **To Topic 12:** conservation of momentum is this topic's central payoff — the recoil and collision numericals all use it.\n- **To Topic 13:** $F = dp/dt$ is Newton's second law in its original form; applications follow.\n- **To Topic 21 (collisions):** momentum conservation decides what collisions conserve and what they don't.\n- **To real life:** rocket propulsion, recoil, seatbelts and sports all trade force against contact time.",
+      "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Mechanics | Momentum | A gun of mass 5 kg fires a bullet of mass 10 g with a velocity of 400 m/s. Calculate the recoil velocity of the gun. | 3 | Numerical |\n| 2079/2023 | Mechanics | Force/momentum | A body of mass 5 kg moving under a constant net force changes its velocity from 2 m/s to 10 m/s in 4 s. Calculate the force acting on it. | 3 | Numerical |\n\n### 5.2 Model answers — see worked numericals in §3.\n\n### 5.3 Common examination mistakes\n\n1. Treating momentum as a scalar — direction matters; recoil is **opposite** to the bullet.\n2. Confusing impulse (N·s) with force (N).\n3. Forgetting that the gun–bullet system starts with zero total momentum.\n4. Using $F = ma$ when the mass changes (rockets) — $F = dp/dt$ is the general law.\n5. Unit slips: 10 g must be 0.01 kg before substitution."
+    ],
+    "confusion": [
+      "**Momentum vs kinetic energy:** momentum p = mv (vector, conserved in all collisions); KE = ½mv² (scalar, conserved only in elastic ones).",
+      "**Impulse vs force:** impulse is force × time — the same push spread over longer time delivers smaller force."
+    ],
+    "keyPoints": [
+      "p⃗ = mv⃗ (kg·m/s, vector); J⃗ = F⃗Δt = Δp⃗ (N·s).",
+      "Newton's second law in momentum form: F⃗ = dp⃗/dt.",
+      "Recoil: m_g v_g + m_b v_b = 0 → v_g = −m_b v_b/m_g."
+    ],
+    "importantConcepts": [
+      "**Longer time, smaller force:** the impulse–momentum theorem is why airbags, crumple zones and \"riding the catch\" save lives — same Δp, more time, less F."
+    ],
+    "examples": [
+      "***Gun recoil*** — 5 kg gun, 10 g bullet at 400 m/s → recoil 0.8 m/s (NEB 2024)."
+    ],
+    "universalFacts": [
+      "A rocket in empty space accelerates by throwing mass backward — momentum conservation needs no ground to push against."
+    ],
+    "importantStatements": [
+      "\"Momentum is the currency of motion — forces are its exchange rate in time.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: gun recoil (2024, 3m); force from momentum change (2023, 3m)."
+    ],
+    "examShortTricks": [
+      "\"FΔt = Δp — the longer the push, the gentler the force.\""
+    ],
+    "examNotes": [
+      "Most-tested: recoil numerical (2024). Always convert grams to kilograms before substituting."
+    ],
+    "formulas": [
+      "- p⃗ = mv⃗\n- J⃗ = F⃗Δt = Δp⃗ = mv⃗ − mu⃗\n- F⃗ = dp⃗/dt; constant mass → F⃗ = ma⃗"
+    ],
+    "practice": [
+      "Why does a cricketer lower his hands while catching a fast ball?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A 60 g ball hits a bat at 20 m/s and returns along the same line at 30 m/s. If contact lasts 0.02 s, find the average force.** — Take the return direction positive: Δp = m(v−u) = 0.06(30 − (−20)) = 0.06 × 50 = 3 kg·m/s; F = Δp/Δt = 3/0.02 = 150 N. Direction reversal doubles the momentum change."
+    ]
+  },
+  "confusion": [
+    "**Momentum vs kinetic energy:** momentum p = mv (vector, conserved in all collisions); KE = ½mv² (scalar, conserved only in elastic ones).",
+    "**Impulse vs force:** impulse is force × time — the same push spread over longer time delivers smaller force."
+  ],
+  "keyPoints": [
+    "p⃗ = mv⃗ (kg·m/s, vector); J⃗ = F⃗Δt = Δp⃗ (N·s).",
+    "Newton's second law in momentum form: F⃗ = dp⃗/dt.",
+    "Recoil: m_g v_g + m_b v_b = 0 → v_g = −m_b v_b/m_g."
+  ],
+  "importantConcepts": [
+    "**Longer time, smaller force:** the impulse–momentum theorem is why airbags, crumple zones and \"riding the catch\" save lives — same Δp, more time, less F."
+  ],
+  "examples": [
+    "***Gun recoil*** — 5 kg gun, 10 g bullet at 400 m/s → recoil 0.8 m/s (NEB 2024)."
+  ],
+  "universalFacts": [
+    "A rocket in empty space accelerates by throwing mass backward — momentum conservation needs no ground to push against."
+  ],
+  "importantStatements": [
+    "\"Momentum is the currency of motion — forces are its exchange rate in time.\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: gun recoil (2024, 3m); force from momentum change (2023, 3m)."
+  ],
+  "formulas": [
+    "- p⃗ = mv⃗\n- J⃗ = F⃗Δt = Δp⃗ = mv⃗ − mu⃗\n- F⃗ = dp⃗/dt; constant mass → F⃗ = ma⃗"
+  ],
+  "summary": "Linear momentum, $\\vec p = m\\vec v$, is the vector \"quantity of motion\"; its rate of change is force — Newton's second law in the form $\\vec F = d\\vec p/dt$. Impulse, $\\vec J = \\vec F\\Delta t$, measures the momentum delivered by a push: $\\vec F\\Delta t = \\Delta\\vec p$. For a fixed momentum change, stretching the contact time shrinks the force — the design principle behind airbags and the cricketer's drawn-back hands. Worked results: a 5 kg gun firing a 10 g bullet at 400 m/s recoils at 0.8 m/s (NEB 2024); a 5 kg body speeding from 2 to 10 m/s in 4 s feels a 10 N force (NEB 2023). Momentum is the conserved currency that the next topic banks.",
+  "mcqs": [
+    {
+      "question": "The SI unit of linear momentum is:",
+      "options": [
+        "N",
+        "N·s",
+        "kg·m/s",
+        "kg·m/s²"
+      ],
+      "answer": "C",
+      "explanation": "p = mv → kg·m/s (equivalently N·s)."
+    },
+    {
+      "question": "A 5 kg gun fires a 10 g bullet at 400 m/s. The recoil speed is:",
+      "options": [
+        "0.8 m/s",
+        "2 m/s",
+        "8 m/s",
+        "0.08 m/s"
+      ],
+      "answer": "A",
+      "explanation": "v_g = (0.01 × 400)/5 = 0.8 m/s, opposite the bullet (NEB 2024)."
+    },
+    {
+      "question": "Impulse equals:",
+      "options": [
+        "Force × distance",
+        "Force × time",
+        "Mass × velocity²",
+        "Power × time"
+      ],
+      "answer": "B",
+      "explanation": "J = FΔt = Δp."
+    },
+    {
+      "question": "Newton's second law in general form is:",
+      "options": [
+        "F = ma",
+        "F = dp/dt",
+        "F = mv",
+        "F = Δv/Δt always"
+      ],
+      "answer": "B",
+      "explanation": "F = dp/dt; F = ma follows for constant mass."
+    },
+    {
+      "question": "A body of 5 kg goes from 2 to 10 m/s in 4 s. The net force is:",
+      "options": [
+        "2.5 N",
+        "8 N",
+        "10 N",
+        "40 N"
+      ],
+      "answer": "C",
+      "explanation": "F = Δp/Δt = 40/4 = 10 N (NEB 2023)."
+    },
+    {
+      "question": "Catching a ball with drawn-back hands reduces:",
+      "options": [
+        "The impulse",
+        "The momentum change",
+        "The average force",
+        "The ball's mass"
+      ],
+      "answer": "C",
+      "explanation": "Same Δp over longer time → smaller F."
+    },
+    {
+      "question": "Momentum is conserved in a system when:",
+      "options": [
+        "Forces are large",
+        "No net external force acts",
+        "Collisions are elastic",
+        "Mass is constant"
+      ],
+      "answer": "B",
+      "explanation": "Internal forces cancel in pairs; only external net force changes total momentum."
+    },
+    {
+      "question": "Momentum is a:",
+      "options": [
+        "Scalar",
+        "Vector",
+        "Dimensionless number",
+        "Unit"
+      ],
+      "answer": "B",
+      "explanation": "p = mv inherits velocity's direction."
     }
   ]
 }

@@ -8,111 +8,80 @@
   "motionGraphics": "work-energy-power",
   "visualType": "power-concept",
   "notes": [
-    "Power is the rate of energy transfer: average P=ΔW/Δt and instantaneous P=dW/dt. Its SI unit is watt, 1 W=1 J s⁻¹.",
-    "For translation, dW=F⃗·dr⃗ gives P=F⃗·v⃗=Fv cosθ. Only the force component parallel to velocity transfers energy; a perpendicular centripetal force does no work in uniform circular motion.",
-    "Worked example: a 200 kg load rises steadily at 0.50 m s⁻¹. The lifting force is mg=1960 N for g=9.8 m s⁻², so useful power is Fv=980 W. In 10 s the load rises 5 m and gains 9800 J, confirming P=W/t=980 W.",
-    "At constant speed, net power is zero because engine power balances resistive forces. For rotation, P=τ⃗·ω⃗; efficiency η=Pout/Pin distinguishes useful output from input.",
-    "A 50 N force at 60° to a crate moving at 3.0 m s⁻¹ transfers energy at P=50×3×cos60°=75 W, not 150 W.",
-    "Power is the rate of doing work. When a force stays along the velocity, power is the force times the speed. A larger engine can do the same work in less time, which is a larger power, not a larger store of energy."
+    "## 1. Topic Introduction — The Rate of Energy Delivery\n\nTwo cranes can lift the same car, but only the powerful one lifts it quickly. Power measures work per unit time — the billing unit of the electricity grid (the kilowatt-hour) and the performance metric of engines, pumps and athletes.",
+    "## 2. Fundamental Concepts\n\n| Quantity | Definition | Formula | Unit |\n|---|---|---|---|\n| **Power** | Work done per unit time | $P = W/t$ | watt (W) = J/s |\n| **Instantaneous power** | Rate at an instant | $P = \\vec F\\cdot\\vec v = Fv\\cos\\theta$ | W |\n| **Kilowatt-hour** | Commercial energy unit: energy delivered by 1 kW for 1 hour | $1\\,\\text{kWh} = 3.6 \\times 10^6$ J | — |\n\n**NEB 2024 (2m):** 1 kWh = 1000 W × 3600 s = **$3.6 \\times 10^6$ J** — the unit on every electricity bill.\n\n### 2.1 Worked numericals\n\n**Q1 (3m, 2022/2024):** An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/s²)\n*Work needed:* $W = mgh = 500 \\times 10 \\times 20 = 10^5$ J.\n*Time:* $t = W/P = 10^5/2000 = $ **50 s**.\n\n**Q2 (3m, 2022):** A person of mass 60 kg climbs a staircase of vertical height 8 m in 20 s (g = 9.8). Calculate the power developed.\n*Work:* $W = mgh = 60 \\times 9.8 \\times 8 = 4704$ J.\n*Power:* $P = 4704/20 = $ **235.2 W** (about 0.24 kW — a healthy human output).\n\n**Q3 (3m, 2024):** A car of mass 1000 kg moves at a uniform speed of 20 m/s against a total resistive force of 500 N. What power must the engine develop?\n*Uniform speed → engine force equals resistance:* $F = 500$ N.\n*Power:* $P = Fv = 500 \\times 20 = $ **10,000 W = 10 kW.**",
+    "## 3. Conceptual Relationships\n\n- **To Topic 16:** power is work's time derivative — same energy, different delivery rate.\n- **To Topic 18:** $P = Fv$ comes from differentiating the work–energy theorem: $P = dW/dt = F\\,ds/dt$.\n- **To electrical circuits (Unit 25):** $P = VI = I^2R = V^2/R$ — the same watt in electrical dress.\n- **To real life:** electricity bills (kWh), engine horsepower (1 hp ≈ 746 W) and human sprint outputs (~1 kW briefly) are all this topic.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Work & Energy | Power | An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/s²) | 3 | Numerical |\n| 2078/2022 | Work & Energy | Power | A person of mass 60 kg climbs a staircase of vertical height 8 m in 20 s. Assuming g = 9.8 m/s², calculate the power developed by the person. | 3 | Numerical |\n| 2080/2024 | Work & Energy | Power | An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/s²) | 3 | Numerical (repeated) |\n| 2080/2024 | Work & Energy | Power | A car of mass 1000 kg moves at a uniform speed of 20 m/s against a total resistive force of 500 N. What power must the engine develop? | 3 | Numerical |\n| 2080/2024 | Work & Energy | kWh | Define the kilowatt-hour (kWh). How many joules are equal to 1 kWh? | 2 | Definition |\n\n### 4.2 Model answers — see worked numericals in §2.1; kWh answer: 1 kWh = $3.6\\times10^6$ J.\n\n### 4.3 Common examination mistakes\n\n1. Forgetting $P = Fv$ for uniform-speed vehicles — the engine force equals the resistance, not $ma$.\n2. Using g = 9.8 in one numerical and 10 in another inconsistently.\n3. Confusing kWh (energy) with kW (power).\n4. Ignoring the vertical height in staircase problems — only mgh counts.\n5. Arithmetic slips with $3.6 \\times 10^6$ J per kWh."
   ],
   "formulas": [
-    "Average P=ΔW/Δt; instantaneous P=dW/dt.",
-    "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
+    "- P = W/t; P = Fv cos θ\n- 1 kWh = 3.6 × 10⁶ J; 1 hp ≈ 746 W\n- Lifting: t = mgh/P; climbing: P = mgh/t"
   ],
   "examples": [
-    "Raising 200 kg at 0.50 m s⁻¹ requires 980 W of useful power.",
-    "A 50 N force at 60° while moving at 3 m s⁻¹ gives 75 W.",
-    "Power is the rate of doing work. When a force stays along the velocity, power is the force times the speed. A larger engine can do the same work in less time, which is a larger power, not a larger store of energy.",
-    "The working relations are P = W/t and P = F v when force and velocity are parallel. Name each symbol, convert the data into SI units, and only then substitute.",
-    "A force of 200 N pushes a crate at a steady 3.0 m/s along the force. Find the power."
+    "***2 kW motor, 500 kg, 20 m*** — t = 50 s (NEB 2022 & 2024)."
   ],
   "practiceQuestions": [
-    "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
-    "Why does centripetal force do zero work in uniform circular motion?",
-    "An 80% efficient motor takes 2 kW. Find useful output."
+    "**Numerical (3m): A pump lifts 200 kg of water per minute to a height of 10 m. Calculate the power of the pump (g = 10 m/s²).** — Work per minute = mgh = 200 × 10 × 10 = 20,000 J; P = 20,000/60 ≈ 333 W (NEB 2024)."
   ],
   "keyPoints": [
-    "Use the force component parallel to velocity.",
-    "At constant speed net power is zero though a motor may deliver positive power.",
-    "State whether input or output power is requested.",
-    "P = W/t",
-    "P = F v when force and velocity are parallel",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "P = W/t = Fv cos θ; watt = J/s.",
+    "1 kWh = 3.6 × 10⁶ J (NEB 2024).",
+    "Motor lifting: t = mgh/P. Human climbing: P = mgh/t. Vehicle: P = F_resistance × v."
   ],
-  "summary": "Power measures energy-transfer rate. For translation it is the force–velocity dot product; practical machines distinguish useful output from losses.",
+  "summary": "Power is the rate of energy delivery: $P = W/t$, or instantaneously $P = \\vec F\\cdot\\vec v$ — for a vehicle at uniform speed the engine force just balances resistance, so $P = F_{res}v$ (a 1000 kg car at 20 m/s against 500 N needs 10 kW — NEB 2024). Lifting numericals divide the work by the power: a 2 kW motor raises 500 kg through 20 m (10⁵ J) in 50 s (NEB 2022 & 2024); a 60 kg climber ascending 8 m in 20 s develops 235 W (NEB 2022). The commercial energy unit is the **kilowatt-hour**: 1 kWh = 3.6 × 10⁶ J (NEB 2024). Power prices speed of delivery, not the size of the job.",
   "specificConditions": [
     "P=F⃗·v⃗ uses instantaneous force and velocity; it applies even when force changes with time.",
     "For efficiency, state whether the requested power is input or useful output."
   ],
   "enrichedContent": {
     "notes": [
-      "Power is the rate of energy transfer: average P=ΔW/Δt and instantaneous P=dW/dt. Its SI unit is watt, 1 W=1 J s⁻¹.",
-      "For translation, dW=F⃗·dr⃗ gives P=F⃗·v⃗=Fv cosθ. Only the force component parallel to velocity transfers energy; a perpendicular centripetal force does no work in uniform circular motion.",
-      "Worked example: a 200 kg load rises steadily at 0.50 m s⁻¹. The lifting force is mg=1960 N for g=9.8 m s⁻², so useful power is Fv=980 W. In 10 s the load rises 5 m and gains 9800 J, confirming P=W/t=980 W.",
-      "At constant speed, net power is zero because engine power balances resistive forces. For rotation, P=τ⃗·ω⃗; efficiency η=Pout/Pin distinguishes useful output from input.",
-      "A 50 N force at 60° to a crate moving at 3.0 m s⁻¹ transfers energy at P=50×3×cos60°=75 W, not 150 W."
+      "## 1. Topic Introduction — The Rate of Energy Delivery\n\nTwo cranes can lift the same car, but only the powerful one lifts it quickly. Power measures work per unit time — the billing unit of the electricity grid (the kilowatt-hour) and the performance metric of engines, pumps and athletes.",
+      "## 2. Fundamental Concepts\n\n| Quantity | Definition | Formula | Unit |\n|---|---|---|---|\n| **Power** | Work done per unit time | $P = W/t$ | watt (W) = J/s |\n| **Instantaneous power** | Rate at an instant | $P = \\vec F\\cdot\\vec v = Fv\\cos\\theta$ | W |\n| **Kilowatt-hour** | Commercial energy unit: energy delivered by 1 kW for 1 hour | $1\\,\\text{kWh} = 3.6 \\times 10^6$ J | — |\n\n**NEB 2024 (2m):** 1 kWh = 1000 W × 3600 s = **$3.6 \\times 10^6$ J** — the unit on every electricity bill.\n\n### 2.1 Worked numericals\n\n**Q1 (3m, 2022/2024):** An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/s²)\n*Work needed:* $W = mgh = 500 \\times 10 \\times 20 = 10^5$ J.\n*Time:* $t = W/P = 10^5/2000 = $ **50 s**.\n\n**Q2 (3m, 2022):** A person of mass 60 kg climbs a staircase of vertical height 8 m in 20 s (g = 9.8). Calculate the power developed.\n*Work:* $W = mgh = 60 \\times 9.8 \\times 8 = 4704$ J.\n*Power:* $P = 4704/20 = $ **235.2 W** (about 0.24 kW — a healthy human output).\n\n**Q3 (3m, 2024):** A car of mass 1000 kg moves at a uniform speed of 20 m/s against a total resistive force of 500 N. What power must the engine develop?\n*Uniform speed → engine force equals resistance:* $F = 500$ N.\n*Power:* $P = Fv = 500 \\times 20 = $ **10,000 W = 10 kW.**",
+      "## 3. Conceptual Relationships\n\n- **To Topic 16:** power is work's time derivative — same energy, different delivery rate.\n- **To Topic 18:** $P = Fv$ comes from differentiating the work–energy theorem: $P = dW/dt = F\\,ds/dt$.\n- **To electrical circuits (Unit 25):** $P = VI = I^2R = V^2/R$ — the same watt in electrical dress.\n- **To real life:** electricity bills (kWh), engine horsepower (1 hp ≈ 746 W) and human sprint outputs (~1 kW briefly) are all this topic.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Work & Energy | Power | An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/s²) | 3 | Numerical |\n| 2078/2022 | Work & Energy | Power | A person of mass 60 kg climbs a staircase of vertical height 8 m in 20 s. Assuming g = 9.8 m/s², calculate the power developed by the person. | 3 | Numerical |\n| 2080/2024 | Work & Energy | Power | An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/s²) | 3 | Numerical (repeated) |\n| 2080/2024 | Work & Energy | Power | A car of mass 1000 kg moves at a uniform speed of 20 m/s against a total resistive force of 500 N. What power must the engine develop? | 3 | Numerical |\n| 2080/2024 | Work & Energy | kWh | Define the kilowatt-hour (kWh). How many joules are equal to 1 kWh? | 2 | Definition |\n\n### 4.2 Model answers — see worked numericals in §2.1; kWh answer: 1 kWh = $3.6\\times10^6$ J.\n\n### 4.3 Common examination mistakes\n\n1. Forgetting $P = Fv$ for uniform-speed vehicles — the engine force equals the resistance, not $ma$.\n2. Using g = 9.8 in one numerical and 10 in another inconsistently.\n3. Confusing kWh (energy) with kW (power).\n4. Ignoring the vertical height in staircase problems — only mgh counts.\n5. Arithmetic slips with $3.6 \\times 10^6$ J per kWh."
     ],
     "confusion": [
-      "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
-      "Motor output is not the net power on a constant-speed vehicle."
+      "**kW vs kWh:** kilowatt is power (rate); kilowatt-hour is energy (power × time) — the bill charges for kWh.",
+      "**Engine power at uniform speed:** F = resistance (a = 0), so P = F_resistance × v — not ma × v."
     ],
     "practice": [
-      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
-      "Why does centripetal force do zero work in uniform circular motion?",
-      "An 80% efficient motor takes 2 kW. Find useful output."
+      "Why does a car engine need more power uphill at the same speed?"
     ],
     "universalFacts": [
-      "Use the force component parallel to velocity.",
-      "At constant speed net power is zero though a motor may deliver positive power.",
-      "State whether input or output power is requested."
+      "A human at sustained hard work delivers 100–300 W — roughly the power of a bright old-style light bulb."
     ],
     "examples": [
-      "Raising 200 kg at 0.50 m s⁻¹ requires 980 W of useful power.",
-      "A 50 N force at 60° while moving at 3 m s⁻¹ gives 75 W."
+      "***2 kW motor, 500 kg, 20 m*** — t = 50 s (NEB 2022 & 2024)."
     ],
     "practiceQuestions": [
-      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
-      "Why does centripetal force do zero work in uniform circular motion?",
-      "An 80% efficient motor takes 2 kW. Find useful output."
+      "**Numerical (3m): A pump lifts 200 kg of water per minute to a height of 10 m. Calculate the power of the pump (g = 10 m/s²).** — Work per minute = mgh = 200 × 10 × 10 = 20,000 J; P = 20,000/60 ≈ 333 W (NEB 2024)."
     ],
     "formulas": [
-      "Average P=ΔW/Δt; instantaneous P=dW/dt.",
-      "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
+      "- P = W/t; P = Fv cos θ\n- 1 kWh = 3.6 × 10⁶ J; 1 hp ≈ 746 W\n- Lifting: t = mgh/P; climbing: P = mgh/t"
     ],
     "keyPoints": [
-      "Use the force component parallel to velocity.",
-      "At constant speed net power is zero though a motor may deliver positive power.",
-      "State whether input or output power is requested."
+      "P = W/t = Fv cos θ; watt = J/s.",
+      "1 kWh = 3.6 × 10⁶ J (NEB 2024).",
+      "Motor lifting: t = mgh/P. Human climbing: P = mgh/t. Vehicle: P = F_resistance × v."
     ],
-    "summary": "Power measures energy-transfer rate. For translation it is the force–velocity dot product; practical machines distinguish useful output from losses.",
+    "summary": "Power is the rate of energy delivery: $P = W/t$, or instantaneously $P = \\vec F\\cdot\\vec v$ — for a vehicle at uniform speed the engine force just balances resistance, so $P = F_{res}v$ (a 1000 kg car at 20 m/s against 500 N needs 10 kW — NEB 2024). Lifting numericals divide the work by the power: a 2 kW motor raises 500 kg through 20 m (10⁵ J) in 50 s (NEB 2022 & 2024); a 60 kg climber ascending 8 m in 20 s develops 235 W (NEB 2022). The commercial energy unit is the **kilowatt-hour**: 1 kWh = 3.6 × 10⁶ J (NEB 2024). Power prices speed of delivery, not the size of the job.",
     "specialNotes": [
       "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
       "Motor output is not the net power on a constant-speed vehicle."
     ],
     "importantStatements": [
-      "Use the force component parallel to velocity.",
-      "At constant speed net power is zero though a motor may deliver positive power.",
-      "State whether input or output power is requested."
+      "\"Energy says how much; power says how fast.\""
     ],
     "importantNotes": [
-      "Use the force component parallel to velocity.",
-      "At constant speed net power is zero though a motor may deliver positive power.",
-      "State whether input or output power is requested."
+      "Verified PYQs: motor time (2022 & 2024, 3m); staircase power (2022, 3m); car power (2024, 3m); kWh definition (2024, 2m)."
     ],
     "examShortTricks": [
-      "Average P=ΔW/Δt; instantaneous P=dW/dt.",
-      "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
+      "\"Uniform speed → P = resistance × speed.\""
     ],
     "examNotes": [
-      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
-      "Why does centripetal force do zero work in uniform circular motion?",
-      "An 80% efficient motor takes 2 kW. Find useful output."
+      "Most-tested unit topic: four verified power questions. Practise all three numerical templates."
     ],
     "importantConcepts": [
-      "Use the force component parallel to velocity.",
-      "At constant speed net power is zero though a motor may deliver positive power.",
-      "State whether input or output power is requested."
+      "**Power prices time, not effort:** the same mgh costs more power when delivered faster."
     ],
     "importantTasks": [
       "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
@@ -200,54 +169,33 @@
     "visualization": {}
   },
   "confusion": [
-    "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
-    "Motor output is not the net power on a constant-speed vehicle.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**kW vs kWh:** kilowatt is power (rate); kilowatt-hour is energy (power × time) — the bill charges for kWh.",
+    "**Engine power at uniform speed:** F = resistance (a = 0), so P = F_resistance × v — not ma × v."
   ],
   "practice": [
-    "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
-    "Why does centripetal force do zero work in uniform circular motion?",
-    "An 80% efficient motor takes 2 kW. Find useful output."
+    "Why does a car engine need more power uphill at the same speed?"
   ],
   "universalFacts": [
-    "Use the force component parallel to velocity.",
-    "At constant speed net power is zero though a motor may deliver positive power.",
-    "State whether input or output power is requested."
+    "A human at sustained hard work delivers 100–300 W — roughly the power of a bright old-style light bulb."
   ],
   "specialNotes": [
     "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
     "Motor output is not the net power on a constant-speed vehicle."
   ],
   "importantStatements": [
-    "Use the force component parallel to velocity.",
-    "At constant speed net power is zero though a motor may deliver positive power.",
-    "State whether input or output power is requested."
+    "\"Energy says how much; power says how fast.\""
   ],
   "importantNotes": [
-    "Use the force component parallel to velocity.",
-    "At constant speed net power is zero though a motor may deliver positive power.",
-    "State whether input or output power is requested."
+    "Verified PYQs: motor time (2022 & 2024, 3m); staircase power (2022, 3m); car power (2024, 3m); kWh definition (2024, 2m)."
   ],
   "examShortTricks": [
-    "Average P=ΔW/Δt; instantaneous P=dW/dt.",
-    "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
+    "\"Uniform speed → P = resistance × speed.\""
   ],
   "examNotes": [
-    "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
-    "Why does centripetal force do zero work in uniform circular motion?",
-    "An 80% efficient motor takes 2 kW. Find useful output."
+    "Most-tested unit topic: four verified power questions. Practise all three numerical templates."
   ],
   "importantConcepts": [
-    "Use the force component parallel to velocity.",
-    "At constant speed net power is zero though a motor may deliver positive power.",
-    "State whether input or output power is requested.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Power prices time, not effort:** the same mgh costs more power when delivered faster."
   ],
   "importantTasks": [
     "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
@@ -298,44 +246,92 @@
   ],
   "mcqs": [
     {
-      "question": "Power is",
+      "question": "1 kWh equals:",
       "options": [
-        "Work over time",
-        "Force over time",
-        "Mass times velocity",
-        "Energy with no rate"
+        "3.6 × 10³ J",
+        "3.6 × 10⁶ J",
+        "3600 J",
+        "1 × 10⁵ J"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "1000 W × 3600 s = 3.6 MJ (NEB 2024)."
     },
     {
-      "question": "For a force along the velocity, P is",
+      "question": "A 2 kW motor lifts 500 kg through 20 m (g = 10) in:",
       "options": [
-        "F v",
+        "10 s",
+        "50 s",
+        "100 s",
+        "500 s"
+      ],
+      "answer": "B",
+      "explanation": "W = 10⁵ J; t = W/P = 50 s (NEB 2022, 2024)."
+    },
+    {
+      "question": "A 60 kg person climbs 8 m in 20 s (g = 9.8). Power is:",
+      "options": [
+        "235 W",
+        "470 W",
+        "2350 W",
+        "47 W"
+      ],
+      "answer": "A",
+      "explanation": "P = mgh/t = 4704/20 = 235 W (NEB 2022)."
+    },
+    {
+      "question": "A car at uniform 20 m/s against 500 N resistance needs:",
+      "options": [
+        "1 kW",
+        "10 kW",
+        "100 kW",
+        "25 kW"
+      ],
+      "answer": "B",
+      "explanation": "P = Fv = 500 × 20 = 10 kW (NEB 2024)."
+    },
+    {
+      "question": "The SI unit of power is:",
+      "options": [
+        "Joule",
+        "Newton",
+        "Watt",
+        "Pascal"
+      ],
+      "answer": "C",
+      "explanation": "1 W = 1 J/s."
+    },
+    {
+      "question": "Instantaneous power of a force F on velocity v is:",
+      "options": [
+        "Fv",
+        "Fv cos θ",
         "F/v",
-        "v/F",
+        "F + v"
+      ],
+      "answer": "B",
+      "explanation": "P = F⃗·v⃗ = Fv cos θ."
+    },
+    {
+      "question": "1 horsepower is approximately:",
+      "options": [
+        "746 W",
+        "1000 W",
+        "100 W",
+        "373 W"
+      ],
+      "answer": "A",
+      "explanation": "1 hp ≈ 746 W."
+    },
+    {
+      "question": "At uniform speed, the engine force equals:",
+      "options": [
+        "ma",
+        "The total resistance",
+        "mg",
         "Zero"
       ],
-      "answer": "A"
-    },
-    {
-      "question": "200 N at 3.0 m/s is",
-      "options": [
-        "600 W",
-        "67 W",
-        "203 W",
-        "0 W"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "A perpendicular force does",
-      "options": [
-        "Maximum power",
-        "No work and has zero power",
-        "Negative mass",
-        "The weight"
-      ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "a = 0 → net force zero → engine force balances resistance."
     }
   ],
   "exercises": [

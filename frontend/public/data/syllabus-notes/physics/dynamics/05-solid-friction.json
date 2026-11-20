@@ -9,66 +9,37 @@
   "visualType": "friction-forces",
   "enrichedContent": {
     "notes": [
-      "**What friction is:** a contact force that opposes relative motion (or its tendency) between two surfaces in contact. It acts parallel to the contact surface. Static friction (no sliding) and kinetic friction (sliding) are the two main types.",
-      "**Laws of friction:** (1) Friction is independent of the apparent area of contact (to a good approximation). (2) Maximum static friction and kinetic friction are both proportional to the normal reaction: f_s(max) = μ_sN, f_k = μ_kN. (3) μ_k < μ_s — it is harder to start sliding than to keep sliding.",
-      "**Static friction is a variable force:** it matches the applied force up to a maximum: f_s ≤ μ_sN. If you push with 30 N and the object doesn't move, f_s = 30 N (not μ_sN). Only at the point of slipping does f_s = μ_sN.",
-      "**Angle of friction (λ):** the angle between the normal reaction and the resultant reaction (normal + friction) when slipping is about to occur. tan λ = μ_s. The resultant reaction makes angle λ with the normal.",
-      "**Angle of repose (θ_r):** the steepest angle of a slope at which a body just remains at rest. At this angle, mg sin θ_r = μ_s mg cos θ_r → tan θ_r = μ_s. So θ_r = λ — the angle of repose equals the angle of friction.",
-      "**Worked example — body on a slope:** a 10 kg block on a 25° slope (μ_s = 0.5). Does it slide? tan 25° = 0.466 < 0.5 → no, it stays. Static friction = mg sin 25° = 41.5 N (less than μ_sN = 0.5 × 92.4 = 46.2 N).",
-      "**Worked example — pulling a block:** a 5 kg block on a horizontal surface (μ_k = 0.3). Pulled by a 20 N force at 30° above horizontal. Normal N = mg − F sin 30° = 49 − 10 = 39 N. Friction = 0.3 × 39 = 11.7 N. Net force = 20 cos 30° − 11.7 = 5.6 N. a = 5.6/5 = 1.12 m/s².",
-      "**NEB exam focus:** distinguish static vs kinetic friction; solve slope problems (does it slide? find acceleration); angle of repose and its equality with angle of friction; pulling/pushing at an angle (changes the normal, hence friction)."
+      "## 1. Topic Introduction — The Force That Opposes Every Push\n\nFriction is the contact force opposing relative (or attempted) motion between surfaces. It is indispensable — walking, brakes, nail grips — and costly — worn engines, wasted fuel. The syllabus asks for the laws of solid friction and their experimental verifications, plus incline numericals.",
+      "## 2. Fundamental Concepts\n\n| Term | Definition |\n|---|---|\n| **Static friction** | Opposes the *start* of motion; self-adjusting up to a maximum |\n| **Limiting friction** | Maximum static friction just before sliding begins: $f_s^{max} = \\mu_s N$ |\n| **Kinetic friction** | Opposes motion once sliding: $f_k = \\mu_k N$, roughly constant and slightly less than limiting friction |\n| **Normal reaction** | The surface's perpendicular push: $N = mg$ on level ground, $mg\\cos\\theta$ on an incline |\n| **Coefficient of friction (μ)** | Ratio of friction to normal reaction — dimensionless, typically 0.05–1.5 |\n\n### 2.1 Laws of solid friction\n\n1. Friction acts **opposite to the direction of attempted/actual relative motion**, along the surfaces in contact.\n2. Friction is **proportional to the normal reaction**: $f \\propto N$.\n3. Friction is **independent of the apparent area of contact** (for a given normal reaction).\n4. Kinetic friction is **independent of the relative velocity** (at ordinary speeds).\n5. Kinetic friction is slightly **less than limiting static friction**.\n\n### 2.2 Experimental verifications\n\n- **Proportional to N:** a block on a table is pulled by a spring balance at constant speed; repeat with weights stacked on the block — the reading scales with total weight; a graph of f against N is a straight line whose slope is μ.\n- **Independent of area:** repeat with the block on different faces (different contact areas) — the balance reading is unchanged.\n- **Independent of speed:** pull at different steady speeds — the reading stays (approximately) constant.\n- **Angle of repose:** a block on an adjustable incline just slides at angle θ_r; resolving gives $\\mu = \\tan\\theta_r$ — a direct measurement.\n\n### 2.3 Incline relations\n\n| Quantity | Formula |\n|---|---|\n| On the point of sliding down | $\\mu_s = \\tan\\theta_r$ (angle of repose) |\n| Sliding down with friction | $a = g(\\sin\\theta - \\mu\\cos\\theta)$ |\n| Force to pull up the incline at constant speed | $F = mg(\\sin\\theta + \\mu\\cos\\theta)$ |",
+      "## 3. Worked Numericals\n\n**Q1 (3m, 2023):** A block of mass 5 kg rests on a horizontal plane. The coefficient of static friction is 0.4. What horizontal force is needed to start the block moving? (g = 10 m/s²)\n$N = mg = 50$ N; $f_{limiting} = \\mu_s N = 0.4 \\times 50 = 20$ N. **A force just over 20 N starts the motion.**\n\n**Q2 (3m, 2021):** A block of mass 10 kg rests on a rough inclined plane of angle 30°. If the coefficient of friction is 0.2, find the frictional force (and the acceleration). (g = 10 m/s²)\n$N = mg\\cos30° = 100 \\times 0.866 = 86.6$ N; $f = \\mu N = 0.2 \\times 86.6 = 17.3$ N.\nDriving component: $mg\\sin30° = 50$ N > 17.3 N, so it slides: $a = g(\\sin30° - \\mu\\cos30°) = 10(0.5 - 0.173) = 3.27$ m/s².\n**Friction ≈ 17.3 N up the plane; a ≈ 3.3 m/s² down the plane.**\n\n**Q3 (3m, 2024):** A block just begins to slide down a rough incline when the angle of inclination is 30°. Calculate the coefficient of static friction.\nAt the point of sliding, gravity's component equals limiting friction: $mg\\sin\\theta = \\mu mg\\cos\\theta → \\mu = \\tan\\theta = \\tan30° = 0.577$. **μ ≈ 0.58.**",
+      "## 4. Conceptual Relationships\n\n- **To Topic 13:** friction is a contact force entering Newton's-law applications; the incline formulas combine the second law with friction.\n- **To Work/Energy (Unit 5):** friction dissipates mechanical energy as heat — the reason slides stop.\n- **To Circular Motion:** friction supplies the centripetal force for cornering vehicles (banking topic).\n- **To real life:** tyres, brakes, belts and nails need friction; engines and skates fight it with lubrication (replacing solid with fluid friction).",
+      "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Dynamics | Friction | A block of mass 5 kg rests on a horizontal plane. The coefficient of static friction is 0.4. What horizontal force is needed to start the block moving? | 3 | Numerical |\n| 2077/2021 | Dynamics | Friction | A block of mass 10 kg rests on a rough inclined plane of angle 30 degrees with the horizontal. If the coefficient of friction is 0.2, find the magnitude of frictional force. | 3 | Numerical |\n| 2080/2024 | Mechanics | Friction | A block just begins to slide down a rough incline when the angle of inclination is 30°. Calculate the coefficient of static friction between the block and the plane. | 3 | Numerical |\n\n### 5.2 Model answers — see worked numericals in §3.\n\n### 5.3 Common examination mistakes\n\n1. Using $N = mg$ on an incline — there $N = mg\\cos\\theta$.\n2. Forgetting that static friction **self-adjusts** — it equals the applied force up to its limit, not always μN.\n3. Saying friction depends on contact area — the law says it does not.\n4. Confusing the angle of repose relation ($\\mu = \\tan\\theta_r$) with $\\sin$ or $\\cos$.\n5. Mixing μ_s and μ_k in one problem without saying which."
     ],
     "confusion": [
-      "❌ 'Friction always opposes motion.' ✅ Friction opposes RELATIVE motion (or its tendency). Static friction can act IN the direction of motion — e.g., the static friction on your feet pushes you forward when walking.",
-      "❌ 'Friction depends on the area of contact.' ✅ For a given normal force, friction is (approximately) independent of area. A wide tyre and a narrow tyre with the same load have the same maximum friction (in the simple model).",
-      "❌ 'Static friction is always μ_sN.' ✅ Static friction is VARIABLE: it matches the applied force up to μ_sN. Only at the point of slipping does f_s = μ_sN.",
-      "❌ 'μ_k > μ_s because sliding is faster.' ✅ μ_k < μ_s — it is harder to start sliding than to keep sliding. This is why a heavy box jerks when you first push it.",
-      "❌ 'The angle of repose depends on the mass of the body.' ✅ tan θ_r = μ_s — mass cancels out. All bodies with the same μ_s have the same angle of repose.",
-      "❌ 'Pulling a block at an angle reduces friction because the force is smaller.' ✅ Pulling upward reduces the normal (N = mg − F sin θ), which reduces friction. Pushing downward increases the normal and friction."
+      "**Static vs kinetic friction:** static self-adjusts up to μ_s N (starting is harder); kinetic is roughly constant at μ_k N and slightly smaller.",
+      "**Friction vs normal reaction:** friction is proportional to N — press harder and it grows; lighten the load and it shrinks."
     ],
     "practice": [
-      "Solve 5 slope problems: determine if a body slides, and if so, find the acceleration.",
-      "Solve 5 horizontal-surface problems with pulling/pushing at an angle (find normal, friction, acceleration).",
-      "Solve 3 angle-of-repose problems showing θ_r = λ = tan⁻¹μ_s.",
-      "Solve 3 problems comparing static and kinetic friction (e.g., a block given an initial push).",
-      "Solve 2 problems where friction acts in the direction of motion (e.g., a block on a moving conveyor, walking)."
+      "Why is it harder to start a crate moving than to keep it moving?"
     ],
     "universalFacts": [
-      "Friction is independent of the apparent area of contact — a counterintuitive but experimentally verified law.",
-      "μ_k < μ_s for most surface pairs — this is why objects jerk when starting to slide.",
-      "The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s — a beautiful geometric connection.",
-      "Friction can act in the direction of motion — static friction is the force that accelerates you forward when walking.",
-      "Pulling a block at an angle reduces friction (by reducing N); pushing at an angle increases it (by increasing N)."
+      "Anti-lock brakes keep tyres rolling rather than sliding because kinetic friction is smaller than peak static friction — maximum stopping force comes just below sliding."
     ],
     "examples": [
-      "Slope: A 5 kg block on a 30° slope (μ_s = 0.4). tan 30° = 0.577 > 0.4 → slides. a = g(sin30° − μ_k cos30°) = 9.8(0.5 − 0.4×0.866) = 1.51 m/s².",
-      "Horizontal pull: A 10 kg block (μ_k = 0.25) pulled by 40 N at 20° above horizontal. N = 98 − 40sin20° = 84.3 N; f = 21.1 N; F_net = 40cos20° − 21.1 = 16.5 N; a = 1.65 m/s².",
-      "Angle of repose: A block slides at constant speed down a 35° slope. μ_k = tan 35° = 0.70. μ_s is slightly higher (≈ 0.75).",
-      "Static friction variable: A 20 kg box (μ_s = 0.5). Push with 40 N — box doesn't move, f_s = 40 N. Push with 120 N — box moves (max f_s = 98 N).",
-      "Pulling vs pushing: A 15 kg block (μ_k = 0.3). Pull at 25°: N = 147 − Fsin25°. Push at 25°: N = 147 + Fsin25°. Pulling gives less friction."
+      "***5 kg block, μ_s = 0.4*** — needs just over 20 N to start (NEB 2023)."
     ],
     "practiceQuestions": [
-      "A 15 kg block rests on a horizontal surface (μ_s = 0.6). What is the maximum static friction? What horizontal force is needed to just start it moving?",
-      "A 5 kg block slides down a 40° slope (μ_k = 0.25). Find the acceleration.",
-      "A 10 kg block is pulled by a 50 N force at 30° above horizontal (μ_k = 0.2). Find the acceleration.",
-      "A block remains at rest on a slope up to 35°. Find μ_s. If the slope is increased to 40°, find the acceleration (μ_k = 0.6).",
-      "Explain why it is harder to start sliding a heavy box than to keep it sliding."
+      "**Numerical (3m): A 20 kg block is pulled up a 30° incline (μ = 0.25) at constant speed. Find the required force (g = 10).** — F = mg(sin θ + μ cos θ) = 200(0.5 + 0.25×0.866) = 200 × 0.7165 = 143.3 N."
     ],
     "formulas": [
-      "Maximum static friction: f_s(max) = μ_sN (acts just before slipping)",
-      "Kinetic friction: f_k = μ_kN (acts during sliding; μ_k < μ_s)",
-      "Slope sliding condition: body slides when tan θ > μ_s; a = g(sin θ − μ_k cos θ)",
-      "Angle of friction: tan λ = μ_s (angle between normal and resultant reaction)",
-      "Angle of repose: tan θ_r = μ_s → θ_r = λ (steepest angle for rest)"
+      "- f_max = μN; f_k = μ_k N\n- Angle of repose: μ = tan θ_r\n- Incline: N = mg cos θ; a = g(sin θ − μ cos θ)\n- Pull up at constant speed: F = mg(sin θ + μ cos θ)"
     ],
     "keyPoints": [
-      "Static friction is VARIABLE: it matches the applied force up to μ_sN.",
-      "Kinetic friction is approximately CONSTANT: f_k = μ_kN during sliding.",
-      "μ_k < μ_s — harder to start sliding than to keep sliding.",
-      "Friction is (approximately) independent of the apparent area of contact.",
-      "Pulling at an angle reduces N and friction; pushing at an angle increases both."
+      "Laws: opposes relative motion; f ∝ N; independent of contact area; kinetic friction independent of speed; μ_k < μ_s.",
+      "Angle of repose: μ = tan θ_r.",
+      "Incline: N = mg cos θ; sliding a = g(sin θ − μ cos θ); pull up at constant speed F = mg(sin θ + μ cos θ)."
     ],
-    "summary": "Friction is a contact force opposing relative motion. Static friction (variable, up to μ_sN) acts before sliding; kinetic friction (constant, μ_kN) acts during sliding, with μ_k < μ_s. The angle of repose equals the angle of friction (tan⁻¹μ_s). Slope problems, pulling/pushing at angles, and the distinction between static and kinetic friction are the key NEB topics.",
+    "summary": "Friction opposes attempted or actual relative motion along surfaces. **Static friction self-adjusts** up to the limiting value μ_sN; kinetic friction runs at μ_kN, slightly smaller and nearly speed-independent. The laws: friction opposes relative motion, is proportional to normal reaction, and ignores contact area — verified by spring-balance pulls with added weights (straight-line f–N graph), face-swaps (same reading) and the **angle of repose**, where μ = tan θ_r. Incline numericals flow from $N = mg\\cos\\theta$: a 5 kg block with μ_s = 0.4 needs just over 20 N to start (NEB 2023); a 10 kg block on 30° with μ = 0.2 feels 17.3 N of friction and slides at 3.3 m/s² (NEB 2021); a block just sliding at 30° fixes μ = tan 30° ≈ 0.58 (NEB 2024).",
     "specialNotes": [
       "Static friction is NOT always μ_sN — it is a variable force that matches the applied force up to that maximum.",
       "The normal force is NOT always mg — on a slope it is mg cos θ; with pulling/pushing at an angle it changes.",
@@ -77,32 +48,16 @@
       "NEB frequently asks: 'Does the body slide? If so, find the acceleration' — check tan θ vs μ_s first."
     ],
     "importantStatements": [
-      "Friction opposes relative motion (or its tendency) between two surfaces in contact.",
-      "Maximum static friction and kinetic friction are both proportional to the normal reaction: f_max = μN.",
-      "μ_k < μ_s for most surface pairs — it is harder to start sliding than to keep sliding.",
-      "The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s.",
-      "Friction is (approximately) independent of the apparent area of contact."
+      "\"Friction always bills the motion.\""
     ],
     "importantNotes": [
-      "Static friction is a variable force — it adjusts to match the applied force up to μ_sN.",
-      "The normal force is NOT always mg — on a slope it is mg cos θ; with angled pulling/pushing it changes.",
-      "μ_k < μ_s — this is why objects jerk when starting to slide (static friction breaks, kinetic takes over).",
-      "The angle of repose depends only on μ_s — mass cancels out, so all bodies with the same μ_s have the same θ_r.",
-      "NEB friction problems: always check tan θ vs μ_s first to determine if the body slides."
+      "Verified PYQs: starting force (2023, 3m); incline friction (2021, 3m); angle of repose (2024, 3m)."
     ],
     "examShortTricks": [
-      "Slope check: compare tan θ with μ_s — if tan θ > μ_s, the body slides; otherwise it stays.",
-      "Normal force shortcut: N = mg (horizontal), N = mg cos θ (slope), N = mg − F sin θ (pulling up), N = mg + F sin θ (pushing down).",
-      "Friction direction: it opposes relative motion — for a block being pulled, friction acts opposite to the pull.",
-      "Angle of repose shortcut: θ_r = tan⁻¹μ_s — just take the inverse tangent of the coefficient.",
-      "Static vs kinetic: use μ_s for 'just about to slip' problems; use μ_k for 'already sliding' problems."
+      "\"Just slides → μ = tan θ.\""
     ],
     "examNotes": [
-      "Slope problems are the most common — know the tan θ vs μ_s check and the a = g(sin θ − μ_k cos θ) formula.",
-      "Pulling/pushing at an angle changes the normal force — always recalculate N before finding friction.",
-      "Static friction is variable — do NOT assume f = μ_sN unless the body is at the point of slipping.",
-      "The angle of repose equals the angle of friction — both are tan⁻¹μ_s.",
-      "Friction can act in the direction of motion (walking, conveyor belts) — static friction pushes you forward."
+      "Most-tested: the three incline/starting numericals (2021, 2023, 2024). Learn the laws + verifications for theory marks."
     ],
     "mcs": [
       {
@@ -157,11 +112,7 @@
       }
     ],
     "importantConcepts": [
-      "Friction is a contact force opposing relative motion (or its tendency) between two surfaces.",
-      "Static friction is variable (up to μ_sN); kinetic friction is approximately constant (μ_kN).",
-      "μ_k < μ_s — harder to start sliding than to keep sliding.",
-      "The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s.",
-      "Friction is (approximately) independent of the apparent area of contact."
+      "**Friction is self-adjusting:** static friction matches your push exactly until the limiting value — then motion begins."
     ],
     "importantTasks": [
       "Solve 5 slope problems: check if the body slides (tan θ vs μ_s) and find the acceleration.",
@@ -345,107 +296,35 @@
     ]
   },
   "notes": [
-    "**What friction is:** a contact force that opposes relative motion (or its tendency) between two surfaces in contact. It acts parallel to the contact surface. Static friction (no sliding) and kinetic friction (sliding) are the two main types.",
-    "**Laws of friction:** (1) Friction is independent of the apparent area of contact (to a good approximation). (2) Maximum static friction and kinetic friction are both proportional to the normal reaction: f_s(max) = μ_sN, f_k = μ_kN. (3) μ_k < μ_s — it is harder to start sliding than to keep sliding.",
-    "**Static friction is a variable force:** it matches the applied force up to a maximum: f_s ≤ μ_sN. If you push with 30 N and the object doesn't move, f_s = 30 N (not μ_sN). Only at the point of slipping does f_s = μ_sN.",
-    "**Angle of friction (λ):** the angle between the normal reaction and the resultant reaction (normal + friction) when slipping is about to occur. tan λ = μ_s. The resultant reaction makes angle λ with the normal.",
-    "**Angle of repose (θ_r):** the steepest angle of a slope at which a body just remains at rest. At this angle, mg sin θ_r = μ_s mg cos θ_r → tan θ_r = μ_s. So θ_r = λ — the angle of repose equals the angle of friction.",
-    "**Worked example — body on a slope:** a 10 kg block on a 25° slope (μ_s = 0.5). Does it slide? tan 25° = 0.466 < 0.5 → no, it stays. Static friction = mg sin 25° = 41.5 N (less than μ_sN = 0.5 × 92.4 = 46.2 N).",
-    "**Worked example — pulling a block:** a 5 kg block on a horizontal surface (μ_k = 0.3). Pulled by a 20 N force at 30° above horizontal. Normal N = mg − F sin 30° = 49 − 10 = 39 N. Friction = 0.3 × 39 = 11.7 N. Net force = 20 cos 30° − 11.7 = 5.6 N. a = 5.6/5 = 1.12 m/s².",
-    "**NEB exam focus:** distinguish static vs kinetic friction; solve slope problems (does it slide? find acceleration); angle of repose and its equality with angle of friction; pulling/pushing at an angle (changes the normal, hence friction).",
-    "**Friction:** the force that opposes relative motion (or impending motion) between two surfaces in contact. It arises from microscopic irregularities and molecular adhesion between surfaces.",
-    "**Coefficient of friction $\\mu$:** $\\mu = \\frac{F}{R}$, where $F$ is the limiting frictional force and $R$ is the normal reaction. $\\mu$ is dimensionless — it is a ratio of two forces.",
-    "**Laws of friction:** (1) Friction acts opposite to the direction of impending motion. (2) Limiting friction $F_s = \\mu_s R$, proportional to the normal reaction. (3) Friction is independent of the apparent area of contact (for a given normal force). (4) Friction depends on the nature and condition of the surfaces in contact.",
-    "**Static vs kinetic friction:** static friction adjusts up to a maximum $F_{s,max} = \\mu_s R$; kinetic friction is approximately constant at $F_k = \\mu_k R$, where typically $\\mu_s > \\mu_k$. This is why it is harder to start moving an object than to keep it moving.",
-    "**Angle of friction $\\lambda$:** the angle between the resultant contact force and the normal reaction when limiting friction is reached. $\\tan\\lambda = \\mu_s$. When the incline angle equals the angle of friction, the body is on the point of sliding.",
-    "**Angle of repose:** the maximum angle of an incline at which a body just rests on the plane without sliding. It equals the angle of friction: $\\theta_{repose} = \\lambda = \\tan^{-1}\\mu_s$.",
-    "**Verification of area independence:** experiments show that for a given normal force, doubling the contact area halves the pressure but leaves the frictional force unchanged because the increased number of molecular interactions compensates.",
-    "**Rolling friction:** much smaller than sliding friction because rolling deforms surfaces less and the contact time per point is shorter. Ball bearings use this principle to reduce friction.",
-    "**Units check:** $\\mu = F/R$ — both numerator and denominator are forces, so $\\mu$ is dimensionless. Friction force $F = \\mu R$ has units of newtons."
+    "## 1. Topic Introduction — The Force That Opposes Every Push\n\nFriction is the contact force opposing relative (or attempted) motion between surfaces. It is indispensable — walking, brakes, nail grips — and costly — worn engines, wasted fuel. The syllabus asks for the laws of solid friction and their experimental verifications, plus incline numericals.",
+    "## 2. Fundamental Concepts\n\n| Term | Definition |\n|---|---|\n| **Static friction** | Opposes the *start* of motion; self-adjusting up to a maximum |\n| **Limiting friction** | Maximum static friction just before sliding begins: $f_s^{max} = \\mu_s N$ |\n| **Kinetic friction** | Opposes motion once sliding: $f_k = \\mu_k N$, roughly constant and slightly less than limiting friction |\n| **Normal reaction** | The surface's perpendicular push: $N = mg$ on level ground, $mg\\cos\\theta$ on an incline |\n| **Coefficient of friction (μ)** | Ratio of friction to normal reaction — dimensionless, typically 0.05–1.5 |\n\n### 2.1 Laws of solid friction\n\n1. Friction acts **opposite to the direction of attempted/actual relative motion**, along the surfaces in contact.\n2. Friction is **proportional to the normal reaction**: $f \\propto N$.\n3. Friction is **independent of the apparent area of contact** (for a given normal reaction).\n4. Kinetic friction is **independent of the relative velocity** (at ordinary speeds).\n5. Kinetic friction is slightly **less than limiting static friction**.\n\n### 2.2 Experimental verifications\n\n- **Proportional to N:** a block on a table is pulled by a spring balance at constant speed; repeat with weights stacked on the block — the reading scales with total weight; a graph of f against N is a straight line whose slope is μ.\n- **Independent of area:** repeat with the block on different faces (different contact areas) — the balance reading is unchanged.\n- **Independent of speed:** pull at different steady speeds — the reading stays (approximately) constant.\n- **Angle of repose:** a block on an adjustable incline just slides at angle θ_r; resolving gives $\\mu = \\tan\\theta_r$ — a direct measurement.\n\n### 2.3 Incline relations\n\n| Quantity | Formula |\n|---|---|\n| On the point of sliding down | $\\mu_s = \\tan\\theta_r$ (angle of repose) |\n| Sliding down with friction | $a = g(\\sin\\theta - \\mu\\cos\\theta)$ |\n| Force to pull up the incline at constant speed | $F = mg(\\sin\\theta + \\mu\\cos\\theta)$ |",
+    "## 3. Worked Numericals\n\n**Q1 (3m, 2023):** A block of mass 5 kg rests on a horizontal plane. The coefficient of static friction is 0.4. What horizontal force is needed to start the block moving? (g = 10 m/s²)\n$N = mg = 50$ N; $f_{limiting} = \\mu_s N = 0.4 \\times 50 = 20$ N. **A force just over 20 N starts the motion.**\n\n**Q2 (3m, 2021):** A block of mass 10 kg rests on a rough inclined plane of angle 30°. If the coefficient of friction is 0.2, find the frictional force (and the acceleration). (g = 10 m/s²)\n$N = mg\\cos30° = 100 \\times 0.866 = 86.6$ N; $f = \\mu N = 0.2 \\times 86.6 = 17.3$ N.\nDriving component: $mg\\sin30° = 50$ N > 17.3 N, so it slides: $a = g(\\sin30° - \\mu\\cos30°) = 10(0.5 - 0.173) = 3.27$ m/s².\n**Friction ≈ 17.3 N up the plane; a ≈ 3.3 m/s² down the plane.**\n\n**Q3 (3m, 2024):** A block just begins to slide down a rough incline when the angle of inclination is 30°. Calculate the coefficient of static friction.\nAt the point of sliding, gravity's component equals limiting friction: $mg\\sin\\theta = \\mu mg\\cos\\theta → \\mu = \\tan\\theta = \\tan30° = 0.577$. **μ ≈ 0.58.**",
+    "## 4. Conceptual Relationships\n\n- **To Topic 13:** friction is a contact force entering Newton's-law applications; the incline formulas combine the second law with friction.\n- **To Work/Energy (Unit 5):** friction dissipates mechanical energy as heat — the reason slides stop.\n- **To Circular Motion:** friction supplies the centripetal force for cornering vehicles (banking topic).\n- **To real life:** tyres, brakes, belts and nails need friction; engines and skates fight it with lubrication (replacing solid with fluid friction).",
+    "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Dynamics | Friction | A block of mass 5 kg rests on a horizontal plane. The coefficient of static friction is 0.4. What horizontal force is needed to start the block moving? | 3 | Numerical |\n| 2077/2021 | Dynamics | Friction | A block of mass 10 kg rests on a rough inclined plane of angle 30 degrees with the horizontal. If the coefficient of friction is 0.2, find the magnitude of frictional force. | 3 | Numerical |\n| 2080/2024 | Mechanics | Friction | A block just begins to slide down a rough incline when the angle of inclination is 30°. Calculate the coefficient of static friction between the block and the plane. | 3 | Numerical |\n\n### 5.2 Model answers — see worked numericals in §3.\n\n### 5.3 Common examination mistakes\n\n1. Using $N = mg$ on an incline — there $N = mg\\cos\\theta$.\n2. Forgetting that static friction **self-adjusts** — it equals the applied force up to its limit, not always μN.\n3. Saying friction depends on contact area — the law says it does not.\n4. Confusing the angle of repose relation ($\\mu = \\tan\\theta_r$) with $\\sin$ or $\\cos$.\n5. Mixing μ_s and μ_k in one problem without saying which."
   ],
   "confusion": [
-    "❌ 'Friction always opposes motion.' ✅ Friction opposes RELATIVE motion (or its tendency). Static friction can act IN the direction of motion — e.g., the static friction on your feet pushes you forward when walking.",
-    "❌ 'Friction depends on the area of contact.' ✅ For a given normal force, friction is (approximately) independent of area. A wide tyre and a narrow tyre with the same load have the same maximum friction (in the simple model).",
-    "❌ 'Static friction is always μ_sN.' ✅ Static friction is VARIABLE: it matches the applied force up to μ_sN. Only at the point of slipping does f_s = μ_sN.",
-    "❌ 'μ_k > μ_s because sliding is faster.' ✅ μ_k < μ_s — it is harder to start sliding than to keep sliding. This is why a heavy box jerks when you first push it.",
-    "❌ 'The angle of repose depends on the mass of the body.' ✅ tan θ_r = μ_s — mass cancels out. All bodies with the same μ_s have the same angle of repose.",
-    "❌ 'Pulling a block at an angle reduces friction because the force is smaller.' ✅ Pulling upward reduces the normal (N = mg − F sin θ), which reduces friction. Pushing downward increases the normal and friction.",
-    "Friction is NOT always opposite to the direction of motion — it is opposite to the direction of relative motion (or impending relative motion) between the two surfaces. For example, when you walk, friction on your foot points forward (in the direction of motion), preventing your foot from slipping backward.",
-    "The friction force is NOT always $\\mu R$. This formula gives the LIMITING (maximum static) friction. For static friction, $f_s \\leq \\mu_s R$, and the actual value adjusts to match the applied force up to the maximum.",
-    "Friction being independent of area is an approximation that holds for rigid bodies with moderate contact pressures. For very soft materials (like rubber tyres) or very high pressures, the relationship becomes more complex.",
-    "$\\mu_s > \\mu_k$ is generally true but not universal. Some materials (like Teflon on Teflon) have nearly equal coefficients, and certain combinations can even have $\\mu_k > \\mu_s$ under specific conditions.",
-    "The normal reaction $R$ is NOT always equal to $mg$. On an inclined plane, $R = mg\\cos\\theta$. If an additional vertical force is applied, $R$ changes accordingly. Always determine $R$ from force equilibrium in the direction perpendicular to the surface."
+    "**Static vs kinetic friction:** static self-adjusts up to μ_s N (starting is harder); kinetic is roughly constant at μ_k N and slightly smaller.",
+    "**Friction vs normal reaction:** friction is proportional to N — press harder and it grows; lighten the load and it shrinks."
   ],
   "practice": [
-    "Solve 5 slope problems: determine if a body slides, and if so, find the acceleration.",
-    "Solve 5 horizontal-surface problems with pulling/pushing at an angle (find normal, friction, acceleration).",
-    "Solve 3 angle-of-repose problems showing θ_r = λ = tan⁻¹μ_s.",
-    "Solve 3 problems comparing static and kinetic friction (e.g., a block given an initial push).",
-    "Solve 2 problems where friction acts in the direction of motion (e.g., a block on a moving conveyor, walking).",
-    "one worked example for \"Solid friction: laws of solid friction and their verifica…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid.",
-    "A 10 kg box rests on a horizontal floor. The coefficient of static friction is 0.5. Find the minimum horizontal force needed to start the box moving. Solution: $R = mg = 10 \\times 9.8 = 98$ N. Limiting friction $F_s = \\mu_s R = 0.5 \\times 98 = 49$ N. Minimum force to start motion = 49 N.",
-    "A 5 kg block slides down an incline of angle 30° at constant velocity. Find the coefficient of kinetic friction. Solution: At constant velocity, acceleration is zero, so forces are balanced: $mg\\sin\\theta = \\mu_k mg\\cos\\theta$. $\\mu_k = \\tan\\theta = \\tan 30° = \\frac{1}{\\sqrt{3}} \\approx 0.577$.",
-    "A 20 kg crate is pushed across a floor with a coefficient of kinetic friction of 0.3. If the crate moves at constant speed, find the applied force. Solution: $R = mg = 20 \\times 9.8 = 196$ N. $F_k = \\mu_k R = 0.3 \\times 196 = 58.8$ N. Since velocity is constant, applied force = friction force = 58.8 N.",
-    "An inclined plane is raised until a block just begins to slide at angle 35°. Find the coefficient of static friction and the angle of friction. Solution: At the point of sliding, $\\mu_s = \\tan\\theta = \\tan 35° \\approx 0.700$. The angle of friction $\\lambda = \\tan^{-1}(\\mu_s) = 35°$. The angle of repose equals the angle of friction.",
-    "A 8 kg block is on a horizontal surface ($\\mu_s = 0.6$, $\\mu_k = 0.4$). A horizontal force of 30 N is applied. Find the friction force and acceleration. Solution: $R = mg = 8 \\times 9.8 = 78.4$ N. $F_{s,max} = 0.6 \\times 78.4 = 47.04$ N. Since applied force (30 N) < $F_{s,max}$ (47.04 N), the block does not move. Friction force = 30 N (equal and opposite to applied force). Acceleration = 0."
+    "Why is it harder to start a crate moving than to keep it moving?"
   ],
   "universalFacts": [
-    "Friction is independent of the apparent area of contact — a counterintuitive but experimentally verified law.",
-    "μ_k < μ_s for most surface pairs — this is why objects jerk when starting to slide.",
-    "The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s — a beautiful geometric connection.",
-    "Friction can act in the direction of motion — static friction is the force that accelerates you forward when walking.",
-    "Pulling a block at an angle reduces friction (by reducing N); pushing at an angle increases it (by increasing N).",
-    "answer pattern for \"Solid friction: laws of solid friction and their verifica…\": define → method → result. Structure earns the marks on 6–10 mark questions.",
-    "The laws of friction were first systematically studied by Leonardo da Vinci (1452–1519), but they were rediscovered and formalized by Guillaume Amontons in 1699 and further refined by Charles-Augustin de Coulomb in 1785.",
-    "The coefficient of friction for rubber on dry concrete is about 1.0, while for ice on steel it is only about 0.03 — a factor of 33 difference, explaining why ice skating is possible.",
-    "Friction generates heat: the work done against friction is converted into thermal energy. This is why brakes get hot and why meteoroids burn up in the atmosphere.",
-    "In ideal mathematical models, friction is treated as independent of contact area and sliding speed. In reality, both factors can affect friction, especially for rubber, polymers, and at very high or very low speeds.",
-    "The friction force can do positive, negative, or zero work depending on the reference frame. In the frame of the surface, friction on a sliding object does negative work; in the frame of a moving conveyor belt, friction can do positive work on an object placed on it."
+    "Anti-lock brakes keep tyres rolling rather than sliding because kinetic friction is smaller than peak static friction — maximum stopping force comes just below sliding."
   ],
   "examples": [
-    "Slope: A 5 kg block on a 30° slope (μ_s = 0.4). tan 30° = 0.577 > 0.4 → slides. a = g(sin30° − μ_k cos30°) = 9.8(0.5 − 0.4×0.866) = 1.51 m/s².",
-    "Horizontal pull: A 10 kg block (μ_k = 0.25) pulled by 40 N at 20° above horizontal. N = 98 − 40sin20° = 84.3 N; f = 21.1 N; F_net = 40cos20° − 21.1 = 16.5 N; a = 1.65 m/s².",
-    "Angle of repose: A block slides at constant speed down a 35° slope. μ_k = tan 35° = 0.70. μ_s is slightly higher (≈ 0.75).",
-    "Static friction variable: A 20 kg box (μ_s = 0.5). Push with 40 N — box doesn't move, f_s = 40 N. Push with 120 N — box moves (max f_s = 98 N).",
-    "Pulling vs pushing: A 15 kg block (μ_k = 0.3). Pull at 25°: N = 147 − Fsin25°. Push at 25°: N = 147 + Fsin25°. Pulling gives less friction.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
-    "Real-world application of Solid friction: laws of solid friction and their verifications",
-    "Practical demonstration of Solid friction: laws of solid friction and their verifications concepts",
-    "Diagram-based question on Solid friction: laws of solid friction and their verifications",
-    "Application in daily life involving Solid friction: laws of solid friction and their verifications"
+    "***5 kg block, μ_s = 0.4*** — needs just over 20 N to start (NEB 2023)."
   ],
   "practiceQuestions": [
-    "A 15 kg block rests on a horizontal surface (μ_s = 0.6). What is the maximum static friction? What horizontal force is needed to just start it moving?",
-    "A 5 kg block slides down a 40° slope (μ_k = 0.25). Find the acceleration.",
-    "A 10 kg block is pulled by a 50 N force at 30° above horizontal (μ_k = 0.2). Find the acceleration.",
-    "A block remains at rest on a slope up to 35°. Find μ_s. If the slope is increased to 40°, find the acceleration (μ_k = 0.6).",
-    "Explain why it is harder to start sliding a heavy box than to keep it sliding.",
-    "state + explain the main idea of \"Solid friction: laws of solid friction and their verifica…\" with one example.",
-    "compare \"Solid friction\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Solid friction: laws of solid friction and their verifica…\" and verify the answer is plausible.",
-    "Q2. Solve problems related to Solid friction: laws of solid friction and their verifications.",
-    "Q3. Differentiate between various aspects of Solid friction: laws of solid friction and their verifications.",
-    "Q4. Derive the key formula related to Solid friction: laws of solid friction and their verifications.",
-    "Q5. What are the applications of Solid friction: laws of solid friction and their verifications?"
+    "**Numerical (3m): A 20 kg block is pulled up a 30° incline (μ = 0.25) at constant speed. Find the required force (g = 10).** — F = mg(sin θ + μ cos θ) = 200(0.5 + 0.25×0.866) = 200 × 0.7165 = 143.3 N."
   ],
   "formulas": [
-    "Maximum static friction: f_s(max) = μ_sN (acts just before slipping)",
-    "Kinetic friction: f_k = μ_kN (acts during sliding; μ_k < μ_s)",
-    "Slope sliding condition: body slides when tan θ > μ_s; a = g(sin θ − μ_k cos θ)",
-    "Angle of friction: tan λ = μ_s (angle between normal and resultant reaction)",
-    "Angle of repose: tan θ_r = μ_s → θ_r = λ (steepest angle for rest)",
-    "Governing equation for \"Solid friction: laws of solid friction and their verifica…\" — state with units, then use in one numerical."
+    "- f_max = μN; f_k = μ_k N\n- Angle of repose: μ = tan θ_r\n- Incline: N = mg cos θ; a = g(sin θ − μ cos θ)\n- Pull up at constant speed: F = mg(sin θ + μ cos θ)"
   ],
   "keyPoints": [
-    "Static friction is VARIABLE: it matches the applied force up to μ_sN.",
-    "Kinetic friction is approximately CONSTANT: f_k = μ_kN during sliding.",
-    "μ_k < μ_s — harder to start sliding than to keep sliding.",
-    "Friction is (approximately) independent of the apparent area of contact.",
-    "Pulling at an angle reduces N and friction; pushing at an angle increases both.",
-    "• Solid friction",
-    "• Laws of solid friction",
-    "• Their verifications"
+    "Laws: opposes relative motion; f ∝ N; independent of contact area; kinetic friction independent of speed; μ_k < μ_s.",
+    "Angle of repose: μ = tan θ_r.",
+    "Incline: N = mg cos θ; sliding a = g(sin θ − μ cos θ); pull up at constant speed F = mg(sin θ + μ cos θ)."
   ],
   "specialNotes": [
     "Static friction is NOT always μ_sN — it is a variable force that matches the applied force up to that maximum.",
@@ -460,57 +339,19 @@
     "Note 5: Solid friction: laws of solid friction and their verifications frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Friction opposes relative motion (or its tendency) between two surfaces in contact.",
-    "Maximum static friction and kinetic friction are both proportional to the normal reaction: f_max = μN.",
-    "μ_k < μ_s for most surface pairs — it is harder to start sliding than to keep sliding.",
-    "The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s.",
-    "Friction is (approximately) independent of the apparent area of contact."
+    "\"Friction always bills the motion.\""
   ],
   "importantNotes": [
-    "Static friction is a variable force — it adjusts to match the applied force up to μ_sN.",
-    "The normal force is NOT always mg — on a slope it is mg cos θ; with angled pulling/pushing it changes.",
-    "μ_k < μ_s — this is why objects jerk when starting to slide (static friction breaks, kinetic takes over).",
-    "The angle of repose depends only on μ_s — mass cancels out, so all bodies with the same μ_s have the same θ_r.",
-    "NEB friction problems: always check tan θ vs μ_s first to determine if the body slides.",
-    "Note 2: Remember the distinction between different types in Solid friction: laws of solid friction and their verifications",
-    "Note 3: Solid friction: laws of solid friction and their verifications has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Solid friction: laws of solid friction and their verifications",
-    "Note 5: Cross-check your answers using alternative methods for Solid friction: laws of solid friction and their verifications"
+    "Verified PYQs: starting force (2023, 3m); incline friction (2021, 3m); angle of repose (2024, 3m)."
   ],
   "examShortTricks": [
-    "Slope check: compare tan θ with μ_s — if tan θ > μ_s, the body slides; otherwise it stays.",
-    "Normal force shortcut: N = mg (horizontal), N = mg cos θ (slope), N = mg − F sin θ (pulling up), N = mg + F sin θ (pushing down).",
-    "Friction direction: it opposes relative motion — for a block being pulled, friction acts opposite to the pull.",
-    "Angle of repose shortcut: θ_r = tan⁻¹μ_s — just take the inverse tangent of the coefficient.",
-    "Static vs kinetic: use μ_s for 'just about to slip' problems; use μ_k for 'already sliding' problems.",
-    "Trick 1: Quick method to identify applicable Solid friction: laws of solid friction and their verifications formula",
-    "Trick 2: Elimination technique for Solid friction: laws of solid friction and their verifications MCQs",
-    "Trick 3: Dimensional analysis shortcut for Solid friction: laws of solid friction and their verifications",
-    "Trick 4: Memory aid for Solid friction: laws of solid friction and their verifications formulas",
-    "Trick 5: Time-saving approach for Solid friction: laws of solid friction and their verifications problems"
+    "\"Just slides → μ = tan θ.\""
   ],
   "examNotes": [
-    "Slope problems are the most common — know the tan θ vs μ_s check and the a = g(sin θ − μ_k cos θ) formula.",
-    "Pulling/pushing at an angle changes the normal force — always recalculate N before finding friction.",
-    "Static friction is variable — do NOT assume f = μ_sN unless the body is at the point of slipping.",
-    "The angle of repose equals the angle of friction — both are tan⁻¹μ_s.",
-    "Friction can act in the direction of motion (walking, conveyor belts) — static friction pushes you forward.",
-    "Focus on numerical problems from Solid friction: laws of solid friction and their verifications",
-    "Practice previous year questions on Solid friction: laws of solid friction and their verifications",
-    "Learn the derivations for Solid friction: laws of solid friction and their verifications thoroughly",
-    "Review common mistakes related to Solid friction: laws of solid friction and their verifications"
+    "Most-tested: the three incline/starting numericals (2021, 2023, 2024). Learn the laws + verifications for theory marks."
   ],
   "importantConcepts": [
-    "Friction is a contact force opposing relative motion (or its tendency) between two surfaces.",
-    "Static friction is variable (up to μ_sN); kinetic friction is approximately constant (μ_kN).",
-    "μ_k < μ_s — harder to start sliding than to keep sliding.",
-    "The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s.",
-    "Friction is (approximately) independent of the apparent area of contact.",
-    "Concept 1: Core definition of Solid friction: laws of solid friction and their verifications",
-    "Concept 2: Key theorem or principle in Solid friction: laws of solid friction and their verifications",
-    "Concept 3: Important application area of Solid friction: laws of solid friction and their verifications",
-    "Concept 4: Fundamental relationship in Solid friction: laws of solid friction and their verifications",
-    "Concept 5: Connection between Solid friction: laws of solid friction and their verifications and other topics"
+    "**Friction is self-adjusting:** static friction matches your push exactly until the limiting value — then motion begins."
   ],
   "importantTasks": [
     "Solve 5 slope problems: check if the body slides (tan θ vs μ_s) and find the acceleration.",
@@ -524,7 +365,7 @@
     "Task 4: Practice previous year exam questions on Solid friction: laws of solid friction and their verifications",
     "Task 5: Explain Solid friction: laws of solid friction and their verifications to a peer or study group"
   ],
-  "summary": "Friction is a contact force opposing relative motion. Static friction (variable, up to μ_sN) acts before sliding; kinetic friction (constant, μ_kN) acts during sliding, with μ_k < μ_s. The angle of repose equals the angle of friction (tan⁻¹μ_s). Slope problems, pulling/pushing at angles, and the distinction between static and kinetic friction are the key NEB topics. Solid Friction: Laws of Friction & Their Verification covers essential principles and applications. Friction is a contact force opposing relative motion. Static friction (variable, up to μ_sN) acts before sliding; kinetic friction (constant, μ_kN) acts during sliding, with μ_k < μ_s. The angle of repose equals the angle of friction (tan⁻¹μ_s). Slope problems, pulling/pushing at angles, and the distinction between static and kinetic friction are the key NEB topics. Solid friction: laws of solid friction and their verifications is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Friction opposes attempted or actual relative motion along surfaces. **Static friction self-adjusts** up to the limiting value μ_sN; kinetic friction runs at μ_kN, slightly smaller and nearly speed-independent. The laws: friction opposes relative motion, is proportional to normal reaction, and ignores contact area — verified by spring-balance pulls with added weights (straight-line f–N graph), face-swaps (same reading) and the **angle of repose**, where μ = tan θ_r. Incline numericals flow from $N = mg\\cos\\theta$: a 5 kg block with μ_s = 0.4 needs just over 20 N to start (NEB 2023); a 10 kg block on 30° with μ = 0.2 feels 17.3 N of friction and slides at 3.3 m/s² (NEB 2021); a block just sliding at 30° fixes μ = tan 30° ≈ 0.58 (NEB 2024).",
   "mcs": [
     {
       "question": "A 10 kg block rests on a horizontal surface (μ_s = 0.5). The maximum static friction is: (g = 10 m/s²)",
@@ -624,24 +465,92 @@
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Solid friction: laws of solid friction and their verifica…\"?",
+      "question": "A 5 kg block with μ_s = 0.4 on horizontal ground needs what force to start moving (g = 10)?",
       "options": [
-        "Solid friction",
-        "Laws of solid friction",
-        "Unrelated topic",
-        "None of the above"
+        "2 N",
+        "20 N",
+        "50 N",
+        "12.5 N"
       ],
-      "answer": "A",
-      "explanation": "Solid friction is listed among the official sub-ideas of Solid friction: laws of solid friction and their verifica…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "f_max = μ_s mg = 0.4 × 50 = 20 N (NEB 2023)."
     },
     {
-      "question": "A common examiner point on \"Solid friction: laws of solid friction and their verifica…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "A block just slides at 30° inclination. μ equals:",
       "options": [
-        "True",
-        "False"
+        "sin 30°",
+        "cos 30°",
+        "tan 30°",
+        "1/tan 30°"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C",
+      "explanation": "At the angle of repose μ = tan θ = 0.577 (NEB 2024)."
+    },
+    {
+      "question": "On a 30° incline, the normal reaction on a 10 kg block is (g = 10):",
+      "options": [
+        "100 N",
+        "86.6 N",
+        "50 N",
+        "17.3 N"
+      ],
+      "answer": "B",
+      "explanation": "N = mg cos 30° = 86.6 N (NEB 2021)."
+    },
+    {
+      "question": "Friction between two surfaces does NOT depend on:",
+      "options": [
+        "Normal reaction",
+        "Nature of surfaces",
+        "Contact area",
+        "Material combination"
+      ],
+      "answer": "C",
+      "explanation": "For a given N, area is irrelevant — law 3."
+    },
+    {
+      "question": "Kinetic friction compared with limiting static friction is:",
+      "options": [
+        "Greater",
+        "Slightly less",
+        "Equal",
+        "Zero"
+      ],
+      "answer": "B",
+      "explanation": "Once sliding, friction drops slightly — starting is harder."
+    },
+    {
+      "question": "Static friction before sliding equals:",
+      "options": [
+        "Always μN",
+        "The applied force, up to the limit",
+        "Zero",
+        "mg"
+      ],
+      "answer": "B",
+      "explanation": "It self-adjusts to match the push until limiting friction."
+    },
+    {
+      "question": "A block slides down a rough incline with acceleration:",
+      "options": [
+        "g sin θ",
+        "g(sin θ − μ cos θ)",
+        "g(sin θ + μ cos θ)",
+        "μg cos θ"
+      ],
+      "answer": "B",
+      "explanation": "Driving component minus friction, divided by m."
+    },
+    {
+      "question": "The angle of repose is the angle at which:",
+      "options": [
+        "The block accelerates fastest",
+        "The block just begins to slide",
+        "Friction vanishes",
+        "The block stops"
+      ],
+      "answer": "B",
+      "explanation": "tan θ_r = μ — the onset of sliding."
     }
   ],
   "source": "generated",
