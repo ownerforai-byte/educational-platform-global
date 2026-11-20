@@ -7,27 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Specific heat capacity is measured by supplying a known quantity of heat and measuring the temperature rise, or by the method of mixtures, where heat lost by the hot body equals heat gained by the cold body.",
-    "For a solid, heat the sample to a known temperature θ1, then drop it into a calorimeter of cold water at θ2. The mixture settles at θ. The solid loses m_s c_s (θ1 − θ). The water and the calorimeter gain that heat.",
-    "If the calorimeter has mass m_c and specific heat c_c, and the water has mass m_w and specific heat c_w, then m_s c_s (θ1 − θ) = m_w c_w (θ − θ2) + m_c c_c (θ − θ2).",
-    "Solve for c_s. Every temperature in a difference can stay in °C. The masses must be in the unit that matches c, normally kilograms if c is in J kg^-1 K^-1.",
-    "A liquid's specific heat can be found the same way, by heating a hot solid of known c and dropping it into the cold liquid, or by an electric heater. The electrical heat is I V t, or I^2 R t, if the heater is in the liquid and losses are small.",
-    "Stir so the thermometer reads the mixture, and keep a lid on to reduce loss to the room. A loss that is ignored makes the calculated specific heat too small for the solid, because the solid appears to have given less heat to the water than it really lost.",
-    "# Measurement of specific heat capacity of solids and liquids\n\n## 1. Introduction\nPhysical picture of **Measurement of specific heat capacity of solids and liquids** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Quantity of Heat fill pass.\n\n## 2. Concepts and laws\n### Measurement of specific heat capacity of solids and liquids\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Measurement of specific heat capacity of solids and liquids — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Measurement of specific heat capacity of solids and liquids — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Measurement of specific heat capacity of solids and liquids — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Measurement of specific heat capacity of solids and liquids — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — How Much Heat for One Degree?\n\nWater needs 4186 J to raise one kilogram by one kelvin; copper needs barely a tenth of that. Specific heat capacity quantifies this appetite for heat — and the principle of calorimetry (heat lost = heat gained) turns mixtures into measurement instruments.",
+    "## 2. Fundamental Concepts (NEB 2020, 2023, 2024)\n\n### 2.1 Definitions\n\n**Quantity of heat:** the energy transferred because of temperature difference; measured in joules.\n\n**Specific heat capacity (c):** the heat required to raise the temperature of **1 kg** of a substance by **1 K**:\n$$Q = mc\\Delta T \\qquad c \\text{ in J kg}^{-1}\\text{K}^{-1}$$\n\n**Thermal (heat) capacity:** heat to raise a *whole body* by 1 K: $C = mc$ (J/K).\n\nWater's c = 4186 J kg⁻¹K⁻¹ — exceptionally high (hydrogen bonding), which is why water is the coolant of engines and the climate buffer of coastal cities.\n\n### 2.2 Principle of calorimetry\n\n$$\\text{Heat lost by hot body} = \\text{Heat gained by cold body}$$\n$$m_1c_1(T_1 - T) = m_2c_2(T - T_2)$$\n(neglecting losses) — the working equation of the **method of mixtures**.\n\n### 2.3 Measurement of specific heat — method of mixtures\n\n1. A known mass of the solid is heated in boiling water (to a known temperature $T_1$).\n2. It is quickly transferred into a **calorimeter** (known mass $m_c$, specific heat $c_c$) containing known mass $m_w$ of water at $T_2$.\n3. The final common temperature $T$ is read.\n4. Energy balance (including the calorimeter):\n$$m_s c_s (T_1 - T) = (m_w c_w + m_c c_c)(T - T_2) \\Rightarrow c_s = \\frac{(m_w c_w + m_c c_c)(T - T_2)}{m_s (T_1 - T)}$$\n\n### 2.4 Worked numericals\n\n**Q (3m, 2024):** Define specific heat capacity. A 200 g block of aluminium is heated from 20 °C to 100 °C. How much heat is absorbed? (c = 0.897×10³ J kg⁻¹K⁻¹... as given: 0.897 J/g°C)\n- Definition as above. $Q = mc\\Delta T = 0.2 \\times 897 \\times 80 = 1.44 \\times 10^4$ J ≈ **14.4 kJ**\n\n**Q (3m, 2020):** Calculate the heat required to raise the temperature of 500 g of water from 20 °C to 60 °C. (c = 4200 J kg⁻¹K⁻¹)\n$$Q = mc\\Delta T = 0.5 \\times 4200 \\times 40 = 8.4 \\times 10^4 \\text{ J}$$\n\n**Q (NEB-style):** A 100 g copper calorimeter (c = 385) contains 200 g water at 20 °C. A 50 g metal at 100 °C is dropped in; final temperature 22.5 °C. Find c of the metal.\n- Lost: 0.05 c (77.5). Gained: (0.2×4186 + 0.1×385)(2.5) = (837.2+38.5)(2.5) = 2194 J.\n- $c = 2194/(0.05 \\times 77.5) = 566$ J kg⁻¹K⁻¹.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 50:** cooling corrections refine the final temperature reading.\n- **To Topic 52/53:** latent-heat terms enter the calorimetry equation during phase changes.\n- **To first law:** at constant volume (solids/liquids), heat = change in internal energy.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2076/2020 | Heat | Quantity of heat | Calculate the heat required to raise the temperature of 500 g of water from 20 °C to 60 °C. (c = 4200 J kg⁻¹K⁻¹) | 3 | Numerical |\n| 2079/2023 | Heat | Quantity of heat | Define quantity of heat and specific heat capacity. Write the formula for the heat required to raise the temperature of a body and give the SI unit. | 3 | Definition |\n| 2080/2024 | Heat | Quantity of heat | Define specific heat capacity. A 200 g block of aluminium is heated from 20 °C to 100 °C. How much heat is absorbed? (c = 0.897 J/g°C) | 3 | Definition + numerical |\n\n### 4.2 Common examination mistakes\n\n1. Mixing grams and kilograms in Q = mcΔT.\n2. Omitting the calorimeter's heat capacity in mixture problems.\n3. Writing c's unit as J/K (that is heat capacity C, not specific heat c)."
   ],
   "confusion": [
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..",
-    "The solid's temperature fall is θ1 − θ, not θ1 − θ2.",
-    "The water's temperature rise is θ − θ2.",
-    "Leaving out the calorimeter is allowed only when the question says so.",
-    "Electrical energy in joules is already the heat, if it all stays in the liquid."
+    "**c vs C:** specific heat c (J kg⁻¹K⁻¹) is per kilogram; heat capacity C = mc (J/K) is for the whole body.",
+    "**Water's huge c** makes it both a coolant and a climate stabiliser."
   ],
   "bounds": [
     "Covers only: measurement of specific heat capacity of solids, liquids (within Quantity of Heat).",
@@ -36,109 +23,136 @@
     "Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar."
   ],
   "practice": [
-    "Write Heat lost = heat gained and say what each symbol means.",
-    "Mark the known values, then substitute one step at a time.",
-    "Finish with the number, the unit, and the direction when the quantity has one."
+    "Why does sand burn your feet while sea water feels cool at the same temperature?"
   ],
   "universalFacts": [
-    "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
-    "Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.",
-    "Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+    "Water's specific heat (4186) is the highest of common substances — coastal climates stay mild."
   ],
   "examples": [
-    "Specific heat capacity is measured by supplying a known quantity of heat and measuring the temperature rise, or by the method of mixtures, where heat lost by the hot body equals heat gained by the cold body.",
-    "For a solid, heat the sample to a known temperature θ1, then drop it into a calorimeter of cold water at θ2. The mixture settles at θ. The solid loses m_s c_s (θ1 − θ). The water and the calorimeter gain that heat.",
-    "A 0.10 kg metal piece at 100°C is dropped into 0.20 kg of water at 20°C. The mixture reaches 25°C. Neglect the calorimeter. Take c_w = 4200 J kg^-1 K^-1. Find c of the metal."
+    "***NEB 2024*** — 200 g Al over 80 °C: Q = 14.4 kJ."
   ],
   "practiceQuestions": [
-    "What equality is the method of mixtures?",
-    "Which temperature difference belongs to the hot solid?",
-    "What does an ignored heat loss do to the result?"
+    "**Numerical (3m): A 0.2 kg iron block (c = 460) at 150 °C is dropped into 0.3 kg water at 20 °C. Find the final temperature (neglect calorimeter).** — 0.2×460×(150−T) = 0.3×4186×(T−20) → 92(150−T) = 1255.8(T−20) → 13800−92T = 1255.8T−25116 → T = 38916/1347.8 = 28.9 °C."
   ],
   "formulas": [
-    "Q = mcΔT",
-    "Q = mL",
-    "cp = 1.5×cv + R (Mayer, for ideal gas)"
+    "- Q = mcΔT; C = mc\n- m₁c₁(T₁−T) = (m_w c_w + m_c c_c)(T−T₂)\n- c_water = 4186 J kg⁻¹K⁻¹"
   ],
   "numericals": [
     "A 0.10 kg metal piece at 100°C is dropped into 0.20 kg of water at 20°C. The mixture reaches 25°C. Neglect the calorimeter. Take c_w = 4200 J kg^-1 K^-1. Find c of the metal."
   ],
   "keyPoints": [
-    "• Measurement of specific heat capacity of solids",
-    "Method of mixtures.",
-    "A solid is heated and dropped into cold water.",
-    "Include the calorimeter if required.",
-    "Electrical heating can supply a measured Q."
+    "Q = mcΔT; c in J kg⁻¹K⁻¹; water 4186.",
+    "Calorimetry: heat lost = heat gained (include the calorimeter!)."
   ],
-  "summary": "Specific heat is found from a known heat and a measured temperature change. In the method of mixtures the hot body's heat loss equals the cold body's heat gain, including the calorimeter when it is not negligible. An electrical heater supplies Q = I V t.",
+  "summary": "**Specific heat capacity** c is the heat per kilogram needed to raise temperature by one kelvin: $Q = mc\\Delta T$ (J kg⁻¹K⁻¹); the whole-body version is heat capacity $C = mc$. Water's 4186 J kg⁻¹K⁻¹ is exceptionally high, making it nature's coolant. The **principle of calorimetry** — heat lost equals heat gained — powers the method of mixtures: a hot solid dropped into a calorimeter of water yields $c_s = \\frac{(m_wc_w + m_cc_c)(T-T_2)}{m_s(T_1-T)}$. NEB's numericals: 500 g of water over 40 °C needs 8.4×10⁴ J (2020); 200 g of aluminium over 80 °C absorbs 14.4 kJ (2024); definitions repeat (2023, 2024).",
   "mcqs": [
     {
-      "question": "In the method of mixtures",
+      "question": "Specific heat capacity is measured in:",
       "options": [
-        "Heat lost equals heat gained",
-        "Temperatures add",
-        "Masses must be equal",
-        "c is always 1"
+        "J/K",
+        "J kg⁻¹K⁻¹",
+        "J kg",
+        "W/K"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Per unit mass per kelvin."
     },
     {
-      "question": "The hot solid cools from",
+      "question": "NEB 2020: 500 g water, 20→60 °C. Q =",
       "options": [
-        "θ2 to θ",
-        "θ1 to θ",
-        "θ to θ1",
-        "0°C to θ"
+        "8.4×10⁴ J",
+        "4.2×10⁴ J",
+        "8.4×10³ J",
+        "42 J"
       ],
-      "answer": "B"
+      "answer": "A",
+      "explanation": "0.5×4200×40."
     },
     {
-      "question": "Electrical heat from a heater is",
+      "question": "NEB 2024: 200 g Al (c = 897 J/kg·K), 20→100 °C. Q ≈",
       "options": [
-        "I V t, if losses are ignored",
-        "I + V + t",
-        "The mass of the heater",
-        "Always latent heat"
+        "14.4 kJ",
+        "1.44 kJ",
+        "144 kJ",
+        "0.144 kJ"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "0.2×897×80."
     },
     {
-      "question": "Ignoring heat lost to the room tends to make the solid's calculated c",
+      "question": "Heat capacity of a body equals:",
       "options": [
-        "Too large",
-        "Too small",
-        "Exact",
-        "Negative and meaningless always"
+        "mc",
+        "c/m",
+        "m/c",
+        "Q/t"
       ],
-      "answer": "B"
+      "answer": "A",
+      "explanation": "C = mc (J/K)."
+    },
+    {
+      "question": "The principle of calorimetry states:",
+      "options": [
+        "Energy is created",
+        "Heat lost = heat gained",
+        "Temperature is conserved",
+        "Pressure is constant"
+      ],
+      "answer": "B",
+      "explanation": "Energy conservation in mixing."
+    },
+    {
+      "question": "Water's specific heat is high because of:",
+      "options": [
+        "Its colour",
+        "Hydrogen bonding",
+        "Low density",
+        "Impurities"
+      ],
+      "answer": "B",
+      "explanation": "Strong intermolecular bonds store energy."
+    },
+    {
+      "question": "In mixture problems the calorimeter:",
+      "options": [
+        "Is ignored",
+        "Absorbs heat too",
+        "Loses heat only",
+        "Provides heat"
+      ],
+      "answer": "B",
+      "explanation": "Its mc term adds to the gained side."
+    },
+    {
+      "question": "Which has the highest specific heat?",
+      "options": [
+        "Copper",
+        "Iron",
+        "Water",
+        "Aluminium"
+      ],
+      "answer": "C",
+      "explanation": "4186 J kg⁻¹K⁻¹."
     }
   ],
   "importantStatements": [
-    "Specific heat capacity is measured by supplying a known quantity of heat and measuring the temperature rise, or by the method of mixtures, where heat lost by the hot body equals heat gained by the cold body.",
-    "For a solid, heat the sample to a known temperature θ1, then drop it into a calorimeter of cold water at θ2. The mixture settles at θ. The solid loses m_s c_s (θ1 − θ). The water and the calorimeter gain that heat.",
-    "If the calorimeter has mass m_c and specific heat c_c, and the water has mass m_w and specific heat c_w, then m_s c_s (θ1 − θ) = m_w c_w (θ − θ2) + m_c c_c (θ − θ2)."
+    "\"Specific heat capacity is the quantity of heat required to raise the temperature of unit mass of a substance through one degree.\""
   ],
   "examNotes": [
-    "Definition, then formula, then substitution.",
-    "A vector answer is incomplete without its direction."
+    "Definition + one numerical is the standard 3m package (2023, 2024)."
   ],
   "examShortTricks": [
-    "Hot body: fall from θ1 to θ. Cold body: rise from θ2 to θ.",
-    "I V t is the electrical heat input."
+    "\"Balance: m₁c₁ΔT₁ = m₂c₂ΔT₂ — include the calorimeter term.\""
   ],
   "specialNotes": [
     "Dry the solid before weighing if it was in a boiling bath.",
     "A thermometer's heat capacity is usually neglected."
   ],
   "importantNotes": [
-    "Write the heat-balance equation before substituting.",
-    "Convert grams to kilograms if c is per kilogram."
+    "Verified PYQs: water numerical 2020 3m; definitions 2023 3m; Al numerical 2024 3m."
   ],
   "importantConcepts": [
-    "Method of mixtures",
-    "Calorimeter",
-    "Electrical heating",
-    "Heat balance"
+    "**The method of mixtures** turns the conservation-of-energy statement into a measurement instrument."
   ],
   "importantTasks": [
     "Copy the worked example and hide the result until the last step.",
@@ -198,5 +212,51 @@
       ],
       "answer": "560 J kg^-1 K^-1."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — How Much Heat for One Degree?\n\nWater needs 4186 J to raise one kilogram by one kelvin; copper needs barely a tenth of that. Specific heat capacity quantifies this appetite for heat — and the principle of calorimetry (heat lost = heat gained) turns mixtures into measurement instruments.",
+      "## 2. Fundamental Concepts (NEB 2020, 2023, 2024)\n\n### 2.1 Definitions\n\n**Quantity of heat:** the energy transferred because of temperature difference; measured in joules.\n\n**Specific heat capacity (c):** the heat required to raise the temperature of **1 kg** of a substance by **1 K**:\n$$Q = mc\\Delta T \\qquad c \\text{ in J kg}^{-1}\\text{K}^{-1}$$\n\n**Thermal (heat) capacity:** heat to raise a *whole body* by 1 K: $C = mc$ (J/K).\n\nWater's c = 4186 J kg⁻¹K⁻¹ — exceptionally high (hydrogen bonding), which is why water is the coolant of engines and the climate buffer of coastal cities.\n\n### 2.2 Principle of calorimetry\n\n$$\\text{Heat lost by hot body} = \\text{Heat gained by cold body}$$\n$$m_1c_1(T_1 - T) = m_2c_2(T - T_2)$$\n(neglecting losses) — the working equation of the **method of mixtures**.\n\n### 2.3 Measurement of specific heat — method of mixtures\n\n1. A known mass of the solid is heated in boiling water (to a known temperature $T_1$).\n2. It is quickly transferred into a **calorimeter** (known mass $m_c$, specific heat $c_c$) containing known mass $m_w$ of water at $T_2$.\n3. The final common temperature $T$ is read.\n4. Energy balance (including the calorimeter):\n$$m_s c_s (T_1 - T) = (m_w c_w + m_c c_c)(T - T_2) \\Rightarrow c_s = \\frac{(m_w c_w + m_c c_c)(T - T_2)}{m_s (T_1 - T)}$$\n\n### 2.4 Worked numericals\n\n**Q (3m, 2024):** Define specific heat capacity. A 200 g block of aluminium is heated from 20 °C to 100 °C. How much heat is absorbed? (c = 0.897×10³ J kg⁻¹K⁻¹... as given: 0.897 J/g°C)\n- Definition as above. $Q = mc\\Delta T = 0.2 \\times 897 \\times 80 = 1.44 \\times 10^4$ J ≈ **14.4 kJ**\n\n**Q (3m, 2020):** Calculate the heat required to raise the temperature of 500 g of water from 20 °C to 60 °C. (c = 4200 J kg⁻¹K⁻¹)\n$$Q = mc\\Delta T = 0.5 \\times 4200 \\times 40 = 8.4 \\times 10^4 \\text{ J}$$\n\n**Q (NEB-style):** A 100 g copper calorimeter (c = 385) contains 200 g water at 20 °C. A 50 g metal at 100 °C is dropped in; final temperature 22.5 °C. Find c of the metal.\n- Lost: 0.05 c (77.5). Gained: (0.2×4186 + 0.1×385)(2.5) = (837.2+38.5)(2.5) = 2194 J.\n- $c = 2194/(0.05 \\times 77.5) = 566$ J kg⁻¹K⁻¹.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 50:** cooling corrections refine the final temperature reading.\n- **To Topic 52/53:** latent-heat terms enter the calorimetry equation during phase changes.\n- **To first law:** at constant volume (solids/liquids), heat = change in internal energy.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2076/2020 | Heat | Quantity of heat | Calculate the heat required to raise the temperature of 500 g of water from 20 °C to 60 °C. (c = 4200 J kg⁻¹K⁻¹) | 3 | Numerical |\n| 2079/2023 | Heat | Quantity of heat | Define quantity of heat and specific heat capacity. Write the formula for the heat required to raise the temperature of a body and give the SI unit. | 3 | Definition |\n| 2080/2024 | Heat | Quantity of heat | Define specific heat capacity. A 200 g block of aluminium is heated from 20 °C to 100 °C. How much heat is absorbed? (c = 0.897 J/g°C) | 3 | Definition + numerical |\n\n### 4.2 Common examination mistakes\n\n1. Mixing grams and kilograms in Q = mcΔT.\n2. Omitting the calorimeter's heat capacity in mixture problems.\n3. Writing c's unit as J/K (that is heat capacity C, not specific heat c)."
+    ],
+    "confusion": [
+      "**c vs C:** specific heat c (J kg⁻¹K⁻¹) is per kilogram; heat capacity C = mc (J/K) is for the whole body.",
+      "**Water's huge c** makes it both a coolant and a climate stabiliser."
+    ],
+    "keyPoints": [
+      "Q = mcΔT; c in J kg⁻¹K⁻¹; water 4186.",
+      "Calorimetry: heat lost = heat gained (include the calorimeter!)."
+    ],
+    "importantConcepts": [
+      "**The method of mixtures** turns the conservation-of-energy statement into a measurement instrument."
+    ],
+    "examples": [
+      "***NEB 2024*** — 200 g Al over 80 °C: Q = 14.4 kJ."
+    ],
+    "universalFacts": [
+      "Water's specific heat (4186) is the highest of common substances — coastal climates stay mild."
+    ],
+    "importantStatements": [
+      "\"Specific heat capacity is the quantity of heat required to raise the temperature of unit mass of a substance through one degree.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: water numerical 2020 3m; definitions 2023 3m; Al numerical 2024 3m."
+    ],
+    "examShortTricks": [
+      "\"Balance: m₁c₁ΔT₁ = m₂c₂ΔT₂ — include the calorimeter term.\""
+    ],
+    "examNotes": [
+      "Definition + one numerical is the standard 3m package (2023, 2024)."
+    ],
+    "formulas": [
+      "- Q = mcΔT; C = mc\n- m₁c₁(T₁−T) = (m_w c_w + m_c c_c)(T−T₂)\n- c_water = 4186 J kg⁻¹K⁻¹"
+    ],
+    "practice": [
+      "Why does sand burn your feet while sea water feels cool at the same temperature?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A 0.2 kg iron block (c = 460) at 150 °C is dropped into 0.3 kg water at 20 °C. Find the final temperature (neglect calorimeter).** — 0.2×460×(150−T) = 0.3×4186×(T−20) → 92(150−T) = 1255.8(T−20) → 13800−92T = 1255.8T−25116 → T = 38916/1347.8 = 28.9 °C."
+    ]
+  }
 }

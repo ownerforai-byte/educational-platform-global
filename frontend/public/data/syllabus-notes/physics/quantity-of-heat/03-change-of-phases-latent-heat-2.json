@@ -5,81 +5,34 @@
   "topicTitle": "Change of Phases and Latent Heat",
   "relevance": 100,
   "notes": [
-    "**Heat is energy in transit:** Heat ($H$) is the thermal energy transferred between systems due to a temperature difference. It is NOT a property of a body - you cannot say \"a body contains heat.\" A body contains internal energy; heat is the transfer of that energy.",
-    "**Mass dependency (H ∝ m):** For a given substance and temperature change, the heat required is directly proportional to the mass: $H \\propto m$. Doubling the mass doubles the heat needed. This is because more molecules means more total kinetic energy must change.",
-    "**Temperature dependency (H ∝ Δθ):** For a given mass, heat is directly proportional to the temperature change: $H \\propto \\Delta\\theta$, where $\\Delta\\theta = \\theta_f - \\theta_i$ (final − initial). Heating water from 20°C to 80°C requires 3× the heat of heating from 20°C to 40°C.",
-    "**Combined relation:** Combining both: $H \\propto m \\cdot \\Delta\\theta$. Introducing the constant of proportionality - the specific heat capacity ($c$) - gives the fundamental equation: **$H = m \\cdot c \\cdot \\Delta\\theta$**",
-    "**Sign convention:** When heat is absorbed (temperature rises), $H > 0$ and $\\Delta\\theta > 0$. When heat is released (temperature falls), $H < 0$ and $\\Delta\\theta < 0$. The sign tells you the direction of energy flow.",
-    "**Units of heat:** SI unit is the **joule (J)**. The CGS unit is the **calorie (cal)**. Conversion: $1\\text{ cal} = 4.184\\text{ J}$ (thermochemical calorie). Another unit, the BTU (British Thermal Unit), is used in engineering: $1\\text{ BTU} \\approx 1055\\text{ J}$.",
-    "**Heat vs. Temperature:** Temperature ($\\theta$) is an intensive property - it doesn't depend on the amount of substance. Heat ($H$) is extensive - it depends on mass. A cup of water at 80°C has a higher temperature than a bathtub at 50°C, but the bathtub has more thermal energy (and more heat to transfer if cooled).",
-    "**Heat vs. Internal Energy:** Internal energy ($U$) is the total energy stored in a system's molecules. Heat ($H$) is the energy TRANSFERRED. When you heat a body, its internal energy increases: $\\Delta U = H$ (at constant volume, no work done).",
-    "**Real-world analogy:** Think of water flowing from a high tank to a low tank. Temperature is like water level (height), heat is like the amount of water that flows. Two tanks at the same height have the same temperature, but the larger tank has more water (more heat capacity).",
-    "**Calorimetry context:** In all calorimetry problems, the equation $H = mc\\Delta\\theta$ is applied to EACH substance separately. Hot body: $H_{lost} = m_h c_h (\\theta_h - \\theta_{eq})$. Cold body: $H_{gained} = m_c c_c (\\theta_{eq} - \\theta_c)$. Set $H_{lost} = H_{gained}$.",
-    "**Common values of c (for reference):** Water: $c = 4200\\text{ J/kg·K}$. Ice: $c = 2100\\text{ J/kg·K}$. Copper: $c = 390\\text{ J/kg·K}$. Aluminum: $c = 900\\text{ J/kg·K}$. Iron: $c = 450\\text{ J/kg·K}$. Lead: $c = 130\\text{ J/kg·K}$. Higher $c$ means more heat needed per degree.",
-    "**Why water is special:** Water has the highest specific heat among common liquids ($4200\\text{ J/kg·K}$). This means it absorbs huge amounts of heat with minimal temperature change - why it's used as a coolant in car radiators, power plants, and why coastal climates are moderate.",
-    "**Quick estimation rule:** For a 1 kg mass of water, raising temperature by 1°C requires 4200 J. So heating 2 kg by 50°C requires $H = 2 \\times 4200 \\times 50 = 420{,}000\\text{ J} = 420\\text{ kJ}$. This is roughly the energy in 100 g of sugar.",
-    "**Dimensional check:** $[H] = [M][L]^2[T]^{-2}$ (energy). $[mc\\Delta\\theta] = [M] \\cdot [L]^2[T]^{-2}[\\Theta]^{-1} \\cdot [\\Theta] = [M][L]^2[T]^{-2}$. ✓ Dimensions match.",
-    "**Power and heat rate:** If heat is supplied at a constant rate (power $P$), then $H = Pt$. So $Pt = mc\\Delta\\theta$, which gives $\\Delta\\theta/t = P/(mc)$. A 1500 W kettle heats 1 kg of water at $\\Delta\\theta/t = 1500/(1 \\times 4200) = 0.357\\text{ °C/s}$.",
-    "**Change of Phases and Latent Heat:** This topic covers the fundamental concepts of change of phases and latent heat in the physics curriculum.",
-    "Understanding change of phases and latent heat is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to change of phases and latent heat should be memorized and practiced regularly.",
-    "# Change of phases: latent heat\n\n## 1. Introduction\nPhysical picture of **Change of phases** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Quantity of Heat fill pass.\n\n## 2. Concepts and laws\n### Change of phases: latent heat\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Change of phases — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Change of phases — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Change of phases — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Change of phases — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Heat That Changes State, Not Temperature\n\nBoil a kettle and the thermometer freezes at 100 °C while the burner pours in energy. During a phase change every joule goes into breaking molecular bonds, not raising temperature — that hidden energy is **latent heat**, the reason steam burns and ice cools.",
+    "## 2. Fundamental Concepts (NEB 2017, 2023)\n\n### 2.1 Change of phase\n\nMatter changes phase — solid ↔ liquid ↔ gas — at characteristic temperatures (melting point, boiling point) for a given pressure. During the change:\n- **Temperature stays constant** even though heat is continuously supplied.\n- The supplied energy goes into **increasing intermolecular potential energy** (breaking bonds/overcoming attractions), not into kinetic energy.\n\n### 2.2 Latent heat\n\n**Latent heat** is the quantity of heat absorbed or released during a change of phase, **without any change in temperature**.\n\n**Specific latent heat (L):** heat required to change the phase of **1 kg** of a substance at constant temperature:\n$$Q = mL \\qquad L \\text{ in J/kg}$$\n\n### 2.3 Latent heat of fusion vs vaporization (NEB 2023)\n\n| | Latent heat of fusion ($L_f$) | Latent heat of vaporization ($L_v$) |\n|---|---|---|\n| Change | solid ↔ liquid | liquid ↔ gas |\n| For water | 3.34×10⁵ J/kg | 2.26×10⁶ J/kg |\n| Direction | absorbed on melting, released on freezing | absorbed on boiling, released on condensing |\n| Magnitude | smaller (few bonds broken) | larger (all remaining attractions overcome) |\n\n$L_v > L_f$ because vaporization must completely separate molecules, while melting only loosens the lattice.\n\n### 2.4 Why temperature stays constant during a phase change (NEB 2017)\n\nThe kinetic energy of molecules (which *is* temperature) does not change; all the supplied heat raises the **potential energy** of the molecules as bonds loosen or break. The energy is \"latent\" — hidden in molecular configuration, recoverable on the reverse change.\n\n### 2.5 Worked numericals\n\n**Q (NEB-style):** How much heat melts 500 g of ice at 0 °C? ($L_f$ = 3.34×10⁵ J/kg)\n$Q = mL = 0.5 \\times 3.34\\times10^5 = 1.67 \\times 10^5$ J.\n\n**Q (NEB-style):** 20 g of steam at 100 °C condenses on skin. How much energy is released beyond that of 20 g of water at 100 °C?\nExtra = $mL_v = 0.02 \\times 2.26\\times10^6 = 4.52 \\times 10^4$ J — why steam scalds so badly.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 51:** calorimetry problems add mL terms alongside mcΔT.\n- **To Topic 53:** measurement of L by mixture and electrical methods.\n- **To pressure effects:** melting point of ice drops under pressure (regelation); boiling point rises with pressure (pressure cooker).",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2073/2017 | Heat | Latent heat | What is latent heat of fusion? Why does the temperature of a substance not change during a phase change? | 2 | Definition + reasoning |\n| 2079/2023 | Heat | Latent heat | What is latent heat? Distinguish between latent heat of fusion and latent heat of vaporization. | 3 | Definition + difference |\n\n### 4.2 Model answers\n\n**Q (2m, 2017):** Latent heat of fusion is the heat required to change unit mass of a solid into liquid at its melting point without temperature change. Temperature stays constant during a phase change because the supplied energy increases the **potential energy** of molecules (breaking intermolecular bonds) rather than their kinetic energy, which is what temperature measures.\n\n**Q (3m, 2023):** Latent heat is the heat absorbed or released during a phase change without temperature change ($Q = mL$). **Fusion:** solid ↔ liquid, for water 3.34×10⁵ J/kg. **Vaporization:** liquid ↔ gas, for water 2.26×10⁶ J/kg — larger because vaporization must completely separate the molecules, while melting only loosens the lattice.\n\n### 4.3 Common examination mistakes\n\n1. Saying temperature \"pauses\" because heating stops — heat supply continues.\n2. Swapping the values of $L_f$ and $L_v$.\n3. Writing L's unit as J (it is J/kg)."
   ],
   "confusion": [
-    "❌ Heat and temperature are the same thing. ✅ Temperature is the average molecular kinetic energy (intensive). Heat is the total energy transferred (extensive). A spark at 2000°C has tiny heat content; a bathtub at 40°C has huge heat content.",
-    "❌ A body \"contains\" heat. ✅ A body contains internal energy (kinetic + potential of its molecules). Heat is the TRANSFER of energy due to temperature difference. Once energy is in the body, it's no longer \"heat.\" Think of it like \"payment\" - once received, it's no longer a payment; it's just money in your account.",
-    "❌ All materials heat up at the same rate with the same power. ✅ Different materials have different specific heats. 1 kW heats 1 kg of aluminum ($c=900$) much faster than 1 kg of water ($c=4200$). The aluminum's temperature rises ~4.7× faster.",
-    "❌ The formula H = mcΔθ works for phase changes too. ✅ This formula ONLY works when temperature changes WITHOUT a phase change. During melting (ice → water at 0°C) or boiling (water → steam at 100°C), temperature stays constant - you need $H = mL$ instead.",
-    "❌ Specific heat capacity depends on the amount of substance. ✅ Specific heat capacity is an INTENSIVE property - it depends only on the MATERIAL, not the mass. 1 kg of copper has $c = 390\\text{ J/kg·K}$, same as 1 g of copper.",
-    "❌ Heat always flows from hot to cold, so a cold object can never lose heat to a hot one. ✅ Heat naturally flows from hot to cold. However, a refrigerator CAN move heat from cold to hot - but only by doing external work (compressor). This doesn't violate the second law.",
-    "❌ If you add heat, temperature always rises. ✅ During a phase change (melting, boiling, sublimation), added heat goes into breaking intermolecular bonds (increasing potential energy), NOT increasing kinetic energy. Temperature stays constant during the transition.",
-    "Carefully distinguish between similar-looking concepts in change of phases and latent heat.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "**Latent ≠ lost:** the energy is stored in molecular configuration and returned on freezing/condensing.",
+    "**Temperature measures average KE** — phase changes spend heat on PE, so the thermometer holds still."
   ],
   "practice": [
-    "How much heat is required to raise the temperature of 2.5 kg of water from 20°C to 80°C? $H = mc\\Delta\\theta = 2.5 \\times 4200 \\times 60 = 630{,}000\\text{ J} = 630\\text{ kJ}$.",
-    "A 500 g copper block at 100°C is placed in 200 g of water at 20°C. If no heat is lost, what is the final temperature? Set $m_{Cu}c_{Cu}(100 - T) = m_w c_w(T - 20)$. $0.5 \\times 390 \\times (100-T) = 0.2 \\times 4200 \\times (T-20)$. $195(100-T) = 840(T-20)$. $19500 - 195T = 840T - 16800$. $1035T = 36300 \\Rightarrow T \\approx 35.1°\\text{C}$.",
-    "An electric heater supplies 840 J/s to 2 kg of water. How long to raise the temperature from 25°C to 75°C? $H = mc\\Delta\\theta = 2 \\times 4200 \\times 50 = 420{,}000\\text{ J}$. Time $t = H/P = 420000/840 = 500\\text{ s} \\approx 8\\text{ min } 20\\text{ s}$.",
-    "What mass of iron ($c = 450\\text{ J/kg·K}$) at 100°C is needed to raise 0.5 kg of water from 15°C to 25°C? $m_{Fe} \\times 450 \\times (100-25) = 0.5 \\times 4200 \\times 10$. $m_{Fe} \\times 33750 = 21000$. $m_{Fe} = 0.622\\text{ kg} = 622\\text{ g}$.",
-    "A 0.2 kg aluminum calorimeter contains 0.3 kg of water at 20°C. A 0.1 kg copper block at 90°C is dropped in. Find the equilibrium temperature ($c_{Al} = 900$, $c_{Cu} = 390$). Heat gained: $(0.3 \\times 4200 + 0.2 \\times 900)(T-20) = 1440(T-20)$. Heat lost: $0.1 \\times 390 \\times (90-T) = 39(90-T)$. $1440(T-20) = 3510 - 39T$. $1479T = 6390 \\Rightarrow T \\approx 4.32°\\text{C}$ - wait, that's too low. Recalculate: $1440T - 28800 = 3510 - 39T$. $1479T = 32310 \\Rightarrow T \\approx 21.85°\\text{C}$.",
-    "Solve at least 5 problems on change of phases and latent heat from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Why does adding ice cool a drink more effectively than adding cold water?"
   ],
   "universalFacts": [
-    "The calorie was originally defined as the heat needed to raise 1 gram of water by 1°C - specifically from 14.5°C to 15.5°C, since water's specific heat varies slightly with temperature. The modern value is $1\\text{ cal} = 4.184\\text{ J}$ (exact).",
-    "Water's anomalously high specific heat ($4200\\text{ J/kg·K}$) is due to hydrogen bonding. Breaking these bonds requires extra energy, so more heat goes into the system without raising temperature. This is why oceans moderate Earth's climate.",
-    "The concept of \"heat\" as a form of energy was established by James Prescott Joule in the 1840s. His famous paddle-wheel experiment showed that mechanical work could be converted to heat, establishing the mechanical equivalent of heat: $1\\text{ J} \\leftrightarrow$ temperature rise.",
-    "Joseph Black (1728-1799) was the first to distinguish between \"heat\" and \"temperature.\" He observed that melting ice absorbs heat without changing temperature - this led to the concept of \"latent heat\" and the caloric theory of heat.",
-    "Specific heat capacity determines how quickly a material heats up or cools down. Metals (low $c$) heat up fast; water (high $c$) resists temperature change. This is why a metal spoon gets hot quickly in soup, but the soup itself takes minutes to cool.",
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding change of phases and latent heat builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of change of phases and latent heat span engineering, physics, economics, and computer science."
+    "Evaporation of sweat removes ~2.26×10⁶ J/kg from skin — the body's main cooling mechanism."
   ],
   "animation3D": "quantity-of-heat",
   "motionGraphics": "quantity-of-heat",
   "duplicateType": 2,
   "tabGroup": "quantity-of-heat",
   "visualType": "phase-change",
-  "formulas": [],
+  "formulas": [
+    "- Q = mL\n- L_f(water) = 3.34×10⁵ J/kg; L_v(water) = 2.26×10⁶ J/kg"
+  ],
   "examples": [
-    "Real-world application of Change of Phases and Latent Heat",
-    "Practical demonstration of Change of Phases and Latent Heat concepts",
-    "Diagram-based question on Change of Phases and Latent Heat",
-    "Application in daily life involving Change of Phases and Latent Heat"
+    "***20 g steam*** — releases 4.52×10⁴ J on condensing alone."
   ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Change of Phases and Latent Heat.",
-    "Q3. Differentiate between various aspects of Change of Phases and Latent Heat.",
-    "Q4. Derive the key formula related to Change of Phases and Latent Heat.",
-    "Q5. What are the applications of Change of Phases and Latent Heat?"
+    "**Numerical (3m): Find the heat needed to convert 200 g of ice at 0 °C to water at 0 °C.** — Q = mL_f = 0.2 × 3.34×10⁵ = 6.68×10⁴ J."
   ],
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Change of Phases and Latent Heat applies",
@@ -89,30 +42,16 @@
     "Note 5: Change of Phases and Latent Heat frequently appears in examination questions"
   ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Change of Phases and Latent Heat",
-    "Note 3: Change of Phases and Latent Heat has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Change of Phases and Latent Heat",
-    "Note 5: Cross-check your answers using alternative methods for Change of Phases and Latent Heat"
+    "Verified PYQs: latent heat of fusion + constant-T reasoning (2017, 2m); fusion vs vaporization (2023, 3m)."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Change of Phases and Latent Heat formula",
-    "Trick 2: Elimination technique for Change of Phases and Latent Heat MCQs",
-    "Trick 3: Dimensional analysis shortcut for Change of Phases and Latent Heat",
-    "Trick 4: Memory aid for Change of Phases and Latent Heat formulas",
-    "Trick 5: Time-saving approach for Change of Phases and Latent Heat problems"
+    "\"L_v ≈ 7 × L_f for water — remember which is bigger.\""
   ],
   "examNotes": [
-    "Focus on numerical problems from Change of Phases and Latent Heat",
-    "Practice previous year questions on Change of Phases and Latent Heat",
-    "Learn the derivations for Change of Phases and Latent Heat thoroughly",
-    "Review common mistakes related to Change of Phases and Latent Heat"
+    "Both the 2017 and 2023 questions are definition/difference types — no heavy calculation."
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Change of Phases and Latent Heat",
-    "Concept 2: Key theorem or principle in Change of Phases and Latent Heat",
-    "Concept 3: Important application area of Change of Phases and Latent Heat",
-    "Concept 4: Fundamental relationship in Change of Phases and Latent Heat",
-    "Concept 5: Connection between Change of Phases and Latent Heat and other topics"
+    "**Steam burns twice:** condensation releases L_v *before* the hot water even touches you."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Change of Phases and Latent Heat",
@@ -163,6 +102,149 @@
       "answer": "C"
     }
   ],
-  "summary": "Change of Phases and Latent Heat is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
-  "source": "skeleton-v2"
+  "summary": "During a **change of phase** — melting, freezing, boiling, condensing — the temperature holds constant while heat flows: every joule raises the **potential energy** of molecules (loosening or breaking bonds), not their kinetic energy, which is what temperature measures (NEB 2017). That hidden heat is **latent heat**, quantified per kilogram as $Q = mL$. For water, the **latent heat of fusion** is 3.34×10⁵ J/kg (solid ↔ liquid) and the **latent heat of vaporization** is 2.26×10⁶ J/kg (liquid ↔ gas) — nearly seven times larger, because vaporization must fully separate molecules (NEB 2023). The reverse changes release the same heat: steam scalds, sweat cools, ice packs freeze injuries.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Heat That Changes State, Not Temperature\n\nBoil a kettle and the thermometer freezes at 100 °C while the burner pours in energy. During a phase change every joule goes into breaking molecular bonds, not raising temperature — that hidden energy is **latent heat**, the reason steam burns and ice cools.",
+      "## 2. Fundamental Concepts (NEB 2017, 2023)\n\n### 2.1 Change of phase\n\nMatter changes phase — solid ↔ liquid ↔ gas — at characteristic temperatures (melting point, boiling point) for a given pressure. During the change:\n- **Temperature stays constant** even though heat is continuously supplied.\n- The supplied energy goes into **increasing intermolecular potential energy** (breaking bonds/overcoming attractions), not into kinetic energy.\n\n### 2.2 Latent heat\n\n**Latent heat** is the quantity of heat absorbed or released during a change of phase, **without any change in temperature**.\n\n**Specific latent heat (L):** heat required to change the phase of **1 kg** of a substance at constant temperature:\n$$Q = mL \\qquad L \\text{ in J/kg}$$\n\n### 2.3 Latent heat of fusion vs vaporization (NEB 2023)\n\n| | Latent heat of fusion ($L_f$) | Latent heat of vaporization ($L_v$) |\n|---|---|---|\n| Change | solid ↔ liquid | liquid ↔ gas |\n| For water | 3.34×10⁵ J/kg | 2.26×10⁶ J/kg |\n| Direction | absorbed on melting, released on freezing | absorbed on boiling, released on condensing |\n| Magnitude | smaller (few bonds broken) | larger (all remaining attractions overcome) |\n\n$L_v > L_f$ because vaporization must completely separate molecules, while melting only loosens the lattice.\n\n### 2.4 Why temperature stays constant during a phase change (NEB 2017)\n\nThe kinetic energy of molecules (which *is* temperature) does not change; all the supplied heat raises the **potential energy** of the molecules as bonds loosen or break. The energy is \"latent\" — hidden in molecular configuration, recoverable on the reverse change.\n\n### 2.5 Worked numericals\n\n**Q (NEB-style):** How much heat melts 500 g of ice at 0 °C? ($L_f$ = 3.34×10⁵ J/kg)\n$Q = mL = 0.5 \\times 3.34\\times10^5 = 1.67 \\times 10^5$ J.\n\n**Q (NEB-style):** 20 g of steam at 100 °C condenses on skin. How much energy is released beyond that of 20 g of water at 100 °C?\nExtra = $mL_v = 0.02 \\times 2.26\\times10^6 = 4.52 \\times 10^4$ J — why steam scalds so badly.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 51:** calorimetry problems add mL terms alongside mcΔT.\n- **To Topic 53:** measurement of L by mixture and electrical methods.\n- **To pressure effects:** melting point of ice drops under pressure (regelation); boiling point rises with pressure (pressure cooker).",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2073/2017 | Heat | Latent heat | What is latent heat of fusion? Why does the temperature of a substance not change during a phase change? | 2 | Definition + reasoning |\n| 2079/2023 | Heat | Latent heat | What is latent heat? Distinguish between latent heat of fusion and latent heat of vaporization. | 3 | Definition + difference |\n\n### 4.2 Model answers\n\n**Q (2m, 2017):** Latent heat of fusion is the heat required to change unit mass of a solid into liquid at its melting point without temperature change. Temperature stays constant during a phase change because the supplied energy increases the **potential energy** of molecules (breaking intermolecular bonds) rather than their kinetic energy, which is what temperature measures.\n\n**Q (3m, 2023):** Latent heat is the heat absorbed or released during a phase change without temperature change ($Q = mL$). **Fusion:** solid ↔ liquid, for water 3.34×10⁵ J/kg. **Vaporization:** liquid ↔ gas, for water 2.26×10⁶ J/kg — larger because vaporization must completely separate the molecules, while melting only loosens the lattice.\n\n### 4.3 Common examination mistakes\n\n1. Saying temperature \"pauses\" because heating stops — heat supply continues.\n2. Swapping the values of $L_f$ and $L_v$.\n3. Writing L's unit as J (it is J/kg)."
+    ],
+    "confusion": [
+      "**Latent ≠ lost:** the energy is stored in molecular configuration and returned on freezing/condensing.",
+      "**Temperature measures average KE** — phase changes spend heat on PE, so the thermometer holds still."
+    ],
+    "keyPoints": [
+      "Q = mL; L_f(water) = 3.34×10⁵ J/kg; L_v(water) = 2.26×10⁶ J/kg.",
+      "Temperature constant during phase change — energy goes to potential energy."
+    ],
+    "importantConcepts": [
+      "**Steam burns twice:** condensation releases L_v *before* the hot water even touches you."
+    ],
+    "examples": [
+      "***20 g steam*** — releases 4.52×10⁴ J on condensing alone."
+    ],
+    "universalFacts": [
+      "Evaporation of sweat removes ~2.26×10⁶ J/kg from skin — the body's main cooling mechanism."
+    ],
+    "importantStatements": [
+      "\"Latent heat is the heat absorbed or released during a change of phase without change of temperature.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: latent heat of fusion + constant-T reasoning (2017, 2m); fusion vs vaporization (2023, 3m)."
+    ],
+    "examShortTricks": [
+      "\"L_v ≈ 7 × L_f for water — remember which is bigger.\""
+    ],
+    "examNotes": [
+      "Both the 2017 and 2023 questions are definition/difference types — no heavy calculation."
+    ],
+    "formulas": [
+      "- Q = mL\n- L_f(water) = 3.34×10⁵ J/kg; L_v(water) = 2.26×10⁶ J/kg"
+    ],
+    "practice": [
+      "Why does adding ice cool a drink more effectively than adding cold water?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Find the heat needed to convert 200 g of ice at 0 °C to water at 0 °C.** — Q = mL_f = 0.2 × 3.34×10⁵ = 6.68×10⁴ J."
+    ]
+  },
+  "keyPoints": [
+    "Q = mL; L_f(water) = 3.34×10⁵ J/kg; L_v(water) = 2.26×10⁶ J/kg.",
+    "Temperature constant during phase change — energy goes to potential energy."
+  ],
+  "importantStatements": [
+    "\"Latent heat is the heat absorbed or released during a change of phase without change of temperature.\""
+  ],
+  "mcqs": [
+    {
+      "question": "During a phase change, temperature:",
+      "options": [
+        "Rises steadily",
+        "Falls steadily",
+        "Remains constant",
+        "Oscillates"
+      ],
+      "answer": "C",
+      "explanation": "Energy goes to potential energy."
+    },
+    {
+      "question": "Latent heat of fusion of water is:",
+      "options": [
+        "2.26×10⁶ J/kg",
+        "3.34×10⁵ J/kg",
+        "4186 J/kg",
+        "9.8 J/kg"
+      ],
+      "answer": "B",
+      "explanation": "Ice → water at 0 °C."
+    },
+    {
+      "question": "Latent heat of vaporization of water is:",
+      "options": [
+        "3.34×10⁵ J/kg",
+        "2.26×10⁶ J/kg",
+        "4186 J/kg",
+        "2.26×10⁵ J/kg"
+      ],
+      "answer": "B",
+      "explanation": "Water → steam at 100 °C."
+    },
+    {
+      "question": "L_v > L_f because vaporization:",
+      "options": [
+        "Is faster",
+        "Separates molecules completely",
+        "Happens at higher T",
+        "Needs no energy"
+      ],
+      "answer": "B",
+      "explanation": "All attractions must be overcome."
+    },
+    {
+      "question": "The heat to melt 500 g ice at 0 °C is:",
+      "options": [
+        "1.67×10⁵ J",
+        "1.13×10⁶ J",
+        "4186 J",
+        "3.34×10⁵ J"
+      ],
+      "answer": "A",
+      "explanation": "0.5 × 3.34×10⁵."
+    },
+    {
+      "question": "Condensing steam releases heat because:",
+      "options": [
+        "It is hot water",
+        "L_v is recovered",
+        "Pressure drops",
+        "It expands"
+      ],
+      "answer": "B",
+      "explanation": "The reverse of vaporization."
+    },
+    {
+      "question": "Temperature does not change during melting because:",
+      "options": [
+        "Heating stops",
+        "KE of molecules is unchanged",
+        "Molecules vanish",
+        "Pressure is constant"
+      ],
+      "answer": "B",
+      "explanation": "Only PE increases (NEB 2017)."
+    },
+    {
+      "question": "The SI unit of specific latent heat is:",
+      "options": [
+        "J",
+        "J/kg",
+        "J/K",
+        "J kg⁻¹K⁻¹"
+      ],
+      "answer": "B",
+      "explanation": "Energy per unit mass."
+    }
+  ]
 }

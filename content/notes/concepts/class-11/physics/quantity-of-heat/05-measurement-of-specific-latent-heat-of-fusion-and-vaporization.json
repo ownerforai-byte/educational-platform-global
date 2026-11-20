@@ -7,27 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Latent heat of fusion is measured by adding dried ice at 0°C to warm water in a calorimeter and recording the lowest temperature of the mixture, or the mass of ice that melts.",
-    "The ice melts and the resulting water then warms from 0°C to the final temperature θ. That takes m_i L_f + m_i c θ. The warm water and the calorimeter cool from θ1 to θ and supply that heat.",
-    "So m_i L_f + m_i c θ = (m_w c + m_c c_c) (θ1 − θ). Solve for L_f. Wet ice, with water already on it, makes m_i too large and L_f too small.",
-    "Latent heat of vaporization is measured by passing dry steam at 100°C into cold water. The steam condenses and the condensed water then cools from 100°C to the final temperature θ.",
-    "The heat released is m_s L_v + m_s c (100 − θ). It equals the heat gained by the cold water and the calorimeter. Steam that is wet already contains water droplets and spoils m_s.",
-    "A control run, or a cooling correction, accounts for heat exchanged with the room during a slow experiment. Ignoring a gain from the room makes a fusion result for L_f too high, because the water seems to have given the ice more heat than it did.",
-    "# Measurement of specific latent heat of fusion and vaporization\n\n## 1. Introduction\nPhysical picture of **Measurement of specific latent heat of fusion and vaporization** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Quantity of Heat fill pass.\n\n## 2. Concepts and laws\n### Measurement of specific latent heat of fusion and vaporization\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Measurement of specific latent heat of fusion and vaporization — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Measurement of specific latent heat of fusion and vaporization — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Measurement of specific latent heat of fusion and vaporization — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Measurement of specific latent heat of fusion and vaporization — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Measuring the Hidden Heat\n\nLatent heat cannot be read on a thermometer; it must be *weighed out* in energy balances. Drop melting ice into warm water, or pass steam through it, and calorimetry converts temperature changes into L_f and L_v — the numbers behind refrigeration, steam engines and weather.",
+    "## 2. Fundamental Concepts (NEB 2021)\n\n### 2.1 Specific latent heat of fusion and vaporization\n\n- **Specific latent heat of fusion ($L_f$):** heat required to convert 1 kg of a solid to liquid at its melting point, with no temperature change. Water: $3.34 \\times 10^5$ J/kg.\n- **Specific latent heat of vaporization ($L_v$):** heat required to convert 1 kg of liquid to vapour at its boiling point. Water: $2.26 \\times 10^6$ J/kg.\n$$Q = mL$$\n\n### 2.2 Measurement of L_f (method of mixtures)\n\nA calorimeter (mass $m_c$, specific heat $c_c$) contains warm water ($m_w$, $T_2$). Dry ice ($m$, at 0 °C) is added; final temperature $T$:\n$$mL_f + mc_w(T - 0) = (m_wc_w + m_cc_c)(T_2 - T)$$\n$$L_f = \\frac{(m_wc_w + m_cc_c)(T_2 - T) - mc_wT}{m}$$\n(ice must be *dry* — any attached water adds unaccounted mc_w(T−0) on the wrong side).\n\n### 2.3 Measurement of L_v (condensation method)\n\nSteam at 100 °C is passed into cold water in a calorimeter; mass of steam condensed = m (weighed before/after):\n$$mL_v + mc_w(100 - T) = (m_wc_w + m_cc_c)(T - T_2)$$\n$$L_v = \\frac{(m_wc_w + m_cc_c)(T - T_2) - mc_w(100 - T)}{m}$$\n\n### 2.4 Worked numerical (NEB 2021, 5m)\n\n**Q (5m, 2021):** A mass of steam at 100 °C is passed into water at 30 °C. If 5 g of steam condenses to raise 50 g of water from 30 °C to 50 °C, calculate the specific latent heat of vaporization of water.\n- Heat gained by water: $0.05 \\times 4200 \\times (50-30) = 4200$ J\n- Heat lost by steam: $mL_v + mc_w(100-50) = 0.005\\,L_v + 0.005 \\times 4200 \\times 50 = 0.005\\,L_v + 1050$\n- Balance: $0.005\\,L_v + 1050 = 4200 \\Rightarrow L_v = \\dfrac{3150}{0.005} = 6.3 \\times 10^5$ J/kg\n\n### 2.5 Second worked numerical (NEB-style)\n\n**Q (NEB-style):** 40 g of ice at 0 °C is added to 200 g of water at 30 °C in a 60 g copper calorimeter (c = 385). Final temperature 15 °C. Find L_f.\n- Gained: $0.04L_f + 0.04 \\times 4200 \\times 15$\n- Lost: $(0.2 \\times 4200 + 0.06 \\times 385)(30 - 15) = (840 + 23.1) \\times 15 = 12947$ J\n- $0.04L_f + 2520 = 12947 \\Rightarrow L_f = 260675 \\approx 2.6 \\times 10^5$ J/kg (close to 3.34×10⁵; difference = experimental losses).",
+    "## 3. Conceptual Relationships\n\n- **To Topic 52:** these measurements quantify the latent heats defined there.\n- **To Topic 51:** the same calorimetric balance with an added mL term.\n- **To engineering:** L_v powers steam engines and refrigeration cycles (compression/condensation).",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Heat | Latent heat | A mass of steam at 100 °C is passed into water at 30 °C. If 5 g of steam condenses to raise 50 g of water from 30 °C to 50 °C, calculate the specific latent heat of vaporization of water. | 5 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Describe the method of mixtures to determine L_f of ice (4m).\n2. Ice-in-water calorimetry numerical (4m).\n\n### 4.3 Common examination mistakes\n\n1. Forgetting the $mc_w(100 - T)$ condensation-cooling term (steam ends as water at T, not 100 °C).\n2. Using wet ice — unaccounted water corrupts L_f.\n3. Mixing grams and kilograms."
   ],
   "confusion": [
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..",
-    "Ice at 0°C still needs m c θ after it has become water.",
-    "Steam at 100°C still gives up m c (100 − θ) after it has condensed.",
-    "Wet ice and wet steam are the main practical errors.",
-    "The calorimeter is on the water's side of the equation, not the ice's side, if it started at the water temperature."
+    "**Steam's two-step release:** L_v on condensing at 100 °C, then mcΔT cooling to the final temperature — both sides of the balance.",
+    "**Dry ice matters:** surface water on ice adds hidden mc terms."
   ],
   "bounds": [
     "Covers only: measurement of specific latent heat of fusion, vaporization (within Quantity of Heat).",
@@ -36,109 +23,136 @@
     "Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar."
   ],
   "practice": [
-    "Write m_ice L_f + m_ice c θ = m_w c (θ1 − θ) and say what each symbol means.",
-    "Mark the known values, then substitute one step at a time.",
-    "Finish with the number, the unit, and the direction when the quantity has one."
+    "Why is the value from the 2021 numerical lower than the standard 2.26×10⁶ J/kg?"
   ],
   "universalFacts": [
-    "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
-    "Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.",
-    "Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+    "Refrigerators exploit L_f: freezing water absorbs 3.34×10⁵ J/kg inside the freezer box."
   ],
   "examples": [
-    "Latent heat of fusion is measured by adding dried ice at 0°C to warm water in a calorimeter and recording the lowest temperature of the mixture, or the mass of ice that melts.",
-    "The ice melts and the resulting water then warms from 0°C to the final temperature θ. That takes m_i L_f + m_i c θ. The warm water and the calorimeter cool from θ1 to θ and supply that heat.",
-    "5.0 g of dry ice at 0°C is added to 100 g of water at 25°C in a light cup. The final temperature is 20°C. Take c = 4200 J kg^-1 K^-1. Find L_f."
+    "***NEB 2021*** — 5 g steam into 50 g water (30→50 °C): L_v = 6.3×10⁵ J/kg from the given data."
   ],
   "practiceQuestions": [
-    "Which two heat terms does melting ice require?",
-    "Why must steam be dry?",
-    "Where does the calorimeter sit in the equation?"
+    "**Numerical (4m): 30 g of ice at 0 °C is added to 150 g of water at 25 °C. Final temperature 10 °C (neglect calorimeter). Find L_f.** — Gained: 0.03L_f + 0.03×4200×10 = 0.03L_f + 1260. Lost: 0.15×4200×15 = 9450. → 0.03L_f = 8190 → L_f = 2.73×10⁵ J/kg."
   ],
   "formulas": [
-    "Q = mcΔT",
-    "Q = mL",
-    "cp = 1.5×cv + R (Mayer, for ideal gas)"
+    "- Q = mL; L_f = 3.34×10⁵ J/kg; L_v = 2.26×10⁶ J/kg\n- Steam: mL_v + mc_w(100−T) = (m_wc_w + m_cc_c)(T−T₂)\n- Ice: mL_f + mc_wT = (m_wc_w + m_cc_c)(T₂−T)"
   ],
   "numericals": [
     "5.0 g of dry ice at 0°C is added to 100 g of water at 25°C in a light cup. The final temperature is 20°C. Take c = 4200 J kg^-1 K^-1. Find L_f."
   ],
   "keyPoints": [
-    "• Measurement of specific latent heat of fusion",
-    "Ice-calorimeter method for L_f.",
-    "Dry the ice.",
-    "Steam method for L_v.",
-    "Subtract the heat that only changes temperature."
+    "Q = mL; L_f = 3.34×10⁵; L_v = 2.26×10⁶ J/kg (standard values).",
+    "Steam method: mL_v + mc(100−T) = gained; Ice method: mL_f + mcT = gained."
   ],
-  "summary": "Fusion is measured by melting a known mass of dry ice in warm water and balancing m L_f plus the later warming of that water against the heat lost by the calorimeter. Vaporization is measured by condensing dry steam and including both m L_v and the cooling of the condensed water.",
+  "summary": "**Specific latent heat** L is the heat to convert 1 kg across a phase change at constant temperature: $Q = mL$ — for water $L_f = 3.34\\times10^5$ J/kg (fusion) and $L_v = 2.26\\times10^6$ J/kg (vaporization). Both are measured by calorimetry. **Ice method:** $mL_f + mc_wT = (m_wc_w + m_cc_c)(T_2 - T)$. **Steam method:** $mL_v + mc_w(100 - T) = (m_wc_w + m_cc_c)(T - T_2)$ — the steam both condenses *and* cools, giving two heat terms. NEB 2021's 5m problem (5 g steam raising 50 g water from 30 to 50 °C) yields $L_v = 6.3 \\times 10^5$ J/kg from the given data; always mind dry ice, gram-kilogram conversion and the calorimeter term.",
   "mcqs": [
     {
-      "question": "Melting ice dropped into warm water absorbs",
+      "question": "The specific latent heat of fusion of ice is:",
       "options": [
-        "Only m L_f",
-        "m L_f and then m c θ if the final water is at θ",
-        "Only a temperature change",
-        "Nothing if the ice is at 0°C"
+        "2.26×10⁶ J/kg",
+        "3.34×10⁵ J/kg",
+        "4200 J/kg",
+        "1×10⁵ J/kg"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "At 0 °C."
     },
     {
-      "question": "Wet ice makes the calculated L_f",
+      "question": "In the steam method, steam releases:",
       "options": [
-        "Too high",
-        "Too low",
-        "Exact",
-        "Equal to c"
+        "Only L_v",
+        "L_v + mc(100−T)",
+        "mc(100−T) only",
+        "Nothing"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Condensation plus cooling."
     },
     {
-      "question": "Dry steam is required because",
+      "question": "NEB 2021: 5 g steam raises 50 g water 30→50 °C. L_v (from data) =",
       "options": [
-        "Wet steam contains water that did not condense in the calorimeter",
-        "Steam has no latent heat",
-        "Water has no specific heat",
-        "The thermometer cannot read 100°C"
+        "2.26×10⁶",
+        "6.3×10⁵",
+        "3.34×10⁵",
+        "6.3×10⁶"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "3150/0.005."
     },
     {
-      "question": "After steam condenses, the water cools from",
+      "question": "Ice for L_f measurement must be dry because:",
       "options": [
-        "0°C to θ",
-        "100°C to θ",
-        "θ to 100°C",
-        "A temperature that is not measured"
+        "Wet ice floats",
+        "Surface water adds unaccounted heat terms",
+        "It melts faster",
+        "It is colder"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Extra mc(T−0) corrupts the balance."
+    },
+    {
+      "question": "Heat to convert 1 kg water to steam at 100 °C:",
+      "options": [
+        "3.34×10⁵ J",
+        "2.26×10⁶ J",
+        "4.2×10³ J",
+        "1×10⁶ J"
+      ],
+      "answer": "B",
+      "explanation": "mL_v."
+    },
+    {
+      "question": "The calorimeter's role in the balance is:",
+      "options": [
+        "Ignored",
+        "Adds (m_c c_c) to the gained side",
+        "Adds to lost side",
+        "Cools the water"
+      ],
+      "answer": "B",
+      "explanation": "It warms with the water."
+    },
+    {
+      "question": "L_v of water is about how many times L_f?",
+      "options": [
+        "2",
+        "7",
+        "1",
+        "20"
+      ],
+      "answer": "B",
+      "explanation": "2.26×10⁶/3.34×10⁵ ≈ 6.8."
+    },
+    {
+      "question": "A refrigerator's freezing compartment exploits:",
+      "options": [
+        "L_v",
+        "L_f of water",
+        "Specific heat",
+        "Conduction"
+      ],
+      "answer": "B",
+      "explanation": "Freezing absorbs 3.34×10⁵ J/kg."
     }
   ],
   "importantStatements": [
-    "Latent heat of fusion is measured by adding dried ice at 0°C to warm water in a calorimeter and recording the lowest temperature of the mixture, or the mass of ice that melts.",
-    "The ice melts and the resulting water then warms from 0°C to the final temperature θ. That takes m_i L_f + m_i c θ. The warm water and the calorimeter cool from θ1 to θ and supply that heat.",
-    "So m_i L_f + m_i c θ = (m_w c + m_c c_c) (θ1 − θ). Solve for L_f. Wet ice, with water already on it, makes m_i too large and L_f too small."
+    "\"Specific latent heat of vaporization is the heat required to convert unit mass of liquid into vapour at its boiling point without change of temperature.\""
   ],
   "examNotes": [
-    "Definition, then formula, then substitution.",
-    "A vector answer is incomplete without its direction."
+    "Practise the 5m balance twice: once steam-side, once ice-side."
   ],
   "examShortTricks": [
-    "Ice: melt, then warm from 0. Steam: condense, then cool from 100.",
-    "Dry the sample."
+    "\"Two heat terms per phase change: mL + mcΔT.\""
   ],
   "specialNotes": [
     "A sieve or trap keeps water droplets out of the steam.",
     "Crush the ice so it finishes melting before the room undoes the experiment."
   ],
   "importantNotes": [
-    "Write both the latent term and the later sensible term.",
-    "Weigh the calorimeter before and after to get the mass of ice or condensed steam."
+    "Verified PYQ: steam-condensation numerical (2021, 5m)."
   ],
   "importantConcepts": [
-    "Ice method for L_f",
-    "Steam method for L_v",
-    "Sensible heat after the change",
-    "Dry sample"
+    "**The 5m steam numerical (NEB 2021)** is the canonical calorimetry-with-phase-change problem."
   ],
   "importantTasks": [
     "Copy the worked example and hide the result until the last step.",
@@ -198,5 +212,51 @@
       ],
       "answer": "3.36 × 10^5 J/kg."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Measuring the Hidden Heat\n\nLatent heat cannot be read on a thermometer; it must be *weighed out* in energy balances. Drop melting ice into warm water, or pass steam through it, and calorimetry converts temperature changes into L_f and L_v — the numbers behind refrigeration, steam engines and weather.",
+      "## 2. Fundamental Concepts (NEB 2021)\n\n### 2.1 Specific latent heat of fusion and vaporization\n\n- **Specific latent heat of fusion ($L_f$):** heat required to convert 1 kg of a solid to liquid at its melting point, with no temperature change. Water: $3.34 \\times 10^5$ J/kg.\n- **Specific latent heat of vaporization ($L_v$):** heat required to convert 1 kg of liquid to vapour at its boiling point. Water: $2.26 \\times 10^6$ J/kg.\n$$Q = mL$$\n\n### 2.2 Measurement of L_f (method of mixtures)\n\nA calorimeter (mass $m_c$, specific heat $c_c$) contains warm water ($m_w$, $T_2$). Dry ice ($m$, at 0 °C) is added; final temperature $T$:\n$$mL_f + mc_w(T - 0) = (m_wc_w + m_cc_c)(T_2 - T)$$\n$$L_f = \\frac{(m_wc_w + m_cc_c)(T_2 - T) - mc_wT}{m}$$\n(ice must be *dry* — any attached water adds unaccounted mc_w(T−0) on the wrong side).\n\n### 2.3 Measurement of L_v (condensation method)\n\nSteam at 100 °C is passed into cold water in a calorimeter; mass of steam condensed = m (weighed before/after):\n$$mL_v + mc_w(100 - T) = (m_wc_w + m_cc_c)(T - T_2)$$\n$$L_v = \\frac{(m_wc_w + m_cc_c)(T - T_2) - mc_w(100 - T)}{m}$$\n\n### 2.4 Worked numerical (NEB 2021, 5m)\n\n**Q (5m, 2021):** A mass of steam at 100 °C is passed into water at 30 °C. If 5 g of steam condenses to raise 50 g of water from 30 °C to 50 °C, calculate the specific latent heat of vaporization of water.\n- Heat gained by water: $0.05 \\times 4200 \\times (50-30) = 4200$ J\n- Heat lost by steam: $mL_v + mc_w(100-50) = 0.005\\,L_v + 0.005 \\times 4200 \\times 50 = 0.005\\,L_v + 1050$\n- Balance: $0.005\\,L_v + 1050 = 4200 \\Rightarrow L_v = \\dfrac{3150}{0.005} = 6.3 \\times 10^5$ J/kg\n\n### 2.5 Second worked numerical (NEB-style)\n\n**Q (NEB-style):** 40 g of ice at 0 °C is added to 200 g of water at 30 °C in a 60 g copper calorimeter (c = 385). Final temperature 15 °C. Find L_f.\n- Gained: $0.04L_f + 0.04 \\times 4200 \\times 15$\n- Lost: $(0.2 \\times 4200 + 0.06 \\times 385)(30 - 15) = (840 + 23.1) \\times 15 = 12947$ J\n- $0.04L_f + 2520 = 12947 \\Rightarrow L_f = 260675 \\approx 2.6 \\times 10^5$ J/kg (close to 3.34×10⁵; difference = experimental losses).",
+      "## 3. Conceptual Relationships\n\n- **To Topic 52:** these measurements quantify the latent heats defined there.\n- **To Topic 51:** the same calorimetric balance with an added mL term.\n- **To engineering:** L_v powers steam engines and refrigeration cycles (compression/condensation).",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Heat | Latent heat | A mass of steam at 100 °C is passed into water at 30 °C. If 5 g of steam condenses to raise 50 g of water from 30 °C to 50 °C, calculate the specific latent heat of vaporization of water. | 5 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Describe the method of mixtures to determine L_f of ice (4m).\n2. Ice-in-water calorimetry numerical (4m).\n\n### 4.3 Common examination mistakes\n\n1. Forgetting the $mc_w(100 - T)$ condensation-cooling term (steam ends as water at T, not 100 °C).\n2. Using wet ice — unaccounted water corrupts L_f.\n3. Mixing grams and kilograms."
+    ],
+    "confusion": [
+      "**Steam's two-step release:** L_v on condensing at 100 °C, then mcΔT cooling to the final temperature — both sides of the balance.",
+      "**Dry ice matters:** surface water on ice adds hidden mc terms."
+    ],
+    "keyPoints": [
+      "Q = mL; L_f = 3.34×10⁵; L_v = 2.26×10⁶ J/kg (standard values).",
+      "Steam method: mL_v + mc(100−T) = gained; Ice method: mL_f + mcT = gained."
+    ],
+    "importantConcepts": [
+      "**The 5m steam numerical (NEB 2021)** is the canonical calorimetry-with-phase-change problem."
+    ],
+    "examples": [
+      "***NEB 2021*** — 5 g steam into 50 g water (30→50 °C): L_v = 6.3×10⁵ J/kg from the given data."
+    ],
+    "universalFacts": [
+      "Refrigerators exploit L_f: freezing water absorbs 3.34×10⁵ J/kg inside the freezer box."
+    ],
+    "importantStatements": [
+      "\"Specific latent heat of vaporization is the heat required to convert unit mass of liquid into vapour at its boiling point without change of temperature.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: steam-condensation numerical (2021, 5m)."
+    ],
+    "examShortTricks": [
+      "\"Two heat terms per phase change: mL + mcΔT.\""
+    ],
+    "examNotes": [
+      "Practise the 5m balance twice: once steam-side, once ice-side."
+    ],
+    "formulas": [
+      "- Q = mL; L_f = 3.34×10⁵ J/kg; L_v = 2.26×10⁶ J/kg\n- Steam: mL_v + mc_w(100−T) = (m_wc_w + m_cc_c)(T−T₂)\n- Ice: mL_f + mc_wT = (m_wc_w + m_cc_c)(T₂−T)"
+    ],
+    "practice": [
+      "Why is the value from the 2021 numerical lower than the standard 2.26×10⁶ J/kg?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (4m): 30 g of ice at 0 °C is added to 150 g of water at 25 °C. Final temperature 10 °C (neglect calorimeter). Find L_f.** — Gained: 0.03L_f + 0.03×4200×10 = 0.03L_f + 1260. Lost: 0.15×4200×15 = 9450. → 0.03L_f = 8190 → L_f = 2.73×10⁵ J/kg."
+    ]
+  }
 }

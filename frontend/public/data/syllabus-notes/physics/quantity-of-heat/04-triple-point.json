@@ -5,90 +5,55 @@
   "topicTitle": "Triple Point",
   "relevance": 100,
   "notes": [
-    "The triple point is the unique pressure and temperature at which solid, liquid and vapour of a pure substance coexist in equilibrium. It is a point on the phase diagram, not the same as a normal-pressure melting or boiling point.",
-    "Water’s triple point is approximately 273.16 K (0.01°C) and 611.7 Pa. At ordinary atmospheric pressure, ice and liquid water coexist near 0°C at a different pressure.",
-    "While all three phases coexist, supplied energy can change their relative amounts while pressure and temperature remain fixed. Equal quantities of each phase are not required.",
-    "On a pressure–temperature diagram, the solid–liquid, liquid–vapour and solid–vapour boundary curves meet at the triple point. It provides a reproducible reference state for thermometry.",
-    "A phase diagram shows why pressure must accompany temperature when describing a phase equilibrium; changing pressure can shift the phase boundaries.",
-    "The triple point is a single point on the phase diagram, not a line. Solid, liquid and vapour of a pure substance sit together there, and neither pressure nor temperature can be changed without losing one of the phases. Water's triple point is the fixed point of the kelvin scale, at 273.16 K."
+    "## 1. Topic Introduction — Where Three Phases Meet\n\nAt exactly 273.16 K and 611.7 Pa, water coexists as ice, liquid and vapour simultaneously — the triple point. It is not a laboratory curiosity: it *defines* the kelvin, anchoring every temperature measurement on Earth.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition\n\nThe **triple point** of a substance is the unique temperature and pressure at which its **solid, liquid and gaseous phases coexist in equilibrium**.\n\nFor water:\n$$T_{tp} = 273.16 \\text{ K} \\;(0.01\\ °C), \\qquad P_{tp} = 611.7 \\text{ Pa} \\;(0.006\\ \\text{atm})$$\n\n### 2.2 Phase diagram context\n\nOn a P–T diagram the three phase-boundary curves (fusion, vaporization, sublimation) meet at the triple point:\n- **Fusion curve:** melting point vs pressure (for water, slopes *backward* — ice melts under pressure).\n- **Vaporization curve:** boiling point vs pressure, ending at the **critical point** (647 K, 218 atm for water) where liquid and gas become indistinguishable.\n- **Sublimation curve:** solid ↔ vapour below the triple point (frost, freeze-drying).\n\nBelow $P_{tp}$, liquid water cannot exist — ice sublimes directly to vapour (why ice sublimates at high altitude / in a vacuum).\n\n### 2.3 Role in thermometry\n\nThe kelvin is defined by fixing the water triple point: $T_{tp} \\equiv 273.16$ K exactly (pre-2019 SI), making the triple point the primary reproducible fixed point of thermometry — any laboratory can realise it in a triple-point cell to calibrate thermometers. (Since 2019 the kelvin is defined via the Boltzmann constant, but the triple point remains the practical calibration anchor.)\n\n### 2.4 Comparison with other substances\n\n| Substance | T_tp (K) | P_tp (Pa) |\n|---|---|---|\n| Water | 273.16 | 611.7 |\n| Carbon dioxide | 216.6 | 5.18×10⁵ (≈5.1 atm — why CO₂ \"ice\" sublimes at 1 atm) |\n| Mercury | 234.3 | 1.65×10⁻⁷ |\n\n### 2.5 Worked reasoning\n\n**Q (NEB-style):** Why does dry ice (solid CO₂) sublime rather than melt at atmospheric pressure?\nBecause 1 atm (1.01×10⁵ Pa) is **below** CO₂'s triple-point pressure (5.18×10⁵ Pa) — the liquid phase is unstable there, so solid CO₂ passes straight to gas at −78.5 °C.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 45:** fixed points calibrate thermometers; the triple point is the most reproducible one.\n- **To ideal gas (Unit 13):** the old kelvin definition used ideal-gas thermometry matched at the triple point.\n- **To latent heat:** at the triple point, all three latent heats can be exchanged simultaneously.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the definition, values and phase-diagram reading as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. What is the triple point of water? State its significance (2–3m).\n2. Explain the phase diagram around the triple point (3m).\n3. Why does dry ice sublime? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Confusing the triple point (273.16 K, 611.7 Pa) with the ice point (273.15 K, 1 atm).\n2. Saying the triple point defines the Celsius scale — it anchors the kelvin.\n3. Forgetting that below P_tp the liquid cannot exist."
   ],
   "confusion": [
-    "Do not quote 0°C and 1 atm as the triple-point conditions.",
-    "The definition applies to one pure substance in equilibrium.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Triple point ≠ ice point:** 273.16 K at 611.7 Pa vs 273.15 K at 1 atm — close in temperature, worlds apart in pressure.",
+    "**Below the triple pressure, liquid cannot exist** — solid sublimes straight to vapour."
   ],
   "practice": [
-    "Distinguish water’s triple point from its normal-pressure melting point.",
-    "What changes when heat is supplied at the triple point while all phases coexist?",
-    "Sketch the triple point on a P–T diagram."
+    "Why does snow disappear (sublime) even below 0 °C on a dry sunny day?"
   ],
   "universalFacts": [
-    "Three phases coexist at one specific pair of pressure and temperature.",
-    "Pressure matters; temperature alone does not define the triple point.",
-    "Phase amounts need not be equal."
+    "Freeze-drying of food and vaccines works below the triple pressure: ice sublimes without melting."
   ],
   "animation3D": "quantity-of-heat",
   "motionGraphics": "quantity-of-heat",
   "examples": [
-    "Water near 0.01°C and 611.7 Pa may have ice, liquid and vapour in equilibrium.",
-    "At 1 atm, water melts near 0°C, not at its triple-point pressure.",
-    "The triple point is a single point on the phase diagram, not a line. Solid, liquid and vapour of a pure substance sit together there, and neither pressure nor temperature can be changed without losing one of the phases. Water's triple point is the fixed point of the kelvin scale, at 273.16 K.",
-    "The working relations are The triple point is the one pressure and temperature where solid, liquid and vapour coexist and For water it is 273.16 K. Name each symbol, convert the data into SI units, and only then substitute.",
-    "Explain why a kelvin temperature can be defined from the water triple point, and state that temperature."
+    "***Dry ice*** — 1 atm < P_tp(CO₂) = 5.18×10⁵ Pa → sublimation at −78.5 °C."
   ],
   "practiceQuestions": [
-    "Distinguish water’s triple point from its normal-pressure melting point.",
-    "What changes when heat is supplied at the triple point while all phases coexist?",
-    "Sketch the triple point on a P–T diagram."
+    "**Short (2m): Why can liquid CO₂ not exist at 1 atm?** — 1 atm lies below CO₂'s triple-point pressure (5.18×10⁵ Pa); the liquid phase is thermodynamically unstable there, so solid sublimes directly to gas."
   ],
   "formulas": [
-    "Water triple point: T≈273.16 K and P≈611.7 Pa.",
-    "At equilibrium the coexisting phases have equal chemical potential."
+    "- T_tp(water) = 273.16 K; P_tp = 611.7 Pa\n- Kelvin (pre-2019): 1 K = T_tp/273.16"
   ],
   "keyPoints": [
-    "Three phases coexist at one specific pair of pressure and temperature.",
-    "Pressure matters; temperature alone does not define the triple point.",
-    "Phase amounts need not be equal.",
-    "The triple point is the one pressure and temperature where solid, liquid and vapour coexist",
-    "For water it is 273.16 K",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "Water triple point: 273.16 K, 611.7 Pa — solid+liquid+gas in equilibrium.",
+    "It anchored the kelvin: T_tp ≡ 273.16 K exactly."
   ],
-  "summary": "The triple point is the unique P–T state where solid, liquid and vapour coexist. Water’s value is about 273.16 K and 611.7 Pa.",
+  "summary": "The **triple point** of a substance is the unique temperature and pressure where solid, liquid and gas coexist in equilibrium — for water **273.16 K at 611.7 Pa**. On the P–T phase diagram the fusion, vaporization and sublimation curves meet there; below the triple pressure the liquid phase cannot exist, which is why dry ice sublimes (CO₂'s P_tp = 5.18×10⁵ Pa exceeds 1 atm) and why freeze-drying works. The water triple point anchored the kelvin ($T_{tp} \\equiv 273.16$ K exactly, pre-2019 SI) and remains the most reproducible calibration point for thermometers — a cell of pure water at its triple point reads the same temperature in every laboratory on Earth.",
   "specialNotes": [
     "Do not quote 0°C and 1 atm as the triple-point conditions.",
     "The definition applies to one pure substance in equilibrium."
   ],
   "importantStatements": [
-    "Three phases coexist at one specific pair of pressure and temperature.",
-    "Pressure matters; temperature alone does not define the triple point.",
-    "Phase amounts need not be equal."
+    "\"The triple point of water is the temperature and pressure at which ice, liquid water and water vapour coexist in equilibrium.\""
   ],
   "importantNotes": [
-    "Three phases coexist at one specific pair of pressure and temperature.",
-    "Pressure matters; temperature alone does not define the triple point.",
-    "Phase amounts need not be equal."
+    "No verified PYQ; NEB-style practice (definition + significance 2–3m)."
   ],
   "examShortTricks": [
-    "Water triple point: T≈273.16 K and P≈611.7 Pa.",
-    "At equilibrium the coexisting phases have equal chemical potential."
+    "\"273.16 K, 611.7 Pa, three phases — and 'defines the kelvin'.\""
   ],
   "examNotes": [
-    "Distinguish water’s triple point from its normal-pressure melting point.",
-    "What changes when heat is supplied at the triple point while all phases coexist?",
-    "Sketch the triple point on a P–T diagram."
+    "Quote both values; the significance (kelvin definition) carries the marks."
   ],
   "importantConcepts": [
-    "Three phases coexist at one specific pair of pressure and temperature.",
-    "Pressure matters; temperature alone does not define the triple point.",
-    "Phase amounts need not be equal.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**One point, three phases, one kelvin:** the triple point is thermometry's reproducible foundation."
   ],
   "importantTasks": [
     "Distinguish water’s triple point from its normal-pressure melting point.",
@@ -140,44 +105,92 @@
   ],
   "mcqs": [
     {
-      "question": "At the triple point",
+      "question": "At the triple point, coexisting phases are:",
       "options": [
-        "Three phases coexist",
-        "Only ice exists",
-        "The temperature can vary freely",
-        "The pressure is zero"
+        "Two solids",
+        "Solid, liquid and gas",
+        "Two liquids",
+        "Liquid and plasma"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "All three in equilibrium."
     },
     {
-      "question": "Water's triple point is",
+      "question": "The triple point of water is:",
       "options": [
-        "273.16 K",
-        "0 K",
-        "100°C exactly as 373.16 only",
-        "373 K"
+        "273.15 K, 1 atm",
+        "273.16 K, 611.7 Pa",
+        "0 K, 1 atm",
+        "373 K, 1 atm"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Distinct from the ice point."
     },
     {
-      "question": "The ice point is",
+      "question": "The triple point of water defines (pre-2019 SI):",
       "options": [
-        "The same state as the triple point",
-        "0.01 K lower than the triple point",
-        "100 K",
-        "The boiling point"
+        "The Celsius degree",
+        "The kelvin",
+        "The calorie",
+        "The mole"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "T_tp ≡ 273.16 K exactly."
     },
     {
-      "question": "A triple point is",
+      "question": "Below the triple-point pressure, a substance:",
       "options": [
-        "A line of pressures",
-        "One point on the phase diagram",
-        "Any melting temperature",
-        "The critical point"
+        "Melts faster",
+        "Cannot be liquid — it sublimes",
+        "Boils at 0 °C",
+        "Freezes solid"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Liquid phase unstable."
+    },
+    {
+      "question": "Dry ice sublimes at 1 atm because:",
+      "options": [
+        "It is very cold",
+        "1 atm < P_tp of CO₂",
+        "CO₂ is heavy",
+        "Of humidity"
+      ],
+      "answer": "B",
+      "explanation": "P_tp(CO₂) = 5.18×10⁵ Pa."
+    },
+    {
+      "question": "The vaporization curve ends at:",
+      "options": [
+        "Triple point",
+        "Critical point",
+        "Freezing point",
+        "Absolute zero"
+      ],
+      "answer": "B",
+      "explanation": "Liquid and gas merge beyond it."
+    },
+    {
+      "question": "Freeze-drying exploits:",
+      "options": [
+        "High pressure boiling",
+        "Sublimation below triple pressure",
+        "Superheating",
+        "Condensation"
+      ],
+      "answer": "B",
+      "explanation": "Ice → vapour directly."
+    },
+    {
+      "question": "The ice point (273.15 K) differs from the triple point (273.16 K) because:",
+      "options": [
+        "Different substances",
+        "Different pressures (1 atm vs 611.7 Pa)",
+        "Different scales",
+        "Measurement error"
+      ],
+      "answer": "B",
+      "explanation": "Melting point drops slightly as pressure falls... (ice point is at 1 atm)."
     }
   ],
   "exercises": [
@@ -192,5 +205,51 @@
       ],
       "answer": "273.16 K."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Where Three Phases Meet\n\nAt exactly 273.16 K and 611.7 Pa, water coexists as ice, liquid and vapour simultaneously — the triple point. It is not a laboratory curiosity: it *defines* the kelvin, anchoring every temperature measurement on Earth.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition\n\nThe **triple point** of a substance is the unique temperature and pressure at which its **solid, liquid and gaseous phases coexist in equilibrium**.\n\nFor water:\n$$T_{tp} = 273.16 \\text{ K} \\;(0.01\\ °C), \\qquad P_{tp} = 611.7 \\text{ Pa} \\;(0.006\\ \\text{atm})$$\n\n### 2.2 Phase diagram context\n\nOn a P–T diagram the three phase-boundary curves (fusion, vaporization, sublimation) meet at the triple point:\n- **Fusion curve:** melting point vs pressure (for water, slopes *backward* — ice melts under pressure).\n- **Vaporization curve:** boiling point vs pressure, ending at the **critical point** (647 K, 218 atm for water) where liquid and gas become indistinguishable.\n- **Sublimation curve:** solid ↔ vapour below the triple point (frost, freeze-drying).\n\nBelow $P_{tp}$, liquid water cannot exist — ice sublimes directly to vapour (why ice sublimates at high altitude / in a vacuum).\n\n### 2.3 Role in thermometry\n\nThe kelvin is defined by fixing the water triple point: $T_{tp} \\equiv 273.16$ K exactly (pre-2019 SI), making the triple point the primary reproducible fixed point of thermometry — any laboratory can realise it in a triple-point cell to calibrate thermometers. (Since 2019 the kelvin is defined via the Boltzmann constant, but the triple point remains the practical calibration anchor.)\n\n### 2.4 Comparison with other substances\n\n| Substance | T_tp (K) | P_tp (Pa) |\n|---|---|---|\n| Water | 273.16 | 611.7 |\n| Carbon dioxide | 216.6 | 5.18×10⁵ (≈5.1 atm — why CO₂ \"ice\" sublimes at 1 atm) |\n| Mercury | 234.3 | 1.65×10⁻⁷ |\n\n### 2.5 Worked reasoning\n\n**Q (NEB-style):** Why does dry ice (solid CO₂) sublime rather than melt at atmospheric pressure?\nBecause 1 atm (1.01×10⁵ Pa) is **below** CO₂'s triple-point pressure (5.18×10⁵ Pa) — the liquid phase is unstable there, so solid CO₂ passes straight to gas at −78.5 °C.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 45:** fixed points calibrate thermometers; the triple point is the most reproducible one.\n- **To ideal gas (Unit 13):** the old kelvin definition used ideal-gas thermometry matched at the triple point.\n- **To latent heat:** at the triple point, all three latent heats can be exchanged simultaneously.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the definition, values and phase-diagram reading as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. What is the triple point of water? State its significance (2–3m).\n2. Explain the phase diagram around the triple point (3m).\n3. Why does dry ice sublime? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Confusing the triple point (273.16 K, 611.7 Pa) with the ice point (273.15 K, 1 atm).\n2. Saying the triple point defines the Celsius scale — it anchors the kelvin.\n3. Forgetting that below P_tp the liquid cannot exist."
+    ],
+    "confusion": [
+      "**Triple point ≠ ice point:** 273.16 K at 611.7 Pa vs 273.15 K at 1 atm — close in temperature, worlds apart in pressure.",
+      "**Below the triple pressure, liquid cannot exist** — solid sublimes straight to vapour."
+    ],
+    "keyPoints": [
+      "Water triple point: 273.16 K, 611.7 Pa — solid+liquid+gas in equilibrium.",
+      "It anchored the kelvin: T_tp ≡ 273.16 K exactly."
+    ],
+    "importantConcepts": [
+      "**One point, three phases, one kelvin:** the triple point is thermometry's reproducible foundation."
+    ],
+    "examples": [
+      "***Dry ice*** — 1 atm < P_tp(CO₂) = 5.18×10⁵ Pa → sublimation at −78.5 °C."
+    ],
+    "universalFacts": [
+      "Freeze-drying of food and vaccines works below the triple pressure: ice sublimes without melting."
+    ],
+    "importantStatements": [
+      "\"The triple point of water is the temperature and pressure at which ice, liquid water and water vapour coexist in equilibrium.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (definition + significance 2–3m)."
+    ],
+    "examShortTricks": [
+      "\"273.16 K, 611.7 Pa, three phases — and 'defines the kelvin'.\""
+    ],
+    "examNotes": [
+      "Quote both values; the significance (kelvin definition) carries the marks."
+    ],
+    "formulas": [
+      "- T_tp(water) = 273.16 K; P_tp = 611.7 Pa\n- Kelvin (pre-2019): 1 K = T_tp/273.16"
+    ],
+    "practice": [
+      "Why does snow disappear (sublime) even below 0 °C on a dry sunny day?"
+    ],
+    "practiceQuestions": [
+      "**Short (2m): Why can liquid CO₂ not exist at 1 atm?** — 1 atm lies below CO₂'s triple-point pressure (5.18×10⁵ Pa); the liquid phase is thermodynamically unstable there, so solid sublimes directly to gas."
+    ]
+  }
 }

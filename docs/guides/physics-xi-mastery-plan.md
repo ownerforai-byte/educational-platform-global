@@ -78,12 +78,12 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 47 | Thermal Expansion (4h) | Cubical expansion, superficial expansion and their relation with linear expansion | `01-linear-expansion.json` | **Completed** |
 | 48 | Thermal Expansion (4h) | Liquid expansion: absolute and apparent | `03-liquid-expansion-absolute-and-apparent.json` | **Completed** |
 | 49 | Thermal Expansion (4h) | Dulong and Petit method of determining expansivity of liquid | `03-liquid-expansion-absolute-and-apparent.json` | **Completed** |
-| 50 | Quantity of Heat (5h) | Newton's law of cooling | TBD | Not started |
-| 51 | Quantity of Heat (5h) | Measurement of specific heat capacity of solids and liquids | TBD | Not started |
-| 52 | Quantity of Heat (5h) | Change of phases: latent heat | TBD | Not started |
-| 53 | Quantity of Heat (5h) | Specific latent heat of fusion and vaporization | TBD | Not started |
-| 54 | Quantity of Heat (5h) | Measurement of specific latent heat of fusion and vaporization | TBD | Not started |
-| 55 | Quantity of Heat (5h) | Triple point | TBD | Not started |
+| 50 | Quantity of Heat (5h) | Newton's law of cooling | `01-newton-s-law-of-cooling.json` | **Completed** |
+| 51 | Quantity of Heat (5h) | Measurement of specific heat capacity of solids and liquids | `02-measurement-of-specific-heat-capacity-of-solids-and-liquids.json` | **Completed** |
+| 52 | Quantity of Heat (5h) | Change of phases: latent heat | `03-change-of-phases-latent-heat.json` | **Completed** |
+| 53 | Quantity of Heat (5h) | Specific latent heat of fusion and vaporization | `05-measurement-of-specific-latent-heat-of-fusion-and-vaporization.json` | **Completed** |
+| 54 | Quantity of Heat (5h) | Measurement of specific latent heat of fusion and vaporization | `02-measurement-of-specific-heat-capacity-of-solids-and-liquids.json` | **Completed** |
+| 55 | Quantity of Heat (5h) | Triple point | `04-triple-point.json` | **Completed** |
 | 56 | Rate of Heat Flow (5h) | Conduction: thermal conductivity and measurement | TBD | Not started |
 | 57 | Rate of Heat Flow (5h) | Convection | TBD | Not started |
 | 58 | Rate of Heat Flow (5h) | Radiation: ideal radiator | TBD | Not started |
@@ -159,3 +159,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 8 — Unit 8 Elasticity (5 topics) upgraded: Hooke's law & force constant; stress, strain, elasticity & plasticity; elastic moduli (Young, bulk, shear); Poisson's ratio; elastic potential energy. Verified PYQs used: Hooke + k 2024 3m, stored energy 2024 3m, definitions 2023+2024 3m, steel wire 2022+2024 3m, copper wire 2020 4m, cable mass 2024 3m, bulk modulus + Poisson 2024 3m. Next: Unit 9 Heat and Temperature (3 topics).
 - Session 9 — Unit 9 Heat and Temperature (3 topics) upgraded: molecular concept of thermal energy, heat & temperature, cause & direction of heat flow; thermal equilibrium & zeroth law; thermal equilibrium as the working principle of a mercury thermometer. Verified PYQs used: heat vs temperature 2021+2022+2024 2m, zeroth law statement+numbering 2023+2024 2m, A-C-B reasoning 2024 2m, faulty thermometer 2023 3m. Next: Unit 10 Thermal Expansion (4 topics).
 - Session 10 — Unit 10 Thermal Expansion (4 topics) upgraded: linear expansion & measurement; superficial & cubical expansion with β=2α, γ=3α; liquid expansion (absolute & apparent) incl. anomalous expansion of water; Dulong & Petit method. Verified PYQs used: α definition 2019+2022 2m, rod numericals 2021 3m + 2024 2m, pendulum clock 2024 2m, anomalous expansion 2024 3m. Next: Unit 11 Quantity of Heat (6 topics).
+- Session 11 — Unit 11 Quantity of Heat (6 topics) upgraded: Newton's law of cooling; specific heat capacity & its measurement (method of mixtures); change of phases & latent heat; specific latent heat of fusion & vaporization with measurement (one canonical file serves both syllabus topics); triple point. Verified PYQs used: Q=mcΔT 2020 3m, definitions 2023 3m, Al block 2024 3m, latent heat fusion 2017 2m, fusion vs vaporization 2023 3m, steam numerical 2021 5m. Newton's cooling and triple point labelled NEB-style. Next: Unit 12 Rate of Heat Flow (5 topics).
