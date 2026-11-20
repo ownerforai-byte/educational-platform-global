@@ -128,9 +128,9 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 97 | Capacitor (4h) | Effect of a dielectric: polarization and displacement | `05-effect-of-a-dielectric-polarization-and-displacement.json` | **Completed** |
 | 98 | DC Circuits (7h) | Electric currents; drift velocity and its relation with current | `01-electric-currents-drift-velocity-and-its-relation-with-current.json` | **Completed** |
 | 99 | DC Circuits (7h) | Ohm's law; electrical resistance; resistivity; conductivity | `02-ohm-s-law-electrical-resistance-resistivity-conductivity.json` | **Completed** |
-| 100 | DC Circuits (7h) | Current-voltage relations; ohmic and non-ohmic resistance | `01-electric-currents-drift-velocity-and-its-relation-with-current.json` | **Completed** |
+| 100 | DC Circuits (7h) | Current-voltage relations; ohmic and non-ohmic resistance | `03-current-voltage-relations-ohmic-and-non-ohmic-resistance.json` | **Completed** |
 | 101 | DC Circuits (7h) | Resistances in series and parallel | `04-resistances-in-series-and-parallel.json` | **Completed** |
-| 102 | DC Circuits (7h) | Potential divider | `01-potential-difference-potential-due-to-a-point-charge-potential-energy-electron-volt.json` | **Completed** |
+| 102 | DC Circuits (7h) | Potential divider | `04-potential-divider.json` | **Completed** |
 | 103 | DC Circuits (7h) | Electromotive force of a source, internal resistance | `06-electromotive-force-of-a-source-internal-resistance.json` | **Completed** |
 | 104 | DC Circuits (7h) | Work and power in electrical circuits | `07-work-and-power-in-electrical-circuits.json` | **Completed** |
 | 105 | Nuclear Physics (6h) | Nucleus: discovery of nucleus | TBD | Not started |
