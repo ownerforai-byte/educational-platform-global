@@ -42,19 +42,19 @@ Every upgraded topic note fills the note JSON with:
 | 2 | Biomolecules and Cell Biology | Cell: introduction, prokaryotic vs eukaryotic | `02-cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells.json` | **Completed** |
 | 3 | Biomolecules and Cell Biology | Detail structure of eukaryotic cells | `03-detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-r.json` | **Completed** |
 | 4 | Biomolecules and Cell Biology | Cell division (cell cycle, amitosis, mitosis, meiosis) | `04-cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances.json` | **Completed** |
-| 5 | Floral Diversity (30) | Three domains, binomial nomenclature, five kingdoms | `01-life-classification.json` | Not started |
-| 6 | Floral Diversity | Status of flora in Nepal | `02-fungi.json` (merged) | Not started |
-| 7 | Floral Diversity | Fungi: phycomycetes → deuteromycetes | `02-fungi-general-introduction-and-characteristic-features.json` | Not started |
-| 8 | Floral Diversity | Mucor and Yeast | `02-fungi.json` (merged) | Not started |
-| 9 | Floral Diversity | Mushrooms; economic importance of fungi | `02-fungi.json` (merged) | Not started |
-| 10 | Floral Diversity | Lichen | `03-algae.json` (merged) | Not started |
-| 11 | Floral Diversity | Algae (green/brown/red); Spirogyra | `03-algae.json` | Not started |
-| 12 | Floral Diversity | Bryophyta; Marchantia | `04-bryophytes.json` | Not started |
-| 13 | Floral Diversity | Pteridophyta; Dryopteris | `05-pteridophytes.json` | Not started |
-| 14 | Floral Diversity | Gymnosperm; Pinus | `06-gymnosperms.json` | Not started |
-| 15 | Floral Diversity | Angiosperm morphology | `07-angiosperm-morphology-and-taxonomic-study.json` | Not started |
-| 16 | Floral Diversity | Taxonomic study | `07-angiosperm-morphology-and-taxonomic-study.json` | Not started |
-| 17 | Floral Diversity | Angiosperm families (Brassicaceae, Fabaceae, Solanaceae, Liliaceae) | `07-angiosperm-morphology-and-taxonomic-study.json` | Not started |
+| 5 | Floral Diversity (30) | Three domains, binomial nomenclature, five kingdoms | `01-introduction-three-domains-of-life-binomial-nomenclature-five-kingdom-classification-system-mone.json` | **Completed** |
+| 6 | Floral Diversity | Status of flora in Nepal | `02-status-of-flora-in-nepal-and-world-representation.json` | **Completed** |
+| 7 | Floral Diversity | Fungi: phycomycetes → deuteromycetes | `03-fungi-general-introduction-and-characteristic-features-of-phycomycetes-ascomycetes-basidiomycetes-and-deuteromycetes.json` | **Completed** |
+| 8 | Floral Diversity | Mucor and Yeast | `04-structure-and-reproduction-of-mucor-and-yeast.json` | **Completed** |
+| 9 | Floral Diversity | Mushrooms; economic importance of fungi | `05-introduction-of-mushrooms-poisonous-and-non-poisonous-mushrooms-economic-importance-of-fungi.json` | **Completed** |
+| 10 | Floral Diversity | Lichen | `06-lichen-general-introduction-characteristic-features-and-economic-importance-of-lichen.json` | **Completed** |
+| 11 | Floral Diversity | Algae (green/brown/red); Spirogyra | `07-algae-general-introduction-and-characteristic-features-of-green-brown-and-red-algae-structure-and-reproduction-of-spiro.json` | **Completed** |
+| 12 | Floral Diversity | Bryophyta; Marchantia | `08-bryophyta-general-introduction-and-characteristic-features-of-liverworts-hornworts-and-moss-morphological-str.json` | **Completed** |
+| 13 | Floral Diversity | Pteridophyta; Dryopteris | `09-pteridophyta-general-introduction-and-characteristic-features-of-pteridophytes-morphological-structure-and-r.json` | **Completed** |
+| 14 | Floral Diversity | Gymnosperm; Pinus | `10-gymnosperm-general-introduction-and-characteristic-features-of-gymnosperms-morphology-and-reproduction-of-pi.json` | **Completed** |
+| 15 | Floral Diversity | Angiosperm morphology | `11-angiosperm-morphology-of-root-stem-leaves-inflorescences-flowers-and-fruit.json` | **Completed** |
+| 16 | Floral Diversity | Taxonomic study | `12-taxonomic-study-definition-taxonomic-hierarchy-classification-systems-artificial-natural-and-phylogenetic-o.json` | **Completed** |
+| 17 | Floral Diversity | Angiosperm families | `13-angiosperm-families-with-economic-importance-brassicaceae-fabaceae-solanaceae-and-liliaceae.json` | **Completed** |
 | 18 | Introductory Microbiology (5) | Monera: bacteria, cyanobacteria | `01-monera-bacteria.json` | Not started |
 | 19 | Introductory Microbiology | Virus, bacteriophage | `02-virus.json` | Not started |
 | 20 | Introductory Microbiology | Biotechnology impacts in microbiology | `03-biotech-microbiology.json` | Not started |
@@ -100,5 +100,7 @@ canonical files — their upgrade must cover every mapped syllabus topic.)*
 ## Progress log
 
 - Session 1 — Unit 1, Topics 1–4 (Biomolecules, Cell introduction, Eukaryotic cell structure, Cell division) upgraded to mastery depth. Unit 1 complete (4/4 topics).
-- Lesson learned: canonical files are the full-syllabus-slug ones (d1/missing), not the short dup-2 files; Topics 1–2 content was transferred to the canonical files and the dup-2 files restored.
+- Session 2 — Unit 2, Topics 5–6 (Three domains/binomial nomenclature/five kingdoms; Status of flora in Nepal) upgraded. Canonical files resolved via the manifest matcher: Floral Diversity topics 5–17 map to full-syllabus-slug files `01-…` to `13-…` (not the short dup-2 files).
 - Next: Unit 2 Floral Diversity (13 topics) — verify each topic's canonical file via the manifest matcher before editing.
+- Session 3 — Unit 2, Topics 7–17 (Fungi; Mucor/Yeast; Mushrooms; Lichen; Algae/Spirogyra; Bryophyta/Marchantia; Pteridophyta/Dryopteris; Gymnosperm/Pinus; Angiosperm morphology; Taxonomic study; Angiosperm families) upgraded. Unit 2 complete. Verified PYQs used: 2024 fungi (2m), 2024 algae classes (3m), 2024 gymnosperm vs angiosperm (3m), 2021 bryophytes-amphibians (2m), 2022+2024 Bryophyta characteristics (3m), 2024 Pteridophyta characteristics (3m), 2022 dicot vs monocot (2m). All other practice questions labelled NEB-style. Build (134 entries) + validate-content (4627 files, 0 broken) passed.
+- Next: Unit 3 Introductory Microbiology (3 topics) — resolve canonical files via the manifest matcher first.

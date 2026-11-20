@@ -7,125 +7,119 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Basidiocarp.** The mushroom is the fleshy fruiting body of a basidiomycete, with a cap (pileus), stalk (stipe) and gills (lamellae) on which basidiospores are produced.",
-    "**Edible mushrooms.** Agaricus bisporus (button mushroom) and Pleurotus (oyster mushroom) are cultivated widely and are rich in protein, vitamins and minerals.",
-    "**Poisonous mushrooms.** Amanita muscaria (fly agaric) and other toxic species contain deadly toxins; misidentification can cause severe poisoning, so wild mushrooms must never be eaten unverified.",
-    "**Ecological role.** Many mushrooms are decomposers, and forest trees depend on mycorrhizal fungal associations for mineral and water absorption.",
-    "**Cultivation.** Mushroom farming uses composted substrate spawned with fungal mycelium under humid, shaded conditions — a growing cottage industry in Nepal.",
-    "Agaricus is the edible button mushroom of the course. Amanita includes deadly species. Colour and a pleasant smell are not safe tests. Only a known edible species is food.",
-    "# Introduction of Mushrooms, poisonous and non-poisonous mushrooms, economic importance of fungi\n\n## 1. Introduction\nOpening frame for **Introduction of Mushrooms** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Floral Diversity fill pass.\n\n## 2. Hierarchy body — every syllabus sub-point\n### Introduction of Mushrooms\n### poisonous and non-poisonous mushrooms\n### economic importance of fungi\n\nFill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.",
-    "## 3. Classified tables\n\n**Table 1 — Classification at a glance**\n\n| Group | Diagnostic features | Examples (≥ 2) | Economic importance |\n| --- | --- | --- | --- |\n\n**Table 2 — Key ideas and worked angles**\n\n| Idea | Statement | Where used | Worked example |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB marks trend |\n| --- | --- | --- |\n\nTables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).",
-    "## 4. Diagrams and figures\n- **D1** — Introduction of Mushrooms — structure (authored SVG — English labels, viewBox 900×640)\n- **D2** — Introduction of Mushrooms — process or life-cycle flow (authored SVG — English labels)\n- **D3** — Introduction of Mushrooms — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Introduction of Mushrooms — comparison or application figure (curated external — license recorded at fill)\n\nFigure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.",
-    "## 5. Worked examples and applications\n≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.\n\n## 6. Key terms and statements\nEvery new term defined once; exam-grade definitions live here and in keyPoints (block VI).",
-    "## 7. Exam Zone\nNEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.",
-    "## 8. Summary and self-check\n5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Visible Face of Fungi\n\nThe mushroom is the only fungus most people ever see — the temporary fruit of a vast hidden mycelium. This topic covers the mushroom's structure, how to tell edible from deadly, and the full ledger of what fungi give and take from human life.",
+    "## 2. The Mushroom (*Agaricus*) — Structure\n\n### 2.1 What a mushroom actually is\n\nThe mushroom is a **basidiocarp** — the fruiting body of a basidiomycete whose true body is the white mycelium ramifying through soil and litter. When food and moisture are right, the mycelium condenses into \"buttons\" that expand into the familiar structure.\n\n### 2.2 Parts of the basidiocarp\n\n| Part | Description | Function |\n|---|---|---|\n| **Stipe (stalk)** | Central cylindrical stem, ringed by the annulus | Lifts the cap for spore dispersal |\n| **Pileus (cap)** | Umbrella-like top | Protects the spore-bearing surface |\n| **Gills (lamellae)** | Radiating plates on the cap's underside | Bear **hymenium** with **basidia** |\n| **Annulus** | Membranous ring on the stipe (remnant of the partial veil) | Identification character |\n| **Volva** | Cup at the stipe base (remnant of universal veil — prominent in *Amanita*) | Identification character |\n\n### 2.3 Spore production\n\nEach gill's hymenium carries parallel **basidia**; each basidium forms **4 basidiospores externally** on sterigmata. A single mature cap releases **billions of spores** — most never find a suitable substrate, which is why such enormous numbers are produced. Spores germinate into primary mycelium; compatible strains fuse into the dikaryotic secondary mycelium that later fruits.",
+    "## 3. Poisonous vs Non-Poisonous Mushrooms\n\n| Basis | Edible (*Agaricus*) | Poisonous (*Amanita*) |\n|---|---|---|\n| Volva | Absent | **Present** — cup at stipe base |\n| Annulus | Present | Present (usually) |\n| Cap colour | White to brown, uniform | Often bright (white, green, yellow) with scales |\n| Gills | Pink → dark brown/black as spores mature | Usually white |\n| Spore print | Dark brown/blackish | White |\n| Odour | Pleasant, mushroomy | Often unpleasant or sweetish |\n| Toxicity | Safe when cooked | *Amanita phalloides* toxins (amatoxins) destroy the liver — often fatal |\n\n**Field caution (real-life rule):** no single test is safe — identification needs volva, annulus, gill colour, spore print and expert confirmation. Never eat wild mushrooms on colour alone; folklore tests (silver spoon blackening, animal edibility) are unreliable.",
+    "## 4. Economic Importance of Fungi — The Full Ledger\n\n### 4.1 Beneficial\n\n| Category | Example | Contribution |\n|---|---|---|\n| Food | *Agaricus*, morels (*Morchella*), truffles | Protein, vitamins; cash crop of mushroom farming |\n| Fermentation | *Saccharomyces* | Bread, beer, wine, industrial alcohol |\n| Antibiotics | *Penicillium* | Penicillin; griseofulvin for fungal skin disease |\n| Organic acids and chemicals | *Aspergillus niger* (citric acid), *Rhizopus* (lactic acid, fumaric acid) | Food and beverage industry |\n| Vitamins | *Ashbya gossypii* | Riboflavin (B₂) |\n| Enzymes | *Aspergillus*, *Rhizopus* | Amylases, proteases, pectinases for industry |\n| Agriculture | Mycorrhizae; *Beauveria* (biological insecticide) | Better nutrient uptake; pest control |\n| Composting/decay | Saprophytic moulds | Humus formation, nutrient cycling |\n| Research/genetics | *Neurospora* | One gene–one enzyme hypothesis |\n| Cheese | *Penicillium roquefortii/camembertii* | Blue and camembert cheeses |\n\n### 4.2 Harmful\n\n| Category | Example | Damage |\n|---|---|---|\n| Plant diseases | *Puccinia* (wheat rust), *Ustilago* (smut), *Phytophthora* (potato blight), *Alternaria* (blight) | Enormous crop losses |\n| Food spoilage | *Rhizopus*, *Aspergillus flavus* | Mouldy food; **aflatoxin** — potent liver carcinogen |\n| Human mycoses | *Candida albicans* (thrush), *Aspergillus* (aspergillosis), dermatophytes (ringworm) | Skin, mucous membrane, systemic disease |\n| Poisoning | *Amanita phalloides* (death cap), *A. verna* | Fatal amatoxin poisoning |\n| Timber decay | Bracket fungi, dry-rot (*Serpula*) | Structural wood destruction |\n| Textile/rubber | *Chaetomium* etc. | Mould damage to stored materials |",
+    "## 5. Conceptual Relationships\n\n- **Topic 7 → here:** the mushroom is the basidiomycete's basidiocarp; *Amanita* and *Agaricus* are both basidiomycetes — poison and food differ by chemistry, not class.\n- **Topic 8 → here:** yeast fermentation and mushroom farming are the two great fungal food industries.\n- **Here → ecology:** decomposer fungi close the nutrient cycle that photosynthesis opens.\n- **Here → conservation (Unit 10):** morels and other macrofungi are collected wild — overharvesting is a conservation issue.",
+    "## 6. Exam Orientation\n\n### 6.1 Previous year questions\n\nNo mushroom-specific question exists in the authored bank (fungi characteristics were asked in 2024 — see Topic 7). Questions below are **NEB-style practice**, clearly labelled.\n\n### 6.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Describe the structure of a mushroom with a labelled diagram.**\nAnswer: The basidiocarp consists of a **stipe** bearing an **annulus** (ring) and expanding into the **pileus** (cap); the cap's underside carries radiating **gills** whose hymenium bears **basidia** producing 4 **basidiospores** each. The mycelium in the soil is the true vegetative body. Label all parts.\n\n**Q2 (3m) — How would you distinguish an edible mushroom from a poisonous one?**\nAnswer: Compare volva (absent vs cup-like present), gill/spore colour (pink-brown-dark vs white), cap texture (uniform vs scaled/bright), spore print (dark vs white) and odour; final identification requires expert confirmation because no single character is reliable.\n\n**Q3 (3m) — \"Fungi are both friends and foes of man.\" Justify.**\nAnswer: Friends — yeast fermentation (bread, alcohol), penicillin, mushrooms as food, mycorrhizal aid to crops, industrial acids/enzymes. Foes — rusts and smuts destroy crops, *Amanita* poisons, aflatoxin contaminates grain, mycoses (ringworm, thrush) and wood decay cost money and health. The same absorptive nutrition produces both roles.\n\n### 6.3 Common examination mistakes\n\n1. Calling the mushroom \"the fungus\" — it is only the **fruiting body**; the mycelium is the organism.\n2. Drawing gills without **basidia/basidiospores** on the hymenium.\n3. Trusting single-field characters (e.g. \"bright mushrooms are poisonous\") — *Amanita* can be plain white.\n4. Listing economic uses without named examples — every point needs an example for full marks."
   ],
   "confusion": [
-    "A poisonous mushroom is still a basidiomycete.",
-    "The underground mycelium feeds. The basidiocarp only fruits.",
-    "Penicillium is not a mushroom. It is still a fungus.",
-    "Rusts are fungi, not nutrient deficiencies."
+    "**Mushroom vs mycelium:** the mushroom is the temporary reproductive structure; the perennial mycelium in the substrate is the actual fungal body.",
+    "**Annulus vs volva:** annulus = ring on the stipe (from the partial veil); volva = cup at the base (from the universal veil) — the volva is the *Amanita* warning sign.",
+    "**Poisonous ≠ brightly coloured:** *Amanita phalloides* can be plain white; identification requires multiple characters."
   ],
   "bounds": [],
   "practice": [
-    "one worked example for \"Introduction of Mushrooms, poisonous and non-poisonous mu…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Why does a mushroom cap stand on a stipe instead of lying on the soil?"
   ],
   "universalFacts": [
-    "answer pattern for \"Introduction of Mushrooms, poisonous and non-poisonous mu…\": define → method → result. Structure earns the marks on 6–10 mark questions.",
-    "Agaricus is the edible button mushroom of the course. Amanita includes deadly species. Colour and a pleasant smell are not safe tests. Only a known edible species is food.",
-    "Beyond mushrooms, fungi rot dead matter, feed yeast fermentation, provide penicillin, and cause rusts, smuts and skin infections. Mycorrhiza helps tree roots take minerals."
+    "Mushroom farming converts agricultural waste (straw, manure) into protein."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
-    "Agaricus is the edible button mushroom of the course. Amanita includes deadly species. Colour and a pleasant smell are not safe tests. Only a known edible species is food.",
-    "Beyond mushrooms, fungi rot dead matter, feed yeast fermentation, provide penicillin, and cause rusts, smuts and skin infections. Mycorrhiza helps tree roots take minerals.",
-    "Pileus, stipe, gills, basidia."
+    "***Agaricus bisporus*** — the cultivated white mushroom.",
+    "***Morchella*** — the morel, prized wild edible.",
+    "***Amanita phalloides*** — death cap; amatoxins; most lethal mushroom."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Introduction of Mushrooms, poisonous and non-poisonous mu…\" with one example.",
-    "compare \"Introduction of Mushrooms\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Introduction of Mushrooms, poisonous and non-poisonous mu…\" and verify the answer is plausible."
+    "**Short answer (2m): What is a basidiocarp?** — The fruiting body of a basidiomycete (mushroom, bracket, puffball) that bears basidia and basidiospores on its hymenial surfaces."
   ],
   "keyPoints": [
-    "• Introduction of Mushrooms",
-    "• Poisonous",
-    "• Non-poisonous mushrooms",
-    "• Economic importance of fungi"
+    "Mushroom = basidiocarp: stipe + annulus + pileus with gills bearing basidia → 4 exogenous basidiospores each; billions of spores per cap.",
+    "Edible vs poisonous: volva, gill/spore colour (dark vs white), cap texture, spore print, odour — never one character alone.",
+    "Beneficial fungi: food (Agaricus, Morchella), yeast fermentation, penicillin, organic acids, enzymes, vitamins, mycorrhiza, research (Neurospora).",
+    "Harmful fungi: rusts/smuts/blights, aflatoxin (Aspergillus flavus), mycoses (Candida, ringworm), Amanita poisoning, wood rot."
   ],
-  "summary": "Introduction of Mushrooms, poisonous and non-poisonous mu… (Floral Diversity, Biology, class-11-notes) covers Introduction of Mushrooms, poisonous, non-poisonous mushrooms. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "The mushroom is the basidiocarp of a soil mycelium: a stipe with annulus lifting a pileus whose gills carry basidia releasing four exogenous basidiospores each — billions per cap. Edible (*Agaricus*) and deadly (*Amanita*) species are separated by volva, gill and spore colour, cap texture and spore print, but only expert identification is safe. Economically fungi are friends (food, fermentation, penicillin, acids, enzymes, mycorrhiza) and foes (crop rusts, smuts and blights, aflatoxin, mycoses, poisoning, wood rot) — one absorptive biology, two human stories.",
   "mcqs": [
     {
-      "question": "Amanita is a reminder that",
+      "question": "The gills of a mushroom bear:",
       "options": [
-        "Some mushrooms are deadly",
-        "All fungi are edible",
-        "Mushrooms are plants",
-        "Gills are leaves"
+        "Conidia",
+        "Basidia with basidiospores",
+        "Asci",
+        "Rhizoids"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The hymenium lining each gill carries basidia producing four exogenous basidiospores."
     },
     {
-      "question": "The feeding body of a mushroom is",
+      "question": "Which character most reliably warns of Amanita?",
       "options": [
-        "The mycelium",
-        "Only the cap after it is picked",
-        "A seed",
-        "A heterocyst"
+        "Bright cap colour",
+        "A cup-like volva at the stipe base",
+        "Pink gills",
+        "Dark spore print"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The universal veil leaves the volva — the classic Amanita character; colour alone is unreliable."
     },
     {
-      "question": "Penicillin is from",
+      "question": "A mature mushroom cap releases spores numbered about:",
       "options": [
+        "Thousands",
+        "Millions",
+        "Billions",
+        "Hundreds"
+      ],
+      "answer": "C",
+      "explanation": "A single cap can release billions of spores — compensating for tiny survival odds."
+    },
+    {
+      "question": "Aflatoxin, a liver carcinogen, is produced by:",
+      "options": [
+        "Aspergillus flavus",
         "Penicillium",
-        "Agaricus as the only source",
-        "Sal",
-        "A virus"
+        "Agaricus",
+        "Saccharomyces"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Aspergillus flavus on stored grain and nuts produces aflatoxins."
     },
     {
-      "question": "Mycorrhiza is",
+      "question": "The 'one gene–one enzyme' work used:",
       "options": [
-        "A fungus with a root",
-        "A bacterial disease of blood",
-        "A pine cone",
-        "A vaccine"
+        "Neurospora",
+        "Agaricus",
+        "Mucor",
+        "Yeast"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Beadle and Tatum's Nobel work used Neurospora (an ascomycete)."
     }
   ],
   "importantStatements": [
-    "Agaricus is the edible button mushroom of the course. Amanita includes deadly species. Colour and a pleasant smell are not safe tests. Only a known edible species is food.",
-    "Beyond mushrooms, fungi rot dead matter, feed yeast fermentation, provide penicillin, and cause rusts, smuts and skin infections. Mycorrhiza helps tree roots take minerals.",
-    "Pileus, stipe, gills, basidia."
+    "\"The mushroom is a fruit; the fungus is the forest beneath it.\""
   ],
   "formulas": [
     "Agaricus is the edible button mushroom of the course. Amanita includes deadly species. Colour and a pleasant smell are not safe tests. Only a known edible species is food.",
     "Beyond mushrooms, fungi rot dead matter, feed yeast fermentation, provide penicillin, and cause rusts, smuts and skin infections. Mycorrhiza helps tree roots take minerals."
   ],
   "examNotes": [
-    "Character, example, then the trap.",
-    "A table beats a vague paragraph."
+    "Most-tested: mushroom structure diagram, edible vs poisonous table, friends-and-foes justification."
   ],
   "examShortTricks": [
-    "Agaricus is the edible button mushroom of the course. Amanita includes deadly species. Colour and a pleasant s",
-    "Beyond mushrooms, fungi rot dead matter, feed yeast fermentation, provide penicillin, and cause rusts, smuts a"
+    "\"Volva = Amanita's alarm\" — cup at base, beware."
   ],
   "specialNotes": [
     "Match the organism to the character.",
     "A product does not move an organism into another kingdom."
   ],
   "importantNotes": [
-    "Order in a sequence is part of the answer.",
-    "Do not call a timberline a snowline."
+    "Economic-importance answers need named examples for every point — lists without examples lose marks."
   ],
   "importantConcepts": [
-    "Character",
-    "Example",
-    "Contrast",
-    "Use"
+    "**Why billions of spores:** spore-to-mycelium survival odds are tiny; overwhelming numbers are the fungus's evolutionary answer."
   ],
   "importantTasks": [
     "Write the table.",
@@ -133,44 +127,59 @@
   ],
   "mcs": [
     {
-      "question": "Amanita is a reminder that",
+      "question": "The gills of a mushroom bear:",
       "options": [
-        "Some mushrooms are deadly",
-        "All fungi are edible",
-        "Mushrooms are plants",
-        "Gills are leaves"
+        "Conidia",
+        "Basidia with basidiospores",
+        "Asci",
+        "Rhizoids"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The hymenium lining each gill carries basidia producing four exogenous basidiospores."
     },
     {
-      "question": "The feeding body of a mushroom is",
+      "question": "Which character most reliably warns of Amanita?",
       "options": [
-        "The mycelium",
-        "Only the cap after it is picked",
-        "A seed",
-        "A heterocyst"
+        "Bright cap colour",
+        "A cup-like volva at the stipe base",
+        "Pink gills",
+        "Dark spore print"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The universal veil leaves the volva — the classic Amanita character; colour alone is unreliable."
     },
     {
-      "question": "Penicillin is from",
+      "question": "A mature mushroom cap releases spores numbered about:",
       "options": [
+        "Thousands",
+        "Millions",
+        "Billions",
+        "Hundreds"
+      ],
+      "answer": "C",
+      "explanation": "A single cap can release billions of spores — compensating for tiny survival odds."
+    },
+    {
+      "question": "Aflatoxin, a liver carcinogen, is produced by:",
+      "options": [
+        "Aspergillus flavus",
         "Penicillium",
-        "Agaricus as the only source",
-        "Sal",
-        "A virus"
+        "Agaricus",
+        "Saccharomyces"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Aspergillus flavus on stored grain and nuts produces aflatoxins."
     },
     {
-      "question": "Mycorrhiza is",
+      "question": "The 'one gene–one enzyme' work used:",
       "options": [
-        "A fungus with a root",
-        "A bacterial disease of blood",
-        "A pine cone",
-        "A vaccine"
+        "Neurospora",
+        "Agaricus",
+        "Mucor",
+        "Yeast"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Beadle and Tatum's Nobel work used Neurospora (an ascomycete)."
     }
   ],
   "exercises": [
@@ -193,12 +202,110 @@
       "desc": "The mushroom is a basidiocarp. Some are food and some are poison."
     },
     "notes": [
-      "**Basidiocarp.** The mushroom is the fleshy fruiting body of a basidiomycete, with a cap (pileus), stalk (stipe) and gills (lamellae) on which basidiospores are produced.",
-      "**Edible mushrooms.** Agaricus bisporus (button mushroom) and Pleurotus (oyster mushroom) are cultivated widely and are rich in protein, vitamins and minerals.",
-      "**Poisonous mushrooms.** Amanita muscaria (fly agaric) and other toxic species contain deadly toxins; misidentification can cause severe poisoning, so wild mushrooms must never be eaten unverified.",
-      "**Ecological role.** Many mushrooms are decomposers, and forest trees depend on mycorrhizal fungal associations for mineral and water absorption.",
-      "**Cultivation.** Mushroom farming uses composted substrate spawned with fungal mycelium under humid, shaded conditions — a growing cottage industry in Nepal.",
-      "Agaricus is the edible button mushroom of the course. Amanita includes deadly species. Colour and a pleasant smell are not safe tests. Only a known edible species is food."
+      "## 1. Topic Introduction — The Visible Face of Fungi\n\nThe mushroom is the only fungus most people ever see — the temporary fruit of a vast hidden mycelium. This topic covers the mushroom's structure, how to tell edible from deadly, and the full ledger of what fungi give and take from human life.",
+      "## 2. The Mushroom (*Agaricus*) — Structure\n\n### 2.1 What a mushroom actually is\n\nThe mushroom is a **basidiocarp** — the fruiting body of a basidiomycete whose true body is the white mycelium ramifying through soil and litter. When food and moisture are right, the mycelium condenses into \"buttons\" that expand into the familiar structure.\n\n### 2.2 Parts of the basidiocarp\n\n| Part | Description | Function |\n|---|---|---|\n| **Stipe (stalk)** | Central cylindrical stem, ringed by the annulus | Lifts the cap for spore dispersal |\n| **Pileus (cap)** | Umbrella-like top | Protects the spore-bearing surface |\n| **Gills (lamellae)** | Radiating plates on the cap's underside | Bear **hymenium** with **basidia** |\n| **Annulus** | Membranous ring on the stipe (remnant of the partial veil) | Identification character |\n| **Volva** | Cup at the stipe base (remnant of universal veil — prominent in *Amanita*) | Identification character |\n\n### 2.3 Spore production\n\nEach gill's hymenium carries parallel **basidia**; each basidium forms **4 basidiospores externally** on sterigmata. A single mature cap releases **billions of spores** — most never find a suitable substrate, which is why such enormous numbers are produced. Spores germinate into primary mycelium; compatible strains fuse into the dikaryotic secondary mycelium that later fruits.",
+      "## 3. Poisonous vs Non-Poisonous Mushrooms\n\n| Basis | Edible (*Agaricus*) | Poisonous (*Amanita*) |\n|---|---|---|\n| Volva | Absent | **Present** — cup at stipe base |\n| Annulus | Present | Present (usually) |\n| Cap colour | White to brown, uniform | Often bright (white, green, yellow) with scales |\n| Gills | Pink → dark brown/black as spores mature | Usually white |\n| Spore print | Dark brown/blackish | White |\n| Odour | Pleasant, mushroomy | Often unpleasant or sweetish |\n| Toxicity | Safe when cooked | *Amanita phalloides* toxins (amatoxins) destroy the liver — often fatal |\n\n**Field caution (real-life rule):** no single test is safe — identification needs volva, annulus, gill colour, spore print and expert confirmation. Never eat wild mushrooms on colour alone; folklore tests (silver spoon blackening, animal edibility) are unreliable.",
+      "## 4. Economic Importance of Fungi — The Full Ledger\n\n### 4.1 Beneficial\n\n| Category | Example | Contribution |\n|---|---|---|\n| Food | *Agaricus*, morels (*Morchella*), truffles | Protein, vitamins; cash crop of mushroom farming |\n| Fermentation | *Saccharomyces* | Bread, beer, wine, industrial alcohol |\n| Antibiotics | *Penicillium* | Penicillin; griseofulvin for fungal skin disease |\n| Organic acids and chemicals | *Aspergillus niger* (citric acid), *Rhizopus* (lactic acid, fumaric acid) | Food and beverage industry |\n| Vitamins | *Ashbya gossypii* | Riboflavin (B₂) |\n| Enzymes | *Aspergillus*, *Rhizopus* | Amylases, proteases, pectinases for industry |\n| Agriculture | Mycorrhizae; *Beauveria* (biological insecticide) | Better nutrient uptake; pest control |\n| Composting/decay | Saprophytic moulds | Humus formation, nutrient cycling |\n| Research/genetics | *Neurospora* | One gene–one enzyme hypothesis |\n| Cheese | *Penicillium roquefortii/camembertii* | Blue and camembert cheeses |\n\n### 4.2 Harmful\n\n| Category | Example | Damage |\n|---|---|---|\n| Plant diseases | *Puccinia* (wheat rust), *Ustilago* (smut), *Phytophthora* (potato blight), *Alternaria* (blight) | Enormous crop losses |\n| Food spoilage | *Rhizopus*, *Aspergillus flavus* | Mouldy food; **aflatoxin** — potent liver carcinogen |\n| Human mycoses | *Candida albicans* (thrush), *Aspergillus* (aspergillosis), dermatophytes (ringworm) | Skin, mucous membrane, systemic disease |\n| Poisoning | *Amanita phalloides* (death cap), *A. verna* | Fatal amatoxin poisoning |\n| Timber decay | Bracket fungi, dry-rot (*Serpula*) | Structural wood destruction |\n| Textile/rubber | *Chaetomium* etc. | Mould damage to stored materials |",
+      "## 5. Conceptual Relationships\n\n- **Topic 7 → here:** the mushroom is the basidiomycete's basidiocarp; *Amanita* and *Agaricus* are both basidiomycetes — poison and food differ by chemistry, not class.\n- **Topic 8 → here:** yeast fermentation and mushroom farming are the two great fungal food industries.\n- **Here → ecology:** decomposer fungi close the nutrient cycle that photosynthesis opens.\n- **Here → conservation (Unit 10):** morels and other macrofungi are collected wild — overharvesting is a conservation issue.",
+      "## 6. Exam Orientation\n\n### 6.1 Previous year questions\n\nNo mushroom-specific question exists in the authored bank (fungi characteristics were asked in 2024 — see Topic 7). Questions below are **NEB-style practice**, clearly labelled.\n\n### 6.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Describe the structure of a mushroom with a labelled diagram.**\nAnswer: The basidiocarp consists of a **stipe** bearing an **annulus** (ring) and expanding into the **pileus** (cap); the cap's underside carries radiating **gills** whose hymenium bears **basidia** producing 4 **basidiospores** each. The mycelium in the soil is the true vegetative body. Label all parts.\n\n**Q2 (3m) — How would you distinguish an edible mushroom from a poisonous one?**\nAnswer: Compare volva (absent vs cup-like present), gill/spore colour (pink-brown-dark vs white), cap texture (uniform vs scaled/bright), spore print (dark vs white) and odour; final identification requires expert confirmation because no single character is reliable.\n\n**Q3 (3m) — \"Fungi are both friends and foes of man.\" Justify.**\nAnswer: Friends — yeast fermentation (bread, alcohol), penicillin, mushrooms as food, mycorrhizal aid to crops, industrial acids/enzymes. Foes — rusts and smuts destroy crops, *Amanita* poisons, aflatoxin contaminates grain, mycoses (ringworm, thrush) and wood decay cost money and health. The same absorptive nutrition produces both roles.\n\n### 6.3 Common examination mistakes\n\n1. Calling the mushroom \"the fungus\" — it is only the **fruiting body**; the mycelium is the organism.\n2. Drawing gills without **basidia/basidiospores** on the hymenium.\n3. Trusting single-field characters (e.g. \"bright mushrooms are poisonous\") — *Amanita* can be plain white.\n4. Listing economic uses without named examples — every point needs an example for full marks."
+    ],
+    "confusion": [
+      "**Mushroom vs mycelium:** the mushroom is the temporary reproductive structure; the perennial mycelium in the substrate is the actual fungal body.",
+      "**Annulus vs volva:** annulus = ring on the stipe (from the partial veil); volva = cup at the base (from the universal veil) — the volva is the *Amanita* warning sign.",
+      "**Poisonous ≠ brightly coloured:** *Amanita phalloides* can be plain white; identification requires multiple characters."
+    ],
+    "keyPoints": [
+      "Mushroom = basidiocarp: stipe + annulus + pileus with gills bearing basidia → 4 exogenous basidiospores each; billions of spores per cap.",
+      "Edible vs poisonous: volva, gill/spore colour (dark vs white), cap texture, spore print, odour — never one character alone.",
+      "Beneficial fungi: food (Agaricus, Morchella), yeast fermentation, penicillin, organic acids, enzymes, vitamins, mycorrhiza, research (Neurospora).",
+      "Harmful fungi: rusts/smuts/blights, aflatoxin (Aspergillus flavus), mycoses (Candida, ringworm), Amanita poisoning, wood rot."
+    ],
+    "importantConcepts": [
+      "**Why billions of spores:** spore-to-mycelium survival odds are tiny; overwhelming numbers are the fungus's evolutionary answer."
+    ],
+    "examples": [
+      "***Agaricus bisporus*** — the cultivated white mushroom.",
+      "***Morchella*** — the morel, prized wild edible.",
+      "***Amanita phalloides*** — death cap; amatoxins; most lethal mushroom."
+    ],
+    "universalFacts": [
+      "Mushroom farming converts agricultural waste (straw, manure) into protein."
+    ],
+    "importantStatements": [
+      "\"The mushroom is a fruit; the fungus is the forest beneath it.\""
+    ],
+    "importantNotes": [
+      "Economic-importance answers need named examples for every point — lists without examples lose marks."
+    ],
+    "examShortTricks": [
+      "\"Volva = Amanita's alarm\" — cup at base, beware."
+    ],
+    "examNotes": [
+      "Most-tested: mushroom structure diagram, edible vs poisonous table, friends-and-foes justification."
+    ],
+    "practice": [
+      "Why does a mushroom cap stand on a stipe instead of lying on the soil?"
+    ],
+    "practiceQuestions": [
+      "**Short answer (2m): What is a basidiocarp?** — The fruiting body of a basidiomycete (mushroom, bracket, puffball) that bears basidia and basidiospores on its hymenial surfaces."
+    ],
+    "summary": "The mushroom is the basidiocarp of a soil mycelium: a stipe with annulus lifting a pileus whose gills carry basidia releasing four exogenous basidiospores each — billions per cap. Edible (*Agaricus*) and deadly (*Amanita*) species are separated by volva, gill and spore colour, cap texture and spore print, but only expert identification is safe. Economically fungi are friends (food, fermentation, penicillin, acids, enzymes, mycorrhiza) and foes (crop rusts, smuts and blights, aflatoxin, mycoses, poisoning, wood rot) — one absorptive biology, two human stories.",
+    "mcs": [
+      {
+        "question": "The gills of a mushroom bear:",
+        "options": [
+          "Conidia",
+          "Basidia with basidiospores",
+          "Asci",
+          "Rhizoids"
+        ],
+        "answer": "B",
+        "explanation": "The hymenium lining each gill carries basidia producing four exogenous basidiospores."
+      },
+      {
+        "question": "Which character most reliably warns of Amanita?",
+        "options": [
+          "Bright cap colour",
+          "A cup-like volva at the stipe base",
+          "Pink gills",
+          "Dark spore print"
+        ],
+        "answer": "B",
+        "explanation": "The universal veil leaves the volva — the classic Amanita character; colour alone is unreliable."
+      },
+      {
+        "question": "A mature mushroom cap releases spores numbered about:",
+        "options": [
+          "Thousands",
+          "Millions",
+          "Billions",
+          "Hundreds"
+        ],
+        "answer": "C",
+        "explanation": "A single cap can release billions of spores — compensating for tiny survival odds."
+      },
+      {
+        "question": "Aflatoxin, a liver carcinogen, is produced by:",
+        "options": [
+          "Aspergillus flavus",
+          "Penicillium",
+          "Agaricus",
+          "Saccharomyces"
+        ],
+        "answer": "A",
+        "explanation": "Aspergillus flavus on stored grain and nuts produces aflatoxins."
+      },
+      {
+        "question": "The 'one gene–one enzyme' work used:",
+        "options": [
+          "Neurospora",
+          "Agaricus",
+          "Mucor",
+          "Yeast"
+        ],
+        "answer": "A",
+        "explanation": "Beadle and Tatum's Nobel work used Neurospora (an ascomycete)."
+      }
     ]
   }
 }

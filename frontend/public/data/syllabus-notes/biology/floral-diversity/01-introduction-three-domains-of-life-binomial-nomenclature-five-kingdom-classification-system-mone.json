@@ -7,44 +7,50 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Binomial nomenclature.** Carolus Linnaeus gave the two-word naming system: the first word is the capitalised genus and the second the lowercase species, italicised or underlined — for example, Homo sapiens.",
-    "**Five-kingdom classification.** R.H. Whittaker grouped life into Monera, Protista, Fungi, Plantae and Animalia using cell structure, thallus organisation, nutrition and reproduction as criteria.",
-    "**Three domains.** Carl Woese's rRNA studies split living organisms into Archaea, Bacteria and Eukarya; Monera falls in the prokaryotic domains while the other kingdoms lie in Eukarya.",
-    "**Kingdom criteria.** Prokaryotic cell structure places an organism in Monera, eukaryotic unicellular forms in Protista, absorptive heterotrophs in Fungi, and photosynthetic or ingestive eukaryotes in Plantae and Animalia.",
-    "**Taxonomic hierarchy.** Every organism is placed in a sequence of categories — Kingdom, Phylum, Class, Order, Family, Genus, Species — with species as the basic unit of classification.",
-    "Viruses sit outside Whittaker's five kingdoms because they have no cell. A domain answer that forces HIV into Monera has mixed a particle with an organism.",
-    "# Introduction: Three domains of life, binomial nomenclature, five kingdom classification system (Monera, Protista, Fungi, Plantae and Animalia)\n\n## 1. Introduction\nOpening frame for **Introduction** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Floral Diversity fill pass.\n\n## 2. Hierarchy body — every syllabus sub-point\n### Introduction: Three domains of life\n### binomial nomenclature\n### five kingdom classification system (Monera, Protista, Fungi, Plantae and Animalia)\n\nFill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.",
-    "## 3. Classified tables\n\n**Table 1 — Classification at a glance**\n\n| Group | Diagnostic features | Examples (≥ 2) | Economic importance |\n| --- | --- | --- | --- |\n\n**Table 2 — Characteristics**\n\n| Part | Structure | Function | Exam note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB marks trend |\n| --- | --- | --- |\n\nTables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).",
-    "## 4. Diagrams and figures\n- **D1** — Paramecium structure (authored SVG — English labels, viewBox 900×640)\n- **D2** — Introduction — process or life-cycle flow (authored SVG — English labels)\n- **D3** — Introduction — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Introduction — comparison or application figure (curated external — license recorded at fill)\n\nFigure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.",
-    "## 5. Worked examples and applications\n≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.\n\n## 6. Key terms and statements\nEvery new term defined once; exam-grade definitions live here and in keyPoints (block VI).",
-    "## 7. Exam Zone\nNEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.",
-    "## 8. Summary and self-check\n5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Why Classification Is the First Question of Biology\n\nBiology names and organises life before it explains it. With an estimated 8–9 million species on Earth (about 1.8 million described so far), no science is possible without a **system of naming** and a **system of grouping**. This topic gives you both:\n\n- **How life is organised at the highest level** — the three domains (Bacteria, Archaea, Eukarya) and the five kingdoms (Monera, Protista, Fungi, Plantae, Animalia).\n- **How every organism gets its unique scientific name** — binomial nomenclature.\n\n- **Why it matters:** every later topic in this unit (fungi, algae, bryophytes, angiosperms) assumes you can place the organism in its kingdom and write its name correctly.\n- **Connection back:** Topic 2's prokaryote/eukaryote split is exactly the line that separates Monera from every other kingdom.",
+    "## 2. Fundamental Conceptual Understanding — What Classification Is\n\n### 2.1 Definition and purpose\n\n**Classification (taxonomy)** is the arrangement of organisms into groups (taxa) on the basis of their similarities, differences and evolutionary relationships.\n\n| Purpose | Explanation |\n|---|---|\n| Identification | Puts a name on an organism so everyone means the same thing |\n| Organisation | Millions of species become a searchable hierarchy |\n| Reveals relationships | Similar species share ancestry and features |\n| Predicts properties | A newly found mushroom in genus *Amanita* warns of possible poison |\n| Universal communication | Latin names work across every language |\n\n### 2.2 The basis of classification has evolved with knowledge\n\n| Era | Basis | Result |\n|---|---|---|\n| Ancient | Utility (edible, medicinal) and habitat | Folk classifications |\n| Linnaeus (1735) | Morphology (visible form) | Two kingdoms; sexual system for plants |\n| Haeckel (1866) | Added unicellular organisms | Three kingdoms |\n| Copeland (1956) | Added microbes properly | Four kingdoms |\n| **Whittaker (1969)** | **Cell structure, body organisation, nutrition** | **Five kingdoms** — the syllabus standard |\n| Woese (1990) | **rRNA gene sequences** | **Three domains** — the modern super-kingdom level |\n\n**The deep principle:** as instruments improved (microscope → electron microscope → DNA sequencing), classification moved from *what organisms look like* to *what organisms are made of* to *what organisms' genes say*.\n\n### 2.3 Taxonomic hierarchy — the ladder of ranks\n\nKingdom → Division/Phylum → Class → Order → Family → Genus → Species. (Memory aid: \"**K**ings **P**lay **C**hess **O**n **F**ine **G**old **S**ets.\") Each rank down is more specific; the **species** is the basic unit — a naturally interbreeding population reproductively isolated from others.",
+    "## 3. Binomial Nomenclature — The Naming System\n\n### 3.1 What it is\n\n**Binomial nomenclature** is the two-word scientific naming system in which every organism receives a name of **Genus + specific epithet**, e.g. *Mangifera indica* (mango), *Homo sapiens* (human). It was introduced by **Carolus Linnaeus** in his work *Species Plantarum* (1753) — he is called the **Father of Taxonomy**.\n\n### 3.2 The rules (examiners check these exactly)\n\n1. Each organism has only one valid scientific name, in **Latin or Latinised form**.\n2. The **first word = Genus** (capitalised); the **second word = specific epithet** (lowercase).\n3. Both words are written in **italics** when printed (or underlined separately when handwritten).\n4. The name is often followed by the **abbreviated name of the author** who first described it — *Mangifera indica* Linn.\n5. Names must be unique — no two species may share the same binomial.\n6. The specific epithet alone means nothing — \"indica\" appears in many genera.\n\n**Why not common names?** Common names vary by language and region (the same plant may have a dozen Nepali names), and one common name may cover several species. *Mangifera indica* means exactly one organism, everywhere on Earth, forever.\n\n### 3.3 Key scientists of taxonomy\n\n| Scientist | Contribution |\n|---|---|\n| Carolus Linnaeus (1707–78) | Binomial nomenclature; *Species Plantarum* (1753); two-kingdom system |\n| Ernst Haeckel (1866) | Third kingdom (Protista) |\n| Robert Whittaker (1969) | Five-kingdom system |\n| Carl Woese (1990) | Three-domain system based on 16S/18S rRNA |",
+    "## 4. The Three-Domain System (Woese, 1990)\n\nBased on **differences in ribosomal RNA (16S/18S rRNA) sequences**, Woese split all life into three domains — a level *above* kingdom:\n\n| Domain | Members | Cell type | Defining features |\n|---|---|---|---|\n| **Bacteria** (Eubacteria) | True bacteria, cyanobacteria | Prokaryote | Peptidoglycan cell walls; membrane lipids with ester-linked fatty acids; sensitive to common antibiotics |\n| **Archaea** (Archaebacteria) | Methanogens, halophiles, thermoacidophiles | Prokaryote | **No peptidoglycan**; ether-linked branched membrane lipids; live in extreme habitats (hot springs, salt lakes, anaerobic guts); antibiotic-resistant |\n| **Eukarya** | Protists, fungi, plants, animals | Eukaryote | True nucleus, membrane-bound organelles, histone-bound linear chromosomes |\n\n**Conceptual point:** Archaea look like bacteria under a microscope but their molecular machinery (rRNA, membrane lipids, RNA polymerase) is as different from Bacteria as both are from Eukarya — which is why genes, not appearance, decide the deepest splits.\n\n### 4.1 Three domains vs five kingdoms — how they relate\n\n| Five kingdoms (Whittaker) | Three domains (Woese) |\n|---|---|\n| Monera | Split into **Bacteria** and **Archaea** |\n| Protista, Fungi, Plantae, Animalia | Together = **Eukarya** |",
+    "## 5. The Five-Kingdom System (R. H. Whittaker, 1969)\n\n### 5.1 The three criteria Whittaker used\n\n1. **Cell structure** — prokaryotic or eukaryotic.\n2. **Level of body organisation** — unicellular or multicellular; tissue/organ level.\n3. **Mode of nutrition** — autotrophic (photosynthesis), absorptive (absorb dissolved food), or ingestive (eat other organisms).\n\nNutrition is the decisive separator of the four eukaryotic kingdoms: photosynthesis → Plantae, absorption → Fungi, ingestion → Animalia, mixed modes → Protista.\n\n### 5.2 The five kingdoms at a glance\n\n| Kingdom | Cell type | Organisation | Nutrition | Key members |\n|---|---|---|---|---|\n| **Monera** | Prokaryotic | Unicellular, no organelles | Autotrophic or heterotrophic | Bacteria, cyanobacteria, mycoplasma |\n| **Protista** | Eukaryotic | Mostly unicellular | Autotrophic (algae-like) or heterotrophic (protozoa) | Amoeba, Paramecium, Plasmodium, Euglena, diatoms |\n| **Fungi** | Eukaryotic | Multicellular (except yeasts), filamentous mycelium of hyphae | **Absorptive heterotrophs** — external digestion; cell wall of chitin | Mucor, yeast, mushroom, rusts |\n| **Plantae** | Eukaryotic | Multicellular, tissue/organ level | **Autotrophic** (photosynthesis); cellulose wall | Algae, bryophytes, ferns, gymnosperms, angiosperms |\n| **Animalia** | Eukaryotic | Multicellular, tissue→organ→organ-system | **Ingestive heterotrophs**; no cell wall | Sponges to mammals |\n\n### 5.3 Merits of the five-kingdom system\n\n1. Separated prokaryotes (Monera) from all eukaryotes — the single most fundamental biological divide.\n2. Moved fungi out of plants — their chitin wall, absorptive nutrition and glycogen reserve make them unlike plants.\n3. Created a separate Protista for simple eukaryotes that fit nowhere else.\n4. Used phylogenetic (evolutionary) direction: Monera → Protista → Fungi/Plantae/Animalia.\n5. Cell structure and nutrition are objective, measurable criteria.\n\n### 5.4 Demerits\n\n1. Monera and Protista are still \"dumping-ground\" kingdoms of unrelated groups.\n2. Some organisms straddle boundaries — *Euglena* (photosynthesises but ingests too), slime moulds, viruses (excluded entirely).\n3. Does not use molecular (rRNA) data — superseded at the top level by the three-domain system.\n4. Algae are split between Protista and Plantae, which is awkward.\n\n### 5.5 Comparison: two-kingdom vs five-kingdom\n\n| Basis | Two-kingdom (Linnaeus) | Five-kingdom (Whittaker) |\n|---|---|---|\n| Basis | Morphology only | Cell structure + organisation + nutrition |\n| Fungi | Placed in Plantae | Separate kingdom (chitin wall, absorption) |\n| Bacteria | Placed in Plantae | Separate prokaryotic kingdom (Monera) |\n| Unicellular eukaryotes | Forced into plants or animals | Kingdom Protista |\n| Evolutionary basis | None | Phylogenetic |\n| Still used? | Historically | Syllabus standard (with domains above it) |",
+    "## 6. Conceptual Relationships\n\n- **Topic 2 → here:** the prokaryote/eukaryote split is the first cut of every classification.\n- **Here → Topics 6–10:** fungi, algae, bryophytes, pteridophytes, gymnosperms are the Plantae/Fungi kingdoms in detail; Topic 15–17 cover angiosperms.\n- **Here → faunal diversity (Unit 8):** Protista and Animalia are expanded there (Paramecium, Plasmodium, phyla).\n- **Here → microbiology (Unit 3):** Monera (bacteria, cyanobacteria) and viruses in detail.\n- **Here → evolution (Unit 7):** classification is a hypothesis of evolutionary history; rRNA-based domains are molecular evolution applied.",
+    "## 7. Exam Orientation and Previous Year Questions (NEB)\n\n### 7.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Floral Diversity | Binomial nomenclature | Name the scientist who introduced binomial nomenclature. Write the scientific name of mango correctly. | 2 | Very short |\n| 2078/2022 | Floral Diversity | Five kingdoms | Classify the five kingdoms of living organisms. Give one characteristic feature of each. | 5 | Long/classification |\n| 2080/2024 | Floral Diversity | Five kingdoms | Classify the five kingdoms of living organisms. Give one characteristic feature of each. | 5 | Long/classification (repeated) |\n\n### 7.2 Model answers\n\n**Q1 (2m) — Binomial nomenclature.**\nAnswer: **Carolus Linnaeus** introduced binomial nomenclature (in *Species Plantarum*, 1753). The scientific name of mango is ***Mangifera indica*** Linn. — written in italics with the generic name capitalised and the specific epithet in lowercase.\n\n**Q2/Q3 (5m) — Classify the five kingdoms with one feature each.**\nAnswer: R. H. Whittaker (1969) proposed the five-kingdom system on the basis of cell structure, body organisation and mode of nutrition.\n1. **Monera** — prokaryotic, unicellular, no membrane-bound organelles; e.g. bacteria, cyanobacteria.\n2. **Protista** — eukaryotic, mostly unicellular; autotrophic or heterotrophic; e.g. Amoeba, Euglena.\n3. **Fungi** — eukaryotic, multicellular mycelium of hyphae with chitin walls; absorptive heterotrophs; e.g. Mucor, mushroom.\n4. **Plantae** — eukaryotic, multicellular; autotrophic by photosynthesis; cellulose walls; e.g. mosses, ferns, mango.\n5. **Animalia** — eukaryotic, multicellular, no cell wall; ingestive heterotrophs; e.g. earthworm, frog, human.\n*(Award structure: proposer + criteria + five kingdoms each with one clear feature + example.)*\n\n### 7.3 Common examination mistakes\n\n1. Writing the scientific name without italics/capitalisation — *Mangifera indica*, never \"mangifera Indica\".\n2. Giving \"cell wall\" as the plant/fungi separator — fungi also have walls; the separator is **nutrition** (absorptive) and **wall chemistry** (chitin, not cellulose).\n3. Listing four criteria of Whittaker or inventing a sixth kingdom — stick to his three criteria.\n4. Placing cyanobacteria in Protista — they are **Monera** (prokaryotes).\n5. Forgetting that the three-domain system sits **above** the five kingdoms, not instead of the syllabus version."
   ],
   "confusion": [
-    "❌ skip the key fact → ✅ iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).."
+    "**Domain vs kingdom:** domains are a newer, higher rank above kingdoms; the five kingdoms are still taught, but Monera is split into Bacteria and Archaea at the domain level.",
+    "**Fungi are not plants:** chitin (not cellulose) walls, absorptive (not photosynthetic) nutrition, glycogen (not starch) reserve — Whittaker's main correction to the two-kingdom system.",
+    "**Cyanobacteria are Monera, not algae:** \"blue-green algae\" is a historical name; they are prokaryotic photosynthesizers, so they belong to Bacteria, not Protista or Plantae.",
+    "**Species epithet alone is not a name:** \"indica\" names nothing by itself; only the full binomial (*Mangifera indica*) identifies a species.",
+    "**Protista vs Monera:** both mostly unicellular, but Protista are eukaryotic (true nucleus, organelles) while Monera are prokaryotic."
   ],
   "bounds": [
     "Limit to remember: iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…)."
   ],
   "practice": [
-    "one worked example for \"Introduction: Three domains of life, binomial nomenclatur…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Why did Whittaker need three criteria while Linnaeus needed only one?",
+    "Why is *Euglena* a problem for the five-kingdom system?",
+    "A newly discovered microbe lives in boiling acid, has no peptidoglycan and ether-linked membrane lipids. Where does it go — and why not in Bacteria?"
   ],
   "universalFacts": [
-    "IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).",
-    "Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds.",
-    "Functional group priority (high → low) governs the suffix; others become prefixes with locants."
+    "Linnaeus = Father of Taxonomy; *Species Plantarum* (1753) is the starting point of botanical nomenclature.",
+    "About 1.8 million species described; estimates of total species run to 8–9 million.",
+    "Whittaker's system: 1969; Woese's three domains: 1990 (16S rRNA)."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
-    "Viruses sit outside Whittaker's five kingdoms because they have no cell. A domain answer that forces HIV into Monera has mixed a particle with an organism.",
-    "After the genus has been written in full once, it may be abbreviated, as M. indica. The specific epithet is never written alone, and a handwritten name is underlined rather than left plain.",
-    "Bacteria, Archaea, Eukarya."
+    "***Mangifera indica*** — mango; Plantae; the standard binomial example (Linn.).",
+    "***Homo sapiens*** — human; Animalia; binomial with lowercase epithet.",
+    "***Euglena*** — Protista; boundary organism: chloroplasts AND ingestion — shows why Protista is a mixed kingdom.",
+    "***Methanococcus*** — Archaea; produces methane in anaerobic habitats (cow rumen, marshes)."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Introduction: Three domains of life, binomial nomenclatur…\" with one example.",
-    "compare \"Introduction\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Introduction: Three domains of life, binomial nomenclatur…\" and verify the answer is plausible."
+    "**Short answer (2m): What is binomial nomenclature? Who introduced it?** — The two-word scientific naming system (Genus + specific epithet, italicised, Latin) giving every species one universal name; introduced by Carolus Linnaeus in *Species Plantarum* (1753).",
+    "**Short answer (2m): Write the scientific name of mango and human with the rules obeyed.** — *Mangifera indica* Linn.; *Homo sapiens* Linn. — generic name capitalised, specific epithet lowercase, both italicised (underlined when handwritten), author abbreviated after the name.",
+    "**Short answer (2m): On what three criteria is the five-kingdom system based?** — (1) Cell structure (prokaryotic/eukaryotic), (2) level of body organisation (unicellular/multicellular), (3) mode of nutrition (autotrophic/absorptive/ingestive).",
+    "**Short answer (2m): Why were fungi removed from Plantae?** — Fungi have chitin walls (not cellulose), absorb dissolved food after external digestion (they do not photosynthesise) and store glycogen — three plant-unlike features.",
+    "**Long answer (5m): Describe the five-kingdom classification with merits and demerits.** — Proposer + criteria; the five kingdoms each with cell type, organisation, nutrition and examples; merits (prokaryote separation, fungi removed, phylogenetic, objective criteria); demerits (mixed Monera/Protista, boundary organisms, no molecular data).",
+    "**Long answer (5m): Explain the three-domain system and its relationship to the five-kingdom system.** — Woese (1990), 16S/18S rRNA; Bacteria (peptidoglycan, ester-linked lipids), Archaea (no peptidoglycan, ether-linked lipids, extremophiles), Eukarya (nucleus, organelles); relationship: Monera splits into Bacteria + Archaea; the four eukaryotic kingdoms sit inside Eukarya.",
+    "**Conceptual (3m): Why is the species called the basic unit of classification?** — It is the only rank that corresponds to a real biological entity: a naturally interbreeding, reproductively isolated population sharing a gene pool. Higher ranks are groupings of convenience; species is where evolution actually happens.",
+    "**Conceptual (3m): Why do scientific names remain stable while common names do not?** — Binomials are governed by international codes (ICZN/ICBN), are Latin (language-neutral), unique and tied to a type specimen; common names shift by language, region and can apply to several species.",
+    "**Application (2m): A farmer reports a new crop disease organism that has no nucleus and no peptidoglycan but lives in a hot spring. Predict its domain and one property.** — Domain Archaea (prokaryote without peptidoglycan, extreme habitat); property: likely thermophilic, antibiotic-resistant, ether-linked membrane lipids."
   ],
   "formulas": [
     "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name"
@@ -53,82 +59,149 @@
     "Use  Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Introduction",
-    "• Three domains of life",
-    "• Binomial nomenclature",
-    "• Five kingdom classification system",
-    "• Monera",
-    "• Protista"
+    "Classification = arranging organisms into taxa by similarities and evolutionary relationships; purposes: identification, organisation, relationship, prediction, universal naming.",
+    "Basis evolved: morphology (Linnaeus) → cell structure/nutrition (Whittaker) → rRNA genes (Woese).",
+    "Hierarchy: Kingdom → Division/Phylum → Class → Order → Family → Genus → Species (\"KPCOFGS\"); species = basic unit.",
+    "Binomial nomenclature — Linnaeus, *Species Plantarum* 1753: Genus (capital) + specific epithet (lower), italicised/underlined, Latin, unique, with author abbreviation.",
+    "Three domains (Woese 1990, rRNA-based): Bacteria (peptidoglycan), Archaea (no peptidoglycan, extremophiles), Eukarya (true nucleus).",
+    "Five kingdoms (Whittaker 1969) on cell structure + organisation + nutrition: Monera (prokaryote), Protista (unicellular eukaryote), Fungi (absorptive, chitin), Plantae (photosynthetic), Animalia (ingestive).",
+    "Merits: separated prokaryotes, removed fungi from plants, phylogenetic direction; demerits: Protista/Monera are mixed groups, boundary organisms (Euglena, viruses) awkward."
   ],
-  "summary": "Introduction: Three domains of life, binomial nomenclatur… (Floral Diversity, Biology, class-11-notes) covers Introduction, Three domains of life, binomial nomenclature. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Classification organises millions of species into a hierarchy (KPCOFGS) whose basic unit is the species. Linnaeus gave biology its naming system — binomial nomenclature (Genus + specific epithet, italicised, e.g. *Mangifera indica*) — and its first two-kingdom scheme. Whittaker (1969) rebuilt classification on cell structure, body organisation and nutrition into five kingdoms: prokaryotic Monera, unicellular eukaryotic Protista, absorptive chitin-walled Fungi, photosynthetic Plantae and ingestive Animalia. Woese (1990), reading rRNA genes, raised the deepest split to three domains — Bacteria, Archaea (no peptidoglycan, extremophiles) and Eukarya — with Monera split between the first two. Classification has therefore moved from appearance to chemistry to genes, and every later topic in this unit depends on placing organisms correctly in these kingdoms.",
   "mcqs": [
     {
-      "question": "The epithet of Mangifera indica is",
+      "question": "Who is called the Father of Taxonomy?",
       "options": [
-        "Mangifera",
-        "indica",
-        "Plantae",
-        "Eukarya"
+        "Ernst Haeckel",
+        "Carolus Linnaeus",
+        "Robert Whittaker",
+        "Carl Woese"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Linnaeus introduced binomial nomenclature in Species Plantarum (1753) and founded modern taxonomy."
     },
     {
-      "question": "Archaea are",
+      "question": "In Mangifera indica, 'indica' is the:",
       "options": [
-        "Prokaryotic",
-        "Always multicellular animals",
-        "Viruses",
-        "Ferns"
+        "Generic name",
+        "Specific epithet",
+        "Author name",
+        "Family name"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The first word (capitalised) is the genus; the second word (lowercase) is the specific epithet; together they form the binomial."
     },
     {
-      "question": "HIV belongs",
+      "question": "Which kingdom contains prokaryotic organisms?",
       "options": [
-        "Outside the five kingdoms",
-        "In Plantae",
-        "In Bryophyta",
-        "In a seed"
+        "Protista",
+        "Monera",
+        "Fungi",
+        "Plantae"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Monera holds all prokaryotes — bacteria, cyanobacteria, mycoplasma; Protista are unicellular eukaryotes."
     },
     {
-      "question": "A handwritten binomial is",
+      "question": "The five-kingdom system was proposed in:",
       "options": [
-        "Underlined",
-        "Written as one capital word",
-        "A kingdom only",
-        "Left as the epithet"
+        "1753",
+        "1866",
+        "1969",
+        "1990"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "Robert Whittaker proposed it in 1969; 1753 = Species Plantarum; 1866 = Haeckel's three kingdoms; 1990 = Woese's domains."
+    },
+    {
+      "question": "Which criterion did Whittaker NOT use?",
+      "options": [
+        "Cell structure",
+        "Mode of nutrition",
+        "Body organisation",
+        "rRNA sequences"
+      ],
+      "answer": "D",
+      "explanation": "Whittaker used morphology-era criteria (structure, organisation, nutrition); rRNA sequencing is the basis of Woese's three domains."
+    },
+    {
+      "question": "Archaea differ from Bacteria in having:",
+      "options": [
+        "A true nucleus",
+        "No peptidoglycan in the wall",
+        "80S ribosomes",
+        "Linear chromosomes"
+      ],
+      "answer": "B",
+      "explanation": "Archaea are prokaryotes with ether-linked membrane lipids and walls without peptidoglycan; they share prokaryotic cell organisation with Bacteria."
+    },
+    {
+      "question": "Fungi store food as:",
+      "options": [
+        "Starch",
+        "Glycogen",
+        "Cellulose",
+        "Sucrose"
+      ],
+      "answer": "B",
+      "explanation": "Fungi store glycogen (like animals), another reason they were separated from plants, which store starch."
+    },
+    {
+      "question": "Which organism is a boundary case that strains the five-kingdom system?",
+      "options": [
+        "Mango",
+        "Euglena",
+        "Earthworm",
+        "Mucor"
+      ],
+      "answer": "B",
+      "explanation": "Euglena photosynthesises (plant-like) but also ingests food and lacks a cell wall (animal-like) — a classic mixed Protista member."
+    },
+    {
+      "question": "The correct ascending hierarchy is:",
+      "options": [
+        "Species → Genus → Family → Order → Class → Division → Kingdom",
+        "Genus → Species → Family → Order → Class → Kingdom",
+        "Species → Family → Genus → Order → Class → Division → Kingdom",
+        "Kingdom → Division → Class → Order → Species → Family → Genus"
+      ],
+      "answer": "A",
+      "explanation": "Species is the smallest rank; each step up groups more organisms with fewer shared features."
+    },
+    {
+      "question": "Bacteria and cyanobacteria are grouped together because both:",
+      "options": [
+        "Photosynthesise",
+        "Are prokaryotic",
+        "Have chitin walls",
+        "Are multicellular"
+      ],
+      "answer": "B",
+      "explanation": "Both are prokaryotes (Monera/Bacteria); only cyanobacteria photosynthesise — the shared defining feature is cell type."
     }
   ],
   "importantStatements": [
-    "Viruses sit outside Whittaker's five kingdoms because they have no cell. A domain answer that forces HIV into Monera has mixed a particle with an organism.",
-    "After the genus has been written in full once, it may be abbreviated, as M. indica. The specific epithet is never written alone, and a handwritten name is underlined rather than left plain.",
-    "Bacteria, Archaea, Eukarya."
+    "\"Classification is a hypothesis of evolutionary relationship, not a filing cabinet.\"",
+    "\"Genes, not appearance, draw the deepest lines in life's tree.\""
   ],
   "examNotes": [
-    "Character, example, then the trap.",
-    "A table beats a vague paragraph."
+    "Most-tested: five-kingdom classification (2022, 2024), binomial nomenclature (2021).",
+    "Diagram-worthy: five-kingdom tree diagram showing Monera at the base and nutrition-based splitting of the eukaryotic kingdoms."
   ],
   "examShortTricks": [
-    "Viruses sit outside Whittaker's five kingdoms because they have no cell. A domain answer that forces HIV into",
-    "After the genus has been written in full once, it may be abbreviated, as M. indica. The specific epithet is ne"
+    "\"KPCOFGS\" — Kings Play Chess On Fine Gold Sets (hierarchy order).",
+    "\"BAE\" — Bacteria, Archaea, Eukarya (three domains).",
+    "\"Fungi: chitin + absorption\" — the two-word answer that separates fungi from plants."
   ],
   "specialNotes": [
-    "Match the organism to the character.",
-    "A product does not move an organism into another kingdom."
+    "Binomial nomenclature is a guaranteed 2-mark item somewhere in the paper — capitalisation, italics and the author abbreviation are what examiners check."
   ],
   "importantNotes": [
-    "Order in a sequence is part of the answer.",
-    "Do not call a timberline a snowline."
+    "\"Classify the five kingdoms\" appeared in BOTH 2022 and 2024 papers (5 marks each) — this is the highest-frequency long question of the unit; practise the full award structure."
   ],
   "importantConcepts": [
-    "Character",
-    "Example",
-    "Contrast",
-    "Use"
+    "**Nutrition as the kingdom separator** — photosynthesis → Plantae; absorption → Fungi; ingestion → Animalia; mixed → Protista.",
+    "**Molecular data outrank appearance** — Archaea look bacterial but rRNA proves a separate domain."
   ],
   "importantTasks": [
     "Write the table.",
@@ -136,44 +209,114 @@
   ],
   "mcs": [
     {
-      "question": "The epithet of Mangifera indica is",
+      "question": "Who is called the Father of Taxonomy?",
       "options": [
-        "Mangifera",
-        "indica",
-        "Plantae",
-        "Eukarya"
+        "Ernst Haeckel",
+        "Carolus Linnaeus",
+        "Robert Whittaker",
+        "Carl Woese"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Linnaeus introduced binomial nomenclature in Species Plantarum (1753) and founded modern taxonomy."
     },
     {
-      "question": "Archaea are",
+      "question": "In Mangifera indica, 'indica' is the:",
       "options": [
-        "Prokaryotic",
-        "Always multicellular animals",
-        "Viruses",
-        "Ferns"
+        "Generic name",
+        "Specific epithet",
+        "Author name",
+        "Family name"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The first word (capitalised) is the genus; the second word (lowercase) is the specific epithet; together they form the binomial."
     },
     {
-      "question": "HIV belongs",
+      "question": "Which kingdom contains prokaryotic organisms?",
       "options": [
-        "Outside the five kingdoms",
-        "In Plantae",
-        "In Bryophyta",
-        "In a seed"
+        "Protista",
+        "Monera",
+        "Fungi",
+        "Plantae"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Monera holds all prokaryotes — bacteria, cyanobacteria, mycoplasma; Protista are unicellular eukaryotes."
     },
     {
-      "question": "A handwritten binomial is",
+      "question": "The five-kingdom system was proposed in:",
       "options": [
-        "Underlined",
-        "Written as one capital word",
-        "A kingdom only",
-        "Left as the epithet"
+        "1753",
+        "1866",
+        "1969",
+        "1990"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "Robert Whittaker proposed it in 1969; 1753 = Species Plantarum; 1866 = Haeckel's three kingdoms; 1990 = Woese's domains."
+    },
+    {
+      "question": "Which criterion did Whittaker NOT use?",
+      "options": [
+        "Cell structure",
+        "Mode of nutrition",
+        "Body organisation",
+        "rRNA sequences"
+      ],
+      "answer": "D",
+      "explanation": "Whittaker used morphology-era criteria (structure, organisation, nutrition); rRNA sequencing is the basis of Woese's three domains."
+    },
+    {
+      "question": "Archaea differ from Bacteria in having:",
+      "options": [
+        "A true nucleus",
+        "No peptidoglycan in the wall",
+        "80S ribosomes",
+        "Linear chromosomes"
+      ],
+      "answer": "B",
+      "explanation": "Archaea are prokaryotes with ether-linked membrane lipids and walls without peptidoglycan; they share prokaryotic cell organisation with Bacteria."
+    },
+    {
+      "question": "Fungi store food as:",
+      "options": [
+        "Starch",
+        "Glycogen",
+        "Cellulose",
+        "Sucrose"
+      ],
+      "answer": "B",
+      "explanation": "Fungi store glycogen (like animals), another reason they were separated from plants, which store starch."
+    },
+    {
+      "question": "Which organism is a boundary case that strains the five-kingdom system?",
+      "options": [
+        "Mango",
+        "Euglena",
+        "Earthworm",
+        "Mucor"
+      ],
+      "answer": "B",
+      "explanation": "Euglena photosynthesises (plant-like) but also ingests food and lacks a cell wall (animal-like) — a classic mixed Protista member."
+    },
+    {
+      "question": "The correct ascending hierarchy is:",
+      "options": [
+        "Species → Genus → Family → Order → Class → Division → Kingdom",
+        "Genus → Species → Family → Order → Class → Kingdom",
+        "Species → Family → Genus → Order → Class → Division → Kingdom",
+        "Kingdom → Division → Class → Order → Species → Family → Genus"
+      ],
+      "answer": "A",
+      "explanation": "Species is the smallest rank; each step up groups more organisms with fewer shared features."
+    },
+    {
+      "question": "Bacteria and cyanobacteria are grouped together because both:",
+      "options": [
+        "Photosynthesise",
+        "Are prokaryotic",
+        "Have chitin walls",
+        "Are multicellular"
+      ],
+      "answer": "B",
+      "explanation": "Both are prokaryotes (Monera/Bacteria); only cyanobacteria photosynthesise — the shared defining feature is cell type."
     }
   ],
   "exercises": [
@@ -196,12 +339,192 @@
       "desc": "Domains sit above kingdoms. A binomial is two words, not one."
     },
     "notes": [
-      "**Binomial nomenclature.** Carolus Linnaeus gave the two-word naming system: the first word is the capitalised genus and the second the lowercase species, italicised or underlined — for example, Homo sapiens.",
-      "**Five-kingdom classification.** R.H. Whittaker grouped life into Monera, Protista, Fungi, Plantae and Animalia using cell structure, thallus organisation, nutrition and reproduction as criteria.",
-      "**Three domains.** Carl Woese's rRNA studies split living organisms into Archaea, Bacteria and Eukarya; Monera falls in the prokaryotic domains while the other kingdoms lie in Eukarya.",
-      "**Kingdom criteria.** Prokaryotic cell structure places an organism in Monera, eukaryotic unicellular forms in Protista, absorptive heterotrophs in Fungi, and photosynthetic or ingestive eukaryotes in Plantae and Animalia.",
-      "**Taxonomic hierarchy.** Every organism is placed in a sequence of categories — Kingdom, Phylum, Class, Order, Family, Genus, Species — with species as the basic unit of classification.",
-      "Viruses sit outside Whittaker's five kingdoms because they have no cell. A domain answer that forces HIV into Monera has mixed a particle with an organism."
+      "## 1. Topic Introduction — Why Classification Is the First Question of Biology\n\nBiology names and organises life before it explains it. With an estimated 8–9 million species on Earth (about 1.8 million described so far), no science is possible without a **system of naming** and a **system of grouping**. This topic gives you both:\n\n- **How life is organised at the highest level** — the three domains (Bacteria, Archaea, Eukarya) and the five kingdoms (Monera, Protista, Fungi, Plantae, Animalia).\n- **How every organism gets its unique scientific name** — binomial nomenclature.\n\n- **Why it matters:** every later topic in this unit (fungi, algae, bryophytes, angiosperms) assumes you can place the organism in its kingdom and write its name correctly.\n- **Connection back:** Topic 2's prokaryote/eukaryote split is exactly the line that separates Monera from every other kingdom.",
+      "## 2. Fundamental Conceptual Understanding — What Classification Is\n\n### 2.1 Definition and purpose\n\n**Classification (taxonomy)** is the arrangement of organisms into groups (taxa) on the basis of their similarities, differences and evolutionary relationships.\n\n| Purpose | Explanation |\n|---|---|\n| Identification | Puts a name on an organism so everyone means the same thing |\n| Organisation | Millions of species become a searchable hierarchy |\n| Reveals relationships | Similar species share ancestry and features |\n| Predicts properties | A newly found mushroom in genus *Amanita* warns of possible poison |\n| Universal communication | Latin names work across every language |\n\n### 2.2 The basis of classification has evolved with knowledge\n\n| Era | Basis | Result |\n|---|---|---|\n| Ancient | Utility (edible, medicinal) and habitat | Folk classifications |\n| Linnaeus (1735) | Morphology (visible form) | Two kingdoms; sexual system for plants |\n| Haeckel (1866) | Added unicellular organisms | Three kingdoms |\n| Copeland (1956) | Added microbes properly | Four kingdoms |\n| **Whittaker (1969)** | **Cell structure, body organisation, nutrition** | **Five kingdoms** — the syllabus standard |\n| Woese (1990) | **rRNA gene sequences** | **Three domains** — the modern super-kingdom level |\n\n**The deep principle:** as instruments improved (microscope → electron microscope → DNA sequencing), classification moved from *what organisms look like* to *what organisms are made of* to *what organisms' genes say*.\n\n### 2.3 Taxonomic hierarchy — the ladder of ranks\n\nKingdom → Division/Phylum → Class → Order → Family → Genus → Species. (Memory aid: \"**K**ings **P**lay **C**hess **O**n **F**ine **G**old **S**ets.\") Each rank down is more specific; the **species** is the basic unit — a naturally interbreeding population reproductively isolated from others.",
+      "## 3. Binomial Nomenclature — The Naming System\n\n### 3.1 What it is\n\n**Binomial nomenclature** is the two-word scientific naming system in which every organism receives a name of **Genus + specific epithet**, e.g. *Mangifera indica* (mango), *Homo sapiens* (human). It was introduced by **Carolus Linnaeus** in his work *Species Plantarum* (1753) — he is called the **Father of Taxonomy**.\n\n### 3.2 The rules (examiners check these exactly)\n\n1. Each organism has only one valid scientific name, in **Latin or Latinised form**.\n2. The **first word = Genus** (capitalised); the **second word = specific epithet** (lowercase).\n3. Both words are written in **italics** when printed (or underlined separately when handwritten).\n4. The name is often followed by the **abbreviated name of the author** who first described it — *Mangifera indica* Linn.\n5. Names must be unique — no two species may share the same binomial.\n6. The specific epithet alone means nothing — \"indica\" appears in many genera.\n\n**Why not common names?** Common names vary by language and region (the same plant may have a dozen Nepali names), and one common name may cover several species. *Mangifera indica* means exactly one organism, everywhere on Earth, forever.\n\n### 3.3 Key scientists of taxonomy\n\n| Scientist | Contribution |\n|---|---|\n| Carolus Linnaeus (1707–78) | Binomial nomenclature; *Species Plantarum* (1753); two-kingdom system |\n| Ernst Haeckel (1866) | Third kingdom (Protista) |\n| Robert Whittaker (1969) | Five-kingdom system |\n| Carl Woese (1990) | Three-domain system based on 16S/18S rRNA |",
+      "## 4. The Three-Domain System (Woese, 1990)\n\nBased on **differences in ribosomal RNA (16S/18S rRNA) sequences**, Woese split all life into three domains — a level *above* kingdom:\n\n| Domain | Members | Cell type | Defining features |\n|---|---|---|---|\n| **Bacteria** (Eubacteria) | True bacteria, cyanobacteria | Prokaryote | Peptidoglycan cell walls; membrane lipids with ester-linked fatty acids; sensitive to common antibiotics |\n| **Archaea** (Archaebacteria) | Methanogens, halophiles, thermoacidophiles | Prokaryote | **No peptidoglycan**; ether-linked branched membrane lipids; live in extreme habitats (hot springs, salt lakes, anaerobic guts); antibiotic-resistant |\n| **Eukarya** | Protists, fungi, plants, animals | Eukaryote | True nucleus, membrane-bound organelles, histone-bound linear chromosomes |\n\n**Conceptual point:** Archaea look like bacteria under a microscope but their molecular machinery (rRNA, membrane lipids, RNA polymerase) is as different from Bacteria as both are from Eukarya — which is why genes, not appearance, decide the deepest splits.\n\n### 4.1 Three domains vs five kingdoms — how they relate\n\n| Five kingdoms (Whittaker) | Three domains (Woese) |\n|---|---|\n| Monera | Split into **Bacteria** and **Archaea** |\n| Protista, Fungi, Plantae, Animalia | Together = **Eukarya** |",
+      "## 5. The Five-Kingdom System (R. H. Whittaker, 1969)\n\n### 5.1 The three criteria Whittaker used\n\n1. **Cell structure** — prokaryotic or eukaryotic.\n2. **Level of body organisation** — unicellular or multicellular; tissue/organ level.\n3. **Mode of nutrition** — autotrophic (photosynthesis), absorptive (absorb dissolved food), or ingestive (eat other organisms).\n\nNutrition is the decisive separator of the four eukaryotic kingdoms: photosynthesis → Plantae, absorption → Fungi, ingestion → Animalia, mixed modes → Protista.\n\n### 5.2 The five kingdoms at a glance\n\n| Kingdom | Cell type | Organisation | Nutrition | Key members |\n|---|---|---|---|---|\n| **Monera** | Prokaryotic | Unicellular, no organelles | Autotrophic or heterotrophic | Bacteria, cyanobacteria, mycoplasma |\n| **Protista** | Eukaryotic | Mostly unicellular | Autotrophic (algae-like) or heterotrophic (protozoa) | Amoeba, Paramecium, Plasmodium, Euglena, diatoms |\n| **Fungi** | Eukaryotic | Multicellular (except yeasts), filamentous mycelium of hyphae | **Absorptive heterotrophs** — external digestion; cell wall of chitin | Mucor, yeast, mushroom, rusts |\n| **Plantae** | Eukaryotic | Multicellular, tissue/organ level | **Autotrophic** (photosynthesis); cellulose wall | Algae, bryophytes, ferns, gymnosperms, angiosperms |\n| **Animalia** | Eukaryotic | Multicellular, tissue→organ→organ-system | **Ingestive heterotrophs**; no cell wall | Sponges to mammals |\n\n### 5.3 Merits of the five-kingdom system\n\n1. Separated prokaryotes (Monera) from all eukaryotes — the single most fundamental biological divide.\n2. Moved fungi out of plants — their chitin wall, absorptive nutrition and glycogen reserve make them unlike plants.\n3. Created a separate Protista for simple eukaryotes that fit nowhere else.\n4. Used phylogenetic (evolutionary) direction: Monera → Protista → Fungi/Plantae/Animalia.\n5. Cell structure and nutrition are objective, measurable criteria.\n\n### 5.4 Demerits\n\n1. Monera and Protista are still \"dumping-ground\" kingdoms of unrelated groups.\n2. Some organisms straddle boundaries — *Euglena* (photosynthesises but ingests too), slime moulds, viruses (excluded entirely).\n3. Does not use molecular (rRNA) data — superseded at the top level by the three-domain system.\n4. Algae are split between Protista and Plantae, which is awkward.\n\n### 5.5 Comparison: two-kingdom vs five-kingdom\n\n| Basis | Two-kingdom (Linnaeus) | Five-kingdom (Whittaker) |\n|---|---|---|\n| Basis | Morphology only | Cell structure + organisation + nutrition |\n| Fungi | Placed in Plantae | Separate kingdom (chitin wall, absorption) |\n| Bacteria | Placed in Plantae | Separate prokaryotic kingdom (Monera) |\n| Unicellular eukaryotes | Forced into plants or animals | Kingdom Protista |\n| Evolutionary basis | None | Phylogenetic |\n| Still used? | Historically | Syllabus standard (with domains above it) |",
+      "## 6. Conceptual Relationships\n\n- **Topic 2 → here:** the prokaryote/eukaryote split is the first cut of every classification.\n- **Here → Topics 6–10:** fungi, algae, bryophytes, pteridophytes, gymnosperms are the Plantae/Fungi kingdoms in detail; Topic 15–17 cover angiosperms.\n- **Here → faunal diversity (Unit 8):** Protista and Animalia are expanded there (Paramecium, Plasmodium, phyla).\n- **Here → microbiology (Unit 3):** Monera (bacteria, cyanobacteria) and viruses in detail.\n- **Here → evolution (Unit 7):** classification is a hypothesis of evolutionary history; rRNA-based domains are molecular evolution applied.",
+      "## 7. Exam Orientation and Previous Year Questions (NEB)\n\n### 7.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Floral Diversity | Binomial nomenclature | Name the scientist who introduced binomial nomenclature. Write the scientific name of mango correctly. | 2 | Very short |\n| 2078/2022 | Floral Diversity | Five kingdoms | Classify the five kingdoms of living organisms. Give one characteristic feature of each. | 5 | Long/classification |\n| 2080/2024 | Floral Diversity | Five kingdoms | Classify the five kingdoms of living organisms. Give one characteristic feature of each. | 5 | Long/classification (repeated) |\n\n### 7.2 Model answers\n\n**Q1 (2m) — Binomial nomenclature.**\nAnswer: **Carolus Linnaeus** introduced binomial nomenclature (in *Species Plantarum*, 1753). The scientific name of mango is ***Mangifera indica*** Linn. — written in italics with the generic name capitalised and the specific epithet in lowercase.\n\n**Q2/Q3 (5m) — Classify the five kingdoms with one feature each.**\nAnswer: R. H. Whittaker (1969) proposed the five-kingdom system on the basis of cell structure, body organisation and mode of nutrition.\n1. **Monera** — prokaryotic, unicellular, no membrane-bound organelles; e.g. bacteria, cyanobacteria.\n2. **Protista** — eukaryotic, mostly unicellular; autotrophic or heterotrophic; e.g. Amoeba, Euglena.\n3. **Fungi** — eukaryotic, multicellular mycelium of hyphae with chitin walls; absorptive heterotrophs; e.g. Mucor, mushroom.\n4. **Plantae** — eukaryotic, multicellular; autotrophic by photosynthesis; cellulose walls; e.g. mosses, ferns, mango.\n5. **Animalia** — eukaryotic, multicellular, no cell wall; ingestive heterotrophs; e.g. earthworm, frog, human.\n*(Award structure: proposer + criteria + five kingdoms each with one clear feature + example.)*\n\n### 7.3 Common examination mistakes\n\n1. Writing the scientific name without italics/capitalisation — *Mangifera indica*, never \"mangifera Indica\".\n2. Giving \"cell wall\" as the plant/fungi separator — fungi also have walls; the separator is **nutrition** (absorptive) and **wall chemistry** (chitin, not cellulose).\n3. Listing four criteria of Whittaker or inventing a sixth kingdom — stick to his three criteria.\n4. Placing cyanobacteria in Protista — they are **Monera** (prokaryotes).\n5. Forgetting that the three-domain system sits **above** the five kingdoms, not instead of the syllabus version."
+    ],
+    "confusion": [
+      "**Domain vs kingdom:** domains are a newer, higher rank above kingdoms; the five kingdoms are still taught, but Monera is split into Bacteria and Archaea at the domain level.",
+      "**Fungi are not plants:** chitin (not cellulose) walls, absorptive (not photosynthetic) nutrition, glycogen (not starch) reserve — Whittaker's main correction to the two-kingdom system.",
+      "**Cyanobacteria are Monera, not algae:** \"blue-green algae\" is a historical name; they are prokaryotic photosynthesizers, so they belong to Bacteria, not Protista or Plantae.",
+      "**Species epithet alone is not a name:** \"indica\" names nothing by itself; only the full binomial (*Mangifera indica*) identifies a species.",
+      "**Protista vs Monera:** both mostly unicellular, but Protista are eukaryotic (true nucleus, organelles) while Monera are prokaryotic."
+    ],
+    "keyPoints": [
+      "Classification = arranging organisms into taxa by similarities and evolutionary relationships; purposes: identification, organisation, relationship, prediction, universal naming.",
+      "Basis evolved: morphology (Linnaeus) → cell structure/nutrition (Whittaker) → rRNA genes (Woese).",
+      "Hierarchy: Kingdom → Division/Phylum → Class → Order → Family → Genus → Species (\"KPCOFGS\"); species = basic unit.",
+      "Binomial nomenclature — Linnaeus, *Species Plantarum* 1753: Genus (capital) + specific epithet (lower), italicised/underlined, Latin, unique, with author abbreviation.",
+      "Three domains (Woese 1990, rRNA-based): Bacteria (peptidoglycan), Archaea (no peptidoglycan, extremophiles), Eukarya (true nucleus).",
+      "Five kingdoms (Whittaker 1969) on cell structure + organisation + nutrition: Monera (prokaryote), Protista (unicellular eukaryote), Fungi (absorptive, chitin), Plantae (photosynthetic), Animalia (ingestive).",
+      "Merits: separated prokaryotes, removed fungi from plants, phylogenetic direction; demerits: Protista/Monera are mixed groups, boundary organisms (Euglena, viruses) awkward."
+    ],
+    "importantConcepts": [
+      "**Nutrition as the kingdom separator** — photosynthesis → Plantae; absorption → Fungi; ingestion → Animalia; mixed → Protista.",
+      "**Molecular data outrank appearance** — Archaea look bacterial but rRNA proves a separate domain."
+    ],
+    "examples": [
+      "***Mangifera indica*** — mango; Plantae; the standard binomial example (Linn.).",
+      "***Homo sapiens*** — human; Animalia; binomial with lowercase epithet.",
+      "***Euglena*** — Protista; boundary organism: chloroplasts AND ingestion — shows why Protista is a mixed kingdom.",
+      "***Methanococcus*** — Archaea; produces methane in anaerobic habitats (cow rumen, marshes)."
+    ],
+    "universalFacts": [
+      "Linnaeus = Father of Taxonomy; *Species Plantarum* (1753) is the starting point of botanical nomenclature.",
+      "About 1.8 million species described; estimates of total species run to 8–9 million.",
+      "Whittaker's system: 1969; Woese's three domains: 1990 (16S rRNA)."
+    ],
+    "importantStatements": [
+      "\"Classification is a hypothesis of evolutionary relationship, not a filing cabinet.\"",
+      "\"Genes, not appearance, draw the deepest lines in life's tree.\""
+    ],
+    "importantNotes": [
+      "\"Classify the five kingdoms\" appeared in BOTH 2022 and 2024 papers (5 marks each) — this is the highest-frequency long question of the unit; practise the full award structure."
+    ],
+    "specialNotes": [
+      "Binomial nomenclature is a guaranteed 2-mark item somewhere in the paper — capitalisation, italics and the author abbreviation are what examiners check."
+    ],
+    "examShortTricks": [
+      "\"KPCOFGS\" — Kings Play Chess On Fine Gold Sets (hierarchy order).",
+      "\"BAE\" — Bacteria, Archaea, Eukarya (three domains).",
+      "\"Fungi: chitin + absorption\" — the two-word answer that separates fungi from plants."
+    ],
+    "examNotes": [
+      "Most-tested: five-kingdom classification (2022, 2024), binomial nomenclature (2021).",
+      "Diagram-worthy: five-kingdom tree diagram showing Monera at the base and nutrition-based splitting of the eukaryotic kingdoms."
+    ],
+    "practice": [
+      "Why did Whittaker need three criteria while Linnaeus needed only one?",
+      "Why is *Euglena* a problem for the five-kingdom system?",
+      "A newly discovered microbe lives in boiling acid, has no peptidoglycan and ether-linked membrane lipids. Where does it go — and why not in Bacteria?"
+    ],
+    "practiceQuestions": [
+      "**Short answer (2m): What is binomial nomenclature? Who introduced it?** — The two-word scientific naming system (Genus + specific epithet, italicised, Latin) giving every species one universal name; introduced by Carolus Linnaeus in *Species Plantarum* (1753).",
+      "**Short answer (2m): Write the scientific name of mango and human with the rules obeyed.** — *Mangifera indica* Linn.; *Homo sapiens* Linn. — generic name capitalised, specific epithet lowercase, both italicised (underlined when handwritten), author abbreviated after the name.",
+      "**Short answer (2m): On what three criteria is the five-kingdom system based?** — (1) Cell structure (prokaryotic/eukaryotic), (2) level of body organisation (unicellular/multicellular), (3) mode of nutrition (autotrophic/absorptive/ingestive).",
+      "**Short answer (2m): Why were fungi removed from Plantae?** — Fungi have chitin walls (not cellulose), absorb dissolved food after external digestion (they do not photosynthesise) and store glycogen — three plant-unlike features.",
+      "**Long answer (5m): Describe the five-kingdom classification with merits and demerits.** — Proposer + criteria; the five kingdoms each with cell type, organisation, nutrition and examples; merits (prokaryote separation, fungi removed, phylogenetic, objective criteria); demerits (mixed Monera/Protista, boundary organisms, no molecular data).",
+      "**Long answer (5m): Explain the three-domain system and its relationship to the five-kingdom system.** — Woese (1990), 16S/18S rRNA; Bacteria (peptidoglycan, ester-linked lipids), Archaea (no peptidoglycan, ether-linked lipids, extremophiles), Eukarya (nucleus, organelles); relationship: Monera splits into Bacteria + Archaea; the four eukaryotic kingdoms sit inside Eukarya.",
+      "**Conceptual (3m): Why is the species called the basic unit of classification?** — It is the only rank that corresponds to a real biological entity: a naturally interbreeding, reproductively isolated population sharing a gene pool. Higher ranks are groupings of convenience; species is where evolution actually happens.",
+      "**Conceptual (3m): Why do scientific names remain stable while common names do not?** — Binomials are governed by international codes (ICZN/ICBN), are Latin (language-neutral), unique and tied to a type specimen; common names shift by language, region and can apply to several species.",
+      "**Application (2m): A farmer reports a new crop disease organism that has no nucleus and no peptidoglycan but lives in a hot spring. Predict its domain and one property.** — Domain Archaea (prokaryote without peptidoglycan, extreme habitat); property: likely thermophilic, antibiotic-resistant, ether-linked membrane lipids."
+    ],
+    "summary": "Classification organises millions of species into a hierarchy (KPCOFGS) whose basic unit is the species. Linnaeus gave biology its naming system — binomial nomenclature (Genus + specific epithet, italicised, e.g. *Mangifera indica*) — and its first two-kingdom scheme. Whittaker (1969) rebuilt classification on cell structure, body organisation and nutrition into five kingdoms: prokaryotic Monera, unicellular eukaryotic Protista, absorptive chitin-walled Fungi, photosynthetic Plantae and ingestive Animalia. Woese (1990), reading rRNA genes, raised the deepest split to three domains — Bacteria, Archaea (no peptidoglycan, extremophiles) and Eukarya — with Monera split between the first two. Classification has therefore moved from appearance to chemistry to genes, and every later topic in this unit depends on placing organisms correctly in these kingdoms.",
+    "mcs": [
+      {
+        "question": "Who is called the Father of Taxonomy?",
+        "options": [
+          "Ernst Haeckel",
+          "Carolus Linnaeus",
+          "Robert Whittaker",
+          "Carl Woese"
+        ],
+        "answer": "B",
+        "explanation": "Linnaeus introduced binomial nomenclature in Species Plantarum (1753) and founded modern taxonomy."
+      },
+      {
+        "question": "In Mangifera indica, 'indica' is the:",
+        "options": [
+          "Generic name",
+          "Specific epithet",
+          "Author name",
+          "Family name"
+        ],
+        "answer": "B",
+        "explanation": "The first word (capitalised) is the genus; the second word (lowercase) is the specific epithet; together they form the binomial."
+      },
+      {
+        "question": "Which kingdom contains prokaryotic organisms?",
+        "options": [
+          "Protista",
+          "Monera",
+          "Fungi",
+          "Plantae"
+        ],
+        "answer": "B",
+        "explanation": "Monera holds all prokaryotes — bacteria, cyanobacteria, mycoplasma; Protista are unicellular eukaryotes."
+      },
+      {
+        "question": "The five-kingdom system was proposed in:",
+        "options": [
+          "1753",
+          "1866",
+          "1969",
+          "1990"
+        ],
+        "answer": "C",
+        "explanation": "Robert Whittaker proposed it in 1969; 1753 = Species Plantarum; 1866 = Haeckel's three kingdoms; 1990 = Woese's domains."
+      },
+      {
+        "question": "Which criterion did Whittaker NOT use?",
+        "options": [
+          "Cell structure",
+          "Mode of nutrition",
+          "Body organisation",
+          "rRNA sequences"
+        ],
+        "answer": "D",
+        "explanation": "Whittaker used morphology-era criteria (structure, organisation, nutrition); rRNA sequencing is the basis of Woese's three domains."
+      },
+      {
+        "question": "Archaea differ from Bacteria in having:",
+        "options": [
+          "A true nucleus",
+          "No peptidoglycan in the wall",
+          "80S ribosomes",
+          "Linear chromosomes"
+        ],
+        "answer": "B",
+        "explanation": "Archaea are prokaryotes with ether-linked membrane lipids and walls without peptidoglycan; they share prokaryotic cell organisation with Bacteria."
+      },
+      {
+        "question": "Fungi store food as:",
+        "options": [
+          "Starch",
+          "Glycogen",
+          "Cellulose",
+          "Sucrose"
+        ],
+        "answer": "B",
+        "explanation": "Fungi store glycogen (like animals), another reason they were separated from plants, which store starch."
+      },
+      {
+        "question": "Which organism is a boundary case that strains the five-kingdom system?",
+        "options": [
+          "Mango",
+          "Euglena",
+          "Earthworm",
+          "Mucor"
+        ],
+        "answer": "B",
+        "explanation": "Euglena photosynthesises (plant-like) but also ingests food and lacks a cell wall (animal-like) — a classic mixed Protista member."
+      },
+      {
+        "question": "The correct ascending hierarchy is:",
+        "options": [
+          "Species → Genus → Family → Order → Class → Division → Kingdom",
+          "Genus → Species → Family → Order → Class → Kingdom",
+          "Species → Family → Genus → Order → Class → Division → Kingdom",
+          "Kingdom → Division → Class → Order → Species → Family → Genus"
+        ],
+        "answer": "A",
+        "explanation": "Species is the smallest rank; each step up groups more organisms with fewer shared features."
+      },
+      {
+        "question": "Bacteria and cyanobacteria are grouped together because both:",
+        "options": [
+          "Photosynthesise",
+          "Are prokaryotic",
+          "Have chitin walls",
+          "Are multicellular"
+        ],
+        "answer": "B",
+        "explanation": "Both are prokaryotes (Monera/Bacteria); only cyanobacteria photosynthesise — the shared defining feature is cell type."
+      }
     ]
   }
 }
