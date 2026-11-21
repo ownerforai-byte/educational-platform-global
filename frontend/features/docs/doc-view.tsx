@@ -37,6 +37,7 @@ import {
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { parseNotes, readingMinutes, type DocSegment } from "./doc-parser";
 import { getTopicFigures, type TopicFigure } from "./figures/registry";
+import { ZoomableFigure } from "./figures/zoomable-figure";
 import { buildDocConceptMap, type RawMindmap } from "./doc-mindmap";
 import { DocMindMap } from "./doc-mindmap-view";
 
@@ -93,15 +94,9 @@ function keywordAnchor(figures: TopicFigure[], notes: string[]): Map<number, Top
 }
 
 function FigureBlock({ figure }: { figure: TopicFigure }) {
-  const F = figure.Component;
-  return (
-    <figure className="my-5 overflow-hidden rounded-2xl border border-border/70 bg-card p-4 print:border-gray-300">
-      <F className="mx-auto w-full max-w-[640px] text-foreground print:text-black" />
-      <figcaption className="mt-2 border-t border-border/60 pt-2 text-xs leading-relaxed text-muted-foreground print:text-gray-700">
-        {figure.caption}
-      </figcaption>
-    </figure>
-  );
+  // Owner request 2026-11-21: diagrams must be zoomable — click opens the
+  // fullscreen lightbox where the SVG re-renders at viewport scale.
+  return <ZoomableFigure Component={figure.Component} caption={figure.caption} alt={figure.alt} />;
 }
 
 function Segment({ segment, fontClass }: { segment: DocSegment; fontClass: string }) {

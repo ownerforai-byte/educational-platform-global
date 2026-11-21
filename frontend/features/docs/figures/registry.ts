@@ -31,6 +31,11 @@ import { BacteriophageStructure } from "./bacteriophage-structure";
 import { NitrogenCycle } from "./nitrogen-cycle";
 import { EarthwormDigestive } from "./earthworm-digestive";
 import { FrogHeartCirculation } from "./frog-heart-circulation";
+import { PlasmaMembraneFluidMosaic } from "./plasma-membrane-fluid-mosaic";
+import { MitochondrionCutaway } from "./mitochondrion-cutaway";
+import { ChloroplastCutaway } from "./chloroplast-cutaway";
+import { NucleusStructure } from "./nucleus-structure";
+import { GolgiSecretoryPathway } from "./golgi-secretory-pathway";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -219,6 +224,41 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Animal cell (left) and plant cell (right). Shared organelles — nucleus, mitochondria, ER, Golgi, ribosomes — plus the plant-only set: cell wall, chloroplasts and the large central vacuole.",
         alt: "Labelled animal and plant cell diagrams showing nucleus, mitochondria, ER, Golgi, ribosomes, lysosome, chloroplast, vacuole and cell wall",
         keyword: "mitochondria",
+      },
+      {
+        Component: PlasmaMembraneFluidMosaic,
+        caption:
+          "Zooming into the plasma membrane: a fluid mosaic of phospholipids — hydrophilic heads out, hydrophobic tails in — studded with integral and peripheral proteins, channel proteins, glycoproteins and cholesterol that tune fluidity.",
+        alt: "Fluid mosaic model of the plasma membrane with phospholipid bilayer, proteins, glycoprotein chains and cholesterol",
+        keyword: "plasma membrane",
+      },
+      {
+        Component: NucleusStructure,
+        caption:
+          "Zooming into the nucleus: a double envelope (continuous with rough ER) pierced by pores that export mRNA and import enzymes, the dense nucleolus making rRNA, and chromatin — DNA wound on histones — suspended in nucleoplasm.",
+        alt: "Nucleus with double nuclear envelope, pores, nucleolus, chromatin threads and nucleoplasm",
+        keyword: "nucleus",
+      },
+      {
+        Component: MitochondrionCutaway,
+        caption:
+          "Zooming into a mitochondrion: the inner membrane folds into cristae carrying the electron-transport chain, while the matrix holds Krebs-cycle enzymes, its own circular DNA and 70S ribosomes — a semi-autonomous endosymbiont.",
+        alt: "Mitochondrion cutaway with outer membrane, cristae, matrix, circular DNA and ribosomes",
+        keyword: "mitochondria",
+      },
+      {
+        Component: ChloroplastCutaway,
+        caption:
+          "Zooming into a chloroplast: grana stacks of thylakoid membranes run the light reaction (chlorophyll), while the surrounding stroma fixes CO₂ into sugar in the Calvin cycle — also with its own DNA and ribosomes.",
+        alt: "Chloroplast cutaway with double membrane, grana stacks, stroma lamellae, circular DNA and ribosomes",
+        keyword: "chloroplast",
+      },
+      {
+        Component: GolgiSecretoryPathway,
+        caption:
+          "Zooming into the endomembrane assembly line: rough ER synthesises proteins, transport vesicles carry them to the Golgi (cis → trans) for modification and addressing, then secretory vesicles ship them out or lysosomes digest with them.",
+        alt: "Secretory pathway from rough ER through transport vesicles and Golgi cisternae to secretory vesicles and lysosome",
+        keyword: "Golgi",
       },
     ],
   },
