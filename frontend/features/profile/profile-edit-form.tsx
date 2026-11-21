@@ -29,25 +29,30 @@ import { isCreatorAuthor } from "@/lib/owner";
 
 type Visibility = "public" | "members" | "private";
 
-const emptyExtras: ProfileExtras = {
-  occupation: "",
-  education: "",
-  skills: "",
-  interests: "",
-  portfolio: "",
-  intro: "",
-};
+const EXTRA_KEYS = [
+  "occupation",
+  "education",
+  "skills",
+  "interests",
+  "portfolio",
+  "intro",
+  "github",
+  "twitter",
+  "linkedin",
+  "instagram",
+  "youtube",
+] as const;
+
+const emptyExtras: ProfileExtras = Object.fromEntries(EXTRA_KEYS.map((key) => [key, ""])) as ProfileExtras;
 
 function extrasFrom(profile: PublicProfile | null): ProfileExtras {
   const raw = profile?.extras ?? {};
-  return {
-    occupation: typeof raw.occupation === "string" ? raw.occupation : "",
-    education: typeof raw.education === "string" ? raw.education : "",
-    skills: typeof raw.skills === "string" ? raw.skills : "",
-    interests: typeof raw.interests === "string" ? raw.interests : "",
-    portfolio: typeof raw.portfolio === "string" ? raw.portfolio : "",
-    intro: typeof raw.intro === "string" ? raw.intro : "",
-  };
+  const next = { ...emptyExtras };
+  for (const key of EXTRA_KEYS) {
+    const value = raw[key];
+    next[key] = typeof value === "string" ? value : "";
+  }
+  return next;
 }
 
 export function ProfileEditForm() {
@@ -231,38 +236,65 @@ export function ProfileEditForm() {
               <Field label="Occupation" id="occupation">
                 <Input
                   id="occupation"
-                  value={form.extras.occupation}
+                  value={form.extras.occupation ?? ""}
                   onChange={(e) => setForm((f) => ({ ...f, extras: { ...f.extras, occupation: e.target.value } }))}
                 />
               </Field>
               <Field label="Education" id="education">
                 <Input
                   id="education"
-                  value={form.extras.education}
+                  value={form.extras.education ?? ""}
                   onChange={(e) => setForm((f) => ({ ...f, extras: { ...f.extras, education: e.target.value } }))}
                 />
               </Field>
               <Field label="Skills" id="skills">
                 <Input
                   id="skills"
-                  value={form.extras.skills}
+                  value={form.extras.skills ?? ""}
                   onChange={(e) => setForm((f) => ({ ...f, extras: { ...f.extras, skills: e.target.value } }))}
                 />
               </Field>
               <Field label="Interests" id="interests">
                 <Input
                   id="interests"
-                  value={form.extras.interests}
+                  value={form.extras.interests ?? ""}
                   onChange={(e) => setForm((f) => ({ ...f, extras: { ...f.extras, interests: e.target.value } }))}
                 />
               </Field>
               <Field label="Portfolio" id="portfolio">
                 <Input
                   id="portfolio"
-                  value={form.extras.portfolio}
+                  value={form.extras.portfolio ?? ""}
                   onChange={(e) => setForm((f) => ({ ...f, extras: { ...f.extras, portfolio: e.target.value } }))}
                 />
               </Field>
+              <Field label="Short intro" id="intro">
+                <Textarea
+                  id="intro"
+                  value={form.extras.intro ?? ""}
+                  onChange={(e) => setForm((f) => ({ ...f, extras: { ...f.extras, intro: e.target.value } }))}
+                />
+              </Field>
+              {(
+                [
+                  ["github", "GitHub"],
+                  ["twitter", "X / Twitter"],
+                  ["linkedin", "LinkedIn"],
+                  ["instagram", "Instagram"],
+                  ["youtube", "YouTube"],
+                ] as const
+              ).map(([key, label]) => (
+                <Field key={key} label={label} id={key}>
+                  <Input
+                    id={key}
+                    placeholder="https:// or @handle"
+                    value={form.extras[key] ?? ""}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, extras: { ...f.extras, [key]: e.target.value } }))
+                    }
+                  />
+                </Field>
+              ))}
             </div>
           </details>
           <div className="flex flex-wrap gap-2">

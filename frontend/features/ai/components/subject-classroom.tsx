@@ -322,11 +322,11 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
 
       if (isLoggedIn) {
         try {
-          const saved = await saveChatHistory(targetSession, [
+          const saved = await recordAccountChatTurn(targetSession, [
             { role: "user", content },
             { role: "assistant", content: liveAcc },
           ]);
-          if (!saved.migrated || saved.saved !== 2) setError("Your answer could not be saved to history.");
+          if (!saved.ok) setError("Your answer could not be saved to history.");
           else void refreshSessions();
         } catch {
           setError("Your answer could not be saved to history.");

@@ -39,7 +39,7 @@ import { cn } from "@/lib/utils";
 const MOBILE_INLINE_CATEGORIES = 4;
 
 export interface CommunityFeedProps {
-  mode: "feed" | "saved" | "mine";
+  mode: "feed" | "saved" | "trending" | "mine";
   appliedQuery: string;
   category: string;
   filter: CommunityFeedFilter;
@@ -62,6 +62,7 @@ export interface CommunityFeedProps {
   onRevealQueuedPosts: () => void;
   onLoadMore: () => void;
   onLike: (item: FeedPost) => void;
+  onRepost?: (item: FeedPost) => void;
   onToggleSave: (postId: string) => void;
   threadPropsForPost: (postId: string) => FeedPostRowThreadProps;
   onCopyLink: (postId: string) => void;
@@ -94,6 +95,7 @@ export function CommunityFeed({
   onRevealQueuedPosts,
   onLoadMore,
   onLike,
+  onRepost,
   onToggleSave,
   threadPropsForPost,
   onCopyLink,
@@ -225,6 +227,19 @@ export function CommunityFeed({
               )}
             >
               No comments
+            </button>
+            <button
+              type="button"
+              onClick={() => onSelectFilter("following")}
+              aria-pressed={filter === "following"}
+              className={cn(
+                "min-h-9 rounded-lg px-3 text-[13px] font-medium transition-colors",
+                filter === "following"
+                  ? "bg-primary/12 font-semibold text-primary"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              Following
             </button>
           </div>
         </form>
@@ -360,6 +375,7 @@ export function CommunityFeed({
               copied={copiedId === item.id}
               aiReplyBusy={aiReplyBusyIds.has(item.id)}
               onLike={onLike}
+              onRepost={onRepost}
               onToggleSave={onToggleSave}
               onCopyLink={onCopyLink}
               onDelete={onDelete}

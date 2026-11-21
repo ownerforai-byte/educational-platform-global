@@ -9,6 +9,7 @@ import { Loader2, MessageCircle, Send } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { chat } from "@/lib/api/ai";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 import { createThread } from "@/lib/api/community";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { AiReplyCard } from "@/components/ai/ai-reply-card";
@@ -54,6 +55,12 @@ export function AskView() {
         { role: "user", content: buildAskPrompt(nextQuestion, previousSubject) },
       ]);
       setAnswer(res.response);
+      if (user) {
+        void recordAccountChatTurn("ask", [
+          { role: "user", content: nextQuestion.slice(0, 24000) },
+          { role: "assistant", content: res.response.slice(0, 24000) },
+        ]).catch(() => {});
+      }
     } catch {
       setError("The Veer tutor could not answer right now. Try again in a moment.");
     } finally {

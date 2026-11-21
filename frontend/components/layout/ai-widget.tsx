@@ -735,11 +735,11 @@ export function AIWidget() {
       paintLive(true);
       setStreamPhase(null);
       if (!finalContent.trim()) throw new Error("No lesson was received. Please try again.");
-      const saved = await saveChatHistory(session, [
+      const saved = await recordAccountChatTurn(session, [
         { role: "user", content: text },
         { role: "assistant", content: finalContent },
       ]);
-      if (!saved.migrated || saved.saved !== 2) setError("The lesson arrived, but it could not be saved to your history.");
+      if (!saved.ok) setError("The lesson arrived, but it could not be saved to your history.");
       else void refreshSessions();
       refreshAiSparkMeters();
     } catch (err) {

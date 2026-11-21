@@ -48,11 +48,11 @@ import {
   getChatHistory,
   getChatSessions,
   quadReply,
-  saveChatHistory,
   type ChatHistoryMessage,
   type ChatSession,
   type QuadLaneReply,
 } from "@/lib/api/ai";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerAccount } from "@/lib/owner";
 import {
@@ -313,7 +313,7 @@ export function QuadArena() {
 
       const answered = result.replies.filter((reply) => reply.ok);
       try {
-        await saveChatHistory(session, [
+        await recordAccountChatTurn(session, [
           { role: "user", content },
           ...answered.map((reply) => ({
             role: "assistant" as const,

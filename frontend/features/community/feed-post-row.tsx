@@ -83,6 +83,7 @@ export interface FeedPostRowProps extends FeedPostRowThreadProps {
   saved?: boolean;
   aiReplyBusy: boolean;
   onLike: (item: FeedPost) => void;
+  onRepost?: (item: FeedPost) => void;
   onToggleSave: (postId: string) => void;
   onCopyLink: (postId: string) => void;
   onDelete: (postId: string) => void;
@@ -99,6 +100,7 @@ export const FeedPostRow = memo(function FeedPostRow({
   copied,
   aiReplyBusy,
   onLike,
+  onRepost,
   onToggleSave,
   onCopyLink,
   onDelete,
@@ -299,6 +301,25 @@ export const FeedPostRow = memo(function FeedPostRow({
             <MessageCircle className="h-4 w-4 shrink-0" aria-hidden />
             <span>{item.commentCount}</span>
           </button>
+
+          {onRepost ? (
+            <button
+              type="button"
+              onClick={() => onRepost(item)}
+              aria-pressed={item.repostedByYou ?? false}
+              aria-label={item.repostedByYou ? "Undo repost" : "Repost"}
+              className={cn(
+                actionBtn,
+                "min-h-11 min-w-11 justify-center px-2.5 text-[13px] tabular-nums",
+                item.repostedByYou
+                  ? "bg-primary/10 font-semibold text-primary"
+                  : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
+              )}
+            >
+              <Share2 className="h-4 w-4 shrink-0" aria-hidden />
+              <span>{item.repostCount ?? 0}</span>
+            </button>
+          ) : null}
 
           <button
             type="button"

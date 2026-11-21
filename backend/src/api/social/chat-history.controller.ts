@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth } from "../../middleware/auth";
 import { asyncHandler } from "../../middleware/asyncHandler";
-import * as communityService from "../../services/community.service.js";
+import * as chatHistory from "../../services/chat-history.service.js";
 
 /**
  * Per-user AI chat history, mirrored to Supabase (`chat_messages`) and durably
@@ -31,7 +31,7 @@ router.get("/sessions", requireAuth, asyncHandler(async (req: Request, res: Resp
       ? req.query.prefix.replace(/[%_\\]/g, "").slice(0, 64)
       : "";
 
-  const result = await communityService.listChatSessions(user.id, prefix);
+  const result = await chatHistory.listChatSessions(user.id, prefix);
   if ("error" in result) {
     res.status(500).json({ error: result.error });
     return;
@@ -46,7 +46,7 @@ router.get("/", requireAuth, asyncHandler(async (req: Request, res: Response) =>
   const limitRaw = Number(req.query.limit);
   const limit = Number.isFinite(limitRaw) ? Math.min(Math.max(Math.trunc(limitRaw), 1), 500) : 200;
 
-  const result = await communityService.loadChatSession(user.id, session, limit);
+  const result = await chatHistory.loadChatSession(user.id, session, limit);
   if ("error" in result) {
     res.status(500).json({ error: result.error });
     return;
@@ -63,7 +63,7 @@ router.post("/", requireAuth, asyncHandler(async (req: Request, res: Response) =
   }
 
   const user = (req as Request & { user: { id: string } }).user;
-  const result = await communityService.saveChatBatch(user.id, parsed.data.session, parsed.data.messages);
+  const result = await chatHistory.saveChatBatch(user.id, parsed.data.session, parsed.data.messages);
 
   if ("error" in result) {
     if (result.log) {
@@ -85,7 +85,7 @@ router.delete("/", requireAuth, asyncHandler(async (req: Request, res: Response)
   const user = (req as Request & { user: { id: string } }).user;
   const session = typeof req.query.session === "string" ? req.query.session.slice(0, 64) : null;
 
-  const result = await communityService.clearChatHistory(user.id, session);
+  const result = await chatHistory.clearChatHistory(user.id, session);
   if ("error" in result) {
     res.status(500).json({ error: result.error });
     return;

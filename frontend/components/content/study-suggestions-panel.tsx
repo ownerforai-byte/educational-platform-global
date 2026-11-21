@@ -13,7 +13,8 @@ import {
   type SuggestionCategory,
 } from "@/lib/ai/study-suggestions";
 import { chat } from "@/lib/api";
-import { getChatHistory, saveChatHistory } from "@/lib/api/ai";
+import { getChatHistory } from "@/lib/api/ai";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 
 const HISTORY_SESSION = "study-suggestions";
 const DECK_SIZE = 6;
@@ -61,7 +62,7 @@ export function StudySuggestionsPanel() {
         ...prev,
         [text]: { answer: res.response, source: "server" },
       }));
-      void saveChatHistory(HISTORY_SESSION, [
+      void recordAccountChatTurn(HISTORY_SESSION, [
         { role: "user", content: text },
         { role: "assistant", content: res.response },
       ]).catch(() => undefined);

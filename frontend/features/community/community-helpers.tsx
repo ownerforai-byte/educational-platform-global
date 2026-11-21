@@ -17,7 +17,15 @@ export const MAX_FILES = 4;
 export const MAX_BYTES = 3 * 1024 * 1024;
 export const ACCEPT = ".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.png,.jpg,.jpeg";
 
-export type BoardView = "feed" | "new" | "post" | "edit" | "mine" | "person" | "unavailable";
+export type BoardView =
+  | "feed"
+  | "new"
+  | "post"
+  | "edit"
+  | "mine"
+  | "person"
+  | "notifications"
+  | "unavailable";
 
 export function statusOf(err: unknown): number {
   return typeof (err as { status?: number })?.status === "number" ? (err as { status: number }).status : 0;

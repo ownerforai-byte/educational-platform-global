@@ -953,6 +953,18 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         links: [{ label: "Practice history", href: "/practice/history" }],
       },
       {
+        name: "Info",
+        opening: "Your account, classified into overview, details, study, people and account.",
+        href: "/profile",
+        meta: "Account",
+        links: [
+          { label: "Details", href: "/profile/details" },
+          { label: "Study", href: "/profile/study" },
+          { label: "People", href: "/profile/people" },
+          { label: "Account", href: "/profile/account" },
+        ],
+      },
+      {
         name: "Edit profile",
         opening: "Update your public name, bio, and profile photo.",
         href: "/profile/edit",

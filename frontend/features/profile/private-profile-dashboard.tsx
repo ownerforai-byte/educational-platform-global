@@ -571,6 +571,11 @@ export interface PrivateProfileDashboardProps {
   onBack?: () => void;
 }
 
+function extraText(extras: Record<string, unknown> | undefined, key: string): string {
+  const value = extras?.[key];
+  return typeof value === "string" && value.trim() ? value.trim() : "—";
+}
+
 export function PrivateProfileDashboard({
   media,
   stats,
@@ -1347,6 +1352,17 @@ export function PrivateProfileDashboard({
                   { label: "Location", value: media?.location ?? "—" },
                   { label: "Website", value: media?.website ?? "—" },
                   { label: "Bio", value: media?.bio ?? "—" },
+                  { label: "Intro", value: extraText(media?.extras, "intro") },
+                  { label: "Occupation", value: extraText(media?.extras, "occupation") },
+                  { label: "Education", value: extraText(media?.extras, "education") },
+                  { label: "Skills", value: extraText(media?.extras, "skills") },
+                  { label: "Interests", value: extraText(media?.extras, "interests") },
+                  { label: "Portfolio", value: extraText(media?.extras, "portfolio") },
+                  { label: "GitHub", value: extraText(media?.extras, "github") },
+                  { label: "X / Twitter", value: extraText(media?.extras, "twitter") },
+                  { label: "LinkedIn", value: extraText(media?.extras, "linkedin") },
+                  { label: "Instagram", value: extraText(media?.extras, "instagram") },
+                  { label: "YouTube", value: extraText(media?.extras, "youtube") },
                 ].map((row) => (
                   <div
                     key={row.label}

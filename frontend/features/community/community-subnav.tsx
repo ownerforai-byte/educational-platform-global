@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import {
+  Bell,
   Bookmark,
   ChevronDown,
   GraduationCap,
@@ -18,7 +19,7 @@ import {
 import { chipBtn } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
 
-export type CommunityNavKey = "feed" | "saved" | "mine" | "spaces" | "chat";
+export type CommunityNavKey = "feed" | "saved" | "mine" | "notifications" | "spaces" | "chat";
 
 interface NavItem {
   key: CommunityNavKey;
@@ -32,7 +33,8 @@ const ITEMS: NavItem[] = [
   { key: "feed", label: "Public feed", href: "/ai/community", icon: MessageSquare },
   { key: "saved", label: "Saved posts", href: "/ai/community?view=saved", icon: Bookmark },
   { key: "mine", label: "My posts", href: "/ai/community/me", icon: UserRound },
-  { key: "spaces", label: "Subject spaces", href: "/community", icon: GraduationCap },
+  { key: "notifications", label: "Notifications", href: "/ai/community/notifications", icon: Bell },
+  { key: "spaces", label: "Study spaces", href: "/community", icon: GraduationCap },
   {
     key: "chat",
     label: "Lobby chat",

@@ -11,9 +11,9 @@ Only the **Firestore approval bot** is exported and deployed:
   - `approvalBotTick` — Cloud Scheduler (`every 1 minutes`), primary trigger.
   - `approvalBotRunNow` — HTTPS manual/health trigger (POST; guarded by
     `ACCESS_BOT_RUN_KEY` + `x-access-bot-key` when set).
-  - `communityBotDailyPost` — 2:00 Asia/Kathmandu → `POST {COMMUNITY_BOT_API_BASE}/api/community/cron/daily-public`
-  - `communityBotProfileDiscovery` — every 2 hours → `POST …/cron/profile-discovery`
+  - `communityBotDailyPost` — **07:00 Asia/Kathmandu (once daily)** → `POST {COMMUNITY_BOT_API_BASE}/api/community/cron/daily-public`
     (headers: `x-community-bot-cron-key` = `COMMUNITY_BOT_CRON_KEY`; same value as the backend `COMMUNITY_BOT_CRON_KEY`).
+    Each run deletes previous bot feed posts and publishes one nature photo post (Google Custom Search when `GOOGLE_CSE_*` is set).
 
 **Supabase** is storage-only for the product direction. The older Supabase
 Postgres jobs (`accessBot*`, `creditsDailyReset`) are kept under
@@ -28,7 +28,7 @@ The predeploy hook runs `npm run build` (`tsc`) automatically.
 
 ```bash
 # Approval bot only (recommended)
-firebase deploy --only functions:approvalBotTick,functions:approvalBotRunNow,functions:communityBotDailyPost,functions:communityBotProfileDiscovery
+firebase deploy --only functions:approvalBotTick,functions:approvalBotRunNow,functions:communityBotDailyPost
 
 # Same as targeting both exports explicitly
 firebase deploy --only functions

@@ -31,26 +31,14 @@ async function postCommunityBotCron(path: "daily-public" | "profile-discovery"):
  * See `firebase/functions/README.md`.
  */
 
-/** Every 3 hours (6:00–21:00 Kathmandu) — rotating public vibe posts on the feed. */
+/** Once daily (07:00 Asia/Kathmandu) — one nature post; prior bot posts are purged server-side. */
 export const communityBotDailyPost = onSchedule(
   {
-    schedule: "0 6-21/3 * * *",
+    schedule: "0 7 * * *",
     timeZone: "Asia/Kathmandu",
     retryCount: 1,
   },
   async () => {
     await postCommunityBotCron("daily-public");
-  },
-);
-
-/** Every two hours — profile-only science discovery timeline (not on the main feed). */
-export const communityBotProfileDiscovery = onSchedule(
-  {
-    schedule: "every 2 hours",
-    timeZone: "Asia/Kathmandu",
-    retryCount: 1,
-  },
-  async () => {
-    await postCommunityBotCron("profile-discovery");
   },
 );

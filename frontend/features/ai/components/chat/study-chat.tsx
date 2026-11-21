@@ -198,7 +198,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
         paint();
       }
       if (isLoggedIn) {
-        saveChatHistory(HISTORY_SESSION, [
+        recordAccountChatTurn(HISTORY_SESSION, [
           { role: "user", content: text },
           { role: "assistant", content: accumulated + figureBlocks() },
         ]).catch(() => {});

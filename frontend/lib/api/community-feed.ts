@@ -11,7 +11,7 @@ export const COMMUNITY_CATEGORIES = [
 ] as const;
 
 export type CommunityCategory = (typeof COMMUNITY_CATEGORIES)[number]["id"];
-export type CommunityFeedFilter = "latest" | "unanswered";
+export type CommunityFeedFilter = "latest" | "unanswered" | "following";
 
 export interface FeedAuthor {
   id: string;
@@ -71,6 +71,8 @@ export interface FeedPost {
   commentCount: number;
   saveCount: number;
   savedByYou: boolean;
+  repostCount?: number;
+  repostedByYou?: boolean;
   attachments: FeedAttachment[];
   comments?: FeedComment[];
   assistantReply?: FeedAssistantReply;
@@ -188,6 +190,71 @@ export function toggleLike(id: string): Promise<{ likeCount: number; likedByYou:
 
 export function toggleSave(id: string): Promise<{ saveCount: number; savedByYou: boolean }> {
   return call(`${ROOT}/feed/${id}/save`, { method: "POST" });
+}
+
+export function listSaved(params: { cursor?: number | null; signal?: AbortSignal } = {}): Promise<FeedList> {
+  const search = new URLSearchParams();
+  if (params.cursor) search.set("cursor", String(params.cursor));
+  const qs = search.toString();
+  return call<FeedList>(
+    `${ROOT}/feed/saved${qs ? `?${qs}` : ""}`,
+    params.signal ? { signal: params.signal } : undefined,
+  );
+}
+
+export function listTrending(): Promise<{ posts: FeedPost[]; migrated: boolean }> {
+  return call(`${ROOT}/feed/trending`);
+}
+
+export function toggleRepost(id: string): Promise<{ repostCount: number; repostedByYou: boolean }> {
+  return call(`${ROOT}/feed/${id}/repost`, { method: "POST" });
+}
+
+export function reportPost(id: string, reason?: string): Promise<{ ok: boolean }> {
+  return call(`${ROOT}/feed/${id}/report`, {
+    method: "POST",
+    body: JSON.stringify({ reason: reason ?? "" }),
+  });
+}
+
+export function toggleBlockUser(userId: string): Promise<{ blocked: boolean }> {
+  return call(`${ROOT}/blocks`, {
+    method: "POST",
+    body: JSON.stringify({ userId, toggle: true }),
+  });
+}
+
+export interface SocialNotificationItem {
+  id: string;
+  actorId: string | null;
+  kind: string;
+  postId: string | null;
+  commentId: string | null;
+  readAt: string | null;
+  createdAt: string;
+}
+
+export function listSocialNotifications(params: {
+  cursor?: number;
+  unreadOnly?: boolean;
+} = {}): Promise<{
+  items: SocialNotificationItem[];
+  nextCursor: number | null;
+  unreadCount: number;
+  migrated: boolean;
+}> {
+  const search = new URLSearchParams();
+  if (params.cursor) search.set("cursor", String(params.cursor));
+  if (params.unreadOnly) search.set("unread", "1");
+  const qs = search.toString();
+  return call(`${ROOT}/notifications${qs ? `?${qs}` : ""}`);
+}
+
+export function markSocialNotificationsRead(opts: { all?: boolean; ids?: string[] }): Promise<{ ok: boolean }> {
+  return call(`${ROOT}/notifications/read`, {
+    method: "PATCH",
+    body: JSON.stringify(opts),
+  });
 }
 
 export function addComment(

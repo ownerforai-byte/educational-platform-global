@@ -121,6 +121,11 @@ export interface ProfileExtras {
   interests?: string;
   portfolio?: string;
   intro?: string;
+  github?: string;
+  twitter?: string;
+  linkedin?: string;
+  instagram?: string;
+  youtube?: string;
   /** Owner-assigned badge ids (teacher, special, honorary). */
   assignedBadgeIds?: string[];
 }

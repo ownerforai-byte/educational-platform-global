@@ -674,7 +674,7 @@ export function PublicAboutRow({
               {profile.bio}
             </p>
           ) : null}
-          {intro && !profile.bio ? (
+          {intro ? (
             <p className={cn("whitespace-pre-wrap text-muted-foreground", compact && "line-clamp-3")}>
               {intro}
             </p>

@@ -145,11 +145,11 @@ export function DiagramStudio() {
       if (!liveAcc.trim()) throw new Error("No diagram received. Please try again.");
       paintLive(true);
       try {
-        const saved = await saveChatHistory(sessionRef.current, [
+        const saved = await recordAccountChatTurn(sessionRef.current, [
           { role: "user", content: request.content },
           { role: "assistant", content: liveAcc },
         ]);
-        if (!saved.migrated || saved.saved !== 2) setError("Your answer could not be saved to history.");
+        if (!saved.ok) setError("Your answer could not be saved to history.");
       } catch {
         setError("Your answer could not be saved to history.");
       }

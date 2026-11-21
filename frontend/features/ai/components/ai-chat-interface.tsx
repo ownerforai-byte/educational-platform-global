@@ -35,13 +35,19 @@ import {
   streamChat,
   guestChat,
   getChatHistory,
-  saveChatHistory,
   clearChatHistory,
   getChatSessions,
   enhancePrompt,
   type ChatHistoryMessage,
   type ChatSession,
 } from "@/lib/api/ai";
+import { claimDeviceChatsForAccount, recordAccountChatTurn } from "@/features/ai/account-chat";
+import {
+  deviceThreadsToSessions,
+  readDeviceChatHistory,
+  writeDeviceChatHistory,
+  type DeviceChatThread,
+} from "@/features/ai/device-chat-history";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import { StepCards } from "@/components/chat/step-cards";
@@ -182,107 +188,6 @@ function writeActiveSession(session: string): void {
   localStorage.setItem(ACTIVE_SESSION_KEY, session);
 }
 
-// ── Guest chat history (signed-out): full multi-thread history saved on
-// this device, mirroring the signed-in sessions sidebar. One keyed store
-// shared by the widget panel and /chat; the tutor console's single thread
-// (`neb_tutor_thread`) is migrated in once on first load.
-const GUEST_HISTORY_KEY = "neb_guest_chat_history_v1";
-const LEGACY_GUEST_THREAD_KEY = "neb_tutor_thread";
-const GUEST_THREAD_CAP = 12;
-const GUEST_MESSAGE_CAP = 200;
-
-interface GuestThread {
-  session: string;
-  messages: ChatHistoryMessage[];
-  lastMessageAt: string;
-}
-
-interface GuestHistoryStore {
-  active: string;
-  threads: GuestThread[];
-}
-
-function readGuestHistory(): GuestHistoryStore {
-  if (typeof window === "undefined") return { active: "default", threads: [] };
-  try {
-    const raw = localStorage.getItem(GUEST_HISTORY_KEY);
-    if (raw) {
-      const parsed = JSON.parse(raw) as GuestHistoryStore;
-      if (parsed && Array.isArray(parsed.threads)) {
-        return { active: parsed.active || "default", threads: parsed.threads };
-      }
-    }
-  } catch {
-    /* corrupted store — fall through to a fresh one */
-  }
-  // One-time migration of the tutor console's single guest thread.
-  try {
-    const legacy = localStorage.getItem(LEGACY_GUEST_THREAD_KEY);
-    if (legacy) {
-      const parsed: unknown = JSON.parse(legacy);
-      if (Array.isArray(parsed)) {
-        const messages = parsed.filter(
-          (m): m is ChatHistoryMessage =>
-            !!m &&
-            typeof m === "object" &&
-            ((m as ChatHistoryMessage).role === "user" ||
-              (m as ChatHistoryMessage).role === "assistant") &&
-            typeof (m as ChatHistoryMessage).content === "string",
-        );
-        if (messages.length) {
-          const store: GuestHistoryStore = {
-            active: "default",
-            threads: [
-              {
-                session: "default",
-                messages: messages.map((m) => ({ role: m.role, content: m.content })),
-                lastMessageAt: new Date().toISOString(),
-              },
-            ],
-          };
-          localStorage.setItem(GUEST_HISTORY_KEY, JSON.stringify(store));
-          return store;
-        }
-      }
-    }
-  } catch {
-    /* storage blocked — start fresh */
-  }
-  return { active: "default", threads: [] };
-}
-
-function writeGuestHistory(store: GuestHistoryStore): void {
-  if (typeof window === "undefined") return;
-  try {
-    const threads = store.threads
-      .slice(0, GUEST_THREAD_CAP)
-      .map((t) => ({ ...t, messages: t.messages.slice(-GUEST_MESSAGE_CAP) }));
-    const trimmed: GuestHistoryStore = { active: store.active, threads };
-    localStorage.setItem(GUEST_HISTORY_KEY, JSON.stringify(trimmed));
-    // Keep the tutor console's single-thread key pointing at the active
-    // thread so /tutor and this panel read the same guest conversation.
-    const active = threads.find((t) => t.session === trimmed.active);
-    if (active && active.messages.length) {
-      localStorage.setItem(LEGACY_GUEST_THREAD_KEY, JSON.stringify(active.messages));
-    } else {
-      localStorage.removeItem(LEGACY_GUEST_THREAD_KEY);
-    }
-  } catch {
-    /* storage blocked — history just won't survive a reload */
-  }
-}
-
-function guestThreadToSessions(threads: GuestThread[]): ChatSession[] {
-  return threads.map((t) => ({
-    session: t.session,
-    messages: t.messages.length,
-    lastMessageAt: t.lastMessageAt,
-    preview:
-      t.messages.find((m) => m.role === "user")?.content.slice(0, 80) ??
-      "Conversation",
-  }));
-}
-
 export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {}) {
   const { user, isLoading } = useSession();
   const router = useRouter();
@@ -359,7 +264,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const abortRef = useRef<AbortController | null>(null);
   const sessionRef = useRef(session);
   sessionRef.current = session;
-  const guestThreadsRef = useRef<GuestThread[]>([]);
+  const guestThreadsRef = useRef<DeviceChatThread[]>([]);
   const asideRef = useRef<HTMLElement>(null);
 
   // Composer dictation: the mic folds spoken words into the draft exactly as
@@ -416,7 +321,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const refreshSessions = useCallback(async () => {
     if (!isLoggedIn) {
       // Signed-out: the sidebar lists the conversations saved on this device.
-      setSessions(guestThreadToSessions(guestThreadsRef.current));
+      setSessions(deviceThreadsToSessions(guestThreadsRef.current));
       return;
     }
     try {
@@ -473,14 +378,21 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   );
 
   useEffect(() => {
+    if (!isLoggedIn) return;
+    void claimDeviceChatsForAccount().then((claimed) => {
+      if (claimed) void refreshSessions();
+    });
+  }, [isLoggedIn, refreshSessions]);
+
+  useEffect(() => {
     if (!isLoggedIn) {
       // Post-mount only: localStorage is unavailable on the server, so the
       // first client render must match the server's count of 0 exactly.
       setGuestCount(readGuestCount());
       // Signed-out history: restore the conversations saved on this device.
-      const store = readGuestHistory();
+      const store = readDeviceChatHistory();
       guestThreadsRef.current = store.threads;
-      setSessions(guestThreadToSessions(store.threads));
+      setSessions(deviceThreadsToSessions(store.threads));
       setSession(store.active);
       const guestActive = store.threads.find((t) => t.session === store.active);
       if (guestActive && guestActive.messages.length) {
@@ -559,8 +471,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         ...threads,
       ];
     }
-    setSessions(guestThreadToSessions(guestThreadsRef.current));
-    writeGuestHistory({ active: sessionName, threads: guestThreadsRef.current });
+    setSessions(deviceThreadsToSessions(guestThreadsRef.current));
+    writeDeviceChatHistory({ active: sessionName, threads: guestThreadsRef.current });
   };
 
   /**
@@ -696,11 +608,11 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
 
       if (isLoggedIn) {
         try {
-          const saved = await saveChatHistory(targetSession, [
+          const saved = await recordAccountChatTurn(targetSession, [
             { role: "user", content: textToSend },
             { role: "assistant", content: finalReply },
           ]);
-          if (!saved.migrated || saved.saved !== 2) setError("Your answer could not be saved to history.");
+          if (!saved.ok) setError("Your answer could not be saved to history.");
         } catch {
           setError("Your answer could not be saved to history.");
         }
@@ -873,7 +785,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     if (sessionName === session) return;
     setSession(sessionName);
     if (isLoggedIn) writeActiveSession(sessionName);
-    else writeGuestHistory({ active: sessionName, threads: guestThreadsRef.current });
+    else writeDeviceChatHistory({ active: sessionName, threads: guestThreadsRef.current });
     setError(null);
     loadSessionHistory(sessionName);
     if (window.innerWidth < 1024) setSidebarOpen(false);
@@ -887,7 +799,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       await clearChatHistory(sessionName).catch(() => {});
     } else {
       guestThreadsRef.current = guestThreadsRef.current.filter((t) => t.session !== sessionName);
-      writeGuestHistory({ active: sessionRef.current, threads: guestThreadsRef.current });
+      writeDeviceChatHistory({ active: sessionRef.current, threads: guestThreadsRef.current });
     }
     setSessions((prev) => prev.filter((s) => s.session !== sessionName));
     if (sessionName === session) {
@@ -917,7 +829,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       guestThreadsRef.current = guestThreadsRef.current.filter(
         (t) => t.session !== sessionRef.current,
       );
-      writeGuestHistory({ active: sessionRef.current, threads: guestThreadsRef.current });
+      writeDeviceChatHistory({ active: sessionRef.current, threads: guestThreadsRef.current });
     }
     setSessions((prev) => prev.filter((s) => s.session !== sessionRef.current));
     setHomeSeed((s) => s + 1);

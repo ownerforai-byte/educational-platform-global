@@ -21,6 +21,8 @@ import {
   releaseStoragePath,
   TIER_STORAGE_LIMITS,
 } from "../../services/profile-storage";
+import { recordSocialNotification } from "../../services/social-notification.service.js";
+import { profileExtrasSchema } from "../../services/profile-info.js";
 import {
   isProfileImageCapError,
   isUnsupportedImageFormatError,
@@ -222,17 +224,6 @@ async function viewerFollowsTargets(
   return new Set((data ?? []).map((row) => row.following_id as string));
 }
 
-const extrasSchema = z
-  .object({
-    occupation: z.string().trim().max(120).optional(),
-    education: z.string().trim().max(200).optional(),
-    skills: z.string().trim().max(400).optional(),
-    interests: z.string().trim().max(400).optional(),
-    portfolio: z.string().trim().url().max(300).optional().or(z.literal("")),
-    intro: z.string().trim().max(2000).optional(),
-  })
-  .partial();
-
 const editSchema = z.object({
   fullName: z.string().trim().min(1).max(120).optional(),
   username: z.string().trim().min(3).max(30).optional(),
@@ -240,7 +231,7 @@ const editSchema = z.object({
   location: z.string().trim().max(120).optional(),
   website: z.string().trim().url().max(300).optional().or(z.literal("")),
   visibility: z.enum(["public", "members", "private"]).optional(),
-  extras: extrasSchema.optional(),
+  extras: profileExtrasSchema.optional(),
 });
 
 const HUB_PROFILE_COLUMNS = [
@@ -1167,6 +1158,11 @@ router.post(
       serverError(res, error, "profile-hub");
       return;
     }
+    void recordSocialNotification({
+      userId: resolved.id,
+      actorId: user.id,
+      kind: "follow",
+    });
     noStore(res);
     res.json({ ok: true, following: true });
   }),

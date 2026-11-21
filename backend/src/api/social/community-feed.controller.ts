@@ -11,7 +11,8 @@ import {
 import { communityAiReplyLimit } from "../../middleware/rateLimit";
 import { asyncHandler } from "../../middleware/asyncHandler";
 import { serverError } from "../../middleware/error-handler";
-import { isR2StorageActive, r2Upload, r2Download, r2Delete } from "../../storage/r2";
+import { isR2StorageActive, r2PresignedPut, r2Upload, r2Download, r2Delete } from "../../storage/r2";
+import { recordSocialNotification } from "../../services/social-notification.service.js";
 import { removeSupersededObject } from "../../storage/remove-superseded";
 import { reserveStoragePath, releaseStoragePath } from "../../services/profile-storage";
 import { profileMediaPublicUrl } from "../../services/profile-media-url";
@@ -386,14 +387,15 @@ async function sideData(postIds: string[]): Promise<
   | {
       likes: Array<{ post_id: string; user_id: string }>;
       saves: Array<{ post_id: string; user_id: string }>;
+      reposts: Array<{ post_id: string; user_id: string }>;
       comments: Array<{ post_id: string }>;
       attachments: AttachmentRow[];
     }
   | { missing: true }
   | { error: DbError }
 > {
-  if (postIds.length === 0) return { likes: [], saves: [], comments: [], attachments: [] };
-  const [likesRes, savesRes, commentsRes, attachmentsRes] = await Promise.all([
+  if (postIds.length === 0) return { likes: [], saves: [], reposts: [], comments: [], attachments: [] };
+  const [likesRes, savesRes, commentsRes, attachmentsRes, repostsRes] = await Promise.all([
     supabaseAdmin.from("community_feed_likes").select("post_id, user_id").in("post_id", postIds),
     supabaseAdmin.from("community_feed_saves").select("post_id, user_id").in("post_id", postIds),
     supabaseAdmin.from("community_feed_comments").select("post_id").in("post_id", postIds),
@@ -401,6 +403,7 @@ async function sideData(postIds: string[]): Promise<
       .from("community_feed_attachments")
       .select("id, post_id, filename, content_type, byte_size, created_at")
       .in("post_id", postIds),
+    supabaseAdmin.from("community_feed_reposts").select("post_id, user_id").in("post_id", postIds),
   ]);
   for (const error of [likesRes.error, commentsRes.error, attachmentsRes.error]) {
     if (isMissingTable(error)) return { missing: true };
@@ -413,9 +416,16 @@ async function sideData(postIds: string[]): Promise<
   } else {
     saves = (savesRes.data ?? []) as Array<{ post_id: string; user_id: string }>;
   }
+  let reposts: Array<{ post_id: string; user_id: string }> = [];
+  if (repostsRes.error) {
+    if (!isMissingTable(repostsRes.error)) return { error: repostsRes.error };
+  } else {
+    reposts = (repostsRes.data ?? []) as Array<{ post_id: string; user_id: string }>;
+  }
   return {
     likes: (likesRes.data ?? []) as Array<{ post_id: string; user_id: string }>,
     saves,
+    reposts,
     comments: (commentsRes.data ?? []) as Array<{ post_id: string }>,
     attachments: (attachmentsRes.data ?? []) as AttachmentRow[],
   };
@@ -426,6 +436,7 @@ function presentPost(
   profiles: Map<string, ProfileRow>,
   likes: Array<{ post_id: string; user_id: string }>,
   saves: Array<{ post_id: string; user_id: string }>,
+  reposts: Array<{ post_id: string; user_id: string }>,
   commentRows: Array<{ post_id: string }>,
   attachments: AttachmentRow[],
   viewerId: string | null,
@@ -433,6 +444,7 @@ function presentPost(
 ) {
   const postLikes = likes.filter((like) => like.post_id === row.id);
   const postSaves = saves.filter((save) => save.post_id === row.id);
+  const postReposts = reposts.filter((repost) => repost.post_id === row.id);
   const files = attachments
     .filter((file) => file.post_id === row.id)
     .sort((a, b) => String(a.created_at ?? "").localeCompare(String(b.created_at ?? "")));
@@ -453,6 +465,8 @@ function presentPost(
     likedByYou: viewerId ? postLikes.some((like) => like.user_id === viewerId) : false,
     saveCount: postSaves.length,
     savedByYou: viewerId ? postSaves.some((save) => save.user_id === viewerId) : false,
+    repostCount: postReposts.length,
+    repostedByYou: viewerId ? postReposts.some((repost) => repost.user_id === viewerId) : false,
     commentCount: commentRows.filter((comment) => comment.post_id === row.id).length,
     attachments: files.map((file) => ({
       id: file.id,
@@ -474,7 +488,17 @@ async function presentMany(rows: PostRow[], viewerId: string | null) {
   );
   return {
     posts: rows.map((row) =>
-      presentPost(row, profiles, side.likes, side.saves, side.comments, side.attachments, viewerId, followingAuthors),
+      presentPost(
+        row,
+        profiles,
+        side.likes,
+        side.saves,
+        side.reposts,
+        side.comments,
+        side.attachments,
+        viewerId,
+        followingAuthors,
+      ),
     ),
   };
 }
@@ -538,16 +562,41 @@ function filterRows(
   return { page, nextCursor };
 }
 
-function readListQuery(req: Request): { q?: string; category?: string; authorId?: string; cursor: number } | { error: string } {
+type ListFilter = "latest" | "unanswered" | "following";
+
+function readListQuery(
+  req: Request,
+): {
+  q?: string;
+  category?: string;
+  authorId?: string;
+  filter: ListFilter;
+  ids?: string[];
+  cursor: number;
+} | { error: string } {
   const q = queryOne(req.query.q);
   const category = queryOne(req.query.category);
   const authorId = queryOne(req.query.authorId);
+  const filterRaw = queryOne(req.query.filter);
+  const idsRaw = queryOne(req.query.ids);
   const cursorRaw = queryOne(req.query.cursor);
   if (q && q.length > 120) return { error: "Search is too long" };
   if (category && !CATEGORIES.includes(category as (typeof CATEGORIES)[number])) {
     return { error: "Unknown category" };
   }
   if (authorId && !isUserId(authorId)) return { error: "Unknown author" };
+  let filter: ListFilter = "latest";
+  if (filterRaw === "unanswered") filter = "unanswered";
+  else if (filterRaw === "following") filter = "following";
+  let ids: string[] | undefined;
+  if (idsRaw) {
+    ids = idsRaw
+      .split(",")
+      .map((part) => part.trim())
+      .filter((part) => isUuid(part))
+      .slice(0, 50);
+    if (ids.length === 0) ids = undefined;
+  }
   let cursor = 0;
   if (cursorRaw) {
     if (!/^\d+$/.test(cursorRaw)) return { error: "Invalid cursor" };
@@ -558,8 +607,93 @@ function readListQuery(req: Request): { q?: string; category?: string; authorId?
     q,
     category: category || undefined,
     authorId: authorId || undefined,
+    filter,
+    ids,
     cursor,
   };
+}
+
+async function blockedAuthorIds(viewerId: string | null): Promise<Set<string>> {
+  if (!viewerId) return new Set();
+  const { data, error } = await supabaseAdmin
+    .from("social_blocks")
+    .select("blocked_id")
+    .eq("blocker_id", viewerId);
+  if (error) return new Set();
+  return new Set((data ?? []).map((row) => row.blocked_id as string));
+}
+
+async function loadPostsByIds(ids: string[], cursor: number): Promise<{ rows: PostRow[]; nextCursor: number | null } | { missing: true } | { error: DbError }> {
+  const slice = ids.slice(cursor, cursor + PAGE_SIZE);
+  if (slice.length === 0) return { rows: [], nextCursor: null };
+  const { data, error } = await supabaseAdmin
+    .from("community_feed_posts")
+    .select("id, author_id, title, body, category, visibility, created_at, updated_at")
+    .in("id", slice)
+    .eq("visibility", "public");
+  if (error) {
+    if (isMissingTable(error)) return { missing: true };
+    return { error };
+  }
+  const byId = new Map((data ?? []).map((row) => [row.id as string, row as PostRow]));
+  const rows = slice.map((id) => byId.get(id)).filter((row): row is PostRow => Boolean(row));
+  const nextCursor = cursor + PAGE_SIZE < ids.length ? cursor + PAGE_SIZE : null;
+  return { rows, nextCursor };
+}
+
+async function loadFollowingFeedPage(
+  viewerId: string,
+  cursor: number,
+  category?: string,
+): Promise<{ rows: PostRow[]; nextCursor: number | null } | { missing: true } | { error: DbError }> {
+  const { data: follows, error: followError } = await supabaseAdmin
+    .from("profile_follows")
+    .select("following_id")
+    .eq("follower_id", viewerId);
+  if (followError) {
+    if (isMissingTable(followError)) return { missing: true };
+    return { error: followError };
+  }
+  const following = (follows ?? []).map((row) => row.following_id as string).filter(Boolean);
+  if (following.length === 0) return { rows: [], nextCursor: null };
+  const from = cursor;
+  const to = cursor + PAGE_SIZE;
+  let query = supabaseAdmin
+    .from("community_feed_posts")
+    .select("id, author_id, title, body, category, visibility, created_at, updated_at")
+    .in("author_id", following)
+    .eq("visibility", "public")
+    .order("created_at", { ascending: false });
+  if (category) query = query.eq("category", category);
+  const { data, error } = await query.range(from, to);
+  if (error) {
+    if (isMissingTable(error)) return { missing: true };
+    return { error };
+  }
+  const rows = (data ?? []) as PostRow[];
+  const hasMore = rows.length > PAGE_SIZE;
+  const page = hasMore ? rows.slice(0, PAGE_SIZE) : rows;
+  return { rows: page, nextCursor: hasMore ? cursor + PAGE_SIZE : null };
+}
+
+async function loadUnansweredPage(
+  opts: { cursor: number; category?: string; q?: string },
+): Promise<{ rows: PostRow[]; nextCursor: number | null } | { missing: true } | { error: DbError }> {
+  const loaded = await loadRecent(undefined, FILTERED_SCAN_LIMIT);
+  if ("missing" in loaded) return { missing: true };
+  if ("error" in loaded) return { error: loaded.error };
+  const side = await sideData(loaded.rows.map((row) => row.id));
+  if ("missing" in side) return { missing: true };
+  if ("error" in side) return { error: side.error };
+  const unanswered = loaded.rows.filter(
+    (row) => side.comments.filter((c) => c.post_id === row.id).length === 0,
+  );
+  const filtered = filterRows(unanswered, {
+    q: opts.q,
+    category: opts.category,
+    cursor: opts.cursor,
+  });
+  return { rows: filtered.page, nextCursor: filtered.nextCursor };
 }
 
 async function sendList(
@@ -573,10 +707,59 @@ async function sendList(
     bad(res, parsed.error);
     return;
   }
-  const needsScan = Boolean(parsed.q?.trim() || parsed.authorId);
+  const blocked = await blockedAuthorIds(viewerId);
   let page: PostRow[];
   let nextCursor: number | null;
 
+  if (parsed.ids && parsed.ids.length > 0) {
+    const loaded = await loadPostsByIds(parsed.ids, parsed.cursor);
+    if ("missing" in loaded) {
+      noStore(res);
+      res.json({ posts: [], nextCursor: null, migrated: false });
+      return;
+    }
+    if ("error" in loaded) {
+      serverError(res, loaded.error, "community-feed");
+      return;
+    }
+    page = loaded.rows.filter((row) => !blocked.has(row.author_id));
+    nextCursor = loaded.nextCursor;
+  } else if (parsed.filter === "following" && !scopedAuthorId) {
+    if (!viewerId) {
+      bad(res, "Sign in to see posts from people you follow.", 401);
+      return;
+    }
+    const loaded = await loadFollowingFeedPage(viewerId, parsed.cursor, parsed.category);
+    if ("missing" in loaded) {
+      noStore(res);
+      res.json({ posts: [], nextCursor: null, migrated: false });
+      return;
+    }
+    if ("error" in loaded) {
+      serverError(res, loaded.error, "community-feed");
+      return;
+    }
+    page = loaded.rows.filter((row) => !blocked.has(row.author_id));
+    nextCursor = loaded.nextCursor;
+  } else if (parsed.filter === "unanswered" && !scopedAuthorId) {
+    const loaded = await loadUnansweredPage({
+      cursor: parsed.cursor,
+      category: parsed.category,
+      q: parsed.q,
+    });
+    if ("missing" in loaded) {
+      noStore(res);
+      res.json({ posts: [], nextCursor: null, migrated: false });
+      return;
+    }
+    if ("error" in loaded) {
+      serverError(res, loaded.error, "community-feed");
+      return;
+    }
+    page = loaded.rows.filter((row) => !blocked.has(row.author_id));
+    nextCursor = loaded.nextCursor;
+  } else {
+  const needsScan = Boolean(parsed.q?.trim() || parsed.authorId);
   if (!needsScan) {
     const loaded = await loadFeedPage({
       authorId: scopedAuthorId ?? parsed.authorId,
@@ -613,6 +796,8 @@ async function sendList(
     });
     page = filtered.page;
     nextCursor = filtered.nextCursor;
+  }
+  page = page.filter((row) => !blocked.has(row.author_id));
   }
 
   const presented = await presentMany(page, viewerId);
@@ -668,6 +853,8 @@ async function deletePostTree(postId: string): Promise<{ missing: true } | { err
   // Saves (migration 026) are best-effort here so deletes still work on older databases.
   const saves = await supabaseAdmin.from("community_feed_saves").delete().eq("post_id", postId);
   if (saves.error && !isMissingTable(saves.error)) return { error: saves.error };
+  const reposts = await supabaseAdmin.from("community_feed_reposts").delete().eq("post_id", postId);
+  if (reposts.error && !isMissingTable(reposts.error)) return { error: reposts.error };
   const comments = await supabaseAdmin.from("community_feed_comments").delete().eq("post_id", postId);
   if (comments.error) {
     if (isMissingTable(comments.error)) return { missing: true };
@@ -769,6 +956,105 @@ router.get(
     const user = userOf(req);
     await ensureProfile(user);
     await sendList(res, user.id, user.id, req);
+  }),
+);
+
+router.get(
+  "/feed/saved",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const cursorRaw = queryOne(req.query.cursor);
+    let cursor = 0;
+    if (cursorRaw && /^\d+$/.test(cursorRaw)) cursor = Number(cursorRaw);
+    const from = cursor;
+    const to = cursor + PAGE_SIZE;
+    const { data: saveRows, error: saveError } = await supabaseAdmin
+      .from("community_feed_saves")
+      .select("post_id")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false })
+      .range(from, to);
+    if (saveError) {
+      if (isMissingTable(saveError)) {
+        noStore(res);
+        res.json({ posts: [], nextCursor: null, migrated: false });
+        return;
+      }
+      serverError(res, saveError, "community-feed");
+      return;
+    }
+    const ids = (saveRows ?? []).map((row) => row.post_id as string);
+    const hasMore = ids.length > PAGE_SIZE;
+    const pageIds = hasMore ? ids.slice(0, PAGE_SIZE) : ids;
+    if (pageIds.length === 0) {
+      noStore(res);
+      res.json({ posts: [], nextCursor: null, migrated: true });
+      return;
+    }
+    const loaded = await loadPostsByIds(pageIds, 0);
+    if ("missing" in loaded) {
+      noStore(res);
+      res.json({ posts: [], nextCursor: null, migrated: false });
+      return;
+    }
+    if ("error" in loaded) {
+      serverError(res, loaded.error, "community-feed");
+      return;
+    }
+    const presented = await presentMany(loaded.rows, user.id);
+    if ("missing" in presented || "error" in presented) {
+      noStore(res);
+      res.json({ posts: [], nextCursor: null, migrated: false });
+      return;
+    }
+    noStore(res);
+    res.json({
+      posts: presented.posts,
+      nextCursor: hasMore ? cursor + PAGE_SIZE : null,
+      migrated: true,
+    });
+  }),
+);
+
+router.get(
+  "/feed/trending",
+  asyncHandler(async (req, res) => {
+    const viewer = await getUserFromRequest(req);
+    const loaded = await loadRecent(undefined, SCAN_LIMIT);
+    if ("missing" in loaded) {
+      noStore(res);
+      res.json({ posts: [], migrated: false });
+      return;
+    }
+    if ("error" in loaded) {
+      serverError(res, loaded.error, "community-feed");
+      return;
+    }
+    const side = await sideData(loaded.rows.map((row) => row.id));
+    if ("missing" in side || "error" in side) {
+      noStore(res);
+      res.json({ posts: [], migrated: false });
+      return;
+    }
+    const scored = loaded.rows
+      .map((row) => {
+        const likes = side.likes.filter((like) => like.post_id === row.id).length;
+        const comments = side.comments.filter((comment) => comment.post_id === row.id).length;
+        const reposts = side.reposts.filter((repost) => repost.post_id === row.id).length;
+        return { row, score: likes * 2 + comments * 3 + reposts * 4 };
+      })
+      .sort((a, b) => b.score - a.score)
+      .slice(0, PAGE_SIZE)
+      .map((entry) => entry.row);
+    const presented = await presentMany(scored, viewer?.id ?? null);
+    if ("missing" in presented || "error" in presented) {
+      noStore(res);
+      res.json({ posts: [], migrated: false });
+      return;
+    }
+    noStore(res);
+    res.json({ posts: presented.posts, migrated: true });
   }),
 );
 
@@ -1377,11 +1663,198 @@ router.post(
       return;
     }
     const rows = (likes ?? []) as Array<{ user_id: string }>;
+    if (!existing.data && found.row.author_id !== user.id) {
+      void recordSocialNotification({
+        userId: found.row.author_id,
+        actorId: user.id,
+        kind: "like",
+        postId,
+      });
+    }
     noStore(res);
     res.json({
       likeCount: rows.length,
       likedByYou: rows.some((row) => row.user_id === user.id),
     });
+  }),
+);
+
+router.post(
+  "/feed/:postId/repost",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const postId = param(req.params.postId);
+    if (!isUuid(postId)) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    const found = await findPost(postId);
+    if ("missing" in found) {
+      unavailable(res);
+      return;
+    }
+    if ("error" in found) {
+      serverError(res, found.error, "community-feed");
+      return;
+    }
+    if (!found.row) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    await ensureProfile(user);
+    const existing = await supabaseAdmin
+      .from("community_feed_reposts")
+      .select("post_id, user_id")
+      .eq("post_id", postId)
+      .eq("user_id", user.id)
+      .maybeSingle();
+    if (existing.error) {
+      if (isMissingTable(existing.error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, existing.error, "community-feed");
+      return;
+    }
+    if (existing.data) {
+      await supabaseAdmin
+        .from("community_feed_reposts")
+        .delete()
+        .eq("post_id", postId)
+        .eq("user_id", user.id);
+    } else {
+      const inserted = await supabaseAdmin.from("community_feed_reposts").insert({
+        post_id: postId,
+        user_id: user.id,
+        created_at: new Date().toISOString(),
+      });
+      if (inserted.error && !isMissingTable(inserted.error) && !isUniqueViolation(inserted.error)) {
+        serverError(res, inserted.error, "community-feed");
+        return;
+      }
+      if (!existing.data && found.row.author_id !== user.id) {
+        void recordSocialNotification({
+          userId: found.row.author_id,
+          actorId: user.id,
+          kind: "repost",
+          postId,
+        });
+      }
+    }
+    const { data: reposts, error: countError } = await supabaseAdmin
+      .from("community_feed_reposts")
+      .select("user_id")
+      .eq("post_id", postId);
+    if (countError) {
+      if (isMissingTable(countError)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, countError, "community-feed");
+      return;
+    }
+    const rows = (reposts ?? []) as Array<{ user_id: string }>;
+    noStore(res);
+    res.json({
+      repostCount: rows.length,
+      repostedByYou: rows.some((row) => row.user_id === user.id),
+    });
+  }),
+);
+
+router.post(
+  "/feed/:postId/report",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const postId = param(req.params.postId);
+    if (!isUuid(postId)) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    const reason = typeof req.body?.reason === "string" ? req.body.reason.trim().slice(0, 500) : "";
+    const found = await findPost(postId);
+    if ("missing" in found) {
+      unavailable(res);
+      return;
+    }
+    if ("error" in found) {
+      serverError(res, found.error, "community-feed");
+      return;
+    }
+    if (!found.row) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    const { error } = await supabaseAdmin.from("community_feed_reports").insert({
+      id: randomUUID(),
+      post_id: postId,
+      reporter_id: user.id,
+      reason: reason || null,
+      created_at: new Date().toISOString(),
+    });
+    if (error) {
+      if (isMissingTable(error)) {
+        unavailable(res);
+        return;
+      }
+      if (isUniqueViolation(error)) {
+        bad(res, "You already reported this post.");
+        return;
+      }
+      serverError(res, error, "community-feed");
+      return;
+    }
+    noStore(res);
+    res.status(201).json({ ok: true });
+  }),
+);
+
+router.post(
+  "/blocks",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const blockedId = typeof req.body?.userId === "string" ? req.body.userId.trim() : "";
+    if (!isUserId(blockedId) || blockedId === user.id) {
+      bad(res, "Invalid user.");
+      return;
+    }
+    const toggle = req.body?.toggle !== false;
+    if (toggle) {
+      const existing = await supabaseAdmin
+        .from("social_blocks")
+        .select("blocked_id")
+        .eq("blocker_id", user.id)
+        .eq("blocked_id", blockedId)
+        .maybeSingle();
+      if (existing.data) {
+        await supabaseAdmin
+          .from("social_blocks")
+          .delete()
+          .eq("blocker_id", user.id)
+          .eq("blocked_id", blockedId);
+        noStore(res);
+        res.json({ blocked: false });
+        return;
+      }
+      const { error } = await supabaseAdmin.from("social_blocks").insert({
+        blocker_id: user.id,
+        blocked_id: blockedId,
+        created_at: new Date().toISOString(),
+      });
+      if (error && !isMissingTable(error)) {
+        serverError(res, error, "community-feed");
+        return;
+      }
+      noStore(res);
+      res.json({ blocked: true });
+      return;
+    }
+    await supabaseAdmin.from("social_blocks").delete().eq("blocker_id", user.id).eq("blocked_id", blockedId);
+    noStore(res);
+    res.json({ blocked: false });
   }),
 );
 
@@ -1584,6 +2057,25 @@ router.post(
     const wantBotReply =
       parsed.data.followUpToBot === true || isCommunityBotId(found.row.author_id);
 
+    if (found.row.author_id !== user.id) {
+      void recordSocialNotification({
+        userId: found.row.author_id,
+        actorId: user.id,
+        kind: parentComment ? "reply" : "comment",
+        postId,
+        commentId: id,
+      });
+    }
+    if (parentComment && parentComment.author_id !== user.id && parentComment.author_id !== found.row.author_id) {
+      void recordSocialNotification({
+        userId: parentComment.author_id,
+        actorId: user.id,
+        kind: "reply",
+        postId,
+        commentId: id,
+      });
+    }
+
     noStore(res);
     if (wantBotReply) {
       res.status(201).json({
@@ -1775,6 +2267,51 @@ router.delete(
     }
     noStore(res);
     res.json({ ok: true });
+  }),
+);
+
+router.post(
+  "/feed/:postId/attachments/presign",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const postId = param(req.params.postId);
+    const safeFilename =
+      typeof req.body?.filename === "string" ? sanitizeUploadFilename(req.body.filename) : null;
+    const contentType =
+      safeFilename && typeof req.body?.contentType === "string"
+        ? resolveUploadMime(req.body.contentType, safeFilename)
+        : null;
+    if (!isUuid(postId) || !safeFilename || !contentType) {
+      bad(res, "Invalid upload request.");
+      return;
+    }
+    const found = await findPost(postId);
+    if ("missing" in found) {
+      unavailable(res);
+      return;
+    }
+    if ("error" in found) {
+      serverError(res, found.error, "community-feed");
+      return;
+    }
+    if (!found.row || !canManage(user, found.row.author_id)) {
+      bad(res, "You can only upload files to your own posts.", 403);
+      return;
+    }
+    if (!isR2StorageActive()) {
+      bad(res, "Direct upload is unavailable until R2 is configured.", 503);
+      return;
+    }
+    const attachmentId = randomUUID();
+    const storagePath = `community/${postId}/${attachmentId}/${safeFilename}`;
+    const uploadUrl = await r2PresignedPut(storagePath, contentType);
+    if (!uploadUrl) {
+      unavailable(res);
+      return;
+    }
+    noStore(res);
+    res.json({ attachmentId, uploadUrl, storagePath, contentType, expiresIn: 600 });
   }),
 );
 
@@ -1973,12 +2510,18 @@ router.get(
       bad(res, "Profile not found", 404);
       return;
     }
+    const parsed = readListQuery(req);
+    if ("error" in parsed) {
+      bad(res, parsed.error);
+      return;
+    }
     const loaded = await loadRecent(userId);
     if ("missing" in loaded) {
       noStore(res);
       res.json({
         profile: toAuthor(profile.id, profile),
         posts: [],
+        nextCursor: null,
         migrated: false,
       });
       return;
@@ -1987,10 +2530,12 @@ router.get(
       serverError(res, loaded.error, "community-feed");
       return;
     }
-    const presented = await presentMany(loaded.rows.slice(0, PAGE_SIZE), viewerId);
+    const slice = loaded.rows.slice(parsed.cursor, parsed.cursor + PAGE_SIZE);
+    const nextCursor = parsed.cursor + PAGE_SIZE < loaded.rows.length ? parsed.cursor + PAGE_SIZE : null;
+    const presented = await presentMany(slice, viewerId);
     if ("missing" in presented) {
       noStore(res);
-      res.json({ profile: toAuthor(profile.id, profile), posts: [], migrated: false });
+      res.json({ profile: toAuthor(profile.id, profile), posts: [], nextCursor: null, migrated: false });
       return;
     }
     if ("error" in presented) {
@@ -1999,8 +2544,9 @@ router.get(
     }
     noStore(res);
     res.json({
-      profile: toAuthor(profile.id, profile),
+      profile: toAuthor(profile.id, profile, viewerId ? (await followingByAuthor(viewerId, [profile.id])).has(profile.id) : false),
       posts: presented.posts,
+      nextCursor,
       migrated: true,
     });
   }),

@@ -59,6 +59,26 @@ function r2Client(): S3 {
 
 export type R2UploadBody = Buffer | Uint8Array | Readable;
 
+/** Short-lived PUT URL for direct browser upload (never expose secret keys). */
+export async function r2PresignedPut(
+  path: string,
+  contentType: string,
+  expiresInSeconds = 600,
+): Promise<string | null> {
+  if (!isR2StorageActive()) return null;
+  const key = path.replace(/^\/+/, "");
+  return getSignedUrl(
+    r2Client(),
+    new PutObjectCommand({
+      Bucket: BUCKET_NAME,
+      Key: key,
+      ContentType: contentType,
+      CacheControl: "public, max-age=86400",
+    }),
+    { expiresIn: expiresInSeconds },
+  );
+}
+
 export async function r2Upload(
   path: string,
   body: R2UploadBody,
