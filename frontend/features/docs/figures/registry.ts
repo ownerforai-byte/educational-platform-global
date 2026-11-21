@@ -279,6 +279,39 @@ import { BiologicalMethodCycle } from "./biological-method-cycle";
 import { MethodWorkedExample } from "./method-worked-example";
 import { PasteurExperiment } from "./pasteur-experiment";
 import { MethodPrinciples } from "./method-principles";
+import { EarlyEarthConditions } from "./early-earth-conditions";
+import { OparinHaldaneHypothesis } from "./oparin-haldane-hypothesis";
+import { MillerUreyApparatus } from "./miller-urey-apparatus";
+import { OriginGrandTimeline } from "./origin-grand-timeline";
+import { OriginTheories } from "./origin-theories";
+import { HomologousForelimbs } from "./homologous-forelimbs";
+import { AnalogousOrgans } from "./analogous-organs";
+import { VestigialOrgans } from "./vestigial-organs";
+import { ConnectingLinks } from "./connecting-links";
+import { EmbryoSimilarity } from "./embryo-similarity";
+import { MolecularEvidenceTree } from "./molecular-evidence-tree";
+import { FossilRecordSequence } from "./fossil-record-sequence";
+import { LamarckismPropositions } from "./lamarckism-propositions";
+import { WeismannGermplasm } from "./weismann-germplasm";
+import { DarwinFiveObservations } from "./darwin-five-observations";
+import { IndustrialMelanism } from "./industrial-melanism";
+import { LamarckVsDarwinGiraffe } from "./lamarck-vs-darwin-giraffe";
+import { NeoDarwinismSynthesis } from "./neo-darwinism-synthesis";
+import { LamarckVsDarwinTable } from "./lamarck-vs-darwin-table";
+import { ManClassificationLadder } from "./man-classification-ladder";
+import { PrimateRelativesTree } from "./primate-relatives-tree";
+import { ManVsApes } from "./man-vs-apes";
+import { HumanEvolutionStages } from "./human-evolution-stages";
+import { BrainExpansionChart } from "./brain-expansion-chart";
+import { NewVsOldWorldMonkeys } from "./new-vs-old-world-monkeys";
+import { MonkeysApesMan } from "./monkeys-apes-man";
+import { PlatyrrhineVsCatarrhine } from "./platyrrhine-vs-catarrhine";
+import { LesserVsGreatApes } from "./lesser-vs-great-apes";
+import { AnthropoidAncestorSplit } from "./anthropoid-ancestor-split";
+import { BipedalismAdvantages } from "./bipedalism-advantages";
+import { FourGrandTrends } from "./four-grand-trends";
+import { OutOfAfricaSpread } from "./out-of-africa-spread";
+import { CulturalEvolutionAges } from "./cultural-evolution-ages";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -2391,6 +2424,275 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Pasteur's swan-neck flasks: broth sterilised with the neck curved so dust and microbes settle in the bend stays sterile for months; break the neck and the broth spoils — life comes from existing life (biogenesis).",
         alt: "Pasteur swan-neck flask experiment disproving spontaneous generation",
         keyword: "swan-neck flasks",
+      },
+    ],
+  },
+  // ── Biology Unit 9 — evolutionary biology ───────────────────────────────
+  "life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment": {
+    title: "Life and its origin — Oparin–Haldane theory, Miller and Urey's experiment",
+    figures: [
+      {
+        Component: EarlyEarthConditions,
+        caption:
+          "Early Earth (~4.0–3.5 bya): a reducing atmosphere of CH₄, NH₃, H₂ and H₂O with no free O₂, energised by UV rays, lightning and volcanic heat — organics could accumulate in the primordial soup.",
+        alt: "Early Earth reducing atmosphere of methane ammonia hydrogen and water vapour over primordial oceans",
+        keyword: "reducing atmosphere",
+      },
+      {
+        Component: OparinHaldaneHypothesis,
+        caption:
+          "Oparin–Haldane chemical evolution: simple inorganics → simple organics ('hot dilute soup') → macromolecules → coacervates/protobionts → self-replicating RNA → first anaerobic heterotrophic cells.",
+        alt: "Oparin Haldane hypothesis six steps of chemical evolution",
+        keyword: "hot dilute soup",
+      },
+      {
+        Component: MillerUreyApparatus,
+        caption:
+          "Miller–Urey (1953): a sealed loop circulated CH₄/NH₃/H₂/H₂O past electric discharges; the condenser 'rained' products into the flask — amino acids (glycine, alanine, aspartic, glutamic) appeared within about a week.",
+        alt: "Miller Urey experiment apparatus with electrodes condenser and amino acid products",
+        keyword: "electric discharge",
+      },
+      {
+        Component: OriginGrandTimeline,
+        caption:
+          "From molecules to cells: Earth forms 4.6 bya → oceans condense → first prokaryotes (~3.8–3.5 bya, stromatolite fossils) → cyanobacteria oxygenate the air → eukaryotes → multicellular life and the Cambrian explosion.",
+        alt: "Grand timeline from Earth formation to Cambrian explosion",
+        keyword: "stromatolite",
+      },
+      {
+        Component: OriginTheories,
+        caption:
+          "Four views of life's origin: special creation (not testable), spontaneous generation (disproved by Pasteur), panspermia (cosmic seeding) and chemical evolution — the only testable, experiment-supported account.",
+        alt: "Theories of origin of life compared special creation spontaneous generation panspermia abiogenesis",
+        keyword: "panspermia",
+      },
+    ],
+  },
+  "evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical": {
+    title: "Evidences of evolution",
+    figures: [
+      {
+        Component: HomologousForelimbs,
+        caption:
+          "Homologous forelimbs of human (grasping), whale (flipper), bat (wing) and horse (running) share the same bones — humerus, radius-ulna, carpals, digits — divergent evolution from a common ancestor.",
+        alt: "Homologous forelimbs of human whale bat and horse showing divergent evolution",
+        keyword: "homologous organs",
+      },
+      {
+        Component: AnalogousOrgans,
+        caption:
+          "Analogous organs: butterfly wing (chitin membrane) vs bird wing (feathered bone-limb); octopus vs mammal eye — different structures, same function → convergent evolution under similar selection pressures.",
+        alt: "Analogous organs butterfly and bird wings octopus and mammal eyes convergent evolution",
+        keyword: "analogous organs",
+      },
+      {
+        Component: VestigialOrgans,
+        caption:
+          "Vestigial organs — human appendix, coccyx, wisdom teeth, nictitating membrane and whale pelvic bones: reduced, functionless remnants of useful ancestral organs.",
+        alt: "Vestigial organs appendix coccyx wisdom teeth nictitating membrane whale pelvis",
+        keyword: "vestigial organs",
+      },
+      {
+        Component: ConnectingLinks,
+        caption:
+          "Connecting links bridge two groups: Archaeopteryx (reptile→bird: feathers plus teeth/tail), Peripatus (annelid→arthropod), Euglena (plant→animal: chloroplasts plus movement).",
+        alt: "Connecting links Archaeopteryx Peripatus Euglena bridging two groups",
+        keyword: "connecting links",
+      },
+      {
+        Component: EmbryoSimilarity,
+        caption:
+          "Early embryos of fish, salamander, chick and human share gill pouches (pharyngeal arches), tail and notochord, diverging later (von Baer) — shared embryonic stages reveal common ancestry.",
+        alt: "Early embryos of fish salamander chick and human showing gill pouches tail notochord",
+        keyword: "gill pouches",
+      },
+      {
+        Component: MolecularEvidenceTree,
+        caption:
+          "Molecular evidence: human cytochrome c is identical to chimpanzee's, differs by 1 amino acid from rhesus and by many from yeast — the molecular tree matches the fossil tree.",
+        alt: "Cytochrome c similarity tree human chimpanzee rhesus horse yeast",
+        keyword: "cytochrome c",
+      },
+      {
+        Component: FossilRecordSequence,
+        caption:
+          "The fossil record runs simple prokaryotes (3.5 bya) → eukaryotes → invertebrates → fish → amphibians → reptiles → birds/mammals → humans; deeper strata are older, with C-14, U-Pb and K-Ar dating.",
+        alt: "Fossil record sequence from prokaryotes to humans complexity increases with time",
+        keyword: "transitional fossils",
+      },
+    ],
+  },
+  "theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism": {
+    title: "Theories of evolution — Lamarckism, Darwinism and neo-Darwinism",
+    figures: [
+      {
+        Component: LamarckismPropositions,
+        caption:
+          "Lamarckism's four propositions: internal vital forces, environment and need, use and disuse, and inheritance of acquired characters — the last is the fatal one.",
+        alt: "Lamarckism four propositions internal vital forces use and disuse inheritance of acquired characters",
+        keyword: "use and disuse",
+      },
+      {
+        Component: WeismannGermplasm,
+        caption:
+          "Weismann's germplasm theory: cutting mice's tails for 22 generations — tailless mice still born with tails. Somatic changes never reach the germ line, so acquired characters are not inherited.",
+        alt: "Weismann germplasm experiment mice tails cut for 22 generations",
+        keyword: "germplasm theory",
+      },
+      {
+        Component: DarwinFiveObservations,
+        caption:
+          "Darwin's five observations and deductions — the NEB 5-mark skeleton: overproduction → struggle for existence → variation → survival of the fittest → natural selection and inheritance (descent with modification).",
+        alt: "Darwin five observations overproduction struggle variation survival of the fittest natural selection",
+        keyword: "survival of the fittest",
+      },
+      {
+        Component: IndustrialMelanism,
+        caption:
+          "Industrial melanism in the peppered moth: pale moths camouflaged on lichen trunks; soot darkened the trunks and the rare dark mutant became camouflaged — dark forms rose above 90% (Kettlewell's confirmation).",
+        alt: "Industrial melanism peppered moth pale and dark forms before and after soot",
+        keyword: "industrial melanism",
+      },
+      {
+        Component: LamarckVsDarwinGiraffe,
+        caption:
+          "Two answers to one giraffe: Lamarck — the stretched neck is inherited; Darwin — long-necked variants survived droughts and bred more. Selection acts on pre-existing heritable variation.",
+        alt: "Lamarck versus Darwin giraffe neck explanation",
+        keyword: "giraffe",
+      },
+      {
+        Component: NeoDarwinismSynthesis,
+        caption:
+          "Neo-Darwinism (the modern synthesis): genetic variation by mutation, recombination and gene flow; selection changes allele frequencies; drift, isolation and speciation complete the picture.",
+        alt: "Neo Darwinism modern synthesis five pillars mutation selection drift isolation",
+        keyword: "genetic drift",
+      },
+      {
+        Component: LamarckVsDarwinTable,
+        caption:
+          "Lamarckism vs Darwinism (NEB 2024 comparison): driving force, mechanism, direction, origin of variation and final fate — one disproved, one confirmed and extended.",
+        alt: "Lamarckism versus Darwinism comparison table",
+        keyword: "inheritance of acquired characters",
+      },
+    ],
+  },
+  "human-evolution-position-of-man-in-animal-kingdom": {
+    title: "Human evolution — position of man in animal kingdom",
+    figures: [
+      {
+        Component: ManClassificationLadder,
+        caption:
+          "Man's place in the animal kingdom: Animalia → Chordata → Mammalia (hair, mammary glands, diaphragm, three ear ossicles) → Primates (opposable thumb, stereoscopic vision) → Hominidae → Homo sapiens.",
+        alt: "Position of man in animal kingdom classification ladder",
+        keyword: "opposable thumb",
+      },
+      {
+        Component: PrimateRelativesTree,
+        caption:
+          "Our primate relatives: prosimians (lemurs, lorises), Old World monkeys (macaque, langur), New World monkeys (spider monkey), apes (gibbon, orangutan, gorilla, chimpanzee) — and humans.",
+        alt: "Primate relatives tree prosimians monkeys apes humans",
+        keyword: "stereoscopic vision",
+      },
+      {
+        Component: ManVsApes,
+        caption:
+          "Man vs apes: fully erect bipedal posture, ~1350–1450 cc brain, flat face with chin and small canines, free hands with fully opposable thumb, speech (Broca's area) and cumulative culture.",
+        alt: "Man versus apes posture brain face hands language comparison",
+        keyword: "knuckle-walking",
+      },
+      {
+        Component: HumanEvolutionStages,
+        caption:
+          "Stages from Dryopithecus (~20–14 mya forest ape) through Ramapithecus, Australopithecus (Lucy), Homo habilis (first stone tools), H. erectus (fire, Java and Peking man), Neanderthal man, to Homo sapiens.",
+        alt: "Stages of human evolution from Dryopithecus to Homo sapiens",
+        keyword: "Homo erectus",
+      },
+      {
+        Component: BrainExpansionChart,
+        caption:
+          "Brain expansion along the line: ~450–500 cc in Australopithecus → 650–750 (habilis) → 900–1100 (erectus) → ~1400 (Neanderthal) → 1350–1450 cc in modern humans.",
+        alt: "Brain size expansion chart through hominid line",
+        keyword: "bipedalism",
+      },
+    ],
+  },
+  "differences-between-new-world-monkeys-and-old-world-monkeys-apes-and-man": {
+    title: "Differences between New World monkeys, Old World monkeys, apes and man",
+    figures: [
+      {
+        Component: NewVsOldWorldMonkeys,
+        caption:
+          "New World vs Old World monkeys: America vs Africa/Asia; flat wide-septum sideways nostrils vs narrow downward nostrils; long often prehensile tail vs never prehensile; no vs yes cheek pouches and ischial callosities.",
+        alt: "New World versus Old World monkeys comparison table",
+        keyword: "prehensile",
+      },
+      {
+        Component: MonkeysApesMan,
+        caption:
+          "Monkeys vs apes vs man: tail (present/absent/absent), posture, arms vs legs, brain volume, locomotion, language and examples — gibbon is the lesser ape; orangutan, gorilla and chimpanzee are great apes.",
+        alt: "Monkeys apes and man three-way comparison table",
+        keyword: "ischial callosities",
+      },
+      {
+        Component: PlatyrrhineVsCatarrhine,
+        caption:
+          "The two monkey noses: Platyrrhini — flat, wide septum, nostrils facing sideways; Catarrhini — narrow nostrils facing downward. And two tails: prehensile (New World) vs never prehensile (Old World).",
+        alt: "Platyrrhine versus catarrhine nose and tail anatomy",
+        keyword: "nostrils",
+      },
+      {
+        Component: LesserVsGreatApes,
+        caption:
+          "Lesser ape vs great apes: gibbon (Hylobatidae — small, brachiating, monogamous) versus orangutan, gorilla and chimpanzee (Hominidae — large, and grouped with humans).",
+        alt: "Lesser ape gibbon versus great apes orangutan gorilla chimpanzee",
+        keyword: "brachiation",
+      },
+      {
+        Component: PrimateRelativesTree,
+        caption:
+          "The primate family album: prosimians, two monkey lineages separated by ~40 million years of ocean, the tailless apes, and us — the anatomical grades behind the human-evolution story.",
+        alt: "Primate family tree with all grades",
+        keyword: "40 million years",
+      },
+    ],
+  },
+  "evolution-of-modern-man-starting-from-anthropoid-ancestor": {
+    title: "Evolution of modern man starting from anthropoid ancestor",
+    figures: [
+      {
+        Component: AnthropoidAncestorSplit,
+        caption:
+          "The split (~6–7 mya): forest shrinkage in Africa (Miocene cooling) divided a Dryopithecus-like forest ape — one branch stayed forest-adapted (chimpanzee/gorilla), the other took to open woodland and savanna (hominins).",
+        alt: "Anthropoid ancestor split into ape and hominin lines",
+        keyword: "forest shrinkage",
+      },
+      {
+        Component: BipedalismAdvantages,
+        caption:
+          "Why bipedalism came first on open ground: scanning over grass for predators and food, freeing the hands for carrying food, tools and infants, reduced sun exposure, and energy-efficient long-distance travel.",
+        alt: "Four advantages of bipedalism on open savanna",
+        keyword: "predator vigilance",
+      },
+      {
+        Component: FourGrandTrends,
+        caption:
+          "The four grand trends: posture (quadrupedal → striding bipedal), hands (knuckle support → precision grip), brain and face (~450 → ~1400 cc, flat face with chin), and cumulative culture — with the feedback loop that drove them.",
+        alt: "Four grand trends of human evolution posture hands brain culture",
+        keyword: "feedback loop",
+      },
+      {
+        Component: OutOfAfricaSpread,
+        caption:
+          "Out of Africa: H. erectus left ~1.8 mya; modern H. sapiens left ~60–70 kya, reaching Australia (~50 kya) and the Americas (~15 kya) — and every ecological zone from Nepal's Terai to high Himalaya.",
+        alt: "Out of Africa spread of Homo erectus and Homo sapiens",
+        keyword: "out of africa",
+      },
+      {
+        Component: CulturalEvolutionAges,
+        caption:
+          "Cultural evolution — the fourth engine: Paleolithic (tools, fire) → Mesolithic (microliths) → Neolithic (agriculture, villages) → metal ages (writing, cities) → industrial/scientific — now faster than biological evolution.",
+        alt: "Cultural evolution ages from Paleolithic to industrial",
+        keyword: "agriculture",
       },
     ],
   },
