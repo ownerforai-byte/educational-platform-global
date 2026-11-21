@@ -6,6 +6,7 @@ import { verifyAccessToken } from "../../auth/token-verify.js";
 import { supabaseAdmin } from "../../db/supabase";
 import { routeBinaryUpload, storageTiersHealth } from "../../storage/router";
 import { isR2StorageActive } from "../../storage/r2";
+import { releaseStoragePath, reserveStoragePath } from "../../services/profile-storage";
 import {
   resolveStorageApiMime,
   STORAGE_API_UPLOAD_MAX_BYTES,
@@ -39,7 +40,7 @@ async function requireContentEditor(req: Request, res: Response) {
 
   const { data: profile } = await supabaseAdmin
     .from("profiles")
-    .select("role, access_status")
+    .select("role, plan, access_status")
     .eq("id", user.id)
     .maybeSingle();
 
@@ -140,8 +141,26 @@ router.post("/upload", async (req: Request, res: Response) => {
     return;
   }
 
+  const ownerId = auth.user.id;
+  const objectPath = path.startsWith(`accounts/${ownerId}/`)
+    ? path
+    : `accounts/${ownerId}/${path.replace(/^\/+/, "")}`;
+  const reserved = await reserveStoragePath(ownerId, objectPath, buffer.length, {
+    email: auth.user.email,
+    role: auth.profile.role,
+    plan: typeof auth.profile.plan === "string" ? auth.profile.plan : null,
+  });
+  if (!reserved.ok) {
+    if (reserved.reason === "quota") {
+      res.status(413).json({ error: "Storage quota exceeded" });
+      return;
+    }
+    res.status(503).json({ error: "Profile storage is not available yet" });
+    return;
+  }
+
   try {
-    const routed = await routeBinaryUpload({ path, contentType, buffer });
+    const routed = await routeBinaryUpload({ path: objectPath, contentType, buffer });
     res.status(201).json({
       path: routed.path,
       publicUrl: routed.publicUrl,
@@ -149,6 +168,7 @@ router.post("/upload", async (req: Request, res: Response) => {
       tier: routed.tier,
     });
   } catch (err: unknown) {
+    await releaseStoragePath(ownerId, objectPath).catch(() => undefined);
     console.error(
       "[storage] tiered upload failed:",
       err instanceof Error ? err.message : err,

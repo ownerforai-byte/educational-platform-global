@@ -25,11 +25,11 @@ export function BotAnswerButton({
         type="button"
         disabled={busy}
         className={cn(actionBtn, "min-h-11 min-w-11 text-primary hover:bg-primary/10")}
-        aria-label="Answer with Veer"
+        aria-label="Ask AI"
         onClick={onPublish}
       >
         {busy ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <Sparkles className="h-4 w-4" aria-hidden />}
-        <span className="hidden sm:inline">{busy ? "Generating…" : "Answer with Veer"}</span>
+        <span>{busy ? "Asking…" : "Ask AI"}</span>
       </button>
     );
   }
@@ -41,11 +41,11 @@ export function BotAnswerButton({
           <Sparkles className="h-5 w-5" aria-hidden />
         </span>
         <div className="min-w-0 space-y-1">
-          <h2 className="text-base font-semibold tracking-tight">Answer with Veer</h2>
+          <h2 className="text-base font-semibold tracking-tight">Ask AI</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
             {question
-              ? "One click publishes a curriculum-grounded reply as a public comment from the verified AI assistant."
-              : "Ask Veer to search curriculum material and publish a public comment on this post."}
+              ? "One click asks the community assistant to answer this question in public."
+              : "One click asks the community assistant to reply on this post."}
           </p>
         </div>
       </div>
@@ -53,18 +53,18 @@ export function BotAnswerButton({
         type="button"
         disabled={busy}
         className={cn(chipBtn, "min-h-11 px-4 text-sm text-foreground")}
-        aria-label="Answer with Veer"
+        aria-label="Ask AI"
         onClick={onPublish}
       >
         {busy ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-            Generating reply…
+            Asking…
           </>
         ) : (
           <>
             <Bot className="h-4 w-4" aria-hidden />
-            Answer with Veer
+            Ask AI
           </>
         )}
       </button>

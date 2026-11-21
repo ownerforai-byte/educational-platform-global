@@ -142,8 +142,8 @@ export function CommunityFeed({
     mode === "mine" ? "My posts" : mode === "saved" ? "Saved posts" : "Community";
 
   return (
-    <div className="min-w-0 flex-1 space-y-3">
-      <header className="space-y-3">
+    <div className="min-w-0 flex-1 space-y-2">
+      <header className="space-y-2 rounded-lg border border-border bg-card p-3">
         {mode === "mine" || mode === "saved" ? (
           <CommunityBackLink href="/ai/community" label="Back to feed" />
         ) : null}
@@ -364,7 +364,7 @@ export function CommunityFeed({
       ) : null}
 
       {posts.length > 0 ? (
-        <div className="space-y-3">
+        <div className="space-y-2">
           {posts.map((item, index) => (
             <FeedPostRow
               key={item.id}

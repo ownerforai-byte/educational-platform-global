@@ -8,6 +8,11 @@ const { r2Active, r2Delete, r2Download, r2Upload, insertChatMessages } = vi.hois
   insertChatMessages: vi.fn(),
 }));
 
+vi.mock("../../src/services/profile-storage.js", () => ({
+  accountStorageObject: vi.fn(async () => ({ ok: true })),
+  releaseStoragePath: vi.fn(async () => {}),
+}));
+
 vi.mock("../../src/storage/r2.js", () => ({
   isR2StorageActive: r2Active,
   r2Delete,

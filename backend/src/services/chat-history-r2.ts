@@ -1,5 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { isR2StorageActive, r2Delete, r2Download, r2Upload } from "../storage/r2.js";
+import { accountStorageObject, releaseStoragePath } from "./profile-storage.js";
 
 export const CHAT_HISTORY_R2_MAX_MESSAGES = 500;
 const CHAT_HISTORY_PREFIX = "chat-history";
@@ -126,9 +127,27 @@ async function readSessions(key: string): Promise<Map<string, string>> {
   return object ? parseSessionIndex(object.buffer) : new Map<string, string>();
 }
 
-async function writeJson(key: string, value: unknown): Promise<void> {
+/** Count the object against the account, then write it. Quota failure skips the write. */
+async function writeAccountedJson(userId: string, key: string, value: unknown): Promise<boolean> {
   const body = Buffer.from(JSON.stringify(value));
-  await r2Upload(key, body, "application/json", { cacheControl: "private, no-store" });
+  const reserved = await accountStorageObject(userId, key, body.byteLength, {
+    email: null,
+    role: null,
+    plan: null,
+  });
+  if (!reserved.ok && reserved.reason === "quota") return false;
+  try {
+    await r2Upload(key, body, "application/json", { cacheControl: "private, no-store" });
+    return true;
+  } catch (err) {
+    await releaseStoragePath(userId, key).catch(() => undefined);
+    throw err;
+  }
+}
+
+async function deleteAccounted(userId: string, key: string): Promise<void> {
+  await r2Delete(key);
+  await releaseStoragePath(userId, key).catch(() => undefined);
 }
 
 async function readIndexTwice(
@@ -198,9 +217,9 @@ export async function appendChatHistoryToR2(
     const merged = mergeMessages(beforeMerge, latestMessages, messages);
     const sessions = new Map([...first, ...latest]);
     sessions.set(safeSession, session.slice(0, 128));
-    await writeJson(indexKey, Object.fromEntries(sessions));
-    await writeJson(key, merged);
-    return true;
+    const wroteIndex = await writeAccountedJson(userId, indexKey, Object.fromEntries(sessions));
+    if (!wroteIndex) return false;
+    return writeAccountedJson(userId, key, merged);
   });
 }
 
@@ -214,17 +233,21 @@ export async function clearChatHistoryFromR2(
     const indexKey = sessionIndexKey(userId);
     if (!safeSession) {
       const sessions = await readSessions(indexKey);
-      for (const item of sessions.keys()) await r2Delete(sessionObjectKey(userId, item));
-      await r2Delete(indexKey);
+      for (const item of sessions.keys()) await deleteAccounted(userId, sessionObjectKey(userId, item));
+      await deleteAccounted(userId, indexKey);
       return true;
     }
 
-    await r2Delete(sessionObjectKey(userId, safeSession));
+    await deleteAccounted(userId, sessionObjectKey(userId, safeSession));
     const { first, latest } = await readIndexTwice(indexKey);
     const remaining = new Map([...first, ...latest]);
     remaining.delete(safeSession);
-    if (remaining.size) await writeJson(indexKey, Object.fromEntries(remaining));
-    else await r2Delete(indexKey);
+    if (remaining.size) {
+      const wrote = await writeAccountedJson(userId, indexKey, Object.fromEntries(remaining));
+      if (!wrote) return false;
+    } else {
+      await deleteAccounted(userId, indexKey);
+    }
     return true;
   });
 }

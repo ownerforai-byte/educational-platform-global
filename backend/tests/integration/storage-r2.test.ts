@@ -16,12 +16,16 @@ const m = vi.hoisted(() => {
   const accessStatus = { value: undefined as string | undefined };
   const r2Upload = vi.fn();
   const r2Active = { value: true };
+  const reserveStoragePath = vi.fn();
+  const releaseStoragePath = vi.fn();
   return {
     getUser,
     role,
     accessStatus,
     r2Upload,
     r2Active,
+    reserveStoragePath,
+    releaseStoragePath,
   };
 });
 
@@ -55,6 +59,11 @@ vi.mock("../../src/db/supabase", () => {
   };
   return { supabaseAdmin, createAuthClient: () => supabaseAdmin };
 });
+
+vi.mock("../../src/services/profile-storage", () => ({
+  reserveStoragePath: (...args: unknown[]) => m.reserveStoragePath(...args),
+  releaseStoragePath: (...args: unknown[]) => m.releaseStoragePath(...args),
+}));
 
 vi.mock("../../src/storage/r2", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../../src/storage/r2")>();
@@ -152,6 +161,8 @@ beforeEach(() => {
   m.r2Active.value = true;
   m.getUser.mockResolvedValue({ data: { user: { id: "user-1" } }, error: null });
   m.r2Upload.mockResolvedValue({ url: "https://pub.r2.example/class-11/x.pdf" });
+  m.reserveStoragePath.mockReset().mockResolvedValue({ ok: true });
+  m.releaseStoragePath.mockReset().mockResolvedValue(undefined);
 });
 
 afterAll(async () => {

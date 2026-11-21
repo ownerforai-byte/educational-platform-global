@@ -840,13 +840,11 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
         .catch((err) =>
           setError(
             statusOf(err) === 401
-              ? "Sign in to ask Veer to reply."
-              : statusOf(err) === 403
-                ? "Only the post author or a platform owner can publish a Veer reply on this post."
-                : statusOf(err) === 409
-                  ? "A Veer reply is already on this post."
-                  : statusOf(err) === 429
-                    ? "Too many Veer replies right now. Try again in a few minutes."
+              ? "Sign in to ask the community assistant."
+              : statusOf(err) === 409
+                ? "The community assistant already answered this question."
+                : statusOf(err) === 429
+                  ? "Too many Ask AI requests right now. Try again in a few minutes."
                     : messageOf(err, "Could not publish the assistant reply."),
           ),
         )

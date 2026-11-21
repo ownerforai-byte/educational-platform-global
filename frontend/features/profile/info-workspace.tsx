@@ -6,9 +6,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { ProfileAvatar, ProfileCover } from "@/features/profile/profile-media";
+import { ProfileAvatar } from "@/features/profile/profile-media";
 import { ACCESS_LABELS, accessLevelFor } from "@/lib/core/access-level";
-import { getMyProfile, profilePath, type PublicProfile, type StorageInfo } from "@/lib/api/profile";
+import { getMyProfile, getStorage, profilePath, type PublicProfile, type StorageInfo } from "@/lib/api/profile";
 import { INFO_NAV, type InfoLink } from "@/features/profile/info-catalog";
 import { cn } from "@/lib/utils";
 
@@ -56,42 +56,37 @@ export function InfoWorkspace({
     media?.fullName || user?.fullName || (user?.email ? user.email.split("@")[0] : "Student");
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-6 md:px-8 md:py-8">
-      <header className="overflow-hidden rounded-lg border border-border bg-card">
-        <ProfileCover url={media?.coverUrl} className="h-24 md:h-32" priority />
-        <div className="flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-end sm:justify-between md:px-6">
-          <div className="flex min-w-0 items-end gap-4">
-            <ProfileAvatar
-              url={media?.avatarUrl}
-              name={displayName}
-              className="-mt-12 h-16 w-16 rounded-lg border-4 border-card md:h-20 md:w-20"
-              textClassName="text-lg"
-              priority
-            />
-            <div className="min-w-0 pb-1">
-              <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
-                Info
-              </p>
-              <h1 className="truncate text-xl font-semibold tracking-tight md:text-2xl">{displayName}</h1>
-              <p className="truncate text-sm text-muted-foreground">
-                {media?.username ? `@${media.username}` : user?.email || "Sign in to continue"} · {ACCESS_LABELS[tier]}
-              </p>
-            </div>
+    <div className="mx-auto w-full max-w-6xl space-y-3 px-3 py-4 md:px-6">
+      <header className="flex flex-col gap-3 rounded-lg border border-border bg-card p-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex min-w-0 items-center gap-3">
+          <ProfileAvatar
+            url={media?.avatarUrl}
+            name={displayName}
+            className="h-12 w-12 rounded-md"
+            textClassName="text-base"
+            priority
+          />
+          <div className="min-w-0">
+            <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Info</p>
+            <h1 className="truncate text-lg font-semibold tracking-tight">{displayName}</h1>
+            <p className="truncate text-xs text-muted-foreground">
+              {media?.username ? `@${media.username}` : user?.email || "Sign in to continue"} · {ACCESS_LABELS[tier]}
+            </p>
           </div>
-          {onOpenRecord ? (
-            <Button onClick={onOpenRecord} className="h-10 shrink-0 rounded-md px-4">
-              My Profile
-              <ChevronRight className="h-4 w-4" aria-hidden />
-            </Button>
-          ) : media?.username || media?.id ? (
-            <Button variant="outline" className="h-10 shrink-0 rounded-md" asChild>
-              <Link href={profilePath(media.username, media.id)}>Public page</Link>
-            </Button>
-          ) : null}
         </div>
+        {onOpenRecord ? (
+          <Button onClick={onOpenRecord} className="h-9 shrink-0 rounded-md px-3">
+            My Profile
+            <ChevronRight className="h-4 w-4" aria-hidden />
+          </Button>
+        ) : media?.username || media?.id ? (
+          <Button variant="outline" className="h-9 shrink-0 rounded-md" asChild>
+            <Link href={profilePath(media.username, media.id)}>Public page</Link>
+          </Button>
+        ) : null}
       </header>
 
-      <nav aria-label="Info sections" className="mt-4 flex gap-1 overflow-x-auto border-b border-border">
+      <nav aria-label="Info sections" className="grid grid-cols-2 gap-2 sm:grid-cols-5">
         {INFO_NAV.map((tab) => {
           const active = tab.exact ? pathname === tab.href : pathname === tab.href || pathname.startsWith(`${tab.href}/`);
           return (
@@ -100,10 +95,10 @@ export function InfoWorkspace({
               href={tab.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "shrink-0 border-b-2 px-3 py-2.5 text-sm font-medium transition-colors",
+                "rounded-lg border px-3 py-2 text-center text-sm font-medium",
                 active
-                  ? "border-foreground text-foreground"
-                  : "border-transparent text-muted-foreground hover:text-foreground",
+                  ? "border-foreground bg-foreground text-background"
+                  : "border-border bg-card text-muted-foreground hover:text-foreground",
               )}
             >
               {tab.label}
@@ -112,7 +107,7 @@ export function InfoWorkspace({
         })}
       </nav>
 
-      <div className="py-6">{children}</div>
+      <div className="rounded-lg border border-border bg-card p-3 md:p-4">{children}</div>
     </div>
   );
 }
@@ -171,10 +166,19 @@ export function useInfoMedia(): { media: PublicProfile | null; storage: StorageI
     if (!user) return;
     let alive = true;
     void getMyProfile()
-      .then((me) => {
+      .then(async (me) => {
         if (!alive) return;
         setMedia(me.profile);
-        setStorage(me.storage);
+        if (me.storage) {
+          setStorage(me.storage);
+          return;
+        }
+        try {
+          const snap = await getStorage();
+          if (alive) setStorage(snap);
+        } catch {
+          if (alive) setStorage(null);
+        }
       })
       .catch(() => {});
     return () => {

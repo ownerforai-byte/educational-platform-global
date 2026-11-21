@@ -3,53 +3,15 @@
 import Link from "next/link";
 import { ACCOUNT_LINKS, PEOPLE_LINKS, STUDY_LINKS } from "@/features/profile/info-catalog";
 import { InfoLinkGrid, useInfoMedia } from "@/features/profile/info-workspace";
+import { PlanIncludes } from "@/features/profile/plan-includes";
+import { StorageMeter } from "@/features/profile/storage-meter";
 import { PROFILE_INFO_FIELDS, profileInfoText } from "@/features/profile/profile-info";
 import { useSession } from "@/features/auth/hooks/use-session";
-
-function ColumnPreview({
-  href,
-  kicker,
-  title,
-  links,
-}: {
-  href: string;
-  kicker: string;
-  title: string;
-  links: Array<{ href: string; title: string; detail: string }>;
-}) {
-  return (
-    <section className="flex flex-col rounded-lg border border-border bg-card">
-      <header className="flex items-baseline justify-between gap-3 border-b border-border px-4 py-3">
-        <div>
-          <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">{kicker}</p>
-          <h2 className="text-base font-semibold">{title}</h2>
-        </div>
-        <Link href={href} className="text-sm font-medium text-foreground underline-offset-4 hover:underline">
-          Open
-        </Link>
-      </header>
-      <ul className="divide-y divide-border">
-        {links.slice(0, 4).map((item) => (
-          <li key={item.href}>
-            <Link href={item.href} className="block px-4 py-3 hover:bg-muted/40">
-              <span className="block text-sm font-medium">{item.title}</span>
-              <span className="block text-xs text-muted-foreground">{item.detail}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
+import { isOwnerAccount } from "@/lib/owner";
 
 export function InfoOverviewBoard() {
-  return (
-    <div className="grid gap-4 lg:grid-cols-3">
-      <ColumnPreview href="/profile/study" kicker="01" title="Study" links={STUDY_LINKS} />
-      <ColumnPreview href="/profile/people" kicker="02" title="People" links={PEOPLE_LINKS} />
-      <ColumnPreview href="/profile/account" kicker="03" title="Account" links={ACCOUNT_LINKS} />
-    </div>
-  );
+  const { user } = useSession();
+  return <PlanIncludes editable={isOwnerAccount(user)} />;
 }
 
 export function InfoDetailsBoard() {
@@ -121,15 +83,13 @@ export function InfoPeopleBoard() {
 
 export function InfoAccountBoard() {
   const { storage } = useInfoMedia();
-  const used = storage ? `${Math.round(storage.usedBytes / (1024 * 1024))} MB used` : "Storage loading";
   return (
     <div className="space-y-6">
-      <p className="text-sm text-muted-foreground">
-        {storage?.unlimited ? "Storage is not capped on this plan." : used}
-        {storage && !storage.unlimited
-          ? ` · ${Math.round(storage.remainingBytes / (1024 * 1024))} MB free`
-          : ""}
-      </p>
+      {storage ? (
+        <StorageMeter storage={storage} />
+      ) : (
+        <p className="text-sm text-muted-foreground">Storage quota is not available for this account yet.</p>
+      )}
       <InfoLinkGrid
         title="Account"
         lede="Profile, settings, wallet and the tools that belong to this sign-in."

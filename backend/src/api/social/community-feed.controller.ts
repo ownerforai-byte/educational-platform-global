@@ -5,7 +5,6 @@ import { supabaseAdmin } from "../../db/supabase";
 import {
   requireAuth,
   getUserFromRequest,
-  isOwnerAccount,
   type AuthedRequest,
 } from "../../middleware/auth";
 import { communityAiReplyLimit } from "../../middleware/rateLimit";
@@ -278,9 +277,8 @@ async function profilesById(ids: string[]): Promise<Map<string, ProfileRow>> {
   return map;
 }
 
-function canPublishCommunityBotReply(postAuthorId: string, viewer: SessionUser | null): boolean {
-  if (!viewer) return false;
-  return viewer.id === postAuthorId || isOwnerAccount(viewer);
+function canPublishCommunityBotReply(_postAuthorId: string, viewer: SessionUser | null): boolean {
+  return Boolean(viewer);
 }
 
 async function publishBotThreadReply(opts: {
@@ -345,8 +343,8 @@ async function publishBotThreadReply(opts: {
 
 async function assistantReplyMeta(
   postId: string,
-  postAuthorId: string,
-  viewer: SessionUser | null,
+  _postAuthorId: string,
+  _viewer: SessionUser | null,
 ): Promise<{ posted: boolean; canApprove: boolean }> {
   let posted = false;
   const { data, error } = await supabaseAdmin
@@ -364,8 +362,7 @@ async function assistantReplyMeta(
       .limit(1);
     if (!legacy.error && (legacy.data ?? []).length > 0) posted = true;
   }
-  const canApprove = !posted && canPublishCommunityBotReply(postAuthorId, viewer);
-  return { posted, canApprove };
+  return { posted, canApprove: !posted };
 }
 
 async function followingByAuthor(
@@ -486,21 +483,52 @@ async function presentMany(rows: PostRow[], viewerId: string | null) {
     viewerId,
     rows.map((row) => row.author_id),
   );
+  const answered = await assistantAnsweredPostIds(rows.map((row) => row.id));
   return {
-    posts: rows.map((row) =>
-      presentPost(
-        row,
-        profiles,
-        side.likes,
-        side.saves,
-        side.reposts,
-        side.comments,
-        side.attachments,
-        viewerId,
-        followingAuthors,
-      ),
-    ),
+    posts: rows.map((row) => {
+      const posted = answered.has(row.id);
+      return {
+        ...presentPost(
+          row,
+          profiles,
+          side.likes,
+          side.saves,
+          side.reposts,
+          side.comments,
+          side.attachments,
+          viewerId,
+          followingAuthors,
+        ),
+        assistantReply: { posted, canApprove: !posted },
+      };
+    }),
   };
+}
+
+/** Posts that already have a community-bot answer, so Ask AI is offered once. */
+async function assistantAnsweredPostIds(postIds: string[]): Promise<Set<string>> {
+  const answered = new Set<string>();
+  if (postIds.length === 0) return answered;
+  const ledger = await supabaseAdmin
+    .from("community_feed_ai_replies")
+    .select("post_id")
+    .in("post_id", postIds);
+  if (!ledger.error) {
+    for (const row of ledger.data ?? []) {
+      if (row.post_id) answered.add(String(row.post_id));
+    }
+    return answered;
+  }
+  if (!isMissingTable(ledger.error)) return answered;
+  const legacy = await supabaseAdmin
+    .from("community_feed_comments")
+    .select("post_id")
+    .in("post_id", postIds)
+    .eq("author_id", COMMUNITY_BOT_ID);
+  for (const row of legacy.data ?? []) {
+    if (row.post_id) answered.add(String(row.post_id));
+  }
+  return answered;
 }
 
 async function loadRecent(authorId?: string, limit = SCAN_LIMIT): Promise<{ rows: PostRow[] } | { missing: true } | { error: DbError }> {
@@ -1349,7 +1377,7 @@ router.post(
       return;
     }
     if (!canPublishCommunityBotReply(found.row.author_id, user)) {
-      bad(res, "Only the post author or a platform owner can publish a Community bot reply.", 403);
+      bad(res, "Sign in to ask the community assistant.", 401);
       return;
     }
     const existing = await assistantReplyMeta(postId, found.row.author_id, user);
@@ -2303,11 +2331,50 @@ router.post(
       bad(res, "Direct upload is unavailable until R2 is configured.", 503);
       return;
     }
+    const byteSize = Number(req.body?.byteSize);
+    if (!Number.isInteger(byteSize) || byteSize < 1) {
+      bad(res, "byteSize is required");
+      return;
+    }
+    if (byteSize > MAX_FILE_BYTES) {
+      bad(res, "Each file must be 3 MB or smaller", 413);
+      return;
+    }
     const attachmentId = randomUUID();
     const storagePath = `community/${postId}/${attachmentId}/${safeFilename}`;
+    await ensureProfile(user);
+    const reserved = await reserveStoragePath(user.id, storagePath, byteSize, user);
+    if (!reserved.ok) {
+      if (reserved.reason === "quota") {
+        bad(res, "Storage quota exceeded — free space on your profile or upgrade your plan.", 413);
+      } else {
+        unavailable(res);
+      }
+      return;
+    }
     const uploadUrl = await r2PresignedPut(storagePath, contentType);
     if (!uploadUrl) {
+      await releaseStoragePath(user.id, storagePath);
       unavailable(res);
+      return;
+    }
+    const { error } = await supabaseAdmin.from("community_feed_attachments").insert({
+      id: attachmentId,
+      post_id: postId,
+      filename: safeFilename,
+      content_type: contentType,
+      byte_size: byteSize,
+      storage_path: storagePath,
+      data_base64: null,
+      created_at: new Date().toISOString(),
+    });
+    if (error) {
+      await releaseStoragePath(user.id, storagePath);
+      if (isMissingTable(error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, error, "community-feed");
       return;
     }
     noStore(res);

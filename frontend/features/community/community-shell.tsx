@@ -34,18 +34,13 @@ export function CommunityShell({
   }
 
   return (
-    <div
-      className={cn(
-        "mx-auto w-full max-w-[1280px] px-4 py-4 sm:px-6 sm:py-6",
-        className,
-      )}
-    >
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-5 xl:gap-6">
+    <div className={cn("mx-auto w-full max-w-[1100px] px-3 py-3 sm:px-4", className)}>
+      <div className="grid items-start gap-3 lg:grid-cols-[188px_minmax(0,1fr)] xl:grid-cols-[188px_minmax(0,1fr)_220px]">
         {active ? (
-          <CommunitySubnav active={active} savedCount={savedCount} className="lg:w-[200px]" />
+          <CommunitySubnav active={active} savedCount={savedCount} className="lg:sticky lg:top-3" />
         ) : null}
-        <div className="min-w-0 flex-1 space-y-4">{children}</div>
-        <CommunityDiscoveryRail className="hidden w-[260px] shrink-0 xl:block" />
+        <div className="min-w-0 space-y-2">{children}</div>
+        <CommunityDiscoveryRail className="hidden xl:block" />
       </div>
     </div>
   );

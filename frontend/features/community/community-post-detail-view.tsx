@@ -280,8 +280,8 @@ export function CommunityPostDetailView() {
 
               <BotAnswerButton
                 visible={Boolean(
-                  user &&
-                    !isCommunityBot(post.author.id) &&
+                  !isCommunityBot(post.author.id) &&
+                    looksLikeQuestion(post) &&
                     post.assistantReply?.canApprove &&
                     !post.assistantReply.posted,
                 )}

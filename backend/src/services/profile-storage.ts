@@ -90,10 +90,12 @@ export async function getStorageSnapshot(
 
   const used = Number(data?.storage_used_bytes ?? 0);
   const override = data?.storage_limit_bytes;
+  const storedRole = typeof data?.role === "string" ? data.role : user.role;
+  const storedPlan = typeof data?.plan === "string" ? data.plan : user.plan;
   const limit =
     override != null && Number.isFinite(Number(override))
       ? Number(override)
-      : defaultLimitBytes(user);
+      : defaultLimitBytes({ email: user.email, role: storedRole, plan: storedPlan });
   const unlimited = limit >= UNLIMITED / 2;
   return {
     usedBytes: used,
@@ -155,6 +157,59 @@ export async function reserveStoragePath(
   });
   if (insErr) throw insErr;
   await bumpProfileUsed(ownerId, byteSize);
+  return { ok: true };
+}
+
+/**
+ * Set the byte size of one account object. A rewrite of the same path updates
+ * the ledger in place so chat history and other overwrites do not stack refs.
+ */
+export async function accountStorageObject(
+  ownerId: string,
+  path: string,
+  byteSize: number,
+  user: Pick<SessionUser, "role" | "plan" | "email">,
+): Promise<{ ok: true } | { ok: false; reason: "quota" | "missing" }> {
+  if (byteSize < 0) return { ok: false, reason: "quota" };
+
+  const snap = await getStorageSnapshot(ownerId, user);
+  if ("missing" in snap) return { ok: false, reason: "missing" };
+
+  const { data: existing, error: exErr } = await supabaseAdmin
+    .from("storage_objects")
+    .select("path, byte_size")
+    .eq("path", path)
+    .maybeSingle();
+
+  if (exErr && isMissingTable(exErr)) return { ok: false, reason: "missing" };
+  if (exErr) throw exErr;
+
+  const prior = existing ? Number(existing.byte_size ?? 0) : 0;
+  const delta = byteSize - prior;
+  if (delta > 0 && !snap.unlimited && snap.usedBytes + delta > snap.limitBytes) {
+    return { ok: false, reason: "quota" };
+  }
+
+  const now = new Date().toISOString();
+  if (existing) {
+    const { error } = await supabaseAdmin
+      .from("storage_objects")
+      .update({ byte_size: byteSize, updated_at: now })
+      .eq("path", path);
+    if (error) throw error;
+  } else {
+    const { error } = await supabaseAdmin.from("storage_objects").insert({
+      path,
+      owner_id: ownerId,
+      byte_size: byteSize,
+      ref_count: 1,
+      created_at: now,
+      updated_at: now,
+    });
+    if (error && isMissingTable(error)) return { ok: false, reason: "missing" };
+    if (error) throw error;
+  }
+  if (delta !== 0) await bumpProfileUsed(ownerId, delta);
   return { ok: true };
 }
 

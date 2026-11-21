@@ -61,6 +61,23 @@ export function refreshSectionTierOverrides(): Promise<SectionTierOverrides> {
   return load(true);
 }
 
+/**
+ * Show a section minimum immediately, before the save round-trip returns.
+ * Pass `null` to drop the override and fall back to the code default.
+ */
+export function previewSectionTier(
+  sectionId: string,
+  rung: AccessLevel | null,
+): SectionTierOverrides {
+  const next: SectionTierOverrides = { ...cache };
+  if (rung) next[sectionId] = rung;
+  else delete next[sectionId];
+  cache = next;
+  loaded = true;
+  listeners.forEach((listener) => listener());
+  return cache;
+}
+
 /** The live owner overrides; `{}` while they load or when defaults rule. */
 export function useSectionTierOverrides(): SectionTierOverrides {
   const [overrides, setOverrides] = useState<SectionTierOverrides>(cache);

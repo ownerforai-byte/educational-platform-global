@@ -121,8 +121,8 @@ beforeEach(() => {
   }));
 });
 
-describe("CommunityBoard Answer with Veer", () => {
-  it("hides Answer with Veer when the viewer cannot approve", async () => {
+describe("CommunityBoard Ask AI", () => {
+  it("hides Ask AI when the viewer cannot approve", async () => {
     sessionState.user = { id: "user-2" };
     getPost.mockResolvedValue({
       post: { ...questionPost, assistantReply: { posted: false, canApprove: false } },
@@ -131,7 +131,7 @@ describe("CommunityBoard Answer with Veer", () => {
 
     render(<CommunityBoard view="post" id={questionPost.id} />);
     await screen.findByText("What is photosynthesis?");
-    expect(screen.queryByRole("button", { name: "Answer with Veer" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Ask AI" })).not.toBeInTheDocument();
     expect(publishAssistantReply).not.toHaveBeenCalled();
   });
 
@@ -140,7 +140,7 @@ describe("CommunityBoard Answer with Veer", () => {
     const confirm = vi.spyOn(window, "confirm");
     render(<CommunityBoard view="post" id={questionPost.id} />);
 
-    const buttons = await screen.findAllByRole("button", { name: "Answer with Veer" });
+    const buttons = await screen.findAllByRole("button", { name: "Ask AI" });
     expect(buttons.length).toBeGreaterThan(0);
     fireEvent.click(buttons[0]);
 
@@ -152,7 +152,7 @@ describe("CommunityBoard Answer with Veer", () => {
     confirm.mockRestore();
   });
 
-  it("hides Answer with Veer after the bot has already replied", async () => {
+  it("hides Ask AI after the bot has already replied", async () => {
     getPost.mockResolvedValue({
       post: {
         ...questionPost,
@@ -180,7 +180,7 @@ describe("CommunityBoard Answer with Veer", () => {
 
     render(<CommunityBoard view="post" id={questionPost.id} />);
     expect(await screen.findByText("Already posted.")).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "Answer with Veer" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Ask AI" })).not.toBeInTheDocument();
     expect(screen.getByLabelText("Community bot verified")).toBeInTheDocument();
   });
 });

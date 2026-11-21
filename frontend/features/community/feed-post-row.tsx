@@ -150,7 +150,7 @@ export const FeedPostRow = memo(function FeedPostRow({
   const own = Boolean(viewerId && viewerId === item.author.id);
   const canEditOrDelete = own || canModerate;
   const canInvokeBot = Boolean(
-    viewerId && item.assistantReply?.canApprove && !item.assistantReply.posted,
+    looksLikeQuestion(item) && !botAuthor && item.assistantReply?.canApprove && !item.assistantReply.posted,
   );
   const botReplied = Boolean(item.assistantReply?.posted);
   const filesMeta = attachmentSummary(item.attachments);
@@ -178,15 +178,9 @@ export const FeedPostRow = memo(function FeedPostRow({
   return (
     <article
       ref={rowRef}
-      className={cn(
-        "group relative flex flex-col justify-between gap-2.5 rounded-2xl border border-border/80 bg-card px-4 py-3.5 shadow-sm shadow-black/[0.04] transition-[transform,box-shadow,border-color] hover:border-border hover:shadow-md hover:shadow-primary/[0.06] sm:px-5 sm:py-4",
-        isLeading
-          ? "min-h-[124px] ring-1 ring-primary/15 shadow-elev-1"
-          : "min-h-[96px]",
-      )}
+      className="overflow-hidden rounded-lg border border-border bg-card"
     >
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-        <div className="min-w-0 flex-1 space-y-1.5">
+      <div className="space-y-1.5 px-3 py-2.5">
           {/* Top metadata line: category, author, time, resource & Veer indicators */}
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] text-muted-foreground">
             <span
@@ -266,10 +260,9 @@ export const FeedPostRow = memo(function FeedPostRow({
               {excerpt}
             </p>
           ) : null}
-        </div>
+      </div>
 
-        {/* Stable aligned participation & action controls (44px touch targets) */}
-        <div className="flex shrink-0 flex-wrap items-center gap-1 sm:pt-0.5">
+      <div className="flex flex-wrap items-center gap-1 border-t border-border bg-muted/30 px-2 py-1">
           <button
             type="button"
             onClick={() => onLike(item)}
@@ -379,7 +372,6 @@ export const FeedPostRow = memo(function FeedPostRow({
               </button>
             </>
           ) : null}
-        </div>
       </div>
 
       {commentsExpanded ? (
