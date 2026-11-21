@@ -33,7 +33,10 @@ export type FirebaseAuthAdmin = {
 };
 
 type AdminNamespace = {
-  apps: AdminApp[];
+  /** firebase-admin 13.x exposes the app registry as an array … */
+  apps?: AdminApp[];
+  /** … while 14.x replaced it with a `getApps()` accessor. */
+  getApps?: () => AdminApp[];
   app: (name?: string) => AdminApp;
   initializeApp: (options?: {
     credential?: unknown;
@@ -84,6 +87,20 @@ function loadAdmin(): AdminNamespace | null {
     initError = err instanceof Error ? err.message : "firebase-admin not installed";
     return null;
   }
+}
+
+/**
+ * How many Firebase apps are already initialised.
+ *
+ * firebase-admin 13.x exposes the registry as the array `apps`; 14.x replaced
+ * it with `getApps()`, so `admin.apps.length` throws "Cannot read properties of
+ * undefined" on v14 — which silently broke every profile read (login returned a
+ * null user). Read both shapes so either version works.
+ */
+function initializedAppCount(admin: AdminNamespace): number {
+  if (Array.isArray(admin.apps)) return admin.apps.length;
+  if (typeof admin.getApps === "function") return admin.getApps().length;
+  return 0;
 }
 
 function parseJsonServiceAccount(raw: string): object | null {
@@ -169,13 +186,13 @@ export function getFirebaseInitError(): string | null {
 export function ensureFirebaseAdmin(): AdminApp | null {
   if (initAttempted) {
     const admin = loadAdmin();
-    return admin && admin.apps.length ? admin.app() : null;
+    return admin && initializedAppCount(admin) ? admin.app() : null;
   }
   initAttempted = true;
   const admin = loadAdmin();
   if (!admin) return null;
 
-  if (admin.apps.length) return admin.app();
+  if (initializedAppCount(admin)) return admin.app();
 
   const account = parseServiceAccount();
   const projectId =
