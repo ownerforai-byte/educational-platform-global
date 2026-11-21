@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   ArrowRight,
@@ -21,7 +23,8 @@ import {
   TIER_SPARKS,
   type AccessLevel,
 } from "@/lib/core/access-level";
-import { SECTIONS } from "@/lib/sections";
+import { applySectionOverrides } from "@/lib/sections";
+import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
 import { WelcomeGoButton } from "@/features/auth/components/welcome-go-button";
 
 // NOTE: never import components/home/tier-interfaces here — it composes the
@@ -76,7 +79,9 @@ function homeHrefFor(tier: AccessLevel): string {
 }
 
 function TierWelcome({ tier }: { tier: UserTier }) {
-  const open = SECTIONS.filter((s) => ACCESS_RANK[s.minTier] <= ACCESS_RANK[tier]);
+  const open = applySectionOverrides(useSectionTierOverrides()).filter(
+    (s) => ACCESS_RANK[s.minTier] <= ACCESS_RANK[tier],
+  );
   return (
     <div className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-4 py-10">
       {/* Soft light blooms — a welcome should feel like an entrance */}

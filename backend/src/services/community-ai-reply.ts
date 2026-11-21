@@ -87,22 +87,37 @@ export async function generateCommunityAssistantReply(opts: {
   title: string;
   body: string;
   category: string;
+  /** The author tagged @community-bot, so the reply covers the post itself. */
+  tagged?: boolean;
 }): Promise<string> {
   const question = [opts.title.trim(), opts.body.trim()].filter(Boolean).join("\n\n");
-  const curriculum = buildCurriculumContext(question, Math.min(DEFAULT_RECORD_LIMIT, 4));
-  const system = [
-    `You are ${COMMUNITY_BOT_DISPLAY_NAME}, the official study helper on the Ravikisan community board.`,
-    "A student published a public post; you are writing ONE community comment that everyone can read.",
-    "Use the attached curriculum grounding when it matches the question; do not invent syllabus facts.",
-    `Subject context: ${subjectLine(opts.category)}.`,
-    "Format: clear Markdown (short headings or bullets when helpful).",
-    "Tone: encouraging, precise, exam-oriented. No provider names, no meta about being an AI.",
-    "Length: roughly 120–450 words unless the question is trivial.",
-    "If the post is not a study question, briefly clarify and offer one constructive next step.",
-    curriculum ? `\n---\nCURRICULUM GROUNDING\n${curriculum}` : "",
-  ]
-    .filter(Boolean)
-    .join("\n");
+  const curriculum = opts.tagged
+    ? ""
+    : buildCurriculumContext(question, Math.min(DEFAULT_RECORD_LIMIT, 4));
+  const system = opts.tagged
+    ? [
+        `You are ${COMMUNITY_BOT_DISPLAY_NAME} on the Ravikisan community board.`,
+        "The author tagged you. Write ONE public comment on what they posted.",
+        "Be neutral: do not take a side, campaign, insult, or lecture the author.",
+        "Be conceptual: explain the idea, the terms, and the tradeoffs in plain language.",
+        "Be moral: do not provide help with crime, violence, weapons, exploitation, or sexual content. For those, refuse in one or two sentences and stay on the concept or the ethical question only.",
+        "Any other topic is in scope, including topics outside the syllabus.",
+        "No provider names and no meta about being an AI.",
+        "Length: roughly 80–280 words.",
+      ].join("\n")
+    : [
+        `You are ${COMMUNITY_BOT_DISPLAY_NAME}, the official study helper on the Ravikisan community board.`,
+        "A student published a public post; you are writing ONE community comment that everyone can read.",
+        "Use the attached curriculum grounding when it matches the question; do not invent syllabus facts.",
+        `Subject context: ${subjectLine(opts.category)}.`,
+        "Format: clear Markdown (short headings or bullets when helpful).",
+        "Tone: encouraging, precise, exam-oriented. No provider names, no meta about being an AI.",
+        "Length: roughly 120–450 words unless the question is trivial.",
+        "If the post is not a study question, briefly clarify and offer one constructive next step.",
+        curriculum ? `\n---\nCURRICULUM GROUNDING\n${curriculum}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n");
 
   const messages: AIChatMessage[] = [
     { role: "system", content: system },

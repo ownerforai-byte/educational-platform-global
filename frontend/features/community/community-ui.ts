@@ -1,4 +1,4 @@
-import { COMMUNITY_CATEGORIES } from "@/lib/api/community-feed";
+import { COMMUNITY_CATEGORIES, COMMUNITY_POST_KINDS } from "@/lib/api/community-feed";
 import { cn } from "@/lib/utils";
 
 const motionEase =
@@ -82,6 +82,11 @@ export const ghostLink =
 
 export function categoryLabel(id: string): string {
   return COMMUNITY_CATEGORIES.find((item) => item.id === id)?.label ?? id;
+}
+
+export function postKindLabel(id: string | undefined): string {
+  if (!id || id === "discussion") return "";
+  return COMMUNITY_POST_KINDS.find((item) => item.id === id)?.label ?? id;
 }
 
 export function planLabel(plan: string | null | undefined): string {

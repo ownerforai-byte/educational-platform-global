@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { APP_TABS, quickLinkMinTier, quickLinkShownForTier } from "@/lib/core/navigation";
 import { accessLevelFor, hasLevel } from "@/lib/core/access-level";
+import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
+import { minTierForHref } from "@/lib/sections";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
 import { cn } from "@/lib/utils";
@@ -18,6 +20,7 @@ export function BottomTabBar() {
   const pathname = usePathname();
   const { user } = useSession();
   const tier = accessLevelFor(user);
+  const overrides = useSectionTierOverrides();
   const tabs = APP_TABS.filter((tab) => quickLinkShownForTier(tier, tab.href));
 
   return (
@@ -34,7 +37,7 @@ export function BottomTabBar() {
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const active = isNavItemActive(pathname, tab.href);
-          const unlocked = hasLevel(user, quickLinkMinTier(tab.href));
+          const unlocked = hasLevel(user, minTierForHref(tab.href, quickLinkMinTier(tab.href), overrides));
 
           return (
             <li key={tab.href} className="flex-1">

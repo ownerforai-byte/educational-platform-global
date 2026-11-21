@@ -23,6 +23,7 @@
     package="com.ravikisan.platform">
 
 
+        <uses-permission android:name="android.permission.INTERNET"/>
         <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
 
@@ -41,7 +42,7 @@
         android:manageSpaceActivity="com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity"
 
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
 
         <meta-data
             android:name="asset_statements"
@@ -79,7 +80,10 @@
         <activity android:name="LauncherActivity"
             android:alwaysRetainTaskState="true"
             android:label="@string/launcherName"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize">
             <meta-data android:name="android.support.customtabs.trusted.DEFAULT_URL"
                 android:value="@string/launchUrl" />
 

@@ -514,6 +514,16 @@ export function sectionForPath(
  * drive upgrades — plan.md §4), except operator-only surfaces which are hidden
  * entirely below the owner rung.
  */
+/** The live opening plan for a route, or the nav fallback when no section owns it. */
+export function minTierForHref(
+  href: string,
+  fallback: AccessLevel,
+  overrides?: SectionTierOverrides | null,
+): AccessLevel {
+  const path = href.split("?")[0] || "/";
+  return sectionForPath(path, overrides)?.minTier ?? fallback;
+}
+
 export function sectionsFor(
   user: AiSparkUserLike | null | undefined,
   overrides?: SectionTierOverrides | null,

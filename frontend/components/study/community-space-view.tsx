@@ -30,6 +30,13 @@ import {
   type CommunityThread,
 } from "@/lib/api/community";
 import type { CommunitySpace } from "@/lib/community";
+import { useSession } from "@/features/auth/hooks/use-session";
+import {
+  getSpaceMembership,
+  joinSpace,
+  leaveSpace,
+} from "@/lib/api/community";
+import { publicFeedHrefForSpace } from "@/lib/community-space";
 
 const MAX_TITLE = 140;
 const MAX_BODY = 4000;
@@ -79,6 +86,11 @@ function ThreadRow({
 }
 
 export function CommunitySpaceView({ space }: { space: CommunitySpace }) {
+  const { user } = useSession();
+  const [memberCount, setMemberCount] = useState(0);
+  const [joined, setJoined] = useState(false);
+  const [membershipReady, setMembershipReady] = useState(false);
+  const [membershipBusy, setMembershipBusy] = useState(false);
   const [threads, setThreads] = useState<CommunityThread[] | null>(null);
   const [migrated, setMigrated] = useState(true);
   const [failed, setFailed] = useState(false);
@@ -98,6 +110,29 @@ export function CommunitySpaceView({ space }: { space: CommunitySpace }) {
   };
 
   useEffect(load, [space.id]);
+
+  useEffect(() => {
+    getSpaceMembership(space.id)
+      .then((result) => {
+        setMemberCount(result.memberCount);
+        setJoined(result.joined);
+        setMembershipReady(result.migrated);
+      })
+      .catch(() => setMembershipReady(false));
+  }, [space.id, user?.id]);
+
+  async function toggleMembership() {
+    if (!user || membershipBusy) return;
+    setMembershipBusy(true);
+    try {
+      const result = joined ? await leaveSpace(space.id) : await joinSpace(space.id);
+      setJoined(result.joined);
+      setMemberCount(result.memberCount);
+      setMembershipReady(result.migrated);
+    } finally {
+      setMembershipBusy(false);
+    }
+  }
 
   const submit = async () => {
     const cleanTitle = title.trim();
@@ -144,12 +179,49 @@ export function CommunitySpaceView({ space }: { space: CommunitySpace }) {
 
   return (
     <div className="container max-w-4xl py-8 space-y-6">
-      <nav className="text-sm text-muted-foreground">
-        <Link href="/community" className="hover:text-foreground">
-          Community
-        </Link>{" "}
-        / <span className="font-medium text-foreground">{space.title}</span>
-      </nav>
+      <header className="space-y-3 rounded-xl border border-border bg-card p-4">
+        <nav className="text-sm text-muted-foreground">
+          <Link href="/community" className="hover:text-foreground">
+            Study spaces
+          </Link>{" "}
+          / <span className="font-medium text-foreground">{space.title}</span>
+        </nav>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h1 className="text-xl font-bold tracking-tight">{space.subjectName}</h1>
+            <p className="text-sm text-muted-foreground">{space.className} · educational study space</p>
+            {membershipReady ? (
+              <p className="mt-1 text-xs text-muted-foreground">{memberCount} member{memberCount === 1 ? "" : "s"}</p>
+            ) : null}
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <Link
+              href={publicFeedHrefForSpace(space)}
+              className="inline-flex min-h-10 items-center rounded-full border border-border px-4 text-sm font-semibold hover:border-primary/40 hover:text-primary"
+            >
+              Subject feed →
+            </Link>
+            {user ? (
+              <Button
+                size="sm"
+                variant={joined ? "outline" : "default"}
+                className="rounded-full"
+                disabled={!membershipReady || membershipBusy}
+                onClick={() => void toggleMembership()}
+              >
+                {membershipBusy ? (
+                  <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                ) : null}
+                {joined ? "Leave space" : "Join space"}
+              </Button>
+            ) : (
+              <Link href={`/login?next=/community/${space.id}`} className="text-sm font-semibold text-primary hover:underline">
+                Sign in to join
+              </Link>
+            )}
+          </div>
+        </div>
+      </header>
       <div className="grid gap-3 sm:grid-cols-2">
         <Card>
           <CardHeader>

@@ -18,7 +18,9 @@ import {
   toggleRepost,
   toggleSave as toggleSaveRequest,
   updateComment,
+  COMMUNITY_POST_KINDS,
   type CommunityFeedFilter,
+  type CommunityPostKind,
   type FeedDetail,
   type FeedList,
   type FeedPost,
@@ -60,7 +62,26 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
 
   const [appliedQuery, setAppliedQuery] = useState("");
   const [category, setCategory] = useState("");
+  const [postKind, setPostKind] = useState<CommunityPostKind | "">("");
   const [filter, setFilter] = useState<CommunityFeedFilter>("latest");
+
+  useEffect(() => {
+    const nextCategory = searchParams.get("category");
+    const nextKind = searchParams.get("kind");
+    const nextFilter = searchParams.get("filter");
+    if (nextCategory) setCategory(nextCategory);
+    if (nextKind && COMMUNITY_POST_KINDS.some((item) => item.id === nextKind)) {
+      setPostKind(nextKind as CommunityPostKind);
+    }
+    if (
+      nextFilter === "solved" ||
+      nextFilter === "unanswered" ||
+      nextFilter === "following" ||
+      nextFilter === "latest"
+    ) {
+      setFilter(nextFilter);
+    }
+  }, [searchParams]);
 
   const [posts, setPosts] = useState<FeedPost[]>([]);
   const [queuedNewPosts, setQueuedNewPosts] = useState<FeedPost[]>([]);
@@ -206,6 +227,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     async (opts: {
       q: string;
       category: string;
+      kind: CommunityPostKind | "";
       filter: CommunityFeedFilter;
       mode: "feed" | "saved" | "trending" | "mine";
       ids: string[];
@@ -223,6 +245,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
         return listMine({
           q: opts.q,
           category: opts.category,
+          kind: opts.kind,
           filter: opts.filter,
           cursor: opts.cursor,
           signal: opts.signal,
@@ -231,6 +254,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
       return listFeed({
         q: opts.q,
         category: opts.category,
+        kind: opts.kind,
         filter: opts.filter,
         cursor: opts.cursor,
         signal: opts.signal,
@@ -267,6 +291,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     const cacheKey = feedListCacheKey(user?.id, listMode, {
       q: appliedQuery,
       category,
+      kind: postKind,
       filter,
       idsKey: listMode === "saved" ? "server-saved" : "",
     });
@@ -286,6 +311,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     fetchFeedPage({
       q: appliedQuery,
       category,
+      kind: postKind,
       filter,
       mode: listMode,
       ids: currentSavedIds,
@@ -316,6 +342,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     listMode,
     appliedQuery,
     category,
+    postKind,
     filter,
     savedIdsKey,
     user,
@@ -443,6 +470,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
         fetchFeedPage({
           q: appliedQuery,
           category,
+          kind: postKind,
           filter,
           mode: listMode,
           ids: [],
@@ -492,6 +520,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     listMode,
     appliedQuery,
     category,
+    postKind,
     filter,
     id,
     user,
@@ -702,10 +731,31 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
   );
 
   const handleSubmitComment = useCallback(
-    async (postId: string, body: string, followUpToBot: boolean): Promise<{ ok: boolean; error?: string }> => {
+    async (
+      postId: string,
+      body: string,
+      followUpToBot: boolean,
+      replyToCommentId?: string,
+    ): Promise<{ ok: boolean; error?: string }> => {
       const targetPost = knownPost(postId);
-      if (!targetPost || !user) return { ok: false, error: "Sign in to comment." };
-      const pending = optimisticComment(body, user);
+      if (!targetPost || !user) return { ok: false, error: "Sign in to reply." };
+      const parent = replyToCommentId
+        ? (targetPost.comments ?? []).find((row) => row.id === replyToCommentId)
+        : undefined;
+      const pending = optimisticComment(
+        body,
+        user,
+        parent
+          ? {
+              parentId: parent.id,
+              replyTo: {
+                id: parent.author.id,
+                fullName: parent.author.fullName,
+                username: parent.author.username,
+              },
+            }
+          : undefined,
+      );
       const beforeBotCommentIds = new Set(
         (targetPost.comments ?? [])
           .filter((row) => row.author.role === "assistant" || isCommunityBot(row.author.id))
@@ -720,7 +770,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
       }));
 
       try {
-        const result = await addComment(postId, body, { followUpToBot });
+        const result = await addComment(postId, body, { followUpToBot, replyToCommentId });
         const added = [result.comment, ...(result.botComment ? [result.botComment] : [])];
         patchPostEverywhere(postId, (item) => {
           const withoutPending = (item.comments ?? []).filter((c) => c.id !== pending.id);
@@ -742,7 +792,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
           commentCount: Math.max(0, item.commentCount - 1),
           comments: (item.comments ?? []).filter((c) => c.id !== pending.id),
         }));
-        return { ok: false, error: statusOf(err) === 401 ? "Sign in to comment." : messageOf(err) };
+        return { ok: false, error: statusOf(err) === 401 ? "Sign in to reply." : messageOf(err) };
       }
     },
     [knownPost, patchPostEverywhere, refreshPostForBotReply, user],
@@ -866,6 +916,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     fetchFeedPage({
       q: appliedQuery,
       category,
+      kind: postKind,
       filter,
       mode: listMode,
       ids: currentSavedIds,
@@ -881,7 +932,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
       })
       .catch((err) => setError(messageOf(err)))
       .finally(() => setLoadingMore(false));
-  }, [appliedQuery, category, cursor, fetchFeedPage, filter, listMode, loadingMore, savedIdsKey]);
+  }, [appliedQuery, category, postKind, cursor, fetchFeedPage, filter, listMode, loadingMore, savedIdsKey]);
 
   const handleLoadMorePerson = useCallback(() => {
     if (!id || personCursor == null || loadingMore) return;
@@ -929,6 +980,8 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     setAppliedQuery,
     category,
     setCategory,
+    postKind,
+    setPostKind,
     filter,
     setFilter,
     posts,

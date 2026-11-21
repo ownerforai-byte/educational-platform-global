@@ -19,6 +19,8 @@ import {
   navMinLevel,
 } from "@/lib/core/navigation";
 import { ACCESS_LABELS, hasLevel } from "@/lib/core/access-level";
+import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
+import { minTierForHref } from "@/lib/sections";
 
 /**
  * Section + item data lives in lib/navigation.ts — one shared list, also used
@@ -34,6 +36,7 @@ export function MobileNav() {
   const [searchQuery, setSearchQuery] = useState("");
   const pathname = usePathname();
   const { user, logoutUser } = useSession();
+  const overrides = useSectionTierOverrides();
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
@@ -127,7 +130,7 @@ export function MobileNav() {
             sec.label.toLowerCase().includes(query))
         )
         .map((item) => {
-          const tier = navMinLevel(item, sec);
+          const tier = minTierForHref(item.href, navMinLevel(item, sec), overrides);
           return { item, tier, locked: !hasLevel(user ?? null, tier) };
         }),
     }))

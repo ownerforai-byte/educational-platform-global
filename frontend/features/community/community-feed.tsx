@@ -18,7 +18,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {
   COMMUNITY_CATEGORIES,
+  COMMUNITY_POST_KINDS,
   type CommunityFeedFilter,
+  type CommunityPostKind,
   type FeedPost,
 } from "@/lib/api/community-feed";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
@@ -42,6 +44,7 @@ export interface CommunityFeedProps {
   mode: "feed" | "saved" | "trending" | "mine";
   appliedQuery: string;
   category: string;
+  postKind: CommunityPostKind | "";
   filter: CommunityFeedFilter;
   posts: FeedPost[];
   queuedNewCount: number;
@@ -57,6 +60,7 @@ export interface CommunityFeedProps {
   isSaved: (postId: string) => boolean;
   onApplySearch: (nextQuery: string) => void;
   onSelectCategory: (nextCategory: string) => void;
+  onSelectPostKind: (nextKind: CommunityPostKind | "") => void;
   onSelectFilter: (nextFilter: CommunityFeedFilter) => void;
   onClearAllFilters: () => void;
   onRevealQueuedPosts: () => void;
@@ -75,6 +79,7 @@ export function CommunityFeed({
   mode,
   appliedQuery,
   category,
+  postKind,
   filter,
   posts,
   queuedNewCount,
@@ -90,6 +95,7 @@ export function CommunityFeed({
   isSaved,
   onApplySearch,
   onSelectCategory,
+  onSelectPostKind,
   onSelectFilter,
   onClearAllFilters,
   onRevealQueuedPosts,
@@ -137,7 +143,7 @@ export function CommunityFeed({
   const overflowCategories = COMMUNITY_CATEGORIES.slice(MOBILE_INLINE_CATEGORIES);
   const activeOverflowCategory = overflowCategories.find((item) => item.id === category);
 
-  const hasActiveFilter = Boolean(appliedQuery.trim() || category || filter !== "latest");
+  const hasActiveFilter = Boolean(appliedQuery.trim() || category || postKind || filter !== "latest");
   const heading =
     mode === "mine" ? "My posts" : mode === "saved" ? "Saved posts" : "Community";
 
@@ -241,8 +247,41 @@ export function CommunityFeed({
             >
               Following
             </button>
+            <button
+              type="button"
+              onClick={() => onSelectFilter("solved")}
+              aria-pressed={filter === "solved"}
+              className={cn(
+                "min-h-9 rounded-lg px-3 text-[13px] font-medium transition-colors",
+                filter === "solved"
+                  ? "bg-primary/12 font-semibold text-primary"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              Solved
+            </button>
           </div>
         </form>
+
+        <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Browse by content type">
+          <button
+            type="button"
+            className={cn(chipBtn, "min-h-9 text-[12px]", chipActive(!postKind))}
+            onClick={() => onSelectPostKind("")}
+          >
+            All types
+          </button>
+          {COMMUNITY_POST_KINDS.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              className={cn(chipBtn, "min-h-9 text-[12px]", chipActive(postKind === item.id))}
+              onClick={() => onSelectPostKind(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
 
         {/* Row 3: Category strip (44px controls, responsive overflow on mobile) */}
         <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Browse by category">

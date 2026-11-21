@@ -171,6 +171,18 @@ export function communityAiReplyLimit(req: Request, res: Response, next: NextFun
   void applyLimit(req, res, next, "community-ai-reply", user.id);
 }
 
+/** Same budget as the Ask AI button. False when this account is over the limit. */
+export async function reserveCommunityAiReply(userId: string): Promise<boolean> {
+  const limit = TIERS["community-ai-reply"];
+  if (!Number.isFinite(limit.max)) return true;
+  try {
+    const entry = await getRateLimitStore().hit(`community-ai-reply:${userId}`, limit.windowMs);
+    return entry.count <= limit.max;
+  } catch {
+    return !failClosedOnStoreError;
+  }
+}
+
 async function applyLimit(
   req: Request,
   res: Response,

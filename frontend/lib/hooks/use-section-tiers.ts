@@ -17,7 +17,8 @@ import type { SectionTierOverrides } from "@/lib/sections";
 
 let cache: SectionTierOverrides = {};
 let loaded = false;
-let inflight: Promise<SectionTierOverrides> | null = null;
+let generation = 0;
+let watching = false;
 const listeners = new Set<() => void>();
 
 /** Keep only real section keys mapped to real ladder rungs. */
@@ -36,24 +37,36 @@ function sanitize(raw: Record<string, string>): SectionTierOverrides {
   return out;
 }
 
+function notify(): void {
+  listeners.forEach((listener) => listener());
+}
+
 function load(force = false): Promise<SectionTierOverrides> {
-  if (inflight) return inflight;
   if (loaded && !force) return Promise.resolve(cache);
-  inflight = (async () => {
+  const ticket = ++generation;
+  return (async () => {
     try {
       const cfg = await getPublicConfig();
+      if (ticket !== generation) return cache;
       cache = sanitize(cfg.sectionMinTiers);
     } catch {
       // Keep the previous map (code defaults on first load) — never throw into
       // a render because the config read failed.
-      cache = loaded ? cache : {};
+      if (ticket !== generation) return cache;
+      if (!loaded) cache = {};
     }
     loaded = true;
-    inflight = null;
-    listeners.forEach((listener) => listener());
+    notify();
     return cache;
   })();
-  return inflight;
+}
+
+function watchVisibility(): void {
+  if (watching || typeof document === "undefined") return;
+  watching = true;
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") void load(true);
+  });
 }
 
 /** Re-read the overrides (after an owner console save). */
@@ -74,7 +87,8 @@ export function previewSectionTier(
   else delete next[sectionId];
   cache = next;
   loaded = true;
-  listeners.forEach((listener) => listener());
+  generation += 1;
+  notify();
   return cache;
 }
 
@@ -85,6 +99,7 @@ export function useSectionTierOverrides(): SectionTierOverrides {
   useEffect(() => {
     const listener = () => setOverrides(cache);
     listeners.add(listener);
+    watchVisibility();
     void load().then(listener);
     return () => {
       listeners.delete(listener);

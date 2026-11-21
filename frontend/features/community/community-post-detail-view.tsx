@@ -302,6 +302,18 @@ export function CommunityPostDetailView() {
               </div>
             ) : null}
 
+            <CommentComposer
+              signedIn={Boolean(user)}
+              viewerName={user?.fullName}
+              isBotPost={isCommunityBot(post.author.id)}
+              replyTo={(post.comments ?? []).find((comment) => comment.id === followUpBotCommentId) ?? null}
+              focusTrigger={composerFocusTrigger}
+              onClearReply={() => setFollowUpBotCommentId(null)}
+              onSubmitComment={(body, followUp, replyToCommentId) =>
+                handleSubmitComment(post.id, body, followUp, replyToCommentId)
+              }
+            />
+
             <CommentList
               comments={post.comments ?? []}
               viewer={user}
@@ -316,15 +328,6 @@ export function CommunityPostDetailView() {
               onFollowChange={patchAuthorFollowing}
               onSaveEdit={(commentId, body) => handleSaveCommentEdit(post.id, commentId, body)}
               onDelete={(commentId) => handleDeleteComment(post.id, commentId)}
-            />
-
-            <CommentComposer
-              signedIn={Boolean(user)}
-              isBotPost={isCommunityBot(post.author.id)}
-              followUpCommentId={followUpBotCommentId}
-              focusTrigger={composerFocusTrigger}
-              onClearFollowUp={() => setFollowUpBotCommentId(null)}
-              onSubmitComment={(body, followUp) => handleSubmitComment(post.id, body, followUp)}
             />
           </section>
         </div>

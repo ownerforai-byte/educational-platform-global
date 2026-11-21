@@ -61,6 +61,32 @@ export function listThreads(spaceId: string): Promise<CommunityThreadListRespons
   );
 }
 
+export interface SpaceMembershipResponse {
+  memberCount: number;
+  joined: boolean;
+  migrated: boolean;
+}
+
+export function getSpaceMembership(spaceId: string): Promise<SpaceMembershipResponse> {
+  return apiFetch<SpaceMembershipResponse>(
+    `/api/community/${encodeURIComponent(spaceId)}/membership`,
+  );
+}
+
+export function joinSpace(spaceId: string): Promise<SpaceMembershipResponse> {
+  return apiFetch<SpaceMembershipResponse>(
+    `/api/community/${encodeURIComponent(spaceId)}/membership`,
+    { method: "POST" },
+  );
+}
+
+export function leaveSpace(spaceId: string): Promise<SpaceMembershipResponse> {
+  return apiFetch<SpaceMembershipResponse>(
+    `/api/community/${encodeURIComponent(spaceId)}/membership`,
+    { method: "DELETE" },
+  );
+}
+
 export function createThread(
   spaceId: string,
   title: string,

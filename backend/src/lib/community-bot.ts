@@ -17,6 +17,11 @@ export function isCommunityBotId(id: string): boolean {
   return id === COMMUNITY_BOT_ID;
 }
 
+/** True when the text tags the community bot, e.g. `@community-bot`. */
+export function mentionsCommunityBot(text: string): boolean {
+  return /(?:^|[^\w@])@community-bot\b/i.test(text);
+}
+
 /** @deprecated Use {@link isCommunityBotId} */
 export const COMMUNITY_ASSISTANT_ID = COMMUNITY_BOT_ID;
 

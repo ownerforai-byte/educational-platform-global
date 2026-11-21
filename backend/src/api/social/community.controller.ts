@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { supabaseAdmin } from "../../db/supabase";
-import { requireAuth } from "../../middleware/auth";
+import { getUserFromRequest, requireAuth } from "../../middleware/auth";
 import { asyncHandler } from "../../middleware/asyncHandler";
 import { serverError } from "../../middleware/error-handler";
 import { maskName } from "./leaderboard.controller";
@@ -314,6 +314,109 @@ router.post(
       upvotedByYou: mine.has(threadId),
       migrated: true,
     });
+  }),
+);
+
+// ── /:spaceId/membership — optional join/leave for syllabus study spaces ────
+
+router.get(
+  "/:spaceId/membership",
+  asyncHandler(async (req: Request, res: Response) => {
+    const spaceId = String(req.params.spaceId ?? "").trim();
+    if (!SPACE_ID_RE.test(spaceId)) {
+      res.status(400).json({ error: "Invalid space id." });
+      return;
+    }
+    const viewer = await getUserFromRequest(req);
+    const { count, error: countError } = await supabaseAdmin
+      .from("community_space_members")
+      .select("user_id", { count: "exact", head: true })
+      .eq("space_id", spaceId);
+    if (countError) {
+      if (isMissingTable(countError)) {
+        res.json({ memberCount: 0, joined: false, migrated: false });
+        return;
+      }
+      serverError(res, countError, "community");
+      return;
+    }
+    let joined = false;
+    if (viewer) {
+      const { data, error } = await supabaseAdmin
+        .from("community_space_members")
+        .select("user_id")
+        .eq("space_id", spaceId)
+        .eq("user_id", viewer.id)
+        .maybeSingle();
+      if (error && !isMissingTable(error)) {
+        serverError(res, error, "community");
+        return;
+      }
+      joined = Boolean(data);
+    }
+    res.setHeader("Cache-Control", "private, no-store");
+    res.json({ memberCount: count ?? 0, joined, migrated: true });
+  }),
+);
+
+router.post(
+  "/:spaceId/membership",
+  requireAuth,
+  asyncHandler(async (req: Request, res: Response) => {
+    const user = (req as Request & { user: { id: string } }).user;
+    const spaceId = String(req.params.spaceId ?? "").trim();
+    if (!SPACE_ID_RE.test(spaceId)) {
+      res.status(400).json({ error: "Invalid space id." });
+      return;
+    }
+    const { error } = await supabaseAdmin.from("community_space_members").upsert(
+      { space_id: spaceId, user_id: user.id, joined_at: new Date().toISOString() },
+      { onConflict: "space_id,user_id" },
+    );
+    if (error) {
+      if (isMissingTable(error)) {
+        res.status(503).json({ error: "Membership is not available on this deployment yet.", migrated: false });
+        return;
+      }
+      serverError(res, error, "community");
+      return;
+    }
+    const { count } = await supabaseAdmin
+      .from("community_space_members")
+      .select("user_id", { count: "exact", head: true })
+      .eq("space_id", spaceId);
+    res.status(201).json({ joined: true, memberCount: count ?? 0, migrated: true });
+  }),
+);
+
+router.delete(
+  "/:spaceId/membership",
+  requireAuth,
+  asyncHandler(async (req: Request, res: Response) => {
+    const user = (req as Request & { user: { id: string } }).user;
+    const spaceId = String(req.params.spaceId ?? "").trim();
+    if (!SPACE_ID_RE.test(spaceId)) {
+      res.status(400).json({ error: "Invalid space id." });
+      return;
+    }
+    const { error } = await supabaseAdmin
+      .from("community_space_members")
+      .delete()
+      .eq("space_id", spaceId)
+      .eq("user_id", user.id);
+    if (error) {
+      if (isMissingTable(error)) {
+        res.status(503).json({ error: "Membership is not available on this deployment yet.", migrated: false });
+        return;
+      }
+      serverError(res, error, "community");
+      return;
+    }
+    const { count } = await supabaseAdmin
+      .from("community_space_members")
+      .select("user_id", { count: "exact", head: true })
+      .eq("space_id", spaceId);
+    res.json({ joined: false, memberCount: count ?? 0, migrated: true });
   }),
 );
 

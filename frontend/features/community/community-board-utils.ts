@@ -34,13 +34,19 @@ function optimisticCommentId(): string {
   return `pending-comment-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 }
 
-export function optimisticComment(body: string, user: SessionUser): FeedComment {
+export function optimisticComment(
+  body: string,
+  user: SessionUser,
+  reply?: { parentId: string; replyTo: FeedComment["replyTo"] },
+): FeedComment {
   const now = new Date().toISOString();
   return {
     id: optimisticCommentId(),
     body,
     createdAt: now,
     updatedAt: now,
+    parentId: reply?.parentId ?? null,
+    replyTo: reply?.replyTo ?? null,
     author: {
       id: user.id,
       fullName: user.fullName?.trim() || "You",

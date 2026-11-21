@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import type { SessionUser } from "@/features/auth/types";
 import {
   COMMUNITY_CATEGORIES,
+  COMMUNITY_POST_KINDS,
+  type CommunityPostKind,
   createPost,
   deleteAttachment,
   getPost,
@@ -41,8 +43,10 @@ import {
   toolbarBtn,
 } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
+import { COMMUNITY_BOT_USERNAME } from "@/lib/community-bot";
 import {
   AlertCircle,
+  AtSign,
   Bold,
   Check,
   Eye,
@@ -89,6 +93,7 @@ export function PostComposer({
   const [title, setTitle] = useState(initial?.title ?? "");
   const [body, setBody] = useState(initial?.body ?? "");
   const [category, setCategory] = useState(initial?.category ?? "general");
+  const [postKind, setPostKind] = useState<CommunityPostKind>(initial?.kind ?? "discussion");
   const [editorTab, setEditorTab] = useState<"write" | "preview">("write");
   const [files, setFiles] = useState<QueuedFileItem[]>([]);
   const [existing, setExisting] = useState<FeedAttachment[]>(initial?.attachments ?? []);
@@ -104,6 +109,7 @@ export function PostComposer({
     setTitle(initial.title);
     setBody(initial.body);
     setCategory(initial.category);
+    setPostKind(initial.kind ?? "discussion");
     setExisting(initial.attachments);
     setSavedPostId(initial.id);
   }, [initial]);
@@ -135,6 +141,17 @@ export function PostComposer({
     }, 500);
     return () => window.clearTimeout(timer);
   }, [title, body, category, draftRouteKey, initial, mode]);
+
+  const botTag = `@${COMMUNITY_BOT_USERNAME}`;
+  const tagged = new RegExp(`(?:^|[^\\w@])${botTag}\\b`, "i").test(body);
+
+  function tagBot() {
+    if (tagged) return;
+    const next = body.trim().length ? `${body.trimEnd()}\n\n${botTag} ` : `${botTag} `;
+    setBody(next);
+    setEditorTab("write");
+    requestAnimationFrame(() => bodyRef.current?.focus());
+  }
 
   function insertMarkup(before: string, after = "") {
     const el = bodyRef.current;
@@ -227,7 +244,7 @@ export function PostComposer({
       );
       return;
     }
-    const input: PostInput = { title: title.trim(), body: body.trim(), category };
+    const input: PostInput = { title: title.trim(), body: body.trim(), category, kind: postKind };
     if (input.title.length < 4 || input.title.length > 160 || input.body.length < 1) {
       setError("Add a title (4–160 characters) and a body.");
       return;
@@ -325,7 +342,7 @@ export function PostComposer({
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-[1fr_13rem]">
+      <div className="grid gap-4 sm:grid-cols-[1fr_9rem_9rem]">
         <label className="block text-sm">
           <span className="mb-1.5 block text-[13px] font-medium text-muted-foreground">Title</span>
           <input
@@ -348,6 +365,22 @@ export function PostComposer({
             className={cn(inputClass, "min-h-11")}
           >
             {COMMUNITY_CATEGORIES.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="block text-sm">
+          <span className="mb-1.5 block text-[13px] font-medium text-muted-foreground">Type</span>
+          <select
+            value={postKind}
+            onChange={(event) => setPostKind(event.target.value as CommunityPostKind)}
+            aria-label="Post type"
+            className={cn(inputClass, "min-h-11")}
+          >
+            {COMMUNITY_POST_KINDS.map((item) => (
               <option key={item.id} value={item.id}>
                 {item.label}
               </option>
@@ -432,6 +465,16 @@ export function PostComposer({
               <List className="h-3.5 w-3.5" aria-hidden />
               List
             </button>
+            <button
+              type="button"
+              className={cn(toolbarBtn, "min-h-11", tagged && "bg-primary/12 text-primary")}
+              aria-label="Tag bot"
+              aria-pressed={tagged}
+              onClick={tagBot}
+            >
+              <AtSign className="h-3.5 w-3.5" aria-hidden />
+              Tag bot
+            </button>
           </div>
         ) : null}
       </div>
@@ -452,7 +495,7 @@ export function PostComposer({
             rows={7}
             maxLength={20000}
             required
-            placeholder="Write your question, derivation, or study notes. Markdown and LaTeX ($F = ma$) are supported."
+            placeholder="Write anything. Tag @community-bot and it replies on this post."
             aria-label="Body"
             className={cn(inputClass, "min-h-[10rem] resize-y text-base sm:text-sm")}
           />

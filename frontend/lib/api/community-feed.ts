@@ -11,7 +11,17 @@ export const COMMUNITY_CATEGORIES = [
 ] as const;
 
 export type CommunityCategory = (typeof COMMUNITY_CATEGORIES)[number]["id"];
-export type CommunityFeedFilter = "latest" | "unanswered" | "following";
+
+export const COMMUNITY_POST_KINDS = [
+  { id: "discussion", label: "Discussion" },
+  { id: "question", label: "Question" },
+  { id: "resource", label: "Resource" },
+  { id: "announcement", label: "Announcement" },
+  { id: "study_note", label: "Study note" },
+] as const;
+
+export type CommunityPostKind = (typeof COMMUNITY_POST_KINDS)[number]["id"];
+export type CommunityFeedFilter = "latest" | "unanswered" | "following" | "solved";
 
 export interface FeedAuthor {
   id: string;
@@ -62,6 +72,9 @@ export interface FeedPost {
   title: string;
   body: string;
   category: string;
+  kind?: CommunityPostKind;
+  solved?: boolean;
+  acceptedCommentId?: string | null;
   visibility: "public";
   createdAt: string;
   updatedAt: string;
@@ -100,6 +113,7 @@ export interface PostInput {
   title: string;
   body: string;
   category: string;
+  kind?: CommunityPostKind;
 }
 
 const ROOT = "/api/community";
@@ -120,6 +134,7 @@ export function listFeed(
   params: {
     q?: string;
     category?: string;
+    kind?: CommunityPostKind | "";
     cursor?: number | null;
     authorId?: string;
     filter?: CommunityFeedFilter;
@@ -130,6 +145,7 @@ export function listFeed(
   const search = new URLSearchParams();
   if (params.q) search.set("q", params.q);
   if (params.category) search.set("category", params.category);
+  if (params.kind) search.set("kind", params.kind);
   if (params.authorId) search.set("authorId", params.authorId);
   if (params.filter && params.filter !== "latest") search.set("filter", params.filter);
   if (params.ids !== undefined) search.set("ids", params.ids.join(","));
@@ -145,6 +161,7 @@ export function listMine(
   params: {
     q?: string;
     category?: string;
+    kind?: CommunityPostKind | "";
     cursor?: number | null;
     filter?: CommunityFeedFilter;
     signal?: AbortSignal;
@@ -153,6 +170,7 @@ export function listMine(
   const search = new URLSearchParams();
   if (params.q) search.set("q", params.q);
   if (params.category) search.set("category", params.category);
+  if (params.kind) search.set("kind", params.kind);
   if (params.filter && params.filter !== "latest") search.set("filter", params.filter);
   if (params.cursor) search.set("cursor", String(params.cursor));
   const qs = search.toString();
@@ -260,11 +278,15 @@ export function markSocialNotificationsRead(opts: { all?: boolean; ids?: string[
 export function addComment(
   postId: string,
   body: string,
-  opts?: { followUpToBot?: boolean },
+  opts?: { followUpToBot?: boolean; replyToCommentId?: string },
 ): Promise<{ comment: FeedComment; botComment?: FeedComment | null; botReplyPending?: boolean }> {
   return call(`${ROOT}/feed/${postId}/comments`, {
     method: "POST",
-    body: JSON.stringify({ body, followUpToBot: opts?.followUpToBot === true }),
+    body: JSON.stringify({
+      body,
+      followUpToBot: opts?.followUpToBot === true,
+      ...(opts?.replyToCommentId ? { replyToCommentId: opts.replyToCommentId } : {}),
+    }),
   });
 }
 

@@ -56,6 +56,23 @@ describe("generateCommunityAssistantReply", () => {
     expect(text).toBe("**Hello** from groq");
   });
 
+  it("asks for a neutral conceptual reply when the bot is tagged", async () => {
+    tryChatProvider.mockResolvedValue("A fair reading of the idea.");
+
+    const { generateCommunityAssistantReply } = await import("../../src/services/community-ai-reply");
+    await generateCommunityAssistantReply({
+      title: "A thought",
+      body: "@community-bot what do you make of this?",
+      category: "general",
+      tagged: true,
+    });
+
+    const messages = tryChatProvider.mock.calls[0][1] as Array<{ content: string }>;
+    expect(messages[0].content).toMatch(/neutral/i);
+    expect(messages[0].content).toMatch(/conceptual/i);
+    expect(messages[0].content).toMatch(/moral/i);
+  });
+
   it("uses the chain when every pool member fails", async () => {
     tryChatProvider.mockResolvedValue(null);
     chat.mockResolvedValue("Chain answer");

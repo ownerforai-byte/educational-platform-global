@@ -6,7 +6,8 @@ import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen, Atom } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel } from "@/lib/core/access-level";
-import { sectionById } from "@/lib/sections";
+import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
+import { minTierForHref, sectionById } from "@/lib/sections";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { BottomTabBar } from "./bottom-tab-bar";
@@ -38,7 +39,11 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const { user } = useSession();
   // THE PLAN (plan.md §3 row "Search"): the global search input opens at the
   // Search section's rung — the same tier the public /plans matrix shows.
-  const searchUnlocked = hasLevel(user, sectionById("search")?.minTier ?? "member");
+  const overrides = useSectionTierOverrides();
+  const searchUnlocked = hasLevel(
+    user,
+    minTierForHref("/search", sectionById("search")?.minTier ?? "member", overrides),
+  );
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   // Three shells: phone and tablet share bottom tabs + drawer (footer on

@@ -13,13 +13,14 @@ export function CommunityView() {
           <Users className="h-6 w-6" /> Community
         </h1>
         <p className="text-sm text-muted-foreground">
-          Pick your subject space. Have a doubt? Ask the Veer tutor on the{" "}
-          <Link href="/ask" className="font-medium text-primary hover:underline">
-            <HelpCircle className="inline h-3.5 w-3.5" /> Ask board
-          </Link>
-          . To publish a post everyone can read, use the{" "}
+          Each card is a subject study space. The main board is the{" "}
           <Link href="/ai/community" className="font-medium text-primary hover:underline">
             community feed
+          </Link>
+          {" "}— questions, notes, and resources by subject. Join a space to track it; optional.
+          For a private tutor question, use the{" "}
+          <Link href="/ask" className="font-medium text-primary hover:underline">
+            <HelpCircle className="inline h-3.5 w-3.5" /> Ask board
           </Link>
           .
         </p>

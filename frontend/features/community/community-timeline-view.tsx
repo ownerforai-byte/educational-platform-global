@@ -15,6 +15,7 @@ export function CommunityTimelineView() {
     error,
     appliedQuery,
     category,
+    postKind,
     filter,
     posts,
     queuedNewPosts,
@@ -29,6 +30,7 @@ export function CommunityTimelineView() {
     threadPropsForPost,
     setAppliedQuery,
     setCategory,
+    setPostKind,
     setFilter,
     onLike,
     onRepost,
@@ -52,6 +54,7 @@ export function CommunityTimelineView() {
           mode={listMode}
           appliedQuery={appliedQuery}
           category={category}
+          postKind={postKind}
           filter={filter}
           posts={posts}
           queuedNewCount={queuedNewPosts.length}
@@ -68,10 +71,12 @@ export function CommunityTimelineView() {
           threadPropsForPost={threadPropsForPost}
           onApplySearch={(nextQuery) => setAppliedQuery(nextQuery)}
           onSelectCategory={(nextCategory) => setCategory(nextCategory)}
+          onSelectPostKind={(nextKind) => setPostKind(nextKind)}
           onSelectFilter={(nextFilter) => setFilter(nextFilter)}
           onClearAllFilters={() => {
             setAppliedQuery("");
             setCategory("");
+            setPostKind("");
             setFilter("latest");
           }}
           onRevealQueuedPosts={() => {

@@ -32,7 +32,8 @@ import {
   TIER_SPARKS,
   type AccessLevel,
 } from "@/lib/core/access-level";
-import { SECTIONS } from "@/lib/sections";
+import { applySectionOverrides } from "@/lib/sections";
+import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
 import {
   QUICK_LINKS,
   quickLinkMinTier,
@@ -331,7 +332,9 @@ function QuickLinksRail({ tier }: { tier: AccessLevel }) {
 }
 
 function OpenSectionsRail({ tier }: { tier: AccessLevel }) {
-  const open = SECTIONS.filter((s) => ACCESS_RANK[s.minTier] <= ACCESS_RANK[tier]);
+  const open = applySectionOverrides(useSectionTierOverrides()).filter(
+    (s) => ACCESS_RANK[s.minTier] <= ACCESS_RANK[tier],
+  );
   return (
     <section aria-labelledby="open-sections-heading">
       <div className="flex items-end justify-between">
@@ -370,6 +373,7 @@ function OpenSectionsRail({ tier }: { tier: AccessLevel }) {
 }
 
 function NextRungTeaser({ tier }: { tier: AccessLevel }) {
+  const sections = applySectionOverrides(useSectionTierOverrides());
   const next = NEXT_RUNG[tier];
   if (!next) return null;
   return (
@@ -377,7 +381,7 @@ function NextRungTeaser({ tier }: { tier: AccessLevel }) {
       <p className="text-xs text-muted-foreground">
         Want more? The{" "}
         <span className="font-bold text-primary">{ACCESS_LABELS[next]}</span> plan opens{" "}
-        {(() => { const count = SECTIONS.filter((s) => s.minTier === next).length; return `${count} more section${count === 1 ? "" : "s"}.`; })()}
+        {(() => { const count = sections.filter((s) => s.minTier === next).length; return `${count} more section${count === 1 ? "" : "s"}.`; })()}
       </p>
     </section>
   );

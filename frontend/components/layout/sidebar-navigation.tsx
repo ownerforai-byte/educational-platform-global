@@ -19,6 +19,8 @@ import {
   type NavItem,
 } from "@/lib/core/navigation";
 import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/core/access-level";
+import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
+import { minTierForHref } from "@/lib/sections";
 
 /**
  * The menu DATA lives in lib/navigation.ts — one list shared with the mobile
@@ -234,6 +236,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   // overview + simple footer instead. `viewer` is null until the session
   // mounts, matching the server HTML (no hydration mismatch).
   const viewer = user ?? null;
+  const overrides = useSectionTierOverrides();
 
   /**
    * Every sidebar destination for a section, annotated with its access tier and
@@ -246,7 +249,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
       .filter((item) => isNavItemVisibleToViewer(item, viewer, section))
       .filter((item) => (item.ownerOnly ? isOwnerAccount(user) : true))
       .map((item) => {
-        const tier = navMinLevel(item, section);
+        const tier = minTierForHref(item.href, navMinLevel(item, section), overrides);
         return { item, tier, locked: !hasLevel(viewer, tier) };
       });
 
@@ -276,7 +279,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
         (item.ownerOnly ? isOwnerAccount(user) : true),
     )
     .map((item) => {
-      const tier = navMinLevel(item);
+      const tier = minTierForHref(item.href, navMinLevel(item), overrides);
       return { item, tier, locked: !hasLevel(viewer, tier) };
     });
 

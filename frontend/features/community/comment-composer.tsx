@@ -1,29 +1,41 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { AlertCircle, Bot, Loader2, MessageSquare, Send, X } from "lucide-react";
-import { chipBtn, glassShell, inputClass, primaryCta } from "@/features/community/community-ui";
+import { AlertCircle, Loader2, X } from "lucide-react";
+import type { FeedComment } from "@/lib/api/community-feed";
+import { isCommunityBot } from "@/lib/community-bot";
 import { cn } from "@/lib/utils";
 
 export interface CommentComposerProps {
   signedIn: boolean;
+  viewerName?: string | null;
   isBotPost: boolean;
-  followUpCommentId: string | null;
+  replyTo: FeedComment | null;
   focusTrigger: number;
-  onClearFollowUp: () => void;
-  onSubmitComment: (body: string, followUpToBot: boolean) => Promise<{ ok: boolean; error?: string }>;
+  onClearReply: () => void;
+  onSubmitComment: (
+    body: string,
+    followUpToBot: boolean,
+    replyToCommentId?: string,
+  ) => Promise<{ ok: boolean; error?: string }>;
+}
+
+function grow(el: HTMLTextAreaElement) {
+  el.style.height = "0px";
+  el.style.height = `${Math.min(el.scrollHeight, 160)}px`;
 }
 
 /**
- * Isolated comment form: typing updates local state only, so keystrokes never
- * re-render the post detail or the comment list above it.
+ * Twitter-style reply box: avatar, a growing line, and a Reply button.
+ * Keystrokes stay in this component so the thread above does not re-render.
  */
 export function CommentComposer({
   signedIn,
+  viewerName,
   isBotPost,
-  followUpCommentId,
+  replyTo,
   focusTrigger,
-  onClearFollowUp,
+  onClearReply,
   onSubmitComment,
 }: CommentComposerProps) {
   const [body, setBody] = useState("");
@@ -32,13 +44,20 @@ export function CommentComposer({
   const formRef = useRef<HTMLFormElement | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
-  const addressingVeer = Boolean(followUpCommentId || isBotPost);
+  const handle = replyTo?.author.username || replyTo?.author.fullName || "";
+  const answeringBot = Boolean(
+    replyTo && (replyTo.author.role === "assistant" || isCommunityBot(replyTo.author.id)),
+  );
+  const initial = (viewerName?.trim() || "You").slice(0, 1).toUpperCase();
 
   useEffect(() => {
     if (focusTrigger <= 0) return;
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
     const id = window.requestAnimationFrame(() => {
-      textareaRef.current?.focus();
+      const el = textareaRef.current;
+      if (!el) return;
+      el.focus();
+      grow(el);
     });
     return () => window.cancelAnimationFrame(id);
   }, [focusTrigger]);
@@ -47,131 +66,107 @@ export function CommentComposer({
     event?.preventDefault();
     if (submitting) return;
     if (!signedIn) {
-      setLocalError("Sign in to comment.");
+      setLocalError("Sign in to reply.");
       return;
     }
     const clean = body.trim();
     if (!clean) return;
 
     const snapshot = body;
-    const isFollowUp = addressingVeer;
+    const followUp = answeringBot || (!replyTo && isBotPost);
+    const parentId = replyTo && !replyTo.id.startsWith("pending-comment-") ? replyTo.id : undefined;
     setLocalError(null);
     setBody("");
+    if (textareaRef.current) textareaRef.current.style.height = "0px";
     setSubmitting(true);
 
     try {
-      const outcome = await onSubmitComment(clean, isFollowUp);
+      const outcome = await onSubmitComment(clean, followUp, parentId);
       if (!outcome.ok) {
         setBody((current) => (current.trim() ? current : snapshot));
-        setLocalError(outcome.error || "Could not post comment.");
+        setLocalError(outcome.error || "Could not reply.");
       }
     } catch {
       setBody((current) => (current.trim() ? current : snapshot));
-      setLocalError("Could not post comment.");
+      setLocalError("Could not reply.");
     } finally {
       setSubmitting(false);
     }
   }
 
   return (
-    <form
-      ref={formRef}
-      className={cn(glassShell, "space-y-3 p-4 shadow-elev-1")}
-      onSubmit={(event) => void submit(event)}
-    >
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex flex-wrap items-center gap-2 text-[13px]">
-          <span className="font-medium text-muted-foreground">Recipient:</span>
-          {addressingVeer ? (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/35 bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
-              <Bot className="h-3.5 w-3.5" aria-hidden />
-              Veer
-              {followUpCommentId && !isBotPost ? (
-                <button
-                  type="button"
-                  onClick={onClearFollowUp}
-                  aria-label="Switch recipient to discussion"
-                  className="ml-0.5 rounded-full p-0.5 hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  <X className="h-3 w-3" aria-hidden />
-                </button>
-              ) : null}
-            </span>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-muted/50 px-2.5 py-1 text-xs font-medium text-foreground">
-              <MessageSquare className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
-              Discussion
-            </span>
-          )}
-        </div>
-        {signedIn ? (
-          <span className="text-xs text-muted-foreground">Ctrl+Enter to post</span>
-        ) : (
-          <span className="text-xs text-muted-foreground">Sign in to comment.</span>
-        )}
-      </div>
-
-      <label className="block text-sm">
-        <span className="sr-only">Write a comment</span>
-        <textarea
-          ref={textareaRef}
-          value={body}
-          onChange={(event) => {
-            setBody(event.target.value);
-            if (localError) setLocalError(null);
-          }}
-          onKeyDown={(event) => {
-            if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-              event.preventDefault();
-              void submit();
-            }
-          }}
-          rows={3}
-          maxLength={8000}
-          placeholder={
-            !signedIn
-              ? "Sign in to join this discussion…"
-              : addressingVeer
-                ? "Ask Veer a follow-up question on this thread…"
-                : "Add a helpful note, worked step, or answer…"
-          }
-          aria-label="Write a comment"
-          className={cn(inputClass, "text-base sm:text-sm")}
-        />
-      </label>
-
-      {localError ? (
-        <p
-          role="alert"
-          className="flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/5 px-3 py-2 text-[13px] text-destructive"
-        >
-          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
-          {localError}
-        </p>
-      ) : null}
-
-      <div className="flex flex-wrap items-center gap-2">
-        <button
-          type="submit"
-          disabled={submitting || !body.trim()}
-          className={cn(primaryCta, "min-h-11 px-4 py-2")}
-        >
-          {submitting ? (
-            <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-          ) : (
-            <Send className="h-4 w-4" aria-hidden />
-          )}
-          {addressingVeer ? "Post follow-up" : "Post comment"}
-        </button>
-        {followUpCommentId && !isBotPost ? (
-          <button
-            type="button"
-            onClick={onClearFollowUp}
-            className={cn(chipBtn, "min-h-11")}
-          >
-            Reply to discussion instead
-          </button>
+    <form ref={formRef} className="flex gap-3 px-1 py-2" onSubmit={(event) => void submit(event)}>
+      <span
+        aria-hidden
+        className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground"
+      >
+        {initial}
+      </span>
+      <div className="min-w-0 flex-1">
+        {replyTo && handle ? (
+          <p className="mb-1 flex items-center gap-1.5 text-[13px] text-muted-foreground">
+            Replying to <span className="font-medium text-primary">@{handle}</span>
+            <button
+              type="button"
+              onClick={onClearReply}
+              aria-label="Cancel reply"
+              className="rounded-full p-0.5 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <X className="h-3.5 w-3.5" aria-hidden />
+            </button>
+          </p>
         ) : null}
+        <label className="block">
+          <span className="sr-only">Post your reply</span>
+          <textarea
+            ref={textareaRef}
+            value={body}
+            rows={1}
+            maxLength={8000}
+            disabled={!signedIn}
+            placeholder={
+              !signedIn
+                ? "Sign in to reply"
+                : handle
+                  ? `Reply to @${handle}`
+                  : "Post your reply"
+            }
+            aria-label="Post your reply"
+            className="max-h-40 min-h-10 w-full resize-none border-0 bg-transparent py-2 text-[15px] leading-5 text-foreground outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed"
+            onChange={(event) => {
+              setBody(event.target.value);
+              if (localError) setLocalError(null);
+              grow(event.currentTarget);
+            }}
+            onKeyDown={(event) => {
+              if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+                event.preventDefault();
+                void submit();
+              }
+            }}
+          />
+        </label>
+        {localError ? (
+          <p
+            role="alert"
+            className="mb-2 flex items-start gap-2 text-[13px] text-destructive"
+          >
+            <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden />
+            {localError}
+          </p>
+        ) : null}
+        <div className="flex items-center justify-end border-t border-border/70 pt-2">
+          <button
+            type="submit"
+            disabled={submitting || !signedIn || !body.trim()}
+            className={cn(
+              "inline-flex h-8 min-w-[4.5rem] items-center justify-center rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground",
+              "transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40",
+            )}
+          >
+            {submitting ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : "Reply"}
+          </button>
+        </div>
       </div>
     </form>
   );

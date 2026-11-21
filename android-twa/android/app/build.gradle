@@ -59,7 +59,7 @@ android {
 def twaManifest = [
     applicationId: 'com.ravikisan.platform',
     hostName: 'harindrasah.com.np', // Must match Play App Links host; apex serves /.well-known without redirect.
-    launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
+    launchUrl: '/home', // Open the study app, not the public website.
     name: 'Ravikisan\\\'s Platform', // The application name.
     launcherName: 'Ravikisan', // The name shown on the Android Launcher.
     themeColor: '#3B82F6', // The color used for the status bar.
@@ -81,8 +81,8 @@ def twaManifest = [
     generatorApp: 'bubblewrap', // Application that generated the Android Project
     // The fallback strategy for when Trusted Web Activity is not available. Possible values are
     // 'customtabs' and 'webview'.
-    fallbackType: 'customtabs',
-    enableSiteSettingsShortcut: 'true',
+    fallbackType: 'webview',
+    enableSiteSettingsShortcut: 'false',
     orientation: 'portrait',
 ]
 
@@ -93,8 +93,8 @@ android {
         applicationId "com.ravikisan.platform"
         minSdkVersion 30
         targetSdkVersion 36
-        versionCode 9
-        versionName "1.0.7"
+        versionCode 10
+        versionName "1.0.8"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name

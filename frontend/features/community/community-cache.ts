@@ -47,7 +47,7 @@ export function viewerCacheScope(viewerId?: string | null): string {
 export function feedListCacheKey(
   viewerId: string | null | undefined,
   view: "feed" | "mine" | "saved" | "trending",
-  params: { q?: string; category?: string; filter?: string; idsKey?: string },
+  params: { q?: string; category?: string; kind?: string; filter?: string; idsKey?: string },
 ): string {
   return [
     "feed-list",
@@ -55,6 +55,7 @@ export function feedListCacheKey(
     view,
     params.q?.trim() ?? "",
     params.category ?? "",
+    params.kind ?? "",
     params.filter ?? "latest",
     params.idsKey ?? "",
   ].join("::");

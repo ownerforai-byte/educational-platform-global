@@ -24,7 +24,7 @@ import { BotAnswerButton } from "@/features/community/bot-answer-button";
 import { BotIdentityBadge } from "@/features/community/bot-identity-badge";
 import { CreatorIdentityBadge } from "@/features/community/creator-identity-badge";
 import { looksLikeQuestion, plainExcerpt } from "@/features/community/community-helpers";
-import { actionBtn, categoryLabel } from "@/features/community/community-ui";
+import { actionBtn, categoryLabel, postKindLabel } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
 import type { SessionUser } from "@/features/auth/types";
 import { CommentList } from "@/features/community/comment-list";
@@ -69,7 +69,12 @@ export interface FeedPostRowThreadProps {
   onSelectFollowUp: (commentId: string) => void;
   onClearFollowUp: () => void;
   onFollowChange: (authorId: string, following: boolean) => void;
-  onSubmitComment: (postId: string, body: string, followUpToBot: boolean) => Promise<{ ok: boolean; error?: string }>;
+  onSubmitComment: (
+    postId: string,
+    body: string,
+    followUpToBot: boolean,
+    replyToCommentId?: string,
+  ) => Promise<{ ok: boolean; error?: string }>;
   onSaveCommentEdit: (postId: string, commentId: string, nextBody: string) => Promise<{ ok: boolean; error?: string }>;
   onDeleteComment: (postId: string, commentId: string) => void;
 }
@@ -192,6 +197,12 @@ export const FeedPostRow = memo(function FeedPostRow({
               {visual ? <span aria-hidden>{visual.glyph}</span> : null}
               {categoryLabel(item.category)}
             </span>
+            {postKindLabel(item.kind) ? (
+              <span className="rounded-md border border-border/70 bg-background px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                {postKindLabel(item.kind)}
+                {item.solved ? " · Solved" : item.kind === "question" ? " · Open" : ""}
+              </span>
+            ) : null}
 
             <Link
               href={authorHref}
@@ -375,10 +386,21 @@ export const FeedPostRow = memo(function FeedPostRow({
       </div>
 
       {commentsExpanded ? (
-        <section aria-label={`Comments on ${item.title}`} className="mt-2 space-y-3 border-t border-border/60 pt-3">
-          {threadError ? <p role="alert" className="text-sm text-destructive">{threadError}</p> : null}
+        <section aria-label={`Replies on ${item.title}`} className="mt-1 border-t border-border/60">
+          {threadError ? <p role="alert" className="px-1 pt-2 text-sm text-destructive">{threadError}</p> : null}
+          <CommentComposer
+            signedIn={Boolean(viewer)}
+            viewerName={viewer?.fullName}
+            isBotPost={botAuthor}
+            replyTo={threadComments.find((comment) => comment.id === followUpBotCommentId) ?? null}
+            focusTrigger={composerFocusTrigger}
+            onClearReply={onClearFollowUp}
+            onSubmitComment={(body, followUp, replyToCommentId) =>
+              onSubmitComment(item.id, body, followUp, replyToCommentId)
+            }
+          />
           {threadLoading ? (
-            <p role="status" className="flex items-center gap-2 py-3 text-sm text-muted-foreground"><span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-r-transparent" />Loading comments…</p>
+            <p role="status" className="flex items-center gap-2 px-1 py-3 text-sm text-muted-foreground"><span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-r-transparent" />Loading replies…</p>
           ) : (
             <CommentList
               comments={threadComments}
@@ -391,16 +413,6 @@ export const FeedPostRow = memo(function FeedPostRow({
               onDelete={(commentId) => onDeleteComment(item.id, commentId)}
             />
           )}
-          {!threadLoading ? (
-            <CommentComposer
-              signedIn={Boolean(viewer)}
-              isBotPost={botAuthor}
-              followUpCommentId={followUpBotCommentId}
-              focusTrigger={composerFocusTrigger}
-              onClearFollowUp={onClearFollowUp}
-              onSubmitComment={(body, followUp) => onSubmitComment(item.id, body, followUp)}
-            />
-          ) : null}
         </section>
       ) : null}
     </article>

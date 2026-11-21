@@ -7,7 +7,7 @@ import {
   getUserFromRequest,
   type AuthedRequest,
 } from "../../middleware/auth";
-import { communityAiReplyLimit } from "../../middleware/rateLimit";
+import { communityAiReplyLimit, reserveCommunityAiReply } from "../../middleware/rateLimit";
 import { asyncHandler } from "../../middleware/asyncHandler";
 import { serverError } from "../../middleware/error-handler";
 import { isR2StorageActive, r2PresignedPut, r2Upload, r2Download, r2Delete } from "../../storage/r2";
@@ -20,6 +20,7 @@ import {
   communityBotAuthorOverlay,
   ensureCommunityBotProfile,
   isCommunityBotId,
+  mentionsCommunityBot,
 } from "../../lib/community-bot";
 import type { SessionUser } from "../../auth/types";
 import {
@@ -77,6 +78,17 @@ const CATEGORIES = [
   "nepali",
 ] as const;
 
+const POST_KINDS = [
+  "discussion",
+  "question",
+  "resource",
+  "announcement",
+  "study_note",
+] as const;
+
+const POST_COLUMNS =
+  "id, author_id, title, body, category, kind, visibility, created_at, updated_at, accepted_comment_id";
+
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 /** Firebase Auth uid or legacy Supabase uuid stored in profiles.id / author_id. */
 const USER_ID_RE = /^[A-Za-z0-9_-]{8,128}$/;
@@ -89,9 +101,11 @@ interface PostRow {
   title: string;
   body: string;
   category: string;
+  kind?: string;
   visibility: string;
   created_at: string;
   updated_at: string;
+  accepted_comment_id?: string | null;
 }
 
 interface ProfileRow {
@@ -128,6 +142,7 @@ const postSchema = z.object({
   title: z.string().trim().min(4).max(160),
   body: z.string().trim().min(1).max(20000),
   category: z.enum(CATEGORIES),
+  kind: z.enum(POST_KINDS).optional().default("discussion"),
 });
 
 const commentSchema = z.object({
@@ -365,6 +380,55 @@ async function assistantReplyMeta(
   return { posted, canApprove: !posted };
 }
 
+/**
+ * When a post tags @community-bot, publish one neutral reply.
+ * A failed generation leaves the post in place.
+ */
+async function publishTaggedBotReply(row: PostRow, approvedBy: string): Promise<void> {
+  if (isCommunityBotId(row.author_id)) return;
+  if (!mentionsCommunityBot(`${row.title}\n${row.body}`)) return;
+  if (assistantReplyInFlight.has(row.id)) return;
+  const existing = await assistantReplyMeta(row.id, row.author_id, null);
+  if (existing.posted) return;
+  const allowed = await reserveCommunityAiReply(approvedBy);
+  if (!allowed) return;
+  assistantReplyInFlight.add(row.id);
+  try {
+    await ensureCommunityBotProfile();
+    const body = await generateCommunityAssistantReply({
+      title: row.title,
+      body: row.body,
+      category: row.category,
+      tagged: true,
+    });
+    const now = new Date().toISOString();
+    const commentId = randomUUID();
+    const { error: commentError } = await supabaseAdmin.from("community_feed_comments").insert({
+      id: commentId,
+      post_id: row.id,
+      author_id: COMMUNITY_BOT_ID,
+      body,
+      parent_comment_id: null,
+      created_at: now,
+      updated_at: now,
+    });
+    if (commentError) return;
+    const { error: ledgerError } = await supabaseAdmin.from("community_feed_ai_replies").insert({
+      post_id: row.id,
+      comment_id: commentId,
+      approved_by: approvedBy,
+      created_at: now,
+    });
+    if (ledgerError && !isMissingTable(ledgerError)) {
+      await supabaseAdmin.from("community_feed_comments").delete().eq("id", commentId);
+    }
+  } catch {
+    /* The post is already saved. A missed reply can be asked again with Ask AI. */
+  } finally {
+    assistantReplyInFlight.delete(row.id);
+  }
+}
+
 async function followingByAuthor(
   viewerId: string | null,
   authorIds: string[],
@@ -450,6 +514,11 @@ function presentPost(
     title: row.title,
     body: row.body,
     category: row.category,
+    kind: row.kind && POST_KINDS.includes(row.kind as (typeof POST_KINDS)[number])
+      ? row.kind
+      : "discussion",
+    solved: Boolean(row.accepted_comment_id),
+    acceptedCommentId: row.accepted_comment_id ?? null,
     visibility: "public" as const,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
@@ -534,7 +603,7 @@ async function assistantAnsweredPostIds(postIds: string[]): Promise<Set<string>>
 async function loadRecent(authorId?: string, limit = SCAN_LIMIT): Promise<{ rows: PostRow[] } | { missing: true } | { error: DbError }> {
   const base = supabaseAdmin
     .from("community_feed_posts")
-    .select("id, author_id, title, body, category, visibility, created_at, updated_at");
+    .select(POST_COLUMNS);
   const query = authorId
     ? base.eq("author_id", authorId).order("created_at", { ascending: false }).limit(limit)
     : base.eq("visibility", "public").order("created_at", { ascending: false }).limit(limit);
@@ -549,17 +618,23 @@ async function loadRecent(authorId?: string, limit = SCAN_LIMIT): Promise<{ rows
 async function loadFeedPage(opts: {
   authorId?: string;
   category?: string;
+  kind?: string;
+  solvedOnly?: boolean;
   cursor: number;
 }): Promise<{ rows: PostRow[]; nextCursor: number | null } | { missing: true } | { error: DbError }> {
   const from = opts.cursor;
   const to = opts.cursor + PAGE_SIZE;
   const base = supabaseAdmin
     .from("community_feed_posts")
-    .select("id, author_id, title, body, category, visibility, created_at, updated_at");
+    .select(POST_COLUMNS);
   let query = opts.authorId
     ? base.eq("author_id", opts.authorId).order("created_at", { ascending: false })
     : base.eq("visibility", "public").order("created_at", { ascending: false });
   if (opts.category) query = query.eq("category", opts.category);
+  if (opts.kind) query = query.eq("kind", opts.kind);
+  if (opts.solvedOnly) {
+    query = query.eq("kind", "question").not("accepted_comment_id", "is", null);
+  }
   const { data, error } = await query.range(from, to);
   if (error) {
     if (isMissingTable(error)) return { missing: true };
@@ -574,7 +649,7 @@ async function loadFeedPage(opts: {
 
 function filterRows(
   rows: PostRow[],
-  opts: { q?: string; category?: string; authorId?: string; cursor: number },
+  opts: { q?: string; category?: string; kind?: string; authorId?: string; cursor: number },
 ) {
   let next = rows;
   const needle = opts.q?.trim().toLowerCase();
@@ -584,19 +659,21 @@ function filterRows(
     );
   }
   if (opts.category) next = next.filter((row) => row.category === opts.category);
+  if (opts.kind) next = next.filter((row) => row.kind === opts.kind);
   if (opts.authorId) next = next.filter((row) => row.author_id === opts.authorId);
   const page = next.slice(opts.cursor, opts.cursor + PAGE_SIZE);
   const nextCursor = opts.cursor + PAGE_SIZE < next.length ? opts.cursor + PAGE_SIZE : null;
   return { page, nextCursor };
 }
 
-type ListFilter = "latest" | "unanswered" | "following";
+type ListFilter = "latest" | "unanswered" | "following" | "solved";
 
 function readListQuery(
   req: Request,
 ): {
   q?: string;
   category?: string;
+  kind?: string;
   authorId?: string;
   filter: ListFilter;
   ids?: string[];
@@ -604,6 +681,7 @@ function readListQuery(
 } | { error: string } {
   const q = queryOne(req.query.q);
   const category = queryOne(req.query.category);
+  const kindRaw = queryOne(req.query.kind);
   const authorId = queryOne(req.query.authorId);
   const filterRaw = queryOne(req.query.filter);
   const idsRaw = queryOne(req.query.ids);
@@ -612,10 +690,14 @@ function readListQuery(
   if (category && !CATEGORIES.includes(category as (typeof CATEGORIES)[number])) {
     return { error: "Unknown category" };
   }
+  if (kindRaw && !POST_KINDS.includes(kindRaw as (typeof POST_KINDS)[number])) {
+    return { error: "Unknown post kind" };
+  }
   if (authorId && !isUserId(authorId)) return { error: "Unknown author" };
   let filter: ListFilter = "latest";
   if (filterRaw === "unanswered") filter = "unanswered";
   else if (filterRaw === "following") filter = "following";
+  else if (filterRaw === "solved") filter = "solved";
   let ids: string[] | undefined;
   if (idsRaw) {
     ids = idsRaw
@@ -634,6 +716,7 @@ function readListQuery(
   return {
     q,
     category: category || undefined,
+    kind: kindRaw || undefined,
     authorId: authorId || undefined,
     filter,
     ids,
@@ -656,7 +739,7 @@ async function loadPostsByIds(ids: string[], cursor: number): Promise<{ rows: Po
   if (slice.length === 0) return { rows: [], nextCursor: null };
   const { data, error } = await supabaseAdmin
     .from("community_feed_posts")
-    .select("id, author_id, title, body, category, visibility, created_at, updated_at")
+    .select(POST_COLUMNS)
     .in("id", slice)
     .eq("visibility", "public");
   if (error) {
@@ -688,7 +771,7 @@ async function loadFollowingFeedPage(
   const to = cursor + PAGE_SIZE;
   let query = supabaseAdmin
     .from("community_feed_posts")
-    .select("id, author_id, title, body, category, visibility, created_at, updated_at")
+    .select(POST_COLUMNS)
     .in("author_id", following)
     .eq("visibility", "public")
     .order("created_at", { ascending: false });
@@ -705,7 +788,7 @@ async function loadFollowingFeedPage(
 }
 
 async function loadUnansweredPage(
-  opts: { cursor: number; category?: string; q?: string },
+  opts: { cursor: number; category?: string; kind?: string; q?: string },
 ): Promise<{ rows: PostRow[]; nextCursor: number | null } | { missing: true } | { error: DbError }> {
   const loaded = await loadRecent(undefined, FILTERED_SCAN_LIMIT);
   if ("missing" in loaded) return { missing: true };
@@ -713,12 +796,16 @@ async function loadUnansweredPage(
   const side = await sideData(loaded.rows.map((row) => row.id));
   if ("missing" in side) return { missing: true };
   if ("error" in side) return { error: side.error };
-  const unanswered = loaded.rows.filter(
-    (row) => side.comments.filter((c) => c.post_id === row.id).length === 0,
-  );
+  const unanswered = loaded.rows.filter((row) => {
+    const noComments = side.comments.filter((c) => c.post_id === row.id).length === 0;
+    const kind = row.kind ?? "discussion";
+    const openQuestion = kind === "question" && !row.accepted_comment_id;
+    return noComments || openQuestion;
+  });
   const filtered = filterRows(unanswered, {
     q: opts.q,
     category: opts.category,
+    kind: opts.kind,
     cursor: opts.cursor,
   });
   return { rows: filtered.page, nextCursor: filtered.nextCursor };
@@ -769,10 +856,29 @@ async function sendList(
     }
     page = loaded.rows.filter((row) => !blocked.has(row.author_id));
     nextCursor = loaded.nextCursor;
+  } else if (parsed.filter === "solved" && !scopedAuthorId) {
+    const loaded = await loadFeedPage({
+      category: parsed.category,
+      kind: parsed.kind,
+      solvedOnly: true,
+      cursor: parsed.cursor,
+    });
+    if ("missing" in loaded) {
+      noStore(res);
+      res.json({ posts: [], nextCursor: null, migrated: false });
+      return;
+    }
+    if ("error" in loaded) {
+      serverError(res, loaded.error, "community-feed");
+      return;
+    }
+    page = loaded.rows.filter((row) => !blocked.has(row.author_id));
+    nextCursor = loaded.nextCursor;
   } else if (parsed.filter === "unanswered" && !scopedAuthorId) {
     const loaded = await loadUnansweredPage({
       cursor: parsed.cursor,
       category: parsed.category,
+      kind: parsed.kind,
       q: parsed.q,
     });
     if ("missing" in loaded) {
@@ -792,6 +898,7 @@ async function sendList(
     const loaded = await loadFeedPage({
       authorId: scopedAuthorId ?? parsed.authorId,
       category: parsed.category,
+      kind: parsed.kind,
       cursor: parsed.cursor,
     });
     if ("missing" in loaded) {
@@ -819,6 +926,7 @@ async function sendList(
     const filtered = filterRows(loaded.rows, {
       q: parsed.q,
       category: parsed.category,
+      kind: parsed.kind,
       authorId: scopedAuthorId ? undefined : parsed.authorId,
       cursor: parsed.cursor,
     });
@@ -845,7 +953,7 @@ async function sendList(
 async function findPost(postId: string): Promise<{ row: PostRow | null } | { missing: true } | { error: DbError }> {
   const { data, error } = await supabaseAdmin
     .from("community_feed_posts")
-    .select("id, author_id, title, body, category, visibility, created_at, updated_at")
+    .select(POST_COLUMNS)
     .eq("id", postId)
     .maybeSingle();
   if (error) {
@@ -930,11 +1038,12 @@ router.post(
         title: parsed.data.title,
         body: parsed.data.body,
         category: parsed.data.category,
+        kind: parsed.data.kind,
         visibility: "public",
         created_at: now,
         updated_at: now,
       })
-      .select("id, author_id, title, body, category, visibility, created_at, updated_at")
+      .select(POST_COLUMNS)
       .single();
     if (error) {
       if (isMissingTable(error)) {
@@ -944,6 +1053,7 @@ router.post(
       serverError(res, error, "community-feed");
       return;
     }
+    await publishTaggedBotReply(data as PostRow, user.id);
     const presented = await presentMany([data as PostRow], user.id);
     if ("missing" in presented || "error" in presented || presented.posts.length === 0) {
       noStore(res);
@@ -1519,6 +1629,7 @@ router.patch(
         title: parsed.data.title,
         body: parsed.data.body,
         category: parsed.data.category,
+        kind: parsed.data.kind,
         updated_at: updatedAt,
       })
       .eq("id", postId);
@@ -1530,6 +1641,15 @@ router.patch(
       serverError(res, error, "community-feed");
       return;
     }
+    await publishTaggedBotReply(
+      {
+        ...found.row,
+        title: parsed.data.title,
+        body: parsed.data.body,
+        category: parsed.data.category,
+      },
+      user.id,
+    );
     const again = await findPost(postId);
     if ("row" in again && again.row) {
       const presented = await presentMany([again.row], user.id);

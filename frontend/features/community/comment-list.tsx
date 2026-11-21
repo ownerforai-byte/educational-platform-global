@@ -7,7 +7,6 @@ import {
   Ellipsis,
   Loader2,
   MessageCircle,
-  MessageSquare,
   Pencil,
   Trash2,
 } from "lucide-react";
@@ -26,7 +25,6 @@ import { canModerate } from "@/features/community/community-helpers";
 import {
   actionBtn,
   chipBtn,
-  emptyStatePanel,
   inputClass,
   primaryCta,
 } from "@/features/community/community-ui";
@@ -80,7 +78,7 @@ const CommentRow = memo(function CommentRow({
   }
 
   return (
-    <li className="px-4 py-4 sm:px-5">
+    <div className={cn("px-1 py-3", followUpActive && "rounded-xl bg-primary/[0.04]")}>
       <div
         className={cn(
           "space-y-2",
@@ -212,26 +210,21 @@ const CommentRow = memo(function CommentRow({
           </div>
         )}
 
-        {viewer && botComment ? (
-          <div className="pt-1">
+        {viewer && !pendingComment ? (
+          <div className="pt-0.5">
             <button
               type="button"
-              className={cn(
-                chipBtn,
-                "min-h-10",
-                followUpActive && "border-primary/50 bg-primary/12 text-primary",
-              )}
-              aria-pressed={followUpActive}
-              aria-label="Ask Community bot a follow-up"
+              aria-label={`Reply to @${comment.author.username || comment.author.fullName}`}
               onClick={() => onSelectFollowUp(comment.id)}
+              className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
             >
-              <MessageCircle className="h-3.5 w-3.5" aria-hidden />
-              {followUpActive ? "Addressing Veer" : "Ask follow-up"}
+              <MessageCircle className="h-4 w-4" aria-hidden />
+              Reply
             </button>
           </div>
         ) : null}
       </div>
-    </li>
+    </div>
   );
 });
 
@@ -240,7 +233,6 @@ export function CommentList({
   viewer,
   followUpBotCommentId,
   onSelectFollowUp,
-  onOpenComposer,
   onFollowChange,
   onSaveEdit,
   onDelete,
@@ -255,22 +247,27 @@ export function CommentList({
   onDelete: (commentId: string) => void;
 }) {
   if (comments.length === 0) {
-    return (
-      <div className={cn(emptyStatePanel, "space-y-2.5 p-6 text-center")}>
-        <MessageSquare className="mx-auto h-8 w-8 text-primary/40" aria-hidden />
-        <p className="text-sm font-medium text-foreground">No comments yet</p>
-        <p className="text-sm text-muted-foreground">
-          Add the first answer, explanation, or follow-up question.
-        </p>
-      </div>
-    );
+    return <p className="px-1 py-2 text-sm text-muted-foreground">No replies yet.</p>;
   }
 
-  return (
-    <ul className="divide-y divide-border/60 overflow-hidden rounded-2xl border border-border/80 bg-card shadow-elev-0">
-      {comments.map((comment) => (
+  const ids = new Set(comments.map((comment) => comment.id));
+  const children = new Map<string, FeedComment[]>();
+  const roots: FeedComment[] = [];
+  for (const comment of comments) {
+    if (comment.parentId && ids.has(comment.parentId)) {
+      const list = children.get(comment.parentId) ?? [];
+      list.push(comment);
+      children.set(comment.parentId, list);
+    } else {
+      roots.push(comment);
+    }
+  }
+
+  function branch(comment: FeedComment, depth: number) {
+    const nested = children.get(comment.id) ?? [];
+    return (
+      <li key={comment.id}>
         <CommentRow
-          key={comment.id}
           comment={comment}
           viewer={viewer}
           followUpActive={followUpBotCommentId === comment.id}
@@ -279,7 +276,14 @@ export function CommentList({
           onSaveEdit={onSaveEdit}
           onDelete={onDelete}
         />
-      ))}
-    </ul>
-  );
+        {nested.length > 0 ? (
+          <ul className={cn("ml-5 border-l border-border/80 pl-3", depth > 2 && "ml-3")}>
+            {nested.map((child) => branch(child, depth + 1))}
+          </ul>
+        ) : null}
+      </li>
+    );
+  }
+
+  return <ul className="space-y-0.5">{roots.map((comment) => branch(comment, 0))}</ul>;
 }

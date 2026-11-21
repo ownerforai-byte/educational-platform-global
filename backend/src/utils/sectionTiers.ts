@@ -15,24 +15,23 @@ import { supabaseAdmin } from "../db/supabase";
  */
 
 const PREFIX = "section_min_tier.";
-const CACHE_TTL_MS = 15_000;
 
 const TIERS = new Set(["guest", "member", "plus", "pro", "owner"]);
 
 /** Retired rung names still present in old settings rows map to the new ladder. */
 const LEGACY_TIER: Record<string, string> = { visitor: "guest" };
 
-let cache: { value: Record<string, string>; at: number } | null = null;
-
-/** Drop the cached map so an owner console save takes effect immediately. */
+/** Drop any in-process copy. Reads always hit the settings table. */
 export function invalidateSectionTierCache(): void {
-  cache = null;
+  /* no process cache — a save must be visible on the next read */
+}
+
+function rungValue(value: unknown): string {
+  if (typeof value !== "string") return "";
+  return value.trim().toLowerCase().replace(/^"|"$/g, "");
 }
 
 export async function readSectionMinTiers(): Promise<Record<string, string>> {
-  const now = Date.now();
-  if (cache && now - cache.at < CACHE_TTL_MS) return cache.value;
-
   let value: Record<string, string> = {};
   try {
     const { data } = await supabaseAdmin
@@ -42,7 +41,7 @@ export async function readSectionMinTiers(): Promise<Record<string, string>> {
 
     for (const row of (data ?? []) as Array<{ key: string; value: unknown }>) {
       const sectionId = row.key.slice(PREFIX.length);
-      const raw = typeof row.value === "string" ? row.value.trim().toLowerCase() : "";
+      const raw = rungValue(row.value);
       const rung = LEGACY_TIER[raw] ?? raw;
       // Only known ladder rungs count — anything else falls back to the code
       // default for that section.
@@ -53,6 +52,5 @@ export async function readSectionMinTiers(): Promise<Record<string, string>> {
     value = {};
   }
 
-  cache = { value, at: now };
   return value;
 }
