@@ -148,6 +148,7 @@ import { FrogFemaleReproductiveSystem } from "./frog-female-reproductive-system"
 import { FrogAmplexusFertilisation } from "./frog-amplexus-fertilisation";
 import { FrogGametogenesis } from "./frog-gametogenesis";
 import { FrogDevelopmentStages } from "./frog-development-stages";
+import { FrogMetamorphosis } from "./frog-metamorphosis";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -1207,6 +1208,13 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Early development: zygote → cleavage → blastula → gastrula (three germ layers) → neurula — with the organ fate table for ectoderm, mesoderm and endoderm.",
         alt: "Frog development stages from zygote to neurula with germ layer fates",
         keyword: "gastrula",
+      },
+      {
+        Component: FrogMetamorphosis,
+        caption:
+          "Metamorphosis end to end: jelly egg → gilled tadpole → limbed froglet → adult — gills become lungs, the tail is absorbed, and thyroxine (which needs iodine) drives the whole switch.",
+        alt: "Frog metamorphosis stages from egg through tadpole and froglet to adult",
+        keyword: "metamorphosis",
       },
     ],
   },
