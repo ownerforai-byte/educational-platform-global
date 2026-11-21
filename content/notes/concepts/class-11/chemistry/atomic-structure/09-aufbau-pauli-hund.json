@@ -5,87 +5,137 @@
   "topicTitle": "Aufbau principle, Pauli's exclusion principle, Hund's rule and electronic configurations of atoms and ions (up to atomic no. 30)",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning",
-    "These three rules distribute electrons among the orbitals of an atom in its ground state: Aufbau fixes the *order* of filling, Pauli fixes the *capacity* of an orbital, and Hund fixes *how degenerate orbitals are filled*.",
-    "### 2. Aufbau principle and the (n + l) rule",
-    "Electrons fill the available orbital of lowest energy first. Order is given by the **Madelung (n + l) rule**: smaller (n + l) first; for equal (n + l), smaller n first. Thus 4s (n + l = 4) fills before 3d (n + l = 5), giving 1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p < 5s < 4d < 5p < 6s < 4f < 5d < 6p < 7s < 5f < 6d < 7p.",
-    "### 3. Pauli's exclusion principle",
-    "No two electrons in an atom can have all four quantum numbers identical; equivalently an orbital holds at most two electrons with opposite spins (↑↓). Consequences: subshell capacities 2, 6, 10, 14; shell capacity 2n².",
-    "### 4. Hund's rule of maximum multiplicity",
-    "Electrons enter degenerate orbitals (same n and l, e.g. the three 2p) singly with parallel spins before pairing; pairing starts only after every degenerate orbital has one electron. Reason: pairing costs Coulomb repulsion energy while parallel spins gain exchange energy. Example: N 2p³ = ↑ ↑ ↑ (three unpaired); O 2p⁴ = ↑↓ ↑ ↑ (two unpaired).",
-    "### 5. Extra stability of half-filled and fully-filled subshells",
-    "d⁵, d¹⁰, p³ and p⁶ arrangements gain exchange energy and symmetry, which explains the anomalies at Z = 24 and 29: Cr = [Ar]3d⁵4s¹ (not 3d⁴4s²) and Cu = [Ar]3d¹⁰4s¹ (not 3d⁹4s²). Similar anomalies occur at Nb, Mo, Ru, Rh, Pd, Ag, Pt and Au.",
-    "### 6. Electronic configurations, Z = 1–30 (noble-gas shorthand)",
-    "H 1s¹ · He 1s² · Li [He]2s¹ · Be [He]2s² · B [He]2s²2p¹ · C 2p² · N 2p³ · O 2p⁴ · F 2p⁵ · Ne 2p⁶ · Na [Ne]3s¹ · Mg 3s² · Al 3s²3p¹ · Si 3p² · P 3p³ · S 3p⁴ · Cl 3p⁵ · Ar 3p⁶ · K [Ar]4s¹ · Ca 4s² · Sc 3d¹4s² · Ti 3d²4s² · V 3d³4s² · Cr 3d⁵4s¹ · Mn 3d⁵4s² · Fe 3d⁶4s² · Co 3d⁷4s² · Ni 3d⁸4s² · Cu 3d¹⁰4s¹ · Zn 3d¹⁰4s².",
-    "### 7. Configurations of ions",
-    "Electrons are removed from the highest-n (outermost) shell first even though 4s filled before 3d: Fe ([Ar]3d⁶4s²) → Fe²⁺ ([Ar]3d⁶) → Fe³⁺ ([Ar]3d⁵, half-filled and extra stable); Cu ([Ar]3d¹⁰4s¹) → Cu⁺ ([Ar]3d¹⁰); Mn → Mn²⁺ ([Ar]3d⁵). This explains why Fe³⁺ and Mn²⁺ are the commonest oxidation states of those metals.",
-    "### 8. Applications",
-    "• Predicts valency, oxidation states and magnetic behaviour (Fe³⁺: 5 unpaired → paramagnetic; Zn²⁺: 3d¹⁰ → diamagnetic; Cu²⁺: 1 unpaired) and the colours of transition-metal ions.",
-    "• Explains the structure of the periodic table — s, p, d, f blocks and period lengths 2, 8, 8, 18, 18, 32 — and is the basis of hybridisation and complex chemistry.",
-    "### 9. Limitations",
-    "The (n + l) rule is only approximate — the many anomalous configurations of Cr, Cu, Nb, Mo, Ru, Rh, Pd, Ag, Pt, Au and of the lanthanides/actinides show that electron repulsion, exchange energy and relativistic effects decide the real order; the orbital energy order changes with Z and inside ions or ligand fields; Hund's rule has exceptions in excited states; Aufbau fails for heavy elements; and none of the rules predicts reactivity or reaction rates."
+    "## 1. Topic Introduction — The Filling Rules That Build the Periodic Table\n\nQuantum numbers give every electron an address; three rules decide the **order of occupation**: the **Aufbau principle** (fill lowest energy first), **Pauli's exclusion principle** (two electrons maximum per orbital, opposite spins) and **Hund's rule** (degenerate orbitals fill singly with parallel spins first). Apply all three and the electron configurations of every element up to Z = 30 — and the structure of the periodic table — follow mechanically. NEB 2023 asked Aufbau directly (3m); the configurations themselves are permanent exam currency.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Aufbau principle (building-up)\n\nElectrons occupy the **lowest-energy orbital available** before entering higher ones. Energy order (the diagonal rule):\n\n**1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p < 5s < 4d < 5p …**\n\n- The **(n + l) rule** predicts the order: lower (n + l) fills first; on a tie, lower n fills first.\n  - 4s: n + l = 4 + 0 = 4 — fills **before** 3d: n + l = 3 + 2 = 5.\n- The order is set by **penetration**: s electrons penetrate closer to the nucleus than p, d, f of the same shell, so 4s is stabilised below 3d.\n\n### 2.2 Pauli's exclusion principle\n\n**No two electrons in an atom can have the same set of all four quantum numbers.**\n\n- Consequence: an orbital holds **at most 2 electrons, with opposite spins** (↑↓).\n- Capacities: orbital 2, subshell 2(2l + 1), shell 2n².\n\n### 2.3 Hund's rule (of maximum multiplicity)\n\nFor **degenerate orbitals** (same energy — the three p, five d, seven f):\n\n1. Electrons **fill singly first**, with **parallel spins** (↑ ↑ ↑).\n2. **Pairing starts only after every orbital in the subshell is singly occupied.**\n\nReason: parallel spins in separate orbitals minimise repulsion and maximise exchange energy — half-filled and fully-filled subshells are extra stable (explains Cr: 3d⁵4s¹ and Cu: 3d¹⁰4s¹).\n\n### 2.4 Worked configurations up to Z = 30\n\n| Z | Element | Configuration | Note |\n|---|---|---|---|\n| 1 | H | 1s¹ | |\n| 2 | He | 1s² | K shell full |\n| 3 | Li | 1s² 2s¹ | |\n| 4 | Be | 1s² 2s² | |\n| 5 | B | 1s² 2s² 2p¹ | |\n| 6 | C | 1s² 2s² 2p² | 2p¹↑ 2p¹↑ (Hund) |\n| 7 | N | 1s² 2s² 2p³ | 2p↑ ↑ ↑ — half-filled p |\n| 8 | O | 1s² 2s² 2p⁴ | first pairing |\n| 9 | F | 1s² 2s² 2p⁵ | |\n| 10 | Ne | 1s² 2s² 2p⁶ | noble gas core |\n| 11 | Na | [Ne] 3s¹ | NEB 2024's atom |\n| 12 | Mg | [Ne] 3s² | |\n| 13 | Al | [Ne] 3s² 3p¹ | |\n| 16 | S | [Ne] 3s² 3p⁴ | |\n| 18 | Ar | [Ne] 3s² 3p⁶ | |\n| 19 | K | [Ar] **4s¹** | 4s before 3d |\n| 20 | Ca | [Ar] 4s² | |\n| 21 | Sc | [Ar] 4s² 3d¹ | 3d begins |\n| 24 | Cr | [Ar] 4s¹ **3d⁵** | half-filled d — exception |\n| 26 | Fe | [Ar] 4s² 3d⁶ | |\n| 29 | Cu | [Ar] 4s¹ **3d¹⁰** | filled d — exception |\n| 30 | Zn | [Ar] 4s² 3d¹⁰ | 3d complete |\n\n### 2.5 Ions (remove from the outermost shell first)\n\n- Fe²⁺: [Ar] 3d⁶ (lose 4s² first, **not** 3d).\n- Cu⁺: [Ar] 3d¹⁰; Cu²⁺: [Ar] 3d⁹.\n- Fe³⁺: [Ar] 3d⁵ — half-filled, extra stable (why Fe³⁺ beats Fe²⁺ in stability).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Aufbau principle** | Electrons fill the lowest-energy orbitals first | 4s fills before 3d |\n| **Pauli exclusion principle** | No two electrons share all four quantum numbers | Orbital capacity = 2 |\n| **Hund's rule** | Degenerate orbitals fill singly with parallel spins before pairing | N: 2p ↑ ↑ ↑ |\n| **Degenerate orbitals** | Orbitals of equal energy | Three 2p, five 3d |\n| **Core notation** | Noble-gas core + valence electrons | Na = [Ne] 3s¹ |\n| **Exchange energy** | Stabilisation from parallel-spin electrons in different orbitals | Maximised at half-filled d⁵ |",
+    "## 4. Detailed Explanation\n\n### 4.1 NEB 2023 (3m, verified PYQ) — Explain Aufbau's principle with an example\n\n**Statement:** electrons enter the orbital of lowest energy first; higher orbitals are occupied only after all lower ones are filled. The energy order follows the (n + l) rule — lower (n + l) first, and on a tie the lower n first.\n\n**Example:** potassium (Z = 19) — after the argon core [Ar], the next electron enters **4s (n + l = 4)** rather than 3d (n + l = 5): K = [Ar] 4s¹, not [Ar] 3d¹. Similarly Ca = [Ar] 4s², and only from scandium do the 3d orbitals begin to fill.\n\n### 4.2 Why 4s fills before 3d\n\n**Penetration and shielding.** A 4s electron penetrates through the inner shells close to the nucleus, feeling nearly the full nuclear charge; a 3d electron barely penetrates and is heavily shielded. The net energy of 4s is therefore **lower** than 3d despite the larger n — the (n + l) rule is the bookkeeping, penetration is the physics.\n\n### 4.3 The two famous exceptions\n\n- **Cr (Z = 24):** expected [Ar] 4s² 3d⁴, actual [Ar] 4s¹ **3d⁵** — a half-filled d subshell gains extra exchange energy (five parallel-spin electrons) and the s electron supplies it.\n- **Cu (Z = 29):** expected [Ar] 4s² 3d⁹, actual [Ar] 4s¹ **3d¹⁰** — a completely filled d subshell is even more stable.\n- Symmetry + exchange energy make half-filled and fully-filled subshells special — the same reason N (2p³) is more stable than O (2p⁴).\n\n### 4.4 Hund's rule in action — the p³ → p⁴ step\n\nNitrogen's three 2p electrons occupy the three separate p orbitals with parallel spins (↑ ↑ ↑). Oxygen's fourth electron **must pair** (↑↓ ↑ ↑), paying pairing repulsion — which is why first-ionisation-energy data show the famous N > O dip in period 2.",
+    "## 5. Comparison Tables\n\n**The three rules side by side**\n\n| Rule | Statement | Governs | Visible effect |\n|---|---|---|---|\n| **Aufbau** | Lowest energy orbital fills first | Order of subshells | 4s before 3d; K = [Ar] 4s¹ |\n| **Pauli** | All four quantum numbers cannot repeat | Capacity | Orbital = 2 electrons, ↑↓ |\n| **Hund** | Singly + parallel first, then pair | Degenerate sets | N = 2p ↑ ↑ ↑; Cr, Cu exceptions |\n\n**Similarity:** all three are filling rules for ground-state configurations; each covers a different failure mode (energy order, capacity, pairing timing).\n\n**Ground state vs excited state (the classic 2m)**\n\n| Basis | Ground state | Excited state |\n|---|---|---|\n| Occupation | Rules obeyed strictly | Electron promoted to higher orbital |\n| Example (C) | 1s² 2s² 2p² | 1s² 2s¹ 2p³ |\n| Energy | Minimum | Higher; emits light on relaxation |",
+    "## 6. Common Confusions\n\n**Ionisation order vs filling order:** electrons are **removed from the outermost shell** — Fe²⁺ is [Ar] 3d⁶, not [Ar] 4s² 3d⁴. 4s fills first but also empties first.",
+    "**Hund's rule scope:** it applies **only within a degenerate set** (p³, d⁵…); it never overrides Aufbau's energy ordering across different subshells.",
+    "**Exceptions are ground-state facts:** Cr and Cu configurations apply to the neutral ground-state atoms; their ions follow the normal removal order (Cu⁺ = 3d¹⁰).",
+    "## 7. Exam Application\n\n**NEB-style (2m): Write the configuration of Fe (Z = 26) and of Fe³⁺; why is Fe³⁺ more stable than Fe²⁺?** — Fe: [Ar] 4s² 3d⁶; Fe³⁺: [Ar] 3d⁵ (4s² removed first, then one 3d). Fe³⁺ has an exactly **half-filled 3d⁵** — maximum exchange energy and spherical symmetry — so it is extra stable.",
+    "**NEB-style (2m): State Hund's rule and illustrate with nitrogen.** — Degenerate orbitals are occupied singly with parallel spins before any pairing. N (Z = 7): 1s² 2s² 2p³ → the three 2p electrons sit in three separate p orbitals as ↑ ↑ ↑.",
+    "**NEB-style (2m): Predict the ground-state configuration of Cr (Z = 24) and explain the anomaly.** — [Ar] 4s¹ 3d⁵ instead of [Ar] 4s² 3d⁴: the half-filled 3d⁵ gains maximum exchange energy, and promoting one 4s electron to 3d costs little because 4s and 3d are nearly degenerate."
   ],
   "confusion": [
-    "❌ 4s is always lower in energy than 3d. ✅ It fills first in neutral atoms, but in ions the 4s electrons are removed first (Fe²⁺ = 3d⁶).",
-    "❌ Pauli's principle forbids two electrons in one orbital. ✅ They may share an orbital if their spins are opposite (different mₛ).",
-    "❌ Hund's rule says electrons pair as soon as possible. ✅ Pairing begins only after every degenerate orbital holds one electron.",
-    "❌ Cr is [Ar]3d⁴4s². ✅ It is [Ar]3d⁵4s¹ because the half-filled d subshell wins on exchange energy."
+    "**4s before 3d — but also 4s out first:** filling order and removal order are different questions. Ions strip the highest-n shell first.",
+    "**Pairing needs a partner orbital, not the same orbital:** Hund's rule forbids pairing while a degenerate orbital is still empty — O (2p⁴) pairs only because all three p orbitals already hold one electron."
   ],
   "practice": [
-    "State Aufbau's principle, Pauli's exclusion principle and Hund's rule with one example each.",
-    "Apply the (n + l) rule to arrange 3d, 4s, 4p, 3p and 5s in order of filling.",
-    "Give the configurations of Z = 24, 26 and 29 and explain the anomalies.",
-    "Write Fe, Fe²⁺ and Fe³⁺ configurations and explain why Fe³⁺ is extra stable.",
-    "How many unpaired electrons occur in Mn²⁺ and Cu²⁺? State the magnetic behaviour of each."
+    "Why is a half-filled d⁵ subshell more stable than d⁴ 4s² would predict?",
+    "Write the configurations of Mn²⁺ and Ni²⁺ and state the d-count of each.",
+    "Why does the first ionisation energy of oxygen fall below nitrogen's despite higher nuclear charge?"
   ],
   "formulas": [
-    "$$\\text{Aufbau: smaller }(n+l)\\text{ first; tie} \\rightarrow \\text{smaller }n$$",
-    "$$\\text{subshell capacity}=2(2l+1),\\qquad \\text{shell capacity}=2n^{2}$$",
-    "$$\\mu=\\sqrt{n(n+2)}\\ \\text{BM},\\quad n=\\text{unpaired electrons}$$"
+    "- (n + l) rule: lower (n + l) fills first; tie → lower n\n- Capacity: orbital 2; subshell 2(2l + 1); shell 2n²\n- Cr: [Ar] 4s¹ 3d⁵; Cu: [Ar] 4s¹ 3d¹⁰\n- Fe³⁺: [Ar] 3d⁵ (from Fe [Ar] 4s² 3d⁶)"
   ],
   "universalFacts": [
-    "Cr (24) = [Ar]3d⁵4s¹ and Cu (29) = [Ar]3d¹⁰4s¹ are the only anomalies within Z ≤ 30.",
-    "Fe³⁺ = [Ar]3d⁵ (5 unpaired); Zn²⁺ = [Ar]3d¹⁰ (0 unpaired).",
-    "answer pattern for \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "The periodic table's block structure is the Aufbau order made visible: s-block (groups 1–2), p-block (13–18), d-block (3–12), f-block — the filling sequence *is* the table's shape."
   ],
   "examples": [
-    "**Problem:** Configuration and magnetic behaviour of Cu²⁺. **Solution:** Cu = [Ar]3d¹⁰4s¹ → Cu²⁺ = [Ar]3d⁹ → one unpaired electron → paramagnetic, μ ≈ 1.73 BM.",
-    "**Problem:** How many Zn electrons have l = 2? **Solution:** Zn = [Ar]3d¹⁰4s² — the 3d subshell (l = 2) holds 10 electrons."
+    "***K (Z = 19) = [Ar] 4s¹*** — the (n + l) rule at work: 4s (4+0 = 4) beats 3d (3+2 = 5), so the 19th electron of potassium enters 4s, not 3d — the single clearest demonstration of Aufbau."
   ],
   "importantNotes": [
-    "For ions always remove electrons from the highest-n shell first (4s before 3d) — a standard exam trap.",
-    "Explain the Cr/Cu anomalies with exchange energy and half-filled stability, not as arbitrary exceptions."
+    "Verified PYQs: NEB 2023 3m — explain Aufbau with an example (solved above); NEB 2024 3m — quantum numbers of Na's valence electron (topic 19). Configurations up to Z = 30 are standing NEB currency."
   ],
   "visualType": "electronic-configuration",
   "keyPoints": [
-    "• Aufbau principle",
-    "• Pauli's exclusion principle",
-    "• Hund's rule",
-    "• Electronic configurations of atoms",
-    "• Ions",
-    "• Up to atomic no. 30"
+    "Aufbau: fill lowest energy first — order 1s 2s 2p 3s 3p 4s 3d 4p 5s…, predicted by (n + l), tie → lower n. Pauli: no two electrons share all four quantum numbers → orbital max 2, ↑↓. Hund: degenerate orbitals fill singly with parallel spins before pairing. Exceptions: Cr [Ar] 4s¹3d⁵, Cu [Ar] 4s¹3d¹⁰ (half/full-filled stability). Ions: remove 4s before 3d — Fe³⁺ = [Ar] 3d⁵ extra stable."
   ],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "**NEB 2023 (3m): Explain Aufbau's principle with an example.** — Electrons fill orbitals in order of increasing energy, lowest first; the order follows the (n + l) rule (lower n + l first; tie → lower n): 1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p. **Example:** potassium (Z = 19) — after [Ar], the 19th electron enters 4s (n + l = 4) rather than 3d (n + l = 5): K = [Ar] 4s¹. Scandium (Z = 21) is the first element to place an electron in 3d.",
+    "**NEB-style (2m): State Pauli's exclusion principle and one consequence.** — No two electrons in an atom can have the same set of all four quantum numbers. Consequence: an orbital holds at most two electrons with opposite spins (↑↓); shell capacity is 2n².",
+    "**NEB-style (2m): State Hund's rule and write the orbital diagram of nitrogen.** — Degenerate orbitals fill singly with parallel spins before pairing begins. N (1s² 2s² 2p³): 1s ↑↓, 2s ↑↓, 2p ↑ ↑ ↑ — three singly-occupied p orbitals.",
+    "**NEB-style (3m): Write the ground-state configurations of Cr (Z = 24) and Cu (Z = 29) and account for the anomalies.** — Cr: [Ar] 4s¹ 3d⁵; Cu: [Ar] 4s¹ 3d¹⁰. Half-filled (d⁵) and fully-filled (d¹⁰) subshells have maximum exchange energy and symmetrical charge distribution; shifting one 4s electron into 3d (nearly degenerate with 4s) achieves that extra stability."
+  ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\"?",
+      "question": "Which orbital fills first according to the Aufbau principle?",
       "options": [
-        "Aufbau principle",
-        "Pauli's exclusion principle",
-        "Unrelated topic",
-        "None of the above"
+        "3d",
+        "4s",
+        "4p",
+        "3p"
       ],
-      "answer": "A",
-      "explanation": "Aufbau principle is listed among the official sub-ideas of Aufbau principle, Pauli's exclusion principle, Hund's rul…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "(n + l): 4s = 4 < 3d = 5."
     },
     {
-      "question": "A common examiner point on \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Pauli's exclusion principle limits an orbital to:",
       "options": [
-        "True",
-        "False"
+        "1 electron",
+        "2 electrons of opposite spin",
+        "2 electrons of parallel spin",
+        "4 electrons"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "All four quantum numbers cannot repeat."
+    },
+    {
+      "question": "Hund's rule governs the filling of:",
+      "options": [
+        "Any orbital",
+        "Degenerate orbitals",
+        "The 1s orbital",
+        "Nucleons"
+      ],
+      "answer": "B",
+      "explanation": "Singly, parallel spins, then pair."
+    },
+    {
+      "question": "The ground-state configuration of chromium (Z = 24) is:",
+      "options": [
+        "[Ar] 4s² 3d⁴",
+        "[Ar] 4s¹ 3d⁵",
+        "[Ar] 4s² 3d³",
+        "[Ar] 4s² 3d⁵"
+      ],
+      "answer": "B",
+      "explanation": "Half-filled 3d⁵ extra stable."
+    },
+    {
+      "question": "The ground-state configuration of copper (Z = 29) is:",
+      "options": [
+        "[Ar] 4s² 3d⁹",
+        "[Ar] 4s² 3d¹⁰",
+        "[Ar] 4s¹ 3d¹⁰",
+        "[Ar] 4s¹ 3d⁸"
+      ],
+      "answer": "C",
+      "explanation": "Filled 3d¹⁰ extra stable."
+    },
+    {
+      "question": "The electron configuration of Fe³⁺ is:",
+      "options": [
+        "[Ar] 3d³",
+        "[Ar] 3d⁵",
+        "[Ar] 3d⁶",
+        "[Ar] 4s² 3d³"
+      ],
+      "answer": "B",
+      "explanation": "4s² removed first, then one 3d — half-filled."
+    },
+    {
+      "question": "The (n + l) value of a 3d orbital is:",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "answer": "C",
+      "explanation": "n + l = 3 + 2 = 5."
+    },
+    {
+      "question": "Nitrogen's 2p³ electrons occupy:",
+      "options": [
+        "One orbital paired",
+        "Three orbitals singly, parallel spins",
+        "Two orbitals",
+        "The 2s orbital"
+      ],
+      "answer": "B",
+      "explanation": "Hund's rule of maximum multiplicity."
     }
   ],
   "source": "generated",
@@ -95,5 +145,164 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "summary": "Aufbau principle, Pauli's exclusion principle, Hund's rul… (Atomic Structure, Chemistry, class-11-notes) covers Aufbau principle, Pauli's exclusion principle, Hund's rule. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
+  "summary": "Three rules build every ground-state configuration: **Aufbau** fills the lowest-energy orbital first (order 1s 2s 2p 3s 3p 4s 3d 4p…, predicted by the (n + l) rule — hence K = [Ar] 4s¹, NEB 2023's example); **Pauli** caps each orbital at two opposite-spin electrons by forbidding any shared set of four quantum numbers; **Hund** fills degenerate orbitals singly with parallel spins before pairing (N: 2p ↑ ↑ ↑). Exchange-energy stability bends the rules at Cr ([Ar] 4s¹3d⁵) and Cu ([Ar] 4s¹3d¹⁰), and makes Fe³⁺ ([Ar] 3d⁵) more stable than Fe²⁺. For ions, removal follows \"last in, first out\": 4s empties before 3d. Master the three rules and the configurations up to Z = 30 — and the shape of the periodic table itself — follow mechanically.",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Filling Rules That Build the Periodic Table\n\nQuantum numbers give every electron an address; three rules decide the **order of occupation**: the **Aufbau principle** (fill lowest energy first), **Pauli's exclusion principle** (two electrons maximum per orbital, opposite spins) and **Hund's rule** (degenerate orbitals fill singly with parallel spins first). Apply all three and the electron configurations of every element up to Z = 30 — and the structure of the periodic table — follow mechanically. NEB 2023 asked Aufbau directly (3m); the configurations themselves are permanent exam currency.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Aufbau principle (building-up)\n\nElectrons occupy the **lowest-energy orbital available** before entering higher ones. Energy order (the diagonal rule):\n\n**1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p < 5s < 4d < 5p …**\n\n- The **(n + l) rule** predicts the order: lower (n + l) fills first; on a tie, lower n fills first.\n  - 4s: n + l = 4 + 0 = 4 — fills **before** 3d: n + l = 3 + 2 = 5.\n- The order is set by **penetration**: s electrons penetrate closer to the nucleus than p, d, f of the same shell, so 4s is stabilised below 3d.\n\n### 2.2 Pauli's exclusion principle\n\n**No two electrons in an atom can have the same set of all four quantum numbers.**\n\n- Consequence: an orbital holds **at most 2 electrons, with opposite spins** (↑↓).\n- Capacities: orbital 2, subshell 2(2l + 1), shell 2n².\n\n### 2.3 Hund's rule (of maximum multiplicity)\n\nFor **degenerate orbitals** (same energy — the three p, five d, seven f):\n\n1. Electrons **fill singly first**, with **parallel spins** (↑ ↑ ↑).\n2. **Pairing starts only after every orbital in the subshell is singly occupied.**\n\nReason: parallel spins in separate orbitals minimise repulsion and maximise exchange energy — half-filled and fully-filled subshells are extra stable (explains Cr: 3d⁵4s¹ and Cu: 3d¹⁰4s¹).\n\n### 2.4 Worked configurations up to Z = 30\n\n| Z | Element | Configuration | Note |\n|---|---|---|---|\n| 1 | H | 1s¹ | |\n| 2 | He | 1s² | K shell full |\n| 3 | Li | 1s² 2s¹ | |\n| 4 | Be | 1s² 2s² | |\n| 5 | B | 1s² 2s² 2p¹ | |\n| 6 | C | 1s² 2s² 2p² | 2p¹↑ 2p¹↑ (Hund) |\n| 7 | N | 1s² 2s² 2p³ | 2p↑ ↑ ↑ — half-filled p |\n| 8 | O | 1s² 2s² 2p⁴ | first pairing |\n| 9 | F | 1s² 2s² 2p⁵ | |\n| 10 | Ne | 1s² 2s² 2p⁶ | noble gas core |\n| 11 | Na | [Ne] 3s¹ | NEB 2024's atom |\n| 12 | Mg | [Ne] 3s² | |\n| 13 | Al | [Ne] 3s² 3p¹ | |\n| 16 | S | [Ne] 3s² 3p⁴ | |\n| 18 | Ar | [Ne] 3s² 3p⁶ | |\n| 19 | K | [Ar] **4s¹** | 4s before 3d |\n| 20 | Ca | [Ar] 4s² | |\n| 21 | Sc | [Ar] 4s² 3d¹ | 3d begins |\n| 24 | Cr | [Ar] 4s¹ **3d⁵** | half-filled d — exception |\n| 26 | Fe | [Ar] 4s² 3d⁶ | |\n| 29 | Cu | [Ar] 4s¹ **3d¹⁰** | filled d — exception |\n| 30 | Zn | [Ar] 4s² 3d¹⁰ | 3d complete |\n\n### 2.5 Ions (remove from the outermost shell first)\n\n- Fe²⁺: [Ar] 3d⁶ (lose 4s² first, **not** 3d).\n- Cu⁺: [Ar] 3d¹⁰; Cu²⁺: [Ar] 3d⁹.\n- Fe³⁺: [Ar] 3d⁵ — half-filled, extra stable (why Fe³⁺ beats Fe²⁺ in stability).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Aufbau principle** | Electrons fill the lowest-energy orbitals first | 4s fills before 3d |\n| **Pauli exclusion principle** | No two electrons share all four quantum numbers | Orbital capacity = 2 |\n| **Hund's rule** | Degenerate orbitals fill singly with parallel spins before pairing | N: 2p ↑ ↑ ↑ |\n| **Degenerate orbitals** | Orbitals of equal energy | Three 2p, five 3d |\n| **Core notation** | Noble-gas core + valence electrons | Na = [Ne] 3s¹ |\n| **Exchange energy** | Stabilisation from parallel-spin electrons in different orbitals | Maximised at half-filled d⁵ |",
+      "## 4. Detailed Explanation\n\n### 4.1 NEB 2023 (3m, verified PYQ) — Explain Aufbau's principle with an example\n\n**Statement:** electrons enter the orbital of lowest energy first; higher orbitals are occupied only after all lower ones are filled. The energy order follows the (n + l) rule — lower (n + l) first, and on a tie the lower n first.\n\n**Example:** potassium (Z = 19) — after the argon core [Ar], the next electron enters **4s (n + l = 4)** rather than 3d (n + l = 5): K = [Ar] 4s¹, not [Ar] 3d¹. Similarly Ca = [Ar] 4s², and only from scandium do the 3d orbitals begin to fill.\n\n### 4.2 Why 4s fills before 3d\n\n**Penetration and shielding.** A 4s electron penetrates through the inner shells close to the nucleus, feeling nearly the full nuclear charge; a 3d electron barely penetrates and is heavily shielded. The net energy of 4s is therefore **lower** than 3d despite the larger n — the (n + l) rule is the bookkeeping, penetration is the physics.\n\n### 4.3 The two famous exceptions\n\n- **Cr (Z = 24):** expected [Ar] 4s² 3d⁴, actual [Ar] 4s¹ **3d⁵** — a half-filled d subshell gains extra exchange energy (five parallel-spin electrons) and the s electron supplies it.\n- **Cu (Z = 29):** expected [Ar] 4s² 3d⁹, actual [Ar] 4s¹ **3d¹⁰** — a completely filled d subshell is even more stable.\n- Symmetry + exchange energy make half-filled and fully-filled subshells special — the same reason N (2p³) is more stable than O (2p⁴).\n\n### 4.4 Hund's rule in action — the p³ → p⁴ step\n\nNitrogen's three 2p electrons occupy the three separate p orbitals with parallel spins (↑ ↑ ↑). Oxygen's fourth electron **must pair** (↑↓ ↑ ↑), paying pairing repulsion — which is why first-ionisation-energy data show the famous N > O dip in period 2.",
+      "## 5. Comparison Tables\n\n**The three rules side by side**\n\n| Rule | Statement | Governs | Visible effect |\n|---|---|---|---|\n| **Aufbau** | Lowest energy orbital fills first | Order of subshells | 4s before 3d; K = [Ar] 4s¹ |\n| **Pauli** | All four quantum numbers cannot repeat | Capacity | Orbital = 2 electrons, ↑↓ |\n| **Hund** | Singly + parallel first, then pair | Degenerate sets | N = 2p ↑ ↑ ↑; Cr, Cu exceptions |\n\n**Similarity:** all three are filling rules for ground-state configurations; each covers a different failure mode (energy order, capacity, pairing timing).\n\n**Ground state vs excited state (the classic 2m)**\n\n| Basis | Ground state | Excited state |\n|---|---|---|\n| Occupation | Rules obeyed strictly | Electron promoted to higher orbital |\n| Example (C) | 1s² 2s² 2p² | 1s² 2s¹ 2p³ |\n| Energy | Minimum | Higher; emits light on relaxation |",
+      "## 6. Common Confusions\n\n**Ionisation order vs filling order:** electrons are **removed from the outermost shell** — Fe²⁺ is [Ar] 3d⁶, not [Ar] 4s² 3d⁴. 4s fills first but also empties first.",
+      "**Hund's rule scope:** it applies **only within a degenerate set** (p³, d⁵…); it never overrides Aufbau's energy ordering across different subshells.",
+      "**Exceptions are ground-state facts:** Cr and Cu configurations apply to the neutral ground-state atoms; their ions follow the normal removal order (Cu⁺ = 3d¹⁰).",
+      "## 7. Exam Application\n\n**NEB-style (2m): Write the configuration of Fe (Z = 26) and of Fe³⁺; why is Fe³⁺ more stable than Fe²⁺?** — Fe: [Ar] 4s² 3d⁶; Fe³⁺: [Ar] 3d⁵ (4s² removed first, then one 3d). Fe³⁺ has an exactly **half-filled 3d⁵** — maximum exchange energy and spherical symmetry — so it is extra stable.",
+      "**NEB-style (2m): State Hund's rule and illustrate with nitrogen.** — Degenerate orbitals are occupied singly with parallel spins before any pairing. N (Z = 7): 1s² 2s² 2p³ → the three 2p electrons sit in three separate p orbitals as ↑ ↑ ↑.",
+      "**NEB-style (2m): Predict the ground-state configuration of Cr (Z = 24) and explain the anomaly.** — [Ar] 4s¹ 3d⁵ instead of [Ar] 4s² 3d⁴: the half-filled 3d⁵ gains maximum exchange energy, and promoting one 4s electron to 3d costs little because 4s and 3d are nearly degenerate."
+    ],
+    "confusion": [
+      "**4s before 3d — but also 4s out first:** filling order and removal order are different questions. Ions strip the highest-n shell first.",
+      "**Pairing needs a partner orbital, not the same orbital:** Hund's rule forbids pairing while a degenerate orbital is still empty — O (2p⁴) pairs only because all three p orbitals already hold one electron."
+    ],
+    "keyPoints": [
+      "Aufbau: fill lowest energy first — order 1s 2s 2p 3s 3p 4s 3d 4p 5s…, predicted by (n + l), tie → lower n. Pauli: no two electrons share all four quantum numbers → orbital max 2, ↑↓. Hund: degenerate orbitals fill singly with parallel spins before pairing. Exceptions: Cr [Ar] 4s¹3d⁵, Cu [Ar] 4s¹3d¹⁰ (half/full-filled stability). Ions: remove 4s before 3d — Fe³⁺ = [Ar] 3d⁵ extra stable."
+    ],
+    "importantConcepts": [
+      "**(n + l) rule** — the quick ordering tool: sum n and l; lower sum fills first; equal sums → lower n first. It reproduces the whole diagonal order without memorising it."
+    ],
+    "examples": [
+      "***K (Z = 19) = [Ar] 4s¹*** — the (n + l) rule at work: 4s (4+0 = 4) beats 3d (3+2 = 5), so the 19th electron of potassium enters 4s, not 3d — the single clearest demonstration of Aufbau."
+    ],
+    "universalFacts": [
+      "The periodic table's block structure is the Aufbau order made visible: s-block (groups 1–2), p-block (13–18), d-block (3–12), f-block — the filling sequence *is* the table's shape."
+    ],
+    "importantStatements": [
+      "\"No two electrons in an atom can have identical values of all four quantum numbers.\" — Pauli; the reason matter occupies space at all."
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2023 3m — explain Aufbau with an example (solved above); NEB 2024 3m — quantum numbers of Na's valence electron (topic 19). Configurations up to Z = 30 are standing NEB currency."
+    ],
+    "examShortTricks": [
+      "Diagonal chant: \"1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p.\" (n + l) check for any disputed pair. Ions: \"last in, first out\" — strip the highest shell."
+    ],
+    "examNotes": [
+      "Write configurations in full for Z ≤ 18; core notation [Ar] is fine beyond. For ions, show the neutral configuration first, then strike out — the marking scheme follows the steps."
+    ],
+    "formulas": [
+      "- (n + l) rule: lower (n + l) fills first; tie → lower n\n- Capacity: orbital 2; subshell 2(2l + 1); shell 2n²\n- Cr: [Ar] 4s¹ 3d⁵; Cu: [Ar] 4s¹ 3d¹⁰\n- Fe³⁺: [Ar] 3d⁵ (from Fe [Ar] 4s² 3d⁶)"
+    ],
+    "practice": [
+      "Why is a half-filled d⁵ subshell more stable than d⁴ 4s² would predict?",
+      "Write the configurations of Mn²⁺ and Ni²⁺ and state the d-count of each.",
+      "Why does the first ionisation energy of oxygen fall below nitrogen's despite higher nuclear charge?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2023 (3m): Explain Aufbau's principle with an example.** — Electrons fill orbitals in order of increasing energy, lowest first; the order follows the (n + l) rule (lower n + l first; tie → lower n): 1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p. **Example:** potassium (Z = 19) — after [Ar], the 19th electron enters 4s (n + l = 4) rather than 3d (n + l = 5): K = [Ar] 4s¹. Scandium (Z = 21) is the first element to place an electron in 3d.",
+      "**NEB-style (2m): State Pauli's exclusion principle and one consequence.** — No two electrons in an atom can have the same set of all four quantum numbers. Consequence: an orbital holds at most two electrons with opposite spins (↑↓); shell capacity is 2n².",
+      "**NEB-style (2m): State Hund's rule and write the orbital diagram of nitrogen.** — Degenerate orbitals fill singly with parallel spins before pairing begins. N (1s² 2s² 2p³): 1s ↑↓, 2s ↑↓, 2p ↑ ↑ ↑ — three singly-occupied p orbitals.",
+      "**NEB-style (3m): Write the ground-state configurations of Cr (Z = 24) and Cu (Z = 29) and account for the anomalies.** — Cr: [Ar] 4s¹ 3d⁵; Cu: [Ar] 4s¹ 3d¹⁰. Half-filled (d⁵) and fully-filled (d¹⁰) subshells have maximum exchange energy and symmetrical charge distribution; shifting one 4s electron into 3d (nearly degenerate with 4s) achieves that extra stability."
+    ]
+  },
+  "importantConcepts": [
+    "**(n + l) rule** — the quick ordering tool: sum n and l; lower sum fills first; equal sums → lower n first. It reproduces the whole diagonal order without memorising it."
+  ],
+  "importantStatements": [
+    "\"No two electrons in an atom can have identical values of all four quantum numbers.\" — Pauli; the reason matter occupies space at all."
+  ],
+  "examShortTricks": [
+    "Diagonal chant: \"1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p.\" (n + l) check for any disputed pair. Ions: \"last in, first out\" — strip the highest shell."
+  ],
+  "examNotes": [
+    "Write configurations in full for Z ≤ 18; core notation [Ar] is fine beyond. For ions, show the neutral configuration first, then strike out — the marking scheme follows the steps."
+  ],
+  "mcs": [
+    {
+      "question": "Which orbital fills first according to the Aufbau principle?",
+      "options": [
+        "3d",
+        "4s",
+        "4p",
+        "3p"
+      ],
+      "answer": "B",
+      "explanation": "(n + l): 4s = 4 < 3d = 5."
+    },
+    {
+      "question": "Pauli's exclusion principle limits an orbital to:",
+      "options": [
+        "1 electron",
+        "2 electrons of opposite spin",
+        "2 electrons of parallel spin",
+        "4 electrons"
+      ],
+      "answer": "B",
+      "explanation": "All four quantum numbers cannot repeat."
+    },
+    {
+      "question": "Hund's rule governs the filling of:",
+      "options": [
+        "Any orbital",
+        "Degenerate orbitals",
+        "The 1s orbital",
+        "Nucleons"
+      ],
+      "answer": "B",
+      "explanation": "Singly, parallel spins, then pair."
+    },
+    {
+      "question": "The ground-state configuration of chromium (Z = 24) is:",
+      "options": [
+        "[Ar] 4s² 3d⁴",
+        "[Ar] 4s¹ 3d⁵",
+        "[Ar] 4s² 3d³",
+        "[Ar] 4s² 3d⁵"
+      ],
+      "answer": "B",
+      "explanation": "Half-filled 3d⁵ extra stable."
+    },
+    {
+      "question": "The ground-state configuration of copper (Z = 29) is:",
+      "options": [
+        "[Ar] 4s² 3d⁹",
+        "[Ar] 4s² 3d¹⁰",
+        "[Ar] 4s¹ 3d¹⁰",
+        "[Ar] 4s¹ 3d⁸"
+      ],
+      "answer": "C",
+      "explanation": "Filled 3d¹⁰ extra stable."
+    },
+    {
+      "question": "The electron configuration of Fe³⁺ is:",
+      "options": [
+        "[Ar] 3d³",
+        "[Ar] 3d⁵",
+        "[Ar] 3d⁶",
+        "[Ar] 4s² 3d³"
+      ],
+      "answer": "B",
+      "explanation": "4s² removed first, then one 3d — half-filled."
+    },
+    {
+      "question": "The (n + l) value of a 3d orbital is:",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "answer": "C",
+      "explanation": "n + l = 3 + 2 = 5."
+    },
+    {
+      "question": "Nitrogen's 2p³ electrons occupy:",
+      "options": [
+        "One orbital paired",
+        "Three orbitals singly, parallel spins",
+        "Two orbitals",
+        "The 2s orbital"
+      ],
+      "answer": "B",
+      "explanation": "Hund's rule of maximum multiplicity."
+    }
+  ]
 }

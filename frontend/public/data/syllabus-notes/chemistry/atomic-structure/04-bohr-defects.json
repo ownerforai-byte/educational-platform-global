@@ -5,155 +5,49 @@
   "topicTitle": "Defects of Bohr's theory",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning",
-    "Bohr's model is **semi-classical**: it keeps classical circular orbits and Coulomb mechanics but bolts on an unexplained quantum condition (mvr = nh/2π). Its defects are exactly where classical thinking and the single-electron assumption break down.",
-    "### 2. Works only for one-electron species",
-    "It succeeds for H, He⁺, Li²⁺, Be³⁺ but fails for He, Li and every multi-electron atom: electron–electron repulsion and the screening (shielding) of nuclear charge by inner electrons are ignored, so calculated energies do not match experiment.",
-    "### 3. Cannot explain fine structure (line splitting)",
-    "High-resolution spectra show that many 'single' lines are doublets or multiplets (sodium D lines at 589.0/589.6 nm; Hα itself is a doublet). Bohr's model contains no relativity and no electron spin, so it cannot explain fine structure; Sommerfeld's elliptical orbits and later Dirac's relativistic theory were needed.",
-    "### 4. Cannot explain the Zeeman and Stark effects",
-    "Lines split in a magnetic field (Zeeman) and in an electric field (Stark). The model has no orbital magnetic moment or orientation concept and no magnetic quantum number, so it cannot predict these splittings.",
-    "### 5. Cannot explain intensities or selection rules",
-    "It gives the possible wavelengths but not their relative strengths, nor why many conceivable transitions are never observed. Line intensities need transition probabilities from quantum mechanics.",
-    "### 6. Contradicts the uncertainty principle",
-    "Bohr's orbit assigns the electron a definite radius **and** a definite speed at the same time — a definite trajectory. Heisenberg's Δx·Δp ≥ h/4π forbids this, so a well-defined orbit is inadmissible in principle.",
-    "### 7. Contradicts wave–particle duality",
-    "The model treats the electron purely as a particle in a path. de Broglie's matter waves, electron diffraction and the Schrödinger equation replace orbits with **orbitals** (probability distributions).",
-    "### 8. Ad hoc postulates and no chemistry",
-    "The quantisation condition is imposed rather than derived; the model gives no orbital shapes, no account of chemical bonding, no molecular (band) spectra, and only the crude Bohr–Bury scheme for periodicity.",
-    "### 9. No probability interpretation, no subshell structure",
-    "It cannot describe electron density ('where the electron is most likely'), degeneracy of subshells, hybridisation or directional bonds — all of which need the four quantum numbers of the quantum-mechanical model.",
-    "### 10. Rescue and replacement",
-    "Sommerfeld (1916) used elliptical orbits and the azimuthal quantum number for fine structure; de Broglie (1924), Heisenberg (1927) and Schrödinger (1926) produced the quantum-mechanical model, which removes every defect listed above.",
-    "**Fact.** Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
-    "**Fact.** Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
-    "**Fact.** Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell).",
-    "**Fact.** Filling order (Aufbau, n+l rule): 1s 2s 2p 3s 3p 4s 3d…; Hund's rule: maximise unpaired spin before pairing; Pauli: no two electrons share all four quantum numbers.",
-    "### Focus of this tab",
-    "The Bohr–Bury scheme (1921) — the shell-filling rules that Bohr's model alone could not give. It explains how the periodic table was first built from orbits and where it needed repair (a defect of the Bohr framework).",
-    "### The three Bohr–Bury rules",
-    "1. **Capacity rule:** the maximum number of electrons in a shell n is 2n² — K 2, L 8, M 18, N 32.",
-    "2. **Octet rule (valence shells):** the outermost shell cannot hold more than 8 electrons; when it has 8 (noble-gas configuration: He duplet, Ne octet) the shell is stable and a new shell begins.",
-    "3. **Filling order:** shells fill roughly in order of increasing energy; within a shell, electrons enter before a new shell starts — except that 4s begins filling before 3d is complete (the (n + l) order in modern language).",
-    "### What the scheme achieved",
-    "• Explained chemical inertness of the noble gases (closed shells) and the valency pattern of the main groups.",
-    "• Connected atomic number with the periodic law: element 11 (Na) starts the third shell, so period 3 begins — the periodicity of properties follows from shell structure.",
-    "• Predicted the electron configurations up to about Z = 20 reliably (K, Ca).",
-    "### Where the scheme fails (defects of the Bohr framework)",
-    "• No subshell concept: it cannot explain why 4s fills before 3d, the 8/18/32 period lengths beyond period 3, or the s/p/d/f blocks.",
-    "• It ignores electron–electron repulsion and exchange energy, so anomalies like Cr ([Ar]3d⁵4s¹) and Cu ([Ar]3d¹⁰4s¹) are impossible for it.",
-    "• Orbits are still definite paths — the uncertainty principle and orbital shapes are outside the scheme; 'subshell energy order' needs penetration and shielding, i.e. the quantum-mechanical model.",
-    "### Bridge to the modern picture",
-    "The 2n² capacity survives in modern form as Σ2(2l + 1) over the subshells of shell n; the octet rule survives as the special stability of filled s + p valence sets; and the filling order is the Madelung (n + l) rule. The Bohr–Bury scheme is thus the correct skeleton with the wrong (orbital-free) flesh.",
-    "A compressed revision list of Bohr's defects, each with its one-line reason — the fast recall version. The fully argued list is in the main defects note.",
-    "### The eight defects (with one-line reasons)",
-    "1. **One-electron only** — electron–electron repulsion and screening (Z_eff) are ignored; fails for He, Li, all multi-electron atoms.",
-    "2. **No fine structure** — no relativity, no spin; cannot explain doublets (Na D 589.0/589.6 nm; Hα doublet).",
-    "3. **No Zeeman/Stark splitting** — no magnetic quantum number or orbital magnetic moment; cannot explain splitting in magnetic/electric fields.",
-    "4. **No line intensities or selection rules** — gives possible wavelengths, not probabilities of transitions.",
-    "5. **Contradicts the uncertainty principle** — definite r and p simultaneously is impossible (Δx·Δp ≥ h/4π); orbits cannot be real trajectories.",
-    "6. **Ignores wave–particle duality** — treats the electron as a particle in a path; de Broglie/Schrödinger replace orbits by orbitals.",
-    "7. **Ad hoc postulates** — mvr = nh/2π is imposed, not derived (de Broglie's standing waves later justified it).",
-    "8. **No probability, no chemistry** — cannot give electron density, orbital shapes, subshell structure, bonding or molecular spectra; only the crude Bohr–Bury scheme for periodicity.",
-    "### The rescue timeline",
-    "1916 Sommerfeld (elliptical orbits, azimuthal quantum number → fine structure) → 1924 de Broglie (matter waves) → 1925 Pauli/Uhlenbeck–Goudsmit (spin) → 1926 Schrödinger (wave equation, orbitals) → 1927 Heisenberg (uncertainty). Each repair targets one defect above.",
-    "The single postulate mvr = nh/2π — how Bohr used it, why it was 'ad hoc', and how de Broglie's standing waves turned it into a consequence (this bridge is also where the defects discussion begins).",
-    "### Bohr's use of the postulate",
-    "Combined with the classical force condition $\\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}}$, the quantisation rule fixes the allowed orbits: eliminating v gives $r_{n}=\\frac{n^{2}h^{2}\\varepsilon_{0}}{\\pi m e^{2}Z}$ (numerically 0.529 n²/Z Å) and $v_{n}=\\frac{2\\pi ke^{2}Z}{nh}$. Without the rule, classical mechanics permits a continuum of orbits and no discrete spectrum.",
-    "### Why it was a defect",
-    "The rule was *imposed*, not derived — no classical argument forces the angular momentum to come in packets of ħ. Critics (and Bohr himself) treated it as an arbitrary rule that happened to work. This is defect 'ad hoc postulates' in the limitations list.",
-    "### de Broglie's rescue (1924)",
-    "If the electron is a wave of wavelength λ = h/mv, a stable orbit must be a **standing wave**: the circumference must contain a whole number of wavelengths, nλ = 2πr. Substituting λ gives n(h/mv) = 2πr → mvr = nh/2π — Bohr's condition *derived*, not assumed. For other orbits the wave interferes destructively with itself and the state is forbidden.",
-    "### The remaining problem",
-    "Even with de Broglie's justification, the orbit picture keeps a definite trajectory (definite r and p), which the uncertainty principle forbids — so the standing-wave argument is the *bridge* from Bohr to Schrödinger, not the destination: the wave must be treated in three dimensions, giving orbitals.",
-    "### Check the numbers",
-    "n = 1: mvr = h/2π = 1.055 × 10⁻³⁴ J s. Circumference 2πr₁ = 3.32 × 10⁻¹⁰ m and λ = h/mv = 3.32 × 10⁻¹⁰ m — exactly one wavelength fits the first orbit; n = 2 fits two, and so on. The integer n literally counts the waves around the orbit."
+    "## 1. Topic Introduction — Where the Quantum Model Still Breaks\n\nBohr's model rescued the hydrogen atom from Rutherford's collapse problem and predicted the hydrogen spectrum brilliantly. But it was a **hybrid**: classical circular orbits bolted onto quantum conditions. As soon as the model faced finer spectrographs, multi-electron atoms, or the Zeeman effect, cracks appeared. Knowing **why Bohr fails** is the bridge to the quantum mechanical model — and a standing NEB 3m question.",
+    "## 2. Fundamental Concepts — The Defects (state any five for 3m)\n\n1. **Fails for multi-electron atoms.** The model works only for one-electron species (H, He⁺, Li²⁺). With two or more electrons, electron–electron repulsion breaks the simple Coulomb-plus-quantisation picture — the energy depends on more than n.\n2. **No explanation of fine structure.** High-resolution spectrographs show each Balmer line (e.g. Hα) is a **close doublet**, not a single line. Bohr's model predicts one line per transition — it has no sub-levels (no l, no spin).\n3. **No explanation of the Zeeman effect.** In a magnetic field, spectral lines **split into several components**; Bohr's circular orbits have no mechanism for this (needs magnetic quantum number mₗ).\n4. **No explanation of the Stark effect.** Lines also split in an **electric field** — again unexplained.\n5. **Orbits are physically unreal.** The model gives precise **position and momentum** of the electron simultaneously — forbidden by Heisenberg's uncertainty principle; the modern picture is a **probability orbital**, not a track.\n6. **Cannot explain the dual nature of matter.** de Broglie's wave mechanics shows why only certain orbits are stable (a whole number of wavelengths must fit the circumference) — Bohr quantisation was an arbitrary postulate, not a consequence.\n7. **No rule for the intensity (relative brightness) of spectral lines** — the model predicts wavelengths, not how strong each line should be.\n8. **Circular orbits only.** Real angular-momentum states include elliptical shapes (Sommerfeld's extension) — Bohr's circles are a special case.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Relevance |\n|---|---|---|\n| **Fine structure** | Splitting of a single spectral line into closely spaced components | Needs l and s quantum numbers |\n| **Zeeman effect** | Splitting of spectral lines in a magnetic field | Needs mₗ |\n| **Stark effect** | Splitting of spectral lines in an electric field | Needs mₗ |\n| **Uncertainty principle** | Δx·Δp ≥ h/4π — position and momentum cannot both be exact | Kills the fixed-orbit picture |\n| **Dual nature** | Every particle is both wave and particle (de Broglie) | Explains why orbits are quantised |\n| **One-electron species** | H, He⁺, Li²⁺, Be³⁺ — a single electron around nucleus Z | The model's only success range |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why multi-electron atoms break the model\n\nBohr's energy Eₙ = −13.6 Z²/n² assumes the electron feels **only the nucleus**. With two electrons, each also feels the **repulsion of the other**, and the electrons **screen** each other from the nuclear charge. The energy then depends on the electron's shape and shielding, not just on n — a single quantum number cannot describe the levels, and the predicted spectrum is wrong.\n\n### 4.2 Why fine structure defeats circular orbits\n\nBohr's orbit is a circle: one radius, one energy per n. But an electron also has **angular-momentum shape (l)** and **spin (s)**; relativistic and spin effects shift the energy slightly depending on l. Result: one Bohr line is actually several lines a fraction of a nanometre apart — fine structure. Bohr's n alone cannot produce it.\n\n### 4.3 Why the orbit itself is unphysical\n\nThe model treats the electron as a particle with an exactly known position (the orbit) and momentum — but Δx·Δp ≥ h/4π forbids knowing both. Sommerfeld tried ellipses; the real cure was Schrödinger's wave mechanics: the electron is a **standing wave of probability** (orbital), and Bohr's quantisation emerges automatically because only waves that fit the orbit constructively survive.\n\n### 4.4 What Bohr got right (keep this — examiners ask the contrast)\n\n- Quantised energy levels (validated by the hydrogen spectrum).\n- The energy-gap rule hν = E₂ − E₁.\n- Ionisation energy 13.6 eV and the Rydberg constant.\n- The concept of stationary states.",
+    "## 5. Comparison Table\n\n**Bohr model vs quantum mechanical model**\n\n| Basis | Bohr model | Quantum mechanical model |\n|---|---|---|\n| Electron path | Fixed circular **orbit** | **Orbital** — probability distribution |\n| Certainty | Exact position and momentum | Uncertainty principle obeyed |\n| Quantum numbers | One (n) | Four (n, l, mₗ, mₛ) |\n| Multi-electron atoms | Fails | Works (with approximation methods) |\n| Fine structure, Zeeman, Stark | Cannot explain | Explains naturally |\n| Quantisation origin | Postulated arbitrarily | Emerges from wave equation |\n| Success range | One-electron species only | All atoms |\n\n**Similarities:** both retain quantised energy levels and the photon rule hν = ΔE; the quantum model contains Bohr's result as its large-n limit.",
+    "## 6. Common Confusions\n\n**Zeeman vs Stark:** Zeeman = **magnetic** field splitting; Stark = **electric** field splitting. Both are line splittings, both unexplained by Bohr — but the fields differ.",
+    "**Fine structure vs Zeeman:** fine structure appears **without any field** (spin/relativistic splitting); Zeeman needs an external magnetic field.",
+    "**\"Bohr failed completely\" — no.** It succeeded for one-electron species and introduced quantised levels; its defects are specific and each maps to a missing quantum number.",
+    "## 7. Exam Application\n\n**NEB-style (3m): \"Bohr's model could not explain the line spectrum of an atom containing more than one electron.\" Justify.** — The model's energy formula assumes each electron feels only the nuclear Coulomb pull. In multi-electron atoms, mutual repulsion and shielding make the energy depend on more than n; one quantum number cannot assign the levels, so predicted lines do not match observed spectra.",
+    "**NEB-style (2m): What is the Zeeman effect?** — The splitting of a spectral line into several components when the emitting atoms are placed in a magnetic field; Bohr's model cannot explain it because its orbits carry no magnetic quantum number.",
+    "**NEB-style (2m): Why is Bohr's orbit incompatible with the uncertainty principle?** — A definite orbit means exact position *and* exact momentum simultaneously; Δx·Δp ≥ h/4π forbids this, so the electron must be described as a probability orbital instead."
   ],
   "confusion": [
-    "❌ Bohr's theory is completely wrong and useless. ✅ It is quantitatively excellent for one-electron species (H, He⁺) and is still used there; the defects appear beyond that scope.",
-    "❌ Fine structure arises because of many electrons. ✅ It arises from relativistic effects and electron spin even in a one-electron atom.",
-    "❌ The uncertainty principle reflects imperfect instruments. ✅ It is a fundamental limit of nature, not a measurement limitation.",
-    "❌ Bohr failed because orbits are not circular. ✅ The fatal objection is that a definite orbit (simultaneous r and p) cannot exist; probability orbitals replace them.",
-    "❌ Zeeman splitting is explained by Bohr's model. ✅ It requires the magnetic quantum number and orbital magnetic moment of the quantum-mechanical model.",
-    "❌ The M shell can hold 18 electrons before the N shell starts. ✅ The outermost shell is capped at 8; after 8 electrons in M, filling of N begins.",
-    "❌ The Bohr–Bury scheme is a quantum-mechanical theory. ✅ It is a shell-filling rule set from the Bohr orbit picture; subshells and orbital shapes are absent.",
-    "❌ 2n² applies to the outermost shell. ✅ 2n² is the *capacity*; the octet rule (8) restricts the valence shell's occupancy.",
-    "❌ Bohr's theory failed completely. ✅ It is exact for one-electron species (H, He⁺) — defects appear only beyond that scope.",
-    "❌ Fine structure needs many electrons. ✅ It comes from spin and relativity even in hydrogen.",
-    "❌ Defect 5 means measurements are inaccurate. ✅ It is a fundamental limit of nature, not an instrument problem.",
-    "❌ Bohr derived his quantisation from classical mechanics. ✅ He postulated it; de Broglie justified it in 1924.",
-    "❌ A non-integer number of waves still gives a stable orbit. ✅ Destructive interference destroys the wave; only nλ = 2πr orbits survive.",
-    "❌ Standing waves remove the uncertainty objection. ✅ They justify quantisation but keep the trajectory idea; Schrödinger's orbitals are needed for that."
+    "**Field pairings:** Zeeman → magnetic field; Stark → electric field. Mixing them loses the 2m mark.",
+    "**Fine structure is field-free:** it is intrinsic (spin + relativistic) splitting, not a Zeeman effect."
   ],
   "practice": [
-    "State the defects of Bohr's theory, giving the physical reason for each.",
-    "Why does Bohr's theory fail for multi-electron atoms? Use screening and electron–electron repulsion.",
-    "How does Heisenberg's uncertainty principle destroy the concept of a Bohr orbit?",
-    "Distinguish the Zeeman and Stark effects and explain why Bohr's model cannot explain them.",
-    "Describe the modifications by Sommerfeld and Schrödinger that corrected Bohr's model.",
-    "State the Bohr–Bury scheme with the 2n² and octet rules.",
-    "Write the Bohr–Bury configuration of calcium (Z = 20) and point out where the scheme needs 4s before 3d.",
-    "Why does the scheme fail for chromium and copper?",
-    "Show how the octet rule explains the inertness of argon.",
-    "List the defects of Bohr's theory with a one-line reason for each.",
-    "Which defect does the uncertainty principle expose, and how?",
-    "Match each defect with the later theory that repaired it.",
-    "Why does Bohr's model fail for helium but work for He⁺?",
-    "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
-    "Verify numerically that exactly one de Broglie wavelength fits the first Bohr orbit of hydrogen.",
-    "Why was mvr = nh/2π considered a defect of the theory?",
-    "How does the uncertainty principle still limit the standing-wave picture?"
+    "Why does electron–electron repulsion break Bohr's energy formula?",
+    "How does de Broglie's hypothesis turn Bohr's arbitrary quantisation into a natural result?",
+    "Which defect of Bohr's model does the spin quantum number (mₛ) repair?"
   ],
   "formulas": [
-    "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}$$ (forbids definite orbits)",
-    "$$Z_{\\text{eff}}=Z-S$$ (screening, ignored by Bohr's model — cause of failure for multi-electron atoms)",
-    "En(H) = −13.6 Z²/n² eV",
-    "hν = ΔE",
-    "λ = h/(mv) (de Broglie)",
-    "$$\\text{shell capacity}=2n^{2}:\\ K\\ 2,\\ L\\ 8,\\ M\\ 18,\\ N\\ 32;\\qquad \\text{valence shell}\\le 8$$",
-    "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}\\ (\\text{forbids definite orbits});\\qquad Z_{\\text{eff}}=Z-S\\ (\\text{screening, absent from Bohr})$$",
-    "$$n\\lambda=2\\pi r\\ \\text{with }\\lambda=\\frac{h}{mv}\\ \\Rightarrow\\ mvr=\\frac{nh}{2\\pi}$$",
-    "$$\\lambda=\\frac{h}{mv}=\\frac{3.32\\times10^{-10}\\ \\text{m for }n=1\\ (\\text{H})}{}$$"
+    "- Bohr (works only for 1 electron): Eₙ = −13.6 Z²/n² eV\n- Uncertainty limit: Δx·Δp ≥ h/4π\n- Photon rule kept: hν = E₂ − E₁"
   ],
   "universalFacts": [
-    "Sommerfeld (1916) added elliptical orbits and the azimuthal quantum number to explain fine structure.",
-    "Schrödinger's wave equation (1926) replaced orbits with orbitals and remains the working theory of the atom.",
-    "Sodium D lines (589.0 and 589.6 nm) are the standard example of fine structure unexplained by Bohr's model.",
-    "Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
-    "Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
-    "Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell).",
-    "The scheme is credited to Bohr (1921) and Charles Bury (1921) independently.",
-    "It correctly predicted the closure of shells at Z = 2, 10, 18 — matching the noble gases known then.",
-    "Its failure beyond Ca (Z = 20) is the historical trigger for introducing subshells.",
-    "Sodium D lines 589.0/589.6 nm — the standard fine-structure exhibit.",
-    "Sommerfeld's elliptical orbits introduced the azimuthal quantum number l in 1916.",
-    "Schrödinger's 1926 equation removed orbits in favour of orbitals and repaired every defect at once.",
-    "One full matter wave fits the n = 1 orbit of hydrogen; n counts the waves.",
-    "de Broglie proposed matter waves in his 1924 thesis; the Davisson–Germer diffraction (1927) confirmed them.",
-    "Bohr's postulate predates de Broglie's derivation by 11 years — the clearest example of a successful ad hoc rule in physics."
+    "Sommerfeld (1915) extended Bohr with elliptical orbits to partially explain fine structure — the first patch on the model's circular-orbit defect."
   ],
   "examples": [
-    "**Problem:** Why is the ground-state radius of He⁺ half that of hydrogen? **Solution:** r₁ = 0.529 n²/Z Å = 0.529/2 = 0.2645 Å — the formula works because He⁺ has one electron, and fails for neutral helium.",
-    "**Problem:** Show a Bohr orbit violates the uncertainty principle for H (n = 1). **Solution:** a fixed r gives Δx ≈ 0 and a definite speed gives Δp ≈ 0, so Δx·Δp → 0 < h/4π — impossible; hence the orbit is not a real trajectory.",
-    "**Problem:** Where does the Bohr–Bury scheme first fail? **Solution:** at potassium (Z = 19): the 2n²/sequence rules put the 19th electron in the M shell, but experiment and the (n + l) rule place it in 4s — the first sign that subshell energies, not shells, control filling.",
-    "**Problem:** Why can Bohr's model not predict the relative brightness of Hα and Hβ? **Solution:** intensities depend on transition probabilities (population of levels and dipole strengths) — concepts absent from the model; quantum mechanics supplies them.",
-    "**Problem:** Compute the electron's de Broglie wavelength in the n = 1 orbit (v = 2.18 × 10⁶ m s⁻¹). **Solution:** λ = h/mv = 6.626×10⁻³⁴/(9.11×10⁻³¹ × 2.18×10⁶) = 3.33 × 10⁻¹⁰ m = 2πr₁ (r₁ = 0.529 Å) — the standing-wave condition verified."
+    "***Hα doublet*** — under a high-resolution spectrograph the single Balmer Hα line (656.3 nm) resolves into a close pair: fine structure, invisible to Bohr's model."
   ],
   "importantNotes": [
-    "Answer in this order: one-electron only → fine structure → Zeeman/Stark → intensities → uncertainty principle → wave–particle duality → ad hoc postulates.",
-    "Do not mix 'defects of Bohr's theory' with 'limitations of Rutherford's model' — marks are lost by quoting the wrong list.",
-    "Present the scheme as a historical rule set, then contrast it with the (n + l) order and Hund/Pauli rules.",
-    "The octet rule is for the valence shell only — quote both numbers (2n² and 8) when asked.",
-    "Do not confuse this list with Rutherford's limitations — the examiner checks scope.",
-    "Order the answer: one-electron limit → fine structure → Zeeman/Stark → intensities → uncertainty → duality → ad hoc postulates → chemistry.",
-    "This tab is the standard answer to 'justify Bohr's second postulate'.",
-    "State clearly that the justification is de Broglie's, not Bohr's own."
+    "No verified PYQ located for this topic; all items are NEB-style practice (defects 3m; Zeeman 2m; uncertainty conflict 2m)."
   ],
   "visualType": "bohr-model",
   "keyPoints": [
-    "• Defects of Bohr's theory"
+    "Defects: fails for multi-electron atoms; no fine structure; no Zeeman (magnetic) or Stark (electric) splitting; orbits violate the uncertainty principle; cannot explain dual nature; no line-intensity rule; circular orbits only. Bohr's surviving truths: quantised levels, hν = ΔE, 13.6 eV ionisation, Rydberg constant."
   ],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "**NEB-style (3m): State any three defects of Bohr's atomic model.** — (1) Works only for one-electron species; multi-electron atoms' spectra (repulsion + shielding) are not predicted. (2) Cannot explain the fine structure of spectral lines (no l, s quantum numbers). (3) Cannot explain the Zeeman (magnetic) and Stark (electric) splitting of lines (no mₗ). Also acceptable: orbits violate the uncertainty principle; cannot explain the dual nature of matter; gives no line intensities.",
+    "**NEB-style (2m): What is the Zeeman effect and why can Bohr's model not explain it?** — Splitting of spectral lines in a **magnetic field**. Bohr's circular orbits carry no magnetic quantum number, so the model offers no sub-levels for the lines to split into.",
+    "**NEB-style (2m): \"Bohr's orbit contradicts the uncertainty principle.\" Explain.** — A Bohr orbit assigns the electron an exact radius (position) and exact velocity (momentum) at once. The uncertainty principle, Δx·Δp ≥ h/4π, forbids simultaneous exactness, so the electron must be described by an orbital — a probability cloud — not a track.",
+    "**NEB-style (3m): Contrast the Bohr model with the quantum mechanical model on four points.** — Orbit (fixed path) vs orbital (probability); one quantum number vs four; fails for multi-electron atoms vs works; quantisation postulated vs derived from the wave equation. Both share quantised levels and hν = ΔE."
+  ],
   "numericals": [
     "Use  En(H) = −13.6 Z²/n² eV  — pick reasonable values, solve, and check the units.",
     "Use  hν = ΔE  — pick reasonable values, solve, and check the units.",
@@ -161,43 +55,92 @@
   ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"Defects of Bohr's theory\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Bohr's model successfully explains the spectrum of:",
       "options": [
-        "True",
-        "False"
+        "All atoms",
+        "One-electron species only",
+        "Molecules only",
+        "Metals only"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "H, He⁺, Li²⁺ — single electron."
     },
     {
-      "question": "According to the Bohr–Bury scheme, the maximum electrons in the outermost shell is:",
-      "options": [
-        "2n²",
-        "8",
-        "18",
-        "32"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "Bohr's theory cannot explain the splitting of spectral lines in a magnetic field, known as the:",
+      "question": "Splitting of spectral lines in a magnetic field is the:",
       "options": [
         "Stark effect",
         "Zeeman effect",
-        "Raman effect",
-        "Photoelectric effect"
+        "Photoelectric effect",
+        "Compton effect"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Magnetic → Zeeman."
     },
     {
-      "question": "The standing-wave condition for a stable orbit is:",
+      "question": "Splitting of spectral lines in an electric field is the:",
       "options": [
-        "nλ = πr",
-        "nλ = 2πr",
-        "λ = 2πr/n²",
-        "nλ = 4πr"
+        "Zeeman effect",
+        "Stark effect",
+        "Raman effect",
+        "Rayleigh effect"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Electric → Stark."
+    },
+    {
+      "question": "The close splitting of a single spectral line with no external field is:",
+      "options": [
+        "Zeeman effect",
+        "Fine structure",
+        "Band spectrum",
+        "Continuous spectrum"
+      ],
+      "answer": "B",
+      "explanation": "Spin/relativistic splitting — fine structure."
+    },
+    {
+      "question": "Bohr's fixed orbits violate:",
+      "options": [
+        "Law of conservation of energy",
+        "Uncertainty principle",
+        "Coulomb's law",
+        "Ohm's law"
+      ],
+      "answer": "B",
+      "explanation": "Exact position + momentum is forbidden."
+    },
+    {
+      "question": "Bohr's quantisation was finally explained by:",
+      "options": [
+        "Dalton's theory",
+        "de Broglie's wave hypothesis",
+        "Thomson's model",
+        "Avogadro's law"
+      ],
+      "answer": "B",
+      "explanation": "Whole wavelengths fitting the orbit."
+    },
+    {
+      "question": "Which Bohr result survives in modern physics?",
+      "options": [
+        "Circular orbits",
+        "Electron tracks",
+        "Quantised energy levels",
+        "Continuous spectra"
+      ],
+      "answer": "C",
+      "explanation": "Levels and hν = ΔE survive; orbits do not."
+    },
+    {
+      "question": "Sommerfeld extended Bohr's model by introducing:",
+      "options": [
+        "Elliptical orbits",
+        "Square orbits",
+        "Neutrons",
+        "Isotopes"
+      ],
+      "answer": "A",
+      "explanation": "Ellipses partially explained fine structure."
     }
   ],
   "source": "generated",
@@ -205,6 +148,165 @@
   "bounds": [
     "Limit to remember: bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)."
   ],
-  "summary": "Defects of Bohr's theory (Atomic Structure, Chemistry, class-11-notes) covers Defects of Bohr's theory. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "filename": "04-bohr-defects.json"
+  "summary": "Bohr's model is a classical–quantum hybrid, and its defects are the seams: it works only for one-electron species because it ignores electron–electron repulsion and shielding; it cannot explain fine structure (no l or s), the Zeeman and Stark line splittings (no mₗ), or line intensities; and its exact orbits violate the uncertainty principle, which replaces the electron track with a probability orbital. de Broglie's wave mechanics later derived Bohr's quantisation naturally — a whole number of wavelengths must fit the orbit. What survives is Bohr's real legacy: quantised levels, hν = E₂ − E₁, the 13.6 eV ionisation energy and the Rydberg constant. Each defect is a signpost to the quantum mechanical model — that is why NEB asks this question every cycle.",
+  "filename": "04-bohr-defects.json",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Where the Quantum Model Still Breaks\n\nBohr's model rescued the hydrogen atom from Rutherford's collapse problem and predicted the hydrogen spectrum brilliantly. But it was a **hybrid**: classical circular orbits bolted onto quantum conditions. As soon as the model faced finer spectrographs, multi-electron atoms, or the Zeeman effect, cracks appeared. Knowing **why Bohr fails** is the bridge to the quantum mechanical model — and a standing NEB 3m question.",
+      "## 2. Fundamental Concepts — The Defects (state any five for 3m)\n\n1. **Fails for multi-electron atoms.** The model works only for one-electron species (H, He⁺, Li²⁺). With two or more electrons, electron–electron repulsion breaks the simple Coulomb-plus-quantisation picture — the energy depends on more than n.\n2. **No explanation of fine structure.** High-resolution spectrographs show each Balmer line (e.g. Hα) is a **close doublet**, not a single line. Bohr's model predicts one line per transition — it has no sub-levels (no l, no spin).\n3. **No explanation of the Zeeman effect.** In a magnetic field, spectral lines **split into several components**; Bohr's circular orbits have no mechanism for this (needs magnetic quantum number mₗ).\n4. **No explanation of the Stark effect.** Lines also split in an **electric field** — again unexplained.\n5. **Orbits are physically unreal.** The model gives precise **position and momentum** of the electron simultaneously — forbidden by Heisenberg's uncertainty principle; the modern picture is a **probability orbital**, not a track.\n6. **Cannot explain the dual nature of matter.** de Broglie's wave mechanics shows why only certain orbits are stable (a whole number of wavelengths must fit the circumference) — Bohr quantisation was an arbitrary postulate, not a consequence.\n7. **No rule for the intensity (relative brightness) of spectral lines** — the model predicts wavelengths, not how strong each line should be.\n8. **Circular orbits only.** Real angular-momentum states include elliptical shapes (Sommerfeld's extension) — Bohr's circles are a special case.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Relevance |\n|---|---|---|\n| **Fine structure** | Splitting of a single spectral line into closely spaced components | Needs l and s quantum numbers |\n| **Zeeman effect** | Splitting of spectral lines in a magnetic field | Needs mₗ |\n| **Stark effect** | Splitting of spectral lines in an electric field | Needs mₗ |\n| **Uncertainty principle** | Δx·Δp ≥ h/4π — position and momentum cannot both be exact | Kills the fixed-orbit picture |\n| **Dual nature** | Every particle is both wave and particle (de Broglie) | Explains why orbits are quantised |\n| **One-electron species** | H, He⁺, Li²⁺, Be³⁺ — a single electron around nucleus Z | The model's only success range |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why multi-electron atoms break the model\n\nBohr's energy Eₙ = −13.6 Z²/n² assumes the electron feels **only the nucleus**. With two electrons, each also feels the **repulsion of the other**, and the electrons **screen** each other from the nuclear charge. The energy then depends on the electron's shape and shielding, not just on n — a single quantum number cannot describe the levels, and the predicted spectrum is wrong.\n\n### 4.2 Why fine structure defeats circular orbits\n\nBohr's orbit is a circle: one radius, one energy per n. But an electron also has **angular-momentum shape (l)** and **spin (s)**; relativistic and spin effects shift the energy slightly depending on l. Result: one Bohr line is actually several lines a fraction of a nanometre apart — fine structure. Bohr's n alone cannot produce it.\n\n### 4.3 Why the orbit itself is unphysical\n\nThe model treats the electron as a particle with an exactly known position (the orbit) and momentum — but Δx·Δp ≥ h/4π forbids knowing both. Sommerfeld tried ellipses; the real cure was Schrödinger's wave mechanics: the electron is a **standing wave of probability** (orbital), and Bohr's quantisation emerges automatically because only waves that fit the orbit constructively survive.\n\n### 4.4 What Bohr got right (keep this — examiners ask the contrast)\n\n- Quantised energy levels (validated by the hydrogen spectrum).\n- The energy-gap rule hν = E₂ − E₁.\n- Ionisation energy 13.6 eV and the Rydberg constant.\n- The concept of stationary states.",
+      "## 5. Comparison Table\n\n**Bohr model vs quantum mechanical model**\n\n| Basis | Bohr model | Quantum mechanical model |\n|---|---|---|\n| Electron path | Fixed circular **orbit** | **Orbital** — probability distribution |\n| Certainty | Exact position and momentum | Uncertainty principle obeyed |\n| Quantum numbers | One (n) | Four (n, l, mₗ, mₛ) |\n| Multi-electron atoms | Fails | Works (with approximation methods) |\n| Fine structure, Zeeman, Stark | Cannot explain | Explains naturally |\n| Quantisation origin | Postulated arbitrarily | Emerges from wave equation |\n| Success range | One-electron species only | All atoms |\n\n**Similarities:** both retain quantised energy levels and the photon rule hν = ΔE; the quantum model contains Bohr's result as its large-n limit.",
+      "## 6. Common Confusions\n\n**Zeeman vs Stark:** Zeeman = **magnetic** field splitting; Stark = **electric** field splitting. Both are line splittings, both unexplained by Bohr — but the fields differ.",
+      "**Fine structure vs Zeeman:** fine structure appears **without any field** (spin/relativistic splitting); Zeeman needs an external magnetic field.",
+      "**\"Bohr failed completely\" — no.** It succeeded for one-electron species and introduced quantised levels; its defects are specific and each maps to a missing quantum number.",
+      "## 7. Exam Application\n\n**NEB-style (3m): \"Bohr's model could not explain the line spectrum of an atom containing more than one electron.\" Justify.** — The model's energy formula assumes each electron feels only the nuclear Coulomb pull. In multi-electron atoms, mutual repulsion and shielding make the energy depend on more than n; one quantum number cannot assign the levels, so predicted lines do not match observed spectra.",
+      "**NEB-style (2m): What is the Zeeman effect?** — The splitting of a spectral line into several components when the emitting atoms are placed in a magnetic field; Bohr's model cannot explain it because its orbits carry no magnetic quantum number.",
+      "**NEB-style (2m): Why is Bohr's orbit incompatible with the uncertainty principle?** — A definite orbit means exact position *and* exact momentum simultaneously; Δx·Δp ≥ h/4π forbids this, so the electron must be described as a probability orbital instead."
+    ],
+    "confusion": [
+      "**Field pairings:** Zeeman → magnetic field; Stark → electric field. Mixing them loses the 2m mark.",
+      "**Fine structure is field-free:** it is intrinsic (spin + relativistic) splitting, not a Zeeman effect."
+    ],
+    "keyPoints": [
+      "Defects: fails for multi-electron atoms; no fine structure; no Zeeman (magnetic) or Stark (electric) splitting; orbits violate the uncertainty principle; cannot explain dual nature; no line-intensity rule; circular orbits only. Bohr's surviving truths: quantised levels, hν = ΔE, 13.6 eV ionisation, Rydberg constant."
+    ],
+    "importantConcepts": [
+      "**Each defect points to a missing quantum number:** fine structure → l; Zeeman/Stark → mₗ; spin splitting → mₛ; multi-electron failure → shielding. The quantum model adds exactly these."
+    ],
+    "examples": [
+      "***Hα doublet*** — under a high-resolution spectrograph the single Balmer Hα line (656.3 nm) resolves into a close pair: fine structure, invisible to Bohr's model."
+    ],
+    "universalFacts": [
+      "Sommerfeld (1915) extended Bohr with elliptical orbits to partially explain fine structure — the first patch on the model's circular-orbit defect."
+    ],
+    "importantStatements": [
+      "\"Bohr's model is a hybrid of classical mechanics and quantum conditions: it quantises the orbits but keeps the classical electron track.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ located for this topic; all items are NEB-style practice (defects 3m; Zeeman 2m; uncertainty conflict 2m)."
+    ],
+    "examShortTricks": [
+      "\"M-Z-S-U-D: Multi-electron, Zeeman, Stark, Uncertainty, Dual nature — the five stock defects; Zeeman = Magnetic, Stark = Electric.\""
+    ],
+    "examNotes": [
+      "State defects as a numbered list with one clause of reason each — NEB awards per-point, not for prose. Always add one \"what Bohr got right\" line if space allows: it shows balance and earns presentation marks."
+    ],
+    "formulas": [
+      "- Bohr (works only for 1 electron): Eₙ = −13.6 Z²/n² eV\n- Uncertainty limit: Δx·Δp ≥ h/4π\n- Photon rule kept: hν = E₂ − E₁"
+    ],
+    "practice": [
+      "Why does electron–electron repulsion break Bohr's energy formula?",
+      "How does de Broglie's hypothesis turn Bohr's arbitrary quantisation into a natural result?",
+      "Which defect of Bohr's model does the spin quantum number (mₛ) repair?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): State any three defects of Bohr's atomic model.** — (1) Works only for one-electron species; multi-electron atoms' spectra (repulsion + shielding) are not predicted. (2) Cannot explain the fine structure of spectral lines (no l, s quantum numbers). (3) Cannot explain the Zeeman (magnetic) and Stark (electric) splitting of lines (no mₗ). Also acceptable: orbits violate the uncertainty principle; cannot explain the dual nature of matter; gives no line intensities.",
+      "**NEB-style (2m): What is the Zeeman effect and why can Bohr's model not explain it?** — Splitting of spectral lines in a **magnetic field**. Bohr's circular orbits carry no magnetic quantum number, so the model offers no sub-levels for the lines to split into.",
+      "**NEB-style (2m): \"Bohr's orbit contradicts the uncertainty principle.\" Explain.** — A Bohr orbit assigns the electron an exact radius (position) and exact velocity (momentum) at once. The uncertainty principle, Δx·Δp ≥ h/4π, forbids simultaneous exactness, so the electron must be described by an orbital — a probability cloud — not a track.",
+      "**NEB-style (3m): Contrast the Bohr model with the quantum mechanical model on four points.** — Orbit (fixed path) vs orbital (probability); one quantum number vs four; fails for multi-electron atoms vs works; quantisation postulated vs derived from the wave equation. Both share quantised levels and hν = ΔE."
+    ]
+  },
+  "importantConcepts": [
+    "**Each defect points to a missing quantum number:** fine structure → l; Zeeman/Stark → mₗ; spin splitting → mₛ; multi-electron failure → shielding. The quantum model adds exactly these."
+  ],
+  "importantStatements": [
+    "\"Bohr's model is a hybrid of classical mechanics and quantum conditions: it quantises the orbits but keeps the classical electron track.\""
+  ],
+  "examShortTricks": [
+    "\"M-Z-S-U-D: Multi-electron, Zeeman, Stark, Uncertainty, Dual nature — the five stock defects; Zeeman = Magnetic, Stark = Electric.\""
+  ],
+  "examNotes": [
+    "State defects as a numbered list with one clause of reason each — NEB awards per-point, not for prose. Always add one \"what Bohr got right\" line if space allows: it shows balance and earns presentation marks."
+  ],
+  "mcs": [
+    {
+      "question": "Bohr's model successfully explains the spectrum of:",
+      "options": [
+        "All atoms",
+        "One-electron species only",
+        "Molecules only",
+        "Metals only"
+      ],
+      "answer": "B",
+      "explanation": "H, He⁺, Li²⁺ — single electron."
+    },
+    {
+      "question": "Splitting of spectral lines in a magnetic field is the:",
+      "options": [
+        "Stark effect",
+        "Zeeman effect",
+        "Photoelectric effect",
+        "Compton effect"
+      ],
+      "answer": "B",
+      "explanation": "Magnetic → Zeeman."
+    },
+    {
+      "question": "Splitting of spectral lines in an electric field is the:",
+      "options": [
+        "Zeeman effect",
+        "Stark effect",
+        "Raman effect",
+        "Rayleigh effect"
+      ],
+      "answer": "B",
+      "explanation": "Electric → Stark."
+    },
+    {
+      "question": "The close splitting of a single spectral line with no external field is:",
+      "options": [
+        "Zeeman effect",
+        "Fine structure",
+        "Band spectrum",
+        "Continuous spectrum"
+      ],
+      "answer": "B",
+      "explanation": "Spin/relativistic splitting — fine structure."
+    },
+    {
+      "question": "Bohr's fixed orbits violate:",
+      "options": [
+        "Law of conservation of energy",
+        "Uncertainty principle",
+        "Coulomb's law",
+        "Ohm's law"
+      ],
+      "answer": "B",
+      "explanation": "Exact position + momentum is forbidden."
+    },
+    {
+      "question": "Bohr's quantisation was finally explained by:",
+      "options": [
+        "Dalton's theory",
+        "de Broglie's wave hypothesis",
+        "Thomson's model",
+        "Avogadro's law"
+      ],
+      "answer": "B",
+      "explanation": "Whole wavelengths fitting the orbit."
+    },
+    {
+      "question": "Which Bohr result survives in modern physics?",
+      "options": [
+        "Circular orbits",
+        "Electron tracks",
+        "Quantised energy levels",
+        "Continuous spectra"
+      ],
+      "answer": "C",
+      "explanation": "Levels and hν = ΔE survive; orbits do not."
+    },
+    {
+      "question": "Sommerfeld extended Bohr's model by introducing:",
+      "options": [
+        "Elliptical orbits",
+        "Square orbits",
+        "Neutrons",
+        "Isotopes"
+      ],
+      "answer": "A",
+      "explanation": "Ellipses partially explained fine structure."
+    }
+  ]
 }

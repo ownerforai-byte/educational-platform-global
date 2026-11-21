@@ -5,144 +5,137 @@
   "topicTitle": "Elementary idea of quantum mechanical model: de Broglie's wave equation",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning — dual nature of matter",
-    "Light behaves both as a wave and as a stream of particles (photons). In 1924 Louis de Broglie proposed the converse for matter: every moving material particle has a wave associated with it. These waves are called **matter waves** or de Broglie waves, and the hypothesis is the bridge from Bohr's orbits to the quantum-mechanical model.",
-    "### 2. de Broglie's wave equation",
-    "For a particle of mass m moving with speed v, wavelength $\\lambda=\\frac{h}{mv}=\\frac{h}{p}$; using kinetic energy, $\\lambda=\\frac{h}{\\sqrt{2mKE}}$; for an electron accelerated through a potential difference V volts, $\\lambda=\\frac{h}{\\sqrt{2meV}}=\\sqrt{\\frac{150}{V}}\\ \\text{Å}\\approx\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}$. Derivation sketch: from $E=mc^{2}$ and $E=h\\nu$ for a photon, $\\lambda=h/p$ is obtained and applied to matter.",
-    "### 3. Meaning of the numbers",
-    "λ ∝ 1/m and ∝ 1/v: a 1 g mass moving at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m — unobservably small, which is why cricket balls show no wave nature. A 100 V electron has λ ≈ 1.23 Å, comparable with atomic spacings, so crystals diffract electrons. Wave behaviour is therefore a *microscopic* phenomenon.",
-    "### 4. Experimental proof",
-    "Davisson and Germer (1927) diffracted slow electrons from a nickel crystal and obtained a diffraction pattern whose maxima obey nλ = d sin θ; G. P. Thomson obtained similar patterns with high-speed electrons. Electron diffraction is the direct proof of matter waves.",
-    "### 5. How de Broglie's idea repairs Bohr's model",
-    "If the electron forms a standing wave round the orbit, the circumference must contain a whole number of wavelengths: nλ = 2πr. Substituting λ = h/mv gives mvr = nh/2π — Bohr's *unexplained* quantisation postulate now has a physical meaning. Modern quantum mechanics (Schrödinger, 1926) replaced the orbit by a wave function ψ, whose square |ψ|² gives the probability density of finding the electron — the **orbital**.",
-    "### 6. Applications",
-    "• Electron microscopes use the tiny λ of accelerated electrons to resolve objects far smaller than light allows; electron and neutron diffraction determine crystal and molecular structures.",
-    "• Explains quantisation of energy levels, the origin of quantum numbers, quantum tunnelling (STM, tunnel diodes, alpha decay) and the whole wave-mechanical picture of the atom.",
-    "• Underlies semiconductor physics, quantum dots, lasers and matter-wave interferometry (atom interferometers, BEC experiments).",
-    "### 7. Limitations of the elementary treatment",
-    "λ = h/mv is non-relativistic (for v close to c use λ = h/√(p² + (mv)²/c²) type corrections); the wave function is a *probability amplitude*, not a mechanical wave in a medium; the simple equation applies to a single free particle and needs the Schrödinger equation in a potential; the wavelength of everyday objects is far too small to detect.",
-    "### Focus of this tab",
-    "The derivation of λ = h/mv from the photon equations and the experimental proof — the two parts of de Broglie's idea that complete the main note.",
-    "### Derivation from the photon picture",
-    "For a photon: $E=h\\nu$ and $E=mc^{2}$ (equivalence of energy and mass). Equating: $mc^{2}=h\\nu=h\\frac{c}{\\lambda}$ → $\\lambda=\\frac{h}{mc}=\\frac{h}{p}$. de Broglie's 1924 leap: the same relation must hold for **matter**, so a particle of momentum p = mv has wavelength $\\lambda=\\frac{h}{mv}$. For accelerated electrons, $\\lambda=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}$ (V in volts).",
-    "### Why the wave nature is only microscopic",
-    "λ ∝ 1/m: a 1 g body at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m (undetectable), while a 100 V electron has λ ≈ 1.23 Å — the size of atomic spacings, so crystals diffract electrons. Wave behaviour is not absent for large bodies; it is unobservable.",
-    "### Experimental proof (Davisson–Germer, 1927)",
-    "Electrons accelerated through ≈54 V strike a single nickel crystal; the detector records a maximum at φ = 50°. Bragg's law gives the wavelength: nλ = 2d sin θ with d = 0.091 nm → λ ≈ 0.165 nm; the de Broglie value for 54 V is λ = 12.27/√54 ≈ 1.67 Å = 0.167 nm — agreement within experiment. G. P. Thomson's high-energy electron diffraction through thin films confirmed it independently (both shared the 1937 Nobel Prize).",
-    "### Consequences that matter for chemistry",
-    "• Justifies Bohr's quantisation: nλ = 2πr → mvr = nh/2π.",
-    "• Basis of the Schrödinger equation and the orbital concept.",
-    "• Electron diffraction and the electron microscope (λ ≈ 0.005 nm at 50 kV → atomic resolution); neutron diffraction for structure determination.",
-    "• Quantum tunnelling and matter-wave interferometry (atom interferometers, BEC) are direct technologies of matter waves.",
-    "The equation that turned de Broglie's matter waves into the quantum-mechanical model — what ψ means, what solving it gives, and how the four quantum numbers appear.",
-    "### The equation (elementary form)",
-    "For a particle moving in one dimension: $-\\frac{h^{2}}{8\\pi^{2}m}\\frac{d^{2}\\psi}{dx^{2}}+V\\psi=E\\psi$, i.e. $\\hat{H}\\psi=E\\psi$ — a wave equation in which the 'wave property' comes from de Broglie (through the momentum operator) and the energy from classical mechanics. For the hydrogen atom V is the Coulomb potential, and the equation is solved in spherical coordinates $(r,\\theta,\\phi)$.",
-    "### What ψ and ψ² mean",
-    "ψ itself has no direct physical meaning; the measurable quantity is **|ψ|², the probability density** — the chance of finding the electron in a unit volume at that point. Max Born supplied this interpretation. The total probability over all space is normalised to 1 (∫|ψ|²dV = 1). Regions where ψ = 0 are **nodes**.",
-    "### What solving the hydrogen atom gives",
-    "• A set of allowed wave functions ψₙ,ₗ,ₘ (orbitals) labelled by three quantum numbers — n (size/energy), l (shape), m (orientation) — that arise automatically from the boundary conditions (ψ must be single-valued, finite and vanish at infinity).",
-    "• Energies $E_{n}=-13.6/n^{2}$ eV, agreeing with Bohr — but degeneracy appears: for n = 2 the solutions 2s and 2p have the same energy, which Bohr cannot give.",
-    "• Probability distributions instead of paths: the electron cloud, radial probability maxima (0.529 Å for 1s), and orbital shapes (spherical s, dumbbell p).",
-    "### Why this replaces Bohr",
-    "The uncertainty principle forbids definite orbits; Schrödinger's equation never uses a trajectory. It works for multi-electron atoms (approximately, with effective nuclear charge), explains fine structure when spin is added, and predicts molecular bonding — every defect of Bohr's theory is repaired."
+    "## 1. Topic Introduction — Matter Learns to Wave\n\nBohr postulated quantisation; de Broglie (1924) **derived** it. If light — a wave — can behave as particles (photoelectric effect), then particles — electrons — should behave as waves. An electron wave can circle the nucleus only if a **whole number of wavelengths fits the orbit**; that condition *is* Bohr's quantisation, no longer arbitrary. This single idea, developed by Schrödinger into the wave equation, replaced orbits with **orbitals** and opened the quantum mechanical model.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The de Broglie relation\n\nEvery moving particle has a wavelength:\n\n**λ = h / mv = h / p** (h = 6.63 × 10⁻³⁴ J s)\n\n- For **macroscopic** objects m is large → λ is absurdly small → wave nature is undetectable.\n- For an **electron** (m = 9.1 × 10⁻³¹ kg) at ordinary speeds λ ≈ 10⁻¹⁰ m — atomic dimensions — so wave behaviour shows.\n\n### 2.2 Deriving Bohr's quantisation (the 3m chain)\n\n1. An electron wave must be a **standing wave** on its orbit — otherwise it destructively interferes with itself and dies.\n2. Standing-wave condition: circumference = whole number of wavelengths → **2πr = nλ**.\n3. Substitute λ = h/mv: 2πr = nh/mv → **mvr = nh/2π** — exactly Bohr's quantisation of angular momentum.\n\n### 2.3 Experimental proof — Davisson and Germer (1927)\n\nElectrons fired at a **nickel crystal** were **diffracted**, producing a diffraction pattern like X-rays — direct proof that electrons diffract as waves, with the wavelength matching de Broglie's prediction. (Thomson's electron diffraction through thin films confirmed it independently.)\n\n### 2.4 The quantum mechanical model (elementary idea)\n\n- Schrödinger's wave equation treats the electron as a **standing wave in three dimensions**.\n- Its solutions, **wave functions ψ**, describe **orbitals** — regions of **high probability** (ψ²) of finding the electron.\n- Energy is still quantised; the definite orbit is replaced by a probability cloud obeying the uncertainty principle.\n- Four quantum numbers (n, l, mₗ, mₛ) label each solution.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Note |\n|---|---|---|\n| **de Broglie wavelength** | λ = h/mv — the wave length of any moving particle | Inversely proportional to momentum |\n| **Standing wave** | A wave whose pattern is fixed because a whole number of wavelengths fits the boundary | The orbit condition 2πr = nλ |\n| **Wave function (ψ)** | Solution of the Schrödinger equation for an electron | ψ itself has no physical meaning |\n| **Orbital** | Region where the probability of finding the electron (ψ²) is high | Replaces Bohr's orbit |\n| **Probability density (ψ²)** | Square of the wave function — likelihood per unit volume | What orbitals display |\n| **Heisenberg uncertainty** | Δx·Δp ≥ h/4π | Why orbits must become orbitals |",
+    "## 4. Detailed Explanation\n\n### 4.1 Worked numerical — wavelength of an electron (NEB-style template)\n\n**Q: Calculate the de Broglie wavelength of an electron moving with a velocity of 10⁶ m s⁻¹.**\nλ = h/mv = 6.63 × 10⁻³⁴ / (9.1 × 10⁻³¹ × 10⁶) = 6.63 × 10⁻³⁴ / 9.1 × 10⁻²⁵ = **7.3 × 10⁻¹⁰ m ≈ 0.73 nm** — comparable to atomic spacing, which is why crystals diffract electrons.\n\n### 4.2 Worked numerical — the cricket ball contrast\n\n**Q: Find the wavelength of a 150 g cricket ball at 40 m s⁻¹.**\nλ = 6.63 × 10⁻³⁴ / (0.150 × 40) = 6.63 × 10⁻³⁴ / 6 = **1.1 × 10⁻³⁴ m** — smaller than any measurable length by 20 orders of magnitude: macroscopic wave nature is unobservable. This contrast is the favourite NEB application question.\n\n### 4.3 Why only certain orbits survive\n\nAn orbit where the circumference is 2.5λ (say) would overlap crests on troughs — the wave cancels itself. Only orbits with 2πr = nλ reinforce; hence discrete radii, discrete energies, discrete spectrum. Quantisation is geometry, not decree.\n\n### 4.4 From ψ to orbitals\n\nThe Schrödinger equation ψ solutions depend on three quantum numbers (n, l, mₗ); each allowed combination is one **orbital** with a characteristic shape (s spherical, p dumbbell). ψ² gives the probability picture. Bohr's radius r = 0.529 n² Å survives only as the **most probable distance** of the 1s electron — not a track.",
+    "## 5. Comparison Tables\n\n**Wave vs particle behaviour**\n\n| Basis | Wave behaviour | Particle behaviour |\n|---|---|---|\n| Evidence | Diffraction, interference | Photoelectric effect, collisions |\n| Light shows | Yes (Young's double slit) | Yes (Einstein, photons) |\n| Electron shows | Yes (Davisson–Germer diffraction) | Yes (cathode rays, charge/mass) |\n| Governing relation | λ = h/mv | E = hν, p = mv |\n\n**Similarity:** the same entity exhibits both — **dual nature**; which face appears depends on the experiment.\n\n**Orbit (Bohr) vs orbital (quantum)**\n\n| Basis | Orbit | Orbital |\n|---|---|---|\n| Meaning | Definite circular path | 3-D probability region |\n| Certainty | Exact position claimed | Uncertainty principle obeyed |\n| Quantum numbers | n only | n, l, mₗ (labelled by four with spin) |\n| Shape | Circle | s spherical, p dumbbell, … |\n| Max electrons | 2n² per shell | 2 per orbital |",
+    "## 6. Common Confusions\n\n**ψ vs ψ²:** ψ is the wave function (no direct physical meaning); **ψ² is the probability density** — the measurable one. Quoting ψ as \"probability\" loses the mark.",
+    "**Diffraction vs scattering:** diffraction is wave-bending around/through regular arrays (needs wavelength ~ spacing); scattering is any direction change. Davisson–Germer is diffraction — the wave proof.",
+    "**de Broglie applies to everything:** the relation is universal; for cricket balls λ is simply too small to matter. Saying \"large objects have no wavelength\" is wrong — they have unobservable ones.",
+    "## 7. Exam Application\n\n**NEB-style (2m): State the de Broglie relation and its significance.** — λ = h/mv: every moving particle has a wavelength inversely proportional to its momentum. It explains why microscopic particles show wave behaviour and derives Bohr's quantisation (2πr = nλ → mvr = nh/2π).",
+    "**NEB-style (3m): Show that Bohr's quantisation condition follows from de Broglie's hypothesis.** — The electron wave on a stationary orbit must be a standing wave: 2πr = nλ. With λ = h/mv: 2πr = nh/mv → mvr = nh/2π — Bohr's postulate of quantised angular momentum, now derived rather than decreed.",
+    "**NEB-style (2m): An electron and a cricket ball move at the same speed. Which has the longer wavelength and why?** — The electron: λ = h/mv, so the smaller mass (9.1 × 10⁻³¹ kg vs 0.15 kg) gives the larger λ — electron λ ~ nm scale (observable), ball λ ~ 10⁻³⁴ m (unobservable)."
   ],
   "confusion": [
-    "❌ Matter waves are electromagnetic waves. ✅ They are probability (matter) waves carrying no charge; they are not E–B oscillations.",
-    "❌ Heavier bodies have longer wavelengths. ✅ λ = h/mv — larger mass means a *shorter* (unobservable) wavelength.",
-    "❌ de Broglie's hypothesis was accepted immediately on publication. ✅ It became convincing only after the Davisson–Germer electron-diffraction experiment (1927).",
-    "❌ de Broglie's waves replace Bohr's quantisation with nothing. ✅ They *justify* it through the standing-wave condition nλ = 2πr.",
-    "❌ An electron microscope uses electron particles and light waves together. ✅ It uses the electron's short de Broglie wavelength, not visible light.",
-    "❌ de Broglie waves travel at the speed of light. ✅ They travel with the particle (v ≪ c); the phase velocity even exceeds c, while the group velocity equals v.",
-    "❌ The derivation needs relativistic mass. ✅ For non-relativistic particles λ = h/mv directly; the photon derivation only motivates the form.",
-    "❌ Davisson–Germer proved light has particle nature. ✅ It proved *electrons* have wave nature — the converse of the photoelectric effect.",
-    "❌ ψ is a measurable wave like a light wave. ✅ ψ is a probability amplitude; only |ψ|² is physically meaningful.",
-    "❌ Quantum numbers are put in by hand. ✅ They emerge from solving the equation with boundary conditions.",
-    "❌ Solving the equation gives exact paths. ✅ It gives probability distributions; trajectories do not exist."
+    "**ψ vs ψ²:** ψ has no physical interpretation; ψ² is the probability density. Never interchange them.",
+    "**Orbit vs orbital:** orbit = Bohr's fixed circular track; orbital = quantum probability region. The words differ by one letter and one revolution of meaning."
   ],
   "practice": [
-    "State and explain de Broglie's wave equation; derive λ = h/mv for a material particle.",
-    "Explain why the wave nature of matter is not observed for ordinary objects.",
-    "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
-    "Calculate the de Broglie wavelength of an electron accelerated through 100 V.",
-    "Describe the Davisson–Germer experiment as evidence for matter waves and give two applications of electron waves.",
-    "Derive de Broglie's relation from the photon equations E = hν and E = mc².",
-    "Calculate λ for an electron accelerated through 100 V and through 50 V.",
-    "Describe the Davisson–Germer experiment and show how it verifies λ = h/mv.",
-    "Why is the wave nature of a cricket ball unobservable?",
-    "Write the time-independent Schrödinger equation for a particle in one dimension and explain each term.",
-    "What is the physical significance of ψ and ψ²?",
-    "How do the quantum numbers arise from the solution for the hydrogen atom?",
-    "Give two results of the quantum-mechanical model that Bohr's model cannot provide."
+    "Why can the wave nature of a moving car never be detected?",
+    "Why must the electron wave be a standing wave for the orbit to be stable?",
+    "What does the Davisson–Germer experiment establish that the photoelectric effect does not?"
   ],
   "formulas": [
-    "$$\\lambda=\\frac{h}{mv}=\\frac{h}{p}=\\frac{h}{\\sqrt{2mKE}}$$",
-    "$$\\lambda_{\\text{electron}}=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}\\quad (V\\text{ in volts})$$",
-    "$$n\\lambda=2\\pi r\\;\\Rightarrow\\;mvr=\\frac{nh}{2\\pi}$$",
-    "$$\\lambda=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å};\\qquad n\\lambda=2\\pi r$$",
-    "$$\\hat{H}\\psi=E\\psi,\\qquad \\frac{d^{2}\\psi}{dx^{2}}+\\frac{8\\pi^{2}m}{h^{2}}(E-V)\\psi=0$$",
-    "$$\\int|\\psi|^{2}dV=1\\ (\\text{normalisation});\\qquad |\\psi|^{2}=\\text{probability density}$$"
+    "- λ = h/mv = h/p (de Broglie)\n- Standing wave: 2πr = nλ → mvr = nh/2π (Bohr recovered)\n- h = 6.63 × 10⁻³⁴ J s; mₑ = 9.1 × 10⁻³¹ kg\n- Δx·Δp ≥ h/4π (why orbitals replace orbits)"
   ],
   "universalFacts": [
-    "de Broglie proposed matter waves in his 1924 PhD thesis and won the 1929 Nobel Prize in Physics.",
-    "Davisson and Germer confirmed electron diffraction in 1927 (Nobel Prize 1937).",
-    "λ for a 100 V electron ≈ 1.23 Å; a 1 g body at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m — undetectable.",
-    "answer pattern for \"Elementary idea of quantum mechanical model: de Broglie's…\": define → method → result. Structure earns the marks on 6–10 mark questions.",
-    "de Broglie received the 1929 Nobel Prize for his 1924 thesis — the first Nobel awarded for a PhD thesis.",
-    "λ(54 V electron) ≈ 1.67 Å matched the Davisson–Germer Bragg analysis (d = 0.091 nm, φ = 50°).",
-    "Electron microscopes reach ≈0.1 nm resolution because λ(electron) is ~10⁵ times shorter than visible light.",
-    "Schrödinger published the equation in 1926 and received the Nobel Prize in 1933 (shared with Dirac).",
-    "The hydrogen solution reproduces Bohr's −13.6/n² eV energies exactly, plus the degeneracy Bohr missed.",
-    "The name 'orbital' replaced 'orbit' because ψ² gives a probability cloud, not a path."
+    "Electron microscopes exploit the electron's short de Broglie wavelength (~picometres at high voltage) to image far beyond the diffraction limit of light microscopes."
   ],
   "examples": [
-    "**Problem:** de Broglie wavelength of an electron moving at 10⁶ m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(9.11×10⁻³¹ × 10⁶) = 7.27 × 10⁻¹⁰ m = 0.727 nm.",
-    "**Problem:** Wavelength of a 1.0 g bullet moving at 300 m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(10⁻³ × 300) = 2.2 × 10⁻³³ m — many orders of magnitude smaller than any aperture, so no diffraction is observed.",
-    "**Problem:** λ of an electron with KE = 13.6 eV. **Solution:** λ = 12.27/√13.6 ≈ 3.33 Å — exactly one circumference of the first Bohr orbit, linking the two topics.",
-    "**Problem:** Why does the equation give discrete energies? **Solution:** acceptable ψ must be continuous, single-valued and normalisable; these boundary conditions are satisfied only for special values of E — the same logic that quantises a vibrating guitar string."
+    "***Electron at 10⁶ m/s → λ ≈ 0.73 nm*** — atomic-scale wavelength, so nickel crystals (spacing ~ nm) diffract it; a cricket ball at 40 m/s gives λ ≈ 10⁻³⁴ m — 20 orders too small to ever observe."
   ],
   "importantNotes": [
-    "Quotes the two key results for the exam: λ = h/mv and λ(electron) = 12.27/√V Å.",
-    "Matter waves are not electromagnetic — say 'probability wave', not 'light wave'.",
-    "Keep mass in kg, speed in m s⁻¹ and h = 6.626 × 10⁻³⁴ J s to avoid order-of-magnitude errors.",
-    "Quote both the general form λ = h/mv and the electron form 12.27/√V Å.",
-    "Name Davisson–Germer as the experimental proof with the year 1927.",
-    "State that ψ has no physical meaning by itself; the probability interpretation is Born's.",
-    "Mention the boundary conditions — they are the reason for quantisation."
+    "No verified PYQ located for this topic; all items are NEB-style practice (relation 2m; derivation 3m; λ calculation 2–3m)."
   ],
   "visualType": "de-broglie",
   "keyPoints": [
-    "• Elementary idea of quantum mechanical model: de Broglie's…"
+    "λ = h/mv (de Broglie, 1924); standing-wave condition 2πr = nλ derives Bohr's mvr = nh/2π; Davisson–Germer (1927) proved electron diffraction off nickel; Schrödinger's wave equation yields orbitals = ψ² probability regions; electron λ ~ 10⁻¹⁰ m (observable), macroscopic λ ~ 10⁻³⁴ m (unobservable)."
   ],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "**NEB-style (2m): State de Broglie's relation and calculate the wavelength of an electron moving at 10⁶ m s⁻¹.** — λ = h/mv = 6.63 × 10⁻³⁴ / (9.1 × 10⁻³¹ × 10⁶) = **7.3 × 10⁻¹⁰ m ≈ 0.73 nm**. The relation asserts that every moving particle has a wave character with λ inversely proportional to its momentum.",
+    "**NEB-style (3m): Derive Bohr's quantisation condition from de Broglie's hypothesis.** — (1) For a stable orbit the electron wave must be a standing wave: 2πr = nλ. (2) Substituting λ = h/mv: 2πr = nh/mv. (3) Rearranging: mvr = nh/2π — Bohr's postulate of quantised angular momentum, now a consequence of wave geometry.",
+    "**NEB-style (2m): Describe the Davisson–Germer experiment and its conclusion.** — Electrons accelerated onto a **nickel crystal** produced a **diffraction pattern** (like X-rays), proving electrons behave as waves; the measured wavelength agreed with λ = h/mv. Conclusion: matter has wave nature — the experimental foundation of the quantum mechanical model.",
+    "**NEB-style (2m): Why does the quantum mechanical model replace orbits with orbitals?** — Because Δx·Δp ≥ h/4π forbids knowing the electron's exact path; the Schrödinger equation instead gives ψ, and ψ² maps the **probability** of finding the electron — a 3-D orbital, not a track."
+  ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"Elementary idea of quantum mechanical model: de Broglie's…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The de Broglie wavelength of a particle is given by:",
       "options": [
-        "True",
-        "False"
+        "λ = h/mv",
+        "λ = mv/h",
+        "λ = hv",
+        "λ = mc²"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A",
+      "explanation": "Inversely proportional to momentum."
     },
     {
-      "question": "The de Broglie wavelength of a particle is inversely proportional to its:",
+      "question": "Bohr's quantisation condition follows from the requirement that the electron wave be:",
       "options": [
-        "Mass only",
-        "Velocity only",
-        "Momentum",
-        "Kinetic energy squared"
+        "A travelling wave",
+        "A standing wave",
+        "A light wave",
+        "A sound wave"
       ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "2πr = nλ — whole wavelengths fit."
     },
     {
-      "question": "The physically significant quantity in the quantum-mechanical model is:",
+      "question": "Electron diffraction was demonstrated by:",
       "options": [
-        "ψ",
-        "ψ²",
-        "E",
-        "V"
+        "Davisson and Germer",
+        "Millikan",
+        "Rutherford",
+        "Dalton"
       ],
-      "answer": "B"
+      "answer": "A",
+      "explanation": "Nickel crystal, 1927."
+    },
+    {
+      "question": "The de Broglie wavelength of an electron at 10⁶ m/s is about:",
+      "options": [
+        "0.73 nm",
+        "7.3 m",
+        "0.73 mm",
+        "7.3 × 10⁻³⁴ m"
+      ],
+      "answer": "A",
+      "explanation": "~10⁻¹⁰ m — atomic scale."
+    },
+    {
+      "question": "In the quantum mechanical model, ψ² represents:",
+      "options": [
+        "Energy",
+        "Probability density",
+        "Velocity",
+        "Angular momentum"
+      ],
+      "answer": "B",
+      "explanation": "ψ itself has no physical meaning."
+    },
+    {
+      "question": "An orbital is:",
+      "options": [
+        "A fixed circular path",
+        "A probability region",
+        "A photon orbit",
+        "A nucleus shape"
+      ],
+      "answer": "B",
+      "explanation": "Region of high ψ²."
+    },
+    {
+      "question": "Which has the longest de Broglie wavelength at the same speed?",
+      "options": [
+        "Cricket ball",
+        "Proton",
+        "Electron",
+        "Alpha particle"
+      ],
+      "answer": "C",
+      "explanation": "Smallest mass → largest λ."
+    },
+    {
+      "question": "The wave equation that replaced Bohr's orbits was given by:",
+      "options": [
+        "Schrödinger",
+        "Bohr",
+        "Planck",
+        "Heisenberg"
+      ],
+      "answer": "A",
+      "explanation": "Schrödinger, 1926."
     }
   ],
   "source": "generated",
@@ -152,6 +145,165 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "summary": "Elementary idea of quantum mechanical model: de Broglie's… (Atomic Structure, Chemistry, class-11-notes) covers Elementary idea of quantum mechanical model: de Broglie's…. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "filename": "05-de-broglie-waves.json"
+  "summary": "de Broglie (1924) turned Bohr's postulate into physics: every moving particle has wavelength λ = h/mv, so an orbiting electron is a wave that survives only when a whole number of wavelengths fits its circumference (2πr = nλ) — which rearranges exactly to Bohr's mvr = nh/2π. Davisson and Germer (1927) proved it by diffracting electrons off nickel. Schrödinger's wave equation built the quantum mechanical model on this foundation: wave functions ψ whose squares give probability clouds — **orbitals** — replacing Bohr's exact orbits, which the uncertainty principle had outlawed. An electron at 10⁶ m/s has λ ≈ 0.73 nm (atomic scale, observable); a cricket ball has λ ≈ 10⁻³⁴ m (unobservable) — dual nature is universal, its visibility is not.",
+  "filename": "05-de-broglie-waves.json",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Matter Learns to Wave\n\nBohr postulated quantisation; de Broglie (1924) **derived** it. If light — a wave — can behave as particles (photoelectric effect), then particles — electrons — should behave as waves. An electron wave can circle the nucleus only if a **whole number of wavelengths fits the orbit**; that condition *is* Bohr's quantisation, no longer arbitrary. This single idea, developed by Schrödinger into the wave equation, replaced orbits with **orbitals** and opened the quantum mechanical model.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The de Broglie relation\n\nEvery moving particle has a wavelength:\n\n**λ = h / mv = h / p** (h = 6.63 × 10⁻³⁴ J s)\n\n- For **macroscopic** objects m is large → λ is absurdly small → wave nature is undetectable.\n- For an **electron** (m = 9.1 × 10⁻³¹ kg) at ordinary speeds λ ≈ 10⁻¹⁰ m — atomic dimensions — so wave behaviour shows.\n\n### 2.2 Deriving Bohr's quantisation (the 3m chain)\n\n1. An electron wave must be a **standing wave** on its orbit — otherwise it destructively interferes with itself and dies.\n2. Standing-wave condition: circumference = whole number of wavelengths → **2πr = nλ**.\n3. Substitute λ = h/mv: 2πr = nh/mv → **mvr = nh/2π** — exactly Bohr's quantisation of angular momentum.\n\n### 2.3 Experimental proof — Davisson and Germer (1927)\n\nElectrons fired at a **nickel crystal** were **diffracted**, producing a diffraction pattern like X-rays — direct proof that electrons diffract as waves, with the wavelength matching de Broglie's prediction. (Thomson's electron diffraction through thin films confirmed it independently.)\n\n### 2.4 The quantum mechanical model (elementary idea)\n\n- Schrödinger's wave equation treats the electron as a **standing wave in three dimensions**.\n- Its solutions, **wave functions ψ**, describe **orbitals** — regions of **high probability** (ψ²) of finding the electron.\n- Energy is still quantised; the definite orbit is replaced by a probability cloud obeying the uncertainty principle.\n- Four quantum numbers (n, l, mₗ, mₛ) label each solution.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Note |\n|---|---|---|\n| **de Broglie wavelength** | λ = h/mv — the wave length of any moving particle | Inversely proportional to momentum |\n| **Standing wave** | A wave whose pattern is fixed because a whole number of wavelengths fits the boundary | The orbit condition 2πr = nλ |\n| **Wave function (ψ)** | Solution of the Schrödinger equation for an electron | ψ itself has no physical meaning |\n| **Orbital** | Region where the probability of finding the electron (ψ²) is high | Replaces Bohr's orbit |\n| **Probability density (ψ²)** | Square of the wave function — likelihood per unit volume | What orbitals display |\n| **Heisenberg uncertainty** | Δx·Δp ≥ h/4π | Why orbits must become orbitals |",
+      "## 4. Detailed Explanation\n\n### 4.1 Worked numerical — wavelength of an electron (NEB-style template)\n\n**Q: Calculate the de Broglie wavelength of an electron moving with a velocity of 10⁶ m s⁻¹.**\nλ = h/mv = 6.63 × 10⁻³⁴ / (9.1 × 10⁻³¹ × 10⁶) = 6.63 × 10⁻³⁴ / 9.1 × 10⁻²⁵ = **7.3 × 10⁻¹⁰ m ≈ 0.73 nm** — comparable to atomic spacing, which is why crystals diffract electrons.\n\n### 4.2 Worked numerical — the cricket ball contrast\n\n**Q: Find the wavelength of a 150 g cricket ball at 40 m s⁻¹.**\nλ = 6.63 × 10⁻³⁴ / (0.150 × 40) = 6.63 × 10⁻³⁴ / 6 = **1.1 × 10⁻³⁴ m** — smaller than any measurable length by 20 orders of magnitude: macroscopic wave nature is unobservable. This contrast is the favourite NEB application question.\n\n### 4.3 Why only certain orbits survive\n\nAn orbit where the circumference is 2.5λ (say) would overlap crests on troughs — the wave cancels itself. Only orbits with 2πr = nλ reinforce; hence discrete radii, discrete energies, discrete spectrum. Quantisation is geometry, not decree.\n\n### 4.4 From ψ to orbitals\n\nThe Schrödinger equation ψ solutions depend on three quantum numbers (n, l, mₗ); each allowed combination is one **orbital** with a characteristic shape (s spherical, p dumbbell). ψ² gives the probability picture. Bohr's radius r = 0.529 n² Å survives only as the **most probable distance** of the 1s electron — not a track.",
+      "## 5. Comparison Tables\n\n**Wave vs particle behaviour**\n\n| Basis | Wave behaviour | Particle behaviour |\n|---|---|---|\n| Evidence | Diffraction, interference | Photoelectric effect, collisions |\n| Light shows | Yes (Young's double slit) | Yes (Einstein, photons) |\n| Electron shows | Yes (Davisson–Germer diffraction) | Yes (cathode rays, charge/mass) |\n| Governing relation | λ = h/mv | E = hν, p = mv |\n\n**Similarity:** the same entity exhibits both — **dual nature**; which face appears depends on the experiment.\n\n**Orbit (Bohr) vs orbital (quantum)**\n\n| Basis | Orbit | Orbital |\n|---|---|---|\n| Meaning | Definite circular path | 3-D probability region |\n| Certainty | Exact position claimed | Uncertainty principle obeyed |\n| Quantum numbers | n only | n, l, mₗ (labelled by four with spin) |\n| Shape | Circle | s spherical, p dumbbell, … |\n| Max electrons | 2n² per shell | 2 per orbital |",
+      "## 6. Common Confusions\n\n**ψ vs ψ²:** ψ is the wave function (no direct physical meaning); **ψ² is the probability density** — the measurable one. Quoting ψ as \"probability\" loses the mark.",
+      "**Diffraction vs scattering:** diffraction is wave-bending around/through regular arrays (needs wavelength ~ spacing); scattering is any direction change. Davisson–Germer is diffraction — the wave proof.",
+      "**de Broglie applies to everything:** the relation is universal; for cricket balls λ is simply too small to matter. Saying \"large objects have no wavelength\" is wrong — they have unobservable ones.",
+      "## 7. Exam Application\n\n**NEB-style (2m): State the de Broglie relation and its significance.** — λ = h/mv: every moving particle has a wavelength inversely proportional to its momentum. It explains why microscopic particles show wave behaviour and derives Bohr's quantisation (2πr = nλ → mvr = nh/2π).",
+      "**NEB-style (3m): Show that Bohr's quantisation condition follows from de Broglie's hypothesis.** — The electron wave on a stationary orbit must be a standing wave: 2πr = nλ. With λ = h/mv: 2πr = nh/mv → mvr = nh/2π — Bohr's postulate of quantised angular momentum, now derived rather than decreed.",
+      "**NEB-style (2m): An electron and a cricket ball move at the same speed. Which has the longer wavelength and why?** — The electron: λ = h/mv, so the smaller mass (9.1 × 10⁻³¹ kg vs 0.15 kg) gives the larger λ — electron λ ~ nm scale (observable), ball λ ~ 10⁻³⁴ m (unobservable)."
+    ],
+    "confusion": [
+      "**ψ vs ψ²:** ψ has no physical interpretation; ψ² is the probability density. Never interchange them.",
+      "**Orbit vs orbital:** orbit = Bohr's fixed circular track; orbital = quantum probability region. The words differ by one letter and one revolution of meaning."
+    ],
+    "keyPoints": [
+      "λ = h/mv (de Broglie, 1924); standing-wave condition 2πr = nλ derives Bohr's mvr = nh/2π; Davisson–Germer (1927) proved electron diffraction off nickel; Schrödinger's wave equation yields orbitals = ψ² probability regions; electron λ ~ 10⁻¹⁰ m (observable), macroscopic λ ~ 10⁻³⁴ m (unobservable)."
+    ],
+    "importantConcepts": [
+      "**Quantisation becomes geometry:** only orbits fitting a whole number of electron wavelengths are self-reinforcing standing waves — Bohr's rule is a consequence, not a postulate."
+    ],
+    "examples": [
+      "***Electron at 10⁶ m/s → λ ≈ 0.73 nm*** — atomic-scale wavelength, so nickel crystals (spacing ~ nm) diffract it; a cricket ball at 40 m/s gives λ ≈ 10⁻³⁴ m — 20 orders too small to ever observe."
+    ],
+    "universalFacts": [
+      "Electron microscopes exploit the electron's short de Broglie wavelength (~picometres at high voltage) to image far beyond the diffraction limit of light microscopes."
+    ],
+    "importantStatements": [
+      "\"The electron is not a particle on a track but a wave of probability: where the wave is strong, the electron is likely to be found.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ located for this topic; all items are NEB-style practice (relation 2m; derivation 3m; λ calculation 2–3m)."
+    ],
+    "examShortTricks": [
+      "\"λ = h over mv — small m, big λ.\" Derivation chain: standing wave → 2πr = nλ → substitute → mvr = nh/2π. Davisson–Germer = the proof name to drop."
+    ],
+    "examNotes": [
+      "In numericals keep h = 6.63 × 10⁻³⁴ J s and mₑ = 9.1 × 10⁻³¹ kg; quote λ in nm for electrons. For the derivation, write all three steps — NEB awards each line."
+    ],
+    "formulas": [
+      "- λ = h/mv = h/p (de Broglie)\n- Standing wave: 2πr = nλ → mvr = nh/2π (Bohr recovered)\n- h = 6.63 × 10⁻³⁴ J s; mₑ = 9.1 × 10⁻³¹ kg\n- Δx·Δp ≥ h/4π (why orbitals replace orbits)"
+    ],
+    "practice": [
+      "Why can the wave nature of a moving car never be detected?",
+      "Why must the electron wave be a standing wave for the orbit to be stable?",
+      "What does the Davisson–Germer experiment establish that the photoelectric effect does not?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): State de Broglie's relation and calculate the wavelength of an electron moving at 10⁶ m s⁻¹.** — λ = h/mv = 6.63 × 10⁻³⁴ / (9.1 × 10⁻³¹ × 10⁶) = **7.3 × 10⁻¹⁰ m ≈ 0.73 nm**. The relation asserts that every moving particle has a wave character with λ inversely proportional to its momentum.",
+      "**NEB-style (3m): Derive Bohr's quantisation condition from de Broglie's hypothesis.** — (1) For a stable orbit the electron wave must be a standing wave: 2πr = nλ. (2) Substituting λ = h/mv: 2πr = nh/mv. (3) Rearranging: mvr = nh/2π — Bohr's postulate of quantised angular momentum, now a consequence of wave geometry.",
+      "**NEB-style (2m): Describe the Davisson–Germer experiment and its conclusion.** — Electrons accelerated onto a **nickel crystal** produced a **diffraction pattern** (like X-rays), proving electrons behave as waves; the measured wavelength agreed with λ = h/mv. Conclusion: matter has wave nature — the experimental foundation of the quantum mechanical model.",
+      "**NEB-style (2m): Why does the quantum mechanical model replace orbits with orbitals?** — Because Δx·Δp ≥ h/4π forbids knowing the electron's exact path; the Schrödinger equation instead gives ψ, and ψ² maps the **probability** of finding the electron — a 3-D orbital, not a track."
+    ]
+  },
+  "importantConcepts": [
+    "**Quantisation becomes geometry:** only orbits fitting a whole number of electron wavelengths are self-reinforcing standing waves — Bohr's rule is a consequence, not a postulate."
+  ],
+  "importantStatements": [
+    "\"The electron is not a particle on a track but a wave of probability: where the wave is strong, the electron is likely to be found.\""
+  ],
+  "examShortTricks": [
+    "\"λ = h over mv — small m, big λ.\" Derivation chain: standing wave → 2πr = nλ → substitute → mvr = nh/2π. Davisson–Germer = the proof name to drop."
+  ],
+  "examNotes": [
+    "In numericals keep h = 6.63 × 10⁻³⁴ J s and mₑ = 9.1 × 10⁻³¹ kg; quote λ in nm for electrons. For the derivation, write all three steps — NEB awards each line."
+  ],
+  "mcs": [
+    {
+      "question": "The de Broglie wavelength of a particle is given by:",
+      "options": [
+        "λ = h/mv",
+        "λ = mv/h",
+        "λ = hv",
+        "λ = mc²"
+      ],
+      "answer": "A",
+      "explanation": "Inversely proportional to momentum."
+    },
+    {
+      "question": "Bohr's quantisation condition follows from the requirement that the electron wave be:",
+      "options": [
+        "A travelling wave",
+        "A standing wave",
+        "A light wave",
+        "A sound wave"
+      ],
+      "answer": "B",
+      "explanation": "2πr = nλ — whole wavelengths fit."
+    },
+    {
+      "question": "Electron diffraction was demonstrated by:",
+      "options": [
+        "Davisson and Germer",
+        "Millikan",
+        "Rutherford",
+        "Dalton"
+      ],
+      "answer": "A",
+      "explanation": "Nickel crystal, 1927."
+    },
+    {
+      "question": "The de Broglie wavelength of an electron at 10⁶ m/s is about:",
+      "options": [
+        "0.73 nm",
+        "7.3 m",
+        "0.73 mm",
+        "7.3 × 10⁻³⁴ m"
+      ],
+      "answer": "A",
+      "explanation": "~10⁻¹⁰ m — atomic scale."
+    },
+    {
+      "question": "In the quantum mechanical model, ψ² represents:",
+      "options": [
+        "Energy",
+        "Probability density",
+        "Velocity",
+        "Angular momentum"
+      ],
+      "answer": "B",
+      "explanation": "ψ itself has no physical meaning."
+    },
+    {
+      "question": "An orbital is:",
+      "options": [
+        "A fixed circular path",
+        "A probability region",
+        "A photon orbit",
+        "A nucleus shape"
+      ],
+      "answer": "B",
+      "explanation": "Region of high ψ²."
+    },
+    {
+      "question": "Which has the longest de Broglie wavelength at the same speed?",
+      "options": [
+        "Cricket ball",
+        "Proton",
+        "Electron",
+        "Alpha particle"
+      ],
+      "answer": "C",
+      "explanation": "Smallest mass → largest λ."
+    },
+    {
+      "question": "The wave equation that replaced Bohr's orbits was given by:",
+      "options": [
+        "Schrödinger",
+        "Bohr",
+        "Planck",
+        "Heisenberg"
+      ],
+      "answer": "A",
+      "explanation": "Schrödinger, 1926."
+    }
+  ]
 }

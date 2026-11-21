@@ -5,195 +5,299 @@
   "topicTitle": "Quantum numbers",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning",
-    "Solving the Schrödinger equation for the hydrogen atom yields a set of numbers that completely describe the state of an electron. These are the **quantum numbers** — effectively the 'address' of an electron in an atom. Four numbers are needed: principal (n), azimuthal or angular-momentum (l), magnetic (m or mₗ) and spin (s or mₛ).",
-    "### 2. Principal quantum number (n)",
-    "Determines the **shell** (energy level) and, in effect, the size: r ∝ n². Values n = 1, 2, 3, … ∞; the shell letters are K, L, M, N …; maximum capacity of a shell = 2n² electrons (n = 1 → 2, n = 2 → 8, n = 3 → 18, n = 4 → 32). It corresponds to Bohr's orbit number but is now a quantum label, not a path.",
-    "### 3. Azimuthal quantum number (l)",
-    "Determines the **subshell** and the *shape* of the orbital. Values l = 0, 1, 2, 3 … (n − 1), i.e. (n − 1) subshells per shell; the letters are s (l = 0), p (1), d (2), f (3). Orbital angular momentum = $\\sqrt{l(l+1)}\\,\\frac{h}{2\\pi}$. Within a shell the energies follow the order s < p < d < f, and a subshell holds 2(2l + 1) electrons (s 2, p 6, d 10, f 14).",
-    "### 4. Magnetic quantum number (mₗ)",
-    "Determines the **orientation** of the orbital in space (equivalently the component of angular momentum along a chosen axis). Values run from −l through 0 to +l, i.e. (2l + 1) values: one s orbital, three p orbitals (px, py, pz), five d orbitals, seven f orbitals. All orbitals of a subshell are degenerate (equal energy) in a free atom and split in a magnetic field — the origin of the Zeeman effect.",
-    "### 5. Spin quantum number (mₛ)",
-    "Describes the intrinsic spin of the electron; values +1/2 (↑) or −1/2 (↓). Introduced from the Stern–Gerlach experiment and the doublet structure of spectra (Uhlenbeck and Goudsmit, 1925). Because of it each orbital holds at most two electrons, giving the total capacities 2, 6, 10, 14 and 2n² per shell.",
-    "### 6. Orbitals, subshells and shells at a glance",
-    "n = 1: 1s (2e⁻, 1 orbital). n = 2: 2s + 2p (8e⁻, 4 orbitals). n = 3: 3s + 3p + 3d (18e⁻, 9 orbitals). n = 4: 4s + 4p + 4d + 4f (32e⁻, 16 orbitals). In general, orbitals in a shell = n², electrons = 2n², and an orbital is written n l (e.g. 3p).",
-    "### 7. Applications",
-    "• They define **electronic configuration**, the order of filling, and hence the position of an element in the periodic table and its block (s, p, d, f).",
-    "• They predict **magnetic behaviour**: unpaired electrons (Hund's rule follows from spin) give paramagnetism; fully paired species are diamagnetic.",
-    "• They explain spectral fine structure, the Zeeman and Stark effects, spin-orbit coupling, MRI/NMR (nuclear spin), lasers and selection rules.",
-    "• They let us test validity of a given set (e.g. l = n is forbidden) and count orbitals, unpaired electrons and quantum states in a subshell.",
-    "### 8. Limitations",
-    "Quantum numbers describe one electron at a time (not a pair or an atom as a whole); they do not give an electron's position, only the probability; the exact energies for multi-electron atoms need Z_eff and electron–electron interaction; mₛ comes from relativistic Dirac theory and is not contained in the simple Schrödinger solution; and spin–orbit coupling requires the total angular-momentum quantum number J, which is beyond Bohr's picture.",
-    "### Focus of this tab",
-    "Where the quantum numbers come from mathematically and the counting metrics (orbitals, capacities, designations) in one table.",
-    "### Origins",
-    "• n, l and m arise as **separation constants** when the Schrödinger equation for the hydrogen atom is solved in spherical coordinates — the radial equation gives n, the angular equations give l and m. They are not assumptions; they are forced by the boundary conditions.",
-    "• mₛ does **not** come from the Schrödinger equation: it enters through the relativistic Dirac equation (1928) and was inferred earlier (1925, Uhlenbeck–Goudsmit) from the Stern–Gerlach experiment and spectral doublets.",
-    "### The metrics table",
-    "Shell n: orbitals n², electrons 2n² (K 1/2, L 4/8, M 9/18, N 16/32). Subshell l: orbitals 2l + 1 (s 1, p 3, d 5, f 7), electrons 2(2l + 1) (s 2, p 6, d 10, f 14). Nodes: radial n − l − 1, angular l, total n − 1. Orbital designation nl (1s, 2p, 3d, 4f).",
-    "### Energy order within a shell",
-    "For hydrogen all subshells of a shell are degenerate (E depends only on n). In multi-electron atoms penetration makes $E_{ns}<E_{np}<E_{nd}<E_{nf}$, and across shells the (n + l) Madelung order governs filling — the two facts the Bohr–Bury scheme could not express.",
-    "### Counting patterns (exam drills)",
-    "• Electrons with n = 4, l = 2 → 4d: 2(2·2+1) = 10.",
-    "• Orbitals with n = 3 → 9 = 3² (1 s + 3 p + 5 d).",
-    "• Electrons with n = 3 and m = 0 → 6 (one each in 3s, 3p, 3d, doubled by spin).",
-    "• Unpaired electrons in a subshell from Hund's rule → paramagnetism; fully paired → diamagnetism.",
-    "How (n, l, m) triples map onto orbital designations, and what the spin quantum number adds — including the box-and-arrow notation used in configuration questions.",
-    "### The designation matrix",
-    "• l = 0 → s, 1 orbital (m = 0): 1s, 2s, 3s, 4s …",
-    "• l = 1 → p, 3 orbitals (m = −1, 0, +1): 2p, 3p, 4p … each written px, py, pz.",
-    "• l = 2 → d, 5 orbitals (m = −2 … +2): 3d, 4d … (dxy, dyz, dxz, dx²−y², dz²).",
-    "• l = 3 → f, 7 orbitals (m = −3 … +3): 4f, 5f …",
-    "The full designation combines n and the subshell letter (3p) or, fully, (n, l, m) — e.g. (3, 1, 0) is the 3pz orbital.",
-    "### The spin quantum number",
-    "mₛ = +½ (↑) or −½ (↓). Electron spin is an intrinsic angular momentum with magnitude √(3/4)·h/2π = √3/2 ħ — it is not literally a spinning ball, but the name survives. Evidence: Stern–Gerlach (silver atoms split into two beams) and doublet structure of alkali spectra. With spin, each orbital (defined by n, l, m) holds exactly two electrons of opposite spin — Pauli's exclusion principle.",
-    "### Box-and-arrow notation (configuration drawing)",
-    "Draw one box per orbital; fill per Aufbau/Pauli/Hund. Nitrogen: 2p ↑ ↑ ↑ (three boxes, parallel arrows); oxygen: 2p ↑↓ ↑ ↑. The notation encodes unpaired-electron counts, hence magnetic behaviour: N has 3 unpaired (paramagnetic), Ne has 0 (diamagnetic).",
-    "### Magnetic behaviour from the matrix",
-    "Count unpaired electrons u: spin-only magnetic moment μ = √(u(u + 2)) BM. Fe³⁺ (3d⁵): u = 5 → μ ≈ 5.92 BM; Cu²⁺ (3d⁹): u = 1 → 1.73 BM; Zn²⁺ (3d¹⁰): u = 0 → diamagnetic.",
-    "The four quantum numbers through one concrete example — the 2p electron of carbon — the fastest route to the 'write the quantum numbers' question. Definitions and the full metric table are in the main note and the metrics tab.",
-    "### The example worked through",
-    "Carbon (Z = 6): 1s² 2s² 2p². Take a 2p electron: n = 2 (L shell, second energy level); l = 1 (p subshell, dumbbell shape); m = −1, 0 or +1 (which of px, py, pz the orbital is); mₛ = +½ or −½ (spin). Hund's rule puts the two 2p electrons in different p orbitals with parallel spins, so a valid full set for the first is n = 2, l = 1, m = −1, mₛ = +½ and for the second n = 2, l = 1, m = 0, mₛ = +½.",
-    "### What each number fixes",
-    "• **n:** shell, size and energy (r ∝ n²; capacity 2n²).",
-    "• **l:** subshell and shape (s spherical, p dumbbell, d clover, f complex); angular momentum √(l(l+1))·h/2π; permitted values 0 … n − 1.",
-    "• **m:** orientation in space; 2l + 1 values; explains Zeeman splitting.",
-    "• **mₛ:** spin ±½; Pauli exclusion follows — no two electrons share all four numbers.",
-    "### The validity ladder (check in this order)",
-    "n ≥ 1 → l ≤ n − 1 → |m| ≤ l → mₛ = ±½. So (n = 2, l = 2) is invalid (l = n), (n = 3, l = 2, m = −3) is invalid (|m| > l), and (n = 2, l = 1, m = 0, mₛ = ±½) is valid.",
-    "### Degeneracy and pairing",
-    "The three p orbitals are degenerate in a free atom; a magnetic field splits them (Zeeman). Filling follows Hund's rule: singly with parallel spins first — the origin of carbon's two unpaired 2p electrons and hence its divalent/paramagnetic behaviour.",
-    "# Quantum numbers\n\n## 1. Introduction\nChemical picture of **Quantum numbers** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Atomic Structure fill pass.\n\n## 2. Concepts and definitions\n### Quantum numbers\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Classification and trends**\n\n| Family or case | Rule or trend | Example | Exception |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Quantum numbers — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Quantum numbers — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Quantum numbers — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Quantum numbers — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Four-Number Address of Every Electron\n\nThe quantum mechanical model replaced orbits with orbitals; **quantum numbers** are the postal address system that labels each electron inside them. Four numbers — **n, l, mₗ, mₛ** — fix an electron's shell, subshell, orientation and spin. NEB examines them two ways every cycle: *define and give values* (3m) and *test which sets are possible* (2m). Master the rules and both are free marks.",
+    "## 2. Fundamental Concepts — The Four Quantum Numbers\n\n### 2.1 Principal quantum number (n)\n\n- **Meaning:** main energy shell; size and energy of the orbital.\n- **Values:** n = 1, 2, 3, 4, … (K, L, M, N).\n- **Consequences:** max electrons in a shell = **2n²**; energy rises with n; distance from nucleus rises with n.\n\n### 2.2 Azimuthal (angular momentum) quantum number (l)\n\n- **Meaning:** shape of the orbital — the **subshell**.\n- **Values:** l = 0 to (n − 1).\n- **Names:** l = 0 → **s** (sharp, spherical); l = 1 → **p** (principal, dumbbell); l = 2 → **d** (diffuse, cloverleaf); l = 3 → **f** (fundamental).\n- **Consequences:** number of subshells in a shell = n; angular momentum = √(l(l+1))·h/2π.\n\n### 2.3 Magnetic quantum number (mₗ)\n\n- **Meaning:** orientation of the orbital in space.\n- **Values:** −l to +l including 0 — i.e. **(2l + 1) values**.\n- **Consequences:** number of orbitals in a subshell = 2l + 1 → s: 1, p: 3, d: 5, f: 7; max electrons in a subshell = 2(2l + 1) → s: 2, p: 6, d: 10, f: 14.\n\n### 2.4 Spin quantum number (mₛ)\n\n- **Meaning:** intrinsic spin of the electron.\n- **Values:** **+1/2 or −1/2** only.\n- **Consequences:** Pauli's exclusion principle — no two electrons in one orbital share all four numbers; an orbital holds at most **2** electrons of opposite spin.\n\n### 2.5 The master table (memorise — feeds every question)\n\n| Shell (n) | Subshells (l) | Orbitals | Max electrons (2n²) |\n|---|---|---|---|\n| 1 (K) | 1s | 1 | 2 |\n| 2 (L) | 2s, 2p | 1 + 3 = 4 | 8 |\n| 3 (M) | 3s, 3p, 3d | 1 + 3 + 5 = 9 | 18 |\n| 4 (N) | 4s, 4p, 4d, 4f | 1 + 3 + 5 + 7 = 16 | 32 |",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Shell** | All orbitals with the same n | n = 3 is the M shell |\n| **Subshell** | All orbitals with the same n and l | 3p (n = 3, l = 1) |\n| **Orbital** | One (n, l, mₗ) state — a probability region | 3p with mₗ = +1 |\n| **Electron address** | Full set (n, l, mₗ, mₛ) | 3, 1, +1, +1/2 |\n| **Degenerate orbitals** | Orbitals of the same energy (same n, l) | The three 2p orbitals |",
+    "## 4. Detailed Explanation\n\n### 4.1 Worked example — NEB 2024 (3m, verified PYQ)\n\n**Q: Write the four quantum numbers for the valence electron of sodium (Z = 11).**\n\nConfiguration: Na = 1s² 2s² 2p⁶ **3s¹** — the valence electron is in 3s.\n\n| Quantum number | Value | Reason |\n|---|---|---|\n| n | **3** | Third shell |\n| l | **0** | s subshell |\n| mₗ | **0** | s has only one orientation |\n| mₛ | **+1/2** | The single electron takes spin-up by convention |\n\n**Answer: n = 3, l = 0, mₗ = 0, mₛ = +1/2.**\n\n### 4.2 Worked example — NEB 2023 (2m, verified PYQ)\n\n**Q: Which set is not possible: (a) 3, 1, +1, +1/2 (b) 3, 1, +2, −1/2 (c) 3, 1, −1, −1/2 (d) 3, 0, 0, +1/2?**\n\nRules: l ≤ n − 1; −l ≤ mₗ ≤ +l; mₛ = ±1/2.\n- (a) l = 1 allows mₗ = −1, 0, +1 → possible (3p).\n- (b) mₗ = +2 **exceeds l = 1** → **not possible** — the answer.\n- (c) mₗ = −1 is allowed → possible (3p).\n- (d) l = 0 forces mₗ = 0 → possible (3s).\n\n### 4.3 Why the rules exist\n\n- **l ≤ n − 1:** a wave in shell n needs at least one wavelength of curvature; you cannot have a p-shaped (l = 1) wave in a shell too small to hold it.\n- **(2l + 1) orientations:** angular momentum has 2l + 1 allowed projections along an axis — the geometric root of the magnetic quantum number.\n- **Pauli:** two identical fermions cannot share one quantum state — the deepest reason an orbital holds exactly two opposite-spin electrons.\n\n### 4.4 Electron addresses for common atoms (practice loop)\n\n- H (Z = 1): 1, 0, 0, +1/2.\n- C (Z = 6) valence p electron: 2, 1, −1 (or 0, +1), +1/2.\n- Na (Z = 11): 3, 0, 0, +1/2.\n- Fe (Z = 26) last electron (3d⁶): 3, 2, −2, +1/2 (by convention filling starts at mₗ = −2).",
+    "## 5. Comparison Tables\n\n**The four quantum numbers at a glance**\n\n| Symbol | Name | Determines | Allowed values | Number of values |\n|---|---|---|---|---|\n| **n** | Principal | Shell, size, energy | 1, 2, 3, … | Infinite |\n| **l** | Azimuthal | Subshell, shape | 0 to n−1 (s, p, d, f) | n per shell |\n| **mₗ** | Magnetic | Orientation | −l … 0 … +l | 2l + 1 per subshell |\n| **mₛ** | Spin | Electron spin | +1/2, −1/2 | 2 |\n\n**Similarity:** all four together specify exactly one electron state — like country, city, street and house number.\n\n**Shell capacity ladder**\n\n| n | l values | Subshells | Orbitals (n²) | Electrons (2n²) |\n|---|---|---|---|---|\n| 1 | 0 | 1s | 1 | 2 |\n| 2 | 0, 1 | 2s 2p | 4 | 8 |\n| 3 | 0, 1, 2 | 3s 3p 3d | 9 | 18 |\n| 4 | 0, 1, 2, 3 | 4s 4p 4d 4f | 16 | 32 |",
+    "## 6. Common Confusions\n\n**l range vs mₗ range:** l runs **0 to n − 1**; mₗ runs **−l to +l**. For n = 3, l = 2 is legal (3d) but mₗ = 2 with l = 1 is not — the two ranges are different rules.",
+    "**\"n = 3, l = 3\" trap:** l can never equal n; the highest l in shell n is n − 1 (3f does not exist).",
+    "**mₛ values:** only ±1/2 — never ±1. Spin \"up/down\" is shorthand for the two signs, not a literal direction.",
+    "## 7. Exam Application\n\n**NEB-style (2m): How many orbitals and electrons can the M shell hold?** — Orbitals = n² = 9 (one 3s, three 3p, five 3d); electrons = 2n² = **18**.",
+    "**NEB-style (2m): Write the quantum numbers of the last electron of nitrogen (Z = 7).** — Configuration 1s² 2s² 2p³; last electron: n = 2, l = 1, mₗ = −1, mₛ = +1/2 (Hund's rule: the three p electrons occupy the three p orbitals singly with parallel spins).",
+    "**NEB-style (3m): State the significance of each quantum number.** — n: shell, size and energy (2n² capacity); l: subshell shape (s, p, d, f); mₗ: spatial orientation, 2l + 1 orbitals; mₛ: spin direction, ±1/2, basis of Pauli's exclusion principle."
   ],
   "confusion": [
-    "❌ n determines shape and l determines size. ✅ n → size/energy (shell); l → shape (subshell).",
-    "❌ l can equal n. ✅ l = 0 to n − 1, so 1s has l = 0 and 2p has l = 1.",
-    "❌ mₗ is the spin quantum number. ✅ mₗ gives orientation; spin is mₛ = ±1/2.",
-    "❌ A p subshell holds 3 electrons. ✅ It has 2l + 1 = 3 *orbitals*, so it holds up to 6 electrons.",
-    "❌ Orbital angular momentum is l(h/2π). ✅ It is √(l(l+1))h/2π.",
-    "❌ mₛ comes from solving the Schrödinger equation. ✅ Only n, l, m do; spin needs the Dirac equation.",
-    "❌ 2n² counts orbitals. ✅ It counts electrons; orbitals in a shell number n².",
-    "❌ All subshells of a shell have equal energy in every atom. ✅ True only for hydrogen; multi-electron atoms order them by penetration.",
-    "❌ Spin means the electron literally spins on its axis. ✅ Spin is an intrinsic quantum property; the classical picture is only an analogy.",
-    "❌ The five d orbitals have five different energies in a free atom. ✅ They are degenerate; ligand or magnetic fields split them.",
-    "❌ A full designation needs only n and l. ✅ A complete state needs all four numbers (n, l, m, mₛ).",
-    "❌ mₛ determines the orbital orientation. ✅ mₗ gives orientation; mₛ gives spin.",
-    "❌ l can take the value n. ✅ l runs 0 to n − 1.",
-    "❌ Two 2p electrons of carbon must have opposite spins. ✅ Hund's rule: parallel spins in different degenerate orbitals first."
+    "**l ≤ n − 1, always:** \"3f\" (n = 3, l = 3) and \"2d\" (n = 2, l = 2) are impossible — the shape cannot outrun its shell.",
+    "**mₗ range depends on l, not n:** mₗ = ±2 is legal only when l ≥ 2 (d or f), whatever n is."
   ],
   "practice": [
-    "Write the quantum numbers of the 3p electrons and of a 3d electron in the ground state.",
-    "Calculate the maximum number of electrons in the M shell and in a 4f subshell.",
-    "How many orbitals and electrons are there in the n = 3 shell? Justify with quantum numbers.",
-    "Which of these sets is impossible: (a) n = 2, l = 2 (b) n = 3, l = 2, m = −2 (c) n = 2, l = 1, m = 0, s = +1/2?",
-    "Explain how the magnetic quantum number accounts for the Zeeman effect.",
-    "Show how n, l and m arise from solving the Schrödinger equation.",
-    "Tabulate orbitals and electron capacities for the K, L, M and N shells.",
-    "How many orbitals and electrons are possible for n = 4?",
-    "Why is the 4s orbital filled before 3d in potassium?",
-    "Draw the designation matrix for l = 0, 1, 2, 3 with m values and orbital capacities.",
-    "Explain the Stern–Gerlach experiment as evidence for spin.",
-    "Using box notation, show the 2p electrons of N and O and count unpaired electrons.",
-    "Calculate the spin-only magnetic moment of Mn²⁺ (3d⁵).",
-    "Write all four quantum numbers for each of the two 2p electrons of carbon.",
-    "State the quantum numbers for a 3d electron and count its m values.",
-    "Which of these sets are impossible: (2,2,0,+½), (3,2,−2,−½), (2,1,0,0)?",
-    "How does the magnetic quantum number explain the Zeeman effect?"
+    "Why can no subshell hold more than 2(2l + 1) electrons?",
+    "Write all four quantum numbers for every electron of helium.",
+    "Why does mₗ have no effect on the energy of an orbital in the absence of a magnetic field?"
   ],
   "formulas": [
-    "$$l=0,1,2,\\dots,(n-1);\\qquad m=-l,\\dots,0,\\dots,+l;\\qquad m_{s}=\\pm\\tfrac{1}{2}$$",
-    "$$\\text{orbitals in a subshell}=2l+1;\\qquad \\text{electrons}=2(2l+1)$$",
-    "$$\\text{orbitals in a shell}=n^{2};\\qquad \\text{electrons}=2n^{2}$$",
-    "$$L=\\sqrt{l(l+1)}\\,\\frac{h}{2\\pi}$$",
-    "$$\\text{orbitals: shell }n^{2},\\ \\text{subshell }2l+1;\\qquad \\text{electrons: }2n^{2},\\ 2(2l+1)$$",
-    "$$\\text{radial nodes}=n-l-1,\\quad \\text{angular nodes}=l,\\quad \\text{total}=n-1$$",
-    "$$\\mu=\\sqrt{u(u+2)}\\ \\text{BM},\\qquad s=\\tfrac{1}{2},\\ |s|=\\sqrt{s(s+1)}\\,\\hbar=\\tfrac{\\sqrt{3}}{2}\\hbar$$",
-    "$$l=0,1,\\dots,n-1;\\quad m=-l,\\dots,+l;\\quad m_{s}=\\pm\\tfrac{1}{2};\\quad L=\\sqrt{l(l+1)}\\,h/2\\pi$$"
+    "- l = 0, 1, 2, …, (n − 1)\n- mₗ = −l, …, 0, …, +l → orbitals per subshell = 2l + 1\n- Max electrons: shell 2n²; subshell 2(2l + 1); orbital 2\n- Angular momentum = √(l(l+1))·h/2π"
   ],
   "universalFacts": [
-    "s, p, d, f stand for sharp, principal, diffuse, fundamental — the old spectroscopic series names.",
-    "Shell capacities: K 2, L 8, M 18, N 32 (2n²); subshell capacities: s 2, p 6, d 10, f 14.",
-    "Spin was proposed in 1925 (Uhlenbeck and Goudsmit) after the Stern–Gerlach experiment (1922).",
-    "The 4f subshell (l = 3) holds 14 electrons — the width of the lanthanide series.",
-    "Stern–Gerlach (1922) split a silver atomic beam into two — the first spin evidence.",
-    "Degeneracy of the n = 2 level in hydrogen: 4 orbitals (2s + three 2p).",
-    "The five d orbitals carry the spectroscopic labels dxy, dyz, dxz, dx²−y², dz².",
-    "Silver's single unpaired 5s electron produced exactly two Stern–Gerlach beams.",
-    "Pauli stated his exclusion principle in 1925, before spin was formally introduced.",
-    "Carbon's two unpaired 2p electrons make atomic carbon paramagnetic.",
-    "The letters s, p, d, f come from the old spectroscopic terms sharp, principal, diffuse, fundamental.",
-    "Pauli's exclusion principle is the reason any orbital holds at most two electrons."
+    "Quantum numbers emerged from spectroscopy: Zeeman splitting (mₛ/mₗ) and fine structure could not be explained until each electron needed four coordinates instead of one orbit."
   ],
   "examples": [
-    "**Problem:** Maximum number of electrons with n = 4 and l = 2? **Solution:** 4d subshell: 2(2l + 1) = 2(5) = 10 electrons.",
-    "**Problem:** How many electrons in an atom can have n = 3, m = 0? **Solution:** For n = 3: 3s (m = 0 only), 3p (m = 0 available), 3d (m = 0 available) → 1 + 2 + 2 = 6 electrons.",
-    "**Problem:** Count orbitals with n = 4, l = 3 and the electrons they hold. **Solution:** 2l + 1 = 7 orbitals (4f), holding 14 electrons; nodes: radial 0, angular 3.",
-    "**Problem:** Give the designation of an electron with (n, l, m, mₛ) = (4, 2, −1, +½). **Solution:** n = 4, l = 2 → 4d; m = −1 selects one of the five d orbitals; mₛ = +½ — an up-spin electron in a 4d orbital.",
-    "**Problem:** How many electrons in an atom can have n = 3 and m = 0? **Solution:** 3s (1 orbital, m = 0), 3p (one of three orbitals has m = 0), 3d (one of five) → 1 + 2 + 2 = 6 electrons."
+    "***Fe's last electron: 3, 2, −2, +1/2*** — a 3d electron (n = 3, l = 2); filling starts at mₗ = −2 with spin-up, per Hund's rule and the conventional mₗ ordering."
   ],
   "importantNotes": [
-    "Remember the two counting rules: 2l + 1 orbitals per subshell and 2n² electrons per shell.",
-    "Check validity sets in the order n ≥ 1, l ≤ n − 1, |m| ≤ l, mₛ = ±1/2 — a favourite one-mark question.",
-    "Memorise the three counting numbers: 2l + 1 (orbitals), 2(2l + 1) (subshell electrons), 2n² (shell electrons).",
-    "Attribute spin to Dirac/Stern–Gerlach, not to Schrödinger.",
-    "Use box notation whenever a configuration question asks about unpaired electrons or magnetism.",
-    "Pauli's principle is stated in terms of the four quantum numbers — quote all four.",
-    "Answer 'write the quantum numbers' questions by naming the element and configuration first, then the set per electron.",
-    "Check validity with the ladder n → l → m → mₛ."
+    "Verified PYQs: NEB 2024 3m — four quantum numbers of Na's valence electron (solved above); NEB 2023 2m — identify the impossible set (answer b: mₗ = +2 with l = 1). Others are NEB-style practice."
   ],
   "visualType": "quantum-numbers",
   "mcqs": [
     {
-      "question": "The number of orbitals in the M shell (n = 3) is:",
+      "question": "The principal quantum number determines:",
       "options": [
+        "Shape of orbital",
+        "Size and energy of the shell",
+        "Spin of electron",
+        "Orientation in space"
+      ],
+      "answer": "B",
+      "explanation": "n fixes shell, size and energy."
+    },
+    {
+      "question": "For n = 3, the possible values of l are:",
+      "options": [
+        "0, 1",
+        "1, 2",
+        "0, 1, 2",
+        "0, 1, 2, 3"
+      ],
+      "answer": "C",
+      "explanation": "l = 0 to n−1 → 3s, 3p, 3d."
+    },
+    {
+      "question": "The number of orbitals in a d subshell is:",
+      "options": [
+        "1",
         "3",
-        "6",
-        "9",
-        "18"
+        "5",
+        "7"
       ],
-      "answer": "C"
+      "answer": "C",
+      "explanation": "2l + 1 = 5 for l = 2."
     },
     {
-      "question": "The spin-only magnetic moment of Cu²⁺ (3d⁹) is about:",
+      "question": "The maximum number of electrons in the M shell is:",
       "options": [
-        "0 BM",
-        "1.73 BM",
-        "2.83 BM",
-        "5.92 BM"
+        "8",
+        "18",
+        "32",
+        "2"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "2n² = 18 for n = 3."
     },
     {
-      "question": "For a 3d electron, l and the number of m values are:",
+      "question": "The spin quantum number can take the values:",
       "options": [
-        "l = 2, five m values",
-        "l = 3, seven m values",
-        "l = 1, three m values",
-        "l = 2, three m values"
+        "0, 1",
+        "+1, −1",
+        "+1/2, −1/2",
+        "1/2 only"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "Only two spin states exist."
+    },
+    {
+      "question": "Which set of quantum numbers is impossible?",
+      "options": [
+        "n=2, l=0, m=0",
+        "n=2, l=1, m=−1",
+        "n=2, l=2, m=+1",
+        "n=3, l=1, m=0"
+      ],
+      "answer": "C",
+      "explanation": "l can never equal n (2d does not exist)."
+    },
+    {
+      "question": "The valence electron of sodium (Z = 11) has quantum numbers:",
+      "options": [
+        "3,1,0,+1/2",
+        "3,0,0,+1/2",
+        "3,1,1,−1/2",
+        "2,1,0,+1/2"
+      ],
+      "answer": "B",
+      "explanation": "3s¹ electron: l = 0, mₗ = 0."
+    },
+    {
+      "question": "An orbital can hold at most:",
+      "options": [
+        "1 electron",
+        "2 electrons with opposite spins",
+        "2 electrons with parallel spins",
+        "3 electrons"
+      ],
+      "answer": "B",
+      "explanation": "Pauli's exclusion principle."
     }
   ],
   "source": "ravikishan",
   "filename": "07-quantum-numbers.json",
   "examShortTricks": [
-    "Trick 1: The four numbers in one line each — n: shell/size/energy; l: shape (s,p,d,f = 0,1,2,3); m: orientation (−l…+l); s: spin (+1/2, −1/2).",
-    "Trick 2: Count orbitals instantly: number of m values = 2l + 1; orbitals in shell n = n²; electrons in shell = 2n².",
-    "Trick 3: 'Is 3f possible?' — l must be ≤ n−1; for n = 3, l max = 2 (d) → 3f does not exist. Same check kills 2d and 1p."
+    "\"n owns the shell, l owns the shape, mₗ owns the direction, mₛ owns the spin.\" Values chant: \"0 to n−1, minus-l to plus-l, plus or minus a half.\""
   ],
   "keyPoints": [
-    "Principal quantum number n: size and energy of the shell (K, L, M, N…).",
-    "Azimuthal ( subsidiary) l: subshell shape; s, p, d, f = 0, 1, 2, 3; l = 0 … n−1.",
-    "Magnetic m: orientation; values −l … 0 … +l.",
-    "Spin s: +1/2 or −1/2 only."
+    "n = shell (1, 2, 3…; 2n² electrons); l = subshell shape (0 to n−1: s, p, d, f); mₗ = orientation (−l to +l, 2l+1 orbitals); mₛ = spin (±1/2). Na valence electron (NEB 2024): n = 3, l = 0, mₗ = 0, mₛ = +1/2. Impossible-set test (NEB 2023): check l ≤ n−1 first, then |mₗ| ≤ l, then mₛ = ±1/2."
   ],
   "practiceQuestions": [
-    "Q. Write all quantum numbers for the last electron of Na (Z = 11). (3 marks) — 3s1: n = 3, l = 0, m = 0, s = +1/2.",
-    "Q. How many orbitals are in the M shell (n = 3)? (1 mark) — n² = 9 (one 3s, three 3p, five 3d)."
+    "**NEB 2024 (3m): Write the four quantum numbers for the valence electron of sodium (Z = 11).** — Na = 1s² 2s² 2p⁶ 3s¹; the valence electron sits in 3s: **n = 3, l = 0, mₗ = 0, mₛ = +1/2**.",
+    "**NEB 2023 (2m): Which set of quantum numbers is not possible: (a) 3, 1, +1, +1/2 (b) 3, 1, +2, −1/2 (c) 3, 1, −1, −1/2 (d) 3, 0, 0, +1/2?** — **(b)**: with l = 1, mₗ may only be −1, 0 or +1; mₗ = +2 violates |mₗ| ≤ l. Sets (a), (c) are legal 3p electrons and (d) is a legal 3s electron.",
+    "**NEB-style (3m): Define the four quantum numbers and state the values each can take.** — **n (principal):** shell, size, energy; 1, 2, 3, … (capacity 2n²). **l (azimuthal):** subshell shape; 0 to n−1, named s, p, d, f. **mₗ (magnetic):** orientation; −l to +l, giving 2l + 1 orbitals. **mₛ (spin):** spin direction; +1/2 or −1/2 only.",
+    "**NEB-style (2m): An electron has n = 3, l = 2. Give the subshell, the number of orbitals, and all possible mₗ values.** — Subshell **3d**; orbitals = 2l + 1 = **5**; mₗ = **−2, −1, 0, +1, +2**; the subshell holds 10 electrons."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Four-Number Address of Every Electron\n\nThe quantum mechanical model replaced orbits with orbitals; **quantum numbers** are the postal address system that labels each electron inside them. Four numbers — **n, l, mₗ, mₛ** — fix an electron's shell, subshell, orientation and spin. NEB examines them two ways every cycle: *define and give values* (3m) and *test which sets are possible* (2m). Master the rules and both are free marks.",
+      "## 2. Fundamental Concepts — The Four Quantum Numbers\n\n### 2.1 Principal quantum number (n)\n\n- **Meaning:** main energy shell; size and energy of the orbital.\n- **Values:** n = 1, 2, 3, 4, … (K, L, M, N).\n- **Consequences:** max electrons in a shell = **2n²**; energy rises with n; distance from nucleus rises with n.\n\n### 2.2 Azimuthal (angular momentum) quantum number (l)\n\n- **Meaning:** shape of the orbital — the **subshell**.\n- **Values:** l = 0 to (n − 1).\n- **Names:** l = 0 → **s** (sharp, spherical); l = 1 → **p** (principal, dumbbell); l = 2 → **d** (diffuse, cloverleaf); l = 3 → **f** (fundamental).\n- **Consequences:** number of subshells in a shell = n; angular momentum = √(l(l+1))·h/2π.\n\n### 2.3 Magnetic quantum number (mₗ)\n\n- **Meaning:** orientation of the orbital in space.\n- **Values:** −l to +l including 0 — i.e. **(2l + 1) values**.\n- **Consequences:** number of orbitals in a subshell = 2l + 1 → s: 1, p: 3, d: 5, f: 7; max electrons in a subshell = 2(2l + 1) → s: 2, p: 6, d: 10, f: 14.\n\n### 2.4 Spin quantum number (mₛ)\n\n- **Meaning:** intrinsic spin of the electron.\n- **Values:** **+1/2 or −1/2** only.\n- **Consequences:** Pauli's exclusion principle — no two electrons in one orbital share all four numbers; an orbital holds at most **2** electrons of opposite spin.\n\n### 2.5 The master table (memorise — feeds every question)\n\n| Shell (n) | Subshells (l) | Orbitals | Max electrons (2n²) |\n|---|---|---|---|\n| 1 (K) | 1s | 1 | 2 |\n| 2 (L) | 2s, 2p | 1 + 3 = 4 | 8 |\n| 3 (M) | 3s, 3p, 3d | 1 + 3 + 5 = 9 | 18 |\n| 4 (N) | 4s, 4p, 4d, 4f | 1 + 3 + 5 + 7 = 16 | 32 |",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Shell** | All orbitals with the same n | n = 3 is the M shell |\n| **Subshell** | All orbitals with the same n and l | 3p (n = 3, l = 1) |\n| **Orbital** | One (n, l, mₗ) state — a probability region | 3p with mₗ = +1 |\n| **Electron address** | Full set (n, l, mₗ, mₛ) | 3, 1, +1, +1/2 |\n| **Degenerate orbitals** | Orbitals of the same energy (same n, l) | The three 2p orbitals |",
+      "## 4. Detailed Explanation\n\n### 4.1 Worked example — NEB 2024 (3m, verified PYQ)\n\n**Q: Write the four quantum numbers for the valence electron of sodium (Z = 11).**\n\nConfiguration: Na = 1s² 2s² 2p⁶ **3s¹** — the valence electron is in 3s.\n\n| Quantum number | Value | Reason |\n|---|---|---|\n| n | **3** | Third shell |\n| l | **0** | s subshell |\n| mₗ | **0** | s has only one orientation |\n| mₛ | **+1/2** | The single electron takes spin-up by convention |\n\n**Answer: n = 3, l = 0, mₗ = 0, mₛ = +1/2.**\n\n### 4.2 Worked example — NEB 2023 (2m, verified PYQ)\n\n**Q: Which set is not possible: (a) 3, 1, +1, +1/2 (b) 3, 1, +2, −1/2 (c) 3, 1, −1, −1/2 (d) 3, 0, 0, +1/2?**\n\nRules: l ≤ n − 1; −l ≤ mₗ ≤ +l; mₛ = ±1/2.\n- (a) l = 1 allows mₗ = −1, 0, +1 → possible (3p).\n- (b) mₗ = +2 **exceeds l = 1** → **not possible** — the answer.\n- (c) mₗ = −1 is allowed → possible (3p).\n- (d) l = 0 forces mₗ = 0 → possible (3s).\n\n### 4.3 Why the rules exist\n\n- **l ≤ n − 1:** a wave in shell n needs at least one wavelength of curvature; you cannot have a p-shaped (l = 1) wave in a shell too small to hold it.\n- **(2l + 1) orientations:** angular momentum has 2l + 1 allowed projections along an axis — the geometric root of the magnetic quantum number.\n- **Pauli:** two identical fermions cannot share one quantum state — the deepest reason an orbital holds exactly two opposite-spin electrons.\n\n### 4.4 Electron addresses for common atoms (practice loop)\n\n- H (Z = 1): 1, 0, 0, +1/2.\n- C (Z = 6) valence p electron: 2, 1, −1 (or 0, +1), +1/2.\n- Na (Z = 11): 3, 0, 0, +1/2.\n- Fe (Z = 26) last electron (3d⁶): 3, 2, −2, +1/2 (by convention filling starts at mₗ = −2).",
+      "## 5. Comparison Tables\n\n**The four quantum numbers at a glance**\n\n| Symbol | Name | Determines | Allowed values | Number of values |\n|---|---|---|---|---|\n| **n** | Principal | Shell, size, energy | 1, 2, 3, … | Infinite |\n| **l** | Azimuthal | Subshell, shape | 0 to n−1 (s, p, d, f) | n per shell |\n| **mₗ** | Magnetic | Orientation | −l … 0 … +l | 2l + 1 per subshell |\n| **mₛ** | Spin | Electron spin | +1/2, −1/2 | 2 |\n\n**Similarity:** all four together specify exactly one electron state — like country, city, street and house number.\n\n**Shell capacity ladder**\n\n| n | l values | Subshells | Orbitals (n²) | Electrons (2n²) |\n|---|---|---|---|---|\n| 1 | 0 | 1s | 1 | 2 |\n| 2 | 0, 1 | 2s 2p | 4 | 8 |\n| 3 | 0, 1, 2 | 3s 3p 3d | 9 | 18 |\n| 4 | 0, 1, 2, 3 | 4s 4p 4d 4f | 16 | 32 |",
+      "## 6. Common Confusions\n\n**l range vs mₗ range:** l runs **0 to n − 1**; mₗ runs **−l to +l**. For n = 3, l = 2 is legal (3d) but mₗ = 2 with l = 1 is not — the two ranges are different rules.",
+      "**\"n = 3, l = 3\" trap:** l can never equal n; the highest l in shell n is n − 1 (3f does not exist).",
+      "**mₛ values:** only ±1/2 — never ±1. Spin \"up/down\" is shorthand for the two signs, not a literal direction.",
+      "## 7. Exam Application\n\n**NEB-style (2m): How many orbitals and electrons can the M shell hold?** — Orbitals = n² = 9 (one 3s, three 3p, five 3d); electrons = 2n² = **18**.",
+      "**NEB-style (2m): Write the quantum numbers of the last electron of nitrogen (Z = 7).** — Configuration 1s² 2s² 2p³; last electron: n = 2, l = 1, mₗ = −1, mₛ = +1/2 (Hund's rule: the three p electrons occupy the three p orbitals singly with parallel spins).",
+      "**NEB-style (3m): State the significance of each quantum number.** — n: shell, size and energy (2n² capacity); l: subshell shape (s, p, d, f); mₗ: spatial orientation, 2l + 1 orbitals; mₛ: spin direction, ±1/2, basis of Pauli's exclusion principle."
+    ],
+    "confusion": [
+      "**l ≤ n − 1, always:** \"3f\" (n = 3, l = 3) and \"2d\" (n = 2, l = 2) are impossible — the shape cannot outrun its shell.",
+      "**mₗ range depends on l, not n:** mₗ = ±2 is legal only when l ≥ 2 (d or f), whatever n is."
+    ],
+    "keyPoints": [
+      "n = shell (1, 2, 3…; 2n² electrons); l = subshell shape (0 to n−1: s, p, d, f); mₗ = orientation (−l to +l, 2l+1 orbitals); mₛ = spin (±1/2). Na valence electron (NEB 2024): n = 3, l = 0, mₗ = 0, mₛ = +1/2. Impossible-set test (NEB 2023): check l ≤ n−1 first, then |mₗ| ≤ l, then mₛ = ±1/2."
+    ],
+    "importantConcepts": [
+      "**Validity checking order:** l against n−1 → mₗ against ±l → mₛ against ±1/2. Run the checks in this order and every \"which set is impossible\" question resolves mechanically."
+    ],
+    "examples": [
+      "***Fe's last electron: 3, 2, −2, +1/2*** — a 3d electron (n = 3, l = 2); filling starts at mₗ = −2 with spin-up, per Hund's rule and the conventional mₗ ordering."
+    ],
+    "universalFacts": [
+      "Quantum numbers emerged from spectroscopy: Zeeman splitting (mₛ/mₗ) and fine structure could not be explained until each electron needed four coordinates instead of one orbit."
+    ],
+    "importantStatements": [
+      "\"No two electrons in an atom can have the same set of all four quantum numbers.\" — Pauli's exclusion principle."
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 3m — four quantum numbers of Na's valence electron (solved above); NEB 2023 2m — identify the impossible set (answer b: mₗ = +2 with l = 1). Others are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"n owns the shell, l owns the shape, mₗ owns the direction, mₛ owns the spin.\" Values chant: \"0 to n−1, minus-l to plus-l, plus or minus a half.\""
+    ],
+    "examNotes": [
+      "For \"write the quantum numbers\" questions, first write the electron configuration — the address follows mechanically. For \"which is impossible\", test l against n−1 before anything else; that catches most traps instantly."
+    ],
+    "formulas": [
+      "- l = 0, 1, 2, …, (n − 1)\n- mₗ = −l, …, 0, …, +l → orbitals per subshell = 2l + 1\n- Max electrons: shell 2n²; subshell 2(2l + 1); orbital 2\n- Angular momentum = √(l(l+1))·h/2π"
+    ],
+    "practice": [
+      "Why can no subshell hold more than 2(2l + 1) electrons?",
+      "Write all four quantum numbers for every electron of helium.",
+      "Why does mₗ have no effect on the energy of an orbital in the absence of a magnetic field?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (3m): Write the four quantum numbers for the valence electron of sodium (Z = 11).** — Na = 1s² 2s² 2p⁶ 3s¹; the valence electron sits in 3s: **n = 3, l = 0, mₗ = 0, mₛ = +1/2**.",
+      "**NEB 2023 (2m): Which set of quantum numbers is not possible: (a) 3, 1, +1, +1/2 (b) 3, 1, +2, −1/2 (c) 3, 1, −1, −1/2 (d) 3, 0, 0, +1/2?** — **(b)**: with l = 1, mₗ may only be −1, 0 or +1; mₗ = +2 violates |mₗ| ≤ l. Sets (a), (c) are legal 3p electrons and (d) is a legal 3s electron.",
+      "**NEB-style (3m): Define the four quantum numbers and state the values each can take.** — **n (principal):** shell, size, energy; 1, 2, 3, … (capacity 2n²). **l (azimuthal):** subshell shape; 0 to n−1, named s, p, d, f. **mₗ (magnetic):** orientation; −l to +l, giving 2l + 1 orbitals. **mₛ (spin):** spin direction; +1/2 or −1/2 only.",
+      "**NEB-style (2m): An electron has n = 3, l = 2. Give the subshell, the number of orbitals, and all possible mₗ values.** — Subshell **3d**; orbitals = 2l + 1 = **5**; mₗ = **−2, −1, 0, +1, +2**; the subshell holds 10 electrons."
+    ]
+  },
+  "importantConcepts": [
+    "**Validity checking order:** l against n−1 → mₗ against ±l → mₛ against ±1/2. Run the checks in this order and every \"which set is impossible\" question resolves mechanically."
+  ],
+  "importantStatements": [
+    "\"No two electrons in an atom can have the same set of all four quantum numbers.\" — Pauli's exclusion principle."
+  ],
+  "examNotes": [
+    "For \"write the quantum numbers\" questions, first write the electron configuration — the address follows mechanically. For \"which is impossible\", test l against n−1 before anything else; that catches most traps instantly."
+  ],
+  "summary": "Every electron in an atom carries a four-number address: **n** (principal — shell, size, energy, 2n² capacity), **l** (azimuthal — subshell shape, 0 to n−1: s, p, d, f), **mₗ** (magnetic — orientation, −l to +l, 2l + 1 orbitals per subshell) and **mₛ** (spin — ±1/2, the basis of Pauli's exclusion principle). Sodium's valence electron (NEB 2024) is 3, 0, 0, +1/2; the impossible-set test (NEB 2023) runs three checks — l ≤ n−1, |mₗ| ≤ l, mₛ = ±1/2 — and catches mₗ = +2 with l = 1 instantly. The numbers are not bookkeeping: n, l, mₗ, mₛ are exactly the coordinates the Schrödinger equation needs, and each one repairs a defect of Bohr's model.",
+  "mcs": [
+    {
+      "question": "The principal quantum number determines:",
+      "options": [
+        "Shape of orbital",
+        "Size and energy of the shell",
+        "Spin of electron",
+        "Orientation in space"
+      ],
+      "answer": "B",
+      "explanation": "n fixes shell, size and energy."
+    },
+    {
+      "question": "For n = 3, the possible values of l are:",
+      "options": [
+        "0, 1",
+        "1, 2",
+        "0, 1, 2",
+        "0, 1, 2, 3"
+      ],
+      "answer": "C",
+      "explanation": "l = 0 to n−1 → 3s, 3p, 3d."
+    },
+    {
+      "question": "The number of orbitals in a d subshell is:",
+      "options": [
+        "1",
+        "3",
+        "5",
+        "7"
+      ],
+      "answer": "C",
+      "explanation": "2l + 1 = 5 for l = 2."
+    },
+    {
+      "question": "The maximum number of electrons in the M shell is:",
+      "options": [
+        "8",
+        "18",
+        "32",
+        "2"
+      ],
+      "answer": "B",
+      "explanation": "2n² = 18 for n = 3."
+    },
+    {
+      "question": "The spin quantum number can take the values:",
+      "options": [
+        "0, 1",
+        "+1, −1",
+        "+1/2, −1/2",
+        "1/2 only"
+      ],
+      "answer": "C",
+      "explanation": "Only two spin states exist."
+    },
+    {
+      "question": "Which set of quantum numbers is impossible?",
+      "options": [
+        "n=2, l=0, m=0",
+        "n=2, l=1, m=−1",
+        "n=2, l=2, m=+1",
+        "n=3, l=1, m=0"
+      ],
+      "answer": "C",
+      "explanation": "l can never equal n (2d does not exist)."
+    },
+    {
+      "question": "The valence electron of sodium (Z = 11) has quantum numbers:",
+      "options": [
+        "3,1,0,+1/2",
+        "3,0,0,+1/2",
+        "3,1,1,−1/2",
+        "2,1,0,+1/2"
+      ],
+      "answer": "B",
+      "explanation": "3s¹ electron: l = 0, mₗ = 0."
+    },
+    {
+      "question": "An orbital can hold at most:",
+      "options": [
+        "1 electron",
+        "2 electrons with opposite spins",
+        "2 electrons with parallel spins",
+        "3 electrons"
+      ],
+      "answer": "B",
+      "explanation": "Pauli's exclusion principle."
+    }
   ]
 }

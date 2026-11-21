@@ -5,162 +5,137 @@
   "topicTitle": "Spectrum of hydrogen atom",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning of 'spectrum'",
-    "A spectrum is the ordered display of the wavelengths in a beam of radiation after dispersion by a prism or grating. An **emission** spectrum is bright lines on a dark background (excited atoms emitting); an **absorption** spectrum is dark lines on a continuous background (cool atoms removing their own characteristic wavelengths). Atomic spectra are *line* spectra — band spectra come from molecules, continuous spectra from incandescent solids.",
-    "### 2. Origin of the hydrogen spectrum",
-    "Each line is one electron transition: the electron falls from n₂ to n₁ and emits one photon, hν = E₂ − E₁ = 13.6(1/n₁² − 1/n₂²) eV for hydrogen. Since the levels are discrete, only discrete wavelengths appear — hence a line spectrum rather than a continuous one.",
-    "### 3. The spectral series of hydrogen",
-    "• **Lyman** (n₁ = 1): to the ground level — ultraviolet; first line 121.6 nm, series limit 91.2 nm.",
-    "• **Balmer** (n₁ = 2): the only *visible* series — Hα 656.3 nm (red), Hβ 486.1 nm, Hγ 434.0 nm, Hδ 410.2 nm; limit 364.6 nm.",
-    "• **Paschen** (n₁ = 3), **Brackett** (n₁ = 4) and **Pfund** (n₁ = 5): infrared.",
-    "• Lines within a series crowd together and converge at the series limit; beyond it the spectrum becomes continuous because the atom is ionised.",
-    "### 4. Rydberg equation and the Rydberg constant",
-    "$$\\bar{\\nu}=\\frac{1}{\\lambda}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\qquad n_{2}>n_{1}$$ with R = 1.097 × 10⁷ m⁻¹ = 109 678 cm⁻¹ for hydrogen (Z = 1). Bohr's theory *derived* R = 2π²me⁴/h³c, turning Rydberg's empirical formula into theory — the model's greatest success.",
-    "### 5. Applications",
-    "• Spectral analysis identifies elements: each element has a unique line pattern, used in chemistry labs, metallurgy, forensics and pollution monitoring.",
-    "• Astronomy: composition, temperature and motion (Doppler shift) of stars are read from hydrogen lines; the 21 cm hydrogen line maps interstellar gas.",
-    "• Technology: atomic emission/absorption spectroscopy (AAS, ICP), flame tests, He–Ne gas lasers (632.8 nm) and spectrometer calibration all rest on hydrogen-like energy levels.",
-    "• Frank–Hertz and discharge-tube experiments confirm discrete energy levels and the Bohr energy expression.",
-    "### 6. Limitations of this treatment",
-    "The Bohr/Rydberg picture gives series positions but not line *fine structure* (Hα is really a doublet), relative intensities, or splitting in magnetic (Zeeman) and electric (Stark) fields; beyond hydrogen it needs multi-electron and relativistic corrections.",
-    "### Focus of this tab",
-    "A series-by-series reference table for the hydrogen spectrum, plus the line-counting rule — the data side of the main spectrum note.",
-    "### The five series at a glance",
-    "• **Lyman** (n₁ = 1): UV. First line 121.6 nm (2→1); series limit 91.2 nm. Discovered by Lyman, 1906.",
-    "• **Balmer** (n₁ = 2): visible. Hα 656.3 nm (3→2), Hβ 486.1 nm (4→2), Hγ 434.0 nm (5→2), Hδ 410.2 nm (6→2); limit 364.6 nm. Discovered by Balmer, 1885.",
-    "• **Paschen** (n₁ = 3): near IR. First line 1875 nm (4→3); limit 820.4 nm. Discovered 1908.",
-    "• **Brackett** (n₁ = 4): IR. First line 4051 nm (5→4); limit 1458 nm. Discovered 1922.",
-    "• **Pfund** (n₁ = 5): far IR. First line 7460 nm (6→5); limit 2279 nm. Discovered 1924. (A sixth, Humphreys, n₁ = 6, lies in the far IR.)",
-    "### Counting lines",
-    "• From a single excited level n: the number of different lines = n(n − 1)/2 (e.g. n = 4 → 6 lines: 3 Lyman + 2 Balmer + 1 Paschen).",
-    "• In one series, from level n to fixed n₁: n − n₁ lines (e.g. Balmer lines down from n = 4: two lines).",
-    "### Line spacing within a series",
-    "Successive lines crowd together and converge at the series limit (n₂ → ∞): $\\bar{\\nu}_{limit}=R/n_{1}^{2}$. The Balmer limit 364.6 nm marks the end of visible lines; beyond it the atom ionises and the spectrum becomes continuous.",
-    "### Wavelength ↔ energy conversions",
-    "$\\Delta E(\\text{eV})=\\frac{1240}{\\lambda(\\text{nm})}$ and $\\Delta E=13.6(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}})$. Every line position follows from these two relations; the wavelength of any hydrogen-like ion scales as 1/Z² (He⁺ lines are 4× more energetic, shifted to ¼ wavelength).",
-    "How the Rydberg equation follows from Bohr's theory, what the Rydberg constant means, and the standard numerical patterns built on it.",
-    "### Derivation (short form)",
-    "Photon energy for a jump n₂ → n₁: $h\\nu=E_{2}-E_{1}=\\frac{2\\pi^{2}me^{4}Z^{2}}{h^{2}}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)$. With $\\nu=c/\\lambda$ and $\\bar{\\nu}=1/\\lambda=\\nu/c$: $\\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)$ where $R=\\frac{2\\pi^{2}me^{4}}{h^{3}c}=1.097\\times10^{7}\\ \\text{m}^{-1}$. The empirical Balmer/Rydberg formula thus *emerged* from theory — Bohr's greatest success.",
-    "### Meaning of R",
-    "R is the wave number of the hydrogen series limit (n₁ = 1, n₂ → ∞): $\\bar{\\nu}_{limit}=R$, λ = 91.2 nm. Because m appears in R, the constant is slightly isotope-dependent (reduced-mass correction): R(²H) ≈ R(¹H) × 1.00027 — the basis of measuring deuterium in heavy water spectroscopically.",
-    "### Numerical patterns",
-    "• Wavelength of a given line: pick n₁ (series) and n₂ (upper level); compute $\\bar{\\nu}$, invert for λ.",
-    "• Series limit: set n₂ → ∞ → $\\bar{\\nu}=RZ^{2}/n_{1}^{2}$.",
-    "• First line of a series: n₂ = n₁ + 1.",
-    "• Identification: given λ and a series, solve for n₂; given two lines, form their difference to get a third line (Ritz combination principle).",
-    "• Hydrogen-like ions: multiply by Z² (He⁺ Balmer lines are 4× the wave number of hydrogen's).",
-    "### Units trap",
-    "R is quoted both as 1.097 × 10⁷ m⁻¹ and 109 677 cm⁻¹. Convert before mixing: 1 cm⁻¹ = 100 m⁻¹; λ(nm) = 10⁷/ν̄(cm⁻¹)."
+    "## 1. Topic Introduction — The Fingerprint That Saved Bohr\n\nRutherford's model could not explain why atomic hydrogen emits **discrete coloured lines** instead of a continuous glow. Bohr (1913) turned that failure into a triumph: if electrons occupy only **quantised orbits**, an electron dropping from a higher orbit to a lower one emits a photon carrying exactly the energy gap — hν = E₂ − E₁. Each gap is fixed, so each line is fixed. The hydrogen spectrum is therefore the **experimental proof of quantisation**, and the model that predicts its wavelengths to 5 significant figures is the model NEB examines every year.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Energy of the nth orbit\n\n- Eₙ = −2.18 × 10⁻¹⁸ J / n² = **−13.6 eV / n²** (n = 1, 2, 3, …).\n- The **negative sign** means the electron is bound; E₁ = −13.6 eV is the **ground state**, E∞ = 0 is **ionisation**.\n- Energy gaps shrink as n grows — levels crowd together near the ionisation limit.\n\n### 2.2 The transition rule\n\nPhoton emitted when the electron falls from n₂ (upper) to n₁ (lower):\n\n**hν = E₂ − E₁ = 2.18 × 10⁻¹⁸ J (1/n₁² − 1/n₂²)**\n\n### 2.3 The Rydberg equation (wavelength form)\n\n**1/λ = R (1/n₁² − 1/n₂²)**, R = **1.097 × 10⁷ m⁻¹** (Rydberg constant), n₂ > n₁.\n\n### 2.4 The five spectral series (memorise the table — straight 3m)\n\n| Series | n₁ (lower) | n₂ (upper) | Spectral region | Series limit |\n|---|---|---|---|---|\n| **Lyman** | 1 | 2, 3, 4, … | **Ultraviolet** | 91.2 nm |\n| **Balmer** | 2 | 3, 4, 5, … | **Visible** | 364.6 nm |\n| **Paschen** | 3 | 4, 5, 6, … | Infrared | 1875 nm |\n| **Brackett** | 4 | 5, 6, 7, … | Infrared | 4051 nm |\n| **Pfund** | 5 | 6, 7, 8, … | Infrared (far) | 7460 nm |\n\nOnly **Balmer** lies in the visible region — the four visible lines are called **Hα (656.3 nm, red), Hβ (486.1 nm), Hγ (434.0 nm), Hδ (410.2 nm)**.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Why it matters |\n|---|---|---|\n| **Line spectrum** | Discrete wavelengths emitted by excited atoms, each from one defined transition | Evidence of quantised energy levels |\n| **Ground state** | Lowest orbit n = 1, E = −13.6 eV | Normal state of hydrogen |\n| **Excited state** | Any orbit n > 1 | Reached by absorbing energy |\n| **Ionisation energy** | Energy to take the electron from n = 1 to n = ∞ = 13.6 eV = 2.18 × 10⁻¹⁸ J | The magnitude of E₁ |\n| **Series limit** | The shortest wavelength of a series (n₂ → ∞) | Boundary of the series |\n| **Spectral series** | Family of lines sharing one lower level n₁ | Named after their discoverers |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why lines, not a rainbow\n\nClassical physics: an orbiting electron radiates continuously, spirals inward, and the spectrum should be continuous. Bohr: orbits are **stationary** — no radiation while the electron stays put. Radiation happens **only during a jump**, and the jump energy is quantised, so the photon wavelength is one fixed value per jump. Millions of atoms making the same jump produce one bright line; different jumps produce different lines — a **line spectrum**.\n\n### 4.2 Emission vs absorption\n\n- **Emission spectrum:** excited atoms (flame, discharge tube) **release** photons falling down — bright lines on a dark background.\n- **Absorption spectrum:** white light passes through cool hydrogen gas; atoms **remove** exactly the photons whose energy matches an upward jump — dark lines on a continuous background at the **same wavelengths**.\n- Solar spectrum's Fraunhofer dark lines are absorption lines of elements in the solar atmosphere — the same physics reads the composition of stars.\n\n### 4.3 Worked numerical — NEB 2022 (3m, verified PYQ)\n\n**Q: Using Eₙ = −2.18 × 10⁻¹⁸/n² J, calculate the energy of the electron in the second orbit of hydrogen and the wavelength of the photon emitted when the electron falls from the third to the second orbit. Express the wavelength in nm.**\n\n**Step 1 — Energy of the second orbit:**\nE₂ = −2.18 × 10⁻¹⁸ / 2² = **−5.45 × 10⁻¹⁹ J**\n\n**Step 2 — Energy released (3 → 2):**\nΔE = 2.18 × 10⁻¹⁸ (1/2² − 1/3²) = 2.18 × 10⁻¹⁸ × (1/4 − 1/9) = 2.18 × 10⁻¹⁸ × 5/36 = **3.03 × 10⁻¹⁹ J**\n\n**Step 3 — Wavelength (λ = hc/ΔE):**\nλ = (6.63 × 10⁻³⁴ × 3 × 10⁸) / 3.03 × 10⁻¹⁹ = 6.56 × 10⁻⁷ m ≈ **656 nm** — the red Hα line of the Balmer series.\n\n### 4.4 Worked numerical — series limit\n\n**Q: Find the shortest wavelength of the Lyman series.**\nSeries limit: n₂ → ∞, so 1/λ = R(1/1² − 0) = R → λ = 1/R = 1/1.097 × 10⁷ = **9.12 × 10⁻⁸ m = 91.2 nm** (extreme UV).\n\n### 4.5 Hydrogen-like species\n\nFor He⁺, Li²⁺ (one electron only), the equation becomes Eₙ = −13.6 Z²/n² eV and 1/λ = RZ²(1/n₁² − 1/n₂²) — the spectrum shifts by the factor Z², which is why He⁺ lines appear at λ/4 of the hydrogen positions.",
+    "## 5. Comparison Tables\n\n**Emission vs absorption spectrum**\n\n| Basis | Emission spectrum | Absorption spectrum |\n|---|---|---|\n| Source | Excited atoms releasing energy | Cool gas removing energy from white light |\n| Appearance | Bright lines on dark background | Dark lines on continuous background |\n| Electron jump | Downward (n₂ → n₁) | Upward (n₁ → n₂) |\n| Example | Hydrogen discharge tube | Fraunhofer lines of the sun |\n\n**Similarities:** both arise from the same quantised jumps; the line wavelengths are identical in both.\n\n**Continuous vs line vs band spectra**\n\n| Basis | Continuous | Line | Band |\n|---|---|---|---|\n| Emitter | Hot dense bodies (filament) | Excited **atoms** in gases | Excited **molecules** |\n| Distribution | All wavelengths | Discrete wavelengths | Close groups of lines |\n| Example | Incandescent bulb, filament | Hydrogen discharge tube | N₂, CN bands |",
+    "## 6. Common Confusions\n\n**Series limit vs first line:** the limit (n₂ → ∞) is the *shortest* wavelength; the first line (smallest gap, e.g. 3 → 2) is the *longest* — students swap them.",
+    "**Balmer vs Lyman direction:** Lyman needs jumps **down to n = 1** (from any higher level); Balmer needs jumps **down to n = 2**. A 3 → 2 jump is Balmer even though it starts at n = 3.",
+    "**Rydberg sign convention:** 1/λ = R(1/n₁² − 1/n₂²) with n₁ the **lower** level; writing the terms the other way gives a negative 1/λ — physically meaningless.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Why does hydrogen produce a line spectrum rather than a continuous spectrum?** Because Bohr orbits are quantised and stationary: radiation is emitted only in jumps between fixed levels, so each photon has one definite energy — discrete lines, not a continuum.",
+    "**NEB-style (3m): Calculate the wavelength of the Hα line (3 → 2).** 1/λ = 1.097 × 10⁷ (1/4 − 1/9) = 1.097 × 10⁷ × 5/36 = 1.524 × 10⁶ m⁻¹ → λ = 6.56 × 10⁻⁷ m = **656.3 nm**.",
+    "**NEB-style (3m): The second line of the Balmer series (4 → 2).** 1/λ = 1.097 × 10⁷ (1/4 − 1/16) = 1.097 × 10⁷ × 3/16 → λ = **486.1 nm** (Hβ, blue-green)."
   ],
   "confusion": [
-    "❌ The Balmer series lies in the ultraviolet. ✅ Balmer (n₁ = 2) is visible; Lyman (n₁ = 1) is UV and Paschen onward are IR.",
-    "❌ A ground-state hydrogen atom can emit a line. ✅ Emission needs excitation first; the ground state can only absorb.",
-    "❌ Within a series the lines get farther apart. ✅ They crowd together and converge at the series limit.",
-    "❌ Absorption lines mean the atom lost energy. ✅ The atom absorbs exactly the photons matching its level gaps, so those wavelengths are missing from the transmitted beam.",
-    "❌ Every line requires n₂ − n₁ = 1. ✅ Any n₂ > n₁ gives a line; the number of lines from level n is n(n − 1)/2.",
-    "❌ The Balmer series starts from n = 1. ✅ Balmer lines end at n₁ = 2; the lower level defines the series, not the upper one.",
-    "❌ The number of lines from level n is n − 1. ✅ That counts one series only; the total is n(n − 1)/2.",
-    "❌ The series limit is the strongest line. ✅ It is the *convergence* point where lines merge into the ionisation continuum.",
-    "❌ R is an empirical fitted constant with no origin. ✅ Bohr derived it from m, e, h and c — a theoretical prediction confirmed by experiment.",
-    "❌ ν̄ is the frequency. ✅ It is the wave number (1/λ); frequency ν = c·ν̄.",
-    "❌ The same R applies unchanged to He⁺. ✅ Multiply by Z² (and apply the reduced-mass correction for precision)."
+    "**Orbit vs jump:** energy is *possessed* in an orbit but *radiated only during a jump* between orbits — the orbit itself emits nothing.",
+    "**n₁ vs n₂:** in the Rydberg equation n₁ is the **lower (final)** level and n₂ the **upper (initial)** level; reversing them gives a negative result."
   ],
   "practice": [
-    "Explain the origin of the line spectrum of hydrogen using Bohr's postulates.",
-    "Write the Rydberg equation and compute the wavelength of the first Balmer line.",
-    "Name the hydrogen series lying in the visible region and give the regions of the others.",
-    "Calculate the wave number and photon energy for the n = 4 → 2 transition in hydrogen.",
-    "How many spectral lines are possible when an excited hydrogen atom de-excites from n = 5?",
-    "Tabulate the five series of hydrogen with their regions, first members and series limits.",
-    "How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state?",
-    "Calculate the series limit of the Paschen series.",
-    "Name the series whose lines fall in the visible region and identify its first line.",
-    "Derive the Rydberg equation from Bohr's energy levels.",
-    "Calculate the wavelength of the second line of the Balmer series (4 → 2).",
-    "Find the series limit of the Brackett series.",
-    "A line of He⁺ has the same wavelength as a Balmer line of H; relate their quantum numbers using the Z² factor."
+    "Why is the Balmer series the only one in the visible region?",
+    "A hydrogen atom absorbs a photon and reaches n = 4. List every possible emission line it can subsequently produce.",
+    "Why do the spectral lines of a series come closer together as n₂ increases?"
   ],
   "formulas": [
-    "$$\\frac{1}{\\lambda}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\quad R=1.097\\times10^{7}\\ \\text{m}^{-1}$$",
-    "$$h\\nu=\\Delta E=E_{2}-E_{1},\\qquad \\lambda(\\text{nm})=\\frac{1240}{\\Delta E(\\text{eV})}$$",
-    "$$\\text{number of lines from level } n=\\frac{n(n-1)}{2}$$",
-    "$$\\bar{\\nu}=R\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\qquad \\bar{\\nu}_{limit}=\\frac{R}{n_{1}^{2}}$$",
-    "$$\\text{lines from level }n=\\frac{n(n-1)}{2}$$",
-    "$$R=\\frac{2\\pi^{2}me^{4}}{h^{3}c}=1.097\\times10^{7}\\ \\text{m}^{-1}=109677\\ \\text{cm}^{-1}$$",
-    "$$\\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right);\\qquad \\lambda(\\text{nm})=\\frac{10^{7}}{\\bar{\\nu}(\\text{cm}^{-1})}$$"
+    "- Eₙ = −2.18 × 10⁻¹⁸ J / n² = −13.6 eV / n²\n- hν = E₂ − E₁ = 2.18 × 10⁻¹⁸ (1/n₁² − 1/n₂²) J\n- 1/λ = R (1/n₁² − 1/n₂²), R = 1.097 × 10⁷ m⁻¹\n- λ = hc/ΔE; series limit λ = n₁²/R\n- Hydrogen-like ions: Eₙ = −13.6 Z²/n² eV"
   ],
   "universalFacts": [
-    "Hα = 656.3 nm (red) is the first Balmer line; Lyman limit = 91.2 nm; Balmer limit = 364.6 nm.",
-    "R = 1.097 × 10⁷ m⁻¹ = 109 678 cm⁻¹ for hydrogen.",
-    "The Balmer series was discovered first (1885) because it alone lies in the visible region.",
-    "answer pattern for \"Spectrum of hydrogen atom\": define → method → result. Structure earns the marks on 6–10 mark questions.",
-    "Balmer (1885) found the visible series before the electron was discovered — a purely empirical formula at first.",
-    "The Lyman limit 91.2 nm marks the ionisation threshold of ground-state hydrogen.",
-    "Hα at 656.3 nm is the reddest strong line in astronomy — used to map hydrogen nebulae.",
-    "R was known experimentally to 6 figures before Bohr — the theory matched without fitting.",
-    "The reduced-mass shift of the D line (²H) versus H line identified deuterium in 1932.",
-    "Ritz's combination principle: the wave number of one line equals the sum/difference of two others sharing a level."
+    "Hydrogen is the most abundant element in the universe (~75% by mass), so its Balmer lines dominate visible stellar spectra — Hα is how astronomers map nebulae and solar chromosphere."
   ],
   "examples": [
-    "**Problem:** Wavelength of the first Balmer line (n = 3 → 2). **Solution:** 1/λ = 1.097×10⁷(1/4 − 1/9) = 1.524×10⁶ m⁻¹ → λ = 656 nm (Hα).",
-    "**Problem:** Energy of the photon for n = 4 → 2. **Solution:** ΔE = 13.6(1/4 − 1/16) = 2.55 eV; λ = 1240/2.55 ≈ 486 nm (Hβ).",
-    "**Problem:** Lines from n = 5 to ground. **Solution:** 5(5−1)/2 = 10 lines — 4 Lyman, 3 Balmer, 2 Paschen, 1 Brackett.",
-    "**Problem:** Shortest Balmer wavelength. **Solution:** the series limit, n₂ → ∞: λ = 1/(R/4) = 4/R = 364.6 nm.",
-    "**Problem:** λ of the Hβ line (4 → 2). **Solution:** ν̄ = 1.097×10⁷(1/4 − 1/16) = 1.097×10⁷ × 0.1875 = 2.057×10⁶ m⁻¹ → λ = 486 nm.",
-    "**Problem:** Wave number of the Paschen limit. **Solution:** ν̄ = R/9 = 1.22×10⁶ m⁻¹ → λ = 820.4 nm."
+    "***Hα = 656.3 nm*** — the 3 → 2 Balmer jump; the same ΔE (3.03 × 10⁻¹⁹ J) computed from Eₙ = −2.18 × 10⁻¹⁸/n² J lands on exactly this wavelength."
   ],
   "importantNotes": [
-    "Remember the series-to-region mapping: Lyman UV, Balmer visible, Paschen/Brackett/Pfund IR — a standard one-mark question.",
-    "Convert cm⁻¹ to m⁻¹ (× 100) before using R in SI; unit slips are the commonest error here.",
-    "Memorise the three visible-region Balmer wavelengths (656, 486, 434 nm) — they recur in numericals.",
-    "Series is named by its *lower* level n₁; the upper level varies.",
-    "Keep R in one unit system throughout a calculation; the cm⁻¹↔m⁻¹ factor of 100 is the classic slip.",
-    "For He⁺, Li²⁺ multiply by Z² before inverting for λ."
+    "Verified PYQ: NEB 2022 3m — Eₙ = −2.18 × 10⁻¹⁸/n² J, E₂ and λ(3→2) in nm (solved above). Other items are NEB-style practice."
   ],
   "visualType": "hydrogen-spectrum",
   "keyPoints": [
-    "• Spectrum of hydrogen atom"
+    "Eₙ = −13.6 eV/n²; photon rule hν = E₂ − E₁; Rydberg 1/λ = R(1/n₁² − 1/n₂²), R = 1.097 × 10⁷ m⁻¹. Five series: Lyman (n₁ = 1, UV, limit 91.2 nm), Balmer (n₁ = 2, visible, limit 364.6 nm), Paschen (n₁ = 3), Brackett (n₁ = 4), Pfund (n₁ = 5) — all infrared. Only Balmer is visible: Hα 656.3 nm, Hβ 486.1 nm, Hγ 434 nm, Hδ 410.2 nm."
   ],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "**NEB 2022 (3m): Using Eₙ = −2.18 × 10⁻¹⁸/n² J, calculate the energy of the electron in the second orbit of a hydrogen atom and the wavelength of the photon emitted when the electron falls from the third to the second orbit (in nm).** — E₂ = −2.18 × 10⁻¹⁸/4 = **−5.45 × 10⁻¹⁹ J**. ΔE = 2.18 × 10⁻¹⁸ (1/4 − 1/9) = 2.18 × 10⁻¹⁸ × 5/36 = **3.03 × 10⁻¹⁹ J**. λ = hc/ΔE = (6.63 × 10⁻³⁴ × 3 × 10⁸)/(3.03 × 10⁻¹⁹) = 6.56 × 10⁻⁷ m = **656 nm** (Hα, Balmer).",
+    "**NEB-style (3m): Name the five spectral series of hydrogen with their lower levels and regions.** — Lyman (n₁ = 1, ultraviolet), Balmer (n₁ = 2, visible), Paschen (n₁ = 3, infrared), Brackett (n₁ = 4, infrared), Pfund (n₁ = 5, far infrared). Only Balmer lies in the visible region.",
+    "**NEB-style (2m): What is the ionisation energy of hydrogen in eV and joule?** — Ionisation takes the electron from n = 1 to n = ∞: ΔE = 0 − (−13.6 eV) = **13.6 eV = 2.18 × 10⁻¹⁸ J** (the magnitude of E₁).",
+    "**NEB-style (3m): Distinguish emission and absorption spectra with one example each.** — Emission: excited atoms emit photons on downward jumps — bright lines on dark background (hydrogen discharge tube). Absorption: cool gas removes photons matching upward jumps from white light — dark lines on continuous background (Fraunhofer lines of the sun). Same wavelengths in both, because the level gaps are the same."
+  ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"Spectrum of hydrogen atom\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The energy of an electron in the second orbit of hydrogen is:",
       "options": [
-        "True",
-        "False"
+        "−13.6 eV",
+        "−6.8 eV",
+        "−3.4 eV",
+        "−1.51 eV"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C",
+      "explanation": "−13.6/4 = −3.4 eV = −5.45 × 10⁻¹⁹ J."
     },
     {
-      "question": "The first line of the Balmer series is produced by the transition:",
+      "question": "The Balmer series lies in the:",
+      "options": [
+        "Ultraviolet region",
+        "Visible region",
+        "Infrared region",
+        "X-ray region"
+      ],
+      "answer": "B",
+      "explanation": "n₁ = 2 transitions fall in the visible."
+    },
+    {
+      "question": "The Rydberg constant has the value:",
+      "options": [
+        "1.097 × 10⁷ m⁻¹",
+        "1.097 × 10⁷ m",
+        "6.63 × 10⁻³⁴ m⁻¹",
+        "1.6 × 10⁻¹⁹ m⁻¹"
+      ],
+      "answer": "A",
+      "explanation": "R = 1.097 × 10⁷ m⁻¹."
+    },
+    {
+      "question": "The Hα line of Balmer series is produced by the transition:",
       "options": [
         "2 → 1",
         "3 → 2",
         "4 → 2",
-        "3 → 1"
+        "5 → 2"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "3 → 2 is the first Balmer line, 656.3 nm."
     },
     {
-      "question": "The series limit of the Lyman series corresponds to:",
+      "question": "The series limit of the Lyman series is about:",
       "options": [
-        "91.2 nm",
-        "121.6 nm",
         "364.6 nm",
-        "656.3 nm"
+        "91.2 nm",
+        "656.3 nm",
+        "1875 nm"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "λ = 1/R = 91.2 nm."
     },
     {
-      "question": "The Rydberg constant in SI units is:",
+      "question": "Paschen series is produced by jumps ending at:",
       "options": [
-        "1.097 × 10⁷ m⁻¹",
-        "1.097 × 10⁵ m⁻¹",
-        "6.626 × 10⁻³⁴ m⁻¹",
-        "1.097 × 10⁷ cm⁻¹"
+        "n = 1",
+        "n = 2",
+        "n = 3",
+        "n = 4"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "Paschen: n₁ = 3, infrared."
+    },
+    {
+      "question": "An absorption spectrum shows:",
+      "options": [
+        "Bright lines on dark background",
+        "Dark lines on continuous background",
+        "Continuous colours",
+        "Only UV lines"
+      ],
+      "answer": "B",
+      "explanation": "Cool gas removes matching photons — Fraunhofer lines."
+    },
+    {
+      "question": "The spectrum of He⁺ compared with hydrogen is shifted by a factor of:",
+      "options": [
+        "2",
+        "4",
+        "9",
+        "1/2"
+      ],
+      "answer": "B",
+      "explanation": "E ∝ Z², so wavelengths shrink by Z² = 4."
     }
   ],
   "source": "generated",
@@ -170,6 +145,165 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "summary": "Spectrum of hydrogen atom (Atomic Structure, Chemistry, class-11-notes) covers Spectrum of hydrogen atom. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "filename": "03-hydrogen-spectrum.json"
+  "summary": "Bohr explained the hydrogen line spectrum: electrons occupy quantised orbits Eₙ = −13.6 eV/n², and light is emitted only in downward jumps, each photon carrying exactly the gap (hν = E₂ − E₁). The Rydberg equation 1/λ = R(1/n₁² − 1/n₂²), R = 1.097 × 10⁷ m⁻¹, predicts five series named for their lower level: Lyman (n₁ = 1, UV), Balmer (n₁ = 2, the only visible series — Hα 656.3 nm, Hβ 486.1 nm), Paschen, Brackett and Pfund (infrared). NEB 2022's numerical (E₂ = −5.45 × 10⁻¹⁹ J; λ(3→2) = 656 nm) is the template: compute ΔE, then λ = hc/ΔE. The line spectrum is the experimental certificate of quantisation — and the fingerprint by which we read the composition of stars.",
+  "filename": "03-hydrogen-spectrum.json",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Fingerprint That Saved Bohr\n\nRutherford's model could not explain why atomic hydrogen emits **discrete coloured lines** instead of a continuous glow. Bohr (1913) turned that failure into a triumph: if electrons occupy only **quantised orbits**, an electron dropping from a higher orbit to a lower one emits a photon carrying exactly the energy gap — hν = E₂ − E₁. Each gap is fixed, so each line is fixed. The hydrogen spectrum is therefore the **experimental proof of quantisation**, and the model that predicts its wavelengths to 5 significant figures is the model NEB examines every year.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Energy of the nth orbit\n\n- Eₙ = −2.18 × 10⁻¹⁸ J / n² = **−13.6 eV / n²** (n = 1, 2, 3, …).\n- The **negative sign** means the electron is bound; E₁ = −13.6 eV is the **ground state**, E∞ = 0 is **ionisation**.\n- Energy gaps shrink as n grows — levels crowd together near the ionisation limit.\n\n### 2.2 The transition rule\n\nPhoton emitted when the electron falls from n₂ (upper) to n₁ (lower):\n\n**hν = E₂ − E₁ = 2.18 × 10⁻¹⁸ J (1/n₁² − 1/n₂²)**\n\n### 2.3 The Rydberg equation (wavelength form)\n\n**1/λ = R (1/n₁² − 1/n₂²)**, R = **1.097 × 10⁷ m⁻¹** (Rydberg constant), n₂ > n₁.\n\n### 2.4 The five spectral series (memorise the table — straight 3m)\n\n| Series | n₁ (lower) | n₂ (upper) | Spectral region | Series limit |\n|---|---|---|---|---|\n| **Lyman** | 1 | 2, 3, 4, … | **Ultraviolet** | 91.2 nm |\n| **Balmer** | 2 | 3, 4, 5, … | **Visible** | 364.6 nm |\n| **Paschen** | 3 | 4, 5, 6, … | Infrared | 1875 nm |\n| **Brackett** | 4 | 5, 6, 7, … | Infrared | 4051 nm |\n| **Pfund** | 5 | 6, 7, 8, … | Infrared (far) | 7460 nm |\n\nOnly **Balmer** lies in the visible region — the four visible lines are called **Hα (656.3 nm, red), Hβ (486.1 nm), Hγ (434.0 nm), Hδ (410.2 nm)**.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Why it matters |\n|---|---|---|\n| **Line spectrum** | Discrete wavelengths emitted by excited atoms, each from one defined transition | Evidence of quantised energy levels |\n| **Ground state** | Lowest orbit n = 1, E = −13.6 eV | Normal state of hydrogen |\n| **Excited state** | Any orbit n > 1 | Reached by absorbing energy |\n| **Ionisation energy** | Energy to take the electron from n = 1 to n = ∞ = 13.6 eV = 2.18 × 10⁻¹⁸ J | The magnitude of E₁ |\n| **Series limit** | The shortest wavelength of a series (n₂ → ∞) | Boundary of the series |\n| **Spectral series** | Family of lines sharing one lower level n₁ | Named after their discoverers |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why lines, not a rainbow\n\nClassical physics: an orbiting electron radiates continuously, spirals inward, and the spectrum should be continuous. Bohr: orbits are **stationary** — no radiation while the electron stays put. Radiation happens **only during a jump**, and the jump energy is quantised, so the photon wavelength is one fixed value per jump. Millions of atoms making the same jump produce one bright line; different jumps produce different lines — a **line spectrum**.\n\n### 4.2 Emission vs absorption\n\n- **Emission spectrum:** excited atoms (flame, discharge tube) **release** photons falling down — bright lines on a dark background.\n- **Absorption spectrum:** white light passes through cool hydrogen gas; atoms **remove** exactly the photons whose energy matches an upward jump — dark lines on a continuous background at the **same wavelengths**.\n- Solar spectrum's Fraunhofer dark lines are absorption lines of elements in the solar atmosphere — the same physics reads the composition of stars.\n\n### 4.3 Worked numerical — NEB 2022 (3m, verified PYQ)\n\n**Q: Using Eₙ = −2.18 × 10⁻¹⁸/n² J, calculate the energy of the electron in the second orbit of hydrogen and the wavelength of the photon emitted when the electron falls from the third to the second orbit. Express the wavelength in nm.**\n\n**Step 1 — Energy of the second orbit:**\nE₂ = −2.18 × 10⁻¹⁸ / 2² = **−5.45 × 10⁻¹⁹ J**\n\n**Step 2 — Energy released (3 → 2):**\nΔE = 2.18 × 10⁻¹⁸ (1/2² − 1/3²) = 2.18 × 10⁻¹⁸ × (1/4 − 1/9) = 2.18 × 10⁻¹⁸ × 5/36 = **3.03 × 10⁻¹⁹ J**\n\n**Step 3 — Wavelength (λ = hc/ΔE):**\nλ = (6.63 × 10⁻³⁴ × 3 × 10⁸) / 3.03 × 10⁻¹⁹ = 6.56 × 10⁻⁷ m ≈ **656 nm** — the red Hα line of the Balmer series.\n\n### 4.4 Worked numerical — series limit\n\n**Q: Find the shortest wavelength of the Lyman series.**\nSeries limit: n₂ → ∞, so 1/λ = R(1/1² − 0) = R → λ = 1/R = 1/1.097 × 10⁷ = **9.12 × 10⁻⁸ m = 91.2 nm** (extreme UV).\n\n### 4.5 Hydrogen-like species\n\nFor He⁺, Li²⁺ (one electron only), the equation becomes Eₙ = −13.6 Z²/n² eV and 1/λ = RZ²(1/n₁² − 1/n₂²) — the spectrum shifts by the factor Z², which is why He⁺ lines appear at λ/4 of the hydrogen positions.",
+      "## 5. Comparison Tables\n\n**Emission vs absorption spectrum**\n\n| Basis | Emission spectrum | Absorption spectrum |\n|---|---|---|\n| Source | Excited atoms releasing energy | Cool gas removing energy from white light |\n| Appearance | Bright lines on dark background | Dark lines on continuous background |\n| Electron jump | Downward (n₂ → n₁) | Upward (n₁ → n₂) |\n| Example | Hydrogen discharge tube | Fraunhofer lines of the sun |\n\n**Similarities:** both arise from the same quantised jumps; the line wavelengths are identical in both.\n\n**Continuous vs line vs band spectra**\n\n| Basis | Continuous | Line | Band |\n|---|---|---|---|\n| Emitter | Hot dense bodies (filament) | Excited **atoms** in gases | Excited **molecules** |\n| Distribution | All wavelengths | Discrete wavelengths | Close groups of lines |\n| Example | Incandescent bulb, filament | Hydrogen discharge tube | N₂, CN bands |",
+      "## 6. Common Confusions\n\n**Series limit vs first line:** the limit (n₂ → ∞) is the *shortest* wavelength; the first line (smallest gap, e.g. 3 → 2) is the *longest* — students swap them.",
+      "**Balmer vs Lyman direction:** Lyman needs jumps **down to n = 1** (from any higher level); Balmer needs jumps **down to n = 2**. A 3 → 2 jump is Balmer even though it starts at n = 3.",
+      "**Rydberg sign convention:** 1/λ = R(1/n₁² − 1/n₂²) with n₁ the **lower** level; writing the terms the other way gives a negative 1/λ — physically meaningless.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Why does hydrogen produce a line spectrum rather than a continuous spectrum?** Because Bohr orbits are quantised and stationary: radiation is emitted only in jumps between fixed levels, so each photon has one definite energy — discrete lines, not a continuum.",
+      "**NEB-style (3m): Calculate the wavelength of the Hα line (3 → 2).** 1/λ = 1.097 × 10⁷ (1/4 − 1/9) = 1.097 × 10⁷ × 5/36 = 1.524 × 10⁶ m⁻¹ → λ = 6.56 × 10⁻⁷ m = **656.3 nm**.",
+      "**NEB-style (3m): The second line of the Balmer series (4 → 2).** 1/λ = 1.097 × 10⁷ (1/4 − 1/16) = 1.097 × 10⁷ × 3/16 → λ = **486.1 nm** (Hβ, blue-green)."
+    ],
+    "confusion": [
+      "**Orbit vs jump:** energy is *possessed* in an orbit but *radiated only during a jump* between orbits — the orbit itself emits nothing.",
+      "**n₁ vs n₂:** in the Rydberg equation n₁ is the **lower (final)** level and n₂ the **upper (initial)** level; reversing them gives a negative result."
+    ],
+    "keyPoints": [
+      "Eₙ = −13.6 eV/n²; photon rule hν = E₂ − E₁; Rydberg 1/λ = R(1/n₁² − 1/n₂²), R = 1.097 × 10⁷ m⁻¹. Five series: Lyman (n₁ = 1, UV, limit 91.2 nm), Balmer (n₁ = 2, visible, limit 364.6 nm), Paschen (n₁ = 3), Brackett (n₁ = 4), Pfund (n₁ = 5) — all infrared. Only Balmer is visible: Hα 656.3 nm, Hβ 486.1 nm, Hγ 434 nm, Hδ 410.2 nm."
+    ],
+    "importantConcepts": [
+      "**Quantisation → line spectrum:** fixed level gaps give fixed photon energies; each line is one transition, which is why spectra are element fingerprints."
+    ],
+    "examples": [
+      "***Hα = 656.3 nm*** — the 3 → 2 Balmer jump; the same ΔE (3.03 × 10⁻¹⁹ J) computed from Eₙ = −2.18 × 10⁻¹⁸/n² J lands on exactly this wavelength."
+    ],
+    "universalFacts": [
+      "Hydrogen is the most abundant element in the universe (~75% by mass), so its Balmer lines dominate visible stellar spectra — Hα is how astronomers map nebulae and solar chromosphere."
+    ],
+    "importantStatements": [
+      "\"Each line of the hydrogen spectrum corresponds to one definite electronic jump between two quantised orbits.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2022 3m — Eₙ = −2.18 × 10⁻¹⁸/n² J, E₂ and λ(3→2) in nm (solved above). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"1-2-3-4-5 → Lyman-Balmer-Paschen-Brackett-Pfund; UV-Visible-IR-IR-IR.\" Series limit = 1/(R·n₁²)."
+    ],
+    "examNotes": [
+      "Always compute ΔE first, then λ = hc/ΔE; quote λ in nm for NEB (656 nm, not 6.56 × 10⁻⁷ m alone). Keep 3 significant figures."
+    ],
+    "formulas": [
+      "- Eₙ = −2.18 × 10⁻¹⁸ J / n² = −13.6 eV / n²\n- hν = E₂ − E₁ = 2.18 × 10⁻¹⁸ (1/n₁² − 1/n₂²) J\n- 1/λ = R (1/n₁² − 1/n₂²), R = 1.097 × 10⁷ m⁻¹\n- λ = hc/ΔE; series limit λ = n₁²/R\n- Hydrogen-like ions: Eₙ = −13.6 Z²/n² eV"
+    ],
+    "practice": [
+      "Why is the Balmer series the only one in the visible region?",
+      "A hydrogen atom absorbs a photon and reaches n = 4. List every possible emission line it can subsequently produce.",
+      "Why do the spectral lines of a series come closer together as n₂ increases?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2022 (3m): Using Eₙ = −2.18 × 10⁻¹⁸/n² J, calculate the energy of the electron in the second orbit of a hydrogen atom and the wavelength of the photon emitted when the electron falls from the third to the second orbit (in nm).** — E₂ = −2.18 × 10⁻¹⁸/4 = **−5.45 × 10⁻¹⁹ J**. ΔE = 2.18 × 10⁻¹⁸ (1/4 − 1/9) = 2.18 × 10⁻¹⁸ × 5/36 = **3.03 × 10⁻¹⁹ J**. λ = hc/ΔE = (6.63 × 10⁻³⁴ × 3 × 10⁸)/(3.03 × 10⁻¹⁹) = 6.56 × 10⁻⁷ m = **656 nm** (Hα, Balmer).",
+      "**NEB-style (3m): Name the five spectral series of hydrogen with their lower levels and regions.** — Lyman (n₁ = 1, ultraviolet), Balmer (n₁ = 2, visible), Paschen (n₁ = 3, infrared), Brackett (n₁ = 4, infrared), Pfund (n₁ = 5, far infrared). Only Balmer lies in the visible region.",
+      "**NEB-style (2m): What is the ionisation energy of hydrogen in eV and joule?** — Ionisation takes the electron from n = 1 to n = ∞: ΔE = 0 − (−13.6 eV) = **13.6 eV = 2.18 × 10⁻¹⁸ J** (the magnitude of E₁).",
+      "**NEB-style (3m): Distinguish emission and absorption spectra with one example each.** — Emission: excited atoms emit photons on downward jumps — bright lines on dark background (hydrogen discharge tube). Absorption: cool gas removes photons matching upward jumps from white light — dark lines on continuous background (Fraunhofer lines of the sun). Same wavelengths in both, because the level gaps are the same."
+    ]
+  },
+  "importantConcepts": [
+    "**Quantisation → line spectrum:** fixed level gaps give fixed photon energies; each line is one transition, which is why spectra are element fingerprints."
+  ],
+  "importantStatements": [
+    "\"Each line of the hydrogen spectrum corresponds to one definite electronic jump between two quantised orbits.\""
+  ],
+  "examShortTricks": [
+    "\"1-2-3-4-5 → Lyman-Balmer-Paschen-Brackett-Pfund; UV-Visible-IR-IR-IR.\" Series limit = 1/(R·n₁²)."
+  ],
+  "examNotes": [
+    "Always compute ΔE first, then λ = hc/ΔE; quote λ in nm for NEB (656 nm, not 6.56 × 10⁻⁷ m alone). Keep 3 significant figures."
+  ],
+  "mcs": [
+    {
+      "question": "The energy of an electron in the second orbit of hydrogen is:",
+      "options": [
+        "−13.6 eV",
+        "−6.8 eV",
+        "−3.4 eV",
+        "−1.51 eV"
+      ],
+      "answer": "C",
+      "explanation": "−13.6/4 = −3.4 eV = −5.45 × 10⁻¹⁹ J."
+    },
+    {
+      "question": "The Balmer series lies in the:",
+      "options": [
+        "Ultraviolet region",
+        "Visible region",
+        "Infrared region",
+        "X-ray region"
+      ],
+      "answer": "B",
+      "explanation": "n₁ = 2 transitions fall in the visible."
+    },
+    {
+      "question": "The Rydberg constant has the value:",
+      "options": [
+        "1.097 × 10⁷ m⁻¹",
+        "1.097 × 10⁷ m",
+        "6.63 × 10⁻³⁴ m⁻¹",
+        "1.6 × 10⁻¹⁹ m⁻¹"
+      ],
+      "answer": "A",
+      "explanation": "R = 1.097 × 10⁷ m⁻¹."
+    },
+    {
+      "question": "The Hα line of Balmer series is produced by the transition:",
+      "options": [
+        "2 → 1",
+        "3 → 2",
+        "4 → 2",
+        "5 → 2"
+      ],
+      "answer": "B",
+      "explanation": "3 → 2 is the first Balmer line, 656.3 nm."
+    },
+    {
+      "question": "The series limit of the Lyman series is about:",
+      "options": [
+        "364.6 nm",
+        "91.2 nm",
+        "656.3 nm",
+        "1875 nm"
+      ],
+      "answer": "B",
+      "explanation": "λ = 1/R = 91.2 nm."
+    },
+    {
+      "question": "Paschen series is produced by jumps ending at:",
+      "options": [
+        "n = 1",
+        "n = 2",
+        "n = 3",
+        "n = 4"
+      ],
+      "answer": "C",
+      "explanation": "Paschen: n₁ = 3, infrared."
+    },
+    {
+      "question": "An absorption spectrum shows:",
+      "options": [
+        "Bright lines on dark background",
+        "Dark lines on continuous background",
+        "Continuous colours",
+        "Only UV lines"
+      ],
+      "answer": "B",
+      "explanation": "Cool gas removes matching photons — Fraunhofer lines."
+    },
+    {
+      "question": "The spectrum of He⁺ compared with hydrogen is shifted by a factor of:",
+      "options": [
+        "2",
+        "4",
+        "9",
+        "1/2"
+      ],
+      "answer": "B",
+      "explanation": "E ∝ Z², so wavelengths shrink by Z² = 4."
+    }
+  ]
 }
