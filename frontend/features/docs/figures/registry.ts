@@ -36,6 +36,19 @@ import { MitochondrionCutaway } from "./mitochondrion-cutaway";
 import { ChloroplastCutaway } from "./chloroplast-cutaway";
 import { NucleusStructure } from "./nucleus-structure";
 import { GolgiSecretoryPathway } from "./golgi-secretory-pathway";
+import { CarbohydrateTypes } from "./carbohydrate-types";
+import { ProteinStructureLevels } from "./protein-structure-levels";
+import { TriglycerideFormation } from "./triglyceride-formation";
+import { NucleotideDnaHelix } from "./nucleotide-dna-helix";
+import { CellTheoryTimeline } from "./cell-theory-timeline";
+import { ProkaryoteVsEukaryote } from "./prokaryote-vs-eukaryote";
+import { CellSizeScale } from "./cell-size-scale";
+import { UnicellularToMulticellular } from "./unicellular-to-multicellular";
+import { MicroscopeComparison } from "./microscope-comparison";
+import { CellCyclePhases } from "./cell-cycle-phases";
+import { MeiosisIStages } from "./meiosis-one-stages";
+import { CrossingOver } from "./crossing-over";
+import { MitosisVsMeiosisOutcome } from "./mitosis-vs-meiosis-outcome";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -213,6 +226,74 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Four panels showing carbohydrates, proteins, lipids and nucleic acids with monomers and functions",
         keyword: "carbohydrates",
       },
+      {
+        Component: CarbohydrateTypes,
+        caption:
+          "Carbohydrates from three angles: single monosaccharides (glucose, fructose), pairs joined by glycosidic bonds (sucrose, lactose, maltose), and long storage or structural polysaccharide chains (starch, glycogen, cellulose).",
+        alt: "Carbohydrate classification from monosaccharides through glycosidic-bonded disaccharides to polysaccharide chains",
+        keyword: "monosaccharide",
+      },
+      {
+        Component: ProteinStructureLevels,
+        caption:
+          "Protein structure at four levels: the amino-acid sequence (primary), hydrogen-bonded α-helices and β-sheets (secondary), the folded 3-D globule (tertiary), and multi-subunit assemblies like haemoglobin (quaternary).",
+        alt: "Four levels of protein structure from amino acid sequence to quaternary subunit assembly",
+        keyword: "peptide",
+      },
+      {
+        Component: TriglycerideFormation,
+        caption:
+          "How a fat is built: glycerol's three −OH groups each ester-bond to a fatty acid, releasing three water molecules. Straight saturated tails pack into solid fats; kinked unsaturated tails stay liquid as oils.",
+        alt: "Triglyceride formation from glycerol and three fatty acids with ester bonds and saturated versus unsaturated tails",
+        keyword: "ester",
+      },
+      {
+        Component: NucleotideDnaHelix,
+        caption:
+          "Nucleic acids in three zoom levels: one nucleotide (phosphate + sugar + base), the phosphodiester-linked backbone of a chain, and the double helix held together by A=T and G≡C complementary pairing.",
+        alt: "Nucleotide anatomy, polynucleotide chain and DNA double helix with complementary base pairing",
+        keyword: "nucleotide",
+      },
+    ],
+  },
+  "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells": {
+    title: "Cell introduction: prokaryotic and eukaryotic",
+    figures: [
+      {
+        Component: CellTheoryTimeline,
+        caption:
+          "Cell theory assembled over 190 years: Hooke names 'cells' in cork, Leeuwenhoek sees living microbes, Schleiden and Schwann claim all life is cellular, Virchow adds that cells come only from cells.",
+        alt: "Timeline of cell theory from Hooke 1665 to Virchow 1855 with the three tenets",
+        keyword: "cell theory",
+      },
+      {
+        Component: ProkaryoteVsEukaryote,
+        caption:
+          "Side-by-side: the prokaryote keeps its DNA naked in a nucleoid with 70S ribosomes and no internal compartments; the eukaryote wraps its DNA in a nuclear envelope and partitions work into membrane-bound organelles.",
+        alt: "Prokaryotic and eukaryotic cells side by side showing nucleoid versus true nucleus and organelles",
+        keyword: "prokaryotic",
+      },
+      {
+        Component: CellSizeScale,
+        caption:
+          "A logarithmic size ladder from virus (nm) through mycoplasma, bacterium and red blood cell (µm) to the egg (mm) — and why diffusion forces cells to stay small: surface area grows as r² but volume as r³.",
+        alt: "Logarithmic scale comparing virus, mycoplasma, bacterium, red blood cell, plant cell and egg sizes",
+        keyword: "unicellular",
+      },
+      {
+        Component: UnicellularToMulticellular,
+        caption:
+          "Levels of organisation: a unicellular Amoeba does every job alone, a Volvox colony shares the work, and multicellular life specialises cells into tissues, organs and organ systems — division of labour at every step.",
+        alt: "Organisation ladder from unicellular cell through colony, tissue and organ to complete organism",
+        keyword: "unicellular",
+      },
+      {
+        Component: MicroscopeComparison,
+        caption:
+          "How we see cells: the light microscope resolves about 0.2 µm and can watch living cells; the electron microscope resolves about 0.2 nm — revealing ribosomes, membranes and viruses — but only on dead, prepared specimens.",
+        alt: "Light microscope versus electron microscope with resolution limits and what each reveals",
+        keyword: "microscope",
+      },
     ],
   },
   "detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-r": {
@@ -271,6 +352,34 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Mitosis in six stages: interphase replicates the DNA, prophase condenses it, metaphase lines it on the equator, anaphase splits the chromatids, telophase rebuilds nuclei, and cytokinesis separates two identical daughter cells.",
         alt: "Six-cell sequence showing interphase, prophase, metaphase, anaphase, telophase and cytokinesis with chromosome behaviour",
         keyword: "prophase",
+      },
+      {
+        Component: CellCyclePhases,
+        caption:
+          "The cell cycle as a ring: G₁ growth, S DNA synthesis, G₂ preparation make up interphase (~90% of the cycle); the M phase then divides. Checkpoints between phases stop damaged cells from dividing.",
+        alt: "Cell cycle ring with G1, S, G2 interphase and M phase annotated",
+        keyword: "cell cycle",
+      },
+      {
+        Component: MeiosisIStages,
+        caption:
+          "Meiosis I, the reduction division: homologous chromosomes pair and cross over in prophase I, line up as pairs in metaphase I, and separate whole chromosomes in anaphase I — halving 2n to n without splitting centromeres.",
+        alt: "Meiosis I stages showing synapsis, crossing over, paired metaphase alignment and homolog separation",
+        keyword: "meiosis",
+      },
+      {
+        Component: CrossingOver,
+        caption:
+          "Crossing over close-up: paired maternal and paternal chromosomes break and rejoin at a chiasma, so two chromatids leave with swapped segments — new gene combinations that make every gamete unique.",
+        alt: "Crossing over between homologous chromosomes at a chiasma producing recombinant chromatids",
+        keyword: "crossing over",
+      },
+      {
+        Component: MitosisVsMeiosisOutcome,
+        caption:
+          "The decisive contrast: mitosis yields two identical diploid daughters for growth and repair; meiosis yields four different haploid gametes — the raw variation on which evolution acts.",
+        alt: "Mitosis producing two identical diploid cells versus meiosis producing four different haploid gametes",
+        keyword: "haploid",
       },
     ],
   },
