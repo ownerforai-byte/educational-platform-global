@@ -211,15 +211,22 @@ export const FREE_LLM_PROVIDERS: readonly FreeLlmProviderSpec[] = [
     name: "zai",
     label: "Z AI (Zhipu)",
     // Permanent free Flash tier (owner 2026-11-20: "just aion api key and z ai
-    // api key"). glm-4.7-flash is the free 200K-context GLM; GLM-5/5.2 and
-    // plain glm-4.7 bill per token — keep the -flash ids free.
+    // api key"). The Flash ids are the free ones; GLM-5/5.2 and plain glm-4.7
+    // bill per token.
+    // DEFAULT IS glm-4-flash, not 4.7: the reasoning Flash models (4.7/4.5) push
+    // `reasoning_content` FIRST, so a modest max_tokens returns an EMPTY
+    // `content` — which this transport reads as a failed attempt — and they
+    // 429 (code 1305 "service overloaded") under contention. Live-tested
+    // 2026-11-21: glm-4-flash 8/8 usable, 0 empty, 0 overloaded, ~1.4s; while
+    // glm-4.7-flash returned 429/empty within seconds. glm-4.6-flash is not
+    // permitted on this key (403 code 1220). ZAI_MODEL can pin a reasoning id.
     // TWO portals, TWO base urls: z.ai (email only) uses api.z.ai; the Chinese
     // open.bigmodel.cn uses its own host. ZAI_API_URL picks whichever is issued.
     baseUrl: "https://api.z.ai/api/paas/v4",
     baseUrlEnv: "ZAI_API_URL",
     envVars: ["ZAI_API_KEY", "ZHIPU_API_KEY", "GLM_API_KEY"],
     modelEnv: "ZAI_MODEL",
-    defaultModel: "glm-4.7-flash",
+    defaultModel: "glm-4-flash",
     timeoutEnv: "ZAI_TIMEOUT_MS",
     docsUrl: "https://z.ai/manage-apikey/apikey-list",
   },
