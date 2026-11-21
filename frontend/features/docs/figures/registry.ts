@@ -76,6 +76,34 @@ import { ChromosomeMorphology } from "./chromosome-morphology";
 import { CytokinesisContrast } from "./cytokinesis-contrast";
 import { CellCycleCheckpoints } from "./cell-cycle-checkpoints";
 import { AmitosisMitosisMeiosis } from "./amitosis-mitosis-meiosis";
+import { ThreeDomainsFeatures } from "./three-domains-features";
+import { MoneraCharacters } from "./monera-characters";
+import { NomenclatureCodes } from "./nomenclature-codes";
+import { FiveKingdomNutrition } from "./five-kingdom-nutrition";
+import { BacteriaVsArchaea } from "./bacteria-vs-archaea";
+import { VirusKingdomQuestion } from "./virus-kingdom-question";
+import { BinomialNameExamples } from "./binomial-name-examples";
+import { NepalFloraComposition } from "./nepal-flora-composition";
+import { WorldPlantDiversity } from "./world-plant-diversity";
+import { FloraThreatsChain } from "./flora-threats-chain";
+import { RhododendronCaseStudy } from "./rhododendron-case-study";
+import { FloraAltitudeTurnover } from "./flora-altitude-turnover";
+import { FloraUsesPanels } from "./flora-uses-panels";
+import { FloraEndemicWhy } from "./flora-endemic-why";
+import { FungalLifeCycleGeneral } from "./fungal-life-cycle-general";
+import { MycorrhizaSymbiosis } from "./mycorrhiza-symbiosis";
+import { FungalVsPlantCell } from "./fungal-vs-plant-cell";
+import { MyceliumNetwork } from "./mycelium-network";
+import { FungalEconomicBalance } from "./fungal-economic-balance";
+import { PhycomycetesProfile } from "./phycomycetes-profile";
+import { AscoVsBasidio } from "./asco-vs-basidio";
+import { MucorLifeCycleStages } from "./mucor-life-cycle-stages";
+import { ZygosporeFormationDetail } from "./zygospore-formation-detail";
+import { YeastIndustrialUses } from "./yeast-industrial-uses";
+import { MucorBreadHabitat } from "./mucor-bread-habitat";
+import { YeastVsBacteria } from "./yeast-vs-bacteria";
+import { YeastLifeCycleFull } from "./yeast-life-cycle-full";
+import { SporangiumZoom } from "./sporangium-zoom";
 import { BacterialShapes } from "./bacterial-shapes";
 import { BacterialNutritionModes } from "./bacterial-nutrition-modes";
 import { BacterialGrowthCurve } from "./bacterial-growth-curve";
@@ -1650,6 +1678,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Taxonomic hierarchy ladder with human and mango examples per rank",
         keyword: "hierarchy",
       },
+      {
+        Component: ThreeDomainsFeatures,
+        caption:
+          "Three domains, character by character: membrane lipid chemistry (ester vs ether), wall chemistry, RNA polymerase complexity and intron frequency — the molecular evidence that split prokaryotes in two.",
+        alt: "Three domain comparison table bacteria archaea eukarya across six characters",
+        keyword: "archaea",
+      },
+      {
+        Component: MoneraCharacters,
+        caption:
+          "Kingdom Monera in one panel: unicellular prokaryotes with naked circular DNA and 70S ribosomes, feeding autotrophically or heterotrophically — from soil bacteria to cyanobacteria to wall-less Mycoplasma.",
+        alt: "Monera characters with prokaryotic cell diagram and major groups",
+        keyword: "monera",
+      },
+      {
+        Component: NomenclatureCodes,
+        caption:
+          "How names stay legal: two Latin words, author citation, priority of the earliest valid publication, a type specimen as anchor — and the violations (tautonyms, duplicates) that void a name.",
+        alt: "Nomenclature rules anatomy of Mangifera indica with ICBN principles and invalid names",
+        keyword: "linnaeus",
+      },
+      {
+        Component: FiveKingdomNutrition,
+        caption:
+          "Whittaker's sorting key: ask how an organism eats — making food points to Plantae, absorbing it points to Fungi, swallowing it points to Animalia — then cell structure refines the placement.",
+        alt: "Nutrition-based sorting flow diagram into five kingdoms",
+        keyword: "autotroph",
+      },
+      {
+        Component: BacteriaVsArchaea,
+        caption:
+          "Bacteria vs Archaea: both prokaryotic, but ester- vs ether-linked membrane lipids, peptidoglycan vs pseudopeptidoglycan walls, and antibiotic sensitivity vs extremophile lifestyles set them apart.",
+        alt: "Bacteria versus archaea molecular contrast with halophiles thermophiles methanogens",
+        keyword: "peptidoglycan",
+      },
+      {
+        Component: VirusKingdomQuestion,
+        caption:
+          "The classification outcast: viruses are acellular, metabolically inert outside hosts, and carry DNA or RNA but never both — so no kingdom can hold them and biology treats them separately.",
+        alt: "Virus structure with reasons it fits no kingdom and the living non-living debate",
+        keyword: "virus",
+      },
+      {
+        Component: BinomialNameExamples,
+        caption:
+          "Six binomials decoded: Mangifera indica, Homo sapiens, Oryza sativa and friends — genus capitalised, epithet lower-case, both italicised, epithets often descriptive or geographic.",
+        alt: "Six binomial name examples with genus epithet and meaning",
+        keyword: "binomial",
+      },
     ],
   },
   "status-of-flora-in-nepal-and-world-representation": {
@@ -1690,6 +1767,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "In situ versus ex situ flora conservation strategies",
         keyword: "conservation",
       },
+      {
+        Component: NepalFloraComposition,
+        caption:
+          "Nepal's flora by group: ~7,000 flowering plants lead, followed by fungi, bryophytes, lichens, ferns — and just ~30 gymnosperms, some of them Himalayan endemics found nowhere else.",
+        alt: "Bar chart of Nepal plant groups with species counts",
+        keyword: "flowering",
+      },
+      {
+        Component: WorldPlantDiversity,
+        caption:
+          "Nepal in the world picture: 0.1% of Earth's land carrying 2–3% of its flowering plants — altitude compresses what latitude would otherwise spread across continents.",
+        alt: "World versus Nepal flowering plant species and land area comparison bars",
+        keyword: "world",
+      },
+      {
+        Component: FloraThreatsChain,
+        caption:
+          "The threat chain: deforestation, overgrazing, over-harvest and invasives converge on habitat loss, which produces local extinction, genetic erosion and landslides — habitat loss is the biggest driver.",
+        alt: "Threat drivers converging on habitat loss with consequences for flora",
+        keyword: "threat",
+      },
+      {
+        Component: RhododendronCaseStudy,
+        caption:
+          "Case study — lali gurans: 30+ Rhododendron species bloom across 1,200–3,600 m, feeding pollinators, drawing trekkers and anchoring mid-hill forests; one genus, many reasons to conserve.",
+        alt: "Rhododendron flower with facts about Nepal species range and importance",
+        keyword: "rhododendron",
+      },
+      {
+        Component: FloraAltitudeTurnover,
+        caption:
+          "Climb and the flora changes: sal gives way to chir pine, oak and rhododendron, then birch, juniper and cushion herbs — six belts, six floras, species richness falling with every 1,000 m.",
+        alt: "Mountain cross-section with six vegetation belts and representative species",
+        keyword: "altitude",
+      },
+      {
+        Component: FloraUsesPanels,
+        caption:
+          "What flora gives: food grains, medicinal herbs, timber and fuel, leaf fodder for livestock — plus the cultural value of tulsi and peepal that gives conservation religious allies.",
+        alt: "Five panels of plant uses food medicine timber fodder culture",
+        keyword: "species",
+      },
+      {
+        Component: FloraEndemicWhy,
+        caption:
+          "Why the Himalaya breeds endemics: valley isolation, steep climate gradients, Ice Age refugia and continuing uplift create narrow ranges — and narrow ranges mean one road can erase a species.",
+        alt: "Four causes of Himalayan plant endemism and resulting vulnerability",
+        keyword: "climate",
+      },
     ],
   },
   "fungi-general-introduction-and-characteristic-features-of-phycomycetes-ascomycetes-basidiomycete": {
@@ -1729,6 +1855,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Count the spores: hundreds in a sporangium, exactly eight in an ascus, four on a basidium — the case tells you the class.",
         alt: "Sporangium ascus and basidium spore cases compared",
         keyword: "sporangium",
+      },
+      {
+        Component: FungalLifeCycleGeneral,
+        caption:
+          "The general fungal life cycle: haploid spores germinate into mycelium, plasmogamy makes a dikaryon, karyogamy gives a brief diploid cell, and meiosis restores spores — the body spends its life as n, not 2n.",
+        alt: "Six step fungal life cycle ring with plasmogamy karyogamy and meiosis",
+        keyword: "spore",
+      },
+      {
+        Component: MycorrhizaSymbiosis,
+        caption:
+          "Mycorrhiza: the fungus wraps the root and extends its hyphal network a hundredfold, mining phosphorus and water for the plant, which pays in sugars — a trade that made land life possible.",
+        alt: "Root with fungal sheath and hyphal network exchanging minerals and sugars",
+        keyword: "mycorrhiza",
+      },
+      {
+        Component: FungalVsPlantCell,
+        caption:
+          "Fungal cell vs plant cell — three tells: chitin vs cellulose wall, glycogen vs starch storage, absorption vs photosynthesis; otherwise the two cells look like twins.",
+        alt: "Fungal cell and plant cell side by side highlighting wall storage and nutrition differences",
+        keyword: "glycogen",
+      },
+      {
+        Component: MyceliumNetwork,
+        caption:
+          "The mycelium is the real fungus: kilometres of hyphae per teaspoon of soil, growing only at tips, digesting litter externally and moving nutrients across the network — the mushroom is just the fruit.",
+        alt: "Soil cross-section with mushroom above and branching mycelium network below",
+        keyword: "mycelium",
+      },
+      {
+        Component: FungalEconomicBalance,
+        caption:
+          "The two ledgers: yeast's bread and beer, Penicillium's penicillin and mycorrhiza's plant feeding on one side; rusts, blights, aflatoxins and ringworm on the other — same biology, opposite outcomes.",
+        alt: "Beneficial versus harmful fungi two ledgers with examples",
+        keyword: "antibiotic",
+      },
+      {
+        Component: PhycomycetesProfile,
+        caption:
+          "Phycomycetes, the 'algal fungi': coenocytic hyphae, asexual sporangiospores or zoospores, sexual conjugation — Mucor, Rhizopus and the downy mildews.",
+        alt: "Phycomycetes characters and examples with sporangium diagram",
+        keyword: "phycomycetes",
+      },
+      {
+        Component: AscoVsBasidio,
+        caption:
+          "Sac vs club: ascomycetes shoot eight ascospores from inside an ascus (yeast, Penicillium, morels); basidiomycetes hang four basidiospores outside a club (mushrooms, rusts, smuts).",
+        alt: "Ascomycetes versus basidiomycetes with ascus and basidium diagrams and examples",
+        keyword: "basidium",
       },
     ],
   },
@@ -1776,6 +1951,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Fermentation economics: glucose → pyruvate → ethanol + CO₂ with only 2 ATP per glucose — inefficient for yeast, but the waste products are bread, beer and wine.",
         alt: "Yeast fermentation pathway to ethanol and carbon dioxide with uses",
         keyword: "fermentation",
+      },
+      {
+        Component: MucorLifeCycleStages,
+        caption:
+          "Mucor's speed run: spore → mycelium → sporangiophore → bursting sporangium → thousands of new spores, all within days; the zygospore is only the survival backup.",
+        alt: "Mucor life cycle six steps from spore to new colony",
+        keyword: "sporangiophore",
+      },
+      {
+        Component: ZygosporeFormationDetail,
+        caption:
+          "Conjugation close-up: + and − hyphae meet, progametangia and suspensors form, gametangia fuse, nuclei unite, and a thick warty zygospore waits out hard times before meiosis.",
+        alt: "Seven step zygospore formation between plus and minus strains",
+        keyword: "conjugation",
+      },
+      {
+        Component: YeastIndustrialUses,
+        caption:
+          "One fungus, six industries: baking, brewing, wine, biofuel, single-cell protein and genetics — yeast grows fast on cheap sugar and tolerates its own ethanol.",
+        alt: "Yeast industrial uses four panels plus reasons yeast suits industry",
+        keyword: "alcohol",
+      },
+      {
+        Component: MucorBreadHabitat,
+        caption:
+          "Mucor's address: a moist, warm, starchy bread slice — white fuzz on day one, black pinhead sporangia by day four, and thousands of new spores by day five.",
+        alt: "Bread slice with Mucor colonies and five day time lapse",
+        keyword: "bread",
+      },
+      {
+        Component: YeastVsBacteria,
+        caption:
+          "Yeast vs bacterium: both unicellular, but yeast has a nucleus, chitin wall, 80S ribosomes and budding while bacteria have naked DNA, peptidoglycan, 70S ribosomes and fission — the reason antibiotics can tell them apart.",
+        alt: "Yeast cell versus bacterial cell with four contrasting features",
+        keyword: "fission",
+      },
+      {
+        Component: YeastLifeCycleFull,
+        caption:
+          "Yeast's two-phase life: diploid budding dominates in good times; stress triggers meiosis to four ascospores, and two haploids fuse back to diploid — a cycle geneticists exploit.",
+        alt: "Yeast diploid budding phase and haploid ascospore phase with meiosis and fusion arrows",
+        keyword: "ascospore",
+      },
+      {
+        Component: SporangiumZoom,
+        caption:
+          "The sporangium as a spore bomb: a columella dome pushes spores apart, the dried wall splits, and hundreds of sporangiospores shoot into the wind from atop a tall sporangiophore.",
+        alt: "Sporangium cutaway with columella spores and dispersal mechanism",
+        keyword: "columella",
       },
     ],
   },
