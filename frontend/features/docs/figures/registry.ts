@@ -269,6 +269,16 @@ import { SpeciesThreatActions } from "./species-threat-actions";
 import { RhinoTigerRecovery } from "./rhino-tiger-recovery";
 import { SpeciesRolesEcology } from "./species-roles-ecology";
 import { EndangeredSpeciesDefinition } from "./endangered-species-definition";
+import { ScopeLevels } from "./scope-levels";
+import { BranchesOfBiology } from "./branches-of-biology";
+import { BasicVsApplied } from "./basic-vs-applied";
+import { WhyBiologyMatters } from "./why-biology-matters";
+import { BridgeScienceMap } from "./bridge-science-map";
+import { ScienceRelationsTable } from "./science-relations-table";
+import { BiologicalMethodCycle } from "./biological-method-cycle";
+import { MethodWorkedExample } from "./method-worked-example";
+import { PasteurExperiment } from "./pasteur-experiment";
+import { MethodPrinciples } from "./method-principles";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -2300,6 +2310,87 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "The definition trap: 'endangered' strictly means IUCN EN — very high risk of extinction in the wild — but is used loosely for all threatened species (CR, EN, VU).",
         alt: "Endangered species definition strict versus loose",
         keyword: "very high risk of extinction in the wild",
+      },
+    ],
+  },
+  // ── Biology Unit 8 — Introduction to biology ────────────────────────────
+  "introduction-to-biology-scope-and-fields-of-biology": {
+    title: "Introduction to biology: scope and fields of biology",
+    figures: [
+      {
+        Component: ScopeLevels,
+        caption:
+          "The scope of biology from molecules to the biosphere: each level asks its own question — from how DNA codes protein to how we name and classify life.",
+        alt: "Scope of biology levels from molecules to biosphere",
+        keyword: "molecules to the biosphere",
+      },
+      {
+        Component: BranchesOfBiology,
+        caption:
+          "The major branches of biology, each paired with a problem it studies: botany, zoology, microbiology, ecology and genetics — from sal regeneration to haemophilia inheritance.",
+        alt: "Major branches of biology with example problems",
+        keyword: "major branches of biology",
+      },
+      {
+        Component: BasicVsApplied,
+        caption:
+          "Basic vs applied research: basic research seeks knowledge for its own sake (how DNA replicates, the lac operon); applied research targets a practical problem (insulin in E. coli, Bt cotton, a malaria vaccine).",
+        alt: "Basic versus applied research comparison",
+        keyword: "basic (pure) research",
+      },
+      {
+        Component: WhyBiologyMatters,
+        caption:
+          "Why biology matters today: medicine and public health, agriculture and food security, environment and conservation, biotechnology and industry, and understanding ourselves.",
+        alt: "Why biology matters today application areas",
+        keyword: "why biology matters today",
+      },
+      {
+        Component: ScopeLevels,
+        caption:
+          "Specialist branches narrow further — ornithology, entomology and mycology study birds, insects and fungi, down to migration routes of demoiselle cranes.",
+        alt: "Specialist branches of biology",
+        keyword: "specialist branches",
+      },
+    ],
+  },
+  "relation-of-biology-with-other-sciences": {
+    title: "Relation of biology with other sciences",
+    figures: [
+      {
+        Component: BridgeScienceMap,
+        caption:
+          "Biology as a bridge science: it borrows chemistry's molecules, physics's instruments and mathematics's models, and lends its findings to medicine, agriculture and society.",
+        alt: "Biology as a bridge science between physical sciences and the human world",
+        keyword: "bridge science",
+      },
+      {
+        Component: ScienceRelationsTable,
+        caption:
+          "What biology borrows from other sciences: chemistry's molecules and reactions, physics's instruments, mathematics's models, geology's Earth history, and computing's sequencing algorithms.",
+        alt: "Relations of biology with other sciences",
+        keyword: "what biology borrows",
+      },
+      {
+        Component: BiologicalMethodCycle,
+        caption:
+          "The biological method of investigation — the shared logic of all science: observe, question, hypothesise, predict, experiment, analyse, conclude, communicate.",
+        alt: "Biological method eight-step cycle",
+        keyword: "biological method of investigation",
+      },
+      {
+        Component: MethodWorkedExample,
+        caption:
+          "Worked example — why do leaves of sal fall in winter? From the dry-season observation through the water-stress question, hypothesis and prediction to the leaf-retention experiment and conclusion.",
+        alt: "Worked method example sal leaf fall",
+        keyword: "why do leaves of sal fall in winter",
+      },
+      {
+        Component: PasteurExperiment,
+        caption:
+          "Pasteur's swan-neck flasks: broth sterilised with the neck curved so dust and microbes settle in the bend stays sterile for months; break the neck and the broth spoils — life comes from existing life (biogenesis).",
+        alt: "Pasteur swan-neck flask experiment disproving spontaneous generation",
+        keyword: "swan-neck flasks",
       },
     ],
   },
