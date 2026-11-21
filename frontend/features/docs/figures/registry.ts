@@ -182,6 +182,91 @@ import { EarthwormEconomicImportance } from "./earthworm-economic-importance";
 import { SeptalNephridiaStructure } from "./septal-nephridia-structure";
 import { NephridiaTypesComparison } from "./nephridia-types-comparison";
 import { EarthwormExcretoryProducts } from "./earthworm-excretory-products";
+import { MastigophoraFlagella } from "./mastigophora-flagella";
+import { CiliophoraCiliaRows } from "./ciliophora-cilia-rows";
+import { SporozoaNoLocomotion } from "./sporozoa-no-locomotion";
+import { TrypanosomaProfile } from "./trypanosoma-profile";
+import { OsmoregulationContractileVacuole } from "./osmoregulation-contractile-vacuole";
+import { EncystmentSurvival } from "./encystment-survival";
+import { ProtozoaHabitatsWater } from "./protozoa-habitats-water";
+import { ParameciumConjugation } from "./paramecium-conjugation";
+import { ParameciumFeedingCurrent } from "./paramecium-feeding-current";
+import { PlasmodiumLiverPhase } from "./plasmodium-liver-phase";
+import { AnophelesVectorIdentity } from "./anopheles-vector-identity";
+import { ParameciumDualVacuoles } from "./paramecium-dual-vacuoles";
+import { PlasmodiumGametocyteExit } from "./plasmodium-gametocyte-exit";
+import { ParameciumTrichocystDefence } from "./paramecium-trichocyst-defence";
+import { MalariaGeographyBurden } from "./malaria-geography-burden";
+import { CerebralMalariaMechanism } from "./cerebral-malaria-mechanism";
+import { MalariaDrugResistance } from "./malaria-drug-resistance";
+import { InsecticideTreatedNets } from "./insecticide-treated-nets";
+import { AnaemiaMalariaMechanism } from "./anaemia-malaria-mechanism";
+import { BlackwaterFeverMechanism } from "./blackwater-fever-mechanism";
+import { MalariaVaccineProgress } from "./malaria-vaccine-progress";
+import { CoelomEvolutionAdvantage } from "./coelom-evolution-advantage";
+import { ProtostomeDeuterostomeSplit } from "./protostome-deuterostome-split";
+import { SymmetrySurvivalValue } from "./symmetry-survival-value";
+import { SegmentationAdvantages } from "./segmentation-advantages";
+import { DiploblasticTriploblasticJobs } from "./diploblastic-triploblastic-jobs";
+import { BodyPlanClassificationFlow } from "./body-plan-classification-flow";
+import { PseudocoelomRoundwormNiche } from "./pseudocoelom-roundworm-niche";
+import { PoriferaSkeletonSpicules } from "./porifera-skeleton-spicules";
+import { PlatyhelminthesFlatBody } from "./platyhelminthes-flat-body";
+import { ArthropodaAppendageMechanics } from "./arthropoda-appendage-mechanics";
+import { MolluscaBodyPlanTrio } from "./mollusca-body-plan-trio";
+import { EchinodermataWaterVascular } from "./echinodermata-water-vascular";
+import { ChordataFourMarks } from "./chordata-four-marks";
+import { NematodaParasitesRound } from "./nematoda-parasites-round";
+import { EarthwormBodyWallLayers } from "./earthworm-body-wall-layers";
+import { EarthwormGizzardGrinding } from "./earthworm-gizzard-grinding";
+import { EarthwormTyphlosoleAbsorption } from "./earthworm-typhlosole-absorption";
+import { EarthwormCutaneousRespiration } from "./earthworm-cutaneous-respiration";
+import { EarthwormClosedCirculation } from "./earthworm-closed-circulation";
+import { EarthwormHumicAcidCalciferous } from "./earthworm-humic-acid-calciferous";
+import { EarthwormHydrostaticSkeleton } from "./earthworm-hydrostatic-skeleton";
+import { NephridiumFilterCycle } from "./nephridium-filter-cycle";
+import { EnteronephricWaterSaving } from "./enteronephric-water-saving";
+import { EarthwormBrainLadder } from "./earthworm-brain-ladder";
+import { SeptalNephridiaNumbers } from "./septal-nephridia-numbers";
+import { EarthwormReflexSegment } from "./earthworm-reflex-segment";
+import { EarthwormSensesPhotoreceptors } from "./earthworm-senses-photoreceptors";
+import { EarthwormSegmentMap } from "./earthworm-segment-map";
+import { EarthwormHermaphroditeTradeoff } from "./earthworm-hermaphrodite-tradeoff";
+import { EarthwormCopulationPositions } from "./earthworm-copulation-positions";
+import { EarthwormCocoonFormation } from "./earthworm-cocoon-formation";
+import { EarthwormRegenerationHalves } from "./earthworm-regeneration-halves";
+import { EarthwormReproductivePores } from "./earthworm-reproductive-pores";
+import { EarthwormJuvenileAdultGrowth } from "./earthworm-juvenile-adult-growth";
+import { EarthwormSeminalVesicleMaturation } from "./earthworm-seminal-vesicle-maturation";
+import { FrogMonsoonBreeding } from "./frog-monsoon-breeding";
+import { FrogWebbedFeetPhysics } from "./frog-webbed-feet-physics";
+import { FrogTeethGripOnly } from "./frog-teeth-grip-only";
+import { FrogStomachAcidChemistry } from "./frog-stomach-acid-chemistry";
+import { FrogDuodenumIleumLength } from "./frog-duodenum-ileum-length";
+import { FrogCloacaJunction } from "./frog-cloaca-junction";
+import { FrogCroakVocalSacs } from "./frog-croak-vocal-sacs";
+import { FrogHibernationWinterMud } from "./frog-hibernation-winter-mud";
+import { FrogTympanumEardrum } from "./frog-tympanum-eardrum";
+import { FrogBinocularVision } from "./frog-binocular-vision";
+import { FrogSkinMucusGlands } from "./frog-skin-mucus-glands";
+import { FrogHeartDoubleCirculation } from "./frog-heart-double-circulation";
+import { FrogPortalSystems } from "./frog-portal-systems";
+import { FrogSpleenLymphHearts } from "./frog-spleen-lymph-hearts";
+import { FrogRespirationThreeModesShare } from "./frog-respiration-three-modes-share";
+import { FrogBuccalPumpMechanism } from "./frog-buccal-pump-mechanism";
+import { FrogCutaneousUnderwater } from "./frog-cutaneous-underwater";
+import { FrogSinusVenosusPacemaker } from "./frog-sinus-venosus-pacemaker";
+import { PulmocutaneousArch } from "./pulmocutaneous-arch";
+import { FrogBuccopharyngealBreathing } from "./frog-buccopharyngeal-breathing";
+import { FrogSkinWaterDrinkingPatch } from "./frog-skin-water-drinking-patch";
+import { FrogSpermPathwayMale } from "./frog-sperm-pathway-male";
+import { FrogOvarySeasonalCycle } from "./frog-ovary-seasonal-cycle";
+import { FrogEggJellyLayers } from "./frog-egg-jelly-layers";
+import { FrogAmplexusMechanics } from "./frog-amplexus-mechanics";
+import { FrogSexualDimorphismFeatures } from "./frog-sexual-dimorphism-features";
+import { FrogTadpoleGillsToLungs } from "./frog-tadpole-gills-to-lungs";
+import { FrogMetamorphosisHormonalTrigger } from "./frog-metamorphosis-hormonal-trigger";
+import { FrogDevelopmentSpeedFactors } from "./frog-development-speed-factors";
 import { EarthwormNervousSystem } from "./earthworm-nervous-system";
 import { EarthwormReflexArc } from "./earthworm-reflex-arc";
 import { EarthwormReproductiveSystem } from "./earthworm-reproductive-system";
@@ -1871,6 +1956,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Protozoa reproduction binary fission multiple fission and conjugation",
         keyword: "binary fission",
       },
+      {
+        Component: MastigophoraFlagella,
+        caption:
+          "Mastigophora move by flagella — one long forward whip plus a shorter trailing one, with a blind flagellar pocket at the front and pellicle-backed undulation for swimming.",
+        alt: "Mastigophora flagella arrangement with forward and trailing whips and flagellar pocket",
+        keyword: "mastigophora",
+      },
+      {
+        Component: CiliophoraCiliaRows,
+        caption:
+          "Ciliophora row their cilia in precise longitudinal lines — coordinated beating rows make Paramecium the fastest swimmer among protozoa, reversible to back up.",
+        alt: "Ciliophora cilia rows in longitudinal lines with coordinated beating and reversal",
+        keyword: "ciliophora",
+      },
+      {
+        Component: SporozoaNoLocomotion,
+        caption:
+          "Sporozoans have no locomotor organelles at all — they glide passively inside host cells, an entirely parasitic life with no need to swim or crawl.",
+        alt: "Sporozoa without locomotor organelles living inside host cells",
+        keyword: "sporozoa",
+      },
+      {
+        Component: TrypanosomaProfile,
+        caption:
+          "Trypanosoma: a single flagellum runs the body length as an undulating membrane — the sleeper's whip that drives sleeping sickness via tsetse fly bites.",
+        alt: "Trypanosoma with undulating membrane flagellum and tsetse fly transmission",
+        keyword: "trypanosoma",
+      },
+      {
+        Component: OsmoregulationContractileVacuole,
+        caption:
+          "Freshwater protozoa constantly take in water by osmosis — the contractile vacuole collects it radially and squeezes it out, keeping the cell from bursting.",
+        alt: "Contractile vacuole osmoregulation with radiating canals expelling excess water",
+        keyword: "contractile",
+      },
+      {
+        Component: EncystmentSurvival,
+        caption:
+          "When ponds dry, amoeba encysts: a protective wall seals in the dormant cell until water returns — cysts also spread infection between hosts.",
+        alt: "Encystment survival with protective cyst wall during drying conditions",
+        keyword: "encystment",
+      },
+      {
+        Component: ProtozoaHabitatsWater,
+        caption:
+          "Protozoa live wherever water persists: pond bottoms, damp soil films, ocean plankton, and inside hosts — moisture is the one non-negotiable.",
+        alt: "Protozoa habitats from ponds and soil to seas and host bodies",
+        keyword: "protozoa",
+      },
     ],
   },
   "paramecium-caudatum-plasmodium-vivax-habits-and-habitat-structure-reproduction-life-cycle": {
@@ -1918,6 +2052,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Comparison of Plasmodium vivax and falciparum fever cycles RBC preference and relapse",
         keyword: "gametocyte",
       },
+      {
+        Component: ParameciumConjugation,
+        caption:
+          "Conjugation: two Paramecium align oral grooves, exchange haploid micronuclei, and separate — genetic refresh without any increase in numbers.",
+        alt: "Paramecium conjugation with aligned oral grooves exchanging micronuclei",
+        keyword: "conjugation",
+      },
+      {
+        Component: ParameciumFeedingCurrent,
+        caption:
+          "The feeding current: cilia beat food particles into the oral groove, down the gullet into a food vacuole that circulates the cell as digestion proceeds.",
+        alt: "Paramecium feeding current with oral groove gullet and circulating food vacuole",
+        keyword: "cilia",
+      },
+      {
+        Component: PlasmodiumLiverPhase,
+        caption:
+          "Liver phase: sporozoites injected by the mosquito invade hepatocytes, multiply silently into thousands of merozoites — no symptoms yet, the disease's quiet first act.",
+        alt: "Plasmodium liver phase with sporozoites invading hepatocytes producing merozoites",
+        keyword: "liver",
+      },
+      {
+        Component: AnophelesVectorIdentity,
+        caption:
+          "Only female Anopheles transmit malaria: long palps equal to the proboscis, abdomen held at an angle, and a 45-degree resting posture — the vector's signature.",
+        alt: "Female Anopheles mosquito identification with angled resting posture and palps",
+        keyword: "anopheles",
+      },
+      {
+        Component: ParameciumDualVacuoles,
+        caption:
+          "Two contractile vacuoles at opposite ends take turns expelling water — one fills while the other empties, so the cell never pauses its osmoregulation.",
+        alt: "Paramecium dual contractile vacuoles alternating water expulsion at opposite ends",
+        keyword: "vacuole",
+      },
+      {
+        Component: PlasmodiumGametocyteExit,
+        caption:
+          "Gametocytes are the mosquito's ticket: only these staged cells survive the blood meal's digestion and gamete-fuse in the insect gut — every cycle needs them.",
+        alt: "Plasmodium gametocytes exiting to mosquito gut for fertilisation",
+        keyword: "gametocyte",
+      },
+      {
+        Component: ParameciumTrichocystDefence,
+        caption:
+          "Trichocysts fire barbed threads on contact — a split-second harpoon defence that discourages predators trying to swallow the slipper animalcule.",
+        alt: "Paramecium trichocysts discharging barbed defensive threads",
+        keyword: "trichocyst",
+      },
     ],
   },
   "economic-importance-of-p-falciparum": {
@@ -1957,6 +2140,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Why falciparum is an emergency: cerebral malaria clogs brain capillaries, anaemia follows mass RBC loss, and blackwater fever dumps haemoglobin into the urine.",
         alt: "Malaria complications cerebral malaria severe anaemia and blackwater fever",
         keyword: "blackwater",
+      },
+      {
+        Component: MalariaGeographyBurden,
+        caption:
+          "Malaria maps onto the tropics: the Anopheles belt covers sub-Saharan Africa, South Asia and Nepal's Terai — where warmth and standing water sustain the vector.",
+        alt: "Malaria geography and burden across tropical belts including Nepal Terai",
+        keyword: "malaria",
+      },
+      {
+        Component: CerebralMalariaMechanism,
+        caption:
+          "Cerebral malaria: infected red cells clog brain capillaries, oxygen starves tissue, and consciousness fades — the fastest route from fever to fatality.",
+        alt: "Cerebral malaria mechanism with infected red cells blocking brain capillaries",
+        keyword: "cerebral",
+      },
+      {
+        Component: MalariaDrugResistance,
+        caption:
+          "Drug resistance evolves under pressure: chloroquine failed first, then replacements in turn — artemisinin combination therapy is today's answer, and vigilance continues.",
+        alt: "Malaria drug resistance timeline from chloroquine to artemisinin combination therapy",
+        keyword: "resistance",
+      },
+      {
+        Component: InsecticideTreatedNets,
+        caption:
+          "Insecticide-treated nets kill on contact: the mosquito that lands dies before biting again — a physical barrier and a chemical trap in one cheap tool.",
+        alt: "Insecticide treated nets protecting sleepers and killing mosquitoes on contact",
+        keyword: "insecticide",
+      },
+      {
+        Component: AnaemiaMalariaMechanism,
+        caption:
+          "Anaemia accumulates as each cycle destroys red cells faster than the marrow replaces them — pallor, weakness and breathlessness shadow every chronic infection.",
+        alt: "Malaria anaemia mechanism with red cell destruction exceeding replacement",
+        keyword: "anaemia",
+      },
+      {
+        Component: BlackwaterFeverMechanism,
+        caption:
+          "Blackwater fever: massive red-cell destruction floods urine with haemoglobin, turning it dark — a dramatic complication of untreated falciparum infection.",
+        alt: "Blackwater fever mechanism with haemoglobinuria from massive red cell lysis",
+        keyword: "blackwater",
+      },
+      {
+        Component: MalariaVaccineProgress,
+        caption:
+          "Vaccine progress: RTS,S became the first licensed malaria vaccine, deployed where transmission is heaviest — partial protection, but a genuine milestone.",
+        alt: "Malaria vaccine progress with RTS,S deployment milestones",
+        keyword: "vaccine",
       },
     ],
   },
@@ -1998,6 +2230,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Segmentation patterns in annelids arthropods and vertebrates",
         keyword: "metamerism",
       },
+      {
+        Component: CoelomEvolutionAdvantage,
+        caption:
+          "A true coelom cushions organs, allows gut independence from the body wall, and enables bigger bodies — the single upgrade that separates advanced phyla from flatworms.",
+        alt: "Coelom evolution advantage with cushioned organs and independent gut movement",
+        keyword: "coelom",
+      },
+      {
+        Component: ProtostomeDeuterostomeSplit,
+        caption:
+          "Two embryonic roads: protostomes (mouth first — arthropods, molluscs, annelids) versus deuterostomes (anus first — echinoderms, chordates) — a blastopore decision with a whole kingdom attached.",
+        alt: "Protostome versus deuterostome development split by blastopore fate",
+        keyword: "protostome",
+      },
+      {
+        Component: SymmetrySurvivalValue,
+        caption:
+          "Symmetry is a lifestyle: radial suits sessile filterers meeting the world from all sides; bilateral suits movers with a head leading the charge.",
+        alt: "Symmetry survival value comparing radial sessile and bilateral motile lifestyles",
+        keyword: "symmetry",
+      },
+      {
+        Component: SegmentationAdvantages,
+        caption:
+          "Segmentation is redundancy: repeated modules mean one damaged segment does not kill the animal — and each can specialise into hearts, gonads or nephridia.",
+        alt: "Segmentation advantages with repeated modules and specialisation",
+        keyword: "segmentation",
+      },
+      {
+        Component: DiploblasticTriploblasticJobs,
+        caption:
+          "Two germ layers build a jellyfish; three build a worm, with mesoderm supplying muscle, bone and blood — the third layer is the body's workshop.",
+        alt: "Diploblastic versus triploblastic germ layers and mesoderm derivatives",
+        keyword: "diploblastic",
+      },
+      {
+        Component: BodyPlanClassificationFlow,
+        caption:
+          "The classification flow: symmetry first, then germ layers, then coelom type — three questions that place any animal in its phylum.",
+        alt: "Body plan classification flow from symmetry through germ layers to coelom",
+        keyword: "deuterostome",
+      },
+      {
+        Component: PseudocoelomRoundwormNiche,
+        caption:
+          "Roundworms exploit the pseudocoelom: a fluid-filled blastocoel pressurises the body for thrashing movement — cheap skeleton, no mesoderm lining.",
+        alt: "Pseudocoelom in roundworms with fluid-filled body cavity for movement",
+        keyword: "pseudocoelomate",
+      },
     ],
   },
   "diagnostic-features-and-classification-of-phyla-up-to-class-porifera-coelenterata-cnidaria-platy": {
@@ -2037,6 +2318,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Soft body + shell (Mollusca: foot, mantle, visceral mass) versus spiny skin + water-vascular tube feet (Echinodermata) — two very different solutions to life on the sea floor.",
         alt: "Mollusca versus Echinodermata body plans with mantle foot and tube feet",
         keyword: "water vascular",
+      },
+      {
+        Component: PoriferaSkeletonSpicules,
+        caption:
+          "The sponge's skeleton is mineral or protein: calcareous spicules, siliceous spicules or spongin fibres — scaffolding that choanocyte chambers hold in place.",
+        alt: "Porifera skeleton spicules types with choanocyte chambers",
+        keyword: "choanocyte",
+      },
+      {
+        Component: PlatyhelminthesFlatBody,
+        caption:
+          "Flat on purpose: no circulatory or respiratory system means every cell must sit near the surface — flattening is the price of life without internals.",
+        alt: "Platyhelminthes flat body enabling diffusion to every cell",
+        keyword: "platyhelminthes",
+      },
+      {
+        Component: ArthropodaAppendageMechanics,
+        caption:
+          "Jointed appendages work like levers with hinges: each joint lets the limb fold and extend, powering walking, swimming, chewing and sensing from one design.",
+        alt: "Arthropoda jointed appendage mechanics with lever and hinge joints",
+        keyword: "arthropoda",
+      },
+      {
+        Component: MolluscaBodyPlanTrio,
+        caption:
+          "Three molluscan body plans from one blueprint: gastropod foot crawls, bivalve shell filters, cephalopod mantle jets — muscular foot, mantle and shell remade three ways.",
+        alt: "Mollusca body plan trio gastropod bivalve and cephalopod variations",
+        keyword: "mollusca",
+      },
+      {
+        Component: EchinodermataWaterVascular,
+        caption:
+          "The water vascular system: seawater pumped through canals extends tube feet with hydraulic suction — locomotion and feeding powered by plumbing, not muscle.",
+        alt: "Echinodermata water vascular system with tube feet hydraulics",
+        keyword: "water vascular",
+      },
+      {
+        Component: ChordataFourMarks,
+        caption:
+          "Four marks define the phylum: notochord, dorsal hollow nerve cord, pharyngeal slits and post-anal tail — all visible at some stage, even if only in the embryo.",
+        alt: "Chordata four defining marks notochord nerve cord slits and tail",
+        keyword: "chordata",
+      },
+      {
+        Component: NematodaParasitesRound,
+        caption:
+          "Roundworm parasites: Ascaris in the gut, Wuchereria in lymph vessels, hookworms at the feet — the pseudocoelomate phylum rides everywhere on persistence.",
+        alt: "Nematoda parasites Ascaris Wuchereria and hookworm in hosts",
+        keyword: "nematoda",
       },
     ],
   },
@@ -2092,6 +2422,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Horizontal alimentary canal of earthworm from mouth through pharynx, gizzard, stomach, intestine with typhlosole to anus",
         keyword: "gizzard",
       },
+      {
+        Component: EarthwormBodyWallLayers,
+        caption:
+          "The body wall in layers: thin cuticle over epidermis, then circular and longitudinal muscle, lined inside by coelomic epithelium — four layers that squeeze and glide.",
+        alt: "Earthworm body wall layers cuticle epidermis muscles and coelomic epithelium",
+        keyword: "coelomic",
+      },
+      {
+        Component: EarthwormGizzardGrinding,
+        caption:
+          "The gizzard grinds without teeth: swallowed soil particles mill decaying leaves against the muscular wall — a stone mortar the worm carries everywhere.",
+        alt: "Earthworm gizzard grinding food with soil particles",
+        keyword: "gizzard",
+      },
+      {
+        Component: EarthwormTyphlosoleAbsorption,
+        caption:
+          "The typhlosole folds the intestine into a U, tripling absorptive surface inside a narrow tube — the worm's answer to a small gut in a small body.",
+        alt: "Earthworm typhlosole fold increasing intestinal absorption surface",
+        keyword: "typhlosole",
+      },
+      {
+        Component: EarthwormCutaneousRespiration,
+        caption:
+          "Breathing through the skin: mucus keeps the surface wet, oxygen dissolves and diffuses into dense sub-cutaneous capillaries — no lungs required.",
+        alt: "Earthworm cutaneous respiration with oxygen diffusing through moist skin",
+        keyword: "cutaneous",
+      },
+      {
+        Component: EarthwormClosedCirculation,
+        caption:
+          "A closed circulation: blood stays in vessels, pushed by five lateral hearts and dorsal-ventral pumping — pressure-driven delivery to every segment.",
+        alt: "Earthworm closed circulation with lateral hearts and dorsal ventral vessels",
+        keyword: "blood",
+      },
+      {
+        Component: EarthwormHumicAcidCalciferous,
+        caption:
+          "The calciferous glands neutralise humic acids from decaying leaves, precipitating excess calcium — chemistry that protects the gut and enriches the soil.",
+        alt: "Earthworm calciferous glands neutralising humic acids with calcium",
+        keyword: "calciferous",
+      },
+      {
+        Component: EarthwormHydrostaticSkeleton,
+        caption:
+          "The hydrostatic skeleton: incompressible coelomic fluid turns muscle squeeze into shape change — circular muscles stretch the worm, longitudinal muscles shorten it, and the worm moves.",
+        alt: "Earthworm hydrostatic skeleton with coelomic fluid and antagonistic muscles",
+        keyword: "locomotion",
+      },
     ],
   },
   "earthworm-excretory-system-types-of-nephridia-structure-and-arrangement-of-septal-nephridia-nerv": {
@@ -2131,6 +2510,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "One segment's fast lane: skin receptor → sensory fibre → ventral-cord ganglion → motor fibre → muscle — most reflexes never consult the brain.",
         alt: "Earthworm reflex arc from skin receptor to muscle response via ganglion",
         keyword: "reflex",
+      },
+      {
+        Component: NephridiumFilterCycle,
+        caption:
+          "Inside one nephridium: the ciliated nephrostome scoops coelomic fluid, the body loop reabsorbs useful salts and water, and only waste exits through the pore.",
+        alt: "Nephridium filter cycle from nephrostome through body loop to pore",
+        keyword: "nephrostome",
+      },
+      {
+        Component: EnteronephricWaterSaving,
+        caption:
+          "Enteronephric nephridia dump waste into the intestine, where water is reabsorbed before excretion — a conservation trick for life in damp soil.",
+        alt: "Enteronephric nephridia excreting into intestine for water conservation",
+        keyword: "enteronephric",
+      },
+      {
+        Component: EarthwormBrainLadder,
+        caption:
+          "The ladder brain: bilobed cerebral ganglia, circumpharyngeal connectives around the pharynx, then a double ventral nerve cord with a ganglion per segment.",
+        alt: "Earthworm brain ladder with ganglia connectives and ventral nerve cord",
+        keyword: "nerve cord",
+      },
+      {
+        Component: SeptalNephridiaNumbers,
+        caption:
+          "Septal nephridia from segment 15 onward, one pair per segment, all opening into the intestine — over two hundred filters working in parallel.",
+        alt: "Septal nephridia numbers and arrangement per segment opening into intestine",
+        keyword: "septal",
+      },
+      {
+        Component: EarthwormReflexSegment,
+        caption:
+          "A segment's reflex arc: skin receptor to sensory fibre to ganglion to motor fibre — the local decision fires before the brain even hears about it.",
+        alt: "Earthworm segment reflex arc with receptor sensory fibre ganglion and motor fibre",
+        keyword: "reflex",
+      },
+      {
+        Component: EarthwormSensesPhotoreceptors,
+        caption:
+          "Photoreceptor cells scattered in the skin give the worm light sense without eyes — enough to flee daylight and find darkness, negative phototaxis in action.",
+        alt: "Earthworm photoreceptors in skin detecting light without eyes",
+        keyword: "photoreceptor",
+      },
+      {
+        Component: EarthwormSegmentMap,
+        caption:
+          "The segment map: brain and pharyngeal nephridia up front, hearts and gizzard at 7–12, clitellum at 14–16, male pores at 18 — every organ has an address.",
+        alt: "Earthworm segment map showing organ positions by segment number",
+        keyword: "segment",
       },
     ],
   },
@@ -2172,6 +2600,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Earthworm life cycle from cocoon to juvenile to adult worm",
         keyword: "cocoon",
       },
+      {
+        Component: EarthwormHermaphroditeTradeoff,
+        caption:
+          "Hermaphrodite but not self-fertile: one worm carries both kits, yet sperm goes only to a partner's spermathecae — efficiency for rare meetings, variety kept intact.",
+        alt: "Earthworm hermaphrodite tradeoff with cross fertilisation not selfing",
+        keyword: "hermaphrodite",
+      },
+      {
+        Component: EarthwormCopulationPositions,
+        caption:
+          "Copulation on a rainy night: head-to-tail alignment, male pores (18) facing spermathecal pores (6–9), mucus bonding the pair for mutual sperm exchange.",
+        alt: "Earthworm copulation head to tail with pore alignment and sperm exchange",
+        keyword: "copulation",
+      },
+      {
+        Component: EarthwormCocoonFormation,
+        caption:
+          "Cocoon formation in four steps: the clitellum secretes a ring, the ring slides forward collecting eggs, albumen and stored sperm, then seals off as a lemon-shaped capsule.",
+        alt: "Earthworm cocoon formation steps with clitellum ring sliding forward",
+        keyword: "cocoon",
+      },
+      {
+        Component: EarthwormRegenerationHalves,
+        caption:
+          "Cut in half: the head end regrows a tail and some segments, but the tail half dies — vital organs crowd the anterior third, and the 'two worms' myth fails.",
+        alt: "Earthworm regeneration halves myth with head end surviving tail dying",
+        keyword: "clitellum",
+      },
+      {
+        Component: EarthwormReproductivePores,
+        caption:
+          "The pore map: spermathecal pores at 6–9, female pore at 14, male pores at 18, genital papillae at 17 and 19 — geometry that forces head-to-tail copulation.",
+        alt: "Earthworm reproductive pores map with segment addresses",
+        keyword: "pore",
+      },
+      {
+        Component: EarthwormJuvenileAdultGrowth,
+        caption:
+          "From cocoon to adult: a miniature worm hatches with no larval stage, adds segments at the tail, and the appearance of the clitellum marks sexual maturity.",
+        alt: "Earthworm juvenile to adult growth with clitellum as maturity marker",
+        keyword: "young",
+      },
+      {
+        Component: EarthwormSeminalVesicleMaturation,
+        caption:
+          "The sperm nursery: tiny testes release immature cells into large seminal vesicles (11–12), where they mature and wait for the vasa deferentia's call.",
+        alt: "Earthworm seminal vesicle sperm maturation with testes and vasa deferentia",
+        keyword: "seminal vesicle",
+      },
     ],
   },
   "frog-rana-tigrina-habit-and-habitat-external-features-digestive-system-alimentary-canal-digestiv": {
@@ -2211,6 +2688,83 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Digestion chemistry by station: pepsin and HCl in the stomach, enzyme-free bile emulsifying fat, pancreatic amylase-lipase-trypsin, then intestinal maltase and peptidase finishing the job.",
         alt: "Frog digestion table of sites enzymes and substrates",
         keyword: "pepsin",
+      },
+      {
+        Component: FrogMonsoonBreeding,
+        caption:
+          "The frog's calendar: breeding in the monsoon, tadpoles after, hibernation through winter, aestivation in dry summers — water availability writes the schedule.",
+        alt: "Frog monsoon breeding calendar with seasons of activity and dormancy",
+        keyword: "breeding",
+      },
+      {
+        Component: FrogWebbedFeetPhysics,
+        caption:
+          "Webbed hind feet work as paddles: the web spreads for the power stroke and folds on recovery — the same physics as a swimmer's hand, no engine needed.",
+        alt: "Frog webbed feet physics with power and recovery strokes",
+        keyword: "webbed",
+      },
+      {
+        Component: FrogTeethGripOnly,
+        caption:
+          "Frog teeth grip, never chew: maxillary teeth line the upper jaw, vomerine patches stud the roof — the lower jaw has none, and prey is swallowed whole.",
+        alt: "Frog teeth grip only with maxillary and vomerine teeth in upper jaw",
+        keyword: "vomerine",
+      },
+      {
+        Component: FrogStomachAcidChemistry,
+        caption:
+          "The stomach is an acid vat: HCl activates pepsin and kills swallowed microbes, letting whole insects digest chemically where chewing never happened.",
+        alt: "Frog stomach acid chemistry with HCl and pepsin digesting whole prey",
+        keyword: "pepsin",
+      },
+      {
+        Component: FrogDuodenumIleumLength,
+        caption:
+          "A short gut marks a carnivore: duodenum receives bile and pancreatic juice, the coiled ileum absorbs, and the reduced large intestine finishes — no cellulose to fight.",
+        alt: "Frog duodenum ileum short gut compared with herbivore long intestine",
+        keyword: "intestine",
+      },
+      {
+        Component: FrogCloacaJunction,
+        caption:
+          "The cloaca is a three-way junction: intestine, urinary ducts and gonads all converge on one exit — the amphibian's shared back door.",
+        alt: "Frog cloaca junction where digestive urinary and reproductive tracts meet",
+        keyword: "cloaca",
+      },
+      {
+        Component: FrogCroakVocalSacs,
+        caption:
+          "The croak is a male broadcast: vocal sacs resonate the call, each species keeps its own rhythm, and females choose — sound as advertisement and species filter.",
+        alt: "Frog croak vocal sacs resonating mating call of male",
+        keyword: "vocal",
+      },
+      {
+        Component: FrogHibernationWinterMud,
+        caption:
+          "Hibernation is shutdown, not sleep: buried in pond mud, the heart slows to a trickle, fat reserves burn slowly, and spring warmth restarts the system.",
+        alt: "Frog hibernation in winter mud with slowed metabolism until spring",
+        keyword: "hibernation",
+      },
+      {
+        Component: FrogTympanumEardrum,
+        caption:
+          "The tympanum is an eardrum on the surface: a bare vibrating disc behind the eye, larger in males — hearing without any external ear.",
+        alt: "Frog tympanum eardrum behind the eye larger in males",
+        keyword: "tympanum",
+      },
+      {
+        Component: FrogBinocularVision,
+        caption:
+          "Protruding eyes give near all-round vision with a binocular overlap in front — depth judgement for the tongue-strike, and a retina tuned to moving prey.",
+        alt: "Frog binocular vision with protruding eyes and wide field of view",
+        keyword: "eyes",
+      },
+      {
+        Component: FrogSkinMucusGlands,
+        caption:
+          "Skin is a multi-tool: mucus glands keep it wet for breathing, granular glands store distasteful secretions, and pigment cells shift colour for camouflage.",
+        alt: "Frog skin mucus glands granular glands and pigment cells in cross-section",
+        keyword: "mucus",
       },
     ],
   },
@@ -2259,6 +2813,76 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Frog heart with sinus venosus, two atria, single ventricle, truncus arteriosus and three pairs of arches",
         keyword: "ventricle",
       },
+      {
+        Component: FrogHeartDoubleCirculation,
+        caption:
+          "Two loops, one pump: pulmonary circulation refreshes blood at lungs and skin, systemic delivers it to the body — and the single ventricle lets the streams mix slightly.",
+        alt: "Frog heart double circulation with pulmonary and systemic loops",
+        keyword: "ventricle",
+      },
+      {
+        Component: FrogPortalSystems,
+        caption:
+          "Portal systems are inspection stops: the hepatic portal vein lets the liver process gut blood, the renal portal lets kidneys filter blood from the hind body.",
+        alt: "Frog portal systems hepatic and renal veins starting and ending in capillaries",
+        keyword: "portal",
+      },
+      {
+        Component: FrogSpleenLymphHearts,
+        caption:
+          "Auxiliary pumps: the spleen recycles worn red cells and stores blood, while two pairs of lymph hearts push lymph back into the veins — three pumps in one body.",
+        alt: "Frog spleen and lymph hearts as auxiliary circulation pumps",
+        keyword: "heart",
+      },
+      {
+        Component: FrogRespirationThreeModesShare,
+        caption:
+          "Three breathing modes share one rule: a thin, moist surface — skin (always on, even underwater), mouth lining, and lungs for active moments.",
+        alt: "Frog respiration three modes cutaneous buccopharyngeal and pulmonary",
+        keyword: "cutaneous",
+      },
+      {
+        Component: FrogBuccalPumpMechanism,
+        caption:
+          "The buccal pump: mouth floor drops to draw air in through the nostrils, then rises with nostrils shut to push it into the lungs — positive pressure, no ribs.",
+        alt: "Frog buccal pump mechanism filling lungs with positive pressure",
+        keyword: "buccal",
+      },
+      {
+        Component: FrogCutaneousUnderwater,
+        caption:
+          "Underwater, the skin is scuba gear: dissolved oxygen diffuses across the wet surface into skin capillaries — enough for rest and hibernation with lungs closed.",
+        alt: "Frog cutaneous respiration underwater with oxygen diffusing through skin",
+        keyword: "oxygen",
+      },
+      {
+        Component: FrogSinusVenosusPacemaker,
+        caption:
+          "The sinus venosus does double duty: all venous blood enters here, and its muscular wall fires the heartbeat — the frog's version of the mammalian SA node.",
+        alt: "Frog sinus venosus as pacemaker and venous blood entry chamber",
+        keyword: "sinus venosus",
+      },
+      {
+        Component: PulmocutaneousArch,
+        caption:
+          "The pulmocutaneous arch is the frog's signature vessel: one outflow splitting to lungs and skin, plumbing that mirrors dual respiration.",
+        alt: "Pulmocutaneous arch dividing blood flow to lungs and skin",
+        keyword: "pulmocutaneous",
+      },
+      {
+        Component: FrogBuccopharyngealBreathing,
+        caption:
+          "Buccopharyngeal breathing: the throat pulses rhythmically, air washes across the mouth lining while the glottis stays shut — lungs untouched, oxygen still gathered.",
+        alt: "Frog buccopharyngeal breathing with mouth floor oscillation and closed glottis",
+        keyword: "buccopharyngeal",
+      },
+      {
+        Component: FrogSkinWaterDrinkingPatch,
+        caption:
+          "Frogs drink through the belly: a densely capillarised pelvic patch absorbs water by osmosis from dew, wet soil or pond — the mouth is for prey only.",
+        alt: "Frog skin water drinking patch absorbing water through belly skin",
+        keyword: "water",
+      },
     ],
   },
   "frog-reproductive-system-male-and-female-reproductive-organs": {
@@ -2305,6 +2929,62 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Metamorphosis end to end: jelly egg → gilled tadpole → limbed froglet → adult — gills become lungs, the tail is absorbed, and thyroxine (which needs iodine) drives the whole switch.",
         alt: "Frog metamorphosis stages from egg through tadpole and froglet to adult",
         keyword: "metamorphosis",
+      },
+      {
+        Component: FrogSpermPathwayMale,
+        caption:
+          "The sperm pathway detours through the kidney: testes to vasa efferentia, along Bidder's canal inside the kidney, out via the urinogenital duct shared with urine.",
+        alt: "Frog sperm pathway from testes through vasa efferentia and bidder canal to cloaca",
+        keyword: "vasa efferentia",
+      },
+      {
+        Component: FrogOvarySeasonalCycle,
+        caption:
+          "The ovary swells with the seasons: ova accumulate yolk toward the monsoon, ovulation releases eggs into the coelom, and cilia sweep them to the oviduct's mouth.",
+        alt: "Frog ovary seasonal cycle from yolk accumulation to ovulation",
+        keyword: "oviduct",
+      },
+      {
+        Component: FrogEggJellyLayers,
+        caption:
+          "Three jelly layers, five jobs: cushioning, predator deterrence, clumping eggs where males find them, sunlight warming, and water held around each egg.",
+        alt: "Frog egg jelly layers with yolk inner middle and outer coats",
+        keyword: "jelly",
+      },
+      {
+        Component: FrogAmplexusMechanics,
+        caption:
+          "Amplexus is fertilisation machinery: the male grips behind the female's forelimbs with nuptial pads, synchronising egg and sperm release into the water.",
+        alt: "Frog amplexus with male clasping female for synchronized spawning",
+        keyword: "amplexus",
+      },
+      {
+        Component: FrogSexualDimorphismFeatures,
+        caption:
+          "Five field marks separate the sexes: female size, male tympanum, male vocal sacs, male nuptial pads, and rougher breeding-season skin.",
+        alt: "Frog sexual dimorphism features comparing male and female traits",
+        keyword: "nuptial",
+      },
+      {
+        Component: FrogTadpoleGillsToLungs,
+        caption:
+          "The breathing switchover: external gills to internal gills to lungs, while the two-chambered heart rebuilds into three — a fish remade into an amphibian.",
+        alt: "Frog tadpole gills to lungs transition across metamorphic stages",
+        keyword: "tadpole",
+      },
+      {
+        Component: FrogMetamorphosisHormonalTrigger,
+        caption:
+          "Metamorphosis runs on thyroid hormone: a maturing gland triggers the rebuild — feed hormone and tadpoles change early; remove the thyroid and they never do.",
+        alt: "Frog metamorphosis hormonal trigger by thyroid gland hormone",
+        keyword: "metamorphosis",
+      },
+      {
+        Component: FrogDevelopmentSpeedFactors,
+        caption:
+          "What sets the clock: warm water and rich food speed development, crowding slows it — and a drying pond can rush tadpoles into early metamorphosis.",
+        alt: "Frog development speed factors temperature food water level and crowding",
+        keyword: "development",
       },
     ],
   },
