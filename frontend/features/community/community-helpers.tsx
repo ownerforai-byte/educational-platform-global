@@ -9,6 +9,7 @@ import {
   surfaceCardFlat,
 } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
+import { isOwnerAccount } from "@/lib/owner";
 import { publicErrorMessage } from "@/lib/errors/app-error";
 import { AlertCircle, ArrowLeft, Bookmark, MessageSquare, Plus, SearchX } from "lucide-react";
 
@@ -153,8 +154,14 @@ export function mergeById(current: FeedPost[], incoming: FeedPost[]): FeedPost[]
   return next;
 }
 
+/** Delete feed posts or comments — author or platform owner only. */
+export function canDeleteCommunityFeed(user: SessionUser | null): boolean {
+  return isOwnerAccount(user);
+}
+
+/** @deprecated Use canDeleteCommunityFeed for deletes; edits are author-only. */
 export function canModerate(user: SessionUser | null): boolean {
-  return user?.role === "pro" || user?.role === "owner";
+  return canDeleteCommunityFeed(user);
 }
 
 export function CommunityBackLink({

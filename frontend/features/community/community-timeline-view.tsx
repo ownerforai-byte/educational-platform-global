@@ -33,6 +33,7 @@ export function CommunityTimelineView() {
     setPostKind,
     setFilter,
     onLike,
+    onQuotePost,
     onRepost,
     onToggleSave,
     copy,
@@ -86,6 +87,7 @@ export function CommunityTimelineView() {
           onLoadMore={handleLoadMoreFeed}
           onLike={onLike}
           onRepost={onRepost}
+          onQuotePost={onQuotePost}
           onToggleSave={onToggleSave}
           onCopyLink={(postId) => void copy(postId)}
           onDelete={(postId) => void onDeletePost(postId)}

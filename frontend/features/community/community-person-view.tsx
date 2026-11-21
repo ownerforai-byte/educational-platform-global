@@ -21,6 +21,7 @@ export function CommunityPersonView() {
     threadPropsForPost,
     onLike,
     onRepost,
+    onQuotePost,
     onToggleSave,
     copy,
     onDeletePost,
@@ -69,6 +70,7 @@ export function CommunityPersonView() {
                   aiReplyBusy={aiReplyBusyIds.has(item.id)}
                   onLike={onLike}
                   onRepost={onRepost}
+                  onQuotePost={onQuotePost}
                   onToggleSave={onToggleSave}
                   onCopyLink={(postId) => void copy(postId)}
                   onDelete={(postId) => void onDeletePost(postId)}

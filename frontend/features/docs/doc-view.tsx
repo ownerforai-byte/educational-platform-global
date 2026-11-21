@@ -99,6 +99,26 @@ function FigureBlock({ figure }: { figure: TopicFigure }) {
   return <ZoomableFigure Component={figure.Component} caption={figure.caption} alt={figure.alt} />;
 }
 
+/**
+ * Owner request: when several figures anchor to the same note block, lay them
+ * out side by side (2-up on md+, 3-up on xl) instead of stacking — each stays
+ * individually zoomable.
+ */
+function FigureGroup({ figures, blockIndex }: { figures: TopicFigure[]; blockIndex: number }) {
+  if (figures.length === 0) return null;
+  if (figures.length === 1) return <FigureBlock figure={figures[0]} />;
+  return (
+    <div
+      className={`my-5 grid gap-4 ${figures.length >= 3 ? "md:grid-cols-2 xl:grid-cols-3" : "md:grid-cols-2"} print:grid-cols-2`}
+      data-figure-group={blockIndex}
+    >
+      {figures.map((f, fi) => (
+        <FigureBlock key={`fig-${blockIndex}-${fi}`} figure={f} />
+      ))}
+    </div>
+  );
+}
+
 function Segment({ segment, fontClass }: { segment: DocSegment; fontClass: string }) {
   if (segment.kind === "definition") {
     return (
@@ -452,9 +472,7 @@ export function TopicDocView({
                   <Segment key={`seg-${block.index}-${si}`} segment={seg} fontClass={fontClass} />
                 ))}
               </div>
-              {(figureMap.get(block.index) ?? []).map((f, fi) => (
-                <FigureBlock key={`fig-${block.index}-${fi}`} figure={f} />
-              ))}
+              <FigureGroup figures={figureMap.get(block.index) ?? []} blockIndex={block.index} />
             </div>
           ))
         )}

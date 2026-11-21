@@ -17,6 +17,7 @@ import { useAuth } from "@/providers/auth-provider";
 import { isFcmConfigured } from "./config";
 import { logFcmResult, registerFcmToken, syncFcmToken } from "./register-token";
 import { startFcmTokenRefresh } from "./token-refresh";
+import { bindAndroidNativeFcmBridge } from "./android-native-bridge";
 
 function deepLinkFromPayload(data: Record<string, string> | undefined): string | null {
   if (!data) return null;
@@ -54,6 +55,10 @@ export function FcmNotificationListener() {
   const { user, isLoading, refresh } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    bindAndroidNativeFcmBridge();
+  }, []);
 
   useEffect(() => {
     if (!isFcmConfigured() || isLoading) return;

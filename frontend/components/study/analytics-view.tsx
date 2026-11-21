@@ -10,6 +10,7 @@ import {
   completionByUnit,
   overallAccuracy,
   weeklyTrend,
+  dailyStudyActivity,
 } from "@/lib/analytics";
 import { useJourney } from "./use-journey";
 import { CohortComparison } from "./cohort-comparison";
@@ -45,6 +46,8 @@ export function AnalyticsView() {
   const units = useMemo(() => completionByUnit(entries).filter((u) => u.completed > 0).slice(0, 8), [entries]);
   const trend = useMemo(() => weeklyTrend(rows, entries).slice(-8), [rows, entries]);
   const overall = useMemo(() => overallAccuracy(rows), [rows]);
+  const daily = useMemo(() => dailyStudyActivity(rows, entries, 14), [rows, entries]);
+  const studyPoints = useMemo(() => daily.reduce((sum, d) => sum + d.points, 0), [daily]);
 
   if (quizLoading || journeyLoading) {
     return <div className="container max-w-4xl py-8 text-sm text-muted-foreground">Loading analytics…</div>;
@@ -61,6 +64,37 @@ export function AnalyticsView() {
           {overall.quizzes > 0 && ` Overall ${overall.accuracy}% across ${overall.quizzes} quizzes.`}
         </p>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">Study activity (14 days)</CardTitle>
+          <CardDescription>
+            Topics finished and quizzes per day · {studyPoints} live points in this window
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          {daily.every((d) => d.points === 0) ? (
+            <p className="text-sm text-muted-foreground">Complete a topic or take a quiz to start the chart.</p>
+          ) : (
+            <ul className="space-y-2">
+              {daily.map((d) => (
+                <li key={d.day} className="flex items-center gap-3 text-sm">
+                  <span className="w-24 shrink-0 tabular-nums text-muted-foreground">{d.day}</span>
+                  <div className="h-2 min-w-0 flex-1 rounded bg-muted">
+                    <div
+                      className="h-2 rounded bg-primary transition-all"
+                      style={{ width: `${Math.min(100, d.points * 4)}%` }}
+                    />
+                  </div>
+                  <span className="w-28 shrink-0 text-right tabular-nums text-xs text-muted-foreground">
+                    {d.topicsCompleted} topics · {d.quizzes} quizzes · {d.points} pts
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </CardContent>
+      </Card>
 
       {quizFailed || rows.length === 0 ? (
         <p className="text-sm text-muted-foreground">

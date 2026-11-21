@@ -5,6 +5,7 @@ import { supabaseAdmin } from "../../db/supabase";
 import {
   requireAuth,
   getUserFromRequest,
+  isOwnerAccount,
   type AuthedRequest,
 } from "../../middleware/auth";
 import { communityAiReplyLimit, reserveCommunityAiReply } from "../../middleware/rateLimit";
@@ -22,6 +23,13 @@ import {
   isCommunityBotId,
   mentionsCommunityBot,
 } from "../../lib/community-bot";
+import { extractMentionUsernames } from "../../lib/profile-mentions.js";
+import {
+  QUOTE_POST_ID_RE,
+  embedQuoteMarker,
+  quotePostIdFromBody,
+  stripQuoteMarker,
+} from "../../lib/community-quote-post.js";
 import type { SessionUser } from "../../auth/types";
 import {
   CommunityAssistantReplyError,
@@ -143,6 +151,11 @@ const postSchema = z.object({
   body: z.string().trim().min(1).max(20000),
   category: z.enum(CATEGORIES),
   kind: z.enum(POST_KINDS).optional().default("discussion"),
+  quotedPostId: z
+    .string()
+    .trim()
+    .regex(QUOTE_POST_ID_RE, "quotedPostId must be a UUID")
+    .optional(),
 });
 
 const commentSchema = z.object({
@@ -185,8 +198,19 @@ function isModerator(user: SessionUser): boolean {
   return user.role === "pro" || user.role === "owner";
 }
 
+/** Post or comment edits — author only. */
+function canEditAsAuthor(user: SessionUser, authorId: string): boolean {
+  return user.id === authorId;
+}
+
+/** Post or comment deletes — author or platform owner. */
+function canDeleteFeedItem(user: SessionUser, authorId: string): boolean {
+  return user.id === authorId || isOwnerAccount(user);
+}
+
+/** Uploads and attachments stay with the post author only. */
 function canManage(user: SessionUser, authorId: string): boolean {
-  return user.id === authorId || isModerator(user);
+  return canEditAsAuthor(user, authorId);
 }
 
 function noStore(res: Response): void {
@@ -292,6 +316,7 @@ async function profilesById(ids: string[]): Promise<Map<string, ProfileRow>> {
   return map;
 }
 
+/** Any signed-in member may trigger one community-bot answer per post (Ask AI). */
 function canPublishCommunityBotReply(_postAuthorId: string, viewer: SessionUser | null): boolean {
   return Boolean(viewer);
 }
@@ -358,8 +383,8 @@ async function publishBotThreadReply(opts: {
 
 async function assistantReplyMeta(
   postId: string,
-  _postAuthorId: string,
-  _viewer: SessionUser | null,
+  postAuthorId: string,
+  viewer: SessionUser | null,
 ): Promise<{ posted: boolean; canApprove: boolean }> {
   let posted = false;
   const { data, error } = await supabaseAdmin
@@ -377,7 +402,33 @@ async function assistantReplyMeta(
       .limit(1);
     if (!legacy.error && (legacy.data ?? []).length > 0) posted = true;
   }
-  return { posted, canApprove: !posted };
+  const canApprove = !posted && canPublishCommunityBotReply(postAuthorId, viewer);
+  return { posted, canApprove };
+}
+
+async function notifyMentionedProfiles(opts: {
+  text: string;
+  actorId: string;
+  postId: string;
+  commentId?: string | null;
+}): Promise<void> {
+  const names = extractMentionUsernames(opts.text);
+  if (names.length === 0) return;
+  const { data, error } = await supabaseAdmin
+    .from("profiles")
+    .select("id, username")
+    .in("username", names);
+  if (error || !data) return;
+  for (const row of data as Array<{ id: string; username?: string | null }>) {
+    if (row.id === opts.actorId) continue;
+    void recordSocialNotification({
+      userId: row.id,
+      actorId: opts.actorId,
+      kind: "mention",
+      postId: opts.postId,
+      commentId: opts.commentId ?? null,
+    });
+  }
 }
 
 /**
@@ -509,10 +560,12 @@ function presentPost(
   const files = attachments
     .filter((file) => file.post_id === row.id)
     .sort((a, b) => String(a.created_at ?? "").localeCompare(String(b.created_at ?? "")));
+  const quotedPostId = quotePostIdFromBody(row.body);
   return {
     id: row.id,
     title: row.title,
-    body: row.body,
+    body: stripQuoteMarker(row.body),
+    quotedPostId: quotedPostId ?? null,
     category: row.category,
     kind: row.kind && POST_KINDS.includes(row.kind as (typeof POST_KINDS)[number])
       ? row.kind
@@ -543,7 +596,8 @@ function presentPost(
   };
 }
 
-async function presentMany(rows: PostRow[], viewerId: string | null) {
+async function presentMany(rows: PostRow[], viewer: SessionUser | null) {
+  const viewerId = viewer?.id ?? null;
   const side = await sideData(rows.map((row) => row.id));
   if ("missing" in side) return { missing: true as const };
   if ("error" in side) return { error: side.error };
@@ -553,22 +607,58 @@ async function presentMany(rows: PostRow[], viewerId: string | null) {
     rows.map((row) => row.author_id),
   );
   const answered = await assistantAnsweredPostIds(rows.map((row) => row.id));
+  const quotedIds = [
+    ...new Set(
+      rows
+        .map((row) => quotePostIdFromBody(row.body))
+        .filter((id): id is string => Boolean(id)),
+    ),
+  ];
+  let quotedProfiles = new Map<string, ProfileRow>();
+  let quotedRows: PostRow[] = [];
+  if (quotedIds.length > 0) {
+    const { data: quoteData, error: quoteError } = await supabaseAdmin
+      .from("community_feed_posts")
+      .select(POST_COLUMNS)
+      .in("id", quotedIds);
+    if (!quoteError && quoteData) {
+      quotedRows = quoteData as PostRow[];
+      quotedProfiles = await profilesById(quotedRows.map((row) => row.author_id));
+    }
+  }
+  const quotedById = new Map(quotedRows.map((row) => [row.id, row]));
   return {
     posts: rows.map((row) => {
       const posted = answered.has(row.id);
+      const presented = presentPost(
+        row,
+        profiles,
+        side.likes,
+        side.saves,
+        side.reposts,
+        side.comments,
+        side.attachments,
+        viewerId,
+        followingAuthors,
+      );
+      const quoteId = presented.quotedPostId;
+      const quoted = quoteId ? quotedById.get(quoteId) : undefined;
+      const quotedPost = quoted
+        ? {
+            id: quoted.id,
+            title: quoted.title,
+            body: stripQuoteMarker(quoted.body),
+            createdAt: quoted.created_at,
+            author: toAuthor(quoted.author_id, quotedProfiles.get(quoted.author_id)),
+          }
+        : null;
       return {
-        ...presentPost(
-          row,
-          profiles,
-          side.likes,
-          side.saves,
-          side.reposts,
-          side.comments,
-          side.attachments,
-          viewerId,
-          followingAuthors,
-        ),
-        assistantReply: { posted, canApprove: !posted },
+        ...presented,
+        quotedPost,
+        assistantReply: {
+          posted,
+          canApprove: !posted && canPublishCommunityBotReply(row.author_id, viewer),
+        },
       };
     }),
   };
@@ -813,10 +903,11 @@ async function loadUnansweredPage(
 
 async function sendList(
   res: Response,
-  viewerId: string | null,
+  viewer: SessionUser | null,
   scopedAuthorId: string | undefined,
   req: Request,
 ): Promise<void> {
+  const viewerId = viewer?.id ?? null;
   const parsed = readListQuery(req);
   if ("error" in parsed) {
     bad(res, parsed.error);
@@ -936,7 +1027,7 @@ async function sendList(
   page = page.filter((row) => !blocked.has(row.author_id));
   }
 
-  const presented = await presentMany(page, viewerId);
+  const presented = await presentMany(page, viewer);
   if ("missing" in presented) {
     noStore(res);
     res.json({ posts: [], nextCursor: null, migrated: false });
@@ -1013,7 +1104,7 @@ router.get(
   "/feed",
   asyncHandler(async (req, res) => {
     const viewer = await getUserFromRequest(req);
-    await sendList(res, viewer?.id ?? null, undefined, req);
+    await sendList(res, viewer, undefined, req);
   }),
 );
 
@@ -1030,13 +1121,30 @@ router.post(
     await ensureProfile(user);
     const now = new Date().toISOString();
     const id = randomUUID();
+    let body = parsed.data.body;
+    if (parsed.data.quotedPostId) {
+      const quoted = await findPost(parsed.data.quotedPostId);
+      if ("missing" in quoted) {
+        unavailable(res);
+        return;
+      }
+      if ("error" in quoted) {
+        serverError(res, quoted.error, "community-feed");
+        return;
+      }
+      if (!quoted.row) {
+        bad(res, "Quoted post not found", 404);
+        return;
+      }
+      body = embedQuoteMarker(body, parsed.data.quotedPostId);
+    }
     const { data, error } = await supabaseAdmin
       .from("community_feed_posts")
       .insert({
         id,
         author_id: user.id,
         title: parsed.data.title,
-        body: parsed.data.body,
+        body,
         category: parsed.data.category,
         kind: parsed.data.kind,
         visibility: "public",
@@ -1054,7 +1162,12 @@ router.post(
       return;
     }
     await publishTaggedBotReply(data as PostRow, user.id);
-    const presented = await presentMany([data as PostRow], user.id);
+    void notifyMentionedProfiles({
+      text: `${parsed.data.title}\n${parsed.data.body}`,
+      actorId: user.id,
+      postId: id,
+    });
+    const presented = await presentMany([data as PostRow], user);
     if ("missing" in presented || "error" in presented || presented.posts.length === 0) {
       noStore(res);
       res.status(201).json({
@@ -1093,7 +1206,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const user = userOf(req);
     await ensureProfile(user);
-    await sendList(res, user.id, user.id, req);
+    await sendList(res, user, user.id, req);
   }),
 );
 
@@ -1140,7 +1253,7 @@ router.get(
       serverError(res, loaded.error, "community-feed");
       return;
     }
-    const presented = await presentMany(loaded.rows, user.id);
+    const presented = await presentMany(loaded.rows, user);
     if ("missing" in presented || "error" in presented) {
       noStore(res);
       res.json({ posts: [], nextCursor: null, migrated: false });
@@ -1185,7 +1298,7 @@ router.get(
       .sort((a, b) => b.score - a.score)
       .slice(0, PAGE_SIZE)
       .map((entry) => entry.row);
-    const presented = await presentMany(scored, viewer?.id ?? null);
+    const presented = await presentMany(scored, viewer);
     if ("missing" in presented || "error" in presented) {
       noStore(res);
       res.json({ posts: [], migrated: false });
@@ -1356,7 +1469,7 @@ router.get(
       return;
     }
     const viewer = await getUserFromRequest(req);
-    const presented = await presentMany([found.row], viewer?.id ?? null);
+    const presented = await presentMany([found.row], viewer);
     if ("missing" in presented) {
       noStore(res);
       res.json({ post: null, migrated: false });
@@ -1487,7 +1600,7 @@ router.post(
       return;
     }
     if (!canPublishCommunityBotReply(found.row.author_id, user)) {
-      bad(res, "Sign in to ask the community assistant.", 401);
+      bad(res, "Sign in to use Ask AI on this post.", 401);
       return;
     }
     const existing = await assistantReplyMeta(postId, found.row.author_id, user);
@@ -1618,7 +1731,7 @@ router.patch(
       bad(res, "Post not found", 404);
       return;
     }
-    if (!canManage(user, found.row.author_id)) {
+    if (!canEditAsAuthor(user, found.row.author_id)) {
       bad(res, "You can only edit your own posts.", 403);
       return;
     }
@@ -1652,7 +1765,7 @@ router.patch(
     );
     const again = await findPost(postId);
     if ("row" in again && again.row) {
-      const presented = await presentMany([again.row], user.id);
+      const presented = await presentMany([again.row], user);
       const saved = "posts" in presented && presented.posts ? presented.posts[0] : undefined;
       if (saved) {
         noStore(res);
@@ -1682,6 +1795,96 @@ router.patch(
   }),
 );
 
+router.patch(
+  "/feed/:postId/accepted-comment",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const postId = param(req.params.postId);
+    if (!isUuid(postId)) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    const parsed = z.object({ commentId: z.string().uuid().nullable() }).safeParse(req.body ?? {});
+    if (!parsed.success) {
+      bad(res, "Send { \"commentId\": \"<uuid>\" } or null to clear.");
+      return;
+    }
+    const found = await findPost(postId);
+    if ("missing" in found) {
+      unavailable(res);
+      return;
+    }
+    if ("error" in found) {
+      serverError(res, found.error, "community-feed");
+      return;
+    }
+    if (!found.row) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    if (!canEditAsAuthor(user, found.row.author_id)) {
+      bad(res, "Only the author can mark the accepted answer.", 403);
+      return;
+    }
+  const kind = found.row.kind ?? "discussion";
+  if (kind !== "question" && parsed.data.commentId) {
+      bad(res, "Accepted answers apply to question posts only.");
+      return;
+    }
+    if (parsed.data.commentId) {
+      const { data: commentRow, error: commentError } = await supabaseAdmin
+        .from("community_feed_comments")
+        .select("id")
+        .eq("id", parsed.data.commentId)
+        .eq("post_id", postId)
+        .maybeSingle();
+      if (commentError) {
+        if (isMissingTable(commentError)) {
+          unavailable(res);
+          return;
+        }
+        serverError(res, commentError, "community-feed");
+        return;
+      }
+      if (!commentRow) {
+        bad(res, "Comment not found on this post.", 404);
+        return;
+      }
+    }
+    const updatedAt = new Date().toISOString();
+    const { error } = await supabaseAdmin
+      .from("community_feed_posts")
+      .update({
+        accepted_comment_id: parsed.data.commentId,
+        updated_at: updatedAt,
+      })
+      .eq("id", postId)
+      .eq("author_id", user.id);
+    if (error) {
+      if (isMissingTable(error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, error, "community-feed");
+      return;
+    }
+    const refreshed = await findPost(postId);
+    if (!("row" in refreshed) || !refreshed.row) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    const presented = await presentMany([refreshed.row], user);
+    if ("missing" in presented || "error" in presented || !presented.posts[0]) {
+      noStore(res);
+      res.json({ post: null, acceptedCommentId: parsed.data.commentId });
+      return;
+    }
+    noStore(res);
+    res.json({ post: presented.posts[0] });
+  }),
+);
+
 router.delete(
   "/feed/:postId",
   requireAuth,
@@ -1705,8 +1908,8 @@ router.delete(
       bad(res, "Post not found", 404);
       return;
     }
-    if (!canManage(user, found.row.author_id)) {
-      bad(res, "You can only delete your own posts.", 403);
+    if (!canDeleteFeedItem(user, found.row.author_id)) {
+      bad(res, "You can only delete your own posts unless you are the platform owner.", 403);
       return;
     }
     try {
@@ -2223,6 +2426,12 @@ router.post(
         commentId: id,
       });
     }
+    void notifyMentionedProfiles({
+      text: parsed.data.body,
+      actorId: user.id,
+      postId,
+      commentId: id,
+    });
 
     noStore(res);
     if (wantBotReply) {
@@ -2400,8 +2609,8 @@ router.delete(
       bad(res, "Comment not found", 404);
       return;
     }
-    if (row.author_id !== user.id && !isModerator(user)) {
-      bad(res, "You can only delete your own comments.", 403);
+    if (!canDeleteFeedItem(user, row.author_id)) {
+      bad(res, "You can only delete your own comments unless you are the platform owner.", 403);
       return;
     }
     const removed = await supabaseAdmin.from("community_feed_comments").delete().eq("id", commentId);
@@ -2661,7 +2870,7 @@ router.get(
   "/people/:userId",
   asyncHandler(async (req, res) => {
     let userId = param(req.params.userId);
-    let viewerId: string | null = null;
+    let viewer: SessionUser | null = null;
     if (userId === "me") {
       const user = await getUserFromRequest(req);
       if (!user) {
@@ -2670,13 +2879,12 @@ router.get(
       }
       await ensureProfile(user);
       userId = user.id;
-      viewerId = user.id;
+      viewer = user;
     } else if (!isUserId(userId)) {
       bad(res, "Profile not found", 404);
       return;
     } else {
-      const viewer = await getUserFromRequest(req);
-      viewerId = viewer?.id ?? null;
+      viewer = await getUserFromRequest(req);
     }
     const { data, error } = await supabaseAdmin
       .from("profiles")
@@ -2719,7 +2927,7 @@ router.get(
     }
     const slice = loaded.rows.slice(parsed.cursor, parsed.cursor + PAGE_SIZE);
     const nextCursor = parsed.cursor + PAGE_SIZE < loaded.rows.length ? parsed.cursor + PAGE_SIZE : null;
-    const presented = await presentMany(slice, viewerId);
+    const presented = await presentMany(slice, viewer);
     if ("missing" in presented) {
       noStore(res);
       res.json({ profile: toAuthor(profile.id, profile), posts: [], nextCursor: null, migrated: false });

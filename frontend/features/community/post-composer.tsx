@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import type { SessionUser } from "@/features/auth/types";
 import {
   COMMUNITY_CATEGORIES,
@@ -19,6 +19,7 @@ import {
   type PostInput,
 } from "@/lib/api/community-feed";
 import { AttachmentList } from "@/features/community/attachment-list";
+import { QuotedPostCard } from "@/features/community/quoted-post-card";
 import { MarkdownBody } from "@/features/community/markdown-body";
 import {
   ACCEPT,
@@ -87,6 +88,8 @@ export function PostComposer({
   onPublished?: (post: FeedPost) => void;
 }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const quotePostId = mode === "create" ? searchParams.get("quote")?.trim() || null : null;
   const bodyRef = useRef<HTMLTextAreaElement>(null);
   const draftRouteKey = mode === "edit" && initial ? `edit:${initial.id}` : "new";
 
@@ -102,7 +105,26 @@ export function PostComposer({
   const [savedPostId, setSavedPostId] = useState<string | null>(initial?.id ?? null);
   const [draftSavedAt, setDraftSavedAt] = useState<string | null>(null);
   const [uploadDrag, setUploadDrag] = useState(false);
+  const [quotePreview, setQuotePreview] = useState<FeedPost | null>(null);
   const hydratedDraftRef = useRef(false);
+
+  useEffect(() => {
+    if (!quotePostId) {
+      setQuotePreview(null);
+      return;
+    }
+    let cancelled = false;
+    void getPost(quotePostId)
+      .then((detail) => {
+        if (!cancelled) setQuotePreview(detail.post);
+      })
+      .catch(() => {
+        if (!cancelled) setQuotePreview(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [quotePostId]);
 
   useEffect(() => {
     if (!initial) return;
@@ -244,7 +266,13 @@ export function PostComposer({
       );
       return;
     }
-    const input: PostInput = { title: title.trim(), body: body.trim(), category, kind: postKind };
+    const input: PostInput = {
+      title: title.trim(),
+      body: body.trim(),
+      category,
+      kind: postKind,
+      ...(quotePostId && mode === "create" ? { quotedPostId: quotePostId } : {}),
+    };
     if (input.title.length < 4 || input.title.length > 160 || input.body.length < 1) {
       setError("Add a title (4–160 characters) and a body.");
       return;
@@ -478,6 +506,13 @@ export function PostComposer({
           </div>
         ) : null}
       </div>
+
+      {quotePreview ? (
+        <div className="space-y-1">
+          <p className="text-[13px] font-medium text-muted-foreground">Quoting</p>
+          <QuotedPostCard post={quotePreview} />
+        </div>
+      ) : null}
 
       {editorTab === "write" ? (
         <label className="block text-sm">

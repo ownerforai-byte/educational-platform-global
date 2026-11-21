@@ -19,7 +19,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -27,18 +30,23 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.core.content.ContextCompat;
+
+import com.google.firebase.messaging.FirebaseMessaging;
 
 /**
- * Full-screen shell. The study app stays inside this window. Chrome's address
- * bar is not used, and pages on this site never leave the activity.
+ * Full-screen shell. All platform navigation stays in this WebView — external
+ * browsers (Chrome) are not opened for normal study / community / sign-in flows.
  */
 public class LauncherActivity extends androidx.activity.ComponentActivity {
 
     private static final String SITE_HOST = "harindrasah.com.np";
+    private static final String USER_AGENT_SUFFIX = " RavikisanApp/1.0.8";
 
     private WebView webView;
     private ValueCallback<Uri[]> fileCallback;
@@ -68,6 +76,22 @@ public class LauncherActivity extends androidx.activity.ComponentActivity {
         settings.setLoadWithOverviewMode(true);
         settings.setUseWideViewPort(true);
         settings.setSupportMultipleWindows(false);
+        settings.setAllowFileAccess(false);
+        settings.setAllowContentAccess(false);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            settings.setAllowFileAccessFromFileURLs(false);
+            settings.setAllowUniversalAccessFromFileURLs(false);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER);
+        }
+        String defaultUa = settings.getUserAgentString();
+        if (defaultUa != null && !defaultUa.contains("RavikisanApp")) {
+            settings.setUserAgentString(defaultUa + USER_AGENT_SUFFIX);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
+        }
 
         CookieManager cookies = CookieManager.getInstance();
         cookies.setAcceptCookie(true);
@@ -77,13 +101,25 @@ public class LauncherActivity extends androidx.activity.ComponentActivity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 Uri uri = request.getUrl();
+                if (uri == null) return true;
+                String scheme = uri.getScheme();
+                if (scheme != null && (scheme.equals("mailto") || scheme.equals("tel"))) {
+                    Intent external = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(external);
+                    return true;
+                }
                 if (staysInApp(uri)) return false;
-                Intent external = new Intent(Intent.ACTION_VIEW, uri);
-                external.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(external);
+                Toast.makeText(
+                        LauncherActivity.this,
+                        "This link is only available inside Ravikisan.",
+                        Toast.LENGTH_SHORT
+                ).show();
                 return true;
             }
         });
+        requestPostNotificationsPermission();
+        bridgeNativeFcmToken();
+
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onShowFileChooser(
@@ -126,6 +162,12 @@ public class LauncherActivity extends androidx.activity.ComponentActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        bridgeNativeFcmToken();
+    }
+
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         if (webView != null) webView.saveState(outState);
@@ -135,6 +177,34 @@ public class LauncherActivity extends androidx.activity.ComponentActivity {
         Uri data = getIntent() == null ? null : getIntent().getData();
         if (data != null && staysInApp(data)) return data.toString();
         return getString(R.string.launchUrl);
+    }
+
+    private void requestPostNotificationsPermission() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return;
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                == PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 7101);
+    }
+
+  private void bridgeNativeFcmToken() {
+        try {
+            FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(task -> {
+                        if (!task.isSuccessful() || webView == null) return;
+                        String token = task.getResult();
+                        if (token == null || token.isEmpty()) return;
+                        String escaped = token.replace("\\", "\\\\").replace("'", "\\'");
+                        webView.post(() -> webView.evaluateJavascript(
+                                "window.__RN_ON_NATIVE_FCM_TOKEN__ && window.__RN_ON_NATIVE_FCM_TOKEN__('"
+                                        + escaped
+                                        + "')",
+                                null));
+                    });
+        } catch (Throwable ignored) {
+            // Firebase not configured locally — ship google-services.json for release builds.
+        }
     }
 
     private static boolean staysInApp(Uri uri) {

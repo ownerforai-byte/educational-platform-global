@@ -95,7 +95,11 @@ export function CommentComposer({
   }
 
   return (
-    <form ref={formRef} className="flex gap-3 px-1 py-2" onSubmit={(event) => void submit(event)}>
+    <form
+      ref={formRef}
+      className="mx-1 mb-2 flex gap-3 rounded-lg border border-border/90 bg-background p-3 shadow-sm"
+      onSubmit={(event) => void submit(event)}
+    >
       <span
         aria-hidden
         className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground"

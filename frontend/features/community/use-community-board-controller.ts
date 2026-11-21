@@ -14,6 +14,7 @@ import {
   listSaved,
   listTrending,
   publishAssistantReply,
+  setAcceptedComment,
   toggleLike,
   toggleRepost,
   toggleSave as toggleSaveRequest,
@@ -386,7 +387,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
           return;
         }
         if (view === "edit") {
-          const allowed = detail.post.author.id === user?.id || canModerate(user);
+          const allowed = detail.post.author.id === user?.id;
           if (!allowed) {
             router.replace("/ai/community/unavailable");
             return;
@@ -690,6 +691,17 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     [patchPostEverywhere, user],
   );
 
+  const onQuotePost = useCallback(
+    (target: FeedPost) => {
+      if (!user) {
+        setError("Sign in to quote a post.");
+        return;
+      }
+      router.push(`/ai/community/new?quote=${encodeURIComponent(target.id)}`);
+    },
+    [router, user],
+  );
+
   const onDeletePost = useCallback(
     async (postId: string) => {
       if (!user) {
@@ -846,6 +858,30 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     [knownPost, patchPostEverywhere, user],
   );
 
+  const handleAcceptAnswer = useCallback(
+    (postId: string, commentId: string) => {
+      const target = knownPost(postId);
+      const next = target?.acceptedCommentId === commentId ? null : commentId;
+      void setAcceptedComment(postId, next)
+        .then((result) => {
+          if (result.post) {
+            patchPostEverywhere(postId, () => result.post!);
+          } else {
+            patchPostEverywhere(postId, (item) => ({
+              ...item,
+              acceptedCommentId: next,
+              solved: Boolean(next),
+            }));
+          }
+          invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
+        })
+        .catch((err) =>
+          setError(statusOf(err) === 401 ? "Sign in to mark an accepted answer." : messageOf(err)),
+        );
+    },
+    [knownPost, patchPostEverywhere],
+  );
+
   const threadPropsForPost = useCallback((postId: string) => {
     const state = threadStates[postId];
     const threadPost = state?.post ?? knownPost(postId);
@@ -868,8 +904,9 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
       onSubmitComment: handleSubmitComment,
       onSaveCommentEdit: handleSaveCommentEdit,
       onDeleteComment: handleDeleteComment,
+      onAcceptAnswer: handleAcceptAnswer,
     };
-  }, [composerFocusTrigger, expandedPostId, followUpBotCommentId, handleDeleteComment, handleSaveCommentEdit, handleSubmitComment, knownPost, patchAuthorFollowing, threadStates, toggleInlineComments, user]);
+  }, [composerFocusTrigger, expandedPostId, followUpBotCommentId, handleAcceptAnswer, handleDeleteComment, handleSaveCommentEdit, handleSubmitComment, knownPost, patchAuthorFollowing, threadStates, toggleInlineComments, user]);
 
   const onAssistantReply = useCallback(
     (target: FeedPost) => {
@@ -1002,6 +1039,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     threadPropsForPost,
     onLike,
     onRepost,
+    onQuotePost,
     onToggleSave,
     onDeletePost,
     onAssistantReply,
@@ -1012,6 +1050,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     handleSubmitComment,
     handleSaveCommentEdit,
     handleDeleteComment,
+    handleAcceptAnswer,
   };
 }
 

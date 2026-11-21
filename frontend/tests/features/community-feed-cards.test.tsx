@@ -36,6 +36,7 @@ describe("CommunityFeed cards", () => {
         mode="feed"
         appliedQuery=""
         category=""
+        postKind=""
         filter="latest"
         posts={[makePost("one"), makePost("two")]}
         queuedNewCount={0}
@@ -50,6 +51,7 @@ describe("CommunityFeed cards", () => {
         isSaved={() => false}
         onApplySearch={noop}
         onSelectCategory={noop}
+        onSelectPostKind={noop}
         onSelectFilter={noop}
         onClearAllFilters={noop}
         onRevealQueuedPosts={noop}

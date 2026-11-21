@@ -67,6 +67,7 @@ export interface CommunityFeedProps {
   onLoadMore: () => void;
   onLike: (item: FeedPost) => void;
   onRepost?: (item: FeedPost) => void;
+  onQuotePost?: (item: FeedPost) => void;
   onToggleSave: (postId: string) => void;
   threadPropsForPost: (postId: string) => FeedPostRowThreadProps;
   onCopyLink: (postId: string) => void;
@@ -102,6 +103,7 @@ export function CommunityFeed({
   onLoadMore,
   onLike,
   onRepost,
+  onQuotePost,
   onToggleSave,
   threadPropsForPost,
   onCopyLink,
@@ -287,7 +289,7 @@ export function CommunityFeed({
         <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Browse by category">
           <button
             type="button"
-            className={cn(chipBtn, "min-h-11 text-[13px]", chipActive(!category))}
+            className={cn(chipBtn, "min-h-[22px] px-2 py-0.5 text-[10px]", chipActive(!category))}
             onClick={() => onSelectCategory("")}
           >
             All
@@ -299,7 +301,7 @@ export function CommunityFeed({
               <button
                 key={item.id}
                 type="button"
-                className={cn(chipBtn, "min-h-11 text-[13px]", chipActive(category === item.id))}
+                className={cn(chipBtn, "min-h-[22px] px-2 py-0.5 text-[10px]", chipActive(category === item.id))}
                 onClick={() => onSelectCategory(item.id)}
               >
                 {visual ? <span aria-hidden>{visual.glyph}</span> : null}
@@ -415,6 +417,7 @@ export function CommunityFeed({
               aiReplyBusy={aiReplyBusyIds.has(item.id)}
               onLike={onLike}
               onRepost={onRepost}
+              onQuotePost={onQuotePost}
               onToggleSave={onToggleSave}
               onCopyLink={onCopyLink}
               onDelete={onDelete}

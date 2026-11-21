@@ -23,12 +23,14 @@ import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { BotAnswerButton } from "@/features/community/bot-answer-button";
 import { BotIdentityBadge } from "@/features/community/bot-identity-badge";
 import { CreatorIdentityBadge } from "@/features/community/creator-identity-badge";
-import { looksLikeQuestion, plainExcerpt } from "@/features/community/community-helpers";
+import { canDeleteCommunityFeed, looksLikeQuestion, plainExcerpt } from "@/features/community/community-helpers";
 import { actionBtn, categoryLabel, postKindLabel } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
 import type { SessionUser } from "@/features/auth/types";
 import { CommentList } from "@/features/community/comment-list";
 import { CommentComposer } from "@/features/community/comment-composer";
+import { FeedMediaStrip } from "@/features/community/feed-media-strip";
+import { QuotedPostCard } from "@/features/community/quoted-post-card";
 
 function formatCompactWhen(iso: string): string {
   try {
@@ -77,6 +79,7 @@ export interface FeedPostRowThreadProps {
   ) => Promise<{ ok: boolean; error?: string }>;
   onSaveCommentEdit: (postId: string, commentId: string, nextBody: string) => Promise<{ ok: boolean; error?: string }>;
   onDeleteComment: (postId: string, commentId: string) => void;
+  onAcceptAnswer?: (postId: string, commentId: string) => void;
 }
 
 export interface FeedPostRowProps extends FeedPostRowThreadProps {
@@ -89,6 +92,7 @@ export interface FeedPostRowProps extends FeedPostRowThreadProps {
   aiReplyBusy: boolean;
   onLike: (item: FeedPost) => void;
   onRepost?: (item: FeedPost) => void;
+  onQuotePost?: (item: FeedPost) => void;
   onToggleSave: (postId: string) => void;
   onCopyLink: (postId: string) => void;
   onDelete: (postId: string) => void;
@@ -106,6 +110,7 @@ export const FeedPostRow = memo(function FeedPostRow({
   aiReplyBusy,
   onLike,
   onRepost,
+  onQuotePost,
   onToggleSave,
   onCopyLink,
   onDelete,
@@ -125,6 +130,7 @@ export const FeedPostRow = memo(function FeedPostRow({
   onSubmitComment,
   onSaveCommentEdit,
   onDeleteComment,
+  onAcceptAnswer,
 }: FeedPostRowProps) {
   const rowRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
@@ -153,9 +159,10 @@ export const FeedPostRow = memo(function FeedPostRow({
   const authorHref = profilePath(author.username, author.id);
   const postHref = sharePath(item.id);
   const own = Boolean(viewerId && viewerId === item.author.id);
-  const canEditOrDelete = own || canModerate;
+  const canEditPost = own;
+  const canDeletePost = own || canDeleteCommunityFeed(viewer ?? null);
   const canInvokeBot = Boolean(
-    looksLikeQuestion(item) && !botAuthor && item.assistantReply?.canApprove && !item.assistantReply.posted,
+    viewer && !botAuthor && item.assistantReply?.canApprove && !item.assistantReply?.posted,
   );
   const botReplied = Boolean(item.assistantReply?.posted);
   const filesMeta = attachmentSummary(item.attachments);
@@ -183,14 +190,14 @@ export const FeedPostRow = memo(function FeedPostRow({
   return (
     <article
       ref={rowRef}
-      className="overflow-hidden rounded-lg border border-border bg-card"
+      className="overflow-hidden rounded-md border border-border/90 bg-card"
     >
-      <div className="space-y-1.5 px-3 py-2.5">
+      <div className="space-y-1 px-2 py-1.5">
           {/* Top metadata line: category, author, time, resource & Veer indicators */}
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] text-muted-foreground">
             <span
               className={cn(
-                "inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium",
+                "inline-flex items-center gap-0.5 rounded px-1.5 py-px text-[10px] font-medium",
                 visual ? visual.badge : "border border-border/80 bg-muted/50 text-foreground",
               )}
             >
@@ -198,7 +205,7 @@ export const FeedPostRow = memo(function FeedPostRow({
               {categoryLabel(item.category)}
             </span>
             {postKindLabel(item.kind) ? (
-              <span className="rounded-md border border-border/70 bg-background px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+              <span className="rounded border border-border/70 bg-background px-1.5 py-px text-[9px] font-semibold uppercase tracking-wide text-muted-foreground">
                 {postKindLabel(item.kind)}
                 {item.solved ? " · Solved" : item.kind === "question" ? " · Open" : ""}
               </span>
@@ -248,7 +255,7 @@ export const FeedPostRow = memo(function FeedPostRow({
           <h2
             className={cn(
               "font-semibold leading-snug tracking-tight text-foreground",
-              isLeading ? "font-display text-lg sm:text-xl" : "text-base",
+              isLeading ? "font-display text-base sm:text-lg" : "text-sm",
             )}
           >
             <Link
@@ -270,6 +277,14 @@ export const FeedPostRow = memo(function FeedPostRow({
             >
               {excerpt}
             </p>
+          ) : null}
+
+          {item.quotedPost ? (
+            <QuotedPostCard post={item.quotedPost} className="mt-1" />
+          ) : null}
+
+          {item.attachments.length > 0 ? (
+            <FeedMediaStrip files={item.attachments} compact={!isLeading} className="mt-1" />
           ) : null}
       </div>
 
@@ -307,22 +322,37 @@ export const FeedPostRow = memo(function FeedPostRow({
           </button>
 
           {onRepost ? (
-            <button
-              type="button"
-              onClick={() => onRepost(item)}
-              aria-pressed={item.repostedByYou ?? false}
-              aria-label={item.repostedByYou ? "Undo repost" : "Repost"}
-              className={cn(
-                actionBtn,
-                "min-h-11 min-w-11 justify-center px-2.5 text-[13px] tabular-nums",
-                item.repostedByYou
-                  ? "bg-primary/10 font-semibold text-primary"
-                  : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
-              )}
-            >
-              <Share2 className="h-4 w-4 shrink-0" aria-hidden />
-              <span>{item.repostCount ?? 0}</span>
-            </button>
+            <>
+              <button
+                type="button"
+                onClick={() => onRepost(item)}
+                aria-pressed={item.repostedByYou ?? false}
+                aria-label={item.repostedByYou ? "Undo repost" : "Repost"}
+                className={cn(
+                  actionBtn,
+                  "min-h-11 min-w-11 justify-center px-2.5 text-[13px] tabular-nums",
+                  item.repostedByYou
+                    ? "bg-primary/10 font-semibold text-primary"
+                    : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
+                )}
+              >
+                <Share2 className="h-4 w-4 shrink-0" aria-hidden />
+                <span>{item.repostCount ?? 0}</span>
+              </button>
+              {onQuotePost ? (
+                <button
+                  type="button"
+                  onClick={() => onQuotePost(item)}
+                  aria-label="Quote repost"
+                  className={cn(
+                    actionBtn,
+                    "hidden min-h-11 px-2.5 text-[11px] font-medium text-muted-foreground hover:bg-muted/70 hover:text-foreground sm:inline-flex",
+                  )}
+                >
+                  Quote
+                </button>
+              ) : null}
+            </>
           ) : null}
 
           <button
@@ -342,7 +372,7 @@ export const FeedPostRow = memo(function FeedPostRow({
             <span>{item.saveCount}</span>
           </button>
 
-          {canInvokeBot && looksLikeQuestion(item) ? (
+          {canInvokeBot ? (
             <BotAnswerButton
               visible
               busy={aiReplyBusy}
@@ -364,29 +394,32 @@ export const FeedPostRow = memo(function FeedPostRow({
             {copied ? <Check className="h-4 w-4" aria-hidden /> : <Share2 className="h-4 w-4" aria-hidden />}
           </button>
 
-          {canEditOrDelete ? (
-            <>
-              <Link
-                href={`/ai/community/posts/${item.id}/edit`}
-                aria-label="Edit post"
-                className={cn(actionBtn, "min-h-11 min-w-11 justify-center px-2 text-muted-foreground hover:bg-muted/70 hover:text-foreground")}
-              >
-                <Pencil className="h-4 w-4" aria-hidden />
-              </Link>
-              <button
-                type="button"
-                onClick={() => onDelete(item.id)}
-                aria-label="Delete post"
-                className={cn(actionBtn, "min-h-11 min-w-11 justify-center px-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive")}
-              >
-                <Trash2 className="h-4 w-4" aria-hidden />
-              </button>
-            </>
+          {canEditPost ? (
+            <Link
+              href={`/ai/community/posts/${item.id}/edit`}
+              aria-label="Edit post"
+              className={cn(actionBtn, "min-h-11 min-w-11 justify-center px-2 text-muted-foreground hover:bg-muted/70 hover:text-foreground")}
+            >
+              <Pencil className="h-4 w-4" aria-hidden />
+            </Link>
+          ) : null}
+          {canDeletePost ? (
+            <button
+              type="button"
+              onClick={() => onDelete(item.id)}
+              aria-label="Delete post"
+              className={cn(actionBtn, "min-h-11 min-w-11 justify-center px-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive")}
+            >
+              <Trash2 className="h-4 w-4" aria-hidden />
+            </button>
           ) : null}
       </div>
 
       {commentsExpanded ? (
-        <section aria-label={`Replies on ${item.title}`} className="mt-1 border-t border-border/60">
+        <section
+          aria-label={`Replies on ${item.title}`}
+          className="border-t border-border/80 bg-muted/20 px-2 py-2"
+        >
           {threadError ? <p role="alert" className="px-1 pt-2 text-sm text-destructive">{threadError}</p> : null}
           <CommentComposer
             signedIn={Boolean(viewer)}
@@ -406,11 +439,19 @@ export const FeedPostRow = memo(function FeedPostRow({
               comments={threadComments}
               viewer={viewer}
               followUpBotCommentId={followUpBotCommentId}
+              postKind={item.kind}
+              postAuthorId={item.author.id}
+              acceptedCommentId={item.acceptedCommentId}
               onSelectFollowUp={onSelectFollowUp}
               onOpenComposer={() => undefined}
               onFollowChange={onFollowChange}
               onSaveEdit={(commentId, body) => onSaveCommentEdit(item.id, commentId, body)}
               onDelete={(commentId) => onDeleteComment(item.id, commentId)}
+              onAcceptAnswer={
+                item.kind === "question" && viewer?.id === item.author.id
+                  ? (commentId) => onAcceptAnswer?.(item.id, commentId)
+                  : undefined
+              }
             />
           )}
         </section>

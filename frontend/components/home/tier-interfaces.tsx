@@ -414,7 +414,7 @@ function TierPage({
         {rails}
       </SparkGate>
       <OpenSectionsRail tier={tier} />
-      <NextRungTeaser tier={tier} />
+      {tier === "owner" ? <NextRungTeaser tier={tier} /> : null}
     </div>
   );
 }

@@ -330,10 +330,11 @@ async function sendPush(input: FcmSendInput): Promise<FcmSendResult> {
 
   const results = await Promise.all(
     tokens.map((token) => {
+      const mergedData = link ? { ...data, url: link, deepLink: link } : data;
       const message: Record<string, unknown> = {
         token,
         notification: { title: input.title, body: input.body },
-        data,
+        data: mergedData,
         ...(link
           ? {
               webpush: {
@@ -343,6 +344,12 @@ async function sendPush(input: FcmSendInput): Promise<FcmSendResult> {
                   body: input.body,
                   icon: "/icon-192.png",
                   data: Object.assign({ url: link }, data),
+                },
+              },
+              android: {
+                priority: "high",
+                notification: {
+                  channelId: "community_activity",
                 },
               },
             }

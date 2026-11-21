@@ -21,6 +21,11 @@ plugins {
     id 'com.android.application'
 }
 
+def googleServicesJson = file("google-services.json")
+if (googleServicesJson.exists()) {
+    apply plugin: 'com.google.gms.google-services'
+}
+
 // ---------------------------------------------------------------------------
 // Google Play upload-keystore signing (Play App Signing upload key).
 // Credentials live in android/key.properties (gitignored). storeFile is
@@ -189,6 +194,8 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
     }
@@ -254,5 +261,8 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
         implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.7.4'
+
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    implementation 'com.google.firebase:firebase-messaging'
 
 }

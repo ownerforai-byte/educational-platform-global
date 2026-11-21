@@ -1,17 +1,40 @@
 "use client";
 
 import Link from "next/link";
+import { PenLine } from "lucide-react";
 import { ACCOUNT_LINKS, PEOPLE_LINKS, STUDY_LINKS } from "@/features/profile/info-catalog";
 import { InfoLinkGrid, useInfoMedia } from "@/features/profile/info-workspace";
-import { PlanIncludes } from "@/features/profile/plan-includes";
 import { StorageMeter } from "@/features/profile/storage-meter";
 import { PROFILE_INFO_FIELDS, profileInfoText } from "@/features/profile/profile-info";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { isOwnerAccount } from "@/lib/owner";
 
 export function InfoOverviewBoard() {
-  const { user } = useSession();
-  return <PlanIncludes editable={isOwnerAccount(user)} />;
+  return (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-lg font-semibold tracking-tight">Overview</h2>
+        <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+          Your details, study tools, people and account — each listed once on its own page.
+        </p>
+      </section>
+      <InfoLinkGrid
+        title="Quick links"
+        lede="Open the part of Info you need."
+        links={[
+          {
+            href: "/profile/details",
+            title: "Details",
+            detail: "Name, bio and public profile fields",
+            icon: PenLine,
+          },
+          ...STUDY_LINKS.slice(0, 3),
+          ...PEOPLE_LINKS.slice(0, 2),
+          ...ACCOUNT_LINKS.slice(0, 2),
+        ]}
+        columns={2}
+      />
+    </div>
+  );
 }
 
 export function InfoDetailsBoard() {

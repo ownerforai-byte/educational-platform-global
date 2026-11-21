@@ -46,6 +46,10 @@ vi.mock("@/lib/api/community-feed", () => ({
     { id: "general", label: "General" },
     { id: "physics", label: "Physics" },
   ],
+  COMMUNITY_POST_KINDS: [
+    { id: "discussion", label: "Discussion" },
+    { id: "question", label: "Question" },
+  ],
   listFeed: (...args: unknown[]) => listFeed(...args),
   listMine: vi.fn(),
   getPost: vi.fn(),

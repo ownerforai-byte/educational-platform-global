@@ -25,7 +25,8 @@ export type NotificationKind =
   | "ai_deep_dive_ready"
   // System & Platform Notices
   | "system_notice"
-  | "system_maintenance";
+  | "system_maintenance"
+  | "community_activity";
 
 export interface NotificationPayload {
   kind: NotificationKind;

@@ -31,10 +31,10 @@ async function postCommunityBotCron(path: "daily-public" | "profile-discovery"):
  * See `firebase/functions/README.md`.
  */
 
-/** Once daily (07:00 Asia/Kathmandu) — one nature post; prior bot posts are purged server-side. */
+/** Once daily (03:00 Asia/Kathmandu) — one nature post; prior bot posts are purged server-side. */
 export const communityBotDailyPost = onSchedule(
   {
-    schedule: "0 7 * * *",
+    schedule: "0 3 * * *",
     timeZone: "Asia/Kathmandu",
     retryCount: 1,
   },

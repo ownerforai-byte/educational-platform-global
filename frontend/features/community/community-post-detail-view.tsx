@@ -24,6 +24,8 @@ import { isCommunityBot } from "@/lib/community-bot";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { PostAuthorHeader } from "@/features/community/post-author-header";
 import { AttachmentList } from "@/features/community/attachment-list";
+import { FeedMediaStrip } from "@/features/community/feed-media-strip";
+import { QuotedPostCard } from "@/features/community/quoted-post-card";
 import { BotAnswerButton } from "@/features/community/bot-answer-button";
 import { CommentList } from "@/features/community/comment-list";
 import { CommentComposer } from "@/features/community/comment-composer";
@@ -70,6 +72,7 @@ export function CommunityPostDetailView() {
     handleSubmitComment,
     handleSaveCommentEdit,
     handleDeleteComment,
+    handleAcceptAnswer,
   } = useCommunityBoard();
 
   return (
@@ -193,7 +196,14 @@ export function CommunityPostDetailView() {
 
             <MarkdownBody text={post.body} className="text-base leading-relaxed text-foreground" />
 
-            {post.attachments.length > 0 ? <AttachmentList files={post.attachments} /> : null}
+            {post.quotedPost ? <QuotedPostCard post={post.quotedPost} /> : null}
+
+            {post.attachments.length > 0 ? (
+              <>
+                <FeedMediaStrip files={post.attachments} />
+                <AttachmentList files={post.attachments} />
+              </>
+            ) : null}
 
             <div className="flex flex-wrap items-center gap-1.5 border-t border-border/60 pt-3">
               <button
@@ -280,13 +290,13 @@ export function CommunityPostDetailView() {
 
               <BotAnswerButton
                 visible={Boolean(
-                  !isCommunityBot(post.author.id) &&
-                    looksLikeQuestion(post) &&
+                  user &&
+                    !isCommunityBot(post.author.id) &&
                     post.assistantReply?.canApprove &&
-                    !post.assistantReply.posted,
+                    !post.assistantReply?.posted,
                 )}
                 busy={aiReplyBusyIds.has(post.id)}
-                question={looksLikeQuestion(post)}
+                question={post.kind === "question" || looksLikeQuestion(post)}
                 variant="comment"
                 onPublish={() => onAssistantReply(post)}
               />
@@ -318,6 +328,9 @@ export function CommunityPostDetailView() {
               comments={post.comments ?? []}
               viewer={user}
               followUpBotCommentId={followUpBotCommentId}
+              postKind={post.kind}
+              postAuthorId={post.author.id}
+              acceptedCommentId={post.acceptedCommentId}
               onSelectFollowUp={(commentId) => {
                 const next = followUpBotCommentId === commentId ? null : commentId;
                 setFollowUpBotCommentId(next);
@@ -328,6 +341,11 @@ export function CommunityPostDetailView() {
               onFollowChange={patchAuthorFollowing}
               onSaveEdit={(commentId, body) => handleSaveCommentEdit(post.id, commentId, body)}
               onDelete={(commentId) => handleDeleteComment(post.id, commentId)}
+              onAcceptAnswer={
+                post.kind === "question" && user?.id === post.author.id
+                  ? (commentId) => handleAcceptAnswer(post.id, commentId)
+                  : undefined
+              }
             />
           </section>
         </div>

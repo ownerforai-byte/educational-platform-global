@@ -1719,6 +1719,12 @@ export class AIService {
     //   nvidia-2/agnes-2 — quad-only lanes, gemma-4-31b alone ran 127s once
     //   the EDITOR itself — drafting and merging at the same time rate-limited
     //     it (a 4.3s merge turned into an empty result), so it edits only.
+    //   aion, llm7, ovh — FREE but metered: aion is 20K tokens/day and llm7's
+    //     free allowance resets daily, so both run dry mid-day (both were 429 by
+    //     the owner's own test). They stay good chat fallbacks; they just must
+    //     not be load-bearing for a pass that is expected to work every time
+    //     (owner 2026-11-21: "but i asked for free forever").
+    const NOT_DURABLE = new Set(["aion", "llm7", "ovh"]);
     const editorName = (opts.synthesizer ?? "zai").toLowerCase();
     const SKIP = new Set([
       "internal",
@@ -1727,6 +1733,7 @@ export class AIService {
       "nvidia-2",
       "agnes-2",
       editorName,
+      ...NOT_DURABLE,
     ]);
     const laneNames = [...this.providers.keys()]
       .filter((n) => !SKIP.has(n))

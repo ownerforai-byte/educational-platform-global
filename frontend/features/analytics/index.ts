@@ -136,6 +136,61 @@ export function weeklyTrend(rows: QuizHistoryRow[], entries: ProgressEntry[]): W
     .map(({ correct, ...p }) => ({ ...p, accuracy: pct(correct, p.answered) }));
 }
 
+export interface DayStudyPoint {
+  day: string;
+  quizzes: number;
+  topicsCompleted: number;
+  /** Rough live score: 10 pts per topic finished, 5 per quiz taken. */
+  points: number;
+}
+
+function dayKey(iso: string): string | null {
+  const t = new Date(iso);
+  if (Number.isNaN(t.getTime())) return null;
+  return t.toISOString().slice(0, 10);
+}
+
+/** Per-day study signal for the last N calendar days (newest last). */
+export function dailyStudyActivity(
+  rows: QuizHistoryRow[],
+  entries: ProgressEntry[],
+  days = 14,
+): DayStudyPoint[] {
+  const map = new Map<string, DayStudyPoint>();
+  const touch = (day: string) => {
+    let p = map.get(day);
+    if (!p) {
+      p = { day, quizzes: 0, topicsCompleted: 0, points: 0 };
+      map.set(day, p);
+    }
+    return p;
+  };
+  for (const r of rows) {
+    const d = dayKey(r.createdat);
+    if (!d || !r.answered) continue;
+    const p = touch(d);
+    p.quizzes += 1;
+    p.points += 5;
+  }
+  for (const e of entries) {
+    if (!e.completedAt) continue;
+    const d = dayKey(e.completedAt);
+    if (!d) continue;
+    const p = touch(d);
+    p.topicsCompleted += 1;
+    p.points += 10;
+  }
+  const today = new Date();
+  const series: DayStudyPoint[] = [];
+  for (let i = days - 1; i >= 0; i -= 1) {
+    const d = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+    d.setUTCDate(d.getUTCDate() - i);
+    const key = d.toISOString().slice(0, 10);
+    series.push(map.get(key) ?? { day: key, quizzes: 0, topicsCompleted: 0, points: 0 });
+  }
+  return series;
+}
+
 export function overallAccuracy(rows: QuizHistoryRow[]): { quizzes: number; answered: number; accuracy: number } {
   let quizzes = 0;
   let answered = 0;

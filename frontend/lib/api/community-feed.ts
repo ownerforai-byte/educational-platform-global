@@ -67,10 +67,20 @@ export interface FeedAssistantReply {
   canApprove: boolean;
 }
 
+export interface FeedQuotedPost {
+  id: string;
+  title: string;
+  body: string;
+  createdAt: string;
+  author: FeedAuthor;
+}
+
 export interface FeedPost {
   id: string;
   title: string;
   body: string;
+  quotedPostId?: string | null;
+  quotedPost?: FeedQuotedPost | null;
   category: string;
   kind?: CommunityPostKind;
   solved?: boolean;
@@ -114,6 +124,7 @@ export interface PostInput {
   body: string;
   category: string;
   kind?: CommunityPostKind;
+  quotedPostId?: string;
 }
 
 const ROOT = "/api/community";
@@ -195,6 +206,16 @@ export function updatePost(id: string, input: PostInput): Promise<{ post: FeedPo
   return call(`${ROOT}/feed/${id}`, {
     method: "PATCH",
     body: JSON.stringify(input),
+  });
+}
+
+export function setAcceptedComment(
+  postId: string,
+  commentId: string | null,
+): Promise<{ post: FeedPost | null; acceptedCommentId?: string | null }> {
+  return call(`${ROOT}/feed/${postId}/accepted-comment`, {
+    method: "PATCH",
+    body: JSON.stringify({ commentId }),
   });
 }
 

@@ -19,7 +19,7 @@ import { isOwnerAccount } from "@/lib/owner";
 
 export default function OwnerSectionsPage() {
   const { user, isLoading } = useSession();
-  const isOwner = user?.role === "owner" || user?.role === "pro";
+  const isOwner = isOwnerAccount(user);
 
   if (isLoading) {
     return (

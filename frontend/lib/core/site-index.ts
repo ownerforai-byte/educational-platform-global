@@ -954,7 +954,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Info",
-        opening: "What each plan includes, then your details, study, people and account — each listed once.",
+        opening: "Your details, study, people and account — each listed once on its own page.",
         href: "/profile",
         meta: "Account",
         links: [

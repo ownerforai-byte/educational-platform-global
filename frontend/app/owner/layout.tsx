@@ -10,6 +10,7 @@ import {
   Settings,
   Home,
   LayoutDashboard,
+  ListChecks,
 } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { VerifyingStatus } from "@/features/auth/components/verifying-status";
@@ -25,6 +26,7 @@ const navItems = [
   { href: "/owner/users", label: "Approvals", icon: Users },
   { href: "/owner/credits", label: "Sparks", icon: Coins },
   { href: "/owner/settings", label: "Settings", icon: Settings },
+  { href: "/owner/sections", label: "Plans", icon: ListChecks },
 ];
 
 export default function OwnerLayout({ children }: { children: React.ReactNode }) {

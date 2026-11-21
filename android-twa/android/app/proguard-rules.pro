@@ -1,0 +1,3 @@
+-keepclassmembers class com.ravikisan.platform.** { *; }
+-keep class com.google.firebase.** { *; }
+-dontwarn com.google.firebase.**

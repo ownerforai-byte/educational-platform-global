@@ -3,6 +3,7 @@
 import { memo, useState } from "react";
 import {
   AlertCircle,
+  Award,
   Check,
   Ellipsis,
   Loader2,
@@ -10,6 +11,7 @@ import {
   Pencil,
   Trash2,
 } from "lucide-react";
+import type { CommunityPostKind } from "@/lib/api/community-feed";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,7 +23,7 @@ import type { FeedComment } from "@/lib/api/community-feed";
 import { isCommunityBot } from "@/lib/community-bot";
 import { PostAuthorHeader } from "@/features/community/post-author-header";
 import { MemberOnlyMarkdown } from "@/features/community/member-only-markdown";
-import { canModerate } from "@/features/community/community-helpers";
+import { canDeleteCommunityFeed } from "@/features/community/community-helpers";
 import {
   actionBtn,
   chipBtn,
@@ -38,6 +40,10 @@ interface CommentRowProps {
   onFollowChange: (authorId: string, following: boolean) => void;
   onSaveEdit: (commentId: string, nextBody: string) => Promise<{ ok: boolean; error?: string }>;
   onDelete: (commentId: string) => void;
+  postKind?: CommunityPostKind;
+  postAuthorId?: string;
+  acceptedCommentId?: string | null;
+  onAcceptAnswer?: (commentId: string) => void;
 }
 
 const CommentRow = memo(function CommentRow({
@@ -48,6 +54,10 @@ const CommentRow = memo(function CommentRow({
   onFollowChange,
   onSaveEdit,
   onDelete,
+  postKind,
+  postAuthorId,
+  acceptedCommentId,
+  onAcceptAnswer,
 }: CommentRowProps) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(comment.body);
@@ -59,7 +69,9 @@ const CommentRow = memo(function CommentRow({
   const pendingComment = comment.id.startsWith("pending-comment-");
   const canEdit = Boolean(viewer && viewer.id === comment.author.id && !botComment);
   const canDelete = Boolean(
-    viewer && ((viewer.id === comment.author.id && !botComment) || canModerate(viewer)),
+    viewer &&
+      !botComment &&
+      (viewer.id === comment.author.id || canDeleteCommunityFeed(viewer)),
   );
 
   async function handleSave() {
@@ -78,14 +90,14 @@ const CommentRow = memo(function CommentRow({
   }
 
   return (
-    <div className={cn("px-1 py-3", followUpActive && "rounded-xl bg-primary/[0.04]")}>
-      <div
-        className={cn(
-          "space-y-2",
-          botComment &&
-            "rounded-xl border border-primary/25 bg-primary/[0.04] p-3.5 ring-1 ring-primary/10 sm:p-4",
-        )}
-      >
+    <div
+      className={cn(
+        "rounded-lg border border-border/90 bg-background px-3 py-2.5 shadow-sm",
+        followUpActive && "ring-1 ring-primary/25",
+        botComment && "border-primary/30 bg-primary/[0.03]",
+      )}
+    >
+      <div className="space-y-2">
         {pendingComment ? (
           <div className="flex items-center gap-1.5 rounded-lg bg-muted/70 px-2.5 py-1 text-xs font-medium text-muted-foreground">
             <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden />
@@ -103,7 +115,7 @@ const CommentRow = memo(function CommentRow({
               onFollowChange={(following) => onFollowChange(comment.author.id, following)}
             />
             {comment.replyTo && (botComment || Boolean(comment.parentId)) ? (
-              <p className="pl-10 text-xs font-medium text-muted-foreground">
+              <p className="rounded-md border border-border/60 bg-muted/40 px-2 py-1 text-xs font-medium text-muted-foreground">
                 Replying to @{comment.replyTo.username || comment.replyTo.fullName}
               </p>
             ) : null}
@@ -211,16 +223,35 @@ const CommentRow = memo(function CommentRow({
         )}
 
         {viewer && !pendingComment ? (
-          <div className="pt-0.5">
+          <div className="flex flex-wrap items-center gap-1 pt-0.5">
             <button
               type="button"
               aria-label={`Reply to @${comment.author.username || comment.author.fullName}`}
               onClick={() => onSelectFollowUp(comment.id)}
-              className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+              className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[12px] font-medium text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
             >
-              <MessageCircle className="h-4 w-4" aria-hidden />
+              <MessageCircle className="h-3.5 w-3.5" aria-hidden />
               Reply
             </button>
+            {postKind === "question" &&
+            viewer.id === postAuthorId &&
+            onAcceptAnswer &&
+            !botComment ? (
+              <button
+                type="button"
+                aria-pressed={acceptedCommentId === comment.id}
+                onClick={() => onAcceptAnswer(comment.id)}
+                className={cn(
+                  "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[12px] font-medium",
+                  acceptedCommentId === comment.id
+                    ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400"
+                    : "text-muted-foreground hover:bg-muted",
+                )}
+              >
+                <Award className="h-3.5 w-3.5" aria-hidden />
+                {acceptedCommentId === comment.id ? "Accepted" : "Accept answer"}
+              </button>
+            ) : null}
           </div>
         ) : null}
       </div>
@@ -236,6 +267,10 @@ export function CommentList({
   onFollowChange,
   onSaveEdit,
   onDelete,
+  postKind,
+  postAuthorId,
+  acceptedCommentId,
+  onAcceptAnswer,
 }: {
   comments: FeedComment[];
   viewer: SessionUser | null;
@@ -245,6 +280,10 @@ export function CommentList({
   onFollowChange: (authorId: string, following: boolean) => void;
   onSaveEdit: (commentId: string, nextBody: string) => Promise<{ ok: boolean; error?: string }>;
   onDelete: (commentId: string) => void;
+  postKind?: CommunityPostKind;
+  postAuthorId?: string;
+  acceptedCommentId?: string | null;
+  onAcceptAnswer?: (commentId: string) => void;
 }) {
   if (comments.length === 0) {
     return <p className="px-1 py-2 text-sm text-muted-foreground">No replies yet.</p>;
@@ -275,6 +314,10 @@ export function CommentList({
           onFollowChange={onFollowChange}
           onSaveEdit={onSaveEdit}
           onDelete={onDelete}
+          postKind={postKind}
+          postAuthorId={postAuthorId}
+          acceptedCommentId={acceptedCommentId}
+          onAcceptAnswer={onAcceptAnswer}
         />
         {nested.length > 0 ? (
           <ul className={cn("ml-5 border-l border-border/80 pl-3", depth > 2 && "ml-3")}>
@@ -285,5 +328,5 @@ export function CommentList({
     );
   }
 
-  return <ul className="space-y-0.5">{roots.map((comment) => branch(comment, 0))}</ul>;
+  return <ul className="space-y-2">{roots.map((comment) => branch(comment, 0))}</ul>;
 }

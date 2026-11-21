@@ -44,8 +44,8 @@ export function BotAnswerButton({
           <h2 className="text-base font-semibold tracking-tight">Ask AI</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
             {question
-              ? "One click asks the community assistant to answer this question in public."
-              : "One click asks the community assistant to reply on this post."}
+              ? "Ask AI sends the community bot to answer in this thread — visible to everyone."
+              : "Ask AI sends the community bot to reply here — one answer per post."}
           </p>
         </div>
       </div>

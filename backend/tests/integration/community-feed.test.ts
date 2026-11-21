@@ -492,7 +492,7 @@ describe("community feed", () => {
     expect(missing.status).toBe(404);
   });
 
-  it("lets only the post author or platform owner publish a Veer comment", async () => {
+  it("lets any signed-in member publish one community assistant reply (Ask AI)", async () => {
     const created = await fetch(`${base}/feed`, {
       method: "POST",
       headers: memberHeaders(true),
@@ -532,19 +532,8 @@ describe("community feed", () => {
     const otherView = await otherBefore.json() as {
       post: { assistantReply: { posted: boolean; canApprove: boolean }; commentCount: number };
     };
-    expect(otherView.post.assistantReply.posted).toBe(false);
-    expect(otherView.post.assistantReply.canApprove).toBe(false);
+    expect(otherView.post.assistantReply).toEqual({ posted: false, canApprove: true });
     expect(otherView.post.commentCount).toBe(0);
-
-    const deniedOther = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer other-token",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ approve: true }),
-    });
-    expect(deniedOther.status).toBe(403);
 
     const authorBefore = await fetch(`${base}/feed/${postId}`, { headers: memberHeaders() });
     const authorView = await authorBefore.json() as {
@@ -583,7 +572,7 @@ describe("community feed", () => {
       },
       body: JSON.stringify({ approve: true }),
     });
-    expect(duplicateOther.status).toBe(403);
+    expect(duplicateOther.status).toBe(409);
 
     const ownerOnOthersPost = await fetch(`${base}/feed/${postId}`, {
       headers: { Authorization: "Bearer owner-token" },

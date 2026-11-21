@@ -88,7 +88,27 @@ the TWA sideloads.
 > Bubblewrap's interactive `init` does not offer a target-SDK flag. Check Play's
 > "Target API level" policy page before each submission.
 
-## 6) Privacy / policy URLs
+## 6) Standalone shell (no Chrome for normal use)
+
+`LauncherActivity` keeps **harindrasah.com.np**, Firebase/Google sign-in hosts, and
+push deep links inside the in-app WebView. Random external links are **blocked**
+(not opened in Chrome). Release builds disable WebView remote debugging, block
+cleartext HTTP, disallow Android backup of app data, and enable R8 shrinking.
+
+**Security note:** Auth still depends on server-side session rules; a rooted phone
+can always inspect its own WebView storage. Do not ship API secrets in the APK —
+only `google-services.json` from Firebase (gitignored locally).
+
+## 7) Native push (APK, not Chrome)
+
+Copy your Firebase Android config into `android/app/google-services.json` (same
+project as the web app). Release builds apply the Google Services plugin when
+that file is present. `RnPushMessagingService` shows tray notifications and
+opens **`LauncherActivity`** on tap (in-app WebView, not an external browser).
+After sign-in the shell forwards the native FCM token to
+`window.__RN_ON_NATIVE_FCM_TOKEN__`, which registers via `/api/access-requests/fcm`.
+
+## 8) Privacy / policy URLs
 
 Play requires the privacy policy URL. Point it at your hosted page:
 - `https://harindrasah.com.np/legal/privacy`
@@ -97,7 +117,7 @@ Play requires the privacy policy URL. Point it at your hosted page:
 Make sure the **live site** is stable before submitting — Play reviewers
 open the TWA and it loads this site.
 
-## 7) Submit to Play
+## 9) Submit to Play
 
 1. Play Console → **Create app** → name + language
 2. App content → screenshots, store listing (`../play-store/app-listing.md`)
