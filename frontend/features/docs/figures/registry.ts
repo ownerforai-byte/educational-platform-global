@@ -220,6 +220,31 @@ import { SolanaceaeFeatures } from "./solanaceae-features";
 import { LiliaceaeFeatures } from "./liliaceae-features";
 import { FamiliesComparisonTable } from "./families-comparison-table";
 import { FamiliesEconomicImportance } from "./families-economic-importance";
+import { AquaticAdaptations } from "./aquatic-adaptations";
+import { CursorialFossorialAdaptations } from "./cursorial-fossorial-adaptations";
+import { ArborealVolantAdaptations } from "./arboreal-volant-adaptations";
+import { PrimaryTerrestrialAdaptations } from "./primary-terrestrial-adaptations";
+import { PopulationParametersEquation } from "./population-parameters-equation";
+import { ReflexArcPath } from "./reflex-arc-path";
+import { TaxesTypes } from "./taxes-types";
+import { TaxisVsKinesis } from "./taxis-vs-kinesis";
+import { DominanceHierarchy } from "./dominance-hierarchy";
+import { InnateLearnedBehavior } from "./innate-learned-behavior";
+import { MigrationDefinition } from "./migration-definition";
+import { MigrationPurposes } from "./migration-purposes";
+import { FishMigrationTypes } from "./fish-migration-types";
+import { BirdMigrationRoutes } from "./bird-migration-routes";
+import { MigrationSurvivalValue } from "./migration-survival-value";
+import { PollutionSourcesMap } from "./pollution-sources-map";
+import { AirPollutantEffects } from "./air-pollutant-effects";
+import { WaterPollutionBod } from "./water-pollution-bod";
+import { SewageTreatmentStages } from "./sewage-treatment-stages";
+import { SoilErosionControl } from "./soil-erosion-control";
+import { PesticideClassesChart } from "./pesticide-classes-chart";
+import { BiomagnificationDdt } from "./biomagnification-ddt";
+import { PesticideBackfire } from "./pesticide-backfire";
+import { InsecticideNerveAction } from "./insecticide-nerve-action";
+import { IpmStrategy } from "./ipm-strategy";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -1849,6 +1874,207 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Why these families matter: mustard oil and pulses, potato and chilli, onion and aloe — food and pharmacy, each family a distinct chemistry kit.",
         alt: "Economic importance of the four families with crops",
         keyword: "economic",
+      },
+    ],
+  },
+  // ── Biology Unit 6 — Biota and environment ─────────────────────────────
+  "animal-adaptation-aquatic-primary-and-secondary-terrestrial-cursorial-fossorial-and-arboreal-and": {
+    title: "Animal adaptation",
+    figures: [
+      {
+        Component: AquaticAdaptations,
+        caption:
+          "Living in water: streamlined body, swim bladder for buoyancy, gills for dissolved oxygen, fins and flippers — with primary aquatic fish distinguished from secondary aquatic mammals like the whale and seal.",
+        alt: "Aquatic adaptations with swim bladder gills and primary versus secondary aquatic animals",
+        keyword: "swim bladder",
+      },
+      {
+        Component: PrimaryTerrestrialAdaptations,
+        caption:
+          "The drying problem: waterproof scales or cuticle, internal fertilisation with amniote eggs, lungs replacing gills, and water-saving kidneys — the four fixes that let animals leave water.",
+        alt: "Primary terrestrial adaptations against drying with amniote egg and lungs",
+        keyword: "amniote",
+      },
+      {
+        Component: CursorialFossorialAdaptations,
+        caption:
+          "Runners vs diggers: cursorial animals get long limbs, reduced digits and digitigrade stance; fossorial animals get powerful clawed forelimbs, reduced eyes and sensitive vibrissae.",
+        alt: "Cursorial running versus fossorial burrowing adaptations",
+        keyword: "cursorial",
+      },
+      {
+        Component: ArborealVolantAdaptations,
+        caption:
+          "Climbers vs flyers: arboreal animals use opposable thumbs, prehensile tails and binocular vision; volant animals use wings, hollow pneumatic bones, a keeled sternum and air sacs.",
+        alt: "Arboreal climbing versus volant flight adaptations",
+        keyword: "volant",
+      },
+      {
+        Component: PopulationParametersEquation,
+        caption:
+          "Population change in one equation: (natality + immigration) − (mortality + emigration) — the four flows that move population density.",
+        alt: "Population change equation with natality mortality immigration and emigration",
+        keyword: "change = (natality",
+      },
+    ],
+  },
+  "animal-behavior-reflex-action-taxes-dominance-and-leadership": {
+    title: "Animal behavior",
+    figures: [
+      {
+        Component: ReflexArcPath,
+        caption:
+          "The reflex arc in five stations: receptor → sensory neuron → CNS → motor neuron → effector — fast because the spinal cord decides without the brain (knee-jerk: ~30–50 ms).",
+        alt: "Reflex arc pathway from receptor to effector",
+        keyword: "reflex arc",
+      },
+      {
+        Component: TaxesTypes,
+        caption:
+          "The four taxes: phototaxis (light), chemotaxis (chemicals), thigmotaxis (touch), geotaxis (gravity) — each a directed movement toward or away from the stimulus.",
+        alt: "Four types of taxes with examples",
+        keyword: "phototaxis",
+      },
+      {
+        Component: TaxisVsKinesis,
+        caption:
+          "Taxis vs kinesis: taxis is directional steering toward or away from a stimulus; kinesis is random, non-directional movement whose rate simply rises with the stimulus.",
+        alt: "Taxis directional versus kinesis random movement",
+        keyword: "kinesis",
+      },
+      {
+        Component: DominanceHierarchy,
+        caption:
+          "Dominance and leadership: the dominant individual holds priority access to food, mates and territory, and leads group movement — hierarchy reduces fighting in primates, wolves and fish.",
+        alt: "Dominance hierarchy pyramid with priority access",
+        keyword: "dominance",
+      },
+      {
+        Component: InnateLearnedBehavior,
+        caption:
+          "Two sources of behaviour: innate (genetically programmed, same in all members — reflexes, taxes, migration) versus learned (shaped by experience — habituation, imprinting, conditioning).",
+        alt: "Innate versus learned behaviour comparison",
+        keyword: "learned",
+      },
+    ],
+  },
+  "fish-and-bird-migration": {
+    title: "Fish and bird migration",
+    figures: [
+      {
+        Component: MigrationDefinition,
+        caption:
+          "The word and the meaning: from Latin 'migrare' — the regular and periodic passing of animals from one place to another, an inborn behaviour shown by insects, birds, fishes, mammals and turtles.",
+        alt: "Migration definition from Latin migrare with animal groups",
+        keyword: "migrare",
+      },
+      {
+        Component: MigrationPurposes,
+        caption:
+          "Five purposes of migration: in search of food, to escape adverse environmental conditions, to find mate, and for shelter and reproduction.",
+        alt: "Purposes of migration food safety mate shelter reproduction",
+        keyword: "in search of food",
+      },
+      {
+        Component: FishMigrationTypes,
+        caption:
+          "Fish migration classics: salmon fighting upstream to spawn in the stream where they were born; mackerel migrating seasonally in the Kosi and Gandaki rivers to feed and breed.",
+        alt: "Fish migration salmon upstream and mackerel in Nepal rivers",
+        keyword: "salmon",
+      },
+      {
+        Component: BirdMigrationRoutes,
+        caption:
+          "Bird migration in Nepal: Himalayan birds such as the bar-headed goose descend to the Terai in winter; storks gather at lowland lakes.",
+        alt: "Bird migration routes Himalaya to Terai",
+        keyword: "bar-headed goose",
+      },
+      {
+        Component: MigrationSurvivalValue,
+        caption:
+          "Why migration works: it is genetically programmed, locked to a seasonal clock, and astonishingly precise — salmon home to their natal stream; some birds fly over 10,000 km per year.",
+        alt: "Migration survival value genetic programming and precision",
+        keyword: "genetically programmed",
+      },
+    ],
+  },
+  "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution": {
+    title: "Environmental pollution",
+    figures: [
+      {
+        Component: PollutionSourcesMap,
+        caption:
+          "One problem, three arenas: air (vehicle exhaust, industry, brick kilns, indoor biomass smoke), water (sewage, heavy metals, fertiliser runoff) and soil (excess chemicals, mining spoil, plastics).",
+        alt: "Pollution sources by medium air water and soil",
+        keyword: "air pollution",
+      },
+      {
+        Component: AirPollutantEffects,
+        caption:
+          "What polluted air does: photochemical smog (ozone, PAN), acid rain acidifying lakes and corroding buildings, the greenhouse effect driving global warming, and CO binding haemoglobin into hypoxia.",
+        alt: "Air pollution effects smog acid rain greenhouse and toxicity",
+        keyword: "acid rain",
+      },
+      {
+        Component: WaterPollutionBod,
+        caption:
+          "How water suffocates: high BOD means microbes consume dissolved oxygen; fertiliser runoff feeds algal blooms whose decay crashes oxygen and kills fish — Phewa Lake's creeping eutrophication.",
+        alt: "BOD and eutrophication cascade with algal bloom and fish kill",
+        keyword: "eutrophication",
+      },
+      {
+        Component: SewageTreatmentStages,
+        caption:
+          "Sewage treatment in three stages: primary screening and sedimentation, secondary microbial digestion (activated sludge, trickling filter), tertiary chemical polishing before discharge.",
+        alt: "Sewage treatment stages primary secondary tertiary",
+        keyword: "activated sludge",
+      },
+      {
+        Component: SoilErosionControl,
+        caption:
+          "Saving the topsoil: terracing and contour farming, afforestation and community forestry, cover crops and rotation, check dams and gully plugging, controlled grazing.",
+        alt: "Soil erosion control measures in Nepal",
+        keyword: "check dam",
+      },
+    ],
+  },
+  "pesticides-and-their-effects": {
+    title: "Pesticides and their effects",
+    figures: [
+      {
+        Component: PesticideClassesChart,
+        caption:
+          "The pesticide shelf: organochlorines (DDT — persistent), organophosphates and carbamates (nerve poisons), pyrethroids (fast-breaking), herbicides and fungicides — each class with its own trade-off.",
+        alt: "Pesticide classes with examples and persistence notes",
+        keyword: "organochlorine",
+      },
+      {
+        Component: BiomagnificationDdt,
+        caption:
+          "Biomagnification: DDT concentration rises from water → plankton → small fish → large fish → fish-eating birds, thinning eggshells — the bald eagle and osprey collapse.",
+        alt: "DDT biomagnification up the food chain to eggshell thinning",
+        keyword: "biomagnification",
+      },
+      {
+        Component: InsecticideNerveAction,
+        caption:
+          "Nerve poisons: organophosphates and carbamates inhibit acetylcholinesterase, so the nerve signal never switches off — convulsions and respiratory failure in insects and humans alike.",
+        alt: "Acetylcholinesterase inhibition by organophosphates and carbamates",
+        keyword: "acetylcholinesterase",
+      },
+      {
+        Component: PesticideBackfire,
+        caption:
+          "Ecological backfire: pest resurgence when natural enemies die, resistance through selection — the pesticide treadmill — and secondary pests released from competition.",
+        alt: "Pesticide resurgence resistance and secondary pests",
+        keyword: "resurgence",
+      },
+      {
+        Component: IpmStrategy,
+        caption:
+          "Integrated Pest Management: tolerant varieties, crop rotation, biological control (ladybird beetles, Bacillus thuringiensis), pheromone traps — chemicals only as a last resort at the economic threshold.",
+        alt: "IPM strategy components with chemical last resort",
+        keyword: "integrated pest management",
       },
     ],
   },
