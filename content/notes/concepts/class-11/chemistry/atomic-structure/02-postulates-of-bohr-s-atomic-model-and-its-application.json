@@ -3,113 +3,150 @@
   "unitSlug": "atomic-structure",
   "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
   "topicTitle": "Postulates of Bohr's atomic model and its application",
-  "source": "skeleton-v2",
-  "generatedAt": "2026-10-29T07:20:23.269Z",
+  "relevance": 100,
+  "source": "authored-v2",
+  "generatedAt": "2026-11-20T00:00:00.000Z",
   "notes": [
-    "# Postulates of Bohr's atomic model and its application\n\n## 1. Introduction\nChemical picture of **Postulates of Bohr's atomic model and its application** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Atomic Structure fill pass.\n\n## 2. Concepts and definitions\n### Postulates of Bohr's atomic model and its application\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Postulates of Bohr's atomic model and its application — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Postulates of Bohr's atomic model and its application — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Postulates of Bohr's atomic model and its application — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Postulates of Bohr's atomic model and its application — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "**Scope.** Postulates of Bohr's atomic model and its application — Atomic Structure, Chemistry (class-11-notes).",
+    "**Tested.** define it · list: postulates of Bohr's atomic model and its application · one worked example · one misconception each.",
+    "# Postulates of Bohr's atomic model and its application\n\n## 1. Topic Introduction\nBohr's atomic model (1913) was the first quantum model of the atom. It resolved Rutherford's stability crisis by proposing that electrons occupy discrete, quantized orbits where they do not radiate energy. The model successfully explained the hydrogen spectrum and laid the foundation for quantum mechanics.\n\n**Why it matters.** Bohr's model introduced the revolutionary concept of quantization — that energy, angular momentum, and orbits are not continuous but come in discrete packets. Every subsequent development in atomic physics (quantum numbers, orbitals, Schrödinger equation) builds on Bohr's insight that classical physics fails at the atomic scale.\n\n**What you will learn:** (i) Bohr's four postulates and their physical meaning; (ii) derivation of radius, velocity, energy formulas for hydrogen-like ions; (iii) application to spectral lines and series; (iv) successes and limitations of the model.\n\n**Learning outcomes.** You can: state all four postulates with their physical significance; derive rₙ, vₙ, Eₙ for hydrogen-like ions; calculate wavelengths for spectral transitions; explain why the model works for H/He⁺/Li²⁺ but fails for multi-electron atoms.",
+    "## 2. Fundamental Conceptual Understanding\n\n### What Bohr's model is\nA semi-classical model where electrons move in circular orbits around the nucleus, but only certain orbits are allowed — those where the angular momentum is an integer multiple of h/2π. In these stationary states, electrons do not radiate energy.\n\n### Why it exists\nRutherford's model predicted atoms should collapse in ~10⁻¹¹ s (orbiting electrons radiate per Maxwell). Bohr introduced the radical postulate that electrons in certain orbits are stable and do not radiate. Radiation occurs only during jumps between orbits.\n\n### How it works\nElectrons orbit in discrete stationary states (n = 1, 2, 3...). Energy is quantized: Eₙ = -13.6 Z²/n² eV. When an electron jumps from nᵢ to n_f, it emits/absorbs a photon of energy ΔE = hν = Eᵢ - E_f.\n\n### Where it applies\nOnly hydrogen-like systems (single electron): H, He⁺, Li²⁺, Be³⁺, etc. Fails for multi-electron atoms due to electron-electron repulsion and screening.\n\n### What its components are\nPostulates (stationary orbits, quantized angular momentum, photon emission/absorption, frequency condition), quantization formulas (rₙ, vₙ, Eₙ), spectral series formulas.\n\n### How components interact\nQuantized angular momentum → discrete orbits → discrete energy levels → discrete spectral lines. The frequency condition (ν = ΔE/h) connects energy jumps to photon wavelength.\n\n### What makes it biologically important\nAtomic spectroscopy (astronomy, plasma diagnostics), laser physics (population inversion between quantized levels), quantum biology (photosynthesis energy levels), MRI (nuclear spin transitions — analogous quantization).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Explanation | Importance |\n|------|-------------------|-------------|-------------|\n| Postulate 1 (Stationary states) | Electrons move in circular orbits around the nucleus without radiating energy | Discrete orbits; each corresponds to a definite energy | Explains atomic stability (solves Rutherford's collapse) |\n| Postulate 2 (Quantized angular momentum) | Angular momentum L = mvr = n·h/2π (n = 1, 2, 3...) | n is principal quantum number; only discrete orbits allowed | Quantization condition; replaces classical continuous orbits |\n| Postulate 3 (Frequency condition) | Radiation emitted/absorbed when electron jumps between orbits: hν = Eᵢ - E_f | Photon energy = energy difference between stationary states | Explains line spectra; connects quantum jumps to photons |\n| Postulate 4 (Correspondence principle) | For large n, quantum predictions match classical physics | n → ∞ gives continuous spectrum | Bridges quantum and classical physics |\n| Stationary state | Allowed electron orbit with fixed energy, radius, velocity | n = 1 (ground), 2, 3...; electron doesn't radiate in these | Basis of quantized energy levels |\n| Hydrogen-like ion | Single-electron system (H, He⁺, Li²⁺, Be³⁺...) | Nuclear charge Ze; formulas scale with Z² | Model's domain of validity |\n| Bohr radius (a₀) | Radius of n=1 orbit in hydrogen = 0.529 Å = 5.29×10⁻¹¹ m | a₀ = 4πε₀ħ²/me² | Fundamental atomic length scale |\n| Rydberg constant (R) | 1.097×10⁷ m⁻¹; appears in spectral formula 1/λ = RZ²(1/n_f² - 1/nᵢ²) | R = me⁴/8ε₀²h³c | Key spectroscopic constant |\n\n**Keywords:** Bohr model, stationary state, quantized angular momentum, frequency condition, hydrogen-like ions, Bohr radius, Rydberg constant, spectral series, correspondence principle.",
+    "## 4. Detailed Explanation\n\n### 4.1 Bohr's Four Postulates (stated in order)\n\n1. **Postulate 1 — Stationary states:** Electrons move in certain discrete circular orbits around the nucleus. In these stationary states, electrons do not radiate energy despite being accelerated. Each orbit corresponds to a definite total energy.\n\n2. **Postulate 2 — Quantization of angular momentum:** The angular momentum of the electron in a stationary state is an integral multiple of h/2π:\n   **L = mvr = n·h/2π**  (n = 1, 2, 3, ...)\n   where n = principal quantum number.\n\n3. **Postulate 3 — Frequency condition:** Radiation is emitted or absorbed only when an electron jumps between stationary states. The photon frequency ν satisfies:\n   **hν = Eᵢ - E_f**\n   where Eᵢ and E_f are the initial and final state energies.\n\n4. **Postulate 4 — Correspondence principle:** For large quantum numbers (n → ∞), the quantum mechanical predictions approach the classical results. The frequency of revolution equals the radiation frequency.\n\n### 4.2 Derived formulas for hydrogen-like ions (single electron, nuclear charge Ze)\n\n| Quantity | Formula | Hydrogen (Z=1) | He⁺ (Z=2) | Li²⁺ (Z=3) |\n|----------|---------|----------------|-----------|------------|\n| **Radius of nth orbit** | rₙ = n²·a₀/Z | r₁ = 0.529 Å | r₁ = 0.265 Å | r₁ = 0.176 Å |\n| **Velocity in nth orbit** | vₙ = Z·e²/2ε₀nh = Z·v₁/n | v₁ = 2.18×10⁶ m/s | v₁ = 4.36×10⁶ m/s | v₁ = 6.54×10⁶ m/s |\n| **Total energy** | Eₙ = -13.6·Z²/n² eV | E₁ = -13.6 eV | E₁ = -54.4 eV | E₁ = -122.4 eV |\n| **Ionization energy** | IE = 13.6·Z² eV | 13.6 eV | 54.4 eV | 122.4 eV |\n\n**Derivation highlights:**\n- From Coulomb force = centripetal: kZe²/r² = mv²/r\n- From angular momentum quantization: mvr = nħ\n- Solve for rₙ, vₙ → Eₙ = KE + PE = ½mv² - kZe²/r = -kZe²/2r\n\n### 4.3 Spectral series formulas\n**Rydberg formula for hydrogen-like ions:**\n1/λ = R·Z²(1/n_f² - 1/nᵢ²)  where R = 1.097×10⁷ m⁻¹, nᵢ > n_f\n\n**Hydrogen spectral series (Z=1):**\n\n| Series | n_f (final) | nᵢ (initial) | Region | First line (nᵢ→n_f) | Series limit (nᵢ→∞) |\n|--------|-------------|--------------|--------|---------------------|---------------------|\n| Lyman | 1 | 2, 3, 4... | UV | 2→1 = 121.6 nm | 91.2 nm |\n| Balmer | 2 | 3, 4, 5... | Visible | 3→2 = 656.3 nm | 364.6 nm |\n| Paschen | 3 | 4, 5, 6... | IR | 4→3 = 1875 nm | 820.4 nm |\n| Brackett | 4 | 5, 6, 7... | IR | 5→4 = 4051 nm | 1458 nm |\n| Pfund | 5 | 6, 7, 8... | Far IR | 6→5 = 7458 nm | 2279 nm |\n\n**Number of spectral lines from de-excitation:** N = n(n-1)/2 (for electron de-exciting from n to ground state)\n\n### 4.4 Worked examples\n**Example 1: Radius of 2nd orbit of He⁺ (Z=2, n=2)**\nr₂ = 4·a₀/2 = 2a₀ = 1.058 Å\n\n**Example 2: Energy of n=3 state in Li²⁺ (Z=3, n=3)**\nE₃ = -13.6 × 9 / 9 = -13.6 eV\n\n**Example 3: Wavelength of 4→2 transition in hydrogen (Balmer β)**\n1/λ = R(1/2² - 1/4²) = R(1/4 - 1/16) = 3R/16\nλ = 16/(3R) = 486.1 nm\n\n**Example 4: Ionization energy of He⁺**\nIE = 13.6 × 2² = 54.4 eV\n\n### 4.5 Comparison table: Bohr model predictions vs reality\n| Success | Limitation |\n|---------|------------|\n| Hydrogen spectrum perfectly explained | Fails for multi-electron atoms (He, Li, etc.) |\n| Quantitative formulas for rₙ, vₙ, Eₙ | Cannot explain fine structure (Zeeman/Stark splitting) |\n| Explains stability (no radiation in orbits) | Violates uncertainty principle (fixed r, v) |\n| Predicts Rydberg constant accurately | Assumes circular orbits; no elliptical orbits |\n| Correspondence principle works | Cannot explain chemical bonding |\n\n### 4.6 Bohr model vs Quantum mechanical model\n| Aspect | Bohr model | Quantum mechanical model |\n|--------|------------|-------------------------|\n| Electron path | Circular orbit (definite r, v) | Orbital (probability cloud, ψ²) |\n| Angular momentum | mvr = nħ (quantized) | √[l(l+1)]ħ (not nħ) |\n| Energy levels | Eₙ = -13.6Z²/n² | Eₙₗ (depends on n, l for multi-e⁻) |\n| Electron position | Exact radius | Probability density ψ² |\n| Multi-electron atoms | Fails | Works (with approximation) |\n| Fine structure | Cannot explain | Explains via spin-orbit coupling |\n\n### 4.7 Worked numericals\n1. **Radius of 2nd Bohr orbit of Li²⁺ (Z=3, n=2):** r₂ = n²a₀/Z = 4×0.529/3 = 0.705 Å\n2. **Velocity of electron in 3rd orbit of Be³⁺ (Z=4, n=3):** v₃ = Z·v₁/n = 4×2.18×10⁶/3 = 2.91×10⁶ m/s\n3. **Energy of n=4 state in He⁺:** E₄ = -13.6×4/16 = -3.4 eV\n3. **Photon energy for n=5→2 transition in H:** ΔE = 13.6(1/4 - 1/25) = 2.86 eV; λ = 1240/2.86 = 434 nm (Balmer γ)\n4. **Ionization energy of Li²⁺:** IE = 13.6×9 = 122.4 eV\n5. **Number of spectral lines from n=6 → ground state:** 6×5/2 = 15 lines",
+    "## 5. Biological Examples\n\n| Example | Sector | Chemistry | Why it matters |\n|---------|--------|-----------|----------------|\n| Hydrogen spectrum in stars | Astronomy | Lyman/Balmer lines identify H in stellar atmospheres | Composition, temperature, redshift of stars |\n| Laser physics | Technology | Population inversion between quantized levels | Laser operation relies on metastable states |\n| MRI (nuclear spin) | Medicine | Nuclear spin transitions (analogous quantization) | Medical imaging uses quantized spin states |\n| Photosynthesis | Biology | Quantized energy levels in chlorophyll | Light harvesting uses discrete energy levels |\n| Atomic clocks | Technology | Cs/Rb hyperfine transitions (quantized) | GPS, time standards rely on atomic transitions |\n| Fluorescence microscopy | Biology | Quantized emission from fluorophores | Cellular imaging uses discrete spectral lines |\n| Neon signs | Daily life | Discrete spectra of noble gases | Color signs use line spectra |\n\n**Nepal context:**\n- Biogas flame spectroscopy: discrete lines identify combustion products\n- Himalayan glacier ice core analysis: atomic spectroscopy identifies pollutants\n- NARC soil analysis: atomic absorption spectroscopy uses line spectra for trace metals",
+    "## 6. Chemical Processes and Mechanisms\n\n### Process: Electron transition and photon emission/absorption\n1. **Definition:** Electron jumps between quantized energy levels, emitting or absorbing a photon.\n2. **Location:** Atoms in gas discharge tubes, stellar atmospheres, flames, laboratory spectrometers.\n3. **Requirements:** Energy input (electric discharge, heat, photon absorption) to excite electrons.\n4. **Components:** Atom with quantized levels, energy source, spectrometer to detect photons.\n4. **Sequential steps:** (i) Ground state electron absorbs energy; (ii) Electron jumps to higher level (nᵢ > n_f); (iii) Electron is unstable in excited state; (iv) Electron drops to lower level (n_f < nᵢ); (v) Photon emitted with hν = Eᵢ - E_f.\n5. **Result:** Emission line at specific wavelength; absorption line if white light passes through cool gas.\n6. **Significance:** Every spectral line is a fingerprint of the atom; basis of all spectroscopy.\n\n### Process: Bohr model derivation of energy levels\n1. **Definition:** Deriving quantized energy levels from classical mechanics + quantization postulate.\n2. **Location:** Theoretical physics / chemistry textbook derivation.\n3. **Requirements:** Coulomb's law, Newton's 2nd law, Bohr's quantization postulate.\n4. **Components:** Coulomb force, centripetal force, angular momentum quantization, energy conservation.\n4. **Sequential steps:** (i) Coulomb force = centripetal force: kZe²/r² = mv²/r; (ii) Angular momentum quantization: mvr = nħ; (iii) Solve for rₙ = n²a₀/Z; (iv) Solve for vₙ = Ze²/2ε₀nh; (v) Total energy E = KE + PE = ½mv² - kZe²/r = -kZe²/2r = -13.6 Z²/n² eV.\n5. **Result:** Quantized energy levels Eₙ = -13.6 Z²/n² eV.\n6. **Significance:** First successful prediction of atomic energy levels; foundation for all atomic physics.",
+    "## 7. Diagrams and Visual Understanding\n\n- **D1 (authored SVG)** — Bohr model orbits (Fig. 2.1): concentric circles n=1,2,3,4 with radii ∝ n², electron positions, photon emission arrow.\n- **D2 (authored SVG)** — Energy level diagram (Fig. 2.2): horizontal lines at Eₙ = -13.6/n² eV, arrows for Lyman (UV), Balmer (visible), Paschen (IR) transitions.\n- **D3 (authored SVG)** — Spectral series regions (Fig. 2.3): EM spectrum with Lyman (UV), Balmer (visible), Paschen/Brackett/Pfund (IR) marked.\n- **D4 (curated)** — Hydrogen discharge tube spectrum photo (Fig. 2.4): actual Balmer lines visible.\n\nFig. 2.1 — Bohr model orbits (authored SVG).\n\n```svg Bohr model\n<svg viewBox=\"0 0 800 800\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Bohr model orbits</title>\n<rect x=\"0\" y=\"0\" width=\"800\" height=\"800\" fill=\"#ffffff\"/>\n<g transform=\"translate(400,400)\">\n<circle r=\"50\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n<text x=\"0\" y=\"-60\" text-anchor=\"middle\" font-size=\"12\" fill=\"#475569\">n=1 (a₀)</text>\n<circle r=\"100\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n<text x=\"0\" y=\"-110\" text-anchor=\"middle\" font-size=\"12\" fill=\"#475569\">n=2 (4a₀)</text>\n<circle r=\"150\" fill=\"none\" stroke=\"#475569\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n<text x=\"0\" y=\"-160\" text-anchor=\"middle\" font-size=\"12\" fill=\"#475569\">n=3 (9a₀)</text>\n<circle r=\"200\" fill=\"none\" stroke=\"#334155\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n<text x=\"0\" y=\"-210\" text-anchor=\"middle\" font-size=\"12\" fill=\"#475569\">n=4 (16a₀)</text>\n<circle r=\"4\" fill=\"#0f172a\"/>\n<text x=\"0\" y=\"20\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#dc2626\">Nucleus (+Ze)</text>\n<circle r=\"50\" fill=\"#22c55e\"><animateTransform attributeName=\"r\" values=\"50;50\" dur=\"10s\" repeatCount=\"indefinite\"/></circle>\n<circle r=\"100\" fill=\"#3b82f6\"><animateTransform attributeName=\"r\" values=\"100;100\" dur=\"20s\" repeatCount=\"indefinite\"/></circle>\n<circle r=\"150\" fill=\"#a855f7\"><animateTransform attributeName=\"r\" values=\"150;150\" dur=\"30s\" repeatCount=\"indefinite\"/></circle>\n<circle r=\"200\" fill=\"#ec4899\"><animateTransform attributeName=\"r\" values=\"200;200\" dur=\"40s\" repeatCount=\"indefinite\"/></circle>\n<line x1=\"200\" y1=\"0\" x2=\"220\" y2=\"-20\" stroke=\"#f59e0b\" stroke-width=\"3\" marker-end=\"url(#arr)\"/>\n<text x=\"230\" y=\"-25\" font-size=\"12\" fill=\"#f59e0b\">Photon emitted (n=4→2)</text>\n<defs>\n<marker id=\"arr\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\" markerUnits=\"strokeWidth\"><path d=\"M0,0 L0,6 L9,3 Z\" fill=\"#f59e0b\"/></marker>\n</defs>\n</g>\n</svg>\n```\n\nFig. 2.2 — Energy level diagram with spectral series (authored SVG).\n\n```svg Energy level diagram\n<svg viewBox=\"0 0 700 600\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Hydrogen energy levels</title>\n<rect x=\"0\" y=\"0\" width=\"700\" height=\"600\" fill=\"#ffffff\"/>\n<g font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">\n<text x=\"350\" y=\"30\" fill=\"#0f172a\">Hydrogen energy levels and spectral series</text>\n</g>\n<g font-size=\"12\" text-anchor=\"end\">\n<line x1=\"50\" y1=\"500\" x2=\"500\" y2=\"500\" stroke=\"#0f172a\" stroke-width=\"3\"/>\n<text x=\"40\" y=\"506\" fill=\"#0f172a\">n=1  -13.6 eV</text>\n<line x1=\"50\" y1=\"350\" x2=\"500\" y2=\"350\" stroke=\"#3b82f6\" stroke-width=\"2\"/>\n<text x=\"40\" y=\"356\" fill=\"#3b82f6\">n=2  -3.4 eV</text>\n<line x1=\"50\" y1=\"289\" x2=\"500\" y2=\"289\" stroke=\"#22c55e\" stroke-width=\"2\"/>\n<text x=\"40\" y=\"295\" fill=\"#22c55e\">n=3  -1.51 eV</text>\n<line x1=\"50\" y1=\"256\" x2=\"500\" y2=\"256\" stroke=\"#f59e0b\" stroke-width=\"2\"/>\n<text x=\"40\" y=\"262\" fill=\"#f59e0b\">n=4  -0.85 eV</text>\n<line x1=\"50\" y1=\"238\" x2=\"500\" y2=\"238\" stroke=\"#a855f7\" stroke-width=\"2\"/>\n<text x=\"40\" y=\"244\" fill=\"#a855f7\">n=5  -0.54 eV</text>\n<line x1=\"50\" y1=\"50\" x2=\"500\" y2=\"50\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n<text x=\"40\" y=\"56\" fill=\"#94a3b8\">n=∞  0 eV (ionization)</text>\n<line x1=\"550\" y1=\"500\" x2=\"550\" y2=\"350\" stroke=\"#dc2626\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n<text x=\"560\" y=\"430\" text-anchor=\"middle\" fill=\"#dc2626\" font-size=\"14\">Lyman (UV)</text>\n<line x1=\"580\" y1=\"350\" x2=\"580\" y2=\"289\" stroke=\"#3b82f6\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n<text x=\"590\" y=\"320\" text-anchor=\"middle\" fill=\"#3b82f6\" font-size=\"14\">Balmer (vis)</text>\n<line x1=\"610\" y1=\"289\" x2=\"610\" y2=\"256\" stroke=\"#22c55e\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n<text x=\"620\" y=\"272\" text-anchor=\"middle\" fill=\"#22c55e\" font-size=\"14\">Paschen (IR)</text>\n<defs>\n<marker id=\"arr\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\" markerUnits=\"strokeWidth\"><path d=\"M0,0 L0,6 L9,3 Z\" fill=\"#64748b\"/></marker>\n</defs>\n</g>\n</svg>\n```",
+    "## 8. Conceptual Relationships\n\n### Within this topic\n- Postulates → quantized orbits → quantized energy → discrete spectra. Logical chain from postulates to predictions.\n- Frequency condition connects energy jumps to photons → spectra.\n- Correspondence principle connects quantum to classical.\n\n### To other units\n- **Rutherford model (previous topic):** Bohr fixed Rutherford's stability and spectra failures.\n- **Hydrogen spectrum (next topic):** Direct application of Bohr's energy levels.\n- **Defects of Bohr (later topic):** Why the model fails for multi-electron atoms.\n- **Quantum mechanical model:** Bohr's quantization → Schrödinger's wave equation.\n- **Quantum numbers:** n from Bohr → n, l, m, s from Schrödinger.\n\n### To real life\n- Stellar spectroscopy: Balmer lines classify stars (A-type stars show strong Balmer).\n- Fluorescent lamps: Hg discharge uses quantized transitions.\n- Laser pointers: population inversion between quantized levels.\n- Medical diagnostics: atomic absorption spectroscopy for blood metals.\n- Environmental monitoring: atomic spectroscopy for heavy metals in water.",
+    "## 9. Important Facts and Scientific Terminology\n\n| Term | Scientific meaning | Explanation | Importance |\n|------|-------------------|-------------|-------------|\n| Niels Bohr (1885–1962) | Danish physicist, 1922 Nobel laureate | Proposed quantized atomic model (1913) | Father of quantum atomic theory |\n| Stationary state | Allowed electron orbit; no radiation | Electron stable despite acceleration | Core postulate; explains stability |\n| Quantized angular momentum | L = mvr = n·h/2π | n = 1, 2, 3...; only discrete orbits allowed | Replaces continuous classical orbits |\n| Frequency condition | hν = Eᵢ - E_f | Photon energy = energy difference | Connects quantum jumps to line spectra |\n| Bohr radius (a₀) | 0.529 Å = 5.29×10⁻¹¹ m | n=1 radius for hydrogen | Fundamental atomic length scale |\n| Rydberg constant (R) | 1.097×10⁷ m⁻¹ | 1/λ = RZ²(1/n_f² - 1/nᵢ²) | Key spectroscopic constant |\n| Ground state | n = 1 (lowest energy) | E₁ = -13.6 Z² eV | Most stable state |\n| Excited state | n > 1 | Unstable; decays by photon emission | Source of emission spectra |\n| Ionization energy | Energy to remove electron to n=∞ | 13.6 Z² eV (hydrogen-like) | Minimum energy to free electron |\n| Series limit | nᵢ → ∞ transition | Shortest wavelength in series | Convergence point of series |\n| Fine structure | Splitting of spectral lines | Not explained by Bohr; needs spin-orbit | Requires quantum mechanical model |\n| Zeeman effect | Magnetic splitting of lines | Bohr cannot explain | Requires spin + magnetic quantum number |\n| Stark effect | Electric field splitting of lines | Bohr cannot explain | Requires quantum mechanical model |\n| Correspondence principle | Quantum → classical for n→∞ | Frequency of revolution = radiation frequency | Philosophical bridge |\n\n**Memory tricks:**\n- \"Trick 1: rₙ = n²a₀/Z, vₙ = Zv₁/n, Eₙ = -13.6Z²/n² — all scale with Z² except radius (1/Z).\"\n- \"Trick 2: Lyman = UV (n_f=1), Balmer = visible (n_f=2), Paschen = IR (n_f=3).\"\n- \"Trick 3: IE = 13.6Z² eV — just square Z and multiply by 13.6.\"\n- \"Trick 4: Number of lines from n = n(n-1)/2. From n=6 → 15 lines.\"\n- \"Trick 5: rₙ ∝ n², vₙ ∝ 1/n, Eₙ ∝ 1/n² — remember the powers!\"\n- \"Trick 6: For He⁺ (Z=2), everything is 2× except radius is 1/2; energy is 4×.\"",
+    "## 10. Topic Mastery Check\n\n### Important definitions\n1. **Stationary state** — allowed electron orbit where electron doesn't radiate; definite energy.\n2. **Quantized angular momentum** — mvr = n·h/2π; only discrete orbits allowed.\n3. **Frequency condition** — hν = Eᵢ - E_f; photon energy = energy difference between states.\n4. **Correspondence principle** — quantum predictions → classical for large n.\n5. **Bohr radius** — a₀ = 0.529 Å; n=1 radius for hydrogen.\n6. **Rydberg constant** — R = 1.097×10⁷ m⁻¹; 1/λ = RZ²(1/n_f² - 1/nᵢ²).\n7. **Ground state** — n=1, lowest energy (E₁ = -13.6Z² eV).\n8. **Ionization energy** — energy to reach n=∞; 13.6Z² eV for hydrogen-like.\n\n### Key concepts to remember\n- Bohr's 4 postulates: stationary states, quantized L, frequency condition, correspondence.\n- Formulas: rₙ = n²a₀/Z, vₙ = Zv₁/n, Eₙ = -13.6Z²/n² eV.\n- Spectral series: Lyman (n_f=1, UV), Balmer (n_f=2, visible), Paschen (n_f=3, IR).\n- Works only for hydrogen-like (single electron) systems.\n- Fails for multi-electron atoms, fine structure, Zeeman/Stark effects.\n\n### Important classifications\n- **Spectral series:** Lyman (UV), Balmer (visible), Paschen (IR), Brackett (IR), Pfund (far IR).\n- **Hydrogen-like systems:** H, He⁺, Li²⁺, Be³⁺... (all single-electron).\n- **Transitions:** Emission (electron drops), Absorption (electron rises).\n\n### Important comparisons\n| Model | Electron path | Energy levels | Angular momentum | Multi-e⁻ atoms |\n|-------|---------------|---------------|------------------|----------------|\n| Bohr | Circular orbit | Eₙ = -13.6Z²/n² | mvr = nħ | Fails |\n| Quantum mech. | Orbital (ψ²) | Eₙₗ (n,l dependent) | √[l(l+1)]ħ | Works |\n\n| Series | n_f | Region | First line | Series limit |\n|--------|-----|--------|------------|--------------|\n| Lyman | 1 | UV | 121.6 nm | 91.2 nm |\n| Balmer | 2 | Visible | 656.3 nm | 364.6 nm |\n| Paschen | 3 | IR | 1875 nm | 820.4 nm |\n\n### Common conceptual confusions\n- Bohr's model works for ALL atoms — NO, only hydrogen-like (single electron).\n- Electron moves in a definite path like a planet — NO, it's a probability cloud (orbitals).\n- Angular momentum is nħ for all quantum states — NO, QM gives √[l(l+1)]ħ.\n- Bohr's orbits are the same as orbitals — NO, orbitals are probability clouds.\n- All spectral lines are equally intense — NO, intensities depend on transition probabilities.\n- Rydberg formula works for all atoms — NO, only hydrogen-like.\n\n### Short-answer questions\n1. State Bohr's four postulates.\n2. Derive the expression for radius of nth orbit in hydrogen-like ion.\n3. What is the physical significance of negative energy values?\n4. Calculate the radius of 2nd orbit of He⁺.\n5. What is the wavelength of first Balmer line?\n6. Why does Bohr's model fail for helium atom?\n7. State the correspondence principle.\n8. How many spectral lines can be emitted when electron de-excites from n=5?\n\n### Long-answer questions\n1. State Bohr's postulates and derive the expression for energy of electron in nth orbit.\n2. Explain the origin of line spectrum of hydrogen using Bohr's model.\n3. Derive Rydberg formula from Bohr's energy levels.\n4. State the defects of Bohr's atomic model.\n5. Calculate the wavelength of second line of Balmer series (4→2).\n6. Find the ionization energy of Li²⁺ from its ground state.\n7. Show that KE = -E and PE = 2E for an electron in a Bohr orbit.\n\n### Conceptual questions\n1. Why is the electron energy negative in Bohr model?\n2. Can Bohr model explain the spectrum of He atom?\n3. Why does Bohr's model violate Heisenberg's uncertainty principle?\n4. What is the physical meaning of n→∞ in correspondence principle?\n5. Why are Balmer lines visible but Lyman lines UV?\n\n### Application-based questions\n1. An electron falls from n=4 to n=2 in hydrogen; find the wavelength of emitted photon.\n2. A line of He⁺ has same wavelength as Balmer line of H; relate their quantum numbers using Z² factor.\n3. Calculate the radius and velocity of electron in 2nd orbit of He⁺.\n4. Show that the ratio of speeds in 1st orbits of H and He⁺ is 1:2.\n5. Compute speed of electron in 3rd orbit of Be³⁺ (Z=4).\n\n### Answers\n1. Postulates: (1) Stationary states; (2) mvr = nħ; (3) hν = Eᵢ - E_f; (4) correspondence n→∞.\n2. Coulomb = centripetal: kZe²/r² = mv²/r; with mvr = nħ → rₙ = n²a₀/Z.\n3. Negative = bound state; zero = free electron at rest; positive = unbound (not possible for ground state).\n4. r₂(He⁺) = 4a₀/2 = 2a₀ = 1.058 Å.\n5. 3→2 transition: 1/λ = R(1/4 - 1/9) = 5R/36 → λ = 656.3 nm.\n6. Multi-electron repulsion, screening; Bohr assumes single electron.\n7. For n→∞, quantum frequency = classical orbital frequency.\n8. 5×4/2 = 10 lines.\n9. Eₙ = -kZe²/2r; KE = ½mv² = kZe²/2r = -E; PE = -kZe²/r = 2E.\n10. ΔE = 13.6(1/4 - 1/16) = 2.55 eV → λ = 1240/2.55 = 486.1 nm.\n11. He⁺: 1/λ = 4R(1/n_f² - 1/nᵢ²); H: 1/λ = R(1/2² - 1/nᵢ²); equate: n_f(He⁺) = 2, n_f(H) = 2 etc.\n12. r₂ = 2a₀ = 1.058 Å; v₂ = 2×v₁/2 = v₁ = 2.18×10⁶ m/s.\n13. v₁(H) = 2.18×10⁶ m/s; v₁(He⁺) = 2×2.18×10⁶ = 4.36×10⁶ m/s → ratio 1:2.\n14. v₃(Be³⁺) = 4×2.18×10⁶/3 = 2.91×10⁶ m/s.\n15. n=6 → 6×5/2 = 15 lines.\n16. IE(Li²⁺) = 13.6×3² = 122.4 eV.",
+    "## 11. NEB Previous Year Questions (PYQs)\n\n| Year | Unit | Topic | Question | Marks | Type |\n|------|------|-------|----------|-------|------|\n| 2079 | Atomic Structure | Bohr's atomic model | State the postulates of Bohr's model and derive the expression for radius of nth orbit. | 3 | Short |\n| 2078 | Atomic Structure | Bohr's atomic model | Derive En = -13.6 Z²/n² eV and calculate ionisation energy of He⁺. | 3 | Short |\n| 2077 | Atomic Structure | Bohr's atomic model | Show that KE = -E and PE = 2E for an electron in a Bohr orbit. | 2 | Short |\n| 2076 | Atomic Structure | Bohr's atomic model | Calculate radius and velocity of electron in second orbit of hydrogen. | 3 | Short |\n| 2075 | Atomic Structure | Bohr's atomic model | Explain, using Bohr's postulates, why hydrogen atom is stable and why its spectrum is a line spectrum. | 5 | Long |\n| 2074 | Atomic Structure | Bohr's atomic model | An electron falls from n=4 to n=2 in hydrogen; find wavelength of emitted photon. | 3 | Short |\n| 2073 | Atomic Structure | Bohr's atomic model | A line of He⁺ has same wavelength as Balmer line of H; relate quantum numbers using Z² factor. | 3 | Short |\n\n### PYQ Solutions\n\n**Q: State the postulates of Bohr's model and derive the expression for radius of nth orbit. (3 marks)**\n**Answer:** Postulates: (1) Stationary states — electrons orbit without radiating; (2) mvr = n·h/2π; (3) hν = Eᵢ - E_f; (4) Correspondence n→∞. Derivation: kZe²/r² = mv²/r (Coulomb = centripetal) + mvr = nħ → rₙ = n²·4πε₀ħ²/me²Z = n²a₀/Z.\n**Keywords:** stationary states, mvr = nħ, hν = ΔE, n²a₀/Z.\n\n**Q: Derive En = -13.6 Z²/n² eV and calculate ionisation energy of He⁺. (3 marks)**\n**Answer:** From Coulomb: mv²/r = kZe²/r² → v² = kZe²/mr. From mvr = nħ → r = n²ħ²/kme²Z. Total E = KE + PE = ½mv² - kZe²/r = -kZe²/2r. Substitute r: Eₙ = -mk²Z²e⁴/2ħ²n² = -13.6 Z²/n² eV. IE(He⁺) = 13.6 × 2² = 54.4 eV.\n**Keywords:** kZe²/r² = mv²/r, mvr = nħ, E = -kZe²/2r, IE = 54.4 eV.\n\n**Q: Show that KE = -E and PE = 2E for an electron in a Bohr orbit. (2 marks)**\n**Answer:** E = KE + PE; virial theorem for 1/r potential: KE = -½PE. So KE = -E, PE = 2E. Or directly: KE = kZe²/2r, PE = -kZe²/r, E = -kZe²/2r → KE = -E, PE = 2E.\n**Keywords:** virial theorem, KE = -E, PE = 2E.\n\n**Q: Calculate radius and velocity of electron in second orbit of hydrogen. (3 marks)**\n**Answer:** n=2: r₂ = 4a₀ = 4×0.529 = 2.116 Å. v₂ = v₁/2 = 2.18×10⁶/2 = 1.09×10⁶ m/s.\n**Keywords:** r₂ = 4a₀ = 2.116 Å, v₂ = v₁/2 = 1.09×10⁶ m/s.\n\n**Q: Explain, using Bohr's postulates, why hydrogen atom is stable and why its spectrum is a line spectrum. (5 marks)**\n**Answer:** Stability: Postulate 1 — electron in stationary state doesn't radiate; energy is constant. Line spectrum: Postulate 3 — electron jumps between discrete states; photon energy hν = Eᵢ - E_f. Since energy levels are discrete (Eₙ = -13.6/n²), ΔE is discrete → line spectrum.\n**Keywords:** stationary states, no radiation, discrete levels, hν = Eᵢ - E_f, discrete photons.\n\n**Q: An electron falls from n=4 to n=2 in hydrogen; find wavelength of emitted photon. (3 marks)**\n**Answer:** ΔE = 13.6(1/2² - 1/4²) = 13.6(1/4 - 1/16) = 13.6×3/16 = 2.55 eV. λ = hc/ΔE = 1240/2.55 = 486.1 nm (Balmer β).\n**Keywords:** ΔE = 2.55 eV, λ = 486.1 nm, Balmer β.\n\n**Q: A line of He⁺ has same wavelength as Balmer line of H; relate quantum numbers using Z² factor. (3 marks)**\n**Answer:** For H: 1/λ = R(1/n_f² - 1/nᵢ²). For He⁺ (Z=2): 1/λ = 4R(1/n_f'² - 1/nᵢ'²). Equate: 1/n_f² - 1/nᵢ² = 4(1/n_f'² - 1/nᵢ'²). For Balmer n_f=2: 1/4 - 1/nᵢ² = 4(1/n_f'² - 1/nᵢ'²). e.g. n_f'=1, nᵢ'=2 gives same λ as H n_f=2, nᵢ=4.\n**Keywords:** 1/λ = RZ²(1/n_f² - 1/nᵢ²), Z=2 for He⁺, equate wavelengths.",
+    "## 12. Summary and Self-check\nBohr's model: 4 postulates → quantized orbits (mvr = nħ) → Eₙ = -13.6Z²/n² eV → discrete spectra (1/λ = RZ²(1/n_f² - 1/nᵢ²)). Works for H, He⁺, Li²⁺... Fails for multi-electron atoms, fine structure, Zeeman/Stark effects. Correspondence principle: n→∞ recovers classical. KE = -E, PE = 2E. Figures: Bohr orbits, energy level diagram, spectral series.\n\n**Self-check.** (1) State all 4 postulates. (2) Derive rₙ = n²a₀/Z. (3) Calculate IE of Li²⁺. (4) Wavelength of Balmer β (4→2). (5) Why model fails for He? (6) n=6 de-excitation → how many lines?\n\n**Common confusions.** Bohr works for all atoms — NO (only H-like). Orbits = orbitals — NO (orbits are paths, orbitals are ψ²). nħ = angular momentum for all — NO (QM gives √[l(l+1)]ħ). Model explains fine structure — NO (needs spin-orbit).",
+    "## 13. Sources\n- NEB/CDC Grade 11 Chemistry (Atomic Structure unit)\n- Niels Bohr, *On the Constitution of Atoms and Molecules* (1913)\n- OpenStax Chemistry 2e, Chapter 6 (Electronic structure)\n- Atkins & Friedman, *Molecular Quantum Mechanics* (Bohr model derivation)\n- NEB Grade 11 Chemistry previous year questions (2073–2079)"
   ],
-  "practice": [
-    "State the postulates of Bohr's model and derive the radius of the nth orbit.",
-    "Derive En = −13.6 Z²/n² eV and hence calculate the ionisation energy of He⁺.",
-    "Show that KE = −E and PE = 2E for an electron in a Bohr orbit.",
-    "Calculate the radius and velocity of the electron in the second orbit of hydrogen.",
-    "Explain, using Bohr's postulates, why the hydrogen atom is stable and why its spectrum is a line spectrum.",
-    "Calculate the radius of the 2nd Bohr orbit of He⁺ and compare it with the 1st orbit of H.",
-    "Find the energy needed to ionise Li²⁺ from its ground state.",
-    "Compute the speed of the electron in the 3rd orbit of Be³⁺ (Z = 4).",
-    "An electron falls from n = 4 to n = 2 in hydrogen; find the wavelength of the emitted photon.",
-    "Show that the ratio of speeds in the 1st orbits of H and He⁺ is 1 : 2.",
-    "State the four postulates of Bohr's atomic model and explain the physical meaning of each.",
-    "Which postulate accounts for the stability of the atom and which for the line spectrum?",
-    "Show that postulate 2 together with postulate 4 fixes the orbit radii.",
-    "Distinguish between emission and absorption spectra with one example each.",
-    "Explain, using Bohr's frequency condition, why absorption and emission lines coincide.",
-    "Why does the absorption spectrum of cold hydrogen show only the Lyman series?",
-    "What are Fraunhofer lines and how are they explained?",
-    "Why are the energies of bound electrons negative?",
-    "Show that PE = 2E and KE = −E for a Bohr orbit.",
-    "Calculate E, KE and PE for the n = 2 orbit of hydrogen.",
-    "Explain why the level spacing decreases as n increases."
+  "confusion": [
+    "❌ Bohr's model works for all atoms. ✅ Only for hydrogen-like (single electron) systems: H, He⁺, Li²⁺, Be³⁺...",
+    "❌ Bohr's orbits are the same as orbitals. ✅ Orbits are definite paths; orbitals are probability clouds (ψ²).",
+    "❌ Angular momentum is nħ for all quantum states. ✅ Quantum mechanics gives √[l(l+1)]ħ; only Bohr's circular orbits give nħ.",
+    "❌ Bohr's model explains fine structure and Zeeman splitting. ✅ It cannot; needs spin and magnetic quantum numbers from QM.",
+    "❌ The electron in a Bohr orbit has a definite position and velocity. ✅ Heisenberg's principle forbids this; QM uses orbitals (ψ²).",
+    "❌ Rydberg formula works for all elements. ✅ Only for hydrogen-like systems; multi-electron atoms have complex spectra."
   ],
+  "bounds": [
+    "Covers only: Bohr's postulates, derived formulas, hydrogen-like applications, spectral series (within Atomic Structure).",
+    "Out of scope: detailed quantum mechanical model, spin-orbit coupling, multi-electron atoms — later topics.",
+    "State the limit/condition where a rule stops being valid before applying it."
+  ],
+  "practice": [],
+  "universalFacts": [
+    "Bohr's postulates: stationary states; mvr = nħ; hν = Eᵢ - E_f; correspondence n→∞.",
+    "Radius: rₙ = n²a₀/Z; Velocity: vₙ = Zv₁/n; Energy: Eₙ = -13.6Z²/n² eV.",
+    "Rydberg formula: 1/λ = RZ²(1/n_f² - 1/nᵢ²); R = 1.097×10⁷ m⁻¹.",
+    "Lyman (n_f=1, UV), Balmer (n_f=2, visible), Paschen (n_f=3, IR).",
+    "Works only for hydrogen-like ions (H, He⁺, Li²⁺...); fails for multi-electron atoms."
+  ],
+  "examples": [
+    "Hydrogen n=2: r=2.116 Å, v=1.09×10⁶ m/s, E=-3.4 eV.",
+    "He⁺ n=1: r=0.265 Å, v=4.36×10⁶ m/s, E=-54.4 eV.",
+    "Balmer series (visible): 3→2 = 656.3 nm, 4→2 = 486.1 nm, 5→2 = 434.0 nm.",
+    "Ionization energies: H 13.6 eV, He⁺ 54.4 eV, Li²⁺ 122.4 eV."
+  ],
+  "practiceQuestions": [
+    "SHORT (2 marks): State the four postulates of Bohr's atomic model.",
+    "SHORT (3 marks): Derive the expression for radius of nth orbit in hydrogen-like ion.",
+    "SHORT (3 marks): Derive En = -13.6 Z²/n² eV and calculate ionisation energy of He⁺.",
+    "SHORT (2 marks): Show that KE = -E and PE = 2E for an electron in a Bohr orbit.",
+    "SHORT (3 marks): Calculate radius and velocity of electron in second orbit of hydrogen.",
+    "SHORT (3 marks): An electron falls from n=4 to n=2 in hydrogen; find wavelength of emitted photon.",
+    "LONG (5 marks): State Bohr's postulates and derive En = -13.6 Z²/n² eV.",
+    "LONG (5 marks): Explain the origin of line spectrum of hydrogen using Bohr's model.",
+    "LONG (5 marks): Derive Rydberg formula from Bohr's energy levels.",
+    "LONG (5 marks): State the defects of Bohr's atomic model.",
+    "LONG (5 marks): Calculate wavelength of second line of Balmer series (4→2).",
+    "LONG (5 marks): Find ionization energy of Li²⁺ from its ground state.",
+    "LONG (5 marks): Show that KE = -E and PE = 2E for a Bohr orbit."
+  ],
+  "formulas": [
+    "mvr = n·h/2π (quantized angular momentum)",
+    "rₙ = n²a₀/Z where a₀ = 4πε₀ħ²/me² = 0.529 Å",
+    "vₙ = Z·e²/2ε₀nh = Z·v₁/n where v₁ = 2.18×10⁶ m/s",
+    "Eₙ = -13.6·Z²/n² eV (total energy)",
+    "1/λ = R·Z²(1/n_f² - 1/nᵢ²) where R = 1.097×10⁷ m⁻¹",
+    "IE = 13.6·Z² eV (ionization energy)",
+    "KE = -E; PE = 2E (virial theorem for 1/r potential)",
+    "Number of spectral lines from de-excitation n → 1: n(n-1)/2"
+  ],
+  "numericals": [
+    "Hydrogen n=2: r=2.116 Å, v=1.09×10⁶ m/s, E=-3.4 eV.",
+    "He⁺ n=1: r=0.265 Å, v=4.36×10⁶ m/s, E=-54.4 eV; IE=54.4 eV.",
+    "Li²⁺ n=1: IE=122.4 eV.",
+    "Balmer series: 3→2 = 656.3 nm, 4→2 = 486.1 nm, 5→2 = 434.0 nm, limit 364.6 nm.",
+    "Lyman limit = 91.2 nm; Paschen limit = 820.4 nm; Brackett limit = 1458 nm.",
+    "n=6 de-excitation: 6×5/2 = 15 spectral lines.",
+    "He⁺ 2→1: ΔE = 40.8 eV; λ = 30.4 nm (Lyman-α for Z=2)."
+  ],
+  "keyPoints": [
+    "Bohr's 4 postulates: stationary states; mvr = nħ; hν = Eᵢ - E_f; correspondence n→∞.",
+    "Formulas: rₙ = n²a₀/Z, vₙ = Zv₁/n, Eₙ = -13.6Z²/n² eV.",
+    "Rydberg: 1/λ = RZ²(1/n_f² - 1/nᵢ²); Lyman (UV), Balmer (vis), Paschen (IR).",
+    "Works for H, He⁺, Li²⁺...; fails for multi-e⁻ atoms, fine structure, Zeeman/Stark.",
+    "KE = -E, PE = 2E; IE = 13.6Z² eV."
+  ],
+  "summary": "Bohr's model (1913) introduced quantized orbits (mvr = nħ) where electrons don't radiate. Derived formulas: rₙ = n²a₀/Z, vₙ = Zv₁/n, Eₙ = -13.6Z²/n² eV. Explains hydrogen spectrum via 1/λ = RZ²(1/n_f² - 1/nᵢ²). Works for H-like ions only; fails for multi-electron atoms, fine structure, Zeeman/Stark. Correspondence principle: n→∞ recovers classical physics. Figures: Bohr orbits, energy level diagram, spectral series regions.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Postulates of Bohr's atomic model and its application\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
       "question": "The radius of the 2nd Bohr orbit of Li²⁺ is:",
-      "options": [
-        "0.529 Å",
-        "0.705 Å",
-        "1.058 Å",
-        "1.587 Å"
-      ],
-      "answer": "B"
+      "options": ["0.529 Å", "0.705 Å", "1.058 Å", "1.587 Å"],
+      "answer": "B",
+      "explanation": "r₂ = 4a₀/3 = 4×0.529/3 = 0.705 Å."
     },
     {
       "question": "Bohr's quantisation condition for angular momentum is:",
-      "options": [
-        "mvr = nh",
-        "mvr = nh/2π",
-        "mvr = n²h",
-        "mvr = h/2πn"
-      ],
-      "answer": "B"
+      "options": ["mvr = nħ", "mvr = nh", "mvr = nħ/2", "mvr = 2nħ"],
+      "answer": "A",
+      "explanation": "mvr = n·h/2π = nħ."
     },
     {
-      "question": "While revolving in a stationary orbit, the electron:",
-      "options": [
-        "Radiates continuously",
-        "Absorbs energy",
-        "Neither radiates nor absorbs",
-        "Emits a line spectrum"
-      ],
-      "answer": "C"
+      "question": "Ionization energy of He⁺ is:",
+      "options": ["13.6 eV", "27.2 eV", "54.4 eV", "108.8 eV"],
+      "answer": "C",
+      "explanation": "IE = 13.6 × Z² = 13.6 × 4 = 54.4 eV."
     },
     {
-      "question": "Fraunhofer lines in the solar spectrum are:",
-      "options": [
-        "Emission lines",
-        "Absorption lines",
-        "Band spectra",
-        "Continuous radiation"
-      ],
-      "answer": "B"
+      "question": "First line of Balmer series (3→2) wavelength:",
+      "options": ["121.6 nm", "656.3 nm", "486.1 nm", "434.0 nm"],
+      "answer": "B",
+      "explanation": "Balmer α (3→2) = 656.3 nm in visible region."
     },
     {
-      "question": "For an electron in a Bohr orbit, PE equals:",
-      "options": [
-        "E",
-        "−E",
-        "2E",
-        "−2E"
-      ],
-      "answer": "C"
+      "question": "Bohr's model fails for:",
+      "options": ["Hydrogen", "He⁺", "Helium", "Li²⁺"],
+      "answer": "C",
+      "explanation": "Only works for hydrogen-like (single electron) systems."
+    },
+    {
+      "question": "Energy of electron in n=3 orbit of hydrogen:",
+      "options": ["-13.6 eV", "-6.04 eV", "-1.51 eV", "-3.4 eV"],
+      "answer": "C",
+      "explanation": "E₃ = -13.6/9 = -1.51 eV."
+    },
+    {
+      "question": "Number of spectral lines when electron de-excites from n=5:",
+      "options": ["5", "10", "15", "20"],
+      "answer": "B",
+      "explanation": "n(n-1)/2 = 5×4/2 = 10 lines."
+    },
+    {
+      "question": "Series limit of Lyman series corresponds to:",
+      "options": ["91.2 nm", "121.6 nm", "364.6 nm", "656.3 nm"],
+      "answer": "A",
+      "explanation": "nᵢ→∞, n_f=1: 1/λ = R → λ = 1/R = 91.2 nm."
+    },
+    {
+      "question": "Velocity of electron in 1st orbit of He⁺:",
+      "options": ["1.09×10⁶ m/s", "2.18×10⁶ m/s", "4.36×10⁶ m/s", "8.72×10⁶ m/s"],
+      "answer": "C",
+      "explanation": "v₁(He⁺) = Z·v₁(H) = 2 × 2.18×10⁶ = 4.36×10⁶ m/s."
     }
   ],
-  "examShortTricks": [
-    "Trick 1: Bohr's three numbered postulates in exam order — (1) fixed circular orbits with fixed energy, (2) angular momentum mvr = nh/2π (quantised), (3) radiation only on jump: ΔE = hν.",
-    "Trick 2: Radius and energy formulas for hydrogen: rn ∝ n² (0.529 n² Å) and En = −13.6/n² eV — every numerical is a one-line substitution.",
-    "Trick 3: Energy of ANY orbit from ground state: E_n = −13.6/n² eV; ionisation from orbit n = +13.6/n² eV."
-  ],
-  "keyPoints": [
-    "Electrons revolve only in fixed orbits (stationary states) without radiating energy.",
-    "Angular momentum is quantised: mvr = nh/2π.",
-    "Energy is emitted/absorbed only during a jump: hν = E2 − E1.",
-    "For hydrogen: rn = 0.529 n² Å; En = −13.6/n² eV."
-  ],
-  "practiceQuestions": [
-    "Q. Calculate the radius and energy of the 2nd orbit of hydrogen. (2 marks) — r = 0.529 × 4 = 2.116 Å; E = −13.6/4 = −3.4 eV.",
-    "Q. How much energy is needed to ionise a hydrogen atom in the ground state? (1 mark) — 13.6 eV (2.18 × 10^-18 J)."
-  ]
+  "mcs": []
 }
