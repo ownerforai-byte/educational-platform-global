@@ -71,7 +71,7 @@ describe("RequireApproval — login + owner-approval wall", () => {
     render(<RequireApproval>{CONTENT}</RequireApproval>);
     expect(
       screen.getAllByText(
-        "After signing up, an owner must approve your account before you can sign in and use the platform.",
+        "After signing up, your account goes through a short authorization check — please wait a while before you can sign in and use the platform.",
       ).length,
     ).toBeGreaterThan(0);
   });

@@ -29,7 +29,7 @@ describe("GuestSignInNote", () => {
     });
     expect(
       screen.getByText(
-        /After signing up, an owner must approve your account before you can sign in and use the platform\./,
+        /After signing up, your account goes through a short authorization check — please wait a while before you can sign in and use the platform\./,
       ),
     ).toBeInTheDocument();
   });

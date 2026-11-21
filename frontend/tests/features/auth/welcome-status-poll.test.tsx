@@ -74,7 +74,7 @@ describe("WelcomeStatus poll → approved screen", () => {
       expect(screen.getByTestId("account-status")).toBeInTheDocument(),
     );
     expect(screen.getByTestId("account-status").textContent).toContain(
-      "Awaiting approval",
+      "Awaiting authorization",
     );
     expect(screen.getByTestId("account-status").textContent).toContain(
       "This page re-checks on its own",
@@ -117,8 +117,8 @@ describe("WelcomeStatus poll → approved screen", () => {
 
     render(<WelcomeStatus />);
 
-    // First check fails transiently — the screen keeps its "Check now" retry.
-    const retry = await screen.findByRole("button", { name: /check now/i });
+    // First check fails transiently — the screen keeps its "Check again" retry.
+    const retry = await screen.findByRole("button", { name: /check again/i });
     fireEvent.click(retry);
 
     await waitFor(() => expect(locationReplace).toHaveBeenCalledWith("/login"));

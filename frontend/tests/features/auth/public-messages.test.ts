@@ -99,7 +99,7 @@ describe("API machine-code mappings", () => {
     ).toBe(AUTH_TRY_AGAIN);
     expect(
       authFailureMessage(Object.assign(new Error("x"), { code: "ACCOUNT_REJECTED" }), "login"),
-    ).toContain("denied");
+    ).toContain("wasn't approved");
   });
 
   it("maps SMS second-factor failures to friendly messages", () => {

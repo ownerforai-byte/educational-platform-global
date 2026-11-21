@@ -3,7 +3,8 @@ import { DeniedScreen } from "@/features/auth/components/account-screen-gate";
 
 export const metadata: Metadata = {
   title: "Access denied — Ravikisan's Platform",
-  description: "This signup was denied. You can create a new account or continue as a guest.",
+  description:
+    "This signup wasn't approved — you can create a new account or continue as a guest.",
 };
 
 /**

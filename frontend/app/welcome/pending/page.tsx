@@ -5,7 +5,7 @@ import { WelcomeApprovalScreen } from "@/features/auth/components/account-screen
 export const metadata: Metadata = {
   title: "Account Status — Ravikisan's Platform",
   description:
-    "Your account is being verified and approved automatically — usually within about 5 minutes.",
+    "Your account is going through authorization — please wait a short while.",
 };
 
 /**

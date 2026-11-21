@@ -49,7 +49,7 @@ describe("guest home — sign in is the only action", () => {
     render(<HomePublic />);
 
     expect(
-      screen.getAllByText(/After signing up, an owner must approve your account before you can sign in and use the platform\./).length,
+      screen.getAllByText(/After signing up, your account goes through a short authorization check — please wait a while before you can sign in and use the platform\./).length,
     ).toBeGreaterThan(0);
     expect(screen.getByRole("link", { name: /^sign in$/i })).toHaveAttribute(
       "href",

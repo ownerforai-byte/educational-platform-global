@@ -62,7 +62,7 @@ export function WelcomeApprovalScreen({ waiting }: { waiting: ReactNode }) {
   return (
     <AuthShell
       title="Your account is on its way"
-      subtitle="An owner must approve your account in the console before you can sign in."
+      subtitle="Your account is going through authorization — please wait a short while."
     >
       <LoggedInRedirect />
       {waiting}
@@ -132,7 +132,7 @@ export function DeniedScreen() {
   return (
     <AuthShell
       title="Access denied"
-      subtitle="Live status for this signup is denied."
+      subtitle="This signup hasn't been approved."
     >
       <div className="space-y-5" data-testid="denied-account-card">
         <div className="flex flex-col items-center gap-3 rounded-2xl border border-destructive/30 bg-destructive/[0.06] p-6 text-center">
@@ -143,9 +143,10 @@ export function DeniedScreen() {
             Access was denied
           </h2>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            This account was denied. You can keep browsing as a guest, or create
-            a new account now. Leave a message to sahrocky81@gmail.com if you
-            believe this is a mistake.
+            This signup wasn&apos;t approved. You&apos;re welcome to keep browsing as a
+            guest, or you can create a new account whenever you&apos;re ready. If
+            you believe this was a mistake, feel free to write to
+            sahrocky81@gmail.com.
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2">

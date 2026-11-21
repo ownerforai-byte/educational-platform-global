@@ -56,7 +56,7 @@ const STEP_INDEX: Record<StatusState, number> = {
 
 const STEPS = [
   { icon: UserCheck, label: "Account created", hint: "Your details are saved" },
-  { icon: Clock3, label: "Awaiting approval", hint: "Owner review in the console" },
+  { icon: Clock3, label: "Awaiting authorization", hint: "Please bear with us" },
   { icon: BadgeCheck, label: "Access granted", hint: "Sign in and start learning" },
 ];
 
@@ -264,13 +264,13 @@ export function WelcomeStatus() {
         <StateCard
           icon={<RefreshCw className="h-5 w-5 text-amber-500" />}
           title="Couldn't reach the server"
-          body="We couldn't check your status just now — this page keeps retrying automatically."
+          body="We weren't able to check your status just now — this page will keep retrying on its own."
           actions={
             <button
               onClick={() => void check({ bump: true })}
               className="rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
             >
-              Check now
+              Check again
             </button>
           }
         />
@@ -289,9 +289,9 @@ export function WelcomeStatus() {
               </span>
             </span>
           }
-          title="Awaiting approval"
+          title="Awaiting authorization"
           badge={<StatusPill status="PENDING" />}
-          body={`An owner must approve your account in the console before you can sign in. This page re-checks on its own (checked ${checkCount}×), so keep it open or come back after approval.`}
+          body={`Your account is going through authorization — please wait a short while. This page re-checks on its own (checked ${checkCount}×), so keep it open and it will move you on as soon as access is granted.`}
           actions={
             <>
               <button
@@ -299,7 +299,7 @@ export function WelcomeStatus() {
                 className="rounded-xl bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity inline-flex items-center gap-1.5"
               >
                 <RefreshCw className="h-3.5 w-3.5" />
-                Check now
+                Check again
               </button>
               <AuthButton href="/" label="Back to home" />
             </>
@@ -313,7 +313,7 @@ export function WelcomeStatus() {
       {/* ── Trust footer — kept, with its sign, below the note (owner 2026-10-17) ── */}
       <p className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
         <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
-        Access is granted manually by the owner — not automatic.
+        This is an authorization check — please wait a short while.
       </p>
     </div>
   );
