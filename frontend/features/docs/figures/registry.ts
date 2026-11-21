@@ -247,6 +247,34 @@ import { MarchantiaStructure } from "./marchantia-structure";
 import { ArchegoniumAntheridium } from "./archegonium-antheridium";
 import { BryophyteImportance } from "./bryophyte-importance";
 import { BryophyteVsFernDominance } from "./bryophyte-vs-fern-dominance";
+import { MushroomSectionLayers } from "./mushroom-section-layers";
+import { MushroomSporePrintSteps } from "./mushroom-spore-print-steps";
+import { MushroomDeathCapWarning } from "./mushroom-death-cap-warning";
+import { MushroomVsPlant } from "./mushroom-vs-plant";
+import { MushroomGillZoom } from "./mushroom-gill-zoom";
+import { MushroomMycorrhizaLink } from "./mushroom-mycorrhiza-link";
+import { MushroomHabitatMoisture } from "./mushroom-habitat-moisture";
+import { LichenCrossSection } from "./lichen-cross-section";
+import { LichenPartnersBenefit } from "./lichen-partners-benefit";
+import { LichenIsidiaFragment } from "./lichen-isidia-fragment";
+import { LichenPollutionBioindicator } from "./lichen-pollution-bioindicator";
+import { LichenUsesChart } from "./lichen-uses-chart";
+import { LichenVsMoss } from "./lichen-vs-moss";
+import { LichenMycobiontPhycobiont } from "./lichen-mycobiont-phycobiont";
+import { AlgaePigmentsChart } from "./algae-pigments-chart";
+import { AlgaeHabitatZones } from "./algae-habitat-zones";
+import { ChlamydomonasStructure } from "./chlamydomonas-structure";
+import { SpirogyraPyrenoidZoom } from "./spirogyra-pyrenoid-zoom";
+import { AlgaeReproductionModes } from "./algae-reproduction-modes";
+import { AlginIodineProducts } from "./algin-iodine-products";
+import { KelpBrownStructure } from "./kelp-brown-structure";
+import { MarchantiaGemmaeCups } from "./marchantia-gemmae-cups";
+import { MossCapsuleDetail } from "./moss-capsule-detail";
+import { BryophyteSporophyteDependence } from "./bryophyte-sporophyte-dependence";
+import { HornwortStructure } from "./hornwort-structure";
+import { RhizoidVsRoot } from "./rhizoid-vs-root";
+import { PeatBogFormation } from "./peat-bog-formation";
+import { ProtonemaToLeafyShoot } from "./protonema-to-leafy-shoot";
 import { FernStructure } from "./fern-structure";
 import { FernLifeCycle } from "./fern-life-cycle";
 import { FernProthallus } from "./fern-prothallus";
@@ -2041,6 +2069,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Fungi economic importance food medicine industry and harm",
         keyword: "antibiotic",
       },
+      {
+        Component: MushroomSectionLayers,
+        caption:
+          "Cut-away anatomy with jobs: pileus cap, gills that pack the hymenium, annulus ring left by the veil, volva cup from the universal veil, and the mycelium that runs the whole show underground.",
+        alt: "Mushroom cross-section layers with annulus volva gills and mycelium",
+        keyword: "gills",
+      },
+      {
+        Component: MushroomSporePrintSteps,
+        caption:
+          "The spore print, step by step: cap gill-side down on paper, cover and wait hours, lift to reveal a mirror of the gill pattern — spore colour is a species fingerprint.",
+        alt: "Four step spore print technique with colour key panel",
+        keyword: "spore print",
+      },
+      {
+        Component: MushroomDeathCapWarning,
+        caption:
+          "Amanita phalloides, the death cap: volva, ring, white gills — an amatoxin killer whose symptoms pause for 6–24 hours before liver failure. Cooking does not save you.",
+        alt: "Death cap Amanita warning with amatoxin poisoning facts and field rules",
+        keyword: "poisonous",
+      },
+      {
+        Component: MushroomVsPlant,
+        caption:
+          "Fungus vs plant, six features: no chlorophyll, chitin not cellulose, glycogen not starch, absorption not photosynthesis, hyphae not organs, spores not seeds.",
+        alt: "Mushroom versus plant comparison table chitin glycogen spores",
+        keyword: "chitin",
+      },
+      {
+        Component: MushroomGillZoom,
+        caption:
+          "Zoom into a gill: the hymenium lines each lamella, club basidia bud off four basidiospores each, and millions of spores drop into the air current below.",
+        alt: "Gill cross-section with hymenium basidia and basidiospores",
+        keyword: "hymenium",
+      },
+      {
+        Component: MushroomMycorrhizaLink,
+        caption:
+          "Mycorrhiza, the win-win underground: fungal sheaths and hyphal highways feed the tree phosphorus, nitrogen and water, and are paid in photosynthetic sugar.",
+        alt: "Mycorrhiza fungus tree root exchange phosphorus and sugars",
+        keyword: "mycorrhiza",
+      },
+      {
+        Component: MushroomHabitatMoisture,
+        caption:
+          "Where fruiting bodies appear: damp leaf litter, decaying logs, humid lawns, old stumps — the mycelium feeds all year and mushrooms are only its brief fruiting stage.",
+        alt: "Mushroom habitats damp logs leaf litter and growth checklist",
+        keyword: "moisture",
+      },
     ],
   },
   "lichen-general-introduction-characteristic-features-and-economic-importance-of-lichen": {
@@ -2080,6 +2157,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Lichens at work: litmus dye, perfumes, usnic-acid antibiotic, reindeer food — plus their day job as air-pollution monitors that die near SO₂.",
         alt: "Lichen importance in industry ecology pollution monitoring",
         keyword: "litmus",
+      },
+      {
+        Component: LichenCrossSection,
+        caption:
+          "Layered like a sandwich: upper cortex shields, the algal layer photosynthesises, the loose medulla stores air, the lower cortex grips via rhizines — attachment, not absorption.",
+        alt: "Lichen thallus cross-section cortex algal layer medulla rhizines",
+        keyword: "medulla",
+      },
+      {
+        Component: LichenPartnersBenefit,
+        caption:
+        "The deal, itemised: the alga cooks sugar by photosynthesis, the fungus pays back shelter, water and minerals — together they colonise bare rock where neither survives alone.",
+        alt: "Lichen partners alga gives food fungus gives shelter mutualism",
+        keyword: "symbiosis",
+      },
+      {
+        Component: LichenIsidiaFragment,
+        caption:
+          "Three cloning routes: powdery soredia blown by wind, warty cortex-covered isidia snapped off by rain, or simple thallus fragments — every propagule carries both partners.",
+        alt: "Lichen soredia isidia and fragmentation reproduction compared",
+        keyword: "isidia",
+      },
+      {
+        Component: LichenPollutionBioindicator,
+        caption:
+          "A living air-quality meter: lichen deserts beside SO₂ sources, crustose species return first, full foliose and fruticose communities only where the air runs clean.",
+        alt: "Lichen pollution bioindicator zones from lichen desert to full community",
+        keyword: "pollution",
+      },
+      {
+        Component: LichenUsesChart,
+        caption:
+          "Six ledgers of lichen value: litmus indicator, oakmoss perfume fixative, usnic-acid medicine, reindeer winter fodder, soil-starting pioneer — even careful food.",
+        alt: "Lichen uses chart litmus dye perfume medicine fodder food soil",
+        keyword: "litmus",
+      },
+      {
+        Component: LichenVsMoss,
+        caption:
+          "Lichen vs moss: a two-organism symbiosis versus a true green plant — rhizines grip where rhizoids hold, and the lichen always colonises the barer rock first.",
+        alt: "Lichen versus moss comparison table symbiosis versus plant",
+        keyword: "moss",
+      },
+      {
+        Component: LichenMycobiontPhycobiont,
+        caption:
+          "Name the partners: mycobiont builds the body and names the species; phycobiont (green alga or cyanobacterium) feeds it — cyanobacteria even fix nitrogen, and Cladonia feeds reindeer.",
+        alt: "Mycobiont and phycobiont roles with nitrogen fixation and reindeer moss",
+        keyword: "phycobiont",
       },
     ],
   },
@@ -2128,6 +2254,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Algae economic uses food phycocolloids agriculture environment",
         keyword: "agar",
       },
+      {
+        Component: AlgaePigmentsChart,
+        caption:
+          "Pigments are the ID card: chlorophyll a in all three, plus fucoxanthin masking green in browns and phycoerythrin reddening the reds — each class with its own stored food.",
+        alt: "Algae pigment chart chlorophyceae phaeophyceae rhodophyceae pigments",
+        keyword: "fucoxanthin",
+      },
+      {
+        Component: AlgaeHabitatZones,
+        caption:
+          "Habitats from ponds to hot springs: freshwater Spirogyra and Chlamydomonas, marine kelp forests, and specialists on wet soil, bark, snow — anywhere water touches.",
+        alt: "Algae habitat zones freshwater marine and special places",
+        keyword: "freshwater",
+      },
+      {
+        Component: ChlamydomonasStructure,
+        caption:
+          "One cell that swims: two equal flagella, a cup-shaped chloroplast with pyrenoid, a red eyespot for light, a contractile vacuole — the motile green alga blueprint.",
+        alt: "Chlamydomonas single cell with flagella chloroplast eyespot pyrenoid",
+        keyword: "chlamydomonas",
+      },
+      {
+        Component: SpirogyraPyrenoidZoom,
+        caption:
+          "Inside one Spirogyra cell: the ribbon chloroplast spirals through the cytoplasm, studded with starch-making pyrenoids, around a central nucleus in a slimy sheath.",
+        alt: "Spirogyra cell zoom spiral chloroplast pyrenoids nucleus",
+        keyword: "pyrenoid",
+      },
+      {
+        Component: AlgaeReproductionModes,
+        caption:
+          "Three routes to a new alga: fragmentation, swimming flagellated zoospores, and gamete fusion — in Spirogyra, isogamy by conjugation with no flagella at all.",
+        alt: "Algae reproduction vegetative asexual zoospores sexual isogamy",
+        keyword: "zoospore",
+      },
+      {
+        Component: AlginIodineProducts,
+        caption:
+          "Seaweed to shelf: algin from brown kelps thickens ice cream and shampoo, agar from red algae sets every lab petri dish, kelp-concentrated iodine prevents goitre.",
+        alt: "Algin agar and iodine products from brown and red algae",
+        keyword: "algin",
+      },
+      {
+        Component: KelpBrownStructure,
+        caption:
+          "Kelp anatomy: holdfast grips rock (not roots), a flexible stipe, blade solar panels lifted by gas floats — 60-metre brown forests sheltering whole fish nurseries.",
+        alt: "Kelp brown alga structure holdfast stipe blades gas floats",
+        keyword: "kelp",
+      },
     ],
   },
   "bryophyta-general-introduction-and-characteristic-features-of-liverworts-hornworts-and-moss-morp": {
@@ -2174,6 +2349,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Why bryophytes matter: amphibians of the plant kingdom, peat-forming Sphagnum, pioneer soil-builders, and cheap pollution indicators.",
         alt: "Bryophyte importance peat pioneers and pollution indicators",
         keyword: "amphibians",
+      },
+      {
+        Component: MarchantiaGemmaeCups,
+        caption:
+          "Gemma cups on the thallus surface: raindrops splash out lens-shaped gemmae, each one growing into a genetically identical new Marchantia — cloning by weather.",
+        alt: "Marchantia gemma cups with splashed gemmae on thallus",
+        keyword: "gemmae",
+      },
+      {
+        Component: MossCapsuleDetail,
+        caption:
+          "The capsule as a salt shaker: operculum lid falls, hygroscopic peristome teeth twist open only in dry air, and millions of spores ride the wind — closing when wet.",
+        alt: "Moss capsule with peristome teeth operculum and spore release",
+        keyword: "peristome",
+      },
+      {
+        Component: BryophyteSporophyteDependence,
+        caption:
+          "The green moss is the boss: its brown sporophyte — foot, seta, capsule — stays plugged into the gametophyte, drawing water and sugar like a partly parasitic guest.",
+        alt: "Moss sporophyte dependent on dominant gametophyte leafy shoots",
+        keyword: "sporophyte",
+      },
+      {
+        Component: HornwortStructure,
+        caption:
+          "Anthoceros earns its name: needle-like horn sporophytes rise from a flat thallus, growing continuously from the base — cells with a single chloroplast each.",
+        alt: "Hornwort Anthoceros horn sporophytes on flat thallus",
+        keyword: "hornwort",
+      },
+      {
+        Component: RhizoidVsRoot,
+        caption:
+          "Rhizoid vs true root: hair-like anchoring threads with no xylem or phloem cap bryophytes at small size — real vascular roots unlock the forests that follow.",
+        alt: "Rhizoid versus true root comparison with vascular tissue",
+        keyword: "rhizoid",
+      },
+      {
+        Component: PeatBogFormation,
+        caption:
+          "Sphagnum builds bogs: living carpet over waterlogged acid layers where decay stalls, pressing centuries of dead moss into peat — fuel, soil amendment and carbon vault.",
+        alt: "Peat bog cross-section with living Sphagnum and compressed peat layers",
+        keyword: "peat",
+      },
+      {
+        Component: ProtonemaToLeafyShoot,
+        caption:
+          "A moss begins as a green alga look-alike: spore → creeping filamentous protonema → buds → upright leafy shoots — living evidence of algal ancestry.",
+        alt: "Protonema filament to leafy shoot moss development stages",
+        keyword: "protonema",
       },
     ],
   },
