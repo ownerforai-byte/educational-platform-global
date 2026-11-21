@@ -263,13 +263,16 @@ export const FREE_LLM_PROVIDERS: readonly FreeLlmProviderSpec[] = [
     baseUrlEnv: "DEEPAI_API_URL",
     envVars: ["DEEPAI_API_KEY"],
     modelEnv: "DEEPAI_MODEL",
-    // Best efficiency for academic answering: a current-generation frontier
-    // model served at flash-class latency. Override with DEEPAI_MODEL for
-    // depth (e.g. deepai/claude-opus-5-5) or cost (deepai/qwen-3.8-flash).
-    defaultModel: "deepai/gpt-6.1-sol",
+    // Owner 2026-11-21: serve the FREE DeepAI models, not the paid frontier
+    // ones. Free set (320K ctx each, $0 on the DeepAI account):
+    //   deepai/gpt-6-luna · deepai/glm-5.3-flash · deepai/deepai-cyber ·
+    //   deepai/deepseek-v4.1-flash
+    // Default gpt-6-luna: strongest of the four for academic answers.
+    // Override per deploy with DEEPAI_MODEL (no code change needed).
+    defaultModel: "deepai/gpt-6-luna",
     timeoutEnv: "DEEPAI_TIMEOUT_MS",
     docsUrl: "https://deepai.org/dashboard/profile",
-    authScheme: "api-key",
+    authScheme: "both",
   },
 ];
 
