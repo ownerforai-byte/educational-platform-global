@@ -24,6 +24,7 @@ import { getFreeLlmKey, isFreeLlmDisabled } from "../config";
 
 export const FREE_LLM_NAMES = [
   "llm7",
+  "kilo",
   "ovh",
   "openrouter",
   "mistral",
@@ -33,6 +34,8 @@ export const FREE_LLM_NAMES = [
   "modelscope",
   "siliconflow",
   "huggingface",
+  "zai",
+  "aion",
 ] as const;
 
 export type FreeLlmProviderName = (typeof FREE_LLM_NAMES)[number];
@@ -71,6 +74,24 @@ export const FREE_LLM_PROVIDERS: readonly FreeLlmProviderSpec[] = [
     defaultModel: "gpt-oss:20b",
     timeoutEnv: "LLM7_TIMEOUT_MS",
     docsUrl: "https://token.llm7.io",
+    keyless: true,
+  },
+  {
+    name: "kilo",
+    label: "Kilo Code",
+    // Free pool that needs NO key and NO account (owner 2026-11-20: "wire
+    // kilo"). Live-verified: a keyless POST returns real content, and
+    // /models lists 1M-context free ids including the same Nemotron 3 Ultra
+    // the Model Quad runs. An optional KILO_API_KEY simply rides along.
+    baseUrl: "https://api.kilo.ai/api/gateway",
+    baseUrlEnv: "KILO_API_URL",
+    envVars: ["KILO_API_KEY"],
+    modelEnv: "KILO_MODEL",
+    // Reasoning models pad first — the transport's output ceiling must leave
+    // room or `content` comes back null. This id answered cleanly.
+    defaultModel: "nvidia/nemotron-3-ultra-550b-a55b:free",
+    timeoutEnv: "KILO_TIMEOUT_MS",
+    docsUrl: "https://app.kilo.ai/profile",
     keyless: true,
   },
   {
@@ -185,6 +206,37 @@ export const FREE_LLM_PROVIDERS: readonly FreeLlmProviderSpec[] = [
     defaultModel: "Qwen/Qwen3-8B",
     timeoutEnv: "HF_TIMEOUT_MS",
     docsUrl: "https://huggingface.co/settings/tokens",
+  },
+  {
+    name: "zai",
+    label: "Z AI (Zhipu)",
+    // Permanent free Flash tier (owner 2026-11-20: "just aion api key and z ai
+    // api key"). glm-4.7-flash is the free 200K-context GLM; GLM-5/5.2 and
+    // plain glm-4.7 bill per token — keep the -flash ids free.
+    // TWO portals, TWO base urls: z.ai (email only) uses api.z.ai; the Chinese
+    // open.bigmodel.cn uses its own host. ZAI_API_URL picks whichever is issued.
+    baseUrl: "https://api.z.ai/api/paas/v4",
+    baseUrlEnv: "ZAI_API_URL",
+    envVars: ["ZAI_API_KEY", "ZHIPU_API_KEY", "GLM_API_KEY"],
+    modelEnv: "ZAI_MODEL",
+    defaultModel: "glm-4.7-flash",
+    timeoutEnv: "ZAI_TIMEOUT_MS",
+    docsUrl: "https://z.ai/manage-apikey/apikey-list",
+  },
+  {
+    name: "aion",
+    label: "Aion Labs",
+    // Permanent free tier, 15 RPM / 20K tokens per day (owner 2026-11-20: "just
+    // aion api key and z ai api key"). Its models are tuned for roleplay and
+    // storytelling, so aion-3.5 is the strongest free id but a weaker fit for
+    // NEB physics/maths than the other lanes — it sits last in preference.
+    baseUrl: "https://api.aionlabs.ai/v1",
+    baseUrlEnv: "AION_API_URL",
+    envVars: ["AION_API_KEY"],
+    modelEnv: "AION_MODEL",
+    defaultModel: "aion-labs/aion-3.5",
+    timeoutEnv: "AION_TIMEOUT_MS",
+    docsUrl: "https://www.aionlabs.ai/app/api-keys/",
   },
 ];
 

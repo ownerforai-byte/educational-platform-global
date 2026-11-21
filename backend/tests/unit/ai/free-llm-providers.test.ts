@@ -4,6 +4,7 @@ import {
   FREE_LLM_PROVIDERS,
   configuredFreeLlmProviders,
   describeFreeLlmPresence,
+  chatCompletionsUrl,
 } from "../../../src/ai/free-llm-providers.js";
 
 /**
@@ -24,6 +25,17 @@ const FREE_AFFECTING_ENV = [
   "LLM7_API_KEY",
   "LLM7_MODEL",
   "LLM7_API_URL",
+  "KILO_API_KEY",
+  "KILO_MODEL",
+  "KILO_API_URL",
+  "ZAI_API_KEY",
+  "ZHIPU_API_KEY",
+  "GLM_API_KEY",
+  "ZAI_MODEL",
+  "ZAI_API_URL",
+  "AION_API_KEY",
+  "AION_MODEL",
+  "AION_API_URL",
   "OVH_AI_API_KEY",
   "OVHCLOUD_API_KEY",
   "OVH_MODEL",
@@ -53,7 +65,9 @@ describe("free-tier provider registry", () => {
     expect(FREE_LLM_PROVIDERS.length).toBeGreaterThan(0);
     for (const spec of FREE_LLM_PROVIDERS) {
       expect(spec.baseUrl).toMatch(/^https:\/\//);
-      expect(spec.baseUrl.endsWith("/v1")).toBe(true);
+      // Not every OpenAI-compatible root ends in /v1 (Kilo uses /api/gateway,
+      // Z AI uses /api/paas/v4) — the contract is the appended path.
+      expect(chatCompletionsUrl(spec)).toBe(`${spec.baseUrl.replace(/\/+$/, "")}/chat/completions`);
       expect(spec.defaultModel.trim()).not.toBe("");
       expect(spec.envVars.length).toBeGreaterThan(0);
       expect(spec.docsUrl).toMatch(/^https:\/\//);
@@ -64,10 +78,10 @@ describe("free-tier provider registry", () => {
     stubCleanEnv();
 
     const live = configuredFreeLlmProviders().map((p) => p.spec.name);
-    expect(live).toEqual(["llm7", "ovh"]);
+    expect(live).toEqual(["llm7", "kilo", "ovh"]);
     expect(describeFreeLlmPresence()).toEqual({
-      live: ["llm7", "ovh"],
-      keyless: ["llm7", "ovh"],
+      live: ["llm7", "kilo", "ovh"],
+      keyless: ["llm7", "kilo", "ovh"],
     });
   });
 
@@ -84,7 +98,13 @@ describe("free-tier provider registry", () => {
     vi.stubEnv("NIM_API_KEY", "nvapi-test");
 
     const live = configuredFreeLlmProviders();
-    expect(live.map((p) => p.spec.name)).toEqual(["llm7", "ovh", "openrouter", "nvidia"]);
+    expect(live.map((p) => p.spec.name)).toEqual([
+      "llm7",
+      "kilo",
+      "ovh",
+      "openrouter",
+      "nvidia",
+    ]);
     expect(live.find((p) => p.spec.name === "openrouter")?.apiKey).toBe("sk-or-test");
   });
 
@@ -106,10 +126,12 @@ describe("AIService registration — free-tier links", () => {
 
     const svc = new AIService() as any;
     expect(svc.providers.has("llm7")).toBe(true);
+    expect(svc.providers.has("kilo")).toBe(true);
     expect(svc.providers.has("ovh")).toBe(true);
     expect(svc.chainProviders().map((p: any) => p.name)).toEqual([
       "groq",
       "llm7",
+      "kilo",
       "ovh",
       "internal",
     ]);
@@ -135,6 +157,7 @@ describe("AIService registration — free-tier links", () => {
     // remaining free links still follow it, ahead of internal.
     expect(svc.chainProviders().map((p: any) => p.name)).toEqual([
       "llm7",
+      "kilo",
       "ovh",
       "internal",
     ]);
