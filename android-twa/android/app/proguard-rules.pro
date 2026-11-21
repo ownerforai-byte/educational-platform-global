@@ -1,3 +1,5 @@
 -keepclassmembers class com.ravikisan.platform.** { *; }
 -keep class com.google.firebase.** { *; }
+-keep class com.ravikisan.platform.data.** { *; }
+-keep class androidx.room.** { *; }
 -dontwarn com.google.firebase.**

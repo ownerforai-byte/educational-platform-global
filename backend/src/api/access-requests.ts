@@ -10,6 +10,7 @@ import {
   ensureAccessRequest,
   saveFcmTokenForUser,
 } from "../services/access-requests";
+import { deleteFcmTokenDoc } from "../storage/firebase-store.js";
 
 const router = Router();
 
@@ -107,6 +108,20 @@ router.post("/", async (req: Request, res: Response) => {
 });
 
 /** Authenticated convenience: read latest request for the signed-in user. */
+/**
+ * DELETE /api/access-requests/fcm
+ * Dissociates this user's device push token (logout / native sign-out).
+ */
+router.delete("/fcm", requireAuth, async (req: Request, res: Response) => {
+  const userId = (req as AuthedRequest).user?.id;
+  if (!userId) {
+    res.status(401).json({ error: "Unauthorized" });
+    return;
+  }
+  await deleteFcmTokenDoc(userId);
+  res.json({ ok: true });
+});
+
 router.get("/me", requireAuth, async (req: Request, res: Response) => {
   const userId = (req as AuthedRequest).user?.id;
   if (!userId) {

@@ -84,6 +84,17 @@ export async function updateProfileDoc(
   }
 }
 
+/** Remove push target when the user signs out on a device (native app). */
+export async function deleteFcmTokenDoc(userId: string): Promise<void> {
+  const db = getFirestore();
+  if (!db) return;
+  const ref = db.collection("fcm_tokens").doc(userId);
+  await ref.set(
+    { userId, token: "", updatedAt: new Date().toISOString() },
+    { merge: true },
+  );
+}
+
 export async function upsertFcmTokenDoc(
   userId: string,
   token: string,

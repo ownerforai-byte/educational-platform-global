@@ -860,6 +860,11 @@ router.post("/refresh", async (req: Request, res: Response) => {
  * 200 → { ok: true }
  */
 router.post("/logout", async (req: Request, res: Response) => {
+  const sessionUser = await getUserFromRequest(req, { allowUnapproved: true });
+  if (sessionUser?.id) {
+    const { deleteFcmTokenDoc } = await import("../../storage/firebase-store.js");
+    await deleteFcmTokenDoc(sessionUser.id);
+  }
   const token = extractToken(req);
   if (token) {
     if (useFirebaseAuth()) {

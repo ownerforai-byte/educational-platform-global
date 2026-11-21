@@ -1,8 +1,8 @@
 # Android TWA Build — Ravikisan's Platform
 
-This folder wraps the live PWA (`https://harindrasah.com.np`) into a native
-Android **Trusted Web Activity (TWA)** app using Google's **Bubblewrap**.
-The result is a Play-ready `.aab` that you upload to Play Console.
+This folder builds the **standalone native Android app** (`com.ravikisan.platform`)
+that talks to `https://harindrasah.com.np/api` (auth, profile, community) with
+Room offline cache and FCM — **not** a URL-launching TWA. See `NATIVE_MIGRATION.md`.
 
 > A TWA is the Play-recommended way to ship a PWA: it's small, updates with
 > your site, gets badging/guaranteed-installed, and works offline. The PWA
