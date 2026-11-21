@@ -245,6 +245,30 @@ import { BiomagnificationDdt } from "./biomagnification-ddt";
 import { PesticideBackfire } from "./pesticide-backfire";
 import { InsecticideNerveAction } from "./insecticide-nerve-action";
 import { IpmStrategy } from "./ipm-strategy";
+import { BiodiversityLevels } from "./biodiversity-levels";
+import { ConservationBiologyGoals } from "./conservation-biology-goals";
+import { InSituVsExSitu } from "./in-situ-vs-ex-situ";
+import { HippoDrivers } from "./hippo-drivers";
+import { BiodiversityValues } from "./biodiversity-values";
+import { ProtectedAreaNetwork } from "./protected-area-network";
+import { ProtectedAreaTypes } from "./protected-area-types";
+import { NepalHotspots } from "./nepal-hotspots";
+import { RamsarSitesNepal } from "./ramsar-sites-nepal";
+import { MajorProtectedAreas } from "./major-protected-areas";
+import { WildlifeValues } from "./wildlife-values";
+import { ExtinctionCauses } from "./extinction-causes";
+import { HabitatLossChain } from "./habitat-loss-chain";
+import { ConservationStrategies } from "./conservation-strategies";
+import { CitesAppendices } from "./cites-appendices";
+import { IucnCategoriesLadder } from "./iucn-categories-ladder";
+import { IucnNepalExamples } from "./iucn-nepal-examples";
+import { RareVsThreatened } from "./rare-vs-threatened";
+import { RedListScale } from "./red-list-scale";
+import { NepalEndangeredSpecies } from "./nepal-endangered-species";
+import { SpeciesThreatActions } from "./species-threat-actions";
+import { RhinoTigerRecovery } from "./rhino-tiger-recovery";
+import { SpeciesRolesEcology } from "./species-roles-ecology";
+import { EndangeredSpeciesDefinition } from "./endangered-species-definition";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -2075,6 +2099,207 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Integrated Pest Management: tolerant varieties, crop rotation, biological control (ladybird beetles, Bacillus thuringiensis), pheromone traps — chemicals only as a last resort at the economic threshold.",
         alt: "IPM strategy components with chemical last resort",
         keyword: "integrated pest management",
+      },
+    ],
+  },
+  // ── Biology Unit 7 — Conservation biology ──────────────────────────────
+  "conservation-biology-concept-of-biodiversity-biodiversity-conservation": {
+    title: "Conservation biology: concept of biodiversity and biodiversity conservation",
+    figures: [
+      {
+        Component: BiodiversityLevels,
+        caption:
+          "Biodiversity at three nested levels: genetic diversity (rice landraces like Jumli marshi), species diversity (Nepal's ~208 mammals, ~900 birds) and ecosystem diversity (sal forests to alpine meadows).",
+        alt: "Three levels of biodiversity genetic species and ecosystem with Nepal examples",
+        keyword: "genetic diversity",
+      },
+      {
+        Component: ConservationBiologyGoals,
+        caption:
+          "Conservation biology is a crisis discipline applying ecology, genetics and social science — its three goals: document biodiversity, understand human effects, prevent extinctions.",
+        alt: "Conservation biology three goals document understand prevent",
+        keyword: "crisis discipline",
+      },
+      {
+        Component: InSituVsExSitu,
+        caption:
+          "In-situ vs ex-situ conservation: in-situ protects whole ecosystems in the natural habitat (national parks, reserves); ex-situ conserves species or genes off-site (zoos, botanical gardens, seed banks, cryopreservation).",
+        alt: "In-situ versus ex-situ conservation comparison",
+        keyword: "ex-situ conservation",
+      },
+      {
+        Component: HippoDrivers,
+        caption:
+          "HIPPO — the five drivers of biodiversity loss: Habitat loss, Invasive species (Mikania, water hyacinth), Pollution, human Population, Overexploitation — with Nepal examples for each.",
+        alt: "HIPPO drivers of biodiversity loss with Nepal examples",
+        keyword: "hippo",
+      },
+      {
+        Component: BiodiversityValues,
+        caption:
+          "Why biodiversity matters: ecosystem services, food security, medicine and ethical-aesthetic value — losing genes weakens species, losing species weakens ecosystems.",
+        alt: "Why biodiversity matters ecosystem services food medicine aesthetic",
+        keyword: "ecosystem services",
+      },
+    ],
+  },
+  "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sit": {
+    title: "National parks, wildlife reserves, conservation areas, hotspots, wetlands and Ramsar sites",
+    figures: [
+      {
+        Component: ProtectedAreaNetwork,
+        caption:
+          "Nepal's network in numbers: 12 national parks, 1 wildlife reserve, 1 hunting reserve, 6 conservation areas, 13 buffer zones — nearly 24% of the country, plus Ramsar wetlands.",
+        alt: "Nepal protected area network numbers",
+        keyword: "12 national parks",
+      },
+      {
+        Component: ProtectedAreaTypes,
+        caption:
+          "Seven designations defined: national park (no consumptive use), wildlife reserve, hunting reserve (Dhorpatan only), conservation area, buffer zone, biodiversity hotspot, Ramsar site.",
+        alt: "Protected area designation types with definitions",
+        keyword: "hunting reserve",
+      },
+      {
+        Component: NepalHotspots,
+        caption:
+          "Nepal's two biodiversity hotspots: the Himalaya hotspot along the whole mountain arc, and the Indo-Burma edge in the far-eastern Terai (Kanchenjunga–Singalila and eastern plains).",
+        alt: "Nepal biodiversity hotspots Himalaya and Indo-Burma",
+        keyword: "himalaya hotspot",
+      },
+      {
+        Component: RamsarSitesNepal,
+        caption:
+          "Nine Ramsar wetlands: Bishazari Tal, Ghodaghodi Tal, Jagadishpur Reservoir, Koshi Tappu, Gosaikunda, Rara Lake, Mai Pokhari, Phoksundo Lake and Gokyo lakes — protecting migratory waterbirds.",
+        alt: "Nepal's nine Ramsar wetland sites",
+        keyword: "ramsar convention (1971, iran)",
+      },
+      {
+        Component: MajorProtectedAreas,
+        caption:
+          "The flagship map: Chitwan (rhino, tiger, gharial), Bardia (dolphin in the Karnali), Sagarmatha (snow leopard, tahr), Langtang (red panda), Koshi Tappu (arna), Dhorpatan (blue sheep), Annapurna and Kanchenjunga CAs.",
+        alt: "Nepal major protected areas with flagship species",
+        keyword: "blue sheep",
+      },
+    ],
+  },
+  "wildlife-importance-causes-of-extinction-and-conservation-strategies": {
+    title: "Wildlife: importance, causes of extinction and conservation strategies",
+    figures: [
+      {
+        Component: WildlifeValues,
+        caption:
+          "Wildlife's three values: ecological (pollination, seed dispersal, nutrient cycling, pest control, food webs), economic (ecotourism, medicine, genetic diversity for agriculture) and cultural (aesthetic, ethical, indigenous knowledge).",
+        alt: "Wildlife values ecological economic and cultural",
+        keyword: "ecosystem services",
+      },
+      {
+        Component: ExtinctionCauses,
+        caption:
+          "Six roads to extinction: habitat destruction and fragmentation (the leading cause), overexploitation (ivory poaching, overfishing), invasive species (Lantana camara), pollution, climate change and disease.",
+        alt: "Six major causes of extinction",
+        keyword: "habitat loss is the leading cause",
+      },
+      {
+        Component: HabitatLossChain,
+        caption:
+          "The habitat-loss chain: deforestation, agriculture, urbanisation and infrastructure destroy habitat; fragmentation then isolates populations, cutting gene flow toward local extinction.",
+        alt: "Habitat loss chain from drivers to fragmentation to extinction",
+        keyword: "habitat destruction and fragmentation",
+      },
+      {
+        Component: ConservationStrategies,
+        caption:
+          "Six conservation strategies: legal protection (CITES, national laws), protected areas, captive breeding, habitat restoration, community-based conservation and international cooperation.",
+        alt: "Conservation strategies legal protected areas captive breeding community",
+        keyword: "captive breeding",
+      },
+      {
+        Component: CitesAppendices,
+        caption:
+          "CITES regulates cross-border trade in threatened species through three appendices: Appendix I bans commercial trade, II requires permits, III is a single-country listing.",
+        alt: "CITES appendix I II and III trade rules",
+        keyword: "appendix i, ii, and iii listings",
+      },
+    ],
+  },
+  "iucn-categories-of-threatened-species-meaning-of-extinct-endangered-vulnerable-rare-and-threaten": {
+    title: "IUCN categories of threatened species",
+    figures: [
+      {
+        Component: IucnCategoriesLadder,
+        caption:
+          "The Red List ladder in decreasing severity: EX, EW, CR, EN, VU, NT, LC, plus DD and NE — with the definition of each category.",
+        alt: "IUCN Red List categories severity ladder",
+        keyword: "in decreasing severity",
+      },
+      {
+        Component: IucnNepalExamples,
+        caption:
+          "The ladder with faces: tiger and red panda (EN), one-horned rhinoceros and snow leopard (VU), the dodo (EX) — and the scale: 42,000+ species threatened worldwide, 27 threatened mammals in Nepal.",
+        alt: "IUCN categories with Nepal examples",
+        keyword: "tiger — endangered (en)",
+      },
+      {
+        Component: RareVsThreatened,
+        caption:
+          "The three word-traps: rare ≠ endangered (population trend matters), threatened = CR+EN+VU collectively (not one category), and extinct in the wild ≠ extinct (EW species survive in captivity).",
+        alt: "Rare versus threatened versus endangered misconceptions",
+        keyword: "rarity alone",
+      },
+      {
+        Component: RedListScale,
+        caption:
+          "The Red List in numbers: more than 42,000 species threatened with extinction globally; Nepal lists 27 mammal species as threatened.",
+        alt: "IUCN Red List global and Nepal numbers",
+        keyword: "more than 42,000 species threatened with extinction",
+      },
+      {
+        Component: EndangeredSpeciesDefinition,
+        caption:
+          "'Endangered species' has two meanings: strictly IUCN EN (very high risk in the wild), loosely any threatened species (CR, EN, VU) — plus Nepal's own schedules under the National Parks and Wildlife Conservation Act.",
+        alt: "Endangered species strict and loose meanings",
+        keyword: "very high risk of extinction in the wild",
+      },
+    ],
+  },
+  "endangered-species-in-nepal": {
+    title: "Endangered species in Nepal",
+    figures: [
+      {
+        Component: NepalEndangeredSpecies,
+        caption:
+          "Nepal's threatened roster: greater one-horned rhinoceros (VU), Bengal tiger (EN), snow leopard (VU), red panda (EN), gharial (CR), arna (EN), spiny babbler (Nepal-endemic) and Bengal florican (CR).",
+        alt: "Nepal endangered species with IUCN status",
+        keyword: "greater one-horned rhinoceros",
+      },
+      {
+        Component: SpeciesThreatActions,
+        caption:
+          "Threat → action for six species: anti-poaching and translocation for the rhino, camera-trap surveys for the tiger, insurance schemes for the snow leopard, corridors for the red panda, captive release for the gharial.",
+        alt: "Species threats and conservation actions table",
+        keyword: "poaching for horn",
+      },
+      {
+        Component: RhinoTigerRecovery,
+        caption:
+          "Recovery stories: the rhinoceros grew from ~100 in the 1960s to 750+ through zero-poaching years; tigers nearly tripled from 121 (2009) to 355 (2022), meeting the Tx2 goal ahead of schedule.",
+        alt: "Rhino and tiger recovery numbers in Nepal",
+        keyword: "zero-poaching years",
+      },
+      {
+        Component: SpeciesRolesEcology,
+        caption:
+          "Four conservation roles: flagship (rhino, tiger — appeal and funding), umbrella (large habitats shelter co-occurring species), indicator (gharial for river health), keystone (elephants, seed dispersers).",
+        alt: "Flagship umbrella indicator and keystone species roles",
+        keyword: "umbrella effect",
+      },
+      {
+        Component: EndangeredSpeciesDefinition,
+        caption:
+          "The definition trap: 'endangered' strictly means IUCN EN — very high risk of extinction in the wild — but is used loosely for all threatened species (CR, EN, VU).",
+        alt: "Endangered species definition strict versus loose",
+        keyword: "very high risk of extinction in the wild",
       },
     ],
   },
