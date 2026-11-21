@@ -14,10 +14,10 @@ import type { MultiFactorResolver } from "firebase/auth";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
-import { tierHomePathFor } from "@/lib/core/access-level";
 import {
   defaultMemberHomePath,
   isAccessApprovalRequired,
+  postAuthLandingPath,
 } from "@/lib/core/access-approval";
 import {
   APPROVAL_DISPATCH_ROUTE,
@@ -65,7 +65,7 @@ export function LoginForm() {
       clearPendingSignup();
       if (result.ok && result.user) {
         refresh();
-        router.push(tierHomePathFor(result.user));
+        router.push(postAuthLandingPath(result.user));
         return;
       }
       router.push(defaultMemberHomePath());
@@ -73,7 +73,7 @@ export function LoginForm() {
       // Signed-in approved session owns the device — drop signup markers.
       clearPendingSignup();
       refresh();
-      router.push(tierHomePathFor(result.user));
+      router.push(postAuthLandingPath(result.user));
     } else if (result.code === "ACCOUNT_REJECTED") {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       rememberAccessOutcome("REJECTED");
@@ -119,7 +119,7 @@ export function LoginForm() {
         clearPendingSignup();
         if (res.user) {
           await refresh();
-          router.push(tierHomePathFor(res.user));
+          router.push(postAuthLandingPath(res.user));
           return;
         }
         router.push(defaultMemberHomePath());
@@ -134,7 +134,7 @@ export function LoginForm() {
       if (res.user) {
         clearPendingSignup();
         await refresh();
-        router.push(tierHomePathFor(res.user));
+        router.push(postAuthLandingPath(res.user));
         return;
       }
       setError(AUTH_INVALID_CREDENTIALS);

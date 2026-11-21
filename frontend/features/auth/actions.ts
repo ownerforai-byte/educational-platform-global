@@ -7,6 +7,7 @@ import {
   AUTH_TRY_AGAIN,
   authFailureMessage,
 } from "./public-messages";
+import { isAccessApprovalRequired } from "@/lib/core/access-approval";
 
 export type AuthActionResult =
   | {
@@ -55,6 +56,7 @@ export type AuthActionResult =
  *    callers can route on `result.code` regardless of `ok`.
  */
 function pendingApprovalResult(res: unknown): AuthActionResult | null {
+  if (!isAccessApprovalRequired()) return null;
   const body = res as { code?: string; statusToken?: string } | null;
   if (!body || body.code !== "PENDING_APPROVAL") return null;
   return { ok: true, code: "PENDING_APPROVAL", statusToken: body.statusToken };

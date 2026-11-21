@@ -10,10 +10,10 @@ import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
-import { tierHomePathFor } from "@/lib/core/access-level";
 import {
   defaultMemberHomePath,
   isAccessApprovalRequired,
+  postAuthLandingPath,
 } from "@/lib/core/access-approval";
 import {
   clearPendingSignup,
@@ -59,17 +59,12 @@ export function SignupForm() {
     ) {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       router.push(WAITING_ROUTE);
-    } else if (result.ok && result.code === "PENDING_APPROVAL") {
-      clearPendingSignup();
-      refresh();
-      router.push(result.user ? tierHomePathFor(result.user) : defaultMemberHomePath());
-    } else if (result.ok && result.message) {
+    } else if (result.ok && result.message && !result.user) {
       setMessage(result.message);
     } else if (result.ok) {
+      clearPendingSignup();
       refresh();
-      // Fresh accounts land on their own tier WELCOME page first (2026-10-23) —
-      // its Go button opens the tier home with all study materials.
-      router.push(tierHomePathFor(result.user));
+      router.push(postAuthLandingPath(result.user));
     } else if (result.code === "ACCOUNT_REJECTED") {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       rememberAccessOutcome("REJECTED");

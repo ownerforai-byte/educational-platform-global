@@ -159,6 +159,12 @@ function memberSignupProfileFields(fullName?: string | null): Record<string, unk
  */
 async function readAccessStatus(userId: string, email?: string): Promise<AccessStatus> {
   const { role, accessStatus } = await loadProfileAccess(userId);
+  if (!isAccessApprovalRequired()) {
+    const raw =
+      typeof accessStatus === "string" ? accessStatus.trim().toUpperCase() : "";
+    if (raw === "REJECTED") return "REJECTED";
+    return "ACTIVE";
+  }
   if (isApprovedAccount({ email, role }, accessStatus)) return "ACTIVE";
   return accessStatus === "REJECTED" ? "REJECTED" : "PENDING";
 }
@@ -635,13 +641,17 @@ router.post("/signup", async (req: Request, res: Response) => {
       await startAccessRequestClockIfEnabled(result.user.id, ownerSignup);
 
       res.status(202).json({
-        code: "PENDING_APPROVAL",
-        statusToken: createStatusToken(result.user.id),
+        ...(isAccessApprovalRequired()
+          ? {
+              code: "PENDING_APPROVAL" as const,
+              accessStatus: "PENDING" as const,
+              statusToken: createStatusToken(result.user.id),
+            }
+          : { code: "EMAIL_CONFIRMATION_REQUIRED" as const }),
         user: null,
         accessToken: null,
         message: "Check your email to confirm your account before logging in.",
-        accessStatus: "PENDING",
-      } satisfies SignupResponse & { code: string; statusToken: string });
+      } satisfies SignupResponse & { code: string; statusToken?: string });
       return;
     }
 
@@ -892,7 +902,7 @@ router.get("/account-status", async (req: Request, res: Response) => {
 
   const { data: profile } = await getProfileById(
     userId,
-    "access_status, full_name, status_check_count",
+    "access_status, full_name, status_check_count, email",
   );
 
   if (!profile) {
@@ -916,9 +926,13 @@ router.get("/account-status", async (req: Request, res: Response) => {
     }
   }
 
-  const raw = (profile.access_status as string | undefined) ?? "PENDING";
+  const email =
+    typeof profile.email === "string" && profile.email.trim()
+      ? profile.email.trim()
+      : undefined;
+  const accessStatus = await readAccessStatus(userId, email);
   res.json({
-    accessStatus: raw === "ACTIVE" || raw === "REJECTED" ? raw : "PENDING",
+    accessStatus,
     fullName: (profile.full_name as string | null) ?? null,
     checkCount,
   });

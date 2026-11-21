@@ -8,10 +8,10 @@ import { publicUrl } from "@/lib/site-url";
 import { firebaseGoogleSignIn, useFirebaseClientAuth } from "@/lib/firebase/client-auth";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
-import { tierHomePathFor } from "@/lib/core/access-level";
 import {
   defaultMemberHomePath,
   isAccessApprovalRequired,
+  postAuthLandingPath,
 } from "@/lib/core/access-approval";
 import {
   clearPendingSignup,
@@ -165,7 +165,7 @@ export function SocialAuthButtons({
       setStoredToken(response.accessToken);
       writeCachedSession(response.user, response.accessToken);
       refresh();
-      router.replace(tierHomePathFor(response.user));
+      router.replace(postAuthLandingPath(response.user));
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");
