@@ -5,73 +5,37 @@
   "topicTitle": "Limiting reactant and excess reactant",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning",
-    "The **limiting reactant (limiting reagent)** is the reactant completely consumed in a reaction, and it therefore determines the maximum amount of product that can form (the theoretical yield). The other reactant, part of which is left over when the reaction stops, is the **excess reactant**. The idea is needed whenever the reactants are not mixed in exactly the stoichiometric ratio of the balanced equation.",
-    "### 2. How to identify the limiting reactant",
-    "Method 1 (standard): convert the given masses/volumes of all reactants into moles, divide each by its stoichiometric coefficient, and the smallest quotient identifies the limiting reactant. Method 2: compare the moles *required* (from the mole ratio) with the moles *available*; the reactant for which the requirement exceeds the supply is limiting.",
-    "### 3. Worked example — ammonia synthesis",
-    "N₂ + 3H₂ → 2NH₃. With 2 mol N₂ and 3 mol H₂: for N₂ the quotient is 2/1 = 2, for H₂ it is 3/3 = 1 → **H₂ is limiting**. Hydrogen needs only 1 mol N₂, so 1 mol N₂ stays unused (excess), and NH₃ formed = (2/3) × 3 = 2 mol = 34 g.",
-    "### 4. Worked example — combustion (mass basis)",
-    "CH₄ + 2O₂ → CO₂ + 2H₂O, with 8 g CH₄ (0.5 mol) and 24 g O₂ (0.75 mol): quotients 0.5 for CH₄ and 0.75/2 = 0.375 for O₂ → **O₂ is limiting**. It consumes 0.375 mol CH₄, so 0.125 mol CH₄ (2 g) remains excess and 0.375 mol CO₂ (16.5 g) is formed.",
-    "### 5. Applications",
-    "• Laboratory and industry: fixing reactant quantities for a target product mass, material balances in the Haber process, contact process and lime kiln, and choosing which reactant to use in excess on the basis of cost, hazards and equilibrium considerations.",
-    "• Combustion engineering: excess air is supplied to burn fuel completely (avoiding CO and soot), while excessive excess air wastes heat and promotes NOₓ formation.",
-    "• Pharmaceutical and fine-chemical synthesis: the cheaper or more easily handled reagent is taken in excess to drive the expensive intermediate to completion, and by-product amounts are predicted from the limiting reagent.",
-    "• Analytical and environmental work: computing the maximum pollutant that can be produced, and in titrations, where the equivalence point marks the stoichiometric balance of acid and base.",
-    "### 6. Meaning of 'extent of reaction'",
-    "The limiting reactant fixes how far the reaction can proceed: while it remains, the reaction continues; once it is consumed, a simple irreversible reaction stops. This is why the theoretical yield is always calculated from the limiting reactant, and why excess reactant is added deliberately in practice.",
-    "### 7. Limitations",
-    "• The concept requires a known single reaction with fixed stoichiometry; with side reactions, reversibility or equilibrium the idea must be replaced by the equilibrium constant, conversion and selectivity.",
-    "• Comparison must be made in **moles**; comparing masses directly (5 g H₂ with 5 g O₂) leads to wrong conclusions.",
-    "• In a kinetically controlled reaction the slowest step may govern the rate even though the reagent is stoichiometrically in excess — the limiting reagent is not automatically the rate-determining species.",
-    "• When a reactant acts as the solvent or medium (water, large excess of acid), the concept loses meaning.",
-    "• The yield computed from the limiting reactant is an upper limit only; actual yields are lower because of incomplete reaction, side products and handling losses.",
-    "Theoretical yield is always calculated from the limiting reactant, never from the excess reactant.",
-    "Percentage yield = (actual yield / theoretical yield) × 100; actual yield is always less than theoretical.",
-    "In industrial processes, the cheaper reactant is usually taken in excess to maximize conversion of the expensive reactant."
+    "## 1. Topic Introduction — The Reactant That Runs Out First\n\nReal reactions mix measured amounts of two reactants, and they almost never match the stoichiometric ratio. The reactant consumed completely first — the **limiting reactant** — decides how far the reaction goes and how much product forms. Everything left over is the **excess reactant**.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Identification algorithm\n\n1. Balance the equation.\n2. Convert each reactant's amount to **moles**.\n3. Divide each by its **coefficient** (mol ÷ coefficient).\n4. The **smallest quotient** marks the limiting reactant; all product yields follow from it.\n\n### 2.2 Worked numericals\n\n**Q (NEB 2023, 3m):** 4.8 g of magnesium is burnt in 6.4 g of oxygen. Identify the limiting reactant and calculate the mass of MgO formed. (Mg = 24, O = 16)\n- 2Mg + O₂ → 2MgO\n- n(Mg) = 4.8/24 = 0.20 mol → 0.20/2 = 0.10\n- n(O₂) = 6.4/32 = 0.20 mol → 0.20/1 = 0.20\n- Mg has the smaller quotient → **Mg is limiting**\n- n(MgO) = n(Mg) = 0.20 mol → m = 0.20 × 40 = **8.0 g MgO** (O₂ left: 0.20 − 0.10 = 0.10 mol = 3.2 g)\n\n**Q (NEB 2024, 3m):** 10 g of H₂ reacts with 64 g of O₂ to form water. Which is the limiting reagent, and what is the maximum mass of water formed?\n- 2H₂ + O₂ → 2H₂O\n- n(H₂) = 10/2 = 5 mol → 5/2 = 2.5\n- n(O₂) = 64/32 = 2 mol → 2/1 = 2\n- O₂ has the smaller quotient → **O₂ is limiting**\n- n(H₂O) = 2 × 2 = 4 mol → m = 4 × 18 = **72 g water** (H₂ left: 5 − 4 = 1 mol = 2 g)\n\n**Q (NEB-style):** 28 g of N₂ reacts with 6 g of H₂ (N₂ + 3H₂ → 2NH₃). Find the limiting reactant and mass of NH₃ formed. (N = 14, H = 1)\n- n(N₂) = 28/28 = 1 mol → 1/1 = 1; n(H₂) = 6/2 = 3 mol → 3/3 = 1 — equal quotients: **neither is in excess; both fully consumed**\n- n(NH₃) = 2 mol → m = 2 × 17 = **34 g NH₃**\n\n### 2.3 Limiting vs excess reactant — similarities and differences\n\n**Similarities:** both are reactants consumed by the same reaction; both are measured in moles before comparing.\n**Differences:** the limiting reactant is **completely consumed** and sets the product ceiling; the excess reactant is **partly left over** and its leftover mass is recoverable. Product yield is calculated from the limiting reactant only — never from the excess.\n\n### 2.4 Why the concept matters\n\n- Industrial economics: you feed the cheaper reactant in excess to burn up the expensive one.\n- Air is free: combustion problems always have O₂ in excess, fuel limiting.\n- Pollution: incomplete consumption of the excess (e.g. unburnt fuel) causes emissions.",
+    "## 3. Conceptual Relationships\n\n- **To mole calculations (Topic 5):** the identification algorithm is two mole hops plus a comparison.\n- **To yield (Topic 7):** theoretical yield is computed from the limiting reactant.\n- **To equilibrium (Unit 8):** limiting vs excess sets initial concentrations.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2023 | Stoichiometry | Limiting reactant | 4.8 g Mg burnt in 6.4 g O₂ — limiting reactant and mass of MgO. | 3 | Numerical |\n| 2080/2024 | Stoichiometry | Limiting reagent | 10 g H₂ + 64 g O₂ → water — limiting reagent and maximum mass of water. | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Identify limiting reactant from a mole table (2m).\n2. Mass of product + mass of excess left (3m).\n3. N₂ + H₂ ammonia synthesis (3m).\n\n### 4.3 Common examination mistakes\n\n1. Comparing raw moles instead of mol ÷ coefficient.\n2. Computing product from the excess reactant.\n3. Forgetting to state the leftover mass when asked \"how much of the excess remains\"."
   ],
   "confusion": [
-    "❌ The reactant present in the smallest mass is limiting. ✅ The limiting reactant is found in *moles* divided by the stoichiometric coefficient, not by mass.",
-    "❌ The limiting reactant is the one that runs out last. ✅ It is used up first and stops the reaction; the other reactant is in excess.",
-    "❌ Excess reactant also becomes product. ✅ Only the consumed part reacts; the remainder is unreacted excess.",
-    "❌ Every reaction has a limiting reactant. ✅ Only when the reactants are not in the exact stoichiometric mole ratio.",
-    "❌ Limiting-reactant reasoning gives the actual yield of a reversible reaction. ✅ It gives the maximum possible yield; the equilibrium position decides the actual extent.",
-    "❌ Assume 100% yield in calculations → ✅ Theoretical yield is the maximum possible; actual yield accounts for losses and incomplete reactions."
+    "**Limiting vs excess:** limiting = runs out first, controls yield; excess = left over, irrelevant to yield.",
+    "**\"Smallest quotient\" vs \"smallest moles\":** 0.2 mol with coefficient 1 beats 0.2 mol with coefficient 2 — always divide by the coefficient first."
   ],
   "practice": [
-    "Explain how the limiting reactant is identified from mole ratios.",
-    "N₂ + 3H₂ → 2NH₃: 3 mol N₂ and 6 mol H₂ are mixed. Find the limiting reactant, the mass of NH₃ formed and the excess left.",
-    "Calculate the mass of water formed when 4 g H₂ reacts with 32 g O₂ and identify the excess reactant.",
-    "Why is excess air supplied in combustion, and what are the disadvantages of too much excess air?",
-    "State the limitations of the limiting-reactant concept."
+    "In 2H₂ + O₂ → 2H₂O with 3 mol H₂ and 1 mol O₂, which is limiting and how much H₂ remains?"
   ],
   "formulas": [
-    "$$\\text{Limiting reactant}:\\ \\text{smallest }\\frac{n_{\\text{reactant}}}{\\nu_{\\text{reactant}}}\\ (\\nu=\\text{stoichiometric coefficient})$$",
-    "$$n_{\\text{product}}=\\frac{\\nu_{\\text{product}}}{\\nu_{\\text{limiting}}}\\times n_{\\text{limiting}},\\qquad \\text{theoretical yield}=n_{\\text{product}}M_{\\text{product}}$$",
-    "% yield = (actual yield / theoretical yield) × 100"
+    "- Quotient = n(reactant) ÷ coefficient\n- Product moles = limiting moles × (product coefficient ÷ limiting coefficient)\n- Excess left = n(initial) − n(consumed)"
   ],
   "universalFacts": [
-    "In the Haber process the industrial ratio N₂ : H₂ is chosen with a slight excess of nitrogen because hydrogen is costlier and excess hydrogen lowers equilibrium conversion.",
-    "Burning methane with 10% excess air ensures complete combustion of carbon but increases NOₓ and heat loss — the classical trade-off.",
-    "In a titration the limiting reactant changes at the equivalence point, which is why an indicator is needed to detect it.",
-    "The concept of limiting reactant applies only to irreversible reactions with fixed stoichiometry; equilibrium reactions require K_eq analysis.",
-    "Industrial processes deliberately use excess of the cheaper reactant to maximize conversion of the expensive one."
+    "In industrial ammonia synthesis, H₂ is usually fed slightly in excess because N₂ from air is cheaper."
   ],
   "examples": [
-    "**Problem:** 3 mol N₂ and 6 mol H₂ with N₂ + 3H₂ → 2NH₃. **Solution:** quotients 3/1 = 3 (N₂) and 6/3 = 2 (H₂) → H₂ limiting. NH₃ = (2/3) × 6 = 4 mol = 68 g; N₂ consumed = 2 mol, so 1 mol N₂ (28 g) remains excess.",
-    "**Problem:** 4 g H₂ + 32 g O₂ (2H₂ + O₂ → 2H₂O). **Solution:** n(H₂) = 2 mol, n(O₂) = 1 mol; quotients 1 and 1 → exact stoichiometric mixture, no excess, and 2 mol H₂O = 36 g forms."
+    "***10 g H₂ + 64 g O₂*** — O₂ limiting (quotient 2 vs 2.5): 72 g water maximum, 2 g H₂ unreacted (NEB 2024)."
   ],
   "importantNotes": [
-    "Convert every quantity to moles before comparing coefficients — the commonest source of error.",
-    "Always state which reactant limits *and* how much excess remains; that is where most marks are given.",
-    "Note explicitly that the theoretical yield is computed from the limiting reactant alone."
+    "Verified PYQs: 2023 (3m) Mg/O₂ → 8 g MgO; 2024 (3m) H₂/O₂ → 72 g H₂O."
   ],
   "visualType": "limiting-reactant",
   "keyPoints": [
-    "• Limiting reactant",
-    "• Excess reactant"
+    "Identification: mol ÷ coefficient, smallest wins. Yield follows the limiting reactant. Mg/O₂ (2023): Mg limiting, 8 g MgO. H₂/O₂ (2024): O₂ limiting, 72 g H₂O."
   ],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "**NEB 2023 (3m): 4.8 g of magnesium is burnt in 6.4 g of oxygen. Identify the limiting reactant and calculate the mass of MgO formed. (Mg = 24, O = 16)** — 2Mg + O₂ → 2MgO. n(Mg) = 0.20 mol (quotient 0.10); n(O₂) = 0.20 mol (quotient 0.20). **Mg is limiting.** n(MgO) = 0.20 mol → m = 0.20 × 40 = **8.0 g MgO**; O₂ left = 0.10 mol = 3.2 g."
+  ],
   "numericals": [
     "Given masses of two reactants, convert to moles, divide by coefficients, identify limiting reactant, and calculate theoretical yield in grams.",
     "From a balanced equation and given reactant masses, determine mass of excess reactant remaining after reaction completes.",
@@ -79,13 +43,92 @@
   ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"Limiting reactant and excess reactant\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The limiting reactant is the one that:",
       "options": [
-        "True",
-        "False"
+        "Is cheapest",
+        "Runs out first",
+        "Has larger mass",
+        "Has larger moles"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "It caps the yield."
+    },
+    {
+      "question": "Compare reactants by:",
+      "options": [
+        "Mass",
+        "Moles only",
+        "Moles ÷ coefficient",
+        "Volume"
+      ],
+      "answer": "C",
+      "explanation": "The quotient rule."
+    },
+    {
+      "question": "4.8 g Mg + 6.4 g O₂: limiting reactant is:",
+      "options": [
+        "Mg",
+        "O₂",
+        "Both",
+        "Neither"
+      ],
+      "answer": "A",
+      "explanation": "Quotient 0.10 vs 0.20."
+    },
+    {
+      "question": "Mass of MgO formed in the above:",
+      "options": [
+        "4 g",
+        "8 g",
+        "12 g",
+        "16 g"
+      ],
+      "answer": "B",
+      "explanation": "0.2 mol × 40."
+    },
+    {
+      "question": "10 g H₂ + 64 g O₂: limiting reagent is:",
+      "options": [
+        "H₂",
+        "O₂",
+        "Both",
+        "Neither"
+      ],
+      "answer": "B",
+      "explanation": "Quotient 2 vs 2.5."
+    },
+    {
+      "question": "Maximum water from 10 g H₂ + 64 g O₂:",
+      "options": [
+        "36 g",
+        "54 g",
+        "72 g",
+        "90 g"
+      ],
+      "answer": "C",
+      "explanation": "4 mol × 18."
+    },
+    {
+      "question": "Product yield is computed from:",
+      "options": [
+        "Excess reactant",
+        "Limiting reactant",
+        "Total mass",
+        "Catalyst"
+      ],
+      "answer": "B",
+      "explanation": "The ceiling setter."
+    },
+    {
+      "question": "If quotients are equal, the mixture is:",
+      "options": [
+        "Limiting in both",
+        "Stoichiometric — nothing left",
+        "Impossible",
+        "All excess"
+      ],
+      "answer": "B",
+      "explanation": "Both fully consumed."
     }
   ],
   "source": "generated",
@@ -93,5 +136,152 @@
   "bounds": [
     "Limit to remember: Limiting reactant concept applies only to irreversible reactions with fixed stoichiometry; equilibrium reactions require K_eq analysis."
   ],
-  "summary": "Limiting reactant and excess reactant (Stoichiometry, Chemistry, class-11-notes) covers Limiting reactant, excess reactant. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
+  "summary": "The **limiting reactant** — identified by dividing each reactant's moles by its equation coefficient and taking the smallest quotient — is completely consumed and caps the product yield; the excess reactant is partly left over. 4.8 g Mg + 6.4 g O₂: Mg limiting → 8.0 g MgO (NEB 2023). 10 g H₂ + 64 g O₂: O₂ limiting → 72 g H₂O with 2 g H₂ left (NEB 2024). Product calculations must always start from the limiting reactant, never the excess.",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Reactant That Runs Out First\n\nReal reactions mix measured amounts of two reactants, and they almost never match the stoichiometric ratio. The reactant consumed completely first — the **limiting reactant** — decides how far the reaction goes and how much product forms. Everything left over is the **excess reactant**.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Identification algorithm\n\n1. Balance the equation.\n2. Convert each reactant's amount to **moles**.\n3. Divide each by its **coefficient** (mol ÷ coefficient).\n4. The **smallest quotient** marks the limiting reactant; all product yields follow from it.\n\n### 2.2 Worked numericals\n\n**Q (NEB 2023, 3m):** 4.8 g of magnesium is burnt in 6.4 g of oxygen. Identify the limiting reactant and calculate the mass of MgO formed. (Mg = 24, O = 16)\n- 2Mg + O₂ → 2MgO\n- n(Mg) = 4.8/24 = 0.20 mol → 0.20/2 = 0.10\n- n(O₂) = 6.4/32 = 0.20 mol → 0.20/1 = 0.20\n- Mg has the smaller quotient → **Mg is limiting**\n- n(MgO) = n(Mg) = 0.20 mol → m = 0.20 × 40 = **8.0 g MgO** (O₂ left: 0.20 − 0.10 = 0.10 mol = 3.2 g)\n\n**Q (NEB 2024, 3m):** 10 g of H₂ reacts with 64 g of O₂ to form water. Which is the limiting reagent, and what is the maximum mass of water formed?\n- 2H₂ + O₂ → 2H₂O\n- n(H₂) = 10/2 = 5 mol → 5/2 = 2.5\n- n(O₂) = 64/32 = 2 mol → 2/1 = 2\n- O₂ has the smaller quotient → **O₂ is limiting**\n- n(H₂O) = 2 × 2 = 4 mol → m = 4 × 18 = **72 g water** (H₂ left: 5 − 4 = 1 mol = 2 g)\n\n**Q (NEB-style):** 28 g of N₂ reacts with 6 g of H₂ (N₂ + 3H₂ → 2NH₃). Find the limiting reactant and mass of NH₃ formed. (N = 14, H = 1)\n- n(N₂) = 28/28 = 1 mol → 1/1 = 1; n(H₂) = 6/2 = 3 mol → 3/3 = 1 — equal quotients: **neither is in excess; both fully consumed**\n- n(NH₃) = 2 mol → m = 2 × 17 = **34 g NH₃**\n\n### 2.3 Limiting vs excess reactant — similarities and differences\n\n**Similarities:** both are reactants consumed by the same reaction; both are measured in moles before comparing.\n**Differences:** the limiting reactant is **completely consumed** and sets the product ceiling; the excess reactant is **partly left over** and its leftover mass is recoverable. Product yield is calculated from the limiting reactant only — never from the excess.\n\n### 2.4 Why the concept matters\n\n- Industrial economics: you feed the cheaper reactant in excess to burn up the expensive one.\n- Air is free: combustion problems always have O₂ in excess, fuel limiting.\n- Pollution: incomplete consumption of the excess (e.g. unburnt fuel) causes emissions.",
+      "## 3. Conceptual Relationships\n\n- **To mole calculations (Topic 5):** the identification algorithm is two mole hops plus a comparison.\n- **To yield (Topic 7):** theoretical yield is computed from the limiting reactant.\n- **To equilibrium (Unit 8):** limiting vs excess sets initial concentrations.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2023 | Stoichiometry | Limiting reactant | 4.8 g Mg burnt in 6.4 g O₂ — limiting reactant and mass of MgO. | 3 | Numerical |\n| 2080/2024 | Stoichiometry | Limiting reagent | 10 g H₂ + 64 g O₂ → water — limiting reagent and maximum mass of water. | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Identify limiting reactant from a mole table (2m).\n2. Mass of product + mass of excess left (3m).\n3. N₂ + H₂ ammonia synthesis (3m).\n\n### 4.3 Common examination mistakes\n\n1. Comparing raw moles instead of mol ÷ coefficient.\n2. Computing product from the excess reactant.\n3. Forgetting to state the leftover mass when asked \"how much of the excess remains\"."
+    ],
+    "confusion": [
+      "**Limiting vs excess:** limiting = runs out first, controls yield; excess = left over, irrelevant to yield.",
+      "**\"Smallest quotient\" vs \"smallest moles\":** 0.2 mol with coefficient 1 beats 0.2 mol with coefficient 2 — always divide by the coefficient first."
+    ],
+    "keyPoints": [
+      "Identification: mol ÷ coefficient, smallest wins. Yield follows the limiting reactant. Mg/O₂ (2023): Mg limiting, 8 g MgO. H₂/O₂ (2024): O₂ limiting, 72 g H₂O."
+    ],
+    "importantConcepts": [
+      "**mol ÷ coefficient** — the only valid comparison; raw mole counts mislead."
+    ],
+    "examples": [
+      "***10 g H₂ + 64 g O₂*** — O₂ limiting (quotient 2 vs 2.5): 72 g water maximum, 2 g H₂ unreacted (NEB 2024)."
+    ],
+    "universalFacts": [
+      "In industrial ammonia synthesis, H₂ is usually fed slightly in excess because N₂ from air is cheaper."
+    ],
+    "importantStatements": [
+      "\"The limiting reactant is completely consumed and determines the maximum amount of product.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: 2023 (3m) Mg/O₂ → 8 g MgO; 2024 (3m) H₂/O₂ → 72 g H₂O."
+    ],
+    "examShortTricks": [
+      "\"Divide each mole by its coefficient — smallest quotient = limiting.\""
+    ],
+    "examNotes": [
+      "NEB gives method marks for the mole table — always show n, coefficient, quotient columns."
+    ],
+    "formulas": [
+      "- Quotient = n(reactant) ÷ coefficient\n- Product moles = limiting moles × (product coefficient ÷ limiting coefficient)\n- Excess left = n(initial) − n(consumed)"
+    ],
+    "practice": [
+      "In 2H₂ + O₂ → 2H₂O with 3 mol H₂ and 1 mol O₂, which is limiting and how much H₂ remains?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2023 (3m): 4.8 g of magnesium is burnt in 6.4 g of oxygen. Identify the limiting reactant and calculate the mass of MgO formed. (Mg = 24, O = 16)** — 2Mg + O₂ → 2MgO. n(Mg) = 0.20 mol (quotient 0.10); n(O₂) = 0.20 mol (quotient 0.20). **Mg is limiting.** n(MgO) = 0.20 mol → m = 0.20 × 40 = **8.0 g MgO**; O₂ left = 0.10 mol = 3.2 g."
+    ]
+  },
+  "importantConcepts": [
+    "**mol ÷ coefficient** — the only valid comparison; raw mole counts mislead."
+  ],
+  "importantStatements": [
+    "\"The limiting reactant is completely consumed and determines the maximum amount of product.\""
+  ],
+  "examShortTricks": [
+    "\"Divide each mole by its coefficient — smallest quotient = limiting.\""
+  ],
+  "examNotes": [
+    "NEB gives method marks for the mole table — always show n, coefficient, quotient columns."
+  ],
+  "mcs": [
+    {
+      "question": "The limiting reactant is the one that:",
+      "options": [
+        "Is cheapest",
+        "Runs out first",
+        "Has larger mass",
+        "Has larger moles"
+      ],
+      "answer": "B",
+      "explanation": "It caps the yield."
+    },
+    {
+      "question": "Compare reactants by:",
+      "options": [
+        "Mass",
+        "Moles only",
+        "Moles ÷ coefficient",
+        "Volume"
+      ],
+      "answer": "C",
+      "explanation": "The quotient rule."
+    },
+    {
+      "question": "4.8 g Mg + 6.4 g O₂: limiting reactant is:",
+      "options": [
+        "Mg",
+        "O₂",
+        "Both",
+        "Neither"
+      ],
+      "answer": "A",
+      "explanation": "Quotient 0.10 vs 0.20."
+    },
+    {
+      "question": "Mass of MgO formed in the above:",
+      "options": [
+        "4 g",
+        "8 g",
+        "12 g",
+        "16 g"
+      ],
+      "answer": "B",
+      "explanation": "0.2 mol × 40."
+    },
+    {
+      "question": "10 g H₂ + 64 g O₂: limiting reagent is:",
+      "options": [
+        "H₂",
+        "O₂",
+        "Both",
+        "Neither"
+      ],
+      "answer": "B",
+      "explanation": "Quotient 2 vs 2.5."
+    },
+    {
+      "question": "Maximum water from 10 g H₂ + 64 g O₂:",
+      "options": [
+        "36 g",
+        "54 g",
+        "72 g",
+        "90 g"
+      ],
+      "answer": "C",
+      "explanation": "4 mol × 18."
+    },
+    {
+      "question": "Product yield is computed from:",
+      "options": [
+        "Excess reactant",
+        "Limiting reactant",
+        "Total mass",
+        "Catalyst"
+      ],
+      "answer": "B",
+      "explanation": "The ceiling setter."
+    },
+    {
+      "question": "If quotients are equal, the mixture is:",
+      "options": [
+        "Limiting in both",
+        "Stoichiometric — nothing left",
+        "Impossible",
+        "All excess"
+      ],
+      "answer": "B",
+      "explanation": "Both fully consumed."
+    }
+  ]
 }

@@ -5,27 +5,10 @@
   "topicTitle": "Calculations based on mole concept",
   "relevance": 100,
   "notes": [
-    "Mole Concept Foundation: One mole contains exactly 6.022 × 10²³ entities (Avogadro's number Nₐ). The molar mass M (g/mol) of any substance equals its atomic or molecular mass numerically. This bridges the microscopic (atoms/molecules) and macroscopic (grams) worlds.",
-    "Mass-to-Moles Conversion: n = m/M where n = moles, m = mass in grams, M = molar mass in g/mol. Example: 36 g water (M = 18 g/mol) → n = 36/18 = 2 mol. This is the most fundamental stoichiometric calculation.",
-    "Moles-to-Particles Conversion: Number of particles N = n × Nₐ. Example: 0.5 mol CO₂ contains 0.5 × 6.022×10²³ = 3.011×10²³ molecules. Reverse: n = N/Nₐ when given particle count.",
-    "Molar Volume at STP: One mole of any ideal gas occupies 22.4 L at STP (0°C, 1 atm). n = V/22.4 for gases at STP. Example: 5.6 L O₂ at STP → n = 5.6/22.4 = 0.25 mol. Non-STP conditions require PV = nRT.",
-    "Percentage Composition: % of element = (mass of element in 1 mol compound / molar mass of compound) × 100. Example: In H₂O, %H = (2×1.008/18.015)×100 = 11.19%, %O = (16.00/18.015)×100 = 88.81%. Used to determine empirical formulas from experimental data.",
-    "Empirical Formula Determination: Step 1: Convert % composition to grams (assume 100 g sample). Step 2: Convert grams to moles for each element. Step 3: Divide all mole values by smallest mole value. Step 4: Multiply by integer if ratios are not whole numbers. Result gives simplest whole-number ratio of atoms.",
-    "Molecular Formula from Empirical: Molecular formula = (empirical formula)ₙ where n = molecular mass / empirical formula mass. Example: Empirical CH₂O (mass 30), molecular mass 180 → n = 180/30 = 6 → molecular formula C₆H₁₂O₆ (glucose).",
-    "Stoichiometric Calculations from Balanced Equations: Coefficients give mole ratios. For 2H₂ + O₂ → 2H₂O: 2 mol H₂ reacts with 1 mol O₂ to produce 2 mol H₂O. Convert given quantity to moles → use ratio → convert back to desired units.",
-    "Mass-Mass Stoichiometry: Given mass of reactant A, find mass of product B. Steps: mass A → moles A (÷M_A) → moles B (×ratio) → mass B (×M_B). Example: How much CO₂ from 100 g CaCO₃? CaCO₃→CaO+CO₂. n(CaCO₃)=100/100=1 mol → n(CO₂)=1 mol → m=44 g.",
-    "Mass-Volume Stoichiometry (Gases): For reactions involving gases, use molar volume. Example: Zn + 2HCl → ZnCl₂ + H₂. From 6.5 g Zn (0.1 mol), H₂ produced = 0.1 mol = 0.1×22.4 = 2.24 L at STP.",
-    "Solution Stoichiometry: Molarity M = n/V(L). n = M × V. Use in titration calculations: M₁V₁/n₁ = M₂V₂/n₂ where n₁,n₂ are coefficients. Example: 25 mL 0.1M NaOH neutralizes how many mL of 0.05M H₂SO₄? Ratio 2:1 → V = (0.1×25×1)/(0.05×2) = 25 mL.",
-    "Limiting Reagent Identification: Calculate moles of each reactant. Divide by coefficient in balanced equation. Smallest value identifies limiting reagent. All product calculations based on limiting reagent only. Excess reagent remains partially unreacted.",
-    "Theoretical Yield Calculation: Maximum possible product based on limiting reagent and stoichiometry. Actual yield is always less due to incomplete reactions, side reactions, and losses during purification.",
-    "Percentage Yield: % yield = (actual yield / theoretical yield) × 100. Industrial processes aim for >90%. Low yields indicate inefficiency, side reactions, or equilibrium limitations. NEB frequently asks numerical problems combining limiting reagent and % yield.",
-    "Percentage Purity: % purity = (mass of pure substance / mass of impure sample) × 100. Impure samples require correction before stoichiometric calculations. Example: 80% pure limestone means only 80 g CaCO₃ per 100 g sample participates in reaction.",
-    "# Calculations based on mole concept\n\n## 1. Introduction\nChemical picture of **Calculations based on mole concept** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Stoichiometry fill pass.\n\n## 2. Concepts and definitions\n### Calculations based on mole concept\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Calculations based on mole concept — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Calculations based on mole concept — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Calculations based on mole concept — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Calculations based on mole concept — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Every Calculation Is a Mole Hop\n\nMass–mass, mass–volume, mass–particles, solution concentration — all stoichiometric calculations follow one route: **convert the given quantity to moles, apply the equation's mole ratio, convert to the required quantity**. Master the hop and every numerical becomes bookkeeping.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The universal algorithm\n\n1. Write the **balanced equation**.\n2. Convert the given quantity to **moles** (÷M for mass, ÷22.4 for gas volume at STP, ÷Nₐ for particles, ×V(L) for molarity).\n3. Multiply by the **mole ratio** (coefficients).\n4. Convert moles of the required species to the asked unit (×M, ×22.4, ×Nₐ, ÷V).\n\n### 2.2 Worked numericals\n\n**Q (NEB 2024, 2m):** 4 g of NaOH is dissolved in water to make 250 mL of solution. Calculate its molarity. (NaOH = 40)\n- n(NaOH) = 4/40 = 0.1 mol\n- V = 250 mL = 0.25 L\n- M = n/V = 0.1/0.25 = **0.4 M**\n\n**Q (NEB-style):** What mass of CO₂ is released when 100 g of CaCO₃ is completely decomposed? (CaCO₃ → CaO + CO₂)\n- n(CaCO₃) = 100/100 = 1 mol → n(CO₂) = 1 mol → m = 1 × 44 = **44 g**.\n\n**Q (NEB-style):** What volume of H₂ at STP is produced when 6.5 g of Zn reacts with excess HCl? (Zn + 2HCl → ZnCl₂ + H₂; Zn = 65)\n- n(Zn) = 6.5/65 = 0.1 mol → n(H₂) = 0.1 mol → V = 0.1 × 22.4 = **2.24 L**.\n\n**Q (NEB-style):** How many mL of 0.05 M H₂SO₄ neutralise 25 mL of 0.1 M NaOH?\n- 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O; ratio NaOH:H₂SO₄ = 2:1\n- n(NaOH) = 0.1 × 0.025 = 2.5 × 10⁻³ mol → n(H₂SO₄) = 1.25 × 10⁻³ mol\n- V = n/M = 1.25 × 10⁻³/0.05 = 0.025 L = **25 mL**.\n\n### 2.3 Molarity vs molality — similarities and differences\n\n**Similarities:** both are concentration units; both use moles of solute; both convert to/from moles in numericals.\n**Differences:** molarity = mol solute per **litre of solution** (M), temperature-dependent (solution expands); molality = mol solute per **kg of solvent** (m), temperature-independent. Dilution changes molarity but never molality.\n\n### 2.4 Mass–mass vs mass–volume stoichiometry\n\n**Similarities:** both need the balanced equation and the mole hop.\n**Differences:** mass–mass ends with ×M (grams); mass–volume ends with ×22.4 L at STP for gases — and only gases.",
+    "## 3. Conceptual Relationships\n\n- **To the mole (Topic 4):** the hop is only as good as your n = m/M reflex.\n- **To limiting reactant (Topic 6):** when both reactants are quantified, the limiting one caps the yield.\n- **To titration (practicals):** M₁V₁/n₁ = M₂V₂/n₂ is this algorithm in solution form.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Stoichiometry | Concentration | 4 g of NaOH dissolved in water to make 250 mL of solution — calculate molarity. (NaOH = 40) | 2 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Mass–mass calculation from a balanced equation (2–3m).\n2. Gas volume at STP from a given mass (2m).\n3. Molarity or dilution numerical (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using mL instead of L in M = n/V — always convert to litres.\n2. Skipping the balanced equation and guessing ratios.\n3. Applying 22.4 L to non-STP conditions."
   ],
   "specificConditions": [
     "STP Definition: Standard Temperature and Pressure = 0°C (273.15 K) and 1 atm (101.325 kPa). Molar volume 22.4 L applies ONLY at STP. At other conditions use PV = nRT.",
@@ -34,82 +17,38 @@
     "Consistent Units: Always convert to moles first, then to target units. Mixing grams and liters without conversion causes errors."
   ],
   "formulas": [
-    "$n = \\frac{m}{M}$",
-    "$N = n \\times N_A$",
-    "$n = \\frac{V}{22.4}$ (gas at STP)",
-    "$\\% \\text{element} = \\frac{\\text{mass of element in 1 mol}}{\\text{molar mass}} \\times 100$",
-    "$n = \\frac{\\text{molecular mass}}{\\text{empirical formula mass}}$",
-    "$\\% \\text{yield} = \\frac{\\text{actual yield}}{\\text{theoretical yield}} \\times 100$",
-    "$M = \\frac{n}{V(L)}$"
+    "- M = n/V(L) (molarity)\n- m = molality = n solute/kg solvent\n- M₁V₁ = M₂V₂ (dilution)\n- M₁V₁/n₁ = M₂V₂/n₂ (titration, coefficients n)"
   ],
   "keyPoints": [
-    "n = m/M is the gateway to all stoichiometric calculations.",
-    "Always convert to moles before applying mole ratios from balanced equations.",
-    "22.4 L/mol applies only to ideal gases at STP.",
-    "Empirical formula = simplest ratio; molecular formula = actual atom count.",
-    "Limiting reagent determines maximum product; excess reagent is leftover.",
-    "% yield compares actual vs theoretical; always ≤ 100%."
+    "Algorithm: balance → moles → ratio → convert. Molarity M = n/V(L). Mass–mass uses M; gas volumes use 22.4 L at STP; particles use Nₐ."
   ],
   "importantStatements": [
-    "Statement 1: The mole concept provides the quantitative link between atomic-scale events and measurable laboratory quantities.",
-    "Statement 2: All stoichiometric calculations require conversion through moles as the intermediate step.",
-    "Statement 3: Percentage composition data enables determination of empirical and molecular formulas.",
-    "Statement 4: The limiting reagent controls the extent of reaction and maximum product formation.",
-    "Statement 5: Percentage yield measures the efficiency of a chemical process relative to theoretical maximum."
+    "\"Balanced chemical equations give mole ratios, not mass ratios.\""
   ],
   "importantNotes": [
-    "NEB exam pattern: Most stoichiometry numericals follow mass→moles→ratio→moles→mass/volume sequence.",
-    "Common error: Forgetting to balance the equation before calculating mole ratios.",
-    "For hydrated salts (e.g., CuSO₄·5H₂O), include water molecules in molar mass calculation.",
-    "In combustion analysis, carbon converts to CO₂ and hydrogen to H₂O — use these to find C and H content."
+    "Verified PYQ 2024 (2m): molarity of 4 g NaOH in 250 mL = 0.4 M."
   ],
   "examShortTricks": [
-    "Mass↔Moles: divide by M to get moles, multiply by M to get mass.",
-    "Gas at STP: divide liters by 22.4 for moles.",
-    "Empirical formula: %→g→mol→divide by smallest→whole number ratio.",
-    "Limiting reagent: moles/coefficient — smallest wins.",
-    "% yield = actual/theoretical × 100."
+    "\"Balance → moles → ratio → unit. Write the four steps and NEB gives method marks even if arithmetic slips.\""
   ],
   "examNotes": [
-    "Practice at least 10 mass-mass, 5 mass-volume, and 5 solution stoichiometry problems.",
-    "Memorize common molar masses: H₂O=18, CO₂=44, NaOH=40, H₂SO₄=98, CaCO₃=100.",
-    "Show all unit conversions explicitly — marks awarded for method even if arithmetic fails.",
-    "Check answer plausibility: % yield >100% means error; negative mass means wrong subtraction."
+    "State units at every step — lost units are the top cause of lost marks in numericals."
   ],
   "examples": [
-    "Calculate moles in 49 g H₂SO₄: n = 49/98 = 0.5 mol.",
-    "Volume of 0.25 mol NH₃ at STP: V = 0.25 × 22.4 = 5.6 L.",
-    "Empirical formula from 40% C, 6.67% H, 53.33% O: C=40/12=3.33, H=6.67/1=6.67, O=53.33/16=3.33 → divide by 3.33 → CH₂O.",
-    "From 2KClO₃→2KCl+3O₂, how much O₂ from 24.5 g KClO₃? n=24.5/122.5=0.2 mol KClO₃ → 0.3 mol O₂ → 6.72 L at STP.",
-    "If 10 g Mg reacts with excess HCl (Mg+2HCl→MgCl₂+H₂), theoretical H₂ = 10/24.3 = 0.412 mol = 9.22 L at STP. If actual = 8.5 L, % yield = 8.5/9.22×100 = 92.2%."
+    "***4 g NaOH in 250 mL*** — 0.1 mol in 0.25 L = 0.4 M (NEB 2024): the standard molarity question."
   ],
   "practiceQuestions": [
-    "Q1. Calculate the number of moles in 88 g CO₂.",
-    "Q2. What volume does 3.011×10²³ molecules of N₂ occupy at STP?",
-    "Q3. Determine the empirical formula of a compound containing 82.76% C and 17.24% H.",
-    "Q4. How many grams of NaOH are needed to neutralize 0.1 mol H₂SO₄?",
-    "Q5. In the reaction N₂+3H₂→2NH₃, if 28 g N₂ and 6 g H₂ react, identify the limiting reagent and calculate mass of NH₃ formed.",
-    "Q6. A 5 g sample of impure CaCO₃ produces 1.12 L CO₂ at STP on heating. Calculate percentage purity."
+    "**NEB 2024 (2m): 4 g of NaOH is dissolved in water to make 250 mL of solution. Calculate its molarity. (NaOH = 40)** — n = 4/40 = 0.1 mol; V = 0.25 L; M = 0.1/0.25 = **0.4 M**."
   ],
   "practice": [
-    "Convert between mass, moles, particles, and gas volume fluently.",
-    "Determine empirical and molecular formulas from percentage composition data.",
-    "Solve mass-mass, mass-volume, and solution stoichiometry problems.",
-    "Identify limiting reagents and calculate theoretical and percentage yields.",
-    "Apply percentage purity corrections to real-world sample calculations."
+    "What volume of 0.5 M HCl neutralises 20 mL of 0.5 M NaOH?"
   ],
   "universalFacts": [
-    "Avogadro's number was determined experimentally by Jean Perrin (1908) using Brownian motion, confirming atomic theory.",
-    "The mole was redefined in 2019 as exactly 6.02214076×10²³ entities, fixing it as an exact constant.",
-    "Industrial ammonia synthesis (Haber process) achieves only ~15% single-pass yield but recycles unreacted gases for >98% overall conversion.",
-    "Analytical chemistry relies entirely on stoichiometric calculations for quantitative determination of unknown concentrations."
+    "Every stoichiometry numerical, from Class 11 to industrial engineering, is the same four-step hop."
   ],
   "confusion": [
-    "Confusing molecular mass with molar mass: Molecular mass is dimensionless (relative); molar mass has units g/mol. Numerically equal but dimensionally different.",
-    "Using 22.4 L for non-STP conditions: Only valid at 0°C and 1 atm. Room temperature (25°C) gives ~24.5 L/mol.",
-    "Forgetting diatomic elements: H₂, N₂, O₂, F₂, Cl₂, Br₂, I₂ exist as molecules. Atomic mass ≠ molecular mass for these.",
-    "Mixing up empirical and molecular formulas: Empirical is simplest ratio; molecular is actual. They can be identical (H₂O) or different (C₆H₁₂O₆ vs CH₂O).",
-    "Assuming 100% yield in calculations: Theoretical yield is maximum possible; actual is always less. Never use actual yield to predict reactant needs."
+    "**Molarity vs molality:** M = mol/L *solution*; m = mol/kg *solvent*. Only molality ignores temperature.",
+    "**Dilution:** M₁V₁ = M₂V₂ conserves moles of solute — volumes are additive only approximately, moles exactly."
   ],
   "mcs": [
     {
@@ -168,5 +107,144 @@
       "explanation": "% yield = (actual yield / theoretical yield) × 100."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Every Calculation Is a Mole Hop\n\nMass–mass, mass–volume, mass–particles, solution concentration — all stoichiometric calculations follow one route: **convert the given quantity to moles, apply the equation's mole ratio, convert to the required quantity**. Master the hop and every numerical becomes bookkeeping.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The universal algorithm\n\n1. Write the **balanced equation**.\n2. Convert the given quantity to **moles** (÷M for mass, ÷22.4 for gas volume at STP, ÷Nₐ for particles, ×V(L) for molarity).\n3. Multiply by the **mole ratio** (coefficients).\n4. Convert moles of the required species to the asked unit (×M, ×22.4, ×Nₐ, ÷V).\n\n### 2.2 Worked numericals\n\n**Q (NEB 2024, 2m):** 4 g of NaOH is dissolved in water to make 250 mL of solution. Calculate its molarity. (NaOH = 40)\n- n(NaOH) = 4/40 = 0.1 mol\n- V = 250 mL = 0.25 L\n- M = n/V = 0.1/0.25 = **0.4 M**\n\n**Q (NEB-style):** What mass of CO₂ is released when 100 g of CaCO₃ is completely decomposed? (CaCO₃ → CaO + CO₂)\n- n(CaCO₃) = 100/100 = 1 mol → n(CO₂) = 1 mol → m = 1 × 44 = **44 g**.\n\n**Q (NEB-style):** What volume of H₂ at STP is produced when 6.5 g of Zn reacts with excess HCl? (Zn + 2HCl → ZnCl₂ + H₂; Zn = 65)\n- n(Zn) = 6.5/65 = 0.1 mol → n(H₂) = 0.1 mol → V = 0.1 × 22.4 = **2.24 L**.\n\n**Q (NEB-style):** How many mL of 0.05 M H₂SO₄ neutralise 25 mL of 0.1 M NaOH?\n- 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O; ratio NaOH:H₂SO₄ = 2:1\n- n(NaOH) = 0.1 × 0.025 = 2.5 × 10⁻³ mol → n(H₂SO₄) = 1.25 × 10⁻³ mol\n- V = n/M = 1.25 × 10⁻³/0.05 = 0.025 L = **25 mL**.\n\n### 2.3 Molarity vs molality — similarities and differences\n\n**Similarities:** both are concentration units; both use moles of solute; both convert to/from moles in numericals.\n**Differences:** molarity = mol solute per **litre of solution** (M), temperature-dependent (solution expands); molality = mol solute per **kg of solvent** (m), temperature-independent. Dilution changes molarity but never molality.\n\n### 2.4 Mass–mass vs mass–volume stoichiometry\n\n**Similarities:** both need the balanced equation and the mole hop.\n**Differences:** mass–mass ends with ×M (grams); mass–volume ends with ×22.4 L at STP for gases — and only gases.",
+      "## 3. Conceptual Relationships\n\n- **To the mole (Topic 4):** the hop is only as good as your n = m/M reflex.\n- **To limiting reactant (Topic 6):** when both reactants are quantified, the limiting one caps the yield.\n- **To titration (practicals):** M₁V₁/n₁ = M₂V₂/n₂ is this algorithm in solution form.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Stoichiometry | Concentration | 4 g of NaOH dissolved in water to make 250 mL of solution — calculate molarity. (NaOH = 40) | 2 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Mass–mass calculation from a balanced equation (2–3m).\n2. Gas volume at STP from a given mass (2m).\n3. Molarity or dilution numerical (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using mL instead of L in M = n/V — always convert to litres.\n2. Skipping the balanced equation and guessing ratios.\n3. Applying 22.4 L to non-STP conditions."
+    ],
+    "confusion": [
+      "**Molarity vs molality:** M = mol/L *solution*; m = mol/kg *solvent*. Only molality ignores temperature.",
+      "**Dilution:** M₁V₁ = M₂V₂ conserves moles of solute — volumes are additive only approximately, moles exactly."
+    ],
+    "keyPoints": [
+      "Algorithm: balance → moles → ratio → convert. Molarity M = n/V(L). Mass–mass uses M; gas volumes use 22.4 L at STP; particles use Nₐ."
+    ],
+    "importantConcepts": [
+      "**Mole ratio from coefficients** — the only legitimate bridge between substances in a numerical."
+    ],
+    "examples": [
+      "***4 g NaOH in 250 mL*** — 0.1 mol in 0.25 L = 0.4 M (NEB 2024): the standard molarity question."
+    ],
+    "universalFacts": [
+      "Every stoichiometry numerical, from Class 11 to industrial engineering, is the same four-step hop."
+    ],
+    "importantStatements": [
+      "\"Balanced chemical equations give mole ratios, not mass ratios.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ 2024 (2m): molarity of 4 g NaOH in 250 mL = 0.4 M."
+    ],
+    "examShortTricks": [
+      "\"Balance → moles → ratio → unit. Write the four steps and NEB gives method marks even if arithmetic slips.\""
+    ],
+    "examNotes": [
+      "State units at every step — lost units are the top cause of lost marks in numericals."
+    ],
+    "formulas": [
+      "- M = n/V(L) (molarity)\n- m = molality = n solute/kg solvent\n- M₁V₁ = M₂V₂ (dilution)\n- M₁V₁/n₁ = M₂V₂/n₂ (titration, coefficients n)"
+    ],
+    "practice": [
+      "What volume of 0.5 M HCl neutralises 20 mL of 0.5 M NaOH?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (2m): 4 g of NaOH is dissolved in water to make 250 mL of solution. Calculate its molarity. (NaOH = 40)** — n = 4/40 = 0.1 mol; V = 0.25 L; M = 0.1/0.25 = **0.4 M**."
+    ]
+  },
+  "importantConcepts": [
+    "**Mole ratio from coefficients** — the only legitimate bridge between substances in a numerical."
+  ],
+  "summary": "All stoichiometric calculations follow one algorithm: **balance the equation, convert to moles, apply the coefficient ratio, convert to the required unit**. Mass uses n = m/M; gas volume at STP uses 22.4 L/mol; particles use Nₐ; solutions use molarity M = n/V(L) (mol per litre of solution, temperature-dependent) rather than molality (mol per kg solvent, temperature-independent). Worked anchors: 4 g NaOH in 250 mL → 0.4 M (NEB 2024); 100 g CaCO₃ → 44 g CO₂; 6.5 g Zn → 2.24 L H₂ at STP.",
+  "mcqs": [
+    {
+      "question": "The first step of any stoichiometric calculation is:",
+      "options": [
+        "Convert to grams",
+        "Balance the equation",
+        "Find molarity",
+        "Weigh the sample"
+      ],
+      "answer": "B",
+      "explanation": "Coefficients give ratios."
+    },
+    {
+      "question": "Molarity is moles of solute per:",
+      "options": [
+        "kg of solvent",
+        "litre of solution",
+        "gram of solution",
+        "mole of solvent"
+      ],
+      "answer": "B",
+      "explanation": "M = n/V(L)."
+    },
+    {
+      "question": "4 g NaOH in 250 mL has molarity:",
+      "options": [
+        "0.1 M",
+        "0.4 M",
+        "0.25 M",
+        "1.6 M"
+      ],
+      "answer": "B",
+      "explanation": "0.1/0.25."
+    },
+    {
+      "question": "100 g CaCO₃ (M = 100) gives CO₂ (M = 44) of mass:",
+      "options": [
+        "22 g",
+        "44 g",
+        "56 g",
+        "100 g"
+      ],
+      "answer": "B",
+      "explanation": "1 mol → 1 mol."
+    },
+    {
+      "question": "6.5 g Zn (65) with excess HCl gives H₂ at STP:",
+      "options": [
+        "1.12 L",
+        "2.24 L",
+        "22.4 L",
+        "4.48 L"
+      ],
+      "answer": "B",
+      "explanation": "0.1 mol × 22.4."
+    },
+    {
+      "question": "Which is temperature-independent?",
+      "options": [
+        "Molarity",
+        "Molality",
+        "Normality of volume-based solutions",
+        "Mole fraction of volume ratios"
+      ],
+      "answer": "B",
+      "explanation": "Mass-based."
+    },
+    {
+      "question": "Moles of H₂SO₄ neutralised by 0.1 mol NaOH:",
+      "options": [
+        "0.1",
+        "0.05",
+        "0.2",
+        "0.025"
+      ],
+      "answer": "B",
+      "explanation": "2:1 ratio."
+    },
+    {
+      "question": "Dilution conserves:",
+      "options": [
+        "Volume",
+        "Molarity",
+        "Moles of solute",
+        "Density"
+      ],
+      "answer": "C",
+      "explanation": "M₁V₁ = M₂V₂."
+    }
+  ]
 }

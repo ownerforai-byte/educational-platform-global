@@ -5,35 +5,273 @@
   "topicTitle": "Laws of stoichiometry",
   "relevance": 10,
   "notes": [
-    "This file is a summary reference. For complete detailed coverage of all stoichiometry laws, see the individual concept files: 01-law-of-conservation-of-mass.json, 02-law-of-definite-proportions.json, 03-law-of-multiple-proportions.json, 04-law-of-reciprocal-proportions.json, and 02-laws-stoichiometry.json.",
-    "Law of Conservation of Mass (Lavoisier): Total mass of reactants equals total mass of products in a chemical reaction.",
-    "Law of Definite Proportions (Proust): A pure compound always contains the same elements in fixed proportion by mass.",
-    "Law of Multiple Proportions (Dalton): When two elements form more than one compound, masses of one element combining with fixed mass of other are in simple whole-number ratios.",
-    "Law of Reciprocal Proportions (Richter): When two elements combine separately with a fixed mass of a third element, the ratio of their masses in which they combine with each other is either the same or a simple multiple.",
-    "Gay-Lussac's Law of Gaseous Volumes: Gases react in simple whole-number volume ratios at same temperature and pressure.",
-    "Avogadro's Law: Equal volumes of all gases at same temperature and pressure contain equal number of molecules.",
-    "# Laws of stoichiometry\n\n## 1. Introduction\nChemical picture of **Laws of stoichiometry** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Stoichiometry fill pass.\n\n## 2. Concepts and definitions\n### Laws of stoichiometry\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Laws of stoichiometry — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Laws of stoichiometry — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Laws of stoichiometry — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Laws of stoichiometry — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Rules the Mole Obey\n\nBefore any calculation, chemistry agrees on five quantitative laws: mass is conserved, composition is definite, ratios are multiple, equivalents are reciprocal, and reacting gas volumes are simple. Together with Avogadro's law they are the **laws of stoichiometry** — the grammar of every balanced equation.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The five laws at a glance\n\n| Law | Scientist | Statement |\n|---|---|---|\n| **Conservation of mass** | Lavoisier (1789) | Total mass of reactants = total mass of products in a chemical reaction |\n| **Definite proportions** | Proust (1799) | A pure compound always contains the same elements combined in the same fixed proportion by mass |\n| **Multiple proportions** | Dalton (1803) | When two elements form more than one compound, the masses of one combining with a fixed mass of the other are in a simple whole-number ratio |\n| **Reciprocal proportions** | Richter (1792) | Two elements combining separately with a fixed mass of a third combine with each other in the same ratio or a simple multiple of it |\n| **Gay-Lussac's gaseous volumes** | Gay-Lussac (1808) | Gases react in simple whole-number volume ratios at the same temperature and pressure |\n\n### 2.2 Worked illustrations\n\n- **Definite proportions:** every sample of CuO is 79.9% Cu / 20.1% O — from any source, any method.\n- **Multiple proportions:** C and O form CO (C:O = 12:16) and CO₂ (12:32); oxygen masses per 12 g C are 16:32 = **1:2**.\n- **Multiple proportions:** N forms NO (14:16), NO₂ (14:32), N₂O (28:16 = 14:8); oxygen per 14 g N = 8, 16, 32 → **1:2:4**.\n- **Reciprocal proportions:** H:O = 1:8 in H₂O; H:N = 3:14 in NH₃; then N:O in NO = 14:8 — (3/14 ÷ 1/8) consistent with a simple multiple.\n- **Gay-Lussac:** 2 volumes H₂ + 1 volume O₂ → 2 volumes steam (2H₂ + O₂ → 2H₂O(g)); 1:2:2.\n\n### 2.3 Similarities and differences — definite vs multiple proportions\n\n**Similarities:** both are mass laws; both hold for pure compounds; both were explained by Dalton's atomic theory.\n**Differences:** definite proportions concerns **one compound** (fixed composition of H₂O everywhere); multiple proportions concerns **two or more compounds of the same pair of elements** (CO vs CO₂) and compares ratios *between* compounds.\n\n### 2.4 Similarities and differences — conservation of mass vs Gay-Lussac's law\n\n**Similarities:** both describe reacting amounts; both are experimentally discovered regularities.\n**Differences:** conservation of mass applies to **mass** in all reactions (nuclear reactions excepted); Gay-Lussac applies to **gas volumes** only, at the same T and P, and is explained not by mass but by Avogadro's molecule counting.",
+    "## 3. Conceptual Relationships\n\n- **To Dalton (Topic 1):** the atomic theory was built to explain the first three laws.\n- **To Avogadro (Topic 3):** Avogadro's hypothesis reconciled Gay-Lussac's volume ratios with Dalton's atomism.\n- **To the mole (Topic 4):** the laws justify why balanced-equation coefficients are mole ratios.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise statements + illustrations as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. State the law of multiple proportions with an example (3m).\n2. Distinguish definite and multiple proportions (2–3m).\n3. Illustrate the law of reciprocal proportions (3m).\n\n### 4.3 Common examination mistakes\n\n1. Quoting Gay-Lussac without \"same temperature and pressure\".\n2. Using volume ratios for solids — the volume law is gases only.\n3. Forgetting the fixed-mass reference element in multiple proportions."
   ],
-  "formulas": [],
+  "formulas": [
+    "No formulas — statement-and-illustration topic."
+  ],
   "keyPoints": [
-    "Five fundamental laws govern stoichiometric calculations.",
-    "These laws form the basis for quantitative chemistry.",
-    "See individual topic files for detailed explanations and examples."
+    "Five laws: conservation of mass (Lavoisier), definite proportions (Proust), multiple proportions (Dalton), reciprocal proportions (Richter), gaseous volumes (Gay-Lussac). Each needs a one-line statement plus one numeric illustration."
   ],
-  "summary": "Overview reference for the five laws of stoichiometry. Detailed content is available in the individual concept files for each law.",
+  "summary": "The **laws of stoichiometry** — conservation of mass (Lavoisier), definite proportions (Proust), multiple proportions (Dalton), reciprocal proportions (Richter) and Gay-Lussac's gaseous volumes — fix how much of each element reacts. Definite proportions fixes one compound's composition; multiple proportions compares ratios across compounds of the same element pair (CO 1:2 vs CO₂ with oxygen per 12 g C). Mass is conserved in every reaction, while gas volumes react in simple ratios only at the same T and P — the fact Avogadro's hypothesis explains.",
   "source": "skeleton-v2",
   "examShortTricks": [
-    "Trick 1: Match law to example in one line — conservation of mass: 2H2 + O2 -> 2H2O (mass of reactants = mass of products); definite proportions: pure water is always H2O in 1:8 ratio; multiple proportions: CO and CO2.",
-    "Trick 2: For multiple proportions, fix the mass of ONE element and compare the variable element — in CO and CO2, 12 g C combines with 16 g and 32 g O: ratio 16:32 = 1:2 (simple whole number).",
-    "Trick 3: Reciprocal proportions: two elements combining with a THIRD in simple ratios also combine with each other in simple ratios — C:H = 3:1 (CH4), H:O = 1:8 (H2O), so C:O = 3:8 (CO2)."
+    "\"CDMR-G: Conservation, Definite, Multiple, Reciprocal, Gay-Lussac — five laws, five scientists.\""
   ],
   "practiceQuestions": [
-    "Q. CO and CO2 illustrate which law? Show the calculation. (2 marks) — Multiple proportions: fixed 12 g C combines with 16 g O (CO) and 32 g O (CO2); 16:32 = 1:2.",
-    "Q. 1.375 g of cupric oxide gave 1.100 g Cu on reduction; 1.79 g of copper gave 2.245 g cupric oxide. Show the law illustrated. (3 marks) — Cu:O ratio is the same (≈ 4:1) in both samples → law of definite proportions."
+    "**NEB-style (3m): State the law of multiple proportions and illustrate it with carbon oxides.** — Statement: when two elements form more than one compound, masses of one combining with a fixed mass of the other are in a simple whole-number ratio. In CO, C:O = 12:16; in CO₂, C:O = 12:32. Per fixed 12 g C, oxygen = 16 and 32 g → ratio 16:32 = **1:2**, a simple whole-number ratio."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Rules the Mole Obey\n\nBefore any calculation, chemistry agrees on five quantitative laws: mass is conserved, composition is definite, ratios are multiple, equivalents are reciprocal, and reacting gas volumes are simple. Together with Avogadro's law they are the **laws of stoichiometry** — the grammar of every balanced equation.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The five laws at a glance\n\n| Law | Scientist | Statement |\n|---|---|---|\n| **Conservation of mass** | Lavoisier (1789) | Total mass of reactants = total mass of products in a chemical reaction |\n| **Definite proportions** | Proust (1799) | A pure compound always contains the same elements combined in the same fixed proportion by mass |\n| **Multiple proportions** | Dalton (1803) | When two elements form more than one compound, the masses of one combining with a fixed mass of the other are in a simple whole-number ratio |\n| **Reciprocal proportions** | Richter (1792) | Two elements combining separately with a fixed mass of a third combine with each other in the same ratio or a simple multiple of it |\n| **Gay-Lussac's gaseous volumes** | Gay-Lussac (1808) | Gases react in simple whole-number volume ratios at the same temperature and pressure |\n\n### 2.2 Worked illustrations\n\n- **Definite proportions:** every sample of CuO is 79.9% Cu / 20.1% O — from any source, any method.\n- **Multiple proportions:** C and O form CO (C:O = 12:16) and CO₂ (12:32); oxygen masses per 12 g C are 16:32 = **1:2**.\n- **Multiple proportions:** N forms NO (14:16), NO₂ (14:32), N₂O (28:16 = 14:8); oxygen per 14 g N = 8, 16, 32 → **1:2:4**.\n- **Reciprocal proportions:** H:O = 1:8 in H₂O; H:N = 3:14 in NH₃; then N:O in NO = 14:8 — (3/14 ÷ 1/8) consistent with a simple multiple.\n- **Gay-Lussac:** 2 volumes H₂ + 1 volume O₂ → 2 volumes steam (2H₂ + O₂ → 2H₂O(g)); 1:2:2.\n\n### 2.3 Similarities and differences — definite vs multiple proportions\n\n**Similarities:** both are mass laws; both hold for pure compounds; both were explained by Dalton's atomic theory.\n**Differences:** definite proportions concerns **one compound** (fixed composition of H₂O everywhere); multiple proportions concerns **two or more compounds of the same pair of elements** (CO vs CO₂) and compares ratios *between* compounds.\n\n### 2.4 Similarities and differences — conservation of mass vs Gay-Lussac's law\n\n**Similarities:** both describe reacting amounts; both are experimentally discovered regularities.\n**Differences:** conservation of mass applies to **mass** in all reactions (nuclear reactions excepted); Gay-Lussac applies to **gas volumes** only, at the same T and P, and is explained not by mass but by Avogadro's molecule counting.",
+      "## 3. Conceptual Relationships\n\n- **To Dalton (Topic 1):** the atomic theory was built to explain the first three laws.\n- **To Avogadro (Topic 3):** Avogadro's hypothesis reconciled Gay-Lussac's volume ratios with Dalton's atomism.\n- **To the mole (Topic 4):** the laws justify why balanced-equation coefficients are mole ratios.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise statements + illustrations as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. State the law of multiple proportions with an example (3m).\n2. Distinguish definite and multiple proportions (2–3m).\n3. Illustrate the law of reciprocal proportions (3m).\n\n### 4.3 Common examination mistakes\n\n1. Quoting Gay-Lussac without \"same temperature and pressure\".\n2. Using volume ratios for solids — the volume law is gases only.\n3. Forgetting the fixed-mass reference element in multiple proportions."
+    ],
+    "confusion": [
+      "**Definite vs multiple proportions:** definite = one compound, one fixed ratio; multiple = several compounds of the same two elements, ratio of ratios.",
+      "**Gay-Lussac's law vs Avogadro's law:** Gay-Lussac compares reacting *volumes*; Avogadro explains it — equal volumes contain equal *molecules*."
+    ],
+    "keyPoints": [
+      "Five laws: conservation of mass (Lavoisier), definite proportions (Proust), multiple proportions (Dalton), reciprocal proportions (Richter), gaseous volumes (Gay-Lussac). Each needs a one-line statement plus one numeric illustration."
+    ],
+    "importantConcepts": [
+      "**Fixed-mass reference** — in multiple and reciprocal proportions, always divide by the mass of the fixed element before comparing."
+    ],
+    "examples": [
+      "***NO, NO₂, N₂O*** — oxygen per 14 g nitrogen: 8, 16, 32 g → ratio 1:2:4, a perfect multiple-proportions triplet."
+    ],
+    "universalFacts": [
+      "These laws are empirical: they were measured before atoms were believed in — and their existence is itself evidence for atoms."
+    ],
+    "importantStatements": [
+      "\"A pure compound always contains the same elements combined in the same fixed proportion by mass\" — Proust."
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (statements 2m each, illustration 3m, distinction 2m)."
+    ],
+    "examShortTricks": [
+      "\"CDMR-G: Conservation, Definite, Multiple, Reciprocal, Gay-Lussac — five laws, five scientists.\""
+    ],
+    "examNotes": [
+      "Always attach the scientist's name to the law — NEB awards the name as a separate mark."
+    ],
+    "formulas": [
+      "No formulas — statement-and-illustration topic."
+    ],
+    "practice": [
+      "In CO and CO₂, what is the ratio of oxygen masses combining with 12 g of carbon?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): State the law of multiple proportions and illustrate it with carbon oxides.** — Statement: when two elements form more than one compound, masses of one combining with a fixed mass of the other are in a simple whole-number ratio. In CO, C:O = 12:16; in CO₂, C:O = 12:32. Per fixed 12 g C, oxygen = 16 and 32 g → ratio 16:32 = **1:2**, a simple whole-number ratio."
+    ]
+  },
+  "confusion": [
+    "**Definite vs multiple proportions:** definite = one compound, one fixed ratio; multiple = several compounds of the same two elements, ratio of ratios.",
+    "**Gay-Lussac's law vs Avogadro's law:** Gay-Lussac compares reacting *volumes*; Avogadro explains it — equal volumes contain equal *molecules*."
+  ],
+  "importantConcepts": [
+    "**Fixed-mass reference** — in multiple and reciprocal proportions, always divide by the mass of the fixed element before comparing."
+  ],
+  "examples": [
+    "***NO, NO₂, N₂O*** — oxygen per 14 g nitrogen: 8, 16, 32 g → ratio 1:2:4, a perfect multiple-proportions triplet."
+  ],
+  "universalFacts": [
+    "These laws are empirical: they were measured before atoms were believed in — and their existence is itself evidence for atoms."
+  ],
+  "importantStatements": [
+    "\"A pure compound always contains the same elements combined in the same fixed proportion by mass\" — Proust."
+  ],
+  "importantNotes": [
+    "No verified PYQ; NEB-style practice (statements 2m each, illustration 3m, distinction 2m)."
+  ],
+  "examNotes": [
+    "Always attach the scientist's name to the law — NEB awards the name as a separate mark."
+  ],
+  "practice": [
+    "In CO and CO₂, what is the ratio of oxygen masses combining with 12 g of carbon?"
+  ],
+  "mcqs": [
+    {
+      "question": "The law of conservation of mass was given by:",
+      "options": [
+        "Proust",
+        "Lavoisier",
+        "Dalton",
+        "Richter"
+      ],
+      "answer": "B",
+      "explanation": "1789."
+    },
+    {
+      "question": "CuO from any source is always 79.9% Cu — this illustrates:",
+      "options": [
+        "Multiple proportions",
+        "Definite proportions",
+        "Reciprocal proportions",
+        "Gay-Lussac's law"
+      ],
+      "answer": "B",
+      "explanation": "Fixed composition."
+    },
+    {
+      "question": "In CO and CO₂ the oxygen masses per 12 g C are in the ratio:",
+      "options": [
+        "1:1",
+        "1:2",
+        "2:1",
+        "1:3"
+      ],
+      "answer": "B",
+      "explanation": "16:32."
+    },
+    {
+      "question": "The law of reciprocal proportions was given by:",
+      "options": [
+        "Richter",
+        "Gay-Lussac",
+        "Avogadro",
+        "Proust"
+      ],
+      "answer": "A",
+      "explanation": "1792."
+    },
+    {
+      "question": "Gay-Lussac's law of combining volumes applies to:",
+      "options": [
+        "Solids",
+        "Liquids",
+        "Gases at same T and P",
+        "All states"
+      ],
+      "answer": "C",
+      "explanation": "Same T and P."
+    },
+    {
+      "question": "2 volumes H₂ + 1 volume O₂ give steam in the ratio:",
+      "options": [
+        "2:1:2",
+        "1:2:1",
+        "2:1:1",
+        "1:1:2"
+      ],
+      "answer": "A",
+      "explanation": "2H₂ + O₂ → 2H₂O(g)."
+    },
+    {
+      "question": "Definite proportions deals with:",
+      "options": [
+        "Two compounds",
+        "One compound",
+        "Two elements only",
+        "Mixtures"
+      ],
+      "answer": "B",
+      "explanation": "One compound's fixed composition."
+    },
+    {
+      "question": "Which law did Dalton's theory NOT directly need to explain?",
+      "options": [
+        "Conservation of mass",
+        "Definite proportions",
+        "Gay-Lussac's volumes",
+        "Multiple proportions"
+      ],
+      "answer": "C",
+      "explanation": "Volumes needed Avogadro."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "The law of conservation of mass was given by:",
+      "options": [
+        "Proust",
+        "Lavoisier",
+        "Dalton",
+        "Richter"
+      ],
+      "answer": "B",
+      "explanation": "1789."
+    },
+    {
+      "question": "CuO from any source is always 79.9% Cu — this illustrates:",
+      "options": [
+        "Multiple proportions",
+        "Definite proportions",
+        "Reciprocal proportions",
+        "Gay-Lussac's law"
+      ],
+      "answer": "B",
+      "explanation": "Fixed composition."
+    },
+    {
+      "question": "In CO and CO₂ the oxygen masses per 12 g C are in the ratio:",
+      "options": [
+        "1:1",
+        "1:2",
+        "2:1",
+        "1:3"
+      ],
+      "answer": "B",
+      "explanation": "16:32."
+    },
+    {
+      "question": "The law of reciprocal proportions was given by:",
+      "options": [
+        "Richter",
+        "Gay-Lussac",
+        "Avogadro",
+        "Proust"
+      ],
+      "answer": "A",
+      "explanation": "1792."
+    },
+    {
+      "question": "Gay-Lussac's law of combining volumes applies to:",
+      "options": [
+        "Solids",
+        "Liquids",
+        "Gases at same T and P",
+        "All states"
+      ],
+      "answer": "C",
+      "explanation": "Same T and P."
+    },
+    {
+      "question": "2 volumes H₂ + 1 volume O₂ give steam in the ratio:",
+      "options": [
+        "2:1:2",
+        "1:2:1",
+        "2:1:1",
+        "1:1:2"
+      ],
+      "answer": "A",
+      "explanation": "2H₂ + O₂ → 2H₂O(g)."
+    },
+    {
+      "question": "Definite proportions deals with:",
+      "options": [
+        "Two compounds",
+        "One compound",
+        "Two elements only",
+        "Mixtures"
+      ],
+      "answer": "B",
+      "explanation": "One compound's fixed composition."
+    },
+    {
+      "question": "Which law did Dalton's theory NOT directly need to explain?",
+      "options": [
+        "Conservation of mass",
+        "Definite proportions",
+        "Gay-Lussac's volumes",
+        "Multiple proportions"
+      ],
+      "answer": "C",
+      "explanation": "Volumes needed Avogadro."
+    }
   ]
 }

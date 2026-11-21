@@ -8,14 +8,14 @@ Goal: upgrade every Class-11 Chemistry topic note (17 units, 140 topics) to mast
 | 2 | Foundation and Fundamentals | Importance And Scope Of Chemistry | `02-importance-and-scope-of-chemistry.json` | **Completed** |
 | 3 | Foundation and Fundamentals | Basic Concepts Of Chemistry Atoms Molecules Relative Masses Of Atoms And Molecules Atomic Mass Unit Amu Radicals Molecular Formula Empirical Formula | `03-basic-concepts-of-chemistry-atoms-molecules-relative-masses-of-atoms-and-molecules-atomic-mass-u.json` | **Completed** |
 | 4 | Foundation and Fundamentals | Percentage Composition From Molecular Formula | `04-percentage-composition-from-molecular-formula.json` | **Completed** |
-| 5 | Stoichiometry | Daltons Atomic Theory And Its Postulates | `01-dalton-atomic-theory.json` | TBD |
-| 6 | Stoichiometry | Laws Of Stoichiometry | `02-laws-of-stoichiometry.json` | TBD |
-| 7 | Stoichiometry | Avogadros Law And Some Deductions Molecular Mass And Vapour Density Molecular Mass And Volume Of Gas Molecular Mass And Number Of Particles | `03-avogadro-law.json` | TBD |
-| 8 | Stoichiometry | Mole And Its Relation With Mass Volume And Number Of Particles | `04-mole-and-its-relation-with-mass-volume-and-number-of-particles.json` | TBD |
-| 9 | Stoichiometry | Calculations Based On Mole Concept | `05-calculations-based-on-mole-concept.json` | TBD |
-| 10 | Stoichiometry | Limiting Reactant And Excess Reactant | `05-limiting-reactant.json` | TBD |
-| 11 | Stoichiometry | Theoretical Yield Experimental Yield And Yield | `06-yield-calculations.json` | TBD |
-| 12 | Stoichiometry | Calculation Of Empirical And Molecular Formula From Composition Solving Related Numerical Problems | `07-empirical-molecular-formula.json` | TBD |
+| 5 | Stoichiometry | Daltons Atomic Theory And Its Postulates | `01-dalton-atomic-theory.json` | DONE |
+| 6 | Stoichiometry | Laws Of Stoichiometry | `02-laws-of-stoichiometry.json` | DONE |
+| 7 | Stoichiometry | Avogadros Law And Some Deductions Molecular Mass And Vapour Density Molecular Mass And Volume Of Gas Molecular Mass And Number Of Particles | `03-avogadro-law.json` | DONE |
+| 8 | Stoichiometry | Mole And Its Relation With Mass Volume And Number Of Particles | `04-mole-and-its-relation-with-mass-volume-and-number-of-particles.json` | DONE |
+| 9 | Stoichiometry | Calculations Based On Mole Concept | `05-calculations-based-on-mole-concept.json` | DONE |
+| 10 | Stoichiometry | Limiting Reactant And Excess Reactant | `05-limiting-reactant.json` | DONE |
+| 11 | Stoichiometry | Theoretical Yield Experimental Yield And Yield | `06-yield-calculations.json` | DONE |
+| 12 | Stoichiometry | Calculation Of Empirical And Molecular Formula From Composition Solving Related Numerical Problems | `07-empirical-molecular-formula.json` | DONE |
 | 13 | Atomic Structure | Rutherfords Atomic Model And Its Limitations | `01-rutherford-model.json` | TBD |
 | 14 | Atomic Structure | Postulates Of Bohrs Atomic Model And Its Application | `02-bohr-postulates.json` | TBD |
 | 15 | Atomic Structure | Spectrum Of Hydrogen Atom | `03-hydrogen-spectrum.json` | TBD |
@@ -146,4 +146,5 @@ Goal: upgrade every Class-11 Chemistry topic note (17 units, 140 topics) to mast
 | 140 | Modern Chemical Manufactures | Fertilizers Chemical Fertilizers Types Of Chemical Fertilizers Production Of Urea With Flow Sheet Diagram | `06-fertilizers-chemical-fertilizers-types-of-chemical-fertilizers-production-of-urea-with-flow-shee.json` | TBD |
 
 Status legend: **TBD** = not started; **Completed** = mastery content assembled, built, validated and pushed.
+- Session 2 — Unit 2 Stoichiometry (8 topics) upgraded: Dalton's atomic theory (postulates, limitations DIC table); laws of stoichiometry (5 laws + definite-vs-multiple and conservation-vs-Gay-Lussac contrast tables); Avogadro's law (M = 2 × VD, 22.4 L, atom-vs-molecule contrast); mole concept (NEB 2023 3m — 36 g water → 1.204 × 10²⁴); mole-based calculations (NEB 2024 2m — 4 g NaOH/250 mL → 0.4 M; molarity-vs-molality table); limiting reactant (NEB 2023 3m Mg/O₂ → 8 g MgO; NEB 2024 3m H₂/O₂ → 72 g H₂O; limiting-vs-excess table); yield (NEB 2024 2m — 40/50 → 80%; yield-vs-atom-economy table); empirical/molecular formula (NEB 2020+2022 3m → CH₂O; NEB 2024 2m → C₆H₁₂O₆; empirical-vs-molecular table). Validator: 0 broken. Next: Unit 3.
 - Session 1 — Unit 1 Foundation and Fundamentals (4 topics) upgraded: general introduction (branches, matter classification); importance & scope (benefits vs hazards table); basic concepts (atoms, molecules, radicals, amu, empirical vs molecular formula, measurement); percentage composition. Verified PYQs used: atoms in 5.6 g Fe 2024 2m, density sig-figs 2023 3m, SI mole MCQ 2022 1m, mean/absolute error 2021 2m, %N in urea 2024 2m. Next: Unit 2 Stoichiometry (8 topics).

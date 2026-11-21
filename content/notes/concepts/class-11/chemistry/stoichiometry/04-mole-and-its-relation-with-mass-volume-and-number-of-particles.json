@@ -6,55 +6,272 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:23.230Z",
   "notes": [
-    "# Mole and its relation with mass, volume and number of particles\n\n## 1. Introduction\nChemical picture of **Mole and its relation with mass** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Stoichiometry fill pass.\n\n## 2. Concepts and definitions\n### Mole and its relation with mass\n### volume and number of particles\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Mole and its relation with mass — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Mole and its relation with mass — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Mole and its relation with mass — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Mole and its relation with mass — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Chemistry's Currency Converter\n\nThe **mole** is the SI unit for amount of substance: the amount containing as many elementary entities as there are atoms in exactly 12 g of carbon-12. One mole = **6.022 × 10²³** particles (Avogadro's number, Nₐ). The mole converts between the three currencies of chemistry: mass (g), volume (L of gas at STP) and number of particles.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The three faces of one mole\n\n| Measure | Quantity in 1 mol | Formula |\n|---|---|---|\n| **Mass** | Molar mass in grams (H₂O: 18 g) | n = m/M |\n| **Particles** | 6.022 × 10²³ entities | n = N/Nₐ |\n| **Gas volume at STP** | 22.4 L | n = V/22.4 |\n\n### 2.2 Worked numericals\n\n**Q (NEB 2023, 3m):** What is the mole concept? Calculate the number of molecules in 36 g of water.\n- **Mole concept:** the amount of substance containing as many particles as there are atoms in exactly 12 g of carbon-12; 1 mol = 6.022 × 10²³ particles.\n- M(H₂O) = 2(1) + 16 = 18 g/mol\n- n = 36/18 = 2 mol\n- N = 2 × 6.022 × 10²³ = **1.204 × 10²⁴ molecules**\n\n**Q (NEB-style):** How many atoms are in 0.5 mol of CO₂?\n- Molecules: 0.5 × 6.022 × 10²³ = 3.011 × 10²³\n- Atoms per molecule = 3 → total atoms = 3 × 3.011 × 10²³ = **9.033 × 10²³ atoms**.\n\n**Q (NEB-style):** What is the mass of 5.6 L of O₂ at STP?\n- n = 5.6/22.4 = 0.25 mol; m = 0.25 × 32 = **8 g**.\n\n### 2.3 Molar mass vs molecular mass — similarities and differences\n\n**Similarities:** both describe the mass of one molecule's worth of substance; both are computed from atomic masses; both are numerically equal.\n**Differences:** molecular mass is the mass of one molecule in **u (amu)** — relative, unitless in comparisons; molar mass is the mass of **one mole** in **g/mol** — an absolute laboratory quantity. H₂O: molecular mass 18 u; molar mass 18 g/mol.\n\n### 2.4 Mole vs molecule — similarities and differences\n\n**Similarities:** both count chemical particles; both connect to Avogadro's number.\n**Differences:** a **molecule** is one discrete particle (H₂O); a **mole** is a *count* — 6.022 × 10²³ of anything (molecules, atoms, ions, electrons). You can have half a mole but not half a molecule.",
+    "## 3. Conceptual Relationships\n\n- **To Avogadro (Topic 3):** Nₐ and 22.4 L/mol come straight from his hypothesis.\n- **To calculations (Topic 5):** every mass–volume–particle conversion is a mole hop.\n- **To concentration (Topic 5):** molarity counts moles per litre of solution.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2023 | Stoichiometry | Mole concept | What is the mole concept? Calculate the number of molecules in 36 g of water. | 3 | Definition + numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define mole and Avogadro's number (2m).\n2. Mass ↔ volume ↔ particles conversions (2–3m).\n3. Number of atoms in a given mass of an element (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using 22.4 L for liquids or solids — molar volume is gases only.\n2. Forgetting atoms-per-molecule when counting atoms (CO₂ has 3 atoms).\n3. Writing 6.022 × 10²⁶ or misplacing the exponent."
   ],
   "practice": [
-    "Derive the relations n = m/M, n = N/N_A and n = V/22.4.",
-    "Calculate the mass of 3.011 × 10²³ molecules of CO₂ and the number of oxygen atoms in it.",
-    "How many moles and molecules are present in 4.9 g of H₂SO₄?",
-    "What volume at STP is occupied by 8 g of oxygen? How many molecules does it contain?",
-    "State the limitations of the mole concept."
+    "How many molecules are in 4.4 g of CO₂? (C = 12, O = 16)"
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Mole and its relation with mass, volume and number of par…\"?",
+      "question": "One mole contains:",
       "options": [
-        "Mole",
-        "Its relation with mass",
-        "Unrelated topic",
-        "None of the above"
+        "6.022 × 10²³ particles",
+        "6.022 × 10²² particles",
+        "22.4 particles",
+        "12 g of anything"
       ],
-      "answer": "Mole",
-      "explanation": "Mole is listed among the official sub-ideas of Mole and its relation with mass, volume and number of par…; the others are not part of this topic."
+      "answer": "A",
+      "explanation": "Avogadro's number."
     },
     {
-      "question": "A common examiner point on \"Mole and its relation with mass, volume and number of par…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The mole is defined against:",
       "options": [
-        "True",
-        "False"
+        "1 g of hydrogen",
+        "12 g of carbon-12",
+        "16 g of oxygen",
+        "1 L of water"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Carbon-12 standard."
+    },
+    {
+      "question": "Moles in 36 g of water:",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": "B",
+      "explanation": "36/18."
+    },
+    {
+      "question": "Number of molecules in 36 g water:",
+      "options": [
+        "6.022 × 10²³",
+        "1.204 × 10²⁴",
+        "3.011 × 10²³",
+        "6.022 × 10²⁴"
+      ],
+      "answer": "B",
+      "explanation": "2 × Nₐ."
+    },
+    {
+      "question": "5.6 L of O₂ at STP weighs:",
+      "options": [
+        "4 g",
+        "8 g",
+        "16 g",
+        "32 g"
+      ],
+      "answer": "B",
+      "explanation": "0.25 mol × 32."
+    },
+    {
+      "question": "Molar volume at STP applies to:",
+      "options": [
+        "Solids",
+        "Liquids",
+        "Gases",
+        "Solutions"
+      ],
+      "answer": "C",
+      "explanation": "Gases only."
+    },
+    {
+      "question": "Atoms in 0.5 mol CO₂:",
+      "options": [
+        "3.011 × 10²³",
+        "9.033 × 10²³",
+        "6.022 × 10²³",
+        "1.5 × 10²³"
+      ],
+      "answer": "B",
+      "explanation": "0.5 × Nₐ × 3 atoms."
+    },
+    {
+      "question": "Molecular mass of water is:",
+      "options": [
+        "18 g/mol",
+        "18 u",
+        "22.4 u",
+        "18 Nₐ"
+      ],
+      "answer": "B",
+      "explanation": "u per molecule; 18 g/mol is molar mass."
     }
   ],
   "examShortTricks": [
-    "Trick 1: The mole triangle — moles = mass/M = particles/6.022e23 = volume(L at STP)/22.4. Write the triangle first in every numerical; every question gives one corner and asks another.",
-    "Trick 2: For ionic solids and atoms use mass ↔ particles only (no 22.4 L); the 22.4 L shortcut is for GASES at STP only.",
-    "Trick 3: Number of moles of atoms vs molecules — 1 mole H2SO4 contains 7 moles of atoms (2H + 1S + 4O); exam asks 'total atoms' — multiply molecules by atoms per molecule."
+    "\"Mass/M, Particles/Nₐ, Gas/22.4 — three doors into the mole.\""
   ],
   "keyPoints": [
-    "One mole = 6.022 × 10^23 particles = gram molecular/atomic mass.",
-    "Number of moles n = given mass (g) / molar mass (g/mol).",
-    "For gases at STP: n = volume (L) / 22.4.",
-    "Number of particles = n × 6.022 × 10^23."
+    "1 mol = 6.022 × 10²³ particles = molar mass in grams = 22.4 L of gas at STP. Conversions: n = m/M = N/Nₐ = V/22.4."
   ],
   "practiceQuestions": [
-    "Q. Calculate the number of molecules in 4.9 g H2SO4. (2 marks) — M = 98; n = 4.9/98 = 0.05; molecules = 0.05 × 6.022e23 = 3.011 × 10^22.",
-    "Q. How many moles of atoms are in 0.5 mole H2SO4? (1 mark) — 0.5 × 7 = 3.5 moles of atoms."
+    "**NEB 2023 (3m): What is the mole concept? Calculate the number of molecules in 36 g of water.** — Mole: the amount containing as many particles as atoms in exactly 12 g of C-12; 1 mol = 6.022 × 10²³ particles. M(H₂O) = 18 g/mol; n = 36/18 = 2 mol; N = 2 × 6.022 × 10²³ = **1.204 × 10²⁴ molecules**."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Chemistry's Currency Converter\n\nThe **mole** is the SI unit for amount of substance: the amount containing as many elementary entities as there are atoms in exactly 12 g of carbon-12. One mole = **6.022 × 10²³** particles (Avogadro's number, Nₐ). The mole converts between the three currencies of chemistry: mass (g), volume (L of gas at STP) and number of particles.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The three faces of one mole\n\n| Measure | Quantity in 1 mol | Formula |\n|---|---|---|\n| **Mass** | Molar mass in grams (H₂O: 18 g) | n = m/M |\n| **Particles** | 6.022 × 10²³ entities | n = N/Nₐ |\n| **Gas volume at STP** | 22.4 L | n = V/22.4 |\n\n### 2.2 Worked numericals\n\n**Q (NEB 2023, 3m):** What is the mole concept? Calculate the number of molecules in 36 g of water.\n- **Mole concept:** the amount of substance containing as many particles as there are atoms in exactly 12 g of carbon-12; 1 mol = 6.022 × 10²³ particles.\n- M(H₂O) = 2(1) + 16 = 18 g/mol\n- n = 36/18 = 2 mol\n- N = 2 × 6.022 × 10²³ = **1.204 × 10²⁴ molecules**\n\n**Q (NEB-style):** How many atoms are in 0.5 mol of CO₂?\n- Molecules: 0.5 × 6.022 × 10²³ = 3.011 × 10²³\n- Atoms per molecule = 3 → total atoms = 3 × 3.011 × 10²³ = **9.033 × 10²³ atoms**.\n\n**Q (NEB-style):** What is the mass of 5.6 L of O₂ at STP?\n- n = 5.6/22.4 = 0.25 mol; m = 0.25 × 32 = **8 g**.\n\n### 2.3 Molar mass vs molecular mass — similarities and differences\n\n**Similarities:** both describe the mass of one molecule's worth of substance; both are computed from atomic masses; both are numerically equal.\n**Differences:** molecular mass is the mass of one molecule in **u (amu)** — relative, unitless in comparisons; molar mass is the mass of **one mole** in **g/mol** — an absolute laboratory quantity. H₂O: molecular mass 18 u; molar mass 18 g/mol.\n\n### 2.4 Mole vs molecule — similarities and differences\n\n**Similarities:** both count chemical particles; both connect to Avogadro's number.\n**Differences:** a **molecule** is one discrete particle (H₂O); a **mole** is a *count* — 6.022 × 10²³ of anything (molecules, atoms, ions, electrons). You can have half a mole but not half a molecule.",
+      "## 3. Conceptual Relationships\n\n- **To Avogadro (Topic 3):** Nₐ and 22.4 L/mol come straight from his hypothesis.\n- **To calculations (Topic 5):** every mass–volume–particle conversion is a mole hop.\n- **To concentration (Topic 5):** molarity counts moles per litre of solution.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2023 | Stoichiometry | Mole concept | What is the mole concept? Calculate the number of molecules in 36 g of water. | 3 | Definition + numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define mole and Avogadro's number (2m).\n2. Mass ↔ volume ↔ particles conversions (2–3m).\n3. Number of atoms in a given mass of an element (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using 22.4 L for liquids or solids — molar volume is gases only.\n2. Forgetting atoms-per-molecule when counting atoms (CO₂ has 3 atoms).\n3. Writing 6.022 × 10²⁶ or misplacing the exponent."
+    ],
+    "confusion": [
+      "**Molar mass (g/mol) vs molecular mass (u):** numerically equal, different units and meaning — one is per mole, the other per molecule.",
+      "**Nₐ vs 22.4 L:** Nₐ counts particles in one mole of anything; 22.4 L is the volume of one mole of *gas* at STP only."
+    ],
+    "keyPoints": [
+      "1 mol = 6.022 × 10²³ particles = molar mass in grams = 22.4 L of gas at STP. Conversions: n = m/M = N/Nₐ = V/22.4."
+    ],
+    "importantConcepts": [
+      "**The mole hop** — every stoichiometric calculation passes through moles: mass → mol → target quantity."
+    ],
+    "examples": [
+      "***36 g of water*** — 2 mol, 1.204 × 10²⁴ molecules (NEB 2023): the classic definition-plus-numerical question."
+    ],
+    "universalFacts": [
+      "Avogadro's number is so large that a mole of marbles would cover the Earth ~50 m deep."
+    ],
+    "importantStatements": [
+      "\"The mole is the amount of substance containing as many elementary entities as there are atoms in exactly 12 g of carbon-12.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ 2023 (3m): mole concept + molecules in 36 g water — answer 1.204 × 10²⁴."
+    ],
+    "examShortTricks": [
+      "\"Mass/M, Particles/Nₐ, Gas/22.4 — three doors into the mole.\""
+    ],
+    "examNotes": [
+      "In definition questions, quote the carbon-12 standard AND Avogadro's number — both carry marks."
+    ],
+    "formulas": [
+      "- n = m/M (mass ↔ moles)\n- N = n × Nₐ, Nₐ = 6.022 × 10²³ (particles)\n- V = n × 22.4 L (gas at STP)\n- Molar mass M = Σ(atomic masses) in g/mol"
+    ],
+    "practice": [
+      "How many molecules are in 4.4 g of CO₂? (C = 12, O = 16)"
+    ],
+    "practiceQuestions": [
+      "**NEB 2023 (3m): What is the mole concept? Calculate the number of molecules in 36 g of water.** — Mole: the amount containing as many particles as atoms in exactly 12 g of C-12; 1 mol = 6.022 × 10²³ particles. M(H₂O) = 18 g/mol; n = 36/18 = 2 mol; N = 2 × 6.022 × 10²³ = **1.204 × 10²⁴ molecules**."
+    ]
+  },
+  "confusion": [
+    "**Molar mass (g/mol) vs molecular mass (u):** numerically equal, different units and meaning — one is per mole, the other per molecule.",
+    "**Nₐ vs 22.4 L:** Nₐ counts particles in one mole of anything; 22.4 L is the volume of one mole of *gas* at STP only."
+  ],
+  "importantConcepts": [
+    "**The mole hop** — every stoichiometric calculation passes through moles: mass → mol → target quantity."
+  ],
+  "examples": [
+    "***36 g of water*** — 2 mol, 1.204 × 10²⁴ molecules (NEB 2023): the classic definition-plus-numerical question."
+  ],
+  "universalFacts": [
+    "Avogadro's number is so large that a mole of marbles would cover the Earth ~50 m deep."
+  ],
+  "importantStatements": [
+    "\"The mole is the amount of substance containing as many elementary entities as there are atoms in exactly 12 g of carbon-12.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ 2023 (3m): mole concept + molecules in 36 g water — answer 1.204 × 10²⁴."
+  ],
+  "examNotes": [
+    "In definition questions, quote the carbon-12 standard AND Avogadro's number — both carry marks."
+  ],
+  "formulas": [
+    "- n = m/M (mass ↔ moles)\n- N = n × Nₐ, Nₐ = 6.022 × 10²³ (particles)\n- V = n × 22.4 L (gas at STP)\n- Molar mass M = Σ(atomic masses) in g/mol"
+  ],
+  "summary": "The **mole** is chemistry's counting unit: 6.022 × 10²³ particles (Avogadro's number), defined against exactly 12 g of carbon-12. One mole equals the molar mass in grams (n = m/M), contains Nₐ particles (N = nNₐ), and occupies 22.4 L as a gas at STP (n = V/22.4). Molar mass (g/mol) and molecular mass (u) are numerically equal but differ in meaning; a mole is a count, a molecule is a particle. 36 g of water = 2 mol = 1.204 × 10²⁴ molecules (NEB 2023).",
+  "mcs": [
+    {
+      "question": "One mole contains:",
+      "options": [
+        "6.022 × 10²³ particles",
+        "6.022 × 10²² particles",
+        "22.4 particles",
+        "12 g of anything"
+      ],
+      "answer": "A",
+      "explanation": "Avogadro's number."
+    },
+    {
+      "question": "The mole is defined against:",
+      "options": [
+        "1 g of hydrogen",
+        "12 g of carbon-12",
+        "16 g of oxygen",
+        "1 L of water"
+      ],
+      "answer": "B",
+      "explanation": "Carbon-12 standard."
+    },
+    {
+      "question": "Moles in 36 g of water:",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": "B",
+      "explanation": "36/18."
+    },
+    {
+      "question": "Number of molecules in 36 g water:",
+      "options": [
+        "6.022 × 10²³",
+        "1.204 × 10²⁴",
+        "3.011 × 10²³",
+        "6.022 × 10²⁴"
+      ],
+      "answer": "B",
+      "explanation": "2 × Nₐ."
+    },
+    {
+      "question": "5.6 L of O₂ at STP weighs:",
+      "options": [
+        "4 g",
+        "8 g",
+        "16 g",
+        "32 g"
+      ],
+      "answer": "B",
+      "explanation": "0.25 mol × 32."
+    },
+    {
+      "question": "Molar volume at STP applies to:",
+      "options": [
+        "Solids",
+        "Liquids",
+        "Gases",
+        "Solutions"
+      ],
+      "answer": "C",
+      "explanation": "Gases only."
+    },
+    {
+      "question": "Atoms in 0.5 mol CO₂:",
+      "options": [
+        "3.011 × 10²³",
+        "9.033 × 10²³",
+        "6.022 × 10²³",
+        "1.5 × 10²³"
+      ],
+      "answer": "B",
+      "explanation": "0.5 × Nₐ × 3 atoms."
+    },
+    {
+      "question": "Molecular mass of water is:",
+      "options": [
+        "18 g/mol",
+        "18 u",
+        "22.4 u",
+        "18 Nₐ"
+      ],
+      "answer": "B",
+      "explanation": "u per molecule; 18 g/mol is molar mass."
+    }
   ]
 }
