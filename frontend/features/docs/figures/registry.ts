@@ -49,6 +49,33 @@ import { CellCyclePhases } from "./cell-cycle-phases";
 import { MeiosisIStages } from "./meiosis-one-stages";
 import { CrossingOver } from "./crossing-over";
 import { MitosisVsMeiosisOutcome } from "./mitosis-vs-meiosis-outcome";
+import { GlucoseRingForms } from "./glucose-ring-forms";
+import { PeptideBondFormation } from "./peptide-bond-formation";
+import { LipidTypesChart } from "./lipid-types-chart";
+import { DnaDoubleHelixDetail } from "./dna-double-helix-detail";
+import { ProteinDenaturationCurve } from "./protein-denaturation-curve";
+import { FoodTestsChart } from "./food-tests-chart";
+import { CondensationVsHydrolysis } from "./condensation-vs-hydrolysis";
+import { ProkaryoticCellDetailed } from "./prokaryotic-cell-detailed";
+import { EukaryoticCellGeneral } from "./eukaryotic-cell-general";
+import { CellTheoryContributors } from "./cell-theory-contributors";
+import { EndosymbioticTheory } from "./endosymbiotic-theory";
+import { RibosomeTypesChart } from "./ribosome-types-chart";
+import { MicroscopeResolutionScale } from "./microscope-resolution-scale";
+import { CellSizeLogScale } from "./cell-size-log-scale";
+import { CellWallLayers } from "./cell-wall-layers";
+import { MembraneTransportModes } from "./membrane-transport-modes";
+import { EndoplasmicReticulumDetail } from "./endoplasmic-reticulum-detail";
+import { GolgiLysosomeTeam } from "./golgi-lysosome-team";
+import { ChloroplastGranaDetail } from "./chloroplast-grana-detail";
+import { NuclearPoreDetail } from "./nuclear-pore-detail";
+import { CytoskeletonTypes } from "./cytoskeleton-types";
+import { MitosisStagesPanel } from "./mitosis-stages-panel";
+import { MeiosisTwoStages } from "./meiosis-two-stages";
+import { ChromosomeMorphology } from "./chromosome-morphology";
+import { CytokinesisContrast } from "./cytokinesis-contrast";
+import { CellCycleCheckpoints } from "./cell-cycle-checkpoints";
+import { AmitosisMitosisMeiosis } from "./amitosis-mitosis-meiosis";
 import { BacterialShapes } from "./bacterial-shapes";
 import { BacterialNutritionModes } from "./bacterial-nutrition-modes";
 import { BacterialGrowthCurve } from "./bacterial-growth-curve";
@@ -531,6 +558,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Nucleotide anatomy, polynucleotide chain and DNA double helix with complementary base pairing",
         keyword: "nucleotide",
       },
+      {
+        Component: GlucoseRingForms,
+        caption:
+          "One glucose, three portraits: the open-chain Fischer form with its reactive aldehyde, the Haworth ring that forms when C1 meets C5, and the stable chair conformation — the shape cells actually build starch and cellulose from.",
+        alt: "Glucose shown as Fischer open chain, Haworth pyranose ring and chair conformation with numbered carbons",
+        keyword: "glucose",
+      },
+      {
+        Component: PeptideBondFormation,
+        caption:
+          "The peptide bond: the –COOH of one amino acid meets the –NH2 of the next and a water molecule leaves — a condensation reaction. Chains of these bonds fold into proteins; hydrolysis by proteases reverses it during digestion.",
+        alt: "Peptide bond formation between two amino acids releasing water to give a dipeptide",
+        keyword: "amino acid",
+      },
+      {
+        Component: LipidTypesChart,
+        caption:
+          "Four lipid families, one property: hydrophobic. Triglycerides store concentrated energy, phospholipids build every membrane with their water-loving head and water-hating tails, waxes waterproof, and steroids like cholesterol signal and stiffen.",
+        alt: "Four lipid types compared: triglyceride, phospholipid, wax and steroid with structures and roles",
+        keyword: "phospholipid",
+      },
+      {
+        Component: DnaDoubleHelixDetail,
+        caption:
+          "The double helix measured: two antiparallel strands, a 2 nm diameter, 3.4 nm per turn, and rungs of paired bases — A with T by two hydrogen bonds, G with C by three — the pairing rule that makes DNA copyable.",
+        alt: "DNA double helix detail with antiparallel strands, base pairs, hydrogen bonds and dimensions",
+        keyword: "double helix",
+      },
+      {
+        Component: ProteinDenaturationCurve,
+        caption:
+          "Denaturation: heat, pH extremes and heavy metals unravel a protein's 3-D shape — and with the shape goes the function. Primary sequence survives, so some proteins refold when the insult is removed; egg-white albumin never does.",
+        alt: "Protein denaturation from native fold through heat pH and agents to unfolded loss of function",
+        keyword: "denaturation",
+      },
+      {
+        Component: FoodTestsChart,
+        caption:
+          "The lab toolkit for spotting biomolecules: Benedict's turns brick-red for reducing sugars, iodine blue-black for starch, biuret violet for peptide bonds, Sudan III stains lipids, and the emulsion test confirms fats.",
+        alt: "Food tests table with Benedict's iodine biuret and Sudan III reagents procedures and positive colours",
+        keyword: "Benedict",
+      },
+      {
+        Component: CondensationVsHydrolysis,
+        caption:
+          "Every biomolecule is built and unbuilt by the same two moves: condensation joins monomers and releases water; hydrolysis splits polymers and spends water. Maltase, pepsin and lipase all run the second reaction in your gut.",
+        alt: "Condensation joining monomers releasing water versus hydrolysis splitting polymer adding water",
+        keyword: "hydrolysis",
+      },
     ],
   },
   "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells": {
@@ -570,6 +646,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "How we see cells: the light microscope resolves about 0.2 µm and can watch living cells; the electron microscope resolves about 0.2 nm — revealing ribosomes, membranes and viruses — but only on dead, prepared specimens.",
         alt: "Light microscope versus electron microscope with resolution limits and what each reveals",
         keyword: "microscope",
+      },
+      {
+        Component: ProkaryoticCellDetailed,
+        caption:
+          "A prokaryote opened up: capsule, peptidoglycan wall and plasma membrane armour a naked circular DNA in the nucleoid, 70S ribosomes, mesosome, plasmid, pili and a rotating flagellum — no nucleus, no membrane-bound organelles.",
+        alt: "Detailed prokaryotic bacterium with capsule, wall, membrane, nucleoid, plasmid, ribosomes, mesosome, pili and flagellum",
+        keyword: "flagella",
+      },
+      {
+        Component: EukaryoticCellGeneral,
+        caption:
+          "The generalised eukaryotic cell: a true nucleus plus a full organelle set — rough and smooth ER, Golgi, mitochondrion, lysosome, centrioles and free 80S ribosomes — each compartment running its own chemistry in parallel.",
+        alt: "Generalised eukaryotic animal cell with nucleus, RER, SER, Golgi, mitochondrion, lysosome and centrioles labelled",
+        keyword: "organelles",
+      },
+      {
+        Component: CellTheoryContributors,
+        caption:
+          "Five scientists, one theory: Hooke names the cell (1665), Leeuwenhoek sees living ones (1674), Schleiden and Schwann claim all life is cellular (1838–39), and Virchow closes the loop — every cell from a cell (1855).",
+        alt: "Timeline portraits of Hooke, Leeuwenhoek, Schleiden, Schwann and Virchow with their contributions",
+        keyword: "Virchow",
+      },
+      {
+        Component: EndosymbioticTheory,
+        caption:
+          "Where organelles came from: an anaerobic host engulfed an aerobic bacterium and kept it as a mitochondrion; a cyanobacterium became the chloroplast. Double membranes, circular DNA, 70S ribosomes and binary fission are the fingerprints.",
+        alt: "Endosymbiotic theory in three steps with four lines of evidence for mitochondrial and chloroplast origin",
+        keyword: "endosymbiotic",
+      },
+      {
+        Component: RibosomeTypesChart,
+        caption:
+          "Two ribosome sizes, one job: prokaryotic 70S (50S + 30S) in bacteria, mitochondria and chloroplasts; eukaryotic 80S (60S + 40S) free in the cytosol or bound to rough ER. Svedberg units are not additive — shape matters.",
+        alt: "70S versus 80S ribosomes with subunit sizes, locations and antibiotic targets",
+        keyword: "70S",
+      },
+      {
+        Component: MicroscopeResolutionScale,
+        caption:
+          "Resolution beats magnification: the light microscope stops at 200 nm, TEM reaches 0.1 nm for 2-D ultrastructure, SEM renders 3-D surfaces. Cells and bacteria yield to light; viruses and DNA demand electrons.",
+        alt: "Resolution scale from millimetre to 0.1 micrometre with LM TEM and SEM capability cards",
+        keyword: "electron",
+      },
+      {
+        Component: CellSizeLogScale,
+        caption:
+          "The seven-orders-of-magnitude ladder: Mycoplasma at 0.1 µm, bacteria at a few µm, red cells at 7 µm, plant cells at tens of µm, the human egg at 100 µm, the ostrich egg at 15 cm — and one nerve cell a metre long.",
+        alt: "Logarithmic size ladder from Mycoplasma through bacteria, red blood cell, plant cell and egg to ostrich egg",
+        keyword: "surface",
       },
     ],
   },
@@ -618,6 +743,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Secretory pathway from rough ER through transport vesicles and Golgi cisternae to secretory vesicles and lysosome",
         keyword: "Golgi",
       },
+      {
+        Component: CellWallLayers,
+        caption:
+          "The plant cell wall in layers: pectin-rich middle lamella cements neighbours, the thin primary wall stretches with growth, the lignified secondary wall (S1–S3) adds strength, and plasmodesmata tunnel through it all.",
+        alt: "Two adjacent plant cells showing middle lamella, primary and secondary wall layers and plasmodesmata",
+        keyword: "cellulose",
+      },
+      {
+        Component: MembraneTransportModes,
+        caption:
+          "Four ways across the membrane: simple diffusion for small nonpolar molecules, facilitated diffusion through channels, ATP-driven pumps that defy the gradient, and vesicle bulk transport that swallows or exports cargo wholesale.",
+        alt: "Four membrane transport mechanisms: simple diffusion, facilitated diffusion, active transport with ATP and bulk vesicle transport",
+        keyword: "diffusion",
+      },
+      {
+        Component: EndoplasmicReticulumDetail,
+        caption:
+          "The ER, the cell's internal highway: rough ER — flattened cisternae studded with ribosomes, continuous with the nuclear envelope — makes and ships proteins; smooth ER tubules make lipids, detoxify drugs and store calcium.",
+        alt: "Rough ER with ribosome-studded cisternae versus smooth ER tubules with their functions",
+        keyword: "endoplasmic",
+      },
+      {
+        Component: GolgiLysosomeTeam,
+        caption:
+          "Golgi and lysosome as one system: the cis face receives ER cargo, cisternae modify and tag it, the trans face ships secretory vesicles — and buds off lysosomes, the acidic sacs of hydrolytic enzymes that digest food and worn organelles.",
+        alt: "Golgi stack with cis and trans faces feeding secretory vesicles and lysosomes performing heterophagy and autophagy",
+        keyword: "lysosome",
+      },
+      {
+        Component: ChloroplastGranaDetail,
+        caption:
+          "Inside the chloroplast: grana stacks of thylakoid discs run the light reaction — splitting water and loading H⁺ into the lumen — while the stroma around them fixes CO₂ in the Calvin cycle; its own DNA and ribosomes make it semi-autonomous.",
+        alt: "Chloroplast with double envelope, stroma, three grana stacks, stroma lamellae and thylakoid membrane detail",
+        keyword: "grana",
+      },
+      {
+        Component: NuclearPoreDetail,
+        caption:
+          "The nuclear envelope up close: two membranes with a perinuclear space, the outer one continuous with rough ER, and pore complexes — eight-protein annuli that export mRNA and ribosomal subunits while importing polymerases and histones.",
+        alt: "Nuclear envelope cross-section with pore complex of eight subunits and two-way molecular traffic",
+        keyword: "pores",
+      },
+      {
+        Component: CytoskeletonTypes,
+        caption:
+          "Three filament families, three diameters: hollow tubulin microtubules (25 nm) build spindles and cilia, actin microfilaments (7 nm) contract muscle and pinch cells, and keratin intermediate filaments (10 nm) anchor and armour.",
+        alt: "Cytoskeleton three types: microtubules, actin microfilaments and intermediate filaments with functions",
+        keyword: "microtubules",
+      },
     ],
   },
   "cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-sign": {
@@ -657,6 +831,48 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "The decisive contrast: mitosis yields two identical diploid daughters for growth and repair; meiosis yields four different haploid gametes — the raw variation on which evolution acts.",
         alt: "Mitosis producing two identical diploid cells versus meiosis producing four different haploid gametes",
         keyword: "haploid",
+      },
+      {
+        Component: MitosisStagesPanel,
+        caption:
+          "Mitosis in four moves: prophase condenses chromosomes and breaks the envelope, metaphase aligns them on the equator, anaphase splits the centromeres, telophase rebuilds two nuclei — number stays 2n → 2n.",
+        alt: "Four mitosis stage circles showing prophase, metaphase, anaphase and telophase chromosome behaviour",
+        keyword: "metaphase",
+      },
+      {
+        Component: MeiosisTwoStages,
+        caption:
+          "Meiosis II is the equational division: the two haploid cells from meiosis I separate their sister chromatids — centromeres finally split — leaving four haploid cells, each genetically unique thanks to meiosis I.",
+        alt: "Meiosis II four stages from prophase II to telophase II ending in four haploid cells",
+        keyword: "equational",
+      },
+      {
+        Component: ChromosomeMorphology,
+        caption:
+          "Chromosome anatomy: two sister chromatids joined at the centromere with its kinetochore, p and q arms, telomere caps and a nucleolar organiser — and the four shapes named by centromere position: metacentric, submetacentric, acrocentric, telocentric.",
+        alt: "Chromosome parts labelled plus four centromere-position shapes V L J and I",
+        keyword: "centromere",
+      },
+      {
+        Component: CytokinesisContrast,
+        caption:
+          "Splitting the cytoplasm two ways: plants cannot pinch, so Golgi vesicles build a cell plate outward from the centre; animals contract an actin–myosin purse-string that draws the cleavage furrow until two cells separate.",
+        alt: "Plant cell plate formation versus animal cleavage furrow with actin ring contraction",
+        keyword: "cytokinesis",
+      },
+      {
+        Component: CellCycleCheckpoints,
+        caption:
+          "Three quality gates guard the cycle: G1 checks size, nutrients and DNA damage; G2 checks replication is complete; the M spindle checkpoint checks every kinetochore is attached. Cyclin–CDK switches run them — and cancer is a failed gate.",
+        alt: "Cell cycle ring with G1, G2 and M checkpoints and cyclin CDK control panel",
+        keyword: "cyclin",
+      },
+      {
+        Component: AmitosisMitosisMeiosis,
+        caption:
+          "Three kinds of division compared: amitosis splits directly with no spindle, mitosis runs one division to two identical 2n cells, meiosis runs two divisions to four different n cells with crossing over — growth, repair and reproduction.",
+        alt: "Three-way comparison table of amitosis, mitosis and meiosis across six rows",
+        keyword: "amitosis",
       },
     ],
   },
