@@ -311,6 +311,28 @@ import { LiliaceaeMonocotBlueprint } from "./liliaceae-monocot-blueprint";
 import { FamilyFruitTypes } from "./family-fruit-types";
 import { FamilyStamensIdChart } from "./family-stamens-id-chart";
 import { OnionGarlicAloe } from "./onion-garlic-aloe";
+import { GramStainingSteps } from "./gram-staining-steps";
+import { BacterialFlagellaTypes } from "./bacterial-flagella-types";
+import { CyanobacteriaHeterocyst } from "./cyanobacteria-heterocyst";
+import { BacterialCurdAntibiotics } from "./bacterial-curd-antibiotics";
+import { BacterialPlasmidMesosome } from "./bacterial-plasmid-mesosome";
+import { MoneraOverview } from "./monera-overview";
+import { BacterialCapsuleSlime } from "./bacterial-capsule-slime";
+import { BacterialGrowthConditions } from "./bacterial-growth-conditions";
+import { VirusBorderlineLife } from "./virus-borderline-life";
+import { TMVStructure } from "./tmv-structure";
+import { ProphageLysogenicDetail } from "./prophage-lysogenic-detail";
+import { VirusGenomeTypes } from "./virus-genome-types";
+import { PhageInfectionSteps } from "./phage-infection-steps";
+import { VirusVaccines } from "./virus-vaccines";
+import { PrionDisease } from "./prion-disease";
+import { InsulinProductionFlow } from "./insulin-production-flow";
+import { GeneTherapyCycle } from "./gene-therapy-cycle";
+import { GoldenRiceBtCrops } from "./golden-rice-bt-crops";
+import { DnaFingerprinting } from "./dna-fingerprinting";
+import { BioremediationOil } from "./bioremediation-oil";
+import { BiofertiliserBiopesticide } from "./biofertiliser-biopesticide";
+import { EnzymeTechnology } from "./enzyme-technology";
 import { FernStructure } from "./fern-structure";
 import { FernLifeCycle } from "./fern-life-cycle";
 import { FernProthallus } from "./fern-prothallus";
@@ -1006,6 +1028,62 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Binary fission sequence plus conjugation transformation and transduction recombination routes",
         keyword: "binary fission",
       },
+      {
+        Component: GramStainingSteps,
+        caption:
+          "Gram staining in four steps: crystal violet, iodine, alcohol, safranin — thick-walled positives stay purple, thin-walled negatives turn pink, and the antibiotic choice follows.",
+        alt: "Gram staining steps crystal violet iodine alcohol safranin gram positive purple gram negative pink",
+        keyword: "gram",
+      },
+      {
+        Component: BacterialFlagellaTypes,
+        caption:
+          "Flagella come wired four ways: single polar, polar tuft, both poles, or all around — rotating motors drive the run and the tumble that steers bacteria toward food.",
+        alt: "Bacterial flagella arrangements monotrichous lophotrichous amphitrichous peritrichous",
+        keyword: "flagella",
+      },
+      {
+        Component: CyanobacteriaHeterocyst,
+        caption:
+          "The heterocyst is a sealed nitrogen workshop: thick walls exclude the oxygen that would destroy nitrogenase, so cyanobacteria fix N₂ while their neighbours photosynthesise.",
+        alt: "Cyanobacteria filament with heterocysts fixing nitrogen Nostoc Anabaena",
+        keyword: "heterocyst",
+      },
+      {
+        Component: BacterialCurdAntibiotics,
+        caption:
+          "Bacteria at work: Lactobacillus sours milk into curd, Rhizobium feeds legumes nitrogen, Streptomyces yields antibiotics, and sewage plants run on bacterial digestion.",
+        alt: "Useful bacteria curd Lactobacillus Rhizobium antibiotics sewage treatment",
+        keyword: "curd",
+      },
+      {
+        Component: BacterialPlasmidMesosome,
+        caption:
+          "Two bacterial extras: the plasmid, a small self-replicating circle carrying resistance genes that biotech borrows as a vector, and the mesosome, the membrane infolding that boosts respiration.",
+        alt: "Bacterial plasmid circular DNA and mesosome membrane infolding",
+        keyword: "plasmid",
+      },
+      {
+        Component: MoneraOverview,
+        caption:
+          "Four shelves in Monera: bacteria with peptidoglycan walls, photosynthetic cyanobacteria, wall-less mycoplasma, and the extreme-environment archaebacteria-like line — all prokaryotic.",
+        alt: "Monera kingdom overview bacteria cyanobacteria mycoplasma archaebacteria",
+        keyword: "monera",
+      },
+      {
+        Component: BacterialCapsuleSlime,
+        caption:
+          "The outermost layer: an organised capsule blocks phagocytosis and makes pneumococcus dangerous, while a loose slime layer glues cells into biofilms.",
+        alt: "Bacterial capsule versus slime layer glycocalyx virulence biofilm",
+        keyword: "capsule",
+      },
+      {
+        Component: BacterialGrowthConditions,
+        caption:
+          "Four dials control the doubling: temperature, pH, moisture and oxygen — and every food-preservation trick is just one of the dials turned against the bacteria.",
+        alt: "Bacterial growth conditions temperature pH moisture oxygen food preservation",
+        keyword: "growth",
+      },
     ],
   },
   "virus-general-introduction-structure-and-importance-of-virus-bacteriophage": {
@@ -1046,6 +1124,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "HIV structure with envelope spikes capsid RNA and reverse transcriptase plus replication steps",
         keyword: "HIV",
       },
+      {
+        Component: VirusBorderlineLife,
+        caption:
+          "Living or not? Viruses carry genes, replicate and evolve — yet have no cell, no metabolism, and can be crystallised like salt. The exam answer: obligate intracellular parasites.",
+        alt: "Borderline of life arguments for virus living versus nonliving crystallised TMV",
+        keyword: "borderline",
+      },
+      {
+        Component: TMVStructure,
+        caption:
+          "TMV, the helical rod: 2,130 identical capsomeres wound around a single RNA strand — the first virus crystallised, and the crystal still infected tobacco plants.",
+        alt: "TMV tobacco mosaic virus helical rod capsomeres RNA mosaic disease leaf",
+        keyword: "TMV",
+      },
+      {
+        Component: ProphageLysogenicDetail,
+        caption:
+          "Inside lysogeny: the prophage sits inserted in the host chromosome, copied with every division, until UV or chemicals induce it to excise and switch to the lytic cycle.",
+        alt: "Prophage integrated in host chromosome induction switch to lytic cycle",
+        keyword: "prophage",
+      },
+      {
+        Component: VirusGenomeTypes,
+        caption:
+          "A virus carries DNA or RNA, never both: dsDNA, ssDNA, plus-sense RNA or minus-sense RNA — and retroviruses bend the rule by writing RNA backwards into DNA.",
+        alt: "Virus genome types dsDNA ssDNA positive and negative sense RNA",
+        keyword: "genome",
+      },
+      {
+        Component: PhageInfectionSteps,
+        caption:
+          "The phage syringe in four beats: tail fibres dock, the sheath contracts, DNA shoots down the tail tube, and only the genome enters — the empty capsid stays outside.",
+        alt: "Phage infection steps adsorption penetration injection eclipse phase",
+        keyword: "sheath",
+      },
+      {
+        Component: VirusVaccines,
+        caption:
+          "Vaccines are rehearsals: live attenuated, inactivated or subunit preparations train memory cells so the real virus meets antibodies before it meets you.",
+        alt: "Vaccine types live attenuated inactivated subunit and immune memory response",
+        keyword: "vaccine",
+      },
+      {
+        Component: PrionDisease,
+        caption:
+          "Prions break the rule: infection with no nucleic acid at all — one misfolded protein templates the rest, surviving boiling and causing spongiform brain disease.",
+        alt: "Prion misfolded protein conversion scrapie BSE CJD spongiform disease",
+        keyword: "prion",
+      },
     ],
   },
   "impacts-of-biotechnology-in-the-field-of-microbiology": {
@@ -1085,6 +1212,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "One toolkit, four arenas: insulin and vaccines in medicine, Bt cotton and golden rice in agriculture, oil-eating bacteria in the environment, and DNA fingerprinting in forensics.",
         alt: "Four panels mapping biotechnology applications in medicine agriculture environment and forensics",
         keyword: "vaccine",
+      },
+      {
+        Component: InsulinProductionFlow,
+        caption:
+          "Insulin in five steps: isolate the human gene, splice it into a plasmid, transform E. coli, ferment in tanks, purify — the first medicine ever made by genetic engineering.",
+        alt: "Insulin production flow recombinant DNA plasmid E coli fermentation purification",
+        keyword: "insulin",
+      },
+      {
+        Component: GeneTherapyCycle,
+        caption:
+          "Gene therapy repairs the instruction, not the symptom: a disabled virus delivers a healthy gene to target cells, which then make the protein the patient was born without.",
+        alt: "Gene therapy cycle diagnosis vector delivery expression correction SCID",
+        keyword: "therapy",
+      },
+      {
+        Component: GoldenRiceBtCrops,
+        caption:
+          "Two transgenic crops: golden rice makes beta-carotene against vitamin-A blindness, Bt cotton grows its own insecticide — agriculture rewritten by single genes.",
+        alt: "Golden rice beta carotene and Bt cotton Bacillus thuringiensis transgenic crops",
+        keyword: "golden",
+      },
+      {
+        Component: DnaFingerprinting,
+        caption:
+          "DNA fingerprinting reads VNTR bands: extract, cut, amplify by PCR, run the gel, compare — the band pattern that convicts, acquits or confirms paternity.",
+        alt: "DNA fingerprinting gel electrophoresis band comparison forensics paternity",
+        keyword: "fingerprint",
+      },
+      {
+        Component: BioremediationOil,
+        caption:
+          "Bioremediation lets microbes do the cleanup: hydrocarbon-eating bacteria, fed with nitrogen and phosphorus, digest an oil spill to CO₂ and water in place.",
+        alt: "Bioremediation oil spill bacteria digestion stages recovery",
+        keyword: "bioremediation",
+      },
+      {
+        Component: BiofertiliserBiopesticide,
+        caption:
+          "Living inputs replace chemicals: Rhizobium and Azolla fix nitrogen as biofertilisers, while Bt toxin and Trichoderma kill only the target pest — not everything else.",
+        alt: "Biofertiliser Rhizobium nodules and biopesticide Bt toxin Trichoderma",
+        keyword: "biofertiliser",
+      },
+      {
+        Component: EnzymeTechnology,
+        caption:
+          "Enzymes by the tonne: amylase sweetens bread, protease cleans cold-wash clothes, lipase strips fats, lactase makes milk drinkable — immobilised for thousands of reuse cycles.",
+        alt: "Enzyme technology amylase protease lipase lactase industrial uses immobilised",
+        keyword: "enzyme",
       },
     ],
   },
