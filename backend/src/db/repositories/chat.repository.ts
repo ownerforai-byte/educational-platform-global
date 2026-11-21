@@ -36,7 +36,7 @@ export async function fetchSessionMessages(
 ): Promise<{ data: ChatMessageRow[] | null; missingTable: boolean; error: { message: string } | null }> {
   const { data, error } = await getAdminClient()
     .from("chat_messages")
-    .select("id, role, content, created_at")
+    .select("id, session, role, content, created_at")
     .eq("user_id", userId)
     .eq("session", session)
     .order("created_at", { ascending: false })
