@@ -5,63 +5,29 @@
   "topicTitle": "Rutherford's atomic model and its limitations",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning of the experiment",
-    "Thomson's plum-pudding model (1904) treated the atom as diffuse positive charge with electrons embedded in it and could not explain large-angle deflection of fast α-particles (He²⁺, ≈5.5 MeV). Rutherford with Geiger and Marsden (1909–1911) probed atomic *structure* by α-scattering — the experiment that established the **nuclear atom**.",
-    "### 2. Set-up",
-    "Radium in a lead block with a collimator gives a narrow α-beam; the target is gold foil ≈4 × 10⁻⁵ cm thick (≈1000 atoms) because gold beats very thin and has a heavy nucleus (Z = 79); a rotatable ZnS screen viewed through a microscope records each scintillation; the apparatus is evacuated.",
-    "### 3. Observations",
-    "• ≈99.86% of α-particles passed straight through — the atom is mostly empty space.",
-    "• ≈1 in 20 000 was deflected by more than 90°, and a very few bounced back (θ ≈ 180°).",
-    "• Scattering obeys N(θ) ∝ 1/sin⁴(θ/2); large-angle scattering is rare but real.",
-    "### 4. Conclusions (nuclear model)",
-    "• Atom is neutral and largely empty; a tiny, heavy, positive **nucleus** carries almost all the mass.",
-    "• Nuclear radius ≈10⁻¹⁵ m against atomic radius ≈10⁻¹⁰ m (1 : 100 000); nuclear volume ≈10⁻¹⁵ of atomic volume, nuclear density ≈10¹⁷ kg m⁻³.",
-    "• Electrons revolve in circular orbits, the Coulomb attraction of the nucleus giving the centripetal force.",
-    "• The positive charge is characteristic of the element — the origin of atomic number, later proved by Moseley (1913).",
-    "### 5. Quantitative results",
-    "• Distance of closest approach (KE → electrostatic PE): r₀ = 2Ze²/(4πε₀·KE) ≈ 4.5 × 10⁻¹⁴ m for 5 MeV α on gold — an experimental upper limit on nuclear size.",
-    "• Rutherford scattering law N(θ) ∝ 1/sin⁴(θ/2) explains why back-scattering is the rarest event.",
-    "### 6. Applications",
-    "• Founded nuclear physics: led to the proton (1919) and neutron (1932) and to nuclear fission/reactor technology; Rutherford backscattering spectroscopy (RBS) still analyses thin films industrially.",
-    "• Underpins Moseley's law and the atomic-number basis of the modern periodic table, and is the classic example of deducing structure statistically (probability) instead of by direct observation.",
-    "### 7. Limitations (exam-critical)",
-    "1. **Stability not explained:** a revolving electron is continuously accelerated, so by Maxwell's theory it must radiate energy and spiral into the nucleus in ≈10⁻⁸ s — yet atoms are stable.",
-    "2. **Line spectra not explained:** the inward spiral would emit a continuous range of frequencies, while hydrogen gives sharp discrete lines.",
-    "3. **No electronic arrangement:** nothing about shells, electron numbers or energies, so periodicity and valency remain unexplained.",
-    "4. **Purely classical:** circular orbits and a point nucleus are assumptions; without quantisation the model gives no orbital radii or energies.",
-    "5. **Ignores the neutron** (so isotopes are unexplained) and neglects electron–electron repulsion, so it fails for multi-electron atoms; no account of bonding or Zeeman/Stark splitting.",
-    "### 8. Exam pointers",
-    "Observations + conclusions and the two main defects (stability, discrete spectra) are standard 4–5 mark NEB questions; numericals use r₀, nuclear radius/density and the atom : nucleus volume ratio."
+    "## 1. Topic Introduction — The Experiment That Found the Nucleus\n\nThomson's plum-pudding model (1904) pictured the atom as diffuse positive charge with embedded electrons. Rutherford, Geiger and Marsden (1909–1911) fired α-particles (He²⁺, ~5.5 MeV) at gold foil ~4 × 10⁻⁵ cm thick and got a result the pudding model could not survive: a few α-particles bounced straight back. The atom has a **nucleus**.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The set-up (state the four parts)\n\n1. **α-source:** radium in a lead block with a collimator → narrow α-beam.\n2. **Target:** gold foil ~4 × 10⁻⁵ cm (≈1000 atoms thick) — gold can be beaten very thin and has a heavy nucleus (Z = 79).\n3. **Detector:** rotatable ZnS screen viewed through a microscope — each α-hit gives a scintillation.\n4. **Enclosure:** evacuated so air does not scatter the beam.\n\n### 2.2 Observations → conclusions (the exam's 3m chain)\n\n| Observation | Conclusion |\n|---|---|\n| ≈99.86% of α-particles passed straight through | The atom is **mostly empty space** |\n| ≈1 in 20,000 deflected by more than 90°; a very few bounced back (≈180°) | A tiny, heavy, **positively charged nucleus** carries nearly all the mass |\n| Scattering follows N(θ) ∝ 1/sin⁴(θ/2) | Large-angle scattering is rare but real — Coulomb repulsion off a point-like core |\n\n### 2.3 The nuclear model\n\n- The atom is neutral and largely empty; almost all mass sits in a nucleus of radius ~10⁻¹⁵ m against atomic radius ~10⁻¹⁰ m — a **1 : 100,000** linear ratio, ~10⁻¹⁵ in volume, with nuclear density ~10¹⁷ kg m⁻³.\n- Electrons revolve in circular orbits with the Coulomb attraction supplying the centripetal force.\n- The nuclear charge is characteristic of the element — the origin of **atomic number**, proved by Moseley (1913).\n- Distance of closest approach: r₀ = 2Ze²/(4πε₀·KE) ≈ 4.5 × 10⁻¹⁴ m for 5 MeV α on gold — an experimental upper limit on nuclear size.\n\n### 2.4 Limitations (exam-critical)\n\n1. **Stability not explained:** a revolving, accelerating electron must radiate continuously (Maxwell) and spiral into the nucleus in ~10⁻⁸ s — yet atoms are stable.\n2. **Line spectra not explained:** an inward spiral would give a continuous range of frequencies; hydrogen gives sharp discrete lines.\n3. **No electronic arrangement:** nothing about shells or energies — periodicity and valency unexplained.\n4. **No quantisation:** circular orbits are assumptions; no orbital radii or energies can be calculated.\n5. **Ignores the neutron** (isotopes unexplained) and electron–electron repulsion (fails for multi-electron atoms).\n\n### 2.5 Similarities and differences — Thomson's model vs Rutherford's model\n\n**Similarities:** both are pre-quantum classical models; both place electrons inside a positive framework; both try to keep the atom electrically neutral.\n**Differences:** Thomson spreads positive charge **throughout the atom** (pudding); Rutherford concentrates it in a **tiny nucleus** (1 : 100,000). Thomson cannot explain large-angle scattering; Rutherford explains it but cannot explain stability or line spectra. Thomson's atom is mostly *filled*; Rutherford's is mostly *empty*.",
+    "## 3. Conceptual Relationships\n\n- **To Bohr (Topic 14):** Bohr fixes exactly the two failures — stability and line spectra — by adding quantisation.\n- **To atomic number (Topic 24):** Moseley's X-ray work turned Rutherford's nuclear charge into Z.\n- **To nuclear chemistry:** the nucleus Rutherford found later yields the proton (1919) and neutron (1932).",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise observations→conclusions and limitations as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Describe the α-scattering experiment with observations and conclusions (3–5m).\n2. Write four limitations of Rutherford's model (3m).\n3. Why was gold foil used? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Quoting \"1 in 20,000\" as \"1 in 2000\".\n2. Saying the atom is \"completely empty\" — it is *mostly* empty; the nucleus is there.\n3. Listing limitations without the stability argument (the one NEB wants)."
   ],
   "confusion": [
-    "❌ The atom is 'totally empty'. ✅ It is mostly empty *space*, but ≈99.9% of the mass lies in the nucleus.",
-    "❌ α-particles are electrons. ✅ They are helium nuclei (+2e, ≈7300 times heavier than an electron), so electrons cannot deflect them appreciably.",
-    "❌ The model failed because α-particles were absorbed. ✅ Scattering itself was explained well; the model failed on stability and line spectra.",
-    "❌ Atom radius = nuclear radius. ✅ 10⁻¹⁰ m versus 10⁻¹⁵ m."
+    "**Scattering source:** deflection comes from Coulomb **repulsion** between the positive α-particle and the positive nucleus — not from electron collisions (electrons are too light).",
+    "**Atomic radius vs nuclear radius:** 10⁻¹⁰ m vs 10⁻¹⁵ m — the nucleus is 100,000× smaller in linear size but carries ~100% of the mass."
   ],
   "practice": [
-    "Describe the α-scattering experiment with a labelled diagram; list observations and conclusions.",
-    "Use Maxwell's electromagnetic theory to explain why Rutherford's model could not account for atomic stability.",
-    "State the limitations of the nuclear model and explain why Bohr's model became necessary.",
-    "Calculate the distance of closest approach of a 5 MeV α-particle to a gold nucleus (Z = 79).",
-    "Estimate the ratio of nuclear volume (r ≈ 7 × 10⁻¹⁵ m) to atomic volume (r ≈ 1.5 × 10⁻¹⁰ m) for gold."
+    "Why were ~99.86% of α-particles undeflected?"
   ],
   "formulas": [
-    "$$N(\\theta) \\propto \\frac{1}{\\sin^{4}(\\theta/2)}$$",
-    "$$r_{0}=\\frac{2kZe^{2}}{KE}=\\frac{2Ze^{2}}{4\\pi\\varepsilon_{0}\\,KE}$$",
-    "$$\\rho_{\\text{nucleus}}\\approx 2.3\\times10^{17}\\ \\mathrm{kg\\,m^{-3}}$$"
+    "- N(θ) ∝ 1/sin⁴(θ/2) (scattering law)\n- r₀ = 2Ze²/(4πε₀·KE) (distance of closest approach)\n- Nuclear radius ~10⁻¹⁵ m; atomic radius ~10⁻¹⁰ m"
   ],
   "universalFacts": [
-    "α-scattering experiment: 1909–1911; Geiger and Marsden counted ≈1 flash in 10⁴ at large angles; gold foil ≈4 × 10⁻⁵ cm thick.",
-    "Rutherford received the 1908 Nobel Prize in Chemistry for work on radioactivity.",
-    "Nuclear density is nearly the same for all nuclei because R = R₀A^(1/3), R₀ ≈ 1.2 × 10⁻¹⁵ m."
+    "Rutherford called it \"the most incredible event of my life\" — as if firing a shell at tissue paper and having it bounce back."
   ],
   "examples": [
-    "**Problem:** Find r₀ for a 5.0 MeV α-particle on gold (Z = 79). **Solution:** KE = 5.0 × 1.6 × 10⁻¹³ = 8.0 × 10⁻¹³ J; r₀ = (2 × 9×10⁹ × 79 × (1.6×10⁻¹⁹)²)/(8.0 × 10⁻¹³) ≈ 4.55 × 10⁻¹⁴ m. Since r₀ is larger than the nuclear radius, the nucleus acts as a point charge and the α-particle is never captured."
+    "***1 in 20,000 back-scattered*** — like a shell bouncing off tissue paper: the only explanation is a concentrated positive mass."
   ],
   "importantNotes": [
-    "Quote the radiating-electron instability (collapse in ≈10⁻⁸ s) and the continuous-versus-line-spectrum defect first.",
-    "Never claim Rutherford's model explained the hydrogen spectrum — repairing that was Bohr's achievement (1913)."
+    "No verified PYQ; NEB-style practice (experiment + conclusions 3–5m, limitations 3m)."
   ],
   "visualType": "rutherford-scattering",
   "tabGroup": "Atomic-Structure-Learner-Notes",
@@ -114,5 +80,249 @@
       "The phrase 'mostly empty space' is a relative statement — 99.9% of the volume, not 99.9% of the mass.",
       "Rutherford's experiment 'probed' atomic structure — to probe means to investigate by testing."
     ]
-  }
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Experiment That Found the Nucleus\n\nThomson's plum-pudding model (1904) pictured the atom as diffuse positive charge with embedded electrons. Rutherford, Geiger and Marsden (1909–1911) fired α-particles (He²⁺, ~5.5 MeV) at gold foil ~4 × 10⁻⁵ cm thick and got a result the pudding model could not survive: a few α-particles bounced straight back. The atom has a **nucleus**.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The set-up (state the four parts)\n\n1. **α-source:** radium in a lead block with a collimator → narrow α-beam.\n2. **Target:** gold foil ~4 × 10⁻⁵ cm (≈1000 atoms thick) — gold can be beaten very thin and has a heavy nucleus (Z = 79).\n3. **Detector:** rotatable ZnS screen viewed through a microscope — each α-hit gives a scintillation.\n4. **Enclosure:** evacuated so air does not scatter the beam.\n\n### 2.2 Observations → conclusions (the exam's 3m chain)\n\n| Observation | Conclusion |\n|---|---|\n| ≈99.86% of α-particles passed straight through | The atom is **mostly empty space** |\n| ≈1 in 20,000 deflected by more than 90°; a very few bounced back (≈180°) | A tiny, heavy, **positively charged nucleus** carries nearly all the mass |\n| Scattering follows N(θ) ∝ 1/sin⁴(θ/2) | Large-angle scattering is rare but real — Coulomb repulsion off a point-like core |\n\n### 2.3 The nuclear model\n\n- The atom is neutral and largely empty; almost all mass sits in a nucleus of radius ~10⁻¹⁵ m against atomic radius ~10⁻¹⁰ m — a **1 : 100,000** linear ratio, ~10⁻¹⁵ in volume, with nuclear density ~10¹⁷ kg m⁻³.\n- Electrons revolve in circular orbits with the Coulomb attraction supplying the centripetal force.\n- The nuclear charge is characteristic of the element — the origin of **atomic number**, proved by Moseley (1913).\n- Distance of closest approach: r₀ = 2Ze²/(4πε₀·KE) ≈ 4.5 × 10⁻¹⁴ m for 5 MeV α on gold — an experimental upper limit on nuclear size.\n\n### 2.4 Limitations (exam-critical)\n\n1. **Stability not explained:** a revolving, accelerating electron must radiate continuously (Maxwell) and spiral into the nucleus in ~10⁻⁸ s — yet atoms are stable.\n2. **Line spectra not explained:** an inward spiral would give a continuous range of frequencies; hydrogen gives sharp discrete lines.\n3. **No electronic arrangement:** nothing about shells or energies — periodicity and valency unexplained.\n4. **No quantisation:** circular orbits are assumptions; no orbital radii or energies can be calculated.\n5. **Ignores the neutron** (isotopes unexplained) and electron–electron repulsion (fails for multi-electron atoms).\n\n### 2.5 Similarities and differences — Thomson's model vs Rutherford's model\n\n**Similarities:** both are pre-quantum classical models; both place electrons inside a positive framework; both try to keep the atom electrically neutral.\n**Differences:** Thomson spreads positive charge **throughout the atom** (pudding); Rutherford concentrates it in a **tiny nucleus** (1 : 100,000). Thomson cannot explain large-angle scattering; Rutherford explains it but cannot explain stability or line spectra. Thomson's atom is mostly *filled*; Rutherford's is mostly *empty*.",
+      "## 3. Conceptual Relationships\n\n- **To Bohr (Topic 14):** Bohr fixes exactly the two failures — stability and line spectra — by adding quantisation.\n- **To atomic number (Topic 24):** Moseley's X-ray work turned Rutherford's nuclear charge into Z.\n- **To nuclear chemistry:** the nucleus Rutherford found later yields the proton (1919) and neutron (1932).",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise observations→conclusions and limitations as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Describe the α-scattering experiment with observations and conclusions (3–5m).\n2. Write four limitations of Rutherford's model (3m).\n3. Why was gold foil used? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Quoting \"1 in 20,000\" as \"1 in 2000\".\n2. Saying the atom is \"completely empty\" — it is *mostly* empty; the nucleus is there.\n3. Listing limitations without the stability argument (the one NEB wants)."
+    ],
+    "confusion": [
+      "**Scattering source:** deflection comes from Coulomb **repulsion** between the positive α-particle and the positive nucleus — not from electron collisions (electrons are too light).",
+      "**Atomic radius vs nuclear radius:** 10⁻¹⁰ m vs 10⁻¹⁵ m — the nucleus is 100,000× smaller in linear size but carries ~100% of the mass."
+    ],
+    "keyPoints": [
+      "α-scattering on gold: 99.86% pass through (empty space); ~1/20,000 deflect >90° (tiny heavy positive nucleus). Limitations: stability (spiral in 10⁻⁸ s), continuous vs line spectra, no shells, no quantisation."
+    ],
+    "importantConcepts": [
+      "**Observation → conclusion mapping** — each observation earns its conclusion; NEB marks the pairs, not the story."
+    ],
+    "examples": [
+      "***1 in 20,000 back-scattered*** — like a shell bouncing off tissue paper: the only explanation is a concentrated positive mass."
+    ],
+    "universalFacts": [
+      "Rutherford called it \"the most incredible event of my life\" — as if firing a shell at tissue paper and having it bounce back."
+    ],
+    "importantStatements": [
+      "\"The atom consists of a tiny, heavy, positively charged nucleus around which electrons revolve.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (experiment + conclusions 3–5m, limitations 3m)."
+    ],
+    "examShortTricks": [
+      "\"PASS-THROUGH → empty; BOUNCE → nucleus; the two observations carry the whole answer.\""
+    ],
+    "examNotes": [
+      "Always pair the 10⁻¹⁵/10⁻¹⁰ m radii — the size contrast is a standing 1-mark item."
+    ],
+    "formulas": [
+      "- N(θ) ∝ 1/sin⁴(θ/2) (scattering law)\n- r₀ = 2Ze²/(4πε₀·KE) (distance of closest approach)\n- Nuclear radius ~10⁻¹⁵ m; atomic radius ~10⁻¹⁰ m"
+    ],
+    "practice": [
+      "Why were ~99.86% of α-particles undeflected?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): State the observations of Rutherford's α-scattering experiment and the conclusions drawn from each.** — (1) ~99.86% of α-particles passed straight through → the atom is mostly empty space. (2) ~1 in 20,000 deflected by >90°, a few bouncing back → a tiny, heavy, positively charged nucleus holds nearly all the mass. (3) Scattering follows N(θ) ∝ 1/sin⁴(θ/2) → the nucleus behaves as a point-like positive charge repelling α-particles by Coulomb force."
+    ]
+  },
+  "keyPoints": [
+    "α-scattering on gold: 99.86% pass through (empty space); ~1/20,000 deflect >90° (tiny heavy positive nucleus). Limitations: stability (spiral in 10⁻⁸ s), continuous vs line spectra, no shells, no quantisation."
+  ],
+  "importantConcepts": [
+    "**Observation → conclusion mapping** — each observation earns its conclusion; NEB marks the pairs, not the story."
+  ],
+  "importantStatements": [
+    "\"The atom consists of a tiny, heavy, positively charged nucleus around which electrons revolve.\""
+  ],
+  "examShortTricks": [
+    "\"PASS-THROUGH → empty; BOUNCE → nucleus; the two observations carry the whole answer.\""
+  ],
+  "examNotes": [
+    "Always pair the 10⁻¹⁵/10⁻¹⁰ m radii — the size contrast is a standing 1-mark item."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): State the observations of Rutherford's α-scattering experiment and the conclusions drawn from each.** — (1) ~99.86% of α-particles passed straight through → the atom is mostly empty space. (2) ~1 in 20,000 deflected by >90°, a few bouncing back → a tiny, heavy, positively charged nucleus holds nearly all the mass. (3) Scattering follows N(θ) ∝ 1/sin⁴(θ/2) → the nucleus behaves as a point-like positive charge repelling α-particles by Coulomb force."
+  ],
+  "summary": "Rutherford's α-scattering experiment (1909–1911) on ~4 × 10⁻⁵ cm gold foil destroyed Thomson's pudding model: 99.86% of α-particles passed straight through (the atom is mostly empty space) while ~1 in 20,000 deflected >90° or bounced back — proof of a tiny (10⁻¹⁵ m), heavy, positive **nucleus** carrying nearly all the mass, with electrons revolving around it under Coulomb attraction. The model fails because a revolving electron should radiate and collapse in ~10⁻⁸ s, and because a spiral would emit continuous rather than line spectra — the two failures Bohr's quantised model repairs. Thomson spread charge through the atom; Rutherford concentrated it — and found the nucleus.",
+  "mcqs": [
+    {
+      "question": "Rutherford's scattering experiment used:",
+      "options": [
+        "β-particles",
+        "α-particles",
+        "γ-rays",
+        "X-rays"
+      ],
+      "answer": "B",
+      "explanation": "He²⁺ nuclei, ~5.5 MeV."
+    },
+    {
+      "question": "The foil was made of gold because gold:",
+      "options": [
+        "Is cheap",
+        "Is very malleable and has a heavy nucleus",
+        "Is radioactive",
+        "Reflects light"
+      ],
+      "answer": "B",
+      "explanation": "Thin foil + strong repulsion."
+    },
+    {
+      "question": "About what fraction of α-particles passed straight through?",
+      "options": [
+        "50%",
+        "90%",
+        "99.86%",
+        "100%"
+      ],
+      "answer": "C",
+      "explanation": "Atom is mostly empty."
+    },
+    {
+      "question": "Large-angle deflection proved the existence of:",
+      "options": [
+        "Electrons",
+        "A tiny heavy positive nucleus",
+        "Neutrons",
+        "Photons"
+      ],
+      "answer": "B",
+      "explanation": "Concentrated positive mass."
+    },
+    {
+      "question": "Nuclear radius is about:",
+      "options": [
+        "10⁻¹⁰ m",
+        "10⁻¹⁵ m",
+        "10⁻⁸ m",
+        "10⁻² m"
+      ],
+      "answer": "B",
+      "explanation": "1 : 100,000 of atomic radius."
+    },
+    {
+      "question": "Rutherford's model fails to explain:",
+      "options": [
+        "Empty space",
+        "Nucleus",
+        "Stability of the atom",
+        "Scattering law"
+      ],
+      "answer": "C",
+      "explanation": "Radiating electron spirals in."
+    },
+    {
+      "question": "An accelerating electron should radiate energy according to:",
+      "options": [
+        "Planck's theory",
+        "Maxwell's theory",
+        "Bohr's theory",
+        "Dalton's theory"
+      ],
+      "answer": "B",
+      "explanation": "Classical electromagnetism."
+    },
+    {
+      "question": "The scattering intensity follows:",
+      "options": [
+        "1/sin²(θ/2)",
+        "1/sin⁴(θ/2)",
+        "sin⁴(θ/2)",
+        "1/θ"
+      ],
+      "answer": "B",
+      "explanation": "Rutherford's law."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "Rutherford's scattering experiment used:",
+      "options": [
+        "β-particles",
+        "α-particles",
+        "γ-rays",
+        "X-rays"
+      ],
+      "answer": "B",
+      "explanation": "He²⁺ nuclei, ~5.5 MeV."
+    },
+    {
+      "question": "The foil was made of gold because gold:",
+      "options": [
+        "Is cheap",
+        "Is very malleable and has a heavy nucleus",
+        "Is radioactive",
+        "Reflects light"
+      ],
+      "answer": "B",
+      "explanation": "Thin foil + strong repulsion."
+    },
+    {
+      "question": "About what fraction of α-particles passed straight through?",
+      "options": [
+        "50%",
+        "90%",
+        "99.86%",
+        "100%"
+      ],
+      "answer": "C",
+      "explanation": "Atom is mostly empty."
+    },
+    {
+      "question": "Large-angle deflection proved the existence of:",
+      "options": [
+        "Electrons",
+        "A tiny heavy positive nucleus",
+        "Neutrons",
+        "Photons"
+      ],
+      "answer": "B",
+      "explanation": "Concentrated positive mass."
+    },
+    {
+      "question": "Nuclear radius is about:",
+      "options": [
+        "10⁻¹⁰ m",
+        "10⁻¹⁵ m",
+        "10⁻⁸ m",
+        "10⁻² m"
+      ],
+      "answer": "B",
+      "explanation": "1 : 100,000 of atomic radius."
+    },
+    {
+      "question": "Rutherford's model fails to explain:",
+      "options": [
+        "Empty space",
+        "Nucleus",
+        "Stability of the atom",
+        "Scattering law"
+      ],
+      "answer": "C",
+      "explanation": "Radiating electron spirals in."
+    },
+    {
+      "question": "An accelerating electron should radiate energy according to:",
+      "options": [
+        "Planck's theory",
+        "Maxwell's theory",
+        "Bohr's theory",
+        "Dalton's theory"
+      ],
+      "answer": "B",
+      "explanation": "Classical electromagnetism."
+    },
+    {
+      "question": "The scattering intensity follows:",
+      "options": [
+        "1/sin²(θ/2)",
+        "1/sin⁴(θ/2)",
+        "sin⁴(θ/2)",
+        "1/θ"
+      ],
+      "answer": "B",
+      "explanation": "Rutherford's law."
+    }
+  ]
 }

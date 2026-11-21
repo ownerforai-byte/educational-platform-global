@@ -16,8 +16,8 @@ Goal: upgrade every Class-11 Chemistry topic note (17 units, 140 topics) to mast
 | 10 | Stoichiometry | Limiting Reactant And Excess Reactant | `05-limiting-reactant.json` | DONE |
 | 11 | Stoichiometry | Theoretical Yield Experimental Yield And Yield | `06-yield-calculations.json` | DONE |
 | 12 | Stoichiometry | Calculation Of Empirical And Molecular Formula From Composition Solving Related Numerical Problems | `07-empirical-molecular-formula.json` | DONE |
-| 13 | Atomic Structure | Rutherfords Atomic Model And Its Limitations | `01-rutherford-model.json` | TBD |
-| 14 | Atomic Structure | Postulates Of Bohrs Atomic Model And Its Application | `02-bohr-postulates.json` | TBD |
+| 13 | Atomic Structure | Rutherfords Atomic Model And Its Limitations | `01-rutherford-model.json` | DONE |
+| 14 | Atomic Structure | Postulates Of Bohrs Atomic Model And Its Application | `02-bohr-postulates.json` | DONE |
 | 15 | Atomic Structure | Spectrum Of Hydrogen Atom | `03-hydrogen-spectrum.json` | TBD |
 | 16 | Atomic Structure | Defects Of Bohrs Theory | `04-bohr-defects.json` | TBD |
 | 17 | Atomic Structure | Elementary Idea Of Quantum Mechanical Model De Broglies Wave Equation | `05-de-broglie-waves.json` | TBD |
@@ -146,5 +146,6 @@ Goal: upgrade every Class-11 Chemistry topic note (17 units, 140 topics) to mast
 | 140 | Modern Chemical Manufactures | Fertilizers Chemical Fertilizers Types Of Chemical Fertilizers Production Of Urea With Flow Sheet Diagram | `06-fertilizers-chemical-fertilizers-types-of-chemical-fertilizers-production-of-urea-with-flow-shee.json` | TBD |
 
 Status legend: **TBD** = not started; **Completed** = mastery content assembled, built, validated and pushed.
+- Session 3 — Unit 3 Atomic Structure PARTIAL (2 of 6 topics): Rutherford model (α-scattering observations→conclusions table, Thomson-vs-Rutherford contrast) and Bohr postulates (four postulates, r/v/E formulas, orbit-vs-orbital and Rutherford-vs-Bohr contrast tables; NEB 2022 3m — E₂ = −5.45 × 10⁻¹⁹ J). Topics 03–06 (hydrogen spectrum, Bohr defects, de Broglie, Heisenberg) deferred: their canonical JSONs carry uncommitted edits from a concurrent session. Validator: 0 broken. Next: finish Unit 3 after that session commits.
 - Session 2 — Unit 2 Stoichiometry (8 topics) upgraded: Dalton's atomic theory (postulates, limitations DIC table); laws of stoichiometry (5 laws + definite-vs-multiple and conservation-vs-Gay-Lussac contrast tables); Avogadro's law (M = 2 × VD, 22.4 L, atom-vs-molecule contrast); mole concept (NEB 2023 3m — 36 g water → 1.204 × 10²⁴); mole-based calculations (NEB 2024 2m — 4 g NaOH/250 mL → 0.4 M; molarity-vs-molality table); limiting reactant (NEB 2023 3m Mg/O₂ → 8 g MgO; NEB 2024 3m H₂/O₂ → 72 g H₂O; limiting-vs-excess table); yield (NEB 2024 2m — 40/50 → 80%; yield-vs-atom-economy table); empirical/molecular formula (NEB 2020+2022 3m → CH₂O; NEB 2024 2m → C₆H₁₂O₆; empirical-vs-molecular table). Validator: 0 broken. Next: Unit 3.
 - Session 1 — Unit 1 Foundation and Fundamentals (4 topics) upgraded: general introduction (branches, matter classification); importance & scope (benefits vs hazards table); basic concepts (atoms, molecules, radicals, amu, empirical vs molecular formula, measurement); percentage composition. Verified PYQs used: atoms in 5.6 g Fe 2024 2m, density sig-figs 2023 3m, SI mole MCQ 2022 1m, mean/absolute error 2021 2m, %N in urea 2024 2m. Next: Unit 2 Stoichiometry (8 topics).
