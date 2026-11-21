@@ -672,6 +672,254 @@ import { VegetationDamageActivities } from "./vegetation-damage-activities";
 import { DeforestationConsequences } from "./deforestation-consequences";
 import { ForestCoverRecovery } from "./forest-cover-recovery";
 import { CommunityForestryRoles } from "./community-forestry-roles";
+import { AcidRainBuildings } from "./acid-rain-buildings";
+import { AcidRainDamagePath } from "./acid-rain-damage-path";
+import { AcidRainFormationChemistry } from "./acid-rain-formation-chemistry";
+import { AgeingPopulationJapan } from "./ageing-population-japan";
+import { AirQualityIndexReading } from "./air-quality-index-reading";
+import { AlcoholLiverDamageStages } from "./alcohol-liver-damage-stages";
+import { AlcoholProhibitionLessons } from "./alcohol-prohibition-lessons";
+import { AlienInvasionPathways } from "./alien-invasion-pathways";
+import { AllergyMechanism } from "./allergy-mechanism";
+import { AmniocentesisChromosomeTest } from "./amniocentesis-chromosome-test";
+import { AmniocentesisEthics } from "./amniocentesis-ethics";
+import { AnaemiaIronDeficiency } from "./anaemia-iron-deficiency";
+import { AntibioticMechanismTargets } from "./antibiotic-mechanism-targets";
+import { AntibioticOveruseLivestock } from "./antibiotic-overuse-livestock";
+import { AntibioticResistanceFarms } from "./antibiotic-resistance-farms";
+import { AntibodyStructureYShape } from "./antibody-structure-y-shape";
+import { AntimicrobialResistanceTimeline } from "./antimicrobial-resistance-timeline";
+import { ArborealGrippingAdaptations } from "./arboreal-gripping-adaptations";
+import { BalancedDietPlate } from "./balanced-diet-plate";
+import { BioaccumulationTrophicLadder } from "./bioaccumulation-trophic-ladder";
+import { BioaccumulationVsBiodegradation } from "./bioaccumulation-vs-biodegradation";
+import { BiodiversityHotspotsMap } from "./biodiversity-hotspots-map";
+import { BiodiversityLevelsTrio } from "./biodiversity-levels-trio";
+import { BiodiversityValueLedger } from "./biodiversity-value-ledger";
+import { BiogasPlantCycle } from "./biogas-plant-cycle";
+import { BiogasPlantNepalNumbers } from "./biogas-plant-nepal-numbers";
+import { BiologicalControlCaseStudies } from "./biological-control-case-studies";
+import { BirdMigrationNavigation } from "./bird-migration-navigation";
+import { BloodDonationCycle } from "./blood-donation-cycle";
+import { BloodDonationProcess } from "./blood-donation-process";
+import { BloodGroupsCompatibility } from "./blood-groups-compatibility";
+import { BloodPressureReadingsChart } from "./blood-pressure-readings-chart";
+import { BufferZoneCommunityForestry } from "./buffer-zone-community-forestry";
+import { CancerCausesPrevention } from "./cancer-causes-prevention";
+import { CancerHallmarks } from "./cancer-hallmarks";
+import { CarbamatePyrethroidContrast } from "./carbamate-pyrethroid-contrast";
+import { CarbonCycleReservoirsFluxes } from "./carbon-cycle-reservoirs-fluxes";
+import { CarbonFootprintReductionActions } from "./carbon-footprint-reduction-actions";
+import { CaseinProteinSources } from "./casein-protein-sources";
+import { CholeraPandemicHistory } from "./cholera-pandemic-history";
+import { CircularEconomyModel } from "./circular-economy-model";
+import { CITESAppendicesDetail } from "./cites-appendices-detail";
+import { ClimateChangeStrategies } from "./climate-change-strategies";
+import { ClimateRefugeeDisplacement } from "./climate-refugee-displacement";
+import { CloningEthicsDebate } from "./cloning-ethics-debate";
+import { ColourBlindnessTest } from "./colour-blindness-test";
+import { CommunicableVsNonCommunicable } from "./communicable-vs-non-communicable";
+import { CommunityHealthWorkers } from "./community-health-workers";
+import { CompostingProcessStages } from "./composting-process-stages";
+import { ConservationStrategiesPair } from "./conservation-strategies-pair";
+import { CrisprMechanismSteps } from "./crispr-mechanism-steps";
+import { CursorialSpeedAdaptations } from "./cursorial-speed-adaptations";
+import { DemographicTransitionModel } from "./demographic-transition-model";
+import { DemographicTransitionModelStages } from "./demographic-transition-model-stages";
+import { DengueVectorControl } from "./dengue-vector-control";
+import { DesertWaterEconomy } from "./desert-water-economy";
+import { DiabetesInsulinMechanism } from "./diabetes-insulin-mechanism";
+import { DiabetesTypesContrast } from "./diabetes-types-contrast";
+import { DominanceHierarchyPayoffs } from "./dominance-hierarchy-payoffs";
+import { DownSyndromeTrisomy21 } from "./down-syndrome-trisomy-21";
+import { DrugAbuseTypesChart } from "./drug-abuse-types-chart";
+import { DrugAddictionRewardLoop } from "./drug-addiction-reward-loop";
+import { EWasteCompositionHazards } from "./e-waste-composition-hazards";
+import { EWasteHeavyMetalFlow } from "./e-waste-heavy-metal-flow";
+import { EarthOvershootDay } from "./earth-overshoot-day";
+import { EarthwormCastingsVermicompost } from "./earthworm-castings-vermicompost";
+import { EcologicalFootprintCalculation } from "./ecological-footprint-calculation";
+import { EcologicalFootprintComponents } from "./ecological-footprint-components";
+import { EcosystemServicesCategories } from "./ecosystem-services-categories";
+import { EcotourismProsCons } from "./ecotourism-pros-cons";
+import { EcotourismRevenueLoop } from "./ecotourism-revenue-loop";
+import { EndemicNepalSpecies } from "./endemic-nepal-species";
+import { EnergyConsumptionLadder } from "./energy-consumption-ladder";
+import { EnergyLadderDevelopment } from "./energy-ladder-development";
+import { EnvironmentalEthicsWorldviews } from "./environmental-ethics-worldviews";
+import { EnvironmentalImpactAssessmentSteps } from "./environmental-impact-assessment-steps";
+import { EnvironmentalLegislationNepal } from "./environmental-legislation-nepal";
+import { EutrophicationAlgalCycle } from "./eutrophication-algal-cycle";
+import { ExtinctionDebtCascade } from "./extinction-debt-cascade";
+import { FirstAidABCPriorities } from "./first-aid-abc-priorities";
+import { FishMigrationReasons } from "./fish-migration-reasons";
+import { FlagshipUmbrellaSpecies } from "./flagship-umbrella-species";
+import { FoodAdulterationExamples } from "./food-adulteration-examples";
+import { FoodSecurityFourPillars } from "./food-security-four-pillars";
+import { ForestResourcesPressure } from "./forest-resources-pressure";
+import { FossilFuelFormationTimescales } from "./fossil-fuel-formation-timescales";
+import { FossorialDiggingToolkit } from "./fossorial-digging-toolkit";
+import { FrogParentalCareAbsence } from "./frog-parental-care-absence";
+import { GeneTherapyConcept } from "./gene-therapy-concept";
+import { GeneticCounsellingSession } from "./genetic-counselling-session";
+import { GeneticEngineeringInsulin } from "./genetic-engineering-insulin";
+import { GeneticEngineeringStepsDetail } from "./genetic-engineering-steps-detail";
+import { GillBreathingWater } from "./gill-breathing-water";
+import { GlofMechanism } from "./glof-mechanism";
+import { GmoDebateVerdicts } from "./gmo-debate-verdicts";
+import { GoitreIodineDeficiency } from "./goitre-iodine-deficiency";
+import { GreenAccountingGdpCritique } from "./green-accounting-gdp-critique";
+import { GreenRevolutionImpacts } from "./green-revolution-impacts";
+import { GreenRevolutionTradeoffs } from "./green-revolution-tradeoffs";
+import { GreenhouseEffectMechanism } from "./greenhouse-effect-mechanism";
+import { GreenhouseGasLadder } from "./greenhouse-gas-ladder";
+import { GreenhouseGasSourcesSectors } from "./greenhouse-gas-sources-sectors";
+import { GroundwaterArsenicTerai } from "./groundwater-arsenic-terai";
+import { GroundwaterDepletionIndia } from "./groundwater-depletion-india";
+import { HaemophiliaInheritance } from "./haemophilia-inheritance";
+import { HandwashingCriticalMoments } from "./handwashing-critical-moments";
+import { HerbicideCropSelectivity } from "./herbicide-crop-selectivity";
+import { HimalayanSpringsDrying } from "./himalayan-springs-drying";
+import { HippocraticOathEthics } from "./hippocratic-oath-ethics";
+import { HIVTransmissionRoutes } from "./hiv-transmission-routes";
+import { HotspotCriteriaMap } from "./hotspot-criteria-map";
+import { HumanWildlifeConflictFence } from "./human-wildlife-conflict-fence";
+import { HydroelectricDamHowItWorks } from "./hydroelectric-dam-how-it-works";
+import { HydropowerNepalPotential } from "./hydropower-nepal-potential";
+import { HypertensionSilentKiller } from "./hypertension-silent-killer";
+import { ImmunisationScheduleChart } from "./immunisation-schedule-chart";
+import { ImmunisationVsVaccination } from "./immunisation-vs-vaccination";
+import { ImmunityTypesMap } from "./immunity-types-map";
+import { ImprovedCookstovesSmoke } from "./improved-cookstoves-smoke";
+import { InvasiveSpeciesNepal } from "./invasive-species-nepal";
+import { IPMStepsLadder } from "./ipm-steps-ladder";
+import { IvfEthicsSurplusEmbryos } from "./ivf-ethics-surplus-embryos";
+import { IVFStepsTimeline } from "./ivf-steps-timeline";
+import { KathmanduValleyAirQuality } from "./kathmandu-valley-air-quality";
+import { KidneyDialysisMachine } from "./kidney-dialysis-machine";
+import { KoshiTappuProfile } from "./koshi-tappu-profile";
+import { KwashiorkorMarasmusContrast } from "./kwashiorkor-marasmus-contrast";
+import { LandResourcesDegradation } from "./land-resources-degradation";
+import { LandslideCausesNepalMonsoon } from "./landslide-causes-nepal-monsoon";
+import { LatrineTypesSanitationLadder } from "./latrine-types-sanitation-ladder";
+import { LeadPoisoningSources } from "./lead-poisoning-sources";
+import { LeadershipWolfPack } from "./leadership-wolf-pack";
+import { LearnedBehaviourStages } from "./learned-behaviour-stages";
+import { MalariaControlNepalProgress } from "./malaria-control-nepal-progress";
+import { MendelDihybridRatioDetail } from "./mendel-dihybrid-ratio-detail";
+import { MentalHealthDepressionMyths } from "./mental-health-depression-myths";
+import { MentalHealthStigma } from "./mental-health-stigma";
+import { MigrationPushPullModel } from "./migration-push-pull-model";
+import { MineralResourcesExtraction } from "./mineral-resources-extraction";
+import { MriCtXrayUltrasoundComparison } from "./mri-ct-xray-ultrasound-comparison";
+import { NationalParksHistoryNepal } from "./national-parks-history-nepal";
+import { NationalParksListNepal } from "./national-parks-list-nepal";
+import { NeonicotinoidPollinatorRisk } from "./neonicotinoid-pollinator-risk";
+import { NepalRedListExamples } from "./nepal-red-list-examples";
+import { NitrogenCycleHumanDisruption } from "./nitrogen-cycle-human-disruption";
+import { NoisePollutionDbScale } from "./noise-pollution-db-scale";
+import { NoiseThermalPollution } from "./noise-thermal-pollution";
+import { NuclearEnergyProsCons } from "./nuclear-energy-pros-cons";
+import { NuclearFissionReactor } from "./nuclear-fission-reactor";
+import { NutritionAdolescenceNeeds } from "./nutrition-adolescence-needs";
+import { ObesityBmiEpidemic } from "./obesity-bmi-epidemic";
+import { OneHealthApproach } from "./one-health-approach";
+import { OrganDonationTransplantImmunologyDetail } from "./organ-donation-transplant-immunology-detail";
+import { OrganTransplantImmunology } from "./organ-transplant-immunology";
+import { OrganicFarmingPrinciples } from "./organic-farming-principles";
+import { OrganicFarmingPrinciplesDetail } from "./organic-farming-principles-detail";
+import { OrganochlorinePersistence } from "./organochlorine-persistence";
+import { OrganophosphateNerveBlock } from "./organophosphate-nerve-block";
+import { OverexploitationBushmeat } from "./overexploitation-bushmeat";
+import { OzoneDepletionChemistry } from "./ozone-depletion-chemistry";
+import { OzoneHoleDiscovery } from "./ozone-hole-discovery";
+import { OzoneProtectionSuccess } from "./ozone-protection-success";
+import { PacemakersDefibrillators } from "./pacemakers-defibrillators";
+import { ParkCategoriesCompare } from "./park-categories-compare";
+import { ParksVsCommunityForests } from "./parks-vs-community-forests";
+import { ParticulateMatterSizes } from "./particulate-matter-sizes";
+import { PesticideLabelSafety } from "./pesticide-label-safety";
+import { PesticidePoisoningFirstAid } from "./pesticide-poisoning-first-aid";
+import { PesticideResidueWashing } from "./pesticide-residue-washing";
+import { PesticideVsBiopesticide } from "./pesticide-vs-biopesticide";
+import { PoachingEconomics } from "./poaching-economics";
+import { PollinationServicesBees } from "./pollination-services-bees";
+import { PopulationEcologyGrowthModels } from "./population-ecology-growth-models";
+import { PopulationGrowthCurvesDetail } from "./population-growth-curves-detail";
+import { PopulationGrowthCurvesShapes } from "./population-growth-curves-shapes";
+import { PopulationMomentum } from "./population-momentum";
+import { PopulationPyramidStages } from "./population-pyramid-stages";
+import { RachelCarsonSilentSpring } from "./rachel-carson-silent-spring";
+import { RadioactiveWasteDecayChain } from "./radioactive-waste-decay-chain";
+import { ReddPlusMechanism } from "./redd-plus-mechanism";
+import { ReflexArcSpeedMath } from "./reflex-arc-speed-math";
+import { ReflexVsInstinctLayers } from "./reflex-vs-instinct-layers";
+import { RemittanceEconomyNepal } from "./remittance-economy-nepal";
+import { RenewableSourcesComparison } from "./renewable-sources-comparison";
+import { ResistanceEvolutionSpray } from "./resistance-evolution-spray";
+import { ResourceScarcityConflicts } from "./resource-scarcity-conflicts";
+import { RhesusFactorPregnancy } from "./rhesus-factor-pregnancy";
+import { RhinoTranslocationSuccess } from "./rhino-translocation-success";
+import { RoadSafetyStatistics } from "./road-safety-statistics";
+import { SafeDrinkingWaterMethods } from "./safe-drinking-water-methods";
+import { SanitationToiletTypes } from "./sanitation-toilet-types";
+import { ScurvyRicketsDeficiency } from "./scurvy-rickets-deficiency";
+import { SeaLevelRiseMechanism } from "./sea-level-rise-mechanism";
+import { SewageTreatmentStagesDetail } from "./sewage-treatment-stages-detail";
+import { SewageTreatmentThreeStages } from "./sewage-treatment-three-stages";
+import { SexDeterminationMechanism } from "./sex-determination-mechanism";
+import { SexRatioSkewCauses } from "./sex-ratio-skew-causes";
+import { SickleCellMalariaBalance } from "./sickle-cell-malaria-balance";
+import { SlumsUrbanisationChallenge } from "./slums-urbanisation-challenge";
+import { SmogFormationChemistry } from "./smog-formation-chemistry";
+import { SmokingCessationSteps } from "./smoking-cessation-steps";
+import { SmokingOrganDamageMap } from "./smoking-organ-damage-map";
+import { SnakebiteFirstAidProtocol } from "./snakebite-first-aid-protocol";
+import { SoilPollutionRemediation } from "./soil-pollution-remediation";
+import { SolarHomeSystemsNepal } from "./solar-home-systems-nepal";
+import { SolarPvHowItWorks } from "./solar-pv-how-it-works";
+import { SolidWasteHierarchy } from "./solid-waste-hierarchy";
+import { SolidWasteSegregationBins } from "./solid-waste-segregation-bins";
+import { SpaceScienceApplications } from "./space-science-applications";
+import { SpaceScienceSpinoffs } from "./space-science-spinoffs";
+import { SpeciesAreaRule } from "./species-area-rule";
+import { SpeciesReintroductionPrograms } from "./species-reintroduction-programs";
+import { StemCellsTypesPotency } from "./stem-cells-types-potency";
+import { StreamlinedDragReduction } from "./streamlined-drag-reduction";
+import { StressResponseBiology } from "./stress-response-biology";
+import { SustainableDevelopmentGoals } from "./sustainable-development-goals";
+import { SwimBladderBuoyancy } from "./swim-bladder-buoyancy";
+import { TaxesKinesisContrast } from "./taxes-kinesis-contrast";
+import { TelemedicineRuralAccess } from "./telemedicine-rural-access";
+import { TestTubeBabyMilestones } from "./test-tube-baby-milestones";
+import { TestTubeBabyMilestonesDetail } from "./test-tube-baby-milestones-detail";
+import { ThalassemiaInheritance } from "./thalassemia-inheritance";
+import { ThreatAssessmentCriteria } from "./threat-assessment-criteria";
+import { TissueCultureMicropropagation } from "./tissue-culture-micropropagation";
+import { TissueCultureSteps } from "./tissue-culture-steps";
+import { TrophicCascadeWolvesYellowstone } from "./trophic-cascade-wolves-yellowstone";
+import { TuberculosisTransmissionCycle } from "./tuberculosis-transmission-cycle";
+import { TyphoidFeverTransmission } from "./typhoid-fever-transmission";
+import { UrbanAirPollutionSourcesKathmandu } from "./urban-air-pollution-sources-kathmandu";
+import { UrbanisationCausesConsequences } from "./urbanisation-causes-consequences";
+import { UrbanisationPressurePoints } from "./urbanisation-pressure-points";
+import { VaccineColdChain } from "./vaccine-cold-chain";
+import { VaccineHesitancyInfodemic } from "./vaccine-hesitancy-infodemic";
+import { VaccineTypesChart } from "./vaccine-types-chart";
+import { VitaminANightBlindness } from "./vitamin-a-night-blindness";
+import { VolantFlightAdaptations } from "./volant-flight-adaptations";
+import { VultureDiclofenacCrash } from "./vulture-diclofenac-crash";
+import { WasteToEnergyOptions } from "./waste-to-energy-options";
+import { WaterBorneWaterWashed } from "./water-borne-water-washed";
+import { WaterPurificationStepsHousehold } from "./water-purification-steps-household";
+import { WaterQualityParameters } from "./water-quality-parameters";
+import { WaterResourcesStress } from "./water-resources-stress";
+import { WetlandEcosystemServices } from "./wetland-ecosystem-services";
+import { WildlifeTradeRoutes } from "./wildlife-trade-routes";
+import { WindEnergyTurbines } from "./wind-energy-turbines";
+import { WomenEducationFertilityLink } from "./women-education-fertility-link";
+import { WormInfectionLifecycle } from "./worm-infection-lifecycle";
+import { ZoonoticSpillover } from "./zoonotic-spillover";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -925,6 +1173,181 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Every biomolecule is built and unbuilt by the same two moves: condensation joins monomers and releases water; hydrolysis splits polymers and spends water. Maltase, pepsin and lipase all run the second reaction in your gut.",
         alt: "Condensation joining monomers releasing water versus hydrolysis splitting polymer adding water",
         keyword: "hydrolysis",
+      },
+      {
+        Component: BalancedDietPlate,
+        caption:
+          "The plate as a pie chart: half vegetables and fruit, a quarter cereals, a quarter protein, plus dairy and water — the balanced diet is fractions, not fashion.",
+        alt: "Balanced diet plate proportions vegetables cereals protein",
+        keyword: "diet",
+      },
+      {
+        Component: CaseinProteinSources,
+        caption:
+          "Casein is the slow protein: about 80% of milk protein, it clots in stomach acid and drips amino acids for hours — the contrast with fast whey is why milk feeds overnight.",
+        alt: "Casein protein in milk slow digestion sources",
+        keyword: "casein",
+      },
+      {
+        Component: KwashiorkorMarasmusContrast,
+        caption:
+          "Two faces of starvation: kwashiorkor (protein-poor, oedema, fatty liver, the swollen belly) versus marasmus (total-calorie-poor, wasted, old-face) — deficiency type writes the symptom list.",
+        alt: "Kwashiorkor versus marasmus protein energy malnutrition contrast",
+        keyword: "kwashiorkor",
+      },
+      {
+        Component: ScurvyRicketsDeficiency,
+        caption:
+          "Two deficiency classics: scurvy (no vitamin C → collagen fails → bleeding gums, old-sailor's disease) and rickets (no vitamin D/calcium → soft bones, bowed legs) — both cured by a nutrient, not a drug.",
+        alt: "Scurvy and rickets vitamin C and D deficiency contrast",
+        keyword: "rickets",
+      },
+      {
+        Component: GoitreIodineDeficiency,
+        caption:
+          "Iodine's thin margin: too little and the thyroid swells into goitre, children lose IQ points (cretinism at the extreme) — iodised salt is the cheapest public-health intervention ever scaled.",
+        alt: "Goitre from iodine deficiency and iodised salt",
+        keyword: "goitre",
+      },
+      {
+        Component: AnaemiaIronDeficiency,
+        caption:
+          "Anaemia's arithmetic: iron sits in haem's centre, so iron shortage means fewer working red cells, pale skin and fatigue — adolescent girls and pregnant women carry the highest risk.",
+        alt: "Anaemia iron deficiency haemoglobin fatigue",
+        keyword: "anaemia",
+      },
+      {
+        Component: VitaminANightBlindness,
+        caption:
+          "Vitamin A's night shift: rhodopsin in retinal rods needs vitamin A, so deficiency shows first as night blindness and can end in keratomalacia — a red capsule prevents an avoidable blindness.",
+        alt: "Vitamin A deficiency night blindness rhodopsin",
+        keyword: "vitamin",
+      },
+      {
+        Component: NutritionAdolescenceNeeds,
+        caption:
+          "Adolescence is a nutrition surge: rapid growth raises iron, calcium and protein demands exactly when body image and busy schedules push them down — the mismatch shows up as anaemia and stunting.",
+        alt: "Adolescence nutrition needs iron calcium protein",
+        keyword: "mineral",
+      },
+      {
+        Component: ObesityBmiEpidemic,
+        caption:
+          "BMI in one line: weight (kg) ÷ height² (m²), with 25–30 overweight and above 30 obese — a crude but useful alarm for a problem now outpacing undernutrition worldwide.",
+        alt: "Obesity BMI calculation and epidemic",
+        keyword: "energy",
+      },
+      {
+        Component: DiabetesTypesContrast,
+        caption:
+          "Type 1 vs type 2: type 1 is autoimmune beta-cell loss needing insulin from day one; type 2 is insulin resistance, weight-linked and often manageable with diet, exercise and tablets.",
+        alt: "Diabetes type 1 versus type 2 contrast",
+        keyword: "insulin",
+      },
+      {
+        Component: DiabetesInsulinMechanism,
+        caption:
+          "Insulin's door-opener act: it binds receptors on muscle and fat cells, GLUT4 transporters move to the surface, glucose floods in and blood sugar falls — the mechanism type 2 resists.",
+        alt: "Insulin mechanism GLUT4 glucose uptake",
+        keyword: "insulin",
+      },
+      {
+        Component: HypertensionSilentKiller,
+        caption:
+          "Why hypertension is silent: 140/90 mmHg damages vessels for years without a symptom, until stroke, heart failure or kidney failure arrives — the reading you never take is the one that matters.",
+        alt: "Hypertension silent killer 140/90 complications",
+        keyword: "blood",
+      },
+      {
+        Component: BloodPressureReadingsChart,
+        caption:
+          "Read the two numbers: systole over diastole — 120/80 normal, 140/90 hypertensive, and the gap (pulse pressure) widens with stiff arteries; a cuff plus a chart is cardiovascular screening.",
+        alt: "Blood pressure readings chart systolic diastolic categories",
+        keyword: "blood",
+      },
+      {
+        Component: AlcoholLiverDamageStages,
+        caption:
+          "The liver's three-stage surrender: fatty liver (reversible) → alcoholic hepatitis (inflamed, painful) → cirrhosis (scarred, permanent) — the stages map neatly onto how long and how heavily one drinks.",
+        alt: "Alcohol liver damage stages fatty hepatitis cirrhosis",
+        keyword: "alcohol",
+      },
+      {
+        Component: AlcoholProhibitionLessons,
+        caption:
+          "Prohibition's report card: US alcohol ban (1920–33) cut drinking but built organised crime — Nepal's own alcohol debates echo it: demand persists, enforcement fails, regulation beats bans.",
+        alt: "Alcohol prohibition lessons from US history",
+        keyword: "alcohol",
+      },
+      {
+        Component: SmokingOrganDamageMap,
+        caption:
+          "Smoke's organ map: lungs (cancer, COPD), heart and blood vessels (atherosclerosis, clots), mouth and throat, bladder, pancreas, and the fetus through the placenta — one habit, a body-wide invoice.",
+        alt: "Smoking organ damage map lungs heart blood vessels",
+        keyword: "heart",
+      },
+      {
+        Component: SmokingCessationSteps,
+        caption:
+          "Quitting, staged: pick a date, expect nicotine withdrawal's two-week peak, use patches or gum for the cravings, and count the wins — 20 minutes to pulse recovery, a year to halved heart risk.",
+        alt: "Smoking cessation steps nicotine withdrawal timeline",
+        keyword: "heart",
+      },
+      {
+        Component: DrugAbuseTypesChart,
+        caption:
+          "The drug families: depressants (alcohol, opioids — slow the brain), stimulants (cocaine, amphetamine — rev it), hallucinogens (LSD — distort it), cannabis and inhalants — each with its own harm profile.",
+        alt: "Drug abuse types chart depressants stimulants hallucinogens",
+        keyword: "alcohol",
+      },
+      {
+        Component: DrugAddictionRewardLoop,
+        caption:
+          "Addiction hijacks a circuit: dopamine reward fires for survival behaviour; drugs fire it tenfold, the brain downshifts its own production, and ordinary joy stops registering — dependence, not weakness.",
+        alt: "Drug addiction reward loop dopamine hijack",
+        keyword: "hormone",
+      },
+      {
+        Component: StressResponseBiology,
+        caption:
+          "Stress in two axes: adrenaline in seconds (heart races, glucose floods) and cortisol in minutes (mobilises energy, suppresses immunity) — designed for escapes, harmful when the escape never comes.",
+        alt: "Stress response biology adrenaline cortisol axes",
+        keyword: "hormone",
+      },
+      {
+        Component: MentalHealthStigma,
+        caption:
+          "Stigma is a barrier with numbers: most mental disorders begin by the mid-teens, yet treatment lags years behind because shame delays help-seeking — naming depression a treatable illness is the first fix.",
+        alt: "Mental health stigma delaying treatment",
+        keyword: "mental",
+      },
+      {
+        Component: MentalHealthDepressionMyths,
+        caption:
+          "Myth vs fact: depression is not weakness, not laziness, not cured by willpower — it involves serotonin and stress circuits, responds to therapy and medication, and affects about one in twenty at any time.",
+        alt: "Mental health depression myths versus facts",
+        keyword: "mental",
+      },
+      {
+        Component: FoodAdulterationExamples,
+        caption:
+          "Adulteration's greatest hits: water in milk, brick dust in chilli, metanil yellow in turmeric, argemone in mustard oil — simple tests (iodine, dilute acid) expose most of them at home.",
+        alt: "Food adulteration examples and simple tests",
+        keyword: "food",
+      },
+      {
+        Component: BloodGroupsCompatibility,
+        caption:
+          "The compatibility grid: A gives to A and AB, O gives to all, AB receives all — and Rh− mothers need anti-D after an Rh+ baby; mismatched blood clots in the recipient's veins.",
+        alt: "Blood group compatibility ABO Rh grid",
+        keyword: "blood",
+      },
+      {
+        Component: RhesusFactorPregnancy,
+        caption:
+          "The Rh story: an Rh− mother sensitised by an Rh+ baby makes antibodies that attack the next baby's cells — anti-D immunoglobulin at 28 weeks and after birth breaks the cycle.",
+        alt: "Rhesus factor pregnancy anti-D immunoglobulin",
+        keyword: "blood",
       },
     ],
   },
@@ -1193,6 +1616,69 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Three-way comparison table of amitosis, mitosis and meiosis across six rows",
         keyword: "amitosis",
       },
+      {
+        Component: CancerCausesPrevention,
+        caption:
+          "Cancer is mitosis out of control: carcinogens mutate the checkpoint genes (oncogenes on, tumour suppressors off), clones expand, metastasis spreads — no single cause, so prevention stacks: no tobacco, vaccines, screens.",
+        alt: "Cancer causes carcinogens mutation and prevention",
+        keyword: "cancer",
+      },
+      {
+        Component: DownSyndromeTrisomy21,
+        caption:
+          "Trisomy 21 explained: non-disjunction in meiosis leaves an extra chromosome 21 — risk rises with maternal age, and the karyotype (47 chromosomes) is the diagnostic picture.",
+        alt: "Down syndrome trisomy 21 non-disjunction karyotype",
+        keyword: "trisomy",
+      },
+      {
+        Component: MendelDihybridRatioDetail,
+        caption:
+          "The 9:3:3:1 in detail: two heterozygous loci assort independently, the Punnett grid yields 9 round-yellow, 3 round-green, 3 wrinkled-yellow, 1 wrinkled-green — Mendel's second law in sixteen boxes.",
+        alt: "Mendel dihybrid cross 9:3:3:1 Punnett square detail",
+        keyword: "gene",
+      },
+      {
+        Component: SexDeterminationMechanism,
+        caption:
+          "The XX/XY coin toss: the mother's ovum always carries X; the father's sperm carries X or Y — SRY on the Y switches the embryonic gonads toward testes; sex is a sperm-level lottery.",
+        alt: "Sex determination XX XY mechanism SRY",
+        keyword: "chromosome",
+      },
+      {
+        Component: HaemophiliaInheritance,
+        caption:
+          "Haemophilia rides the X: a carrier mother (XᴴXʰ) passes the bleeding disorder to half her sons — queen-carrier pedigrees made this the textbook sex-linked cross.",
+        alt: "Haemophilia X-linked inheritance pedigree",
+        keyword: "gene",
+      },
+      {
+        Component: ColourBlindnessTest,
+        caption:
+          "Ishihara's hidden numbers: red-green colour blindness is X-linked (about 8% of men, 0.5% of women), and the dot-plate test turns a genotype into a five-second diagnosis.",
+        alt: "Colour blindness Ishihara test X-linked inheritance",
+        keyword: "gene",
+      },
+      {
+        Component: ThalassemiaInheritance,
+        caption:
+          "Thalassaemia's autosomal recessive maths: two carrier parents give a 1-in-4 affected child — in Nepal's Tharu and hill populations, carrier screening before marriage is the intervention.",
+        alt: "Thalassemia autosomal recessive inheritance carrier screening",
+        keyword: "gene",
+      },
+      {
+        Component: GeneticCounsellingSession,
+        caption:
+          "A counselling session, staged: pedigree drawn → risk calculated → options laid out (testing, prenatal diagnosis, none) → decision left to the family — the counsellor informs, never decides.",
+        alt: "Genetic counselling session pedigree risk options",
+        keyword: "karyotype",
+      },
+      {
+        Component: CancerHallmarks,
+        caption:
+          "Cancer's hallmarks in one panel: evades checkpoints, resists apoptosis, invites its own blood supply, ignores stop signals, replicates without limits and finally metastasises — mitosis with the brakes removed.",
+        alt: "Cancer hallmarks checkpoints apoptosis angiogenesis metastasis",
+        keyword: "cancer",
+      },
     ],
   },
   "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano": {
@@ -1289,6 +1775,34 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Bacterial growth conditions temperature pH moisture oxygen food preservation",
         keyword: "growth",
       },
+      {
+        Component: AntibioticMechanismTargets,
+        caption:
+          "Why antibiotics choose sides: they target bacterial 70S ribosomes, cell walls, DNA gyrase or folate synthesis — our 80S ribosomes and absent walls are why the bullets miss us.",
+        alt: "Antibiotic mechanism targets ribosomes cell wall folate",
+        keyword: "antibiotic",
+      },
+      {
+        Component: AntibioticOveruseLivestock,
+        caption:
+          "Antibiotics on the farm: routine low doses for growth promotion breed resistant gut bacteria that reach people through food, workers and water — the WHO now lists this among the top health threats.",
+        alt: "Antibiotic overuse in livestock breeding resistance",
+        keyword: "antibiotic",
+      },
+      {
+        Component: AntimicrobialResistanceTimeline,
+        caption:
+          "The resistance clock: penicillin (1928) resisted by the 1940s; each new class buys a decade or two — the pipeline is thinning while use widens, which is why stewardship is now a global emergency.",
+        alt: "Antimicrobial resistance timeline from penicillin onward",
+        keyword: "antibiotic",
+      },
+      {
+        Component: TuberculosisTransmissionCycle,
+        caption:
+          "TB's slow chain: airborne droplet nuclei from a cough → alveoli → latent pause (most people) → reactivation when immunity dips — the latent 25% is the world's reserve of future cases.",
+        alt: "Tuberculosis transmission cycle latent and active TB",
+        keyword: "tuberculosis",
+      },
     ],
   },
   "virus-general-introduction-structure-and-importance-of-virus-bacteriophage": {
@@ -1377,6 +1891,27 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Prions break the rule: infection with no nucleic acid at all — one misfolded protein templates the rest, surviving boiling and causing spongiform brain disease.",
         alt: "Prion misfolded protein conversion scrapie BSE CJD spongiform disease",
         keyword: "prion",
+      },
+      {
+        Component: HIVTransmissionRoutes,
+        caption:
+          "HIV travels by fluid, not by touch: unprotected sex, shared needles, mother-to-child at birth or breastfeeding — and not by mosquitoes, hugging or shared meals; the distinctions are the whole public-health message.",
+        alt: "HIV transmission routes and misconceptions",
+        keyword: "HIV",
+      },
+      {
+        Component: ImmunityTypesMap,
+        caption:
+          "Immunity's map: innate (skin, fever, phagocytes — from birth) versus adaptive (B-cell antibodies, T-cell killers — learned), active (your own response) versus passive (borrowed antibodies) — four quadrants.",
+        alt: "Immunity types map innate adaptive active passive",
+        keyword: "immune",
+      },
+      {
+        Component: AllergyMechanism,
+        caption:
+          "Allergy is immune overkill: a harmless antigen triggers IgE, mast cells release histamine, and vasodilation, itching and bronchospasm follow — anaphylaxis is the same cascade at full volume.",
+        alt: "Allergy mechanism IgE mast cells histamine anaphylaxis",
+        keyword: "immune",
       },
     ],
   },
@@ -1467,6 +2002,216 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Enzyme technology amylase protease lipase lactase industrial uses immobilised",
         keyword: "enzyme",
       },
+      {
+        Component: GeneticEngineeringInsulin,
+        caption:
+          "Insulin from a fermenter: the human insulin gene inserted into a plasmid, carried into E. coli, expressed, harvested and purified — the 1982 switch from pig pancreas to bacterial breweries.",
+        alt: "Genetic engineering of insulin in bacteria steps",
+        keyword: "insulin",
+      },
+      {
+        Component: GeneTherapyConcept,
+        caption:
+          "Gene therapy in one sentence: deliver a working copy of a broken gene with a vector (often a disabled virus) — approved for some immune defects and inherited blindness, still priced like a moonshot.",
+        alt: "Gene therapy concept vector delivering functional gene",
+        keyword: "therapy",
+      },
+      {
+        Component: CrisprMechanismSteps,
+        caption:
+          "CRISPR's three steps: guide RNA matches the target DNA, Cas9 cuts both strands, and repair or replacement follows — bacterial immunity repurposed into the cheapest editing tool in biology.",
+        alt: "CRISPR Cas9 mechanism steps guide RNA cut repair",
+        keyword: "crispr",
+      },
+      {
+        Component: GeneticEngineeringStepsDetail,
+        caption:
+          "Recombinant DNA, the full recipe: isolate the gene, cut with restriction enzymes, ligate into a vector, transform the host, select with markers, then screen, express and scale up.",
+        alt: "Genetic engineering steps restriction ligation transformation selection",
+        keyword: "recombinant",
+      },
+      {
+        Component: TissueCultureMicropropagation,
+        caption:
+          "Micropropagation's assembly line: explant → sterile medium with auxin and cytokinin → shoots → roots → hardening off — one orchid bud becomes a million identical plants in months.",
+        alt: "Tissue culture micropropagation stages explant to plantlet",
+        keyword: "culture",
+      },
+      {
+        Component: GmoDebateVerdicts,
+        caption:
+          "The GMO verdict sheet: Bt cotton and golden rice deliver real gains; gene flow, corporate seed lock-in and labelling demands are real costs — judge trait by trait, not slogan by slogan.",
+        alt: "GMO debate benefits and risks verdicts",
+        keyword: "gmo",
+      },
+      {
+        Component: CloningEthicsDebate,
+        caption:
+          "Cloning's two doors: reproductive cloning (Dolly, 1996 — inefficient and ethically blocked for humans) versus therapeutic cloning for stem cells — the same technique, two different moral ledgers.",
+        alt: "Cloning ethics reproductive versus therapeutic debate",
+        keyword: "clone",
+      },
+      {
+        Component: StemCellsTypesPotency,
+        caption:
+          "Stem cells by potency: totipotent (everything, from the first divisions), pluripotent (any tissue, from the blastocyst), multipotent (blood, skin) — potency is the whole ethical argument.",
+        alt: "Stem cell types potency totipotent pluripotent multipotent",
+        keyword: "stem",
+      },
+      {
+        Component: OrganDonationTransplantImmunologyDetail,
+        caption:
+          "Transplant immunology in one line: HLA mismatch triggers hyperacute, acute or chronic rejection, so matching plus lifelong immunosuppression is the price — infection risk traded for survival.",
+        alt: "Organ transplant immunology HLA matching rejection immunosuppression",
+        keyword: "organ",
+      },
+      {
+        Component: OrganTransplantImmunology,
+        caption:
+          "Why transplants reject: the recipient's T cells read donor HLA molecules as foreign — cross-matching, tissue typing and immunosuppressants like ciclosporin manage the standoff.",
+        alt: "Organ transplant rejection immunology HLA tissue typing",
+        keyword: "organ",
+      },
+      {
+        Component: PacemakersDefibrillators,
+        caption:
+          "Two machines, two jobs: a pacemaker paces a heart that beats too slowly; a defibrillator resets one that quivers — implantable versions now talk to phones and run a decade on one battery.",
+        alt: "Pacemakers and defibrillators roles comparison",
+        keyword: "medicine",
+      },
+      {
+        Component: MriCtXrayUltrasoundComparison,
+        caption:
+          "Four windows into the body: X-ray for bones, CT for fast 3-D slices, MRI for soft tissue without radiation, ultrasound for live motion and unborn children — each trades detail, speed and dose.",
+        alt: "MRI CT X-ray ultrasound imaging comparison",
+        keyword: "medicine",
+      },
+      {
+        Component: TelemedicineRuralAccess,
+        caption:
+          "Telemedicine closes distance: a phone camera, a rural health post and a specialist in Kathmandu — for Nepal's terrain, teleconsults are not a luxury but the only scalable specialist reach.",
+        alt: "Telemedicine rural access remote consultation",
+        keyword: "medicine",
+      },
+      {
+        Component: KidneyDialysisMachine,
+        caption:
+          "The dialysis machine is a kidney's understudy: blood passes a semipermeable membrane against dialysate, waste diffuses out, clean blood returns — three sessions a week substitutes for one organ.",
+        alt: "Kidney dialysis machine membrane dialysate diffusion",
+        keyword: "medicine",
+      },
+      {
+        Component: VaccineColdChain,
+        caption:
+          "The cold chain is the vaccine's lifeline: 2–8 °C from factory to arm, with ice-lined refrigerators, vaccine vial monitors and outreach plans — a broken link is a wasted dose and a missed child.",
+        alt: "Vaccine cold chain 2-8 degrees storage transport",
+        keyword: "vaccine",
+      },
+      {
+        Component: VaccineTypesChart,
+        caption:
+          "Vaccines by recipe: live-attenuated (measles, BCG), inactivated (rabies), toxoid (tetanus), subunit/conjugate (Hepatitis B, Hib) and mRNA — each trades effectiveness against stability and safety.",
+        alt: "Vaccine types live attenuated inactivated toxoid subunit mRNA",
+        keyword: "vaccine",
+      },
+      {
+        Component: ImmunisationVsVaccination,
+        caption:
+          "Vaccination vs immunisation: vaccination is the act (the jab), immunisation is the outcome (protection) — you can vaccinate without immunising if the cold chain or schedule fails.",
+        alt: "Vaccination versus immunisation distinction",
+        keyword: "vaccine",
+      },
+      {
+        Component: ImmunisationScheduleChart,
+        caption:
+          "Nepal's immunisation timetable: BCG and OPV at birth, pentavalent and PCV in the first months, measles-rubella at 9 and 12 months — a schedule is immunity engineering, not a suggestion.",
+        alt: "Immunisation schedule chart Nepal BCG OPV measles",
+        keyword: "vaccine",
+      },
+      {
+        Component: VaccineHesitancyInfodemic,
+        caption:
+          "Hesitancy's three Cs: complacency, convenience and confidence — the retracted autism myth outlived its paper, so empathy and trusted local messengers now matter more than data posters.",
+        alt: "Vaccine hesitancy 3Cs complacency convenience confidence",
+        keyword: "vaccine",
+      },
+      {
+        Component: BloodDonationCycle,
+        caption:
+          "The donation loop: a 450 ml unit, tested and separated into red cells, plasma and platelets, can serve three patients — red cells for anaemia, plasma for burns, platelets for dengue and cancer care.",
+        alt: "Blood donation cycle separation into components",
+        keyword: "blood",
+      },
+      {
+        Component: BloodDonationProcess,
+        caption:
+          "Donation, minute by minute: registration, haemoglobin and pressure checks, 8–10 minutes of collection, juice and rest — a healthy adult replaces the plasma in a day and the cells in weeks.",
+        alt: "Blood donation process steps registration to refreshments",
+        keyword: "blood",
+      },
+      {
+        Component: HippocraticOathEthics,
+        caption:
+          "The oath's four load-bearing beams: do no harm, benefit the patient, keep confidence, never exploit — modern bioethics adds autonomy, justice and informed consent to the same frame.",
+        alt: "Hippocratic oath ethics principles do no harm confidentiality",
+        keyword: "ethical",
+      },
+      {
+        Component: IvfEthicsSurplusEmbryos,
+        caption:
+          "IVF's surplus question: extra embryos from one cycle can be frozen, donated, used in research or discarded — each option is a different answer to 'when does moral status begin?'",
+        alt: "IVF ethics surplus embryo options freezing donation research",
+        keyword: "ethical",
+      },
+      {
+        Component: TestTubeBabyMilestonesDetail,
+        caption:
+          "From failure to routine: 1978's Louise Brown followed decades of scepticism; ICSI (1992) let one injected sperm overcome male infertility — IVF now accounts for a few percent of births in many countries.",
+        alt: "Test tube baby milestones Louise Brown ICSI IVF history",
+        keyword: "ethical",
+      },
+      {
+        Component: AmniocentesisEthics,
+        caption:
+          "Amniocentesis cuts both ways: it diagnoses chromosomal disorders at 15–18 weeks, and its misuse for sex selection is why Nepal bans disclosure of fetal sex — a test is never neutral.",
+        alt: "Amniocentesis ethics diagnosis versus sex selection ban",
+        keyword: "ethical",
+      },
+      {
+        Component: AmniocentesisChromosomeTest,
+        caption:
+          "What the amniotic fluid holds: fetal cells shed into the sample are karyotyped and tested — trisomy 21, thalassaemia and neural-tube markers (AFP) all readable from one 15 ml draw.",
+        alt: "Amniocentesis chromosome test karyotype procedure",
+        keyword: "test",
+      },
+      {
+        Component: AntibodyStructureYShape,
+        caption:
+          "The Y is the function: two heavy and two light chains form an antibody whose arms bind one antigen and whose stem calls the immune system — the shape that makes monoclonal antibody drugs possible.",
+        alt: "Antibody Y-shaped structure heavy light chains antigen binding",
+        keyword: "monoclonal",
+      },
+      {
+        Component: IVFStepsTimeline,
+        caption:
+          "IVF, step by step: hormonal stimulation → egg retrieval → sperm preparation → fertilisation in vitro → 3–5 day embryo culture → transfer or freeze — about two weeks per attempt.",
+        alt: "IVF steps timeline stimulation retrieval fertilisation transfer",
+        keyword: "in vitro",
+      },
+      {
+        Component: TestTubeBabyMilestones,
+        caption:
+          "Milestones of the test-tube era: Louise Brown (1978) proved it possible; ICSI (1992) overcame male infertility; today several percent of births in some countries begin in a dish.",
+        alt: "Test tube baby milestones Louise Brown 1978 ICSI 1992",
+        keyword: "in vitro",
+      },
+      {
+        Component: TissueCultureSteps,
+        caption:
+          "Tissue culture's five steps: select an explant, sterilise it, place it on nutrient medium with hormones, induce shoots then roots, and harden plantlets off — cloning a plant without seeds.",
+        alt: "Tissue culture steps explant sterilise medium hardening",
+        keyword: "tissue",
+      },
     ],
   },
   "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions": {
@@ -1521,6 +2266,20 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Competition niche overlap exclusion and resource partitioning",
         keyword: "competition",
       },
+      {
+        Component: EcosystemServicesCategories,
+        caption:
+          "Ecosystem services in four baskets: provisioning (food, timber), regulating (climate, flood), cultural (recreation, sacred sites) and supporting (soil, nutrient cycles) — the framework that prices a forest properly.",
+        alt: "Ecosystem services four categories provisioning regulating cultural supporting",
+        keyword: "ecosystem",
+      },
+      {
+        Component: PollinationServicesBees,
+        caption:
+          "Pollination is a service with a bill: about a third of food crops depend on animal pollinators, and bee declines carry a measurable yield cost — mutualism, monetised.",
+        alt: "Pollination services by bees and crop dependence",
+        keyword: "pollination",
+      },
     ],
   },
   "food-chain-food-web-trophic-level-ecological-pyramids-productivity": {
@@ -1574,6 +2333,13 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "A chain is fragile, a web is resilient: interwoven food paths give every species alternatives, so one missing link no longer starves the top.",
         alt: "Food web complexity resilience versus simple chain fragility",
         keyword: "web",
+      },
+      {
+        Component: TrophicCascadeWolvesYellowstone,
+        caption:
+          "The wolf rewrote Yellowstone: wolves → fewer elk → taller willows and aspen → songbirds, beavers and stabilised rivers — a trophic cascade is ecology's proof that predators are infrastructure.",
+        alt: "Trophic cascade of wolves in Yellowstone elk willows rivers",
+        keyword: "trophic",
       },
     ],
   },
@@ -1717,6 +2483,20 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Succession has a direction: biomass, diversity, soil and food-web length all rise — primary starts from bare rock, secondary from disturbed soil.",
         alt: "Succession direction trends and primary versus secondary",
         keyword: "sere",
+      },
+      {
+        Component: CarbonCycleReservoirsFluxes,
+        caption:
+          "Carbon's four reservoirs: atmosphere (~870 GtC), oceans (~38,000), soils and fossil deposits, and living biomass — photosynthesis and respiration balance the short-term fluxes; we are unbalancing the deep ones.",
+        alt: "Carbon cycle reservoirs atmosphere ocean soil biomass fluxes",
+        keyword: "carbon",
+      },
+      {
+        Component: NitrogenCycleHumanDisruption,
+        caption:
+          "We broke the nitrogen cycle: Haber-Bosch now fixes more nitrogen than all land plants, and the surplus runs off as eutrophication, N₂O warming and acid rain — fertiliser's fine print.",
+        alt: "Nitrogen cycle human disruption Haber-Bosch runoff",
+        keyword: "nitrogen",
       },
     ],
   },
@@ -1902,6 +2682,139 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "The imbalance cascade: CO₂ → temperature → ice and sea level → monsoon shift → failing crops — one push, and everything downstream moves.",
         alt: "Imbalance chain reaction climate cascade effects",
         keyword: "monsoon",
+      },
+      {
+        Component: ClimateChangeStrategies,
+        caption:
+          "Two strategies, one crisis: mitigation cuts emissions at the source (renewables, efficiency, forests), adaptation redesigns life around the change already locked in — Nepal needs both, because the Himalaya warms faster than the average.",
+        alt: "Climate change mitigation and adaptation strategies",
+        keyword: "climate",
+      },
+      {
+        Component: OzoneProtectionSuccess,
+        caption:
+          "The Montreal Protocol is environmentalism's best news: every nation signed, CFCs phased out, and the ozone hole is projected to heal near mid-century — proof that a global problem can meet a global answer.",
+        alt: "Montreal Protocol ozone layer recovery success",
+        keyword: "Montreal",
+      },
+      {
+        Component: GreenhouseEffectMechanism,
+        caption:
+          "The mechanism in three lines: sunlight passes in, the warm surface re-radiates infrared, greenhouse gases absorb and re-emit it downward — a blanket that works only because we keep thickening it.",
+        alt: "Greenhouse effect mechanism solar radiation infrared absorption",
+        keyword: "greenhouse",
+      },
+      {
+        Component: SeaLevelRiseMechanism,
+        caption:
+          "Two engines of sea-level rise: warming water expands (steric), and melting land ice adds mass — thermal expansion alone has already contributed more than many coastal planners assumed.",
+        alt: "Sea level rise mechanism thermal expansion and ice melt",
+        keyword: "sea",
+      },
+      {
+        Component: AcidRainBuildings,
+        caption:
+          "Acid rain eats marble: H₂SO₄ converts calcium carbonate into gypsum, which washes away — the Taj Mahal and Kathmandu's shrines wear the same chemical signature.",
+        alt: "Acid rain damage to marble buildings and statues",
+        keyword: "marble",
+      },
+      {
+        Component: AcidRainFormationChemistry,
+        caption:
+          "The chemistry of acid rain: SO₂ + H₂O → H₂SO₃ → H₂SO₄; NO₂ + H₂O → HNO₃ — sulfuric and nitric acids condensed on dust and droplets, delivered with the next shower.",
+        alt: "Acid rain formation chemistry SO2 NO2 to sulfuric nitric acid",
+        keyword: "acid",
+      },
+      {
+        Component: OzoneDepletionChemistry,
+        caption:
+          "One chlorine atom, a thousand holes: Cl + O₃ → ClO + O₂; ClO + O → Cl + O₂ — the catalyst regenerates, so a single CFC molecule destroys ozone for decades.",
+        alt: "Ozone depletion chemistry chlorine catalytic cycle",
+        keyword: "ozone",
+      },
+      {
+        Component: GreenhouseGasSourcesSectors,
+        caption:
+          "Where emissions come from: energy tops every chart, then industry, agriculture, transport and buildings — methane leaks from rice, ruminants and landfills make agriculture the surprise second column.",
+        alt: "Greenhouse gas sources by sector energy agriculture transport",
+        keyword: "warming",
+      },
+      {
+        Component: ClimateRefugeeDisplacement,
+        caption:
+          "Climate moves people: sea-level rise, drought, floods and glacial-lake outbursts displace millions — climate refugees are the migration story the twenty-first century will be measured by.",
+        alt: "Climate refugee displacement from sea level drought floods",
+        keyword: "warming",
+      },
+      {
+        Component: InvasiveSpeciesNepal,
+        caption:
+          "Biological invasion, Nepali edition: water hyacinth choking lakes, mikania smothering Chitwan's grasslands, argemone in fallows — the second-greatest extinction driver, arriving as an ornamental.",
+        alt: "Invasive alien species in Nepal water hyacinth mikania",
+        keyword: "invasion",
+      },
+      {
+        Component: RenewableSourcesComparison,
+        caption:
+          "The renewable scoreboard: hydro is Nepal's giant (tens of thousands of MW potential), solar is the fastest to install, wind is site-specific, biogas is rural gold — each has a capacity factor and a cost.",
+        alt: "Renewable energy sources comparison hydro solar wind biogas",
+        keyword: "renewable",
+      },
+      {
+        Component: EnergyConsumptionLadder,
+        caption:
+          "Energy use climbs with income: firewood → kerosene → LPG → electricity — the ladder's rungs are development's rungs, and each step up cuts indoor smoke but raises emissions.",
+        alt: "Energy consumption ladder firewood to electricity",
+        keyword: "energy",
+      },
+      {
+        Component: EnergyLadderDevelopment,
+        caption:
+          "Households climb the energy ladder as income allows: wood and dung indoors (smoke, deforestation) → kerosene → LPG and electricity — Nepal's LPG imports tell the climb's speed.",
+        alt: "Energy ladder of development household cooking fuels",
+        keyword: "energy",
+      },
+      {
+        Component: SolarHomeSystemsNepal,
+        caption:
+          "Solar home systems lit the off-grid hills: a panel, battery, controller and a few lamps replaced kerosene for hundreds of thousands of Nepali households before the grid arrived.",
+        alt: "Solar home systems in Nepal off-grid electrification",
+        keyword: "renewable",
+      },
+      {
+        Component: SolarPvHowItWorks,
+        caption:
+          "The photovoltaic effect: a photon knocks an electron across a silicon p-n junction, DC flows, an inverter makes it usable — no moving parts, no fuel, decades of output from one panel.",
+        alt: "Solar PV how it works photon silicon p-n junction",
+        keyword: "renewable",
+      },
+      {
+        Component: WindEnergyTurbines,
+        caption:
+          "Wind power's maths: output scales with the cube of wind speed, so siting is everything — Nepal's valleys are channellers, but turbulence and monsoon lulls set the limits.",
+        alt: "Wind energy turbines cubic power law siting",
+        keyword: "renewable",
+      },
+      {
+        Component: NuclearEnergyProsCons,
+        caption:
+          "Nuclear's ledger: one pellet ≈ a tonne of coal, near-zero carbon in operation — against waste that outlives civilisations, high build costs and rare but unforgettable accidents.",
+        alt: "Nuclear energy pros and cons waste carbon accidents",
+        keyword: "energy",
+      },
+      {
+        Component: NuclearFissionReactor,
+        caption:
+          "Inside the reactor: U-235 fissions, neutrons chain, control rods throttle, water carries heat to a turbine — the same steam cycle as coal, with a different fire.",
+        alt: "Nuclear fission reactor components chain reaction control rods",
+        keyword: "energy",
+      },
+      {
+        Component: FossilFuelFormationTimescales,
+        caption:
+          "Fossil fuel's timescale trap: coal from 300-million-year-old swamp forests, oil and gas from ancient marine plankton — we burn in decades what took geological ages to bank.",
+        alt: "Fossil fuel formation timescales coal oil gas",
+        keyword: "energy",
       },
     ],
   },
@@ -2190,6 +3103,27 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Malaria vaccine progress with RTS,S deployment milestones",
         keyword: "vaccine",
       },
+      {
+        Component: MalariaControlNepalProgress,
+        caption:
+          "Nepal's malaria scorecard: from tens of thousands of annual cases in the 1990s toward elimination, driven by LLIN nets, rapid diagnostics and artemisinin therapy — the district map now holds only low-risk pockets.",
+        alt: "Malaria control progress in Nepal nets diagnostics",
+        keyword: "malaria",
+      },
+      {
+        Component: DengueVectorControl,
+        caption:
+          "Dengue's vector rules: Aedes aegypti breeds in clean standing water in containers, bites by day, and its eggs survive drying — source reduction (empty the containers) beats fogging.",
+        alt: "Dengue vector control Aedes aegypti container breeding",
+        keyword: "mosquito",
+      },
+      {
+        Component: SickleCellMalariaBalance,
+        caption:
+          "The sickle-cell bargain: one copy of HbS distorts red cells but blocks Plasmodium, so in malarial regions the allele persists — balancing selection, the classic evolutionary trade-off.",
+        alt: "Sickle cell trait malaria resistance balancing selection",
+        keyword: "anaemia",
+      },
     ],
   },
   "animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals": {
@@ -2470,6 +3404,13 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "The hydrostatic skeleton: incompressible coelomic fluid turns muscle squeeze into shape change — circular muscles stretch the worm, longitudinal muscles shorten it, and the worm moves.",
         alt: "Earthworm hydrostatic skeleton with coelomic fluid and antagonistic muscles",
         keyword: "locomotion",
+      },
+      {
+        Component: EarthwormCastingsVermicompost,
+        caption:
+          "Castings are fertiliser: earthworm faeces are neutral, finely granulated and microbe-rich — vermicomposting turns the habit into an industry Darwin called agriculture's oldest plough.",
+        alt: "Earthworm castings vermicompost fertiliser value",
+        keyword: "vermicompost",
       },
     ],
   },
@@ -2985,6 +3926,13 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "What sets the clock: warm water and rich food speed development, crowding slows it — and a drying pond can rush tadpoles into early metamorphosis.",
         alt: "Frog development speed factors temperature food water level and crowding",
         keyword: "development",
+      },
+      {
+        Component: FrogParentalCareAbsence,
+        caption:
+          "No parents, thousands of eggs: frogs abandon the spawn because jelly coats, numbers and timing replace care — the trade-off between egg quantity and parental investment.",
+        alt: "Frog parental care absence many eggs strategy",
+        keyword: "tadpole",
       },
     ],
   },
@@ -4234,6 +5182,167 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Population change equation with natality mortality immigration and emigration",
         keyword: "change = (natality",
       },
+      {
+        Component: SwimBladderBuoyancy,
+        caption:
+          "The swim bladder as a buoyancy dial: a gas-filled sac tuned by the gas gland lets a fish hold depth without swimming effort — the neutral-buoyancy trick sharks never evolved.",
+        alt: "Fish swim bladder buoyancy adjustment with gas gland",
+        keyword: "buoyancy",
+      },
+      {
+        Component: GillBreathingWater,
+        caption:
+          "Gills solve water breathing: thin lamellae, a countercurrent blood flow and a huge surface area strip over 80% of the dissolved oxygen from water passing one way while blood flows the other.",
+        alt: "Fish gill lamellae with countercurrent exchange",
+        keyword: "gill",
+      },
+      {
+        Component: CursorialSpeedAdaptations,
+        caption:
+          "Built for speed: long limbs, reduced digits, digitigrade stance, a flexible spine and lightened bones — the cursorial package that turns muscle into metres per second.",
+        alt: "Cursorial running adaptations long limbs digitigrade stance",
+        keyword: "cursorial",
+      },
+      {
+        Component: FossorialDiggingToolkit,
+        caption:
+          "The digger's toolkit: powerful clawed forelimbs, a tapered head, reduced eyes, sensitive vibrissae and tolerance for low oxygen — life underground demands each one.",
+        alt: "Fossorial burrowing adaptations claws reduced eyes vibrissae",
+        keyword: "fossorial",
+      },
+      {
+        Component: ArborealGrippingAdaptations,
+        caption:
+          "Life in the canopy: opposable thumbs, prehensile tails, sharp curved claws, pads and binocular vision — gripping, judging distances and never falling are the arboreal job description.",
+        alt: "Arboreal climbing adaptations opposable thumbs prehensile tail",
+        keyword: "arboreal",
+      },
+      {
+        Component: VolantFlightAdaptations,
+        caption:
+          "The flight package: wings with an aerofoil shape, hollow pneumatic bones, a keeled sternum for flight muscles, air sacs through the body and a beak instead of heavy teeth.",
+        alt: "Volant flight adaptations wings pneumatic bones keeled sternum air sacs",
+        keyword: "volant",
+      },
+      {
+        Component: StreamlinedDragReduction,
+        caption:
+          "Drag is the enemy of motion: a streamlined teardrop profile, mucus or smooth plumage, and a shape that lets water or air part and rejoin — the same physics serves fish, dolphins and falcons.",
+        alt: "Streamlined body shape reducing drag in water and air",
+        keyword: "streamlined",
+      },
+      {
+        Component: DesertWaterEconomy,
+        caption:
+          "Desert life is an accounting problem: concentrated urine, dry faeces, nocturnal habits, concentrated milk and nasal water recovery — every drop spent must be earned back.",
+        alt: "Desert animal water economy adaptations concentrated urine nocturnal habits",
+        keyword: "desert",
+      },
+      {
+        Component: PopulationPyramidStages,
+        caption:
+          "Three pyramid shapes tell three stories: expansive (broad base, fast growth), stationary (near-zero growth) and constrictive (narrow base, ageing) — the census drawn as a picture.",
+        alt: "Population pyramid stages expansive stationary constrictive",
+        keyword: "natality",
+      },
+      {
+        Component: DemographicTransitionModel,
+        caption:
+          "The demographic transition: birth and death rates both start high, deaths fall first (stage 2 boom), births follow later (stage 3), and both settle low (stage 4) — development rewrites demography.",
+        alt: "Demographic transition model four stages birth death rates",
+        keyword: "mortality",
+      },
+      {
+        Component: PopulationGrowthCurvesDetail,
+        caption:
+          "Two curves, two futures: the J-shaped exponential curve ignores limits; the S-shaped logistic curve bends at carrying capacity (K) as resistance catches up with biotic potential.",
+        alt: "Exponential J and logistic S population growth curves with carrying capacity",
+        keyword: "density",
+      },
+      {
+        Component: PopulationMomentum,
+        caption:
+          "Population momentum: even after fertility reaches replacement level, growth continues for decades because the huge young cohorts of yesterday are today's parents — the pyramid's base becomes the engine.",
+        alt: "Population momentum young cohorts driving future growth",
+        keyword: "population",
+      },
+      {
+        Component: AgeingPopulationJapan,
+        caption:
+          "Japan's age structure in one stat: about 29% of its people are over 65 — the first nation to walk fully into stage 5, with shrinking workforces and rising care costs as the bill.",
+        alt: "Ageing population of Japan percentage over 65",
+        keyword: "population",
+      },
+      {
+        Component: PopulationGrowthCurvesShapes,
+        caption:
+          "J or S? Biotic potential (r) pushes the curve up; environmental resistance (food, space, disease, predators) bends it — which wins decides whether a population explodes or levels off.",
+        alt: "Population growth curve shapes J shaped and S shaped with resistance",
+        keyword: "growth",
+      },
+      {
+        Component: PopulationEcologyGrowthModels,
+        caption:
+          "The growth maths: dN/dt = rN for exponential, dN/dt = rN(1 − N/K) for logistic — one term, (1 − N/K), is all that separates boom from balance.",
+        alt: "Population growth models exponential and logistic equations",
+        keyword: "density",
+      },
+      {
+        Component: MigrationPushPullModel,
+        caption:
+          "Migration is push meeting pull: conflict, drought and landlessness push people out; jobs, safety and services pull them in — Nepal's remittance economy is this model running at national scale.",
+        alt: "Migration push and pull factors model",
+        keyword: "migration",
+      },
+      {
+        Component: SexRatioSkewCauses,
+        caption:
+          "Why sex ratios skew: son preference, sex-selective practices and male out-migration tilt Nepal's ratio — a demographic distortion with social consequences that last generations.",
+        alt: "Sex ratio skew causes son preference and migration",
+        keyword: "ratio",
+      },
+      {
+        Component: WomenEducationFertilityLink,
+        caption:
+          "The strongest contraceptive is a classroom: female literacy correlates with lower fertility everywhere — educated women marry later, choose family size and raise healthier children.",
+        alt: "Women education and fertility rate link",
+        keyword: "population",
+      },
+      {
+        Component: UrbanisationCausesConsequences,
+        caption:
+          "Urbanisation's engine and exhaust: rural push and urban pull fill cities, while housing, water, waste and traffic strain them — Kathmandu's growth is the case study in real time.",
+        alt: "Urbanisation causes and consequences push pull rural urban",
+        keyword: "population",
+      },
+      {
+        Component: UrbanisationPressurePoints,
+        caption:
+          "Where the city hurts: water supply, sewage, housing, air and traffic are the five pressure points every fast-growing city must fix — and every exam answer should name.",
+        alt: "Urbanisation pressure points water sewage housing air traffic",
+        keyword: "population",
+      },
+      {
+        Component: SlumsUrbanisationChallenge,
+        caption:
+          "Slums are urbanisation's invoice: informal housing, shared taps and insecure tenure house the workers a city needs but hasn't planned for — upgrading beats eviction, evidence says.",
+        alt: "Slums as urbanisation challenge informal housing",
+        keyword: "population",
+      },
+      {
+        Component: RemittanceEconomyNepal,
+        caption:
+          "Remittances are Nepal's hidden export: over a quarter of GDP arrives as money earned abroad — migration economics written in household budgets, from school fees to brick houses.",
+        alt: "Remittance economy of Nepal share of GDP from migrant workers",
+        keyword: "migration",
+      },
+      {
+        Component: DemographicTransitionModelStages,
+        caption:
+          "Five stages, one arc: high-stationary → early-expanding → late-expanding → low-stationary → declining — the demographic transition is development measured in birth and death rates.",
+        alt: "Demographic transition model five stages",
+        keyword: "mortality",
+      },
     ],
   },
   "animal-behavior-reflex-action-taxes-dominance-and-leadership": {
@@ -4273,6 +5382,48 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Two sources of behaviour: innate (genetically programmed, same in all members — reflexes, taxes, migration) versus learned (shaped by experience — habituation, imprinting, conditioning).",
         alt: "Innate versus learned behaviour comparison",
         keyword: "learned",
+      },
+      {
+        Component: ReflexVsInstinctLayers,
+        caption:
+          "Behaviour in layers: reflexes are wired and instant, instincts are inherited programmes, and learned behaviour is edited by experience — three floors of one building.",
+        alt: "Reflex instinct and learned behaviour layers",
+        keyword: "reflex",
+      },
+      {
+        Component: TaxesKinesisContrast,
+        caption:
+          "Taxis steers, kinesis scurries: directional movement toward or away from a stimulus versus random movement whose rate simply rises — moth to lamp (taxis), woodlice speeding up in the dry (kinesis).",
+        alt: "Taxes directional versus kinesis random movement contrast",
+        keyword: "kinesis",
+      },
+      {
+        Component: DominanceHierarchyPayoffs,
+        caption:
+          "The pecking order pays both ways: dominant animals win food and mates but pay in constant vigilance and fights; subordinates lose resources but escape injury — a stable truce, not a tyranny.",
+        alt: "Dominance hierarchy payoffs for alpha and subordinate animals",
+        keyword: "hierarchy",
+      },
+      {
+        Component: LeadershipWolfPack,
+        caption:
+          "Leadership is a job description: the alpha pair decides when to hunt and where to travel, but leadership in a wolf pack is coordination, not cruelty — the old 'alpha fight' story has been revised by field studies.",
+        alt: "Wolf pack leadership and coordination during hunt",
+        keyword: "leader",
+      },
+      {
+        Component: LearnedBehaviourStages,
+        caption:
+          "Learning has a ladder: habituation (ignoring the harmless), imprinting (the gosling's first hours), classical and operant conditioning, then insight — each rung adds flexibility.",
+        alt: "Learned behaviour stages habituation imprinting conditioning insight",
+        keyword: "behaviour",
+      },
+      {
+        Component: ReflexArcSpeedMath,
+        caption:
+          "Reflex speed, worked out: a 1-metre reflex pathway at nerve conduction speeds lands the knee-jerk at roughly 30–50 ms — the spinal cord's shortcut is worth every millisecond.",
+        alt: "Reflex arc speed calculation milliseconds",
+        keyword: "reflex",
       },
     ],
   },
@@ -4314,6 +5465,20 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Migration survival value genetic programming and precision",
         keyword: "genetically programmed",
       },
+      {
+        Component: FishMigrationReasons,
+        caption:
+          "Why fish migrate: spawning grounds, feeding grounds and wintering grounds are three different addresses — salmon run upstream to spawn, eels run to the sea, and the reasons are written in eggs and food.",
+        alt: "Fish migration reasons spawning feeding wintering grounds",
+        keyword: "migration",
+      },
+      {
+        Component: BirdMigrationNavigation,
+        caption:
+          "The Arctic tern's commute: about 70,000 km a year between poles, navigated by sun compass, star patterns, magnetite and landmarks — the longest migration in the animal kingdom.",
+        alt: "Bird migration navigation sun compass stars magnetite Arctic tern",
+        keyword: "navigation",
+      },
     ],
   },
   "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution": {
@@ -4354,6 +5519,300 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Soil erosion control measures in Nepal",
         keyword: "check dam",
       },
+      {
+        Component: SmogFormationChemistry,
+        caption:
+          "Photochemical smog, step by step: NO₂ + sunlight → NO + O; O + O₂ → O₃; hydrocarbons + O₃ → PAN — London's grey smog and Los Angeles' brown smog are two different chemistries.",
+        alt: "Photochemical smog formation chemistry NO2 ozone PAN",
+        keyword: "smog",
+      },
+      {
+        Component: AcidRainDamagePath,
+        caption:
+          "The acid rain damage path: SO₂ and NOx dissolve into H₂SO₄ and HNO₃, acidify lakes below pH 5, leach soil calcium, mobilise toxic aluminium and dissolve marble statues.",
+        alt: "Acid rain damage path from emissions to lakes soil and buildings",
+        keyword: "acid",
+      },
+      {
+        Component: EutrophicationAlgalCycle,
+        caption:
+          "Eutrophication's deadly loop: fertiliser runoff feeds an algal bloom, the bloom dies, decomposers strip the dissolved oxygen, fish suffocate — the lake chokes on its own feast.",
+        alt: "Eutrophication algal bloom decomposition oxygen depletion cycle",
+        keyword: "eutrophication",
+      },
+      {
+        Component: SewageTreatmentStagesDetail,
+        caption:
+          "Sewage treatment in three acts: primary settling removes solids, secondary aeration lets microbes eat the dissolved waste, tertiary polishing strips nutrients — BOD falls at every stage.",
+        alt: "Sewage treatment stages primary secondary tertiary with BOD",
+        keyword: "sewage",
+      },
+      {
+        Component: ParticulateMatterSizes,
+        caption:
+          "Size decides fate: PM₁₀ lodges in the airways, PM₂.₅ crosses into the bloodstream and reaches the heart and brain — the smaller the particle, the deeper the damage.",
+        alt: "Particulate matter sizes PM10 PM2.5 penetration into lungs",
+        keyword: "particulate",
+      },
+      {
+        Component: LeadPoisoningSources,
+        caption:
+          "Lead's quiet routes: petrol exhaust (now phased out), old paint, batteries, pipes and glazed pottery — lead damages the developing brain before any symptom shows.",
+        alt: "Lead poisoning sources petrol paint batteries pipes",
+        keyword: "lead",
+      },
+      {
+        Component: GreenhouseGasLadder,
+        caption:
+          "The greenhouse ladder: CO₂ leads by volume, methane warms 28× per molecule, N₂O 265×, CFCs thousands× — potency and abundance are different rungs of the same ladder.",
+        alt: "Greenhouse gas ladder CO2 methane N2O CFC warming potentials",
+        keyword: "greenhouse",
+      },
+      {
+        Component: SoilPollutionRemediation,
+        caption:
+          "Cleaning poisoned soil: remove and dump, cap and seal, wash the soil, or let plants and microbes do it — phytoremediation and bioremediation are the gentle ends of the toolkit.",
+        alt: "Soil pollution remediation methods phytoremediation bioremediation",
+        keyword: "soil",
+      },
+      {
+        Component: NoiseThermalPollution,
+        caption:
+          "The forgotten pollutants: noise above 85 dB damages hearing permanently, and thermal discharge from power plants drops dissolved oxygen — pollution is not always a chemical.",
+        alt: "Noise and thermal pollution effects decibel scale dissolved oxygen",
+        keyword: "thermal",
+      },
+      {
+        Component: KathmanduValleyAirQuality,
+        caption:
+          "Kathmandu's air, decoded: vehicle exhaust, brick kilns, road dust and winter inversion trap the valley's PM in a bowl — the geography makes the pollution worse, not just the sources.",
+        alt: "Kathmandu valley air quality sources and inversion",
+        keyword: "kathmandu",
+      },
+      {
+        Component: RadioactiveWasteDecayChain,
+        caption:
+          "Radioactive waste keeps its own calendar: half-lives from days to millennia mean storage must outlast nations — decay chains from uranium through radon show why containment is forever.",
+        alt: "Radioactive waste decay chain and half lives",
+        keyword: "radiation",
+      },
+      {
+        Component: WaterQualityParameters,
+        caption:
+          "Reading a river in numbers: dissolved oxygen above 5 mg/L, BOD low, pH near 7, coliform absent — four readings that turn 'clean' from an opinion into a measurement.",
+        alt: "Water quality parameters dissolved oxygen BOD pH coliform",
+        keyword: "water",
+      },
+      {
+        Component: OzoneHoleDiscovery,
+        caption:
+          "The hole that was almost missed: Farman's 1985 Antarctic data revealed CFC-driven ozone collapse — a ground-based measurement that rewrote global chemical policy.",
+        alt: "Ozone hole discovery Antarctic measurements CFCs",
+        keyword: "ozone",
+      },
+      {
+        Component: SolidWasteHierarchy,
+        caption:
+          "The waste hierarchy in order: reduce, reuse, recycle, recover (energy), and only then dispose — every step up the ladder saves money, energy and land.",
+        alt: "Solid waste management hierarchy reduce reuse recycle recover dispose",
+        keyword: "waste",
+      },
+      {
+        Component: EWasteHeavyMetalFlow,
+        caption:
+          "E-waste anatomy: circuit boards carry lead and mercury, batteries carry cadmium, screens carry barium — informal burning releases them into ash, air and rivers.",
+        alt: "E-waste heavy metal flow from devices to environment",
+        keyword: "heavy",
+      },
+      {
+        Component: BioaccumulationVsBiodegradation,
+        caption:
+          "Two fates of a pollutant: bioaccumulation concentrates it up the food chain (mercury in tuna); biodegradation breaks it down (oil-eating bacteria) — persistence decides which story a chemical gets.",
+        alt: "Bioaccumulation versus biodegradation of pollutants",
+        keyword: "BOD",
+      },
+      {
+        Component: CholeraPandemicHistory,
+        caption:
+          "Cholera's map changed medicine: John Snow's 1854 Broad Street pump investigation founded epidemiology, and ORS — a sugar-salt sachet — became the cheapest life-saver in history.",
+        alt: "Cholera pandemics history John Snow water pump ORS",
+        keyword: "cholera",
+      },
+      {
+        Component: TyphoidFeverTransmission,
+        caption:
+          "Typhoid's chain: Salmonella typhi in faeces-contaminated water and food, carriers like the famous 'Typhoid Mary' who spread it symptom-free — the case for safe water and carrier screening.",
+        alt: "Typhoid fever transmission chain and carrier",
+        keyword: "typhoid",
+      },
+      {
+        Component: SafeDrinkingWaterMethods,
+        caption:
+          "Making water safe, cheapest first: boiling, chlorination, solar disinfection (SODIS), ceramic and biosand filters — each method trades cost, speed and volume; boiling wins for one cup, chlorination for a village.",
+        alt: "Safe drinking water methods boiling chlorination SODIS filters",
+        keyword: "water",
+      },
+      {
+        Component: WaterPurificationStepsHousehold,
+        caption:
+          "Household purification in order: sediment (let it settle), filtration (cloth or ceramic), disinfection (boil, chlorine, sun) and safe storage — skip a step and the last one fails.",
+        alt: "Household water purification steps sedimentation filtration disinfection storage",
+        keyword: "water",
+      },
+      {
+        Component: WaterBorneWaterWashed,
+        caption:
+          "Two water diseases, two fixes: waterborne cholera needs clean water; water-washed trachoma and scabies need enough water for washing — more water, not cleaner water, is the second cure.",
+        alt: "Water-borne versus water-washed diseases cholera trachoma",
+        keyword: "water",
+      },
+      {
+        Component: SanitationToiletTypes,
+        caption:
+          "The toilet ladder: open defecation → simple pit → improved pit with slab → pour-flush with water seal → sewerage — each rung blocks a different disease route.",
+        alt: "Sanitation toilet types ladder from pit latrine to sewerage",
+        keyword: "sanitation",
+      },
+      {
+        Component: LatrineTypesSanitationLadder,
+        caption:
+          "Latrine anatomy matters: a water seal blocks flies and smell, a lined pit protects groundwater, ventilation improves use — the simple design details that decide whether a latrine actually protects.",
+        alt: "Latrine types sanitation design water seal pit lining",
+        keyword: "sanitation",
+      },
+      {
+        Component: HandwashingCriticalMoments,
+        caption:
+          "Handwashing's four critical moments: after the toilet, before cooking, before eating, after handling a child's waste — soap at these moments cuts diarrhoeal disease by about a third.",
+        alt: "Handwashing critical moments soap disease prevention",
+        keyword: "disease",
+      },
+      {
+        Component: CommunicableVsNonCommunicable,
+        caption:
+          "Nepal's double burden: communicable diseases (typhoid, TB, dengue) still dominate rural areas while non-communicable diseases (diabetes, heart disease, cancer) rise in cities — two epidemics, one health system.",
+        alt: "Communicable versus non-communicable diseases double burden",
+        keyword: "disease",
+      },
+      {
+        Component: CommunityHealthWorkers,
+        caption:
+          "The last-mile workforce: female community health volunteers (FCHVs) deliver ORS, antenatal advice and immunisation reminders door to door — Nepal's child-survival gains have their names on them.",
+        alt: "Community health workers FCHV last mile healthcare",
+        keyword: "disease",
+      },
+      {
+        Component: FirstAidABCPriorities,
+        caption:
+          "First aid's order is the alphabet: Airway, then Breathing, then Circulation — a blocked airway kills in minutes, bleeding in tens of minutes; the order is not negotiable.",
+        alt: "First aid ABC priorities airway breathing circulation",
+        keyword: "first",
+      },
+      {
+        Component: SnakebiteFirstAidProtocol,
+        caption:
+          "Snakebite do's and don'ts: immobilise the limb, keep it below heart level, get to hospital for antivenom — do NOT cut, suck, tourniquet or apply ice; those make it worse.",
+        alt: "Snakebite first aid protocol dos and donts antivenom",
+        keyword: "first",
+      },
+      {
+        Component: SewageTreatmentThreeStages,
+        caption:
+          "Three stages, one target: primary (settling removes ~60% of solids), secondary (aeration + microbes strip most BOD), tertiary (nutrient and pathogen polishing) — the minimum recipe for a clean outfall.",
+        alt: "Sewage treatment three stages primary secondary tertiary",
+        keyword: "sewage",
+      },
+      {
+        Component: SolidWasteSegregationBins,
+        caption:
+          "Segregation is the master switch: wet (compostable), dry (recyclable) and hazardous (batteries, tubes, sharps) — a city that separates at source recycles twice as much at half the cost.",
+        alt: "Solid waste segregation bins wet dry hazardous",
+        keyword: "waste",
+      },
+      {
+        Component: CompostingProcessStages,
+        caption:
+          "Composting's cast list: greens (nitrogen) + browns (carbon) + air + moisture → mesophilic warm-up → thermophilic 55–65 °C kill of pathogens → cooling and maturation — six weeks to black gold.",
+        alt: "Composting process stages greens browns thermophilic maturation",
+        keyword: "waste",
+      },
+      {
+        Component: WasteToEnergyOptions,
+        caption:
+          "Waste to energy, ranked: biogas from wet waste is cleanest; incineration with strict filters comes next; open burning is the disaster option — the technology must match the waste stream.",
+        alt: "Waste to energy options biogas incineration ranking",
+        keyword: "waste",
+      },
+      {
+        Component: AirQualityIndexReading,
+        caption:
+          "Reading an AQI number: 0–50 good, 51–100 moderate, 101–200 unhealthy for sensitive groups, above 300 hazardous — and Kathmandu's winter readings regularly cross the line where masks matter.",
+        alt: "Air quality index reading bands and meaning",
+        keyword: "air",
+      },
+      {
+        Component: UrbanAirPollutionSourcesKathmandu,
+        caption:
+          "Kathmandu's source stack: vehicles (especially old diesel), brick kilns, road dust, open burning and winter inversion — a bowl-shaped valley holding its own smoke.",
+        alt: "Urban air pollution sources in Kathmandu valley",
+        keyword: "kathmandu",
+      },
+      {
+        Component: NoisePollutionDbScale,
+        caption:
+          "The decibel ladder: 30 dB quiet bedroom, 60 dB conversation, 85 dB hearing-damage threshold, 120 dB jet pain — and horn-happy city streets sit uncomfortably high on it.",
+        alt: "Noise pollution decibel scale thresholds",
+        keyword: "pollution",
+      },
+      {
+        Component: EnvironmentalLegislationNepal,
+        caption:
+          "Nepal's legal shield: the Environment Protection Act, vehicle emission standards, EIA requirements for big projects and constitutional rights to a clean environment — the paper exists; enforcement is the exam question.",
+        alt: "Environmental legislation in Nepal Protection Act EIA",
+        keyword: "act",
+      },
+      {
+        Component: GroundwaterArsenicTerai,
+        caption:
+          "Terai's hidden poison: arsenic from natural sediments contaminates shallow tubewells across the plains — deep wells and tested filters are the escape; the well sticker tells the story.",
+        alt: "Groundwater arsenic contamination in Terai tubewells",
+        keyword: "arsenic",
+      },
+      {
+        Component: EWasteCompositionHazards,
+        caption:
+          "What is inside your phone: lead in solder, mercury in backlights, cadmium in batteries, brominated flame retardants in cases — a computer's worth of toxins in every discarded device.",
+        alt: "E-waste composition lead mercury cadmium flame retardants",
+        keyword: "waste",
+      },
+      {
+        Component: WormInfectionLifecycle,
+        caption:
+          "The roundworm route: eggs in soil from untreated faeces → contaminated hands or vegetables → intestine → adult worms shedding thousands of eggs a day — deworming tablets break the cycle twice a year.",
+        alt: "Worm infection lifecycle Ascaris soil to intestine deworming",
+        keyword: "water",
+      },
+      {
+        Component: ZoonoticSpillover,
+        caption:
+          "How zoonoses jump: wildlife reservoir → contact at the edge (farms, markets, hunting) → human adaptation → spread — rabies, bird flu and COVID-19 all followed this script.",
+        alt: "Zoonotic spillover from wildlife reservoirs to humans",
+        keyword: "disease",
+      },
+      {
+        Component: OneHealthApproach,
+        caption:
+          "One Health in practice: human, animal and environmental health as one system — rabies control vaccinates dogs, pandemic preparedness watches wildlife markets, antimicrobial resistance spans all three.",
+        alt: "One Health approach human animal environmental",
+        keyword: "disease",
+      },
+      {
+        Component: RoadSafetyStatistics,
+        caption:
+          "Roads as a health hazard: Nepal's highways record thousands of deaths a year, with speeding, overloaded buses and mountain roads the recurring causes — helmets, seatbelts and speed limits are biology too.",
+        alt: "Road safety statistics accidents prevention",
+        keyword: "vehicle",
+      },
     ],
   },
   "pesticides-and-their-effects": {
@@ -4393,6 +5852,111 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Integrated Pest Management: tolerant varieties, crop rotation, biological control (ladybird beetles, Bacillus thuringiensis), pheromone traps — chemicals only as a last resort at the economic threshold.",
         alt: "IPM strategy components with chemical last resort",
         keyword: "integrated pest management",
+      },
+      {
+        Component: OrganochlorinePersistence,
+        caption:
+          "Organochlorines never leave: DDT's half-life runs to decades, so it persists in soil, dissolves into fat and biomagnifies — persistence was the property that made it famous and infamous.",
+        alt: "Organochlorine DDT persistence and biomagnification",
+        keyword: "organochlorine",
+      },
+      {
+        Component: OrganophosphateNerveBlock,
+        caption:
+          "The nerve block: organophosphates inhibit acetylcholinesterase, so acetylcholine floods the synapse and muscles contract without pause — the same chemistry as nerve gas, diluted.",
+        alt: "Organophosphate inhibition of acetylcholinesterase at synapse",
+        keyword: "insecticide",
+      },
+      {
+        Component: CarbamatePyrethroidContrast,
+        caption:
+          "Carbamate vs pyrethroid: both hit the nervous system, but carbamates block acetylcholinesterase reversibly while pyrethroids hold sodium channels open — different locks, similar paralysis.",
+        alt: "Carbamate versus pyrethroid mode of action contrast",
+        keyword: "pesticide",
+      },
+      {
+        Component: HerbicideCropSelectivity,
+        caption:
+          "Selective weedkillers: 2,4-D mimics auxin and kills broad-leaved dicots while cereal monocots shrug — selectivity is chemistry, not luck, and it decided the shape of modern farming.",
+        alt: "Herbicide selectivity 2,4-D dicot versus monocot",
+        keyword: "herbicide",
+      },
+      {
+        Component: ResistanceEvolutionSpray,
+        caption:
+          "Resistance is evolution at spray speed: each application kills the susceptible and spares the resistant, so the population re-sprays itself into futility within generations.",
+        alt: "Pesticide resistance evolution under repeated spraying",
+        keyword: "resistance",
+      },
+      {
+        Component: BioaccumulationTrophicLadder,
+        caption:
+          "The trophic ladder concentrates poison: water at 0.000003 ppm → plankton → fish → fish-eating birds at 25 ppm — biomagnification multiplies DDT a million-fold up the chain.",
+        alt: "Biomagnification trophic ladder DDT concentrations",
+        keyword: "biomagnification",
+      },
+      {
+        Component: IPMStepsLadder,
+        caption:
+          "IPM climbs before it sprays: cultural control, biological control, resistant varieties, pheromone traps — chemicals are the last rung, used at the economic threshold only.",
+        alt: "Integrated pest management steps ladder",
+        keyword: "IPM",
+      },
+      {
+        Component: PesticideLabelSafety,
+        caption:
+          "The label is the manual: dose, interval, protective gear, waiting period before harvest — most pesticide accidents are label violations, not chemistry surprises.",
+        alt: "Pesticide label safety instructions dose protective gear",
+        keyword: "label",
+      },
+      {
+        Component: RachelCarsonSilentSpring,
+        caption:
+          "One book changed the law: Rachel Carson's Silent Spring (1962) traced DDT through food chains to thin eggshells — and seeded the environmental movement and the EPA.",
+        alt: "Rachel Carson Silent Spring book impact on pesticide policy",
+        keyword: "DDT",
+      },
+      {
+        Component: NeonicotinoidPollinatorRisk,
+        caption:
+          "Neonicotinoids and the bees: systemic insecticides ride nectar to the hive, scrambling bee navigation — pollination services worth billions hang on this debate.",
+        alt: "Neonicotinoid effects on bee pollinators",
+        keyword: "pollinator",
+      },
+      {
+        Component: AntibioticResistanceFarms,
+        caption:
+          "Farms as resistance factories: routine low-dose antibiotics in livestock breed resistant bacteria that jump to people — one reason doctors now beg farmers to stop growth-promotion doses.",
+        alt: "Antibiotic resistance from livestock farms to humans",
+        keyword: "antibiotic",
+      },
+      {
+        Component: BiologicalControlCaseStudies,
+        caption:
+          "Biological control's hall of fame: ladybirds against aphids, Bacillus thuringiensis against caterpillars, Trichoderma against fungi — predators and pathogens as pesticides.",
+        alt: "Biological control case studies ladybird BT Trichoderma",
+        keyword: "control",
+      },
+      {
+        Component: PesticideVsBiopesticide,
+        caption:
+          "Synthetic vs biopesticide: synthetics act fast but persist and select for resistance; biopesticides (neem, Bt, pheromones) are narrower, gentler and resistance-friendly — the trade-off is speed.",
+        alt: "Synthetic pesticide versus biopesticide comparison",
+        keyword: "pesticide",
+      },
+      {
+        Component: PesticidePoisoningFirstAid,
+        caption:
+          "Poisoning first aid: move the victim from the source, remove contaminated clothing, wash skin, keep airway clear — and never induce vomiting for petroleum-based products.",
+        alt: "Pesticide poisoning first aid steps",
+        keyword: "poisoning",
+      },
+      {
+        Component: PesticideResidueWashing,
+        caption:
+          "Residue on the plate: washing removes surface pesticide, peeling removes systemic residues poorly — cooking helps for some compounds, never for all; the label's waiting period is the real control.",
+        alt: "Pesticide residue removal washing peeling cooking",
+        keyword: "washing",
       },
     ],
   },
@@ -4435,6 +5999,146 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Why biodiversity matters ecosystem services food medicine aesthetic",
         keyword: "ecosystem services",
       },
+      {
+        Component: BiodiversityLevelsTrio,
+        caption:
+          "Biodiversity in three layers: genetic diversity within a population, species diversity in a community, ecosystem diversity across a landscape — lose one layer and the others wobble.",
+        alt: "Biodiversity three levels genetic species ecosystem",
+        keyword: "biodiversity",
+      },
+      {
+        Component: BiodiversityValueLedger,
+        caption:
+          "The value ledger: direct use (food, timber, medicine), indirect use (climate, water, pollination), option value (future drugs) and existence value — biodiversity is an asset with four columns.",
+        alt: "Biodiversity values direct indirect option existence",
+        keyword: "value",
+      },
+      {
+        Component: HotspotCriteriaMap,
+        caption:
+          "Hotspot maths: at least 1,500 endemic plant species plus 70% habitat lost — both conditions must hold; the Himalaya qualifies, which makes Nepal a shareholder in a global emergency.",
+        alt: "Biodiversity hotspot criteria endemic plants and habitat loss",
+        keyword: "hotspot",
+      },
+      {
+        Component: SpeciesAreaRule,
+        caption:
+          "The species–area rule: S = cA^z — halve the habitat and species richness does not halve, it collapses along a power curve; the maths behind every habitat-loss warning.",
+        alt: "Species area relationship curve S = cA^z",
+        keyword: "area",
+      },
+      {
+        Component: FlagshipUmbrellaSpecies,
+        caption:
+          "Flagship, umbrella, keystone: the tiger raises funds (flagship), its large reserve shelters lesser species (umbrella), and its removal rewrites the food web (keystone) — three roles, one animal.",
+        alt: "Flagship umbrella and keystone species roles of tiger",
+        keyword: "species",
+      },
+      {
+        Component: AlienInvasionPathways,
+        caption:
+          "How aliens arrive: ornamental planting, aquaculture, shipping ballast, pets released, hitchhiking produce — invasive species ride every trade route humans open.",
+        alt: "Alien invasive species introduction pathways",
+        keyword: "alien",
+      },
+      {
+        Component: ExtinctionDebtCascade,
+        caption:
+          "Extinction debt: habitat loss today bills species that will vanish decades later — the walking dead of fragmented forests, already doomed but not yet gone.",
+        alt: "Extinction debt cascade after habitat loss",
+        keyword: "extinction",
+      },
+      {
+        Component: OverexploitationBushmeat,
+        caption:
+          "Overexploitation's empty forest: bushmeat hunting, illegal timber and wildlife trade empty forests faster than habitat loss fills them — the forest looks intact and sounds silent.",
+        alt: "Overexploitation bushmeat hunting and wildlife trade",
+        keyword: "overexploitation",
+      },
+      {
+        Component: EcologicalFootprintCalculation,
+        caption:
+          "The footprint's arithmetic: how many hectares of biologically productive land and sea does one lifestyle demand? — when humanity's total exceeds Earth's biocapacity, we are drawing down the principal.",
+        alt: "Ecological footprint calculation hectares biocapacity",
+        keyword: "sustainable",
+      },
+      {
+        Component: EcologicalFootprintComponents,
+        caption:
+          "What goes into a footprint: food, housing, transport, goods, services — each converted into global hectares; diet and travel are the two levers an individual actually holds.",
+        alt: "Ecological footprint components food housing transport goods",
+        keyword: "ecosystem",
+      },
+      {
+        Component: EarthOvershootDay,
+        caption:
+          "Earth Overshoot Day: the date each year when consumption passes the planet's annual regeneration — it has moved from late December in the 1970s into July and August.",
+        alt: "Earth overshoot day date moving earlier",
+        keyword: "sustainable",
+      },
+      {
+        Component: CarbonFootprintReductionActions,
+        caption:
+          "Cutting carbon, ranked: fly less, eat less meat, electrify heating and transport, insulate homes, plant and protect forests — the biggest levers are the least advertised ones.",
+        alt: "Carbon footprint reduction actions ranked",
+        keyword: "forest",
+      },
+      {
+        Component: CircularEconomyModel,
+        caption:
+          "Linear vs circular: take-make-waste ends in a landfill; the circular loop designs out waste — repair, remanufacture, recycle — so materials orbit the economy instead of falling off it.",
+        alt: "Circular economy model linear versus circular loops",
+        keyword: "sustainable",
+      },
+      {
+        Component: GreenAccountingGdpCritique,
+        caption:
+          "GDP's blind spot: a felled forest raises GDP twice (timber sold, cleanup paid) while subtracting nothing — green accounting subtracts natural-capital depreciation to show the real balance.",
+        alt: "Green accounting GDP critique natural capital",
+        keyword: "value",
+      },
+      {
+        Component: EnvironmentalEthicsWorldviews,
+        caption:
+          "Three worldviews, one planet: anthropocentrism (nature serves people), biocentrism (every living thing counts), ecocentrism (the system itself is sacred) — your ethic decides your economics.",
+        alt: "Environmental ethics worldviews anthropocentrism biocentrism ecocentrism",
+        keyword: "ethics",
+      },
+      {
+        Component: SustainableDevelopmentGoals,
+        caption:
+          "The SDGs in one grid: 17 goals from poverty to peace, with 13, 14 and 15 (climate, life below water, life on land) carrying the biology — the 2030 deadline is the exam hook.",
+        alt: "Sustainable development goals 17 grid climate life on land",
+        keyword: "goal",
+      },
+      {
+        Component: EnvironmentalImpactAssessmentSteps,
+        caption:
+          "EIA's sequence: screening → scoping → baseline study → impact prediction → mitigation plan → public hearing → decision → monitoring — a project must walk the whole ladder in Nepal's law.",
+        alt: "Environmental impact assessment steps screening to monitoring",
+        keyword: "sustainable",
+      },
+      {
+        Component: ReddPlusMechanism,
+        caption:
+          "REDD+ pays for standing trees: developing countries earn results-based payments for avoided deforestation and restoration — carbon markets meet conservation, with monitoring satellites as the referee.",
+        alt: "REDD+ mechanism avoided deforestation payments",
+        keyword: "forest",
+      },
+      {
+        Component: FoodSecurityFourPillars,
+        caption:
+          "Food security stands on four pillars: availability (enough grown), access (money and markets), utilisation (nutrition and clean water), stability (no shocks) — a full granary fails if any pillar cracks.",
+        alt: "Food security four pillars availability access utilisation stability",
+        keyword: "food",
+      },
+      {
+        Component: BiodiversityHotspotsMap,
+        caption:
+          "The global hotspot map: 36 regions qualify — the Himalaya, Indo-Burma and the Western Ghats–Sri Lanka flank Nepal — together holding most of Earth's endemic plants on a sliver of land.",
+        alt: "Biodiversity hotspots world map Himalaya Indo-Burma Western Ghats",
+        keyword: "hotspots",
+      },
     ],
   },
   "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sit": {
@@ -4474,6 +6178,69 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "The flagship map: Chitwan (rhino, tiger, gharial), Bardia (dolphin in the Karnali), Sagarmatha (snow leopard, tahr), Langtang (red panda), Koshi Tappu (arna), Dhorpatan (blue sheep), Annapurna and Kanchenjunga CAs.",
         alt: "Nepal major protected areas with flagship species",
         keyword: "blue sheep",
+      },
+      {
+        Component: NationalParksHistoryNepal,
+        caption:
+          "Nepal's conservation timeline: Chitwan National Park (1973) started it, and the network grew to 12 national parks, wildlife reserves, conservation areas and buffer zones covering about 23.39% of the country.",
+        alt: "History of national parks in Nepal from Chitwan 1973",
+        keyword: "national",
+      },
+      {
+        Component: ParkCategoriesCompare,
+        caption:
+          "Not all protected areas are equal: national parks ban hunting and settlement, reserves protect particular species, conservation areas blend community use — the category decides the rules.",
+        alt: "Protected area categories comparison national park reserve conservation area",
+        keyword: "park",
+      },
+      {
+        Component: KoshiTappuProfile,
+        caption:
+          "Koshi Tappu in numbers: Nepal's first wildlife reserve (1976), a 175 km² wetland, the last refuge of about 150 wild water buffalo (arna) and a Ramsar site for 485+ bird species.",
+        alt: "Koshi Tappu wildlife reserve profile wetland birds arna",
+        keyword: "koshi",
+      },
+      {
+        Component: EcotourismRevenueLoop,
+        caption:
+          "The ecotourism loop: tourist fees fund rangers, rangers protect wildlife, wildlife attracts tourists — when the loop holds, conservation pays for itself; when it leaks, poachers outbid it.",
+        alt: "Ecotourism revenue loop funding conservation",
+        keyword: "revenue",
+      },
+      {
+        Component: NationalParksListNepal,
+        caption:
+          "The roll call: Chitwan, Bardiya, Langtang, Sagarmatha, Rara, Khaptad, Shey-Phoksundo, Makalu-Barun, Shivapuri-Nagarjun, Banke, Shuklaphanta, Parsa — twelve parks from Terai to alpine.",
+        alt: "List of national parks of Nepal",
+        keyword: "park",
+      },
+      {
+        Component: ParksVsCommunityForests,
+        caption:
+          "Two conservation models: parks fence people out; community forests hand the forest to user groups with a constitution — Nepal runs both, and community forestry is the world's quiet success story.",
+        alt: "National parks versus community forests comparison",
+        keyword: "reserve",
+      },
+      {
+        Component: BufferZoneCommunityForestry,
+        caption:
+          "Buffer zones share the edge: 30–50% of park revenue funds community projects in buffer villages, turning former opponents of the park into its stakeholders.",
+        alt: "Buffer zone community forestry revenue sharing",
+        keyword: "buffer",
+      },
+      {
+        Component: EcotourismProsCons,
+        caption:
+          "Ecotourism's two faces: income, jobs and conservation funding on one side; trail erosion, waste, wildlife disturbance and cultural dilution on the other — managed ecotourism keeps the first column.",
+        alt: "Ecotourism advantages and disadvantages",
+        keyword: "tourism",
+      },
+      {
+        Component: WetlandEcosystemServices,
+        caption:
+          "What a wetland does for free: water storage, flood buffering, groundwater recharge, nutrient filtering, fish nurseries and carbon storage — Ramsar lists what accounting forgets.",
+        alt: "Wetland ecosystem services water storage flood buffering",
+        keyword: "wetland",
       },
     ],
   },
@@ -4515,6 +6282,48 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "CITES appendix I II and III trade rules",
         keyword: "appendix i, ii, and iii listings",
       },
+      {
+        Component: PoachingEconomics,
+        caption:
+          "Poaching is an economy: a rhino horn can outprice gold by weight, so guards must outbid smugglers — better incomes, intelligence networks and demand reduction are the three-front answer.",
+        alt: "Poaching economics rhino horn value and enforcement",
+        keyword: "poaching",
+      },
+      {
+        Component: RhinoTranslocationSuccess,
+        caption:
+          "Translocation worked: rhinos moved from Chitwan's crowded core to Bardiya and Shuklaphanta spread the risk — from 752 rhinos counted in 2021 (694 Chitwan, 38 Bardiya, 17 Shuklaphanta, 3 Parsa).",
+        alt: "Rhino translocation from Chitwan to Bardiya and Shuklaphanta",
+        keyword: "rhino",
+      },
+      {
+        Component: HumanWildlifeConflictFence,
+        caption:
+          "Conflict at the edge: crop-raiding elephants and leopards take livestock where park meets farm — fences, palisades, chili-tobacco deterrents and compensation schemes manage the boundary.",
+        alt: "Human wildlife conflict mitigation fence and compensation",
+        keyword: "wildlife",
+      },
+      {
+        Component: ConservationStrategiesPair,
+        caption:
+          "In-situ or ex-situ? Protecting species in place keeps evolution running; zoos, seed banks and tissue culture are the insurance copy — every serious plan uses both.",
+        alt: "In-situ and ex-situ conservation strategies pair",
+        keyword: "ex-situ",
+      },
+      {
+        Component: SpeciesReintroductionPrograms,
+        caption:
+          "Reintroduction, done right: captive breeding, pre-release conditioning, soft release, monitoring — the gharial and vulture programmes show that rewilding is a protocol, not a truck ride.",
+        alt: "Species reintroduction programme steps captive breeding release",
+        keyword: "captive",
+      },
+      {
+        Component: WildlifeTradeRoutes,
+        caption:
+          "The trade routes: pelts, horns, bones, live birds and orchids flow from source forests through border towns to markets — CITES exists because the routes are international.",
+        alt: "Illegal wildlife trade routes from forest to market",
+        keyword: "trade",
+      },
     ],
   },
   "iucn-categories-of-threatened-species-meaning-of-extinct-endangered-vulnerable-rare-and-threaten": {
@@ -4555,6 +6364,27 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Endangered species strict and loose meanings",
         keyword: "very high risk of extinction in the wild",
       },
+      {
+        Component: ThreatAssessmentCriteria,
+        caption:
+          "How a species earns its label: rate of decline, population size, range area and fragmentation — measured against quantitative thresholds, the Red List is criteria, not sentiment.",
+        alt: "IUCN threat assessment criteria decline population range",
+        keyword: "threatened",
+      },
+      {
+        Component: NepalRedListExamples,
+        caption:
+          "Nepal's Red List roll: Bengal tiger (endangered), greater one-horned rhino (vulnerable), gharial (critically endangered), Bengal florican (critically endangered) — the national A-list of risk.",
+        alt: "Nepal Red List examples tiger rhino gharial florican",
+        keyword: "red",
+      },
+      {
+        Component: CITESAppendicesDetail,
+        caption:
+          "CITES in three appendices: Appendix I bans commercial trade, Appendix II regulates it with permits, Appendix III records national requests — 184 parties, one permit system.",
+        alt: "CITES appendices I II III trade regulation",
+        keyword: "iucn",
+      },
     ],
   },
   "endangered-species-in-nepal": {
@@ -4594,6 +6424,20 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "The definition trap: 'endangered' strictly means IUCN EN — very high risk of extinction in the wild — but is used loosely for all threatened species (CR, EN, VU).",
         alt: "Endangered species definition strict versus loose",
         keyword: "very high risk of extinction in the wild",
+      },
+      {
+        Component: EndemicNepalSpecies,
+        caption:
+          "Endemic means found nowhere else: Nepal's endemic flowering plants and restricted-range species live on isolated mountain islands — endemism is fragility with a Latin name.",
+        alt: "Endemic species of Nepal restricted range",
+        keyword: "species",
+      },
+      {
+        Component: VultureDiclofenacCrash,
+        caption:
+          "The vulture crash: diclofenac in cattle carcasses caused renal failure in Oriental white-backed vultures — populations fell over 97%, and meloxicam is the safe substitute now promoted.",
+        alt: "Vulture population crash from diclofenac and meloxicam switch",
+        keyword: "habitat",
       },
     ],
   },
@@ -4773,6 +6617,20 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "How ideas earn trust: observation → hypothesis → prediction → experiment → theory — and a theory keeps its title only while tests keep passing.",
         alt: "Hypothesis to theory ladder scientific progression",
         keyword: "hypothesis",
+      },
+      {
+        Component: SpaceScienceSpinoffs,
+        caption:
+          "Space research pays biology back: satellite imaging tracks vegetation and epidemics, spaceflight studies bone loss and immunity, and miniaturised sensors became medical devices — physics funding, biology dividends.",
+        alt: "Space science spinoffs satellite imaging space medicine",
+        keyword: "physics",
+      },
+      {
+        Component: SpaceScienceApplications,
+        caption:
+          "Satellites as biology's eyes: remote sensing maps deforestation and crop health, GPS tracks collared tigers and elephants, and communication links link rural clinics — conservation now runs on orbital hardware.",
+        alt: "Space science applications remote sensing GPS wildlife tracking",
+        keyword: "physics",
       },
     ],
   },
@@ -5611,6 +7469,132 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Three relationships with vegetation: use (timber, fodder, medicine), misuse (clear-felling, overgrazing) and stewardship (community forestry, plantations).",
         alt: "Human vegetation relationships use misuse stewardship",
         keyword: "stewardship",
+      },
+      {
+        Component: HimalayanSpringsDrying,
+        caption:
+          "The springs are the warning: hundreds of Himalayan spring sources have dried as deforestation, road cuts and declining recharge break the hills' water plumbing — vegetation is infrastructure.",
+        alt: "Himalayan springs drying from deforestation and road cuts",
+        keyword: "spring",
+      },
+      {
+        Component: LandslideCausesNepalMonsoon,
+        caption:
+          "Why hillsides fail: steep slopes, monsoon saturation, road cuts and deforested roots — landslides are geology loaded by land use, and Nepal pays the annual bill.",
+        alt: "Landslide causes in Nepal monsoon slopes deforestation",
+        keyword: "landslide",
+      },
+      {
+        Component: GlofMechanism,
+        caption:
+          "The glacial lake outburst flood: a moraine dam holding back a meltwater lake fails suddenly — Tsho Rolpa's lowering and early-warning siren show the engineering response.",
+        alt: "Glacial lake outburst flood GLOF mechanism moraine dam",
+        keyword: "glacier",
+      },
+      {
+        Component: HydroelectricDamHowItWorks,
+        caption:
+          "The dam's physics: height × flow = power — a penstock drops water past turbines, generators spin, and Nepal's rivers (theoretical potential ~83,000 MW) are the country's biggest banked asset.",
+        alt: "Hydroelectric dam how it works penstock turbine generator",
+        keyword: "dam",
+      },
+      {
+        Component: HydropowerNepalPotential,
+        caption:
+          "Nepal's hydropower ledger: ~83,000 MW theoretical, ~42,000 economically viable, a few thousand installed — the gap between the Himalaya's gift and the grid's reality is the development story.",
+        alt: "Hydropower potential of Nepal theoretical viable installed",
+        keyword: "hydropower",
+      },
+      {
+        Component: ImprovedCookstovesSmoke,
+        caption:
+          "The smoke in the kitchen: traditional stoves waste most of the wood's energy and fill lungs with PM — improved stoves cut fuelwood use and indoor smoke with a chimney and a hotter burn.",
+        alt: "Improved cookstoves reduce fuelwood and indoor smoke",
+        keyword: "fuelwood",
+      },
+      {
+        Component: LandResourcesDegradation,
+        caption:
+          "How land degrades: erosion strips topsoil at millimetres-per-century speed, salinisation follows bad irrigation, urban concrete seals the rest — soil is renewable only at geological patience.",
+        alt: "Land resources degradation erosion salinisation urbanisation",
+        keyword: "soil",
+      },
+      {
+        Component: WaterResourcesStress,
+        caption:
+          "Water stress by numbers: under 1,700 m³ per person per year is 'stressed', under 1,000 'scarce' — Nepal is water-rich in aggregate and water-poor in the dry season and the taps.",
+        alt: "Water resources stress scarcity thresholds",
+        keyword: "water",
+      },
+      {
+        Component: ForestResourcesPressure,
+        caption:
+          "What the forest gives and what we take: timber, fuelwood, fodder, NTFPs, grazing — demand grew while the forest base shrank; community forestry is how the graph turned around.",
+        alt: "Forest resources pressure timber fuelwood fodder NTFP",
+        keyword: "timber",
+      },
+      {
+        Component: MineralResourcesExtraction,
+        caption:
+          "Extraction's footprint: quarries for stone and sand feed construction but scar hillsides, muddy rivers and dust the air — minerals are finite, and the holes stay after the money leaves.",
+        alt: "Mineral resources extraction quarry footprint",
+        keyword: "quarry",
+      },
+      {
+        Component: GroundwaterDepletionIndia,
+        caption:
+          "India's underground overdraft: tube-wells pump more than the rain recharges, water tables fall metres a decade, and the energy subsidy that powers the pumps makes the hole deeper.",
+        alt: "Groundwater depletion in India tube-wells water table",
+        keyword: "water",
+      },
+      {
+        Component: ResourceScarcityConflicts,
+        caption:
+          "Scarcity turns political: water disputes between farmers, fuelwood conflicts with parks, sand-mine mafias — when a resource runs out, the conflict arrives before the solution does.",
+        alt: "Resource scarcity conflicts water fuel land",
+        keyword: "fuel",
+      },
+      {
+        Component: GreenRevolutionImpacts,
+        caption:
+          "The Green Revolution's two columns: HYV wheat and rice tripled harvests and ended famine risk — against falling water tables, soil fatigue and a narrowed gene pool; the verdict is 'both'.",
+        alt: "Green revolution impacts HYV yields and costs",
+        keyword: "cultivation",
+      },
+      {
+        Component: GreenRevolutionTradeoffs,
+        caption:
+          "Trade-offs in one field: fertiliser feeds the crop and the algae downstream; tube-wells raise yields and drop the water table; monoculture simplifies the farm and the menu.",
+        alt: "Green revolution tradeoffs fertiliser water monoculture",
+        keyword: "cultivation",
+      },
+      {
+        Component: OrganicFarmingPrinciples,
+        caption:
+          "Organic farming's four rules: feed the soil (compost, green manure), rotate crops, encourage natural enemies, refuse synthetics — slower yields, living soil, premium prices.",
+        alt: "Organic farming principles soil rotation biocontrol",
+        keyword: "cultivation",
+      },
+      {
+        Component: OrganicFarmingPrinciplesDetail,
+        caption:
+          "Organic in practice: vermicompost and farmyard manure replace urea; neem and Bt replace synthetic sprays; crop rotation breaks pest cycles — certification and premiums make the maths work.",
+        alt: "Organic farming practices vermicompost neem Bt rotation",
+        keyword: "cultivation",
+      },
+      {
+        Component: BiogasPlantCycle,
+        caption:
+          "The biogas loop: dung and slurry in, methane for the kitchen, spent slurry out as fertiliser — one plant saves cooking fuel, forest wood and firewood trips in a single cycle.",
+        alt: "Biogas plant cycle dung methane slurry fertiliser",
+        keyword: "biogas",
+      },
+      {
+        Component: BiogasPlantNepalNumbers,
+        caption:
+          "Biogas by the numbers: hundreds of thousands of household plants built across Nepal's hills, each saving tonnes of fuelwood a year — a subsidy programme that quietly rewired rural kitchens.",
+        alt: "Biogas plants in Nepal numbers and fuelwood savings",
+        keyword: "biogas",
       },
     ],
   },
