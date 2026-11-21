@@ -456,7 +456,7 @@
     "**Bt gene vs Bt spray:** same Bacillus thuringiensis toxin — engineered into crops (Bt cotton) or sprayed as biopesticide."
   ],
   "practice": [
-    "Why must the gene and plasmid be cut by the same restriction enzyme?"
+    "Why must the gene and plasmid be cut by the same restriction enzyme?\n\n**Answer.** Cutting both with the **same enzyme** (e.g. EcoRI at GAATTC) produces complementary **sticky ends** — matching single-stranded overhangs that anneal to each other by base pairing. DNA ligase then seals the sugar–phosphate backbone, locking the insert into the vector. Ends cut by different enzymes have incompatible overhangs that will not anneal, so no recombinant molecule forms."
   ],
   "universalFacts": [
     "PCR can amplify a single DNA molecule to billions of copies in about two hours."
@@ -467,7 +467,7 @@
     "***Pseudomonas putida*** — oil-eating \"superbug\" of bioremediation."
   ],
   "practiceQuestions": [
-    "**Short answer (2m): What is PCR?** — Polymerase Chain Reaction: in vitro enzymatic amplification of a DNA segment through repeated heating/priming/extension cycles using thermostable Taq polymerase, producing millions of copies for diagnosis and research."
+    "**Q.** What is PCR?\n\n**Answer.** **Polymerase Chain Reaction**: in vitro enzymatic amplification of a chosen DNA segment through repeated cycles of heat denaturation, primer annealing and extension by thermostable *Taq* polymerase. Each cycle doubles the target, so ~30 cycles yield millions of copies — the basis of rapid diagnosis (COVID-19, TB), forensics and research."
   ],
   "formulas": [
     "rDNA: isolate → cut (restriction enzyme) → ligate (DNA ligase) → transform → select → express → harvest",
