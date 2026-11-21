@@ -5,74 +5,49 @@
   "topicTitle": "IUPAC classification of elements",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning — what IUPAC is and what it decides",
-    "IUPAC (International Union of Pure and Applied Chemistry) is the world authority that standardises chemical nomenclature, atomic weights and the format of the periodic table. Its classification of elements covers group numbering 1–18, the s/p/d/f block division, the metal–nonmetal–metalloid grouping, collective group names, and the naming of newly discovered elements.",
-    "### 2. IUPAC group numbering and collective names",
-    "• 18 groups numbered left to right and 7 periods; the old European (IA, IIA, … IB) and American (IA, IB, … VIIIA) systems were replaced by 1–18 to remove ambiguity.",
-    "• Collective names: Group 1 alkali metals (Li–Fr, H excluded), Group 2 alkaline earth metals (Be–Ra), Group 15 pnictogens (N–Bi), Group 16 chalcogens (O–Po), Group 17 halogens (F–At), Group 18 noble gases (He–Rn).",
-    "• Blocks: s-block (Groups 1–2 plus He), p-block (Groups 13–18 except He), d-block (Groups 3–12, transition metals), f-block (lanthanides 58–71 and actinides 90–103, inner transition metals).",
-    "### 3. IUPAC naming of new elements (Z > 100)",
-    "Discoverers propose a name and a two-letter symbol after independent verification. Until approval, a systematic name is built from digit roots — 0 nil, 1 un, 2 bi, 3 tri, 4 quad, 5 pent, 6 hex, 7 sept, 8 oct, 9 enn — joined in order with the suffix '-ium' (temporary three-letter symbols). Examples: 104 unnilquadium (Unq) → Rutherfordium (Rf); 113 ununtrium → Nihonium (Nh); 114 ununquadium → Flerovium (Fl); 115 → Moscovium (Mc); 116 ununhexium → Livermorium (Lv); 117 ununseptium → Tennessine (Ts); 118 ununoctium (Uuo) → Oganesson (Og).",
-    "### 4. Classification by physical and chemical character",
-    "• **Metals:** the majority (s-, d-, f-blocks and lower p-block) — lustre, malleability, conductivity, basic oxides.",
-    "• **Non-metals:** upper right of the p-block (C, N, O, F, P, S, Cl, Se, Br, I, noble gases) — acidic oxides, poor conductors.",
-    "• **Metalloids (semi-metals):** B, Si, Ge, As, Sb, Te (sometimes Po) — intermediate properties; the basis of semiconductors.",
-    "• **Representative (typical) elements:** s- and p-blocks; **transition elements:** d-block (variable oxidation states, coloured ions, catalysts); **inner transition:** f-block.",
-    "### 5. Applications",
-    "• One agreed numbering and block scheme makes international communication and literature searching unambiguous.",
-    "• Predicting chemistry from group position: Group 1 metals are strong reducing agents, Group 17 halogens strong oxidising agents, Group 18 inert; oxide character changes from basic to acidic across a period (Na₂O, MgO basic → Al₂O₃ amphoteric → SiO₂, P₄O₁₀, SO₃ acidic).",
-    "• Standard atomic weights (from terrestrial isotopic abundance) and systematic naming keep trade, industry and metrology consistent — for example in specifying semiconductor-grade silicon or alloy composition.",
-    "• The naming and verification procedure for superheavy elements is a direct product of this classification work.",
-    "### 6. Limitations",
-    "IUPAC classification is a labelling and standardisation scheme, not an explanation — it does not say *why* properties repeat (that needs Z_eff, quantum numbers and electronic configuration). Some boundaries are arbitrary: the metal–non-metal change is gradual and metalloid membership differs between sources; H sits in Group 1 yet resembles the halogens; He is a Group 18 noble gas with the s-block configuration 1s². The composition of Group 3 for periods 6 and 7 (La/Ac versus Lu/Lr) has been debated for decades, and the '-ium' systematic names are stopgaps, so older books still print them. The chemistry of elements with Z > 103 is largely predicted, not measured.",
-    "**Fact.** v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
-    "**Fact.** Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
-    "**Fact.** Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
+    "## 1. Topic Introduction — Naming the Table's Empty Seats\n\nNew superheavy elements spend years with only an atomic number and no agreed name. IUPAC's solution: a **systematic temporary name built from the digits of Z**, so every element — named or not — has an unambiguous label and a definite place in the table. The scheme also fixes the group-numbering system (1–18) that replaced the old IA/VIIIA maze.",
+    "## 2. Fundamental Concepts\n\n### 2.1 IUPAC group numbering (1–18)\n\n- The old split notation (IA, IIA, IIIB… VIIIB, zero group) is replaced by **consecutive numbering 1 to 18**.\n- Mapping: old IA → 1, IIA → 2, IIIB → 3 … VIIIB (iron family) → 8, 9, 10, IB → 11, IIB → 12, IIIA → 13 … VIIA → 17, zero → 18.\n- Advantage: one number per column, no A/B ambiguity between national conventions (old US vs European labels differed).\n\n### 2.2 Systematic naming of elements with Z > 100\n\nDigits → roots:\n\n| Digit | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Root | **nil** | **un** | **bi** | **tri** | **quad** | **pent** | **hex** | **sept** | **oct** | **enn** |\n\n- Name = roots of the digits (in order) + **-ium**.\n- Symbol = first letters of the roots (first letter capital), two or three letters.\n- When two 'n' sounds meet, drop one: **enn + nil → ennil** (not enn-nil).\n\n### 2.3 Worked names (the exam's stock examples)\n\n| Z | Roots | Temporary name | Symbol | Permanent name |\n|---|---|---|---|---|\n| 104 | 1-0-4 | **Unnilquadium** | Unq | Rutherfordium (Rf) |\n| 105 | 1-0-5 | **Unnilpentium** | Unp | Dubnium (Db) |\n| 106 | 1-0-6 | **Unnilhexium** | Unh | Seaborgium (Sg) |\n| 107 | 1-0-7 | **Unnilseptium** | Uns | Bohrium (Bh) |\n| 108 | 1-0-8 | **Unniloctium** | Uno | Hassium (Hs) |\n| 109 | 1-0-9 | **Unnilennium** | Une | Meitnerium (Mt) |\n| 110 | 1-1-0 | **Ununnilium** | Uun | Darmstadtium (Ds) |\n| 111 | 1-1-1 | **Unununium** | Uuu | Roentgenium (Rg) |\n| 112 | 1-1-2 | **Ununbium** | Uub | Copernicium (Cn) |\n| 118 | 1-1-8 | **Ununoctium** | Uuo | Oganesson (Og) |\n\n### 2.4 Why the scheme exists\n\nDiscoveries from rival labs (e.g. 104–107: Dubna vs Berkeley) produced competing names that stalled for decades. IUPAC's digit-name is **automatic and neutral** — no scientist's name, no nationality — and lasts only until the confirmed permanent name is ratified.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **IUPAC** | International Union of Pure and Applied Chemistry — the naming authority | Ratifies element names |\n| **Systematic temporary name** | Digit-root name for an element awaiting confirmation | Unnilquadium for Z = 104 |\n| **Element 118 (Og)** | Oganesson — completes period 7 | Named 2016 |\n| **Group number (IUPAC)** | Consecutive 1–18 column label | Group 17 = halogens |",
+    "## 4. Detailed Explanation\n\n### 4.1 Building a name — the 3m drill\n\n**Q: Derive the IUPAC temporary name and symbol for Z = 117.**\nDigits: 1, 1, 7 → un, un, sept → **Ununseptium**, symbol **Uus** (now permanently Tennessine, Ts). The method: split Z into digits, translate each to its root, append -ium, take initials for the symbol.\n\n### 4.2 The special rules (where marks are lost)\n\n1. **enn + nil → ennil:** Z = 190 → un-enn-nil-ium = **Unennilium** (not Unennnilium).\n2. **enn + oct keeps both n's? No — the rule applies only before nil:** Z = 139 → un-tri-enn-ium = **Untriennium** (enn before ium keeps its n).\n3. All names end in **-ium**, even for elements expected to be gases — they are placeholders, not chemistry.\n\n### 4.3 The completed seventh period\n\nWith the naming of Nh (113), Mc (115), Lv (116), Ts (117) and Og (118) in 2016, **period 7 is complete with 118 elements** — the f-block actinoids and the final p-block row are filled. Any future element (Z = 119, 120) opens **period 8** and would start with 8s.",
+    "## 5. Comparison Tables\n\n**Old group notation vs IUPAC numbering**\n\n| Old (US) | IUPAC | Family |\n|---|---|---|\n| IA | 1 | Alkali metals |\n| IIA | 2 | Alkaline earth metals |\n| IIIB–VIIIB | 3–10 | Transition series |\n| IB, IIB | 11, 12 | Coinage / zinc families |\n| IIIA–VA | 13–15 | Pnicogens, chalcogens… |\n| VIA, VIIA | 16, 17 | Chalcogens, halogens |\n| 0 | 18 | Noble gases |\n\n**Similarity:** both label the same columns; IUPAC numbering simply counts consecutively and removes the A/B clash.\n\n**Temporary vs permanent names**\n\n| Basis | Temporary (systematic) | Permanent |\n|---|---|---|\n| Basis of name | Digits of Z | Person/place/lab honour |\n| Given by | Automatic IUPAC rule | Discovery priority + IUPAC ratification |\n| Lifetime | Until ratification | Permanent |\n| Example | Uuo (Z = 118) | Oganesson (Og) |",
+    "## 6. Common Confusions\n\n**Symbol vs name initials:** the symbol comes from the **root initials in order** — Z = 107 → Un-nil-Septium → **Uus**; taking 'U' + element meaning loses the mark.",
+    "**enn before nil vs before oct:** drop the duplicate n only before **nil** (ennil); before other roots and before -ium the full \"enn\" stays.",
+    "**Temporary names never use capital roots:** Unnilquadium — only the first letter is capital; \"unNilquadium\" is wrong.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Write the IUPAC name and symbol for the element with Z = 121.** — Digits 1, 2, 1 → un, bi, un → **Unbiunium**, symbol **Ubu** (a hypothetical period-8 element).",
+    "**NEB-style (2m): Why did IUPAC introduce systematic nomenclature?** — Rival discovery claims (Z = 104–109) created naming disputes; a rule-based name derived from Z is neutral and unambiguous until priority is settled and a permanent name ratified.",
+    "**NEB-style (2m): Convert old group VIIA and group 0 to IUPAC numbering.** — VIIA → **group 17** (halogens); group 0 → **group 18** (noble gases)."
   ],
   "formulas": [
-    "$$\\text{systematic name}=\\text{digit roots}+\\text{'-ium'}\\quad Z=118:\\ \\text{un}+\\text{un}+\\text{oct}+\\text{ium}=\\text{ununoctium}$$",
-    "$$0\\,\\text{nil},1\\,\\text{un},2\\,\\text{bi},3\\,\\text{tri},4\\,\\text{quad},5\\,\\text{pent},6\\,\\text{hex},7\\,\\text{sept},8\\,\\text{oct},9\\,\\text{enn}$$",
-    "V_rms = V₀/√2",
-    "Z_L = ωL, Z_C = 1/(ωC)",
-    "ω₀ = 1/√(LC)"
+    "- Name = root(Z₁) + root(Z₂) + root(Z₃) + ium\n- Symbol = first letter of each root (capital first letter only)\n- enn + nil → ennil (single n)"
   ],
   "universalFacts": [
-    "Oganesson (Og, Z = 118) is named after Yuri Oganessian; Nihonium (Nh, 113) after Japan; Tennessine (Ts, 117) after Tennessee.",
-    "IUPAC numbering 1–18 was recommended in 1988 to replace the conflicting European and American schemes.",
-    "The f-block spans periods 6 and 7: lanthanides (58–71) and actinides (90–103).",
-    "v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
-    "Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
-    "Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
+    "Oganesson (Og, Z = 118) honours Yuri Oganessian — only the second element named after a living scientist (after Seaborgium)."
   ],
   "examples": [
-    "**Problem:** Systematic name and symbol for Z = 115. **Solution:** digits 1, 1, 5 → un + un + pent + ium = ununpentium (Uup); now permanently named Moscovium (Mc).",
-    "**Problem:** Predict the oxide character of period-3 oxides from the IUPAC group classification. **Solution:** Na₂O and MgO (Groups 1, 2) basic; Al₂O₃ (13) amphoteric; SiO₂ (14) weakly acidic; P₄O₁₀ and SO₃ (15, 16) strongly acidic."
+    "***Z = 104 → Un-nil-quad-ium → Unnilquadium (Unq)*** — the template derivation; repeat the same three steps for any Z."
   ],
   "importantNotes": [
-    "Learn the ten digit roots — the naming question is a standard 2-mark item.",
-    "Separate *nomenclature* from *block classification* in long answers, and describe IUPAC as a standardising authority.",
-    "Helium is the standard trap: 1s² configuration (s-block) yet a Group 18 member."
+    "No verified PYQ located for this topic; all items are NEB-style practice (derive name/symbol 2m; old→IUPAC groups 2m; special-rule items 1–2m)."
   ],
   "visualType": "periodic-table",
   "confusion": [
-    "❌ IUPAC places helium in the p-block. ✅ He is 1s², i.e. s-block, but is classified in Group 18 because of closed-shell inertness.",
-    "❌ The '-ium' names are permanent. ✅ They are systematic temporary names used until a permanent name is approved (Unq → Rf).",
-    "❌ Hydrogen belongs unambiguously to Group 1. ✅ It is placed there but behaves partly like Group 17 and remains anomalous.",
-    "❌ Lanthanides and actinides are d-block elements. ✅ They are f-block (inner transition); La and Ac are sometimes treated as d-block.",
-    "❌ Metalloids are a fixed chemical class. ✅ Membership is conventional (B, Si, Ge, As, Sb, Te are the usual members)."
+    "**Unnilquadium vs unnilquadium:** the symbol Unq capitalises only its first letter; the name capitalises only its first letter too — \"UNQ\"/\"UNNILQUADIUM\" are wrong.",
+    "**Z = 118 is Og, not Uuo, today:** the temporary name served 2002–2016; examiners accept either but the permanent name earns the mark."
   ],
   "practice": [
-    "State the IUPAC group/period numbering and list the collective names of Groups 1, 2, 15, 16, 17 and 18.",
-    "Write the systematic IUPAC name and symbol for the elements with Z = 113, 116 and 118.",
-    "Classify elements into s, p, d and f blocks and explain how the IUPAC scheme removes ambiguity.",
-    "Why is helium classified in Group 18 although its configuration is 1s²?",
-    "Give the IUPAC classification into metals, non-metals and metalloids with two examples each.",
-    "State the limitations of the IUPAC classification of elements."
+    "Derive the temporary name and symbol for Z = 126.",
+    "Why can a temporary name be generated for an element that has not yet been synthesised?",
+    "Map the old groups IA, IIIB and VIIA onto IUPAC numbers."
   ],
   "keyPoints": [
-    "• IUPAC classification of elements"
+    "IUPAC groups: 1–18 consecutive (old IA→1 … zero→18). Temporary names for unnamed elements: digits → roots (0 nil, 1 un, 2 bi, 3 tri, 4 quad, 5 pent, 6 hex, 7 sept, 8 oct, 9 enn) + -ium; symbol = root initials. Special: enn+nil → ennil. Stock pairs: 104 Unq/Rf, 105 Unp/Db, 110 Uun/Ds, 111 Uuu/Rg, 118 Uuo/Og. Period 7 complete at Z = 118."
   ],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "**NEB-style (3m): State the IUPAC systematic nomenclature rules for elements with Z > 100 and derive the name for Z = 108.** — Rules: (1) split Z into digits and use the roots 0 nil, 1 un, 2 bi, 3 tri, 4 quad, 5 pent, 6 hex, 7 sept, 8 oct, 9 enn; (2) add the suffix **-ium**; (3) the symbol is formed from the roots' initials (first letter capital); (4) 'enn' before 'nil' becomes 'ennil'. **Z = 108:** 1, 0, 8 → un, nil, oct → **Unniloctium, symbol Uno** (permanent name: Hassium, Hs).",
+    "**NEB-style (2m): Write the temporary IUPAC name and symbol for Z = 111, and give its permanent name.** — 1, 1, 1 → un, un, un → **Unununium, Uuu**; permanent name **Roentgenium (Rg)**, honouring Röntgen.",
+    "**NEB-style (2m): Convert the old notations IIA, VIIA and 0 into IUPAC group numbers.** — IIA → **group 2** (alkaline earths); VIIA → **group 17** (halogens); 0 → **group 18** (noble gases). IUPAC numbers the 18 columns consecutively.",
+    "**NEB-style (2m): Apply the 'enn' rule: write the temporary name for Z = 190.** — 1, 9, 0 → un, enn, nil → the duplicate n is dropped before nil → **Unennilium**, symbol **Ueo**."
+  ],
   "numericals": [
     "Use  V_rms = V₀/√2  — pick reasonable values, solve, and check the units.",
     "Use  Z_L = ωL, Z_C = 1/(ωC)  — pick reasonable values, solve, and check the units.",
@@ -80,13 +55,92 @@
   ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"IUPAC classification of elements\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The IUPAC temporary name for Z = 104 is:",
       "options": [
-        "True",
-        "False"
+        "Unnilquadium",
+        "Unquadnilium",
+        "Ununquadium",
+        "Quadunnilium"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A",
+      "explanation": "1-0-4 → un-nil-quad + ium."
+    },
+    {
+      "question": "The root for the digit 9 is:",
+      "options": [
+        "non",
+        "enn",
+        "nov",
+        "nin"
+      ],
+      "answer": "B",
+      "explanation": "IUPAC uses 'enn', not 'non'."
+    },
+    {
+      "question": "The symbol of Ununseptium (Z = 117) was:",
+      "options": [
+        "Uus",
+        "Uus",
+        "Uusep",
+        "Usep"
+      ],
+      "answer": "A",
+      "explanation": "Un-un-sept → Uus (now Ts, Tennessine)."
+    },
+    {
+      "question": "In IUPAC numbering, the halogens are group:",
+      "options": [
+        "7",
+        "17",
+        "1",
+        "15"
+      ],
+      "answer": "B",
+      "explanation": "Old VIIA → group 17."
+    },
+    {
+      "question": "The temporary name for Z = 190 applies the rule:",
+      "options": [
+        "enn + nil → ennil",
+        "bi + nil → binil",
+        "un + un → un",
+        "oct + enn → octenn"
+      ],
+      "answer": "A",
+      "explanation": "Duplicate n dropped before nil."
+    },
+    {
+      "question": "Element 118 is permanently named:",
+      "options": [
+        "Oganesson",
+        "Oganeson",
+        "Ununoctium only",
+        "Roentgenium"
+      ],
+      "answer": "A",
+      "explanation": "Og — named 2016, honours Oganessian."
+    },
+    {
+      "question": "All IUPAC temporary names end in:",
+      "options": [
+        "-ide",
+        "-ium",
+        "-on",
+        "-ine"
+      ],
+      "answer": "B",
+      "explanation": "-ium, regardless of expected chemistry."
+    },
+    {
+      "question": "The old 'zero group' corresponds to IUPAC group:",
+      "options": [
+        "8",
+        "0",
+        "18",
+        "2"
+      ],
+      "answer": "C",
+      "explanation": "Noble gases are group 18."
     }
   ],
   "source": "generated",
@@ -94,5 +148,164 @@
   "bounds": [
     "Limit to remember: v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2."
   ],
-  "summary": "IUPAC classification of elements (Classification of Elements and Periodic Table, Chemistry, class-11-notes) covers IUPAC classification of elements. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
+  "summary": "IUPAC replaced the tangled IA/VIIIB/zero labels with **consecutive group numbers 1–18** and gave every not-yet-named element a mechanical placeholder: split the atomic number into digits, translate each through the roots nil-un-bi-tri-quad-pent-hex-sept-oct-enn, append **-ium**, and take the roots' initials as the symbol (Unnilquadium, Unq, for Z = 104; Ununoctium, Uuo, for Z = 118). One special rule — enn + nil → ennil — prevents double n's. The scheme is neutral in discovery disputes and works for elements that do not yet exist (Unbiunium for Z = 121). With Nh, Mc, Lv, Ts and Og ratified in 2016, period 7 is complete at 118 elements; the next element will open period 8.",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Naming the Table's Empty Seats\n\nNew superheavy elements spend years with only an atomic number and no agreed name. IUPAC's solution: a **systematic temporary name built from the digits of Z**, so every element — named or not — has an unambiguous label and a definite place in the table. The scheme also fixes the group-numbering system (1–18) that replaced the old IA/VIIIA maze.",
+      "## 2. Fundamental Concepts\n\n### 2.1 IUPAC group numbering (1–18)\n\n- The old split notation (IA, IIA, IIIB… VIIIB, zero group) is replaced by **consecutive numbering 1 to 18**.\n- Mapping: old IA → 1, IIA → 2, IIIB → 3 … VIIIB (iron family) → 8, 9, 10, IB → 11, IIB → 12, IIIA → 13 … VIIA → 17, zero → 18.\n- Advantage: one number per column, no A/B ambiguity between national conventions (old US vs European labels differed).\n\n### 2.2 Systematic naming of elements with Z > 100\n\nDigits → roots:\n\n| Digit | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Root | **nil** | **un** | **bi** | **tri** | **quad** | **pent** | **hex** | **sept** | **oct** | **enn** |\n\n- Name = roots of the digits (in order) + **-ium**.\n- Symbol = first letters of the roots (first letter capital), two or three letters.\n- When two 'n' sounds meet, drop one: **enn + nil → ennil** (not enn-nil).\n\n### 2.3 Worked names (the exam's stock examples)\n\n| Z | Roots | Temporary name | Symbol | Permanent name |\n|---|---|---|---|---|\n| 104 | 1-0-4 | **Unnilquadium** | Unq | Rutherfordium (Rf) |\n| 105 | 1-0-5 | **Unnilpentium** | Unp | Dubnium (Db) |\n| 106 | 1-0-6 | **Unnilhexium** | Unh | Seaborgium (Sg) |\n| 107 | 1-0-7 | **Unnilseptium** | Uns | Bohrium (Bh) |\n| 108 | 1-0-8 | **Unniloctium** | Uno | Hassium (Hs) |\n| 109 | 1-0-9 | **Unnilennium** | Une | Meitnerium (Mt) |\n| 110 | 1-1-0 | **Ununnilium** | Uun | Darmstadtium (Ds) |\n| 111 | 1-1-1 | **Unununium** | Uuu | Roentgenium (Rg) |\n| 112 | 1-1-2 | **Ununbium** | Uub | Copernicium (Cn) |\n| 118 | 1-1-8 | **Ununoctium** | Uuo | Oganesson (Og) |\n\n### 2.4 Why the scheme exists\n\nDiscoveries from rival labs (e.g. 104–107: Dubna vs Berkeley) produced competing names that stalled for decades. IUPAC's digit-name is **automatic and neutral** — no scientist's name, no nationality — and lasts only until the confirmed permanent name is ratified.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **IUPAC** | International Union of Pure and Applied Chemistry — the naming authority | Ratifies element names |\n| **Systematic temporary name** | Digit-root name for an element awaiting confirmation | Unnilquadium for Z = 104 |\n| **Element 118 (Og)** | Oganesson — completes period 7 | Named 2016 |\n| **Group number (IUPAC)** | Consecutive 1–18 column label | Group 17 = halogens |",
+      "## 4. Detailed Explanation\n\n### 4.1 Building a name — the 3m drill\n\n**Q: Derive the IUPAC temporary name and symbol for Z = 117.**\nDigits: 1, 1, 7 → un, un, sept → **Ununseptium**, symbol **Uus** (now permanently Tennessine, Ts). The method: split Z into digits, translate each to its root, append -ium, take initials for the symbol.\n\n### 4.2 The special rules (where marks are lost)\n\n1. **enn + nil → ennil:** Z = 190 → un-enn-nil-ium = **Unennilium** (not Unennnilium).\n2. **enn + oct keeps both n's? No — the rule applies only before nil:** Z = 139 → un-tri-enn-ium = **Untriennium** (enn before ium keeps its n).\n3. All names end in **-ium**, even for elements expected to be gases — they are placeholders, not chemistry.\n\n### 4.3 The completed seventh period\n\nWith the naming of Nh (113), Mc (115), Lv (116), Ts (117) and Og (118) in 2016, **period 7 is complete with 118 elements** — the f-block actinoids and the final p-block row are filled. Any future element (Z = 119, 120) opens **period 8** and would start with 8s.",
+      "## 5. Comparison Tables\n\n**Old group notation vs IUPAC numbering**\n\n| Old (US) | IUPAC | Family |\n|---|---|---|\n| IA | 1 | Alkali metals |\n| IIA | 2 | Alkaline earth metals |\n| IIIB–VIIIB | 3–10 | Transition series |\n| IB, IIB | 11, 12 | Coinage / zinc families |\n| IIIA–VA | 13–15 | Pnicogens, chalcogens… |\n| VIA, VIIA | 16, 17 | Chalcogens, halogens |\n| 0 | 18 | Noble gases |\n\n**Similarity:** both label the same columns; IUPAC numbering simply counts consecutively and removes the A/B clash.\n\n**Temporary vs permanent names**\n\n| Basis | Temporary (systematic) | Permanent |\n|---|---|---|\n| Basis of name | Digits of Z | Person/place/lab honour |\n| Given by | Automatic IUPAC rule | Discovery priority + IUPAC ratification |\n| Lifetime | Until ratification | Permanent |\n| Example | Uuo (Z = 118) | Oganesson (Og) |",
+      "## 6. Common Confusions\n\n**Symbol vs name initials:** the symbol comes from the **root initials in order** — Z = 107 → Un-nil-Septium → **Uus**; taking 'U' + element meaning loses the mark.",
+      "**enn before nil vs before oct:** drop the duplicate n only before **nil** (ennil); before other roots and before -ium the full \"enn\" stays.",
+      "**Temporary names never use capital roots:** Unnilquadium — only the first letter is capital; \"unNilquadium\" is wrong.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Write the IUPAC name and symbol for the element with Z = 121.** — Digits 1, 2, 1 → un, bi, un → **Unbiunium**, symbol **Ubu** (a hypothetical period-8 element).",
+      "**NEB-style (2m): Why did IUPAC introduce systematic nomenclature?** — Rival discovery claims (Z = 104–109) created naming disputes; a rule-based name derived from Z is neutral and unambiguous until priority is settled and a permanent name ratified.",
+      "**NEB-style (2m): Convert old group VIIA and group 0 to IUPAC numbering.** — VIIA → **group 17** (halogens); group 0 → **group 18** (noble gases)."
+    ],
+    "confusion": [
+      "**Unnilquadium vs unnilquadium:** the symbol Unq capitalises only its first letter; the name capitalises only its first letter too — \"UNQ\"/\"UNNILQUADIUM\" are wrong.",
+      "**Z = 118 is Og, not Uuo, today:** the temporary name served 2002–2016; examiners accept either but the permanent name earns the mark."
+    ],
+    "keyPoints": [
+      "IUPAC groups: 1–18 consecutive (old IA→1 … zero→18). Temporary names for unnamed elements: digits → roots (0 nil, 1 un, 2 bi, 3 tri, 4 quad, 5 pent, 6 hex, 7 sept, 8 oct, 9 enn) + -ium; symbol = root initials. Special: enn+nil → ennil. Stock pairs: 104 Unq/Rf, 105 Unp/Db, 110 Uun/Ds, 111 Uuu/Rg, 118 Uuo/Og. Period 7 complete at Z = 118."
+    ],
+    "importantConcepts": [
+      "**Name = digits of Z:** the temporary name is a mechanical translation of the atomic number — no chemistry needed, so it works for elements not yet discovered."
+    ],
+    "examples": [
+      "***Z = 104 → Un-nil-quad-ium → Unnilquadium (Unq)*** — the template derivation; repeat the same three steps for any Z."
+    ],
+    "universalFacts": [
+      "Oganesson (Og, Z = 118) honours Yuri Oganessian — only the second element named after a living scientist (after Seaborgium)."
+    ],
+    "importantStatements": [
+      "\"The name of an element awaiting permanent ratification is built from the digits of its atomic number plus the suffix -ium.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ located for this topic; all items are NEB-style practice (derive name/symbol 2m; old→IUPAC groups 2m; special-rule items 1–2m)."
+    ],
+    "examShortTricks": [
+      "Digit chant: \"nil-un-bi-tri-quad-pent-hex-sept-oct-enn.\" Symbol = initials in order. Only rule to memorise: enn + nil → ennil."
+    ],
+    "examNotes": [
+      "Show the digit split (e.g. 117 → 1·1·7) before writing the name — the marker checks the working. Quote at least one permanent counterpart (Rf, Db, Og) for presentation credit."
+    ],
+    "formulas": [
+      "- Name = root(Z₁) + root(Z₂) + root(Z₃) + ium\n- Symbol = first letter of each root (capital first letter only)\n- enn + nil → ennil (single n)"
+    ],
+    "practice": [
+      "Derive the temporary name and symbol for Z = 126.",
+      "Why can a temporary name be generated for an element that has not yet been synthesised?",
+      "Map the old groups IA, IIIB and VIIA onto IUPAC numbers."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): State the IUPAC systematic nomenclature rules for elements with Z > 100 and derive the name for Z = 108.** — Rules: (1) split Z into digits and use the roots 0 nil, 1 un, 2 bi, 3 tri, 4 quad, 5 pent, 6 hex, 7 sept, 8 oct, 9 enn; (2) add the suffix **-ium**; (3) the symbol is formed from the roots' initials (first letter capital); (4) 'enn' before 'nil' becomes 'ennil'. **Z = 108:** 1, 0, 8 → un, nil, oct → **Unniloctium, symbol Uno** (permanent name: Hassium, Hs).",
+      "**NEB-style (2m): Write the temporary IUPAC name and symbol for Z = 111, and give its permanent name.** — 1, 1, 1 → un, un, un → **Unununium, Uuu**; permanent name **Roentgenium (Rg)**, honouring Röntgen.",
+      "**NEB-style (2m): Convert the old notations IIA, VIIA and 0 into IUPAC group numbers.** — IIA → **group 2** (alkaline earths); VIIA → **group 17** (halogens); 0 → **group 18** (noble gases). IUPAC numbers the 18 columns consecutively.",
+      "**NEB-style (2m): Apply the 'enn' rule: write the temporary name for Z = 190.** — 1, 9, 0 → un, enn, nil → the duplicate n is dropped before nil → **Unennilium**, symbol **Ueo**."
+    ]
+  },
+  "importantConcepts": [
+    "**Name = digits of Z:** the temporary name is a mechanical translation of the atomic number — no chemistry needed, so it works for elements not yet discovered."
+  ],
+  "importantStatements": [
+    "\"The name of an element awaiting permanent ratification is built from the digits of its atomic number plus the suffix -ium.\""
+  ],
+  "examShortTricks": [
+    "Digit chant: \"nil-un-bi-tri-quad-pent-hex-sept-oct-enn.\" Symbol = initials in order. Only rule to memorise: enn + nil → ennil."
+  ],
+  "examNotes": [
+    "Show the digit split (e.g. 117 → 1·1·7) before writing the name — the marker checks the working. Quote at least one permanent counterpart (Rf, Db, Og) for presentation credit."
+  ],
+  "mcs": [
+    {
+      "question": "The IUPAC temporary name for Z = 104 is:",
+      "options": [
+        "Unnilquadium",
+        "Unquadnilium",
+        "Ununquadium",
+        "Quadunnilium"
+      ],
+      "answer": "A",
+      "explanation": "1-0-4 → un-nil-quad + ium."
+    },
+    {
+      "question": "The root for the digit 9 is:",
+      "options": [
+        "non",
+        "enn",
+        "nov",
+        "nin"
+      ],
+      "answer": "B",
+      "explanation": "IUPAC uses 'enn', not 'non'."
+    },
+    {
+      "question": "The symbol of Ununseptium (Z = 117) was:",
+      "options": [
+        "Uus",
+        "Uus",
+        "Uusep",
+        "Usep"
+      ],
+      "answer": "A",
+      "explanation": "Un-un-sept → Uus (now Ts, Tennessine)."
+    },
+    {
+      "question": "In IUPAC numbering, the halogens are group:",
+      "options": [
+        "7",
+        "17",
+        "1",
+        "15"
+      ],
+      "answer": "B",
+      "explanation": "Old VIIA → group 17."
+    },
+    {
+      "question": "The temporary name for Z = 190 applies the rule:",
+      "options": [
+        "enn + nil → ennil",
+        "bi + nil → binil",
+        "un + un → un",
+        "oct + enn → octenn"
+      ],
+      "answer": "A",
+      "explanation": "Duplicate n dropped before nil."
+    },
+    {
+      "question": "Element 118 is permanently named:",
+      "options": [
+        "Oganesson",
+        "Oganeson",
+        "Ununoctium only",
+        "Roentgenium"
+      ],
+      "answer": "A",
+      "explanation": "Og — named 2016, honours Oganessian."
+    },
+    {
+      "question": "All IUPAC temporary names end in:",
+      "options": [
+        "-ide",
+        "-ium",
+        "-on",
+        "-ine"
+      ],
+      "answer": "B",
+      "explanation": "-ium, regardless of expected chemistry."
+    },
+    {
+      "question": "The old 'zero group' corresponds to IUPAC group:",
+      "options": [
+        "8",
+        "0",
+        "18",
+        "2"
+      ],
+      "answer": "C",
+      "explanation": "Noble gases are group 18."
+    }
+  ]
 }

@@ -5,135 +5,131 @@
   "topicTitle": "Classification of elements into different groups, periods and blocks: s, p, d, f blocks; Metals, Non-metals, Metalloids, Coinage metals, Volatile metals",
   "relevance": 100,
   "notes": [
-    "### 1. Structural Architecture of the Modern Periodic Table (Bohr's Long Form)",
-    "• Based on Moseley's Modern Periodic Law: The physical and chemical properties of elements are periodic functions of their atomic numbers (nuclear charge, Z).",
-    "• Consists of 7 horizontal rows called **Periods** and 18 vertical columns called **Groups** (IUPAC 1 to 18).",
-    "• **Period 1:** 2 elements (H, He) — shortest period (fills 1s subshell).",
-    "• **Periods 2 & 3:** 8 elements each (Li–Ne, Na–Ar) — short periods (fill 2s, 2p and 3s, 3p subshells).",
-    "• **Periods 4 & 5:** 18 elements each (K–Kr, Rb–Xe) — long periods (fill 4s, 3d, 4p and 5s, 4d, 5p subshells).",
-    "• **Period 6:** 32 elements (Cs–Rn, including 14 Lanthanides from ₅₈Ce to ₇₁Lu) — very long period (fills 6s, 4f, 5d, 6p).",
-    "• **Period 7:** 32 elements (Fr–Og, including 14 Actinides from ₉₀Th to ₁₀₃Lr) — complete radioactive period (fills 7s, 5f, 6d, 7p).",
-    "### 2. s-Block Elements (Groups 1 & 2)",
-    "• **Definition:** Elements in which the differentiating (last) electron enters the outermost s-orbital.",
-    "• **General Valence Electronic Configuration:** ns¹⁻² (Group 1 Alkali metals: ns¹; Group 2 Alkaline earth metals: ns²; where n = 2 to 7).",
-    "• **Group 1 (Alkali Metals):** ₃Li, ₁₁Na, ₁₉K, ₃₇Rb, ₅₅Cs, ₈₇Fr. Soft, silvery-white metals, highly electropositive, lowest ionization enthalpies in their periods.",
-    "• **Group 2 (Alkaline Earth Metals):** ₄Be, ₁₂Mg, ₂₀Ca, ₃₈Sr, ₅₆Ba, ₈₈Ra. Harder than alkali metals, +2 fixed oxidation state, basic oxides (except amphoteric BeO).",
-    "• **Key Physical Characteristics:** Low melting and boiling points due to weak metallic bonding (only 1 or 2 valence electrons in bonding sea). Densities are very low (Li, Na, K float on or displace water).",
-    "• **Flame Test:** Readily excited s-electrons emit signature colors: Li (Crimson), Na (Golden Yellow), K (Lilac/Violet), Rb (Red-Violet), Cs (Sky Blue), Ca (Brick Red), Sr (Crimson), Ba (Apple Green). Note: Be and Mg do NOT give flame coloration because their electrons are held tightly by high effective nuclear charge.",
-    "• **Chemical Properties:** Extremely strong reducing agents (standard reduction potentials: Li is most negative at -3.04 V due to exceptionally high hydration enthalpy: ΔH_hyd of Li⁺). React vigorously with water to liberate H₂: 2M + 2H₂O → 2M⁺ + 2OH⁻ + H₂↑.",
-    "• **Ammoniated Electrons:** Dissolve in anhydrous liquid ammonia to yield deep blue, electrically conductive, paramagnetic solutions: M + (x+y)NH₃ → [M(NH₃)_x]⁺ + [e(NH₃)_y]⁻.",
-    "• **Diagonal Relationship:** Li resembles Mg, and Be resembles Al due to similar ionic charge/radius ratio (polarizing power) and nearly identical electronegativities.",
-    "### 3. p-Block Elements (Groups 13 to 18)",
-    "• **Definition:** Elements in which the differentiating electron enters any of the three degenerate outermost p-orbitals.",
-    "• **General Valence Electronic Configuration:** ns² np¹⁻⁶ (He: 1s² is placed in Group 18 due to its filled shell noble gas behavior).",
-    "• **Families:** Group 13 (Boron family: ns² np¹), Group 14 (Carbon family: ns² np²), Group 15 (Pnictogens: ns² np³), Group 16 (Chalcogens: ns² np⁴), Group 17 (Halogens: ns² np⁵), Group 18 (Noble/Inert Gases: ns² np⁶).",
-    "• **Uniqueness:** Only block containing all three categories of matter: Metals (e.g., Al, Ga, In, Tl, Sn, Pb, Bi), Metalloids (B, Si, Ge, As, Sb, Te, Po), and Non-metals (C, N, O, F, Ne, P, S, Cl, Ar, Se, Br, Kr, I, Xe, Rn).",
-    "• **Inert Pair Effect:** Reluctance of the valence s-electrons to participate in chemical bonding in heavier elements of post-transition p-block elements due to ineffective shielding of intervening d and f electrons. Consequence: Lower oxidation states become progressively more stable down the group: Tl⁺ > Tl³⁺, Pb²⁺ > Pb⁴⁺, Bi³⁺ > Bi⁵⁺. Hence, PbO₂ and PbCl₄ act as strong oxidizing agents.",
-    "• **Catenation & Multiple Bonding:** Carbon shows the highest catenation power due to strong C–C single bond strength (348 kJ/mol). Second-row p-elements readily form stable pπ–pπ multiple bonds (C=C, C≡C, N≡N, C=O), whereas heavier analogues form weaker dπ–pπ or dπ–dπ bonds.",
-    "• **Anomalous Behavior of 2nd Period Elements (B, C, N, O, F):** Small atomic radii, high electronegativity, absence of vacant d-orbitals in valence shell (maximum covalency strictly limited to 4, cannot form hypervalent species like SF₆ or PCl₅).",
-    "### 4. d-Block Elements (Transition Metals, Groups 3 to 12)",
-    "• **Definition:** Elements in which the differentiating electron enters the penultimate (n-1)d subshell.",
-    "• **General Valence Electronic Configuration:** (n-1)d¹⁻¹⁰ ns¹⁻² (where n = 4, 5, 6, 7).",
-    "• **Four Transition Series:** 3d-series (₂₁Sc to ₃₀Zn), 4d-series (₃₉Y to ₄₈Cd), 5d-series (₅₇La, ₇₂Hf to ₈₀Hg), 6d-series (incomplete/actinoid-linked).",
-    "• **True vs Non-Typical Transition Elements:** A transition element is defined as an element having a partially filled d-orbital in its elemental ground state or in any of its common oxidation states. Zinc (₃₀Zn), Cadmium (₄₈Cd), and Mercury (₈₀Hg) have completely filled d-orbitals in elemental ground state (d¹⁰ s²) and in their +2 oxidation state (d¹⁰). Hence, they are non-typical or pseudo-transition elements.",
-    "• **Variable Oxidation States:** Due to minimal energy difference between (n-1)d and ns electrons, both sets participate in bonding. Manganese (Mn) exhibits maximum oxidation states in 3d series from +2 to +7 (e.g., KMnO₄). Osmium (Os) and Ruthenium (Ru) reach +8 (OsO₄).",
-    "• **Color of Transition Metal Ions:** Due to d-d electronic transitions. Degenerate d-orbitals split in presence of ligand fields into lower t₂g and upper eg levels. Absorption of visible light promotes electrons: Cu²⁺ (3d⁹, blue), Fe³⁺ (3d⁵, yellow/brown), Cr³⁺ (3d³, green), Ni²⁺ (3d⁸, green). Ions with d⁰ (Sc³⁺, Ti⁴⁺) or d¹⁰ (Zn²⁺, Cu⁺, Ag⁺) are colorless.",
-    "• **Magnetic Properties:** Due to unpaired electrons. Magnetic moment calculated via spin-only formula: μ = √(n(n + 2)) Bohr Magnetons (BM), where n = number of unpaired electrons. Max in 3d is Fe³⁺ / Mn²⁺ (n = 5, μ = 5.92 BM).",
-    "• **Catalytic Properties:** High surface area and ability to adopt multiple oxidation states to form unstable reaction intermediates (e.g., Finely divided Fe in Haber process, V₂O₅ in Contact process for H₂SO₄, Ni in alkene hydrogenation, Pt in Ostwald process).",
-    "• **Interstitial Compounds & Alloys:** Small non-metal atoms (H, C, N, B) lodge into interstitial voids of metallic lattices (e.g., Steel, TiC, Fe₃H), imparting extreme hardness, high melting points, and chemical inertness.",
-    "### 5. f-Block Elements (Inner Transition Elements)",
-    "• **Definition:** Elements in which the differentiating electron enters the anti-penultimate (n-2)f subshell.",
-    "• **General Valence Electronic Configuration:** (n-2)f¹⁻¹⁴ (n-1)d⁰⁻¹ ns² (where n = 6 for 4f Lanthanides, n = 7 for 5f Actinides).",
-    "• **Lanthanide Series (4f):** 14 elements from Cerium (₅₈Ce) to Lutetium (₇₁Lu). Preceded by Lanthanum (₅₇La).",
-    "• **Actinide Series (5f):** 14 elements from Thorium (₉₀Th) to Lawrencium (₁₀₃Lr). Preceded by Actinium (₈₉Ac).",
-    "• **Oxidation States:** +3 is the universal, predominant, and most thermodynamically stable oxidation state for all Lanthanides. Some show +2 or +4 when achieving f⁰, f⁷, or f¹⁴ stable subshells (e.g., Ce⁴⁺ is 4f⁰, Eu²⁺ is 4f⁷, Yb²⁺ is 4f¹⁴). Actinides show wider range (+3, +4, +5, +6, +7) because 5f, 6d, and 7s have comparable energy levels.",
-    "• **Lanthanide Contraction (Crucial NEB Exam Concept):** Steady and progressive decrease in atomic and ionic radii (Ln³⁺) from La to Lu. Cause: Highly diffuse shape and poor screening/shielding power of 4f electrons, allowing nuclear charge (Z) to pull the outer 6s shell inward.",
-    "• **Consequences of Lanthanide Contraction:**",
-    "  1. Identical radii of 4d and 5d pairs: Zr (160 pm) ≈ Hf (159 pm), Nb (146 pm) ≈ Ta (146 pm), Mo ≈ W. They occur together in nature and are extremely difficult to separate chemically.",
-    "  2. Decrease in basic strength of hydroxides: As size shrinks from La³⁺ to Lu³⁺, covalent character of Ln–OH bond increases (Fajans' Rule). Thus, La(OH)₃ is the most basic, and Lu(OH)₃ is the least basic (most amphoteric).",
-    "  3. Gradual increase in ionization energy, electronegativity, and electrode potential across the series.",
-    "• **Actinides Character:** All are radioactive. Beyond Uranium (Z > 92) are synthetic man-made transuranic elements.",
-    "### 6. Special High-Yield Classes of Elements in NEB Syllabus",
-    "• **Coinage Metals (Group 11 / IB):** Copper (₂₉Cu), Silver (₄₇Ag), Gold (₇₉Au).",
-    "  - Possess anomalous ground state configuration: (n-1)d¹⁰ ns¹ (extra stability of fully filled d-subshell).",
-    "  - Chemically inert, high positive reduction potentials (Cu: +0.34 V, Ag: +0.80 V, Au: +1.50 V). Resist oxidation by atmospheric O₂ and non-oxidizing acids (HCl, dilute H₂SO₄).",
-    "  - Dissolve in oxidizing acids: Cu + 4HNO₃ (conc) → Cu(NO₃)₂ + 2NO₂↑ + 2H₂O.",
-    "  - Gold dissolves only in Aqua Regia (3 parts conc. HCl : 1 part conc. HNO₃): Au + HNO₃ + 4HCl → H[AuCl₄] + NO↑ + 2H₂O.",
-    "  - Unmatched electrical and thermal conductivity: Ag > Cu > Au.",
-    "  - Form stable complexes: [Ag(NH₃)₂]⁺ (Tollens' reagent for aldehyde detection), [Cu(NH₃)₄]²⁺ (Schweizer's reagent for dissolving cellulose).",
-    "• **Volatile Metals (Group 12 / IIB):** Zinc (₃₀Zn), Cadmium (₄₈Cd), Mercury (₈₀Hg).",
-    "  - Electronic configuration: (n-1)d¹⁰ ns². Completely filled d-orbitals in both atomic and ionic (+2) states.",
-    "  - Melting & Boiling points: Unusually low because paired electrons cannot participate in metallic lattice bonding. Hg is the only liquid metal at standard room temperature (MP: -38.8°C; BP: 356.7°C). Relativistic contraction pulls 6s electrons close to the nucleus, rendering them inert.",
-    "  - Distinct from typical transition metals: Show only +2 oxidation state (never variable valency, except Hg which forms mercurous dimer [Hg–Hg]²⁺). Their compounds (ZnSO₄, CdCl₂, HgCl₂) are diamagnetic and white/colorless (no d-d transitions).",
-    "  - Amalgams: Mercury forms liquid or solid alloys called amalgams with nearly all metals (e.g., Sodium amalgam Na-Hg, Zinc amalgam Zn-Hg used in Clemmensen reduction). Exceptions: Iron (Fe), Platinum (Pt), and Tungsten (W) do not form amalgams and are used as storage containers.",
-    "### 7. Comprehensive Classification: Metals vs Non-Metals vs Metalloids",
-    "• **Metals (~78% of elements):** Electropositive elements with low ionization enthalpies (1–3 valence electrons). Form giant metallic crystal lattices with delocalized electron gas. Form basic oxides (e.g., Na₂O + H₂O → 2NaOH). Good conductors, malleable, ductile, high sonority.",
-    "• **Non-Metals (18 elements total):** Electronegative elements with high ionization enthalpies and electron affinities (4–7 valence electrons, plus noble gases). High electronegativity. Form covalent or molecular lattices. Form acidic oxides (SO₃ + H₂O → H₂SO₄) or neutral oxides (CO, NO, N₂O). Electrical insulators (except graphite).",
-    "• **Metalloids (Semimetals — B, Si, Ge, As, Sb, Te, Po):** Borderline elements situated along the diagonal dividing line between metals and non-metals in the p-block.",
-    "  - Possess intermediate electrical conductivity that increases with rising temperature (semiconductors, negative temperature coefficient of resistance).",
-    "  - Form amphoteric or weakly acidic oxides (e.g., As₂O₃ + 6HCl → 2AsCl₃ + 3H₂O; As₂O₃ + 6NaOH → 2Na₃AsO₃ + 3H₂O).",
-    "  - Doping: Silicon and Germanium are doped with Group 13 elements (B, Ga) to create p-type semiconductors, or Group 15 elements (P, As) to create n-type semiconductors, forming p-n junctions for solar cells and microprocessors."
+    "## 1. Topic Introduction — Reading the Table Like a Map\n\nThe long-form table is not a memory chart but a **map of electronic configurations**: every period is a shell being filled, every group is a family of outer configurations, and the four blocks are the four subshell types. Learn to translate position ⇄ configuration and the table predicts chemistry — valency, metallic character, ion formation — without memorising individual elements.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Periods — the horizontal story\n\n| Period | n | Elements | Filled subshells | Type |\n|---|---|---|---|---|\n| 1 | 1 | 2 (H, He) | 1s | **Shortest** |\n| 2 | 2 | 8 (Li → Ne) | 2s 2p | **Short** |\n| 3 | 3 | 8 (Na → Ar) | 3s 3p | **Short** |\n| 4 | 4 | 18 (K → Kr) | 4s 3d 4p | **Long** |\n| 5 | 5 | 18 (Rb → Xe) | 5s 4d 5p | **Long** |\n| 6 | 6 | 32 (Cs → Rn) | 6s 4f 5d 6p | **Longest** |\n| 7 | 7 | 32 (Fr → Og) | 7s 5f 6d 7p | Longest (completed) |\n\nPeriod number = **highest principal quantum number n** occupied.\n\n### 2.2 Groups — the vertical story\n\n- **18 groups.** Same group ⇒ same number of valence (outer-shell) electrons ⇒ similar chemistry.\n- Group number rules:\n  - **s-block:** group = number of outer s electrons (group 1: ns¹; group 2: ns²).\n  - **p-block:** group = 10 + outer (s + p) electrons (group 13: ns²np¹ … group 18: ns²np⁶).\n  - **d-block:** group = outer s electrons + 10 (Sc 4s²3d¹ → 3; Zn 4s²3d¹⁰ → 12).\n  - **f-block:** placed as group 3 members of periods 6–7 (lanthanoids, actinoids).\n\n### 2.3 The four blocks\n\n| Block | Last electron enters | Groups | Character | Examples |\n|---|---|---|---|---|\n| **s** | ns | 1–2 (+He, H) | Reactive metals | Na, Mg |\n| **p** | np | 13–18 | Metals + metalloids + non-metals + noble gases | Al, Si, Cl, Ne |\n| **d** | (n−1)d | 3–12 | **Transition metals** | Fe, Cu, Zn |\n| **f** | (n−2)f | 3 (rows 6–7) | **Inner-transition** | Ce, U |\n\n- **Normal elements:** s- and p-block (outer shell being filled).\n- **Transition elements:** d-block (penultimate d subshell being filled; all are metals, variable valency, coloured ions).\n- **Inner-transition elements:** f-block (antepenultimate f subshell; lanthanoids 4f, actinoids 5f).\n\n### 2.4 Diagonal relationships and special positions\n\n- **H and He** sit in period 1; H is placed in group 1 by convention (1s¹) though its chemistry is unique.\n- **Diagonal pairs** (Li–Mg, Be–Al, B–Si) resemble each other because their charge/size ratios match — a first-period effect.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Period** | Row of elements filling the same principal shell | Period 3 = n = 3 |\n| **Group** | Column of elements with the same valence-shell configuration | Group 17: ns²np⁵ |\n| **Block** | Set of groups defined by the subshell the last electron enters | p-block: np filling |\n| **Transition element** | d-block element with a partly filled d subshell in atom or common ions | Fe, Cu (Zn disputed: d¹⁰ in both) |\n| **Inner-transition element** | f-block element; f subshell of the (n−2) shell filling | La–Lu, Ac–Lr |\n| **Representative (normal) elements** | s- and p-block elements whose outer shells fill | Groups 1–2, 13–18 |",
+    "## 4. Detailed Explanation\n\n### 4.1 Worked drill — position from configuration (the exam skill)\n\n**Q: An element has Z = 26. Find its period, group, block and name.**\nFe: 1s² 2s² 2p⁶ 3s² 3p⁶ **4s² 3d⁶**.\n- Highest n = 4 → **period 4**.\n- Last electron enters 3d → **d-block**.\n- Group = outer s electrons + 10 = 2 + 10 = **group 8** (older: VIII).\n- Name: **iron** — a transition metal.\n\n### 4.2 Why 4s, 3d, 4p order creates the long period\n\nIn period 4 the filling sequence is 4s (2 e⁻) → 3d (10 e⁻) → 4p (6 e⁻): 18 electrons instead of period 3's 8. The ten d electrons belong to the **penultimate** shell (n = 3), so they add ten **transition metals** in the middle of the row — that is the structural difference between short and long periods.\n\n### 4.3 Group 17 in one line\n\nF, Cl, Br, I: all ns²np⁵ — seven valence electrons, one short of an octet → strongest electron gainers (halogens), all form −1 ions, all diatomic. The configuration *is* the chemistry.\n\n### 4.4 Locating Z = 19, 20, 31, 36, 55 (NEB 2024 — see topic 22 for the table)\n\nK: period 4 group 1 (s); Ca: period 4 group 2 (s); Ga: period 4 group 13 (p); Kr: period 4 group 18 (p); Cs: period 6 group 1 (s). Same drill every time.",
+    "## 5. Comparison Tables\n\n**Normal vs transition vs inner-transition elements**\n\n| Basis | Normal (s, p) | Transition (d) | Inner-transition (f) |\n|---|---|---|---|\n| Subshell filling | Outer ns or np | Penultimate (n−1)d | Antepenultimate (n−2)f |\n| Groups | 1–2, 13–18 | 3–12 | 3 (periods 6–7) |\n| Metallic character | Metals → non-metals across p | All metals | All metals |\n| Variable valency | Rare (except p-block lower) | **Characteristic** | Characteristic |\n| Coloured ions | Rare | Common (d–d transitions) | Common |\n| Examples | Na, Mg, Cl | Fe, Cu, Ni | Ce, Th |\n\n**Short vs long periods**\n\n| Basis | Periods 1–3 (short) | Periods 4–7 (long) |\n|---|---|---|\n| Elements | 2, 8, 8 | 18, 32, 32 |\n| Subshells filled | ns, np only | ns, (n−1)d, np (+ (n−2)f in 6–7) |\n| Transition series | None | d-series (4–7); f-series (6–7) |\n\n**Similarity:** both end with a noble gas (ns²np⁶ except He 1s²) — the octet boundary that closes every period.",
+    "## 6. Common Confusions\n\n**Group of d-block elements:** add 10 to the outer s electrons — Fe (4s²) is group 8, not 2. The \"outer electrons only\" rule belongs to s/p blocks.",
+    "**Zn, Cd, Hg — transition or not?** Strictly, a transition element needs a partly filled d subshell in the atom **or a common ion**; Zn²⁺/Cd²⁺/Hg²⁺ are d¹⁰, so many texts exclude them (CBSE/NEP convention lists them as exceptions).",
+    "**He's block:** He ends period 1 but its configuration is 1s² — placed with group 18 (noble gases) by property, though it is formally an s-orbital filling.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Name the blocks and state which subshell each fills.** — s-block: ns (groups 1–2); p-block: np (13–18); d-block: (n−1)d (3–12, transition metals); f-block: (n−2)f (lanthanoids/actinoids, inner-transition).",
+    "**NEB-style (2m): Why are d-block elements called transition elements?** — They stand between the electropositive s-block and electronegative p-block, and their properties **transition** between the two: their penultimate d subshell is being filled, giving variable valency, coloured ions and catalytic behaviour.",
+    "**NEB-style (3m): An element has configuration [Kr] 5s² 4d¹⁰ 5p². Determine its period, group, block and name.** — Highest n = 5 → period 5; last electron in 5p → p-block; outer electrons 5s²5p² = 4 → group 14; the element is **tin (Sn, Z = 50)**."
   ],
   "confusion": [
-    "❌ All transition elements are d-block, and all d-block elements are transition elements. ✅ All transition elements belong to d-block, but Zn, Cd, and Hg are d-block elements that are NOT transition elements because their d-subshell is completely filled (d¹⁰) in ground state and common +2 oxidation state.",
-    "❌ Hydrogen is an alkali metal because it sits in Group 1. ✅ Hydrogen has an 1s¹ configuration but is a non-metal with high ionization enthalpy (1312 kJ/mol), forming covalent bonds and H⁻ hydride ions.",
-    "❌ Helium belongs to p-block because it sits in Group 18. ✅ Helium has the valence configuration 1s² (s-block), but is placed in Group 18 above p-block noble gases due to its completely filled valence shell and inert noble chemical properties.",
-    "❌ Fluorine has the highest electron gain enthalpy (electron affinity) in the periodic table. ✅ Chlorine (Cl) has higher negative electron gain enthalpy than Fluorine (-349 kJ/mol vs -328 kJ/mol) because Fluorine's 2p subshell is very small and compact, causing strong inter-electronic repulsions that hinder incoming electrons.",
-    "❌ Ionization enthalpy always increases monotonically across a period from left to right. ✅ Exceptions exist: Beryllium (1s² 2s²) has higher IE₁ than Boron (1s² 2s² 2p¹) because 2s electrons penetrate closer to the nucleus and are fully paired; Nitrogen (2s² 2p³) has higher IE₁ than Oxygen (2s² 2p⁴) due to the extra stability of half-filled p-orbitals.",
-    "❌ Lanthanum (₅₇La) and Actinium (₈₉Ac) are f-block elements. ✅ La and Ac are d-block elements (outer configuration 5d¹ 6s² and 6d¹ 7s²). The f-block begins with Cerium (₅₈Ce) and Thorium (₉₀Th).",
-    "❌ Lanthanide contraction means the atoms expand down the group. ✅ Contraction means atomic/ionic radii decrease steadily across the 4f series from Ce to Lu due to poor shielding by diffuse 4f orbitals.",
-    "❌ Copper, Silver, and Gold are non-transition metals because their ground state is d¹⁰. ✅ They are transition metals because their common oxidation states have partially filled d-orbitals: Cu²⁺ is 3d⁹, Au³⁺ is 5d⁸.",
-    "❌ Graphite is an insulator like other non-metals. ✅ Graphite conducts electricity along its hexagonal sheets due to free delocalized π-electrons resulting from sp² hybridization.",
-    "❌ All oxides of metals are basic. ✅ Most are basic, but metal oxides with high oxidation states are acidic (e.g., CrO₃ with Cr⁶⁺, Mn₂O₇ with Mn⁷⁺), and some are amphoteric (Al₂O₃, ZnO, PbO, SnO).",
-    "❌ Coinage metals include Zinc, Cadmium, and Mercury. ✅ Coinage metals are strictly Group 11 (Cu, Ag, Au). Group 12 (Zn, Cd, Hg) are Volatile Metals.",
-    "❌ Mercury dissolves all metals to form amalgams. ✅ Mercury does NOT amalgamate with Iron (Fe), Platinum (Pt), or Tungsten (W); therefore, mercury is safely shipped and stored in iron flasks."
+    "**Period ≠ group:** period counts shells (highest n); group counts outer electrons. K and Cs share group 1 but sit in periods 4 and 6.",
+    "**d-block group arithmetic:** Sc = 4s²3d¹ → 2 + 10 = group 3; Mn = 4s²3d⁵ → group 7; Zn = 4s²3d¹⁰ → group 12. Adding s + d electrons gives wrong answers."
   ],
   "practice": [
-    "Write the complete electronic configuration of Cu (Z=29), Cr (Z=24), Fe³⁺ (Z=26), and Ce⁴⁺ (Z=58).",
-    "Explain why Zn²⁺ salts are colorless and diamagnetic, whereas Cu²⁺ salts are blue and paramagnetic.",
-    "Calculate the magnetic moment (spin-only) for Fe²⁺ (3d⁶) and Mn²⁺ (3d⁵).",
-    "State Modern Periodic Law and describe how Moseley proved that atomic number is more fundamental than atomic mass.",
-    "Discuss the causes and three major consequences of Lanthanide Contraction on 4d/5d transition elements.",
-    "Explain why the first ionization enthalpy of Nitrogen is greater than that of Oxygen, but the second ionization enthalpy of Oxygen is greater than that of Nitrogen.",
-    "Give reasons: (a) Why are alkali metals stored under kerosene? (b) Why is Lithium the strongest reducing agent in aqueous solution?",
-    "Distinguish between typical transition metals and non-typical volatile metals with three points of difference.",
-    "Explain the Inert Pair Effect and justify why PbCl₂ is stable while PbCl₄ readily decomposes on heating."
+    "Why does period 6 contain 32 elements while period 3 contains only 8?",
+    "Classify Zn as transition or non-transition and justify both readings.",
+    "Why do Li and Mg resemble each other more than Li and Na do?"
   ],
   "universalFacts": [
-    "Atomic number (Z), representing nuclear charge, uniquely dictates chemical identity and electron configurations.",
-    "Half-filled (p³, d⁵, f⁷) and fully filled (p⁶, d¹⁰, f¹⁴) subshells possess maximum symmetry and exchange energy stability.",
-    "The periodic table represents the direct geometric visualization of quantum mechanical energy level solutions (Aufbau principle and Hund's rule).",
-    "Poor shielding ability follows the order: s > p > d > f; this fundamental rule dictates both the inert pair effect and lanthanide contraction.",
-    "answer pattern for \"Classification of elements into different groups, periods…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "The table's 18-group, 7-period shape is mandated by orbital capacities: 2 + 8 + 8 + 18 + 18 + 32 + 32 = 118 elements complete seven shells — Og (Z = 118) closed period 7 in 2016."
   ],
   "visualType": "periodic-table-blocks",
   "keyPoints": [
-    "• Classification of elements into different groups",
-    "• Periods",
-    "• Blocks"
+    "7 periods (2, 8, 8, 18, 18, 32, 32 elements; period = highest n); 18 groups (s: outer e⁻; p: 10 + outer e⁻; d: s e⁻ + 10). Blocks: s (1–2), p (13–18), d (3–12, transition), f (lanthanoids/actinoids, inner-transition). Fe (Z = 26): period 4, group 8, d-block. Short periods fill ns/np only; long periods add the (n−1)d ten."
   ],
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***Fe = [Ar] 4s² 3d⁶ → period 4, group 8, d-block*** — the model answer chain: read n, read last subshell, count s electrons + 10."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): Name the four blocks of the periodic table, the subshell each fills, and one characteristic of each block.** — **s-block:** fills ns (groups 1–2); reactive metals forming +1/+2 ions. **p-block:** fills np (13–18); metals, metalloids, non-metals and noble gases. **d-block:** fills (n−1)d (3–12); transition metals with variable valency and coloured ions. **f-block:** fills (n−2)f (lanthanoids and actinoids); inner-transition metals placed below the main table.",
+    "**NEB-style (2m): How many elements are in each of the seven periods and why do periods 4 and 5 hold 18?** — 2, 8, 8, 18, 18, 32, 32. Periods 4–5 hold 18 because after the ns² pair, **ten (n−1)d electrons** fill before the six np electrons — adding a transition series of ten elements to the eight of a short period.",
+    "**NEB-style (3m): An element has Z = 26. Write its configuration and determine its period, group, block and name.** — Fe: 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶. Highest n = 4 → **period 4**; last electron enters 3d → **d-block**; group = s electrons + 10 = 2 + 10 = **group 8**; the element is **iron**, a transition metal.",
+    "**NEB-style (2m): Distinguish normal and transition elements.** — **Normal (representative) elements:** s- and p-block; their outer shell is being filled; fixed valency (= group number or 8 − group). **Transition elements:** d-block; the penultimate d subshell is being filled; variable valency, coloured ions, catalysis are characteristic."
+  ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Classification of elements into different groups, periods…\"?",
+      "question": "Period 4 of the periodic table contains:",
       "options": [
-        "Classification of elements into different groups",
-        "Periods",
-        "Unrelated topic",
-        "None of the above"
+        "8 elements",
+        "18 elements",
+        "32 elements",
+        "2 elements"
       ],
-      "answer": "A",
-      "explanation": "Classification of elements into different groups is listed among the official sub-ideas of Classification of elements into different groups, periods…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "4s 3d 4p = 2+10+6."
     },
     {
-      "question": "A common examiner point on \"Classification of elements into different groups, periods…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The number of groups in the long form is:",
       "options": [
-        "True",
-        "False"
+        "8",
+        "9",
+        "18",
+        "7"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C",
+      "explanation": "18 vertical columns."
+    },
+    {
+      "question": "The last electron of a p-block element enters:",
+      "options": [
+        "ns",
+        "(n−1)d",
+        "np",
+        "(n−2)f"
+      ],
+      "answer": "C",
+      "explanation": "np — groups 13–18."
+    },
+    {
+      "question": "d-block elements are called transition elements because:",
+      "options": [
+        "They are radioactive",
+        "Their properties transition between s and p blocks",
+        "They change period",
+        "They are all liquids"
+      ],
+      "answer": "B",
+      "explanation": "Bridge between electropositive s and electronegative p blocks."
+    },
+    {
+      "question": "The group of iron (Z = 26) is:",
+      "options": [
+        "2",
+        "8",
+        "10",
+        "6"
+      ],
+      "answer": "B",
+      "explanation": "4s² → 2 + 10 = group 8."
+    },
+    {
+      "question": "Lanthanoids and actinoids belong to the:",
+      "options": [
+        "s-block",
+        "p-block",
+        "d-block",
+        "f-block"
+      ],
+      "answer": "D",
+      "explanation": "(n−2)f filling — inner-transition."
+    },
+    {
+      "question": "The shortest period contains:",
+      "options": [
+        "2 elements",
+        "8 elements",
+        "18 elements",
+        "32 elements"
+      ],
+      "answer": "A",
+      "explanation": "H and He fill 1s only."
+    },
+    {
+      "question": "An element with configuration [Ar] 4s² 3d¹⁰ 4p⁶ belongs to:",
+      "options": [
+        "Group 2, period 4",
+        "Group 18, period 4",
+        "Group 12, period 4",
+        "Group 18, period 3"
+      ],
+      "answer": "B",
+      "explanation": "Kr — noble gas, p-block, period 4."
     }
   ],
   "source": "generated",
@@ -143,5 +139,170 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "summary": "Classification of elements into different groups, periods… (Classification of Elements and Periodic Table, Chemistry, class-11-notes) covers Classification of elements into different groups, periods, blocks. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
+  "summary": "The long-form table is a configuration map: **7 periods** (2, 8, 8, 18, 18, 32, 32 elements — the period number is the highest shell n being filled) and **18 groups** (same outer configuration = same family: s-block groups 1–2, p-block 13–18 counted as 10 + outer electrons, d-block 3–12 counted as s electrons + 10). The **four blocks** are named for the subshell receiving the last electron: s (reactive metals), p (the full metal→non-metal sweep ending in noble gases), d (transition metals — variable valency, coloured ions) and f (inner-transition lanthanoids and actinoids). Long periods exist because ten (n−1)d electrons fill between ns and np. Every \"locate the element\" question — Fe (Z = 26) → period 4, group 8, d-block — is the same three-step read-off from the configuration.",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Reading the Table Like a Map\n\nThe long-form table is not a memory chart but a **map of electronic configurations**: every period is a shell being filled, every group is a family of outer configurations, and the four blocks are the four subshell types. Learn to translate position ⇄ configuration and the table predicts chemistry — valency, metallic character, ion formation — without memorising individual elements.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Periods — the horizontal story\n\n| Period | n | Elements | Filled subshells | Type |\n|---|---|---|---|---|\n| 1 | 1 | 2 (H, He) | 1s | **Shortest** |\n| 2 | 2 | 8 (Li → Ne) | 2s 2p | **Short** |\n| 3 | 3 | 8 (Na → Ar) | 3s 3p | **Short** |\n| 4 | 4 | 18 (K → Kr) | 4s 3d 4p | **Long** |\n| 5 | 5 | 18 (Rb → Xe) | 5s 4d 5p | **Long** |\n| 6 | 6 | 32 (Cs → Rn) | 6s 4f 5d 6p | **Longest** |\n| 7 | 7 | 32 (Fr → Og) | 7s 5f 6d 7p | Longest (completed) |\n\nPeriod number = **highest principal quantum number n** occupied.\n\n### 2.2 Groups — the vertical story\n\n- **18 groups.** Same group ⇒ same number of valence (outer-shell) electrons ⇒ similar chemistry.\n- Group number rules:\n  - **s-block:** group = number of outer s electrons (group 1: ns¹; group 2: ns²).\n  - **p-block:** group = 10 + outer (s + p) electrons (group 13: ns²np¹ … group 18: ns²np⁶).\n  - **d-block:** group = outer s electrons + 10 (Sc 4s²3d¹ → 3; Zn 4s²3d¹⁰ → 12).\n  - **f-block:** placed as group 3 members of periods 6–7 (lanthanoids, actinoids).\n\n### 2.3 The four blocks\n\n| Block | Last electron enters | Groups | Character | Examples |\n|---|---|---|---|---|\n| **s** | ns | 1–2 (+He, H) | Reactive metals | Na, Mg |\n| **p** | np | 13–18 | Metals + metalloids + non-metals + noble gases | Al, Si, Cl, Ne |\n| **d** | (n−1)d | 3–12 | **Transition metals** | Fe, Cu, Zn |\n| **f** | (n−2)f | 3 (rows 6–7) | **Inner-transition** | Ce, U |\n\n- **Normal elements:** s- and p-block (outer shell being filled).\n- **Transition elements:** d-block (penultimate d subshell being filled; all are metals, variable valency, coloured ions).\n- **Inner-transition elements:** f-block (antepenultimate f subshell; lanthanoids 4f, actinoids 5f).\n\n### 2.4 Diagonal relationships and special positions\n\n- **H and He** sit in period 1; H is placed in group 1 by convention (1s¹) though its chemistry is unique.\n- **Diagonal pairs** (Li–Mg, Be–Al, B–Si) resemble each other because their charge/size ratios match — a first-period effect.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Period** | Row of elements filling the same principal shell | Period 3 = n = 3 |\n| **Group** | Column of elements with the same valence-shell configuration | Group 17: ns²np⁵ |\n| **Block** | Set of groups defined by the subshell the last electron enters | p-block: np filling |\n| **Transition element** | d-block element with a partly filled d subshell in atom or common ions | Fe, Cu (Zn disputed: d¹⁰ in both) |\n| **Inner-transition element** | f-block element; f subshell of the (n−2) shell filling | La–Lu, Ac–Lr |\n| **Representative (normal) elements** | s- and p-block elements whose outer shells fill | Groups 1–2, 13–18 |",
+      "## 4. Detailed Explanation\n\n### 4.1 Worked drill — position from configuration (the exam skill)\n\n**Q: An element has Z = 26. Find its period, group, block and name.**\nFe: 1s² 2s² 2p⁶ 3s² 3p⁶ **4s² 3d⁶**.\n- Highest n = 4 → **period 4**.\n- Last electron enters 3d → **d-block**.\n- Group = outer s electrons + 10 = 2 + 10 = **group 8** (older: VIII).\n- Name: **iron** — a transition metal.\n\n### 4.2 Why 4s, 3d, 4p order creates the long period\n\nIn period 4 the filling sequence is 4s (2 e⁻) → 3d (10 e⁻) → 4p (6 e⁻): 18 electrons instead of period 3's 8. The ten d electrons belong to the **penultimate** shell (n = 3), so they add ten **transition metals** in the middle of the row — that is the structural difference between short and long periods.\n\n### 4.3 Group 17 in one line\n\nF, Cl, Br, I: all ns²np⁵ — seven valence electrons, one short of an octet → strongest electron gainers (halogens), all form −1 ions, all diatomic. The configuration *is* the chemistry.\n\n### 4.4 Locating Z = 19, 20, 31, 36, 55 (NEB 2024 — see topic 22 for the table)\n\nK: period 4 group 1 (s); Ca: period 4 group 2 (s); Ga: period 4 group 13 (p); Kr: period 4 group 18 (p); Cs: period 6 group 1 (s). Same drill every time.",
+      "## 5. Comparison Tables\n\n**Normal vs transition vs inner-transition elements**\n\n| Basis | Normal (s, p) | Transition (d) | Inner-transition (f) |\n|---|---|---|---|\n| Subshell filling | Outer ns or np | Penultimate (n−1)d | Antepenultimate (n−2)f |\n| Groups | 1–2, 13–18 | 3–12 | 3 (periods 6–7) |\n| Metallic character | Metals → non-metals across p | All metals | All metals |\n| Variable valency | Rare (except p-block lower) | **Characteristic** | Characteristic |\n| Coloured ions | Rare | Common (d–d transitions) | Common |\n| Examples | Na, Mg, Cl | Fe, Cu, Ni | Ce, Th |\n\n**Short vs long periods**\n\n| Basis | Periods 1–3 (short) | Periods 4–7 (long) |\n|---|---|---|\n| Elements | 2, 8, 8 | 18, 32, 32 |\n| Subshells filled | ns, np only | ns, (n−1)d, np (+ (n−2)f in 6–7) |\n| Transition series | None | d-series (4–7); f-series (6–7) |\n\n**Similarity:** both end with a noble gas (ns²np⁶ except He 1s²) — the octet boundary that closes every period.",
+      "## 6. Common Confusions\n\n**Group of d-block elements:** add 10 to the outer s electrons — Fe (4s²) is group 8, not 2. The \"outer electrons only\" rule belongs to s/p blocks.",
+      "**Zn, Cd, Hg — transition or not?** Strictly, a transition element needs a partly filled d subshell in the atom **or a common ion**; Zn²⁺/Cd²⁺/Hg²⁺ are d¹⁰, so many texts exclude them (CBSE/NEP convention lists them as exceptions).",
+      "**He's block:** He ends period 1 but its configuration is 1s² — placed with group 18 (noble gases) by property, though it is formally an s-orbital filling.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Name the blocks and state which subshell each fills.** — s-block: ns (groups 1–2); p-block: np (13–18); d-block: (n−1)d (3–12, transition metals); f-block: (n−2)f (lanthanoids/actinoids, inner-transition).",
+      "**NEB-style (2m): Why are d-block elements called transition elements?** — They stand between the electropositive s-block and electronegative p-block, and their properties **transition** between the two: their penultimate d subshell is being filled, giving variable valency, coloured ions and catalytic behaviour.",
+      "**NEB-style (3m): An element has configuration [Kr] 5s² 4d¹⁰ 5p². Determine its period, group, block and name.** — Highest n = 5 → period 5; last electron in 5p → p-block; outer electrons 5s²5p² = 4 → group 14; the element is **tin (Sn, Z = 50)**."
+    ],
+    "confusion": [
+      "**Period ≠ group:** period counts shells (highest n); group counts outer electrons. K and Cs share group 1 but sit in periods 4 and 6.",
+      "**d-block group arithmetic:** Sc = 4s²3d¹ → 2 + 10 = group 3; Mn = 4s²3d⁵ → group 7; Zn = 4s²3d¹⁰ → group 12. Adding s + d electrons gives wrong answers."
+    ],
+    "keyPoints": [
+      "7 periods (2, 8, 8, 18, 18, 32, 32 elements; period = highest n); 18 groups (s: outer e⁻; p: 10 + outer e⁻; d: s e⁻ + 10). Blocks: s (1–2), p (13–18), d (3–12, transition), f (lanthanoids/actinoids, inner-transition). Fe (Z = 26): period 4, group 8, d-block. Short periods fill ns/np only; long periods add the (n−1)d ten."
+    ],
+    "importantConcepts": [
+      "**Configuration ⇄ position:** every position question is a configuration question — highest n gives the period, the last-entering subshell gives the block, and the outer-electron count (+10 for d) gives the group."
+    ],
+    "examples": [
+      "***Fe = [Ar] 4s² 3d⁶ → period 4, group 8, d-block*** — the model answer chain: read n, read last subshell, count s electrons + 10."
+    ],
+    "universalFacts": [
+      "The table's 18-group, 7-period shape is mandated by orbital capacities: 2 + 8 + 8 + 18 + 18 + 32 + 32 = 118 elements complete seven shells — Og (Z = 118) closed period 7 in 2016."
+    ],
+    "importantStatements": [
+      "\"Elements of the same group have the same number of valence electrons and hence similar chemical properties.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ located specifically for this topic; NEB 2024 3m (locate Z = 19, 20, 31, 36, 55) is anchored under topic 22 and applies here. Others are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"Row = shell, column = family, block = last subshell.\" Group chant: s-block count them, p-block add ten, d-block s-plus-ten. Period sizes: 2-8-8-18-18-32-32."
+    ],
+    "examNotes": [
+      "For \"determine period/group/block\" questions, show the configuration first — the marking scheme awards the configuration, then each read-off. Never skip writing the configuration."
+    ],
+    "formulas": [
+      "- Period = highest occupied n\n- Group: s-block = outer e⁻; p-block = 10 + outer e⁻; d-block = s e⁻ + 10\n- Elements per period: 2, 8, 8, 18, 18, 32, 32"
+    ],
+    "practice": [
+      "Why does period 6 contain 32 elements while period 3 contains only 8?",
+      "Classify Zn as transition or non-transition and justify both readings.",
+      "Why do Li and Mg resemble each other more than Li and Na do?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Name the four blocks of the periodic table, the subshell each fills, and one characteristic of each block.** — **s-block:** fills ns (groups 1–2); reactive metals forming +1/+2 ions. **p-block:** fills np (13–18); metals, metalloids, non-metals and noble gases. **d-block:** fills (n−1)d (3–12); transition metals with variable valency and coloured ions. **f-block:** fills (n−2)f (lanthanoids and actinoids); inner-transition metals placed below the main table.",
+      "**NEB-style (2m): How many elements are in each of the seven periods and why do periods 4 and 5 hold 18?** — 2, 8, 8, 18, 18, 32, 32. Periods 4–5 hold 18 because after the ns² pair, **ten (n−1)d electrons** fill before the six np electrons — adding a transition series of ten elements to the eight of a short period.",
+      "**NEB-style (3m): An element has Z = 26. Write its configuration and determine its period, group, block and name.** — Fe: 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶. Highest n = 4 → **period 4**; last electron enters 3d → **d-block**; group = s electrons + 10 = 2 + 10 = **group 8**; the element is **iron**, a transition metal.",
+      "**NEB-style (2m): Distinguish normal and transition elements.** — **Normal (representative) elements:** s- and p-block; their outer shell is being filled; fixed valency (= group number or 8 − group). **Transition elements:** d-block; the penultimate d subshell is being filled; variable valency, coloured ions, catalysis are characteristic."
+    ]
+  },
+  "importantConcepts": [
+    "**Configuration ⇄ position:** every position question is a configuration question — highest n gives the period, the last-entering subshell gives the block, and the outer-electron count (+10 for d) gives the group."
+  ],
+  "importantStatements": [
+    "\"Elements of the same group have the same number of valence electrons and hence similar chemical properties.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ located specifically for this topic; NEB 2024 3m (locate Z = 19, 20, 31, 36, 55) is anchored under topic 22 and applies here. Others are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "\"Row = shell, column = family, block = last subshell.\" Group chant: s-block count them, p-block add ten, d-block s-plus-ten. Period sizes: 2-8-8-18-18-32-32."
+  ],
+  "examNotes": [
+    "For \"determine period/group/block\" questions, show the configuration first — the marking scheme awards the configuration, then each read-off. Never skip writing the configuration."
+  ],
+  "formulas": [
+    "- Period = highest occupied n\n- Group: s-block = outer e⁻; p-block = 10 + outer e⁻; d-block = s e⁻ + 10\n- Elements per period: 2, 8, 8, 18, 18, 32, 32"
+  ],
+  "mcs": [
+    {
+      "question": "Period 4 of the periodic table contains:",
+      "options": [
+        "8 elements",
+        "18 elements",
+        "32 elements",
+        "2 elements"
+      ],
+      "answer": "B",
+      "explanation": "4s 3d 4p = 2+10+6."
+    },
+    {
+      "question": "The number of groups in the long form is:",
+      "options": [
+        "8",
+        "9",
+        "18",
+        "7"
+      ],
+      "answer": "C",
+      "explanation": "18 vertical columns."
+    },
+    {
+      "question": "The last electron of a p-block element enters:",
+      "options": [
+        "ns",
+        "(n−1)d",
+        "np",
+        "(n−2)f"
+      ],
+      "answer": "C",
+      "explanation": "np — groups 13–18."
+    },
+    {
+      "question": "d-block elements are called transition elements because:",
+      "options": [
+        "They are radioactive",
+        "Their properties transition between s and p blocks",
+        "They change period",
+        "They are all liquids"
+      ],
+      "answer": "B",
+      "explanation": "Bridge between electropositive s and electronegative p blocks."
+    },
+    {
+      "question": "The group of iron (Z = 26) is:",
+      "options": [
+        "2",
+        "8",
+        "10",
+        "6"
+      ],
+      "answer": "B",
+      "explanation": "4s² → 2 + 10 = group 8."
+    },
+    {
+      "question": "Lanthanoids and actinoids belong to the:",
+      "options": [
+        "s-block",
+        "p-block",
+        "d-block",
+        "f-block"
+      ],
+      "answer": "D",
+      "explanation": "(n−2)f filling — inner-transition."
+    },
+    {
+      "question": "The shortest period contains:",
+      "options": [
+        "2 elements",
+        "8 elements",
+        "18 elements",
+        "32 elements"
+      ],
+      "answer": "A",
+      "explanation": "H and He fill 1s only."
+    },
+    {
+      "question": "An element with configuration [Ar] 4s² 3d¹⁰ 4p⁶ belongs to:",
+      "options": [
+        "Group 2, period 4",
+        "Group 18, period 4",
+        "Group 12, period 4",
+        "Group 18, period 3"
+      ],
+      "answer": "B",
+      "explanation": "Kr — noble gas, p-block, period 4."
+    }
+  ]
 }

@@ -5,74 +5,299 @@
   "topicTitle": "Modern periodic law, Moseley's experiment, and structure of modern periodic table",
   "relevance": 100,
   "notes": [
-    "### 1. Historical Evolution of Periodic Classification",
-    "• **Dobereiner's Law of Triads (1829):** Grouped elements into triads where atomic mass of middle element was roughly arithmetic mean of first and third (e.g., Li 7, Na 23, K 39; Ca 40, Sr 88, Ba 137; Cl 35.5, Br 80, I 127). Failed because only a few triads could be identified.",
-    "• **Newlands' Law of Octaves (1865):** When elements are arranged in order of increasing atomic mass, every eighth element shows similar physical and chemical properties like musical notes (Sa, Re, Ga, Ma...). Failed after Calcium (valid only up to Ca, Z=20) and could not accommodate noble gases discovered later.",
-    "• **Lothar Meyer's Curve (1869):** Plotted atomic volume against atomic weight. Alkali metals occupied sharp peaks; alkaline earth metals occupied descending curves; halogens occupied ascending slopes; transition metals occupied valleys.",
-    "• **Mendeleev's Periodic Law (1869):** 'The physical and chemical properties of elements are periodic functions of their atomic masses.' Mendeleev left gaps for undiscovered elements (Eka-Boron = Scandium, Eka-Aluminium = Gallium, Eka-Silicon = Germanium). Anomalies: Inverted pairs (Ar 39.9 before K 39.1; Co 58.9 before Ni 58.7; Te 127.6 before I 126.9), no fixed position for Hydrogen, isotopes could not be accommodated.",
-    "### 2. Moseley's Experiment and Modern Periodic Law (1913)",
-    "• English physicist Henry Moseley bombarded various metal anticathodes with high-speed cathode rays (electrons) and studied characteristic X-ray emission spectra.",
-    "• **Moseley's Law:** The square root of the frequency (√ν) of the characteristic X-ray spectral line is directly proportional to the atomic number (Z) of the target element:",
-    "$$\\sqrt{\\nu} = a(Z - b)$$",
-    "where ν = frequency of K_α X-ray line, Z = atomic number (nuclear charge), a and b are constants characteristic of the spectral line series (screening constant b ≈ 1 for K-series).",
-    "• **Fundamental Conclusion:** Plot of √ν vs Z yields a straight line, whereas plot of √ν vs atomic mass (A) does not. This conclusively proved that **atomic number (Z)**, representing the net positive nuclear charge (number of protons), is the fundamental property governing the chemical identity of elements, NOT atomic mass.",
-    "• **Statement of Modern Periodic Law:** 'The physical and chemical properties of elements are periodic functions of their atomic numbers.'",
-    "### 3. Resolution of Mendeleev's Anomalies by Modern Periodic Table",
-    "• **Anomalous Pairs Resolved:** Argon (Z=18) naturally precedes Potassium (Z=19); Cobalt (Z=27) naturally precedes Nickel (Z=28); Tellurium (Z=52) naturally precedes Iodine (Z=53) purely by increasing atomic numbers, regardless of atomic weights.",
-    "• **Position of Isotopes:** Since isotopes share identical atomic numbers (same Z, different mass number A), they occupy one single position in the periodic table without conflict.",
-    "• **Scientific Division into Blocks:** Reflects filling of electron shells according to quantum mechanics (Aufbau principle, Pauli exclusion, Hund's rule).",
-    "### 4. Structural Layout of the Long Form (Bohr's Form) Periodic Table",
-    "• **Periods (7 Horizontal Rows):** Corresponds to principal quantum number n of outermost valence shell.",
-    "- Period 1 (n=1): 2 elements (1s²)",
-    "- Period 2 (n=2): 8 elements (2s² 2p⁶)",
-    "- Period 3 (n=3): 8 elements (3s² 3p⁶)",
-    "- Period 4 (n=4): 18 elements (4s² 3d¹⁰ 4p⁶)",
-    "- Period 5 (n=5): 18 elements (5s² 4d¹⁰ 5p⁶)",
-    "- Period 6 (n=6): 32 elements (6s² 4f¹⁴ 5d¹⁰ 6p⁶, including Lanthanides ₅₈Ce–₇₁Lu)",
-    "- Period 7 (n=7): 32 elements (7s² 5f¹⁴ 6d¹⁰ 7p⁶, including Actinides ₉₀Th–₁₀₃Lr)",
-    "• **Groups (18 Vertical Columns):** Elements having identical outer electronic configurations and exhibiting similar chemical properties.",
-    "• **IUPAC Nomenclature for Elements with Z > 100:** Uses numerical roots for digits: 0 = nil, 1 = un, 2 = bi, 3 = tri, 4 = quad, 5 = pent, 6 = hex, 7 = sept, 8 = oct, 9 = enn. Suffix '-ium'. Example: 104 = Unnilquadium (Unq), 118 = Ununoctium (Uuo / Oganesson).",
-    "# Modern periodic law and modern periodic table\n\n## 1. Introduction\nChemical picture of **Modern periodic law and modern periodic table** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Classification of Elements and Periodic Table fill pass.\n\n## 2. Concepts and definitions\n### Modern periodic law and modern periodic table\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Classification and trends**\n\n| Family or case | Rule or trend | Example | Exception |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Modern periodic law and modern periodic table — curve or trend plot (authored SVG, plotted from note data)\n- **D2** — Modern periodic law and modern periodic table — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Modern periodic law and modern periodic table — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Modern periodic law and modern periodic table — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — From Atomic Mass to Atomic Number\n\nMendeleev arranged elements by **atomic mass** and left brilliant gaps — but mass-based ordering put tellurium (127.6) before iodine (126.9) and stacked argon against potassium wrongly. Moseley's X-ray work (1913) gave each element a true serial number — the **atomic number Z** — and the modern periodic law re-founded the table on it. NEB 2021 asked the Mendeleev-vs-modern contrast directly (3m); it remains the standard opener for this unit.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The Modern Periodic Law\n\n**\"The physical and chemical properties of the elements are a periodic function of their atomic numbers.\"**\n\n- Atomic number Z = number of protons = the element's true identity.\n- Properties repeat because **electronic configurations repeat**: each new shell begins a new period, and elements with the same outer-shell configuration land in the same group.\n- The periodicity is in **valence-shell electron count**, not in mass.\n\n### 2.2 The long form of the periodic table\n\n- **18 groups (vertical columns), 7 periods (horizontal rows).**\n- Groups 1–2: s-block; 3–12: d-block; 13–18: p-block; lanthanoids/actinoids: f-block (placed separately).\n- A period number = the shell (n) being filled; a group number reflects the outer-shell configuration.\n- Elements are arranged in order of **increasing Z**, left to right.\n\n### 2.3 Why atomic number, not atomic mass\n\n- Z fixes the electron count and hence the configuration — the real cause of chemical behaviour.\n- Mass anomalies vanish: Te (Z = 52) correctly precedes I (Z = 53) despite Te's larger mass; Ar (Z = 18) correctly precedes K (Z = 19).\n- Isotopes of an element (different masses) occupy one place — mass ordering could not handle them.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Modern periodic law** | Properties are a periodic function of atomic number | Moseley, 1913 |\n| **Period** | Horizontal row; electrons enter the same principal shell | Period 3 = n = 3 |\n| **Group** | Vertical column with the same outer configuration | Group 1: ns¹ |\n| **Periodicity** | Regular repetition of properties at regular intervals of Z | Atomic radius peaks at alkali metals |\n| **Isotopes** | Same Z, different mass numbers | ¹H, ²H, ³H — one place in the table |",
+    "## 4. Detailed Explanation\n\n### 4.1 NEB 2021 (3m, verified PYQ) — Modern vs Mendeleev's periodic law\n\n| # | Mendeleev's law | Modern periodic law |\n|---|---|---|\n| 1 | Properties are a periodic function of **atomic mass** | Properties are a periodic function of **atomic number** |\n| 2 | Position decided by mass; anomalies needed force-fitting (Te before I) | Position decided by Z; all anomalies resolve automatically |\n| 3 | No place for **isotopes** (different masses, same element) | Isotopes share one place — Z is identical |\n| 4 | No explanation of why properties repeat | Explains the cause: **repeating electronic configurations** |\n| 5 | Wrong order pairs (Ar–K, Co–Ni) stayed wrong | Ar (Z = 18) before K (Z = 19), Co (27) before Ni (28) — correct by construction |\n\nState any three rows for the 3m.\n\n### 4.2 NEB 2024 (3m, verified PYQ) — locate Z = 19, 20, 31, 36, 55\n\nWork from the configuration, not memory:\n\n| Z | Element | Configuration | Period | Group | Block |\n|---|---|---|---|---|---|\n| 19 | K | [Ar] 4s¹ | 4 | **1** | s |\n| 20 | Ca | [Ar] 4s² | 4 | **2** | s |\n| 31 | Ga | [Ar] 4s² 3d¹⁰ 4p¹ | 4 | **13** | p |\n| 36 | Kr | [Ar] 4s² 3d¹⁰ 4p⁶ | 4 | **18** | p |\n| 55 | Cs | [Xe] 6s¹ | 6 | **1** | s |\n\nMethod: write the configuration → period = highest n → group = number of outer electrons (s/p block) or 10 + outer electrons (d block).\n\n### 4.3 How periodicity emerges\n\nAcross a period the outer-shell count climbs 1 → 8 while Z grows: nuclear pull strengthens, radii shrink, ionisation energy climbs, metallic character falls. Down a group a new shell opens: radii jump, ionisation energy falls, metallic character rises. Every property is this one tug-of-war — **Z↑ pulling vs n↑ shielding** — read at different positions. That is the whole logic of the unit.\n\n### 4.4 Advantages of the long form\n\n1. Position strictly by Z — no anomalies.\n2. Separates metals (left/centre), non-metals (right), metalloids (staircase).\n3. d-block and f-block get their own homes; the table maps directly onto electronic configuration.\n4. Horizontal similarity (period trends) becomes visible alongside vertical (group) similarity.",
+    "## 5. Comparison Tables\n\n**Mendeleev vs Moseley — the identity of the \"position-decider\"**\n\n| Basis | Mendeleev (1869) | Modern (Moseley, 1913) |\n|---|---|---|\n| Ordering quantity | Atomic mass | Atomic number Z |\n| Anomalies (Te/I, Ar/K) | Present, unexplained | Absent |\n| Isotopes | No logical place | One place per element |\n| Cause of periodicity | Not explained | Repeating outer configurations |\n| Prediction style | Gaps with predicted masses (e.g. eka-silicon → Ge) | Predictable from configuration |\n\n**Similarity:** both tables group chemically similar elements in vertical columns and both successfully predicted new elements — Mendeleev's chemical insight survives; only the ordering key changed.\n\n**Short form vs long form**\n\n| Basis | Mendeleev's short form | Long form |\n|---|---|---|\n| Basis | Atomic mass | Atomic number |\n| Groups | 8 (with A/B subgroups) | 18 |\n| d-block | Cramped into groups | Own block, groups 3–12 |\n| Anomalies | Present | None |\n| Link to configuration | Weak | Exact |",
+    "## 6. Common Confusions\n\n**Periodic function of Z — not of mass:** quoting the modern law with \"atomic weight\" is an automatic zero; the one word that matters is **atomic number**.",
+    "**Period vs group:** period = row = shell being filled (highest n); group = column = outer configuration. Z = 19 and Z = 55 share group 1 but sit in different periods.",
+    "**d-block group counting:** for d-block elements group = outer s electrons + 10 (Sc: 4s²3d¹ → group 3; Zn: 4s²3d¹⁰ → group 12).",
+    "## 7. Exam Application\n\n**NEB-style (2m): Why do properties of elements repeat periodically?** — Because electronic configurations repeat: each period starts filling a new shell, and elements with the same outer-shell configuration (same valence count) show the same chemistry — the cause Mendeleev's law could not supply.",
+    "**NEB-style (2m): Where do ¹H, ²H and ³H sit in the modern table and why?** — All three (protium, deuterium, tritium) occupy the single position of hydrogen (Z = 1): the modern law orders by Z, and isotopes differ in mass number, not Z.",
+    "**NEB-style (2m): An element has configuration [Ar] 4s² 3d¹⁰ 4p². Give its period, group and block.** — Highest n = 4 → period 4; six outer electrons (4s² 4p²) → group 14; last electron enters p → p-block. (The element is Ge.)"
   ],
   "confusion": [
-    "❌ Modern Periodic Law is based on atomic mass like Mendeleev's law. ✅ Modern Periodic Law is strictly based on atomic number (Z), discovered by Moseley via X-ray spectroscopy.",
-    "❌ Isotopes need separate positions in the modern periodic table. ✅ Isotopes possess identical atomic numbers, so they naturally share the exact same slot in the modern table.",
-    "❌ Cobalt was placed before Nickel by Mendeleev as an error. ✅ Mendeleev placed Co before Ni based on chemical properties despite Co being heavier (58.93 vs 58.69); modern table confirms Co (Z=27) correctly precedes Ni (Z=28).",
-    "❌ Moseley's graph plotted frequency ν against atomic weight. ✅ Moseley plotted the square root of frequency (√ν) against atomic number (Z), obtaining a perfect straight line: √ν = a(Z - b).",
-    "❌ Period number corresponds to total number of electrons. ✅ Period number corresponds directly to the principal quantum number (n) of the outermost valence electron shell."
+    "**Z vs A:** atomic **number** (protons) orders the table; atomic **mass number** (protons + neutrons) does not — that was Mendeleev's error.",
+    "**Group of d-block elements:** count s electrons + 10, not s + d electrons (Sc: 4s²3d¹ is group 3, not 3)."
   ],
   "practice": [
-    "State Moseley's Law and derive its significance in formulating the Modern Periodic Table.",
-    "Write the IUPAC systematic name and symbol for elements with atomic numbers 108, 114, 117, and 119.",
-    "How does the Long Form of the Periodic Table resolve the position of isotopes and anomalous pairs of Mendeleev?",
-    "Calculate the maximum number of electrons and elements accommodated in the 4th, 5th, and 6th periods using quantum orbital capacities.",
-    "Predict the period, group, and block for the element having atomic number Z = 35 and Z = 56."
+    "Why did mass-based ordering fail for Ar–K while Z-based ordering succeeds?",
+    "An element ends 5s² 4d¹⁰ 5p⁵ — name its period, group and block without looking it up.",
+    "Why is periodicity better explained by outer-shell configuration than by atomic mass?"
   ],
   "universalFacts": [
-    "Henry Moseley established atomic number as the genuine identity of chemical elements in 1913, shortly before dying in World War I at age 27.",
-    "The 7 periods of the modern table correspond exactly to principal energy levels n = 1 to 7.",
-    "Periodicity in chemical properties arises from the periodic recurrence of similar valence shell electronic configurations."
+    "Moseley was killed at Gallipoli in 1915 at age 27; scientists called it the war's greatest loss to science — he had just given the periodic table its true foundation."
   ],
   "visualType": "periodic-table",
   "tabGroup": "Periodic-Table-Trends-Learner-Notes",
   "source": "skeleton-v2",
   "examShortTricks": [
-    "Trick 1: One-line law: 'properties are a periodic function of ATOMIC NUMBER' (Moseley) — not mass; that single word earns the mark.",
-    "Trick 2: Moseley's evidence: √ν ∝ (Z − b) — X-ray frequencies depend on atomic number, not atomic mass.",
-    "Trick 3: Count blocks by last electron: s-block groups 1–2, p-block 13–18, d-block 3–12, f-block separate — draw the staircase if asked to place an element."
+    "\"Z decides, configuration places.\" Period = highest n; group = outer e⁻ (+10 if d-block). Mendeleev-vs-modern: mass→Z, anomalies→none, isotopes→one place, cause→configuration."
   ],
   "keyPoints": [
-    "Modern periodic law: physical and chemical properties of elements are periodic functions of their atomic numbers.",
-    "Moseley changed the basis from atomic mass (Mendeleev) to atomic number.",
-    "7 periods and 18 groups; s, p, d, f blocks by the subshell receiving the last electron."
+    "Modern law: properties are a periodic function of atomic number (Moseley, 1913). Cause: repeating outer electronic configurations. Long form: 18 groups, 7 periods, s/p/d/f blocks. Mass anomalies (Te/I, Ar/K) and isotope placement resolve automatically. Period = highest n; group = outer electrons (s/p) or s electrons + 10 (d)."
   ],
   "practiceQuestions": [
-    "Q. State the modern periodic law. How does it differ from Mendeleev's? (2 marks) — atomic number vs atomic mass as the basis.",
-    "Q. Why did Moseley correct the positions of Ar/K, Co/Ni, Te/I? (1 mark) — their properties depend on Z, and mass order had placed them wrongly."
+    "**NEB 2021 (3m): How does the Modern Periodic Law differ from Mendeleev's Periodic Law? State any three points of difference.** — (1) Basis: Mendeleev orders by **atomic mass**; the modern law orders by **atomic number**. (2) Anomalies: mass ordering forced Te (127.6) before I (126.9) wrongly and mispaired Ar–K; Z-ordering places all elements correctly. (3) Isotopes: mass law has no place for them; the modern law gives all isotopes of an element one position (same Z). (Also: the modern law explains the cause of periodicity — repeating outer electronic configurations — which Mendeleev's could not.)",
+    "**NEB 2024 (3m): Identify the elements with atomic numbers 19, 20, 31, 36 and 55, and state the period and group of each in the long form of the periodic table.** — 19: K, [Ar]4s¹ → period 4, group 1. 20: Ca, [Ar]4s² → period 4, group 2. 31: Ga, [Ar]4s²3d¹⁰4p¹ → period 4, group 13. 36: Kr, [Ar]4s²3d¹⁰4p⁶ → period 4, group 18. 55: Cs, [Xe]6s¹ → period 6, group 1.",
+    "**NEB-style (2m): State the Modern Periodic Law and name the scientist whose work established it.** — \"Physical and chemical properties of the elements are a periodic function of their atomic numbers\" — established by **H. G. J. Moseley (1913)** through X-ray spectral studies.",
+    "**NEB-style (2m): An element has the configuration [Ar] 4s² 3d¹⁰ 4p³. Give its period, group, block and name.** — Highest n = 4 → period 4; last electron in p → p-block; outer electrons 4s²4p³ = 5 → group 15; the element is **arsenic (As, Z = 33)**."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — From Atomic Mass to Atomic Number\n\nMendeleev arranged elements by **atomic mass** and left brilliant gaps — but mass-based ordering put tellurium (127.6) before iodine (126.9) and stacked argon against potassium wrongly. Moseley's X-ray work (1913) gave each element a true serial number — the **atomic number Z** — and the modern periodic law re-founded the table on it. NEB 2021 asked the Mendeleev-vs-modern contrast directly (3m); it remains the standard opener for this unit.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The Modern Periodic Law\n\n**\"The physical and chemical properties of the elements are a periodic function of their atomic numbers.\"**\n\n- Atomic number Z = number of protons = the element's true identity.\n- Properties repeat because **electronic configurations repeat**: each new shell begins a new period, and elements with the same outer-shell configuration land in the same group.\n- The periodicity is in **valence-shell electron count**, not in mass.\n\n### 2.2 The long form of the periodic table\n\n- **18 groups (vertical columns), 7 periods (horizontal rows).**\n- Groups 1–2: s-block; 3–12: d-block; 13–18: p-block; lanthanoids/actinoids: f-block (placed separately).\n- A period number = the shell (n) being filled; a group number reflects the outer-shell configuration.\n- Elements are arranged in order of **increasing Z**, left to right.\n\n### 2.3 Why atomic number, not atomic mass\n\n- Z fixes the electron count and hence the configuration — the real cause of chemical behaviour.\n- Mass anomalies vanish: Te (Z = 52) correctly precedes I (Z = 53) despite Te's larger mass; Ar (Z = 18) correctly precedes K (Z = 19).\n- Isotopes of an element (different masses) occupy one place — mass ordering could not handle them.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Modern periodic law** | Properties are a periodic function of atomic number | Moseley, 1913 |\n| **Period** | Horizontal row; electrons enter the same principal shell | Period 3 = n = 3 |\n| **Group** | Vertical column with the same outer configuration | Group 1: ns¹ |\n| **Periodicity** | Regular repetition of properties at regular intervals of Z | Atomic radius peaks at alkali metals |\n| **Isotopes** | Same Z, different mass numbers | ¹H, ²H, ³H — one place in the table |",
+      "## 4. Detailed Explanation\n\n### 4.1 NEB 2021 (3m, verified PYQ) — Modern vs Mendeleev's periodic law\n\n| # | Mendeleev's law | Modern periodic law |\n|---|---|---|\n| 1 | Properties are a periodic function of **atomic mass** | Properties are a periodic function of **atomic number** |\n| 2 | Position decided by mass; anomalies needed force-fitting (Te before I) | Position decided by Z; all anomalies resolve automatically |\n| 3 | No place for **isotopes** (different masses, same element) | Isotopes share one place — Z is identical |\n| 4 | No explanation of why properties repeat | Explains the cause: **repeating electronic configurations** |\n| 5 | Wrong order pairs (Ar–K, Co–Ni) stayed wrong | Ar (Z = 18) before K (Z = 19), Co (27) before Ni (28) — correct by construction |\n\nState any three rows for the 3m.\n\n### 4.2 NEB 2024 (3m, verified PYQ) — locate Z = 19, 20, 31, 36, 55\n\nWork from the configuration, not memory:\n\n| Z | Element | Configuration | Period | Group | Block |\n|---|---|---|---|---|---|\n| 19 | K | [Ar] 4s¹ | 4 | **1** | s |\n| 20 | Ca | [Ar] 4s² | 4 | **2** | s |\n| 31 | Ga | [Ar] 4s² 3d¹⁰ 4p¹ | 4 | **13** | p |\n| 36 | Kr | [Ar] 4s² 3d¹⁰ 4p⁶ | 4 | **18** | p |\n| 55 | Cs | [Xe] 6s¹ | 6 | **1** | s |\n\nMethod: write the configuration → period = highest n → group = number of outer electrons (s/p block) or 10 + outer electrons (d block).\n\n### 4.3 How periodicity emerges\n\nAcross a period the outer-shell count climbs 1 → 8 while Z grows: nuclear pull strengthens, radii shrink, ionisation energy climbs, metallic character falls. Down a group a new shell opens: radii jump, ionisation energy falls, metallic character rises. Every property is this one tug-of-war — **Z↑ pulling vs n↑ shielding** — read at different positions. That is the whole logic of the unit.\n\n### 4.4 Advantages of the long form\n\n1. Position strictly by Z — no anomalies.\n2. Separates metals (left/centre), non-metals (right), metalloids (staircase).\n3. d-block and f-block get their own homes; the table maps directly onto electronic configuration.\n4. Horizontal similarity (period trends) becomes visible alongside vertical (group) similarity.",
+      "## 5. Comparison Tables\n\n**Mendeleev vs Moseley — the identity of the \"position-decider\"**\n\n| Basis | Mendeleev (1869) | Modern (Moseley, 1913) |\n|---|---|---|\n| Ordering quantity | Atomic mass | Atomic number Z |\n| Anomalies (Te/I, Ar/K) | Present, unexplained | Absent |\n| Isotopes | No logical place | One place per element |\n| Cause of periodicity | Not explained | Repeating outer configurations |\n| Prediction style | Gaps with predicted masses (e.g. eka-silicon → Ge) | Predictable from configuration |\n\n**Similarity:** both tables group chemically similar elements in vertical columns and both successfully predicted new elements — Mendeleev's chemical insight survives; only the ordering key changed.\n\n**Short form vs long form**\n\n| Basis | Mendeleev's short form | Long form |\n|---|---|---|\n| Basis | Atomic mass | Atomic number |\n| Groups | 8 (with A/B subgroups) | 18 |\n| d-block | Cramped into groups | Own block, groups 3–12 |\n| Anomalies | Present | None |\n| Link to configuration | Weak | Exact |",
+      "## 6. Common Confusions\n\n**Periodic function of Z — not of mass:** quoting the modern law with \"atomic weight\" is an automatic zero; the one word that matters is **atomic number**.",
+      "**Period vs group:** period = row = shell being filled (highest n); group = column = outer configuration. Z = 19 and Z = 55 share group 1 but sit in different periods.",
+      "**d-block group counting:** for d-block elements group = outer s electrons + 10 (Sc: 4s²3d¹ → group 3; Zn: 4s²3d¹⁰ → group 12).",
+      "## 7. Exam Application\n\n**NEB-style (2m): Why do properties of elements repeat periodically?** — Because electronic configurations repeat: each period starts filling a new shell, and elements with the same outer-shell configuration (same valence count) show the same chemistry — the cause Mendeleev's law could not supply.",
+      "**NEB-style (2m): Where do ¹H, ²H and ³H sit in the modern table and why?** — All three (protium, deuterium, tritium) occupy the single position of hydrogen (Z = 1): the modern law orders by Z, and isotopes differ in mass number, not Z.",
+      "**NEB-style (2m): An element has configuration [Ar] 4s² 3d¹⁰ 4p². Give its period, group and block.** — Highest n = 4 → period 4; six outer electrons (4s² 4p²) → group 14; last electron enters p → p-block. (The element is Ge.)"
+    ],
+    "confusion": [
+      "**Z vs A:** atomic **number** (protons) orders the table; atomic **mass number** (protons + neutrons) does not — that was Mendeleev's error.",
+      "**Group of d-block elements:** count s electrons + 10, not s + d electrons (Sc: 4s²3d¹ is group 3, not 3)."
+    ],
+    "keyPoints": [
+      "Modern law: properties are a periodic function of atomic number (Moseley, 1913). Cause: repeating outer electronic configurations. Long form: 18 groups, 7 periods, s/p/d/f blocks. Mass anomalies (Te/I, Ar/K) and isotope placement resolve automatically. Period = highest n; group = outer electrons (s/p) or s electrons + 10 (d)."
+    ],
+    "importantConcepts": [
+      "**Configuration → position:** write the electronic configuration and read off period (highest n), block (last-entering subshell) and group (outer electrons, +10 for d-block). This one skill answers every \"locate the element\" question."
+    ],
+    "examples": [
+      "***Tellurium before iodine*** — by mass 127.6 > 126.9 would put Te after I, breaking the chemical pattern; by Z (52 < 53) Te precedes I and the pattern holds — the anomaly that proved the modern law."
+    ],
+    "universalFacts": [
+      "Moseley was killed at Gallipoli in 1915 at age 27; scientists called it the war's greatest loss to science — he had just given the periodic table its true foundation."
+    ],
+    "importantStatements": [
+      "\"The physical and chemical properties of the elements are a periodic function of their atomic numbers.\" — the Modern Periodic Law."
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2021 3m — three differences, modern vs Mendeleev (table above); NEB 2024 3m — period and group of Z = 19, 20, 31, 36, 55 (table above). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"Z decides, configuration places.\" Period = highest n; group = outer e⁻ (+10 if d-block). Mendeleev-vs-modern: mass→Z, anomalies→none, isotopes→one place, cause→configuration."
+    ],
+    "examNotes": [
+      "For the law-contrast question, answer in numbered rows (basis: Mendeleev vs modern) — NEB awards per contrast, not per paragraph. Always name the anomaly (Te/I or Ar/K) as evidence."
+    ],
+    "formulas": [
+      "- Modern periodic law: properties ∝ f(atomic number Z)\n- Period = highest occupied n; Group = outer e⁻ (s/p block), outer s e⁻ + 10 (d block)\n- Shell capacity 2n²; groups 18, periods 7"
+    ],
+    "practice": [
+      "Why did mass-based ordering fail for Ar–K while Z-based ordering succeeds?",
+      "An element ends 5s² 4d¹⁰ 5p⁵ — name its period, group and block without looking it up.",
+      "Why is periodicity better explained by outer-shell configuration than by atomic mass?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2021 (3m): How does the Modern Periodic Law differ from Mendeleev's Periodic Law? State any three points of difference.** — (1) Basis: Mendeleev orders by **atomic mass**; the modern law orders by **atomic number**. (2) Anomalies: mass ordering forced Te (127.6) before I (126.9) wrongly and mispaired Ar–K; Z-ordering places all elements correctly. (3) Isotopes: mass law has no place for them; the modern law gives all isotopes of an element one position (same Z). (Also: the modern law explains the cause of periodicity — repeating outer electronic configurations — which Mendeleev's could not.)",
+      "**NEB 2024 (3m): Identify the elements with atomic numbers 19, 20, 31, 36 and 55, and state the period and group of each in the long form of the periodic table.** — 19: K, [Ar]4s¹ → period 4, group 1. 20: Ca, [Ar]4s² → period 4, group 2. 31: Ga, [Ar]4s²3d¹⁰4p¹ → period 4, group 13. 36: Kr, [Ar]4s²3d¹⁰4p⁶ → period 4, group 18. 55: Cs, [Xe]6s¹ → period 6, group 1.",
+      "**NEB-style (2m): State the Modern Periodic Law and name the scientist whose work established it.** — \"Physical and chemical properties of the elements are a periodic function of their atomic numbers\" — established by **H. G. J. Moseley (1913)** through X-ray spectral studies.",
+      "**NEB-style (2m): An element has the configuration [Ar] 4s² 3d¹⁰ 4p³. Give its period, group, block and name.** — Highest n = 4 → period 4; last electron in p → p-block; outer electrons 4s²4p³ = 5 → group 15; the element is **arsenic (As, Z = 33)**."
+    ]
+  },
+  "importantConcepts": [
+    "**Configuration → position:** write the electronic configuration and read off period (highest n), block (last-entering subshell) and group (outer electrons, +10 for d-block). This one skill answers every \"locate the element\" question."
+  ],
+  "examples": [
+    "***Tellurium before iodine*** — by mass 127.6 > 126.9 would put Te after I, breaking the chemical pattern; by Z (52 < 53) Te precedes I and the pattern holds — the anomaly that proved the modern law."
+  ],
+  "importantStatements": [
+    "\"The physical and chemical properties of the elements are a periodic function of their atomic numbers.\" — the Modern Periodic Law."
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2021 3m — three differences, modern vs Mendeleev (table above); NEB 2024 3m — period and group of Z = 19, 20, 31, 36, 55 (table above). Other items are NEB-style practice."
+  ],
+  "examNotes": [
+    "For the law-contrast question, answer in numbered rows (basis: Mendeleev vs modern) — NEB awards per contrast, not per paragraph. Always name the anomaly (Te/I or Ar/K) as evidence."
+  ],
+  "formulas": [
+    "- Modern periodic law: properties ∝ f(atomic number Z)\n- Period = highest occupied n; Group = outer e⁻ (s/p block), outer s e⁻ + 10 (d block)\n- Shell capacity 2n²; groups 18, periods 7"
+  ],
+  "summary": "The modern periodic law re-founds Mendeleev's table on **atomic number**: properties are a periodic function of Z (Moseley, 1913), because electronic configurations — the true cause of chemical behaviour — repeat at regular intervals of Z. Every mass-based anomaly dissolves: Te (Z = 52) precedes I (Z = 53), Ar (18) precedes K (19), and all isotopes share one position. The long form arranges elements by increasing Z into 7 periods and 18 groups in s/p/d/f blocks; period = the highest shell n being filled, group = outer electrons (plus 10 for the d-block). NEB 2021's law contrast (mass→Z, anomalies→none, isotopes→one place) and NEB 2024's location drill (Z = 19, 20, 31, 36, 55 → K, Ca, Ga, Kr, Cs) are the two template questions; the method is always the same — write the configuration, read off the position.",
+  "mcqs": [
+    {
+      "question": "The modern periodic law is based on:",
+      "options": [
+        "Atomic mass",
+        "Atomic number",
+        "Atomic volume",
+        "Density"
+      ],
+      "answer": "B",
+      "explanation": "Properties are periodic in Z."
+    },
+    {
+      "question": "The modern periodic law was established by:",
+      "options": [
+        "Mendeleev",
+        "Moseley",
+        "Bohr",
+        "Lothar Meyer"
+      ],
+      "answer": "B",
+      "explanation": "X-ray spectra, 1913."
+    },
+    {
+      "question": "The long form of the periodic table has:",
+      "options": [
+        "8 groups, 7 periods",
+        "18 groups, 7 periods",
+        "18 groups, 8 periods",
+        "9 groups, 7 periods"
+      ],
+      "answer": "B",
+      "explanation": "18 vertical groups, 7 rows."
+    },
+    {
+      "question": "Tellurium is placed before iodine because tellurium has:",
+      "options": [
+        "Lower atomic mass",
+        "Lower atomic number",
+        "Higher density",
+        "More isotopes"
+      ],
+      "answer": "B",
+      "explanation": "Z = 52 < 53; mass order would invert them."
+    },
+    {
+      "question": "Isotopes of an element occupy:",
+      "options": [
+        "Different groups",
+        "Different periods",
+        "The same position",
+        "No position"
+      ],
+      "answer": "C",
+      "explanation": "Same Z — one position."
+    },
+    {
+      "question": "An element with configuration [Ar] 4s² 3d¹⁰ 4p¹ belongs to group:",
+      "options": [
+        "1",
+        "3",
+        "13",
+        "18"
+      ],
+      "answer": "C",
+      "explanation": "Outer s+p electrons = 3 → group 13 (Ga)."
+    },
+    {
+      "question": "The period number of an element equals:",
+      "options": [
+        "Number of valence electrons",
+        "Highest occupied n",
+        "Number of neutrons",
+        "Group number"
+      ],
+      "answer": "B",
+      "explanation": "Rows are shells being filled."
+    },
+    {
+      "question": "Ca (Z = 20) belongs to:",
+      "options": [
+        "Period 4, group 2",
+        "Period 4, group 12",
+        "Period 3, group 2",
+        "Period 4, group 18"
+      ],
+      "answer": "A",
+      "explanation": "[Ar] 4s² — s-block, group 2."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "The modern periodic law is based on:",
+      "options": [
+        "Atomic mass",
+        "Atomic number",
+        "Atomic volume",
+        "Density"
+      ],
+      "answer": "B",
+      "explanation": "Properties are periodic in Z."
+    },
+    {
+      "question": "The modern periodic law was established by:",
+      "options": [
+        "Mendeleev",
+        "Moseley",
+        "Bohr",
+        "Lothar Meyer"
+      ],
+      "answer": "B",
+      "explanation": "X-ray spectra, 1913."
+    },
+    {
+      "question": "The long form of the periodic table has:",
+      "options": [
+        "8 groups, 7 periods",
+        "18 groups, 7 periods",
+        "18 groups, 8 periods",
+        "9 groups, 7 periods"
+      ],
+      "answer": "B",
+      "explanation": "18 vertical groups, 7 rows."
+    },
+    {
+      "question": "Tellurium is placed before iodine because tellurium has:",
+      "options": [
+        "Lower atomic mass",
+        "Lower atomic number",
+        "Higher density",
+        "More isotopes"
+      ],
+      "answer": "B",
+      "explanation": "Z = 52 < 53; mass order would invert them."
+    },
+    {
+      "question": "Isotopes of an element occupy:",
+      "options": [
+        "Different groups",
+        "Different periods",
+        "The same position",
+        "No position"
+      ],
+      "answer": "C",
+      "explanation": "Same Z — one position."
+    },
+    {
+      "question": "An element with configuration [Ar] 4s² 3d¹⁰ 4p¹ belongs to group:",
+      "options": [
+        "1",
+        "3",
+        "13",
+        "18"
+      ],
+      "answer": "C",
+      "explanation": "Outer s+p electrons = 3 → group 13 (Ga)."
+    },
+    {
+      "question": "The period number of an element equals:",
+      "options": [
+        "Number of valence electrons",
+        "Highest occupied n",
+        "Number of neutrons",
+        "Group number"
+      ],
+      "answer": "B",
+      "explanation": "Rows are shells being filled."
+    },
+    {
+      "question": "Ca (Z = 20) belongs to:",
+      "options": [
+        "Period 4, group 2",
+        "Period 4, group 12",
+        "Period 3, group 2",
+        "Period 4, group 18"
+      ],
+      "answer": "A",
+      "explanation": "[Ar] 4s² — s-block, group 2."
+    }
   ]
 }

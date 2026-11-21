@@ -7,37 +7,44 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Nuclear charge.** The total positive charge of the nucleus is Ze, where Z is the atomic number and e the elementary charge; it is the nucleus's pull on the electron cloud.",
-    "**Shielding effect.** Inner-shell electrons repel outer electrons and cancel part of the nuclear pull; this screening is greatest in multi-electron atoms.",
-    "**Effective nuclear charge.** Zeff = Z − σ, where σ is the shielding constant; outer electrons feel this reduced attraction rather than the full nuclear charge.",
-    "**Trends across a period.** Electrons enter the same shell while Z rises, so shielding changes little and Zeff increases — atomic radius falls and ionisation enthalpy rises.",
-    "**Trends down a group.** Each new shell adds shielding that nearly cancels the added nuclear charge, so radius grows and ionisation enthalpy falls down the group.",
-    "# Nuclear charge and effective nuclear charge\n\n## 1. Introduction\nChemical picture of **Nuclear charge and effective nuclear charge** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Classification of Elements and Periodic Table fill pass.\n\n## 2. Concepts and definitions\n### Nuclear charge and effective nuclear charge\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Nuclear charge and effective nuclear charge — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Nuclear charge and effective nuclear charge — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Nuclear charge and effective nuclear charge — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Nuclear charge and effective nuclear charge — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Tug-of-War Inside Every Atom\n\nEvery periodic trend — radius, ionisation energy, electron affinity, metallic character — is one contest: the **nuclear charge pulling electrons in** versus **inner-electron shielding pushing the outer experience out**. The score of that contest is the **effective nuclear charge (Z_eff)**. Define it, compute it, and the whole of Unit 4's trend section becomes derivation instead of memorisation.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Nuclear charge (Z)\n\n- **Z = number of protons** in the nucleus = the element's atomic number.\n- It is the true pull available: +Z on every electron (Coulomb attraction).\n\n### 2.2 Shielding (screening) effect\n\nInner-shell electrons sit **between** the nucleus and the valence electrons, repelling the outer electrons and **cancelling part of the nuclear pull**. The outer electron feels less than +Z — it is *shielded*.\n\n### 2.3 Effective nuclear charge (Z_eff)\n\n**Z_eff = Z − σ** (σ = screening constant, the shielding contribution of the intervening electrons).\n\n- Example, Na (Z = 11): the single 3s valence electron is shielded by 10 inner electrons → Z_eff ≈ 11 − 10 = **+1** (simple estimate) — Na's valence electron is held loosely, hence low ionisation energy and high reactivity.\n- Example, Cl (Z = 17): 7 valence electrons shield each other poorly (same shell) → Z_eff ≈ 17 − 10 − (small same-shell contribution) ≈ **+7** — the outer electron is gripped tightly; Cl is a strong electron acceptor.\n\n### 2.4 Slater's rules (elementary estimate)\n\nApproximate σ for a valence electron:\n1. **Same-shell** (n) other electrons: contribute **0.35** each (0.30 for 1s).\n2. **(n − 1) shell** electrons: contribute **0.85** each.\n3. **Deeper shells** (n − 2 and in): contribute **1.00** each.\n\nThen Z_eff = Z − σ. (NEB needs only the concept and the simple Z − σ form; Slater's numbers are the bonus that shows *how* the estimate is made.)",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Nuclear charge (Z)** | Number of protons; the total positive pull | Na: Z = 11 |\n| **Shielding effect** | Reduction of nuclear pull by inner electrons | 10 inner e⁻ shield Na's 3s electron |\n| **Screening constant (σ)** | Total shielding contribution | Na: σ ≈ 10 (simple) |\n| **Effective nuclear charge** | Net pull felt by an electron: Z − σ | Na valence: ≈ +1 |\n| **Penetration** | Ability of an orbital's electron to approach the nucleus | s > p > d > f |",
+    "## 4. Detailed Explanation\n\n### 4.1 Worked estimates (the 2m template)\n\n**Q: Estimate Z_eff for the valence electron of Li (Z = 3) and F (Z = 9).**\n- Li: 1s² shields the 2s¹ electron → Z_eff = 3 − 2 = **+1**.\n- F: 1s² shields; the other six 2p electrons add small same-shell shielding → Z_eff = 9 − 2 − 6(0.35) ≈ **+5.2**.\nResult: F's valence electron is pulled ~5× harder than Li's — one line that explains F's tiny radius, huge ionisation energy and electronegativity, and Li's readiness to lose its electron.\n\n### 4.2 Z_eff across a period (left → right)\n\nElectrons enter the **same shell**; same-shell electrons shield each other poorly (0.35 each) while Z grows by +1 per step → **Z_eff rises steadily** (Na +1 → Cl +7 roughly). Consequences: radius shrinks, ionisation energy climbs, electronegativity climbs, metallic character falls.\n\n### 4.3 Z_eff down a group (top → bottom)\n\nEach step adds a **whole new inner shell** (σ jumps by ~8–10) while Z's increase is fully cancelled → **Z_eff on the valence shell stays nearly constant**. But n grows, so the valence electrons sit farther out: radius grows, ionisation energy falls, metallic character rises.\n\n### 4.4 Penetration and the s < p < d < f energy order\n\nWithin the same shell, an **s** electron penetrates closest to the nucleus (feels the largest Z_eff), then p, then d, then f. That is why 4s fills before 3d (Aufbau) and why subshell energies split — Z_eff is the physical content of the (n + l) rule.",
+    "## 5. Comparison Tables\n\n**Nuclear charge vs effective nuclear charge**\n\n| Basis | Nuclear charge (Z) | Effective nuclear charge (Z_eff) |\n|---|---|---|\n| Definition | Total proton count | Net pull after shielding: Z − σ |\n| Value | Fixed by the element | Less than Z; depends on the electron watched |\n| Changes across a period | +1 per element | Rises (poor same-shell shielding) |\n| Changes down a group | Rises | Nearly constant on the valence shell |\n| Role | Identity of the element | Predicts trends (radius, IE, EA) |\n\n**Similarity:** both measure pull on electrons; Z_eff is simply Z corrected for the shield.\n\n**Z_eff behaviour — period vs group**\n\n| Direction | Z | σ | Z_eff (valence) | Result |\n|---|---|---|---|---|\n| Across a period | ↑ +1/step | ↑ slightly (same shell) | **↑** | Radius ↓, IE ↑, EN ↑ |\n| Down a group | ↑ | ↑↑ (new shell) | **≈ constant** | Radius ↑, IE ↓, EN ↓ |",
+    "## 6. Common Confusions\n\n**Z_eff is electron-specific:** the inner 1s electrons of Na feel Z_eff ≈ +10.9, not +1 — always say *which electron* you are computing for.",
+    "**Down a group Z grows but Z_eff does not:** the new shell's shielding cancels the extra protons; students who quote \"Z increases so pull increases down a group\" get the trend backwards.",
+    "**Shielding vs penetration:** shielding is what *other electrons do to you*; penetration is how *close you get* despite them. s penetrates best and is least shielded.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Why is the first ionisation energy of Na much lower than that of Mg?** — Both valence electrons sit in n = 3, but Mg's extra proton raises Z_eff on 3s (Mg ≈ +2 vs Na ≈ +1) while shielding is nearly equal; the stronger net pull holds Mg's 3s² pair more tightly → higher IE.",
+    "**NEB-style (2m): The atomic radius of Na is greater than that of Mg although Mg has more protons. Explain.** — Across period 3, Z_eff rises (Na ≈ +1 → Mg ≈ +2); the same shell is pulled inward more strongly in Mg → smaller radius. (The other half of NEB 2022's irregularity pair — see topic 26.)",
+    "**NEB-style (3m): Define effective nuclear charge and explain its variation across a period and down a group.** — Z_eff = Z − σ, the net nuclear pull an electron feels after shielding by intervening electrons. **Across a period:** electrons enter the same shell, same-shell shielding is poor, so Z_eff rises → radius falls, IE rises. **Down a group:** each element adds an inner shell whose strong shielding cancels the added protons, so valence Z_eff stays nearly constant while n grows → radius grows, IE falls."
   ],
-  "confusion": [],
+  "confusion": [
+    "**Z vs Z_eff:** Z is the total proton count and never changes with position; Z_eff is what a *particular* electron actually feels — quoting one where the other is asked loses the mark.",
+    "**Same-shell shielding is weak (0.35):** that is the entire reason Z_eff rises across a period; treating all shielding as equal makes the trend disappear."
+  ],
   "bounds": [
     "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
-    "Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+  "practice": [
+    "Estimate Z_eff for the 4s electron of potassium (Z = 19) using Slater's rules.",
+    "Why does Z_eff on the valence shell stay nearly constant down group 1?",
+    "How does the penetration order s > p > d > f explain the energy order of subshells?"
   ],
-  "examples": [],
+  "universalFacts": [
+    "Slater's rules (1930) remain the standard pencil-and-paper Z_eff estimate; modern Hartree–Fock calculations confirm the same period/group behaviour."
+  ],
+  "examples": [
+    "***Na (Z_eff ≈ +1) vs Cl (Z_eff ≈ +7)*** — same period, same shell, six protons' difference in net pull: Na gives its electron away, Cl grabs one more — the chemistry of table salt in two numbers."
+  ],
   "practiceQuestions": [
-    "Q. Why is Zeff of Li less than that of Be? (1 mark) — Be has one more proton with similar shielding, so Zeff is higher.",
-    "Q. Why do atomic radii increase down a group despite increasing Z? (2 marks) — new shells are added; σ increases with Z, so Zeff felt by outer electrons is nearly unchanged."
+    "**NEB-style (2m): Define nuclear charge and effective nuclear charge with one example.** — **Nuclear charge (Z):** the total positive charge of the nucleus = proton count (Na: Z = 11). **Effective nuclear charge (Z_eff):** the net pull an electron actually feels after shielding by intervening electrons, Z_eff = Z − σ (Na's valence 3s electron: σ ≈ 10, Z_eff ≈ +1).",
+    "**NEB-style (3m): Explain why Z_eff increases across a period but remains nearly constant down a group.** — **Across a period:** each added proton is matched by an electron in the **same shell**; same-shell electrons shield poorly (≈0.35 each), so the net pull on the valence shell grows (Na ≈ +1 → Cl ≈ +7). **Down a group:** each step adds a complete **inner shell** whose electrons shield strongly (≈0.85–1.00 each), cancelling the added protons; the valence shell's Z_eff stays roughly constant while n — and the radius — grow.",
+    "**NEB-style (2m): Using Slater's rules, estimate Z_eff for a valence electron of Li (Z = 3).** — The 2s¹ electron is shielded by the two 1s electrons (n−1 shell): σ = 2 × 0.85 = 1.7 → Z_eff = 3 − 1.7 = **+1.3** (simple estimate: 3 − 2 = +1). The small net pull explains lithium's low ionisation energy.",
+    "**NEB-style (2m): How does Z_eff account for the decrease in atomic radii across period 3?** — Na → Cl: electrons enter the same n = 3 shell while Z grows 11 → 17; same-shell shielding is weak, so Z_eff rises by ~6. The stronger net pull drags the same shell inward — radius falls steadily from Na (186 pm) to Cl (99 pm)."
   ],
   "formulas": [
-    "BE = Δm c²",
-    "N = N₀ e^(−λt)",
-    "t_½ = ln2 / λ"
+    "- Z_eff = Z − σ\n- Slater contributions: same shell 0.35 (1s: 0.30); (n−1) shell 0.85; deeper 1.00\n- Penetration order: s > p > d > f"
   ],
   "numericals": [
     "Use  BE = Δm c²  — pick reasonable values, solve, and check the units.",
@@ -45,24 +52,259 @@
     "Use  t_½ = ln2 / λ  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Nuclear charge",
-    "• Effective nuclear charge"
+    "Z = proton count; shielding σ = inner electrons' cancelling effect; Z_eff = Z − σ. Across a period Z_eff rises (poor same-shell shielding) → radius ↓, IE ↑, electronegativity ↑, metallic character ↓. Down a group Z_eff ≈ constant (new shell shields fully) → radius ↑, IE ↓, metallic character ↑. Penetration order s > p > d > f underlies 4s-before-3d. Estimates: Na ≈ +1, Cl ≈ +7, Li +1, F ≈ +5."
   ],
-  "summary": "Nuclear charge and effective nuclear charge (Classification of Elements and Periodic Table, Chemistry, class-11-notes) covers Nuclear charge, effective nuclear charge. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Every periodic trend is the contest between **nuclear charge Z** (the proton count, the total pull) and **shielding σ** (inner electrons cancelling part of that pull); the score is **Z_eff = Z − σ**, the net pull an electron actually feels. Across a period, electrons enter the same shell and shield each other poorly, so Z_eff climbs (Na ≈ +1 → Cl ≈ +7): radii shrink, ionisation energies and electronegativity rise, metallic character falls. Down a group, each new inner shell shields almost completely, so valence Z_eff stays nearly constant while n grows: radii and reactivity of metals rise, ionisation energy falls. Penetration (s > p > d > f) is the same physics inside a shell and explains 4s-before-3d. Compute one Z_eff and the trend table of topic 26 writes itself.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Nuclear charge and effective nuclear charge\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Effective nuclear charge is given by:",
       "options": [
-        "True",
-        "False"
+        "Z + σ",
+        "Z − σ",
+        "Z × σ",
+        "Z/σ"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Net pull after shielding."
+    },
+    {
+      "question": "Across a period, Z_eff on the valence shell:",
+      "options": [
+        "Decreases",
+        "Increases",
+        "Stays constant",
+        "Becomes zero"
+      ],
+      "answer": "B",
+      "explanation": "Same-shell shielding is poor."
+    },
+    {
+      "question": "Down a group, Z_eff on the valence shell:",
+      "options": [
+        "Increases strongly",
+        "Decreases strongly",
+        "Remains nearly constant",
+        "Doubles"
+      ],
+      "answer": "C",
+      "explanation": "New shells shield the added protons."
+    },
+    {
+      "question": "The approximate Z_eff on sodium's valence electron (simple estimate) is:",
+      "options": [
+        "+11",
+        "+1",
+        "+3",
+        "+10"
+      ],
+      "answer": "B",
+      "explanation": "11 − 10 inner electrons = +1."
+    },
+    {
+      "question": "Which orbital's electron penetrates closest to the nucleus?",
+      "options": [
+        "s",
+        "p",
+        "d",
+        "f"
+      ],
+      "answer": "A",
+      "explanation": "s > p > d > f penetration."
+    },
+    {
+      "question": "In Slater's rules, an (n−1)-shell electron contributes:",
+      "options": [
+        "1.00",
+        "0.85",
+        "0.35",
+        "0.30"
+      ],
+      "answer": "B",
+      "explanation": "Same shell 0.35; deeper 1.00."
+    },
+    {
+      "question": "The rise of Z_eff across period 3 explains:",
+      "options": [
+        "Increasing atomic radius",
+        "Decreasing atomic radius",
+        "Constant radius",
+        "Increasing metallic character"
+      ],
+      "answer": "B",
+      "explanation": "Stronger pull drags the shell inward."
+    },
+    {
+      "question": "4s fills before 3d because the 4s electron:",
+      "options": [
+        "Has lower n",
+        "Penetrates more and feels greater Z_eff",
+        "Is heavier",
+        "Has higher l"
+      ],
+      "answer": "B",
+      "explanation": "Penetration beats the higher n."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Zeff = Z − σ (screening constant); across a period Zeff increases (σ nearly constant) → smaller radius, higher ionization energy.",
-    "Trick 2: Down a group both Z and σ increase by the same step → Zeff stays nearly constant → size grows. This one line explains ALL group trends.",
-    "Trick 3: Slater quick value: inner electrons shield fully (σ ≈ 0.85–1 per electron) — quote 'shielding by inner shells' as the definition of σ."
+    "\"Z_eff = Z − σ; across = up, down = flat.\" Same-shell shielders count little (0.35); inner shells count much (0.85/1.0). Name the electron you are computing for."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Tug-of-War Inside Every Atom\n\nEvery periodic trend — radius, ionisation energy, electron affinity, metallic character — is one contest: the **nuclear charge pulling electrons in** versus **inner-electron shielding pushing the outer experience out**. The score of that contest is the **effective nuclear charge (Z_eff)**. Define it, compute it, and the whole of Unit 4's trend section becomes derivation instead of memorisation.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Nuclear charge (Z)\n\n- **Z = number of protons** in the nucleus = the element's atomic number.\n- It is the true pull available: +Z on every electron (Coulomb attraction).\n\n### 2.2 Shielding (screening) effect\n\nInner-shell electrons sit **between** the nucleus and the valence electrons, repelling the outer electrons and **cancelling part of the nuclear pull**. The outer electron feels less than +Z — it is *shielded*.\n\n### 2.3 Effective nuclear charge (Z_eff)\n\n**Z_eff = Z − σ** (σ = screening constant, the shielding contribution of the intervening electrons).\n\n- Example, Na (Z = 11): the single 3s valence electron is shielded by 10 inner electrons → Z_eff ≈ 11 − 10 = **+1** (simple estimate) — Na's valence electron is held loosely, hence low ionisation energy and high reactivity.\n- Example, Cl (Z = 17): 7 valence electrons shield each other poorly (same shell) → Z_eff ≈ 17 − 10 − (small same-shell contribution) ≈ **+7** — the outer electron is gripped tightly; Cl is a strong electron acceptor.\n\n### 2.4 Slater's rules (elementary estimate)\n\nApproximate σ for a valence electron:\n1. **Same-shell** (n) other electrons: contribute **0.35** each (0.30 for 1s).\n2. **(n − 1) shell** electrons: contribute **0.85** each.\n3. **Deeper shells** (n − 2 and in): contribute **1.00** each.\n\nThen Z_eff = Z − σ. (NEB needs only the concept and the simple Z − σ form; Slater's numbers are the bonus that shows *how* the estimate is made.)",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Nuclear charge (Z)** | Number of protons; the total positive pull | Na: Z = 11 |\n| **Shielding effect** | Reduction of nuclear pull by inner electrons | 10 inner e⁻ shield Na's 3s electron |\n| **Screening constant (σ)** | Total shielding contribution | Na: σ ≈ 10 (simple) |\n| **Effective nuclear charge** | Net pull felt by an electron: Z − σ | Na valence: ≈ +1 |\n| **Penetration** | Ability of an orbital's electron to approach the nucleus | s > p > d > f |",
+      "## 4. Detailed Explanation\n\n### 4.1 Worked estimates (the 2m template)\n\n**Q: Estimate Z_eff for the valence electron of Li (Z = 3) and F (Z = 9).**\n- Li: 1s² shields the 2s¹ electron → Z_eff = 3 − 2 = **+1**.\n- F: 1s² shields; the other six 2p electrons add small same-shell shielding → Z_eff = 9 − 2 − 6(0.35) ≈ **+5.2**.\nResult: F's valence electron is pulled ~5× harder than Li's — one line that explains F's tiny radius, huge ionisation energy and electronegativity, and Li's readiness to lose its electron.\n\n### 4.2 Z_eff across a period (left → right)\n\nElectrons enter the **same shell**; same-shell electrons shield each other poorly (0.35 each) while Z grows by +1 per step → **Z_eff rises steadily** (Na +1 → Cl +7 roughly). Consequences: radius shrinks, ionisation energy climbs, electronegativity climbs, metallic character falls.\n\n### 4.3 Z_eff down a group (top → bottom)\n\nEach step adds a **whole new inner shell** (σ jumps by ~8–10) while Z's increase is fully cancelled → **Z_eff on the valence shell stays nearly constant**. But n grows, so the valence electrons sit farther out: radius grows, ionisation energy falls, metallic character rises.\n\n### 4.4 Penetration and the s < p < d < f energy order\n\nWithin the same shell, an **s** electron penetrates closest to the nucleus (feels the largest Z_eff), then p, then d, then f. That is why 4s fills before 3d (Aufbau) and why subshell energies split — Z_eff is the physical content of the (n + l) rule.",
+      "## 5. Comparison Tables\n\n**Nuclear charge vs effective nuclear charge**\n\n| Basis | Nuclear charge (Z) | Effective nuclear charge (Z_eff) |\n|---|---|---|\n| Definition | Total proton count | Net pull after shielding: Z − σ |\n| Value | Fixed by the element | Less than Z; depends on the electron watched |\n| Changes across a period | +1 per element | Rises (poor same-shell shielding) |\n| Changes down a group | Rises | Nearly constant on the valence shell |\n| Role | Identity of the element | Predicts trends (radius, IE, EA) |\n\n**Similarity:** both measure pull on electrons; Z_eff is simply Z corrected for the shield.\n\n**Z_eff behaviour — period vs group**\n\n| Direction | Z | σ | Z_eff (valence) | Result |\n|---|---|---|---|---|\n| Across a period | ↑ +1/step | ↑ slightly (same shell) | **↑** | Radius ↓, IE ↑, EN ↑ |\n| Down a group | ↑ | ↑↑ (new shell) | **≈ constant** | Radius ↑, IE ↓, EN ↓ |",
+      "## 6. Common Confusions\n\n**Z_eff is electron-specific:** the inner 1s electrons of Na feel Z_eff ≈ +10.9, not +1 — always say *which electron* you are computing for.",
+      "**Down a group Z grows but Z_eff does not:** the new shell's shielding cancels the extra protons; students who quote \"Z increases so pull increases down a group\" get the trend backwards.",
+      "**Shielding vs penetration:** shielding is what *other electrons do to you*; penetration is how *close you get* despite them. s penetrates best and is least shielded.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Why is the first ionisation energy of Na much lower than that of Mg?** — Both valence electrons sit in n = 3, but Mg's extra proton raises Z_eff on 3s (Mg ≈ +2 vs Na ≈ +1) while shielding is nearly equal; the stronger net pull holds Mg's 3s² pair more tightly → higher IE.",
+      "**NEB-style (2m): The atomic radius of Na is greater than that of Mg although Mg has more protons. Explain.** — Across period 3, Z_eff rises (Na ≈ +1 → Mg ≈ +2); the same shell is pulled inward more strongly in Mg → smaller radius. (The other half of NEB 2022's irregularity pair — see topic 26.)",
+      "**NEB-style (3m): Define effective nuclear charge and explain its variation across a period and down a group.** — Z_eff = Z − σ, the net nuclear pull an electron feels after shielding by intervening electrons. **Across a period:** electrons enter the same shell, same-shell shielding is poor, so Z_eff rises → radius falls, IE rises. **Down a group:** each element adds an inner shell whose strong shielding cancels the added protons, so valence Z_eff stays nearly constant while n grows → radius grows, IE falls."
+    ],
+    "confusion": [
+      "**Z vs Z_eff:** Z is the total proton count and never changes with position; Z_eff is what a *particular* electron actually feels — quoting one where the other is asked loses the mark.",
+      "**Same-shell shielding is weak (0.35):** that is the entire reason Z_eff rises across a period; treating all shielding as equal makes the trend disappear."
+    ],
+    "keyPoints": [
+      "Z = proton count; shielding σ = inner electrons' cancelling effect; Z_eff = Z − σ. Across a period Z_eff rises (poor same-shell shielding) → radius ↓, IE ↑, electronegativity ↑, metallic character ↓. Down a group Z_eff ≈ constant (new shell shields fully) → radius ↑, IE ↓, metallic character ↑. Penetration order s > p > d > f underlies 4s-before-3d. Estimates: Na ≈ +1, Cl ≈ +7, Li +1, F ≈ +5."
+    ],
+    "importantConcepts": [
+      "**One tug-of-war explains every trend:** Z↑ pulling vs n↑/shielding pushing. Across a period the pull wins; down a group the shielding wins. All of topic 26 derives from this sentence."
+    ],
+    "examples": [
+      "***Na (Z_eff ≈ +1) vs Cl (Z_eff ≈ +7)*** — same period, same shell, six protons' difference in net pull: Na gives its electron away, Cl grabs one more — the chemistry of table salt in two numbers."
+    ],
+    "universalFacts": [
+      "Slater's rules (1930) remain the standard pencil-and-paper Z_eff estimate; modern Hartree–Fock calculations confirm the same period/group behaviour."
+    ],
+    "importantStatements": [
+      "\"The effective nuclear charge is the net positive charge experienced by an electron after shielding by the intervening electrons.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ located for this topic; the concept backs NEB 2022 3m (ionisation and radius irregularities, anchored under topic 26). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"Z_eff = Z − σ; across = up, down = flat.\" Same-shell shielders count little (0.35); inner shells count much (0.85/1.0). Name the electron you are computing for."
+    ],
+    "examNotes": [
+      "Always pair the definition with one computed example (Na ≈ +1) — a bare definition rarely earns full 2m. Link Z_eff to the trend asked (radius/IE/EN) in the same sentence."
+    ],
+    "formulas": [
+      "- Z_eff = Z − σ\n- Slater contributions: same shell 0.35 (1s: 0.30); (n−1) shell 0.85; deeper 1.00\n- Penetration order: s > p > d > f"
+    ],
+    "practice": [
+      "Estimate Z_eff for the 4s electron of potassium (Z = 19) using Slater's rules.",
+      "Why does Z_eff on the valence shell stay nearly constant down group 1?",
+      "How does the penetration order s > p > d > f explain the energy order of subshells?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Define nuclear charge and effective nuclear charge with one example.** — **Nuclear charge (Z):** the total positive charge of the nucleus = proton count (Na: Z = 11). **Effective nuclear charge (Z_eff):** the net pull an electron actually feels after shielding by intervening electrons, Z_eff = Z − σ (Na's valence 3s electron: σ ≈ 10, Z_eff ≈ +1).",
+      "**NEB-style (3m): Explain why Z_eff increases across a period but remains nearly constant down a group.** — **Across a period:** each added proton is matched by an electron in the **same shell**; same-shell electrons shield poorly (≈0.35 each), so the net pull on the valence shell grows (Na ≈ +1 → Cl ≈ +7). **Down a group:** each step adds a complete **inner shell** whose electrons shield strongly (≈0.85–1.00 each), cancelling the added protons; the valence shell's Z_eff stays roughly constant while n — and the radius — grow.",
+      "**NEB-style (2m): Using Slater's rules, estimate Z_eff for a valence electron of Li (Z = 3).** — The 2s¹ electron is shielded by the two 1s electrons (n−1 shell): σ = 2 × 0.85 = 1.7 → Z_eff = 3 − 1.7 = **+1.3** (simple estimate: 3 − 2 = +1). The small net pull explains lithium's low ionisation energy.",
+      "**NEB-style (2m): How does Z_eff account for the decrease in atomic radii across period 3?** — Na → Cl: electrons enter the same n = 3 shell while Z grows 11 → 17; same-shell shielding is weak, so Z_eff rises by ~6. The stronger net pull drags the same shell inward — radius falls steadily from Na (186 pm) to Cl (99 pm)."
+    ]
+  },
+  "importantConcepts": [
+    "**One tug-of-war explains every trend:** Z↑ pulling vs n↑/shielding pushing. Across a period the pull wins; down a group the shielding wins. All of topic 26 derives from this sentence."
+  ],
+  "importantStatements": [
+    "\"The effective nuclear charge is the net positive charge experienced by an electron after shielding by the intervening electrons.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ located for this topic; the concept backs NEB 2022 3m (ionisation and radius irregularities, anchored under topic 26). Other items are NEB-style practice."
+  ],
+  "examNotes": [
+    "Always pair the definition with one computed example (Na ≈ +1) — a bare definition rarely earns full 2m. Link Z_eff to the trend asked (radius/IE/EN) in the same sentence."
+  ],
+  "mcs": [
+    {
+      "question": "Effective nuclear charge is given by:",
+      "options": [
+        "Z + σ",
+        "Z − σ",
+        "Z × σ",
+        "Z/σ"
+      ],
+      "answer": "B",
+      "explanation": "Net pull after shielding."
+    },
+    {
+      "question": "Across a period, Z_eff on the valence shell:",
+      "options": [
+        "Decreases",
+        "Increases",
+        "Stays constant",
+        "Becomes zero"
+      ],
+      "answer": "B",
+      "explanation": "Same-shell shielding is poor."
+    },
+    {
+      "question": "Down a group, Z_eff on the valence shell:",
+      "options": [
+        "Increases strongly",
+        "Decreases strongly",
+        "Remains nearly constant",
+        "Doubles"
+      ],
+      "answer": "C",
+      "explanation": "New shells shield the added protons."
+    },
+    {
+      "question": "The approximate Z_eff on sodium's valence electron (simple estimate) is:",
+      "options": [
+        "+11",
+        "+1",
+        "+3",
+        "+10"
+      ],
+      "answer": "B",
+      "explanation": "11 − 10 inner electrons = +1."
+    },
+    {
+      "question": "Which orbital's electron penetrates closest to the nucleus?",
+      "options": [
+        "s",
+        "p",
+        "d",
+        "f"
+      ],
+      "answer": "A",
+      "explanation": "s > p > d > f penetration."
+    },
+    {
+      "question": "In Slater's rules, an (n−1)-shell electron contributes:",
+      "options": [
+        "1.00",
+        "0.85",
+        "0.35",
+        "0.30"
+      ],
+      "answer": "B",
+      "explanation": "Same shell 0.35; deeper 1.00."
+    },
+    {
+      "question": "The rise of Z_eff across period 3 explains:",
+      "options": [
+        "Increasing atomic radius",
+        "Decreasing atomic radius",
+        "Constant radius",
+        "Increasing metallic character"
+      ],
+      "answer": "B",
+      "explanation": "Stronger pull drags the shell inward."
+    },
+    {
+      "question": "4s fills before 3d because the 4s electron:",
+      "options": [
+        "Has lower n",
+        "Penetrates more and feels greater Z_eff",
+        "Is heavier",
+        "Has higher l"
+      ],
+      "answer": "B",
+      "explanation": "Penetration beats the higher n."
+    }
   ]
 }

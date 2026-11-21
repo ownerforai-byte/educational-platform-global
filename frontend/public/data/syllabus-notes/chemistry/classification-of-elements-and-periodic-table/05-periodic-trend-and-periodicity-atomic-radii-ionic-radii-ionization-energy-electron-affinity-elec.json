@@ -6,55 +6,296 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:23.341Z",
   "notes": [
-    "# Periodic trend and periodicity: atomic radii, ionic radii, ionization energy, electron affinity, electronegativity, metallic characters (general trend and explanation only)\n\n## 1. Introduction\nChemical picture of **Periodic trend and periodicity** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Classification of Elements and Periodic Table fill pass.\n\n## 2. Concepts and definitions\n### Periodic trend and periodicity: atomic radii\n### ionic radii\n### ionization energy\n### electron affinity\n### electronegativity\n### metallic characters (general trend and explanation only)\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Periodic trend and periodicity — curve or trend plot (authored SVG, plotted from note data)\n- **D2** — Periodic trend and periodicity — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Periodic trend and periodicity — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Periodic trend and periodicity — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — One Contest, Six Trends\n\nAtomic radius, ionic radius, ionisation energy, electron affinity, electronegativity and metallic character are not six facts to memorise — they are **six readings of one contest**: effective nuclear charge (Z_eff) pulling electrons in versus shells and shielding pushing them out. Learn the contest and each trend's period/group direction — and the famous irregularities NEB 2022 asked — follow as derivations.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Atomic radius\n\n- **Definition problem:** an electron cloud has no edge, so radius is defined operationally:\n  - **Covalent radius:** half the internuclear distance between two bonded identical atoms (Cl–Cl → 99 pm).\n  - **van der Waals radius:** half the closest distance between non-bonded atoms (larger than covalent).\n  - **Metallic radius:** half the nearest-neighbour distance in a metal lattice.\n- **Across a period:** Z_eff rises, same shell pulled in → **radius decreases** (Li 152 pm → F 71 pm; Na 186 → Cl 99). Noble gases (van der Waals radii) break the run.\n- **Down a group:** a new shell opens, n grows → **radius increases** (Li 152 → Na 186 → K 231 pm).\n\n### 2.2 Ionic radius\n\n- **Cation < parent atom:** losing the outer shell and raising Z_eff per remaining electron (Na 186 pm → Na⁺ 95 pm).\n- **Anion > parent atom:** added electrons increase repulsion, Z_eff per electron drops (Cl 99 pm → Cl⁻ 181 pm).\n- **Isoelectronic series** (same electron count): radius **falls as Z rises** — N³⁻ > O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺ (all 10 e⁻).\n\n### 2.3 Ionisation energy (IE / ionisation enthalpy)\n\n- **IE₁:** energy to remove the most loosely bound electron from an isolated gaseous atom: M(g) → M⁺(g) + e⁻.\n- **Across a period:** Z_eff ↑ → **IE increases** (Na 496 → Ar 1520 kJ mol⁻¹), with dips at Be→B and N→O.\n- **Down a group:** n ↑, shielding ↑ → **IE decreases** (Li 520 → Cs 376).\n- **Successive IEs always rise:** IE₁ < IE₂ < IE₃ — and a **huge jump** when the shell is emptied (Na: IE₂ ≫ IE₁, proving Na⁺ = [Ne]).\n\n### 2.4 Electron affinity (EA) and electronegativity (EN)\n\n- **EA:** energy released when an isolated gaseous atom gains an electron: Cl(g) + e⁻ → Cl⁻(g), −349 kJ mol⁻¹. Across a period EA generally **increases** (more negative); down a group it **decreases**. Nobel-gas EAs are positive (no tendency to gain).\n- **EN:** the *tendency* of a bonded atom to attract the shared electron pair (Pauling scale, F = 4.0 highest). Same directions as EA but a property of **bonded** atoms, unitless.\n- **EA vs EN:** EA is energy (measured, isolated atom); EN is relative tendency (scaled, bonded atom).\n\n### 2.5 Metallic character\n\n- Ease of losing electrons. **Across a period: decreases** (Na strongly metallic → Cl non-metallic); **down a group: increases** (Li → Cs, Cs is the most reactive metal). Metalloids line the B–Si–Ge–As–Sb–Te staircase.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Covalent radius** | Half the distance between nuclei of two bonded identical atoms | Cl: 99 pm |\n| **Ionisation energy** | Minimum energy to remove the outermost electron from isolated gaseous atom | Na IE₁ = 496 kJ mol⁻¹ |\n| **Electron affinity** | Energy released on adding an electron to a neutral gaseous atom | Cl = −349 kJ mol⁻¹ |\n| **Electronegativity** | Tendency of a bonded atom to attract the shared pair (Pauling) | F = 4.0, Cs = 0.7 |\n| **Isoelectronic ions** | Ions with the same electron count, different Z | O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺ |",
+    "## 4. Detailed Explanation\n\n### 4.1 NEB 2022 (3m, verified PYQ) — the two irregularities\n\n**(a) IE₁(Mg) > IE₁(Al) although Mg lies left of Al.**\nMg: [Ne] 3s²; Al: [Ne] 3s² 3p¹. Mg's first electron comes from a **completely filled, stable 3s²** subshell; Al's comes from the higher-energy, shielded **3p** electron, which is easier to remove. Values: Mg 738 vs Al 578 kJ mol⁻¹. The Be→B dip has the same cause (2s² vs 2p¹).\n\n**(b) Atomic radius of Na is greater than that of Cl.**\nNa: [Ne] 3s¹, Z_eff ≈ +1; Cl: [Ne] 3s² 3p⁵, Z_eff ≈ +7. Same shell (n = 3), but Cl's far stronger net pull drags it inward: Na 186 pm vs Cl 99 pm. Radius is set by **Z_eff**, not by the electron count.\n\n### 4.2 The other two standard dips (complete the picture)\n\n- **Be → B:** B's 2p¹ electron is higher in energy and better shielded than Be's 2s² pair → IE falls.\n- **N → O:** N is 2p³ (half-filled, exchange-stabilised); O's fourth p electron must **pair** and suffers repulsion → IE falls.\n- **Group 18 anomaly in EA:** noble gases **refuse** electrons (filled shells), so their EA is positive (energy must be supplied) — the extreme end of the trend.\n\n### 4.3 Successive ionisation energies read the configuration\n\nNa (1s²2s²2p⁶3s¹): IE₁ = 496, IE₂ = 4562, IE₃ = 6912 kJ mol⁻¹ — the **9× jump** at IE₂ marks the crossing from the 3rd shell into the neon core. Magnesium's jump comes at IE₃. This is how IE data *prove* shell structure — a favourite application question.\n\n### 4.4 The trend table (memorise directions, derive reasons)\n\n| Property | Across a period (→) | Down a group (↓) | Reason |\n|---|---|---|---|\n| Atomic radius | **Decreases** | **Increases** | Z_eff ↑ vs new shell |\n| IE | **Increases** (dips Be→B, N→O) | **Decreases** | Z_eff ↑ vs shielding ↑ |\n| EA | **Increases** (more negative) | **Decreases** | Z_eff ↑ vs size ↑ |\n| EN | **Increases** | **Decreases** | Pull on shared pair |\n| Metallic character | **Decreases** | **Increases** | Ease of losing e⁻ |\n| Ionic size: cation | — | — | cation < atom; anion > atom |",
+    "## 5. Comparison Tables\n\n**IE vs EA vs EN**\n\n| Basis | Ionisation energy | Electron affinity | Electronegativity |\n|---|---|---|---|\n| Process | Losing an electron | Gaining an electron | Attracting shared pair in a bond |\n| Atom state | Isolated gaseous | Isolated gaseous | **Bonded** atom |\n| Quantity | Energy absorbed (kJ mol⁻¹) | Energy released (kJ mol⁻¹) | Relative scale (unitless) |\n| Period direction | Increases | Increases | Increases |\n| Group direction | Decreases | Decreases | Decreases |\n| Extremes | He highest; Cs lowest | Cl most negative | F = 4.0; Cs = 0.7 |\n\n**Similarity:** all three measure electron-holding power; all rise with Z_eff across a period and fall down a group.\n\n**Cation vs anion formation**\n\n| Basis | Cation | Anion |\n|---|---|---|\n| Electrons | Lost | Gained |\n| Size vs atom | **Smaller** | **Larger** |\n| Z_eff per electron | Higher | Lower |\n| Example | Na⁺ 95 pm (from 186) | Cl⁻ 181 pm (from 99) |",
+    "## 6. Common Confusions\n\n**Radius dip exceptions:** noble-gas radii are **van der Waals** radii — larger than the neighbouring halogen's covalent radius; do not read them as a trend break in bonding radius.",
+    "**IE dips are about subshell stability:** Be→B is s² vs p¹ (energy level); N→O is half-filled vs paired (repulsion). Two different causes — quote the right one for the right pair.",
+    "**EA vs EN:** EA is measurable energy for an **isolated** atom; EN is a relative tendency of a **bonded** atom. Cl has the most negative EA but **F** has the highest EN.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Why is IE₂ of sodium enormously higher than IE₁?** — After IE₁, Na⁺ is [Ne] (1s²2s²2p⁶); IE₂ must remove an electron from the **filled inner shell** against a much higher Z_eff — 4562 vs 496 kJ mol⁻¹. The jump proves the 3s electron was the only valence electron.",
+    "**NEB-style (2m): Arrange O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺ in decreasing size and justify.** — All are 10-electron (isoelectronic); radius falls as nuclear charge rises: **O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺** (Z = 8, 9, 11, 12, 13 pulling the same cloud).",
+    "**NEB-style (2m): Why is Cs the most reactive metal and F the most reactive non-metal?** — Cs: largest alkali metal, lowest IE (376 kJ mol⁻¹) — loses its electron most easily. F: smallest halogen, highest EN (4.0) and very negative EA — gains an electron most avidly. The two extremes meet in CsF, the most ionic of fluorides."
   ],
   "practice": [
-    "Arrange N³⁻, O²⁻, F⁻, Na⁺ and Mg²⁺ in order of increasing radius and justify the order.",
-    "Why is the electron affinity of chlorine greater than that of fluorine?",
-    "Explain the variation of metallic character across a period and down a group with examples."
+    "Why is the van der Waals radius of Ar larger than the covalent radius of Cl?",
+    "Predict and explain the trend in IE for the third-period elements Na to Ar, naming both dips in period 2 analogues.",
+    "Why does Cl have a more negative EA than F despite F's higher electronegativity?"
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Periodic trend and periodicity: atomic radii, ionic radii…\"?",
+      "question": "Across a period, atomic radius:",
       "options": [
-        "Periodic trend",
-        "Periodicity: atomic radii",
-        "Unrelated topic",
-        "None of the above"
+        "Increases",
+        "Decreases",
+        "Remains constant",
+        "Doubles"
       ],
-      "answer": "A",
-      "explanation": "Periodic trend is listed among the official sub-ideas of Periodic trend and periodicity: atomic radii, ionic radii…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "Rising Z_eff pulls the same shell inward."
     },
     {
-      "question": "A common examiner point on \"Periodic trend and periodicity: atomic radii, ionic radii…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Down a group, ionisation energy:",
       "options": [
-        "True",
-        "False"
+        "Increases",
+        "Decreases",
+        "Stays constant",
+        "Becomes zero"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Larger n and stronger shielding."
+    },
+    {
+      "question": "The first ionisation energy of Al is lower than Mg because Al's electron is removed from:",
+      "options": [
+        "3s²",
+        "3p¹",
+        "2p⁶",
+        "1s²"
+      ],
+      "answer": "B",
+      "explanation": "Higher-energy, shielded 3p vs stable filled 3s²."
+    },
+    {
+      "question": "The most negative electron affinity belongs to:",
+      "options": [
+        "F",
+        "Cl",
+        "O",
+        "Ne"
+      ],
+      "answer": "B",
+      "explanation": "Cl: −349 kJ mol⁻¹."
+    },
+    {
+      "question": "The element with the highest electronegativity is:",
+      "options": [
+        "O",
+        "F",
+        "Cl",
+        "Cs"
+      ],
+      "answer": "B",
+      "explanation": "Pauling 4.0."
+    },
+    {
+      "question": "In the isoelectronic series O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺, the largest ion is:",
+      "options": [
+        "O²⁻",
+        "F⁻",
+        "Na⁺",
+        "Al³⁺"
+      ],
+      "answer": "A",
+      "explanation": "Lowest Z pulling the same 10-electron cloud."
+    },
+    {
+      "question": "The Na⁺ ion is smaller than the Na atom because:",
+      "options": [
+        "It gains electrons",
+        "It loses the n = 3 shell and Z_eff per electron rises",
+        "Protons are lost",
+        "It becomes heavier"
+      ],
+      "answer": "B",
+      "explanation": "186 pm → 95 pm."
+    },
+    {
+      "question": "Metallic character across a period:",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Is constant",
+        "First increases then decreases"
+      ],
+      "answer": "B",
+      "explanation": "Harder to lose electrons as Z_eff rises."
     }
   ],
   "examShortTricks": [
-    "Trick 1: All four trends in one sentence — across a period: radius ↓, IE ↑, EA ↑ (more negative), EN ↑; down a group: exactly the reverse.",
-    "Trick 2: Exceptions that earn marks: noble gases have NO electron affinity (stable octet); Be/N have higher IE than B/O (2s/2p stability); IE3 >> IE2 >> IE1.",
-    "Trick 3: Cation < parent atom < anion in size — compare isoelectronic series by Z: more protons → smaller (Al3+ < Mg2+ < Na+ < F− < O2− < N3−).",
-    "Trick 4: IE units — quote kJ/mol and the successive-IE jump as evidence of the shell being emptied."
+    "\"Across: small, tight, greedy, non-metallic. Down: big, loose, generous, metallic.\" IE dips: \"Be-B = s vs p; N-O = half-filled vs pair.\" Isoelectronic: more protons, smaller ion."
   ],
   "keyPoints": [
-    "Atomic radius decreases across a period (Zeff ↑) and increases down a group (new shells).",
-    "Ionization energy rises across a period; successive IEs always increase.",
-    "Electron affinity: energy released on adding an electron; Cl > F due to small size repulsion.",
-    "Electronegativity: tendency to attract shared pair; F is the most electronegative (4.0)."
+    "Radius: covalent/van der Waals/metallic definitions; decreases across (Z_eff ↑), increases down (new shell). Cation < atom < anion; isoelectronic size falls as Z rises. IE rises across (dips Be→B: 2s² vs 2p¹; N→O: half-filled vs pairing), falls down; IE₁ < IE₂ < IE₃ with a huge jump at core crossing. EA: Cl most negative (−349); noble gases positive. EN: F = 4.0 max. Metallic character falls across, rises down."
   ],
   "practiceQuestions": [
-    "Q. Arrange Na, Mg, Al in increasing ionization energy and explain the Be/B-type exception if asked. (2 marks) — Na < Mg < Al? Actually Al < Mg (3p electron easier to remove than 3s pair) — quote this exception.",
-    "Q. Why is the electron affinity of F lower than that of Cl? (2 marks) — very small F atom: added electron suffers repulsion from compact 2p shell.",
-    "Q. Arrange Al3+, Mg2+, Na+, O2−, N3− in increasing size. (2 marks) — all 10-electron species; size grows as Z falls: Al3+ < Mg2+ < Na+ < O2− < N3−."
+    "**NEB 2022 (3m): Explain the periodic irregularities: (a) IE₁ of Mg is greater than that of Al although Mg is to the left of Al; (b) the atomic radius of Na is greater than that of Cl.** — **(a)** Mg = [Ne] 3s², Al = [Ne] 3s² 3p¹. Mg's first electron is removed from a **completely filled, stable 3s²** subshell; Al's from the higher-energy, shielded **3p** electron — easier to remove (Mg 738 vs Al 578 kJ mol⁻¹). **(b)** Both atoms fill n = 3, but Z_eff on that shell rises from ≈ +1 (Na, 3s¹) to ≈ +7 (Cl, 3s²3p⁵); the stronger net pull drags chlorine's shell inward — Na 186 pm vs Cl 99 pm. Radius tracks Z_eff, not electron count.",
+    "**NEB-style (3m): How do atomic radii vary across a period and down a group? Give one reason for each.** — **Across a period:** radius decreases (Li 152 → F 71 pm; Na 186 → Cl 99 pm) — electrons enter the same shell while Z_eff rises, pulling the shell inward. **Down a group:** radius increases (Li 152 → Na 186 → K 231 pm) — each element adds a new principal shell, and shielding keeps Z_eff on the valence shell nearly constant, so the extra n dominates.",
+    "**NEB-style (2m): Define ionisation energy and explain why IE₁ < IE₂ < IE₃.** — IE₁ is the minimum energy to remove the most loosely bound electron from an isolated gaseous atom. Each successive removal pulls a more tightly held electron from an **increasingly positive ion** (higher Z_eff per electron), so IE₁ < IE₂ < IE₃, with a sharp jump at a core-shell crossing.",
+    "**NEB-style (2m): Distinguish electron affinity from electronegativity.** — **EA:** energy released when an **isolated gaseous atom** gains an electron (Cl: −349 kJ mol⁻¹) — a measurable thermodynamic quantity. **EN:** the relative tendency of a **bonded** atom to attract the shared electron pair (Pauling scale, F = 4.0) — a unitless comparative index. Both rise across and fall down the table, but they are not the same quantity."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — One Contest, Six Trends\n\nAtomic radius, ionic radius, ionisation energy, electron affinity, electronegativity and metallic character are not six facts to memorise — they are **six readings of one contest**: effective nuclear charge (Z_eff) pulling electrons in versus shells and shielding pushing them out. Learn the contest and each trend's period/group direction — and the famous irregularities NEB 2022 asked — follow as derivations.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Atomic radius\n\n- **Definition problem:** an electron cloud has no edge, so radius is defined operationally:\n  - **Covalent radius:** half the internuclear distance between two bonded identical atoms (Cl–Cl → 99 pm).\n  - **van der Waals radius:** half the closest distance between non-bonded atoms (larger than covalent).\n  - **Metallic radius:** half the nearest-neighbour distance in a metal lattice.\n- **Across a period:** Z_eff rises, same shell pulled in → **radius decreases** (Li 152 pm → F 71 pm; Na 186 → Cl 99). Noble gases (van der Waals radii) break the run.\n- **Down a group:** a new shell opens, n grows → **radius increases** (Li 152 → Na 186 → K 231 pm).\n\n### 2.2 Ionic radius\n\n- **Cation < parent atom:** losing the outer shell and raising Z_eff per remaining electron (Na 186 pm → Na⁺ 95 pm).\n- **Anion > parent atom:** added electrons increase repulsion, Z_eff per electron drops (Cl 99 pm → Cl⁻ 181 pm).\n- **Isoelectronic series** (same electron count): radius **falls as Z rises** — N³⁻ > O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺ (all 10 e⁻).\n\n### 2.3 Ionisation energy (IE / ionisation enthalpy)\n\n- **IE₁:** energy to remove the most loosely bound electron from an isolated gaseous atom: M(g) → M⁺(g) + e⁻.\n- **Across a period:** Z_eff ↑ → **IE increases** (Na 496 → Ar 1520 kJ mol⁻¹), with dips at Be→B and N→O.\n- **Down a group:** n ↑, shielding ↑ → **IE decreases** (Li 520 → Cs 376).\n- **Successive IEs always rise:** IE₁ < IE₂ < IE₃ — and a **huge jump** when the shell is emptied (Na: IE₂ ≫ IE₁, proving Na⁺ = [Ne]).\n\n### 2.4 Electron affinity (EA) and electronegativity (EN)\n\n- **EA:** energy released when an isolated gaseous atom gains an electron: Cl(g) + e⁻ → Cl⁻(g), −349 kJ mol⁻¹. Across a period EA generally **increases** (more negative); down a group it **decreases**. Nobel-gas EAs are positive (no tendency to gain).\n- **EN:** the *tendency* of a bonded atom to attract the shared electron pair (Pauling scale, F = 4.0 highest). Same directions as EA but a property of **bonded** atoms, unitless.\n- **EA vs EN:** EA is energy (measured, isolated atom); EN is relative tendency (scaled, bonded atom).\n\n### 2.5 Metallic character\n\n- Ease of losing electrons. **Across a period: decreases** (Na strongly metallic → Cl non-metallic); **down a group: increases** (Li → Cs, Cs is the most reactive metal). Metalloids line the B–Si–Ge–As–Sb–Te staircase.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Covalent radius** | Half the distance between nuclei of two bonded identical atoms | Cl: 99 pm |\n| **Ionisation energy** | Minimum energy to remove the outermost electron from isolated gaseous atom | Na IE₁ = 496 kJ mol⁻¹ |\n| **Electron affinity** | Energy released on adding an electron to a neutral gaseous atom | Cl = −349 kJ mol⁻¹ |\n| **Electronegativity** | Tendency of a bonded atom to attract the shared pair (Pauling) | F = 4.0, Cs = 0.7 |\n| **Isoelectronic ions** | Ions with the same electron count, different Z | O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺ |",
+      "## 4. Detailed Explanation\n\n### 4.1 NEB 2022 (3m, verified PYQ) — the two irregularities\n\n**(a) IE₁(Mg) > IE₁(Al) although Mg lies left of Al.**\nMg: [Ne] 3s²; Al: [Ne] 3s² 3p¹. Mg's first electron comes from a **completely filled, stable 3s²** subshell; Al's comes from the higher-energy, shielded **3p** electron, which is easier to remove. Values: Mg 738 vs Al 578 kJ mol⁻¹. The Be→B dip has the same cause (2s² vs 2p¹).\n\n**(b) Atomic radius of Na is greater than that of Cl.**\nNa: [Ne] 3s¹, Z_eff ≈ +1; Cl: [Ne] 3s² 3p⁵, Z_eff ≈ +7. Same shell (n = 3), but Cl's far stronger net pull drags it inward: Na 186 pm vs Cl 99 pm. Radius is set by **Z_eff**, not by the electron count.\n\n### 4.2 The other two standard dips (complete the picture)\n\n- **Be → B:** B's 2p¹ electron is higher in energy and better shielded than Be's 2s² pair → IE falls.\n- **N → O:** N is 2p³ (half-filled, exchange-stabilised); O's fourth p electron must **pair** and suffers repulsion → IE falls.\n- **Group 18 anomaly in EA:** noble gases **refuse** electrons (filled shells), so their EA is positive (energy must be supplied) — the extreme end of the trend.\n\n### 4.3 Successive ionisation energies read the configuration\n\nNa (1s²2s²2p⁶3s¹): IE₁ = 496, IE₂ = 4562, IE₃ = 6912 kJ mol⁻¹ — the **9× jump** at IE₂ marks the crossing from the 3rd shell into the neon core. Magnesium's jump comes at IE₃. This is how IE data *prove* shell structure — a favourite application question.\n\n### 4.4 The trend table (memorise directions, derive reasons)\n\n| Property | Across a period (→) | Down a group (↓) | Reason |\n|---|---|---|---|\n| Atomic radius | **Decreases** | **Increases** | Z_eff ↑ vs new shell |\n| IE | **Increases** (dips Be→B, N→O) | **Decreases** | Z_eff ↑ vs shielding ↑ |\n| EA | **Increases** (more negative) | **Decreases** | Z_eff ↑ vs size ↑ |\n| EN | **Increases** | **Decreases** | Pull on shared pair |\n| Metallic character | **Decreases** | **Increases** | Ease of losing e⁻ |\n| Ionic size: cation | — | — | cation < atom; anion > atom |",
+      "## 5. Comparison Tables\n\n**IE vs EA vs EN**\n\n| Basis | Ionisation energy | Electron affinity | Electronegativity |\n|---|---|---|---|\n| Process | Losing an electron | Gaining an electron | Attracting shared pair in a bond |\n| Atom state | Isolated gaseous | Isolated gaseous | **Bonded** atom |\n| Quantity | Energy absorbed (kJ mol⁻¹) | Energy released (kJ mol⁻¹) | Relative scale (unitless) |\n| Period direction | Increases | Increases | Increases |\n| Group direction | Decreases | Decreases | Decreases |\n| Extremes | He highest; Cs lowest | Cl most negative | F = 4.0; Cs = 0.7 |\n\n**Similarity:** all three measure electron-holding power; all rise with Z_eff across a period and fall down a group.\n\n**Cation vs anion formation**\n\n| Basis | Cation | Anion |\n|---|---|---|\n| Electrons | Lost | Gained |\n| Size vs atom | **Smaller** | **Larger** |\n| Z_eff per electron | Higher | Lower |\n| Example | Na⁺ 95 pm (from 186) | Cl⁻ 181 pm (from 99) |",
+      "## 6. Common Confusions\n\n**Radius dip exceptions:** noble-gas radii are **van der Waals** radii — larger than the neighbouring halogen's covalent radius; do not read them as a trend break in bonding radius.",
+      "**IE dips are about subshell stability:** Be→B is s² vs p¹ (energy level); N→O is half-filled vs paired (repulsion). Two different causes — quote the right one for the right pair.",
+      "**EA vs EN:** EA is measurable energy for an **isolated** atom; EN is a relative tendency of a **bonded** atom. Cl has the most negative EA but **F** has the highest EN.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Why is IE₂ of sodium enormously higher than IE₁?** — After IE₁, Na⁺ is [Ne] (1s²2s²2p⁶); IE₂ must remove an electron from the **filled inner shell** against a much higher Z_eff — 4562 vs 496 kJ mol⁻¹. The jump proves the 3s electron was the only valence electron.",
+      "**NEB-style (2m): Arrange O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺ in decreasing size and justify.** — All are 10-electron (isoelectronic); radius falls as nuclear charge rises: **O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺** (Z = 8, 9, 11, 12, 13 pulling the same cloud).",
+      "**NEB-style (2m): Why is Cs the most reactive metal and F the most reactive non-metal?** — Cs: largest alkali metal, lowest IE (376 kJ mol⁻¹) — loses its electron most easily. F: smallest halogen, highest EN (4.0) and very negative EA — gains an electron most avidly. The two extremes meet in CsF, the most ionic of fluorides."
+    ],
+    "confusion": [
+      "**IE dips vs steady rise:** the period trend is \"increases with two dips\" — Be→B and N→O. A flat \"increases\" answer misses the marks reserved for the irregularities.",
+      "**Cation shrinkage is not just electron loss:** losing the whole outer shell (Na⁺) dominates; but even same-shell loss (Fe³⁺ vs Fe²⁺) shrinks the ion because Z_eff per electron rises."
+    ],
+    "keyPoints": [
+      "Radius: covalent/van der Waals/metallic definitions; decreases across (Z_eff ↑), increases down (new shell). Cation < atom < anion; isoelectronic size falls as Z rises. IE rises across (dips Be→B: 2s² vs 2p¹; N→O: half-filled vs pairing), falls down; IE₁ < IE₂ < IE₃ with a huge jump at core crossing. EA: Cl most negative (−349); noble gases positive. EN: F = 4.0 max. Metallic character falls across, rises down."
+    ],
+    "importantConcepts": [
+      "**Irregularities are the exam:** Mg > Al (3s² filled vs 3p¹) and Na > Cl radius (Z_eff on the same shell) — NEB 2022's pair; add Be→B and N→O for the complete IE picture."
+    ],
+    "examples": [
+      "***Na IE₁ = 496 → IE₂ = 4562 kJ mol⁻¹*** — a 9× jump: the second electron comes from the neon core. Successive-IE jumps are how shell structure was proven."
+    ],
+    "universalFacts": [
+      "Francium is often cited as the most metallic element, but Cs is the *practically* most reactive metal — Fr is so radioactive (half-life 22 minutes) that bulk chemistry is unobservable."
+    ],
+    "importantStatements": [
+      "\"Atomic radius decreases across a period because the increasing effective nuclear charge pulls the same shell inward.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2022 3m — explain IE₁(Mg) > IE₁(Al) and r(Na) > r(Cl) (solved above). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"Across: small, tight, greedy, non-metallic. Down: big, loose, generous, metallic.\" IE dips: \"Be-B = s vs p; N-O = half-filled vs pair.\" Isoelectronic: more protons, smaller ion."
+    ],
+    "examNotes": [
+      "For irregularity questions, always write both configurations first (Mg 3s², Al 3s²3p¹) — the subshell contrast is the mark-earner; the numbers (738 vs 578) are garnish."
+    ],
+    "formulas": [
+      "- Z_eff = Z − σ (drives every trend)\n- M(g) → M⁺(g) + e⁻, IE₁; IE₁ < IE₂ < IE₃\n- Isoelectronic radius ∝ 1/Z (approx)\n- Pauling EN: F 4.0 > O 3.5 > N 3.0 > Cl 3.0 … Cs 0.7"
+    ],
+    "practice": [
+      "Why is the van der Waals radius of Ar larger than the covalent radius of Cl?",
+      "Predict and explain the trend in IE for the third-period elements Na to Ar, naming both dips in period 2 analogues.",
+      "Why does Cl have a more negative EA than F despite F's higher electronegativity?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2022 (3m): Explain the periodic irregularities: (a) IE₁ of Mg is greater than that of Al although Mg is to the left of Al; (b) the atomic radius of Na is greater than that of Cl.** — **(a)** Mg = [Ne] 3s², Al = [Ne] 3s² 3p¹. Mg's first electron is removed from a **completely filled, stable 3s²** subshell; Al's from the higher-energy, shielded **3p** electron — easier to remove (Mg 738 vs Al 578 kJ mol⁻¹). **(b)** Both atoms fill n = 3, but Z_eff on that shell rises from ≈ +1 (Na, 3s¹) to ≈ +7 (Cl, 3s²3p⁵); the stronger net pull drags chlorine's shell inward — Na 186 pm vs Cl 99 pm. Radius tracks Z_eff, not electron count.",
+      "**NEB-style (3m): How do atomic radii vary across a period and down a group? Give one reason for each.** — **Across a period:** radius decreases (Li 152 → F 71 pm; Na 186 → Cl 99 pm) — electrons enter the same shell while Z_eff rises, pulling the shell inward. **Down a group:** radius increases (Li 152 → Na 186 → K 231 pm) — each element adds a new principal shell, and shielding keeps Z_eff on the valence shell nearly constant, so the extra n dominates.",
+      "**NEB-style (2m): Define ionisation energy and explain why IE₁ < IE₂ < IE₃.** — IE₁ is the minimum energy to remove the most loosely bound electron from an isolated gaseous atom. Each successive removal pulls a more tightly held electron from an **increasingly positive ion** (higher Z_eff per electron), so IE₁ < IE₂ < IE₃, with a sharp jump at a core-shell crossing.",
+      "**NEB-style (2m): Distinguish electron affinity from electronegativity.** — **EA:** energy released when an **isolated gaseous atom** gains an electron (Cl: −349 kJ mol⁻¹) — a measurable thermodynamic quantity. **EN:** the relative tendency of a **bonded** atom to attract the shared electron pair (Pauling scale, F = 4.0) — a unitless comparative index. Both rise across and fall down the table, but they are not the same quantity."
+    ]
+  },
+  "confusion": [
+    "**IE dips vs steady rise:** the period trend is \"increases with two dips\" — Be→B and N→O. A flat \"increases\" answer misses the marks reserved for the irregularities.",
+    "**Cation shrinkage is not just electron loss:** losing the whole outer shell (Na⁺) dominates; but even same-shell loss (Fe³⁺ vs Fe²⁺) shrinks the ion because Z_eff per electron rises."
+  ],
+  "importantConcepts": [
+    "**Irregularities are the exam:** Mg > Al (3s² filled vs 3p¹) and Na > Cl radius (Z_eff on the same shell) — NEB 2022's pair; add Be→B and N→O for the complete IE picture."
+  ],
+  "examples": [
+    "***Na IE₁ = 496 → IE₂ = 4562 kJ mol⁻¹*** — a 9× jump: the second electron comes from the neon core. Successive-IE jumps are how shell structure was proven."
+  ],
+  "universalFacts": [
+    "Francium is often cited as the most metallic element, but Cs is the *practically* most reactive metal — Fr is so radioactive (half-life 22 minutes) that bulk chemistry is unobservable."
+  ],
+  "importantStatements": [
+    "\"Atomic radius decreases across a period because the increasing effective nuclear charge pulls the same shell inward.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2022 3m — explain IE₁(Mg) > IE₁(Al) and r(Na) > r(Cl) (solved above). Other items are NEB-style practice."
+  ],
+  "examNotes": [
+    "For irregularity questions, always write both configurations first (Mg 3s², Al 3s²3p¹) — the subshell contrast is the mark-earner; the numbers (738 vs 578) are garnish."
+  ],
+  "formulas": [
+    "- Z_eff = Z − σ (drives every trend)\n- M(g) → M⁺(g) + e⁻, IE₁; IE₁ < IE₂ < IE₃\n- Isoelectronic radius ∝ 1/Z (approx)\n- Pauling EN: F 4.0 > O 3.5 > N 3.0 > Cl 3.0 … Cs 0.7"
+  ],
+  "summary": "Six trends, one contest. Across a period Z_eff climbs (same-shell shielding is poor): **radii shrink** (Na 186 → Cl 99 pm), **ionisation energy climbs** with two dips — Be→B (2s² vs 2p¹) and N→O (half-filled vs pairing) — **electron affinity and electronegativity rise** (Cl most negative EA, F highest EN), and **metallic character falls**. Down a group each new shell wins the contest: radii grow, IE falls, metals get more reactive (Cs the practical extreme). Ionic sizes obey Z_eff per electron: cations shrink below their atoms (Na⁺ 95 pm), anions swell above theirs (Cl⁻ 181 pm), and isoelectronic ions shrink as Z rises (O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺). NEB 2022's irregularities — Mg > Al in IE and Na > Cl in radius — are not exceptions to the trends but their sharpest demonstrations: subshell stability and Z_eff decide everything.",
+  "mcs": [
+    {
+      "question": "Across a period, atomic radius:",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Remains constant",
+        "Doubles"
+      ],
+      "answer": "B",
+      "explanation": "Rising Z_eff pulls the same shell inward."
+    },
+    {
+      "question": "Down a group, ionisation energy:",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Stays constant",
+        "Becomes zero"
+      ],
+      "answer": "B",
+      "explanation": "Larger n and stronger shielding."
+    },
+    {
+      "question": "The first ionisation energy of Al is lower than Mg because Al's electron is removed from:",
+      "options": [
+        "3s²",
+        "3p¹",
+        "2p⁶",
+        "1s²"
+      ],
+      "answer": "B",
+      "explanation": "Higher-energy, shielded 3p vs stable filled 3s²."
+    },
+    {
+      "question": "The most negative electron affinity belongs to:",
+      "options": [
+        "F",
+        "Cl",
+        "O",
+        "Ne"
+      ],
+      "answer": "B",
+      "explanation": "Cl: −349 kJ mol⁻¹."
+    },
+    {
+      "question": "The element with the highest electronegativity is:",
+      "options": [
+        "O",
+        "F",
+        "Cl",
+        "Cs"
+      ],
+      "answer": "B",
+      "explanation": "Pauling 4.0."
+    },
+    {
+      "question": "In the isoelectronic series O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺, the largest ion is:",
+      "options": [
+        "O²⁻",
+        "F⁻",
+        "Na⁺",
+        "Al³⁺"
+      ],
+      "answer": "A",
+      "explanation": "Lowest Z pulling the same 10-electron cloud."
+    },
+    {
+      "question": "The Na⁺ ion is smaller than the Na atom because:",
+      "options": [
+        "It gains electrons",
+        "It loses the n = 3 shell and Z_eff per electron rises",
+        "Protons are lost",
+        "It becomes heavier"
+      ],
+      "answer": "B",
+      "explanation": "186 pm → 95 pm."
+    },
+    {
+      "question": "Metallic character across a period:",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Is constant",
+        "First increases then decreases"
+      ],
+      "answer": "B",
+      "explanation": "Harder to lose electrons as Z_eff rises."
+    }
   ]
 }
