@@ -411,6 +411,48 @@ import { GeographySocietyLinks } from "./geography-society-links";
 import { InterdisciplinaryMap } from "./interdisciplinary-map";
 import { ControlGroupDesign } from "./control-group-design";
 import { HypothesisTheoryLadder } from "./hypothesis-theory-ladder";
+import { RNAWorldHypothesis } from "./rna-world-hypothesis";
+import { CoacervateProtobiont } from "./coacervate-protobiont";
+import { AminoAcidYieldChart } from "./amino-acid-yield-chart";
+import { EnergySourcesEarlyEarth } from "./energy-sources-early-earth";
+import { AnaerobicFirstCells } from "./anaerobic-first-cells";
+import { ReducingAtmosphereChemistry } from "./reducing-atmosphere-chemistry";
+import { AbiogenesisBiogenesisContrast } from "./abiogenesis-biogenesis-contrast";
+import { ArchaeopteryxMosaic } from "./archaeopteryx-mosaic";
+import { ConnectingLinksTrio } from "./connecting-links-trio";
+import { DivergentVsConvergent } from "./divergent-vs-convergent";
+import { FossilDatingLayers } from "./fossil-dating-layers";
+import { EmbryologyEvidenceStages } from "./embryology-evidence-stages";
+import { BiochemicalMolecularTests } from "./biochemical-molecular-tests";
+import { PaleontologyStrataStory } from "./paleontology-strata-story";
+import { DarwinVoyageBeagle } from "./darwin-voyage-beagle";
+import { StruggleForExistence } from "./struggle-for-existence";
+import { OverproductionMath } from "./overproduction-math";
+import { NaturalSelectionSteps } from "./natural-selection-steps";
+import { MutationVariationSources } from "./mutation-variation-sources";
+import { IsolationGeneFlowBarriers } from "./isolation-gene-flow-barriers";
+import { SpeciationSteps } from "./speciation-steps";
+import { AustralopithecusLucy } from "./australopithecus-lucy";
+import { HomoHabilisTools } from "./homo-habilis-tools";
+import { HomoErectusFire } from "./homo-erectus-fire";
+import { NeanderthalProfile } from "./neanderthal-profile";
+import { CroMagnonArt } from "./cro-magnon-art";
+import { HominidTimelineDates } from "./hominid-timeline-dates";
+import { ManKingdomTraits } from "./man-kingdom-traits";
+import { PrehensileTailDemo } from "./prehensile-tail-demo";
+import { NostrilSeptumZoom } from "./nostril-septum-zoom";
+import { CheekPouchIschial } from "./cheek-pouch-ischial";
+import { GibbonBrachiation } from "./gibbon-brachiation";
+import { BaboonGroundLife } from "./baboon-ground-life";
+import { MonkeyApeThumbGrip } from "./monkey-ape-thumb-grip";
+import { PrimateGradeLadder } from "./primate-grade-ladder";
+import { SavannaPressure } from "./savanna-pressure";
+import { BipedalSkeletonCompare } from "./bipedal-skeleton-compare";
+import { HomoErectusSpread } from "./homo-erectus-spread";
+import { NeanderthalBurial } from "./neanderthal-burial";
+import { NeolithicFarmingShift } from "./neolithic-farming-shift";
+import { LanguageBrainCircuit } from "./language-brain-circuit";
+import { HomoSapiensIdentity } from "./homo-sapiens-identity";
 import { FernStructure } from "./fern-structure";
 import { FernLifeCycle } from "./fern-life-cycle";
 import { FernProthallus } from "./fern-prothallus";
@@ -4093,6 +4135,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Theories of origin of life compared special creation spontaneous generation panspermia abiogenesis",
         keyword: "panspermia",
       },
+      {
+        Component: ReducingAtmosphereChemistry,
+        caption:
+          "Why 'reducing' matters: with no free O₂ organics were not burnt back to CO₂, and with no ozone UV drove reactions — today's air would destroy the same soup in hours.",
+        alt: "Reducing atmosphere chemistry methane ammonia hydrogen no free oxygen",
+        keyword: "methane",
+      },
+      {
+        Component: AbiogenesisBiogenesisContrast,
+        caption:
+          "Abiogenesis vs biogenesis: claim, champions, test and verdict — biogenesis won for today, but chemical evolution happened once under the early atmosphere.",
+        alt: "Abiogenesis versus biogenesis debate table Pasteur Redi",
+        keyword: "abiogenesis",
+      },
+      {
+        Component: RNAWorldHypothesis,
+        caption:
+          "The RNA world: one molecule storing information and catalysing reactions — ribozymes could copy themselves, later handing those jobs to DNA and protein.",
+        alt: "RNA world hypothesis ribozyme information and catalysis",
+        keyword: "RNA",
+      },
+      {
+        Component: CoacervateProtobiont,
+        caption:
+          "From soup to droplet: Oparin's coacervates concentrated enzymes and substrates inside a boundary — chemistry became local, protected and selectable.",
+        alt: "Coacervate protobiont droplets with boundary and concentrated reactions",
+        keyword: "coacervate",
+      },
+      {
+        Component: AminoAcidYieldChart,
+        caption:
+          "Product yields from the spark: glycine and alanine most abundant, aspartic and glutamic acid next — exactly what a non-enzymatic discharge would make first.",
+        alt: "Miller Urey amino acid yield chart glycine alanine",
+        keyword: "amino acid",
+      },
+      {
+        Component: EnergySourcesEarlyEarth,
+        caption:
+          "Four energy sources cooked the soup: hard UV (no ozone), lightning, volcanic heat and meteor impacts — bonds do not re-form for free.",
+        alt: "Energy sources early Earth UV lightning volcanic meteor",
+        keyword: "lightning",
+      },
+      {
+        Component: AnaerobicFirstCells,
+        caption:
+          "The first cells were anaerobic heterotrophs feeding on the soup; when it ran short, autotrophs appeared — and their O₂ triggered the oxygen crisis.",
+        alt: "Anaerobic first cells to autotrophs oxygen crisis sequence",
+        keyword: "anaerobic",
+      },
     ],
   },
   "evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical": {
@@ -4146,6 +4237,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "The fossil record runs simple prokaryotes (3.5 bya) → eukaryotes → invertebrates → fish → amphibians → reptiles → birds/mammals → humans; deeper strata are older, with C-14, U-Pb and K-Ar dating.",
         alt: "Fossil record sequence from prokaryotes to humans complexity increases with time",
         keyword: "transitional fossils",
+      },
+      {
+        Component: PaleontologyStrataStory,
+        caption:
+          "Fossils are history's pages: life was different in the past, complexity increases upward, and index fossils date the layer they sit in.",
+        alt: "Paleontology strata story fossils in rock layers",
+        keyword: "paleontology",
+      },
+      {
+        Component: FossilDatingLayers,
+        caption:
+          "Dating the layers: C-14 for recent remains, U-Pb and K-Ar for ancient rock — deeper strata are older, and no layer contradicts the order.",
+        alt: "Fossil dating layers strata isotope methods",
+        keyword: "fossil",
+      },
+      {
+        Component: EmbryologyEvidenceStages,
+        caption:
+          "von Baer's law: general characters (gill pouches, tail, notochord) appear before special ones — embryos agree early and argue late.",
+        alt: "Embryology evidence early embryos agree late diverge",
+        keyword: "embryological",
+      },
+      {
+        Component: BiochemicalMolecularTests,
+        caption:
+          "Counting differences in cytochrome c: chimpanzee 0, rhesus 1, horse 12, yeast 44 — a molecular family tree that matches the fossil tree.",
+        alt: "Biochemical molecular tests cytochrome c differences chart",
+        keyword: "biochemical",
+      },
+      {
+        Component: ArchaeopteryxMosaic,
+        caption:
+          "Archaeopteryx in detail: teeth, bony tail and clawed wings (reptile) beside feathers and a wishbone (bird) — the classic connecting link.",
+        alt: "Archaeopteryx mosaic reptilian and avian characters",
+        keyword: "archaeopteryx",
+      },
+      {
+        Component: ConnectingLinksTrio,
+        caption:
+          "Three links, one lesson: Peripatus bridges annelid-arthropod, Euglena bridges plant-animal, Archaeopteryx bridges reptile-bird.",
+        alt: "Connecting links Peripatus Euglena Archaeopteryx",
+        keyword: "peripatus",
+      },
+      {
+        Component: DivergentVsConvergent,
+        caption:
+          "The rule: same structure, different function = divergent evolution (homology); same function, different structure = convergent evolution (analogy).",
+        alt: "Divergent versus convergent evolution homology analogy",
+        keyword: "divergent",
       },
     ],
   },
@@ -4201,6 +4341,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Lamarckism versus Darwinism comparison table",
         keyword: "inheritance of acquired characters",
       },
+      {
+        Component: DarwinVoyageBeagle,
+        caption:
+          "The voyage that built the theory: South American fossils, Galapagos finches, Lyell's deep time and Malthus's populations — five years of notes became one idea.",
+        alt: "Darwin voyage HMS Beagle Galapagos finches route",
+        keyword: "darwin",
+      },
+      {
+        Component: OverproductionMath,
+        caption:
+          "Darwin's elephant arithmetic: one pair breeding unchecked would cover every continent — the gap between potential and actual numbers is the struggle.",
+        alt: "Overproduction math elephant example geometric growth",
+        keyword: "overproduction",
+      },
+      {
+        Component: StruggleForExistence,
+        caption:
+          "Three struggles: intraspecific (same species, most severe), interspecific (between species) and environmental (climate, drought) — all caused by limited resources.",
+        alt: "Struggle for existence intraspecific interspecific environmental",
+        keyword: "struggle for existence",
+      },
+      {
+        Component: MutationVariationSources,
+        caption:
+          "Four suppliers of variation: mutation (the only source of new alleles), recombination, gene flow and chance fertilisation — selection needs them all.",
+        alt: "Mutation variation sources mutation recombination gene flow",
+        keyword: "mutation",
+      },
+      {
+        Component: NaturalSelectionSteps,
+        caption:
+          "Selection in five moves: variation appears, struggle intervenes, the best-suited survive and reproduce more, genes pass on, adaptation results.",
+        alt: "Natural selection steps variation struggle selection adaptation",
+        keyword: "natural selection",
+      },
+      {
+        Component: IsolationGeneFlowBarriers,
+        caption:
+          "Isolation blocks gene flow: geographical barriers start the split, reproductive barriers finish it — no gene flow is the key phrase.",
+        alt: "Isolation gene flow barriers geographical reproductive genetic",
+        keyword: "isolation",
+      },
+      {
+        Component: SpeciationSteps,
+        caption:
+          "Speciation in five steps: one population → barrier → independent change → divergence → reproductive isolation. The species test: reunited, do they still interbreed?",
+        alt: "Speciation steps from population to two species",
+        keyword: "speciation",
+      },
     ],
   },
   "human-evolution-position-of-man-in-animal-kingdom": {
@@ -4240,6 +4429,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Brain expansion along the line: ~450–500 cc in Australopithecus → 650–750 (habilis) → 900–1100 (erectus) → ~1400 (Neanderthal) → 1350–1450 cc in modern humans.",
         alt: "Brain size expansion chart through hominid line",
         keyword: "bipedalism",
+      },
+      {
+        Component: ManKingdomTraits,
+        caption:
+          "Three rungs that make us human: mammal characters, primate characters (opposable thumb, stereoscopic vision) and hominid characters (bipedal, speech, culture).",
+        alt: "Man kingdom traits mammal primate hominid characters",
+        keyword: "hominidae",
+      },
+      {
+        Component: HominidTimelineDates,
+        caption:
+          "The line-up with dates: Dryopithecus ~20–14 mya, Ramapithecus ~14–10, Australopithecus ~4–2, habilis ~2.4–1.4, erectus ~1.8 mya–300 kya, Neanderthal, sapiens.",
+        alt: "Hominid timeline dates from Dryopithecus to sapiens",
+        keyword: "dryopithecus",
+      },
+      {
+        Component: AustralopithecusLucy,
+        caption:
+          "Lucy (A. afarensis, ~3.2 mya): chimp-sized brain, human-like pelvis — bipedalism came before big brains, the single most examinable fact in this topic.",
+        alt: "Australopithecus Lucy first biped fact card",
+        keyword: "lucy",
+      },
+      {
+        Component: HomoHabilisTools,
+        caption:
+          "Homo habilis, the handy man: first Oldowan stone tools, first brain jump to ~650–750 cc, precision grip — tools and brain grew together.",
+        alt: "Homo habilis first stone tools Oldowan chopper",
+        keyword: "tools",
+      },
+      {
+        Component: HomoErectusFire,
+        caption:
+          "Homo erectus: fire (warmth, defence, cooking), ~900–1100 cc brain, fully modern walk — and the first to leave Africa.",
+        alt: "Homo erectus fire hearth migration",
+        keyword: "fire",
+      },
+      {
+        Component: NeanderthalProfile,
+        caption:
+          "Neanderthal man: ~1400 cc brain, heavy brow, stocky ice-age build, Mousterian tools, buried their dead — a cousin line, not our ancestor.",
+        alt: "Neanderthal profile stocky build large brain",
+        keyword: "neanderthal",
+      },
+      {
+        Component: CroMagnonArt,
+        caption:
+          "Cro-Magnon (Homo sapiens): cave painting, ornaments, grave goods, blades and needles — art is the clearest evidence of symbolic thought.",
+        alt: "Cro Magnon cave art symbolic thought",
+        keyword: "cro-magnon",
       },
     ],
   },
@@ -4281,6 +4519,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Primate family tree with all grades",
         keyword: "40 million years",
       },
+      {
+        Component: PrehensileTailDemo,
+        caption:
+          "The tail as a fifth hand: New World monkeys grip branches with a hairless tail tip; Old World monkeys never do; apes and man have no tail at all.",
+        alt: "Prehensile tail spider monkey hanging fifth hand",
+        keyword: "prehensile",
+      },
+      {
+        Component: NostrilSeptumZoom,
+        caption:
+          "The nose knows: Platyrrhini — flat, wide septum, sideways nostrils; Catarrhini — narrow downward nostrils, the inheritance we share with Old World monkeys and apes.",
+        alt: "Platyrrhine versus catarrhine nostril septum comparison",
+        keyword: "nostrils",
+      },
+      {
+        Component: CheekPouchIschial,
+        caption:
+          "Two Old World-only markers: cheek pouches carry food for later; ischial callosities are hard sitting pads on the rump — New World monkeys have neither.",
+        alt: "Cheek pouches and ischial callosities Old World markers",
+        keyword: "cheek pouches",
+      },
+      {
+        Component: GibbonBrachiation,
+        caption:
+          "The gibbon: lesser ape (Hylobatidae), smallest and lightest, brachiates through the canopy with hook hands, lives in monogamous duetting pairs.",
+        alt: "Gibbon brachiation arm swinging lesser ape",
+        keyword: "gibbon",
+      },
+      {
+        Component: BaboonGroundLife,
+        caption:
+          "The baboon: an Old World monkey that left the trees — dog-like muzzle, ground-foraging troops, omnivorous, with callosities and cheek pouches.",
+        alt: "Baboon ground life terrestrial Old World monkey",
+        keyword: "baboon",
+      },
+      {
+        Component: MonkeyApeThumbGrip,
+        caption:
+          "The thumb tells the story: monkey clasp, ape hook grip with partial opposition, human fully opposable thumb and precision grip — every tool rests on that joint.",
+        alt: "Monkey ape thumb grip precision grip progression",
+        keyword: "thumb",
+      },
+      {
+        Component: PrimateGradeLadder,
+        caption:
+          "Six grades in order: prosimians → New World monkeys → Old World monkeys → lesser apes → great apes → man — a grade ladder, not a family tree.",
+        alt: "Primate grade ladder prosimians to man",
+        keyword: "great ape",
+      },
     ],
   },
   "evolution-of-modern-man-starting-from-anthropoid-ancestor": {
@@ -4320,6 +4607,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Cultural evolution — the fourth engine: Paleolithic (tools, fire) → Mesolithic (microliths) → Neolithic (agriculture, villages) → metal ages (writing, cities) → industrial/scientific — now faster than biological evolution.",
         alt: "Cultural evolution ages from Paleolithic to industrial",
         keyword: "agriculture",
+      },
+      {
+        Component: SavannaPressure,
+        caption:
+          "The savanna pressure: Miocene cooling shrank the African forest ~7 mya — edge populations faced a choice between the forest line (apes) and the ground line (hominins).",
+        alt: "Savanna pressure forest shrinkage open grassland",
+        keyword: "savanna",
+      },
+      {
+        Component: BipedalSkeletonCompare,
+        caption:
+          "Four bones that walk upright: foramen magnum under the skull, S-curved spine, bowl pelvis, femur angled inward — any two prove bipedalism from a fossil.",
+        alt: "Bipedal skeleton ape versus human comparison",
+        keyword: "bipedal",
+      },
+      {
+        Component: HomoErectusSpread,
+        caption:
+          "The first diaspora: erectus left Africa ~1.8 mya — Georgia, Java man, Peking man, Europe — fire and long legs made forest optional.",
+        alt: "Homo erectus spread out of Africa map",
+        keyword: "homo erectus",
+      },
+      {
+        Component: NeanderthalBurial,
+        caption:
+          "The first funerals: Shanidar's flower burial, healed fractures showing care, grave goods — behaviour, not anatomy, marks the Neanderthal mind.",
+        alt: "Neanderthal burial Shanidar cave care compassion",
+        keyword: "burial",
+      },
+      {
+        Component: NeolithicFarmingShift,
+        caption:
+          "The Neolithic turn: farming ~10,000 years ago brought villages, surplus, specialisation and states — cultural evolution then outran biology.",
+        alt: "Neolithic farming shift agriculture villages surplus",
+        keyword: "agriculture",
+      },
+      {
+        Component: LanguageBrainCircuit,
+        caption:
+          "The speech circuit: Broca's area produces, Wernicke's area understands, a dropped larynx shapes the sounds — language made evolution collaborative.",
+        alt: "Language brain circuit Broca Wernicke larynx",
+        keyword: "language",
+      },
+      {
+        Component: HomoSapiensIdentity,
+        caption:
+          "Homo sapiens — 'wise man': bipedal body, symbolic mind, spoken word and cumulative culture, where a child learns in an hour what took a thousand generations.",
+        alt: "Homo sapiens identity anatomy mind voice culture",
+        keyword: "homo sapiens",
       },
     ],
   },
