@@ -397,6 +397,20 @@ import { InvasiveSpeciesThreat } from "./invasive-species-threat";
 import { KhoriyaShiftingCycle } from "./khoriya-shifting-cycle";
 import { OvergrazingSpiral } from "./overgrazing-spiral";
 import { HumanVegetationRelationships } from "./human-vegetation-relationships";
+import { BranchTreeDivisions } from "./branch-tree-divisions";
+import { MolecularToOrganismBranches } from "./molecular-to-organism-branches";
+import { SpecialistBranchCareers } from "./specialist-branch-careers";
+import { BiologyTodayFrontiers } from "./biology-today-frontiers";
+import { LocalBranchExamples } from "./local-branch-examples";
+import { AppliedFieldsTriple } from "./applied-fields-triple";
+import { ZoologyBotanySplit } from "./zoology-botany-split";
+import { ChemistryBiologyLink } from "./chemistry-biology-link";
+import { PhysicsBiologyLink } from "./physics-biology-link";
+import { MathsBiologyLink } from "./maths-biology-link";
+import { GeographySocietyLinks } from "./geography-society-links";
+import { InterdisciplinaryMap } from "./interdisciplinary-map";
+import { ControlGroupDesign } from "./control-group-design";
+import { HypothesisTheoryLadder } from "./hypothesis-theory-ladder";
 import { FernStructure } from "./fern-structure";
 import { FernLifeCycle } from "./fern-life-cycle";
 import { FernProthallus } from "./fern-prothallus";
@@ -3900,6 +3914,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Specialist branches of biology",
         keyword: "specialist branches",
       },
+      {
+        Component: BranchTreeDivisions,
+        caption:
+          "Three main divisions: botany studies plants, zoology studies animals, microbiology studies the invisible kingdom — each with its own sub-branches.",
+        alt: "Botany zoology microbiology three divisions of biology",
+        keyword: "botany",
+      },
+      {
+        Component: ZoologyBotanySplit,
+        caption:
+          "Why botany and zoology split: plants sit and photosynthesise, animals move and eat — an old division that fungi, microbes and modern fields now cut across.",
+        alt: "Zoology versus botany split with examples",
+        keyword: "zoology",
+      },
+      {
+        Component: MolecularToOrganismBranches,
+        caption:
+          "Four zoom levels: molecular biology reads DNA, cytology reads cells, histology reads tissues, morphology reads the whole external form.",
+        alt: "Molecular cytology histology morphology levels of study",
+        keyword: "cytology",
+      },
+      {
+        Component: SpecialistBranchCareers,
+        caption:
+          "Specialist branches and their jobs: ornithology studies birds, entomology insects, mycology fungi, paleontology fossils — narrow focus, real careers.",
+        alt: "Specialist branches ornithology entomology mycology paleontology",
+        keyword: "entomology",
+      },
+      {
+        Component: AppliedFieldsTriple,
+        caption:
+          "Applied biology in three professions: agriculture breeds better crops, medicine fights disease, industry ferments and catalyses — all fed by basic research.",
+        alt: "Applied biology agriculture medicine industry",
+        keyword: "applied",
+      },
+      {
+        Component: LocalBranchExamples,
+        caption:
+          "Every branch, seen locally: ecology in the paddy field, taxonomy in the herbarium, physiology in the buffalo, genetics in rust-resistant wheat.",
+        alt: "Local examples of biology branches in Nepal",
+        keyword: "taxonomy",
+      },
+      {
+        Component: BiologyTodayFrontiers,
+        caption:
+          "Biology's frontiers: genomics reads whole genomes, biotechnology edits genes, ecology tracks a warming biosphere, neurobiology maps the brain.",
+        alt: "Biology today frontiers genomics CRISPR ecology neurobiology",
+        keyword: "genomics",
+      },
     ],
   },
   "relation-of-biology-with-other-sciences": {
@@ -3939,6 +4002,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Pasteur's swan-neck flasks: broth sterilised with the neck curved so dust and microbes settle in the bend stays sterile for months; break the neck and the broth spoils — life comes from existing life (biogenesis).",
         alt: "Pasteur swan-neck flask experiment disproving spontaneous generation",
         keyword: "swan-neck flasks",
+      },
+      {
+        Component: InterdisciplinaryMap,
+        caption:
+          "Biology at the centre: borrowing chemistry's molecules, physics's instruments, mathematics's models — and lending its questions to medicine and agriculture.",
+        alt: "Interdisciplinary map biology connected to other sciences",
+        keyword: "bridge science",
+      },
+      {
+        Component: ChemistryBiologyLink,
+        caption:
+          "Chemistry lends biology its logic: photosynthesis is redox, digestion is hydrolysis, DNA pairing follows bonding rules — life is chemistry that replicates.",
+        alt: "Chemistry biology link biochemistry molecules enzymes",
+        keyword: "chemistry",
+      },
+      {
+        Component: PhysicsBiologyLink,
+        caption:
+          "Physics lends instruments and laws: microscopes found cells, MRI sees brains, and the 10% energy law is thermodynamics wearing a lab coat.",
+        alt: "Physics biology link instruments and laws biophysics",
+        keyword: "physics",
+      },
+      {
+        Component: MathsBiologyLink,
+        caption:
+          "Mathematics turns biology predictive: growth curves, Hardy-Weinberg algebra, chi-square tests on Mendel's counts — description becomes prediction.",
+        alt: "Mathematics biology link biostatistics models graphs",
+        keyword: "mathematics",
+      },
+      {
+        Component: GeographySocietyLinks,
+        caption:
+          "The wider links: geography explains where life lives, sociology what people do to it, economics what it is worth — each with a Nepali example.",
+        alt: "Geography sociology economics links with biology",
+        keyword: "geography",
+      },
+      {
+        Component: ControlGroupDesign,
+        caption:
+          "The fair test: a control group differing in nothing but the factor tested, with independent, dependent and controlled variables named.",
+        alt: "Controlled experiment design control group variables",
+        keyword: "control",
+      },
+      {
+        Component: HypothesisTheoryLadder,
+        caption:
+          "How ideas earn trust: observation → hypothesis → prediction → experiment → theory — and a theory keeps its title only while tests keep passing.",
+        alt: "Hypothesis to theory ladder scientific progression",
+        keyword: "hypothesis",
       },
     ],
   },
