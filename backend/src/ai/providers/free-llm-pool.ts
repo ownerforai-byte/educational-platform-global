@@ -256,20 +256,24 @@ export const FREE_LLM_PROVIDERS: readonly FreeLlmProviderSpec[] = [
     // Permanent free Flash tier (owner 2026-11-20: "just aion api key and z ai
     // api key"). The Flash ids are the free ones; GLM-5/5.2 and plain glm-4.7
     // bill per token.
-    // DEFAULT IS glm-4-flash, not 4.7: the reasoning Flash models (4.7/4.5) push
-    // `reasoning_content` FIRST, so a modest max_tokens returns an EMPTY
-    // `content` — which this transport reads as a failed attempt — and they
-    // 429 (code 1305 "service overloaded") under contention. Live-tested
-    // 2026-11-21: glm-4-flash 8/8 usable, 0 empty, 0 overloaded, ~1.4s; while
-    // glm-4.7-flash returned 429/empty within seconds. glm-4.6-flash is not
-    // permitted on this key (403 code 1220). ZAI_MODEL can pin a reasoning id.
+    // DEFAULT IS glm-5.3-flash (owner 2026-11-21: "suggest models like this from
+    // which providers we can use free forever" — this is the exact model asked
+    // for, and it is free on the permanent Flash tier; verified 200 + correct
+    // answer through this key). It reasons before it answers, so it needs
+    // max_tokens headroom; the transport's 8192 ceiling leaves ample room.
+    //
+    // History: glm-4.7-flash returned 429/empty under contention and
+    // glm-4.6-flash is not permitted on this key (403 code 1220), so the older
+    // default was the non-reasoning glm-4-flash. Same caveat applies to any
+    // reasoning id reached by pinning ZAI_MODEL.
+    //
     // TWO portals, TWO base urls: z.ai (email only) uses api.z.ai; the Chinese
     // open.bigmodel.cn uses its own host. ZAI_API_URL picks whichever is issued.
     baseUrl: "https://api.z.ai/api/paas/v4",
     baseUrlEnv: "ZAI_API_URL",
     envVars: ["ZAI_API_KEY", "ZHIPU_API_KEY", "GLM_API_KEY"],
     modelEnv: "ZAI_MODEL",
-    defaultModel: "glm-4-flash",
+    defaultModel: "glm-5.3-flash",
     timeoutEnv: "ZAI_TIMEOUT_MS",
     docsUrl: "https://z.ai/manage-apikey/apikey-list",
   },
