@@ -312,6 +312,20 @@ import { BipedalismAdvantages } from "./bipedalism-advantages";
 import { FourGrandTrends } from "./four-grand-trends";
 import { OutOfAfricaSpread } from "./out-of-africa-spread";
 import { CulturalEvolutionAges } from "./cultural-evolution-ages";
+import { TropicalVsTemperateForest } from "./tropical-vs-temperate-forest";
+import { TeraiVsBhabarVegetation } from "./terai-vs-bhabar-vegetation";
+import { ZonationFactors } from "./zonation-factors";
+import { AltitudeLatitudeRule } from "./altitude-latitude-rule";
+import { InSituNepalCategories } from "./in-situ-nepal-categories";
+import { ExSituMethods } from "./ex-situ-methods";
+import { InSituVsExSituContrast } from "./in-situ-vs-ex-situ-contrast";
+import { SeedBankCryopreservation } from "./seed-bank-cryopreservation";
+import { NepalHotspotContext } from "./nepal-hotspot-context";
+import { ForestEcosystemServices } from "./forest-ecosystem-services";
+import { VegetationDamageActivities } from "./vegetation-damage-activities";
+import { DeforestationConsequences } from "./deforestation-consequences";
+import { ForestCoverRecovery } from "./forest-cover-recovery";
+import { CommunityForestryRoles } from "./community-forestry-roles";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -2693,6 +2707,127 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Cultural evolution — the fourth engine: Paleolithic (tools, fire) → Mesolithic (microliths) → Neolithic (agriculture, villages) → metal ages (writing, cities) → industrial/scientific — now faster than biological evolution.",
         alt: "Cultural evolution ages from Paleolithic to industrial",
         keyword: "agriculture",
+      },
+    ],
+  },
+  // ── Biology Unit 10 — vegetation ────────────────────────────────────────
+  "vegetation-introduction-types-of-vegetation-in-nepal": {
+    title: "Vegetation: introduction, types of vegetation in Nepal",
+    figures: [
+      {
+        Component: NepalVegetationZones,
+        caption:
+          "Nepal's six vegetation zones by altitude: tropical sal (below ~1000 m), subtropical chir pine, temperate oak–fir–rhododendron, subalpine birch–juniper, alpine meadows (bugyals), and the nival snowline with only lichens and mosses.",
+        alt: "Vegetation zones of Nepal by altitude from tropical sal to nival lichens",
+        keyword: "altitudinal zonation",
+      },
+      {
+        Component: TropicalVsTemperateForest,
+        caption:
+          "Tropical deciduous sal forest vs temperate evergreen oak–conifer: altitude, climate, dominant species, leaf habit and commercial value — deciduous shedding is a drought strategy, evergreen needles a year-round strategy.",
+        alt: "Tropical deciduous sal forest versus temperate evergreen oak conifer comparison",
+        keyword: "deciduous",
+      },
+      {
+        Component: TeraiVsBhabarVegetation,
+        caption:
+          "Terai (alluvial plain): tall sal forests, riverine sissoo–khair, tall grasslands (Saccharum, Phragmites, Themeda) — rhino and tiger habitat. Bhabar (porous boulder belt): drier sal and khair–sissoo forest with deep water tables.",
+        alt: "Terai versus Bhabar vegetation alluvial plain and porous boulder belt",
+        keyword: "Bhabar",
+      },
+      {
+        Component: ZonationFactors,
+        caption:
+          "What controls the zones: temperature falls ~6 °C per 1000 m (the master variable), monsoon vs rain-shadow rainfall, thin air and intense UV at height, and soil depth and drainage.",
+        alt: "Factors controlling vegetation zonation temperature rainfall altitude soil",
+        keyword: "rain-shadow",
+      },
+      {
+        Component: AltitudeLatitudeRule,
+        caption:
+          "Rule of thumb: climbing 1000 m in Nepal ≈ travelling 1000 km toward the poles — a day's walk crosses climate zones that span a continent, from tropical sal to alpine meadow within 200 km.",
+        alt: "Climbing 1000 metres equals travelling 1000 kilometres toward the poles",
+        keyword: "toward the poles",
+      },
+    ],
+  },
+  "in-situ-protected-areas-and-ex-situ-botanical-garden-seed-bank-conservation": {
+    title: "In-situ (protected areas) and Ex-situ (botanical garden, seed bank) conservation",
+    figures: [
+      {
+        Component: InSituNepalCategories,
+        caption:
+          "In-situ conservation in Nepal: national parks (Chitwan 1973 — first; Shey-Phoksundo largest), wildlife reserves (Koshi Tappu — arna), conservation areas (Annapurna ACAP), the Dhorpatan hunting reserve, and Ramsar wetlands.",
+        alt: "In-situ conservation protected area categories in Nepal",
+        keyword: "wild water buffalo",
+      },
+      {
+        Component: ExSituMethods,
+        caption:
+          "Ex-situ conservation methods with Nepali examples: botanical gardens (Godawari), zoos (Central Zoo, Jawalakhel), seed banks (Khumaltar genebank; Svalbard), tissue culture, cryopreservation at −196 °C, captive breeding.",
+        alt: "Ex-situ conservation methods botanical gardens zoos seed banks cryopreservation",
+        keyword: "cryopreservation",
+      },
+      {
+        Component: InSituVsExSituContrast,
+        caption:
+          "In-situ vs ex-situ — the master contrast: location, what is conserved (whole ecosystem vs species alone), cost, whether evolution continues, and Nepali examples on each side.",
+        alt: "In-situ versus ex-situ conservation comparison table",
+        keyword: "outside their habitat",
+      },
+      {
+        Component: SeedBankCryopreservation,
+        caption:
+          "Seed banks — from field to frozen: collect → dry to low humidity → store in low-temperature vaults (Khumaltar; Svalbard globally) → freeze in liquid nitrogen at −196 °C and revive by germination when needed.",
+        alt: "Seed bank flow collect dry store freeze and revive",
+        keyword: "seed banks",
+      },
+      {
+        Component: NepalHotspotContext,
+        caption:
+          "Why Nepal needs both strategies: ~2% of the world's flowering plants, flagship megafauna (tiger, rhino) and Himalaya-hotspot status — while habitat loss, poaching and climate change shift zones beyond fixed borders.",
+        alt: "Nepal biodiversity hotspot context for in-situ and ex-situ conservation",
+        keyword: "biodiversity hotspot",
+      },
+    ],
+  },
+  "natural-environment-vegetation-and-human-activities": {
+    title: "Natural environment — vegetation and human activities",
+    figures: [
+      {
+        Component: ForestEcosystemServices,
+        caption:
+          "What forests give: provisioning (timber, fuelwood, fodder, medicinal herbs like yarsagumba and chiraito), regulating (watershed protection, spring recharge, flood control, carbon storage), supporting and cultural services.",
+        alt: "Forest ecosystem services provisioning regulating supporting cultural",
+        keyword: "watershed protection",
+      },
+      {
+        Component: VegetationDamageActivities,
+        caption:
+          "Human activities that damage vegetation: deforestation for agriculture and settlement (khoriya), overgrazing, fuelwood harvest, illegal logging of sal and khair, roads, fire, and invasives — Mikania, lantana, water hyacinth.",
+        alt: "Human activities that damage vegetation deforestation overgrazing logging invasives",
+        keyword: "slash-and-burn",
+      },
+      {
+        Component: DeforestationConsequences,
+        caption:
+          "When the forest goes: tree loss → erosion and landslides on fragile slopes, springs dry → siltation of rivers and hydropower reservoirs → biodiversity loss (habitat specialists first), plus local climate drying and carbon release.",
+        alt: "Deforestation consequence chain erosion landslides siltation biodiversity loss",
+        keyword: "springs drying",
+      },
+      {
+        Component: ForestCoverRecovery,
+        caption:
+          "Nepal's forest cover fell from ~35% (1960s) to under 30% (1990s), then recovered to ~45% (2010s) — driven by community forestry: over 22,000 CFUGs managing ~2.3 million hectares.",
+        alt: "Nepal forest cover recovery curve 35 percent to 45 percent",
+        keyword: "community forestry",
+      },
+      {
+        Component: CommunityForestryRoles,
+        caption:
+          "Community forestry (1993 Forest Act): the government hands management to Community Forest User Groups — protection and regeneration, regulated use, income for reinvestment, local stewardship, equity and women's participation.",
+        alt: "Community forestry CFUG five roles Nepal",
+        keyword: "Community Forest User Groups",
       },
     ],
   },

@@ -1,27 +1,22 @@
-/** Nepal vegetation zones — tropical to nival belt with altitude. Theme-aware. */
+/** Vegetation zones of Nepal by altitude. Theme-aware. */
 export function NepalVegetationZones({ className }: { className?: string }) {
-  const zones = [
-    { t: "NIVAL (>5,000 m)", s: "snow, mosses, lichens", c: "rgb(226 232 240 / 0.9)" },
-    { t: "ALPINE (4,000–5,000 m)", s: "cushion herbs, Rhododendron shrubs", c: "rgb(147 197 253 / 0.9)" },
-    { t: "SUB-ALPINE (3,000–4,000 m)", s: "birch, fir, juniper", c: "rgb(110 231 183 / 0.9)" },
-    { t: "TEMPERATE (2,000–3,000 m)", s: "oak, Rhododendron, pine", c: "rgb(52 211 153 / 0.9)" },
-    { t: "SUB-TROPICAL (1,000–2,000 m)", s: "sal, pine, Schima", c: "rgb(250 204 21 / 0.9)" },
-    { t: "TROPICAL (<1,000 m)", s: "sal, Khair, Sisoo, tall grassland", c: "rgb(251 146 60 / 0.9)" },
-  ];
   return (
-    <svg viewBox="0 0 660 280" className={className} role="img" aria-label="Nepal vegetation zones stacked from tropical lowlands to nival snowline with characteristic species at each altitude band">
-      <text x="16" y="26" fontSize="14" className="fill-current text-foreground" fontWeight="800">Altitude is Nepal's climate dial — six vegetation belts</text>
-      {zones.map((z, i) => {
-        const y = 48 + i * 36;
-        return (
-          <g key={z.t}>
-            <rect x="20" y={y} width="620" height="30" rx="8" style={{ color: z.c }} className="fill-current opacity-40" strokeWidth="2" stroke="currentColor" />
-            <text x="36" y={y + 20} fontSize="9.5" className="fill-current text-foreground" fontWeight="800">{z.t}</text>
-            <text x="330" y={y + 20} fontSize="9" className="fill-current text-foreground/80">{z.s}</text>
-          </g>
-        );
-      })}
-      <text x="16" y="268" fontSize="10" className="fill-current text-muted-foreground">Climb 1,000 m and you cross what driving 1,000 km north would show — that is why Nepal's species list is so long.</text>
+    <svg viewBox="0 0 660 250" className={className} role="img" aria-label="Vegetation zones of Nepal by altitude tropical sal below 1000 m subtropical chir pine 1000 to 2000 m temperate oak fir rhododendron 2000 to 3000 m subalpine birch juniper 3000 to 4000 m alpine meadows 4000 to 5000 m nival lichens above 5000 m">
+      <text x="16" y="26" fontSize="14" className="fill-current text-foreground" fontWeight="800">Nepal — the vertical garden</text>
+      {[
+        { y: 216, t: "TROPICAL (below ~1000 m)", s: "sal (Shorea robusta), sissoo, khair, simal; Terai grasslands" },
+        { y: 182, t: "SUBTROPICAL (~1000–2000 m)", s: "chir pine (Pinus roxburghii), chilaune, katus, alder" },
+        { y: 148, t: "TEMPERATE (~2000–3000 m)", s: "oak (Quercus), blue pine, fir, hemlock, lali gurans, deodar" },
+        { y: 114, t: "SUBALPINE (~3000–4000 m)", s: "birch (bhojpatra), fir, juniper, rhododendron shrubs" },
+        { y: 80, t: "ALPINE (~4000–5000 m)", s: "Kobresia meadows (bugyals), Primula, Gentiana, cushion plants" },
+        { y: 46, t: "NIVAL (above ~5000 m)", s: "snowline — no true vegetation; crustose lichens, mosses" },
+      ].map((z) => (
+        <g key={z.t}>
+          <rect x="30" y={z.y - 16} width="600" height="30" rx="8" className="fill-current text-emerald-500/10" strokeWidth="2" stroke="currentColor" style={{ color: "rgb(22 163 74 / 0.9)" }} />
+          <text x="42" y={z.y + 4} fontSize="7.6" className="fill-current text-foreground" fontWeight="800">{z.t}</text>
+          <text x="280" y={z.y + 4} fontSize="7" className="fill-current text-muted-foreground">{z.s}</text>
+        </g>
+      ))}
     </svg>
   );
 }
