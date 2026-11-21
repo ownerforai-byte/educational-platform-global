@@ -920,6 +920,76 @@ import { WindEnergyTurbines } from "./wind-energy-turbines";
 import { WomenEducationFertilityLink } from "./women-education-fertility-link";
 import { WormInfectionLifecycle } from "./worm-infection-lifecycle";
 import { ZoonoticSpillover } from "./zoonotic-spillover";
+import { HydrogenEnergyLevels } from "./hydrogen-energy-levels";
+import { BalmerVisibleLines } from "./balmer-visible-lines";
+import { Neb2022HydrogenSolution } from "./neb2022-hydrogen-solution";
+import { EmissionVsAbsorption } from "./emission-vs-absorption";
+import { SeriesLimitDiagram } from "./series-limit-diagram";
+import { BohrDefectsMap } from "./bohr-defects-map";
+import { FineStructureSplit } from "./fine-structure-split";
+import { ZeemanStarkContrast } from "./zeeman-stark-contrast";
+import { OrbitVsOrbitalDefect } from "./orbit-vs-orbital-defect";
+import { BohrSurvivors } from "./bohr-survivors";
+import { DeBroglieRelation } from "./de-broglie-relation";
+import { StandingWaveOrbit } from "./standing-wave-orbit";
+import { DavissonGermerApparatus } from "./davisson-germer-apparatus";
+import { DualNaturePanel } from "./dual-nature-panel";
+import { ElectronVsBallWavelength } from "./electron-vs-ball-wavelength";
+import { FourQuantumNumbersMap } from "./four-quantum-numbers-map";
+import { SodiumValenceAddress } from "./sodium-valence-address";
+import { SubshellCapacityLadder } from "./subshell-capacity-ladder";
+import { ImpossibleSetChecker } from "./impossible-set-checker";
+import { PauliSpinOrbital } from "./pauli-spin-orbital";
+import { AufbauDiagonalRule } from "./aufbau-diagonal-rule";
+import { NlRuleComparison } from "./nl-rule-comparison";
+import { HundNitrogenDiagram } from "./hund-nitrogen-diagram";
+import { CrCuExceptions } from "./cr-cu-exceptions";
+import { FeIonRemoval } from "./fe-ion-removal";
+import { MendeleevVsModern } from "./mendeleev-vs-modern";
+import { TeIAnomaly } from "./te-i-anomaly";
+import { LongFormMap } from "./long-form-map";
+import { Neb2024Locator } from "./neb2024-locator";
+import { PeriodicityCause } from "./periodicity-cause";
+import { PeriodSizesChart } from "./period-sizes-chart";
+import { FourBlocksMap } from "./four-blocks-map";
+import { GroupCountingRules } from "./group-counting-rules";
+import { FePositionDrill } from "./fe-position-drill";
+import { BlockCharacterPanel } from "./block-character-panel";
+import { IupacGroupMapping } from "./iupac-group-mapping";
+import { DigitRootNaming } from "./digit-root-naming";
+import { EnnRuleCallout } from "./enn-rule-callout";
+import { Element118Timeline } from "./element118-timeline";
+import { Period7Completion } from "./period7-completion";
+import { ZeffEquation } from "./zeff-equation";
+import { ShieldingLayers } from "./shielding-layers";
+import { NaClZeffContrast } from "./na-cl-zeff-contrast";
+import { ZeffTrendArrows } from "./zeff-trend-arrows";
+import { SlaterContributions } from "./slater-contributions";
+import { TrendDirectionCompass } from "./trend-direction-compass";
+import { IrregularityPairPanel } from "./irregularity-pair-panel";
+import { IsoelectronicSeriesChart } from "./isoelectronic-series-chart";
+import { IeJumpSodium } from "./ie-jump-sodium";
+import { IeDipsPanel } from "./ie-dips-panel";
+import { RydbergFormulaDrill } from "./rydberg-formula-drill";
+import { SeriesWavelengthTable } from "./series-wavelength-table";
+import { SommerfeldEllipsePatch } from "./sommerfeld-ellipse-patch";
+import { DefectFixMap } from "./defect-fix-map";
+import { ElectronMicroscopeLink } from "./electron-microscope-link";
+import { ProtonWavelengthDrill } from "./proton-wavelength-drill";
+import { SpinQuantumNumberPanel } from "./spin-quantum-number-panel";
+import { ShellAddressDrill } from "./shell-address-drill";
+import { ExchangeEnergyPanel } from "./exchange-energy-panel";
+import { FilledSymmetryPanel } from "./filled-symmetry-panel";
+import { EkaPredictionPanel } from "./eka-prediction-panel";
+import { MoseleyXrayPanel } from "./moseley-xray-panel";
+import { LanthanideActinideRows } from "./lanthanide-actinide-rows";
+import { NobleGasPositions } from "./noble-gas-positions";
+import { OganessonNaming } from "./oganesson-naming";
+import { SymbolNotationRules } from "./symbol-notation-rules";
+import { ScreeningVsPenetration } from "./screening-vs-penetration";
+import { CoreValenceSplit } from "./core-valence-split";
+import { RadiusTypesTrio } from "./radius-types-trio";
+import { MetallicCharacterLadder } from "./metallic-character-ladder";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -1025,6 +1095,493 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       },
     ],
   },
+  "spectrum-of-hydrogen-atom": {
+    title: "Hydrogen spectrum",
+    figures: [
+      {
+        Component: HydrogenEnergyLevels,
+        caption:
+          "Every spectral line is one downward jump between quantised orbits: Lyman lands on n = 1 (UV), Balmer on n = 2 (visible), Paschen on n = 3 (IR) - one series per landing level.",
+        alt: "Hydrogen energy level ladder with Lyman Balmer and Paschen series arrows and orbital energies in electron volts",
+        keyword: "spectrum",
+      },
+      {
+        Component: BalmerVisibleLines,
+        caption:
+          "The Balmer series is the only one the eye can see: H alpha 656.3 nm, H beta 486.1 nm, H gamma 434 nm and H delta 410.2 nm crowd toward the 364.6 nm series limit.",
+        alt: "Visible spectrum bar with four Balmer emission lines at 656.3 486.1 434 and 410.2 nanometres",
+        keyword: "Balmer",
+      },
+      {
+        Component: Neb2022HydrogenSolution,
+        caption:
+          "NEB 2022 worked example: E2 = -5.45 x 10^-19 J, then delta-E for 3 to 2 is 3.03 x 10^-19 J, then lambda = hc/delta-E gives 656 nm - the H alpha line.",
+        alt: "Three step solved panel computing the second orbit energy and the 656 nanometre wavelength for the three to two hydrogen transition",
+        keyword: "656",
+      },
+      {
+        Component: EmissionVsAbsorption,
+        caption:
+          "Emission shows bright lines on a dark background from downward jumps; absorption shows dark lines on a continuous band from upward jumps - same wavelengths, opposite journeys.",
+        alt: "Emission spectrum with bright lines versus absorption spectrum with dark lines and electron jump directions",
+        keyword: "absorption",
+      },
+      {
+        Component: SeriesLimitDiagram,
+        caption:
+          "Lines crowd as n2 grows because level gaps shrink; the limit is lambda = n1 squared over R - 91.2 nm for Lyman, 364.6 nm for Balmer.",
+        alt: "Spectral lines converging to a dashed series limit with the lambda equals n one squared over R formula",
+        keyword: "limit",
+      },
+      {
+        Component: RydbergFormulaDrill,
+        caption:
+          "The Rydberg route lands on the same answer: 1/lambda = R(1/n1^2 - 1/n2^2) with R = 1.097 x 10^7 m^-1 gives 656.3 nm for the Balmer 3 to 2 jump.",
+        alt: "Solved Rydberg formula calculation giving 656.3 nanometres for the three to two Balmer transition",
+        keyword: "Rydberg",
+      },
+      {
+        Component: SeriesWavelengthTable,
+        caption:
+          "Five series, five landing levels: Lyman n1 = 1 (UV), Balmer 2 (visible), Paschen 3 and Brackett 4 (IR), Pfund 5 (far IR) - each series' longest line is the smallest jump into its landing level.",
+        alt: "Hydrogen spectral series table with landing level region and longest wavelength for Lyman through Pfund",
+        keyword: "Lyman",
+      },
+    ],
+  },
+  "defects-of-bohr-s-theory": {
+    title: "Defects of Bohr's theory",
+    figures: [
+      {
+        Component: BohrDefectsMap,
+        caption:
+          "Five stock defects surround the Bohr atom: failure for multi-electron atoms, no fine structure, no Zeeman or Stark splitting, orbits forbidden by uncertainty, and no line intensities.",
+        alt: "Bohr atom centre with five defect callouts covering multi-electron failure fine structure Zeeman Stark uncertainty and intensities",
+        keyword: "defect",
+      },
+      {
+        Component: FineStructureSplit,
+        caption:
+          "Under a high-resolution spectrograph each Bohr line resolves into a close doublet - spin and relativistic effects split every level slightly, something circular orbits cannot predict.",
+        alt: "Single Bohr spectral line resolving into a close doublet under high resolution",
+        keyword: "fine",
+      },
+      {
+        Component: ZeemanStarkContrast,
+        caption:
+          "Zeeman splits lines with a magnetic field, Stark with an electric field - both need the magnetic quantum number m-l, which Bohr's model simply does not have.",
+        alt: "Zeeman magnetic splitting beside Stark electric splitting of the same spectral line",
+        keyword: "Zeeman",
+      },
+      {
+        Component: OrbitVsOrbitalDefect,
+        caption:
+          "A definite orbit fixes position and momentum exactly, breaking delta-x times delta-p at least h over four pi; the quantum model replaces it with a probability cloud.",
+        alt: "Bohr circular orbit crossed out beside a quantum probability cloud obeying the uncertainty principle",
+        keyword: "uncertainty",
+      },
+      {
+        Component: BohrSurvivors,
+        caption:
+          "Keep the credit line balanced: quantised levels, h-nu = delta-E, the 13.6 eV ionisation energy and the Rydberg constant all survive into modern physics.",
+        alt: "Four cards of Bohr results that survive quantised levels photon rule ionisation energy and Rydberg constant",
+        keyword: "quantised",
+      },
+      {
+        Component: SommerfeldEllipsePatch,
+        caption:
+          "Sommerfeld added elliptical orbits and sub-energy levels to rescue fine structure, yet the patched model still fails for multi-electron atoms, Zeeman and Stark splitting, and uncertainty.",
+        alt: "Sommerfeld elliptical orbits patch with the defects it still cannot fix",
+        keyword: "Sommerfeld",
+      },
+      {
+        Component: DefectFixMap,
+        caption:
+          "Each defect maps to one missing quantum number: repulsion to shielding, fine structure to l and m-s, Zeeman and Stark to m-l, forbidden orbits to the probability cloud.",
+        alt: "Defect to fix map pairing each Bohr defect with the quantum mechanical concept that repairs it",
+        keyword: "multi-electron",
+      },
+    ],
+  },
+  "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation": {
+    title: "de Broglie waves",
+    figures: [
+      {
+        Component: DeBroglieRelation,
+        caption:
+          "lambda = h/mv gives every moving particle a wavelength: an electron at 10^6 m/s has about 0.73 nm, while a cricket ball's wavelength is 10^-34 m - real but unobservable.",
+        alt: "de Broglie relation lambda equals h over mv with electron and cricket ball wavelength comparison",
+        keyword: "wavelength",
+      },
+      {
+        Component: StandingWaveOrbit,
+        caption:
+          "Only whole wavelengths fit around an orbit: 2 pi r = n lambda with lambda = h/mv gives mvr = nh/2 pi - Bohr's quantisation derived, not assumed.",
+        alt: "Standing wave fitting three wavelengths around a circular orbit with the derivation chain to Bohr quantisation",
+        keyword: "standing",
+      },
+      {
+        Component: DavissonGermerApparatus,
+        caption:
+          "Davisson and Germer fired electrons at a nickel crystal and recorded a diffraction pattern - the measured wavelength matched h/mv, proving wave nature experimentally.",
+        alt: "Davisson Germer apparatus with electron gun nickel crystal and detector recording diffraction maxima",
+        keyword: "diffraction",
+      },
+      {
+        Component: DualNaturePanel,
+        caption:
+          "One entity, two faces: diffraction and interference expose the wave, the photoelectric effect and collisions expose the particle - the experiment chooses the face.",
+        alt: "Dual nature panel with wave face evidence and particle face evidence for light and matter",
+        keyword: "dual",
+      },
+      {
+        Component: ElectronVsBallWavelength,
+        caption:
+          "Same equation, 25 orders apart: the electron's 0.73 nm matches crystal spacings so diffraction appears; the ball's 10^-34 m is 20 orders below a proton.",
+        alt: "Solved electron versus cricket ball de Broglie wavelength calculation panel",
+        keyword: "cricket",
+      },
+      {
+        Component: ElectronMicroscopeLink,
+        caption:
+          "The electron microscope is de Broglie's idea industrialised: accelerating electrons shrinks lambda = h/mv to a few thousandths of a nanometre, resolving detail light cannot touch.",
+        alt: "Electron microscope versus light microscope resolution explained by de Broglie wavelength",
+        keyword: "microscope",
+      },
+      {
+        Component: ProtonWavelengthDrill,
+        caption:
+          "Same speed, proton vs electron: the proton's wavelength comes out 1836 times shorter because mass sits in the denominator of lambda = h/mv.",
+        alt: "Solved proton versus electron wavelength calculation at equal speed showing the mass ratio",
+        keyword: "proton",
+      },
+    ],
+  },
+  "quantum-numbers": {
+    title: "Quantum numbers",
+    figures: [
+      {
+        Component: FourQuantumNumbersMap,
+        caption:
+          "Four numbers give every electron a full address: n the shell, l the subshell shape, m-l the orientation, m-s the spin - like country, city, street and side of street.",
+        alt: "Four quantum numbers table with names meanings and allowed values plus address analogy",
+        keyword: "quantum numbers",
+      },
+      {
+        Component: SodiumValenceAddress,
+        caption:
+          "NEB 2024 worked example: Na is 1s2 2s2 2p6 3s1, so the valence electron carries n = 3, l = 0, m-l = 0, m-s = +1/2 - configuration first, numbers second.",
+        alt: "Solved sodium valence electron quantum numbers n three l zero m l zero m s plus one half",
+        keyword: "sodium",
+      },
+      {
+        Component: SubshellCapacityLadder,
+        caption:
+          "Shells hold 2n squared electrons: K holds 2, L holds 8, M holds 18, N holds 32 - built from subshell capacities 2, 6, 10 and 14.",
+        alt: "Shell capacity ladder K to N with two eight eighteen and thirty two electrons and subshell breakdown",
+        keyword: "2n",
+      },
+      {
+        Component: ImpossibleSetChecker,
+        caption:
+          "NEB 2023 check: n = 2, l = 2 is impossible because l must stay below n; the other two sets pass the 0 to n-1, -l to +l and plus-minus one-half tests.",
+        alt: "Three quantum number sets checked for validity with set b rejected because l equals n",
+        keyword: "possible",
+      },
+      {
+        Component: PauliSpinOrbital,
+        caption:
+          "One orbital holds at most two electrons with opposed spins; a third would repeat all four quantum numbers, which Pauli's principle forbids.",
+        alt: "Orbital box with spin up and spin down electrons illustrating the Pauli exclusion principle",
+        keyword: "Pauli",
+      },
+      {
+        Component: SpinQuantumNumberPanel,
+        caption:
+          "m-s takes exactly two values, plus and minus one-half, independent of n, l and m-l - the fourth number that completed every electron's address and explained fine-structure doublets.",
+        alt: "Spin quantum number panel with clockwise and anticlockwise spin values plus one half and minus one half",
+        keyword: "spin",
+      },
+      {
+        Component: ShellAddressDrill,
+        caption:
+          "The highest n in a configuration names the shell - K for n = 1, L for 2, M for 3, N for 4 - read it straight off H, C, Cl and Ca.",
+        alt: "Shell address drill reading the highest occupied shell from four configurations",
+        keyword: "shell",
+      },
+    ],
+  },
+  "aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-": {
+    title: "Aufbau, Pauli and Hund",
+    figures: [
+      {
+        Component: AufbauDiagonalRule,
+        caption:
+          "Follow the diagonal arrows to fill in energy order: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p - the 4s-before-3d crossing is the most-tested detail.",
+        alt: "Aufbau diagonal rule chart with orbital boxes and arrows showing filling order",
+        keyword: "Aufbau",
+      },
+      {
+        Component: NlRuleComparison,
+        caption:
+          "The (n + l) rule decides the order: 4s sums to 4 and fills before 3d which sums to 5; when sums tie, the lower n wins.",
+        alt: "Comparison of 4s and 3d energies using the n plus l rule with worked sums",
+        keyword: "energy",
+      },
+      {
+        Component: HundNitrogenDiagram,
+        caption:
+          "Nitrogen's 2p3 fills three boxes singly with parallel spins - pairing waits until every degenerate orbital has one electron, giving maximum multiplicity.",
+        alt: "Nitrogen orbital boxes with three unpaired parallel spins in separate p orbitals",
+        keyword: "nitrogen",
+      },
+      {
+        Component: CrCuExceptions,
+        caption:
+          "Chromium settles at 4s1 3d5 and copper at 4s1 3d10 - exactly half-filled and fully-filled subshells gain symmetry and exchange energy.",
+        alt: "Chromium and copper configuration exceptions with expected versus actual configurations",
+        keyword: "chromium",
+      },
+      {
+        Component: FeIonRemoval,
+        caption:
+          "Fe is [Ar] 4s2 3d6, but Fe2+ is [Ar] 3d6 and Fe3+ reaches the stable [Ar] 3d5 - electrons leave the highest n shell first.",
+        alt: "Iron atom and ion configurations showing 4 s electrons removed before 3 d",
+        keyword: "Fe",
+      },
+      {
+        Component: ExchangeEnergyPanel,
+        caption:
+          "Exchange energy is the arithmetic behind the exceptions: d5 offers ten parallel-spin exchange pairs against d4's three, so chromium and Fe3+ pay the 4s price to reach it.",
+        alt: "Exchange energy comparison of d four and d five subshells counting parallel spin pairs",
+        keyword: "exchange",
+      },
+      {
+        Component: FilledSymmetryPanel,
+        caption:
+          "Half-filled p3 d5 f7 and fully-filled p6 d10 f14 subshells spread their charge cloud evenly in every direction - a symmetry that resists change and lowers energy.",
+        alt: "Symmetrical charge clouds of half filled and fully filled subshells",
+        keyword: "symmetry",
+      },
+    ],
+  },
+  "modern-periodic-law-and-modern-periodic-table": {
+    title: "Modern periodic law",
+    figures: [
+      {
+        Component: MendeleevVsModern,
+        caption:
+          "Mendeleev ordered by atomic mass and left gaps; Moseley's X-ray work re-ordered by atomic number Z - the true cause of periodicity.",
+        alt: "Mendeleev versus modern periodic law contrast panel with Moseley evidence",
+        keyword: "Mendeleev",
+      },
+      {
+        Component: TeIAnomaly,
+        caption:
+          "Tellurium (127.6) weighs more than iodine (126.9) yet must precede it: mass order breaks the families, atomic number order 52 then 53 repairs them.",
+        alt: "Tellurium iodine anomaly showing mass order wrong versus atomic number order right",
+        keyword: "tellurium",
+      },
+      {
+        Component: LongFormMap,
+        caption:
+          "The long-form table runs 7 periods by 18 groups, with s, p, d and f blocks marking where each element's differentiating electron lands.",
+        alt: "Long form periodic table block map with seven periods and eighteen groups",
+        keyword: "periodic table",
+      },
+      {
+        Component: Neb2024Locator,
+        caption:
+          "NEB 2024 drill: Z = 19 is potassium in group 1, Z = 20 calcium, Z = 31 gallium in group 13, Z = 36 krypton the noble gas, Z = 55 caesium in period 6.",
+        alt: "Solved locator table for atomic numbers 19 20 31 36 and 55 with group period and block",
+        keyword: "potassium",
+      },
+      {
+        Component: PeriodicityCause,
+        caption:
+          "Lithium, sodium and potassium all end in a single outer s electron - the same valence shell keeps returning, and identical chemistry follows.",
+        alt: "Repeating outer electronic configurations of lithium sodium and potassium explaining periodicity",
+        keyword: "configuration",
+      },
+      {
+        Component: EkaPredictionPanel,
+        caption:
+          "Mendeleev left eka-silicon with predicted mass 72, density 5.5 and EO2/ECl4 chemistry; germanium arrived at 72.6 and 5.36 with exactly those formulas.",
+        alt: "Eka silicon prediction table matched against discovered germanium properties",
+        keyword: "eka",
+      },
+      {
+        Component: MoseleyXrayPanel,
+        caption:
+          "Moseley bombarded metal targets and found the square root of X-ray frequency plots linearly against Z, not mass - the experimental foundation of the modern periodic law.",
+        alt: "Moseley X-ray experiment with cathode rays metal targets and the root nu versus Z relation",
+        keyword: "x-ray",
+      },
+    ],
+  },
+  "classification-of-elements-into-different-groups-periods-and-blocks": {
+    title: "Groups, periods and blocks",
+    figures: [
+      {
+        Component: PeriodSizesChart,
+        caption:
+          "Periods hold 2, 8, 8, 18, 18, 32, 32 electrons - periods 3 and 5 stop early because 4s dips below 3d under the (n + l) rule.",
+        alt: "Bar chart of period lengths two eight eight eighteen eighteen thirty two thirty two",
+        keyword: "period",
+      },
+      {
+        Component: FourBlocksMap,
+        caption:
+          "The block is where the last electron lands: s-block groups 1-2, p-block 13-18, d-block 3-12, f-block the two inner-transition rows.",
+        alt: "Four blocks of the periodic table with group ranges and character notes",
+        keyword: "block",
+      },
+      {
+        Component: GroupCountingRules,
+        caption:
+          "Count the group from the configuration: s-block uses the ns count, p-block adds 12 to the np count, d-block adds 2 to the d count.",
+        alt: "Group number formulas for s p and d blocks with worked examples",
+        keyword: "group",
+      },
+      {
+        Component: FePositionDrill,
+        caption:
+          "Fe is [Ar] 4s2 3d6: period 4, group 2 + 6 = 8, d-block - the differentiating 3d electron fixes all three labels at once.",
+        alt: "Solved iron position drill showing period four group eight d block",
+        keyword: "iron",
+      },
+      {
+        Component: BlockCharacterPanel,
+        caption:
+          "s-block is all metal, d-block is transition, p-block sweeps metal to non-metal, f-block is inner transition - character tracks the block.",
+        alt: "Block character panel comparing metallic character across s p d and f blocks",
+        keyword: "transition",
+      },
+      {
+        Component: LanthanideActinideRows,
+        caption:
+          "The f-block is parked as two 14-element rows below the table - lanthanides filling 4f after lanthanum, actinides filling 5f after actinium - keeping every period drawable.",
+        alt: "Lanthanide and actinide rows placed below the main periodic table",
+        keyword: "lanthan",
+      },
+      {
+        Component: NobleGasPositions,
+        caption:
+          "Every period closes with a noble gas - He, Ne, Ar, Kr, Xe, Rn, Og - a closed outer shell that forced Mendeleev's successors to add the zero group, now group 18.",
+        alt: "Noble gas row helium through oganesson at the end of each period",
+        keyword: "noble",
+      },
+    ],
+  },
+  "iupac-classification-of-elements": {
+    title: "IUPAC classification",
+    figures: [
+      {
+        Component: IupacGroupMapping,
+        caption:
+          "IUPAC's 1988 scheme replaces Roman numerals with plain numbers 1 to 18 - one number per column, ending the A/B confusion between Europe and America.",
+        alt: "IUPAC group numbering mapping old Roman numeral groups to numbers one to eighteen",
+        keyword: "IUPAC",
+      },
+      {
+        Component: DigitRootNaming,
+        caption:
+          "Element 104 becomes un-nil-quad + ium = unnilquadium (Unq): split Z into digits, convert each to its root, join, then add -ium.",
+        alt: "Four step solved derivation of the temporary name unnilquadium for element 104",
+        keyword: "Unnilquadium",
+      },
+      {
+        Component: EnnRuleCallout,
+        caption:
+          "The one spelling trap: enn + nil becomes ennil, so Z = 119 is ununennium and Z = 120 is unbinilium.",
+        alt: "Enn plus nil spelling rule callout with ununennium and unbinilium examples",
+        keyword: "enn",
+      },
+      {
+        Component: Element118Timeline,
+        caption:
+          "Element 118 carried the temporary name ununoctium until IUPAC confirmed it in 2016 and it became Oganesson (Og).",
+        alt: "Element 118 timeline from synthesis through temporary name to permanent name Oganesson",
+        keyword: "118",
+      },
+      {
+        Component: Period7Completion,
+        caption:
+          "Period 7 is now full to oganesson at Z = 118; elements 119 and 120 would open period 8, and their systematic names are already waiting.",
+        alt: "Period seven completion row with oganesson highlighted and future elements 119 120",
+        keyword: "temporary",
+      },
+      {
+        Component: OganessonNaming,
+        caption:
+          "Oganesson (Og, Z = 118) honours Yuri Oganessian of Dubna; its temporary name ununoctium was retired the day IUPAC confirmed the discovery in 2016.",
+        alt: "Oganesson naming panel honouring Yuri Oganessian with element identity card",
+        keyword: "oganesson",
+      },
+      {
+        Component: SymbolNotationRules,
+        caption:
+          "Symbols follow the name: take the roots' first letters, capitalise, keep three letters - unnilquadium became Unq until confirmation retired it for rutherfordium, Rf.",
+        alt: "Systematic symbol notation rules with unnilquadium to rutherfordium example",
+        keyword: "notation",
+      },
+    ],
+  },
+  "nuclear-charge-and-effective-nuclear-charge": {
+    title: "Effective nuclear charge",
+    figures: [
+      {
+        Component: ZeffEquation,
+        caption:
+          "Z effective = Z minus sigma: the pull an outer electron actually feels, after inner electrons have taken their share.",
+        alt: "Effective nuclear charge equation anatomy with Z and screening constant labels",
+        keyword: "effective",
+      },
+      {
+        Component: ShieldingLayers,
+        caption:
+          "Ten inner electrons stand between sodium's +11 nucleus and its 3s electron, leaving an effective pull of about +1 - screening in one picture.",
+        alt: "Shielding layers diagram with inner shell electrons screening the outer electron in sodium",
+        keyword: "shielding",
+      },
+      {
+        Component: NaClZeffContrast,
+        caption:
+          "Na and Cl share the same ten inner electrons, so shielding is constant while Z climbs from 11 to 17 - Z effective rises from about +1 to +7.",
+        alt: "Solved sodium versus chlorine effective nuclear charge contrast panel",
+        keyword: "sodium",
+      },
+      {
+        Component: ZeffTrendArrows,
+        caption:
+          "Z effective climbs across a period and stays roughly constant down a group - the single cause behind radius, ionisation energy and electronegativity trends.",
+        alt: "Effective nuclear charge trend arrows across a period and down a group with consequences",
+        keyword: "across",
+      },
+      {
+        Component: SlaterContributions,
+        caption:
+          "Slater's bookkeeping: 0.35 per same-shell electron, 0.85 per (n-1) electron, 1.00 for deeper cores - add them up to get sigma.",
+        alt: "Slater rules contribution table with screening values per shell",
+        keyword: "Slater",
+      },
+      {
+        Component: ScreeningVsPenetration,
+        caption:
+          "Penetration order s over p over d over f decides energy: the s cloud dives closest to the nucleus, feels least screening, and sits lowest - the reason 4s can undercut 3d.",
+        alt: "Penetration diagram of s p and d orbitals with energy order consequence",
+        keyword: "penetration",
+      },
+      {
+        Component: CoreValenceSplit,
+        caption:
+          "Split any configuration into core and valence: lithium keeps 2 core electrons, sodium 10, yet both hold Z effective near plus one - the constancy that makes group 1 a family.",
+        alt: "Core versus valence electron split for lithium and sodium with effective nuclear charge",
+        keyword: "core",
+      },
+    ],
+  },
+
   // ── Chemistry ────────────────────────────────────────────────────────────
   "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec": {
     title: "Periodic trends",
@@ -1035,6 +1592,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Across a period the added protons pull the same shell tighter, so radius falls while ionisation energy and electronegativity rise. Down a group each new shell makes the atom larger and the outer electron easier to remove.",
         alt: "Grid of elements in periods and groups with arrows showing atomic radius falling across a period and rising down a group",
         keyword: "atomic radius",
+      },
+      {
+        Component: TrendDirectionCompass,
+        caption:
+          "One compass covers six properties: radius falls across and rises down; ionisation energy, electron affinity and electronegativity do the opposite; metallic character is anti-ionisation.",
+        alt: "Six property cards showing trend direction across a period and down a group for radius, ionisation energy, electron affinity, electronegativity, metallic character and shielding",
+        keyword: "electronegativity",
+      },
+      {
+        Component: IrregularityPairPanel,
+        caption:
+          "The two ionisation-energy dips of period 3: Mg beats Al because its full 3s subshell is harder to empty, and Na sits far below Cl because its outer electron feels only about +1.",
+        alt: "Solved NEB 2022 panel explaining the magnesium aluminium and sodium chlorine ionisation energy irregularities with configurations",
+        keyword: "irregular",
+      },
+      {
+        Component: IsoelectronicSeriesChart,
+        caption:
+          "O2-, F-, Na+, Mg2+ and Al3+ all carry ten electrons, yet their radii fall from 140 to 45 pm as the nuclear charge climbs from +8 to +13 - same shielding, stronger squeeze.",
+        alt: "Isoelectronic series circles shrinking from oxide to aluminium ion with radii in picometres",
+        keyword: "isoelectronic",
+      },
+      {
+        Component: IeJumpSodium,
+        caption:
+          "Sodium's successive ionisation energies jump from 496 to 4562 kJ/mol - a nine-fold leap that marks the shell boundary and proves sodium carries exactly one valence electron.",
+        alt: "Bar chart of sodium first second and third ionisation energies showing the giant jump after the first electron",
+        keyword: "4562",
+      },
+      {
+        Component: IeDipsPanel,
+        caption:
+          "Be to B and N to O: the first dip is a new 2p electron above the filled 2s; the second is pair-pair repulsion inside the 2p box of oxygen.",
+        alt: "Two dip panels showing beryllium boron and nitrogen oxygen configurations with reasons for the ionisation energy fall",
+        keyword: "dip",
+      },
+      {
+        Component: RadiusTypesTrio,
+        caption:
+          "Radius has three definitions: covalent (half the bonded distance), van der Waals (half the closest non-bonded approach - always larger) and ionic (cations shrink, anions swell).",
+        alt: "Three radius definitions covalent van der Waals and ionic compared with circles",
+        keyword: "covalent",
+      },
+      {
+        Component: MetallicCharacterLadder,
+        caption:
+          "Across period 3 metallic character falls from sodium through the metalloid silicon to chlorine, and the oxides swing basic to acidic in step; down a group the ladder reverses.",
+        alt: "Metallic character ladder across period three from sodium to chlorine",
+        keyword: "metallic",
       },
     ],
   },
