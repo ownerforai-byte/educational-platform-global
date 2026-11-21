@@ -333,6 +333,48 @@ import { DnaFingerprinting } from "./dna-fingerprinting";
 import { BioremediationOil } from "./bioremediation-oil";
 import { BiofertiliserBiopesticide } from "./biofertiliser-biopesticide";
 import { EnzymeTechnology } from "./enzyme-technology";
+import { MutualismCaseStudies } from "./mutualism-case-studies";
+import { CommensalismExamples } from "./commensalism-examples";
+import { PredationArmsRace } from "./predation-arms-race";
+import { CompetitionOverlap } from "./competition-overlap";
+import { ParasitismHostTypes } from "./parasitism-host-types";
+import { AbioticFactorDials } from "./abiotic-factor-dials";
+import { EcologyLevelsLadder } from "./ecology-levels-ladder";
+import { FoodChainTypes } from "./food-chain-types";
+import { EcologicalPyramidsThree } from "./ecological-pyramids-three";
+import { InvertedPyramidsWhy } from "./inverted-pyramids-why";
+import { TenPercentLawSteps } from "./ten-percent-law-steps";
+import { GppNppEquation } from "./gpp-npp-equation";
+import { TrophicLevelPositions } from "./trophic-level-positions";
+import { FoodWebComplexity } from "./food-web-complexity";
+import { PondFunctionalGroups } from "./pond-functional-groups";
+import { EcosystemStructureFunction } from "./ecosystem-structure-function";
+import { PondZonationDetail } from "./pond-zonation-detail";
+import { DecomposerRoleCycle } from "./decomposer-role-cycle";
+import { PondFoodWeb } from "./pond-food-web";
+import { EcosystemHomeostasis } from "./ecosystem-homeostasis";
+import { PondForestContrast } from "./pond-forest-contrast";
+import { CarbonCycleHumanWarp } from "./carbon-cycle-human-warp";
+import { NitrogenFixationRoutes } from "./nitrogen-fixation-routes";
+import { XerosereStages } from "./xerosere-stages";
+import { ClimaxCommunityTraits } from "./climax-community-traits";
+import { DenitrificationLoopClosure } from "./denitrification-loop-closure";
+import { SuccessionDirectionRules } from "./succession-direction-rules";
+import { HydrarchSuccession } from "./hydrarch-succession";
+import { CamPhotosynthesisNight } from "./cam-photosynthesis-night";
+import { HydrophyteInternalAnatomy } from "./hydrophyte-internal-anatomy";
+import { XerophyteRootLeafTrade } from "./xerophyte-root-leaf-trade";
+import { HalophyteMangroveKit } from "./halophyte-mangrove-kit";
+import { AnimalWaterSavingKit } from "./animal-water-saving-kit";
+import { AdaptationCompromise } from "./adaptation-compromise";
+import { MesophyteMiddlePath } from "./mesophyte-middle-path";
+import { GreenhouseGasSources } from "./greenhouse-gas-sources";
+import { MontrealProtocolSuccess } from "./montreal-protocol-success";
+import { AcidRainPhScale } from "./acid-rain-ph-scale";
+import { UvPenetrationComparison } from "./uv-penetration-comparison";
+import { MitigationAdaptationPair } from "./mitigation-adaptation-pair";
+import { ImbalanceChainReaction } from "./imbalance-chain-reaction";
+import { OzoneVsGreenhouse } from "./ozone-vs-greenhouse";
 import { FernStructure } from "./fern-structure";
 import { FernLifeCycle } from "./fern-life-cycle";
 import { FernProthallus } from "./fern-prothallus";
@@ -1264,6 +1306,168 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       },
     ],
   },
+  "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions": {
+    title: "Ecology, factors and interactions",
+    figures: [
+      {
+        Component: EcologyLevelsLadder,
+        caption:
+          "Ecology climbs four rungs: organism, population, community, ecosystem — each level adds the one below plus new interactions.",
+        alt: "Ecology levels organism population community ecosystem ladder with examples",
+        keyword: "population",
+      },
+      {
+        Component: AbioticFactorDials,
+        caption:
+          "Four abiotic dials set the scene: light, temperature, water and soil — every species is tuned to a narrow band on each dial.",
+        alt: "Abiotic factors light temperature water soil dial diagram",
+        keyword: "abiotic",
+      },
+      {
+        Component: MutualismCaseStudies,
+        caption:
+          "Mutualism (++): lichen, mycorrhiza, pollination and Rhizobium — four partnerships where both partners profit and neither does as well alone.",
+        alt: "Mutualism case studies lichen mycorrhiza pollination Rhizobium",
+        keyword: "mutualism",
+      },
+      {
+        Component: CommensalismExamples,
+        caption:
+          "Commensalism (+/0): the egret follows the cattle, the orchid rides the branch, the remora rides the shark — one gains, the other never notices.",
+        alt: "Commensalism examples cattle egret epiphytes remora dung beetle",
+        keyword: "commensalism",
+      },
+      {
+        Component: PredationArmsRace,
+        caption:
+          "Predation (+/−) drives an arms race: camouflage, warning colours and speed against sharper eyes and better ambush — with predator peaks trailing prey peaks.",
+        alt: "Predation arms race prey defences and population oscillation",
+        keyword: "predation",
+      },
+      {
+        Component: ParasitismHostTypes,
+        caption:
+          "Parasitism (+/−) by address: ectoparasites on the surface, endoparasites inside, vector-borne via mosquitoes, and Cuscuta tapping another plant's plumbing.",
+        alt: "Parasitism host types ecto endo vector borne plant parasite",
+        keyword: "parasitism",
+      },
+      {
+        Component: CompetitionOverlap,
+        caption:
+          "Competition (−/−): overlapping resource needs end either in competitive exclusion or in resource partitioning — one survivor or two specialists.",
+        alt: "Competition niche overlap exclusion and resource partitioning",
+        keyword: "competition",
+      },
+    ],
+  },
+  "food-chain-food-web-trophic-level-ecological-pyramids-productivity": {
+    title: "Food chains, pyramids and productivity",
+    figures: [
+      {
+        Component: FoodChainTypes,
+        caption:
+          "Two energy highways: the grazing chain runs producer → herbivore → carnivore on living tissue; the detritus chain runs litter → decomposer → predator on dead tissue.",
+        alt: "Grazing versus detritus food chain comparison",
+        keyword: "grazing",
+      },
+      {
+        Component: TrophicLevelPositions,
+        caption:
+          "Trophic addresses: T1 producers, T2 herbivores, T3 carnivores, T4 top carnivores — omnivores straddle levels and decomposers run their own channel.",
+        alt: "Trophic level positions with examples at each level",
+        keyword: "trophic",
+      },
+      {
+        Component: EcologicalPyramidsThree,
+        caption:
+          "Three pyramids: numbers can invert (one tree, many insects), biomass can invert in the ocean, but the energy pyramid never inverts — thermodynamics forbids it.",
+        alt: "Ecological pyramids of number biomass and energy compared",
+        keyword: "pyramid",
+      },
+      {
+        Component: InvertedPyramidsWhy,
+        caption:
+          "Why pyramids flip: numbers count heads not size, and ocean biomass inverts because phytoplankton multiply in days — high turnover, small standing crop.",
+        alt: "Inverted pyramids tree insects and ocean phytoplankton explanation",
+        keyword: "inverted",
+      },
+      {
+        Component: TenPercentLawSteps,
+        caption:
+          "The 10% law in action: each transfer keeps about a tenth of the energy as tissue and loses the rest as heat — which is why chains stop at 4–5 steps.",
+        alt: "Ten percent law energy shrinking per trophic level",
+        keyword: "percent",
+      },
+      {
+        Component: GppNppEquation,
+        caption:
+          "NPP = GPP − R: gross productivity is the plant's full income, net is what survives its own respiration — the food every consumer depends on.",
+        alt: "GPP NPP equation with respiration and worked example",
+        keyword: "NPP",
+      },
+      {
+        Component: FoodWebComplexity,
+        caption:
+          "A chain is fragile, a web is resilient: interwoven food paths give every species alternatives, so one missing link no longer starves the top.",
+        alt: "Food web complexity resilience versus simple chain fragility",
+        keyword: "web",
+      },
+    ],
+  },
+  "concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem": {
+    title: "Pond and forest ecosystems",
+    figures: [
+      {
+        Component: EcosystemStructureFunction,
+        caption:
+          "Structure is the cast — producers, consumers, decomposers plus abiotic factors; function is the play — energy flow, cycling, productivity, homeostasis.",
+        alt: "Ecosystem structure versus function components and processes",
+        keyword: "functional",
+      },
+      {
+        Component: PondFunctionalGroups,
+        caption:
+          "One pond, three working groups: rooted plants and phytoplankton fix sunlight, zooplankton and fish eat, bacteria and fungi in the mud recycle.",
+        alt: "Pond functional groups producers consumers decomposers",
+        keyword: "pond",
+      },
+      {
+        Component: PondZonationDetail,
+        caption:
+          "Pond zones follow light: littoral edge with rooted plants, limnetic open water, dark profundal, and the benthic mud where decomposers finish the work.",
+        alt: "Pond zonation littoral limnetic profundal benthic with organisms",
+        keyword: "littoral",
+      },
+      {
+        Component: PondFoodWeb,
+        caption:
+          "The pond food web: algae and water plants feed zooplankton and larvae, which feed small fish, which feed big fish — arrows point where the energy goes.",
+        alt: "Pond food web with algae zooplankton fish energy arrows",
+        keyword: "plankton",
+      },
+      {
+        Component: DecomposerRoleCycle,
+        caption:
+          "Decomposers close the loop: saprophytic enzymes digest dead matter outside the body, releasing nutrients back to soil — the bridge between biotic and abiotic.",
+        alt: "Decomposer role cycle bacteria fungi nutrient recycling",
+        keyword: "decomposer",
+      },
+      {
+        Component: EcosystemHomeostasis,
+        caption:
+          "Homeostasis by feedback: deer rise, grass falls, deer starve, grass recovers — the loop corrects itself, but only within limits and only with diversity intact.",
+        alt: "Ecosystem homeostasis negative feedback loop deer grass",
+        keyword: "homeostasis",
+      },
+      {
+        Component: PondForestContrast,
+        caption:
+          "Pond vs forest: same three functional groups and the same energy flow — only the players and the geometry differ, zones by depth versus layers by height.",
+        alt: "Pond versus forest ecosystem comparison table",
+        keyword: "forest",
+      },
+    ],
+  },
   "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession": {
     title: "The nitrogen cycle",
     figures: [
@@ -1301,6 +1505,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Succession as a relay: lichens build the first soil on bare rock, mosses, grasses and shrubs take over in turn, until the stable climax forest — diversity and biomass rising at every stage.",
         alt: "Succession sere from bare rock through lichen moss grass shrub to climax forest",
         keyword: "pioneer",
+      },
+      {
+        Component: NitrogenFixationRoutes,
+        caption:
+          "Four doors into the nitrogen cycle: lightning, Rhizobium in nodules, free-living fixers, and the Haber industry — all breaking the N₂ triple bond.",
+        alt: "Nitrogen fixation routes lightning Rhizobium free living Haber",
+        keyword: "fixation",
+      },
+      {
+        Component: DenitrificationLoopClosure,
+        caption:
+          "After fixation: ammonification, nitrification, assimilation — and denitrification returning N₂ to the air, closing the loop that fertiliser opens.",
+        alt: "Ammonification nitrification assimilation denitrification steps",
+        keyword: "denitrification",
+      },
+      {
+        Component: CarbonCycleHumanWarp,
+        caption:
+          "The human warp on carbon: fossil combustion and deforestation push sources above sinks, so atmospheric CO₂ climbs instead of holding steady.",
+        alt: "Carbon cycle human disruption fossil fuels deforestation sinks",
+        keyword: "fossil",
+      },
+      {
+        Component: XerosereStages,
+        caption:
+          "Xerosere on bare rock: crustose lichens dissolve stone, mosses catch crumbs, grasses bind soil, shrubs shade pioneers — a forest built from nothing.",
+        alt: "Xerosere stages lichen moss grass shrub forest on bare rock",
+        keyword: "xerosere",
+      },
+      {
+        Component: HydrarchSuccession,
+        caption:
+          "Hydrarch succession: open water fills with silt through submerged, floating and reed stages until sedge-meadow and finally forest own the old pond bed.",
+        alt: "Hydrarch succession pond to forest stages",
+        keyword: "hydrarch",
+      },
+      {
+        Component: ClimaxCommunityTraits,
+        caption:
+          "The climax community: stable composition, maximum biomass, near-perfect recycling and self-replacement — set by climate, not by chance.",
+        alt: "Climax community traits stable biomass efficient",
+        keyword: "climax",
+      },
+      {
+        Component: SuccessionDirectionRules,
+        caption:
+          "Succession has a direction: biomass, diversity, soil and food-web length all rise — primary starts from bare rock, secondary from disturbed soil.",
+        alt: "Succession direction trends and primary versus secondary",
+        keyword: "sere",
       },
     ],
   },
@@ -1349,6 +1602,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Animal adaptation modes aquatic cursorial fossorial arboreal and desert",
         keyword: "mesophyte",
       },
+      {
+        Component: CamPhotosynthesisNight,
+        caption:
+          "CAM, the night shift: stomata open in cool darkness to bank CO₂ as malic acid, then close all day while photosynthesis runs on the stored gas.",
+        alt: "CAM photosynthesis night CO2 fixation day acid release",
+        keyword: "CAM",
+      },
+      {
+        Component: HydrophyteInternalAnatomy,
+        caption:
+          "Inside a hydrophyte leaf: aerenchyma air canals for buoyancy, thin cuticle, reduced xylem and no stomata — every drought defence switched off.",
+        alt: "Hydrophyte leaf anatomy aerenchyma reduced xylem",
+        keyword: "aerenchyma",
+      },
+      {
+        Component: XerophyteRootLeafTrade,
+        caption:
+          "The xerophyte budget: water-storage tissue, thick cuticle and CAM are bought with the loss of broad leaves — survival over speed.",
+        alt: "Xerophyte root leaf trade-off investment sacrifice",
+        keyword: "succulent",
+      },
+      {
+        Component: HalophyteMangroveKit,
+        caption:
+          "The mangrove kit: salt glands excrete crystals, roots filter salt, pneumatophores breathe above the mud, and seedlings plant themselves while still on the tree.",
+        alt: "Halophyte mangrove adaptations salt glands pneumatophores vivipary",
+        keyword: "halophyte",
+      },
+      {
+        Component: AnimalWaterSavingKit,
+        caption:
+          "The desert mammal's kit: concentrated urine, moisture-recycling noses, night-time habits and metabolic water from fat — every drop counted twice.",
+        alt: "Animal water saving adaptations desert mammals",
+        keyword: "desert",
+      },
+      {
+        Component: MesophyteMiddlePath,
+        caption:
+          "Mesophytes, the balanced majority: normal cuticle and stomata, broad leaves, good roots — nearly all our crops, and helpless in true drought.",
+        alt: "Mesophyte middle path features between hydrophyte and xerophyte",
+        keyword: "mesophyte",
+      },
+      {
+        Component: AdaptationCompromise,
+        caption:
+          "Adaptation is a compromise: cactus spines save water but cost growth, peacock tails win mates but invite predators — every trait is paid for.",
+        alt: "Adaptation compromise trade-offs benefit and cost",
+        keyword: "trade",
+      },
     ],
   },
   "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-a": {
@@ -1388,6 +1690,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Impacts and answers: melting Himalayan glaciers and rising seas, shifting species and failing monsoons — answered by mitigation (cut emissions) and adaptation (defend and adjust).",
         alt: "Climate change impacts on ice ecosystems agriculture and responses",
         keyword: "mitigation",
+      },
+      {
+        Component: GreenhouseGasSources,
+        caption:
+          "Four greenhouse gases, four sources: CO₂ from fuel and felled forest, CH₄ from paddies and cattle, N₂O from fertiliser, CFCs from old appliances.",
+        alt: "Greenhouse gas sources CO2 CH4 N2O CFCs",
+        keyword: "methane",
+      },
+      {
+        Component: MontrealProtocolSuccess,
+        caption:
+          "Montreal Protocol, the treaty that worked: CFCs phased out worldwide, chlorine now falling, ozone healing — proof that global problems can be fixed.",
+        alt: "Montreal Protocol timeline ozone healing success",
+        keyword: "montreal",
+      },
+      {
+        Component: AcidRainPhScale,
+        caption:
+          "Acid rain on the pH scale: normal rain is already 5.6 from CO₂; SO₂ and NOx push it toward 4 — fish eggs fail, soil turns toxic, marble dissolves.",
+        alt: "Acid rain pH scale comparison with damage effects",
+        keyword: "pH",
+      },
+      {
+        Component: UvPenetrationComparison,
+        caption:
+          "Healthy ozone stops UV-B and UV-C at 25 km; thinned ozone lets them through — skin cancer, cataracts and plankton die-off follow.",
+        alt: "UV penetration healthy versus thinned ozone layer",
+        keyword: "UV",
+      },
+      {
+        Component: OzoneVsGreenhouse,
+        caption:
+          "Two different sky problems: ozone depletion lets UV through the stratosphere, the greenhouse effect traps heat near the surface — CFCs do both.",
+        alt: "Ozone depletion versus greenhouse effect comparison",
+        keyword: "CFCs",
+      },
+      {
+        Component: MitigationAdaptationPair,
+        caption:
+          "Two answers to warming: mitigation cuts the cause (solar, EVs, forests kept standing); adaptation softens the impact (embankments, hardier crops).",
+        alt: "Mitigation versus adaptation climate responses",
+        keyword: "mitigation",
+      },
+      {
+        Component: ImbalanceChainReaction,
+        caption:
+          "The imbalance cascade: CO₂ → temperature → ice and sea level → monsoon shift → failing crops — one push, and everything downstream moves.",
+        alt: "Imbalance chain reaction climate cascade effects",
+        keyword: "monsoon",
       },
     ],
   },
