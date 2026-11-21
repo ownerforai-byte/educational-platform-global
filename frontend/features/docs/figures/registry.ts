@@ -149,6 +149,77 @@ import { FrogAmplexusFertilisation } from "./frog-amplexus-fertilisation";
 import { FrogGametogenesis } from "./frog-gametogenesis";
 import { FrogDevelopmentStages } from "./frog-development-stages";
 import { FrogMetamorphosis } from "./frog-metamorphosis";
+import { ThreeDomainsTree } from "./three-domains-tree";
+import { FiveKingdomsChart } from "./five-kingdoms-chart";
+import { BinomialNomenclatureRules } from "./binomial-nomenclature-rules";
+import { TaxonomicHierarchyLadder } from "./taxonomic-hierarchy-ladder";
+import { KingdomsComparisonTable } from "./kingdoms-comparison-table";
+import { NepalFloraStats } from "./nepal-flora-stats";
+import { NepalVegetationZones } from "./nepal-vegetation-zones";
+import { FloraHotspotMap } from "./flora-hotspot-map";
+import { FloraSpeciesStatus } from "./flora-species-status";
+import { FloraConservationStrategies } from "./flora-conservation-strategies";
+import { FungalHyphaeTypes } from "./fungal-hyphae-types";
+import { FungalCellStructure } from "./fungal-cell-structure";
+import { FungalClassesChart } from "./fungal-classes-chart";
+import { FungalNutritionModes } from "./fungal-nutrition-modes";
+import { FungalSporeCases } from "./fungal-spore-cases";
+import { MucorStructure } from "./mucor-structure";
+import { MucorReproduction } from "./mucor-reproduction";
+import { YeastCellStructure } from "./yeast-cell-structure";
+import { YeastReproduction } from "./yeast-reproduction";
+import { MucorVsYeast } from "./mucor-vs-yeast";
+import { YeastFermentation } from "./yeast-fermentation";
+import { MushroomStructure } from "./mushroom-structure";
+import { MushroomLifeCycle } from "./mushroom-life-cycle";
+import { PoisonousVsEdibleMushrooms } from "./poisonous-vs-edible-mushrooms";
+import { MushroomCultivationSteps } from "./mushroom-cultivation-steps";
+import { FungiEconomicImportance } from "./fungi-economic-importance";
+import { LichenSymbiosis } from "./lichen-symbiosis";
+import { LichenGrowthForms } from "./lichen-growth-forms";
+import { LichenReproduction } from "./lichen-reproduction";
+import { LichenImportance } from "./lichen-importance";
+import { LichenPioneerSuccession } from "./lichen-pioneer-succession";
+import { AlgaeThreeClasses } from "./algae-three-classes";
+import { AlgalThallusTypes } from "./algal-thallus-types";
+import { SpirogyraStructure } from "./spirogyra-structure";
+import { SpirogyraConjugation } from "./spirogyra-conjugation";
+import { AlgaeEconomicUses } from "./algae-economic-uses";
+import { AlgaeVsLandPlants } from "./algae-vs-land-plants";
+import { BryophyteGroups } from "./bryophyte-groups";
+import { MossLifeCycle } from "./moss-life-cycle";
+import { MarchantiaStructure } from "./marchantia-structure";
+import { ArchegoniumAntheridium } from "./archegonium-antheridium";
+import { BryophyteImportance } from "./bryophyte-importance";
+import { BryophyteVsFernDominance } from "./bryophyte-vs-fern-dominance";
+import { FernStructure } from "./fern-structure";
+import { FernLifeCycle } from "./fern-life-cycle";
+import { FernProthallus } from "./fern-prothallus";
+import { PteridophyteDiversity } from "./pteridophyte-diversity";
+import { VascularTissueBundle } from "./vascular-tissue-bundle";
+import { GymnospermVsAngiosperm } from "./gymnosperm-vs-angiosperm";
+import { PinusMorphology } from "./pinus-morphology";
+import { PineConesMaleFemale } from "./pine-cones-male-female";
+import { PinePollinationSeed } from "./pine-pollination-seed";
+import { GymnospermDiversityUses } from "./gymnosperm-diversity-uses";
+import { RootTypes } from "./root-types";
+import { StemMorphology } from "./stem-morphology";
+import { LeafVenationPhyllotaxy } from "./leaf-venation-phyllotaxy";
+import { InflorescenceTypes } from "./inflorescence-types";
+import { FlowerStructure } from "./flower-structure";
+import { FruitTypes } from "./fruit-types";
+import { TaxonRanksLadder } from "./taxon-ranks-ladder";
+import { TaxonomicAids } from "./taxonomic-aids";
+import { ClassificationSystemsTimeline } from "./classification-systems-timeline";
+import { DichotomousKeyExample } from "./dichotomous-key-example";
+import { SpeciesConcept } from "./species-concept";
+import { FloralFormulaAnatomy } from "./floral-formula-anatomy";
+import { BrassicaceaeFeatures } from "./brassicaceae-features";
+import { FabaceaeFeatures } from "./fabaceae-features";
+import { SolanaceaeFeatures } from "./solanaceae-features";
+import { LiliaceaeFeatures } from "./liliaceae-features";
+import { FamiliesComparisonTable } from "./families-comparison-table";
+import { FamiliesEconomicImportance } from "./families-economic-importance";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -1215,6 +1286,569 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Metamorphosis end to end: jelly egg → gilled tadpole → limbed froglet → adult — gills become lungs, the tail is absorbed, and thyroxine (which needs iodine) drives the whole switch.",
         alt: "Frog metamorphosis stages from egg through tadpole and froglet to adult",
         keyword: "metamorphosis",
+      },
+    ],
+  },
+  // ── Biology Unit 5 — Floral diversity ──────────────────────────────────
+  "introduction-three-domains-of-life-binomial-nomenclature-five-kingdom-classification-system-mone": {
+    title: "Three domains, binomial nomenclature, five kingdoms",
+    figures: [
+      {
+        Component: ThreeDomainsTree,
+        caption:
+          "Above the kingdoms sit three domains: Bacteria and Archaea split the old prokaryotes by rRNA and membrane chemistry, while every eukaryote — amoeba to baobab — belongs to Eukarya.",
+        alt: "Three domain tree with bacteria archaea and eukarya branches",
+        keyword: "three domains",
+      },
+      {
+        Component: FiveKingdomsChart,
+        caption:
+          "Whittaker's 1969 sorting machine: cell structure, body organisation and nutrition place every organism into Monera, Protista, Fungi, Plantae or Animalia.",
+        alt: "Five kingdom chart comparing cell type body organisation and nutrition",
+        keyword: "five kingdom",
+      },
+      {
+        Component: KingdomsComparisonTable,
+        caption:
+          "The three 'difficult' kingdoms side by side: Monera has no nucleus, Protista is a single eukaryotic cell, and Fungi is multicellular but absorbs its food through chitin walls.",
+        alt: "Monera protista fungi comparison across nucleus wall organelles and nutrition",
+        keyword: "whittaker",
+      },
+      {
+        Component: BinomialNomenclatureRules,
+        caption:
+          "Binomial nomenclature anatomy: Mangifera indica — genus capitalised, epithet small, printed in italics; Linnaeus' 1753 rules made one name mean the same thing worldwide.",
+        alt: "Binomial nomenclature with genus and specific epithet and naming rules",
+        keyword: "binomial",
+      },
+      {
+        Component: TaxonomicHierarchyLadder,
+        caption:
+          "Seven rungs from Kingdom to Species, shown for human and mango — descending the ladder, groups shrink and shared features sharpen.",
+        alt: "Taxonomic hierarchy ladder with human and mango examples per rank",
+        keyword: "hierarchy",
+      },
+    ],
+  },
+  "status-of-flora-in-nepal-and-world-representation": {
+    title: "Status of flora in Nepal",
+    figures: [
+      {
+        Component: NepalFloraStats,
+        caption:
+          "Nepal's flora by numbers: about 7,000 flowering plants, thousands of fungi and algae, and just 30 gymnosperms — roughly 2% of the world's flowering plants on 0.1% of its land.",
+        alt: "Nepal flora species counts as horizontal bars by plant group",
+        keyword: "nepal",
+      },
+      {
+        Component: NepalVegetationZones,
+        caption:
+          "Altitude is Nepal's climate dial: six vegetation belts from tropical sal forests to the nival snowline — climb 1,000 m and cross what driving 1,000 km north would show.",
+        alt: "Nepal vegetation zones from tropical to nival with altitude bands",
+        keyword: "forest",
+      },
+      {
+        Component: FloraHotspotMap,
+        caption:
+          "Where the unique plants live — Himal endemics, mid-hill orchids and Rhododendron, Terai sal — and what threatens them: deforestation, over-harvest, invasives, climate shift.",
+        alt: "Flora hotspots of Nepal with threats listed",
+        keyword: "hotspot",
+      },
+      {
+        Component: FloraSpeciesStatus,
+        caption:
+          "Status vocabulary decoded: endemic (found only here), native, exotic, and the IUCN threat ladder — high endemism plus high threat is what makes a region a priority.",
+        alt: "Species status categories endemic native exotic threatened",
+        keyword: "endemic",
+      },
+      {
+        Component: FloraConservationStrategies,
+        caption:
+          "Two conservation strategies: in situ reserves protect species where they evolve; ex situ seed banks and botanic gardens keep the insurance copy.",
+        alt: "In situ versus ex situ flora conservation strategies",
+        keyword: "conservation",
+      },
+    ],
+  },
+  "fungi-general-introduction-and-characteristic-features-of-phycomycetes-ascomycetes-basidiomycete": {
+    title: "Fungi — general introduction",
+    figures: [
+      {
+        Component: FungalHyphaeTypes,
+        caption:
+          "The fungal body is threads, not tissue: septate hyphae divide into cells, coenocytic hyphae stream as one multinucleate tube — and both grow only at their tips.",
+        alt: "Septate versus coenocytic fungal hyphae compared",
+        keyword: "hypha",
+      },
+      {
+        Component: FungalCellStructure,
+        caption:
+          "Inside one fungal cell: chitin wall, eukaryotic nucleus, vacuole, glycogen stores — and no chloroplast, which is why fungi never photosynthesise.",
+        alt: "Fungal cell structure with chitin wall and organelles",
+        keyword: "chitin",
+      },
+      {
+        Component: FungalNutritionModes,
+        caption:
+          "Absorbers, not swallowers: saprophytes digest dead matter outside the body, parasites pierce hosts with haustoria, symbionts trade minerals for sugars.",
+        alt: "Fungal nutrition saprophytic parasitic and symbiotic modes",
+        keyword: "saprophytic",
+      },
+      {
+        Component: FungalClassesChart,
+        caption:
+          "Four classes sorted by spore case: Phycomycetes (sporangium), Ascomycetes (8-spored ascus), Basidiomycetes (4-spored basidium), Deuteromycetes (sex unknown).",
+        alt: "Four fungal classes with spore structures and examples",
+        keyword: "ascus",
+      },
+      {
+        Component: FungalSporeCases,
+        caption:
+          "Count the spores: hundreds in a sporangium, exactly eight in an ascus, four on a basidium — the case tells you the class.",
+        alt: "Sporangium ascus and basidium spore cases compared",
+        keyword: "sporangium",
+      },
+    ],
+  },
+  "structure-and-reproduction-of-mucor-and-yeast": {
+    title: "Mucor and Yeast",
+    figures: [
+      {
+        Component: MucorStructure,
+        caption:
+          "Mucor's blueprint: coenocytic hyphae, anchoring rhizoids, and vertical sporangiophores lifting globous sporangia — the black dust on old bread is thousands of ripe sporangia.",
+        alt: "Mucor structure with rhizoids mycelium and sporangium on sporangiophore",
+        keyword: "mucor",
+      },
+      {
+        Component: MucorReproduction,
+        caption:
+          "Two modes: asexual sporangiospores for speed, sexual conjugation between + and − strains producing a thick-walled zygospore that survives harsh times.",
+        alt: "Mucor asexual sporangiospores and sexual conjugation to zygospore",
+        keyword: "zygospore",
+      },
+      {
+        Component: YeastCellStructure,
+        caption:
+          "Yeast gave up filaments: single oval cells with a large vacuole, budding daughters, and bud scars marking every division — a fungus built for sugary juices.",
+        alt: "Yeast cell with bud vacuole nucleus and bud scar",
+        keyword: "yeast",
+      },
+      {
+        Component: YeastReproduction,
+        caption:
+          "Budding sequence in four frames — bud emerges, nucleus divides, cells separate — with the sexual back-up: two cells fuse and become an ascus of ascospores.",
+        alt: "Yeast budding sequence and ascospore formation",
+        keyword: "budding",
+      },
+      {
+        Component: MucorVsYeast,
+        caption:
+          "Same kingdom, different architecture: filamentous Mucor vs unicellular yeast, sporangiospores vs budding, zygospore vs ascus — compared feature by feature.",
+        alt: "Mucor versus yeast comparison table",
+        keyword: "fermentation",
+      },
+      {
+        Component: YeastFermentation,
+        caption:
+          "Fermentation economics: glucose → pyruvate → ethanol + CO₂ with only 2 ATP per glucose — inefficient for yeast, but the waste products are bread, beer and wine.",
+        alt: "Yeast fermentation pathway to ethanol and carbon dioxide with uses",
+        keyword: "fermentation",
+      },
+    ],
+  },
+  "introduction-of-mushrooms-poisonous-and-non-poisonous-mushrooms-economic-importance-of-fungi": {
+    title: "Mushrooms & economic importance of fungi",
+    figures: [
+      {
+        Component: MushroomStructure,
+        caption:
+          "Mushroom anatomy: pileus cap, spore-bearing gills, stipe with annulus ring, volva cup at the base — and the real body, the mycelium, hidden underground.",
+        alt: "Mushroom structure with pileus gills stipe annulus volva and mycelium",
+        keyword: "pileus",
+      },
+      {
+        Component: MushroomLifeCycle,
+        caption:
+          "The spore circle: basidiospores → primary mycelium → dikaryotic secondary mycelium → basidiocarp → meiosis on the basidia → spores again.",
+        alt: "Mushroom life cycle from spores to basidiocarp and back",
+        keyword: "basidiospores",
+      },
+      {
+        Component: PoisonousVsEdibleMushrooms,
+        caption:
+          "The Amanita warning signs: warty cap, ring, cup-like volva, white gills — against the plain button mushroom. Never identify wild fungi by folklore alone.",
+        alt: "Poisonous Amanita versus edible button mushroom features",
+        keyword: "poisonous",
+      },
+      {
+        Component: MushroomCultivationSteps,
+        caption:
+          "Five controlled steps: compost → spawning → casing → pinning → cropping, with temperature and humidity tuned at each stage — Nepal's oyster-mushroom cash crop.",
+        alt: "Mushroom cultivation steps from compost to cropping",
+        keyword: "edible",
+      },
+      {
+        Component: FungiEconomicImportance,
+        caption:
+          "Four ledgers: food (mushrooms, bread), medicine (penicillin, statins), industry (alcohol, enzymes) — and harm (rusts, moulds, mycotoxins) from the same absorptive lifestyle.",
+        alt: "Fungi economic importance food medicine industry and harm",
+        keyword: "antibiotic",
+      },
+    ],
+  },
+  "lichen-general-introduction-characteristic-features-and-economic-importance-of-lichen": {
+    title: "Lichen",
+    figures: [
+      {
+        Component: LichenSymbiosis,
+        caption:
+          "A lichen slice: fungal cortex shielding an algal layer — the phycobiont photosynthesises sugars, the mycobiont supplies water, minerals and UV armour.",
+        alt: "Lichen cross section with cortex algal layer and medulla",
+        keyword: "symbiosis",
+      },
+      {
+        Component: LichenGrowthForms,
+        caption:
+          "Three growth forms: crustose glued flat to rock, foliose leafy and peelable, fruticose shrubby and free-hanging — form follows attachment.",
+        alt: "Crustose foliose and fruticose lichen growth forms",
+        keyword: "crustose",
+      },
+      {
+        Component: LichenReproduction,
+        caption:
+          "Reproducing a two-in-one body: soredia are ready-made symbiosis packets, isidia are warty outgrowths, fragmentation carries both partners in every broken piece.",
+        alt: "Lichen reproduction by soredia isidia and fragmentation",
+        keyword: "soredia",
+      },
+      {
+        Component: LichenPioneerSuccession,
+        caption:
+          "First life on bare rock: lichen acids etch minerals, dead thalli become the first humus, mosses follow, then grasses — primary succession, starting from stone.",
+        alt: "Lichen pioneer succession from bare rock to grasses",
+        keyword: "pioneer",
+      },
+      {
+        Component: LichenImportance,
+        caption:
+          "Lichens at work: litmus dye, perfumes, usnic-acid antibiotic, reindeer food — plus their day job as air-pollution monitors that die near SO₂.",
+        alt: "Lichen importance in industry ecology pollution monitoring",
+        keyword: "litmus",
+      },
+    ],
+  },
+  "algae-general-introduction-and-characteristic-features-of-green-brown-and-red-algae-structure-an": {
+    title: "Algae — green, brown, red",
+    figures: [
+      {
+        Component: AlgaeThreeClasses,
+        caption:
+          "Algae by colour: Chlorophyceae (green, starch, freshwater), Phaeophyceae (brown, fucoxanthin, kelps to 30 m), Rhodophyceae (red, phycoerythrin, deepest-living).",
+        alt: "Green brown and red algal classes with pigments and habitats",
+        keyword: "chlorophyceae",
+      },
+      {
+        Component: AlgalThallusTypes,
+        caption:
+          "Every body plan algae invented: one cell, a colony like Volvox, unbranched filaments like Spirogyra, and sheet-like parenchymatous thalli — no roots, stems or leaves.",
+        alt: "Algal thallus forms unicellular colonial filamentous and parenchymatous",
+        keyword: "thallus",
+      },
+      {
+        Component: SpirogyraStructure,
+        caption:
+          "Spirogyra, the water silk: cylindrical cells in a slippery sheath, each with a spiral ribbon chloroplast studded with pyrenoids — the fastest field identification.",
+        alt: "Spirogyra filament with spiral chloroplasts and nucleus",
+        keyword: "spirogyra",
+      },
+      {
+        Component: SpirogyraConjugation,
+        caption:
+          "Conjugation without flagella: tube bridges between two filaments make the ladder pattern, one cell's whole contents crawl across, and a thick-walled zygospore forms.",
+        alt: "Spirogyra ladder conjugation with zygospore formation",
+        keyword: "gametes",
+      },
+      {
+        Component: AlgaeVsLandPlants,
+        caption:
+          "Why algae are not plants: thallus without tissues, no vascular bundle, no retained embryo, no cuticle — the gap bryophytes later half-closed.",
+        alt: "Algae versus land plants comparison table",
+        keyword: "algae",
+      },
+      {
+        Component: AlgaeEconomicUses,
+        caption:
+          "Algae in the economy: nori and kelp as food, agar from Gelidium in every petri dish, algin in ice cream, seaweed fertiliser — and half the world's oxygen.",
+        alt: "Algae economic uses food phycocolloids agriculture environment",
+        keyword: "agar",
+      },
+    ],
+  },
+  "bryophyta-general-introduction-and-characteristic-features-of-liverworts-hornworts-and-moss-morp": {
+    title: "Bryophyta — liverworts, hornworts, moss",
+    figures: [
+      {
+        Component: BryophyteGroups,
+        caption:
+          "Three bryophyte lines: liverworts with flat thalli and gemma cups, hornworts with long horn capsules, mosses with leafy shoots and protonema — all rhizoid-rooted and vascular-free.",
+        alt: "Liverworts hornworts and mosses compared with key structures",
+        keyword: "liverwort",
+      },
+      {
+        Component: MarchantiaStructure,
+        caption:
+          "Marchantia's body plan: dichotomous branching thallus, dorsal air pores, gemma cups for cloning, rhizoids below — and umbrella stalks raising the sex organs.",
+        alt: "Marchantia thallus with gemma cups rhizoids and archegoniophore",
+        keyword: "marchantia",
+      },
+      {
+        Component: ArchegoniumAntheridium,
+        caption:
+          "The sex organs: a flask-shaped archegonium holding one egg, and a sac-like antheridium releasing biflagellate sperm that must swim — water dependence in one diagram.",
+        alt: "Archegonium and antheridium structure with swimming sperm",
+        keyword: "archegonium",
+      },
+      {
+        Component: MossLifeCycle,
+        caption:
+          "Moss alternation: spore → protonema filament → leafy gametophyte → dependent sporophyte capsule → meiosis → spores. The green plant is the haploid generation.",
+        alt: "Moss life cycle with protonema gametophyte and sporophyte",
+        keyword: "protonema",
+      },
+      {
+        Component: BryophyteVsFernDominance,
+        caption:
+          "The great flip: in mosses the gametophyte dominates and the sporophyte is a guest; in ferns it reverses — the diploid generation took over as plants conquered land.",
+        alt: "Gametophyte versus sporophyte dominance in moss and fern",
+        keyword: "gametophyte",
+      },
+      {
+        Component: BryophyteImportance,
+        caption:
+          "Why bryophytes matter: amphibians of the plant kingdom, peat-forming Sphagnum, pioneer soil-builders, and cheap pollution indicators.",
+        alt: "Bryophyte importance peat pioneers and pollution indicators",
+        keyword: "amphibians",
+      },
+    ],
+  },
+  "pteridophyta-general-introduction-and-characteristic-features-of-pteridophytes-morphological-str": {
+    title: "Pteridophyta — ferns",
+    figures: [
+      {
+        Component: FernStructure,
+        caption:
+          "Dryopteris's body: underground rhizome with true roots, and great fronds divided into pinnae — the first plants tall enough to need plumbing.",
+        alt: "Fern structure with rhizome roots frond pinnae and sori",
+        keyword: "frond",
+      },
+      {
+        Component: VascularTissueBundle,
+        caption:
+          "The plumbing that changed everything: xylem carries water up through dead hollow vessels, phloem moves sugars both ways — pteridophytes are the first owners.",
+        alt: "Vascular bundle with xylem and phloem roles",
+        keyword: "xylem",
+      },
+      {
+        Component: FernLifeCycle,
+        caption:
+          "Two free-living generations: sorus → spores → heart-shaped prothallus → fertilisation in water → new sporophyte — both generations photosynthesise independently.",
+        alt: "Fern life cycle from sorus to prothallus to sporophyte",
+        keyword: "sorus",
+      },
+      {
+        Component: FernProthallus,
+        caption:
+          "The prothallus: a 5–10 mm, one-cell-thick heart carrying both archegonia and antheridia — the fern's weakest link, which seed plants later hid inside pollen and ovules.",
+        alt: "Fern prothallus with archegonia antheridia and rhizoids",
+        keyword: "prothallus",
+      },
+      {
+        Component: PteridophyteDiversity,
+        caption:
+          "Four faces of the group: clubmoss Lycopodium, heterosporous Selaginella, silica-armoured horsetail Equisetum, and true fern Dryopteris — Selaginella's two spore sizes preview the seed.",
+        alt: "Lycopodium Selaginella Equisetum and Dryopteris compared",
+        keyword: "lycopodium",
+      },
+    ],
+  },
+  "gymnosperm-general-introduction-and-characteristic-features-of-gymnosperms-morphology-and-reprod": {
+    title: "Gymnosperm — Pinus",
+    figures: [
+      {
+        Component: GymnospermVsAngiosperm,
+        caption:
+          "'Naked seed' decoded: gymnosperm ovules sit exposed on cone scales with no ovary or fruit; angiosperm ovules hide inside an ovary that becomes the fruit.",
+        alt: "Naked seed on cone versus enclosed seed in fruit",
+        keyword: "naked seed",
+      },
+      {
+        Component: PinusMorphology,
+        caption:
+          "Pinus's mountain toolkit: needle leaves in fascicles, thick cuticle, sunken stomata, resin canals sealing wounds — xerophyte engineering in an evergreen.",
+        alt: "Pinus morphology with needle fascicles and resin canals",
+        keyword: "needle",
+      },
+      {
+        Component: PineConesMaleFemale,
+        caption:
+          "Two cones, one tree: small soft male cones releasing yellow pollen below, large woody female cones with naked ovules above — the arrangement discourages self-pollination.",
+        alt: "Male and female pine cones with positions and structures",
+        keyword: "male cone",
+      },
+      {
+        Component: PinePollinationSeed,
+        caption:
+          "Wind-borne to winged seed: two-winged pollen lands at the micropyle, a pollen tube delivers sperm without water, and two years later a winged seed flies.",
+        alt: "Pine pollination to winged seed formation over two years",
+        keyword: "pollen",
+      },
+      {
+        Component: GymnospermDiversityUses,
+        caption:
+          "Living gymnosperms and their uses: Cycas the sago palm, Pinus the timber-and-resin tree — chir pine forests of the mid-hills supply resin, turpentine and pulp.",
+        alt: "Gymnosperm diversity Cycas and Pinus with economic uses",
+        keyword: "cycas",
+      },
+    ],
+  },
+  "angiosperm-morphology-of-root-stem-leaves-inflorescences-flowers-and-fruit": {
+    title: "Angiosperm morphology",
+    figures: [
+      {
+        Component: RootTypes,
+        caption:
+          "Three root systems: dicot tap root with laterals, monocot fibrous cluster, and adventitious roots arising from stems or leaves for support, climbing or storage.",
+        alt: "Tap fibrous and adventitious root systems compared",
+        keyword: "tap root",
+      },
+      {
+        Component: StemMorphology,
+        caption:
+          "Reading a stem: nodes carry leaves and axillary buds, internodes stretch between them, and the same bud can become a branch, tendril, thorn or runner.",
+        alt: "Stem morphology with nodes internodes buds and modifications",
+        keyword: "node",
+      },
+      {
+        Component: LeafVenationPhyllotaxy,
+        caption:
+          "Leaf fingerprints: reticulate nets in dicots, parallel veins in monocots — plus phyllotaxy, the alternate/opposite/whorled rhythm of leaves on the stem.",
+        alt: "Reticulate and parallel venation with phyllotaxy patterns",
+        keyword: "venation",
+      },
+      {
+        Component: InflorescenceTypes,
+        caption:
+          "Flower packing: raceme stalks each flower, spike sits them sessile, umbel rays from one point, head compacts a disc — grouped flowers pollinate in one visit.",
+        alt: "Inflorescence types raceme spike umbel and head",
+        keyword: "inflorescence",
+      },
+      {
+        Component: FlowerStructure,
+        caption:
+          "Four whorls on a receptacle: green calyx, colourful corolla, pollen-bearing androecium, and the ovary-style-stigma gynoecium — outside-in order matters.",
+        alt: "Flower structure with four whorls calyx corolla androecium gynoecium",
+        keyword: "sepal",
+      },
+      {
+        Component: FruitTypes,
+        caption:
+          "The ovary's afterlife: ovary becomes fruit, ovule becomes seed — drupe with a stony stone, berry fleshy throughout, legume a splitting pod.",
+        alt: "Fruit types drupe berry and legume with pericarp layers",
+        keyword: "drupe",
+      },
+    ],
+  },
+  "taxonomic-study-definition-taxonomic-hierarchy-classification-systems-artificial-natural-and-phy": {
+    title: "Taxonomic study",
+    figures: [
+      {
+        Component: TaxonRanksLadder,
+        caption:
+          "Seven obligatory categories from Kingdom to Species — each rank is a taxon, and descending the ladder trades breadth for shared detail.",
+        alt: "Taxonomic categories ladder kingdom to species",
+        keyword: "hierarchy",
+      },
+      {
+        Component: ClassificationSystemsTimeline,
+        caption:
+          "Three generations of classification: artificial (few characters, Linnaeus), natural (overall similarity, Bentham & Hooker), phylogenetic (evolutionary ancestry, DNA-informed).",
+        alt: "Artificial natural and phylogenetic classification systems timeline",
+        keyword: "taxonomy",
+      },
+      {
+        Component: SpeciesConcept,
+        caption:
+          "Species — the only real rung: an interbreeding population, reproductively isolated from others, sharing one gene pool; higher ranks are human convenience.",
+        alt: "Species concept with interbreeding and reproductive isolation",
+        keyword: "species",
+      },
+      {
+        Component: TaxonomicAids,
+        caption:
+          "The taxonomist's toolkit: herbarium sheets, museum jars, living botanical gardens, and paper aids — keys, floras, monographs and manuals.",
+        alt: "Taxonomic aids herbarium museum botanical garden and keys",
+        keyword: "herbarium",
+      },
+      {
+        Component: DichotomousKeyExample,
+        caption:
+          "A key in action: each couplet offers two contrasting choices; pick the matching one and follow its pointer until a single name survives.",
+        alt: "Dichotomous key couplets leading to species identification",
+        keyword: "key",
+      },
+    ],
+  },
+  "angiosperm-families-with-economic-importance-brassicaceae-fabaceae-solanaceae-and-liliaceae": {
+    title: "Angiosperm families",
+    figures: [
+      {
+        Component: FloralFormulaAnatomy,
+        caption:
+          "Reading a floral formula: symbols for bract, symmetry and sex, then K C A G with numbers, brackets for fusion and an underline for an inferior ovary.",
+        alt: "Floral formula symbols decoded with worked example",
+        keyword: "floral formula",
+      },
+      {
+        Component: BrassicaceaeFeatures,
+        caption:
+          "Brassicaceae: four petals in a cross, six tetradynamous stamens (2+4), silique fruit — the mustard family's formula ⊕ ⚥ K₂+₂ C₄ A₂+₄ G(₂).",
+        alt: "Brassicaceae cruciform corolla tetradynamous stamens and silique",
+        keyword: "brassicaceae",
+      },
+      {
+        Component: FabaceaeFeatures,
+        caption:
+          "Fabaceae: butterfly-shaped papilionaceous corolla (banner, wings, keel), diadelphous stamens 9+1, legume fruit — plus Rhizobium nodules that fix nitrogen.",
+        alt: "Fabaceae papilionaceous flower diadelphous stamens and legume",
+        keyword: "papilionaceous",
+      },
+      {
+        Component: SolanaceaeFeatures,
+        caption:
+          "Solanaceae: wheel-shaped five-lobed corolla, epipetalous stamens stuck to the petals, berry fruit — the alkaloid family of potato, tomato and tobacco.",
+        alt: "Solanaceae rotate corolla epipetalous stamens and berry",
+        keyword: "solanaceae",
+      },
+      {
+        Component: LiliaceaeFeatures,
+        caption:
+          "Liliaceae, the monocot blueprint: trimerous flowers with six look-alike tepals, 3+3 stamens, superior tricarpellary ovary, capsule fruit — onion, garlic, aloe.",
+        alt: "Liliaceae trimerous flower tepals and capsule",
+        keyword: "liliaceae",
+      },
+      {
+        Component: FamiliesComparisonTable,
+        caption:
+          "Four families at a glance: symmetry, merosity, stamens, carpels, fruit and placentation — the stamens row alone separates all four.",
+        alt: "Comparison table of four angiosperm families",
+        keyword: "placentation",
+      },
+      {
+        Component: FamiliesEconomicImportance,
+        caption:
+          "Why these families matter: mustard oil and pulses, potato and chilli, onion and aloe — food and pharmacy, each family a distinct chemistry kit.",
+        alt: "Economic importance of the four families with crops",
+        keyword: "economic",
       },
     ],
   },
