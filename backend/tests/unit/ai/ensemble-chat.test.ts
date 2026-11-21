@@ -73,7 +73,7 @@ describe("AIService.ensembleChat", () => {
       },
     });
 
-    await expect(svc.ensembleChat([{ role: "user", content: "x" }])).resolves.toBe("ONLY ANSWER");
+    await expect(svc.ensembleChat([{ role: "user", content: "x" }], { timeoutMs: 40 })).resolves.toBe("ONLY ANSWER");
   });
 
   it("returns an empty string when every lane fails, so callers still draw", async () => {
@@ -88,24 +88,32 @@ describe("AIService.ensembleChat", () => {
       },
     });
 
-    await expect(svc.ensembleChat([{ role: "user", content: "x" }])).resolves.toBe("");
+    await expect(svc.ensembleChat([{ role: "user", content: "x" }], { timeoutMs: 40 })).resolves.toBe("");
   });
 
   it("keeps the longest draft when the merger fails", async () => {
     const { AIService } = await import("../../../src/ai/service.js");
     const svc = new AIService() as any;
 
+    // Every lane drafts once, then every lane also fails as an editor, so the
+    // merge chain is exhausted and the longest draft must survive.
+    const draftsThenDead = (name: string, draft: string) => {
+      let calls = 0;
+      return {
+        ...lane(name, draft),
+        chat: async () => {
+          calls += 1;
+          if (calls > 1) throw new Error("editor down");
+          return draft;
+        },
+      };
+    };
     svc.providers.clear();
-    svc.providers.set("alpha", lane("alpha", "short"));
-    svc.providers.set("beta", lane("beta", "a much longer draft answer"));
-    svc.providers.set("zai", {
-      ...lane("zai", ""),
-      chat: async () => {
-        throw new Error("editor down");
-      },
-    });
+    svc.providers.set("alpha", draftsThenDead("alpha", "short"));
+    svc.providers.set("beta", draftsThenDead("beta", "a much longer draft answer"));
+    svc.providers.set("zai", draftsThenDead("zai", ""));
 
-    await expect(svc.ensembleChat([{ role: "user", content: "x" }])).resolves.toBe(
+    await expect(svc.ensembleChat([{ role: "user", content: "x" }], { timeoutMs: 40 })).resolves.toBe(
       "a much longer draft answer",
     );
   });

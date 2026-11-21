@@ -1693,7 +1693,7 @@ export class AIService {
   }
 
   /**
-   * Fan-out: every configured lane answers the SAME prompt in parallel, then ONE
+   * Fan-out: every usable lane answers the SAME prompt in parallel, then ONE
    * synthesizer merges the drafts into a single answer.
    *
    * Owner 2026-11-21: "for that one prompt all models activated and do their
@@ -1701,50 +1701,107 @@ export class AIService {
    * is the first caller: its brief is what the drawing reads, so it is worth
    * several independent reasoning attempts merged into one.
    *
-   * Lanes run in parallel, so wall-clock is the SLOWEST lane, not the sum. The
-   * synthesizer defaults to the strongest reasoning lane (z.ai · glm-5.3-flash,
-   * owner 2026-11-21: "wire it where most reasoning is needed"). Returns "" when
-   * every lane failed — callers treat that as "no brief" and carry on.
+   * Lanes run in parallel, so wall-clock is the SLOWEST lane, not the sum — so
+   * the slowest lanes are left out on purpose (see SKIP). The synthesizer
+   * defaults to the strongest reasoning lane (z.ai · glm-5.3-flash, owner
+   * 2026-11-21: "wire it where most reasoning is needed"). Returns "" when every
+   * lane failed — callers treat that as "no brief" and carry on.
    */
   async ensembleChat(
     messages: AIChatMessage[],
     opts: { timeoutMs?: number; synthesizer?: string; maxLanes?: number } = {},
   ): Promise<string> {
-    // `internal` is the keyword fallback and would only add noise; the diagram
-    // hub lane is itself a single Gemini lane, so it does not need a vote.
-    const skip = new Set(["internal", DIAGRAM_HUB_PROVIDER]);
-    const laneNames = [...this.providers.keys()].filter((n) => !skip.has(n)).slice(0, opts.maxLanes ?? 12);
-    const perLaneMs = opts.timeoutMs ?? 75_000;
+    // Left out because they cannot answer, or answer far too slowly to sit on a
+    // student's critical path:
+    //   internal      — keyword fallback, adds no reasoning
+    //   diagram-hub   — itself a single Gemini lane, no need for a second vote
+    //   deepai        — 403s (needs the app's signed proof headers)
+    //   nvidia-2/agnes-2 — quad-only lanes, gemma-4-31b alone ran 127s once
+    //   the EDITOR itself — drafting and merging at the same time rate-limited
+    //     it (a 4.3s merge turned into an empty result), so it edits only.
+    const editorName = (opts.synthesizer ?? "zai").toLowerCase();
+    const SKIP = new Set([
+      "internal",
+      DIAGRAM_HUB_PROVIDER,
+      "deepai",
+      "nvidia-2",
+      "agnes-2",
+      editorName,
+    ]);
+    const laneNames = [...this.providers.keys()]
+      .filter((n) => !SKIP.has(n))
+      // Fastest lanes first, so a small maxLanes stays useful.
+      .sort((a, b) => freeLlmRank(a) - freeLlmRank(b))
+      // 6 lanes is enough independent reasoning for one brief; more only adds
+      // latency, never quality (the merge flattens them anyway).
+      .slice(0, opts.maxLanes ?? 6);
+    // Pace versus depth, both measured (2026-11-21): on a real seven-line brief
+    // the lanes split hard — openrouter 5.5s, kilo 32s, nvidia 43s. A fixed cap
+    // either throws away good drafts or makes every turn wait for the slowest, so
+    // the fan-out stops waiting as soon as a QUORUM has answered and only falls
+    // back to this deadline when the lanes are all slow. Stragglers that land
+    // during the merge are simply not needed.
+    const deadlineMs = opts.timeoutMs ?? 30_000;
+    const quorum = 2;
+    const answers: Array<{ name: string; text: string }> = [];
+    let signalQuorum: () => void = () => {};
+    const quorumHit = new Promise<void>((resolve) => {
+      signalQuorum = resolve;
+    });
 
-    const attempts = await Promise.all(
+    const allLanes = Promise.all(
       laneNames.map(async (name) => {
         const provider = this.providers.get(name)!;
-        const timed = new Promise<string>((resolve) => setTimeout(() => resolve(""), perLaneMs));
+        // Per-lane ceiling well above the deadline: a slow lane keeps running so
+        // its draft can still land while the merge is in flight.
+        const timed = new Promise<string>((resolve) => setTimeout(() => resolve(""), deadlineMs * 2));
         try {
           const text = await Promise.race([provider.chat(messages), timed]);
-          return { name, text: (text ?? "").trim() };
+          if (text && text.trim()) {
+            answers.push({ name, text: text.trim() });
+            if (answers.length >= quorum) signalQuorum();
+          }
         } catch (err) {
           console.warn(
             `[ensemble] lane "${name}" failed:`,
             err instanceof Error ? err.message : err,
           );
-          return { name, text: "" };
         }
       }),
     );
-
-    const answers = attempts.filter((a) => a.text.length > 0);
+    await Promise.race([
+      allLanes,
+      quorumHit,
+      new Promise<void>((resolve) => setTimeout(resolve, deadlineMs)),
+    ]);
+    // Nothing yet: give the lanes one more short window before giving up.
+    if (answers.length === 0) {
+      await Promise.race([
+        quorumHit,
+        new Promise<void>((resolve) => setTimeout(resolve, deadlineMs / 2)),
+      ]);
+    }
     if (answers.length === 0) return "";
     if (answers.length === 1) {
       this.lastAnsweredBy = answers[0].name;
       return answers[0].text;
     }
 
-    // Prefer the reasoning lane as editor; fall back to whichever lane answered.
-    const wanted = (opts.synthesizer ?? "zai").toLowerCase();
-    const editor = this.providers.get(wanted) ?? this.providers.get(answers[0].name)!;
-    const drafts = answers
-      .map((a, i) => `--- DRAFT ${i + 1} (${a.name}) ---\n${a.text.slice(0, 6_000)}`)
+    // Prefer the reasoning lane as editor, then any lane that actually answered.
+    // A free reasoning lane throttles under burst, and one 429 must not cost the
+    // whole merge (measured: it degraded every turn to a single raw draft).
+    const editors: AIProvider[] = [];
+    for (const n of [editorName, ...answers.map((a) => a.name)]) {
+      const p = this.providers.get(n);
+      if (p && !editors.includes(p)) editors.push(p);
+    }
+    // Merge the four RICHEST drafts, truncated. Six full drafts made the editor
+    // pass alone take ~50s; four shortened ones keep the merge near 10s while
+    // still drawing on the best attempts from different lanes.
+    const drafts = [...answers]
+      .sort((a, b) => b.text.length - a.text.length)
+      .slice(0, 3)
+      .map((a, i) => `--- DRAFT ${i + 1} (${a.name}) ---\n${a.text.slice(0, 1_200)}`)
       .join("\n\n");
     const merge: AIChatMessage[] = [
       ...messages,
@@ -1760,14 +1817,31 @@ export class AIService {
         ].join("\n"),
       },
     ];
-    try {
-      const merged = (await editor.chat(merge)).trim();
-      if (merged) {
-        this.lastAnsweredBy = editor.name;
-        return merged;
+    // ONE shared budget for the whole merge, not one per editor: a per-editor
+    // timeout multiplied by the fallback chain took a turn to 112s. Whatever is
+    // left is what the next editor gets, and the drafts stand in past the limit.
+    const mergeBudgetMs = opts.timeoutMs ?? 25_000;
+    const mergeDeadline = Date.now() + mergeBudgetMs;
+    for (const editor of editors) {
+      const remaining = mergeDeadline - Date.now();
+      if (remaining <= 0) break;
+      try {
+        const merged = (
+          await Promise.race([
+            editor.chat(merge),
+            new Promise<string>((resolve) => setTimeout(() => resolve(""), remaining)),
+          ])
+        ).trim();
+        if (merged) {
+          this.lastAnsweredBy = editor.name;
+          return merged;
+        }
+      } catch (err) {
+        console.warn(
+          `[ensemble] merge via "${editor.name}" failed:`,
+          err instanceof Error ? err.message : err,
+        );
       }
-    } catch (err) {
-      console.warn("[ensemble] merge failed:", err instanceof Error ? err.message : err);
     }
     // Merge unavailable: the longest draft is the safest single stand-in.
     const best = answers.reduce((a, b) => (b.text.length > a.text.length ? b : a));

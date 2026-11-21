@@ -24,7 +24,14 @@
  */
 import type { AIChatMessage } from "../service";
 
-export const DIAGRAM_KNOWLEDGE_TIMEOUT_MS = 9000;
+/**
+ * Budget for the reasoning pass. It was 9s for a single lane; the pass is now an
+ * ensemble (several lanes answer in parallel, one merges), so the ceiling has to
+ * cover the slowest lane PLUS the merge, otherwise a healthy brief is discarded
+ * at the deadline and the drawing silently loses its dots knowledge (owner
+ * 2026-11-21: "are all models working i just got error").
+ */
+export const DIAGRAM_KNOWLEDGE_TIMEOUT_MS = 60_000;
 export const DIAGRAM_KNOWLEDGE_MARKER =
   "DIAGRAM KNOWLEDGE BRIEF — GENERATED FOR THIS REQUEST";
 
