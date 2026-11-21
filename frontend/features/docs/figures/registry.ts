@@ -375,6 +375,28 @@ import { UvPenetrationComparison } from "./uv-penetration-comparison";
 import { MitigationAdaptationPair } from "./mitigation-adaptation-pair";
 import { ImbalanceChainReaction } from "./imbalance-chain-reaction";
 import { OzoneVsGreenhouse } from "./ozone-vs-greenhouse";
+import { SalTreeProfile } from "./sal-tree-profile";
+import { ChirPineBelt } from "./chir-pine-belt";
+import { RhododendronTemperateBelt } from "./rhododendron-temperate-belt";
+import { AlpineNivalLife } from "./alpine-nival-life";
+import { VegetationTypesSummary } from "./vegetation-types-summary";
+import { EastWestGradient } from "./east-west-gradient";
+import { WetlandAquaticVegetation } from "./wetland-aquatic-vegetation";
+import { VegetationZoneConservation } from "./vegetation-zone-conservation";
+import { ProtectedAreaCategories } from "./protected-area-categories";
+import { BotanicalGardenRole } from "./botanical-garden-role";
+import { ZooCaptiveBreeding } from "./zoo-captive-breeding";
+import { GeneBankTissueCulture } from "./gene-bank-tissue-culture";
+import { ConservationDecisionTree } from "./conservation-decision-tree";
+import { BufferZoneBenefits } from "./buffer-zone-benefits";
+import { ConservationSuccessNumbers } from "./conservation-success-numbers";
+import { FuelwoodFodderBalance } from "./fuelwood-fodder-balance";
+import { MedicinalHerbEconomy } from "./medicinal-herb-economy";
+import { LandslideErosionLink } from "./landslide-erosion-link";
+import { InvasiveSpeciesThreat } from "./invasive-species-threat";
+import { KhoriyaShiftingCycle } from "./khoriya-shifting-cycle";
+import { OvergrazingSpiral } from "./overgrazing-spiral";
+import { HumanVegetationRelationships } from "./human-vegetation-relationships";
 import { FernStructure } from "./fern-structure";
 import { FernLifeCycle } from "./fern-life-cycle";
 import { FernProthallus } from "./fern-prothallus";
@@ -4228,6 +4250,62 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Climbing 1000 metres equals travelling 1000 kilometres toward the poles",
         keyword: "toward the poles",
       },
+      {
+        Component: SalTreeProfile,
+        caption:
+          "Sal (Shorea robusta), the Terai's timber king: straight branch-free trunk, deciduous habit below 1000 m, and timber that built houses and railway sleepers.",
+        alt: "Sal tree profile Shorea robusta Terai timber uses",
+        keyword: "sal",
+      },
+      {
+        Component: ChirPineBelt,
+        caption:
+          "Chir pine owns the 1000–2000 m slopes: evergreen needles, resin for turpentine, acidic litter and a taste for dry south-facing ground.",
+        alt: "Chir pine belt subtropical slope resin uses",
+        keyword: "chir",
+      },
+      {
+        Component: RhododendronTemperateBelt,
+        caption:
+          "Rhododendron (lali gurans), Nepal's national flower: evergreen broadleaf of the 2000–3000 m temperate forest, painting hillsides red each spring.",
+        alt: "Rhododendron temperate belt national flower lali gurans",
+        keyword: "rhododendron",
+      },
+      {
+        Component: AlpineNivalLife,
+        caption:
+          "Above the tree line: alpine bugyal meadows with cushion plants and yarsagumba, then the nival zone where only lichens and mosses persist.",
+        alt: "Alpine meadow and nival zone life above tree line",
+        keyword: "nival",
+      },
+      {
+        Component: VegetationTypesSummary,
+        caption:
+          "The revision card: six zones with altitude bands and one dominant species each — tropical sal to nival lichen, memorise the triple.",
+        alt: "Vegetation types summary table six zones",
+        keyword: "tropical",
+      },
+      {
+        Component: EastWestGradient,
+        caption:
+          "The hidden second axis: rainfall weakens east to west, so the wet east grows tall forest while the dry west and rain-shadow valleys turn to pine and steppe.",
+        alt: "East west vegetation gradient rainfall monsoon Nepal",
+        keyword: "rain",
+      },
+      {
+        Component: WetlandAquaticVegetation,
+        caption:
+          "Wetland vegetation: reed beds of Saccharum and Phragmites, floating-leaf plants and the invasive water hyacinth — fish nurseries and flood sponges worth protecting.",
+        alt: "Wetland aquatic vegetation reeds floating plants hyacinth",
+        keyword: "wetland",
+      },
+      {
+        Component: VegetationZoneConservation,
+        caption:
+          "Every zone carries something worth keeping: sal parks protect rhino country, temperate forests guard springs, alpine meadows grow medicine — lose a zone, lose its gifts.",
+        alt: "Vegetation zone conservation value protected areas by altitude",
+        keyword: "conservation",
+      },
     ],
   },
   "in-situ-protected-areas-and-ex-situ-botanical-garden-seed-bank-conservation": {
@@ -4268,6 +4346,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Nepal biodiversity hotspot context for in-situ and ex-situ conservation",
         keyword: "biodiversity hotspot",
       },
+      {
+        Component: ProtectedAreaCategories,
+        caption:
+          "Five kinds of in-situ area: national park, wildlife reserve, conservation area, hunting reserve and Ramsar wetland — differing in rules, managers and targets.",
+        alt: "Protected area categories national park wildlife reserve Ramsar",
+        keyword: "national park",
+      },
+      {
+        Component: BotanicalGardenRole,
+        caption:
+          "Botanical gardens, the living plant museum: conservation of rare species, education, propagation research and recreation — Godawari does all four.",
+        alt: "Botanical garden role ex-situ Godawari beds",
+        keyword: "botanical garden",
+      },
+      {
+        Component: ZooCaptiveBreeding,
+        caption:
+          "Zoos breed the nearly lost: gharial and vulture programmes show ex-situ at work — an ark, not a destination, with reintroduction as the goal.",
+        alt: "Zoo captive breeding gharial vulture Central Zoo",
+        keyword: "captive",
+      },
+      {
+        Component: GeneBankTissueCulture,
+        caption:
+          "Gene banks and tissue culture: seeds stored dry and cold, meristems grown virus-free on agar, cryopreservation at −196 °C pausing life itself.",
+        alt: "Gene bank tissue culture cryopreservation Khumaltar",
+        keyword: "tissue",
+      },
+      {
+        Component: ConservationDecisionTree,
+        caption:
+          "Which method, when? Habitat intact → in-situ; habitat gone or population critical → ex-situ, breed and store, then return to the wild.",
+        alt: "Conservation decision tree in-situ versus ex-situ",
+        keyword: "habitat",
+      },
+      {
+        Component: BufferZoneBenefits,
+        caption:
+          "Buffer zones pay the neighbours: shared tourism revenue, community forests and conflict insurance turn villagers into the park's guardians.",
+        alt: "Buffer zone benefits community revenue sharing",
+        keyword: "buffer",
+      },
+      {
+        Component: ConservationSuccessNumbers,
+        caption:
+          "Proof it works: tigers up from ~120 to 350+, rhinos from ~100 to 750+, forest cover recovered to ~45% — conservation, measured.",
+        alt: "Conservation success numbers tiger rhino forest recovery",
+        keyword: "tiger",
+      },
     ],
   },
   "natural-environment-vegetation-and-human-activities": {
@@ -4307,6 +4434,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Community forestry (1993 Forest Act): the government hands management to Community Forest User Groups — protection and regeneration, regulated use, income for reinvestment, local stewardship, equity and women's participation.",
         alt: "Community forestry CFUG five roles Nepal",
         keyword: "Community Forest User Groups",
+      },
+      {
+        Component: FuelwoodFodderBalance,
+        caption:
+          "The daily withdrawals: fuelwood for cooking, fodder lopped for livestock, leaf litter for bedding — sustainable only while harvest stays under regrowth.",
+        alt: "Fuelwood fodder balance daily forest withdrawals sustainability",
+        keyword: "fuelwood",
+      },
+      {
+        Component: MedicinalHerbEconomy,
+        caption:
+          "The herbal economy: yarsagumba in alpine meadows, chiraito and timur in the hills — high value brings overharvesting, so rules and cultivation must follow.",
+        alt: "Medicinal herb economy yarsagumba chiraito timur jatamashi",
+        keyword: "medicinal",
+      },
+      {
+        Component: LandslideErosionLink,
+        caption:
+          "Why a felled hillside slides: roots die, monsoon saturates the slope, topsoil slides, rivers and reservoirs silt, springs dry — a five-link chain.",
+        alt: "Landslide erosion link deforestation to siltation chain",
+        keyword: "landslide",
+      },
+      {
+        Component: InvasiveSpeciesThreat,
+        caption:
+          "Invasives win by cheating: Mikania smothers saplings, lantana thickets poison the ground, water hyacinth carpets lakes — disturbed land is their door.",
+        alt: "Invasive species Mikania lantana water hyacinth threat",
+        keyword: "lantana",
+      },
+      {
+        Component: KhoriyaShiftingCycle,
+        caption:
+          "Khoriya, shifting cultivation: slash, burn, farm two or three years, fallow for decades — sustainable only while the fallow outlasts the damage.",
+        alt: "Khoriya shifting cultivation slash burn fallow cycle",
+        keyword: "khoriya",
+      },
+      {
+        Component: OvergrazingSpiral,
+        caption:
+          "Overgrazing tightens a spiral: palatable grasses grazed out, soil compacts, unpalatable invasives take over — unless herd size is matched to carrying capacity.",
+        alt: "Overgrazing spiral grass loss soil compaction invasives",
+        keyword: "grazing",
+      },
+      {
+        Component: HumanVegetationRelationships,
+        caption:
+          "Three relationships with vegetation: use (timber, fodder, medicine), misuse (clear-felling, overgrazing) and stewardship (community forestry, plantations).",
+        alt: "Human vegetation relationships use misuse stewardship",
+        keyword: "stewardship",
       },
     ],
   },
