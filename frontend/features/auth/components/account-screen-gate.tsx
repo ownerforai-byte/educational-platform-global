@@ -22,6 +22,10 @@ import {
   clearPendingSignup,
 } from "../pending-signup-identity";
 import { useLiveApprovalRoute } from "../use-live-approval-route";
+import {
+  defaultMemberHomePath,
+  isAccessApprovalRequired,
+} from "@/lib/core/access-approval";
 
 /**
  * Four welcome screens — shown only after live account-status confirms them.
@@ -56,6 +60,12 @@ function useLiveScreenGate(expectedRoute: string) {
 
 /** /welcome/pending — only when live access_status is PENDING. */
 export function WelcomeApprovalScreen({ waiting }: { waiting: ReactNode }) {
+  const router = useRouter();
+  useEffect(() => {
+    if (!isAccessApprovalRequired()) router.replace(defaultMemberHomePath());
+  }, [router]);
+  if (!isAccessApprovalRequired()) return <CheckingScreen />;
+
   const liveRoute = useLiveScreenGate(WAITING_ROUTE);
   if (!liveRoute || liveRoute !== WAITING_ROUTE) return <CheckingScreen />;
 

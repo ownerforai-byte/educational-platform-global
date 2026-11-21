@@ -1,3 +1,5 @@
+import { defaultMemberHomePath, isAccessApprovalRequired } from "@/lib/core/access-approval";
+
 /**
  * Signup status-token storage for the four welcome screens.
  *
@@ -268,6 +270,7 @@ export function deviceApprovalRoute(): string {
   if (!readStatusToken()) return NORMAL_ROUTE;
   const outcome = readAccessOutcome();
   if (outcome === "REJECTED") return DENIED_ROUTE;
+  if (!isAccessApprovalRequired()) return defaultMemberHomePath();
   if (outcome === "ACTIVE") return APPROVED_ROUTE;
   return WAITING_ROUTE;
 }

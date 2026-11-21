@@ -25,6 +25,7 @@ export const publicEnvSchema = z.object({
   NEXT_PUBLIC_USE_FIREBASE_AUTH: optionalString,
   NEXT_PUBLIC_AUTH_DEBUG: optionalString,
   NEXT_PUBLIC_FCM_DEBUG: optionalString,
+  NEXT_PUBLIC_ACCESS_APPROVAL_REQUIRED: optionalString,
 });
 
 export type PublicEnv = z.infer<typeof publicEnvSchema>;
@@ -51,6 +52,7 @@ export function getPublicEnv(): PublicEnv {
     NEXT_PUBLIC_USE_FIREBASE_AUTH: process.env.NEXT_PUBLIC_USE_FIREBASE_AUTH,
     NEXT_PUBLIC_AUTH_DEBUG: process.env.NEXT_PUBLIC_AUTH_DEBUG,
     NEXT_PUBLIC_FCM_DEBUG: process.env.NEXT_PUBLIC_FCM_DEBUG,
+    NEXT_PUBLIC_ACCESS_APPROVAL_REQUIRED: process.env.NEXT_PUBLIC_ACCESS_APPROVAL_REQUIRED,
   });
   return cached;
 }

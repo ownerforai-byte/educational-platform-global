@@ -10,6 +10,7 @@ import {
 } from "../pending-signup-identity";
 import { useLiveApprovalRoute } from "../use-live-approval-route";
 import { VerifyingStatus } from "./verifying-status";
+import { isAccessApprovalRequired } from "@/lib/core/access-approval";
 
 type Mode = "login" | "signup";
 
@@ -28,6 +29,11 @@ export function CreatedAccountGate({
   children: React.ReactNode;
 }) {
   const router = useRouter();
+
+  if (!isAccessApprovalRequired()) {
+    return <>{children}</>;
+  }
+
   // Visitors without a device signup token must never sit behind a live
   // account-status poll — a cold backend or 5xx on /account-status used to
   // leave login/signup on "Checking your account status" forever while email,

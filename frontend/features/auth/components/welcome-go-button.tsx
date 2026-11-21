@@ -7,6 +7,7 @@ import {
   NORMAL_ROUTE,
 } from "@/features/auth/pending-signup-identity";
 import { useLiveApprovalRoute } from "@/features/auth/use-live-approval-route";
+import { isAccessApprovalRequired } from "@/lib/core/access-approval";
 
 /**
  * Guest welcome primary CTA — href follows live approval status.
@@ -16,8 +17,10 @@ import { useLiveApprovalRoute } from "@/features/auth/use-live-approval-route";
  */
 export function WelcomeGoButton() {
   const liveRoute = useLiveApprovalRoute();
-  const href =
-    !liveRoute || liveRoute === NORMAL_ROUTE
+  const approvalRequired = isAccessApprovalRequired();
+  const href = !approvalRequired
+    ? "/signup"
+    : !liveRoute || liveRoute === NORMAL_ROUTE
       ? "/signup"
       : liveRoute === APPROVED_ROUTE
         ? "/login"
@@ -29,7 +32,10 @@ export function WelcomeGoButton() {
         ? "Go — sign in to your plan"
         : "Go — check approval status";
   const pending = Boolean(
-    liveRoute && liveRoute !== NORMAL_ROUTE && liveRoute !== APPROVED_ROUTE,
+    approvalRequired &&
+      liveRoute &&
+      liveRoute !== NORMAL_ROUTE &&
+      liveRoute !== APPROVED_ROUTE,
   );
 
   return (

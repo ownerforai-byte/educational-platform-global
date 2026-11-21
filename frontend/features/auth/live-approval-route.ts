@@ -1,5 +1,9 @@
 import { apiFetch } from "@/lib/api-client";
 import {
+  defaultMemberHomePath,
+  isAccessApprovalRequired,
+} from "@/lib/core/access-approval";
+import {
   APPROVED_ROUTE,
   NORMAL_ROUTE,
   DENIED_ROUTE,
@@ -18,6 +22,9 @@ import {
  */
 export function routeForLiveAccess(status: AccessOutcome): string {
   if (status === "REJECTED") return DENIED_ROUTE;
+  if (!isAccessApprovalRequired()) {
+    return defaultMemberHomePath();
+  }
   if (status === "ACTIVE") return APPROVED_ROUTE;
   return WAITING_ROUTE;
 }
@@ -40,11 +47,10 @@ export function routeForLiveAccess(status: AccessOutcome): string {
  */
 export function resolveLiveApprovalRouteFallback(): string {
   if (!readStatusToken()) return NORMAL_ROUTE;
-  // Honor the last live status we recorded so a transient outage never bounces
-  // an already-approved (or denied) account back to the waiting screen.
   const outcome = readAccessOutcome();
-  if (outcome === "ACTIVE") return APPROVED_ROUTE;
   if (outcome === "REJECTED") return DENIED_ROUTE;
+  if (!isAccessApprovalRequired()) return defaultMemberHomePath();
+  if (outcome === "ACTIVE") return APPROVED_ROUTE;
   return WAITING_ROUTE;
 }
 

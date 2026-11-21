@@ -12,6 +12,11 @@ import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierHomePathFor } from "@/lib/core/access-level";
 import {
+  defaultMemberHomePath,
+  isAccessApprovalRequired,
+} from "@/lib/core/access-approval";
+import {
+  clearPendingSignup,
   DENIED_ROUTE,
   WAITING_ROUTE,
   rememberAccessOutcome,
@@ -48,16 +53,16 @@ export function SignupForm() {
     const result = await signupAction({ fullName, email, password });
     setLoading(false);
 
-    if (result.code === "PENDING_APPROVAL" || (result.ok && result.statusToken)) {
-      // Account created (HTTP 200 { code: "PENDING_APPROVAL", statusToken })
-      // — NOT logged in yet. The bot approves new accounts automatically
-      // within ~5 minutes, so hand the signed status token to the waiting
-      // screen: it shows the "created" confirmation and polls until the
-      // account flips to ACTIVE, then opens /welcome/approved.
-      // The hardcoded pending-signup identity is persisted in three stores so
-      // a refresh cannot drop the "account created" state (owner 2026-11-08).
+    if (
+      isAccessApprovalRequired() &&
+      (result.code === "PENDING_APPROVAL" || (result.ok && result.statusToken && !result.user))
+    ) {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       router.push(WAITING_ROUTE);
+    } else if (result.code === "PENDING_APPROVAL") {
+      clearPendingSignup();
+      refresh();
+      router.push(result.user ? tierHomePathFor(result.user) : defaultMemberHomePath());
     } else if (result.ok && result.message) {
       setMessage(result.message);
     } else if (result.ok) {

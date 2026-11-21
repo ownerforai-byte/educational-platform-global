@@ -10,6 +10,10 @@ import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
 import { tierHomePathFor } from "@/lib/core/access-level";
 import {
+  defaultMemberHomePath,
+  isAccessApprovalRequired,
+} from "@/lib/core/access-approval";
+import {
   clearPendingSignup,
   rememberAccessOutcome,
   rememberPendingSignup,
@@ -141,9 +145,15 @@ export function SocialAuthButtons({
 
       const oauthBody = response as unknown as { code?: string; statusToken?: string };
       if (oauthBody.code === "PENDING_APPROVAL") {
-        if (oauthBody.statusToken) rememberPendingSignup(oauthBody.statusToken);
-        rememberAccessOutcome("PENDING");
-        router.replace(WAITING_ROUTE);
+        if (isAccessApprovalRequired()) {
+          if (oauthBody.statusToken) rememberPendingSignup(oauthBody.statusToken);
+          rememberAccessOutcome("PENDING");
+          router.replace(WAITING_ROUTE);
+          redirected = true;
+          return;
+        }
+        clearPendingSignup();
+        router.replace(defaultMemberHomePath());
         redirected = true;
         return;
       }
@@ -160,10 +170,15 @@ export function SocialAuthButtons({
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");
       const authErr = oauthError as { code?: string; statusToken?: string };
-      if (authErr?.code === "PENDING_APPROVAL" && authErr?.statusToken) {
-        rememberPendingSignup(authErr.statusToken);
-        rememberAccessOutcome("PENDING");
-        router.replace(WAITING_ROUTE);
+      if (authErr?.code === "PENDING_APPROVAL") {
+        if (isAccessApprovalRequired()) {
+          if (authErr.statusToken) rememberPendingSignup(authErr.statusToken);
+          rememberAccessOutcome("PENDING");
+          router.replace(WAITING_ROUTE);
+        } else {
+          clearPendingSignup();
+          router.replace(defaultMemberHomePath());
+        }
         redirected = true;
         return;
       }

@@ -16,6 +16,10 @@ import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierHomePathFor } from "@/lib/core/access-level";
 import {
+  defaultMemberHomePath,
+  isAccessApprovalRequired,
+} from "@/lib/core/access-approval";
+import {
   APPROVAL_DISPATCH_ROUTE,
   DENIED_ROUTE,
   WAITING_ROUTE,
@@ -45,20 +49,26 @@ export function LoginForm() {
   };
 
   useEffect(() => {
-    setShowApprovalStatus(hasPendingSignup());
+    setShowApprovalStatus(isAccessApprovalRequired() && hasPendingSignup());
   }, []);
 
   const finishSession = async (
     result: Awaited<ReturnType<typeof loginAction>>,
   ) => {
     if (result.code === "PENDING_APPROVAL") {
-      // NOT a deny — the account is PENDING and a bot approves it
-      // automatically within ~5 minutes. Hand the signed status token to the
-      // waiting screen, which polls until the account flips to ACTIVE and
-      // then opens /welcome/approved.
-      if (result.statusToken) rememberPendingSignup(result.statusToken);
-      rememberAccessOutcome("PENDING");
-      router.push(WAITING_ROUTE);
+      if (isAccessApprovalRequired()) {
+        if (result.statusToken) rememberPendingSignup(result.statusToken);
+        rememberAccessOutcome("PENDING");
+        router.push(WAITING_ROUTE);
+        return;
+      }
+      clearPendingSignup();
+      if (result.ok && result.user) {
+        refresh();
+        router.push(tierHomePathFor(result.user));
+        return;
+      }
+      router.push(defaultMemberHomePath());
     } else if (result.ok) {
       // Signed-in approved session owns the device — drop signup markers.
       clearPendingSignup();
@@ -100,9 +110,19 @@ export function LoginForm() {
     try {
       const res = await loginWithFirebaseIdToken(idToken);
       if (res.code === "PENDING_APPROVAL") {
-        if (res.statusToken) rememberPendingSignup(res.statusToken);
-        rememberAccessOutcome("PENDING");
-        router.push(WAITING_ROUTE);
+        if (isAccessApprovalRequired()) {
+          if (res.statusToken) rememberPendingSignup(res.statusToken);
+          rememberAccessOutcome("PENDING");
+          router.push(WAITING_ROUTE);
+          return;
+        }
+        clearPendingSignup();
+        if (res.user) {
+          await refresh();
+          router.push(tierHomePathFor(res.user));
+          return;
+        }
+        router.push(defaultMemberHomePath());
         return;
       }
       if (res.code === "ACCOUNT_REJECTED") {
@@ -121,9 +141,14 @@ export function LoginForm() {
     } catch (err) {
       const e = err as Error & { code?: string; statusToken?: string };
       if (e.code === "PENDING_APPROVAL") {
-        if (e.statusToken) rememberPendingSignup(e.statusToken);
-        rememberAccessOutcome("PENDING");
-        router.push(WAITING_ROUTE);
+        if (isAccessApprovalRequired()) {
+          if (e.statusToken) rememberPendingSignup(e.statusToken);
+          rememberAccessOutcome("PENDING");
+          router.push(WAITING_ROUTE);
+        } else {
+          clearPendingSignup();
+          router.push(defaultMemberHomePath());
+        }
       } else if (e.code === "ACCOUNT_REJECTED") {
         if (e.statusToken) rememberPendingSignup(e.statusToken);
         rememberAccessOutcome("REJECTED");
