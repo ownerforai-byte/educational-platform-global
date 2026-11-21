@@ -8,7 +8,8 @@ export type DocSegment =
   | { kind: "definition"; term: string; body: string }
   | { kind: "paragraph"; body: string }
   | { kind: "displayMath"; tex: string }
-  | { kind: "list"; items: string[] };
+  | { kind: "list"; items: string[] }
+  | { kind: "table"; rows: string[] };
 
 export interface DocBlock {
   /** Original note index (for figure anchoring). */
@@ -24,13 +25,17 @@ const DISPLAY_MATH = /^\$\$(.+)\$\$$/;
 /**
  * Parse one note string into segments. A leading "**Term:**" becomes a
  * definition block; inline $$...$$ on its own line becomes display math;
- * "- " lines group into lists; everything else is a paragraph.
+ * "- " lines group into lists; consecutive "|" lines group into a GFM table
+ * (owner request 2026-11-21: comparison tables must render as real tables,
+ * not as one shattered paragraph per pipe line); everything else is a
+ * paragraph.
  */
 export function parseNote(raw: string): DocBlock {
   const lines = raw.split("\n").map((l) => l.trim()).filter(Boolean);
   const segments: DocSegment[] = [];
   let heading: string | undefined;
   let pendingList: string[] | undefined;
+  let pendingTable: string[] | undefined;
 
   const flushList = () => {
     if (pendingList && pendingList.length > 0) {
@@ -39,13 +44,35 @@ export function parseNote(raw: string): DocBlock {
     pendingList = undefined;
   };
 
+  const flushTable = () => {
+    if (pendingTable && pendingTable.length > 0) {
+      segments.push({ kind: "table", rows: pendingTable });
+    }
+    pendingTable = undefined;
+  };
+
+  const flushAll = () => {
+    flushList();
+    flushTable();
+  };
+
   for (const line of lines) {
     const display = line.match(DISPLAY_MATH);
     if (display) {
-      flushList();
+      flushAll();
       segments.push({ kind: "displayMath", tex: display[1].trim() });
       continue;
     }
+
+    if (/^\|/.test(line)) {
+      // GFM table row — group consecutive pipe lines into one table segment
+      // so the markdown pipeline can rebuild the real <table>.
+      flushList();
+      if (!pendingTable) pendingTable = [];
+      pendingTable.push(line);
+      continue;
+    }
+    flushTable();
 
     if (/^[-*•]\s+/.test(line)) {
       const item = line.replace(/^[-*•]\s+/, "");
@@ -64,7 +91,7 @@ export function parseNote(raw: string): DocBlock {
     }
     segments.push({ kind: "paragraph", body: line });
   }
-  flushList();
+  flushAll();
 
   return { index: 0, heading, segments };
 }

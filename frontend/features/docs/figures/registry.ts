@@ -23,6 +23,14 @@ import { ThinLensRays } from "./thin-lens-rays";
 import { ConcaveMirrorRays } from "./concave-mirror-rays";
 import { ProjectileMotion } from "./projectile-motion";
 import { FaradayInduction } from "./faraday-induction";
+import { EukaryoticCell } from "./eukaryotic-cell";
+import { MitosisStages } from "./mitosis-stages";
+import { BiomoleculeClasses } from "./biomolecule-classes";
+import { BacterialCell } from "./bacterial-cell";
+import { BacteriophageStructure } from "./bacteriophage-structure";
+import { NitrogenCycle } from "./nitrogen-cycle";
+import { EarthwormDigestive } from "./earthworm-digestive";
+import { FrogHeartCirculation } from "./frog-heart-circulation";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -190,6 +198,102 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     ],
   },
   // ── Biology ──────────────────────────────────────────────────────────────
+  "biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-": {
+    title: "The four classes of biomolecules",
+    figures: [
+      {
+        Component: BiomoleculeClasses,
+        caption:
+          "The four great biomolecule classes with their monomers, elements and functions. Carbohydrates and lipids store energy; proteins do the work; nucleic acids store and transmit information.",
+        alt: "Four panels showing carbohydrates, proteins, lipids and nucleic acids with monomers and functions",
+        keyword: "carbohydrates",
+      },
+    ],
+  },
+  "detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-r": {
+    title: "Eukaryotic cell structure",
+    figures: [
+      {
+        Component: EukaryoticCell,
+        caption:
+          "Animal cell (left) and plant cell (right). Shared organelles — nucleus, mitochondria, ER, Golgi, ribosomes — plus the plant-only set: cell wall, chloroplasts and the large central vacuole.",
+        alt: "Labelled animal and plant cell diagrams showing nucleus, mitochondria, ER, Golgi, ribosomes, lysosome, chloroplast, vacuole and cell wall",
+        keyword: "mitochondria",
+      },
+    ],
+  },
+  "cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-sign": {
+    title: "Stages of mitosis",
+    figures: [
+      {
+        Component: MitosisStages,
+        caption:
+          "Mitosis in six stages: interphase replicates the DNA, prophase condenses it, metaphase lines it on the equator, anaphase splits the chromatids, telophase rebuilds nuclei, and cytokinesis separates two identical daughter cells.",
+        alt: "Six-cell sequence showing interphase, prophase, metaphase, anaphase, telophase and cytokinesis with chromosome behaviour",
+        keyword: "prophase",
+      },
+    ],
+  },
+  "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano": {
+    title: "Bacterial cell structure",
+    figures: [
+      {
+        Component: BacterialCell,
+        caption:
+          "A prokaryotic cell: genetic material free in the nucleoid (no nuclear membrane), 70S ribosomes, mesosome for respiration, and the capsule–wall–membrane armour with flagellum and pili outside.",
+        alt: "Labelled rod-shaped bacterial cell showing capsule, peptidoglycan wall, plasma membrane, nucleoid DNA, ribosomes, mesosome, pili and flagellum",
+        keyword: "nucleoid",
+      },
+    ],
+  },
+  "virus-general-introduction-structure-and-importance-of-virus-bacteriophage": {
+    title: "Bacteriophage structure",
+    figures: [
+      {
+        Component: BacteriophageStructure,
+        caption:
+          "A T4-type bacteriophage: the polyhedral head stores dsDNA, the contractile sheath injects it, and the tail fibres anchor to the host's wall — a complete parasite with no metabolism of its own.",
+        alt: "T4 bacteriophage with labelled head, DNA, collar, sheath, base plate and tail fibres on a bacterial surface",
+        keyword: "capsid",
+      },
+    ],
+  },
+  "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession": {
+    title: "The nitrogen cycle",
+    figures: [
+      {
+        Component: NitrogenCycle,
+        caption:
+          "N₂ from the air is fixed by lightning, Rhizobium and industry into ammonia, oxidised by Nitrosomonas and Nitrobacter to nitrate, assimilated by plants, eaten by animals, and returned by ammonification and denitrification.",
+        alt: "Nitrogen cycle flow diagram with fixation, nitrification, assimilation, ammonification and denitrification pathways",
+        keyword: "nitrification",
+      },
+    ],
+  },
+  "earthworm-pheretima-posthuma-habit-and-habitat-external-features-digestive-system-alimentary-can": {
+    title: "Earthworm alimentary canal",
+    figures: [
+      {
+        Component: EarthwormDigestive,
+        caption:
+          "The earthworm's straight alimentary canal: pharynx sucks, the gizzard grinds, calciferous glands neutralise humic acid, and the typhlosole-folded intestine is the main absorption zone.",
+        alt: "Horizontal alimentary canal of earthworm from mouth through pharynx, gizzard, stomach, intestine with typhlosole to anus",
+        keyword: "gizzard",
+      },
+    ],
+  },
+  "frog-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respirato": {
+    title: "Frog heart and circulation",
+    figures: [
+      {
+        Component: FrogHeartCirculation,
+        caption:
+          "The frog's three-chambered heart: two atria receive oxygenated and deoxygenated blood separately, but the single ventricle mixes them — an incomplete double circulation carried by carotid, systemic and pulmocutaneous arches.",
+        alt: "Frog heart with sinus venosus, two atria, single ventricle, truncus arteriosus and three pairs of arches",
+        keyword: "ventricle",
+      },
+    ],
+  },
   "ecological-pyramids-and-energy-flow": {
     title: "Energy flow through an ecosystem",
     figures: [

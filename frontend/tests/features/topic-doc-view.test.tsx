@@ -74,6 +74,33 @@ describe("doc parser", () => {
     });
   });
 
+  it("groups consecutive pipe lines into one table segment (owner request 2026-11-21)", () => {
+    const blocks = parseNotes([
+      "Compare the two bonds:\n| Feature | Ionic | Covalent |\n| --- | --- | --- |\n| Transfer | Electrons transferred | Electrons shared |\n| Melting point | High | Low |",
+      "A trailing paragraph after the table.",
+    ]);
+    expect(blocks[0].segments).toHaveLength(2);
+    expect(blocks[0].segments[0].kind).toBe("paragraph");
+    expect(blocks[0].segments[1]).toEqual({
+      kind: "table",
+      rows: [
+        "| Feature | Ionic | Covalent |",
+        "| --- | --- | --- |",
+        "| Transfer | Electrons transferred | Electrons shared |",
+        "| Melting point | High | Low |",
+      ],
+    });
+    expect(blocks[1].segments[0].kind).toBe("paragraph");
+  });
+
+  it("keeps a table and a list as separate segments when both appear", () => {
+    const blocks = parseNotes([
+      "| A | B |\n| --- | --- |\n| 1 | 2 |\n- point one\n- point two",
+    ]);
+    const kinds = blocks[0].segments.map((s) => s.kind);
+    expect(kinds).toEqual(["table", "list"]);
+  });
+
   it("readingMinutes scales with text length", () => {
     expect(readingMinutes("short")).toBe(1);
     expect(readingMinutes(Array(700).fill("word").join(" "))).toBeGreaterThanOrEqual(3);

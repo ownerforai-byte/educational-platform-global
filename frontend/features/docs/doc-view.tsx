@@ -138,6 +138,13 @@ function Segment({ segment, fontClass }: { segment: DocSegment; fontClass: strin
       </ul>
     );
   }
+  if (segment.kind === "table") {
+    // GFM rows re-joined and compiled through the same pipeline as every other
+    // surface — remark-gfm rebuilds the real <table> (with the scroll wrapper
+    // the pipeline adds), so comparison tables render as tables, never as
+    // shattered pipe paragraphs.
+    return <MathMarkdown content={segment.rows.join("\n")} className="my-4" />;
+  }
   return <MathMarkdown content={segment.body} className={fontClass} />;
 }
 
