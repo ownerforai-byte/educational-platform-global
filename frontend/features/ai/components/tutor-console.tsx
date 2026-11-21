@@ -50,11 +50,11 @@ import {
   guestChat,
   getChatHistory,
   getChatSessions,
-  saveChatHistory,
   clearChatHistory,
   enhancePrompt,
   type ChatSession,
 } from "@/lib/api/ai";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 import { ChatMessageActions } from "@/components/ai/chat-message-actions";
 import {
   ChatAttachButton,

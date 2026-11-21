@@ -3,7 +3,8 @@
 import { useRef, useState } from "react";
 import { Check, Copy, Send, Shapes, Sparkles, Square, Wand2 } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
-import { enhancePrompt, saveChatHistory, streamChat } from "@/lib/api/ai";
+import { enhancePrompt, streamChat } from "@/lib/api/ai";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 import type { AIChatMessage } from "@/types/api";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";

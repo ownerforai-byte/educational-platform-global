@@ -21,10 +21,10 @@ import {
   guestChat,
   streamChat,
   getChatHistory,
-  saveChatHistory,
   clearChatHistory,
   enhancePrompt,
 } from "@/lib/api/ai";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 import { AiStatusDot } from "@/components/ai/ai-status-dot";
 import { VoiceMicButton } from "@/components/ai/voice-mic-button";
 import { useVoiceInput } from "@/lib/hooks/use-voice-input";

@@ -22,7 +22,8 @@ import {
   type LucideIcon,
   Square,
 } from "lucide-react";
-import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
+import { CaptainAvatar } from "@/components/ai/captain-logo";
+import { useQuickToolOpen } from "@/features/shell/quick-tools";
 import {
   AiSparkBadge,
   recordAiSparkUse,
@@ -42,11 +43,11 @@ import {
   generateQuestions,
   getChatHistory,
   getChatSessions,
-  saveChatHistory,
   streamChat,
   type ChatHistoryMessage,
   type ChatSession,
 } from "@/lib/api/ai";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 import { useVoiceInput } from "@/lib/hooks/use-voice-input";
 import { AiStatusDot } from "@/components/ai/ai-status-dot";
 import { AdSlot } from "@/components/ai/ad-slot";
@@ -543,7 +544,7 @@ export function AIWidget() {
   const { user, isLoading } = useSession();
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useQuickToolOpen("veer-workspace");
   const [mode, setMode] = useState<Mode>("teach");
   const [view, setView] = useState<"home" | "thread">("home");
   const [classSlug, setClassSlug] = useState("class-11-notes");
@@ -1077,13 +1078,6 @@ export function AIWidget() {
         </section>
       )}
 
-      <button type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "Close Veer Professor" : "Open Veer Professor"} className="group flex h-14 items-center gap-2.5 rounded-2xl border border-white/10 bg-slate-950 px-3.5 text-white shadow-xl shadow-slate-950/25 transition hover:-translate-y-0.5 hover:shadow-2xl sm:px-4">
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-600"><CaptainMark className="h-5 w-5 text-white" /></span>
-        <span className="hidden text-left sm:block">
-          <span className="block text-xs font-black tracking-tight">Veer Professor</span>
-          <span className="block text-[9px] font-bold uppercase tracking-[0.14em] text-violet-300">Plus AI workspace</span>
-        </span>
-      </button>
     </div>
   );
 }

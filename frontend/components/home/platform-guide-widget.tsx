@@ -2,9 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Bot, ChevronDown, Leaf, Send, X } from "lucide-react";
+import { Bot, Leaf, Send, X } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { shouldShowPlatformGuideWidget } from "@/lib/platform-guide-widget";
+import { useQuickToolOpen } from "@/features/shell/quick-tools";
 import { key } from "@/lib/scoped-storage";
 import {
   PREFERENCES_NAMESPACE,
@@ -108,7 +109,7 @@ export function PlatformGuideWidget() {
   const pathname = usePathname() ?? "/";
   const { user, isLoading } = useSession();
   const [mounted, setMounted] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useQuickToolOpen("veer-ai");
   const [view, setView] = useState<View>("home");
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
@@ -164,7 +165,7 @@ export function PlatformGuideWidget() {
   const showHome = view === "home";
 
   return (
-    <div className="fixed right-3 bottom-safe z-[45] flex flex-col items-end gap-2 sm:right-4">
+    <div className="fixed right-3 bottom-safe-panel z-[45] flex flex-col items-end gap-2 sm:right-4">
       {open && (
         <div
           className="flex h-[min(calc(100dvh-6.75rem),54rem)] w-[min(calc(100vw-0.75rem),34rem)] flex-col overflow-hidden rounded-2xl border border-dashed border-emerald-700/40 bg-card/98 shadow-2xl shadow-emerald-950/20 backdrop-blur-md sm:h-[min(calc(100dvh-6.5rem),58rem)] sm:w-[min(calc(100vw-1.5rem),42rem)] md:w-[min(calc(100vw-2rem),48rem)]"
@@ -326,22 +327,6 @@ export function PlatformGuideWidget() {
         </div>
       )}
 
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        className="group flex h-14 items-center gap-2 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-600 to-teal-700 px-4 text-white shadow-lg shadow-emerald-950/25 transition hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        aria-expanded={open}
-        aria-label={open ? "Close Veer AI" : "Open Veer AI personal guide"}
-      >
-        {open ? (
-          <ChevronDown className="h-5 w-5" />
-        ) : (
-          <>
-            <Bot className="h-5 w-5" />
-            <span className="text-xs font-bold tracking-wide">Veer AI</span>
-          </>
-        )}
-      </button>
     </div>
   );
 }

@@ -18,6 +18,7 @@ import { NotificationBell } from "./notification-bell";
 import { UserNav } from "./user-nav";
 import { PlatformGuideWidget } from "@/components/home/platform-guide-widget";
 import { AIWidget } from "./ai-widget";
+import { QuickToolsLauncher } from "@/features/shell/quick-tools-launcher";
 import { Footer } from "./footer";
 import { useMediaQuery } from "@/lib/use-media-query";
 import { key } from "@/lib/scoped-storage";
@@ -222,6 +223,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
       {!isChatRoom && <PlatformGuideWidget />}
       <AIWidget />
+      <QuickToolsLauncher />
     </div>
   );
 }

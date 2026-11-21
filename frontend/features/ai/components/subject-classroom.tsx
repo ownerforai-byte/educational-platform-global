@@ -24,10 +24,10 @@ import {
   enhancePrompt,
   getChatHistory,
   getChatSessions,
-  saveChatHistory,
   streamChat,
   type ChatSession,
 } from "@/lib/api/ai";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 import type { AIChatMessage } from "@/types/api";
 import {
   readGuestCount,

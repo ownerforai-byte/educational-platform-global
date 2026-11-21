@@ -1,0 +1,80 @@
+import { randomUUID } from "node:crypto";
+import { getAdminClient, isMissingTable } from "./base.repository.js";
+
+export type SocialNotificationRow = {
+  id: string;
+  actor_id: string | null;
+  kind: string;
+  post_id: string | null;
+  comment_id: string | null;
+  read_at: string | null;
+  created_at: string;
+};
+
+export async function insertSocialNotification(row: {
+  userId: string;
+  actorId?: string | null;
+  kind: string;
+  postId?: string | null;
+  commentId?: string | null;
+}): Promise<{ missingTable: boolean; error: { message: string } | null }> {
+  const { error } = await getAdminClient().from("social_notifications").insert({
+    id: randomUUID(),
+    user_id: row.userId,
+    actor_id: row.actorId ?? null,
+    kind: row.kind,
+    post_id: row.postId ?? null,
+    comment_id: row.commentId ?? null,
+    created_at: new Date().toISOString(),
+  });
+  return {
+    missingTable: Boolean(error && isMissingTable(error)),
+    error: error ? { message: error.message ?? "insert failed" } : null,
+  };
+}
+
+export async function listSocialNotifications(
+  userId: string,
+  opts: { cursor: number; limit: number; unreadOnly: boolean },
+): Promise<{ missingTable: boolean; error: { message: string } | null; rows: SocialNotificationRow[] }> {
+  let query = getAdminClient()
+    .from("social_notifications")
+    .select("id, actor_id, kind, post_id, comment_id, read_at, created_at")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false })
+    .range(opts.cursor, opts.cursor + opts.limit);
+  if (opts.unreadOnly) query = query.is("read_at", null);
+  const { data, error } = await query;
+  return {
+    missingTable: Boolean(error && isMissingTable(error)),
+    error: error ? { message: error.message ?? "list failed" } : null,
+    rows: (data ?? []) as SocialNotificationRow[],
+  };
+}
+
+export async function countUnreadSocialNotifications(userId: string): Promise<number> {
+  const { count } = await getAdminClient()
+    .from("social_notifications")
+    .select("id", { count: "exact", head: true })
+    .eq("user_id", userId)
+    .is("read_at", null);
+  return typeof count === "number" ? count : 0;
+}
+
+export async function markSocialNotificationsRead(
+  userId: string,
+  opts: { all: boolean; ids: string[] },
+): Promise<{ missingTable: boolean; error: { message: string } | null }> {
+  const now = new Date().toISOString();
+  let query = getAdminClient()
+    .from("social_notifications")
+    .update({ read_at: now })
+    .eq("user_id", userId)
+    .is("read_at", null);
+  if (!opts.all && opts.ids.length > 0) query = query.in("id", opts.ids.slice(0, 100));
+  const { error } = await query;
+  return {
+    missingTable: Boolean(error && isMissingTable(error)),
+    error: error ? { message: error.message ?? "update failed" } : null,
+  };
+}

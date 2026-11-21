@@ -82,6 +82,7 @@ test.describe("E2E smoke", () => {
     // matched both (strict-mode violation) and its "Veer chat" panel no longer
     // exists. Target the Professor surface explicitly and assert its real aria
     // label, then close it so the mobile topic tabs below are not overlaid.
+    await page.getByRole("button", { name: "Quick tools", exact: true }).click();
     await page.getByRole("button", { name: "Open Veer Professor", exact: true }).click();
     const workspace = page.getByLabel("Veer Professor workspace");
     await expect(workspace).toBeVisible();

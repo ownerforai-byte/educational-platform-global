@@ -459,7 +459,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     const threads = guestThreadsRef.current;
     const idx = threads.findIndex((t) => t.session === sessionName);
     if (idx >= 0) {
-      const updated: GuestThread = {
+      const updated: DeviceChatThread = {
         ...threads[idx],
         messages: [...threads[idx].messages, ...pair],
         lastMessageAt: now,
