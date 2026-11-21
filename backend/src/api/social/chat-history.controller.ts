@@ -5,10 +5,9 @@ import { asyncHandler } from "../../middleware/asyncHandler";
 import * as communityService from "../../services/community.service.js";
 
 /**
- * Per-user AI chat history, persisted in Supabase (`chat_messages` table).
- * All queries are scoped to the authenticated user — no one can read or write
- * another user's history. If the table has not been migrated yet, the router
- * degrades gracefully (empty history / skip saves) instead of erroring.
+ * Per-user AI chat history, mirrored to Supabase (`chat_messages`) and durably
+ * persisted in Cloudflare R2. All queries are scoped to the authenticated user;
+ * when Supabase is unavailable, history falls back to the user's R2 objects.
  */
 const router = Router();
 
