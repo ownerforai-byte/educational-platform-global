@@ -1496,7 +1496,10 @@ export class AIService {
    * the order with AI_CHAIN_ORDER (comma-separated provider names).
    */
   private chainProviders(): AIProvider[] {
-    const defaultOrder = "groq,gemini,cerebras,agnes,cloudflare";
+    // glm-5.3-flash sits right behind Agnes (owner 2026-11-21: "add here 5-3 and
+    // in veer chat"): a free reasoning model that answers chat properly, so it
+    // outranks the cloudflare/keyless links instead of queueing behind them.
+    const defaultOrder = "groq,gemini,cerebras,agnes,zai,cloudflare";
     const configured = (process.env.AI_CHAIN_ORDER || defaultOrder)
       .split(",")
       .map((s) => s.trim().toLowerCase())
@@ -1687,6 +1690,89 @@ export class AIService {
       );
       return null;
     }
+  }
+
+  /**
+   * Fan-out: every configured lane answers the SAME prompt in parallel, then ONE
+   * synthesizer merges the drafts into a single answer.
+   *
+   * Owner 2026-11-21: "for that one prompt all models activated and do their
+   * work and finally it is represented by one". The Diagram Hub knowledge pass
+   * is the first caller: its brief is what the drawing reads, so it is worth
+   * several independent reasoning attempts merged into one.
+   *
+   * Lanes run in parallel, so wall-clock is the SLOWEST lane, not the sum. The
+   * synthesizer defaults to the strongest reasoning lane (z.ai · glm-5.3-flash,
+   * owner 2026-11-21: "wire it where most reasoning is needed"). Returns "" when
+   * every lane failed — callers treat that as "no brief" and carry on.
+   */
+  async ensembleChat(
+    messages: AIChatMessage[],
+    opts: { timeoutMs?: number; synthesizer?: string; maxLanes?: number } = {},
+  ): Promise<string> {
+    // `internal` is the keyword fallback and would only add noise; the diagram
+    // hub lane is itself a single Gemini lane, so it does not need a vote.
+    const skip = new Set(["internal", DIAGRAM_HUB_PROVIDER]);
+    const laneNames = [...this.providers.keys()].filter((n) => !skip.has(n)).slice(0, opts.maxLanes ?? 12);
+    const perLaneMs = opts.timeoutMs ?? 75_000;
+
+    const attempts = await Promise.all(
+      laneNames.map(async (name) => {
+        const provider = this.providers.get(name)!;
+        const timed = new Promise<string>((resolve) => setTimeout(() => resolve(""), perLaneMs));
+        try {
+          const text = await Promise.race([provider.chat(messages), timed]);
+          return { name, text: (text ?? "").trim() };
+        } catch (err) {
+          console.warn(
+            `[ensemble] lane "${name}" failed:`,
+            err instanceof Error ? err.message : err,
+          );
+          return { name, text: "" };
+        }
+      }),
+    );
+
+    const answers = attempts.filter((a) => a.text.length > 0);
+    if (answers.length === 0) return "";
+    if (answers.length === 1) {
+      this.lastAnsweredBy = answers[0].name;
+      return answers[0].text;
+    }
+
+    // Prefer the reasoning lane as editor; fall back to whichever lane answered.
+    const wanted = (opts.synthesizer ?? "zai").toLowerCase();
+    const editor = this.providers.get(wanted) ?? this.providers.get(answers[0].name)!;
+    const drafts = answers
+      .map((a, i) => `--- DRAFT ${i + 1} (${a.name}) ---\n${a.text.slice(0, 6_000)}`)
+      .join("\n\n");
+    const merge: AIChatMessage[] = [
+      ...messages,
+      {
+        role: "user",
+        content: [
+          `${answers.length} independent models answered the request above. Their drafts follow.`,
+          "",
+          drafts,
+          "",
+          "Merge them into ONE final answer that obeys the format the request demands exactly.",
+          "Rules: keep every distinct correct fact, mechanism and numeric value any draft has; drop contradictions in favour of the most specific draft; never mention drafts, models or that a merge happened; cover every required field — a field present in any draft must appear in the final answer.",
+        ].join("\n"),
+      },
+    ];
+    try {
+      const merged = (await editor.chat(merge)).trim();
+      if (merged) {
+        this.lastAnsweredBy = editor.name;
+        return merged;
+      }
+    } catch (err) {
+      console.warn("[ensemble] merge failed:", err instanceof Error ? err.message : err);
+    }
+    // Merge unavailable: the longest draft is the safest single stand-in.
+    const best = answers.reduce((a, b) => (b.text.length > a.text.length ? b : a));
+    this.lastAnsweredBy = best.name;
+    return best.text;
   }
 
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {

@@ -247,7 +247,11 @@ router.post("/", requireAuth, requireVeerChatTier(), async (req: Request, res: R
             subject: diagramSubject,
             conversationTail,
             priorDiagrams: messages.filter((m) => m.role === "assistant").length,
-            chat: (turns) => aiService.chat(DIAGRAM_HUB_PROVIDER, turns),
+            // Owner 2026-11-21: "for that one prompt all models activated and do
+            // their work and finally it is represented by one" — every lane
+            // reasons about this diagram in parallel and glm-5.3-flash edits the
+            // drafts into the ONE brief the drawing reads.
+            chat: (turns) => aiService.ensembleChat(turns),
           })
         : Promise.resolve(null),
     ]);

@@ -222,6 +222,19 @@ describe("Diagram Hub free Gemini lane", () => {
     expect(DIAGRAM_HUB_RULES).toContain("ANCHORED");
     expect(DIAGRAM_HUB_RULES).toContain("FRESHNESS");
     // The knowledge stays in the drawing — never an essay beside it.
-    expect(DIAGRAM_HUB_RULES).toContain("picture is the answer");
+    expect(DIAGRAM_HUB_RULES).toContain("Skip the essay");
+    // Owner 2026-11-21: the picture is no longer only a picture — every part is
+    // taught through all four levels, in this fixed order.
+    expect(DIAGRAM_HUB_RULES).toContain("CONCEPT LADDER");
+    expect(DIAGRAM_HUB_RULES).toContain("GENERAL —");
+    expect(DIAGRAM_HUB_RULES).toContain("SPECIAL —");
+    expect(DIAGRAM_HUB_RULES).toContain("CONDITIONAL —");
+    expect(DIAGRAM_HUB_RULES).toContain("SPECIFIC —");
+    expect(DIAGRAM_HUB_RULES).toContain("DEPTH LAW");
+    // A level may never be dropped for space, and the quartet keeps its order.
+    const order = ["GENERAL —", "SPECIAL —", "CONDITIONAL —", "SPECIFIC —"];
+    const at = order.map((l) => DIAGRAM_HUB_RULES.indexOf(l));
+    expect(at).toEqual([...at].sort((a, b) => a - b));
+    expect(DIAGRAM_HUB_RULES).toContain("never invent a fifth level");
   });
 });

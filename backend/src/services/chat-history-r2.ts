@@ -131,7 +131,9 @@ async function readSessions(key: string): Promise<Map<string, string>> {
 async function writeAccountedJson(userId: string, key: string, value: unknown): Promise<boolean> {
   const body = Buffer.from(JSON.stringify(value));
   const reserved = await accountStorageObject(userId, key, body.byteLength, {
-    email: null,
+    // Unknown account here: the chat-history writer only has a userId, and an
+    // empty email/role simply matches no exemption, so the default quota applies.
+    email: "",
     role: null,
     plan: null,
   });
