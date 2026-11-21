@@ -49,6 +49,19 @@ import { CellCyclePhases } from "./cell-cycle-phases";
 import { MeiosisIStages } from "./meiosis-one-stages";
 import { CrossingOver } from "./crossing-over";
 import { MitosisVsMeiosisOutcome } from "./mitosis-vs-meiosis-outcome";
+import { BacterialShapes } from "./bacterial-shapes";
+import { BacterialNutritionModes } from "./bacterial-nutrition-modes";
+import { BacterialGrowthCurve } from "./bacterial-growth-curve";
+import { BinaryFissionRecombination } from "./binary-fission-recombination";
+import { VirusShapeTypes } from "./virus-shape-types";
+import { LyticLysogenicCycle } from "./lytic-lysogenic-cycle";
+import { VirusVsBacteria } from "./virus-vs-bacteria";
+import { HivRetrovirus } from "./hiv-retrovirus";
+import { RecombinantDnaSteps } from "./recombinant-dna-steps";
+import { PcrSteps } from "./pcr-steps";
+import { CloningVectorPlasmid } from "./cloning-vector-plasmid";
+import { IndustrialMicrobiology } from "./industrial-microbiology";
+import { BiotechApplicationsMap } from "./biotech-applications-map";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -393,6 +406,34 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Labelled rod-shaped bacterial cell showing capsule, peptidoglycan wall, plasma membrane, nucleoid DNA, ribosomes, mesosome, pili and flagellum",
         keyword: "nucleoid",
       },
+      {
+        Component: BacterialShapes,
+        caption:
+          "Shape is the first ID step: cocci named by arrangement (single, diplo-, strepto-, staphylo-), rods (bacilli), commas (vibrio) and spirals (spirillum) — combined with the Gram reaction for lab identification.",
+        alt: "Bacterial shapes and arrangements: cocci in singles pairs chains and clusters, bacilli, vibrio and spirillum",
+        keyword: "cocci",
+      },
+      {
+        Component: BacterialNutritionModes,
+        caption:
+          "The nutrition map: autotrophs make their own food — photoautotrophs from light (cyanobacteria) or chemoautotrophs from inorganic chemistry — while heterotrophs feed as saprophytes, parasites or symbionts.",
+        alt: "Classification tree of bacterial nutrition with photoautotroph chemoautotroph saprophytic parasitic and symbiotic examples",
+        keyword: "cyanobacteria",
+      },
+      {
+        Component: BacterialGrowthCurve,
+        caption:
+          "The growth curve in a closed batch: lag (adapting), log (exponential doubling — most antibiotic-sensitive), stationary (nutrients run out) and decline (waste wins). Label it — a standard NEB diagram question.",
+        alt: "Bacterial growth curve with lag log stationary and decline phases annotated",
+        keyword: "growth curve",
+      },
+      {
+        Component: BinaryFissionRecombination,
+        caption:
+          "Reproduction two ways: binary fission copies one cell into two identical ones in ~20 minutes, while conjugation, transformation and transduction swap genes without making new cells.",
+        alt: "Binary fission sequence plus conjugation transformation and transduction recombination routes",
+        keyword: "binary fission",
+      },
     ],
   },
   "virus-general-introduction-structure-and-importance-of-virus-bacteriophage": {
@@ -404,6 +445,74 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "A T4-type bacteriophage: the polyhedral head stores dsDNA, the contractile sheath injects it, and the tail fibres anchor to the host's wall — a complete parasite with no metabolism of its own.",
         alt: "T4 bacteriophage with labelled head, DNA, collar, sheath, base plate and tail fibres on a bacterial surface",
         keyword: "capsid",
+      },
+      {
+        Component: VirusShapeTypes,
+        caption:
+          "Four ways to pack a genome: helical rods (TMV), icosahedral shells (adenovirus), membrane-enveloped spheres with spikes (influenza, HIV) and the complex head-plus-tail syringe of T4.",
+        alt: "Helical icosahedral enveloped and complex virus architectures compared",
+        keyword: "TMV",
+      },
+      {
+        Component: LyticLysogenicCycle,
+        caption:
+          "Two phage strategies: the lytic cycle hijacks and bursts the host in ~25 minutes; the lysogenic cycle hides as a prophage in the host chromosome, replicating silently until stress switches it to lytic.",
+        alt: "Lytic versus lysogenic bacteriophage cycles side by side with induction pathway",
+        keyword: "lytic",
+      },
+      {
+        Component: VirusVsBacteria,
+        caption:
+          "Why antibiotics fail against flu: viruses are non-cellular, non-metabolic and untouched by antibiotics, while bacteria are living cells with walls and ribosomes to attack — the clinical consequence of the comparison.",
+        alt: "Comparison table of virus versus bacteria across size structure genome metabolism reproduction and antibiotic response",
+        keyword: "lytic",
+      },
+      {
+        Component: HivRetrovirus,
+        caption:
+          "HIV, the retrovirus: gp120 spikes dock on helper-T CD4 receptors, reverse transcriptase writes RNA backwards into DNA, the provirus hides in the genome, and dying T cells collapse immunity into AIDS.",
+        alt: "HIV structure with envelope spikes capsid RNA and reverse transcriptase plus replication steps",
+        keyword: "HIV",
+      },
+    ],
+  },
+  "impacts-of-biotechnology-in-the-field-of-microbiology": {
+    title: "Impacts of biotechnology in microbiology",
+    figures: [
+      {
+        Component: RecombinantDnaSteps,
+        caption:
+          "Recombinant DNA in five steps: restriction enzymes cut donor gene and plasmid into matching sticky ends, ligase seals them, bacteria take up the chimera, and selected clones churn out the protein.",
+        alt: "Recombinant DNA technology steps from donor DNA and plasmid through ligation to transformed bacterial clones",
+        keyword: "recombinant",
+      },
+      {
+        Component: PcrSteps,
+        caption:
+          "PCR's three-temperature cycle — denature at 94 °C, anneal primers at 55 °C, extend with heat-stable Taq at 72 °C — doubles the target DNA every cycle, reaching a billion copies in thirty.",
+        alt: "PCR cycle diagram with denaturation annealing and extension steps and exponential amplification",
+        keyword: "PCR",
+      },
+      {
+        Component: CloningVectorPlasmid,
+        caption:
+          "Anatomy of a cloning vector: an origin of replication so it copies itself, an antibiotic-resistance marker to select transformants, and a multiple cloning site where the foreign gene is spliced in.",
+        alt: "Plasmid cloning vector with ori antibiotic marker multiple cloning site and inserted gene in a bacterium",
+        keyword: "plasmid",
+      },
+      {
+        Component: IndustrialMicrobiology,
+        caption:
+          "Microbes as factories: a stirred, aseptic fermenter holds pH, temperature and oxygen steady while the culture converts sugar medium into antibiotics, enzymes, vitamins, single-cell protein and biofuels.",
+        alt: "Industrial fermenter with stirrer pH temperature and aeration controls and product list",
+        keyword: "industry",
+      },
+      {
+        Component: BiotechApplicationsMap,
+        caption:
+          "One toolkit, four arenas: insulin and vaccines in medicine, Bt cotton and golden rice in agriculture, oil-eating bacteria in the environment, and DNA fingerprinting in forensics.",
+        alt: "Four panels mapping biotechnology applications in medicine agriculture environment and forensics",
+        keyword: "vaccine",
       },
     ],
   },
