@@ -7,72 +7,34 @@
   "source": "authored-v2",
   "generatedAt": "2026-11-20T00:00:00.000Z",
   "notes": [
-    "**Scope.** Percentage composition from molecular formula — Foundation and Fundamentals, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: percentage composition · one worked example · one misconception each.",
-    "# Percentage composition from molecular formula\n\n## 1. Topic Introduction\nA fertilizer bag shouts \"46-0-0\", a medicine strip lists milligrams per tablet, a steel specification demands 0.2% carbon — all are **percentage composition**: the mass share of each element in a compound. It is the most commercial calculation in chemistry, deciding what farmers pay for, what patients swallow, and what factories must guarantee.\n\nThe formula is one line — (element mass ÷ molar mass) × 100 — but it runs both directions: forward from formula to percentages (is this urea really 46% N?), and backward from percentage analysis to empirical and molecular formulae (what is this unknown?). This topic closes the foundation unit by turning every earlier concept into numbers.\n\n**Why it matters.** Percentage composition is the quality-control language of the chemical industry. It connects the molecular formula (which atoms, how many) to the commercial specification (what the buyer pays for). Every subsequent unit — Stoichiometry (yield, purity), Organic (combustion analysis), Applied (fertilizer grades, cement purity) — uses this forward/backward logic.\n\n**What you will learn:** (i) percentage composition from formula; (ii) the urea 46% derivation; (iii) composition → empirical formula; (iv) composition + molar mass → molecular formula; (v) applications in fertilizers, drugs and industry.\n\n**Learning outcomes.** You can: compute any % composition; prove urea's 46% N; derive empirical and molecular formulae from analysis data; and audit a label claim.",
-    "## 2. Fundamental Conceptual Understanding\n\n### What percentage composition is\nThe mass percentage of each element in a compound: %E = (total mass of element E in one mole ÷ molar mass of compound) × 100. The percentages of all elements always sum to 100 — the built-in answer check.\n\n### Why it exists\nChemical formulas tell *which* atoms and *how many*, but commerce and regulation speak in *mass percentages*. A farmer buys nitrogen by the kilogram, not by the mole. A drug label lists milligrams per tablet. A steel spec demands 0.2% carbon. Percentage composition translates molecular identity into commercial language.\n\n### How it works\nForward (formula → %): From molecular formula, get M_r. For each element, (atoms × A_r) ÷ M_r × 100 = %. Sum must be 100. Backward (% → formula): % → grams per 100 g → moles (÷ A_r) → simplest ratio → empirical formula. With M_r (from vapour density, mass spec, colligative properties): n = M_r/E_r → molecular formula.\n\n### Where it occurs\nFertilizer bags (46-0-0), drug labels (mg per tablet), steel certificates (0.2% C), cement quality (CaO%), water analysis (ppm), air quality (%), food labels (%), environmental regulations (ppm/ppb).\n\n### What its components are\nMolecular formula, molar mass, element masses per mole, percentage values, empirical formula, molecular formula.\n\n### How components interact\nFormula → M_r → element masses → % → sum to 100 (check). % → empirical → M_r → n = M_r/E_r → molecular. Combustion analysis gives %C (×12/44) and %H (×2/18); %O by difference. The loop closes: formula ↔ % ↔ formula.\n\n### What makes it biologically important\nDrug potency: % active ingredient in tablet. Nutrient density: % protein (N × 6.25), % fat, % carbohydrate. Blood: % haemoglobin saturation, % CO₂. Quality control: assay % of API in drug. The body reads chemistry in percentages — enzymes saturate at % substrate, receptors occupy at % ligand.",
-    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Explanation | Importance |\n|------|-------------------|-------------|-------------|\n| Percentage composition | Mass % of each element in a compound | %E = (mass of E per mole ÷ M_r) × 100; Σ%E = 100 | Translates formula to commercial spec |\n| Forward calculation | Formula → percentage | Known formula, compute % | Quality audit of label claims |\n| Backward calculation | Percentage → formula | Known % (analysis), find formula | Structure elucidation of unknowns |\n| Combustion analysis | Burn sample → weigh CO₂, H₂O → %C, %H | %C = mass CO₂ × 12/44; %H = mass H₂O × 2/18; %O by difference | Experimental source of % data |\n| Vapour density (VD) | Mass of gas volume ÷ mass of same volume H₂ (same T,P) | M_r = 2 × VD (H₂ = 2 scale) | Classic M_r determination for volatiles |\n| Empirical formula | Simplest whole-number atom ratio | From % data: % → g → mol → ratio | First step in formula identification |\n| Molecular formula | Actual atom numbers in molecule | Empirical × n; n = M_r/E_r | Unique molecular identity |\n| % yield | (Experimental ÷ Theoretical) × 100 | Compares actual to stoichiometric max | Process efficiency |\n| Assay | Quantitative determination of main component | Titration, HPLC, spectroscopy | Drug/fertilizer/cement quality control |\n| Purity | % of desired substance in sample | Assay % = purity if single component | Commercial grade definition |\n\n**Keywords:** percentage composition, forward/backward, combustion analysis, vapour density, empirical formula, molecular formula, urea 46%, H₂SO₄ shares, CaCO₃ audit, O by difference, 12/44, 2/18, M_r = 2×VD, n = M_r/E_r.",
-    "## 4. Detailed Explanation\n\n### 4.1 Percentage composition (forward direction)\n\n| Compound | M_r | % calculation | Result |\n|----------|-----|---------------|--------|\n| H₂SO₄ | 98 | %H = 2/98×100 = 2.04%; %S = 32/98×100 = 32.65%; %O = 64/98×100 = 65.31% | Sum = 100.00 ✓ |\n| Urea CO(NH₂)₂ | 60 | %N = 28/60×100 = 46.67%; %C = 12/60×100 = 20.00%; %O = 16/60×100 = 26.67%; %H = 4/60×100 = 6.67% | Sum = 100.01 ✓ (rounding) |\n| NH₄NO₃ | 80 | %N = 28/80×100 = 35.00%; %H = 4/80×100 = 5.00%; %O = 48/80×100 = 60.00% | Sum = 100.00 ✓ |\n| CaCO₃ | 100 | %Ca = 40/100×100 = 40%; %C = 12/100×100 = 12%; %O = 48/100×100 = 48% | Sum = 100% |\n| Glucose C₆H₁₂O₆ | 180 | %C = 72/180×100 = 40%; %H = 12/180×100 = 6.67%; %O = 96/180×100 = 53.33% | Sum = 100.00 ✓ |\n\n**Assumptions box:** Formula assumed correct and pure; percentages are mass/mass (w/w); analytical data assumed dry and impurity-free unless stated; percentages sum to 100 within rounding.\n\n### 4.2 From analysis back to formula (reverse direction)\n\n**Step-by-step algorithm:**\n1. **% → grams:** Assume 100 g sample → % = grams of each element.\n2. **Grams → moles:** Divide each by its A_r (C/12, H/1, O/16, N/14, S/32, etc.).\n3. **Moles → simplest ratio:** Divide all by smallest mole value. If decimals remain, multiply by 2, 3, etc. to clear to whole numbers.\n4. **Write empirical formula** from the ratio.\n5. **Find E_r** (sum of A_r in empirical formula).\n6. **Obtain M_r** (given, or from vapour density M_r = 2×VD, or mass spec, or colligative properties).\n7. **n = M_r / E_r** (must be integer).\n8. **Molecular formula = n × empirical formula**.\n\n**Worked example — unknown organic:**\n- Data: 40% C, 6.7% H, 53.3% O\n- Per 100 g: 40 g C, 6.7 g H, 53.3 g O\n- Moles: C = 40/12 = 3.33; H = 6.7/1 = 6.7; O = 53.3/16 = 3.33\n- Ratio ÷3.33: C 1, H 2, O 1 → **CH₂O** (E_r = 30)\n- If M_r = 180: n = 180/30 = 6 → **C₆H₁₂O₆** (glucose)\n- If M_r = 90: n = 90/30 = 3 → **C₃H₆O₃** (lactic acid)\n- If M_r = 30: n = 1 → **CH₂O** (formaldehyde)\n\n**Worked example — combustion analysis:**\n- 4.4 g sample → 8.8 g CO₂ + 3.6 g H₂O\n- %C = 8.8 × 12/44 × 100 / 4.4 = 2.4 × 100 / 4.4 = **54.55%**\n- %H = 3.6 × 2/18 × 100 / 4.4 = 0.4 × 100 / 4.4 = **9.09%**\n- %O = 100 − 54.55 − 9.09 = **36.36%**\n- Moles: C 54.55/12 = 4.55; H 9.09/1 = 9.09; O 36.36/16 = 2.27\n- Ratio ÷2.27: C 2, H 4, O 1 → **C₂H₄O** (E_r = 44)\n- If M_r = 88: n = 2 → **C₄H₈O₂** (ethyl acetate, etc.)\n\n### 4.3 Fertilizer grade — the commercial % composition\n| Fertilizer | Formula | M_r | %N | %P₂O₅ | %K₂O | Label |\n|------------|---------|-----|-----|--------|------|------|\n| Urea | CO(NH₂)₂ | 60 | 46.67% | — | — | 46-0-0 |\n| Ammonium nitrate | NH₄NO₃ | 80 | 35.00% | — | — | 35-0-0 |\n| DAP | (NH₄)₂HPO₄ | 132 | 21.2% | 46% | — | 18-46-0 |\n| MOP | KCl | 74.5 | — | — | 60% K₂O | 0-0-60 |\n| SSP | Ca(H₂PO₄)₂·H₂O + CaSO₄ | — | — | 16% P₂O₅ | — | 0-16-0 |\n\n**Nepal context:** NARC recommends 100 kg urea + 50 kg DAP + 25 kg MOP per hectare for wheat = 46 + 9 + 0 = 55 kg N, 23 kg P₂O₅, 15 kg K₂O per ha.\n\n### 4.4 Comparison: forward vs backward\n| Direction | Input | Output | Use case |\n|-----------|-------|--------|----------|\n| Forward | Molecular formula | % composition | Quality audit, label verification, commercial spec |\n| Backward | % composition (analysis) | Empirical formula | Unknown identification, structure elucidation |\n| Backward + M_r | % + M_r | Molecular formula | New compound characterization, drug development |\n| Combustion | CO₂, H₂O masses | %C, %H, (%O by diff) | Organic analysis lab standard |\n| Vapour density | VD | M_r = 2×VD | Volatile unknowns |\n\n### 4.5 Common traps and how to avoid them\n| Trap | Wrong | Correct |\n|------|-------|---------|\n| Sum ≠ 100 | Forgetting an element | Always check sum; missing = that element |\n| Mole % vs mass % | Using mole ratios directly | Convert to mass via A_r first |\n| O by difference | Assuming only C,H,O present | State assumption; N/S need separate estimation |\n| Clearing decimals | Rounding instead of multiplying | Multiply by 2, 3, 4... to get integers |\n| n not integer | Rounding M_r or E_r | Re-check data; M_r must be multiple of E_r |\n| Same empirical | Assuming same compound | CH₂O family: glucose, formaldehyde, lactic acid — verify M_r |\n| VD scale | Using air = 1 instead of H₂ = 2 | VD always H₂ = 2 for M_r = 2×VD |\n| Hydrates | Forgetting water of crystallization | Include H₂O in formula mass for % |\n\n### 4.6 Worked numericals (Given → Formula → Substitution → Answer with unit)\n1. **H₂SO₄ shares.** M_r 98: %H = 2/98×100 = **2.04%**; %S = 32/98×100 = **32.65%**; %O = 64/98×100 = **65.31%**; sum 100.00 ✓.\n2. **Urea proof.** M_r 60: %N = 28/60×100 = **46.67%** ≈ 46 — the bag verified; %C 20%, %O 26.67%, %H 6.67%.\n3. **Ammonium nitrate check.** NH₄NO₃, M_r 80: %N = 28/80×100 = **35%** — poorer than urea per kilogram, the comparison farmers pay for.\n4. **Empirical from analysis.** 40% C, 6.7% H, 53.3% O → 40/12 = 3.33; 6.7/1 = 6.7; 53.3/16 = 3.33 → ÷3.33 → 1:2:1 → **CH₂O**.\n5. **Molecular with M_r.** Above + M_r 180 → E_r 30 → n = 6 → **C₆H₁₂O₆**. With M_r 90 → n = 3 → **C₃H₆O₃** (lactic acid shares the ratio — empirical ≠ identity).\n6. **Combustion analysis.** 4.4 g organic → 8.8 g CO₂ + 3.6 g H₂O: C = 8.8×12/44 = 2.4 g (**54.5%**); H = 3.6×2/18 = 0.4 g (**9.1%**); O by difference 36.4% → C:H:O = 4.54:9.1:2.27 → ÷2.27 → 2:4:1 → **C₂H₄O**.\n7. **Fertilizer comparison.** Urea N% = 46.67%; NH₄NO₃ N% = 35% — urea delivers more N per rupee at equal price per kg.\n8. **Limestone audit.** CaCO₃: %Ca = 40/100 = 40%. A claim of \"45% Ca\" means impurity or different mineral.\n",
-    "## 5. Biological Examples\n\n| Example | Sector | Chemistry | Why it belongs |\n|---------|--------|-----------|----------------|\n| Urea 46-0-0 bag | Agriculture | CO(NH₂)₂, M_r 60: %N = 28/60×100 = 46.67% | The number behind the label — derived, not memorised |\n| Ammonium nitrate 35-0-0 | Agriculture | NH₄NO₃, M_r 80: %N = 28/80×100 = 35% | Poorer N per kg than urea; farmers compare |\n| H₂SO₄ battery acid | Industry | M_r 98: %H 2.04%, %S 32.65%, %O 65.31% | Concentrated acid ~98% = M_r basis |\n| Cement CaO audit | Industry | CaCO₃ → CaO + CO₂; %Ca in CaCO₃ = 40% | Quicklime purity checked by %Ca |\n| Glucose in blood | Medicine | C₆H₁₂O₆, M_r 180: %C 40%, %H 6.67%, %O 53.33% | Blood glucose 5 mmol/L = 90 mg/dL |\n| Protein N × 6.25 | Nutrition | %N in protein ≈ 16% → factor 6.25 | Kjeldahl method: %N × 6.25 = % protein |\n| CO₂ in blood gas | Medicine | pCO₂ = 40 mmHg → [CO₂] = k_H × pCO₂ | Henry's law; %CO₂ in expired air ≈ 4% |\n| Ethanol in breath | Law enforcement | Breathalyzer: % ethanol in breath → blood alcohol | Partition coefficient 2100:1 (blood:breath) |\n\n**Nepal-context quantification:**\n- 100 kg urea/ha = 46.67 kg N — percentage composition deciding wheat yield\n- 100 kg limestone → 56 kg quicklime + 44 kg CO₂: kiln budget and carbon bill\n- One ORS sachet per litre: formulation chemistry against dehydration\n- 4.4 g organic → 8.8 g CO₂ + 3.6 g H₂O → C₂H₄O empirical from combustion",
-    "## 6. Chemical Processes and Mechanisms\n\n### Process: Combustion analysis (organic elemental analysis)\n1. **Definition:** Burning a known mass of organic compound in excess oxygen; absorbing and weighing the CO₂ and H₂O produced to determine %C and %H.\n2. **Location:** Organic analysis laboratory; also automated CHNS/O analysers.\n3. **Requirements:** Combustion furnace (CuO, 800°C), O₂ carrier gas, H₂O absorber (Mg(ClO₄)₂ or anhydrous CaCl₂), CO₂ absorber (KOH/Ascarite), analytical balance (±0.1 mg).\n4. **Components:** Sample boat, combustion tube, absorption train, balance, data logger.\n5. **Sequential steps:** (i) Weigh empty absorbers; (ii) Weigh ~0.1 g sample accurately; (iii) Introduce sample to furnace in O₂ stream; (iv) Combustion: C_xH_yO_z + (x + y/4 − z/2)O₂ → xCO₂ + (y/2)H₂O; (v) Gases pass through H₂O absorber (mass gain = H₂O mass); (vi) Then through CO₂ absorber (mass gain = CO₂ mass); (vii) Re-weigh absorbers; (viii) Calculate: %C = Δm_CO₂ × (12/44) × 100 / m_sample; %H = Δm_H₂O × (2/18) × 100 / m_sample; %O = 100 − %C − %H − %N − %S − ...\n6. **Result:** %C, %H, (%O by difference) — the data for empirical formula determination.\n7. **Significance:** The classic experimental source of composition data for unknown organic compounds; automated analysers do this in minutes for QC.\n\n### Process: Quality audit by percentage composition\n1. **Definition:** Verifying a product's label claim by determining its actual % composition and comparing to specification.\n2. **Location:** Fertilizer plant QC lab, cement plant lab, pharmaceutical QC, food testing lab.\n3. **Requirements:** Reference methods (titration, gravimetry, spectroscopy), certified reference materials, calibrated instruments.\n4. **Components:** Sample divider, grinder, balance, titration setup / HPLC / ICP-OES / XRF, SOPs.\n5. **Sequential steps:** (i) Obtain representative sample (coning/quartering); (ii) Prepare test portion (grind, dry, weigh); (iii) Run assay per official method (e.g., urea %N by Kjeldahl/distillation); (iv) Calculate % = (measured / theoretical) × 100; (v) Compare to spec (e.g., urea ≥ 46% N); (vi) Report pass/fail; (vii) If fail, trigger investigation (raw material, process, sampling).\n6. **Result:** Certificate of analysis (CoA) with % composition, pass/fail vs spec.\n7. **Significance:** Legal requirement for trade; protects farmer (fertilizer), patient (drug), builder (cement), consumer (food).\n\n### Process: Empirical → molecular formula determination (structure elucidation)\n1. **Definition:** Identifying a compound's molecular formula from composition data and molar mass.\n2. **Location:** Natural products lab, pharmaceutical R&D, forensic lab, environmental analysis.\n3. **Requirements:** % composition (CHNS/O analyser), M_r (high-resolution mass spectrometry, or vapour density for volatiles), NMR/IR for structure confirmation.\n4. **Components:** Elemental analyser, HRMS (ESI, EI, MALDI), NMR, IR, software (formula calculator).\n5. **Sequential steps:** (i) Obtain %C, %H, %N, %S, %O (by difference); (ii) Compute empirical formula (CH₂O, C₂H₄O, etc.); (iv) Obtain exact M_r from HRMS (e.g., 180.0634 for C₆H₁₂O₆); (v) n = M_r/E_r; (vi) Molecular formula = n × empirical; (vii) Confirm with isotope pattern (M+1, M+2) and NMR.\n6. **Result:** Unique molecular formula identifying the compound; first step in structure elucidation.\n7. **Significance:** Turns anonymous % data into specific molecular identity — essential for new drug/natural product characterization, metabolite ID, pollutant tracking.",
-    "## 7. Diagrams and Visual Understanding\n\n- **D1 (authored SVG)** — Composition bars (Fig. 4.1): urea vs ammonium nitrate vs H₂SO₄ element shares.\n- **D2 (authored SVG)** — Analysis-to-formula flow (Fig. 4.2): % → empirical → molecular decision path.\n- **D3 (curated)** — Analytical balance, labelled (Fig. 4.3): where % data begins.\n- **D4 (curated)** — Mole of carbon-12 reference (Fig. 4.4): 12 g ↔ N_A atoms bridge.\n\nFig. 4.1 — Percentage-composition bars (authored SVG).\n\n```svg Percentage composition bars\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Percentage composition bars</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<g font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">\n<text x=\"450\" y=\"50\" fill=\"#0f172a\">% composition: each bar sums to 100</text>\n</g>\n<g>\n<text x=\"140\" y=\"150\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#0f172a\">Urea (60)</text>\n<rect x=\"250\" y=\"120\" width=\"280\" height=\"44\" fill=\"#4ade80\" stroke=\"#14532d\" stroke-width=\"2\"/>\n<rect x=\"530\" y=\"120\" width=\"200\" height=\"44\" fill=\"#93c5fd\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<rect x=\"730\" y=\"120\" width=\"40\" height=\"44\" fill=\"#fca5a5\" stroke=\"#991b1b\" stroke-width=\"2\"/>\n<rect x=\"770\" y=\"120\" width=\"40\" height=\"44\" fill=\"#fde68a\" stroke=\"#92400e\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"190\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">N 46.7% · O 26.7% · H 6.7% · C 20%</text>\n<text x=\"140\" y=\"280\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#0f172a\">H₂SO₄ (98)</text>\n<rect x=\"250\" y=\"250\" width=\"326\" height=\"44\" fill=\"#93c5fd\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<rect x=\"576\" y=\"250\" width=\"196\" height=\"44\" fill=\"#fbbf24\" stroke=\"#92400e\" stroke-width=\"2\"/>\n<rect x=\"772\" y=\"250\" width=\"38\" height=\"44\" fill=\"#4ade80\" stroke=\"#14532d\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"320\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">O 65.3% · S 32.7% · H 2.0%</text>\n<text x=\"140\" y=\"410\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#0f172a\">CaCO₃ (100)</text>\n<rect x=\"250\" y=\"380\" width=\"240\" height=\"44\" fill=\"#93c5fd\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<rect x=\"490\" y=\"380\" width=\"240\" height=\"44\" fill=\"#4ade80\" stroke=\"#14532d\" stroke-width=\"2\"/>\n<rect x=\"730\" y=\"380\" width=\"120\" height=\"44\" fill=\"#fbbf24\" stroke=\"#92400e\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"450\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">O 48% · Ca 40% · C 12%</text>\n</g>\n</svg>\n```\n\nFig. 4.2 — Analysis-to-formula decision flow (authored SVG).\n\n```svg Analysis to formula flow\n<svg viewBox=\"0 0 900 500\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Analysis to formula</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"500\" fill=\"#ffffff\"/>\n<g font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">\n<rect x=\"50\" y=\"50\" width=\"200\" height=\"60\" rx=\"8\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/>\n<text x=\"150\" y=\"80\" fill=\"#713f12\">% composition</text><text x=\"150\" y=\"100\" font-size=\"12\" fill=\"#475569\">from analysis</text>\n<line x1=\"250\" y1=\"80\" x2=\"300\" y2=\"80\" stroke=\"#64748b\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n<rect x=\"300\" y=\"50\" width=\"200\" height=\"60\" rx=\"8\" fill=\"#d1fae5\" stroke=\"#047857\" stroke-width=\"2\"/>\n<text x=\"400\" y=\"80\" fill=\"#047857\">Empirical formula</text><text x=\"400\" y=\"100\" font-size=\"12\" fill=\"#475569\">% → g → mol → ratio</text>\n<line x1=\"500\" y1=\"80\" x2=\"550\" y2=\"80\" stroke=\"#64748b\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n<rect x=\"550\" y=\"50\" width=\"200\" height=\"60\" rx=\"8\" fill=\"#e0e7ff\" stroke=\"#3730a3\" stroke-width=\"2\"/>\n<text x=\"650\" y=\"80\" fill=\"#3730a3\">M_r known?</text><text x=\"650\" y=\"100\" font-size=\"12\" fill=\"#475569\">(VD, MS, colligative)\n<line x1=\"750\" y1=\"80\" x2=\"750\" y2=\"140\" stroke=\"#64748b\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n<text x=\"700\" y=\"170\" fill=\"#475569\" font-size=\"12\">YES</text>\n<rect x=\"750\" y=\"190\" width=\"200\" height=\"60\" rx=\"8\" fill=\"#fae8ff\" stroke=\"#a21caf\" stroke-width=\"2\"/>\n<text x=\"850\" y=\"220\" fill=\"#701a75\">Molecular formula</text><text x=\"850\" y=\"240\" font-size=\"12\" fill=\"#475569\">n = M_r/E_r</text>\n<line x1=\"750\" y1=\"140\" x2=\"500\" y2=\"140\" stroke=\"#64748b\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n<text x=\"420\" y=\"170\" fill=\"#475569\" font-size=\"12\">NO</text>\n<rect x=\"300\" y=\"190\" width=\"200\" height=\"60\" rx=\"8\" fill=\"#fee2e2\" stroke=\"#991b1b\" stroke-width=\"2\"/>\n<text x=\"400\" y=\"220\" fill=\"#991b1b\">Empirical formula only</text><text x=\"400\" y=\"240\" font-size=\"12\" fill=\"#475569\">(salts, polymers)\n</g>\n<defs>\n<marker id=\"arr\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\" markerUnits=\"strokeWidth\"><path d=\"M0,0 L0,6 L9,3 Z\" fill=\"#64748b\"/></marker>\n</defs>\n</svg>\n```",
-    "## 8. Conceptual Relationships\n\n### Within this topic\n- Formula → M_r → element masses → % (forward); % → g → mol → ratio → empirical (backward); empirical + M_r → n = M_r/E_r → molecular (full circle).\n- Combustion analysis (12/44, 2/18, O by diff) supplies % data for backward route.\n- Vapour density (M_r = 2×VD) supplies M_r for backward route.\n- Quality audit uses forward route to verify label claims.\n\n### To other units\n- **Stoichiometry:** % yield = (actual/theoretical)×100 uses same % logic; limiting reactant, theoretical yield all connect mass to formula.\n- **Organic Chemistry:** Combustion analysis is the standard source of %C/%H for unknowns; empirical/molecular formula is step 1 in structure elucidation.\n- **Applied Chemistry:** Fertilizer grade (46-0-0), cement purity (CaO%), drug assay (%API) — all are % composition in commercial language.\n- **Modern Manufactures:** Haber process yield, Contact process conversion, Solvay process efficiency — all tracked by % composition of product vs feed.\n\n### To real life\n- Farmer reads \"46-0-0\" and knows 46 kg N per 100 kg bag.\n- Cement buyer checks CaO% on CoA — below spec = weak concrete.\n- Drug label: 500 mg paracetamol/tablet = assay % of API.\n- Steel spec: 0.2% C = 2 kg C per tonne steel.\n- Air quality: PM2.5 μg/m³ = % by mass in air volume.\n- Food label: % daily value = nutrient mass / recommended intake × 100.",
-    "## 9. Important Facts and Scientific Terminology\n\n| Term | Scientific meaning | Explanation | Importance |\n|------|-------------------|-------------|-------------|\n| % composition formula | %E = (mass of E per mole ÷ M_r) × 100 | Sum of all %E = 100 (built-in check) | Universal forward calculation |\n| Combustion factors | C from CO₂: ×12/44; H from H₂O: ×2/18 | Converts oxide mass to element mass | Standard for CHN analysis |\n| O by difference | %O = 100 − Σ(%other elements) | Assumes only C,H,O,N,S,halogens present | Necessary when O not measured directly |\n| Vapour density (VD) | Mass of gas volume ÷ mass of same volume H₂ | M_r = 2 × VD (H₂ = 2 scale) | Classic M_r for volatiles |\n| Empirical formula | Simplest whole-number ratio | From % data: % → g → mol → ratio | First step in formula ID |\n| Molecular formula | Actual atom numbers | Empirical × n; n = M_r/E_r | Unique molecular identity |\n| n = M_r/E_r | Multiplier from empirical to molecular | Must be integer; if not, re-check data | Bridges empirical to molecular |\n| CH₂O family | Glucose C₆H₁₂O₆, formaldehyde CH₂O, lactic acid C₃H₆O₃ | Same empirical, different molecules | Why M_r is essential |\n| Fertilizer grade | N-P-K % by weight | Urea 46-0-0, DAP 18-46-0, MOP 0-0-60 | Commercial spec language |\n| Assay | Quantitative determination of main component | Titration, HPLC, spectroscopy | Quality control |\n| Purity | % of desired substance in sample | Assay % = purity if single component | Commercial grade |\n| CoA (Certificate of Analysis) | Official document with % composition, pass/fail | Legal requirement for trade | Buyer protection |\n| Kjeldahl method | %N determination by digestion + distillation + titration | %N × 6.25 = % protein | Protein analysis standard |\n| Gravimetric analysis | Precipitate → weigh → % | BaSO₄ for %SO₄, AgCl for %Cl | Classical accuracy |\n| HPLC/GC/ICP | Instrumental % composition | Separation + detection + quantitation | Modern high-throughput |\n| Isotope pattern | M+1, M+2 peaks in MS | Confirms molecular formula | HRMS verification |\n\n**Memory tricks:**\n- \"Sum to 100 or start over\".\n- \"12/44 for C, 2/18 for H, O by difference\".\n- \"M_r = 2×VD\".\n- \"1:2:1 smells like carbohydrate; verify with M_r\".\n- \"%→mass→moles→ratio→whole (multiply to clear decimals)\".\n- \"Glucose proof: CH₂O ×6\".\n- \"Urea 46.67% = 28/60; NH₄NO₃ 35% = 28/80\".",
-    "## 10. Topic Mastery Check\n\n### Important definitions\n1. **Percentage composition** — mass % of each element in a compound; Σ% = 100.\n2. **Forward calculation** — formula → % (known formula, compute %).\n3. **Backward calculation** — % → formula (known %, find formula).\n4. **Combustion analysis** — burn sample, weigh CO₂/H₂O → %C (×12/44), %H (×2/18), %O by difference.\n5. **Vapour density** — mass of gas volume ÷ mass of same volume H₂; M_r = 2×VD.\n6. **Empirical formula** — simplest whole-number atom ratio.\n7. **Molecular formula** — actual atom numbers in one molecule.\n8. **n = M_r/E_r** — multiplier from empirical to molecular.\n9. **Assay** — quantitative determination of main component.\n10. **Purity** — % of desired substance in sample.\n\n### Key concepts to remember\n- %E = (element mass per mole ÷ M_r) × 100; bars must sum to 100.\n- Urea 46.67% N = 28/60 — the bag verified; NH₄NO₃ 35% N = 28/80.\n- Combustion factors: C from CO₂ (×12/44), H from H₂O (×2/18), O by difference.\n- n = M_r/E_r — needs measured M_r (VD×2, mass spec); never assumed.\n- Empirical gives ratio, never identity (CH₂O family: glucose, formaldehyde, lactic acid).\n- Ionic salts (NaCl) have empirical formulae only — no molecular formula.\n- Quality audit: forward route verifies label; backward route identifies unknowns.\n\n### Important classifications\n- **Forward vs Backward:** Formula → % (audit) vs % → Formula (identification).\n- **Organic vs Inorganic:** Combustion analysis for organics; gravimetric/titration for inorganics.\n- **Volatile vs Non-volatile:** VD for volatiles; colligative/MS for non-volatiles.\n- **Covalent vs Ionic:** Molecular + empirical vs empirical only.\n\n### Important comparisons\n| Basis | Forward (formula → %) | Backward (% → formula) |\n|-------|----------------------|------------------------|\n| Input | Known molecular formula | % composition from analysis |\n| Output | % of each element | Empirical formula (+ molecular if M_r known) |\n| Use | Quality audit, label check | Structure elucidation, unknown ID |\n| Check | Sum to 100 | n = M_r/E_r must be integer |\n\n| Method | M_r determination | Best for |\n|--------|------------------|-----------\n| Vapour density | M_r = 2×VD | Volatile liquids/gases |\n| Mass spectrometry (HRMS) | Exact M_r from M⁺ | All volatile/ionizable |\n| Colligative properties | ΔT_f, ΔT_b, π → M_r | Non-volatile solutes |\n| Ideal gas law | PV = nRT → M_r = mRT/PV | Gases at known T/P |\n| From formula | Σ A_r | When formula known |\n\n### Common conceptual confusions\n- Mass % ≠ mole % — convert with A_r before comparing.\n- O by difference assumes only C, H, O present; N/S need separate estimation.\n- Empirical gives ratio, never identity — CH₂O ×n family hides different molecules.\n- Vapour density needs H₂ = 2 scale stated; M_r = 2×VD.\n- Balance precision (±0.1 mg) decides analysis quality; ±0.001 g on 0.1 g sample = ±1%.\n- Same empirical (CH₂O) ≠ same compound — glucose, formaldehyde, lactic acid all CH₂O.\n- Ionic salts (NaCl) stop at empirical — no molecular formula for giant lattice.\n- % yield >100% indicates impure product or incomplete drying, not excess product.\n\n### Short-answer questions\n1. Give the % composition formula and the sum rule.\n2. Prove urea is 46.67% nitrogen.\n3. Derive CH₂O from 40% C, 6.7% H, 53.3% O data.\n4. How is M_r obtained from vapour density?\n5. From 8.8 g CO₂ + 3.6 g H₂O out of 4.4 g sample, find %C and %H.\n6. Why is O by difference used? What does it assume?\n5. NH₄NO₃ vs urea: which gives more N per kg? Show calculation.\n6. A sample gives 44% CO₂ and 9% H₂O on combustion. Find empirical formula.\n7. Define assay and how it relates to purity.\n8. What is the Kjeldahl factor and why 6.25?\n\n### Long-answer questions\n1. Explain percentage composition with the H₂SO₄ and urea computations.\n2. Derive empirical and molecular formulae from analysis data with the combustion-analysis route.\n3. A compound gives 8.8 g CO₂ and 3.6 g H₂O from 4.4 g sample. If its vapour density is 44, find its molecular formula.\n4. Explain the quality audit of a fertilizer bag using percentage composition.\n5. Compare urea (46-0-0) and ammonium nitrate (35-0-0) for a farmer buying 100 kg at equal price per kg.\n\n### Conceptual questions\n1. Why must percentages sum to 100? What if they don't?\n2. Can two different compounds have the same % composition? Explain.\n3. Why is vapour density defined against H₂, not air?\n4. How does combustion analysis work for compounds containing N or S?\n5. What happens if n = M_r/E_r is not an integer?\n\n### Application-based questions\n1. 100 kg urea at ₹25/kg vs 100 kg NH₄NO₃ at ₹25/kg — which gives more N? By how much?\n2. 4.4 g organic → 8.8 g CO₂ + 3.6 g H₂O. M_r = 88. Find molecular formula.\n3. A limestone sample claims 45% Ca. Audit: CaCO₃ has 40% Ca. What does the claim imply?\n4. Protein contains 16% N. A food has 3.2% N by Kjeldahl. What is its % protein?\n5. Steel spec: 0.2% C max. A 5 tonne batch has 12 kg C. Pass or fail?\n\n### Answers\n1. %E = (mass of E per mole ÷ M_r) × 100; Σ%E = 100.\n2. Urea CO(NH₂)₂, M_r = 60: %N = (2×14)/60 × 100 = 28/60 × 100 = 46.67%.\n3. 40/12 = 3.33; 6.7/1 = 6.7; 53.3/16 = 3.33 → ÷3.33 → 1:2:1 → CH₂O.\n4. VD = mass of gas volume / mass of same volume H₂; M_r = 2 × VD (H₂ = 2 scale).\n5. %C = 8.8×12/44 × 100/4.4 = 54.55%; %H = 3.6×2/18 × 100/4.4 = 9.09%.\n6. O by difference = 100 − Σ(other %); assumes only C,H,O,N,S,halogens — no unmeasured elements.\n7. Urea: 46.67 kg N per 100 kg; NH₄NO₃: 35 kg N per 100 kg. Urea gives 11.67 kg more N per 100 kg at same price.\n8. %C = 44×12/44 = 12% (if CO₂ is 44% of product mass — unclear question). Better: 4.4 g sample → 8.8 g CO₂ → %C = 54.55%; 3.6 g H₂O → %H = 9.09%; %O = 36.36% → C₂H₄O empirical; VD 44 → M_r 88 → n=2 → C₄H₈O₂.\n9. Forward: formula → % (audit). Backward: % → formula (ID). Audit verifies 46% N on urea bag.\n10. Kjeldahl: %N × 6.25 = % protein (avg protein 16% N → 1/0.16 = 6.25).\n11. Urea gives 46.67 kg N; NH₄NO₃ gives 35 kg N per 100 kg. Urea wins by 11.67 kg N.\n12. 4.4 g → 8.8 g CO₂ + 3.6 g H₂O → C₂H₄O empirical (E_r=44); VD=44 → M_r=88 → n=2 → C₄H₈O₂.\n13. Claim 45% Ca > 40% theoretical max for CaCO₃ → implies impurity (e.g., CaO, Ca(OH)₂) or different mineral (not pure limestone).\n14. %N = 3.2% → % protein = 3.2 × 6.25 = 20%.\n15. 5 tonne = 5000 kg; 0.2% C = 10 kg max; 12 kg C = 0.24% → FAIL (exceeds spec).\n16. Sum ≠ 100 means missing element or calculation error — re-check.\n17. Yes — isomers (C₂H₆O: ethanol vs dimethyl ether) have same % composition. Also different compounds with same empirical formula (CH₂O family).\n18. H₂ is the lightest gas, historically available pure, M_r = 2 exactly → simple integer scale (VD = M_r/2). Air is mixture, variable.\n19. N/S measured separately (e.g., Dumas for N, Schöniger for S) and added to % sum; O by difference still used.\n20. Non-integer n means: wrong M_r, wrong empirical, or impure sample — re-check all data.",
-    "## 11. NEB Previous Year Questions (PYQs)\n\n| Year | Unit | Topic | Question | Marks | Type |\n|------|------|-------|----------|-------|------|\n| 2079 | Foundation and Fundamentals | Percentage composition | Give the % composition formula and the sum rule. | 2 | Short |\n| 2078 | Foundation and Fundamentals | Percentage composition | Prove urea is 46.67% nitrogen. | 3 | Short |\n| 2077 | Foundation and Fundamentals | Percentage composition | Derive CH₂O from 40% C, 6.7% H, 53.3% O data. | 3 | Short |\n| 2076 | Foundation and Fundamentals | Percentage composition | How is M_r obtained from vapour density? | 2 | Short |\n| 2075 | Foundation and Fundamentals | Percentage composition | From 8.8 g CO₂ + 3.6 g H₂O out of 4.4 g sample, find %C and %H. | 3 | Short |\n| 2074 | Foundation and Fundamentals | Percentage composition | Explain percentage composition with H₂SO₄ and urea computations. | 5 | Long |\n| 2073 | Foundation and Fundamentals | Percentage composition | Derive empirical and molecular formulae from analysis data with combustion route. | 5 | Long |\n\n### PYQ Solutions\n\n**Q: Give the % composition formula and the sum rule. (2 marks)**\n**Answer:** %E = (mass of E per mole ÷ M_r) × 100. The percentages of all elements in a compound must sum to 100.\n**Keywords:** %E formula, mass per mole, M_r, sum to 100.\n\n**Q: Prove urea is 46.67% nitrogen. (3 marks)**\n**Answer:** Urea CO(NH₂)₂, M_r = 60. N mass per mole = 2×14 = 28. %N = 28/60 × 100 = 46.67%.\n**Keywords:** urea formula, M_r 60, N mass 28, 28/60×100.\n\n**Q: Derive CH₂O from 40% C, 6.7% H, 53.3% O data. (3 marks)**\n**Answer:** Per 100 g: C 40/12 = 3.33 mol; H 6.7/1 = 6.7 mol; O 53.3/16 = 3.33 mol. Ratio ÷3.33 = 1:2:1 → CH₂O.\n**Keywords:** per 100g, ÷A_r, ÷smallest, 1:2:1, CH₂O.\n\n**Q: How is M_r obtained from vapour density? (2 marks)**\n**Answer:** M_r = 2 × vapour density (VD), where VD = mass of a volume of gas ÷ mass of same volume of H₂ under same conditions. H₂ = 2 scale.\n**Keywords:** M_r = 2×VD, H₂ = 2 scale.\n\n**Q: From 8.8 g CO₂ + 3.6 g H₂O out of 4.4 g sample, find %C and %H. (3 marks)**\n**Answer:** %C = 8.8 × 12/44 × 100/4.4 = 54.55%. %H = 3.6 × 2/18 × 100/4.4 = 9.09%.\n**Keywords:** 12/44, 2/18, per sample mass.\n\n**Q: Explain percentage composition with H₂SO₄ and urea computations. (5 marks)**\n**Answer:** %E = mass E per mole ÷ M_r × 100; Σ% = 100. H₂SO₄ (M_r 98): %H=2/98×100=2.04%, %S=32/98×100=32.65%, %O=64/98×100=65.31%. Urea (M_r 60): %N=28/60×100=46.67%, %C=12/60×100=20%, %O=16/60×100=26.67%, %H=4/60×100=6.67%. The 46-0-0 fertilizer bag is urea's 46.67% N derived.\n**Keywords:** formula, M_r, each %, sum 100, H₂SO₄ breakdown, urea 46.67%.\n\n**Q: Derive empirical and molecular formulae from analysis data with combustion route. (5 marks)**\n**Answer:** Burn 4.4 g sample → 8.8 g CO₂, 3.6 g H₂O. %C = 8.8×12/44×100/4.4 = 54.55%; %H = 3.6×2/18×100/4.4 = 9.09%; %O = 100−54.55−9.09 = 36.36%. Moles: C 4.55, H 9.09, O 2.27 → ratio 2:4:1 → C₂H₄O (E_r=44). If VD=44 → M_r=88 → n=2 → molecular C₄H₈O₂. If M_r=180 → n not integer — re-check data.\n**Keywords:** combustion factors, %C/%H, O by diff, empirical, VD, n=M_r/E_r, molecular.",
-    "## 12. Summary and Self-check\n% composition = element mass ÷ molar mass × 100, always summing to 100: H₂SO₄ (2.04/32.65/65.31), urea N 46.67% (the bag proved), NH₄NO₃ N 35%, CaCO₃ Ca 40%. Backward: % → grams → moles → ratio → empirical (CH₂O); with M_r (often 2×VD): n = M_r/E_r → molecular (C₆H₁₂O₆; M_r 90 → C₃H₆O₃). Combustion analysis gives %C (×12/44) and %H (×2/18), O by difference. Figures: composition bars, analysis-to-formula flow, analytical balance photo, carbon-12 mole reference.\n\n**Self-check.** (1) Prove urea's 46% and compare with NH₄NO₃'s 35%. (2) 8.8 g CO₂ from 4.4 g sample → %C? (3) From C₂H₄O data plus M_r 88, give the molecular formula. (4) Why must O come \"by difference\"? (5) Audit: a \"40% Ca\" limestone claim — show the true value.\n\n**Common confusions.** Mass % ≠ mole % (convert via A_r first) · empirical gives ratio, never identity (CH₂O ×n family) · vapour density needs the H₂ = 2 scale stated · balance precision (±0.1 mg) decides analysis quality.",
-    "## 13. Sources\n- NEB/CDC Grade 11 Chemistry (foundation chapter)\n- OpenStax *Chemistry 2e* ch. 3 (formula mass and composition)\n- SI Brochure 9th ed. (mole definition note for Fig. 4.4)\n- IUPAC *Nomenclature of Organic Chemistry* (empirical/molecular conventions)"
+    "## 1. Topic Introduction — Weighing a Molecule on Paper\n\nGiven a formula, you can compute exactly what fraction of its mass each element contributes — the **percentage composition**. It is the bridge between formulas and laboratory analysis, and the first step of every empirical-formula problem.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 The percentage composition formula\n\n$$\\%\\text{ of element} = \\frac{\\text{mass of element in 1 mol of compound}}{\\text{molar mass of compound}} \\times 100$$\n\nThe percentages of all elements sum to 100% — a built-in check.\n\n### 2.2 Worked numericals\n\n**Q (2m, 2024):** Calculate the percentage of nitrogen in urea, CO(NH₂)₂ (C = 12, O = 16, N = 14, H = 1).\n- Molar mass = 12 + 16 + 2(14 + 2×1) = 12 + 16 + 32 = 60 g/mol\n- Mass of N = 2 × 14 = 28 g\n$$\\%N = \\frac{28}{60} \\times 100 ≈ \\boxed{46.7\\%}$$\n— the highest nitrogen content of common fertilisers, which is why urea dominates the market.\n\n**Q (NEB-style):** Find the percentage composition of CaCO₃ (Ca = 40, C = 12, O = 16).\n- M = 40 + 12 + 48 = 100 g/mol\n- %Ca = 40%, %C = 12%, %O = 48% (sums to 100 ✓)\n\n**Q (NEB-style):** Which is the richer iron ore by mass — Fe₂O₃ or Fe₃O₄? (Fe = 56, O = 16)\n- Fe₂O₃: M = 160, %Fe = 112/160 = 70%\n- Fe₃O₄: M = 232, %Fe = 168/232 ≈ 72.4% → **Fe₃O₄** is richer.\n\n### 2.3 Reverse direction — % composition to formula\n\nThe same arithmetic runs backwards: assume 100 g of compound → convert each percentage to moles → divide by the smallest → simplest ratio = **empirical formula** → multiply by n = M/empirical-mass for the **molecular formula** (full treatment in Unit 2, Topic 12).",
+    "## 3. Conceptual Relationships\n\n- **To Topic 3:** molecular formula is the input; empirical/molecular distinction matters.\n- **To stoichiometry (Unit 2):** every mole calculation begins with molar mass from the formula.\n- **To chemistry of metals (Unit 10):** ore richness comparisons use exactly this arithmetic.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Foundation | Percentage composition | Calculate the percentage of nitrogen in urea, CO(NH₂)₂. (C = 12, O = 16, N = 14, H = 1) | 2 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. % composition of a named compound (2m).\n2. Compare two ores/compounds by % of a target element (3m).\n3. Check that percentages sum to 100 (1m).\n\n### 4.3 Common examination mistakes\n\n1. Miscounting atoms in parentheses — CO(NH₂)₂ has TWO NH₂ groups.\n2. Forgetting × 100.\n3. Not checking the total sums to 100%."
   ],
   "confusion": [
-    "Mass % and mole % differ — convert with A_r before comparing.",
-    "O-by-difference assumes only C, H, O present; N/S need separate estimation.",
-    "Empirical gives ratio, never identity (CH₂O ×n family: glucose, formaldehyde, lactic acid).",
-    "Vapour density needs the H₂ = 2 scale stated; M_r = 2×VD.",
-    "Balance precision (±0.1 mg) decides analysis quality; ±0.001 g on 0.1 g sample = ±1%.",
-    "Ionic salts (NaCl) stop at empirical — no molecular formula for giant lattice.",
-    "% yield >100% indicates impure product or incomplete drying, not excess product."
+    "**CO(NH₂)₂ contains two NH₂ units** — count atoms inside parentheses × the subscript outside.",
+    "**Percentages must sum to 100%** — use it as a free answer check."
   ],
   "bounds": [
     "Covers only: percentage composition from molecular formula (within Foundation and Fundamentals).",
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [],
+  "practice": [
+    "Why does urea dominate the fertiliser market?"
+  ],
   "universalFacts": [
-    "%E = (mass of E per mole ÷ M_r) × 100; Σ%E = 100.",
-    "Urea CO(NH₂)₂, M_r 60: %N = 28/60×100 = 46.67% — the \"46-0-0\" bag derived.",
-    "Combustion factors: C from CO₂ (×12/44); H from H₂O (×2/18); O by difference.",
-    "n = M_r/E_r — needs measured M_r (VD×2, mass spec); never assumed.",
-    "M_r = 2 × vapour density (H₂ = 2 scale)."
+    "Fe₃O₄ (72.4% Fe) beats Fe₂O₃ (70% Fe) per kilogram of ore — the kind of comparison smelters actually make."
   ],
   "examples": [
-    "'46-0-0' bag verified: 28/60 = 46.67% N.",
-    "Limestone audit: 40% Ca expected; less means impurity.",
-    "Lactic acid shares glucose's ratio (CH₂O) — ratio is not identity.",
-    "H₂SO₄ shares: 2.04% H, 32.65% S, 65.31% O (sum 100).",
-    "NH₄NO₃ N% = 35% — poorer N per kg than urea's 46.67%."
+    "***Urea*** — 46.7% nitrogen: the richest common fertiliser (NEB 2024)."
   ],
   "practiceQuestions": [
-    "SHORT (2 marks): Give the % composition formula and the sum rule.",
-    "SHORT (3 marks): Prove urea is 46.67% nitrogen.",
-    "SHORT (3 marks): Derive CH₂O from 40% C, 6.7% H, 53.3% O data.",
-    "SHORT (2 marks): How is M_r obtained from vapour density?",
-    "SHORT (3 marks): From 8.8 g CO₂ + 3.6 g H₂O out of 4.4 g sample, find %C and %H.",
-    "LONG (5 marks): Explain percentage composition with the H₂SO₄ and urea computations.",
-    "LONG (5 marks): Derive empirical and molecular formulae from analysis data with the combustion-analysis route.",
-    "LONG (5 marks): A compound gives 8.8 g CO₂ and 3.6 g H₂O from 4.4 g sample. If VD = 44, find molecular formula.",
-    "LONG (5 marks): Explain the quality audit of a fertilizer bag using percentage composition.",
-    "LONG (5 marks): Compare urea (46-0-0) and ammonium nitrate (35-0-0) for a farmer buying 100 kg at equal price per kg."
+    "**NEB 2024 (2m): Calculate the percentage of nitrogen in urea, CO(NH₂)₂.** — M = 60 g/mol; N mass = 28 g; %N = 28/60 × 100 ≈ 46.7%."
   ],
   "formulas": [
-    "%E = (mass of E per mole ÷ M_r) × 100",
-    "M_r = Σ A_r",
-    "M_r = 2 × vapour density (H₂ = 2)",
-    "n = M_r / E_r (empirical → molecular)",
-    "%C = mass CO₂ × 12/44 × 100 / mass sample",
-    "%H = mass H₂O × 2/18 × 100 / mass sample",
-    "%O = 100 − (%C + %H + %N + %S + ...)",
-    "% yield = (actual / theoretical) × 100"
+    "- % element = (mass of element in 1 mol / molar mass) × 100\n- Σ%elements = 100%"
   ],
   "numericals": [
     "H₂SO₄: 2.04 / 32.65 / 65.31 (sum 100).",
@@ -84,74 +46,158 @@
     "VD 45 → M_r 90; CH₂O (30) ×3 → C₃H₆O₃ (lactic acid)."
   ],
   "keyPoints": [
-    "%E = (mass of E per mole ÷ M_r) × 100; bars sum to 100.",
-    "Urea N 46.67%; combustion factors 12/44 (C), 2/18 (H), O by difference.",
-    "Empirical from %; molecular = n × empirical via M_r (often 2×VD).",
-    "Combustion analysis: %C (×12/44), %H (×2/18), O by difference.",
-    "Vapour density: M_r = 2×VD (H₂=2); quality audit uses forward route."
+    "% element = (element mass per mol / molar mass) × 100. Urea: %N = 46.7%."
   ],
-  "summary": "Percentage composition = element mass ÷ molar mass × 100, always summing to 100: H₂SO₄ (2.04/32.65/65.31), urea N 46.67% (the bag proved), NH₄NO₃ N 35%, CaCO₃ Ca 40%. Backward: % → grams → moles → ratio → empirical (CH₂O); with M_r (often 2×VD): n = M_r/E_r → molecular (C₆H₁₂O₆; M_r 90 → C₃H₆O₃). Combustion analysis gives %C (×12/44) and %H (×2/18), O by difference. Figures: composition bars, analysis-to-formula flow, analytical balance photo, carbon-12 mole reference.",
+  "summary": "**Percentage composition** = (mass of the element in one mole ÷ molar mass) × 100. For urea CO(NH₂)₂: molar mass 60 g/mol, nitrogen mass 28 g → **%N ≈ 46.7%** (NEB 2024, 2m) — the highest of common fertilisers. For CaCO₃ the split is 40/12/48 = 40% Ca, 12% C, 48% O, always summing to 100%. Comparing ores: Fe₃O₄ (72.4% Fe) edges Fe₂O₃ (70%). Run in reverse, the same arithmetic converts percentages to moles to the empirical formula — the gateway to molecular-formula determination in Unit 2.",
   "mcqs": [
     {
-      "question": "%N in urea (M_r 60) is about",
-      "options": ["23%", "35%", "46.7%", "60%"],
+      "question": "NEB 2024: %N in urea ≈",
+      "options": [
+        "28%",
+        "46.7%",
+        "60%",
+        "53.3%"
+      ],
+      "answer": "B",
+      "explanation": "28/60 × 100."
+    },
+    {
+      "question": "Molar mass of urea CO(NH₂)₂ =",
+      "options": [
+        "44",
+        "60",
+        "76",
+        "30"
+      ],
+      "answer": "B",
+      "explanation": "12+16+2(16)."
+    },
+    {
+      "question": "%Ca in CaCO₃ =",
+      "options": [
+        "40%",
+        "48%",
+        "12%",
+        "100%"
+      ],
+      "answer": "A",
+      "explanation": "40/100."
+    },
+    {
+      "question": "Percentages of all elements in a compound sum to:",
+      "options": [
+        "50%",
+        "90%",
+        "100%",
+        "Depends"
+      ],
       "answer": "C",
-      "explanation": "28/60 × 100 = 46.67%."
+      "explanation": "Built-in check."
     },
     {
-      "question": "%S in H₂SO₄ (M_r 98) is about",
-      "options": ["2%", "16.3%", "32.7%", "65.3%"],
+      "question": "Richer iron ore by mass:",
+      "options": [
+        "Fe₂O₃",
+        "Fe₃O₄",
+        "Both equal",
+        "Neither"
+      ],
+      "answer": "B",
+      "explanation": "72.4% vs 70%."
+    },
+    {
+      "question": "%O in CaCO₃ =",
+      "options": [
+        "16%",
+        "32%",
+        "48%",
+        "64%"
+      ],
       "answer": "C",
-      "explanation": "32/98 × 100 = 32.65%."
+      "explanation": "48/100."
     },
     {
-      "question": "M_r from vapour density 90 is",
-      "options": ["90", "180", "45", "360"],
+      "question": "% composition is calculated from:",
+      "options": [
+        "Volume",
+        "Molar mass and formula",
+        "Density only",
+        "Temperature"
+      ],
       "answer": "B",
-      "explanation": "M_r = 2 × VD."
+      "explanation": "Per-mole masses."
     },
     {
-      "question": "In combustion analysis, carbon mass from CO₂ uses factor",
-      "options": ["2/18", "12/44", "44/12", "18/2"],
+      "question": "CO(NH₂)₂ has how many N atoms?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "answer": "B",
-      "explanation": "C fraction of CO₂: 12/44."
-    },
-    {
-      "question": "Oxygen in organic analysis is found",
-      "options": ["Directly weighed", "By difference", "From N₂ gas", "By titration"],
-      "answer": "B",
-      "explanation": "%O = 100 − (%C + %H + others)."
-    },
-    {
-      "question": "CH₂O with M_r 90 is",
-      "options": ["Glucose", "C₃H₆O₃", "Formaldehyde", "Acetic acid"],
-      "answer": "B",
-      "explanation": "n = 90/30 = 3."
-    },
-    {
-      "question": "%Ca in CaCO₃ (M_r 100) is",
-      "options": ["12%", "20%", "40%", "48%"],
-      "answer": "C",
-      "explanation": "40/100 × 100."
-    },
-    {
-      "question": "Percentages must sum to",
-      "options": ["50", "100", "1000", "M_r"],
-      "answer": "B",
-      "explanation": "Built-in answer check."
-    },
-    {
-      "question": "NH₄NO₃ %N vs urea %N:",
-      "options": ["Higher", "Equal", "Lower (35 vs 46.7)", "Zero"],
-      "answer": "C",
-      "explanation": "28/80 = 35% < 46.67%."
-    },
-    {
-      "question": "NaCl composition work stops at",
-      "options": ["Molecular formula", "Empirical formula", "Structural formula", "No formula"],
-      "answer": "B",
-      "explanation": "Ionic lattices have simplest ratios only."
+      "explanation": "Two NH₂ groups."
     }
   ],
-  "mcs": []
+  "mcs": [],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Weighing a Molecule on Paper\n\nGiven a formula, you can compute exactly what fraction of its mass each element contributes — the **percentage composition**. It is the bridge between formulas and laboratory analysis, and the first step of every empirical-formula problem.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 The percentage composition formula\n\n$$\\%\\text{ of element} = \\frac{\\text{mass of element in 1 mol of compound}}{\\text{molar mass of compound}} \\times 100$$\n\nThe percentages of all elements sum to 100% — a built-in check.\n\n### 2.2 Worked numericals\n\n**Q (2m, 2024):** Calculate the percentage of nitrogen in urea, CO(NH₂)₂ (C = 12, O = 16, N = 14, H = 1).\n- Molar mass = 12 + 16 + 2(14 + 2×1) = 12 + 16 + 32 = 60 g/mol\n- Mass of N = 2 × 14 = 28 g\n$$\\%N = \\frac{28}{60} \\times 100 ≈ \\boxed{46.7\\%}$$\n— the highest nitrogen content of common fertilisers, which is why urea dominates the market.\n\n**Q (NEB-style):** Find the percentage composition of CaCO₃ (Ca = 40, C = 12, O = 16).\n- M = 40 + 12 + 48 = 100 g/mol\n- %Ca = 40%, %C = 12%, %O = 48% (sums to 100 ✓)\n\n**Q (NEB-style):** Which is the richer iron ore by mass — Fe₂O₃ or Fe₃O₄? (Fe = 56, O = 16)\n- Fe₂O₃: M = 160, %Fe = 112/160 = 70%\n- Fe₃O₄: M = 232, %Fe = 168/232 ≈ 72.4% → **Fe₃O₄** is richer.\n\n### 2.3 Reverse direction — % composition to formula\n\nThe same arithmetic runs backwards: assume 100 g of compound → convert each percentage to moles → divide by the smallest → simplest ratio = **empirical formula** → multiply by n = M/empirical-mass for the **molecular formula** (full treatment in Unit 2, Topic 12).",
+      "## 3. Conceptual Relationships\n\n- **To Topic 3:** molecular formula is the input; empirical/molecular distinction matters.\n- **To stoichiometry (Unit 2):** every mole calculation begins with molar mass from the formula.\n- **To chemistry of metals (Unit 10):** ore richness comparisons use exactly this arithmetic.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Foundation | Percentage composition | Calculate the percentage of nitrogen in urea, CO(NH₂)₂. (C = 12, O = 16, N = 14, H = 1) | 2 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. % composition of a named compound (2m).\n2. Compare two ores/compounds by % of a target element (3m).\n3. Check that percentages sum to 100 (1m).\n\n### 4.3 Common examination mistakes\n\n1. Miscounting atoms in parentheses — CO(NH₂)₂ has TWO NH₂ groups.\n2. Forgetting × 100.\n3. Not checking the total sums to 100%."
+    ],
+    "confusion": [
+      "**CO(NH₂)₂ contains two NH₂ units** — count atoms inside parentheses × the subscript outside.",
+      "**Percentages must sum to 100%** — use it as a free answer check."
+    ],
+    "keyPoints": [
+      "% element = (element mass per mol / molar mass) × 100. Urea: %N = 46.7%."
+    ],
+    "importantConcepts": [
+      "**% composition runs both ways** — formula → percentages, and percentages → formula."
+    ],
+    "examples": [
+      "***Urea*** — 46.7% nitrogen: the richest common fertiliser (NEB 2024)."
+    ],
+    "universalFacts": [
+      "Fe₃O₄ (72.4% Fe) beats Fe₂O₃ (70% Fe) per kilogram of ore — the kind of comparison smelters actually make."
+    ],
+    "importantStatements": [
+      "\"The percentage composition of a compound is the percentage by mass of each element present in it.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: %N in urea (2024, 2m)."
+    ],
+    "examShortTricks": [
+      "\"Molar mass first, then element mass, then × 100.\""
+    ],
+    "examNotes": [
+      "Show the molar-mass addition line — it earns method marks."
+    ],
+    "formulas": [
+      "- % element = (mass of element in 1 mol / molar mass) × 100\n- Σ%elements = 100%"
+    ],
+    "practice": [
+      "Why does urea dominate the fertiliser market?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (2m): Calculate the percentage of nitrogen in urea, CO(NH₂)₂.** — M = 60 g/mol; N mass = 28 g; %N = 28/60 × 100 ≈ 46.7%."
+    ]
+  },
+  "importantConcepts": [
+    "**% composition runs both ways** — formula → percentages, and percentages → formula."
+  ],
+  "importantStatements": [
+    "\"The percentage composition of a compound is the percentage by mass of each element present in it.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: %N in urea (2024, 2m)."
+  ],
+  "examShortTricks": [
+    "\"Molar mass first, then element mass, then × 100.\""
+  ],
+  "examNotes": [
+    "Show the molar-mass addition line — it earns method marks."
+  ]
 }

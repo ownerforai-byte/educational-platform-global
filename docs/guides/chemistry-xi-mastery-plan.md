@@ -4,10 +4,10 @@ Goal: upgrade every Class-11 Chemistry topic note (17 units, 140 topics) to mast
 
 | # | Unit | Topic | File | Status |
 |---|---|---|---|---|
-| 1 | Foundation and Fundamentals | General Introduction Of Chemistry | `01-general-introduction-of-chemistry.json` | TBD |
-| 2 | Foundation and Fundamentals | Importance And Scope Of Chemistry | `02-importance-and-scope-of-chemistry.json` | TBD |
-| 3 | Foundation and Fundamentals | Basic Concepts Of Chemistry Atoms Molecules Relative Masses Of Atoms And Molecules Atomic Mass Unit Amu Radicals Molecular Formula Empirical Formula | `03-basic-concepts-of-chemistry-atoms-molecules-relative-masses-of-atoms-and-molecules-atomic-mass-u.json` | TBD |
-| 4 | Foundation and Fundamentals | Percentage Composition From Molecular Formula | `04-percentage-composition-from-molecular-formula.json` | TBD |
+| 1 | Foundation and Fundamentals | General Introduction Of Chemistry | `01-general-introduction-of-chemistry.json` | **Completed** |
+| 2 | Foundation and Fundamentals | Importance And Scope Of Chemistry | `02-importance-and-scope-of-chemistry.json` | **Completed** |
+| 3 | Foundation and Fundamentals | Basic Concepts Of Chemistry Atoms Molecules Relative Masses Of Atoms And Molecules Atomic Mass Unit Amu Radicals Molecular Formula Empirical Formula | `03-basic-concepts-of-chemistry-atoms-molecules-relative-masses-of-atoms-and-molecules-atomic-mass-u.json` | **Completed** |
+| 4 | Foundation and Fundamentals | Percentage Composition From Molecular Formula | `04-percentage-composition-from-molecular-formula.json` | **Completed** |
 | 5 | Stoichiometry | Daltons Atomic Theory And Its Postulates | `01-dalton-atomic-theory.json` | TBD |
 | 6 | Stoichiometry | Laws Of Stoichiometry | `02-laws-of-stoichiometry.json` | TBD |
 | 7 | Stoichiometry | Avogadros Law And Some Deductions Molecular Mass And Vapour Density Molecular Mass And Volume Of Gas Molecular Mass And Number Of Particles | `03-avogadro-law.json` | TBD |
@@ -146,4 +146,4 @@ Goal: upgrade every Class-11 Chemistry topic note (17 units, 140 topics) to mast
 | 140 | Modern Chemical Manufactures | Fertilizers Chemical Fertilizers Types Of Chemical Fertilizers Production Of Urea With Flow Sheet Diagram | `06-fertilizers-chemical-fertilizers-types-of-chemical-fertilizers-production-of-urea-with-flow-shee.json` | TBD |
 
 Status legend: **TBD** = not started; **Completed** = mastery content assembled, built, validated and pushed.
-
+- Session 1 — Unit 1 Foundation and Fundamentals (4 topics) upgraded: general introduction (branches, matter classification); importance & scope (benefits vs hazards table); basic concepts (atoms, molecules, radicals, amu, empirical vs molecular formula, measurement); percentage composition. Verified PYQs used: atoms in 5.6 g Fe 2024 2m, density sig-figs 2023 3m, SI mole MCQ 2022 1m, mean/absolute error 2021 2m, %N in urea 2024 2m. Next: Unit 2 Stoichiometry (8 topics).
