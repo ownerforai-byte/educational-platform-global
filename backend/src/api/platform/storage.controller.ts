@@ -1,6 +1,13 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
-import { normalizeRole } from "../../auth/types";
+import { normalizeRole, type SessionUser } from "../../auth/types";
+
+function normalizePlanTier(value: unknown): SessionUser["plan"] {
+  if (typeof value !== "string") return null;
+  const v = value.trim().toLowerCase();
+  if (v === "member" || v === "plus" || v === "pro") return v;
+  return null;
+}
 import { isApprovedAccount, loadProfileAccess } from "../../middleware/auth";
 import { verifyAccessToken } from "../../auth/token-verify.js";
 import { supabaseAdmin } from "../../db/supabase";
@@ -146,9 +153,9 @@ router.post("/upload", async (req: Request, res: Response) => {
     ? path
     : `accounts/${ownerId}/${path.replace(/^\/+/, "")}`;
   const reserved = await reserveStoragePath(ownerId, objectPath, buffer.length, {
-    email: auth.user.email,
-    role: auth.profile.role,
-    plan: typeof auth.profile.plan === "string" ? auth.profile.plan : null,
+    email: auth.user.email ?? "",
+    role: normalizeRole(auth.profile.role),
+    plan: normalizePlanTier(auth.profile.plan),
   });
   if (!reserved.ok) {
     if (reserved.reason === "quota") {

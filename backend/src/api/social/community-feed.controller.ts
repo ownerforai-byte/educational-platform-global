@@ -2937,9 +2937,14 @@ router.get(
       serverError(res, presented.error, "community-feed");
       return;
     }
+    const viewerId = viewer?.id ?? null;
     noStore(res);
     res.json({
-      profile: toAuthor(profile.id, profile, viewerId ? (await followingByAuthor(viewerId, [profile.id])).has(profile.id) : false),
+      profile: toAuthor(
+        profile.id,
+        profile,
+        viewerId ? (await followingByAuthor(viewerId, [profile.id])).has(profile.id) : false,
+      ),
       posts: presented.posts,
       nextCursor,
       migrated: true,

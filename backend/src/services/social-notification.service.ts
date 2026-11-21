@@ -62,7 +62,7 @@ export async function recordSocialNotification(opts: {
   if (result.missingTable) return;
   const copy = PUSH_COPY[opts.kind]({ postId: opts.postId });
   void sendNotification(opts.userId, {
-    kind: "system_notice",
+    kind: "community_activity",
     category: "system",
     title: copy.title,
     body: copy.body,

@@ -17,6 +17,31 @@ function queryOne(value: unknown): string | undefined {
 }
 
 router.get(
+  "/notifications/summary",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = (req as AuthedRequest).user;
+    const probe = await listSocialNotifications(user.id, {
+      cursor: 0,
+      limit: 1,
+      unreadOnly: false,
+    });
+    if (probe.missingTable) {
+      res.setHeader("Cache-Control", "no-store");
+      res.json({ unreadCount: 0, migrated: false });
+      return;
+    }
+    if (probe.error) {
+      serverError(res, probe.error, "social-notifications");
+      return;
+    }
+    const unreadCount = await countUnreadSocialNotifications(user.id);
+    res.setHeader("Cache-Control", "no-store");
+    res.json({ unreadCount, migrated: true });
+  }),
+);
+
+router.get(
   "/notifications",
   requireAuth,
   asyncHandler(async (req, res) => {

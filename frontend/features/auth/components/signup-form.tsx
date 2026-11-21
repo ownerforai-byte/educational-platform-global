@@ -59,7 +59,7 @@ export function SignupForm() {
     ) {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       router.push(WAITING_ROUTE);
-    } else if (result.code === "PENDING_APPROVAL") {
+    } else if (result.ok && result.code === "PENDING_APPROVAL") {
       clearPendingSignup();
       refresh();
       router.push(result.user ? tierHomePathFor(result.user) : defaultMemberHomePath());

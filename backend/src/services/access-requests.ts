@@ -73,13 +73,19 @@ export async function ensureAccessRequest(
       ]);
       return updated as AccessRequestRow;
     }
-    await mirrorSettled("existing-session", [
+    const mirrors: Array<Promise<unknown>> = [
       realtime.upsertAccessSession({
         requestId: existing.id,
         userId,
         status: existing.status,
       }),
-    ]);
+    ];
+    if (fcmToken) {
+      mirrors.unshift(
+        realtime.upsertFcmToken(userId, fcmToken, { requestId: existing.id }),
+      );
+    }
+    await mirrorSettled("existing-session", mirrors);
     return existing as AccessRequestRow;
   }
 

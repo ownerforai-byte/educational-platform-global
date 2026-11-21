@@ -10,6 +10,7 @@ import {
 } from "react";
 import type { SessionUser } from "@/features/auth/types";
 import { ensureSession, logout as apiLogout, refreshSession } from "@/lib/api/auth";
+import { clearFcmRegistrationCache } from "@/lib/fcm/register-token";
 import { clearStoredToken, getStoredToken } from "@/lib/api-client";
 import {
   clearCachedSession,
@@ -196,6 +197,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // leaves this client signed in.
     clearStoredToken();
     clearCachedSession();
+    clearFcmRegistrationCache();
     setUser(null);
     setIsLoading(false);
     void apiLogout().catch(() => {

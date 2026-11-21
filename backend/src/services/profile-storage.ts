@@ -7,7 +7,7 @@
  * that is still referenced.
  */
 import { supabaseAdmin } from "../db/supabase";
-import type { SessionUser } from "../auth/types";
+import { normalizeRole, type SessionUser } from "../auth/types";
 import { isOwnerEmail } from "../middleware/auth";
 
 export const COMMUNITY_STORAGE_PREFIX = "community/";
@@ -48,6 +48,13 @@ export const TIER_STORAGE_LIMITS: Record<string, number> = {
 };
 
 const UNLIMITED = Number.MAX_SAFE_INTEGER;
+
+function normalizePlanTier(value: unknown): SessionUser["plan"] {
+  if (typeof value !== "string") return null;
+  const v = value.trim().toLowerCase();
+  if (v === "member" || v === "plus" || v === "pro") return v;
+  return null;
+}
 
 export function defaultLimitBytes(user: Pick<SessionUser, "role" | "plan" | "email">): number {
   if (user.role === "owner" || isOwnerEmail(user.email)) return UNLIMITED;
@@ -90,8 +97,8 @@ export async function getStorageSnapshot(
 
   const used = Number(data?.storage_used_bytes ?? 0);
   const override = data?.storage_limit_bytes;
-  const storedRole = typeof data?.role === "string" ? data.role : user.role;
-  const storedPlan = typeof data?.plan === "string" ? data.plan : user.plan;
+  const storedRole = normalizeRole(data?.role ?? user.role);
+  const storedPlan = normalizePlanTier(data?.plan ?? user.plan);
   const limit =
     override != null && Number.isFinite(Number(override))
       ? Number(override)

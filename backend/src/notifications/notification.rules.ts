@@ -212,4 +212,16 @@ export const NOTIFICATION_RULES: Record<NotificationKind, NotificationRule> = {
       actionLabel: "Details",
     }),
   },
+
+  community_activity: {
+    kind: "community_activity",
+    category: "system",
+    condition: () => true,
+    buildPayload: (ctx) => ({
+      title: (ctx.metadata?.noticeTitle as string) || "Community update",
+      body: (ctx.metadata?.noticeBody as string) || "Something new happened in the community.",
+      deepLink: (ctx.metadata?.deepLink as string) || "/ai/community",
+      actionLabel: "Open",
+    }),
+  },
 };

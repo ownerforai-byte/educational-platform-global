@@ -18,6 +18,7 @@ import { isFcmConfigured } from "./config";
 import { logFcmResult, registerFcmToken, syncFcmToken } from "./register-token";
 import { startFcmTokenRefresh } from "./token-refresh";
 import { bindAndroidNativeFcmBridge } from "./android-native-bridge";
+import { SOCIAL_NOTIFICATION_REFRESH_EVENT } from "@/lib/hooks/use-social-notification-unread";
 
 function deepLinkFromPayload(data: Record<string, string> | undefined): string | null {
   if (!data) return null;
@@ -36,6 +37,17 @@ function deepLinkFromPayload(data: Record<string, string> | undefined): string |
 
 function normalizeDeepLink(pathname: string | null | undefined): string {
   return pathname && pathname.startsWith("/") ? pathname : "/home/member";
+}
+
+function socialKindFromPayload(data: Record<string, string>): string | null {
+  const raw = data.metadata;
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw) as { socialKind?: string };
+    return typeof parsed.socialKind === "string" ? parsed.socialKind : null;
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -162,6 +174,12 @@ export function FcmNotificationListener() {
               actionLabel,
             });
           });
+
+          if (socialKindFromPayload(data)) {
+            step(() => {
+              window.dispatchEvent(new Event(SOCIAL_NOTIFICATION_REFRESH_EVENT));
+            });
+          }
 
           step(() => {
             toast(title, {

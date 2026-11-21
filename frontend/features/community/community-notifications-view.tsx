@@ -11,6 +11,7 @@ import {
 } from "@/lib/api/community-feed";
 import { CommunityBackLink } from "@/features/community/community-helpers";
 import { chipBtn, emptyStatePanel, surfaceCardFlat } from "@/features/community/community-ui";
+import { SOCIAL_NOTIFICATION_REFRESH_EVENT } from "@/lib/hooks/use-social-notification-unread";
 import { cn } from "@/lib/utils";
 
 const KIND_LABEL: Record<string, string> = {
@@ -53,6 +54,7 @@ export function CommunityNotificationsView() {
     void markSocialNotificationsRead({ all: true }).then(() => {
       setItems((current) => current.map((row) => ({ ...row, readAt: row.readAt ?? new Date().toISOString() })));
       setUnreadCount(0);
+      window.dispatchEvent(new Event(SOCIAL_NOTIFICATION_REFRESH_EVENT));
     });
   }, []);
 

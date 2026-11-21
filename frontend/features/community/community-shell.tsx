@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { CommunitySubnav, type CommunityNavKey } from "@/features/community/community-subnav";
 import { CommunityDiscoveryRail } from "@/features/community/community-discovery-rail";
+import { useSocialNotificationUnread } from "@/lib/hooks/use-social-notification-unread";
 import { cn } from "@/lib/utils";
 
 export type CommunityShellVariant = "timeline" | "focus";
@@ -24,6 +25,7 @@ export function CommunityShell({
   className,
 }: CommunityShellProps) {
   const isFocus = variant === "focus";
+  const notificationUnreadCount = useSocialNotificationUnread();
 
   if (isFocus) {
     return (
@@ -37,7 +39,12 @@ export function CommunityShell({
     <div className={cn("mx-auto w-full max-w-[1100px] px-3 py-3 sm:px-4", className)}>
       <div className="grid items-start gap-3 lg:grid-cols-[188px_minmax(0,1fr)] xl:grid-cols-[188px_minmax(0,1fr)_220px]">
         {active ? (
-          <CommunitySubnav active={active} savedCount={savedCount} className="lg:sticky lg:top-3" />
+          <CommunitySubnav
+            active={active}
+            savedCount={savedCount}
+            notificationUnreadCount={notificationUnreadCount}
+            className="lg:sticky lg:top-3"
+          />
         ) : null}
         <div className="min-w-0 space-y-2">{children}</div>
         <CommunityDiscoveryRail className="hidden xl:block" />

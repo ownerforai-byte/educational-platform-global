@@ -273,6 +273,13 @@ export interface SocialNotificationItem {
   createdAt: string;
 }
 
+export function fetchSocialNotificationSummary(): Promise<{
+  unreadCount: number;
+  migrated: boolean;
+}> {
+  return call(`${ROOT}/notifications/summary`);
+}
+
 export function listSocialNotifications(params: {
   cursor?: number;
   unreadOnly?: boolean;

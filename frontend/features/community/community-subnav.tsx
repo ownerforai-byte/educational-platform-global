@@ -47,10 +47,12 @@ const ITEMS: NavItem[] = [
 export function CommunitySubnav({
   active,
   savedCount = 0,
+  notificationUnreadCount = 0,
   className,
 }: {
   active: CommunityNavKey;
   savedCount?: number;
+  notificationUnreadCount?: number;
   className?: string;
 }) {
   const current = ITEMS.find((item) => item.key === active) ?? ITEMS[0];
@@ -72,6 +74,11 @@ export function CommunitySubnav({
               {active === "saved" && savedCount > 0 ? (
                 <span className="rounded-full bg-primary/15 px-1.5 py-0.5 text-xs font-semibold tabular-nums text-primary">
                   {savedCount}
+                </span>
+              ) : null}
+              {active === "notifications" && notificationUnreadCount > 0 ? (
+                <span className="rounded-full bg-primary/15 px-1.5 py-0.5 text-xs font-semibold tabular-nums text-primary">
+                  {notificationUnreadCount}
                 </span>
               ) : null}
               <ChevronDown className="h-4 w-4 text-muted-foreground" aria-hidden />
@@ -100,6 +107,11 @@ export function CommunitySubnav({
                     {item.key === "saved" && savedCount > 0 ? (
                       <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-semibold tabular-nums text-muted-foreground">
                         {savedCount}
+                      </span>
+                    ) : null}
+                    {item.key === "notifications" && notificationUnreadCount > 0 ? (
+                      <span className="rounded-full bg-primary/15 px-2 py-0.5 text-xs font-semibold tabular-nums text-primary">
+                        {notificationUnreadCount > 99 ? "99+" : notificationUnreadCount}
                       </span>
                     ) : null}
                   </Link>
@@ -151,6 +163,16 @@ export function CommunitySubnav({
                       )}
                     >
                       {savedCount}
+                    </span>
+                  ) : null}
+                  {item.key === "notifications" && notificationUnreadCount > 0 ? (
+                    <span
+                      className={cn(
+                        "rounded-full px-2 py-0.5 text-xs font-semibold tabular-nums",
+                        isSelected ? "bg-primary/20 text-primary" : "bg-primary/15 text-primary",
+                      )}
+                    >
+                      {notificationUnreadCount > 99 ? "99+" : notificationUnreadCount}
                     </span>
                   ) : null}
                 </Link>
