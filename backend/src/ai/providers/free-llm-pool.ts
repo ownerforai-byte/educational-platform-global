@@ -36,6 +36,7 @@ export const FREE_LLM_NAMES = [
   "huggingface",
   "zai",
   "aion",
+  "deepai",
 ] as const;
 
 export type FreeLlmProviderName = (typeof FREE_LLM_NAMES)[number];
@@ -61,6 +62,12 @@ export interface FreeLlmProviderSpec {
   docsUrl: string;
   /** True when the provider serves a usable free tier without any key. */
   keyless?: boolean;
+  /**
+   * How the key rides the request. Most OpenAI-compatible gateways take
+   * `Authorization: Bearer`; DeepAI's API takes an `api-key` header, so it
+   * needs `"api-key"` (or `"both"` when a gateway accepts either).
+   */
+  authScheme?: "bearer" | "api-key" | "both";
 }
 
 export const FREE_LLM_PROVIDERS: readonly FreeLlmProviderSpec[] = [
@@ -244,6 +251,25 @@ export const FREE_LLM_PROVIDERS: readonly FreeLlmProviderSpec[] = [
     defaultModel: "aion-labs/aion-3.5",
     timeoutEnv: "AION_TIMEOUT_MS",
     docsUrl: "https://www.aionlabs.ai/app/api-keys/",
+  },
+  {
+    name: "deepai",
+    label: "DeepAI",
+    // DeepAI's chat API. NOT OpenAI-shaped: the completions route is
+    // `<origin>/chat/completions` (no /v1), and the key rides an `api-key`
+    // header rather than a Bearer token — hence authScheme. Key from
+    // deepai.org/dashboard/profile (owner 2026-11-21).
+    baseUrl: "https://api.deepai.org",
+    baseUrlEnv: "DEEPAI_API_URL",
+    envVars: ["DEEPAI_API_KEY"],
+    modelEnv: "DEEPAI_MODEL",
+    // Best efficiency for academic answering: a current-generation frontier
+    // model served at flash-class latency. Override with DEEPAI_MODEL for
+    // depth (e.g. deepai/claude-opus-5-5) or cost (deepai/qwen-3.8-flash).
+    defaultModel: "deepai/gpt-6.1-sol",
+    timeoutEnv: "DEEPAI_TIMEOUT_MS",
+    docsUrl: "https://deepai.org/dashboard/profile",
+    authScheme: "api-key",
   },
 ];
 

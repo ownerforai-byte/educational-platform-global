@@ -835,6 +835,8 @@ class OpenAICompatProvider implements AIProvider {
   private apiUrl: string;
   private model: string;
   private apiKey: string;
+  /** Header style for the key; see FreeLlmProviderSpec.authScheme. */
+  private authScheme: FreeLlmProviderSpec["authScheme"];
   private timeoutMs: number;
   private label: string;
   private lastFinishReason = "";
@@ -854,6 +856,7 @@ class OpenAICompatProvider implements AIProvider {
     this.name = opts.name ?? spec.name;
     this.label = spec.label;
     this.apiKey = apiKey;
+    this.authScheme = spec.authScheme;
     this.apiUrl = chatCompletionsUrl(spec);
     this.model =
       opts.model ?? (process.env[spec.modelEnv] || spec.defaultModel).trim();
