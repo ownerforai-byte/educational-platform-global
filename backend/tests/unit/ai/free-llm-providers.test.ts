@@ -130,8 +130,10 @@ describe("AIService registration — free-tier links", () => {
     expect(svc.providers.has("ovh")).toBe(true);
     expect(svc.chainProviders().map((p: any) => p.name)).toEqual([
       "groq",
-      "llm7",
+      // kilo answers on the first try; llm7/ovh are keyless tiers that throttle
+      // first, so reliability order puts them after it (owner 2026-11-21).
       "kilo",
+      "llm7",
       "ovh",
       "internal",
     ]);

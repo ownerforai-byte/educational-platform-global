@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { AIService } from "../../../src/ai/service.js";
 import { FREE_LLM_NAMES } from "../../../src/ai/free-llm-providers.js";
+import { freeLlmRank } from "../../../src/ai/providers/free-llm-pool.js";
 
 describe("AIService provider registration & chain wiring", () => {
   const SAVE = {
@@ -65,9 +66,10 @@ describe("AIService provider registration & chain wiring", () => {
     for (const name of freeLinks) {
       expect(FREE_LLM_NAMES).toContain(name);
     }
-    // Registry order is preserved, so a free link's position is deterministic.
-    const indices = freeLinks.map((name) => FREE_LLM_NAMES.indexOf(name as never));
-    expect(indices).toEqual([...indices].sort((a, b) => a - b));
+    // Free links are ordered by measured reliability, not catalogue order, so a
+    // lane's position is deterministic through freeLlmRank.
+    const ranks = freeLinks.map((name) => freeLlmRank(name));
+    expect(ranks).toEqual([...ranks].sort((a, b) => a - b));
     // The two keyless free tiers are always usable, so they are always present.
     expect(freeLinks).toContain("llm7");
     expect(freeLinks).toContain("ovh");

@@ -41,6 +41,42 @@ export const FREE_LLM_NAMES = [
 
 export type FreeLlmProviderName = (typeof FREE_LLM_NAMES)[number];
 
+/**
+ * Chain order for the free links, measured not assumed (2026-11-21 live probe
+ * through each provider's own completions route). Registry order is a catalogue
+ * order; this is the order that answers fastest and most often, so a healthy
+ * lane answers before a rate-limited one burns an attempt:
+ *
+ *   nvidia 1.0s · openrouter 1.2s · kilo 2.0s · zai 2.7s · aion 6-10s  — all answer
+ *   llm7 429 · ovh 429 (keyless free tiers, first to throttle)          — try late
+ *   deepai 403 (needs the app's signed proof headers, see the spec)     — last
+ *
+ * Any name absent here keeps registry order after the ranked ones, and a lane
+ * that is not configured is skipped before this ordering is even applied.
+ */
+const FREE_LLM_RELIABILITY_ORDER: readonly FreeLlmProviderName[] = [
+  "nvidia",
+  "openrouter",
+  "kilo",
+  "zai",
+  "aion",
+  "mistral",
+  "deepseek",
+  "sambanova",
+  "modelscope",
+  "siliconflow",
+  "huggingface",
+  "llm7",
+  "ovh",
+  "deepai",
+];
+
+/** Rank for chain ordering: lower answers first. Unranked names sink to the end. */
+export function freeLlmRank(name: string): number {
+  const at = FREE_LLM_RELIABILITY_ORDER.indexOf(name as FreeLlmProviderName);
+  return at === -1 ? FREE_LLM_RELIABILITY_ORDER.length : at;
+}
+
 export interface FreeLlmProviderSpec {
   /** Chain id — also the token used in AI_CHAIN_ORDER. */
   name: FreeLlmProviderName;

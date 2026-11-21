@@ -24,6 +24,7 @@ import {
 } from "./config";
 import {
   FREE_LLM_PROVIDERS,
+  freeLlmRank,
   chatCompletionsUrl,
   configuredFreeLlmProviders,
   type FreeLlmProviderName,
@@ -1509,9 +1510,11 @@ export class AIService {
     // Free-tier fallbacks (awesome-free-llm-apis) never jump the owner's order:
     // they sit after every explicitly ordered link and BEFORE the internal
     // keyword engine, which stays the last resort.
-    const freeLinks = FREE_LLM_PROVIDERS.map((spec) => spec.name).filter(
-      (name) => this.providers.has(name) && !ordered.includes(name),
-    );
+    const freeLinks = FREE_LLM_PROVIDERS.map((spec) => spec.name)
+      .filter((name) => this.providers.has(name) && !ordered.includes(name))
+      // Registry order is catalogue order. Rank by measured reliability so a
+      // throttled keyless lane cannot burn an attempt ahead of a healthy one.
+      .sort((a, b) => freeLlmRank(a) - freeLlmRank(b));
     if (freeLinks.length > 0) {
       const internalAt = ordered.indexOf("internal");
       if (internalAt >= 0) ordered.splice(internalAt, 0, ...freeLinks);
