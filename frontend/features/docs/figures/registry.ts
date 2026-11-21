@@ -275,6 +275,42 @@ import { HornwortStructure } from "./hornwort-structure";
 import { RhizoidVsRoot } from "./rhizoid-vs-root";
 import { PeatBogFormation } from "./peat-bog-formation";
 import { ProtonemaToLeafyShoot } from "./protonema-to-leafy-shoot";
+import { FernSoriDetail } from "./fern-sori-detail";
+import { HomosporousVsHeterosporous } from "./homosporous-vs-heterosporous";
+import { SelaginellaHeterosporyZoom } from "./selaginella-heterospory-zoom";
+import { PteridophyteVsBryophyte } from "./pteridophyte-vs-bryophyte";
+import { PteridophyteHabitatsCoal } from "./pteridophyte-habitats-coal";
+import { PteridophyteEconomicUses } from "./pteridophyte-economic-uses";
+import { PteridophyteSporophyteIndependent } from "./pteridophyte-sporophyte-independent";
+import { FernWaterDependence } from "./fern-water-dependence";
+import { PinusNeedleCrossSection } from "./pinus-needle-cross-section";
+import { PineOvuleZoom } from "./pine-ovule-zoom";
+import { GymnospermGametophyteReduction } from "./gymnosperm-gametophyte-reduction";
+import { CycasProfile } from "./cycas-profile";
+import { ConiferForestBelt } from "./conifer-forest-belt";
+import { PineSeedWingedFlight } from "./pine-seed-winged-flight";
+import { SeedVsSpore } from "./seed-vs-spore";
+import { StemModifications } from "./stem-modifications";
+import { RootTipZones } from "./root-tip-zones";
+import { LeafPhyllotaxyDetail } from "./leaf-phyllotaxy-detail";
+import { FlowerSymmetryTypes } from "./flower-symmetry-types";
+import { MonocotVsDicotFull } from "./monocot-vs-dicot-full";
+import { PlacentationTypes } from "./placentation-types";
+import { AestivationTypes } from "./aestivation-types";
+import { HerbariumSheetAnatomy } from "./herbarium-sheet-anatomy";
+import { LivingCollectionsGardens } from "./living-collections-gardens";
+import { MonographFloraManual } from "./monograph-flora-manual";
+import { BenthamHookerSystem } from "./bentham-hooker-system";
+import { LinnaeusBinomialRules } from "./linnaeus-binomial-rules";
+import { SpecimenCollectionSteps } from "./specimen-collection-steps";
+import { PhylogeneticTreeReading } from "./phylogenetic-tree-reading";
+import { MustardEconomy } from "./mustard-economy";
+import { FabaceaeNodulesRhizobium } from "./fabaceae-nodules-rhizobium";
+import { SolanaceaeAlkaloidCrops } from "./solanaceae-alkaloid-crops";
+import { LiliaceaeMonocotBlueprint } from "./liliaceae-monocot-blueprint";
+import { FamilyFruitTypes } from "./family-fruit-types";
+import { FamilyStamensIdChart } from "./family-stamens-id-chart";
+import { OnionGarlicAloe } from "./onion-garlic-aloe";
 import { FernStructure } from "./fern-structure";
 import { FernLifeCycle } from "./fern-life-cycle";
 import { FernProthallus } from "./fern-prothallus";
@@ -2439,6 +2475,62 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Lycopodium Selaginella Equisetum and Dryopteris compared",
         keyword: "lycopodium",
       },
+      {
+        Component: FernSoriDetail,
+        caption:
+          "Under the frond: sori are brown spore clusters on the pinna underside, each sporangium armed with a snapping annulus that flings spores on dry days.",
+        alt: "Fern sori clusters under pinna with sporangium annulus zoom",
+        keyword: "sorus",
+      },
+      {
+        Component: HomosporousVsHeterosporous,
+        caption:
+          "One spore or two: homosporous ferns make a single bisexual prothallus; heterosporous Selaginella makes micro- and megaspores — the seed habit's first draft.",
+        alt: "Homosporous versus heterosporous spores and gametophytes",
+        keyword: "homosporous",
+      },
+      {
+        Component: SelaginellaHeterosporyZoom,
+        caption:
+          "Selaginella's strobilus: microsporophylls above carry microspores, megasporophylls below carry megaspores — and the megaspore stays on the parent.",
+        alt: "Selaginella strobilus with microsporophylls and megasporophylls",
+        keyword: "megaspore",
+      },
+      {
+        Component: PteridophyteVsBryophyte,
+        caption:
+          "The vascular leap: xylem and phloem, true roots and an independent sporophyte lift ferns from moss-sized cushions to 20-metre tree ferns.",
+        alt: "Pteridophyte versus bryophyte comparison vascular tissue roots size",
+        keyword: "vascular",
+      },
+      {
+        Component: PteridophyteHabitatsCoal,
+        caption:
+          "Shady corners today, coal seams yesterday: pteridophytes were the first vascular land plants, and Carboniferous forests of tree ferns became our coal.",
+        alt: "Pteridophyte habitats damp shade and Carboniferous coal forests",
+        keyword: "coal",
+      },
+      {
+        Component: PteridophyteEconomicUses,
+        caption:
+          "What ferns give us: ornamental shade plants, Lycopodium spores in pharmacy, edible fiddleheads, and Azolla as a rice-paddy biofertiliser.",
+        alt: "Pteridophyte economic uses ornamental medicine food biofertiliser",
+        keyword: "ornamental",
+      },
+      {
+        Component: PteridophyteSporophyteIndependent,
+        caption:
+          "The fern's secret: its young sporophyte grows its own fronds and roots, then drops the prothallus — independence the moss sporophyte never earns.",
+        alt: "Young fern sporophyte leaving prothallus independent adult",
+        keyword: "independent",
+      },
+      {
+        Component: FernWaterDependence,
+        caption:
+          "Still tied to water: flagellate sperms must swim a film of dew from antheridium to archegonium — the weak point seeds and pollen tubes later removed.",
+        alt: "Fern fertilisation needs water film swimming sperm prothallus",
+        keyword: "archegonium",
+      },
     ],
   },
   "gymnosperm-general-introduction-and-characteristic-features-of-gymnosperms-morphology-and-reprod": {
@@ -2478,6 +2570,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Living gymnosperms and their uses: Cycas the sago palm, Pinus the timber-and-resin tree — chir pine forests of the mid-hills supply resin, turpentine and pulp.",
         alt: "Gymnosperm diversity Cycas and Pinus with economic uses",
         keyword: "cycas",
+      },
+      {
+        Component: PinusNeedleCrossSection,
+        caption:
+          "Slice a needle: thick cuticle, sunken stomata, sclerenchyma hypodermis and resin canals — every layer engineered against mountain drought.",
+        alt: "Pinus needle cross-section cuticle sunken stomata resin canals",
+        keyword: "resin",
+      },
+      {
+        Component: PineOvuleZoom,
+        caption:
+          "The naked ovule, layer by layer: integument, nucellus, female gametophyte with archegonia — sitting exposed on the scale, entered through the micropyle.",
+        alt: "Pine ovule anatomy integument nucellus micropyle archegonia",
+        keyword: "ovule",
+      },
+      {
+        Component: GymnospermGametophyteReduction,
+        caption:
+          "The shrinking gametophyte: mosses wear it, ferns free it, gymnosperms pack it inside pollen and ovule — the male gametophyte IS the pollen grain.",
+        alt: "Gametophyte reduction trend from moss to angiosperm",
+        keyword: "gametophyte",
+      },
+      {
+        Component: CycasProfile,
+        caption:
+          "Cycas, the living fossil: unbranched trunk, crown of stiff leaflets, coralloid roots hosting nitrogen-fixing cyanobacteria, and sago starch inside.",
+        alt: "Cycas profile trunk crown coralloid roots sago starch",
+        keyword: "sago",
+      },
+      {
+        Component: ConiferForestBelt,
+        caption:
+          "Climb a Himalayan slope: chir pine owns the mid-hills, fir and spruce take the cold, and the timberline ends the trees — conifers win by needles and cones.",
+        alt: "Conifer forest belts on Himalayan slope chir pine to timberline",
+        keyword: "conifer",
+      },
+      {
+        Component: PineSeedWingedFlight,
+        caption:
+          "A one-way helicopter: the off-centre papery wing spins the seed as it falls, wind stretches the glide, and every seed lands away from the parent's shade.",
+        alt: "Pine winged seed autorotation wind dispersal from parent",
+        keyword: "winged",
+      },
+      {
+        Component: SeedVsSpore,
+        caption:
+          "Spore vs seed: one bare cell versus embryo plus food plus coat — seeds removed water from fertilisation, added dormancy, and packaged a lunch.",
+        alt: "Seed versus spore comparison embryo food coat dormancy",
+        keyword: "seed",
       },
     ],
   },
@@ -2526,6 +2667,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         alt: "Fruit types drupe berry and legume with pericarp layers",
         keyword: "drupe",
       },
+      {
+        Component: StemModifications,
+        caption:
+          "One bud, four disguises: tendril coils for climbing, thorn defends, runner spreads plantlets, tuber stores starch — all still stems with axillary buds.",
+        alt: "Stem modifications tendril thorn runner tuber with examples",
+        keyword: "tendril",
+      },
+      {
+        Component: RootTipZones,
+        caption:
+          "Four working zones from the tip up: root cap shields, meristem divides, elongation stretches, maturation grows the root hairs that actually absorb.",
+        alt: "Root tip zones cap meristem elongation maturation root hairs",
+        keyword: "radicle",
+      },
+      {
+        Component: LeafPhyllotaxyDetail,
+        caption:
+          "Phyllotaxy by the numbers: one leaf per node alternate, two opposite, three or more whorled — each rhythm keeps leaves from shading each other.",
+        alt: "Phyllotaxy alternate opposite whorled leaf arrangements",
+        keyword: "phyllotaxy",
+      },
+      {
+        Component: FlowerSymmetryTypes,
+        caption:
+          "Cut a flower: actinomorphic splits anywhere into equal halves, zygomorphic only one way, asymmetric never — the ⊕ and % of floral formulae.",
+        alt: "Flower symmetry actinomorphic zygomorphic asymmetric examples",
+        keyword: "actinomorphic",
+      },
+      {
+        Component: MonocotVsDicotFull,
+        caption:
+          "Every organ agrees: one cotyledon, fibrous roots, parallel veins, trimerous flowers, scattered bundles — or the dicot mirror image of all five.",
+        alt: "Monocot versus dicot full body comparison six features",
+        keyword: "monocot",
+      },
+      {
+        Component: PlacentationTypes,
+        caption:
+          "The ovule's address inside the ovary: marginal on the seam, axile on a central column, parietal on the wall, free-central, or basal at the floor.",
+        alt: "Placentation types marginal axile parietal free central basal",
+        keyword: "placentation",
+      },
+      {
+        Component: AestivationTypes,
+        caption:
+          "How petals fold in the bud: valvate edges touch, twisted overlaps one way, imbricate mixes in and out, vexillary stacks banner over wings and keel.",
+        alt: "Aestivation types valvate twisted imbricate vexillary in bud",
+        keyword: "aestivation",
+      },
     ],
   },
   "taxonomic-study-definition-taxonomic-hierarchy-classification-systems-artificial-natural-and-phy": {
@@ -2565,6 +2755,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "A key in action: each couplet offers two contrasting choices; pick the matching one and follow its pointer until a single name survives.",
         alt: "Dichotomous key couplets leading to species identification",
         keyword: "key",
+      },
+      {
+        Component: HerbariumSheetAnatomy,
+        caption:
+          "A herbarium sheet is evidence: pressed, dried, mounted plant plus a label carrying name, family, place, date and collector — no label, no science.",
+        alt: "Herbarium sheet with pressed plant tape and data label",
+        keyword: "herbarium",
+      },
+      {
+        Component: LivingCollectionsGardens,
+        caption:
+          "Three houses of biodiversity: botanical gardens grow living labelled plants, museums pin and jar preserved ones, zoos breed live animals for conservation.",
+        alt: "Botanical garden museum and zoological park collections compared",
+        keyword: "botanical",
+      },
+      {
+        Component: MonographFloraManual,
+        caption:
+          "The taxonomist's bookshelf: a flora covers an area, a monograph one taxon exhaustively, a manual gives quick ID, a catalogue indexes names.",
+        alt: "Flora monograph manual and catalogue paper aids compared",
+        keyword: "monograph",
+      },
+      {
+        Component: BenthamHookerSystem,
+        caption:
+          "Bentham & Hooker's natural system: overall similarity in three blocks — dicots, gymnosperms wedged between, monocots — practical, pre-Darwinian, still used in herbaria.",
+        alt: "Bentham and Hooker natural system three blocks strengths limits",
+        keyword: "bentham",
+      },
+      {
+        Component: LinnaeusBinomialRules,
+        caption:
+          "Linnaeus's two-word promise: capitalised Genus plus lowercase epithet, italicised, latinised, with abbreviated author — one valid name per species worldwide.",
+        alt: "Binomial nomenclature rules with Mangifera indica example",
+        keyword: "linnaeus",
+      },
+      {
+        Component: SpecimenCollectionSteps,
+        caption:
+          "Field to name in five steps: collect the whole plant, record the data, press and dry, mount and label, then run a key against named sheets.",
+        alt: "Specimen collection workflow collect record press mount identify",
+        keyword: "specimen",
+      },
+      {
+        Component: PhylogeneticTreeReading,
+        caption:
+          "Reading an evolutionary tree: the root is the oldest ancestor, nodes are branchings, and neighbouring tips share the most recent common ancestor.",
+        alt: "Phylogenetic tree with root nodes and sister groups",
+        keyword: "phylogenetic",
       },
     ],
   },
@@ -2618,7 +2857,56 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Why these families matter: mustard oil and pulses, potato and chilli, onion and aloe — food and pharmacy, each family a distinct chemistry kit.",
         alt: "Economic importance of the four families with crops",
-        keyword: "economic",
+        keyword: "crops",
+      },
+      {
+        Component: MustardEconomy,
+        caption:
+          "Brassicaceae pays the bills: mustard oil for the kitchen, cabbage and radish bred from one plan, rayo saag on the plate, pungent seed in the pickle.",
+        alt: "Mustard plant with siliques and four economic uses",
+        keyword: "mustard",
+      },
+      {
+        Component: FabaceaeNodulesRhizobium,
+        caption:
+          "Root nodules, the free fertiliser: Rhizobium bacteria housed in pea-family roots turn N₂ into ammonia, are paid in sugar, and leave nitrogen behind.",
+        alt: "Fabaceae root nodules with Rhizobium nitrogen fixation",
+        keyword: "rhizobium",
+      },
+      {
+        Component: SolanaceaeAlkaloidCrops,
+        caption:
+          "Food and pharmacy in one family: potato tuber, tomato berry, chilli heat, tobacco nicotine — with solanine and atropine as the dose-decided poisons.",
+        alt: "Solanaceae crops potato tomato chilli tobacco with alkaloids",
+        keyword: "potato",
+      },
+      {
+        Component: LiliaceaeMonocotBlueprint,
+        caption:
+          "The monocot blueprint: six look-alike tepals in two whorls of three, 3+3 stamens, superior tricarpellary ovary — and a bulb storing the next season.",
+        alt: "Liliaceae trimerous flower tepals stamens bulb blueprint",
+        keyword: "tepals",
+      },
+      {
+        Component: FamilyFruitTypes,
+        caption:
+          "One fruit each, four fingerprints: legume splits both seams, silique carries seeds on a rim, berry stays fleshy, capsule opens in three.",
+        alt: "Legume silique berry and capsule fruits by family",
+        keyword: "legume",
+      },
+      {
+        Component: FamilyStamensIdChart,
+        caption:
+          "Stamens never lie: 2+4 tetradynamous, 9+1 diadelphous, 5 epipetalous, 3+3 in two whorls — one stamen row identifies all four families.",
+        alt: "Stamen identification chart for four angiosperm families",
+        keyword: "tetradynamous",
+      },
+      {
+        Component: OnionGarlicAloe,
+        caption:
+          "Three plants, one family: onion's layered bulb, garlic's clove cluster with allicin, aloe's succulent leaf dispensing aloin — kitchen and cabinet in Liliaceae.",
+        alt: "Onion bulb garlic cloves and aloe leaf with uses",
+        keyword: "onion",
       },
     ],
   },
