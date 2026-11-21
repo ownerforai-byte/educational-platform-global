@@ -4,6 +4,7 @@ import {
   upsertProfileFields,
 } from "../db/repositories/user.repository.js";
 import { readProfileDoc } from "../storage/firebase-store.js";
+import { memberSignupAccessStatus } from "../config/access-approval.js";
 
 /**
  * Ensure a `profiles` doc exists for a Firebase (or any) auth uid on first
@@ -11,8 +12,9 @@ import { readProfileDoc } from "../storage/firebase-store.js";
  * `USE_FIREBASE_AUTH=true`.
  *
  * Firestore `profiles` (doc id = uid) is the contract store for access fields.
- * New signups are created with `access_status: "PENDING"`; the owner console
- * flips them to ACTIVE (manual approval only).
+ * New signups default to member ACTIVE when approval is disabled
+ * (`ACCESS_APPROVAL_REQUIRED` unset/false); otherwise PENDING until the owner
+ * console (or bot) sets ACTIVE. Approval code stays; only the gate is toggled.
  */
 export async function ensureAuthProfile(
   userId: string,
@@ -51,11 +53,12 @@ export async function ensureAuthProfile(
     // Contract fields on create: the approval bot discovers PENDING docs by
     // `access_status` aged by `created_at`, so both must exist. Decisive
     // legacy states (ACTIVE/REJECTED) carry over instead of being reset.
+    const memberDefault = memberSignupAccessStatus();
     fields.access_status = owner
       ? "ACTIVE"
       : carriedStatus === "ACTIVE" || carriedStatus === "REJECTED"
         ? carriedStatus
-        : "PENDING";
+        : memberDefault;
     fields.created_at = knownCreatedAt ?? new Date().toISOString();
     fields.role = owner ? "owner" : "member";
     fields.plan = owner ? "pro" : "member";
@@ -73,7 +76,7 @@ export async function ensureAuthProfile(
             premium_status: true,
           }
         : {
-            access_status: "PENDING",
+            access_status: memberSignupAccessStatus(),
             role: "member",
             plan: "member",
             premium_status: false,

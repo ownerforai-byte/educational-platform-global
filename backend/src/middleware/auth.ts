@@ -11,6 +11,7 @@ import {
   type UserRole,
   type SessionUser,
 } from "../auth/types";
+import { isAccessApprovalRequired } from "../config/access-approval.js";
 
 /** Request augmented with the validated session user after requireAuth. */
 export type AuthedRequest = Request & { user: SessionUser };
@@ -137,6 +138,10 @@ export function isApprovedAccount(
   user: { email?: string | null; role?: string | null },
   accessStatus: unknown,
 ): boolean {
+  if (!isAccessApprovalRequired()) {
+    if (accessStatus === "REJECTED") return false;
+    return true;
+  }
   return isOwnerAccount(user) || accessStatus === "ACTIVE";
 }
 

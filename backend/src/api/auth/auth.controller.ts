@@ -35,6 +35,7 @@ import {
   AuthProviderError,
 } from "../../auth/supabase";
 import { ensureAuthProfile } from "../../services/auth-profile.js";
+import { isAccessApprovalRequired, memberSignupAccessStatus } from "../../config/access-approval.js";
 import {
   SESSION_COOKIE,
   extractToken,
@@ -138,6 +139,21 @@ type AccessStatus = "PENDING" | "ACTIVE" | "REJECTED";
 const PENDING_MESSAGE =
   "Your account is waiting for owner approval — you can sign in once it is approved in the owner console.";
 
+async function startAccessRequestClockIfEnabled(userId: string, ownerSignup: boolean): Promise<void> {
+  if (ownerSignup || !isAccessApprovalRequired()) return;
+  await ensureAccessRequest(userId);
+}
+
+function memberSignupProfileFields(fullName?: string | null): Record<string, unknown> {
+  return {
+    access_status: memberSignupAccessStatus(),
+    role: "member",
+    plan: "member",
+    premium_status: false,
+    ...(fullName?.trim() ? { full_name: fullName.trim() } : {}),
+  };
+}
+
 /**
  * Live approval state — Firestore `profiles` merged with the legacy Supabase row.
  */
@@ -171,7 +187,7 @@ async function pendingApproval(res: Response, userId: string): Promise<void> {
  */
 function accessDenied(res: Response, status: AccessStatus, userId?: string): void {
   const pending = status === "PENDING";
-  if (pending && userId) {
+  if (pending && userId && isAccessApprovalRequired()) {
     // Best-effort: (re)start the timed access-bot clock for FCM automation.
     void ensureAccessRequest(userId);
   }
@@ -340,7 +356,7 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
     });
 
     const accessStatus = await readAccessStatus(identity.id, identity.email);
-    if (accessStatus !== "ACTIVE") {
+    if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
       res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
       if (accessStatus === "REJECTED") {
         accessDenied(res, accessStatus, identity.id);
@@ -418,7 +434,7 @@ router.post("/login", async (req: Request, res: Response) => {
       accessDenied(res, accessStatus, verified.uid);
       return;
     }
-    if (accessStatus !== "ACTIVE") {
+    if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
       await pendingApproval(res, verified.uid);
       return;
     }
@@ -448,7 +464,7 @@ router.post("/login", async (req: Request, res: Response) => {
     accessDenied(res, accessStatus, data.user.id);
     return;
   }
-  if (accessStatus !== "ACTIVE") {
+  if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
     await pendingApproval(res, data.user.id);
     return;
   }
@@ -543,19 +559,13 @@ router.post("/signup", async (req: Request, res: Response) => {
       uid,
       ownerSignup
         ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true, full_name: fullName }
-        : {
-          access_status: "PENDING",
-          role: "member",
-          plan: "member",
-          premium_status: false,
-          full_name: fullName,
-        },
+        : memberSignupProfileFields(fullName),
     );
     if (profileErr) console.error("[auth] signup profile tier write failed:", profileErr.message);
-    if (!ownerSignup) await ensureAccessRequest(uid);
+    await startAccessRequestClockIfEnabled(uid, ownerSignup);
 
     const accessStatus = await readAccessStatus(uid, email);
-    if (accessStatus !== "ACTIVE") {
+    if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
       if (accessStatus === "REJECTED") {
         accessDenied(res, accessStatus, uid);
         return;
@@ -619,16 +629,10 @@ router.post("/signup", async (req: Request, res: Response) => {
     if (result.user && result.needsEmailConfirmation) {
       const { error: profileErr } = await updateProfileFields(
         result.user.id,
-        {
-          access_status: "PENDING",
-          role: "member",
-          plan: "member",
-          premium_status: false,
-          full_name: parsed.data.fullName,
-        },
+        memberSignupProfileFields(parsed.data.fullName),
       );
       if (profileErr) console.error("[auth] signup profile tier write failed:", profileErr.message);
-      if (!ownerSignup) await ensureAccessRequest(result.user.id);
+      await startAccessRequestClockIfEnabled(result.user.id, ownerSignup);
 
       res.status(202).json({
         code: "PENDING_APPROVAL",
@@ -651,26 +655,18 @@ if (result.user && deviceId) {
 // Force the live profile tier on every signup. The profiles.role column
 // must accept ladder text (member/plus/pro/owner); a leftover user_role
 // enum made these writes fail silently and left STUDENT/OWNER defaults
-// that graded as owner. Non-owner emails always enter as PENDING members.
+// that graded as owner. Non-owner tier follows memberSignupAccessStatus() (ACTIVE when approval off).
 if (result.user) {
   const { error: profileErr } = await updateProfileFields(
     result.user.id,
     ownerSignup
       ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true }
-      : {
-        access_status: "PENDING",
-        role: "member",
-        plan: "member",
-        premium_status: false,
-      },
+      : memberSignupProfileFields(parsed.data.fullName),
   );
   if (profileErr) {
     console.error("[auth] signup profile tier write failed:", profileErr.message);
   }
-  // Start the timed access-bot clock (Firebase Functions + FCM).
-  if (!ownerSignup) {
-    await ensureAccessRequest(result.user.id);
-  }
+  await startAccessRequestClockIfEnabled(result.user.id, ownerSignup);
 }
 
 if (result.needsEmailConfirmation || !result.user || !result.session) {
@@ -688,14 +684,14 @@ if (result.needsEmailConfirmation || !result.user || !result.session) {
 // and is sent to the waiting screen instead of being logged in. The bot
 // auto-approves within ~5 minutes (200, not a hard deny).
 const accessStatus = await readAccessStatus(result.user.id, result.user.email);
-if (accessStatus !== "ACTIVE") {
-  if (accessStatus === "REJECTED") {
-    accessDenied(res, accessStatus, result.user.id);
-    return;
-  }
-  await ensureAccessRequest(result.user.id);
-  const body: SignupResponse & { code: string } = {
-    code: "PENDING_APPROVAL",
+  if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
+    if (accessStatus === "REJECTED") {
+      accessDenied(res, accessStatus, result.user.id);
+      return;
+    }
+    await ensureAccessRequest(result.user.id);
+    const body: SignupResponse & { code: string } = {
+      code: "PENDING_APPROVAL",
     user: null,
     accessToken: null,
     message: PENDING_MESSAGE,

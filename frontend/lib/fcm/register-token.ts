@@ -344,6 +344,40 @@ async function doPersistRegistration(
  * stores (re-)registers so a fresh sign-in refreshes the server-side record.
  * Never throws — every failure is a `{ ok: false, reason }` result.
  */
+/**
+ * Register an FCM token already issued by the Android native shell (WebView has no
+ * web push SW). Skips browser permission / getToken.
+ */
+export async function registerProvidedFcmToken(
+  token: string,
+  opts?: {
+    deepLink?: string;
+    statusToken?: string | null;
+  },
+): Promise<FcmRegisterResult> {
+  const trimmed = token?.trim();
+  if (!trimmed) return { ok: false, reason: "empty-token" };
+  try {
+    const persisted = await persistRegistration(
+      {
+        token: trimmed,
+        deepLink: opts?.deepLink,
+        statusToken: opts?.statusToken,
+      },
+      true,
+    );
+    if (!persisted.ok) return { ok: false, reason: persisted.reason };
+    return {
+      ok: true,
+      token: trimmed,
+      requestId: persisted.requestId,
+      status: persisted.status,
+    };
+  } catch {
+    return { ok: false, reason: "unexpected-error" };
+  }
+}
+
 export async function registerFcmToken(opts?: {
   deepLink?: string;
   statusToken?: string | null;

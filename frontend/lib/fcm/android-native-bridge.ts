@@ -1,6 +1,6 @@
 "use client";
 
-import { registerFcmToken } from "@/lib/fcm/register-token";
+import { registerProvidedFcmToken } from "@/lib/fcm/register-token";
 
 declare global {
   interface Window {
@@ -16,6 +16,6 @@ export function bindAndroidNativeFcmBridge(): void {
   if (typeof window === "undefined") return;
   window.__RN_ON_NATIVE_FCM_TOKEN__ = (token: string) => {
     if (!token?.trim()) return;
-    void registerFcmToken({ token: token.trim() });
+    void registerProvidedFcmToken(token.trim());
   };
 }
