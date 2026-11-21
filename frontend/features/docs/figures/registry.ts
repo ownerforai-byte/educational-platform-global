@@ -62,6 +62,36 @@ import { PcrSteps } from "./pcr-steps";
 import { CloningVectorPlasmid } from "./cloning-vector-plasmid";
 import { IndustrialMicrobiology } from "./industrial-microbiology";
 import { BiotechApplicationsMap } from "./biotech-applications-map";
+import { EcologyOrganisationLevels } from "./ecology-organisation-levels";
+import { AbioticFactors } from "./abiotic-factors";
+import { SpeciesInteractionsMatrix } from "./species-interactions-matrix";
+import { PopulationGrowthCurves } from "./population-growth-curves";
+import { EcosystemComponents } from "./ecosystem-components";
+import { PondEcosystemZonation } from "./pond-ecosystem-zonation";
+import { ForestStratification } from "./forest-stratification";
+import { PondVsForestEcosystem } from "./pond-vs-forest-ecosystem";
+import { GrazingVsDetritusChain } from "./grazing-vs-detritus-chain";
+import { FoodWeb } from "./food-web";
+import { EcologicalPyramids } from "./ecological-pyramids";
+import { CarbonCycle } from "./carbon-cycle";
+import { WaterCycle } from "./water-cycle";
+import { SuccessionStages } from "./succession-stages";
+import { PhosphorusSulphurCycles } from "./phosphorus-sulphur-cycles";
+import { AdaptationTypes } from "./adaptation-types";
+import { HydrophyteAdaptations } from "./hydrophyte-adaptations";
+import { XerophyteAdaptations } from "./xerophyte-adaptations";
+import { HydrophyteVsXerophyte } from "./hydrophyte-vs-xerophyte";
+import { PlantHabitatSpectrum } from "./plant-habitat-spectrum";
+import { AnimalAdaptationModes } from "./animal-adaptation-modes";
+import { GreenhouseEffect } from "./greenhouse-effect";
+import { OzoneDepletion } from "./ozone-depletion";
+import { AcidRainFormation } from "./acid-rain-formation";
+import { EutrophicationSequence } from "./eutrophication-sequence";
+import { ClimateChangeImpacts } from "./climate-change-impacts";
+import { HabitatVsNiche } from "./habitat-vs-niche";
+import { ForestNutrientCycle } from "./forest-nutrient-cycle";
+import { EnergyFlowTenPercent } from "./energy-flow-ten-percent";
+import { ProductivityGppNpp } from "./productivity-gpp-npp";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -525,6 +555,121 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "N₂ from the air is fixed by lightning, Rhizobium and industry into ammonia, oxidised by Nitrosomonas and Nitrobacter to nitrate, assimilated by plants, eaten by animals, and returned by ammonification and denitrification.",
         alt: "Nitrogen cycle flow diagram with fixation, nitrification, assimilation, ammonification and denitrification pathways",
         keyword: "nitrification",
+      },
+      {
+        Component: CarbonCycle,
+        caption:
+          "The carbon cycle: photosynthesis pulls CO₂ in, respiration and combustion push it out, oceans dissolve the buffer, and fossil fuels inject ancient carbon faster than plants can fix it.",
+        alt: "Carbon cycle with atmosphere producers consumers dead matter fossil fuels and ocean pool",
+        keyword: "carbon",
+      },
+      {
+        Component: WaterCycle,
+        caption:
+          "The water cycle: the sun pumps evaporation and transpiration up, condensation builds clouds, precipitation returns it, and runoff plus infiltration route it back to sea and groundwater.",
+        alt: "Water cycle with evaporation transpiration condensation precipitation runoff and groundwater",
+        keyword: "runoff",
+      },
+      {
+        Component: PhosphorusSulphurCycles,
+        caption:
+          "Sedimentary cycles without an atmospheric pool: phosphorus and sulphur move rock → soil → organisms → decomposers — slower and more local than the gaseous carbon and nitrogen cycles.",
+        alt: "Phosphorus and sulphur sedimentary cycles between rock soil organisms and decomposers",
+        keyword: "atmosphere",
+      },
+      {
+        Component: SuccessionStages,
+        caption:
+          "Succession as a relay: lichens build the first soil on bare rock, mosses, grasses and shrubs take over in turn, until the stable climax forest — diversity and biomass rising at every stage.",
+        alt: "Succession sere from bare rock through lichen moss grass shrub to climax forest",
+        keyword: "pioneer",
+      },
+    ],
+  },
+  "ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes": {
+    title: "Ecological adaptation: hydrophytes and xerophytes",
+    figures: [
+      {
+        Component: AdaptationTypes,
+        caption:
+          "Three kinds of answer to the environment: morphological (shape — spines, webbed feet), physiological (chemistry — camel tolerance, salt excretion) and behavioural (habits — nocturnality, hibernation).",
+        alt: "Morphological physiological and behavioural adaptation panels with examples",
+        keyword: "mesophyte",
+      },
+      {
+        Component: HydrophyteAdaptations,
+        caption:
+          "Hydrophytes in three forms: free-floating (swollen, air-filled petioles), submerged (thin ribbon leaves, no cuticle) and emergent (stomata on top, air channels to the roots).",
+        alt: "Hydrophyte adaptations for free floating submerged and emergent plants",
+        keyword: "hydrophyte",
+      },
+      {
+        Component: XerophyteAdaptations,
+        caption:
+          "The cactus manual: leaves become spines, cuticle thickens, the succulent stem stores water, CAM opens stomata only at night, and roots spread wide and deep for rare rain.",
+        alt: "Xerophyte cactus adaptations with spines cuticle succulent stem CAM and roots",
+        keyword: "xerophyte",
+      },
+      {
+        Component: HydrophyteVsXerophyte,
+        caption:
+          "Mirror-image strategies for water balance: every character flips between the water-loving hydrophyte and the drought-proofed xerophyte.",
+        alt: "Hydrophyte versus xerophyte adaptation comparison table",
+        keyword: "hydrophyte",
+      },
+      {
+        Component: PlantHabitatSpectrum,
+        caption:
+          "The full habitat spectrum: hydrophyte, mesophyte, xerophyte, plus the salty halophyte (mangroves with salt glands and breathing roots) and the perching epiphyte.",
+        alt: "Plant life forms across habitats with key adaptations",
+        keyword: "mesophyte",
+      },
+      {
+        Component: AnimalAdaptationModes,
+        caption:
+          "Animals adapt by lifestyle: streamlined swimmers, long-limbed cursors, blind burrowers, grasping climbers and the desert specialist's water-saving kit.",
+        alt: "Animal adaptation modes aquatic cursorial fossorial arboreal and desert",
+        keyword: "mesophyte",
+      },
+    ],
+  },
+  "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-a": {
+    title: "Ecological imbalances",
+    figures: [
+      {
+        Component: GreenhouseEffect,
+        caption:
+          "The greenhouse mechanism: sunlight passes in, Earth re-radiates infrared, greenhouse gases absorb and re-emit it back — a natural blanket we are thickening with fossil CO₂.",
+        alt: "Greenhouse effect with solar input infrared trapping and enhanced effect",
+        keyword: "greenhouse",
+      },
+      {
+        Component: OzoneDepletion,
+        caption:
+          "Ozone depletion chemistry: UV cracks CFCs into chlorine radicals, and one Cl• catalytically destroys about 100,000 O₃ molecules — the Montreal Protocol is healing the layer.",
+        alt: "Ozone depletion by CFC chlorine radicals and UV consequences",
+        keyword: "CFC",
+      },
+      {
+        Component: AcidRainFormation,
+        caption:
+          "Acid rain's supply chain: SO₂ from coal and NOx from vehicles dissolve in cloud droplets to sulphuric and nitric acid, falling at pH 4–5 on lakes, soils, forests and marble.",
+        alt: "Acid rain formation from SO2 and NOx and its effects",
+        keyword: "acid rain",
+      },
+      {
+        Component: EutrophicationSequence,
+        caption:
+          "Eutrophication in seven steps: fertiliser runoff feeds an algal bloom, the bloom shades out plants, decomposition crashes the oxygen, fish die — and released nutrients restart the loop.",
+        alt: "Eutrophication sequence from runoff to algal bloom oxygen crash and fish kill",
+        keyword: "eutrophication",
+      },
+      {
+        Component: ClimateChangeImpacts,
+        caption:
+          "Impacts and answers: melting Himalayan glaciers and rising seas, shifting species and failing monsoons — answered by mitigation (cut emissions) and adaptation (defend and adjust).",
+        alt: "Climate change impacts on ice ecosystems agriculture and responses",
+        keyword: "mitigation",
       },
     ],
   },
