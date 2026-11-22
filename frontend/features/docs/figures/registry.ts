@@ -1242,6 +1242,67 @@ import { DesiccatorPanel } from "./desiccator-panel";
 import { CrystallisationStages } from "./crystallisation-stages";
 import { VpRuleDrill } from "./vp-rule-drill";
 import { StpMolarVolumeCheck } from "./stp-molar-volume-check";
+import { IsotopeTrioPanel } from "./isotope-trio-panel";
+import { NascentVsMolecularH2 } from "./nascent-vs-molecular-h2";
+import { H2oVsD2oProps } from "./h2o-vs-d2o-props";
+import { PositionDebateMap } from "./position-debate-map";
+import { NascentGenerationRoutes } from "./nascent-generation-routes";
+import { WoodsBridgeAfterglow } from "./woods-bridge-afterglow";
+import { D2oReactorRole } from "./d2o-reactor-role";
+import { H2FuelLedger } from "./h2-fuel-ledger";
+import { FuelCellElectrodes } from "./fuel-cell-electrodes";
+import { StorageTrioPanel } from "./storage-trio-panel";
+import { HeavyWaterPrepFlow } from "./heavy-water-prep-flow";
+import { IsotopeEffectEngine } from "./isotope-effect-engine";
+import { CleanCombustionMap } from "./clean-combustion-map";
+import { AllotropyDefinitionPanel } from "./allotropy-definition-panel";
+import { O2O3ContrastPanel } from "./o2o3-contrast-panel";
+import { OxideFamilySort } from "./oxide-family-sort";
+import { AmphotericDoubleDuty } from "./amphoteric-double-duty";
+import { PeroxideVsOxideOs } from "./peroxide-vs-oxide-os";
+import { MixedOxideAnatomy } from "./mixed-oxide-anatomy";
+import { OxidePeriodTrend } from "./oxide-period-trend";
+import { H2o2UseMap } from "./h2o2-use-map";
+import { VolumeStrengthConversion } from "./volume-strength-conversion";
+import { DecompositionEquationHub } from "./decomposition-equation-hub";
+import { StorageRuleTrio } from "./storage-rule-trio";
+import { OxygenUseLedger } from "./oxygen-use-ledger";
+import { LdConverterFlow } from "./ld-converter-flow";
+import { H2o2DualRedox } from "./h2o2-dual-redox";
+import { OzoneStructurePanel } from "./ozone-structure-panel";
+import { OzoniserFlow } from "./ozoniser-flow";
+import { StarchIodideTestFlow } from "./starch-iodide-test-flow";
+import { OzoneUseMap } from "./ozone-use-map";
+import { OzoneUvShield } from "./ozone-uv-shield";
+import { NascentORelease } from "./nascent-o-release";
+import { ClRadicalCycle } from "./cl-radical-cycle";
+import { CfcLifecyclePath } from "./cfc-lifecycle-path";
+import { AntarcticHoleRecipe } from "./antarctic-hole-recipe";
+import { OdpLadder } from "./odp-ladder";
+import { DepletionEffectsMap } from "./depletion-effects-map";
+import { MontrealTimeline } from "./montreal-timeline";
+import { DobsonColumnPanel } from "./dobson-column-panel";
+import { TripleBondAnatomy } from "./triple-bond-anatomy";
+import { InertnessFourReasons } from "./inertness-four-reasons";
+import { LiExceptionPanel } from "./li-exception-panel";
+import { ActiveNitrogenGlow } from "./active-nitrogen-glow";
+import { FixationVsHaber } from "./fixation-vs-haber";
+import { N2PreparationRoutes } from "./n2-preparation-routes";
+import { KineticVsThermoPanel } from "./kinetic-vs-thermo-panel";
+import { Nh3StructureLonePair } from "./nh3-structure-lone-pair";
+import { Cuso4TwoStepLadder } from "./cuso4-two-step-ladder";
+import { Fecl3AmmoniaTest } from "./fecl3-ammonia-test";
+import { WhiteFumesTest } from "./white-fumes-test";
+import { TwoOxygenEquations } from "./two-oxygen-equations";
+import { Nh3UseMap } from "./nh3-use-map";
+import { DryingAgentTrap } from "./drying-agent-trap";
+import { OxyacidLadderN } from "./oxyacid-ladder-n";
+import { OstwaldThreeSteps } from "./ostwald-three-steps";
+import { Hno3ConcentrationCodes } from "./hno3-concentration-codes";
+import { No3ResonancePanel } from "./no3-resonance-panel";
+import { AquaRegiaPanel } from "./aqua-regia-panel";
+import { PassivityFilmPanel } from "./passivity-film-panel";
+import { Hno2DualRedox } from "./hno2-dual-redox";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -10188,6 +10249,114 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       { Component: HaberConditionsPanel, caption: "Haber: the principle as a factory manual", alt: "Haber process conditions of high pressure, moderate temperature, ammonia removal and iron catalyst explained by Le Chatelier", keyword: "haber" },
       { Component: ContactProcessPanel, caption: "Contact process: 2SO2 + O2 ⇌ 2SO3", alt: "Contact process conditions of excess air, atmospheric pressure, moderate temperature and sulfur trioxide removal", keyword: "contact process" },
       { Component: N2o4ColorThermometer, caption: "A visible equilibrium: the colour thermometer", alt: "Nitrogen dioxide equilibrium shown as a colour thermometer with heating deepening the brown and pressure paling it", keyword: "brown" },
+    ],
+  },
+  "hydrogen-chemistry-of-atomic-and-nascent-hydrogen-isotopes-of-hydrogen-and-their-uses": {
+    title: "Hydrogen: isotopes and the nascent mystery",
+    figures: [
+      { Component: IsotopeTrioPanel, caption: "Three isotopes, one proton", alt: "Ladder of protium deuterium and tritium with neutron counts abundances and key facts", keyword: "isotopes" },
+      { Component: NascentVsMolecularH2, caption: "Two hydrogens, two powers", alt: "Comparison of mild molecular hydrogen needing heat with nascent hydrogen reducing permanganate cold", keyword: "nascent" },
+      { Component: H2oVsD2oProps, caption: "H2O vs D2O: the isotope ledger", alt: "Property table comparing ordinary and heavy water in mass melting point boiling point density and reactor role", keyword: "heavy water" },
+      { Component: PositionDebateMap, caption: "Where does hydrogen sit?", alt: "Debate map of hydrogen's resemblance to alkali metals and halogens ending in the unique element verdict", keyword: "position" },
+      { Component: NascentGenerationRoutes, caption: "Born at the moment of use", alt: "Three routes for generating nascent hydrogen in situ with equations", keyword: "zinc" },
+      { Component: WoodsBridgeAfterglow, caption: "Wood's bridge: atomic hydrogen made visible", alt: "Wood's bridge tube where hydrogen becomes atomic at the discharge arc and recombines as a third flame", keyword: "wood" },
+      { Component: D2oReactorRole, caption: "Why reactors drink heavy water", alt: "Heavy water slowing fast neutrons to thermal speeds while absorbing very few enabling natural uranium fission", keyword: "moderator" },
+    ],
+  },
+  "application-of-hydrogen-as-fuel-heavy-water-and-its-applications": {
+    title: "Hydrogen as fuel and heavy water",
+    figures: [
+      { Component: H2FuelLedger, caption: "Energy per gram: hydrogen wins", alt: "Bar chart of energy per gram for hydrogen petrol and coal with the clean steam-only exhaust note", keyword: "142" },
+      { Component: FuelCellElectrodes, caption: "The H2-O2 fuel cell", alt: "Hydrogen oxygen fuel cell with anode and cathode half reactions and electron flow through the external circuit", keyword: "fuel cell" },
+      { Component: StorageTrioPanel, caption: "The storage problem, three ways", alt: "Three hydrogen storage strategies of compressed gas cryogenic liquid and metal hydrides with their drawbacks", keyword: "storage" },
+      { Component: HeavyWaterPrepFlow, caption: "Making D2O: separate what chemistry cannot", alt: "Flow of heavy water preparation by prolonged electrolysis exploiting the isotope effect", keyword: "electrolysis" },
+      { Component: IsotopeEffectEngine, caption: "The isotope effect: speed decides the split", alt: "Diagram of O-H bonds breaking faster than O-D bonds during electrolysis", keyword: "isotope effect" },
+      { Component: CleanCombustionMap, caption: "What each fuel leaves behind", alt: "Exhaust products of hydrogen petrol and coal showing hydrogen yields only water", keyword: "clean" },
+      { Component: D2oReactorRole, caption: "Why reactors drink heavy water", alt: "Heavy water slowing fast neutrons to thermal speeds while absorbing very few enabling natural uranium fission", keyword: "moderator" },
+    ],
+  },
+  "allotropes-of-oxygen-definition-of-allotropy-and-examples-oxygen-types-of-oxides-acidic-basic-ne": {
+    title: "Oxygen allotropes and the oxide families",
+    figures: [
+      { Component: AllotropyDefinitionPanel, caption: "Allotropy: one element, several faces", alt: "Definition of allotropy with dioxygen and ozone as the example pair", keyword: "allotropes" },
+      { Component: O2O3ContrastPanel, caption: "Siblings, opposite temperaments", alt: "Six row comparison of dioxygen and ozone covering odour colour magnetism stability bond order and oxidising power", keyword: "ozone" },
+      { Component: OxideFamilySort, caption: "Sort every oxide by behaviour", alt: "Grid of four oxide families acidic basic neutral and amphoteric with examples and defining behaviour", keyword: "acidic" },
+      { Component: AmphotericDoubleDuty, caption: "ZnO answers both callers", alt: "Zinc oxide reacting with hydrochloric acid as a base and with sodium hydroxide as an acid", keyword: "amphoteric" },
+      { Component: PeroxideVsOxideOs, caption: "Count oxygen's charge before labelling", alt: "Comparison of oxygen oxidation states in normal oxides peroxides and superoxides", keyword: "peroxide" },
+      { Component: MixedOxideAnatomy, caption: "Two oxides, one lattice", alt: "Mixed oxides written as combinations of simpler oxides with magnetite and red lead examples", keyword: "mixed" },
+      { Component: OxidePeriodTrend, caption: "Across period 3: basic to amphoteric to acidic", alt: "Oxide character trend across period three from basic sodium oxide through amphoteric alumina to acidic sulfur trioxide", keyword: "basic" },
+    ],
+  },
+  "applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen": {
+    title: "H2O2 applications and industrial oxygen",
+    figures: [
+      { Component: H2o2UseMap, caption: "From medicine cabinet to launch pad", alt: "Four applications of hydrogen peroxide from antiseptic to rocket propellant", keyword: "antiseptic" },
+      { Component: VolumeStrengthConversion, caption: "10-volume to molarity, step by step", alt: "Worked conversion of ten-volume hydrogen peroxide to 0.893 molarity and about three percent", keyword: "volume strength" },
+      { Component: DecompositionEquationHub, caption: "One equation, four careers", alt: "Hub diagram showing one decomposition equation powering antiseptic bleaching rocketry and storage behaviour", keyword: "decomposition" },
+      { Component: StorageRuleTrio, caption: "Keep it cold, dark, and unwetted by metal", alt: "Three storage rules for hydrogen peroxide with stabilisers and vented caps", keyword: "wax" },
+      { Component: OxygenUseLedger, caption: "Where the oxygen goes", alt: "Four industrial uses of oxygen with brief explanations", keyword: "welding" },
+      { Component: LdConverterFlow, caption: "The LD converter: oxygen refines steel", alt: "Basic oxygen LD converter with oxygen lance blowing into molten pig iron and impurities leaving as gases and slag", keyword: "converter" },
+      { Component: H2o2DualRedox, caption: "Oxidant on Monday, reductant on Tuesday", alt: "Hydrogen peroxide acting as oxidant with iron two plus and as reductant with permanganate", keyword: "oxidant" },
+    ],
+  },
+  "ozone-occurrence-preparation-of-ozone-from-oxygen-structure-of-ozone-test-for-ozone-uses-of-ozon": {
+    title: "Ozone: structure, preparation, tests",
+    figures: [
+      { Component: OzoneStructurePanel, caption: "Bent, resonating, 128 pm", alt: "Bent ozone molecule with 117 degree angle and two resonance structures giving bond order 1.5", keyword: "resonance" },
+      { Component: OzoniserFlow, caption: "Siemen's ozoniser", alt: "Siemens ozoniser with dry oxygen entering silent discharge between cooled electrodes and ten percent ozone exiting", keyword: "ozoniser" },
+      { Component: O2O3ContrastPanel, caption: "Siblings, opposite temperaments", alt: "Six row comparison of dioxygen and ozone covering odour colour magnetism stability bond order and oxidising power", keyword: "colourless" },
+      { Component: StarchIodideTestFlow, caption: "The test, and its catch", alt: "Starch iodide test sequence for ozone with turpentine discrimination from hydrogen peroxide", keyword: "iodide" },
+      { Component: OzoneUseMap, caption: "Ozone at work", alt: "Four uses of ozone with brief notes", keyword: "bleaching" },
+      { Component: OzoneUvShield, caption: "The planetary sunscreen", alt: "Stratospheric ozone layer at 15 to 35 kilometres absorbing UV-B and UV-C before it reaches the ground", keyword: "ultraviolet" },
+      { Component: NascentORelease, caption: "O3 to O2 plus O: the workhorse split", alt: "Ozone splitting into oxygen and nascent oxygen which performs all oxidising work", keyword: "nascent" },
+    ],
+  },
+  "ozone-layer-depletion-causes-effects-and-control-measures": {
+    title: "Ozone depletion: cause, cost, cure",
+    figures: [
+      { Component: ClRadicalCycle, caption: "One Cl atom, ~100,000 ozone deaths", alt: "Two step chlorine radical cycle destroying ozone catalytically and regenerating the chlorine atom", keyword: "chlorine" },
+      { Component: CfcLifecyclePath, caption: "A CFC's journey to crime", alt: "Five stage journey of a CFC from release through inert drift to stratospheric UV cleavage and ozone destruction", keyword: "refrigerant" },
+      { Component: AntarcticHoleRecipe, caption: "Why the hole is Antarctic and seasonal", alt: "Four stage recipe for the Antarctic ozone hole involving polar stratospheric clouds and spring sunlight", keyword: "polar" },
+      { Component: OdpLadder, caption: "The refrigerant staircase", alt: "Ozone depletion potential ladder from CFCs through HCFCs and HFCs to newer refrigerants", keyword: "depletion potential" },
+      { Component: DepletionEffectsMap, caption: "What thinner ozone costs", alt: "Four categories of effects from ozone depletion on health plants marine life and materials", keyword: "cancer" },
+      { Component: MontrealTimeline, caption: "Treaty timeline", alt: "Timeline from the 1987 Montreal Protocol through Kigali to projected ozone recovery", keyword: "montreal" },
+      { Component: DobsonColumnPanel, caption: "DU: ozone measured as a squeezed column", alt: "Dobson unit concept measuring total column ozone as thickness of pure ozone at STP", keyword: "dobson" },
+    ],
+  },
+  "nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen": {
+    title: "Nitrogen: why so inert, and the active form",
+    figures: [
+      { Component: TripleBondAnatomy, caption: "The strongest bond in the simple diatomics", alt: "Nitrogen molecule with triple bond 941 kilojoules per mole and 110 picometre bond length explaining inertness", keyword: "941" },
+      { Component: InertnessFourReasons, caption: "Why N2 ignores almost everything", alt: "Four reasons for nitrogen inertness: bond energy bond length zero dipole and electronic structure", keyword: "inert" },
+      { Component: LiExceptionPanel, caption: "The exception that proves the wall", alt: "Lithium reacting with nitrogen at room temperature forming ruby red lithium nitride", keyword: "lithium" },
+      { Component: ActiveNitrogenGlow, caption: "Active nitrogen: atoms with a memory", alt: "Glow discharge tube converting nitrogen to active nitrogen atoms which recombine with yellow afterglow", keyword: "discharge" },
+      { Component: FixationVsHaber, caption: "Same reaction, two engineering styles", alt: "Comparison of biological nitrogen fixation by nitrogenase with the industrial Haber process", keyword: "nitrogenase" },
+      { Component: N2PreparationRoutes, caption: "Getting N2: cheap vs pure", alt: "Four routes to prepare nitrogen with purity notes", keyword: "distillation" },
+      { Component: KineticVsThermoPanel, caption: "Willing but blocked: thermo vs kinetics", alt: "Thermodynamics favouring nitrogen compound formation blocked by the kinetic barrier of the triple bond", keyword: "kinetic" },
+    ],
+  },
+  "chemical-properties-of-ammonia-action-with-cuso4-solution-water-fecl3-solution-conc-hcl-mercurou": {
+    title: "Ammonia: the reaction checklist",
+    figures: [
+      { Component: Nh3StructureLonePair, caption: "One lone pair runs the show", alt: "Pyramidal ammonia structure with 107 degree bond angle and lone pair driving basicity and donor behaviour", keyword: "lone pair" },
+      { Component: Cuso4TwoStepLadder, caption: "The two-step copper drama", alt: "Two step reaction of copper sulfate with ammonia: pale blue precipitate then deep blue complex on excess ammonia", keyword: "cuso4" },
+      { Component: Fecl3AmmoniaTest, caption: "FeCl3 plus NH4OH: brown and stubborn", alt: "Ferric chloride solution with ammonia giving reddish brown ferric hydroxide precipitate insoluble in excess ammonia", keyword: "fecl3" },
+      { Component: WhiteFumesTest, caption: "Two rods, one white cloud", alt: "Ammonia and hydrogen chloride gases meeting to form dense white fumes of ammonium chloride", keyword: "hcl" },
+      { Component: TwoOxygenEquations, caption: "Same flame, two products - catalyst decides", alt: "Ammonia burning in oxygen without catalyst gives nitrogen while catalytic oxidation over platinum gives nitric oxide", keyword: "oxygen" },
+      { Component: Nh3UseMap, caption: "Where NH3 goes", alt: "Four major uses of ammonia in fertilisers refrigeration nitric acid production and the laboratory", keyword: "fertiliser" },
+      { Component: DryingAgentTrap, caption: "Dry it - but with what?", alt: "Quicklime as the correct drying agent for ammonia while sulfuric acid and calcium chloride react with it", keyword: "quicklime" },
+    ],
+  },
+  "oxy-acids-of-nitrogen-name-and-formula": {
+    title: "Oxyacids of nitrogen",
+    figures: [
+      { Component: OxyacidLadderN, caption: "The nitrogen oxyacid ladder", alt: "Ladder of nitrogen oxyacids with formulas and oxidation states from hyponitrous to pernitric acid", keyword: "hyponitrous" },
+      { Component: OstwaldThreeSteps, caption: "Ostwald: NH3 to HNO3 in three moves", alt: "Ostwald process three steps with conditions including platinum rhodium gauze at 800 to 900 degrees", keyword: "ostwald" },
+      { Component: Hno3ConcentrationCodes, caption: "The concentration code", alt: "Nitric acid reduction products depend on concentration: nitrogen dioxide nitric oxide or ammonium nitrate", keyword: "no2" },
+      { Component: No3ResonancePanel, caption: "NO3 minus: three drawings, one ion", alt: "Nitrate ion with three equivalent resonance structures giving bond order one and one third", keyword: "resonance" },
+      { Component: AquaRegiaPanel, caption: "Aqua regia: the king-dissolver", alt: "Aqua regia three parts hydrochloric acid to one part nitric acid dissolving gold and platinum", keyword: "aqua regia" },
+      { Component: PassivityFilmPanel, caption: "Passivity: the acid that builds its own wall", alt: "Concentrated nitric acid passivating iron aluminium and chromium with a thin oxide film", keyword: "passivity" },
+      { Component: Hno2DualRedox, caption: "HNO2 at +3: can go up or down", alt: "Nitrous acid acting as oxidant with hydrogen iodide and as reductant with acidified permanganate", keyword: "nitrites" },
     ],
   },
 };
