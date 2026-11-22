@@ -279,6 +279,7 @@ const stemAndRigorItems: NavItem[] = [
   { href: "/mind-studio",          label: "Diagram Studio",       icon: Shapes,       minLevel: "owner" },
   { href: "/science-graph-bank",   label: "Graph Bank (Legacy)",  icon: LineChart,    minLevel: "pro"   },
   { href: "/resources/physics-xi", label: "Physics XI Academic",  icon: BookOpen,     minLevel: "pro"   },
+  { href: "/resources/mathematics-xi", label: "Mathematics XI Solutions", icon: Sigma, minLevel: "pro" },
 ];
 
 /**

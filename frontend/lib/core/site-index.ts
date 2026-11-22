@@ -32,6 +32,11 @@ import { SYLLABUS, getUnitTopicEntries } from "./syllabus";
 import { guides } from "../platform-content";
 import { getTheoremProofRoutes, getSyllabusTheoremItems } from "../theorem-topics";
 import { PHYSICS_XI_ACADEMIC_UNITS } from "../physics-xi-academic";
+import { MATHEMATICS_XI_UNITS, mathXiSolutionUrl } from "../mathematics-xi-solutions";
+import {
+  PHYSICS_XI_SOLUTION_UNITS,
+  physicsXiSolutionUrl,
+} from "../physics-xi-solutions";
 import type { SiteIndexEntry, SiteIndexGroup, SiteIndexLink } from "../site-index-types";
 
 export type { SiteIndexEntry, SiteIndexGroup, SiteIndexLink } from "../site-index-types";
@@ -518,6 +523,34 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       opening: oneLine(unit.summary, 132),
       href: `/resources/physics-xi/${unit.unitId}`,
       meta: unit.contentArea,
+    })),
+  });
+
+  /* 7b. Mathematics XI exercise solutions — one document per syllabus unit. */
+  groups.push({
+    id: "mathematics-xi-solutions",
+    name: "Mathematics XI exercise solutions",
+    opening: `${MATHEMATICS_XI_UNITS.length} unit documents — every exercise worked in NEB answer style plus the conceptual 2-mark bank with model answers.`,
+    href: "/resources/mathematics-xi",
+    entries: MATHEMATICS_XI_UNITS.map((unit) => ({
+      name: `Unit ${unit.unitNo}: ${unit.unitName}`,
+      opening: oneLine(unit.summary, 132),
+      href: mathXiSolutionUrl(unit),
+      meta: `${unit.exerciseCount} exercises`,
+    })),
+  });
+
+  /* 7c. Physics XI exercise solutions — one document per syllabus unit. */
+  groups.push({
+    id: "physics-xi-solutions",
+    name: "Physics XI exercise solutions",
+    opening: `${PHYSICS_XI_SOLUTION_UNITS.length} unit documents — every exercise worked in NEB answer style plus the conceptual 2-mark bank with model answers.`,
+    href: "/resources/physics-xi/solutions",
+    entries: PHYSICS_XI_SOLUTION_UNITS.map((unit) => ({
+      name: `Unit ${unit.unitNo}: ${unit.unitName}`,
+      opening: oneLine(unit.summary, 132),
+      href: physicsXiSolutionUrl(unit),
+      meta: `${unit.exerciseCount} exercises`,
     })),
   });
 
