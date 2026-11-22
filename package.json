@@ -38,6 +38,7 @@
     "build:frontend": "npm run build --workspace=educational-platform-frontend",
     "test:frontend": "npm run test:run --workspace=educational-platform-frontend",
     "build:math-xi-workbook": "node content-tools/math-xi-workbook/build.mjs",
+    "build:physics-xi-workbook": "node content-tools/physics-xi-workbook/build.mjs",
     "build:affected": "node scripts/build/build-affected.mjs",
     "build:affected:list": "node scripts/build/build-affected.mjs --list",
     "wt": "node scripts/deploy/worktree-flow.mjs",

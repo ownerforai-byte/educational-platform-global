@@ -3,6 +3,13 @@ import Link from "next/link";
 import { ArrowLeft, FlaskConical } from "lucide-react";
 import { PhysicsXiAcademicGrid } from "@/components/content/physics-xi-academic-grid";
 import {
+  PHYSICS_XI_CHAPTERS,
+  PHYSICS_XI_WORKBOOK_BASE,
+  PHYSICS_XI_WORKBOOK_TOTALS,
+  physicsXiChapterUrl,
+  physicsXiChaptersByUnit,
+} from "@/lib/physics-xi-chapters";
+import {
   PHYSICS_XI_ACADEMIC,
   PHYSICS_XI_ACADEMIC_UNITS,
   PHYSICS_XI_CONTENT_AREAS,
@@ -60,6 +67,58 @@ export default function PhysicsXiAcademicPage() {
           <ArrowLeft className="h-4 w-4 rotate-180" />
         </span>
       </Link>
+
+      <section className="rounded-2xl border border-border/60 bg-card p-6 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-lg font-semibold">A4 workbook — chapter sheets</h2>
+            <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+              {PHYSICS_XI_WORKBOOK_TOTALS.questions} solved NEB-style questions in{" "}
+              {PHYSICS_XI_WORKBOOK_TOTALS.sheets} printable A4 sheets,{" "}
+              {PHYSICS_XI_WORKBOOK_TOTALS.perSheet} per sheet in a 3 × 4 grid, each with the
+              working and the answer line.
+            </p>
+          </div>
+          <a
+            href={`${PHYSICS_XI_WORKBOOK_BASE}/chapters/index.html`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+          >
+            Open workbook
+          </a>
+        </div>
+        <div className="mt-4 space-y-3">
+          {physicsXiChaptersByUnit().map((block) => (
+            <div key={block.unitNo}>
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Unit {block.unitNo} · {block.unitName}
+              </p>
+              <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                {block.chapters.map((chapter) => (
+                  <li key={chapter.slug}>
+                    <a
+                      href={physicsXiChapterUrl(chapter)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-primary hover:underline"
+                    >
+                      <span className="mr-1.5 font-mono text-[11px] text-muted-foreground">
+                        {chapter.code}
+                      </span>
+                      {chapter.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p className="mt-4 text-xs text-muted-foreground">
+          {PHYSICS_XI_CHAPTERS.length} chapters published so far; the remaining units are added as
+          their sheets are authored.
+        </p>
+      </section>
 
       <PhysicsXiAcademicGrid
         units={PHYSICS_XI_ACADEMIC_UNITS}
