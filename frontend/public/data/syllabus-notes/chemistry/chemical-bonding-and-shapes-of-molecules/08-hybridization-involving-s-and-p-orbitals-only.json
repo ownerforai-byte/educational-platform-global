@@ -5,142 +5,57 @@
   "topicTitle": "Hybridization involving s and p orbitals only",
   "relevance": 100,
   "notes": [
-    "VSEPR theory predicts molecular geometry from electron pairs.",
-    "sp³: 4 pairs → tetrahedral (109.5°).",
-    "sp²: 3 pairs → trigonal planar (120°).",
-    "sp: 2 pairs → linear (180°).",
-    "Lone pairs compress bond angles.",
-    "# Hybridization involving s and p orbitals only\n\n## 1. Introduction\nChemical picture of **Hybridization involving s and p orbitals only** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Hybridization involving s and p orbitals only\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Classification and trends**\n\n| Family or case | Rule or trend | Example | Exception |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Hybridization involving s and p orbitals only — shape gallery: structures with bond angles (authored SVG)\n- **D2** — Hybridization involving s and p orbitals only — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Hybridization involving s and p orbitals only — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Hybridization involving s and p orbitals only — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Mixing Orbitals to Point Bonds\n\nCarbon's ground-state configuration (1s² 2s² 2p²) promises two bonds; methane delivers four identical ones at 109.5°. The rescue is **hybridisation**: before bonding, the central atom's s and p orbitals of the same shell blend into new **equivalent hybrid orbitals**, whose shapes and directions are tailor-made for bonding. sp³ → tetrahedral, sp² → trigonal planar, sp → linear — three recipes that rationalise the shapes VSEPR counts (and the NEB 2024 methane question directly).",
+    "## 2. Fundamental Concepts\n\n### 2.1 What hybridisation is (and is not)\n\n- **Definition:** the intermixing of orbitals of slightly different energies (same shell: one s + p orbitals) to form an equal number of **identical hybrid orbitals**, oriented for maximum overlap.\n- Key features: number of hybrids = number of atomic orbitals mixed; hybrids have **one large lobe** (better overlap → stronger bonds); hybridisation happens **at the moment of bonding**, not in the free atom; it needs **promoted electrons** (energy invested, repaid by stronger bonds).\n- It is a **mathematical convenience turned physical picture** — the orbitals that point where the bonds point.\n\n### 2.2 The three s–p recipes\n\n| Type | Mix | Hybrids | Geometry | Angle | Leftover p |\n|---|---|---|---|---|---|\n| sp³ | 1 s + 3 p | 4 | tetrahedral | 109.5° | none |\n| sp² | 1 s + 2 p | 3 | trigonal planar | 120° | 1 p ⟂ |\n| sp | 1 s + 1 p | 2 | linear | 180° | 2 p ⟂ |\n\n### 2.3 Worked molecules\n\n- **CH₄ (sp³):** C is excited to 2s¹2p³; four sp³ hybrids point to a tetrahedron's corners; four σ (sp³–s) bonds; H–C–H = 109.5°. Also NH₃, H₂O — same sp³ set, but lone pairs occupy hybrids and compress angles (107°, 104.5°).\n- **C₂H₄ / BF₃ (sp²):** three sp² hybrids in a plane at 120°; the unused p orbital stands perpendicular — in ethene it forms the π bond (topic 33); in BF₃ it stays empty (Lewis acid).\n- **C₂H₂ / BeCl₂ (sp):** two sp hybrids at 180°; two leftover p orbitals — in ethyne, two π bonds build the triple bond; in BeCl₂, two σ (sp–p) bonds give linear BeCl₂.\n- **Extension (NEB 2024 asked): SF₆ and IF₇** — SF₆ is sp³d² (octahedral, 90°); IF₇ is sp³d³ (pentagonal bipyramidal) — d-orbital hybridisations beyond the s–p syllabus, but quotable as VSEPR-consistent extensions.\n\n### 2.4 Hybridisation and bond strength\n\n- Hybrid orbitals overlap more effectively (large directed lobe) than pure p orbitals — bonds are stronger and shorter.\n- More s-character → stronger, shorter bond and larger angle: sp (50% s) > sp² (33%) > sp³ (25%). Ethyne's C–H (sp) is the strongest C–H bond in organic chemistry.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Hybridisation** | Intermixing of same-shell orbitals to form equivalent directed hybrids | sp³, sp², sp |\n| **sp³ hybrid** | 1 s + 3 p → 4 equivalent orbitals, tetrahedral | CH₄: 109.5° |\n| **sp² hybrid** | 1 s + 2 p → 3 hybrids, trigonal planar + 1 p ⟂ | C₂H₄: 120° |\n| **sp hybrid** | 1 s + 1 p → 2 hybrids, linear + 2 p ⟂ | C₂H₂: 180° |\n| **s-character** | Fraction of s in the hybrid; ↑ → stronger, shorter bonds | sp 50% > sp² 33% > sp³ 25% |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024/04): what is hybridisation? Show sp³ explains methane\n\n- **Definition** (section 2.1), then the methane argument:\n- Ground-state C: 1s² 2s² 2p² — only two unpaired electrons → predicts CH₂.\n- **Promotion:** 2s electron promoted to 2p → 2s¹ 2p³ (four unpaired; energy cost paid back fourfold by stronger bonds).\n- **Hybridisation:** 2s + three 2p blend → four equivalent sp³ hybrids, each with one electron, directed to a tetrahedron's corners (109.5°).\n- **Bonding:** each hybrid overlaps head-on with H's 1s → four identical σ bonds, all H–C–H = **109.5°** — matching experiment exactly (VSEPR's domain count and VBT's orbital picture agree).\n\n### 4.2 Ethene and ethyne — hybrids plus leftover p orbitals\n\n- **C₂H₄:** each C sp²; three sp² per carbon (two C–H σ + one C–C σ), the perpendicular p orbitals overlap sideways → π. Planar, 120°.\n- **C₂H₂:** each C sp; two sp per carbon (one C–H σ + one C–C σ), two leftover p orbitals per carbon → **two π bonds** (perpendicular pair of π clouds). Linear, 180°; C≡C 120 pm.\n\n### 4.3 NH₃ and H₂O — sp³ with occupants\n\n- Both N and O use four sp³ hybrids; in NH₃ one hybrid holds a lone pair (3 BP + 1 LP → pyramidal, 107°); in H₂O two hold lone pairs (2 BP + 2 LP → bent, 104.5°).\n- Hybridisation explains the *electron geometry*; lone-pair repulsion (VSEPR) explains the *observed shape* — the two theories are complementary, not rival.",
+    "## 5. Comparison Tables\n\n**The three hybridisations at a glance**\n\n| Property | sp | sp² | sp³ |\n|---|---|---|---|\n| Orbitals mixed | 1s + 1p | 1s + 2p | 1s + 3p |\n| Hybrids formed | 2 | 3 | 4 |\n| Geometry | Linear | Trigonal planar | Tetrahedral |\n| Angle | 180° | 120° | 109.5° |\n| s-character | 50% | 33% | 25% |\n| Leftover p | 2 | 1 | 0 |\n| σ capacity | 2 | 3 | 4 |\n| Examples | C₂H₂, BeCl₂, CO₂ | C₂H₄, BF₃, SO₂ | CH₄, NH₃, H₂O |\n\n**Hybridisation vs VSEPR — division of labour**\n\n| Question | Answered by |\n|---|---|\n| How many domains? | VSEPR (Lewis structure count) |\n| What electron geometry? | VSEPR (domain arrangement) |\n| Which orbitals make the bonds? | Hybridisation (sp/sp²/sp³) |\n| Why is the angle compressed? | VSEPR (lone-pair repulsion) |",
+    "## 6. Common Confusions\n\n**Hybridisation is per-bonding-event, not a free-atom property:** an isolated carbon does not \"contain\" sp³ orbitals; they exist in the molecule, formed as bonds form.",
+    "**Lone pairs occupy hybrids too:** NH₃ and H₂O are sp³ — the lone pairs sit in sp³ hybrids; that is why their angles are near-tetrahedral rather than 90°.",
+    "**More p-character ≠ stronger bond:** s-character strengthens (closer to nucleus) — sp bonds beat sp³ bonds in strength and shortness.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024/04): What is hybridisation? Show how sp³ hybridisation explains the shape of methane.** — Hybridisation is the intermixing of atomic orbitals of comparable energy on the same atom to form an equal number of equivalent, identically oriented hybrid orbitals. Carbon: ground state 1s²2s²2p² (two unpaired); promotion → 2s¹2p³; hybridisation → four sp³ hybrids at 109.5°; four head-on overlaps with H 1s → four equivalent σ bonds; tetrahedral CH₄, H–C–H = 109.5°.",
+    "**Verified PYQ (NEB 2024/04): Predict the shape and hybridisation of SF₆ and IF₇.** — **SF₆:** six bond pairs → octahedral, sp³d² (d²sp³), all angles 90°. **IF₇:** seven bond pairs → pentagonal bipyramidal, sp³d³ — five equatorial I–F at 72°, two axial at 90°. Both exceed the s–p syllabus (d orbitals involved) but follow the same logic: hybrids = domains.",
+    "**NEB-style (3m): Explain the formation of the ethyne molecule using hybridisation.** — Each carbon is sp hybridised: promotion, then 2s + 2pₓ → two sp hybrids at 180°, leaving two perpendicular p orbitals. One sp on each C overlaps head-on → C–C σ; the other sp overlaps H's 1s → C–H σ (linear H–C≡C–H). The two pairs of parallel p orbitals overlap sideways → **two π bonds** (mutually perpendicular clouds). Result: linear molecule, C≡C = 120 pm, strongest C–H bonds (50% s-character)."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "**sp³ ≠ four bonds always:** NH₃ (3 bonds) and H₂O (2 bonds) are sp³ — the hybrid count is four; bonds are what remain after lone pairs occupy hybrids.",
+    "**Promotion is an investment, not a loss:** the promotion energy is repaid by the extra bond energies of four strong sp³ bonds versus two weak pure-p bonds."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Why does boron in BF₃ remain with an empty p orbital after sp² hybridisation, and what follows from it?",
+    "Explain why the C–H bond in ethyne is stronger and shorter than in ethane.",
+    "Predict the hybridisation of the sulphur in SO₂ and the resulting shape."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "H₂O: sp³, 2BP+2LP → bent",
-    "CO₂: sp, 2BP+0LP → linear"
+    "***Methane's four identical bonds*** — impossible for raw 2s/2p orbitals (one s bond would differ from three p bonds); sp³ mixing makes all four equivalent, as NMR and bond lengths confirm."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB 2024 (3m): What is hybridisation? Show how sp³ hybridisation explains the shape of methane.** — **Definition:** hybridisation is the intermixing of atomic orbitals of nearly equal energy on the same atom to form an equal number of equivalent hybrid orbitals oriented for maximum overlap. **Methane:** ground-state carbon (1s²2s²2p²) has only two unpaired p electrons — insufficient for four bonds. One 2s electron is **promoted** to 2p (2s¹2p³, four unpaired electrons; the promotion energy is repaid by forming two extra strong bonds). The 2s and three 2p orbitals then **hybridise** into four equivalent sp³ hybrids directed toward the corners of a tetrahedron. Each hybrid overlaps head-on with a hydrogen 1s orbital → four identical σ bonds with **H–C–H = 109.5°** — the observed tetrahedral shape, with all four C–H bonds equal in length and strength.",
+    "**NEB 2024 (2m): Predict the shape and hybridisation of SF₆ and IF₇.** — **SF₆:** sulphur forms six bond pairs with no lone pair → six electron domains → **octahedral shape, sp³d² hybridisation**, all F–S–F angles 90°. **IF₇:** iodine forms seven bond pairs → **pentagonal bipyramidal shape, sp³d³ hybridisation** — five equatorial I–F bonds at 72° to each other and two axial bonds at 90°. Both require d-orbital participation (period ≥ 3), extending the sp/sp²/sp³ series by the same \"hybrids = domains\" rule.",
+    "**NEB-style (3m): Using hybridisation, describe the bonding in ethyne (C₂H₂) and compare its C–H bonds with ethane's.** — Each carbon is **sp hybridised**: after promotion, 2s + one 2p mix into two sp hybrids at 180°, leaving two mutually perpendicular unhybridised p orbitals. One sp hybrid of each carbon overlaps head-on → the C–C σ bond; the other sp overlaps a hydrogen 1s → C–H σ. The two pairs of parallel p orbitals overlap sideways → **two π bonds** with perpendicular clouds, completing the triple bond (C≡C, 120 pm). The molecule is **linear (180°)**. **Comparison:** ethyne's sp hybrids carry 50% s-character versus ethane's sp³ 25% — s electrons sit closer to the nucleus, so ethyne's C–H bonds are **stronger and shorter** (106 pm vs 109 pm), and their carbon acidity is correspondingly higher."
   ],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+  "formulas": [
+    "- sp³: 4 hybrids, 109.5°; sp²: 3 hybrids + 1p, 120°; sp: 2 hybrids + 2p, 180°\n- s-character: sp 50% > sp² 33% > sp³ 25%\n- Bond strength/shortness ∝ s-character"
+  ],
+  "keyPoints": [
+    "Hybridisation: same-shell s+p orbitals mix → equivalent directed hybrids; number conserved; large lobes overlap better. sp³ (4, tetrahedral 109.5°): CH₄, NH₃, H₂O. sp² (3, trigonal planar 120° + 1 p ⟂): C₂H₄, BF₃, SO₂. sp (2, linear 180° + 2 p ⟂): C₂H₂, BeCl₂, CO₂. s-character ladder sp > sp² > sp³ in bond strength. Extensions: SF₆ sp³d² octahedral; IF₇ sp³d³ pentagonal bipyramidal (NEB 2024)."
+  ],
+  "summary": "Hybridisation is the orbital answer to VSEPR's shape count: same-shell s and p orbitals blend into equivalent, strongly directed hybrids — four sp³ pointing to a tetrahedron (CH₄ at 109.5°), three sp² in a plane (C₂H₄, BF₃ at 120°, one p orbital left over for π), two sp in a line (C₂H₂, BeCl₂ at 180°, two p orbitals for two π bonds). The mechanism needs promotion (carbon's 2s²2p² → 2s¹2p³) — an investment repaid by stronger, shorter bonds, since hybrid lobes overlap better and extra s-character (sp 50% > sp² 33% > sp³ 25%) pulls electrons closer. Lone pairs occupy hybrids too — NH₃ and H₂O are sp³ with angles compressed to 107° and 104.5° by VSEPR repulsion. Beyond the s–p syllabus the same rule extends: SF₆ sp³d² octahedral, IF₇ sp³d³ pentagonal bipyramidal (NEB 2024). Domain count gives the hybrid type; the leftover p orbitals give the π bonds; the shape follows.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [
-    "Important note regarding 08 hybridization involving s and p orbitals only."
+  "importantStatements": [
+    "\"Hybridisation is the process of intermixing of orbitals of slightly different energies so as to redistribute their energies, resulting in the formation of new set of orbitals of equivalent energies and shape.\""
   ],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantNotes": [
+    "Verified PYQs: NEB 2024/04 — hybridisation definition + sp³ methane, and SF₆/IF₇ shapes (solved above); NEB 2023's ethene question (sp²) solved in topic 33. Other items are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Count domains → hybrid: 2 sp, 3 sp², 4 sp³, 5 sp³d, 6 sp³d², 7 sp³d³. s-character: \"sp 50, sp² 33, sp³ 25 — more s, stronger, shorter, wider angle.\""
+  ],
+  "examNotes": [
+    "For the methane answer, write the four stages: ground state → promotion → hybridisation → overlap. Each stage is a mark; the angle 109.5° is the fifth."
+  ],
   "mcs": [
     {
       "question": "Question about 08 hybridization involving s and p orbitals only?",
@@ -154,7 +69,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 08 hybridization involving s and p orbitals only."
+    "Hybridisation and VSEPR agree by construction: the domain count from VSEPR equals the hybrid count from VBT — use VSEPR for shape, hybridisation for the orbital explanation behind it."
   ],
   "importantTasks": [
     "Task for studying 08 hybridization involving s and p orbitals only."
@@ -163,14 +78,92 @@
   "tabGroup": "08-hybridization-involving-s-and-p-orbitals-only",
   "mcqs": [
     {
-      "question": "Question about 08 hybridization involving s and p orbitals only?",
+      "question": "The number of sp3 hybrid orbitals in one carbon is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "2",
+        "3",
+        "4",
+        "6"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "1 s + 3 p = 4 equivalent hybrids."
+    },
+    {
+      "question": "The bond angle in sp2 hybridisation is:",
+      "options": [
+        "180",
+        "120",
+        "109.5",
+        "90"
+      ],
+      "answer": "B",
+      "explanation": "Trigonal planar arrangement."
+    },
+    {
+      "question": "In ethyne, each carbon is:",
+      "options": [
+        "sp3",
+        "sp2",
+        "sp",
+        "sp3d"
+      ],
+      "answer": "C",
+      "explanation": "Linear - two hybrids plus two leftover p orbitals."
+    },
+    {
+      "question": "Which has the highest s-character in its bonds?",
+      "options": [
+        "CH4",
+        "C2H4",
+        "C2H2",
+        "NH3"
+      ],
+      "answer": "C",
+      "explanation": "sp - 50 percent s-character."
+    },
+    {
+      "question": "NH3 is sp3 hybridised with:",
+      "options": [
+        "4 bond pairs",
+        "3 bond pairs + 1 lone pair",
+        "2 bond pairs + 2 lone pairs",
+        "3 lone pairs"
+      ],
+      "answer": "B",
+      "explanation": "One hybrid holds the lone pair - pyramidal 107."
+    },
+    {
+      "question": "The hybridisation of sulphur in SF6 is:",
+      "options": [
+        "sp3",
+        "sp3d",
+        "sp3d2",
+        "sp3d3"
+      ],
+      "answer": "C",
+      "explanation": "Six domains - octahedral."
+    },
+    {
+      "question": "Hybridisation of orbitals is accompanied by:",
+      "options": [
+        "Loss of electrons",
+        "Promotion of electrons",
+        "Gain of electrons",
+        "No electron change ever"
+      ],
+      "answer": "B",
+      "explanation": "Promotion creates unpaired electrons for bonding."
+    },
+    {
+      "question": "The leftover unhybridised p orbital in sp2 carbon:",
+      "options": [
+        "Forms a sigma bond",
+        "Forms the pi bond",
+        "Remains filled",
+        "Is lost"
+      ],
+      "answer": "B",
+      "explanation": "Perpendicular p orbitals overlap sideways - the pi bond."
     }
   ],
   "exercises": [],
@@ -180,5 +173,64 @@
     "desc": "3D molecular geometry predictor"
   },
   "visualType": "hybridization-orbitals",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Mixing Orbitals to Point Bonds\n\nCarbon's ground-state configuration (1s² 2s² 2p²) promises two bonds; methane delivers four identical ones at 109.5°. The rescue is **hybridisation**: before bonding, the central atom's s and p orbitals of the same shell blend into new **equivalent hybrid orbitals**, whose shapes and directions are tailor-made for bonding. sp³ → tetrahedral, sp² → trigonal planar, sp → linear — three recipes that rationalise the shapes VSEPR counts (and the NEB 2024 methane question directly).",
+      "## 2. Fundamental Concepts\n\n### 2.1 What hybridisation is (and is not)\n\n- **Definition:** the intermixing of orbitals of slightly different energies (same shell: one s + p orbitals) to form an equal number of **identical hybrid orbitals**, oriented for maximum overlap.\n- Key features: number of hybrids = number of atomic orbitals mixed; hybrids have **one large lobe** (better overlap → stronger bonds); hybridisation happens **at the moment of bonding**, not in the free atom; it needs **promoted electrons** (energy invested, repaid by stronger bonds).\n- It is a **mathematical convenience turned physical picture** — the orbitals that point where the bonds point.\n\n### 2.2 The three s–p recipes\n\n| Type | Mix | Hybrids | Geometry | Angle | Leftover p |\n|---|---|---|---|---|---|\n| sp³ | 1 s + 3 p | 4 | tetrahedral | 109.5° | none |\n| sp² | 1 s + 2 p | 3 | trigonal planar | 120° | 1 p ⟂ |\n| sp | 1 s + 1 p | 2 | linear | 180° | 2 p ⟂ |\n\n### 2.3 Worked molecules\n\n- **CH₄ (sp³):** C is excited to 2s¹2p³; four sp³ hybrids point to a tetrahedron's corners; four σ (sp³–s) bonds; H–C–H = 109.5°. Also NH₃, H₂O — same sp³ set, but lone pairs occupy hybrids and compress angles (107°, 104.5°).\n- **C₂H₄ / BF₃ (sp²):** three sp² hybrids in a plane at 120°; the unused p orbital stands perpendicular — in ethene it forms the π bond (topic 33); in BF₃ it stays empty (Lewis acid).\n- **C₂H₂ / BeCl₂ (sp):** two sp hybrids at 180°; two leftover p orbitals — in ethyne, two π bonds build the triple bond; in BeCl₂, two σ (sp–p) bonds give linear BeCl₂.\n- **Extension (NEB 2024 asked): SF₆ and IF₇** — SF₆ is sp³d² (octahedral, 90°); IF₇ is sp³d³ (pentagonal bipyramidal) — d-orbital hybridisations beyond the s–p syllabus, but quotable as VSEPR-consistent extensions.\n\n### 2.4 Hybridisation and bond strength\n\n- Hybrid orbitals overlap more effectively (large directed lobe) than pure p orbitals — bonds are stronger and shorter.\n- More s-character → stronger, shorter bond and larger angle: sp (50% s) > sp² (33%) > sp³ (25%). Ethyne's C–H (sp) is the strongest C–H bond in organic chemistry.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Hybridisation** | Intermixing of same-shell orbitals to form equivalent directed hybrids | sp³, sp², sp |\n| **sp³ hybrid** | 1 s + 3 p → 4 equivalent orbitals, tetrahedral | CH₄: 109.5° |\n| **sp² hybrid** | 1 s + 2 p → 3 hybrids, trigonal planar + 1 p ⟂ | C₂H₄: 120° |\n| **sp hybrid** | 1 s + 1 p → 2 hybrids, linear + 2 p ⟂ | C₂H₂: 180° |\n| **s-character** | Fraction of s in the hybrid; ↑ → stronger, shorter bonds | sp 50% > sp² 33% > sp³ 25% |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024/04): what is hybridisation? Show sp³ explains methane\n\n- **Definition** (section 2.1), then the methane argument:\n- Ground-state C: 1s² 2s² 2p² — only two unpaired electrons → predicts CH₂.\n- **Promotion:** 2s electron promoted to 2p → 2s¹ 2p³ (four unpaired; energy cost paid back fourfold by stronger bonds).\n- **Hybridisation:** 2s + three 2p blend → four equivalent sp³ hybrids, each with one electron, directed to a tetrahedron's corners (109.5°).\n- **Bonding:** each hybrid overlaps head-on with H's 1s → four identical σ bonds, all H–C–H = **109.5°** — matching experiment exactly (VSEPR's domain count and VBT's orbital picture agree).\n\n### 4.2 Ethene and ethyne — hybrids plus leftover p orbitals\n\n- **C₂H₄:** each C sp²; three sp² per carbon (two C–H σ + one C–C σ), the perpendicular p orbitals overlap sideways → π. Planar, 120°.\n- **C₂H₂:** each C sp; two sp per carbon (one C–H σ + one C–C σ), two leftover p orbitals per carbon → **two π bonds** (perpendicular pair of π clouds). Linear, 180°; C≡C 120 pm.\n\n### 4.3 NH₃ and H₂O — sp³ with occupants\n\n- Both N and O use four sp³ hybrids; in NH₃ one hybrid holds a lone pair (3 BP + 1 LP → pyramidal, 107°); in H₂O two hold lone pairs (2 BP + 2 LP → bent, 104.5°).\n- Hybridisation explains the *electron geometry*; lone-pair repulsion (VSEPR) explains the *observed shape* — the two theories are complementary, not rival.",
+      "## 5. Comparison Tables\n\n**The three hybridisations at a glance**\n\n| Property | sp | sp² | sp³ |\n|---|---|---|---|\n| Orbitals mixed | 1s + 1p | 1s + 2p | 1s + 3p |\n| Hybrids formed | 2 | 3 | 4 |\n| Geometry | Linear | Trigonal planar | Tetrahedral |\n| Angle | 180° | 120° | 109.5° |\n| s-character | 50% | 33% | 25% |\n| Leftover p | 2 | 1 | 0 |\n| σ capacity | 2 | 3 | 4 |\n| Examples | C₂H₂, BeCl₂, CO₂ | C₂H₄, BF₃, SO₂ | CH₄, NH₃, H₂O |\n\n**Hybridisation vs VSEPR — division of labour**\n\n| Question | Answered by |\n|---|---|\n| How many domains? | VSEPR (Lewis structure count) |\n| What electron geometry? | VSEPR (domain arrangement) |\n| Which orbitals make the bonds? | Hybridisation (sp/sp²/sp³) |\n| Why is the angle compressed? | VSEPR (lone-pair repulsion) |",
+      "## 6. Common Confusions\n\n**Hybridisation is per-bonding-event, not a free-atom property:** an isolated carbon does not \"contain\" sp³ orbitals; they exist in the molecule, formed as bonds form.",
+      "**Lone pairs occupy hybrids too:** NH₃ and H₂O are sp³ — the lone pairs sit in sp³ hybrids; that is why their angles are near-tetrahedral rather than 90°.",
+      "**More p-character ≠ stronger bond:** s-character strengthens (closer to nucleus) — sp bonds beat sp³ bonds in strength and shortness.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024/04): What is hybridisation? Show how sp³ hybridisation explains the shape of methane.** — Hybridisation is the intermixing of atomic orbitals of comparable energy on the same atom to form an equal number of equivalent, identically oriented hybrid orbitals. Carbon: ground state 1s²2s²2p² (two unpaired); promotion → 2s¹2p³; hybridisation → four sp³ hybrids at 109.5°; four head-on overlaps with H 1s → four equivalent σ bonds; tetrahedral CH₄, H–C–H = 109.5°.",
+      "**Verified PYQ (NEB 2024/04): Predict the shape and hybridisation of SF₆ and IF₇.** — **SF₆:** six bond pairs → octahedral, sp³d² (d²sp³), all angles 90°. **IF₇:** seven bond pairs → pentagonal bipyramidal, sp³d³ — five equatorial I–F at 72°, two axial at 90°. Both exceed the s–p syllabus (d orbitals involved) but follow the same logic: hybrids = domains.",
+      "**NEB-style (3m): Explain the formation of the ethyne molecule using hybridisation.** — Each carbon is sp hybridised: promotion, then 2s + 2pₓ → two sp hybrids at 180°, leaving two perpendicular p orbitals. One sp on each C overlaps head-on → C–C σ; the other sp overlaps H's 1s → C–H σ (linear H–C≡C–H). The two pairs of parallel p orbitals overlap sideways → **two π bonds** (mutually perpendicular clouds). Result: linear molecule, C≡C = 120 pm, strongest C–H bonds (50% s-character)."
+    ],
+    "confusion": [
+      "**sp³ ≠ four bonds always:** NH₃ (3 bonds) and H₂O (2 bonds) are sp³ — the hybrid count is four; bonds are what remain after lone pairs occupy hybrids.",
+      "**Promotion is an investment, not a loss:** the promotion energy is repaid by the extra bond energies of four strong sp³ bonds versus two weak pure-p bonds."
+    ],
+    "keyPoints": [
+      "Hybridisation: same-shell s+p orbitals mix → equivalent directed hybrids; number conserved; large lobes overlap better. sp³ (4, tetrahedral 109.5°): CH₄, NH₃, H₂O. sp² (3, trigonal planar 120° + 1 p ⟂): C₂H₄, BF₃, SO₂. sp (2, linear 180° + 2 p ⟂): C₂H₂, BeCl₂, CO₂. s-character ladder sp > sp² > sp³ in bond strength. Extensions: SF₆ sp³d² octahedral; IF₇ sp³d³ pentagonal bipyramidal (NEB 2024)."
+    ],
+    "importantConcepts": [
+      "Hybridisation and VSEPR agree by construction: the domain count from VSEPR equals the hybrid count from VBT — use VSEPR for shape, hybridisation for the orbital explanation behind it."
+    ],
+    "examples": [
+      "***Methane's four identical bonds*** — impossible for raw 2s/2p orbitals (one s bond would differ from three p bonds); sp³ mixing makes all four equivalent, as NMR and bond lengths confirm."
+    ],
+    "universalFacts": [
+      "Ethyne's sp C–H bonds (50% s-character) are acidic enough (pKₐ ≈ 25) to form acetylides with strong bases — hybridisation strength you can deprotonate."
+    ],
+    "importantStatements": [
+      "\"Hybridisation is the process of intermixing of orbitals of slightly different energies so as to redistribute their energies, resulting in the formation of new set of orbitals of equivalent energies and shape.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024/04 — hybridisation definition + sp³ methane, and SF₆/IF₇ shapes (solved above); NEB 2023's ethene question (sp²) solved in topic 33. Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Count domains → hybrid: 2 sp, 3 sp², 4 sp³, 5 sp³d, 6 sp³d², 7 sp³d³. s-character: \"sp 50, sp² 33, sp³ 25 — more s, stronger, shorter, wider angle.\""
+    ],
+    "examNotes": [
+      "For the methane answer, write the four stages: ground state → promotion → hybridisation → overlap. Each stage is a mark; the angle 109.5° is the fifth."
+    ],
+    "formulas": [
+      "- sp³: 4 hybrids, 109.5°; sp²: 3 hybrids + 1p, 120°; sp: 2 hybrids + 2p, 180°\n- s-character: sp 50% > sp² 33% > sp³ 25%\n- Bond strength/shortness ∝ s-character"
+    ],
+    "practice": [
+      "Why does boron in BF₃ remain with an empty p orbital after sp² hybridisation, and what follows from it?",
+      "Explain why the C–H bond in ethyne is stronger and shorter than in ethane.",
+      "Predict the hybridisation of the sulphur in SO₂ and the resulting shape."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (3m): What is hybridisation? Show how sp³ hybridisation explains the shape of methane.** — **Definition:** hybridisation is the intermixing of atomic orbitals of nearly equal energy on the same atom to form an equal number of equivalent hybrid orbitals oriented for maximum overlap. **Methane:** ground-state carbon (1s²2s²2p²) has only two unpaired p electrons — insufficient for four bonds. One 2s electron is **promoted** to 2p (2s¹2p³, four unpaired electrons; the promotion energy is repaid by forming two extra strong bonds). The 2s and three 2p orbitals then **hybridise** into four equivalent sp³ hybrids directed toward the corners of a tetrahedron. Each hybrid overlaps head-on with a hydrogen 1s orbital → four identical σ bonds with **H–C–H = 109.5°** — the observed tetrahedral shape, with all four C–H bonds equal in length and strength.",
+      "**NEB 2024 (2m): Predict the shape and hybridisation of SF₆ and IF₇.** — **SF₆:** sulphur forms six bond pairs with no lone pair → six electron domains → **octahedral shape, sp³d² hybridisation**, all F–S–F angles 90°. **IF₇:** iodine forms seven bond pairs → **pentagonal bipyramidal shape, sp³d³ hybridisation** — five equatorial I–F bonds at 72° to each other and two axial bonds at 90°. Both require d-orbital participation (period ≥ 3), extending the sp/sp²/sp³ series by the same \"hybrids = domains\" rule.",
+      "**NEB-style (3m): Using hybridisation, describe the bonding in ethyne (C₂H₂) and compare its C–H bonds with ethane's.** — Each carbon is **sp hybridised**: after promotion, 2s + one 2p mix into two sp hybrids at 180°, leaving two mutually perpendicular unhybridised p orbitals. One sp hybrid of each carbon overlaps head-on → the C–C σ bond; the other sp overlaps a hydrogen 1s → C–H σ. The two pairs of parallel p orbitals overlap sideways → **two π bonds** with perpendicular clouds, completing the triple bond (C≡C, 120 pm). The molecule is **linear (180°)**. **Comparison:** ethyne's sp hybrids carry 50% s-character versus ethane's sp³ 25% — s electrons sit closer to the nucleus, so ethyne's C–H bonds are **stronger and shorter** (106 pm vs 109 pm), and their carbon acidity is correspondingly higher."
+    ]
+  },
+  "universalFacts": [
+    "Ethyne's sp C–H bonds (50% s-character) are acidic enough (pKₐ ≈ 25) to form acetylides with strong bases — hybridisation strength you can deprotonate."
+  ]
 }

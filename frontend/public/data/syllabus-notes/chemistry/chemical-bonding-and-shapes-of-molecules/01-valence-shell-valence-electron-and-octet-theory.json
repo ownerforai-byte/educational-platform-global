@@ -5,143 +5,60 @@
   "topicTitle": "Valence shell, valence electron and octet theory",
   "relevance": 100,
   "notes": [
-    "VSEPR theory predicts molecular geometry from electron pairs.",
-    "sp³: 4 pairs → tetrahedral (109.5°).",
-    "sp²: 3 pairs → trigonal planar (120°).",
-    "sp: 2 pairs → linear (180°).",
-    "Lone pairs compress bond angles.",
-    "# Valence shell, valence electron and octet theory\n\n## 1. Introduction\nChemical picture of **Valence shell** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Valence shell\n### valence electron and octet theory\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Valence shell — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Valence shell — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Valence shell — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Valence shell — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Why Atoms Bother to Bond\n\nEvery bond answers one question: how does an atom reach the **stability of a noble gas**? Noble gases (He, Ne, Ar…) are chemically inert because their valence shells are complete — ns²np⁶, an **octet** (or the duet of helium). All other atoms borrow, give, or share electrons to copy that arrangement. Kossel's **electron-transfer** picture explains ionic bonds; Lewis's **electron-sharing** picture explains covalent bonds. Both are bookkeeping devices built on the same observation: complete valence shells mean low energy.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Valence shell and valence electrons\n\n- **Valence shell:** the outermost occupied shell of an atom (highest n). **Valence electrons:** the electrons in it — the only electrons that participate in bonding.\n- Examples: Na (2,8,1) has 1 valence electron; Cl (2,8,7) has 7; C (2,4) has 4. Core electrons stay spectators.\n- The **valency** of an element = electrons it must lose, gain or share to complete its octet (Na: 1; O: 2; N: 3; C: 4; noble gases: 0).\n\n### 2.2 Octet rule (Kossel–Lewis, 1916)\n\n- **Statement:** atoms tend to acquire an eight-electron outer shell (ns²np⁶) by transferring or sharing electrons.\n- **Driving force:** a complete octet has the extra stability of the noble-gas configuration — lowest energy, no tendency to react.\n- **Success:** explains formulae NaCl, MgO, CaCl₂, CCl₄, H₂O, NH₃ and the inertness of He, Ne, Ar.\n\n### 2.3 Limitations of the octet rule\n\n- **Incomplete octet:** BeCl₂ (4 e⁻ around Be), BF₃ (6 e⁻ around B) — stable despite shortage.\n- **Expanded octet:** PCl₅ (10 e⁻), SF₆ (12 e⁻), H₂SO₄ (12 e⁻ around S) — possible from the third shell onward.\n- **Odd-electron molecules:** NO (11 valence e⁻), NO₂ (17), ClO₂ — octet impossible for all atoms.\n- **Noble-gas compounds:** XeF₂, XeF₄, XeO₃ exist — octet rule cannot explain them.\n- **Shape-blind:** the octet rule says nothing about molecular geometry — VSEPR and hybridisation are needed for shapes.\n\n### 2.4 Duet rule\n\n- Hydrogen and lithium reach the **helium configuration (2 e⁻)** — the duet. H₂, LiH, and the two electrons around H in all covalent compounds follow it.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Valence shell** | Outermost occupied electron shell (highest n) | Na: n = 3 |\n| **Valence electrons** | Electrons in the valence shell available for bonding | Cl: 7 |\n| **Octet rule** | Tendency to acquire eight electrons in the outer shell by transfer or sharing | ns²np⁶ |\n| **Duet rule** | Tendency of H and Li to hold two electrons (He configuration) | H₂: 2 e⁻ shared |\n| **Expanded octet** | More than eight electrons around a central atom (n ≥ 3) | SF₆: 12 e⁻ |",
+    "## 4. Detailed Explanation\n\n### 4.1 How the rule generates formulae\n\n- Na (2,8,1) transfers one electron to Cl (2,8,7): both reach (2,8) and (2,8,8) — **Na⁺Cl⁻**, formula NaCl.\n- Mg (2,8,2) gives one electron each to two Cl atoms → **MgCl₂**; Mg gives two to O → **MgO**.\n- Two Cl atoms each need one electron; they **share** a pair → Cl₂. C shares four pairs with four Cl → **CCl₄**.\n- Water: O shares one pair with each of two H atoms → H₂O with **two lone pairs left over** — which later explain its bent shape.\n\n### 4.2 Electron counting in practice\n\n- Total valence electrons = sum over atoms (adjust for charge: add electrons for anions, subtract for cations).\n- Example CO₂: 4 + 2(6) = 16 electrons → two C=O double bonds, two lone pairs on each O — every atom reaches an octet.\n- Example NH₄⁺: 5 + 4(1) − 1 = 8 electrons → four N–H bonds; N formally has no lone pair.\n\n### 4.3 Where the rule fails — and why that is still useful\n\n- BeCl₂ and BF₃ are **electron-deficient** and therefore strong Lewis acids — the \"failure\" predicts reactivity.\n- PCl₅ and SF₆ exist only because the 3d subshell is energetically reachable for third-period atoms; second-period atoms (C, N, O, F) can never expand.\n- The rule's shape-blindness is the opening act for VSEPR theory (topic 32) — octet decides *how many* pairs, VSEPR decides *where they point*.",
+    "## 5. Comparison Tables\n\n**Octet success vs failure**\n\n| Case | Example | Electrons around central atom | Verdict |\n|---|---|---|---|\n| Normal octet | CH₄, H₂O, CO₂ | 8 | Rule holds |\n| Incomplete octet | BeCl₂, BF₃ | 4, 6 | Rule fails; Lewis acids |\n| Expanded octet | PCl₅, SF₆ | 10, 12 | Rule fails; n ≥ 3 only |\n| Odd electron | NO, NO₂ | 9, 13 total | Rule cannot apply |\n\n**Transfer vs sharing (preview of topics 28–29)**\n\n| Basis | Kossel (transfer) | Lewis (sharing) |\n|---|---|---|\n| Mechanism | Electrons given/taken | Pairs shared |\n| Result | Ions held electrostatically | Molecules held by shared pairs |\n| Best for | NaCl, MgO (metal + non-metal) | Cl₂, H₂O, CH₄ (non-metals) |\n| Rule satisfied by | Full shells on both ions | Shared + own electrons = octet |",
+    "## 6. Common Confusions\n\n**Octet ≠ eight bonds:** the octet counts electrons *around* an atom (bonding pairs counted twice, once per atom), not bonds. In CO₂ carbon owns 8 electrons via two double bonds — but forms only two bonds.",
+    "**Valence electrons vs valency:** Cl has 7 valence electrons but valency 1 — valency is 8 − valence electrons (for non-metals), not the count itself.",
+    "**Expanded octets are third-row-only:** C, N, O, F (period 2) have no accessible d orbitals; P, S, Cl and beyond can exceed 8. Never write five bonds on carbon.",
+    "## 7. Exam Application\n\n**NEB-style (2m): State the octet rule and give one limitation with an example.** — Atoms tend to acquire eight electrons in their valence shell by transfer or sharing of electrons. Limitation: **expanded octet** — in SF₆, sulphur is surrounded by 12 electrons (six S–F bonds), which the octet rule cannot accommodate; similarly PCl₅ holds 10 electrons around P.",
+    "**NEB-style (2m): Why are noble gases chemically inert?** — Their valence shells are already complete (ns²np⁶; He 1s²). They have no tendency to lose, gain or share electrons — no bond formation lowers their energy — so they exist as monatomic molecules and resist reaction.",
+    "**NEB-style (3m): Explain the formation of MgCl₂ using the octet rule.** — Mg (2,8,2) has two excess valence electrons; Cl (2,8,7) is one short of an octet. Mg transfers one electron to each of two Cl atoms → Mg²⁺ (2,8) and two Cl⁻ (2,8,8). Both ions attain neon/argon configurations, and electrostatic attraction between Mg²⁺ and 2Cl⁻ builds the ionic lattice."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "**Octet counts electrons, not bonds:** CO₂'s carbon has 8 electrons but only 2 bonds (double bonds count four electrons each).",
+    "**Valency vs valence electrons:** for non-metals valency = 8 − valence electrons (Cl: 7 valence e⁻, valency 1)."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Why does beryllium in BeCl₂ not complete its octet, and what property does this give BeCl₂?",
+    "Explain why XeF₂ exists even though xenon has a complete octet.",
+    "Draw the electron-count logic for NH₄⁺ (total valence electrons and distribution)."
   ],
-  "universalFacts": [],
+  "universalFacts": [
+    "Helium completes its shell with just two electrons — the duet — because n = 1 holds only 1s²; it is the only noble gas whose \"octet\" is a pair."
+  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "H₂O: sp³, 2BP+2LP → bent",
-    "CO₂: sp, 2BP+0LP → linear"
+    "***SF₆ holds 12 electrons around sulphur*** — an expanded octet possible only from period 3, where 3d orbitals are energetically accessible."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB-style (3m): State the octet rule. Explain its application in the formation of NaCl and Cl₂.** — The octet rule states that atoms acquire eight electrons in the valence shell by transfer or sharing. **NaCl:** Na (2,8,1) transfers one electron to Cl (2,8,7) → Na⁺ (2,8) and Cl⁻ (2,8,8), both noble-gas configurations, bound electrostatically. **Cl₂:** each Cl needs one electron; the two atoms share one pair, giving each Cl seven own + one shared = 8 electrons.",
+    "**NEB-style (2m): Give two molecules in which the central atom has an incomplete octet, with electron counts.** — **BeCl₂:** Be holds 4 electrons (two Be–Cl bonds) — stable but electron-deficient, hence a strong Lewis acid. **BF₃:** B holds 6 electrons (three B–F bonds) — also electron-deficient; BF₃ is a widely used organic catalyst for this reason.",
+    "**NEB-style (3m): What is the expanded octet? Illustrate with PCl₅ and SF₆.** — An expanded octet has more than eight electrons around the central atom, possible only for period-3 elements and beyond where empty d orbitals can accept electron density. **PCl₅:** five P–Cl bonds = 10 electrons around P (trigonal bipyramidal). **SF₆:** six S–F bonds = 12 electrons around S (octahedral). Period-2 atoms (C, N, O, F) can never expand because they have no accessible valence d orbitals."
   ],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+  "formulas": [
+    "- Valence electrons = group number (main-group elements)\n- Valency (non-metals) = 8 − valence electrons\n- Total valence e⁻ = Σ valence e⁻ (atoms) ± charge (anion +, cation −)"
+  ],
+  "keyPoints": [
+    "Valence shell = outermost shell; its electrons do the bonding. Octet rule (Kossel–Lewis 1916): eight electrons in the outer shell via transfer (ionic) or sharing (covalent); duet for H/Li. Limitations: incomplete octet (BeCl₂, BF₃), expanded octet (PCl₅, SF₆ — third period onward), odd-electron molecules (NO, NO₂), noble-gas compounds (XeF₂), and no shape prediction."
+  ],
+  "summary": "Bonding exists to copy noble-gas stability. The **valence shell** (outermost shell) supplies the electrons; the **octet rule** of Kossel and Lewis says atoms reach ns²np⁶ either by transferring electrons (Kossel — ionic bonds, NaCl, MgO) or sharing pairs (Lewis — covalent bonds, Cl₂, CH₄), while hydrogen and lithium settle for the helium duet. The rule explains formulae brilliantly but fails five ways: incomplete octets (BeCl₂ with 4, BF₃ with 6 — which make them Lewis acids), expanded octets (PCl₅ 10, SF₆ 12 — period 3 onward only), odd-electron molecules (NO, NO₂), noble-gas compounds (XeF₂), and total silence on molecular shape. Octet decides how many electrons gather; VSEPR decides where they point.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [
-    "Important note regarding 01 valence shell valence electron and octet theory."
+  "importantStatements": [
+    "\"Atoms tend to acquire eight electrons in their outermost shell by electron transfer or electron sharing, thereby attaining the nearest noble-gas configuration.\""
   ],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantNotes": [
+    "Verified PYQs for this unit sit mostly in VSEPR/Lewis topics (NEB 2022, 2024); octet-theory items above are NEB-style practice. The octet rule's limitations list is a stock 3m question — memorise all five categories."
+  ],
+  "examShortTricks": [
+    "\"Transfer = metal + non-metal (Kossel); share = non-metal + non-metal (Lewis).\" Deficiency: BeCl₂ (4), BF₃ (6). Expansion: PCl₅ (10), SF₆ (12). Odd: NO, NO₂."
+  ],
+  "examNotes": [
+    "For \"limitations of octet rule\" write the category name, the example, and the electron count (e.g. SF₆ — 12 e⁻). Three columns, three marks."
+  ],
   "mcs": [
     {
       "question": "Question about 01 valence shell valence electron and octet theory?",
@@ -155,7 +72,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 valence shell valence electron and octet theory."
+    "The octet rule is a stability statement, not a shape theory — it decides how many electrons gather around an atom; VSEPR decides where they point. Electron-deficient species (BF₃) are Lewis acids precisely because their octets are short."
   ],
   "importantTasks": [
     "Task for studying 01 valence shell valence electron and octet theory."
@@ -164,14 +81,92 @@
   "tabGroup": "01-valence-shell-valence-electron-and-octet-theory",
   "mcqs": [
     {
-      "question": "Question about 01 valence shell valence electron and octet theory?",
+      "question": "The octet rule was proposed by:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Kossel and Lewis",
+        "Dalton",
+        "Bohr",
+        "Pauling"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "Kossel (transfer) and Lewis (sharing), 1916."
+    },
+    {
+      "question": "The number of valence electrons in chlorine (2,8,7) is:",
+      "options": [
+        "1",
+        "7",
+        "8",
+        "17"
+      ],
+      "answer": "B",
+      "explanation": "Outermost shell holds 7."
+    },
+    {
+      "question": "Which molecule has an incomplete octet at the central atom?",
+      "options": [
+        "CH4",
+        "BF3",
+        "CO2",
+        "NH3"
+      ],
+      "answer": "B",
+      "explanation": "B holds only 6 electrons."
+    },
+    {
+      "question": "How many electrons surround sulphur in SF6?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "6"
+      ],
+      "answer": "C",
+      "explanation": "Six bonds x 2 electrons = 12, an expanded octet."
+    },
+    {
+      "question": "The duet rule applies to:",
+      "options": [
+        "O and S",
+        "H and Li",
+        "Na and K",
+        "C and Si"
+      ],
+      "answer": "B",
+      "explanation": "They attain the helium 1s2 configuration."
+    },
+    {
+      "question": "Which is an odd-electron molecule?",
+      "options": [
+        "CO2",
+        "NO",
+        "CH4",
+        "PCl5"
+      ],
+      "answer": "B",
+      "explanation": "NO has 11 valence electrons - no octet possible."
+    },
+    {
+      "question": "Expanded octets are possible for elements from period:",
+      "options": [
+        "1 onward",
+        "2 onward",
+        "3 onward",
+        "4 only"
+      ],
+      "answer": "C",
+      "explanation": "Empty d orbitals become energetically accessible at n = 3."
+    },
+    {
+      "question": "The octet rule cannot predict:",
+      "options": [
+        "Formula of NaCl",
+        "Shape of a molecule",
+        "Formula of MgO",
+        "Valency of oxygen"
+      ],
+      "answer": "B",
+      "explanation": "Shapes need VSEPR theory."
     }
   ],
   "exercises": [],
@@ -181,5 +176,61 @@
     "desc": "3D molecular geometry predictor"
   },
   "visualType": "vsepr-theory",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Why Atoms Bother to Bond\n\nEvery bond answers one question: how does an atom reach the **stability of a noble gas**? Noble gases (He, Ne, Ar…) are chemically inert because their valence shells are complete — ns²np⁶, an **octet** (or the duet of helium). All other atoms borrow, give, or share electrons to copy that arrangement. Kossel's **electron-transfer** picture explains ionic bonds; Lewis's **electron-sharing** picture explains covalent bonds. Both are bookkeeping devices built on the same observation: complete valence shells mean low energy.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Valence shell and valence electrons\n\n- **Valence shell:** the outermost occupied shell of an atom (highest n). **Valence electrons:** the electrons in it — the only electrons that participate in bonding.\n- Examples: Na (2,8,1) has 1 valence electron; Cl (2,8,7) has 7; C (2,4) has 4. Core electrons stay spectators.\n- The **valency** of an element = electrons it must lose, gain or share to complete its octet (Na: 1; O: 2; N: 3; C: 4; noble gases: 0).\n\n### 2.2 Octet rule (Kossel–Lewis, 1916)\n\n- **Statement:** atoms tend to acquire an eight-electron outer shell (ns²np⁶) by transferring or sharing electrons.\n- **Driving force:** a complete octet has the extra stability of the noble-gas configuration — lowest energy, no tendency to react.\n- **Success:** explains formulae NaCl, MgO, CaCl₂, CCl₄, H₂O, NH₃ and the inertness of He, Ne, Ar.\n\n### 2.3 Limitations of the octet rule\n\n- **Incomplete octet:** BeCl₂ (4 e⁻ around Be), BF₃ (6 e⁻ around B) — stable despite shortage.\n- **Expanded octet:** PCl₅ (10 e⁻), SF₆ (12 e⁻), H₂SO₄ (12 e⁻ around S) — possible from the third shell onward.\n- **Odd-electron molecules:** NO (11 valence e⁻), NO₂ (17), ClO₂ — octet impossible for all atoms.\n- **Noble-gas compounds:** XeF₂, XeF₄, XeO₃ exist — octet rule cannot explain them.\n- **Shape-blind:** the octet rule says nothing about molecular geometry — VSEPR and hybridisation are needed for shapes.\n\n### 2.4 Duet rule\n\n- Hydrogen and lithium reach the **helium configuration (2 e⁻)** — the duet. H₂, LiH, and the two electrons around H in all covalent compounds follow it.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Valence shell** | Outermost occupied electron shell (highest n) | Na: n = 3 |\n| **Valence electrons** | Electrons in the valence shell available for bonding | Cl: 7 |\n| **Octet rule** | Tendency to acquire eight electrons in the outer shell by transfer or sharing | ns²np⁶ |\n| **Duet rule** | Tendency of H and Li to hold two electrons (He configuration) | H₂: 2 e⁻ shared |\n| **Expanded octet** | More than eight electrons around a central atom (n ≥ 3) | SF₆: 12 e⁻ |",
+      "## 4. Detailed Explanation\n\n### 4.1 How the rule generates formulae\n\n- Na (2,8,1) transfers one electron to Cl (2,8,7): both reach (2,8) and (2,8,8) — **Na⁺Cl⁻**, formula NaCl.\n- Mg (2,8,2) gives one electron each to two Cl atoms → **MgCl₂**; Mg gives two to O → **MgO**.\n- Two Cl atoms each need one electron; they **share** a pair → Cl₂. C shares four pairs with four Cl → **CCl₄**.\n- Water: O shares one pair with each of two H atoms → H₂O with **two lone pairs left over** — which later explain its bent shape.\n\n### 4.2 Electron counting in practice\n\n- Total valence electrons = sum over atoms (adjust for charge: add electrons for anions, subtract for cations).\n- Example CO₂: 4 + 2(6) = 16 electrons → two C=O double bonds, two lone pairs on each O — every atom reaches an octet.\n- Example NH₄⁺: 5 + 4(1) − 1 = 8 electrons → four N–H bonds; N formally has no lone pair.\n\n### 4.3 Where the rule fails — and why that is still useful\n\n- BeCl₂ and BF₃ are **electron-deficient** and therefore strong Lewis acids — the \"failure\" predicts reactivity.\n- PCl₅ and SF₆ exist only because the 3d subshell is energetically reachable for third-period atoms; second-period atoms (C, N, O, F) can never expand.\n- The rule's shape-blindness is the opening act for VSEPR theory (topic 32) — octet decides *how many* pairs, VSEPR decides *where they point*.",
+      "## 5. Comparison Tables\n\n**Octet success vs failure**\n\n| Case | Example | Electrons around central atom | Verdict |\n|---|---|---|---|\n| Normal octet | CH₄, H₂O, CO₂ | 8 | Rule holds |\n| Incomplete octet | BeCl₂, BF₃ | 4, 6 | Rule fails; Lewis acids |\n| Expanded octet | PCl₅, SF₆ | 10, 12 | Rule fails; n ≥ 3 only |\n| Odd electron | NO, NO₂ | 9, 13 total | Rule cannot apply |\n\n**Transfer vs sharing (preview of topics 28–29)**\n\n| Basis | Kossel (transfer) | Lewis (sharing) |\n|---|---|---|\n| Mechanism | Electrons given/taken | Pairs shared |\n| Result | Ions held electrostatically | Molecules held by shared pairs |\n| Best for | NaCl, MgO (metal + non-metal) | Cl₂, H₂O, CH₄ (non-metals) |\n| Rule satisfied by | Full shells on both ions | Shared + own electrons = octet |",
+      "## 6. Common Confusions\n\n**Octet ≠ eight bonds:** the octet counts electrons *around* an atom (bonding pairs counted twice, once per atom), not bonds. In CO₂ carbon owns 8 electrons via two double bonds — but forms only two bonds.",
+      "**Valence electrons vs valency:** Cl has 7 valence electrons but valency 1 — valency is 8 − valence electrons (for non-metals), not the count itself.",
+      "**Expanded octets are third-row-only:** C, N, O, F (period 2) have no accessible d orbitals; P, S, Cl and beyond can exceed 8. Never write five bonds on carbon.",
+      "## 7. Exam Application\n\n**NEB-style (2m): State the octet rule and give one limitation with an example.** — Atoms tend to acquire eight electrons in their valence shell by transfer or sharing of electrons. Limitation: **expanded octet** — in SF₆, sulphur is surrounded by 12 electrons (six S–F bonds), which the octet rule cannot accommodate; similarly PCl₅ holds 10 electrons around P.",
+      "**NEB-style (2m): Why are noble gases chemically inert?** — Their valence shells are already complete (ns²np⁶; He 1s²). They have no tendency to lose, gain or share electrons — no bond formation lowers their energy — so they exist as monatomic molecules and resist reaction.",
+      "**NEB-style (3m): Explain the formation of MgCl₂ using the octet rule.** — Mg (2,8,2) has two excess valence electrons; Cl (2,8,7) is one short of an octet. Mg transfers one electron to each of two Cl atoms → Mg²⁺ (2,8) and two Cl⁻ (2,8,8). Both ions attain neon/argon configurations, and electrostatic attraction between Mg²⁺ and 2Cl⁻ builds the ionic lattice."
+    ],
+    "confusion": [
+      "**Octet counts electrons, not bonds:** CO₂'s carbon has 8 electrons but only 2 bonds (double bonds count four electrons each).",
+      "**Valency vs valence electrons:** for non-metals valency = 8 − valence electrons (Cl: 7 valence e⁻, valency 1)."
+    ],
+    "keyPoints": [
+      "Valence shell = outermost shell; its electrons do the bonding. Octet rule (Kossel–Lewis 1916): eight electrons in the outer shell via transfer (ionic) or sharing (covalent); duet for H/Li. Limitations: incomplete octet (BeCl₂, BF₃), expanded octet (PCl₅, SF₆ — third period onward), odd-electron molecules (NO, NO₂), noble-gas compounds (XeF₂), and no shape prediction."
+    ],
+    "importantConcepts": [
+      "The octet rule is a stability statement, not a shape theory — it decides how many electrons gather around an atom; VSEPR decides where they point. Electron-deficient species (BF₃) are Lewis acids precisely because their octets are short."
+    ],
+    "examples": [
+      "***SF₆ holds 12 electrons around sulphur*** — an expanded octet possible only from period 3, where 3d orbitals are energetically accessible."
+    ],
+    "universalFacts": [
+      "Helium completes its shell with just two electrons — the duet — because n = 1 holds only 1s²; it is the only noble gas whose \"octet\" is a pair."
+    ],
+    "importantStatements": [
+      "\"Atoms tend to acquire eight electrons in their outermost shell by electron transfer or electron sharing, thereby attaining the nearest noble-gas configuration.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs for this unit sit mostly in VSEPR/Lewis topics (NEB 2022, 2024); octet-theory items above are NEB-style practice. The octet rule's limitations list is a stock 3m question — memorise all five categories."
+    ],
+    "examShortTricks": [
+      "\"Transfer = metal + non-metal (Kossel); share = non-metal + non-metal (Lewis).\" Deficiency: BeCl₂ (4), BF₃ (6). Expansion: PCl₅ (10), SF₆ (12). Odd: NO, NO₂."
+    ],
+    "examNotes": [
+      "For \"limitations of octet rule\" write the category name, the example, and the electron count (e.g. SF₆ — 12 e⁻). Three columns, three marks."
+    ],
+    "formulas": [
+      "- Valence electrons = group number (main-group elements)\n- Valency (non-metals) = 8 − valence electrons\n- Total valence e⁻ = Σ valence e⁻ (atoms) ± charge (anion +, cation −)"
+    ],
+    "practice": [
+      "Why does beryllium in BeCl₂ not complete its octet, and what property does this give BeCl₂?",
+      "Explain why XeF₂ exists even though xenon has a complete octet.",
+      "Draw the electron-count logic for NH₄⁺ (total valence electrons and distribution)."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): State the octet rule. Explain its application in the formation of NaCl and Cl₂.** — The octet rule states that atoms acquire eight electrons in the valence shell by transfer or sharing. **NaCl:** Na (2,8,1) transfers one electron to Cl (2,8,7) → Na⁺ (2,8) and Cl⁻ (2,8,8), both noble-gas configurations, bound electrostatically. **Cl₂:** each Cl needs one electron; the two atoms share one pair, giving each Cl seven own + one shared = 8 electrons.",
+      "**NEB-style (2m): Give two molecules in which the central atom has an incomplete octet, with electron counts.** — **BeCl₂:** Be holds 4 electrons (two Be–Cl bonds) — stable but electron-deficient, hence a strong Lewis acid. **BF₃:** B holds 6 electrons (three B–F bonds) — also electron-deficient; BF₃ is a widely used organic catalyst for this reason.",
+      "**NEB-style (3m): What is the expanded octet? Illustrate with PCl₅ and SF₆.** — An expanded octet has more than eight electrons around the central atom, possible only for period-3 elements and beyond where empty d orbitals can accept electron density. **PCl₅:** five P–Cl bonds = 10 electrons around P (trigonal bipyramidal). **SF₆:** six S–F bonds = 12 electrons around S (octahedral). Period-2 atoms (C, N, O, F) can never expand because they have no accessible valence d orbitals."
+    ]
+  }
 }

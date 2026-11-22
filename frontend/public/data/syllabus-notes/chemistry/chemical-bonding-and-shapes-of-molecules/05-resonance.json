@@ -5,143 +5,60 @@
   "topicTitle": "Resonance",
   "relevance": 100,
   "notes": [
-    "VSEPR theory predicts molecular geometry from electron pairs.",
-    "sp³: 4 pairs → tetrahedral (109.5°).",
-    "sp²: 3 pairs → trigonal planar (120°).",
-    "sp: 2 pairs → linear (180°).",
-    "Lone pairs compress bond angles.",
-    "# Resonance\n\n## 1. Introduction\nChemical picture of **Resonance** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Resonance\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Resonance — shape gallery: structures with bond angles (authored SVG)\n- **D2** — Resonance — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Resonance — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Resonance — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Molecule That Is Two Structures and Neither\n\nOzone's two O–O bonds refuse to behave: experiment says both are 128-ish pm — neither the single-bond 148 pm nor the double-bond 121 pm. No single Lewis structure can draw this. The answer is **resonance**: the real molecule is a hybrid of two valid dot structures, with the true electron distribution being an average no single drawing captures. The double-headed arrow (↔) between them is chemistry's most misread symbol — it does not mean \"flipping between\" but \"simultaneously both\".",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition and conditions\n\n- **Resonance (mesomerism):** when a single Lewis structure cannot represent a molecule, two or more valid structures (canonical forms) are drawn, and the actual molecule is their **resonance hybrid**.\n- **Conditions:** the canonical forms differ only in the **positions of electrons** (π bonds and lone pairs) — never in the positions of atoms or σ bonds.\n- The hybrid is **more stable** than any single canonical form: the stabilisation is the **resonance energy**.\n\n### 2.2 The standard set\n\n- **O₃:** two forms, double bond left ↔ double bond right; both O–O bonds equal (≈128 pm).\n- **CO₃²⁻:** three forms, the C=O rotating among the three C–O positions; all three C–O bonds identical (≈129 pm).\n- **Benzene C₆H₆:** two Kekulé forms; all six C–C bonds equal (139 pm — between single 154 and double 134); resonance energy ≈ 150 kJ mol⁻¹.\n- **SO₂ / SO₃:** S–O links drawn partly as dative/double hybrids; all S–O bonds equal and intermediate in length.\n- **NO₃⁻, NO₂⁻:** three and two equivalent forms respectively.\n\n### 2.3 Resonance energy and stabilisation\n\n- **Resonance energy = energy of the most stable canonical form − energy of the actual hybrid.** Benzene: the hydrogenation of cyclohexene releases 120 kJ mol⁻¹; \"cyclohexatriene\" would predict 360 kJ mol⁻¹, but benzene releases only ≈208 kJ mol⁻¹ — the shortfall (≈150 kJ mol⁻¹) is resonance energy.\n- Consequences: benzene resists addition (prefers substitution), ozone's bonds are equal, the carbonate anion's charge is spread over three oxygens — each a direct experimental footprint.\n\n### 2.4 Rules for judging canonical forms\n\n- More **covalent bonds**, more **full octets**, **less formal charge** → greater contribution.\n- Negative formal charge on the **more electronegative atom** → greater contribution.\n- Equivalent structures contribute **equally** (O₃'s two forms are equal partners).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Resonance** | Real molecule = hybrid of two or more valid Lewis structures differing only in electron positions | O₃, CO₃²⁻, C₆H₆ |\n| **Canonical (resonating) structure** | One valid contributing Lewis structure | Kekulé forms of benzene |\n| **Resonance hybrid** | Actual electron distribution — weighted average of forms | Benzene: all C–C 139 pm |\n| **Resonance energy** | Stability of hybrid over the most stable single form | Benzene ≈ 150 kJ mol⁻¹ |\n| **Delocalisation** | Electrons spread over three or more atoms rather than two | π cloud of benzene |",
+    "## 4. Detailed Explanation\n\n### 4.1 Ozone — the cleanest example\n\n- Structure I: O=O–O⁻ (FC: +1, 0, −1); Structure II: the mirror image.\n- Neither matches reality: measured O–O = 128 pm, between single (148 pm) and double (121 pm).\n- The hybrid gives each bond **bond order 1.5** and spreads the −1 charge half on each terminal oxygen.\n- Ozone's reactivity (powerful oxidant) reflects the partial charge separation the hybrid describes.\n\n### 4.2 Carbonate — charge spreading in an anion\n\n- Three equivalent forms: the C=O occupies position 1, 2 or 3 in turn.\n- Hybrid: all three C–O bonds identical (129 pm), bond order 1⅓, each oxygen carrying −⅔ of the charge.\n- Consequence in the lab: all three C–O bonds of CO₃²⁻ respond identically — the anion has no \"special\" double-bond oxygen.\n\n### 4.3 Benzene — the resonance that rewrote organic chemistry\n\n- Two Kekulé forms with alternating double bonds; the hybrid has six equal C–C bonds (139 pm).\n- Resonance energy ≈ 150 kJ mol⁻¹ explains: benzene's unusual resistance to addition, its substitution chemistry, and its lower heat of hydrogenation than three isolated double bonds would predict.\n- The π electrons form a continuous ring cloud above and below the plane — delocalisation made visible.",
+    "## 5. Comparison Tables\n\n**Single structure vs resonance hybrid**\n\n| Basis | One canonical form | Resonance hybrid |\n|---|---|---|\n| Electron positions | Fixed | Delocalised |\n| Bond lengths | Single and double distinct | All equal, intermediate |\n| Stability | Lower | Highest (resonance energy gained) |\n| Reactivity | Would add across double bonds | Benzene substitutes; ozone oxidises |\n| Existence | Never exists alone | The only real species |\n\n**Resonance fingerprint table**\n\n| Species | Forms | Bond order (each relevant bond) | Experimental evidence |\n|---|---|---|---|\n| O₃ | 2 | 1.5 | Both O–O = 128 pm |\n| CO₃²⁻ | 3 | 1⅓ | All C–O = 129 pm |\n| C₆H₆ | 2 (Kekulé) | 1.5 | All C–C = 139 pm; RE ≈ 150 kJ mol⁻¹ |\n| SO₂ | ≥2 | ≈1.5 | Equal S–O bonds, dipole ≈1.6 D (bent) |\n| NO₃⁻ | 3 | 1⅓ | Three equal N–O bonds |",
+    "## 6. Common Confusions\n\n**The molecule does not oscillate between forms:** resonance is a static averaging — the hybrid exists all the time; the canonical forms are bookkeeping, never real intermediates.",
+    "**Atoms never move in resonance:** only π electrons and lone pairs shift; any \"structure\" with a relocated H or O is a different molecule (a tautomer), not a resonance form.",
+    "**More forms ≠ more stability automatically:** quality (octets, charge placement) matters; equivalent forms contribute equally regardless of count.",
+    "## 7. Exam Application\n\n**NEB-style (3m): What is resonance? Explain the resonance in ozone with bond-order consequences.** — Resonance: when one Lewis structure cannot describe a molecule, two or more canonical forms are drawn and the real molecule is their hybrid. Ozone: O=O–O⁻ ↔ ⁻O–O=O. Both forms have the same atom positions and differ only in the π bond's side. The hybrid gives each O–O bond order 1.5 — hence both bonds measure 128 pm, between single (148) and double (121), and the negative charge is shared equally by the two terminal oxygens.",
+    "**NEB-style (2m): Why are all three C–O bonds in the carbonate ion identical?** — CO₃²⁻ has three equivalent resonance forms with the C=O on each oxygen in turn. The hybrid delocalises the π bond and the two negative charges over all three oxygens, giving each C–O bond order 1⅓ — all three measure 129 pm.",
+    "**NEB-style (3m): Define resonance energy and estimate it for benzene from hydrogenation data.** — Resonance energy is the extra stability of the hybrid over the most stable single canonical form. Cyclohexene hydrogenates releasing ≈120 kJ mol⁻¹ per double bond; three isolated bonds would release ≈360 kJ mol⁻¹, but benzene releases only ≈208 kJ mol⁻¹. The difference, ≈150 kJ mol⁻¹, is benzene's resonance energy — the energy price of its reluctance to undergo addition."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "**↔ is not ⇌:** resonance is not an equilibrium between interconverting structures — there is no flipping, only one hybrid.",
+    "**Equal bond lengths are the proof, not a coincidence:** whenever measured bonds sit between single and double values, think resonance — that is the experimental signature."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Why does benzene undergo electrophilic substitution rather than addition?",
+    "Draw the three resonance forms of the nitrate ion and give each N–O bond order.",
+    "Explain why the two S–O bonds in SO₂ are equal although one is drawn as dative."
   ],
-  "universalFacts": [],
+  "universalFacts": [
+    "Ozone's partial positive central oxygen and partial negative terminals make it both a strong oxidant and a dipolar molecule — resonance chemistry with weather-scale consequences (the ozone layer)."
+  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "H₂O: sp³, 2BP+2LP → bent",
-    "CO₂: sp, 2BP+0LP → linear"
+    "***Benzene's ≈150 kJ mol⁻¹ resonance energy*** — measured as the hydrogenation shortfall; the reason benzene substitutes rather than adds."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB-style (3m): What is resonance? Illustrate with the ozone molecule and state the experimental evidence.** — When a single Lewis structure fails to represent a molecule, two or more valid structures (canonical forms) differing only in electron positions are drawn; the real molecule is their **resonance hybrid**. **Ozone:** O=O–O⁻ ↔ ⁻O–O=O — the π bond and the negative charge swap ends. The hybrid assigns each O–O bond **bond order 1.5**. **Evidence:** both measured O–O bonds are equal at ≈128 pm, between the single-bond (148 pm) and double-bond (121 pm) values — impossible for either canonical form alone.",
+    "**NEB-style (3m): Explain the resonance in the carbonate ion and its consequences.** — CO₃²⁻ (24 valence electrons) has three equivalent canonical forms in which the C=O double bond occupies each of the three C–O positions in turn, with the two negative charges residing on the two singly bonded oxygens. The **resonance hybrid** delocalises the π bond and the −2 charge over all three oxygens: every C–O bond has **bond order 1⅓** and the measured length ≈129 pm — identical for all three. Consequences: the anion has no special \"double-bond\" oxygen, all three oxygens carry equal charge (−⅔ each), and its reactions show no positional preference.",
+    "**NEB-style (3m): Define resonance energy. How is benzene's resonance energy estimated from heats of hydrogenation?** — Resonance energy is the difference in stability between the real (hybrid) molecule and its most stable single canonical form. **Estimation:** hydrogenating one C=C in cyclohexene releases ≈120 kJ mol⁻¹; a hypothetical \"cyclohexatriene\" with three isolated double bonds would release ≈360 kJ mol⁻¹. Benzene actually releases only ≈208 kJ mol⁻¹. The shortfall, **≈150 kJ mol⁻¹**, is benzene's resonance energy — the extra stability of the delocalised π cloud, and the reason benzene prefers substitution over addition."
   ],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+  "formulas": [
+    "- Resonance energy = E(best canonical) − E(hybrid)\n- Bond order (O₃ hybrid) = 1.5; (CO₃²⁻) = 1⅓; (benzene C–C) = 1.5\n- FC = V − (N + ½B) — used to rank canonical forms"
+  ],
+  "keyPoints": [
+    "Resonance: single Lewis structure insufficient → two or more canonical forms (electrons move, atoms never) → real molecule is the more stable hybrid. Examples: O₃ (bond order 1.5, 128 pm), CO₃²⁻ (three forms, 1⅓), benzene (two Kekulé, 139 pm, resonance energy ≈150 kJ mol⁻¹), SO₂, NO₃⁻. Resonance energy = stability of hybrid over best single form. Best forms: most bonds, full octets, least FC, negative FC on EN atom."
+  ],
+  "summary": "When one dot structure cannot tell the truth, chemistry draws several and averages them. **Resonance** lets π electrons and lone pairs — never atoms — take multiple positions: ozone's two forms give both O–O bonds bond order 1.5 (measured 128 pm), the carbonate's three forms equalise all C–O bonds at 129 pm with −⅔ charge on each oxygen, and benzene's two Kekulé forms build a six-membered π cloud with every C–C at 139 pm and a **resonance energy of ≈150 kJ mol⁻¹** — read straight off the hydrogenation shortfall. The hybrid, not any canonical form, is the real molecule: more stable than any single drawing, less eager to add across \"double bonds\", and identifiable in the lab by the fingerprint of equal, intermediate bond lengths. The double-headed arrow means \"simultaneously both\", never \"flipping between\".",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [
-    "Important note regarding 05 resonance."
+  "importantStatements": [
+    "\"When a molecule is represented by two or more Lewis structures that differ only in the distribution of electrons, the actual structure is a resonance hybrid intermediate between them.\""
   ],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantNotes": [
+    "No verified NEB PYQ targets resonance directly in the bank for this unit; items above are NEB-style practice built on the same dot-structure skills examined in NEB 2022/2024."
+  ],
+  "examShortTricks": [
+    "Fingerprint: \"equal bonds, intermediate length → resonance.\" Benzene numbers: 139 pm, 150 kJ mol⁻¹. Ozone: 128 pm, bond order 1.5. Carbonate: 129 pm, 1⅓."
+  ],
+  "examNotes": [
+    "Draw both canonical forms with the ↔ arrow, then write one line of hybrid properties (bond order, length, charge spread). Structure–evidence–conclusion is the full-mark shape."
+  ],
   "mcs": [
     {
       "question": "Question about 05 resonance?",
@@ -155,7 +72,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 05 resonance."
+    "Bond order between 1 and 2 plus equal bond lengths is the experimental fingerprint of resonance — quote the measured pm values to convert a theory answer into an evidence answer."
   ],
   "importantTasks": [
     "Task for studying 05 resonance."
@@ -164,14 +81,92 @@
   "tabGroup": "05-resonance",
   "mcqs": [
     {
-      "question": "Question about 05 resonance?",
+      "question": "Resonance structures differ in the position of:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Atoms",
+        "Sigma bonds",
+        "Electrons only",
+        "Nuclei"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "Only pi electrons and lone pairs shift."
+    },
+    {
+      "question": "The bond order of each O-O bond in the ozone hybrid is:",
+      "options": [
+        "1",
+        "1.5",
+        "2",
+        "2.5"
+      ],
+      "answer": "B",
+      "explanation": "One single and one double bond averaged."
+    },
+    {
+      "question": "All C-O bonds in CO3 2- measure about:",
+      "options": [
+        "121 pm",
+        "129 pm",
+        "148 pm",
+        "154 pm"
+      ],
+      "answer": "B",
+      "explanation": "Bond order 1 and 1/3 - resonance equalised."
+    },
+    {
+      "question": "The resonance energy of benzene is about:",
+      "options": [
+        "15 kJ/mol",
+        "150 kJ/mol",
+        "360 kJ/mol",
+        "120 kJ/mol"
+      ],
+      "answer": "B",
+      "explanation": "Hydrogenation shortfall vs cyclohexatriene."
+    },
+    {
+      "question": "The double-headed resonance arrow means:",
+      "options": [
+        "Equilibrium between forms",
+        "Simultaneous hybrid",
+        "Reaction direction",
+        "Electron flow"
+      ],
+      "answer": "B",
+      "explanation": "The hybrid exists all the time - no flipping."
+    },
+    {
+      "question": "In resonance, which never changes position?",
+      "options": [
+        "Pi electrons",
+        "Lone pairs",
+        "Atoms",
+        "Formal charges"
+      ],
+      "answer": "C",
+      "explanation": "Sigma framework and atoms are fixed."
+    },
+    {
+      "question": "The best canonical form has:",
+      "options": [
+        "Maximum formal charge",
+        "Fewest covalent bonds",
+        "Full octets and least charge",
+        "Charges on electropositive atoms"
+      ],
+      "answer": "C",
+      "explanation": "Quality rules for weighting contributors."
+    },
+    {
+      "question": "Benzene resists addition because:",
+      "options": [
+        "It is saturated",
+        "Delocalisation would be lost",
+        "It is ionic",
+        "C-C bonds are weak"
+      ],
+      "answer": "B",
+      "explanation": "Preserving the 150 kJ/mol resonance energy."
     }
   ],
   "exercises": [],
@@ -181,5 +176,61 @@
     "desc": "3D molecular geometry predictor"
   },
   "visualType": "resonance",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Molecule That Is Two Structures and Neither\n\nOzone's two O–O bonds refuse to behave: experiment says both are 128-ish pm — neither the single-bond 148 pm nor the double-bond 121 pm. No single Lewis structure can draw this. The answer is **resonance**: the real molecule is a hybrid of two valid dot structures, with the true electron distribution being an average no single drawing captures. The double-headed arrow (↔) between them is chemistry's most misread symbol — it does not mean \"flipping between\" but \"simultaneously both\".",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition and conditions\n\n- **Resonance (mesomerism):** when a single Lewis structure cannot represent a molecule, two or more valid structures (canonical forms) are drawn, and the actual molecule is their **resonance hybrid**.\n- **Conditions:** the canonical forms differ only in the **positions of electrons** (π bonds and lone pairs) — never in the positions of atoms or σ bonds.\n- The hybrid is **more stable** than any single canonical form: the stabilisation is the **resonance energy**.\n\n### 2.2 The standard set\n\n- **O₃:** two forms, double bond left ↔ double bond right; both O–O bonds equal (≈128 pm).\n- **CO₃²⁻:** three forms, the C=O rotating among the three C–O positions; all three C–O bonds identical (≈129 pm).\n- **Benzene C₆H₆:** two Kekulé forms; all six C–C bonds equal (139 pm — between single 154 and double 134); resonance energy ≈ 150 kJ mol⁻¹.\n- **SO₂ / SO₃:** S–O links drawn partly as dative/double hybrids; all S–O bonds equal and intermediate in length.\n- **NO₃⁻, NO₂⁻:** three and two equivalent forms respectively.\n\n### 2.3 Resonance energy and stabilisation\n\n- **Resonance energy = energy of the most stable canonical form − energy of the actual hybrid.** Benzene: the hydrogenation of cyclohexene releases 120 kJ mol⁻¹; \"cyclohexatriene\" would predict 360 kJ mol⁻¹, but benzene releases only ≈208 kJ mol⁻¹ — the shortfall (≈150 kJ mol⁻¹) is resonance energy.\n- Consequences: benzene resists addition (prefers substitution), ozone's bonds are equal, the carbonate anion's charge is spread over three oxygens — each a direct experimental footprint.\n\n### 2.4 Rules for judging canonical forms\n\n- More **covalent bonds**, more **full octets**, **less formal charge** → greater contribution.\n- Negative formal charge on the **more electronegative atom** → greater contribution.\n- Equivalent structures contribute **equally** (O₃'s two forms are equal partners).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Resonance** | Real molecule = hybrid of two or more valid Lewis structures differing only in electron positions | O₃, CO₃²⁻, C₆H₆ |\n| **Canonical (resonating) structure** | One valid contributing Lewis structure | Kekulé forms of benzene |\n| **Resonance hybrid** | Actual electron distribution — weighted average of forms | Benzene: all C–C 139 pm |\n| **Resonance energy** | Stability of hybrid over the most stable single form | Benzene ≈ 150 kJ mol⁻¹ |\n| **Delocalisation** | Electrons spread over three or more atoms rather than two | π cloud of benzene |",
+      "## 4. Detailed Explanation\n\n### 4.1 Ozone — the cleanest example\n\n- Structure I: O=O–O⁻ (FC: +1, 0, −1); Structure II: the mirror image.\n- Neither matches reality: measured O–O = 128 pm, between single (148 pm) and double (121 pm).\n- The hybrid gives each bond **bond order 1.5** and spreads the −1 charge half on each terminal oxygen.\n- Ozone's reactivity (powerful oxidant) reflects the partial charge separation the hybrid describes.\n\n### 4.2 Carbonate — charge spreading in an anion\n\n- Three equivalent forms: the C=O occupies position 1, 2 or 3 in turn.\n- Hybrid: all three C–O bonds identical (129 pm), bond order 1⅓, each oxygen carrying −⅔ of the charge.\n- Consequence in the lab: all three C–O bonds of CO₃²⁻ respond identically — the anion has no \"special\" double-bond oxygen.\n\n### 4.3 Benzene — the resonance that rewrote organic chemistry\n\n- Two Kekulé forms with alternating double bonds; the hybrid has six equal C–C bonds (139 pm).\n- Resonance energy ≈ 150 kJ mol⁻¹ explains: benzene's unusual resistance to addition, its substitution chemistry, and its lower heat of hydrogenation than three isolated double bonds would predict.\n- The π electrons form a continuous ring cloud above and below the plane — delocalisation made visible.",
+      "## 5. Comparison Tables\n\n**Single structure vs resonance hybrid**\n\n| Basis | One canonical form | Resonance hybrid |\n|---|---|---|\n| Electron positions | Fixed | Delocalised |\n| Bond lengths | Single and double distinct | All equal, intermediate |\n| Stability | Lower | Highest (resonance energy gained) |\n| Reactivity | Would add across double bonds | Benzene substitutes; ozone oxidises |\n| Existence | Never exists alone | The only real species |\n\n**Resonance fingerprint table**\n\n| Species | Forms | Bond order (each relevant bond) | Experimental evidence |\n|---|---|---|---|\n| O₃ | 2 | 1.5 | Both O–O = 128 pm |\n| CO₃²⁻ | 3 | 1⅓ | All C–O = 129 pm |\n| C₆H₆ | 2 (Kekulé) | 1.5 | All C–C = 139 pm; RE ≈ 150 kJ mol⁻¹ |\n| SO₂ | ≥2 | ≈1.5 | Equal S–O bonds, dipole ≈1.6 D (bent) |\n| NO₃⁻ | 3 | 1⅓ | Three equal N–O bonds |",
+      "## 6. Common Confusions\n\n**The molecule does not oscillate between forms:** resonance is a static averaging — the hybrid exists all the time; the canonical forms are bookkeeping, never real intermediates.",
+      "**Atoms never move in resonance:** only π electrons and lone pairs shift; any \"structure\" with a relocated H or O is a different molecule (a tautomer), not a resonance form.",
+      "**More forms ≠ more stability automatically:** quality (octets, charge placement) matters; equivalent forms contribute equally regardless of count.",
+      "## 7. Exam Application\n\n**NEB-style (3m): What is resonance? Explain the resonance in ozone with bond-order consequences.** — Resonance: when one Lewis structure cannot describe a molecule, two or more canonical forms are drawn and the real molecule is their hybrid. Ozone: O=O–O⁻ ↔ ⁻O–O=O. Both forms have the same atom positions and differ only in the π bond's side. The hybrid gives each O–O bond order 1.5 — hence both bonds measure 128 pm, between single (148) and double (121), and the negative charge is shared equally by the two terminal oxygens.",
+      "**NEB-style (2m): Why are all three C–O bonds in the carbonate ion identical?** — CO₃²⁻ has three equivalent resonance forms with the C=O on each oxygen in turn. The hybrid delocalises the π bond and the two negative charges over all three oxygens, giving each C–O bond order 1⅓ — all three measure 129 pm.",
+      "**NEB-style (3m): Define resonance energy and estimate it for benzene from hydrogenation data.** — Resonance energy is the extra stability of the hybrid over the most stable single canonical form. Cyclohexene hydrogenates releasing ≈120 kJ mol⁻¹ per double bond; three isolated bonds would release ≈360 kJ mol⁻¹, but benzene releases only ≈208 kJ mol⁻¹. The difference, ≈150 kJ mol⁻¹, is benzene's resonance energy — the energy price of its reluctance to undergo addition."
+    ],
+    "confusion": [
+      "**↔ is not ⇌:** resonance is not an equilibrium between interconverting structures — there is no flipping, only one hybrid.",
+      "**Equal bond lengths are the proof, not a coincidence:** whenever measured bonds sit between single and double values, think resonance — that is the experimental signature."
+    ],
+    "keyPoints": [
+      "Resonance: single Lewis structure insufficient → two or more canonical forms (electrons move, atoms never) → real molecule is the more stable hybrid. Examples: O₃ (bond order 1.5, 128 pm), CO₃²⁻ (three forms, 1⅓), benzene (two Kekulé, 139 pm, resonance energy ≈150 kJ mol⁻¹), SO₂, NO₃⁻. Resonance energy = stability of hybrid over best single form. Best forms: most bonds, full octets, least FC, negative FC on EN atom."
+    ],
+    "importantConcepts": [
+      "Bond order between 1 and 2 plus equal bond lengths is the experimental fingerprint of resonance — quote the measured pm values to convert a theory answer into an evidence answer."
+    ],
+    "examples": [
+      "***Benzene's ≈150 kJ mol⁻¹ resonance energy*** — measured as the hydrogenation shortfall; the reason benzene substitutes rather than adds."
+    ],
+    "universalFacts": [
+      "Ozone's partial positive central oxygen and partial negative terminals make it both a strong oxidant and a dipolar molecule — resonance chemistry with weather-scale consequences (the ozone layer)."
+    ],
+    "importantStatements": [
+      "\"When a molecule is represented by two or more Lewis structures that differ only in the distribution of electrons, the actual structure is a resonance hybrid intermediate between them.\""
+    ],
+    "importantNotes": [
+      "No verified NEB PYQ targets resonance directly in the bank for this unit; items above are NEB-style practice built on the same dot-structure skills examined in NEB 2022/2024."
+    ],
+    "examShortTricks": [
+      "Fingerprint: \"equal bonds, intermediate length → resonance.\" Benzene numbers: 139 pm, 150 kJ mol⁻¹. Ozone: 128 pm, bond order 1.5. Carbonate: 129 pm, 1⅓."
+    ],
+    "examNotes": [
+      "Draw both canonical forms with the ↔ arrow, then write one line of hybrid properties (bond order, length, charge spread). Structure–evidence–conclusion is the full-mark shape."
+    ],
+    "formulas": [
+      "- Resonance energy = E(best canonical) − E(hybrid)\n- Bond order (O₃ hybrid) = 1.5; (CO₃²⁻) = 1⅓; (benzene C–C) = 1.5\n- FC = V − (N + ½B) — used to rank canonical forms"
+    ],
+    "practice": [
+      "Why does benzene undergo electrophilic substitution rather than addition?",
+      "Draw the three resonance forms of the nitrate ion and give each N–O bond order.",
+      "Explain why the two S–O bonds in SO₂ are equal although one is drawn as dative."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): What is resonance? Illustrate with the ozone molecule and state the experimental evidence.** — When a single Lewis structure fails to represent a molecule, two or more valid structures (canonical forms) differing only in electron positions are drawn; the real molecule is their **resonance hybrid**. **Ozone:** O=O–O⁻ ↔ ⁻O–O=O — the π bond and the negative charge swap ends. The hybrid assigns each O–O bond **bond order 1.5**. **Evidence:** both measured O–O bonds are equal at ≈128 pm, between the single-bond (148 pm) and double-bond (121 pm) values — impossible for either canonical form alone.",
+      "**NEB-style (3m): Explain the resonance in the carbonate ion and its consequences.** — CO₃²⁻ (24 valence electrons) has three equivalent canonical forms in which the C=O double bond occupies each of the three C–O positions in turn, with the two negative charges residing on the two singly bonded oxygens. The **resonance hybrid** delocalises the π bond and the −2 charge over all three oxygens: every C–O bond has **bond order 1⅓** and the measured length ≈129 pm — identical for all three. Consequences: the anion has no special \"double-bond\" oxygen, all three oxygens carry equal charge (−⅔ each), and its reactions show no positional preference.",
+      "**NEB-style (3m): Define resonance energy. How is benzene's resonance energy estimated from heats of hydrogenation?** — Resonance energy is the difference in stability between the real (hybrid) molecule and its most stable single canonical form. **Estimation:** hydrogenating one C=C in cyclohexene releases ≈120 kJ mol⁻¹; a hypothetical \"cyclohexatriene\" with three isolated double bonds would release ≈360 kJ mol⁻¹. Benzene actually releases only ≈208 kJ mol⁻¹. The shortfall, **≈150 kJ mol⁻¹**, is benzene's resonance energy — the extra stability of the delocalised π cloud, and the reason benzene prefers substitution over addition."
+    ]
+  }
 }

@@ -5,142 +5,57 @@
   "topicTitle": "Lewis dot structure of some common compounds of s and p block elements",
   "relevance": 100,
   "notes": [
-    "VSEPR theory predicts molecular geometry from electron pairs.",
-    "sp³: 4 pairs → tetrahedral (109.5°).",
-    "sp²: 3 pairs → trigonal planar (120°).",
-    "sp: 2 pairs → linear (180°).",
-    "Lone pairs compress bond angles.",
-    "# Lewis dot structure of some common compounds of s and p block elements\n\n## 1. Introduction\nChemical picture of **Lewis dot structure of some common compounds of s and p block elements** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Lewis dot structure of some common compounds of s and p block elements\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Lewis dot structure of some common compounds of s and p block elements — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Lewis dot structure of some common compounds of s and p block elements — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Lewis dot structure of some common compounds of s and p block elements — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Lewis dot structure of some common compounds of s and p block elements — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Chemistry in Dots and Lines\n\nA Lewis dot structure is a molecule's electron budget made visible: every valence electron accounted for, either as a bonding pair (a line) or a lone pair (dots). Draw it correctly and the shape, polarity and reactivity of the molecule follow almost mechanically. NEB has asked the CO₂ dot structure directly (2022, 2024) and the H₂O/NH₃ structures with their shapes (2024) — this topic is the drawing manual.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The drawing procedure\n\n1. **Count** total valence electrons (adjust for charge: add for anions, subtract for cations).\n2. **Choose the skeleton** — least electronegative atom central (H is always terminal).\n3. **Place one bond pair** between every connected pair; complete the octets (duets for H) of outer atoms with lone pairs.\n4. **Park leftovers on the central atom**; if its octet is short, convert outer lone pairs into double/triple bonds.\n5. **Verify:** electrons used = electrons counted; every atom at its octet (or a known exception: Be, B, expanded P/S).\n\n### 2.2 The standard gallery (s and p block)\n\n- **H₂O:** 8 e⁻ → two O–H bonds + **two lone pairs** on O (bent, 104.5°).\n- **NH₃:** 8 e⁻ → three N–H bonds + **one lone pair** (pyramidal, 107°).\n- **CH₄:** 8 e⁻ → four C–H bonds, no lone pairs (tetrahedral, 109.5°).\n- **CO₂:** 16 e⁻ → two C=O double bonds, two lone pairs per O (linear, 180°).\n- **BF₃:** 24 e⁻ → three B–F bonds, no lone pair on B — **incomplete octet (6 e⁻)** (trigonal planar, 120°).\n- **PCl₅:** 40 e⁻ → five P–Cl bonds — **expanded octet (10 e⁻)** (trigonal bipyramidal).\n- **SF₆:** 48 e⁻ → six S–F bonds — **expanded octet (12 e⁻)** (octahedral).\n- **H₂S:** 8 e⁻ → two S–H bonds + two lone pairs (bent, 92°).\n\n### 2.3 Formal charge — choosing between rival structures\n\n- **FC = valence e⁻ − (non-bonding e⁻ + ½ bonding e⁻).**\n- The best structure minimises formal charges and puts negative FC on the more electronegative atom.\n- Example O₃: the two resonance forms each carry FC +1 on central O and −1 on one terminal O — formal charge bookkeeping justifies resonance (topic 31).\n\n### 2.4 Polyatomic ions\n\n- **NH₄⁺:** 5 + 4 − 1 = 8 e⁻ → four N–H bonds; formal charge +1 on N.\n- **OH⁻:** 6 + 1 + 1 = 8 e⁻ → one O–H bond, three lone pairs, FC −1 on O.\n- **CO₃²⁻:** 4 + 18 + 2 = 24 e⁻ → one C=O, two C–O⁻, one lone pair on C — and resonance spreads the double bond (topic 31).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Lewis structure** | Diagram of valence electrons as dots/lines showing bonding and lone pairs | CO₂: O=C=O |\n| **Lone pair** | Valence pair not shared between atoms | H₂O: 2 LP |\n| **Bonding pair** | Electron pair shared between two atoms | CH₄: 4 BP |\n| **Formal charge** | FC = valence e⁻ − (non-bonding e⁻ + ½ bonding e⁻) | O₃: +1/−1/0 |\n| **Expanded octet** | More than 8 e⁻ around central atom (period ≥ 3) | SF₆: 12 e⁻ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2022 & 2024): Lewis dot structure of CO₂ and its shape\n\n- Count: 4 + 2(6) = **16 electrons**.\n- Skeleton O–C–O; place one pair in each C–O bond (4 e⁻), complete O octets with lone pairs (12 e⁻) — carbon has only 4 e⁻.\n- Convert one lone pair from each O into a bonding pair → **O=C=O**, two double bonds.\n- Each atom reaches an octet; all 16 electrons placed. **Shape: linear, 180°** (two electron domains around C).\n\n### 4.2 Verified PYQ (NEB 2024): Lewis structures of H₂O and NH₃ with VSEPR shapes\n\n- **H₂O:** 6 + 2(1) = 8 e⁻ → two O–H bonds + two lone pairs on O. Four electron domains → tetrahedral electron geometry, but **molecular shape bent (V-shaped), ≈104.5°** — lone pairs compress the angle.\n- **NH₃:** 5 + 3(1) = 8 e⁻ → three N–H bonds + one lone pair. Four domains → **pyramidal shape, ≈107°** — one lone pair compresses 109.5° to 107°.\n\n### 4.3 Reading the exceptions straight off the dots\n\n- BF₃'s drawing forces 6 electrons onto B — the structure itself announces the incomplete octet and the Lewis-acid character.\n- PCl₅/SF₆ demand 10/12 electrons on the central atom — only legal for period ≥ 3.\n- The dot count is also the raw material for VSEPR: **bonding pairs + lone pairs = electron domains**, and domains set the shape (topic 32).",
+    "## 5. Comparison Tables\n\n**Molecule-by-molecule dot audit**\n\n| Molecule | Total e⁻ | Bonds | Lone pairs (central) | Shape |\n|---|---|---|---|---|\n| H₂O | 8 | 2 O–H | 2 | Bent 104.5° |\n| NH₃ | 8 | 3 N–H | 1 | Pyramidal 107° |\n| CH₄ | 8 | 4 C–H | 0 | Tetrahedral 109.5° |\n| CO₂ | 16 | 2 C=O | 0 | Linear 180° |\n| BF₃ | 24 | 3 B–F | 0 | Trigonal planar 120° |\n| PCl₅ | 40 | 5 P–Cl | 0 | Trigonal bipyramidal |\n| SF₆ | 48 | 6 S–F | 0 | Octahedral |\n| H₂S | 8 | 2 S–H | 2 | Bent ≈92° |\n\n**Formal charge worked: O₃**\n\n| Atom | valence e⁻ | non-bonding | ½ bonding | FC |\n|---|---|---|---|---|\n| Central O | 6 | 2 | 3 | +1 |\n| Double-bond O | 6 | 4 | 2 | 0 |\n| Single-bond O | 6 | 6 | 1 | −1 |",
+    "## 6. Common Confusions\n\n**Lone pairs are not optional decoration:** omitting them changes the VSEPR count and hence the predicted shape — H₂O without its lone pairs would be drawn \"linear\" and lose all the marks.",
+    "**Total electrons ≠ electrons shown as dots around one atom:** in CO₂ the 16 electrons distribute over three atoms; the audit line \"used = counted\" is the safety check.",
+    "**Formal charge ≠ real charge:** it is a bookkeeping index for choosing among structures; the molecule's real charge distribution comes from electronegativity (partial charges), not FC.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2022/2024): Write the Lewis dot structure of CO₂. What is its molecular shape?** — 16 valence electrons; O=C=O with two lone pairs on each oxygen; carbon's octet completed by two double bonds. Two electron domains, no lone pairs on C → **linear, 180°**, and the two C=O bond dipoles cancel, making the molecule non-polar.",
+    "**Verified PYQ (NEB 2024): Draw the Lewis structures of H₂O and NH₃ and predict their shapes using VSEPR theory.** — H₂O: two bonds + two lone pairs → bent, ≈104.5°. NH₃: three bonds + one lone pair → pyramidal, ≈107°. Both angles sit below 109.5° because lone pair–bond pair repulsion exceeds bond pair–bond pair repulsion.",
+    "**NEB-style (2m): Draw the Lewis structure of BF₃ and comment on boron's octet.** — 24 valence electrons; three B–F single bonds, three lone pairs on each F; boron holds only 6 electrons — an incomplete octet, making BF₃ a strong Lewis acid that completes its octet by accepting a pair (e.g. from NH₃)."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "**Draw lone pairs first, shapes later:** every VSEPR answer begins with the completed Lewis structure — lone pairs included — or the domain count collapses.",
+    "**Formal charge vs oxidation state:** FC assigns bonding electrons equally; oxidation state assigns them to the more electronegative atom — the two bookkeeping systems give different numbers on purpose."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Draw the Lewis structure of the carbonate ion and identify the formal charges.",
+    "Why must hydrogen always occupy a terminal position in a Lewis structure?",
+    "Draw SO₂ and explain why sulphur carries a lone pair despite two S=O-style links."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "H₂O: sp³, 2BP+2LP → bent",
-    "CO₂: sp, 2BP+0LP → linear"
+    "***CO₂'s 16 electrons: 8 in two double bonds, 8 in four lone pairs*** — the full audit, quoted in NEB 2022 and 2024."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB 2022 & 2024 (2m): Write the Lewis dot structure of CO₂. What is its molecular shape?** — Carbon dioxide has 4 + 2(6) = **16 valence electrons**. Skeleton O–C–O: one pair in each C–O link, six electrons (three lone pairs) on each oxygen complete their octets but leave carbon with only four. Moving one lone pair from each oxygen into bonding gives **O=C=O** — two double bonds, two lone pairs per oxygen, every atom at an octet. Carbon carries two electron domains and no lone pairs, so VSEPR gives a **linear molecule, 180°**; the equal, opposite C=O dipoles cancel and CO₂ is non-polar.",
+    "**NEB 2024 (3m): Draw the Lewis structures of H₂O and NH₃ and predict their shapes using VSEPR theory.** — **H₂O:** 8 valence electrons → two O–H bonding pairs plus **two lone pairs** on oxygen. Four electron domains give tetrahedral electron geometry; the two lone pairs push the bonds together, so the molecular shape is **bent (V-shaped) with H–O–H ≈ 104.5°**. **NH₃:** 8 valence electrons → three N–H bonds plus **one lone pair** on nitrogen. Four domains again, but one lone pair compresses the angle less: **pyramidal shape, H–N–H ≈ 107°**. Both angles fall below the ideal 109.5° because lone pair–bond pair repulsion exceeds bond pair–bond pair repulsion.",
+    "**NEB-style (2m): Compute the formal charges in the ozone molecule and state what they imply.** — For O₃ (central O double-bonded to one O, single-bonded to the other): central O = 6 − (2 + 3) = **+1**; double-bond terminal O = 6 − (4 + 2) = **0**; single-bond terminal O = 6 − (6 + 1) = **−1**. The mirror-image structure carries the −1 on the other terminal oxygen. Neither structure alone is real — the charges and the two different O–O lengths (128 and 136 pm) show the true molecule is a **resonance hybrid** of the two forms."
   ],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+  "formulas": [
+    "- Total valence e⁻ = Σ(valence e⁻) ± charge\n- FC = V − (N + ½B)\n- Domains = bonding pairs + lone pairs (central atom)"
+  ],
+  "keyPoints": [
+    "Procedure: count valence e⁻ (± charge) → skeleton (least EN central) → bonds → outer octets → leftovers on central atom → double/triple bonds if short → verify. Gallery: H₂O (2 LP, bent), NH₃ (1 LP, pyramidal), CH₄ (tetrahedral), CO₂ (2 C=O, linear), BF₃ (6 e⁻, trigonal planar), PCl₅ (10 e⁻, TBP), SF₆ (12 e⁻, octahedral), H₂S (bent ≈92°). Formal charge = valence − (non-bonding + ½ bonding); minimise FC, negative on the more EN atom."
+  ],
+  "summary": "A Lewis structure is an electron audit made visible. Count the valence electrons (adjusting for charge), pick the least electronegative central atom, spend electrons on bonds first and outer octets second, park the remainder on the centre, and promote lone pairs to double or triple bonds when the central octet falls short. The gallery every exam draws from: **H₂O** (2 bonds + 2 lone pairs, bent 104.5°), **NH₃** (3 + 1, pyramidal 107°), **CH₄** (4 + 0, tetrahedral 109.5°), **CO₂** (two C=O, linear 180° — NEB 2022 and 2024), **BF₃** (incomplete octet, 6 e⁻), **PCl₅** (10 e⁻) and **SF₆** (12 e⁻) as expanded-octet legal cases, **H₂S** (bent ≈92°). Formal charge (V − N − ½B) referees rival structures and sets up resonance. Lone pairs are never optional: they are the hinge between the dot picture and the VSEPR shape.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [
-    "Important note regarding 04 lewis dot structure of some common compounds of s and p block elements."
+  "importantStatements": [
+    "\"A Lewis structure represents valence electrons as dots, with shared pairs drawn as lines, such that each atom attains its octet (or a recognised exception).\""
   ],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantNotes": [
+    "Verified PYQs: NEB 2022 and NEB 2024 — CO₂ dot structure + shape; NEB 2024 — H₂O/NH₃ Lewis structures + VSEPR shapes; all solved above. Other items are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Electron budget quickies: H₂O/NH₃/CH₄ = 8; CO₂ = 16; BF₃ = 24; PCl₅ = 40; SF₆ = 48. \"Least EN central, H always terminal.\""
+  ],
+  "examNotes": [
+    "In shape questions, write three lines: Lewis structure → electron domains (bonds + lone pairs) → shape + angle with the lone-pair compression remark. That structure matches the mark scheme."
+  ],
   "mcs": [
     {
       "question": "Question about 04 lewis dot structure of some common compounds of s and p block elements?",
@@ -154,7 +69,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 04 lewis dot structure of some common compounds of s and p block elements."
+    "The Lewis structure is the input to VSEPR: bonding pairs + lone pairs = electron domains. Lone pairs on the central atom are the difference between electron geometry and molecular shape — omit them and every downstream answer is wrong."
   ],
   "importantTasks": [
     "Task for studying 04 lewis dot structure of some common compounds of s and p block elements."
@@ -163,14 +78,92 @@
   "tabGroup": "04-lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements",
   "mcqs": [
     {
-      "question": "Question about 04 lewis dot structure of some common compounds of s and p block elements?",
+      "question": "The total number of valence electrons in CO2 is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "12",
+        "16",
+        "18",
+        "22"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "4 + 2 x 6 = 16."
+    },
+    {
+      "question": "In the Lewis structure of H2O, oxygen carries:",
+      "options": [
+        "1 lone pair",
+        "2 lone pairs",
+        "3 lone pairs",
+        "no lone pair"
+      ],
+      "answer": "B",
+      "explanation": "Two bonds plus two lone pairs - bent shape."
+    },
+    {
+      "question": "The molecular shape of NH3 is:",
+      "options": [
+        "Trigonal planar",
+        "Pyramidal",
+        "T-shaped",
+        "Linear"
+      ],
+      "answer": "B",
+      "explanation": "Three bonds + one lone pair."
+    },
+    {
+      "question": "How many electrons surround boron in BF3?",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "answer": "A",
+      "explanation": "Incomplete octet - Lewis acid."
+    },
+    {
+      "question": "The formal charge formula is:",
+      "options": [
+        "V - (N + B)",
+        "V - (N + B/2)",
+        "V + N - B",
+        "N - V/2"
+      ],
+      "answer": "B",
+      "explanation": "FC = valence - (non-bonding + half bonding)."
+    },
+    {
+      "question": "PCl5's central atom holds:",
+      "options": [
+        "8 electrons",
+        "10 electrons",
+        "12 electrons",
+        "6 electrons"
+      ],
+      "answer": "B",
+      "explanation": "Expanded octet - five bonds."
+    },
+    {
+      "question": "Which molecule is linear?",
+      "options": [
+        "H2O",
+        "NH3",
+        "CO2",
+        "H2S"
+      ],
+      "answer": "C",
+      "explanation": "Two double bonds, no lone pairs on C."
+    },
+    {
+      "question": "In drawing Lewis structures, hydrogen is:",
+      "options": [
+        "Always central",
+        "Always terminal",
+        "Never drawn",
+        "Always charged"
+      ],
+      "answer": "B",
+      "explanation": "H can form only one bond (duet)."
     }
   ],
   "exercises": [],
@@ -180,5 +173,64 @@
     "desc": "3D molecular geometry predictor"
   },
   "visualType": "lewis-dot-structures",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Chemistry in Dots and Lines\n\nA Lewis dot structure is a molecule's electron budget made visible: every valence electron accounted for, either as a bonding pair (a line) or a lone pair (dots). Draw it correctly and the shape, polarity and reactivity of the molecule follow almost mechanically. NEB has asked the CO₂ dot structure directly (2022, 2024) and the H₂O/NH₃ structures with their shapes (2024) — this topic is the drawing manual.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The drawing procedure\n\n1. **Count** total valence electrons (adjust for charge: add for anions, subtract for cations).\n2. **Choose the skeleton** — least electronegative atom central (H is always terminal).\n3. **Place one bond pair** between every connected pair; complete the octets (duets for H) of outer atoms with lone pairs.\n4. **Park leftovers on the central atom**; if its octet is short, convert outer lone pairs into double/triple bonds.\n5. **Verify:** electrons used = electrons counted; every atom at its octet (or a known exception: Be, B, expanded P/S).\n\n### 2.2 The standard gallery (s and p block)\n\n- **H₂O:** 8 e⁻ → two O–H bonds + **two lone pairs** on O (bent, 104.5°).\n- **NH₃:** 8 e⁻ → three N–H bonds + **one lone pair** (pyramidal, 107°).\n- **CH₄:** 8 e⁻ → four C–H bonds, no lone pairs (tetrahedral, 109.5°).\n- **CO₂:** 16 e⁻ → two C=O double bonds, two lone pairs per O (linear, 180°).\n- **BF₃:** 24 e⁻ → three B–F bonds, no lone pair on B — **incomplete octet (6 e⁻)** (trigonal planar, 120°).\n- **PCl₅:** 40 e⁻ → five P–Cl bonds — **expanded octet (10 e⁻)** (trigonal bipyramidal).\n- **SF₆:** 48 e⁻ → six S–F bonds — **expanded octet (12 e⁻)** (octahedral).\n- **H₂S:** 8 e⁻ → two S–H bonds + two lone pairs (bent, 92°).\n\n### 2.3 Formal charge — choosing between rival structures\n\n- **FC = valence e⁻ − (non-bonding e⁻ + ½ bonding e⁻).**\n- The best structure minimises formal charges and puts negative FC on the more electronegative atom.\n- Example O₃: the two resonance forms each carry FC +1 on central O and −1 on one terminal O — formal charge bookkeeping justifies resonance (topic 31).\n\n### 2.4 Polyatomic ions\n\n- **NH₄⁺:** 5 + 4 − 1 = 8 e⁻ → four N–H bonds; formal charge +1 on N.\n- **OH⁻:** 6 + 1 + 1 = 8 e⁻ → one O–H bond, three lone pairs, FC −1 on O.\n- **CO₃²⁻:** 4 + 18 + 2 = 24 e⁻ → one C=O, two C–O⁻, one lone pair on C — and resonance spreads the double bond (topic 31).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Lewis structure** | Diagram of valence electrons as dots/lines showing bonding and lone pairs | CO₂: O=C=O |\n| **Lone pair** | Valence pair not shared between atoms | H₂O: 2 LP |\n| **Bonding pair** | Electron pair shared between two atoms | CH₄: 4 BP |\n| **Formal charge** | FC = valence e⁻ − (non-bonding e⁻ + ½ bonding e⁻) | O₃: +1/−1/0 |\n| **Expanded octet** | More than 8 e⁻ around central atom (period ≥ 3) | SF₆: 12 e⁻ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2022 & 2024): Lewis dot structure of CO₂ and its shape\n\n- Count: 4 + 2(6) = **16 electrons**.\n- Skeleton O–C–O; place one pair in each C–O bond (4 e⁻), complete O octets with lone pairs (12 e⁻) — carbon has only 4 e⁻.\n- Convert one lone pair from each O into a bonding pair → **O=C=O**, two double bonds.\n- Each atom reaches an octet; all 16 electrons placed. **Shape: linear, 180°** (two electron domains around C).\n\n### 4.2 Verified PYQ (NEB 2024): Lewis structures of H₂O and NH₃ with VSEPR shapes\n\n- **H₂O:** 6 + 2(1) = 8 e⁻ → two O–H bonds + two lone pairs on O. Four electron domains → tetrahedral electron geometry, but **molecular shape bent (V-shaped), ≈104.5°** — lone pairs compress the angle.\n- **NH₃:** 5 + 3(1) = 8 e⁻ → three N–H bonds + one lone pair. Four domains → **pyramidal shape, ≈107°** — one lone pair compresses 109.5° to 107°.\n\n### 4.3 Reading the exceptions straight off the dots\n\n- BF₃'s drawing forces 6 electrons onto B — the structure itself announces the incomplete octet and the Lewis-acid character.\n- PCl₅/SF₆ demand 10/12 electrons on the central atom — only legal for period ≥ 3.\n- The dot count is also the raw material for VSEPR: **bonding pairs + lone pairs = electron domains**, and domains set the shape (topic 32).",
+      "## 5. Comparison Tables\n\n**Molecule-by-molecule dot audit**\n\n| Molecule | Total e⁻ | Bonds | Lone pairs (central) | Shape |\n|---|---|---|---|---|\n| H₂O | 8 | 2 O–H | 2 | Bent 104.5° |\n| NH₃ | 8 | 3 N–H | 1 | Pyramidal 107° |\n| CH₄ | 8 | 4 C–H | 0 | Tetrahedral 109.5° |\n| CO₂ | 16 | 2 C=O | 0 | Linear 180° |\n| BF₃ | 24 | 3 B–F | 0 | Trigonal planar 120° |\n| PCl₅ | 40 | 5 P–Cl | 0 | Trigonal bipyramidal |\n| SF₆ | 48 | 6 S–F | 0 | Octahedral |\n| H₂S | 8 | 2 S–H | 2 | Bent ≈92° |\n\n**Formal charge worked: O₃**\n\n| Atom | valence e⁻ | non-bonding | ½ bonding | FC |\n|---|---|---|---|---|\n| Central O | 6 | 2 | 3 | +1 |\n| Double-bond O | 6 | 4 | 2 | 0 |\n| Single-bond O | 6 | 6 | 1 | −1 |",
+      "## 6. Common Confusions\n\n**Lone pairs are not optional decoration:** omitting them changes the VSEPR count and hence the predicted shape — H₂O without its lone pairs would be drawn \"linear\" and lose all the marks.",
+      "**Total electrons ≠ electrons shown as dots around one atom:** in CO₂ the 16 electrons distribute over three atoms; the audit line \"used = counted\" is the safety check.",
+      "**Formal charge ≠ real charge:** it is a bookkeeping index for choosing among structures; the molecule's real charge distribution comes from electronegativity (partial charges), not FC.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2022/2024): Write the Lewis dot structure of CO₂. What is its molecular shape?** — 16 valence electrons; O=C=O with two lone pairs on each oxygen; carbon's octet completed by two double bonds. Two electron domains, no lone pairs on C → **linear, 180°**, and the two C=O bond dipoles cancel, making the molecule non-polar.",
+      "**Verified PYQ (NEB 2024): Draw the Lewis structures of H₂O and NH₃ and predict their shapes using VSEPR theory.** — H₂O: two bonds + two lone pairs → bent, ≈104.5°. NH₃: three bonds + one lone pair → pyramidal, ≈107°. Both angles sit below 109.5° because lone pair–bond pair repulsion exceeds bond pair–bond pair repulsion.",
+      "**NEB-style (2m): Draw the Lewis structure of BF₃ and comment on boron's octet.** — 24 valence electrons; three B–F single bonds, three lone pairs on each F; boron holds only 6 electrons — an incomplete octet, making BF₃ a strong Lewis acid that completes its octet by accepting a pair (e.g. from NH₃)."
+    ],
+    "confusion": [
+      "**Draw lone pairs first, shapes later:** every VSEPR answer begins with the completed Lewis structure — lone pairs included — or the domain count collapses.",
+      "**Formal charge vs oxidation state:** FC assigns bonding electrons equally; oxidation state assigns them to the more electronegative atom — the two bookkeeping systems give different numbers on purpose."
+    ],
+    "keyPoints": [
+      "Procedure: count valence e⁻ (± charge) → skeleton (least EN central) → bonds → outer octets → leftovers on central atom → double/triple bonds if short → verify. Gallery: H₂O (2 LP, bent), NH₃ (1 LP, pyramidal), CH₄ (tetrahedral), CO₂ (2 C=O, linear), BF₃ (6 e⁻, trigonal planar), PCl₅ (10 e⁻, TBP), SF₆ (12 e⁻, octahedral), H₂S (bent ≈92°). Formal charge = valence − (non-bonding + ½ bonding); minimise FC, negative on the more EN atom."
+    ],
+    "importantConcepts": [
+      "The Lewis structure is the input to VSEPR: bonding pairs + lone pairs = electron domains. Lone pairs on the central atom are the difference between electron geometry and molecular shape — omit them and every downstream answer is wrong."
+    ],
+    "examples": [
+      "***CO₂'s 16 electrons: 8 in two double bonds, 8 in four lone pairs*** — the full audit, quoted in NEB 2022 and 2024."
+    ],
+    "universalFacts": [
+      "BF₃'s 6-electron boron is the textbook Lewis acid: it completes its octet by accepting NH₃'s lone pair, forming the NH₃·BF₃ adduct."
+    ],
+    "importantStatements": [
+      "\"A Lewis structure represents valence electrons as dots, with shared pairs drawn as lines, such that each atom attains its octet (or a recognised exception).\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2022 and NEB 2024 — CO₂ dot structure + shape; NEB 2024 — H₂O/NH₃ Lewis structures + VSEPR shapes; all solved above. Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Electron budget quickies: H₂O/NH₃/CH₄ = 8; CO₂ = 16; BF₃ = 24; PCl₅ = 40; SF₆ = 48. \"Least EN central, H always terminal.\""
+    ],
+    "examNotes": [
+      "In shape questions, write three lines: Lewis structure → electron domains (bonds + lone pairs) → shape + angle with the lone-pair compression remark. That structure matches the mark scheme."
+    ],
+    "formulas": [
+      "- Total valence e⁻ = Σ(valence e⁻) ± charge\n- FC = V − (N + ½B)\n- Domains = bonding pairs + lone pairs (central atom)"
+    ],
+    "practice": [
+      "Draw the Lewis structure of the carbonate ion and identify the formal charges.",
+      "Why must hydrogen always occupy a terminal position in a Lewis structure?",
+      "Draw SO₂ and explain why sulphur carries a lone pair despite two S=O-style links."
+    ],
+    "practiceQuestions": [
+      "**NEB 2022 & 2024 (2m): Write the Lewis dot structure of CO₂. What is its molecular shape?** — Carbon dioxide has 4 + 2(6) = **16 valence electrons**. Skeleton O–C–O: one pair in each C–O link, six electrons (three lone pairs) on each oxygen complete their octets but leave carbon with only four. Moving one lone pair from each oxygen into bonding gives **O=C=O** — two double bonds, two lone pairs per oxygen, every atom at an octet. Carbon carries two electron domains and no lone pairs, so VSEPR gives a **linear molecule, 180°**; the equal, opposite C=O dipoles cancel and CO₂ is non-polar.",
+      "**NEB 2024 (3m): Draw the Lewis structures of H₂O and NH₃ and predict their shapes using VSEPR theory.** — **H₂O:** 8 valence electrons → two O–H bonding pairs plus **two lone pairs** on oxygen. Four electron domains give tetrahedral electron geometry; the two lone pairs push the bonds together, so the molecular shape is **bent (V-shaped) with H–O–H ≈ 104.5°**. **NH₃:** 8 valence electrons → three N–H bonds plus **one lone pair** on nitrogen. Four domains again, but one lone pair compresses the angle less: **pyramidal shape, H–N–H ≈ 107°**. Both angles fall below the ideal 109.5° because lone pair–bond pair repulsion exceeds bond pair–bond pair repulsion.",
+      "**NEB-style (2m): Compute the formal charges in the ozone molecule and state what they imply.** — For O₃ (central O double-bonded to one O, single-bonded to the other): central O = 6 − (2 + 3) = **+1**; double-bond terminal O = 6 − (4 + 2) = **0**; single-bond terminal O = 6 − (6 + 1) = **−1**. The mirror-image structure carries the −1 on the other terminal oxygen. Neither structure alone is real — the charges and the two different O–O lengths (128 and 136 pm) show the true molecule is a **resonance hybrid** of the two forms."
+    ]
+  },
+  "universalFacts": [
+    "BF₃'s 6-electron boron is the textbook Lewis acid: it completes its octet by accepting NH₃'s lone pair, forming the NH₃·BF₃ adduct."
+  ]
 }

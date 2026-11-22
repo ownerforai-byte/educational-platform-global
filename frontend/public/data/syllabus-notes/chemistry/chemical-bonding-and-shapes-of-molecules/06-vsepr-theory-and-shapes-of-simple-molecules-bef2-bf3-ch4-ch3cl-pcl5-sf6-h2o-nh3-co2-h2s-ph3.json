@@ -7,147 +7,43 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
-    "**Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
-    "**Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100.",
-    "VSEPR theory predicts molecular geometry from electron pairs.",
-    "sp³: 4 pairs → tetrahedral (109.5°).",
-    "sp²: 3 pairs → trigonal planar (120°).",
-    "sp: 2 pairs → linear (180°).",
-    "Lone pairs compress bond angles.",
-    "# VSEPR theory and shapes of simple molecules (BeF2, BF3, CH4, CH3Cl, PCl5, SF6, H2O, NH3, CO2, H2S, PH3)\n\n## 1. Introduction\nChemical picture of **VSEPR theory and shapes of simple molecules (BeF2** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### VSEPR theory and shapes of simple molecules (BeF2, BF3, CH4, CH3Cl, PCl5, SF6, H2O, NH3, CO2, H2S, PH3)\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — VSEPR theory and shapes of simple molecules (BeF2 — shape gallery: structures with bond angles (authored SVG)\n- **D2** — VSEPR theory and shapes of simple molecules (BeF2 — second structure, flow or plot (authored SVG — English labels)\n- **D3** — VSEPR theory and shapes of simple molecules (BeF2 — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — VSEPR theory and shapes of simple molecules (BeF2 — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Geometry from Repulsion\n\nElectron pairs are all negatively charged — they repel. **VSEPR** (valence shell electron pair repulsion) turns that single fact into molecular architecture: the pairs around a central atom spread as far apart as possible, and the geometry they form is the molecule's shape. One counting rule predicts linear, trigonal planar, tetrahedral, trigonal bipyramidal and octahedral shapes — and the lone-pair corrections predict every bent and pyramidal exception NEB has ever asked (BeCl₂, H₂S, NH₃, CH₄, PCl₅, SF₆ — NEB 2022, 2020, 2024).",
+    "## 2. Fundamental Concepts\n\n### 2.1 Postulates\n\n1. The shape of a molecule is set by the **total number of electron pairs** in the valence shell of the central atom.\n2. The pairs **repel one another** and adopt the arrangement of **minimum repulsion / maximum separation**.\n3. Repulsion strength order: **lone pair–lone pair (lp–lp) > lone pair–bond pair (lp–bp) > bond pair–bond pair (bp–bp)** — lone pairs occupy more space (held by one nucleus only, spread wider).\n4. **Multiple bonds count as one domain** but repel more strongly than single bonds.\n5. The **molecular shape** is named by atom positions only; lone pairs distort angles but stay invisible in the shape name.\n\n### 2.2 The five parent geometries\n\n| Domains | Electron geometry | Angle | Example (0 LP) |\n|---|---|---|---|\n| 2 | Linear | 180° | BeCl₂, CO₂ |\n| 3 | Trigonal planar | 120° | BF₃, SO₂* |\n| 4 | Tetrahedral | 109.5° | CH₄ |\n| 5 | Trigonal bipyramidal | 120°/90° | PCl₅ |\n| 6 | Octahedral | 90° | SF₆ |\n\n*SO₂ has one lone pair — bent, ≈119°.\n\n### 2.3 Lone-pair corrections (the exam's favourite)\n\n- **CH₄** (4 BP): tetrahedral, 109.5°. **NH₃** (3 BP + 1 LP): pyramidal, 107°. **H₂O** (2 BP + 2 LP): bent, 104.5°. Each lone pair squeezes the angle down.\n- **BeCl₂** (2 BP): linear 180°. **H₂S** (2 BP + 2 LP): bent, but only ≈92° — sulphur's large, diffuse lone pairs and long S–H bonds compress far below water's angle.\n- **PCl₅** (5 BP): trigonal bipyramidal — two axial (90° to three equatorial) and three equatorial (120° apart); axial bonds are longer (219 pm) than equatorial (204 pm).\n- **SF₆** (6 BP): octahedral, all F–S–F 90°.\n- **CO₂** (2 domains, both double bonds): linear 180° — multiple bonds still count once.\n\n### 2.4 Why NH₃ is pyramidal while CH₄ is tetrahedral (verified PYQ)\n\n- Both central atoms carry **four electron domains** — the electron geometry is tetrahedral for both.\n- CH₄'s four domains are all bond pairs: atoms occupy all four corners → tetrahedral, 109.5°.\n- NH₃'s fourth domain is a **lone pair**: it repels the three N–H pairs more strongly (lp–bp > bp–bp), pushing them together → **pyramidal, 107°**. The lone pair is real but nameless in the shape.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **VSEPR theory** | Shape predicted by minimising repulsion of electron pairs around the central atom | Gillespie–Nyholm |\n| **Electron geometry** | Arrangement of all domains (bonds + lone pairs) | NH₃: tetrahedral |\n| **Molecular shape** | Arrangement of atoms only | NH₃: pyramidal |\n| **Lone pair** | Non-bonding pair — repels more than a bond pair | lp–lp > lp–bp > bp–bp |\n| **Trigonal bipyramidal** | 5-domain geometry: 2 axial + 3 equatorial | PCl₅: 219/204 pm |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024/04): postulates of VSEPR + shape of CH₄\n\n- Quote the five postulates (section 2.1), then: CH₄'s carbon has **four bond pairs, no lone pairs**; minimum repulsion places them at the corners of a tetrahedron — **H–C–H = 109.5°**, tetrahedral shape.\n\n### 4.2 Verified PYQ (NEB 2022/02): shapes of PCl₅, SF₆, BeCl₂, H₂S\n\n- **PCl₅:** five bond pairs → trigonal bipyramidal; three equatorial P–Cl at 120°, two axial at 90° to them; axial bonds longer (more repulsion from three equatorial neighbours).\n- **SF₆:** six bond pairs → octahedral; all angles 90°.\n- **BeCl₂:** two bond pairs → linear, 180° (gas phase; Be's octet is incomplete).\n- **H₂S:** two bond pairs + two lone pairs → bent, ≈92° — same domain count as H₂O but sulphur's bigger lone pairs and longer bonds give a much smaller angle.\n\n### 4.3 Verified PYQ (NEB 2020): ammonia — shape, hybridisation, angle\n\n- NH₃: three N–H bonds + one lone pair → **pyramidal**; sp³ hybridised; H–N–H ≈ **107°**.\n- **Why less than methane's 109.5°:** the single lone pair repels the three bond pairs more strongly than they repel each other, squeezing the H–N–H angle down by 2.5°.\n\n### 4.4 Verified PYQ (NEB 2024/04): H₂O bent vs CO₂ linear\n\n- **H₂O:** O carries two bond pairs + two lone pairs (four domains) → tetrahedral electron geometry, atoms in a **bent (V) shape, 104.5°**.\n- **CO₂:** C carries two double-bond domains, **no lone pairs** → **linear, 180°**.\n- The contrast is not about oxygen \"in the middle\" — it is the lone-pair count on the central atom that bends one and straightens the other.",
+    "## 5. Comparison Tables\n\n**Master table — the whole topic in one grid**\n\n| Molecule | BP | LP | Domains | Electron geometry | Shape | Angle |\n|---|---|---|---|---|---|---|\n| BeCl₂ | 2 | 0 | 2 | linear | linear | 180° |\n| CO₂ | 2 (db) | 0 | 2 | linear | linear | 180° |\n| BF₃ | 3 | 0 | 3 | trigonal planar | trigonal planar | 120° |\n| CH₄ | 4 | 0 | 4 | tetrahedral | tetrahedral | 109.5° |\n| NH₃ | 3 | 1 | 4 | tetrahedral | pyramidal | 107° |\n| H₂O | 2 | 2 | 4 | tetrahedral | bent | 104.5° |\n| H₂S | 2 | 2 | 4 | tetrahedral | bent | ≈92° |\n| PCl₅ | 5 | 0 | 5 | TBP | TBP | 120°/90° |\n| SF₆ | 6 | 0 | 6 | octahedral | octahedral | 90° |\n| PH₃ | 3 | 1 | 4 | tetrahedral | pyramidal | ≈93° |\n\n**NH₃ vs PH₃ (boiling-point question, NEB 2024/04)**\n\n| Basis | NH₃ | PH₃ |\n|---|---|---|\n| Shape | Pyramidal 107° | Pyramidal ≈93° |\n| Polarity | Strong (N highly EN) | Weak (P nearly as EN as H) |\n| H-bonding | Yes (N–H···N) | No |\n| bp | −33 °C | −88 °C |",
+    "## 6. Common Confusions\n\n**Electron geometry ≠ molecular shape:** NH₃'s electron geometry is tetrahedral but its shape is pyramidal — the shape name counts atoms only.",
+    "**Multiple bonds count once:** CO₂ has two domains (not four) — each double bond is one region of electron density.",
+    "**H₂S is not \"mini-water\":** same domain count, but 92° vs 104.5° — larger, more diffuse lone pairs on sulphur and longer S–H bonds change the balance; never copy water's angle.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2022): Predict the shape, hybridisation and bond angle of (a) PCl₅ (b) SF₆ (c) BeCl₂ (d) H₂S.** — (a) PCl₅: 5 BP → trigonal bipyramidal, sp³d, 120°/90°. (b) SF₆: 6 BP → octahedral, sp³d², 90°. (c) BeCl₂: 2 BP → linear, sp, 180°. (d) H₂S: 2 BP + 2 LP → bent, ≈92°, with s-p overlap (little hybridisation on S).",
+    "**Verified PYQ (NEB 2024/04): Predict the shapes of BF₃ and PCl₅ using VSEPR theory. Give their hybridisation.** — BF₃: three bond pairs, no lone pair → trigonal planar, 120°, sp². PCl₅: five bond pairs → trigonal bipyramidal (3 equatorial at 120°, 2 axial at 90°), sp³d.",
+    "**Verified PYQ (NEB 2024/02): Why is NH₃ pyramidal while CH₄ is tetrahedral, though both have four electron pairs?** — Both have tetrahedral electron geometry. In CH₄ all four pairs are bond pairs and all four corners carry H atoms → tetrahedral, 109.5°. In NH₃ one corner is a lone pair that repels the three bond pairs more strongly (lp–bp > bp–bp), compressing H–N–H to 107° and leaving a **pyramidal** shape — the lone pair occupies space but is not an atom, so it never appears in the shape name."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
+    "**Domains, not bonds:** double bonds are one domain each — counting CO₂ as four domains gives a false tetrahedral answer.",
+    "**Lone pairs shape the molecule but never name it:** \"pyramidal\" and \"bent\" describe atom positions; the lone pair is the invisible puppeteer."
   ],
   "bounds": [
     "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "Why are the axial bonds of PCl₅ longer than the equatorial bonds?",
+    "Predict the shape and angle of ClF₃ (3 BP + 2 LP) and name the geometry type.",
+    "Explain why CO₂ is non-polar although each C=O bond is polar."
   ],
   "universalFacts": [
-    "1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
-    "n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
-    "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+    "Water's 104.5° angle is why ice's open lattice floats — the bent shape propagates from VSEPR to climate."
   ],
   "examples": [
-    "H₂O: sp³, 2BP+2LP → bent",
-    "CO₂: sp, 2BP+0LP → linear"
+    "***PCl₅'s two bond lengths*** — axial 219 pm vs equatorial 204 pm: the axial pair suffers 90° repulsion from three neighbours, the equatorial only two — VSEPR's repulsion logic made measurable."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "**NEB 2022 (3m): Predict the shape, hybridisation and bond angle of (a) PCl₅ (b) SF₆ (c) BeCl₂ (d) H₂S using VSEPR theory.** — **(a) PCl₅:** five bond pairs, no lone pair → **trigonal bipyramidal** (sp³d); three equatorial P–Cl at 120°, two axial at 90°; axial bonds longer (219 pm) than equatorial (204 pm). **(b) SF₆:** six bond pairs → **octahedral** (sp³d²), all F–S–F = 90°. **(c) BeCl₂:** two bond pairs → **linear** (sp), 180°. **(d) H₂S:** two bond pairs + two lone pairs → **bent (V-shaped)**, ≈92° — sulphur's large lone pairs and long S–H bonds compress the angle far below water's 104.5°.",
+    "**NEB 2020 (3m): Using VSEPR theory, explain the shape of ammonia, its hybridisation and bond angle. Why is its bond angle less than that of methane?** — Nitrogen in NH₃ carries three bond pairs and **one lone pair** — four electron domains with tetrahedral electron geometry (sp³ hybridisation). The three H atoms occupy three tetrahedral corners, giving a **pyramidal shape** with H–N–H ≈ **107°**. The angle is less than methane's 109.5° because the lone pair, held by one nucleus only, spreads wider and repels each N–H bond pair more strongly (lp–bp > bp–bp), squeezing the three bonds together by about 2.5°.",
+    "**NEB 2024 (3m): Explain why H₂O is bent while CO₂ is linear.** — **CO₂:** carbon has two electron domains (two C=O double bonds — each counts once) and **no lone pairs**; minimum repulsion puts the domains 180° apart → **linear**. **H₂O:** oxygen has two O–H bond pairs plus **two lone pairs** — four domains with tetrahedral electron geometry; the two hydrogen atoms occupy only two corners, so the molecular shape is **bent (V-shaped)** with H–O–H ≈ 104.5°. The deciding variable is the lone-pair count on the central atom: two lone pairs bend water, none leave carbon dioxide straight — and the two lone pairs also make H₂O strongly polar while CO₂'s equal dipoles cancel."
   ],
   "formulas": [
-    "n = m / M",
-    "n = V / 22.4 (g at STP)",
-    "% yield = (actual / theoretical) × 100"
+    "- Domains = BP + LP (multiple bond = 1 domain)\n- Angle compression: each LP ≈ −2 to −2.5° (second-row centres)\n- Repulsion: lp–lp > lp–bp > bp–bp"
   ],
   "numericals": [
     "Use  n = m / M  — pick reasonable values, solve, and check the units.",
@@ -155,41 +51,107 @@
     "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• VSEPR theory",
-    "• Shapes of simple molecules",
-    "• BeF2",
-    "• CH3Cl",
-    "• PCl5"
+    "VSEPR postulates: shape set by central-atom electron pairs; minimum repulsion = maximum separation; lp–lp > lp–bp > bp–bp; multiple bond = one domain. Parent geometries: 2 linear 180°, 3 trigonal planar 120°, 4 tetrahedral 109.5°, 5 TBP 120/90, 6 octahedral 90. Corrections: NH₃ 107° (1 LP), H₂O 104.5° (2 LP), H₂S ≈92°, PH₃ ≈93°. PCl₅ axial (219 pm) longer than equatorial (204 pm)."
   ],
-  "summary": "VSEPR theory and shapes of simple molecules (BeF2, BF3, C… (Chemical Bonding and Shapes of Molecules, Chemistry, class-11-notes) covers VSEPR theory, shapes of simple molecules, BeF2. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these. Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.",
+  "summary": "Electron pairs repel; geometry is the truce. VSEPR counts the domains around the central atom — bonding pairs plus lone pairs, multiple bonds counting once — and spreads them to minimum repulsion: two domains linear (BeCl₂, CO₂), three trigonal planar (BF₃), four tetrahedral (CH₄), five trigonal bipyramidal (PCl₅, axial 219 pm vs equatorial 204 pm), six octahedral (SF₆). Lone pairs repel hardest — lp–lp > lp–bp > bp–bp — so they compress angles and rename shapes: NH₃ pyramidal at 107° (NEB 2020, 2024), H₂O bent at 104.5°, H₂S bent at ≈92°, PH₃ at ≈93°. The two NEB 2024 contrasts carry the logic: NH₃ is pyramidal while CH₄ is tetrahedral because one of four domains is a lone pair; H₂O is bent while CO₂ is linear because oxygen's lone pairs bend what carbon's absent lone pairs leave straight. Domain count → geometry → lone-pair correction → shape and angle: four lines that answer every shape question NEB has asked.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"VSEPR theory and shapes of simple molecules (BeF2, BF3, C…\"?",
+      "question": "The repulsion order in VSEPR is:",
       "options": [
-        "VSEPR theory",
-        "Shapes of simple molecules",
-        "Unrelated topic",
-        "None of the above"
+        "bp-bp > lp-bp > lp-lp",
+        "lp-lp > lp-bp > bp-bp",
+        "lp-bp > lp-lp > bp-bp",
+        "all equal"
       ],
-      "answer": "A",
-      "explanation": "VSEPR theory is listed among the official sub-ideas of VSEPR theory and shapes of simple molecules (BeF2, BF3, C…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "Lone pairs spread wider and repel hardest."
     },
     {
-      "question": "A common examiner point on \"VSEPR theory and shapes of simple molecules (BeF2, BF3, C…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The shape of PCl5 is:",
       "options": [
-        "True",
-        "False"
+        "Tetrahedral",
+        "Trigonal bipyramidal",
+        "Octahedral",
+        "Square planar"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Five bond pairs - 3 equatorial + 2 axial."
+    },
+    {
+      "question": "The H-N-H angle in NH3 is about:",
+      "options": [
+        "109.5",
+        "107",
+        "104.5",
+        "92"
+      ],
+      "answer": "B",
+      "explanation": "One lone pair compresses 109.5 by ~2.5 degrees."
+    },
+    {
+      "question": "BeCl2 is linear because Be has:",
+      "options": [
+        "Two lone pairs",
+        "Two bond pairs and no lone pair",
+        "Four domains",
+        "sp3 hybridisation"
+      ],
+      "answer": "B",
+      "explanation": "Two domains - 180 degrees apart."
+    },
+    {
+      "question": "The H-S-H angle in H2S is about:",
+      "options": [
+        "104.5",
+        "98",
+        "92",
+        "109.5"
+      ],
+      "answer": "C",
+      "explanation": "Large diffuse S lone pairs and long S-H bonds."
+    },
+    {
+      "question": "A double bond counts as how many VSEPR domains?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "answer": "A",
+      "explanation": "One region of electron density."
+    },
+    {
+      "question": "The axial bonds in PCl5 are longer because axial pairs feel repulsion from:",
+      "options": [
+        "Two equatorial pairs",
+        "Three equatorial pairs at 90 degrees",
+        "Only the other axial pair",
+        "No other pairs"
+      ],
+      "answer": "B",
+      "explanation": "Three 90-degree neighbours vs two for equatorial."
+    },
+    {
+      "question": "CO2 is linear and non-polar because:",
+      "options": [
+        "C has lone pairs",
+        "Two equal C=O dipoles cancel",
+        "O is not electronegative",
+        "It is ionic"
+      ],
+      "answer": "B",
+      "explanation": "Symmetric linear geometry cancels bond dipoles."
     }
   ],
   "importantNotes": [
-    "Important note regarding 06 vsepr theory and shapes of simple molecules."
+    "Verified PYQs: NEB 2022 (PCl₅/SF₆/BeCl₂/H₂S), NEB 2020 (NH₃), NEB 2024/02 (NH₃ vs CH₄), NEB 2024/04 (postulates + CH₄; BF₃/PCl₅; H₂O vs CO₂) — all solved above. Other items are NEB-style practice."
   ],
-  "examShortTricks": [],
+  "examShortTricks": [
+    "Domain count → geometry: \"2 lin, 3 tri, 4 tet, 5 TBP, 6 oct.\" Angle ladder: CH₄ 109.5 > NH₃ 107 > H₂O 104.5 > H₂S 92 > PH₃ 93 (≈). Lone pairs: subtract 2–2.5° each (2nd row)."
+  ],
   "importantConcepts": [
-    "Key concept 1 for 06 vsepr theory and shapes of simple molecules."
+    "One count — bonding pairs + lone pairs — drives everything: the domain number fixes the electron geometry; the lone-pair number fixes the distortion and the shape name. NH₃ vs CH₄ (NEB 2024) and H₂O vs CO₂ (NEB 2024) are the two contrasts to rehearse."
   ],
   "importantTasks": [
     "Task for studying 06 vsepr theory and shapes of simple molecules."
@@ -197,13 +159,163 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "specialNotes": [],
-  "importantStatements": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"The shape of a molecule is that which minimises electron-pair repulsion around the central atom — lone pairs repel more strongly than bond pairs.\""
+  ],
+  "examNotes": [
+    "Every shape answer: domain count → electron geometry → lone-pair correction → shape name + angle. Four lines, full marks. For PCl₅ add the axial/equatorial distinction — it is the mark-separator."
+  ],
   "exercises": [],
   "visualization": {
     "type": "3d-model",
     "component": "VSEPRModeler",
     "desc": "3D molecular geometry predictor"
   },
-  "visualType": "vsepr-geometry"
+  "visualType": "vsepr-geometry",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Geometry from Repulsion\n\nElectron pairs are all negatively charged — they repel. **VSEPR** (valence shell electron pair repulsion) turns that single fact into molecular architecture: the pairs around a central atom spread as far apart as possible, and the geometry they form is the molecule's shape. One counting rule predicts linear, trigonal planar, tetrahedral, trigonal bipyramidal and octahedral shapes — and the lone-pair corrections predict every bent and pyramidal exception NEB has ever asked (BeCl₂, H₂S, NH₃, CH₄, PCl₅, SF₆ — NEB 2022, 2020, 2024).",
+      "## 2. Fundamental Concepts\n\n### 2.1 Postulates\n\n1. The shape of a molecule is set by the **total number of electron pairs** in the valence shell of the central atom.\n2. The pairs **repel one another** and adopt the arrangement of **minimum repulsion / maximum separation**.\n3. Repulsion strength order: **lone pair–lone pair (lp–lp) > lone pair–bond pair (lp–bp) > bond pair–bond pair (bp–bp)** — lone pairs occupy more space (held by one nucleus only, spread wider).\n4. **Multiple bonds count as one domain** but repel more strongly than single bonds.\n5. The **molecular shape** is named by atom positions only; lone pairs distort angles but stay invisible in the shape name.\n\n### 2.2 The five parent geometries\n\n| Domains | Electron geometry | Angle | Example (0 LP) |\n|---|---|---|---|\n| 2 | Linear | 180° | BeCl₂, CO₂ |\n| 3 | Trigonal planar | 120° | BF₃, SO₂* |\n| 4 | Tetrahedral | 109.5° | CH₄ |\n| 5 | Trigonal bipyramidal | 120°/90° | PCl₅ |\n| 6 | Octahedral | 90° | SF₆ |\n\n*SO₂ has one lone pair — bent, ≈119°.\n\n### 2.3 Lone-pair corrections (the exam's favourite)\n\n- **CH₄** (4 BP): tetrahedral, 109.5°. **NH₃** (3 BP + 1 LP): pyramidal, 107°. **H₂O** (2 BP + 2 LP): bent, 104.5°. Each lone pair squeezes the angle down.\n- **BeCl₂** (2 BP): linear 180°. **H₂S** (2 BP + 2 LP): bent, but only ≈92° — sulphur's large, diffuse lone pairs and long S–H bonds compress far below water's angle.\n- **PCl₅** (5 BP): trigonal bipyramidal — two axial (90° to three equatorial) and three equatorial (120° apart); axial bonds are longer (219 pm) than equatorial (204 pm).\n- **SF₆** (6 BP): octahedral, all F–S–F 90°.\n- **CO₂** (2 domains, both double bonds): linear 180° — multiple bonds still count once.\n\n### 2.4 Why NH₃ is pyramidal while CH₄ is tetrahedral (verified PYQ)\n\n- Both central atoms carry **four electron domains** — the electron geometry is tetrahedral for both.\n- CH₄'s four domains are all bond pairs: atoms occupy all four corners → tetrahedral, 109.5°.\n- NH₃'s fourth domain is a **lone pair**: it repels the three N–H pairs more strongly (lp–bp > bp–bp), pushing them together → **pyramidal, 107°**. The lone pair is real but nameless in the shape.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **VSEPR theory** | Shape predicted by minimising repulsion of electron pairs around the central atom | Gillespie–Nyholm |\n| **Electron geometry** | Arrangement of all domains (bonds + lone pairs) | NH₃: tetrahedral |\n| **Molecular shape** | Arrangement of atoms only | NH₃: pyramidal |\n| **Lone pair** | Non-bonding pair — repels more than a bond pair | lp–lp > lp–bp > bp–bp |\n| **Trigonal bipyramidal** | 5-domain geometry: 2 axial + 3 equatorial | PCl₅: 219/204 pm |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024/04): postulates of VSEPR + shape of CH₄\n\n- Quote the five postulates (section 2.1), then: CH₄'s carbon has **four bond pairs, no lone pairs**; minimum repulsion places them at the corners of a tetrahedron — **H–C–H = 109.5°**, tetrahedral shape.\n\n### 4.2 Verified PYQ (NEB 2022/02): shapes of PCl₅, SF₆, BeCl₂, H₂S\n\n- **PCl₅:** five bond pairs → trigonal bipyramidal; three equatorial P–Cl at 120°, two axial at 90° to them; axial bonds longer (more repulsion from three equatorial neighbours).\n- **SF₆:** six bond pairs → octahedral; all angles 90°.\n- **BeCl₂:** two bond pairs → linear, 180° (gas phase; Be's octet is incomplete).\n- **H₂S:** two bond pairs + two lone pairs → bent, ≈92° — same domain count as H₂O but sulphur's bigger lone pairs and longer bonds give a much smaller angle.\n\n### 4.3 Verified PYQ (NEB 2020): ammonia — shape, hybridisation, angle\n\n- NH₃: three N–H bonds + one lone pair → **pyramidal**; sp³ hybridised; H–N–H ≈ **107°**.\n- **Why less than methane's 109.5°:** the single lone pair repels the three bond pairs more strongly than they repel each other, squeezing the H–N–H angle down by 2.5°.\n\n### 4.4 Verified PYQ (NEB 2024/04): H₂O bent vs CO₂ linear\n\n- **H₂O:** O carries two bond pairs + two lone pairs (four domains) → tetrahedral electron geometry, atoms in a **bent (V) shape, 104.5°**.\n- **CO₂:** C carries two double-bond domains, **no lone pairs** → **linear, 180°**.\n- The contrast is not about oxygen \"in the middle\" — it is the lone-pair count on the central atom that bends one and straightens the other.",
+      "## 5. Comparison Tables\n\n**Master table — the whole topic in one grid**\n\n| Molecule | BP | LP | Domains | Electron geometry | Shape | Angle |\n|---|---|---|---|---|---|---|\n| BeCl₂ | 2 | 0 | 2 | linear | linear | 180° |\n| CO₂ | 2 (db) | 0 | 2 | linear | linear | 180° |\n| BF₃ | 3 | 0 | 3 | trigonal planar | trigonal planar | 120° |\n| CH₄ | 4 | 0 | 4 | tetrahedral | tetrahedral | 109.5° |\n| NH₃ | 3 | 1 | 4 | tetrahedral | pyramidal | 107° |\n| H₂O | 2 | 2 | 4 | tetrahedral | bent | 104.5° |\n| H₂S | 2 | 2 | 4 | tetrahedral | bent | ≈92° |\n| PCl₅ | 5 | 0 | 5 | TBP | TBP | 120°/90° |\n| SF₆ | 6 | 0 | 6 | octahedral | octahedral | 90° |\n| PH₃ | 3 | 1 | 4 | tetrahedral | pyramidal | ≈93° |\n\n**NH₃ vs PH₃ (boiling-point question, NEB 2024/04)**\n\n| Basis | NH₃ | PH₃ |\n|---|---|---|\n| Shape | Pyramidal 107° | Pyramidal ≈93° |\n| Polarity | Strong (N highly EN) | Weak (P nearly as EN as H) |\n| H-bonding | Yes (N–H···N) | No |\n| bp | −33 °C | −88 °C |",
+      "## 6. Common Confusions\n\n**Electron geometry ≠ molecular shape:** NH₃'s electron geometry is tetrahedral but its shape is pyramidal — the shape name counts atoms only.",
+      "**Multiple bonds count once:** CO₂ has two domains (not four) — each double bond is one region of electron density.",
+      "**H₂S is not \"mini-water\":** same domain count, but 92° vs 104.5° — larger, more diffuse lone pairs on sulphur and longer S–H bonds change the balance; never copy water's angle.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2022): Predict the shape, hybridisation and bond angle of (a) PCl₅ (b) SF₆ (c) BeCl₂ (d) H₂S.** — (a) PCl₅: 5 BP → trigonal bipyramidal, sp³d, 120°/90°. (b) SF₆: 6 BP → octahedral, sp³d², 90°. (c) BeCl₂: 2 BP → linear, sp, 180°. (d) H₂S: 2 BP + 2 LP → bent, ≈92°, with s-p overlap (little hybridisation on S).",
+      "**Verified PYQ (NEB 2024/04): Predict the shapes of BF₃ and PCl₅ using VSEPR theory. Give their hybridisation.** — BF₃: three bond pairs, no lone pair → trigonal planar, 120°, sp². PCl₅: five bond pairs → trigonal bipyramidal (3 equatorial at 120°, 2 axial at 90°), sp³d.",
+      "**Verified PYQ (NEB 2024/02): Why is NH₃ pyramidal while CH₄ is tetrahedral, though both have four electron pairs?** — Both have tetrahedral electron geometry. In CH₄ all four pairs are bond pairs and all four corners carry H atoms → tetrahedral, 109.5°. In NH₃ one corner is a lone pair that repels the three bond pairs more strongly (lp–bp > bp–bp), compressing H–N–H to 107° and leaving a **pyramidal** shape — the lone pair occupies space but is not an atom, so it never appears in the shape name."
+    ],
+    "confusion": [
+      "**Domains, not bonds:** double bonds are one domain each — counting CO₂ as four domains gives a false tetrahedral answer.",
+      "**Lone pairs shape the molecule but never name it:** \"pyramidal\" and \"bent\" describe atom positions; the lone pair is the invisible puppeteer."
+    ],
+    "keyPoints": [
+      "VSEPR postulates: shape set by central-atom electron pairs; minimum repulsion = maximum separation; lp–lp > lp–bp > bp–bp; multiple bond = one domain. Parent geometries: 2 linear 180°, 3 trigonal planar 120°, 4 tetrahedral 109.5°, 5 TBP 120/90, 6 octahedral 90. Corrections: NH₃ 107° (1 LP), H₂O 104.5° (2 LP), H₂S ≈92°, PH₃ ≈93°. PCl₅ axial (219 pm) longer than equatorial (204 pm)."
+    ],
+    "importantConcepts": [
+      "One count — bonding pairs + lone pairs — drives everything: the domain number fixes the electron geometry; the lone-pair number fixes the distortion and the shape name. NH₃ vs CH₄ (NEB 2024) and H₂O vs CO₂ (NEB 2024) are the two contrasts to rehearse."
+    ],
+    "examples": [
+      "***PCl₅'s two bond lengths*** — axial 219 pm vs equatorial 204 pm: the axial pair suffers 90° repulsion from three neighbours, the equatorial only two — VSEPR's repulsion logic made measurable."
+    ],
+    "universalFacts": [
+      "Water's 104.5° angle is why ice's open lattice floats — the bent shape propagates from VSEPR to climate."
+    ],
+    "importantStatements": [
+      "\"The shape of a molecule is that which minimises electron-pair repulsion around the central atom — lone pairs repel more strongly than bond pairs.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2022 (PCl₅/SF₆/BeCl₂/H₂S), NEB 2020 (NH₃), NEB 2024/02 (NH₃ vs CH₄), NEB 2024/04 (postulates + CH₄; BF₃/PCl₅; H₂O vs CO₂) — all solved above. Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Domain count → geometry: \"2 lin, 3 tri, 4 tet, 5 TBP, 6 oct.\" Angle ladder: CH₄ 109.5 > NH₃ 107 > H₂O 104.5 > H₂S 92 > PH₃ 93 (≈). Lone pairs: subtract 2–2.5° each (2nd row)."
+    ],
+    "examNotes": [
+      "Every shape answer: domain count → electron geometry → lone-pair correction → shape name + angle. Four lines, full marks. For PCl₅ add the axial/equatorial distinction — it is the mark-separator."
+    ],
+    "formulas": [
+      "- Domains = BP + LP (multiple bond = 1 domain)\n- Angle compression: each LP ≈ −2 to −2.5° (second-row centres)\n- Repulsion: lp–lp > lp–bp > bp–bp"
+    ],
+    "practice": [
+      "Why are the axial bonds of PCl₅ longer than the equatorial bonds?",
+      "Predict the shape and angle of ClF₃ (3 BP + 2 LP) and name the geometry type.",
+      "Explain why CO₂ is non-polar although each C=O bond is polar."
+    ],
+    "practiceQuestions": [
+      "**NEB 2022 (3m): Predict the shape, hybridisation and bond angle of (a) PCl₅ (b) SF₆ (c) BeCl₂ (d) H₂S using VSEPR theory.** — **(a) PCl₅:** five bond pairs, no lone pair → **trigonal bipyramidal** (sp³d); three equatorial P–Cl at 120°, two axial at 90°; axial bonds longer (219 pm) than equatorial (204 pm). **(b) SF₆:** six bond pairs → **octahedral** (sp³d²), all F–S–F = 90°. **(c) BeCl₂:** two bond pairs → **linear** (sp), 180°. **(d) H₂S:** two bond pairs + two lone pairs → **bent (V-shaped)**, ≈92° — sulphur's large lone pairs and long S–H bonds compress the angle far below water's 104.5°.",
+      "**NEB 2020 (3m): Using VSEPR theory, explain the shape of ammonia, its hybridisation and bond angle. Why is its bond angle less than that of methane?** — Nitrogen in NH₃ carries three bond pairs and **one lone pair** — four electron domains with tetrahedral electron geometry (sp³ hybridisation). The three H atoms occupy three tetrahedral corners, giving a **pyramidal shape** with H–N–H ≈ **107°**. The angle is less than methane's 109.5° because the lone pair, held by one nucleus only, spreads wider and repels each N–H bond pair more strongly (lp–bp > bp–bp), squeezing the three bonds together by about 2.5°.",
+      "**NEB 2024 (3m): Explain why H₂O is bent while CO₂ is linear.** — **CO₂:** carbon has two electron domains (two C=O double bonds — each counts once) and **no lone pairs**; minimum repulsion puts the domains 180° apart → **linear**. **H₂O:** oxygen has two O–H bond pairs plus **two lone pairs** — four domains with tetrahedral electron geometry; the two hydrogen atoms occupy only two corners, so the molecular shape is **bent (V-shaped)** with H–O–H ≈ 104.5°. The deciding variable is the lone-pair count on the central atom: two lone pairs bend water, none leave carbon dioxide straight — and the two lone pairs also make H₂O strongly polar while CO₂'s equal dipoles cancel."
+    ]
+  },
+  "mcs": [
+    {
+      "question": "The repulsion order in VSEPR is:",
+      "options": [
+        "bp-bp > lp-bp > lp-lp",
+        "lp-lp > lp-bp > bp-bp",
+        "lp-bp > lp-lp > bp-bp",
+        "all equal"
+      ],
+      "answer": "B",
+      "explanation": "Lone pairs spread wider and repel hardest."
+    },
+    {
+      "question": "The shape of PCl5 is:",
+      "options": [
+        "Tetrahedral",
+        "Trigonal bipyramidal",
+        "Octahedral",
+        "Square planar"
+      ],
+      "answer": "B",
+      "explanation": "Five bond pairs - 3 equatorial + 2 axial."
+    },
+    {
+      "question": "The H-N-H angle in NH3 is about:",
+      "options": [
+        "109.5",
+        "107",
+        "104.5",
+        "92"
+      ],
+      "answer": "B",
+      "explanation": "One lone pair compresses 109.5 by ~2.5 degrees."
+    },
+    {
+      "question": "BeCl2 is linear because Be has:",
+      "options": [
+        "Two lone pairs",
+        "Two bond pairs and no lone pair",
+        "Four domains",
+        "sp3 hybridisation"
+      ],
+      "answer": "B",
+      "explanation": "Two domains - 180 degrees apart."
+    },
+    {
+      "question": "The H-S-H angle in H2S is about:",
+      "options": [
+        "104.5",
+        "98",
+        "92",
+        "109.5"
+      ],
+      "answer": "C",
+      "explanation": "Large diffuse S lone pairs and long S-H bonds."
+    },
+    {
+      "question": "A double bond counts as how many VSEPR domains?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "answer": "A",
+      "explanation": "One region of electron density."
+    },
+    {
+      "question": "The axial bonds in PCl5 are longer because axial pairs feel repulsion from:",
+      "options": [
+        "Two equatorial pairs",
+        "Three equatorial pairs at 90 degrees",
+        "Only the other axial pair",
+        "No other pairs"
+      ],
+      "answer": "B",
+      "explanation": "Three 90-degree neighbours vs two for equatorial."
+    },
+    {
+      "question": "CO2 is linear and non-polar because:",
+      "options": [
+        "C has lone pairs",
+        "Two equal C=O dipoles cancel",
+        "O is not electronegative",
+        "It is ionic"
+      ],
+      "answer": "B",
+      "explanation": "Symmetric linear geometry cancels bond dipoles."
+    }
+  ]
 }

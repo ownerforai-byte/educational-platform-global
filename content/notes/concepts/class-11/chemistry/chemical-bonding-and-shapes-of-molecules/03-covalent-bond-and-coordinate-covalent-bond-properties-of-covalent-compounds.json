@@ -7,55 +7,299 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Covalent bond and coordinate covalent bond; properties of… — Chemical Bonding and Shapes of Molecules, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: covalent bond, coordinate covalent bond, properties of covalent compounds · one worked example · one misconception each.",
-    "**Coordinate covalent bond.** one-line definition + one-line exam use.",
-    "**Properties of covalent compounds.** one-line definition + one-line exam use.",
-    "# Covalent bond and coordinate covalent bond; properties of covalent compounds\n\n## 1. Introduction\nChemical picture of **Covalent bond and coordinate covalent bond; properties of covalent compounds** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Covalent bond and coordinate covalent bond\n### properties of covalent compounds\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Covalent bond and coordinate covalent bond; properties of covalent compounds — shape gallery: structures with bond angles (authored SVG)\n- **D2** — Covalent bond and coordinate covalent bond; properties of covalent compounds — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Covalent bond and coordinate covalent bond; properties of covalent compounds — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Covalent bond and coordinate covalent bond; properties of covalent compounds — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Bond of Shared Ownership\n\nBetween two identical non-metal atoms there is no transfer — only **sharing**. Two chlorine atoms each bring one electron; the pair sits between both nuclei and pulls on each equally: the covalent bond. When one atom supplies **both** electrons, the link is a coordinate (dative) bond — chemically identical once formed, but with a revealing origin story. This topic builds the bond, its multiple varieties, and the property profile of covalent compounds.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Covalent bond — definition and formation\n\n- **Definition:** the bond formed by the mutual sharing of one or more electron pairs between atoms, each contributing one electron per pair.\n- **H₂:** two H atoms share one pair; each nucleus attracts the pair — energy minimum at 74 pm, bond energy 436 kJ mol⁻¹.\n- **Cl₂:** each Cl (2,8,7) contributes one electron → shared pair completes both octets.\n- Forces: attraction (nucleus–opposite electron cloud) versus repulsion (nucleus–nucleus, electron–electron) balance at the bond length.\n\n### 2.2 Multiple bonds\n\n- **Single bond (–):** one shared pair — H₂, Cl₂, CH₄ (C–H).\n- **Double bond (=):** two shared pairs — O₂, CO₂ (O=C=O), ethene C₂H₄.\n- **Triple bond (≡):** three shared pairs — N₂, ethyne C₂H₂. Triple > double > single in bond energy, and shorter in length.\n\n### 2.3 Coordinate (dative) bond\n\n- **Definition:** a bond in which the shared pair is supplied by **one atom only** (the donor); the acceptor contributes none.\n- **Conditions:** donor has a lone pair; acceptor has an empty orbital.\n- **Examples:** **NH₄⁺** (N donates its lone pair to H⁺), **H₃O⁺** (H₂O donates to H⁺), **NH₃·BF₃** (N→B), **O₃** (one O→O link), **SO₂/SO₃** (drawn with S→O links), metal complexes (Ni(CO)₄).\n- **Key point:** once formed, a coordinate bond is indistinguishable from an ordinary covalent bond — same strength, same length. It is conventionally drawn as an arrow (→) from donor to acceptor.\n\n### 2.4 Properties of covalent compounds\n\n- **Low melting/boiling points:** forces between molecules are weak van der Waals/dipole forces (I₂ sublimes; CH₄ bp −161 °C) — the covalent bonds themselves are strong, but they are *intra*molecular.\n- **Non-conductors:** no free ions or electrons (exceptions: graphite, HCl(aq) which ionises in water).\n- **Solubility:** dissolve in non-polar (organic) solvents; generally insoluble in water — \"like dissolves like\".\n- **Molecular, not lattices of ions:** exist as discrete molecules with definite shapes; show **isomerism** (directional bonds permit structural variety).\n- **Reactions are slow:** covalent bonds must be broken and rearranged via molecular collisions — unlike the lightning-fast ion recombinations.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Covalent bond** | Mutual sharing of one or more electron pairs between atoms | H₂: 436 kJ mol⁻¹, 74 pm |\n| **Coordinate bond** | Shared pair supplied entirely by one atom (donor → acceptor) | NH₄⁺, H₃O⁺ |\n| **Double bond** | Two shared pairs | O=C=O |\n| **Triple bond** | Three shared pairs | N≡N, 945 kJ mol⁻¹ |\n| **Isomerism** | Same formula, different arrangement — possible due to directional bonds | C₂H₅OH vs CH₃OCH₃ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Energy profile of H₂ formation\n\n- As two H atoms approach: attraction lowers potential energy; below ~74 pm, nucleus–nucleus repulsion dominates and energy climbs steeply.\n- The minimum (−436 kJ mol⁻¹ relative to separated atoms) is the bond energy; the internuclear distance there is the bond length. The same logic underlies every covalent bond.\n\n### 4.2 Coordinate bond anatomy — NH₄⁺\n\n- N in NH₃ has one lone pair; H⁺ offers an empty 1s orbital.\n- N donates the pair: N→H⁺ creates the fourth N–H link; all four N–H bonds in NH₄⁺ become **equivalent** (identical length/strength) — the origin is invisible in the final ion.\n- Same recipe: H₂O + H⁺ → H₃O⁺ (hydronium — the species that carries \"H⁺\" in water); NH₃ + BF₃ → NH₃·BF₃ adduct (N donates, B accepts — filling boron's deficient octet).\n\n### 4.3 Why \"low melting point\" does not mean \"weak bond\"\n\n- Diamond (covalent, network solid) melts above 3500 °C; iodine (covalent, molecular solid) sublimes at 184 °C. The difference is what holds **between** molecules: diamond is one giant covalent network; I₂ molecules cling by weak dispersion forces. Quote both to show the distinction between intramolecular and intermolecular forces.",
+    "## 5. Comparison Tables\n\n**Covalent vs coordinate bond**\n\n| Basis | Covalent | Coordinate |\n|---|---|---|\n| Pair supplied by | Both atoms (one each) | One atom (donor) |\n| Before formation | Both need an electron | Donor has lone pair; acceptor empty orbital |\n| After formation | Identical | Identical — no detectable difference |\n| Representation | A–B | A→B |\n| Example | H₂, CH₄ | NH₄⁺, H₃O⁺, NH₃·BF₃ |\n\n**Covalent vs ionic compounds (full property contrast)**\n\n| Basis | Covalent compounds | Ionic compounds |\n|---|---|---|\n| Particles | Molecules | Ions in a lattice |\n| mp/bp | Low (weak intermolecular forces) | High (strong lattice forces) |\n| Conductivity | Non-conducting | Molten/aqueous conduction |\n| Solubility | Organic (non-polar) solvents | Water (polar) |\n| Isomerism | Shown | Not shown |\n| Reaction speed | Slow (bond breaking needed) | Fast (ion recombination) |",
+    "## 6. Common Confusions\n\n**Coordinate bond ≠ weaker bond:** after formation it is electronically identical to any covalent bond; only the bookkeeping of origin differs.",
+    "**Intermolecular vs intramolecular:** low boiling points reflect weak forces *between* molecules; the covalent bonds *within* each molecule remain strong.",
+    "**H⁺ never travels free in water:** it immediately coordinate-bonds to H₂O forming H₃O⁺ — writing bare H⁺(aq) is a shorthand, not a structure.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024, 2m): Distinguish between ionic and covalent bonds with one example of each.** — Ionic: complete transfer (NaCl); covalent: mutual sharing (H₂O). Property contrast: mp/bp, conductivity, solubility as tabulated in section 5.",
+    "**NEB-style (3m): What is a coordinate covalent bond? Explain the formation of NH₄⁺ and H₃O⁺.** — A coordinate bond is a shared pair donated by a single atom. In NH₄⁺, nitrogen's lone pair is donated to H⁺ (empty 1s), creating a fourth N–H link; all four bonds become equivalent. In H₃O⁺, the water oxygen donates its lone pair to H⁺, giving a dative O→H bond on top of the two ordinary O–H bonds.",
+    "**NEB-style (2m): Why are covalent compounds generally non-conductors of electricity?** — They contain no free ions and no free electrons; the shared pairs are locked between specific nuclei. (Exceptions to mention: aqueous HCl ionises; graphite conducts via delocalised electrons.)"
   ],
-  "confusion": [],
+  "confusion": [
+    "**Origin vs identity:** a coordinate bond looks identical to a covalent bond after formation — the arrow is history, not a property.",
+    "**Diamond vs iodine:** both covalent, yet diamond melts above 3500 °C and iodine at 184 °C — network vs molecular solid; intermolecular forces set the difference."
+  ],
   "bounds": [
     "Covers only: covalent bond, coordinate covalent bond, properties of covalent compounds (within Chemical Bonding and Shapes of Molecules).",
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [],
+  "practice": [
+    "Why does the coordinate bond become indistinguishable from ordinary covalent bonds after formation?",
+    "Explain why C₂H₆O has two isomers but NaCl has none.",
+    "Compare the bond energies and lengths of N₂, O₂ and F₂ and rationalise the order."
+  ],
   "universalFacts": [
-    "answer pattern for \"Covalent bond and coordinate covalent bond; properties of…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "The N≡N triple bond (945 kJ mol⁻¹) is among the strongest bonds in chemistry — the reason atmospheric nitrogen is so hard to fix industrially."
   ],
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***NH₄⁺: all four N–H bonds are equivalent*** — the donated pair becomes indistinguishable from the three original pairs; bond-length measurements confirm no special \"dative\" bond remains."
+  ],
+  "practiceQuestions": [
+    "**NEB 2024 (2m): Distinguish between ionic and covalent bonds with one example of each.** — **Ionic bond:** complete electron transfer from metal to non-metal; oppositely charged ions attract electrostatically in a lattice — **NaCl**. **Covalent bond:** mutual sharing of electron pairs between non-metal atoms — **H₂O**. Consequences: ionic compounds are high-melting, molten/aqueous conductors, water-soluble; covalent compounds are low-melting, non-conducting molecular species, generally organic-soluble.",
+    "**NEB-style (3m): Define coordinate covalent bond. Describe the formation of the ammonium ion and the hydronium ion.** — A coordinate (dative) bond forms when **one atom supplies both electrons** of the shared pair: the donor must own a lone pair, the acceptor an empty orbital. **NH₄⁺:** ammonia's nitrogen has a lone pair; it donates it to H⁺ (bare proton, empty 1s orbital) → N→H⁺; the ion carries four equivalent N–H bonds and one positive charge. **H₃O⁺:** water's oxygen donates a lone pair to H⁺ → O→H⁺; the hydronium ion carries two ordinary O–H bonds, one dative O→H bond, and one positive charge — it is the actual form of \"H⁺\" in aqueous acid.",
+    "**NEB-style (3m): Explain three properties of covalent compounds, each with its cause.** — **(a) Low melting and boiling points:** the forces between molecules are weak van der Waals/dipole attractions; melting separates molecules without touching the strong C–H or O–H bonds inside them. **(b) Non-conduction:** no free ions and no delocalised electrons — shared pairs are fixed between particular nuclei (graphite and ionising acids like HCl are the standard exceptions). **(c) Solubility in organic, not aqueous, solvents:** \"like dissolves like\" — non-polar molecular solutes interact well with non-polar solvents; water's hydrogen-bond network does not accommodate them (sugar and ethanol are the polar-covalent exceptions that do dissolve)."
+  ],
   "keyPoints": [
-    "• Covalent bond",
-    "• Coordinate covalent bond",
-    "• Properties of covalent compounds"
+    "Covalent bond = mutual sharing of electron pairs (single/double/triple; energy rises, length falls with multiplicity). Coordinate bond = shared pair from one atom (donor→acceptor): NH₄⁺, H₃O⁺, NH₃·BF₃; identical to covalent once formed. Properties of covalent compounds: low mp/bp (weak intermolecular forces), non-conducting, organic-solvent soluble, molecular, isomerism shown, slow reactions."
   ],
-  "summary": "Covalent bond and coordinate covalent bond; properties of… (Chemical Bonding and Shapes of Molecules, Chemistry, class-11-notes) covers Covalent bond, coordinate covalent bond, properties of covalent compounds. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Where transfer is impossible, sharing takes over. Two chlorine atoms each contribute one electron to a pair both nuclei pull on — the **covalent bond**, with its single (H₂), double (CO₂) and triple (N₂) grades trading length for strength. A variant where one atom donates the whole pair — the **coordinate bond** — builds NH₄⁺ from NH₃ + H⁺ and H₃O⁺ from H₂O + H⁺, yet becomes electronically identical to any covalent bond once formed. Covalent compounds are molecular: low melting points (weak intermolecular forces, not weak bonds — diamond proves the point at 3500 °C), non-conducting (no free carriers), organic-soluble (\"like dissolves like\"), capable of isomerism (directional bonds), and slow to react (bonds must be broken, not just recombined). Ionic vs covalent is the NEB 2024 distinction question; the coordinate-bond trio NH₄⁺/H₃O⁺/NH₃·BF₃ is the stock 3m answer.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Covalent bond and coordinate covalent bond; properties of…\"?",
+      "question": "A coordinate bond is formed when:",
       "options": [
-        "Covalent bond",
-        "Coordinate covalent bond",
-        "Unrelated topic",
-        "None of the above"
+        "Both atoms share one electron each",
+        "One atom supplies both electrons",
+        "Electrons are transferred",
+        "Protons are shared"
       ],
-      "answer": "A",
-      "explanation": "Covalent bond is listed among the official sub-ideas of Covalent bond and coordinate covalent bond; properties of…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "Donor has a lone pair; acceptor an empty orbital."
     },
     {
-      "question": "A common examiner point on \"Covalent bond and coordinate covalent bond; properties of…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "In NH4+, the number of N-H bonds is:",
       "options": [
-        "True",
-        "False"
+        "2",
+        "3",
+        "4",
+        "5"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C",
+      "explanation": "Three covalent + one coordinate, all equivalent."
+    },
+    {
+      "question": "Which contains a coordinate bond?",
+      "options": [
+        "H3O+",
+        "CH4",
+        "Cl2",
+        "NaCl"
+      ],
+      "answer": "A",
+      "explanation": "Water donates a lone pair to H+."
+    },
+    {
+      "question": "Covalent compounds generally have low melting points because:",
+      "options": [
+        "Covalent bonds are weak",
+        "Intermolecular forces are weak",
+        "They are ionic",
+        "Molecules are heavy"
+      ],
+      "answer": "B",
+      "explanation": "Melting separates molecules, not bonds."
+    },
+    {
+      "question": "Bond energy order for C-C, C=C, C=C(triple):",
+      "options": [
+        "single > double > triple",
+        "triple > double > single",
+        "equal",
+        "double > triple > single"
+      ],
+      "answer": "B",
+      "explanation": "More shared pairs, stronger bond."
+    },
+    {
+      "question": "Which covalent solid has an extremely high melting point?",
+      "options": [
+        "Iodine",
+        "Diamond",
+        "Dry ice",
+        "Sulphur"
+      ],
+      "answer": "B",
+      "explanation": "Giant covalent network - bonds must break to melt."
+    },
+    {
+      "question": "Covalent compounds are soluble in:",
+      "options": [
+        "Water",
+        "Benzene",
+        "Molten NaCl",
+        "Dilute acid"
+      ],
+      "answer": "B",
+      "explanation": "Like dissolves like - non-polar in non-polar."
+    },
+    {
+      "question": "H+ in aqueous solution exists as:",
+      "options": [
+        "Free proton",
+        "H3O+",
+        "H2",
+        "OH-"
+      ],
+      "answer": "B",
+      "explanation": "Water coordinate-bonds the proton into hydronium."
+    }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Bond of Shared Ownership\n\nBetween two identical non-metal atoms there is no transfer — only **sharing**. Two chlorine atoms each bring one electron; the pair sits between both nuclei and pulls on each equally: the covalent bond. When one atom supplies **both** electrons, the link is a coordinate (dative) bond — chemically identical once formed, but with a revealing origin story. This topic builds the bond, its multiple varieties, and the property profile of covalent compounds.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Covalent bond — definition and formation\n\n- **Definition:** the bond formed by the mutual sharing of one or more electron pairs between atoms, each contributing one electron per pair.\n- **H₂:** two H atoms share one pair; each nucleus attracts the pair — energy minimum at 74 pm, bond energy 436 kJ mol⁻¹.\n- **Cl₂:** each Cl (2,8,7) contributes one electron → shared pair completes both octets.\n- Forces: attraction (nucleus–opposite electron cloud) versus repulsion (nucleus–nucleus, electron–electron) balance at the bond length.\n\n### 2.2 Multiple bonds\n\n- **Single bond (–):** one shared pair — H₂, Cl₂, CH₄ (C–H).\n- **Double bond (=):** two shared pairs — O₂, CO₂ (O=C=O), ethene C₂H₄.\n- **Triple bond (≡):** three shared pairs — N₂, ethyne C₂H₂. Triple > double > single in bond energy, and shorter in length.\n\n### 2.3 Coordinate (dative) bond\n\n- **Definition:** a bond in which the shared pair is supplied by **one atom only** (the donor); the acceptor contributes none.\n- **Conditions:** donor has a lone pair; acceptor has an empty orbital.\n- **Examples:** **NH₄⁺** (N donates its lone pair to H⁺), **H₃O⁺** (H₂O donates to H⁺), **NH₃·BF₃** (N→B), **O₃** (one O→O link), **SO₂/SO₃** (drawn with S→O links), metal complexes (Ni(CO)₄).\n- **Key point:** once formed, a coordinate bond is indistinguishable from an ordinary covalent bond — same strength, same length. It is conventionally drawn as an arrow (→) from donor to acceptor.\n\n### 2.4 Properties of covalent compounds\n\n- **Low melting/boiling points:** forces between molecules are weak van der Waals/dipole forces (I₂ sublimes; CH₄ bp −161 °C) — the covalent bonds themselves are strong, but they are *intra*molecular.\n- **Non-conductors:** no free ions or electrons (exceptions: graphite, HCl(aq) which ionises in water).\n- **Solubility:** dissolve in non-polar (organic) solvents; generally insoluble in water — \"like dissolves like\".\n- **Molecular, not lattices of ions:** exist as discrete molecules with definite shapes; show **isomerism** (directional bonds permit structural variety).\n- **Reactions are slow:** covalent bonds must be broken and rearranged via molecular collisions — unlike the lightning-fast ion recombinations.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Covalent bond** | Mutual sharing of one or more electron pairs between atoms | H₂: 436 kJ mol⁻¹, 74 pm |\n| **Coordinate bond** | Shared pair supplied entirely by one atom (donor → acceptor) | NH₄⁺, H₃O⁺ |\n| **Double bond** | Two shared pairs | O=C=O |\n| **Triple bond** | Three shared pairs | N≡N, 945 kJ mol⁻¹ |\n| **Isomerism** | Same formula, different arrangement — possible due to directional bonds | C₂H₅OH vs CH₃OCH₃ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Energy profile of H₂ formation\n\n- As two H atoms approach: attraction lowers potential energy; below ~74 pm, nucleus–nucleus repulsion dominates and energy climbs steeply.\n- The minimum (−436 kJ mol⁻¹ relative to separated atoms) is the bond energy; the internuclear distance there is the bond length. The same logic underlies every covalent bond.\n\n### 4.2 Coordinate bond anatomy — NH₄⁺\n\n- N in NH₃ has one lone pair; H⁺ offers an empty 1s orbital.\n- N donates the pair: N→H⁺ creates the fourth N–H link; all four N–H bonds in NH₄⁺ become **equivalent** (identical length/strength) — the origin is invisible in the final ion.\n- Same recipe: H₂O + H⁺ → H₃O⁺ (hydronium — the species that carries \"H⁺\" in water); NH₃ + BF₃ → NH₃·BF₃ adduct (N donates, B accepts — filling boron's deficient octet).\n\n### 4.3 Why \"low melting point\" does not mean \"weak bond\"\n\n- Diamond (covalent, network solid) melts above 3500 °C; iodine (covalent, molecular solid) sublimes at 184 °C. The difference is what holds **between** molecules: diamond is one giant covalent network; I₂ molecules cling by weak dispersion forces. Quote both to show the distinction between intramolecular and intermolecular forces.",
+      "## 5. Comparison Tables\n\n**Covalent vs coordinate bond**\n\n| Basis | Covalent | Coordinate |\n|---|---|---|\n| Pair supplied by | Both atoms (one each) | One atom (donor) |\n| Before formation | Both need an electron | Donor has lone pair; acceptor empty orbital |\n| After formation | Identical | Identical — no detectable difference |\n| Representation | A–B | A→B |\n| Example | H₂, CH₄ | NH₄⁺, H₃O⁺, NH₃·BF₃ |\n\n**Covalent vs ionic compounds (full property contrast)**\n\n| Basis | Covalent compounds | Ionic compounds |\n|---|---|---|\n| Particles | Molecules | Ions in a lattice |\n| mp/bp | Low (weak intermolecular forces) | High (strong lattice forces) |\n| Conductivity | Non-conducting | Molten/aqueous conduction |\n| Solubility | Organic (non-polar) solvents | Water (polar) |\n| Isomerism | Shown | Not shown |\n| Reaction speed | Slow (bond breaking needed) | Fast (ion recombination) |",
+      "## 6. Common Confusions\n\n**Coordinate bond ≠ weaker bond:** after formation it is electronically identical to any covalent bond; only the bookkeeping of origin differs.",
+      "**Intermolecular vs intramolecular:** low boiling points reflect weak forces *between* molecules; the covalent bonds *within* each molecule remain strong.",
+      "**H⁺ never travels free in water:** it immediately coordinate-bonds to H₂O forming H₃O⁺ — writing bare H⁺(aq) is a shorthand, not a structure.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024, 2m): Distinguish between ionic and covalent bonds with one example of each.** — Ionic: complete transfer (NaCl); covalent: mutual sharing (H₂O). Property contrast: mp/bp, conductivity, solubility as tabulated in section 5.",
+      "**NEB-style (3m): What is a coordinate covalent bond? Explain the formation of NH₄⁺ and H₃O⁺.** — A coordinate bond is a shared pair donated by a single atom. In NH₄⁺, nitrogen's lone pair is donated to H⁺ (empty 1s), creating a fourth N–H link; all four bonds become equivalent. In H₃O⁺, the water oxygen donates its lone pair to H⁺, giving a dative O→H bond on top of the two ordinary O–H bonds.",
+      "**NEB-style (2m): Why are covalent compounds generally non-conductors of electricity?** — They contain no free ions and no free electrons; the shared pairs are locked between specific nuclei. (Exceptions to mention: aqueous HCl ionises; graphite conducts via delocalised electrons.)"
+    ],
+    "confusion": [
+      "**Origin vs identity:** a coordinate bond looks identical to a covalent bond after formation — the arrow is history, not a property.",
+      "**Diamond vs iodine:** both covalent, yet diamond melts above 3500 °C and iodine at 184 °C — network vs molecular solid; intermolecular forces set the difference."
+    ],
+    "keyPoints": [
+      "Covalent bond = mutual sharing of electron pairs (single/double/triple; energy rises, length falls with multiplicity). Coordinate bond = shared pair from one atom (donor→acceptor): NH₄⁺, H₃O⁺, NH₃·BF₃; identical to covalent once formed. Properties of covalent compounds: low mp/bp (weak intermolecular forces), non-conducting, organic-solvent soluble, molecular, isomerism shown, slow reactions."
+    ],
+    "importantConcepts": [
+      "Distinguish intramolecular (covalent, strong) from intermolecular (van der Waals, weak) forces — boiling breaks the latter, never the former. This single distinction answers most \"why low mp\" questions correctly."
+    ],
+    "examples": [
+      "***NH₄⁺: all four N–H bonds are equivalent*** — the donated pair becomes indistinguishable from the three original pairs; bond-length measurements confirm no special \"dative\" bond remains."
+    ],
+    "universalFacts": [
+      "The N≡N triple bond (945 kJ mol⁻¹) is among the strongest bonds in chemistry — the reason atmospheric nitrogen is so hard to fix industrially."
+    ],
+    "importantStatements": [
+      "\"A coordinate bond is a covalent bond in which the shared pair of electrons is contributed by only one of the two bonded atoms.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2024 — ionic vs covalent distinction (solved above). The ethene sigma/pi VBT question (NEB 2023) belongs to topic 33. Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Coordinate examples: \"NH₄⁺, H₃O⁺, NH₃·BF₃, O₃\" — quote four. Bond energy ladder: triple > double > single. Covalent property set: \"low mp, no conduct, organic-soluble, isomers, slow.\""
+    ],
+    "examNotes": [
+      "When asked for properties, attach the cause: \"low mp — weak intermolecular forces\", \"non-conducting — no free ions/electrons\". Causeless lists score half."
+    ],
+    "formulas": [
+      "- Bond order = shared pairs per link (1, 2, 3)\n- Bond energy: single < double < triple\n- Bond length: single > double > triple"
+    ],
+    "practice": [
+      "Why does the coordinate bond become indistinguishable from ordinary covalent bonds after formation?",
+      "Explain why C₂H₆O has two isomers but NaCl has none.",
+      "Compare the bond energies and lengths of N₂, O₂ and F₂ and rationalise the order."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (2m): Distinguish between ionic and covalent bonds with one example of each.** — **Ionic bond:** complete electron transfer from metal to non-metal; oppositely charged ions attract electrostatically in a lattice — **NaCl**. **Covalent bond:** mutual sharing of electron pairs between non-metal atoms — **H₂O**. Consequences: ionic compounds are high-melting, molten/aqueous conductors, water-soluble; covalent compounds are low-melting, non-conducting molecular species, generally organic-soluble.",
+      "**NEB-style (3m): Define coordinate covalent bond. Describe the formation of the ammonium ion and the hydronium ion.** — A coordinate (dative) bond forms when **one atom supplies both electrons** of the shared pair: the donor must own a lone pair, the acceptor an empty orbital. **NH₄⁺:** ammonia's nitrogen has a lone pair; it donates it to H⁺ (bare proton, empty 1s orbital) → N→H⁺; the ion carries four equivalent N–H bonds and one positive charge. **H₃O⁺:** water's oxygen donates a lone pair to H⁺ → O→H⁺; the hydronium ion carries two ordinary O–H bonds, one dative O→H bond, and one positive charge — it is the actual form of \"H⁺\" in aqueous acid.",
+      "**NEB-style (3m): Explain three properties of covalent compounds, each with its cause.** — **(a) Low melting and boiling points:** the forces between molecules are weak van der Waals/dipole attractions; melting separates molecules without touching the strong C–H or O–H bonds inside them. **(b) Non-conduction:** no free ions and no delocalised electrons — shared pairs are fixed between particular nuclei (graphite and ionising acids like HCl are the standard exceptions). **(c) Solubility in organic, not aqueous, solvents:** \"like dissolves like\" — non-polar molecular solutes interact well with non-polar solvents; water's hydrogen-bond network does not accommodate them (sugar and ethanol are the polar-covalent exceptions that do dissolve)."
+    ]
+  },
+  "importantConcepts": [
+    "Distinguish intramolecular (covalent, strong) from intermolecular (van der Waals, weak) forces — boiling breaks the latter, never the former. This single distinction answers most \"why low mp\" questions correctly."
+  ],
+  "importantStatements": [
+    "\"A coordinate bond is a covalent bond in which the shared pair of electrons is contributed by only one of the two bonded atoms.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2024 — ionic vs covalent distinction (solved above). The ethene sigma/pi VBT question (NEB 2023) belongs to topic 33. Other items are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Coordinate examples: \"NH₄⁺, H₃O⁺, NH₃·BF₃, O₃\" — quote four. Bond energy ladder: triple > double > single. Covalent property set: \"low mp, no conduct, organic-soluble, isomers, slow.\""
+  ],
+  "examNotes": [
+    "When asked for properties, attach the cause: \"low mp — weak intermolecular forces\", \"non-conducting — no free ions/electrons\". Causeless lists score half."
+  ],
+  "formulas": [
+    "- Bond order = shared pairs per link (1, 2, 3)\n- Bond energy: single < double < triple\n- Bond length: single > double > triple"
+  ],
+  "mcs": [
+    {
+      "question": "A coordinate bond is formed when:",
+      "options": [
+        "Both atoms share one electron each",
+        "One atom supplies both electrons",
+        "Electrons are transferred",
+        "Protons are shared"
+      ],
+      "answer": "B",
+      "explanation": "Donor has a lone pair; acceptor an empty orbital."
+    },
+    {
+      "question": "In NH4+, the number of N-H bonds is:",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "answer": "C",
+      "explanation": "Three covalent + one coordinate, all equivalent."
+    },
+    {
+      "question": "Which contains a coordinate bond?",
+      "options": [
+        "H3O+",
+        "CH4",
+        "Cl2",
+        "NaCl"
+      ],
+      "answer": "A",
+      "explanation": "Water donates a lone pair to H+."
+    },
+    {
+      "question": "Covalent compounds generally have low melting points because:",
+      "options": [
+        "Covalent bonds are weak",
+        "Intermolecular forces are weak",
+        "They are ionic",
+        "Molecules are heavy"
+      ],
+      "answer": "B",
+      "explanation": "Melting separates molecules, not bonds."
+    },
+    {
+      "question": "Bond energy order for C-C, C=C, C=C(triple):",
+      "options": [
+        "single > double > triple",
+        "triple > double > single",
+        "equal",
+        "double > triple > single"
+      ],
+      "answer": "B",
+      "explanation": "More shared pairs, stronger bond."
+    },
+    {
+      "question": "Which covalent solid has an extremely high melting point?",
+      "options": [
+        "Iodine",
+        "Diamond",
+        "Dry ice",
+        "Sulphur"
+      ],
+      "answer": "B",
+      "explanation": "Giant covalent network - bonds must break to melt."
+    },
+    {
+      "question": "Covalent compounds are soluble in:",
+      "options": [
+        "Water",
+        "Benzene",
+        "Molten NaCl",
+        "Dilute acid"
+      ],
+      "answer": "B",
+      "explanation": "Like dissolves like - non-polar in non-polar."
+    },
+    {
+      "question": "H+ in aqueous solution exists as:",
+      "options": [
+        "Free proton",
+        "H3O+",
+        "H2",
+        "OH-"
+      ],
+      "answer": "B",
+      "explanation": "Water coordinate-bonds the proton into hydronium."
     }
   ]
 }

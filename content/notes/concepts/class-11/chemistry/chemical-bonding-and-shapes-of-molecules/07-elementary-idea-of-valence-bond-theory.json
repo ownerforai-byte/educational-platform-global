@@ -5,155 +5,62 @@
   "topicTitle": "Elementary idea of Valence Bond Theory",
   "relevance": 100,
   "notes": [
-    "VSEPR theory predicts molecular geometry from electron pairs.",
-    "sp³: 4 pairs → tetrahedral (109.5°).",
-    "sp²: 3 pairs → trigonal planar (120°).",
-    "sp: 2 pairs → linear (180°).",
-    "Lone pairs compress bond angles.",
-    "# Elementary idea of Valence Bond Theory\n\n## 1. Introduction\nChemical picture of **Elementary idea of Valence Bond Theory** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Elementary idea of Valence Bond Theory\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Classification and trends**\n\n| Family or case | Rule or trend | Example | Exception |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Elementary idea of Valence Bond Theory — shape gallery: structures with bond angles (authored SVG)\n- **D2** — Elementary idea of Valence Bond Theory — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Elementary idea of Valence Bond Theory — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Elementary idea of Valence Bond Theory — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Bonds as Overlapping Clouds\n\nLewis structures say *that* atoms share; valence bond theory (VBT — Heitler–London, 1927; Pauling's extension) says *how*: a covalent bond forms when two half-filled atomic orbitals **overlap**, and the shared pair settles in the overlap region between the two nuclei. One idea — overlap — explains bond strength, bond direction, sigma versus pi, and the reason ethene's four hydrogen atoms all sit in one plane (NEB 2023's verified question).",
+    "## 2. Fundamental Concepts\n\n### 2.1 The mechanism of bond formation\n\n- **Approach:** as two atoms carrying half-filled orbitals approach, their orbitals begin to overlap.\n- **At the overlap:** electron density concentrates **between the two nuclei**; both nuclei are attracted to this shared cloud — potential energy falls.\n- **Equilibrium:** at a characteristic internuclear distance (bond length), attraction and repulsion balance at minimum energy — the bond is formed.\n- **Excess spin pairing:** the two electrons must have **opposite spins** (paired) in the overlap region.\n\n### 2.2 Sigma (σ) bond\n\n- Formed by **head-on (axial) overlap**: s–s (H₂), s–p (HCl), p–p (Cl₂, F₂).\n- Electron density is **symmetric about the internuclear axis** — cylindrically symmetrical.\n- **Strongest** overlap type: maximum electron density directly between nuclei; free rotation of bonded atoms about the axis.\n\n### 2.3 Pi (π) bond\n\n- Formed by **sideways (lateral) overlap** of two p orbitals above and below the internuclear axis.\n- Electron density lies **above and below** the axis, not on it — two lobes separated by a nodal plane containing the axis.\n- **Weaker** than σ (less effective overlap); **no free rotation** — rotation would break the sideways overlap.\n- A π bond **never forms alone**: it always accompanies a σ bond between the same two atoms (double bond = 1σ + 1π; triple = 1σ + 2π).\n\n### 2.4 Strength and direction consequences\n\n- Bond energy: σ (H–H 436 kJ mol⁻¹) > π component; C=C (614) < 2 × C–C (2 × 348) — the π bond contributes less than a full σ.\n- **Bond direction:** overlap is strongest along the orbital's lobe direction — bonds point where the orbitals point (foreshadowing hybridisation, topic 34).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Valence bond theory** | Covalent bond = overlap of half-filled orbitals with spin pairing | Heitler–London 1927 |\n| **Sigma bond** | Head-on (axial) overlap; density symmetric about the axis | s–s, s–p, p–p |\n| **Pi bond** | Sideways overlap of parallel p orbitals; density above/below axis | Always accompanies σ |\n| **Bond length** | Internuclear distance at energy minimum | H–H 74 pm |\n| **Bond energy** | Energy to break the bond (per mole) | H–H 436 kJ mol⁻¹ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2023): sigma and pi bonds in ethene, C₂H₄\n\n- Each carbon is **sp² hybridised** (topic 34): three sp² orbitals in a plane at 120°, one unhybridised p orbital perpendicular to the plane.\n- **Five σ bonds:** two C–H σ per carbon (sp²–s overlap) + one C–C σ (sp²–sp² head-on overlap) — these lie in the molecular plane.\n- **One π bond:** the two unhybridised p orbitals (one on each C, parallel and perpendicular to the plane) overlap **sideways** above and below the C–C axis — the π cloud.\n- **H–C–H bond angle ≈ 120°** (trigonal planar geometry at each carbon); all six atoms of ethene lie in one plane, and rotation about C=C is blocked by the π bond.\n\n### 4.2 Overlap types and their strength ladder\n\n- **s–s (H₂):** spherical orbitals overlap head-on; moderate strength.\n- **s–p (HCl):** H's 1s overlaps the lobe of Cl's 3p along the axis; directional.\n- **p–p head-on (F₂, Cl₂):** lobes meet along the internuclear axis → σ.\n- **p–p sideways (ethene's π):** parallel p orbitals overlap above/below the axis → π, weaker.\n- Greater overlap → shorter, stronger bond: this is why σ > π and why bond energies rank triple > double > single overall (more overlap in total).\n\n### 4.3 The rotation consequence — cis/trans isomerism\n\n- A single C–C σ bond rotates freely (ethane's conformers).\n- A C=C cannot rotate without destroying the π overlap — so substituent positions lock: **cis/trans (geometric) isomerism** appears. VBT's π bond is the reason alkenes have isomers that alkanes lack.",
+    "## 5. Comparison Tables\n\n**Sigma vs pi bond**\n\n| Basis | Sigma (σ) | Pi (π) |\n|---|---|---|\n| Overlap | Head-on (axial) | Sideways (lateral) |\n| Electron density | On the internuclear axis | Above and below the axis |\n| Strength | Stronger | Weaker |\n| Free rotation | Possible | Blocked |\n| Independence | Can exist alone | Always accompanies a σ |\n| Example | H₂ (s–s), HCl (s–p), Cl₂ (p–p) | C=C second bond, C≡C two extra bonds |\n\n**Bond composition audit**\n\n| Bond | σ | π | Total pairs |\n|---|---|---|---|\n| Single (C–C) | 1 | 0 | 1 |\n| Double (C=C) | 1 | 1 | 2 |\n| Triple (C≡C) | 1 | 2 | 3 |\n| N₂ | 1 | 2 | 3 |",
+    "## 6. Common Confusions\n\n**A double bond is not two identical bonds:** it is one strong σ + one weaker π — breaking a double bond first breaks the π (addition reactions attack the π first).",
+    "**π bonds cannot exist alone:** between two atoms, the first bond is always σ; π is always the second or third. \"A molecule with only π bonds\" is impossible.",
+    "**Overlap requires half-filled orbitals:** fully filled orbitals repel (no net bond); the spin-pairing condition is part of the definition.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2023): Using valence bond theory, explain the formation of sigma and pi bonds in ethene. State the hybridisation of each carbon and the H–C–H bond angle.** — Each carbon is sp² hybridised: three sp² orbitals (trigonal planar, 120°) and one unhybridised p orbital perpendicular to the plane. The C–C σ bond forms by head-on sp²–sp² overlap; four C–H σ bonds form by sp²–s overlap — all five σ bonds lie in one plane. The two parallel unhybridised p orbitals overlap sideways to form the π bond, its cloud above and below the molecular plane. H–C–H ≈ 120°; the π bond locks the molecule planar and blocks rotation about C=C.",
+    "**NEB-style (2m): Why is a π bond weaker than a σ bond?** — Sideways overlap of parallel p orbitals is less effective than head-on overlap: the electron density sits above and below the internuclear axis rather than concentrated between the nuclei, so the nuclei are less strongly held — lower bond energy, easier to break.",
+    "**NEB-style (2m): Account for the bond energies: C–C 348, C=C 614, C≡C 839 kJ mol⁻¹.** — C=C = σ + π = 348 + 266; C≡C = σ + 2π = 348 + 2 × 245.5. Each added π bond adds energy but less than a σ would — the increments shrink (266 then 245), showing π overlap is progressively less effective."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "**σ first, π second — always:** the first bond between any pair of atoms is σ; describing C=C as \"two π bonds\" is a standard error.",
+    "**Rotation and conformation:** ethane rotates (σ only); ethene cannot (π locks it) — the π bond is the gatekeeper of geometric isomerism."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Why does the π bond block rotation about C=C but the σ bond does not?",
+    "Explain why F₂ (s…p–p σ) has a lower bond energy than Cl₂ despite F's higher electronegativity.",
+    "Identify the σ and π bonds in HCN (H–C≡N) and give the total counts."
   ],
   "universalFacts": [
-    "Universal scientific fact for 07 elementary idea of valence bond theory."
+    "Retinal's π-system isomerisation (cis → trans) is the photochemical trigger of vision — VBT's rotation lock doing biology's work."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "H₂O: sp³, 2BP+2LP → bent",
-    "CO₂: sp, 2BP+0LP → linear"
+    "***Ethene's planarity*** — all six atoms in one plane because the π overlap demands parallel p orbitals; twist one CH₂ and the π bond breaks."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB 2023 (3m): Using valence bond theory, explain the formation of sigma and pi bonds in ethene, C₂H₄. State the hybridisation of each carbon atom and the H–C–H bond angle.** — Each carbon undergoes **sp² hybridisation**: three sp² hybrids lie in a plane at ≈120°, and one unhybridised 2p orbital stands perpendicular to that plane. **Sigma bonds (5):** the two carbons overlap one sp² orbital head-on (sp²–sp²) forming the C–C σ bond; each carbon overlaps its remaining two sp² orbitals with hydrogen 1s orbitals, giving four C–H σ bonds — all five lie in the molecular plane. **Pi bond (1):** the two parallel, unhybridised p orbitals overlap **sideways**, concentrating electron density above and below the C–C axis — the π bond. **H–C–H ≈ 120°** (trigonal planar at each carbon); the π overlap locks the molecule planar and prevents rotation about the C=C bond.",
+    "**NEB-style (2m): Distinguish sigma and pi bonds on the basis of overlap, electron density and rotation.** — **Sigma:** head-on (axial) overlap of s–s, s–p or p–p orbitals; electron density is symmetric about and concentrated on the internuclear axis; stronger; free rotation of the bonded atoms is possible; can exist alone. **Pi:** sideways overlap of two parallel p orbitals; electron density lies above and below the axis with a nodal plane through it; weaker; rotation is blocked (it would destroy the overlap); always accompanies a sigma bond.",
+    "**NEB-style (2m): Explain the bond-energy data: C–C 348, C=C 614, C≡C 839 kJ mol⁻¹.** — A single bond is one σ (348). The double bond adds one π: 614 − 348 = 266 kJ mol⁻¹ for the π component. The triple bond adds a second π: 839 − 614 = 225 kJ mol⁻¹ for the second π. Each π contributes less than a σ would, and successive π bonds contribute less than the first — sideways overlap is intrinsically weaker and becomes less effective as electron density accumulates. Total strength still rises with multiplicity, but in shrinking increments."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 07 elementary idea of valence bond theory)"
+    "- Double bond = 1σ + 1π; triple = 1σ + 2π\n- C–C 348, C=C 614, C≡C 839 kJ mol⁻¹ (π increments < σ)\n- H–H: 74 pm, 436 kJ mol⁻¹ (σ s–s benchmark)"
   ],
   "keyPoints": [
-    "Core point for 07 elementary idea of valence bond theory."
+    "VBT: covalent bond = overlap of half-filled orbitals, opposite spins, energy minimum at bond length. σ: head-on (s–s, s–p, p–p axial), density on axis, stronger, free rotation, can exist alone. π: sideways p–p, density above/below axis, weaker, no rotation, never alone. Ethene (NEB 2023): sp² carbons, 5 σ (sp²–sp², sp²–s) + 1 π (p–p sideways), H–C–H ≈120°, planar."
   ],
-  "summary": "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables compartmentalization.\n\nCell division: Mitosis maintains chromosome number for growth/repair; meiosis halves it for gamete formation; crossing over creates genetic diversity.\n\nEcology: Ecosystems integrate biotic and abiotic components; energy flows unidirectionally with 10% transfer efficiency; nutrients cycle through biogeochemical pathways.\n\nEvolutionary biology: Darwin's natural selection explains adaptation; fossil, morphological, and molecular evidence support common ancestry; human evolution from hominid ancestors.\n\nFloral diversity: Plant evolution from simple algae to complex angiosperms; five-kingdom classification; double fertilization unique to flowering plants.\n\nFaunal diversity: Animal kingdom spans from unicellular protists to complex chordates; segmentation and body cavities key evolutionary innovations; earthworm and frog as model organisms.\n\nBiota and environment: Aquatic, terrestrial, and aerial adaptations reflect evolutionary pressures; pollution from human activities threatens ecosystem stability.\n\nConservation biology: Biodiversity exists at genetic, species, and ecosystem levels; Nepal's protected areas and community forestry demonstrate effective conservation strategies.\n\nIntroduction to biology: Biology studies life from molecules to ecosystems; scientific method drives discovery; interdisciplinary connections with physics, chemistry, and earth science.\n\nIntroductory microbiology: Bacteria (prokaryotes) and viruses (acellular) are foundational to life sciences; Gram stain differentiates bacteria; biotechnology applications transform medicine and industry.\n\nVegetation: Nepal's altitude-dependent vegetation zones reflect climate gradients; in-situ (protected areas) and ex-situ (seed banks) conservation preserve plant diversity.",
+  "summary": "Valence bond theory turns the dot picture into physics: a covalent bond is the **overlap of half-filled orbitals** with opposite-spin pairing, energy minimum at the bond length where nuclear attraction to the shared cloud beats repulsion. **Head-on overlap builds the sigma bond** — density on the axis, the strongest link, free rotation, able to exist alone (H₂ s–s, HCl s–p, Cl₂ p–p). **Sideways overlap of parallel p orbitals builds the pi bond** — density above and below the axis, weaker, rotation-locked, and never found without its sigma partner (double = 1σ + 1π, triple = 1σ + 2π). Ethene is the showcase (NEB 2023): two sp² carbons, five in-plane sigma bonds, one sideways pi cloud, H–C–H ≈120°, and a planarity enforced by the π overlap — the same lock that creates cis/trans isomerism wherever a C=C carries substituents.",
   "specialNotes": [
     "Specialized insight for 07 elementary idea of valence bond theory."
   ],
   "importantStatements": [
-    "Key statement for 07 elementary idea of valence bond theory."
+    "\"A covalent bond is formed by the overlap of half-filled atomic orbitals of two atoms, with electron pairing in the region of overlap between the nuclei.\""
   ],
   "importantNotes": [
-    "Important note regarding 07 elementary idea of valence bond theory."
+    "Verified PYQ: NEB 2023 — sigma/pi in ethene with hybridisation and angle (solved above). Other items are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Elementary Idea of Valence Bond Theory."
+    "σ types: \"s–s (H₂), s–p (HCl), p–p (Cl₂)\". π: \"sideways, weaker, never alone\". Double = 1σ + 1π; triple = 1σ + 2π."
   ],
-  "examNotes": [],
+  "examNotes": [
+    "For ethene, draw the plane: three sp² orbitals flat, p orbitals vertical, π cloud above/below. Label the five σ and one π explicitly — the count is worth a mark."
+  ],
   "mcs": [
     {
       "question": "Question about 07 elementary idea of valence bond theory?",
@@ -167,7 +74,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 07 elementary idea of valence bond theory."
+    "Overlap direction sets bond direction — the geometric seed of hybridisation. And rotation-blockade by π is the origin of cis/trans isomerism: one theory, two downstream topics."
   ],
   "importantTasks": [
     "Task for studying 07 elementary idea of valence bond theory."
@@ -176,14 +83,92 @@
   "tabGroup": "07-elementary-idea-of-valence-bond-theory",
   "mcqs": [
     {
-      "question": "Question about 07 elementary idea of valence bond theory?",
+      "question": "A sigma bond is formed by:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Sideways overlap",
+        "Head-on overlap",
+        "No overlap",
+        "Electron transfer"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Axial overlap - density on the internuclear axis."
+    },
+    {
+      "question": "A pi bond results from:",
+      "options": [
+        "s-s overlap",
+        "s-p overlap",
+        "Sideways p-p overlap",
+        "Head-on p-p overlap"
+      ],
+      "answer": "C",
+      "explanation": "Parallel p orbitals overlap laterally."
+    },
+    {
+      "question": "The C=C double bond consists of:",
+      "options": [
+        "2 sigma",
+        "2 pi",
+        "1 sigma + 1 pi",
+        "1 pi only"
+      ],
+      "answer": "C",
+      "explanation": "First bond always sigma; pi accompanies it."
+    },
+    {
+      "question": "Rotation about a C=C bond is restricted because:",
+      "options": [
+        "The sigma bond is rigid",
+        "Breaking the pi overlap costs energy",
+        "Hydrogens repel",
+        "Carbon is sp3"
+      ],
+      "answer": "B",
+      "explanation": "Twisting destroys sideways p overlap."
+    },
+    {
+      "question": "Which overlap gives the strongest bond?",
+      "options": [
+        "s-s",
+        "s-p",
+        "p-p sideways",
+        "p-p head-on"
+      ],
+      "answer": "D",
+      "explanation": "Maximum density between nuclei - sigma."
+    },
+    {
+      "question": "HCl contains which sigma type?",
+      "options": [
+        "s-s",
+        "s-p",
+        "p-p",
+        "d-d"
+      ],
+      "answer": "B",
+      "explanation": "H 1s overlaps Cl 3p along the axis."
+    },
+    {
+      "question": "The H-C-H angle in ethene is about:",
+      "options": [
+        "109.5",
+        "120",
+        "180",
+        "104.5"
+      ],
+      "answer": "B",
+      "explanation": "Trigonal planar sp2 geometry."
+    },
+    {
+      "question": "A pi bond can exist:",
+      "options": [
+        "Alone between two atoms",
+        "Only with a sigma bond between the same atoms",
+        "Without any sigma in the molecule",
+        "Only in triple bonds"
+      ],
+      "answer": "B",
+      "explanation": "The first bond between any pair is always sigma."
     }
   ],
   "exercises": [],
@@ -193,5 +178,61 @@
     "desc": "3D molecular geometry predictor"
   },
   "visualType": "valence-bond-theory",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Bonds as Overlapping Clouds\n\nLewis structures say *that* atoms share; valence bond theory (VBT — Heitler–London, 1927; Pauling's extension) says *how*: a covalent bond forms when two half-filled atomic orbitals **overlap**, and the shared pair settles in the overlap region between the two nuclei. One idea — overlap — explains bond strength, bond direction, sigma versus pi, and the reason ethene's four hydrogen atoms all sit in one plane (NEB 2023's verified question).",
+      "## 2. Fundamental Concepts\n\n### 2.1 The mechanism of bond formation\n\n- **Approach:** as two atoms carrying half-filled orbitals approach, their orbitals begin to overlap.\n- **At the overlap:** electron density concentrates **between the two nuclei**; both nuclei are attracted to this shared cloud — potential energy falls.\n- **Equilibrium:** at a characteristic internuclear distance (bond length), attraction and repulsion balance at minimum energy — the bond is formed.\n- **Excess spin pairing:** the two electrons must have **opposite spins** (paired) in the overlap region.\n\n### 2.2 Sigma (σ) bond\n\n- Formed by **head-on (axial) overlap**: s–s (H₂), s–p (HCl), p–p (Cl₂, F₂).\n- Electron density is **symmetric about the internuclear axis** — cylindrically symmetrical.\n- **Strongest** overlap type: maximum electron density directly between nuclei; free rotation of bonded atoms about the axis.\n\n### 2.3 Pi (π) bond\n\n- Formed by **sideways (lateral) overlap** of two p orbitals above and below the internuclear axis.\n- Electron density lies **above and below** the axis, not on it — two lobes separated by a nodal plane containing the axis.\n- **Weaker** than σ (less effective overlap); **no free rotation** — rotation would break the sideways overlap.\n- A π bond **never forms alone**: it always accompanies a σ bond between the same two atoms (double bond = 1σ + 1π; triple = 1σ + 2π).\n\n### 2.4 Strength and direction consequences\n\n- Bond energy: σ (H–H 436 kJ mol⁻¹) > π component; C=C (614) < 2 × C–C (2 × 348) — the π bond contributes less than a full σ.\n- **Bond direction:** overlap is strongest along the orbital's lobe direction — bonds point where the orbitals point (foreshadowing hybridisation, topic 34).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Valence bond theory** | Covalent bond = overlap of half-filled orbitals with spin pairing | Heitler–London 1927 |\n| **Sigma bond** | Head-on (axial) overlap; density symmetric about the axis | s–s, s–p, p–p |\n| **Pi bond** | Sideways overlap of parallel p orbitals; density above/below axis | Always accompanies σ |\n| **Bond length** | Internuclear distance at energy minimum | H–H 74 pm |\n| **Bond energy** | Energy to break the bond (per mole) | H–H 436 kJ mol⁻¹ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2023): sigma and pi bonds in ethene, C₂H₄\n\n- Each carbon is **sp² hybridised** (topic 34): three sp² orbitals in a plane at 120°, one unhybridised p orbital perpendicular to the plane.\n- **Five σ bonds:** two C–H σ per carbon (sp²–s overlap) + one C–C σ (sp²–sp² head-on overlap) — these lie in the molecular plane.\n- **One π bond:** the two unhybridised p orbitals (one on each C, parallel and perpendicular to the plane) overlap **sideways** above and below the C–C axis — the π cloud.\n- **H–C–H bond angle ≈ 120°** (trigonal planar geometry at each carbon); all six atoms of ethene lie in one plane, and rotation about C=C is blocked by the π bond.\n\n### 4.2 Overlap types and their strength ladder\n\n- **s–s (H₂):** spherical orbitals overlap head-on; moderate strength.\n- **s–p (HCl):** H's 1s overlaps the lobe of Cl's 3p along the axis; directional.\n- **p–p head-on (F₂, Cl₂):** lobes meet along the internuclear axis → σ.\n- **p–p sideways (ethene's π):** parallel p orbitals overlap above/below the axis → π, weaker.\n- Greater overlap → shorter, stronger bond: this is why σ > π and why bond energies rank triple > double > single overall (more overlap in total).\n\n### 4.3 The rotation consequence — cis/trans isomerism\n\n- A single C–C σ bond rotates freely (ethane's conformers).\n- A C=C cannot rotate without destroying the π overlap — so substituent positions lock: **cis/trans (geometric) isomerism** appears. VBT's π bond is the reason alkenes have isomers that alkanes lack.",
+      "## 5. Comparison Tables\n\n**Sigma vs pi bond**\n\n| Basis | Sigma (σ) | Pi (π) |\n|---|---|---|\n| Overlap | Head-on (axial) | Sideways (lateral) |\n| Electron density | On the internuclear axis | Above and below the axis |\n| Strength | Stronger | Weaker |\n| Free rotation | Possible | Blocked |\n| Independence | Can exist alone | Always accompanies a σ |\n| Example | H₂ (s–s), HCl (s–p), Cl₂ (p–p) | C=C second bond, C≡C two extra bonds |\n\n**Bond composition audit**\n\n| Bond | σ | π | Total pairs |\n|---|---|---|---|\n| Single (C–C) | 1 | 0 | 1 |\n| Double (C=C) | 1 | 1 | 2 |\n| Triple (C≡C) | 1 | 2 | 3 |\n| N₂ | 1 | 2 | 3 |",
+      "## 6. Common Confusions\n\n**A double bond is not two identical bonds:** it is one strong σ + one weaker π — breaking a double bond first breaks the π (addition reactions attack the π first).",
+      "**π bonds cannot exist alone:** between two atoms, the first bond is always σ; π is always the second or third. \"A molecule with only π bonds\" is impossible.",
+      "**Overlap requires half-filled orbitals:** fully filled orbitals repel (no net bond); the spin-pairing condition is part of the definition.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2023): Using valence bond theory, explain the formation of sigma and pi bonds in ethene. State the hybridisation of each carbon and the H–C–H bond angle.** — Each carbon is sp² hybridised: three sp² orbitals (trigonal planar, 120°) and one unhybridised p orbital perpendicular to the plane. The C–C σ bond forms by head-on sp²–sp² overlap; four C–H σ bonds form by sp²–s overlap — all five σ bonds lie in one plane. The two parallel unhybridised p orbitals overlap sideways to form the π bond, its cloud above and below the molecular plane. H–C–H ≈ 120°; the π bond locks the molecule planar and blocks rotation about C=C.",
+      "**NEB-style (2m): Why is a π bond weaker than a σ bond?** — Sideways overlap of parallel p orbitals is less effective than head-on overlap: the electron density sits above and below the internuclear axis rather than concentrated between the nuclei, so the nuclei are less strongly held — lower bond energy, easier to break.",
+      "**NEB-style (2m): Account for the bond energies: C–C 348, C=C 614, C≡C 839 kJ mol⁻¹.** — C=C = σ + π = 348 + 266; C≡C = σ + 2π = 348 + 2 × 245.5. Each added π bond adds energy but less than a σ would — the increments shrink (266 then 245), showing π overlap is progressively less effective."
+    ],
+    "confusion": [
+      "**σ first, π second — always:** the first bond between any pair of atoms is σ; describing C=C as \"two π bonds\" is a standard error.",
+      "**Rotation and conformation:** ethane rotates (σ only); ethene cannot (π locks it) — the π bond is the gatekeeper of geometric isomerism."
+    ],
+    "keyPoints": [
+      "VBT: covalent bond = overlap of half-filled orbitals, opposite spins, energy minimum at bond length. σ: head-on (s–s, s–p, p–p axial), density on axis, stronger, free rotation, can exist alone. π: sideways p–p, density above/below axis, weaker, no rotation, never alone. Ethene (NEB 2023): sp² carbons, 5 σ (sp²–sp², sp²–s) + 1 π (p–p sideways), H–C–H ≈120°, planar."
+    ],
+    "importantConcepts": [
+      "Overlap direction sets bond direction — the geometric seed of hybridisation. And rotation-blockade by π is the origin of cis/trans isomerism: one theory, two downstream topics."
+    ],
+    "examples": [
+      "***Ethene's planarity*** — all six atoms in one plane because the π overlap demands parallel p orbitals; twist one CH₂ and the π bond breaks."
+    ],
+    "universalFacts": [
+      "Retinal's π-system isomerisation (cis → trans) is the photochemical trigger of vision — VBT's rotation lock doing biology's work."
+    ],
+    "importantStatements": [
+      "\"A covalent bond is formed by the overlap of half-filled atomic orbitals of two atoms, with electron pairing in the region of overlap between the nuclei.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2023 — sigma/pi in ethene with hybridisation and angle (solved above). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "σ types: \"s–s (H₂), s–p (HCl), p–p (Cl₂)\". π: \"sideways, weaker, never alone\". Double = 1σ + 1π; triple = 1σ + 2π."
+    ],
+    "examNotes": [
+      "For ethene, draw the plane: three sp² orbitals flat, p orbitals vertical, π cloud above/below. Label the five σ and one π explicitly — the count is worth a mark."
+    ],
+    "formulas": [
+      "- Double bond = 1σ + 1π; triple = 1σ + 2π\n- C–C 348, C=C 614, C≡C 839 kJ mol⁻¹ (π increments < σ)\n- H–H: 74 pm, 436 kJ mol⁻¹ (σ s–s benchmark)"
+    ],
+    "practice": [
+      "Why does the π bond block rotation about C=C but the σ bond does not?",
+      "Explain why F₂ (s…p–p σ) has a lower bond energy than Cl₂ despite F's higher electronegativity.",
+      "Identify the σ and π bonds in HCN (H–C≡N) and give the total counts."
+    ],
+    "practiceQuestions": [
+      "**NEB 2023 (3m): Using valence bond theory, explain the formation of sigma and pi bonds in ethene, C₂H₄. State the hybridisation of each carbon atom and the H–C–H bond angle.** — Each carbon undergoes **sp² hybridisation**: three sp² hybrids lie in a plane at ≈120°, and one unhybridised 2p orbital stands perpendicular to that plane. **Sigma bonds (5):** the two carbons overlap one sp² orbital head-on (sp²–sp²) forming the C–C σ bond; each carbon overlaps its remaining two sp² orbitals with hydrogen 1s orbitals, giving four C–H σ bonds — all five lie in the molecular plane. **Pi bond (1):** the two parallel, unhybridised p orbitals overlap **sideways**, concentrating electron density above and below the C–C axis — the π bond. **H–C–H ≈ 120°** (trigonal planar at each carbon); the π overlap locks the molecule planar and prevents rotation about the C=C bond.",
+      "**NEB-style (2m): Distinguish sigma and pi bonds on the basis of overlap, electron density and rotation.** — **Sigma:** head-on (axial) overlap of s–s, s–p or p–p orbitals; electron density is symmetric about and concentrated on the internuclear axis; stronger; free rotation of the bonded atoms is possible; can exist alone. **Pi:** sideways overlap of two parallel p orbitals; electron density lies above and below the axis with a nodal plane through it; weaker; rotation is blocked (it would destroy the overlap); always accompanies a sigma bond.",
+      "**NEB-style (2m): Explain the bond-energy data: C–C 348, C=C 614, C≡C 839 kJ mol⁻¹.** — A single bond is one σ (348). The double bond adds one π: 614 − 348 = 266 kJ mol⁻¹ for the π component. The triple bond adds a second π: 839 − 614 = 225 kJ mol⁻¹ for the second π. Each π contributes less than a σ would, and successive π bonds contribute less than the first — sideways overlap is intrinsically weaker and becomes less effective as electron density accumulates. Total strength still rises with multiplicity, but in shrinking increments."
+    ]
+  }
 }

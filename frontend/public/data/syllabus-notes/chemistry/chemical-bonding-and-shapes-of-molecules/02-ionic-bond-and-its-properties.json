@@ -5,145 +5,60 @@
   "topicTitle": "Ionic bond and its properties",
   "relevance": 100,
   "notes": [
-    "VSEPR theory predicts molecular geometry from electron pairs.",
-    "sp³: 4 pairs → tetrahedral (109.5°).",
-    "sp²: 3 pairs → trigonal planar (120°).",
-    "sp: 2 pairs → linear (180°).",
-    "Lone pairs compress bond angles.",
-    "# Ionic bond and its properties\n\n## 1. Introduction\nChemical picture of **Ionic bond and its properties** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Ionic bond and its properties\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Classification and trends**\n\n| Family or case | Rule or trend | Example | Exception |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Ionic bond and its properties — shape gallery: structures with bond angles (authored SVG)\n- **D2** — Ionic bond and its properties — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Ionic bond and its properties — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Ionic bond and its properties — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Bond of Full Transfer\n\nWhen the electronegativity gap is a canyon — metal meets non-metal — electrons are not shared but **surrendered**. Sodium hands its 3s electron to chlorine; the resulting Na⁺ and Cl⁻ lock into a three-dimensional lattice by sheer electrostatic attraction. That attraction **is** the ionic (electrovalent) bond. Its consequences cascade through chemistry: high melting points, molten-state conductivity, water solubility — and, through Fajan's rules, the admission that no ionic bond is perfectly ionic.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Formation mechanism\n\n- **Electron transfer:** metal atoms (low IE) lose electrons → cations; non-metal atoms (high EA) gain them → anions.\n- Na (2,8,1) → Na⁺ (2,8) + e⁻; Cl (2,8,7) + e⁻ → Cl⁻ (2,8,8). Both reach noble-gas configurations.\n- **Coulombic attraction** between oppositely charged ions, in all directions, builds the **crystal lattice** — NaCl is a cubic array of alternating ions, not discrete NaCl molecules.\n\n### 2.2 Conditions favouring ionic bond formation\n\n- **Low ionisation energy** of the metal (Cs, K, Na — IE₁ 376, 419, 496 kJ mol⁻¹).\n- **High negative electron affinity** of the non-metal (Cl −349 kJ mol⁻¹).\n- **High lattice energy** — the larger the energy released packing ions into the lattice, the more stable the compound.\n- Consequence: ionic compounds are typical of Group 1/2 metals with Group 17/16 non-metals (NaCl, MgO, CaF₂).\n\n### 2.3 Properties rooted in the lattice\n\n- **Hard, brittle crystalline solids:** displacement of a layer brings like charges face-to-face → repulsion cracks the crystal.\n- **High melting/boiling points:** strong, non-directional electrostatic forces must be broken throughout the lattice (NaCl mp 801 °C; MgO mp 2852 °C).\n- **Conduct in molten/aqueous state only:** ions are fixed in the solid but mobile once freed; solid ionic crystals do not conduct.\n- **Soluble in polar solvents (water):** dipole–ion attractions prise ions from the lattice; insoluble in non-polar solvents (benzene).\n- **No isomerism, fast ionic reactions:** no directional bonds; reactions are simply ion encounters in solution.\n\n### 2.4 Fajan's rules — covalent character in ionic bonds\n\n- A cation's positive charge **polarises** the anion's electron cloud; the distorted, shared-looking cloud is covalent character.\n- Covalent character increases with: **small cation, large anion, high charge on either ion**, and cations with **pseudo-noble-gas (18-electron) configurations** (Cu⁺ vs Na⁺).\n- Classic ordering: LiCl more covalent than NaCl (Li⁺ smaller, polarises Cl⁻ more); LiI most covalent of the lithium halides (I⁻ largest).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Ionic (electrovalent) bond** | Electrostatic attraction between oppositely charged ions formed by electron transfer | Na⁺Cl⁻ |\n| **Lattice energy** | Energy released when gaseous ions pack into one mole of crystal | NaCl ≈ −788 kJ mol⁻¹ |\n| **Polarisation** | Distortion of an anion's electron cloud by an adjacent cation | Fajan's basis |\n| **Polarising power** | Ability of a cation to distort an anion (∝ charge/size) | Li⁺ > Na⁺ > K⁺ |\n| **Polarizability** | Ease with which an anion's cloud is distorted (∝ size) | I⁻ > Br⁻ > Cl⁻ > F⁻ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): ionic vs covalent — the distinction\n\n| Basis | Ionic bond | Covalent bond |\n|---|---|---|\n| Mechanism | Complete electron transfer | Sharing of electron pairs |\n| Particles formed | Ions (Na⁺, Cl⁻) | Molecules (H₂O, CH₄) |\n| Directionality | Non-directional electrostatic pull | Directional, between specific atoms |\n| Melting point | High (NaCl 801 °C) | Low to moderate (H₂O 0 °C solid, CH₄ −182 °C) |\n| Conductivity | Molten/aqueous only | Non-conducting (except graphite/electrovalent exceptions) |\n| Solubility | Polar solvents | Non-polar solvents (generally) |\n| Example | NaCl, MgO | Cl₂, H₂O, CO₂ |\n\n**One example each:** NaCl (transfer: Na loses 3s¹ to Cl) and H₂O (sharing: one pair per O–H bond).\n\n### 4.2 Verified PYQ (NEB 2024): Fajan's rules and LiCl vs NaCl\n\n- **Rules:** covalent character rises with (i) smaller cation, (ii) larger anion, (iii) higher charges, (iv) 18-electron cation configuration.\n- **LiCl vs NaCl:** Li⁺ (76 pm) is much smaller than Na⁺ (102 pm), so Li⁺ has greater polarising power — it distorts Cl⁻'s cloud more, giving LiCl **higher covalent character** (evidenced by LiCl's solubility in organic solvents such as ethanol and acetone, and its lower melting point than NaCl).\n\n### 4.3 Why brittleness and conductivity follow from geometry\n\n- The lattice is a 3D checkerboard; slide it one ion across and Cl⁻ meets Cl⁻ — repulsion shatters the crystal. Hardness (resists scratching) and brittleness (cleaves under shear) come from the same force.\n- In the solid, ions vibrate about fixed lattice points — no charge carrier movement, no conduction. Melt or dissolve: ions migrate to electrodes — conduction, and electrolysis becomes possible.",
+    "## 5. Comparison Tables\n\n**Polarising power and polarizability (Fajan's levers)**\n\n| Lever | Increases covalent character | Example |\n|---|---|---|\n| Cation size ↓ | Li⁺ > Na⁺ > K⁺ > Rb⁺ | LiCl > NaCl in covalency |\n| Anion size ↑ | I⁻ > Br⁻ > Cl⁻ > F⁻ | LiI most covalent LiX |\n| Charge ↑ | Al³⁺ ≫ Na⁺ | AlCl₃ largely covalent |\n| 18-e⁻ cation | Cu⁺ > Na⁺ (same size) | CuCl more covalent than NaCl |\n\n**Property fingerprint of ionic compounds**\n\n| Property | Origin | Observation |\n|---|---|---|\n| High mp/bp | Strong non-directional lattice forces | MgO 2852 °C |\n| Brittleness | Layer slip → like-charge repulsion | Crystal cleaves |\n| Molten/aqueous conduction | Mobile ions | Electrolysis of molten NaCl |\n| Polar-solvent solubility | Ion–dipole attraction | NaCl in water, not hexane |",
+    "## 6. Common Confusions\n\n**Ionic bond is not directional:** an Na⁺ attracts every neighbouring Cl⁻ equally — the \"bond\" is the whole lattice's attraction, not a pair-specific link. That is why formula units (NaCl) are not molecules.",
+    "**Covalent character in ionic bonds is normal, not anomalous:** Fajan's rules mean every \"ionic\" compound has some electron distortion; 100% ionic exists only as an idealisation.",
+    "**Solid ionic compounds do not conduct:** conduction requires mobile charge carriers; in the solid the ions are locked in place — the common exam trap.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024, 2m): Distinguish between ionic and covalent bonds with one example of each.** — Ionic bond: complete transfer of electrons from a metal to a non-metal, giving oppositely charged ions held by electrostatic attraction (NaCl). Covalent bond: mutual sharing of one or more electron pairs between non-metal atoms (H₂O). Key consequences: ionic compounds have high melting points and conduct when molten; covalent compounds have low melting points and are non-conducting.",
+    "**Verified PYQ (NEB 2024, 3m): State Fajan's rules. How do they explain the covalent character of LiCl vs NaCl?** — Covalent character increases with small cation size, large anion size, high ionic charges and cations of 18-electron configuration. Li⁺ (76 pm) is smaller than Na⁺ (102 pm) — greater charge density, stronger polarising power — so Li⁺ distorts the chloride cloud more than Na⁺ does, making LiCl more covalent: it dissolves in organic solvents and melts lower than NaCl.",
+    "**NEB-style (2m): Why is MgO's melting point (2852 °C) far higher than NaCl's (801 °C)?** — Mg²⁺ and O²⁻ carry double the charge of Na⁺/Cl⁻ and are smaller, so the electrostatic attraction (and lattice energy, ≈ −3795 kJ mol⁻¹) is far greater — more energy is needed to disrupt the lattice."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
+    "**Formula unit ≠ molecule:** NaCl is a formula unit of an infinite lattice, not a discrete molecule — \"molecule of NaCl\" is a mark-losing phrase.",
+    "**Polarisation direction:** the cation polarises (distorts) the anion — small/high-charge cation pulls, large anion is pulled."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "Why does molten NaCl conduct electricity but solid NaCl does not?",
+    "Arrange NaCl, MgCl₂, AlCl₃ in increasing covalent character and justify via Fajan's rules.",
+    "Why are ionic crystals hard yet brittle?"
   ],
-  "universalFacts": [],
+  "universalFacts": [
+    "Magnesium oxide's melting point (2852 °C) is so high that MgO lines furnaces — doubly charged, small ions build the strongest common lattice."
+  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "H₂O: sp³, 2BP+2LP → bent",
-    "CO₂: sp, 2BP+0LP → linear"
+    "***LiCl dissolves in ethanol and acetone where NaCl barely does*** — the observable fingerprint of Li⁺'s stronger polarisation of Cl⁻."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "**NEB 2024 (2m): Distinguish between ionic and covalent bonds with one example of each.** — **Ionic bond:** formed by complete transfer of electrons from a metal to a non-metal; the resulting oppositely charged ions attract electrostatically in all directions, building a crystal lattice — example NaCl (Na gives its 3s¹ electron to Cl). **Covalent bond:** formed by mutual sharing of electron pairs between atoms — example H₂O (one shared pair per O–H bond). Ionic compounds: high mp, conduct when molten/aqueous, polar-soluble. Covalent compounds: low mp, non-conducting, often non-polar-soluble.",
+    "**NEB 2024 (3m): State Fajan's rules and use them to compare the covalent character of LiCl and NaCl.** — **Rules:** (i) smaller cation → more polarising; (ii) larger anion → more easily polarised; (iii) higher charges on either ion → more polarisation; (iv) cations with 18-electron (pseudo-noble-gas) configurations polarise more than 8-electron ones of equal size. **Application:** Li⁺ (76 pm) vs Na⁺ (102 pm) — the smaller Li⁺ has higher charge density and distorts the Cl⁻ electron cloud more strongly, so **LiCl has greater covalent character** than NaCl. Evidence: LiCl dissolves in organic solvents (ethanol, acetone) and melts about 200 °C below NaCl.",
+    "**NEB-style (3m): Explain the following properties of NaCl on the basis of its bonding: (a) high melting point, (b) conduction in molten state only, (c) brittleness.** — **(a)** Strong, non-directional electrostatic attraction runs throughout the 3D lattice; melting requires disrupting the entire array (801 °C). **(b)** In the solid, ions are fixed at lattice points — no mobile carriers. Molten NaCl has free Na⁺ and Cl⁻ that migrate under a field, carrying current. **(c)** Sliding one lattice layer displaces like charges into contact; the sudden repulsion cleaves the crystal along a plane."
   ],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.",
+  "formulas": [
+    "- Polarising power ∝ charge² / radius (ionic potential φ = z/r)\n- Coulomb energy ∝ |q₁q₂| / r (lattice attraction basis)\n- Li⁺ 76 pm < Na⁺ 102 pm < K⁺ 138 pm (polarising ladder)"
+  ],
+  "keyPoints": [
+    "Ionic bond = electrostatic attraction between ions formed by electron transfer (metal low IE + non-metal high EA + high lattice energy). Properties: hard brittle crystals, high mp/bp, conduct only when molten/aqueous, soluble in polar solvents, fast ionic reactions. Fajan's rules: covalent character ↑ with small cation, large anion, high charges, 18-e⁻ cation — LiCl more covalent than NaCl."
+  ],
+  "summary": "When a low-ionisation-energy metal meets a high-electron-affinity non-metal, electrons transfer completely: Na gives its 3s electron to Cl, and the Na⁺/Cl⁻ pair assembles into a **three-dimensional lattice** whose electrostatic attraction is the ionic bond. That geometry explains everything: hardness yet brittleness (layer slip brings like charges together), high melting points (NaCl 801 °C, MgO 2852 °C — charge and size set the lattice energy), conduction only when molten or dissolved (mobile ions needed), and solubility in polar solvents (ion–dipole prize ions out). Fajan's rules then admit reality: small, highly charged cations distort anion clouds — **LiCl is measurably more covalent than NaCl** (smaller Li⁺, organic-solvent solubility). No bond is perfectly ionic; the ionic–covalent contrast is a continuum, and the exam's favourite probes are the NEB 2024 pair — the distinction table and Fajan's LiCl comparison.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [
-    "Important note regarding 02 ionic bond and its properties."
+  "importantStatements": [
+    "\"An ionic bond is the electrostatic force of attraction between oppositely charged ions produced by the complete transfer of one or more electrons.\""
   ],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantNotes": [
+    "Verified PYQs: NEB 2024 — ionic vs covalent distinction and Fajan's rules (LiCl vs NaCl), both solved above. Other items are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Fajan: \"small cation, big anion, big charges, 18-e⁻ cation → covalent.\" Conductivity: \"solid no, molten yes.\" Lattice ladder: MgO > CaO > NaCl > KCl in mp."
+  ],
+  "examNotes": [
+    "For Fajan's rules, always attach the observable consequence (organic-solvent solubility, depressed melting point) — rules alone score half."
+  ],
   "mcs": [
     {
       "question": "Question about 02 ionic bond and its properties?",
@@ -157,7 +72,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 02 ionic bond and its properties."
+    "Every ionic bond has some covalent character (Fajan's polarisation); every covalent bond has some ionic character (polarity). The 100% pure bond is a limiting idealisation — the ionic–covalent picture is a continuum."
   ],
   "importantTasks": [
     "Task for studying 02 ionic bond and its properties."
@@ -166,14 +81,92 @@
   "tabGroup": "02-ionic-bond-and-its-properties",
   "mcqs": [
     {
-      "question": "Question about 02 ionic bond and its properties?",
+      "question": "An ionic bond forms by:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Sharing of electrons",
+        "Complete transfer of electrons",
+        "Partial sharing",
+        "Donation of protons"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Metal loses, non-metal gains - then electrostatic attraction."
+    },
+    {
+      "question": "Solid NaCl does not conduct electricity because:",
+      "options": [
+        "It has no ions",
+        "Its ions are fixed at lattice points",
+        "Electrons are mobile",
+        "It is covalent"
+      ],
+      "answer": "B",
+      "explanation": "Mobile charge carriers appear only when molten or dissolved."
+    },
+    {
+      "question": "Which cation has the greatest polarising power?",
+      "options": [
+        "Na+",
+        "K+",
+        "Li+",
+        "Cs+"
+      ],
+      "answer": "C",
+      "explanation": "Smallest radius, highest charge density."
+    },
+    {
+      "question": "According to Fajan's rules, covalent character increases with:",
+      "options": [
+        "Large cation, small anion",
+        "Small cation, large anion",
+        "Both ions small",
+        "Low charges"
+      ],
+      "answer": "B",
+      "explanation": "Stronger polarisation of a more polarizable anion."
+    },
+    {
+      "question": "The melting point order is:",
+      "options": [
+        "NaCl > MgO",
+        "MgO > NaCl",
+        "KCl > NaCl",
+        "NaCl > CaO"
+      ],
+      "answer": "B",
+      "explanation": "Doubly charged, smaller ions - stronger lattice."
+    },
+    {
+      "question": "Ionic compounds are soluble in:",
+      "options": [
+        "Benzene",
+        "Hexane",
+        "Water",
+        "Carbon tetrachloride"
+      ],
+      "answer": "C",
+      "explanation": "Polar solvent; ion-dipole attraction."
+    },
+    {
+      "question": "Ionic crystals are brittle because:",
+      "options": [
+        "Ions are heavy",
+        "Layer displacement brings like charges together",
+        "They melt easily",
+        "Electrons repel"
+      ],
+      "answer": "B",
+      "explanation": "Repulsion cleaves the crystal along a plane."
+    },
+    {
+      "question": "LiCl is more covalent than NaCl because:",
+      "options": [
+        "Li+ is larger",
+        "Li+ is smaller and polarises Cl- more",
+        "Cl- is smaller in LiCl",
+        "Li has a higher IE"
+      ],
+      "answer": "B",
+      "explanation": "76 pm vs 102 pm - higher charge density."
     }
   ],
   "exercises": [],
@@ -183,5 +176,61 @@
     "desc": "3D molecular geometry predictor"
   },
   "visualType": "ionic-covalent-bond",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Bond of Full Transfer\n\nWhen the electronegativity gap is a canyon — metal meets non-metal — electrons are not shared but **surrendered**. Sodium hands its 3s electron to chlorine; the resulting Na⁺ and Cl⁻ lock into a three-dimensional lattice by sheer electrostatic attraction. That attraction **is** the ionic (electrovalent) bond. Its consequences cascade through chemistry: high melting points, molten-state conductivity, water solubility — and, through Fajan's rules, the admission that no ionic bond is perfectly ionic.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Formation mechanism\n\n- **Electron transfer:** metal atoms (low IE) lose electrons → cations; non-metal atoms (high EA) gain them → anions.\n- Na (2,8,1) → Na⁺ (2,8) + e⁻; Cl (2,8,7) + e⁻ → Cl⁻ (2,8,8). Both reach noble-gas configurations.\n- **Coulombic attraction** between oppositely charged ions, in all directions, builds the **crystal lattice** — NaCl is a cubic array of alternating ions, not discrete NaCl molecules.\n\n### 2.2 Conditions favouring ionic bond formation\n\n- **Low ionisation energy** of the metal (Cs, K, Na — IE₁ 376, 419, 496 kJ mol⁻¹).\n- **High negative electron affinity** of the non-metal (Cl −349 kJ mol⁻¹).\n- **High lattice energy** — the larger the energy released packing ions into the lattice, the more stable the compound.\n- Consequence: ionic compounds are typical of Group 1/2 metals with Group 17/16 non-metals (NaCl, MgO, CaF₂).\n\n### 2.3 Properties rooted in the lattice\n\n- **Hard, brittle crystalline solids:** displacement of a layer brings like charges face-to-face → repulsion cracks the crystal.\n- **High melting/boiling points:** strong, non-directional electrostatic forces must be broken throughout the lattice (NaCl mp 801 °C; MgO mp 2852 °C).\n- **Conduct in molten/aqueous state only:** ions are fixed in the solid but mobile once freed; solid ionic crystals do not conduct.\n- **Soluble in polar solvents (water):** dipole–ion attractions prise ions from the lattice; insoluble in non-polar solvents (benzene).\n- **No isomerism, fast ionic reactions:** no directional bonds; reactions are simply ion encounters in solution.\n\n### 2.4 Fajan's rules — covalent character in ionic bonds\n\n- A cation's positive charge **polarises** the anion's electron cloud; the distorted, shared-looking cloud is covalent character.\n- Covalent character increases with: **small cation, large anion, high charge on either ion**, and cations with **pseudo-noble-gas (18-electron) configurations** (Cu⁺ vs Na⁺).\n- Classic ordering: LiCl more covalent than NaCl (Li⁺ smaller, polarises Cl⁻ more); LiI most covalent of the lithium halides (I⁻ largest).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Ionic (electrovalent) bond** | Electrostatic attraction between oppositely charged ions formed by electron transfer | Na⁺Cl⁻ |\n| **Lattice energy** | Energy released when gaseous ions pack into one mole of crystal | NaCl ≈ −788 kJ mol⁻¹ |\n| **Polarisation** | Distortion of an anion's electron cloud by an adjacent cation | Fajan's basis |\n| **Polarising power** | Ability of a cation to distort an anion (∝ charge/size) | Li⁺ > Na⁺ > K⁺ |\n| **Polarizability** | Ease with which an anion's cloud is distorted (∝ size) | I⁻ > Br⁻ > Cl⁻ > F⁻ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): ionic vs covalent — the distinction\n\n| Basis | Ionic bond | Covalent bond |\n|---|---|---|\n| Mechanism | Complete electron transfer | Sharing of electron pairs |\n| Particles formed | Ions (Na⁺, Cl⁻) | Molecules (H₂O, CH₄) |\n| Directionality | Non-directional electrostatic pull | Directional, between specific atoms |\n| Melting point | High (NaCl 801 °C) | Low to moderate (H₂O 0 °C solid, CH₄ −182 °C) |\n| Conductivity | Molten/aqueous only | Non-conducting (except graphite/electrovalent exceptions) |\n| Solubility | Polar solvents | Non-polar solvents (generally) |\n| Example | NaCl, MgO | Cl₂, H₂O, CO₂ |\n\n**One example each:** NaCl (transfer: Na loses 3s¹ to Cl) and H₂O (sharing: one pair per O–H bond).\n\n### 4.2 Verified PYQ (NEB 2024): Fajan's rules and LiCl vs NaCl\n\n- **Rules:** covalent character rises with (i) smaller cation, (ii) larger anion, (iii) higher charges, (iv) 18-electron cation configuration.\n- **LiCl vs NaCl:** Li⁺ (76 pm) is much smaller than Na⁺ (102 pm), so Li⁺ has greater polarising power — it distorts Cl⁻'s cloud more, giving LiCl **higher covalent character** (evidenced by LiCl's solubility in organic solvents such as ethanol and acetone, and its lower melting point than NaCl).\n\n### 4.3 Why brittleness and conductivity follow from geometry\n\n- The lattice is a 3D checkerboard; slide it one ion across and Cl⁻ meets Cl⁻ — repulsion shatters the crystal. Hardness (resists scratching) and brittleness (cleaves under shear) come from the same force.\n- In the solid, ions vibrate about fixed lattice points — no charge carrier movement, no conduction. Melt or dissolve: ions migrate to electrodes — conduction, and electrolysis becomes possible.",
+      "## 5. Comparison Tables\n\n**Polarising power and polarizability (Fajan's levers)**\n\n| Lever | Increases covalent character | Example |\n|---|---|---|\n| Cation size ↓ | Li⁺ > Na⁺ > K⁺ > Rb⁺ | LiCl > NaCl in covalency |\n| Anion size ↑ | I⁻ > Br⁻ > Cl⁻ > F⁻ | LiI most covalent LiX |\n| Charge ↑ | Al³⁺ ≫ Na⁺ | AlCl₃ largely covalent |\n| 18-e⁻ cation | Cu⁺ > Na⁺ (same size) | CuCl more covalent than NaCl |\n\n**Property fingerprint of ionic compounds**\n\n| Property | Origin | Observation |\n|---|---|---|\n| High mp/bp | Strong non-directional lattice forces | MgO 2852 °C |\n| Brittleness | Layer slip → like-charge repulsion | Crystal cleaves |\n| Molten/aqueous conduction | Mobile ions | Electrolysis of molten NaCl |\n| Polar-solvent solubility | Ion–dipole attraction | NaCl in water, not hexane |",
+      "## 6. Common Confusions\n\n**Ionic bond is not directional:** an Na⁺ attracts every neighbouring Cl⁻ equally — the \"bond\" is the whole lattice's attraction, not a pair-specific link. That is why formula units (NaCl) are not molecules.",
+      "**Covalent character in ionic bonds is normal, not anomalous:** Fajan's rules mean every \"ionic\" compound has some electron distortion; 100% ionic exists only as an idealisation.",
+      "**Solid ionic compounds do not conduct:** conduction requires mobile charge carriers; in the solid the ions are locked in place — the common exam trap.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024, 2m): Distinguish between ionic and covalent bonds with one example of each.** — Ionic bond: complete transfer of electrons from a metal to a non-metal, giving oppositely charged ions held by electrostatic attraction (NaCl). Covalent bond: mutual sharing of one or more electron pairs between non-metal atoms (H₂O). Key consequences: ionic compounds have high melting points and conduct when molten; covalent compounds have low melting points and are non-conducting.",
+      "**Verified PYQ (NEB 2024, 3m): State Fajan's rules. How do they explain the covalent character of LiCl vs NaCl?** — Covalent character increases with small cation size, large anion size, high ionic charges and cations of 18-electron configuration. Li⁺ (76 pm) is smaller than Na⁺ (102 pm) — greater charge density, stronger polarising power — so Li⁺ distorts the chloride cloud more than Na⁺ does, making LiCl more covalent: it dissolves in organic solvents and melts lower than NaCl.",
+      "**NEB-style (2m): Why is MgO's melting point (2852 °C) far higher than NaCl's (801 °C)?** — Mg²⁺ and O²⁻ carry double the charge of Na⁺/Cl⁻ and are smaller, so the electrostatic attraction (and lattice energy, ≈ −3795 kJ mol⁻¹) is far greater — more energy is needed to disrupt the lattice."
+    ],
+    "confusion": [
+      "**Formula unit ≠ molecule:** NaCl is a formula unit of an infinite lattice, not a discrete molecule — \"molecule of NaCl\" is a mark-losing phrase.",
+      "**Polarisation direction:** the cation polarises (distorts) the anion — small/high-charge cation pulls, large anion is pulled."
+    ],
+    "keyPoints": [
+      "Ionic bond = electrostatic attraction between ions formed by electron transfer (metal low IE + non-metal high EA + high lattice energy). Properties: hard brittle crystals, high mp/bp, conduct only when molten/aqueous, soluble in polar solvents, fast ionic reactions. Fajan's rules: covalent character ↑ with small cation, large anion, high charges, 18-e⁻ cation — LiCl more covalent than NaCl."
+    ],
+    "importantConcepts": [
+      "Every ionic bond has some covalent character (Fajan's polarisation); every covalent bond has some ionic character (polarity). The 100% pure bond is a limiting idealisation — the ionic–covalent picture is a continuum."
+    ],
+    "examples": [
+      "***LiCl dissolves in ethanol and acetone where NaCl barely does*** — the observable fingerprint of Li⁺'s stronger polarisation of Cl⁻."
+    ],
+    "universalFacts": [
+      "Magnesium oxide's melting point (2852 °C) is so high that MgO lines furnaces — doubly charged, small ions build the strongest common lattice."
+    ],
+    "importantStatements": [
+      "\"An ionic bond is the electrostatic force of attraction between oppositely charged ions produced by the complete transfer of one or more electrons.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 — ionic vs covalent distinction and Fajan's rules (LiCl vs NaCl), both solved above. Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Fajan: \"small cation, big anion, big charges, 18-e⁻ cation → covalent.\" Conductivity: \"solid no, molten yes.\" Lattice ladder: MgO > CaO > NaCl > KCl in mp."
+    ],
+    "examNotes": [
+      "For Fajan's rules, always attach the observable consequence (organic-solvent solubility, depressed melting point) — rules alone score half."
+    ],
+    "formulas": [
+      "- Polarising power ∝ charge² / radius (ionic potential φ = z/r)\n- Coulomb energy ∝ |q₁q₂| / r (lattice attraction basis)\n- Li⁺ 76 pm < Na⁺ 102 pm < K⁺ 138 pm (polarising ladder)"
+    ],
+    "practice": [
+      "Why does molten NaCl conduct electricity but solid NaCl does not?",
+      "Arrange NaCl, MgCl₂, AlCl₃ in increasing covalent character and justify via Fajan's rules.",
+      "Why are ionic crystals hard yet brittle?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (2m): Distinguish between ionic and covalent bonds with one example of each.** — **Ionic bond:** formed by complete transfer of electrons from a metal to a non-metal; the resulting oppositely charged ions attract electrostatically in all directions, building a crystal lattice — example NaCl (Na gives its 3s¹ electron to Cl). **Covalent bond:** formed by mutual sharing of electron pairs between atoms — example H₂O (one shared pair per O–H bond). Ionic compounds: high mp, conduct when molten/aqueous, polar-soluble. Covalent compounds: low mp, non-conducting, often non-polar-soluble.",
+      "**NEB 2024 (3m): State Fajan's rules and use them to compare the covalent character of LiCl and NaCl.** — **Rules:** (i) smaller cation → more polarising; (ii) larger anion → more easily polarised; (iii) higher charges on either ion → more polarisation; (iv) cations with 18-electron (pseudo-noble-gas) configurations polarise more than 8-electron ones of equal size. **Application:** Li⁺ (76 pm) vs Na⁺ (102 pm) — the smaller Li⁺ has higher charge density and distorts the Cl⁻ electron cloud more strongly, so **LiCl has greater covalent character** than NaCl. Evidence: LiCl dissolves in organic solvents (ethanol, acetone) and melts about 200 °C below NaCl.",
+      "**NEB-style (3m): Explain the following properties of NaCl on the basis of its bonding: (a) high melting point, (b) conduction in molten state only, (c) brittleness.** — **(a)** Strong, non-directional electrostatic attraction runs throughout the 3D lattice; melting requires disrupting the entire array (801 °C). **(b)** In the solid, ions are fixed at lattice points — no mobile carriers. Molten NaCl has free Na⁺ and Cl⁻ that migrate under a field, carrying current. **(c)** Sliding one lattice layer displaces like charges into contact; the sudden repulsion cleaves the crystal along a plane."
+    ]
+  }
 }
