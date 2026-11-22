@@ -7,30 +7,38 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Electrophiles, nucleophiles and free-radicals\n\n## 1. Introduction\nChemical picture of **Electrophiles** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Fundamental Principles of Organic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Electrophiles\n### nucleophiles and free-radicals\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Electrophiles — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Electrophiles — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Electrophiles — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Electrophiles — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Three Attackers\n\nOnce fission has made an electron-hungry or electron-rich species, reactions are a matter of matching attacker to target. **Electrophiles** love electrons and attack electron-rich sites; **nucleophiles** love nuclei (positive centres) and donate electron pairs; **free radicals** carry unpaired electrons and strip atoms from bonds. Every organic reaction is a conversation between one of these three and the substrate.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Electrophiles (E⁺)\n\n- **Definition:** electron-loving species — **electron-deficient**, accept an electron pair; attack **electron-rich** sites (double bonds, lone pairs).\n- **Charged:** H⁺, NO₂⁺ (nitronium), CH₃⁺ (carbocation), Br⁺, Cl⁺.\n- **Neutral:** BF₃, AlCl₃, SO₃ — incomplete octets or polarised atoms make them acceptors.\n\n### 2.2 Nucleophiles (Nu⁻)\n\n- **Definition:** nucleus-loving species — **electron-rich**, donate an electron pair; attack **electron-deficient** centres.\n- **Charged:** OH⁻, CN⁻, Cl⁻, CH₃O⁻, H⁻.\n- **Neutral:** H₂O, NH₃, ROH, RNH₂ — lone pairs make them donors.\n- Nucleophile = Lewis base in action; electrophile = Lewis acid in action.\n\n### 2.3 Free radicals\n\n- **Definition:** neutral species with an **unpaired electron** (written X·), formed by **homolytic fission**.\n- Paramagnetic; highly reactive; drive **chain reactions**: initiation (Cl₂ → 2Cl·), propagation (Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·), termination (Cl· + Cl· → Cl₂).\n- Attack by **abstracting** atoms or adding to multiple bonds — the third reagent class alongside ions.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Electrophile** | Electron-pair acceptor attacking electron-rich sites | H⁺, NO₂⁺, BF₃ |\n| **Nucleophile** | Electron-pair donor attacking electron-poor centres | OH⁻, CN⁻, NH₃ |\n| **Free radical** | Neutral species with an unpaired electron | Cl·, CH₃· |\n| **Chain reaction** | Initiation–propagation–termination radical sequence | methane chlorination |",
+    "## 4. Detailed Explanation\n\n### 4.1 The matching rule\n\n- Electrophiles seek **π bonds and lone pairs**; nucleophiles seek **δ+ atoms** (carbonyl carbon, alkyl halide carbon); radicals seek **any bond they can split into two radicals**. Predicting an organic reaction starts by identifying which of the three is present.\n\n### 4.2 Charged vs neutral members\n\n- Both families have charged and neutral members: charge is not the criterion — **electron deficiency or richness** is. BF₃ is neutral yet a strong electrophile (empty p orbital); NH₃ is neutral yet a good nucleophile (lone pair).\n\n### 4.3 Radicals vs the ionic pair\n\n- Radicals are made by **homolysis** (light/heat), ions by **heterolysis**. Radicals are neutral but have 7-electron hunger; electrophiles/nucleophiles carry charge or lone pairs. Conditions select the family: UV light → radical chemistry; polar solvent + catalyst → ionic chemistry.",
+    "## 5. Comparison Tables\n\n**The three reagent classes**\n\n| Basis | Electrophile | Nucleophile | Free radical |\n|---|---|---|---|\n| electron count | deficient (accepts pair) | rich (donates pair) | unpaired electron |\n| charge | + or neutral | − or neutral | always neutral |\n| attacks | electron-rich (π, lone pairs) | electron-poor (δ+ C) | σ bonds (abstraction) |\n| origin | heterolysis / Lewis acids | heterolysis / lone pairs | homolysis (hν, Δ) |\n| examples | H⁺, NO₂⁺, CH₃⁺, BF₃, AlCl₃ | OH⁻, CN⁻, Cl⁻, NH₃, H₂O | Cl·, CH₃·, Br· |",
+    "## 6. Common Confusions\n\n**Neutral ≠ inactive:** BF₃ and AlCl₃ are neutral electrophiles; H₂O and NH₃ are neutral nucleophiles — judge by electrons, not charge.",
+    "**Radicals are not anions:** Cl· has no charge; it differs from Cl⁻ by one electron, and that electron changes everything.",
+    "**Electrophile/nucleophile are roles, not fixed species:** H₂O can be a nucleophile (attacking a carbocation) or a weak electrophile-source (donating H⁺) — context assigns the role.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Define electrophile with two examples.** — An **electrophile** is an **electron-deficient species that accepts an electron pair** and attacks **electron-rich** centres (π bonds, lone pairs) in organic reactions. Examples: the **nitronium ion NO₂⁺** (attacks the benzene π system in nitration) and the **proton H⁺**; neutral examples include **BF₃ and AlCl₃** (incomplete octets).",
+    "**NEB-style (2m): Define nucleophile with two examples.** — A **nucleophile** is an **electron-rich species that donates an electron pair** to an **electron-deficient** centre (a \"nucleus-loving\" reagent). Examples: the **hydroxide ion OH⁻** and the **cyanide ion CN⁻**; neutral examples include **ammonia NH₃** and **water H₂O**, whose lone pairs make them donors.",
+    "**NEB-style (3m): What are free radicals? Describe the chain mechanism of chlorination of methane.** — **Free radicals** are **neutral species with an unpaired electron**, formed by **homolytic fission** of a covalent bond under heat or light; they are paramagnetic and highly reactive. **Chlorination of methane:** **Initiation** — sunlight splits chlorine homolytically: **Cl₂ → 2Cl·**. **Propagation** — Cl· abstracts H: **Cl· + CH₄ → CH₃· + HCl**; then the methyl radical attacks chlorine: **CH₃· + Cl₂ → CH₃Cl + Cl·** (the radical is regenerated, so the chain continues). **Termination** — radicals combine: **Cl· + Cl· → Cl₂**, CH₃· + Cl· → CH₃Cl, or CH₃· + CH₃· → C₂H₆, ending the chain."
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Electrophiles, nucleophiles and free-radicals\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Classify: BF3, OH-, Cl., NO2+, NH3, CH3+ into the three reagent classes."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Radical chain reactions run the world's plastics: ethene polymerises by radical initiation, each propagation step adding another monomer to the growing chain."
+  ],
+  "examples": [
+    "***The neutral electrophile*** — BF3 has no charge but an empty p orbital; it grabs electron pairs as eagerly as any cation — deficiency, not charge, defines the family."
+  ],
   "practiceQuestions": [
-    "Q. Classify: BF3, OH−, Cl·, NH3. (2 marks) — electrophile; nucleophile; free radical; nucleophile.",
-    "Q. Which species attacks benzene in nitration? (1 mark) — nitronium ion NO2+, an electrophile."
+    "**NEB-style (2m): Define electrophile with two examples.** — An **electrophile** (\"electron-loving\") is an **electron-deficient species that accepts a pair of electrons** and therefore attacks the **electron-rich** parts of molecules — π bonds and lone pairs. **Examples:** the **nitronium ion, NO₂⁺**, which attacks the benzene π system in nitration, and the **proton, H⁺**; neutral electrophiles include **BF₃ and AlCl₃**, whose central atoms have incomplete octets. An electrophile is a Lewis acid in action.",
+    "**NEB-style (2m): Define nucleophile with two examples.** — A **nucleophile** (\"nucleus-loving\") is an **electron-rich species that donates an electron pair** to an electron-deficient centre (a δ+ carbon or cation). **Examples:** the **hydroxide ion, OH⁻**, and the **cyanide ion, CN⁻** — both carry a lone pair and a negative charge; neutral nucleophiles include **ammonia, NH₃**, and **water, H₂O**, whose lone pairs make them donors. A nucleophile is a Lewis base in action.",
+    "**NEB-style (3m): What are free radicals? Describe the chain mechanism of chlorination of methane.** — **Free radicals** are **neutral species possessing an unpaired electron** (written X·), produced by **homolytic fission** of a covalent bond under **heat or ultraviolet light**; they are paramagnetic and extremely reactive. **Chlorination of methane proceeds by a radical chain:** **Initiation** — UV light splits chlorine homolytically: **Cl₂ → 2Cl·**. **Propagation** — the chlorine radical abstracts hydrogen: **Cl· + CH₄ → CH₃· + HCl**; the methyl radical then attacks another chlorine molecule: **CH₃· + Cl₂ → CH₃Cl + Cl·** — regenerating Cl·, so the chain sustains itself and one photon produces many product molecules. **Termination** — two radicals combine, consuming the chain carriers: **Cl· + Cl· → Cl₂**, **CH₃· + Cl· → CH₃Cl**, or **CH₃· + CH₃· → C₂H₆**."
   ],
   "keyPoints": [
-    "• Electrophiles",
-    "• Nucleophiles",
-    "• Free-radicals"
+    "Electrophile: electron-deficient, accepts pair, attacks electron-rich sites; charged H+, NO2+, CH3+, Br+; neutral BF3, AlCl3, SO3 (incomplete octet). Nucleophile: electron-rich, donates pair, attacks electron-deficient centres; charged OH-, CN-, Cl-, CH3O-; neutral H2O, NH3, ROH (lone pairs). Electrophile = Lewis acid acting; nucleophile = Lewis base acting. Free radical: neutral, unpaired electron (X.), from homolysis (hV/heat), paramagnetic; chain reaction: initiation Cl2 -> 2Cl., propagation Cl. + CH4 -> CH3. + HCl then CH3. + Cl2 -> CH3Cl + Cl., termination radical combination."
   ],
-  "summary": "Electrophiles, nucleophiles and free-radicals (Fundamental Principles of Organic Chemistry, Chemistry, class-11-notes) covers Electrophiles, nucleophiles, free-radicals. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Organic reagents come in three classes. **Electrophiles** are **electron-deficient** — charged (H⁺, NO₂⁺, CH₃⁺) or neutral (BF₃, AlCl₃, SO₃ with incomplete octets) — and attack **electron-rich** sites: π bonds and lone pairs. **Nucleophiles** are **electron-rich** — charged (OH⁻, CN⁻, Cl⁻) or neutral (H₂O, NH₃, ROH via lone pairs) — and donate a pair to **electron-poor** centres; electrophile and nucleophile are Lewis acid and Lewis base in action. **Free radicals** are **neutral species with an unpaired electron** from homolysis (Cl·, CH₃·), paramagnetic and chain-prone: initiation (**Cl₂ → 2Cl·**), propagation (**Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·**), termination (radical–radical combination). Charge is not the criterion — electron deficiency, richness or unpairedness is; match the attacker to the target and the reaction predicts itself.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Electrophiles, nucleophiles and free-radicals\"?",
@@ -54,8 +62,71 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: One-line trio — electrophile: electron-LOVING, accepts a pair (H+, NO2+, BF3, carbocation); nucleophile: electron-LOVING... donates a pair (OH−, CN−, NH3, carbanion); free radical: neutral with an unpaired electron (Cl·).",
-    "Trick 2: Charge test: electrophiles may be positive OR neutral (BF3, AlCl3); nucleophiles negative OR neutral (H2O, NH3) — 'charge is not the definition, electron pair behaviour is'.",
-    "Trick 3: Reaction mapping: substitution of benzene = electrophilic; hydrolysis of alkyl halide = nucleophilic; halogenation of methane in light = free-radical chain."
+    "E+ attacks electron-rich (π, lone pairs); Nu− donates to δ+ C; radical = neutral 7e from homolysis. Charged + neutral examples for each: H+/BF3; OH−/NH3; Cl·. Chain steps: initiation, propagation, termination."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Three Attackers\n\nOnce fission has made an electron-hungry or electron-rich species, reactions are a matter of matching attacker to target. **Electrophiles** love electrons and attack electron-rich sites; **nucleophiles** love nuclei (positive centres) and donate electron pairs; **free radicals** carry unpaired electrons and strip atoms from bonds. Every organic reaction is a conversation between one of these three and the substrate.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Electrophiles (E⁺)\n\n- **Definition:** electron-loving species — **electron-deficient**, accept an electron pair; attack **electron-rich** sites (double bonds, lone pairs).\n- **Charged:** H⁺, NO₂⁺ (nitronium), CH₃⁺ (carbocation), Br⁺, Cl⁺.\n- **Neutral:** BF₃, AlCl₃, SO₃ — incomplete octets or polarised atoms make them acceptors.\n\n### 2.2 Nucleophiles (Nu⁻)\n\n- **Definition:** nucleus-loving species — **electron-rich**, donate an electron pair; attack **electron-deficient** centres.\n- **Charged:** OH⁻, CN⁻, Cl⁻, CH₃O⁻, H⁻.\n- **Neutral:** H₂O, NH₃, ROH, RNH₂ — lone pairs make them donors.\n- Nucleophile = Lewis base in action; electrophile = Lewis acid in action.\n\n### 2.3 Free radicals\n\n- **Definition:** neutral species with an **unpaired electron** (written X·), formed by **homolytic fission**.\n- Paramagnetic; highly reactive; drive **chain reactions**: initiation (Cl₂ → 2Cl·), propagation (Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·), termination (Cl· + Cl· → Cl₂).\n- Attack by **abstracting** atoms or adding to multiple bonds — the third reagent class alongside ions.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Electrophile** | Electron-pair acceptor attacking electron-rich sites | H⁺, NO₂⁺, BF₃ |\n| **Nucleophile** | Electron-pair donor attacking electron-poor centres | OH⁻, CN⁻, NH₃ |\n| **Free radical** | Neutral species with an unpaired electron | Cl·, CH₃· |\n| **Chain reaction** | Initiation–propagation–termination radical sequence | methane chlorination |",
+      "## 4. Detailed Explanation\n\n### 4.1 The matching rule\n\n- Electrophiles seek **π bonds and lone pairs**; nucleophiles seek **δ+ atoms** (carbonyl carbon, alkyl halide carbon); radicals seek **any bond they can split into two radicals**. Predicting an organic reaction starts by identifying which of the three is present.\n\n### 4.2 Charged vs neutral members\n\n- Both families have charged and neutral members: charge is not the criterion — **electron deficiency or richness** is. BF₃ is neutral yet a strong electrophile (empty p orbital); NH₃ is neutral yet a good nucleophile (lone pair).\n\n### 4.3 Radicals vs the ionic pair\n\n- Radicals are made by **homolysis** (light/heat), ions by **heterolysis**. Radicals are neutral but have 7-electron hunger; electrophiles/nucleophiles carry charge or lone pairs. Conditions select the family: UV light → radical chemistry; polar solvent + catalyst → ionic chemistry.",
+      "## 5. Comparison Tables\n\n**The three reagent classes**\n\n| Basis | Electrophile | Nucleophile | Free radical |\n|---|---|---|---|\n| electron count | deficient (accepts pair) | rich (donates pair) | unpaired electron |\n| charge | + or neutral | − or neutral | always neutral |\n| attacks | electron-rich (π, lone pairs) | electron-poor (δ+ C) | σ bonds (abstraction) |\n| origin | heterolysis / Lewis acids | heterolysis / lone pairs | homolysis (hν, Δ) |\n| examples | H⁺, NO₂⁺, CH₃⁺, BF₃, AlCl₃ | OH⁻, CN⁻, Cl⁻, NH₃, H₂O | Cl·, CH₃·, Br· |",
+      "## 6. Common Confusions\n\n**Neutral ≠ inactive:** BF₃ and AlCl₃ are neutral electrophiles; H₂O and NH₃ are neutral nucleophiles — judge by electrons, not charge.",
+      "**Radicals are not anions:** Cl· has no charge; it differs from Cl⁻ by one electron, and that electron changes everything.",
+      "**Electrophile/nucleophile are roles, not fixed species:** H₂O can be a nucleophile (attacking a carbocation) or a weak electrophile-source (donating H⁺) — context assigns the role.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Define electrophile with two examples.** — An **electrophile** is an **electron-deficient species that accepts an electron pair** and attacks **electron-rich** centres (π bonds, lone pairs) in organic reactions. Examples: the **nitronium ion NO₂⁺** (attacks the benzene π system in nitration) and the **proton H⁺**; neutral examples include **BF₃ and AlCl₃** (incomplete octets).",
+      "**NEB-style (2m): Define nucleophile with two examples.** — A **nucleophile** is an **electron-rich species that donates an electron pair** to an **electron-deficient** centre (a \"nucleus-loving\" reagent). Examples: the **hydroxide ion OH⁻** and the **cyanide ion CN⁻**; neutral examples include **ammonia NH₃** and **water H₂O**, whose lone pairs make them donors.",
+      "**NEB-style (3m): What are free radicals? Describe the chain mechanism of chlorination of methane.** — **Free radicals** are **neutral species with an unpaired electron**, formed by **homolytic fission** of a covalent bond under heat or light; they are paramagnetic and highly reactive. **Chlorination of methane:** **Initiation** — sunlight splits chlorine homolytically: **Cl₂ → 2Cl·**. **Propagation** — Cl· abstracts H: **Cl· + CH₄ → CH₃· + HCl**; then the methyl radical attacks chlorine: **CH₃· + Cl₂ → CH₃Cl + Cl·** (the radical is regenerated, so the chain continues). **Termination** — radicals combine: **Cl· + Cl· → Cl₂**, CH₃· + Cl· → CH₃Cl, or CH₃· + CH₃· → C₂H₆, ending the chain."
+    ],
+    "keyPoints": [
+      "Electrophile: electron-deficient, accepts pair, attacks electron-rich sites; charged H+, NO2+, CH3+, Br+; neutral BF3, AlCl3, SO3 (incomplete octet). Nucleophile: electron-rich, donates pair, attacks electron-deficient centres; charged OH-, CN-, Cl-, CH3O-; neutral H2O, NH3, ROH (lone pairs). Electrophile = Lewis acid acting; nucleophile = Lewis base acting. Free radical: neutral, unpaired electron (X.), from homolysis (hV/heat), paramagnetic; chain reaction: initiation Cl2 -> 2Cl., propagation Cl. + CH4 -> CH3. + HCl then CH3. + Cl2 -> CH3Cl + Cl., termination radical combination."
+    ],
+    "importantConcepts": [
+      "Match attacker to target: electrophiles find π bonds and lone pairs, nucleophiles find δ+ carbons, radicals strip hydrogens — identify the reagent class and the reaction predicts itself."
+    ],
+    "examples": [
+      "***The neutral electrophile*** — BF3 has no charge but an empty p orbital; it grabs electron pairs as eagerly as any cation — deficiency, not charge, defines the family."
+    ],
+    "universalFacts": [
+      "Radical chain reactions run the world's plastics: ethene polymerises by radical initiation, each propagation step adding another monomer to the growing chain."
+    ],
+    "importantStatements": [
+      "\"Electrophiles are electron-deficient species attacking electron-rich centres; nucleophiles are electron-rich species donating a pair to electron-deficient centres; free radicals are neutral species with unpaired electrons.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "E+ attacks electron-rich (π, lone pairs); Nu− donates to δ+ C; radical = neutral 7e from homolysis. Charged + neutral examples for each: H+/BF3; OH−/NH3; Cl·. Chain steps: initiation, propagation, termination."
+    ],
+    "examNotes": [
+      "Give one charged AND one neutral example per class — listing only ions loses the neutrality mark."
+    ],
+    "formulas": [
+      "- Electrophiles: H⁺, NO₂⁺, CH₃⁺, Br⁺, BF₃, AlCl₃, SO₃\n- Nucleophiles: OH⁻, CN⁻, Cl⁻, CH₃O⁻, H₂O, NH₃, ROH\n- Radical chain: Cl₂ → 2Cl·; Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·; Cl· + Cl· → Cl₂"
+    ],
+    "practice": [
+      "Classify: BF3, OH-, Cl., NO2+, NH3, CH3+ into the three reagent classes."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Define electrophile with two examples.** — An **electrophile** (\"electron-loving\") is an **electron-deficient species that accepts a pair of electrons** and therefore attacks the **electron-rich** parts of molecules — π bonds and lone pairs. **Examples:** the **nitronium ion, NO₂⁺**, which attacks the benzene π system in nitration, and the **proton, H⁺**; neutral electrophiles include **BF₃ and AlCl₃**, whose central atoms have incomplete octets. An electrophile is a Lewis acid in action.",
+      "**NEB-style (2m): Define nucleophile with two examples.** — A **nucleophile** (\"nucleus-loving\") is an **electron-rich species that donates an electron pair** to an electron-deficient centre (a δ+ carbon or cation). **Examples:** the **hydroxide ion, OH⁻**, and the **cyanide ion, CN⁻** — both carry a lone pair and a negative charge; neutral nucleophiles include **ammonia, NH₃**, and **water, H₂O**, whose lone pairs make them donors. A nucleophile is a Lewis base in action.",
+      "**NEB-style (3m): What are free radicals? Describe the chain mechanism of chlorination of methane.** — **Free radicals** are **neutral species possessing an unpaired electron** (written X·), produced by **homolytic fission** of a covalent bond under **heat or ultraviolet light**; they are paramagnetic and extremely reactive. **Chlorination of methane proceeds by a radical chain:** **Initiation** — UV light splits chlorine homolytically: **Cl₂ → 2Cl·**. **Propagation** — the chlorine radical abstracts hydrogen: **Cl· + CH₄ → CH₃· + HCl**; the methyl radical then attacks another chlorine molecule: **CH₃· + Cl₂ → CH₃Cl + Cl·** — regenerating Cl·, so the chain sustains itself and one photon produces many product molecules. **Termination** — two radicals combine, consuming the chain carriers: **Cl· + Cl· → Cl₂**, **CH₃· + Cl· → CH₃Cl**, or **CH₃· + CH₃· → C₂H₆**."
+    ]
+  },
+  "importantConcepts": [
+    "Match attacker to target: electrophiles find π bonds and lone pairs, nucleophiles find δ+ carbons, radicals strip hydrogens — identify the reagent class and the reaction predicts itself."
+  ],
+  "importantStatements": [
+    "\"Electrophiles are electron-deficient species attacking electron-rich centres; nucleophiles are electron-rich species donating a pair to electron-deficient centres; free radicals are neutral species with unpaired electrons.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examNotes": [
+    "Give one charged AND one neutral example per class — listing only ions loses the neutrality mark."
+  ],
+  "formulas": [
+    "- Electrophiles: H⁺, NO₂⁺, CH₃⁺, Br⁺, BF₃, AlCl₃, SO₃\n- Nucleophiles: OH⁻, CN⁻, Cl⁻, CH₃O⁻, H₂O, NH₃, ROH\n- Radical chain: Cl₂ → 2Cl·; Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·; Cl· + Cl· → Cl₂"
   ]
 }

@@ -7,22 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Structural isomerism and its types: chain isomerism, posi… — Fundamental Principles of Organic Chemistry, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: structural isomerism, its types: chain isomerism, position isomerism, functional isomerism · one worked example · one misconception each.",
-    "**Fact.** Structural: chain, position, functional, metamerism, tautomerism. Same formula, different connectivity.",
-    "**Fact.** Geometrical (cis/trans or E/Z): restricted rotation (double bond / ring) + two different groups on each end.",
-    "**Fact.** Optical: chiral centre (4 different groups); d/l (+/− enantiomers; meso = optically inactive despite chiral centres).",
-    "**Its types: chain isomerism.** one-line definition + one-line exam use.",
-    "**Position isomerism.** one-line definition + one-line exam use.",
-    "**Functional isomerism.** one-line definition + one-line exam use.",
-    "**Metamerism.** one-line definition + one-line exam use.",
-    "**Tautomerism.** one-line definition + one-line exam use.",
-    "# Structural isomerism and its types: chain isomerism, position isomerism, functional isomerism, metamerism and tautomerism\n\n## 1. Introduction\nChemical picture of **Structural isomerism and its types** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Fundamental Principles of Organic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Structural isomerism and its types: chain isomerism\n### position isomerism\n### functional isomerism\n### metamerism and tautomerism\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and reagent sheet**\n\n| Transformation | Reagent + conditions | Product | Note or trap |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Structural isomerism and its types — mechanism with curved arrows, step by step (authored SVG)\n- **D2** — Structural isomerism and its types — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Structural isomerism and its types — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Structural isomerism and its types — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Five Ways to Rewire the Same Atoms\n\nStructural isomerism is connectivity chemistry: the same atoms, joined differently, give different compounds. Five sub-types cover it — **chain, position, functional, metamerism and tautomerism** — and each has a signature pair that examiners love. Learn the diagnostic question each type answers and you can classify any pair on sight.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Chain (skeletal) isomerism\n\n- Same formula, **different carbon skeletons** — straight vs branched.\n- C₄H₁₀: **butane** (straight) / **2-methylpropane** (branched). C₅H₁₂: n-pentane, isopentane (2-methylbutane), neopentane (2,2-dimethylpropane) — three chain isomers.\n\n### 2.2 Position isomerism\n\n- Same skeleton **and** same functional group; the group sits on **different carbons**.\n- Propan-1-ol / propan-2-ol; but-1-ene / but-2-ene; o-/m-/p-xylene (methyl positions on benzene).\n\n### 2.3 Functional isomerism\n\n- Same formula, **different functional groups** — different families entirely.\n- C₂H₆O: **ethanol** (alcohol) / **dimethyl ether** (ether). C₃H₆O: **propanal** (aldehyde) / **propanone** (ketone).\n\n### 2.4 Metamerism\n\n- Same formula and same functional group, but the group sits between **different alkyl groups** (unequal distribution around a polyvalent atom/group: O, N, C=O).\n- C₄H₁₀O: **ethoxyethane C₂H₅–O–C₂H₅** / **methoxypropane CH₃–O–C₃H₇**. Also in ketones (C₃H₇COCH₃ vs C₂H₅COC₂H₅) and secondary amines.\n\n### 2.5 Tautomerism\n\n- A **dynamic equilibrium** between two structural forms differing in the position of one (usually H) atom and a π bond — the classic **keto–enol** system.\n- Acetaldehyde ⇌ vinyl alcohol; acetone ⇌ its enol. Requires an **α-hydrogen** next to the C=O; catalysed by acid or base; usually the keto form dominates.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Chain isomerism** | Different carbon skeletons, same formula | butane / 2-methylpropane |\n| **Position isomerism** | Same group on different carbons | propan-1-ol / propan-2-ol |\n| **Functional isomerism** | Different functional groups | ethanol / dimethyl ether |\n| **Metamerism** | Different alkyl groups around a polyvalent group | C₂H₅OC₂H₅ / CH₃OC₃H₇ |\n| **Tautomerism** | Dynamic H-and-π-shift equilibrium | keto ⇌ enol |",
+    "## 4. Detailed Explanation\n\n### 4.1 The diagnostic questions\n\n- Different **skeleton**? → chain. Same skeleton, group moved? → position. Different **group**? → functional. Same group, different **alkyl flanks**? → metamerism. Forms interconverting via an **H shift**? → tautomerism. Ask them in order and every pair lands in one box.\n\n### 4.2 Why tautomerism is special\n\n- The other four types give **stable, isolable** compounds. Tautomers interconvert continuously through a **proton + π-bond migration**; you cannot bottle \"the enol of acetone\" — the equilibrium mixture is what exists. That dynamic character places tautomerism at the boundary of structural isomerism.\n\n### 4.3 Metamerism vs position — the subtle pair\n\n- Both keep the functional group. Position moves the group **along one skeleton**; metamerism keeps the group's location type but changes **which alkyl groups flank it** (ethyl+ethyl vs methyl+propyl). If the group is between two carbons on both sides, think metamerism.",
+    "## 5. Comparison Tables\n\n**The five types at a glance**\n\n| Type | What differs | Signature pair |\n|---|---|---|\n| chain | carbon skeleton | butane / 2-methylpropane |\n| position | group location | propan-1-ol / propan-2-ol |\n| functional | functional group | ethanol / dimethyl ether |\n| metamerism | alkyl groups around polyvalent group | C₂H₅OC₂H₅ / CH₃OC₃H₇ |\n| tautomerism | H + π position (dynamic) | acetaldehyde ⇌ vinyl alcohol |",
+    "## 6. Common Confusions\n\n**Metamerism is not position isomerism:** in metamerism the *groups attached to the polyvalent atom* change (ethyl/ethyl → methyl/propyl); position isomerism slides one group along an unchanged skeleton.",
+    "**Enols are not isolable curiosities:** the keto form usually dominates (>99%), but the tiny enol fraction drives reactions like halogenation of ketones.",
+    "**Functional isomers belong to different series:** ethanol is an alkanol, dimethyl ether an ether — different homologous series, different tests.",
+    "## 7. Exam Application\n\n**NEB-style (3m): What is structural isomerism? Explain chain, position and functional isomerism with one example each.** — **Structural isomerism** is the existence of compounds with the **same molecular formula but different connectivity** of atoms. **Chain isomerism:** the carbon **skeletons differ** — butane (straight) and 2-methylpropane (branched), both C₄H₁₀. **Position isomerism:** the skeleton and functional group are the same but the group occupies **different positions** — propan-1-ol (OH on C-1) and propan-2-ol (OH on C-2), both C₃H₈O. **Functional isomerism:** the same formula carries **different functional groups** — ethanol (CH₃CH₂OH, an alcohol) and dimethyl ether (CH₃OCH₃, an ether), both C₂H₆O; they belong to different homologous series and show entirely different chemical properties.",
+    "**NEB-style (2m): What is metamerism? Give an example.** — **Metamerism** is a type of structural isomerism in which compounds have the same functional group but differ in the **alkyl groups attached to the polyvalent atom or group** (O, N or C=O). Example: **ethoxyethane (C₂H₅–O–C₂H₅)** and **methoxypropane (CH₃–O–C₃H₇)** — both ethers of formula C₄H₁₀O, but the oxygen flanked by ethyl+ethyl versus methyl+propyl.",
+    "**NEB-style (2m): What is tautomerism? Write the keto–enol equilibrium of acetaldehyde.** — **Tautomerism** is the **dynamic equilibrium** between two structural forms of a compound that interconvert by migration of a hydrogen atom together with a π bond — most commonly the **keto ⇌ enol** system, catalysed by acid or base and requiring an **α-hydrogen**. For acetaldehyde: **CH₃CHO ⇌ CH₂=CH–OH** (keto form on the left, enol on the right; the keto form predominates)."
   ],
   "confusion": [],
   "bounds": [
@@ -31,32 +26,32 @@
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: structural: chain, position, functional, metamerism, tautomerism. same formula, different connectivity."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Structural: chain, position, functional, metamerism, tautomerism. Same formula, different connectivity.",
-    "Geometrical (cis/trans or E/Z): restricted rotation (double bond / ring) + two different groups on each end.",
-    "Optical: chiral centre (4 different groups); d/l (+/− enantiomers; meso = optically inactive despite chiral centres)."
+  "practice": [
+    "Explain chain, position and functional isomerism with one example each.",
+    "Define metamerism and distinguish it from position isomerism.",
+    "Write the keto-enol equilibrium of acetaldehyde and state the requirement for tautomerism."
   ],
-  "examples": [],
+  "universalFacts": [
+    "The keto-enol equilibrium powers ketone halogenation and enolate chemistry — the \"minor\" tautomer is often the reactive one."
+  ],
+  "examples": [
+    "***C5H12's three skeletons*** — n-pentane, isopentane and neopentane share one formula but differ only in branching: chain isomerism at its cleanest, with boiling points falling 36 -> 28 -> 9.5 C as branching increases."
+  ],
   "practiceQuestions": [
-    "Q. Show chain and position isomerism in C4H10/C4H9Cl. (2 marks) — n-butane vs isobutane; 1-chlorobutane vs 2-chlorobutane.",
-    "Q. Ethanol and dimethyl ether illustrate which isomerism? (1 mark) — functional isomerism."
+    "**NEB-style (3m): What is structural isomerism? Explain chain, position and functional isomerism with one example each.** — **Structural isomerism** is the phenomenon in which compounds have the **same molecular formula but different connectivity** — their atoms are joined in different arrangements. **Chain (skeletal) isomerism:** the **carbon skeletons differ** — butane (straight chain) and 2-methylpropane (branched chain), both C₄H₁₀; pentane, 2-methylbutane and 2,2-dimethylpropane give three chain isomers of C₅H₁₂. **Position isomerism:** the skeleton and functional group are identical but the group occupies **different positions on the chain** — **propan-1-ol** (OH on C-1) and **propan-2-ol** (OH on C-2), both C₃H₈O; likewise but-1-ene and but-2-ene. **Functional isomerism:** the same formula carries **different functional groups**, placing the compounds in different homologous series — **ethanol** (CH₃CH₂OH, an alcohol) and **dimethyl ether** (CH₃OCH₃, an ether), both C₂H₆O; also propanal (aldehyde) and propanone (ketone), both C₃H₆O.",
+    "**NEB-style (2m): What is metamerism? Give an example.** — **Metamerism** is a form of structural isomerism in which compounds share the **same functional group** but differ in the **alkyl groups attached on either side of the polyvalent atom or group** (oxygen in ethers, nitrogen in amines, the carbonyl carbon in ketones). Example: **ethoxyethane, C₂H₅–O–C₂H₅** (oxygen between two ethyl groups) and **methoxypropane, CH₃–O–C₃H₇** (oxygen between methyl and propyl) — both are ethers of formula C₄H₁₀O. The distribution of carbons around the hetero atom, not the skeleton or the group, is what differs.",
+    "**NEB-style (2m): What is tautomerism? Write the keto–enol equilibrium of acetaldehyde.** — **Tautomerism** is the existence of a compound as a **dynamic equilibrium** between two structural forms that interconvert by the **migration of a hydrogen atom together with a π bond** — the commonest being the **keto ⇌ enol** pair. It requires an **α-hydrogen** adjacent to the carbonyl group and is catalysed by acid or base; the keto form normally predominates. For **acetaldehyde**: **CH₃–CHO ⇌ CH₂=CH–OH** — the keto form (left) is in equilibrium with vinyl alcohol, the enol form (right)."
   ],
   "formulas": [
-    "Isomers: same molecular formula, different structure/arrangement"
+    "- Chain: C₄H₁₀ → butane / 2-methylpropane; C₅H₁₂ → 3 isomers\n- Position: CH₃CH₂CH₂OH / CH₃CHOHCH₃\n- Functional: C₂H₆O → CH₃CH₂OH / CH₃OCH₃\n- Metamerism: C₂H₅–O–C₂H₅ / CH₃–O–C₃H₇\n- Tautomerism: CH₃CHO ⇌ CH₂=CH–OH"
   ],
   "numericals": [
     "Use  Isomers: same molecular formula, different structure/arrangement  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Structural isomerism",
-    "• Its types: chain isomerism",
-    "• Position isomerism",
-    "• Functional isomerism",
-    "• Metamerism",
-    "• Tautomerism"
+    "Structural isomerism five types: chain — different skeletons (butane/2-methylpropane; C5H12 has 3: n-pentane, isopentane, neopentane); position — same group different carbon (propan-1-ol/propan-2-ol; but-1-ene/but-2-ene; o-/m-/p-xylene); functional — different groups (C2H6O ethanol/dimethyl ether; C3H6O propanal/propanone); metamerism — different alkyl groups around polyvalent group (C2H5-O-C2H5 vs CH3-O-C3H7; also ketones, 2-amines); tautomerism — dynamic keto-enol equilibrium via H + pi shift, needs alpha-H, acid/base catalysed, keto dominates (CH3CHO <=> CH2=CH-OH)."
   ],
-  "summary": "Structural isomerism and its types: chain isomerism, posi… (Fundamental Principles of Organic Chemistry, Chemistry, class-11-notes) covers Structural isomerism, its types: chain isomerism, position isomerism. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "**Structural isomerism** rewires the same atoms five ways. **Chain isomerism** changes the skeleton (butane/2-methylpropane; the three C₅H₁₂ isomers). **Position isomerism** slides one group along an unchanged skeleton (propan-1-ol/propan-2-ol). **Functional isomerism** swaps the group itself, jumping homologous series (ethanol/dimethyl ether; propanal/propanone). **Metamerism** keeps the group but redistributes the alkyl groups flanking a polyvalent atom (ethoxyethane/methoxypropane). **Tautomerism** is the odd one out — a **dynamic keto ⇌ enol equilibrium** (CH₃CHO ⇌ CH₂=CH–OH) driven by an α-hydrogen and acid/base catalysis, with the keto form dominant. Five diagnostic questions — skeleton? position? group? flanks? H-shift? — classify any pair on sight.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Structural isomerism and its types: chain isomerism, posi…\"?",
@@ -80,8 +75,70 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Five types with one example each — chain (butane/isobutane), position (1- vs 2-chloropropane), functional (ethanol/dimethyl ether), metamerism (diethyl vs methyl ethyl ether), tautomerism (keto–enol).",
-    "Trick 2: Quick test order: same molecular formula? → same carbon skeleton? (chain) → same group position? (position) → same functional group? (functional) → different alkyl groups around a divalent group? (metamerism).",
-    "Trick 3: Metamerism needs a divalent atom/group (O, S, N) with two alkyl parts — C4H10O ethers show both chain and metamerism."
+    "Chain = skeleton; position = moved group; functional = new group; metamerism = changed alkyl flanks (O/N/C=O between them); tautomerism = keto <=> enol with alpha-H. Signature pairs: C4H10, propanols, C2H6O, C4H10O ethers, CH3CHO."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Five Ways to Rewire the Same Atoms\n\nStructural isomerism is connectivity chemistry: the same atoms, joined differently, give different compounds. Five sub-types cover it — **chain, position, functional, metamerism and tautomerism** — and each has a signature pair that examiners love. Learn the diagnostic question each type answers and you can classify any pair on sight.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Chain (skeletal) isomerism\n\n- Same formula, **different carbon skeletons** — straight vs branched.\n- C₄H₁₀: **butane** (straight) / **2-methylpropane** (branched). C₅H₁₂: n-pentane, isopentane (2-methylbutane), neopentane (2,2-dimethylpropane) — three chain isomers.\n\n### 2.2 Position isomerism\n\n- Same skeleton **and** same functional group; the group sits on **different carbons**.\n- Propan-1-ol / propan-2-ol; but-1-ene / but-2-ene; o-/m-/p-xylene (methyl positions on benzene).\n\n### 2.3 Functional isomerism\n\n- Same formula, **different functional groups** — different families entirely.\n- C₂H₆O: **ethanol** (alcohol) / **dimethyl ether** (ether). C₃H₆O: **propanal** (aldehyde) / **propanone** (ketone).\n\n### 2.4 Metamerism\n\n- Same formula and same functional group, but the group sits between **different alkyl groups** (unequal distribution around a polyvalent atom/group: O, N, C=O).\n- C₄H₁₀O: **ethoxyethane C₂H₅–O–C₂H₅** / **methoxypropane CH₃–O–C₃H₇**. Also in ketones (C₃H₇COCH₃ vs C₂H₅COC₂H₅) and secondary amines.\n\n### 2.5 Tautomerism\n\n- A **dynamic equilibrium** between two structural forms differing in the position of one (usually H) atom and a π bond — the classic **keto–enol** system.\n- Acetaldehyde ⇌ vinyl alcohol; acetone ⇌ its enol. Requires an **α-hydrogen** next to the C=O; catalysed by acid or base; usually the keto form dominates.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Chain isomerism** | Different carbon skeletons, same formula | butane / 2-methylpropane |\n| **Position isomerism** | Same group on different carbons | propan-1-ol / propan-2-ol |\n| **Functional isomerism** | Different functional groups | ethanol / dimethyl ether |\n| **Metamerism** | Different alkyl groups around a polyvalent group | C₂H₅OC₂H₅ / CH₃OC₃H₇ |\n| **Tautomerism** | Dynamic H-and-π-shift equilibrium | keto ⇌ enol |",
+      "## 4. Detailed Explanation\n\n### 4.1 The diagnostic questions\n\n- Different **skeleton**? → chain. Same skeleton, group moved? → position. Different **group**? → functional. Same group, different **alkyl flanks**? → metamerism. Forms interconverting via an **H shift**? → tautomerism. Ask them in order and every pair lands in one box.\n\n### 4.2 Why tautomerism is special\n\n- The other four types give **stable, isolable** compounds. Tautomers interconvert continuously through a **proton + π-bond migration**; you cannot bottle \"the enol of acetone\" — the equilibrium mixture is what exists. That dynamic character places tautomerism at the boundary of structural isomerism.\n\n### 4.3 Metamerism vs position — the subtle pair\n\n- Both keep the functional group. Position moves the group **along one skeleton**; metamerism keeps the group's location type but changes **which alkyl groups flank it** (ethyl+ethyl vs methyl+propyl). If the group is between two carbons on both sides, think metamerism.",
+      "## 5. Comparison Tables\n\n**The five types at a glance**\n\n| Type | What differs | Signature pair |\n|---|---|---|\n| chain | carbon skeleton | butane / 2-methylpropane |\n| position | group location | propan-1-ol / propan-2-ol |\n| functional | functional group | ethanol / dimethyl ether |\n| metamerism | alkyl groups around polyvalent group | C₂H₅OC₂H₅ / CH₃OC₃H₇ |\n| tautomerism | H + π position (dynamic) | acetaldehyde ⇌ vinyl alcohol |",
+      "## 6. Common Confusions\n\n**Metamerism is not position isomerism:** in metamerism the *groups attached to the polyvalent atom* change (ethyl/ethyl → methyl/propyl); position isomerism slides one group along an unchanged skeleton.",
+      "**Enols are not isolable curiosities:** the keto form usually dominates (>99%), but the tiny enol fraction drives reactions like halogenation of ketones.",
+      "**Functional isomers belong to different series:** ethanol is an alkanol, dimethyl ether an ether — different homologous series, different tests.",
+      "## 7. Exam Application\n\n**NEB-style (3m): What is structural isomerism? Explain chain, position and functional isomerism with one example each.** — **Structural isomerism** is the existence of compounds with the **same molecular formula but different connectivity** of atoms. **Chain isomerism:** the carbon **skeletons differ** — butane (straight) and 2-methylpropane (branched), both C₄H₁₀. **Position isomerism:** the skeleton and functional group are the same but the group occupies **different positions** — propan-1-ol (OH on C-1) and propan-2-ol (OH on C-2), both C₃H₈O. **Functional isomerism:** the same formula carries **different functional groups** — ethanol (CH₃CH₂OH, an alcohol) and dimethyl ether (CH₃OCH₃, an ether), both C₂H₆O; they belong to different homologous series and show entirely different chemical properties.",
+      "**NEB-style (2m): What is metamerism? Give an example.** — **Metamerism** is a type of structural isomerism in which compounds have the same functional group but differ in the **alkyl groups attached to the polyvalent atom or group** (O, N or C=O). Example: **ethoxyethane (C₂H₅–O–C₂H₅)** and **methoxypropane (CH₃–O–C₃H₇)** — both ethers of formula C₄H₁₀O, but the oxygen flanked by ethyl+ethyl versus methyl+propyl.",
+      "**NEB-style (2m): What is tautomerism? Write the keto–enol equilibrium of acetaldehyde.** — **Tautomerism** is the **dynamic equilibrium** between two structural forms of a compound that interconvert by migration of a hydrogen atom together with a π bond — most commonly the **keto ⇌ enol** system, catalysed by acid or base and requiring an **α-hydrogen**. For acetaldehyde: **CH₃CHO ⇌ CH₂=CH–OH** (keto form on the left, enol on the right; the keto form predominates)."
+    ],
+    "keyPoints": [
+      "Structural isomerism five types: chain — different skeletons (butane/2-methylpropane; C5H12 has 3: n-pentane, isopentane, neopentane); position — same group different carbon (propan-1-ol/propan-2-ol; but-1-ene/but-2-ene; o-/m-/p-xylene); functional — different groups (C2H6O ethanol/dimethyl ether; C3H6O propanal/propanone); metamerism — different alkyl groups around polyvalent group (C2H5-O-C2H5 vs CH3-O-C3H7; also ketones, 2-amines); tautomerism — dynamic keto-enol equilibrium via H + pi shift, needs alpha-H, acid/base catalysed, keto dominates (CH3CHO <=> CH2=CH-OH)."
+    ],
+    "importantConcepts": [
+      "Five diagnostic questions sort any pair: different skeleton? moved group? different group? different alkyl flanks? dynamic H-shift? — structural isomerism is a decision tree, not a memory list."
+    ],
+    "examples": [
+      "***C5H12's three skeletons*** — n-pentane, isopentane and neopentane share one formula but differ only in branching: chain isomerism at its cleanest, with boiling points falling 36 -> 28 -> 9.5 C as branching increases."
+    ],
+    "universalFacts": [
+      "The keto-enol equilibrium powers ketone halogenation and enolate chemistry — the \"minor\" tautomer is often the reactive one."
+    ],
+    "importantStatements": [
+      "\"Structural isomerism is the existence of compounds with the same molecular formula but different connectivity, classified as chain, position, functional isomerism, metamerism and tautomerism.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Chain = skeleton; position = moved group; functional = new group; metamerism = changed alkyl flanks (O/N/C=O between them); tautomerism = keto <=> enol with alpha-H. Signature pairs: C4H10, propanols, C2H6O, C4H10O ethers, CH3CHO."
+    ],
+    "examNotes": [
+      "When asked to \"explain with example\", write both structures of the pair and name the differing feature explicitly — the named feature is the mark."
+    ],
+    "formulas": [
+      "- Chain: C₄H₁₀ → butane / 2-methylpropane; C₅H₁₂ → 3 isomers\n- Position: CH₃CH₂CH₂OH / CH₃CHOHCH₃\n- Functional: C₂H₆O → CH₃CH₂OH / CH₃OCH₃\n- Metamerism: C₂H₅–O–C₂H₅ / CH₃–O–C₃H₇\n- Tautomerism: CH₃CHO ⇌ CH₂=CH–OH"
+    ],
+    "practice": [
+      "Explain chain, position and functional isomerism with one example each.",
+      "Define metamerism and distinguish it from position isomerism.",
+      "Write the keto-enol equilibrium of acetaldehyde and state the requirement for tautomerism."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): What is structural isomerism? Explain chain, position and functional isomerism with one example each.** — **Structural isomerism** is the phenomenon in which compounds have the **same molecular formula but different connectivity** — their atoms are joined in different arrangements. **Chain (skeletal) isomerism:** the **carbon skeletons differ** — butane (straight chain) and 2-methylpropane (branched chain), both C₄H₁₀; pentane, 2-methylbutane and 2,2-dimethylpropane give three chain isomers of C₅H₁₂. **Position isomerism:** the skeleton and functional group are identical but the group occupies **different positions on the chain** — **propan-1-ol** (OH on C-1) and **propan-2-ol** (OH on C-2), both C₃H₈O; likewise but-1-ene and but-2-ene. **Functional isomerism:** the same formula carries **different functional groups**, placing the compounds in different homologous series — **ethanol** (CH₃CH₂OH, an alcohol) and **dimethyl ether** (CH₃OCH₃, an ether), both C₂H₆O; also propanal (aldehyde) and propanone (ketone), both C₃H₆O.",
+      "**NEB-style (2m): What is metamerism? Give an example.** — **Metamerism** is a form of structural isomerism in which compounds share the **same functional group** but differ in the **alkyl groups attached on either side of the polyvalent atom or group** (oxygen in ethers, nitrogen in amines, the carbonyl carbon in ketones). Example: **ethoxyethane, C₂H₅–O–C₂H₅** (oxygen between two ethyl groups) and **methoxypropane, CH₃–O–C₃H₇** (oxygen between methyl and propyl) — both are ethers of formula C₄H₁₀O. The distribution of carbons around the hetero atom, not the skeleton or the group, is what differs.",
+      "**NEB-style (2m): What is tautomerism? Write the keto–enol equilibrium of acetaldehyde.** — **Tautomerism** is the existence of a compound as a **dynamic equilibrium** between two structural forms that interconvert by the **migration of a hydrogen atom together with a π bond** — the commonest being the **keto ⇌ enol** pair. It requires an **α-hydrogen** adjacent to the carbonyl group and is catalysed by acid or base; the keto form normally predominates. For **acetaldehyde**: **CH₃–CHO ⇌ CH₂=CH–OH** — the keto form (left) is in equilibrium with vinyl alcohol, the enol form (right)."
+    ]
+  },
+  "importantConcepts": [
+    "Five diagnostic questions sort any pair: different skeleton? moved group? different group? different alkyl flanks? dynamic H-shift? — structural isomerism is a decision tree, not a memory list."
+  ],
+  "importantStatements": [
+    "\"Structural isomerism is the existence of compounds with the same molecular formula but different connectivity, classified as chain, position, functional isomerism, metamerism and tautomerism.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examNotes": [
+    "When asked to \"explain with example\", write both structures of the pair and name the differing feature explicitly — the named feature is the mark."
   ]
 }

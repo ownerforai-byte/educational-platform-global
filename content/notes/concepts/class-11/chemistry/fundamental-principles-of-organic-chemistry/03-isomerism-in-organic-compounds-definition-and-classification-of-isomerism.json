@@ -7,19 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).",
-    "**Fact.** Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds.",
-    "**Fact.** Functional group priority (high → low) governs the suffix; others become prefixes with locants.",
-    "Electronic effects: inductive, resonance, electromeric.",
-    "Bond fission: homolytic (radicals), heterolytic (ions).",
-    "Reaction mechanisms: step-by-step electron movement.",
-    "Intermediates: carbocations, carbanions, free radicals.",
-    "# Isomerism in organic compounds: definition and classification of isomerism\n\n## 1. Introduction\nChemical picture of **Isomerism in organic compounds** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Fundamental Principles of Organic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Isomerism in organic compounds: definition and classification of isomerism\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and reagent sheet**\n\n| Transformation | Reagent + conditions | Product | Note or trap |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Isomerism in organic compounds — mechanism with curved arrows, step by step (authored SVG)\n- **D2** — Isomerism in organic compounds — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Isomerism in organic compounds — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Isomerism in organic compounds — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Same Formula, Different Molecule\n\n**Isomerism** is the phenomenon in which compounds share a molecular formula but differ in properties — the molecules differ in how their atoms are arranged or oriented. The classification splits first into **structural isomerism** (different connectivity) and **stereoisomerism** (same connectivity, different spatial arrangement). This topic builds the map; the next three topics tour each branch.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition\n\n- **Isomers:** compounds with the **same molecular formula** but **different physical and/or chemical properties**.\n- **Isomerism:** the phenomenon of their existence. Root cause: a molecular formula specifies *composition*, not *arrangement* — and arrangement decides properties.\n\n### 2.2 The classification map\n\n- **Isomerism**\n  - **Structural (constitutional):** atoms connected differently.\n    - **Chain (skeletal)** — different carbon skeletons.\n    - **Position** — same skeleton, group on different carbon.\n    - **Functional** — different functional groups.\n    - **Metamerism** — different alkyl groups on either side of a polyvalent group.\n    - **Tautomerism** — dynamic interconversion (keto ⇌ enol).\n  - **Stereoisomerism:** same connectivity, different 3-D arrangement.\n    - **Geometrical (cis–trans)** — restricted rotation about C=C.\n    - **Optical (d/l)** — non-superimposable mirror images (chirality).\n\n### 2.3 The signature examples\n\n- C₄H₁₀: butane and 2-methylpropane (chain).\n- C₂H₆O: ethanol and dimethyl ether (functional).\n- C₄H₈: cis- and trans-but-2-ene (geometrical).\n- Lactic acid CH₃CH(OH)COOH: two optical isomers.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Isomers** | Same molecular formula, different properties | C₂H₆O pair |\n| **Structural isomerism** | Different connectivity of atoms | butane vs isobutane |\n| **Stereoisomerism** | Same connectivity, different spatial arrangement | cis/trans-but-2-ene |\n| **Chirality** | Non-superimposable mirror-image relationship | lactic acid pair |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why isomerism happens at all\n\n- A molecular formula counts atoms but says nothing about **which atom bonds to which** (structural level) or **how the arrangement sits in space** (stereo level). Carbon's tetravalency lets the same atom set be wired and oriented in multiple stable ways — each wiring/orientation is a distinct compound with its own melting point, boiling point, reactivity.\n\n### 4.2 How the two great branches differ\n\n- Structural isomers differ in **which atoms are joined** — to interconvert them you must **break and remake bonds** (a chemical change).\n- Stereoisomers have identical connectivity — they differ only in **geometry**; interconversion needs rotation about a double bond (geometrical) or inversion at a stereocentre (optical), not bond-breaking.\n\n### 4.3 Isomerism as evidence\n\n- Isomerism proved early on that structure — not just composition — is real chemistry. Wöhler's NH₄OCN/urea pair was an isomer pair; every isomer discovered since confirmed that arrangement is destiny.",
+    "## 5. Comparison Tables\n\n**Structural vs stereoisomerism**\n\n| Basis | Structural isomerism | Stereoisomerism |\n|---|---|---|\n| connectivity | different | identical |\n| spatial arrangement | not the issue | the only issue |\n| interconversion | needs bond breaking | needs rotation/inversion |\n| sub-types | chain, position, functional, metamerism, tautomerism | geometrical, optical |\n| example | butane / 2-methylpropane | cis / trans-but-2-ene |",
+    "## 6. Common Confusions\n\n**Isomers are different compounds, not the same compound \"in another form\":** each has its own m.p., b.p., spectra and reactions.",
+    "**Tautomerism sits in the structural branch but is dynamic:** the two forms interconvert constantly through a mobile-H shift — unlike other structural isomers, which are stable separate compounds.",
+    "**Same molecular formula is the entry ticket:** if the formulas differ, they are homologues or different compounds — not isomers.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Define isomerism. Classify isomerism with examples.** — **Isomerism** is the phenomenon in which **two or more compounds have the same molecular formula but different physical and chemical properties** (such compounds are isomers). It is classified into **structural isomerism** — different connectivity: **chain** (butane and 2-methylpropane, C₄H₁₀), **position** (propan-1-ol and propan-2-ol), **functional** (ethanol and dimethyl ether, C₂H₆O), **metamerism** (ethoxyethane and methoxypropane, C₄H₁₀O), **tautomerism** (acetaldehyde ⇌ vinyl alcohol) — and **stereoisomerism** — same connectivity, different spatial arrangement: **geometrical (cis/trans)** (cis- and trans-but-2-ene) and **optical** (d- and l-lactic acid).",
+    "**NEB-style (2m): Distinguish between structural isomers and stereoisomers.** — **Structural isomers** differ in the **connectivity** of atoms — which atom is bonded to which (butane vs 2-methylpropane); converting one into the other requires **breaking and forming bonds**. **Stereoisomers** have **identical connectivity** but differ in the **spatial arrangement** of atoms (cis- and trans-but-2-ene); interconversion requires rotation about a double bond or inversion at a chiral centre, not bond-breaking. Both share the same molecular formula.",
+    "**NEB-style (1m): Give one example of a pair of compounds having the molecular formula C₂H₆O.** — **Ethanol (CH₃CH₂OH)** and **dimethyl ether (CH₃OCH₃)** — same molecular formula C₂H₆O, different structures and properties (liquid vs gas; they are functional isomers)."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -67,99 +65,31 @@
     "Limit to remember: iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…)."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups.",
-    "Practice drawing structural and condensed formulas."
+    "Define isomerism and draw its complete classification with one example per type.",
+    "Distinguish structural from stereoisomerism on connectivity and interconversion.",
+    "List all isomer types exhibited by C4H10O."
   ],
   "universalFacts": [
-    "IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).",
-    "Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds.",
-    "Functional group priority (high → low) governs the suffix; others become prefixes with locants."
+    "Wöhler's ammonium cyanate and urea — the same CH4N2O — were isomers: the discovery that founded both isomerism and modern organic chemistry."
   ],
   "examples": [
-    "C₄H₁₀: n-butane (straight chain) vs isobutane (branched)"
+    "***One formula, four stories for C4H8*** — but-1-ene (chain position), cis- and trans-but-2-ene (geometry), cyclobutane and methylcyclopropane (ring-chain): a single formula spawning an entire family."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups."
+    "**NEB-style (2m): Define isomerism. Classify isomerism with examples.** — **Isomerism** is the phenomenon in which two or more compounds possess the **same molecular formula** but differ in their **physical and chemical properties** because their atoms are arranged differently; the compounds are **isomers**. It divides into **structural isomerism**, where the **connectivity of atoms differs**: **chain isomerism** (butane and 2-methylpropane, C₄H₁₀), **position isomerism** (propan-1-ol and propan-2-ol, C₃H₈O), **functional isomerism** (ethanol and dimethyl ether, C₂H₆O), **metamerism** (ethoxyethane and methoxypropane, C₄H₁₀O) and **tautomerism** (acetaldehyde ⇌ vinyl alcohol, a dynamic keto–enol equilibrium); and **stereoisomerism**, where connectivity is identical but the **spatial arrangement differs**: **geometrical (cis–trans) isomerism** (cis- and trans-but-2-ene) and **optical isomerism** (the d- and l-forms of lactic acid, non-superimposable mirror images).",
+    "**NEB-style (2m): Distinguish between structural isomers and stereoisomers.** — **Structural isomers** have the same molecular formula but **different connectivity** — the atoms are joined in different sequences (butane vs 2-methylpropane); converting one into another requires **breaking and re-forming bonds**, i.e. a chemical reaction. **Stereoisomers** have **identical connectivity** and differ only in the **three-dimensional arrangement** of their atoms (cis- and trans-but-2-ene); their interconversion requires **restricted rotation about a double bond** or **inversion at a stereocentre**, not bond-breaking. Both classes share one molecular formula but show different properties.",
+    "**NEB-style (1m): Give one example of a pair of compounds having the molecular formula C₂H₆O.** — **Ethanol (CH₃CH₂OH)** and **dimethyl ether (CH₃OCH₃)**: both have the molecular formula C₂H₆O but different connectivity (C–C–O–H versus C–O–C), so they are **functional isomers** with entirely different properties — a volatile liquid alcohol versus a gaseous ether."
   ],
   "formulas": [
-    "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name"
+    "- C₄H₁₀: butane / 2-methylpropane (chain)\n- C₂H₆O: CH₃CH₂OH / CH₃OCH₃ (functional)\n- C₃H₈O: propan-1-ol / propan-2-ol (position)\n- C₄H₁₀O: C₂H₅OC₂H₅ / CH₃OC₃H₇ (metamerism)\n- C₄H₈: cis- / trans-but-2-ene (geometrical)\n- CH₃CH(OH)COOH: d / l (optical)"
   ],
   "numericals": [
     "Use  Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Isomerism in organic compounds: definition",
-    "• Classification of isomerism"
+    "Isomerism: same molecular formula, different properties. Two branches: structural (different connectivity) — chain (C4H10: butane/2-methylpropane), position (propan-1-ol/propan-2-ol), functional (C2H6O: ethanol/dimethyl ether), metamerism (C4H10O: ethoxyethane/methoxypropane), tautomerism (keto-enol, dynamic); stereoisomerism (same connectivity, different 3-D) — geometrical cis/trans (but-2-ene), optical d/l (lactic acid, chiral carbon). Structural interconversion needs bond-breaking; stereoisomer interconversion needs rotation/inversion."
   ],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nCarbon forms 4 covalent bonds in all stable compounds.\n\nIsomerism increases molecular diversity enormously.",
+  "summary": "**Isomers** share a molecular formula and nothing else — their atoms are arranged differently, so their properties differ. The classification has two great branches. **Structural isomerism** changes connectivity: **chain** (butane/2-methylpropane), **position** (propan-1-ol/propan-2-ol), **functional** (ethanol/dimethyl ether), **metamerism** (ethoxyethane/methoxypropane) and **tautomerism** (the dynamic keto ⇌ enol shift). **Stereoisomerism** keeps connectivity and changes geometry: **geometrical cis–trans** isomerism (but-2-ene, locked by the double bond) and **optical d/l** isomerism (lactic acid, non-superimposable mirror images around a chiral carbon). Structural isomers interconvert only through bond-breaking; stereoisomers through rotation or inversion — a single molecular formula is an inventory, and arrangement is what makes a molecule itself.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Isomerism in organic compounds: definition and classifica…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -182,16 +112,16 @@
     }
   ],
   "importantNotes": [
-    "Important note regarding 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types."
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
   ],
   "examShortTricks": [
-    "Trick 1"
+    "Map: structural = connectivity differs (chain/position/functional/metamerism/tautomerism); stereo = geometry differs (geometrical/optical). Signature pairs: C4H10 chain, C2H6O functional, but-2-ene geometrical, lactic acid optical."
   ],
   "examNotes": [
-    "Exam note 1."
+    "Draw the classification as a tree with one example per leaf — the tree itself carries most of the marks in classification questions."
   ],
   "importantConcepts": [
-    "Key concept 1 for 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types."
+    "A molecular formula is an inventory, not a blueprint: composition alone cannot identify a compound — arrangement, in wiring or in space, is what makes a molecule itself."
   ],
   "importantTasks": [
     "Task for studying 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types."
@@ -211,7 +141,7 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "importantStatements": [
-    "Key statement for 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types."
+    "\"Isomers are compounds having the same molecular formula but different properties due to different arrangements of atoms; isomerism is classified into structural and stereoisomerism.\""
   ],
   "specialNotes": [
     "Specialized insight for 03 isomerism in organic compounds definition and classification of isomerism structural isomerism and its types."
@@ -222,5 +152,57 @@
     "component": "MechanismAnimator",
     "desc": "Reaction mechanism animation"
   },
-  "visualType": "isomerism"
+  "visualType": "isomerism",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Same Formula, Different Molecule\n\n**Isomerism** is the phenomenon in which compounds share a molecular formula but differ in properties — the molecules differ in how their atoms are arranged or oriented. The classification splits first into **structural isomerism** (different connectivity) and **stereoisomerism** (same connectivity, different spatial arrangement). This topic builds the map; the next three topics tour each branch.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition\n\n- **Isomers:** compounds with the **same molecular formula** but **different physical and/or chemical properties**.\n- **Isomerism:** the phenomenon of their existence. Root cause: a molecular formula specifies *composition*, not *arrangement* — and arrangement decides properties.\n\n### 2.2 The classification map\n\n- **Isomerism**\n  - **Structural (constitutional):** atoms connected differently.\n    - **Chain (skeletal)** — different carbon skeletons.\n    - **Position** — same skeleton, group on different carbon.\n    - **Functional** — different functional groups.\n    - **Metamerism** — different alkyl groups on either side of a polyvalent group.\n    - **Tautomerism** — dynamic interconversion (keto ⇌ enol).\n  - **Stereoisomerism:** same connectivity, different 3-D arrangement.\n    - **Geometrical (cis–trans)** — restricted rotation about C=C.\n    - **Optical (d/l)** — non-superimposable mirror images (chirality).\n\n### 2.3 The signature examples\n\n- C₄H₁₀: butane and 2-methylpropane (chain).\n- C₂H₆O: ethanol and dimethyl ether (functional).\n- C₄H₈: cis- and trans-but-2-ene (geometrical).\n- Lactic acid CH₃CH(OH)COOH: two optical isomers.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Isomers** | Same molecular formula, different properties | C₂H₆O pair |\n| **Structural isomerism** | Different connectivity of atoms | butane vs isobutane |\n| **Stereoisomerism** | Same connectivity, different spatial arrangement | cis/trans-but-2-ene |\n| **Chirality** | Non-superimposable mirror-image relationship | lactic acid pair |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why isomerism happens at all\n\n- A molecular formula counts atoms but says nothing about **which atom bonds to which** (structural level) or **how the arrangement sits in space** (stereo level). Carbon's tetravalency lets the same atom set be wired and oriented in multiple stable ways — each wiring/orientation is a distinct compound with its own melting point, boiling point, reactivity.\n\n### 4.2 How the two great branches differ\n\n- Structural isomers differ in **which atoms are joined** — to interconvert them you must **break and remake bonds** (a chemical change).\n- Stereoisomers have identical connectivity — they differ only in **geometry**; interconversion needs rotation about a double bond (geometrical) or inversion at a stereocentre (optical), not bond-breaking.\n\n### 4.3 Isomerism as evidence\n\n- Isomerism proved early on that structure — not just composition — is real chemistry. Wöhler's NH₄OCN/urea pair was an isomer pair; every isomer discovered since confirmed that arrangement is destiny.",
+      "## 5. Comparison Tables\n\n**Structural vs stereoisomerism**\n\n| Basis | Structural isomerism | Stereoisomerism |\n|---|---|---|\n| connectivity | different | identical |\n| spatial arrangement | not the issue | the only issue |\n| interconversion | needs bond breaking | needs rotation/inversion |\n| sub-types | chain, position, functional, metamerism, tautomerism | geometrical, optical |\n| example | butane / 2-methylpropane | cis / trans-but-2-ene |",
+      "## 6. Common Confusions\n\n**Isomers are different compounds, not the same compound \"in another form\":** each has its own m.p., b.p., spectra and reactions.",
+      "**Tautomerism sits in the structural branch but is dynamic:** the two forms interconvert constantly through a mobile-H shift — unlike other structural isomers, which are stable separate compounds.",
+      "**Same molecular formula is the entry ticket:** if the formulas differ, they are homologues or different compounds — not isomers.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Define isomerism. Classify isomerism with examples.** — **Isomerism** is the phenomenon in which **two or more compounds have the same molecular formula but different physical and chemical properties** (such compounds are isomers). It is classified into **structural isomerism** — different connectivity: **chain** (butane and 2-methylpropane, C₄H₁₀), **position** (propan-1-ol and propan-2-ol), **functional** (ethanol and dimethyl ether, C₂H₆O), **metamerism** (ethoxyethane and methoxypropane, C₄H₁₀O), **tautomerism** (acetaldehyde ⇌ vinyl alcohol) — and **stereoisomerism** — same connectivity, different spatial arrangement: **geometrical (cis/trans)** (cis- and trans-but-2-ene) and **optical** (d- and l-lactic acid).",
+      "**NEB-style (2m): Distinguish between structural isomers and stereoisomers.** — **Structural isomers** differ in the **connectivity** of atoms — which atom is bonded to which (butane vs 2-methylpropane); converting one into the other requires **breaking and forming bonds**. **Stereoisomers** have **identical connectivity** but differ in the **spatial arrangement** of atoms (cis- and trans-but-2-ene); interconversion requires rotation about a double bond or inversion at a chiral centre, not bond-breaking. Both share the same molecular formula.",
+      "**NEB-style (1m): Give one example of a pair of compounds having the molecular formula C₂H₆O.** — **Ethanol (CH₃CH₂OH)** and **dimethyl ether (CH₃OCH₃)** — same molecular formula C₂H₆O, different structures and properties (liquid vs gas; they are functional isomers)."
+    ],
+    "keyPoints": [
+      "Isomerism: same molecular formula, different properties. Two branches: structural (different connectivity) — chain (C4H10: butane/2-methylpropane), position (propan-1-ol/propan-2-ol), functional (C2H6O: ethanol/dimethyl ether), metamerism (C4H10O: ethoxyethane/methoxypropane), tautomerism (keto-enol, dynamic); stereoisomerism (same connectivity, different 3-D) — geometrical cis/trans (but-2-ene), optical d/l (lactic acid, chiral carbon). Structural interconversion needs bond-breaking; stereoisomer interconversion needs rotation/inversion."
+    ],
+    "importantConcepts": [
+      "A molecular formula is an inventory, not a blueprint: composition alone cannot identify a compound — arrangement, in wiring or in space, is what makes a molecule itself."
+    ],
+    "examples": [
+      "***One formula, four stories for C4H8*** — but-1-ene (chain position), cis- and trans-but-2-ene (geometry), cyclobutane and methylcyclopropane (ring-chain): a single formula spawning an entire family."
+    ],
+    "universalFacts": [
+      "Wöhler's ammonium cyanate and urea — the same CH4N2O — were isomers: the discovery that founded both isomerism and modern organic chemistry."
+    ],
+    "importantStatements": [
+      "\"Isomers are compounds having the same molecular formula but different properties due to different arrangements of atoms; isomerism is classified into structural and stereoisomerism.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Map: structural = connectivity differs (chain/position/functional/metamerism/tautomerism); stereo = geometry differs (geometrical/optical). Signature pairs: C4H10 chain, C2H6O functional, but-2-ene geometrical, lactic acid optical."
+    ],
+    "examNotes": [
+      "Draw the classification as a tree with one example per leaf — the tree itself carries most of the marks in classification questions."
+    ],
+    "formulas": [
+      "- C₄H₁₀: butane / 2-methylpropane (chain)\n- C₂H₆O: CH₃CH₂OH / CH₃OCH₃ (functional)\n- C₃H₈O: propan-1-ol / propan-2-ol (position)\n- C₄H₁₀O: C₂H₅OC₂H₅ / CH₃OC₃H₇ (metamerism)\n- C₄H₈: cis- / trans-but-2-ene (geometrical)\n- CH₃CH(OH)COOH: d / l (optical)"
+    ],
+    "practice": [
+      "Define isomerism and draw its complete classification with one example per type.",
+      "Distinguish structural from stereoisomerism on connectivity and interconversion.",
+      "List all isomer types exhibited by C4H10O."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Define isomerism. Classify isomerism with examples.** — **Isomerism** is the phenomenon in which two or more compounds possess the **same molecular formula** but differ in their **physical and chemical properties** because their atoms are arranged differently; the compounds are **isomers**. It divides into **structural isomerism**, where the **connectivity of atoms differs**: **chain isomerism** (butane and 2-methylpropane, C₄H₁₀), **position isomerism** (propan-1-ol and propan-2-ol, C₃H₈O), **functional isomerism** (ethanol and dimethyl ether, C₂H₆O), **metamerism** (ethoxyethane and methoxypropane, C₄H₁₀O) and **tautomerism** (acetaldehyde ⇌ vinyl alcohol, a dynamic keto–enol equilibrium); and **stereoisomerism**, where connectivity is identical but the **spatial arrangement differs**: **geometrical (cis–trans) isomerism** (cis- and trans-but-2-ene) and **optical isomerism** (the d- and l-forms of lactic acid, non-superimposable mirror images).",
+      "**NEB-style (2m): Distinguish between structural isomers and stereoisomers.** — **Structural isomers** have the same molecular formula but **different connectivity** — the atoms are joined in different sequences (butane vs 2-methylpropane); converting one into another requires **breaking and re-forming bonds**, i.e. a chemical reaction. **Stereoisomers** have **identical connectivity** and differ only in the **three-dimensional arrangement** of their atoms (cis- and trans-but-2-ene); their interconversion requires **restricted rotation about a double bond** or **inversion at a stereocentre**, not bond-breaking. Both classes share one molecular formula but show different properties.",
+      "**NEB-style (1m): Give one example of a pair of compounds having the molecular formula C₂H₆O.** — **Ethanol (CH₃CH₂OH)** and **dimethyl ether (CH₃OCH₃)**: both have the molecular formula C₂H₆O but different connectivity (C–C–O–H versus C–O–C), so they are **functional isomers** with entirely different properties — a volatile liquid alcohol versus a gaseous ether."
+    ]
+  }
 }

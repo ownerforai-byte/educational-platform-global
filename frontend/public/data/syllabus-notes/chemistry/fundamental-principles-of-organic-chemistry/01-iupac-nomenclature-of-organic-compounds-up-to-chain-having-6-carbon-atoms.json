@@ -5,16 +5,18 @@
   "topicTitle": "IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms)",
   "relevance": 100,
   "notes": [
-    "Electronic effects: inductive, resonance, electromeric.",
-    "Bond fission: homolytic (radicals), heterolytic (ions).",
-    "Reaction mechanisms: step-by-step electron movement.",
-    "Intermediates: carbocations, carbanions, free radicals.",
-    "# IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms)\n\n## 1. Introduction\nChemical picture of **IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms)** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Fundamental Principles of Organic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms)\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and reagent sheet**\n\n| Transformation | Reagent + conditions | Product | Note or trap |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms) — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms) — second structure, flow or plot (authored SVG — English labels)\n- **D3** — IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms) — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms) — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — A Name That Encodes the Structure\n\nBefore IUPAC, one compound wore many names (wood spirit, grain alcohol…). The **IUPAC system** builds every name from the structure itself: a **word root** for chain length, a **suffix** for the bond type/functional group, and **prefixes** for substituents. Master the rules for chains up to six carbons and you can name — or draw — any simple organic compound from its formula alone.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The three parts of an IUPAC name\n\n- **Word root:** chain length — meth (1), eth (2), prop (3), but (4), pent (5), hex (6).\n- **Primary suffix:** saturation — **ane** (single bonds), **ene** (C=C), **yne** (C≡C).\n- **Prefix:** substituents (methyl, ethyl, chloro…) written before the root in **alphabetical order**, each with a **locant** (position number). Functional-group suffixes (–ol, –al, –one, –oic acid) replace or follow the primary suffix with their own locant.\n\n### 2.2 The rules\n\n1. Select the **longest continuous carbon chain** as parent (must include the functional group or multiple bond if present).\n2. **Number from the end** that gives the **lowest locants** — to the functional group first, then multiple bonds, then substituents.\n3. Name substituents with locants; use **di-, tri-** for repeats; list prefixes **alphabetically** (di/tri ignored in alphabetising).\n4. Assemble: prefixes (alphabetical) + root + suffix (+ functional locant): e.g. **butan-2-ol**, **2-methylpropanoic acid**.\n\n### 2.3 Worked examples\n\n- CH₃CH₂CH₂CH₃ → **butane**. CH₃CH(CH₃)CH₂CH₃ → **2-methylbutane**.\n- **NEB 2024:** CH₃CH(OH)CH₂CH₃ → 4-carbon chain, OH on C-2 → **butan-2-ol**.\n- CH₃CH₂CH₂COOH → **butanoic acid**; CH₃CHO → **ethanal**; HOCH₂CH₂OH → **ethane-1,2-diol**; CH₃CH(CH₃)COOH → **2-methylpropanoic acid**.\n- **NEB 2023 (harder):** CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH → longest chain with OH = 6 carbons; number from the OH end → OH at C-1, ethyl at C-2, methyl at C-5 → **2-ethyl-5-methylhexan-1-ol** (ethyl before methyl alphabetically).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Word root** | Name part giving the parent chain length | pent- = 5 carbons |\n| **Primary suffix** | Saturation class of the chain | -ane, -ene, -yne |\n| **Locant** | Number fixing a substituent or group position | butan-**2**-ol |\n| **Prefix** | Substituent name before the root | 2-methyl… |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why \"longest chain\" and \"lowest locant\" exist\n\n- One structure must yield one name — every chemist in the world must draw the same molecule from the same words. The longest-chain rule fixes the parent; the lowest-locant rule fixes the numbering; alphabetical order fixes the listing. Any other choice would give two names for one compound.\n\n### 4.2 Functional groups outrank substituents\n\n- When a functional group (OH, CHO, COOH) is present, numbering serves **it first** — butan-2-ol is numbered from the OH end even if a methyl then gets a higher number. Priority: COOH > CHO > C=O > OH > C=C/C≡C > alkyl.\n\n### 4.3 Common vs systematic names\n\n- Acetone = propanone; acetic acid = ethanoic acid; ethylene = ethene. Common names persist in industry and labs, but NEB answers should use IUPAC.",
+    "## 5. Comparison Tables\n\n**Word roots and suffixes (up to 6 carbons)**\n\n| Carbons | Root | Alkane | Alkene | Alkyne |\n|---|---|---|---|---|\n| 1 | meth- | methane | — | — |\n| 2 | eth- | ethane | ethene | ethyne |\n| 3 | prop- | propane | propene | propyne |\n| 4 | but- | butane | but-1-ene | but-1-yne |\n| 5 | pent- | pentane | pent-1-ene | pent-1-yne |\n| 6 | hex- | hexane | hex-1-ene | hex-1-yne |\n\n**Functional-group suffixes**\n\n| Group | Suffix | Example |\n|---|---|---|\n| –OH | -ol | butan-2-ol |\n| –CHO | -al | ethanal |\n| >C=O | -one | propanone |\n| –COOH | -oic acid | butanoic acid |\n| –NH₂ | -amine | ethanamine |",
+    "## 6. Common Confusions\n\n**Alphabetical order ignores di/tri:** \"2-ethyl-5-methyl…\" — ethyl precedes methyl regardless of locant; \"dimethyl\" alphabetises under \"m\".",
+    "**The OH carbon counts in the chain:** butan-2-ol is a 4-carbon chain with OH on C-2 — students who number from the wrong end write \"3-methylbutan-1-ol\" style errors.",
+    "**Lowest locant set wins, not lowest first digit:** 2,3,4 beats 2,4,5 even though both start with 2 — compare locant by locant.",
+    "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): Write the IUPAC name of CH₃CH(OH)CH₂CH₃.** — The longest chain contains **four carbon atoms** → root **but-**; only single bonds → **-an-**; the **–OH group lies on C-2** when numbering from the nearer end → suffix **-2-ol**. IUPAC name: **butan-2-ol**.",
+    "**NEB 2024 (verified PYQ, basic-concept bank): Give the IUPAC names of (a) CH₃CH₂CH₂COOH (b) CH₃CHO (c) HOCH₂CH₂OH (d) CH₃CH(CH₃)COOH.** — (a) Four-carbon chain with the **–COOH** carbon as C-1 → **butanoic acid**. (b) Two-carbon chain with an **–CHO** group → **ethanal**. (c) Two carbons each bearing an OH → **ethane-1,2-diol**. (d) The longest chain including the carboxyl carbon has three carbons with a methyl on C-2 → **2-methylpropanoic acid**.",
+    "**NEB 2023 (verified PYQ): Give the IUPAC name of CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH.** — The longest chain containing the **–CH₂OH carbon** has **six carbons** → root **hex-**, suffix **-1-ol** (numbering from the OH end). Substituents: **ethyl on C-2** (the –CH₂CH₃ branch) and **methyl on C-5**. Listed alphabetically: **2-ethyl-5-methylhexan-1-ol**.",
+    "**NEB-style (2m): State any three rules of IUPAC nomenclature.** — (i) The **longest continuous carbon chain** (including any functional group or multiple bond) is the parent. (ii) Numbering starts from the end giving the **lowest locants**, serving the functional group first. (iii) Substituents are named as **prefixes with locants**, repeats as di-/tri-, listed in **alphabetical order** before the root and suffix."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -56,59 +58,34 @@
     "❌ All carbon compounds are organic. ✅ CO, CO₂, carbonates, and carbides are inorganic despite containing carbon."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups.",
-    "Practice drawing structural and condensed formulas."
+    "Name by IUPAC: CH3CH2CH2CH3, CH3CH(CH3)CH2CH3, CH3CH(OH)CH2CH3, CH3CH2CH2COOH, CH3CHO, HOCH2CH2OH, CH3CH(CH3)COOH.",
+    "State the three core rules of IUPAC nomenclature and apply them to CH3CH(CH3)CH2CH2CH(CH2CH3)CH2OH.",
+    "Match common names to IUPAC names: acetone, acetic acid, ethylene, wood spirit."
   ],
-  "universalFacts": [],
+  "universalFacts": [
+    "IUPAC names are constructed, not memorised: any chemist can rebuild the structure from the name alone — the system is a reversible code between words and molecules."
+  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nCarbon forms 4 covalent bonds in all stable compounds.\n\nIsomerism increases molecular diversity enormously.",
+  "formulas": [
+    "- Root ladder: C1 meth · C2 eth · C3 prop · C4 but · C5 pent · C6 hex\n- Suffixes: -ane / -ene / -yne; -ol, -al, -one, -oic acid, -amine\n- CH₃CH(OH)CH₂CH₃ = butan-2-ol; CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH = 2-ethyl-5-methylhexan-1-ol"
+  ],
+  "keyPoints": [
+    "IUPAC name = prefix(es) + word root + primary suffix + functional suffix with locant. Roots: meth 1, eth 2, prop 3, but 4, pent 5, hex 6. Suffixes: ane/ene/yne for single/double/triple bonds; -ol, -al, -one, -oic acid, -amine for groups. Rules: (1) longest chain including functional group/multiple bond; (2) lowest locants, functional group first; (3) substituents alphabetical with di/tri (di/tri ignored in alphabetising). Examples: butane; 2-methylbutane; butan-2-ol (NEB 2024); butanoic acid; ethanal; ethane-1,2-diol; 2-methylpropanoic acid; 2-ethyl-5-methylhexan-1-ol (NEB 2023). Common names: acetone=propanone, acetic acid=ethanoic acid."
+  ],
+  "summary": "The IUPAC system is a **reversible code** between structure and name. A name is assembled from a **word root** (meth → hex for C1 → C6), a **primary suffix** (-ane/-ene/-yne for single/double/triple bonds), **functional suffixes with locants** (-ol, -al, -one, -oic acid), and **alphabetical prefixes with locants** for substituents (di-/tri- ignored in alphabetising). Three rules make it unambiguous: the **longest chain** (including the functional group) is the parent; numbering gives the **lowest locants** with the functional group served first; prefixes are listed alphabetically. Worked through: CH₃CH(OH)CH₂CH₃ = **butan-2-ol** (NEB 2024); CH₃CH₂CH₂COOH = **butanoic acid**; CH₃CHO = **ethanal**; HOCH₂CH₂OH = **ethane-1,2-diol**; CH₃CH(CH₃)COOH = **2-methylpropanoic acid**; and the six-carbon alcohol CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH = **2-ethyl-5-methylhexan-1-ol** (NEB 2023).",
   "examples": [
-    "CH₄ + Cl₂ → CH₃Cl (free radical substitution)"
+    "***The NEB 2023 name decoded*** — CH3CH(CH3)CH2CH2CH(CH2CH3)CH2OH looks fearsome until the rules run: longest chain holding the OH carbon = 6 (hexan-1-ol), ethyl at C-2, methyl at C-5, alphabetical order — 2-ethyl-5-methylhexan-1-ol."
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms."
+    "One structure must yield one name worldwide: longest chain fixes the parent, lowest locant fixes the numbering, alphabetical order fixes the listing — three rules, one unambiguous name."
   ],
   "importantNotes": [
-    "Important note regarding 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms."
+    "Verified PYQs: NEB 2024 — IUPAC name of CH3CH(OH)CH2CH3 (butan-2-ol); NEB 2024 (basic-concept bank) — four IUPAC names; NEB 2023 — 2-ethyl-5-methylhexan-1-ol."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"In the IUPAC system the name is built from the word root for chain length, a suffix for saturation and functional group, and prefixes for substituents with locants.\""
+  ],
   "importantTasks": [
     "Task for studying 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms."
   ],
@@ -125,50 +102,19 @@
     }
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups."
+    "**NEB 2024 (verified PYQ): Write the IUPAC name of CH₃CH(OH)CH₂CH₃.** — The **longest continuous chain** contains **four carbon atoms** → word root **but-**. All bonds are single → infix **-an-**. Numbering from the end nearer the **–OH** group places the hydroxyl on **C-2** → suffix **-2-ol**. **IUPAC name: butan-2-ol.** (Numbering from the other end would wrongly put OH at C-3, violating the lowest-locant rule.)",
+    "**NEB 2024 (verified PYQ): Give the IUPAC names of (a) CH₃CH₂CH₂COOH (b) CH₃CHO (c) HOCH₂CH₂OH (d) CH₃CH(CH₃)COOH.** — (a) The carboxyl carbon is C-1 of a four-carbon chain → **butanoic acid**. (b) Two carbons ending in **–CHO** → **ethanal**. (c) Two carbons, each carrying an **–OH** → **ethane-1,2-diol**. (d) The longest chain containing the carboxyl carbon has **three carbons** (the methyl is a branch, not part of the parent) with the branch on C-2 → **2-methylpropanoic acid**.",
+    "**NEB 2023 (verified PYQ): Give the IUPAC name of the compound CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH.** — Step 1 — parent chain: the longest chain **containing the –CH₂OH carbon** runs through six carbons → root **hex-**. Step 2 — numbering: from the **OH end** so the hydroxyl gets the lowest locant → **hexan-1-ol**. Step 3 — substituents: an **ethyl group on C-2** (the –CH₂CH₃ branch) and a **methyl group on C-5**. Step 4 — assembly: prefixes in alphabetical order (ethyl before methyl) → **2-ethyl-5-methylhexan-1-ol**.",
+    "**NEB-style (2m): State any three rules of IUPAC nomenclature.** — (i) Select the **longest continuous carbon chain** as the parent — it must include the principal functional group or multiple bond if present. (ii) **Number the chain from the end giving the lowest locants**, with the functional group taking priority, then multiple bonds, then substituents. (iii) Name substituents as **prefixes with their locants**, writing repeated groups as di-/tri- (ignored when alphabetising) and listing different prefixes in **alphabetical order** before the root and suffix."
   ],
   "specialNotes": [],
   "duplicateType": 2,
   "tabGroup": "01-iupac-nomenclature-of-organic-compounds-up-to-chain-having-6-carbon-atoms",
   "examShortTricks": [
-    "Trick 1"
+    "Chain length -> root; saturation -> ane/ene/yne; group position -> locant. Number from the functional-group end. Alphabetise prefixes ignoring di/tri. Practice set: butan-2-ol, butanoic acid, ethanal, ethane-1,2-diol, 2-methylpropanoic acid, 2-ethyl-5-methylhexan-1-ol."
   ],
   "examNotes": [
-    "Exam note 1."
+    "Show the numbered chain in the margin: examiners award method marks for correct longest-chain choice and correct numbering even if the final word slips."
   ],
   "mcqs": [
     {
@@ -189,5 +135,59 @@
     "desc": "Reaction mechanism animation"
   },
   "visualType": "iupac-nomenclature",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — A Name That Encodes the Structure\n\nBefore IUPAC, one compound wore many names (wood spirit, grain alcohol…). The **IUPAC system** builds every name from the structure itself: a **word root** for chain length, a **suffix** for the bond type/functional group, and **prefixes** for substituents. Master the rules for chains up to six carbons and you can name — or draw — any simple organic compound from its formula alone.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The three parts of an IUPAC name\n\n- **Word root:** chain length — meth (1), eth (2), prop (3), but (4), pent (5), hex (6).\n- **Primary suffix:** saturation — **ane** (single bonds), **ene** (C=C), **yne** (C≡C).\n- **Prefix:** substituents (methyl, ethyl, chloro…) written before the root in **alphabetical order**, each with a **locant** (position number). Functional-group suffixes (–ol, –al, –one, –oic acid) replace or follow the primary suffix with their own locant.\n\n### 2.2 The rules\n\n1. Select the **longest continuous carbon chain** as parent (must include the functional group or multiple bond if present).\n2. **Number from the end** that gives the **lowest locants** — to the functional group first, then multiple bonds, then substituents.\n3. Name substituents with locants; use **di-, tri-** for repeats; list prefixes **alphabetically** (di/tri ignored in alphabetising).\n4. Assemble: prefixes (alphabetical) + root + suffix (+ functional locant): e.g. **butan-2-ol**, **2-methylpropanoic acid**.\n\n### 2.3 Worked examples\n\n- CH₃CH₂CH₂CH₃ → **butane**. CH₃CH(CH₃)CH₂CH₃ → **2-methylbutane**.\n- **NEB 2024:** CH₃CH(OH)CH₂CH₃ → 4-carbon chain, OH on C-2 → **butan-2-ol**.\n- CH₃CH₂CH₂COOH → **butanoic acid**; CH₃CHO → **ethanal**; HOCH₂CH₂OH → **ethane-1,2-diol**; CH₃CH(CH₃)COOH → **2-methylpropanoic acid**.\n- **NEB 2023 (harder):** CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH → longest chain with OH = 6 carbons; number from the OH end → OH at C-1, ethyl at C-2, methyl at C-5 → **2-ethyl-5-methylhexan-1-ol** (ethyl before methyl alphabetically).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Word root** | Name part giving the parent chain length | pent- = 5 carbons |\n| **Primary suffix** | Saturation class of the chain | -ane, -ene, -yne |\n| **Locant** | Number fixing a substituent or group position | butan-**2**-ol |\n| **Prefix** | Substituent name before the root | 2-methyl… |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why \"longest chain\" and \"lowest locant\" exist\n\n- One structure must yield one name — every chemist in the world must draw the same molecule from the same words. The longest-chain rule fixes the parent; the lowest-locant rule fixes the numbering; alphabetical order fixes the listing. Any other choice would give two names for one compound.\n\n### 4.2 Functional groups outrank substituents\n\n- When a functional group (OH, CHO, COOH) is present, numbering serves **it first** — butan-2-ol is numbered from the OH end even if a methyl then gets a higher number. Priority: COOH > CHO > C=O > OH > C=C/C≡C > alkyl.\n\n### 4.3 Common vs systematic names\n\n- Acetone = propanone; acetic acid = ethanoic acid; ethylene = ethene. Common names persist in industry and labs, but NEB answers should use IUPAC.",
+      "## 5. Comparison Tables\n\n**Word roots and suffixes (up to 6 carbons)**\n\n| Carbons | Root | Alkane | Alkene | Alkyne |\n|---|---|---|---|---|\n| 1 | meth- | methane | — | — |\n| 2 | eth- | ethane | ethene | ethyne |\n| 3 | prop- | propane | propene | propyne |\n| 4 | but- | butane | but-1-ene | but-1-yne |\n| 5 | pent- | pentane | pent-1-ene | pent-1-yne |\n| 6 | hex- | hexane | hex-1-ene | hex-1-yne |\n\n**Functional-group suffixes**\n\n| Group | Suffix | Example |\n|---|---|---|\n| –OH | -ol | butan-2-ol |\n| –CHO | -al | ethanal |\n| >C=O | -one | propanone |\n| –COOH | -oic acid | butanoic acid |\n| –NH₂ | -amine | ethanamine |",
+      "## 6. Common Confusions\n\n**Alphabetical order ignores di/tri:** \"2-ethyl-5-methyl…\" — ethyl precedes methyl regardless of locant; \"dimethyl\" alphabetises under \"m\".",
+      "**The OH carbon counts in the chain:** butan-2-ol is a 4-carbon chain with OH on C-2 — students who number from the wrong end write \"3-methylbutan-1-ol\" style errors.",
+      "**Lowest locant set wins, not lowest first digit:** 2,3,4 beats 2,4,5 even though both start with 2 — compare locant by locant.",
+      "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): Write the IUPAC name of CH₃CH(OH)CH₂CH₃.** — The longest chain contains **four carbon atoms** → root **but-**; only single bonds → **-an-**; the **–OH group lies on C-2** when numbering from the nearer end → suffix **-2-ol**. IUPAC name: **butan-2-ol**.",
+      "**NEB 2024 (verified PYQ, basic-concept bank): Give the IUPAC names of (a) CH₃CH₂CH₂COOH (b) CH₃CHO (c) HOCH₂CH₂OH (d) CH₃CH(CH₃)COOH.** — (a) Four-carbon chain with the **–COOH** carbon as C-1 → **butanoic acid**. (b) Two-carbon chain with an **–CHO** group → **ethanal**. (c) Two carbons each bearing an OH → **ethane-1,2-diol**. (d) The longest chain including the carboxyl carbon has three carbons with a methyl on C-2 → **2-methylpropanoic acid**.",
+      "**NEB 2023 (verified PYQ): Give the IUPAC name of CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH.** — The longest chain containing the **–CH₂OH carbon** has **six carbons** → root **hex-**, suffix **-1-ol** (numbering from the OH end). Substituents: **ethyl on C-2** (the –CH₂CH₃ branch) and **methyl on C-5**. Listed alphabetically: **2-ethyl-5-methylhexan-1-ol**.",
+      "**NEB-style (2m): State any three rules of IUPAC nomenclature.** — (i) The **longest continuous carbon chain** (including any functional group or multiple bond) is the parent. (ii) Numbering starts from the end giving the **lowest locants**, serving the functional group first. (iii) Substituents are named as **prefixes with locants**, repeats as di-/tri-, listed in **alphabetical order** before the root and suffix."
+    ],
+    "keyPoints": [
+      "IUPAC name = prefix(es) + word root + primary suffix + functional suffix with locant. Roots: meth 1, eth 2, prop 3, but 4, pent 5, hex 6. Suffixes: ane/ene/yne for single/double/triple bonds; -ol, -al, -one, -oic acid, -amine for groups. Rules: (1) longest chain including functional group/multiple bond; (2) lowest locants, functional group first; (3) substituents alphabetical with di/tri (di/tri ignored in alphabetising). Examples: butane; 2-methylbutane; butan-2-ol (NEB 2024); butanoic acid; ethanal; ethane-1,2-diol; 2-methylpropanoic acid; 2-ethyl-5-methylhexan-1-ol (NEB 2023). Common names: acetone=propanone, acetic acid=ethanoic acid."
+    ],
+    "importantConcepts": [
+      "One structure must yield one name worldwide: longest chain fixes the parent, lowest locant fixes the numbering, alphabetical order fixes the listing — three rules, one unambiguous name."
+    ],
+    "examples": [
+      "***The NEB 2023 name decoded*** — CH3CH(CH3)CH2CH2CH(CH2CH3)CH2OH looks fearsome until the rules run: longest chain holding the OH carbon = 6 (hexan-1-ol), ethyl at C-2, methyl at C-5, alphabetical order — 2-ethyl-5-methylhexan-1-ol."
+    ],
+    "universalFacts": [
+      "IUPAC names are constructed, not memorised: any chemist can rebuild the structure from the name alone — the system is a reversible code between words and molecules."
+    ],
+    "importantStatements": [
+      "\"In the IUPAC system the name is built from the word root for chain length, a suffix for saturation and functional group, and prefixes for substituents with locants.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 — IUPAC name of CH3CH(OH)CH2CH3 (butan-2-ol); NEB 2024 (basic-concept bank) — four IUPAC names; NEB 2023 — 2-ethyl-5-methylhexan-1-ol."
+    ],
+    "examShortTricks": [
+      "Chain length -> root; saturation -> ane/ene/yne; group position -> locant. Number from the functional-group end. Alphabetise prefixes ignoring di/tri. Practice set: butan-2-ol, butanoic acid, ethanal, ethane-1,2-diol, 2-methylpropanoic acid, 2-ethyl-5-methylhexan-1-ol."
+    ],
+    "examNotes": [
+      "Show the numbered chain in the margin: examiners award method marks for correct longest-chain choice and correct numbering even if the final word slips."
+    ],
+    "formulas": [
+      "- Root ladder: C1 meth · C2 eth · C3 prop · C4 but · C5 pent · C6 hex\n- Suffixes: -ane / -ene / -yne; -ol, -al, -one, -oic acid, -amine\n- CH₃CH(OH)CH₂CH₃ = butan-2-ol; CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH = 2-ethyl-5-methylhexan-1-ol"
+    ],
+    "practice": [
+      "Name by IUPAC: CH3CH2CH2CH3, CH3CH(CH3)CH2CH3, CH3CH(OH)CH2CH3, CH3CH2CH2COOH, CH3CHO, HOCH2CH2OH, CH3CH(CH3)COOH.",
+      "State the three core rules of IUPAC nomenclature and apply them to CH3CH(CH3)CH2CH2CH(CH2CH3)CH2OH.",
+      "Match common names to IUPAC names: acetone, acetic acid, ethylene, wood spirit."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (verified PYQ): Write the IUPAC name of CH₃CH(OH)CH₂CH₃.** — The **longest continuous chain** contains **four carbon atoms** → word root **but-**. All bonds are single → infix **-an-**. Numbering from the end nearer the **–OH** group places the hydroxyl on **C-2** → suffix **-2-ol**. **IUPAC name: butan-2-ol.** (Numbering from the other end would wrongly put OH at C-3, violating the lowest-locant rule.)",
+      "**NEB 2024 (verified PYQ): Give the IUPAC names of (a) CH₃CH₂CH₂COOH (b) CH₃CHO (c) HOCH₂CH₂OH (d) CH₃CH(CH₃)COOH.** — (a) The carboxyl carbon is C-1 of a four-carbon chain → **butanoic acid**. (b) Two carbons ending in **–CHO** → **ethanal**. (c) Two carbons, each carrying an **–OH** → **ethane-1,2-diol**. (d) The longest chain containing the carboxyl carbon has **three carbons** (the methyl is a branch, not part of the parent) with the branch on C-2 → **2-methylpropanoic acid**.",
+      "**NEB 2023 (verified PYQ): Give the IUPAC name of the compound CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH.** — Step 1 — parent chain: the longest chain **containing the –CH₂OH carbon** runs through six carbons → root **hex-**. Step 2 — numbering: from the **OH end** so the hydroxyl gets the lowest locant → **hexan-1-ol**. Step 3 — substituents: an **ethyl group on C-2** (the –CH₂CH₃ branch) and a **methyl group on C-5**. Step 4 — assembly: prefixes in alphabetical order (ethyl before methyl) → **2-ethyl-5-methylhexan-1-ol**.",
+      "**NEB-style (2m): State any three rules of IUPAC nomenclature.** — (i) Select the **longest continuous carbon chain** as the parent — it must include the principal functional group or multiple bond if present. (ii) **Number the chain from the end giving the lowest locants**, with the functional group taking priority, then multiple bonds, then substituents. (iii) Name substituents as **prefixes with their locants**, writing repeated groups as di-/tri- (ignored when alphabetising) and listing different prefixes in **alphabetical order** before the root and suffix."
+    ]
+  }
 }

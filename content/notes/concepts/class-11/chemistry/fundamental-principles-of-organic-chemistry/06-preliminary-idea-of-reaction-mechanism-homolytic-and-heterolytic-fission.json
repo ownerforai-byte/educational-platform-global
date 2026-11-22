@@ -7,19 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
-    "**Fact.** Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "**Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars).",
-    "Electronic effects: inductive, resonance, electromeric.",
-    "Bond fission: homolytic (radicals), heterolytic (ions).",
-    "Reaction mechanisms: step-by-step electron movement.",
-    "Intermediates: carbocations, carbanions, free radicals.",
-    "# Preliminary idea of reaction mechanism: homolytic and heterolytic fission\n\n## 1. Introduction\nChemical picture of **Preliminary idea of reaction mechanism** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Fundamental Principles of Organic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Preliminary idea of reaction mechanism: homolytic and heterolytic fission\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Preliminary idea of reaction mechanism — mechanism with curved arrows, step by step (authored SVG)\n- **D2** — Preliminary idea of reaction mechanism — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Preliminary idea of reaction mechanism — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Preliminary idea of reaction mechanism — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — How Bonds Break and Why It Matters\n\nEvery organic reaction begins with a covalent bond breaking. **How** it breaks decides everything downstream: **homolytic fission** splits the pair equally, creating **free radicals**; **heterolytic fission** gives both electrons to one atom, creating **ions** (carbocation + anion). The mechanism — the step-by-step path of bond breaking and making — is written with these two moves and the arrows that show where electrons go.",
+    "## 2. Fundamental Concepts\n\n### 2.1 What a reaction mechanism is\n\n- A **mechanism** is the **step-by-step description** of a reaction: which bonds break, which form, in what order, through which intermediates, catalysed how.\n- Electron movement is shown with **curly arrows**: full-head arrow = a **pair** of electrons moves; half-head (fishhook) = a **single electron** moves.\n\n### 2.2 Homolytic fission (homolysis)\n\n- The covalent pair **splits equally**: each fragment takes **one electron**.\n- Products: **free radicals** — neutral species with an **unpaired electron**, written X·.\n- **A–B → A· + B·** — favoured by **symmetrical (non-polar) bonds** and by **heat or light**.\n- Example: **Cl₂ → 2Cl·** (sunlight) — the initiation step of chlorination of methane.\n\n### 2.3 Heterolytic fission (heterolysis)\n\n- The covalent pair goes **entirely to the more electronegative atom**.\n- Products: **a cation and an anion** — **A–B → A⁺ + :B⁻** (B keeps both electrons).\n- Favoured by **polar bonds** (large electronegativity difference) and polar solvents.\n- Example: **(CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻** in water — the carbocation of substitution reactions; HCl → H⁺ + Cl⁻.\n\n### 2.4 The intermediates\n\n- **Free radical** (from homolysis): neutral, 7-electron carbon or halogen, unpaired electron, paramagnetic.\n- **Carbocation** (heterolysis, carbon loses the pair): 6-electron carbon, positive, electron-deficient — an electrophile.\n- **Carbanion** (heterolysis, carbon keeps the pair): negative, electron-rich — a nucleophile.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Mechanism** | Stepwise bond-breaking/making path of a reaction | free-radical chlorination |\n| **Homolytic fission** | Equal split of the bonding pair → radicals | Cl₂ → 2Cl· |\n| **Heterolytic fission** | Unequal split → cation + anion | HCl → H⁺ + Cl⁻ |\n| **Carbocation** | 6-electron positively charged carbon | (CH₃)₃C⁺ |\n| **Carbanion** | Carbon bearing the bonding pair, negative | CH₃⁻ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Choosing between the two fissions\n\n- The bond's own polarity decides: a nearly **non-polar** bond (Cl–Cl, C–C) splits evenly — homolysis under heat/light. A **polar** bond (C–Cl, H–Cl) splits to the electronegative partner — heterolysis. Solvent and conditions modulate: non-polar solvents + light favour radicals; polar solvents favour ions.\n\n### 4.2 Why radicals and ions behave differently\n\n- Radicals are **neutral but electron-hungry** (7-electron species) — they attack σ/π bonds in chain reactions (initiation → propagation → termination).\n- Carbocations are **positively charged and 6-electron** — they seek electron pairs (electrophilic behaviour). Carbanions **offer** pairs (nucleophilic behaviour). The fission mode thus selects the reagent class — the next topic's business.\n\n### 4.3 Reading mechanisms\n\n- Every organic mechanism is a chain of these events: heterolysis creates an electrophile, a nucleophile attacks, a proton shifts, a radical abstracts H. Learn to ask at each step: *which bond breaks, and which way do the electrons go?*",
+    "## 5. Comparison Tables\n\n**Homolytic vs heterolytic fission**\n\n| Basis | Homolytic | Heterolytic |\n|---|---|---|\n| electron pair | split equally | both to one atom |\n| products | free radicals (X·) | cation + anion |\n| bond type favoured | non-polar, symmetrical | polar |\n| conditions | heat, light, non-polar solvent | polar solvent, ionic route |\n| example | Cl₂ → 2Cl· | (CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻ |\n| species formed | radical (7e) | carbocation (6e) / carbanion |",
+    "## 6. Common Confusions\n\n**Radicals are neutral, not negative:** the unpaired electron carries no charge — Cl· is neutral; Cl⁻ is the anion from heterolysis.",
+    "**The arrow shows electron movement, not atom movement:** in heterolysis the H⁺ \"leaves\" because its electrons left with the other atom — track electrons, not protons.",
+    "**Homolysis needs energy input:** light or heat is required to split a symmetrical bond — radicals do not appear spontaneously at room temperature.",
+    "## 7. Exam Application\n\n**NEB-style (3m): What is homolytic fission? Explain with an example.** — **Homolytic fission (homolysis)** is the breaking of a covalent bond in which the **bonding electron pair is divided equally** between the two atoms, each taking **one electron**. The products are **free radicals** — neutral species carrying an unpaired electron, written with a dot: **A–B → A· + B·**. It is favoured by **non-polar (symmetrical) bonds** and by **heat or light**. Example: in sunlight, **Cl₂ → 2Cl·**; each chlorine radical has seven valence electrons with one unpaired, and these radicals initiate the **chain chlorination of methane** (Cl· + CH₄ → CH₃· + HCl).",
+    "**NEB-style (3m): What is heterolytic fission? Explain with an example.** — **Heterolytic fission (heterolysis)** is bond breaking in which the **entire bonding electron pair passes to the more electronegative atom**, producing a **cation and an anion**: **A–B → A⁺ + :B⁻**. It is favoured by **polar bonds** and **polar solvents**. Example: **tert-butyl chloride in water, (CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻** — chlorine takes the pair, leaving a **carbocation**, a 6-electron positively charged carbon that behaves as an electrophile. Similarly **HCl → H⁺ + Cl⁻** in water.",
+    "**NEB-style (2m): Distinguish between a free radical, a carbocation and a carbanion.** — A **free radical** is a **neutral** species with an **unpaired electron** (7 electrons at carbon, paramagnetic), formed by **homolytic fission** (Cl·, CH₃·). A **carbocation** is a **positively charged, 6-electron carbon** formed when carbon **loses** the bonding pair in heterolysis ((CH₃)₃C⁺) — electron-deficient and electrophilic. A **carbanion** is a **negatively charged carbon that has gained the bonding pair** (CH₃⁻) — electron-rich and nucleophilic."
   ],
   "confusion": [
     "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
@@ -64,89 +62,23 @@
     "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Define homolytic and heterolytic fission with one example and conditions of each.",
+    "Distinguish free radical, carbocation and carbanion in terms of charge, electrons and origin.",
+    "Explain why Cl2 gives radicals in sunlight but HCl gives ions in water."
   ],
   "universalFacts": [
-    "Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
-    "Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+    "Radical chain reactions (initiation, propagation, termination) explain everything from methane chlorination to polymer manufacture and atmospheric ozone chemistry."
   ],
   "examples": [
-    "CH₄ + Cl₂ → CH₃Cl (free radical substitution)"
+    "***One bond, two destinies*** — the C–Cl bond of tert-butyl chloride gives ions in water (heterolysis, substitution proceeds), while the Cl–Cl bond gives radicals in sunlight (homolysis, chlorination proceeds): the same chlorine, two different reaction worlds."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB-style (3m): What is homolytic fission? Explain with an example.** — **Homolytic fission (homolysis)** is the breaking of a covalent bond in which the **shared electron pair is divided equally** between the two bonded atoms, each fragment receiving **one electron**. The products are **free radicals** — neutral species bearing an **unpaired electron**, denoted by a dot: **A–B → A· + B·**. Homolysis is favoured by **non-polar (symmetrical) bonds** and by **heat or ultraviolet light**. **Example:** in sunlight, **Cl₂ → 2Cl·** — each chlorine atom retains seven valence electrons, one of them unpaired. These chlorine radicals initiate the **free-radical chlorination of methane** (Cl· + CH₄ → CH₃· + HCl, then CH₃· + Cl₂ → CH₃Cl + Cl·), a classic chain reaction of initiation, propagation and termination steps.",
+    "**NEB-style (3m): What is heterolytic fission? Explain with an example.** — **Heterolytic fission (heterolysis)** is bond breaking in which the **entire bonding electron pair is transferred to the more electronegative atom**, producing **a cation and an anion**: **A–B → A⁺ + :B⁻**. It is favoured by **polar bonds** (large electronegativity difference) and **polar ionising solvents**. **Example:** tert-butyl chloride in water undergoes **(CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻** — chlorine departs with the electron pair, leaving a **carbocation**: a carbon with only **six valence electrons** and a positive charge, which is electron-deficient and behaves as an **electrophile**. Likewise **HCl → H⁺ + Cl⁻** in water. The anion formed (or the partner retaining the pair) is electron-rich and nucleophilic.",
+    "**NEB-style (2m): Distinguish between a free radical, a carbocation and a carbanion.** — A **free radical** is a **neutral** species with an **unpaired electron** (seven electrons on carbon; paramagnetic), produced by **homolytic fission** — e.g. Cl· or CH₃·. A **carbocation** is a **positively charged carbon with only six valence electrons**, formed when carbon **loses** the shared pair during heterolysis — e.g. (CH₃)₃C⁺; it is electron-deficient and attacks as an **electrophile**. A **carbanion** is a **negatively charged carbon carrying an octet including the borrowed pair**, formed when carbon **retains** the bonding pair in heterolysis — e.g. CH₃⁻; it is electron-rich and behaves as a **nucleophile**. Charge, electron count and fission origin distinguish all three."
   ],
   "formulas": [
-    "BE = Δm c²",
-    "N = N₀ e^(−λt)",
-    "t_½ = ln2 / λ"
+    "- Homolysis: A–B → A· + B· (e.g. Cl₂ → 2Cl·)\n- Heterolysis: A–B → A⁺ + :B⁻ (e.g. (CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻)\n- Carbocation: 6 valence electrons, positive; carbanion: 8, negative; radical: 7, neutral"
   ],
   "numericals": [
     "Use  BE = Δm c²  — pick reasonable values, solve, and check the units.",
@@ -154,8 +86,7 @@
     "Use  t_½ = ln2 / λ  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Preliminary idea of reaction mechanism: homolytic",
-    "• Heterolytic fission"
+    "Mechanism: step-by-step bond breaking/making path; curly arrows — full head = electron pair, half head = single electron. Homolytic fission: pair splits equally -> free radicals (neutral, unpaired electron, 7e, paramagnetic); A-B -> A. + B.; favoured by non-polar bonds + heat/light; Cl2 -> 2Cl. (sunlight) initiates methane chlorination. Heterolytic fission: pair goes entirely to more electronegative atom -> cation + anion; A-B -> A+ + :B-; favoured by polar bonds + polar solvents; (CH3)3C-Cl -> (CH3)3C+ + Cl-; HCl -> H+ + Cl-. Intermediates: radical (neutral 7e), carbocation (positive 6e, electrophile), carbanion (negative, nucleophile)."
   ],
   "mcqs": [
     {
@@ -179,16 +110,16 @@
     }
   ],
   "importantNotes": [
-    "Important note regarding 05 preliminary idea of reaction mechanism homolytic and heterolytic fission electrophiles nucleophiles and free radicals."
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
   ],
   "examShortTricks": [
-    "Trick 1"
+    "Homo = equal = radicals (light/heat, non-polar); hetero = unequal = ions (polar bond, polar solvent). Radical neutral 7e; carbocation 6e positive; carbanion negative. Arrows: full head pair, fishhook single electron."
   ],
   "examNotes": [
-    "Exam note 1."
+    "Write both fission equations with electron-half-arrows on the atoms — the notation itself is part of the expected answer."
   ],
   "importantConcepts": [
-    "Key concept 1 for 05 preliminary idea of reaction mechanism homolytic and heterolytic fission electrophiles nucleophiles and free radicals."
+    "The mode of fission selects the chemistry: split evenly and you get radicals running chain reactions; split unevenly and you get ions that attract or donate pairs — every mechanism is built from these two moves."
   ],
   "importantTasks": [
     "Task for studying 05 preliminary idea of reaction mechanism homolytic and heterolytic fission electrophiles nucleophiles and free radicals."
@@ -208,7 +139,7 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "importantStatements": [
-    "Key statement for 05 preliminary idea of reaction mechanism homolytic and heterolytic fission electrophiles nucleophiles and free radicals."
+    "\"Homolytic fission divides the bonding pair equally to give free radicals; heterolytic fission transfers the pair to one atom, giving a cation and an anion.\""
   ],
   "specialNotes": [
     "Specialized insight for 05 preliminary idea of reaction mechanism homolytic and heterolytic fission electrophiles nucleophiles and free radicals."
@@ -219,5 +150,58 @@
     "component": "MechanismAnimator",
     "desc": "Reaction mechanism animation"
   },
-  "visualType": "reaction-mechanism"
+  "visualType": "reaction-mechanism",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — How Bonds Break and Why It Matters\n\nEvery organic reaction begins with a covalent bond breaking. **How** it breaks decides everything downstream: **homolytic fission** splits the pair equally, creating **free radicals**; **heterolytic fission** gives both electrons to one atom, creating **ions** (carbocation + anion). The mechanism — the step-by-step path of bond breaking and making — is written with these two moves and the arrows that show where electrons go.",
+      "## 2. Fundamental Concepts\n\n### 2.1 What a reaction mechanism is\n\n- A **mechanism** is the **step-by-step description** of a reaction: which bonds break, which form, in what order, through which intermediates, catalysed how.\n- Electron movement is shown with **curly arrows**: full-head arrow = a **pair** of electrons moves; half-head (fishhook) = a **single electron** moves.\n\n### 2.2 Homolytic fission (homolysis)\n\n- The covalent pair **splits equally**: each fragment takes **one electron**.\n- Products: **free radicals** — neutral species with an **unpaired electron**, written X·.\n- **A–B → A· + B·** — favoured by **symmetrical (non-polar) bonds** and by **heat or light**.\n- Example: **Cl₂ → 2Cl·** (sunlight) — the initiation step of chlorination of methane.\n\n### 2.3 Heterolytic fission (heterolysis)\n\n- The covalent pair goes **entirely to the more electronegative atom**.\n- Products: **a cation and an anion** — **A–B → A⁺ + :B⁻** (B keeps both electrons).\n- Favoured by **polar bonds** (large electronegativity difference) and polar solvents.\n- Example: **(CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻** in water — the carbocation of substitution reactions; HCl → H⁺ + Cl⁻.\n\n### 2.4 The intermediates\n\n- **Free radical** (from homolysis): neutral, 7-electron carbon or halogen, unpaired electron, paramagnetic.\n- **Carbocation** (heterolysis, carbon loses the pair): 6-electron carbon, positive, electron-deficient — an electrophile.\n- **Carbanion** (heterolysis, carbon keeps the pair): negative, electron-rich — a nucleophile.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Mechanism** | Stepwise bond-breaking/making path of a reaction | free-radical chlorination |\n| **Homolytic fission** | Equal split of the bonding pair → radicals | Cl₂ → 2Cl· |\n| **Heterolytic fission** | Unequal split → cation + anion | HCl → H⁺ + Cl⁻ |\n| **Carbocation** | 6-electron positively charged carbon | (CH₃)₃C⁺ |\n| **Carbanion** | Carbon bearing the bonding pair, negative | CH₃⁻ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Choosing between the two fissions\n\n- The bond's own polarity decides: a nearly **non-polar** bond (Cl–Cl, C–C) splits evenly — homolysis under heat/light. A **polar** bond (C–Cl, H–Cl) splits to the electronegative partner — heterolysis. Solvent and conditions modulate: non-polar solvents + light favour radicals; polar solvents favour ions.\n\n### 4.2 Why radicals and ions behave differently\n\n- Radicals are **neutral but electron-hungry** (7-electron species) — they attack σ/π bonds in chain reactions (initiation → propagation → termination).\n- Carbocations are **positively charged and 6-electron** — they seek electron pairs (electrophilic behaviour). Carbanions **offer** pairs (nucleophilic behaviour). The fission mode thus selects the reagent class — the next topic's business.\n\n### 4.3 Reading mechanisms\n\n- Every organic mechanism is a chain of these events: heterolysis creates an electrophile, a nucleophile attacks, a proton shifts, a radical abstracts H. Learn to ask at each step: *which bond breaks, and which way do the electrons go?*",
+      "## 5. Comparison Tables\n\n**Homolytic vs heterolytic fission**\n\n| Basis | Homolytic | Heterolytic |\n|---|---|---|\n| electron pair | split equally | both to one atom |\n| products | free radicals (X·) | cation + anion |\n| bond type favoured | non-polar, symmetrical | polar |\n| conditions | heat, light, non-polar solvent | polar solvent, ionic route |\n| example | Cl₂ → 2Cl· | (CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻ |\n| species formed | radical (7e) | carbocation (6e) / carbanion |",
+      "## 6. Common Confusions\n\n**Radicals are neutral, not negative:** the unpaired electron carries no charge — Cl· is neutral; Cl⁻ is the anion from heterolysis.",
+      "**The arrow shows electron movement, not atom movement:** in heterolysis the H⁺ \"leaves\" because its electrons left with the other atom — track electrons, not protons.",
+      "**Homolysis needs energy input:** light or heat is required to split a symmetrical bond — radicals do not appear spontaneously at room temperature.",
+      "## 7. Exam Application\n\n**NEB-style (3m): What is homolytic fission? Explain with an example.** — **Homolytic fission (homolysis)** is the breaking of a covalent bond in which the **bonding electron pair is divided equally** between the two atoms, each taking **one electron**. The products are **free radicals** — neutral species carrying an unpaired electron, written with a dot: **A–B → A· + B·**. It is favoured by **non-polar (symmetrical) bonds** and by **heat or light**. Example: in sunlight, **Cl₂ → 2Cl·**; each chlorine radical has seven valence electrons with one unpaired, and these radicals initiate the **chain chlorination of methane** (Cl· + CH₄ → CH₃· + HCl).",
+      "**NEB-style (3m): What is heterolytic fission? Explain with an example.** — **Heterolytic fission (heterolysis)** is bond breaking in which the **entire bonding electron pair passes to the more electronegative atom**, producing a **cation and an anion**: **A–B → A⁺ + :B⁻**. It is favoured by **polar bonds** and **polar solvents**. Example: **tert-butyl chloride in water, (CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻** — chlorine takes the pair, leaving a **carbocation**, a 6-electron positively charged carbon that behaves as an electrophile. Similarly **HCl → H⁺ + Cl⁻** in water.",
+      "**NEB-style (2m): Distinguish between a free radical, a carbocation and a carbanion.** — A **free radical** is a **neutral** species with an **unpaired electron** (7 electrons at carbon, paramagnetic), formed by **homolytic fission** (Cl·, CH₃·). A **carbocation** is a **positively charged, 6-electron carbon** formed when carbon **loses** the bonding pair in heterolysis ((CH₃)₃C⁺) — electron-deficient and electrophilic. A **carbanion** is a **negatively charged carbon that has gained the bonding pair** (CH₃⁻) — electron-rich and nucleophilic."
+    ],
+    "keyPoints": [
+      "Mechanism: step-by-step bond breaking/making path; curly arrows — full head = electron pair, half head = single electron. Homolytic fission: pair splits equally -> free radicals (neutral, unpaired electron, 7e, paramagnetic); A-B -> A. + B.; favoured by non-polar bonds + heat/light; Cl2 -> 2Cl. (sunlight) initiates methane chlorination. Heterolytic fission: pair goes entirely to more electronegative atom -> cation + anion; A-B -> A+ + :B-; favoured by polar bonds + polar solvents; (CH3)3C-Cl -> (CH3)3C+ + Cl-; HCl -> H+ + Cl-. Intermediates: radical (neutral 7e), carbocation (positive 6e, electrophile), carbanion (negative, nucleophile)."
+    ],
+    "importantConcepts": [
+      "The mode of fission selects the chemistry: split evenly and you get radicals running chain reactions; split unevenly and you get ions that attract or donate pairs — every mechanism is built from these two moves."
+    ],
+    "examples": [
+      "***One bond, two destinies*** — the C–Cl bond of tert-butyl chloride gives ions in water (heterolysis, substitution proceeds), while the Cl–Cl bond gives radicals in sunlight (homolysis, chlorination proceeds): the same chlorine, two different reaction worlds."
+    ],
+    "universalFacts": [
+      "Radical chain reactions (initiation, propagation, termination) explain everything from methane chlorination to polymer manufacture and atmospheric ozone chemistry."
+    ],
+    "importantStatements": [
+      "\"Homolytic fission divides the bonding pair equally to give free radicals; heterolytic fission transfers the pair to one atom, giving a cation and an anion.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Homo = equal = radicals (light/heat, non-polar); hetero = unequal = ions (polar bond, polar solvent). Radical neutral 7e; carbocation 6e positive; carbanion negative. Arrows: full head pair, fishhook single electron."
+    ],
+    "examNotes": [
+      "Write both fission equations with electron-half-arrows on the atoms — the notation itself is part of the expected answer."
+    ],
+    "formulas": [
+      "- Homolysis: A–B → A· + B· (e.g. Cl₂ → 2Cl·)\n- Heterolysis: A–B → A⁺ + :B⁻ (e.g. (CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻)\n- Carbocation: 6 valence electrons, positive; carbanion: 8, negative; radical: 7, neutral"
+    ],
+    "practice": [
+      "Define homolytic and heterolytic fission with one example and conditions of each.",
+      "Distinguish free radical, carbocation and carbanion in terms of charge, electrons and origin.",
+      "Explain why Cl2 gives radicals in sunlight but HCl gives ions in water."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): What is homolytic fission? Explain with an example.** — **Homolytic fission (homolysis)** is the breaking of a covalent bond in which the **shared electron pair is divided equally** between the two bonded atoms, each fragment receiving **one electron**. The products are **free radicals** — neutral species bearing an **unpaired electron**, denoted by a dot: **A–B → A· + B·**. Homolysis is favoured by **non-polar (symmetrical) bonds** and by **heat or ultraviolet light**. **Example:** in sunlight, **Cl₂ → 2Cl·** — each chlorine atom retains seven valence electrons, one of them unpaired. These chlorine radicals initiate the **free-radical chlorination of methane** (Cl· + CH₄ → CH₃· + HCl, then CH₃· + Cl₂ → CH₃Cl + Cl·), a classic chain reaction of initiation, propagation and termination steps.",
+      "**NEB-style (3m): What is heterolytic fission? Explain with an example.** — **Heterolytic fission (heterolysis)** is bond breaking in which the **entire bonding electron pair is transferred to the more electronegative atom**, producing **a cation and an anion**: **A–B → A⁺ + :B⁻**. It is favoured by **polar bonds** (large electronegativity difference) and **polar ionising solvents**. **Example:** tert-butyl chloride in water undergoes **(CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻** — chlorine departs with the electron pair, leaving a **carbocation**: a carbon with only **six valence electrons** and a positive charge, which is electron-deficient and behaves as an **electrophile**. Likewise **HCl → H⁺ + Cl⁻** in water. The anion formed (or the partner retaining the pair) is electron-rich and nucleophilic.",
+      "**NEB-style (2m): Distinguish between a free radical, a carbocation and a carbanion.** — A **free radical** is a **neutral** species with an **unpaired electron** (seven electrons on carbon; paramagnetic), produced by **homolytic fission** — e.g. Cl· or CH₃·. A **carbocation** is a **positively charged carbon with only six valence electrons**, formed when carbon **loses** the shared pair during heterolysis — e.g. (CH₃)₃C⁺; it is electron-deficient and attacks as an **electrophile**. A **carbanion** is a **negatively charged carbon carrying an octet including the borrowed pair**, formed when carbon **retains** the bonding pair in heterolysis — e.g. CH₃⁻; it is electron-rich and behaves as a **nucleophile**. Charge, electron count and fission origin distinguish all three."
+    ]
+  },
+  "summary": "Every organic reaction starts with a bond breaking, and there are exactly two ways. **Homolytic fission** divides the shared pair **equally** — **A–B → A· + B·** — creating neutral **free radicals** with unpaired electrons; it favours non-polar bonds and needs **heat or light** (Cl₂ → 2Cl· in sunlight, starting the chain chlorination of methane). **Heterolytic fission** hands the **whole pair to the more electronegative atom** — **A–B → A⁺ + :B⁻** — creating ions; it favours polar bonds and polar solvents ((CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻; HCl → H⁺ + Cl⁻). The fission mode determines the intermediate — neutral 7-electron **radical**, positive 6-electron **carbocation** (electrophile), or electron-rich **carbanion** (nucleophile) — and thus selects the reagent class that drives the rest of the mechanism. Curly arrows (full head for pairs, fishhooks for single electrons) record every move."
 }
