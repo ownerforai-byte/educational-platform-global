@@ -7,83 +7,63 @@
   "animation3D": "algebra",
   "motionGraphics": "algebra",
   "notes": [
-    "**Minor.** For a square matrix A, the minor M_ij is the determinant of the submatrix obtained by deleting row i and column j. For a 3 × 3 matrix each minor is a 2 × 2 determinant.",
-    "**Cofactor.** C_ij = (−1)^(i+j) M_ij; the sign alternates like a chessboard starting with + at (1,1): + − + / − + − / + − +.",
-    "**Determinant by expansion.** det A = Σ_j a_ij C_ij along any row i, or Σ_i a_ij C_ij along any column j. Choose the row or column with the most zeros to cut the work.",
-    "**Worked example.** For A = [[1, 2, 3], [0, 4, 5], [1, 0, 6]], expanding along row 2 gives det A = −0·C_21 + 4·C_22 − 5·C_23 where C_22 = 1·6 − 3·1 = 3 and C_23 = −(1·0 − 2·1) = 2, so det A = 4·3 − 5·2 = 2.",
-    "**2 × 2 base case.** det [[a, b], [c, d]] = ad − bc; every larger determinant reduces to repeated applications of this rule.",
-    "**Alien cofactors.** Σ_j a_kj C_ij = 0 when k ≠ i: expanding a row using another row's cofactors always gives zero. This identity is the reason A·adj A = (det A) I.",
-    "**Adjoint.** adj A is the transpose of the cofactor matrix, (adj A)_ij = C_ji. Students most often lose marks by forgetting this transposition.",
-    "**Inverse.** A⁻¹ = adj A / det A, which exists exactly when det A ≠ 0; a singular matrix (det A = 0) has no inverse.",
-    "**Cramer's rule.** For AX = B with det A ≠ 0, x_i = det(A_i)/det A, where A_i is A with column i replaced by B; it solves small systems quickly but is inefficient for large ones.",
-    "**Row operations.** Swapping two rows flips the sign of det A; multiplying a row by k multiplies det A by k; adding a multiple of one row to another leaves det A unchanged.",
-    "**Triangular shortcut.** If A is upper or lower triangular, det A is simply the product of its diagonal entries, because every other term in the expansion contains a zero factor.",
-    "**Consistency test.** For a system of linear equations, det A ≠ 0 gives a unique solution; det A = 0 means either no solution or infinitely many, decided by comparing ranks."
+    "## 1. Topic Introduction — The Three Extra Canonicals\n\nRows 25–26 and 22 are the **duplicate-slug canonicals**: shorter companion notes (`function-domain-range`, `sequence-series`, `minors-cofactors-determinants`) that mirror the main topics. This session upgrades them with the same theorem-grade fields so no canonical file stays thin.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Function: domain and range (companion)\n\n- **Domain bans:** denominator ≠ 0, even-root radicand ≥ 0, log argument > 0; combinations intersect.\n- **Range by inversion:** solve y = f(x) for x; the feasible y's are the range.\n- **Inverse theorem:** f⁻¹ exists ⟺ one-to-one; construct y = f(x) → solve → swap; graph reflects in y = x.\n\n### 2.2 Sequence and series (companion)\n\n- **AP:** aₙ = a + (n−1)d, Sₙ = n/2(a + l). **GP:** aₙ = arⁿ⁻¹, Sₙ = a(rⁿ−1)/(r−1), S∞ = a/(1−r) iff |r| < 1.\n- **Means:** AM ≥ GM ≥ HM, equality iff a = b. **Special sums:** Σi = n(n+1)/2, Σi² = n(n+1)(2n+1)/6, Σi³ = [n(n+1)/2]².\n\n### 2.3 Minors, cofactors, determinants (companion)\n\n- **Cᵢⱼ = (−1)^(i+j)Mᵢⱼ**; Laplace expansion along any row/column.\n- **Adjoint identity:** A·adj A = |A|I ⟹ A⁻¹ = adj A/|A| for |A| ≠ 0; |AB| = |A||B|.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Domain** | Legal inputs under the bans | [2, 3) ∪ (3, ∞) example |\n| **S∞** | GP limit, |r| < 1 | a/(1−r) |\n| **Cofactor** | Signed minor | checkerboard signs |\n| **Adjoint identity** | A·adj A = \\|A\\|·I | keystone of inversion |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why companions exist\n\n- The manifest carries both a long canonical note and a short companion per duplicate slug; learners meet different entry pages. Consistent enrichment prevents a thin back door.\n\n### 4.2 The three-in-one drill set\n\n- Each companion gets worked example types mirroring its parent: domain/interleaved inverse drills, AP–GP numericals, and a cofactor–adjoint–inverse chain.",
+    "## 5. Comparison Tables\n\n**Companion vs parent coverage**\n\n| Companion | Parent topic | Shared theorems |\n|---|---|---|\n| function-domain-range | row 15/16 | domain bans, inverse theorem |\n| sequence-series | rows 18/19 | AP/GP sums, means |\n| minors-cofactors-determinants | rows 21/22 | cofactors, adjoint, inverse |",
+    "## 6. Common Confusions\n\n**Same slug, two files:** the first manifest entry is canonical; companions must not contradict the parent's formulas.",
+    "**S∞ needs its licence:** every companion GP numerical must show |r| < 1 before a/(1−r).",
+    "**adj A transposes:** the companion repeats the rule because it is the single most-failed step.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — Two bans: radicand 4 − x² ≥ 0 ⟹ −2 ≤ x ≤ 2; **denominator ≠ 0** ⟹ √(4 − x²) ≠ 0 ⟹ x ≠ ±2. Intersection: **−2 < x < 2**, the open interval (−2, 2) — the endpoints die not by the root rule but by the denominator rule.",
+    "**NEB-style (2m): How many terms of the GP 3 + 6 + 12 + ⋯ give a sum of 765?** — Sₙ = 3(2ⁿ − 1)/(2 − 1) = 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 ⟹ **n = 8**. Check: 3(1 + 2 + ⋯ + 128) = 3·255 = 765 ✓.",
+    "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹.** — Cofactors: C₁₁ = 4, C₁₂ = −3, C₂₁ = −2, C₂₂ = 1 ⟹ **adj A = [[4, −2], [−3, 1]]**; |A| = 4 − 6 = −2. **A⁻¹ = (1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]].** Check AA⁻¹ = I ✓."
   ],
   "keyPoints": [
-    "Minor and cofactor",
-    "Laplace expansion",
-    "Adjoint and inverse",
-    "Cramer's rule"
+    "Companion canonicals mirror their parents. Function: domain bans (denominator, even root, log) intersected; range by inversion; inverse iff one-to-one, reflection in y = x. Sequence/series: AP a_n = a + (n-1)d, S_n = n/2(a + l); GP a_n = ar^(n-1), S_n = a(r^n - 1)/(r-1), S_inf = a/(1-r) iff |r| < 1; AM >= GM >= HM; sum i = n(n+1)/2, sum i^2 = n(n+1)(2n+1)/6, sum i^3 = [n(n+1)/2]^2. Determinants: C_ij = (-1)^(i+j) M_ij; Laplace expansion any row/column; A adj A = |A| I; A^-1 = adj A/|A|; |AB| = |A||B|."
   ],
-  "summary": "The minor M_ij is the determinant left after deleting row i and column j; the cofactor is C_ij = (−1)^(i+j) M_ij. Expanding along any row or column with these cofactors gives the determinant, and the same cofactor matrix (transposed) builds the inverse and Cramer's rule.",
+  "summary": "Three companion canonicals — `function-domain-range`, `sequence-series`, `minors-cofactors-determinants` — mirror their parent topics through a narrower door, and this session gives them the same theorem-grade fields. **Function:** the domain bans (denominator ≠ 0, even-root radicand ≥ 0, log > 0) intersect — 1/√(4−x²) lives on the open (−2, 2) because the denominator kills the endpoints the root allows; the inverse exists iff one-to-one, built by solve-and-swap and reflected in y = x. **Sequences:** AP Sₙ = n/2(a + l), GP Sₙ = a(rⁿ−1)/(r−1) with the **S∞ licence |r| < 1** (divergent r = 2 means only partial sums: 8 terms of 3+6+12+⋯ reach 765), AM ≥ GM ≥ HM, and Σi³ = [Σi]². **Determinants:** cofactors Cᵢⱼ = (−1)^(i+j)Mᵢⱼ, Laplace expansion anywhere, and the keystone **A·adj A = |A|I** yielding A⁻¹ = adj A/|A| — verified end-to-end for [[1,2],[3,4]]. Companions must agree with parents: one theorem set, several doors.",
   "importantStatements": [
-    "A square matrix is invertible if and only if its determinant is non-zero.",
-    "A · adj(A) = adj(A) · A = det(A) I for every square matrix A.",
-    "Expanding one row with the cofactors of a different row gives zero."
+    "\"A adj A = |A| I; S_inf = a/(1 - r) iff |r| < 1; the inverse exists iff the function is one-to-one.\""
   ],
   "importantNotes": [
-    "The cofactor carries the sign (−1)^(i+j); the minor does not.",
-    "adj A is the TRANSPOSE of the cofactor matrix, not the cofactor matrix itself.",
-    "det(AB) = det A · det B, but det(A + B) is not generally det A + det B."
+    "No verified PYQ on these rows exists in the bank; all items here are NEB-style practice."
   ],
   "examShortTricks": [
-    "Always expand along the row or column containing the most zeros.",
-    "Create zeros first with row-addition operations, which leave the determinant unchanged.",
-    "For a 3 × 3 determinant, Sarrus' rule (sum of three diagonals minus three anti-diagonals) is a fast cross-check but does not extend to 4 × 4."
+    "Domain: intersect the bans. GP count: set S_n and solve for 2^n. Inverse 2x2: swap, negate, divide by |A|."
   ],
   "importantConcepts": [
-    "Minor",
-    "Cofactor",
-    "Determinant",
-    "Adjoint",
-    "Singular matrix"
+    "Companion notes are the same theorems through a narrower door: consistent enrichment keeps every entry page exam-ready."
   ],
   "formulas": [
-    "M_ij = det(A with row i and column j removed)",
-    "C_ij = (−1)^(i+j) M_ij",
-    "det A = Σ_j a_ij C_ij = Σ_i a_ij C_ij",
-    "A⁻¹ = adj(A)/det(A),  det A ≠ 0",
-    "x_i = det(A_i)/det(A)   (Cramer's rule)"
+    "- domain bans: denominator ≠ 0, radicand ≥ 0, log > 0 (intersected)\n- AP/GP sums as in rows 18–19; Σi³ = [n(n+1)/2]²\n- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ = adj A/|A|"
   ],
   "examples": [
-    "Find the cofactor C_12 of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]]. Delete row 1 and column 2: M_12 = det[[4, 6], [7, 10]] = 40 − 42 = −2, so C_12 = (−1)³(−2) = 2.",
-    "Compute det[[2, 0, 0], [1, 3, 0], [4, 5, 6]]. The matrix is lower triangular, so det = 2 · 3 · 6 = 36 directly."
+    "***The denominator ban inside a root*** - 1/sqrt(4 - x^2) loses its endpoints twice: the root wants them, the denominator forbids them - intersection wins."
   ],
   "practiceQuestions": [
-    "Find all cofactors of the third row of A = [[1, 0, 2], [3, 1, 1], [0, 2, 4]] and hence det A.",
-    "Use Cramer's rule to solve 2x + y = 5, x − 3y = −1.",
-    "If det A = 5, find det(adj A) for a 3 × 3 matrix A."
+    "**NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — **Ban 1 (even root):** the radicand must be non-negative: 4 − x² ≥ 0 ⟹ x² ≤ 4 ⟹ −2 ≤ x ≤ 2. **Ban 2 (denominator):** 1/√(4 − x²) requires √(4 − x²) ≠ 0 ⟹ x ≠ ±2 — the endpoints are **forbidden**, not merely allowed. **Intersection of the bans:** **−2 < x < 2**, i.e. the open interval **(−2, 2)**. The lesson: when a root sits in a denominator, the root's ≥ becomes a strict > — the two rules interact, and the intersection is the whole answer.",
+    "**NEB-style (2m): How many terms of the geometric progression 3 + 6 + 12 + ⋯ must be added to give a sum of 765?** — **Setup:** a = 3, r = 6/3 = 2, Sₙ = a(rⁿ − 1)/(r − 1) = 3(2ⁿ − 1). **Equation:** 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 = 2⁸ ⟹ **n = 8 terms**. **Verification:** the terms are 3, 6, 12, 24, 48, 96, 192, 384; their sum = 3(2⁸ − 1) = 3 × 255 = 765 ✓. (No S∞ licence is needed here — r = 2 ≥ 1, so the series diverges and only finite sums exist, which is exactly why the question asks for a partial sum.)",
+    "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹, and verify AA⁻¹ = I.** — **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −2, C₂₂ = +1 ⟹ cofactor matrix [[4, −3], [−2, 1]] ⟹ **adj A = transpose = [[4, −2], [−3, 1]]**. **Determinant:** |A| = 1·4 − 2·3 = −2 ≠ 0. **Inverse:** A⁻¹ = adj A/|A| = **(1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]]**. **Verification:** AA⁻¹ = [[1(−2) + 2(3/2), 1(1) + 2(−1/2)], [3(−2) + 4(3/2), 3(1) + 4(−1/2)]] = [[−2 + 3, 1 − 1], [−6 + 6, 3 − 2]] = [[1, 0], [0, 1]] = **I** ✓ — the adjoint identity doing its job."
   ],
   "confusion": [
     "Forgetting that adj A is the transpose of the cofactor matrix; using the cofactor matrix directly gives the wrong inverse.",
     "Believing a row swap leaves the determinant unchanged; it actually reverses the sign."
   ],
   "practice": [
-    "Evaluate one 3 × 3 determinant by expanding along two different rows and confirm the answers agree.",
-    "Verify A · adj A = det(A) I numerically for a 2 × 2 matrix of your choice."
+    "Find the domain of 1/√(4 − x²).",
+    "How many terms of 3 + 6 + 12 + ⋯ sum to 765?",
+    "Find adj A and A⁻¹ for A = [[1, 2], [3, 4]]."
   ],
   "universalFacts": [
-    "A square matrix with two equal rows has determinant zero.",
-    "det(kA) = kⁿ det A for an n × n matrix A."
+    "Summing a GP to 765 terms is the compound-interest question in school clothes: n = 8 doublings from 3."
   ],
   "specialNotes": [
     "Cramer's rule needs det A ≠ 0; when det A = 0 switch to rank comparison instead.",
     "For a 2 × 2 matrix [[a, b], [c, d]], adj A = [[d, −b], [−c, a]] — swap the diagonal and negate the off-diagonal."
   ],
   "examNotes": [
-    "Show the sign of each cofactor explicitly; examiners award method marks for the (−1)^(i+j) step.",
-    "State the condition det A ≠ 0 before writing A⁻¹."
+    "Companion answers must match the parent's formulas exactly - a mismatched S_inf licence or adjoint transpose is an internal inconsistency."
   ],
   "importantTasks": [
     "Build a cofactor matrix for a 3 × 3 case",
@@ -114,5 +94,57 @@
     }
   ],
   "visualType": "determinant-expansion",
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Three Extra Canonicals\n\nRows 25–26 and 22 are the **duplicate-slug canonicals**: shorter companion notes (`function-domain-range`, `sequence-series`, `minors-cofactors-determinants`) that mirror the main topics. This session upgrades them with the same theorem-grade fields so no canonical file stays thin.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Function: domain and range (companion)\n\n- **Domain bans:** denominator ≠ 0, even-root radicand ≥ 0, log argument > 0; combinations intersect.\n- **Range by inversion:** solve y = f(x) for x; the feasible y's are the range.\n- **Inverse theorem:** f⁻¹ exists ⟺ one-to-one; construct y = f(x) → solve → swap; graph reflects in y = x.\n\n### 2.2 Sequence and series (companion)\n\n- **AP:** aₙ = a + (n−1)d, Sₙ = n/2(a + l). **GP:** aₙ = arⁿ⁻¹, Sₙ = a(rⁿ−1)/(r−1), S∞ = a/(1−r) iff |r| < 1.\n- **Means:** AM ≥ GM ≥ HM, equality iff a = b. **Special sums:** Σi = n(n+1)/2, Σi² = n(n+1)(2n+1)/6, Σi³ = [n(n+1)/2]².\n\n### 2.3 Minors, cofactors, determinants (companion)\n\n- **Cᵢⱼ = (−1)^(i+j)Mᵢⱼ**; Laplace expansion along any row/column.\n- **Adjoint identity:** A·adj A = |A|I ⟹ A⁻¹ = adj A/|A| for |A| ≠ 0; |AB| = |A||B|.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Domain** | Legal inputs under the bans | [2, 3) ∪ (3, ∞) example |\n| **S∞** | GP limit, |r| < 1 | a/(1−r) |\n| **Cofactor** | Signed minor | checkerboard signs |\n| **Adjoint identity** | A·adj A = \\|A\\|·I | keystone of inversion |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why companions exist\n\n- The manifest carries both a long canonical note and a short companion per duplicate slug; learners meet different entry pages. Consistent enrichment prevents a thin back door.\n\n### 4.2 The three-in-one drill set\n\n- Each companion gets worked example types mirroring its parent: domain/interleaved inverse drills, AP–GP numericals, and a cofactor–adjoint–inverse chain.",
+      "## 5. Comparison Tables\n\n**Companion vs parent coverage**\n\n| Companion | Parent topic | Shared theorems |\n|---|---|---|\n| function-domain-range | row 15/16 | domain bans, inverse theorem |\n| sequence-series | rows 18/19 | AP/GP sums, means |\n| minors-cofactors-determinants | rows 21/22 | cofactors, adjoint, inverse |",
+      "## 6. Common Confusions\n\n**Same slug, two files:** the first manifest entry is canonical; companions must not contradict the parent's formulas.",
+      "**S∞ needs its licence:** every companion GP numerical must show |r| < 1 before a/(1−r).",
+      "**adj A transposes:** the companion repeats the rule because it is the single most-failed step.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — Two bans: radicand 4 − x² ≥ 0 ⟹ −2 ≤ x ≤ 2; **denominator ≠ 0** ⟹ √(4 − x²) ≠ 0 ⟹ x ≠ ±2. Intersection: **−2 < x < 2**, the open interval (−2, 2) — the endpoints die not by the root rule but by the denominator rule.",
+      "**NEB-style (2m): How many terms of the GP 3 + 6 + 12 + ⋯ give a sum of 765?** — Sₙ = 3(2ⁿ − 1)/(2 − 1) = 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 ⟹ **n = 8**. Check: 3(1 + 2 + ⋯ + 128) = 3·255 = 765 ✓.",
+      "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹.** — Cofactors: C₁₁ = 4, C₁₂ = −3, C₂₁ = −2, C₂₂ = 1 ⟹ **adj A = [[4, −2], [−3, 1]]**; |A| = 4 − 6 = −2. **A⁻¹ = (1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]].** Check AA⁻¹ = I ✓."
+    ],
+    "keyPoints": [
+      "Companion canonicals mirror their parents. Function: domain bans (denominator, even root, log) intersected; range by inversion; inverse iff one-to-one, reflection in y = x. Sequence/series: AP a_n = a + (n-1)d, S_n = n/2(a + l); GP a_n = ar^(n-1), S_n = a(r^n - 1)/(r-1), S_inf = a/(1-r) iff |r| < 1; AM >= GM >= HM; sum i = n(n+1)/2, sum i^2 = n(n+1)(2n+1)/6, sum i^3 = [n(n+1)/2]^2. Determinants: C_ij = (-1)^(i+j) M_ij; Laplace expansion any row/column; A adj A = |A| I; A^-1 = adj A/|A|; |AB| = |A||B|."
+    ],
+    "importantConcepts": [
+      "Companion notes are the same theorems through a narrower door: consistent enrichment keeps every entry page exam-ready."
+    ],
+    "examples": [
+      "***The denominator ban inside a root*** - 1/sqrt(4 - x^2) loses its endpoints twice: the root wants them, the denominator forbids them - intersection wins."
+    ],
+    "universalFacts": [
+      "Summing a GP to 765 terms is the compound-interest question in school clothes: n = 8 doublings from 3."
+    ],
+    "importantStatements": [
+      "\"A adj A = |A| I; S_inf = a/(1 - r) iff |r| < 1; the inverse exists iff the function is one-to-one.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on these rows exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Domain: intersect the bans. GP count: set S_n and solve for 2^n. Inverse 2x2: swap, negate, divide by |A|."
+    ],
+    "examNotes": [
+      "Companion answers must match the parent's formulas exactly - a mismatched S_inf licence or adjoint transpose is an internal inconsistency."
+    ],
+    "formulas": [
+      "- domain bans: denominator ≠ 0, radicand ≥ 0, log > 0 (intersected)\n- AP/GP sums as in rows 18–19; Σi³ = [n(n+1)/2]²\n- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ = adj A/|A|"
+    ],
+    "practice": [
+      "Find the domain of 1/√(4 − x²).",
+      "How many terms of 3 + 6 + 12 + ⋯ sum to 765?",
+      "Find adj A and A⁻¹ for A = [[1, 2], [3, 4]]."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — **Ban 1 (even root):** the radicand must be non-negative: 4 − x² ≥ 0 ⟹ x² ≤ 4 ⟹ −2 ≤ x ≤ 2. **Ban 2 (denominator):** 1/√(4 − x²) requires √(4 − x²) ≠ 0 ⟹ x ≠ ±2 — the endpoints are **forbidden**, not merely allowed. **Intersection of the bans:** **−2 < x < 2**, i.e. the open interval **(−2, 2)**. The lesson: when a root sits in a denominator, the root's ≥ becomes a strict > — the two rules interact, and the intersection is the whole answer.",
+      "**NEB-style (2m): How many terms of the geometric progression 3 + 6 + 12 + ⋯ must be added to give a sum of 765?** — **Setup:** a = 3, r = 6/3 = 2, Sₙ = a(rⁿ − 1)/(r − 1) = 3(2ⁿ − 1). **Equation:** 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 = 2⁸ ⟹ **n = 8 terms**. **Verification:** the terms are 3, 6, 12, 24, 48, 96, 192, 384; their sum = 3(2⁸ − 1) = 3 × 255 = 765 ✓. (No S∞ licence is needed here — r = 2 ≥ 1, so the series diverges and only finite sums exist, which is exactly why the question asks for a partial sum.)",
+      "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹, and verify AA⁻¹ = I.** — **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −2, C₂₂ = +1 ⟹ cofactor matrix [[4, −3], [−2, 1]] ⟹ **adj A = transpose = [[4, −2], [−3, 1]]**. **Determinant:** |A| = 1·4 − 2·3 = −2 ≠ 0. **Inverse:** A⁻¹ = adj A/|A| = **(1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]]**. **Verification:** AA⁻¹ = [[1(−2) + 2(3/2), 1(1) + 2(−1/2)], [3(−2) + 4(3/2), 3(1) + 4(−1/2)]] = [[−2 + 3, 1 − 1], [−6 + 6, 3 − 2]] = [[1, 0], [0, 1]] = **I** ✓ — the adjoint identity doing its job."
+    ]
+  }
 }

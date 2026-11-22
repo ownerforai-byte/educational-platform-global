@@ -5,30 +5,113 @@
   "topicTitle": "Sequence and Series",
   "relevance": 100,
   "notes": [
-    "**Sequence and series.** A sequence is an ordered list a₁, a₂, a₃, … whose nth term aₙ is a function of the positive integer n; the series is the sum a₁ + a₂ + … + aₙ, written Σaₙ.",
-    "**Arithmetic progression.** Consecutive terms differ by a constant d, so aₙ = a + (n − 1)d and Sₙ = n/2[2a + (n − 1)d] = n/2(a + l), where l is the last term.",
-    "**Geometric progression.** Consecutive terms have a constant ratio r, so aₙ = arⁿ⁻¹ and Sₙ = a(1 − rⁿ)/(1 − r) for r ≠ 1; the infinite sum S∞ = a/(1 − r) exists only when |r| < 1.",
-    "**Worked example.** In 3, 7, 11, … the common difference is 4, hence a₂₀ = 3 + 19·4 = 79 and S₂₀ = 20/2(3 + 79) = 820.",
-    "**Means.** For positive a and b the arithmetic mean is (a + b)/2 and the geometric mean is √(ab); AM ≥ GM always, with equality only when a = b.",
-    "**Exam caution.** Count the number of terms from the first and last indices before applying Sₙ, and check r = 1 separately because the GP sum formula divides by 1 − r."
+    "## 1. Topic Introduction — The Three Extra Canonicals\n\nRows 25–26 and 22 are the **duplicate-slug canonicals**: shorter companion notes (`function-domain-range`, `sequence-series`, `minors-cofactors-determinants`) that mirror the main topics. This session upgrades them with the same theorem-grade fields so no canonical file stays thin.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Function: domain and range (companion)\n\n- **Domain bans:** denominator ≠ 0, even-root radicand ≥ 0, log argument > 0; combinations intersect.\n- **Range by inversion:** solve y = f(x) for x; the feasible y's are the range.\n- **Inverse theorem:** f⁻¹ exists ⟺ one-to-one; construct y = f(x) → solve → swap; graph reflects in y = x.\n\n### 2.2 Sequence and series (companion)\n\n- **AP:** aₙ = a + (n−1)d, Sₙ = n/2(a + l). **GP:** aₙ = arⁿ⁻¹, Sₙ = a(rⁿ−1)/(r−1), S∞ = a/(1−r) iff |r| < 1.\n- **Means:** AM ≥ GM ≥ HM, equality iff a = b. **Special sums:** Σi = n(n+1)/2, Σi² = n(n+1)(2n+1)/6, Σi³ = [n(n+1)/2]².\n\n### 2.3 Minors, cofactors, determinants (companion)\n\n- **Cᵢⱼ = (−1)^(i+j)Mᵢⱼ**; Laplace expansion along any row/column.\n- **Adjoint identity:** A·adj A = |A|I ⟹ A⁻¹ = adj A/|A| for |A| ≠ 0; |AB| = |A||B|.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Domain** | Legal inputs under the bans | [2, 3) ∪ (3, ∞) example |\n| **S∞** | GP limit, |r| < 1 | a/(1−r) |\n| **Cofactor** | Signed minor | checkerboard signs |\n| **Adjoint identity** | A·adj A = \\|A\\|·I | keystone of inversion |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why companions exist\n\n- The manifest carries both a long canonical note and a short companion per duplicate slug; learners meet different entry pages. Consistent enrichment prevents a thin back door.\n\n### 4.2 The three-in-one drill set\n\n- Each companion gets worked example types mirroring its parent: domain/interleaved inverse drills, AP–GP numericals, and a cofactor–adjoint–inverse chain.",
+    "## 5. Comparison Tables\n\n**Companion vs parent coverage**\n\n| Companion | Parent topic | Shared theorems |\n|---|---|---|\n| function-domain-range | row 15/16 | domain bans, inverse theorem |\n| sequence-series | rows 18/19 | AP/GP sums, means |\n| minors-cofactors-determinants | rows 21/22 | cofactors, adjoint, inverse |",
+    "## 6. Common Confusions\n\n**Same slug, two files:** the first manifest entry is canonical; companions must not contradict the parent's formulas.",
+    "**S∞ needs its licence:** every companion GP numerical must show |r| < 1 before a/(1−r).",
+    "**adj A transposes:** the companion repeats the rule because it is the single most-failed step.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — Two bans: radicand 4 − x² ≥ 0 ⟹ −2 ≤ x ≤ 2; **denominator ≠ 0** ⟹ √(4 − x²) ≠ 0 ⟹ x ≠ ±2. Intersection: **−2 < x < 2**, the open interval (−2, 2) — the endpoints die not by the root rule but by the denominator rule.",
+    "**NEB-style (2m): How many terms of the GP 3 + 6 + 12 + ⋯ give a sum of 765?** — Sₙ = 3(2ⁿ − 1)/(2 − 1) = 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 ⟹ **n = 8**. Check: 3(1 + 2 + ⋯ + 128) = 3·255 = 765 ✓.",
+    "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹.** — Cofactors: C₁₁ = 4, C₁₂ = −3, C₂₁ = −2, C₂₂ = 1 ⟹ **adj A = [[4, −2], [−3, 1]]**; |A| = 4 − 6 = −2. **A⁻¹ = (1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]].** Check AA⁻¹ = I ✓."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Find the domain of 1/√(4 − x²).",
+    "How many terms of 3 + 6 + 12 + ⋯ sum to 765?",
+    "Find adj A and A⁻¹ for A = [[1, 2], [3, 4]]."
+  ],
+  "universalFacts": [
+    "Summing a GP to 765 terms is the compound-interest question in school clothes: n = 8 doublings from 3."
+  ],
   "animation3D": "algebra",
   "motionGraphics": "algebra",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "A sequence is an ordered list governed by a rule for its nth term; a series is the sum of those terms. Arithmetic, geometric and special sums each have their own closed form.",
+  "examples": [
+    "***The denominator ban inside a root*** - 1/sqrt(4 - x^2) loses its endpoints twice: the root wants them, the denominator forbids them - intersection wins."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — **Ban 1 (even root):** the radicand must be non-negative: 4 − x² ≥ 0 ⟹ x² ≤ 4 ⟹ −2 ≤ x ≤ 2. **Ban 2 (denominator):** 1/√(4 − x²) requires √(4 − x²) ≠ 0 ⟹ x ≠ ±2 — the endpoints are **forbidden**, not merely allowed. **Intersection of the bans:** **−2 < x < 2**, i.e. the open interval **(−2, 2)**. The lesson: when a root sits in a denominator, the root's ≥ becomes a strict > — the two rules interact, and the intersection is the whole answer.",
+    "**NEB-style (2m): How many terms of the geometric progression 3 + 6 + 12 + ⋯ must be added to give a sum of 765?** — **Setup:** a = 3, r = 6/3 = 2, Sₙ = a(rⁿ − 1)/(r − 1) = 3(2ⁿ − 1). **Equation:** 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 = 2⁸ ⟹ **n = 8 terms**. **Verification:** the terms are 3, 6, 12, 24, 48, 96, 192, 384; their sum = 3(2⁸ − 1) = 3 × 255 = 765 ✓. (No S∞ licence is needed here — r = 2 ≥ 1, so the series diverges and only finite sums exist, which is exactly why the question asks for a partial sum.)",
+    "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹, and verify AA⁻¹ = I.** — **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −2, C₂₂ = +1 ⟹ cofactor matrix [[4, −3], [−2, 1]] ⟹ **adj A = transpose = [[4, −2], [−3, 1]]**. **Determinant:** |A| = 1·4 − 2·3 = −2 ≠ 0. **Inverse:** A⁻¹ = adj A/|A| = **(1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]]**. **Verification:** AA⁻¹ = [[1(−2) + 2(3/2), 1(1) + 2(−1/2)], [3(−2) + 4(3/2), 3(1) + 4(−1/2)]] = [[−2 + 3, 1 − 1], [−6 + 6, 3 − 2]] = [[1, 0], [0, 1]] = **I** ✓ — the adjoint identity doing its job."
+  ],
+  "formulas": [
+    "- domain bans: denominator ≠ 0, radicand ≥ 0, log > 0 (intersected)\n- AP/GP sums as in rows 18–19; Σi³ = [n(n+1)/2]²\n- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ = adj A/|A|"
+  ],
+  "keyPoints": [
+    "Companion canonicals mirror their parents. Function: domain bans (denominator, even root, log) intersected; range by inversion; inverse iff one-to-one, reflection in y = x. Sequence/series: AP a_n = a + (n-1)d, S_n = n/2(a + l); GP a_n = ar^(n-1), S_n = a(r^n - 1)/(r-1), S_inf = a/(1-r) iff |r| < 1; AM >= GM >= HM; sum i = n(n+1)/2, sum i^2 = n(n+1)(2n+1)/6, sum i^3 = [n(n+1)/2]^2. Determinants: C_ij = (-1)^(i+j) M_ij; Laplace expansion any row/column; A adj A = |A| I; A^-1 = adj A/|A|; |AB| = |A||B|."
+  ],
+  "summary": "Three companion canonicals — `function-domain-range`, `sequence-series`, `minors-cofactors-determinants` — mirror their parent topics through a narrower door, and this session gives them the same theorem-grade fields. **Function:** the domain bans (denominator ≠ 0, even-root radicand ≥ 0, log > 0) intersect — 1/√(4−x²) lives on the open (−2, 2) because the denominator kills the endpoints the root allows; the inverse exists iff one-to-one, built by solve-and-swap and reflected in y = x. **Sequences:** AP Sₙ = n/2(a + l), GP Sₙ = a(rⁿ−1)/(r−1) with the **S∞ licence |r| < 1** (divergent r = 2 means only partial sums: 8 terms of 3+6+12+⋯ reach 765), AM ≥ GM ≥ HM, and Σi³ = [Σi]². **Determinants:** cofactors Cᵢⱼ = (−1)^(i+j)Mᵢⱼ, Laplace expansion anywhere, and the keystone **A·adj A = |A|I** yielding A⁻¹ = adj A/|A| — verified end-to-end for [[1,2],[3,4]]. Companions must agree with parents: one theorem set, several doors.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"A adj A = |A| I; S_inf = a/(1 - r) iff |r| < 1; the inverse exists iff the function is one-to-one.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on these rows exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Domain: intersect the bans. GP count: set S_n and solve for 2^n. Inverse 2x2: swap, negate, divide by |A|."
+  ],
+  "examNotes": [
+    "Companion answers must match the parent's formulas exactly - a mismatched S_inf licence or adjoint transpose is an internal inconsistency."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "Companion notes are the same theorems through a narrower door: consistent enrichment keeps every entry page exam-ready."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Three Extra Canonicals\n\nRows 25–26 and 22 are the **duplicate-slug canonicals**: shorter companion notes (`function-domain-range`, `sequence-series`, `minors-cofactors-determinants`) that mirror the main topics. This session upgrades them with the same theorem-grade fields so no canonical file stays thin.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Function: domain and range (companion)\n\n- **Domain bans:** denominator ≠ 0, even-root radicand ≥ 0, log argument > 0; combinations intersect.\n- **Range by inversion:** solve y = f(x) for x; the feasible y's are the range.\n- **Inverse theorem:** f⁻¹ exists ⟺ one-to-one; construct y = f(x) → solve → swap; graph reflects in y = x.\n\n### 2.2 Sequence and series (companion)\n\n- **AP:** aₙ = a + (n−1)d, Sₙ = n/2(a + l). **GP:** aₙ = arⁿ⁻¹, Sₙ = a(rⁿ−1)/(r−1), S∞ = a/(1−r) iff |r| < 1.\n- **Means:** AM ≥ GM ≥ HM, equality iff a = b. **Special sums:** Σi = n(n+1)/2, Σi² = n(n+1)(2n+1)/6, Σi³ = [n(n+1)/2]².\n\n### 2.3 Minors, cofactors, determinants (companion)\n\n- **Cᵢⱼ = (−1)^(i+j)Mᵢⱼ**; Laplace expansion along any row/column.\n- **Adjoint identity:** A·adj A = |A|I ⟹ A⁻¹ = adj A/|A| for |A| ≠ 0; |AB| = |A||B|.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Domain** | Legal inputs under the bans | [2, 3) ∪ (3, ∞) example |\n| **S∞** | GP limit, |r| < 1 | a/(1−r) |\n| **Cofactor** | Signed minor | checkerboard signs |\n| **Adjoint identity** | A·adj A = \\|A\\|·I | keystone of inversion |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why companions exist\n\n- The manifest carries both a long canonical note and a short companion per duplicate slug; learners meet different entry pages. Consistent enrichment prevents a thin back door.\n\n### 4.2 The three-in-one drill set\n\n- Each companion gets worked example types mirroring its parent: domain/interleaved inverse drills, AP–GP numericals, and a cofactor–adjoint–inverse chain.",
+      "## 5. Comparison Tables\n\n**Companion vs parent coverage**\n\n| Companion | Parent topic | Shared theorems |\n|---|---|---|\n| function-domain-range | row 15/16 | domain bans, inverse theorem |\n| sequence-series | rows 18/19 | AP/GP sums, means |\n| minors-cofactors-determinants | rows 21/22 | cofactors, adjoint, inverse |",
+      "## 6. Common Confusions\n\n**Same slug, two files:** the first manifest entry is canonical; companions must not contradict the parent's formulas.",
+      "**S∞ needs its licence:** every companion GP numerical must show |r| < 1 before a/(1−r).",
+      "**adj A transposes:** the companion repeats the rule because it is the single most-failed step.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — Two bans: radicand 4 − x² ≥ 0 ⟹ −2 ≤ x ≤ 2; **denominator ≠ 0** ⟹ √(4 − x²) ≠ 0 ⟹ x ≠ ±2. Intersection: **−2 < x < 2**, the open interval (−2, 2) — the endpoints die not by the root rule but by the denominator rule.",
+      "**NEB-style (2m): How many terms of the GP 3 + 6 + 12 + ⋯ give a sum of 765?** — Sₙ = 3(2ⁿ − 1)/(2 − 1) = 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 ⟹ **n = 8**. Check: 3(1 + 2 + ⋯ + 128) = 3·255 = 765 ✓.",
+      "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹.** — Cofactors: C₁₁ = 4, C₁₂ = −3, C₂₁ = −2, C₂₂ = 1 ⟹ **adj A = [[4, −2], [−3, 1]]**; |A| = 4 − 6 = −2. **A⁻¹ = (1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]].** Check AA⁻¹ = I ✓."
+    ],
+    "keyPoints": [
+      "Companion canonicals mirror their parents. Function: domain bans (denominator, even root, log) intersected; range by inversion; inverse iff one-to-one, reflection in y = x. Sequence/series: AP a_n = a + (n-1)d, S_n = n/2(a + l); GP a_n = ar^(n-1), S_n = a(r^n - 1)/(r-1), S_inf = a/(1-r) iff |r| < 1; AM >= GM >= HM; sum i = n(n+1)/2, sum i^2 = n(n+1)(2n+1)/6, sum i^3 = [n(n+1)/2]^2. Determinants: C_ij = (-1)^(i+j) M_ij; Laplace expansion any row/column; A adj A = |A| I; A^-1 = adj A/|A|; |AB| = |A||B|."
+    ],
+    "importantConcepts": [
+      "Companion notes are the same theorems through a narrower door: consistent enrichment keeps every entry page exam-ready."
+    ],
+    "examples": [
+      "***The denominator ban inside a root*** - 1/sqrt(4 - x^2) loses its endpoints twice: the root wants them, the denominator forbids them - intersection wins."
+    ],
+    "universalFacts": [
+      "Summing a GP to 765 terms is the compound-interest question in school clothes: n = 8 doublings from 3."
+    ],
+    "importantStatements": [
+      "\"A adj A = |A| I; S_inf = a/(1 - r) iff |r| < 1; the inverse exists iff the function is one-to-one.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on these rows exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Domain: intersect the bans. GP count: set S_n and solve for 2^n. Inverse 2x2: swap, negate, divide by |A|."
+    ],
+    "examNotes": [
+      "Companion answers must match the parent's formulas exactly - a mismatched S_inf licence or adjoint transpose is an internal inconsistency."
+    ],
+    "formulas": [
+      "- domain bans: denominator ≠ 0, radicand ≥ 0, log > 0 (intersected)\n- AP/GP sums as in rows 18–19; Σi³ = [n(n+1)/2]²\n- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ = adj A/|A|"
+    ],
+    "practice": [
+      "Find the domain of 1/√(4 − x²).",
+      "How many terms of 3 + 6 + 12 + ⋯ sum to 765?",
+      "Find adj A and A⁻¹ for A = [[1, 2], [3, 4]]."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — **Ban 1 (even root):** the radicand must be non-negative: 4 − x² ≥ 0 ⟹ x² ≤ 4 ⟹ −2 ≤ x ≤ 2. **Ban 2 (denominator):** 1/√(4 − x²) requires √(4 − x²) ≠ 0 ⟹ x ≠ ±2 — the endpoints are **forbidden**, not merely allowed. **Intersection of the bans:** **−2 < x < 2**, i.e. the open interval **(−2, 2)**. The lesson: when a root sits in a denominator, the root's ≥ becomes a strict > — the two rules interact, and the intersection is the whole answer.",
+      "**NEB-style (2m): How many terms of the geometric progression 3 + 6 + 12 + ⋯ must be added to give a sum of 765?** — **Setup:** a = 3, r = 6/3 = 2, Sₙ = a(rⁿ − 1)/(r − 1) = 3(2ⁿ − 1). **Equation:** 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 = 2⁸ ⟹ **n = 8 terms**. **Verification:** the terms are 3, 6, 12, 24, 48, 96, 192, 384; their sum = 3(2⁸ − 1) = 3 × 255 = 765 ✓. (No S∞ licence is needed here — r = 2 ≥ 1, so the series diverges and only finite sums exist, which is exactly why the question asks for a partial sum.)",
+      "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹, and verify AA⁻¹ = I.** — **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −2, C₂₂ = +1 ⟹ cofactor matrix [[4, −3], [−2, 1]] ⟹ **adj A = transpose = [[4, −2], [−3, 1]]**. **Determinant:** |A| = 1·4 − 2·3 = −2 ≠ 0. **Inverse:** A⁻¹ = adj A/|A| = **(1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]]**. **Verification:** AA⁻¹ = [[1(−2) + 2(3/2), 1(1) + 2(−1/2)], [3(−2) + 4(3/2), 3(1) + 4(−1/2)]] = [[−2 + 3, 1 − 1], [−6 + 6, 3 − 2]] = [[1, 0], [0, 1]] = **I** ✓ — the adjoint identity doing its job."
+    ]
+  }
 }

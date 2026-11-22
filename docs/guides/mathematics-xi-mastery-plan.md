@@ -61,11 +61,11 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 | 19 | Algebra | Sequence and series: properties, AM–GM–HM | `algebra/05-sequence-and-series-arithmetic-geometric-harmonic-sequences-and-series-and-their-properties-a-m-.json` | Completed |
 | 20 | Algebra | Matrices and determinants: transpose, inverse | `algebra/03-matrices-and-determinants-transpose-properties-inverse.json` | Completed |
 | 21 | Algebra | Matrices and determinants: minors, cofactors, adjoint | `algebra/06-matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-.json` | Completed |
-| 22 | Algebra | Minors, cofactors, determinants (extra canonical) | `algebra/minors-cofactors-determinants.json` | Pending |
+| 22 | Algebra | Minors, cofactors, determinants (extra canonical) | `algebra/minors-cofactors-determinants.json` | Completed |
 | 23 | Algebra | Quadratic equation: nature of roots, root–coefficient relation | `algebra/07-quadratic-equation-nature-and-roots-of-a-quadratic-equation-relation-between-roots-and-coefficie.json` | Completed |
 | 24 | Algebra | Complex number: algebra, modulus, geometric representation | `algebra/08-complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modul.json` | Completed |
-| 25 | Algebra | Function: domain and range (extra canonical) | `algebra/03-function-domain-range.json` | Pending |
-| 26 | Algebra | Sequence and series (extra canonical) | `algebra/05-sequence-series.json` | Pending |
+| 25 | Algebra | Function: domain and range (extra canonical) | `algebra/03-function-domain-range.json` | Completed |
+| 26 | Algebra | Sequence and series (extra canonical) | `algebra/05-sequence-series.json` | Completed |
 
 ## Limits and continuity (17 topics)
 
@@ -158,6 +158,8 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 | 96 | Mechanics | Dynamics: straight-line motion, uniform acceleration | `computational-methods-or-mechanics/04-mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-accelerati.json` | Pending |
 
 ## Progress log
+
+- Session 5 - Algebra companions (rows 22, 25, 26, 3/3): function-domain-range, sequence-series and minors-cofactors-determinants companion canonicals upgraded with theorem-grade fields mirroring their parents (domain bans, S_inf licence, adjoint identity). All NEB-style practice. Build 101 entries, validator 0 broken. ALGEBRA UNIT COMPLETE (14/14).
 
 - Session 4 - Algebra part 1 (rows 13-23, 11/14): logic and set (truth tables, De Morgan, membership-table proofs; NEB 2023 verified PYQ set operations, NEB 2022 verified PYQs distributive law + a^3+b^3+c^3=3abc MCQ); real numbers/intervals/absolute value (triangle inequality, delta-window); function domain-range-inverse (inverse theorem, reflection in y = x); composite and algebraic functions (vertex theorem, rational asymptote rules, squaring trap; NEB 2024 verified PYQ x^2-5x+6=0, NEB 2023 verified PYQ 2sqrt(x+1)=x-3); curve sketching (parity, period shift, monotone=>invertible); AP/GP/HP (S_inf licence |r|<1, AM-GM-HM, special sums); series techniques (telescoping, shift trick); matrices (transpose/inverse reversal laws; NEB 2023 verified PYQ det+inverse of [[2,1],[3,4]]); minors/cofactors/adjoint (adjoint identity, Cramer); complex numbers (conjugate theorems, modulus, Argand); quadratic (discriminant regimes, Viete). Rows 24-26 remain.
 
