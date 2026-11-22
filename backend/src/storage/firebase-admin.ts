@@ -47,9 +47,14 @@ type AdminNamespace = {
     cert: (serviceAccount: object) => unknown;
     applicationDefault?: () => unknown;
   };
+  /** firebase-admin 14.x: top-level named exports (v13 kept them under credential). */
+  cert?: (serviceAccount: object) => unknown;
+  applicationDefault?: () => unknown;
   auth: (app?: AdminApp) => FirebaseAuthAdmin;
   firestore: (app?: AdminApp) => FirebaseFirestore;
   storage: (app?: AdminApp) => { bucket: (name?: string) => FirebaseBucket };
+  /** firebase-admin 14.x: subpath entry points, attached by loadAdmin(). */
+  messaging?: (app?: AdminApp) => unknown;
 };
 
 type FirebaseFirestore = {
@@ -81,7 +86,40 @@ function loadAdmin(): AdminNamespace | null {
   if (adminNs) return adminNs;
   try {
     // Dynamic require so the backend still boots when firebase-admin is absent.
-    adminNs = require("firebase-admin") as AdminNamespace;
+    const mod = require("firebase-admin") as unknown as Record<string, unknown>;
+    // firebase-admin 14.x moved the service accessors (auth/firestore/storage/
+    // messaging) into subpath entry points ("firebase-admin/auth" etc.) and
+    // cert/applicationDefault to top-level named exports. Wrap the module once
+    // here so every call site keeps the v13 shape (`admin.auth(app)`), and
+    // neither SDK version can silently break auth again.
+    const admin = { ...mod } as AdminNamespace & Record<string, unknown>;
+    const sub = (p: string): { getAuth?: unknown; getFirestore?: unknown; getStorage?: unknown; getMessaging?: unknown } | null => {
+      try {
+        return require(p) as Record<string, unknown>;
+      } catch {
+        return null;
+      }
+    };
+    if (typeof admin.app !== "function" && typeof mod.getApp === "function") {
+      admin.app = (name?: string) => (mod.getApp as (n?: string) => AdminApp)(name);
+    }
+    if (typeof admin.auth !== "function") {
+      const m = sub("firebase-admin/auth");
+      if (typeof m?.getAuth === "function") admin.auth = (app?: AdminApp) => (m.getAuth as (a?: AdminApp) => FirebaseAuthAdmin)(app);
+    }
+    if (typeof admin.firestore !== "function") {
+      const m = sub("firebase-admin/firestore");
+      if (typeof m?.getFirestore === "function") admin.firestore = (app?: AdminApp) => (m.getFirestore as (a?: AdminApp) => FirebaseFirestore)(app);
+    }
+    if (typeof admin.storage !== "function") {
+      const m = sub("firebase-admin/storage");
+      if (typeof m?.getStorage === "function") admin.storage = (app?: AdminApp) => (m.getStorage as (a?: AdminApp) => { bucket: (name?: string) => FirebaseBucket })(app);
+    }
+    if (typeof admin.messaging !== "function") {
+      const m = sub("firebase-admin/messaging");
+      if (typeof m?.getMessaging === "function") admin.messaging = (app?: AdminApp) => (m.getMessaging as (a?: AdminApp) => unknown)(app);
+    }
+    adminNs = admin as AdminNamespace;
     return adminNs;
   } catch (err) {
     initError = err instanceof Error ? err.message : "firebase-admin not installed";
@@ -178,6 +216,11 @@ function runsOnGoogleCloud(): boolean {
   return Boolean(process.env.K_SERVICE?.trim() || process.env.FUNCTION_TARGET?.trim());
 }
 
+/** The adapted firebase-admin namespace (v13/v14 shape unified) — or null. */
+export function getAdminNamespace(): AdminNamespace | null {
+  return loadAdmin();
+}
+
 export function getFirebaseInitError(): string | null {
   ensureFirebaseAdmin();
   return initError;
@@ -195,6 +238,11 @@ export function ensureFirebaseAdmin(): AdminApp | null {
   if (initializedAppCount(admin)) return admin.app();
 
   const account = parseServiceAccount();
+  // firebase-admin 14.x moved `cert`/`applicationDefault` to top-level named
+  // exports (the 13.x `admin.credential.cert` shape is gone there). Support
+  // both so the SDK version can not silently break auth again.
+  const certFn = admin.credential?.cert ?? admin.cert;
+  const appDefaultFn = admin.credential?.applicationDefault ?? admin.applicationDefault;
   const projectId =
     (account as { project_id?: string; projectId?: string } | null)?.project_id ??
     (account as { projectId?: string } | null)?.projectId ??
@@ -204,20 +252,20 @@ export function ensureFirebaseAdmin(): AdminApp | null {
   const bucket = process.env.FIREBASE_STORAGE_BUCKET?.trim() || `${projectId ?? "app"}.appspot.com`;
 
   try {
-    if (account) {
+    if (account && typeof certFn === "function") {
       const app = admin.initializeApp({
-        credential: admin.credential.cert(account),
+        credential: certFn(account),
         storageBucket: bucket,
         projectId: projectId,
       });
       initError = null;
       return app;
     }
-    if (runsOnGoogleCloud() && typeof admin.credential.applicationDefault === "function") {
+    if (runsOnGoogleCloud() && typeof appDefaultFn === "function") {
       // Cloud Functions / Cloud Run: the runtime service account is the
       // credential — nothing to ship or rotate in env vars.
       const app = admin.initializeApp({
-        credential: admin.credential.applicationDefault(),
+        credential: appDefaultFn(),
         storageBucket: bucket,
         projectId: projectId,
       });
@@ -236,6 +284,7 @@ export function getFirestore(): FirebaseFirestore | null {
   const admin = loadAdmin();
   const app = ensureFirebaseAdmin();
   if (!admin || !app) return null;
+  if (typeof admin.firestore !== "function") return null;
   return admin.firestore(app);
 }
 
@@ -243,6 +292,7 @@ export function getStorageBucket(): FirebaseBucket | null {
   const admin = loadAdmin();
   const app = ensureFirebaseAdmin();
   if (!admin || !app) return null;
+  if (typeof admin.storage !== "function") return null;
   const name = process.env.FIREBASE_STORAGE_BUCKET?.trim();
   return name ? admin.storage(app).bucket(name) : admin.storage(app).bucket();
 }
@@ -251,6 +301,7 @@ export function getFirebaseAuth(): FirebaseAuthAdmin | null {
   const admin = loadAdmin();
   const app = ensureFirebaseAdmin();
   if (!admin || !app) return null;
+  if (typeof admin.auth !== "function") return null;
   return admin.auth(app);
 }
 

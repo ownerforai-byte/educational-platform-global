@@ -2,6 +2,7 @@ import { createRequire } from "node:module";
 import type { NotificationSender } from "../ports.js";
 import {
   ensureFirebaseAdmin,
+  getAdminNamespace,
   getFirestore,
   isFirebaseAdminConfigured,
 } from "../firebase-admin.js";
@@ -95,8 +96,6 @@ type AdminModuleHandle = {
   firestore: (app?: unknown) => AdminDbHandle;
 };
 
-const require = createRequire(import.meta.url);
-
 function getAdminSendHandles(): {
   messaging: AdminMessagingHandle;
   db: AdminDbHandle;
@@ -107,7 +106,13 @@ function getAdminSendHandles(): {
       "Firebase Admin is not configured — set FIREBASE_SERVICE_ACCOUNT_PATH / FIREBASE_SERVICE_ACCOUNT_JSON / FIREBASE_PROJECT_ID+CLIENT_EMAIL+PRIVATE_KEY",
     );
   }
-  const adminModule = require("firebase-admin") as AdminModuleHandle;
+  // Route through the shared adapter: firebase-admin 14.x moved messaging/
+  // firestore into subpath entry points, and loadAdmin() re-attaches them in
+  // the v13 shape so both SDK versions work.
+  const adminModule = getAdminNamespace() as unknown as AdminModuleHandle | null;
+  if (!adminModule || typeof adminModule.messaging !== "function" || typeof adminModule.firestore !== "function") {
+    throw new Error("Firebase Admin services unavailable (messaging/firestore)");
+  }
   return {
     messaging: adminModule.messaging(app),
     db: adminModule.firestore(app),
