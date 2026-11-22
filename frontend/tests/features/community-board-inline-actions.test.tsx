@@ -25,26 +25,27 @@ vi.mock("@/features/auth/hooks/use-session", () => ({
   useSession: () => ({ user: viewer, isLoading: false }),
 }));
 vi.mock("@/features/profile/follow-button", () => ({ FollowButton: () => null }));
-vi.mock("@/lib/api/community-feed", () => ({
-  COMMUNITY_CATEGORIES: [{ id: "general", label: "General" }],
-  listFeed: (...args: unknown[]) => listFeed(...args),
-  listMine: vi.fn(),
-  getPost: (...args: unknown[]) => getPost(...args),
-  getPerson: vi.fn(),
-  createPost: vi.fn(),
-  updatePost: vi.fn(),
-  deletePost: vi.fn(),
-  toggleLike: vi.fn(),
-  toggleSave: (...args: unknown[]) => toggleSave(...args),
-  addComment: vi.fn(),
-  updateComment: vi.fn(),
-  deleteComment: vi.fn(),
-  deleteAttachment: vi.fn(),
-  uploadAttachment: vi.fn(),
-  publishAssistantReply: vi.fn(),
-  sharePath: (id: string) => `/ai/community/posts/${id}`,
-  attachmentFileUrl: (id: string) => `/api/community/feed/attachments/${id}/file`,
-}));
+vi.mock("@/lib/api/community-feed", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/lib/api/community-feed")>();
+  return {
+    ...actual,
+    listFeed: (...args: unknown[]) => listFeed(...args),
+    listMine: vi.fn(),
+    getPost: (...args: unknown[]) => getPost(...args),
+    getPerson: vi.fn(),
+    createPost: vi.fn(),
+    updatePost: vi.fn(),
+    deletePost: vi.fn(),
+    toggleLike: vi.fn(),
+    toggleSave: (...args: unknown[]) => toggleSave(...args),
+    addComment: vi.fn(),
+    updateComment: vi.fn(),
+    deleteComment: vi.fn(),
+    deleteAttachment: vi.fn(),
+    uploadAttachment: vi.fn(),
+    publishAssistantReply: vi.fn(),
+  };
+});
 
 import { CommunityBoard } from "@/features/community/community-board";
 

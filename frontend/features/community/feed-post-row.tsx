@@ -318,7 +318,7 @@ export const FeedPostRow = memo(function FeedPostRow({
             )}
           >
             <MessageCircle className="h-4 w-4 shrink-0" aria-hidden />
-            <span>{item.commentCount}</span>
+            <span>{item.commentCount ?? 0}</span>
           </button>
 
           {onRepost ? (
@@ -369,7 +369,7 @@ export const FeedPostRow = memo(function FeedPostRow({
             )}
           >
             <Bookmark className={cn("h-4 w-4 shrink-0", savedNow && "fill-current")} aria-hidden />
-            <span>{item.saveCount}</span>
+            <span>{item.saveCount ?? 0}</span>
           </button>
 
           {canInvokeBot ? (

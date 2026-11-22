@@ -51,7 +51,6 @@ export interface CommunityFeedProps {
   cursor: number | null;
   loading: boolean;
   loadingMore: boolean;
-  migrated: boolean;
   error: string | null;
   viewerId?: string | null;
   canModerate: boolean;
@@ -87,7 +86,6 @@ export function CommunityFeed({
   cursor,
   loading,
   loadingMore,
-  migrated,
   error,
   viewerId,
   canModerate,
@@ -389,7 +387,7 @@ export function CommunityFeed({
 
       {loading && posts.length === 0 ? <CommunityLoading /> : null}
 
-      {!loading && migrated && posts.length === 0 && !error ? (
+      {!loading && posts.length === 0 && !error ? (
         <FeedEmpty
           kind={
             hasActiveFilter

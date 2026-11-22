@@ -25,12 +25,17 @@ const getThread = vi.fn();
 const createReply = vi.fn();
 const toggleUpvote = vi.fn();
 
+const getSpaceMembership = vi.fn();
+
 vi.mock("@/lib/api/community", () => ({
   listThreads: (...args: unknown[]) => listThreads(...args),
   createThread: (...args: unknown[]) => createThread(...args),
   getThread: (...args: unknown[]) => getThread(...args),
   createReply: (...args: unknown[]) => createReply(...args),
   toggleUpvote: (...args: unknown[]) => toggleUpvote(...args),
+  getSpaceMembership: (...args: unknown[]) => getSpaceMembership(...args),
+  joinSpace: vi.fn(),
+  leaveSpace: vi.fn(),
 }));
 
 import { CommunitySpaceView } from "@/components/study/community-space-view";
@@ -81,6 +86,11 @@ beforeEach(() => {
     migrated: true,
   });
   toggleUpvote.mockResolvedValue({ upvotes: 3, upvotedByYou: true, migrated: true });
+  getSpaceMembership.mockResolvedValue({
+    memberCount: 2,
+    joinedByYou: false,
+    migrated: true,
+  });
 });
 
 // ─── Tests ──────────────────────────────────────────────────────────────────
@@ -122,12 +132,13 @@ describe("CommunitySpaceView", () => {
     expect(await screen.findByText("New discussion")).toBeInTheDocument();
   });
 
-  it("says so honestly when the community tables are not migrated", async () => {
+  it("explains when study-space discussions are still syncing", async () => {
     listThreads.mockResolvedValue({ threads: [], migrated: false });
+    getSpaceMembership.mockResolvedValue({ memberCount: 0, joinedByYou: false, migrated: false });
 
     render(<CommunitySpaceView space={space} />);
 
-    expect(await screen.findByText(/not set up on this deployment yet/)).toBeInTheDocument();
+    expect(await screen.findByText(/still syncing/i)).toBeInTheDocument();
   });
 });
 

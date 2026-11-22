@@ -81,7 +81,7 @@ export function AskView() {
       if (res.migrated && res.thread) {
         setPostedThread({ id: res.thread.id });
       } else {
-        setPostError("Discussions are not set up on this deployment yet.");
+        setPostError("Discussions are not available right now. Try again shortly.");
       }
     } catch (err) {
       setPostError(err instanceof Error ? err.message : "Could not post to the community.");

@@ -114,7 +114,7 @@ const CommentRow = memo(function CommentRow({
               compact
               onFollowChange={(following) => onFollowChange(comment.author.id, following)}
             />
-            {comment.replyTo && (botComment || Boolean(comment.parentId)) ? (
+            {comment.replyTo ? (
               <p className="rounded-md border border-border/60 bg-muted/40 px-2 py-1 text-xs font-medium text-muted-foreground">
                 Replying to @{comment.replyTo.username || comment.replyTo.fullName}
               </p>

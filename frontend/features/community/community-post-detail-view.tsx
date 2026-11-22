@@ -9,6 +9,7 @@ import {
   Link2,
   Loader2,
   MessageCircle,
+  Share2,
   Pencil,
   Plus,
   Trash2,
@@ -37,7 +38,8 @@ import {
   CommunityLoading,
   looksLikeQuestion,
 } from "@/features/community/community-helpers";
-import { CommunityErrorAlert, CommunityMigrationNotice } from "@/features/community/community-alerts";
+import { CommunityErrorAlert } from "@/features/community/community-alerts";
+import { CommunityCelebrationBanner } from "@/features/community/community-action-success";
 import {
   actionBtn,
   categoryLabel,
@@ -50,8 +52,9 @@ export function CommunityPostDetailView() {
     view,
     user,
     sessionLoading,
-    migrated,
     error,
+    celebration,
+    dismissCelebration,
     setError,
     loading,
     post,
@@ -65,6 +68,7 @@ export function CommunityPostDetailView() {
     composerFocusTrigger,
     openAndFocusComposer,
     onLike,
+    onRepost,
     onToggleSave,
     onDeletePost,
     onAssistantReply,
@@ -90,8 +94,14 @@ export function CommunityPostDetailView() {
         </>
       ) : null}
 
-      <CommunityMigrationNotice migrated={migrated} />
       <CommunityErrorAlert error={error} />
+      {celebration ? (
+        <CommunityCelebrationBanner
+          action={celebration.kind}
+          postId={celebration.postId}
+          onDismiss={dismissCelebration}
+        />
+      ) : null}
 
       {loading && !post && view !== "new" ? <CommunityLoading /> : null}
 
@@ -230,7 +240,7 @@ export function CommunityPostDetailView() {
                 aria-label={post.savedByYou || isSaved(post.id) ? "Saved post" : "Save post"}
                 className={cn(
                   actionBtn,
-                  "min-h-11 px-3 text-[13px]",
+                  "min-h-11 px-3 text-[13px] tabular-nums",
                   post.savedByYou || isSaved(post.id)
                     ? "bg-primary/12 font-semibold text-primary hover:bg-primary/18"
                     : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
@@ -240,8 +250,27 @@ export function CommunityPostDetailView() {
                   className={cn("h-4 w-4", (post.savedByYou || isSaved(post.id)) && "fill-current")}
                   aria-hidden
                 />
-                <span className="tabular-nums">{post.saveCount}</span>
+                <span>{post.saveCount ?? 0}</span>
               </button>
+
+              {onRepost ? (
+                <button
+                  type="button"
+                  onClick={() => onRepost(post)}
+                  aria-pressed={post.repostedByYou ?? false}
+                  aria-label={post.repostedByYou ? "Undo repost" : "Repost"}
+                  className={cn(
+                    actionBtn,
+                    "min-h-11 px-3 text-[13px] tabular-nums",
+                    post.repostedByYou
+                      ? "bg-primary/10 font-semibold text-primary"
+                      : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
+                  )}
+                >
+                  <Share2 className="h-4 w-4" aria-hidden />
+                  <span>{post.repostCount ?? 0}</span>
+                </button>
+              ) : null}
 
               <button
                 type="button"
@@ -270,8 +299,8 @@ export function CommunityPostDetailView() {
 
               <span className="ml-auto inline-flex items-center gap-1.5 px-2 text-[13px] tabular-nums text-muted-foreground">
                 <MessageCircle className="h-4 w-4" aria-hidden />
-                {(post.comments ?? []).length}{" "}
-                {(post.comments ?? []).length === 1 ? "comment" : "comments"}
+                {post.commentCount ?? (post.comments ?? []).length}{" "}
+                {(post.commentCount ?? (post.comments ?? []).length) === 1 ? "comment" : "comments"}
               </span>
             </div>
           </article>
@@ -284,7 +313,7 @@ export function CommunityPostDetailView() {
               >
                 Comments
                 <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold tabular-nums text-muted-foreground">
-                  {(post.comments ?? []).length}
+                  {post.commentCount ?? (post.comments ?? []).length}
                 </span>
               </h2>
 

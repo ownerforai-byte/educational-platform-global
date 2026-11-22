@@ -41,6 +41,7 @@ export function CommentComposer({
   const [body, setBody] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [posted, setPosted] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
@@ -85,6 +86,10 @@ export function CommentComposer({
       if (!outcome.ok) {
         setBody((current) => (current.trim() ? current : snapshot));
         setLocalError(outcome.error || "Could not reply.");
+      } else {
+        setPosted(true);
+        window.setTimeout(() => setPosted(false), 3000);
+        onClearReply();
       }
     } catch {
       setBody((current) => (current.trim() ? current : snapshot));
@@ -150,6 +155,18 @@ export function CommentComposer({
             }}
           />
         </label>
+        {posted ? (
+          <p role="status" className="mb-2 text-[13px] font-medium text-emerald-700 dark:text-emerald-400">
+            Reply posted
+            {handle ? (
+              <>
+                {" "}
+                to <span className="text-primary">@{handle}</span>
+              </>
+            ) : null}
+            .
+          </p>
+        ) : null}
         {localError ? (
           <p
             role="alert"

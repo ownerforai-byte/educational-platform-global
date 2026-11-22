@@ -48,12 +48,48 @@ import {
   statusOf,
 } from "@/features/community/community-helpers";
 import { optimisticComment, useCopyLink } from "@/features/community/community-board-utils";
+import type { CommunitySuccessAction } from "@/features/community/community-action-success";
 
 export function useCommunityBoardController(view: BoardView, id?: string) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { user, isLoading: sessionLoading } = useSession();
-  const { copiedId, copy } = useCopyLink();
+  const { copiedId, copy: copyLink } = useCopyLink();
+  const celebrationTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [celebration, setCelebration] = useState<{
+    kind: CommunitySuccessAction;
+    postId?: string;
+    at: number;
+  } | null>(null);
+
+  const dismissCelebration = useCallback(() => {
+    if (celebrationTimerRef.current) {
+      clearTimeout(celebrationTimerRef.current);
+      celebrationTimerRef.current = null;
+    }
+    setCelebration(null);
+  }, []);
+
+  const showCelebration = useCallback(
+    (kind: CommunitySuccessAction, postId?: string) => {
+      const at = Date.now();
+      setCelebration({ kind, postId, at });
+      if (celebrationTimerRef.current) clearTimeout(celebrationTimerRef.current);
+      celebrationTimerRef.current = setTimeout(() => {
+        setCelebration((current) => (current?.at === at ? null : current));
+        celebrationTimerRef.current = null;
+      }, 5000);
+    },
+    [],
+  );
+
+  const copy = useCallback(
+    async (id: string) => {
+      await copyLink(id);
+      showCelebration("shared", id);
+    },
+    [copyLink, showCelebration],
+  );
   const { savedIds, savedCount, isSaved, reconcile: reconcileSaved } = useSavedPosts(user?.id);
 
   const savedView = view === "feed" && searchParams.get("view") === "saved";
@@ -597,6 +633,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
       .then((result) => {
         reconcileSaved(postId, result.savedByYou);
         patchPostEverywhere(postId, (item) => ({ ...item, saveCount: result.saveCount, savedByYou: result.savedByYou }));
+        if (result.savedByYou) showCelebration("saved", postId);
         invalidateCommunityCacheWhere((key) => key.startsWith("feed-list::"));
       })
       .catch((err) => {
@@ -607,7 +644,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
         setError(statusOf(err) === 401 ? "Sign in to save posts." : messageOf(err));
       })
       .finally(() => saveInFlight.current.delete(postId));
-  }, [isSaved, knownPost, patchPostEverywhere, reconcileSaved, user]);
+  }, [isSaved, knownPost, patchPostEverywhere, reconcileSaved, showCelebration, user]);
 
   const onLike = useCallback(
     (target: FeedPost) => {
@@ -673,6 +710,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
       }));
       void toggleRepost(target.id)
         .then((result) => {
+          if (result.repostedByYou) showCelebration("reposted", target.id);
           patchPostEverywhere(target.id, (item) => ({
             ...item,
             repostCount: result.repostCount,
@@ -688,7 +726,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
           setError(statusOf(err) === 401 ? "Sign in to repost." : messageOf(err));
         });
     },
-    [patchPostEverywhere, user],
+    [patchPostEverywhere, showCelebration, user],
   );
 
   const onQuotePost = useCallback(
@@ -797,6 +835,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
         });
         invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
         if (result.botReplyPending) void refreshPostForBotReply(postId, beforeBotCommentIds);
+        showCelebration("comment", postId);
         return { ok: true };
       } catch (err) {
         patchPostEverywhere(postId, (item) => ({
@@ -807,7 +846,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
         return { ok: false, error: statusOf(err) === 401 ? "Sign in to reply." : messageOf(err) };
       }
     },
-    [knownPost, patchPostEverywhere, refreshPostForBotReply, user],
+    [knownPost, patchPostEverywhere, refreshPostForBotReply, showCelebration, user],
   );
 
   const handleSaveCommentEdit = useCallback(
@@ -1007,6 +1046,8 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     listMode,
     migrated,
     error,
+    celebration,
+    dismissCelebration,
     setError,
     loading,
     loadingMore,

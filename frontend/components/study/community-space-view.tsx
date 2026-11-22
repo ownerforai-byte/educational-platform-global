@@ -319,8 +319,8 @@ export function CommunitySpaceView({ space }: { space: CommunitySpace }) {
           </p>
         ) : !migrated ? (
           <p className="rounded-xl border border-dashed border-border bg-card p-4 text-sm text-muted-foreground">
-            Discussions are not set up on this deployment yet. The board opens as soon as the
-            community tables are migrated.
+            Discussions are still syncing. Try again in a moment, or open the Community feed for
+            public study posts.
           </p>
         ) : threads === null ? (
           <p className="flex items-center gap-2 rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">

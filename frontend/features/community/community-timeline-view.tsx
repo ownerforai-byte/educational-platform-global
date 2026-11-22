@@ -3,7 +3,8 @@
 import { CommunityFeed } from "@/features/community/community-feed";
 import { CommunityPersonView } from "@/features/community/community-person-view";
 import { useCommunityBoard } from "@/features/community/community-board-context";
-import { CommunityErrorAlert, CommunityMigrationNotice } from "@/features/community/community-alerts";
+import { CommunityErrorAlert } from "@/features/community/community-alerts";
+import { CommunityCelebrationBanner } from "@/features/community/community-action-success";
 import { mergeById } from "@/features/community/community-helpers";
 
 export function CommunityTimelineView() {
@@ -11,8 +12,9 @@ export function CommunityTimelineView() {
   const {
     view,
     listMode,
-    migrated,
     error,
+    celebration,
+    dismissCelebration,
     appliedQuery,
     category,
     postKind,
@@ -47,8 +49,14 @@ export function CommunityTimelineView() {
 
   return (
     <>
-      <CommunityMigrationNotice migrated={migrated} />
       <CommunityErrorAlert error={error} />
+      {celebration ? (
+        <CommunityCelebrationBanner
+          action={celebration.kind}
+          postId={celebration.postId}
+          onDismiss={dismissCelebration}
+        />
+      ) : null}
 
       {view === "feed" || view === "mine" ? (
         <CommunityFeed
@@ -62,7 +70,6 @@ export function CommunityTimelineView() {
           cursor={cursor}
           loading={loading}
           loadingMore={loadingMore}
-          migrated={migrated}
           error={error}
           viewerId={user?.id}
           canModerate={moderate}

@@ -63,7 +63,7 @@ function renderRow(overrides: Partial<React.ComponentProps<typeof FeedPostRow>> 
 describe("FeedPostRow actions", () => {
   it("renders an independent rounded card and its public save count", () => {
     const { container } = renderRow();
-    expect(container.querySelector("article")?.className).toContain("rounded-2xl");
+    expect(container.querySelector("article")?.className).toContain("rounded-md");
     expect(screen.getByRole("button", { name: "Save post" })).toHaveTextContent("7");
     expect(screen.getByRole("button", { name: "Show 2 comments" })).toBeInTheDocument();
   });
@@ -129,9 +129,9 @@ describe("FeedPostRow actions", () => {
     }
     render(<Harness />);
     fireEvent.click(screen.getByRole("button", { name: "Show 2 comments" }));
-    expect(screen.getByRole("region", { name: "Comments on A useful study note" })).toBeInTheDocument();
-    expect(screen.getByText("No comments yet")).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "Replies on A useful study note" })).toBeInTheDocument();
+    expect(screen.getByText("No replies yet.")).toBeInTheDocument();
     fireEvent.pointerDown(screen.getByRole("button", { name: "Outside" }));
-    expect(screen.queryByRole("region", { name: "Comments on A useful study note" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("region", { name: "Replies on A useful study note" })).not.toBeInTheDocument();
   });
 });

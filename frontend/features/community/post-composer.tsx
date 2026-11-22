@@ -312,7 +312,8 @@ export function PostComposer({
       onPublished?.(post);
 
       if (redirectOnSuccess) {
-        router.push(sharePath(post.id));
+        const action = mode === "edit" ? "updated" : "posted";
+        router.push(`/ai/community/done?action=${action}&postId=${encodeURIComponent(post.id)}`);
         return;
       }
       if (mode === "create") {

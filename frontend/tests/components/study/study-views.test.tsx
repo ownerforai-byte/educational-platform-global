@@ -62,6 +62,13 @@ vi.mock("@/lib/api/community", () => ({
   getThread: vi.fn().mockResolvedValue({ thread: null, replies: [], migrated: true }),
   createReply: vi.fn().mockResolvedValue({ reply: null, migrated: false }),
   toggleUpvote: vi.fn().mockResolvedValue({ upvotes: 0, upvotedByYou: false, migrated: true }),
+  getSpaceMembership: vi.fn().mockResolvedValue({
+    memberCount: 0,
+    joinedByYou: false,
+    migrated: true,
+  }),
+  joinSpace: vi.fn(),
+  leaveSpace: vi.fn(),
 }));
 vi.mock("@/lib/pyq-bank", () => ({ getSubjectPyqBank: vi.fn().mockRejectedValue(new Error("empty")) }));
 

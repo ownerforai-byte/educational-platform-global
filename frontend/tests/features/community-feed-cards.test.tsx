@@ -43,7 +43,6 @@ describe("CommunityFeed cards", () => {
         cursor={null}
         loading={false}
         loadingMore={false}
-        migrated
         error={null}
         canModerate={false}
         copiedId={null}
@@ -82,11 +81,11 @@ describe("CommunityFeed cards", () => {
     const cards = container.querySelectorAll("article");
     expect(cards).toHaveLength(2);
     for (const card of cards) {
-      expect(card.className).toContain("rounded-2xl");
-      expect(card.className).toContain("border-border/80");
+      expect(card.className).toContain("rounded-md");
+      expect(card.className).toContain("border-border/90");
       expect(card.className).toContain("bg-card");
     }
-    expect(container.querySelector(".space-y-3")).toContainElement(cards[0]);
+    expect(container.querySelector(".space-y-2")).toContainElement(cards[0]);
     expect(screen.getByRole("heading", { name: "Post one" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Post two" })).toBeInTheDocument();
   });
