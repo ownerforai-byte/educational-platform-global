@@ -1712,6 +1712,10 @@ export interface TopicFigure {
 interface TopicFiguresEntry {
   title: string;
   figures: TopicFigure[];
+  /** Rich entries only: keywords of REGISTRY SVG figures to keep (classification-style
+   *  diagrams that the raster plate does not supersede). They are appended after the
+   *  rich figures. Absent = the whole SVG entry is replaced (previous behaviour). */
+  keepSvg?: string[];
 }
 export type { TopicFiguresEntry };
 
@@ -11439,7 +11443,14 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
 export function getTopicFigures(topicSlug: string): TopicFiguresEntry | undefined {
   // Rich figures (detailed raster illustrations) replace the shallow SVG set
   // for any topic they cover — owner request 2026-11-22, biology first.
-  return RICH_FIGURES[topicSlug] ?? REGISTRY[topicSlug];
+  // A rich entry may list `keepSvg` keywords to retain classification-style
+  // SVG diagrams (keys, tables, flowcharts) that the raster does not replace.
+  const rich = RICH_FIGURES[topicSlug];
+  if (!rich) return REGISTRY[topicSlug];
+  const base = REGISTRY[topicSlug];
+  if (!base || !rich.keepSvg?.length) return rich;
+  const kept = base.figures.filter((f) => f.keyword != null && rich.keepSvg!.includes(f.keyword));
+  return { ...rich, figures: [...rich.figures, ...kept] };
 }
 
 /** All registered slugs (for tests and tooling). */

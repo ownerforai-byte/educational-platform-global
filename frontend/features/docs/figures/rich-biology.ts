@@ -33,6 +33,13 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
         keyword: "mitochondria",
       },
     ],
+    keepSvg: [
+      // classification-style diagrams the raster plate does not supersede
+      "plasma membrane", // fluid-mosaic model
+      "cellulose", // cell-wall layers
+      "diffusion", // membrane transport modes
+      "microtubules", // cytoskeleton types
+    ],
   },
   "cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-sign": {
     title: "Mitosis under the microscope",
@@ -44,6 +51,41 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
         alt: "Row of five cells showing mitosis stages from early prophase through telophase, with condensed red and blue chromosomes and spindle fibers",
         keyword: "prophase",
       },
+    ],
+    keepSvg: [
+      // classification-style diagrams the raster plate does not supersede
+      "cell cycle", // cell-cycle wheel flowchart
+      "meiosis", // meiosis-I stage strip
+      "crossing over", // chiasma diagram
+    ],
+  },
+  "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano": {
+    title: "Inside a bacterial cell — the cutaway",
+    figures: [
+      {
+        src: "/docs/figures/biology/bacterial-cell-cutaway.jpg",
+        caption:
+          "A rod-shaped bacterium opened up, drawn the way an electron micrograph plus a model kit would show it. From outside in: a sticky translucent capsule that dodges phagocytosis and drying, a rigid tan wall of peptidoglycan (thick and purple-staining in Gram-positive cells, thin with an outer membrane in Gram-negative ones), then a thin plasma membrane carrying the respiratory enzymes — bacteria have no mitochondria, so the membrane itself breathes. The cream cytoplasm is packed with the tiny dots of 70S ribosomes, the only organelle. In the centre sprawls the nucleoid: a tangled circle of naked DNA with no nuclear membrane around it — the defining prokaryote feature — accompanied by small independent plasmid rings that carry resistance genes and serve biotechnology as vectors. Hair-like pili bristle from the surface for attachment, and long rotating flagella, anchored by basal-body motors, drive the run-and-tumble search for food. Note what is missing: no nucleus, no ER, no Golgi, no plastids — everything eukaryotic cells compartmentalise, prokaryotes solve with one compartment and speed.",
+        alt: "Cutaway illustration of a rod-shaped bacterium showing capsule, cell wall, plasma membrane, ribosome-dotted cytoplasm, tangled nucleoid DNA, red plasmid rings, pili and flagella with a basal anchor",
+        keyword: "nucleoid",
+      },
+    ],
+    keepSvg: [
+      // classification-style diagrams the raster plate does not supersede
+      "cocci", // bacterial shapes and arrangements
+      "cyanobacteria", // nutrition-mode tree
+      "growth curve", // batch growth curve
+      "binary fission", // fission + recombination routes
+      "gram", // Gram staining steps
+      "flagella", // flagella arrangements
+      "heterocyst", // cyanobacteria nitrogen workshop
+      "curd", // useful bacteria
+      "plasmid", // plasmid + mesosome extras
+      "monera", // kingdom overview shelves
+      "capsule", // capsule vs slime layer
+      "growth", // growth conditions dials
+      "antibiotic", // targets + overuse + resistance timeline
+      "tuberculosis", // TB transmission cycle
     ],
   },
 };
