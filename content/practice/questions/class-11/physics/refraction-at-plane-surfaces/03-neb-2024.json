@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Snell's law:** n₁ sin i = n₂ sin r — the ratio sin i/sin r is constant for a pair of media.\n\nn = c/v → v = c/n = (3 × 10⁸)/1.5 = **2 × 10⁸ m/s**.",
-      "knowledgeNote": "Light bends toward the normal entering a denser medium — the single sentence behind every refraction diagram."
+      "knowledgeNote": "Light bends toward the normal entering a denser medium — the single sentence behind every refraction diagram.",
+      "answer": "**Snell's law:** sin i/sin r = n₂/n₁ (constant for the pair of media); incident ray, refracted ray and normal are coplanar. **Speed in glass:** v = c/n = (3 × 10⁸)/1.5 = **2 × 10⁸ m/s**. **Deep point:** n = c/v is the physical content of Snell's law — the bending angle is the speed change made visible."
     },
     {
       "question": "What is total internal reflection? State two conditions for it to occur.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Total internal reflection** is the complete return of light into the denser medium when it meets a rarer boundary beyond the critical angle.\n\n(1) Light must travel from **denser to rarer** medium. (2) Angle of incidence must **exceed the critical angle** (sin C = 1/n).",
-      "knowledgeNote": "Fibre optics, sparkling diamonds, and mirages are all TIR applications — name one for the extra mark."
+      "knowledgeNote": "Fibre optics, sparkling diamonds, and mirages are all TIR applications — name one for the extra mark.",
+      "answer": "**Total internal reflection:** complete reflection of light back into the denser medium when the incidence angle exceeds the critical angle, with no transmitted ray. **Conditions:** (1) light must go **from denser to rarer medium**; (2) **angle of incidence > critical angle** (sin C = 1/n for medium-to-air). **Deep point:** 'total' is literal — 100% of the energy reflects, which is why fibre optics loses almost no light over kilometres."
     },
     {
       "question": "A fish is 1.2 m below the water surface (μ = 4/3). At what apparent depth does it appear to an observer above the surface?",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Apparent depth = real depth / μ = 1.2/(4/3) = 1.2 × 3/4 = **0.9 m**.\n\nThe fish appears raised — which is why spear-fishing aims below the seen position.",
-      "knowledgeNote": "Apparent depth = real/μ (viewed from rarer); apparent height = real × μ (viewed from denser) — keep the direction straight."
+      "knowledgeNote": "Apparent depth = real/μ (viewed from rarer); apparent height = real × μ (viewed from denser) — keep the direction straight.",
+      "answer": "**Apparent depth formula:** apparent depth = real depth/μ. **Substitute:** real depth = 1.2 m; μ = 4/3. Apparent depth = 1.2/(4/3) = 1.2 × 3/4 = **0.9 m**. **Deep point:** refraction at the surface makes submerged objects look *shallower* by the factor μ — the same geometry that makes a pool look 75 cm deep for every metre of real water, and the source of the 'apparent bending of a stick in water'."
     },
     {
       "question": "Find the critical angle for a glass–air boundary if the refractive index of glass is 1.5.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "sin C = 1/n = 1/1.5 = 0.6667 → C = **41.8°**.\n\nAny ray inside glass striking the boundary above 41.8° is totally reflected.",
-      "knowledgeNote": "Denser medium → smaller critical angle: diamond (n = 2.42) has C ≈ 24°, hence its fire."
+      "knowledgeNote": "Denser medium → smaller critical angle: diamond (n = 2.42) has C ≈ 24°, hence its fire.",
+      "answer": "**Condition at the critical angle:** the refracted ray grazes the boundary (r = 90°): n sin C = 1 × sin 90° = 1 ⟹ sin C = 1/n. **Substitute:** n = 1.5 ⟹ sin C = 1/1.5 = 0.667 ⟹ **C = sin⁻¹(0.667) ≈ 41.8°**. **Deep point:** the critical angle exists only going denser → rarer; 41.8° for typical glass is why a 45°–45°–90° prism (45° > 41.8°) reflects light totally — the geometry of prism binoculars."
     },
     {
       "question": "On what factors does the lateral shift of a ray through a glass slab depend?",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Lateral shift x = t·sin(i − r)/cos r increases with: (1) **thickness** of the slab, (2) **angle of incidence**, and (3) **refractive index** of the glass.\n\nThe emergent ray stays parallel to the incident ray — only displaced sideways.",
-      "knowledgeNote": "Zero thickness or normal incidence → zero shift; the parallel-emergent-ray result is the exam diagram."
+      "knowledgeNote": "Zero thickness or normal incidence → zero shift; the parallel-emergent-ray result is the exam diagram.",
+      "answer": "**Lateral shift by a glass slab** depends on: (1) the **thickness t of the slab** (shift grows with t); (2) the **angle of incidence i** (shift grows as i grows); (3) the **refractive index n of the slab** (denser slab ⟹ more refraction at each face ⟹ larger shift). Formula: lateral shift d = t sin(i − r)/cos r. **Deep point:** the shift is zero at normal incidence (i = 0) and grows with obliquity — the slab displaces the ray sideways but never changes its direction (emergent ray ∥ incident ray), which is why a slab deviates without dispersing."
     },
     {
       "question": "What are totally reflecting prisms? Write two of their uses.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Right-angled isosceles glass prisms that turn light by 90° or 180° through **total internal reflection** instead of silvered mirrors — no absorption losses.\n\n**Uses:** (1) periscopes (two such prisms); (2) binoculars (folding a long path into a short body); (3) SLR camera viewfinders.",
-      "knowledgeNote": "TIR prisms beat mirrors on efficiency — that is why quality optics uses glass, not silver."
+      "knowledgeNote": "TIR prisms beat mirrors on efficiency — that is why quality optics uses glass, not silver.",
+      "answer": "**Totally reflecting prisms:** right-angled isosceles prisms (45°–45°–90°) used as mirrors — light enters normally, strikes the hypotenuse face at **45°, which exceeds the critical angle (≈42° for glass, n = 1.5)**, and undergoes **total internal reflection**, turning the beam through 90° (or 180° with two reflections). **Two uses:** (1) **prism binoculars/periscopes** — to fold the light path and erect the image; (2) **reflecting prisms in cameras, binoculars and optical instruments** replacing mirrors (totally reflecting prisms reflect ~100% of the light; silvered mirrors lose a few percent and tarnish). **Deep point:** the 45° > 41.8° inequality is the entire design — one degree of margin turns geometry into a perfect mirror that never tarnishes."
     }
   ]
 }

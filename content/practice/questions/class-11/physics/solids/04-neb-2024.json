@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "In solids, overlapping atomic orbitals split discrete levels into energy bands.\n\n**Metals:** valence and conduction bands overlap (or the conduction band is half-full) — electrons move freely. E.g. Cu, Ag.\n\n**Insulators:** a wide forbidden gap (Eg > 3 eV) blocks electrons from reaching the conduction band. E.g. diamond, SiO₂.\n\n**Semiconductors:** a narrow gap (≈ 1 eV) — room-temperature energy lifts some electrons across. E.g. Si (1.1 eV), Ge (0.7 eV).",
-      "knowledgeNote": "Gap width decides conductivity: zero/small gap conducts, wide gap blocks."
+      "knowledgeNote": "Gap width decides conductivity: zero/small gap conducts, wide gap blocks.",
+      "answer": "**Energy band theory:** in a crystal the overlapping atomic levels split into a vast number of closely spaced levels forming **bands** — a filled **valence band (VB)**, an (usually empty) **conduction band (CB)**, and possibly a **forbidden gap E_g** between them; conduction requires electrons in partially-filled bands where they can gain energy from a field. **Differentiation:** **metals** — CB partly filled or overlapping the VB ⟹ abundant free electrons ⟹ excellent conduction (falls as T rises, more scattering); **insulators** — full VB, empty CB, **large gap (> 5 eV)** ⟹ essentially no carriers at room temperature; **semiconductors** — full VB, empty CB but **small gap (~1 eV)** ⟹ thermal excitation at room temperature creates electron–hole pairs ⟹ moderate conduction that **rises** as T rises (more carriers created). **Deep point:** one diagram explains all three classes and their opposite temperature behaviours — the gap size decides the carrier population, and the carrier population decides everything else."
     },
     {
       "question": "What is an intrinsic semiconductor? Define electrons and holes as charge carriers.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Intrinsic semiconductor:** a pure crystal (e.g. pure Si or Ge) with no added impurities.\n\n**Electron:** negative carrier promoted to the conduction band. **Hole:** the positive vacancy left behind in the valence band, which drifts along the field as neighbouring electrons fill it in turn.",
-      "knowledgeNote": "Intrinsic means nₑ = nₕ — every free electron is matched by exactly one hole."
+      "knowledgeNote": "Intrinsic means nₑ = nₕ — every free electron is matched by exactly one hole.",
+      "answer": "**Intrinsic semiconductor:** a **pure** semiconductor (Si, Ge) in which the only charge carriers are those created by **thermal excitation across the band gap** — every excited electron leaves a hole behind, so **n_e = n_h = n_i** (intrinsic concentration), which doubles roughly every 10 °C rise. **Electrons:** negative carriers in the **conduction band**, free to drift and carry current. **Holes:** positive carriers — the **vacancies in the valence band** left behind; they move as neighbouring valence electrons hop into them, behaving as mobile charges +e. **Deep point:** intrinsic means 'carriers from the material itself' — the electron–hole pair is created and can also recombine, so the intrinsic concentration is a dynamic equilibrium, not a fixed stock."
     },
     {
       "question": "What is doping? Distinguish between n-type and p-type semiconductors.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Doping** is adding trace impurities to boost conductivity enormously.\n\n**n-type:** pentavalent impurity (P, As) donates extra electrons — electrons are the majority carriers.\n\n**p-type:** trivalent impurity (B, Al) creates extra holes — holes are the majority carriers.",
-      "knowledgeNote": "Parts-per-million doping can raise conductivity a million-fold — the lever behind all electronics."
+      "knowledgeNote": "Parts-per-million doping can raise conductivity a million-fold — the lever behind all electronics.",
+      "answer": "**Doping:** deliberately adding a controlled trace (~1 atom per 10⁶) of an **impurity element** to a pure semiconductor to multiply its conductivity and set its carrier type. **n-type:** doped with a **pentavalent** impurity (P, As, Sb — 5 valence electrons); four electrons bond with neighbouring Si atoms and the **fifth is left loose** — a donor electron near the conduction band, easily freed ⟹ **majority carriers: electrons** (negative); holes are the minority. **p-type:** doped with a **trivalent** impurity (B, Al, In — 3 valence electrons); bonding leaves one **missing bond — a hole** (acceptor) in the valence band ⟹ **majority carriers: holes** (positive); electrons are the minority. **Deep point:** the dopant's valence electrons are the whole story — one electron too many makes n-type, one too few makes p-type; the crystal stays electrically neutral either way (each dopant ion is fixed in the lattice)."
     },
     {
       "question": "What is a p-n junction? Explain its working as a rectifier in forward and reverse bias.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "A **p-n junction** is the boundary where p-type meets n-type material, forming a depletion layer with a built-in barrier voltage.\n\n**Forward bias** (p to +, n to −): the barrier shrinks, majority carriers flood across — large current flows.\n\n**Reverse bias** (p to −, n to +): the barrier grows, only tiny leakage current passes.\n\nCurrent flows one way only — **rectification** (AC → pulsating DC).",
-      "knowledgeNote": "One-way conduction is the whole diode: rectifiers, LED arrows, and solar cells all start here."
+      "knowledgeNote": "One-way conduction is the whole diode: rectifiers, LED arrows, and solar cells all start here.",
+      "answer": "**p–n junction:** the region formed where a p-type and an n-type semiconductor join in one continuous crystal — mobile carriers diffuse across (holes into n, electrons into p) and recombine, leaving the fixed dopant ions exposed as a **depletion region** with an internal **potential barrier (≈0.7 V for Si)** that stops further diffusion. **Forward bias (p to + terminal):** the applied voltage **opposes the barrier**, lowering it; when V > barrier the majority carriers flood across — holes move into n, electrons into p — giving a large current that grows steeply with voltage (the diode's conducting state). **Reverse bias (p to −):** the applied voltage **adds to the barrier**, widening the depletion region; majority carriers cannot cross and only a tiny leakage (minority-carrier) current flows (µA), until breakdown at large reverse voltage. **Rectification:** the junction conducts easily one way and blocks the other — in a half-wave rectifier a single diode passes the positive half-cycles of AC to the load and blocks the negative ones; in a full-wave (bridge) arrangement four diodes route both half-cycles through the load in the same direction, converting AC into pulsating DC (smoothed by a capacitor). **Deep point:** the junction is a one-way valve because bias changes the *height of its own internal barrier* — forward bias tears the barrier down, reverse bias builds it up; rectification is that asymmetry applied to AC."
     },
     {
       "question": "Draw the circuit symbols and truth tables of AND, OR, and NOT gates.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**AND:** output 1 only if ALL inputs are 1 (0·0=0, 0·1=0, 1·0=0, 1·1=1).\n\n**OR:** output 1 if ANY input is 1 (0+0=0, rest 1).\n\n**NOT:** inverts one input (0→1, 1→0).\n\n(Symbols: AND — D-shaped; OR — curved-back shield; NOT — triangle with a bubble.)",
-      "knowledgeNote": "NAND/NOR are universal — either one alone can build every other gate."
+      "knowledgeNote": "NAND/NOR are universal — either one alone can build every other gate.",
+      "answer": "**AND gate** (output 1 only when **all** inputs are 1): symbol — a D-shaped flat-backed bulge; Y = A·B. Truth table: A=0,B=0 → 0; A=0,B=1 → 0; A=1,B=0 → 0; A=1,B=1 → **1**. **OR gate** (output 1 when **any** input is 1): symbol — a curved-front arrow-like shape; Y = A + B. Truth table: 0,0 → 0; 0,1 → **1**; 1,0 → **1**; 1,1 → **1**. **NOT gate (inverter)** (output the opposite of the single input): symbol — a triangle with a small circle (bubble) at the output; Y = Ā. Truth table: A=0 → **1**; A=1 → **0**. **Deep point:** AND is multiplication, OR is addition, NOT is complement — Boolean algebra's arithmetic is the gates' algebra, and every digital circuit is built from these three (plus their NAND/NOR composites)."
     },
     {
       "question": "Why does the conductivity of a semiconductor increase with temperature while that of a metal decreases?",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Heating a **semiconductor** breaks more covalent bonds, creating extra electron–hole pairs — more carriers, higher conductivity.\n\nHeating a **metal** only agitates the lattice ions, which scatter the already-free electrons more — same carriers, more collisions, lower conductivity.",
-      "knowledgeNote": "Opposite temperature behaviour is the quickest semiconductor-vs-metal test in one-mark questions."
+      "knowledgeNote": "Opposite temperature behaviour is the quickest semiconductor-vs-metal test in one-mark questions.",
+      "answer": "**Semiconductor:** raising T excites **more electrons across the small band gap**, creating electron–hole pairs — the carrier population grows **exponentially**, swamping the increased lattice scattering ⟹ conductivity **increases** (resistance falls; ~doubles per 10 °C). **Metal:** the free-electron population is already essentially **fixed** (all conduction electrons are free at any temperature); raising T only makes the lattice vibrate more, increasing electron–phonon **scattering** ⟹ resistivity **increases** roughly linearly with temperature. **Deep point:** the two opposite behaviours come from which factor dominates — carrier *creation* (semiconductors) vs carrier *scattering* (metals); a thermistor's steep fall of resistance with temperature is the semiconductor effect exploited as a thermometer."
     }
   ]
 }

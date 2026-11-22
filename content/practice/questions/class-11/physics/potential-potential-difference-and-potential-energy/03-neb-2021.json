@@ -15,7 +15,8 @@
       "year": 2021,
       "source": "NEB Model",
       "solution": "**Electric potential:** The electric potential at a point in an electric field is the amount of work done in bringing a **unit positive charge** from infinity to that point without acceleration.\n$$V = \\frac{W}{q}\\qquad \\text{SI unit: volt (V, J C}^{-1}\\text{)}$$\nIt is a **scalar** quantity.\n\n**Electric potential difference:** The potential difference between two points $A$ and $B$ is the work done in taking a unit positive charge from $A$ to $B$.\n$$V_{AB} = V_B - V_A = \\frac{W_{AB}}{q}$$\n\nEquipotential surfaces have the **same** potential. Potential is zero at infinity and is **always** positive for a positive charge.",
-      "knowledgeNote": "Electric potential is work done per unit positive charge brought from infinity, measured in volts."
+      "knowledgeNote": "Electric potential is work done per unit positive charge brought from infinity, measured in volts.",
+      "answer": "**Electric potential at a point:** the work done **per unit positive charge** in bringing a small test charge from infinity to that point: **V = W/q**; SI unit **volt (V) = J/C**. It is a scalar; potential due to a point charge is V = kq/r. **Electric potential difference:** the work done per unit charge in moving charge **between two points** (not from infinity): **V_AB = W_AB/q**; also SI unit the **volt**. **Deep point:** potential is always a difference in disguise — 'the potential at a point' is shorthand for the difference between that point and infinity; only differences are measurable."
     }
   ]
 }

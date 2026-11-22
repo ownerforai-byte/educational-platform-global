@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Past",
       "solution": "**Scalar (Dot) Product:** AÂ·B = |A||B|cos Î¸ â€” result is a scalar.\nExample: Work W = FÂ·d\n\n**Vector (Cross) Product:** AÃ—B = |A||B|sin Î¸ nÌ‚ (where nÌ‚ is perpendicular, right-hand rule) â€” result is a vector.\nExample: Torque Ï„ = rÃ—F",
-      "knowledgeNote": "Work is a dot product (scalar); torque and angular momentum are cross products (vectors)"
+      "knowledgeNote": "Work is a dot product (scalar); torque and angular momentum are cross products (vectors)",
+      "answer": "**Scalar (dot) product:** A·B = AB cos θ — the product of the magnitudes and the cosine of the angle between them; the result is a **scalar** (no direction). It measures how much of one vector lies along the other (projection). *Example:* **work, W = F·d = Fd cos θ** — force dot displacement. (Also: A·B = A_xB_x + A_yB_y + A_zB_z; A·B = 0 ⟹ vectors perpendicular.) **Vector (cross) product:** A × B = AB sin θ n̂ — magnitude AB sin θ with direction **n̂ perpendicular to both vectors** given by the right-hand rule (curl from A to B; thumb gives n̂); the result is a **vector**. *Example:* **torque, τ = r × F** (also force on a moving charge's magnetic counterpart, v × B). **Deep point:** cos θ vs sin θ is the split — dot products measure *alongness* (work, power, flux), cross products measure *perpendicularity* (torque, angular momentum, magnetic force); and A × B = −B × A, while A·B = B·A."
     }
   ]
 }

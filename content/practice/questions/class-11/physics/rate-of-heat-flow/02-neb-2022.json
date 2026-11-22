@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Definition:** The rate of flow of heat (heat current) is defined as the amount of heat flowing through a cross-section per unit time.\n$$\\boxed{\\text{Rate of heat flow} = \\frac{Q}{t} = \\frac{mc\\Delta\\theta}{t}}$$\n\n**SI unit:** $\\text{J s}^{-1} = $ watt (W). The cgs unit is **calorie per second (cal/s)**.\n\n**Note:** The rate at which heat flows is directly proportional to the temperature difference. If $Q$ is in joules and $t$ in seconds, $H = Q/t$ in watts; the rate per unit area is the **heat current density** in $\\text{W m}^{-2}$.",
-      "knowledgeNote": "Rate of heat flow is heat divided by time, measured in watts (joules per second)."
+      "knowledgeNote": "Rate of heat flow is heat divided by time, measured in watts (joules per second).",
+      "answer": "**Rate of flow of heat:** the **quantity of heat conducted through a body per unit time** — H = Q/t. **Formula (Fourier's law):** **H = kA(θ₁ − θ₂)/d** — proportional to the cross-sectional area A and the temperature difference (θ₁ − θ₂), inversely proportional to the thickness d, with k the thermal conductivity of the material. **SI unit: the watt (W = J/s).** **Deep point:** the formula's shape is an Ohm's law analogy — temperature difference is the 'voltage', d/(kA) the thermal 'resistance', and H the thermal 'current'."
     }
   ]
 }

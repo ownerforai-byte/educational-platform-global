@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Correct option: (a) always minimum when the ray passes symmetrically.**\n\nThe deviation varies with the angle of incidence. For a given prism, $\\delta = i + e - A$. As $i$ is increased, $r_1$ increases, $r_2$ decreases and $e$ increases. At a certain value of $i$ we get $i = e$ (the ray passes **symmetrically** through the prism, so $r_1 = r_2 = A/2$), and at this position the deviation is **minimum**.\n$$\\boxed{i = e = \\frac{A + \\delta_{min}}{2}}$$\nHence options (b), (c) and (d) are all incorrect.",
-      "knowledgeNote": "Prism deviation is minimum when the ray passes symmetrically, so that i equals e and r1 equals r2."
+      "knowledgeNote": "Prism deviation is minimum when the ray passes symmetrically, so that i equals e and r1 equals r2.",
+      "answer": "**Answer: (a) the deviation is minimum when the ray passes symmetrically** (i = e, r₁ = r₂). **Why:** the i–δ curve has a single flat minimum, and at that minimum the ray inside the prism is parallel to the base — the passage is symmetric, i = e. Options claiming maximum, or deviation independent of angle, contradict the measured i–δ curve. **Deep point:** the symmetric passage at minimum deviation is what makes the minimum-deviation method usable for measuring n — symmetry halves the unknowns."
     }
   ]
 }

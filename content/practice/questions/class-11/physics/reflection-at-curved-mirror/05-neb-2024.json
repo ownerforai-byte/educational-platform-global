@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Cartesian sign convention: distances measured in front of the mirror are negative; f of a concave mirror is negative.\n\nFrom similar triangles in the ray diagram (object AB, image A′B′, centre of curvature C, focus F): AB/A′B′ = u/(u − R) = (u − f)/(v − f)... solving the geometry gives 1/v + 1/u = **2/R = 1/f**.\n\n(With the older 'all distances positive' convention the same algebra yields 1/f = 1/v + 1/u.)",
-      "knowledgeNote": "Mirror formula and lens formula differ by a sign (1/v + 1/u = 1/f vs 1/v − 1/u = 1/f) — the commonest formula swap in NEB."
+      "knowledgeNote": "Mirror formula and lens formula differ by a sign (1/v + 1/u = 1/f vs 1/v − 1/u = 1/f) — the commonest formula swap in NEB.",
+      "answer": "**Sign convention (Cartesian):** pole as origin, incident light travels left to right; distances measured from the pole — against incident light (object side) negative, along it positive; heights up positive. For a concave mirror, f < 0 and a real object has u < 0. **Derivation:** consider an object of height h on the axis at distance u; a ray from its tip parallel to the axis reflects through F; a ray through C reflects back on itself; equivalently use similar triangles formed by the ray through C: triangles C-AB (object) and C-A′B′ (image) are similar ⟹ A′B′/AB = CB′/CB, i.e. −h′/h = (−v + ... ) — with distances: **h′/h = (v − ... )**; more directly, using the similar triangles from the pole: the ray striking the pole reflects symmetrically, so triangles give **h′/h = −v/u** (magnification). Using the similar triangles through the focus (ray parallel to axis reflects through F): h′/h = (f − v)/f. Equating the two magnification expressions: −v/u = (v − f)/f... carrying the Cartesian signs through gives −v/u = (f − v)/f ⟹ −vf = u(f − v) = uf − uv ⟹ uv = uf + vf ⟹ dividing by uvf: **1/f = 1/v + 1/u** — the mirror formula. **Deep point:** the derivation is two similar-triangle pairs (one through C or the pole, one through F) whose magnification ratios are equated; every sign in the final formula is inherited from the convention, which is why the convention must be stated first."
     },
     {
       "question": "Derive the relation f = R/2 for a spherical mirror.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "A ray parallel to the axis at small height h strikes a mirror of radius R. The normal at that point is the radius, making angle θ ≈ h/R with the axis.\n\nBy reflection the ray turns through 2θ and crosses the axis at F where h/F-distance... paraxial geometry gives the crossing at R/2 from the pole. Hence **f = R/2**.\n\n(Valid only for paraxial rays — wide beams suffer spherical aberration.)",
-      "knowledgeNote": "f = R/2 is why a 30 cm radius mirror focuses parallel sunlight 15 cm in front of it."
+      "knowledgeNote": "f = R/2 is why a 30 cm radius mirror focuses parallel sunlight 15 cm in front of it.",
+      "answer": "**Setup:** a ray parallel to the principal axis strikes a concave mirror at point P and reflects through the focus F. Let C be the centre of curvature (radius R), P the point of incidence, and the ray make angle θ with the axis at P. **Argument:** (1) the radius CP is the **normal** at P, so the angle of incidence is ∠CPF = θ (between incident parallel ray and CP). (2) By the **law of reflection**, the reflected ray PF makes the same angle with the normal: ∠CPF (incidence) = ∠CPF... more carefully, angle of incidence ∠(incident ray, CP) = ∠(PF, CP) = ∠CPF. (3) Since the incident ray is parallel to the axis, ∠CPF = ∠CFP (alternate angles with the axis as transversal). (4) Hence in triangle **CPF, ∠CFP = ∠CPF ⟹ triangle CPF is isosceles with CF = FP**. (5) For a mirror small compared with R (paraxial rays), FP ≈ FB = focal length f. Therefore **CF = FP ≈ f**, but CF is the distance from C to F = R − f ⟹ R − f = f ⟹ **f = R/2**. **Deep point:** the isosceles triangle CPF is the whole proof — the law of reflection makes the base angles equal, and the paraxial approximation replaces FP by f; the same result holds for a convex mirror with the virtual focus."
     },
     {
       "question": "An object is placed 10 cm in front of a concave mirror of focal length 15 cm. Find the image position and magnification. State the image nature.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Cartesian: f = −15 cm, u = −10 cm.\n\n1/v = 1/f − 1/u = −1/15 + 1/10 = 1/30 → v = **+30 cm** (behind the mirror → virtual).\n\nm = −v/u = −30/(−10) = **+3**: erect and 3× magnified.",
-      "knowledgeNote": "Object inside F always gives a virtual, erect, magnified image — the shaving-mirror case."
+      "knowledgeNote": "Object inside F always gives a virtual, erect, magnified image — the shaving-mirror case.",
+      "answer": "**Mirror formula:** 1/v + 1/u = 1/f with u = −10 cm, f = −15 cm (concave, Cartesian). 1/v = 1/f − 1/u = −1/15 + 1/10 = (−2 + 3)/30 = 1/30 ⟹ **v = +30 cm** — the image is 30 cm **behind the mirror**: virtual. **Magnification:** m = −v/u = −(30)/(−10) = **+3** — erect and three times the size. **Nature:** virtual, erect, magnified (×3), 30 cm behind the mirror. **Deep point:** object inside F (10 < 15) is exactly the shaving-mirror regime — virtual, erect, magnified; the positive v (behind the mirror) is the sign-convention fingerprint of virtualness."
     },
     {
       "question": "Define linear magnification for a mirror and write its relation with image and object distances.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Linear magnification** m = height of image / height of object = h′/h.\n\nFrom similar triangles, m = **−v/u** (Cartesian). |m| > 1 means enlarged; negative m means inverted (real image).",
-      "knowledgeNote": "m = −v/u for mirrors vs m = v/u for lenses — the minus is the tell-tale of reflection."
+      "knowledgeNote": "m = −v/u for mirrors vs m = v/u for lenses — the minus is the tell-tale of reflection.",
+      "answer": "**Linear magnification (mirror):** the ratio of the height of the image to the height of the object: **m = h′/h = −v/u** (Cartesian convention). **Reading it:** |m| gives the size ratio (m = 2 ⟹ double size; |m| < 1 ⟹ diminished); the **sign gives orientation** — negative m ⟹ inverted (real image for a concave mirror), positive m ⟹ erect (virtual image). **Deep point:** the minus sign in m = −v/u is the convention doing the physics — a single formula carries both the size ratio and the up/down verdict."
     },
     {
       "question": "Write two uses each of concave and convex mirrors.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Concave:** (1) shaving/make-up mirrors (erect magnified virtual image); (2) headlight and torch reflectors (parallel beam); (3) solar concentrators.\n\n**Convex:** (1) vehicle rear-view mirrors (wide, erect, diminished field); (2) blind-corner and shop security mirrors.",
-      "knowledgeNote": "'Always virtual, erect, diminished' is the convex-mirror fingerprint — an NEB one-mark gift."
+      "knowledgeNote": "'Always virtual, erect, diminished' is the convex-mirror fingerprint — an NEB one-mark gift.",
+      "answer": "**Concave mirrors:** (1) **vehicle headlight/torch reflectors** — bulb at F gives a parallel beam; (2) **shaving/make-up mirrors** — face inside F gives a magnified erect virtual image (also dentists' mirrors, solar furnaces, reflecting telescopes). **Convex mirrors:** (1) **vehicle rear-view and wing mirrors** — always erect, diminished image with a **wide field of view**; (2) **road safety mirrors** at blind bends and shop-security mirrors. **Deep point:** each use exploits a different property — concave for *converging or magnifying*, convex for *wide-angle surveillance*; the choice is dictated by which image property the job needs."
     },
     {
       "question": "Why is a concave mirror used in a car headlight? Explain with a ray diagram description.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "The bulb is placed at the **focus** of the concave reflector. Rays from the focus strike the mirror and reflect **parallel to the principal axis** (reversibility of the parallel-to-focus ray).\n\nThe result is a powerful directed beam instead of light scattering in all directions.",
-      "knowledgeNote": "Searchlights and satellite dishes exploit the same focus ↔ parallel-beam reversibility."
+      "knowledgeNote": "Searchlights and satellite dishes exploit the same focus ↔ parallel-beam reversibility.",
+      "answer": "**Why concave in a headlight:** a concave mirror **converges** light — with the bulb placed at its **principal focus F**, every ray hitting the mirror reflects **parallel to the principal axis**, producing a strong, straight, long-range beam instead of light spraying in all directions as a bare bulb would. **Ray diagram description:** draw the concave mirror with principal axis; place the bulb (point source) at F on the axis; draw (i) a ray along the axis reflecting back on itself, (ii) a ray from F striking the mirror above the axis reflecting **parallel to the axis**, (iii) a ray from F below the axis likewise reflecting parallel — all reflected rays leave parallel, forming the forward beam. **Deep point:** the reversibility of light is the design principle — a parallel beam converges to F, so a point *at* F produces a parallel beam; one property, two uses (telescope vs headlight)."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2020,
       "source": "NEB Past",
       "solution": "**Step 1 — Given:** $m = 500\\ \\text{g} = 0.5\\ \\text{kg},\\ c = 4200\\ \\text{J kg}^{-1}\\text{K}^{-1}$\n$$\\Delta T = 60 - 20 = 40\\ \\text{K}$$\n\n**Step 2 — Heat required:**\n$$Q = mc\\Delta T = 0.5 \\times 4200 \\times 40$$\n$$Q = 2100 \\times 40$$\n$$\\boxed{Q = \\mathbf{8.4 \\times 10^4\\ \\text{J}} = \\mathbf{84\\ kJ}}$$\n\n**Step 3 — In calories** (using $1\\ \\text{cal} = 4.2\\ \\text{J}$):\n$$Q = \\frac{8.4 \\times 10^4}{4.2} = 2.0 \\times 10^4\\ \\text{cal} = 20\\ \\text{kcal}$$\n\n**Check:** Doubling the mass ($m \\propto Q$) while keeping the temperature rise the same doubles the heat needed, which is consistent.",
-      "knowledgeNote": "Heat needed is mass times specific heat times temperature rise; 0.5 kg water through 40 K needs 84000 joules."
+      "knowledgeNote": "Heat needed is mass times specific heat times temperature rise; 0.5 kg water through 40 K needs 84000 joules.",
+      "answer": "**Formula:** Q = mcΔT. **Substitute:** m = 500 g = 0.5 kg; c = 4200 J/kg·K; ΔT = 60 − 20 = 40 K. Q = 0.5 × 4200 × 40 = **84 000 J = 84 kJ**. **Deep point:** the kg conversion (500 g → 0.5 kg) must precede multiplication when c is in J/kg·K — the g/kg mismatch is the standard slip in calorimetry."
     }
   ]
 }

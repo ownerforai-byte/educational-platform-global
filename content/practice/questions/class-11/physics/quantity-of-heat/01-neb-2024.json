@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Specific heat capacity is the heat required to raise the temperature of 1 kg of a substance by 1 K (or 1Â°C).\n\nQ = mcÎ”T = 200 g Ã— 0.897 J/gÂ°C Ã— (100-20)Â°C\nQ = 200 Ã— 0.897 Ã— 80 = **14,352 J** (â‰ˆ 14.4 kJ)",
-      "knowledgeNote": "Specific heat of water = 4.186 J/gÂ°C. Water has the highest specific heat among common substances."
+      "knowledgeNote": "Specific heat of water = 4.186 J/gÂ°C. Water has the highest specific heat among common substances.",
+      "answer": "**Specific heat capacity:** the heat required to raise the temperature of **unit mass** of a substance by **one kelvin (or 1 °C)**: c = Q/(mΔT); SI unit **J kg⁻¹ K⁻¹** (water: 4200). **Calculation:** Q = mcΔT with m = 200 g, c = 0.897 J/g°C, ΔT = 100 − 20 = 80 °C. Q = 200 × 0.897 × 80 = 200 × 71.76 = **14 352 J ≈ 1.44 × 10⁴ J**. **Deep point:** the J/g°C form lets you work in grams directly — the trap is mixing unit systems (200 g with a J/kg K constant would overshoot a thousandfold)."
     }
   ]
 }

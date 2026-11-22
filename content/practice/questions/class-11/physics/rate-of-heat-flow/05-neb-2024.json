@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Conduction:** heat flows through a material by molecular collisions, no bulk motion — e.g. a metal spoon heating in tea.\n\n**Convection:** heat carried by the bulk movement of fluid — e.g. hot air rising in a room.\n\n**Radiation:** heat transferred as electromagnetic waves, needing no medium — e.g. warmth from the Sun.",
-      "knowledgeNote": "Solids conduct; fluids convect; everything radiates — most real situations mix at least two."
+      "knowledgeNote": "Solids conduct; fluids convect; everything radiates — most real situations mix at least two.",
+      "answer": "**Conduction:** heat transfer through a material **without bulk movement of the matter** — energy passes molecule to molecule / by free electrons; *example:* a metal spoon handle heating up in hot tea. **Convection:** heat transfer by the **bulk motion of the fluid itself** — hot less-dense fluid rises, cool fluid sinks, setting up convection currents; *example:* boiling water circulating in a pot, sea breeze. **Radiation:** heat transfer by **electromagnetic waves (infrared)** requiring **no material medium** and working even through vacuum; *example:* the Sun warming the Earth, heat felt from a fire. **Deep point:** the three need progressively less matter — conduction needs a solid contact, convection needs a fluid that can flow, radiation needs nothing at all."
     },
     {
       "question": "State Fourier's law of heat conduction and explain each term.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Fourier's law:** Q/t = kA(ΔT/d).\n\nQ/t = rate of heat flow (J/s); k = thermal conductivity of the material; A = cross-sectional area; ΔT = temperature difference between the ends; d = length along the flow.\n\nHeat flows faster through short, fat, highly conducting bars with a steep temperature drop.",
-      "knowledgeNote": "k has units W/m·K — copper (~400) vs air (~0.026) explains why metals feel cold and wool feels warm."
+      "knowledgeNote": "k has units W/m·K — copper (~400) vs air (~0.026) explains why metals feel cold and wool feels warm.",
+      "answer": "**Fourier's law of heat conduction:** the rate of heat flow through a conductor is **proportional to the cross-sectional area A and the temperature gradient**, and inversely proportional to the length: **H = dQ/dt = −kA dθ/dx**, or for a uniform rod of length d with end temperatures θ₁, θ₂: **H = kA(θ₁ − θ₂)/d**. **Terms:** **k** — the thermal conductivity of the material (W/m·K), measuring how well it conducts; **A** — cross-sectional area through which heat flows; **(θ₁ − θ₂)/d** — the temperature gradient (fall of temperature per unit length); the minus sign records that heat flows from hot to cold, down the gradient. **Deep point:** the law is thermal Ohm's law — Δθ is the driving 'voltage', d/kA the thermal resistance, H the current; insulation problems are resistor networks in disguise."
     },
     {
       "question": "A metal rod 0.5 m long with cross-section 4 cm² has its ends at 100°C and 0°C. If k = 400 W/m·K, find the rate of heat flow through the rod.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "A = 4 cm² = 4 × 10⁻⁴ m².\n\nQ/t = kAΔT/d = (400 × 4 × 10⁻⁴ × 100)/0.5 = 16/0.5 = **32 W**.",
-      "knowledgeNote": "Steady state is assumed — the ends held at fixed temperatures so no heat accumulates in the rod."
+      "knowledgeNote": "Steady state is assumed — the ends held at fixed temperatures so no heat accumulates in the rod.",
+      "answer": "**Formula:** H = kA(θ₁ − θ₂)/d. **Substitute:** k = 400 W/m·K; A = 4 cm² = 4 × 10⁻⁴ m²; θ₁ − θ₂ = 100 °C; d = 0.5 m. H = (400 × 4 × 10⁻⁴ × 100)/0.5 = (16)/0.5 = **32 W**. **Deep point:** the cm² → m² conversion (÷10⁴) is the slip point; the answer's modesty — only 32 W through a good conductor — shows how much area matters, since copper's huge k is divided by a small A."
     },
     {
       "question": "State Stefan's law of black-body radiation. If the absolute temperature of a body is doubled, by what factor does its radiated power increase?",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Stefan's law:** the total energy radiated per unit area per second is E = σT⁴ (σ = 5.67 × 10⁻⁸ W/m²K⁴).\n\nSince E ∝ T⁴, doubling T multiplies the power by 2⁴ = **16 times**.",
-      "knowledgeNote": "T⁴ sensitivity is why a small rise in filament temperature makes a bulb dramatically brighter."
+      "knowledgeNote": "T⁴ sensitivity is why a small rise in filament temperature makes a bulb dramatically brighter.",
+      "answer": "**Stefan's law (Stefan–Boltzmann law):** the total energy radiated per unit time per unit surface area of a **black body** is proportional to the **fourth power of its absolute temperature**: **E = σT⁴**, with σ = 5.67 × 10⁻⁸ W/m²·K⁴ (for a non-black body, E = eσT⁴ with emissivity e ≤ 1). **Doubling T:** T → 2T ⟹ E → σ(2T)⁴ = 16σT⁴ ⟹ radiated power increases by a factor of **16**. **Deep point:** the fourth power is why radiation dominates at high temperature — doubling the kelvin temperature multiplies radiated output sixteenfold, which is why white-hot objects blaze while warm ones barely glow."
     },
     {
       "question": "Why are cooking utensils blackened at the bottom, and why do people prefer white clothes in summer?",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Black surfaces are the best absorbers (and emitters) of radiation: a blackened bottom **absorbs the flame's radiant heat** fastest, cooking food quicker.\n\nWhite clothes **reflect** most of the Sun's radiation instead of absorbing it, keeping the wearer cooler — the same reason houses in hot regions are painted white.",
-      "knowledgeNote": "Good absorber = good emitter (Kirchhoff's law) — which is also why blackened utensils cool faster once off the flame."
+      "knowledgeNote": "Good absorber = good emitter (Kirchhoff's law) — which is also why blackened utensils cool faster once off the flame.",
+      "answer": "**Blackened bottoms:** black surfaces are **good absorbers (and good emitters)** of radiation — a blackened base absorbs the flame's radiant heat fastest, putting the heat into the food rather than reflecting it. **White clothes in summer:** white surfaces are **good reflectors and poor absorbers** — they reflect most of the Sun's radiation instead of absorbing it, keeping the wearer cooler; black clothes would absorb it and heat up. **Deep point:** absorption and emission are two faces of the same surface property (Kirchhoff's law) — good absorbers are good emitters, which is also why the *inside* of a thermos flask is silvered: to reflect radiation both ways."
     },
     {
       "question": "State Newton's law of cooling and give one practical application.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Newton's law of cooling:** the rate of loss of heat of a body is directly proportional to the temperature difference between the body and its surroundings (for small differences).\n\n**Application:** forensic estimation of time of death from body temperature, or judging how long tea has been standing from its temperature.",
-      "knowledgeNote": "The law holds only for small ΔT and still air — forced draughts (a fan on hot tea) cool faster than it predicts."
+      "knowledgeNote": "The law holds only for small ΔT and still air — forced draughts (a fan on hot tea) cool faster than it predicts.",
+      "answer": "**Newton's law of cooling:** the rate of loss of heat of a body is **directly proportional to the difference between its temperature and that of its surroundings** (valid for small excess temperatures): dQ/dt = K(θ − θ₀), or in temperature terms dθ/dt = −k(θ − θ₀), giving exponential decay of the excess temperature: θ − θ₀ = (θ₁ − θ₀)e^(−kt). **Practical application:** **estimating time of death in forensics** — measuring a corpse's temperature and applying the cooling law gives the time since body temperature began falling toward ambient (also: designing cooling of electronics, and predicting how long food/drinks take to cool). **Deep point:** the law is a small-difference approximation of the full convection+radiation physics — it fails when the excess temperature is large, which is why it is always stated with the qualifier 'for small temperature differences'."
     }
   ]
 }

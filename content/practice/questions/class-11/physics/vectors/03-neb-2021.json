@@ -15,7 +15,8 @@
       "year": 2021,
       "source": "NEB Past",
       "solution": "Magnitude: R = âˆš(PÂ² + QÂ² + 2PQ cos Î¸)\nR = âˆš(10Â² + 20Â² + 2Ã—10Ã—20Ã—cos 60Â°) = âˆš(100 + 400 + 200) = âˆš700 = **26.46 N**\n\nDirection: tan Î± = (Q sin Î¸)/(P + Q cos Î¸)\ntan Î± = (20 sin 60Â°)/(10 + 20 cos 60Â°) = (20Ã—0.866)/(10+10) = 17.32/20 = 0.866\nÎ± = **40.89Â°** from P.",
-      "knowledgeNote": "Resultant magnitude formula: RÂ² = PÂ² + QÂ² + 2PQ cos Î¸. This is the law of cosines applied to vector addition."
+      "knowledgeNote": "Resultant magnitude formula: RÂ² = PÂ² + QÂ² + 2PQ cos Î¸. This is the law of cosines applied to vector addition.",
+      "answer": "**Magnitude (law of cosines/parallelogram law):** R = √(P² + Q² + 2PQ cos θ) = √(10² + 20² + 2 × 10 × 20 × cos 60°) = √(100 + 400 + 400 × 0.5) = √(500 + 200) = √700 ≈ **26.5 N**. **Direction:** angle α with P: tan α = (Q sin θ)/(P + Q cos θ) = (20 × sin 60°)/(10 + 20 × 0.5) = (20 × 0.866)/20 = 0.866 ⟹ **α ≈ 40.9° from the 10 N force** (toward the 20 N force). **Deep point:** the parallelogram law's two formulas (cosine for size, tangent for direction) are the whole toolkit — and checking the extremes (θ = 0 ⟹ R = 30 N; θ = 180° ⟹ R = 10 N) confirms 26.5 N sits plausibly between them."
     },
     {
       "question": "Add the vectors $(3\\hat{i} + 4\\hat{j})\\ \\text{m}$ and $(5\\hat{i} - 12\\hat{j})\\ \\text{m}$ and express the resultant in magnitude and direction form.",
@@ -23,7 +24,8 @@
       "year": 2021,
       "source": "NEB Model",
       "solution": "**Step 1 — Add the corresponding components:**\n$$\\vec{A} = 3\\hat{i} + 4\\hat{j}, \\qquad \\vec{B} = 5\\hat{i} - 12\\hat{j}$$\n$$\\vec{R} = \\vec{A} + \\vec{B} = (3 + 5)\\hat{i} + (4 - 12)\\hat{j} = 8\\hat{i} - 8\\hat{j}$$\n\n**Step 2 — Magnitude of the resultant:**\n$$R = \\sqrt{R_x^2 + R_y^2} = \\sqrt{8^2 + (-8)^2} = \\sqrt{64 + 64} = \\sqrt{128}$$\n$$\\boxed{R = 8\\sqrt{2} \\approx \\mathbf{11.3\\ \\text{m}}}$$\n\n**Step 3 — Direction of the resultant:**\n$$\\tan\\theta = \\frac{R_y}{R_x} = \\frac{-8}{8} = -1 \\;\\Rightarrow\\; \\theta = -45^\\circ$$\n$$\\boxed{\\theta = \\mathbf{-45^\\circ},\\ \\text{i.e. } 45^\\circ \\text{ south of east}}$$\n\nThe resultant lies in the fourth quadrant since $R_x > 0$ and $R_y < 0$.",
-      "knowledgeNote": "Vector components add algebraically; magnitude is the root of the sum of squared components and direction from the tangent ratio."
+      "knowledgeNote": "Vector components add algebraically; magnitude is the root of the sum of squared components and direction from the tangent ratio.",
+      "answer": "**Component addition:** A + B = (3 + 5)î + (4 + (−12))ĵ = **8î − 8ĵ m**. **Magnitude:** |R| = √(8² + (−8)²) = √128 = 8√2 ≈ **11.3 m**. **Direction:** θ = tan⁻¹(−8/8) = tan⁻¹(−1) ⟹ **45° below the +x axis** (fourth quadrant, i.e. −45° or 315° from +x). **Deep point:** components make vector addition mere arithmetic — add î's, add ĵ's, then reassemble; the quadrant (both signs visible in 8î − 8ĵ) is what the arctangent alone can mislead on."
     }
   ]
 }

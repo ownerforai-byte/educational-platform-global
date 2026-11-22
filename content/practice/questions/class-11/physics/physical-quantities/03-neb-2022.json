@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "1 leap year = 366 days = 366 Ã— 24 Ã— 60 Ã— 60 = **31,536,000 seconds** (â‰ˆ 3.154 Ã— 10â· s).",
-      "knowledgeNote": "Standard conversion used in physics: 1 year = Ï€ Ã— 10â· s (approximate, for order-of-magnitude)"
+      "knowledgeNote": "Standard conversion used in physics: 1 year = Ï€ Ã— 10â· s (approximate, for order-of-magnitude)",
+      "answer": "**Seconds in a leap year:** 1 day = 24 × 60 × 60 = 86 400 s. 366 days × 86 400 s = **31 622 400 s** (= 3.16224 × 10⁷ s). **Deep point:** the ordinary year (365 d) gives 31 536 000 s — the leap day adds exactly one more 86 400; both are worth memorising to one significant figure (~3.16 × 10⁷ s)."
     },
     {
       "question": "The SI dimensional unit kg m2 s-2 represents: (a) work (b) force (c) power (d) impulse",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Correct option: (a) work.**\n\n**Step 1 — Check each quantity:**\n- Force: $F = ma = \\text{kg m s}^{-2}$ — does **not** match.\n- Work: $W = Fs = \\text{kg m s}^{-2} \\times \\text{m} = \\text{kg m}^{2}\\text{s}^{-2}$ — **matches**. ✓\n- Power: $P = W/t = \\text{kg m}^{2}\\text{s}^{-3}$ — does not match.\n- Impulse: $Ft = \\text{kg m s}^{-1}$ — does not match.\n\n**Step 2 — Conclusion:** $\\text{kg m}^{2}\\text{s}^{-2} = \\text{N m} = \\text{J}$, so it is **work (and energy)**.",
-      "knowledgeNote": "Kilogram metre squared per second squared equals newton metre, which is the joule used for work and energy."
+      "knowledgeNote": "Kilogram metre squared per second squared equals newton metre, which is the joule used for work and energy.",
+      "answer": "**kg m² s⁻²** = (kg·m/s²)·m = N·m = **joule** ⟹ **(a) work**. **Check the others:** force is kg·m·s⁻² (no m²); power is kg·m²·s⁻³ (one s more); impulse is kg·m·s⁻¹ (one m fewer). **Deep point:** reading a dimensional formula as a product of named units — here N × m — is faster than matching letters; kg m² s⁻² is also the dimension of energy in *every* form (kinetic, potential, heat)."
     }
   ]
 }

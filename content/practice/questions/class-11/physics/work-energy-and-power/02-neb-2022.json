@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "Work done W = mgh = 500 Ã— 10 Ã— 20 = 100,000 J = 10âµ J\n\nPower P = W/t â†’ t = W/P = 10âµ/2000 = **50 seconds**",
-      "knowledgeNote": "Power = Work/Time. 1 W = 1 J/s. 1 HP = 746 W"
+      "knowledgeNote": "Power = Work/Time. 1 W = 1 J/s. 1 HP = 746 W",
+      "answer": "**Work needed:** W = mgh = 500 × 10 × 20 = 100 000 J. **Time:** t = W/P = 100 000/2000 = **50 s**. **Deep point:** P = W/t rearranged twice — energy first, then time; the g = 10 rounding keeps the arithmetic clean, and 2 kW lifting half a tonne at 0.4 m/s is a plausible crane."
     },
     {
       "question": "A person of mass 60 kg climbs a staircase of vertical height 8 m in 20 s. Assuming $g = 9.8\\ \\text{m/s}^2$, calculate the power developed by the person.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Step 1 — Given:** $m = 60\\ \\text{kg},\\ h = 8\\ \\text{m},\\ t = 20\\ \\text{s}$\n\n**Step 2 — Work done against gravity** (the useful work in climbing):\n$$W = mgh = 60 \\times 9.8 \\times 8$$\n$$W = 4704\\ \\text{J}$$\n\n**Step 3 — Power developed:**\n$$P = \\frac{W}{t} = \\frac{mgh}{t} = \\frac{60 \\times 9.8 \\times 8}{20}$$\n$$\\boxed{P = \\mathbf{235.2\\ \\text{W}}\\approx \\mathbf{235\\ \\text{W}}$$\n\n**Note:** This is the useful mechanical power only; a human body is about $20\\%$ efficient, so the metabolic power consumed is much higher.",
-      "knowledgeNote": "Power developed while lifting a body equals mgh divided by time, which here is 235 watts."
+      "knowledgeNote": "Power developed while lifting a body equals mgh divided by time, which here is 235 watts.",
+      "answer": "**Work done:** W = mgh = 60 × 9.8 × 8 = **4704 J**. **Power:** P = W/t = 4704/20 = **235.2 W ≈ 235 W**. **Deep point:** climbing stairs converts chemical energy to gravitational potential at ~235 W — about three light bulbs; the same person sprinting the same stairs in 5 s would develop ~940 W, showing power is rate, not quantity."
     }
   ]
 }

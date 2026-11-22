@@ -15,7 +15,8 @@
       "year": 2021,
       "source": "NEB Model",
       "solution": "**Big Bang:** the universe began ~13.8 billion years ago as an extremely hot, dense state and has expanded and cooled ever since.\n\n**Hubble's law:** v = H₀d — recession velocity proportional to distance (H₀ ≈ 70 km/s/Mpc).\n\n**Evidence:** (1) galactic redshifts; (2) the 2.7 K cosmic microwave background; (3) light-element (H, He) abundances matching predictions.",
-      "knowledgeNote": "Three pillars — redshift, CMBR, element abundances — each independently points to a hot dense origin."
+      "knowledgeNote": "Three pillars — redshift, CMBR, element abundances — each independently points to a hot dense origin.",
+      "answer": "**Big Bang theory:** the universe originated ~13.8 billion years ago from an ultra-hot, ultra-dense state and has expanded and cooled ever since; light nuclei formed in the first minutes, and the universe became transparent ~380 000 years in, releasing the cosmic microwave background. **Hubble's law:** galaxies recede at velocity proportional to distance — **v = H₀d** (H₀ ≈ 70 km/s/Mpc), observed as galactic redshift, meaning space itself stretches. **Evidence:** (1) Hubble's redshift–distance law; (2) the **cosmic microwave background** (~2.7 K relic radiation); (3) **light-element abundances** (~75% H, 25% He) matching nucleosynthesis predictions; (4) galaxy evolution consistent with formation from a hot uniform beginning. **Deep point:** redshifts, CMB and abundances are three independent measurements converging on one model — the convergent triangulation is what makes the case strong."
     },
     {
       "question": "What are elementary particles? List the four fundamental forces in order of decreasing strength.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Elementary particles** have no smaller constituents — quarks, leptons, and force-carrying bosons.\n\nStrongest to weakest: (1) **strong nuclear**, (2) **electromagnetic**, (3) **weak nuclear**, (4) **gravitational**.",
-      "knowledgeNote": "Gravity is ~10³⁶ times weaker than the strong force — the hierarchy problem behind unification theories."
+      "knowledgeNote": "Gravity is ~10³⁶ times weaker than the strong force — the hierarchy problem behind unification theories.",
+      "answer": "**Elementary particles:** the fundamental, structureless constituents of matter in the Standard Model — quarks, leptons (e.g. electron, neutrino), and force-carrying bosons (photon, gluon, W, Z), plus the Higgs boson. **Four fundamental forces (decreasing strength):** (1) **strong nuclear**; (2) **electromagnetic**; (3) **weak nuclear**; (4) **gravitational**. **Deep point:** strength order is the exam answer, but the range order is the insight — the strong and weak forces are short-ranged (nuclear scale), while electromagnetism and gravity reach across the universe."
     },
     {
       "question": "What is the photoelectric effect? Write Einstein's photoelectric equation and explain each term.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Emission of electrons when light of sufficient frequency strikes a metal surface.\n\n**Einstein's equation:** hf = φ + KEmax — photon energy (hf) = work function (φ, the escape cost) + maximum electron kinetic energy.\n\nNo emission below the threshold frequency f₀ = φ/h, whatever the intensity.",
-      "knowledgeNote": "One photon ejects one electron — intensity raises the number, only frequency raises their energy."
+      "knowledgeNote": "One photon ejects one electron — intensity raises the number, only frequency raises their energy.",
+      "answer": "**Photoelectric effect:** the emission of **electrons from a metal surface** when light of sufficiently high frequency falls on it — emission is instantaneous, and no electrons are emitted below a threshold frequency regardless of intensity. **Einstein's equation:** **hν = φ + ½mv²_max**, where **hν** is the energy of one photon (h = Planck's constant, ν = frequency), **φ = hν₀** is the **work function** (minimum energy to free an electron from the metal, ν₀ = threshold frequency), and **½mv²_max** is the maximum kinetic energy of the emitted photoelectron. **Explanation of terms:** each photon gives all its energy to one electron; the electron first pays the exit fee φ, and whatever remains becomes kinetic energy — hence K_max depends linearly on frequency and not at all on intensity (intensity only sets the *number* of electrons). **Deep point:** the equation is energy conservation for a single photon–electron transaction — its success (Millikan's verification) is what established the photon and earned Einstein the Nobel Prize."
     },
     {
       "question": "State de Broglie's hypothesis and calculate the de Broglie wavelength of an electron accelerated through 100 V.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**de Broglie:** every moving particle has λ = h/p = h/(mv).\n\nElectron through V volts: λ = h/√(2meV) = 12.27/√V Å = 12.27/10 = **1.23 Å**.",
-      "knowledgeNote": "λ = 12.27/√V Å is the ready-made electron formula — memorise it for one-step numericals."
+      "knowledgeNote": "λ = 12.27/√V Å is the ready-made electron formula — memorise it for one-step numericals.",
+      "answer": "**de Broglie's hypothesis:** every moving particle has a **wave associated with it**, of wavelength **λ = h/p = h/mv** — matter has wave nature just as light has particle nature; the wave nature is negligible for macroscopic objects but measurable for electrons. **Calculation:** an electron accelerated through V = 100 V gains kinetic energy E = eV = 1.6 × 10⁻¹⁷ J. Its momentum p = √(2mE) = √(2 × 9.1 × 10⁻³¹ × 1.6 × 10⁻¹⁷) = √(2.912 × 10⁻⁴⁷) ≈ 5.4 × 10⁻²⁴ kg·m/s. λ = h/p = (6.63 × 10⁻³⁴)/(5.4 × 10⁻²⁴) ≈ **1.23 × 10⁻¹⁰ m ≈ 1.2 Å** — comparable to atomic spacings, which is why electron diffraction works and electron microscopes resolve atoms. **Deep point:** the shortcut λ = 12.27/√V Å (V in volts) gives 12.27/10 = 1.23 Å instantly; the wavelength being atomic-sized is the physical reason electrons, not cricket balls, show interference."
     },
     {
       "question": "What are nanotechnology and its two approaches (top-down and bottom-up)? Give one application.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Nanotechnology** engineers matter at 1–100 nm, where surface effects and quantum rules dominate.\n\n**Top-down:** carving bulk material smaller (lithography for chips). **Bottom-up:** assembling from atoms/molecules (self-assembly, CVD growth).\n\n**Application:** targeted drug delivery, stain-free fabrics, or quantum-dot displays.",
-      "knowledgeNote": "At the nanoscale, gold turns red and aluminium burns — properties are size-dependent, not just compositional."
+      "knowledgeNote": "At the nanoscale, gold turns red and aluminium burns — properties are size-dependent, not just compositional.",
+      "answer": "**Nanotechnology:** the design, production and application of structures and devices with dimensions in the **1–100 nanometre range** — where materials acquire new properties (quantum confinement, enormous surface-to-volume ratio, size-tunable colour and reactivity). **Two approaches:** **(1) Top-down:** start with bulk material and **carve/etch it down** to nano-scale (lithography, etching, ball milling) — like sculpting. **(2) Bottom-up:** build nanostructures **atom by atom or molecule by molecule** (self-assembly, chemical synthesis, deposition) — like bricklaying. **One application:** gold/silver **nanoparticles in targeted cancer therapy** (heat delivered only at tumour sites), or **sunscreen with ZnO/TiO₂ nanoparticles** that block UV while staying transparent, or carbon-nanotube composites, or nano-drug delivery. **Deep point:** the two approaches are inverse arrows — milling a statue vs growing a crystal — and real nanofabrication usually chains both: top-down patterning of the scaffold, bottom-up growth of the functional layer."
     },
     {
       "question": "What is GPS and on which physical principles does it depend? Name two other modern applications of physics.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**GPS** fixes position by timing radio signals from ≥4 satellites (trilateration).\n\nIt needs **special relativity** (satellite clocks run slow by motion) and **general relativity** (they run fast in weaker gravity) — uncorrected, errors would grow ~10 km/day.\n\nOther applications: MRI (nuclear magnetic resonance), fibre-optic internet (TIR), lasers (stimulated emission).",
-      "knowledgeNote": "GPS is the everyday proof that Einstein's theories are engineering facts, not philosophy."
+      "knowledgeNote": "GPS is the everyday proof that Einstein's theories are engineering facts, not philosophy.",
+      "answer": "**GPS (Global Positioning System):** a navigation system of **~24 satellites** in medium Earth orbit, each continuously broadcasting its position and time; a receiver on Earth receives signals from **at least four satellites** and solves for its own position (latitude, longitude, altitude) and clock error. **Physical principles it depends on:** (1) **geometry of distances from known points** — trilateration: each satellite signal gives a distance (light speed × travel time), and intersection of spheres fixes the position; (2) **precise time measurement** — nanosecond timing of signal travel; crucially, **relativity**: satellite clocks run faster than ground clocks by ~38 μs/day (special-relativistic slowing −7 μs + general-relativistic speeding +45 μs), which must be corrected or positions drift by ~10 km/day. **Two other modern applications of physics:** **medical imaging** (MRI from nuclear magnetic resonance; CT from X-ray absorption) and **semiconductor electronics** (quantum band theory behind every chip); also fibre-optic communication (total internal reflection), lasers, satellite communication. **Deep point:** GPS is the everyday proof of relativity — without the 38-microsecond daily correction the system would be useless within hours; a navigation utility is secretly a relativity experiment."
     }
   ]
 }

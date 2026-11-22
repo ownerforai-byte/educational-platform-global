@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Linear expansivity (Î±):** Fractional change in length per degree temperature rise: Î”L = Î±Lâ‚€Î”T\n**Superficial expansivity (Î²):** Fractional change in area: Î”A = Î²Aâ‚€Î”T\n**Cubical expansivity (Î³):** Fractional change in volume: Î”V = Î³Vâ‚€Î”T\n\nRelationship: For isotropic solids, Î² = 2Î± and Î³ = 3Î±. This comes from expanding each dimension: L â†’ L(1+Î±Î”T), so A â†’ A(1+Î±Î”T)Â² â‰ˆ A(1+2Î±Î”T), and V â†’ V(1+Î±Î”T)Â³ â‰ˆ V(1+3Î±Î”T).",
-      "knowledgeNote": "For metals, Î± â‰ˆ 10â»âµ to 10â»â¶ Kâ»Â¹. Steel: Î± â‰ˆ 11Ã—10â»â¶ Kâ»Â¹"
+      "knowledgeNote": "For metals, Î± â‰ˆ 10â»âµ to 10â»â¶ Kâ»Â¹. Steel: Î± â‰ˆ 11Ã—10â»â¶ Kâ»Â¹",
+      "answer": "**Linear expansivity (α):** the fractional increase in **length** per degree temperature rise: α = ΔL/(L ΔT), so ΔL = αLΔT; unit K⁻¹. **Superficial expansivity (β):** the fractional increase in **area** per degree rise: β = ΔA/(A ΔT); unit K⁻¹. **Cubical expansivity (γ):** the fractional increase in **volume** per degree rise: γ = ΔV/(V ΔT); unit K⁻¹. **Relationship:** consider a square of side L expanding to L(1 + αΔT): A′ = L²(1 + αΔT)² ≈ L²(1 + 2αΔT) (neglecting α²ΔT²) ⟹ ΔA/A = 2αΔT ⟹ **β = 2α**. Similarly a cube: V′ = L³(1 + αΔT)³ ≈ L³(1 + 3αΔT) ⟹ **γ = 3α**. Hence **α : β : γ = 1 : 2 : 3**. **Deep point:** the 1:2:3 ladder is just the binomial expansion of (1 + αΔT)ⁿ — area squares the length scale, volume cubes it; the cross terms are dropped because αΔT ~ 10⁻⁵ is tiny."
     },
     {
       "question": "Define the coefficient of linear expansivity and write its formula and SI unit.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Definition:** The coefficient of linear expansivity $\\alpha$ of a solid is defined as the **increase in length per unit original length per unit rise in temperature**.\n\n**Formula:**\n$$\\alpha = \\frac{\\Delta L}{L_0 \\Delta T} = \\frac{L_T - L_0}{L_0 \\Delta T}$$\nwhere $\\Delta L = L_T - L_0$ is the change in length.\n\n**From the new length:** $L_T = L_0(1 + \\alpha\\Delta T)$\n\n**SI unit:** $\\text{K}^{-1}$ or $^\\circ\\text{C}^{-1}$ (same, since a temperature interval of 1 K equals 1 degree Celsius). Dimensional formula: $\\left[T^{-1}\\right]$.\n\n**Values:** Aluminium $\\approx 23 \\times 10^{-6}\\ \\text{K}^{-1}$, brass $\\approx 19 \\times 10^{-6}\\ \\text{K}^{-1}$, steel $\\approx 11 \\times 10^{-6}\\ \\text{K}^{-1}$, glass $\\approx 9 \\times 10^{-6}\\ \\text{K}^{-1}$.",
-      "knowledgeNote": "Linear expansivity is the fractional increase in length per degree rise in temperature, with SI unit per kelvin."
+      "knowledgeNote": "Linear expansivity is the fractional increase in length per degree rise in temperature, with SI unit per kelvin.",
+      "answer": "**Coefficient of linear expansivity (α):** the fractional increase in length per unit original length per degree rise in temperature — the increase in length of unit length when heated through 1 K. **Formula:** **α = ΔL/(L₀ ΔT)**, equivalently L = L₀(1 + αΔT). **SI unit: per kelvin (K⁻¹)** (equivalently °C⁻¹, since it is a per-degree quantity). Typical values: steel 1.2 × 10⁻⁵ K⁻¹, invar ~10⁻⁶ K⁻¹. **Deep point:** α is small and the ΔT² corrections are negligible — that's why the linear formula works even for 100-degree rises, and why α : β : γ stays exactly 1 : 2 : 3."
     }
   ]
 }

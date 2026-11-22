@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Step 1 — Given:** $u = -30\\ \\text{cm},\\ f = -10\\ \\text{cm}$\n\n**Step 2 — Mirror formula:**\n$$\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$$\n$$\\frac{1}{v} + \\frac{1}{-30} = \\frac{1}{-10}$$\n$$\\frac{1}{v} = -\\frac{1}{10} + \\frac{1}{30} = \\frac{-3 + 1}{30} = -\\frac{2}{30} = -\\frac{1}{15}$$\n\n**Step 3 — Image position:**\n$$v = \\mathbf{-15\\ \\text{cm}}$$\nThe image is 15 cm **in front of** the mirror (on the same side as the object).\n\n**Step 4 — Magnification:**\n$$m = -\\frac{v}{u} = -\\frac{-15}{-30} = \\mathbf{-0.5}$$\n\n**Step 5 — Nature:** $v < 0$ → image is **real**; $m < 0$ → **inverted**; $|m| = 0.5 < 1$ → **diminished**.\n(The object is beyond $2f = 20$ cm, so the image is between $f$ and $2f$. ✓)",
-      "knowledgeNote": "With a concave mirror, an object beyond twice the focal length gives a real, inverted, diminished image between f and 2f."
+      "knowledgeNote": "With a concave mirror, an object beyond twice the focal length gives a real, inverted, diminished image between f and 2f.",
+      "answer": "**Mirror formula:** 1/v + 1/u = 1/f, with u = −30 cm, f = −10 cm (concave mirror, real-is-positive convention with distances measured from the pole, incident side negative). **Solve:** 1/v = 1/f − 1/u = 1/(−10) − 1/(−30) = −1/10 + 1/30 = (−3 + 1)/30 = −2/30 = −1/15 ⟹ **v = −15 cm** — the image is 15 cm in front of the mirror (same side as the object), i.e. **real**, located between F (10 cm) and C (20 cm) ✓. **Magnification:** m = −v/u = −(−15)/(−30) = −0.5 ⟹ **m = −0.5**: the image is **inverted** and **half the object's size**. **Nature:** real, inverted, diminished, 15 cm in front of the mirror. **Deep point:** object beyond C always gives an image between F and C, diminished and inverted — the sign of m is the nature-decider (negative = inverted = real for a mirror)."
     }
   ]
 }

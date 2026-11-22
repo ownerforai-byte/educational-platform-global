@@ -15,7 +15,8 @@
       "year": 2020,
       "source": "NEB Model",
       "solution": "**Correct option: (b) watt.**\n\nThe rate of flow of heat is the quantity of heat $Q$ transferred per unit time $t$:\n$$\\text{Rate of heat flow} = \\frac{Q}{t}$$\nSince heat is measured in joules and time in seconds, the unit is\n$$\\frac{\\text{joule}}{\\text{second}} = \\text{J s}^{-1} = \\mathbf{watt\\ (W)}$$\nNote that option (d) 'calorie per square metre' relates to heat **density**, not the rate of flow.",
-      "knowledgeNote": "Rate of heat flow has SI unit joule per second, which is the watt."
+      "knowledgeNote": "Rate of heat flow has SI unit joule per second, which is the watt.",
+      "answer": "**Answer: (b) watt.** **Reason:** rate of flow of heat = energy/time = J/s = **W** (from H = kAΔθ/d, with k in W/m·K, A in m², Δθ in K, d in m). **Check the others:** joule is energy (not a rate); calorie is an energy unit; 'calorie per square metre' is neither energy nor power. **Deep point:** any 'rate of' quantity is its base quantity over time — heat rate inherits the watt just as velocity inherits m/s."
     }
   ]
 }

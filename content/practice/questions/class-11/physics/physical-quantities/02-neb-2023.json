@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Past",
       "solution": "**Principle:** An equation is dimensionally consistent only if the dimensions of every term on the LHS match those on the RHS.\n\nvÂ² â†’ [L Tâ»Â²]Â² = [LÂ²Tâ»Â²]\nuÂ² â†’ [L Tâ»Â²]Â² = [LÂ²Tâ»Â²]\n2as â†’ [L Tâ»Â²][L] = [LÂ²Tâ»Â²]\n\nAll three terms have dimensions [LÂ²Tâ»Â²], so the equation is **dimensionally consistent**. âœ“",
-      "knowledgeNote": "Dimensional consistency is necessary but not sufficient for correctness. A dimensionally correct equation could still be numerically wrong."
+      "knowledgeNote": "Dimensional consistency is necessary but not sufficient for correctness. A dimensionally correct equation could still be numerically wrong.",
+      "answer": "**Principle of homogeneity of dimensions:** a physical equation is valid only if **every term added to (or equated with) another has the same dimensional formula** — dimensions cannot be added or subtracted across different kinds of quantity. **Check v² = u² + 2as:** [v²] = (LT⁻¹)² = **L²T⁻²**; [u²] = (LT⁻¹)² = **L²T⁻²**; [2as] = [a][s] = (LT⁻²)(L) = **L²T⁻²**. All three terms are L²T⁻² ⟹ the equation is dimensionally consistent. **Deep point:** consistency is necessary but not sufficient — a dimensionally correct equation can still be physically wrong (a factor of ½ is dimensionless and invisible to the check), but a dimensionally *wrong* equation is certainly wrong."
     },
     {
       "question": "Write any four fundamental quantities with their SI units and define the SI unit of mass.",
@@ -23,7 +24,8 @@
       "year": 2023,
       "source": "NEB Past",
       "solution": "**Four fundamental quantities and SI units:**\n\n| Quantity | SI unit |\n|---|---|\n| Length | metre (m) |\n| Mass | kilogram (kg) |\n| Time | second (s) |\n| Electric current | ampere (A) |\n\n(Other fundamental quantities are thermodynamic temperature in kelvin (K), luminous intensity in candela (cd) and amount of substance in mole (mol).)\n\n**Definition of the unit of mass:** The **kilogram** is the unit of mass. It is defined as the mass of a prototype cylinder of platinum-iridium (90% platinum, 10% iridium) kept at the International Bureau of Weights and Measures (BIPM) at Sèvres, France.\n\n$1\\ \\text{kg} = \\dfrac{1}{1000}\\ \\text{grams}$.",
-      "knowledgeNote": "Mass is a fundamental quantity measured in kilogram, historically defined by an international platinum-iridium prototype cylinder."
+      "knowledgeNote": "Mass is a fundamental quantity measured in kilogram, historically defined by an international platinum-iridium prototype cylinder.",
+      "answer": "**Four fundamental quantities and SI units:** **length — metre (m)**; **mass — kilogram (kg)**; **time — second (s)**; **electric current — ampere (A)** (also thermodynamic temperature — kelvin (K), amount of substance — mole (mol), luminous intensity — candela (cd)). **SI unit of mass, the kilogram:** the mass of the **international prototype kilogram** (the platinum–iridium cylinder kept at Sèvres, France) — until 2019 the only base unit defined by an artefact; since 2019 it is defined by fixing the **Planck constant** h = 6.62607015 × 10⁻³⁴ J·s exactly. **Deep point:** the 2019 redefinition ended the last artefact-based unit — the kilogram is now realised from a fixed constant of nature, so it can be reproduced in any laboratory, not just in one vault in France."
     }
   ]
 }

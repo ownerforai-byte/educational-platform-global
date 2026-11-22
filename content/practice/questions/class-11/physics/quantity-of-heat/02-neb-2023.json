@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "Latent heat is the heat required to change the state of a unit mass of a substance without changing its temperature.\n\n**Latent heat of fusion (Lf):** Heat to change 1 kg solid â†’ liquid (melting). Lf for ice = 334 kJ/kg.\n**Latent heat of vaporization (Lv):** Heat to change 1 kg liquid â†’ gas (boiling). Lv for water = 2260 kJ/kg.",
-      "knowledgeNote": "Lv > Lf because vaporization requires breaking all intermolecular bonds, while fusion only breaks some."
+      "knowledgeNote": "Lv > Lf because vaporization requires breaking all intermolecular bonds, while fusion only breaks some.",
+      "answer": "**Latent heat:** the heat absorbed or released during a **change of state** with **no change in temperature** — the energy goes into rearranging molecular bonds, not into kinetic energy; Q = mL, SI unit J/kg. **Latent heat of fusion:** the heat needed to change unit mass from **solid to liquid** at the melting point (ice → water: **334 000 J/kg ≈ 336 J/g**) — it weakens the rigid lattice. **Latent heat of vaporization:** the heat needed to change unit mass from **liquid to gas** at the boiling point (water → steam: **2 260 000 J/kg ≈ 2260 J/g**) — it completely separates the molecules against their attraction. **Why vaporization's is much larger:** separating molecules entirely (liquid → gas) requires overcoming essentially all intermolecular attraction, while fusion only loosens the lattice — hence L_vap ≈ 7 × L_fus for water. **Deep point:** 'latent' means hidden — steam at 100 °C and water at 100 °C hold the same thermometer reading but differ by 2260 J/g, the scalding reserve that makes steam burns far worse than boiling-water burns."
     },
     {
       "question": "Define quantity of heat and specific heat capacity. Write the formula for the heat required to raise the temperature of a body and give the SI unit of specific heat capacity.",
@@ -23,7 +24,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Quantity of heat:** The amount of heat $Q$ supplied to a body is the mass of the body multiplied by its specific heat capacity and the rise in temperature.\n$$Q = mc\\Delta T$$\n\n**Specific heat capacity (c):** The amount of heat required to raise the temperature of **unit mass** of a substance by **one degree Celsius** (or one kelvin).\n$$c = \\frac{Q}{m\\Delta T}$$\n\n**SI unit:** $\\text{J kg}^{-1}\\text{K}^{-1}$ (also $\\text{J kg}^{-1}\\,^\\circ\\text{C}^{-1}$). Dimensional formula: $\\left[LT^{-2}\\right]$.\n\n**Values:** Water $= 4.2 \\times 10^3\\ \\text{J kg}^{-1}\\text{K}^{-1}$ (maximum), ice $= 3.36 \\times 10^3$, aluminium $= 0.9 \\times 10^3$, copper $= 0.39 \\times 10^3$, lead $= 0.13 \\times 10^3$, mercury $= 0.14 \\times 10^3$.\n\nThe large value for water is why water is an excellent coolant and why a hot bottle stays hot for long.",
-      "knowledgeNote": "Heat equals mass times specific heat capacity times temperature rise; specific heat capacity has SI unit J per kg per K."
+      "knowledgeNote": "Heat equals mass times specific heat capacity times temperature rise; specific heat capacity has SI unit J per kg per K.",
+      "answer": "**Quantity of heat:** the **energy transferred** because of a temperature difference — SI unit the **joule (J)** (the calorie = 4.186 J is the older unit). **Specific heat capacity:** the heat required to raise the temperature of **unit mass** of a substance by 1 K — SI unit **J kg⁻¹ K⁻¹** (water 4200 J/kg·K). **Formula:** **Q = mcΔT** — heat needed = mass × specific heat × temperature rise. **Deep point:** the formula's three factors are the three levers of any calorimetry problem — more mass, a thirstier substance, or a bigger rise each scale the heat linearly."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Step 1 — Given:** $A = 60^\\circ,\\ \\mu = 1.5,\\ i = 40^\\circ,\\ r_1 = 30^\\circ$\n\n**Step 2 — Internal angle at the second face:**\n$$r_1 + r_2 = A \\;\\Rightarrow\\; r_2 = 60^\\circ - 30^\\circ = 30^\\circ$$\n\n**Step 3 — Angle of emergence** using the law of refraction at the second face:\n$$\\mu = \\frac{\\sin e}{\\sin r_2}$$\n$$\\sin e = \\mu \\sin r_2 = 1.5 \\times \\sin 30^\\circ = 1.5 \\times 0.5 = 0.75$$\n$$e = \\sin^{-1}(0.75) = \\mathbf{48.6^\\circ}$$\n\n**Step 4 — Angle of deviation:**\n$$\\delta = i + e - A = 40^\\circ + 48.6^\\circ - 60^\\circ$$\n$$\\boxed{\\delta = \\mathbf{28.6^\\circ}}$$\n\n**Note:** Since $i \\ne e$ the prism is **not** at minimum deviation.",
-      "knowledgeNote": "Using mu equals sin e over sin r2 and delta equals i plus e minus A gives the emergence angle and deviation."
+      "knowledgeNote": "Using mu equals sin e over sin r2 and delta equals i plus e minus A gives the emergence angle and deviation.",
+      "answer": "**Given:** A = 60°, n = 1.5, i = 40°, r₁ = 30°. **Step 1 — second internal angle:** r₁ + r₂ = A ⟹ r₂ = 60 − 30 = **30°**. **Step 2 — angle of emergence:** Snell's law at the second face: n sin r₂ = 1 × sin e ⟹ sin e = 1.5 × sin 30° = 1.5 × 0.5 = 0.75 ⟹ **e = sin⁻¹(0.75) ≈ 48.6°**. **Step 3 — deviation:** δ = i + e − A = 40 + 48.6 − 60 = **28.6°**. **Deep point:** the given r₁ = 30° is consistent with Snell's law at the first face (sin i = 1.5 sin r₁ would need sin i = 0.75, i.e. i = 48.6°, not 40°) — the question's numbers are a drilling set rather than a fully self-consistent refraction; use the given values as stated, which is what the mark scheme expects."
     }
   ]
 }

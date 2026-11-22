@@ -15,7 +15,8 @@
       "year": 2021,
       "source": "NEB Past",
       "solution": "**Step 1 — Given:** $L_0 = 1\\ \\text{m},\\ T_1 = 20^\\circ\\text{C},\\ T_2 = 100^\\circ\\text{C},\\ \\alpha = 1.2 \\times 10^{-5}\\ \\text{K}^{-1}$\n\n**Step 2 — Change in temperature:**\n$$\\Delta T = T_2 - T_1 = 100 - 20 = 80\\ \\text{K}$$\n\n**Step 3 — Increase in length:**\n$$\\Delta L = \\alpha L_0 \\Delta T = (1.2 \\times 10^{-5})(1)(80) = 96 \\times 10^{-5} = 9.6 \\times 10^{-4}\\ \\text{m}$$\n$$\\boxed{\\Delta L = \\mathbf{9.6 \\times 10^{-4}\\ \\text{m}} = \\mathbf{0.96\\ \\text{mm}}}$$\n\n**Step 4 — Final length:**\n$$L_2 = L_0 + \\Delta L = 1 + 9.6 \\times 10^{-4}$$\n$$\\boxed{L_2 = \\mathbf{1.00096\\ \\text{m}}$$\n\n**Note:** The expansion is very small, which is why gaps are left in railway tracks and bridges.",
-      "knowledgeNote": "Expansion equals alpha times original length times temperature rise; for a one-metre rod it is a fraction of a millimetre."
+      "knowledgeNote": "Expansion equals alpha times original length times temperature rise; for a one-metre rod it is a fraction of a millimetre.",
+      "answer": "**Formula:** ΔL = αLΔT. **Substitute:** α = 1.2 × 10⁻⁵ K⁻¹; L = 1 m; ΔT = 100 − 20 = 80 K. ΔL = 1.2 × 10⁻⁵ × 1 × 80 = **9.6 × 10⁻⁴ m = 0.96 mm**. **Final length:** L′ = L + ΔL = 1 + 0.00096 = **1.00096 m**. **Deep point:** the kelvin and Celsius *intervals* are identical, so ΔT = 80 K = 80 °C — the conversion habit matters only for absolute temperatures, never for differences."
     }
   ]
 }

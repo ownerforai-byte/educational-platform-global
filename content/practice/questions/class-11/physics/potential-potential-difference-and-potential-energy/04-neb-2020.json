@@ -15,7 +15,8 @@
       "year": 2020,
       "source": "NEB Model",
       "solution": "**Step 1 — Work done:**\n$$W = qV = 2 \\times 10^{-19} \\times 300 = \\mathbf{6.0 \\times 10^{-17}\\ \\text{J}}$$\n\n**Step 2 — Convert to electron volts:**\n$$1\\ \\text{eV} = 1.6 \\times 10^{-19}\\ \\text{J}$$\n$$W = \\frac{6.0 \\times 10^{-17}}{1.6 \\times 10^{-19}} = \\frac{6.0}{1.6} \\times 10^{2}$$\n$$W = \\mathbf{375\\ \\text{eV}}$$\n\n**Note:** The work done in moving one electron through 1 V is 1 eV, so $W\\ (\\text{eV}) = V$ (in volts) for a single electron.",
-      "knowledgeNote": "Work in joules is qV, and dividing by 1.6 times ten to the minus nineteen joules converts it to electron volts."
+      "knowledgeNote": "Work in joules is qV, and dividing by 1.6 times ten to the minus nineteen joules converts it to electron volts.",
+      "answer": "**Formula:** W = qV. **Substitute:** q = 2 × 10⁻¹⁹ C; V = 300 V. W = 2 × 10⁻¹⁹ × 300 = **6 × 10⁻¹⁷ J**. **In electron-volts:** 1 eV = 1.6 × 10⁻¹⁹ J ⟹ W = (6 × 10⁻¹⁷)/(1.6 × 10⁻¹⁹) = **375 eV**. **Deep point:** the eV conversion is just dividing by the electronic charge — a charge of 2e = 2 × 10⁻¹⁹ C moved through 300 V gains 2 × 300 = 600 eV... *if* it were exactly 2e; here q = 2 × 10⁻¹⁹ C is slightly less than 2e = 3.2 × 10⁻¹⁹ C, which is why the answer is 375 eV, not 600 eV — read the charge value literally."
     }
   ]
 }

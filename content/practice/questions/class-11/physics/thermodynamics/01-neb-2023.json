@@ -16,7 +16,8 @@
       "marks": 4,
       "difficulty": "medium",
       "prompt": "State the first law of thermodynamics and give three of its limitations.",
-      "solution": "First law: the change in internal energy of a system ($\\Delta U$) equals the heat supplied to it ($Q$) minus the work done by it ($W$): $\\Delta U = Q - W$. Limitations: (1) it says nothing about the direction of natural processes — why heat flows hot to cold and never the reverse; (2) it does not define entropy or disorder; (3) it tracks only energy conservation, not the quality (usefulness) of energy."
+      "solution": "First law: the change in internal energy of a system ($\\Delta U$) equals the heat supplied to it ($Q$) minus the work done by it ($W$): $\\Delta U = Q - W$. Limitations: (1) it says nothing about the direction of natural processes — why heat flows hot to cold and never the reverse; (2) it does not define entropy or disorder; (3) it tracks only energy conservation, not the quality (usefulness) of energy.",
+      "answer": "First law: the change in internal energy of a system ($\\Delta U$) equals the heat supplied to it ($Q$) minus the work done by it ($W$): $\\Delta U = Q - W$. Limitations: (1) it says nothing about the direction of natural processes — why heat flows hot to cold and never the reverse; (2) it does not define entropy or disorder; (3) it tracks only energy conservation, not the quality (usefulness) of energy."
     },
     {
       "id": "phy-thermo-2023-2",
@@ -24,7 +25,8 @@
       "marks": 4,
       "difficulty": "medium",
       "prompt": "Derive the expression for work done by an ideal gas in a reversible isothermal expansion from $V_1$ to $V_2$.",
-      "solution": "At constant $T$, $PV = nRT$ so $P = nRT/V$. Work done by the gas: $W = \\int_{V_1}^{V_2} P\\,dV = nRT\\int_{V_1}^{V_2} dV/V = nRT\\ln(V_2/V_1)$. Using $P_1V_1 = nRT$, this is also $W = P_1V_1\\ln(V_2/V_1)$."
+      "solution": "At constant $T$, $PV = nRT$ so $P = nRT/V$. Work done by the gas: $W = \\int_{V_1}^{V_2} P\\,dV = nRT\\int_{V_1}^{V_2} dV/V = nRT\\ln(V_2/V_1)$. Using $P_1V_1 = nRT$, this is also $W = P_1V_1\\ln(V_2/V_1)$.",
+      "answer": "At constant $T$, $PV = nRT$ so $P = nRT/V$. Work done by the gas: $W = \\int_{V_1}^{V_2} P\\,dV = nRT\\int_{V_1}^{V_2} dV/V = nRT\\ln(V_2/V_1)$. Using $P_1V_1 = nRT$, this is also $W = P_1V_1\\ln(V_2/V_1)$."
     },
     {
       "id": "phy-thermo-2023-3",
@@ -32,7 +34,8 @@
       "marks": 4,
       "difficulty": "medium",
       "prompt": "Define entropy. What happens to the entropy of the universe in a spontaneous process?",
-      "solution": "Entropy ($S$) is a state function measuring disorder; for a reversible change $dS = dQ_{rev}/T$. In any spontaneous (irreversible) process the total entropy of the universe — system plus surroundings — increases: $\\Delta S_{univ} = \\Delta S_{sys} + \\Delta S_{surr} > 0$. This is the second law; only an ideal reversible process keeps $\\Delta S_{univ} = 0$."
+      "solution": "Entropy ($S$) is a state function measuring disorder; for a reversible change $dS = dQ_{rev}/T$. In any spontaneous (irreversible) process the total entropy of the universe — system plus surroundings — increases: $\\Delta S_{univ} = \\Delta S_{sys} + \\Delta S_{surr} > 0$. This is the second law; only an ideal reversible process keeps $\\Delta S_{univ} = 0$.",
+      "answer": "Entropy ($S$) is a state function measuring disorder; for a reversible change $dS = dQ_{rev}/T$. In any spontaneous (irreversible) process the total entropy of the universe — system plus surroundings — increases: $\\Delta S_{univ} = \\Delta S_{sys} + \\Delta S_{surr} > 0$. This is the second law; only an ideal reversible process keeps $\\Delta S_{univ} = 0$."
     },
     {
       "id": "phy-thermo-2023-4",
@@ -40,7 +43,8 @@
       "marks": 2,
       "difficulty": "easy",
       "prompt": "A Carnot engine works between $T_H = 600\\,\\mathrm{K}$ and $T_C = 300\\,\\mathrm{K}$. What is its maximum efficiency?",
-      "solution": "$\\eta_{\\max} = 1 - T_C/T_H = 1 - 300/600 = 0.5 = 50\\%$. No engine operating between these reservoirs can exceed this."
+      "solution": "$\\eta_{\\max} = 1 - T_C/T_H = 1 - 300/600 = 0.5 = 50\\%$. No engine operating between these reservoirs can exceed this.",
+      "answer": "$\\eta_{\\max} = 1 - T_C/T_H = 1 - 300/600 = 0.5 = 50\\%$. No engine operating between these reservoirs can exceed this."
     }
   ]
 }

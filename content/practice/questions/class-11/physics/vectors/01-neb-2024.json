@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Ax = A cos Î¸ = 50 Ã— cos 37Â° = 50 Ã— 0.7986 = **39.93 m**\nAy = A sin Î¸ = 50 Ã— sin 37Â° = 50 Ã— 0.6018 = **30.09 m**\n\nUsing standard values: cos 37Â° â‰ˆ 4/5, sin 37Â° â‰ˆ 3/5\nAx = 50 Ã— (4/5) = 40 m, Ay = 50 Ã— (3/5) = 30 m",
-      "knowledgeNote": "37Â° and 53Â° are standard angles in physics: cos 37Â° = 4/5, sin 37Â° = 3/5; cos 53Â° = 3/5, sin 53Â° = 4/5"
+      "knowledgeNote": "37Â° and 53Â° are standard angles in physics: cos 37Â° = 4/5, sin 37Â° = 3/5; cos 53Â° = 3/5, sin 53Â° = 4/5",
+      "answer": "**Rectangular components:** A_x = A cos θ (along x), A_y = A sin θ (along y). **Substitute:** A = 50 m, θ = 37° (cos 37° ≈ 0.8, sin 37° ≈ 0.6). A_x = 50 × 0.8 = **40 m**; A_y = 50 × 0.6 = **30 m**. **Check:** √(40² + 30²) = √2500 = 50 m ✓. **Deep point:** the 37°/53° pair is the physics classroom's 3-4-5 triangle — cos 37° = 0.8 and sin 37° = 0.6 are worth memorising; the Pythagorean check closes the answer."
     }
   ]
 }

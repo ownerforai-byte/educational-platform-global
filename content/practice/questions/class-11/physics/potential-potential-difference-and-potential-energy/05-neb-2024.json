@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Electric potential** is the work done per unit positive charge in bringing it from infinity to the point (W/q₀). SI unit: **volt (V) = J/C**.\n\nField and potential are linked by **E = −dV/dr** — the field points down the steepest potential slope.",
-      "knowledgeNote": "Potential is a scalar (no direction) while field is a vector — potential problems need half the bookkeeping."
+      "knowledgeNote": "Potential is a scalar (no direction) while field is a vector — potential problems need half the bookkeeping.",
+      "answer": "**Electric potential at a point:** the work done per unit positive charge in bringing a small test charge from infinity to that point — **V = W/q**; SI unit the **volt (V = J/C)**; a scalar. **Relation between field and potential:** the electric field is the **negative potential gradient**: **E = −dV/dr** (in magnitude, E = V/d for a uniform field) — the field points from high to low potential, and its magnitude equals the rate at which potential falls per unit distance. Units check: V/m = N/C ✓. **Deep point:** E = −dV/dr is the most compact sentence in electrostatics — field is where potential *changes*, which is why the field is zero inside a charged hollow conductor where the potential is constant."
     },
     {
       "question": "Calculate the electric potential at 0.5 m from a point charge of 2 μC in air.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "V = kq/r = (9 × 10⁹ × 2 × 10⁻⁶)/0.5 = 18,000/0.5 = **36,000 V (36 kV)**.",
-      "knowledgeNote": "V ∝ 1/r but E ∝ 1/r² — at large distances the potential outlives the field."
+      "knowledgeNote": "V ∝ 1/r but E ∝ 1/r² — at large distances the potential outlives the field.",
+      "answer": "**Formula:** V = kq/r (potential of a point charge). **Substitute:** k = 9 × 10⁹; q = 2 μC = 2 × 10⁻⁶ C; r = 0.5 m. V = (9 × 10⁹ × 2 × 10⁻⁶)/0.5 = (1.8 × 10⁴)/0.5 = **3.6 × 10⁴ V = 36 000 V**. **Deep point:** potential falls as 1/r (not 1/r² like the field) — the gentler falloff is why potential is the convenient bookkeeping quantity in circuits."
     },
     {
       "question": "What are equipotential surfaces? Write any three of their properties.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Surfaces (real or imaginary) over which the potential is constant everywhere.\n\n(1) No work is done moving a charge along one. (2) Field lines always cross them at right angles. (3) Two equipotential surfaces never intersect (that would give one point two potentials).",
-      "knowledgeNote": "For a point charge they are concentric spheres; for a uniform field, parallel planes."
+      "knowledgeNote": "For a point charge they are concentric spheres; for a uniform field, parallel planes.",
+      "answer": "**Equipotential surface:** a surface on which **every point is at the same potential** — moving a charge anywhere on it requires no work (W = qΔV = 0). **Three properties:** (1) **no work is done** in moving a charge along the surface; (2) the **electric field is perpendicular** to the surface at every point (else a field component along the surface would do work, contradiction); (3) **two equipotential surfaces never intersect** (a point of intersection would have two potentials); also, they are crowded where the field is strong. **Deep point:** property (2) is the working one — field lines and equipotentials form an orthogonal grid, which is how field maps are drawn from voltage measurements."
     },
     {
       "question": "Define the electron-volt. Convert 1 eV into joules.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**1 eV** is the kinetic energy an electron gains crossing a 1 V potential difference.\n\n1 eV = e × 1 V = (1.6 × 10⁻¹⁹)(1) = **1.6 × 10⁻¹⁹ J**.",
-      "knowledgeNote": "Atomic energies live in eV, nuclear in MeV — converting to joules first is the safe route in combined problems."
+      "knowledgeNote": "Atomic energies live in eV, nuclear in MeV — converting to joules first is the safe route in combined problems.",
+      "answer": "**Electron-volt:** the kinetic energy gained by an electron (charge e) accelerated through a potential difference of **1 volt**: W = eV. **Conversion:** 1 eV = (1.6 × 10⁻¹⁹ C) × (1 V) = **1.6 × 10⁻¹⁹ J**. **Deep point:** the eV is an *energy* unit despite the 'volt' in its name — atomic and nuclear physics use it because particle energies come out in convenient numbers (a few eV for chemical bonds, keV for X-rays, MeV for nuclear reactions)."
     },
     {
       "question": "Two charges +3 μC and −2 μC are placed 0.3 m apart in air. Calculate the electric potential energy of the system.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "U = kq₁q₂/r = (9 × 10⁹)(3 × 10⁻⁶)(−2 × 10⁻⁶)/0.3\n\nU = −54 × 10⁻³/0.3 = **−0.18 J**.\n\nThe negative sign means work must be done to separate them — opposite charges bind the system.",
-      "knowledgeNote": "Like charges give positive U (work stored pushing them together); unlike charges give negative U (bound)."
+      "knowledgeNote": "Like charges give positive U (work stored pushing them together); unlike charges give negative U (bound).",
+      "answer": "**Formula:** electric potential energy of two point charges: U = kq₁q₂/r. **Substitute:** k = 9 × 10⁹; q₁ = +3 μC = 3 × 10⁻⁶ C; q₂ = −2 μC = −2 × 10⁻⁶ C; r = 0.3 m. U = (9 × 10⁹ × 3 × 10⁻⁶ × (−2) × 10⁻⁶)/0.3 = (−5.4 × 10⁻²)/0.3 = **−0.18 J**. **Interpretation:** the negative sign means the unlike charges are *bound* — 0.18 J of work would be needed to pull them apart to infinity. **Deep point:** the sign of U carries the physics — negative for attraction (bound system), positive for repulsion; magnitude alone loses half the answer."
     },
     {
       "question": "Show that the electric potential everywhere inside a uniformly charged hollow sphere equals its surface value.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Inside the shell E = 0 (Gauss's law — no enclosed charge). Since E = −dV/dr, zero field means dV/dr = 0: V is constant throughout the interior.\n\nAt the surface r = R it must join the outside value Q/(4πε₀R), so **V = Q/(4πε₀R) everywhere inside**, right up to the centre.",
-      "knowledgeNote": "Constant potential ≠ zero potential — the interior sits at the full surface voltage, which is why a hollow conductor is still dangerous to touch."
+      "knowledgeNote": "Constant potential ≠ zero potential — the interior sits at the full surface voltage, which is why a hollow conductor is still dangerous to touch.",
+      "answer": "**Claim to show:** V_inside = V_surface = kQ/R everywhere inside a uniformly charged hollow (conducting) sphere. **Argument:** by Gauss's law, the field inside is **zero** (a Gaussian sphere inside encloses no charge). Work done moving a test charge q from the surface to any interior point is W = ∫E·dr = 0, since E = 0 along the whole path. Since potential difference is work per unit charge, **V_interior − V_surface = 0** ⟹ the potential inside equals the surface value V = kQ/R everywhere. **Deep point:** zero *field* but non-zero constant *potential* inside is not a contradiction — field measures potential's slope, and a flat potential has no slope; the interior is an equipotential volume, the basis of electrostatic shielding (Faraday cage)."
     }
   ]
 }

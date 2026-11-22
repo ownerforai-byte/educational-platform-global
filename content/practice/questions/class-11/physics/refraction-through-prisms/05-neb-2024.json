@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "At the first face the ray deviates by (i − r₁); at the second by (e − r₂). Total deviation δ = (i − r₁) + (e − r₂) = (i + e) − (r₁ + r₂).\n\nFrom the quadrilateral geometry inside the prism, r₁ + r₂ = A (the prism angle). Hence **δ = i + e − A**.",
-      "knowledgeNote": "At minimum deviation the ray passes symmetrically: i = e and r₁ = r₂ = A/2."
+      "knowledgeNote": "At minimum deviation the ray passes symmetrically: i = e and r₁ = r₂ = A/2.",
+      "answer": "**Setup:** ray strikes the first face at angle i, refracts at r₁, crosses to the second face at angle r₂, emerges at angle e; prism angle A. **Geometry:** the two face-normals meet at the apex with angle A; the quadrilateral formed by the ray inside the prism and the two normals has angles 90°, 90°, A and (180° − A)... its four angles sum to 360°, giving **r₁ + r₂ = A**. **Deviation:** at the first face the ray bends toward the normal by (i − r₁); at the second it bends away by (e − r₂). The total angle between the emergent ray produced backward and the incident ray produced forward is the sum of both deflections: **δ = (i − r₁) + (e − r₂) = i + e − (r₁ + r₂) = i + e − A**. **Deep point:** two facts — the quadrilateral for r₁ + r₂ = A and the exterior-angle sum for the deviation — are the entire derivation; everything else is labelling."
     },
     {
       "question": "Derive the expression for the refractive index of a prism in terms of the angle of minimum deviation.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "At minimum deviation δm: i = e and r₁ = r₂ = r = A/2.\n\nSnell at the first face: n = sin i / sin r. From δm = 2i − A → i = (A + δm)/2.\n\nTherefore **n = sin((A + δm)/2) / sin(A/2)** — the prism formula, used in spectrometers to measure n.",
-      "knowledgeNote": "This is the standard spectrometer experiment: measure A and δm, compute n — know it as a procedure, not just algebra."
+      "knowledgeNote": "This is the standard spectrometer experiment: measure A and δm, compute n — know it as a procedure, not just algebra.",
+      "answer": "**At minimum deviation:** i = e and r₁ = r₂ = A/2 (symmetric passage; ray parallel to the base). **Snell's law at either face:** n = sin i/sin r = sin i/sin(A/2). **Express i through δ_min:** from δ = i + e − A with i = e: δ_min = 2i − A ⟹ i = (A + δ_min)/2. **Substitute:** **n = sin((A + δ_min)/2)/sin(A/2)**. **Use:** measuring δ_min for a given prism and wavelength yields n directly — the standard spectrometer method (and the source of the D-line dispersions quoted for glasses). **Deep point:** the formula is minimum deviation's payoff — it converts two measured angles (A and δ_min) into a material property, with no knowledge of the ray's internal path needed."
     },
     {
       "question": "A prism of angle 60° has refractive index 1.5. Calculate its angle of minimum deviation.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "n = sin((A + δm)/2)/sin(A/2) → sin((60 + δm)/2) = 1.5 × sin 30° = 0.75.\n\n(60 + δm)/2 = 48.6° → 60 + δm = 97.2° → δm ≈ **37.2°**.",
-      "knowledgeNote": "δm rises with both A and n — flint glass deviates more than crown for the same prism angle."
+      "knowledgeNote": "δm rises with both A and n — flint glass deviates more than crown for the same prism angle.",
+      "answer": "**Formula:** n = sin((A + δ_min)/2)/sin(A/2). **Rearranged:** sin((A + δ_min)/2) = n sin(A/2) = 1.5 × sin 30° = 1.5 × 0.5 = 0.75. (A + δ_min)/2 = sin⁻¹(0.75) = 48.6° ⟹ A + δ_min = 97.2° ⟹ **δ_min = 97.2 − 60 = 37.2°**. **Deep point:** for an equilateral 60° prism of n = 1.5, δ_min ≈ 37° — the working number behind every spectrometer with a crown-glass prism; δ_min must exceed A/2 and stay under 2 sin⁻¹(n/2) − A, and 37.2° fits."
     },
     {
       "question": "Draw the i–δ curve for a prism and explain why there is only one angle of minimum deviation.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "δ falls steeply as i grows, bottoms out at δm, then rises slowly — a U-shaped curve.\n\nThere is a single minimum because δ(i) is symmetric about the symmetric-ray path (i = e); moving i either way from that point increases δ — the curve's unique turning point.",
-      "knowledgeNote": "Near δm the deviation barely changes with i — that stationary reading is why spectrometers lock onto it easily."
+      "knowledgeNote": "Near δm the deviation barely changes with i — that stationary reading is why spectrometers lock onto it easily.",
+      "answer": "**i–δ curve:** plot angle of incidence i (x-axis) against deviation δ (y-axis): δ starts large near grazing incidence, **falls steeply** as i increases, flattens to a **broad minimum δ_min** around the middle of the range, then **rises steeply** again as i approaches 90° — a U-shaped (check-mark) curve with a single minimum. **Why only one minimum:** the ray path through a prism is **reversible** — a ray entering at angle i and emerging at e gives the same deviation as one entering at e and emerging at i; so δ(i) must be symmetric about the point where i = e. A symmetric U-shaped curve has exactly one lowest point, and it lies at **i = e** (the symmetric, base-parallel passage). **Deep point:** reversibility is the uniqueness argument — no second minimum can hide in a curve that must fold onto itself about i = e."
     },
     {
       "question": "Show that for a small-angled prism, the deviation is δ = (n − 1)A.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "For small A at near-normal incidence, Snell's law linearises: i ≈ nr₁ and e ≈ nr₂.\n\nδ = (i − r₁) + (e − r₂) = (n − 1)(r₁ + r₂) = **(n − 1)A**.",
-      "knowledgeNote": "Thin-prism δ is independent of i — every ray through it deviates by the same fixed amount."
+      "knowledgeNote": "Thin-prism δ is independent of i — every ray through it deviates by the same fixed amount.",
+      "answer": "**For a small-angled prism (A small), all angles are small**, so Snell's law linearises: sin θ ≈ θ. **At each face:** i ≈ n r₁ and e ≈ n r₂ (small-angle Snell). **Deviation:** δ = i + e − A ≈ n r₁ + n r₂ − A = n(r₁ + r₂) − A = nA − A (using r₁ + r₂ = A) ⟹ **δ = (n − 1)A**. **Deep point:** the small-angle approximation is the only physics input — the formula is Snell's law with sines traded for angles, valid while every angle stays a few degrees (thin prisms, ophthalmic prisms measured in prism dioptres)."
     },
     {
       "question": "What is angle of minimum deviation? Write two factors affecting it.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Minimum deviation δm** is the smallest angle by which a prism can turn a ray, reached when the ray passes symmetrically.\n\nIt increases with (1) the **prism angle A** and (2) the **refractive index** of the material (and falls for longer wavelengths — red deviates least).",
-      "knowledgeNote": "δm increasing toward violet is exactly what spreads white light into a spectrum."
+      "knowledgeNote": "δm increasing toward violet is exactly what spreads white light into a spectrum.",
+      "answer": "**Angle of minimum deviation:** the **smallest angle of deviation** produced by a prism for a given wavelength of light — the flat minimum of the i–δ curve, occurring when the ray passes symmetrically (i = e, r₁ = r₂ = A/2, internal ray parallel to the base). **Two factors affecting it:** (1) the **refractive index n of the prism material** — higher n gives larger δ_min (and n varies with wavelength, so each colour has its own δ_min — this is dispersion); (2) the **angle of the prism A** — a larger refracting angle gives larger δ_min (for a thin prism, δ_min = (n − 1)A directly). **Deep point:** δ_min's two dependencies are exactly the two things a lens/grating designer can vary — the glass and the geometry; wavelength enters through n, which is why the minimum is different for red and violet."
     }
   ]
 }
