@@ -7,30 +7,36 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Preparation of benzene from decarboxylation of sodium benzoate, phenol, and ethyne only\n\n## 1. Introduction\nChemical picture of **Preparation of benzene from decarboxylation of sodium benzoate** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Aromatic Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Preparation of benzene from decarboxylation of sodium benzoate\n### phenol\n### and ethyne only\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Preparation of benzene from decarboxylation of sodium benzoate — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Preparation of benzene from decarboxylation of sodium benzoate — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Preparation of benzene from decarboxylation of sodium benzoate — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Preparation of benzene from decarboxylation of sodium benzoate — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Making Benzene: Three Named Routes\n\nThe syllabus names three laboratory preparations of benzene: **decarboxylation of sodium benzoate with soda lime**, **distillation of phenol with zinc dust**, and **trimerisation of ethyne through a red-hot iron tube**. Each is a one-line equation with one non-negotiable condition — the conditions are the marks.",
+    "## 2. Theorem Mirror\n\n- **Decarboxylation:** C₆H₅COONa + NaOH(CaO, heat) → C₆H₆ + Na₂CO₃ — soda lime (NaOH + CaO) decarboxylates the salt; the ring carbon keeps its hydrogen.\n- **From phenol:** C₆H₅OH + Zn (heat) → C₆H₆ + ZnO — zinc dust reduces the C–O bond; distillation drives the benzene over.\n- **From ethyne:** 3C₂H₂ →(red-hot Fe tube, ~873 K) C₆H₆ — three alkynes cyclise; the reaction is Berthelot's synthesis.\n- **All three preserve the six-carbon ring or build it:** decarboxylation and Zn-reduction modify a pre-existing ring; trimerisation assembles it from three C₂ units.",
+    "## 3. Deep Conceptual — What Each Route Teaches About the Ring\n\n- **Decarboxylation is a proton-for-carboxylate swap:** soda lime's NaOH abstracts the carboxyl proton machinery and the CO₂ leaves as carbonate; the aryl carbon receives H. The reaction is the standard exit route from any aromatic acid — the ring itself is untouched, which is why the method generalises (toluene from sodium o/m/p-methylbenzoate, etc.).\n- **The Zn route is bond-specific reduction:** Zn removes oxygen as ZnO and replaces the C–O with C–H. Phenol → benzene is the *reverse* of benzene's industrial hydroxylation — the same C–O bond viewed from both directions; the high temperature (red heat) reflects the C–O bond's strength in an aryl ether/phenol context.\n- **Trimerisation builds the aromatic ring from acetylene's strain:** ethyne is high in energy (triple bond); cyclising three of them into the aromatic sextet releases that stored energy into the new ring's stabilisation — the thermodynamic push is partly the aromaticity itself. The red-hot tube supplies the activation; no catalyst is named in the syllabus beyond the hot iron surface.",
+    "## 4. Deep Conceptual — Conditions Are Part of the Equation\n\n- Each route's condition is *diagnostic*, not decorative: soda lime (not NaOH alone — CaO raises the fusion temperature and absorbs water); zinc dust (not Zn granules — surface area); red-hot iron tube ~873 K (not a flame — the temperature *is* the reagent). In the exam, an equation without its condition is half an answer.\n- **The three routes span three logic families:** functional-group removal (−CO₂⁻ → −H), functional-group reduction (−OH → −H), and ring construction (3 × C₂ → C₆). Recognising which family a question invokes tells you which condition to quote.",
+    "## 5. Worked Example Types\n\n- **Type A — write the preparation:** equation + condition, for each of the three routes.\n- **Type B — condition justification:** why soda lime, why zinc dust, why red heat.\n- **Type C — route selection:** given a starting material, choose and justify the route.\n- **Type D — generalisation:** apply decarboxylation to substituted benzoates.",
+    "## 6. Common Confusions\n\n**\"NaOH alone decarboxylates\":** the soda-lime mixture (NaOH + CaO) is required — CaO's role is fusion-temperature and water absorption. **\"Ethyne trimerisation needs a catalyst like Ni\":** the syllabus condition is the red-hot iron tube (~873 K); quoting organometallic catalysts imports outside chemistry."
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Preparation of benzene from decarboxylation of sodium ben…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Write all three laboratory preparations of benzene with conditions.",
+    "Explain why soda lime rather than pure NaOH is used in decarboxylation.",
+    "Starting from sodium p-methylbenzoate, predict the product of soda-lime decarboxylation."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Decarboxylation generalises: any sodium benzoate derivative gives the corresponding substituted benzene."
+  ],
+  "examples": [
+    "***Berthelot's synthesis*** - three ethyne molecules cyclise into the aromatic sextet; the stored triple-bond energy and the aromatic stabilisation both push the reaction downhill."
+  ],
   "practiceQuestions": [
-    "Q. Write the preparation of benzene from ethyne with conditions. (2 marks) — 3C2H2 → C6H6, red-hot Cu tube (873 K).",
-    "Q. How is benzene obtained from phenol? (1 mark) — distil phenol with zinc dust: C6H5OH + Zn → C6H6 + ZnO."
+    "**NEB-style (6m): Prepare benzene in the laboratory from (a) sodium benzoate and (b) phenol, writing balanced equations with conditions.** — **(a) Soda-lime decarboxylation:** heat sodium benzoate strongly with soda lime (NaOH + CaO): C₆H₅COONa + NaOH --(CaO, Δ)--> C₆H₆ + Na₂CO₃. The carboxylate group leaves as carbonate and the ring carbon takes a hydrogen. **(b) Zinc-dust reduction:** distil phenol with zinc dust: C₆H₅OH + Zn --(Δ)--> C₆H₆ + ZnO. Zinc removes the phenolic oxygen as ZnO; the C–O bond is replaced by C–H. **Conditions quoted:** strong heat with the soda-lime mixture for (a); red heat with excess zinc dust for (b). **Deep point:** the two routes are functionally opposite operations on the ring's substituent — one deletes a carboxylate, one deletes an oxygen — and both leave the aromatic sextet untouched; the ring's stability is why such drastic conditions (fusion, red heat) still give clean products.",
+    "**NEB-style (5m): Describe the preparation of benzene from ethyne, giving the equation and conditions, and explain the thermodynamic driving force.** — **Reaction:** pass ethyne through a red-hot iron tube at about 873 K: **3C₂H₂ --(red-hot Fe, 873 K)--> C₆H₆** (Berthelot's synthesis). **Driving force:** three C≡C triple bonds (high-energy, each ~835 kJ/mol of bond energy with two π components) are converted into the aromatic ring's delocalised sextet — the product sits far lower in energy because the cyclic conjugation gains the ~150 kJ/mol resonance stabilisation on top of normal bond energies. **Role of the tube:** the red-hot iron supplies the activation energy for cyclisation; the hot surface also favours the six-membered cyclic transition over linear oligomers. **Deep point:** the trimerisation is the one route that *builds* the ring rather than editing it — and the fact that heat alone accomplishes it is evidence of how much energy the aromatic sextet stores back: the reaction is exothermic precisely because the product is aromatic.",
+    "**NEB-style (5m): Why is soda lime (a mixture of NaOH and CaO) used for decarboxylation instead of sodium hydroxide alone? Give the equation.** — **NaOH's job:** provides the OH⁻ that converts the acid–carboxylate chemistry and accepts the sodium of the carboxylate into the carbonate by-product. **CaO's jobs:** (1) raises the fusion temperature — pure NaOH melts at 318 °C and the reaction needs a strongly heated, dry, pasty fusion; CaO is refractory and keeps the mass solid at the working temperature; (2) absorbs water — dry conditions suppress side hydrolysis and keep the fusion from frothing. **Equation:** C₆H₅COONa + NaOH --(CaO, Δ)--> C₆H₆ + Na₂CO₃. **Deep point:** \"soda lime\" is a conditions-and-reagents package — the exam's condition slot (CaO, Δ) encodes two physical reasons; being able to say *why* CaO is there, rather than only *that* it is, converts a recall mark into an understanding mark.",
+    "**NEB-style (6m): Sodium p-methylbenzoate is subjected to soda-lime decarboxylation. Predict the product, write the equation, and explain the generalisation.** — **Product:** the carboxylate carbon is replaced by hydrogen; the para-methyl substituent rides through untouched ⟹ **toluene (methylbenzene)**. **Equation:** CH₃–C₆H₄–COONa + NaOH --(CaO, Δ)--> CH₃–C₆H₅ + Na₂CO₃. **Generalisation:** decarboxylation edits only the −COONa group: any ring substituent (methyl, chloro, methoxy) is carried into the product at its original position — the reaction is a universal \"carboxyl-out, hydrogen-in\" operator on aromatic rings. **Check:** the product's formula C₇H₈ matches toluene; the para relationship is moot after deletion (the ring is monosubstituted). **Deep point:** the generalisation is why decarboxylation appears in synthesis *plans*, not just preparations — it is how a carboxyl group acts as a temporary blocking or directing group that is later removed; the ring's substituent map survives the operation, which is the whole point."
   ],
   "keyPoints": [
-    "• Preparation of benzene from decarboxylation of sodium benzoate",
-    "• Phenol",
-    "• Ethyne only"
+    "Three routes: (1) C6H5COONa + NaOH(CaO, heat) -> C6H6 + Na2CO3 - soda-lime decarboxylation; (2) C6H5OH + Zn(heat) -> C6H6 + ZnO - zinc-dust reduction; (3) 3C2H2 -> (red-hot Fe tube, ~873 K) C6H6 - trimerisation. Conditions are diagnostic: soda lime not NaOH alone; zinc dust for surface area; red-hot tube as the reagent. Three logic families: group removal, group reduction, ring construction."
   ],
-  "summary": "Preparation of benzene from decarboxylation of sodium ben… (Aromatic Hydrocarbons, Chemistry, class-11-notes) covers Preparation of benzene from decarboxylation of sodium benzoate, phenol, ethyne only. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Benzene's three laboratory routes span three logics: soda-lime decarboxylation deletes a carboxylate (C₆H₅COONa + NaOH/CaO → C₆H₆ + Na₂CO₃), zinc-dust reduction deletes an oxygen (C₆H₅OH + Zn → C₆H₆ + ZnO), and Berthelot's red-hot trimerisation builds the ring from three ethynes (3C₂H₂, Fe tube, 873 K). The conditions — soda lime's CaO, the dust-fine zinc, the red heat — are diagnostic parts of each equation, and the generalised decarboxylation turns the reaction into a synthesis tool: carboxyl out, hydrogen in, substituent map intact.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Preparation of benzene from decarboxylation of sodium ben…\"?",
@@ -54,8 +60,69 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Three equations — soda lime: C6H5COONa + NaOH(CaO) → C6H6 + Na2CO3; phenol distillation with zinc dust: C6H5OH + Zn → C6H6 + ZnO; trimerisation: 3C2H2 —(red hot Cu tube, 873 K)→ C6H6.",
-    "Trick 2: Conditions are the marks: ethyne trimerisation needs a RED-HOT copper tube; phenol route needs ZINC DUST (not Cu).",
-    "Trick 3: Industrial: catalytic reforming/dehydrogenation of n-hexane or n-heptane over Cr2O3/Al2O3 — mention as the modern route."
+    "Write the condition over the arrow, always - heat, soda lime, Zn, red-hot Fe tube are arrow labels, not afterthoughts."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Making Benzene: Three Named Routes\n\nThe syllabus names three laboratory preparations of benzene: **decarboxylation of sodium benzoate with soda lime**, **distillation of phenol with zinc dust**, and **trimerisation of ethyne through a red-hot iron tube**. Each is a one-line equation with one non-negotiable condition — the conditions are the marks.",
+      "## 2. Theorem Mirror\n\n- **Decarboxylation:** C₆H₅COONa + NaOH(CaO, heat) → C₆H₆ + Na₂CO₃ — soda lime (NaOH + CaO) decarboxylates the salt; the ring carbon keeps its hydrogen.\n- **From phenol:** C₆H₅OH + Zn (heat) → C₆H₆ + ZnO — zinc dust reduces the C–O bond; distillation drives the benzene over.\n- **From ethyne:** 3C₂H₂ →(red-hot Fe tube, ~873 K) C₆H₆ — three alkynes cyclise; the reaction is Berthelot's synthesis.\n- **All three preserve the six-carbon ring or build it:** decarboxylation and Zn-reduction modify a pre-existing ring; trimerisation assembles it from three C₂ units.",
+      "## 3. Deep Conceptual — What Each Route Teaches About the Ring\n\n- **Decarboxylation is a proton-for-carboxylate swap:** soda lime's NaOH abstracts the carboxyl proton machinery and the CO₂ leaves as carbonate; the aryl carbon receives H. The reaction is the standard exit route from any aromatic acid — the ring itself is untouched, which is why the method generalises (toluene from sodium o/m/p-methylbenzoate, etc.).\n- **The Zn route is bond-specific reduction:** Zn removes oxygen as ZnO and replaces the C–O with C–H. Phenol → benzene is the *reverse* of benzene's industrial hydroxylation — the same C–O bond viewed from both directions; the high temperature (red heat) reflects the C–O bond's strength in an aryl ether/phenol context.\n- **Trimerisation builds the aromatic ring from acetylene's strain:** ethyne is high in energy (triple bond); cyclising three of them into the aromatic sextet releases that stored energy into the new ring's stabilisation — the thermodynamic push is partly the aromaticity itself. The red-hot tube supplies the activation; no catalyst is named in the syllabus beyond the hot iron surface.",
+      "## 4. Deep Conceptual — Conditions Are Part of the Equation\n\n- Each route's condition is *diagnostic*, not decorative: soda lime (not NaOH alone — CaO raises the fusion temperature and absorbs water); zinc dust (not Zn granules — surface area); red-hot iron tube ~873 K (not a flame — the temperature *is* the reagent). In the exam, an equation without its condition is half an answer.\n- **The three routes span three logic families:** functional-group removal (−CO₂⁻ → −H), functional-group reduction (−OH → −H), and ring construction (3 × C₂ → C₆). Recognising which family a question invokes tells you which condition to quote.",
+      "## 5. Worked Example Types\n\n- **Type A — write the preparation:** equation + condition, for each of the three routes.\n- **Type B — condition justification:** why soda lime, why zinc dust, why red heat.\n- **Type C — route selection:** given a starting material, choose and justify the route.\n- **Type D — generalisation:** apply decarboxylation to substituted benzoates.",
+      "## 6. Common Confusions\n\n**\"NaOH alone decarboxylates\":** the soda-lime mixture (NaOH + CaO) is required — CaO's role is fusion-temperature and water absorption. **\"Ethyne trimerisation needs a catalyst like Ni\":** the syllabus condition is the red-hot iron tube (~873 K); quoting organometallic catalysts imports outside chemistry."
+    ],
+    "keyPoints": [
+      "Three routes: (1) C6H5COONa + NaOH(CaO, heat) -> C6H6 + Na2CO3 - soda-lime decarboxylation; (2) C6H5OH + Zn(heat) -> C6H6 + ZnO - zinc-dust reduction; (3) 3C2H2 -> (red-hot Fe tube, ~873 K) C6H6 - trimerisation. Conditions are diagnostic: soda lime not NaOH alone; zinc dust for surface area; red-hot tube as the reagent. Three logic families: group removal, group reduction, ring construction."
+    ],
+    "importantConcepts": [
+      "An equation without its condition is half an answer - the condition is where the mark lives."
+    ],
+    "examples": [
+      "***Berthelot's synthesis*** - three ethyne molecules cyclise into the aromatic sextet; the stored triple-bond energy and the aromatic stabilisation both push the reaction downhill."
+    ],
+    "universalFacts": [
+      "Decarboxylation generalises: any sodium benzoate derivative gives the corresponding substituted benzene."
+    ],
+    "importantStatements": [
+      "Phenol to benzene and benzene to phenol are the same C-O bond viewed from opposite directions."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on rows 122, 124 and 127."
+    ],
+    "examShortTricks": [
+      "Write the condition over the arrow, always - heat, soda lime, Zn, red-hot Fe tube are arrow labels, not afterthoughts."
+    ],
+    "examNotes": [
+      "Balance the decarboxylation equation fully (Na2CO3 by-product) - unbalanced equations forfeit the method mark."
+    ],
+    "formulas": [
+      "- C₆H₅COONa + NaOH --(CaO, Δ)--> C₆H₆ + Na₂CO₃\n- C₆H₅OH + Zn --(Δ)--> C₆H₆ + ZnO\n- 3C₂H₂ --(red-hot Fe tube, 873 K)--> C₆H₆"
+    ],
+    "practice": [
+      "Write all three laboratory preparations of benzene with conditions.",
+      "Explain why soda lime rather than pure NaOH is used in decarboxylation.",
+      "Starting from sodium p-methylbenzoate, predict the product of soda-lime decarboxylation."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Prepare benzene in the laboratory from (a) sodium benzoate and (b) phenol, writing balanced equations with conditions.** — **(a) Soda-lime decarboxylation:** heat sodium benzoate strongly with soda lime (NaOH + CaO): C₆H₅COONa + NaOH --(CaO, Δ)--> C₆H₆ + Na₂CO₃. The carboxylate group leaves as carbonate and the ring carbon takes a hydrogen. **(b) Zinc-dust reduction:** distil phenol with zinc dust: C₆H₅OH + Zn --(Δ)--> C₆H₆ + ZnO. Zinc removes the phenolic oxygen as ZnO; the C–O bond is replaced by C–H. **Conditions quoted:** strong heat with the soda-lime mixture for (a); red heat with excess zinc dust for (b). **Deep point:** the two routes are functionally opposite operations on the ring's substituent — one deletes a carboxylate, one deletes an oxygen — and both leave the aromatic sextet untouched; the ring's stability is why such drastic conditions (fusion, red heat) still give clean products.",
+      "**NEB-style (5m): Describe the preparation of benzene from ethyne, giving the equation and conditions, and explain the thermodynamic driving force.** — **Reaction:** pass ethyne through a red-hot iron tube at about 873 K: **3C₂H₂ --(red-hot Fe, 873 K)--> C₆H₆** (Berthelot's synthesis). **Driving force:** three C≡C triple bonds (high-energy, each ~835 kJ/mol of bond energy with two π components) are converted into the aromatic ring's delocalised sextet — the product sits far lower in energy because the cyclic conjugation gains the ~150 kJ/mol resonance stabilisation on top of normal bond energies. **Role of the tube:** the red-hot iron supplies the activation energy for cyclisation; the hot surface also favours the six-membered cyclic transition over linear oligomers. **Deep point:** the trimerisation is the one route that *builds* the ring rather than editing it — and the fact that heat alone accomplishes it is evidence of how much energy the aromatic sextet stores back: the reaction is exothermic precisely because the product is aromatic.",
+      "**NEB-style (5m): Why is soda lime (a mixture of NaOH and CaO) used for decarboxylation instead of sodium hydroxide alone? Give the equation.** — **NaOH's job:** provides the OH⁻ that converts the acid–carboxylate chemistry and accepts the sodium of the carboxylate into the carbonate by-product. **CaO's jobs:** (1) raises the fusion temperature — pure NaOH melts at 318 °C and the reaction needs a strongly heated, dry, pasty fusion; CaO is refractory and keeps the mass solid at the working temperature; (2) absorbs water — dry conditions suppress side hydrolysis and keep the fusion from frothing. **Equation:** C₆H₅COONa + NaOH --(CaO, Δ)--> C₆H₆ + Na₂CO₃. **Deep point:** \"soda lime\" is a conditions-and-reagents package — the exam's condition slot (CaO, Δ) encodes two physical reasons; being able to say *why* CaO is there, rather than only *that* it is, converts a recall mark into an understanding mark.",
+      "**NEB-style (6m): Sodium p-methylbenzoate is subjected to soda-lime decarboxylation. Predict the product, write the equation, and explain the generalisation.** — **Product:** the carboxylate carbon is replaced by hydrogen; the para-methyl substituent rides through untouched ⟹ **toluene (methylbenzene)**. **Equation:** CH₃–C₆H₄–COONa + NaOH --(CaO, Δ)--> CH₃–C₆H₅ + Na₂CO₃. **Generalisation:** decarboxylation edits only the −COONa group: any ring substituent (methyl, chloro, methoxy) is carried into the product at its original position — the reaction is a universal \"carboxyl-out, hydrogen-in\" operator on aromatic rings. **Check:** the product's formula C₇H₈ matches toluene; the para relationship is moot after deletion (the ring is monosubstituted). **Deep point:** the generalisation is why decarboxylation appears in synthesis *plans*, not just preparations — it is how a carboxyl group acts as a temporary blocking or directing group that is later removed; the ring's substituent map survives the operation, which is the whole point."
+    ]
+  },
+  "importantConcepts": [
+    "An equation without its condition is half an answer - the condition is where the mark lives."
+  ],
+  "importantStatements": [
+    "Phenol to benzene and benzene to phenol are the same C-O bond viewed from opposite directions."
+  ],
+  "importantNotes": [
+    "NEB-style practice beyond the verified PYQs recorded on rows 122, 124 and 127."
+  ],
+  "examNotes": [
+    "Balance the decarboxylation equation fully (Na2CO3 by-product) - unbalanced equations forfeit the method mark."
+  ],
+  "formulas": [
+    "- C₆H₅COONa + NaOH --(CaO, Δ)--> C₆H₆ + Na₂CO₃\n- C₆H₅OH + Zn --(Δ)--> C₆H₆ + ZnO\n- 3C₂H₂ --(red-hot Fe tube, 873 K)--> C₆H₆"
   ]
 }

@@ -7,16 +7,12 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Combustion of benzene (free combustion only) and uses — Aromatic Hydrocarbons, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: combustion of benzene, free combustion only, uses · one worked example · one misconception each.",
-    "**Free combustion only.** one-line definition + one-line exam use.",
-    "**Uses.** one-line definition + one-line exam use.",
-    "# Combustion of benzene (free combustion only) and uses\n\n## 1. Introduction\nChemical picture of **Combustion of benzene (free combustion only) and uses** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Aromatic Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Combustion of benzene (free combustion only) and uses\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and reagent sheet**\n\n| Transformation | Reagent + conditions | Product | Note or trap |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Combustion of benzene (free combustion only) and uses — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Combustion of benzene (free combustion only) and uses — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Combustion of benzene (free combustion only) and uses — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Combustion of benzene (free combustion only) and uses — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Burning Benzene and Using It\n\nBenzene's combustion is the sooty-flame exemplar: **2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O**, highly exothermic but incomplete in ordinary flames because the ring is 92.3% carbon. Its uses follow its properties: solvent, precursor to styrene/phenol/cyclohexane, and — increasingly restricted — fuel additive.",
+    "## 2. Theorem Mirror\n\n- **Combustion equation:** 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O + heat (ΔH ≈ −3268 kJ per 2 mol).\n- **Flame character:** luminous, smoky (sooty) — the C : H ratio (1 : 1) leaves carbon unoxidised in the flame's fuel-rich interior; the soot is elemental carbon escaping before full combustion.\n- **Generalisation:** aromatic and high-carbon fuels burn smoky; the flame is a composition readout.\n- **Principal uses:** (1) solvent for resins, fats, iodine, sulphur; (2) raw material — ethylbenzene → styrene (polystyrene), cumene → phenol + acetone, cyclohexane → nylon precursors (adipic acid), nitrobenzene → aniline (dyes); (3) motor-fuel component (anti-knock value high) — now restricted by benzene's carcinogenicity; (4) laboratory reagent and standard.",
+    "## 3. Deep Conceptual — The Sooty Flame as Stoichiometry Made Visible\n\n- The balanced equation demands 15 O₂ per 2 benzene — an oxygen-hungry ratio. In a real flame the fuel-rich zones cannot supply that oxygen locally, so carbon is released as fine particles before reaching CO₂; these particles glow incandescently (luminous yellow) and deposit as soot. **The flame's colour is a local stoichiometry deficit.**\n- **Why benzene is *more* sooty than cyclohexane:** C₆H₆ needs 7.5 O₂ per molecule; C₆H₁₂ needs 9 O₂ per molecule but delivers 6 carbons with 12 hydrogens carrying their own combustion oxygen budget — the H : C ratio (2 : 1 vs 1 : 1) is the cleaner predictor: more H per C ⟹ more complete combustion ⟹ cleaner flame.",
+    "## 4. Deep Conceptual — Uses Follow Structure, and Safety Follows Toxicity\n\n- **Solvent use** is the non-polarity chapter (dispersion contact with non-polar solutes); **precursor use** is the substitution chemistry chapter (nitration → aniline chain; alkylation → styrene chain; hydrogenation → cyclohexane/nylon chain) — each industrial route is a syllabus reaction scaled up.\n- **The safety reversal:** benzene's historical ubiquity (solvent, fuel) met its toxicology — benzene is a proven human carcinogen (bone-marrow suppression, leukaemia via its metabolites). Modern practice substitutes toluene (less volatile, metabolised differently) wherever the *solvent* property, not the ring reactivity, is needed. The uses list is now partly historical by law.",
+    "## 5. Worked Example Types\n\n- **Type A — write and balance:** the combustion equation with coefficients.\n- **Type B — explain the soot:** C% and H : C ratio reasoning.\n- **Type C — list uses by category:** solvent / precursor / fuel with one example each.\n- **Type D — energy calculation:** heat released from mass of benzene burnt.",
+    "## 6. Common Confusions\n\n**\"Sooty flame means incomplete equation\":** the equation is complete; the *flame* is locally fuel-rich — the soot is kinetics and mixing, not stoichiometry error. **\"Benzene is still a common solvent\":** carcinogenicity has largely retired it from open laboratory use — toluene is the modern stand-in."
   ],
   "confusion": [],
   "bounds": [
@@ -24,21 +20,27 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Combustion of benzene (free combustion only) and uses\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Write and balance the combustion equation of benzene and explain the sooty flame.",
+    "List benzene's uses in three categories with one example each.",
+    "Compare the flame of benzene with that of cyclohexane using the H : C ratio."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Benzene is a proven human carcinogen - its solvent and fuel uses are legally restricted; toluene substitutes."
+  ],
+  "examples": [
+    "***The precursor web*** - styrene, phenol, aniline, adipic acid: four industries, four syllabus reactions, one starting ring."
+  ],
   "practiceQuestions": [
-    "Q. Why does benzene burn with a smoky flame? (1 mark) — high carbon percentage gives incomplete combustion and free carbon particles.",
-    "Q. State two uses of benzene. (1 mark) — solvent; making styrene/phenol."
+    "**NEB-style (5m): Write the balanced equation for the complete combustion of benzene and explain why it burns with a smoky flame.** — **Equation:** 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O + heat (check: C 12 = 12; H 12 = 12; O 30 = 24 + 6 ✓). **Sooty flame explanation:** benzene's C : H ratio is 1 : 1 — 92.3% carbon by mass; in the fuel-rich interior of a normal flame the local oxygen supply cannot match the 7.5 O₂-per-molecule demand, so elemental carbon particles form, glow incandescently (the luminous yellow), and escape as soot before full oxidation. **Deep point:** the balanced equation and the smoky flame are not in conflict — the equation describes complete combustion with *sufficient* oxygen; the flame is a mixing and kinetics problem where sufficiency fails locally. Stating both halves is the full answer.",
+    "**NEB-style (6m): Compare the flames of burning benzene (C6H6) and cyclohexane (C6H12), and justify the difference using composition.** — **Benzene:** H : C = 6 : 6 = 1 ⟹ oxygen-hungry, fuel-rich zones common ⟹ **luminous, heavily sooty flame**. **Cyclohexane:** H : C = 12 : 6 = 2 ⟹ each carbon arrives with twice the hydrogen, whose combustion supplies water and drives the carbon out as CO₂ ⟹ **cleaner, less sooty flame**. **Generalisation:** down the saturation ladder (benzene → cyclohexene → cyclohexane) the H : C ratio rises 1 → 1.67 → 2 and the flame cleans progressively. **Deep point:** the H : C ratio is a better flame predictor than either C% or molar mass alone — hydrogens are the fuel's internal oxygen-delivery system, and the ratio encodes how much self-help each carbon gets; the soot ladder is a composition ladder.",
+    "**NEB-style (6m): List the important uses of benzene, grouped by the property or reaction each use exploits.** — **Solvent uses (exploit non-polarity):** dissolves resins, fats, waxes, iodine, sulphur — the dispersion-contact champion of the early chemical industry. **Precursor uses (exploit substitution and addition chemistry):** nitration → nitrobenzene → aniline (dyes industry); alkylation with ethene → ethylbenzene → styrene (polystyrene); Friedel–Crafts with propene → cumene → phenol + acetone (the cumene process); hydrogenation → cyclohexane → adipic acid (nylon-6,6 chain). **Fuel use (exploits high anti-knock value):** petrol additive — now heavily restricted. **Laboratory standard:** reference solvent and calorimetric standard. **Deep point:** each use is a syllabus reaction scaled to industry — mapping the uses back to the reactions (nitration, alkylation, hydrogenation) converts a memorisation task into a structure-uses argument.",
+    "**NEB-style (5m): Calculate the heat released when 78 g of benzene is completely burnt, given that the enthalpy of combustion of benzene is -3268 kJ per mole of reaction as written (2 mol C6H6).** — **Moles:** 78 g / 78 g/mol = 1 mol C₆H₆. **Scaling:** the quoted ΔH corresponds to 2 mol benzene ⟹ per mole: −3268/2 = −1634 kJ/mol. **Answer:** burning 78 g releases **1634 kJ**. **Cross-check via the equation:** 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O — one mole of benzene is half the reaction entity, so half the quoted enthalpy. **Deep point:** \"per mole of reaction as written\" is the trap — the coefficient sum (2 + 15) defines the reaction entity; dividing by the benzene coefficient before multiplying by moles is the one algebraic step that separates the correct 1634 kJ from a doubled or halved error."
   ],
   "keyPoints": [
-    "• Combustion of benzene",
-    "• Free combustion only",
-    "• Uses"
+    "2C6H6 + 15O2 -> 12CO2 + 6H2O, highly exothermic; luminous sooty flame from C:H = 1:1 - fuel-rich zones release glowing carbon particles. H:C ratio predicts flame cleanliness (cyclohexane cleaner, benzene smokier). Uses: non-polar solvent; precursor (ethylbenzene->styrene, cumene->phenol+acetone, cyclohexane->nylon chain, nitrobenzene->aniline dyes); fuel anti-knock value - now restricted (carcinogen, bone-marrow/leukaemia); toluene is the modern solvent substitute."
   ],
-  "summary": "Combustion of benzene (free combustion only) and uses (Aromatic Hydrocarbons, Chemistry, class-11-notes) covers Combustion of benzene, free combustion only, uses. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Benzene burns as 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O — exothermic and oxygen-hungry, with a luminous sooty flame that is the 1 : 1 H : C ratio made visible in glowing carbon particles. Its uses split by the property exploited: non-polarity (solvent), substitution and addition chemistry (styrene, phenol, aniline, nylon precursors), anti-knock value (restricted fuel). The carcinogenicity verdict has retired the solvent uses to history — toluene now stands where benzene stood — but the precursor web remains the ring's industrial biography.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Combustion of benzene (free combustion only) and uses\"?",
@@ -62,7 +64,69 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Equation with the sooty flame: 2C6H6 + 15O2 → 12CO2 + 6H2O + heat — 'luminous smoky flame due to high carbon %' is the observation mark.",
-    "Trick 2: Uses list for 2 marks: petrol additive/solvent, manufacture of styrene (polystyrene), phenol, aniline (dyes), insecticides, detergents."
+    "Balance 2C6H6 + 15O2 -> 12CO2 + 6H2O once, carefully - the 15 is the number examiners check."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Burning Benzene and Using It\n\nBenzene's combustion is the sooty-flame exemplar: **2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O**, highly exothermic but incomplete in ordinary flames because the ring is 92.3% carbon. Its uses follow its properties: solvent, precursor to styrene/phenol/cyclohexane, and — increasingly restricted — fuel additive.",
+      "## 2. Theorem Mirror\n\n- **Combustion equation:** 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O + heat (ΔH ≈ −3268 kJ per 2 mol).\n- **Flame character:** luminous, smoky (sooty) — the C : H ratio (1 : 1) leaves carbon unoxidised in the flame's fuel-rich interior; the soot is elemental carbon escaping before full combustion.\n- **Generalisation:** aromatic and high-carbon fuels burn smoky; the flame is a composition readout.\n- **Principal uses:** (1) solvent for resins, fats, iodine, sulphur; (2) raw material — ethylbenzene → styrene (polystyrene), cumene → phenol + acetone, cyclohexane → nylon precursors (adipic acid), nitrobenzene → aniline (dyes); (3) motor-fuel component (anti-knock value high) — now restricted by benzene's carcinogenicity; (4) laboratory reagent and standard.",
+      "## 3. Deep Conceptual — The Sooty Flame as Stoichiometry Made Visible\n\n- The balanced equation demands 15 O₂ per 2 benzene — an oxygen-hungry ratio. In a real flame the fuel-rich zones cannot supply that oxygen locally, so carbon is released as fine particles before reaching CO₂; these particles glow incandescently (luminous yellow) and deposit as soot. **The flame's colour is a local stoichiometry deficit.**\n- **Why benzene is *more* sooty than cyclohexane:** C₆H₆ needs 7.5 O₂ per molecule; C₆H₁₂ needs 9 O₂ per molecule but delivers 6 carbons with 12 hydrogens carrying their own combustion oxygen budget — the H : C ratio (2 : 1 vs 1 : 1) is the cleaner predictor: more H per C ⟹ more complete combustion ⟹ cleaner flame.",
+      "## 4. Deep Conceptual — Uses Follow Structure, and Safety Follows Toxicity\n\n- **Solvent use** is the non-polarity chapter (dispersion contact with non-polar solutes); **precursor use** is the substitution chemistry chapter (nitration → aniline chain; alkylation → styrene chain; hydrogenation → cyclohexane/nylon chain) — each industrial route is a syllabus reaction scaled up.\n- **The safety reversal:** benzene's historical ubiquity (solvent, fuel) met its toxicology — benzene is a proven human carcinogen (bone-marrow suppression, leukaemia via its metabolites). Modern practice substitutes toluene (less volatile, metabolised differently) wherever the *solvent* property, not the ring reactivity, is needed. The uses list is now partly historical by law.",
+      "## 5. Worked Example Types\n\n- **Type A — write and balance:** the combustion equation with coefficients.\n- **Type B — explain the soot:** C% and H : C ratio reasoning.\n- **Type C — list uses by category:** solvent / precursor / fuel with one example each.\n- **Type D — energy calculation:** heat released from mass of benzene burnt.",
+      "## 6. Common Confusions\n\n**\"Sooty flame means incomplete equation\":** the equation is complete; the *flame* is locally fuel-rich — the soot is kinetics and mixing, not stoichiometry error. **\"Benzene is still a common solvent\":** carcinogenicity has largely retired it from open laboratory use — toluene is the modern stand-in."
+    ],
+    "keyPoints": [
+      "2C6H6 + 15O2 -> 12CO2 + 6H2O, highly exothermic; luminous sooty flame from C:H = 1:1 - fuel-rich zones release glowing carbon particles. H:C ratio predicts flame cleanliness (cyclohexane cleaner, benzene smokier). Uses: non-polar solvent; precursor (ethylbenzene->styrene, cumene->phenol+acetone, cyclohexane->nylon chain, nitrobenzene->aniline dyes); fuel anti-knock value - now restricted (carcinogen, bone-marrow/leukaemia); toluene is the modern solvent substitute."
+    ],
+    "importantConcepts": [
+      "The sooty flame is local stoichiometry deficit made visible - glowing carbon particles escaping before full oxidation."
+    ],
+    "examples": [
+      "***The precursor web*** - styrene, phenol, aniline, adipic acid: four industries, four syllabus reactions, one starting ring."
+    ],
+    "universalFacts": [
+      "Benzene is a proven human carcinogen - its solvent and fuel uses are legally restricted; toluene substitutes."
+    ],
+    "importantStatements": [
+      "The H : C ratio, not the equation, predicts flame cleanliness - hydrogens carry their own oxygen budget."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on rows 122, 124 and 127."
+    ],
+    "examShortTricks": [
+      "Balance 2C6H6 + 15O2 -> 12CO2 + 6H2O once, carefully - the 15 is the number examiners check."
+    ],
+    "examNotes": [
+      "Categorise uses (solvent / precursor / fuel) rather than listing - the structure earns the organisation mark."
+    ],
+    "formulas": [
+      "- 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O + heat\n- C% = 92.3; H : C = 1 : 1"
+    ],
+    "practice": [
+      "Write and balance the combustion equation of benzene and explain the sooty flame.",
+      "List benzene's uses in three categories with one example each.",
+      "Compare the flame of benzene with that of cyclohexane using the H : C ratio."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Write the balanced equation for the complete combustion of benzene and explain why it burns with a smoky flame.** — **Equation:** 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O + heat (check: C 12 = 12; H 12 = 12; O 30 = 24 + 6 ✓). **Sooty flame explanation:** benzene's C : H ratio is 1 : 1 — 92.3% carbon by mass; in the fuel-rich interior of a normal flame the local oxygen supply cannot match the 7.5 O₂-per-molecule demand, so elemental carbon particles form, glow incandescently (the luminous yellow), and escape as soot before full oxidation. **Deep point:** the balanced equation and the smoky flame are not in conflict — the equation describes complete combustion with *sufficient* oxygen; the flame is a mixing and kinetics problem where sufficiency fails locally. Stating both halves is the full answer.",
+      "**NEB-style (6m): Compare the flames of burning benzene (C6H6) and cyclohexane (C6H12), and justify the difference using composition.** — **Benzene:** H : C = 6 : 6 = 1 ⟹ oxygen-hungry, fuel-rich zones common ⟹ **luminous, heavily sooty flame**. **Cyclohexane:** H : C = 12 : 6 = 2 ⟹ each carbon arrives with twice the hydrogen, whose combustion supplies water and drives the carbon out as CO₂ ⟹ **cleaner, less sooty flame**. **Generalisation:** down the saturation ladder (benzene → cyclohexene → cyclohexane) the H : C ratio rises 1 → 1.67 → 2 and the flame cleans progressively. **Deep point:** the H : C ratio is a better flame predictor than either C% or molar mass alone — hydrogens are the fuel's internal oxygen-delivery system, and the ratio encodes how much self-help each carbon gets; the soot ladder is a composition ladder.",
+      "**NEB-style (6m): List the important uses of benzene, grouped by the property or reaction each use exploits.** — **Solvent uses (exploit non-polarity):** dissolves resins, fats, waxes, iodine, sulphur — the dispersion-contact champion of the early chemical industry. **Precursor uses (exploit substitution and addition chemistry):** nitration → nitrobenzene → aniline (dyes industry); alkylation with ethene → ethylbenzene → styrene (polystyrene); Friedel–Crafts with propene → cumene → phenol + acetone (the cumene process); hydrogenation → cyclohexane → adipic acid (nylon-6,6 chain). **Fuel use (exploits high anti-knock value):** petrol additive — now heavily restricted. **Laboratory standard:** reference solvent and calorimetric standard. **Deep point:** each use is a syllabus reaction scaled to industry — mapping the uses back to the reactions (nitration, alkylation, hydrogenation) converts a memorisation task into a structure-uses argument.",
+      "**NEB-style (5m): Calculate the heat released when 78 g of benzene is completely burnt, given that the enthalpy of combustion of benzene is -3268 kJ per mole of reaction as written (2 mol C6H6).** — **Moles:** 78 g / 78 g/mol = 1 mol C₆H₆. **Scaling:** the quoted ΔH corresponds to 2 mol benzene ⟹ per mole: −3268/2 = −1634 kJ/mol. **Answer:** burning 78 g releases **1634 kJ**. **Cross-check via the equation:** 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O — one mole of benzene is half the reaction entity, so half the quoted enthalpy. **Deep point:** \"per mole of reaction as written\" is the trap — the coefficient sum (2 + 15) defines the reaction entity; dividing by the benzene coefficient before multiplying by moles is the one algebraic step that separates the correct 1634 kJ from a doubled or halved error."
+    ]
+  },
+  "importantConcepts": [
+    "The sooty flame is local stoichiometry deficit made visible - glowing carbon particles escaping before full oxidation."
+  ],
+  "importantStatements": [
+    "The H : C ratio, not the equation, predicts flame cleanliness - hydrogens carry their own oxygen budget."
+  ],
+  "importantNotes": [
+    "NEB-style practice beyond the verified PYQs recorded on rows 122, 124 and 127."
+  ],
+  "examNotes": [
+    "Categorise uses (solvent / precursor / fuel) rather than listing - the structure earns the organisation mark."
+  ],
+  "formulas": [
+    "- 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O + heat\n- C% = 92.3; H : C = 1 : 1"
   ]
 }

@@ -7,25 +7,36 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Physical properties of benzene\n\n## 1. Introduction\nChemical picture of **Physical properties of benzene** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Aromatic Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Physical properties of benzene\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Physical properties of benzene — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Physical properties of benzene — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Physical properties of benzene — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Physical properties of benzene — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Benzene's Physical Profile\n\nBenzene is a **colourless, mobile liquid** with a characteristic odour: bp 80.5 °C (80.1 °C in some texts), mp 5.5 °C, density 0.879 g/cm³ (lighter than water), immiscible with water, and an excellent solvent for non-polar and moderately polar solutes. Every one of these numbers has a structural reason.",
+    "## 2. Theorem Mirror\n\n- **State and appearance:** colourless liquid; characteristic (aromatic) odour; volatile.\n- **Boiling point 80.5 °C:** higher than cyclohexane (81 °C is close) but the comparison that matters — vs expected for its molar mass, benzene's planar disk shape gives strong instantaneous dipole dispersion contact.\n- **Melting point 5.5 °C:** remarkably high for a small molecule — the flat hexagonal disks pack efficiently into a crystal lattice (symmetry aids packing); the high mp/symmetry link is the physical proof of planarity.\n- **Density 0.879 g/cm³:** floats on water; immiscible — the non-polar ring cannot hydrogen-bond into the water network.\n- **Solvent behaviour:** dissolves iodine, sulphur, rubber, fats, many organics; the \"like dissolves like\" non-polar champion.",
+    "## 3. Deep Conceptual — Symmetry Packs, Shape Boils\n\n- **Melting point is a packing story:** 5.5 °C is high for a 78 g/mol molecule (cyclohexane, 84 g/mol, melts at 6.5 °C — similar, but n-hexane, 86 g/mol, melts at −95 °C!). The difference is shape: flat, rigid, symmetric disks stack into efficient crystals; floppy chains waste contact area in the solid. Benzene's mp is the macroscopic fingerprint of its planar hexagonal geometry.\n- **Boiling point is a surface story:** liquids boil when molecules escape the collective dispersion contact; benzene's disk presents large flat faces for π–π and dispersion contact, giving bp 80.5 °C — comparable to cyclohexane's despite lower molar mass, because contact quality compensates for mass.\n- **Water immiscibility is a network story:** inserting benzene into water would break hydrogen-bond bridges without replacing them — the ring offers no donors or acceptors. The two-layer test tube picture is the hydrophobic effect in one glance.",
+    "## 4. Deep Conceptual — Reading a Property Table as Evidence\n\n- Each physical constant cross-checks a structural claim: mp 5.5 °C (planarity/packing), bp 80.5 °C (contact area), density < 1 (no strong interaction with water), immiscibility (no H-bonding), sooty combustion (92.3% C). The table is not trivia — it is the same delocalisation story told in five different instruments.\n- **Solvent power follows polarity:** benzene dissolves non-polar solutes (I₂, S₈, oils) via dispersion; it will *not* dissolve ionic or strongly H-bonding solutes — the solvent list is the polarity list read backwards.",
+    "## 5. Worked Example Types\n\n- **Type A — recite with reasons:** state each property with its structural cause.\n- **Type B — compare:** benzene vs cyclohexane vs hexane on mp/bp — the shape argument.\n- **Type C — miscibility prediction:** which of two solvents mixes with benzene, why.\n- **Type D — density arithmetic:** mass of benzene delivered by a measured volume.",
+    "## 6. Common Confusions\n\n**\"Benzene is denser than water because it is aromatic\":** 0.879 < 1 — it floats; aromaticity does not imply density. **\"High mp means strong hydrogen bonding\":** benzene has none — its mp is pure packing efficiency."
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
+  "practice": [
+    "State benzene's bp, mp, density and miscibility with water, each with a reason.",
+    "Compare the melting points of benzene, cyclohexane and n-hexane and explain the ordering.",
+    "Predict whether iodine dissolves better in benzene or in water, with reasoning."
+  ],
   "universalFacts": [
-    "answer pattern for \"Physical properties of benzene\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "Benzene dissolves iodine and sulphur - the classic non-polar solvent demonstrations."
   ],
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The hexane comparison*** - n-hexane (86 g/mol) melts at -95 C while benzene (78 g/mol) melts at +5.5 C: shape, not mass, decides crystal packing."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): List the important physical properties of benzene, giving a structural reason for each.** — **Appearance:** colourless, mobile, volatile liquid with a characteristic odour. **Boiling point 80.5 °C:** the flat disk presents large faces for dispersion (and π–π) contact — strong intermolecular attraction for its mass. **Melting point 5.5 °C:** flat, symmetric hexagons pack efficiently into the crystal — packing quality, not hydrogen bonding, sets the high mp. **Density 0.879 g/cm³:** less than water — it floats; the non-polar ring forms no strong interactions to compact it. **Water immiscibility:** the ring offers no H-bond donors or acceptors, so it cannot plug into water's network. **Solvent power:** dissolves non-polar solutes (iodine, sulphur, fats) by dispersion. **Combustion:** burns with a smoky, luminous flame — 92.3% carbon. **Deep point:** each property is a different instrument measuring the same two facts — planarity and non-polarity; answering \"property + reason\" pairs is the full-mark pattern.",
+    "**NEB-style (6m): Benzene (78 g/mol) melts at 5.5 C while n-hexane (86 g/mol) melts at -95 C. Explain the contrast and state what it proves.** — **Mass is not the decider:** hexane is heavier yet melts 100 °C lower. **The decider is crystal packing:** n-hexane is a floppy chain — in the solid it must adopt extended conformations and still leaves poor contact, weak van der Waals registration between chains ⟹ low mp. Benzene is a rigid, flat, sixfold-symmetric disk — disks stack face-to-face with maximal contact per molecule and minimal wasted volume ⟹ efficient lattice, high mp for its size. **What it proves:** the planar, symmetric geometry of the benzene ring — a macroscopic property (melting point) acting as evidence for a molecular-structure claim. **Deep point:** physical-property comparisons are structure determinations in disguise — when two molecules of similar mass differ by 100 °C in mp, the cause is shape and rigidity; the argument generalises to why spherical/planar molecules (neopentane, benzene) melt high and boil relatively low.",
+    "**NEB-style (5m): A mixture of benzene and water is shaken and allowed to stand. Describe what is observed and explain at the molecular level.** — **Observation:** two layers form — benzene on top (density 0.879 < 1.00), water below; a sharp meniscus, no mixing even on standing. **Molecular explanation:** water molecules hold each other by an extensive hydrogen-bond network; benzene's ring has no O–H, N–H or lone-pair-exposed sites to donate or accept hydrogen bonds — inserting benzene into water would break water–water H-bonds and replace them with only weak dispersion contact ⟹ energetically unfavourable (the hydrophobic effect). The system minimises free energy by demixing. **Deep point:** immiscibility is usually stated as \"non-polar vs polar\" — the deeper statement is about *networks*: each liquid keeps its own interaction network intact rather than paying to merge two incompatible ones; that is why even vigorous shaking only emulsifies temporarily.",
+    "**NEB-style (6m): Iodine is shaken with (a) water and (b) benzene. Describe and explain the distribution of iodine between the two solvents.** — **Observation:** iodine is barely soluble in water (pale yellow-brown, ~0.3 g/L) but dissolves readily in benzene, giving the characteristic violet solution. **Explanation:** I₂ is non-polar and polarisable — it interacts with benzene's polarisable π cloud by strong dispersion (and weak charge-transfer) forces; water offers only weak dipole-induced contacts and I₂ cannot H-bond ⟹ the non-polar solvent wins decisively. **Distribution:** on shaking with both, iodine partitions overwhelmingly into the benzene layer (the basis of the classic distribution-coefficient demonstration). **Deep point:** \"like dissolves like\" is the slogan; the mechanism is contact quality — a polarisable solute seeks the most polarisable solvent, and the π cloud of benzene is the best contact available in the pair; the violet colour itself signals I₂ pairs in a non-polar medium (vs the brown complexation seen in polar/donating solvents like KI solution)."
+  ],
   "keyPoints": [
-    "• Physical properties of benzene"
+    "Colourless liquid, characteristic odour; bp 80.5 C, mp 5.5 C, density 0.879 g/cm3 (floats on water), immiscible with water, excellent non-polar solvent, burns with sooty flame. mp argument: flat symmetric disks pack efficiently (vs n-hexane mp -95 C at similar mass) - packing is the proof of planarity. bp argument: disk faces give strong dispersion contact. Immiscibility: no H-bond donors/acceptors for the water network."
   ],
-  "summary": "Physical properties of benzene (Aromatic Hydrocarbons, Chemistry, class-11-notes) covers Physical properties of benzene. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Benzene's physical profile — colourless liquid, bp 80.5 °C, mp 5.5 °C, density 0.879, water-immiscible, non-polar solvent, sooty flame — is one structure read by five instruments: flat symmetric disks pack (high mp), present broad faces (bp), refuse the water network (immiscibility), dissolve the non-polar (solvent list), and burn carbon-rich (flame). The hexane comparison turns the melting point into proof of planarity, and every property question wants the number *with* its structural reason.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Physical properties of benzene\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -36,5 +47,71 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Benzene's Physical Profile\n\nBenzene is a **colourless, mobile liquid** with a characteristic odour: bp 80.5 °C (80.1 °C in some texts), mp 5.5 °C, density 0.879 g/cm³ (lighter than water), immiscible with water, and an excellent solvent for non-polar and moderately polar solutes. Every one of these numbers has a structural reason.",
+      "## 2. Theorem Mirror\n\n- **State and appearance:** colourless liquid; characteristic (aromatic) odour; volatile.\n- **Boiling point 80.5 °C:** higher than cyclohexane (81 °C is close) but the comparison that matters — vs expected for its molar mass, benzene's planar disk shape gives strong instantaneous dipole dispersion contact.\n- **Melting point 5.5 °C:** remarkably high for a small molecule — the flat hexagonal disks pack efficiently into a crystal lattice (symmetry aids packing); the high mp/symmetry link is the physical proof of planarity.\n- **Density 0.879 g/cm³:** floats on water; immiscible — the non-polar ring cannot hydrogen-bond into the water network.\n- **Solvent behaviour:** dissolves iodine, sulphur, rubber, fats, many organics; the \"like dissolves like\" non-polar champion.",
+      "## 3. Deep Conceptual — Symmetry Packs, Shape Boils\n\n- **Melting point is a packing story:** 5.5 °C is high for a 78 g/mol molecule (cyclohexane, 84 g/mol, melts at 6.5 °C — similar, but n-hexane, 86 g/mol, melts at −95 °C!). The difference is shape: flat, rigid, symmetric disks stack into efficient crystals; floppy chains waste contact area in the solid. Benzene's mp is the macroscopic fingerprint of its planar hexagonal geometry.\n- **Boiling point is a surface story:** liquids boil when molecules escape the collective dispersion contact; benzene's disk presents large flat faces for π–π and dispersion contact, giving bp 80.5 °C — comparable to cyclohexane's despite lower molar mass, because contact quality compensates for mass.\n- **Water immiscibility is a network story:** inserting benzene into water would break hydrogen-bond bridges without replacing them — the ring offers no donors or acceptors. The two-layer test tube picture is the hydrophobic effect in one glance.",
+      "## 4. Deep Conceptual — Reading a Property Table as Evidence\n\n- Each physical constant cross-checks a structural claim: mp 5.5 °C (planarity/packing), bp 80.5 °C (contact area), density < 1 (no strong interaction with water), immiscibility (no H-bonding), sooty combustion (92.3% C). The table is not trivia — it is the same delocalisation story told in five different instruments.\n- **Solvent power follows polarity:** benzene dissolves non-polar solutes (I₂, S₈, oils) via dispersion; it will *not* dissolve ionic or strongly H-bonding solutes — the solvent list is the polarity list read backwards.",
+      "## 5. Worked Example Types\n\n- **Type A — recite with reasons:** state each property with its structural cause.\n- **Type B — compare:** benzene vs cyclohexane vs hexane on mp/bp — the shape argument.\n- **Type C — miscibility prediction:** which of two solvents mixes with benzene, why.\n- **Type D — density arithmetic:** mass of benzene delivered by a measured volume.",
+      "## 6. Common Confusions\n\n**\"Benzene is denser than water because it is aromatic\":** 0.879 < 1 — it floats; aromaticity does not imply density. **\"High mp means strong hydrogen bonding\":** benzene has none — its mp is pure packing efficiency."
+    ],
+    "keyPoints": [
+      "Colourless liquid, characteristic odour; bp 80.5 C, mp 5.5 C, density 0.879 g/cm3 (floats on water), immiscible with water, excellent non-polar solvent, burns with sooty flame. mp argument: flat symmetric disks pack efficiently (vs n-hexane mp -95 C at similar mass) - packing is the proof of planarity. bp argument: disk faces give strong dispersion contact. Immiscibility: no H-bond donors/acceptors for the water network."
+    ],
+    "importantConcepts": [
+      "The property table is five instruments reading one structure - every constant cross-checks a structural claim."
+    ],
+    "examples": [
+      "***The hexane comparison*** - n-hexane (86 g/mol) melts at -95 C while benzene (78 g/mol) melts at +5.5 C: shape, not mass, decides crystal packing."
+    ],
+    "universalFacts": [
+      "Benzene dissolves iodine and sulphur - the classic non-polar solvent demonstrations."
+    ],
+    "importantStatements": [
+      "Miscibility with water is refused by the ring's lack of hydrogen-bonding sites - the hydrophobic effect in one test tube."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on rows 122, 124 and 127."
+    ],
+    "examShortTricks": [
+      "Anchor the numbers: bp 80.5, mp 5.5, density 0.879 - three figures carry most property questions."
+    ],
+    "examNotes": [
+      "Give the reason with the number - \"mp 5.5 C due to efficient packing of flat symmetric molecules\" is the full-mark form."
+    ],
+    "formulas": [
+      "- bp 80.5 °C; mp 5.5 °C; density 0.879 g/cm³; C% = 92.3\n- 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O (sooty flame)"
+    ],
+    "practice": [
+      "State benzene's bp, mp, density and miscibility with water, each with a reason.",
+      "Compare the melting points of benzene, cyclohexane and n-hexane and explain the ordering.",
+      "Predict whether iodine dissolves better in benzene or in water, with reasoning."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): List the important physical properties of benzene, giving a structural reason for each.** — **Appearance:** colourless, mobile, volatile liquid with a characteristic odour. **Boiling point 80.5 °C:** the flat disk presents large faces for dispersion (and π–π) contact — strong intermolecular attraction for its mass. **Melting point 5.5 °C:** flat, symmetric hexagons pack efficiently into the crystal — packing quality, not hydrogen bonding, sets the high mp. **Density 0.879 g/cm³:** less than water — it floats; the non-polar ring forms no strong interactions to compact it. **Water immiscibility:** the ring offers no H-bond donors or acceptors, so it cannot plug into water's network. **Solvent power:** dissolves non-polar solutes (iodine, sulphur, fats) by dispersion. **Combustion:** burns with a smoky, luminous flame — 92.3% carbon. **Deep point:** each property is a different instrument measuring the same two facts — planarity and non-polarity; answering \"property + reason\" pairs is the full-mark pattern.",
+      "**NEB-style (6m): Benzene (78 g/mol) melts at 5.5 C while n-hexane (86 g/mol) melts at -95 C. Explain the contrast and state what it proves.** — **Mass is not the decider:** hexane is heavier yet melts 100 °C lower. **The decider is crystal packing:** n-hexane is a floppy chain — in the solid it must adopt extended conformations and still leaves poor contact, weak van der Waals registration between chains ⟹ low mp. Benzene is a rigid, flat, sixfold-symmetric disk — disks stack face-to-face with maximal contact per molecule and minimal wasted volume ⟹ efficient lattice, high mp for its size. **What it proves:** the planar, symmetric geometry of the benzene ring — a macroscopic property (melting point) acting as evidence for a molecular-structure claim. **Deep point:** physical-property comparisons are structure determinations in disguise — when two molecules of similar mass differ by 100 °C in mp, the cause is shape and rigidity; the argument generalises to why spherical/planar molecules (neopentane, benzene) melt high and boil relatively low.",
+      "**NEB-style (5m): A mixture of benzene and water is shaken and allowed to stand. Describe what is observed and explain at the molecular level.** — **Observation:** two layers form — benzene on top (density 0.879 < 1.00), water below; a sharp meniscus, no mixing even on standing. **Molecular explanation:** water molecules hold each other by an extensive hydrogen-bond network; benzene's ring has no O–H, N–H or lone-pair-exposed sites to donate or accept hydrogen bonds — inserting benzene into water would break water–water H-bonds and replace them with only weak dispersion contact ⟹ energetically unfavourable (the hydrophobic effect). The system minimises free energy by demixing. **Deep point:** immiscibility is usually stated as \"non-polar vs polar\" — the deeper statement is about *networks*: each liquid keeps its own interaction network intact rather than paying to merge two incompatible ones; that is why even vigorous shaking only emulsifies temporarily.",
+      "**NEB-style (6m): Iodine is shaken with (a) water and (b) benzene. Describe and explain the distribution of iodine between the two solvents.** — **Observation:** iodine is barely soluble in water (pale yellow-brown, ~0.3 g/L) but dissolves readily in benzene, giving the characteristic violet solution. **Explanation:** I₂ is non-polar and polarisable — it interacts with benzene's polarisable π cloud by strong dispersion (and weak charge-transfer) forces; water offers only weak dipole-induced contacts and I₂ cannot H-bond ⟹ the non-polar solvent wins decisively. **Distribution:** on shaking with both, iodine partitions overwhelmingly into the benzene layer (the basis of the classic distribution-coefficient demonstration). **Deep point:** \"like dissolves like\" is the slogan; the mechanism is contact quality — a polarisable solute seeks the most polarisable solvent, and the π cloud of benzene is the best contact available in the pair; the violet colour itself signals I₂ pairs in a non-polar medium (vs the brown complexation seen in polar/donating solvents like KI solution)."
+    ]
+  },
+  "importantConcepts": [
+    "The property table is five instruments reading one structure - every constant cross-checks a structural claim."
+  ],
+  "importantStatements": [
+    "Miscibility with water is refused by the ring's lack of hydrogen-bonding sites - the hydrophobic effect in one test tube."
+  ],
+  "importantNotes": [
+    "NEB-style practice beyond the verified PYQs recorded on rows 122, 124 and 127."
+  ],
+  "examShortTricks": [
+    "Anchor the numbers: bp 80.5, mp 5.5, density 0.879 - three figures carry most property questions."
+  ],
+  "examNotes": [
+    "Give the reason with the number - \"mp 5.5 C due to efficient packing of flat symmetric molecules\" is the full-mark form."
+  ],
+  "formulas": [
+    "- bp 80.5 °C; mp 5.5 °C; density 0.879 g/cm³; C% = 92.3\n- 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O (sooty flame)"
   ]
 }

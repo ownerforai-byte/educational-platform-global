@@ -7,28 +7,36 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Huckel's rule of aromaticity\n\n## 1. Introduction\nChemical picture of **Huckel's rule of aromaticity** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Aromatic Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Huckel's rule of aromaticity\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and reagent sheet**\n\n| Transformation | Reagent + conditions | Product | Note or trap |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Huckel's rule of aromaticity — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Huckel's rule of aromaticity — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Huckel's rule of aromaticity — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Huckel's rule of aromaticity — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Hückel's Rule: The Count That Decides\n\nHückel's rule is the aromaticity test: **a planar, cyclic, fully conjugated system is aromatic if its π-electron count is 4n + 2** (n = 0, 1, 2, ...), and antiaromatic if 4n. Benzene's six π electrons (4·1 + 2) pass; the rule extends the verdict beyond benzene to ions and heterocycles.",
+    "## 2. Theorem Mirror\n\n- **Statement:** planarity + cyclic conjugation + 4n + 2 π electrons ⟹ aromatic stabilisation.\n- **Benzene:** six sp² carbons each donate one p electron ⟹ 6 π = 4(1) + 2 ✓.\n- **Extension to ions:** cyclopentadienyl *anion* C₅H₅⁻ — six π electrons (two from the negative carbon's lone pair) ⟹ aromatic; cycloheptatrienyl *cation* (tropylium) C₇H₇⁺ — six π electrons (one carbon's empty p orbital) ⟹ aromatic.\n- **Heterocycles:** pyridine — the nitrogen's lone pair sits in an sp² orbital *outside* the π system; six ring π electrons ⟹ aromatic. Pyrrole — the nitrogen's lone pair *is* the π system's sixth pair... contributing two electrons; four from the two double bonds + 2 = 6 ⟹ aromatic.",
+    "## 3. Deep Conceptual — Where the Electrons Come From Is the Whole Game\n\n- The count is not \"count the double bonds\" — it is \"count the electrons in the cyclic p system.\" A lone pair may contribute two (pyrrole's NH), zero (pyridine's N lone pair locked in sp² outside), or the charge may supply them (C₅H₅⁻) or remove them (tropylium's C⁺ contributes an *empty* p orbital — zero electrons but completing the conjugation).\n- **Why 4n + 2 and not 4n:** filling the delocalised π molecular orbitals — for a cyclic system, the orbitals close into pairs above and below the non-bonding level; 4n + 2 electrons exactly fill the bonding set with a closed shell, while 4n leaves a degenerate half-filled pair — the open shell that *costs* energy (antiaromaticity). The rule is Hückel molecular-orbital theory compressed into one integer.",
+    "## 4. Deep Conceptual — The Rule's Counterexamples Are Its Credentials\n\n- **Cyclobutadiene:** 4 π = 4n, forced planar ⟹ antiaromatic — rectangular, with alternating long/short bonds, desperately trying to localise.\n- **Cyclooctatetraene:** 8 π = 4n, but puckers into a tub ⟹ non-aromatic, behaves like four isolated double bonds. The molecule *chooses* non-aromaticity over antiaromaticity — proof that the 4n planar state is genuinely destabilised.\n- **The rule needs all three preconditions:** a 4n + 2 count on a *non-planar* or *non-conjugated* ring is not aromatic — the count alone is never sufficient.",
+    "## 5. Worked Example Types\n\n- **Type A — state and apply:** quote the rule, count, verdict (the verified PYQ pattern).\n- **Type B — ion counting:** C₅H₅⁻, C₇H₇⁺, C₃H₃⁺ (2 π, aromatic).\n- **Type C — heterocycle counting:** pyridine vs pyrrole lone-pair disposition.\n- **Type D — counterexample diagnosis:** 4n planar (antiaromatic) vs puckered (non-aromatic).",
+    "## 6. Common Confusions\n\n**\"Pyridine's lone pair counts\":** it does not — it occupies the sp² orbital in the ring plane, orthogonal to the π system; the ring's six π electrons come from the five C–H carbons and the N's one p electron. **\"4n + 2 is enough\":** planarity and conjugation are co-requirements — the rule is a conjunction, not a single test."
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Huckel's rule of aromaticity\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "State Hückel's rule and apply it to benzene.",
+    "Count the π electrons of cyclopentadienyl anion and tropylium cation.",
+    "Explain why pyridine and pyrrole are both aromatic despite different lone-pair roles."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Cyclooctatetraene puckers to escape antiaromaticity - the 4n planar state is measurably destabilised."
+  ],
+  "examples": [
+    "***The pyridine-pyrrole pair*** - same formula family, opposite lone-pair dispositions, both aromatic by different counting stories - the rule's flexibility and its discipline in one comparison."
+  ],
   "practiceQuestions": [
-    "Q. Apply Hückel's rule to benzene and cyclobutadiene. (2 marks) — benzene 6π aromatic (n=1); cyclobutadiene 4π anti-aromatic.",
-    "Q. Why is cyclooctatetraene non-aromatic? (1 mark) — it is non-planar (tub-shaped), so conjugation is broken."
+    "**NEB 2024 (3m): State Hückel's rule. Explain why benzene is aromatic.** — **Rule:** a cyclic, planar, fully conjugated system is aromatic if it contains (4n + 2) π electrons, where n is a non-negative integer; systems with 4n π electrons under the same conditions are antiaromatic. **Application to benzene:** (1) cyclic — a six-membered ring; (2) planar — all six carbons are sp² hybridised, holding the ring flat; (3) fully conjugated — each carbon contributes one p orbital with one electron, six overlapping p orbitals in continuous loop; (4) count — 6 π electrons = 4(1) + 2 ✓. All conditions met ⟹ benzene is aromatic, with a closed-shell delocalised π system and ~150 kJ/mol stabilisation. **Deep point:** the answer's structure *is* the rule's structure — three conditions plus the count; each earns its mark, and the conclusion needs all four lines.",
+    "**NEB-style (6m): Show that the cyclopentadienyl anion is aromatic while cyclopentadiene itself is not.** — **Cyclopentadiene (C₅H₆):** two double bonds and one sp³ CH₂ carbon — the sp³ carbon breaks the conjugation loop (no p orbital) ⟹ non-aromatic, despite 4 π electrons present. **Cyclopentadienyl anion (C₅H₅⁻):** deprotonation re-hybridises that carbon to sp² — its lone pair (2 electrons) now occupies a p orbital joining the loop; total = 4 (two double bonds) + 2 (lone pair) = **6 π = 4(1) + 2** ⟹ aromatic, planar, stabilised. **Evidence:** cyclopentadiene has pKa ≈ 16 (acidic for a hydrocarbon!) because losing H⁺ buys aromaticity — the anion's extra stability is measured in the acidity. **Deep point:** the same five carbons, one proton apart, span non-aromatic to aromatic — the sp³ interruption and the lone-pair donation are the two moving parts, and the acidity anomaly is the experimental receipt.",
+    "**NEB-style (6m): Explain why both pyridine and pyrrole are aromatic, given that their nitrogen lone pairs play different roles.** — **Pyridine (C₅H₅N):** nitrogen is sp²; its lone pair occupies the sp² orbital lying *in the ring plane* — orthogonal to the p system, unavailable for π counting. The π system: five carbons (one p electron each) + nitrogen's p electron (its third sp² orbital holds it) = **6 π** ⟹ aromatic; the lone pair is what makes pyridine a *base*, untouched by aromaticity. **Pyrrole (C₄H₅N):** nitrogen is sp² but its lone pair occupies the *p* orbital perpendicular to the ring — it is the π system's supply; count = 4 (two C=C) + 2 (lone pair) = **6 π** ⟹ aromatic; the lone pair is *committed*, which is why pyrrole is barely basic. **Deep point:** both reach 6 by different bookkeeping — the test question is always \"where does the lone pair live?\", and the baseities (pyridine pKb small, pyrrole almost neutral) are the experimental proof of the bookkeeping.",
+    "**NEB-style (6m): The cycloheptatrienyl cation (tropylium ion) is aromatic but cycloheptatriene is not. Explain, and state what happens to cycloheptatriene's CH₂ group.** — **Cycloheptatriene:** three C=C (6 π electrons) plus one sp³ CH₂ carbon — the sp³ carbon has no p orbital, breaking the cyclic conjugation ⟹ non-aromatic. **Tropylium (C₇H₇⁺):** loss of hydride-like H⁻ leaves that carbon with an *empty p orbital* — no electrons from it, but the orbital completes the seven-centre conjugation loop; the π count stays 6 = 4(1) + 2 ⟹ aromatic, with the positive charge delocalised over all seven carbons. **Stability evidence:** the tropylium ion is robust enough to be detected in mass spectrometry and to form isolable salts (e.g. tropylium bromide). **Deep point:** the cation shows the rule's third counting mode — a *vacancy* contributes zero electrons but completes the conjugation; between lone-pair donation (anion), vacancy (cation) and in-plane exclusion (pyridine), the p-system inventory has exactly three moves, and every aromaticity question is one of them."
   ],
   "keyPoints": [
-    "• Huckel's rule of aromaticity"
+    "Huckel: planar + cyclic conjugated + 4n+2 pi electrons = aromatic; 4n = antiaromatic. Benzene 6 = 4(1)+2. Ions: C5H5- counts 6 (lone pair joins), tropylium C7H7+ counts 6 (empty p orbital completes). Pyridine: N lone pair outside the pi system, ring count 6; pyrrole: N lone pair inside, count 4+2 = 6. 4n+2 fills the bonding MO shell exactly (closed shell); 4n leaves a degenerate open shell - the MO origin of the rule."
   ],
-  "summary": "Huckel's rule of aromaticity (Aromatic Hydrocarbons, Chemistry, class-11-notes) covers Huckel's rule of aromaticity. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Hückel's rule is a conjunction — planar, cyclic, conjugated, and 4n + 2 π electrons — with 4n marking antiaromaticity. The counting discipline is the skill: lone pairs contribute two only when they sit in the p system (pyrrole) and zero when locked in-plane (pyridine); a charge supplies two (C₅H₅⁻) or supplies a vacancy (C₇H₇⁺), both reaching the magic six. The rule's MO origin is the closed shell at 4n + 2, and its credentials are the counterexamples — cyclobutadiene's forced antiaromaticity and cyclooctatetraene's tub-shaped escape.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Huckel's rule of aromaticity\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -41,8 +49,69 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Rule in one line: planar, cyclic, conjugated system with (4n + 2) π electrons is aromatic — check n = 0, 1, 2 (2, 6, 10 electrons).",
-    "Trick 2: Apply instantly: benzene 6π (n=1) aromatic; cyclooctatetraene 8π non-aromatic (not planar); cyclopentadienyl anion 6π aromatic; cycloheptatrienyl cation (tropylium) 6π aromatic.",
-    "Trick 3: Anti-aromatic = planar cyclic with 4n π electrons (cyclobutadiene, 4π) — the contrast earns the extra mark."
+    "For heterocycles, ask first: is the lone pair in the ring plane (excluded) or perpendicular (included)?"
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Hückel's Rule: The Count That Decides\n\nHückel's rule is the aromaticity test: **a planar, cyclic, fully conjugated system is aromatic if its π-electron count is 4n + 2** (n = 0, 1, 2, ...), and antiaromatic if 4n. Benzene's six π electrons (4·1 + 2) pass; the rule extends the verdict beyond benzene to ions and heterocycles.",
+      "## 2. Theorem Mirror\n\n- **Statement:** planarity + cyclic conjugation + 4n + 2 π electrons ⟹ aromatic stabilisation.\n- **Benzene:** six sp² carbons each donate one p electron ⟹ 6 π = 4(1) + 2 ✓.\n- **Extension to ions:** cyclopentadienyl *anion* C₅H₅⁻ — six π electrons (two from the negative carbon's lone pair) ⟹ aromatic; cycloheptatrienyl *cation* (tropylium) C₇H₇⁺ — six π electrons (one carbon's empty p orbital) ⟹ aromatic.\n- **Heterocycles:** pyridine — the nitrogen's lone pair sits in an sp² orbital *outside* the π system; six ring π electrons ⟹ aromatic. Pyrrole — the nitrogen's lone pair *is* the π system's sixth pair... contributing two electrons; four from the two double bonds + 2 = 6 ⟹ aromatic.",
+      "## 3. Deep Conceptual — Where the Electrons Come From Is the Whole Game\n\n- The count is not \"count the double bonds\" — it is \"count the electrons in the cyclic p system.\" A lone pair may contribute two (pyrrole's NH), zero (pyridine's N lone pair locked in sp² outside), or the charge may supply them (C₅H₅⁻) or remove them (tropylium's C⁺ contributes an *empty* p orbital — zero electrons but completing the conjugation).\n- **Why 4n + 2 and not 4n:** filling the delocalised π molecular orbitals — for a cyclic system, the orbitals close into pairs above and below the non-bonding level; 4n + 2 electrons exactly fill the bonding set with a closed shell, while 4n leaves a degenerate half-filled pair — the open shell that *costs* energy (antiaromaticity). The rule is Hückel molecular-orbital theory compressed into one integer.",
+      "## 4. Deep Conceptual — The Rule's Counterexamples Are Its Credentials\n\n- **Cyclobutadiene:** 4 π = 4n, forced planar ⟹ antiaromatic — rectangular, with alternating long/short bonds, desperately trying to localise.\n- **Cyclooctatetraene:** 8 π = 4n, but puckers into a tub ⟹ non-aromatic, behaves like four isolated double bonds. The molecule *chooses* non-aromaticity over antiaromaticity — proof that the 4n planar state is genuinely destabilised.\n- **The rule needs all three preconditions:** a 4n + 2 count on a *non-planar* or *non-conjugated* ring is not aromatic — the count alone is never sufficient.",
+      "## 5. Worked Example Types\n\n- **Type A — state and apply:** quote the rule, count, verdict (the verified PYQ pattern).\n- **Type B — ion counting:** C₅H₅⁻, C₇H₇⁺, C₃H₃⁺ (2 π, aromatic).\n- **Type C — heterocycle counting:** pyridine vs pyrrole lone-pair disposition.\n- **Type D — counterexample diagnosis:** 4n planar (antiaromatic) vs puckered (non-aromatic).",
+      "## 6. Common Confusions\n\n**\"Pyridine's lone pair counts\":** it does not — it occupies the sp² orbital in the ring plane, orthogonal to the π system; the ring's six π electrons come from the five C–H carbons and the N's one p electron. **\"4n + 2 is enough\":** planarity and conjugation are co-requirements — the rule is a conjunction, not a single test."
+    ],
+    "keyPoints": [
+      "Huckel: planar + cyclic conjugated + 4n+2 pi electrons = aromatic; 4n = antiaromatic. Benzene 6 = 4(1)+2. Ions: C5H5- counts 6 (lone pair joins), tropylium C7H7+ counts 6 (empty p orbital completes). Pyridine: N lone pair outside the pi system, ring count 6; pyrrole: N lone pair inside, count 4+2 = 6. 4n+2 fills the bonding MO shell exactly (closed shell); 4n leaves a degenerate open shell - the MO origin of the rule."
+    ],
+    "importantConcepts": [
+      "Count electrons in the cyclic p system - not double bonds: a lone pair can contribute 2, 0, or be replaced by a vacancy."
+    ],
+    "examples": [
+      "***The pyridine-pyrrole pair*** - same formula family, opposite lone-pair dispositions, both aromatic by different counting stories - the rule's flexibility and its discipline in one comparison."
+    ],
+    "universalFacts": [
+      "Cyclooctatetraene puckers to escape antiaromaticity - the 4n planar state is measurably destabilised."
+    ],
+    "importantStatements": [
+      "The rule is a conjunction: planarity AND cyclic conjugation AND 4n + 2 - no single clause decides."
+    ],
+    "importantNotes": [
+      "Verified PYQ recorded here: NEB 2024 (3m) State Huckel's rule; explain why benzene is aromatic."
+    ],
+    "examShortTricks": [
+      "For heterocycles, ask first: is the lone pair in the ring plane (excluded) or perpendicular (included)?"
+    ],
+    "examNotes": [
+      "Write the rule as one sentence with all three conditions - quoting only 4n + 2 loses the condition marks."
+    ],
+    "formulas": [
+      "- Aromatic ⟺ planar cyclic conjugated with π = 4n + 2\n- Benzene 6; C₅H₅⁻ 6; C₇H₇⁺ 6; pyridine 6; pyrrole 6; cyclobutadiene 4 (antiaromatic)"
+    ],
+    "practice": [
+      "State Hückel's rule and apply it to benzene.",
+      "Count the π electrons of cyclopentadienyl anion and tropylium cation.",
+      "Explain why pyridine and pyrrole are both aromatic despite different lone-pair roles."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (3m): State Hückel's rule. Explain why benzene is aromatic.** — **Rule:** a cyclic, planar, fully conjugated system is aromatic if it contains (4n + 2) π electrons, where n is a non-negative integer; systems with 4n π electrons under the same conditions are antiaromatic. **Application to benzene:** (1) cyclic — a six-membered ring; (2) planar — all six carbons are sp² hybridised, holding the ring flat; (3) fully conjugated — each carbon contributes one p orbital with one electron, six overlapping p orbitals in continuous loop; (4) count — 6 π electrons = 4(1) + 2 ✓. All conditions met ⟹ benzene is aromatic, with a closed-shell delocalised π system and ~150 kJ/mol stabilisation. **Deep point:** the answer's structure *is* the rule's structure — three conditions plus the count; each earns its mark, and the conclusion needs all four lines.",
+      "**NEB-style (6m): Show that the cyclopentadienyl anion is aromatic while cyclopentadiene itself is not.** — **Cyclopentadiene (C₅H₆):** two double bonds and one sp³ CH₂ carbon — the sp³ carbon breaks the conjugation loop (no p orbital) ⟹ non-aromatic, despite 4 π electrons present. **Cyclopentadienyl anion (C₅H₅⁻):** deprotonation re-hybridises that carbon to sp² — its lone pair (2 electrons) now occupies a p orbital joining the loop; total = 4 (two double bonds) + 2 (lone pair) = **6 π = 4(1) + 2** ⟹ aromatic, planar, stabilised. **Evidence:** cyclopentadiene has pKa ≈ 16 (acidic for a hydrocarbon!) because losing H⁺ buys aromaticity — the anion's extra stability is measured in the acidity. **Deep point:** the same five carbons, one proton apart, span non-aromatic to aromatic — the sp³ interruption and the lone-pair donation are the two moving parts, and the acidity anomaly is the experimental receipt.",
+      "**NEB-style (6m): Explain why both pyridine and pyrrole are aromatic, given that their nitrogen lone pairs play different roles.** — **Pyridine (C₅H₅N):** nitrogen is sp²; its lone pair occupies the sp² orbital lying *in the ring plane* — orthogonal to the p system, unavailable for π counting. The π system: five carbons (one p electron each) + nitrogen's p electron (its third sp² orbital holds it) = **6 π** ⟹ aromatic; the lone pair is what makes pyridine a *base*, untouched by aromaticity. **Pyrrole (C₄H₅N):** nitrogen is sp² but its lone pair occupies the *p* orbital perpendicular to the ring — it is the π system's supply; count = 4 (two C=C) + 2 (lone pair) = **6 π** ⟹ aromatic; the lone pair is *committed*, which is why pyrrole is barely basic. **Deep point:** both reach 6 by different bookkeeping — the test question is always \"where does the lone pair live?\", and the baseities (pyridine pKb small, pyrrole almost neutral) are the experimental proof of the bookkeeping.",
+      "**NEB-style (6m): The cycloheptatrienyl cation (tropylium ion) is aromatic but cycloheptatriene is not. Explain, and state what happens to cycloheptatriene's CH₂ group.** — **Cycloheptatriene:** three C=C (6 π electrons) plus one sp³ CH₂ carbon — the sp³ carbon has no p orbital, breaking the cyclic conjugation ⟹ non-aromatic. **Tropylium (C₇H₇⁺):** loss of hydride-like H⁻ leaves that carbon with an *empty p orbital* — no electrons from it, but the orbital completes the seven-centre conjugation loop; the π count stays 6 = 4(1) + 2 ⟹ aromatic, with the positive charge delocalised over all seven carbons. **Stability evidence:** the tropylium ion is robust enough to be detected in mass spectrometry and to form isolable salts (e.g. tropylium bromide). **Deep point:** the cation shows the rule's third counting mode — a *vacancy* contributes zero electrons but completes the conjugation; between lone-pair donation (anion), vacancy (cation) and in-plane exclusion (pyridine), the p-system inventory has exactly three moves, and every aromaticity question is one of them."
+    ]
+  },
+  "importantConcepts": [
+    "Count electrons in the cyclic p system - not double bonds: a lone pair can contribute 2, 0, or be replaced by a vacancy."
+  ],
+  "importantStatements": [
+    "The rule is a conjunction: planarity AND cyclic conjugation AND 4n + 2 - no single clause decides."
+  ],
+  "importantNotes": [
+    "Verified PYQ recorded here: NEB 2024 (3m) State Huckel's rule; explain why benzene is aromatic."
+  ],
+  "examNotes": [
+    "Write the rule as one sentence with all three conditions - quoting only 4n + 2 loses the condition marks."
+  ],
+  "formulas": [
+    "- Aromatic ⟺ planar cyclic conjugated with π = 4n + 2\n- Benzene 6; C₅H₅⁻ 6; C₇H₇⁺ 6; pyridine 6; pyrrole 6; cyclobutadiene 4 (antiaromatic)"
   ]
 }
