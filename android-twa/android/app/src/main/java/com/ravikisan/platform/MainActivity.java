@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
             Uri data = intent.getData();
             if ("rn".equals(data.getScheme()) && "app".equals(data.getHost())) {
                 route = data.getPath();
+            } else if ("https".equals(data.getScheme()) && "harindrasah.com.np".equals(data.getHost())) {
+                route = data.getPath() != null ? data.getPath() : "/";
             }
         }
         if (route == null || route.isEmpty()) return;

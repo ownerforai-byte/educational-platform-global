@@ -128,15 +128,15 @@ The current AAB lives at `play-store/ravikisan-platform-release.aab`.
 - [ ] Confirm signing config matches the Play Console release key.
 
 ## Store validation
-- [ ] Deep link verification passes: TWA host is **`harindrasah.com.np`** (apex
+- [x] Deep link verification passes: TWA host is **`harindrasah.com.np`** (apex
       only) with all Play Console SHA-256 fingerprints in repo-root
-      `assetlinks.json`. Apex `/.well-known/assetlinks.json` must return **200**;
-      www may **308** to apex. Upload AAB with single `autoVerify` intent for apex.
-- [ ] Universal links / app links open the app from the Play-registered domain.
+      `assetlinks.json`. Apex `/.well-known/assetlinks.json` returns **200** + JSON;
+      Google Digital Asset Links API lists all five fingerprints (incl. Play App Signing
+      `9D:FE:46:…`). `MainActivity` has a single `autoVerify` `https` intent for apex.
+- [ ] Universal links / app links open the app from the Play-registered domain
+      (re-verify after uploading a new AAB built with the manifest above).
 
 ## Notes
-- The current CI assetlinks gate uses a placeholder fingerprint until the real
-  release certificate is confirmed against Play Console and the live domain
-  verifier.
+- CI assetlinks gate pins every fingerprint in repo-root JSON against Play Console keys.
 - Play Console account access is the remaining publisher-side dependency.
 

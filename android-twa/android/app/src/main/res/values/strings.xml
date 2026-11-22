@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="appName">Ravikisan\'s Platform</string>
+    <string name="asset_statements" translatable="false">
+        [{
+          \"relation\": [\"delegate_permission/common.handle_all_urls\", \"delegate_permission/common.get_login_creds\"],
+          \"target\": { \"namespace\": \"web\", \"site\": \"https://harindrasah.com.np\" }
+        }]
+    </string>
 </resources>
