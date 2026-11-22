@@ -114,6 +114,40 @@
     return { page: page, flow: flow, foot: footRight };
   }
 
+  /* Split an oversized wrapper (a section/div that is taller than a sheet) at its
+     own child boundaries, cloning the wrapper on each continuation so its styling
+     survives. Returns the flow it finished in, or null when not splittable. */
+  function splitWrapper(el, flow, desk, label) {
+    var tag = el.tagName;
+    if (tag !== "SECTION" && tag !== "DIV" && tag !== "ARTICLE" && tag !== "MAIN") return null;
+    if (el.classList.contains("qgrid") || el.classList.contains("item")) return null;
+    if (el.children.length < 2) return null;
+
+    var children = [].slice.call(el.childNodes);
+    if (el.parentNode) el.parentNode.removeChild(el);
+
+    var current = el.cloneNode(false);
+    flow.appendChild(current);
+
+    for (var i = 0; i < children.length; i++) {
+      current.appendChild(children[i]);
+      if (!overflows(flow)) continue;
+      if (current.children.length < 2) continue; // too big even alone: leave it
+
+      var last = current.lastChild;
+      current.removeChild(last);
+
+      var next = newPage(desk, label);
+      carryHeading(flow, next.flow);
+      flow = next.flow;
+      current = el.cloneNode(false);
+      flow.appendChild(current);
+      current.appendChild(last);
+    }
+
+    return flow;
+  }
+
   function overflows(flow) {
     return flow.scrollHeight > flow.clientHeight + TOLERANCE;
   }
@@ -130,7 +164,7 @@
   function carryHeading(prevFlow, nextFlow) {
     var last = prevFlow.lastElementChild;
     if (!isHeading(last)) return;
-    if (prevFlow.children.length < 2) return; // never empty a sheet
+    if (!prevFlow.children.length) return;
     nextFlow.insertBefore(last, nextFlow.firstChild);
   }
 
@@ -178,6 +212,7 @@
 
         // move to a fresh sheet and start the next part there
         var next = newPage(desk, label);
+        carryHeading(flow, next.flow); // the part's heading travels with it
         flow = next.flow;
         current = part();
         flow.appendChild(current.table);
@@ -275,34 +310,67 @@
         }
         // splitting was not possible: put the table back whole
         current.flow.appendChild(block);
+      } else {
+        // an oversized section: split it at its own children, keeping its styling
+        var wrapped = splitWrapper(block, current.flow, desk, label);
+        if (wrapped) {
+          current = { page: wrapped.parentNode, flow: wrapped, foot: null };
+          continue;
+        }
       }
 
       // a single block taller than A4: let exactly this sheet grow
       if (current.page) current.page.classList.add("a4-page--tall");
     }
 
-    // final sweep: nothing may overflow its sheet, and no heading may sit alone at
-    // a page foot. Overflowing blocks cascade forward one page at a time.
+    // final sweep: nothing may overflow its sheet and no heading may sit alone at a
+    // page foot. Repeats until stable, because both moves can push a block onwards.
     var allSheets = [].slice.call(desk.querySelectorAll("." + PAGE_CLASS));
-    for (var s = 0; s < allSheets.length; s++) {
-      var pageFlow = allSheets[s].querySelector(".a4-page__body");
-      var nextFlow = allSheets[s + 1]
-        ? allSheets[s + 1].querySelector(".a4-page__body")
-        : null;
+    for (var pass = 0; pass < 40; pass++) {
+      var changed = false;
 
-      if (nextFlow) {
-        // carry a trailing heading forward, with the block it belongs to
-        carryHeading(pageFlow, nextFlow);
+      for (var s = 0; s < allSheets.length; s++) {
+        var pageFlow = allSheets[s].querySelector(".a4-page__body");
+        var nextFlow = allSheets[s + 1]
+          ? allSheets[s + 1].querySelector(".a4-page__body")
+          : null;
 
+        if (!pageFlow) continue;
+
+        if (!nextFlow) {
+          if (overflows(pageFlow) && pageFlow.children.length) {
+            allSheets[s].classList.add("a4-page--tall");
+          }
+          continue;
+        }
+
+        // a heading must never be the last thing on a sheet
+        if (isHeading(pageFlow.lastElementChild)) {
+          nextFlow.insertBefore(pageFlow.lastElementChild, nextFlow.firstChild);
+          changed = true;
+        }
+
+        // spill anything that still does not fit onto the next sheet
         var guard = 0;
-        while (overflows(pageFlow) && pageFlow.children.length > 1 && guard++ < 24) {
+        while (overflows(pageFlow) && pageFlow.children.length > 1 && guard++ < 60) {
           var spill = pageFlow.lastElementChild;
           pageFlow.removeChild(spill);
           nextFlow.insertBefore(spill, nextFlow.firstChild);
-          carryHeading(pageFlow, nextFlow);
+          changed = true;
+          if (isHeading(pageFlow.lastElementChild)) {
+            nextFlow.insertBefore(pageFlow.lastElementChild, nextFlow.firstChild);
+          }
         }
-      } else if (overflows(pageFlow)) {
-        allSheets[s].classList.add("a4-page--tall");
+      }
+
+      if (!changed) break;
+    }
+
+    // carrying headings can leave a sheet holding nothing at all: drop it
+    for (var e = 0; e < allSheets.length; e++) {
+      var emptyFlow = allSheets[e].querySelector(".a4-page__body");
+      if (emptyFlow && !emptyFlow.children.length) {
+        if (allSheets[e].parentNode) allSheets[e].parentNode.removeChild(allSheets[e]);
       }
     }
 
