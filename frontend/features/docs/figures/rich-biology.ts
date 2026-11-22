@@ -59,6 +59,28 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       "crossing over", // chiasma diagram
     ],
   },
+  "food-chain-food-web-trophic-level-ecological-pyramids-productivity": {
+    title: "A food web you can walk into",
+    figures: [
+      {
+        src: "/docs/figures/biology/food-web-ecosystem.jpg",
+        caption:
+          "The trophic pyramid drawn as a place instead of a diagram. The sun is the ultimate energy source; the green layer of grasses and herbs are the producers, the only level that traps fresh sunlight into sugar. The grasshopper and the rabbit are primary consumers — herbivores cropping that layer — while the songbird snapping at an insect and the fox stalking through the grass are secondary consumers, and the hawk wheeling above is the top carnivore of this meadow. Below everyone, the cutaway soil is the level diagrams forget: earthworms, beetles and fungal threads are the decomposers, returning the dead leaf's carbon and nitrogen to the roots so the producers can start again. Notice what the scene makes visible that arrows cannot — energy enters once, at the leaves, and each step upward passes only about a tenth of it on, which is why hawks are rare and grass is everywhere.",
+        alt: "Sunlit meadow food web scene with grasses and herbs, a grasshopper and rabbit feeding, a songbird, a fox and a hawk above, and a soil cutaway with earthworms, insects and fungi decomposing a leaf",
+        keyword: "grazing",
+      },
+    ],
+    keepSvg: [
+      // every SVG here is classification-style — the plate supplements, not replaces
+      "grazing", // food-chain types
+      "trophic", // trophic-level positions + trophic cascade
+      "pyramid", // three pyramids
+      "inverted", // why pyramids invert
+      "percent", // ten-percent law
+      "NPP", // GPP/NPP equation
+      "web", // food-web complexity
+    ],
+  },
   "life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment": {
     title: "Miller and Urey's spark in a bottle",
     figures: [
