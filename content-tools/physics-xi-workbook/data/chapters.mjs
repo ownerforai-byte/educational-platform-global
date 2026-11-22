@@ -76,4 +76,91 @@ export const UNITS = [
       },
     ],
   },
+  {
+    unitNo: 3,
+    unitId: "kinematics",
+    unitName: "Kinematics",
+    chapters: [
+      {
+        slug: "velocity-and-acceleration",
+        code: "3.1",
+        title: "Velocity, Acceleration and Graphs",
+        topics: [
+          "Instantaneous velocity and acceleration",
+          "Graphical treatment of motion",
+          "Equations of motion",
+          "Relative velocity",
+        ],
+      },
+      {
+        slug: "free-fall-and-projectiles",
+        code: "3.2",
+        title: "Free Fall and Projectile Motion",
+        topics: [
+          "Freely falling bodies",
+          "Time of flight",
+          "Range and maximum height",
+          "Relative velocity in two dimensions",
+        ],
+      },
+    ],
+  },
+  {
+    unitNo: 4,
+    unitId: "dynamics",
+    unitName: "Dynamics",
+    chapters: [
+      {
+        slug: "momentum-impulse-and-newtons-laws",
+        code: "4.1",
+        title: "Momentum, Impulse and Newton's Laws",
+        topics: [
+          "Linear momentum and impulse",
+          "Newton's laws applied",
+          "Conservation of linear momentum",
+          "Recoil and collisions",
+        ],
+      },
+      {
+        slug: "torque-equilibrium-and-friction",
+        code: "4.2",
+        title: "Torque, Equilibrium and Friction",
+        topics: [
+          "Moment of a force and torque",
+          "Conditions of equilibrium",
+          "Laws of solid friction",
+          "Angle of friction and repose",
+        ],
+      },
+    ],
+  },
+  {
+    unitNo: 5,
+    unitId: "work-energy-and-power",
+    unitName: "Work, Energy and Power",
+    chapters: [
+      {
+        slug: "work-energy-and-power",
+        code: "5.1",
+        title: "Work, Energy and Power",
+        topics: [
+          "Work done by a constant force",
+          "Work-energy theorem",
+          "Power",
+          "Efficiency",
+        ],
+      },
+      {
+        slug: "conservation-of-energy-and-collisions",
+        code: "5.2",
+        title: "Conservation of Energy and Collisions",
+        topics: [
+          "Kinetic and potential energy",
+          "Conservation of mechanical energy",
+          "Elastic collisions",
+          "Inelastic collisions",
+        ],
+      },
+    ],
+  },
 ];

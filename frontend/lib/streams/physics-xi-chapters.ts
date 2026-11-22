@@ -101,14 +101,110 @@ export const PHYSICS_XI_CHAPTERS: PhysicsXiChapter[] = [
     ],
     "questionCount": 12,
     "sheetCount": 1
+  },
+  {
+    "slug": "velocity-and-acceleration",
+    "code": "3.1",
+    "title": "Velocity, Acceleration and Graphs",
+    "unitNo": 3,
+    "unitId": "kinematics",
+    "unitName": "Kinematics",
+    "topics": [
+      "Instantaneous velocity and acceleration",
+      "Graphical treatment of motion",
+      "Equations of motion",
+      "Relative velocity"
+    ],
+    "questionCount": 12,
+    "sheetCount": 1
+  },
+  {
+    "slug": "free-fall-and-projectiles",
+    "code": "3.2",
+    "title": "Free Fall and Projectile Motion",
+    "unitNo": 3,
+    "unitId": "kinematics",
+    "unitName": "Kinematics",
+    "topics": [
+      "Freely falling bodies",
+      "Time of flight",
+      "Range and maximum height",
+      "Relative velocity in two dimensions"
+    ],
+    "questionCount": 12,
+    "sheetCount": 1
+  },
+  {
+    "slug": "momentum-impulse-and-newtons-laws",
+    "code": "4.1",
+    "title": "Momentum, Impulse and Newton's Laws",
+    "unitNo": 4,
+    "unitId": "dynamics",
+    "unitName": "Dynamics",
+    "topics": [
+      "Linear momentum and impulse",
+      "Newton's laws applied",
+      "Conservation of linear momentum",
+      "Recoil and collisions"
+    ],
+    "questionCount": 12,
+    "sheetCount": 1
+  },
+  {
+    "slug": "torque-equilibrium-and-friction",
+    "code": "4.2",
+    "title": "Torque, Equilibrium and Friction",
+    "unitNo": 4,
+    "unitId": "dynamics",
+    "unitName": "Dynamics",
+    "topics": [
+      "Moment of a force and torque",
+      "Conditions of equilibrium",
+      "Laws of solid friction",
+      "Angle of friction and repose"
+    ],
+    "questionCount": 12,
+    "sheetCount": 1
+  },
+  {
+    "slug": "work-energy-and-power",
+    "code": "5.1",
+    "title": "Work, Energy and Power",
+    "unitNo": 5,
+    "unitId": "work-energy-and-power",
+    "unitName": "Work, Energy and Power",
+    "topics": [
+      "Work done by a constant force",
+      "Work-energy theorem",
+      "Power",
+      "Efficiency"
+    ],
+    "questionCount": 12,
+    "sheetCount": 1
+  },
+  {
+    "slug": "conservation-of-energy-and-collisions",
+    "code": "5.2",
+    "title": "Conservation of Energy and Collisions",
+    "unitNo": 5,
+    "unitId": "work-energy-and-power",
+    "unitName": "Work, Energy and Power",
+    "topics": [
+      "Kinetic and potential energy",
+      "Conservation of mechanical energy",
+      "Elastic collisions",
+      "Inelastic collisions"
+    ],
+    "questionCount": 12,
+    "sheetCount": 1
   }
 ];
 
 export const PHYSICS_XI_WORKBOOK_TOTALS = {
-  "chapters": 5,
-  "units": 2,
-  "questions": 60,
-  "sheets": 5,
+  "chapters": 11,
+  "units": 5,
+  "questions": 132,
+  "sheets": 11,
   "perSheet": 12
 } as const;
 
