@@ -61,6 +61,8 @@ function attachmentSummary(files: FeedPost["attachments"]): {
 export interface FeedPostRowThreadProps {
   viewer?: SessionUser | null;
   commentsExpanded: boolean;
+  /** True while Veer is generating a reply for this post in the background. */
+  botTyping?: boolean;
   threadComments: FeedComment[];
   threadLoading: boolean;
   threadError: string | null;
@@ -113,6 +115,7 @@ export const FeedPostRow = memo(function FeedPostRow({
   onPrefetch,
   viewer = null,
   commentsExpanded,
+  botTyping = false,
   threadComments,
   threadLoading,
   threadError,
@@ -172,11 +175,11 @@ export const FeedPostRow = memo(function FeedPostRow({
   return (
     <article
       ref={rowRef}
-      className="overflow-hidden rounded-md border border-border/90 bg-card"
+      className="overflow-hidden rounded-md border border-border/90 bg-card transition-[border-color,box-shadow] duration-200 ease-out motion-safe:hover:border-border motion-safe:hover:shadow-sm"
     >
-      <div className="space-y-1 px-2 py-1.5">
+      <div className="space-y-1 px-2.5 py-2 sm:px-3">
           {/* Top metadata line: category, author, time, resource & Veer indicators */}
-          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-muted-foreground">
             <span
               className={cn(
                 "inline-flex items-center gap-0.5 rounded px-1.5 py-px text-[10px] font-medium",
@@ -187,7 +190,7 @@ export const FeedPostRow = memo(function FeedPostRow({
               {categoryLabel(item.category)}
             </span>
             {postKindLabel(item.kind) ? (
-              <span className="rounded border border-border/70 bg-background px-1.5 py-px text-[9px] font-semibold uppercase tracking-wide text-muted-foreground">
+              <span className="rounded border border-border/70 bg-background px-1.5 py-px text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
                 {postKindLabel(item.kind)}
                 {item.solved ? " · Solved" : item.kind === "question" ? " · Open" : ""}
               </span>
@@ -208,7 +211,7 @@ export const FeedPostRow = memo(function FeedPostRow({
               <CreatorIdentityBadge compact />
             ) : null}
 
-            <time dateTime={item.createdAt} className="text-[13px] text-muted-foreground">
+            <time dateTime={item.createdAt} className="text-xs text-muted-foreground">
               {formatCompactWhen(item.createdAt)}
             </time>
 
@@ -270,7 +273,7 @@ export const FeedPostRow = memo(function FeedPostRow({
           ) : null}
       </div>
 
-      <div className="flex flex-wrap items-center gap-1 border-t border-border bg-muted/30 px-2 py-1">
+      <div className="flex flex-wrap items-center gap-1 border-t border-border bg-muted/30 px-1.5 py-1 sm:px-2">
           <button
             type="button"
             onClick={() => onLike(item)}
@@ -387,7 +390,7 @@ export const FeedPostRow = memo(function FeedPostRow({
       {commentsExpanded ? (
         <section
           aria-label={`Replies on ${item.title}`}
-          className="border-t border-border/80 bg-muted/20 px-2 py-2"
+          className="border-t border-border/80 bg-muted/20 px-2.5 py-2.5 sm:px-3"
         >
           {threadError ? <p role="alert" className="px-1 pt-2 text-sm text-destructive">{threadError}</p> : null}
           <CommentComposer
@@ -407,6 +410,7 @@ export const FeedPostRow = memo(function FeedPostRow({
             <CommentList
               comments={threadComments}
               viewer={viewer}
+              botTyping={botTyping}
               followUpBotCommentId={followUpBotCommentId}
               postKind={item.kind}
               postAuthorId={item.author.id}

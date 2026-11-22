@@ -135,6 +135,9 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
   const [error, setError] = useState<string | null>(null);
 
   const [aiReplyBusyIds, setAiReplyBusyIds] = useState<Set<string>>(() => new Set());
+  // Posts where Veer is generating a reply right now (tag mention or Ask AI):
+  // drives the "Veer is writing…" typing indicator in threads.
+  const [botTypingIds, setBotTypingIds] = useState<Set<string>>(() => new Set());
   const [followUpBotCommentId, setFollowUpBotCommentId] = useState<string | null>(null);
   const [commentComposerOpen, setCommentComposerOpen] = useState(false);
   const [composerFocusTrigger, setComposerFocusTrigger] = useState(0);
@@ -192,9 +195,21 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
 
   // Wait specifically for a newly arrived bot comment (never stop early on the student's own comment).
   const refreshPostForBotReply = useCallback(
-    async (postId: string, beforeBotCommentIds: Set<string>) => {
+    async (postId: string, beforeBotCommentIds: Set<string>, showTyping = false) => {
+      if (showTyping) {
+        setBotTypingIds((prev) => new Set(prev).add(postId));
+      }
+      const stopTyping = () =>
+        setBotTypingIds((prev) => {
+          if (!prev.has(postId)) return prev;
+          const next = new Set(prev);
+          next.delete(postId);
+          return next;
+        });
       for (let attempt = 0; attempt < 10; attempt += 1) {
-        await new Promise((resolve) => window.setTimeout(resolve, 2_500));
+        // First check lands quickly (~1.8s) so a fast reply feels instant;
+        // later checks back off to 2.5s to spare the API.
+        await new Promise((resolve) => window.setTimeout(resolve, attempt === 0 ? 1_800 : 2_500));
         try {
           const fresh = await getPost(postId);
           const incoming = fresh.post;
@@ -204,6 +219,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
           );
           const gainedBotReply = botRows.some((row) => !beforeBotCommentIds.has(row.id));
           if (gainedBotReply) {
+            stopTyping();
             patchPostEverywhere(postId, (item) => mergePostSnapshot(item, incoming));
             return;
           }
@@ -211,6 +227,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
           /* polling is best-effort */
         }
       }
+      stopTyping();
     },
     [patchPostEverywhere],
   );
@@ -857,7 +874,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
         });
         invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
         if (result.botReplyPending || mentionsCommunityBot(body)) {
-          void refreshPostForBotReply(postId, beforeBotCommentIds);
+          void refreshPostForBotReply(postId, beforeBotCommentIds, Boolean(result.botReplyPending));
         }
         showCelebration("comment", postId);
         return { ok: true };
@@ -952,6 +969,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     return {
       viewer: user,
       commentsExpanded,
+      botTyping: botTypingIds.has(postId),
       threadComments: threadPost?.comments ?? [],
       threadLoading: Boolean(commentsExpanded && state?.loading),
       threadError: commentsExpanded ? state?.error ?? null : null,
@@ -969,7 +987,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
       onDeleteComment: handleDeleteComment,
       onAcceptAnswer: handleAcceptAnswer,
     };
-  }, [composerFocusTrigger, expandedPostId, followUpBotCommentId, handleAcceptAnswer, handleDeleteComment, handleSaveCommentEdit, handleSubmitComment, knownPost, patchAuthorFollowing, threadStates, toggleInlineComments, user]);
+  }, [botTypingIds, composerFocusTrigger, expandedPostId, followUpBotCommentId, handleAcceptAnswer, handleDeleteComment, handleSaveCommentEdit, handleSubmitComment, knownPost, patchAuthorFollowing, threadStates, toggleInlineComments, user]);
 
   const onAssistantReply = useCallback(
     (target: FeedPost) => {
@@ -1097,6 +1115,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     isSaved,
     savedCount,
     aiReplyBusyIds,
+    botTypingIds,
     followUpBotCommentId,
     setFollowUpBotCommentId,
     composerFocusTrigger,

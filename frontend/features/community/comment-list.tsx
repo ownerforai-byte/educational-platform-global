@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import type { SessionUser } from "@/features/auth/types";
 import type { FeedComment } from "@/lib/api/community-feed";
-import { isCommunityBot } from "@/lib/community-bot";
+import { isCommunityBot, COMMUNITY_BOT_AVATAR_URL, COMMUNITY_BOT_DISPLAY_NAME } from "@/lib/community-bot";
 import { PostAuthorHeader } from "@/features/community/post-author-header";
 import { MemberOnlyMarkdown } from "@/features/community/member-only-markdown";
 import { canDeleteCommunityFeed } from "@/features/community/community-helpers";
@@ -92,7 +92,8 @@ const CommentRow = memo(function CommentRow({
   return (
     <div
       className={cn(
-        "rounded-lg border border-border/90 bg-background px-3 py-2.5 shadow-sm",
+        "rounded-xl border border-border/90 bg-background px-3 py-2.5 shadow-sm transition-colors duration-200",
+        "hover:border-border",
         followUpActive && "ring-1 ring-primary/25",
         botComment && "border-primary/30 bg-primary/[0.03]",
       )}
@@ -262,6 +263,7 @@ const CommentRow = memo(function CommentRow({
 export function CommentList({
   comments,
   viewer,
+  botTyping = false,
   followUpBotCommentId,
   onSelectFollowUp,
   onFollowChange,
@@ -274,6 +276,8 @@ export function CommentList({
 }: {
   comments: FeedComment[];
   viewer: SessionUser | null;
+  /** True while Veer is generating a reply for this post in the background. */
+  botTyping?: boolean;
   followUpBotCommentId: string | null;
   onSelectFollowUp: (commentId: string) => void;
   onOpenComposer: () => void;
@@ -285,7 +289,7 @@ export function CommentList({
   acceptedCommentId?: string | null;
   onAcceptAnswer?: (commentId: string) => void;
 }) {
-  if (comments.length === 0) {
+  if (comments.length === 0 && !botTyping) {
     return <p className="px-1 py-2 text-sm text-muted-foreground">No replies yet.</p>;
   }
 
@@ -328,5 +332,39 @@ export function CommentList({
     );
   }
 
-  return <ul className="space-y-2">{roots.map((comment) => branch(comment, 0))}</ul>;
+  return (
+    <ul className="space-y-2">
+      {roots.map((comment) => branch(comment, 0))}
+      {botTyping ? (
+        <li
+          role="status"
+          aria-label="Veer AI is writing a reply"
+          className="flex items-center gap-2.5 rounded-xl border border-primary/30 bg-primary/[0.03] px-3 py-2.5"
+        >
+          <span
+            aria-hidden
+            className="h-7 w-7 shrink-0 rounded-full border border-primary/25 bg-background object-cover"
+            style={{ backgroundImage: `url(${COMMUNITY_BOT_AVATAR_URL})`, backgroundSize: "cover" }}
+          />
+          <span className="min-w-0 flex-1">
+            <span className="block text-[13px] font-semibold text-primary">
+              {COMMUNITY_BOT_DISPLAY_NAME}
+            </span>
+            <span className="flex items-center gap-1 text-xs text-muted-foreground">
+              Writing a reply
+              <span className="inline-flex gap-0.5" aria-hidden>
+                {[0, 1, 2].map((dot) => (
+                  <span
+                    key={dot}
+                    className="h-1 w-1 rounded-full bg-primary/70 motion-safe:animate-bounce motion-reduce:animate-none"
+                    style={{ animationDelay: `${dot * 150}ms` }}
+                  />
+                ))}
+              </span>
+            </span>
+          </span>
+        </li>
+      ) : null}
+    </ul>
+  );
 }

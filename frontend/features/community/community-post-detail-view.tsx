@@ -59,6 +59,7 @@ export function CommunityPostDetailView() {
     moderate,
     isSaved,
     aiReplyBusyIds,
+    botTypingIds,
     followUpBotCommentId,
     setFollowUpBotCommentId,
     composerFocusTrigger,
@@ -312,6 +313,16 @@ export function CommunityPostDetailView() {
               </div>
             ) : null}
 
+            {botTypingIds.has(post.id) ? (
+              <div
+                role="status"
+                className="flex items-center gap-2 rounded-xl border border-primary/25 bg-primary/5 px-3.5 py-2.5 text-[13px] font-medium text-primary"
+              >
+                <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                Veer is writing a reply…
+              </div>
+            ) : null}
+
             <CommentComposer
               signedIn={Boolean(user)}
               viewerName={user?.fullName}
@@ -327,6 +338,7 @@ export function CommunityPostDetailView() {
             <CommentList
               comments={post.comments ?? []}
               viewer={user}
+              botTyping={botTypingIds.has(post.id)}
               followUpBotCommentId={followUpBotCommentId}
               postKind={post.kind}
               postAuthorId={post.author.id}

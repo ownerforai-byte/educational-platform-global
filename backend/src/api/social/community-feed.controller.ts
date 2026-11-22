@@ -1162,7 +1162,12 @@ router.post(
       serverError(res, error, "community-feed");
       return;
     }
-    await publishTaggedBotReply(data as PostRow, user.id);
+    // Fire-and-forget: the tagged Veer reply is generated in the background so
+    // publishing feels instant. The client polls for the reply once it lands.
+    void publishTaggedBotReply(data as PostRow, user.id).catch((err) => {
+      const errorId = newErrorId();
+      logServerError(err, errorId, "community-feed-tagged-reply");
+    });
     void notifyMentionedProfiles({
       text: `${parsed.data.title}\n${parsed.data.body}`,
       actorId: user.id,
@@ -1787,7 +1792,9 @@ router.patch(
       serverError(res, error, "community-feed");
       return;
     }
-    await publishTaggedBotReply(
+    // Fire-and-forget, same as post creation: never block the edit response
+    // on AI generation.
+    void publishTaggedBotReply(
       {
         ...found.row,
         title: parsed.data.title,
@@ -1795,7 +1802,10 @@ router.patch(
         category: parsed.data.category,
       },
       user.id,
-    );
+    ).catch((err) => {
+      const errorId = newErrorId();
+      logServerError(err, errorId, "community-feed-tagged-reply-edit");
+    });
     const again = await findPost(postId);
     if ("row" in again && again.row) {
       const presented = await presentMany([again.row], user);

@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Bookmark, CheckCircle2, MessageCircle, PenLine, Share2 } from "lucide-react";
-import { sharePath } from "@/lib/api/community-feed";
+import { useEffect, useState } from "react";
+import { ArrowLeft, Bookmark, Bot, CheckCircle2, MessageCircle, PenLine, Share2 } from "lucide-react";
+import { getPost, sharePath } from "@/lib/api/community-feed";
+import { mentionsCommunityBot } from "@/lib/community-bot";
 import { ghostLink, primaryCta, surfaceCard } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
 
@@ -55,6 +57,83 @@ function parseAction(raw: string | null): CommunitySuccessAction {
   return "posted";
 }
 
+function useVeerReplyStatus(postId: string | null, enabled: boolean) {
+  const [state, setState] = useState<"writing" | "replied" | null>(null);
+
+  useEffect(() => {
+    if (!postId || !enabled) return;
+    let cancelled = false;
+    let attempts = 0;
+    let timer: number | undefined;
+
+    async function check(): Promise<void> {
+      try {
+        const detail = await getPost(postId as string);
+        const post = detail.post;
+        if (cancelled) return;
+        if (post) {
+          if (post.assistantReply?.posted) {
+            setState("replied");
+            return;
+          }
+          if (mentionsCommunityBot(`${post.title}\n${post.body}`)) {
+            setState((current) => current ?? "writing");
+          }
+        }
+      } catch {
+        /* best-effort status only */
+      }
+      if (cancelled || attempts >= 12) return;
+      attempts += 1;
+      timer = window.setTimeout(() => void check(), 2_500);
+    }
+
+    void check();
+    return () => {
+      cancelled = true;
+      if (timer !== undefined) window.clearTimeout(timer);
+    };
+  }, [postId, enabled]);
+
+  return state;
+}
+
+function VeerReplyStatus({ postId }: { postId: string }) {
+  const status = useVeerReplyStatus(postId, true);
+  const postHref = sharePath(postId);
+  if (!status) return null;
+  return (
+    <div
+      role="status"
+      className={cn(
+        "flex items-center gap-2.5 rounded-xl border px-3.5 py-2.5 text-[13px] font-medium",
+        status === "replied"
+          ? "border-primary/30 bg-primary/5 text-primary"
+          : "border-border/70 bg-muted/40 text-muted-foreground",
+      )}
+    >
+      {status === "replied" ? (
+        <Bot className="h-4 w-4 shrink-0" aria-hidden />
+      ) : (
+        <span
+          className="inline-block h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-current border-r-transparent"
+          aria-hidden
+        />
+      )}
+      {status === "replied" ? (
+        <span>
+          Veer AI has replied. {" "}
+          <Link href={postHref} className="underline underline-offset-2 hover:text-primary">
+            Read the reply
+          </Link>
+        </span>
+      ) : (
+        <span>Veer AI is writing a reply to your post…</span>
+      )}
+    </div>
+  );
+}
+
 export function CommunityActionSuccessView({
   action,
   postId,
@@ -77,6 +156,9 @@ export function CommunityActionSuccessView({
           <h1 className="font-display text-xl font-bold tracking-tight text-foreground">{meta.title}</h1>
           <p className="text-sm leading-relaxed text-muted-foreground">{meta.body}</p>
         </div>
+        {postId && (resolved === "posted" || resolved === "updated") ? (
+          <VeerReplyStatus postId={postId} />
+        ) : null}
         <div className="flex flex-wrap gap-2 pt-1">
           {postHref ? (
             <Link href={postHref} className={primaryCta}>
