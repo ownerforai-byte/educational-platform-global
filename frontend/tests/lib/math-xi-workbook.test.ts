@@ -201,9 +201,10 @@ describe("Mathematics XI — hard sets with hint ladders", () => {
     expect(problems).toBeGreaterThan(0);
   });
 
-  it("covers both heavy-mark units and links back from the chapter sheet", () => {
+  it("covers every unit and links back from each chapter sheet", () => {
     const units = new Set(mathXiHardChapters().map((chapter) => chapter.unitNo));
-    expect([...units].sort((a, b) => a - b)).toEqual([1, 6]);
+    expect([...units].sort((a, b) => a - b)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect(mathXiHardChapters().length).toBe(MATH_XI_CHAPTERS.length);
 
     for (const chapter of mathXiHardChapters()) {
       expect(existsSync(resolve(ROOT, mathXiHardPath(chapter)))).toBe(true);

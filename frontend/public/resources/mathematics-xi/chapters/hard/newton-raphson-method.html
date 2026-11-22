@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.2 Newton–Raphson Method — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Newton–Raphson Method — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Newton–Raphson Method — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>7.2 · Newton–Raphson Method — hardest questions</h1>
+<p class="topics"><b>Topics</b> The formula · Iteration steps · Convergence · Comparison with bisection</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>The formula</span> <span class="kind">The formula</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Apply one Newton–Raphson step to x² − 7 = 0 starting at x₀ = 2.5.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write f(x) = x² − 7 and f′(x) = 2x.</li>
+<li><b>H2.</b> x₁ = x₀ − f(x₀)/f′(x₀).</li>
+<li><b>H3.</b> f(2.5) = −0.75 and f′(2.5) = 5.</li>
+</ol>
+<p class="work">x₁ = 2.5 − (−0.75)/5 = 2.5 + 0.15</p>
+<p class="ans">x₁ = 2.65</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Iteration steps</span> <span class="kind">Iteration</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Apply one Newton–Raphson step to x³ − 2x − 5 = 0 from x₀ = 2.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> f(2) = 8 − 4 − 5.</li>
+<li><b>H2.</b> f′(x) = 3x² − 2, so f′(2) = 10.</li>
+<li><b>H3.</b> Subtract f/f′ from x₀.</li>
+</ol>
+<p class="work">x₁ = 2 − (−1)/10 = 2 + 0.1</p>
+<p class="ans">x₁ = 2.1</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Iteration steps</span> <span class="kind">Iteration</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Use one Newton–Raphson step on cos x = x from x₀ = 0.5.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Put f(x) = cos x − x, so f′(x) = −sin x − 1.</li>
+<li><b>H2.</b> f(0.5) = 0.8776 − 0.5 = 0.3776 and f′(0.5) = −1.4794.</li>
+<li><b>H3.</b> x₁ = 0.5 − 0.3776/(−1.4794).</li>
+</ol>
+<p class="work">x₁ = 0.5 + 0.2552</p>
+<p class="ans">x₁ ≈ 0.755 (the root is near 0.739)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Convergence</span> <span class="kind">Proof</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Show that Newton–Raphson applied to x² − a = 0 gives x₁ = (x₀ + a/x₀)/2.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> f(x) = x² − a and f′(x) = 2x.</li>
+<li><b>H2.</b> x₁ = x₀ − (x₀² − a)/(2x₀).</li>
+<li><b>H3.</b> Split the fraction and simplify.</li>
+</ol>
+<p class="work">x₁ = x₀ − x₀/2 + a/(2x₀)
+= x₀/2 + a/(2x₀)</p>
+<p class="ans">x₁ = (x₀ + a/x₀)/2 — the Babylonian square-root iteration</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Comparison with bisection</span> <span class="kind">Comparison</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>For √2, compare the number of steps Newton–Raphson and bisection need to reach three decimals.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Newton from x₀ = 1.5: x₁ = (1.5 + 2/1.5)/2.</li>
+<li><b>H2.</b> Continue: 1.4167, then 1.41422.</li>
+<li><b>H3.</b> Bisection halves the error every step, so it needs about ten steps.</li>
+</ol>
+<p class="work">Newton: 1.5 → 1.4167 → 1.41422 → 1.414213…
+bisection on [1,2]: after 10 steps width = 1/1024 ≈ 0.001</p>
+<p class="ans">Newton: 3 steps; bisection: about 10 steps</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Iteration steps</span> <span class="kind">Iteration</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Apply one Newton–Raphson step to x³ − 8 = 0 from x₀ = 2.1.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> f(2.1) = 9.261 − 8 = 1.261.</li>
+<li><b>H2.</b> f′(x) = 3x², so f′(2.1) = 13.23.</li>
+<li><b>H3.</b> x₁ = 2.1 − 1.261/13.23.</li>
+</ol>
+<p class="work">x₁ = 2.1 − 0.0953</p>
+<p class="ans">x₁ ≈ 2.0047</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Newton–Raphson Method · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

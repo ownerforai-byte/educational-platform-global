@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2.2 Trigonometric Combination Formulae — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Trigonometric Combination Formulae — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Trigonometric Combination Formulae — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>2.2 · Trigonometric Combination Formulae — hardest questions</h1>
+<p class="topics"><b>Topics</b> Addition and subtraction · Double and half angles · Product-to-sum · Conditional identities</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Product-to-sum</span> <span class="kind">Product-to-sum</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Prove that sin(A + B)sin(A − B) = sin²A − sin²B.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Convert the product into a difference of cosines.</li>
+<li><b>H2.</b> sin(A+B)sin(A−B) = ½[cos 2B − cos 2A].</li>
+<li><b>H3.</b> Replace each cosine with 1 − 2sin² of the half angle.</li>
+</ol>
+<p class="work">= ½[(1 − 2sin²B) − (1 − 2sin²A)]
+= ½[2sin²A − 2sin²B]</p>
+<p class="ans">= sin²A − sin²B — identity proved</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Addition and subtraction</span> <span class="kind">Addition formula</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>If tan A = 1/2 and tan B = 1/3 with A and B acute, find tan(A + B) and hence A + B.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Use tan(A + B) = (tanA + tanB)/(1 − tanA tanB).</li>
+<li><b>H2.</b> The numerator is 5/6 and the denominator 1 − 1/6 = 5/6.</li>
+<li><b>H3.</b> The tangent is 1, and the sum lies between 0 and π because both angles are acute.</li>
+</ol>
+<p class="work">tan(A+B) = (1/2 + 1/3)/(1 − 1/6) = (5/6)/(5/6) = 1</p>
+<p class="ans">A + B = π/4</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Product-to-sum</span> <span class="kind">Conditional identity</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Prove that cos²A + cos²(A + 120°) + cos²(A − 120°) = 3/2.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Replace each square using cos²θ = (1 + cos 2θ)/2.</li>
+<li><b>H2.</b> The three 1s give 3/2; what remains is ½ times a sum of three cosines.</li>
+<li><b>H3.</b> cos(2A+240°) + cos(2A−240°) = 2cos2A·cos240° = −cos2A.</li>
+</ol>
+<p class="work">= 3/2 + ½[cos2A + cos(2A+240°) + cos(2A−240°)]
+= 3/2 + ½[cos2A − cos2A]</p>
+<p class="ans">= 3/2 — identity proved</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Addition and subtraction</span> <span class="kind">Compound angle</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>If sin α = 3/5 and cos β = 5/13 with α, β acute, find sin(α + β).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Recover the missing ratios from right triangles: cos α = 4/5, sin β = 12/13.</li>
+<li><b>H2.</b> sin(α + β) = sinα cosβ + cosα sinβ.</li>
+<li><b>H3.</b> Substitute and put over 65.</li>
+</ol>
+<p class="work">= (3/5)(5/13) + (4/5)(12/13)
+= 15/65 + 48/65</p>
+<p class="ans">sin(α + β) = 63/65</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Double and half angles</span> <span class="kind">Double angle</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Prove that (1 + sin 2A)/cos 2A = (1 + tan A)/(1 − tan A).&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write 1 + sin2A as (sinA + cosA)².</li>
+<li><b>H2.</b> Factor cos2A = (cosA − sinA)(cosA + sinA).</li>
+<li><b>H3.</b> Cancel the common factor and divide top and bottom by cosA.</li>
+</ol>
+<p class="work">(sinA + cosA)²/[(cosA − sinA)(cosA + sinA)]
+= (cosA + sinA)/(cosA − sinA)
+= (1 + tanA)/(1 − tanA)</p>
+<p class="ans">identity proved</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Addition and subtraction</span> <span class="kind">Exact value</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Find the exact value of tan 15°.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write 15° as 45° − 30°.</li>
+<li><b>H2.</b> Apply tan(A − B) with tan45° = 1 and tan30° = 1/√3.</li>
+<li><b>H3.</b> Rationalise (√3 − 1)/(√3 + 1) by multiplying by the conjugate.</li>
+</ol>
+<p class="work">tan15° = (1 − 1/√3)/(1 + 1/√3)
+= (√3 − 1)/(√3 + 1) = (√3 − 1)²/2
+= (4 − 2√3)/2</p>
+<p class="ans">tan 15° = 2 − √3</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 2 · Trigonometry</span>
+<span class="mid">Trigonometric Combination Formulae · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

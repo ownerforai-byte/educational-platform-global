@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4.3 Linear Combination, Dependence and Independence — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Linear Combination, Dependence and Independence — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Linear Combination, Dependence and Independence — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>4.3 · Linear Combination, Dependence and Independence — hardest questions</h1>
+<p class="topics"><b>Topics</b> Linear combination · Dependence and independence · Basis in the plane and in space · Vector proofs</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Linear combination</span> <span class="kind">Linear combination</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Express (7, 4) as a linear combination of (1, 2) and (3, 1).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write x(1, 2) + y(3, 1) = (7, 4).</li>
+<li><b>H2.</b> This gives x + 3y = 7 and 2x + y = 4.</li>
+<li><b>H3.</b> Solve the pair of simultaneous equations.</li>
+</ol>
+<p class="work">x + 3y = 7 and 2x + y = 4 ⇒ x = 1, y = 2</p>
+<p class="ans">(7, 4) = 1·(1, 2) + 2·(3, 1)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Basis in the plane and in space</span> <span class="kind">Basis</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Show that (1, 2, 3), (0, 1, 2) and (0, 0, 1) form a basis of ℝ³.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Three vectors form a basis exactly when they are independent.</li>
+<li><b>H2.</b> Independence is equivalent to a non-zero scalar triple product.</li>
+<li><b>H3.</b> The determinant of the triangular array is the product of the diagonal.</li>
+</ol>
+<p class="work">[a b c] = |1 2 3; 0 1 2; 0 0 1| = 1 ≠ 0</p>
+<p class="ans">independent (and three of them), so they span ℝ³ — a basis</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Dependence and independence</span> <span class="kind">Dependence</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>For what λ are (1, 2, 3) and (2, 4, λ) linearly dependent?&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Two vectors are dependent when one is a scalar multiple of the other.</li>
+<li><b>H2.</b> The first components give factor 2.</li>
+<li><b>H3.</b> Then the third component forces λ = 2·3.</li>
+</ol>
+<p class="work">(2, 4, λ) = 2(1, 2, 3) ⇒ λ = 6</p>
+<p class="ans">λ = 6</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Dependence and independence</span> <span class="kind">Dependence</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Show that the set (1,0,0), (0,1,0), (0,0,1), (1,1,1) is dependent by finding an explicit relation.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> With four vectors in ℝ³ a dependence must exist.</li>
+<li><b>H2.</b> Try expressing the last one using the first three.</li>
+<li><b>H3.</b> Combine (1,1,1) − (1,0,0) − (0,1,0) − (0,0,1).</li>
+</ol>
+<p class="work">(1,1,1) − (1,0,0) − (0,1,0) − (0,0,1) = (0,0,0)</p>
+<p class="ans">v₄ − v₁ − v₂ − v₃ = 0 with a non-zero coefficient on v₄, so the set is dependent</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Linear combination</span> <span class="kind">Linear combination</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Find a and b if a(1, 1, 0) + b(0, 1, 1) = (2, 3, 1).&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Compare the three components one at a time.</li>
+<li><b>H2.</b> The first component gives a = 2.</li>
+<li><b>H3.</b> The third gives b = 1; the second is then a consistency check.</li>
+</ol>
+<p class="work">a = 2, b = 1; middle: 2 + 1 = 3 ✓</p>
+<p class="ans">a = 2, b = 1</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Vector proofs</span> <span class="kind">Vector proof</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Prove that if a, b, c are coplanar then they are linearly dependent.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Coplanarity means zero scalar triple product.</li>
+<li><b>H2.</b> That gives a determinant of the three vectors equal to zero.</li>
+<li><b>H3.</b> A zero determinant means the rows are linearly dependent, giving scalars not all zero with αa + βb + γc = 0.</li>
+</ol>
+<p class="work">[a b c] = 0 ⇒ det(a; b; c) = 0
+⇒ the rows are linearly dependent</p>
+<p class="ans">there exist α, β, γ (not all zero) with αa + βb + γc = 0, so the vectors are dependent</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 4 · Vectors</span>
+<span class="mid">Linear Combination, Dependence and Independence · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

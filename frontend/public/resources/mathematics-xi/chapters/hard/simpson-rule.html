@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.4 Simpson's One-Third Rule — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Simpson's One-Third Rule — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Simpson's One-Third Rule — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>7.4 · Simpson's One-Third Rule — hardest questions</h1>
+<p class="topics"><b>Topics</b> The formula · Odd/even strip requirement · Error order · Comparing with the trapezoidal rule</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>The formula</span> <span class="kind">Applied</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Evaluate ∫₀² x³ dx by Simpson's rule with h = 0.5 and compare with the exact value.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Four strips give ordinates 0, 0.125, 1, 3.375, 8.</li>
+<li><b>H2.</b> Use (h/3)[y₀ + y₄ + 4(y₁ + y₃) + 2y₂].</li>
+<li><b>H3.</b> The exact value is x⁴/4 = 4 at x = 2.</li>
+</ol>
+<p class="work">= (0.5/3)[0 + 8 + 4(3.5) + 2(1)]
+= (1/6)(24)</p>
+<p class="ans">4 — exact, as Simpson's rule is for every cubic</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Odd/even strip requirement</span> <span class="kind">Odd/even strips</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Estimate ∫₀¹ dx/(1 + x) using Simpson's rule with h = 0.25.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Ordinates: 1, 0.8, 0.6667, 0.5714, 0.5.</li>
+<li><b>H2.</b> 4(0.8 + 0.5714) + 2(0.6667) + 1.5 = 8.319.</li>
+<li><b>H3.</b> Multiply by h/3 = 1/12.</li>
+</ol>
+<p class="work">= (0.25/3)[1.5 + 5.4857 + 1.3334]
+= 0.08333 × 8.3191</p>
+<p class="ans">≈ 0.69326 (exact ln 2 = 0.69315 — five-figure accuracy)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>The formula</span> <span class="kind">Exactness</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Show that Simpson's rule gives ∫₀¹ x² dx exactly with two strips.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> With h = 0.5 the ordinates are 0, 0.25, 1.</li>
+<li><b>H2.</b> Weights are 1, 4, 1 and the multiplier is h/3.</li>
+<li><b>H3.</b> (0.5/3)(0 + 1 + 4(0.25)).</li>
+</ol>
+<p class="work">= (0.5/3)(2) = 1/3</p>
+<p class="ans">exact — x² is a parabola and the rule fits a parabola through the three points</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Comparing with the trapezoidal rule</span> <span class="kind">Applied</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Estimate ∫₀^{π/2} sin x dx by Simpson's rule with h = π/4.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Ordinates 0, 0.7071, 1; the multiplier is h/3 = π/12.</li>
+<li><b>H2.</b> Only the middle ordinate gets weight 4.</li>
+<li><b>H3.</b> = (π/12)(0 + 1 + 4(0.7071)).</li>
+</ol>
+<p class="work">= 0.2618 × 3.8284</p>
+<p class="ans">≈ 1.0023 (exact 1, error about 0.0023 — much better than the trapezoidal 0.052)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Error order</span> <span class="kind">Error order</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Explain why Simpson's rule is exact for every cubic.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The rule replaces three consecutive points by a parabola.</li>
+<li><b>H2.</b> Its error term contains the fourth derivative f⁗.</li>
+<li><b>H3.</b> For a cubic the fourth derivative is zero.</li>
+</ol>
+<p class="work">error ∝ (b − a)h⁴ f⁗ and f⁗ = 0 for any cubic</p>
+<p class="ans">the error vanishes, so cubics are integrated exactly</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Comparing with the trapezoidal rule</span> <span class="kind">Comparison</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Estimate ∫₀¹ dx/(1 + x²) by both rules with h = 0.25 and compare with π/4.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Ordinates: 1, 0.94118, 0.8, 0.64, 0.5.</li>
+<li><b>H2.</b> Trapezoidal: 0.125[1.5 + 2(2.38118)].</li>
+<li><b>H3.</b> Simpson: (0.25/3)[1.5 + 4(1.58118) + 1.6].</li>
+</ol>
+<p class="work">trapezoidal ≈ 0.78280
+Simpson ≈ 0.78539
+exact π/4 = 0.785398</p>
+<p class="ans">Simpson is accurate to five decimals; the trapezoidal rule is off by about 0.0026</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Simpson's One-Third Rule · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

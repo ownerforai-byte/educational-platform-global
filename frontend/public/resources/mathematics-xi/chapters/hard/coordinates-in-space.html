@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3.3 Coordinates in Space — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Coordinates in Space — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Coordinates in Space — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>3.3 · Coordinates in Space — hardest questions</h1>
+<p class="topics"><b>Topics</b> Distance and section formulae · Direction cosines and ratios · Angle between lines · Parallel and perpendicular tests</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Distance and section formulae</span> <span class="kind">Distance formula</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Find the distance between the points (3, −1, 2) and (1, 2, 3).&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Subtract corresponding coordinates to get the displacement vector.</li>
+<li><b>H2.</b> The distance is the magnitude of that vector.</li>
+<li><b>H3.</b> (−2)² + 3² + 1² = 14.</li>
+</ol>
+<p class="work">d = √((3−1)² + (−1−2)² + (2−3)²)
+= √(4 + 9 + 1)</p>
+<p class="ans">√14 units</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Distance and section formulae</span> <span class="kind">Section formula</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Find the point that divides A(2, −1, 3) and B(4, 3, −1) internally in the ratio 2 : 3.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Use ((mx₂ + nx₁)/(m + n), (my₂ + ny₁)/(m + n), (mz₂ + nz₁)/(m + n)).</li>
+<li><b>H2.</b> With m = 2, n = 3: 2B + 3A over 5.</li>
+<li><b>H3.</b> Compute each coordinate separately.</li>
+</ol>
+<p class="work">x = (2·4 + 3·2)/5 = 14/5
+y = (2·3 + 3·(−1))/5 = 3/5
+z = (2·(−1) + 3·3)/5 = 7/5</p>
+<p class="ans">(14/5, 3/5, 7/5)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Direction cosines and ratios</span> <span class="kind">Direction cosines</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Find the direction cosines of the vector (2, 2, −1).&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The direction cosines are the components divided by the magnitude.</li>
+<li><b>H2.</b> |v| = √(4 + 4 + 1) = 3.</li>
+<li><b>H3.</b> Divide each component by 3 and check l² + m² + n² = 1.</li>
+</ol>
+<p class="work">|v| = 3 ⇒ (2/3, 2/3, −1/3)</p>
+<p class="ans">l = 2/3, m = 2/3, n = −1/3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Angle between lines</span> <span class="kind">Angle between lines</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Find the angle between the lines whose direction ratios are (1, 2, 2) and (2, 3, 6).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Use cosθ = (a₁a₂ + b₁b₂ + c₁c₂)/(|v₁||v₂|).</li>
+<li><b>H2.</b> The dot product is 2 + 6 + 12 = 20.</li>
+<li><b>H3.</b> |v₁| = 3 and |v₂| = 7.</li>
+</ol>
+<p class="work">cosθ = 20/(3·7) = 20/21</p>
+<p class="ans">θ = cos⁻¹(20/21) ≈ 17.8°</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Parallel and perpendicular tests</span> <span class="kind">Perpendicular test</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Find k so that the lines with direction ratios (1, k, 3) and (2, −1, 4) are perpendicular.&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Perpendicular lines have zero dot product of direction ratios.</li>
+<li><b>H2.</b> 1·2 + k·(−1) + 3·4 = 0.</li>
+<li><b>H3.</b> Solve the linear equation for k.</li>
+</ol>
+<p class="work">2 − k + 12 = 0</p>
+<p class="ans">k = 14</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Direction cosines and ratios</span> <span class="kind">Collinearity</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Show that the points (1, 2, 3), (2, 4, 6) and (3, 6, 9) are collinear.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Form two displacement vectors from the same base point.</li>
+<li><b>H2.</b> One vector should be a scalar multiple of the other.</li>
+<li><b>H3.</b> Here (2, 4, 6) − (1, 2, 3) = (1, 2, 3) and (3, 6, 9) − (1, 2, 3) = (2, 4, 6).</li>
+</ol>
+<p class="work">AB = (1, 2, 3), AC = (2, 4, 6) = 2·AB</p>
+<p class="ans">the vectors are parallel, so all three points lie on one line</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 3 · Analytic Geometry</span>
+<span class="mid">Coordinates in Space · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

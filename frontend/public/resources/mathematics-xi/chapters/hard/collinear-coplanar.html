@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4.2 Collinear and Coplanar Vectors — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Collinear and Coplanar Vectors — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Collinear and Coplanar Vectors — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>4.2 · Collinear and Coplanar Vectors — hardest questions</h1>
+<p class="topics"><b>Topics</b> Collinearity · Coplanarity by triple product · Perpendicular and unit vectors · Volume applications</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Collinearity</span> <span class="kind">Collinearity</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Show that (1, 2, 3), (2, 3, 4) and (3, 4, 5) are collinear.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Take differences from the first point.</li>
+<li><b>H2.</b> AB = (1, 1, 1) and AC = (2, 2, 2).</li>
+<li><b>H3.</b> Proportional displacement vectors mean one line.</li>
+</ol>
+<p class="work">AB = (1, 1, 1), AC = (2, 2, 2) = 2·AB</p>
+<p class="ans">AC is a multiple of AB, so the three points are collinear</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Coplanarity by triple product</span> <span class="kind">Coplanarity</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Are (1, 0, 0), (0, 1, 0) and (1, 1, 1) coplanar? Justify by the triple product.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Coplanar vectors have zero scalar triple product.</li>
+<li><b>H2.</b> The triple product is the determinant with these vectors as rows.</li>
+<li><b>H3.</b> The determinant of a triangular-looking array here equals 1.</li>
+</ol>
+<p class="work">[a b c] = |1 0 0; 0 1 0; 1 1 1| = 1·(1·1 − 0·1) = 1 ≠ 0</p>
+<p class="ans">not coplanar — the triple product is 1, so they span a solid</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Coplanarity by triple product</span> <span class="kind">Coplanarity</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Find λ so that (1, 1, 1), (2, 3, 4) and (1, λ, 3) are coplanar.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Set the scalar triple product to zero.</li>
+<li><b>H2.</b> Expand the determinant along the first row.</li>
+<li><b>H3.</b> Solve the resulting linear equation in λ.</li>
+</ol>
+<p class="work">|1 1 1; 2 3 4; 1 λ 3| = 1(9 − 4λ) − 1(6 − 4) + 1(2λ − 3)
+= 4 − 2λ = 0</p>
+<p class="ans">λ = 2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Volume applications</span> <span class="kind">Volume</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Find the volume of the parallelepiped whose edges are (1, 2, 3), (0, 1, 2) and (0, 0, 1).&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The volume is the absolute value of the scalar triple product.</li>
+<li><b>H2.</b> With an upper-triangular array the determinant is the product of the diagonal.</li>
+<li><b>H3.</b> 1 · 1 · 1 = 1.</li>
+</ol>
+<p class="work">|[a b c]| = |1·1·1| = 1</p>
+<p class="ans">volume = 1 cubic unit</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Volume applications</span> <span class="kind">Proof</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Prove that if a + b + c = 0 then [a b c] = 0.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The scalar triple product is linear in each vector.</li>
+<li><b>H2.</b> Substitute c = −a − b and expand.</li>
+<li><b>H3.</b> A triple product with a repeated vector vanishes, so both terms are zero.</li>
+</ol>
+<p class="work">c = −(a + b)
+[a b c] = −[a b a] − [a b b] = 0 − 0</p>
+<p class="ans">[a b c] = 0 — hence a, b, c are coplanar</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Volume applications</span> <span class="kind">Volume</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Find the volume of the tetrahedron with vertices (0,0,0), (1,0,0), (0,1,0) and (0,0,1).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Three edges from the origin are (1,0,0), (0,1,0), (0,0,1).</li>
+<li><b>H2.</b> The tetrahedron is one sixth of the corresponding parallelepiped.</li>
+<li><b>H3.</b> The triple product is 1.</li>
+</ol>
+<p class="work">V = (1/6)|[a b c]| = (1/6)(1)</p>
+<p class="ans">volume = 1/6 cubic units</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 4 · Vectors</span>
+<span class="mid">Collinear and Coplanar Vectors · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

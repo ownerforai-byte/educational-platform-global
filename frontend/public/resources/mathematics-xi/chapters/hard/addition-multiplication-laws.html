@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5.3 Addition, Multiplication and Independence — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Addition, Multiplication and Independence — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Addition, Multiplication and Independence — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>5.3 · Addition, Multiplication and Independence — hardest questions</h1>
+<p class="topics"><b>Topics</b> Addition law · Multiplication law · Independence · Conditional probability</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Addition law</span> <span class="kind">Addition law</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>If P(A) = 0.5, P(B) = 0.4 and P(A ∪ B) = 0.7, find P(A ∩ B), P(A | B) and test independence.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Use the addition law: P(A ∪ B) = P(A) + P(B) − P(A ∩ B).</li>
+<li><b>H2.</b> P(A ∩ B) = 0.5 + 0.4 − 0.7 = 0.2.</li>
+<li><b>H3.</b> Compare P(A ∩ B) with P(A)P(B), and use P(A|B) = P(A ∩ B)/P(B).</li>
+</ol>
+<p class="work">P(A ∩ B) = 0.2, P(A|B) = 0.2/0.4 = 0.5
+P(A)P(B) = 0.5·0.4 = 0.2</p>
+<p class="ans">P(A ∩ B) = 0.2; P(A|B) = 0.5; since P(A∩B) = P(A)P(B), the events are independent</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Multiplication law</span> <span class="kind">Multiplication law</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Two cards are drawn with replacement. Find the probability that both are kings.&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> With replacement the two draws are independent.</li>
+<li><b>H2.</b> P(king) = 4/52 = 1/13 for each draw.</li>
+<li><b>H3.</b> Multiply.</li>
+</ol>
+<p class="work">P = (1/13)(1/13)</p>
+<p class="ans">1/169</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Conditional probability</span> <span class="kind">Conditional probability</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>A bag has 3 red and 2 blue balls. Two are drawn without replacement. Find P(second is red | first is red).&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> After a red ball is drawn, 2 red remain.</li>
+<li><b>H2.</b> There are 4 balls left in total.</li>
+<li><b>H3.</b> The conditional probability is 2/4.</li>
+</ol>
+<p class="work">P(R₂|R₁) = 2/4</p>
+<p class="ans">1/2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Independence</span> <span class="kind">Independence</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>If P(A) = 1/3 and P(B) = 1/4 with A and B independent, find P(A ∪ B).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Independence gives P(A ∩ B) = P(A)P(B) = 1/12.</li>
+<li><b>H2.</b> Apply the addition law.</li>
+<li><b>H3.</b> 1/3 + 1/4 − 1/12 over the denominator 12.</li>
+</ol>
+<p class="work">= 4/12 + 3/12 − 1/12</p>
+<p class="ans">P(A ∪ B) = 1/2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Multiplication law</span> <span class="kind">Multiplication law</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>A problem is solved independently by two students with probabilities 1/2 and 1/3. Find the probability that the problem is solved.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The problem is unsolved only if both fail.</li>
+<li><b>H2.</b> P(both fail) = (1/2)(2/3).</li>
+<li><b>H3.</b> Subtract that from 1.</li>
+</ol>
+<p class="work">1 − (1/2)(2/3) = 1 − 1/3</p>
+<p class="ans">P(solved) = 2/3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Addition law</span> <span class="kind">Reasoning</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>P(A) = 0.6 and P(B) = 0.5. Can A and B be mutually exclusive? Justify.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Mutually exclusive means P(A ∩ B) = 0.</li>
+<li><b>H2.</b> The addition law would then give P(A ∪ B) = 1.1.</li>
+<li><b>H3.</b> No probability can exceed 1.</li>
+</ol>
+<p class="work">if exclusive: P(A ∪ B) = 0.6 + 0.5 = 1.1 &gt; 1</p>
+<p class="ans">impossible — the events must overlap; at least P(A ∩ B) = 0.1</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 5 · Statistics and Probability</span>
+<span class="mid">Addition, Multiplication and Independence · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

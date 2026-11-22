@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4.1 Vector Algebra, Dot and Cross Products — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Vector Algebra, Dot and Cross Products — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Vector Algebra, Dot and Cross Products — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>4.1 · Vector Algebra, Dot and Cross Products — hardest questions</h1>
+<p class="topics"><b>Topics</b> Magnitude and unit vector · Dot product · Cross product · Area, angle and projection</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Cross product</span> <span class="kind">Cross product</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>If |a| = 3, |b| = 4 and a·b = 6, find |a × b|.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The dot product gives the cosine: a·b = |a||b|cosθ.</li>
+<li><b>H2.</b> cosθ = 6/12 = 1/2, so θ = 60°.</li>
+<li><b>H3.</b> The cross product magnitude is |a||b|sinθ.</li>
+</ol>
+<p class="work">cosθ = 6/(3·4) = 1/2 ⇒ sinθ = √3/2
+|a × b| = 12·(√3/2)</p>
+<p class="ans">|a × b| = 6√3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Dot product</span> <span class="kind">Dot product</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Find λ so that (2, λ, 1) and (1, −1, 3) are perpendicular.&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Perpendicular vectors have zero dot product.</li>
+<li><b>H2.</b> 2·1 + λ·(−1) + 1·3 = 0.</li>
+<li><b>H3.</b> Solve the resulting linear equation.</li>
+</ol>
+<p class="work">2 − λ + 3 = 0</p>
+<p class="ans">λ = 5</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Area, angle and projection</span> <span class="kind">Area</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Find the area of the triangle with vertices A(1, 1, 1), B(1, 2, 3) and C(2, 3, 1).&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Form AB = B − A and AC = C − A.</li>
+<li><b>H2.</b> The area is ½|AB × AC|.</li>
+<li><b>H3.</b> Compute AB × AC = (0,1,2) × (1,2,0).</li>
+</ol>
+<p class="work">AB = (0, 1, 2), AC = (1, 2, 0)
+AB × AC = (1·0 − 2·2, 2·1 − 0·0, 0·2 − 1·1) = (−4, 2, −1)
+|AB × AC| = √(16 + 4 + 1) = √21</p>
+<p class="ans">area = √21/2 square units</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Area, angle and projection</span> <span class="kind">Projection</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Find the projection of (2, 3, 1) on (1, 2, 2).&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The projection length is (a·b)/|b|.</li>
+<li><b>H2.</b> a·b = 2 + 6 + 2 = 10.</li>
+<li><b>H3.</b> |b| = √(1 + 4 + 4) = 3.</li>
+</ol>
+<p class="work">(a·b)/|b| = 10/3</p>
+<p class="ans">projection = 10/3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Dot product</span> <span class="kind">Angle</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>If a + b + c = 0 with |a| = 3, |b| = 4 and |c| = 5, find the angle between a and b.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> From the sum, c = −(a + b).</li>
+<li><b>H2.</b> Square: c·c = a·a + 2a·b + b·b.</li>
+<li><b>H3.</b> That gives 25 = 9 + 16 + 2a·b, so a·b = 0.</li>
+</ol>
+<p class="work">25 = 9 + 2a·b + 16 ⇒ a·b = 0
+cosθ = 0</p>
+<p class="ans">θ = 90° — a and b are perpendicular</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Cross product</span> <span class="kind">Cross product</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Find a unit vector perpendicular to both (1, 1, 0) and (0, 1, 1).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The cross product of the two vectors is perpendicular to both.</li>
+<li><b>H2.</b> (1,1,0) × (0,1,1) = (1·1 − 0·1, 0·0 − 1·1, 1·1 − 1·0).</li>
+<li><b>H3.</b> Divide by its magnitude √3.</li>
+</ol>
+<p class="work">(1,1,0) × (0,1,1) = (1, −1, 1), |·| = √3</p>
+<p class="ans">±(1, −1, 1)/√3</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 4 · Vectors</span>
+<span class="mid">Vector Algebra, Dot and Cross Products · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

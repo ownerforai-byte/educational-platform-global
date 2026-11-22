@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.3 Trapezoidal Rule — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Trapezoidal Rule — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Trapezoidal Rule — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>7.3 · Trapezoidal Rule — hardest questions</h1>
+<p class="topics"><b>Topics</b> The formula · Building the table · Error behaviour · Comparing with the exact value</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Building the table</span> <span class="kind">Table</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Estimate ∫₀¹ x³ dx with the trapezoidal rule using h = 0.25.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Four strips mean five ordinates: 0, 0.015625, 0.125, 0.421875, 1.</li>
+<li><b>H2.</b> Multiply h/2 by (first + last + 2 × the middle sum).</li>
+<li><b>H3.</b> The middle sum is 0.015625 + 0.125 + 0.421875 = 0.5625.</li>
+</ol>
+<p class="work">= 0.125[0 + 1 + 2(0.5625)]
+= 0.125(2.125)</p>
+<p class="ans">≈ 0.2656 (exact 0.25, error 0.0156)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Building the table</span> <span class="kind">Table</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Estimate ∫₁² dx/x with the trapezoidal rule using h = 0.25.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Ordinates: 1, 0.8, 0.6667, 0.5714, 0.5.</li>
+<li><b>H2.</b> Middle sum = 0.8 + 0.6667 + 0.5714 = 2.0381.</li>
+<li><b>H3.</b> Multiply 0.125 by (1 + 0.5 + 2 × 2.0381).</li>
+</ol>
+<p class="work">= 0.125[1.5 + 4.0762]
+= 0.125(5.5762)</p>
+<p class="ans">≈ 0.6970 (exact ln 2 = 0.6931)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Error behaviour</span> <span class="kind">Error behaviour</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>For ∫₀¹ x² dx show numerically that halving h reduces the error by a factor of 4.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> h = 0.5 gives ordinates 0, 0.25, 1.</li>
+<li><b>H2.</b> h = 0.25 gives ordinates 0, 0.0625, 0.25, 0.5625, 1.</li>
+<li><b>H3.</b> Compare each error with the exact value 1/3.</li>
+</ol>
+<p class="work">h = 0.5: 0.25[0 + 1 + 2(0.25)] = 0.375, error 0.0417
+h = 0.25: 0.125[1 + 2(0.875)] = 0.34375, error 0.01042</p>
+<p class="ans">error falls from 0.0417 to 0.0104 — a factor of 4, as h² predicts</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Comparing with the exact value</span> <span class="kind">Applied</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Estimate ∫₀^{π/2} sin x dx with the trapezoidal rule using h = π/4.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Ordinates are sin 0 = 0, sin(π/4) = 0.7071, sin(π/2) = 1.</li>
+<li><b>H2.</b> Here h/2 = π/8.</li>
+<li><b>H3.</b> = (π/8)[0 + 1 + 2(0.7071)].</li>
+</ol>
+<p class="work">= 0.3927 × 2.4142</p>
+<p class="ans">≈ 0.9481 (exact 1, error about 0.052)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>The formula</span> <span class="kind">Exactness</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Show that the trapezoidal rule is exact for f(x) = 2x + 1 on [0, 2] with h = 1.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Ordinates: f(0) = 1, f(1) = 3, f(2) = 5.</li>
+<li><b>H2.</b> Apply (h/2)[y₀ + yₙ + 2Σ middle].</li>
+<li><b>H3.</b> Compare with the exact integral ∫₀²(2x + 1)dx.</li>
+</ol>
+<p class="work">= 0.5[1 + 5 + 2(3)] = 0.5(12) = 6
+exact = [x² + x]₀² = 6</p>
+<p class="ans">both are 6 — the rule is exact for every linear function</p>
+</div>
+<div class="cell">
+<p class="tag"><span>The formula</span> <span class="kind">Derivation</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Derive the trapezoidal rule from the areas of trapeziums.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Split [a, b] into n strips of width h.</li>
+<li><b>H2.</b> The i-th strip is a trapezium with parallel sides y_i and y_{i+1}.</li>
+<li><b>H3.</b> Its area is (h/2)(y_i + y_{i+1}); add all strips.</li>
+</ol>
+<p class="work">Σ (h/2)(y_i + y_{i+1}) = (h/2)[y₀ + 2y₁ + 2y₂ + … + 2y_{n−1} + yₙ]</p>
+<p class="ans">the end ordinates appear once and every interior ordinate twice</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Trapezoidal Rule · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.1 Bisection Method — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Bisection Method — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Bisection Method — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>7.1 · Bisection Method — hardest questions</h1>
+<p class="topics"><b>Topics</b> Sign-change test · Bisection steps · Iteration tables · Accuracy and error</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Bisection steps</span> <span class="kind">Iteration</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Apply three bisection steps to x³ − x − 1 = 0 on [1, 2].&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> First confirm the sign change: f(1) = −1 and f(2) = 5.</li>
+<li><b>H2.</b> Take midpoints 1.5, then 1.25 or 1.75 depending on the sign of f(1.5).</li>
+<li><b>H3.</b> Keep the half-bracket in which the sign change survives.</li>
+</ol>
+<p class="work">f(1) = −1, f(2) = 5
+x₁ = 1.5, f = 0.875 &gt; 0 ⇒ [1, 1.5]
+x₂ = 1.25, f = −0.2969 &lt; 0 ⇒ [1.25, 1.5]
+x₃ = 1.375, f = 0.2246 &gt; 0 ⇒ [1.25, 1.375]</p>
+<p class="ans">root ≈ 1.31, trapped in [1.25, 1.375]</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Accuracy and error</span> <span class="kind">Accuracy</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>An interval of width 1 is used for bisection. How many steps give an error below 0.005?&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The error bound after n steps is width/2ⁿ.</li>
+<li><b>H2.</b> Solve 1/2ⁿ &lt; 0.005, i.e. 2ⁿ &gt; 200.</li>
+<li><b>H3.</b> 2⁷ = 128 is too small; 2⁸ = 256 works.</li>
+</ol>
+<p class="work">2ⁿ &gt; 200 ⇒ n ≥ 8</p>
+<p class="ans">8 steps</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Sign-change test</span> <span class="kind">Reasoning</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Why must f be continuous for the bisection method to be valid?&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The method only uses the signs of f at the ends of a bracket.</li>
+<li><b>H2.</b> A sign change guarantees a root only if the graph does not jump.</li>
+<li><b>H3.</b> That guarantee is the intermediate value theorem.</li>
+</ol>
+<p class="work">f(a)f(b) &lt; 0 plus continuity ⇒ some c in (a, b) has f(c) = 0
+without continuity the graph can jump over the axis</p>
+<p class="ans">continuity is what turns a sign change into a guaranteed root</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Bisection steps</span> <span class="kind">Iteration</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Solve x² − 5 = 0 on [2, 3] using two bisection steps.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> f(2) = −1 and f(3) = 4.</li>
+<li><b>H2.</b> x₁ = 2.5 gives f = 1.25 &gt; 0, so the bracket shrinks to [2, 2.5].</li>
+<li><b>H3.</b> x₂ = 2.25 gives f = 0.0625 &gt; 0.</li>
+</ol>
+<p class="work">x₁ = 2.5, f = 1.25 &gt; 0 ⇒ [2, 2.5]
+x₂ = 2.25, f = 0.0625 &gt; 0 ⇒ [2, 2.25]</p>
+<p class="ans">root ≈ 2.24, inside [2, 2.25]</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Iteration tables</span> <span class="kind">Iteration table</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Build a four-row bisection table for x² − 5 = 0 on [2, 3].&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Each row records the bracket, its midpoint and the sign of f at the midpoint.</li>
+<li><b>H2.</b> Replace the endpoint whose f has the same sign as f(midpoint).</li>
+<li><b>H3.</b> Continue until four rows are filled.</li>
+</ol>
+<p class="work">x₁ = 2.5, f = +1.25 ⇒ [2, 2.5]
+x₂ = 2.25, f = +0.0625 ⇒ [2, 2.25]
+x₃ = 2.125, f = −0.4844 ⇒ [2.125, 2.25]
+x₄ = 2.1875, f = −0.2148 ⇒ [2.1875, 2.25]</p>
+<p class="ans">after 4 rows the root lies in [2.1875, 2.25]</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Accuracy and error</span> <span class="kind">Accuracy</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Compare the theoretical error after four bisection steps with the actual bracket width in the previous problem.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The start interval has width 1.</li>
+<li><b>H2.</b> Theory: error ≤ 1/2⁴.</li>
+<li><b>H3.</b> Measure the final bracket 2.1875 to 2.25.</li>
+</ol>
+<p class="work">theoretical bound = 1/16 = 0.0625
+actual width = 2.25 − 2.1875 = 0.0625</p>
+<p class="ans">they agree exactly — halving the bracket each step is the whole method</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Bisection Method · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>
