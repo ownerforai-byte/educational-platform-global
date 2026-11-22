@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Download } from "lucide-react";
+import { ArrowLeft, Download, ListChecks } from "lucide-react";
 import { PhysicsXiUnitBrief } from "@/components/content/physics-xi-unit-brief";
 import {
   PHYSICS_XI_ACADEMIC,
@@ -9,6 +9,10 @@ import {
   getPhysicsXiUnitById,
   physicsXiDocUrl,
 } from "@/lib/physics-xi-academic";
+import {
+  getPhysicsXiSolutionUnit,
+  physicsXiSolutionUrl,
+} from "@/lib/physics-xi-solutions";
 
 export function generateStaticParams() {
   return PHYSICS_XI_ACADEMIC_UNITS.map((unit) => ({ unit: unit.unitId }));
@@ -38,6 +42,7 @@ export default async function PhysicsXiUnitPage({
   const { unit } = await params;
   const brief = getPhysicsXiUnitById(unit);
   if (!brief) notFound();
+  const solutions = getPhysicsXiSolutionUnit(brief.unitId);
 
   return (
     <div className="mx-auto max-w-4xl space-y-8 py-8 md:py-14 px-4">
@@ -79,6 +84,17 @@ export default async function PhysicsXiUnitPage({
             <Download className="h-4 w-4" />
             Word brief
           </a>
+          {solutions ? (
+            <a
+              href={physicsXiSolutionUrl(solutions)}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            >
+              <ListChecks className="h-4 w-4" />
+              Exercise solutions
+            </a>
+          ) : null}
         </div>
       </header>
 

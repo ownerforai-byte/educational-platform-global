@@ -44,6 +44,23 @@ export default function PhysicsXiAcademicPage() {
         </div>
       </div>
 
+      <Link
+        href="/resources/physics-xi/solutions"
+        className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/60 bg-card p-5 shadow-sm transition-colors hover:border-primary/30"
+      >
+        <div>
+          <p className="text-sm font-semibold">Exercise solutions &amp; conceptual bank</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            All twenty-six units worked out in NEB answer style, with the 2-mark bank and the
+            long-answer set.
+          </p>
+        </div>
+        <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+          Open solutions
+          <ArrowLeft className="h-4 w-4 rotate-180" />
+        </span>
+      </Link>
+
       <PhysicsXiAcademicGrid
         units={PHYSICS_XI_ACADEMIC_UNITS}
         contentAreas={PHYSICS_XI_CONTENT_AREAS}
