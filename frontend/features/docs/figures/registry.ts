@@ -1074,6 +1074,83 @@ import { MolecularFromEmpiricalDrill } from "./molecular-from-empirical-drill";
 import { HydrationFormulaDrill } from "./hydration-formula-drill";
 import { RatioClearingPanel } from "./ratio-clearing-panel";
 import { PercentToFormulaFlow } from "./percent-to-formula-flow";
+import { OctetRuleLadder } from "./octet-rule-ladder";
+import { ElectronTransferReaction } from "./electron-transfer-reaction";
+import { DuetRulePanel } from "./duet-rule-panel";
+import { OctetLimitationsPanel } from "./octet-limitations-panel";
+import { KosselLewisContrast } from "./kossel-lewis-contrast";
+import { ValenceElectronAddress } from "./valence-electron-address";
+import { OctetAchievementDrill } from "./octet-achievement-drill";
+import { IonicFormationReaction } from "./ionic-formation-reaction";
+import { LatticeEnergyPanel } from "./lattice-energy-panel";
+import { IonicPropertyTable } from "./ionic-property-table";
+import { FajansPolarisationPanel } from "./fajans-polarisation-panel";
+import { IonicConductionDrill } from "./ionic-conduction-drill";
+import { IonicVsCovalentProperties } from "./ionic-vs-covalent-properties";
+import { IonicSolubilityPanel } from "./ionic-solubility-panel";
+import { CovalentBondTypes } from "./covalent-bond-types";
+import { CoordinateAmmoniumReaction } from "./coordinate-ammonium-reaction";
+import { HydroniumFormationRxn } from "./hydronium-formation-rxn";
+import { CoordinateExamplesTrio } from "./coordinate-examples-trio";
+import { CovalentPropertyContrast } from "./covalent-property-contrast";
+import { H2EnergyProfile } from "./h2-energy-profile";
+import { InterVsIntramolecular } from "./inter-vs-intramolecular";
+import { LewisProcedureSteps } from "./lewis-procedure-steps";
+import { LewisGallerySimple } from "./lewis-gallery-simple";
+import { LewisGalleryMultiple } from "./lewis-gallery-multiple";
+import { LewisGalleryExpanded } from "./lewis-gallery-expanded";
+import { FormalChargeDrill } from "./formal-charge-drill";
+import { ElectronBudgetPanel } from "./electron-budget-panel";
+import { LewisIonicVsMolecular } from "./lewis-ionic-vs-molecular";
+import { ResonanceOzonePair } from "./resonance-ozone-pair";
+import { ResonanceCarbonateTrio } from "./resonance-carbonate-trio";
+import { ResonanceBenzenePanel } from "./resonance-benzene-panel";
+import { ResonanceVsEquilibrium } from "./resonance-vs-equilibrium";
+import { ResonanceBondOrderDrill } from "./resonance-bond-order-drill";
+import { ResonanceConditionsPanel } from "./resonance-conditions-panel";
+import { ResonanceEnergyPanel } from "./resonance-energy-panel";
+import { VseprPostulatesPanel } from "./vsepr-postulates-panel";
+import { RepulsionOrderPanel } from "./repulsion-order-panel";
+import { ParentGeometriesTrio } from "./parent-geometries-trio";
+import { VseprAngleLadder } from "./vsepr-angle-ladder";
+import { Pcl5TbpShape } from "./pcl5-tbp-shape";
+import { Sf6OctahedralShape } from "./sf6-octahedral-shape";
+import { BentLinearDrill } from "./bent-linear-drill";
+import { VbtOverlapMechanism } from "./vbt-overlap-mechanism";
+import { SigmaOverlapTypes } from "./sigma-overlap-types";
+import { PiCloudPanel } from "./pi-cloud-panel";
+import { EtheneBondingMap } from "./ethene-bonding-map";
+import { EthyneBondingMap } from "./ethyne-bonding-map";
+import { RotationLockPanel } from "./rotation-lock-panel";
+import { BondCompositionAudit } from "./bond-composition-audit";
+import { MethaneSp3Stages } from "./methane-sp3-stages";
+import { EtheneSp2Plan } from "./ethene-sp2-plan";
+import { EthyneSpLinear } from "./ethyne-sp-linear";
+import { SCharacterLadder } from "./s-character-ladder";
+import { LonePairHybridPanel } from "./lone-pair-hybrid-panel";
+import { HybridCountDrill } from "./hybrid-count-drill";
+import { ExtendedHybridPanel } from "./extended-hybrid-panel";
+import { BondLengthLadder } from "./bond-length-ladder";
+import { DipoleVectorConvention } from "./dipole-vector-convention";
+import { ZeroDipoleClub } from "./zero-dipole-club";
+import { IonicCharacterScale } from "./ionic-character-scale";
+import { HannaySmythDrill } from "./hannay-smyth-drill";
+import { Nf3Nh3DipoleContrast } from "./nf3-nh3-dipole-contrast";
+import { HfHiBondTrend } from "./hf-hi-bond-trend";
+import { VdwForceLadder } from "./vdw-force-ladder";
+import { DispersionSizeLadder } from "./dispersion-size-ladder";
+import { HydrogenBondAnatomy } from "./hydrogen-bond-anatomy";
+import { WaterHbondNetwork } from "./water-hbond-network";
+import { BpAnomalyChart } from "./bp-anomaly-chart";
+import { IceDensityPanel } from "./ice-density-panel";
+import { NitrophenolContrast } from "./nitrophenol-contrast";
+import { ElectronSeaModel } from "./electron-sea-model";
+import { MetallicPropertyMap } from "./metallic-property-map";
+import { SlidingTestContrast } from "./sliding-test-contrast";
+import { BandTheoryPanel } from "./band-theory-panel";
+import { MpLadderMetals } from "./mp-ladder-metals";
+import { AlloyTypesPanel } from "./alloy-types-panel";
+import { ConductivityDrill } from "./conductivity-drill";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -1732,6 +1809,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     title: "Hybrid orbitals and molecular shape",
     figures: [
       {
+        Component: MethaneSp3Stages,
+        caption:
+          "Methane in four stages: ground state, promotion to 2s1 2p3, hybridisation into four sp3 orbitals, and four identical C-H bonds at 109.5 degrees (NEB 2024).",
+        alt: "Methane sp3 hybridisation four stages promotion overlap tetrahedral",
+        keyword: "promotion",
+      },
+      {
+        Component: EtheneSp2Plan,
+        caption:
+          "sp2 carbon: three hybrids in a plane at 120 degrees and one unhybridised p orbital standing perpendicular, ready for the pi bond.",
+        alt: "Ethene sp2 hybridisation three orbitals plane perpendicular p orbital",
+        keyword: "trigonal",
+      },
+      {
+        Component: EthyneSpLinear,
+        caption:
+          "sp carbon: two hybrids in a line at 180 degrees and two spare p orbitals that build the two pi bonds of the triple bond.",
+        alt: "Ethyne sp hybridisation two hybrids linear two leftover p orbitals",
+        keyword: "linear",
+      },
+      {
+        Component: SCharacterLadder,
+        caption:
+          "The s-character ladder: sp carries 50 percent s, sp2 33, sp3 25 - more s means stronger, shorter bonds and wider angles.",
+        alt: "S character ladder sp sp2 sp3 percent bond strength angles",
+        keyword: "character",
+      },
+      {
+        Component: LonePairHybridPanel,
+        caption:
+          "Lone pairs occupy hybrids too: ammonia is sp3 with one lone pair (107 degrees), water sp3 with two (104.5 degrees).",
+        alt: "Lone pairs in sp3 hybrids ammonia water compressed angles",
+        keyword: "lone",
+      },
+      {
+        Component: HybridCountDrill,
+        caption:
+          "Count domains, name the hybrid: two gives sp, three sp2, four sp3 - VSEPR and hybridisation agree by construction.",
+        alt: "Hybrid count drill electron domains to hybridisation type table",
+        keyword: "domains",
+      },
+      {
+        Component: ExtendedHybridPanel,
+        caption:
+          "Beyond s and p: SF6 is sp3d2 octahedral, IF7 sp3d3 pentagonal bipyramidal - the same hybrids-equal-domains rule (NEB 2024).",
+        alt: "Extended hybridisation sulphur hexafluoride sp3d2 iodine heptafluoride sp3d3",
+        keyword: "octahedral",
+      },
+      {
         Component: HybridisationShapes,
         caption:
           "Hybrid orbitals arrange themselves as far apart as possible: four sp³ orbitals at 109.5°, three sp² orbitals at 120° plus a perpendicular p orbital, two sp orbitals at 180°.",
@@ -1756,6 +1882,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     title: "Ionic bond formation",
     figures: [
       {
+        Component: IonicFormationReaction,
+        caption:
+          "Magnesium chloride as a balanced electron ledger: Mg loses two electrons, each chlorine takes one, and MgCl2 crystallises in a 1:2 lattice.",
+        alt: "Magnesium chloride formation reaction with electron transfer balanced oxidation reduction",
+        keyword: "electron",
+      },
+      {
+        Component: LatticeEnergyPanel,
+        caption:
+          "Lattice energy is the glue: the energy released when gaseous ions pack into the solid lattice - about 787 kJ per mole for NaCl, more for MgO.",
+        alt: "Sodium chloride cubic lattice with lattice energy definition and values",
+        keyword: "lattice",
+      },
+      {
+        Component: IonicPropertyTable,
+        caption:
+          "Properties with numbers: NaCl melts at 801 C, MgO at 2852 C; hard but brittle; conducts only when molten or dissolved.",
+        alt: "Ionic compound properties table melting point hardness conduction solubility volatility",
+        keyword: "melting",
+      },
+      {
+        Component: FajansPolarisationPanel,
+        caption:
+          "Fajan's rules in one picture: the tiny Li+ distorts the chloride cloud far more than Na+ does, so LiCl carries more covalent character (NEB 2024).",
+        alt: "Fajans rules polarisation of chloride by lithium and sodium cations covalent character",
+        keyword: "fajan",
+      },
+      {
+        Component: IonicConductionDrill,
+        caption:
+          "When does salt conduct? Only when ions can move - never as a solid, always when molten or dissolved.",
+        alt: "Ionic conduction drill solid molten aqueous sodium chloride mobile ions",
+        keyword: "molten",
+      },
+      {
+        Component: IonicVsCovalentProperties,
+        caption:
+          "Side-by-side properties: ionic compounds are hard high-melting solids that dissolve in water; covalent compounds span gases to soft solids and favour hexane.",
+        alt: "Ionic versus covalent compound properties contrast table",
+        keyword: "covalent",
+      },
+      {
+        Component: IonicSolubilityPanel,
+        caption:
+          "Water dissolves salt by hydration: the oxygen end turns to Na+, the hydrogen ends to Cl-, and hydration energy pays the lattice bill.",
+        alt: "Water hydrating sodium and chloride ions dissolving ionic crystal ion dipole",
+        keyword: "water",
+      },
+      {
         Component: IonicCovalentBonding,
         caption:
           "Left: sodium transfers its valence electron to chlorine — the Na⁺ and Cl⁻ ions then attract electrostatically. Compare with the shared pair on the right.",
@@ -1767,6 +1942,55 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
   "covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds": {
     title: "Covalent bond formation",
     figures: [
+      {
+        Component: CovalentBondTypes,
+        caption:
+          "Single, double, triple: more shared pairs mean shorter, stronger bonds - C-C 154 pm and 348 kJ/mol up to C-C triple at 120 pm and 839.",
+        alt: "Single double triple covalent bonds with lengths and energies",
+        keyword: "triple",
+      },
+      {
+        Component: CoordinateAmmoniumReaction,
+        caption:
+          "The coordinate bond as a reaction: ammonia donates its lone pair to H+ and ammonium forms - once made, all four N-H bonds are identical.",
+        alt: "Ammonia plus hydrogen ion reaction forming ammonium coordinate covalent bond",
+        keyword: "lone",
+      },
+      {
+        Component: HydroniumFormationRxn,
+        caption:
+          "Water as a base: H2O donates a lone pair to H+ and the hydronium ion H3O+ forms - the acid of aqueous chemistry.",
+        alt: "Hydronium ion formation reaction water donating lone pair to proton",
+        keyword: "coordinate",
+      },
+      {
+        Component: CoordinateExamplesTrio,
+        caption:
+          "The coordinate-bond gallery: NH4+, H3O+ and the NH3-BF3 adduct - each with a donor, an acceptor, and one pair from a single source.",
+        alt: "Coordinate bond examples ammonium hydronium ammonia boron trifluoride adduct",
+        keyword: "coordinate",
+      },
+      {
+        Component: CovalentPropertyContrast,
+        caption:
+          "Both covalent, wildly different: diamond is a giant network melting at 3550 C, iodine a molecular solid melting at 114 C.",
+        alt: "Diamond giant covalent network versus iodine molecular solid melting points",
+        keyword: "diamond",
+      },
+      {
+        Component: H2EnergyProfile,
+        caption:
+          "The energy dip that is a bond: as two hydrogens approach, potential energy bottoms out at 74 pm and 436 kJ per mole.",
+        alt: "Hydrogen molecule potential energy curve minimum at 74 picometres 436 kilojoules",
+        keyword: "436",
+      },
+      {
+        Component: InterVsIntramolecular,
+        caption:
+          "Inside strong, between weak: covalent O-H bonds survive boiling at 463 kJ/mol; the forces between molecules break at 100 C.",
+        alt: "Intramolecular covalent bonds versus intermolecular forces in water",
+        keyword: "intermolecular",
+      },
       {
         Component: IonicCovalentBonding,
         caption:
@@ -8949,6 +9173,439 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       },
     ],
   },
+  "valence-shell-valence-electron-and-octet-theory": {
+    title: "The octet rule at work",
+    figures: [
+      {
+        Component: OctetRuleLadder,
+        caption:
+          "Kossel and Lewis proposed that atoms bond to copy a noble gas: helium holds 2, neon 2 and 8, argon 2, 8 and 8 - the stability targets every bond chases.",
+        alt: "Octet rule ladder of noble gas electron configurations helium neon argon stability targets",
+        keyword: "octet",
+      },
+      {
+        Component: ElectronTransferReaction,
+        caption:
+          "The ionic bond written as a reaction: sodium gives one electron, chlorine takes it, and the two ions lock into a lattice - give, take, combine.",
+        alt: "Electron transfer reaction sequence sodium chlorine ions forming sodium chloride",
+        keyword: "transfer",
+      },
+      {
+        Component: DuetRulePanel,
+        caption:
+          "Hydrogen, helium and the lithium cation stop at two electrons - the duet rule is the smallest exception to the octet story.",
+        alt: "Duet rule panel hydrogen helium lithium cation first shell two electrons",
+        keyword: "duet",
+      },
+      {
+        Component: OctetLimitationsPanel,
+        caption:
+          "Five places the octet rule fails: incomplete octets in BeCl2 and BF3, expanded octets in PCl5 and SF6, odd electrons in NO, noble-gas compounds like XeF2, and no shape prediction.",
+        alt: "Limitations of octet rule with beryllium chloride boron trifluoride phosphorus pentachloride examples",
+        keyword: "limitation",
+      },
+      {
+        Component: KosselLewisContrast,
+        caption:
+          "Two routes to the same octet: Kossel transfers electrons between metal and non-metal; Lewis shares pairs between non-metals.",
+        alt: "Kossel transfer versus Lewis sharing routes to complete octets",
+        keyword: "kossel",
+      },
+      {
+        Component: ValenceElectronAddress,
+        caption:
+          "Only the outermost shell bonds: sodium carries one valence electron in 3s, chlorine carries seven in 3s and 3p - the addresses that decide chemistry.",
+        alt: "Valence shell and valence electron addresses of sodium and chlorine",
+        keyword: "valence",
+      },
+      {
+        Component: OctetAchievementDrill,
+        caption:
+          "Drill: match each ion to the noble gas it copies - sodium and magnesium ions reach neon, oxide reaches neon, chloride reaches argon.",
+        alt: "Ion to noble gas configuration drill sodium magnesium oxide chloride",
+        keyword: "noble",
+      },
+    ],
+  },
+  "lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements": {
+    title: "Lewis structures, drawn to order",
+    figures: [
+      {
+        Component: LewisProcedureSteps,
+        caption:
+          "Five moves to any Lewis structure: count electrons, build the skeleton, add single bonds, park leftovers, then promote to multiple bonds where needed.",
+        alt: "Five step Lewis structure drawing procedure electron count skeleton bonds",
+        keyword: "skeleton",
+      },
+      {
+        Component: LewisGallerySimple,
+        caption:
+          "The simple hydrides: water with two lone pairs (bent, 104.5), ammonia with one (pyramidal, 107), methane with none (tetrahedral, 109.5).",
+        alt: "Lewis dot structures of water ammonia methane with lone pairs and angles",
+        keyword: "bent",
+      },
+      {
+        Component: LewisGalleryMultiple,
+        caption:
+          "Carbon dioxide spends its 16-electron budget on two double bonds (linear); boron trifluoride leaves boron with six electrons - a stable incomplete octet.",
+        alt: "Lewis structures carbon dioxide double bonds and boron trifluoride incomplete octet",
+        keyword: "linear",
+      },
+      {
+        Component: LewisGalleryExpanded,
+        caption:
+          "Period 3 opens the third shell: PCl5 carries ten electrons around phosphorus, SF6 twelve around sulphur - expanded octets, stable and real.",
+        alt: "Lewis structures phosphorus pentachloride and sulphur hexafluoride expanded octets",
+        keyword: "expanded",
+      },
+      {
+        Component: FormalChargeDrill,
+        caption:
+          "Formal charge audit on ozone: FC = V - N - B/2 gives +1 on the central oxygen, -1 on the single-bonded end, 0 on the double-bonded end.",
+        alt: "Formal charge calculation table for ozone valence nonbonding bonding electrons",
+        keyword: "formal",
+      },
+      {
+        Component: ElectronBudgetPanel,
+        caption:
+          "Step one is always the budget: CO2 has 16 valence electrons, ozone 18, carbonate 24 - anions add, cations subtract.",
+        alt: "Valence electron budget counting for common molecules and ions",
+        keyword: "valence",
+      },
+      {
+        Component: LewisIonicVsMolecular,
+        caption:
+          "Two notations, two meanings: brackets and charges for ions, shared pairs drawn between atoms for molecules.",
+        alt: "Lewis notation contrast bracketed ions versus shared electron pairs",
+        keyword: "octet",
+      },
+    ],
+  },
+  "resonance": {
+    title: "Resonance: the average is the truth",
+    figures: [
+      {
+        Component: ResonanceOzonePair,
+        caption:
+          "Ozone's two canonical forms flip the double bond, yet experiment finds both bonds equal at 128 pm - the resonance hybrid, not either drawing.",
+        alt: "Ozone resonance two canonical forms with 128 picometre equal bonds",
+        keyword: "128",
+      },
+      {
+        Component: ResonanceCarbonateTrio,
+        caption:
+          "Carbonate's three equivalent forms share one double bond three ways: every C-O measures 129 pm and the bond order is one and a third.",
+        alt: "Carbonate ion resonance three forms equal bonds bond order one third",
+        keyword: "carbonate",
+      },
+      {
+        Component: ResonanceBenzenePanel,
+        caption:
+          "Benzene's Kekule pair and the circle notation: all six C-C bonds read 139 pm, between single and double - the classic resonance proof.",
+        alt: "Benzene resonance Kekule structures circle notation 139 picometre bonds",
+        keyword: "139",
+      },
+      {
+        Component: ResonanceVsEquilibrium,
+        caption:
+          "The resonance arrow is not the equilibrium arrow: one is bookkeeping with no reaction, the other is real molecules interconverting.",
+        alt: "Resonance arrow versus equilibrium arrow contrast bookkeeping versus reaction",
+        keyword: "arrow",
+      },
+      {
+        Component: ResonanceBondOrderDrill,
+        caption:
+          "Bond order under resonance is the total shared out: ozone 1.5, carbonate and nitrate one and a third, benzene 1.5.",
+        alt: "Resonance bond order drill ozone carbonate nitrate benzene averaged orders",
+        keyword: "bond order",
+      },
+      {
+        Component: ResonanceConditionsPanel,
+        caption:
+          "What may move: only electrons shift, atoms never do; forms must share the same framework, similar energy, and tidy charges.",
+        alt: "Conditions for valid resonance structures electrons move atoms fixed",
+        keyword: "electrons",
+      },
+      {
+        Component: ResonanceEnergyPanel,
+        caption:
+          "Resonance energy measured by shortfall: benzene hydrogenates 152 kJ per mole less than three isolated double bonds would predict.",
+        alt: "Resonance energy of benzene from hydrogenation enthalpy shortfall 150 kilojoules",
+        keyword: "150",
+      },
+    ],
+  },
+  "vsepr-theory-and-shapes-of-simple-molecules-bef2-bf3-ch4-ch3cl-pcl5-sf6-h2o-nh3-co2-h2s-ph3": {
+    title: "VSEPR: shapes from repulsion",
+    figures: [
+      {
+        Component: VseprPostulatesPanel,
+        caption:
+          "Five postulates do all the work: count domains, maximise separation, rank repulsions, count multiple bonds once, and let lone pairs compress angles.",
+        alt: "Five postulates of VSEPR theory electron domains separation repulsion",
+        keyword: "postulates",
+      },
+      {
+        Component: RepulsionOrderPanel,
+        caption:
+          "The repulsion ladder: lone pair-lone pair squeezes hardest, lone pair-bond pair next, bond pair-bond pair least - this alone explains every compressed angle.",
+        alt: "Repulsion order lone pair lone pair strongest bond pair weakest",
+        keyword: "repulsion",
+      },
+      {
+        Component: ParentGeometriesTrio,
+        caption:
+          "The parent geometries: two domains linear at 180, three trigonal planar at 120, four tetrahedral at 109.5.",
+        alt: "Parent electron geometries linear trigonal planar tetrahedral with angles",
+        keyword: "tetrahedral",
+      },
+      {
+        Component: VseprAngleLadder,
+        caption:
+          "Each lone pair squeezes further: methane 109.5, ammonia 107, water 104.5 - the classic compression ladder.",
+        alt: "Bond angle compression ladder methane ammonia water lone pairs",
+        keyword: "109.5",
+      },
+      {
+        Component: Pcl5TbpShape,
+        caption:
+          "PCl5 is trigonal bipyramidal with two bond species: axial bonds stretch to 219 pm under 90-degree crowding, equatorial stay at 204 pm.",
+        alt: "Phosphorus pentachloride trigonal bipyramidal axial equatorial bond lengths",
+        keyword: "axial",
+      },
+      {
+        Component: Sf6OctahedralShape,
+        caption:
+          "SF6: six bonds at exactly 90 degrees, octahedral and nonpolar by symmetry.",
+        alt: "Sulphur hexafluoride octahedral shape six bonds ninety degrees",
+        keyword: "octahedral",
+      },
+      {
+        Component: BentLinearDrill,
+        caption:
+          "Why is water bent but carbon dioxide linear? Count domains, not atoms: water has two lone pairs squeezing a bent shape; CO2 has none and stays straight (NEB 2024).",
+        alt: "Bent water versus linear carbon dioxide domain counting drill",
+        keyword: "bent",
+      },
+    ],
+  },
+  "elementary-idea-of-valence-bond-theory": {
+    title: "Valence bond theory: overlap makes bonds",
+    figures: [
+      {
+        Component: VbtOverlapMechanism,
+        caption:
+          "VBT in three frames: half-filled orbitals approach, overlap with opposite spins, and settle at the energy minimum we call the bond length.",
+        alt: "Valence bond theory overlap mechanism approach overlap bond formation",
+        keyword: "overlap",
+      },
+      {
+        Component: SigmaOverlapTypes,
+        caption:
+          "Three sigma recipes: s-s in H2, s-p in HCl, p-p head-on in Cl2 - density concentrated on the internuclear axis, the strongest link.",
+        alt: "Sigma bond overlap types s-s s-p p-p head-on with examples",
+        keyword: "sigma",
+      },
+      {
+        Component: PiCloudPanel,
+        caption:
+          "The pi bond: two parallel p orbitals overlap sideways, piling density above and below the axis - weaker than sigma, rotation-locked, never alone.",
+        alt: "Pi bond sideways overlap of parallel p orbitals electron cloud above below axis",
+        keyword: "sideways",
+      },
+      {
+        Component: EtheneBondingMap,
+        caption:
+          "Ethene mapped: two sp2 carbons, five sigma bonds in the plane, one pi cloud above and below - H-C-H at 120 degrees (NEB 2023).",
+        alt: "Ethene bonding map five sigma one pi bond planar 120 degrees",
+        keyword: "ethene",
+      },
+      {
+        Component: EthyneBondingMap,
+        caption:
+          "Ethyne mapped: sp carbons in a line, one sigma plus two perpendicular pi clouds wrapping the triple bond.",
+        alt: "Ethyne bonding map linear triple bond two perpendicular pi clouds",
+        keyword: "isomerism",
+      },
+      {
+        Component: RotationLockPanel,
+        caption:
+          "Rotation: ethane's sigma bond spins freely; ethene's pi bond locks the molecule planar - the origin of cis and trans isomers.",
+        alt: "Rotation free in ethane locked in ethene by pi bond cis trans isomerism",
+        keyword: "rotation",
+      },
+      {
+        Component: BondCompositionAudit,
+        caption:
+          "Audit every bond: single is 1 sigma, double 1 sigma plus 1 pi, triple 1 sigma plus 2 pi - sigma always comes first.",
+        alt: "Bond composition audit sigma and pi counts single double triple bonds",
+        keyword: "audit",
+      },
+    ],
+  },
+  "bond-characteristics-bond-length-ionic-character-dipole-moment": {
+    title: "Measuring bonds: length, character, dipole",
+    figures: [
+      {
+        Component: BondLengthLadder,
+        caption:
+          "Bond lengths at a glance: bond order squeezes (154, 134, 120 pm down the C-C family) while atomic size stretches (H-F 92 to H-I 160 pm).",
+        alt: "Bond length ladder carbon carbon and hydrogen halide bonds picometres",
+        keyword: "154",
+      },
+      {
+        Component: DipoleVectorConvention,
+        caption:
+          "The dipole arrow runs from positive to negative with a crossbar at the tail; mu = q x d, measured in debye (1 D = 3.33564 x 10^-30 C m).",
+        alt: "Dipole moment vector convention crossed arrow formula debye unit",
+        keyword: "debye",
+      },
+      {
+        Component: ZeroDipoleClub,
+        caption:
+          "The zero-dipole club: CO2, BF3, CH4 and CCl4 all carry polar bonds that cancel by symmetry - molecular polarity is vector arithmetic.",
+        alt: "Zero dipole molecules carbon dioxide boron trifluoride methane carbon tetrachloride symmetry",
+        keyword: "symmetry",
+      },
+      {
+        Component: IonicCharacterScale,
+        caption:
+          "Ionic character falls with electronegativity difference: HF about 43 percent, HCl 17, HBr 11, HI 5 - no bond is purely either.",
+        alt: "Ionic character scale hydrogen halides percent ionic character bars",
+        keyword: "ionic",
+      },
+      {
+        Component: HannaySmythDrill,
+        caption:
+          "Worked: HF's ionic character by two routes - dipole ratio 1.91 over 4.42 debye, and Hannay-Smyth 16(1.9) + 3.5(1.9)^2 - both land on 43 percent.",
+        alt: "Percentage ionic character of hydrogen fluoride worked calculation Hannay Smyth",
+        keyword: "hannay",
+      },
+      {
+        Component: Nf3Nh3DipoleContrast,
+        caption:
+          "Same pyramidal shape, opposite outcomes: NH3 reads 1.47 D because its bond dipoles reinforce the lone pair; NF3 reads 0.24 D because they fight it.",
+        alt: "Ammonia versus nitrogen trifluoride dipole moment direction contrast",
+        keyword: "direction",
+      },
+      {
+        Component: HfHiBondTrend,
+        caption:
+          "Longer means weaker: from H-F (92 pm, 565 kJ/mol) to H-I (160 pm, 297 kJ/mol), size grows, overlap worsens, ionic character fades.",
+        alt: "Hydrogen halide bond length versus strength trend chart",
+        keyword: "297",
+      },
+    ],
+  },
+  "vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application": {
+    title: "Weak forces, large consequences",
+    figures: [
+      {
+        Component: VdwForceLadder,
+        caption:
+          "The intermolecular ladder: London dispersion in everything, Debye and Keesom dipole terms above, and hydrogen bonding an order of magnitude stronger still.",
+        alt: "Intermolecular force ladder London dispersion Debye Keesom hydrogen bond",
+        keyword: "london",
+      },
+      {
+        Component: DispersionSizeLadder,
+        caption:
+          "Dispersion grows with electron count: F2 boils at -188 C, Cl2 at -34, Br2 at 59, I2 at 184 - same bonding, bigger clouds, solid iodine.",
+        alt: "Halogen boiling points dispersion forces fluorine chlorine bromine iodine",
+        keyword: "polarisab",
+      },
+      {
+        Component: HydrogenBondAnatomy,
+        caption:
+          "Anatomy of the hydrogen bond: X-H with X = F, O or N reaching a lone pair on Y - 5 to 40 kJ per mole, directional and demanding.",
+        alt: "Hydrogen bond anatomy donor acceptor requirements fluorine oxygen nitrogen",
+        keyword: "acceptor",
+      },
+      {
+        Component: WaterHbondNetwork,
+        caption:
+          "Water's four-connected network: two hydrogens to donate, two lone pairs to accept - the 3-D lattice behind the 100 C boiling point (NEB 2024).",
+        alt: "Water hydrogen bond network four connections tetrahedral high boiling point",
+        keyword: "network",
+      },
+      {
+        Component: BpAnomalyChart,
+        caption:
+          "The hydrogen-bond signature: H2O boils 160 degrees above H2S, HF 105 above HCl, NH3 55 above PH3 - gaps only hydrogen bonding explains.",
+        alt: "Boiling point anomalies water hydrogen fluoride ammonia versus group neighbours",
+        keyword: "boiling",
+      },
+      {
+        Component: IceDensityPanel,
+        caption:
+          "Ice floats because its tetrahedral lattice holds about 11 percent empty space: 0.92 against water's 1.00 g per cubic centimetre.",
+        alt: "Ice open hexagonal lattice density 0.92 versus water 1.00 floating",
+        keyword: "0.92",
+      },
+      {
+        Component: NitrophenolContrast,
+        caption:
+          "Architecture matters: ortho-nitrophenol spends its hydrogen bond internally and stays steam-volatile; para links molecules and boils high.",
+        alt: "Ortho versus para nitrophenol intra and intermolecular hydrogen bonding",
+        keyword: "nitrophenol",
+      },
+    ],
+  },
+  "metallic-bonding-and-properties-of-metallic-solids": {
+    title: "The bond that bends",
+    figures: [
+      {
+        Component: ElectronSeaModel,
+        caption:
+          "The electron sea: fixed metal cations bathed in delocalised valence electrons that belong to the whole crystal - the metallic bond itself.",
+        alt: "Electron sea model metal cations delocalised valence electrons",
+        keyword: "delocalised",
+      },
+      {
+        Component: MetallicPropertyMap,
+        caption:
+          "One mechanism, four properties: conduction, heat transfer, lustre and malleability all trace back to the mobile, non-directional electron cloud.",
+        alt: "Metallic property map conduction lustre malleability electron sea mechanism",
+        keyword: "malleab",
+      },
+      {
+        Component: SlidingTestContrast,
+        caption:
+          "The sliding test: metal layers slide and the sea re-adjusts (malleable); ionic layers slide, like charges meet, the crystal shatters (brittle).",
+        alt: "Metal bends ionic crystal shatters layer sliding contrast",
+        keyword: "brittle",
+      },
+      {
+        Component: BandTheoryPanel,
+        caption:
+          "Band theory in three gaps: conductors overlap, silicon spans about 1 eV (a semiconductor), diamond about 5.5 eV (an insulator).",
+        alt: "Band theory conductor semiconductor insulator energy gaps",
+        keyword: "band",
+      },
+      {
+        Component: MpLadderMetals,
+        caption:
+          "Melting climbs with the sea's cargo: sodium 98 C with one electron, magnesium 650 with two, aluminium 660 with three per atom.",
+        alt: "Melting point ladder sodium magnesium aluminium valence electrons",
+        keyword: "660",
+      },
+      {
+        Component: AlloyTypesPanel,
+        caption:
+          "Alloys are guests the sea tolerates: zinc substitutes in brass, carbon squeezes between iron atoms in steel - both block slip planes and harden the metal.",
+        alt: "Alloy types substitutional brass interstitial steel lattice diagrams",
+        keyword: "brass",
+      },
+      {
+        Component: ConductivityDrill,
+        caption:
+          "Who carries the charge: electrons in copper, ions only when salt is molten or dissolved - solid NaCl conducts nothing.",
+        alt: "Conductivity drill copper molten aqueous solid sodium chloride charge carriers",
+        keyword: "conduction",
+      },
+    ],
+  },
+
 };
 
 /**
