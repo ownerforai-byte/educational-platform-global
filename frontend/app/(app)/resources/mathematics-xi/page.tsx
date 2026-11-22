@@ -13,6 +13,7 @@ import {
   MATH_XI_PAPER_GROUPS,
   MATH_XI_PAPER_MARKS,
   MATH_XI_WORKBOOK_BASE,
+  MATH_XI_REVISION_PAPERS,
   MATH_XI_WORKBOOK_TOTALS,
   mathXiChapterUrl,
   mathXiChaptersByUnit,
@@ -67,6 +68,7 @@ export default function MathematicsXiSolutionsPage() {
             { label: "A4 sheets", value: MATH_XI_WORKBOOK_TOTALS.sheets },
             { label: "Hard + hints", value: MATH_XI_WORKBOOK_TOTALS.hardQuestions },
             { label: "Long answers", value: MATH_XI_WORKBOOK_TOTALS.longQuestions },
+            { label: "Revision Qs", value: MATH_XI_WORKBOOK_TOTALS.revisionQuestions },
             { label: "Concept Q&A", value: MATH_XI_WORKBOOK_TOTALS.conceptQuestions },
             { label: "Model papers", value: MATH_XI_PAPERS.length },
           ].map((stat) => (
@@ -189,6 +191,29 @@ export default function MathematicsXiSolutionsPage() {
           {MATH_XI_CHAPTERS.length} chapter sheets · every syllabus topic covered ·{" "}
           {MATH_XI_WORKBOOK_TOTALS.perSheet} questions per sheet.
         </p>
+
+        <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-violet-500/30 bg-violet-500/5 p-4">
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold">
+              Revision papers — {MATH_XI_REVISION_PAPERS.length} timed papers, one per unit
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {MATH_XI_WORKBOOK_TOTALS.revisionQuestions} questions ·{" "}
+              {MATH_XI_WORKBOOK_TOTALS.revisionMarks} marks ·{" "}
+              {MATH_XI_WORKBOOK_TOTALS.revisionMinutes} minutes each. Questions only on page 1, the
+              full answer key on page 2 — print double-sided and sit it without notes.
+            </p>
+          </div>
+          <a
+            href={`${MATH_XI_WORKBOOK_BASE}/revision/index.html`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-violet-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-violet-700"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Open revision papers
+          </a>
+        </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4">
           <div className="min-w-0 flex-1">

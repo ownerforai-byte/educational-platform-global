@@ -24,6 +24,7 @@ const OUT_DIR = path.join(ROOT, "frontend/public/resources/mathematics-xi/chapte
 const HARD_OUT_DIR = path.join(OUT_DIR, "hard");
 const LONG_OUT_DIR = path.join(OUT_DIR, "long");
 const CONCEPT_OUT_DIR = path.join(OUT_DIR, "concept");
+const REVISION_OUT_DIR = path.join(OUT_DIR, "revision");
 const PAPER_OUT_DIR = path.join(OUT_DIR, "papers");
 const REGISTRY = path.join(ROOT, "frontend/lib/streams/mathematics-xi-chapters.ts");
 
@@ -35,6 +36,9 @@ const ROWS = 4;
 const HARD_PER_SHEET = 6;
 const HARD_COLS = 2;
 const HARD_ROWS = 3;
+
+/* revision papers: one timed paper per unit, questions on page 1, key on page 2 */
+const REVISION_MINUTES = 45;
 
 /* concept sheets: 2 columns × 3 rows = 6 conceptual questions with answers */
 const CONCEPT_PER_SHEET = 6;
@@ -78,6 +82,7 @@ const files = fs
       !name.endsWith(".hard.mjs") &&
       !name.endsWith(".long.mjs") &&
       !name.endsWith(".concept.mjs") &&
+      !name.endsWith(".revision.mjs") &&
       !name.endsWith(".paper.mjs"),
   )
   .sort();
@@ -96,6 +101,10 @@ const longFiles = fs
 const conceptFiles = fs
   .readdirSync(DATA_DIR)
   .filter((name) => name.endsWith(".concept.mjs"))
+  .sort();
+const revisionFiles = fs
+  .readdirSync(DATA_DIR)
+  .filter((name) => name.endsWith(".revision.mjs"))
   .sort();
 const paperFiles = fs
   .readdirSync(DATA_DIR)
@@ -220,6 +229,164 @@ for (const file of conceptFiles) {
     chapter.concept = entry.items;
   }
 }
+
+/* revision papers: `*.revision.mjs` exports REVISION, one timed paper per unit. */
+const revisions = [];
+for (const file of revisionFiles) {
+  const mod = await import(pathToFileURL(path.join(DATA_DIR, file)).href);
+  const list = mod.REVISION ?? mod.default;
+  if (!Array.isArray(list) || list.length === 0) {
+    fail(`${file}: expected an exported REVISION array`);
+    continue;
+  }
+  for (const paper of list) {
+    const at = `${file}: unit ${paper.unitNo}`;
+    const unit = chapters.find((candidate) => candidate.unitNo === paper.unitNo);
+    if (!unit) {
+      fail(`${at}: no such unit`);
+      continue;
+    }
+    if (!Array.isArray(paper.items) || paper.items.length === 0) {
+      fail(`${at}: items must be a non-empty array`);
+      continue;
+    }
+    const seen = new Set();
+    paper.items.forEach((item, i) => {
+      const where = `${at} Q${i + 1}`;
+      if (!Array.isArray(item) || item.length < 2) {
+        fail(`${where}: expected [question, answer, marks?, hint?]`);
+        return;
+      }
+      const [q, a, marks = 2, hint] = item;
+      if (typeof q !== "string" || q.trim() === "") fail(`${where}: empty question`);
+      if (typeof a !== "string" || a.trim() === "") fail(`${where}: empty answer`);
+      if (![1, 2, 3, 4, 5, 6].includes(marks)) fail(`${where}: marks must be 1-6`);
+      if (hint !== undefined && typeof hint !== "string") fail(`${where}: hint must be a string`);
+      if (seen.has(q)) fail(`${where}: duplicate question`);
+      seen.add(q);
+    });
+    revisions.push({
+      unitNo: paper.unitNo,
+      unitName: unit.unitName,
+      title: paper.title ?? `Unit ${paper.unitNo} — revision paper`,
+      minutes: paper.minutes ?? REVISION_MINUTES,
+      items: paper.items,
+    });
+  }
+}
+revisions.sort((a, b) => a.unitNo - b.unitNo);
+
+/* ── revision paper renderers ─────────────────────────────────────────── */
+
+const revisionQuestionHtml = (item, no) => {
+  const [q, , marks = 2, hint] = item;
+  return `<div class="rq"><span class="no">${no}.</span> ${esc(q)} <span class="mk">[${marks}]</span>${
+    hint ? `<span class="hintline">${esc(hint)}</span>` : ""
+  }</div>`;
+};
+
+const revisionAnswerHtml = (item, no) => {
+  const [, a] = item;
+  return `<div class="rq"><span class="no">${no}.</span> <span class="sol">${esc(a)}</span></div>`;
+};
+
+const revisionHtml = (paper) => {
+  const total = paper.items.reduce((sum, item) => sum + (item[2] ?? 2), 0);
+  const questions = paper.items.map((item, i) => revisionQuestionHtml(item, i + 1)).join("\n");
+  const answers = paper.items.map((item, i) => revisionAnswerHtml(item, i + 1)).join("\n");
+  const head = (title, note) => `<header class="masthead">
+<div class="stream"><span>${esc(STREAM)}</span><span>${esc(BOOK)} · revision paper</span></div>
+<h1>${esc(paper.title)}</h1>
+<p class="topics"><b>${esc(note)}</b> ${paper.items.length} questions · ${total} marks · ${paper.minutes} minutes</p>
+<div class="marksbar"><span><b>Section A</b> objective and one-line</span><span><b>Section B</b> two and three marks</span><span><b>Section C</b> longer working</span></div>
+</header>`;
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(paper.title)} — revision paper (Mathematics XI)</title>
+<meta name="description" content="${esc(
+    paper.title,
+  )} revision paper: ${paper.items.length} questions, ${total} marks, ${paper.minutes} minutes, with an answer key.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/revision.css">
+</head>
+<body>
+<section class="sheet" aria-label="${esc(paper.title)} questions">
+${head(paper.title, "Time")}
+<div class="paper">
+${questions}
+</div>
+<footer class="foot">
+<span>Unit ${paper.unitNo} · ${esc(paper.unitName)}</span>
+<span class="mid">Questions</span>
+<span>Page 1 of 2</span>
+</footer>
+</section>
+
+<section class="sheet" aria-label="${esc(paper.title)} answer key">
+${head(`${paper.title} — answer key`, "Key")}
+<div class="paper answers">
+${answers}
+</div>
+<footer class="foot">
+<span>Unit ${paper.unitNo} · ${esc(paper.unitName)}</span>
+<span class="mid">Answer key</span>
+<span>Page 2 of 2</span>
+</footer>
+</section>
+</body>
+</html>
+`;
+};
+
+const revisionIndexHtml = () => {
+  const total = revisions.reduce((sum, paper) => sum + paper.items.length, 0);
+  const marks = revisions.reduce(
+    (sum, paper) => sum + paper.items.reduce((inner, item) => inner + (item[2] ?? 2), 0),
+    0,
+  );
+  const rows = revisions
+    .map(
+      (paper) => `<li><a href="/resources/mathematics-xi/chapters/revision/unit-${String(
+        paper.unitNo,
+      ).padStart(2, "0")}.html">${esc(paper.title)}</a> <span>· ${paper.items.length} Q · ${paper.items.reduce(
+        (sum, item) => sum + (item[2] ?? 2),
+        0,
+      )} marks · ${paper.minutes} min</span></li>`,
+    )
+    .join("\n");
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — revision papers</title>
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/revision.css">
+</head>
+<body>
+<section class="sheet index">
+<header class="masthead">
+<div class="stream"><span>${esc(STREAM)}</span><span>${esc(BOOK)} · revision papers</span></div>
+<h1>Revision papers — contents</h1>
+<p class="topics"><b>Coverage</b> ${revisions.length} units · ${total} questions · ${marks} marks</p>
+<p class="note">One timed paper per unit: questions on page 1, the full answer key on page 2. Print double-sided and sit it without notes.</p>
+</header>
+<ol>
+${rows}
+</ol>
+<footer class="foot">
+<span>Units ${revisions.map((paper) => paper.unitNo).join(", ")}</span>
+<span class="mid">${revisions.length} papers</span>
+<span>${total} questions</span>
+</footer>
+</section>
+</body>
+</html>
+`;
+};
 
 const seenSlugs = new Set();
 for (const chapter of chapters) {
@@ -1141,6 +1308,34 @@ export const MATH_XI_QUESTIONS_PER_SHEET = ${PER_SHEET};
 export const MATH_XI_HARD_PER_SHEET = ${HARD_PER_SHEET};
 export const MATH_XI_LONG_PER_SHEET = ${LONG_PER_SHEET};
 export const MATH_XI_CONCEPT_PER_SHEET = ${CONCEPT_PER_SHEET};
+export const MATH_XI_REVISION_MINUTES = ${REVISION_MINUTES};
+
+/** One timed revision paper per unit: questions on page 1, key on page 2. */
+export interface MathXiRevisionPaper {
+  unitNo: number;
+  unitName: string;
+  title: string;
+  minutes: number;
+  questionCount: number;
+  marks: number;
+  url: string;
+  path: string;
+}
+
+export const MATH_XI_REVISION_PAPERS: MathXiRevisionPaper[] = ${JSON.stringify(
+    revisions.map((paper) => ({
+      unitNo: paper.unitNo,
+      unitName: paper.unitName,
+      title: paper.title,
+      minutes: paper.minutes,
+      questionCount: paper.items.length,
+      marks: paper.items.reduce((sum, item) => sum + (item[2] ?? 2), 0),
+      url: `/resources/mathematics-xi/chapters/revision/unit-${String(paper.unitNo).padStart(2, "0")}.html`,
+      path: `public/resources/mathematics-xi/chapters/revision/unit-${String(paper.unitNo).padStart(2, "0")}.html`,
+    })),
+    null,
+    2,
+  )};
 export const MATH_XI_PAPER_MARKS = ${PAPER_MARKS};
 
 /** Shape of the NEB paper — 11 × 1, 8 × 5, 3 × 8 marks. */
@@ -1206,6 +1401,10 @@ export const MATH_XI_WORKBOOK_TOTALS = {
   hardQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardCount, 0),
   hardSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardSheetCount, 0),
   hardPerSheet: MATH_XI_HARD_PER_SHEET,
+  revisionPapers: MATH_XI_REVISION_PAPERS.length,
+  revisionQuestions: MATH_XI_REVISION_PAPERS.reduce((sum, paper) => sum + paper.questionCount, 0),
+  revisionMarks: MATH_XI_REVISION_PAPERS.reduce((sum, paper) => sum + paper.marks, 0),
+  revisionMinutes: MATH_XI_REVISION_MINUTES,
   conceptChapters: MATH_XI_CHAPTERS.filter((chapter) => chapter.conceptCount > 0).length,
   conceptQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.conceptCount, 0),
   conceptSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.conceptSheetCount, 0),
@@ -1234,6 +1433,19 @@ export function mathXiLongUrl(chapter: Pick<MathXiChapter, "slug">): string {
 
 export function mathXiLongPath(chapter: Pick<MathXiChapter, "slug">): string {
   return \`public/resources/mathematics-xi/chapters/long/\${chapter.slug}.html\`;
+}
+
+export function mathXiRevisionUrl(
+  unitNo: number,
+  papers: MathXiRevisionPaper[] = MATH_XI_REVISION_PAPERS,
+): string {
+  const paper = papers.find((candidate) => candidate.unitNo === unitNo);
+  if (!paper) throw new Error(\`no revision paper for unit \${unitNo}\`);
+  return paper.url;
+}
+
+export function mathXiRevisionPath(unitNo: number): string {
+  return \`public/resources/mathematics-xi/chapters/revision/unit-\${String(unitNo).padStart(2, "0")}.html\`;
 }
 
 export function mathXiConceptUrl(chapter: Pick<MathXiChapter, "slug">): string {
@@ -1318,6 +1530,26 @@ if (longChapters.length > 0) {
     );
   }
   fs.writeFileSync(path.join(LONG_OUT_DIR, "index.html"), longIndexHtml(), "utf8");
+}
+
+if (revisions.length > 0) {
+  fs.mkdirSync(REVISION_OUT_DIR, { recursive: true });
+  for (const paper of revisions) {
+    fs.writeFileSync(
+      path.join(REVISION_OUT_DIR, `unit-${String(paper.unitNo).padStart(2, "0")}.html`),
+      revisionHtml(paper),
+      "utf8",
+    );
+  }
+  fs.writeFileSync(path.join(REVISION_OUT_DIR, "index.html"), revisionIndexHtml(), "utf8");
+  const qs = revisions.reduce((sum, paper) => sum + paper.items.length, 0);
+  const ms = revisions.reduce(
+    (sum, paper) => sum + paper.items.reduce((inner, item) => inner + (item[2] ?? 2), 0),
+    0,
+  );
+  console.log(
+    `✓ ${revisions.length} revision papers · ${qs} questions · ${ms} marks (questions + key)`,
+  );
 }
 
 const conceptChapters = chapters.filter((chapter) => chapter.concept);

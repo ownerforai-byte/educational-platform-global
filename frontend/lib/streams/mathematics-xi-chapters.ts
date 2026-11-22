@@ -16,6 +16,92 @@ export const MATH_XI_QUESTIONS_PER_SHEET = 12;
 export const MATH_XI_HARD_PER_SHEET = 6;
 export const MATH_XI_LONG_PER_SHEET = 1;
 export const MATH_XI_CONCEPT_PER_SHEET = 6;
+export const MATH_XI_REVISION_MINUTES = 45;
+
+/** One timed revision paper per unit: questions on page 1, key on page 2. */
+export interface MathXiRevisionPaper {
+  unitNo: number;
+  unitName: string;
+  title: string;
+  minutes: number;
+  questionCount: number;
+  marks: number;
+  url: string;
+  path: string;
+}
+
+export const MATH_XI_REVISION_PAPERS: MathXiRevisionPaper[] = [
+  {
+    "unitNo": 1,
+    "unitName": "Algebra",
+    "title": "Unit 1 — Algebra: revision paper",
+    "minutes": 45,
+    "questionCount": 24,
+    "marks": 50,
+    "url": "/resources/mathematics-xi/chapters/revision/unit-01.html",
+    "path": "public/resources/mathematics-xi/chapters/revision/unit-01.html"
+  },
+  {
+    "unitNo": 2,
+    "unitName": "Trigonometry",
+    "title": "Unit 2 — Trigonometry: revision paper",
+    "minutes": 45,
+    "questionCount": 24,
+    "marks": 50,
+    "url": "/resources/mathematics-xi/chapters/revision/unit-02.html",
+    "path": "public/resources/mathematics-xi/chapters/revision/unit-02.html"
+  },
+  {
+    "unitNo": 3,
+    "unitName": "Analytic Geometry",
+    "title": "Unit 3 — Analytic Geometry: revision paper",
+    "minutes": 45,
+    "questionCount": 24,
+    "marks": 50,
+    "url": "/resources/mathematics-xi/chapters/revision/unit-03.html",
+    "path": "public/resources/mathematics-xi/chapters/revision/unit-03.html"
+  },
+  {
+    "unitNo": 4,
+    "unitName": "Vectors",
+    "title": "Unit 4 — Vectors: revision paper",
+    "minutes": 45,
+    "questionCount": 24,
+    "marks": 50,
+    "url": "/resources/mathematics-xi/chapters/revision/unit-04.html",
+    "path": "public/resources/mathematics-xi/chapters/revision/unit-04.html"
+  },
+  {
+    "unitNo": 5,
+    "unitName": "Statistics and Probability",
+    "title": "Unit 5 — Statistics and Probability: revision paper",
+    "minutes": 45,
+    "questionCount": 24,
+    "marks": 50,
+    "url": "/resources/mathematics-xi/chapters/revision/unit-05.html",
+    "path": "public/resources/mathematics-xi/chapters/revision/unit-05.html"
+  },
+  {
+    "unitNo": 6,
+    "unitName": "Calculus",
+    "title": "Unit 6 — Calculus: revision paper",
+    "minutes": 45,
+    "questionCount": 24,
+    "marks": 50,
+    "url": "/resources/mathematics-xi/chapters/revision/unit-06.html",
+    "path": "public/resources/mathematics-xi/chapters/revision/unit-06.html"
+  },
+  {
+    "unitNo": 7,
+    "unitName": "Computational Methods or Mechanics",
+    "title": "Unit 7 — Computational Methods and Mechanics: revision paper",
+    "minutes": 45,
+    "questionCount": 24,
+    "marks": 50,
+    "url": "/resources/mathematics-xi/chapters/revision/unit-07.html",
+    "path": "public/resources/mathematics-xi/chapters/revision/unit-07.html"
+  }
+];
 export const MATH_XI_PAPER_MARKS = 75;
 
 /** Shape of the NEB paper — 11 × 1, 8 × 5, 3 × 8 marks. */
@@ -679,6 +765,10 @@ export const MATH_XI_WORKBOOK_TOTALS = {
   hardQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardCount, 0),
   hardSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardSheetCount, 0),
   hardPerSheet: MATH_XI_HARD_PER_SHEET,
+  revisionPapers: MATH_XI_REVISION_PAPERS.length,
+  revisionQuestions: MATH_XI_REVISION_PAPERS.reduce((sum, paper) => sum + paper.questionCount, 0),
+  revisionMarks: MATH_XI_REVISION_PAPERS.reduce((sum, paper) => sum + paper.marks, 0),
+  revisionMinutes: MATH_XI_REVISION_MINUTES,
   conceptChapters: MATH_XI_CHAPTERS.filter((chapter) => chapter.conceptCount > 0).length,
   conceptQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.conceptCount, 0),
   conceptSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.conceptSheetCount, 0),
@@ -707,6 +797,19 @@ export function mathXiLongUrl(chapter: Pick<MathXiChapter, "slug">): string {
 
 export function mathXiLongPath(chapter: Pick<MathXiChapter, "slug">): string {
   return `public/resources/mathematics-xi/chapters/long/${chapter.slug}.html`;
+}
+
+export function mathXiRevisionUrl(
+  unitNo: number,
+  papers: MathXiRevisionPaper[] = MATH_XI_REVISION_PAPERS,
+): string {
+  const paper = papers.find((candidate) => candidate.unitNo === unitNo);
+  if (!paper) throw new Error(`no revision paper for unit ${unitNo}`);
+  return paper.url;
+}
+
+export function mathXiRevisionPath(unitNo: number): string {
+  return `public/resources/mathematics-xi/chapters/revision/unit-${String(unitNo).padStart(2, "0")}.html`;
 }
 
 export function mathXiConceptUrl(chapter: Pick<MathXiChapter, "slug">): string {

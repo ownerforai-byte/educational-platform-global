@@ -10,6 +10,8 @@ import {
   MATH_XI_PAPER_GROUPS,
   MATH_XI_PAPER_MARKS,
   MATH_XI_QUESTIONS_PER_SHEET,
+  MATH_XI_REVISION_MINUTES,
+  MATH_XI_REVISION_PAPERS,
   MATH_XI_WORKBOOK_TOTALS,
   mathXiChapterPath,
   mathXiChapterUrl,
@@ -24,6 +26,8 @@ import {
   mathXiLongPath,
   mathXiLongUrl,
   mathXiPaperPath,
+  mathXiRevisionPath,
+  mathXiRevisionUrl,
   mathXiPaperUrl,
 } from "@/lib/streams/mathematics-xi-chapters";
 import { MATHEMATICS_XI_UNITS } from "@/lib/streams/mathematics-xi-solutions";
@@ -261,6 +265,39 @@ describe("Mathematics XI — hard sets with hint ladders", () => {
     }
     expect(answers).toBe(MATH_XI_WORKBOOK_TOTALS.longQuestions);
     expect(mathXiLongChapters().length).toBe(MATH_XI_CHAPTERS.length);
+  });
+
+  it("gives every unit a timed revision paper with its answer key on page 2", () => {
+    expect(MATH_XI_REVISION_PAPERS.length).toBe(MATHEMATICS_XI_UNITS.length);
+    let questions = 0;
+    for (const paper of MATH_XI_REVISION_PAPERS) {
+      expect(paper.questionCount, `unit ${paper.unitNo}: questions`).toBe(24);
+      expect(paper.marks, `unit ${paper.unitNo}: marks`).toBe(50);
+      expect(paper.minutes).toBe(MATH_XI_REVISION_MINUTES);
+
+      const html = read(mathXiRevisionPath(paper.unitNo));
+      const blame = `unit ${paper.unitNo}: `;
+      expect((html.match(/<section class="sheet"/g) ?? []).length, blame).toBe(2);
+      expect((html.match(/class="rq"/g) ?? []).length, blame).toBe(paper.questionCount * 2);
+      expect((html.match(/<span class="no">\d+\.<\/span>/g) ?? []).length, blame).toBe(
+        paper.questionCount * 2,
+      );
+      expect(html, blame).toContain("answer key");
+      expect(html, blame).toContain("/resources/mathematics-xi/a4/revision.css");
+      expect(html, blame).not.toContain("<style");
+
+      questions += paper.questionCount;
+    }
+    expect(questions).toBe(MATH_XI_WORKBOOK_TOTALS.revisionQuestions);
+
+    const index = read("public/resources/mathematics-xi/chapters/revision/index.html");
+    for (const paper of MATH_XI_REVISION_PAPERS) {
+      expect(mathXiRevisionUrl(paper.unitNo)).toBe(
+        `/resources/mathematics-xi/chapters/revision/unit-${String(paper.unitNo).padStart(2, "0")}.html`,
+      );
+      expect(existsSync(resolve(ROOT, mathXiRevisionPath(paper.unitNo)))).toBe(true);
+      expect(index).toContain(mathXiRevisionUrl(paper.unitNo));
+    }
   });
 
   it("pairs every chapter with six two-mark conceptual answers on one A4 sheet", () => {
