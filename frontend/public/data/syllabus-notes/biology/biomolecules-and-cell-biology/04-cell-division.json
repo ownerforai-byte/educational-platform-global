@@ -553,5 +553,73 @@
       ],
       "answer": "It shuffles alleles, producing recombination."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Cell division — continuity of life",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: cell cycle",
+        "subtopics": [
+          {
+            "name": "Phases",
+            "points": [
+              "Interphase (G1, S, G2) occupies most of the cycle; M phase is short",
+              "S phase is where DNA replicates",
+              "G0 is a non-dividing resting state some cells enter permanently"
+            ]
+          },
+          {
+            "name": "Types of division",
+            "points": [
+              "Amitosis: direct division without spindle, seen in prokaryotes and some lower eukaryotes",
+              "Mitosis: equational division producing two genetically identical diploid cells",
+              "Meiosis: reductional division producing four haploid gametes"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mitosis stages",
+        "subtopics": [
+          {
+            "name": "Prophase to telophase",
+            "points": [
+              "Prophase: chromosomes condense, spindle forms, nuclear envelope breaks down",
+              "Metaphase: chromosomes align at the equator; anaphase: sister chromatids separate to poles",
+              "Telophase: nuclear envelopes reform; cytokinesis divides the cytoplasm"
+            ]
+          },
+          {
+            "name": "Significance",
+            "points": [
+              "Maintains chromosome number across generations of somatic cells",
+              "Underlies growth, repair and asexual reproduction",
+              "Genetic constancy is preserved because DNA is replicated before division"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: control and failure",
+        "subtopics": [
+          {
+            "name": "Regulation",
+            "points": [
+              "Cyclins and cyclin-dependent kinases drive cell cycle progression",
+              "Checkpoints at G1/S, G2/M and metaphase verify DNA integrity and spindle attachment",
+              "Loss of checkpoint control leads to uncontrolled proliferation"
+            ]
+          },
+          {
+            "name": "Consequences of error",
+            "points": [
+              "Non-disjunction produces aneuploid gametes (e.g. trisomy 21)",
+              "Uncontrolled mitosis is the cellular basis of cancer",
+              "Apoptosis is programmed death that removes damaged cells"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

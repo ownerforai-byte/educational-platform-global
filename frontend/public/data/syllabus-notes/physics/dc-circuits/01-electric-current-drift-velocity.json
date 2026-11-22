@@ -194,5 +194,73 @@
       ],
       "answer": "1.0 × 10^−4 m/s."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Electric current and drift velocity",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Current",
+            "points": [
+              "Current is the rate of flow of charge: I = Q/t",
+              "Conventional current flows opposite to electron flow",
+              "Unit ampere; 1 A = 1 C/s"
+            ]
+          },
+          {
+            "name": "Drift velocity",
+            "points": [
+              "Electrons drift slowly in the direction opposite the field, superimposed on random thermal motion",
+              "Typical drift speed is about 10^-4 m/s, far slower than the signal speed",
+              "The electric field propagates at nearly the speed of light, which is why a lamp lights instantly"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the relation",
+        "subtopics": [
+          {
+            "name": "I = nAev_d",
+            "points": [
+              "n is free electron density, A cross-sectional area, e electronic charge, v_d drift velocity",
+              "Current depends on drift velocity, not on the random thermal speed",
+              "Larger area or higher electron density gives more current for the same drift speed"
+            ]
+          },
+          {
+            "name": "Why drift is slow",
+            "points": [
+              "Electrons collide constantly with the lattice and lose directed momentum",
+              "The drift velocity is the small average velocity superimposed on thermal motion",
+              "Increasing temperature increases collisions and reduces drift velocity, raising resistivity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Current density and mobility",
+            "points": [
+              "J = I/A = n e v_d, a vector quantity",
+              "Mobility mu = v_d/E measures how easily carriers move",
+              "Conductivity sigma = n e mu"
+            ]
+          },
+          {
+            "name": "Numerical anchors",
+            "points": [
+              "For copper, n is about 8.5 x 10^28 per cubic metre",
+              "A 1 A current in a 1 mm^2 wire gives drift velocity of order 10^-4 m/s",
+              "Electron thermal speed at room temperature is about 10^5 m/s"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

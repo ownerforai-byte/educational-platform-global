@@ -570,5 +570,86 @@
       "answer": "Hypothesis → Experiment → Data/Conclusion"
     }
   ],
-  "source": "authored-v2"
+  "source": "authored-v2",
+  "mindmap": {
+    "centralConcept": "Biology — the science of life, from molecule to biosphere",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: what biology is",
+        "subtopics": [
+          {
+            "name": "Etymology and definition",
+            "points": [
+              "From Greek bios (life) + logos (study): the study of living organisms and their interactions",
+              "A living thing is defined by a set of properties, not by one feature alone",
+              "Biology is a natural science built on observation, hypothesis, experiment and theory"
+            ]
+          },
+          {
+            "name": "Defining properties of life",
+            "points": [
+              "Growth, reproduction, metabolism, response to stimuli, homeostasis, cellular organisation",
+              "Viruses sit outside the definition: they reproduce only inside a host cell",
+              "Organisation is hierarchical: molecule -> organelle -> cell -> tissue -> organ -> organism -> population -> community -> ecosystem -> biosphere"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the branches of biology",
+        "subtopics": [
+          {
+            "name": "Structural and functional branches",
+            "points": [
+              "Morphology (external form), anatomy (internal structure), histology (tissues), cytology (cells)",
+              "Physiology (functions), biochemistry (chemical basis), genetics (heredity), embryology (development)",
+              "Taxonomy (classification), ecology (organism-environment relations), evolution (descent with modification)"
+            ]
+          },
+          {
+            "name": "Applied and interdisciplinary branches",
+            "points": [
+              "Biotechnology, microbiology, immunology, pathology, pharmacology, agriculture, horticulture",
+              "Bioinformatics, biophysics, biomathematics, bioethics as modern interfaces",
+              "Nepal context: forestry, fisheries, apiculture and sericulture are applied branches of direct economic value"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: how biology is actually done",
+        "subtopics": [
+          {
+            "name": "Scientific method as a loop",
+            "points": [
+              "Observation -> question -> hypothesis -> prediction -> controlled experiment -> analysis -> revision",
+              "A hypothesis must be falsifiable; a theory is a well-tested explanatory framework, not a guess",
+              "Controls and variables: independent (manipulated), dependent (measured), controlled (held constant)"
+            ]
+          },
+          {
+            "name": "Modern scale of the field",
+            "points": [
+              "About 8.7 million eukaryotic species estimated; roughly 1.5-2 million described so far",
+              "Genomics, CRISPR and single-cell sequencing moved biology from description to engineering",
+              "Model organisms (E. coli, yeast, Drosophila, Arabidopsis, zebrafish, mouse) carry most mechanistic work"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Exam traps and distinctions",
+        "subtopics": [
+          {
+            "name": "Common confusions",
+            "points": [
+              "Botany/zoology are kingdom-scoped; microbiology cuts across kingdoms (bacteria, viruses, protozoa, fungi)",
+              "Anatomy is structure, physiology is function — do not swap them in a definition question",
+              "A theory is not weaker than a law: laws describe, theories explain"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

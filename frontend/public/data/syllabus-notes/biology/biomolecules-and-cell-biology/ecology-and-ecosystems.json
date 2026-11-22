@@ -201,5 +201,57 @@
   "bounds": [
     "Stay inside this class 11 topic.",
     "Do not add an unsupported count."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Ecology and ecosystems — organisms in context",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definitions",
+            "points": [
+              "Ecology studies interactions between organisms and their environment",
+              "An ecosystem is a functional unit of biotic and abiotic components interacting",
+              "Levels: organism -> population -> community -> ecosystem -> biosphere"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Structure and function",
+            "points": [
+              "Structural: producers, consumers, decomposers, trophic levels",
+              "Functional: energy flow (unidirectional) and nutrient cycling (biogeochemical)",
+              "Food chains and webs map the transfer pathways"
+            ]
+          },
+          {
+            "name": "Ecosystem types",
+            "points": [
+              "Aquatic: pond, lake, river, ocean",
+              "Terrestrial: forest, grassland, desert, tundra",
+              "Nepal spans Terai, hill and alpine ecosystems with distinct communities"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Energy and matter",
+            "points": [
+              "Energy flows one way and is lost as heat at each transfer (~10% rule)",
+              "Matter cycles repeatedly through biogeochemical pathways",
+              "Productivity (GPP, NPP) measures the rate of energy capture"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

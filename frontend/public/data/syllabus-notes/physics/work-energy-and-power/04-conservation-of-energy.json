@@ -280,5 +280,73 @@
       "answer": "B",
       "explanation": "PE lost = mgΔh = 2×10×25 = 500 J = KE gained."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Conservation of mechanical energy",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The principle",
+            "points": [
+              "Total mechanical energy stays constant when only conservative forces act",
+              "KE + PE = constant",
+              "Energy is transformed, never created or destroyed"
+            ]
+          },
+          {
+            "name": "Conservative forces",
+            "points": [
+              "Work done depends only on endpoints, not the path",
+              "Gravity and spring force are conservative",
+              "A closed loop gives zero net work"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Non-conservative forces",
+            "points": [
+              "Friction and air resistance are non-conservative",
+              "Work done by them removes mechanical energy as heat",
+              "Modified statement: KE + PE + work by friction = constant"
+            ]
+          },
+          {
+            "name": "Potential energy",
+            "points": [
+              "PE is defined only for conservative forces",
+              "Gravitational PE = mgh near the surface, -GMm/r in general",
+              "Spring PE = 1/2 k x^2"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Energy graphs",
+            "points": [
+              "Plot PE against position; KE is the gap up to total energy",
+              "Turning points occur where KE becomes zero",
+              "The negative gradient of the PE curve gives the force"
+            ]
+          },
+          {
+            "name": "Broader conservation",
+            "points": [
+              "Total energy including heat is always conserved",
+              "Mass-energy equivalence extends this to nuclear processes",
+              "Perpetual motion machines fail precisely because of this principle"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -248,5 +248,73 @@
       "answer": "C",
       "explanation": "Astonishingly dense."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Discovery and structure of the nucleus",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the experiments",
+        "subtopics": [
+          {
+            "name": "Rutherford's gold foil experiment",
+            "points": [
+              "Alpha particles fired at thin gold foil, 1911",
+              "Most passed straight through, some deflected sharply, a few bounced back",
+              "Conclusion: positive charge and nearly all mass are concentrated in a tiny central nucleus"
+            ]
+          },
+          {
+            "name": "Earlier discoveries",
+            "points": [
+              "Thomson discovered the electron in 1897 (cathode rays)",
+              "Goldstein discovered the proton in 1886 (canal rays)",
+              "Chadwick discovered the neutron in 1932"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: nuclear properties",
+        "subtopics": [
+          {
+            "name": "Composition and notation",
+            "points": [
+              "Nucleus contains protons (Z) and neutrons (N); mass number A = Z + N",
+              "Notation: A over Z before the element symbol",
+              "Isotopes have the same Z but different N"
+            ]
+          },
+          {
+            "name": "Size and density",
+            "points": [
+              "Nuclear radius R = R0 A^(1/3), with R0 about 1.2 x 10^-15 m",
+              "Nuclear density is roughly constant across all nuclei, about 2.3 x 10^17 kg/m^3",
+              "The nucleus is about 10^5 times smaller than the atom but holds almost all its mass"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Nuclear forces",
+            "points": [
+              "Strong nuclear force binds nucleons, is short-ranged and charge-independent",
+              "It is strongly attractive at about 1-2 fm and repulsive at very short range",
+              "Competes with electrostatic repulsion between protons, which limits nucleus size"
+            ]
+          },
+          {
+            "name": "Why heavy nuclei are unstable",
+            "points": [
+              "Coulomb repulsion grows as Z^2 while the strong force grows only as A",
+              "Beyond bismuth (Z = 83) no stable nucleus exists",
+              "Explains alpha decay and spontaneous fission in heavy elements"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

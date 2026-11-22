@@ -248,5 +248,65 @@
       "answer": "B",
       "explanation": "0.51 MeV pairs."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Pair production and annihilation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Pair production",
+            "points": [
+              "A high-energy photon converts into an electron-positron pair",
+              "Requires a nearby nucleus to conserve momentum",
+              "Threshold energy is 2 x 0.511 = 1.022 MeV"
+            ]
+          },
+          {
+            "name": "Annihilation",
+            "points": [
+              "An electron and positron combine and disappear, producing two photons",
+              "Two photons are needed to conserve momentum",
+              "Each photon carries 0.511 MeV"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Conservation laws",
+            "points": [
+              "Charge, momentum, angular momentum and total energy are conserved",
+              "Mass number and lepton number are conserved",
+              "Energy and mass are interconverted via E = mc^2"
+            ]
+          },
+          {
+            "name": "Threshold condition",
+            "points": [
+              "Photon energy must be at least 2 m_e c^2",
+              "Excess energy becomes kinetic energy of the pair",
+              "Cannot occur in empty space without a third body for momentum balance"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Applications",
+            "points": [
+              "PET scans detect the two 511 keV photons from positron annihilation",
+              "Annihilation explains why antimatter cannot persist in ordinary matter",
+              "Pair production sets an upper limit on gamma-ray propagation across the universe"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

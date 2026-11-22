@@ -179,5 +179,73 @@
   "relevance": 94,
   "unitSlug": "dynamics",
   "topicSlug": "02-momentum-impulse-and-conservation",
-  "topicTitle": "Linear Momentum, Impulse & Conservation of Linear Momentum"
+  "topicTitle": "Linear Momentum, Impulse & Conservation of Linear Momentum",
+  "mindmap": {
+    "centralConcept": "Momentum, impulse and their conservation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Momentum",
+            "points": [
+              "p = mv, a vector in the direction of velocity",
+              "Unit kg m/s",
+              "Newton's second law in its general form is F = dp/dt"
+            ]
+          },
+          {
+            "name": "Impulse",
+            "points": [
+              "Impulse = F x t = change in momentum",
+              "Area under a force-time graph gives impulse",
+              "Explains why airbags and crumple zones reduce injury — longer time, smaller force"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: conservation",
+        "subtopics": [
+          {
+            "name": "Law of conservation of momentum",
+            "points": [
+              "Total momentum of an isolated system stays constant",
+              "Follows from Newton's third law — internal forces cancel in pairs",
+              "Applies to all collisions and explosions"
+            ]
+          },
+          {
+            "name": "Collisions",
+            "points": [
+              "Elastic: momentum and kinetic energy both conserved",
+              "Inelastic: momentum conserved, kinetic energy lost to heat and deformation",
+              "Perfectly inelastic: bodies stick together and move with common velocity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Coefficient of restitution",
+            "points": [
+              "e = relative velocity of separation / relative velocity of approach",
+              "e = 1 for elastic, e = 0 for perfectly inelastic",
+              "Energy loss relates directly to e"
+            ]
+          },
+          {
+            "name": "Centre of mass view",
+            "points": [
+              "In a collision the centre of mass continues unaffected by internal forces",
+              "Working in the centre-of-mass frame simplifies collision problems",
+              "Explains why total momentum is conserved even when energy is not"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

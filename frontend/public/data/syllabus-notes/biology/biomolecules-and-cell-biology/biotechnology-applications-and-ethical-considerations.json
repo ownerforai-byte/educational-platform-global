@@ -201,5 +201,58 @@
   "bounds": [
     "Stay inside this class 11 topic.",
     "Do not add an unsupported count."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Biotechnology applications and their ethical limits",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "What biotechnology is",
+            "points": [
+              "Using living organisms or their components to make useful products",
+              "Traditional (fermentation, selective breeding) vs modern (recombinant DNA, gene editing)",
+              "Core tools: restriction enzymes, vectors, host cells, transformation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: applications",
+        "subtopics": [
+          {
+            "name": "Medicine",
+            "points": [
+              "Recombinant insulin, growth hormone, interferons, vaccines",
+              "Gene therapy for monogenic disorders",
+              "Monoclonal antibodies for diagnosis and treatment"
+            ]
+          },
+          {
+            "name": "Agriculture",
+            "points": [
+              "Bt crops with built-in pest resistance",
+              "Golden rice as biofortification",
+              "Tissue culture and micropropagation for rapid clonal multiplication"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: ethics",
+        "subtopics": [
+          {
+            "name": "Ethical concerns",
+            "points": [
+              "GMO release: gene flow to wild relatives and effects on non-target species",
+              "Germline gene editing is heritable and widely considered off-limits",
+              "Equity of access: patented medicines and smallholder dependence on seed companies",
+              "Biosafety regulation and informed consent are the governance responses"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

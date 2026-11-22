@@ -281,5 +281,65 @@
       "answer": "B",
       "explanation": "Perfectly inelastic — common velocity minimises final KE."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Elastic and inelastic collisions",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "What is conserved",
+            "points": [
+              "Momentum is conserved in ALL collisions",
+              "Kinetic energy is conserved only in elastic collisions",
+              "Total energy is always conserved"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the two cases",
+        "subtopics": [
+          {
+            "name": "Elastic collision",
+            "points": [
+              "Both momentum and kinetic energy conserved",
+              "Relative speed of approach equals relative speed of separation",
+              "For equal masses in 1D, the bodies exchange velocities"
+            ]
+          },
+          {
+            "name": "Perfectly inelastic collision",
+            "points": [
+              "Bodies stick together and move with a common velocity",
+              "Maximum kinetic energy loss of any collision type",
+              "v = (m1 u1 + m2 u2)/(m1 + m2)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Coefficient of restitution",
+            "points": [
+              "e = (v2 - v1)/(u1 - u2)",
+              "e = 1 elastic, e = 0 perfectly inelastic, 0 < e < 1 partially elastic",
+              "Fractional energy loss = 1 - e^2"
+            ]
+          },
+          {
+            "name": "Frame of reference",
+            "points": [
+              "In the centre-of-mass frame, an elastic collision simply reverses both velocities",
+              "This makes elastic collision problems far simpler",
+              "Inelastic collisions look asymmetric in the lab frame but symmetric in the CM frame"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

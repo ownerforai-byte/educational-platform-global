@@ -248,5 +248,73 @@
       "answer": "B",
       "explanation": "Clean."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Nuclear fission and fusion",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Fission",
+            "points": [
+              "A heavy nucleus splits into two lighter nuclei plus neutrons",
+              "Example: U-235 + n gives Ba-141 + Kr-92 + 3n",
+              "Releases about 200 MeV per fission event"
+            ]
+          },
+          {
+            "name": "Fusion",
+            "points": [
+              "Two light nuclei combine into a heavier one",
+              "Example: four protons fuse to helium in the Sun",
+              "Releases more energy per unit mass than fission"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mechanisms",
+        "subtopics": [
+          {
+            "name": "Chain reaction",
+            "points": [
+              "Each fission releases neutrons that can trigger further fissions",
+              "Critical mass is the minimum mass needed to sustain the chain",
+              "Controlled in a reactor by moderators and control rods"
+            ]
+          },
+          {
+            "name": "Fusion conditions",
+            "points": [
+              "Requires extremely high temperature to overcome Coulomb repulsion",
+              "Requires high density and sufficient confinement time",
+              "Lawson criterion sets the threshold for net energy gain"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Energy comparison",
+            "points": [
+              "Fusion releases about 4 times more energy per kilogram than fission",
+              "Fusion fuel (deuterium) is abundant in seawater",
+              "Fusion produces far less long-lived radioactive waste"
+            ]
+          },
+          {
+            "name": "Practical status",
+            "points": [
+              "Fission is commercially mature and supplies about 10% of world electricity",
+              "Fusion remains experimental; ITER is the flagship project",
+              "The Sun is the only proven sustained fusion reactor"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

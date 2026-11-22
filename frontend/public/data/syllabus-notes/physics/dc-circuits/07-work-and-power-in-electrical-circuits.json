@@ -281,5 +281,73 @@
       "answer": "B",
       "explanation": "Same power, less current."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Electrical work, power and energy",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Work done",
+            "points": [
+              "Work done moving charge Q through potential difference V is W = QV",
+              "Since Q = It, W = VIt",
+              "Unit joule"
+            ]
+          },
+          {
+            "name": "Power",
+            "points": [
+              "P = W/t = VI",
+              "Using Ohm's law: P = I^2 R = V^2/R",
+              "Unit watt; commercial unit is the kilowatt-hour"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Choosing the right form",
+            "points": [
+              "Use P = I^2 R when current is common (series)",
+              "Use P = V^2/R when voltage is common (parallel)",
+              "All three forms are equivalent only for an ohmic resistor"
+            ]
+          },
+          {
+            "name": "Heating effect",
+            "points": [
+              "Joule heating: H = I^2 R t",
+              "This is the basis of electric heaters, fuses and filament lamps",
+              "It is also the source of transmission loss"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why power is transmitted at high voltage",
+            "points": [
+              "Loss in cables is I^2 R, so reducing current cuts loss quadratically",
+              "Stepping up voltage reduces current for the same power",
+              "This is why national grids use high-voltage AC transmission"
+            ]
+          },
+          {
+            "name": "Units and billing",
+            "points": [
+              "1 kWh = 3.6 x 10^6 J",
+              "Domestic billing is in units of kWh",
+              "A 100 W bulb left on for 10 hours uses 1 unit"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

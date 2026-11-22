@@ -194,5 +194,73 @@
       ],
       "answer": "3.0 Ω and 4.0 A."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Ohm's law and resistance",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The law",
+            "points": [
+              "V = IR at constant temperature",
+              "Resistance is the opposition to current flow, measured in ohms",
+              "Ohm's law is empirical, not a fundamental law of nature"
+            ]
+          },
+          {
+            "name": "Resistivity",
+            "points": [
+              "R = rho L / A, where rho is resistivity, a material property",
+              "Resistivity depends on material and temperature, not on shape",
+              "Resistance depends on both material and geometry"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: temperature and conduction",
+        "subtopics": [
+          {
+            "name": "Temperature dependence",
+            "points": [
+              "For metals, rho increases with temperature: rho = rho_0 (1 + alpha dT)",
+              "For semiconductors, resistivity DECREASES with temperature as more carriers are freed",
+              "This opposite behaviour distinguishes metals from semiconductors"
+            ]
+          },
+          {
+            "name": "Ohmic versus non-ohmic",
+            "points": [
+              "Ohmic conductors give a straight V-I line through the origin",
+              "Non-ohmic devices (diodes, filament lamps, thermistors) give curved or asymmetric graphs",
+              "A filament lamp's resistance rises as it heats"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Microscopic origin",
+            "points": [
+              "Drude model: electrons accelerate in the field and lose momentum in collisions",
+              "R = rho L/A follows from I = nAev_d and v_d = eE tau/m",
+              "Explains why longer, thinner wires have more resistance"
+            ]
+          },
+          {
+            "name": "Superconductivity",
+            "points": [
+              "Below a critical temperature some materials drop to zero resistance",
+              "Persistent currents flow without energy loss",
+              "Used in MRI magnets and maglev systems"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

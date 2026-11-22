@@ -508,5 +508,65 @@
       ],
       "answer": "B"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Geostationary satellite — a fixed point in the sky",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the conditions",
+        "subtopics": [
+          {
+            "name": "Three requirements",
+            "points": [
+              "Period must equal one sidereal day, about 23 h 56 min",
+              "Orbit must be equatorial, otherwise the satellite drifts north and south",
+              "Orbit must be prograde, moving in the same sense as Earth's rotation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the numbers",
+        "subtopics": [
+          {
+            "name": "Radius and altitude",
+            "points": [
+              "From T = 2 pi sqrt(r^3/GM) with T = 86400 s, r is about 4.22 x 10^7 m",
+              "Altitude above the surface is about 36,000 km",
+              "Orbital speed is about 3.07 km/s"
+            ]
+          },
+          {
+            "name": "Uses",
+            "points": [
+              "Communication and broadcasting — a fixed antenna can point permanently",
+              "Weather monitoring of a full hemisphere continuously",
+              "Three satellites 120 degrees apart cover most of the globe"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Geostationary versus geosynchronous",
+            "points": [
+              "Geosynchronous means matching the rotation period; the orbit may be inclined",
+              "Geostationary is a special case that is also equatorial and circular",
+              "An inclined geosynchronous satellite traces a figure-of-eight in the sky"
+            ]
+          },
+          {
+            "name": "Limitations",
+            "points": [
+              "High altitude means a long signal delay of about 0.24 s round trip",
+              "Poor coverage of polar regions",
+              "Slots in the equatorial belt are a finite and contested resource"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

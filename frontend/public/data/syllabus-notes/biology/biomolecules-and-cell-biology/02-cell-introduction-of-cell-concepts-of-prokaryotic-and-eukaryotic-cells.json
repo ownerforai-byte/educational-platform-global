@@ -321,5 +321,73 @@
     "State cell theory postulates",
     "Explain selective permeability",
     "Justify the cell as the unit of life"
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Prokaryotic and eukaryotic organisation compared",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the dividing line",
+        "subtopics": [
+          {
+            "name": "The single decisive difference",
+            "points": [
+              "A membrane-bound nucleus is the defining eukaryotic feature",
+              "Everything else (organelles, size, chromosome number) follows from that compartmentalisation",
+              "Prokaryotes = Bacteria and Archaea; eukaryotes = Protista, Fungi, Plantae, Animalia"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: feature-by-feature comparison",
+        "subtopics": [
+          {
+            "name": "Genetic apparatus",
+            "points": [
+              "Prokaryote: single circular DNA, no histones (archaea have histone-like proteins), no nucleolus",
+              "Eukaryote: multiple linear chromosomes with histones, organised into chromatin, distinct nucleolus",
+              "Prokaryotes often carry plasmids — small extrachromosomal circular DNA"
+            ]
+          },
+          {
+            "name": "Membranes and organelles",
+            "points": [
+              "Prokaryote: plasma membrane only, no ER/Golgi/lysosome/mitochondrion",
+              "Eukaryote: extensive endomembrane system plus double-membrane organelles",
+              "Both have ribosomes, but 70S vs 80S — the basis of antibiotic selectivity"
+            ]
+          },
+          {
+            "name": "Division and reproduction",
+            "points": [
+              "Prokaryote: binary fission, no mitosis or meiosis, no spindle",
+              "Eukaryote: mitosis for growth, meiosis for gametes",
+              "Prokaryotes exchange genes by transformation, transduction and conjugation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: consequences",
+        "subtopics": [
+          {
+            "name": "Why it matters medically",
+            "points": [
+              "70S vs 80S ribosome difference lets antibiotics (streptomycin, tetracycline) hit bacteria without harming human cells",
+              "Peptidoglycan cell wall is the target of penicillin — absent in human cells",
+              "Rapid binary fission plus horizontal gene transfer drives antibiotic resistance"
+            ]
+          },
+          {
+            "name": "Evolutionary reading",
+            "points": [
+              "Prokaryotes appeared ~3.5 billion years ago; eukaryotes ~1.5-2 billion years ago",
+              "Endosymbiosis converted engulfed bacteria into mitochondria and chloroplasts",
+              "Prokaryotes still dominate biomass and biochemical diversity"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

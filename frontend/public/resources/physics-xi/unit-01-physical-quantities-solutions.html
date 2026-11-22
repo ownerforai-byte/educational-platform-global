@@ -35,6 +35,7 @@
 <li>Exercise 1.5 — Errors and their combination</li>
 <li>Exercise 1.6 — Vernier caliper and screw gauge</li>
 <li>Exercise 1.7 — Order of magnitude and estimation</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -353,6 +354,134 @@ Density 1000 kg m⁻³ and molar mass 0.018 kg mol⁻¹:
 volume per molecule = (0.018/6.02×10²³)/1000 ≈ 3 × 10⁻²⁹ m³
 diameter ≈ (3 × 10⁻²⁹)^(1/3) ≈ 3 × 10⁻¹⁰ m  ⇒ order 10⁻¹⁰ m</p>
 <p class="ans">About 3 × 10²² molecules (order 10²²); molecular size ≈ 3 × 10⁻¹⁰ m (order 10⁻¹⁰ m, i.e. an ångström).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>The exam does not ask eight variations of the same sum. The eight shapes below recur in every unit, so each unit's set ends with one worked example of each: multi-step numerical, derivation, graph reading, combined-concept, assertion–reason, experiment/observation table, estimation with a limiting case, and error-hunting. Learn the shape, not the numbers.</p>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Multi-step numerical] A cube of side 2.00 cm has a mass of 63.2 g. The side is measured with an uncertainty of 0.01 cm and the mass with 0.1 g. Find the density in SI units and its percentage uncertainty.</p>
+<div class="sol">
+<p class="work">V = (2.00 × 10⁻²)³ = 8.00 × 10⁻⁶ m³
+m = 63.2 × 10⁻³ = 6.32 × 10⁻² kg
+ρ = m/V = 6.32 × 10⁻²/8.00 × 10⁻⁶ = 7.90 × 10³ kg m⁻³
+
+ρ = m a⁻³  ⇒  Δρ/ρ = Δm/m + 3(Δa/a)
+       = 0.1/63.2 + 3(0.01/2.00)
+       = 0.0016 + 0.0150 = 0.0166
+Δρ = 0.0166 × 7.90 × 10³ = 1.3 × 10² kg m⁻³</p>
+<p>Three separate length measurements are involved, so the length term is weighted 3 — the cube looks the more precise measurement but it dominates the uncertainty. A dimension used with an exponent n carries n times its relative error.</p>
+<p class="ans">ρ = (7.9 ± 0.1) × 10³ kg m⁻³, i.e. 7.9 g cm⁻³ with a 1.7% uncertainty, dominated by the length term.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Derivation] Show by dimensional analysis that the periodic time of a simple pendulum is T = k√(l/g), and find the value of k that makes the formula exact in the small-angle limit.</p>
+<div class="sol">
+<p class="work">Assume T ∝ l^a g^b m^c (m = bob mass)
+[T] = [L]^a [L T⁻²]^b [M]^c
+
+Equating powers:
+  M:  0 = c            ⇒ c = 0   (mass does not matter)
+  L:  0 = a + b
+  T:  1 = −2b          ⇒ b = −1/2, so a = +1/2
+
+T = k √(l/g)</p>
+<p>Dimensional analysis fixes the exponents but not k. For small oscillations the equation of motion is a = −(g/l)x, whose solution gives ω = √(g/l), hence T = 2π√(l/g), so k = 2π. The analysis also tells you two examinable facts: T is independent of the bob's mass and of the amplitude (for small swings).</p>
+<p class="ans">T = k√(l/g) from [L]^a[LT⁻²]^b; the equation of motion gives k = 2π, so T = 2π√(l/g) — independent of mass and, to first order, of amplitude.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Graph reading] In a pendulum experiment a graph of T² (vertical) against l (horizontal) is a straight line of slope 4.0 s² m⁻¹ and intercept 0.02 s². Find g and state what the intercept tells you.</p>
+<div class="sol">
+<p class="work">T² = (4π²/g) l + c, so slope = 4π²/g
+
+g = 4π²/slope = 4(9.87)/4.0 = 39.48/4.0 = 9.87 m s⁻² ≈ 9.9 m s⁻²
+
+The intercept has units s² and acts like a small extra length:
+l_eff = l + Δl, where Δl = c g/4π² = 0.02 × 9.87/39.48 = 5.0 × 10⁻³ m = 5 mm</p>
+<p>The 5 mm offset is the distance from the suspension point to the true centre of the bob minus the length you measured — the classic systematic error in this experiment. Plotting T² against l rather than T against l is what makes the intercept readable at all: a curve cannot be extrapolated to give a straight-line intercept.</p>
+<p class="ans">g ≈ 9.9 m s⁻² from slope = 4π²/g; the small positive intercept corresponds to about 5 mm of uncompensated length (centre-of-mass offset).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Combined concept] Show that pressure, stress and energy per unit volume all have the same dimensions, and explain why this is not an accident.</p>
+<div class="sol">
+<p class="work">Pressure p = F/A = [M L T⁻²]/[L²] = [M L⁻¹ T⁻²]
+Stress = F/A                        = [M L⁻¹ T⁻²]
+Energy density = E/V = [M L² T⁻²]/[L³] = [M L⁻¹ T⁻²]</p>
+<p>All three measure energy per unit volume: pressure is the work needed to create a unit of volume against the surrounding fluid, stress is the elastic energy stored per unit volume of a strained solid, and energy density is the energy per unit volume of a field or flow. That is why the bulk modulus (a pressure divided by a dimensionless strain) is quoted in pascals, and why atmospheric pressure can be written as 10⁵ J m⁻³.</p>
+<p class="ans">p, stress and E/V are all [M L⁻¹ T⁻²] = J m⁻³, because each is an energy per unit volume; this is why moduli, pressures and energy densities are all measured in pascals.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Assertion–reason] <b>Assertion (A):</b> A dimensionless quantity may still have a unit. <b>Reason (R):</b> The plane angle is a ratio of two lengths but is expressed in radians.</p>
+<div class="sol">
+<p>Both statements are true, and R is the reason for A.</p>
+<p class="work">Angle θ = arc/radius = [L]/[L] = dimensionless — yet the unit radian is written
+explicitly (and 1 rad = 57.3°) because it records how the ratio was formed.
+Other examples: strain (no unit), refractive index (no unit), relative density (no unit),
+sound level in decibels, and amount of substance in moles — all dimensionless or
+near-dimensionless quantities that are quoted with a unit or a named scale.</p>
+<p>The examinable distinction is between <b>dimensional formula</b> (all exponents zero) and <b>having a unit</b> (a convention on top of the number). Radian and steradian are dimensionless SI derived units; the decibel is a logarithmic ratio and not an SI unit at all.</p>
+<p class="ans">A is true, R is true, and R explains A: radians, decibels and moles are units attached to quantities whose dimensional formula is M⁰L⁰T⁰.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Experiment] A screw gauge has a pitch of 0.5 mm and 50 circular-scale divisions; its zero error is +0.02 mm. Three readings of a wire give main-scale 2.5 mm with circular-scale 46, 45 and 47. Find the corrected mean diameter.</p>
+<div class="sol">
+<p class="work">Least count = pitch/number of divisions = 0.5/50 = 0.01 mm
+
+Reading = MS + (CS × LC)          corrected = reading − zero error
+  2.5 + 0.46 = 2.96 mm   →  2.94 mm
+  2.5 + 0.45 = 2.95 mm   →  2.93 mm
+  2.5 + 0.47 = 2.97 mm   →  2.95 mm
+
+Mean = (2.94 + 2.93 + 2.95)/3 = 2.94 mm</p>
+<p>A positive zero error means the instrument already reads something when the jaws are closed, so it is subtracted. Reported properly: d = (2.94 ± 0.01) mm, the uncertainty being the least count. Always quote the least count, the zero error and the number of readings — the examiner awards those three marks before any arithmetic.</p>
+<p class="ans">LC = 0.01 mm; corrected readings 2.94, 2.93, 2.95 mm; mean diameter = 2.94 mm (zero error subtracted, not added).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Estimation and limiting case] Show that the speed of sound in a gas can be written v = √(P/ρ), evaluate it for air at 1.0 × 10⁵ Pa and 1.3 kg m⁻³, and state the limiting case in which the formula would fail.</p>
+<div class="sol">
+<p class="work">[P/ρ] = [M L⁻¹ T⁻²]/[M L⁻³] = [L² T⁻²]  ⇒ √ gives [L T⁻¹] ✓
+
+v = √(1.0 × 10⁵/1.3) = √(7.7 × 10⁴) = 2.8 × 10² m s⁻¹</p>
+<p>The measured value in air is 340 m s⁻¹, not 280 m s⁻¹: the discrepancy is the adiabatic factor √γ. Sound compresses the gas too quickly for heat to flow, so the correct result is v = √(γP/ρ); with γ = 1.4, v = √1.4 × 280 ≈ 331 m s⁻¹, close to observation.</p>
+<p><b>Limiting case:</b> the formula assumes a continuum — a gas whose mean free path is tiny compared with the wavelength. If the pressure falls until the mean free path becomes comparable to the wavelength (very high vacuum, or extremely high frequency), sound stops propagating altogether; that is why no sound crosses a vacuum.</p>
+<p class="ans">Dimensionally v = √(P/ρ) gives 2.8 × 10² m s⁻¹; the exact relation is √(γP/ρ) ≈ 331 m s⁻¹, and the continuum assumption fails when the mean free path approaches the wavelength.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Error-hunting] A student writes four statements. Identify each as right or wrong and correct the wrong ones.<br>
+(i) “0.0050 m has three significant figures.”<br>
+(ii) “A dimensionally correct equation is necessarily correct.”<br>
+(iii) “The dimension of the mole is [N].”<br>
+(iv) “Systematic error can be reduced by taking many readings.”</p>
+<div class="sol">
+<p class="work">(i)  WRONG — 0.0050 m has TWO s.f.: leading zeros only fix the position of the
+    decimal point and never count. Written in standard form the same length is
+    5.0 × 10⁻³ m, which shows the count at a glance.
+(ii) WRONG — dimensionally correct is necessary, not sufficient. v = u + at² is
+    dimensionally wrong, but v = √(2as) and v = √(as) are both dimensionally right;
+    only the first is physically correct. Dimensionless constants are invisible to
+    dimensional analysis.
+(iii) WRONG — the mole is a unit of amount of substance, dimensionally independent
+    (its own symbol N); it is not a dimensionless number.
+(iv) WRONG — many readings average out RANDOM error; a systematic error (zero error,
+    wrong zero of a scale, parallax consistently to one side) shifts every reading the
+    same way and must be corrected by calibration or a different method.</p>
+<p class="ans">All four are wrong: s.f. rules depend on trailing zeros; dimensional correctness is necessary not sufficient; the mole is its own dimension; averaging beats random error, not systematic error.</p>
 </div>
 </div>
 

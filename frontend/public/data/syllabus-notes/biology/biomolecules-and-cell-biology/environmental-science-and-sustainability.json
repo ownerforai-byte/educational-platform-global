@@ -200,5 +200,58 @@
   "bounds": [
     "Stay inside this class 11 topic.",
     "Do not add an unsupported count."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Environmental science — managing the human-nature interface",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Scope",
+            "points": [
+              "Interdisciplinary study of the environment and human impact on it",
+              "Draws on ecology, chemistry, geology, economics and policy",
+              "Sustainability means meeting present needs without compromising future capacity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Major issues",
+            "points": [
+              "Pollution of air, water and soil",
+              "Climate change from greenhouse gas accumulation",
+              "Biodiversity loss and habitat fragmentation",
+              "Resource depletion: water, soil, fossil fuels"
+            ]
+          },
+          {
+            "name": "Responses",
+            "points": [
+              "Reduce, reuse, recycle; waste segregation and treatment",
+              "Renewable energy transition and energy efficiency",
+              "Protected areas, environmental legislation and EIA"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Nepal-specific",
+            "points": [
+              "Glacier retreat threatens Himalayan water security",
+              "Community forestry is a globally cited success in forest recovery",
+              "Rapid urbanisation strains waste and water systems in the Kathmandu valley"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

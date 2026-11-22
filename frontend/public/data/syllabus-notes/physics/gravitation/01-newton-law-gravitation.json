@@ -574,5 +574,57 @@
       ],
       "answer": "B"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Universal law of gravitation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The inverse square law",
+            "points": [
+              "F = G m1 m2 / r^2",
+              "Proportional to both masses, inversely proportional to the square of separation",
+              "Direction along the line joining the centres"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Deriving g",
+            "points": [
+              "Weight = mg and weight = GMm/R^2, so g = GM/R^2",
+              "g depends only on the planet's mass and radius, not on the falling body",
+              "Explains why all bodies fall at the same rate in vacuum"
+            ]
+          },
+          {
+            "name": "Kepler connection",
+            "points": [
+              "Newton showed Kepler's laws follow from the inverse square law",
+              "T^2 proportional to r^3 for circular orbits",
+              "Gives a way to measure planetary masses from orbital data"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Measurement of G",
+            "points": [
+              "Cavendish torsion balance measured the tiny attraction between lead spheres",
+              "Knowing G lets us weigh the Earth",
+              "Modern value 6.67430 x 10^-11, with the weakest precision of any fundamental constant"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

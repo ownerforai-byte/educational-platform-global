@@ -248,5 +248,65 @@
       "answer": "A",
       "explanation": "2h/R vs d/R — altitude effect is twice as fast."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "How g changes with height and depth",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "At the surface",
+            "points": [
+              "g = GM/R^2, about 9.8 m/s^2 on Earth",
+              "R is the Earth's radius, about 6400 km",
+              "g is maximum at the surface, not at the centre"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the two formulas",
+        "subtopics": [
+          {
+            "name": "Altitude",
+            "points": [
+              "g_h = g (1 - 2h/R) for h much smaller than R",
+              "Exact form: g_h = GM/(R+h)^2",
+              "g decreases with height, falling to zero at infinity"
+            ]
+          },
+          {
+            "name": "Depth",
+            "points": [
+              "g_d = g (1 - d/R) for depth d",
+              "g decreases linearly with depth inside a uniform Earth",
+              "At the centre g = 0 because the mass pulls equally in all directions"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: comparisons and traps",
+        "subtopics": [
+          {
+            "name": "Altitude versus depth",
+            "points": [
+              "For the same small distance, the decrease with depth is twice the decrease with altitude",
+              "Reason: at depth only the inner sphere attracts; at altitude the whole mass attracts from farther away",
+              "g falls off as 1/r^2 outside but linearly inside"
+            ]
+          },
+          {
+            "name": "Other variations",
+            "points": [
+              "g is less at the equator than the poles because of rotation and equatorial bulge",
+              "g decreases slightly with latitude-independent factors such as local rock density",
+              "Rotation contributes a centrifugal term that reduces apparent g at the equator"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

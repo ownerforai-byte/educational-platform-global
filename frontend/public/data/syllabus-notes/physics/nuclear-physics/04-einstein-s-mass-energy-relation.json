@@ -248,5 +248,73 @@
       "answer": "B",
       "explanation": "Two rest masses."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Mass-energy equivalence",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The relation",
+            "points": [
+              "E = mc^2, proposed by Einstein in 1905",
+              "Mass and energy are two forms of the same quantity",
+              "1 kg of mass corresponds to about 9 x 10^16 J"
+            ]
+          },
+          {
+            "name": "Practical units",
+            "points": [
+              "1 u = 931.5 MeV of energy",
+              "Electron mass 0.511 MeV/c^2, proton 938.3 MeV/c^2",
+              "Using MeV makes nuclear calculations tractable"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mass defect",
+        "subtopics": [
+          {
+            "name": "Mass defect",
+            "points": [
+              "The mass of a nucleus is less than the sum of its constituent nucleons",
+              "Delta m = (Z m_p + N m_n) - M_nucleus",
+              "The missing mass appears as binding energy"
+            ]
+          },
+          {
+            "name": "Binding energy",
+            "points": [
+              "BE = Delta m x c^2",
+              "Binding energy per nucleon measures nuclear stability",
+              "Peaks at about 8.8 MeV per nucleon near iron-56"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why fission and fusion both release energy",
+            "points": [
+              "Fission splits heavy nuclei toward the iron peak, increasing BE per nucleon",
+              "Fusion combines light nuclei toward the peak, also increasing BE per nucleon",
+              "Both move the system toward maximum stability"
+            ]
+          },
+          {
+            "name": "Packing fraction",
+            "points": [
+              "Packing fraction = (M - A)/A, a measure of departure from A units",
+              "Negative packing fraction means the nucleus is bound and stable",
+              "A curve of packing fraction against mass number reveals the same iron peak"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

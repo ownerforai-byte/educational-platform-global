@@ -199,5 +199,57 @@
   "bounds": [
     "Stay inside this class 11 topic.",
     "Do not add an unsupported count."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Evolution by natural selection",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Darwin's logic",
+            "points": [
+              "Individuals vary; more offspring are produced than can survive",
+              "Variants with advantageous traits survive and reproduce more",
+              "Over generations the population's trait distribution shifts"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Mechanisms",
+            "points": [
+              "Natural selection, sexual selection, mutation, gene flow, genetic drift",
+              "Selection acts on phenotypes, changing allele frequencies",
+              "Speciation follows reproductive isolation"
+            ]
+          },
+          {
+            "name": "Evidence",
+            "points": [
+              "Fossil record, comparative anatomy (homologous and analogous structures)",
+              "Embryology, biogeography, molecular homology",
+              "Observed contemporary evolution: antibiotic resistance, industrial melanism"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Modern synthesis",
+            "points": [
+              "Neo-Darwinism fuses selection with Mendelian genetics and population genetics",
+              "Hardy-Weinberg equilibrium describes conditions under which allele frequencies do not change",
+              "Fitness is relative reproductive success, not strength"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

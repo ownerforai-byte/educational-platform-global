@@ -105,5 +105,57 @@
     "**3. [Idea: exhibit both one-sided limits rather than assert them]** Show that $f(x)=\\dfrac{2^{1/x}-1}{2^{-1/x}+1}$ has no limit as $x \\to 0$, and classify the discontinuity.\\newline\\newline**Solution:** Put $u = 1/x$.$^{\\bullet}$ **$x\\to0^+$: $u\\to+\\infty$**, so $2^u \\to \\infty$. Divide numerator and denominator by $2^u$:$\\newline\\lim_{x\\to0^+}\\dfrac{2^u-1}{2^{-u}+1} = \\lim\\dfrac{1-2^{-u}}{2^{-u}+1} = \\dfrac{1-0}{0+1} = 1$.$^{\\bullet}$ **$x\\to0^-$: $u\\to-\\infty$**, so $2^u \\to 0$. Numerator $\\to -1$, denominator $\\to 2$, giving $-\\frac12$.\\newline\\newlineThe one-sided limits are $1$ and $-\\frac12$ — both finite but UNEQUAL.\\newline\\newline**Answer:** no limit; a **JUMP** discontinuity of size $\\left|1+\\frac12\\right| = \\frac32$.",
     "**4. [Idea: the derivative test resolves $0/0$ at any point where the numerator also vanishes]** Classify the discontinuity of $g(x)=\\dfrac{\\sin(\\pi x)}{x(x-1)}$ at $x=0$ and at $x=1$.\\newline\\newline**Solution:** The form is $\\frac00$ at both, so apply the ratio-of-derivatives test.$^{\\bullet}$ **At 0:** $\\lim_{x\\to0}\\dfrac{\\pi\\cos(\\pi x)}{2x-1} = \\dfrac{\\pi}{1} = \\pi$. Finite ⇒ **removable**, $g(0)=\\pi$.$^{\\bullet}$ **At 1:** $\\lim_{x\\to1}\\dfrac{\\pi\\cos(\\pi x)}{2x-1} = \\dfrac{-\\pi}{1} = -\\pi$. Finite ⇒ **removable**, $g(1)=-\\pi$.\\newline\\newline**Answer:** removable at both, repaired values $\\pi$ and $-\\pi$. **Note:** the test succeeds at both points only because $\\sin(\\pi x)$ vanishes at BOTH $0$ and $1$; had it vanished at 0 but not 1, $x=1$ would have been an infinite discontinuity.",
     "**5. [Idea: compose the two limit statements, and notice where the hypothesis is used]** $f$ is continuous on $[a,b]$, $g$ is continuous on $[c,d]$, and $f([a,b])\\subseteq[c,d]$. Prove $g\\circ f$ is continuous on $[a,b]$.\\newline\\newline**Solution:** Fix $x_0\\in[a,b]$.$^{\\bullet}$ $f$ continuous at $x_0$: $\\lim_{x\\to x_0}f(x)=f(x_0)$.$^{\\bullet}$ $f(x_0)\\in[c,d]$ and $g$ continuous there: $\\lim_{u\\to f(x_0)}g(u)=g(f(x_0))$.\\newline\\newline$^{\\bullet}$ As $x\\to x_0$, $f(x)\\to f(x_0)$, so substituting $u=f(x)$ in the second statement gives$\\newline\\lim_{x\\to x_0}g(f(x)) = g(f(x_0))$.\\newline\\newlineThat is precisely continuity of $g\\circ f$ at $x_0$, and $x_0$ was arbitrary.\\newline\\newline**Answer:** $g\\circ f$ continuous on $[a,b]$. **Where the hypothesis matters:** the inclusion $f([a,b])\\subseteq[c,d]$ ensures the second limit is taken where $g$ is actually continuous — otherwise $f(x_0)$ could land on a hole in $g$."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Reading discontinuity from a graph",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Visual signatures",
+            "points": [
+              "A hole means removable discontinuity",
+              "A break with a vertical gap means jump discontinuity",
+              "A vertical asymptote means infinite discontinuity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Reading the graph",
+            "points": [
+              "Trace from the left and from the right separately",
+              "Note whether the two traces meet, miss, or diverge",
+              "Check whether a solid dot fills the gap"
+            ]
+          },
+          {
+            "name": "Piecewise functions",
+            "points": [
+              "Piecewise definitions are the commonest source of jumps",
+              "Check the boundary point of each piece",
+              "Continuity at the boundary requires matching one-sided limits"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Graph to formula",
+            "points": [
+              "A graph with a hole suggests a cancelled common factor",
+              "A vertical asymptote suggests a zero in the denominator",
+              "A jump suggests a piecewise definition with mismatched pieces"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

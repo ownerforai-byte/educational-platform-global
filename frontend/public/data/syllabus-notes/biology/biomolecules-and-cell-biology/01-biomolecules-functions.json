@@ -601,5 +601,102 @@
       "The term 'denature' means loss of native structure (unfolding), not destruction of the molecule.",
       "Base-pairing rules: A pairs with T (or U in RNA), G pairs with C — this is specific, not random."
     ]
+  },
+  "mindmap": {
+    "centralConcept": "Biomolecules — structure dictates function",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the four macromolecule classes",
+        "subtopics": [
+          {
+            "name": "Carbohydrates",
+            "points": [
+              "Monosaccharides (glucose, fructose), disaccharides (sucrose, lactose), polysaccharides (starch, glycogen, cellulose)",
+              "Primary quick energy source; cellulose is structural and indigestible to humans",
+              "General formula (CH2O)n; glycosidic bonds link monomers"
+            ]
+          },
+          {
+            "name": "Proteins",
+            "points": [
+              "Built from 20 amino acids joined by peptide bonds",
+              "Four structure levels: primary sequence, secondary (alpha helix, beta sheet), tertiary (3D fold), quaternary (subunits)",
+              "Functions: enzymes, transport, structure, signalling, immunity, movement"
+            ]
+          },
+          {
+            "name": "Lipids",
+            "points": [
+              "Fats, oils, phospholipids, steroids, waxes; hydrophobic or amphipathic",
+              "Highest energy density per gram; phospholipids form the bilayer",
+              "Cholesterol modulates membrane fluidity and is a steroid hormone precursor"
+            ]
+          },
+          {
+            "name": "Nucleic acids",
+            "points": [
+              "DNA stores information; RNA transmits and executes it",
+              "Nucleotides = pentose sugar + phosphate + nitrogenous base",
+              "DNA is double-stranded with A-T and G-C pairing; RNA is usually single-stranded with uracil"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: structure-function logic",
+        "subtopics": [
+          {
+            "name": "How shape creates function",
+            "points": [
+              "Enzyme active site geometry gives substrate specificity (lock-and-key, induced fit)",
+              "Protein denaturation destroys function by destroying tertiary shape, not primary sequence",
+              "Saturated vs unsaturated fatty acid tails change membrane packing and fluidity"
+            ]
+          },
+          {
+            "name": "Minerals and water",
+            "points": [
+              "Water: universal solvent, high specific heat, high latent heat, cohesion and adhesion",
+              "Macro-minerals (Ca, P, K, Na, Mg, S, Cl) and micro-minerals (Fe, Zn, Cu, I, Mn) in trace amounts",
+              "Iron in haemoglobin, iodine in thyroxine, calcium in bone and clotting"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: quantitative and modern view",
+        "subtopics": [
+          {
+            "name": "Energetics",
+            "points": [
+              "Carbohydrate ~4 kcal/g, protein ~4 kcal/g, lipid ~9 kcal/g",
+              "ATP is the universal energy currency; ~30.5 kJ/mol released on hydrolysis under standard conditions",
+              "Energy is transferred, never created — the whole chain traces back to photosynthesis"
+            ]
+          },
+          {
+            "name": "Tests and identification",
+            "points": [
+              "Benedict's test: reducing sugars give brick-red precipitate on heating",
+              "Biuret test: proteins give violet; Sudan III stains lipids red",
+              "Iodine test: starch turns blue-black"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Exam traps",
+        "subtopics": [
+          {
+            "name": "Frequently missed",
+            "points": [
+              "Cellulose and starch are both glucose polymers but differ in glycosidic linkage and digestibility",
+              "Lipids are not polymers in the strict sense — they are not built from repeating identical units",
+              "DNA and RNA differ in sugar (deoxyribose vs ribose) and one base (thymine vs uracil)"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

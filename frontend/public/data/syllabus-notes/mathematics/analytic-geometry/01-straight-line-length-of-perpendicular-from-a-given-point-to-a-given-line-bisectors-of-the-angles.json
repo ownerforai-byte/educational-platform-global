@@ -84,5 +84,57 @@
     "Trick 1: Distance formula: d = |ax1 + by1 + c|/√(a² + b²) — memorise the denominator once and every distance problem is a substitution.",
     "Trick 2: Bisectors: (a1x + b1y + c1)/√(a1²+b1²) = ±(a2x + b2y + c2)/√(a2²+b2²); choose the sign by substituting a test point (origin) — the sign that gives the bisector of the angle containing the origin is the one with equal signs.",
     "Trick 3: Foot of perpendicular: use d along the normal direction (a, b) — foot = (x1 − a·t, y1 − b·t) with t = (ax1+by1+c)/(a²+b²)."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Perpendicular distance and angle bisectors of lines",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Perpendicular distance",
+            "points": [
+              "Distance from (x1, y1) to ax + by + c = 0 is |ax1 + by1 + c| / sqrt(a^2 + b^2)",
+              "The absolute value ensures a positive distance",
+              "Distance between parallel lines ax+by+c1=0 and ax+by+c2=0 is |c1-c2|/sqrt(a^2+b^2)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: angle bisectors",
+        "subtopics": [
+          {
+            "name": "Bisectors of two lines",
+            "points": [
+              "For lines a1x+b1y+c1=0 and a2x+b2y+c2=0, the bisectors are (a1x+b1y+c1)/sqrt(a1^2+b1^2) = ±(a2x+b2y+c2)/sqrt(a2^2+b2^2)",
+              "The two signs give the two bisectors, which are perpendicular to each other",
+              "The bisector of the acute angle is the one nearer the origin for lines with positive constants"
+            ]
+          },
+          {
+            "name": "Identifying acute versus obtuse",
+            "points": [
+              "Compute a1a2 + b1b2; if positive the angle between lines is acute",
+              "The sign rule then selects which bisector is the acute one",
+              "This is where most marks are lost"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Applications",
+            "points": [
+              "Finding the incentre of a triangle from two bisectors",
+              "Locating points equidistant from two lines",
+              "Reflection of a point in a line uses the perpendicular foot"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

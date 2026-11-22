@@ -591,5 +591,73 @@
       "answer": "X-ray crystallography (a physics technique) provided the key diffraction pattern that revealed the DNA structure"
     }
   ],
-  "source": "authored-v2"
+  "source": "authored-v2",
+  "mindmap": {
+    "centralConcept": "Biology as a hub science — borrowing methods from every other discipline",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: why the connections exist",
+        "subtopics": [
+          {
+            "name": "Shared physical and chemical basis",
+            "points": [
+              "All life obeys the same physics and chemistry: diffusion, osmosis, thermodynamics, bonding",
+              "Water's polarity and hydrogen bonding explain almost every transport and solvent property in cells",
+              "Carbon's tetravalency underwrites the whole diversity of organic molecules"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the interface map",
+        "subtopics": [
+          {
+            "name": "Biology with physical sciences",
+            "points": [
+              "Biochemistry: reaction pathways, enzyme kinetics, energetics of ATP",
+              "Biophysics: membrane potentials, muscle mechanics, X-ray crystallography of DNA and proteins",
+              "Physical chemistry explains pH, buffers, colligative properties and osmosis in living systems"
+            ]
+          },
+          {
+            "name": "Biology with formal sciences",
+            "points": [
+              "Biomathematics: population growth models, epidemic curves, genetic ratios, statistical tests",
+              "Bioinformatics: sequence alignment, phylogenetics, database mining of genomes",
+              "Statistics is essential because biological variation is the norm, not the exception"
+            ]
+          },
+          {
+            "name": "Biology with social and earth sciences",
+            "points": [
+              "Geography and geology: biogeography, fossil record, soil formation, plate tectonics and species distribution",
+              "Psychology and neuroscience: behaviour, learning, reflex pathways",
+              "Economics and ethics: agriculture, conservation policy, bioethics of gene editing"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: convergence and its consequences",
+        "subtopics": [
+          {
+            "name": "From reduction to systems",
+            "points": [
+              "Reductionism explains parts; systems biology explains how parts interact as networks",
+              "Omics layers stack: genome -> transcriptome -> proteome -> metabolome -> phenotype",
+              "Emergent properties (consciousness, ecosystem stability) cannot be read off a single molecule"
+            ]
+          },
+          {
+            "name": "Ethical boundary",
+            "points": [
+              "Recombinant DNA safety debate crystallised at the 1975 Asilomar conference",
+              "Bioethics now governs gene therapy, cloning, GMO release and human subject research",
+              "Scientific capability and social permission are separate questions"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

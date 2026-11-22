@@ -840,5 +840,65 @@
       ],
       "answer": "Ribosome (RER) → RER → Golgi → secretory vesicle → plasma membrane → exocytosis"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Eukaryotic organelles — structure and function in detail",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Boundary and framework",
+            "points": [
+              "Cell wall gives shape and osmotic protection; membrane controls exchange",
+              "Cytoskeleton provides internal architecture and movement",
+              "Compartmentalisation is the organising principle of the eukaryotic cell"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: organelle functions",
+        "subtopics": [
+          {
+            "name": "Energy transduction",
+            "points": [
+              "Mitochondria convert chemical energy of glucose into ATP via Krebs cycle and oxidative phosphorylation",
+              "Chloroplasts convert light energy into chemical energy in photosynthesis",
+              "Both use chemiosmosis across a membrane to make ATP"
+            ]
+          },
+          {
+            "name": "Synthesis and secretion",
+            "points": [
+              "Ribosomes translate mRNA into polypeptide",
+              "ER folds and modifies; Golgi sorts and packages",
+              "Secretory vesicles fuse with the plasma membrane in exocytosis"
+            ]
+          },
+          {
+            "name": "Digestion and recycling",
+            "points": [
+              "Lysosomes digest worn organelles (autophagy) and ingested material (heterophagy)",
+              "Peroxisomes neutralise hydrogen peroxide and oxidise fatty acids",
+              "Autophagy recycles components under starvation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Disease links",
+            "points": [
+              "Mitochondrial DNA mutations cause maternally inherited disorders (e.g. MELAS)",
+              "Lysosomal storage diseases follow from a single defective hydrolytic enzyme",
+              "Defects in cilia (ciliopathies) impair mucus clearance and development"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

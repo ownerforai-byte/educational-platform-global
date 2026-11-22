@@ -500,5 +500,73 @@
       "answer": "B",
       "explanation": "Infinite range, acts along the line of centres."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Newton's law of universal gravitation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the law",
+        "subtopics": [
+          {
+            "name": "Statement and form",
+            "points": [
+              "Every particle attracts every other with a force along the line joining them",
+              "F = G m1 m2 / r^2, where G = 6.674 x 10^-11 N m^2 kg^-2",
+              "The force is always attractive and acts on both bodies equally (Newton's third law)"
+            ]
+          },
+          {
+            "name": "Why G matters",
+            "points": [
+              "G is a universal constant, the same everywhere and for all masses",
+              "It is extremely small, which is why gravity is negligible between everyday objects",
+              "Cavendish first measured G in 1798 using a torsion balance"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: consequences",
+        "subtopics": [
+          {
+            "name": "Inverse square behaviour",
+            "points": [
+              "Doubling the separation reduces the force to one quarter",
+              "The law is an inverse square because the force spreads over a spherical surface of area 4 pi r^2",
+              "Valid for point masses and for uniform spheres treated as point masses at their centres"
+            ]
+          },
+          {
+            "name": "Superposition",
+            "points": [
+              "The net force on a mass is the vector sum of forces from all other masses",
+              "Forces from different bodies add independently",
+              "This is what makes n-body problems hard but tractable"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: limits and modern view",
+        "subtopics": [
+          {
+            "name": "Where the law breaks down",
+            "points": [
+              "Fails at very strong fields and high speeds — general relativity is required",
+              "Anomalous perihelion precession of Mercury was the first observed failure",
+              "Gravitational waves and black holes have no Newtonian description"
+            ]
+          },
+          {
+            "name": "Field formulation",
+            "points": [
+              "Gravity can be described as a field g = GM/r^2 rather than as action at a distance",
+              "Field lines point toward the mass and never cross",
+              "Field formulation is what generalises to relativity"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
