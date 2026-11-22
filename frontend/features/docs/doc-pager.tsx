@@ -7,22 +7,23 @@
  * made long topics feel random and tiring to read. DocPager expresses every
  * content block as bound paper pages instead:
  *
- *   1. Every item renders ONCE inside the page card (single DOM — no hidden
- *      duplicate layer). Each wrapper is a `flow-root` block with a trailing
- *      gap, so its `offsetHeight` is the exact space it needs.
- *   2. A pre-paint measuring pass (all items temporarily visible) records the
- *      item heights; packDocPages greedily packs them into fixed-height
- *      pages — a block that does not fit moves to the next page.
+ *   1. Every item renders ONCE (single DOM — no hidden duplicate layer). Each
+ *      wrapper is a `flow-root` block with a trailing gap, so its
+ *      `offsetHeight` is the exact space it needs.
+ *   2. A pre-paint measuring pass records the item heights; packDocPages
+ *      greedily packs them into fixed-height pages — a block that does not
+ *      fit moves to the next page.
  *   3. `keepWithNext` items (section headings, sub-labels) are never stranded
  *      at the bottom of a page; they travel to the next page together with
  *      the block that follows.
- *   4. Off-page items are `hidden print:block`, so the reader sees one paper
- *      page at a time while Print / PDF still outputs the whole document.
+ *   4. The pages are bound like a book read vertically: every page is its own
+ *      paper sheet with a thin boundary and a folio (page number) at the
+ *      foot, stacked in reading order — scrolling down turns the pages.
  *
  * Re-measuring happens when the items change, the reader font size changes
  * (`measureKey`), the viewport width changes, or web fonts finish loading.
  * In jsdom/no-JS the measuring pass never runs, so every item stays visible
- * on one page — tests and SEO keep seeing the full document.
+ * in one continuous flow — tests and SEO keep seeing the full document.
  */
 
 import React, {
@@ -33,7 +34,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface DocPagerItem {
   key: string;
@@ -58,7 +58,7 @@ const useIsoEffect = typeof window === "undefined" ? useEffect : useLayoutEffect
 
 /**
  * Pure page packing: greedy fill of the height budget. An item taller than
- * the budget gets a page of its own (the page card grows). Trailing
+ * the budget gets a page of its own (the page sheet grows). Trailing
  * keepWithNext items are CARRIED to the next page (never dropped) so a
  * heading is never separated from its content.
  */
@@ -104,6 +104,27 @@ function pageBudgetFor(width: number): number {
   return width < 640 ? PAGE_BUDGET_MOBILE_PX : PAGE_BUDGET_PX;
 }
 
+/**
+ * Can this environment lay content out at all? Browsers yes; jsdom (tests)
+ * and static rendering report `offsetHeight === 0` for everything, so the
+ * two-phase measure-then-pack flow is pointless there — and its extra render
+ * per document is pure memory churn across the 696-topic render gate. The
+ * probe runs once and is cached for the process.
+ */
+let layoutProbeResult: boolean | null = null;
+function supportsLayout(): boolean {
+  if (typeof document === "undefined") return false;
+  if (layoutProbeResult === null) {
+    const probe = document.createElement("div");
+    probe.setAttribute("style", "position:absolute;visibility:hidden;");
+    probe.innerHTML = "<span style=\"display:inline-block;height:10px\">x</span>";
+    document.body.appendChild(probe);
+    layoutProbeResult = (probe.firstChild as HTMLElement | null)?.offsetHeight === 10;
+    probe.remove();
+  }
+  return layoutProbeResult;
+}
+
 export function DocPager({
   items,
   measureKey,
@@ -117,37 +138,39 @@ export function DocPager({
   onApiReady?: (api: DocPagerApi) => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const pendingScroll = useRef(false);
   const lastWidth = useRef(0);
+  const layoutCapable = useMemo(() => supportsLayout(), []);
   const [measured, setMeasured] = useState<{
     items: DocPagerItem[];
     measureKey?: string;
     heights: number[];
     budget: number;
   } | null>(null);
-  const [page, setPage] = useState(0);
 
   // Staleness is derived during render: new items or a font-size change make
-  // the previous measurement obsolete, so everything renders visible again
-  // and the pre-paint pass below re-measures before the browser paints.
+  // the previous measurement obsolete, so everything renders in the plain
+  // measuring flow again and the pre-paint pass below re-measures before the
+  // browser paints. Environments without layout (jsdom, SSR) never measure.
   const stale =
-    !measured || measured.items !== items || measured.measureKey !== measureKey;
+    layoutCapable &&
+    (!measured || measured.items !== items || measured.measureKey !== measureKey);
 
-  // Measuring pass: all items are visible (nothing hidden yet), so each
+  // Measuring pass: all items are visible in one plain flow, so each
   // wrapper's offsetHeight is its true laid-out height. Runs pre-paint.
   useIsoEffect(() => {
     if (!stale) return;
-    const el = containerRef.current;
-    if (!el || typeof window === "undefined") return;
-    const heights = Array.from(el.children).map(
+    const flow = containerRef.current?.querySelector<HTMLElement>("[data-doc-measure]");
+    if (!flow || typeof window === "undefined") return;
+    const heights = Array.from(flow.children).map(
       (c) => (c as HTMLElement).offsetHeight,
     );
     setMeasured({ items, measureKey, heights, budget: pageBudgetFor(window.innerWidth) });
   }, [stale, items, measureKey]);
 
   // Viewport width changes re-flow every block → re-measure. Height-only
-  // resizes (our own hide/show flips) are ignored to avoid loops.
+  // resizes (our own page flips) are ignored to avoid loops.
   useEffect(() => {
+    if (!layoutCapable) return;
     const el = containerRef.current;
     if (!el || typeof ResizeObserver === "undefined") return;
     lastWidth.current = el.getBoundingClientRect().width;
@@ -161,10 +184,11 @@ export function DocPager({
     });
     ro.observe(el);
     return () => ro.disconnect();
-  }, [items]);
+  }, [items, layoutCapable]);
 
   // Web fonts reflow text after first paint → one extra measuring pass.
   useEffect(() => {
+    if (!layoutCapable) return;
     const fonts = (document as Document & { fonts?: { ready: Promise<unknown> } }).fonts;
     if (!fonts?.ready) return;
     let cancelled = false;
@@ -174,23 +198,16 @@ export function DocPager({
     return () => {
       cancelled = true;
     };
-  }, [items]);
+  }, [items, layoutCapable]);
 
   const pages = useMemo(() => {
+    // No layout engine (jsdom, SSR): everything fits one page by definition,
+    // rendered directly — one single render, no measuring pass.
+    if (!layoutCapable) return [items.map((_, i) => i)];
     if (stale || !measured || measured.heights.length !== items.length) return null;
     return packDocPages(items, measured.heights, measured.budget);
-  }, [stale, measured, items]);
+  }, [layoutCapable, stale, measured, items]);
 
-  const pageOfItem = useMemo(() => {
-    if (!pages) return null;
-    const map = new Array<number>(items.length).fill(0);
-    pages.forEach((idxs, pi) => idxs.forEach((i) => { map[i] = pi; }));
-    return map;
-  }, [pages, items.length]);
-
-  // `page` may temporarily exceed the page count after a re-measure shrunk
-  // the document; every consumer clamps through safePage, so no effect is
-  // needed to normalize it.
   const goToSection = useCallback(
     (sectionId: string) => {
       if (!pages) return;
@@ -198,8 +215,11 @@ export function DocPager({
       if (itemIndex < 0) return;
       const target = pages.findIndex((pageItems) => pageItems.includes(itemIndex));
       if (target < 0) return;
-      pendingScroll.current = true;
-      setPage(target);
+      // The book is bound vertically: jumping to a section scrolls its page
+      // sheet into view instead of swapping the content in place.
+      containerRef.current
+        ?.querySelector(`[data-doc-page="${target + 1}"]`)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
     },
     [items, pages],
   );
@@ -208,86 +228,53 @@ export function DocPager({
     onApiReady?.({ goToSection, pageCount: pages?.length ?? 0 });
   }, [onApiReady, goToSection, pages]);
 
-  // Smooth-scroll the freshly shown page card into view after a jump.
-  useIsoEffect(() => {
-    if (!pendingScroll.current) return;
-    pendingScroll.current = false;
-    containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [page]);
-
-  const safePage = pages ? Math.min(page, pages.length - 1) : 0;
-
-  const stepPage = (delta: number) => {
-    if (!pages) return;
-    pendingScroll.current = true;
-    setPage((p) => Math.min(Math.max(p + delta, 0), pages.length - 1));
-  };
-
   return (
-    <div className="relative" data-doc-pager="">
-      {/*
-        The single page card. While a measuring pass is pending (`stale`),
-        every item is visible so the pass reads true heights; afterwards,
-        off-page items are hidden on screen but restored for Print / PDF
-        (`hidden print:block`), so printing always outputs the whole document.
-      */}
-      <div
-        role="group"
-        aria-label={`${ariaLabel}${pages ? ` — page ${safePage + 1} of ${pages.length}` : ""}`}
-        className="doc-page-card rounded-2xl border border-border/80 bg-card p-6 shadow-xs min-h-[480px] sm:min-h-[640px] sm:p-10 print:min-h-0 print:border-none print:bg-white print:p-0 print:shadow-none"
-      >
-        <div ref={containerRef} className="min-h-[440px] sm:min-h-[600px]">
-          {items.map((it, i) => {
-            const offPage = !stale && pageOfItem !== null && pageOfItem[i] !== safePage;
-            return (
-              <div
-                key={it.key}
-                data-doc-page-item={it.sectionId ?? undefined}
-                className={`flow-root pb-5 ${offPage ? "hidden print:block" : ""}`}
-              >
-                {it.node}
-              </div>
-            );
-          })}
+    <div ref={containerRef} className="relative" data-doc-pager="" aria-label={ariaLabel}>
+      {!pages ? (
+        /*
+          Measuring flow: while a pass is pending every item renders visible
+          in one plain column so the pre-paint effect reads true heights.
+          The reader never sees this state — it is replaced before paint.
+        */
+        <div data-doc-measure="" className="flow-root">
+          {items.map((it) => (
+            <div key={it.key} className="flow-root pb-5">
+              {it.node}
+            </div>
+          ))}
         </div>
-        {pages && (
-          <p className="border-t border-border/60 pt-3 text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground print:hidden">
-            Page {safePage + 1} of {pages.length}
-          </p>
-        )}
-      </div>
-
-      {/* Floating reader controls: prev / next with the page position. */}
-      {pages && pages.length > 1 && (
-        <nav
-          aria-label="Document pages"
-          className="sticky bottom-4 z-20 mt-5 flex justify-center print:hidden"
-        >
-          <div className="flex items-center gap-1.5 rounded-full border border-border/70 bg-background/95 py-1.5 pr-1.5 pl-2 shadow-lg backdrop-blur">
-            <button
-              type="button"
-              onClick={() => stepPage(-1)}
-              disabled={safePage === 0}
-              title="Previous page"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:opacity-40 disabled:hover:bg-transparent"
+      ) : (
+        /*
+          The bound book: paper sheets stacked vertically in reading order.
+          Each sheet is a fixed-height page with a thin boundary; content
+          that did not fit simply lives on the next sheet. Every sheet keeps
+          a book folio at its foot and starts a new printed page.
+        */
+        <div className="flex flex-col gap-5 sm:gap-7">
+          {pages.map((idxs, pi) => (
+            <section
+              key={`page-${pi + 1}`}
+              data-doc-page={pi + 1}
+              aria-label={`Page ${pi + 1} of ${pages.length}`}
+              className="doc-page-sheet flex min-h-[480px] flex-col rounded-sm border border-border/70 bg-card px-5 py-7 shadow-xs sm:min-h-[760px] sm:px-9 sm:py-9 print:min-h-0 print:break-after-page print:border-border/40 print:shadow-none"
             >
-              <ChevronLeft className="h-4 w-4" />
-            </button>
-            <span className="text-xs font-bold tabular-nums text-foreground">
-              Page {safePage + 1}
-              <span className="font-medium text-muted-foreground"> of {pages.length}</span>
-            </span>
-            <button
-              type="button"
-              onClick={() => stepPage(1)}
-              disabled={safePage >= pages.length - 1}
-              title="Next page"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:opacity-40 disabled:hover:bg-transparent"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </button>
-          </div>
-        </nav>
+              <div className="flow-root flex-1">
+                {idxs.map((i) => (
+                  <div
+                    key={items[i].key}
+                    data-doc-page-item={items[i].sectionId ?? undefined}
+                    className="flow-root pb-5"
+                  >
+                    {items[i].node}
+                  </div>
+                ))}
+              </div>
+              <footer className="mt-3 border-t border-border/50 pt-2.5 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground print:hidden">
+                Page {pi + 1} of {pages.length}
+              </footer>
+            </section>
+          ))}
+        </div>
       )}
     </div>
   );

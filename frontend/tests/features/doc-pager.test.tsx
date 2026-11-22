@@ -69,7 +69,7 @@ describe("TopicDocView paginated render", () => {
     topicTitle: "Projectile motion and its applications",
   };
 
-  it("renders every section and the page controls (jsdom: single page)", () => {
+  it("renders every section as stacked book pages with a folio (jsdom: one page)", () => {
     const { container } = render(
       <TopicDocView
         {...baseProps}
@@ -89,9 +89,15 @@ describe("TopicDocView paginated render", () => {
       expect(container.querySelector(`section#${id}`)).toBeTruthy();
     }
 
-    // In jsdom every measured height is 0, so all blocks fit on one page and
-    // the pager shows its controls with the full count.
+    // In jsdom every measured height is 0, so all blocks fit on one paper
+    // sheet: a thin-bordered page with a book folio at its foot.
+    const sheet = container.querySelector("[data-doc-page='1']");
+    expect(sheet).toBeTruthy();
+    expect(sheet?.className).toContain("border");
     expect(screen.getByText(/Page 1 of 1/)).toBeTruthy();
-    expect(container.querySelector("[data-doc-pager]")).toBeTruthy();
+
+    // The old single-page reader controls are gone — the book is bound
+    // vertically and read by scrolling.
+    expect(container.querySelector("nav[aria-label='Document pages']")).toBeNull();
   });
 });
