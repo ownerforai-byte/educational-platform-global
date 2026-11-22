@@ -188,5 +188,73 @@
     "component": "MoleculeViewer",
     "desc": "3D molecular structure viewer with VSEPR prediction"
   },
-  "visualType": "hybridization-orbitals"
+  "visualType": "hybridization-orbitals",
+  "mindmap": {
+    "centralConcept": "Hybridization — mixing orbitals to explain real geometry",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: why hybridize",
+        "subtopics": [
+          {
+            "name": "The problem",
+            "points": [
+              "Carbon's ground state has two unpaired electrons, predicting only two bonds, yet it forms four",
+              "Pure s and p orbitals would give unequal bond angles, which is not observed",
+              "Hybridization mixes orbitals of similar energy to give equivalent new orbitals"
+            ]
+          },
+          {
+            "name": "Definition",
+            "points": [
+              "Hybrid orbitals have identical shape and energy, directed to minimise repulsion",
+              "Number of hybrid orbitals equals the number of atomic orbitals mixed",
+              "Hybridization is a model, not a physical process that can be observed"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the standard types",
+        "subtopics": [
+          {
+            "name": "sp3, sp2, sp",
+            "points": [
+              "sp3: one s + three p, four orbitals, tetrahedral, 109.5 degrees (CH4, NH3, H2O)",
+              "sp2: one s + two p, three orbitals, trigonal planar, 120 degrees, leaves one p for a pi bond (C2H4)",
+              "sp: one s + one p, two orbitals, linear, 180 degrees, leaves two p for two pi bonds (C2H2)"
+            ]
+          },
+          {
+            "name": "Steric number link",
+            "points": [
+              "Steric number 4 gives sp3; 3 gives sp2; 2 gives sp",
+              "Lone pairs occupy hybrid orbitals and affect shape but not the hybridization label",
+              "Water is sp3 hybridized although its molecular shape is bent"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: consequences",
+        "subtopics": [
+          {
+            "name": "Bond length and strength",
+            "points": [
+              "More s character means a shorter, stronger bond",
+              "sp has 50% s character, sp2 33%, sp3 25%",
+              "C-H bond length: sp 106 pm < sp2 108 pm < sp3 109 pm"
+            ]
+          },
+          {
+            "name": "Pi bonding and rotation",
+            "points": [
+              "Unhybridized p orbitals form pi bonds by sideways overlap",
+              "Pi bonds prevent free rotation, which is why alkenes show cis-trans isomerism",
+              "A double bond is one sigma plus one pi; a triple bond is one sigma plus two pi"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

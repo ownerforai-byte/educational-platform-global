@@ -190,5 +190,65 @@
     "component": "MoleculeViewer",
     "desc": "3D molecular structure viewer with VSEPR prediction"
   },
-  "visualType": "molecular-orbital-theory"
+  "visualType": "molecular-orbital-theory",
+  "mindmap": {
+    "centralConcept": "Molecular orbital theory — electrons belong to the whole molecule",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Atomic to molecular orbitals",
+            "points": [
+              "Atomic orbitals combine to give molecular orbitals spanning the whole molecule",
+              "Combining n atomic orbitals gives n molecular orbitals",
+              "Bonding MOs are lower in energy; antibonding MOs are higher and marked with a star"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the key quantities",
+        "subtopics": [
+          {
+            "name": "Bond order",
+            "points": [
+              "Bond order = (bonding electrons - antibonding electrons) / 2",
+              "Bond order zero means the molecule does not exist (He2)",
+              "Higher bond order means shorter, stronger bond"
+            ]
+          },
+          {
+            "name": "Magnetic behaviour",
+            "points": [
+              "Unpaired electrons in an MO make the species paramagnetic",
+              "O2 has two unpaired electrons in pi-star orbitals, so it is paramagnetic — VBT fails here",
+              "N2 has bond order 3 and is diamagnetic"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: applications",
+        "subtopics": [
+          {
+            "name": "Explaining the unexplainable",
+            "points": [
+              "O2 paramagnetism, and why O2+ has a higher bond order than O2",
+              "Why NO is paramagnetic while NO+ is not",
+              "H2+ exists with bond order 0.5, which no Lewis structure can describe"
+            ]
+          },
+          {
+            "name": "Limits",
+            "points": [
+              "MO theory is mathematically heavier than VBT",
+              "For most organic molecules VBT plus hybridization is sufficient and simpler",
+              "Both models are approximations of the same quantum reality"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

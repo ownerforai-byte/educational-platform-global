@@ -297,5 +297,81 @@
       "answer": "B",
       "explanation": "Harder to lose electrons as Z_eff rises."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Periodic trends across the table",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: radii",
+        "subtopics": [
+          {
+            "name": "Atomic radius",
+            "points": [
+              "Decreases across a period as Zeff rises",
+              "Increases down a group as new shells are added",
+              "Measured as covalent, metallic or van der Waals radius depending on the element"
+            ]
+          },
+          {
+            "name": "Ionic radius",
+            "points": [
+              "Cations are smaller than the parent atom; anions are larger",
+              "Isoelectronic series: radius falls as nuclear charge rises (Na+ < F- < O2-)",
+              "Higher charge on the same ion means smaller radius (Fe3+ < Fe2+)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: energies and character",
+        "subtopics": [
+          {
+            "name": "Ionisation energy",
+            "points": [
+              "Energy to remove the most loosely bound electron from a gaseous atom",
+              "Increases across a period, decreases down a group",
+              "Successive ionisation energies always increase; large jumps reveal shell structure"
+            ]
+          },
+          {
+            "name": "Electron affinity and electronegativity",
+            "points": [
+              "Electron affinity is the energy change on adding an electron; more negative across a period",
+              "Electronegativity is the tendency to attract a shared pair; Pauling scale",
+              "Both increase across a period and decrease down a group"
+            ]
+          },
+          {
+            "name": "Metallic character",
+            "points": [
+              "Decreases across a period, increases down a group",
+              "Metals lose electrons readily; non-metals gain them",
+              "Metalloids show intermediate behaviour"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: the exceptions",
+        "subtopics": [
+          {
+            "name": "Anomalies to memorise",
+            "points": [
+              "IE of Be > B and N > O because of filled and half-filled subshell stability",
+              "IE of Mg > Al and P > S for the same reason",
+              "Electron affinity of F is less negative than Cl because of small size and electron repulsion"
+            ]
+          },
+          {
+            "name": "Unifying explanation",
+            "points": [
+              "Every trend traces back to Zeff and to the distance of the valence electron from the nucleus",
+              "Subshell stability explains the exceptions",
+              "Learn the cause, not the list — the exceptions follow from it"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

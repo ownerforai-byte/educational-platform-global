@@ -232,5 +232,73 @@
       "**NEB 2024 (2m): Ammonia has a higher boiling point than phosphine (PH₃). Explain on the basis of molecular shape and bonding.** — Both molecules are pyramidal with a lone pair, but the bonding differs: in **NH₃** nitrogen is small and highly electronegative (3.0), the N–H bonds are strongly polar, and neighbouring molecules link through **N–H ⋯ N hydrogen bonds** — breaking these costs extra energy, so NH₃ boils at **−33 °C**. In **PH₃** phosphorus is larger and much less electronegative (2.1); P–H is nearly nonpolar, no hydrogen bonding is possible, and only weak dispersion/dipole forces hold the molecules — bp **−87.7 °C**. The ≈55 °C difference is the hydrogen-bond signature of ammonia.",
       "**NEB-style (2m): Why is ice less dense than liquid water, and what follows for aquatic life?** — In ice, every oxygen atom is tetrahedrally hydrogen-bonded to four neighbouring oxygens, producing an **open hexagonal lattice** with about 11% empty space; density ≈ **0.92 g cm⁻³**. On melting, part of the H-bond network collapses and molecules pack more closely — liquid water is denser (**1.00 g cm⁻³**), so ice floats. Consequence: ponds and lakes freeze from the surface downward; the floating ice layer insulates the water beneath, letting fish and aquatic plants survive winter — a small density anomaly with ecosystem-scale consequences."
     ]
+  },
+  "mindmap": {
+    "centralConcept": "Intermolecular forces — the weak forces that decide physical state",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the hierarchy",
+        "subtopics": [
+          {
+            "name": "Strength order",
+            "points": [
+              "Hydrogen bond > dipole-dipole > London dispersion forces",
+              "All are far weaker than covalent bonds, typically under 40 kJ/mol",
+              "They determine melting point, boiling point and solubility, not molecular identity"
+            ]
+          },
+          {
+            "name": "London dispersion forces",
+            "points": [
+              "Instantaneous dipole-induced dipole attraction present in all molecules",
+              "Strength increases with the number of electrons and surface area",
+              "Explains why boiling point rises down a noble gas group"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: hydrogen bonding",
+        "subtopics": [
+          {
+            "name": "Conditions",
+            "points": [
+              "Hydrogen must be covalently bonded to a highly electronegative N, O or F",
+              "The H becomes strongly positive and attracts a lone pair on a neighbouring atom",
+              "Typical energy 10-40 kJ/mol, much stronger than other intermolecular forces"
+            ]
+          },
+          {
+            "name": "Consequences",
+            "points": [
+              "Water boils at 100 degrees Celsius, far above H2S at -60 degrees Celsius",
+              "Ice is less dense than water because the hydrogen-bonded lattice is open",
+              "Ethanol is miscible with water while ethane is not"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: applications",
+        "subtopics": [
+          {
+            "name": "Biological and material roles",
+            "points": [
+              "DNA base pairing (A-T two bonds, G-C three bonds) and protein secondary structure",
+              "Hydrogen bonding in nylon and in cellulose gives strength and water absorption",
+              "Anomalous properties of water: high specific heat, high surface tension, high latent heat"
+            ]
+          },
+          {
+            "name": "Intramolecular vs intermolecular",
+            "points": [
+              "Intramolecular hydrogen bonding (as in ortho-nitrophenol) lowers boiling point",
+              "Intermolecular hydrogen bonding (as in para-nitrophenol) raises it",
+              "This is a classic exam distinction"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

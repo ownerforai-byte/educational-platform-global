@@ -7,14 +7,13 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Test for Cl2, Br2 and I2 — Chemistry of Non-metals, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: test for cl2, br2 and i2 · one worked example · one misconception each.",
-    "# Test for Cl2, Br2 and I2\n\n## 1. Introduction\nChemical picture of **Test for Cl2** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Test for Cl2\n### Br2 and I2\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Test for Cl2 — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Test for Cl2 — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Test for Cl2 — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Test for Cl2 — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Three Gases, Three Signatures\n\nCl₂, Br₂ and I₂ announce themselves in tests: colours, bleaching, displacement, starch, and the classic chlorine + ammonia white fumes. This topic collects the identification chemistry in one place.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Physical identification\n\n| Gas/Vapour | Appearance | Give-away |\n|---|---|---|\n| Cl₂ | greenish-yellow gas | pungent, bleaches moist litmus |\n| Br₂ | red-brown vapour (from liquid) | stains skin/litmus brown |\n| I₂ | violet vapour from black solid | sublimes to violet crystals |\n\n### 2.2 Chemical tests\n\n- **Cl₂:**\n  1. Moist blue litmus → bleached (first red, then white).\n  2. Excess NH₃ → dense white fumes of NH₄Cl: 8NH₃ + 3Cl₂ → 6NH₄Cl + N₂.\n  3. Passed into KI solution → I₂ liberated (blue-black with starch).\n- **Br₂:**\n  1. Vapour turns moist blue litmus red then bleaches slowly (weaker than Cl₂).\n  2. Starch test negative (no blue) — distinguishes from I₂.\n  3. In water: orange colour; in KI solution, I₂ displaced (Br₂ + 2KI → 2KBr + I₂).\n  4. With NaOH (colourless) then acidified — orange returns.\n- **I₂:**\n  1. **Starch test:** deep blue-black adsorption complex — the definitive test; disappears on heating, returns on cooling.\n  2. Violet vapour; sublimation.\n  3. With AgNO₃: yellow AgI precipitate insoluble in NH₃.\n\n### 2.3 Halide ion tests (context)\n\n| Halide | AgNO₃ precipitate | Solubility in NH₃ |\n|---|---|---|\n| Cl⁻ | white AgCl | soluble in dilute |\n| Br⁻ | cream AgBr | soluble only in conc. |\n| I⁻ | yellow AgI | insoluble |",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Starch–iodine complex** | Adsorption complex of I₂ in amylose helix | deep blue colour |\n| **Sublimation** | Solid → vapour without liquid | I₂ |\n| **Displacement test** | Halogen liberating a heavier halide's halogen | Cl₂ into KI |\n| **Halide precipitate test** | AgX colour and ammonia solubility | AgCl white/AgBr cream/AgI yellow |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why starch turns blue-black with iodine\n\n- I₂ (actually I₃⁻ in solution) slips inside the amylose helix of starch; the guest–host charge-transfer complex absorbs visible light, giving the intense blue-black. Heating shakes the complex apart (colour fades); cooling rebuilds it — a reversible, diagnostic colour.\n\n### 4.2 Choosing the right test\n\n- Bleaching power separates Cl₂ (strong) from Br₂ (weak) and I₂ (none).\n- Starch separates I₂ (blue-black) from Br₂ (nothing).\n- Ammonia fumes confirm Cl₂.\n- For solutions, the AgNO₃ colour + ammonia solubility ladder finishes the identification.",
+    "## 5. Comparison Tables\n\n| Test | Cl₂ | Br₂ | I₂ |\n|---|---|---|---|\n| Moist litmus | bleached fast | bleached slowly | no bleach |\n| Starch | negative | negative | deep blue-black |\n| NH₃ (excess) | white fumes NH₄Cl | NH₄Br fumes (weaker) | NI₃ explosive solid |\n| AgNO₃ on halide | white AgCl | cream AgBr | yellow AgI |\n| AgX in NH₃ | soluble (dil.) | soluble (conc.) | insoluble |",
+    "## 6. Common Confusions\n\n- **\"Bromine water is a starch test.\"** No — bromine never gives the blue starch colour; that belongs to iodine alone.\n- **\"AgBr is white.\"** AgCl is white, AgBr cream, AgI yellow — the colour ladder plus ammonia solubility distinguishes the three.\n- **\"The starch colour is a chemical reaction.\"** It is physical adsorption/complexation inside the helix — which is exactly why heat reverses it.",
+    "## 7. Exam Application\n\n- Write the ammonia equation for Cl₂ with the white-fumes observation.\n- Describe the starch test with its reversible colour on heating/cooling.\n- Give the AgX colour ladder for the three halides."
   ],
   "confusion": [],
   "bounds": [
@@ -22,33 +21,270 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Test for Cl2, Br2 and I2\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Give three tests each for Cl2, Br2 and I2 with observations.",
+    "Describe the starch test for iodine and explain its temperature behaviour.",
+    "Tabulate the AgNO3 test results for chloride, bromide and iodide."
   ],
-  "examples": [],
+  "universalFacts": [
+    "The starch-iodine complex is so reliable it serves as the internal indicator in every iodometric titration worldwide."
+  ],
+  "examples": [
+    "***The disappearing blue*** — heat the blue-black starch-iodine mixture and the colour drains away; cool it and the blue returns: the helix complex is physical, not chemical."
+  ],
   "practiceQuestions": [
-    "Q. How will you distinguish Cl2 and I2 vapours? (2 marks) — I2 turns starch blue-black; Cl2 bleaches litmus and does not.",
-    "Q. What colour is AgBr precipitate? (1 mark) — pale yellow, partly soluble in ammonia."
+    "**NEB-style (3m): How would you distinguish between chlorine, bromine and iodine using chemical tests?** — **Chlorine:** a greenish-yellow gas that bleaches moist litmus rapidly; passed into excess ammonia it gives **dense white fumes of NH₄Cl** (8NH₃ + 3Cl₂ → 6NH₄Cl + N₂); passed into KI solution it liberates iodine, which turns starch blue-black. **Bromine:** a red-brown vapour that bleaches moist litmus only slowly; it gives no colour with starch; shaken with KI solution it displaces iodine (Br₂ + 2KI → 2KBr + I₂, blue-black with starch appears only after the displacement). **Iodine:** a violet vapour subliming from a black crystalline solid; its defining test is the **deep blue-black colour with starch** — an adsorption complex that fades on heating and returns on cooling. Iodine bleaches nothing. The combination — bleaching speed, starch colour and ammonia fumes — separates all three unambiguously.",
+    "**NEB-style (2m): A colourless halide solution gives a cream precipitate with AgNO3 that dissolves only in concentrated ammonia. Identify the halide and explain.** — The precipitate is **AgBr** (cream): **Ag⁺ + Br⁻ → AgBr↓**. The ammonia-solubility ladder runs AgCl (white, dissolves in dilute NH₃ via [Ag(NH₃)₂]⁺), AgBr (cream, needs concentrated NH₃), AgI (yellow, insoluble). Cream colour plus conc.-ammonia-only solubility identifies the **bromide** ion. The solubility trend follows the falling stability of the AgX lattice against ammonia complexation as X grows from Cl to I.",
+    "**NEB-style (2m): Why does the blue colour of the starch-iodine complex disappear on heating and reappear on cooling?** — The colour comes from **iodine molecules (I₂/I₃⁻) occupying the helical cavity of amylose**, forming a guest–host charge-transfer complex that absorbs visible light. Heating supplies thermal energy that disrupts the weak van der Waals-hosted complex, expelling the iodine — the blue fades. On cooling, the helix re-adopts its cavity geometry and re-entraps iodine, restoring the blue. The process is physical (adsorption/complexation), not a chemical reaction, hence fully reversible."
   ],
   "keyPoints": [
-    "• Test for Cl2, Br2 and I2"
+    "Cl2: greenish-yellow gas, bleaches moist litmus fast, excess NH3 -> white NH4Cl fumes (8NH3 + 3Cl2 -> 6NH4Cl + N2), liberates I2 from KI. Br2: red-brown vapour, bleaches moist litmus slowly, no starch colour, orange in water, displaces I2 from KI. I2: violet vapour from black solid, sublimes, definitive STARCH TEST deep blue-black (adsorption complex in amylose helix; fades on heating, returns on cooling), AgI yellow insoluble in NH3. Halide ladder: AgCl white soluble in dil NH3; AgBr cream soluble only in conc NH3; AgI yellow insoluble."
   ],
-  "summary": "Test for Cl2, Br2 and I2 (Chemistry of Non-metals, Chemistry, class-11-notes) covers Test for Cl2, Br2 and I2. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Three halogens, three signatures. **Chlorine** is the greenish-yellow gas that bleaches moist litmus quickly and betrays itself to excess ammonia as dense white NH₄Cl fumes. **Bromine** is the red-brown vapour that bleaches slowly and never colours starch. **Iodine** is the violet-vapoured black solid whose starch test — a deep blue-black guest–host complex inside the amylose helix, fading on heating and returning on cooling — is the single most famous colour test in chemistry. For halide *solutions*, the AgNO₃ ladder finishes the job: **white AgCl** (soluble in dilute NH₃), **cream AgBr** (conc. NH₃ only), **yellow AgI** (insoluble). Bleaching is oxidation by HOCl and needs water; the starch colour is physical adsorption and needs the helix; the fumes test is simple acid–base chemistry — three mechanisms, three fingerprints.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Test for Cl2, Br2 and I2\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The definitive test for iodine is with:",
       "options": [
-        "True",
-        "False"
+        "litmus",
+        "starch",
+        "ammonia",
+        "AgNO3"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Deep blue-black adsorption complex."
+    },
+    {
+      "question": "Chlorine with excess ammonia gives white fumes of:",
+      "options": [
+        "NH4Cl",
+        "NH4NO3",
+        "NCl3",
+        "NH4Br"
+      ],
+      "answer": "A",
+      "explanation": "8NH3 + 3Cl2 -> 6NH4Cl + N2."
+    },
+    {
+      "question": "AgBr precipitate is:",
+      "options": [
+        "white",
+        "cream",
+        "yellow",
+        "black"
+      ],
+      "answer": "B",
+      "explanation": "AgCl white, AgBr cream, AgI yellow."
+    },
+    {
+      "question": "Which AgX is insoluble in ammonia?",
+      "options": [
+        "AgCl",
+        "AgBr",
+        "AgI",
+        "all"
+      ],
+      "answer": "C",
+      "explanation": "AgI's lattice is too stable."
+    },
+    {
+      "question": "Heating the starch-iodine complex:",
+      "options": [
+        "Deepens the colour",
+        "Fades the colour",
+        "Turns it red",
+        "No change"
+      ],
+      "answer": "B",
+      "explanation": "The helix complex is disrupted; cooling restores it."
+    },
+    {
+      "question": "Bromine bleaches moist litmus:",
+      "options": [
+        "faster than Cl2",
+        "more slowly than Cl2",
+        "never",
+        "only in the dark"
+      ],
+      "answer": "B",
+      "explanation": "Weaker oxidant than chlorine."
+    },
+    {
+      "question": "Bromine water shaken with KI liberates:",
+      "options": [
+        "Cl2",
+        "Br2",
+        "I2",
+        "F2"
+      ],
+      "answer": "C",
+      "explanation": "Br2 + 2KI -> 2KBr + I2."
+    },
+    {
+      "question": "Iodine vapour is:",
+      "options": [
+        "green-yellow",
+        "red-brown",
+        "violet",
+        "colourless"
+      ],
+      "answer": "C",
+      "explanation": "Violet vapour from the black solid."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Starch test order — I2 turns starch blue-black; Br2 turns starch yellow; Cl2 bleaches litmus — three colours, three identifications.",
-    "Trick 2: Chlorine water displaces Br2 (orange) and I2 (brown) from bromides/iodides — the displacement test distinguishes Cl2 from the rest.",
-    "Trick 3: AgNO3 precipitate colours: AgCl white, AgBr pale yellow, AgI yellow — dissolve in NH3: AgCl yes, AgBr partly, AgI no."
+    "Cl2: bleach fast + white NH4Cl fumes. Br2: brown vapour + slow bleach + no starch. I2: starch blue-black + violet sublimate. AgX ladder: white/cream/yellow; NH3 solubility: dil/conc/never."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Three Gases, Three Signatures\n\nCl₂, Br₂ and I₂ announce themselves in tests: colours, bleaching, displacement, starch, and the classic chlorine + ammonia white fumes. This topic collects the identification chemistry in one place.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Physical identification\n\n| Gas/Vapour | Appearance | Give-away |\n|---|---|---|\n| Cl₂ | greenish-yellow gas | pungent, bleaches moist litmus |\n| Br₂ | red-brown vapour (from liquid) | stains skin/litmus brown |\n| I₂ | violet vapour from black solid | sublimes to violet crystals |\n\n### 2.2 Chemical tests\n\n- **Cl₂:**\n  1. Moist blue litmus → bleached (first red, then white).\n  2. Excess NH₃ → dense white fumes of NH₄Cl: 8NH₃ + 3Cl₂ → 6NH₄Cl + N₂.\n  3. Passed into KI solution → I₂ liberated (blue-black with starch).\n- **Br₂:**\n  1. Vapour turns moist blue litmus red then bleaches slowly (weaker than Cl₂).\n  2. Starch test negative (no blue) — distinguishes from I₂.\n  3. In water: orange colour; in KI solution, I₂ displaced (Br₂ + 2KI → 2KBr + I₂).\n  4. With NaOH (colourless) then acidified — orange returns.\n- **I₂:**\n  1. **Starch test:** deep blue-black adsorption complex — the definitive test; disappears on heating, returns on cooling.\n  2. Violet vapour; sublimation.\n  3. With AgNO₃: yellow AgI precipitate insoluble in NH₃.\n\n### 2.3 Halide ion tests (context)\n\n| Halide | AgNO₃ precipitate | Solubility in NH₃ |\n|---|---|---|\n| Cl⁻ | white AgCl | soluble in dilute |\n| Br⁻ | cream AgBr | soluble only in conc. |\n| I⁻ | yellow AgI | insoluble |",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Starch–iodine complex** | Adsorption complex of I₂ in amylose helix | deep blue colour |\n| **Sublimation** | Solid → vapour without liquid | I₂ |\n| **Displacement test** | Halogen liberating a heavier halide's halogen | Cl₂ into KI |\n| **Halide precipitate test** | AgX colour and ammonia solubility | AgCl white/AgBr cream/AgI yellow |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why starch turns blue-black with iodine\n\n- I₂ (actually I₃⁻ in solution) slips inside the amylose helix of starch; the guest–host charge-transfer complex absorbs visible light, giving the intense blue-black. Heating shakes the complex apart (colour fades); cooling rebuilds it — a reversible, diagnostic colour.\n\n### 4.2 Choosing the right test\n\n- Bleaching power separates Cl₂ (strong) from Br₂ (weak) and I₂ (none).\n- Starch separates I₂ (blue-black) from Br₂ (nothing).\n- Ammonia fumes confirm Cl₂.\n- For solutions, the AgNO₃ colour + ammonia solubility ladder finishes the identification.",
+      "## 5. Comparison Tables\n\n| Test | Cl₂ | Br₂ | I₂ |\n|---|---|---|---|\n| Moist litmus | bleached fast | bleached slowly | no bleach |\n| Starch | negative | negative | deep blue-black |\n| NH₃ (excess) | white fumes NH₄Cl | NH₄Br fumes (weaker) | NI₃ explosive solid |\n| AgNO₃ on halide | white AgCl | cream AgBr | yellow AgI |\n| AgX in NH₃ | soluble (dil.) | soluble (conc.) | insoluble |",
+      "## 6. Common Confusions\n\n- **\"Bromine water is a starch test.\"** No — bromine never gives the blue starch colour; that belongs to iodine alone.\n- **\"AgBr is white.\"** AgCl is white, AgBr cream, AgI yellow — the colour ladder plus ammonia solubility distinguishes the three.\n- **\"The starch colour is a chemical reaction.\"** It is physical adsorption/complexation inside the helix — which is exactly why heat reverses it.",
+      "## 7. Exam Application\n\n- Write the ammonia equation for Cl₂ with the white-fumes observation.\n- Describe the starch test with its reversible colour on heating/cooling.\n- Give the AgX colour ladder for the three halides."
+    ],
+    "keyPoints": [
+      "Cl2: greenish-yellow gas, bleaches moist litmus fast, excess NH3 -> white NH4Cl fumes (8NH3 + 3Cl2 -> 6NH4Cl + N2), liberates I2 from KI. Br2: red-brown vapour, bleaches moist litmus slowly, no starch colour, orange in water, displaces I2 from KI. I2: violet vapour from black solid, sublimes, definitive STARCH TEST deep blue-black (adsorption complex in amylose helix; fades on heating, returns on cooling), AgI yellow insoluble in NH3. Halide ladder: AgCl white soluble in dil NH3; AgBr cream soluble only in conc NH3; AgI yellow insoluble."
+    ],
+    "importantConcepts": [
+      "One gas, one signature: bleaching speed separates Cl2 from Br2, the starch complex isolates I2, and the AgX colour-plus-ammonia ladder finishes any halide identification — no single test is universal, the combination is."
+    ],
+    "examples": [
+      "***The disappearing blue*** — heat the blue-black starch-iodine mixture and the colour drains away; cool it and the blue returns: the helix complex is physical, not chemical."
+    ],
+    "universalFacts": [
+      "The starch-iodine complex is so reliable it serves as the internal indicator in every iodometric titration worldwide."
+    ],
+    "importantStatements": [
+      "\"Chlorine bleaches, bromine browns, iodine blues: the three halogens are identified by what they do to litmus, to water and to starch.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ for this row; all items are NEB-style practice. The NEB 2024 oxoacid question is recorded under row 67."
+    ],
+    "examShortTricks": [
+      "Cl2: bleach fast + white NH4Cl fumes. Br2: brown vapour + slow bleach + no starch. I2: starch blue-black + violet sublimate. AgX ladder: white/cream/yellow; NH3 solubility: dil/conc/never."
+    ],
+    "examNotes": [
+      "Mention that the starch colour is an adsorption (guest-host) complex and is reversible with temperature — that detail lifts the answer."
+    ],
+    "formulas": [
+      "- 8NH₃ + 3Cl₂ → 6NH₄Cl + N₂ (white fumes)\n- Br₂ + 2KI → 2KBr + I₂\n- AgNO₃ + NaX → AgX↓ + NaNO₃ (X = Cl, Br, I)"
+    ],
+    "practice": [
+      "Give three tests each for Cl2, Br2 and I2 with observations.",
+      "Describe the starch test for iodine and explain its temperature behaviour.",
+      "Tabulate the AgNO3 test results for chloride, bromide and iodide."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): How would you distinguish between chlorine, bromine and iodine using chemical tests?** — **Chlorine:** a greenish-yellow gas that bleaches moist litmus rapidly; passed into excess ammonia it gives **dense white fumes of NH₄Cl** (8NH₃ + 3Cl₂ → 6NH₄Cl + N₂); passed into KI solution it liberates iodine, which turns starch blue-black. **Bromine:** a red-brown vapour that bleaches moist litmus only slowly; it gives no colour with starch; shaken with KI solution it displaces iodine (Br₂ + 2KI → 2KBr + I₂, blue-black with starch appears only after the displacement). **Iodine:** a violet vapour subliming from a black crystalline solid; its defining test is the **deep blue-black colour with starch** — an adsorption complex that fades on heating and returns on cooling. Iodine bleaches nothing. The combination — bleaching speed, starch colour and ammonia fumes — separates all three unambiguously.",
+      "**NEB-style (2m): A colourless halide solution gives a cream precipitate with AgNO3 that dissolves only in concentrated ammonia. Identify the halide and explain.** — The precipitate is **AgBr** (cream): **Ag⁺ + Br⁻ → AgBr↓**. The ammonia-solubility ladder runs AgCl (white, dissolves in dilute NH₃ via [Ag(NH₃)₂]⁺), AgBr (cream, needs concentrated NH₃), AgI (yellow, insoluble). Cream colour plus conc.-ammonia-only solubility identifies the **bromide** ion. The solubility trend follows the falling stability of the AgX lattice against ammonia complexation as X grows from Cl to I.",
+      "**NEB-style (2m): Why does the blue colour of the starch-iodine complex disappear on heating and reappear on cooling?** — The colour comes from **iodine molecules (I₂/I₃⁻) occupying the helical cavity of amylose**, forming a guest–host charge-transfer complex that absorbs visible light. Heating supplies thermal energy that disrupts the weak van der Waals-hosted complex, expelling the iodine — the blue fades. On cooling, the helix re-adopts its cavity geometry and re-entraps iodine, restoring the blue. The process is physical (adsorption/complexation), not a chemical reaction, hence fully reversible."
+    ]
+  },
+  "importantConcepts": [
+    "One gas, one signature: bleaching speed separates Cl2 from Br2, the starch complex isolates I2, and the AgX colour-plus-ammonia ladder finishes any halide identification — no single test is universal, the combination is."
+  ],
+  "importantStatements": [
+    "\"Chlorine bleaches, bromine browns, iodine blues: the three halogens are identified by what they do to litmus, to water and to starch.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ for this row; all items are NEB-style practice. The NEB 2024 oxoacid question is recorded under row 67."
+  ],
+  "examNotes": [
+    "Mention that the starch colour is an adsorption (guest-host) complex and is reversible with temperature — that detail lifts the answer."
+  ],
+  "formulas": [
+    "- 8NH₃ + 3Cl₂ → 6NH₄Cl + N₂ (white fumes)\n- Br₂ + 2KI → 2KBr + I₂\n- AgNO₃ + NaX → AgX↓ + NaNO₃ (X = Cl, Br, I)"
+  ],
+  "mcs": [
+    {
+      "question": "The definitive test for iodine is with:",
+      "options": [
+        "litmus",
+        "starch",
+        "ammonia",
+        "AgNO3"
+      ],
+      "answer": "B",
+      "explanation": "Deep blue-black adsorption complex."
+    },
+    {
+      "question": "Chlorine with excess ammonia gives white fumes of:",
+      "options": [
+        "NH4Cl",
+        "NH4NO3",
+        "NCl3",
+        "NH4Br"
+      ],
+      "answer": "A",
+      "explanation": "8NH3 + 3Cl2 -> 6NH4Cl + N2."
+    },
+    {
+      "question": "AgBr precipitate is:",
+      "options": [
+        "white",
+        "cream",
+        "yellow",
+        "black"
+      ],
+      "answer": "B",
+      "explanation": "AgCl white, AgBr cream, AgI yellow."
+    },
+    {
+      "question": "Which AgX is insoluble in ammonia?",
+      "options": [
+        "AgCl",
+        "AgBr",
+        "AgI",
+        "all"
+      ],
+      "answer": "C",
+      "explanation": "AgI's lattice is too stable."
+    },
+    {
+      "question": "Heating the starch-iodine complex:",
+      "options": [
+        "Deepens the colour",
+        "Fades the colour",
+        "Turns it red",
+        "No change"
+      ],
+      "answer": "B",
+      "explanation": "The helix complex is disrupted; cooling restores it."
+    },
+    {
+      "question": "Bromine bleaches moist litmus:",
+      "options": [
+        "faster than Cl2",
+        "more slowly than Cl2",
+        "never",
+        "only in the dark"
+      ],
+      "answer": "B",
+      "explanation": "Weaker oxidant than chlorine."
+    },
+    {
+      "question": "Bromine water shaken with KI liberates:",
+      "options": [
+        "Cl2",
+        "Br2",
+        "I2",
+        "F2"
+      ],
+      "answer": "C",
+      "explanation": "Br2 + 2KI -> 2KBr + I2."
+    },
+    {
+      "question": "Iodine vapour is:",
+      "options": [
+        "green-yellow",
+        "red-brown",
+        "violet",
+        "colourless"
+      ],
+      "answer": "C",
+      "explanation": "Violet vapour from the black solid."
+    }
   ]
 }

@@ -7,16 +7,13 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Phosphorus: allotropes of phosphorus (name only) — Chemistry of Non-metals, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: phosphorus, allotropes of phosphorus, name only · one worked example · one misconception each.",
-    "**Allotropes of phosphorus.** one-line definition + one-line exam use.",
-    "**Name only.** one-line definition + one-line exam use.",
-    "# Phosphorus: allotropes of phosphorus (name only)\n\n## 1. Introduction\nChemical picture of **Phosphorus** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Phosphorus: allotropes of phosphorus (name only)\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Phosphorus — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Phosphorus — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Phosphorus — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Phosphorus — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — White, Red and Black\n\nPhosphorus exists as allotropes named only (NEB scope): white (yellow), red, black (and violet/scarlett in older texts). Structure differences explain everything: reactivity, toxicity, storage, uses.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The allotropes (names only, with essentials)\n\n| Allotrope | Appearance | Structure | Key properties |\n|---|---|---|---|\n| **White (yellow) P** | waxy, white/yellow solid | discrete P₄ tetrahedra, 60° strained angles | very reactive; ignites in air at ~35 °C (stored under water); soluble in CS₂; poisonous (~0.1 g lethal); garlic odour; glows in dark (slow oxidation — chemiluminescence) |\n| **Red P** | dark red powder | polymeric chains (P₄ tetrahedra opened and linked) | much less reactive; does not ignite spontaneously; insoluble in CS₂; non-poisonous; made by heating white P at 250–300 °C in inert atmosphere |\n| **Black P** | black, flaky | layered (like graphite, corrugated sheets) | most stable; least reactive; conducts (semiconductor); made under high pressure |\n\n### 2.2 Conversion chemistry\n\n- White → red: heat 250–300 °C (inert atmosphere / with a trace of I₂ catalyst).\n- Red → white: distil red P above 400 °C; vapour condenses as white P (P₄ re-forms).\n- Allotropy is reversible through the vapour: the P₄ unit is the thermodynamic root.\n\n### 2.3 Uses\n\n- **White P:** matches (old \"strike-anywhere\"), rat poison, smoke screens (P burns to P₂O₅ fog), phosphor bronze.\n- **Red P:** safety matches (on the box side), fireworks, semiconductors (InP), protection of metal surfaces.\n- **Black P:** research/semiconductor (phosphorene layers).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Allotropy** | Same element, different structural forms | white/red/black P |\n| **P₄ tetrahedron** | Four P atoms at tetrahedral corners, 60° P–P–P | white phosphorus |\n| **Chemiluminescence** | Light from a chemical reaction | white P glow |\n| **Spontaneous ignition** | Ignition at ambient temperature | white P in air |\n| **Safety match** | Red P on striking surface, oxidant on stick | red P + KClO₃ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why white phosphorus is so reactive\n\n- The P₄ tetrahedron forces 60° angles on atoms whose bonding orbitals prefer ~90–109° — the bent bonds are strained, energy-rich, and desperate to react. Ignition at 35 °C follows; hence storage under water (cutting it under water too — it ignites on the knife).\n- Red phosphorus polymerises those tetrahedra: strain released, reactivity tamed.\n\n### 4.2 Why white P glows\n\n- Slow oxidation at the surface gives excited P₄O₆/P₂O₃ fragments that emit light — chemiluminescence, the old \"phosphorescence\" that named the element (light-bearer). The glow is cold light: no flame.\n\n### 4.3 Safety vs strike-anywhere matches\n\n- **Safety match:** red P on the box, KClO₃ + antimony sulphide + glue on the stick head — friction ignites the red P/KClO₃ pair only at the box.\n- **Strike-anywhere:** the oxidant and reducer both live in the head (P₄S₃ + KClO₃) — ignites on any rough surface. Red P's low reactivity makes the safety match possible.",
+    "## 5. Comparison Tables\n\n| Property | White P | Red P |\n|---|---|---|\n| Structure | discrete P₄ tetrahedra | polymeric chains |\n| Reactivity | very high (ignites 35 °C) | low |\n| Toxicity | very poisonous | non-poisonous |\n| Solubility | soluble in CS₂ | insoluble in CS₂ |\n| Storage | under water | dry, safe |\n| Glow | yes | no |\n| Use | matches (old), rat poison | safety matches, fireworks |",
+    "## 6. Common Confusions\n\n- **\"Red phosphorus is red because of impurities.\"** The colour is structural — polymerised chains with different electronic structure, not dirt.\n- **\"White P is stored under kerosene.\"** Under **water** — it must be excluded from air; it is also insoluble in water, which kerosene is not guaranteed against.\n- **\"Black phosphorus is just dirty red.\"** Black P is the high-pressure, layered, semiconducting allotrope — the most stable form.",
+    "## 7. Exam Application\n\n- Allotrope table with structure → property logic (strain story).\n- Conversion conditions both ways (250–300 °C forward; >400 °C distillation back).\n- Safety-match chemistry: which component sits where."
   ],
   "confusion": [],
   "bounds": [
@@ -24,46 +21,270 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Phosphorus: allotropes of phosphorus (name only)\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Compare white and red phosphorus in structure, reactivity and uses.",
+    "Why is white phosphorus stored under water?",
+    "Explain the chemistry of a safety match versus a strike-anywhere match."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Phosphorus means \"light-bearer\": the element was named for the cold glow of its slow oxidation, noticed centuries before the structure was known."
+  ],
+  "examples": [
+    "***The underwater knife*** - white phosphorus is cut under water: in air the friction of the blade would ignite it; the water is both shield and solvent of heat."
+  ],
   "practiceQuestions": [
-    "Q. Name the allotropes of phosphorus. (1 mark) — white, red, scarlet, violet, black.",
-    "Q. Why is white phosphorus stored under water? (1 mark) — it ignites spontaneously in air."
+    "**NEB-style (3m): Name the allotropes of phosphorus and compare white and red phosphorus in structure, reactivity and uses.** — **Allotropes:** white (yellow), red and black phosphorus. **White phosphorus:** discrete **P₄ tetrahedra** with bond angles strained to 60°; consequently extremely reactive — it ignites spontaneously in air at about **35 °C**, is **soluble in CS₂**, **poisonous** (about 0.1 g is lethal), glows in the dark (chemiluminescence of slow oxidation) and must be **stored under water**. Uses: old strike-anywhere matches, rat poison, smoke screens. **Red phosphorus:** a **polymeric** form made by heating white P at 250–300 °C in an inert atmosphere; the strain is relieved, so it is far less reactive, **non-poisonous**, insoluble in CS₂ and safe to handle dry. Uses: the striking surface of safety matches, fireworks, InP semiconductors. **Black phosphorus:** layered like graphite, the most stable allotrope, a semiconductor (made under high pressure). The pattern: same element, less strain, more safety.",
+    "**NEB-style (2m): Why is white phosphorus kept under water, and what happens when red phosphorus is distilled above 400 °C?** — White phosphorus ignites in air at about 35 °C because its P₄ tetrahedra carry severe bond-angle strain; it is stored (and cut) **under water** to exclude air — water also does not dissolve it. **Distilling red phosphorus above 400 °C:** the polymeric chains break up into **P₄ vapour**; on cooling, the vapour condenses back to **white phosphorus**. Allotropy here is reversible through the vapour phase — the P₄ unit is the thermodynamic root from which both forms grow.",
+    "**NEB-style (2m): Explain why red phosphorus is used on the side of a safety-match box while white phosphorus was used in old strike-anywhere matches.** — **Safety match:** the box side carries **red phosphorus**; the stick head carries the oxidant (**KClO₃**) with antimony sulphide and glue. Rubbing brings red P and chlorate into frictional contact: the red P ignites locally (it needs the friction heat — it does not ignite spontaneously), and the chlorate supplies oxygen to sustain the flame. Because the fuel and oxidant live apart, the match is safe in the pocket. **Strike-anywhere matches:** the head contains both reducer (**P₄S₃**) and oxidant, so any rough surface can light it — possible only because the mixture is stable until struck, but inherently more hazardous. Red P's low reactivity is what makes the safety design work."
   ],
   "keyPoints": [
-    "• Phosphorus",
-    "• Allotropes of phosphorus",
-    "• Name only"
+    "Phosphorus allotropes (names only per NEB): WHITE (yellow) P - waxy, discrete P4 tetrahedra with strained 60 deg angles, ignites ~35 C, stored under water, soluble in CS2, very poisonous (~0.1 g), garlic odour, glows in dark (chemiluminescence from slow oxidation); uses old matches, rat poison, smoke screens. RED P - polymeric chains, made by heating white P 250-300 C (inert/I2 trace), much less reactive, non-poisonous, insoluble in CS2; uses safety matches (box side), fireworks, InP semiconductors. BLACK P - layered like graphite, most stable, semiconductor, high pressure. Reversal: red -> white by distilling > 400 C (P4 re-forms in vapour). Safety match: red P on box + KClO3 on stick; strike-anywhere: P4S3 + KClO3 in head."
   ],
-  "summary": "Phosphorus: allotropes of phosphorus (name only) (Chemistry of Non-metals, Chemistry, class-11-notes) covers Phosphorus, allotropes of phosphorus, name only. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Phosphorus wears three structural masks. **White P** — waxy, discrete P₄ tetrahedra whose 60° angles strain every bond — ignites at 35 °C, glows in the dark, dissolves in CS₂, poisons at 0.1 g, and lives under water; it fed the old strike-anywhere matches, rat poisons and smoke screens. **Red P** — the same atoms polymerised into strain-free chains (250–300 °C conversion) — is safe, non-poisonous, CS₂-insoluble, and powers the safety match's box side plus fireworks and InP chips. **Black P** — layered like graphite, made under pressure — is the most stable and semiconducting. Distil red P above 400 °C and the P₄ vapour re-condenses as white: allotropy reversible through the vapour. The lesson of the pair: strain is reactivity, and polymerising the strain buys safety.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Phosphorus: allotropes of phosphorus (name only)\"?",
+      "question": "White phosphorus consists of:",
       "options": [
-        "Phosphorus",
-        "Allotropes of phosphorus",
-        "Unrelated topic",
-        "None of the above"
+        "P2 molecules",
+        "P4 tetrahedra",
+        "polymeric chains",
+        "layered sheets"
       ],
-      "answer": "Phosphorus",
-      "explanation": "Phosphorus is listed among the official sub-ideas of Phosphorus: allotropes of phosphorus (name only); the others are not part of this topic."
+      "answer": "B",
+      "explanation": "60-degree strained tetrahedra."
     },
     {
-      "question": "A common examiner point on \"Phosphorus: allotropes of phosphorus (name only)\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "White phosphorus ignites in air at about:",
       "options": [
-        "True",
-        "False"
+        "35 C",
+        "100 C",
+        "250 C",
+        "400 C"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A",
+      "explanation": "Strain makes it spontaneous."
+    },
+    {
+      "question": "White phosphorus is stored:",
+      "options": [
+        "in kerosene",
+        "under water",
+        "in CS2",
+        "in the open"
+      ],
+      "answer": "B",
+      "explanation": "Excludes air; insoluble in water."
+    },
+    {
+      "question": "Red phosphorus is made by heating white P at:",
+      "options": [
+        "35 C",
+        "250-300 C",
+        "500 C",
+        "1000 C"
+      ],
+      "answer": "B",
+      "explanation": "Inert atmosphere, optionally with I2 trace."
+    },
+    {
+      "question": "Red phosphorus is:",
+      "options": [
+        "poisonous",
+        "CS2-soluble",
+        "non-poisonous and polymeric",
+        "glowing"
+      ],
+      "answer": "C",
+      "explanation": "Polymerisation removes both strain and toxicity."
+    },
+    {
+      "question": "The striking surface of a safety match contains:",
+      "options": [
+        "white P",
+        "red P",
+        "P4S3",
+        "P2O5"
+      ],
+      "answer": "B",
+      "explanation": "With KClO3 on the stick head."
+    },
+    {
+      "question": "The most stable allotrope of phosphorus is:",
+      "options": [
+        "white",
+        "red",
+        "black",
+        "scarlett"
+      ],
+      "answer": "C",
+      "explanation": "Layered, high-pressure form."
+    },
+    {
+      "question": "The glow of white phosphorus is:",
+      "options": [
+        "heat radiation",
+        "chemiluminescence of slow oxidation",
+        "reflected light",
+        "radioactivity"
+      ],
+      "answer": "B",
+      "explanation": "Cold light from oxidation fragments."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Name them all in one breath: white (yellow), red, scarlet, violet, black — 'name only' means the list itself is the answer.",
-    "Trick 2: White vs red in two points each: white — waxy, soluble in CS2, stored under water, highly poisonous, reactive; red — polymeric, insoluble, non-poisonous, stable.",
-    "Trick 3: Conversion: white → red by heating at 250 °C in an inert atmosphere; red → white vapour at 400 °C."
+    "White: P4, 60 deg strain, ignites 35 C, under water, CS2-soluble, poisonous, glows. Red: polymer, 250-300 C conversion, safe, matchbox side. Black: layered, most stable, semiconductor. Reverse: distil red > 400 C."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — White, Red and Black\n\nPhosphorus exists as allotropes named only (NEB scope): white (yellow), red, black (and violet/scarlett in older texts). Structure differences explain everything: reactivity, toxicity, storage, uses.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The allotropes (names only, with essentials)\n\n| Allotrope | Appearance | Structure | Key properties |\n|---|---|---|---|\n| **White (yellow) P** | waxy, white/yellow solid | discrete P₄ tetrahedra, 60° strained angles | very reactive; ignites in air at ~35 °C (stored under water); soluble in CS₂; poisonous (~0.1 g lethal); garlic odour; glows in dark (slow oxidation — chemiluminescence) |\n| **Red P** | dark red powder | polymeric chains (P₄ tetrahedra opened and linked) | much less reactive; does not ignite spontaneously; insoluble in CS₂; non-poisonous; made by heating white P at 250–300 °C in inert atmosphere |\n| **Black P** | black, flaky | layered (like graphite, corrugated sheets) | most stable; least reactive; conducts (semiconductor); made under high pressure |\n\n### 2.2 Conversion chemistry\n\n- White → red: heat 250–300 °C (inert atmosphere / with a trace of I₂ catalyst).\n- Red → white: distil red P above 400 °C; vapour condenses as white P (P₄ re-forms).\n- Allotropy is reversible through the vapour: the P₄ unit is the thermodynamic root.\n\n### 2.3 Uses\n\n- **White P:** matches (old \"strike-anywhere\"), rat poison, smoke screens (P burns to P₂O₅ fog), phosphor bronze.\n- **Red P:** safety matches (on the box side), fireworks, semiconductors (InP), protection of metal surfaces.\n- **Black P:** research/semiconductor (phosphorene layers).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Allotropy** | Same element, different structural forms | white/red/black P |\n| **P₄ tetrahedron** | Four P atoms at tetrahedral corners, 60° P–P–P | white phosphorus |\n| **Chemiluminescence** | Light from a chemical reaction | white P glow |\n| **Spontaneous ignition** | Ignition at ambient temperature | white P in air |\n| **Safety match** | Red P on striking surface, oxidant on stick | red P + KClO₃ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why white phosphorus is so reactive\n\n- The P₄ tetrahedron forces 60° angles on atoms whose bonding orbitals prefer ~90–109° — the bent bonds are strained, energy-rich, and desperate to react. Ignition at 35 °C follows; hence storage under water (cutting it under water too — it ignites on the knife).\n- Red phosphorus polymerises those tetrahedra: strain released, reactivity tamed.\n\n### 4.2 Why white P glows\n\n- Slow oxidation at the surface gives excited P₄O₆/P₂O₃ fragments that emit light — chemiluminescence, the old \"phosphorescence\" that named the element (light-bearer). The glow is cold light: no flame.\n\n### 4.3 Safety vs strike-anywhere matches\n\n- **Safety match:** red P on the box, KClO₃ + antimony sulphide + glue on the stick head — friction ignites the red P/KClO₃ pair only at the box.\n- **Strike-anywhere:** the oxidant and reducer both live in the head (P₄S₃ + KClO₃) — ignites on any rough surface. Red P's low reactivity makes the safety match possible.",
+      "## 5. Comparison Tables\n\n| Property | White P | Red P |\n|---|---|---|\n| Structure | discrete P₄ tetrahedra | polymeric chains |\n| Reactivity | very high (ignites 35 °C) | low |\n| Toxicity | very poisonous | non-poisonous |\n| Solubility | soluble in CS₂ | insoluble in CS₂ |\n| Storage | under water | dry, safe |\n| Glow | yes | no |\n| Use | matches (old), rat poison | safety matches, fireworks |",
+      "## 6. Common Confusions\n\n- **\"Red phosphorus is red because of impurities.\"** The colour is structural — polymerised chains with different electronic structure, not dirt.\n- **\"White P is stored under kerosene.\"** Under **water** — it must be excluded from air; it is also insoluble in water, which kerosene is not guaranteed against.\n- **\"Black phosphorus is just dirty red.\"** Black P is the high-pressure, layered, semiconducting allotrope — the most stable form.",
+      "## 7. Exam Application\n\n- Allotrope table with structure → property logic (strain story).\n- Conversion conditions both ways (250–300 °C forward; >400 °C distillation back).\n- Safety-match chemistry: which component sits where."
+    ],
+    "keyPoints": [
+      "Phosphorus allotropes (names only per NEB): WHITE (yellow) P - waxy, discrete P4 tetrahedra with strained 60 deg angles, ignites ~35 C, stored under water, soluble in CS2, very poisonous (~0.1 g), garlic odour, glows in dark (chemiluminescence from slow oxidation); uses old matches, rat poison, smoke screens. RED P - polymeric chains, made by heating white P 250-300 C (inert/I2 trace), much less reactive, non-poisonous, insoluble in CS2; uses safety matches (box side), fireworks, InP semiconductors. BLACK P - layered like graphite, most stable, semiconductor, high pressure. Reversal: red -> white by distilling > 400 C (P4 re-forms in vapour). Safety match: red P on box + KClO3 on stick; strike-anywhere: P4S3 + KClO3 in head."
+    ],
+    "importantConcepts": [
+      "Strain is reactivity: the P4 tetrahedron forces 60-degree bonds onto atoms wanting ~100 degrees, so white phosphorus burns at 35 C while red phosphorus - the same atoms with the strain polymerised away - sits safely in a matchbox striking surface."
+    ],
+    "examples": [
+      "***The underwater knife*** - white phosphorus is cut under water: in air the friction of the blade would ignite it; the water is both shield and solvent of heat."
+    ],
+    "universalFacts": [
+      "Phosphorus means \"light-bearer\": the element was named for the cold glow of its slow oxidation, noticed centuries before the structure was known."
+    ],
+    "importantStatements": [
+      "\"White phosphorus is a waxy, poisonous solid of P4 tetrahedra that ignites spontaneously in air; red phosphorus is its safe, polymeric counterpart.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ for this row; all items are NEB-style practice (the syllabus asks for allotrope names only, with structure/uses as supporting context)."
+    ],
+    "examShortTricks": [
+      "White: P4, 60 deg strain, ignites 35 C, under water, CS2-soluble, poisonous, glows. Red: polymer, 250-300 C conversion, safe, matchbox side. Black: layered, most stable, semiconductor. Reverse: distil red > 400 C."
+    ],
+    "examNotes": [
+      "Quote the ignition temperature (35 C) and conversion temperatures (250-300 C forward, > 400 C back) - numbers are the marks in allotrope questions."
+    ],
+    "formulas": [
+      "- P₄ (white) —(250–300 °C, inert)→ red P (polymeric)\n- red P —(distil > 400 °C)→ P₄ vapour → white P\n- 4P + 5O₂ → P₂O₅ (burning; smoke screens)"
+    ],
+    "practice": [
+      "Compare white and red phosphorus in structure, reactivity and uses.",
+      "Why is white phosphorus stored under water?",
+      "Explain the chemistry of a safety match versus a strike-anywhere match."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Name the allotropes of phosphorus and compare white and red phosphorus in structure, reactivity and uses.** — **Allotropes:** white (yellow), red and black phosphorus. **White phosphorus:** discrete **P₄ tetrahedra** with bond angles strained to 60°; consequently extremely reactive — it ignites spontaneously in air at about **35 °C**, is **soluble in CS₂**, **poisonous** (about 0.1 g is lethal), glows in the dark (chemiluminescence of slow oxidation) and must be **stored under water**. Uses: old strike-anywhere matches, rat poison, smoke screens. **Red phosphorus:** a **polymeric** form made by heating white P at 250–300 °C in an inert atmosphere; the strain is relieved, so it is far less reactive, **non-poisonous**, insoluble in CS₂ and safe to handle dry. Uses: the striking surface of safety matches, fireworks, InP semiconductors. **Black phosphorus:** layered like graphite, the most stable allotrope, a semiconductor (made under high pressure). The pattern: same element, less strain, more safety.",
+      "**NEB-style (2m): Why is white phosphorus kept under water, and what happens when red phosphorus is distilled above 400 °C?** — White phosphorus ignites in air at about 35 °C because its P₄ tetrahedra carry severe bond-angle strain; it is stored (and cut) **under water** to exclude air — water also does not dissolve it. **Distilling red phosphorus above 400 °C:** the polymeric chains break up into **P₄ vapour**; on cooling, the vapour condenses back to **white phosphorus**. Allotropy here is reversible through the vapour phase — the P₄ unit is the thermodynamic root from which both forms grow.",
+      "**NEB-style (2m): Explain why red phosphorus is used on the side of a safety-match box while white phosphorus was used in old strike-anywhere matches.** — **Safety match:** the box side carries **red phosphorus**; the stick head carries the oxidant (**KClO₃**) with antimony sulphide and glue. Rubbing brings red P and chlorate into frictional contact: the red P ignites locally (it needs the friction heat — it does not ignite spontaneously), and the chlorate supplies oxygen to sustain the flame. Because the fuel and oxidant live apart, the match is safe in the pocket. **Strike-anywhere matches:** the head contains both reducer (**P₄S₃**) and oxidant, so any rough surface can light it — possible only because the mixture is stable until struck, but inherently more hazardous. Red P's low reactivity is what makes the safety design work."
+    ]
+  },
+  "importantConcepts": [
+    "Strain is reactivity: the P4 tetrahedron forces 60-degree bonds onto atoms wanting ~100 degrees, so white phosphorus burns at 35 C while red phosphorus - the same atoms with the strain polymerised away - sits safely in a matchbox striking surface."
+  ],
+  "importantStatements": [
+    "\"White phosphorus is a waxy, poisonous solid of P4 tetrahedra that ignites spontaneously in air; red phosphorus is its safe, polymeric counterpart.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ for this row; all items are NEB-style practice (the syllabus asks for allotrope names only, with structure/uses as supporting context)."
+  ],
+  "examNotes": [
+    "Quote the ignition temperature (35 C) and conversion temperatures (250-300 C forward, > 400 C back) - numbers are the marks in allotrope questions."
+  ],
+  "formulas": [
+    "- P₄ (white) —(250–300 °C, inert)→ red P (polymeric)\n- red P —(distil > 400 °C)→ P₄ vapour → white P\n- 4P + 5O₂ → P₂O₅ (burning; smoke screens)"
+  ],
+  "mcs": [
+    {
+      "question": "White phosphorus consists of:",
+      "options": [
+        "P2 molecules",
+        "P4 tetrahedra",
+        "polymeric chains",
+        "layered sheets"
+      ],
+      "answer": "B",
+      "explanation": "60-degree strained tetrahedra."
+    },
+    {
+      "question": "White phosphorus ignites in air at about:",
+      "options": [
+        "35 C",
+        "100 C",
+        "250 C",
+        "400 C"
+      ],
+      "answer": "A",
+      "explanation": "Strain makes it spontaneous."
+    },
+    {
+      "question": "White phosphorus is stored:",
+      "options": [
+        "in kerosene",
+        "under water",
+        "in CS2",
+        "in the open"
+      ],
+      "answer": "B",
+      "explanation": "Excludes air; insoluble in water."
+    },
+    {
+      "question": "Red phosphorus is made by heating white P at:",
+      "options": [
+        "35 C",
+        "250-300 C",
+        "500 C",
+        "1000 C"
+      ],
+      "answer": "B",
+      "explanation": "Inert atmosphere, optionally with I2 trace."
+    },
+    {
+      "question": "Red phosphorus is:",
+      "options": [
+        "poisonous",
+        "CS2-soluble",
+        "non-poisonous and polymeric",
+        "glowing"
+      ],
+      "answer": "C",
+      "explanation": "Polymerisation removes both strain and toxicity."
+    },
+    {
+      "question": "The striking surface of a safety match contains:",
+      "options": [
+        "white P",
+        "red P",
+        "P4S3",
+        "P2O5"
+      ],
+      "answer": "B",
+      "explanation": "With KClO3 on the stick head."
+    },
+    {
+      "question": "The most stable allotrope of phosphorus is:",
+      "options": [
+        "white",
+        "red",
+        "black",
+        "scarlett"
+      ],
+      "answer": "C",
+      "explanation": "Layered, high-pressure form."
+    },
+    {
+      "question": "The glow of white phosphorus is:",
+      "options": [
+        "heat radiation",
+        "chemiluminescence of slow oxidation",
+        "reflected light",
+        "radioactivity"
+      ],
+      "answer": "B",
+      "explanation": "Cold light from oxidation fragments."
+    }
   ]
 }

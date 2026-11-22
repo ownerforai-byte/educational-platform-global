@@ -7,36 +7,36 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).",
-    "**Fact.** Pair of lines: a·S ≡ ax² + 2hxy + by²; represents a real pair iff h² ≥ ab. Angle between: tanθ = 2√(h²−ab)/(a+b).",
-    "**Fact.** Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h.",
-    "**Fact.** Direction cosines of a line: l² + m² + n² = 1; distance between two points in space √(Δx²+Δy²+Δz²).",
-    "# Hydrogen sulphide: preparation from Kipp's apparatus (with diagram), properties (acidic nature, reducing nature, analytical reagent) and uses\n\n## 1. Introduction\nChemical picture of **Hydrogen sulphide** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Hydrogen sulphide: preparation from Kipp's apparatus (with diagram)\n### properties (acidic nature, reducing nature, analytical reagent) and uses\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Hydrogen sulphide — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Hydrogen sulphide — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Hydrogen sulphide — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Hydrogen sulphide — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Stinking Gas That Analyses Metals\n\nH₂S: prepared from Kipp's apparatus, acidic in water, a classical analytical reagent (metal sulphide precipitation in groups), and a reducing agent. Preparation, properties, analytical role, uses.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Preparation — Kipp's apparatus\n\n- **FeS + dil. H₂SO₄ → FeSO₄ + H₂S↑** (in the middle globe of Kipp's apparatus; iron sulphide lumps in the middle bulb, acid in the top reservoir).\n- **Kipp's apparatus:** three-bulb glass device — acid in the top bulb flows down to the middle bulb containing FeS lumps; gas evolves; when the stopcock is closed, gas pressure pushes acid back up into the top bulb, separating it from FeS and stopping the reaction. On-demand gas generator, no heating needed.\n- Pure dry H₂S: antimony sulphide + conc. HCl: **Sb₂S₃ + 6HCl → 2SbCl₃ + 3H₂S** (no FeSO₄ spray impurity); dried over P₂O₅ (not conc. H₂SO₄ — H₂S is oxidised by it).\n- Alternative: dilute HCl on FeS works too; heating paraffin with sulphur also gives H₂S.\n\n### 2.2 Properties\n\n- Colourless gas, **rotten-egg smell**, highly poisonous (more toxic than HCN in some ranges; paralyses olfactory nerve — danger of not smelling it), slightly heavier than air, soluble in water (≈ 0.1 M saturated).\n- **Dibasic weak acid in water:** H₂S ⇌ H⁺ + HS⁻ ⇌ 2H⁺ + S²⁻; gives two series of salts (hydrosulphides NaHS, sulphides Na₂S).\n- **Acidic nature:** turns blue litmus red; with bases: NaOH + H₂S → NaHS; 2NaOH + H₂S → Na₂S + H₂O; with metals above H in activity (Fe, Zn, Mg): Fe + H₂S → FeS + H₂.\n- **Reducing nature (the analytical workhorse):**\n  - 2FeCl₃ + H₂S → 2FeCl₂ + 2HCl + S↓ (yellow S precipitate)\n  - H₂S + Cl₂ → 2HCl + S; H₂S + I₂ → 2HI + S (decolourises iodine)\n  - 2HNO₃(dil) + 3H₂S → 2NO + 3S + 4H₂O\n  - SO₂ + 2H₂S → 3S + 2H₂O (sulphur fog — the classic \"oxidation chamber\" demo)\n  - 5H₂S + 2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 5S + 8H₂O\n- **Combustion:** 2H₂S + 3O₂ → 2H₂O + 2SO₂ (excess air); 2H₂S + O₂ → 2S + 2H₂O (limited air — sulphur deposits).\n\n### 2.3 Analytical reagent — qualitative analysis\n\n- In qualitative inorganic analysis, H₂S in **acidic medium** precipitates the **Group II sulphides** (CuS black, CdS yellow, Bi₂S₃ brown, As₂S₃ yellow, Sb₂S₃ orange, SnS brown, HgS black) — very low Ksp, precipitate even at low S²⁻.\n- In **alkaline (NH₄OH) medium** (more S²⁻ available) it precipitates **Group IV sulphides**: ZnS (white), MnS (flesh), NiS/CoS (black), FeS (black).\n- Selectivity comes from controlling S²⁻ via [H⁺]: acid suppresses ionisation, alkaline liberates it.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Kipp's apparatus** | Self-regulating gas generator | FeS + dil. H₂SO₄ → H₂S |\n| **Dibasic acid** | Two replaceable H per molecule | H₂S → NaHS, Na₂S |\n| **Group II sulphides** | Sulphides precipitated in acid medium by H₂S | CuS, CdS |\n| **Group IV sulphides** | Sulphides needing alkaline medium | ZnS, MnS |\n| **Olfactory paralysis** | Nerve numbing that hides the smell | H₂S hazard |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why Kipp's apparatus is clever\n\n- Gas pressure does the valving: open stopcock → acid falls to FeS → gas flows; close stopcock → pressure lifts acid out of contact → reaction stops. No taps of reagents, no heating — a 19th-century design still in every qualitative-analysis lab.\n\n### 4.2 Why H₂S separates metals into groups\n\n- Sulphide Ksp values span enormous ranges: CuS ~10⁻³⁶ vs ZnS ~10⁻²³. In acidic solution S²⁻ is so scarce only the ultra-insoluble Group II sulphides precipitate; in alkaline solution S²⁻ multiplies and the more soluble Group IV sulphides join. One reagent, two selectivity regimes — controlled by a pH knob.\n\n### 4.3 Why H₂S is a good reducer\n\n- S²⁻ → S⁰ is an easy two-electron climb; H₂S hands electrons to Fe³⁺, I₂, KMnO₄, HNO₃ and SO₂ alike, precipitating yellow sulphur. The yellow deposit is the visible signature of every one of these redox answers.",
+    "## 5. Comparison Tables\n\n| Medium | [S²⁻] | Sulphides precipitated | Examples |\n|---|---|---|---|\n| acidic (HCl) | very low | Group II only | CuS, CdS, HgS, As₂S₃ |\n| alkaline (NH₄OH) | high | Group II + IV | ZnS, MnS, NiS, CoS, FeS |",
+    "## 6. Common Confusions\n\n- **\"Dry H₂S is dried over conc. H₂SO₄.\"** No — conc. H₂SO₄ oxidises H₂S to sulphur; use **P₂O₅**.\n- **\"H₂S is a strong acid because S is big.\"** It is a **weak** dibasic acid — the S–H bond is strong and H₂S is poorly ionised; acidity is not size alone.\n- **\"Group IV sulphides precipitate in acid too.\"** Only in alkaline medium — the S²⁻ concentration control is the whole point of the group separation.",
+    "## 7. Exam Application\n\n- Draw/label Kipp's apparatus (three bulbs, acid path, pressure valve logic).\n- Write two redox equations (FeCl₃ and KMnO₄) with the yellow S observation.\n- Group II vs Group IV medium distinction with one example each."
   ],
   "confusion": [],
   "bounds": [
     "Limit to remember: line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²)."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).",
-    "Pair of lines: a·S ≡ ax² + 2hxy + by²; represents a real pair iff h² ≥ ab. Angle between: tanθ = 2√(h²−ab)/(a+b).",
-    "Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h."
+  "practice": [
+    "Describe Kipp's apparatus and how it delivers H2S on demand.",
+    "Write four reactions showing the reducing nature of H2S.",
+    "Explain the use of H2S in qualitative analysis with group examples."
   ],
-  "examples": [],
+  "universalFacts": [
+    "H2S can be more dangerous than HCN at comparable exposures because it anaesthetises the sense of smell - victims stop noticing the warning."
+  ],
+  "examples": [
+    "***The yellow snowfall*** - every reduction H2S performs ends the same way: fine yellow sulphur raining out of solution - the visible signature of S2- climbing to S0."
+  ],
   "practiceQuestions": [
-    "Q. Write the reaction for preparing H2S in Kipp's apparatus. (1 mark) — FeS + H2SO4 → FeSO4 + H2S.",
-    "Q. Show the reducing action of H2S with SO2. (2 marks) — 2H2S + SO2 → 3S↓ + 2H2O (yellow sulphur)."
+    "**NEB-style (3m): Describe the preparation of H2S using Kipp's apparatus with a labelled description.** — Kipp's apparatus is a **three-bulb glass generator**. The **top bulb** is a reservoir of dilute sulphuric acid; the **middle bulb** holds lumps of iron sulphide (FeS) and connects to the top through a tube and to the bottom bulb through a funnel; the **bottom bulb** collects the evolved gas and carries the delivery stopcock. **Working:** opening the stopcock lets acid run down into the middle bulb, contacting FeS: **FeS + H₂SO₄(dil) → FeSO₄ + H₂S↑**; the gas collects in the bottom bulb and flows out. **Closing the stopcock** lets the accumulating gas pressure push the acid back up into the top reservoir, separating it from the FeS — the reaction stops itself. The device thus delivers gas on demand without heating or attention. The gas is dried over **P₂O₅** (concentrated H₂SO₄ would oxidise it).",
+    "**NEB-style (2m): Show that H2S is a reducing agent with two balanced equations.** — **(1) With ferric chloride:** **2FeCl₃ + H₂S → 2FeCl₂ + 2HCl + S↓** — Fe³⁺ is reduced to Fe²⁺ while sulphide is oxidised to elemental sulphur, seen as a yellow precipitate. **(2) With iodine:** **H₂S + I₂ → 2HI + S↓** — iodine is decolourised to iodide as sulphur deposits. (Also acceptable: SO₂ + 2H₂S → 3S + 2H₂O, the sulphur fog; or the KMnO₄ decolourisation: 5H₂S + 2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 5S + 8H₂O.) In every case H₂S climbs from the −2 to the 0 oxidation state — the definition of a reducer.",
+    "**NEB-style (2m): How does H2S act as an analytical reagent in qualitative analysis?** — H₂S supplies S²⁻ ions whose concentration is controlled by acidity. In **acidic medium** the ionisation of H₂S is suppressed, so only the **extremely insoluble Group II sulphides** precipitate: **CuS** (black), **CdS** (yellow), **HgS** (black), **As₂S₃** (yellow), **Sb₂S₃** (orange). In **alkaline medium (NH₄OH/NH₄Cl buffer)** the S²⁻ concentration rises, and the more soluble **Group IV sulphides** precipitate: **ZnS** (white), **MnS** (flesh-coloured), **NiS/CoS** (black), **FeS** (black). The acid-base control of S²⁻ is what separates the metal groups — the reagent's selectivity is a pH effect."
   ],
   "formulas": [
-    "d = |ax₁+by₁+c|/√(a²+b²)",
-    "h² ≥ ab ⟺ real pair",
-    "l²+m²+n² = 1"
+    "- FeS + H₂SO₄(dil) → FeSO₄ + H₂S↑\n- Sb₂S₃ + 6HCl → 2SbCl₃ + 3H₂S\n- 2FeCl₃ + H₂S → 2FeCl₂ + 2HCl + S↓\n- H₂S + I₂ → 2HI + S↓\n- SO₂ + 2H₂S → 3S + 2H₂O\n- 5H₂S + 2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 5S + 8H₂O\n- 2H₂S + O₂(limited) → 2S + 2H₂O; 2H₂S + 3O₂ → 2SO₂ + 2H₂O"
   ],
   "numericals": [
     "Use  d = |ax₁+by₁+c|/√(a²+b²)  — pick reasonable values, solve, and check the units.",
@@ -44,40 +44,250 @@
     "Use  l²+m²+n² = 1  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Hydrogen sulphide",
-    "• Preparation from Kipp's apparatus",
-    "• Diagram",
-    "• Properties",
-    "• Acidic nature",
-    "• Reducing nature"
+    "H2S prep: FeS + dil H2SO4 -> FeSO4 + H2S in KIPP'S APPARATUS (3 bulbs: acid reservoir top, FeS middle, gas collects bottom; closing stopcock pushes acid back up - self-regulating). Pure/dry: Sb2S3 + 6HCl -> 2SbCl3 + 3H2S; dry over P2O5 (NOT conc H2SO4 - oxidises H2S). Properties: colourless, rotten-egg smell, very poisonous (paralyses smell nerve), dibasic WEAK acid (NaHS/Na2S), Fe + H2S -> FeS + H2. Reducing: 2FeCl3 + H2S -> 2FeCl2 + 2HCl + S; H2S + I2 -> 2HI + S; SO2 + 2H2S -> 3S + 2H2O; 5H2S + 2KMnO4 + 3H2SO4 -> 2MnSO4 + K2SO4 + 5S + 8H2O. Combustion: excess air -> SO2; limited air -> S deposit. Analytical: acid medium precipitates Group II sulphides (CuS, CdS, HgS, As2S3 - low Ksp); alkaline (NH4OH) medium also Group IV (ZnS, MnS, NiS, CoS, FeS) - S2- concentration controlled by pH."
   ],
-  "summary": "Hydrogen sulphide: preparation from Kipp's apparatus (wit… (Chemistry of Non-metals, Chemistry, class-11-notes) covers Hydrogen sulphide, preparation from Kipp's apparatus, diagram. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Hydrogen sulphide is the qualitative analyst's scalpel. Made on demand in **Kipp's apparatus** (FeS + dil. H₂SO₄ → FeSO₄ + H₂S; three bulbs, pressure-valve self-stopping) and dried over **P₂O₅**, it is a colourless rotten-egg gas — dangerously poisonous and able to numb its own smell. In water it is a **weak dibasic acid** (NaHS, Na₂S). Its reducing power precipitates yellow sulphur everywhere: **2FeCl₃ + H₂S → 2FeCl₂ + 2HCl + S**, **H₂S + I₂ → 2HI + S**, **SO₂ + 2H₂S → 3S + 2H₂O**, and the permanganate decolourisation. Burned in limited air it deposits sulphur; in excess air it makes SO₂. Analytically, it splits the metals: **acid medium** drops the ultra-insoluble **Group II sulphides** (CuS, CdS, HgS, As₂S₃), **alkaline medium** adds the **Group IV sulphides** (ZnS, MnS, NiS, FeS) — selectivity by pH, one reagent, two regimes.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Hydrogen sulphide: preparation from Kipp's apparatus (wit…\"?",
+      "question": "H2S is prepared in the lab from:",
       "options": [
-        "Hydrogen sulphide",
-        "Preparation from Kipp's apparatus",
-        "Unrelated topic",
-        "None of the above"
+        "FeS + dil H2SO4",
+        "FeS + conc HNO3",
+        "S + H2 at RT",
+        "Na2S + H2O"
       ],
       "answer": "A",
-      "explanation": "Hydrogen sulphide is listed among the official sub-ideas of Hydrogen sulphide: preparation from Kipp's apparatus (wit…; the others are not part of this topic."
+      "explanation": "In Kipp's apparatus."
     },
     {
-      "question": "A common examiner point on \"Hydrogen sulphide: preparation from Kipp's apparatus (wit…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Dry H2S is obtained by drying over:",
       "options": [
-        "True",
-        "False"
+        "conc H2SO4",
+        "P2O5",
+        "CaO",
+        "anhydrous CuSO4"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "H2SO4 would oxidise it."
+    },
+    {
+      "question": "H2S in water is:",
+      "options": [
+        "a strong acid",
+        "a weak dibasic acid",
+        "a base",
+        "neutral"
+      ],
+      "answer": "B",
+      "explanation": "Gives NaHS and Na2S."
+    },
+    {
+      "question": "In acidic medium H2S precipitates:",
+      "options": [
+        "ZnS",
+        "MnS",
+        "CuS",
+        "FeS"
+      ],
+      "answer": "C",
+      "explanation": "Group II only - very low Ksp."
+    },
+    {
+      "question": "ZnS precipitates with H2S in:",
+      "options": [
+        "acidic medium",
+        "alkaline medium",
+        "either",
+        "never"
+      ],
+      "answer": "B",
+      "explanation": "Group IV needs high S2-."
+    },
+    {
+      "question": "H2S + I2 gives:",
+      "options": [
+        "HI + S",
+        "H2 + I2S",
+        "HIO3",
+        "no reaction"
+      ],
+      "answer": "A",
+      "explanation": "Iodine decolourised, sulphur deposited."
+    },
+    {
+      "question": "Burning H2S in limited air deposits:",
+      "options": [
+        "SO2",
+        "S",
+        "H2SO4",
+        "SO3"
+      ],
+      "answer": "B",
+      "explanation": "2H2S + O2 -> 2S + 2H2O."
+    },
+    {
+      "question": "The smell of H2S is dangerous because it:",
+      "options": [
+        "is pleasant",
+        "paralyses the olfactory nerve",
+        "attracts more gas",
+        "dissolves in nose"
+      ],
+      "answer": "B",
+      "explanation": "Victims stop smelling the warning."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Kipp's equation: FeS + H2SO4(dil) → FeSO4 + H2S↑ — apparatus works by stopcock-controlled contact between acid and FeS in the middle bulb; draw the three-bulb shape.",
-    "Trick 2: Acidic nature: 2H2S ⇌ 2H+ + S2−, a weak diprotic acid — reacts with bases to give two series of salts (HS− and S2−).",
-    "Trick 3: Reducing nature equations: H2S + Cl2 → 2HCl + S (decoulourises Cl2 water); 2H2S + SO2 → 3S + 2H2O; H2S turns acidified KMnO4 colourless.",
-    "Trick 4: Analytical use: group II cation sulphides are coloured — PbS black, CdS yellow, ZnS white; 'H2S in qualitative analysis' is the use to quote."
+    "Kipp's: 3 bulbs, pressure valve logic. Dry over P2O5. Group II in acid (CuS, CdS); Group IV in alkali (ZnS, MnS). Reducer: Fe3+ -> Fe2+, I2 -> I-, MnO4- -> Mn2+, all giving yellow S. Limited air burns to S, excess to SO2."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Stinking Gas That Analyses Metals\n\nH₂S: prepared from Kipp's apparatus, acidic in water, a classical analytical reagent (metal sulphide precipitation in groups), and a reducing agent. Preparation, properties, analytical role, uses.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Preparation — Kipp's apparatus\n\n- **FeS + dil. H₂SO₄ → FeSO₄ + H₂S↑** (in the middle globe of Kipp's apparatus; iron sulphide lumps in the middle bulb, acid in the top reservoir).\n- **Kipp's apparatus:** three-bulb glass device — acid in the top bulb flows down to the middle bulb containing FeS lumps; gas evolves; when the stopcock is closed, gas pressure pushes acid back up into the top bulb, separating it from FeS and stopping the reaction. On-demand gas generator, no heating needed.\n- Pure dry H₂S: antimony sulphide + conc. HCl: **Sb₂S₃ + 6HCl → 2SbCl₃ + 3H₂S** (no FeSO₄ spray impurity); dried over P₂O₅ (not conc. H₂SO₄ — H₂S is oxidised by it).\n- Alternative: dilute HCl on FeS works too; heating paraffin with sulphur also gives H₂S.\n\n### 2.2 Properties\n\n- Colourless gas, **rotten-egg smell**, highly poisonous (more toxic than HCN in some ranges; paralyses olfactory nerve — danger of not smelling it), slightly heavier than air, soluble in water (≈ 0.1 M saturated).\n- **Dibasic weak acid in water:** H₂S ⇌ H⁺ + HS⁻ ⇌ 2H⁺ + S²⁻; gives two series of salts (hydrosulphides NaHS, sulphides Na₂S).\n- **Acidic nature:** turns blue litmus red; with bases: NaOH + H₂S → NaHS; 2NaOH + H₂S → Na₂S + H₂O; with metals above H in activity (Fe, Zn, Mg): Fe + H₂S → FeS + H₂.\n- **Reducing nature (the analytical workhorse):**\n  - 2FeCl₃ + H₂S → 2FeCl₂ + 2HCl + S↓ (yellow S precipitate)\n  - H₂S + Cl₂ → 2HCl + S; H₂S + I₂ → 2HI + S (decolourises iodine)\n  - 2HNO₃(dil) + 3H₂S → 2NO + 3S + 4H₂O\n  - SO₂ + 2H₂S → 3S + 2H₂O (sulphur fog — the classic \"oxidation chamber\" demo)\n  - 5H₂S + 2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 5S + 8H₂O\n- **Combustion:** 2H₂S + 3O₂ → 2H₂O + 2SO₂ (excess air); 2H₂S + O₂ → 2S + 2H₂O (limited air — sulphur deposits).\n\n### 2.3 Analytical reagent — qualitative analysis\n\n- In qualitative inorganic analysis, H₂S in **acidic medium** precipitates the **Group II sulphides** (CuS black, CdS yellow, Bi₂S₃ brown, As₂S₃ yellow, Sb₂S₃ orange, SnS brown, HgS black) — very low Ksp, precipitate even at low S²⁻.\n- In **alkaline (NH₄OH) medium** (more S²⁻ available) it precipitates **Group IV sulphides**: ZnS (white), MnS (flesh), NiS/CoS (black), FeS (black).\n- Selectivity comes from controlling S²⁻ via [H⁺]: acid suppresses ionisation, alkaline liberates it.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Kipp's apparatus** | Self-regulating gas generator | FeS + dil. H₂SO₄ → H₂S |\n| **Dibasic acid** | Two replaceable H per molecule | H₂S → NaHS, Na₂S |\n| **Group II sulphides** | Sulphides precipitated in acid medium by H₂S | CuS, CdS |\n| **Group IV sulphides** | Sulphides needing alkaline medium | ZnS, MnS |\n| **Olfactory paralysis** | Nerve numbing that hides the smell | H₂S hazard |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why Kipp's apparatus is clever\n\n- Gas pressure does the valving: open stopcock → acid falls to FeS → gas flows; close stopcock → pressure lifts acid out of contact → reaction stops. No taps of reagents, no heating — a 19th-century design still in every qualitative-analysis lab.\n\n### 4.2 Why H₂S separates metals into groups\n\n- Sulphide Ksp values span enormous ranges: CuS ~10⁻³⁶ vs ZnS ~10⁻²³. In acidic solution S²⁻ is so scarce only the ultra-insoluble Group II sulphides precipitate; in alkaline solution S²⁻ multiplies and the more soluble Group IV sulphides join. One reagent, two selectivity regimes — controlled by a pH knob.\n\n### 4.3 Why H₂S is a good reducer\n\n- S²⁻ → S⁰ is an easy two-electron climb; H₂S hands electrons to Fe³⁺, I₂, KMnO₄, HNO₃ and SO₂ alike, precipitating yellow sulphur. The yellow deposit is the visible signature of every one of these redox answers.",
+      "## 5. Comparison Tables\n\n| Medium | [S²⁻] | Sulphides precipitated | Examples |\n|---|---|---|---|\n| acidic (HCl) | very low | Group II only | CuS, CdS, HgS, As₂S₃ |\n| alkaline (NH₄OH) | high | Group II + IV | ZnS, MnS, NiS, CoS, FeS |",
+      "## 6. Common Confusions\n\n- **\"Dry H₂S is dried over conc. H₂SO₄.\"** No — conc. H₂SO₄ oxidises H₂S to sulphur; use **P₂O₅**.\n- **\"H₂S is a strong acid because S is big.\"** It is a **weak** dibasic acid — the S–H bond is strong and H₂S is poorly ionised; acidity is not size alone.\n- **\"Group IV sulphides precipitate in acid too.\"** Only in alkaline medium — the S²⁻ concentration control is the whole point of the group separation.",
+      "## 7. Exam Application\n\n- Draw/label Kipp's apparatus (three bulbs, acid path, pressure valve logic).\n- Write two redox equations (FeCl₃ and KMnO₄) with the yellow S observation.\n- Group II vs Group IV medium distinction with one example each."
+    ],
+    "keyPoints": [
+      "H2S prep: FeS + dil H2SO4 -> FeSO4 + H2S in KIPP'S APPARATUS (3 bulbs: acid reservoir top, FeS middle, gas collects bottom; closing stopcock pushes acid back up - self-regulating). Pure/dry: Sb2S3 + 6HCl -> 2SbCl3 + 3H2S; dry over P2O5 (NOT conc H2SO4 - oxidises H2S). Properties: colourless, rotten-egg smell, very poisonous (paralyses smell nerve), dibasic WEAK acid (NaHS/Na2S), Fe + H2S -> FeS + H2. Reducing: 2FeCl3 + H2S -> 2FeCl2 + 2HCl + S; H2S + I2 -> 2HI + S; SO2 + 2H2S -> 3S + 2H2O; 5H2S + 2KMnO4 + 3H2SO4 -> 2MnSO4 + K2SO4 + 5S + 8H2O. Combustion: excess air -> SO2; limited air -> S deposit. Analytical: acid medium precipitates Group II sulphides (CuS, CdS, HgS, As2S3 - low Ksp); alkaline (NH4OH) medium also Group IV (ZnS, MnS, NiS, CoS, FeS) - S2- concentration controlled by pH."
+    ],
+    "importantConcepts": [
+      "The pH knob runs qualitative analysis: acidity suppresses H2S ionisation so only ultra-insoluble Group II sulphides fall out, while alkalinity multiplies S2- and drags Group IV down too - one reagent, two regimes, controlled selectivity."
+    ],
+    "examples": [
+      "***The yellow snowfall*** - every reduction H2S performs ends the same way: fine yellow sulphur raining out of solution - the visible signature of S2- climbing to S0."
+    ],
+    "universalFacts": [
+      "H2S can be more dangerous than HCN at comparable exposures because it anaesthetises the sense of smell - victims stop noticing the warning."
+    ],
+    "importantStatements": [
+      "\"Hydrogen sulphide is a weak dibasic acid and a strong reducing agent; it precipitates metal sulphides selectively according to the acidity of the solution.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ for this row; all items are NEB-style practice. NEB 2024/2023/2022/2021 items are recorded at rows 67, 63, 61 and 65."
+    ],
+    "examShortTricks": [
+      "Kipp's: 3 bulbs, pressure valve logic. Dry over P2O5. Group II in acid (CuS, CdS); Group IV in alkali (ZnS, MnS). Reducer: Fe3+ -> Fe2+, I2 -> I-, MnO4- -> Mn2+, all giving yellow S. Limited air burns to S, excess to SO2."
+    ],
+    "examNotes": [
+      "For Kipp's apparatus, describe the three bulbs AND the pressure mechanism - the self-stopping valve is the point of the question."
+    ],
+    "formulas": [
+      "- FeS + H₂SO₄(dil) → FeSO₄ + H₂S↑\n- Sb₂S₃ + 6HCl → 2SbCl₃ + 3H₂S\n- 2FeCl₃ + H₂S → 2FeCl₂ + 2HCl + S↓\n- H₂S + I₂ → 2HI + S↓\n- SO₂ + 2H₂S → 3S + 2H₂O\n- 5H₂S + 2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 5S + 8H₂O\n- 2H₂S + O₂(limited) → 2S + 2H₂O; 2H₂S + 3O₂ → 2SO₂ + 2H₂O"
+    ],
+    "practice": [
+      "Describe Kipp's apparatus and how it delivers H2S on demand.",
+      "Write four reactions showing the reducing nature of H2S.",
+      "Explain the use of H2S in qualitative analysis with group examples."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Describe the preparation of H2S using Kipp's apparatus with a labelled description.** — Kipp's apparatus is a **three-bulb glass generator**. The **top bulb** is a reservoir of dilute sulphuric acid; the **middle bulb** holds lumps of iron sulphide (FeS) and connects to the top through a tube and to the bottom bulb through a funnel; the **bottom bulb** collects the evolved gas and carries the delivery stopcock. **Working:** opening the stopcock lets acid run down into the middle bulb, contacting FeS: **FeS + H₂SO₄(dil) → FeSO₄ + H₂S↑**; the gas collects in the bottom bulb and flows out. **Closing the stopcock** lets the accumulating gas pressure push the acid back up into the top reservoir, separating it from the FeS — the reaction stops itself. The device thus delivers gas on demand without heating or attention. The gas is dried over **P₂O₅** (concentrated H₂SO₄ would oxidise it).",
+      "**NEB-style (2m): Show that H2S is a reducing agent with two balanced equations.** — **(1) With ferric chloride:** **2FeCl₃ + H₂S → 2FeCl₂ + 2HCl + S↓** — Fe³⁺ is reduced to Fe²⁺ while sulphide is oxidised to elemental sulphur, seen as a yellow precipitate. **(2) With iodine:** **H₂S + I₂ → 2HI + S↓** — iodine is decolourised to iodide as sulphur deposits. (Also acceptable: SO₂ + 2H₂S → 3S + 2H₂O, the sulphur fog; or the KMnO₄ decolourisation: 5H₂S + 2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 5S + 8H₂O.) In every case H₂S climbs from the −2 to the 0 oxidation state — the definition of a reducer.",
+      "**NEB-style (2m): How does H2S act as an analytical reagent in qualitative analysis?** — H₂S supplies S²⁻ ions whose concentration is controlled by acidity. In **acidic medium** the ionisation of H₂S is suppressed, so only the **extremely insoluble Group II sulphides** precipitate: **CuS** (black), **CdS** (yellow), **HgS** (black), **As₂S₃** (yellow), **Sb₂S₃** (orange). In **alkaline medium (NH₄OH/NH₄Cl buffer)** the S²⁻ concentration rises, and the more soluble **Group IV sulphides** precipitate: **ZnS** (white), **MnS** (flesh-coloured), **NiS/CoS** (black), **FeS** (black). The acid-base control of S²⁻ is what separates the metal groups — the reagent's selectivity is a pH effect."
+    ]
+  },
+  "importantConcepts": [
+    "The pH knob runs qualitative analysis: acidity suppresses H2S ionisation so only ultra-insoluble Group II sulphides fall out, while alkalinity multiplies S2- and drags Group IV down too - one reagent, two regimes, controlled selectivity."
+  ],
+  "importantStatements": [
+    "\"Hydrogen sulphide is a weak dibasic acid and a strong reducing agent; it precipitates metal sulphides selectively according to the acidity of the solution.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ for this row; all items are NEB-style practice. NEB 2024/2023/2022/2021 items are recorded at rows 67, 63, 61 and 65."
+  ],
+  "examNotes": [
+    "For Kipp's apparatus, describe the three bulbs AND the pressure mechanism - the self-stopping valve is the point of the question."
+  ],
+  "mcs": [
+    {
+      "question": "H2S is prepared in the lab from:",
+      "options": [
+        "FeS + dil H2SO4",
+        "FeS + conc HNO3",
+        "S + H2 at RT",
+        "Na2S + H2O"
+      ],
+      "answer": "A",
+      "explanation": "In Kipp's apparatus."
+    },
+    {
+      "question": "Dry H2S is obtained by drying over:",
+      "options": [
+        "conc H2SO4",
+        "P2O5",
+        "CaO",
+        "anhydrous CuSO4"
+      ],
+      "answer": "B",
+      "explanation": "H2SO4 would oxidise it."
+    },
+    {
+      "question": "H2S in water is:",
+      "options": [
+        "a strong acid",
+        "a weak dibasic acid",
+        "a base",
+        "neutral"
+      ],
+      "answer": "B",
+      "explanation": "Gives NaHS and Na2S."
+    },
+    {
+      "question": "In acidic medium H2S precipitates:",
+      "options": [
+        "ZnS",
+        "MnS",
+        "CuS",
+        "FeS"
+      ],
+      "answer": "C",
+      "explanation": "Group II only - very low Ksp."
+    },
+    {
+      "question": "ZnS precipitates with H2S in:",
+      "options": [
+        "acidic medium",
+        "alkaline medium",
+        "either",
+        "never"
+      ],
+      "answer": "B",
+      "explanation": "Group IV needs high S2-."
+    },
+    {
+      "question": "H2S + I2 gives:",
+      "options": [
+        "HI + S",
+        "H2 + I2S",
+        "HIO3",
+        "no reaction"
+      ],
+      "answer": "A",
+      "explanation": "Iodine decolourised, sulphur deposited."
+    },
+    {
+      "question": "Burning H2S in limited air deposits:",
+      "options": [
+        "SO2",
+        "S",
+        "H2SO4",
+        "SO3"
+      ],
+      "answer": "B",
+      "explanation": "2H2S + O2 -> 2S + 2H2O."
+    },
+    {
+      "question": "The smell of H2S is dangerous because it:",
+      "options": [
+        "is pleasant",
+        "paralyses the olfactory nerve",
+        "attracts more gas",
+        "dissolves in nose"
+      ],
+      "answer": "B",
+      "explanation": "Victims stop smelling the warning."
+    }
   ]
 }

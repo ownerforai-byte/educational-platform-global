@@ -232,5 +232,73 @@
   },
   "universalFacts": [
     "BF₃'s 6-electron boron is the textbook Lewis acid: it completes its octet by accepting NH₃'s lone pair, forming the NH₃·BF₃ adduct."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Lewis structures — drawing where the electrons are",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the method",
+        "subtopics": [
+          {
+            "name": "Step-by-step construction",
+            "points": [
+              "Count total valence electrons from all atoms, adjusting for charge",
+              "Connect atoms with single bonds, then place remaining electrons as lone pairs",
+              "Form multiple bonds if an octet is still incomplete"
+            ]
+          },
+          {
+            "name": "Formal charge",
+            "points": [
+              "Formal charge = valence electrons - (lone pair electrons/2) - bonds",
+              "The structure with formal charges closest to zero is preferred",
+              "Negative formal charge belongs on the more electronegative atom"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: s and p block examples",
+        "subtopics": [
+          {
+            "name": "Common structures",
+            "points": [
+              "H2O: two O-H bonds plus two lone pairs on oxygen, bent",
+              "NH3: three N-H bonds plus one lone pair, pyramidal",
+              "CO2: two double bonds, linear, no lone pairs on carbon"
+            ]
+          },
+          {
+            "name": "Expanded octet cases",
+            "points": [
+              "PCl5 has five bonding pairs on phosphorus — 10 electrons",
+              "SF6 has six bonding pairs on sulfur — 12 electrons",
+              "Only period 3 elements and below can expand their octet"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: resonance and limits",
+        "subtopics": [
+          {
+            "name": "Resonance structures",
+            "points": [
+              "When more than one valid Lewis structure exists, the real molecule is a hybrid",
+              "Ozone and carbonate ion are standard examples",
+              "Resonance stabilises the molecule by delocalising electrons"
+            ]
+          },
+          {
+            "name": "Limits of the Lewis model",
+            "points": [
+              "Cannot explain O2 paramagnetism",
+              "Gives no information about bond angles or three-dimensional shape",
+              "Molecular orbital theory is required for these"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

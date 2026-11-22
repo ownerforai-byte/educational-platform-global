@@ -232,5 +232,73 @@
       "**NEB-style (2m): Give two molecules in which the central atom has an incomplete octet, with electron counts.** — **BeCl₂:** Be holds 4 electrons (two Be–Cl bonds) — stable but electron-deficient, hence a strong Lewis acid. **BF₃:** B holds 6 electrons (three B–F bonds) — also electron-deficient; BF₃ is a widely used organic catalyst for this reason.",
       "**NEB-style (3m): What is the expanded octet? Illustrate with PCl₅ and SF₆.** — An expanded octet has more than eight electrons around the central atom, possible only for period-3 elements and beyond where empty d orbitals can accept electron density. **PCl₅:** five P–Cl bonds = 10 electrons around P (trigonal bipyramidal). **SF₆:** six S–F bonds = 12 electrons around S (octahedral). Period-2 atoms (C, N, O, F) can never expand because they have no accessible valence d orbitals."
     ]
+  },
+  "mindmap": {
+    "centralConcept": "Octet theory — why atoms bond at all",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the vocabulary",
+        "subtopics": [
+          {
+            "name": "Shells and valence electrons",
+            "points": [
+              "Electrons occupy shells K, L, M, N at increasing distance and energy",
+              "Valence electrons are those in the outermost shell — they decide chemical behaviour",
+              "Valency is the combining capacity, equal to electrons gained, lost or shared to reach an octet"
+            ]
+          },
+          {
+            "name": "The octet rule",
+            "points": [
+              "Atoms tend to attain eight electrons in the outermost shell, matching the noble gas configuration",
+              "Kossel and Lewis proposed it independently in 1916",
+              "Noble gases are already stable, which is why they rarely bond"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: how the octet is achieved",
+        "subtopics": [
+          {
+            "name": "Three routes to an octet",
+            "points": [
+              "Transfer of electrons — ionic bonding (metal loses, non-metal gains)",
+              "Sharing of electrons — covalent bonding (both contribute)",
+              "Coordination — one atom donates a lone pair to another"
+            ]
+          },
+          {
+            "name": "Lewis structures",
+            "points": [
+              "Dots represent valence electrons; a shared pair is a bond",
+              "Total valence electrons must be conserved when drawing",
+              "Formal charge helps decide between competing structures"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: where the octet rule fails",
+        "subtopics": [
+          {
+            "name": "Exceptions",
+            "points": [
+              "Incomplete octet: BeCl2 (4 electrons), BF3 (6 electrons), LiCl",
+              "Expanded octet: PCl5 (10), SF6 (12) — possible only for period 3 and below with accessible d orbitals",
+              "Odd-electron species: NO and NO2 have unpaired electrons and cannot satisfy an octet"
+            ]
+          },
+          {
+            "name": "Why it still matters",
+            "points": [
+              "The octet rule is a useful first approximation, not a law",
+              "Molecular orbital theory is needed for O2 paramagnetism, which the octet picture cannot explain",
+              "Hydrogen obeys a duet rule, not an octet"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -176,5 +176,73 @@
     "component": "VSEPRModeler",
     "desc": "3D molecular geometry predictor"
   },
-  "visualType": "ionic-covalent-bond"
+  "visualType": "ionic-covalent-bond",
+  "mindmap": {
+    "centralConcept": "Covalent bonding — sharing electrons to complete an octet",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the shared pair",
+        "subtopics": [
+          {
+            "name": "Formation",
+            "points": [
+              "Two atoms each contribute one electron to a shared pair",
+              "The shared pair is attracted to both nuclei, lowering the energy",
+              "Bond order one is a single bond; two and three are double and triple"
+            ]
+          },
+          {
+            "name": "Bond length and strength",
+            "points": [
+              "Shorter bond generally means stronger bond",
+              "Triple shorter and stronger than double, which is shorter and stronger than single",
+              "C-C 154 pm, C=C 134 pm, C triple bond C 120 pm"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: coordinate bonding and properties",
+        "subtopics": [
+          {
+            "name": "Coordinate (dative) covalent bond",
+            "points": [
+              "One atom donates both electrons of the shared pair; the other supplies none",
+              "The donor must have a lone pair; the acceptor an empty orbital",
+              "Examples: NH4+, H3O+, and the coordinate bonds in metal complexes"
+            ]
+          },
+          {
+            "name": "Properties of covalent compounds",
+            "points": [
+              "Low melting and boiling points for simple molecular substances — weak intermolecular forces",
+              "Generally poor conductors — no free ions or electrons",
+              "Usually soluble in non-polar solvents, insoluble in water unless they can hydrogen-bond"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: giant covalent structures",
+        "subtopics": [
+          {
+            "name": "Network solids are the exception",
+            "points": [
+              "Diamond, graphite, silicon dioxide and silicon carbide are giant covalent lattices",
+              "Very high melting points because covalent bonds must be broken, not just intermolecular forces",
+              "Graphite conducts because of delocalised electrons between layers; diamond does not"
+            ]
+          },
+          {
+            "name": "Bond polarity",
+            "points": [
+              "A bond between different elements is polar unless the electronegativity difference is zero",
+              "Electronegativity difference above roughly 1.7 gives predominantly ionic character",
+              "Polar bonds may or may not give a polar molecule — symmetry decides"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

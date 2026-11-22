@@ -306,5 +306,65 @@
       "answer": "B",
       "explanation": "Penetration beats the higher n."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Effective nuclear charge — the pull an electron actually feels",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Two charges",
+            "points": [
+              "Nuclear charge Z is the actual number of protons",
+              "Effective nuclear charge Zeff is the net positive charge experienced by an electron after shielding",
+              "Zeff = Z - sigma, where sigma is the shielding constant"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: shielding and penetration",
+        "subtopics": [
+          {
+            "name": "Shielding",
+            "points": [
+              "Inner electrons repel outer electrons and reduce the nuclear pull they feel",
+              "Core electrons shield almost completely; same-shell electrons shield poorly",
+              "Slater's rules give a practical way to estimate sigma"
+            ]
+          },
+          {
+            "name": "Penetration",
+            "points": [
+              "s electrons penetrate closer to the nucleus than p, which penetrates more than d",
+              "Greater penetration means less shielding and a lower energy for that orbital",
+              "Explains the order of orbital filling: 4s fills before 3d"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: consequences",
+        "subtopics": [
+          {
+            "name": "Explaining trends",
+            "points": [
+              "Zeff increases across a period because Z rises while shielding stays roughly constant",
+              "Zeff increases only slightly down a group because shielding rises with Z",
+              "Atomic radius, ionisation energy and electronegativity all follow from Zeff"
+            ]
+          },
+          {
+            "name": "Quantitative anchors",
+            "points": [
+              "For hydrogen Zeff = Z = 1, with no shielding",
+              "For a 2s electron in lithium, Zeff is about 1.3 rather than 3",
+              "Sodium's 3s electron feels Zeff of roughly 2.2, not 11"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

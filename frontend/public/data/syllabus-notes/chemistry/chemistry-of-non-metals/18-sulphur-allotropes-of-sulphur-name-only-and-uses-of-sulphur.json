@@ -7,56 +7,280 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Sulphur: allotropes of sulphur (name only) and uses of sulphur\n\n## 1. Introduction\nChemical picture of **Sulphur** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Sulphur: allotropes of sulphur (name only) and uses of sulphur\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Sulphur — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Sulphur — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Sulphur — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Sulphur — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Yellow Element of Matches and Medicine\n\nSulphur's allotropes (names only per NEB) and its uses: rhombic, monoclinic, plastic (amorphous), plus milk of sulphur and colloidal sulphur.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The allotropes (names only, with essentials)\n\n| Allotrope | Appearance | Structure | Key facts |\n|---|---|---|---|\n| **Rhombic (α) sulphur** | pale yellow crystals, octahedral (\"dandelion\" shape) | discrete S₈ puckered rings (crown) | stable below 96 °C; insoluble in water, soluble in CS₂; density 2.07 |\n| **Monoclinic (β) sulphur** | amber needle crystals | S₈ rings, different packing | stable 96–119 °C; mp 119 °C; both revert to rhombic below 96 °C |\n| **Plastic (γ, amorphous) sulphur** | rubbery dark brown mass | zig-zag supercooled chains | made by pouring molten sulphur (boiling, ~250 °C+) into cold water; reverts to rhombic on standing |\n| **Milk of sulphur** | white powder | fine precipitated S | from boiling S with Ca(OH)₂ then acidifying; medical (skin) |\n| **Colloidal sulphur** | colloidal sol | nanodispersion | from H₂S + oxidants (e.g. Br₂ water) or Na₂S₂O₃ + acid; used as fungicide/medicine |\n\n### 2.2 Transition temperature and ring–chain story\n\n- **96 °C:** rhombic ⇌ monoclinic transition temperature — below it rhombic is stable, above it monoclinic.\n- Molten sulphur's viscosity drama: S₈ rings → ring opening at ~160 °C → long chains entangle (viscosity maximum ~200 °C, dark) → chains shorten near boiling (444 °C bp). Pouring the viscous melt into water traps the chains: plastic sulphur.\n\n### 2.3 Uses of sulphur\n\n- Vulcanisation of rubber (cross-linking polyisoprene); H₂SO₄ manufacture (contact process feed); sulphur dioxide for bleaching/fumigation/refrigeration; gunpowder (S + KNO₃ + charcoal); matches, fireworks; medicines (skin ointments, milk of sulphur); CS₂ solvent manufacture; insecticides/fungicides (sulphur dust, lime sulphur); carbon disulphide and sulphur dyes.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **S₈ crown ring** | Eight-membered puckered sulphur ring | rhombic/monoclinic sulphur |\n| **Transition temperature** | Temperature where two allotropes coexist in equilibrium | 96 °C for α/β sulphur |\n| **Plastic sulphur** | Supercooled polymeric chain form | molten S quenched in water |\n| **Vulcanisation** | Cross-linking rubber with sulphur | tyre rubber |\n| **Milk of sulphur** | Fine white precipitated sulphur | medical/skin use |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why two crystalline forms with one ring\n\n- Both rhombic and monoclinic contain S₈ rings; they differ in how the rings pack. Packing energy differences are tiny, so the stability flips at 96 °C — a textbook case of enthalpy vs entropy balance at a transition temperature.\n\n### 4.2 The viscosity mountain\n\n- Ring-opening polymerisation at ~160 °C builds long chains: viscosity climbs to a maximum near 200 °C (dark, treacle). Beyond that, thermal scission shortens chains and viscosity falls again toward boiling. Quenching freezes the chains — plastic sulphur — which slowly re-crystallises to rhombic (the stable low-T form).\n\n### 4.3 Why vulcanisation transformed transport\n\n- Raw rubber is sticky and soft; sulphur cross-links (C–S–S–C bridges) lock the polymer chains together: elasticity with strength, temperature-stable. 3–5% S for flexible rubber, ~30% for hard ebonite. The tyre industry is built on this reaction.",
+    "## 5. Comparison Tables\n\n| Property | Rhombic α | Monoclinic β | Plastic γ |\n|---|---|---|---|\n| Stability | < 96 °C | 96–119 °C | metastable |\n| Shape | octahedral yellow | amber needles | rubbery brown |\n| Structure | S₈ rings packed one way | S₈ rings packed another | chains |\n| Soluble in CS₂ | yes | yes | partly |\n| Density | 2.07 | 1.98 | ~1.9 |",
+    "## 6. Common Confusions\n\n- **\"Rhombic and monoclinic have different molecules.\"** Both are S₈ rings — only the crystal packing differs.\n- **\"Plastic sulphur is a new compound.\"** It is supercooled polymeric sulphur, reverting to rhombic in days — metastable, not permanent.\n- **\"The transition temperature is the melting point.\"** 96 °C is the α⇌β equilibrium temperature; melting is at 119 °C (monoclinic).",
+    "## 7. Exam Application\n\n- Name the allotropes (that's the syllabus ask) and attach one structure word + one use to each.\n- 96 °C transition temperature is a mark-winning number.\n- Vulcanisation with the %S distinction (flexible vs ebonite)."
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Sulphur: allotropes of sulphur (name only) and uses of su…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Name the allotropes of sulphur with one distinguishing property each.",
+    "Explain the viscosity behaviour of molten sulphur.",
+    "List four uses of sulphur with reasons."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Natural rubber becomes useful only after vulcanisation (Goodyear, 1839): without sulphur cross-links there would be no tyres, hoses or seals."
+  ],
+  "examples": [
+    "***The rubbery handful*** - pour boiling dark treacle-like sulphur into cold water and it sets like rubber; leave it on the shelf and within days it crumbles back to yellow rhombic crystals - metastability made visible."
+  ],
   "practiceQuestions": [
-    "Q. Name the allotropes of sulphur. (1 mark) — rhombic, monoclinic, plastic (plus colloidal/milk of sulphur).",
-    "Q. What is the transition temperature of sulphur? (1 mark) — 95.6 °C."
+    "**NEB-style (3m): Name the allotropes of sulphur and distinguish rhombic from monoclinic sulphur.** — **Allotropes:** rhombic (α), monoclinic (β), plastic (amorphous) sulphur; additionally milk of sulphur and colloidal sulphur as fine-particle forms. **Rhombic (α):** pale yellow **octahedral crystals** of S₈ crown-shaped rings; the **stable form below 96 °C**; density 2.07 g/cm³; soluble in CS₂. **Monoclinic (β):** **amber needle crystals**, also S₈ rings but packed differently; **stable between 96 °C and its melting point 119 °C**; density 1.98 g/cm³. The two interconvert at the **transition temperature 96 °C** — below it rhombic is thermodynamically stable, above it monoclinic. Both revert to rhombic on long standing at room temperature. **Plastic sulphur:** rubbery brown supercooled **chains**, made by pouring molten sulphur into cold water; metastable, slowly reverts to rhombic.",
+    "**NEB-style (2m): Describe what happens to the viscosity of molten sulphur as it is heated from its melting point to boiling.** — Just above the melting point the melt is a mobile liquid of **S₈ rings**. Around **160 °C** the rings begin to open and polymerise into **long chains**, which entangle: the viscosity rises steeply, reaching a **maximum near 200 °C** where the melt is dark and treacle-like. Above that, thermal energy **breaks the chains** into shorter fragments, and the viscosity falls again until the liquid boils at **444 °C**. If the viscous melt is poured into cold water, the chains are frozen in as **plastic sulphur**.",
+    "**NEB-style (2m): State four important uses of sulphur.** — (1) **Vulcanisation of rubber:** sulphur cross-links the polymer chains of raw rubber (3–5 % for flexible rubber, ~30 % for hard ebonite), converting sticky gum into durable, elastic material — the basis of the tyre industry. (2) **Manufacture of sulphuric acid:** sulphur is burned to SO₂, the feedstock of the contact process. (3) **SO₂ production** for bleaching silk/wool, fumigation and refrigeration. (4) **Gunpowder and fireworks:** the classic S + KNO₃ + charcoal mixture. (Other acceptable uses: skin ointments/milk of sulphur, carbon disulphide solvent, sulphur dyes, fungicides.)"
   ],
   "keyPoints": [
-    "• Sulphur",
-    "• Allotropes of sulphur",
-    "• Name only",
-    "• Uses of sulphur"
+    "Sulphur allotropes (names only): RHOMBIC (alpha) - pale yellow octahedral crystals, S8 crown rings, stable below 96 C, CS2-soluble, density 2.07. MONOCLINIC (beta) - amber needles, S8 rings packed differently, stable 96-119 C, mp 119 C. PLASTIC (amorphous) - rubbery brown supercooled chains, made by pouring molten S (~250 C) into cold water, reverts to rhombic. MILK OF SULPHUR - fine white precipitated S (boil S with Ca(OH)2, acidify); medical. COLLOIDAL SULPHUR - sol from H2S + oxidant or Na2S2O3 + acid; fungicide/medicine. Transition temperature 96 C (alpha <=> beta). Viscosity: rings -> chains ~160 C, max ~200 C, falls to bp 444 C. Uses: vulcanisation (3-5% S flexible rubber, ~30% ebonite), H2SO4 feedstock, SO2 bleaching/fumigation, gunpowder (S + KNO3 + C), matches/fireworks, skin medicines, CS2, sulphur dyes, fungicides."
   ],
-  "summary": "Sulphur: allotropes of sulphur (name only) and uses of su… (Chemistry of Non-metals, Chemistry, class-11-notes) covers Sulphur, allotropes of sulphur, name only. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Sulphur's allotropy is a story of one ring and three fates. **Rhombic (α) sulphur** — yellow octahedra of S₈ crown rings — rules below **96 °C**; **monoclinic (β) sulphur** — amber needles of the same rings, differently packed — rules from 96 °C to its 119 °C melting point; the **transition temperature 96 °C** is their handshake. Melt either and the rings survive until ~160 °C, then open into entangled chains that treacle the liquid at 200 °C before scission frees it again toward the 444 °C boil; quench that melt in cold water and **plastic sulphur** — rubbery, metastable chains — is born, slowly crumbling back to rhombic. Fine-particle cousins: **milk of sulphur** (medical) and **colloidal sulphur** (fungicide). Uses: **vulcanisation** (3–5 % S for tyres, ~30 % for ebonite), H₂SO₄ manufacture, SO₂ for bleaching and fumigation, gunpowder, matches, medicines, CS₂ and sulphur dyes.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Sulphur: allotropes of sulphur (name only) and uses of su…\"?",
+      "question": "The stable form of sulphur below 96 C is:",
       "options": [
-        "Sulphur",
-        "Allotropes of sulphur",
-        "Unrelated topic",
-        "None of the above"
+        "monoclinic",
+        "rhombic",
+        "plastic",
+        "milk of sulphur"
       ],
-      "answer": "Sulphur",
-      "explanation": "Sulphur is listed among the official sub-ideas of Sulphur: allotropes of sulphur (name only) and uses of su…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "Rhombic alpha-sulphur."
     },
     {
-      "question": "A common examiner point on \"Sulphur: allotropes of sulphur (name only) and uses of su…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The transition temperature of sulphur is:",
       "options": [
-        "True",
-        "False"
+        "96 C",
+        "119 C",
+        "160 C",
+        "444 C"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A",
+      "explanation": "Alpha <=> beta equilibrium at 96 C."
+    },
+    {
+      "question": "Both rhombic and monoclinic sulphur contain:",
+      "options": [
+        "S2",
+        "S6",
+        "S8 rings",
+        "chains"
+      ],
+      "answer": "C",
+      "explanation": "Same S8 crown rings, different packing."
+    },
+    {
+      "question": "Plastic sulphur is made by:",
+      "options": [
+        "heating rhombic S",
+        "pouring molten S into cold water",
+        "sublimation",
+        "CS2 evaporation"
+      ],
+      "answer": "B",
+      "explanation": "Quenching traps the chains."
+    },
+    {
+      "question": "The viscosity of molten sulphur peaks near:",
+      "options": [
+        "119 C",
+        "160 C",
+        "200 C",
+        "400 C"
+      ],
+      "answer": "C",
+      "explanation": "Maximum chain entanglement."
+    },
+    {
+      "question": "Vulcanisation uses about this much sulphur for flexible rubber:",
+      "options": [
+        "0.1%",
+        "3-5%",
+        "30%",
+        "100%"
+      ],
+      "answer": "B",
+      "explanation": "~30% gives hard ebonite."
+    },
+    {
+      "question": "Gunpowder contains:",
+      "options": [
+        "S + KNO3 + charcoal",
+        "S + NaCl",
+        "S + P4",
+        "S + Fe"
+      ],
+      "answer": "A",
+      "explanation": "The classic black powder trio."
+    },
+    {
+      "question": "Milk of sulphur is used mainly as:",
+      "options": [
+        "a fuel",
+        "a medicine/skin preparation",
+        "a refrigerant",
+        "an electrode"
+      ],
+      "answer": "B",
+      "explanation": "Fine precipitated sulphur for skin."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Allotrope names: rhombic (α, octahedral, stable below 96 °C), monoclinic (β, prismatic, 96–119 °C), plastic (γ, amorphous) + milk of sulphur and colloidal sulphur.",
-    "Trick 2: Transition temperature 95.6 °C between rhombic and monoclinic — the exact number earns the mark.",
-    "Trick 3: Uses in one line each: vulcanisation of rubber, H2SO4 manufacture, gunpowder/matches, fungicides and medicines."
+    "Rhombic < 96 C; monoclinic 96-119 C; plastic = quenched chains. S8 crown rings in both crystals. Vulcanisation: 3-5% S rubber, ~30% ebonite. Gunpowder: S + KNO3 + charcoal."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Yellow Element of Matches and Medicine\n\nSulphur's allotropes (names only per NEB) and its uses: rhombic, monoclinic, plastic (amorphous), plus milk of sulphur and colloidal sulphur.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The allotropes (names only, with essentials)\n\n| Allotrope | Appearance | Structure | Key facts |\n|---|---|---|---|\n| **Rhombic (α) sulphur** | pale yellow crystals, octahedral (\"dandelion\" shape) | discrete S₈ puckered rings (crown) | stable below 96 °C; insoluble in water, soluble in CS₂; density 2.07 |\n| **Monoclinic (β) sulphur** | amber needle crystals | S₈ rings, different packing | stable 96–119 °C; mp 119 °C; both revert to rhombic below 96 °C |\n| **Plastic (γ, amorphous) sulphur** | rubbery dark brown mass | zig-zag supercooled chains | made by pouring molten sulphur (boiling, ~250 °C+) into cold water; reverts to rhombic on standing |\n| **Milk of sulphur** | white powder | fine precipitated S | from boiling S with Ca(OH)₂ then acidifying; medical (skin) |\n| **Colloidal sulphur** | colloidal sol | nanodispersion | from H₂S + oxidants (e.g. Br₂ water) or Na₂S₂O₃ + acid; used as fungicide/medicine |\n\n### 2.2 Transition temperature and ring–chain story\n\n- **96 °C:** rhombic ⇌ monoclinic transition temperature — below it rhombic is stable, above it monoclinic.\n- Molten sulphur's viscosity drama: S₈ rings → ring opening at ~160 °C → long chains entangle (viscosity maximum ~200 °C, dark) → chains shorten near boiling (444 °C bp). Pouring the viscous melt into water traps the chains: plastic sulphur.\n\n### 2.3 Uses of sulphur\n\n- Vulcanisation of rubber (cross-linking polyisoprene); H₂SO₄ manufacture (contact process feed); sulphur dioxide for bleaching/fumigation/refrigeration; gunpowder (S + KNO₃ + charcoal); matches, fireworks; medicines (skin ointments, milk of sulphur); CS₂ solvent manufacture; insecticides/fungicides (sulphur dust, lime sulphur); carbon disulphide and sulphur dyes.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **S₈ crown ring** | Eight-membered puckered sulphur ring | rhombic/monoclinic sulphur |\n| **Transition temperature** | Temperature where two allotropes coexist in equilibrium | 96 °C for α/β sulphur |\n| **Plastic sulphur** | Supercooled polymeric chain form | molten S quenched in water |\n| **Vulcanisation** | Cross-linking rubber with sulphur | tyre rubber |\n| **Milk of sulphur** | Fine white precipitated sulphur | medical/skin use |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why two crystalline forms with one ring\n\n- Both rhombic and monoclinic contain S₈ rings; they differ in how the rings pack. Packing energy differences are tiny, so the stability flips at 96 °C — a textbook case of enthalpy vs entropy balance at a transition temperature.\n\n### 4.2 The viscosity mountain\n\n- Ring-opening polymerisation at ~160 °C builds long chains: viscosity climbs to a maximum near 200 °C (dark, treacle). Beyond that, thermal scission shortens chains and viscosity falls again toward boiling. Quenching freezes the chains — plastic sulphur — which slowly re-crystallises to rhombic (the stable low-T form).\n\n### 4.3 Why vulcanisation transformed transport\n\n- Raw rubber is sticky and soft; sulphur cross-links (C–S–S–C bridges) lock the polymer chains together: elasticity with strength, temperature-stable. 3–5% S for flexible rubber, ~30% for hard ebonite. The tyre industry is built on this reaction.",
+      "## 5. Comparison Tables\n\n| Property | Rhombic α | Monoclinic β | Plastic γ |\n|---|---|---|---|\n| Stability | < 96 °C | 96–119 °C | metastable |\n| Shape | octahedral yellow | amber needles | rubbery brown |\n| Structure | S₈ rings packed one way | S₈ rings packed another | chains |\n| Soluble in CS₂ | yes | yes | partly |\n| Density | 2.07 | 1.98 | ~1.9 |",
+      "## 6. Common Confusions\n\n- **\"Rhombic and monoclinic have different molecules.\"** Both are S₈ rings — only the crystal packing differs.\n- **\"Plastic sulphur is a new compound.\"** It is supercooled polymeric sulphur, reverting to rhombic in days — metastable, not permanent.\n- **\"The transition temperature is the melting point.\"** 96 °C is the α⇌β equilibrium temperature; melting is at 119 °C (monoclinic).",
+      "## 7. Exam Application\n\n- Name the allotropes (that's the syllabus ask) and attach one structure word + one use to each.\n- 96 °C transition temperature is a mark-winning number.\n- Vulcanisation with the %S distinction (flexible vs ebonite)."
+    ],
+    "keyPoints": [
+      "Sulphur allotropes (names only): RHOMBIC (alpha) - pale yellow octahedral crystals, S8 crown rings, stable below 96 C, CS2-soluble, density 2.07. MONOCLINIC (beta) - amber needles, S8 rings packed differently, stable 96-119 C, mp 119 C. PLASTIC (amorphous) - rubbery brown supercooled chains, made by pouring molten S (~250 C) into cold water, reverts to rhombic. MILK OF SULPHUR - fine white precipitated S (boil S with Ca(OH)2, acidify); medical. COLLOIDAL SULPHUR - sol from H2S + oxidant or Na2S2O3 + acid; fungicide/medicine. Transition temperature 96 C (alpha <=> beta). Viscosity: rings -> chains ~160 C, max ~200 C, falls to bp 444 C. Uses: vulcanisation (3-5% S flexible rubber, ~30% ebonite), H2SO4 feedstock, SO2 bleaching/fumigation, gunpowder (S + KNO3 + C), matches/fireworks, skin medicines, CS2, sulphur dyes, fungicides."
+    ],
+    "importantConcepts": [
+      "One ring, many packings: rhombic and monoclinic sulphur hold the same S8 crown rings, merely stacked differently - their stability flips at 96 C, while plastic sulphur is the same element frozen as chains, proving structure (not composition) drives allotropy."
+    ],
+    "examples": [
+      "***The rubbery handful*** - pour boiling dark treacle-like sulphur into cold water and it sets like rubber; leave it on the shelf and within days it crumbles back to yellow rhombic crystals - metastability made visible."
+    ],
+    "universalFacts": [
+      "Natural rubber becomes useful only after vulcanisation (Goodyear, 1839): without sulphur cross-links there would be no tyres, hoses or seals."
+    ],
+    "importantStatements": [
+      "\"Sulphur exists as rhombic, monoclinic and plastic allotropes; the transition temperature between the two crystalline forms is 96 degrees Celsius.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ for this row; all items are NEB-style practice (the syllabus asks for allotrope names only, with uses as context)."
+    ],
+    "examShortTricks": [
+      "Rhombic < 96 C; monoclinic 96-119 C; plastic = quenched chains. S8 crown rings in both crystals. Vulcanisation: 3-5% S rubber, ~30% ebonite. Gunpowder: S + KNO3 + charcoal."
+    ],
+    "examNotes": [
+      "Name all allotropes, then attach structure (S8 ring vs chain) and one use each - the names-only syllabus still rewards structure logic."
+    ],
+    "formulas": [
+      "- rhombic S ⇌ monoclinic S (96 °C, transition temperature)\n- S₈ rings —(~160 °C)→ polymeric chains (viscosity maximum ~200 °C)\n- S₈ + heat → S vapour (bp 444 °C)"
+    ],
+    "practice": [
+      "Name the allotropes of sulphur with one distinguishing property each.",
+      "Explain the viscosity behaviour of molten sulphur.",
+      "List four uses of sulphur with reasons."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Name the allotropes of sulphur and distinguish rhombic from monoclinic sulphur.** — **Allotropes:** rhombic (α), monoclinic (β), plastic (amorphous) sulphur; additionally milk of sulphur and colloidal sulphur as fine-particle forms. **Rhombic (α):** pale yellow **octahedral crystals** of S₈ crown-shaped rings; the **stable form below 96 °C**; density 2.07 g/cm³; soluble in CS₂. **Monoclinic (β):** **amber needle crystals**, also S₈ rings but packed differently; **stable between 96 °C and its melting point 119 °C**; density 1.98 g/cm³. The two interconvert at the **transition temperature 96 °C** — below it rhombic is thermodynamically stable, above it monoclinic. Both revert to rhombic on long standing at room temperature. **Plastic sulphur:** rubbery brown supercooled **chains**, made by pouring molten sulphur into cold water; metastable, slowly reverts to rhombic.",
+      "**NEB-style (2m): Describe what happens to the viscosity of molten sulphur as it is heated from its melting point to boiling.** — Just above the melting point the melt is a mobile liquid of **S₈ rings**. Around **160 °C** the rings begin to open and polymerise into **long chains**, which entangle: the viscosity rises steeply, reaching a **maximum near 200 °C** where the melt is dark and treacle-like. Above that, thermal energy **breaks the chains** into shorter fragments, and the viscosity falls again until the liquid boils at **444 °C**. If the viscous melt is poured into cold water, the chains are frozen in as **plastic sulphur**.",
+      "**NEB-style (2m): State four important uses of sulphur.** — (1) **Vulcanisation of rubber:** sulphur cross-links the polymer chains of raw rubber (3–5 % for flexible rubber, ~30 % for hard ebonite), converting sticky gum into durable, elastic material — the basis of the tyre industry. (2) **Manufacture of sulphuric acid:** sulphur is burned to SO₂, the feedstock of the contact process. (3) **SO₂ production** for bleaching silk/wool, fumigation and refrigeration. (4) **Gunpowder and fireworks:** the classic S + KNO₃ + charcoal mixture. (Other acceptable uses: skin ointments/milk of sulphur, carbon disulphide solvent, sulphur dyes, fungicides.)"
+    ]
+  },
+  "importantConcepts": [
+    "One ring, many packings: rhombic and monoclinic sulphur hold the same S8 crown rings, merely stacked differently - their stability flips at 96 C, while plastic sulphur is the same element frozen as chains, proving structure (not composition) drives allotropy."
+  ],
+  "importantStatements": [
+    "\"Sulphur exists as rhombic, monoclinic and plastic allotropes; the transition temperature between the two crystalline forms is 96 degrees Celsius.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ for this row; all items are NEB-style practice (the syllabus asks for allotrope names only, with uses as context)."
+  ],
+  "examNotes": [
+    "Name all allotropes, then attach structure (S8 ring vs chain) and one use each - the names-only syllabus still rewards structure logic."
+  ],
+  "formulas": [
+    "- rhombic S ⇌ monoclinic S (96 °C, transition temperature)\n- S₈ rings —(~160 °C)→ polymeric chains (viscosity maximum ~200 °C)\n- S₈ + heat → S vapour (bp 444 °C)"
+  ],
+  "mcs": [
+    {
+      "question": "The stable form of sulphur below 96 C is:",
+      "options": [
+        "monoclinic",
+        "rhombic",
+        "plastic",
+        "milk of sulphur"
+      ],
+      "answer": "B",
+      "explanation": "Rhombic alpha-sulphur."
+    },
+    {
+      "question": "The transition temperature of sulphur is:",
+      "options": [
+        "96 C",
+        "119 C",
+        "160 C",
+        "444 C"
+      ],
+      "answer": "A",
+      "explanation": "Alpha <=> beta equilibrium at 96 C."
+    },
+    {
+      "question": "Both rhombic and monoclinic sulphur contain:",
+      "options": [
+        "S2",
+        "S6",
+        "S8 rings",
+        "chains"
+      ],
+      "answer": "C",
+      "explanation": "Same S8 crown rings, different packing."
+    },
+    {
+      "question": "Plastic sulphur is made by:",
+      "options": [
+        "heating rhombic S",
+        "pouring molten S into cold water",
+        "sublimation",
+        "CS2 evaporation"
+      ],
+      "answer": "B",
+      "explanation": "Quenching traps the chains."
+    },
+    {
+      "question": "The viscosity of molten sulphur peaks near:",
+      "options": [
+        "119 C",
+        "160 C",
+        "200 C",
+        "400 C"
+      ],
+      "answer": "C",
+      "explanation": "Maximum chain entanglement."
+    },
+    {
+      "question": "Vulcanisation uses about this much sulphur for flexible rubber:",
+      "options": [
+        "0.1%",
+        "3-5%",
+        "30%",
+        "100%"
+      ],
+      "answer": "B",
+      "explanation": "~30% gives hard ebonite."
+    },
+    {
+      "question": "Gunpowder contains:",
+      "options": [
+        "S + KNO3 + charcoal",
+        "S + NaCl",
+        "S + P4",
+        "S + Fe"
+      ],
+      "answer": "A",
+      "explanation": "The classic black powder trio."
+    },
+    {
+      "question": "Milk of sulphur is used mainly as:",
+      "options": [
+        "a fuel",
+        "a medicine/skin preparation",
+        "a refrigerant",
+        "an electrode"
+      ],
+      "answer": "B",
+      "explanation": "Fine precipitated sulphur for skin."
+    }
   ]
 }

@@ -300,5 +300,57 @@
       "answer": "B",
       "explanation": "Kr — noble gas, p-block, period 4."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Classifying elements by group, period and block",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Three axes of classification",
+            "points": [
+              "Group: vertical column, shared valence configuration",
+              "Period: horizontal row, shared outermost shell",
+              "Block: the subshell being filled"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the blocks in detail",
+        "subtopics": [
+          {
+            "name": "s and p blocks",
+            "points": [
+              "s-block: highly reactive metals, low ionisation energy, form basic oxides",
+              "p-block: metals, metalloids and non-metals together, most varied chemistry",
+              "Metalloids sit on the diagonal and show both metallic and non-metallic behaviour"
+            ]
+          },
+          {
+            "name": "d and f blocks",
+            "points": [
+              "d-block: transition metals with variable oxidation states and coloured ions",
+              "f-block: lanthanides and actinides, filling inner f orbitals",
+              "Inner transition elements are chemically similar because f orbitals are shielded"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why blocks matter",
+            "points": [
+              "Block position predicts which subshell is chemically active",
+              "Explains why d-block elements show variable valency — s and d electrons are close in energy",
+              "Explains the lanthanide contraction and its effect on later transition metal radii"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -299,5 +299,65 @@
       "answer": "A",
       "explanation": "[Ar] 4s² — s-block, group 2."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Modern periodic law and the long-form table",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Law and basis",
+            "points": [
+              "Properties are periodic functions of atomic number (Moseley, 1913)",
+              "Atomic number is the number of protons, which fixes the electron configuration",
+              "The arrangement is therefore electronic, not mass-based"
+            ]
+          },
+          {
+            "name": "Table structure",
+            "points": [
+              "Seven periods and eighteen groups in the long form",
+              "Period number equals the highest principal quantum number occupied",
+              "Groups are numbered 1 to 18 under IUPAC convention"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: blocks and families",
+        "subtopics": [
+          {
+            "name": "Four blocks",
+            "points": [
+              "s-block: groups 1-2 plus helium, filling ns",
+              "p-block: groups 13-18, filling np",
+              "d-block: groups 3-12, filling (n-1)d; f-block: filling (n-2)f"
+            ]
+          },
+          {
+            "name": "Named families",
+            "points": [
+              "Alkali metals (group 1), alkaline earth metals (group 2)",
+              "Halogens (group 17), noble gases (group 18)",
+              "Coinage metals (Cu, Ag, Au), volatile metals, metalloids along the B-Si-Ge-As-Sb-Te diagonal"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Reading the table as configurations",
+            "points": [
+              "Group number for main-group elements relates to valence electron count",
+              "Anomalous configurations (Cr 3d5 4s1, Cu 3d10 4s1) arise from extra stability of half-filled and filled subshells",
+              "The table predicts chemistry before any experiment is done"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -7,18 +7,13 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Properties (reducing action, reaction with metals and non… — Chemistry of Non-metals, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: properties, reducing action, reaction with metals, nonmetals · one worked example · one misconception each.",
-    "**Reducing action.** one-line definition + one-line exam use.",
-    "**Reaction with metals.** one-line definition + one-line exam use.",
-    "**Nonmetals.** one-line definition + one-line exam use.",
-    "**Uses of carbon monoxide.** one-line definition + one-line exam use.",
-    "# Properties (reducing action, reaction with metals and nonmetals) and uses of carbon monoxide\n\n## 1. Introduction\nChemical picture of **Properties (reducing action** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Properties (reducing action, reaction with metals and nonmetals) and uses of carbon monoxide\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Properties (reducing action — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Properties (reducing action — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Properties (reducing action — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Properties (reducing action — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Silent Killer With a Useful Streak\n\nCarbon monoxide: colourless, odourless, and — because it binds haemoglobin 200× better than O₂ — lethal at 1000 ppm. Yet the same reducing power strips oxygen from ores and feeds organic synthesis.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Preparation\n\n- Lab: **HCOOH + conc. H₂SO₄ → CO + H₂SO₄·H₂O** (dehydration of formic acid at ~140 °C); or K₂[Cu(CN)₃]... simpler: **oxalic acid + conc. H₂SO₄** gives CO + CO₂ (CO₂ absorbed in NaOH).\n- Incomplete combustion: 2C + O₂ (limited) → 2CO; C + CO₂ → 2CO (red-hot coke).\n- Industrial: water gas (C + H₂O → CO + H₂, 1000 °C) and producer gas (CO + N₂) mixtures.\n\n### 2.2 Properties\n\n- Colourless, odourless, almost water-insoluble; lighter than air; burns with a **blue flame**: 2CO + O₂ → 2CO₂.\n- **Structure:** :C≡O: with a formal negative on C — **linear, bond order 3, strong π-acceptor ligand** (hence metal carbonyls Ni(CO)₄, Fe(CO)₅).\n- **Reducing action:**\n  - Fe₂O₃ + 3CO → 2Fe + 3CO₂ (blast furnace)\n  - CuO + CO → Cu + CO₂; I₂O₅ + 5CO → I₂ + 5CO₂ (basis of CO detection in mines)\n- **Reaction with Cl₂ (light, charcoal catalyst):** CO + Cl₂ → COCl₂ (**phosgene**, the WWI poison gas; also an industrial reagent).\n- **With NaOH (pressure):** CO + NaOH → HCOONa (sodium formate) — proof CO is the anhydride of formic acid.\n- **With Ni:** Ni + 4CO → Ni(CO)₄ (Mond process, 50 °C; decomposes at 230 °C — nickel refining).\n\n### 2.3 Toxicity and haemoglobin\n\n- CO binds Fe²⁺ of haemoglobin as **carboxyhaemoglobin** with ~200–250× the affinity of O₂ — 0.1% CO in air ties up half the blood's capacity. Symptoms: headache → unconsciousness → death; treatment: fresh air/pure O₂ (or hyperbaric O₂) to displace CO.\n- Sources: incomplete combustion (stoves, engines, geysers), smoking.\n\n### 2.4 Uses\n\n- Reducing agent in metallurgy (Fe, Zn, Ni oxides); **water gas/producer gas as fuel**; Mond process Ni refining; synthesis of methanol, phosgene, carbonyls; CO₂ lasers' cousin — CO lasers.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Carboxyhaemoglobin** | Hb–CO complex blocking O₂ transport | CO poisoning |\n| **Water gas** | CO + H₂ from steam on hot coke | fuel + synthesis gas |\n| **Producer gas** | CO + N₂ from air on hot coke | cheap industrial fuel |\n| **Phosgene** | COCl₂, carbonyl chloride | WWI gas, industrial reagent |\n| **Mond process** | Ni purification via Ni(CO)₄ | Ni + 4CO ⇌ Ni(CO)₄ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why CO is poisonous yet stable\n\n- The lone pair on carbon makes CO a strong σ-donor and π-acceptor to transition metals — haemoglobin's Fe²⁺ is simply the wrong metal to bind first. The same ligand strength that kills also drives Ni(CO)₄ refining and catalysis.\n\n### 4.2 Why CO reduces metal oxides\n\n- CO₂ is thermodynamically more stable (C=O bonds); CO grabs oxygen from oxides below carbon in the Ellingham series at furnace temperatures — the blast furnace's chemistry in one line.\n\n### 4.3 Why the blue flame matters\n\n- CO's blue flame in stoves signals complete secondary combustion; a yellow, lazy flame with fumes warns of CO leakage — the practical safety lesson embedded in the chemistry.",
+    "## 5. Comparison Tables\n\n| Feature | CO | CO₂ |\n|---|---|---|\n| Toxicity | highly toxic | non-toxic (suffocant) |\n| Water solubility | almost insoluble | soluble (carbonic acid) |\n| Reducing power | strong reducer | none (already oxidised) |\n| With haemoglobin | binds 200× O₂ affinity | none |\n| Flame | blue when burned | extinguishes fire |\n| Ligand behaviour | strong (carbonyls) | weak |",
+    "## 6. Common Confusions\n\n- **\"CO₂ is poisonous.\"** CO₂ is not toxic — it displaces O₂ (asphyxiation). CO is the true poison, by chemical hijacking of haemoglobin.\n- **\"CO is an oxide of carbon, so it is acidic.\"** CO is a **neutral oxide** — it does not react with water to give an acid; it is the (formal) anhydride of formic acid only under pressure with NaOH.\n- **\"Water gas is pure CO.\"** Water gas is CO + H₂; producer gas is CO + N₂ — quote both compositions.",
+    "## 7. Exam Application\n\n- Blast-furnace reduction equation + carboxyhaemoglobin affinity = the standard 2+2 marks.\n- Mond process: formation at 50 °C, decomposition at 230 °C — temperatures are the marks.\n- Phosgene formation conditions (light/charcoal) and its WWI notoriety."
   ],
   "confusion": [],
   "bounds": [
@@ -26,48 +21,270 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Properties (reducing action, reaction with metals and non…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Describe the laboratory preparation of CO from formic acid.",
+    "Explain the toxicity of CO with the haemoglobin mechanism.",
+    "Write the Mond process with temperatures."
   ],
-  "examples": [],
+  "universalFacts": [
+    "CO detectors are legally required in many countries because the gas gives no sensory warning at any concentration."
+  ],
+  "examples": [
+    "***The garage warning sign*** — a car engine in a closed garage fills the air with CO, not CO2: incomplete combustion starves the flame of oxygen, and the victim never smells anything because CO has no odour."
+  ],
   "practiceQuestions": [
-    "Q. Why is CO poisonous? (2 marks) — binds haemoglobin far more strongly than oxygen, blocking O2 transport.",
-    "Q. Write the reaction of CO with Ni and its use. (2 marks) — Ni + 4CO → Ni(CO)4; Mond's process purifies nickel."
+    "**NEB-style (3m): How is carbon monoxide prepared in the laboratory? Give two of its reducing reactions.** — **Preparation:** formic acid is dehydrated by concentrated sulphuric acid at about 140 °C: **HCOOH —(conc. H₂SO₄)→ CO + H₂O**. The acid acts as a dehydrating agent, removing the elements of water from formic acid; the gas is collected over water (CO is practically insoluble). Alternatively, oxalic acid with conc. H₂SO₄ gives a CO + CO₂ mixture, the CO₂ being absorbed in NaOH. **Reducing reactions:** (1) **Fe₂O₃ + 3CO → 2Fe + 3CO₂** — the blast-furnace reduction of iron(III) oxide, where CO strips the oxide of its oxygen and is itself oxidised to CO₂; (2) **I₂O₅ + 5CO → I₂ + 5CO₂** — iodine pentoxide is reduced to iodine, the basis of detecting CO in mine air (the liberated I₂ is measured). CO also reduces CuO to copper at moderate heat.",
+    "**NEB-style (2m): Why is carbon monoxide poisonous? What is the treatment?** — CO binds to the **Fe²⁺ of haemoglobin** to form **carboxyhaemoglobin**, with an affinity **200–250 times greater than oxygen**. It therefore occupies the oxygen sites preferentially: air containing only **0.1 % CO** disables about half the blood's oxygen-carrying capacity, causing headache, unconsciousness and death by internal suffocation. The gas is odourless, so the victim gets no warning. **Treatment:** remove the victim to fresh air and administer **pure oxygen** (in severe cases hyperbaric O₂) — the high O₂ partial pressure displaces CO from haemoglobin and restores oxygen transport.",
+    "**NEB-style (2m): Describe the Mond process for refining nickel.** — Impure nickel is treated with **carbon monoxide at about 50 °C**: **Ni + 4CO → Ni(CO)₄** (nickel tetracarbonyl), a volatile liquid that distils away from the impurities (Fe, Co, etc. do not form volatile carbonyls under these conditions). The carbonyl is then heated to **about 230 °C**, where it decomposes: **Ni(CO)₄ → Ni + 4CO** — depositing pure nickel powder (on pellets for the Mond process) and regenerating the CO for recycle. The temperatures — 50 °C to form, 230 °C to decompose — are the marks of this answer."
   ],
   "keyPoints": [
-    "• Properties",
-    "• Reducing action",
-    "• Reaction with metals",
-    "• Nonmetals",
-    "• Uses of carbon monoxide"
+    "CO prep: HCOOH + conc H2SO4 (140 C, dehydration); 2C + O2(limited) -> 2CO; C + CO2 -> 2CO; water gas C + H2O -> CO + H2 (1000 C); producer gas CO + N2. Properties: colourless, odourless, water-insoluble, linear bond order 3, C end negative; burns blue flame 2CO + O2 -> 2CO2. Reducing: Fe2O3 + 3CO -> 2Fe + 3CO2 (blast furnace); CuO + CO -> Cu + CO2; I2O5 + 5CO -> I2 + 5CO2 (mine detection). CO + Cl2 -> COCl2 phosgene (light/charcoal). CO + NaOH -> HCOONa (formic anhydride). Mond: Ni + 4CO -> Ni(CO)4 (50 C, decomposes 230 C). Toxicity: carboxyhaemoglobin ~200-250x O2 affinity; 0.1% CO disables half the Hb; treatment pure O2. Uses: metallurgy reducer, fuel gas, Ni refining, methanol/phosgene synthesis."
   ],
-  "summary": "Properties (reducing action, reaction with metals and non… (Chemistry of Non-metals, Chemistry, class-11-notes) covers Properties, reducing action, reaction with metals. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Carbon monoxide is chemistry's double agent. Prepared by dehydrating **formic acid with conc. H₂SO₄**, it is a colourless, odourless, water-insoluble gas with a linear triple-bonded structure and a lone pair on carbon — which makes it burn with a **blue flame** (2CO + O₂ → 2CO₂), reduce metal oxides (**Fe₂O₃ + 3CO → 2Fe + 3CO₂** in the blast furnace; I₂O₅ + 5CO → I₂ for mine-air detection), form **phosgene COCl₂** with chlorine, give **sodium formate** with NaOH (its formic-acid anhydride secret), and refine nickel through the **Mond process** (Ni + 4CO at 50 °C → Ni(CO)₄; decomposed at 230 °C). The same ligand power, aimed at haemoglobin's Fe²⁺, makes it a **silent killer**: carboxyhaemoglobin forms with ~200× oxygen's affinity, 0.1 % CO in air halves the blood's capacity, and only pure-O₂ therapy can win the site back. Water gas (CO + H₂) and producer gas (CO + N₂) turn this poison into fuel.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Properties (reducing action, reaction with metals and non…\"?",
+      "question": "CO is prepared in the lab by dehydrating:",
       "options": [
-        "Properties",
-        "Reducing action",
-        "Unrelated topic",
-        "None of the above"
+        "oxalic acid only",
+        "formic acid with conc H2SO4",
+        "acetic acid",
+        "carbonic acid"
       ],
-      "answer": "Properties",
-      "explanation": "Properties is listed among the official sub-ideas of Properties (reducing action, reaction with metals and non…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "HCOOH - H2O = CO."
     },
     {
-      "question": "A common examiner point on \"Properties (reducing action, reaction with metals and non…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "CO burns with a:",
       "options": [
-        "True",
-        "False"
+        "yellow flame",
+        "blue flame",
+        "green flame",
+        "no flame"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "2CO + O2 -> 2CO2."
+    },
+    {
+      "question": "Carboxyhaemoglobin forms because CO binds haemoglobin:",
+      "options": [
+        "weakly",
+        "about 200x more strongly than O2",
+        "irreversibly covalently",
+        "to the protein part"
+      ],
+      "answer": "B",
+      "explanation": "Ligand affinity at the Fe2+ site."
+    },
+    {
+      "question": "In the Mond process, Ni(CO)4 decomposes at:",
+      "options": [
+        "50 C",
+        "230 C",
+        "800 C",
+        "room temperature"
+      ],
+      "answer": "B",
+      "explanation": "Formed at 50 C, decomposed at 230 C."
+    },
+    {
+      "question": "Water gas is a mixture of:",
+      "options": [
+        "CO + N2",
+        "CO + H2",
+        "CO2 + H2",
+        "CH4 + CO"
+      ],
+      "answer": "B",
+      "explanation": "Steam on red-hot coke."
+    },
+    {
+      "question": "CO + NaOH (under pressure) gives:",
+      "options": [
+        "Na2CO3",
+        "HCOONa",
+        "NaHCO3",
+        "CH3OH"
+      ],
+      "answer": "B",
+      "explanation": "Sodium formate - the formic anhydride link."
+    },
+    {
+      "question": "COCl2 (phosgene) is formed from CO and Cl2 in:",
+      "options": [
+        "darkness without catalyst",
+        "sunlight with charcoal",
+        "water",
+        "NaOH"
+      ],
+      "answer": "B",
+      "explanation": "Light/charcoal catalysed addition."
+    },
+    {
+      "question": "I2O5 + 5CO -> I2 + 5CO2 is used to:",
+      "options": [
+        "make iodine commercially",
+        "detect CO in mine air",
+        "bleach fabrics",
+        "refine nickel"
+      ],
+      "answer": "B",
+      "explanation": "The liberated iodine signals CO."
     }
   ],
   "examShortTricks": [
-    "Trick 1: CO is a reducing agent because C goes from +2 to +4: Fe2O3 + 3CO → 2Fe + 3CO2 (blast furnace) — the standard equation.",
-    "Trick 2: With metals: Ni + 4CO → Ni(CO)4 (Mond's process for nickel purification); with non-metals: CO + Cl2 → COCl2 (phosgene, sunlight).",
-    "Trick 3: Toxicity one-liner: CO binds haemoglobin ~200× more strongly than O2, causing oxygen starvation (carboxyhaemoglobin)."
+    "Prep: HCOOH + conc H2SO4. Blue flame = CO burning. Blast furnace: Fe2O3 + 3CO. Mond: 50 C form / 230 C decompose. Phosgene COCl2 with Cl2. Hb affinity 200x. Water gas CO+H2; producer gas CO+N2."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Silent Killer With a Useful Streak\n\nCarbon monoxide: colourless, odourless, and — because it binds haemoglobin 200× better than O₂ — lethal at 1000 ppm. Yet the same reducing power strips oxygen from ores and feeds organic synthesis.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Preparation\n\n- Lab: **HCOOH + conc. H₂SO₄ → CO + H₂SO₄·H₂O** (dehydration of formic acid at ~140 °C); or K₂[Cu(CN)₃]... simpler: **oxalic acid + conc. H₂SO₄** gives CO + CO₂ (CO₂ absorbed in NaOH).\n- Incomplete combustion: 2C + O₂ (limited) → 2CO; C + CO₂ → 2CO (red-hot coke).\n- Industrial: water gas (C + H₂O → CO + H₂, 1000 °C) and producer gas (CO + N₂) mixtures.\n\n### 2.2 Properties\n\n- Colourless, odourless, almost water-insoluble; lighter than air; burns with a **blue flame**: 2CO + O₂ → 2CO₂.\n- **Structure:** :C≡O: with a formal negative on C — **linear, bond order 3, strong π-acceptor ligand** (hence metal carbonyls Ni(CO)₄, Fe(CO)₅).\n- **Reducing action:**\n  - Fe₂O₃ + 3CO → 2Fe + 3CO₂ (blast furnace)\n  - CuO + CO → Cu + CO₂; I₂O₅ + 5CO → I₂ + 5CO₂ (basis of CO detection in mines)\n- **Reaction with Cl₂ (light, charcoal catalyst):** CO + Cl₂ → COCl₂ (**phosgene**, the WWI poison gas; also an industrial reagent).\n- **With NaOH (pressure):** CO + NaOH → HCOONa (sodium formate) — proof CO is the anhydride of formic acid.\n- **With Ni:** Ni + 4CO → Ni(CO)₄ (Mond process, 50 °C; decomposes at 230 °C — nickel refining).\n\n### 2.3 Toxicity and haemoglobin\n\n- CO binds Fe²⁺ of haemoglobin as **carboxyhaemoglobin** with ~200–250× the affinity of O₂ — 0.1% CO in air ties up half the blood's capacity. Symptoms: headache → unconsciousness → death; treatment: fresh air/pure O₂ (or hyperbaric O₂) to displace CO.\n- Sources: incomplete combustion (stoves, engines, geysers), smoking.\n\n### 2.4 Uses\n\n- Reducing agent in metallurgy (Fe, Zn, Ni oxides); **water gas/producer gas as fuel**; Mond process Ni refining; synthesis of methanol, phosgene, carbonyls; CO₂ lasers' cousin — CO lasers.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Carboxyhaemoglobin** | Hb–CO complex blocking O₂ transport | CO poisoning |\n| **Water gas** | CO + H₂ from steam on hot coke | fuel + synthesis gas |\n| **Producer gas** | CO + N₂ from air on hot coke | cheap industrial fuel |\n| **Phosgene** | COCl₂, carbonyl chloride | WWI gas, industrial reagent |\n| **Mond process** | Ni purification via Ni(CO)₄ | Ni + 4CO ⇌ Ni(CO)₄ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why CO is poisonous yet stable\n\n- The lone pair on carbon makes CO a strong σ-donor and π-acceptor to transition metals — haemoglobin's Fe²⁺ is simply the wrong metal to bind first. The same ligand strength that kills also drives Ni(CO)₄ refining and catalysis.\n\n### 4.2 Why CO reduces metal oxides\n\n- CO₂ is thermodynamically more stable (C=O bonds); CO grabs oxygen from oxides below carbon in the Ellingham series at furnace temperatures — the blast furnace's chemistry in one line.\n\n### 4.3 Why the blue flame matters\n\n- CO's blue flame in stoves signals complete secondary combustion; a yellow, lazy flame with fumes warns of CO leakage — the practical safety lesson embedded in the chemistry.",
+      "## 5. Comparison Tables\n\n| Feature | CO | CO₂ |\n|---|---|---|\n| Toxicity | highly toxic | non-toxic (suffocant) |\n| Water solubility | almost insoluble | soluble (carbonic acid) |\n| Reducing power | strong reducer | none (already oxidised) |\n| With haemoglobin | binds 200× O₂ affinity | none |\n| Flame | blue when burned | extinguishes fire |\n| Ligand behaviour | strong (carbonyls) | weak |",
+      "## 6. Common Confusions\n\n- **\"CO₂ is poisonous.\"** CO₂ is not toxic — it displaces O₂ (asphyxiation). CO is the true poison, by chemical hijacking of haemoglobin.\n- **\"CO is an oxide of carbon, so it is acidic.\"** CO is a **neutral oxide** — it does not react with water to give an acid; it is the (formal) anhydride of formic acid only under pressure with NaOH.\n- **\"Water gas is pure CO.\"** Water gas is CO + H₂; producer gas is CO + N₂ — quote both compositions.",
+      "## 7. Exam Application\n\n- Blast-furnace reduction equation + carboxyhaemoglobin affinity = the standard 2+2 marks.\n- Mond process: formation at 50 °C, decomposition at 230 °C — temperatures are the marks.\n- Phosgene formation conditions (light/charcoal) and its WWI notoriety."
+    ],
+    "keyPoints": [
+      "CO prep: HCOOH + conc H2SO4 (140 C, dehydration); 2C + O2(limited) -> 2CO; C + CO2 -> 2CO; water gas C + H2O -> CO + H2 (1000 C); producer gas CO + N2. Properties: colourless, odourless, water-insoluble, linear bond order 3, C end negative; burns blue flame 2CO + O2 -> 2CO2. Reducing: Fe2O3 + 3CO -> 2Fe + 3CO2 (blast furnace); CuO + CO -> Cu + CO2; I2O5 + 5CO -> I2 + 5CO2 (mine detection). CO + Cl2 -> COCl2 phosgene (light/charcoal). CO + NaOH -> HCOONa (formic anhydride). Mond: Ni + 4CO -> Ni(CO)4 (50 C, decomposes 230 C). Toxicity: carboxyhaemoglobin ~200-250x O2 affinity; 0.1% CO disables half the Hb; treatment pure O2. Uses: metallurgy reducer, fuel gas, Ni refining, methanol/phosgene synthesis."
+    ],
+    "importantConcepts": [
+      "CO's carbon lone pair makes it a powerful ligand: the same grip that locks haemoglobin's Fe2+ shut (poisoning) also refines nickel through Ni(CO)4 and drives organometallic catalysis — one electronic feature, two opposite stories."
+    ],
+    "examples": [
+      "***The garage warning sign*** — a car engine in a closed garage fills the air with CO, not CO2: incomplete combustion starves the flame of oxygen, and the victim never smells anything because CO has no odour."
+    ],
+    "universalFacts": [
+      "CO detectors are legally required in many countries because the gas gives no sensory warning at any concentration."
+    ],
+    "importantStatements": [
+      "\"Carbon monoxide is a neutral oxide, a strong reducing agent, and a dangerously effective ligand for haemoglobin iron.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ for this row; all items are NEB-style practice. NEB 2024/2023/2022/2021 items are recorded at rows 67, 63, 61 and 65 respectively."
+    ],
+    "examShortTricks": [
+      "Prep: HCOOH + conc H2SO4. Blue flame = CO burning. Blast furnace: Fe2O3 + 3CO. Mond: 50 C form / 230 C decompose. Phosgene COCl2 with Cl2. Hb affinity 200x. Water gas CO+H2; producer gas CO+N2."
+    ],
+    "examNotes": [
+      "For toxicity, the marker wants the mechanism (carboxyhaemoglobin, affinity number) plus the treatment (pure O2 displacement) — mechanism and remedy together."
+    ],
+    "formulas": [
+      "- HCOOH —(conc. H₂SO₄, 140 °C)→ CO + H₂O\n- 2CO + O₂ → 2CO₂ (blue flame)\n- Fe₂O₃ + 3CO → 2Fe + 3CO₂\n- I₂O₅ + 5CO → I₂ + 5CO₂\n- CO + Cl₂ → COCl₂ (light/charcoal)\n- Ni + 4CO ⇌ Ni(CO)₄ (50 °C; decomposes 230 °C)\n- C + H₂O → CO + H₂ (water gas, 1000 °C)"
+    ],
+    "practice": [
+      "Describe the laboratory preparation of CO from formic acid.",
+      "Explain the toxicity of CO with the haemoglobin mechanism.",
+      "Write the Mond process with temperatures."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): How is carbon monoxide prepared in the laboratory? Give two of its reducing reactions.** — **Preparation:** formic acid is dehydrated by concentrated sulphuric acid at about 140 °C: **HCOOH —(conc. H₂SO₄)→ CO + H₂O**. The acid acts as a dehydrating agent, removing the elements of water from formic acid; the gas is collected over water (CO is practically insoluble). Alternatively, oxalic acid with conc. H₂SO₄ gives a CO + CO₂ mixture, the CO₂ being absorbed in NaOH. **Reducing reactions:** (1) **Fe₂O₃ + 3CO → 2Fe + 3CO₂** — the blast-furnace reduction of iron(III) oxide, where CO strips the oxide of its oxygen and is itself oxidised to CO₂; (2) **I₂O₅ + 5CO → I₂ + 5CO₂** — iodine pentoxide is reduced to iodine, the basis of detecting CO in mine air (the liberated I₂ is measured). CO also reduces CuO to copper at moderate heat.",
+      "**NEB-style (2m): Why is carbon monoxide poisonous? What is the treatment?** — CO binds to the **Fe²⁺ of haemoglobin** to form **carboxyhaemoglobin**, with an affinity **200–250 times greater than oxygen**. It therefore occupies the oxygen sites preferentially: air containing only **0.1 % CO** disables about half the blood's oxygen-carrying capacity, causing headache, unconsciousness and death by internal suffocation. The gas is odourless, so the victim gets no warning. **Treatment:** remove the victim to fresh air and administer **pure oxygen** (in severe cases hyperbaric O₂) — the high O₂ partial pressure displaces CO from haemoglobin and restores oxygen transport.",
+      "**NEB-style (2m): Describe the Mond process for refining nickel.** — Impure nickel is treated with **carbon monoxide at about 50 °C**: **Ni + 4CO → Ni(CO)₄** (nickel tetracarbonyl), a volatile liquid that distils away from the impurities (Fe, Co, etc. do not form volatile carbonyls under these conditions). The carbonyl is then heated to **about 230 °C**, where it decomposes: **Ni(CO)₄ → Ni + 4CO** — depositing pure nickel powder (on pellets for the Mond process) and regenerating the CO for recycle. The temperatures — 50 °C to form, 230 °C to decompose — are the marks of this answer."
+    ]
+  },
+  "importantConcepts": [
+    "CO's carbon lone pair makes it a powerful ligand: the same grip that locks haemoglobin's Fe2+ shut (poisoning) also refines nickel through Ni(CO)4 and drives organometallic catalysis — one electronic feature, two opposite stories."
+  ],
+  "importantStatements": [
+    "\"Carbon monoxide is a neutral oxide, a strong reducing agent, and a dangerously effective ligand for haemoglobin iron.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ for this row; all items are NEB-style practice. NEB 2024/2023/2022/2021 items are recorded at rows 67, 63, 61 and 65 respectively."
+  ],
+  "examNotes": [
+    "For toxicity, the marker wants the mechanism (carboxyhaemoglobin, affinity number) plus the treatment (pure O2 displacement) — mechanism and remedy together."
+  ],
+  "formulas": [
+    "- HCOOH —(conc. H₂SO₄, 140 °C)→ CO + H₂O\n- 2CO + O₂ → 2CO₂ (blue flame)\n- Fe₂O₃ + 3CO → 2Fe + 3CO₂\n- I₂O₅ + 5CO → I₂ + 5CO₂\n- CO + Cl₂ → COCl₂ (light/charcoal)\n- Ni + 4CO ⇌ Ni(CO)₄ (50 °C; decomposes 230 °C)\n- C + H₂O → CO + H₂ (water gas, 1000 °C)"
+  ],
+  "mcs": [
+    {
+      "question": "CO is prepared in the lab by dehydrating:",
+      "options": [
+        "oxalic acid only",
+        "formic acid with conc H2SO4",
+        "acetic acid",
+        "carbonic acid"
+      ],
+      "answer": "B",
+      "explanation": "HCOOH - H2O = CO."
+    },
+    {
+      "question": "CO burns with a:",
+      "options": [
+        "yellow flame",
+        "blue flame",
+        "green flame",
+        "no flame"
+      ],
+      "answer": "B",
+      "explanation": "2CO + O2 -> 2CO2."
+    },
+    {
+      "question": "Carboxyhaemoglobin forms because CO binds haemoglobin:",
+      "options": [
+        "weakly",
+        "about 200x more strongly than O2",
+        "irreversibly covalently",
+        "to the protein part"
+      ],
+      "answer": "B",
+      "explanation": "Ligand affinity at the Fe2+ site."
+    },
+    {
+      "question": "In the Mond process, Ni(CO)4 decomposes at:",
+      "options": [
+        "50 C",
+        "230 C",
+        "800 C",
+        "room temperature"
+      ],
+      "answer": "B",
+      "explanation": "Formed at 50 C, decomposed at 230 C."
+    },
+    {
+      "question": "Water gas is a mixture of:",
+      "options": [
+        "CO + N2",
+        "CO + H2",
+        "CO2 + H2",
+        "CH4 + CO"
+      ],
+      "answer": "B",
+      "explanation": "Steam on red-hot coke."
+    },
+    {
+      "question": "CO + NaOH (under pressure) gives:",
+      "options": [
+        "Na2CO3",
+        "HCOONa",
+        "NaHCO3",
+        "CH3OH"
+      ],
+      "answer": "B",
+      "explanation": "Sodium formate - the formic anhydride link."
+    },
+    {
+      "question": "COCl2 (phosgene) is formed from CO and Cl2 in:",
+      "options": [
+        "darkness without catalyst",
+        "sunlight with charcoal",
+        "water",
+        "NaOH"
+      ],
+      "answer": "B",
+      "explanation": "Light/charcoal catalysed addition."
+    },
+    {
+      "question": "I2O5 + 5CO -> I2 + 5CO2 is used to:",
+      "options": [
+        "make iodine commercially",
+        "detect CO in mine air",
+        "bleach fabrics",
+        "refine nickel"
+      ],
+      "answer": "B",
+      "explanation": "The liberated iodine signals CO."
+    }
   ]
 }

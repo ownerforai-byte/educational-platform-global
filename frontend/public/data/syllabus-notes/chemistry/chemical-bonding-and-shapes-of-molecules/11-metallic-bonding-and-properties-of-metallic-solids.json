@@ -232,5 +232,65 @@
       "**NEB-style (2m): Explain the rise in melting point from sodium (98 °C) through magnesium (650 °C) to aluminium (660 °C).** — Across period 3 each element contributes more valence electrons to the sea (1, 2 and 3 respectively) and forms a cation of higher charge (Na⁺, Mg²⁺, Al³⁺) with a smaller radius. The strength of the metallic bond therefore grows — more electrons per atom attracting a more highly charged, more closely packed cation lattice — so progressively more energy is needed to disrupt the lattice, and melting point (with hardness) climbs from Na through Mg to Al.",
       "**NEB-style (2m): Silicon's conductivity rises with temperature but copper's falls. Explain using band theory.** — **Silicon (semiconductor, gap ≈ 1 eV):** at low temperature the conduction band is nearly empty; heating promotes electrons across the small gap into the conduction band, so the number of charge carriers grows exponentially and conductivity **increases**. **Copper (conductor):** the conduction band is already partly filled with abundant free electrons; heating increases lattice vibrations, which scatter the electrons and impede their drift — carrier number is unchanged while mobility drops, so conductivity **decreases**. The sign of the temperature response separates semiconductors from metals."
     ]
+  },
+  "mindmap": {
+    "centralConcept": "Metallic bonding — a sea of delocalised electrons",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The electron sea model",
+            "points": [
+              "Metal atoms release their valence electrons into a common pool",
+              "Positive metal ions sit in a lattice surrounded by mobile electrons",
+              "Attraction between ions and the electron sea holds the solid together"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: properties explained",
+        "subtopics": [
+          {
+            "name": "Physical properties",
+            "points": [
+              "Good conductors of heat and electricity — free electrons carry charge and energy",
+              "Malleable and ductile — layers can slide without breaking the bonding",
+              "Lustrous because free electrons absorb and re-emit light"
+            ]
+          },
+          {
+            "name": "Melting points",
+            "points": [
+              "Vary widely: mercury is liquid at room temperature, tungsten melts at 3422 degrees Celsius",
+              "Strength depends on the number of delocalised electrons and nuclear charge",
+              "Group 1 metals are soft and low-melting; transition metals are hard and high-melting"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: band theory",
+        "subtopics": [
+          {
+            "name": "From sea to bands",
+            "points": [
+              "Band theory: overlapping atomic orbitals form continuous energy bands",
+              "Conductors have a partly filled band; insulators have a large band gap",
+              "Semiconductors have a small gap and conduct when thermally excited"
+            ]
+          },
+          {
+            "name": "Alloys",
+            "points": [
+              "Adding a different-sized atom distorts layers and increases hardness",
+              "Steel, brass and bronze are substitutional or interstitial alloys",
+              "Explains why alloys are harder than pure metals"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

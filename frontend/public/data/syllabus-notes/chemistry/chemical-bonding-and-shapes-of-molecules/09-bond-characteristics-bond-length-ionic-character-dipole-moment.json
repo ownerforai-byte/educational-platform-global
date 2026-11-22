@@ -300,5 +300,73 @@
       "answer": "A",
       "explanation": "Shortest bond (92 pm) plus 43% ionic character - 565 kJ/mol."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Bond characteristics — measuring what a bond is like",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: bond length and order",
+        "subtopics": [
+          {
+            "name": "Bond length",
+            "points": [
+              "The equilibrium distance between two bonded nuclei",
+              "Increases with atomic size, decreases with bond order",
+              "Measured in picometres (pm) or angstroms"
+            ]
+          },
+          {
+            "name": "Bond order and energy",
+            "points": [
+              "Bond order is the number of electron pairs shared",
+              "Higher bond order gives shorter, stronger bonds",
+              "Bond dissociation energy is the energy needed to break one mole of bonds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: polarity measures",
+        "subtopics": [
+          {
+            "name": "Dipole moment",
+            "points": [
+              "Dipole moment mu = charge x distance, measured in debye (D)",
+              "A polar bond has a non-zero dipole moment",
+              "A symmetric molecule can have polar bonds but zero net dipole moment"
+            ]
+          },
+          {
+            "name": "Ionic character",
+            "points": [
+              "Percentage ionic character = (observed dipole / calculated for full charge) x 100",
+              "HF is about 43% ionic character despite being called a covalent molecule",
+              "Electronegativity difference drives ionic character"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: bond angle and comparisons",
+        "subtopics": [
+          {
+            "name": "Bond angle",
+            "points": [
+              "The angle between two bonds at the central atom",
+              "Lone pair repulsion compresses bond angles",
+              "Hybridization sets the base angle: sp 180, sp2 120, sp3 109.5"
+            ]
+          },
+          {
+            "name": "Ordering questions",
+            "points": [
+              "Bond length order: single > double > triple",
+              "Bond strength order: triple > double > single",
+              "Dipole moment: NH3 > NF3 because the lone pair and bond dipoles reinforce in NH3"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

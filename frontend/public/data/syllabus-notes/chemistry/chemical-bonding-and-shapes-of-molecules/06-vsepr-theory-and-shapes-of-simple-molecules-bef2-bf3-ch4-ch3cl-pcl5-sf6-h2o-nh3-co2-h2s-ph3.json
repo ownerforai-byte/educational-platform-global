@@ -317,5 +317,67 @@
       "answer": "B",
       "explanation": "Symmetric linear geometry cancels bond dipoles."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Predicting molecular shape from electron-pair repulsion",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: counting pairs",
+        "subtopics": [
+          {
+            "name": "Steric number",
+            "points": [
+              "Steric number = bonding pairs + lone pairs on the central atom",
+              "The steric number sets the electron geometry; lone pairs then modify the molecular shape",
+              "Always draw the Lewis structure first"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the named molecules",
+        "subtopics": [
+          {
+            "name": "No lone pairs",
+            "points": [
+              "BeF2: 2 pairs, linear, 180 degrees",
+              "BF3: 3 pairs, trigonal planar, 120 degrees",
+              "CH4: 4 pairs, tetrahedral, 109.5 degrees",
+              "PCl5: 5 pairs, trigonal bipyramidal; SF6: 6 pairs, octahedral"
+            ]
+          },
+          {
+            "name": "With lone pairs",
+            "points": [
+              "H2O: 4 pairs, 2 lone, bent, 104.5 degrees",
+              "NH3: 4 pairs, 1 lone, pyramidal, 107 degrees",
+              "H2S: bent, ~92 degrees — smaller than water because sulfur is less electronegative",
+              "PH3: pyramidal, ~93.5 degrees"
+            ]
+          },
+          {
+            "name": "Special cases",
+            "points": [
+              "CO2: two double bonds, linear, 180 degrees",
+              "CH3Cl: tetrahedral geometry, but the molecule is polar because of the C-Cl bond",
+              "Multiple bonds count as one electron domain for geometry"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: polarity follows shape",
+        "subtopics": [
+          {
+            "name": "Symmetry decides polarity",
+            "points": [
+              "CO2 has polar bonds but is non-polar — the two dipoles cancel",
+              "H2O has polar bonds and is polar — the bent shape leaves a net dipole",
+              "CCl4 is non-polar while CHCl3 is polar, purely because of symmetry"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

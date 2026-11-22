@@ -188,5 +188,65 @@
     "component": "MoleculeViewer",
     "desc": "3D molecular structure viewer with VSEPR prediction"
   },
-  "visualType": "vsepr-geometry"
+  "visualType": "vsepr-geometry",
+  "mindmap": {
+    "centralConcept": "VSEPR — electron pairs repel and set the shape",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the core idea",
+        "subtopics": [
+          {
+            "name": "The principle",
+            "points": [
+              "Valence Shell Electron Pair Repulsion theory: electron pairs around a central atom arrange to minimise repulsion",
+              "Lone pairs repel more strongly than bond pairs",
+              "Multiple bonds repel more strongly than single bonds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: geometries by electron-pair number",
+        "subtopics": [
+          {
+            "name": "Two to four pairs",
+            "points": [
+              "2 pairs: linear, 180 degrees (BeCl2, CO2)",
+              "3 pairs: trigonal planar, 120 degrees (BF3); one lone pair gives bent ~119 degrees (SO2)",
+              "4 pairs: tetrahedral, 109.5 degrees (CH4); one lone pair gives pyramidal ~107 degrees (NH3); two lone pairs give bent ~104.5 degrees (H2O)"
+            ]
+          },
+          {
+            "name": "Five and six pairs",
+            "points": [
+              "5 pairs: trigonal bipyramidal (PCl5); lone pairs occupy equatorial positions (SF4 seesaw, ClF3 T-shaped)",
+              "6 pairs: octahedral (SF6); lone pairs give square pyramidal (BrF5) or square planar (XeF4)",
+              "Lone pairs always take the position that minimises repulsion"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: the repulsion order",
+        "subtopics": [
+          {
+            "name": "Why angles shrink",
+            "points": [
+              "Repulsion order: lone pair-lone pair > lone pair-bond pair > bond pair-bond pair",
+              "Each lone pair compresses the bond angle by roughly 2 to 3 degrees",
+              "CH4 109.5 > NH3 107 > H2O 104.5 is the standard demonstration"
+            ]
+          },
+          {
+            "name": "Limitations",
+            "points": [
+              "VSEPR predicts shape, not bond energy or magnetic behaviour",
+              "Fails for some transition metal compounds where d electrons matter",
+              "Does not explain why a shape is stable, only that it is least repulsive"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

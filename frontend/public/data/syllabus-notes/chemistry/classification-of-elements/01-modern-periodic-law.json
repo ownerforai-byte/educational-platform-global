@@ -178,5 +178,65 @@
     "component": "PeriodicTableView",
     "desc": "Interactive periodic table"
   },
-  "visualType": "periodic-table"
+  "visualType": "periodic-table",
+  "mindmap": {
+    "centralConcept": "Modern periodic law — properties are periodic functions of atomic number",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: from Mendeleev to Moseley",
+        "subtopics": [
+          {
+            "name": "Mendeleev's law and its problem",
+            "points": [
+              "Mendeleev arranged elements by atomic mass and left gaps for undiscovered elements",
+              "Some pairs were out of order — tellurium and iodine — because mass order conflicts with chemical behaviour",
+              "The anomaly was resolved by atomic number"
+            ]
+          },
+          {
+            "name": "Moseley's contribution",
+            "points": [
+              "Moseley (1913) showed that the frequency of X-rays emitted depends on nuclear charge",
+              "This established atomic number as the fundamental ordering principle",
+              "Modern periodic law: properties are periodic functions of atomic number"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: structure of the table",
+        "subtopics": [
+          {
+            "name": "Periods and groups",
+            "points": [
+              "Seven periods; period number equals the outermost principal quantum number",
+              "Eighteen groups in the long form; group number relates to valence electrons",
+              "Elements in a group share valence configuration and therefore similar chemistry"
+            ]
+          },
+          {
+            "name": "Blocks",
+            "points": [
+              "s-block: groups 1 and 2, filling s orbitals",
+              "p-block: groups 13 to 18, filling p orbitals",
+              "d-block: transition metals; f-block: lanthanides and actinides"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: why the table works",
+        "subtopics": [
+          {
+            "name": "Electronic basis",
+            "points": [
+              "Periodicity arises because valence configuration repeats after each noble gas",
+              "Chemical properties are determined almost entirely by valence electrons",
+              "The table is a map of electron configurations, not just a list"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

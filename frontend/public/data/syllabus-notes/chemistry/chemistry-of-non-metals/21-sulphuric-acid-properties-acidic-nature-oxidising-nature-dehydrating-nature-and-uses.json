@@ -7,58 +7,280 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Sulphuric acid: properties (acidic nature, oxidising nature, dehydrating nature) and uses\n\n## 1. Introduction\nChemical picture of **Sulphuric acid** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Sulphuric acid: properties (acidic nature, oxidising nature, dehydrating nature) and uses\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Sulphuric acid — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Sulphuric acid — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Sulphuric acid — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Sulphuric acid — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The King of Chemicals\n\nH₂SO₄ — \"king of chemicals\" — as acid, oxidant and dehydrating agent, plus its uses. Its three personalities and the safety they demand.",
+    "## 2. Fundamental Concepts\n\n### 2.1 As an acid\n\n- Strong **dibasic** acid: ionises in two steps (H₂SO₄ → H⁺ + HSO₄⁻ fully; HSO₄⁻ → H⁺ + SO₄²⁻ fairly); dense oily liquid (\"oil of vitriol\"), non-volatile (bp 338 °C).\n- Normal acid reactions: metals below H (Zn + H₂SO₄(dil) → ZnSO₄ + H₂), bases/oxides (CuO + H₂SO₄ → CuSO₄ + H₂O), carbonates (Na₂CO₃ + H₂SO₄ → Na₂SO₄ + CO₂ + H₂O).\n- **Non-volatile acid displacer:** NaCl + H₂SO₄(conc) → NaHSO₄ + HCl; CaF₂ + H₂SO₄ → CaSO₄ + 2HF; KNO₃ + H₂SO₄ → KHSO₄ + HNO₃ — it makes the volatile acids.\n\n### 2.2 As an oxidising agent (hot, concentrated)\n\n- **Cu + 2H₂SO₄(conc) → CuSO₄ + SO₂ + 2H₂O** (blue solution + pungent gas)\n- **C + 2H₂SO₄(conc) → CO₂ + 2SO₂ + 2H₂O** (sugar-charcoal oxidation)\n- **S + 2H₂SO₄(conc) → 3SO₂ + 2H₂O**\n- **2HBr + H₂SO₄(conc) → Br₂ + SO₂ + 2H₂O** (why HBr/HI can't use it — row 69)\n- S reduced from +6 to +4; dilute H₂SO₄ is NOT an oxidant (H⁺ is the only oxidant there).\n\n### 2.3 As a dehydrating agent\n\n- **Sugar charring:** C₁₂H₂₂O₁₁ —(conc. H₂SO₄)→ 12C + 11H₂O (the black snake demonstration)\n- **Formic acid → CO:** HCOOH —(conc. H₂SO₄)→ CO + H₂O (row 71's prep)\n- **Oxalic acid → CO + CO₂**\n- **Ethanol → ethene:** C₂H₅OH —(conc. H₂SO₄, 170 °C)→ C₂H₄ + H₂O\n- Dehydrates blue CuSO₄·5H₂O → white CuSO₄; kills skin cells by extracting water — the burn mechanism.\n- **Hygroscopic:** dries gases (except those it reacts with); used in desiccators.\n\n### 2.4 Uses\n\n- Fertilisers (ammonium sulphate, superphosphate); petroleum refining; storage batteries (lead-acid, ~30% H₂SO₄); paints/pigments (TiO₂ route); detergents; steel pickling; laboratory non-volatile acid; dehydration in organic chemistry; DDT-era insecticide manufacture.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Dibasic acid** | Two replaceable H⁺ | sulphate + hydrogensulphate salts |\n| **Non-volatile acid** | Low vapour pressure, high bp (338 °C) | displaces HCl, HNO₃ |\n| **Dehydrating agent** | Removes H and O as water from compounds | sugar → carbon |\n| **Charring** | Dehydration leaving carbon | sugar snake |\n| **Passivity context** | Fe/Al resistant to conc. HNO₃ (not H₂SO₄) | — |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why concentrated H₂SO₄ oxidises but dilute does not\n\n- The oxidising species is the **molecule itself** (S at +6 with strongly bound water): hot concentrated H₂SO₄ accepts electrons, being reduced to SO₂. In dilute solution the molecule is fully ionised — only H⁺ remains as a (weak) oxidant, giving H₂ with active metals. Concentration is the switch.\n\n### 4.2 Why it dehydrates sugar to pure carbon\n\n- H₂SO₄ has an enormous affinity for water (hydration enthalpy huge). It strips H and O from sucrose in stoichiometric proportion (11 H₂O per 12 C), leaving a porous black carbon column that grows out of the beaker — dehydration so exothermic it steams.\n\n### 4.3 Why it is the \"king of chemicals\"\n\n- Production tonnage of any chemical ever measured; it sits upstream of fertilisers, paints, batteries, detergents, steel — a nation's H₂SO₄ consumption was once a proxy for its industrial development.",
+    "## 5. Comparison Tables\n\n| Behaviour | dilute H₂SO₄ | conc. H₂SO₄ |\n|---|---|---|\n| Acid strength | strong, ionised | largely molecular |\n| Oxidising | no (H⁺ only) | yes (→ SO₂) |\n| With Cu | no reaction | CuSO₄ + SO₂ |\n| With Zn | ZnSO₄ + H₂ | ZnSO₄ + SO₂ |\n| Dehydrating | no | yes (sugar → C) |\n| Drying gases | no | yes (hygroscopic) |",
+    "## 6. Common Confusions\n\n- **\"H₂SO₄ always oxidises.\"** Only hot concentrated acid; dilute acid behaves as a normal strong acid (H₂ with Zn).\n- **\"It dehydrates by absorbing water molecules only.\"** It removes the *elements* of water (H and O) from compounds like sugar and formic acid that contain no water at all.\n- **\"Adding water to acid is safe if slow.\"** Never — always **add acid to water**; the hydration heat boils droplets of acid out of the vessel.",
+    "## 7. Exam Application\n\n- Three-personality structure: acid / oxidant / dehydrant, one equation each.\n- The sugar-charcoal equation is the dehydrating signature.\n- Safety: acid-to-water rule with the heat argument."
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Sulphuric acid: properties (acidic nature, oxidising natu…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Show three personalities of H2SO4 with one equation each.",
+    "Why can concentrated H2SO4 be used to prepare HCl but not HBr?",
+    "State the safety rule for diluting H2SO4 and explain it."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Sulphuric acid production per capita was long used as an index of a country's industrial maturity - the king of chemicals crowns economies."
+  ],
+  "examples": [
+    "***The sugar snake*** - pour concentrated H2SO4 onto table sugar and a steaming black column grows from the beaker: the acid has stripped 11 waters per 12 carbons out of sucrose, leaving pure carbon scaffold."
+  ],
   "practiceQuestions": [
-    "Q. Show the dehydrating nature of conc. H2SO4 with sugar. (2 marks) — C12H22O11 —(conc. H2SO4)→ 12C + 11H2O (black mass).",
-    "Q. Write the reaction of copper with hot conc. H2SO4. (2 marks) — Cu + 2H2SO4 → CuSO4 + SO2 + 2H2O."
+    "**NEB-style (3m): Describe sulphuric acid as (a) an acid, (b) an oxidising agent, and (c) a dehydrating agent, with one equation each.** — **(a) Acid:** dilute H₂SO₄ is a strong **dibasic** acid: **Zn + H₂SO₄(dil) → ZnSO₄ + H₂↑** (also neutralises bases: CuO + H₂SO₄ → CuSO₄ + H₂O; liberates CO₂ from carbonates). **(b) Oxidising agent:** only **hot, concentrated** acid oxidises, being itself reduced to SO₂: **Cu + 2H₂SO₄(conc) → CuSO₄ + SO₂ + 2H₂O** (blue solution, pungent fumes); it also oxidises carbon: **C + 2H₂SO₄(conc) → CO₂ + 2SO₂ + 2H₂O**. Dilute acid is not an oxidant — with zinc it merely gives hydrogen. **(c) Dehydrating agent:** it removes the elements of water: **C₁₂H₂₂O₁₁ —(conc. H₂SO₄)→ 12C + 11H₂O** (sugar charring), **HCOOH → CO + H₂O** (CO preparation), **C₂H₅OH → C₂H₄ + H₂O** at 170 °C, and it turns blue CuSO₄·5H₂O white. Three roles, one molecule.",
+    "**NEB-style (2m): Why is concentrated H2SO4 used to prepare HCl from NaCl but not HBr from KBr?** — With NaCl the reaction is simple **non-volatile-acid displacement**: **NaCl + H₂SO₄(conc) → NaHSO₄ + HCl↑** — chloride is too weak a reducer to be oxidised, so clean HCl distils off. With KBr the concentrated acid acts as an **oxidising agent**: **2KBr + 2H₂SO₄(conc) → K₂SO₄ + Br₂ + SO₂ + 2H₂O** — bromide reduces the sulphate to SO₂ while becoming brown bromine, contaminating the product. Hence KBr + **conc. H₃PO₄** (non-oxidising) is used for HBr. The acid's oxidising power, dormant against Cl⁻, wakes against Br⁻.",
+    "**NEB-style (2m): State the rule for diluting concentrated sulphuric acid and explain why.** — The rule: **always add acid to water, never water to acid** (\"do as you oughta, add acid to water\"). Concentrated H₂SO₄ has an enormous **heat of hydration**; when water is poured into the dense acid, the heat released at the interface boils the water layer instantly and spits droplets of hot acid out of the vessel. When acid is added slowly to a large volume of water, the heat spreads through the water and no violent boiling occurs. Stirring while adding keeps local hot spots down."
   ],
   "keyPoints": [
-    "• Sulphuric acid",
-    "• Properties",
-    "• Acidic nature",
-    "• Oxidising nature",
-    "• Dehydrating nature",
-    "• Uses"
+    "H2SO4 \"king of chemicals\": strong dibasic acid (sulphate + hydrogensulphate salts), dense oily non-volatile liquid (bp 338 C). ACID: Zn + H2SO4(dil) -> ZnSO4 + H2; CuO + H2SO4 -> CuSO4 + H2O; Na2CO3 -> CO2. NON-VOLATILE DISPLACER: NaCl + H2SO4(conc) -> NaHSO4 + HCl; CaF2 -> HF; KNO3 -> HNO3. OXIDISING (hot conc only; S +6 -> +4): Cu + 2H2SO4(conc) -> CuSO4 + SO2 + 2H2O; C + 2H2SO4 -> CO2 + 2SO2 + 2H2O; S + 2H2SO4 -> 3SO2 + 2H2O; 2HBr + H2SO4 -> Br2 + SO2 + 2H2O. Dilute is NOT an oxidant. DEHYDRATING: C12H22O11 -> 12C + 11H2O (sugar char); HCOOH -> CO + H2O; C2H5OH -> C2H4 + H2O (170 C); CuSO4.5H2O -> CuSO4 (blue to white); hygroscopic desiccant. Uses: fertilisers (ammonium sulphate, superphosphate), lead-acid batteries (~30%), petroleum refining, paints, detergents, pickling, lab non-volatile acid. Safety: add acid to water."
   ],
-  "summary": "Sulphuric acid: properties (acidic nature, oxidising natu… (Chemistry of Non-metals, Chemistry, class-11-notes) covers Sulphuric acid, properties, acidic nature. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Sulphuric acid earns \"king of chemicals\" by doing three jobs. As a **strong dibasic acid** (dilute) it etches metals below hydrogen (**Zn + H₂SO₄ → ZnSO₄ + H₂**), dissolves oxides and carbonates, and — being **non-volatile (bp 338 °C)** — displaces the volatile acids HCl, HF and HNO₃ from their salts. As an **oxidising agent** it works only hot and concentrated, being reduced to SO₂: **Cu + 2H₂SO₄(conc) → CuSO₄ + SO₂ + 2H₂O**, carbon to CO₂, and bromide to Br₂ (the reason HBr needs H₃PO₄ instead). As a **dehydrating agent** it strips the elements of water from anything: sugar to a black carbon snake (**C₁₂H₂₂O₁₁ → 12C + 11H₂O**), formic acid to CO, ethanol to ethene at 170 °C, and blue vitriol to white powder. Its uses span fertilisers, lead-acid batteries (~30 % acid), petroleum refining, paints, detergents and steel pickling — and its dilution rule is the first safety lesson of every lab: **add acid to water, never the reverse.**",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Sulphuric acid: properties (acidic nature, oxidising natu…\"?",
+      "question": "Dilute H2SO4 with zinc gives:",
       "options": [
-        "Sulphuric acid",
-        "Properties",
-        "Unrelated topic",
-        "None of the above"
+        "SO2",
+        "H2",
+        "ZnO",
+        "SO3"
       ],
-      "answer": "A",
-      "explanation": "Sulphuric acid is listed among the official sub-ideas of Sulphuric acid: properties (acidic nature, oxidising natu…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "Normal acid-metal displacement."
     },
     {
-      "question": "A common examiner point on \"Sulphuric acid: properties (acidic nature, oxidising natu…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Concentrated H2SO4 with copper gives:",
       "options": [
-        "True",
-        "False"
+        "H2",
+        "CuSO4 + SO2",
+        "no reaction",
+        "CuO"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Hot conc acid oxidises Cu to the blue salt."
+    },
+    {
+      "question": "The boiling point of concentrated H2SO4 is about:",
+      "options": [
+        "100 C",
+        "200 C",
+        "338 C",
+        "450 C"
+      ],
+      "answer": "C",
+      "explanation": "Non-volatile - the displacer acid."
+    },
+    {
+      "question": "Concentrated H2SO4 converts sugar to:",
+      "options": [
+        "glucose",
+        "carbon and water",
+        "CO2",
+        "ethanol"
+      ],
+      "answer": "B",
+      "explanation": "Dehydration - the sugar snake."
+    },
+    {
+      "question": "HBr cannot be prepared with conc H2SO4 because:",
+      "options": [
+        "HBr is unstable",
+        "H2SO4 oxidises Br- to Br2",
+        "HBr is too soluble",
+        "KBr is insoluble"
+      ],
+      "answer": "B",
+      "explanation": "Use non-oxidising H3PO4."
+    },
+    {
+      "question": "Ethanol with conc H2SO4 at 170 C gives:",
+      "options": [
+        "ethane",
+        "ethene",
+        "ether",
+        "ethanol sulphate"
+      ],
+      "answer": "B",
+      "explanation": "Dehydration to the alkene."
+    },
+    {
+      "question": "When diluting concentrated H2SO4 you should:",
+      "options": [
+        "add water to acid",
+        "add acid to water",
+        "mix rapidly",
+        "heat first"
+      ],
+      "answer": "B",
+      "explanation": "Hydration heat must spread through water."
+    },
+    {
+      "question": "Lead-acid batteries use H2SO4 of about:",
+      "options": [
+        "1%",
+        "30%",
+        "98%",
+        "50%"
+      ],
+      "answer": "B",
+      "explanation": "~30% electrolyte density 1.25."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Dehydrating evidence: sugar → black carbon column (C12H22O11 —11H2O→ 12C); also dehydrates formic acid to CO — the 'charring' observation scores.",
-    "Trick 2: Oxidising: Cu + 2H2SO4(conc.) → CuSO4 + SO2 + 2H2O (hot); C → CO2; S → SO2.",
-    "Trick 3: Acidic: dibasic → two salt series (sulphates and bisulphates); 'king of chemicals' — highest tonnage chemical, used in fertilisers, batteries, refining petroleum."
+    "Dil: H2 with Zn; no Cu reaction. Conc hot: SO2 with Cu/C/S/HBr. Dehydrant: sugar -> C, HCOOH -> CO, ethanol -> ethene. Non-volatile: makes HCl/HF/HNO3. Bp 338 C. Add acid to water!"
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The King of Chemicals\n\nH₂SO₄ — \"king of chemicals\" — as acid, oxidant and dehydrating agent, plus its uses. Its three personalities and the safety they demand.",
+      "## 2. Fundamental Concepts\n\n### 2.1 As an acid\n\n- Strong **dibasic** acid: ionises in two steps (H₂SO₄ → H⁺ + HSO₄⁻ fully; HSO₄⁻ → H⁺ + SO₄²⁻ fairly); dense oily liquid (\"oil of vitriol\"), non-volatile (bp 338 °C).\n- Normal acid reactions: metals below H (Zn + H₂SO₄(dil) → ZnSO₄ + H₂), bases/oxides (CuO + H₂SO₄ → CuSO₄ + H₂O), carbonates (Na₂CO₃ + H₂SO₄ → Na₂SO₄ + CO₂ + H₂O).\n- **Non-volatile acid displacer:** NaCl + H₂SO₄(conc) → NaHSO₄ + HCl; CaF₂ + H₂SO₄ → CaSO₄ + 2HF; KNO₃ + H₂SO₄ → KHSO₄ + HNO₃ — it makes the volatile acids.\n\n### 2.2 As an oxidising agent (hot, concentrated)\n\n- **Cu + 2H₂SO₄(conc) → CuSO₄ + SO₂ + 2H₂O** (blue solution + pungent gas)\n- **C + 2H₂SO₄(conc) → CO₂ + 2SO₂ + 2H₂O** (sugar-charcoal oxidation)\n- **S + 2H₂SO₄(conc) → 3SO₂ + 2H₂O**\n- **2HBr + H₂SO₄(conc) → Br₂ + SO₂ + 2H₂O** (why HBr/HI can't use it — row 69)\n- S reduced from +6 to +4; dilute H₂SO₄ is NOT an oxidant (H⁺ is the only oxidant there).\n\n### 2.3 As a dehydrating agent\n\n- **Sugar charring:** C₁₂H₂₂O₁₁ —(conc. H₂SO₄)→ 12C + 11H₂O (the black snake demonstration)\n- **Formic acid → CO:** HCOOH —(conc. H₂SO₄)→ CO + H₂O (row 71's prep)\n- **Oxalic acid → CO + CO₂**\n- **Ethanol → ethene:** C₂H₅OH —(conc. H₂SO₄, 170 °C)→ C₂H₄ + H₂O\n- Dehydrates blue CuSO₄·5H₂O → white CuSO₄; kills skin cells by extracting water — the burn mechanism.\n- **Hygroscopic:** dries gases (except those it reacts with); used in desiccators.\n\n### 2.4 Uses\n\n- Fertilisers (ammonium sulphate, superphosphate); petroleum refining; storage batteries (lead-acid, ~30% H₂SO₄); paints/pigments (TiO₂ route); detergents; steel pickling; laboratory non-volatile acid; dehydration in organic chemistry; DDT-era insecticide manufacture.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Dibasic acid** | Two replaceable H⁺ | sulphate + hydrogensulphate salts |\n| **Non-volatile acid** | Low vapour pressure, high bp (338 °C) | displaces HCl, HNO₃ |\n| **Dehydrating agent** | Removes H and O as water from compounds | sugar → carbon |\n| **Charring** | Dehydration leaving carbon | sugar snake |\n| **Passivity context** | Fe/Al resistant to conc. HNO₃ (not H₂SO₄) | — |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why concentrated H₂SO₄ oxidises but dilute does not\n\n- The oxidising species is the **molecule itself** (S at +6 with strongly bound water): hot concentrated H₂SO₄ accepts electrons, being reduced to SO₂. In dilute solution the molecule is fully ionised — only H⁺ remains as a (weak) oxidant, giving H₂ with active metals. Concentration is the switch.\n\n### 4.2 Why it dehydrates sugar to pure carbon\n\n- H₂SO₄ has an enormous affinity for water (hydration enthalpy huge). It strips H and O from sucrose in stoichiometric proportion (11 H₂O per 12 C), leaving a porous black carbon column that grows out of the beaker — dehydration so exothermic it steams.\n\n### 4.3 Why it is the \"king of chemicals\"\n\n- Production tonnage of any chemical ever measured; it sits upstream of fertilisers, paints, batteries, detergents, steel — a nation's H₂SO₄ consumption was once a proxy for its industrial development.",
+      "## 5. Comparison Tables\n\n| Behaviour | dilute H₂SO₄ | conc. H₂SO₄ |\n|---|---|---|\n| Acid strength | strong, ionised | largely molecular |\n| Oxidising | no (H⁺ only) | yes (→ SO₂) |\n| With Cu | no reaction | CuSO₄ + SO₂ |\n| With Zn | ZnSO₄ + H₂ | ZnSO₄ + SO₂ |\n| Dehydrating | no | yes (sugar → C) |\n| Drying gases | no | yes (hygroscopic) |",
+      "## 6. Common Confusions\n\n- **\"H₂SO₄ always oxidises.\"** Only hot concentrated acid; dilute acid behaves as a normal strong acid (H₂ with Zn).\n- **\"It dehydrates by absorbing water molecules only.\"** It removes the *elements* of water (H and O) from compounds like sugar and formic acid that contain no water at all.\n- **\"Adding water to acid is safe if slow.\"** Never — always **add acid to water**; the hydration heat boils droplets of acid out of the vessel.",
+      "## 7. Exam Application\n\n- Three-personality structure: acid / oxidant / dehydrant, one equation each.\n- The sugar-charcoal equation is the dehydrating signature.\n- Safety: acid-to-water rule with the heat argument."
+    ],
+    "keyPoints": [
+      "H2SO4 \"king of chemicals\": strong dibasic acid (sulphate + hydrogensulphate salts), dense oily non-volatile liquid (bp 338 C). ACID: Zn + H2SO4(dil) -> ZnSO4 + H2; CuO + H2SO4 -> CuSO4 + H2O; Na2CO3 -> CO2. NON-VOLATILE DISPLACER: NaCl + H2SO4(conc) -> NaHSO4 + HCl; CaF2 -> HF; KNO3 -> HNO3. OXIDISING (hot conc only; S +6 -> +4): Cu + 2H2SO4(conc) -> CuSO4 + SO2 + 2H2O; C + 2H2SO4 -> CO2 + 2SO2 + 2H2O; S + 2H2SO4 -> 3SO2 + 2H2O; 2HBr + H2SO4 -> Br2 + SO2 + 2H2O. Dilute is NOT an oxidant. DEHYDRATING: C12H22O11 -> 12C + 11H2O (sugar char); HCOOH -> CO + H2O; C2H5OH -> C2H4 + H2O (170 C); CuSO4.5H2O -> CuSO4 (blue to white); hygroscopic desiccant. Uses: fertilisers (ammonium sulphate, superphosphate), lead-acid batteries (~30%), petroleum refining, paints, detergents, pickling, lab non-volatile acid. Safety: add acid to water."
+    ],
+    "importantConcepts": [
+      "Concentration is the switch: dilute H2SO4 is just a strong acid whose only oxidant is H+, while hot concentrated H2SO4 - still largely molecular - grabs electrons itself and is reduced to SO2; the same liquid, two personalities chosen by dilution."
+    ],
+    "examples": [
+      "***The sugar snake*** - pour concentrated H2SO4 onto table sugar and a steaming black column grows from the beaker: the acid has stripped 11 waters per 12 carbons out of sucrose, leaving pure carbon scaffold."
+    ],
+    "universalFacts": [
+      "Sulphuric acid production per capita was long used as an index of a country's industrial maturity - the king of chemicals crowns economies."
+    ],
+    "importantStatements": [
+      "\"Concentrated sulphuric acid is an oxidising and dehydrating agent; dilute sulphuric acid behaves as a typical strong dibasic acid.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ for this row; all items are NEB-style practice. NEB 2024/2023/2022/2021 items are recorded at rows 67, 63, 61 and 65."
+    ],
+    "examShortTricks": [
+      "Dil: H2 with Zn; no Cu reaction. Conc hot: SO2 with Cu/C/S/HBr. Dehydrant: sugar -> C, HCOOH -> CO, ethanol -> ethene. Non-volatile: makes HCl/HF/HNO3. Bp 338 C. Add acid to water!"
+    ],
+    "examNotes": [
+      "Label every equation (conc)/(dil) - the marker's first check is whether the concentration is stated."
+    ],
+    "formulas": [
+      "- Zn + H₂SO₄(dil) → ZnSO₄ + H₂\n- NaCl + H₂SO₄(conc) → NaHSO₄ + HCl\n- Cu + 2H₂SO₄(conc) → CuSO₄ + SO₂ + 2H₂O\n- C + 2H₂SO₄(conc) → CO₂ + 2SO₂ + 2H₂O\n- C₁₂H₂₂O₁₁ —(conc. H₂SO₄)→ 12C + 11H₂O\n- HCOOH —(conc. H₂SO₄)→ CO + H₂O\n- C₂H₅OH —(conc. H₂SO₄, 170 °C)→ C₂H₄ + H₂O"
+    ],
+    "practice": [
+      "Show three personalities of H2SO4 with one equation each.",
+      "Why can concentrated H2SO4 be used to prepare HCl but not HBr?",
+      "State the safety rule for diluting H2SO4 and explain it."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Describe sulphuric acid as (a) an acid, (b) an oxidising agent, and (c) a dehydrating agent, with one equation each.** — **(a) Acid:** dilute H₂SO₄ is a strong **dibasic** acid: **Zn + H₂SO₄(dil) → ZnSO₄ + H₂↑** (also neutralises bases: CuO + H₂SO₄ → CuSO₄ + H₂O; liberates CO₂ from carbonates). **(b) Oxidising agent:** only **hot, concentrated** acid oxidises, being itself reduced to SO₂: **Cu + 2H₂SO₄(conc) → CuSO₄ + SO₂ + 2H₂O** (blue solution, pungent fumes); it also oxidises carbon: **C + 2H₂SO₄(conc) → CO₂ + 2SO₂ + 2H₂O**. Dilute acid is not an oxidant — with zinc it merely gives hydrogen. **(c) Dehydrating agent:** it removes the elements of water: **C₁₂H₂₂O₁₁ —(conc. H₂SO₄)→ 12C + 11H₂O** (sugar charring), **HCOOH → CO + H₂O** (CO preparation), **C₂H₅OH → C₂H₄ + H₂O** at 170 °C, and it turns blue CuSO₄·5H₂O white. Three roles, one molecule.",
+      "**NEB-style (2m): Why is concentrated H2SO4 used to prepare HCl from NaCl but not HBr from KBr?** — With NaCl the reaction is simple **non-volatile-acid displacement**: **NaCl + H₂SO₄(conc) → NaHSO₄ + HCl↑** — chloride is too weak a reducer to be oxidised, so clean HCl distils off. With KBr the concentrated acid acts as an **oxidising agent**: **2KBr + 2H₂SO₄(conc) → K₂SO₄ + Br₂ + SO₂ + 2H₂O** — bromide reduces the sulphate to SO₂ while becoming brown bromine, contaminating the product. Hence KBr + **conc. H₃PO₄** (non-oxidising) is used for HBr. The acid's oxidising power, dormant against Cl⁻, wakes against Br⁻.",
+      "**NEB-style (2m): State the rule for diluting concentrated sulphuric acid and explain why.** — The rule: **always add acid to water, never water to acid** (\"do as you oughta, add acid to water\"). Concentrated H₂SO₄ has an enormous **heat of hydration**; when water is poured into the dense acid, the heat released at the interface boils the water layer instantly and spits droplets of hot acid out of the vessel. When acid is added slowly to a large volume of water, the heat spreads through the water and no violent boiling occurs. Stirring while adding keeps local hot spots down."
+    ]
+  },
+  "importantConcepts": [
+    "Concentration is the switch: dilute H2SO4 is just a strong acid whose only oxidant is H+, while hot concentrated H2SO4 - still largely molecular - grabs electrons itself and is reduced to SO2; the same liquid, two personalities chosen by dilution."
+  ],
+  "importantStatements": [
+    "\"Concentrated sulphuric acid is an oxidising and dehydrating agent; dilute sulphuric acid behaves as a typical strong dibasic acid.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ for this row; all items are NEB-style practice. NEB 2024/2023/2022/2021 items are recorded at rows 67, 63, 61 and 65."
+  ],
+  "examNotes": [
+    "Label every equation (conc)/(dil) - the marker's first check is whether the concentration is stated."
+  ],
+  "formulas": [
+    "- Zn + H₂SO₄(dil) → ZnSO₄ + H₂\n- NaCl + H₂SO₄(conc) → NaHSO₄ + HCl\n- Cu + 2H₂SO₄(conc) → CuSO₄ + SO₂ + 2H₂O\n- C + 2H₂SO₄(conc) → CO₂ + 2SO₂ + 2H₂O\n- C₁₂H₂₂O₁₁ —(conc. H₂SO₄)→ 12C + 11H₂O\n- HCOOH —(conc. H₂SO₄)→ CO + H₂O\n- C₂H₅OH —(conc. H₂SO₄, 170 °C)→ C₂H₄ + H₂O"
+  ],
+  "mcs": [
+    {
+      "question": "Dilute H2SO4 with zinc gives:",
+      "options": [
+        "SO2",
+        "H2",
+        "ZnO",
+        "SO3"
+      ],
+      "answer": "B",
+      "explanation": "Normal acid-metal displacement."
+    },
+    {
+      "question": "Concentrated H2SO4 with copper gives:",
+      "options": [
+        "H2",
+        "CuSO4 + SO2",
+        "no reaction",
+        "CuO"
+      ],
+      "answer": "B",
+      "explanation": "Hot conc acid oxidises Cu to the blue salt."
+    },
+    {
+      "question": "The boiling point of concentrated H2SO4 is about:",
+      "options": [
+        "100 C",
+        "200 C",
+        "338 C",
+        "450 C"
+      ],
+      "answer": "C",
+      "explanation": "Non-volatile - the displacer acid."
+    },
+    {
+      "question": "Concentrated H2SO4 converts sugar to:",
+      "options": [
+        "glucose",
+        "carbon and water",
+        "CO2",
+        "ethanol"
+      ],
+      "answer": "B",
+      "explanation": "Dehydration - the sugar snake."
+    },
+    {
+      "question": "HBr cannot be prepared with conc H2SO4 because:",
+      "options": [
+        "HBr is unstable",
+        "H2SO4 oxidises Br- to Br2",
+        "HBr is too soluble",
+        "KBr is insoluble"
+      ],
+      "answer": "B",
+      "explanation": "Use non-oxidising H3PO4."
+    },
+    {
+      "question": "Ethanol with conc H2SO4 at 170 C gives:",
+      "options": [
+        "ethane",
+        "ethene",
+        "ether",
+        "ethanol sulphate"
+      ],
+      "answer": "B",
+      "explanation": "Dehydration to the alkene."
+    },
+    {
+      "question": "When diluting concentrated H2SO4 you should:",
+      "options": [
+        "add water to acid",
+        "add acid to water",
+        "mix rapidly",
+        "heat first"
+      ],
+      "answer": "B",
+      "explanation": "Hydration heat must spread through water."
+    },
+    {
+      "question": "Lead-acid batteries use H2SO4 of about:",
+      "options": [
+        "1%",
+        "30%",
+        "98%",
+        "50%"
+      ],
+      "answer": "B",
+      "explanation": "~30% electrolyte density 1.25."
+    }
   ]
 }

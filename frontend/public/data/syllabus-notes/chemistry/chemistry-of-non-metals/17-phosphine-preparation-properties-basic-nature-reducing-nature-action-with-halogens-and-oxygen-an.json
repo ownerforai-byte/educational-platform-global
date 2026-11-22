@@ -7,58 +7,280 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Phosphine: preparation, properties (basic nature, reducing nature, action with halogens and oxygen) and uses\n\n## 1. Introduction\nChemical picture of **Phosphine** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Phosphine: preparation\n### properties (basic nature, reducing nature, action with halogens and oxygen) and uses\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Phosphine — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Phosphine — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Phosphine — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Phosphine — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Phosphorus's Answer to Ammonia\n\nPH₃ (phosphine): prepared from phosphides, weakly basic, strongly reducing, and famous for spontaneous flammability from trace P₂H₄. Preparation, properties, action with halogens and oxygen, uses.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Preparation\n\n- **Lab:** white P + concentrated NaOH solution (in inert atmosphere, H₂ evolved): **P₄ + 3NaOH + 3H₂O → PH₃ + 3NaH₂PO₂** (sodium hypophosphite).\n- From metal phosphides: **Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃** (carbide-style hydrolysis).\n- Pure PH₃: heat phosphonium iodide with NaOH: **PH₄I + NaOH → PH₃ + NaI + H₂O**.\n- Impure lab gas contains **P₂H₄ (diphosphine)** — which makes it spontaneously flammable (the \"vortex rings\" of burning phosphine demo).\n\n### 2.2 Properties\n\n- Colourless, **garlic/rotten-fish odour**, highly poisonous; much less soluble in water than NH₃.\n- **Pyramidal** (like NH₃) but bond angle **93.6°** (nearly pure p-bonds — P's 3s barely hybridises); dipole 0.58 D vs NH₃ 1.47 D.\n- **Weak base:** forms phosphonium salts only with strong acids (PH₄I, PH₄Cl) — PH₃ + HBr → PH₄Br; does NOT form PH₄OH-type stable hydroxide; no hydrogen bonding (hence low bp −87.7 °C, below NH₃'s −33 °C).\n- **Reducing nature:** precipitates metals from their salt solutions: **3CuSO₄ + 2PH₃ → Cu₃P + 2H₂SO₄** (copper phosphide, black) — note it is NOT simple displacement to metal; with AgNO₃: 8AgNO₃ + PH₃ + 4H₂O → 8Ag + H₃PO₄ + 8HNO₃ (silver mirror-type).\n- **Combustion:** PH₃ + 2O₂ → H₃PO₄ (burns to phosphoric acid); with limited O₂: P₄O₆/H₃PO₃.\n\n### 2.3 Action with halogens and oxygen\n\n- **Halogens:** PH₃ + HX addition → phosphonium halides (PH₄Cl, PH₄Br, PH₄I — HI strongest since HI is strongest acid of the three). Direct halogenation: PH₃ + Cl₂ → PCl₃ + HCl (excess Cl₂ → PCl₅).\n- **Oxygen:** burns to H₃PO₄ (above); the P₂H₄ impurity ignites spontaneously, igniting the PH₃ — vortex rings of smoke in the classic demonstration.\n\n### 2.4 Uses\n\n- Holme's signal (marine distress): containers of CaC₂ and Ca₃P₂ dumped in sea — acetylene + phosphine ignite spontaneously, red flame + smoke.\n- Smoke screens; doping/semiconductor (PH₃ as dopant gas in silicon processing); match industry historically.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Phosphine** | PH₃, hydride of phosphorus | garlic-odoured poison gas |\n| **Phosphonium salt** | PH₄⁺ with halide | PH₄I |\n| **Diphosphine** | P₂H₄, self-igniting impurity | causes spontaneous flammability |\n| **Hypophosphite** | NaH₂PO₂, by-product of prep | P₄ + NaOH route |\n| **Holme's signal** | Self-igniting sea distress signal | CaC₂ + Ca₃P₂ in water |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why PH₃ is a weak base compared to NH₃\n\n- Phosphorus is larger, less electronegative; its lone pair is diffuse and poorly held. Protonation is unfavourable; PH₄⁺ exists only with strong acids. Also no hydrogen bonding: PH₃ boils at −87.7 °C, far below NH₃'s −33 °C despite being heavier — the H-bonding absence is visible in the boiling point.\n\n### 4.2 Why the 93.6° angle\n\n- P's 3s–3p gap is large; hybridisation is poor, so PH₃ uses nearly pure p orbitals (which are 90° apart) with a slight squeeze from the lone pair: 93.6° vs NH₃'s 107°. A textbook hybridisation-exception.\n\n### 4.3 Why impure phosphine self-ignites\n\n- The P₂H₄ impurity oxidises at room temperature; its flame then ignites the PH₃, and the burning phosphorus produces the beautiful smoke vortex rings. Pure PH₃ is not self-igniting — the demo depends on the impurity.",
+    "## 5. Comparison Tables\n\n| Property | NH₃ | PH₃ |\n|---|---|---|\n| Bond angle | 107° | 93.6° |\n| Dipole moment | 1.47 D | 0.58 D |\n| Basicity | strong (NH₄OH stable) | very weak (PH₄⁺ with strong acids only) |\n| bp | −33 °C | −87.7 °C (no H-bonding) |\n| Solubility in water | very high | slight |\n| Odour | pungent | garlic/rotten fish |\n| Reducing power | moderate | strong (Cu³⁺... Cu₂⁺/Ag⁺ reductions) |",
+    "## 6. Common Confusions\n\n- **\"PH₃ + CuSO₄ gives copper metal.\"** With CuSO₄ the product is **Cu₃P** (copper phosphide), not Cu — the phosphorus stays bonded. Silver nitrate is the case that gives metal (Ag).\n- **\"PH₃ is as basic as NH₃.\"** No — phosphonium hydroxide is not isolable; PH₃ needs strong, dry acids to form PH₄⁺.\n- **\"Pure phosphine self-ignites.\"** The **P₂H₄ impurity** is the self-igniter; pure PH₃ needs a flame.",
+    "## 7. Exam Application\n\n- Lab prep equation (P₄ + NaOH route) with the inert-atmosphere note.\n- The CuSO₄ product (Cu₃P) is a favourite trick MCQ.\n- Holme's signal: CaC₂ + Ca₃P₂ both dumped, both hydrolyse, both ignite."
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Phosphine: preparation, properties (basic nature, reducin…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Describe the laboratory preparation of phosphine with equation and precautions.",
+    "Compare the basicity and bond angles of NH3 and PH3.",
+    "What happens when PH3 reacts with CuSO4 solution and with AgNO3 solution?"
   ],
-  "examples": [],
+  "universalFacts": [
+    "Phosphine is used as a dopant gas in the semiconductor industry - the garlic-smelling poison helps build every silicon chip."
+  ],
+  "examples": [
+    "***Holme's signal*** - a perforated container of CaC2 and Ca3P2 thrown overboard: seawater hydrolyses both to acetylene and phosphine, which ignite spontaneously - a red flame and smoke rising from the sea to call for help."
+  ],
   "practiceQuestions": [
-    "Q. Write the laboratory preparation of phosphine. (2 marks) — P4 + 3NaOH + 3H2O → PH3 + 3NaH2PO2 (heat).",
-    "Q. Why does impure PH3 catch fire in air? (1 mark) — traces of diphosphine (P2H4) ignite spontaneously."
+    "**NEB-style (3m): How is phosphine prepared in the laboratory? Why is the gas spontaneously flammable?** — **Preparation:** white phosphorus is heated with concentrated sodium hydroxide solution in an **inert atmosphere** (hydrogen or CO₂, to exclude air): **P₄ + 3NaOH + 3H₂O → PH₃ + 3NaH₂PO₂**. The gas comes off with the hydrogen already flowing, is dried, and collected over warm water (it is only slightly soluble). It may also be made by hydrolysing calcium phosphide: **Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃**. **Spontaneous flammability:** the laboratory gas is impure, containing **diphosphine P₂H₄**, which oxidises at room temperature; its flame ignites the phosphine, giving the famous smoke vortex rings. **Pure** PH₃ is not self-igniting — it needs a flame to burn (PH₃ + 2O₂ → H₃PO₄).",
+    "**NEB-style (2m): Compare the basic character of NH3 and PH3 with reasons.** — **NH₃ is strongly basic**: the nitrogen lone pair is compact and tightly held, protonation to NH₄⁺ is easy, and ammonium hydroxide exists in water. **PH₃ is very weakly basic**: phosphorus is larger and less electronegative, its lone pair is diffuse, so PH₄⁺ forms only with strong, dry acids (PH₄I, PH₄Br, PH₄Cl) and no phosphonium hydroxide is isolable. Supporting evidence: the bond angle collapses from 107° (sp³-ish in NH₃) to 93.6° (nearly pure p-bonds in PH₃), and the dipole moment falls from 1.47 D to 0.58 D — the lone pair is simply less available for donation. Basicity falls down group 15.",
+    "**NEB-style (2m): What is Holme's signal? Explain the chemistry.** — Holme's signal is a **marine distress signal**: a perforated container holding **calcium carbide (CaC₂)** and **calcium phosphide (Ca₃P₂)** is thrown into the sea. Seawater enters and hydrolyses both: **CaC₂ + 2H₂O → Ca(OH)₂ + C₂H₂** (acetylene) and **Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃**. The phosphine, contaminated with self-igniting P₂H₄, catches fire spontaneously and ignites the acetylene — a bright flame with dense smoke rises from the water surface, marking the ship's position for rescue."
   ],
   "keyPoints": [
-    "• Phosphine",
-    "• Preparation",
-    "• Properties",
-    "• Basic nature",
-    "• Reducing nature",
-    "• Action with halogens"
+    "PH3 prep: P4 + 3NaOH + 3H2O -> PH3 + 3NaH2PO2 (conc NaOH, inert atmosphere); Ca3P2 + 6H2O -> 3Ca(OH)2 + 2PH3; pure from PH4I + NaOH. Impure gas has P2H4 -> spontaneously flammable (vortex rings). Properties: colourless, garlic/rotten-fish odour, very poisonous, slight water solubility, pyramidal 93.6 deg (near-pure p bonds), dipole 0.58 D. WEAK base: PH4+ only with strong acids (PH4I/Br/Cl); no H-bonding, bp -87.7 C. Reducing: 3CuSO4 + 2PH3 -> Cu3P + 2H2SO4 (copper PHOSPHIDE, not Cu); 8AgNO3 + PH3 + 4H2O -> 8Ag + H3PO4 + 8HNO3. Combustion: PH3 + 2O2 -> H3PO4. Halogens: PH3 + HX -> PH4X; with Cl2 -> PCl3/PCl5. Uses: Holme's signal (CaC2 + Ca3P2 in sea), smoke screens, Si doping gas."
   ],
-  "summary": "Phosphine: preparation, properties (basic nature, reducin… (Chemistry of Non-metals, Chemistry, class-11-notes) covers Phosphine, preparation, properties. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Phosphine is ammonia's sickly, dangerous cousin. Prepared by heating white phosphorus with concentrated NaOH (**P₄ + 3NaOH + 3H₂O → PH₃ + 3NaH₂PO₂**) or hydrolysing Ca₃P₂, it is a colourless garlic-smelling poison, pyramidal at **93.6°** (nearly pure p-bonding), with a tiny dipole (0.58 D) and a low boiling point (−87.7 °C — no hydrogen bonding). Its lone pair is too diffuse for strong basicity: **PH₄⁺ salts form only with strong acids** (PH₄I, PH₄Br). As a reducer it attacks metal salts: **CuSO₄ gives black Cu₃P** (copper phosphide — the exam trap), **AgNO₃ gives metallic silver**. It burns to **H₃PO₄**, adds HX to give phosphonium halides, and its **P₂H₄ impurity self-ignites** — the smoke vortex rings of the lecture demo and the working principle of **Holme's signal** (CaC₂ + Ca₃P₂ overboard: acetylene plus self-igniting phosphine, a flame from the sea). Uses: smoke screens, silicon doping, distress signals.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Phosphine: preparation, properties (basic nature, reducin…\"?",
+      "question": "Phosphine is prepared in the lab by heating white phosphorus with:",
       "options": [
-        "Phosphine",
-        "Preparation",
-        "Unrelated topic",
-        "None of the above"
+        "conc HCl",
+        "conc NaOH",
+        "NaOH + H2",
+        "water"
       ],
-      "answer": "Phosphine",
-      "explanation": "Phosphine is listed among the official sub-ideas of Phosphine: preparation, properties (basic nature, reducin…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "P4 + 3NaOH + 3H2O -> PH3 + 3NaH2PO2."
     },
     {
-      "question": "A common examiner point on \"Phosphine: preparation, properties (basic nature, reducin…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The bond angle in PH3 is about:",
       "options": [
-        "True",
-        "False"
+        "107",
+        "93.6",
+        "120",
+        "109.5"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Nearly pure p-bonds - poor hybridisation."
+    },
+    {
+      "question": "PH3 with CuSO4 solution gives:",
+      "options": [
+        "Cu metal",
+        "Cu3P",
+        "CuO",
+        "CuH"
+      ],
+      "answer": "B",
+      "explanation": "Copper phosphide, not copper."
+    },
+    {
+      "question": "PH3 with AgNO3 solution gives:",
+      "options": [
+        "Ag3P",
+        "Ag metal",
+        "Ag2O",
+        "no reaction"
+      ],
+      "answer": "B",
+      "explanation": "8AgNO3 + PH3 -> 8Ag + H3PO4 + 8HNO3."
+    },
+    {
+      "question": "Pure PH3 is:",
+      "options": [
+        "self-igniting",
+        "not self-igniting",
+        "explosive in water",
+        "non-poisonous"
+      ],
+      "answer": "B",
+      "explanation": "The P2H4 impurity self-ignites."
+    },
+    {
+      "question": "The bond angle difference between NH3 and PH3 arises from:",
+      "options": [
+        "atomic colour",
+        "poor hybridisation of P",
+        "hydrogen bonding",
+        "ionisation energy"
+      ],
+      "answer": "B",
+      "explanation": "Large 3s-3p gap in phosphorus."
+    },
+    {
+      "question": "Holme's signal uses:",
+      "options": [
+        "CaC2 only",
+        "Ca3P2 only",
+        "CaC2 + Ca3P2",
+        "P4 + S8"
+      ],
+      "answer": "C",
+      "explanation": "Both hydrolyse; acetylene burns with self-igniting phosphine."
+    },
+    {
+      "question": "PH3 burns in oxygen to give:",
+      "options": [
+        "P2O5",
+        "H3PO4",
+        "PH4OH",
+        "P4O6 only"
+      ],
+      "answer": "B",
+      "explanation": "PH3 + 2O2 -> H3PO4."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Lab preparation: P4 + 3NaOH + 3H2O → PH3 + 3NaH2PO2 (heated, inverted flask over water) — remember the product sodium hypophosphite.",
-    "Trick 2: Purity test: pure PH3 is odourless; impure (P2H4) ignites spontaneously — 'spontaneous flaming rings' is the observation to quote.",
-    "Trick 3: Basic nature weaker than NH3: PH3 + HBr → PH4Br (phosphonium bromide) exists but phosphine is far less basic; reducing: PH3 + 3O2 → P2O5 + 3H2O... use 2PH3 + 4O2 → P2O5 + 3H2O."
+    "Prep: P4 + NaOH -> PH3 + NaH2PO2. Angle 93.6 deg, dipole 0.58 D. CuSO4 gives Cu3P (not Cu!); AgNO3 gives Ag. Burns to H3PO4. PH4X with HX. P2H4 = self-igniter. Holme's signal = CaC2 + Ca3P2."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Phosphorus's Answer to Ammonia\n\nPH₃ (phosphine): prepared from phosphides, weakly basic, strongly reducing, and famous for spontaneous flammability from trace P₂H₄. Preparation, properties, action with halogens and oxygen, uses.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Preparation\n\n- **Lab:** white P + concentrated NaOH solution (in inert atmosphere, H₂ evolved): **P₄ + 3NaOH + 3H₂O → PH₃ + 3NaH₂PO₂** (sodium hypophosphite).\n- From metal phosphides: **Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃** (carbide-style hydrolysis).\n- Pure PH₃: heat phosphonium iodide with NaOH: **PH₄I + NaOH → PH₃ + NaI + H₂O**.\n- Impure lab gas contains **P₂H₄ (diphosphine)** — which makes it spontaneously flammable (the \"vortex rings\" of burning phosphine demo).\n\n### 2.2 Properties\n\n- Colourless, **garlic/rotten-fish odour**, highly poisonous; much less soluble in water than NH₃.\n- **Pyramidal** (like NH₃) but bond angle **93.6°** (nearly pure p-bonds — P's 3s barely hybridises); dipole 0.58 D vs NH₃ 1.47 D.\n- **Weak base:** forms phosphonium salts only with strong acids (PH₄I, PH₄Cl) — PH₃ + HBr → PH₄Br; does NOT form PH₄OH-type stable hydroxide; no hydrogen bonding (hence low bp −87.7 °C, below NH₃'s −33 °C).\n- **Reducing nature:** precipitates metals from their salt solutions: **3CuSO₄ + 2PH₃ → Cu₃P + 2H₂SO₄** (copper phosphide, black) — note it is NOT simple displacement to metal; with AgNO₃: 8AgNO₃ + PH₃ + 4H₂O → 8Ag + H₃PO₄ + 8HNO₃ (silver mirror-type).\n- **Combustion:** PH₃ + 2O₂ → H₃PO₄ (burns to phosphoric acid); with limited O₂: P₄O₆/H₃PO₃.\n\n### 2.3 Action with halogens and oxygen\n\n- **Halogens:** PH₃ + HX addition → phosphonium halides (PH₄Cl, PH₄Br, PH₄I — HI strongest since HI is strongest acid of the three). Direct halogenation: PH₃ + Cl₂ → PCl₃ + HCl (excess Cl₂ → PCl₅).\n- **Oxygen:** burns to H₃PO₄ (above); the P₂H₄ impurity ignites spontaneously, igniting the PH₃ — vortex rings of smoke in the classic demonstration.\n\n### 2.4 Uses\n\n- Holme's signal (marine distress): containers of CaC₂ and Ca₃P₂ dumped in sea — acetylene + phosphine ignite spontaneously, red flame + smoke.\n- Smoke screens; doping/semiconductor (PH₃ as dopant gas in silicon processing); match industry historically.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Phosphine** | PH₃, hydride of phosphorus | garlic-odoured poison gas |\n| **Phosphonium salt** | PH₄⁺ with halide | PH₄I |\n| **Diphosphine** | P₂H₄, self-igniting impurity | causes spontaneous flammability |\n| **Hypophosphite** | NaH₂PO₂, by-product of prep | P₄ + NaOH route |\n| **Holme's signal** | Self-igniting sea distress signal | CaC₂ + Ca₃P₂ in water |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why PH₃ is a weak base compared to NH₃\n\n- Phosphorus is larger, less electronegative; its lone pair is diffuse and poorly held. Protonation is unfavourable; PH₄⁺ exists only with strong acids. Also no hydrogen bonding: PH₃ boils at −87.7 °C, far below NH₃'s −33 °C despite being heavier — the H-bonding absence is visible in the boiling point.\n\n### 4.2 Why the 93.6° angle\n\n- P's 3s–3p gap is large; hybridisation is poor, so PH₃ uses nearly pure p orbitals (which are 90° apart) with a slight squeeze from the lone pair: 93.6° vs NH₃'s 107°. A textbook hybridisation-exception.\n\n### 4.3 Why impure phosphine self-ignites\n\n- The P₂H₄ impurity oxidises at room temperature; its flame then ignites the PH₃, and the burning phosphorus produces the beautiful smoke vortex rings. Pure PH₃ is not self-igniting — the demo depends on the impurity.",
+      "## 5. Comparison Tables\n\n| Property | NH₃ | PH₃ |\n|---|---|---|\n| Bond angle | 107° | 93.6° |\n| Dipole moment | 1.47 D | 0.58 D |\n| Basicity | strong (NH₄OH stable) | very weak (PH₄⁺ with strong acids only) |\n| bp | −33 °C | −87.7 °C (no H-bonding) |\n| Solubility in water | very high | slight |\n| Odour | pungent | garlic/rotten fish |\n| Reducing power | moderate | strong (Cu³⁺... Cu₂⁺/Ag⁺ reductions) |",
+      "## 6. Common Confusions\n\n- **\"PH₃ + CuSO₄ gives copper metal.\"** With CuSO₄ the product is **Cu₃P** (copper phosphide), not Cu — the phosphorus stays bonded. Silver nitrate is the case that gives metal (Ag).\n- **\"PH₃ is as basic as NH₃.\"** No — phosphonium hydroxide is not isolable; PH₃ needs strong, dry acids to form PH₄⁺.\n- **\"Pure phosphine self-ignites.\"** The **P₂H₄ impurity** is the self-igniter; pure PH₃ needs a flame.",
+      "## 7. Exam Application\n\n- Lab prep equation (P₄ + NaOH route) with the inert-atmosphere note.\n- The CuSO₄ product (Cu₃P) is a favourite trick MCQ.\n- Holme's signal: CaC₂ + Ca₃P₂ both dumped, both hydrolyse, both ignite."
+    ],
+    "keyPoints": [
+      "PH3 prep: P4 + 3NaOH + 3H2O -> PH3 + 3NaH2PO2 (conc NaOH, inert atmosphere); Ca3P2 + 6H2O -> 3Ca(OH)2 + 2PH3; pure from PH4I + NaOH. Impure gas has P2H4 -> spontaneously flammable (vortex rings). Properties: colourless, garlic/rotten-fish odour, very poisonous, slight water solubility, pyramidal 93.6 deg (near-pure p bonds), dipole 0.58 D. WEAK base: PH4+ only with strong acids (PH4I/Br/Cl); no H-bonding, bp -87.7 C. Reducing: 3CuSO4 + 2PH3 -> Cu3P + 2H2SO4 (copper PHOSPHIDE, not Cu); 8AgNO3 + PH3 + 4H2O -> 8Ag + H3PO4 + 8HNO3. Combustion: PH3 + 2O2 -> H3PO4. Halogens: PH3 + HX -> PH4X; with Cl2 -> PCl3/PCl5. Uses: Holme's signal (CaC2 + Ca3P2 in sea), smoke screens, Si doping gas."
+    ],
+    "importantConcepts": [
+      "Down group 15 the lone pair weakens: NH3 donates eagerly (stable NH4OH, 107 deg, H-bonded) while PH3 barely donates (PH4+ only with strong acids, 93.6 deg, no H-bonding, bp -87.7 C) - basicity and hydrogen bonding die together down the group."
+    ],
+    "examples": [
+      "***Holme's signal*** - a perforated container of CaC2 and Ca3P2 thrown overboard: seawater hydrolyses both to acetylene and phosphine, which ignite spontaneously - a red flame and smoke rising from the sea to call for help."
+    ],
+    "universalFacts": [
+      "Phosphine is used as a dopant gas in the semiconductor industry - the garlic-smelling poison helps build every silicon chip."
+    ],
+    "importantStatements": [
+      "\"Phosphine is a colourless, poisonous gas with a garlic odour, much weaker base than ammonia but a stronger reducing agent.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ for this row; all items are NEB-style practice. NEB 2024/2023/2022/2021 items are recorded at rows 67, 63, 61 and 65."
+    ],
+    "examShortTricks": [
+      "Prep: P4 + NaOH -> PH3 + NaH2PO2. Angle 93.6 deg, dipole 0.58 D. CuSO4 gives Cu3P (not Cu!); AgNO3 gives Ag. Burns to H3PO4. PH4X with HX. P2H4 = self-igniter. Holme's signal = CaC2 + Ca3P2."
+    ],
+    "examNotes": [
+      "The CuSO4 trick question: write Cu3P (copper phosphide) - examiners set this trap every year; AgNO3 is the metal-mirror case."
+    ],
+    "formulas": [
+      "- P₄ + 3NaOH + 3H₂O → PH₃ + 3NaH₂PO₂\n- Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃\n- PH₄I + NaOH → PH₃ + NaI + H₂O\n- PH₃ + HBr → PH₄Br\n- 3CuSO₄ + 2PH₃ → Cu₃P + 2H₂SO₄\n- 8AgNO₃ + PH₃ + 4H₂O → 8Ag + H₃PO₄ + 8HNO₃\n- PH₃ + 2O₂ → H₃PO₄"
+    ],
+    "practice": [
+      "Describe the laboratory preparation of phosphine with equation and precautions.",
+      "Compare the basicity and bond angles of NH3 and PH3.",
+      "What happens when PH3 reacts with CuSO4 solution and with AgNO3 solution?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): How is phosphine prepared in the laboratory? Why is the gas spontaneously flammable?** — **Preparation:** white phosphorus is heated with concentrated sodium hydroxide solution in an **inert atmosphere** (hydrogen or CO₂, to exclude air): **P₄ + 3NaOH + 3H₂O → PH₃ + 3NaH₂PO₂**. The gas comes off with the hydrogen already flowing, is dried, and collected over warm water (it is only slightly soluble). It may also be made by hydrolysing calcium phosphide: **Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃**. **Spontaneous flammability:** the laboratory gas is impure, containing **diphosphine P₂H₄**, which oxidises at room temperature; its flame ignites the phosphine, giving the famous smoke vortex rings. **Pure** PH₃ is not self-igniting — it needs a flame to burn (PH₃ + 2O₂ → H₃PO₄).",
+      "**NEB-style (2m): Compare the basic character of NH3 and PH3 with reasons.** — **NH₃ is strongly basic**: the nitrogen lone pair is compact and tightly held, protonation to NH₄⁺ is easy, and ammonium hydroxide exists in water. **PH₃ is very weakly basic**: phosphorus is larger and less electronegative, its lone pair is diffuse, so PH₄⁺ forms only with strong, dry acids (PH₄I, PH₄Br, PH₄Cl) and no phosphonium hydroxide is isolable. Supporting evidence: the bond angle collapses from 107° (sp³-ish in NH₃) to 93.6° (nearly pure p-bonds in PH₃), and the dipole moment falls from 1.47 D to 0.58 D — the lone pair is simply less available for donation. Basicity falls down group 15.",
+      "**NEB-style (2m): What is Holme's signal? Explain the chemistry.** — Holme's signal is a **marine distress signal**: a perforated container holding **calcium carbide (CaC₂)** and **calcium phosphide (Ca₃P₂)** is thrown into the sea. Seawater enters and hydrolyses both: **CaC₂ + 2H₂O → Ca(OH)₂ + C₂H₂** (acetylene) and **Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃**. The phosphine, contaminated with self-igniting P₂H₄, catches fire spontaneously and ignites the acetylene — a bright flame with dense smoke rises from the water surface, marking the ship's position for rescue."
+    ]
+  },
+  "importantConcepts": [
+    "Down group 15 the lone pair weakens: NH3 donates eagerly (stable NH4OH, 107 deg, H-bonded) while PH3 barely donates (PH4+ only with strong acids, 93.6 deg, no H-bonding, bp -87.7 C) - basicity and hydrogen bonding die together down the group."
+  ],
+  "importantStatements": [
+    "\"Phosphine is a colourless, poisonous gas with a garlic odour, much weaker base than ammonia but a stronger reducing agent.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ for this row; all items are NEB-style practice. NEB 2024/2023/2022/2021 items are recorded at rows 67, 63, 61 and 65."
+  ],
+  "examNotes": [
+    "The CuSO4 trick question: write Cu3P (copper phosphide) - examiners set this trap every year; AgNO3 is the metal-mirror case."
+  ],
+  "formulas": [
+    "- P₄ + 3NaOH + 3H₂O → PH₃ + 3NaH₂PO₂\n- Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃\n- PH₄I + NaOH → PH₃ + NaI + H₂O\n- PH₃ + HBr → PH₄Br\n- 3CuSO₄ + 2PH₃ → Cu₃P + 2H₂SO₄\n- 8AgNO₃ + PH₃ + 4H₂O → 8Ag + H₃PO₄ + 8HNO₃\n- PH₃ + 2O₂ → H₃PO₄"
+  ],
+  "mcs": [
+    {
+      "question": "Phosphine is prepared in the lab by heating white phosphorus with:",
+      "options": [
+        "conc HCl",
+        "conc NaOH",
+        "NaOH + H2",
+        "water"
+      ],
+      "answer": "B",
+      "explanation": "P4 + 3NaOH + 3H2O -> PH3 + 3NaH2PO2."
+    },
+    {
+      "question": "The bond angle in PH3 is about:",
+      "options": [
+        "107",
+        "93.6",
+        "120",
+        "109.5"
+      ],
+      "answer": "B",
+      "explanation": "Nearly pure p-bonds - poor hybridisation."
+    },
+    {
+      "question": "PH3 with CuSO4 solution gives:",
+      "options": [
+        "Cu metal",
+        "Cu3P",
+        "CuO",
+        "CuH"
+      ],
+      "answer": "B",
+      "explanation": "Copper phosphide, not copper."
+    },
+    {
+      "question": "PH3 with AgNO3 solution gives:",
+      "options": [
+        "Ag3P",
+        "Ag metal",
+        "Ag2O",
+        "no reaction"
+      ],
+      "answer": "B",
+      "explanation": "8AgNO3 + PH3 -> 8Ag + H3PO4 + 8HNO3."
+    },
+    {
+      "question": "Pure PH3 is:",
+      "options": [
+        "self-igniting",
+        "not self-igniting",
+        "explosive in water",
+        "non-poisonous"
+      ],
+      "answer": "B",
+      "explanation": "The P2H4 impurity self-ignites."
+    },
+    {
+      "question": "The bond angle difference between NH3 and PH3 arises from:",
+      "options": [
+        "atomic colour",
+        "poor hybridisation of P",
+        "hydrogen bonding",
+        "ionisation energy"
+      ],
+      "answer": "B",
+      "explanation": "Large 3s-3p gap in phosphorus."
+    },
+    {
+      "question": "Holme's signal uses:",
+      "options": [
+        "CaC2 only",
+        "Ca3P2 only",
+        "CaC2 + Ca3P2",
+        "P4 + S8"
+      ],
+      "answer": "C",
+      "explanation": "Both hydrolyse; acetylene burns with self-igniting phosphine."
+    },
+    {
+      "question": "PH3 burns in oxygen to give:",
+      "options": [
+        "P2O5",
+        "H3PO4",
+        "PH4OH",
+        "P4O6 only"
+      ],
+      "answer": "B",
+      "explanation": "PH3 + 2O2 -> H3PO4."
+    }
   ]
 }
