@@ -36,6 +36,8 @@
 <li>Exercise 1.6 — Matrices and determinants</li>
 <li>Exercise 1.7 — Quadratic equations</li>
 <li>Exercise 1.8 — Complex numbers</li>
+<li>Exercise 1.9 — Topic-by-topic extension</li>
+<li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -904,6 +906,326 @@ z₁z₂ = (3+4i)(5+12i) = 15 + 36i + 20i + 48i² = −33 + 56i
 The point (−1, √3) lies in the second quadrant, so
 arg z = π − tan⁻¹(√3/1) = π − π/3 = 2π/3  (120°)</p>
 <p class="ans">|z| = 2, arg z = 2π/3 &nbsp;(polar form z = 2(cos 120° + i sin 120°))</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.9 — Topic-by-topic extension</h2>
+
+<p class="lede">The same eight topics as Exercises 1.1–1.8, one level harder. These are the shapes that separate a 60 from an 80: a condition to be found, a counterexample to be produced, or a proof with one non-obvious step.</p>
+
+<h3>Topic 1 — Logic and sets</h3>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Write the negation of “every student who studies passes” and decide which statement is stronger.</p>
+<div class="sol">
+<p>Negation of ∀x (S(x) → P(x)) is ∃x (S(x) ∧ ¬P(x)): “at least one student studies and does not pass”.</p>
+<p class="ans">The negation is stronger — one counterexample destroys the universal claim.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> In a class of 40, 25 like maths, 20 like physics and 10 like both. How many like neither?</p>
+<div class="sol">
+<p class="work">n(M ∪ P) = 25 + 20 − 10 = 35
+neither = 40 − 35 = 5</p>
+<p class="ans">5 students like neither</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Is A − (B ∪ C) = (A − B) ∩ (A − C)? Justify in one line.</p>
+<div class="sol">
+<p>Yes. x ∈ A − (B ∪ C) ⇔ x ∈ A and x ∉ B and x ∉ C ⇔ x ∈ A − B and x ∈ A − C. De Morgan's law then gives the same statement.</p>
+<p class="ans">Identity holds</p>
+</div>
+</div>
+
+<h3>Topic 2 — Real numbers, intervals and absolute value</h3>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Solve |2x − 3| &lt; 5 and write the answer as an interval.</p>
+<div class="sol">
+<p class="work">−5 &lt; 2x − 3 &lt; 5  ⇒  −2 &lt; 2x &lt; 8  ⇒  −1 &lt; x &lt; 4</p>
+<p class="ans">x ∈ (−1, 4)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Solve |x − 1| ≥ 3.</p>
+<div class="sol">
+<p>A ≥ form splits into two branches:</p>
+<p class="work">x − 1 ≤ −3  or  x − 1 ≥ 3
+x ≤ −2  or  x ≥ 4</p>
+<p class="ans">x ∈ (−∞, −2] ∪ [4, ∞)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Prove that √2 is irrational by contradiction, in three steps.</p>
+<div class="sol">
+<p>(i) Assume √2 = p/q in lowest terms. (ii) Then p² = 2q², so p² is even and hence p is even: p = 2k. (iii) Substituting gives 4k² = 2q², so q² = 2k² and q is even too — contradicting “lowest terms”.</p>
+<p class="ans">√2 cannot be rational</p>
+</div>
+</div>
+
+<h3>Topic 3 — Functions</h3>
+
+<div class="item">
+<p class="q"><b>Q7.</b> If f(x) = 2x + 1 and g(x) = x², find (f∘g)(x) and (g∘f)(x) and state whether they are equal.</p>
+<div class="sol">
+<p class="work">(f∘g)(x) = f(x²) = 2x² + 1
+(g∘f)(x) = (2x + 1)² = 4x² + 4x + 1</p>
+<p class="ans">Not equal — composition is not commutative</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Find the domain and range of f(x) = √(9 − x²).</p>
+<div class="sol">
+<p>Domain: 9 − x² ≥ 0 ⇒ −3 ≤ x ≤ 3. Range: the square root is non-negative and 9 − x² peaks at 9 at x = 0, so f goes from 0 to 3.</p>
+<p class="ans">Domain [−3, 3], range [0, 3]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Find the inverse of f(x) = (3x − 2)/5 and verify it.</p>
+<div class="sol">
+<p class="work">y = (3x − 2)/5  ⇒  5y = 3x − 2  ⇒  x = (5y + 2)/3
+f⁻¹(x) = (5x + 2)/3</p>
+<p>Check: f(f⁻¹(x)) = (3·(5x+2)/3 − 2)/5 = (5x + 2 − 2)/5 = x ✓</p>
+<p class="ans">f⁻¹(x) = (5x + 2)/3</p>
+</div>
+</div>
+
+<h3>Topic 4 — Curve sketching, odd/even, periodicity</h3>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Show that f(x) = x³ − x is odd and find its zeros.</p>
+<div class="sol">
+<p>f(−x) = −x³ + x = −f(x), so f is odd and its graph has rotational symmetry about the origin.</p>
+<p class="work">x³ − x = x(x² − 1) = x(x − 1)(x + 1) = 0</p>
+<p class="ans">Zeros at x = −1, 0, 1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Sketch y = 2 sin(3x) by reading off its three parameters.</p>
+<div class="sol">
+<p>Amplitude 2, period 2π/3, and the wave starts at the origin rising. Mark one full wave between x = 0 and 2π/3, peaking at 2 at x = π/6.</p>
+<p class="ans">Amplitude 2, period 2π/3, range [−2, 2]</p>
+</div>
+</div>
+
+<h3>Topic 5 — Sequence and series</h3>
+
+<div class="item">
+<p class="q"><b>Q12.</b> The 5th term of an AP is 14 and the 9th is 26. Find the AP and its 20th term.</p>
+<div class="sol">
+<p class="work">a + 4d = 14,  a + 8d = 26  ⇒  4d = 12  ⇒  d = 3, a = 2
+t₂₀ = 2 + 19(3) = 59</p>
+<p class="ans">2, 5, 8, … ; t₂₀ = 59</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> Find the sum of the first 20 terms of 3, 7, 11, …</p>
+<div class="sol">
+<p class="work">Sₙ = (n/2)[2a + (n − 1)d] = 10[6 + 19(4)] = 10(82)</p>
+<p class="ans">S₂₀ = 820</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> For what values of r does the GP 8, 8r, 8r², … have a finite sum, and what is it?</p>
+<div class="sol">
+<p>Finite sum needs |r| &lt; 1. Then S∞ = a/(1 − r) = 8/(1 − r).</p>
+<p class="ans">|r| &lt; 1, S∞ = 8/(1 − r)</p>
+</div>
+</div>
+
+<h3>Topic 6 — Matrices and determinants</h3>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Solve for k if A = [[k, 2], [8, k]] is singular.</p>
+<div class="sol">
+<p class="work">|A| = k·k − 2·8 = k² − 16 = 0  ⇒  k = ±4</p>
+<p class="ans">k = 4 or k = −4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Find the inverse of A = [[2, 3], [1, 2]].</p>
+<div class="sol">
+<p class="work">|A| = 4 − 3 = 1
+adj A = [[2, −3], [−1, 2]]
+A⁻¹ = adj A/|A| = [[2, −3], [−1, 2]]</p>
+<p class="ans">A⁻¹ = [[2, −3], [−1, 2]]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> If A = [[1, 2], [3, 4]], verify that (Aᵀ)ᵀ = A.</p>
+<div class="sol">
+<p>Aᵀ = [[1, 3], [2, 4]], and transposing again returns [[1, 2], [3, 4]] = A. Transposition is an involution: it undoes itself.</p>
+<p class="ans">Verified</p>
+</div>
+</div>
+
+<h3>Topic 7 — Quadratic equations</h3>
+
+<div class="item">
+<p class="q"><b>Q18.</b> Solve 2x² − 7x + 3 = 0 by factorising and check with the discriminant.</p>
+<div class="sol">
+<p class="work">2x² − 6x − x + 3 = 2x(x − 3) − (x − 3) = (2x − 1)(x − 3)
+D = 49 − 24 = 25 &gt; 0 (two real roots, as found)</p>
+<p class="ans">x = 1/2 or x = 3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Find k so that the roots of x² − kx + 9 = 0 are equal.</p>
+<div class="sol">
+<p class="work">D = k² − 36 = 0  ⇒  k = ±6</p>
+<p class="ans">k = ±6 (double root x = 3 or x = −3)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> If α and β are the roots of x² − 5x + 6 = 0, find α³ + β³ without solving.</p>
+<div class="sol">
+<p>α + β = 5, αβ = 6. Use α³ + β³ = (α + β)³ − 3αβ(α + β).</p>
+<p class="work">= 125 − 3(6)(5) = 125 − 90 = 35</p>
+<p class="ans">α³ + β³ = 35</p>
+</div>
+</div>
+
+<h3>Topic 8 — Complex numbers</h3>
+
+<div class="item">
+<p class="q"><b>Q21.</b> Express (1 + 2i)(3 − i) in the form a + bi.</p>
+<div class="sol">
+<p class="work">= 3 − i + 6i − 2i² = 3 + 5i + 2 = 5 + 5i</p>
+<p class="ans">5 + 5i</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> Write (2 + i)/(1 − i) in standard form.</p>
+<div class="sol">
+<p>Multiply above and below by the conjugate 1 + i:</p>
+<p class="work">= (2 + i)(1 + i) / (1² + 1²) = (2 + 2i + i − 1)/2 = (1 + 3i)/2</p>
+<p class="ans">1/2 + (3/2)i</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Find the modulus and argument of −1 + i√3.</p>
+<div class="sol">
+<p class="work">|z| = √(1 + 3) = 2
+tan θ = √3/(−1) with the point in quadrant II ⇒ θ = 2π/3</p>
+<p class="ans">|z| = 2, arg z = 2π/3</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Concept drills — why, what, where</h2>
+
+<p class="lede">Reasoning drills, not routine practice. Each one asks <i>why</i> a method works, <i>what</i> it actually claims, or <i>where</i> it wins marks in the paper. If you can answer these out loud, the exercise questions become mechanical.</p>
+
+<div class="item">
+<p class="q"><b>D1. Spot the error.</b> A student writes |x| = −3 ⇒ x = 3. What went wrong, and what does it tell you about the equation?</p>
+<div class="sol">
+<p>The student used one branch only and ignored that |x| ≥ 0. Since a modulus can never be negative, |x| = −3 has no solution at all.</p>
+<div class="tip"><b>Why it works:</b> |x| is a distance, so its range is [0, ∞) — check feasibility before splitting. <b>Where you use it:</b> any modulus item begins by rejecting impossible right-hand sides, which is a mark on its own.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D2. Method choice.</b> To solve x² + 6x + 4 = 0 you can factorise, complete the square, or use the formula. Which do you choose and why?</p>
+<div class="sol">
+<p>The coefficients give no rational factor pair (D = 20, not a perfect square), so factorising fails. The formula is fastest; completing the square is chosen only when the vertex (minimum or maximum) is also wanted.</p>
+<div class="tip"><b>Why it works:</b> discriminant first tells you whether factorising is even possible. <b>Where you use it:</b> “solve” questions want a root, “find the minimum” questions want the vertex — the method follows the question.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D3. What does it claim?</b> If |A| = 0, what exactly breaks in the statement A⁻¹ = adj A/|A|?</p>
+<div class="sol">
+<p>The formula divides by zero, so no inverse exists. Geometrically the rows are dependent: at least one equation carries no new information, so the system has either no solution or infinitely many.</p>
+<div class="tip"><b>Why it works:</b> division by zero is the explicit failure point. <b>Where you use it:</b> before inverting a matrix, compute the determinant — the exam sets k so that a matrix is singular precisely to test this.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D4. Predict without computing.</b> A GP has first term 5 and ratio 0.5. Will the sum to 20 terms be far from 10?</p>
+<div class="sol">
+<p>No. S∞ = 5/(1 − 0.5) = 10, and 20 terms already give 5(1 − 0.5²⁰)/0.5 ≈ 10 − 10⁻⁵. The terms die geometrically, so the infinite sum is reached almost immediately.</p>
+<div class="tip"><b>Why it works:</b> |r| &lt; 1 makes rⁿ negligible. <b>Where you use it:</b> sanity-check any “sum to infinity” answer against the first few partial sums.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D5. Counterexample hunt.</b> Is it true that f(g(x)) = g(f(x)) for all functions? Produce the smallest counterexample.</p>
+<div class="sol">
+<p>No. Take f(x) = x + 1, g(x) = x²: f(g(x)) = x² + 1 but g(f(x)) = x² + 2x + 1. Even linear functions fail once one is non-linear.</p>
+<div class="tip"><b>Why it works:</b> composition applies the inner function first, so order changes what is fed in. <b>Where you use it:</b> never reorder a composite in a proof; only identity functions commute with everything.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D6. Why the sign?</b> Why does solving |2x − 3| &lt; 5 give a single interval while |2x − 3| &gt; 5 gives two?</p>
+<div class="sol">
+<p>“Less than” keeps the points <i>inside</i> a band around the centre, which is one connected interval. “Greater than” keeps the points outside that band, which splits into a left and a right piece.</p>
+<div class="tip"><b>Why it works:</b> the inequality describes distance from a centre value. <b>Where you use it:</b> sketch the interval on a number line first — it prevents the commonest missing-branch error.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D7. Where to use it.</b> You must find the number of elements in a union of three sets. Which tool and what is the failure mode?</p>
+<div class="sol">
+<p>Use inclusion–exclusion: n(A∪B∪C) = Σn(A) − Σn(pairwise) + n(A∩B∩C). The failure mode is forgetting the final term or double-counting the centre.</p>
+<div class="tip"><b>Why it works:</b> each element is counted once more or once fewer by every correction step, so the +/− alternation is forced. <b>Where you use it:</b> survey-type word problems — exactly one 2-mark item per paper.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D8. Necessity check.</b> Why must a function be one–one <i>before</i> it can have an inverse?</p>
+<div class="sol">
+<p>An inverse must send each output back to exactly one input. If two inputs share an output, the reverse map would have to give two answers at once, which is not a function.</p>
+<div class="tip"><b>Why it works:</b> “inverse” means reversing the arrows, and reversing requires that no arrow pair converge. <b>Where you use it:</b> every “find f⁻¹” question silently assumes the restriction has been stated — write it down.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D9. Read the graph.</b> For y = ax² + bx + c with a &gt; 0 and D &lt; 0, what does the parabola do relative to the x-axis, and what does that mean for the inequality ax² + bx + c &gt; 0?</p>
+<div class="sol">
+<p>With a &gt; 0 the parabola opens upward and D &lt; 0 means no real roots, so the whole curve lies above the axis. Hence the quadratic is positive for every real x.</p>
+<div class="tip"><b>Why it works:</b> sign of a sets the opening, sign of D sets the crossings. <b>Where you use it:</b> “for all x” conditions — the answer is usually D &lt; 0 together with a &gt; 0.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D10. What is really being asked?</b> “Show that (x − 1) is a factor of x³ − 6x² + 11x − 6.” What are you actually proving?</p>
+<div class="sol">
+<p>By the factor theorem you are proving f(1) = 0: 1 − 6 + 11 − 6 = 0. Division would be wasted work — the theorem is the short route.</p>
+<div class="tip"><b>Why it works:</b> a factor (x − c) forces the remainder f(c) to vanish. <b>Where you use it:</b> factor/remainder questions, and locating roots fast before long division.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D11. Order matters.</b> Why is AB usually different from BA, and when are they the same?</p>
+<div class="sol">
+<p>Multiplication combines rows of the left factor with columns of the right, so the roles swap. They agree when both are diagonal (or one is a scalar multiple of I), but not in general — a 2×3 and a 3×2 product are not even the same size.</p>
+<div class="tip"><b>Why it works:</b> the inner dimensions must match, and reversing the order reverses the outer sizes. <b>Where you use it:</b> matrix-equation questions where you must multiply on a chosen side — the side matters.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D12. Where it beats algebra.</b> Why is the polar form better than a + bi when computing (−1 + i√3)⁶?</p>
+<div class="sol">
+<p>In polar form a power multiplies the modulus and multiplies the argument: 2⁶ with argument 6·(2π/3) = 4π, equivalent to 0, giving 64. Expanding by the binomial theorem would take six lines and invite arithmetic slips.</p>
+<div class="tip"><b>Why it works:</b> multiplication of complex numbers adds arguments and multiplies moduli — powers become trivial. <b>Where you use it:</b> any high power or root of a complex number.</div>
 </div>
 </div>
 

@@ -32,6 +32,8 @@
 <li>Exercise 2.2 — Combination formulae for inverse functions</li>
 <li>Exercise 2.3 — Trigonometric equations: general values</li>
 <li>Exercise 2.4 — Equations restricted to an interval</li>
+<li>Exercise 2.5 — Topic-by-topic extension</li>
+<li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks</li>
 <li>Principal ranges, formula sheet and traps</li>
@@ -440,6 +442,233 @@ Both values are non-zero, so θ = π/6, 5π/6 (the negative branch in (0, π) is
 <p class="work">3θ = nπ ⇒ θ = nπ/3, n ∈ ℤ
 θ ∈ [0, π] ⇒ n = 0, 1, 2, 3 ⇒ θ = 0, π/3, 2π/3, π</p>
 <p class="ans">θ = 0, π/3, 2π/3, π</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 2.5 — Topic-by-topic extension</h2>
+
+<p class="lede">Four topics, one level harder: multi-step principal values, combination formulae with a hidden substitution, and equations whose first step is to turn everything into one function.</p>
+
+<h3>Topic 1 — Principal values</h3>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Evaluate tan⁻¹(−1) + cot⁻¹(−1).</p>
+<div class="sol">
+<p>tan⁻¹(−1) = −π/4 (range (−π/2, π/2)). For cot⁻¹ the range is (0, π), so cot⁻¹(−1) = 3π/4.</p>
+<p class="work">sum = −π/4 + 3π/4 = π/2</p>
+<p class="ans">π/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find sin⁻¹(sin 5π/6).</p>
+<div class="sol">
+<p>sin(5π/6) = 1/2, and 5π/6 is outside [−π/2, π/2], so we must reduce: sin⁻¹(1/2) = π/6.</p>
+<p class="ans">π/6</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Prove that sin⁻¹x + cos⁻¹x = π/2 for x ∈ [−1, 1].</p>
+<div class="sol">
+<p>Let θ = sin⁻¹x, so θ ∈ [−π/2, π/2] and sinθ = x. Then cos(π/2 − θ) = sinθ = x, and π/2 − θ ∈ [0, π], which is exactly the range of cos⁻¹. Hence cos⁻¹x = π/2 − θ, giving the stated sum.</p>
+<p class="ans">Proved for all x ∈ [−1, 1]</p>
+</div>
+</div>
+
+<h3>Topic 2 — Combination formulae</h3>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Evaluate tan⁻¹(1/2) + tan⁻¹(1/3).</p>
+<div class="sol">
+<p>Here xy = 1/6 &lt; 1, so the sum lies in (0, π/2) and the standard formula applies directly.</p>
+<p class="work">tan(A + B) = (1/2 + 1/3)/(1 − 1/6) = (5/6)/(5/6) = 1</p>
+<p class="ans">= π/4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Show that tan⁻¹1 + tan⁻¹2 + tan⁻¹3 = π.</p>
+<div class="sol">
+<p>First two: tan⁻¹1 + tan⁻¹2 with xy = 2 &gt; 1 and both positive, so the sum is π + tan⁻¹((1+2)/(1−2)) = π + tan⁻¹(−3) = π − tan⁻¹3.</p>
+<p class="work">Then (π − tan⁻¹3) + tan⁻¹3 = π</p>
+<p class="ans">Total = π</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Solve cos⁻¹x + cos⁻¹(2x) = π/3 for x.</p>
+<div class="sol">
+<p>Take cos of both sides: x(2x) − √(1 − x²)√(1 − 4x²) = 1/2.</p>
+<p class="work">2x² − 1/2 = √((1 − x²)(1 − 4x²))
+Squaring: 4x⁴ − 2x² + 1/4 = 1 − 5x² + 4x⁴
+⇒ 3x² = 3/4 ⇒ x² = 1/4 ⇒ x = 1/2</p>
+<p>Check x = 1/2: cos⁻¹(1/2) + cos⁻¹(1) = π/3 + 0 = π/3 ✓ (x = −1/2 fails the check).</p>
+<p class="ans">x = 1/2</p>
+</div>
+</div>
+
+<h3>Topic 3 — General values</h3>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Solve 2sin²θ − 3sinθ + 1 = 0 for the general value.</p>
+<div class="sol">
+<p>Factor as a quadratic in sinθ:</p>
+<p class="work">(2sinθ − 1)(sinθ − 1) = 0
+sinθ = 1/2  or  sinθ = 1</p>
+<p class="ans">θ = nπ + (−1)ⁿ π/6 or θ = (4n + 1)π/2, n ∈ ℤ</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Solve cos2θ = cosθ generally.</p>
+<div class="sol">
+<p>The rule cos X = cos Y gives X = 2nπ ± Y:</p>
+<p class="work">2θ = 2nπ + θ ⇒ θ = 2nπ
+2θ = 2nπ − θ ⇒ θ = 2nπ/3</p>
+<p class="ans">θ = 2nπ or θ = 2nπ/3, n ∈ ℤ</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Solve tan²θ = 3 for the general value.</p>
+<div class="sol">
+<p>tanθ = ±√3, giving π/3 and −π/3 respectively; both are inside (−π/2, π/2).</p>
+<p class="ans">θ = nπ ± π/3, n ∈ ℤ</p>
+</div>
+</div>
+
+<h3>Topic 4 — Equations restricted to an interval</h3>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Solve 2cos²x + sinx − 2 = 0 for x ∈ [0, 2π].</p>
+<div class="sol">
+<p>Use cos²x = 1 − sin²x:</p>
+<p class="work">2(1 − sin²x) + sinx − 2 = 0 ⇒ −2sin²x + sinx = 0
+sinx(1 − 2sinx) = 0 ⇒ sinx = 0 or sinx = 1/2</p>
+<p>sinx = 0 → x = 0, π, 2π. sinx = 1/2 → x = π/6, 5π/6.</p>
+<p class="ans">x ∈ {0, π/6, 5π/6, π, 2π}</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Solve sin3x = sinx for x ∈ [0, π].</p>
+<div class="sol">
+<p>sin3x − sinx = 2cos2x sinx = 0.</p>
+<p class="work">sinx = 0 → x = 0, π
+cos2x = 0 → 2x = π/2, 3π/2 → x = π/4, 3π/4</p>
+<p class="ans">x ∈ {0, π/4, 3π/4, π}</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> How many roots does tan2x = cotx have in (0, π)?</p>
+<div class="sol">
+<p>cotx = tan(π/2 − x), so tan2x = tan(π/2 − x) ⇒ 2x = nπ + π/2 − x ⇒ 3x = nπ + π/2.</p>
+<p>n = 0, 1, 2 give x = π/6, 5π/6, 3π/2 (the last is outside (0, π)); n = 3 gives 7π/6, also outside.</p>
+<p class="ans">Two roots in (0, π)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Concept drills — why, what, where</h2>
+
+<p class="lede">The trigonometry paper is won or lost on two habits: knowing which range the answer must land in, and knowing when a formula needs the π correction. These drills train exactly that.</p>
+
+<div class="item">
+<p class="q"><b>D1. Spot the error.</b> A student writes tan⁻¹2 + tan⁻¹3 = tan⁻¹((2+3)/(1−6)) = tan⁻¹(−1) = −π/4. Two things are wrong. Name both.</p>
+<div class="sol">
+<p>(i) The formula tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy)) is only valid while xy &lt; 1; here xy = 6. (ii) The result must be positive because both angles are positive, so π must be added: π − π/4 = 3π/4.</p>
+<div class="tip"><b>Why it works:</b> the principal range of tan⁻¹ forces a correction of +π when xy &gt; 1 and both terms are positive. <b>Where you use it:</b> every sum-of-inverse-tangents question — check xy first, it is the mark-scheme step.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D2. Predict the count.</b> Without solving, how many solutions does sin2θ = 1/2 have in [0, 2π]?</p>
+<div class="sol">
+<p>2θ must hit the two base angles π/6 and 5π/6 in every cycle, and [0, 2π] contains two full cycles of 2θ, so four solutions: θ = π/12, 5π/12, 13π/12, 17π/12.</p>
+<div class="tip"><b>Why it works:</b> multiplying the angle by k multiplies the number of solutions by k inside a fixed interval. <b>Where you use it:</b> “how many solutions” questions — count cycles instead of solving.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D3. What is really being asked?</b> “Solve sinθ = 1/2.” Why is a bare number wrong as a final answer?</p>
+<div class="sol">
+<p>Because sine repeats, the single value π/6 answers only one instant. The complete answer is the family θ = nπ + (−1)ⁿπ/6 — the question asks for all θ, so the general form is compulsory.</p>
+<div class="tip"><b>Why it works:</b> periodicity, not preference. <b>Where you use it:</b> unless the question names an interval, always end with “n ∈ ℤ”.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D4. Order of operations.</b> Why convert cos2θ = cosθ into 2cos²θ − 1 = cosθ rather than expanding cos2θ as 2sinθcosθ?</p>
+<div class="sol">
+<p>Because the target function on the right side is cosθ. Converting to the same function gives a quadratic in one variable: 2c² − c − 1 = 0. Using the sine form leaves you with both sin and cos and goes nowhere.</p>
+<div class="tip"><b>Why it works:</b> a single-function equation is solvable; a mixed one is not. <b>Where you use it:</b> any double-angle equation — first unify the function, then solve.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D5. Where the range bites.</b> Why is sin⁻¹(sin 4π/3) not 4π/3?</p>
+<div class="sol">
+<p>sin(4π/3) = −√3/2, and the answer must lie in [−π/2, π/2]. The angle with that sine is −π/3, so the value is −π/3; 4π/3 is simply outside the principal range.</p>
+<div class="tip"><b>Why it works:</b> inverse functions return <i>the</i> angle in their stated range, not the original angle. <b>Where you use it:</b> every “evaluate sin⁻¹(sin k)” item — always test whether k is already in the principal range.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D6. Necessity check.</b> A student solves sinθ = 1.2 and gets θ = sin⁻¹(1.2) = 0.91. What is wrong?</p>
+<div class="sol">
+<p>1.2 is outside [−1, 1], so sin⁻¹(1.2) does not exist. The equation has no solution and the decimal produced is meaningless.</p>
+<div class="tip"><b>Why it works:</b> the range of sine caps the possible right-hand side. <b>Where you use it:</b> before using any inverse, check feasibility — one line that earns the mark.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D7. Method choice.</b> For 3sinθ + 4cosθ = 5, why is the R-form the right tool?</p>
+<div class="sol">
+<p>Writing 5sin(θ + φ) with tanφ = 4/3 turns it into sin(θ + φ) = 1, one inverse step. Squaring and substituting would create a mixed quadratic and a false root.</p>
+<div class="tip"><b>Why it works:</b> a·sinθ + b·cosθ is a single wave of amplitude √(a² + b²). <b>Where you use it:</b> equations of the form a sinθ + b cosθ = c, especially when c equals ±√(a² + b²).</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D8. Predict without computing.</b> Why can 2sinθ + 5cosθ never equal 6?</p>
+<div class="sol">
+<p>Its amplitude is √(4 + 25) = √29 ≈ 5.39, so the sum never exceeds 5.39 — far below 6.</p>
+<div class="tip"><b>Why it works:</b> amplitude bounds every value of the wave. <b>Where you use it:</b> “for what values of k does the equation have a solution” — compare k with the amplitude.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D9. Why the extra family?</b> Why does tanθ = √3 give θ = nπ + π/3 instead of two families like cosine?</p>
+<div class="sol">
+<p>Tangent has period π, not 2π. Within one period it is one–one, so each value occurs exactly once per π, and one family with an nπ shift covers everything.</p>
+<div class="tip"><b>Why it works:</b> the period of the function decides how many families you need. <b>Where you use it:</b> tangents and cotangents always give a single nπ family.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D10. Where squaring lies.</b> Solving sinθ − cosθ = 1 by squaring gives sin2θ = 0, i.e. θ = 0 or π/2. One of these is false. Which, and how do you catch it?</p>
+<div class="sol">
+<p>θ = 0 gives 0 − 1 = −1 ≠ 1, so it is extraneous. Squaring produced the equation for the opposite sign as well. Substituting candidates back is the only reliable filter.</p>
+<div class="tip"><b>Why it works:</b> squaring is not reversible. <b>Where you use it:</b> any trig equation where you square both sides — reserve a line for the check.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D11. Read the identity.</b> Why is sin⁻¹x + cos⁻¹x = π/2 always true, but sin⁻¹x + sin⁻¹x = π/2 only for x = 1/√2?</p>
+<div class="sol">
+<p>The first joins complementary functions of the same value — the two angles of a right triangle, so they always sum to π/2. The second forces one specific angle (π/4) and therefore one specific sine.</p>
+<div class="tip"><b>Why it works:</b> complementary pairs are tied by definition; identical terms are not. <b>Where you use it:</b> recognising the complementary pair shortens many 4-mark equations to one line.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D12. Where to stop.</b> In [0, 2π], how do you know you have found every solution of cos2x = cosx?</p>
+<div class="sol">
+<p>The general solution is x = 2nπ or x = 2nπ/3. Enumerating n while the values stay inside [0, 2π] gives x = 0, 2π/3, 4π/3, 2π — four values, and the next n leaves the interval, which proves completeness.</p>
+<div class="tip"><b>Why it works:</b> the interval bound, not intuition, terminates the list. <b>Where you use it:</b> write the general solution first, then filter — filtering a stray list is where marks disappear.</div>
 </div>
 </div>
 

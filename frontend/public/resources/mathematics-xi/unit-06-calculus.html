@@ -36,6 +36,8 @@
 <li>Exercise 6.6 — Monotonicity, extrema, tangents and concavity</li>
 <li>Exercise 6.7 — Anti-derivatives: standard integrals, substitution, by parts</li>
 <li>Exercise 6.8 — Definite integrals and area</li>
+<li>Exercise 6.9 — Topic-by-topic extension</li>
+<li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks</li>
 <li>Formula sheet and traps</li>
@@ -828,6 +830,309 @@ u = x² ⇒ du = 2x dx
 <p>From Exercise 6.7 Q7, an anti-derivative is e<sup>x</sup>(x − 1).</p>
 <p class="work">[eˣ(x−1)]₀¹ = e(0) − 1(−1) = 1</p>
 <p class="ans">1</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.9 — Topic-by-topic extension</h2>
+
+<p class="lede">Eight topics, one level harder: limits that need algebraic surgery first, a continuity constant to be found, first principles on a surd, and integration questions where the right substitution is not announced.</p>
+
+<h3>Topic 1 — Limits and indeterminate forms</h3>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Evaluate lim(x→2) (x³ − 8)/(x − 2).</p>
+<div class="sol">
+<p>Form 0/0, so factor the difference of cubes:</p>
+<p class="work">x³ − 8 = (x − 2)(x² + 2x + 4)
+limit = 4 + 4 + 4 = 12</p>
+<p class="ans">12</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Evaluate lim(x→0) (√(x + 4) − 2)/x.</p>
+<div class="sol">
+<p>Rationalise the numerator by its conjugate:</p>
+<p class="work">·(√(x+4) + 2)/(√(x+4) + 2)
+= (x + 4 − 4)/(x(√(x+4) + 2)) = 1/(√(x+4) + 2)
+→ 1/(2 + 2) = 1/4</p>
+<p class="ans">1/4</p>
+</div>
+</div>
+
+<h3>Topic 2 — Continuity</h3>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find k so that f(x) = (x² − 4)/(x − 2) for x ≠ 2 and f(2) = k is continuous at x = 2.</p>
+<div class="sol">
+<p class="work">lim(x→2) (x² − 4)/(x − 2) = lim (x + 2) = 4
+Continuity needs f(2) = limit ⇒ k = 4</p>
+<p class="ans">k = 4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Test f(x) = x/|x| at x = 0 and classify the discontinuity.</p>
+<div class="sol">
+<p class="work">lim(x→0⁺) f = 1,  lim(x→0⁻) f = −1
+Unequal one-sided limits ⇒ limit does not exist</p>
+<p class="ans">Discontinuity of the first kind (jump), not removable</p>
+</div>
+</div>
+
+<h3>Topic 3 — First principles</h3>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Differentiate √x from first principles.</p>
+<div class="sol">
+<p class="work">f′(x) = lim(h→0) [√(x + h) − √x]/h
+Rationalise: = lim (x + h − x)/[h(√(x+h) + √x)]
+= lim 1/(√(x+h) + √x) = 1/(2√x)</p>
+<p class="ans">d/dx √x = 1/(2√x)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Why does the first-principles definition always work, while the shortcut rules sometimes do not apply?</p>
+<div class="sol">
+<p>The definition <i>is</i> the derivative — a limit of a difference quotient — so it needs no assumption about the form of f. Shortcut rules are theorems proved from it, each valid only under its own hypotheses (a power rule needs a differentiable power, a quotient rule needs a non-zero denominator).</p>
+<p class="ans">Definition is universal; rules are conditional shortcuts</p>
+</div>
+</div>
+
+<h3>Topic 4 — Rules of differentiation</h3>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Differentiate y = x² sin x.</p>
+<div class="sol">
+<p>Product rule with u = x², v = sin x:</p>
+<p class="work">y′ = 2x sinx + x² cosx</p>
+<p class="ans">y′ = 2x sin x + x² cos x = x(2sin x + x cos x)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Differentiate y = (3x + 1)/(x − 2).</p>
+<div class="sol">
+<p>Quotient rule:</p>
+<p class="work">y′ = [3(x − 2) − (3x + 1)·1]/(x − 2)²
+= (3x − 6 − 3x − 1)/(x − 2)²</p>
+<p class="ans">y′ = −7/(x − 2)²</p>
+</div>
+</div>
+
+<h3>Topic 5 — Implicit, parametric, higher order</h3>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Find dy/dx for x² + y² = 25.</p>
+<div class="sol">
+<p class="work">2x + 2y·dy/dx = 0 ⇒ dy/dx = −x/y</p>
+<p>At (3, 4) this gives −3/4, exactly the tangent slope of the circle there.</p>
+<p class="ans">dy/dx = −x/y</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Find dy/dx for x = t², y = 2t.</p>
+<div class="sol">
+<p class="work">dx/dt = 2t, dy/dt = 2
+dy/dx = (dy/dt)/(dx/dt) = 2/(2t) = 1/t</p>
+<p class="ans">dy/dx = 1/t</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> If y = x⁴, find y″.</p>
+<div class="sol">
+<p class="work">y′ = 4x³, y″ = 12x²</p>
+<p class="ans">y″ = 12x²</p>
+</div>
+</div>
+
+<h3>Topic 6 — Monotonicity, extrema, tangents, concavity</h3>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Find the intervals on which f(x) = x³ − 3x is increasing and decreasing.</p>
+<div class="sol">
+<p class="work">f′(x) = 3x² − 3 = 3(x − 1)(x + 1)
+f′ &gt; 0 for x &lt; −1 and x &gt; 1</p>
+<p class="ans">Increasing on (−∞, −1) ∪ (1, ∞); decreasing on (−1, 1)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> Find the equation of the tangent to y = x² at (2, 4).</p>
+<div class="sol">
+<p class="work">y′ = 2x ⇒ slope at x = 2 is 4
+y − 4 = 4(x − 2) ⇒ y = 4x − 4</p>
+<p class="ans">y = 4x − 4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Find the minimum value of y = x² − 4x + 7.</p>
+<div class="sol">
+<p class="work">y′ = 2x − 4 = 0 ⇒ x = 2
+y″ = 2 &gt; 0 ⇒ minimum
+y(2) = 4 − 8 + 7 = 3</p>
+<p class="ans">Minimum value 3 at x = 2</p>
+</div>
+</div>
+
+<h3>Topic 7 — Anti-derivatives</h3>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Evaluate ∫(3x² + 2/x) dx.</p>
+<div class="sol">
+<p class="work">= x³ + 2 ln|x| + C</p>
+<p class="ans">x³ + 2 ln|x| + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Evaluate ∫x e^(x²) dx.</p>
+<div class="sol">
+<p>Let u = x², du = 2x dx, so x dx = du/2:</p>
+<p class="work">= ½∫e^u du = ½e^u + C</p>
+<p class="ans">½e^(x²) + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> Evaluate ∫x cos x dx.</p>
+<div class="sol">
+<p>By parts with u = x, dv = cos x dx, so du = dx and v = sin x:</p>
+<p class="work">= x sin x − ∫sin x dx = x sin x + cos x + C</p>
+<p class="ans">x sin x + cos x + C</p>
+</div>
+</div>
+
+<h3>Topic 8 — Definite integrals and area</h3>
+
+<div class="item">
+<p class="q"><b>Q18.</b> Evaluate ∫₀² (x² + 1) dx.</p>
+<div class="sol">
+<p class="work">= [x³/3 + x]₀² = (8/3 + 2) − 0 = 14/3</p>
+<p class="ans">14/3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Evaluate ∫₁² (1/x) dx and say what the number means geometrically.</p>
+<div class="sol">
+<p class="work">= [ln x]₁² = ln 2 − 0 = ln 2 ≈ 0.693</p>
+<p>It is the area under y = 1/x between x = 1 and x = 2 — less than the unit square, as expected.</p>
+<p class="ans">ln 2 square units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Find the area bounded by y = x², the x-axis and x = 0 to x = 2.</p>
+<div class="sol">
+<p class="work">A = ∫₀² x² dx = [x³/3]₀² = 8/3</p>
+<p class="ans">8/3 square units</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Concept drills — why, what, where</h2>
+
+<p class="lede">Calculus questions are decided before any algebra starts: is the form indeterminate, is the function continuous, which rule applies, and is the answer an area or a signed integral. These drills train those decisions.</p>
+
+<div class="item">
+<p class="q"><b>D1. Spot the error.</b> A student writes (uv)′ = u′v′ and differentiates x²sin x as 2x cos x. What is missing?</p>
+<div class="sol">
+<p>The product rule has two terms: u′v + uv′ = 2x sinx + x² cosx. The written answer drops the second product and pairs the wrong factors.</p>
+<div class="tip"><b>Why it works:</b> a change in u and a change in v both contribute to the change in the product. <b>Where you use it:</b> every product — say both terms aloud before writing.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D2. Method choice.</b> You meet lim(x→1) (x² − 1)/(x − 1). What is the first step, before any algebra?</p>
+<div class="sol">
+<p>Substitute x = 1. A 0/0 result means the limit is indeterminate and needs factorisation or rationalisation; a finite result means you are already done.</p>
+<div class="tip"><b>Why it works:</b> for continuous functions the limit equals the value. <b>Where you use it:</b> first line of every limit — it also identifies the form.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D3. What does it claim?</b> f′(c) = 0 — does that guarantee an extremum at c?</p>
+<div class="sol">
+<p>No. f(x) = x³ has f′(0) = 0, but the point is a horizontal inflexion, not a maximum or minimum. Stationary ≠ extremum; you must check the sign change of f′.</p>
+<div class="tip"><b>Why it works:</b> zero slope is necessary for a smooth extremum, not sufficient. <b>Where you use it:</b> extrema questions — justify with a sign change or the second derivative.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D4. Predict without computing.</b> Where is y = |x − 3| not differentiable, and what is the derivative either side?</p>
+<div class="sol">
+<p>At x = 3: the left derivative is −1 and the right is +1, so the corner has no tangent. Everywhere else the derivative is −1 or +1.</p>
+<div class="tip"><b>Why it works:</b> differentiability fails wherever two one-sided slopes disagree. <b>Where you use it:</b> any modulus function — locate the corner first.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D5. Counterexample hunt.</b> “Continuous implies differentiable.” Refute it with the smallest example you know.</p>
+<div class="sol">
+<p>f(x) = |x| at x = 0: continuous (the graph is unbroken) yet not differentiable (sharp corner). Continuity is strictly weaker.</p>
+<div class="tip"><b>Why it works:</b> continuity constrains the value, differentiability constrains the slope. <b>Where you use it:</b> continuity/differentiability discussion items.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D6. Why the sign?</b> What does f″(x) &gt; 0 say about the shape, and why does that identify a minimum?</p>
+<div class="sol">
+<p>f″ &gt; 0 means the slope is increasing, so the curve is concave upward — a bowl. At a point of zero slope, a bowl must be at its lowest point, hence a minimum.</p>
+<div class="tip"><b>Why it works:</b> concavity describes how the slope changes. <b>Where you use it:</b> the second-derivative test and “show the curve is concave up” items.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D7. Where to use it.</b> What does +C encode, and where does it disappear?</p>
+<div class="sol">
+<p>It encodes the whole family of antiderivatives, which differ by a vertical shift. It cancels in a definite integral because F(b) − F(a) subtracts it away.</p>
+<div class="tip"><b>Why it works:</b> a constant has zero derivative, so differentiation cannot see it. <b>Where you use it:</b> +C on every indefinite integral, never on a definite one.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D8. Necessity check.</b> Before applying the second-derivative test at a point, what must be true?</p>
+<div class="sol">
+<p>f′(c) must actually be zero. Applying f″ alone at a non-stationary point reports the concavity, not whether an extremum exists there.</p>
+<div class="tip"><b>Why it works:</b> the test classifies stationary points only. <b>Where you use it:</b> show f′(c) = 0 first, then the sign of f″.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D9. Order of operations.</b> In d/dx sin(x²), why must the inner function be differentiated too?</p>
+<div class="sol">
+<p>Because a change in x reaches the sine through the inner square, so the outer rate must be multiplied by the inner rate: cos(x²)·2x. Omitting 2x is the commonest chain-rule error.</p>
+<div class="tip"><b>Why it works:</b> rates compose multiplicatively. <b>Where you use it:</b> every composite — differentiate outside-in, then multiply by the inside.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D10. Read the sign.</b> f′(x) &lt; 0 on (0, 3). What does that mean, and what does it forbid?</p>
+<div class="sol">
+<p>The function is strictly decreasing there, so it cannot have an interior minimum — only possibly at an endpoint. Any claimed interior minimum in (0, 3) contradicts the sign of f′.</p>
+<div class="tip"><b>Why it works:</b> the sign of the derivative is the direction of the graph. <b>Where you use it:</b> monotonicity intervals and “no interior extremum” arguments.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D11. Where it beats the formula.</b> Why is ∫x e^(x²) dx solved by substitution while ∫x cos x dx needs parts?</p>
+<div class="sol">
+<p>In the first, the factor x is (up to a constant) the derivative of the inner x², so the integrand is a chain-rule pattern. In the second, x and cos x belong to unrelated families, so no substitution exists — the product must be dismantled by parts.</p>
+<div class="tip"><b>Why it works:</b> substitution reverses the chain rule; parts reverses the product rule. <b>Where you use it:</b> look for a present inner derivative first.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D12. Where to stop.</b> On a closed interval [a, b], where can the absolute maximum occur?</p>
+<div class="sol">
+<p>Only at interior stationary points or at the endpoints a and b. Testing stationary points alone is the classic error — with y = x on [1, 2] the maximum is at an endpoint.</p>
+<div class="tip"><b>Why it works:</b> the extreme value theorem confines extrema to critical points and boundaries. <b>Where you use it:</b> “greatest/least value on the interval” questions.</div>
 </div>
 </div>
 

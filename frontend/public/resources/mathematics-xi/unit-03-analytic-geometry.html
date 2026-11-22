@@ -30,6 +30,8 @@
 <li>Exercise 3.1 — Straight line: perpendicular distance and angle bisectors</li>
 <li>Exercise 3.2 — Pair of straight lines</li>
 <li>Exercise 3.3 — Coordinates in space, direction cosines and ratios</li>
+<li>Exercise 3.4 — Topic-by-topic extension</li>
+<li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks</li>
 <li>Formula sheet and traps</li>
@@ -329,6 +331,233 @@ CA = √[(1−0)² + 0 + (0−1)²] = √2</p>
 <div class="sol">
 <p class="work">d = √[(−1−2)² + (3+1)² + (2−3)²] = √(9 + 16 + 1) = √26</p>
 <p class="ans">d = √26 ≈ 5.10 units</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.4 — Topic-by-topic extension</h2>
+
+<p class="lede">Three topics, one level harder: distance questions that first require rearranging a line, bisector questions that ask which bisector, and pair-of-lines questions where the condition (perpendicular, coincident) drives the algebra.</p>
+
+<h3>Topic 1 — Straight line: distance and bisectors</h3>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Find the distance between the parallel lines 3x − 4y + 7 = 0 and 3x − 4y − 5 = 0.</p>
+<div class="sol">
+<p>The coefficients already match, so only the constants differ:</p>
+<p class="work">d = |c₁ − c₂|/√(a² + b²) = |7 − (−5)|/√(9 + 16) = 12/5</p>
+<p class="ans">d = 12/5 = 2.4 units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find k if the distance from (3, 0) to the line 4x + 3y + k = 0 is 2.</p>
+<div class="sol">
+<p class="work">|4(3) + 3(0) + k|/√(16 + 9) = 2
+|12 + k| = 10  ⇒  12 + k = 10  or  12 + k = −10</p>
+<p>Both branches are needed because the modulus hides the sign.</p>
+<p class="ans">k = −2 or k = −22</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find the bisector of the angle between 3x + 4y − 5 = 0 and 5x − 12y + 3 = 0 that contains the origin.</p>
+<div class="sol">
+<p>Normalise both lines, then choose the sign that puts the origin on the same side of each.</p>
+<p class="work">L₁ = (3x + 4y − 5)/5,  L₂ = (5x − 12y + 3)/13
+At (0,0): L₁ = −1 (negative), L₂ = 3/13 (positive) — opposite signs,
+so the bisector containing the origin is L₁ = −L₂.
+13(3x + 4y − 5) = −5(5x − 12y + 3)
+39x + 52y − 65 = −25x + 60y − 15</p>
+<p class="ans">32x − 4y − 25 = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the bisector of the angle between 2x + y + 3 = 0 and x − 2y − 4 = 0 that contains the origin.</p>
+<div class="sol">
+<p class="work">At (0,0): (2·0 + 0 + 3)/√5 = 3/√5 &gt; 0
+(0 − 0 − 4)/√5 = −4/√5 &lt; 0
+Opposite signs ⇒ the origin's bisector is L₁ = −L₂:
+(2x + y + 3)/√5 = −(x − 2y − 4)/√5
+2x + y + 3 = −x + 2y + 4</p>
+<p class="ans">Bisector: 3x − y − 1 = 0</p>
+</div>
+</div>
+
+<h3>Topic 2 — Pair of straight lines</h3>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Find the separate equations of the pair 6x² + 5xy − 6y² = 0.</p>
+<div class="sol">
+<p>Treat it as a quadratic in x with y as constant, or factor directly:</p>
+<p class="work">6x² + 9xy − 4xy − 6y² = (3x − 2y)(2x + 3y) = 0</p>
+<p class="ans">3x − 2y = 0 and 2x + 3y = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Find the angle between the lines x² − 4xy + y² = 0.</p>
+<div class="sol">
+<p>Here a = 1, 2h = −4 ⇒ h = −2, b = 1. For a homogeneous pair the angle satisfies</p>
+<p class="work">tanθ = 2√(h² − ab)/|a + b| = 2√(4 − 1)/2 = √3</p>
+<p class="ans">θ = 60°</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> For what value of k does 2x² + kxy − 3y² = 0 represent perpendicular lines?</p>
+<div class="sol">
+<p>Perpendicular requires a + b = 0, i.e. 2 + (−3) = −1 ≠ 0. So no k can make this pair perpendicular — the coefficient of x² would have to be 3.</p>
+<p class="ans">No such k (need a + b = 0)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Find the bisectors of the pair x² − y² = 0.</p>
+<div class="sol">
+<p>The pair is (x − y)(x + y) = 0, i.e. the two lines y = ±x, which are already perpendicular. For perpendicular lines the bisectors are the coordinate axes.</p>
+<p class="work">(x² − y²)/(a − b) = xy/h with a = 1, b = −1, h = 0 is degenerate;
+by symmetry the bisectors are x = 0 and y = 0.</p>
+<p class="ans">x = 0 and y = 0</p>
+</div>
+</div>
+
+<h3>Topic 3 — Coordinates in space</h3>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Find the direction cosines of the line joining A(1, 2, 3) and B(3, 6, 9).</p>
+<div class="sol">
+<p class="work">AB = (2, 4, 6), |AB| = √(4 + 16 + 36) = √56 = 2√14
+l = 2/(2√14) = 1/√14, m = 2/√14, n = 3/√14</p>
+<p class="ans">(1, 2, 3)/√14</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Show that the points A(1, 2, 3), B(2, 4, 5) and C(3, 6, 7) are collinear.</p>
+<div class="sol">
+<p class="work">AB = (1, 2, 2),  BC = (1, 2, 2)
+Proportional with ratio 1 ⇒ parallel, with B common.</p>
+<p class="ans">Collinear</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Find the coordinates of the point dividing the join of P(1, −2, 3) and Q(4, 5, −6) in the ratio 2 : 1 internally.</p>
+<div class="sol">
+<p class="work">R = ((2·4 + 1·1)/3, (2·5 + 1(−2))/3, (2(−6) + 1·3)/3)
+= (9/3, 8/3, −9/3)</p>
+<p class="ans">R = (3, 8/3, −3)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Find the angle between the lines with direction ratios (1, 1, 0) and (0, 1, 1).</p>
+<div class="sol">
+<p class="work">cosθ = (1·0 + 1·1 + 0·1)/(√2·√2) = 1/2</p>
+<p class="ans">θ = 60°</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Concept drills — why, what, where</h2>
+
+<p class="lede">Analytic geometry is the most sign-sensitive unit in the paper. These drills train the decisions — which sign, which bisector, which form — that decide the answer.</p>
+
+<div class="item">
+<p class="q"><b>D1. Spot the error.</b> A student writes the distance from (1, 2) to 3x + 4y + 5 = 0 as (3 + 8 + 5)/5 = 16/5. What is missing?</p>
+<div class="sol">
+<p>The absolute value — distance is a magnitude. Here the expression is positive so the number is right, but with the point on the other side of the line the same formula would return a negative “distance”.</p>
+<div class="tip"><b>Why it works:</b> the numerator is a signed quantity; |·| converts it to a length. <b>Where you use it:</b> every distance item — write the modulus before substituting.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D2. Method choice.</b> Two lines are given as x + y = 3 and 2x + 2y = 7. How do you see instantly that they are parallel, and what does that imply about a solution?</p>
+<div class="sol">
+<p>The coefficients are proportional (1/2 = 1/2) but the constants are not (3/2 ≠ 7/2), so the lines are parallel and distinct — no intersection, so no common solution.</p>
+<div class="tip"><b>Why it works:</b> proportional coefficients give the same normal direction. <b>Where you use it:</b> check the ratio pattern first; it saves solving anything.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D3. Why two answers?</b> Why does “the bisector” of two lines really mean two lines?</p>
+<div class="sol">
+<p>Two intersecting lines create four angles, paired into two equal-angle sets. Equating the normalised forms with + and − produces the bisector of each pair, and the two bisectors are perpendicular.</p>
+<div class="tip"><b>Why it works:</b> the ± sign corresponds to “same side” and “opposite side”. <b>Where you use it:</b> when a question asks for the bisector containing a given point, test the sign that point satisfies.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D4. What does it claim?</b> What does a + b = 0 assert about the pair ax² + 2hxy + by² = 0?</p>
+<div class="sol">
+<p>That the two lines are perpendicular. The sum of the coefficients of x² and y² vanishes exactly when the product of the slopes is −1.</p>
+<div class="tip"><b>Why it works:</b> with slopes m₁m₂ = a/b, perpendicularity is a/b = −1. <b>Where you use it:</b> “find k so the lines are perpendicular” — set a + b = 0, do not factor.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D5. Counterexample hunt.</b> Is a second-degree equation in x and y always a pair of straight lines?</p>
+<div class="sol">
+<p>No. x² + y² + 1 = 0 has no real points at all, and x² + y² = 0 is a single point. It represents a real pair of lines only when the discriminant condition h² ≥ ab holds together with the appropriate condition on the general form.</p>
+<div class="tip"><b>Why it works:</b> “degree two” is necessary but not sufficient. <b>Where you use it:</b> before quoting a pair-of-lines formula, verify the equation really factors.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D6. Why the normalisation?</b> Why can't you equate ax + by + c₁ and a′x + b′y + c₂ directly?</p>
+<div class="sol">
+<p>Because those expressions are not distances — they are scaled by different factors. Only after dividing by each √(a² + b²) do both sides mean the same thing, so only then does “equal” mean “equidistant”.</p>
+<div class="tip"><b>Why it works:</b> the ratio c/√(a² + b²) is the distance to the origin. <b>Where you use it:</b> every bisector question begins with normalising both lines.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D7. Where to use it.</b> You are asked for the area of the triangle formed by a line and the coordinate axes. Which quantities do you need?</p>
+<div class="sol">
+<p>The two intercepts: set y = 0 for the x-intercept and x = 0 for the y-intercept. Then area = ½|x-intercept| × |y-intercept| — no distance formula required.</p>
+<div class="tip"><b>Why it works:</b> the axes are perpendicular, so the intercepts are the legs. <b>Where you use it:</b> any “area of the triangle with the axes” item.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D8. Read the numbers.</b> A line has direction cosines (0, 1/2, √3/2). Describe its direction without drawing.</p>
+<div class="sol">
+<p>l = 0 means it is perpendicular to the x-axis, so the line lies in a plane parallel to the yz-plane. The remaining two cosines show 60° with the y-axis and 30° with the z-axis.</p>
+<div class="tip"><b>Why it works:</b> each cosine is the projection of the unit direction on an axis. <b>Where you use it:</b> quick interpretation questions worth 2 marks.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D9. Necessity check.</b> Why must l² + m² + n² = 1 hold, and what does it let you compute?</p>
+<div class="sol">
+<p>The direction cosines are the components of a unit vector along the line, so their squares sum to 1 by Pythagoras. It lets you find the third cosine once two are known — a standard one-line question.</p>
+<div class="tip"><b>Why it works:</b> direction cosines are a unit vector in disguise. <b>Where you use it:</b> “a line makes 45° with two axes, find the third angle”.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D10. Predict the geometry.</b> In a pair ax² + 2hxy + by² = 0 with h = 0 and a = b, what figure do you get?</p>
+<div class="sol">
+<p>a(x² + y²) = 0 forces x = 0 and y = 0 — the two coordinate axes. With h = 0 the pair is always the axes when a = b, and reduces to a single line when a ≠ b.</p>
+<div class="tip"><b>Why it works:</b> the cross term is what tilts the lines. <b>Where you use it:</b> sanity-check a factorisation by looking at h.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D11. Where the sign bites.</b> Why does the section formula require the ratio to be written as m : n in a fixed order?</p>
+<div class="sol">
+<p>Because the weights are attached to the <i>opposite</i> endpoint: mx₂ + nx₁. Swapping m and n silently swaps the point with its complement on the line, giving the external-style location instead of the intended one.</p>
+<div class="tip"><b>Why it works:</b> the segment is divided in a stated direction, from the first point to the second. <b>Where you use it:</b> internal/external division questions — state the order before substituting.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D12. Where to stop.</b> After finding a candidate value of k that makes two lines perpendicular, what must you still check?</p>
+<div class="sol">
+<p>That both lines are real and distinct with that k — the pair must factor into two real lines. Otherwise the “perpendicular” answer describes something that does not exist geometrically.</p>
+<div class="tip"><b>Why it works:</b> the algebra can hold while the geometry degenerates. <b>Where you use it:</b> any constructed-constant question — one verification line protects the final mark.</div>
 </div>
 </div>
 

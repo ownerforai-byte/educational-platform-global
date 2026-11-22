@@ -34,6 +34,8 @@
 <li>Exercise 7.4 — Simpson's one-third rule</li>
 <li>Exercise 7.5 — Statics: resultant and resolution of forces</li>
 <li>Exercise 7.6 — Dynamics: motion under uniform acceleration</li>
+<li>Exercise 7.7 — Topic-by-topic extension</li>
+<li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks</li>
 <li>Formula sheet and traps</li>
@@ -383,6 +385,249 @@ s = ½at² = ½(4.9)(4) = 9.8 m</p>
 <p class="work">s₃ = 0 + (2/2)(2·3 − 1) = 1(5) = 5 m</p>
 <p>Check by totals: s(3 s) = 9 m, s(2 s) = 4 m, difference 5 m ✓</p>
 <p class="ans">5 m</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.7 — Topic-by-topic extension</h2>
+
+<p class="lede">Six topics, one level harder: a bracket to be found before bisection can start, an iteration whose table must be built carefully, integration rules on a table of ordinates, and mechanics questions where the direction convention decides the sign.</p>
+
+<h3>Topic 1 — Bisection method</h3>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Show that x³ − x − 1 = 0 has a root in [1, 2] and perform two bisection steps.</p>
+<div class="sol">
+<p class="work">f(1) = −1 &lt; 0, f(2) = 5 &gt; 0 ⇒ root exists
+x₁ = 1.5: f(1.5) = 0.875 &gt; 0 ⇒ root in [1, 1.5]
+x₂ = 1.25: f(1.25) = −0.297 &lt; 0 ⇒ root in [1.25, 1.5]</p>
+<p class="ans">Root lies in [1.25, 1.5] after two steps</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> For a root known to lie in [1, 2], how many bisection steps give an accuracy of 0.01?</p>
+<div class="sol">
+<p class="work">(b − a)/2ⁿ &lt; 0.01 ⇒ 1/2ⁿ &lt; 0.01 ⇒ 2ⁿ &gt; 100
+n = 7 gives 128 &gt; 100</p>
+<p class="ans">7 steps</p>
+</div>
+</div>
+
+<h3>Topic 2 — Newton-Raphson method</h3>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Use Newton-Raphson once on x³ − 2 = 0 starting from x₀ = 1.5.</p>
+<div class="sol">
+<p class="work">f(x) = x³ − 2, f′(x) = 3x²
+x₁ = 1.5 − (3.375 − 2)/(6.75) = 1.5 − 0.2037</p>
+<p class="ans">x₁ ≈ 1.2963 (true root 1.2599 — already close)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Why does Newton-Raphson fail if the starting guess is a stationary point?</p>
+<div class="sol">
+<p>The update divides by f′(x₀). At a stationary point that value is 0, so the next iterate is undefined — geometrically the tangent is horizontal and never meets the axis.</p>
+<p class="ans">Division by zero at a point where f′ = 0</p>
+</div>
+</div>
+
+<h3>Topic 3 — Trapezoidal rule</h3>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Use the trapezoidal rule with h = 0.5 to estimate ∫₀¹ 1/(1 + x²) dx.</p>
+<div class="sol">
+<p class="work">y₀ = 1, y₁ = 1/1.25 = 0.8, y₂ = 1/2 = 0.5
+I = (h/2)[(y₀ + y₂) + 2y₁] = 0.25[1.5 + 1.6]</p>
+<p class="ans">I ≈ 0.775 (exact value π/4 ≈ 0.785)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> If h is halved, roughly how does the trapezoidal error change?</p>
+<div class="sol">
+<p>The error is proportional to h², so halving h reduces the error to about a quarter. This is why refining the table is far more effective than adding a correction term.</p>
+<p class="ans">Error falls to about h²/4 — one quarter of its size</p>
+</div>
+</div>
+
+<h3>Topic 4 — Simpson's one-third rule</h3>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Use Simpson's rule with h = 0.5 on the same data as Q5 and compare.</p>
+<div class="sol">
+<p class="work">I = (h/3)[(y₀ + y₂) + 4y₁] = (0.5/3)[1.5 + 3.2]
+= (0.5/3)(4.7) = 0.7833</p>
+<p class="ans">I ≈ 0.7833, much closer to π/4 ≈ 0.7854 than the trapezoidal 0.775</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Why does Simpson's rule need an even number of intervals while the trapezoidal rule does not?</p>
+<div class="sol">
+<p>Simpson's rule fits a parabola through three consecutive ordinates, i.e. two strips at a time. If the number of strips is odd, one strip is left over and cannot be paired.</p>
+<p class="ans">Parabolic arcs consume ordinates two at a time</p>
+</div>
+</div>
+
+<h3>Topic 5 — Statics: resultant and resolution</h3>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Two forces of 6 N and 8 N act at right angles. Find the magnitude and direction of the resultant.</p>
+<div class="sol">
+<p class="work">R = √(36 + 64) = 10 N
+tanα = 8/6 ⇒ α = 53.13° from the 6 N force</p>
+<p class="ans">R = 10 N at 53.13° to the 6 N force</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> A force of 50 N acts at 30° above the horizontal. Resolve it.</p>
+<div class="sol">
+<p class="work">Fₓ = 50cos30° = 25√3 ≈ 43.3 N
+F_y = 50sin30° = 25 N</p>
+<p class="ans">43.3 N horizontal, 25 N vertical</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Three forces act at a point in equilibrium. What can you say about them, and how do you exploit it?</p>
+<div class="sol">
+<p>Their vector sum is zero, so they can be drawn head-to-tail as a closed triangle (the triangle of forces). Exploit it by applying the sine rule to that triangle instead of resolving components.</p>
+<p class="ans">Closed triangle; sine rule gives the magnitudes directly</p>
+</div>
+</div>
+
+<h3>Topic 6 — Dynamics: uniform acceleration</h3>
+
+<div class="item">
+<p class="q"><b>Q12.</b> A car starting from rest reaches 20 m/s in 8 s. Find its acceleration and the distance travelled.</p>
+<div class="sol">
+<p class="work">a = (v − u)/t = 20/8 = 2.5 m/s²
+s = ut + ½at² = 0 + ½(2.5)(64) = 80 m</p>
+<p class="ans">a = 2.5 m/s², s = 80 m</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> A body thrown up at 30 m/s. Find the maximum height (g = 10 m/s²) and the time to reach it.</p>
+<div class="sol">
+<p>At the top v = 0:</p>
+<p class="work">v² = u² − 2gs ⇒ 0 = 900 − 20s ⇒ s = 45 m
+v = u − gt ⇒ 0 = 30 − 10t ⇒ t = 3 s</p>
+<p class="ans">45 m high after 3 s</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> A body moves 10 m in the 3rd second and 16 m in the 5th second. Find u and a.</p>
+<div class="sol">
+<p>Distance in the nth second is sₙ = u + a(2n − 1)/2.</p>
+<p class="work">u + 5a/2 = 10,  u + 9a/2 = 16
+Subtracting: 2a = 6 ⇒ a = 3 m/s², then u = 2.5 m/s</p>
+<p class="ans">u = 2.5 m/s, a = 3 m/s²</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Concept drills — why, what, where</h2>
+
+<p class="lede">This unit rewards numerical judgement: knowing the bracket before iterating, knowing which rule is worth its arithmetic, and knowing which direction you declared positive.</p>
+
+<div class="item">
+<p class="q"><b>D1. Spot the error.</b> A student applies bisection to f(x) = x² + 1 over [0, 2] because f(0) and f(2) “look different”. Why is the method blind here?</p>
+<div class="sol">
+<p>Both values are positive (1 and 5), so there is no sign change — and in fact x² + 1 has no real root at all. Bisection needs f(a)f(b) &lt; 0, which is a sufficiency condition for a root, not a guarantee of one.</p>
+<div class="tip"><b>Why it works:</b> the method narrows a sign-changing bracket. <b>Where you use it:</b> always evaluate both endpoints first and state the sign change.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D2. Method choice.</b> You need a root to 6 decimal places. Bisection or Newton-Raphson?</p>
+<div class="sol">
+<p>Newton-Raphson, because its error roughly squares each step — a few iterations reach 6 places. Bisection would need about 2 extra steps per decimal digit. Use bisection only to get a safe starting bracket.</p>
+<div class="tip"><b>Why it works:</b> quadratic versus linear convergence. <b>Where you use it:</b> “how many iterations” and “which method is faster” questions.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D3. What does it claim?</b> f(a)f(b) &lt; 0 guarantees a root. Does f(a)f(b) &gt; 0 guarantee there is no root?</p>
+<div class="sol">
+<p>No. Two roots, or a double root where the curve only touches the axis, leave the signs equal. The test is one-directional — a useful trap in reasoning questions.</p>
+<div class="tip"><b>Why it works:</b> the intermediate value theorem needs a sign change to force a crossing. <b>Where you use it:</b> any “does a root exist in this interval” question.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D4. Predict without computing.</b> For ∫₀¹ x² dx the exact value is 1/3. Which rule — trapezoidal or Simpson — should give exactly 1/3?</p>
+<div class="sol">
+<p>Simpson's rule, because it is exact for quadratics (and the integrand is x²). The trapezoidal rule fits straight lines and therefore under-estimates a convex curve.</p>
+<div class="tip"><b>Why it works:</b> each rule is exact up to the degree of the polynomial it can fit. <b>Where you use it:</b> predicting the sign of the error before computing it.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D5. Counterexample hunt.</b> “If f is continuous and f(a) &lt; 0 &lt; f(b), the root is unique.” Refute it.</p>
+<div class="sol">
+<p>f(x) = x³ − x on [−2, 2]: continuous with f(−2) &lt; 0 &lt; f(2), but it has three roots (−1, 0, 1). Continuity plus a sign change guarantees at least one root, never exactly one.</p>
+<div class="tip"><b>Why it works:</b> the theorem promises existence only. <b>Where you use it:</b> when a question asks “show there is a root” versus “show there is exactly one” — the second needs a monotonicity argument too.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D6. Why the weights?</b> Why does the trapezoidal rule weight the end ordinates once and the interior ordinates twice?</p>
+<div class="sol">
+<p>Each interior ordinate is a shared side of two adjacent trapeziums, so it is used twice; the two end ordinates belong to only one trapezium each.</p>
+<div class="tip"><b>Why it works:</b> the formula is literally a sum of trapezium areas. <b>Where you use it:</b> rebuilding the formula from the picture when you forget the constants.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D7. Where to use it.</b> A curve is given only as a table of six ordinates. Can you use Simpson's rule?</p>
+<div class="sol">
+<p>Yes — six ordinates mean five intervals, and five is odd, so one strip cannot be paired. Handle the last strip by the trapezoidal rule and apply Simpson to the first four intervals, or re-sample to an even number of intervals.</p>
+<div class="tip"><b>Why it works:</b> pairing constraints, not data shape, limit the method. <b>Where you use it:</b> table-based integration questions with an odd strip count.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D8. Necessity check.</b> In a statics problem, what must be true before you can use ΣF = 0?</p>
+<div class="sol">
+<p>The body must be in equilibrium — at rest or moving with constant velocity. ΣF = 0 is Newton's second law with zero acceleration, not a general identity.</p>
+<div class="tip"><b>Why it works:</b> equilibrium is the condition that makes the net force vanish. <b>Where you use it:</b> the first line of any “find the unknown force” question.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D9. Order of operations.</b> In a projectile question, why list u, v, a, t, s before choosing an equation?</p>
+<div class="sol">
+<p>Each kinematic equation contains four of the five quantities. Listing the knowns identifies which one is missing and therefore which equation to use — it removes the guesswork that causes sign errors.</p>
+<div class="tip"><b>Why it works:</b> the equations are defined by which variable is absent. <b>Where you use it:</b> every uniform-acceleration problem, especially two-stage motion.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D10. Read the sign.</b> A displacement comes out negative. Is the answer wrong?</p>
+<div class="sol">
+<p>No — it means the body is on the opposite side of the chosen origin from the positive direction. The magnitude is the distance, and the sign reports direction.</p>
+<div class="tip"><b>Why it works:</b> the sign convention you declared defines what “negative” means. <b>Where you use it:</b> any kinematics answer — interpret before discarding.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D11. Where it beats the formula.</b> Why is the triangle of forces often faster than resolving components for three forces in equilibrium?</p>
+<div class="sol">
+<p>It converts the problem into a triangle whose angles are known from the geometry, so a single sine-rule application gives the unknown magnitudes. Resolution needs two equations and a trigonometric elimination.</p>
+<div class="tip"><b>Why it works:</b> the closed triangle already encodes both ΣFₓ = 0 and ΣF_y = 0. <b>Where you use it:</b> three-force equilibrium problems with given angles.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D12. Where to stop.</b> In an iterative method you obtain the same value to the required decimals twice in a row. What may you conclude, and what may you not?</p>
+<div class="sol">
+<p>You may conclude that the required accuracy is reached and stop. You may not conclude that the root is exact, nor that the method has converged to the <i>only</i> root — another root may exist elsewhere.</p>
+<div class="tip"><b>Why it works:</b> convergence is local. <b>Where you use it:</b> the final line of every numerical-method answer.</div>
 </div>
 </div>
 

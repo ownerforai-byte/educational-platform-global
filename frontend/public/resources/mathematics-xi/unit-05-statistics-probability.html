@@ -31,6 +31,8 @@
 <li>Exercise 5.1 — Range, variance, standard deviation, coefficient of variation and skewness</li>
 <li>Exercise 5.2 — Mathematical and empirical probability</li>
 <li>Exercise 5.3 — Addition, multiplication, independence and conditional cases</li>
+<li>Exercise 5.4 — Topic-by-topic extension</li>
+<li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks</li>
 <li>Formula sheet and traps</li>
@@ -365,6 +367,234 @@ P(at least one six) = 1 − 25/36 = 11/36</p>
 <p class="work">P(M∪P) = 0.6 + 0.5 − 0.3 = 0.8</p>
 <p>Also P(neither) = 0.2.</p>
 <p class="ans">0.8</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.4 — Topic-by-topic extension</h2>
+
+<p class="lede">Three topics, one level harder: dispersion questions where the mean is not obvious, probability questions that need a sample space built before counting, and combination cases where independence must be tested rather than assumed.</p>
+
+<h3>Topic 1 — Dispersion, CV and skewness</h3>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Find the variance and standard deviation of 4, 6, 8, 10, 12.</p>
+<div class="sol">
+<p class="work">x̄ = 40/5 = 8
+Σ(x − x̄)² = 16 + 4 + 0 + 4 + 16 = 40
+σ² = 40/5 = 8,  σ = 2√2</p>
+<p class="ans">Variance 8, SD = 2√2 ≈ 2.83</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> For the data 2, 4, 4, 4, 5, 5, 7, 9 find the mean, the variance and the coefficient of variation.</p>
+<div class="sol">
+<p class="work">x̄ = 40/8 = 5
+Σ(x − x̄)² = 9 + 1 + 1 + 1 + 0 + 0 + 4 + 16 = 32
+σ² = 4, σ = 2
+CV = 100σ/x̄ = 100(2)/5 = 40%</p>
+<p class="ans">x̄ = 5, σ² = 4, CV = 40%</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> The mean of 10 observations is 20 and their SD is 4. If every observation is increased by 5, find the new mean and SD.</p>
+<div class="sol">
+<p>The mean shifts by the same amount, but the spread does not change.</p>
+<p class="ans">New mean 25, SD still 4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Two series have x̄ = 50, σ = 5 and x̄ = 80, σ = 6. Which is more consistent?</p>
+<div class="sol">
+<p class="work">CV₁ = 100(5)/50 = 10%,  CV₂ = 100(6)/80 = 7.5%</p>
+<p class="ans">The second series (CV 7.5%) is more consistent, despite the larger SD</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> A distribution has mean 40, median 44 and SD 8. Find the coefficient of skewness using the empirical relation and interpret its sign.</p>
+<div class="sol">
+<p>Using the empirical relation mode ≈ 3 median − 2 mean = 132 − 80 = 52.</p>
+<p class="work">Skewness = (mean − mode)/SD = (40 − 52)/8 = −1.5</p>
+<p class="ans">Skew = −1.5: a long left tail (negatively skewed)</p>
+</div>
+</div>
+
+<h3>Topic 2 — Mathematical and empirical probability</h3>
+
+<div class="item">
+<p class="q"><b>Q6.</b> A card is drawn from a well-shuffled deck of 52. Find P(king or heart).</p>
+<div class="sol">
+<p class="work">P(king) = 4/52, P(heart) = 13/52, P(king of hearts) = 1/52
+P = 4/52 + 13/52 − 1/52 = 16/52</p>
+<p class="ans">P = 4/13</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Two dice are thrown. Find the probability that the sum is 8 or more.</p>
+<div class="sol">
+<p>Count the favourable pairs: sum 8 → 5 ways, 9 → 4, 10 → 3, 11 → 2, 12 → 1, total 15 out of 36.</p>
+<p class="ans">P = 15/36 = 5/12</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> A bag has 5 red and 3 blue balls. Two are drawn without replacement. Find P(both red).</p>
+<div class="sol">
+<p class="work">P = (5/8)(4/7) = 20/56</p>
+<p class="ans">P = 5/14</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Three coins are tossed. Find P(at least two heads).</p>
+<div class="sol">
+<p>There are 8 equally likely outcomes; exactly two heads occurs 3 times and three heads once.</p>
+<p class="work">P = (3 + 1)/8</p>
+<p class="ans">P = 1/2</p>
+</div>
+</div>
+
+<h3>Topic 3 — Addition, multiplication, independence and conditional cases</h3>
+
+<div class="item">
+<p class="q"><b>Q10.</b> P(A) = 0.5, P(B) = 0.4, P(A ∩ B) = 0.2. Are A and B independent? Find P(A ∪ B).</p>
+<div class="sol">
+<p class="work">P(A)P(B) = 0.20 = P(A ∩ B) ⇒ independent
+P(A ∪ B) = 0.5 + 0.4 − 0.2 = 0.7</p>
+<p class="ans">Independent; P(A ∪ B) = 0.7</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> In a school 60% pass maths, 50% pass physics and 30% pass both. A student passes maths. What is the probability of passing physics?</p>
+<div class="sol">
+<p class="work">P(Physics | Maths) = P(both)/P(Maths) = 0.30/0.60 = 0.5</p>
+<p class="ans">P = 0.5, equal to P(Physics) — so the two are independent</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Two independent events have probabilities 0.3 and 0.5. Find the probability that exactly one occurs.</p>
+<div class="sol">
+<p>Exactly one = (A and not B) or (B and not A):</p>
+<p class="work">= 0.3(0.5) + 0.5(0.7) = 0.15 + 0.35</p>
+<p class="ans">P = 0.5</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> A problem is given to two students whose chances of solving it are 1/3 and 1/4. Find the probability that the problem is solved.</p>
+<div class="sol">
+<p>Use the complement — the problem is unsolved only if both fail:</p>
+<p class="work">P(none) = (2/3)(3/4) = 1/2
+P(solved) = 1 − 1/2</p>
+<p class="ans">P = 1/2</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Concept drills — why, what, where</h2>
+
+<p class="lede">Statistics marks are lost to interpretation, not computation: choosing CV over SD, reading a sign, or deciding whether two events can co-occur. These drills train the interpretation.</p>
+
+<div class="item">
+<p class="q"><b>D1. Spot the error.</b> A student says “the SD is 6, so the variance is 6”. What is wrong and what does each measure?</p>
+<div class="sol">
+<p>Variance = σ² = 36, not 6. Variance is the mean squared deviation (squared units); SD is its square root and carries the original units, which is why SD is quoted in reports.</p>
+<div class="tip"><b>Why it works:</b> squaring is undone only by a square root. <b>Where you use it:</b> any item asking for variance when SD is given — one mark either way.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D2. Method choice.</b> You must compare the spread of heights (cm) and weights (kg). SD or CV?</p>
+<div class="sol">
+<p>CV, because it is unit-free. An SD of 4 cm and an SD of 3 kg cannot be ranked — different units. Expressed as percentages of their own means, they can.</p>
+<div class="tip"><b>Why it works:</b> dividing by the mean removes the unit. <b>Where you use it:</b> “which is more consistent/uniform” questions — the phrase is the signal for CV.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D3. What does it claim?</b> What exactly does “independent events” assert, and what does it not assert?</p>
+<div class="sol">
+<p>It asserts P(A ∩ B) = P(A)P(B): knowing one occurred tells you nothing about the other. It does not assert that the events are unrelated in the real world — only that the probabilities factor.</p>
+<div class="tip"><b>Why it works:</b> independence is a property of the probability model, not of causation. <b>Where you use it:</b> multiply probabilities for repeated independent trials — never for without-replacement draws.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D4. Predict without computing.</b> A coin is fair and tossed 10 times. What is the probability of an even number of heads? (No binomial expansion needed.)</p>
+<div class="sol">
+<p>By symmetry exactly half the outcomes have an even number of heads, so the probability is 1/2. The pairs of outcomes complementary in the last toss swap parity.</p>
+<div class="tip"><b>Why it works:</b> pairing each sequence with its last-coin flip gives a bijection between even and odd counts. <b>Where you use it:</b> short reasoning items where expanding 2¹⁰ outcomes is impossible.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D5. Counterexample hunt.</b> Two events have P(A) = 0.6 and P(B) = 0.6. Show they cannot be mutually exclusive.</p>
+<div class="sol">
+<p>Mutual exclusivity needs P(A ∪ B) = 1.2 ≤ 1, which is impossible. Hence A and B must overlap — a contradiction, so the assumption fails.</p>
+<div class="tip"><b>Why it works:</b> P(A ∪ B) ≤ 1 is a hard constraint of the axioms. <b>Where you use it:</b> any “is this probability assignment possible” question.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D6. Why the complement?</b> Why is “at least one” almost always computed as 1 − P(none)?</p>
+<div class="sol">
+<p>Because “at least one” is a union of many disjoint cases (exactly one, exactly two, …), while its complement is a single case that multiplies easily.</p>
+<div class="tip"><b>Why it works:</b> the complement of “at least one” is “none”, a single favourable outcome. <b>Where you use it:</b> “at least one head”, “at least one defective”, “the problem is solved”.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D7. Where to use it.</b> Which probability appears in the denominator of P(A|B) and why is that not arbitrary?</p>
+<div class="sol">
+<p>P(B) — the conditioning event. Once B is known, B becomes the new sample space, so probabilities are rescaled to lie in B.</p>
+<div class="tip"><b>Why it works:</b> conditional probability is ordinary probability on the reduced sample space. <b>Where you use it:</b> any question with the words “given that” — the phrase names the denominator.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D8. Read the sign.</b> A skewness of −1.5 — what should the mean, median and mode look like?</p>
+<div class="sol">
+<p>Negative skew puts the long tail on the left, which drags the mean below the median, and the mode sits highest: mode &gt; median &gt; mean. Here 52 &gt; 44 &gt; 40, consistent.</p>
+<div class="tip"><b>Why it works:</b> the mean is pulled by extreme values, the median is not. <b>Where you use it:</b> interpret skew items with the inequality chain rather than a picture.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D9. Necessity check.</b> Before adding probabilities of two events, what must you confirm?</p>
+<div class="sol">
+<p>Whether they can occur together. If they are mutually exclusive, add directly; otherwise subtract the overlap. Adding without that check double-counts the intersection.</p>
+<div class="tip"><b>Why it works:</b> the general addition law contains −P(A ∩ B). <b>Where you use it:</b> the first line of every “or” question.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D10. Order of events.</b> P(A|B) and P(B|A) are usually different. Give the everyday example that shows why.</p>
+<div class="sol">
+<p>P(rain | clouds) is high; P(clouds | rain) is about 1. The conditioning event changes which world you are standing in, so the two are not interchangeable.</p>
+<div class="tip"><b>Why it works:</b> each conditional re-bases the sample space. <b>Where you use it:</b> never swap the condition in an exam — check which event is given.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D11. Where it beats the formula.</b> Why is a table of counts often faster than the multiplication theorem?</p>
+<div class="sol">
+<p>A two-way table displays the joint, marginal and conditional counts at once, so any probability is a ratio of two cells. The formula needs each piece computed separately and can hide arithmetic slips.</p>
+<div class="tip"><b>Why it works:</b> the table is the sample space, organised. <b>Where you use it:</b> population/survey questions with two attributes.</div>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>D12. Where to stop.</b> After computing a probability, what single check catches most errors?</p>
+<div class="sol">
+<p>Verify 0 ≤ P ≤ 1 and that complementary answers sum to 1. A probability of 1.4 or a pair summing to 0.8 means a double count or a missing case.</p>
+<div class="tip"><b>Why it works:</b> the axioms are a hard boundary. <b>Where you use it:</b> the last line of every probability answer — free insurance.</div>
 </div>
 </div>
 
