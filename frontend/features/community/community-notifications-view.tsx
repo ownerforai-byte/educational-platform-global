@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { Loader2 } from "lucide-react";
+import { Heart, Loader2, MessageCircle, Repeat2, UserPlus, AtSign, Bell } from "lucide-react";
 import {
   listSocialNotifications,
   markSocialNotificationsRead,
@@ -10,7 +10,7 @@ import {
   type SocialNotificationItem,
 } from "@/lib/api/community-feed";
 import { CommunityBackLink } from "@/features/community/community-helpers";
-import { chipBtn, emptyStatePanel, surfaceCardFlat } from "@/features/community/community-ui";
+import { chipBtn, emptyStatePanel, relativeTime, surfaceCardFlat } from "@/features/community/community-ui";
 import { SOCIAL_NOTIFICATION_REFRESH_EVENT } from "@/lib/hooks/use-social-notification-unread";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +21,24 @@ const KIND_LABEL: Record<string, string> = {
   follow: "started following you",
   repost: "reposted your post",
   mention: "mentioned you",
+};
+
+const KIND_ICON: Record<string, typeof Heart> = {
+  like: Heart,
+  comment: MessageCircle,
+  reply: MessageCircle,
+  follow: UserPlus,
+  repost: Repeat2,
+  mention: AtSign,
+};
+
+const KIND_ICON_CLASS: Record<string, string> = {
+  like: "text-rose-500",
+  comment: "text-primary",
+  reply: "text-primary",
+  follow: "text-emerald-500",
+  repost: "text-sky-500",
+  mention: "text-violet-500",
 };
 
 export function CommunityNotificationsView() {
@@ -85,22 +103,57 @@ export function CommunityNotificationsView() {
       <ul className="space-y-2">
         {items.map((item) => {
           const href = item.postId ? sharePath(item.postId) : "/ai/community";
+          const actorName = item.actor?.fullName ?? "Someone";
+          const label = KIND_LABEL[item.kind] ?? "sent you a notification";
+          const Icon = KIND_ICON[item.kind] ?? Bell;
+          const iconClass = KIND_ICON_CLASS[item.kind] ?? "text-muted-foreground";
           return (
             <li key={item.id}>
               <Link
                 href={href}
                 className={cn(
                   surfaceCardFlat,
-                  "block rounded-xl px-4 py-3 text-sm transition-colors hover:bg-muted/40",
+                  "flex items-start gap-3 rounded-xl px-4 py-3 text-sm transition-colors hover:bg-muted/40",
                   !item.readAt && "border-primary/25 bg-primary/5",
                 )}
               >
-                <span className="font-medium text-foreground">
-                  {KIND_LABEL[item.kind] ?? item.kind}
+                {item.actor?.avatarUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={item.actor.avatarUrl}
+                    alt=""
+                    aria-hidden
+                    className="h-9 w-9 shrink-0 rounded-full border border-border/70 object-cover"
+                  />
+                ) : (
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border/70 bg-muted/60",
+                    )}
+                  >
+                    <Icon className={cn("h-4 w-4", iconClass)} />
+                  </span>
+                )}
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[13px] leading-snug text-foreground">
+                    <span className="font-semibold">{actorName}</span>{" "}
+                    <span className="text-muted-foreground">{label}</span>
+                    {item.postTitle ? (
+                      <span className="text-muted-foreground"> “{item.postTitle}”</span>
+                    ) : null}
+                  </span>
+                  <time
+                    dateTime={item.createdAt}
+                    title={new Date(item.createdAt).toLocaleString()}
+                    className="mt-0.5 block text-xs tabular-nums text-muted-foreground"
+                  >
+                    {relativeTime(item.createdAt)}
+                  </time>
                 </span>
-                <time dateTime={item.createdAt} className="mt-1 block text-xs text-muted-foreground">
-                  {new Date(item.createdAt).toLocaleString()}
-                </time>
+                {!item.readAt ? (
+                  <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                ) : null}
               </Link>
             </li>
           );

@@ -96,7 +96,7 @@ const POST_KINDS = [
 ] as const;
 
 const POST_COLUMNS =
-  "id, author_id, title, body, category, kind, visibility, created_at, updated_at, accepted_comment_id";
+  "id, author_id, title, body, category, kind, visibility, created_at, updated_at, accepted_comment_id, share_count";
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 /** Firebase Auth uid or legacy Supabase uuid stored in profiles.id / author_id. */
@@ -115,6 +115,7 @@ interface PostRow {
   created_at: string;
   updated_at: string;
   accepted_comment_id?: string | null;
+  share_count?: number | null;
 }
 
 interface ProfileRow {
@@ -124,6 +125,7 @@ interface ProfileRow {
   plan: string | null;
   role: string | null;
   avatar_path?: string | null;
+  location?: string | null;
 }
 
 interface AttachmentRow {
@@ -291,6 +293,7 @@ function toAuthor(
     plan: profile?.plan ?? null,
     role: profile?.role ?? null,
     avatarUrl: profileMediaPublicUrl(profile?.avatar_path ?? null),
+    location: (profile?.location ?? "").trim() || null,
     followingByYou,
   };
 }
@@ -310,7 +313,7 @@ async function profilesById(ids: string[]): Promise<Map<string, ProfileRow>> {
   if (unique.length === 0) return map;
   const { data, error } = await supabaseAdmin
     .from("profiles")
-    .select("id, full_name, username, plan, role, avatar_path")
+    .select("id, full_name, username, plan, role, avatar_path, location")
     .in("id", unique);
   if (error || !data) return map;
   for (const row of data as ProfileRow[]) map.set(row.id, row);
@@ -587,6 +590,7 @@ function presentPost(
     savedByYou: viewerId ? postSaves.some((save) => save.user_id === viewerId) : false,
     repostCount: postReposts.length,
     repostedByYou: viewerId ? postReposts.some((repost) => repost.user_id === viewerId) : false,
+    shareCount: Number(row.share_count) || 0,
     commentCount: commentRows.filter((comment) => comment.post_id === row.id).length,
     attachments: files.map((file) => ({
       id: file.id,
@@ -2153,6 +2157,53 @@ router.post(
     res.json({
       repostCount: rows.length,
       repostedByYou: rows.some((row) => row.user_id === user.id),
+    });
+  }),
+);
+
+router.post(
+  "/feed/:postId/share",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const postId = param(req.params.postId);
+    if (!isUuid(postId)) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    const found = await findPost(postId);
+    if ("missing" in found) {
+      unavailable(res);
+      return;
+    }
+    if ("error" in found) {
+      serverError(res, found.error, "community-feed");
+      return;
+    }
+    if (!found.row) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    await ensureProfile(user);
+    // Count-only share: the client copies the public link; the server just
+    // records that a share happened so the count is visible like likes.
+    const bumped = await supabaseAdmin
+      .from("community_feed_posts")
+      .update({ share_count: (Number(found.row.share_count) || 0) + 1 })
+      .eq("id", postId)
+      .select("share_count")
+      .single();
+    if (bumped.error) {
+      if (isMissingTable(bumped.error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, bumped.error, "community-feed");
+      return;
+    }
+    noStore(res);
+    res.json({
+      shareCount: Number((bumped.data as { share_count?: number } | null)?.share_count ?? 1),
     });
   }),
 );

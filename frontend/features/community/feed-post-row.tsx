@@ -1,20 +1,22 @@
 "use client";
 
-import { memo, useEffect, useRef } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   Bookmark,
   Bot,
+  Check,
   FileText,
   Heart,
   ImageIcon,
+  Link2,
   MessageCircle,
   Paperclip,
   Pencil,
   Share2,
   Trash2,
 } from "lucide-react";
-import { sharePath, type FeedComment, type FeedPost } from "@/lib/api/community-feed";
+import { sharePath, sharePost, type FeedComment, type FeedPost } from "@/lib/api/community-feed";
 import { profilePath } from "@/lib/api/profile";
 import { isCommunityBot, resolveFeedAuthor } from "@/lib/community-bot";
 import { isCreatorAuthor } from "@/lib/owner";
@@ -26,6 +28,7 @@ import { canDeleteCommunityFeed, looksLikeQuestion, plainExcerpt } from "@/featu
 import {
   actionBtn,
   categoryLabel,
+  postContextLine,
   postKindLabel,
   questionStatusClass,
   questionStatusLabel,
@@ -127,6 +130,8 @@ export const FeedPostRow = memo(function FeedPostRow({
   onAcceptAnswer,
 }: FeedPostRowProps) {
   const rowRef = useRef<HTMLElement | null>(null);
+  const [shareCopied, setShareCopied] = useState(false);
+  const [shareCount, setShareCount] = useState<number | null>(null);
   useEffect(() => {
     if (!commentsExpanded) return;
     const handlePointerDown = (event: PointerEvent) => {
@@ -252,6 +257,11 @@ export const FeedPostRow = memo(function FeedPostRow({
             ) : null}
           </div>
 
+          {/* Conversational context: "Questioning about Physics · Asking from …" */}
+          <p className="text-[11px] font-medium text-muted-foreground/90">
+            {postContextLine({ kind: item.kind, category: item.category, author: item.author })}
+          </p>
+
           {/* Title + compact plain-text excerpt */}
           <h2
             className={cn(
@@ -355,6 +365,50 @@ export const FeedPostRow = memo(function FeedPostRow({
               ) : null}
             </>
           ) : null}
+
+          {/* Share: copies the public link and bumps the share count */}
+          <button
+            type="button"
+            onClick={() => {
+              const url = `${window.location.origin}${sharePath(item.id)}`;
+              const done = () => {
+                setShareCopied(true);
+                window.setTimeout(() => setShareCopied(false), 2000);
+              };
+              if (navigator.clipboard?.writeText) {
+                navigator.clipboard.writeText(url).then(done, () => {});
+              } else {
+                const area = document.createElement("textarea");
+                area.value = url;
+                document.body.appendChild(area);
+                area.select();
+                try {
+                  document.execCommand("copy");
+                  done();
+                } finally {
+                  area.remove();
+                }
+              }
+              void sharePost(item.id)
+                .then((res) => setShareCount(res.shareCount))
+                .catch(() => undefined);
+            }}
+            aria-label="Copy share link"
+            className={cn(
+              actionBtn,
+              "min-h-11 min-w-11 justify-center px-2.5 text-[13px] tabular-nums",
+              shareCopied
+                ? "bg-emerald-500/10 font-semibold text-emerald-600 dark:text-emerald-400"
+                : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
+            )}
+          >
+            {shareCopied ? (
+              <Check className="h-4 w-4 shrink-0" aria-hidden />
+            ) : (
+              <Link2 className="h-4 w-4 shrink-0" aria-hidden />
+            )}
+            <span>{shareCopied ? "Copied" : (shareCount ?? item.shareCount ?? 0)}</span>
+          </button>
 
           <button
             type="button"

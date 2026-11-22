@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import {
   Bookmark,
+  Check,
   Ellipsis,
   Heart,
+  Link2,
   Loader2,
   MessageCircle,
   Share2,
@@ -18,7 +21,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { reportPost, sharePath } from "@/lib/api/community-feed";
+import { reportPost, sharePath, sharePost } from "@/lib/api/community-feed";
 import { isCommunityBot } from "@/lib/community-bot";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { PostAuthorHeader } from "@/features/community/post-author-header";
@@ -41,11 +44,14 @@ import { CommunityCelebrationBanner } from "@/features/community/community-actio
 import {
   actionBtn,
   categoryLabel,
+  postContextLine,
   surfaceCardFlat,
 } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
 
 export function CommunityPostDetailView() {
+  const [shareCopied, setShareCopied] = useState(false);
+  const [shareCount, setShareCount] = useState<number | null>(null);
   const {
     view,
     user,
@@ -201,6 +207,16 @@ export function CommunityPostDetailView() {
               onFollowChange={(following) => patchAuthorFollowing(post.author.id, following)}
             />
 
+            {/* Conversational context: "Questioning about Physics · Asking from … · Questioning to @…" */}
+            <p className="text-xs font-medium text-muted-foreground">
+              {postContextLine({
+                kind: post.kind,
+                category: post.category,
+                author: post.author,
+                quotedPost: post.quotedPost,
+              })}
+            </p>
+
             <MarkdownBody text={post.body} className="text-base leading-relaxed text-foreground" />
 
             {post.quotedPost ? <QuotedPostCard post={post.quotedPost} /> : null}
@@ -268,6 +284,46 @@ export function CommunityPostDetailView() {
                   <span>{post.repostCount ?? 0}</span>
                 </button>
               ) : null}
+
+              {/* Share: copies the public link and counts the share */}
+              <button
+                type="button"
+                onClick={() => {
+                  const url = `${window.location.origin}${sharePath(post.id)}`;
+                  const done = () => {
+                    setShareCopied(true);
+                    window.setTimeout(() => setShareCopied(false), 2000);
+                  };
+                  if (navigator.clipboard?.writeText) {
+                    navigator.clipboard.writeText(url).then(done, () => {});
+                  } else {
+                    const area = document.createElement("textarea");
+                    area.value = url;
+                    document.body.appendChild(area);
+                    area.select();
+                    try {
+                      document.execCommand("copy");
+                      done();
+                    } finally {
+                      area.remove();
+                    }
+                  }
+                  void sharePost(post.id)
+                    .then((res) => setShareCount(res.shareCount))
+                    .catch(() => undefined);
+                }}
+                aria-label="Copy share link"
+                className={cn(
+                  actionBtn,
+                  "min-h-11 px-3 text-[13px] tabular-nums",
+                  shareCopied
+                    ? "bg-emerald-500/10 font-semibold text-emerald-600 dark:text-emerald-400"
+                    : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
+                )}
+              >
+                {shareCopied ? <Check className="h-4 w-4" aria-hidden /> : <Link2 className="h-4 w-4" aria-hidden />}
+                <span>{shareCopied ? "Copied" : (shareCount ?? post.shareCount ?? 0)}</span>
+              </button>
 
               <span className="ml-auto inline-flex items-center gap-1.5 px-2 text-[13px] tabular-nums text-muted-foreground">
                 <MessageCircle className="h-4 w-4" aria-hidden />

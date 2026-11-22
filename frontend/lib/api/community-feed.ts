@@ -30,6 +30,8 @@ export interface FeedAuthor {
   plan: string | null;
   role: string | null;
   avatarUrl?: string | null;
+  /** Author's self-set context for "Asking from …" lines. */
+  location?: string | null;
   followingByYou?: boolean;
 }
 
@@ -96,6 +98,7 @@ export interface FeedPost {
   savedByYou: boolean;
   repostCount?: number;
   repostedByYou?: boolean;
+  shareCount?: number;
   attachments: FeedAttachment[];
   comments?: FeedComment[];
   assistantReply?: FeedAssistantReply;
@@ -245,6 +248,10 @@ export function listTrending(): Promise<{ posts: FeedPost[]; migrated: boolean }
   return call(`${ROOT}/feed/trending`);
 }
 
+export function sharePost(id: string): Promise<{ shareCount: number }> {
+  return call(`${ROOT}/feed/${id}/share`, { method: "POST" });
+}
+
 export function toggleRepost(id: string): Promise<{ repostCount: number; repostedByYou: boolean }> {
   return call(`${ROOT}/feed/${id}/repost`, { method: "POST" });
 }
@@ -266,8 +273,10 @@ export function toggleBlockUser(userId: string): Promise<{ blocked: boolean }> {
 export interface SocialNotificationItem {
   id: string;
   actorId: string | null;
+  actor: { id: string; fullName: string; username: string | null; avatarUrl: string | null } | null;
   kind: string;
   postId: string | null;
+  postTitle: string | null;
   commentId: string | null;
   readAt: string | null;
   createdAt: string;

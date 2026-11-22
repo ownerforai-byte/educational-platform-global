@@ -44,6 +44,8 @@ interface CommentRowProps {
   postAuthorId?: string;
   acceptedCommentId?: string | null;
   onAcceptAnswer?: (commentId: string) => void;
+  /** Rendered as a threaded reply — lighter card, hugs the parent comment. */
+  nested?: boolean;
 }
 
 const CommentRow = memo(function CommentRow({
@@ -58,6 +60,7 @@ const CommentRow = memo(function CommentRow({
   postAuthorId,
   acceptedCommentId,
   onAcceptAnswer,
+  nested = false,
 }: CommentRowProps) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(comment.body);
@@ -96,6 +99,8 @@ const CommentRow = memo(function CommentRow({
       className={cn(
         "rounded-xl border border-border/90 bg-background px-3 py-2.5 shadow-sm transition-colors duration-200",
         "hover:border-border",
+        // Threaded replies: lighter, tighter — reads as part of the parent.
+        nested && "border-border/60 bg-muted/30 px-2.5 py-2 shadow-none",
         followUpActive && "ring-1 ring-primary/25",
         botComment && "border-primary/30 bg-primary/[0.03]",
         isAccepted &&
@@ -332,9 +337,17 @@ export function CommentList({
           postAuthorId={postAuthorId}
           acceptedCommentId={acceptedCommentId}
           onAcceptAnswer={onAcceptAnswer}
+          nested={depth > 0}
         />
         {nested.length > 0 ? (
-          <ul className={cn("ml-5 border-l border-border/80 pl-3", depth > 2 && "ml-3")}>
+          // Replies hug the parent like Twitter/Reddit: a tight indent with a
+          // thread spine instead of a far-below boxed stack.
+          <ul
+            className={cn(
+              "mt-1.5 space-y-1.5 border-l-2 border-border/70 pl-2.5",
+              depth > 2 && "ml-2",
+            )}
+          >
             {nested.map((child) => branch(child, depth + 1))}
           </ul>
         ) : null}

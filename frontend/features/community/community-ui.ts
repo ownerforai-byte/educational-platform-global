@@ -89,6 +89,37 @@ export function postKindLabel(id: string | undefined): string {
   return COMMUNITY_POST_KINDS.find((item) => item.id === id)?.label ?? id;
 }
 
+/**
+ * Conversational context line for a post, like other platforms show under the
+ * author row: "Questioning about Physics · Asking from Kathmandu · Questioning
+ * to @name". Empty segments are skipped.
+ */
+export function postContextLine(post: {
+  kind?: string;
+  category: string;
+  author?: { location?: string | null } | null;
+  quotedPost?: { author?: { fullName?: string; username?: string | null } | null } | null;
+  quotedAuthorName?: string | null;
+}): string {
+  const segments: string[] = [];
+  const subject = categoryLabel(post.category);
+  const kind = post.kind ?? "discussion";
+  if (kind === "question") segments.push(`Questioning about ${subject}`);
+  else if (kind === "resource") segments.push(`Sharing ${subject} resources`);
+  else if (kind === "study_note") segments.push(`Sharing a ${subject} study note`);
+  else if (kind === "announcement") segments.push(`Announcement · ${subject}`);
+  else segments.push(`Discussing ${subject}`);
+
+  const from = (post.author?.location ?? "").trim();
+  if (from) segments.push(`Asking from ${from}`);
+
+  const quotedName =
+    post.quotedAuthorName ?? post.quotedPost?.author?.fullName ?? null;
+  if (quotedName) segments.push(`Questioning to @${quotedName}`);
+
+  return segments.join(" · ");
+}
+
 export function planLabel(plan: string | null | undefined): string {
   if (!plan) return "Member";
   return plan.charAt(0).toUpperCase() + plan.slice(1);
