@@ -383,6 +383,7 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
       return;
     }
 
+    await alignNonOwnerToMemberBaseline(identity.id, identity.email);
     const role = await loadProfileRole(identity.id);
     const user = await buildExtendedUser(
       identity.id,
@@ -444,6 +445,7 @@ router.post("/login", async (req: Request, res: Response) => {
       await pendingApproval(res, verified.uid);
       return;
     }
+    await alignNonOwnerToMemberBaseline(verified.uid, accountEmail);
     const user = await resolveSessionUser(verified.uid, accountEmail);
     const extended = await buildExtendedUser(user.id, user.email, user.role, verified.displayName);
     setSessionCookie(res, idToken);
@@ -475,6 +477,7 @@ router.post("/login", async (req: Request, res: Response) => {
     return;
   }
 
+  await alignNonOwnerToMemberBaseline(data.user.id, data.user.email ?? email);
   const user = await resolveSessionUser(data.user.id, data.user.email ?? email);
   const extended = await buildExtendedUser(user.id, user.email, user.role);
 

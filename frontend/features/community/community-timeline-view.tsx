@@ -26,7 +26,6 @@ export function CommunityTimelineView() {
     loadingMore,
     user,
     moderate,
-    copiedId,
     aiReplyBusyIds,
     isSaved,
     threadPropsForPost,
@@ -38,7 +37,6 @@ export function CommunityTimelineView() {
     onQuotePost,
     onRepost,
     onToggleSave,
-    copy,
     onDeletePost,
     onAssistantReply,
     handlePrefetchPost,
@@ -73,7 +71,6 @@ export function CommunityTimelineView() {
           error={error}
           viewerId={user?.id}
           canModerate={moderate}
-          copiedId={copiedId}
           aiReplyBusyIds={aiReplyBusyIds}
           isSaved={isSaved}
           threadPropsForPost={threadPropsForPost}
@@ -96,7 +93,6 @@ export function CommunityTimelineView() {
           onRepost={onRepost}
           onQuotePost={onQuotePost}
           onToggleSave={onToggleSave}
-          onCopyLink={(postId) => void copy(postId)}
           onDelete={(postId) => void onDeletePost(postId)}
           onAssistantReply={onAssistantReply}
           onPrefetchPost={handlePrefetchPost}

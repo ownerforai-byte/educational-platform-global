@@ -27,7 +27,7 @@ import {
   type FeedPost,
   type PersonResponse,
 } from "@/lib/api/community-feed";
-import { isCommunityBot } from "@/lib/community-bot";
+import { isCommunityBot, mentionsCommunityBot } from "@/lib/community-bot";
 import {
   feedListCacheKey,
   feedPersonCacheKey,
@@ -566,11 +566,17 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
   ]);
 
   const knownPost = useCallback(
-    (postId: string) =>
-      threadStates[postId]?.post ??
-      posts.find((item) => item.id === postId) ??
-      person?.posts.find((item) => item.id === postId) ??
-      (post?.id === postId ? post : null),
+    (postId: string) => {
+      const threaded = threadStates[postId]?.post;
+      const fromList =
+        posts.find((item) => item.id === postId) ??
+        person?.posts.find((item) => item.id === postId) ??
+        (post?.id === postId ? post : null);
+      if (threaded) {
+        return fromList ? { ...fromList, ...threaded, comments: threaded.comments ?? fromList.comments } : threaded;
+      }
+      return fromList ?? null;
+    },
     [person?.posts, post, posts, threadStates],
   );
 
@@ -600,7 +606,24 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     setThreadStates((current) => ({ ...current, [postId]: { post: current[postId]?.post ?? cached ?? null, loading: true, error: null } }));
     void getPost(postId)
       .then((detail) => {
-        if (!detail.post) throw new Error("Comments are unavailable for this post.");
+        if (!detail.post) {
+          if (cached) {
+            const fallback = { ...cached, comments: cached.comments ?? [] };
+            const error = detail.migrated
+              ? null
+              : "Comments need the latest server migration. Try again after the next deploy.";
+            setThreadStates((current) => ({
+              ...current,
+              [postId]: { post: fallback, loading: false, error },
+            }));
+            return;
+          }
+          throw new Error(
+            detail.migrated
+              ? "Comments are unavailable for this post."
+              : "Community comments are not available on this deployment yet.",
+          );
+        }
         setThreadStates((current) => ({ ...current, [postId]: { post: detail.post, loading: false, error: null } }));
         patchPostEverywhere(postId, (item) => mergePostSnapshot(item, detail.post!));
       })
@@ -833,7 +856,9 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
           };
         });
         invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
-        if (result.botReplyPending) void refreshPostForBotReply(postId, beforeBotCommentIds);
+        if (result.botReplyPending || mentionsCommunityBot(body)) {
+          void refreshPostForBotReply(postId, beforeBotCommentIds);
+        }
         showCelebration("comment", postId);
         return { ok: true };
       } catch (err) {

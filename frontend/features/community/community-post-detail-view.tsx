@@ -3,10 +3,8 @@
 import Link from "next/link";
 import {
   Bookmark,
-  Check,
   Ellipsis,
   Heart,
-  Link2,
   Loader2,
   MessageCircle,
   Share2,
@@ -59,8 +57,6 @@ export function CommunityPostDetailView() {
     loading,
     post,
     moderate,
-    copiedId,
-    copy,
     isSaved,
     aiReplyBusyIds,
     followUpBotCommentId,
@@ -271,31 +267,6 @@ export function CommunityPostDetailView() {
                   <span>{post.repostCount ?? 0}</span>
                 </button>
               ) : null}
-
-              <button
-                type="button"
-                onClick={() => void copy(post.id)}
-                aria-label={copiedId === post.id ? "Link copied" : "Copy post link"}
-                className={cn(
-                  actionBtn,
-                  "min-h-11 px-3 text-[13px]",
-                  copiedId === post.id
-                    ? "text-primary"
-                    : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
-                )}
-              >
-                {copiedId === post.id ? (
-                  <>
-                    <Check className="h-4 w-4" aria-hidden />
-                    Copied
-                  </>
-                ) : (
-                  <>
-                    <Link2 className="h-4 w-4" aria-hidden />
-                    Copy link
-                  </>
-                )}
-              </button>
 
               <span className="ml-auto inline-flex items-center gap-1.5 px-2 text-[13px] tabular-nums text-muted-foreground">
                 <MessageCircle className="h-4 w-4" aria-hidden />

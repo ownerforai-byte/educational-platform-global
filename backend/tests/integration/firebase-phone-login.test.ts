@@ -54,6 +54,7 @@ vi.mock("../../src/auth/firebase-admin-auth.js", () => ({
 }));
 
 vi.mock("../../src/services/auth-profile.js", () => ({
+  alignNonOwnerToMemberBaseline: vi.fn().mockResolvedValue(undefined),
   ensureAuthProfile: vi.fn().mockResolvedValue(undefined),
 }));
 

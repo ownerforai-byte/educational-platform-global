@@ -5,6 +5,7 @@ import {
   COMMUNITY_BOT_ID,
   COMMUNITY_BOT_USERNAME,
   isCommunityBotId,
+  mentionsCommunityBot,
 } from "@rn/shared/constants";
 
 export {
@@ -12,6 +13,7 @@ export {
   COMMUNITY_BOT_DISPLAY_NAME,
   COMMUNITY_BOT_ID,
   COMMUNITY_BOT_USERNAME,
+  mentionsCommunityBot,
 };
 
 /** True when `authorId` is the platform community bot. */

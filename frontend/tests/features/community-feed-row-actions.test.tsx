@@ -30,12 +30,10 @@ const post: FeedPost = {
 
 function renderRow(overrides: Partial<React.ComponentProps<typeof FeedPostRow>> = {}) {
   const onToggleSave = vi.fn();
-  const onCopyLink = vi.fn();
   const props: React.ComponentProps<typeof FeedPostRow> = {
     item: post,
     canModerate: false,
     saved: false,
-    copied: false,
     aiReplyBusy: false,
     commentsExpanded: false,
     threadComments: [],
@@ -52,12 +50,11 @@ function renderRow(overrides: Partial<React.ComponentProps<typeof FeedPostRow>> 
     onDeleteComment: vi.fn(),
     onLike: vi.fn(),
     onToggleSave,
-    onCopyLink,
     onDelete: vi.fn(),
     onAssistantReply: vi.fn(),
     ...overrides,
   };
-  return { ...render(<FeedPostRow {...props} />), onToggleSave, onCopyLink };
+  return { ...render(<FeedPostRow {...props} />), onToggleSave };
 }
 
 describe("FeedPostRow actions", () => {
@@ -66,12 +63,6 @@ describe("FeedPostRow actions", () => {
     expect(container.querySelector("article")?.className).toContain("rounded-md");
     expect(screen.getByRole("button", { name: "Save post" })).toHaveTextContent("7");
     expect(screen.getByRole("button", { name: "Show 2 comments" })).toBeInTheDocument();
-  });
-
-  it("copies the post link from the copy control", () => {
-    const { onCopyLink } = renderRow();
-    fireEvent.click(screen.getByRole("button", { name: "Copy post link" }));
-    expect(onCopyLink).toHaveBeenCalledWith(post.id);
   });
 
   it("reconciles the saved active style with the server value on the row", () => {
@@ -89,7 +80,6 @@ describe("FeedPostRow actions", () => {
             item={post}
             canModerate={false}
             saved={false}
-            copied={false}
             aiReplyBusy={false}
             commentsExpanded={open}
             threadComments={[]}
@@ -106,7 +96,6 @@ describe("FeedPostRow actions", () => {
             onDeleteComment={vi.fn()}
             onLike={vi.fn()}
             onToggleSave={vi.fn()}
-            onCopyLink={vi.fn()}
             onDelete={vi.fn()}
             onAssistantReply={vi.fn()}
           />

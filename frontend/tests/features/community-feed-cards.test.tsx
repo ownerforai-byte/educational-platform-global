@@ -45,7 +45,6 @@ describe("CommunityFeed cards", () => {
         loadingMore={false}
         error={null}
         canModerate={false}
-        copiedId={null}
         aiReplyBusyIds={new Set()}
         isSaved={() => false}
         onApplySearch={noop}
@@ -72,7 +71,6 @@ describe("CommunityFeed cards", () => {
           onSaveCommentEdit: async () => ({ ok: true }),
           onDeleteComment: noop,
         })}
-        onCopyLink={noop}
         onDelete={noop}
         onAssistantReply={noop}
         onPrefetchPost={noop}

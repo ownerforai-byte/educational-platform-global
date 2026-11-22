@@ -1472,8 +1472,42 @@ router.get(
     const viewer = await getUserFromRequest(req);
     const presented = await presentMany([found.row], viewer);
     if ("missing" in presented) {
+      const profiles = await profilesById([found.row.author_id]);
       noStore(res);
-      res.json({ post: null, migrated: false });
+      res.json({
+        post: {
+          id: found.row.id,
+          title: found.row.title,
+          body: stripQuoteMarker(found.row.body),
+          quotedPostId: quotePostIdFromBody(found.row.body) ?? null,
+          category: found.row.category,
+          kind:
+            found.row.kind && POST_KINDS.includes(found.row.kind as (typeof POST_KINDS)[number])
+              ? found.row.kind
+              : "discussion",
+          solved: Boolean(found.row.accepted_comment_id),
+          acceptedCommentId: found.row.accepted_comment_id ?? null,
+          visibility: "public" as const,
+          createdAt: found.row.created_at,
+          updatedAt: found.row.updated_at,
+          author: toAuthor(found.row.author_id, profiles.get(found.row.author_id), false),
+          likeCount: 0,
+          likedByYou: false,
+          saveCount: 0,
+          savedByYou: false,
+          repostCount: 0,
+          repostedByYou: false,
+          commentCount: 0,
+          attachments: [],
+          quotedPost: null,
+          assistantReply: {
+            posted: false,
+            canApprove: canPublishCommunityBotReply(found.row.author_id, viewer),
+          },
+          comments: [],
+        },
+        migrated: false,
+      });
       return;
     }
     if ("error" in presented) {
@@ -1489,7 +1523,10 @@ router.get(
     if (commentError) {
       if (isMissingTable(commentError)) {
         noStore(res);
-        res.json({ post: null, migrated: false });
+        res.json({
+          post: { ...presented.posts[0], comments: [] },
+          migrated: false,
+        });
         return;
       }
       serverError(res, commentError, "community-feed");
@@ -1509,12 +1546,7 @@ router.get(
         .from("community_feed_comments")
         .select("id, author_id")
         .in("id", parentIds);
-      if (parentError) {
-        if (isMissingTable(parentError)) {
-          noStore(res);
-          res.json({ post: null, migrated: false });
-          return;
-        }
+      if (parentError && !isMissingTable(parentError)) {
         serverError(res, parentError, "community-feed");
         return;
       }

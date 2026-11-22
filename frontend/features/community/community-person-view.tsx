@@ -16,14 +16,12 @@ export function CommunityPersonView() {
     personCursor,
     loadingMore,
     moderate,
-    copiedId,
     aiReplyBusyIds,
     threadPropsForPost,
     onLike,
     onRepost,
     onQuotePost,
     onToggleSave,
-    copy,
     onDeletePost,
     onAssistantReply,
     handlePrefetchPost,
@@ -66,13 +64,11 @@ export function CommunityPersonView() {
                   isLeading={idx === 0}
                   viewerId={user?.id}
                   canModerate={moderate}
-                  copied={copiedId === item.id}
                   aiReplyBusy={aiReplyBusyIds.has(item.id)}
                   onLike={onLike}
                   onRepost={onRepost}
                   onQuotePost={onQuotePost}
                   onToggleSave={onToggleSave}
-                  onCopyLink={(postId) => void copy(postId)}
                   onDelete={(postId) => void onDeletePost(postId)}
                   onAssistantReply={onAssistantReply}
                   onPrefetch={handlePrefetchPost}

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AlertCircle, Loader2, X } from "lucide-react";
 import type { FeedComment } from "@/lib/api/community-feed";
-import { isCommunityBot } from "@/lib/community-bot";
+import { isCommunityBot, mentionsCommunityBot } from "@/lib/community-bot";
 import { cn } from "@/lib/utils";
 import { useCommunityMentionSuggest } from "@/features/community/community-mention-suggest";
 
@@ -80,7 +80,8 @@ export function CommentComposer({
     if (!clean) return;
 
     const snapshot = body;
-    const followUp = answeringBot || (!replyTo && isBotPost);
+    const taggedVeer = mentionsCommunityBot(clean);
+    const followUp = answeringBot || (!replyTo && isBotPost) || taggedVeer;
     const parentId = replyTo && !replyTo.id.startsWith("pending-comment-") ? replyTo.id : undefined;
     setLocalError(null);
     setBody("");

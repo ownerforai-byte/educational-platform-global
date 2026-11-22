@@ -54,7 +54,6 @@ export interface CommunityFeedProps {
   error: string | null;
   viewerId?: string | null;
   canModerate: boolean;
-  copiedId: string | null;
   aiReplyBusyIds: ReadonlySet<string>;
   isSaved: (postId: string) => boolean;
   onApplySearch: (nextQuery: string) => void;
@@ -69,7 +68,6 @@ export interface CommunityFeedProps {
   onQuotePost?: (item: FeedPost) => void;
   onToggleSave: (postId: string) => void;
   threadPropsForPost: (postId: string) => FeedPostRowThreadProps;
-  onCopyLink: (postId: string) => void;
   onDelete: (postId: string) => void;
   onAssistantReply: (item: FeedPost) => void;
   onPrefetchPost: (postId: string) => void;
@@ -89,7 +87,6 @@ export function CommunityFeed({
   error,
   viewerId,
   canModerate,
-  copiedId,
   aiReplyBusyIds,
   isSaved,
   onApplySearch,
@@ -104,7 +101,6 @@ export function CommunityFeed({
   onQuotePost,
   onToggleSave,
   threadPropsForPost,
-  onCopyLink,
   onDelete,
   onAssistantReply,
   onPrefetchPost,
@@ -411,13 +407,11 @@ export function CommunityFeed({
               isLeading={index === 0}
               viewerId={viewerId}
               canModerate={canModerate}
-              copied={copiedId === item.id}
               aiReplyBusy={aiReplyBusyIds.has(item.id)}
               onLike={onLike}
               onRepost={onRepost}
               onQuotePost={onQuotePost}
               onToggleSave={onToggleSave}
-              onCopyLink={onCopyLink}
               onDelete={onDelete}
               onAssistantReply={onAssistantReply}
               onPrefetch={onPrefetchPost}

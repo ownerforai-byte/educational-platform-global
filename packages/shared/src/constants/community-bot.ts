@@ -23,3 +23,8 @@ export const COMMUNITY_BOT_AVATAR_PATH = "platform/community-bot.svg";
 export function isCommunityBotId(id: string): boolean {
   return id === COMMUNITY_BOT_ID;
 }
+
+/** True when text tags the community bot (`@community-bot`, `@veer`, `@veer-ai`). */
+export function mentionsCommunityBot(text: string): boolean {
+  return /(?:^|[^\w@])@(?:community-bot|veer(?:-ai)?)\b/i.test(text);
+}

@@ -5,11 +5,9 @@ import Link from "next/link";
 import {
   Bookmark,
   Bot,
-  Check,
   FileText,
   Heart,
   ImageIcon,
-  Link2,
   MessageCircle,
   Paperclip,
   Pencil,
@@ -88,14 +86,12 @@ export interface FeedPostRowProps extends FeedPostRowThreadProps {
   isLeading?: boolean;
   viewerId?: string | null;
   canModerate: boolean;
-  copied: boolean;
   saved?: boolean;
   aiReplyBusy: boolean;
   onLike: (item: FeedPost) => void;
   onRepost?: (item: FeedPost) => void;
   onQuotePost?: (item: FeedPost) => void;
   onToggleSave: (postId: string) => void;
-  onCopyLink: (postId: string) => void;
   onDelete: (postId: string) => void;
   onAssistantReply: (item: FeedPost) => void;
   onPrefetch?: (postId: string) => void;
@@ -107,13 +103,11 @@ export const FeedPostRow = memo(function FeedPostRow({
   viewerId,
   canModerate,
   saved,
-  copied,
   aiReplyBusy,
   onLike,
   onRepost,
   onQuotePost,
   onToggleSave,
-  onCopyLink,
   onDelete,
   onAssistantReply,
   onPrefetch,
@@ -368,19 +362,6 @@ export const FeedPostRow = memo(function FeedPostRow({
               onPublish={() => onAssistantReply(item)}
             />
           ) : null}
-
-          <button
-            type="button"
-            onClick={() => onCopyLink(item.id)}
-            aria-label={copied ? "Link copied" : "Copy post link"}
-            className={cn(
-              actionBtn,
-              "min-h-11 min-w-11 justify-center px-2 text-muted-foreground hover:bg-muted/70 hover:text-foreground",
-              copied && "text-primary",
-            )}
-          >
-            {copied ? <Check className="h-4 w-4" aria-hidden /> : <Link2 className="h-4 w-4" aria-hidden />}
-          </button>
 
           {canEditPost ? (
             <Link
