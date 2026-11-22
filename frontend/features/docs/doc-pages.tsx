@@ -37,8 +37,17 @@ import type { TopicDocData } from "./doc-view";
 
 function FigureBlock({ figure }: { figure: TopicFigure }) {
   // Owner request 2026-11-21: diagrams must be zoomable — click opens the
-  // fullscreen lightbox where the SVG re-renders at viewport scale.
-  return <ZoomableFigure Component={figure.Component} caption={figure.caption} alt={figure.alt} />;
+  // fullscreen lightbox where the figure re-renders at viewport scale.
+  // Owner request 2026-11-22: figures may also be rich raster illustrations
+  // (`src`) instead of an SVG component.
+  return (
+    <ZoomableFigure
+      Component={figure.Component}
+      src={figure.src}
+      caption={figure.caption}
+      alt={figure.alt}
+    />
+  );
 }
 
 /**

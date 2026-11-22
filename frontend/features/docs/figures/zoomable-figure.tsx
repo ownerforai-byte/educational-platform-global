@@ -5,17 +5,24 @@ import type { ComponentType } from "react";
 
 /**
  * ZoomableFigure — owner request 2026-11-21: diagrams must be zoomable.
- * Renders the SVG inline at reading size; clicking it opens a fullscreen
- * lightbox where the same component re-renders at viewport scale (and stays
- * crisp because SVG scales losslessly). Close by clicking the backdrop, the
- * × button, or pressing Escape.
+ * Renders the figure inline at reading size; clicking it opens a fullscreen
+ * lightbox where the same figure re-renders at viewport scale. Two kinds of
+ * figure live behind this shell:
+ *   • SVG components (`Component`) — crisp at any zoom, used for
+ *     classification-style diagrams.
+ *   • Rich raster illustrations (`src`) — detailed, realistic artwork for
+ *     biology and other visual subjects (owner request 2026-11-22).
+ * Close by clicking the backdrop, the × button, or pressing Escape.
  */
 export function ZoomableFigure({
   Component,
+  src,
   caption,
   alt,
 }: {
-  Component: ComponentType<{ className?: string }>;
+  Component?: ComponentType<{ className?: string }>;
+  /** Rich raster illustration (public/ asset path). Mutually exclusive with Component. */
+  src?: string;
   caption: string;
   alt: string;
 }) {
@@ -47,7 +54,19 @@ export function ZoomableFigure({
           title="Click to zoom in"
           className="relative block w-full cursor-zoom-in rounded-xl transition-colors hover:bg-primary/5 focus-visible:outline-2 focus-visible:outline-primary print:cursor-default"
         >
-          <Component className="mx-auto w-full max-w-[640px] text-foreground print:text-black" />
+          {Component ? (
+            <Component className="mx-auto w-full max-w-[640px] text-foreground print:text-black" />
+          ) : (
+            // Static generated artwork from /public — next/image adds nothing
+            // here (single fixed-size plate) and breaks the lightbox sizing.
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={src}
+              alt={alt}
+              loading="lazy"
+              className="mx-auto w-full max-w-[860px] rounded-lg bg-white"
+            />
+          )}
           <span className="pointer-events-none absolute right-2 top-2 hidden items-center gap-1 rounded-full bg-primary/90 px-2.5 py-1 text-[10px] font-bold text-primary-foreground shadow-sm group-hover:inline-flex print:hidden">
             ⤢ Zoom
           </span>
@@ -82,7 +101,16 @@ export function ZoomableFigure({
             className="max-h-[86vh] max-w-[94vw] overflow-auto rounded-2xl border border-border bg-card p-6 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <Component className="mx-auto h-auto w-full max-w-[1400px] min-w-[720px] text-foreground" />
+            {Component ? (
+              <Component className="mx-auto h-auto w-full max-w-[1400px] min-w-[720px] text-foreground" />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={src}
+                alt={alt}
+                className="mx-auto max-h-[70vh] w-auto max-w-full rounded-lg bg-white"
+              />
+            )}
             <p className="mt-4 border-t border-border/60 pt-3 text-center text-sm leading-relaxed text-muted-foreground">
               {caption}
             </p>

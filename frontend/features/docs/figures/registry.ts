@@ -1,3 +1,5 @@
+import { RICH_FIGURES } from "./rich-biology";
+
 /**
  * Topic figure registry — maps an exact syllabus topic slug to authored SVG
  * figures. Same discipline as the TopicVideo registry: explicit slugs only,
@@ -1693,8 +1695,10 @@ import { CathodeHalfReaction } from "./cathode-half-reaction";
 import { KolbeLegacyPanel } from "./kolbe-legacy-panel";
 
 export interface TopicFigure {
-  /** Rendered SVG component (theme-aware, uses currentColor). */
-  Component: ComponentType<{ className?: string }>;
+  /** Rendered SVG component (theme-aware, uses currentColor) — classification-style diagrams. */
+  Component?: ComponentType<{ className?: string }>;
+  /** Rich raster illustration (public/ asset path) — detailed realistic artwork. */
+  src?: string;
   /** Figure caption shown under the diagram. */
   caption: string;
   /** Alt text for accessibility. */
@@ -1709,6 +1713,7 @@ interface TopicFiguresEntry {
   title: string;
   figures: TopicFigure[];
 }
+export type { TopicFiguresEntry };
 
 const REGISTRY: Record<string, TopicFiguresEntry> = {
   // ── Physics ──────────────────────────────────────────────────────────────
@@ -11432,10 +11437,12 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
  * typo'd or renamed slug can never put the wrong diagram on a page.
  */
 export function getTopicFigures(topicSlug: string): TopicFiguresEntry | undefined {
-  return REGISTRY[topicSlug];
+  // Rich figures (detailed raster illustrations) replace the shallow SVG set
+  // for any topic they cover — owner request 2026-11-22, biology first.
+  return RICH_FIGURES[topicSlug] ?? REGISTRY[topicSlug];
 }
 
 /** All registered slugs (for tests and tooling). */
 export function registeredFigureSlugs(): string[] {
-  return Object.keys(REGISTRY);
+  return Array.from(new Set([...Object.keys(RICH_FIGURES), ...Object.keys(REGISTRY)]));
 }
