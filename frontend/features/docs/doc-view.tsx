@@ -1,45 +1,40 @@
 "use client";
 
 /**
- * TopicDocView — renders a topic's concept JSON as a clean, properly formatted
- * document viewer with KaTeX math rendering, syntax highlighting, and reader controls.
+ * TopicDocView — renders a topic's concept JSON as a paginated academic
+ * document viewer with KaTeX math rendering, syntax highlighting, and reader
+ * controls.
  *
- * Layout (Academic Document Reader):
- *   0. Document Control Bar (Print/PDF, font size, copy link)
- *   1. Concept map      — hand-drawn SVG mind map / concept tree
- *   2. Big picture      — high-yield summary & fundamental concepts
- *   3. The explanation  — parsed note flow, definitions, equations + inline figures
- *   4. Key terms & formulas — equations, symbols, memory shortcuts
- *   5. Watch out        — traps, common exam pitfalls & misconceptions
- *   6. Practice         — practice questions & worked problems
+ * Owner request (pagination): the document used to flow as one endless
+ * article, which made long topics feel random and tiring. Every content
+ * block is now expressed as bound paper pages via DocPager — a block that
+ * does not fit on the current page moves to the next one, and headings are
+ * never stranded at a page bottom. The block → page-item building lives in
+ * doc-pages.tsx; the measuring/packing/print machinery lives in doc-pager.tsx.
  *
- * Every prose/math surface goes through <MathMarkdown>, which compiles markdown
- * + `$…$` / `$$…$$` / `\(…\)` / `\[…\]` LaTeX (and mhchem `\ce{}`) to KaTeX.
+ * Persistent chrome (toolbar, metadata, outline) stays above the pages so
+ * the reader controls are always reachable; the outline buttons jump
+ * straight to the page holding that section.
+ *
+ * Every prose/math surface goes through <MathMarkdown>, which compiles
+ * markdown + `$…$` / `$$…$$` / `\(…\)` / `\[…\]` LaTeX (and mhchem `\ce{}`)
+ * to KaTeX.
  */
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
-  BookOpen,
-  Calculator,
   Check,
   Copy,
   FileText,
-  Lightbulb,
-  ListOrdered,
-  Network,
   Printer,
-  ShieldAlert,
-  Sigma,
-  Sparkles,
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
-import { MathMarkdown } from "@/components/content/math-markdown";
-import { parseNotes, readingMinutes, type DocSegment } from "./doc-parser";
+import { parseNotes, readingMinutes } from "./doc-parser";
 import { getTopicFigures, type TopicFigure } from "./figures/registry";
-import { ZoomableFigure } from "./figures/zoomable-figure";
 import { buildDocConceptMap, type RawMindmap } from "./doc-mindmap";
-import { DocMindMap } from "./doc-mindmap-view";
+import { buildDocPageItems } from "./doc-pages";
+import { DocPager, type DocPagerApi } from "./doc-pager";
 
 export interface TopicDocData {
   summary?: string;
@@ -93,96 +88,6 @@ function keywordAnchor(figures: TopicFigure[], notes: string[]): Map<number, Top
   return map;
 }
 
-function FigureBlock({ figure }: { figure: TopicFigure }) {
-  // Owner request 2026-11-21: diagrams must be zoomable — click opens the
-  // fullscreen lightbox where the SVG re-renders at viewport scale.
-  return <ZoomableFigure Component={figure.Component} caption={figure.caption} alt={figure.alt} />;
-}
-
-/**
- * Owner request: when several figures anchor to the same note block, lay them
- * out side by side (2-up on md+, 3-up on xl) instead of stacking — each stays
- * individually zoomable.
- */
-function FigureGroup({ figures, blockIndex }: { figures: TopicFigure[]; blockIndex: number }) {
-  if (figures.length === 0) return null;
-  if (figures.length === 1) return <FigureBlock figure={figures[0]} />;
-  return (
-    <div
-      className={`my-5 grid gap-4 ${figures.length >= 3 ? "md:grid-cols-2 xl:grid-cols-3" : "md:grid-cols-2"} print:grid-cols-2`}
-      data-figure-group={blockIndex}
-    >
-      {figures.map((f, fi) => (
-        <FigureBlock key={`fig-${blockIndex}-${fi}`} figure={f} />
-      ))}
-    </div>
-  );
-}
-
-function Segment({ segment, fontClass }: { segment: DocSegment; fontClass: string }) {
-  if (segment.kind === "definition") {
-    return (
-      <div className="rounded-xl border-l-4 border-primary/80 bg-primary/5 py-3 pl-4 pr-3.5 shadow-2xs print:border-black print:bg-gray-100">
-        <div className={fontClass}>
-          <span className="inline-block rounded-md bg-primary/15 px-2 py-0.5 text-xs font-bold text-primary mr-2 uppercase tracking-wide print:bg-gray-200 print:text-black">
-            {segment.term}
-          </span>
-          <MathMarkdown content={segment.body} className={`inline ${fontClass}`} />
-        </div>
-      </div>
-    );
-  }
-  if (segment.kind === "displayMath") {
-    return (
-      <div className="my-4 overflow-x-auto rounded-xl border border-sky-500/30 bg-sky-500/5 p-4 text-center shadow-2xs print:border-gray-300 print:bg-white">
-        <div className="text-[10px] font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400 mb-1 print:text-gray-600">
-          Equation
-        </div>
-        <MathMarkdown content={`$$${segment.tex}$$`} className="text-base sm:text-lg" />
-      </div>
-    );
-  }
-  if (segment.kind === "list") {
-    return (
-      <ul className={`my-2 space-y-1.5 pl-6 ${fontClass}`}>
-        {segment.items.map((item, i) => (
-          <li key={i} className="marker:text-primary list-disc print:marker:text-black">
-            <MathMarkdown content={item} className={`inline ${fontClass}`} />
-          </li>
-        ))}
-      </ul>
-    );
-  }
-  if (segment.kind === "table") {
-    // GFM rows re-joined and compiled through the same pipeline as every other
-    // surface — remark-gfm rebuilds the real <table> (with the scroll wrapper
-    // the pipeline adds), so comparison tables render as tables, never as
-    // shattered pipe paragraphs.
-    return <MathMarkdown content={segment.rows.join("\n")} className="my-4" />;
-  }
-  return <MathMarkdown content={segment.body} className={fontClass} />;
-}
-
-function SectionHeading({
-  id,
-  icon,
-  children,
-  tone,
-}: {
-  id: string;
-  icon: React.ReactNode;
-  children: React.ReactNode;
-  tone?: string;
-}) {
-  return (
-    <h3 className={`flex items-center gap-2 border-b border-border/60 pb-2 text-lg font-bold print:border-black ${tone ?? ""}`}>
-      <a href={`#${id}`} className="flex items-center gap-2 text-inherit no-underline">
-        {icon} {children}
-      </a>
-    </h3>
-  );
-}
-
 export function TopicDocView({
   classSlug,
   subjectSlug,
@@ -193,8 +98,9 @@ export function TopicDocView({
 }: TopicDocViewProps) {
   const [fontSize, setFontSize] = useState<"sm" | "base" | "lg">("base");
   const [copied, setCopied] = useState(false);
+  const pagerApiRef = useRef<DocPagerApi | null>(null);
 
-  const notes = data?.notes ?? [];
+  const notes = useMemo(() => data?.notes ?? [], [data]);
   const blocks = useMemo(() => parseNotes(notes), [notes]);
   const figuresEntry = useMemo(() => getTopicFigures(topicSlug), [topicSlug]);
   const figureMap = useMemo(
@@ -223,24 +129,10 @@ export function TopicDocView({
     [topicTitle, data, notes],
   );
 
-  const keyPoints = data?.keyPoints ?? [];
   const formulas = data?.formulas ?? [];
-  const tricks = data?.examShortTricks ?? [];
-  const traps = [
-    ...(data?.importantNotes ?? []),
-    ...(data?.specialNotes ?? []),
-    ...(data?.confusion ?? []),
-    ...(data?.importantStatements ?? []),
-  ];
-  const practice = [...(data?.practiceQuestions ?? []), ...(data?.practice ?? [])];
-  const overview = [
-    ...(data?.importantConcepts ?? []),
-    ...(data?.universalFacts ?? []),
-  ];
-  void unitId;
-
   const figureCount = figuresEntry?.figures.length ?? 0;
   const branchCount = conceptMap.branches.length;
+  void unitId;
 
   const fontClass =
     fontSize === "sm"
@@ -248,6 +140,22 @@ export function TopicDocView({
       : fontSize === "lg"
         ? "text-base leading-8"
         : "text-sm leading-7";
+
+  const items = useMemo(
+    () =>
+      buildDocPageItems({
+        classSlug,
+        subjectSlug,
+        topicTitle,
+        data,
+        blocks,
+        figureMap,
+        conceptMap,
+        fontClass,
+        figureCount,
+      }),
+    [classSlug, subjectSlug, topicTitle, data, blocks, figureMap, conceptMap, fontClass, figureCount],
+  );
 
   const handlePrint = () => {
     if (typeof window !== "undefined") {
@@ -263,9 +171,13 @@ export function TopicDocView({
     }
   };
 
+  const jumpToSection = (sectionId: string) => {
+    pagerApiRef.current?.goToSection(sectionId);
+  };
+
   return (
     <article
-      className="doc-view doc-viewer-paper mx-auto max-w-4xl space-y-8 rounded-2xl border border-border/80 bg-card p-6 shadow-xs sm:p-10 print:border-none print:bg-white print:p-0 print:shadow-none"
+      className="doc-view doc-viewer-paper mx-auto max-w-4xl space-y-6 rounded-2xl border border-border/80 bg-card p-6 shadow-xs sm:p-10 print:border-none print:bg-white print:p-0 print:shadow-none"
       aria-label={`${topicTitle} document`}
     >
       {/* ── Document Reader Toolbar ── */}
@@ -370,7 +282,7 @@ export function TopicDocView({
         </p>
       </header>
 
-      {/* ── Mini TOC / Outline ── */}
+      {/* ── Mini TOC / Outline — jumps straight to the page holding a section ── */}
       <nav
         aria-label="Document contents"
         className="rounded-xl border border-border/70 bg-muted/30 p-3.5 print:hidden"
@@ -381,214 +293,27 @@ export function TopicDocView({
         <ol className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5 text-xs sm:text-sm">
           {SECTIONS.map((s, i) => (
             <li key={s.id}>
-              <a
-                href={`#${s.id}`}
+              <button
+                type="button"
+                onClick={() => jumpToSection(s.id)}
                 className="text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
               >
                 <span className="font-bold text-primary">{i + 1}.</span> {s.label}
-              </a>
+              </button>
             </li>
           ))}
         </ol>
       </nav>
 
-      {/* ── 0. Concept Map ── */}
-      <section id="doc-map" className="scroll-mt-24 space-y-4 print:break-inside-avoid">
-        <SectionHeading id="doc-map" icon={<Network className="h-4 w-4 text-fuchsia-500" />}>
-          Concept map
-        </SectionHeading>
-        <div className="rounded-2xl border border-fuchsia-500/20 bg-fuchsia-500/[0.03] p-4 sm:p-6 print:border-gray-300 print:bg-white">
-          {branchCount > 0 ? (
-            <>
-              <DocMindMap map={conceptMap} />
-              <p className="mt-3 text-center text-[11px] text-muted-foreground print:hidden">
-                {conceptMap.source === "authored"
-                  ? "Authored concept tree for this topic — read it top-down before the explanation."
-                  : "Concept tree generated from this topic's ideas, key points and formulas."}
-              </p>
-            </>
-          ) : (
-            <p className="text-sm text-muted-foreground">
-              This topic has no concept-map data yet — the explanation below covers it in full.
-            </p>
-          )}
-        </div>
-      </section>
-
-      {/* ── 1. Big picture ── */}
-      <section id="doc-overview" className="scroll-mt-24 space-y-4 print:break-inside-avoid">
-        <SectionHeading id="doc-overview" icon={<Sparkles className="h-4 w-4 text-amber-500" />}>
-          1. Big picture
-        </SectionHeading>
-        {data?.summary && (
-          <div className="rounded-xl border-l-4 border-emerald-500 bg-emerald-500/10 dark:bg-emerald-500/5 p-4 sm:p-5 shadow-2xs print:border-black print:bg-gray-100">
-            <div className="mb-1 text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 print:text-black">
-              Executive Summary
-            </div>
-            <MathMarkdown content={data.summary} className={fontClass} />
-          </div>
-        )}
-        {overview.length > 0 ? (
-          <ol className="space-y-2">
-            {overview.map((c, i) => (
-              <li
-                key={`${c}-${i}`}
-                className="flex items-start gap-3 rounded-xl border border-border/60 bg-muted/20 p-3.5 shadow-2xs print:border-gray-300 print:bg-white"
-              >
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary print:bg-gray-200 print:text-black">
-                  {i + 1}
-                </span>
-                <MathMarkdown content={c} className={`inline ${fontClass}`} />
-              </li>
-            ))}
-          </ol>
-        ) : !data?.summary ? (
-          <p className="rounded-xl border border-dashed border-border/70 p-4 text-sm text-muted-foreground">
-            No overview authored for this topic yet — go straight to the explanation below.
-          </p>
-        ) : null}
-      </section>
-
-      {/* ── 2. The explanation ── */}
-      <section id="doc-explain" className="scroll-mt-24 space-y-5">
-        <SectionHeading id="doc-explain" icon={<BookOpen className="h-4 w-4 text-primary" />}>
-          2. The explanation
-        </SectionHeading>
-        {blocks.length === 0 ? (
-          <p className="rounded-xl border border-dashed border-border/70 p-5 text-sm text-muted-foreground">
-            No long-form explanation authored here yet. Use the key terms and practice below.
-          </p>
-        ) : (
-          blocks.map((block, bi) => (
-            <div key={`block-${block.index}`} className="space-y-3 print:break-inside-avoid">
-              {block.heading && (
-                <h4 className="mb-2 mt-4 flex items-baseline gap-2 text-base sm:text-lg font-bold text-foreground print:text-black">
-                  <span className="text-primary font-bold">{bi + 1}.</span>
-                  <MathMarkdown content={block.heading} className="inline text-base sm:text-lg font-bold" />
-                </h4>
-              )}
-              <div className="space-y-3">
-                {block.segments.map((seg, si) => (
-                  <Segment key={`seg-${block.index}-${si}`} segment={seg} fontClass={fontClass} />
-                ))}
-              </div>
-              <FigureGroup figures={figureMap.get(block.index) ?? []} blockIndex={block.index} />
-            </div>
-          ))
-        )}
-      </section>
-
-      {/* ── 3. Key terms & formulas ── */}
-      {(keyPoints.length > 0 || formulas.length > 0 || tricks.length > 0) && (
-        <section id="doc-remember" className="scroll-mt-24 space-y-4 print:break-inside-avoid">
-          <SectionHeading id="doc-remember" icon={<ListOrdered className="h-4 w-4 text-violet-500" />}>
-            3. Key terms &amp; formulas
-          </SectionHeading>
-          {keyPoints.length > 0 && (
-            <ol className="space-y-2">
-              {keyPoints.map((p, i) => (
-                <li
-                  key={`${p}-${i}`}
-                  className="flex items-start gap-3 rounded-xl border border-border/60 bg-card p-3.5 shadow-2xs print:border-gray-300 print:bg-white"
-                >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/10 text-xs font-bold text-violet-500 print:bg-gray-200 print:text-black">
-                    {i + 1}
-                  </span>
-                  <MathMarkdown content={p} className={fontClass} />
-                </li>
-              ))}
-            </ol>
-          )}
-          {formulas.length > 0 && (
-            <div className="space-y-3">
-              <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground print:text-gray-700">
-                <Sigma className="h-3.5 w-3.5 text-sky-500" /> Core Mathematical Formulas
-              </p>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {formulas.map((f, i) => (
-                  <div
-                    key={`${f}-${i}`}
-                    className="rounded-xl border border-sky-500/30 bg-sky-500/5 p-4 shadow-2xs print:border-gray-300 print:bg-white print:break-inside-avoid"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                        Formula {i + 1}
-                      </span>
-                    </div>
-                    <MathMarkdown content={f} className="mt-1.5 text-sm sm:text-base font-semibold" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          {tricks.length > 0 && (
-            <div className="space-y-2">
-              <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground print:text-gray-700">
-                <Calculator className="h-3.5 w-3.5 text-amber-500" /> Memory Shortcuts &amp; Exam Tricks
-              </p>
-              {tricks.map((t, i) => (
-                <div
-                  key={`${t}-${i}`}
-                  className="rounded-xl border-l-4 border-amber-500 bg-amber-500/10 dark:bg-amber-500/5 p-3.5 shadow-2xs print:border-black print:bg-gray-100"
-                >
-                  <MathMarkdown content={t} className={`inline ${fontClass}`} />
-                </div>
-              ))}
-            </div>
-          )}
-        </section>
-      )}
-
-      {/* ── 4. Watch out ── */}
-      {traps.length > 0 && (
-        <section id="doc-traps" className="scroll-mt-24 space-y-3 print:break-inside-avoid">
-          <SectionHeading id="doc-traps" icon={<ShieldAlert className="h-4 w-4 text-rose-500" />}>
-            4. Watch out (Common Traps &amp; Exam Pitfalls)
-          </SectionHeading>
-          <div className="space-y-2.5">
-            {traps.map((t, i) => (
-              <div
-                key={`${t}-${i}`}
-                className="flex items-start gap-3 rounded-xl border border-rose-500/30 border-l-4 border-l-rose-500 bg-rose-500/10 dark:bg-rose-500/5 p-3.5 shadow-2xs print:border-black print:bg-gray-100"
-              >
-                <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-rose-500 print:text-black" />
-                <MathMarkdown content={t} className={`inline ${fontClass}`} />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* ── 5. Practice ── */}
-      <section id="doc-practice" className="scroll-mt-24 space-y-3 print:break-inside-avoid">
-        <SectionHeading id="doc-practice" icon={<FileText className="h-4 w-4 text-emerald-500" />}>
-          5. Practice
-        </SectionHeading>
-        {practice.length > 0 ? (
-          <ol className="space-y-2.5">
-            {practice.map((q, i) => (
-              <li
-                key={`${q}-${i}`}
-                className="flex items-start gap-3 rounded-xl border border-border/70 bg-card p-4 shadow-2xs print:border-gray-300 print:bg-white"
-              >
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/10 text-xs font-bold text-emerald-600 dark:text-emerald-400 print:bg-gray-200 print:text-black">
-                  Q{i + 1}
-                </span>
-                <MathMarkdown content={q} className={fontClass} />
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <p className="rounded-xl border border-dashed border-border/70 p-4 text-sm text-muted-foreground">
-            No practice questions authored here yet — check the MCQ and Numericals tabs.
-          </p>
-        )}
-      </section>
-
-      {/* Document Footer */}
-      <footer className="border-t border-border/60 pt-4 text-center text-xs text-muted-foreground print:border-black print:text-black">
-        <p>Official Nepal Curriculum Syllabus Document · Typeset with KaTeX &amp; Markdown Engine</p>
-      </footer>
+      {/* ── Paginated document body ── */}
+      <DocPager
+        items={items}
+        measureKey={fontSize}
+        ariaLabel={`${topicTitle} document`}
+        onApiReady={(api) => {
+          pagerApiRef.current = api;
+        }}
+      />
     </article>
   );
 }
