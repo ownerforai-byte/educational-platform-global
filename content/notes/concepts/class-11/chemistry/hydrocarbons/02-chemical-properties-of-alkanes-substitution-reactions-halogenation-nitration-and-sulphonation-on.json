@@ -7,21 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Chemical properties of alkanes: substitution reactions (h… — Hydrocarbons, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: chemical properties of alkanes: substitution reactions, halogenation, nitration, sulphonation only · one worked example · one misconception each.",
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "**Halogenation.** one-line definition + one-line exam use.",
-    "**Nitration.** one-line definition + one-line exam use.",
-    "**Sulphonation only.** one-line definition + one-line exam use.",
-    "**Oxidation of ethane.** one-line definition + one-line exam use.",
-    "# Chemical properties of alkanes: substitution reactions (halogenation, nitration and sulphonation only), oxidation of ethane\n\n## 1. Introduction\nChemical picture of **Chemical properties of alkanes** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Chemical properties of alkanes: substitution reactions (halogenation, nitration and sulphonation only)\n### oxidation of ethane\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Chemical properties of alkanes — mechanism with curved arrows, step by step (authored SVG)\n- **D2** — Chemical properties of alkanes — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Chemical properties of alkanes — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Chemical properties of alkanes — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Quiet Family Speaks\n\nAlkanes have only strong, non-polar C–C and C–H σ bonds, so they ignore ionic reagents and burn or substitute instead. Their chemistry is **free-radical substitution** (halogenation), plus harsh-condition **nitration**, **sulphonation**, and **combustion/oxidation** — with ethane's controlled oxidation as the set example.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Halogenation (free-radical substitution)\n\n- **CH₄ + Cl₂ → CH₃Cl + HCl** (diffused sunlight/UV); continues: CH₂Cl₂ → CHCl₃ → CCl₄.\n- Mechanism: **initiation** (Cl₂ → 2Cl·), **propagation** (Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·), **termination** (radical combination).\n- Reactivity of halogens: **F₂ > Cl₂ > Br₂ > I₂** (fluorine explodes; iodine is reversible).\n- Higher alkanes give mixtures — H abstraction at any position.\n\n### 2.2 Nitration (vapour phase)\n\n- **CH₄ + HNO₃ → CH₃NO₂ + H₂O** at ~400 °C — the radical route (nitroethane from ethane similarly); ionic nitration fails on the inert C–H bonds.\n\n### 2.3 Sulphonation\n\n- Only longer alkanes react: **C₆H₁₄ + H₂SO₄ (fuming) → C₆H₁₃SO₃H + H₂O** — a sulphonic acid; methane/ethane are too unreactive.\n\n### 2.4 Oxidation\n\n- **Complete:** CH₄ + 2O₂ → CO₂ + 2H₂O (ΔH ≈ −890 kJ/mol) — the fuel reaction.\n- **Controlled (ethane):** with O₂ over a heated catalyst or limited conditions, ethane gives **CH₃CHO (acetaldehyde)** and can proceed to **CH₃COOH**; methane gives CH₃OH/HCHO under controlled oxidation.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Halogenation** | Free-radical substitution of H by X under UV/heat | CH₄ + Cl₂ → CH₃Cl |\n| **Nitration** | Vapour-phase substitution of H by –NO₂ | CH₃NO₂ from CH₄ |\n| **Sulphonation** | Substitution of H by –SO₃H (long alkanes, fuming H₂SO₄) | C₆H₁₃SO₃H |\n| **Controlled oxidation** | Partial oxidation to oxygenates rather than CO₂ | ethane → acetaldehyde |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why substitution, not addition\n\n- With no π bond to attack, ionic reagents find no foothold; radicals (which need only one electron) can abstract H from strong C–H bonds when heat or light supplies the activation energy.\n\n### 4.2 The product mixture problem\n\n- Once CH₃Cl forms, further chlorination continues — CH₂Cl₂, CHCl₃, CCl₄ — so methane chlorination is a **mixture**; excess methane suppresses over-chlorination. For higher alkanes, different H positions (1°/2°/3°) give positional mixtures.\n\n### 4.3 Oxidation as energy chemistry\n\n- Complete combustion is why alkanes are fuels; controlled oxidation is why they are also **feedstock** — the same C–H bonds, two destinies, set by oxygen supply and catalyst.",
+    "## 5. Comparison Tables\n\n**Halogen reactivity and selectivity**\n\n| Halogen | Reactivity | Notes |\n|---|---|---|\n| F₂ | explosive | uncontrolled |\n| Cl₂ | fast, UV | mixture of products |\n| Br₂ | slower, selective | prefers weaker C–H |\n| I₂ | reversible, slow | needs oxidising agent |\n\n**Reaction conditions compared**\n\n| Reaction | Reagent | Conditions | Product |\n|---|---|---|---|\n| chlorination | Cl₂ | UV/diffused sunlight | CH₃Cl…CCl₄ |\n| nitration | HNO₃ vapour | ~400 °C | CH₃NO₂ |\n| sulphonation | fuming H₂SO₄ | long-chain only | C₆H₁₃SO₃H |\n| combustion | O₂ excess | flame | CO₂ + H₂O |",
+    "## 6. Common Confusions\n\n**Substitution, not addition:** alkanes have nothing to add to; every halogenation replaces an H.",
+    "**Nitration needs vapour phase:** aqueous HNO₃ does nothing to methane — the ~400 °C vapour reaction is the exam answer.",
+    "**Iodination runs backwards:** HI reduces the alkyl iodide back, so I₂ halogenation needs HNO₃ or HIO₃ to remove HI.",
+    "## 7. Exam Application\n\n**NEB 2020 (verified PYQ): Explain the mechanism of the free-radical chlorination of methane in the presence of ultraviolet light, and account for the mixture of products formed. (3m)** — **Initiation:** UV light splits chlorine homolytically: **Cl₂ → 2Cl·**. **Propagation:** Cl· abstracts a hydrogen: **Cl· + CH₄ → CH₃· + HCl**; the methyl radical then attacks another chlorine molecule: **CH₃· + Cl₂ → CH₃Cl + Cl·** — regenerating Cl·, so one photon sustains many conversions. **Termination:** radicals combine — Cl· + Cl· → Cl₂, CH₃· + Cl· → CH₃Cl, CH₃· + CH₃· → C₂H₆. **The mixture:** the reaction does not stop at CH₃Cl — the product is itself an alkane derivative whose C–H bonds can be substituted further, so **CH₂Cl₂, CHCl₃ and CCl₄** form successively; excess methane and controlled Cl₂ limit over-chlorination.",
+    "**NEB-style (2m): How does ethane undergo controlled oxidation?** — Ethane heated with a **limited supply of O₂ over a heated catalyst (e.g. Cu at ~200 °C, or controlled air oxidation)** gives **acetaldehyde**: **CH₃CH₃ + O₂ → CH₃CHO + H₂O**; further mild oxidation gives **acetic acid (CH₃COOH)**. Unlike combustion, only part of the molecule is oxidised — the product is an oxygenate, not CO₂.",
+    "**NEB-style (2m): Arrange F₂, Cl₂, Br₂, I₂ in order of alkane halogenation reactivity with reason.** — **F₂ > Cl₂ > Br₂ > I₂.** Reactivity tracks how easily the halogen radical abstracts hydrogen and how strong the new H–X bond formed is: fluorine's F–H bond is enormously strong (violently exothermic, explosive), chlorine is fast, bromine slower but more selective, and iodination is **reversible** because HI reduces the product back — it needs an oxidant to remove HI."
   ],
   "confusion": [],
   "bounds": [
@@ -30,22 +26,24 @@
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  "practice": [
+    "Write the full mechanism of methane chlorination and explain the product mixture.",
+    "State the reactivity order of halogens toward alkanes with reasons.",
+    "Give equations for nitration of methane and controlled oxidation of ethane."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Bromine's selectivity (3° > 2° > 1° H) makes it the diagnostic halogen — chlorine is fast but careless, bromine is slow but choosy."
+  ],
+  "examples": [
+    "***One photon, many products*** — a single UV photon splits one Cl2, yet thousands of CH3Cl molecules form: each propagation step regenerates the radical that drives the next."
+  ],
   "practiceQuestions": [
-    "Q. Write the chlorination of methane in sunlight with mechanism type. (2 marks) — CH4 + Cl2 → CH3Cl + HCl; free-radical substitution.",
-    "Q. Why is iodination reversible? (1 mark) — HI formed reduces the iodide back; needs HNO3/HgO to remove HI."
+    "**NEB 2020 (verified PYQ): Explain the mechanism of the free-radical chlorination of methane in the presence of ultraviolet light, and account for the mixture of products formed. (3m)** — **Initiation:** ultraviolet light supplies the energy to split the Cl–Cl bond homolytically: **Cl₂ → 2Cl·**. **Propagation:** the chlorine radical abstracts a hydrogen atom from methane: **Cl· + CH₄ → CH₃· + HCl**; the methyl radical then attacks a chlorine molecule: **CH₃· + Cl₂ → CH₃Cl + Cl·** — the Cl· consumed in step one is regenerated in step two, so the two propagation steps cycle and one absorbed photon produces **many** molecules of product (a chain reaction). **Termination:** the chain ends when two radicals combine: **Cl· + Cl· → Cl₂**, **CH₃· + Cl· → CH₃Cl**, or **CH₃· + CH₃· → C₂H₆** (traces of ethane confirm the radical path). **Why a mixture:** chlorination does not stop at monochlorination — **CH₃Cl still has C–H bonds**, so Cl· continues substituting: **CH₃Cl → CH₂Cl₂ → CHCl₃ → CCl₄**. Unless methane is kept in large excess, all four chlorinated products form together; over-chlorination is suppressed by using excess methane and only limited Cl₂.",
+    "**NEB-style (2m): How does ethane undergo controlled oxidation?** — Under **controlled oxidation** (limited oxygen, heated catalyst such as Cu at about 200 °C, or controlled air oxidation at high pressure), ethane is only **partially oxidised** to an oxygenated product: **CH₃CH₃ + O₂ → CH₃CHO + H₂O** (acetaldehyde); under further mild conditions it proceeds to **acetic acid, CH₃COOH**. This contrasts with complete combustion, where the whole molecule burns to CO₂ and H₂O — the oxygen supply and catalyst decide whether ethane is a fuel or a feedstock.",
+    "**NEB-style (2m): Arrange F₂, Cl₂, Br₂ and I₂ in order of reactivity toward alkane halogenation, with reason.** — The order is **F₂ > Cl₂ > Br₂ > I₂**. Reactivity follows the ease of H-abstraction and the strength of the H–X bond formed: **fluorine** reacts explosively (the C–F and H–F bonds are extremely strong, the reaction uncontrolled); **chlorine** reacts fast under UV but gives product mixtures; **bromine** is slower but more **selective** (prefers the weakest C–H bond); **iodination** is **reversible** — the HI formed reduces the alkyl iodide back to the alkane — so it proceeds only when an oxidising agent (HNO₃ or HIO₃) destroys the HI."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- Cl₂ → 2Cl· (hν); Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·\n- CH₄ + HNO₃ → CH₃NO₂ + H₂O (~400 °C)\n- C₆H₁₄ + H₂SO₄ → C₆H₁₃SO₃H + H₂O\n- CH₄ + 2O₂ → CO₂ + 2H₂O; CH₃CH₃ + O₂ → CH₃CHO + H₂O"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -53,13 +51,9 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Chemical properties of alkanes: substitution reactions",
-    "• Halogenation",
-    "• Nitration",
-    "• Sulphonation only",
-    "• Oxidation of ethane"
+    "Alkanes: only radical substitution + harsh-condition reactions. Halogenation: CH4 + Cl2 -> CH3Cl + HCl (UV); chain continues to CH2Cl2, CHCl3, CCl4 (mixture); mechanism initiation Cl2 -> 2Cl., propagation Cl. + CH4 -> CH3. + HCl then CH3. + Cl2 -> CH3Cl + Cl., termination radical combination; reactivity F2 > Cl2 > Br2 > I2 (iodination reversible). Nitration: CH4 + HNO3 (vapour, ~400C) -> CH3NO2 + H2O. Sulphonation: only long alkanes, fuming H2SO4 -> C6H13SO3H. Oxidation: complete CH4 + 2O2 -> CO2 + 2H2O (~890 kJ); controlled oxidation of ethane -> CH3CHO -> CH3COOH."
   ],
-  "summary": "Chemical properties of alkanes: substitution reactions (h… (Hydrocarbons, Chemistry, class-11-notes) covers Chemical properties of alkanes: substitution reactions, halogenation, nitration. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Alkanes answer only to radicals and brute conditions. **Halogenation** is free-radical substitution under UV: initiation (**Cl₂ → 2Cl·**), propagation (**Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·**), termination (radical combination) — the NEB 2020 mechanism, whose product mixture arises because CH₃Cl keeps reacting on to CH₂Cl₂, CHCl₃ and CCl₄. Halogen reactivity runs **F₂ > Cl₂ > Br₂ > I₂** (iodination reversible). **Nitration** needs HNO₃ vapour at ~400 °C (CH₄ → CH₃NO₂); **sulphonation** needs fuming H₂SO₄ and a long chain (C₆H₁₃SO₃H). **Oxidation** splits into complete combustion (CH₄ + 2O₂ → CO₂ + 2H₂O, ≈890 kJ — the fuel reaction) and **controlled oxidation**, which stops at oxygenates: ethane → **CH₃CHO** → CH₃COOH. Same bonds, two destinies — set by oxygen supply and catalyst.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Chemical properties of alkanes: substitution reactions (h…\"?",
@@ -83,8 +77,70 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Conditions are the marks — halogenation needs sunlight/heat (free-radical chain); nitration needs 400–500 °C vapour phase (CH4 + HNO3 → CH3NO2); sulphonation needs fuming H2SO4, long-chain alkanes only.",
-    "Trick 2: Halogenation order of ease: F2 (explosive) > Cl2 > Br2 > I2 (reversible, needs oxidant) — explain via bond energies.",
-    "Trick 3: Free-radical mechanism three steps: initiation (Cl2 → 2Cl·), propagation (Cl· + CH4 → CH3· + HCl), termination (coupling) — name the steps for the 3-mark answer."
+    "Chain: initiation (hν), propagation (×2), termination. Product ladder CH3Cl→CCl4. F>Cl>Br>I. Nitration 400 °C vapour. Sulphonation long-chain only. Ethane controlled oxidation → CH3CHO."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Quiet Family Speaks\n\nAlkanes have only strong, non-polar C–C and C–H σ bonds, so they ignore ionic reagents and burn or substitute instead. Their chemistry is **free-radical substitution** (halogenation), plus harsh-condition **nitration**, **sulphonation**, and **combustion/oxidation** — with ethane's controlled oxidation as the set example.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Halogenation (free-radical substitution)\n\n- **CH₄ + Cl₂ → CH₃Cl + HCl** (diffused sunlight/UV); continues: CH₂Cl₂ → CHCl₃ → CCl₄.\n- Mechanism: **initiation** (Cl₂ → 2Cl·), **propagation** (Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·), **termination** (radical combination).\n- Reactivity of halogens: **F₂ > Cl₂ > Br₂ > I₂** (fluorine explodes; iodine is reversible).\n- Higher alkanes give mixtures — H abstraction at any position.\n\n### 2.2 Nitration (vapour phase)\n\n- **CH₄ + HNO₃ → CH₃NO₂ + H₂O** at ~400 °C — the radical route (nitroethane from ethane similarly); ionic nitration fails on the inert C–H bonds.\n\n### 2.3 Sulphonation\n\n- Only longer alkanes react: **C₆H₁₄ + H₂SO₄ (fuming) → C₆H₁₃SO₃H + H₂O** — a sulphonic acid; methane/ethane are too unreactive.\n\n### 2.4 Oxidation\n\n- **Complete:** CH₄ + 2O₂ → CO₂ + 2H₂O (ΔH ≈ −890 kJ/mol) — the fuel reaction.\n- **Controlled (ethane):** with O₂ over a heated catalyst or limited conditions, ethane gives **CH₃CHO (acetaldehyde)** and can proceed to **CH₃COOH**; methane gives CH₃OH/HCHO under controlled oxidation.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Halogenation** | Free-radical substitution of H by X under UV/heat | CH₄ + Cl₂ → CH₃Cl |\n| **Nitration** | Vapour-phase substitution of H by –NO₂ | CH₃NO₂ from CH₄ |\n| **Sulphonation** | Substitution of H by –SO₃H (long alkanes, fuming H₂SO₄) | C₆H₁₃SO₃H |\n| **Controlled oxidation** | Partial oxidation to oxygenates rather than CO₂ | ethane → acetaldehyde |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why substitution, not addition\n\n- With no π bond to attack, ionic reagents find no foothold; radicals (which need only one electron) can abstract H from strong C–H bonds when heat or light supplies the activation energy.\n\n### 4.2 The product mixture problem\n\n- Once CH₃Cl forms, further chlorination continues — CH₂Cl₂, CHCl₃, CCl₄ — so methane chlorination is a **mixture**; excess methane suppresses over-chlorination. For higher alkanes, different H positions (1°/2°/3°) give positional mixtures.\n\n### 4.3 Oxidation as energy chemistry\n\n- Complete combustion is why alkanes are fuels; controlled oxidation is why they are also **feedstock** — the same C–H bonds, two destinies, set by oxygen supply and catalyst.",
+      "## 5. Comparison Tables\n\n**Halogen reactivity and selectivity**\n\n| Halogen | Reactivity | Notes |\n|---|---|---|\n| F₂ | explosive | uncontrolled |\n| Cl₂ | fast, UV | mixture of products |\n| Br₂ | slower, selective | prefers weaker C–H |\n| I₂ | reversible, slow | needs oxidising agent |\n\n**Reaction conditions compared**\n\n| Reaction | Reagent | Conditions | Product |\n|---|---|---|---|\n| chlorination | Cl₂ | UV/diffused sunlight | CH₃Cl…CCl₄ |\n| nitration | HNO₃ vapour | ~400 °C | CH₃NO₂ |\n| sulphonation | fuming H₂SO₄ | long-chain only | C₆H₁₃SO₃H |\n| combustion | O₂ excess | flame | CO₂ + H₂O |",
+      "## 6. Common Confusions\n\n**Substitution, not addition:** alkanes have nothing to add to; every halogenation replaces an H.",
+      "**Nitration needs vapour phase:** aqueous HNO₃ does nothing to methane — the ~400 °C vapour reaction is the exam answer.",
+      "**Iodination runs backwards:** HI reduces the alkyl iodide back, so I₂ halogenation needs HNO₃ or HIO₃ to remove HI.",
+      "## 7. Exam Application\n\n**NEB 2020 (verified PYQ): Explain the mechanism of the free-radical chlorination of methane in the presence of ultraviolet light, and account for the mixture of products formed. (3m)** — **Initiation:** UV light splits chlorine homolytically: **Cl₂ → 2Cl·**. **Propagation:** Cl· abstracts a hydrogen: **Cl· + CH₄ → CH₃· + HCl**; the methyl radical then attacks another chlorine molecule: **CH₃· + Cl₂ → CH₃Cl + Cl·** — regenerating Cl·, so one photon sustains many conversions. **Termination:** radicals combine — Cl· + Cl· → Cl₂, CH₃· + Cl· → CH₃Cl, CH₃· + CH₃· → C₂H₆. **The mixture:** the reaction does not stop at CH₃Cl — the product is itself an alkane derivative whose C–H bonds can be substituted further, so **CH₂Cl₂, CHCl₃ and CCl₄** form successively; excess methane and controlled Cl₂ limit over-chlorination.",
+      "**NEB-style (2m): How does ethane undergo controlled oxidation?** — Ethane heated with a **limited supply of O₂ over a heated catalyst (e.g. Cu at ~200 °C, or controlled air oxidation)** gives **acetaldehyde**: **CH₃CH₃ + O₂ → CH₃CHO + H₂O**; further mild oxidation gives **acetic acid (CH₃COOH)**. Unlike combustion, only part of the molecule is oxidised — the product is an oxygenate, not CO₂.",
+      "**NEB-style (2m): Arrange F₂, Cl₂, Br₂, I₂ in order of alkane halogenation reactivity with reason.** — **F₂ > Cl₂ > Br₂ > I₂.** Reactivity tracks how easily the halogen radical abstracts hydrogen and how strong the new H–X bond formed is: fluorine's F–H bond is enormously strong (violently exothermic, explosive), chlorine is fast, bromine slower but more selective, and iodination is **reversible** because HI reduces the product back — it needs an oxidant to remove HI."
+    ],
+    "keyPoints": [
+      "Alkanes: only radical substitution + harsh-condition reactions. Halogenation: CH4 + Cl2 -> CH3Cl + HCl (UV); chain continues to CH2Cl2, CHCl3, CCl4 (mixture); mechanism initiation Cl2 -> 2Cl., propagation Cl. + CH4 -> CH3. + HCl then CH3. + Cl2 -> CH3Cl + Cl., termination radical combination; reactivity F2 > Cl2 > Br2 > I2 (iodination reversible). Nitration: CH4 + HNO3 (vapour, ~400C) -> CH3NO2 + H2O. Sulphonation: only long alkanes, fuming H2SO4 -> C6H13SO3H. Oxidation: complete CH4 + 2O2 -> CO2 + 2H2O (~890 kJ); controlled oxidation of ethane -> CH3CHO -> CH3COOH."
+    ],
+    "importantConcepts": [
+      "No π bond means no ionic foothold: every alkane reaction is radical substitution or oxidation — conditions (UV, 400 °C vapour, fuming acid) supply the energy the σ bonds demand."
+    ],
+    "examples": [
+      "***One photon, many products*** — a single UV photon splits one Cl2, yet thousands of CH3Cl molecules form: each propagation step regenerates the radical that drives the next."
+    ],
+    "universalFacts": [
+      "Bromine's selectivity (3° > 2° > 1° H) makes it the diagnostic halogen — chlorine is fast but careless, bromine is slow but choosy."
+    ],
+    "importantStatements": [
+      "\"Alkane halogenation is a free-radical chain substitution initiated by light; nitration and sulphonation require harsh vapour-phase or fuming-acid conditions.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2020 — mechanism of free-radical chlorination of methane with product mixture (assigned to this row)."
+    ],
+    "examShortTricks": [
+      "Chain: initiation (hν), propagation (×2), termination. Product ladder CH3Cl→CCl4. F>Cl>Br>I. Nitration 400 °C vapour. Sulphonation long-chain only. Ethane controlled oxidation → CH3CHO."
+    ],
+    "examNotes": [
+      "The NEB 2020 answer needs all three chain stages with equations AND the over-chlorination explanation (CH₃Cl continues reacting) — the mixture account carries a full mark."
+    ],
+    "formulas": [
+      "- Cl₂ → 2Cl· (hν); Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·\n- CH₄ + HNO₃ → CH₃NO₂ + H₂O (~400 °C)\n- C₆H₁₄ + H₂SO₄ → C₆H₁₃SO₃H + H₂O\n- CH₄ + 2O₂ → CO₂ + 2H₂O; CH₃CH₃ + O₂ → CH₃CHO + H₂O"
+    ],
+    "practice": [
+      "Write the full mechanism of methane chlorination and explain the product mixture.",
+      "State the reactivity order of halogens toward alkanes with reasons.",
+      "Give equations for nitration of methane and controlled oxidation of ethane."
+    ],
+    "practiceQuestions": [
+      "**NEB 2020 (verified PYQ): Explain the mechanism of the free-radical chlorination of methane in the presence of ultraviolet light, and account for the mixture of products formed. (3m)** — **Initiation:** ultraviolet light supplies the energy to split the Cl–Cl bond homolytically: **Cl₂ → 2Cl·**. **Propagation:** the chlorine radical abstracts a hydrogen atom from methane: **Cl· + CH₄ → CH₃· + HCl**; the methyl radical then attacks a chlorine molecule: **CH₃· + Cl₂ → CH₃Cl + Cl·** — the Cl· consumed in step one is regenerated in step two, so the two propagation steps cycle and one absorbed photon produces **many** molecules of product (a chain reaction). **Termination:** the chain ends when two radicals combine: **Cl· + Cl· → Cl₂**, **CH₃· + Cl· → CH₃Cl**, or **CH₃· + CH₃· → C₂H₆** (traces of ethane confirm the radical path). **Why a mixture:** chlorination does not stop at monochlorination — **CH₃Cl still has C–H bonds**, so Cl· continues substituting: **CH₃Cl → CH₂Cl₂ → CHCl₃ → CCl₄**. Unless methane is kept in large excess, all four chlorinated products form together; over-chlorination is suppressed by using excess methane and only limited Cl₂.",
+      "**NEB-style (2m): How does ethane undergo controlled oxidation?** — Under **controlled oxidation** (limited oxygen, heated catalyst such as Cu at about 200 °C, or controlled air oxidation at high pressure), ethane is only **partially oxidised** to an oxygenated product: **CH₃CH₃ + O₂ → CH₃CHO + H₂O** (acetaldehyde); under further mild conditions it proceeds to **acetic acid, CH₃COOH**. This contrasts with complete combustion, where the whole molecule burns to CO₂ and H₂O — the oxygen supply and catalyst decide whether ethane is a fuel or a feedstock.",
+      "**NEB-style (2m): Arrange F₂, Cl₂, Br₂ and I₂ in order of reactivity toward alkane halogenation, with reason.** — The order is **F₂ > Cl₂ > Br₂ > I₂**. Reactivity follows the ease of H-abstraction and the strength of the H–X bond formed: **fluorine** reacts explosively (the C–F and H–F bonds are extremely strong, the reaction uncontrolled); **chlorine** reacts fast under UV but gives product mixtures; **bromine** is slower but more **selective** (prefers the weakest C–H bond); **iodination** is **reversible** — the HI formed reduces the alkyl iodide back to the alkane — so it proceeds only when an oxidising agent (HNO₃ or HIO₃) destroys the HI."
+    ]
+  },
+  "importantConcepts": [
+    "No π bond means no ionic foothold: every alkane reaction is radical substitution or oxidation — conditions (UV, 400 °C vapour, fuming acid) supply the energy the σ bonds demand."
+  ],
+  "importantStatements": [
+    "\"Alkane halogenation is a free-radical chain substitution initiated by light; nitration and sulphonation require harsh vapour-phase or fuming-acid conditions.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2020 — mechanism of free-radical chlorination of methane with product mixture (assigned to this row)."
+  ],
+  "examNotes": [
+    "The NEB 2020 answer needs all three chain stages with equations AND the over-chlorination explanation (CH₃Cl continues reacting) — the mixture account carries a full mark."
   ]
 }

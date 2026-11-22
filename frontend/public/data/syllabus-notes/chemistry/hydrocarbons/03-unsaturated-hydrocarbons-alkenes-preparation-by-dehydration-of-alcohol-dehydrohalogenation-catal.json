@@ -7,32 +7,40 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Unsaturated hydrocarbons (Alkenes): preparation by dehydration of alcohol, dehydrohalogenation, catalytic hydrogenation of alkyne\n\n## 1. Introduction\nChemical picture of **Unsaturated hydrocarbons (Alkenes)** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Unsaturated hydrocarbons (Alkenes): preparation by dehydration of alcohol\n### dehydrohalogenation\n### catalytic hydrogenation of alkyne\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Unsaturated hydrocarbons (Alkenes) — curve or trend plot (authored SVG, plotted from note data)\n- **D2** — Unsaturated hydrocarbons (Alkenes) — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Unsaturated hydrocarbons (Alkenes) — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Unsaturated hydrocarbons (Alkenes) — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Making the π Bond\n\nAlkenes carry one C=C double bond (**CₙH₂ₙ**, sp², planar). Their preparations all create that π bond by **elimination**: water out of an alcohol (**dehydration**), HX out of a haloalkane (**dehydrohalogenation**), or H₂ off an alkyne (**catalytic hydrogenation** of the triple bond).",
+    "## 2. Fundamental Concepts\n\n### 2.1 Dehydration of alcohols\n\n- **C₂H₅OH → CH₂=CH₂ + H₂O** with **conc. H₂SO₄ at ~170 °C** (or Al₂O₃, ~350 °C).\n- Ethanol → ethene; propan-2-ol → propene. Acid-catalysed: protonate –OH, lose water, lose H⁺.\n- Competing substitution (ethoxyethane) at lower temperature (~140 °C) — temperature decides.\n\n### 2.2 Dehydrohalogenation (β-elimination)\n\n- **CH₃CH₂Br + alc. KOH → CH₂=CH₂ + KBr + H₂O** — alcoholic KOH, heat.\n- The β-hydrogen (next carbon over) is removed along with the halogen; **Saytzeff**: the more substituted (more stable) alkene dominates when two β-sites exist.\n\n### 2.3 Catalytic hydrogenation of alkynes (partial)\n\n- **HC≡CH + H₂ (Lindlar catalyst: Pd on BaSO₄ poisoned with quinoline) → CH₂=CH₂**.\n- Partial hydrogenation stops at the alkene; with excess H₂/Ni it would run on to ethane.\n- Na/NH₃ (liquid) also reduces alkynes to alkenes (trans-alkene for internal alkynes).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Dehydration** | Loss of water from an alcohol to form C=C | ethanol → ethene (H₂SO₄, 170 °C) |\n| **Dehydrohalogenation** | Loss of HX from a haloalkane (alc. KOH) | bromoethane → ethene |\n| **Lindlar catalyst** | Poisoned Pd/BaSO₄ stopping hydrogenation at the alkene | ethyne → ethene |\n| **Saytzeff rule** | The more substituted alkene predominates in elimination | butan-2-ol → but-2-ene major |",
+    "## 4. Detailed Explanation\n\n### 4.1 Temperature controls the exit\n\n- Ethanol + H₂SO₄ at **170 °C** → elimination (ethene); at **140 °C** → substitution (ethoxyethane). Same reagents, different destiny — a classic exam discriminator.\n\n### 4.2 Why alcoholic KOH, not aqueous\n\n- Aqueous KOH substitutes (gives the alcohol); **alcoholic KOH** provides the base that removes the β-H — elimination needs the anhydrous, basic medium.\n\n### 4.3 Stopping at the alkene\n\n- Alkynes hydrogenate twice as fast as alkenes once formed, so ordinary catalysts overshoot. **Poisoning** the catalyst (Lindlar) deactivates it just enough to halt at the alkene — chemoselectivity by sabotage.",
+    "## 5. Comparison Tables\n\n**Three routes to alkenes**\n\n| Route | Reagents | Starting material | Notes |\n|---|---|---|---|\n| Dehydration | conc. H₂SO₄ 170 °C / Al₂O₃ 350 °C | alcohol | water leaves |\n| Dehydrohalogenation | alcoholic KOH, Δ | haloalkane | HX leaves; Saytzeff |\n| Partial hydrogenation | H₂ + Lindlar (or Na/NH₃) | alkyne | stop at C=C |",
+    "## 6. Common Confusions\n\n**170 vs 140 °C:** ethene at 170 °C, ether at 140 °C — quote both numbers to earn the mark.",
+    "**Alc. KOH ≠ aq. KOH:** the solvent word decides elimination vs substitution.",
+    "**Lindlar stops at the alkene:** full hydrogenation (Ni, excess H₂) gives the alkane — the poisoned catalyst is the point.",
+    "## 7. Exam Application\n\n**NEB 2023 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — Ethene is converted to ethane by **catalytic hydrogenation**: **CH₂=CH₂ + H₂ → CH₃–CH₃** over **Ni (~200 °C) or Pt/Pd at room temperature**. **Mechanism (surface catalysis):** (1) **adsorption** — H₂ dissociates into H atoms adsorbed on the metal surface, and ethene's π bond coordinates to the surface; (2) **syn addition** — two surface H atoms add to the **same face** of the double bond stepwise, first forming an adsorbed ethyl intermediate, then ethane; (3) **desorption** — the saturated ethane leaves the surface, freeing the catalyst. The addition is stereospecific (syn) because both hydrogens come from the metal face.",
+    "**NEB 2024 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — Same chemistry: **CH₂=CH₂ + H₂ → CH₃–CH₃** (Ni/Pt catalyst). Mechanism: H₂ is **adsorbed and dissociated** on the catalyst surface into H atoms; ethene adsorbs through its π bond; the surface H atoms add **one after the other to the same face** (syn addition) giving the adsorbed ethyl radical → ethane; the product **desorbs**, regenerating the catalyst. Conditions: Ni at ~200 °C, or Pt/Pd at room temperature.",
+    "**NEB-style (2m): How is ethene obtained from ethanol?** — By **dehydration** with **conc. H₂SO₄ at ~170 °C**: **C₂H₅OH → CH₂=CH₂ + H₂O** (or over Al₂O₃ at ~350 °C). The acid protonates the –OH, water departs as a good leaving group, and a β-hydrogen is lost to form the π bond. (At ~140 °C the same reagents give ethoxyethane instead — temperature is decisive.)"
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Unsaturated hydrocarbons (Alkenes): preparation by dehydr…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Prepare ethene from ethanol and from bromoethane, with conditions.",
+    "Explain the surface mechanism of catalytic hydrogenation of ethene.",
+    "Why does the Lindlar catalyst stop at the alkene?"
   ],
-  "examples": [],
+  "universalFacts": [
+    "Saytzeff's rule is stability in disguise: the more substituted double bond is the more hyperconjugation-stabilised one, so elimination votes for it."
+  ],
+  "examples": [
+    "***Sabotage as selectivity*** — poisoning palladium with quinoline slows it just enough to stop at the alkene: the Lindlar catalyst is controlled imperfection."
+  ],
   "practiceQuestions": [
-    "Q. Prepare ethene from ethanol and from bromoethane. (2 marks) — dehydration (conc. H2SO4, 170 °C); dehydrohalogenation (alc. KOH).",
-    "Q. Why is aqueous KOH not used for alkene preparation? (1 mark) — it gives substitution (alcohol) instead of elimination."
+    "**NEB 2023 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — Ethane is prepared from ethene by **catalytic hydrogenation**: **CH₂=CH₂ + H₂ → CH₃–CH₃**, over **nickel at ~200 °C** (or Pt/Pd at room temperature). **Mechanism (heterogeneous surface catalysis):** **(1) Adsorption** — the H₂ molecule adsorbs onto the metal surface and **dissociates into hydrogen atoms**; ethene adsorbs alongside it through its π bond. **(2) Syn addition** — the surface hydrogen atoms add to the double bond **one at a time and from the same face**: the first H converts ethene into an adsorbed ethyl intermediate, the second completes **ethane**. Because both hydrogens arrive from the metal surface, the addition is **stereospecific (syn)**. **(3) Desorption** — the saturated ethane, no longer able to bind the surface, leaves and frees the catalyst for the next cycle.",
+    "**NEB 2024 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — By **catalytic hydrogenation**: **CH₂=CH₂ + H₂ → CH₃–CH₃** (Ni/Pt catalyst, Ni ~200 °C or Pt/Pd at room temperature). **Mechanism:** the reaction occurs **on the catalyst surface** — **(1)** H₂ is **adsorbed and split into H atoms** on the metal; ethene adsorbs through its π electrons. **(2)** The two surface hydrogens add **stepwise to the same face** of the double bond (syn addition), passing through an adsorbed **ethyl intermediate** to give ethane. **(3)** Ethane **desorbs** from the surface, regenerating the catalyst. The overall change is reduction of the π bond to a σ bond — one mole of H₂ per mole of alkene.",
+    "**NEB-style (2m): How is ethene obtained from ethanol?** — By **dehydration of ethanol** with **concentrated H₂SO₄ at about 170 °C** (or by passing vapour over **Al₂O₃ at ~350 °C**): **C₂H₅OH → CH₂=CH₂ + H₂O**. Mechanistically the acid **protonates the –OH group**, making water a good leaving group; water departs and a β-hydrogen is eliminated to create the π bond. Note the temperature discrimination: at ~**140 °C** the same reagents give **ethoxyethane** (substitution) instead of ethene (elimination)."
   ],
   "keyPoints": [
-    "• Unsaturated hydrocarbons",
-    "• Alkenes",
-    "• : preparation by dehydration of alcohol",
-    "• Dehydrohalogenation",
-    "• Catalytic hydrogenation of alkyne"
+    "Alkenes CnH2n, sp2 planar, one C=C. Preparation: (1) dehydration of alcohols — C2H5OH -> CH2=CH2 + H2O, conc H2SO4 ~170C or Al2O3 ~350C; 140C gives ether instead. (2) Dehydrohalogenation — CH3CH2Br + alc. KOH -> CH2=CH2 + KBr + H2O; beta-elimination; Saytzeff rule (more substituted alkene major). (3) Partial catalytic hydrogenation of alkynes — HCCH + H2 (Lindlar, Pd/BaSO4 poisoned with quinoline) -> CH2=CH2; or Na/liquid NH3 (trans); excess H2/Ni would give alkane. Full hydrogenation of alkene: CH2=CH2 + H2 -> CH3CH3 (Ni 200C / Pt rt), surface mechanism: adsorption of H2 (dissociation) + alkene, syn addition, desorption."
   ],
-  "summary": "Unsaturated hydrocarbons (Alkenes): preparation by dehydr… (Hydrocarbons, Chemistry, class-11-notes) covers Unsaturated hydrocarbons, Alkenes, : preparation by dehydration of alcohol. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Alkenes (**CₙH₂ₙ**) are built by elimination. **Dehydration**: ethanol loses water over **conc. H₂SO₄ at 170 °C** (Al₂O₃ at 350 °C) → **CH₂=CH₂ + H₂O** — but at 140 °C the same mix gives the ether, so the temperature is the discriminator. **Dehydrohalogenation**: **alc. KOH** pulls the β-hydrogen while the halide leaves — **CH₃CH₂Br → CH₂=CH₂ + KBr + H₂O** — with **Saytzeff's rule** favouring the more substituted alkene. **Partial hydrogenation**: an alkyne plus **H₂ over the Lindlar catalyst** (Pd/BaSO₄ poisoned with quinoline) stops exactly at the alkene, since ordinary Ni with excess H₂ would run through to the alkane. Conversely, ethene → ethane is **catalytic hydrogenation** — **CH₂=CH₂ + H₂ → CH₃–CH₃** — via the surface mechanism the NEB 2023 and 2024 papers ask for: **adsorption** (H₂ dissociates on the metal), **syn addition** (both H from the same face, via an adsorbed ethyl), **desorption**.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Unsaturated hydrocarbons (Alkenes): preparation by dehydr…\"?",
@@ -56,8 +64,73 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Dehydration: C2H5OH —(conc. H2SO4, 170 °C)→ C2H4 + H2O; dehydrohalogenation: C2H5Br + KOH(alcoholic) → C2H4 + KBr + H2O — 'alcoholic KOH' vs 'aqueous KOH' decides alkene vs alcohol.",
-    "Trick 2: Saytzeff rule for the 2-mark extra: elimination removes H from the β-carbon with FEWER hydrogens → more substituted (stable) alkene predominates.",
-    "Trick 3: Partial hydrogenation: RC≡CR + H2 (Lindlar/Pd–BaSO4) → cis-alkene; full reduction gives alkane."
+    "H2SO4 170 °C = alkene; 140 °C = ether. alc. KOH = eliminate; aq. KOH = substitute. Lindlar = stop at alkene. Hydrogenation mechanism: adsorb → syn add → desorb."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Making the π Bond\n\nAlkenes carry one C=C double bond (**CₙH₂ₙ**, sp², planar). Their preparations all create that π bond by **elimination**: water out of an alcohol (**dehydration**), HX out of a haloalkane (**dehydrohalogenation**), or H₂ off an alkyne (**catalytic hydrogenation** of the triple bond).",
+      "## 2. Fundamental Concepts\n\n### 2.1 Dehydration of alcohols\n\n- **C₂H₅OH → CH₂=CH₂ + H₂O** with **conc. H₂SO₄ at ~170 °C** (or Al₂O₃, ~350 °C).\n- Ethanol → ethene; propan-2-ol → propene. Acid-catalysed: protonate –OH, lose water, lose H⁺.\n- Competing substitution (ethoxyethane) at lower temperature (~140 °C) — temperature decides.\n\n### 2.2 Dehydrohalogenation (β-elimination)\n\n- **CH₃CH₂Br + alc. KOH → CH₂=CH₂ + KBr + H₂O** — alcoholic KOH, heat.\n- The β-hydrogen (next carbon over) is removed along with the halogen; **Saytzeff**: the more substituted (more stable) alkene dominates when two β-sites exist.\n\n### 2.3 Catalytic hydrogenation of alkynes (partial)\n\n- **HC≡CH + H₂ (Lindlar catalyst: Pd on BaSO₄ poisoned with quinoline) → CH₂=CH₂**.\n- Partial hydrogenation stops at the alkene; with excess H₂/Ni it would run on to ethane.\n- Na/NH₃ (liquid) also reduces alkynes to alkenes (trans-alkene for internal alkynes).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Dehydration** | Loss of water from an alcohol to form C=C | ethanol → ethene (H₂SO₄, 170 °C) |\n| **Dehydrohalogenation** | Loss of HX from a haloalkane (alc. KOH) | bromoethane → ethene |\n| **Lindlar catalyst** | Poisoned Pd/BaSO₄ stopping hydrogenation at the alkene | ethyne → ethene |\n| **Saytzeff rule** | The more substituted alkene predominates in elimination | butan-2-ol → but-2-ene major |",
+      "## 4. Detailed Explanation\n\n### 4.1 Temperature controls the exit\n\n- Ethanol + H₂SO₄ at **170 °C** → elimination (ethene); at **140 °C** → substitution (ethoxyethane). Same reagents, different destiny — a classic exam discriminator.\n\n### 4.2 Why alcoholic KOH, not aqueous\n\n- Aqueous KOH substitutes (gives the alcohol); **alcoholic KOH** provides the base that removes the β-H — elimination needs the anhydrous, basic medium.\n\n### 4.3 Stopping at the alkene\n\n- Alkynes hydrogenate twice as fast as alkenes once formed, so ordinary catalysts overshoot. **Poisoning** the catalyst (Lindlar) deactivates it just enough to halt at the alkene — chemoselectivity by sabotage.",
+      "## 5. Comparison Tables\n\n**Three routes to alkenes**\n\n| Route | Reagents | Starting material | Notes |\n|---|---|---|---|\n| Dehydration | conc. H₂SO₄ 170 °C / Al₂O₃ 350 °C | alcohol | water leaves |\n| Dehydrohalogenation | alcoholic KOH, Δ | haloalkane | HX leaves; Saytzeff |\n| Partial hydrogenation | H₂ + Lindlar (or Na/NH₃) | alkyne | stop at C=C |",
+      "## 6. Common Confusions\n\n**170 vs 140 °C:** ethene at 170 °C, ether at 140 °C — quote both numbers to earn the mark.",
+      "**Alc. KOH ≠ aq. KOH:** the solvent word decides elimination vs substitution.",
+      "**Lindlar stops at the alkene:** full hydrogenation (Ni, excess H₂) gives the alkane — the poisoned catalyst is the point.",
+      "## 7. Exam Application\n\n**NEB 2023 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — Ethene is converted to ethane by **catalytic hydrogenation**: **CH₂=CH₂ + H₂ → CH₃–CH₃** over **Ni (~200 °C) or Pt/Pd at room temperature**. **Mechanism (surface catalysis):** (1) **adsorption** — H₂ dissociates into H atoms adsorbed on the metal surface, and ethene's π bond coordinates to the surface; (2) **syn addition** — two surface H atoms add to the **same face** of the double bond stepwise, first forming an adsorbed ethyl intermediate, then ethane; (3) **desorption** — the saturated ethane leaves the surface, freeing the catalyst. The addition is stereospecific (syn) because both hydrogens come from the metal face.",
+      "**NEB 2024 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — Same chemistry: **CH₂=CH₂ + H₂ → CH₃–CH₃** (Ni/Pt catalyst). Mechanism: H₂ is **adsorbed and dissociated** on the catalyst surface into H atoms; ethene adsorbs through its π bond; the surface H atoms add **one after the other to the same face** (syn addition) giving the adsorbed ethyl radical → ethane; the product **desorbs**, regenerating the catalyst. Conditions: Ni at ~200 °C, or Pt/Pd at room temperature.",
+      "**NEB-style (2m): How is ethene obtained from ethanol?** — By **dehydration** with **conc. H₂SO₄ at ~170 °C**: **C₂H₅OH → CH₂=CH₂ + H₂O** (or over Al₂O₃ at ~350 °C). The acid protonates the –OH, water departs as a good leaving group, and a β-hydrogen is lost to form the π bond. (At ~140 °C the same reagents give ethoxyethane instead — temperature is decisive.)"
+    ],
+    "keyPoints": [
+      "Alkenes CnH2n, sp2 planar, one C=C. Preparation: (1) dehydration of alcohols — C2H5OH -> CH2=CH2 + H2O, conc H2SO4 ~170C or Al2O3 ~350C; 140C gives ether instead. (2) Dehydrohalogenation — CH3CH2Br + alc. KOH -> CH2=CH2 + KBr + H2O; beta-elimination; Saytzeff rule (more substituted alkene major). (3) Partial catalytic hydrogenation of alkynes — HCCH + H2 (Lindlar, Pd/BaSO4 poisoned with quinoline) -> CH2=CH2; or Na/liquid NH3 (trans); excess H2/Ni would give alkane. Full hydrogenation of alkene: CH2=CH2 + H2 -> CH3CH3 (Ni 200C / Pt rt), surface mechanism: adsorption of H2 (dissociation) + alkene, syn addition, desorption."
+    ],
+    "importantConcepts": [
+      "Elimination chemistry makes π bonds: water out (acid, 170 °C), HX out (alcoholic base), H₂ partially off an alkyne (poisoned catalyst) — three exits, one alkene."
+    ],
+    "examples": [
+      "***Sabotage as selectivity*** — poisoning palladium with quinoline slows it just enough to stop at the alkene: the Lindlar catalyst is controlled imperfection."
+    ],
+    "universalFacts": [
+      "Saytzeff's rule is stability in disguise: the more substituted double bond is the more hyperconjugation-stabilised one, so elimination votes for it."
+    ],
+    "importantStatements": [
+      "\"Alkenes are prepared by dehydration of alcohols, dehydrohalogenation of haloalkanes with alcoholic KOH, and partial catalytic hydrogenation of alkynes.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2023 and NEB 2024 — ethane from ethene with reaction mechanism (assigned to this row)."
+    ],
+    "examShortTricks": [
+      "H2SO4 170 °C = alkene; 140 °C = ether. alc. KOH = eliminate; aq. KOH = substitute. Lindlar = stop at alkene. Hydrogenation mechanism: adsorb → syn add → desorb."
+    ],
+    "examNotes": [
+      "For the NEB 2023/2024 mechanism answer, name the three surface steps (adsorption, syn addition, desorption) — naming them is worth as much as the equation."
+    ],
+    "formulas": [
+      "- C₂H₅OH → CH₂=CH₂ + H₂O (conc. H₂SO₄, 170 °C)\n- CH₃CH₂Br + alc. KOH → CH₂=CH₂ + KBr + H₂O\n- HC≡CH + H₂ (Lindlar) → CH₂=CH₂\n- CH₂=CH₂ + H₂ (Ni, 200 °C) → CH₃–CH₃"
+    ],
+    "practice": [
+      "Prepare ethene from ethanol and from bromoethane, with conditions.",
+      "Explain the surface mechanism of catalytic hydrogenation of ethene.",
+      "Why does the Lindlar catalyst stop at the alkene?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2023 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — Ethane is prepared from ethene by **catalytic hydrogenation**: **CH₂=CH₂ + H₂ → CH₃–CH₃**, over **nickel at ~200 °C** (or Pt/Pd at room temperature). **Mechanism (heterogeneous surface catalysis):** **(1) Adsorption** — the H₂ molecule adsorbs onto the metal surface and **dissociates into hydrogen atoms**; ethene adsorbs alongside it through its π bond. **(2) Syn addition** — the surface hydrogen atoms add to the double bond **one at a time and from the same face**: the first H converts ethene into an adsorbed ethyl intermediate, the second completes **ethane**. Because both hydrogens arrive from the metal surface, the addition is **stereospecific (syn)**. **(3) Desorption** — the saturated ethane, no longer able to bind the surface, leaves and frees the catalyst for the next cycle.",
+      "**NEB 2024 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — By **catalytic hydrogenation**: **CH₂=CH₂ + H₂ → CH₃–CH₃** (Ni/Pt catalyst, Ni ~200 °C or Pt/Pd at room temperature). **Mechanism:** the reaction occurs **on the catalyst surface** — **(1)** H₂ is **adsorbed and split into H atoms** on the metal; ethene adsorbs through its π electrons. **(2)** The two surface hydrogens add **stepwise to the same face** of the double bond (syn addition), passing through an adsorbed **ethyl intermediate** to give ethane. **(3)** Ethane **desorbs** from the surface, regenerating the catalyst. The overall change is reduction of the π bond to a σ bond — one mole of H₂ per mole of alkene.",
+      "**NEB-style (2m): How is ethene obtained from ethanol?** — By **dehydration of ethanol** with **concentrated H₂SO₄ at about 170 °C** (or by passing vapour over **Al₂O₃ at ~350 °C**): **C₂H₅OH → CH₂=CH₂ + H₂O**. Mechanistically the acid **protonates the –OH group**, making water a good leaving group; water departs and a β-hydrogen is eliminated to create the π bond. Note the temperature discrimination: at ~**140 °C** the same reagents give **ethoxyethane** (substitution) instead of ethene (elimination)."
+    ]
+  },
+  "importantConcepts": [
+    "Elimination chemistry makes π bonds: water out (acid, 170 °C), HX out (alcoholic base), H₂ partially off an alkyne (poisoned catalyst) — three exits, one alkene."
+  ],
+  "importantStatements": [
+    "\"Alkenes are prepared by dehydration of alcohols, dehydrohalogenation of haloalkanes with alcoholic KOH, and partial catalytic hydrogenation of alkynes.\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2023 and NEB 2024 — ethane from ethene with reaction mechanism (assigned to this row)."
+  ],
+  "examNotes": [
+    "For the NEB 2023/2024 mechanism answer, name the three surface steps (adsorption, syn addition, desorption) — naming them is worth as much as the equation."
+  ],
+  "formulas": [
+    "- C₂H₅OH → CH₂=CH₂ + H₂O (conc. H₂SO₄, 170 °C)\n- CH₃CH₂Br + alc. KOH → CH₂=CH₂ + KBr + H₂O\n- HC≡CH + H₂ (Lindlar) → CH₂=CH₂\n- CH₂=CH₂ + H₂ (Ni, 200 °C) → CH₃–CH₃"
   ]
 }

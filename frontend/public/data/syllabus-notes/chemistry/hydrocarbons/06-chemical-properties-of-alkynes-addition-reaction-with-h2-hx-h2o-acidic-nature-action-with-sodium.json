@@ -7,36 +7,40 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "# Chemical properties of alkynes: addition reaction with H2, HX, H2O; acidic nature (action with sodium, ammoniacal AgNO3 and ammoniacal Cu2Cl2)\n\n## 1. Introduction\nChemical picture of **Chemical properties of alkynes** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Chemical properties of alkynes: addition reaction with H2\n### HX\n### H2O\n### acidic nature (action with sodium, ammoniacal AgNO3 and ammoniacal Cu2Cl2)\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Chemical properties of alkynes — mechanism with curved arrows, step by step (authored SVG)\n- **D2** — Chemical properties of alkynes — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Chemical properties of alkynes — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Chemical properties of alkynes — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Add Like an Alkene, Acid Like No Other\n\nThe C≡C bond adds H₂, HX and H₂O just as C=C does (twice over), but the sp carbons hold their electrons so tightly that a **terminal alkyne hydrogen becomes acidic** — the only hydrocarbon H that metals can replace. That acidity powers the **ammoniacal AgNO₃ and Cu₂Cl₂ tests**.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Addition of H₂\n\n- **HC≡CH + H₂ (Lindlar) → CH₂=CH₂**; **+ H₂ (Ni, excess) → CH₃–CH₃**.\n- Two π bonds → up to two equivalents of H₂; catalyst choice sets the stop point.\n\n### 2.2 Addition of HX\n\n- **HC≡CH + HCl (HgCl₂ catalyst) → CH₂=CHCl** (vinyl chloride — PVC feedstock).\n- **HC≡CH + HBr → CH₂=CHBr → CH₃CHBr₂** (Markovnikov, twice for internal alkynes).\n\n### 2.3 Addition of H₂O (hydration)\n\n- **HC≡CH + H₂O (H₂SO₄, HgSO₄) → CH₃CHO** — Markovnikov water addition gives the **enol**, which tautomerises to **acetaldehyde**.\n- Internal alkynes give **ketones**; only ethyne gives an aldehyde.\n\n### 2.4 Acidic nature and metal tests\n\n- Terminal ≡C–H (sp, 50% s-character) is weakly acidic (pKa ≈ 25): **HC≡CH + Na → HC≡CNa + ½H₂**; + NaNH₂ → sodium acetylide.\n- **Ammoniacal AgNO₃:** HC≡CH → **white precipitate Ag₂C₂** (silver acetylide).\n- **Ammoniacal Cu₂Cl₂:** → **red precipitate Cu₂C₂** (copper acetylide).\n- Only **terminal** alkynes respond — internal ones (no ≡C–H) do not.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Acetylide** | Salt of a deprotonated terminal alkyne | NaC≡CH, Ag₂C₂ |\n| **Enol tautomerisation** | Vinyl alcohol rearranging to the carbonyl | vinyl alcohol → acetaldehyde |\n| **Lindlar reduction** | Poisoned-catalyst hydrogenation stopping at the alkene | ethyne → ethene |\n| **Terminal alkyne** | Alkyne with ≡C–H at the chain end | ethyne, propyne |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why sp hydrogens are acidic\n\n- An sp orbital is 50% s-character: the carbanion's lone pair sits closer to the nucleus, stabilising it. pKa ladder: alkane ≈ 50, alkene ≈ 44, **alkyne ≈ 25** — weak acids, but acids.\n\n### 4.2 Hydration's tautomer detour\n\n- Water adds Markovnikov-wise to give **vinyl alcohol (enol)** — unstable; the H migrates from O to C and the product is the **carbonyl**. Ethyne's enol is the special one that lands on an **aldehyde**; all other alkynes land on **ketones**.\n\n### 4.3 The tests as structure probes\n\n- Ag₂C₂ (white) and Cu₂C₂ (red) form only when a **≡C–H** exists — so these precipitates distinguish **terminal from internal alkynes**. Dry acetylides of heavy metals are explosive — handle wet, dispose fresh.",
+    "## 5. Comparison Tables\n\n**Alkyne vs alkene chemistry**\n\n| Basis | Alkyne | Alkene |\n|---|---|---|\n| π bonds | two | one |\n| H₂ uptake | up to 2 eq | 1 eq |\n| hydration product | enol → aldehyde/ketone | alcohol |\n| acidic H | terminal ≡C–H yes | no |\n| metal tests | Ag₂C₂ white / Cu₂C₂ red | none |",
+    "## 6. Common Confusions\n\n**Ethyne hydration gives an aldehyde, not an alcohol or ketone:** the enol tautomerises all the way to CH₃CHO — the one aldehyde in the family.",
+    "**Only terminal alkynes give precipitates:** internal alkynes have no ≡C–H — a negative AgNO₃ test is informative, not a failure.",
+    "**Acidity is relative:** pKa 25 is \"acidic\" only next to 44 and 50 — water and alcohols are far stronger acids.",
+    "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): Acetylene is acidic in nature. Explain with a chemical test. (3m)** — In **ethyne (HC≡CH)** the C–H bond uses an **sp hybrid orbital (50% s-character)**, which holds the bonding electrons closer to the carbon nucleus; when the proton is removed, the resulting **acetylide carbanion** is correspondingly stabilised (pKa ≈ 25 — far more acidic than alkenes, pKa ≈ 44, or alkanes, pKa ≈ 50). Hence terminal alkynes react with strong bases and active metals: **HC≡CH + 2Na → 2HC≡CNa + H₂↑** (sodium acetylide + hydrogen). **Chemical test:** with **ammoniacal silver nitrate**, ethyne gives a **white precipitate of silver acetylide, Ag₂C₂**: **HC≡CH + 2[Ag(NH₃)₂]⁺ → Ag₂C₂↓ + 2NH₄⁺ + 2NH₃**; with **ammoniacal Cu₂Cl₂** it gives a **red precipitate of Cu₂C₂**. These precipitations prove the acidic ≡C–H — and only terminal alkynes give them.",
+    "**NEB-style (2m): What is the product of hydration of ethyne and how is it formed?** — **Ethyne + H₂O (dilute H₂SO₄, HgSO₄ catalyst) → acetaldehyde (CH₃CHO).** Water adds **Markovnikov-style** across the triple bond to give **vinyl alcohol (CH₂=CHOH), an enol**, which is unstable and **tautomerises** — the O–H hydrogen migrates to carbon and the π bond shifts — giving the **carbonyl compound acetaldehyde**. Ethyne is the only alkyne whose hydration yields an aldehyde; all other alkynes give ketones.",
+    "**NEB-style (2m): Distinguish between but-1-yne and but-2-yne.** — **But-1-yne is terminal** (has ≡C–H): with **ammoniacal AgNO₃ it gives a white Ag₂C₂ precipitate**, and with **ammoniacal Cu₂Cl₂ a red Cu₂C₂ precipitate**. **But-2-yne is internal** (no ≡C–H): **no precipitate with either reagent**. The acidic terminal hydrogen is the entire difference — sp-carbon acidity is absent in the internal isomer."
   ],
   "confusion": [],
   "bounds": [
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  "practice": [
+    "Explain the acidity of ethyne with the s-character argument and one metal reaction.",
+    "Give the products of adding H2, HCl and H2O to ethyne with conditions.",
+    "Distinguish terminal and internal alkynes using ammoniacal reagents."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Vinyl chloride from ethyne once fed the entire PVC industry — mercury-catalysed HCl addition at scale."
+  ],
+  "examples": [
+    "***The white and the red*** — one terminal hydrogen, two verdicts: white Ag2C2 with ammoniacal silver, red Cu2C2 with ammoniacal copper — the fastest structure probe in alkyne chemistry."
+  ],
   "practiceQuestions": [
-    "Q. How will you distinguish ethyne from ethene? (2 marks) — ethyne gives white ppt with ammoniacal AgNO3; ethene does not.",
-    "Q. Why are terminal alkynes acidic? (1 mark) — high s-character of sp carbon stabilises the acetylide anion."
+    "**NEB 2024 (verified PYQ): Acetylene is acidic in nature. Explain with a chemical test. (3m)** — **Why acidic:** in ethyne the C–H bond is formed from an **sp hybrid orbital with 50% s-character**; s electrons lie closer to the nucleus, so the carbon **holds its bonding electrons tightly**. When a proton is removed, the remaining **acetylide carbanion** is unusually stable for a hydrocarbon — ethyne has **pKa ≈ 25**, far more acidic than ethene (≈44) or ethane (≈50). Consequently ethyne reacts with **strong bases and active metals**: **HC≡CH + 2Na → 2HC≡CNa + H₂↑** (sodium acetylide; hydrogen gas evolved), and with **NaNH₂** in liquid ammonia to give sodium acetylide directly. **Chemical test:** with **ammoniacal silver nitrate**, ethyne gives a **white precipitate of silver acetylide**: **HC≡CH + 2[Ag(NH₃)₂]⁺ → Ag₂C₂↓ (white) + 2NH₄⁺ + 2NH₃**; with **ammoniacal cuprous chloride** it gives a **red precipitate of copper acetylide, Cu₂C₂**. Both precipitations replace the acidic ≡C–H protons with metal — direct evidence of acidity. (Only **terminal** alkynes respond; dry heavy-metal acetylides are explosive, so the precipitates are kept wet and destroyed after testing.)",
+    "**NEB-style (2m): What is the product of hydration of ethyne and how is it formed?** — Ethyne adds water in the presence of **dilute H₂SO₄ and HgSO₄ catalyst**: the water adds **Markovnikov-fashion** across the triple bond to give **vinyl alcohol, CH₂=CHOH — an enol**. Enols are unstable: the hydrogen on oxygen migrates to the adjacent carbon while the π bond shifts, a process called **tautomerisation**, yielding the carbonyl compound **acetaldehyde, CH₃CHO**: **HC≡CH + H₂O —(H₂SO₄/HgSO₄)→ CH₃CHO**. Ethyne is the **only alkyne that gives an aldehyde** on hydration; any other alkyne (unsymmetrical) gives a **ketone**, because the enol's OH lands on an internal carbon.",
+    "**NEB-style (2m): Distinguish between but-1-yne and but-2-yne.** — **But-1-yne (CH₃CH₂C≡CH)** is a **terminal alkyne**: its ≡C–H hydrogen is acidic (sp, 50% s-character), so with **ammoniacal AgNO₃** it forms a **white precipitate of silver acetylide**, and with **ammoniacal Cu₂Cl₂** a **red precipitate of copper acetylide**. **But-2-yne (CH₃–C≡C–CH₃)** is **internal**: it has **no ≡C–H hydrogen**, so **no precipitate forms with either reagent**. The pair of ammoniacal tests cleanly separates terminal from internal alkynes — a negative result is itself structural information."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- HC≡CH + H₂O → CH₂=CHOH → CH₃CHO (H₂SO₄/HgSO₄)\n- HC≡CH + HCl (HgCl₂) → CH₂=CHCl\n- HC≡CH + 2Na → 2NaC≡CH... → HC≡CNa + ½H₂ (per Na)\n- HC≡CH + 2[Ag(NH₃)₂]⁺ → Ag₂C₂↓ (white) + 2NH₄⁺ + 2NH₃\n- HC≡CH + 2[Cu(NH₃)₂]⁺ → Cu₂C₂↓ (red)"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -44,13 +48,9 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Chemical properties of alkynes: addition reaction with H2",
-    "• Acidic nature",
-    "• Action with sodium",
-    "• Ammoniacal AgNO3",
-    "• Ammoniacal Cu2Cl2"
+    "Alkyne reactions: H2 — Lindlar stops at alkene, Ni excess gives alkane (2 eq). HX — HCCH + HCl (HgCl2) -> CH2=CHCl (vinyl chloride); +HBr -> CH2=CHBr -> CH3CHBr2 (Markovnikov twice). H2O — HCCH + H2O (H2SO4/HgSO4) -> enol CH2=CHOH -> tautomerises -> CH3CHO (acetaldehyde); internal alkynes -> ketones. Acidic nature: sp 50% s-character, pKa ~25 vs alkene 44, alkane 50; HCCH + 2Na -> 2HC=CNa + H2; NaNH2 -> sodium acetylide. Tests: ammoniacal AgNO3 -> white Ag2C2 ppt; ammoniacal Cu2Cl2 -> red Cu2C2 ppt; terminal alkynes only; dry heavy-metal acetylides explosive."
   ],
-  "summary": "Chemical properties of alkynes: addition reaction with H2… (Hydrocarbons, Chemistry, class-11-notes) covers Chemical properties of alkynes: addition reaction with H2, acidic nature, action with sodium. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Alkynes add like alkenes — twice. **H₂**: Lindlar stops at the alkene, excess Ni gives the alkane. **HX**: HCl over HgCl₂ gives **vinyl chloride**; HBr adds Markovnikov, twice for the full dihalide. **H₂O** (H₂SO₄/HgSO₄): Markovnikov hydration gives the **enol**, which tautomerises — ethyne lands on **acetaldehyde** (the family's only aldehyde), all others on ketones. The signature chemistry is **acidity**: the sp C–H (50% s-character, pKa ≈ 25) surrenders its proton to Na or NaNH₂ forming **acetylides**, and to **ammoniacal AgNO₃ (white Ag₂C₂)** and **ammoniacal Cu₂Cl₂ (red Cu₂C₂)** — precipitates that certify a **terminal** alkyne, since internal ones carry no ≡C–H and stay silent.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Chemical properties of alkynes: addition reaction with H2…\"?",
@@ -74,9 +74,70 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Addition goes in TWO stages: alkyne → alkene → alkane; with HX follow Markovnikov (vinyl → ethylidene halide).",
-    "Trick 2: Hydration with dilute H2SO4/HgSO4: ethyne → acetaldehyde (via enol tautomerisation); other alkynes → ketones — the enol–keto line earns the mark.",
-    "Trick 3: Acidic nature tests (terminal alkynes only): Na metal → sodium acetylide + H2; ammoniacal AgNO3 → white Ag2C2; ammoniacal Cu2Cl2 → red Cu2C2 — three colours to memorise.",
-    "Trick 4: Acidic reason: sp-carbon (50% s-character) holds the electron pair closer to the nucleus."
+    "Hydration: enol → CH3CHO (ethyne only; others ketones). HCl/HgCl2 → vinyl chloride. AgNO3/NH3 white; Cu2Cl2/NH3 red — terminal only. Acidity ladder: alkyne 25 < alkene 44 < alkane 50."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Add Like an Alkene, Acid Like No Other\n\nThe C≡C bond adds H₂, HX and H₂O just as C=C does (twice over), but the sp carbons hold their electrons so tightly that a **terminal alkyne hydrogen becomes acidic** — the only hydrocarbon H that metals can replace. That acidity powers the **ammoniacal AgNO₃ and Cu₂Cl₂ tests**.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Addition of H₂\n\n- **HC≡CH + H₂ (Lindlar) → CH₂=CH₂**; **+ H₂ (Ni, excess) → CH₃–CH₃**.\n- Two π bonds → up to two equivalents of H₂; catalyst choice sets the stop point.\n\n### 2.2 Addition of HX\n\n- **HC≡CH + HCl (HgCl₂ catalyst) → CH₂=CHCl** (vinyl chloride — PVC feedstock).\n- **HC≡CH + HBr → CH₂=CHBr → CH₃CHBr₂** (Markovnikov, twice for internal alkynes).\n\n### 2.3 Addition of H₂O (hydration)\n\n- **HC≡CH + H₂O (H₂SO₄, HgSO₄) → CH₃CHO** — Markovnikov water addition gives the **enol**, which tautomerises to **acetaldehyde**.\n- Internal alkynes give **ketones**; only ethyne gives an aldehyde.\n\n### 2.4 Acidic nature and metal tests\n\n- Terminal ≡C–H (sp, 50% s-character) is weakly acidic (pKa ≈ 25): **HC≡CH + Na → HC≡CNa + ½H₂**; + NaNH₂ → sodium acetylide.\n- **Ammoniacal AgNO₃:** HC≡CH → **white precipitate Ag₂C₂** (silver acetylide).\n- **Ammoniacal Cu₂Cl₂:** → **red precipitate Cu₂C₂** (copper acetylide).\n- Only **terminal** alkynes respond — internal ones (no ≡C–H) do not.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Acetylide** | Salt of a deprotonated terminal alkyne | NaC≡CH, Ag₂C₂ |\n| **Enol tautomerisation** | Vinyl alcohol rearranging to the carbonyl | vinyl alcohol → acetaldehyde |\n| **Lindlar reduction** | Poisoned-catalyst hydrogenation stopping at the alkene | ethyne → ethene |\n| **Terminal alkyne** | Alkyne with ≡C–H at the chain end | ethyne, propyne |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why sp hydrogens are acidic\n\n- An sp orbital is 50% s-character: the carbanion's lone pair sits closer to the nucleus, stabilising it. pKa ladder: alkane ≈ 50, alkene ≈ 44, **alkyne ≈ 25** — weak acids, but acids.\n\n### 4.2 Hydration's tautomer detour\n\n- Water adds Markovnikov-wise to give **vinyl alcohol (enol)** — unstable; the H migrates from O to C and the product is the **carbonyl**. Ethyne's enol is the special one that lands on an **aldehyde**; all other alkynes land on **ketones**.\n\n### 4.3 The tests as structure probes\n\n- Ag₂C₂ (white) and Cu₂C₂ (red) form only when a **≡C–H** exists — so these precipitates distinguish **terminal from internal alkynes**. Dry acetylides of heavy metals are explosive — handle wet, dispose fresh.",
+      "## 5. Comparison Tables\n\n**Alkyne vs alkene chemistry**\n\n| Basis | Alkyne | Alkene |\n|---|---|---|\n| π bonds | two | one |\n| H₂ uptake | up to 2 eq | 1 eq |\n| hydration product | enol → aldehyde/ketone | alcohol |\n| acidic H | terminal ≡C–H yes | no |\n| metal tests | Ag₂C₂ white / Cu₂C₂ red | none |",
+      "## 6. Common Confusions\n\n**Ethyne hydration gives an aldehyde, not an alcohol or ketone:** the enol tautomerises all the way to CH₃CHO — the one aldehyde in the family.",
+      "**Only terminal alkynes give precipitates:** internal alkynes have no ≡C–H — a negative AgNO₃ test is informative, not a failure.",
+      "**Acidity is relative:** pKa 25 is \"acidic\" only next to 44 and 50 — water and alcohols are far stronger acids.",
+      "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): Acetylene is acidic in nature. Explain with a chemical test. (3m)** — In **ethyne (HC≡CH)** the C–H bond uses an **sp hybrid orbital (50% s-character)**, which holds the bonding electrons closer to the carbon nucleus; when the proton is removed, the resulting **acetylide carbanion** is correspondingly stabilised (pKa ≈ 25 — far more acidic than alkenes, pKa ≈ 44, or alkanes, pKa ≈ 50). Hence terminal alkynes react with strong bases and active metals: **HC≡CH + 2Na → 2HC≡CNa + H₂↑** (sodium acetylide + hydrogen). **Chemical test:** with **ammoniacal silver nitrate**, ethyne gives a **white precipitate of silver acetylide, Ag₂C₂**: **HC≡CH + 2[Ag(NH₃)₂]⁺ → Ag₂C₂↓ + 2NH₄⁺ + 2NH₃**; with **ammoniacal Cu₂Cl₂** it gives a **red precipitate of Cu₂C₂**. These precipitations prove the acidic ≡C–H — and only terminal alkynes give them.",
+      "**NEB-style (2m): What is the product of hydration of ethyne and how is it formed?** — **Ethyne + H₂O (dilute H₂SO₄, HgSO₄ catalyst) → acetaldehyde (CH₃CHO).** Water adds **Markovnikov-style** across the triple bond to give **vinyl alcohol (CH₂=CHOH), an enol**, which is unstable and **tautomerises** — the O–H hydrogen migrates to carbon and the π bond shifts — giving the **carbonyl compound acetaldehyde**. Ethyne is the only alkyne whose hydration yields an aldehyde; all other alkynes give ketones.",
+      "**NEB-style (2m): Distinguish between but-1-yne and but-2-yne.** — **But-1-yne is terminal** (has ≡C–H): with **ammoniacal AgNO₃ it gives a white Ag₂C₂ precipitate**, and with **ammoniacal Cu₂Cl₂ a red Cu₂C₂ precipitate**. **But-2-yne is internal** (no ≡C–H): **no precipitate with either reagent**. The acidic terminal hydrogen is the entire difference — sp-carbon acidity is absent in the internal isomer."
+    ],
+    "keyPoints": [
+      "Alkyne reactions: H2 — Lindlar stops at alkene, Ni excess gives alkane (2 eq). HX — HCCH + HCl (HgCl2) -> CH2=CHCl (vinyl chloride); +HBr -> CH2=CHBr -> CH3CHBr2 (Markovnikov twice). H2O — HCCH + H2O (H2SO4/HgSO4) -> enol CH2=CHOH -> tautomerises -> CH3CHO (acetaldehyde); internal alkynes -> ketones. Acidic nature: sp 50% s-character, pKa ~25 vs alkene 44, alkane 50; HCCH + 2Na -> 2HC=CNa + H2; NaNH2 -> sodium acetylide. Tests: ammoniacal AgNO3 -> white Ag2C2 ppt; ammoniacal Cu2Cl2 -> red Cu2C2 ppt; terminal alkynes only; dry heavy-metal acetylides explosive."
+    ],
+    "importantConcepts": [
+      "s-character is acidity: the sp orbital holds the carbanion's pair close to the nucleus — the only acidic hydrocarbon hydrogens, and the only ones metals can pull off."
+    ],
+    "examples": [
+      "***The white and the red*** — one terminal hydrogen, two verdicts: white Ag2C2 with ammoniacal silver, red Cu2C2 with ammoniacal copper — the fastest structure probe in alkyne chemistry."
+    ],
+    "universalFacts": [
+      "Vinyl chloride from ethyne once fed the entire PVC industry — mercury-catalysed HCl addition at scale."
+    ],
+    "importantStatements": [
+      "\"Terminal alkynes are weakly acidic (pKa ≈ 25) because of 50% s-character, forming acetylides with metals and giving characteristic precipitates with ammoniacal AgNO3 and Cu2Cl2.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2024 — acidity of acetylene with chemical test (assigned to this row)."
+    ],
+    "examShortTricks": [
+      "Hydration: enol → CH3CHO (ethyne only; others ketones). HCl/HgCl2 → vinyl chloride. AgNO3/NH3 white; Cu2Cl2/NH3 red — terminal only. Acidity ladder: alkyne 25 < alkene 44 < alkane 50."
+    ],
+    "examNotes": [
+      "The NEB 2024 answer needs the s-character reason AND a test equation — quote both the AgNO3 precipitate and its colour."
+    ],
+    "formulas": [
+      "- HC≡CH + H₂O → CH₂=CHOH → CH₃CHO (H₂SO₄/HgSO₄)\n- HC≡CH + HCl (HgCl₂) → CH₂=CHCl\n- HC≡CH + 2Na → 2NaC≡CH... → HC≡CNa + ½H₂ (per Na)\n- HC≡CH + 2[Ag(NH₃)₂]⁺ → Ag₂C₂↓ (white) + 2NH₄⁺ + 2NH₃\n- HC≡CH + 2[Cu(NH₃)₂]⁺ → Cu₂C₂↓ (red)"
+    ],
+    "practice": [
+      "Explain the acidity of ethyne with the s-character argument and one metal reaction.",
+      "Give the products of adding H2, HCl and H2O to ethyne with conditions.",
+      "Distinguish terminal and internal alkynes using ammoniacal reagents."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (verified PYQ): Acetylene is acidic in nature. Explain with a chemical test. (3m)** — **Why acidic:** in ethyne the C–H bond is formed from an **sp hybrid orbital with 50% s-character**; s electrons lie closer to the nucleus, so the carbon **holds its bonding electrons tightly**. When a proton is removed, the remaining **acetylide carbanion** is unusually stable for a hydrocarbon — ethyne has **pKa ≈ 25**, far more acidic than ethene (≈44) or ethane (≈50). Consequently ethyne reacts with **strong bases and active metals**: **HC≡CH + 2Na → 2HC≡CNa + H₂↑** (sodium acetylide; hydrogen gas evolved), and with **NaNH₂** in liquid ammonia to give sodium acetylide directly. **Chemical test:** with **ammoniacal silver nitrate**, ethyne gives a **white precipitate of silver acetylide**: **HC≡CH + 2[Ag(NH₃)₂]⁺ → Ag₂C₂↓ (white) + 2NH₄⁺ + 2NH₃**; with **ammoniacal cuprous chloride** it gives a **red precipitate of copper acetylide, Cu₂C₂**. Both precipitations replace the acidic ≡C–H protons with metal — direct evidence of acidity. (Only **terminal** alkynes respond; dry heavy-metal acetylides are explosive, so the precipitates are kept wet and destroyed after testing.)",
+      "**NEB-style (2m): What is the product of hydration of ethyne and how is it formed?** — Ethyne adds water in the presence of **dilute H₂SO₄ and HgSO₄ catalyst**: the water adds **Markovnikov-fashion** across the triple bond to give **vinyl alcohol, CH₂=CHOH — an enol**. Enols are unstable: the hydrogen on oxygen migrates to the adjacent carbon while the π bond shifts, a process called **tautomerisation**, yielding the carbonyl compound **acetaldehyde, CH₃CHO**: **HC≡CH + H₂O —(H₂SO₄/HgSO₄)→ CH₃CHO**. Ethyne is the **only alkyne that gives an aldehyde** on hydration; any other alkyne (unsymmetrical) gives a **ketone**, because the enol's OH lands on an internal carbon.",
+      "**NEB-style (2m): Distinguish between but-1-yne and but-2-yne.** — **But-1-yne (CH₃CH₂C≡CH)** is a **terminal alkyne**: its ≡C–H hydrogen is acidic (sp, 50% s-character), so with **ammoniacal AgNO₃** it forms a **white precipitate of silver acetylide**, and with **ammoniacal Cu₂Cl₂** a **red precipitate of copper acetylide**. **But-2-yne (CH₃–C≡C–CH₃)** is **internal**: it has **no ≡C–H hydrogen**, so **no precipitate forms with either reagent**. The pair of ammoniacal tests cleanly separates terminal from internal alkynes — a negative result is itself structural information."
+    ]
+  },
+  "importantConcepts": [
+    "s-character is acidity: the sp orbital holds the carbanion's pair close to the nucleus — the only acidic hydrocarbon hydrogens, and the only ones metals can pull off."
+  ],
+  "importantStatements": [
+    "\"Terminal alkynes are weakly acidic (pKa ≈ 25) because of 50% s-character, forming acetylides with metals and giving characteristic precipitates with ammoniacal AgNO3 and Cu2Cl2.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2024 — acidity of acetylene with chemical test (assigned to this row)."
+  ],
+  "examNotes": [
+    "The NEB 2024 answer needs the s-character reason AND a test equation — quote both the AgNO3 precipitate and its colour."
   ]
 }

@@ -7,33 +7,40 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Saturated hydrocarbons (Alkanes): preparation from haloalkanes (reduction and Wurtz reaction), decarboxylation, catalytic hydrogenation of alkene and alkyne\n\n## 1. Introduction\nChemical picture of **Saturated hydrocarbons (Alkanes)** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Saturated hydrocarbons (Alkanes): preparation from haloalkanes (reduction and Wurtz reaction)\n### decarboxylation\n### catalytic hydrogenation of alkene and alkyne\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Saturated hydrocarbons (Alkanes) — curve or trend plot (authored SVG, plotted from note data)\n- **D2** — Saturated hydrocarbons (Alkanes) — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Saturated hydrocarbons (Alkanes) — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Saturated hydrocarbons (Alkanes) — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Building the Simplest Skeletons\n\nAlkanes are the **saturated** hydrocarbons: every C–C bond is a single σ bond, every carbon is sp³, and the formula family is **CₙH₂ₙ₊₂**. Since they are chemically quiet, the interesting chemistry is **how to make them**: from haloalkanes by reduction, by the **Wurtz reaction**, by **decarboxylation** of sodium salts, and by **catalytic hydrogenation** of alkenes and alkynes.",
+    "## 2. Fundamental Concepts\n\n### 2.1 From haloalkanes — reduction\n\n- **RX + 2[H] → RH + HX** — the halogen is stripped and replaced by hydrogen.\n- Reagents: **Zn + HCl** (nascent hydrogen), **LiAlH₄** (dry ether), or **H₂/Ni**.\n- Example: **CH₃Cl + 2[H] → CH₄ + HCl**.\n\n### 2.2 Wurtz reaction\n\n- **2RX + 2Na → R–R + 2NaX** — dry ether medium; two alkyl radicals couple.\n- Builds **symmetrical alkanes with an even number of carbons** efficiently: 2 CH₃Br → **ethane**; 2 C₂H₅Br → **butane**.\n- Limitation: with two different haloalkanes, a **mixture of three alkanes** (R–R, R–R′, R′–R′) forms — poor for unsymmetrical targets.\n\n### 2.3 Decarboxylation\n\n- **RCOONa + NaOH (CaO) → RH + Na₂CO₃** — soda-lime heat removes one carbon as carbonate.\n- **CH₃COONa + NaOH → CH₄ + Na₂CO₃** (CaO, ~300 °C) — the classic methane prep.\n- The alkane has **one carbon fewer** than the acid.\n\n### 2.4 Catalytic hydrogenation\n\n- **Alkene + H₂ (Ni, ~200 °C or Pt/Pd, rt) → alkane**; **alkyne + 2H₂ → alkane**.\n- **CH₂=CH₂ + H₂ → CH₃–CH₃**; **HC≡CH + 2H₂ → CH₃–CH₃**.\n- Syn addition on the metal surface; the cleanest route to any specific alkane.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Wurtz reaction** | Na-coupling of two haloalkane molecules in dry ether | 2CH₃Br + 2Na → C₂H₆ |\n| **Decarboxylation** | Loss of CO₂ (as carbonate) from a carboxylate on soda-lime heating | CH₃COONa → CH₄ |\n| **Catalytic hydrogenation** | Addition of H₂ across multiple bonds over Ni/Pt/Pd | ethene → ethane |\n| **Soda-lime** | NaOH + CaO mixture used for decarboxylation | lab CH₄ source |",
+    "## 4. Detailed Explanation\n\n### 4.1 Choosing the right route\n\n- Need a **specific unsymmetrical alkane**? Hydrogenation of the matching alkene/alkyne is cleanest. Need a **symmetrical even-carbon alkane**? Wurtz. Need **methane itself**? Decarboxylation of sodium acetate is the textbook answer.\n\n### 4.2 Wurtz arithmetic\n\n- Alkane carbons = sum of the two R groups. Two identical R of n carbons → 2n. This is why odd-carbon alkanes are awkward by Wurtz — mixing R and R′ gives three products.\n\n### 4.3 Decarboxylation bookkeeping\n\n- The carboxyl carbon leaves as **Na₂CO₃**, so count one carbon less: C₂ acid → C₁ alkane (acetate → methane); C₃ acid → ethane.",
+    "## 5. Comparison Tables\n\n**Four preparation routes**\n\n| Route | Reagents | Product carbon count | Best for |\n|---|---|---|---|\n| Reduction of RX | Zn/HCl, LiAlH₄ | same as RX | any alkane |\n| Wurtz | 2RX + 2Na, dry ether | R+R (even, symmetrical) | symmetrical alkanes |\n| Decarboxylation | RCOONa + NaOH/CaO, Δ | one less than acid | methane |\n| Hydrogenation | H₂ + Ni/Pt/Pd | same as alkene/alkyne | specific alkanes |",
+    "## 6. Common Confusions\n\n**Wurtz is in dry ether:** water would quench the sodium; \"dry ether\" is part of the answer.",
+    "**Decarboxylation loses a carbon:** acetate (C₂) gives methane (C₁) — students often write ethane.",
+    "**Alkyne needs 2H₂:** each π bond takes one H₂; an alkyne has two.",
+    "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): How is ethane prepared by the Wurtz reaction? Write the chemical equation. (2m)** — In the **Wurtz reaction**, an **alkyl halide is treated with sodium metal in dry ether**, where two alkyl groups couple to form a symmetrical alkane: **2RX + 2Na → R–R + 2NaX**. For **ethane**, bromomethane (or chloromethane) is used: **2CH₃Br + 2Na → CH₃–CH₃ + 2NaBr** (dry ether). The two methyl radicals generated on sodium couple, giving ethane with an even number of carbons; the reaction is best suited to symmetrical alkanes.",
+    "**NEB-style (3m): Explain the preparation of methane by decarboxylation with equation.** — Sodium acetate is heated with **soda-lime (NaOH + CaO)**: **CH₃COONa + NaOH → CH₄ + Na₂CO₃**. The carboxylate loses its carboxyl carbon as **carbonate** (trapped by CaO), leaving a hydrocarbon with **one carbon fewer** than the acid. CaO keeps the mixture dry and fused; the reaction runs at ~300 °C. This is the standard laboratory route to methane.",
+    "**NEB-style (2m): Give one limitation of the Wurtz reaction.** — With a **mixture of two different haloalkanes** (RX + R′X), three coupling products form — **R–R, R–R′ and R′–R′** — in unpredictable ratios, so the Wurtz reaction gives poor yields of any **unsymmetrical alkane**; it is reliable only for symmetrical products. (Also: tertiary halides tend to eliminate instead of coupling.)"
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Saturated hydrocarbons (Alkanes): preparation from haloal…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Describe the preparation of ethane by the Wurtz reaction with equation and medium.",
+    "Explain decarboxylation of sodium acetate with equation and state the carbon-count rule.",
+    "Compare the four alkane preparation routes with one best-use case each."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Hydrogenation on nickel happens on the metal surface: both H atoms add to the same face (syn addition), which is why alkene hydrogenation is stereospecific."
+  ],
+  "examples": [
+    "***The Wurtz ledger*** — two methyls make ethane (2 carbons), two ethyls make butane (4): the reaction is a carbon-doubling machine, which is exactly why odd-carbon alkanes resist it."
+  ],
   "practiceQuestions": [
-    "Q. Write the Wurtz reaction for propane preparation. (2 marks) — C2H5Br + CH3Br... actually use 1-bromopropane: 2C3H7Br + 2Na → C6H14 + 2NaBr (dry ether).",
-    "Q. Why does Wurtz reaction give poor yields with mixed halides? (1 mark) — three possible coupling products form in a mixture."
+    "**NEB 2024 (verified PYQ): How is ethane prepared by the Wurtz reaction? Write the chemical equation. (2m)** — In the **Wurtz reaction**, an alkyl halide is heated with **sodium metal in dry ether**; two alkyl groups couple to give a symmetrical alkane: **2RX + 2Na → R–R + 2NaX**. For **ethane**, take bromomethane: **2CH₃Br + 2Na → CH₃–CH₃ + 2NaBr** (dry ether). Sodium first converts the haloalkane into an alkyl-sodium/radical species; two such fragments then couple, so the product contains an **even number of carbons**. The dry ether medium is essential because water would destroy the sodium.",
+    "**NEB-style (3m): Explain the preparation of methane by decarboxylation with equation.** — **Decarboxylation** drives CO₂ out of a carboxylate. Sodium acetate is **heated with soda-lime (a fused mixture of NaOH and CaO)**: **CH₃COONa + NaOH → CH₄ + Na₂CO₃**. The acetate's carboxyl carbon leaves as **carbonate** (Na₂CO₃, held by CaO), so the hydrocarbon product contains **one carbon fewer** than the starting acid — acetate (C₂) gives **methane (C₁)**. The reaction is run at about **300 °C** and is the standard laboratory preparation of methane.",
+    "**NEB-style (2m): Give one limitation of the Wurtz reaction.** — When **two different haloalkanes** are used together (RX and R′X), the coupling is unselective: three products — **R–R, R–R′ and R′–R′** — form in an unpredictable mixture, so unsymmetrical alkanes cannot be made cleanly. The Wurtz reaction is therefore useful mainly for **symmetrical alkanes** with an even number of carbons (and tertiary halides may eliminate instead of coupling)."
   ],
   "keyPoints": [
-    "• Saturated hydrocarbons",
-    "• Alkanes",
-    "• : preparation from haloalkanes",
-    "• Reduction",
-    "• Wurtz reaction",
-    "• Decarboxylation"
+    "Alkanes CnH2n+2, saturated sp3. Preparation: (1) reduction of haloalkane RX + 2[H] -> RH + HX (Zn/HCl, LiAlH4, H2/Ni). (2) Wurtz: 2RX + 2Na -> R-R + 2NaX, dry ether; symmetrical even-carbon alkanes; 2CH3Br + 2Na -> CH3CH3 + 2NaBr; mixed RX/R'X gives three products (limitation). (3) Decarboxylation: RCOONa + NaOH (CaO, soda-lime, ~300C) -> RH + Na2CO3; one carbon fewer; CH3COONa -> CH4. (4) Catalytic hydrogenation: alkene + H2 (Ni 200C or Pt/Pd rt) -> alkane; alkyne + 2H2 -> alkane; CH2=CH2 + H2 -> CH3CH3; HCCH + 2H2 -> CH3CH3."
   ],
-  "summary": "Saturated hydrocarbons (Alkanes): preparation from haloal… (Hydrocarbons, Chemistry, class-11-notes) covers Saturated hydrocarbons, Alkanes, : preparation from haloalkanes. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Alkanes (**CₙH₂ₙ₊₂**) are made four ways. **Reduction** swaps halogen for hydrogen: RX + 2[H] → RH (Zn/HCl or LiAlH₄). The **Wurtz reaction** couples two haloalkane molecules with sodium in **dry ether** — **2RX + 2Na → R–R + 2NaX** — a carbon-doubling machine ideal for symmetrical even-carbon alkanes (2CH₃Br + 2Na → CH₃CH₃ + 2NaBr, the NEB 2024 answer) but useless for unsymmetrical targets, where three products mix. **Decarboxylation** heats a sodium carboxylate with **soda-lime** — **CH₃COONa + NaOH → CH₄ + Na₂CO₃** — always delivering one carbon fewer than the acid, which makes it the route to methane. **Catalytic hydrogenation** adds H₂ across π bonds over Ni/Pt/Pd: alkenes take one H₂, alkynes two — the cleanest route when a specific alkane is the goal.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Saturated hydrocarbons (Alkanes): preparation from haloal…\"?",
@@ -57,8 +64,73 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Three preparations to memorise — reduction: RX + 2H → RH + HX (Zn/HCl, LiAlH4); Wurtz: 2RX + 2Na → R–R + 2NaX (dry ether); decarboxylation: RCOONa + NaOH(CaO) → RH + Na2CO3 (soda lime).",
-    "Trick 2: Wurtz product rule: two different halides give a MIXTURE of three alkanes — quote as the limitation when asked why Wurtz is unsuitable for unsymmetrical alkanes.",
-    "Trick 3: Kolbe electrolysis of sodium acetate gives ETHANE: 2CH3COO− → C2H6 + 2CO2 (at anode) — one equation, one mark."
+    "Wurtz = 2RX + 2Na, dry ether, even/symmetrical. Decarboxylation = soda-lime, C(n) acid → C(n−1) alkane. Reduction = Zn/HCl or LiAlH4. Hydrogenation = H2/Ni; alkyne takes 2H2."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Building the Simplest Skeletons\n\nAlkanes are the **saturated** hydrocarbons: every C–C bond is a single σ bond, every carbon is sp³, and the formula family is **CₙH₂ₙ₊₂**. Since they are chemically quiet, the interesting chemistry is **how to make them**: from haloalkanes by reduction, by the **Wurtz reaction**, by **decarboxylation** of sodium salts, and by **catalytic hydrogenation** of alkenes and alkynes.",
+      "## 2. Fundamental Concepts\n\n### 2.1 From haloalkanes — reduction\n\n- **RX + 2[H] → RH + HX** — the halogen is stripped and replaced by hydrogen.\n- Reagents: **Zn + HCl** (nascent hydrogen), **LiAlH₄** (dry ether), or **H₂/Ni**.\n- Example: **CH₃Cl + 2[H] → CH₄ + HCl**.\n\n### 2.2 Wurtz reaction\n\n- **2RX + 2Na → R–R + 2NaX** — dry ether medium; two alkyl radicals couple.\n- Builds **symmetrical alkanes with an even number of carbons** efficiently: 2 CH₃Br → **ethane**; 2 C₂H₅Br → **butane**.\n- Limitation: with two different haloalkanes, a **mixture of three alkanes** (R–R, R–R′, R′–R′) forms — poor for unsymmetrical targets.\n\n### 2.3 Decarboxylation\n\n- **RCOONa + NaOH (CaO) → RH + Na₂CO₃** — soda-lime heat removes one carbon as carbonate.\n- **CH₃COONa + NaOH → CH₄ + Na₂CO₃** (CaO, ~300 °C) — the classic methane prep.\n- The alkane has **one carbon fewer** than the acid.\n\n### 2.4 Catalytic hydrogenation\n\n- **Alkene + H₂ (Ni, ~200 °C or Pt/Pd, rt) → alkane**; **alkyne + 2H₂ → alkane**.\n- **CH₂=CH₂ + H₂ → CH₃–CH₃**; **HC≡CH + 2H₂ → CH₃–CH₃**.\n- Syn addition on the metal surface; the cleanest route to any specific alkane.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Wurtz reaction** | Na-coupling of two haloalkane molecules in dry ether | 2CH₃Br + 2Na → C₂H₆ |\n| **Decarboxylation** | Loss of CO₂ (as carbonate) from a carboxylate on soda-lime heating | CH₃COONa → CH₄ |\n| **Catalytic hydrogenation** | Addition of H₂ across multiple bonds over Ni/Pt/Pd | ethene → ethane |\n| **Soda-lime** | NaOH + CaO mixture used for decarboxylation | lab CH₄ source |",
+      "## 4. Detailed Explanation\n\n### 4.1 Choosing the right route\n\n- Need a **specific unsymmetrical alkane**? Hydrogenation of the matching alkene/alkyne is cleanest. Need a **symmetrical even-carbon alkane**? Wurtz. Need **methane itself**? Decarboxylation of sodium acetate is the textbook answer.\n\n### 4.2 Wurtz arithmetic\n\n- Alkane carbons = sum of the two R groups. Two identical R of n carbons → 2n. This is why odd-carbon alkanes are awkward by Wurtz — mixing R and R′ gives three products.\n\n### 4.3 Decarboxylation bookkeeping\n\n- The carboxyl carbon leaves as **Na₂CO₃**, so count one carbon less: C₂ acid → C₁ alkane (acetate → methane); C₃ acid → ethane.",
+      "## 5. Comparison Tables\n\n**Four preparation routes**\n\n| Route | Reagents | Product carbon count | Best for |\n|---|---|---|---|\n| Reduction of RX | Zn/HCl, LiAlH₄ | same as RX | any alkane |\n| Wurtz | 2RX + 2Na, dry ether | R+R (even, symmetrical) | symmetrical alkanes |\n| Decarboxylation | RCOONa + NaOH/CaO, Δ | one less than acid | methane |\n| Hydrogenation | H₂ + Ni/Pt/Pd | same as alkene/alkyne | specific alkanes |",
+      "## 6. Common Confusions\n\n**Wurtz is in dry ether:** water would quench the sodium; \"dry ether\" is part of the answer.",
+      "**Decarboxylation loses a carbon:** acetate (C₂) gives methane (C₁) — students often write ethane.",
+      "**Alkyne needs 2H₂:** each π bond takes one H₂; an alkyne has two.",
+      "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): How is ethane prepared by the Wurtz reaction? Write the chemical equation. (2m)** — In the **Wurtz reaction**, an **alkyl halide is treated with sodium metal in dry ether**, where two alkyl groups couple to form a symmetrical alkane: **2RX + 2Na → R–R + 2NaX**. For **ethane**, bromomethane (or chloromethane) is used: **2CH₃Br + 2Na → CH₃–CH₃ + 2NaBr** (dry ether). The two methyl radicals generated on sodium couple, giving ethane with an even number of carbons; the reaction is best suited to symmetrical alkanes.",
+      "**NEB-style (3m): Explain the preparation of methane by decarboxylation with equation.** — Sodium acetate is heated with **soda-lime (NaOH + CaO)**: **CH₃COONa + NaOH → CH₄ + Na₂CO₃**. The carboxylate loses its carboxyl carbon as **carbonate** (trapped by CaO), leaving a hydrocarbon with **one carbon fewer** than the acid. CaO keeps the mixture dry and fused; the reaction runs at ~300 °C. This is the standard laboratory route to methane.",
+      "**NEB-style (2m): Give one limitation of the Wurtz reaction.** — With a **mixture of two different haloalkanes** (RX + R′X), three coupling products form — **R–R, R–R′ and R′–R′** — in unpredictable ratios, so the Wurtz reaction gives poor yields of any **unsymmetrical alkane**; it is reliable only for symmetrical products. (Also: tertiary halides tend to eliminate instead of coupling.)"
+    ],
+    "keyPoints": [
+      "Alkanes CnH2n+2, saturated sp3. Preparation: (1) reduction of haloalkane RX + 2[H] -> RH + HX (Zn/HCl, LiAlH4, H2/Ni). (2) Wurtz: 2RX + 2Na -> R-R + 2NaX, dry ether; symmetrical even-carbon alkanes; 2CH3Br + 2Na -> CH3CH3 + 2NaBr; mixed RX/R'X gives three products (limitation). (3) Decarboxylation: RCOONa + NaOH (CaO, soda-lime, ~300C) -> RH + Na2CO3; one carbon fewer; CH3COONa -> CH4. (4) Catalytic hydrogenation: alkene + H2 (Ni 200C or Pt/Pd rt) -> alkane; alkyne + 2H2 -> alkane; CH2=CH2 + H2 -> CH3CH3; HCCH + 2H2 -> CH3CH3."
+    ],
+    "importantConcepts": [
+      "Route selection is the exam skill: Wurtz for symmetrical even-carbon alkanes, decarboxylation for methane (one carbon less than the acid), hydrogenation for any specific alkane."
+    ],
+    "examples": [
+      "***The Wurtz ledger*** — two methyls make ethane (2 carbons), two ethyls make butane (4): the reaction is a carbon-doubling machine, which is exactly why odd-carbon alkanes resist it."
+    ],
+    "universalFacts": [
+      "Hydrogenation on nickel happens on the metal surface: both H atoms add to the same face (syn addition), which is why alkene hydrogenation is stereospecific."
+    ],
+    "importantStatements": [
+      "\"Alkanes are prepared by reduction of haloalkanes, Wurtz coupling with sodium in dry ether, decarboxylation of sodium carboxylates with soda-lime, and catalytic hydrogenation of alkenes and alkynes.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2024 — ethane by the Wurtz reaction with equation (assigned to this row)."
+    ],
+    "examShortTricks": [
+      "Wurtz = 2RX + 2Na, dry ether, even/symmetrical. Decarboxylation = soda-lime, C(n) acid → C(n−1) alkane. Reduction = Zn/HCl or LiAlH4. Hydrogenation = H2/Ni; alkyne takes 2H2."
+    ],
+    "examNotes": [
+      "In the NEB 2024 answer, write the full equation with NaBr as the by-product and state \"dry ether\" — both carry marks."
+    ],
+    "formulas": [
+      "- Reduction: RX + 2[H] → RH + HX\n- Wurtz: 2RX + 2Na → R–R + 2NaX (dry ether)\n- Decarboxylation: RCOONa + NaOH → RH + Na₂CO₃ (CaO, Δ)\n- Hydrogenation: CₙH₂ₙ + H₂ → CₙH₂ₙ₊₂; CₙH₂ₙ₋₂ + 2H₂ → CₙH₂ₙ₊₂"
+    ],
+    "practice": [
+      "Describe the preparation of ethane by the Wurtz reaction with equation and medium.",
+      "Explain decarboxylation of sodium acetate with equation and state the carbon-count rule.",
+      "Compare the four alkane preparation routes with one best-use case each."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (verified PYQ): How is ethane prepared by the Wurtz reaction? Write the chemical equation. (2m)** — In the **Wurtz reaction**, an alkyl halide is heated with **sodium metal in dry ether**; two alkyl groups couple to give a symmetrical alkane: **2RX + 2Na → R–R + 2NaX**. For **ethane**, take bromomethane: **2CH₃Br + 2Na → CH₃–CH₃ + 2NaBr** (dry ether). Sodium first converts the haloalkane into an alkyl-sodium/radical species; two such fragments then couple, so the product contains an **even number of carbons**. The dry ether medium is essential because water would destroy the sodium.",
+      "**NEB-style (3m): Explain the preparation of methane by decarboxylation with equation.** — **Decarboxylation** drives CO₂ out of a carboxylate. Sodium acetate is **heated with soda-lime (a fused mixture of NaOH and CaO)**: **CH₃COONa + NaOH → CH₄ + Na₂CO₃**. The acetate's carboxyl carbon leaves as **carbonate** (Na₂CO₃, held by CaO), so the hydrocarbon product contains **one carbon fewer** than the starting acid — acetate (C₂) gives **methane (C₁)**. The reaction is run at about **300 °C** and is the standard laboratory preparation of methane.",
+      "**NEB-style (2m): Give one limitation of the Wurtz reaction.** — When **two different haloalkanes** are used together (RX and R′X), the coupling is unselective: three products — **R–R, R–R′ and R′–R′** — form in an unpredictable mixture, so unsymmetrical alkanes cannot be made cleanly. The Wurtz reaction is therefore useful mainly for **symmetrical alkanes** with an even number of carbons (and tertiary halides may eliminate instead of coupling)."
+    ]
+  },
+  "importantConcepts": [
+    "Route selection is the exam skill: Wurtz for symmetrical even-carbon alkanes, decarboxylation for methane (one carbon less than the acid), hydrogenation for any specific alkane."
+  ],
+  "importantStatements": [
+    "\"Alkanes are prepared by reduction of haloalkanes, Wurtz coupling with sodium in dry ether, decarboxylation of sodium carboxylates with soda-lime, and catalytic hydrogenation of alkenes and alkynes.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2024 — ethane by the Wurtz reaction with equation (assigned to this row)."
+  ],
+  "examNotes": [
+    "In the NEB 2024 answer, write the full equation with NaBr as the by-product and state \"dry ether\" — both carry marks."
+  ],
+  "formulas": [
+    "- Reduction: RX + 2[H] → RH + HX\n- Wurtz: 2RX + 2Na → R–R + 2NaX (dry ether)\n- Decarboxylation: RCOONa + NaOH → RH + Na₂CO₃ (CaO, Δ)\n- Hydrogenation: CₙH₂ₙ + H₂ → CₙH₂ₙ₊₂; CₙH₂ₙ₋₂ + 2H₂ → CₙH₂ₙ₊₂"
   ]
 }

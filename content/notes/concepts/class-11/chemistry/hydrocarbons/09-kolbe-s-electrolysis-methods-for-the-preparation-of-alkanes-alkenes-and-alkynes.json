@@ -7,19 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Kolbe's electrolysis methods for the preparation of alkan… — Hydrocarbons, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: kolbe's electrolysis methods for the preparation of alkanes, alkenes, alkynes · one worked example · one misconception each.",
-    "**Fact.** Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
-    "**Fact.** Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
-    "**Fact.** Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion.",
-    "**Alkenes.** one-line definition + one-line exam use.",
-    "**Alkynes.** one-line definition + one-line exam use.",
-    "# Kolbe's electrolysis methods for the preparation of alkanes, alkenes and alkynes\n\n## 1. Introduction\nChemical picture of **Kolbe's electrolysis methods for the preparation of alkanes** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Kolbe's electrolysis methods for the preparation of alkanes\n### alkenes and alkynes\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Kolbe's electrolysis methods for the preparation of alkanes — plant or apparatus flow with conditions labelled (authored SVG)\n- **D2** — Kolbe's electrolysis methods for the preparation of alkanes — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Kolbe's electrolysis methods for the preparation of alkanes — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Kolbe's electrolysis methods for the preparation of alkanes — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Electricity Builds Hydrocarbons\n\nKolbe's electrolysis passes current through a **carboxylate solution**: at the anode, carboxylate ions surrender electrons, lose CO₂, and **couple into hydrocarbons**. Sodium acetate gives **ethane**; succinic acid gives **ethyne**; a suitable salt can even deliver **ethene** — electrolysis as a C–C bond factory.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Kolbe electrolysis of sodium acetate → alkane\n\n- Electrolyte: **concentrated sodium acetate solution**; electrodes: platinum; product at **anode**.\n- **CH₃COO⁻ → CH₃· + CO₂ + e⁻** (anodic oxidation); **2CH₃· → CH₃–CH₃** (ethane).\n- Cathode: **2H₂O + 2e⁻ → H₂ + 2OH⁻** (hydrogen evolves); solution turns alkaline.\n- Overall: **2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH**.\n\n### 2.2 Kolbe route to alkynes (potassium succinate)\n\n- **Potassium succinate** — KOOC–CH₂–CH₂–COOK — loses both carboxyls at the anode; the two CH₂· radicals couple with **two fewer H**: product **HC≡CH (ethyne)**.\n- Overall: **KOOC–CH₂–CH₂–COOK + 2KOH → HC≡CH + 2K₂CO₃ + 2H₂** (electrolysis).\n- Geometry does the work: the two radicals are born joined — they combine and shed the extra hydrogens.\n\n### 2.3 Kolbe route to alkenes\n\n- Electrolysing salts that leave radicals with a β-H and the right geometry gives alkenes — e.g. electrolysis of **potassium succinate under modified conditions/adipate-type salts** yields **ethene** from the coupled intermediate by further loss of H₂; textbook-level: **succinate → ethyne; modified/adjacent-dicarboxylate electrolysis → ethene**.\n- Simpler framing for the syllabus: **Kolbe of sodium propionate gives butane; the alkene/alkyne variants come from dicarboxylates** — succinic (alkyne), and electrolysis of **potassium maleate/succinate variants** for ethene.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Kolbe electrolysis** | Anodic decarboxylative coupling of carboxylates to hydrocarbons | acetate → ethane |\n| **Anodic oxidation** | Loss of electron(s) at the anode: RCOO⁻ → R· + CO₂ | the coupling engine |\n| **Dicarboxylate electrolysis** | Both ends decarboxylate; intramolecular coupling builds π bonds | succinate → ethyne |",
+    "## 4. Detailed Explanation\n\n### 4.1 The anode is the workshop\n\n- Every carbon–carbon bond of the product is forged **at the anode**: RCOO⁻ surrenders its electron, CO₂ departs, the naked R· radicals meet and couple. The cathode merely makes hydrogen and base.\n\n### 4.2 Counting carbons\n\n- Two acetates (C₂ each) − two carboxyl carbons → **C₂ ethane**. The rule: **product carbons = (carbons of R) × 2** where R is the group remaining after –COO⁻.\n\n### 4.3 The succinate surprise\n\n- Succinate's two carboxylates sit at the two ends of –CH₂–CH₂–; decarboxylating both leaves two joined CH₂· units that shed H₂ to become **C≡C** — the only syllabus route where a **triple bond appears from electrolysis**.",
+    "## 5. Comparison Tables\n\n**Kolbe products by electrolyte**\n\n| Electrolyte | Product | Family |\n|---|---|---|\n| sodium acetate | ethane | alkane |\n| sodium propionate | butane (n-) | alkane |\n| potassium succinate | ethyne | alkyne |\n| suitable dicarboxylate (modified) | ethene | alkene |",
+    "## 6. Common Confusions\n\n**The product appears at the anode:** oxidation happens there; students who put ethane at the cathode lose the logic (and the marks).",
+    "**Carboxyl carbons vanish as CO₂:** acetate (C₂) gives ethane (C₂) because both carboxyl carbons leave — count R groups, not the whole salt.",
+    "**Cathode chemistry still happens:** H₂ evolves and NaOH forms — the full equation includes them.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Describe the Kolbe electrolysis of sodium acetate with the overall equation.** — Concentrated **sodium acetate solution** is electrolysed with **platinum electrodes**. **At the anode:** acetate ions are oxidised — **CH₃COO⁻ → CH₃· + CO₂ + e⁻** — and the methyl radicals **dimerise**: **2CH₃· → CH₃–CH₃ (ethane)**. **At the cathode:** water is reduced — **2H₂O + 2e⁻ → H₂↑ + 2OH⁻** — so hydrogen evolves and the solution becomes **alkaline (NaOH)**. **Overall:** **2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH**. The two carboxyl carbons leave as CO₂; the two methyl groups couple into the alkane.",
+    "**NEB-style (2m): How does the electrolysis of potassium succinate give ethyne?** — **Potassium succinate, KOOC–CH₂–CH₂–COOK**, is electrolysed: **both carboxylate groups are oxidised at the anode**, each losing CO₂ and an electron, leaving the two central carbons as joined radicals — **·CH₂–CH₂·** — which shed **two hydrogens** to form the triple bond: **HC≡CH (ethyne)**. Overall: **KOOC–CH₂–CH₂–COOK + 2KOH(electrolysis) → HC≡CH + 2K₂CO₃ + 2H₂**. The dicarboxylate's own skeleton becomes the alkyne.",
+    "**NEB-style (2m): Predict the Kolbe product of sodium propionate.** — Sodium propionate, **CH₃CH₂COONa**: anodic oxidation gives **ethyl radicals (C₂H₅·)** which couple: **2C₂H₅· → C₄H₁₀ (n-butane)**. Overall **2CH₃CH₂COONa + 2H₂O → C₄H₁₀ + 2CO₂ + H₂ + 2NaOH**. The rule: **product carbons = 2 × (carbons in R)** — propionate's R has 2 carbons, so the alkane has 4."
   ],
   "confusion": [],
   "bounds": [
@@ -28,21 +26,24 @@
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
-    "Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
-    "Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
+  "practice": [
+    "Describe Kolbe electrolysis of sodium acetate with electrode half-reactions.",
+    "Predict the Kolbe products of propionate and succinate.",
+    "State where the product forms and why, and what the cathode produces."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Kolbe's 1845 synthesis was the first total synthesis of an organic compound from elements — acetic acid from C, H, O — the ancestor of all synthetic organic chemistry."
+  ],
+  "examples": [
+    "***Succinate's self-coupling*** — one molecule, two anodic exits, one triple bond: the dicarboxylate needs no partner because its two ends were already married."
+  ],
   "practiceQuestions": [
-    "Q. Write the electrode reactions for the Kolbe electrolysis of sodium acetate. (3 marks) — anode: 2CH3COO− → C2H6 + 2CO2 + 2e; cathode: 2H2O + 2e → H2 + 2OH−.",
-    "Q. Which salt gives ethene by Kolbe's method? (1 mark) — sodium succinate."
+    "**NEB-style (3m): Describe the Kolbe electrolysis of sodium acetate with the overall equation.** — A **concentrated solution of sodium acetate** is electrolysed using **platinum electrodes**. **At the anode (oxidation):** acetate ions lose an electron and decarboxylate: **CH₃COO⁻ → CH₃· + CO₂ + e⁻**; the methyl radicals so formed **dimerise** on the anode surface: **2CH₃· → CH₃–CH₃** — **ethane** is the anodic product. **At the cathode (reduction):** water is reduced instead: **2H₂O + 2e⁻ → H₂↑ + 2OH⁻** — hydrogen gas evolves and hydroxide accumulates, so the solution around the cathode turns **alkaline (NaOH forms)**. **Overall equation:** **2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂↑ + H₂↑ + 2NaOH**. Note the carbon accounting: the **two carboxyl carbons leave as CO₂**; the two methyl carbons (one from each acetate) couple into ethane.",
+    "**NEB-style (2m): How does the electrolysis of potassium succinate give ethyne?** — **Potassium succinate** carries **two carboxylate groups** on a –CH₂–CH₂– skeleton: **KOOC–CH₂–CH₂–COOK**. During electrolysis **both ends are oxidised at the anode**, each losing CO₂ and an electron, which leaves the two central carbons as a **joined diradical pair, ·CH₂–CH₂·**. This pair eliminates two hydrogen atoms to form the **triple bond**: **·CH₂–CH₂· → HC≡CH (ethyne)**. Overall: **KOOC–CH₂–CH₂–COOK + 2KOH →(electrolysis) HC≡CH + 2K₂CO₃ + 2H₂**. The alkyne is built entirely from the succinate's own two central carbons — intramolecular coupling.",
+    "**NEB-style (2m): Predict the Kolbe product of sodium propionate.** — Sodium propionate is **CH₃CH₂COONa**. At the anode each propionate ion decarboxylates: **CH₃CH₂COO⁻ → C₂H₅· + CO₂ + e⁻**, and two **ethyl radicals couple**: **2C₂H₅· → CH₃CH₂CH₂CH₃** — **n-butane**. Overall: **2CH₃CH₂COONa + 2H₂O → C₄H₁₀ + 2CO₂ + H₂ + 2NaOH**. The counting rule: the alkane contains **twice the carbons of the R group** (R = C₂H₅, 2 carbons → 4-carbon product), because the carboxyl carbon is always lost as CO₂."
   ],
   "formulas": [
-    "ΔG = −nFE",
-    "E = E° − (0.0592/n)log Q (25°C)",
-    "m = (M/F)Q"
+    "- Anode: CH₃COO⁻ → CH₃· + CO₂ + e⁻; 2CH₃· → C₂H₆\n- Cathode: 2H₂O + 2e⁻ → H₂ + 2OH⁻\n- Overall: 2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH\n- Succinate: KOOC–CH₂–CH₂–COOK → HC≡CH (+ 2K₂CO₃ + 2H₂)"
   ],
   "numericals": [
     "Use  ΔG = −nFE  — pick reasonable values, solve, and check the units.",
@@ -50,11 +51,9 @@
     "Use  m = (M/F)Q  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Kolbe's electrolysis methods for the preparation of alkanes",
-    "• Alkenes",
-    "• Alkynes"
+    "Kolbe electrolysis: anodic decarboxylative coupling. Sodium acetate (conc, Pt electrodes): anode CH3COO- -> CH3. + CO2 + e-; 2CH3. -> C2H6; cathode 2H2O + 2e- -> H2 + 2OH-; overall 2CH3COONa + 2H2O -> C2H6 + 2CO2 + H2 + 2NaOH (solution becomes NaOH). Rule: product carbons = 2 x (R carbons); propionate -> n-butane. Potassium succinate KOOC-CH2-CH2-COOK -> both ends decarboxylate -> .CH2-CH2. -> loses H2 -> HCCH (ethyne); overall -> HCCH + 2K2CO3 + 2H2. Alkene variants: modified dicarboxylate electrolysis -> ethene."
   ],
-  "summary": "Kolbe's electrolysis methods for the preparation of alkan… (Hydrocarbons, Chemistry, class-11-notes) covers Kolbe's electrolysis methods for the preparation of alkanes, alkenes, alkynes. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Kolbe's electrolysis forges C–C bonds with electricity. In **sodium acetate solution (Pt electrodes)** the **anode** oxidises acetate — **CH₃COO⁻ → CH₃· + CO₂ + e⁻** — and methyl radicals couple to **ethane**, while the **cathode** makes H₂ and NaOH: **2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH**. The carbon rule: carboxyl carbons exit as CO₂, so the product carries **2 × (R carbons)** — propionate gives **n-butane**. **Dicarboxylates** close the loop: **potassium succinate** loses both carboxyls and its own –CH₂–CH₂– skeleton sheds hydrogen to become **ethyne**; modified dicarboxylate electrolyses deliver **ethene**. One apparatus, three families: alkane from the acetate, alkyne from the succinate, alkene from the engineered middle ground — all welded at the anode.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Kolbe's electrolysis methods for the preparation of alkan…\"?",
@@ -78,8 +77,70 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Electrode logic: hydrocarbon forms at the ANODE (oxidation of carboxylate), H2 at cathode — stating the electrode earns the first mark.",
-    "Trick 2: Three recipes — sodium acetate → ethane; sodium succinate → ethene (plus CO2); sodium fumarate/maleate → ethyne.",
-    "Trick 3: General anode reaction: 2RCOO− − 2e → R–R + 2CO2; remember CO2 bubbles as the visible observation."
+    "Anode = product (radical coupling); cathode = H2 + NaOH. Acetate → ethane; propionate → butane (2×R carbons); succinate → ethyne. CO2 is the carboxyl carbon's exit."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Electricity Builds Hydrocarbons\n\nKolbe's electrolysis passes current through a **carboxylate solution**: at the anode, carboxylate ions surrender electrons, lose CO₂, and **couple into hydrocarbons**. Sodium acetate gives **ethane**; succinic acid gives **ethyne**; a suitable salt can even deliver **ethene** — electrolysis as a C–C bond factory.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Kolbe electrolysis of sodium acetate → alkane\n\n- Electrolyte: **concentrated sodium acetate solution**; electrodes: platinum; product at **anode**.\n- **CH₃COO⁻ → CH₃· + CO₂ + e⁻** (anodic oxidation); **2CH₃· → CH₃–CH₃** (ethane).\n- Cathode: **2H₂O + 2e⁻ → H₂ + 2OH⁻** (hydrogen evolves); solution turns alkaline.\n- Overall: **2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH**.\n\n### 2.2 Kolbe route to alkynes (potassium succinate)\n\n- **Potassium succinate** — KOOC–CH₂–CH₂–COOK — loses both carboxyls at the anode; the two CH₂· radicals couple with **two fewer H**: product **HC≡CH (ethyne)**.\n- Overall: **KOOC–CH₂–CH₂–COOK + 2KOH → HC≡CH + 2K₂CO₃ + 2H₂** (electrolysis).\n- Geometry does the work: the two radicals are born joined — they combine and shed the extra hydrogens.\n\n### 2.3 Kolbe route to alkenes\n\n- Electrolysing salts that leave radicals with a β-H and the right geometry gives alkenes — e.g. electrolysis of **potassium succinate under modified conditions/adipate-type salts** yields **ethene** from the coupled intermediate by further loss of H₂; textbook-level: **succinate → ethyne; modified/adjacent-dicarboxylate electrolysis → ethene**.\n- Simpler framing for the syllabus: **Kolbe of sodium propionate gives butane; the alkene/alkyne variants come from dicarboxylates** — succinic (alkyne), and electrolysis of **potassium maleate/succinate variants** for ethene.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Kolbe electrolysis** | Anodic decarboxylative coupling of carboxylates to hydrocarbons | acetate → ethane |\n| **Anodic oxidation** | Loss of electron(s) at the anode: RCOO⁻ → R· + CO₂ | the coupling engine |\n| **Dicarboxylate electrolysis** | Both ends decarboxylate; intramolecular coupling builds π bonds | succinate → ethyne |",
+      "## 4. Detailed Explanation\n\n### 4.1 The anode is the workshop\n\n- Every carbon–carbon bond of the product is forged **at the anode**: RCOO⁻ surrenders its electron, CO₂ departs, the naked R· radicals meet and couple. The cathode merely makes hydrogen and base.\n\n### 4.2 Counting carbons\n\n- Two acetates (C₂ each) − two carboxyl carbons → **C₂ ethane**. The rule: **product carbons = (carbons of R) × 2** where R is the group remaining after –COO⁻.\n\n### 4.3 The succinate surprise\n\n- Succinate's two carboxylates sit at the two ends of –CH₂–CH₂–; decarboxylating both leaves two joined CH₂· units that shed H₂ to become **C≡C** — the only syllabus route where a **triple bond appears from electrolysis**.",
+      "## 5. Comparison Tables\n\n**Kolbe products by electrolyte**\n\n| Electrolyte | Product | Family |\n|---|---|---|\n| sodium acetate | ethane | alkane |\n| sodium propionate | butane (n-) | alkane |\n| potassium succinate | ethyne | alkyne |\n| suitable dicarboxylate (modified) | ethene | alkene |",
+      "## 6. Common Confusions\n\n**The product appears at the anode:** oxidation happens there; students who put ethane at the cathode lose the logic (and the marks).",
+      "**Carboxyl carbons vanish as CO₂:** acetate (C₂) gives ethane (C₂) because both carboxyl carbons leave — count R groups, not the whole salt.",
+      "**Cathode chemistry still happens:** H₂ evolves and NaOH forms — the full equation includes them.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Describe the Kolbe electrolysis of sodium acetate with the overall equation.** — Concentrated **sodium acetate solution** is electrolysed with **platinum electrodes**. **At the anode:** acetate ions are oxidised — **CH₃COO⁻ → CH₃· + CO₂ + e⁻** — and the methyl radicals **dimerise**: **2CH₃· → CH₃–CH₃ (ethane)**. **At the cathode:** water is reduced — **2H₂O + 2e⁻ → H₂↑ + 2OH⁻** — so hydrogen evolves and the solution becomes **alkaline (NaOH)**. **Overall:** **2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH**. The two carboxyl carbons leave as CO₂; the two methyl groups couple into the alkane.",
+      "**NEB-style (2m): How does the electrolysis of potassium succinate give ethyne?** — **Potassium succinate, KOOC–CH₂–CH₂–COOK**, is electrolysed: **both carboxylate groups are oxidised at the anode**, each losing CO₂ and an electron, leaving the two central carbons as joined radicals — **·CH₂–CH₂·** — which shed **two hydrogens** to form the triple bond: **HC≡CH (ethyne)**. Overall: **KOOC–CH₂–CH₂–COOK + 2KOH(electrolysis) → HC≡CH + 2K₂CO₃ + 2H₂**. The dicarboxylate's own skeleton becomes the alkyne.",
+      "**NEB-style (2m): Predict the Kolbe product of sodium propionate.** — Sodium propionate, **CH₃CH₂COONa**: anodic oxidation gives **ethyl radicals (C₂H₅·)** which couple: **2C₂H₅· → C₄H₁₀ (n-butane)**. Overall **2CH₃CH₂COONa + 2H₂O → C₄H₁₀ + 2CO₂ + H₂ + 2NaOH**. The rule: **product carbons = 2 × (carbons in R)** — propionate's R has 2 carbons, so the alkane has 4."
+    ],
+    "keyPoints": [
+      "Kolbe electrolysis: anodic decarboxylative coupling. Sodium acetate (conc, Pt electrodes): anode CH3COO- -> CH3. + CO2 + e-; 2CH3. -> C2H6; cathode 2H2O + 2e- -> H2 + 2OH-; overall 2CH3COONa + 2H2O -> C2H6 + 2CO2 + H2 + 2NaOH (solution becomes NaOH). Rule: product carbons = 2 x (R carbons); propionate -> n-butane. Potassium succinate KOOC-CH2-CH2-COOK -> both ends decarboxylate -> .CH2-CH2. -> loses H2 -> HCCH (ethyne); overall -> HCCH + 2K2CO3 + 2H2. Alkene variants: modified dicarboxylate electrolysis -> ethene."
+    ],
+    "importantConcepts": [
+      "Electrolysis as a bond forge: the anode strips electrons and CO2 from carboxylates, and the freed radicals couple — the current literally welds carbons together."
+    ],
+    "examples": [
+      "***Succinate's self-coupling*** — one molecule, two anodic exits, one triple bond: the dicarboxylate needs no partner because its two ends were already married."
+    ],
+    "universalFacts": [
+      "Kolbe's 1845 synthesis was the first total synthesis of an organic compound from elements — acetic acid from C, H, O — the ancestor of all synthetic organic chemistry."
+    ],
+    "importantStatements": [
+      "\"Kolbe electrolysis converts carboxylates to hydrocarbons at the anode by decarboxylative radical coupling; dicarboxylates yield alkenes and alkynes.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Anode = product (radical coupling); cathode = H2 + NaOH. Acetate → ethane; propionate → butane (2×R carbons); succinate → ethyne. CO2 is the carboxyl carbon's exit."
+    ],
+    "examNotes": [
+      "Write the half-reactions at both electrodes plus the overall equation — the cathode half is worth a mark on its own."
+    ],
+    "formulas": [
+      "- Anode: CH₃COO⁻ → CH₃· + CO₂ + e⁻; 2CH₃· → C₂H₆\n- Cathode: 2H₂O + 2e⁻ → H₂ + 2OH⁻\n- Overall: 2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH\n- Succinate: KOOC–CH₂–CH₂–COOK → HC≡CH (+ 2K₂CO₃ + 2H₂)"
+    ],
+    "practice": [
+      "Describe Kolbe electrolysis of sodium acetate with electrode half-reactions.",
+      "Predict the Kolbe products of propionate and succinate.",
+      "State where the product forms and why, and what the cathode produces."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Describe the Kolbe electrolysis of sodium acetate with the overall equation.** — A **concentrated solution of sodium acetate** is electrolysed using **platinum electrodes**. **At the anode (oxidation):** acetate ions lose an electron and decarboxylate: **CH₃COO⁻ → CH₃· + CO₂ + e⁻**; the methyl radicals so formed **dimerise** on the anode surface: **2CH₃· → CH₃–CH₃** — **ethane** is the anodic product. **At the cathode (reduction):** water is reduced instead: **2H₂O + 2e⁻ → H₂↑ + 2OH⁻** — hydrogen gas evolves and hydroxide accumulates, so the solution around the cathode turns **alkaline (NaOH forms)**. **Overall equation:** **2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂↑ + H₂↑ + 2NaOH**. Note the carbon accounting: the **two carboxyl carbons leave as CO₂**; the two methyl carbons (one from each acetate) couple into ethane.",
+      "**NEB-style (2m): How does the electrolysis of potassium succinate give ethyne?** — **Potassium succinate** carries **two carboxylate groups** on a –CH₂–CH₂– skeleton: **KOOC–CH₂–CH₂–COOK**. During electrolysis **both ends are oxidised at the anode**, each losing CO₂ and an electron, which leaves the two central carbons as a **joined diradical pair, ·CH₂–CH₂·**. This pair eliminates two hydrogen atoms to form the **triple bond**: **·CH₂–CH₂· → HC≡CH (ethyne)**. Overall: **KOOC–CH₂–CH₂–COOK + 2KOH →(electrolysis) HC≡CH + 2K₂CO₃ + 2H₂**. The alkyne is built entirely from the succinate's own two central carbons — intramolecular coupling.",
+      "**NEB-style (2m): Predict the Kolbe product of sodium propionate.** — Sodium propionate is **CH₃CH₂COONa**. At the anode each propionate ion decarboxylates: **CH₃CH₂COO⁻ → C₂H₅· + CO₂ + e⁻**, and two **ethyl radicals couple**: **2C₂H₅· → CH₃CH₂CH₂CH₃** — **n-butane**. Overall: **2CH₃CH₂COONa + 2H₂O → C₄H₁₀ + 2CO₂ + H₂ + 2NaOH**. The counting rule: the alkane contains **twice the carbons of the R group** (R = C₂H₅, 2 carbons → 4-carbon product), because the carboxyl carbon is always lost as CO₂."
+    ]
+  },
+  "importantConcepts": [
+    "Electrolysis as a bond forge: the anode strips electrons and CO2 from carboxylates, and the freed radicals couple — the current literally welds carbons together."
+  ],
+  "importantStatements": [
+    "\"Kolbe electrolysis converts carboxylates to hydrocarbons at the anode by decarboxylative radical coupling; dicarboxylates yield alkenes and alkynes.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examNotes": [
+    "Write the half-reactions at both electrodes plus the overall equation — the cathode half is worth a mark on its own."
   ]
 }

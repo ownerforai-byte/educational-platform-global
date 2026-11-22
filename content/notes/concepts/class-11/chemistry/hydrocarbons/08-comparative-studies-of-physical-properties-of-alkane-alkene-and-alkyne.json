@@ -7,16 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Comparative studies of physical properties of alkane, alk… — Hydrocarbons, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: comparative studies of physical properties of alkane, alkene, alkyne · one worked example · one misconception each.",
-    "**Alkene.** one-line definition + one-line exam use.",
-    "**Alkyne.** one-line definition + one-line exam use.",
-    "# Comparative studies of physical properties of alkane, alkene and alkyne\n\n## 1. Introduction\nChemical picture of **Comparative studies of physical properties of alkane** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Comparative studies of physical properties of alkane\n### alkene and alkyne\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Comparative studies of physical properties of alkane — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Comparative studies of physical properties of alkane — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Comparative studies of physical properties of alkane — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Comparative studies of physical properties of alkane — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Three Families, One Table\n\nAlkanes, alkenes and alkynes differ by π-bond count — and every physical property follows: **boiling points, melting points, densities, solubilities** rise with molar mass and with unsaturation's extra intermolecular contact, while all three stay **non-polar and water-insoluble**.",
+    "## 2. Fundamental Concepts\n\n### 2.1 State and odour\n\n- **C₁–C₄** gases (all three families), **C₅–C₁₇** liquids, **C₁₈+** waxy solids.\n- Pure alkanes/alkenes/alkynes are odourless; commercial fuels smell from additives/impurities (ethyne's garlic smell is phosphine impurity).\n\n### 2.2 Boiling and melting points\n\n- Rise with carbon number (more surface → stronger van der Waals).\n- At equal carbons: **alkyne ≥ alkene > alkane** — the π electrons are more polarisable, tightening intermolecular attraction. (B.p.: ethane −89 °C < ethene −104 °C... small-member anomalies exist; the general ladder holds from C₃ up.)\n- Branching **lowers** b.p. (less contact surface): n-butane −0.5 °C > isobutane −11.7 °C.\n\n### 2.3 Density and solubility\n\n- All **less dense than water** (float); density rises slowly with carbon number (≈0.6–0.8 g/cm³).\n- **Insoluble in water** (non-polar vs polar); **soluble in non-polar organic solvents** (benzene, ether, CCl₄) — like dissolves like.\n\n### 2.4 Combustion and stability\n\n- All burn to CO₂ + H₂O; **alkynes burn with a smoky, luminous flame** (higher carbon percentage).\n- Stability: more substituted π systems are more stable; alkynes are less reactive toward electrophilic addition than alkenes (vinyl cation instability) despite \"two π bonds\".",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **van der Waals forces** | Intermolecular attraction scaling with surface area and polarisability | b.p. rises C₁→C₁₇ |\n| **Branching effect** | Branched isomers pack worse → lower b.p. | n-butane > isobutane |\n| **Like dissolves like** | Non-polar solutes dissolve in non-polar solvents | hexane in benzene, not water |",
+    "## 4. Detailed Explanation\n\n### 4.1 Reading the periodic trend across the table\n\n- Within a family, properties change **gradually with n** — gases to liquids to solids. Across families at fixed n, unsaturation nudges b.p./density **up** because π clouds are more polarisable than σ frameworks.\n\n### 4.2 Why water says no\n\n- Water's hydrogen-bonded network gains nothing by hosting a non-polar hydrocarbon; dissolving would cost order without repaying energy. Organic solvents offer van der Waals company instead.\n\n### 4.3 The smoky flame\n\n- Alkynes carry the **highest carbon-to-hydrogen ratio**; combustion is carbon-rich and oxygen-starved at the flame front — free carbon glows (luminous, smoky). A diagnostic flame test in itself.",
+    "## 5. Comparison Tables\n\n**Physical properties at a glance (same carbon number n)**\n\n| Property | Alkane | Alkene | Alkyne |\n|---|---|---|---|\n| general formula | CₙH₂ₙ₊₂ | CₙH₂ₙ | CₙH₂ₙ₋₂ |\n| polarity | non-polar | weak (π) | weak (π) |\n| b.p. trend | lowest | middle | highest (C₃+) |\n| water solubility | insoluble | insoluble | insoluble |\n| flame | clean blue (small n) | luminous | smoky, luminous |\n| density | < 1 g/cm³ | < 1 | < 1 |",
+    "## 6. Common Confusions\n\n**The C₂ anomaly:** ethene boils below ethane (−104 vs −89 °C) despite more unsaturation — small-molecule packing quirks; the alkyne ≥ alkene > alkane ladder is reliable from C₃ upward.",
+    "**Branching beats unsaturation:** a branched alkane can boil lower than a straight alkene of the same formula — surface area matters as much as π.",
+    "**Insoluble ≠ unreactive with water:** calcium carbide reacts with water; alkanes/alkenes/alkynes themselves do not dissolve in it.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Compare the boiling points of alkanes, alkenes and alkynes of the same carbon number with reasons.** — For the same carbon number (from C₃ upward), **alkynes boil highest, alkenes next, alkanes lowest**. Boiling depends on **van der Waals (London) forces**, which strengthen with **polarisability**: the π-electron clouds of C=C and especially C≡C are more easily distorted than σ frameworks, so alkynes/alkenes attract their neighbours more strongly than alkanes of equal molar mass. Within any family, b.p. **rises with chain length** (more contact surface) and **falls with branching** (n-butane −0.5 °C vs isobutane −11.7 °C). All three families boil far below water because only weak dispersion forces must be overcome.",
+    "**NEB-style (2m): Why are hydrocarbons insoluble in water but soluble in organic solvents?** — Hydrocarbons are **non-polar** molecules held to each other only by weak dispersion forces. **Water** is strongly hydrogen-bonded and polar: inserting a non-polar molecule would break water's H-bond network without any compensating attraction — energetically uphill, so **insoluble**. **Organic solvents** (benzene, ether, CCl₄) are themselves non-polar: solute–solvent dispersion interactions replace solute–solute ones at no energetic penalty — **\"like dissolves like\"**.",
+    "**NEB-style (2m): Why does ethyne burn with a smoky flame?** — Ethyne has the **highest carbon percentage** of the three families (C₂H₂ ≈ 92% carbon). In a luminous flame the oxygen supply at the flame front cannot fully oxidise so much carbon, so **free carbon particles** form and glow incandescently — the **smoky, luminous flame** used in the oxy-acetylene torch. A more oxygen-rich mixture burns it cleanly with high temperature."
   ],
   "confusion": [],
   "bounds": [
@@ -24,21 +25,26 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Comparative studies of physical properties of alkane, alk…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Compare b.p., density and solubility of the three hydrocarbon families.",
+    "Explain the branching effect on boiling point with the butane example.",
+    "Account for the smoky flame of ethyne."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Oil floats on water for the same reason hydrocarbons refuse to dissolve in it: density below 1 g/cm3 and no polar handle for water's hydrogen bonds to grab."
+  ],
+  "examples": [
+    "***Two butanes, two boiling points*** — same formula C4H10, five kelvin apart in boiling: the branched isomer simply offers less skin for its neighbours to grip."
+  ],
   "practiceQuestions": [
-    "Q. Compare the boiling points of ethane, ethene and ethyne. (2 marks) — ethyne > ethene > ethane; increasing s-character and linearity.",
-    "Q. Why are alkanes insoluble in water? (1 mark) — non-polar molecules cannot form hydrogen bonds with water."
+    "**NEB-style (3m): Compare the boiling points of alkanes, alkenes and alkynes of the same carbon number with reasons.** — For equal carbon numbers (reliably from C₃ upward) the order is **alkyne > alkene > alkane**. Boiling requires overcoming only **van der Waals (London dispersion) forces**, whose strength grows with **molecular surface area** and **polarisability**. The π-electron clouds of double and triple bonds are **more polarisable** than σ frameworks, so unsaturated molecules attract their neighbours more strongly: at the same carbon count the alkyne, with its two dense π clouds, boils highest and the σ-only alkane lowest. Two modifiers: within any family b.p. **rises with chain length** (C₁–C₄ gases → C₅–C₁₇ liquids → C₁₈+ solids), and **branching lowers** b.p. by shrinking the contact surface — **n-butane (−0.5 °C) vs isobutane (−11.7 °C)**. Note the small-member anomaly: **ethene (−104 °C) boils below ethane (−89 °C)**; the general ladder is trustworthy only from C₃ up.",
+    "**NEB-style (2m): Why are hydrocarbons insoluble in water but soluble in organic solvents?** — Hydrocarbons are **non-polar**: their only intermolecular glue is weak dispersion force. **Water** is polar and extensively hydrogen-bonded; dissolving a hydrocarbon would force water molecules to break H-bonds to make room, with **no compensating attraction** offered by the non-polar guest — the process costs energy, so hydrocarbons are **insoluble** (they float, being less dense than water). **Organic solvents** such as benzene, ether or CCl₄ are themselves non-polar: solute–solvent dispersion interactions simply replace solute–solute ones, so mixing is energetically neutral or favourable — **\"like dissolves like\"**. This is why hexane mixes with benzene but forms a separate layer over water.",
+    "**NEB-style (2m): Why does ethyne burn with a smoky flame?** — Ethyne's carbon percentage is the **highest of the three families** (C₂H₂ is ≈92% carbon by mass). In a normal luminous flame the local oxygen supply cannot fully oxidise so much carbon at once, so **free carbon particles** are generated in the flame; these particles are heated to incandescence and glow — giving the **luminous, smoky flame** characteristic of alkynes (and used deliberately in the oxy-acetylene torch, where excess oxygen raises the flame to ~3300 °C for cutting steel). Alkanes, being hydrogen-richer, burn with a cleaner, less luminous flame."
   ],
   "keyPoints": [
-    "• Comparative studies of physical properties of alkane",
-    "• Alkene",
-    "• Alkyne"
+    "C1-C4 gases, C5-C17 liquids, C18+ solids; all odourless when pure. B.p./m.p. rise with carbon number; at same n (C3+): alkyne > alkene > alkane (pi polarisability); branching lowers b.p. (n-butane -0.5C > isobutane -11.7C); C2 anomaly: ethene -104C < ethane -89C. All < 1 g/cm3 (float on water), density rises slowly with n. Insoluble in water (non-polar), soluble in organic solvents (like dissolves like). Combustion: all to CO2 + H2O; alkynes smoky luminous flame (highest C%). Alkynes less reactive than alkenes toward electrophilic addition (vinyl cation instability)."
   ],
-  "summary": "Comparative studies of physical properties of alkane, alk… (Hydrocarbons, Chemistry, class-11-notes) covers Comparative studies of physical properties of alkane, alkene, alkyne. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "One table settles the three families. **Formulas** CₙH₂ₙ₊₂ / CₙH₂ₙ / CₙH₂ₙ₋₂; **states** gas (C₁–C₄), liquid (C₅–C₁₇), solid (C₁₈+). **Boiling/melting** climb with chain length as dispersion forces accumulate; at equal carbon (C₃+) the polarisable π clouds lift the order to **alkyne > alkene > alkane**, while **branching drops** it (n-butane −0.5 °C vs isobutane −11.7 °C; C₂ shows the famous anomaly). All three are **less dense than water**, **water-insoluble** (non-polar vs hydrogen-bonded water) and **organic-solvent-soluble** — like dissolves like. In flame, the carbon-rich alkynes smoke and glow; in reactivity, despite two π bonds, alkynes add more slowly than alkenes because the vinyl cation intermediate is unstable. Physical behaviour is contact accounting — surface, polarisability, polarity — and nothing else.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Comparative studies of physical properties of alkane, alk…\"?",
@@ -62,8 +68,73 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: State/solubility common row: first four members are gases, next are liquids; all are non-polar, insoluble in water, soluble in organic solvents — one row covers three classes.",
-    "Trick 2: Boiling point rises with carbon number; for the SAME carbon number: alkyne > alkene > alkane (more linear packing/s-polarity) — the subtle mark.",
-    "Trick 3: Odour fact: ethene sweet smell, ethyne garlic-like — quick identification line."
+    "Gases C1-4, liquids C5-17, solids C18+. B.p. ladder at same n: alkyne > alkene > alkane (C3+). Branching lowers b.p. Float on water; dissolve in benzene/ether. Smoky flame = high C% = alkyne."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Three Families, One Table\n\nAlkanes, alkenes and alkynes differ by π-bond count — and every physical property follows: **boiling points, melting points, densities, solubilities** rise with molar mass and with unsaturation's extra intermolecular contact, while all three stay **non-polar and water-insoluble**.",
+      "## 2. Fundamental Concepts\n\n### 2.1 State and odour\n\n- **C₁–C₄** gases (all three families), **C₅–C₁₇** liquids, **C₁₈+** waxy solids.\n- Pure alkanes/alkenes/alkynes are odourless; commercial fuels smell from additives/impurities (ethyne's garlic smell is phosphine impurity).\n\n### 2.2 Boiling and melting points\n\n- Rise with carbon number (more surface → stronger van der Waals).\n- At equal carbons: **alkyne ≥ alkene > alkane** — the π electrons are more polarisable, tightening intermolecular attraction. (B.p.: ethane −89 °C < ethene −104 °C... small-member anomalies exist; the general ladder holds from C₃ up.)\n- Branching **lowers** b.p. (less contact surface): n-butane −0.5 °C > isobutane −11.7 °C.\n\n### 2.3 Density and solubility\n\n- All **less dense than water** (float); density rises slowly with carbon number (≈0.6–0.8 g/cm³).\n- **Insoluble in water** (non-polar vs polar); **soluble in non-polar organic solvents** (benzene, ether, CCl₄) — like dissolves like.\n\n### 2.4 Combustion and stability\n\n- All burn to CO₂ + H₂O; **alkynes burn with a smoky, luminous flame** (higher carbon percentage).\n- Stability: more substituted π systems are more stable; alkynes are less reactive toward electrophilic addition than alkenes (vinyl cation instability) despite \"two π bonds\".",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **van der Waals forces** | Intermolecular attraction scaling with surface area and polarisability | b.p. rises C₁→C₁₇ |\n| **Branching effect** | Branched isomers pack worse → lower b.p. | n-butane > isobutane |\n| **Like dissolves like** | Non-polar solutes dissolve in non-polar solvents | hexane in benzene, not water |",
+      "## 4. Detailed Explanation\n\n### 4.1 Reading the periodic trend across the table\n\n- Within a family, properties change **gradually with n** — gases to liquids to solids. Across families at fixed n, unsaturation nudges b.p./density **up** because π clouds are more polarisable than σ frameworks.\n\n### 4.2 Why water says no\n\n- Water's hydrogen-bonded network gains nothing by hosting a non-polar hydrocarbon; dissolving would cost order without repaying energy. Organic solvents offer van der Waals company instead.\n\n### 4.3 The smoky flame\n\n- Alkynes carry the **highest carbon-to-hydrogen ratio**; combustion is carbon-rich and oxygen-starved at the flame front — free carbon glows (luminous, smoky). A diagnostic flame test in itself.",
+      "## 5. Comparison Tables\n\n**Physical properties at a glance (same carbon number n)**\n\n| Property | Alkane | Alkene | Alkyne |\n|---|---|---|---|\n| general formula | CₙH₂ₙ₊₂ | CₙH₂ₙ | CₙH₂ₙ₋₂ |\n| polarity | non-polar | weak (π) | weak (π) |\n| b.p. trend | lowest | middle | highest (C₃+) |\n| water solubility | insoluble | insoluble | insoluble |\n| flame | clean blue (small n) | luminous | smoky, luminous |\n| density | < 1 g/cm³ | < 1 | < 1 |",
+      "## 6. Common Confusions\n\n**The C₂ anomaly:** ethene boils below ethane (−104 vs −89 °C) despite more unsaturation — small-molecule packing quirks; the alkyne ≥ alkene > alkane ladder is reliable from C₃ upward.",
+      "**Branching beats unsaturation:** a branched alkane can boil lower than a straight alkene of the same formula — surface area matters as much as π.",
+      "**Insoluble ≠ unreactive with water:** calcium carbide reacts with water; alkanes/alkenes/alkynes themselves do not dissolve in it.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Compare the boiling points of alkanes, alkenes and alkynes of the same carbon number with reasons.** — For the same carbon number (from C₃ upward), **alkynes boil highest, alkenes next, alkanes lowest**. Boiling depends on **van der Waals (London) forces**, which strengthen with **polarisability**: the π-electron clouds of C=C and especially C≡C are more easily distorted than σ frameworks, so alkynes/alkenes attract their neighbours more strongly than alkanes of equal molar mass. Within any family, b.p. **rises with chain length** (more contact surface) and **falls with branching** (n-butane −0.5 °C vs isobutane −11.7 °C). All three families boil far below water because only weak dispersion forces must be overcome.",
+      "**NEB-style (2m): Why are hydrocarbons insoluble in water but soluble in organic solvents?** — Hydrocarbons are **non-polar** molecules held to each other only by weak dispersion forces. **Water** is strongly hydrogen-bonded and polar: inserting a non-polar molecule would break water's H-bond network without any compensating attraction — energetically uphill, so **insoluble**. **Organic solvents** (benzene, ether, CCl₄) are themselves non-polar: solute–solvent dispersion interactions replace solute–solute ones at no energetic penalty — **\"like dissolves like\"**.",
+      "**NEB-style (2m): Why does ethyne burn with a smoky flame?** — Ethyne has the **highest carbon percentage** of the three families (C₂H₂ ≈ 92% carbon). In a luminous flame the oxygen supply at the flame front cannot fully oxidise so much carbon, so **free carbon particles** form and glow incandescently — the **smoky, luminous flame** used in the oxy-acetylene torch. A more oxygen-rich mixture burns it cleanly with high temperature."
+    ],
+    "keyPoints": [
+      "C1-C4 gases, C5-C17 liquids, C18+ solids; all odourless when pure. B.p./m.p. rise with carbon number; at same n (C3+): alkyne > alkene > alkane (pi polarisability); branching lowers b.p. (n-butane -0.5C > isobutane -11.7C); C2 anomaly: ethene -104C < ethane -89C. All < 1 g/cm3 (float on water), density rises slowly with n. Insoluble in water (non-polar), soluble in organic solvents (like dissolves like). Combustion: all to CO2 + H2O; alkynes smoky luminous flame (highest C%). Alkynes less reactive than alkenes toward electrophilic addition (vinyl cation instability)."
+    ],
+    "importantConcepts": [
+      "Physical properties are contact accounting: more surface and more polarisable electrons mean stronger dispersion forces — chain length raises them, branching and small size lower them."
+    ],
+    "examples": [
+      "***Two butanes, two boiling points*** — same formula C4H10, five kelvin apart in boiling: the branched isomer simply offers less skin for its neighbours to grip."
+    ],
+    "universalFacts": [
+      "Oil floats on water for the same reason hydrocarbons refuse to dissolve in it: density below 1 g/cm3 and no polar handle for water's hydrogen bonds to grab."
+    ],
+    "importantStatements": [
+      "\"Alkanes, alkenes and alkynes are non-polar, water-insoluble, less dense than water; boiling points rise with chain length and, at equal carbon number, with unsaturation.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Gases C1-4, liquids C5-17, solids C18+. B.p. ladder at same n: alkyne > alkene > alkane (C3+). Branching lowers b.p. Float on water; dissolve in benzene/ether. Smoky flame = high C% = alkyne."
+    ],
+    "examNotes": [
+      "Quote at least one number (ethane −89 °C vs ethene −104 °C, or the two butanes) — concrete values earn the comparison mark."
+    ],
+    "formulas": [
+      "- Alkane CₙH₂ₙ₊₂ · alkene CₙH₂ₙ · alkyne CₙH₂ₙ₋₂\n- B.p. (same n, C₃+): alkyne > alkene > alkane\n- n-butane −0.5 °C > isobutane −11.7 °C (branching)\n- All densities < 1 g/cm³; water-insoluble"
+    ],
+    "practice": [
+      "Compare b.p., density and solubility of the three hydrocarbon families.",
+      "Explain the branching effect on boiling point with the butane example.",
+      "Account for the smoky flame of ethyne."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Compare the boiling points of alkanes, alkenes and alkynes of the same carbon number with reasons.** — For equal carbon numbers (reliably from C₃ upward) the order is **alkyne > alkene > alkane**. Boiling requires overcoming only **van der Waals (London dispersion) forces**, whose strength grows with **molecular surface area** and **polarisability**. The π-electron clouds of double and triple bonds are **more polarisable** than σ frameworks, so unsaturated molecules attract their neighbours more strongly: at the same carbon count the alkyne, with its two dense π clouds, boils highest and the σ-only alkane lowest. Two modifiers: within any family b.p. **rises with chain length** (C₁–C₄ gases → C₅–C₁₇ liquids → C₁₈+ solids), and **branching lowers** b.p. by shrinking the contact surface — **n-butane (−0.5 °C) vs isobutane (−11.7 °C)**. Note the small-member anomaly: **ethene (−104 °C) boils below ethane (−89 °C)**; the general ladder is trustworthy only from C₃ up.",
+      "**NEB-style (2m): Why are hydrocarbons insoluble in water but soluble in organic solvents?** — Hydrocarbons are **non-polar**: their only intermolecular glue is weak dispersion force. **Water** is polar and extensively hydrogen-bonded; dissolving a hydrocarbon would force water molecules to break H-bonds to make room, with **no compensating attraction** offered by the non-polar guest — the process costs energy, so hydrocarbons are **insoluble** (they float, being less dense than water). **Organic solvents** such as benzene, ether or CCl₄ are themselves non-polar: solute–solvent dispersion interactions simply replace solute–solute ones, so mixing is energetically neutral or favourable — **\"like dissolves like\"**. This is why hexane mixes with benzene but forms a separate layer over water.",
+      "**NEB-style (2m): Why does ethyne burn with a smoky flame?** — Ethyne's carbon percentage is the **highest of the three families** (C₂H₂ is ≈92% carbon by mass). In a normal luminous flame the local oxygen supply cannot fully oxidise so much carbon at once, so **free carbon particles** are generated in the flame; these particles are heated to incandescence and glow — giving the **luminous, smoky flame** characteristic of alkynes (and used deliberately in the oxy-acetylene torch, where excess oxygen raises the flame to ~3300 °C for cutting steel). Alkanes, being hydrogen-richer, burn with a cleaner, less luminous flame."
+    ]
+  },
+  "importantConcepts": [
+    "Physical properties are contact accounting: more surface and more polarisable electrons mean stronger dispersion forces — chain length raises them, branching and small size lower them."
+  ],
+  "importantStatements": [
+    "\"Alkanes, alkenes and alkynes are non-polar, water-insoluble, less dense than water; boiling points rise with chain length and, at equal carbon number, with unsaturation.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examNotes": [
+    "Quote at least one number (ethane −89 °C vs ethene −104 °C, or the two butanes) — concrete values earn the comparison mark."
+  ],
+  "formulas": [
+    "- Alkane CₙH₂ₙ₊₂ · alkene CₙH₂ₙ · alkyne CₙH₂ₙ₋₂\n- B.p. (same n, C₃+): alkyne > alkene > alkane\n- n-butane −0.5 °C > isobutane −11.7 °C (branching)\n- All densities < 1 g/cm³; water-insoluble"
   ]
 }

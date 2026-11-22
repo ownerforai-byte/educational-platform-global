@@ -7,33 +7,40 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Alkynes: preparation from carbon and hydrogen, 1,2-dibromoethane, chloroform/iodoform only\n\n## 1. Introduction\nChemical picture of **Alkynes** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Alkynes: preparation from carbon and hydrogen\n### 1\n### 2-dibromoethane\n### chloroform/iodoform only\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Alkynes — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Alkynes — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Alkynes — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Alkynes — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Two π Bonds, One Carbon Rod\n\nAlkynes (**CₙH₂ₙ₋₂**) carry a C≡C triple bond. The syllabus routes to them start from the **elements themselves** (carbon + hydrogen → ethyne via calcium carbide) and from **vicinal dihalides** (1,2-dibromoethane) and **haloform-derived** substrates (chloroform/iodoform routes).",
+    "## 2. Fundamental Concepts\n\n### 2.1 From carbon and hydrogen — industrial ethyne\n\n- **CaO + 3C → CaC₂ + CO** (electric furnace, ~2000 °C) — calcium carbide.\n- **CaC₂ + 2H₂O → HC≡CH + Ca(OH)₂** — ethyne (acetylene) on contact with water.\n- Impure carbide gives PH₃/H₂S contamination — purified through acid or CuCl/NH₃ washes.\n\n### 2.2 From 1,2-dibromoethane (vicinal dihalide)\n\n- **BrCH₂CH₂Br + 2 alc. KOH → HC≡CH + 2KBr + 2H₂O** — double dehydrohalogenation.\n- First equivalent gives the **vinyl halide** (CH₂=CHBr); the second (stronger base, NaNH₂ often needed) removes the second HX.\n\n### 2.3 From chloroform/iodoform routes\n\n- **CHCl₃ + 2Ag (or Ag powder, Δ) → HC≡CH + 2AgCl** — dehalogenation of a dihalomethane.\n- **CHI₃ + 2Ag → HC≡CH + 2AgI** — the silver-salt route (2×2 dehalogenation).\n- General: **dihalomethanes + heated silver → alkyne + 2AgX**.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Calcium carbide route** | C + CaO → CaC₂, then hydrolysis to ethyne | CaC₂ + 2H₂O → C₂H₂ |\n| **Vicinal dihalide** | Two halogens on adjacent carbons; double elimination gives the alkyne | 1,2-dibromoethane → ethyne |\n| **Vinyl halide** | Haloalkene intermediate of the first elimination | CH₂=CHBr |\n| **Dehalogenation** | Removal of halogens (by hot Ag) to build C≡C | CHCl₃ + 2Ag → C₂H₂ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why two eliminations are needed\n\n- A triple bond needs two π bonds; the first elimination makes the alkene (vinyl halide), the second must remove HX from an **sp² carbon** — harder, hence the stronger base (NaNH₂) for the second step in modern practice.\n\n### 4.2 The carbide chemistry\n\n- CaC₂ is an **acetylide salt**: C₂²⁻ + 2H₂O → C₂H₂ + 2OH⁻. The water attacks the carbide carbon; the reaction is violently exothermic — the old miners' lamp chemistry.\n\n### 4.3 Silver's role\n\n- Hot silver scavenges halogens as stable AgX, pulling two halides off the small carbon framework and leaving the C≡C behind.",
+    "## 5. Comparison Tables\n\n**Three routes to alkynes**\n\n| Route | Starting material | Reagents | Product |\n|---|---|---|---|\n| carbide | CaO + C (electric furnace) | then H₂O | HC≡CH |\n| vicinal dihalide | BrCH₂CH₂Br | 2 alc. KOH (or NaNH₂) | HC≡CH |\n| haloform/Ag | CHCl₃ or CHI₃ | hot Ag powder | HC≡CH + 2AgX |",
+    "## 6. Common Confusions\n\n**Calcium carbide is not carbon:** the furnace step (CaO + 3C → CaC₂ + CO) precedes the hydrolysis — write both equations.",
+    "**Vinyl halide intermediate:** the first elimination stops at CH₂=CHBr; the second needs stronger conditions.",
+    "**Ag route stoichiometry:** two Ag per halomethane — 2AgCl or 2AgI by-products belong in the equation.",
+    "## 7. Exam Application\n\n**NEB-style (3m): How is ethyne prepared from calcium carbide? Give both equations.** — **Step 1:** limestone-derived **quicklime (CaO)** is heated with **coke** in an **electric furnace at ~2000 °C**: **CaO + 3C → CaC₂ + CO↑** — calcium carbide forms. **Step 2:** carbide is treated with **water**: **CaC₂ + 2H₂O → HC≡CH + Ca(OH)₂** — **ethyne (acetylene)** evolves as a gas (the carbide's C₂²⁻ anion is protonated by water). Technical carbide carries phosphide/sulphide impurities, so the gas is washed to remove PH₃ and H₂S before use.",
+    "**NEB-style (2m): Prepare ethyne from 1,2-dibromoethane.** — **1,2-Dibromoethane (a vicinal dihalide)** undergoes **double dehydrohalogenation** with two equivalents of **alcoholic KOH** (strong base, heat): **BrCH₂CH₂Br + 2KOH → HC≡CH + 2KBr + 2H₂O**. The first elimination gives the **vinyl halide CH₂=CHBr**; the second removes HBr from that sp² carbon to complete the **triple bond**.",
+    "**NEB-style (2m): How does chloroform give ethyne?** — **Chloroform is dehalogenated by heated silver powder**: **CHCl₃ + 2Ag → HC≡CH + 2AgCl**. Silver abstracts the three chlorines' partners stepwise — formally removing two equivalents of HCl equivalents — leaving the **C≡C triple bond**; the same chemistry works for **iodoform (CHI₃ + 2Ag → HC≡CH + 2AgI)**."
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Alkynes: preparation from carbon and hydrogen, 1,2-dibrom…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Prepare ethyne from calcium carbide with both equations.",
+    "Convert 1,2-dibromoethane to ethyne and name the intermediate.",
+    "Give the silver dehalogenation routes from chloroform and iodoform."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Ethyne burns at ~3300 °C in oxygen — the oxy-acetylene torch cuts steel, all from limestone, coke and water."
+  ],
+  "examples": [
+    "***The miners' lamp*** — calcium carbide dripping water lit underground tunnels for a century: CaC2 + 2H2O is portable acetylene on demand."
+  ],
   "practiceQuestions": [
-    "Q. Write the preparation of ethyne from 1,2-dibromoethane. (2 marks) — CH2BrCH2Br + 2KOH(alc.) → C2H2 + 2KBr + 2H2O.",
-    "Q. Give the industrial preparation of ethyne. (1 mark) — CaC2 + 2H2O → C2H2 + Ca(OH)2."
+    "**NEB-style (3m): How is ethyne prepared from calcium carbide? Give both equations.** — **Step 1 — carbide manufacture:** **quicklime (CaO)** and **coke (C)** are heated in an **electric furnace at about 2000 °C**: **CaO + 3C → CaC₂ + CO↑**. Calcium carbide is effectively the salt of the **acetylide anion (C₂²⁻)**. **Step 2 — hydrolysis:** carbide is treated with **water**: **CaC₂ + 2H₂O → HC≡CH + Ca(OH)₂**. Water protonates the carbide dianion, releasing **ethyne (acetylene)** gas and slaked lime. The reaction is strongly exothermic. Technical carbide contains **calcium phosphide and sulphide** impurities, so the crude gas carries **PH₃ and H₂S** and is washed (through acid or ammoniacal CuCl) before use — pure ethyne has the characteristic garlic-like odour of the impurities removed.",
+    "**NEB-style (2m): Prepare ethyne from 1,2-dibromoethane.** — **1,2-Dibromoethane** is a **vicinal dihalide** (halogens on adjacent carbons). Heating it with **two equivalents of alcoholic KOH** effects **double dehydrohalogenation**: **BrCH₂CH₂Br + 2KOH(alc.) → HC≡CH + 2KBr + 2H₂O**. The **first** elimination removes HBr to give the **vinyl halide, bromoethene (CH₂=CHBr)**; the **second** must remove HBr from that sp² carbon, which is harder and needs the stronger basic medium (in modern practice **NaNH₂** in liquid NH₃). Completion of the second elimination creates the **C≡C triple bond** of ethyne.",
+    "**NEB-style (2m): How does chloroform give ethyne?** — **Chloroform is heated with silver powder**, which scavenges halogen as insoluble silver chloride: **CHCl₃ + 2Ag → HC≡CH + 2AgCl**. Formally two equivalents of HCl are stripped from the single carbon framework, and the carbons couple into the **triple bond**. The identical chemistry applies to **iodoform**: **CHI₃ + 2Ag → HC≡CH + 2AgI**. In both cases the driving force is the stability of the **AgX lattice** — silver's love of halide pays for the dehalogenation."
   ],
   "keyPoints": [
-    "• Alkynes",
-    "• Preparation from carbon",
-    "• Hydrogen",
-    "• 2-dibromoethane",
-    "• Chloroform",
-    "• Iodoform only"
+    "Alkynes CnH2n-2, sp, C≡C. Preparation: (1) from elements: CaO + 3C -> CaC2 + CO (electric furnace ~2000C); CaC2 + 2H2O -> HCCH + Ca(OH)2 (industrial ethyne; impure gas washed of PH3/H2S). (2) From 1,2-dibromoethane (vicinal dihalide): BrCH2CH2Br + 2 alc. KOH -> HCCH + 2KBr + 2H2O; first elimination gives vinyl halide CH2=CHBr, second needs stronger base (NaNH2). (3) From chloroform/iodoform: CHCl3 + 2Ag (hot) -> HCCH + 2AgCl; CHI3 + 2Ag -> HCCH + 2AgI (dehalogenation by silver)."
   ],
-  "summary": "Alkynes: preparation from carbon and hydrogen, 1,2-dibrom… (Hydrocarbons, Chemistry, class-11-notes) covers Alkynes, preparation from carbon, hydrogen. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Alkynes (**CₙH₂ₙ₋₂**) come from three doors. **From the elements:** electric-furnace fusion of lime and coke — **CaO + 3C → CaC₂ + CO** — followed by hydrolysis — **CaC₂ + 2H₂O → HC≡CH + Ca(OH)₂** — the industrial acetylene route (gas washed free of PH₃/H₂S). **From vicinal dihalides:** **1,2-dibromoethane + 2 alc. KOH → HC≡CH + 2KBr + 2H₂O**, a double dehydrohalogenation that pauses at the **vinyl halide** before the tougher second elimination (NaNH₂ territory). **From haloforms:** hot **silver** strips the halogens — **CHCl₃ + 2Ag → HC≡CH + 2AgCl** (and CHI₃ → 2AgI) — driven by the stability of the silver halide lattice. Two eliminations or a carbide's dianion: either way, the triple bond is assembled.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Alkynes: preparation from carbon and hydrogen, 1,2-dibrom…\"?",
@@ -57,8 +64,73 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Four routes: C + H2 (electric arc, 2700 °C) → C2H2; vic-dihalide + 2 alc. KOH → alkyne (double dehydrohalogenation); CHCl3 + 2Ag (heat) → C2H2 + 2AgCl; CHI3 + 4Ag → C2H2.",
-    "Trick 2: Double dehydrohalogenation needs TWO equivalents of base and gives the terminal alkyne; the first elimination gives the vinyl halide.",
-    "Trick 3: Ethyne from CaC2 + H2O → C2H2 + Ca(OH)2 — the industrial/lab route; quote 'carbide route' for the mark."
+    "Carbide: two equations (furnace + hydrolysis). Vicinal dihalide: 2 alc. KOH, vinyl halide intermediate. Haloform + hot Ag: 2AgX by-products. Ethyne = acetylene = C2H2."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Two π Bonds, One Carbon Rod\n\nAlkynes (**CₙH₂ₙ₋₂**) carry a C≡C triple bond. The syllabus routes to them start from the **elements themselves** (carbon + hydrogen → ethyne via calcium carbide) and from **vicinal dihalides** (1,2-dibromoethane) and **haloform-derived** substrates (chloroform/iodoform routes).",
+      "## 2. Fundamental Concepts\n\n### 2.1 From carbon and hydrogen — industrial ethyne\n\n- **CaO + 3C → CaC₂ + CO** (electric furnace, ~2000 °C) — calcium carbide.\n- **CaC₂ + 2H₂O → HC≡CH + Ca(OH)₂** — ethyne (acetylene) on contact with water.\n- Impure carbide gives PH₃/H₂S contamination — purified through acid or CuCl/NH₃ washes.\n\n### 2.2 From 1,2-dibromoethane (vicinal dihalide)\n\n- **BrCH₂CH₂Br + 2 alc. KOH → HC≡CH + 2KBr + 2H₂O** — double dehydrohalogenation.\n- First equivalent gives the **vinyl halide** (CH₂=CHBr); the second (stronger base, NaNH₂ often needed) removes the second HX.\n\n### 2.3 From chloroform/iodoform routes\n\n- **CHCl₃ + 2Ag (or Ag powder, Δ) → HC≡CH + 2AgCl** — dehalogenation of a dihalomethane.\n- **CHI₃ + 2Ag → HC≡CH + 2AgI** — the silver-salt route (2×2 dehalogenation).\n- General: **dihalomethanes + heated silver → alkyne + 2AgX**.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Calcium carbide route** | C + CaO → CaC₂, then hydrolysis to ethyne | CaC₂ + 2H₂O → C₂H₂ |\n| **Vicinal dihalide** | Two halogens on adjacent carbons; double elimination gives the alkyne | 1,2-dibromoethane → ethyne |\n| **Vinyl halide** | Haloalkene intermediate of the first elimination | CH₂=CHBr |\n| **Dehalogenation** | Removal of halogens (by hot Ag) to build C≡C | CHCl₃ + 2Ag → C₂H₂ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why two eliminations are needed\n\n- A triple bond needs two π bonds; the first elimination makes the alkene (vinyl halide), the second must remove HX from an **sp² carbon** — harder, hence the stronger base (NaNH₂) for the second step in modern practice.\n\n### 4.2 The carbide chemistry\n\n- CaC₂ is an **acetylide salt**: C₂²⁻ + 2H₂O → C₂H₂ + 2OH⁻. The water attacks the carbide carbon; the reaction is violently exothermic — the old miners' lamp chemistry.\n\n### 4.3 Silver's role\n\n- Hot silver scavenges halogens as stable AgX, pulling two halides off the small carbon framework and leaving the C≡C behind.",
+      "## 5. Comparison Tables\n\n**Three routes to alkynes**\n\n| Route | Starting material | Reagents | Product |\n|---|---|---|---|\n| carbide | CaO + C (electric furnace) | then H₂O | HC≡CH |\n| vicinal dihalide | BrCH₂CH₂Br | 2 alc. KOH (or NaNH₂) | HC≡CH |\n| haloform/Ag | CHCl₃ or CHI₃ | hot Ag powder | HC≡CH + 2AgX |",
+      "## 6. Common Confusions\n\n**Calcium carbide is not carbon:** the furnace step (CaO + 3C → CaC₂ + CO) precedes the hydrolysis — write both equations.",
+      "**Vinyl halide intermediate:** the first elimination stops at CH₂=CHBr; the second needs stronger conditions.",
+      "**Ag route stoichiometry:** two Ag per halomethane — 2AgCl or 2AgI by-products belong in the equation.",
+      "## 7. Exam Application\n\n**NEB-style (3m): How is ethyne prepared from calcium carbide? Give both equations.** — **Step 1:** limestone-derived **quicklime (CaO)** is heated with **coke** in an **electric furnace at ~2000 °C**: **CaO + 3C → CaC₂ + CO↑** — calcium carbide forms. **Step 2:** carbide is treated with **water**: **CaC₂ + 2H₂O → HC≡CH + Ca(OH)₂** — **ethyne (acetylene)** evolves as a gas (the carbide's C₂²⁻ anion is protonated by water). Technical carbide carries phosphide/sulphide impurities, so the gas is washed to remove PH₃ and H₂S before use.",
+      "**NEB-style (2m): Prepare ethyne from 1,2-dibromoethane.** — **1,2-Dibromoethane (a vicinal dihalide)** undergoes **double dehydrohalogenation** with two equivalents of **alcoholic KOH** (strong base, heat): **BrCH₂CH₂Br + 2KOH → HC≡CH + 2KBr + 2H₂O**. The first elimination gives the **vinyl halide CH₂=CHBr**; the second removes HBr from that sp² carbon to complete the **triple bond**.",
+      "**NEB-style (2m): How does chloroform give ethyne?** — **Chloroform is dehalogenated by heated silver powder**: **CHCl₃ + 2Ag → HC≡CH + 2AgCl**. Silver abstracts the three chlorines' partners stepwise — formally removing two equivalents of HCl equivalents — leaving the **C≡C triple bond**; the same chemistry works for **iodoform (CHI₃ + 2Ag → HC≡CH + 2AgI)**."
+    ],
+    "keyPoints": [
+      "Alkynes CnH2n-2, sp, C≡C. Preparation: (1) from elements: CaO + 3C -> CaC2 + CO (electric furnace ~2000C); CaC2 + 2H2O -> HCCH + Ca(OH)2 (industrial ethyne; impure gas washed of PH3/H2S). (2) From 1,2-dibromoethane (vicinal dihalide): BrCH2CH2Br + 2 alc. KOH -> HCCH + 2KBr + 2H2O; first elimination gives vinyl halide CH2=CHBr, second needs stronger base (NaNH2). (3) From chloroform/iodoform: CHCl3 + 2Ag (hot) -> HCCH + 2AgCl; CHI3 + 2Ag -> HCCH + 2AgI (dehalogenation by silver)."
+    ],
+    "importantConcepts": [
+      "A triple bond costs two eliminations: the first is easy (alkene formation), the second strips HX off an sp² carbon and demands a stronger base — difficulty rises with s-character."
+    ],
+    "examples": [
+      "***The miners' lamp*** — calcium carbide dripping water lit underground tunnels for a century: CaC2 + 2H2O is portable acetylene on demand."
+    ],
+    "universalFacts": [
+      "Ethyne burns at ~3300 °C in oxygen — the oxy-acetylene torch cuts steel, all from limestone, coke and water."
+    ],
+    "importantStatements": [
+      "\"Alkynes are prepared from calcium carbide and water, by double dehydrohalogenation of vicinal dihalides, and by dehalogenation of haloforms with hot silver.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Carbide: two equations (furnace + hydrolysis). Vicinal dihalide: 2 alc. KOH, vinyl halide intermediate. Haloform + hot Ag: 2AgX by-products. Ethyne = acetylene = C2H2."
+    ],
+    "examNotes": [
+      "Write BOTH carbide equations in order — the furnace step is half the marks."
+    ],
+    "formulas": [
+      "- CaO + 3C → CaC₂ + CO (~2000 °C)\n- CaC₂ + 2H₂O → HC≡CH + Ca(OH)₂\n- BrCH₂CH₂Br + 2 alc. KOH → HC≡CH + 2KBr + 2H₂O\n- CHCl₃ + 2Ag → HC≡CH + 2AgCl; CHI₃ + 2Ag → HC≡CH + 2AgI"
+    ],
+    "practice": [
+      "Prepare ethyne from calcium carbide with both equations.",
+      "Convert 1,2-dibromoethane to ethyne and name the intermediate.",
+      "Give the silver dehalogenation routes from chloroform and iodoform."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): How is ethyne prepared from calcium carbide? Give both equations.** — **Step 1 — carbide manufacture:** **quicklime (CaO)** and **coke (C)** are heated in an **electric furnace at about 2000 °C**: **CaO + 3C → CaC₂ + CO↑**. Calcium carbide is effectively the salt of the **acetylide anion (C₂²⁻)**. **Step 2 — hydrolysis:** carbide is treated with **water**: **CaC₂ + 2H₂O → HC≡CH + Ca(OH)₂**. Water protonates the carbide dianion, releasing **ethyne (acetylene)** gas and slaked lime. The reaction is strongly exothermic. Technical carbide contains **calcium phosphide and sulphide** impurities, so the crude gas carries **PH₃ and H₂S** and is washed (through acid or ammoniacal CuCl) before use — pure ethyne has the characteristic garlic-like odour of the impurities removed.",
+      "**NEB-style (2m): Prepare ethyne from 1,2-dibromoethane.** — **1,2-Dibromoethane** is a **vicinal dihalide** (halogens on adjacent carbons). Heating it with **two equivalents of alcoholic KOH** effects **double dehydrohalogenation**: **BrCH₂CH₂Br + 2KOH(alc.) → HC≡CH + 2KBr + 2H₂O**. The **first** elimination removes HBr to give the **vinyl halide, bromoethene (CH₂=CHBr)**; the **second** must remove HBr from that sp² carbon, which is harder and needs the stronger basic medium (in modern practice **NaNH₂** in liquid NH₃). Completion of the second elimination creates the **C≡C triple bond** of ethyne.",
+      "**NEB-style (2m): How does chloroform give ethyne?** — **Chloroform is heated with silver powder**, which scavenges halogen as insoluble silver chloride: **CHCl₃ + 2Ag → HC≡CH + 2AgCl**. Formally two equivalents of HCl are stripped from the single carbon framework, and the carbons couple into the **triple bond**. The identical chemistry applies to **iodoform**: **CHI₃ + 2Ag → HC≡CH + 2AgI**. In both cases the driving force is the stability of the **AgX lattice** — silver's love of halide pays for the dehalogenation."
+    ]
+  },
+  "importantConcepts": [
+    "A triple bond costs two eliminations: the first is easy (alkene formation), the second strips HX off an sp² carbon and demands a stronger base — difficulty rises with s-character."
+  ],
+  "importantStatements": [
+    "\"Alkynes are prepared from calcium carbide and water, by double dehydrohalogenation of vicinal dihalides, and by dehalogenation of haloforms with hot silver.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examNotes": [
+    "Write BOTH carbide equations in order — the furnace step is half the marks."
+  ],
+  "formulas": [
+    "- CaO + 3C → CaC₂ + CO (~2000 °C)\n- CaC₂ + 2H₂O → HC≡CH + Ca(OH)₂\n- BrCH₂CH₂Br + 2 alc. KOH → HC≡CH + 2KBr + 2H₂O\n- CHCl₃ + 2Ag → HC≡CH + 2AgCl; CHI₃ + 2Ag → HC≡CH + 2AgI"
   ]
 }

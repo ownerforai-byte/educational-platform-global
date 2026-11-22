@@ -7,36 +7,40 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "# Chemical properties of alkenes: addition reaction with HX (Markovnikov's addition and peroxide effect), H2O, O3, H2SO4 only\n\n## 1. Introduction\nChemical picture of **Chemical properties of alkenes** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Hydrocarbons fill pass.\n\n## 2. Concepts and definitions\n### Chemical properties of alkenes: addition reaction with HX (Markovnikov's addition and peroxide effect)\n### H2O\n### O3\n### H2SO4 only\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Chemical properties of alkenes — mechanism with curved arrows, step by step (authored SVG)\n- **D2** — Chemical properties of alkenes — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Chemical properties of alkenes — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Chemical properties of alkenes — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The π Bond Under Attack\n\nA π bond is an exposed electron cloud — every electrophile wants it. Alkene chemistry is **electrophilic addition**: HX, H₂O, H₂SO₄ and O₃ all add across the double bond, with **Markovnikov's rule** and the **peroxide effect** deciding which carbon gets which fragment.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Addition of HX and Markovnikov's rule\n\n- **CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃** (2-bromopropane, major).\n- **Markovnikov's rule:** the **negative part** of the addendum attaches to the carbon with **fewer hydrogens**; equivalently H⁺ goes to the carbon already holding more H.\n- Reason: the more stable **carbocation** (3° > 2° > 1°) forms on the more substituted carbon.\n\n### 2.2 The peroxide effect (anti-Markovnikov)\n\n- With **peroxides present, HBr alone** adds the **reverse** way: **CH₃–CH=CH₂ + HBr → CH₃–CH₂–CH₂Br** (1-bromopropane).\n- Mechanism is **free-radical**: Br· adds first to give the more stable radical; only **HBr** shows this (HF/HCl/HI bonds are energetically wrong).\n\n### 2.3 Addition of H₂O and H₂SO₄\n\n- **Hydration:** CH₂=CH₂ + H₂O (conc. H₂SO₄ catalyst) → **CH₃CH₂OH** — industrial ethanol.\n- **CH₃–CH=CH₂ + H₂O →** isopropanol (Markovnikov).\n- **CH₂=CH₂ + H₂SO₄ → CH₃CH₂OSO₃H** (ethyl hydrogen sulphate) → hydrolysis gives ethanol.\n\n### 2.4 Ozonolysis\n\n- **O₃ at ~195 K** adds to C=C forming an **ozonide**; **Zn/H₂O** cleaves it to **carbonyl compounds**.\n- **CH₂=CH₂ → 2HCHO** (formaldehyde); **CH₃–CH=CH–CH₃ → 2CH₃CHO**; terminal carbons give HCHO.\n- Locates the double bond — a structure-detection tool.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Markovnikov's rule** | Negative addendum goes to the C with fewer H (via the stabler carbocation) | propene + HBr → 2-bromopropane |\n| **Peroxide effect** | Radical anti-Markovnikov addition, HBr only | propene + HBr/ROOR → 1-bromopropane |\n| **Ozonolysis** | O₃ addition then Zn/H₂O cleavage to carbonyls | but-2-ene → 2 CH₃CHO |\n| **Ozonide** | The cyclic peroxide intermediate of ozonolysis | cleaved by Zn/H₂O |",
+    "## 4. Detailed Explanation\n\n### 4.1 The carbocation is the hinge\n\n- H⁺ adds first (electrophilic), creating a carbocation; the more substituted cation forms preferentially, and the anion then attacks it. Every Markovnikov question is a carbocation-stability question.\n\n### 4.2 Why only HBr misbehaves\n\n- The radical chain needs both steps exothermic: Br· adding to the alkene is, but Cl· is too reactive (unselective) and I· too weak (reversible). Hence the peroxide effect is **HBr's private quirk**.\n\n### 4.3 Ozonolysis as structure detection\n\n- Count the carbonyl fragments back together and the original double-bond position reappears — ozonolysis is how unknown alkene structures are read.",
+    "## 5. Comparison Tables\n\n**Markovnikov vs peroxide (Kharasch) addition**\n\n| Basis | Markovnikov | Peroxide effect |\n|---|---|---|\n| mechanism | ionic (carbocation) | free-radical |\n| condition | normal | peroxides, HBr only |\n| H goes to | C with more H | C with fewer H |\n| Br goes to | C with fewer H | C with more H |\n| propene + HBr | 2-bromopropane | 1-bromopropane |",
+    "## 6. Common Confusions\n\n**The rule speaks of the negative part:** it is Br⁻ that goes to the H-poor carbon — students misplace the H instead.",
+    "**Peroxide effect is HBr-only:** writing it for HCl or HI is a classic error — bond energetics forbid the chain.",
+    "**Ozonolysis reductive workup:** Zn/H₂O stops at aldehydes/ketones; oxidative workup would push to acids — quote Zn.",
+    "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): State Markovnikov's rule and apply it to the addition of HBr to propene. (3m)** — **Markovnikov's rule:** when an unsymmetrical reagent (HX) adds to an unsymmetrical alkene, the **negative part of the reagent (X⁻) attaches to the carbon of the double bond bearing fewer hydrogen atoms**, while H⁺ goes to the carbon bearing more hydrogens — because addition proceeds through the **more stable carbocation**. **Application to propene:** CH₃–CH=CH₂ has H on C2 (one H) and C1 (two H). H⁺ adds to C1, generating the **secondary carbocation at C2** (rather than a primary one at C1); Br⁻ then attacks C2: **CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃ (2-bromopropane, major product)**.",
+    "**NEB 2024 (verified PYQ): What happens when ethene undergoes ozonolysis? Write the products. (3m)** — Ethene adds ozone at low temperature (~195 K) to form an **ozonide**, which on **reductive cleavage with Zn/H₂O** splits the C=C completely: **CH₂=CH₂ + O₃ → ozonide → 2 HCHO**. Both carbons of the double bond carry hydrogens, so both fragments are **formaldehyde (methanal)**. Ozonolysis of an alkene always gives carbonyl compounds; terminal =CH₂ carbons give HCHO, which is how the position of a double bond is located.",
+    "**NEB 2022 (verified PYQ): What happens when but-2-ene is treated with ozone followed by zinc and water? Give the equations involved and identify the products. (3m)** — **Step 1 — ozonide formation (at ~195 K):** CH₃–CH=CH–CH₃ + O₃ → **but-2-ene ozonide** (a cyclic peroxide across the double bond). **Step 2 — reductive cleavage (Zn/H₂O):** the ozonide decomposes to carbonyl fragments: **CH₃–CH=CH–CH₃ → 2 CH₃CHO** — **two molecules of ethanal (acetaldehyde)**. Because but-2-ene is symmetrical, both fragments are identical; an unsymmetrical alkene would give two different carbonyls, letting the original C=C position be reconstructed."
   ],
   "confusion": [],
   "bounds": [
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  "practice": [
+    "State Markovnikov's rule and apply it to HBr + propene.",
+    "Explain the peroxide effect and why it is limited to HBr.",
+    "Write the ozonolysis products of ethene, but-2-ene and propene."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Ozonolysis is molecular archaeology: cleave the alkene, read the carbonyl fragments, and the position of the original double bond is reconstructed exactly."
+  ],
+  "examples": [
+    "***HBr's private quirk*** — of the four hydrogen halides only HBr flips in peroxides: Cl· adds too fast to be selective, I· too weak to sustain the chain — bond energetics police the exception."
+  ],
   "practiceQuestions": [
-    "Q. Predict the product of propene + HBr with and without peroxide. (2 marks) — 2-bromopropane (Markovnikov); 1-bromopropane (peroxide effect).",
-    "Q. Why does the peroxide effect not operate with HCl? (1 mark) — H–Cl bond is too strong for the propagation step's exothermic requirement."
+    "**NEB 2024 (verified PYQ): State Markovnikov's rule and apply it to the addition of HBr to propene. (3m)** — **Markovnikov's rule:** when an unsymmetrical reagent such as HX adds to an unsymmetrical alkene, the **negative part of the reagent attaches to the doubly-bonded carbon that carries fewer hydrogen atoms** (and H⁺ to the carbon with more hydrogens). The rule works because the first step is **electrophilic**: H⁺ adds to give a **carbocation**, and the pathway through the **more stable carbocation** (3° > 2° > 1°) dominates. **Application:** in **propene (CH₃–CH=CH₂)**, C1 carries two H and C2 one H. H⁺ therefore adds to **C1**, placing the positive charge on **C2 as a secondary carbocation** (a primary cation at C1 would be far less stable); Br⁻ then attacks C2: **CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃**, i.e. **2-bromopropane** is the major product — not 1-bromopropane.",
+    "**NEB 2024 (verified PYQ): What happens when ethene undergoes ozonolysis? Write the products. (3m)** — Ethene first adds **ozone** across the double bond at low temperature (**~195 K**) to form a cyclic **ozonide**. On **reductive work-up with zinc and water**, the ozonide cleaves at the C=C bond to give carbonyl compounds: **CH₂=CH₂ + O₃ → ozonide —(Zn/H₂O)→ 2 HCHO**. Since both alkene carbons in ethene bear two hydrogens, **both fragments are formaldehyde (methanal)** — two moles per mole of ethene. Ozonolysis always cuts the double bond entirely and delivers a carbonyl at each former alkene carbon; terminal =CH₂ groups always yield HCHO, which is how chemists locate an unknown double bond.",
+    "**NEB 2022 (verified PYQ): What happens when but-2-ene is treated with ozone followed by zinc and water? Give the equations involved and identify the products. (3m)** — **Step 1 — ozonide formation:** but-2-ene adds ozone at low temperature (~195 K) to give **but-2-ene ozonide**, a five-membered cyclic peroxide in which the two carbons of the old double bond are bridged by the three oxygens: **CH₃–CH=CH–CH₃ + O₃ → ozonide**. **Step 2 — reductive cleavage:** treatment with **zinc dust and water** decomposes the ozonide, each former alkene carbon becoming a carbonyl: **ozonide —(Zn/H₂O)→ 2 CH₃CHO**. The products are **two molecules of ethanal (acetaldehyde)** — but-2-ene is symmetrical, so both halves are identical. Had the alkene been unsymmetrical, the two different carbonyl fragments would have revealed exactly where the original double bond sat."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃ (Markovnikov)\n- CH₃–CH=CH₂ + HBr (ROOR) → CH₃–CH₂–CH₂Br\n- CH₂=CH₂ + H₂O (H₂SO₄) → CH₃CH₂OH\n- CH₂=CH₂ + O₃ → ozonide → 2 HCHO (Zn/H₂O); CH₃CH=CHCH₃ → 2 CH₃CHO"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -44,12 +48,9 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Chemical properties of alkenes: addition reaction with HX",
-    "• Markovnikov's addition",
-    "• Peroxide effect",
-    "• H2SO4 only"
+    "Alkene chemistry = electrophilic addition. HX: Markovnikov's rule — negative part (X-) goes to the carbon with FEWER H; via the more stable carbocation; CH3CH=CH2 + HBr -> CH3CHBrCH3 (2-bromopropane). Peroxide effect (Kharasch): with peroxides, HBr ONLY adds anti-Markovnikov by free-radical mechanism -> CH3CH2CH2Br (1-bromopropane); HF/HCl/HI do not show it. Hydration: CH2=CH2 + H2O (conc H2SO4) -> CH3CH2OH; H2SO4 addition -> CH3CH2OSO3H -> hydrolysis -> ethanol. Ozonolysis: O3 at ~195K -> ozonide; Zn/H2O cleavage -> carbonyls; CH2=CH2 -> 2HCHO; but-2-ene -> 2CH3CHO; locates the double bond."
   ],
-  "summary": "Chemical properties of alkenes: addition reaction with HX… (Hydrocarbons, Chemistry, class-11-notes) covers Chemical properties of alkenes: addition reaction with HX, Markovnikov's addition, peroxide effect. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "The alkene π bond invites electrophiles. **HX adds by Markovnikov's rule** — the negative part lands on the carbon with **fewer hydrogens**, because H⁺ first creates the **more stable carbocation** (propene + HBr → **2-bromopropane**). In **peroxides, HBr alone reverses** (Kharasch): a **free-radical** chain puts Br on the H-rich carbon → **1-bromopropane** — a quirk HCl, HBr's neighbours, cannot copy for bond-energetic reasons. **Hydration** with H₂SO₄/H₂O gives alcohols (ethene → ethanol, via ethyl hydrogen sulphate); direct H₂SO₄ addition forms the sulphate ester first. **Ozonolysis** — O₃ at ~195 K to the ozonide, then **Zn/H₂O** — cuts the C=C into carbonyls: ethene → **2 HCHO**, but-2-ene → **2 CH₃CHO**; read the fragments backwards and the double bond's position reappears.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Chemical properties of alkenes: addition reaction with HX…\"?",
@@ -73,8 +74,70 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Markovnikov one line: H goes to the carbon with MORE hydrogens (rich get richer); propene + HBr → 2-bromopropane. Reason: more stable secondary carbocation.",
-    "Trick 2: Peroxide effect (Kharasch) applies to HBr ONLY: Br adds to the less substituted carbon (anti-Markovnikov) via free-radical chain — HCl/HI do not show it.",
-    "Trick 3: Addition order of reactivity of HX: HI > HBr > HCl (bond strength falls) — a favourite 1-marker."
+    "Markovnikov: X to H-poor C (2-bromopropane). Peroxide + HBr: reverse (1-bromopropane). Ozonolysis: terminal C → HCHO; symmetrical internal → 2 same carbonyls. Hydration: H2SO4 then water → alcohol."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The π Bond Under Attack\n\nA π bond is an exposed electron cloud — every electrophile wants it. Alkene chemistry is **electrophilic addition**: HX, H₂O, H₂SO₄ and O₃ all add across the double bond, with **Markovnikov's rule** and the **peroxide effect** deciding which carbon gets which fragment.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Addition of HX and Markovnikov's rule\n\n- **CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃** (2-bromopropane, major).\n- **Markovnikov's rule:** the **negative part** of the addendum attaches to the carbon with **fewer hydrogens**; equivalently H⁺ goes to the carbon already holding more H.\n- Reason: the more stable **carbocation** (3° > 2° > 1°) forms on the more substituted carbon.\n\n### 2.2 The peroxide effect (anti-Markovnikov)\n\n- With **peroxides present, HBr alone** adds the **reverse** way: **CH₃–CH=CH₂ + HBr → CH₃–CH₂–CH₂Br** (1-bromopropane).\n- Mechanism is **free-radical**: Br· adds first to give the more stable radical; only **HBr** shows this (HF/HCl/HI bonds are energetically wrong).\n\n### 2.3 Addition of H₂O and H₂SO₄\n\n- **Hydration:** CH₂=CH₂ + H₂O (conc. H₂SO₄ catalyst) → **CH₃CH₂OH** — industrial ethanol.\n- **CH₃–CH=CH₂ + H₂O →** isopropanol (Markovnikov).\n- **CH₂=CH₂ + H₂SO₄ → CH₃CH₂OSO₃H** (ethyl hydrogen sulphate) → hydrolysis gives ethanol.\n\n### 2.4 Ozonolysis\n\n- **O₃ at ~195 K** adds to C=C forming an **ozonide**; **Zn/H₂O** cleaves it to **carbonyl compounds**.\n- **CH₂=CH₂ → 2HCHO** (formaldehyde); **CH₃–CH=CH–CH₃ → 2CH₃CHO**; terminal carbons give HCHO.\n- Locates the double bond — a structure-detection tool.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Markovnikov's rule** | Negative addendum goes to the C with fewer H (via the stabler carbocation) | propene + HBr → 2-bromopropane |\n| **Peroxide effect** | Radical anti-Markovnikov addition, HBr only | propene + HBr/ROOR → 1-bromopropane |\n| **Ozonolysis** | O₃ addition then Zn/H₂O cleavage to carbonyls | but-2-ene → 2 CH₃CHO |\n| **Ozonide** | The cyclic peroxide intermediate of ozonolysis | cleaved by Zn/H₂O |",
+      "## 4. Detailed Explanation\n\n### 4.1 The carbocation is the hinge\n\n- H⁺ adds first (electrophilic), creating a carbocation; the more substituted cation forms preferentially, and the anion then attacks it. Every Markovnikov question is a carbocation-stability question.\n\n### 4.2 Why only HBr misbehaves\n\n- The radical chain needs both steps exothermic: Br· adding to the alkene is, but Cl· is too reactive (unselective) and I· too weak (reversible). Hence the peroxide effect is **HBr's private quirk**.\n\n### 4.3 Ozonolysis as structure detection\n\n- Count the carbonyl fragments back together and the original double-bond position reappears — ozonolysis is how unknown alkene structures are read.",
+      "## 5. Comparison Tables\n\n**Markovnikov vs peroxide (Kharasch) addition**\n\n| Basis | Markovnikov | Peroxide effect |\n|---|---|---|\n| mechanism | ionic (carbocation) | free-radical |\n| condition | normal | peroxides, HBr only |\n| H goes to | C with more H | C with fewer H |\n| Br goes to | C with fewer H | C with more H |\n| propene + HBr | 2-bromopropane | 1-bromopropane |",
+      "## 6. Common Confusions\n\n**The rule speaks of the negative part:** it is Br⁻ that goes to the H-poor carbon — students misplace the H instead.",
+      "**Peroxide effect is HBr-only:** writing it for HCl or HI is a classic error — bond energetics forbid the chain.",
+      "**Ozonolysis reductive workup:** Zn/H₂O stops at aldehydes/ketones; oxidative workup would push to acids — quote Zn.",
+      "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): State Markovnikov's rule and apply it to the addition of HBr to propene. (3m)** — **Markovnikov's rule:** when an unsymmetrical reagent (HX) adds to an unsymmetrical alkene, the **negative part of the reagent (X⁻) attaches to the carbon of the double bond bearing fewer hydrogen atoms**, while H⁺ goes to the carbon bearing more hydrogens — because addition proceeds through the **more stable carbocation**. **Application to propene:** CH₃–CH=CH₂ has H on C2 (one H) and C1 (two H). H⁺ adds to C1, generating the **secondary carbocation at C2** (rather than a primary one at C1); Br⁻ then attacks C2: **CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃ (2-bromopropane, major product)**.",
+      "**NEB 2024 (verified PYQ): What happens when ethene undergoes ozonolysis? Write the products. (3m)** — Ethene adds ozone at low temperature (~195 K) to form an **ozonide**, which on **reductive cleavage with Zn/H₂O** splits the C=C completely: **CH₂=CH₂ + O₃ → ozonide → 2 HCHO**. Both carbons of the double bond carry hydrogens, so both fragments are **formaldehyde (methanal)**. Ozonolysis of an alkene always gives carbonyl compounds; terminal =CH₂ carbons give HCHO, which is how the position of a double bond is located.",
+      "**NEB 2022 (verified PYQ): What happens when but-2-ene is treated with ozone followed by zinc and water? Give the equations involved and identify the products. (3m)** — **Step 1 — ozonide formation (at ~195 K):** CH₃–CH=CH–CH₃ + O₃ → **but-2-ene ozonide** (a cyclic peroxide across the double bond). **Step 2 — reductive cleavage (Zn/H₂O):** the ozonide decomposes to carbonyl fragments: **CH₃–CH=CH–CH₃ → 2 CH₃CHO** — **two molecules of ethanal (acetaldehyde)**. Because but-2-ene is symmetrical, both fragments are identical; an unsymmetrical alkene would give two different carbonyls, letting the original C=C position be reconstructed."
+    ],
+    "keyPoints": [
+      "Alkene chemistry = electrophilic addition. HX: Markovnikov's rule — negative part (X-) goes to the carbon with FEWER H; via the more stable carbocation; CH3CH=CH2 + HBr -> CH3CHBrCH3 (2-bromopropane). Peroxide effect (Kharasch): with peroxides, HBr ONLY adds anti-Markovnikov by free-radical mechanism -> CH3CH2CH2Br (1-bromopropane); HF/HCl/HI do not show it. Hydration: CH2=CH2 + H2O (conc H2SO4) -> CH3CH2OH; H2SO4 addition -> CH3CH2OSO3H -> hydrolysis -> ethanol. Ozonolysis: O3 at ~195K -> ozonide; Zn/H2O cleavage -> carbonyls; CH2=CH2 -> 2HCHO; but-2-ene -> 2CH3CHO; locates the double bond."
+    ],
+    "importantConcepts": [
+      "Whoever forms the stabler intermediate wins: Markovnikov is carbocation stability in disguise, and the peroxide effect is radical stability pulling the other way."
+    ],
+    "examples": [
+      "***HBr's private quirk*** — of the four hydrogen halides only HBr flips in peroxides: Cl· adds too fast to be selective, I· too weak to sustain the chain — bond energetics police the exception."
+    ],
+    "universalFacts": [
+      "Ozonolysis is molecular archaeology: cleave the alkene, read the carbonyl fragments, and the position of the original double bond is reconstructed exactly."
+    ],
+    "importantStatements": [
+      "\"Markovnikov's rule: the negative part of the addendum attaches to the alkene carbon bearing fewer hydrogens; peroxides reverse this for HBr via a radical mechanism.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 (Markovnikov applied to propene; ozonolysis of ethene), NEB 2022 (ozonolysis of but-2-ene) — assigned to this row."
+    ],
+    "examShortTricks": [
+      "Markovnikov: X to H-poor C (2-bromopropane). Peroxide + HBr: reverse (1-bromopropane). Ozonolysis: terminal C → HCHO; symmetrical internal → 2 same carbonyls. Hydration: H2SO4 then water → alcohol."
+    ],
+    "examNotes": [
+      "For Markovnikov questions, state the rule in the \"negative part\" form AND justify via the 2° carbocation — both sentences carry marks."
+    ],
+    "formulas": [
+      "- CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃ (Markovnikov)\n- CH₃–CH=CH₂ + HBr (ROOR) → CH₃–CH₂–CH₂Br\n- CH₂=CH₂ + H₂O (H₂SO₄) → CH₃CH₂OH\n- CH₂=CH₂ + O₃ → ozonide → 2 HCHO (Zn/H₂O); CH₃CH=CHCH₃ → 2 CH₃CHO"
+    ],
+    "practice": [
+      "State Markovnikov's rule and apply it to HBr + propene.",
+      "Explain the peroxide effect and why it is limited to HBr.",
+      "Write the ozonolysis products of ethene, but-2-ene and propene."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (verified PYQ): State Markovnikov's rule and apply it to the addition of HBr to propene. (3m)** — **Markovnikov's rule:** when an unsymmetrical reagent such as HX adds to an unsymmetrical alkene, the **negative part of the reagent attaches to the doubly-bonded carbon that carries fewer hydrogen atoms** (and H⁺ to the carbon with more hydrogens). The rule works because the first step is **electrophilic**: H⁺ adds to give a **carbocation**, and the pathway through the **more stable carbocation** (3° > 2° > 1°) dominates. **Application:** in **propene (CH₃–CH=CH₂)**, C1 carries two H and C2 one H. H⁺ therefore adds to **C1**, placing the positive charge on **C2 as a secondary carbocation** (a primary cation at C1 would be far less stable); Br⁻ then attacks C2: **CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃**, i.e. **2-bromopropane** is the major product — not 1-bromopropane.",
+      "**NEB 2024 (verified PYQ): What happens when ethene undergoes ozonolysis? Write the products. (3m)** — Ethene first adds **ozone** across the double bond at low temperature (**~195 K**) to form a cyclic **ozonide**. On **reductive work-up with zinc and water**, the ozonide cleaves at the C=C bond to give carbonyl compounds: **CH₂=CH₂ + O₃ → ozonide —(Zn/H₂O)→ 2 HCHO**. Since both alkene carbons in ethene bear two hydrogens, **both fragments are formaldehyde (methanal)** — two moles per mole of ethene. Ozonolysis always cuts the double bond entirely and delivers a carbonyl at each former alkene carbon; terminal =CH₂ groups always yield HCHO, which is how chemists locate an unknown double bond.",
+      "**NEB 2022 (verified PYQ): What happens when but-2-ene is treated with ozone followed by zinc and water? Give the equations involved and identify the products. (3m)** — **Step 1 — ozonide formation:** but-2-ene adds ozone at low temperature (~195 K) to give **but-2-ene ozonide**, a five-membered cyclic peroxide in which the two carbons of the old double bond are bridged by the three oxygens: **CH₃–CH=CH–CH₃ + O₃ → ozonide**. **Step 2 — reductive cleavage:** treatment with **zinc dust and water** decomposes the ozonide, each former alkene carbon becoming a carbonyl: **ozonide —(Zn/H₂O)→ 2 CH₃CHO**. The products are **two molecules of ethanal (acetaldehyde)** — but-2-ene is symmetrical, so both halves are identical. Had the alkene been unsymmetrical, the two different carbonyl fragments would have revealed exactly where the original double bond sat."
+    ]
+  },
+  "importantConcepts": [
+    "Whoever forms the stabler intermediate wins: Markovnikov is carbocation stability in disguise, and the peroxide effect is radical stability pulling the other way."
+  ],
+  "importantStatements": [
+    "\"Markovnikov's rule: the negative part of the addendum attaches to the alkene carbon bearing fewer hydrogens; peroxides reverse this for HBr via a radical mechanism.\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2024 (Markovnikov applied to propene; ozonolysis of ethene), NEB 2022 (ozonolysis of but-2-ene) — assigned to this row."
+  ],
+  "examNotes": [
+    "For Markovnikov questions, state the rule in the \"negative part\" form AND justify via the 2° carbocation — both sentences carry marks."
   ]
 }
