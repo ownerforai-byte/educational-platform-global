@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Carbohydrates:** energy source (glucose, starch). **Proteins:** enzymes and structure (haemoglobin, collagen). **Lipids:** energy storage and membranes (fats, phospholipids). **Nucleic acids:** genetic information (DNA, RNA).",
-      "knowledgeNote": "Carbohydrates ≈ (CH₂O)n; proteins are amino-acid polymers — composition formulas both get tested."
+      "knowledgeNote": "Carbohydrates ≈ (CH₂O)n; proteins are amino-acid polymers — composition formulas both get tested.",
+      "answer": "**Main classes of biomolecules:** (1) **Carbohydrates** (glucose, starch, cellulose) — chief energy source and structural material; (2) **Proteins** (enzymes, haemoglobin) — catalysis, structure, transport, defence; (3) **Lipids** (fats, phospholipids, steroids) — stored energy, insulation, membranes; (4) **Nucleic acids** (DNA, RNA) — storage and expression of genetic information. (Water, minerals and vitamins are also essential biomolecules.) **Deep point:** fuel (carbohydrate/lipid), machine (protein), blueprint (nucleic acid) — three jobs, four molecules classes, one cell."
     },
     {
       "question": "Describe the structure of a nucleotide and explain its role in DNA.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "A **nucleotide** = pentose sugar (deoxyribose in DNA) + nitrogenous base (A/T/G/C) + phosphate.\n\nNucleotides polymerise into strands; two strands coil into the double helix via complementary pairing (A–T, G–C) — the pairing rules that copy genetic information faithfully.",
-      "knowledgeNote": "Sugar + base alone is a nucleoside; add phosphate and it becomes a nucleotide."
+      "knowledgeNote": "Sugar + base alone is a nucleoside; add phosphate and it becomes a nucleotide.",
+      "answer": "**Nucleotide structure:** three covalently linked parts — a **pentose sugar** (deoxyribose in DNA, ribose in RNA), a **nitrogenous base** on the 1′ carbon (purines: adenine, guanine; pyrimidines: cytosine, thymine/uracil), and a **phosphate group** on the 5′ carbon. (Sugar + base = nucleoside; + phosphate = nucleotide.) **Role in DNA:** nucleotides polymerise through **5′→3′ phosphodiester bonds**, forming the sugar–phosphate backbone; the **base sequence encodes genetic information**, and complementary pairing (A=T, G≡C) between the two strands enables faithful **replication** and transcription. **Deep point:** sugar and phosphate build the ladder's rails, bases are its rungs' letters — the sequence of letters is the genome."
     },
     {
       "question": "Describe the salient features of the Watson-Crick model of DNA.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "(1) Two antiparallel polynucleotide strands coiled into a **double helix**. (2) Sugar–phosphate backbone outside, bases inside. (3) Complementary pairing: A=T (2 H-bonds), G≡C (3 H-bonds). (4) Diameter ~20 Å with one full turn per 34 Å (10 base pairs). (5) Right-handed helix.",
-      "knowledgeNote": "Chargaff's rules (A=T, G=C) were the data Watson and Crick built the model to fit."
+      "knowledgeNote": "Chargaff's rules (A=T, G=C) were the data Watson and Crick built the model to fit.",
+      "answer": "**Watson–Crick model of DNA (1953) — salient features:** **(1) Double helix:** DNA consists of **two polynucleotide chains wound around a common axis** as a right-handed double helix, like a twisted ladder. **(2) Antiparallel strands:** the two chains run in **opposite directions** (5′→3′ vs 3′→5′). **(3) Backbone outside:** the **sugar–phosphate backbones lie on the outside**; bases face inward. **(4) Complementary base pairing:** bases pair by hydrogen bonds — **A = T (two H-bonds), G ≡ C (three H-bonds)**; a purine always pairs with a pyrimidine, keeping the helix diameter uniform (2 nm). **(5) Dimensions:** one complete turn every **3.4 nm** containing **10 base pairs**; adjacent pairs 0.34 nm apart. **(6) Semi-conservative replication:** since each strand specifies its complement, the model immediately suggests how DNA copies itself — each daughter duplex keeps one parental strand (confirmed by Meselson–Stahl). **Deep point:** the pairing rules are the model's genius — complementarity explains both stability (H-bonds) and heredity (each strand is a template); the structure *is* the copying mechanism."
     },
     {
       "question": "What are enzymes? Write any four of their properties.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Enzymes** are protein biocatalysts that speed reactions without being consumed.\n\n(1) Highly specific (lock-and-key / induced fit). (2) Work best at optimum T and pH. (3) Needed in tiny amounts; reusable. (4) Lower activation energy. (5) Inhibited by poisons (cyanide, heavy metals).",
-      "knowledgeNote": "Apoenzyme (protein) + cofactor (metal/vitamin) = holoenzyme — the complete active form."
+      "knowledgeNote": "Apoenzyme (protein) + cofactor (metal/vitamin) = holoenzyme — the complete active form.",
+      "answer": "**Enzymes:** **biological catalysts** — globular proteins (some with non-protein cofactors) produced by living cells that **accelerate biochemical reactions** by lowering activation energy, without themselves being consumed; each acts on a specific substrate at its **active site**. **Four properties:** (1) **specificity** — each enzyme acts on one substrate or one type of reaction (lock-and-key/induced fit); (2) **catalytic in small amounts** — not consumed in the reaction, recovered unchanged; (3) **temperature and pH sensitivity** — each has an optimum (≈37 °C, specific pH) beyond which it denatures; (4) **reversibility** — most enzyme reactions are reversible, the direction set by substrate/product concentrations. **Deep point:** the enzyme is unchanged but indispensable — it lowers the energy hill between reactant and product without ever becoming part of the product."
     },
     {
       "question": "Classify carbohydrates with one example of each class.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Monosaccharides** (single sugars): glucose, fructose. **Oligosaccharides** (2–10 units): sucrose, maltose. **Polysaccharides** (many units): starch, cellulose, glycogen.",
-      "knowledgeNote": "Glucose = instant energy; starch/glycogen = storage; cellulose = structure — function follows polymerisation."
+      "knowledgeNote": "Glucose = instant energy; starch/glycogen = storage; cellulose = structure — function follows polymerisation.",
+      "answer": "**Classification of carbohydrates:** **(1) Monosaccharides** — simple sugars, cannot be hydrolysed; general formula (CH₂O)ₙ; e.g. **glucose, fructose** (hexoses), ribose (pentose). **(2) Disaccharides** — two monosaccharides joined by a glycosidic bond; e.g. **sucrose** (glucose + fructose), maltose, lactose. **(3) Polysaccharides** — long chains of many monosaccharide units; e.g. **starch** (plant storage), **glycogen** (animal storage), **cellulose** (plant cell walls), chitin. **Deep point:** the classification is by hydrolysis count — one sugar, two sugars, many sugars; digestion is just the reversal of that ladder (starch → maltose → glucose)."
     },
     {
       "question": "Distinguish between saturated and unsaturated fatty acids. Why do phospholipids form bilayers in water?",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Saturated** acids have only single bonds (straight chains, solid fats like ghee); **unsaturated** have C=C kinks (oils like mustard oil).\n\nPhospholipids are amphipathic — hydrophilic heads face water on both sides while hydrophobic tails hide inside — so a **bilayer** is the lowest-energy arrangement, forming every cell membrane.",
-      "knowledgeNote": "The bilayer's fluid mosaic (Singer–Nicolson) explains selective permeability and membrane protein movement."
+      "knowledgeNote": "The bilayer's fluid mosaic (Singer–Nicolson) explains selective permeability and membrane protein movement.",
+      "answer": "**Saturated vs unsaturated fatty acids:** **saturated** fatty acids have **no C=C double bonds** — every carbon carries its maximum hydrogen (e.g. palmitic, stearic acid); straight chains pack tightly, so they are **solid at room temperature** (fats, butter) and raise blood cholesterol. **Unsaturated** fatty acids have **one (mono-) or more (poly-) C=C double bonds** (e.g. oleic, linoleic acid); the double-bond kinks prevent tight packing, so they are **liquid at room temperature** (oils) and are the healthier dietary fats. **Why phospholipids form bilayers:** a phospholipid is **amphipathic** — a hydrophilic (water-loving, phosphate) head and two hydrophobic (water-fearing, fatty acid) tails. In water, the tails hide from water by clustering together while the heads face the water on both sides — the only stable arrangement on this scale is a **bilayer**: two leaflets tail-to-tail, heads out on both faces, self-sealing into the membrane's basic sheet. **Deep point:** no membrane, no cell — the bilayer forms itself purely from the physics of 'oil and water', and the saturated/unsaturated balance in the tails tunes the membrane's fluidity."
     }
   ]
 }
