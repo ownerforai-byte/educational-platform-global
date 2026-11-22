@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Kinetic theory:** gas pressure arises from countless molecular collisions with the container walls; pressure is proportional to the average kinetic energy of the molecules.\n\n**Assumptions:** (1) huge number of molecules in random motion; (2) molecules are point masses of negligible volume; (3) no intermolecular forces except during collisions; (4) collisions are perfectly elastic; (5) collision time is negligible; (6) molecules move uniformly between collisions.",
-      "knowledgeNote": "Kinetic theory gives P = (1/3)ρ⟨v²⟩ — pressure from density times mean-square speed."
+      "knowledgeNote": "Kinetic theory gives P = (1/3)ρ⟨v²⟩ — pressure from density times mean-square speed.",
+      "answer": "**Kinetic theory:** a gas is a vast collection of molecules in random motion whose wall collisions produce pressure and whose average kinetic energy is proportional to absolute temperature, giving PV = ⅓Nm⟨c²⟩ = μRT. **Assumptions:** (1) enormous number of identical molecules in random motion; (2) molecular volume negligible compared to the container; (3) no intermolecular forces except during collisions; (4) all collisions perfectly elastic; (5) collision duration negligible vs free path time; (6) straight-line uniform motion between collisions. **Deep point:** each assumption marks a place where real gases bend the ideal — molecular size and intermolecular attraction are the two van der Waals corrects."
     },
     {
       "question": "What is the law of equipartition of energy? How many degrees of freedom does a monoatomic gas molecule have?",
@@ -23,7 +24,8 @@
       "year": 2021,
       "source": "NEB Model",
       "solution": "**Equipartition:** at thermal equilibrium, energy is shared equally among all degrees of freedom, each getting (1/2)kT per molecule.\n\nA monoatomic molecule has **3 translational** degrees of freedom (x, y, z), so its molar heat at constant volume is Cv = (3/2)R.",
-      "knowledgeNote": "Diatomic adds 2 rotational → 5 degrees; vibrational modes unfreeze only at high temperatures."
+      "knowledgeNote": "Diatomic adds 2 rotational → 5 degrees; vibrational modes unfreeze only at high temperatures.",
+      "answer": "**Equipartition law:** in thermal equilibrium energy is shared equally among all degrees of freedom, each getting **½kT per molecule** (½RT per mole). **Monoatomic molecule:** **3 degrees of freedom** (translational only — x, y, z), so average energy = 3kT/2 per molecule. **Deep point:** 'degrees of freedom' counts independent ways of storing energy; a point atom has only three ways to move, so it has three."
     },
     {
       "question": "Calculate the rms speed of oxygen molecules at 27°C. (Molar mass of O₂ = 32 g/mol, R = 8.31 J/mol·K)",
@@ -31,7 +33,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "T = 27 + 273 = 300 K; M = 0.032 kg/mol.\n\nv_rms = √(3RT/M) = √(3 × 8.31 × 300 / 0.032) = √(7479/0.032) = √233,719 ≈ **483 m/s**.",
-      "knowledgeNote": "v_rms = √(3RT/M): lighter gases and higher temperatures mean faster molecules — Graham's law of diffusion follows directly."
+      "knowledgeNote": "v_rms = √(3RT/M): lighter gases and higher temperatures mean faster molecules — Graham's law of diffusion follows directly.",
+      "answer": "**Formula:** c_rms = √(3RT/M). **Substitute:** T = 300 K; M = 0.032 kg/mol; R = 8.31. c_rms = √(3 × 8.31 × 300/0.032) = √(2.337 × 10⁵) ≈ **483 m/s**. **Deep point:** M must be in kg/mol — the 32 g → 0.032 kg conversion is where the marks live."
     },
     {
       "question": "State Boyle's law, Charles's law, and the pressure law. Combine them to obtain the ideal gas equation.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Boyle (T const):** V ∝ 1/P. **Charles (P const):** V ∝ T. **Pressure law (V const):** P ∝ T.\n\nTogether V ∝ T/P, i.e. PV/T = constant. For n moles the constant is nR:\n\n**PV = nRT** — the ideal gas equation.",
-      "knowledgeNote": "T must be in kelvin — the laws fail on the Celsius scale because the proportionality needs a true zero."
+      "knowledgeNote": "T must be in kelvin — the laws fail on the Celsius scale because the proportionality needs a true zero.",
+      "answer": "**Boyle's law** (T, μ constant): PV = constant. **Charles's law** (P, μ constant): V/T = constant. **Pressure law** (V, μ constant): P/T = constant. **Combine:** suppose a gas goes from (P₁, V₁, T₁) to (P₂, V₂, T₂) via two steps — an isothermal compression to an intermediate volume V′ (Boyle: P₁V₁ = P₂V′) then a constant-pressure return to T₂ (Charles/pressure-law: V′/T₁ = V₂/T₂). Eliminating V′: P₁V₁/T₁ = P₂V₂/T₂ ⟹ **PV/T = constant**, and with the amount of gas μ the constant is μR (R = 8.31 J/mol·K), giving the **ideal gas equation PV = μRT**. **Deep point:** the derivation is bookkeeping through an intermediate state — pick any two-step path and the fixed-point combination PV/T falls out; R is what makes 'constant' universal per mole."
     },
     {
       "question": "Two moles of an ideal gas at 300 K occupy 0.05 m³. Calculate its pressure. (R = 8.31 J/mol·K)",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "P = nRT/V = (2 × 8.31 × 300)/0.05 = 4986/0.05 = **99,720 Pa ≈ 1 atm**.",
-      "knowledgeNote": "One mole at STP (0°C, 1 atm) occupies 22.4 L — a instant check for gas-arithmetic answers."
+      "knowledgeNote": "One mole at STP (0°C, 1 atm) occupies 22.4 L — a instant check for gas-arithmetic answers.",
+      "answer": "**Formula:** PV = μRT ⟹ P = μRT/V. **Substitute:** μ = 2 mol; R = 8.31; T = 300 K; V = 0.05 m³. P = (2 × 8.31 × 300)/0.05 = 4986/0.05 = **99 720 Pa ≈ 1.0 × 10⁵ Pa** — about atmospheric pressure. **Deep point:** the answer's scale is the check — a mole or two of gas in a 50-litre box at room temperature *should* sit near one atmosphere; a wildly different pressure means a slipped power of ten."
     },
     {
       "question": "Calculate the average kinetic energy per molecule of a gas at 300 K. (k = 1.38 × 10⁻²³ J/K)",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "⟨KE⟩ = (3/2)kT = 1.5 × (1.38 × 10⁻²³) × 300 = **6.21 × 10⁻²¹ J**.",
-      "knowledgeNote": "Temperature IS average molecular KE — this single formula is the bridge between the microscopic and macroscopic pictures."
+      "knowledgeNote": "Temperature IS average molecular KE — this single formula is the bridge between the microscopic and macroscopic pictures.",
+      "answer": "**Formula:** average kinetic energy per molecule = (3/2)kT. **Substitute:** k = 1.38 × 10⁻²³ J/K; T = 300 K. E = 1.5 × 1.38 × 10⁻²³ × 300 = 1.5 × 4.14 × 10⁻²¹ = **6.21 × 10⁻²¹ J** (≈ 3.9 × 10⁻² eV — tiny per molecule, enormous in aggregate). **Deep point:** the 3/2 counts the three translational degrees of freedom at ½kT each — equipartition in one line; per-mole it becomes 3RT/2 ≈ 3.7 kJ."
     }
   ]
 }

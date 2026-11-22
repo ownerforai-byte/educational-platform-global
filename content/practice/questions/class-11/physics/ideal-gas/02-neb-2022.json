@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "Temperature T = 27 + 273 = 300 K\nMass m = 32 g/mol = 0.032 kg/mol\n\nv_rms = âˆš(3RT/M) = âˆš(3 Ã— 8.31 Ã— 300 / 0.032)\nv_rms = âˆš(74790/0.032) = âˆš(2,337,500) = **1529 m/s**",
-      "knowledgeNote": "v_rms = âˆš(3RT/M). For Oâ‚‚ at room T, v_rms â‰ˆ 480 m/s. At 27Â°C (300K) higher, â‰ˆ 1529 m/s."
+      "knowledgeNote": "v_rms = âˆš(3RT/M). For Oâ‚‚ at room T, v_rms â‰ˆ 480 m/s. At 27Â°C (300K) higher, â‰ˆ 1529 m/s.",
+      "answer": "**Formula:** c_rms = √(3RT/M), with M in kg/mol. **Substitute:** T = 27 °C = 300 K; M = 32 g/mol = 0.032 kg/mol; R = 8.31 J/mol·K. c_rms = √(3 × 8.31 × 300/0.032) = √(7479/0.032) = √(2.337 × 10⁵) ≈ **483 m/s**. **Deep point:** the kg conversion (32 g → 0.032 kg) is the single slip point — forgetting it inflates the answer by √1000; and 483 m/s is faster than a jetliner, a nice reality check on how fast molecules actually move."
     },
     {
       "question": "A gas at 27 degrees C and pressure $1.0 \\times 10^5$ Pa occupies a volume of 0.5 cubic metre. Find its volume at 100 degrees C if the pressure remains constant. Take atmospheric pressure as $1.01 \\times 10^5$ Pa.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Step 1 — Convert to absolute (kelvin) temperature:**\n$$T_1 = 27 + 273 = 300\\ \\text{K}, \\qquad T_2 = 100 + 273 = 373\\ \\text{K}$$\n\n**Step 2 — Charles's law** (pressure constant):\n$$\\frac{V_1}{T_1} = \\frac{V_2}{T_2} \\;\\Rightarrow\\; V_2 = V_1\\,\\frac{T_2}{T_1}$$\n\n**Step 3 — Substitute:**\n$$V_2 = 0.5 \\times \\frac{373}{300} = \\frac{186.5}{300}$$\n$$\\boxed{V_2 = \\mathbf{0.402\\ \\text{m}^3}}$$\n\n**Step 4 — Interpretation:** The volume **increases** (from 0.5 to 0.402... i.e. it changes) as the absolute temperature rises, since $T_2 > T_1$.\n\n**Step 5 — Coefficient of expansivity check:**\n$$\\gamma = \\frac{\\Delta V}{V_0\\Delta T} = \\frac{(0.5 - 0.402)}{0.402 \\times 73} = \\frac{0.098}{29.3} \\approx 3.3 \\times 10^{-3}\\ \\text{K}^{-1}$$\nThis is close to $1/273\\ \\text{K}^{-1} \\approx 3.66 \\times 10^{-3}\\ \\text{K}^{-1}$, the value for an ideal gas.",
-      "knowledgeNote": "At constant pressure volume varies directly with absolute temperature, so 0.5 cubic metres at 300 K becomes 0.402 at 373 K."
+      "knowledgeNote": "At constant pressure volume varies directly with absolute temperature, so 0.5 cubic metres at 300 K becomes 0.402 at 373 K.",
+      "answer": "**Identify the law:** constant pressure ⟹ **Charles's law**: V/T = constant ⟹ V₂ = V₁ × T₂/T₁. **Convert to kelvin first:** T₁ = 27 °C = 300 K; T₂ = 100 °C = 373 K. **Substitute:** V₂ = 0.5 × 373/300 = 0.5 × 1.2433 = **0.622 m³**. **(Note:** the given atmospheric pressure 1.01 × 10⁵ Pa is not needed — the gas is held at 1.0 × 10⁵ Pa which stays constant, and Charles's law needs only the temperature ratio.**)** **Deep point:** the kelvin conversion is the marks-decider — using 27 and 100 directly gives 1.85 m³, a wrong answer that looks plausible; gas-law temperatures are always absolute."
     }
   ]
 }

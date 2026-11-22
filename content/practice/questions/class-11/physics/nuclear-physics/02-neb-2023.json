@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Mass defect (Δm):** The difference between the sum of masses of individual nucleons and the actual mass of the nucleus.\n\nΔm = [Zmp + (A-Z)mn] - M(nucleus)\n\n**Binding energy:** The energy equivalent of mass defect: E = Δm × c²\n\nHigher binding energy per nucleon → more stable nucleus.",
-      "knowledgeNote": "Binding energy per nucleon is maximum (~8.7 MeV) for iron-56. Heavier nuclei release energy by fission; lighter nuclei by fusion."
+      "knowledgeNote": "Binding energy per nucleon is maximum (~8.7 MeV) for iron-56. Heavier nuclei release energy by fission; lighter nuclei by fusion.",
+      "answer": "**Mass defect:** the difference between the **sum of the masses of the separate nucleons** (Z protons + N neutrons, free) and the **actual mass of the nucleus**: Δm = (Zm_p + Nm_n) − M_nucleus. The assembled nucleus is always *lighter* than its parts. **Relation to binding energy:** the missing mass appears as the energy that bound the nucleus together, by Einstein's mass–energy equivalence **E_b = Δmc²** — the binding energy is the energy that would have to be supplied to pull the nucleus apart into free nucleons (per nucleon: E_b/A, peaking near iron at ~8.8 MeV). **Deep point:** mass defect is binding energy seen through E = mc² — a helium-4 nucleus weighs about 0.7% less than 2p + 2n, and that 0.7% is the fusion energy of the Sun."
     },
     {
       "question": "A radioactive sample has a half-life of 8 days. What fraction of the sample remains after 24 days, and what will be its activity if the initial activity was 4 curie?",
@@ -23,7 +24,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Definition of half-life:** The half-life of a radioactive substance is the time required for **half** of its initial number of atoms to decay, or equivalently for its activity to become half of the original value.\n\n**Step 1 — Number of half-lives elapsed:**\n$$n = \\frac{24\\ \\text{days}}{8\\ \\text{days}} = 3$$\n\n**Step 2 — Fraction of the sample remaining:**\n$$\\frac{N}{N_0} = \\left(\\frac{1}{2}\\right)^3 = \\frac{1}{8}$$\n$$\\boxed{\\text{Fraction remaining} = \\mathbf{\\dfrac{1}{8}}\\ (=12.5\\%)}$$\n\n**Step 3 — Activity after 24 days:**\nActivity falls by half each half-life, so\n$$A = \\frac{4}{2^3} = \\frac{4}{8}$$\n$$\\boxed{A = \\mathbf{0.5\\ \\text{curie}}$$\n\n**Note:** $1\\ \\text{curie} = 3.7 \\times 10^{10}$ decays per second, so the final activity is $1.85 \\times 10^{10}\\ \\text{s}^{-1}$.",
-      "knowledgeNote": "After three half-lives of eight days each, one-eighth of the sample remains and the activity falls from 4 to 0.5 curie."
+      "knowledgeNote": "After three half-lives of eight days each, one-eighth of the sample remains and the activity falls from 4 to 0.5 curie.",
+      "answer": "**Fraction remaining after 24 days:** 24 days = 3 half-lives (24/8) ⟹ N/N₀ = (½)³ = **1/8** remains. **Activity:** activity is proportional to the number of undecayed nuclei (A = λN), so it decays by the same factor: A = 4 curie × 1/8 = **0.5 curie**. **Deep point:** every half-life halves *both* the atom count and the activity — one rule, two quantities; after n half-lives, fraction remaining = 2⁻ⁿ, always."
     }
   ]
 }

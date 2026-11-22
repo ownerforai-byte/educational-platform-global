@@ -15,7 +15,8 @@
       "year": 2021,
       "source": "NEB Model",
       "solution": "The law states that energy is equally divided among all available degrees of freedom, each getting (1/2)kT of energy.\n\nA monoatomic gas molecule has **3 translational degrees of freedom** (motion along x, y, z). Its molar specific heat at constant volume: Cv = (3/2)R.",
-      "knowledgeNote": "At thermal equilibrium, a monatomic gas has 3 translational degrees of freedom, a diatomic gas 5."
+      "knowledgeNote": "At thermal equilibrium, a monatomic gas has 3 translational degrees of freedom, a diatomic gas 5.",
+      "answer": "**Law of equipartition of energy:** in thermal equilibrium, the energy of a gas is **shared equally among all its degrees of freedom**, each degree of freedom receiving an average energy of **½kT per molecule** (½RT per mole), where k is the Boltzmann constant. **Monoatomic molecule:** it can only translate — motion along x, y and z — so it has **3 degrees of freedom**. (Hence average energy 3 × ½kT = 3kT/2 per molecule, and molar heat capacity C_v = 3R/2.) **Deep point:** a point-like atom has no way to store rotational or vibrational energy — that's why monatomic gases like helium have the lowest molar heat capacity of all gases."
     },
     {
       "question": "State Boyle's law and Charles's law and explain them with the $\\mu$ notation.",
@@ -23,7 +24,8 @@
       "year": 2021,
       "source": "NEB Past",
       "solution": "**Boyle's law:** At constant temperature, the pressure of a fixed mass of gas is **inversely proportional** to its volume.\n$$P \\propto \\frac{1}{V} \\;\\Rightarrow\\; \\boxed{PV = \\text{constant}} \\;\\Rightarrow\\; P_1V_1 = P_2V_2$$\nGraph of $P$ vs $V$ is a **rectangular hyperbola**; pressure increases when volume decreases. Follows Boyle's law $P \\propto 1/V$; used in breathing and in the piston of an engine.\n\n**Charles's law:** At constant pressure, the volume of a fixed mass of gas is **directly proportional** to its absolute temperature.\n$$V \\propto T \\;\\Rightarrow\\; \\boxed{\\frac{V}{T} = \\text{constant}} \\;\\Rightarrow\\; \\frac{V_1}{T_1} = \\frac{V_2}{T_2}$$\nGraph of $V$ vs $T$ is a **straight line through the origin**; the slope of $V$ vs $T$ (K) is the coefficient of cubical expansivity $\\gamma = \\dfrac{1}{V_0}\\left(\\dfrac{\\Delta V}{\\Delta T}\\right)$.",
-      "knowledgeNote": "Boyle's law gives PV constant at constant temperature; Charles's law gives V proportional to T at constant pressure."
+      "knowledgeNote": "Boyle's law gives PV constant at constant temperature; Charles's law gives V proportional to T at constant pressure.",
+      "answer": "**Boyle's law:** at constant temperature (and fixed amount of gas), the pressure of a gas is inversely proportional to its volume — **PV = constant**, or P₁V₁ = P₂V₂ (isothermal). **Charles's law:** at constant pressure, the volume is directly proportional to the absolute temperature — **V/T = constant**, or V₁/T₁ = V₂/T₂ (isobaric). **With μ (amount of gas in moles):** both laws combine with Avogadro's principle into the ideal gas equation **PV = μRT** (R = 8.31 J/mol·K): Boyle's law is the special case μ, T fixed (PV = μRT = constant); Charles's law is the case μ, P fixed (V/T = μR/P = constant). Each gas law is the full equation with two of the three variables (P, V, T) held fixed. **Deep point:** PV = μRT is the single sentence containing all the gas laws — every 'law' is what remains when you freeze all but two of its letters."
     }
   ]
 }

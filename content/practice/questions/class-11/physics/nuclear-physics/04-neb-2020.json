@@ -15,7 +15,8 @@
       "year": 2020,
       "source": "NEB Past",
       "solution": "**Correct option: (a) $1/2^n$.**\n\n**Step 1:** In each half-life the number of undecayed atoms becomes half of the previous value.\nAfter 1 half-life: $N = N_0/2$\nAfter 2 half-lives: $N = N_0/4$\nAfter 3 half-lives: $N = N_0/8$\n\n**Step 2 — Generalising:**\n$$N = N_0\\left(\\frac{1}{2}\\right)^n \\Rightarrow \\frac{N}{N_0} = \\boxed{\\left(\\frac{1}{2}\\right)^n = \\frac{1}{2^n}}$$\n\n**Check:** For $n = 3$, the fraction is $1/8$ ✓, and the activity follows exactly the same law.\nHence options (b), (c) and (d) are incorrect.",
-      "knowledgeNote": "The fraction of radioactive atoms remaining after n half-lives is one over two to the power n."
+      "knowledgeNote": "The fraction of radioactive atoms remaining after n half-lives is one over two to the power n.",
+      "answer": "**Answer: (a) 1/2ⁿ.** **Reason:** each half-life halves the remaining undecayed atoms: after 1 half-life N₀/2, after 2 → N₀/4, after n → **N₀/2ⁿ** (from N = N₀(½)ⁿ, equivalent to N = N₀e^(−λt) with t = nT½ = n·0.693/λ). **Deep point:** the halving is exponential, not linear — option (b) n/2 would eventually go negative, the giveaway that linear intuition fails radioactive decay."
     }
   ]
 }

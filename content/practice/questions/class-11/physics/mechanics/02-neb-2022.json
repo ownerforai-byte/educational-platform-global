@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Given:** $m_1 = 0.02\\ \\text{kg},\\ u_1 = 500\\ \\text{m/s},\\ m_2 = 4.98\\ \\text{kg},\\ u_2 = 0$\n\n**Step 1 — Apply conservation of momentum** (no external horizontal force):\n$$m_1u_1 + m_2u_2 = (m_1 + m_2)v$$\n\n**Step 2 — Substitute values:**\n$$0.02 \\times 500 + 4.98 \\times 0 = (0.02 + 4.98)v$$\n$$10 = 5.0\\,v$$\n\n**Step 3 — Solve:**\n$$v = \\frac{10}{5.0} = \\mathbf{2.0\\ \\text{m/s}}$$\nThe direction is that of the bullet's initial motion.",
-      "knowledgeNote": "In a perfectly inelastic collision the colliding bodies stick together and share a common velocity from momentum conservation."
+      "knowledgeNote": "In a perfectly inelastic collision the colliding bodies stick together and share a common velocity from momentum conservation.",
+      "answer": "**Principle:** momentum is conserved in the collision (no external horizontal force on the bullet + block system on the smooth surface). **Before:** p = 0.02 × 500 = 10 kg·m/s. **After:** p = (0.02 + 4.98) × V = 5V. **Solve:** 5V = 10 ⟹ **V = 2 m/s**, in the bullet's original direction. **Deep point:** the bullet *embeds* — a perfectly inelastic collision — so kinetic energy is NOT conserved (½ × 0.02 × 500² = 2500 J before vs ½ × 5 × 2² = 10 J after; the lost 2490 J becomes heat and deformation), but momentum always survives."
     }
   ]
 }

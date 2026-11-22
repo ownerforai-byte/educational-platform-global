@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Past",
       "solution": "Given: u = 0, s = 200 m, g = 10 m/sÂ²\n\n(i) Using s = ut + Â½gtÂ²:\n200 = 0 + Â½(10)tÂ² â†’ tÂ² = 40 â†’ **t = 6.32 s**\n\n(ii) Using vÂ² = uÂ² + 2gs:\nvÂ² = 0 + 2(10)(200) = 4000 â†’ **v = 63.25 m/s**",
-      "knowledgeNote": "Time of fall from height h: t = âˆš(2h/g). Impact velocity: v = âˆš(2gh). These are independent of mass (Galileo's principle)"
+      "knowledgeNote": "Time of fall from height h: t = âˆš(2h/g). Impact velocity: v = âˆš(2gh). These are independent of mass (Galileo's principle)",
+      "answer": "**(i) Time to fall:** s = ½gt² (dropped from rest) ⟹ t = √(2s/g) = √(2 × 200/10) = √40 ≈ **6.32 s**. **(ii) Velocity on impact:** v = gt = 10 × 6.32 ≈ **63.2 m/s** (check via v² = 2gs = 2 × 10 × 200 = 4000 ⟹ v = √4000 = 63.2 m/s ✓). **Deep point:** the two equations-of-motion routes (v = gt and v² = 2gs) must agree — running both is the free check that catches arithmetic slips."
     },
     {
       "question": "A car moving at 10 m/s accelerates uniformly at 2 m/s2 for 4 s. Find the final velocity and the distance travelled in this time.",
@@ -23,7 +24,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Given:** $u = 10\\ \\text{m/s},\\ a = 2\\ \\text{m/s}^2,\\ t = 4\\ \\text{s}$\n\n**Step 1 — Final velocity:**\n$$v = u + at = 10 + (2)(4) = 10 + 8$$\n$$\\boxed{v = \\mathbf{18\\ \\text{m/s}}$$\n\n**Step 2 — Distance travelled:**\nUsing $s = ut + \\tfrac{1}{2}at^2$:\n$$s = (10)(4) + \\frac{1}{2}(2)(16) = 40 + 16$$\n$$\\boxed{s = \\mathbf{56\\ \\text{m}}$$\n\n**Step 3 — Verification** using the average velocity rule:\n$$s = \\frac{u + v}{2}\\times t = \\frac{10 + 18}{2} \\times 4 = 14 \\times 4 = 56\\ \\text{m}$$ ✓\n\n**Average speed** $= 56/4 = \\mathbf{14\\ \\text{m/s}}$ (equal to $\\tfrac{u+v}{2}$ for uniform acceleration).",
-      "knowledgeNote": "For uniform acceleration, v equals u plus at and distance equals ut plus half at squared."
+      "knowledgeNote": "For uniform acceleration, v equals u plus at and distance equals ut plus half at squared.",
+      "answer": "**Final velocity:** v = u + at = 10 + 2 × 4 = **18 m/s**. **Distance:** s = ut + ½at² = 10 × 4 + ½ × 2 × 16 = 40 + 16 = **56 m** (check via v² = u² + 2as ⟹ s = (18² − 10²)/(2 × 2) = (324 − 100)/4 = 56 m ✓). **Deep point:** any two of the three equations of motion confirm the third — solving with v = u + at and checking with v² = u² + 2as is the standard insurance."
     }
   ]
 }

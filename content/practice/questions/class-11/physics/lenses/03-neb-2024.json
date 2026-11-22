@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Lens maker's formula:** 1/f = (n − 1)(1/R₁ − 1/R₂).\n\nRefraction at the first surface forms an intermediate image; that acts as the object for the second surface. Applying n₁/v − n₂/u = (n₁ − n₂)/R at each surface with the thin-lens sign convention and adding eliminates the intermediate distance, leaving **1/f = (n − 1)(1/R₁ − 1/R₂)**.",
-      "knowledgeNote": "For equi-convex (R₂ = −R₁ = −R): 1/f = 2(n − 1)/R — the one-line special case NEB loves."
+      "knowledgeNote": "For equi-convex (R₂ = −R₁ = −R): 1/f = 2(n − 1)/R — the one-line special case NEB loves.",
+      "answer": "**Lens maker's formula:** **1/f = (n − 1)(1/R₁ − 1/R₂)** — focal length from the lens material's refractive index n and the two surface radii (sign convention: radii positive for convex-toward-light surfaces). **Derivation (thin convex lens, two refractions):** (1) at the first surface (radius R₁) the object at u would image at v′ inside the glass: n/v′ − 1/u = (n − 1)/R₁; (2) at the second surface (radius R₂) that intermediate image is the object and the final image forms at v: 1/v − n/v′ = −(n − 1)/R₂; (3) adding cancels n/v′: 1/v − 1/u = (n − 1)(1/R₁ − 1/R₂); (4) putting u = ∞ (object at infinity gives an image at the focus): **1/f = (n − 1)(1/R₁ − 1/R₂)**. **Deep point:** the add-and-cancel step is the derivation — the intermediate image v′ is internal bookkeeping that vanishes, leaving a formula with only the lens's own properties."
     },
     {
       "question": "An object is placed 30 cm from a convex lens of focal length 20 cm. Find the image distance and magnification.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "1/v − 1/u = 1/f → 1/v = 1/20 + 1/30 = 5/60 → v = **60 cm** (real, on the far side).\n\nm = v/u = 60/30 = **−2**: inverted and twice as large. (Beyond 2F gives a diminished image; between F and 2F, magnified.)",
-      "knowledgeNote": "Lens m = v/u carries no minus unlike mirrors — sign slips here flip 'erect' and 'inverted'."
+      "knowledgeNote": "Lens m = v/u carries no minus unlike mirrors — sign slips here flip 'erect' and 'inverted'.",
+      "answer": "**Lens equation:** 1/v − 1/u = 1/f with u = −30 cm, f = +20 cm (real-is-positive: 1/v = 1/f + 1/u = 1/20 + 1/30 = 5/60 = 1/12) ⟹ **v = +12 cm**... using the magnitude form 1/v = 1/f − 1/u = 1/20 − 1/30 = 1/60 ⟹ **v = 60 cm** on the far side (real image). **Magnification:** m = v/u = 60/30 = **2** — image real, inverted, twice the size. **Deep point:** object at 1.5f (between f and 2f) must give a real magnified image beyond 2f — 60 cm > 40 cm ✓; the position check is the sanity test."
     },
     {
       "question": "A convex lens has surfaces of radii 20 cm and −20 cm and n = 1.5. Calculate its focal length using the lens maker's formula.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "1/f = (1.5 − 1)(1/20 − 1/(−20)) = 0.5 × (0.05 + 0.05) = 0.05.\n\nf = **20 cm**.",
-      "knowledgeNote": "R₂ is negative for double-convex in Cartesian convention — the sign is where this numerical is won or lost."
+      "knowledgeNote": "R₂ is negative for double-convex in Cartesian convention — the sign is where this numerical is won or lost.",
+      "answer": "**Lens maker's formula:** 1/f = (n − 1)(1/R₁ − 1/R₂). **Substitute:** n = 1.5; R₁ = +20 cm; R₂ = −20 cm. 1/f = (1.5 − 1)(1/20 − 1/(−20)) = 0.5 × (1/20 + 1/20) = 0.5 × 0.1 = 0.05 ⟹ **f = 1/0.05 = 20 cm** (positive ⟹ converging/convex). **Deep point:** the minus sign in front of R₂ is the formula's built-in sign convention — entering it as +20 gives 1/f = 0 and 'no lens'; equal-and-opposite radii is the symmetric biconvex case where the two surface powers simply add."
     },
     {
       "question": "Two thin lenses of powers +5 D and −2 D are placed in contact. Find the power and focal length of the combination.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Powers add in contact: P = +5 + (−2) = **+3 D** (net converging).\n\nf = 100/P = 100/3 ≈ **33.3 cm**.",
-      "knowledgeNote": "Spectacle prescriptions are just this arithmetic — plus for hypermetropia, minus for myopia."
+      "knowledgeNote": "Spectacle prescriptions are just this arithmetic — plus for hypermetropia, minus for myopia.",
+      "answer": "**Powers in contact simply add:** P = P₁ + P₂ = +5 + (−2) = **+3 D**. **Focal length:** f = 1/P = 1/3 m ≈ **0.333 m = 33.3 cm** (positive ⟹ net converging). **Deep point:** the dioptre's virtue is additivity — powers add because thin-lens reciprocals add when lenses touch; the combination is a weaker converging lens than the +5 D alone."
     },
     {
       "question": "What are myopia and hypermetropia? Which lenses correct them?",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Myopia (near-sight):** eyeball too long — distant images focus in front of the retina. Corrected with a **concave (diverging)** lens.\n\n**Hypermetropia (far-sight):** eyeball too short — near images focus behind the retina. Corrected with a **convex (converging)** lens.",
-      "knowledgeNote": "'Minus for myopia, plus for hypermetropia' — the alliteration is the memory hook."
+      "knowledgeNote": "'Minus for myopia, plus for hypermetropia' — the alliteration is the memory hook.",
+      "answer": "**Myopia (short-sightedness):** the eye's far point is closer than infinity — distant objects focus **in front of the retina** (eyeball too long or lens too converging); corrected by a **concave (diverging) lens** which pushes the image back onto the retina. **Hypermetropia (long-sightedness):** the eye's near point is farther than normal — nearby objects focus **behind the retina** (eyeball too short or lens too weak); corrected by a **convex (converging) lens** which adds converging power for close work. **Deep point:** the correction always supplies the power the eye lacks — diverging for an over-powered eye, converging for an under-powered one; 'which lens' is just 'which way the error points'."
     },
     {
       "question": "What is a simple microscope? Write its magnifying power when the image forms at the near point.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "A simple microscope is a single short-focus convex lens used as a magnifier, with the object just inside F.\n\nWith the image at the near point D: m = **1 + D/f** (≈ D/f for relaxed-eye viewing at infinity).",
-      "knowledgeNote": "Shorter f → stronger loupe — watchmakers use ~2 cm lenses for ~13× magnification."
+      "knowledgeNote": "Shorter f → stronger loupe — watchmakers use ~2 cm lenses for ~13× magnification.",
+      "answer": "**Simple microscope:** a single **convex lens of short focal length** used to view a small object placed within its focal length, forming a virtual, erect, magnified image — it works by letting the eye focus on the enlarged virtual image rather than straining on the tiny object. **Magnifying power (image at the near point, D = 25 cm):** **M = 1 + D/f**. **Deep point:** the +1 is the unaided-eye baseline — magnifying *power* compares the angular size with the naked eye at the near point; short focal length is the whole design goal, since M grows as 1/f."
     }
   ]
 }

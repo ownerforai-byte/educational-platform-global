@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "(i) Vertical motion: h = Â½gtÂ² â†’ 80 = Â½(10)tÂ² â†’ tÂ² = 16 â†’ **t = 4 s**\n\n(ii) Horizontal range: R = u Ã— t = 20 Ã— 4 = **80 m**\n\n(iii) Vertical velocity at impact: vy = gt = 10 Ã— 4 = 40 m/s\nVelocity = âˆš(vxÂ² + vyÂ²) = âˆš(20Â² + 40Â²) = âˆš(400+1600) = âˆš2000 = **44.72 m/s** at angle tanâ»Â¹(40/20) = 63.4Â° below horizontal.",
-      "knowledgeNote": "Horizontal projectile: horizontal velocity is constant; vertical motion is free fall. Range = uâˆš(2h/g)"
+      "knowledgeNote": "Horizontal projectile: horizontal velocity is constant; vertical motion is free fall. Range = uâˆš(2h/g)",
+      "answer": "**Horizontal projectile: independent motions.** u_x = 20 m/s (constant); vertical drop from rest with g = 10 m/s² (taking g = 10; with 9.8 the answers shift slightly). **(i) Time of flight:** from the vertical fall, h = ½gt² ⟹ t = √(2h/g) = √(2 × 80/10) = √16 = **4 s**. **(ii) Horizontal range:** R = u_x × t = 20 × 4 = **80 m**. **(iii) Velocity on striking:** v_x = 20 m/s; v_y = gt = 10 × 4 = 40 m/s. Speed = √(20² + 40²) = √(400 + 1600) = √2000 ≈ **44.7 m/s**, at angle θ = tan⁻¹(v_y/v_x) = tan⁻¹(40/20) = tan⁻¹2 ≈ **63.4° below the horizontal**. **Deep point:** the whole answer hangs on one idea — the horizontal and vertical motions are independent and share only the time; the vertical drop alone fixes the flight time."
     },
     {
       "question": "A stone is projected vertically upwards with a velocity of 49 m/s. Taking $g = 9.8\\ \\text{m/s}^2$, find the time taken to reach maximum height, the maximum height and the total time of flight. Ignore air resistance.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Given:** $u = 49\\ \\text{m/s},\\ g = 9.8\\ \\text{m/s}^2$ (upward positive, so $a = -9.8\\ \\text{m/s}^2$)\n\n**Step 1 — Time to reach maximum height:**\nAt maximum height the vertical velocity becomes zero, $v = 0$.\n$$v = u + at \\;\\Rightarrow\\; 0 = 49 - 9.8t$$\n$$\\boxed{t = 5\\ \\text{s}}$$\n\n**Step 2 — Maximum height:**\n$$h = u t - \\frac{1}{2}gt^2 = 49 \\times 5 - \\frac{1}{2}(9.8)(25) = 245 - 122.5$$\n$$\\boxed{h = 122.5\\ \\text{m}}$$\n(Equivalently $h = u^2/2g = 2401/19.6 = 122.5\\ \\text{m}$ ✓)\n\n**Step 3 — Total time of flight** (time up equals time down by symmetry):\n$$\\boxed{T = 2t = 10\\ \\text{s}}$$",
-      "knowledgeNote": "For vertical projection, time to reach the top is u over g, max height is u squared over 2g, and flight time is twice that."
+      "knowledgeNote": "For vertical projection, time to reach the top is u over g, max height is u squared over 2g, and flight time is twice that.",
+      "answer": "**Time to maximum height:** at the top v = 0, so t = u/g = 49/9.8 = **5 s**. **Maximum height:** h = u²/2g = (49)²/(2 × 9.8) = 2401/19.6 = **122.5 m** (check via v² = u² − 2gh with v = 0 ✓). **Total time of flight:** by symmetry, the fall takes the same 5 s ⟹ T = 2 × 5 = **10 s** (or T = 2u/g = 98/9.8 = 10 s ✓). **Deep point:** the up-journey and down-journey are mirror images — time up equals time down and the landing speed equals the launch speed — so one calculation serves both halves."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Past",
       "solution": "**Escape velocity** is the minimum velocity needed to escape a planet's gravitational field without further propulsion.\n\nThe work done to move a mass m from Earth's surface to infinity = GMm/R.\nThis work = Â½mvâ‚‘Â² (initial kinetic energy)\n\nSo: GMm/R = Â½mvâ‚‘Â² â†’ vâ‚‘ = âˆš(2GM/R)\nUsing g = GM/RÂ² â†’ vâ‚‘ = âˆš(2gR)\n\nvâ‚‘ = âˆš(2 Ã— 9.8 Ã— 6.4Ã—10â¶) = âˆš(1.254Ã—10â¸) = **11.2 km/s**",
-      "knowledgeNote": "Escape velocity is independent of the mass of the escaping object. Orbital velocity = âˆš(gR/2) = vâ‚‘/âˆš2. For Earth: vâ‚‘ â‰ˆ 11.2 km/s"
+      "knowledgeNote": "Escape velocity is independent of the mass of the escaping object. Orbital velocity = âˆš(gR/2) = vâ‚‘/âˆš2. For Earth: vâ‚‘ â‰ˆ 11.2 km/s",
+      "answer": "**Escape velocity:** the minimum speed with which a body must be projected from a planet's surface so that it just escapes the planet's gravitational field (reaches infinity with zero kinetic energy). **Derivation (energy conservation):** at the surface the body has kinetic energy ½mv² and gravitational potential energy −GMm/R; at infinity (just escaping) both kinetic energy and potential energy are zero. Total energy is conserved: ½mv² − GMm/R = 0 ⟹ **v_e = √(2GM/R)**. Using g = GM/R² at the surface: v_e = √(2(GM/R²)R) = **v_e = √(2gR)**. **Calculation:** v_e = √(2 × 9.8 × 6.4 × 10⁶) = √(1.2544 × 10⁸) = 1.12 × 10⁴ m/s ≈ **11.2 km/s**. **Deep point:** the two equivalent forms — √(2GM/R) and √(2gR) — differ only by substituting g = GM/R²; escape velocity is √2 times the orbital speed and independent of the escaping body's mass."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2021,
       "source": "NEB Model",
       "solution": "Orbital radius r = R + h = 6.4Ã—10â¶ + 4Ã—10âµ = 6.8Ã—10â¶ m\n\nGravitational potential energy U = -GMm/r\nU = -(6.67Ã—10â»Â¹Â¹ Ã— 6Ã—10Â²â´ Ã— 200)/(6.8Ã—10â¶)\nU = -(8.0Ã—10Â¹â¶)/(6.8Ã—10â¶) = **-1.18 Ã— 10Â¹â° J**\n\n(Negative sign indicates the satellite is bound to Earth.)",
-      "knowledgeNote": "Gravitational PE = -GMm/r. Zero PE is defined at infinity. Total energy = KE + PE = -GMm/2r for circular orbit."
+      "knowledgeNote": "Gravitational PE = -GMm/r. Zero PE is defined at infinity. Total energy = KE + PE = -GMm/2r for circular orbit.",
+      "answer": "**Formula:** gravitational potential energy of a mass m at distance r from Earth's centre: U = −GMm/r (negative because the field is attractive; zero at infinity). **Orbit radius:** r = R + h = 6.4 × 10⁶ + 4 × 10⁵ = 6.8 × 10⁶ m. **Substitute:** U = −(6.67 × 10⁻¹¹ × 6 × 10²⁴ × 200)/(6.8 × 10⁶) = −(6.67 × 6 × 2 × 10⁻¹¹⁺²⁴⁺²)/6.8 × 10⁶ = −(8.004 × 10¹⁵)/(6.8 × 10⁶) = −1.177 × 10⁹ ≈ **−1.18 × 10⁹ J**. **Deep point:** the negative sign is the physics — the satellite is *bound*; 1.18 × 10⁹ J is the energy that would have to be supplied to free it to infinity."
     },
     {
       "question": "The mass of a planet is 8 times that of the earth and its radius is twice that of the earth. Find the acceleration due to gravity on the surface of the planet. Take $g = 9.8\\ \\text{m/s}^2$.",
@@ -23,7 +24,8 @@
       "year": 2021,
       "source": "NEB Past",
       "solution": "**Step 1 — Acceleration due to gravity at the surface:**\n$$g = \\frac{GM}{R^2}$$\n\n**Step 2 — For the planet:**\n$$g_p = \\frac{G(8M)}{(2R)^2} = \\frac{8GM}{4R^2} = 2\\left(\\frac{GM}{R^2}\\right) = 2g$$\n\n**Step 3 — Result:**\n$$\\boxed{g_p = 2 \\times 9.8 = \\mathbf{19.6\\ \\text{m/s}^2}}$$\n\n**Note on the density:** $\\rho = \\dfrac{M}{\\frac{4}{3}\\pi R^3}$, so $\\dfrac{\\rho_p}{\\rho_e} = \\dfrac{8}{8} = 1$. The planet has the **same density** as the earth, hence the same gravitational field at the surface.",
-      "knowledgeNote": "Surface gravity scales as mass divided by radius squared, so eight times the mass at twice the radius doubles g."
+      "knowledgeNote": "Surface gravity scales as mass divided by radius squared, so eight times the mass at twice the radius doubles g.",
+      "answer": "**Formula:** surface gravity g = GM/R². **Planet's values:** M′ = 8M; R′ = 2R. g′ = G(8M)/(2R)² = 8GM/4R² = **2 × GM/R² = 2g**. **Substitute:** g′ = 2 × 9.8 = **19.6 m/s²**. **Deep point:** mass up 8×, radius up 2× ⟹ g up only 2×, because the R² in the denominator eats four of the eight mass factors — g scales as M/R², a ratio, not a product."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2020,
       "source": "NEB Model",
       "solution": "**Definition:** The optical power of a lens is defined as the reciprocal of its focal length when the focal length is expressed in **metres**.\n$$\\boxed{P = \\frac{1}{f\\ (\\text{in m)}}\\qquad \\text{or} \\qquad P = \\frac{1000}{f\\ (\\text{in cm})}$$\n\n**SI unit:** $\\text{m}^{-1}$, also called the **dioptre (D)**.\n\n**Sign:** Power is positive for a convex (converging) lens and negative for a concave (diverging) lens.\n\n**Example:** A convex lens of focal length 50 cm has $P = \\dfrac{1}{0.5} = +2\\ \\text{D}$. A lens of power $-4\\ \\text{D}$ has $f = -0.25\\ \\text{m} = -25\\ \\text{cm}$, i.e. a concave lens.",
-      "knowledgeNote": "Optical power is the reciprocal of focal length in metres, measured in dioptre or per metre."
+      "knowledgeNote": "Optical power is the reciprocal of focal length in metres, measured in dioptre or per metre.",
+      "answer": "**Optical power of a lens:** the measure of its ability to **converge or diverge light**, defined as the reciprocal of the focal length in metres: **P = 1/f** (f in metres). A stronger (shorter-f) lens has greater power; converging lenses carry positive power, diverging negative. **SI unit: the dioptre (D)** = m⁻¹ — a lens of f = 1 m has power 1 D; f = 0.5 m ⟹ 2 D; f = −2 m ⟹ −0.5 D. **Deep point:** power's usefulness is additivity — lenses in contact have powers that simply add (P = P₁ + P₂), which is why optometrists prescribe in dioptres, not focal lengths."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Escape velocity:** The escape velocity of a planet is the minimum velocity with which a body must be projected from the surface so that it **escapes the gravitational field** of the planet and never returns.\n\n**Derivation:** If a body of mass $m$ is projected with velocity $v_e$, the total energy at the surface is\n$$\\frac{1}{2}mv_e^2 - \\frac{GMm}{R}$$\nFor the body to just escape, this energy must be **zero** at infinity:\n$$\\frac{1}{2}mv_e^2 = \\frac{GMm}{R} \\Rightarrow v_e = \\sqrt{\\frac{2GM}{R}}$$\nSince $g = \\dfrac{GM}{R^2}$, we have $GM = gR^2$, hence\n$$\\boxed{v_e = \\sqrt{2gR}}$$\n\n**Numerical:**\n$$v_e = \\sqrt{2 \\times 5 \\times 6 \\times 10^6} = \\sqrt{6 \\times 10^7}$$\n$$\\boxed{v_e \\approx 7.75 \\times 10^3\\ \\text{m/s}}$$\n\n(Also $v_e = \\sqrt{2}\\,v_{orb}$.)",
-      "knowledgeNote": "Escape velocity is the root of 2gR, the minimum speed needed for a body to leave a planet's gravitational field."
+      "knowledgeNote": "Escape velocity is the root of 2gR, the minimum speed needed for a body to leave a planet's gravitational field.",
+      "answer": "**Concept:** escape velocity is the minimum projection speed for which the body's kinetic energy exactly pays off its (negative) gravitational potential energy, so it reaches infinity with zero speed: ½mv² = GMm/R ⟹ **v_e = √(2GM/R) = √(2gR)** (using g = GM/R²). **Calculation:** v_e = √(2 × 5 × 6 × 10⁶) = √(6 × 10⁷) = √60 × 10³ ≈ 7.75 × 10³ m/s ≈ **7.75 km/s**. **Deep point:** v_e = √(2gR) needs only the surface gravity and radius — no planet mass required; halving g from Earth's 9.8 to 5 m/s² while keeping a similar radius drops escape velocity from 11.2 to 7.75 km/s."
     }
   ]
 }

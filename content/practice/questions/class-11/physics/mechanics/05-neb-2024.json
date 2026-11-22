@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "For perpendicular forces, R = √(P² + Q²) = √(36 + 64) = √100 = **10 N**.\n\nDirection: tan α = Q/P = 8/6 = 1.333, so α = **53.1° from the 6 N force** (equivalently 36.9° from the 8 N force).",
-      "knowledgeNote": "6-8-10 is a scaled 3-4-5 triangle — spotting Pythagorean triples saves time in NEB numericals."
+      "knowledgeNote": "6-8-10 is a scaled 3-4-5 triangle — spotting Pythagorean triples saves time in NEB numericals.",
+      "answer": "**Resultant of two perpendicular forces:** R = √(F₁² + F₂²) = √(6² + 8²) = √(36 + 64) = √100 = **10 N**. **Direction:** θ = tan⁻¹(F₂/F₁) = tan⁻¹(8/6) = tan⁻¹(1.333) ≈ **53.1° from the 6 N force** (≈ 36.9° from the 8 N force). **Deep point:** the 6–8–10 right triangle is the scaled 3–4–5 — recognising Pythagorean triples turns the square root into instant arithmetic."
     },
     {
       "question": "Prove that the horizontal range of a projectile is maximum when it is projected at 45° to the horizontal.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Range R = u² sin 2θ / g, where u is the projection velocity and θ the angle.\n\nFor fixed u and g, R is maximum when sin 2θ is maximum, i.e. sin 2θ = 1 → 2θ = 90° → **θ = 45°**.\n\nThe maximum range is R_max = u²/g.",
-      "knowledgeNote": "Complementary angles (e.g. 30° and 60°) give the same range — a favourite NEB MCQ twist."
+      "knowledgeNote": "Complementary angles (e.g. 30° and 60°) give the same range — a favourite NEB MCQ twist.",
+      "answer": "**Range:** R = (u² sin 2θ)/g. **Maximise:** R is largest when sin 2θ is largest, and sin 2θ ≤ 1 with equality at 2θ = 90° ⟹ **θ = 45°**. **Formally:** dR/dθ = (u²/g) × 2cos 2θ = 0 ⟹ cos 2θ = 0 ⟹ 2θ = 90° ⟹ θ = 45°; and the second derivative is negative, confirming a maximum. **Maximum range: R_max = u²/g.** **Deep point:** the sin 2θ is why *two* angles (θ and 90° − θ) give the same range — complementary trajectories — and only their midpoint 45° gives the maximum."
     },
     {
       "question": "A block just begins to slide down a rough incline when the angle of inclination is 30°. Calculate the coefficient of static friction between the block and the plane.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "At the point of sliding, the angle equals the angle of repose, and μs = tan λ.\n\nμs = tan 30° = 1/√3 ≈ **0.577**.",
-      "knowledgeNote": "Angle of repose λ satisfies tan λ = μs — no mass term appears, so the result is independent of the block's weight."
+      "knowledgeNote": "Angle of repose λ satisfies tan λ = μs — no mass term appears, so the result is independent of the block's weight.",
+      "answer": "**Just begins to slide:** the angle of repose — at the verge of sliding, gravity's component along the incline equals maximum static friction: mg sin θ = μ_s mg cos θ ⟹ **μ_s = tan θ**. **Substitute:** μ_s = tan 30° = 1/√3 ≈ **0.577**. **Deep point:** tan θ = μ_s is the angle-of-repose identity — the measurement method itself: tilt the plane until sliding starts and read the angle; no force meter needed."
     },
     {
       "question": "A pump lifts 200 kg of water per minute to a height of 10 m. Calculate the power of the pump. (g = 10 m/s²)",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Work done per minute: W = mgh = 200 × 10 × 10 = 20,000 J.\n\nPower P = W/t = 20,000/60 ≈ **333.3 W**.",
-      "knowledgeNote": "Pump/engine problems are always P = mgh/t when lifting steadily — watch whether the mass is per second or per minute."
+      "knowledgeNote": "Pump/engine problems are always P = mgh/t when lifting steadily — watch whether the mass is per second or per minute.",
+      "answer": "**Work per minute:** W = mgh = 200 × 10 × 10 = 20 000 J. **Power:** P = W/t = 20 000/60 ≈ **333 W**. **Deep point:** 'per minute' is the trap — the work happens in 60 s, not 1 s; forgetting the ÷60 inflates the answer twentyfold to 20 kW."
     },
     {
       "question": "A gun of mass 5 kg fires a bullet of mass 10 g with a velocity of 400 m/s. Calculate the recoil velocity of the gun.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "By conservation of linear momentum (initial momentum zero):\n\nM·V + m·v = 0 → V = −mv/M = −(0.01 × 400)/5 = **−0.8 m/s**.\n\nThe gun recoils at 0.8 m/s opposite to the bullet's direction.",
-      "knowledgeNote": "Recoil, firing, and explosion problems all start from Σp_initial = Σp_final — convert grams to kilograms first."
+      "knowledgeNote": "Recoil, firing, and explosion problems all start from Σp_initial = Σp_final — convert grams to kilograms first.",
+      "answer": "**Momentum conservation (recoil):** before firing, total p = 0. After: m_b v_b + M_g V_g = 0 ⟹ V_g = −m_b v_b/M_g. **Substitute:** m_b = 10 g = 0.01 kg; v_b = 400 m/s; M_g = 5 kg. V_g = −(0.01 × 400)/5 = −4/5 = **−0.8 m/s** — the gun recoils at **0.8 m/s opposite to the bullet**. **Deep point:** the mass ratio sets the recoil — the 500:1 mass ratio of gun to bullet makes the velocity ratio 1:500; the negative sign is the physics (equal and opposite momenta)."
     },
     {
       "question": "A boat can move at 4 m/s in still water. It crosses a 200 m wide river with a current of 3 m/s flowing downstream. If the boat heads straight across, find (i) the crossing time and (ii) how far downstream it lands.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "(i) Crossing is governed only by the perpendicular component: t = width/v = 200/4 = **50 s**.\n\n(ii) In that time the current carries it downstream by d = u·t = 3 × 50 = **150 m**.\n\n(The boat's resultant path makes tan⁻¹(3/4) = 36.9° with the straight-across line.)",
-      "knowledgeNote": "Perpendicular motions are independent — the current never changes the crossing time, only the landing point."
+      "knowledgeNote": "Perpendicular motions are independent — the current never changes the crossing time, only the landing point.",
+      "answer": "**Boat heads straight across:** its 4 m/s points perpendicular to the bank while the 3 m/s current carries it downstream — the motions are perpendicular components. **(i) Crossing time:** set by the perpendicular motion only: t = width/v_boat = 200/4 = **50 s** (the current cannot shorten or lengthen the crossing — it only adds drift). **(ii) Downstream drift:** d = v_current × t = 3 × 50 = **150 m**. **(Resultant velocity:** √(4² + 3²) = 5 m/s at tan⁻¹(3/4) ≈ 36.9° downstream of straight across; total path √(200² + 150²) = 250 m.**)** **Deep point:** perpendicular components are independent — the 3 m/s current has no component across the river, so it cannot touch the crossing time; to land directly opposite, the boat would have to aim upstream at sin θ = 3/4 and accept a slower crossing (5-3-4 triangle throughout)."
     }
   ]
 }

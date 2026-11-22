@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "If two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other. It is called the 'zeroth' law because it logically precedes the first and second laws, and was recognized after them but is more fundamental â€” hence 'zero'.",
-      "knowledgeNote": "The zeroth law defines temperature and thermal equilibrium. It is the basis for temperature measurement."
+      "knowledgeNote": "The zeroth law defines temperature and thermal equilibrium. It is the basis for temperature measurement.",
+      "answer": "**Zeroth law:** if two bodies (A and B) are each in **thermal equilibrium with a third body (C)**, then they are in thermal equilibrium with each other — all three share the same temperature. This is the physical basis of **temperature**: it is the property that equalises when bodies are in thermal equilibrium, and the third body (a thermometer) is what measures it. **Why 'zeroth':** the first and second laws were already named when this principle was recognised (around 1930) as logically *prior* to them — equilibrium must be defined before heat can be discussed — so it was given the number zero rather than renumbering the others. **Deep point:** the zeroth law is what makes a thermometer meaningful — the thermometer reads its own temperature, and the law licenses you to assign that reading to the body it touched."
     },
     {
       "question": "A thermometer reads -5 degrees C when placed in ice water and 105 degrees C in boiling water. What reading does it give when placed in liquid at 40 degrees C?",
@@ -23,7 +24,8 @@
       "year": 2023,
       "source": "NEB Past",
       "solution": "Assume the thermometer scale is linear: $R = mT + c$.\n\n**Step 1 — Two calibration points:**\n$T = 0^\\circ\\text{C} \\Rightarrow R = -5$\n$T = 100^\\circ\\text{C} \\Rightarrow R = 105$\n\n**Step 2 — Slope of the scale:**\n$$m = \\frac{105 - (-5)}{100 - 0} = \\frac{110}{100} = 1.1$$\n\n**Step 3 — Intercept:**\n$$-5 = 1.1(0) + c \\;\\Rightarrow\\; c = -5$$\nSo the relation is $R = 1.1T - 5$.\n\n**Step 4 — Reading at $T = 40^\\circ\\text{C}$:**\n$$R = 1.1 \\times 40 - 5 = 44 - 5$$\n$$\\boxed{R = \\mathbf{39^\\circ\\text{C}}}$$\n\n**Verification by interpolation:** rise in reading $= -5 + (40 - 0) \\times \\frac{110}{100} = -5 + 44 = 39$ ✓\nSince the slope exceeds 1, this is a 'fool' or inaccurate thermometer.",
-      "knowledgeNote": "For a linear thermometer scale, interpolation between ice and steam points gives the intermediate reading."
+      "knowledgeNote": "For a linear thermometer scale, interpolation between ice and steam points gives the intermediate reading.",
+      "answer": "**The thermometer is linear but mislabelled:** its scale stretches between two wrong fixed points. True temperature T relates to the reading R by linear interpolation between the fixed points: (R − R_ice)/(R_steam − R_ice) = (T − 0)/(100 − 0). **Fixed points:** ice water (true 0 °C) reads R_ice = −5; boiling water (true 100 °C) reads R_steam = 105. So R = −5 + (110/100)T = −5 + 1.1T. **At T = 40 °C:** R = −5 + 1.1 × 40 = −5 + 44 = **39 on the faulty scale** (i.e. the thermometer reads 39 where the true temperature is 40 °C). **Deep point:** the correction factor is (100 − 0)/(105 − (−5)) = 100/110 — the thermometer's degrees are 10% too big, which is exactly why 40 true degrees occupy only 44 of its divisions starting from −5."
     }
   ]
 }

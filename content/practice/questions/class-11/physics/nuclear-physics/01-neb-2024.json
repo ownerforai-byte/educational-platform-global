@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Decay constant (λ):** Probability per unit time that a nucleus will decay.\n\nHalf-life: T₁/₂ = ln(2)/λ = 0.693/λ\n\nMean life: τ = 1/λ = T₁/₂/ln(2)",
-      "knowledgeNote": "Radioactive decay is random but predictable statistically. After n half-lives: N = N₀(1/2)ⁿ"
+      "knowledgeNote": "Radioactive decay is random but predictable statistically. After n half-lives: N = N₀(1/2)ⁿ",
+      "answer": "**Radioactive decay constant (λ):** the probability that a given nucleus decays **per unit time** — λ = −(dN/N)/dt, the fraction of the remaining undecayed nuclei that decay each second; SI unit **s⁻¹**. It leads to the decay law N = N₀e^(−λt). **Half-life relation:** at t = T½, N = N₀/2 ⟹ N₀/2 = N₀e^(−λT½) ⟹ e^(−λT½) = ½ ⟹ **T½ = ln 2/λ = 0.693/λ**. **Deep point:** λ is a probability per unit time — a property of the nucleus alone, independent of temperature, pressure or chemical state, which is why radioactive clocks are so reliable."
     }
   ]
 }

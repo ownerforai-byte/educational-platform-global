@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Past",
       "solution": "**Step 1 — Acceleration from the first equation of motion:**\n$$a = \\frac{v - u}{t} = \\frac{10 - 2}{4} = \\frac{8}{4} = 2\\ \\text{m/s}^2$$\n\n**Step 2 — Newton's second law:**\n$$F = ma = 5 \\times 2$$\n\n**Step 3 — Result:**\n$$F = \\mathbf{10\\ \\text{N}}$$\nThe force acts in the direction of motion of the body.",
-      "knowledgeNote": "Using Newton's second law, a constant net force on a constant mass gives constant acceleration."
+      "knowledgeNote": "Using Newton's second law, a constant net force on a constant mass gives constant acceleration.",
+      "answer": "**Acceleration:** a = (v − u)/t = (10 − 2)/4 = 8/4 = **2 m/s²**. **Force:** F = ma = 5 × 2 = **10 N**. **Deep point:** two one-liners chained — kinematics gives a, Newton's second law turns a into F; the force is the *net* force, which is what F = ma always means."
     }
   ]
 }

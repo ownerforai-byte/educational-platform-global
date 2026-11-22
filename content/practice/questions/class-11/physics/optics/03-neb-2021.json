@@ -15,7 +15,8 @@
       "year": 2021,
       "source": "NEB Model",
       "solution": "**Given:** $f = +20\\ \\text{cm},\\ u = -60\\ \\text{cm}$\n\n**Step 1 — Lens formula** (new Cartesian sign convention):\n$$\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$$\n$$\\frac{1}{v} - \\frac{1}{-60} = \\frac{1}{20}$$\n$$\\frac{1}{v} + \\frac{1}{60} = \\frac{3}{60}$$\n$$\\frac{1}{v} = \\frac{3 - 1}{60} = \\frac{2}{60} = \\frac{1}{30}$$\n\n**Step 2 — Image position:**\n$$v = \\mathbf{+30\\ \\text{cm}}$$\nSo the image is formed 30 cm on the **other side** of the lens.\n\n**Step 3 — Magnification:**\n$$m = -\\frac{v}{u} = -\\frac{30}{-60} = \\mathbf{-0.5}$$\n\n**Step 4 — Nature:** $v$ is positive so the image is **real**; $m < 1$ so it is **diminished**, and $m < 0$ so it is **inverted**.\n\n(Here the object lies between $f$ and $2f$, as expected.)",
-      "knowledgeNote": "For an object between f and 2f of a convex lens, the real image lies beyond 2f and is inverted and magnified."
+      "knowledgeNote": "For an object between f and 2f of a convex lens, the real image lies beyond 2f and is inverted and magnified.",
+      "answer": "**Lens equation (real-is-positive):** 1/v + 1/u = 1/f with u = 60 cm, f = 20 cm: 1/v = 1/20 − 1/60 = (3 − 1)/60 = 2/60 = 1/30 ⟹ **v = 30 cm** (image 30 cm from the lens, on the far side). **Magnification:** m = v/u = 30/60 = **0.5**. **Nature:** since v is positive (real side), the image is **real**; m < 1 and positive magnitude means **diminished**; a single convex lens's real image is always **inverted**. So: real, inverted, diminished, half the object's size, 30 cm beyond the lens. **Deep point:** object at 3f (60 = 3 × 20) lands the image at 1.5f with m = ½ — the object-outside-2f regime; checking m = v/u against the stated nature is the free verification."
     }
   ]
 }
