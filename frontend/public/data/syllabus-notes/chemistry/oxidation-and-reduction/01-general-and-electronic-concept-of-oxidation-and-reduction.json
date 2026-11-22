@@ -5,145 +5,59 @@
   "topicTitle": "General and electronic concept of oxidation and reduction",
   "relevance": 100,
   "notes": [
-    "Oxidation = loss e⁻ (OIL), Reduction = gain e⁻ (RIG).",
-    "Oxidation numbers identify redox.",
-    "Galvanic cells: chemical → electrical energy.",
-    "Faraday laws: m = ZIt.",
-    "# General and electronic concept of oxidation and reduction\n\n## 1. Introduction\nChemical picture of **General and electronic concept of oxidation and reduction** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Oxidation and Reduction fill pass.\n\n## 2. Concepts and definitions\n### General and electronic concept of oxidation and reduction\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — General and electronic concept of oxidation and reduction — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — General and electronic concept of oxidation and reduction — second structure, flow or plot (authored SVG — English labels)\n- **D3** — General and electronic concept of oxidation and reduction — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — General and electronic concept of oxidation and reduction — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Electron Accounting for Every Reaction\n\nBurning, rusting, respiration, plating and batteries all share one bookkeeping system: **oxidation–reduction (redox)**. The modern definition is electronic — oxidation is electron **loss**, reduction is electron **gain** — and every redox reaction is a transfer: one species loses what another gains, simultaneously. Master the two roles (oxidising agent, reducing agent) and the electrochemical series that ranks them, and half of applied chemistry becomes predictable.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The electronic concept\n\n- **Oxidation:** loss of electrons — Fe²⁺ → Fe³⁺ + e⁻; Zn → Zn²⁺ + 2e⁻.\n- **Reduction:** gain of electrons — Cu²⁺ + 2e⁻ → Cu; Cl₂ + 2e⁻ → 2Cl⁻.\n- The two always occur **together** — electrons lost must be gained somewhere; a half-reaction alone cannot happen.\n- **Memory aid:** OIL RIG — Oxidation Is Loss, Reduction Is Gain (of electrons).\n\n### 2.2 The three generations of definitions\n\n| Generation | Oxidation | Reduction |\n|---|---|---|\n| Classical (oxygen/hydrogen) | Addition of O; removal of H | Addition of H; removal of O |\n| Electronic | Loss of electrons | Gain of electrons |\n| Modern (oxidation number) | Increase in oxidation number | Decrease in oxidation number |\n\n- The classical view fails on reactions with no oxygen or hydrogen (Zn + CuSO₄); the oxidation-number view covers everything.\n\n### 2.3 Agents and couples\n\n- **Oxidising agent (oxidant):** the species that **accepts** electrons — it oxidises the other reactant and is **itself reduced** (KMnO₄, K₂Cr₂O₇, O₂, F₂, HNO₃).\n- **Reducing agent (reductant):** the species that **donates** electrons — it reduces the other reactant and is **itself oxidised** (H₂, C, CO, SO₂, metals, H₂S).\n- **Redox couple:** the oxidised/reduced pair of one element, e.g. Zn²⁺/Zn, MnO₄⁻/Mn²⁺.\n\n### 2.4 The electrochemical series\n\n- Elements ranked by their tendency to lose electrons (standard electrode potentials): **Li, K, Ba, Ca, Na … Zn … Fe … H … Cu … Ag … F₂** at the top of oxidising power.\n- **A higher metal displaces a lower metal's ion from solution:** Zn + CuSO₄ → ZnSO₄ + Cu (NEB 2024) — zinc is the stronger reductant, copper ion the stronger oxidant.\n- **Fluorine is the strongest oxidising agent among the halogens** (NEB 2024): smallest size, highest electronegativity (4.0), most positive reduction potential (F₂ + 2e⁻ → 2F⁻, +2.87 V), so it accepts electrons most eagerly; oxidising power falls F₂ > Cl₂ > Br₂ > I₂.\n\n### 2.5 Special redox behaviours\n\n- **Auto-oxidation–reduction (disproportionation):** one species is simultaneously oxidised and reduced — Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O (chlorine to −1 and +1); 2Cu⁺ → Cu²⁺ + Cu.\n- **Dual behaviour — hydrogen peroxide (NEB 2022 and 2024):** H₂O₂'s oxygen sits at −1, between O₂ (0) and H₂O (−2), so it can go either way:\n  - *As oxidising agent:* H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O (O: −1 → −2).\n  - *As reducing agent:* H₂O₂ + Cl₂ → 2HCl + O₂ (O: −1 → 0).\n  - *In itself:* 2H₂O₂ → 2H₂O + O₂ is disproportionation.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Oxidation** | Loss of electrons / increase in oxidation number | Zn → Zn²⁺ + 2e⁻ |\n| **Reduction** | Gain of electrons / decrease in oxidation number | Cu²⁺ + 2e⁻ → Cu |\n| **Oxidising agent** | Accepts electrons; is reduced | KMnO₄, F₂ |\n| **Reducing agent** | Donates electrons; is oxidised | Zn, H₂, CO |\n| **Disproportionation** | Same element oxidised and reduced at once | 2Cu⁺ → Cu²⁺ + Cu |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): define the agents; identify each in Zn + CuSO₄\n\n- **Oxidising agent:** accepts electrons and is reduced. **Reducing agent:** donates electrons and is oxidised.\n- **Zn + CuSO₄ → ZnSO₄ + Cu:** Zn → Zn²⁺ + 2e⁻ (loss — zinc is oxidised, so zinc is the **reducing agent**); Cu²⁺ + 2e⁻ → Cu (gain — copper ion is reduced, so **CuSO₄/Cu²⁺ is the oxidising agent**).\n\n### 4.2 Verified PYQ (NEB 2024): why zinc displaces copper\n\n- In the electrochemical series Zn sits **above** Cu — zinc has a greater tendency to lose electrons ( stronger reductant, E° Zn²⁺/Zn = −0.76 V vs Cu²⁺/Cu = +0.34 V).\n- The electron transfer Zn → Cu²⁺ is therefore spontaneous: zinc dissolves as Zn²⁺ while copper deposits as the familiar red-brown coat. Any metal above another in the series displaces the lower one from its salt solution.\n\n### 4.3 Verified PYQ (NEB 2022 + 2024): hydrogen peroxide's double life\n\n- The −1 oxidation state of oxygen in H₂O₂ is the pivot: it can climb to 0 (oxidised — H₂O₂ acts as **reducing agent**) or sink to −2 (reduced — H₂O₂ acts as **oxidising agent**).\n- Balanced equations (section 2.5) show both roles; in acid, permanganate even uses H₂O₂ as a reductant: 2MnO₄⁻ + 5H₂O₂ + 6H⁺ → 2Mn²⁺ + 5O₂ + 8H₂O.\n\n### 4.4 Spotting redox without electrons — the oxidation-number audit\n\n- Assign oxidation numbers to every atom on both sides; any element whose number **changes** marks the redox pair: increase = oxidation, decrease = reduction, no change = spectator.\n- This audit is the gateway to topic 40's balancing methods.",
+    "## 5. Comparison Tables\n\n**Oxidation vs reduction — the full mirror**\n\n| Basis | Oxidation | Reduction |\n|---|---|---|\n| Electrons | Lost | Gained |\n| Oxidation number | Increases | Decreases |\n| Oxygen/hydrogen (classical) | Gains O / loses H | Gains H / loses O |\n| Agent role | The species is the **reducing agent** | The species is the **oxidising agent** |\n| Example | Zn → Zn²⁺ + 2e⁻ | Cu²⁺ + 2e⁻ → Cu |\n\n**Oxidising vs reducing agents**\n\n| Basis | Oxidising agent | Reducing agent |\n|---|---|---|\n| Electron behaviour | Accepts | Donates |\n| Own fate | Reduced | Oxidised |\n| Own oxidation number | Decreases | Increases |\n| Series position | High reduction potential (F₂, top) | Low reduction potential (Li, Zn) |\n| Examples | KMnO₄, K₂Cr₂O₇, O₂, HNO₃ | H₂, C, CO, Zn, H₂S |",
+    "## 6. Common Confusions\n\n**The agent does the opposite of its name:** an oxidising agent does not get oxidised — it *causes* oxidation and is itself reduced. Role and fate are opposite; exams punish swapping them.",
+    "**Oxidation number is not charge:** Mn is +7 in KMnO₄ but no Mn⁷⁺ ion floats in the solution — oxidation numbers are bookkeeping, not ionic charges.",
+    "**Disproportionation needs an intermediate state:** the element must sit between two accessible states (Cl at 0 between −1 and +1; O in H₂O₂ at −1 between −2 and 0) — F₂ cannot disproportionate because −1 is its floor.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): Define oxidising and reducing agents. Identify each in Zn + CuSO₄ → ZnSO₄ + Cu.** — An oxidising agent accepts electrons and is itself reduced; a reducing agent donates electrons and is itself oxidised. Zinc loses two electrons (Zn → Zn²⁺ + 2e⁻): it is oxidised and is the **reducing agent**. Copper(II) ions gain those electrons (Cu²⁺ + 2e⁻ → Cu): they are reduced, so **CuSO₄ (Cu²⁺) is the oxidising agent**.",
+    "**Verified PYQ (NEB 2024): What is the electrochemical series? Why does zinc displace copper from CuSO₄?** — The electrochemical series arranges elements in order of their standard electrode potentials — tendency to be reduced (equivalently, inverse tendency to be oxidised). Zinc lies well above copper (E° Zn²⁺/Zn = −0.76 V vs Cu²⁺/Cu = +0.34 V), so zinc is the stronger electron donor. When zinc metal meets Cu²⁺ ions, electrons flow spontaneously from Zn to Cu²⁺: zinc dissolves as Zn²⁺ and copper deposits — Zn + CuSO₄ → ZnSO₄ + Cu. Any metal above another displaces the lower from its salt solution.",
+    "**Verified PYQ (NEB 2022 + 2024): Hydrogen peroxide acts as both oxidising and reducing agent. Explain with one reaction of each.** — Oxygen in H₂O₂ is at −1, intermediate between 0 (O₂) and −2 (H₂O), so H₂O₂ can move either way. **As oxidising agent** (O reduced −1 → −2): H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O — iron(II) is oxidised to iron(III). **As reducing agent** (O oxidised −1 → 0): H₂O₂ + Cl₂ → 2HCl + O₂ — chlorine is reduced to chloride while H₂O₂ liberates oxygen. Its own decomposition, 2H₂O₂ → 2H₂O + O₂, is disproportionation.",
+    "**Verified PYQ (NEB 2024): Why is fluorine the strongest oxidising agent among the halogens?** — Fluorine is the smallest and most electronegative halogen (4.0) with the most positive reduction potential (F₂ + 2e⁻ → 2F⁻, E° = +2.87 V): it accepts electrons most readily and its small F⁻ ions are strongly hydrated, adding thermodynamic drive. Oxidising power therefore falls down the group — F₂ > Cl₂ > Br₂ > I₂ — making fluorine unbeatable as an oxidant."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "**Agent vs fate:** the oxidising agent is reduced; the reducing agent is oxidised — name the *role* from what happens to the *other* species.",
+    "**Displacement direction:** the metal higher in the series displaces the lower metal's ion — students often reverse it; Zn (higher) displaces Cu, never the reverse."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Classify each transformation: Fe²⁺ to Fe³⁺, Cl₂ to Cl⁻, S²⁻ to S, MnO₄⁻ to Mn²⁺ — oxidation or reduction, and which agents?",
+    "Can Na⁺ act as an oxidising agent toward Cu metal? Use the electrochemical series to justify.",
+    "Write balanced equations showing H₂O₂ oxidising PbS to PbSO₄ and reducing Ag₂O to Ag."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Zn|Zn²⁺||Cu²⁺|Cu: E°=+1.10V",
-    "Cu deposited by 2A for 30min: m≈1.19g"
+    "***The copper coin trick*** — an iron nail dropped in CuSO₄ comes out copper-plated: Fe (higher in the series) displaces Cu²⁺; the same logic that corrodes pipes and runs the classic displacement practical."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB 2024 (2m): Define oxidising and reducing agents. Identify each in Zn + CuSO₄ → ZnSO₄ + Cu.** — An **oxidising agent** is a species that accepts electrons and is itself reduced in the process; a **reducing agent** is a species that donates electrons and is itself oxidised. In the reaction, zinc metal loses two electrons (Zn → Zn²⁺ + 2e⁻), so zinc is oxidised and acts as the **reducing agent**; the copper(II) ions from CuSO₄ gain those electrons (Cu²⁺ + 2e⁻ → Cu), so they are reduced and **CuSO₄ (Cu²⁺) acts as the oxidising agent**. Sulphate is a spectator.",
+    "**NEB 2024 (3m): What is the electrochemical series? Explain why zinc displaces copper from copper sulphate solution.** — The **electrochemical series** is the arrangement of elements in order of their standard electrode potentials, i.e. their tendency to be reduced (equivalently, the inverse of their tendency to be oxidised). Metals high in the series (Li, K, Na, Zn …) are strong reducing agents; metals low (Cu, Ag, Au) are weak. **Zinc displaces copper** because Zn stands above Cu (E° Zn²⁺/Zn = −0.76 V against Cu²⁺/Cu = +0.34 V): zinc has the greater tendency to lose electrons. Electrons therefore flow spontaneously from zinc to Cu²⁺ ions — the zinc dissolves as Zn²⁺ while copper deposits on it: Zn + CuSO₄ → ZnSO₄ + Cu. A general rule follows: any metal higher in the series displaces a lower metal from its salt solution.",
+    "**NEB 2022/2024 (3m): Hydrogen peroxide can act both as an oxidising and a reducing agent. Explain with one reaction of each type.** — In H₂O₂ oxygen is at **−1**, an intermediate state between 0 (in O₂) and −2 (in H₂O), so H₂O₂ can be reduced or oxidised. **As oxidising agent** — its oxygen is reduced from −1 to −2 while it oxidises the other reactant: H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O (iron(II) to iron(III)). **As reducing agent** — its oxygen is oxidised from −1 to 0 while it reduces the other reactant: H₂O₂ + Cl₂ → 2HCl + O₂ (chlorine to chloride, oxygen gas liberated). Its spontaneous decomposition 2H₂O₂ → 2H₂O + O₂ is disproportionation, showing both behaviours at once.",
+    "**NEB 2024 (2m): Why is fluorine the strongest oxidising agent among the halogens?** — Fluorine combines the **smallest atomic size**, the **highest electronegativity (4.0)** and the **most positive standard reduction potential** (F₂ + 2e⁻ → 2F⁻, E° = +2.87 V) of all the halogens, so it accepts electrons more eagerly than Cl₂, Br₂ or I₂. Its small, strongly hydrated fluoride ions add extra thermodynamic driving force. Oxidising power therefore decreases down the group — F₂ > Cl₂ > Br₂ > I₂ — leaving fluorine as the strongest oxidising agent, able even to oxidise water."
   ],
   "formulas": [
-    "E°cell = E°cathode - E°anode",
-    "Q = It",
-    "m = ZIt (Faraday's first law)"
+    "- Zn + CuSO₄ → ZnSO₄ + Cu (E°: −0.76 vs +0.34 V)\n- H₂O₂ as oxidant: H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O\n- H₂O₂ as reductant: H₂O₂ + Cl₂ → 2HCl + O₂\n- 2H₂O₂ → 2H₂O + O₂ (disproportionation)\n- Halogen oxidising power: F₂ > Cl₂ > Br₂ > I₂"
   ],
-  "keyPoints": [],
-  "summary": "Redox reactions involve electron transfer and are fundamental to electrochemistry and energy production.",
+  "keyPoints": [
+    "OIL RIG: oxidation = loss of electrons/ON increase; reduction = gain/ON decrease; both simultaneous. Oxidising agent accepts e⁻ (is reduced): KMnO₄, K₂Cr₂O₇, F₂, O₂. Reducing agent donates e⁻ (is oxidised): Zn, H₂, CO, C. Electrochemical series ranks reduction tendency; higher metal displaces lower's ion (Zn + CuSO₄; E° −0.76 vs +0.34 V). F₂ strongest oxidising halogen (EN 4.0, E° +2.87 V); order F₂ > Cl₂ > Br₂ > I₂. Disproportionation: one element both oxidised and reduced (Cl₂ + 2OH⁻; 2H₂O₂). H₂O₂ dual: oxidant (Fe²⁺ → Fe³⁺) and reductant (Cl₂ → Cl⁻ + O₂)."
+  ],
+  "summary": "Redox is electron bookkeeping: **oxidation is loss, reduction is gain** (OIL RIG), and because electrons are conserved the two always run together — one species climbs in oxidation number while another falls. The **oxidising agent** accepts electrons and is itself reduced (KMnO₄, K₂Cr₂O₇, O₂, F₂); the **reducing agent** donates them and is itself oxidised (Zn, H₂, CO, C) — role and fate are always opposite. The **electrochemical series** ranks these tendencies by standard electrode potential, so a higher metal displaces a lower one from its salt: zinc (−0.76 V) throws copper (+0.34 V) out of CuSO₄, and fluorine — smallest, most electronegative, +2.87 V — stands unbeaten as the strongest oxidising halogen. Special cases complete the picture: **disproportionation** splits one element into two states (Cl₂ in alkali; 2H₂O₂), and **hydrogen peroxide** lives at the −1 pivot, oxidising Fe²⁺ to Fe³⁺ with one hand and reducing Cl₂ to chloride with the other. Three generations of definitions — oxygen/hydrogen, electrons, oxidation numbers — nest inside each other, and the third one governs the balancing methods of the next topic.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [
-    "Important note regarding 01 general and electronic concept of oxidation and reduction."
+  "importantStatements": [
+    "\"Oxidation is the loss of electrons and reduction is the gain of electrons; the two processes occur simultaneously in a redox reaction.\""
   ],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantNotes": [
+    "Verified PYQs: NEB 2024 — agent definitions with Zn/CuSO₄, electrochemical series with Zn displacement, H₂O₂ dual behaviour, fluorine strongest oxidising halogen; NEB 2022 — H₂O₂ dual behaviour with balanced equations (all solved above). Other items are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "OIL RIG. Agent-fate flip: \"oxidant is reduced\". Series mnemonic: \"Li K Ba Ca Na Mg Al Zn Fe Pb H Cu Hg Ag Au\". Halogen oxidising power: \"F Cl Br I falls\". H₂O₂ pivot: −1 between 0 and −2."
+  ],
+  "examNotes": [
+    "For agent-identification answers, write the half-reactions first — the species oxidised is the reducing agent, the species reduced is the oxidising agent. For H₂O₂, give one balanced equation per role; unbalanced pairs lose the chemistry mark."
+  ],
   "mcs": [
     {
       "question": "Question about 01 general and electronic concept of oxidation and reduction?",
@@ -157,7 +71,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 general and electronic concept of oxidation and reduction."
+    "The intermediate-oxidation-state rule powers H₂O₂'s dual behaviour and all disproportionation: an element between two accessible states can move both ways; an element at an extreme (F at −1 floor) cannot."
   ],
   "importantTasks": [
     "Task for studying 01 general and electronic concept of oxidation and reduction."
@@ -166,24 +80,92 @@
   "tabGroup": "01-general-and-electronic-concept-of-oxidation-and-reduction",
   "mcqs": [
     {
-      "question": "In the reaction Zn → Zn²⁺ + 2e⁻, zinc is:",
+      "question": "Oxidation is best defined as:",
       "options": [
-        "Oxidized",
-        "Reduced",
-        "Neither",
-        "Both"
+        "Gain of electrons",
+        "Loss of electrons",
+        "Gain of protons",
+        "Loss of mass"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "OIL - oxidation is loss of electrons."
     },
     {
-      "question": "Which is a strong oxidizing agent?",
+      "question": "In Zn + CuSO4, the oxidising agent is:",
       "options": [
-        "Li",
-        "Na",
-        "F₂",
-        "K"
+        "Zn",
+        "CuSO4 (Cu2+)",
+        "ZnSO4",
+        "Water"
       ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "Cu2+ gains electrons - accepts them, so it is the oxidant."
+    },
+    {
+      "question": "An oxidising agent itself is:",
+      "options": [
+        "Oxidised",
+        "Reduced",
+        "Unchanged",
+        "Dissolved"
+      ],
+      "answer": "B",
+      "explanation": "It accepts electrons - reduction is its own fate."
+    },
+    {
+      "question": "Zinc displaces copper from CuSO4 because zinc:",
+      "options": [
+        "Is below copper in the series",
+        "Has a more negative electrode potential",
+        "Is heavier",
+        "Is more electronegative"
+      ],
+      "answer": "B",
+      "explanation": "-0.76 V vs +0.34 V - stronger electron donor."
+    },
+    {
+      "question": "The strongest oxidising halogen is:",
+      "options": [
+        "F2",
+        "Cl2",
+        "Br2",
+        "I2"
+      ],
+      "answer": "A",
+      "explanation": "Smallest, most electronegative, E = +2.87 V."
+    },
+    {
+      "question": "H2O2 acts as a reducing agent when its oxygen goes:",
+      "options": [
+        "From -1 to -2",
+        "From -1 to 0",
+        "From -2 to -1",
+        "From 0 to -1"
+      ],
+      "answer": "B",
+      "explanation": "Oxidised to O2 - it donates electrons to the other reactant."
+    },
+    {
+      "question": "Cl2 + 2OH- gives Cl- and ClO-: this is:",
+      "options": [
+        "Simple oxidation",
+        "Simple reduction",
+        "Disproportionation",
+        "Neutralisation"
+      ],
+      "answer": "C",
+      "explanation": "Chlorine 0 goes to -1 and +1 simultaneously."
+    },
+    {
+      "question": "Which is NOT a reducing agent?",
+      "options": [
+        "H2",
+        "CO",
+        "KMnO4",
+        "C"
+      ],
+      "answer": "C",
+      "explanation": "Permanganate accepts electrons - a classic oxidant."
     }
   ],
   "exercises": [
@@ -205,5 +187,66 @@
     "desc": "Interactive electrochemical cell"
   },
   "visualType": "redox-reactions",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Electron Accounting for Every Reaction\n\nBurning, rusting, respiration, plating and batteries all share one bookkeeping system: **oxidation–reduction (redox)**. The modern definition is electronic — oxidation is electron **loss**, reduction is electron **gain** — and every redox reaction is a transfer: one species loses what another gains, simultaneously. Master the two roles (oxidising agent, reducing agent) and the electrochemical series that ranks them, and half of applied chemistry becomes predictable.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The electronic concept\n\n- **Oxidation:** loss of electrons — Fe²⁺ → Fe³⁺ + e⁻; Zn → Zn²⁺ + 2e⁻.\n- **Reduction:** gain of electrons — Cu²⁺ + 2e⁻ → Cu; Cl₂ + 2e⁻ → 2Cl⁻.\n- The two always occur **together** — electrons lost must be gained somewhere; a half-reaction alone cannot happen.\n- **Memory aid:** OIL RIG — Oxidation Is Loss, Reduction Is Gain (of electrons).\n\n### 2.2 The three generations of definitions\n\n| Generation | Oxidation | Reduction |\n|---|---|---|\n| Classical (oxygen/hydrogen) | Addition of O; removal of H | Addition of H; removal of O |\n| Electronic | Loss of electrons | Gain of electrons |\n| Modern (oxidation number) | Increase in oxidation number | Decrease in oxidation number |\n\n- The classical view fails on reactions with no oxygen or hydrogen (Zn + CuSO₄); the oxidation-number view covers everything.\n\n### 2.3 Agents and couples\n\n- **Oxidising agent (oxidant):** the species that **accepts** electrons — it oxidises the other reactant and is **itself reduced** (KMnO₄, K₂Cr₂O₇, O₂, F₂, HNO₃).\n- **Reducing agent (reductant):** the species that **donates** electrons — it reduces the other reactant and is **itself oxidised** (H₂, C, CO, SO₂, metals, H₂S).\n- **Redox couple:** the oxidised/reduced pair of one element, e.g. Zn²⁺/Zn, MnO₄⁻/Mn²⁺.\n\n### 2.4 The electrochemical series\n\n- Elements ranked by their tendency to lose electrons (standard electrode potentials): **Li, K, Ba, Ca, Na … Zn … Fe … H … Cu … Ag … F₂** at the top of oxidising power.\n- **A higher metal displaces a lower metal's ion from solution:** Zn + CuSO₄ → ZnSO₄ + Cu (NEB 2024) — zinc is the stronger reductant, copper ion the stronger oxidant.\n- **Fluorine is the strongest oxidising agent among the halogens** (NEB 2024): smallest size, highest electronegativity (4.0), most positive reduction potential (F₂ + 2e⁻ → 2F⁻, +2.87 V), so it accepts electrons most eagerly; oxidising power falls F₂ > Cl₂ > Br₂ > I₂.\n\n### 2.5 Special redox behaviours\n\n- **Auto-oxidation–reduction (disproportionation):** one species is simultaneously oxidised and reduced — Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O (chlorine to −1 and +1); 2Cu⁺ → Cu²⁺ + Cu.\n- **Dual behaviour — hydrogen peroxide (NEB 2022 and 2024):** H₂O₂'s oxygen sits at −1, between O₂ (0) and H₂O (−2), so it can go either way:\n  - *As oxidising agent:* H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O (O: −1 → −2).\n  - *As reducing agent:* H₂O₂ + Cl₂ → 2HCl + O₂ (O: −1 → 0).\n  - *In itself:* 2H₂O₂ → 2H₂O + O₂ is disproportionation.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Oxidation** | Loss of electrons / increase in oxidation number | Zn → Zn²⁺ + 2e⁻ |\n| **Reduction** | Gain of electrons / decrease in oxidation number | Cu²⁺ + 2e⁻ → Cu |\n| **Oxidising agent** | Accepts electrons; is reduced | KMnO₄, F₂ |\n| **Reducing agent** | Donates electrons; is oxidised | Zn, H₂, CO |\n| **Disproportionation** | Same element oxidised and reduced at once | 2Cu⁺ → Cu²⁺ + Cu |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): define the agents; identify each in Zn + CuSO₄\n\n- **Oxidising agent:** accepts electrons and is reduced. **Reducing agent:** donates electrons and is oxidised.\n- **Zn + CuSO₄ → ZnSO₄ + Cu:** Zn → Zn²⁺ + 2e⁻ (loss — zinc is oxidised, so zinc is the **reducing agent**); Cu²⁺ + 2e⁻ → Cu (gain — copper ion is reduced, so **CuSO₄/Cu²⁺ is the oxidising agent**).\n\n### 4.2 Verified PYQ (NEB 2024): why zinc displaces copper\n\n- In the electrochemical series Zn sits **above** Cu — zinc has a greater tendency to lose electrons ( stronger reductant, E° Zn²⁺/Zn = −0.76 V vs Cu²⁺/Cu = +0.34 V).\n- The electron transfer Zn → Cu²⁺ is therefore spontaneous: zinc dissolves as Zn²⁺ while copper deposits as the familiar red-brown coat. Any metal above another in the series displaces the lower one from its salt solution.\n\n### 4.3 Verified PYQ (NEB 2022 + 2024): hydrogen peroxide's double life\n\n- The −1 oxidation state of oxygen in H₂O₂ is the pivot: it can climb to 0 (oxidised — H₂O₂ acts as **reducing agent**) or sink to −2 (reduced — H₂O₂ acts as **oxidising agent**).\n- Balanced equations (section 2.5) show both roles; in acid, permanganate even uses H₂O₂ as a reductant: 2MnO₄⁻ + 5H₂O₂ + 6H⁺ → 2Mn²⁺ + 5O₂ + 8H₂O.\n\n### 4.4 Spotting redox without electrons — the oxidation-number audit\n\n- Assign oxidation numbers to every atom on both sides; any element whose number **changes** marks the redox pair: increase = oxidation, decrease = reduction, no change = spectator.\n- This audit is the gateway to topic 40's balancing methods.",
+      "## 5. Comparison Tables\n\n**Oxidation vs reduction — the full mirror**\n\n| Basis | Oxidation | Reduction |\n|---|---|---|\n| Electrons | Lost | Gained |\n| Oxidation number | Increases | Decreases |\n| Oxygen/hydrogen (classical) | Gains O / loses H | Gains H / loses O |\n| Agent role | The species is the **reducing agent** | The species is the **oxidising agent** |\n| Example | Zn → Zn²⁺ + 2e⁻ | Cu²⁺ + 2e⁻ → Cu |\n\n**Oxidising vs reducing agents**\n\n| Basis | Oxidising agent | Reducing agent |\n|---|---|---|\n| Electron behaviour | Accepts | Donates |\n| Own fate | Reduced | Oxidised |\n| Own oxidation number | Decreases | Increases |\n| Series position | High reduction potential (F₂, top) | Low reduction potential (Li, Zn) |\n| Examples | KMnO₄, K₂Cr₂O₇, O₂, HNO₃ | H₂, C, CO, Zn, H₂S |",
+      "## 6. Common Confusions\n\n**The agent does the opposite of its name:** an oxidising agent does not get oxidised — it *causes* oxidation and is itself reduced. Role and fate are opposite; exams punish swapping them.",
+      "**Oxidation number is not charge:** Mn is +7 in KMnO₄ but no Mn⁷⁺ ion floats in the solution — oxidation numbers are bookkeeping, not ionic charges.",
+      "**Disproportionation needs an intermediate state:** the element must sit between two accessible states (Cl at 0 between −1 and +1; O in H₂O₂ at −1 between −2 and 0) — F₂ cannot disproportionate because −1 is its floor.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): Define oxidising and reducing agents. Identify each in Zn + CuSO₄ → ZnSO₄ + Cu.** — An oxidising agent accepts electrons and is itself reduced; a reducing agent donates electrons and is itself oxidised. Zinc loses two electrons (Zn → Zn²⁺ + 2e⁻): it is oxidised and is the **reducing agent**. Copper(II) ions gain those electrons (Cu²⁺ + 2e⁻ → Cu): they are reduced, so **CuSO₄ (Cu²⁺) is the oxidising agent**.",
+      "**Verified PYQ (NEB 2024): What is the electrochemical series? Why does zinc displace copper from CuSO₄?** — The electrochemical series arranges elements in order of their standard electrode potentials — tendency to be reduced (equivalently, inverse tendency to be oxidised). Zinc lies well above copper (E° Zn²⁺/Zn = −0.76 V vs Cu²⁺/Cu = +0.34 V), so zinc is the stronger electron donor. When zinc metal meets Cu²⁺ ions, electrons flow spontaneously from Zn to Cu²⁺: zinc dissolves as Zn²⁺ and copper deposits — Zn + CuSO₄ → ZnSO₄ + Cu. Any metal above another displaces the lower from its salt solution.",
+      "**Verified PYQ (NEB 2022 + 2024): Hydrogen peroxide acts as both oxidising and reducing agent. Explain with one reaction of each.** — Oxygen in H₂O₂ is at −1, intermediate between 0 (O₂) and −2 (H₂O), so H₂O₂ can move either way. **As oxidising agent** (O reduced −1 → −2): H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O — iron(II) is oxidised to iron(III). **As reducing agent** (O oxidised −1 → 0): H₂O₂ + Cl₂ → 2HCl + O₂ — chlorine is reduced to chloride while H₂O₂ liberates oxygen. Its own decomposition, 2H₂O₂ → 2H₂O + O₂, is disproportionation.",
+      "**Verified PYQ (NEB 2024): Why is fluorine the strongest oxidising agent among the halogens?** — Fluorine is the smallest and most electronegative halogen (4.0) with the most positive reduction potential (F₂ + 2e⁻ → 2F⁻, E° = +2.87 V): it accepts electrons most readily and its small F⁻ ions are strongly hydrated, adding thermodynamic drive. Oxidising power therefore falls down the group — F₂ > Cl₂ > Br₂ > I₂ — making fluorine unbeatable as an oxidant."
+    ],
+    "confusion": [
+      "**Agent vs fate:** the oxidising agent is reduced; the reducing agent is oxidised — name the *role* from what happens to the *other* species.",
+      "**Displacement direction:** the metal higher in the series displaces the lower metal's ion — students often reverse it; Zn (higher) displaces Cu, never the reverse."
+    ],
+    "keyPoints": [
+      "OIL RIG: oxidation = loss of electrons/ON increase; reduction = gain/ON decrease; both simultaneous. Oxidising agent accepts e⁻ (is reduced): KMnO₄, K₂Cr₂O₇, F₂, O₂. Reducing agent donates e⁻ (is oxidised): Zn, H₂, CO, C. Electrochemical series ranks reduction tendency; higher metal displaces lower's ion (Zn + CuSO₄; E° −0.76 vs +0.34 V). F₂ strongest oxidising halogen (EN 4.0, E° +2.87 V); order F₂ > Cl₂ > Br₂ > I₂. Disproportionation: one element both oxidised and reduced (Cl₂ + 2OH⁻; 2H₂O₂). H₂O₂ dual: oxidant (Fe²⁺ → Fe³⁺) and reductant (Cl₂ → Cl⁻ + O₂)."
+    ],
+    "importantConcepts": [
+      "The intermediate-oxidation-state rule powers H₂O₂'s dual behaviour and all disproportionation: an element between two accessible states can move both ways; an element at an extreme (F at −1 floor) cannot."
+    ],
+    "examples": [
+      "***The copper coin trick*** — an iron nail dropped in CuSO₄ comes out copper-plated: Fe (higher in the series) displaces Cu²⁺; the same logic that corrodes pipes and runs the classic displacement practical."
+    ],
+    "universalFacts": [
+      "Respiration is a redox relay: glucose is oxidised (C from 0 toward +4) while O₂ is reduced (0 → −2 in water) — the same electron accounting as a zinc-copper cell, at 37 °C."
+    ],
+    "importantStatements": [
+      "\"Oxidation is the loss of electrons and reduction is the gain of electrons; the two processes occur simultaneously in a redox reaction.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 — agent definitions with Zn/CuSO₄, electrochemical series with Zn displacement, H₂O₂ dual behaviour, fluorine strongest oxidising halogen; NEB 2022 — H₂O₂ dual behaviour with balanced equations (all solved above). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "OIL RIG. Agent-fate flip: \"oxidant is reduced\". Series mnemonic: \"Li K Ba Ca Na Mg Al Zn Fe Pb H Cu Hg Ag Au\". Halogen oxidising power: \"F Cl Br I falls\". H₂O₂ pivot: −1 between 0 and −2."
+    ],
+    "examNotes": [
+      "For agent-identification answers, write the half-reactions first — the species oxidised is the reducing agent, the species reduced is the oxidising agent. For H₂O₂, give one balanced equation per role; unbalanced pairs lose the chemistry mark."
+    ],
+    "formulas": [
+      "- Zn + CuSO₄ → ZnSO₄ + Cu (E°: −0.76 vs +0.34 V)\n- H₂O₂ as oxidant: H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O\n- H₂O₂ as reductant: H₂O₂ + Cl₂ → 2HCl + O₂\n- 2H₂O₂ → 2H₂O + O₂ (disproportionation)\n- Halogen oxidising power: F₂ > Cl₂ > Br₂ > I₂"
+    ],
+    "practice": [
+      "Classify each transformation: Fe²⁺ to Fe³⁺, Cl₂ to Cl⁻, S²⁻ to S, MnO₄⁻ to Mn²⁺ — oxidation or reduction, and which agents?",
+      "Can Na⁺ act as an oxidising agent toward Cu metal? Use the electrochemical series to justify.",
+      "Write balanced equations showing H₂O₂ oxidising PbS to PbSO₄ and reducing Ag₂O to Ag."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (2m): Define oxidising and reducing agents. Identify each in Zn + CuSO₄ → ZnSO₄ + Cu.** — An **oxidising agent** is a species that accepts electrons and is itself reduced in the process; a **reducing agent** is a species that donates electrons and is itself oxidised. In the reaction, zinc metal loses two electrons (Zn → Zn²⁺ + 2e⁻), so zinc is oxidised and acts as the **reducing agent**; the copper(II) ions from CuSO₄ gain those electrons (Cu²⁺ + 2e⁻ → Cu), so they are reduced and **CuSO₄ (Cu²⁺) acts as the oxidising agent**. Sulphate is a spectator.",
+      "**NEB 2024 (3m): What is the electrochemical series? Explain why zinc displaces copper from copper sulphate solution.** — The **electrochemical series** is the arrangement of elements in order of their standard electrode potentials, i.e. their tendency to be reduced (equivalently, the inverse of their tendency to be oxidised). Metals high in the series (Li, K, Na, Zn …) are strong reducing agents; metals low (Cu, Ag, Au) are weak. **Zinc displaces copper** because Zn stands above Cu (E° Zn²⁺/Zn = −0.76 V against Cu²⁺/Cu = +0.34 V): zinc has the greater tendency to lose electrons. Electrons therefore flow spontaneously from zinc to Cu²⁺ ions — the zinc dissolves as Zn²⁺ while copper deposits on it: Zn + CuSO₄ → ZnSO₄ + Cu. A general rule follows: any metal higher in the series displaces a lower metal from its salt solution.",
+      "**NEB 2022/2024 (3m): Hydrogen peroxide can act both as an oxidising and a reducing agent. Explain with one reaction of each type.** — In H₂O₂ oxygen is at **−1**, an intermediate state between 0 (in O₂) and −2 (in H₂O), so H₂O₂ can be reduced or oxidised. **As oxidising agent** — its oxygen is reduced from −1 to −2 while it oxidises the other reactant: H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O (iron(II) to iron(III)). **As reducing agent** — its oxygen is oxidised from −1 to 0 while it reduces the other reactant: H₂O₂ + Cl₂ → 2HCl + O₂ (chlorine to chloride, oxygen gas liberated). Its spontaneous decomposition 2H₂O₂ → 2H₂O + O₂ is disproportionation, showing both behaviours at once.",
+      "**NEB 2024 (2m): Why is fluorine the strongest oxidising agent among the halogens?** — Fluorine combines the **smallest atomic size**, the **highest electronegativity (4.0)** and the **most positive standard reduction potential** (F₂ + 2e⁻ → 2F⁻, E° = +2.87 V) of all the halogens, so it accepts electrons more eagerly than Cl₂, Br₂ or I₂. Its small, strongly hydrated fluoride ions add extra thermodynamic driving force. Oxidising power therefore decreases down the group — F₂ > Cl₂ > Br₂ > I₂ — leaving fluorine as the strongest oxidising agent, able even to oxidise water."
+    ]
+  },
+  "universalFacts": [
+    "Respiration is a redox relay: glucose is oxidised (C from 0 toward +4) while O₂ is reduced (0 → −2 in water) — the same electron accounting as a zinc-copper cell, at 37 °C."
+  ]
 }

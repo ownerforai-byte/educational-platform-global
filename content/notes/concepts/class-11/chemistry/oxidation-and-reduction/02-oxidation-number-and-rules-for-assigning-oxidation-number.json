@@ -5,156 +5,62 @@
   "topicTitle": "Oxidation number and rules for assigning oxidation number",
   "relevance": 100,
   "notes": [
-    "Oxidation = loss e⁻ (OIL), Reduction = gain e⁻ (RIG).",
-    "Oxidation numbers identify redox.",
-    "Galvanic cells: chemical → electrical energy.",
-    "Faraday laws: m = ZIt.",
-    "# Oxidation number and rules for assigning oxidation number\n\n## 1. Introduction\nChemical picture of **Oxidation number and rules for assigning oxidation number** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Oxidation and Reduction fill pass.\n\n## 2. Concepts and definitions\n### Oxidation number and rules for assigning oxidation number\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Classification and trends**\n\n| Family or case | Rule or trend | Example | Exception |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Oxidation number and rules for assigning oxidation number — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Oxidation number and rules for assigning oxidation number — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Oxidation number and rules for assigning oxidation number — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Oxidation number and rules for assigning oxidation number — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Charge Ledger of Every Atom\n\nThe oxidation number is a formal charge — the value an atom would carry if every bond were fully ionic. It is not a physical charge, but it is the most useful fiction in chemistry: it tracks electron control through any reaction, flags the redox pair in an instant, and supplies the balancing engine of topic 40. Learn the nine rules and a page of worked values, and no oxidation number can hide.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The rules (in checking order)\n\n1. **Free element = 0:** O₂, H₂, Fe, S₈, P₄ — all zero.\n2. **Monatomic ion = its charge:** Na⁺ +1, Ca²⁺ +2, Cl⁻ −1, Al³⁺ +3.\n3. **Fluorine = −1 always** — the only element with no exceptions (even in OF₂ it stays −1, forcing O to +2).\n4. **Oxygen = −2 normally;** −1 in **peroxides** (H₂O₂, Na₂O₂); −½ in superoxides (KO₂); +2 in OF₂; 0 in O₂.\n5. **Hydrogen = +1 normally; −1 in binary hydrides** with metals (NaH, CaH₂).\n6. **Sum of all oxidation numbers = the species' charge:** 0 for molecules, the ion charge for polyatomic ions.\n7. **Maximum positive = group number** (group 1 → +1, group 2 → +2, Al → +3); negative states reach down to group number − 8.\n8. **More electronegative atom takes the negative share** of a shared pair.\n9. **Fractional values are allowed** — they are averages over inequivalent atoms (Fe₃O₄, Na₂S₄O₆).\n\n### 2.2 Worked values (the exam gallery)\n\n- **Mn in KMnO₄:** +1 + Mn + 4(−2) = 0 → **Mn = +7** (NEB 2024).\n- **Cr in K₂Cr₂O₇:** 2(+1) + 2Cr + 7(−2) = 0 → 2Cr = +12 → **Cr = +6** (NEB 2024).\n- **S in H₂SO₄:** 2(+1) + S + 4(−2) = 0 → **S = +6**; in SO₄²⁻ also +6.\n- **N in HNO₃:** +1 + N + 3(−2) = 0 → **N = +5**; in NH₄⁺: **N = −3**.\n- **Cl in HClO₄:** **+7**; in HClO: +1; in ClO₃⁻: +5.\n- **C in CH₄:** −4; in CO₂: +4; in CH₃OH: −2 (the C–H pairs count for H).\n- **Fe in [Fe(CN)₆]³⁻:** Fe + 6(−1) = −3 → **Fe = +3**.\n- **Fractional:** Fe₃O₄ → 3Fe + 4(−2) = 0 → Fe = **+8/3**; Na₂S₄O₆ → S = **+2.5** (two S at 0, two at +5).\n- **Mn in MnO₄²⁻:** Mn + 4(−2) = −2 → **+6** — one step below permanganate's +7.\n\n### 2.3 What oxidation numbers are for\n\n- **Spotting redox:** compare every element's number on both sides; movers mark the redox pair.\n- **Classifying:** oxidation = increase (Fe²⁺ +0.67… wait — Fe²⁺ → Fe³⁺ is +2 → +3); reduction = decrease.\n- **n-factor and equivalents:** the electron change per formula unit — K₂Cr₂O₇ (Cr +6 → +3 ×2) has n = 6; KMnO₄ in acid (Mn +7 → +2) has n = 5.\n- **Nomenclature:** FeCl₂ iron(II) chloride, FeCl₃ iron(III) chloride; the stock notation is built on oxidation numbers.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Oxidation number** | Formal charge if all bonds were ionic | Mn = +7 in KMnO₄ |\n| **Oxidation** | Increase in oxidation number | Fe²⁺ → Fe³⁺ |\n| **Reduction** | Decrease in oxidation number | Mn +7 → +2 |\n| **n-factor** | Electrons transferred per formula unit | K₂Cr₂O₇ n = 6 |\n| **Disproportionation check** | Same element both rises and falls | Cl₂ → Cl⁻ + ClO⁻ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): state the rules; find Mn in KMnO₄ and Cr in K₂Cr₂O₇\n\n- Rules (section 2.1, quoted compactly): free elements 0; monatomic ions = charge; F always −1; O −2 except peroxides −1 and OF₂ +2; H +1 except metal hydrides −1; the sum equals the species' charge.\n- **KMnO₄:** K is +1 (group 1), O is −2. +1 + Mn + 4(−2) = 0 → Mn = **+7**.\n- **K₂Cr₂O₇:** 2(+1) + 2Cr + 7(−2) = 0 → 2Cr = +12 → Cr = **+6**. Both values explain why these salts are premier oxidising agents: +7 and +6 are the top of their ladders, with plenty of room to fall.\n\n### 4.2 The peroxide trap and its cousins\n\n- H₂O₂: H is +1 (×2), so O averages −1 — not −2. Na₂O₂ likewise (2(+1) + 2O = 0 → O = −1).\n- KO₂ (superoxide): K +1, O −½. OF₂: F −1 (×2) forces O = +2 — oxygen's only positive oxide-state with fluorine.\n- Metal hydrides flip hydrogen: NaH → Na +1, H = **−1**.\n\n### 4.3 Fractional numbers mean mixed sites\n\n- Fe₃O₄ is FeO·Fe₂O₃: one Fe²⁺ and two Fe³⁺ — the average is +8/3, a bookkeeping artifact, not a real charge.\n- Na₂S₄O₆ (tetrathionate): the two inner sulphurs sit at 0, the two terminal ones at +5; the average 2.5 only emerges from the sum rule.\n\n### 4.4 From numbers to n-factor\n\n- **KMnO₄ in acid:** Mn +7 → +2, 5 electrons per Mn → n = 5, equivalent mass = 158/5 = 31.6.\n- **K₂Cr₂O₇ in acid:** each Cr +6 → +3, two Crs → 6 electrons → n = 6, equivalent mass = 294/6 = **49** (the NEB 2021 value, fully worked in topic 40).\n- **I₂ → 2I⁻:** n = 2; **Na₂S₂O₃ → S₄O₆²⁻:** each of two S climbs by ½ → n = 1 per thiosulphate (iodometry's engine).",
+    "## 5. Comparison Tables\n\n**Oxygen and hydrogen: the exception table**\n\n| Compound | O value | H value | Why |\n|---|---|---|---|\n| H₂O, most oxides | −2 | +1 | Default rules |\n| H₂O₂, Na₂O₂ | −1 | +1 | O–O peroxide bond |\n| KO₂ | −½ | — | Superoxide radical |\n| OF₂ | +2 | — | F forces −1 each |\n| NaH, CaH₂ | −2 (oxide) | −1 | Metal hydride |\n| CH₄ | −4 (C) | +1 | H bonded to C, not metal |\n\n**Oxidation-number gallery**\n\n| Species | Element | Value |\n|---|---|---|\n| KMnO₄ | Mn | +7 |\n| K₂Cr₂O₇ | Cr | +6 |\n| HNO₃ | N | +5 |\n| H₂SO₄ | S | +6 |\n| HClO₄ | Cl | +7 |\n| NH₄⁺ | N | −3 |\n| CH₄ / CO₂ | C | −4 / +4 |\n| Fe₃O₄ | Fe | +8/3 |",
+    "## 6. Common Confusions\n\n**Oxidation number ≠ ionic charge:** Mn(+7) in KMnO₄ is bookkeeping; there is no free Mn⁷⁺ ion. Charges belong to actual ions; numbers belong to atoms inside any species.",
+    "**The peroxide exception is the favourite exam trap:** defaulting O to −2 in H₂O₂ wrecks the sum — check for O–O bonds first.",
+    "**Fractional answers are correct answers:** +8/3 and +2.5 are legitimate averages; do not \"fix\" them into integers.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): State the rules for assigning oxidation numbers. Find the oxidation number of Mn in KMnO₄ and Cr in K₂Cr₂O₇.** — Rules: (1) free elements 0; (2) monatomic ions equal their charges; (3) fluorine −1 in all compounds; (4) oxygen −2 except −1 in peroxides and +2 in OF₂; (5) hydrogen +1 except −1 in metal hydrides; (6) the sum equals the net charge. **KMnO₄:** +1 + Mn + 4(−2) = 0 → **Mn = +7**. **K₂Cr₂O₇:** 2(+1) + 2Cr + 7(−2) = 0 → **Cr = +6**.",
+    "**NEB-style (2m): Find the oxidation number of S in Na₂S₄O₆ and Fe in Fe₃O₄.** — **Tetrathionate:** 2(+1) + 4S + 6(−2) = 0 → 4S = +10 → S = **+2.5** (an average: two S at 0, two at +5). **Magnetite:** 3Fe + 4(−2) = 0 → Fe = **+8/3** (FeO·Fe₂O₃: one +2, two +3).",
+    "**NEB-style (2m): Identify the redox pair in 2KI + Cl₂ → 2KCl + I₂.** — Iodine: −1 in KI → 0 in I₂ (increase — oxidised; Cl₂ is the oxidising agent). Chlorine: 0 → −1 (decrease — reduced; I⁻ is the reducing agent). K⁺ and the chloride counterions are spectators at +1 throughout."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "**Check O for peroxides before anything else:** the −1 default-breaker appears in H₂O₂, Na₂O₂, BaO₂ — and in every H₂O₂ redox question.",
+    "**Group number caps:** group 1 metals cannot show +2; the maximum positive oxidation number is the group number (Al stops at +3, Mn's ceiling is +7)."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Assign oxidation numbers to every atom in K₂MnO₄, CrO₅, and Na₂S₂O₃.",
+    "Why does CrO₅ contain a peroxide pair, and what is chromium's oxidation number there?",
+    "Identify the species oxidised and reduced in 3CuO + 2NH₃ → 3Cu + N₂ + 3H₂O using oxidation numbers."
   ],
   "universalFacts": [
-    "Universal scientific fact for 02 oxidation number and rules for assigning oxidation number."
+    "The Mars rover hunts haematite (Fe₂O₃, Fe +3) because iron's oxidation states record a planet's water history — oxidation numbers as geological fingerprints."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Zn|Zn²⁺||Cu²⁺|Cu: E°=+1.10V",
-    "Cu deposited by 2A for 30min: m≈1.19g"
+    "***The +7 summit*** — Mn in KMnO₄ sits at the highest state a 3d element reaches; its fall to +2 in acid (5 electrons) is why permanganate titrations dominate quantitative analysis."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB 2024 (3m): State the rules for assigning oxidation numbers. Find the oxidation number of Mn in KMnO₄ and Cr in K₂Cr₂O₇.** — **Rules:** (1) atoms in a free element have oxidation number 0 (O₂, H₂, Fe); (2) a monatomic ion's number equals its charge (Na⁺ +1, Cl⁻ −1); (3) fluorine is −1 in all its compounds; (4) oxygen is −2 except −1 in peroxides (H₂O₂) and +2 in OF₂; (5) hydrogen is +1 except −1 in binary metal hydrides (NaH); (6) the sum of all oxidation numbers equals the charge of the species (0 for molecules, the ionic charge for ions). **KMnO₄:** potassium is +1 and each oxygen −2, so +1 + Mn + 4(−2) = 0, giving **Mn = +7**. **K₂Cr₂O₇:** 2(+1) + 2Cr + 7(−2) = 0 → 2Cr = +12, giving **Cr = +6**. Both elements sit at the top of their oxidation-state ladders, which is why these compounds are strong oxidising agents in acid medium.",
+    "**NEB-style (2m): Calculate the oxidation numbers of sulphur in Na₂S₄O₆ and iron in Fe₃O₄, commenting on any fractional values.** — **Na₂S₄O₆ (tetrathionate):** 2(+1) + 4S + 6(−2) = 0 → 4S = +10 → **S = +2.5**. The fraction is an average: the two inner sulphur atoms (S–S linked) are at 0 while the two terminal ones bonded to oxygen are at +5. **Fe₃O₄ (magnetite):** 3Fe + 4(−2) = 0 → **Fe = +8/3 ≈ +2.67** — magnetite is a mixed oxide, FeO·Fe₂O₃, containing one Fe²⁺ and two Fe³⁺ per formula unit; the fractional number is the statistical average, not a real charge on any single ion.",
+    "**NEB-style (2m): Using oxidation numbers, identify what is oxidised and what is reduced in 2KI + Cl₂ → 2KCl + I₂.** — Iodine moves from **−1** (in KI) to **0** (in I₂): its oxidation number increases, so iodide is **oxidised** and acts as the reducing agent. Chlorine moves from **0** (Cl₂) to **−1** (in KCl): its number decreases, so chlorine is **reduced** and acts as the oxidising agent. Potassium stays at +1 throughout — a spectator. The reaction is a single-displacement redox driven by chlorine's position above iodine in the electrochemical series of halogens."
   ],
   "formulas": [
-    "E°cell = E°cathode - E°anode",
-    "Q = It",
-    "m = ZIt (Faraday's first law)"
+    "- KMnO₄: +1 + Mn + 4(−2) = 0 → Mn = +7\n- K₂Cr₂O₇: 2(+1) + 2Cr + 7(−2) = 0 → Cr = +6\n- Fe₃O₄: 3Fe + 4(−2) = 0 → Fe = +8/3\n- Na₂S₄O₆: 2(+1) + 4S + 6(−2) = 0 → S = +2.5\n- Equivalent mass = formula mass / n-factor (KMnO₄ 158/5 = 31.6; K₂Cr₂O₇ 294/6 = 49)"
   ],
   "keyPoints": [
-    "Core point for 02 oxidation number and rules for assigning oxidation number."
+    "Nine rules: free 0; ion = charge; F −1 always; O −2 (−1 peroxide, −½ superoxide, +2 in OF₂); H +1 (−1 in metal hydrides); sum = charge; max positive = group number; EN atom negative; fractional averages allowed. Values: Mn/KMnO₄ +7, Cr/K₂Cr₂O₇ +6, S/H₂SO₄ +6, N/HNO₃ +5, Cl/HClO₄ +7, C: CH₄ −4, CO₂ +4. Fractional: Fe₃O₄ +8/3, Na₂S₄O₆ +2.5. n-factor: KMnO₄ acid 5, K₂Cr₂O₇ 6, I₂ 2."
   ],
-  "summary": "Redox reactions involve electron transfer and are fundamental to electrochemistry and energy production.",
+  "summary": "The oxidation number is chemistry's universal charge ledger: a formal value assigned by nine rules — free elements 0, ions their charge, fluorine locked at −1, oxygen −2 (with the peroxide −1, superoxide −½ and OF₂ +2 exceptions), hydrogen +1 (−1 in metal hydrides), and the sum always equal to the species' charge. Applied, it produces the exam gallery: Mn at **+7** in KMnO₄, Cr at **+6** in K₂Cr₂O₇, S +6 in H₂SO₄, N +5 in HNO₃, C from −4 in methane to +4 in CO₂ — and tolerates honest fractions like Fe₃O₄'s +8/3 and tetrathionate's +2.5, which are averages over mixed sites. Its three jobs: **detect** redox (whichever number moves), **quantify** it (n-factor — 5 for acid permanganate, 6 for dichromate — feeding equivalent masses of 31.6 and 49), and **name** compounds (iron(II) versus iron(III)). Master the sum-rule algebra and the exception table, and every balancing question downstream becomes arithmetic.",
   "specialNotes": [
     "Specialized insight for 02 oxidation number and rules for assigning oxidation number."
   ],
   "importantStatements": [
-    "Key statement for 02 oxidation number and rules for assigning oxidation number."
+    "\"The oxidation number of an atom is the formal charge it would carry if the bonds were entirely ionic — the sum of oxidation numbers equals the charge of the species.\""
   ],
   "importantNotes": [
-    "Important note regarding 02 oxidation number and rules for assigning oxidation number."
+    "Verified PYQ: NEB 2024 — rules for assigning oxidation numbers with Mn in KMnO₄ (+7) and Cr in K₂Cr₂O₇ (+6), solved above. The NEB 2021 equivalent-mass question belongs to topic 40. Other items are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Oxidation Number and Rules for Assigning It."
+    "Sum-rule algebra: \"charge of other atoms, subtract from total\". Traps: peroxides −1, hydrides −1, OF₂ +2. Fractional = mixed sites. n-factor: count electrons per formula (Cr₂O₇²⁻ → 2Cr³⁺ = 6e)."
   ],
-  "examNotes": [],
+  "examNotes": [
+    "Quote at least five rules explicitly before the calculation — the rules carry marks of their own. Show the sum equation with every term, then solve; a bare answer of +7 without the algebra earns half."
+  ],
   "mcs": [
     {
       "question": "Question about 02 oxidation number and rules for assigning oxidation number?",
@@ -168,7 +74,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 02 oxidation number and rules for assigning oxidation number."
+    "Oxidation number is the bridge topic: it detects redox (numbers move), measures extent (n-factor and equivalents), and powers the balancing methods of topic 40 — one bookkeeping system, three jobs."
   ],
   "importantTasks": [
     "Task for studying 02 oxidation number and rules for assigning oxidation number."
@@ -177,24 +83,92 @@
   "tabGroup": "02-oxidation-number-and-rules-for-assigning-oxidation-number",
   "mcqs": [
     {
-      "question": "In the reaction Zn → Zn²⁺ + 2e⁻, zinc is:",
+      "question": "The oxidation number of Mn in KMnO4 is:",
       "options": [
-        "Oxidized",
-        "Reduced",
-        "Neither",
-        "Both"
+        "+2",
+        "+5",
+        "+6",
+        "+7"
       ],
-      "answer": "A"
+      "answer": "D",
+      "explanation": "+1 + Mn - 8 = 0, so Mn = +7."
     },
     {
-      "question": "Which is a strong oxidizing agent?",
+      "question": "The oxidation number of Cr in K2Cr2O7 is:",
       "options": [
-        "Li",
-        "Na",
-        "F₂",
-        "K"
+        "+3",
+        "+6",
+        "+7",
+        "+12"
       ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "2(+1) + 2Cr - 14 = 0, so Cr = +6."
+    },
+    {
+      "question": "Oxygen in H2O2 has oxidation number:",
+      "options": [
+        "-2",
+        "-1",
+        "-0.5",
+        "+2"
+      ],
+      "answer": "B",
+      "explanation": "Peroxide O-O bond - each O is -1."
+    },
+    {
+      "question": "Hydrogen in NaH has oxidation number:",
+      "options": [
+        "+1",
+        "-1",
+        "0",
+        "+2"
+      ],
+      "answer": "B",
+      "explanation": "Binary metal hydride - hydrogen is -1."
+    },
+    {
+      "question": "The oxidation number of S in Na2S4O6 is:",
+      "options": [
+        "+2",
+        "+2.5",
+        "+4",
+        "+6"
+      ],
+      "answer": "B",
+      "explanation": "Fractional average of two S at 0 and two at +5."
+    },
+    {
+      "question": "Fluorine shows an oxidation state of:",
+      "options": [
+        "-1 only",
+        "-1 and +1",
+        "-2 and -1",
+        "Any value"
+      ],
+      "answer": "A",
+      "explanation": "The most electronegative element never goes positive."
+    },
+    {
+      "question": "Carbon in CH4 and CO2 respectively:",
+      "options": [
+        "+4 and -4",
+        "-4 and +4",
+        "-2 and +2",
+        "0 and 0"
+      ],
+      "answer": "B",
+      "explanation": "Bonded to H it is negative; double-bonded to O it is +4."
+    },
+    {
+      "question": "The n-factor of K2Cr2O7 as an oxidant in acid is:",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "2"
+      ],
+      "answer": "C",
+      "explanation": "Two Cr each fall 6 to 3 - six electrons per formula."
     }
   ],
   "exercises": [
@@ -216,5 +190,61 @@
     "desc": "Interactive electrochemical cell"
   },
   "visualType": "oxidation-states",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Charge Ledger of Every Atom\n\nThe oxidation number is a formal charge — the value an atom would carry if every bond were fully ionic. It is not a physical charge, but it is the most useful fiction in chemistry: it tracks electron control through any reaction, flags the redox pair in an instant, and supplies the balancing engine of topic 40. Learn the nine rules and a page of worked values, and no oxidation number can hide.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The rules (in checking order)\n\n1. **Free element = 0:** O₂, H₂, Fe, S₈, P₄ — all zero.\n2. **Monatomic ion = its charge:** Na⁺ +1, Ca²⁺ +2, Cl⁻ −1, Al³⁺ +3.\n3. **Fluorine = −1 always** — the only element with no exceptions (even in OF₂ it stays −1, forcing O to +2).\n4. **Oxygen = −2 normally;** −1 in **peroxides** (H₂O₂, Na₂O₂); −½ in superoxides (KO₂); +2 in OF₂; 0 in O₂.\n5. **Hydrogen = +1 normally; −1 in binary hydrides** with metals (NaH, CaH₂).\n6. **Sum of all oxidation numbers = the species' charge:** 0 for molecules, the ion charge for polyatomic ions.\n7. **Maximum positive = group number** (group 1 → +1, group 2 → +2, Al → +3); negative states reach down to group number − 8.\n8. **More electronegative atom takes the negative share** of a shared pair.\n9. **Fractional values are allowed** — they are averages over inequivalent atoms (Fe₃O₄, Na₂S₄O₆).\n\n### 2.2 Worked values (the exam gallery)\n\n- **Mn in KMnO₄:** +1 + Mn + 4(−2) = 0 → **Mn = +7** (NEB 2024).\n- **Cr in K₂Cr₂O₇:** 2(+1) + 2Cr + 7(−2) = 0 → 2Cr = +12 → **Cr = +6** (NEB 2024).\n- **S in H₂SO₄:** 2(+1) + S + 4(−2) = 0 → **S = +6**; in SO₄²⁻ also +6.\n- **N in HNO₃:** +1 + N + 3(−2) = 0 → **N = +5**; in NH₄⁺: **N = −3**.\n- **Cl in HClO₄:** **+7**; in HClO: +1; in ClO₃⁻: +5.\n- **C in CH₄:** −4; in CO₂: +4; in CH₃OH: −2 (the C–H pairs count for H).\n- **Fe in [Fe(CN)₆]³⁻:** Fe + 6(−1) = −3 → **Fe = +3**.\n- **Fractional:** Fe₃O₄ → 3Fe + 4(−2) = 0 → Fe = **+8/3**; Na₂S₄O₆ → S = **+2.5** (two S at 0, two at +5).\n- **Mn in MnO₄²⁻:** Mn + 4(−2) = −2 → **+6** — one step below permanganate's +7.\n\n### 2.3 What oxidation numbers are for\n\n- **Spotting redox:** compare every element's number on both sides; movers mark the redox pair.\n- **Classifying:** oxidation = increase (Fe²⁺ +0.67… wait — Fe²⁺ → Fe³⁺ is +2 → +3); reduction = decrease.\n- **n-factor and equivalents:** the electron change per formula unit — K₂Cr₂O₇ (Cr +6 → +3 ×2) has n = 6; KMnO₄ in acid (Mn +7 → +2) has n = 5.\n- **Nomenclature:** FeCl₂ iron(II) chloride, FeCl₃ iron(III) chloride; the stock notation is built on oxidation numbers.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Oxidation number** | Formal charge if all bonds were ionic | Mn = +7 in KMnO₄ |\n| **Oxidation** | Increase in oxidation number | Fe²⁺ → Fe³⁺ |\n| **Reduction** | Decrease in oxidation number | Mn +7 → +2 |\n| **n-factor** | Electrons transferred per formula unit | K₂Cr₂O₇ n = 6 |\n| **Disproportionation check** | Same element both rises and falls | Cl₂ → Cl⁻ + ClO⁻ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): state the rules; find Mn in KMnO₄ and Cr in K₂Cr₂O₇\n\n- Rules (section 2.1, quoted compactly): free elements 0; monatomic ions = charge; F always −1; O −2 except peroxides −1 and OF₂ +2; H +1 except metal hydrides −1; the sum equals the species' charge.\n- **KMnO₄:** K is +1 (group 1), O is −2. +1 + Mn + 4(−2) = 0 → Mn = **+7**.\n- **K₂Cr₂O₇:** 2(+1) + 2Cr + 7(−2) = 0 → 2Cr = +12 → Cr = **+6**. Both values explain why these salts are premier oxidising agents: +7 and +6 are the top of their ladders, with plenty of room to fall.\n\n### 4.2 The peroxide trap and its cousins\n\n- H₂O₂: H is +1 (×2), so O averages −1 — not −2. Na₂O₂ likewise (2(+1) + 2O = 0 → O = −1).\n- KO₂ (superoxide): K +1, O −½. OF₂: F −1 (×2) forces O = +2 — oxygen's only positive oxide-state with fluorine.\n- Metal hydrides flip hydrogen: NaH → Na +1, H = **−1**.\n\n### 4.3 Fractional numbers mean mixed sites\n\n- Fe₃O₄ is FeO·Fe₂O₃: one Fe²⁺ and two Fe³⁺ — the average is +8/3, a bookkeeping artifact, not a real charge.\n- Na₂S₄O₆ (tetrathionate): the two inner sulphurs sit at 0, the two terminal ones at +5; the average 2.5 only emerges from the sum rule.\n\n### 4.4 From numbers to n-factor\n\n- **KMnO₄ in acid:** Mn +7 → +2, 5 electrons per Mn → n = 5, equivalent mass = 158/5 = 31.6.\n- **K₂Cr₂O₇ in acid:** each Cr +6 → +3, two Crs → 6 electrons → n = 6, equivalent mass = 294/6 = **49** (the NEB 2021 value, fully worked in topic 40).\n- **I₂ → 2I⁻:** n = 2; **Na₂S₂O₃ → S₄O₆²⁻:** each of two S climbs by ½ → n = 1 per thiosulphate (iodometry's engine).",
+      "## 5. Comparison Tables\n\n**Oxygen and hydrogen: the exception table**\n\n| Compound | O value | H value | Why |\n|---|---|---|---|\n| H₂O, most oxides | −2 | +1 | Default rules |\n| H₂O₂, Na₂O₂ | −1 | +1 | O–O peroxide bond |\n| KO₂ | −½ | — | Superoxide radical |\n| OF₂ | +2 | — | F forces −1 each |\n| NaH, CaH₂ | −2 (oxide) | −1 | Metal hydride |\n| CH₄ | −4 (C) | +1 | H bonded to C, not metal |\n\n**Oxidation-number gallery**\n\n| Species | Element | Value |\n|---|---|---|\n| KMnO₄ | Mn | +7 |\n| K₂Cr₂O₇ | Cr | +6 |\n| HNO₃ | N | +5 |\n| H₂SO₄ | S | +6 |\n| HClO₄ | Cl | +7 |\n| NH₄⁺ | N | −3 |\n| CH₄ / CO₂ | C | −4 / +4 |\n| Fe₃O₄ | Fe | +8/3 |",
+      "## 6. Common Confusions\n\n**Oxidation number ≠ ionic charge:** Mn(+7) in KMnO₄ is bookkeeping; there is no free Mn⁷⁺ ion. Charges belong to actual ions; numbers belong to atoms inside any species.",
+      "**The peroxide exception is the favourite exam trap:** defaulting O to −2 in H₂O₂ wrecks the sum — check for O–O bonds first.",
+      "**Fractional answers are correct answers:** +8/3 and +2.5 are legitimate averages; do not \"fix\" them into integers.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): State the rules for assigning oxidation numbers. Find the oxidation number of Mn in KMnO₄ and Cr in K₂Cr₂O₇.** — Rules: (1) free elements 0; (2) monatomic ions equal their charges; (3) fluorine −1 in all compounds; (4) oxygen −2 except −1 in peroxides and +2 in OF₂; (5) hydrogen +1 except −1 in metal hydrides; (6) the sum equals the net charge. **KMnO₄:** +1 + Mn + 4(−2) = 0 → **Mn = +7**. **K₂Cr₂O₇:** 2(+1) + 2Cr + 7(−2) = 0 → **Cr = +6**.",
+      "**NEB-style (2m): Find the oxidation number of S in Na₂S₄O₆ and Fe in Fe₃O₄.** — **Tetrathionate:** 2(+1) + 4S + 6(−2) = 0 → 4S = +10 → S = **+2.5** (an average: two S at 0, two at +5). **Magnetite:** 3Fe + 4(−2) = 0 → Fe = **+8/3** (FeO·Fe₂O₃: one +2, two +3).",
+      "**NEB-style (2m): Identify the redox pair in 2KI + Cl₂ → 2KCl + I₂.** — Iodine: −1 in KI → 0 in I₂ (increase — oxidised; Cl₂ is the oxidising agent). Chlorine: 0 → −1 (decrease — reduced; I⁻ is the reducing agent). K⁺ and the chloride counterions are spectators at +1 throughout."
+    ],
+    "confusion": [
+      "**Check O for peroxides before anything else:** the −1 default-breaker appears in H₂O₂, Na₂O₂, BaO₂ — and in every H₂O₂ redox question.",
+      "**Group number caps:** group 1 metals cannot show +2; the maximum positive oxidation number is the group number (Al stops at +3, Mn's ceiling is +7)."
+    ],
+    "keyPoints": [
+      "Nine rules: free 0; ion = charge; F −1 always; O −2 (−1 peroxide, −½ superoxide, +2 in OF₂); H +1 (−1 in metal hydrides); sum = charge; max positive = group number; EN atom negative; fractional averages allowed. Values: Mn/KMnO₄ +7, Cr/K₂Cr₂O₇ +6, S/H₂SO₄ +6, N/HNO₃ +5, Cl/HClO₄ +7, C: CH₄ −4, CO₂ +4. Fractional: Fe₃O₄ +8/3, Na₂S₄O₆ +2.5. n-factor: KMnO₄ acid 5, K₂Cr₂O₇ 6, I₂ 2."
+    ],
+    "importantConcepts": [
+      "Oxidation number is the bridge topic: it detects redox (numbers move), measures extent (n-factor and equivalents), and powers the balancing methods of topic 40 — one bookkeeping system, three jobs."
+    ],
+    "examples": [
+      "***The +7 summit*** — Mn in KMnO₄ sits at the highest state a 3d element reaches; its fall to +2 in acid (5 electrons) is why permanganate titrations dominate quantitative analysis."
+    ],
+    "universalFacts": [
+      "The Mars rover hunts haematite (Fe₂O₃, Fe +3) because iron's oxidation states record a planet's water history — oxidation numbers as geological fingerprints."
+    ],
+    "importantStatements": [
+      "\"The oxidation number of an atom is the formal charge it would carry if the bonds were entirely ionic — the sum of oxidation numbers equals the charge of the species.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2024 — rules for assigning oxidation numbers with Mn in KMnO₄ (+7) and Cr in K₂Cr₂O₇ (+6), solved above. The NEB 2021 equivalent-mass question belongs to topic 40. Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Sum-rule algebra: \"charge of other atoms, subtract from total\". Traps: peroxides −1, hydrides −1, OF₂ +2. Fractional = mixed sites. n-factor: count electrons per formula (Cr₂O₇²⁻ → 2Cr³⁺ = 6e)."
+    ],
+    "examNotes": [
+      "Quote at least five rules explicitly before the calculation — the rules carry marks of their own. Show the sum equation with every term, then solve; a bare answer of +7 without the algebra earns half."
+    ],
+    "formulas": [
+      "- KMnO₄: +1 + Mn + 4(−2) = 0 → Mn = +7\n- K₂Cr₂O₇: 2(+1) + 2Cr + 7(−2) = 0 → Cr = +6\n- Fe₃O₄: 3Fe + 4(−2) = 0 → Fe = +8/3\n- Na₂S₄O₆: 2(+1) + 4S + 6(−2) = 0 → S = +2.5\n- Equivalent mass = formula mass / n-factor (KMnO₄ 158/5 = 31.6; K₂Cr₂O₇ 294/6 = 49)"
+    ],
+    "practice": [
+      "Assign oxidation numbers to every atom in K₂MnO₄, CrO₅, and Na₂S₂O₃.",
+      "Why does CrO₅ contain a peroxide pair, and what is chromium's oxidation number there?",
+      "Identify the species oxidised and reduced in 3CuO + 2NH₃ → 3Cu + N₂ + 3H₂O using oxidation numbers."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (3m): State the rules for assigning oxidation numbers. Find the oxidation number of Mn in KMnO₄ and Cr in K₂Cr₂O₇.** — **Rules:** (1) atoms in a free element have oxidation number 0 (O₂, H₂, Fe); (2) a monatomic ion's number equals its charge (Na⁺ +1, Cl⁻ −1); (3) fluorine is −1 in all its compounds; (4) oxygen is −2 except −1 in peroxides (H₂O₂) and +2 in OF₂; (5) hydrogen is +1 except −1 in binary metal hydrides (NaH); (6) the sum of all oxidation numbers equals the charge of the species (0 for molecules, the ionic charge for ions). **KMnO₄:** potassium is +1 and each oxygen −2, so +1 + Mn + 4(−2) = 0, giving **Mn = +7**. **K₂Cr₂O₇:** 2(+1) + 2Cr + 7(−2) = 0 → 2Cr = +12, giving **Cr = +6**. Both elements sit at the top of their oxidation-state ladders, which is why these compounds are strong oxidising agents in acid medium.",
+      "**NEB-style (2m): Calculate the oxidation numbers of sulphur in Na₂S₄O₆ and iron in Fe₃O₄, commenting on any fractional values.** — **Na₂S₄O₆ (tetrathionate):** 2(+1) + 4S + 6(−2) = 0 → 4S = +10 → **S = +2.5**. The fraction is an average: the two inner sulphur atoms (S–S linked) are at 0 while the two terminal ones bonded to oxygen are at +5. **Fe₃O₄ (magnetite):** 3Fe + 4(−2) = 0 → **Fe = +8/3 ≈ +2.67** — magnetite is a mixed oxide, FeO·Fe₂O₃, containing one Fe²⁺ and two Fe³⁺ per formula unit; the fractional number is the statistical average, not a real charge on any single ion.",
+      "**NEB-style (2m): Using oxidation numbers, identify what is oxidised and what is reduced in 2KI + Cl₂ → 2KCl + I₂.** — Iodine moves from **−1** (in KI) to **0** (in I₂): its oxidation number increases, so iodide is **oxidised** and acts as the reducing agent. Chlorine moves from **0** (Cl₂) to **−1** (in KCl): its number decreases, so chlorine is **reduced** and acts as the oxidising agent. Potassium stays at +1 throughout — a spectator. The reaction is a single-displacement redox driven by chlorine's position above iodine in the electrochemical series of halogens."
+    ]
+  }
 }

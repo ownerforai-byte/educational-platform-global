@@ -7,43 +7,46 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Electrolysis: quantitative aspect (Faraday's laws of elec… — Oxidation and Reduction, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: electrolysis, quantitative aspect, faraday's laws of electrolysis · one worked example · one misconception each.",
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "**Quantitative aspect.** one-line definition + one-line exam use.",
-    "**Faraday's laws of electrolysis.** one-line definition + one-line exam use.",
-    "# Electrolysis: quantitative aspect (Faraday's laws of electrolysis)\n\n## 1. Introduction\nChemical picture of **Electrolysis** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Oxidation and Reduction fill pass.\n\n## 2. Concepts and definitions\n### Electrolysis: quantitative aspect (Faraday's laws of electrolysis)\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Electrolysis — plant or apparatus flow with conditions labelled (authored SVG)\n- **D2** — Electrolysis — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Electrolysis — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Electrolysis — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Weighing Electricity\n\nFaraday's two laws (1833) turn coulombs into grams: the mass deposited at an electrode is proportional to the charge passed (first law) and, for the same charge through different electrolytes, proportional to the equivalent mass (second law). One constant — **96500 C per mole of electrons** — wires the whole quantitative side of electrolysis together, and every numerical in this chapter is one division away from it.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Faraday's first law\n\n- **Statement:** the mass of a substance deposited (or liberated) at an electrode is **directly proportional to the quantity of charge** passed through the electrolyte.\n- **m ∝ Q**; Q = I × t (current in amperes × time in seconds), so **m = Z × I × t**.\n- **Z (electrochemical equivalent, ECE):** mass deposited by **1 coulomb** — Z = E/96500, where E is the equivalent mass.\n\n### 2.2 Faraday's second law\n\n- **Statement:** when the **same quantity of charge** passes through different electrolytes connected in series, the masses deposited are **proportional to their equivalent masses**.\n- **m₁/m₂ = E₁/E₂** — silver deposits 108 g for every 31.75 g of copper from the same charge.\n- Consequence: one faraday (96500 C) deposits **one equivalent mass** of any substance.\n\n### 2.3 The faraday and the electron count\n\n- **1 faraday (F) = 96500 C** = the charge on **1 mole of electrons** (e = 1.6 × 10⁻¹⁹ C × 6.022 × 10²³ ≈ 96485 ≈ 96500 C).\n- Charge needed to deposit 1 mole of an ion = n × F, where n is the ion's charge: Na⁺ needs 1F, Cu²⁺ 2F, Al³⁺ 3F.\n- **ECE values:** Ag: 108/96500 = 1.118 mg/C; Cu: 31.75/96500 = 0.329 mg/C; Al: 9/96500 = 0.0932 mg/C.\n\n### 2.4 Worked numericals (the exam templates)\n\n- **Silver, direct:** current 2 A for 30 minutes through AgNO₃. Q = 2 × 1800 = 3600 C. m = (108 × 3600)/96500 = **4.03 g**.\n- **Copper, direct:** current 1.5 A for 1 hour through CuSO₄. Q = 1.5 × 3600 = 5400 C. m = (31.75 × 5400)/96500 = **1.77 g**.\n- **Second law, series cells:** the same charge deposits 5.4 g Ag from AgNO₃; what Cu mass deposits from CuSO₄? m(Cu) = m(Ag) × E(Cu)/E(Ag) = 5.4 × 31.75/108 = **1.59 g**.\n- **Gas volume:** 1 F liberates 1 equivalent: ½ mol H₂ (11.2 L at STP) or ¼ mol O₂ (5.6 L). Current 2 A for 9650 s → Q = 19300 C = 0.2 F → H₂ = 2.24 L, O₂ = 1.12 L.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value |\n|---|---|---|\n| **Faraday's first law** | m ∝ Q passed | m = ZIt |\n| **Faraday's second law** | Same Q: m ∝ E | m₁/m₂ = E₁/E₂ |\n| **Electrochemical equivalent (Z)** | Mass per coulomb | Ag: 1.118 mg/C |\n| **Faraday constant** | Charge of 1 mol electrons | 96500 C |\n| **Equivalent mass (E)** | Formula mass / n | Cu: 63.5/2 = 31.75 |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why one faraday deposits one equivalent\n\n- Every mole of electrons carries 96500 C; an ion of charge n needs n electrons per ion, so 1 mol electrons (1 F) reduces exactly 1/n mol — that is, **one equivalent** — of the ion. The second law is this sentence restated: equal charge → equal equivalents → masses in the ratio of equivalent masses.\n\n### 4.2 Setting up any numerical\n\n1. Compute **Q = I × t** (seconds!).\n2. Convert to faradays: **n(F) = Q/96500**.\n3. Mass = (equivalent mass) × n(F); or volume of gas = (22.4/n) × n(F) litres at STP.\n4. For series cells, skip recomputation — apply m₁/m₂ = E₁/E₂ directly.\n\n### 4.3 The copper voltameter as charge meter\n\n- Weigh the cathode before and after; the gain ÷ (E(Cu) × 96500) gives the charge — a **coulometer**. Historically this defined the ampere practically; exam numericals often hide a \"find the current\" reversal of the same algebra.",
+    "## 5. Comparison Tables\n\n**One faraday's harvest (1 F = 96500 C)**\n\n| Ion | Half-reaction | Deposited per F |\n|---|---|---|\n| Ag⁺ | Ag⁺ + e⁻ → Ag | 108 g Ag |\n| Cu²⁺ | Cu²⁺ + 2e⁻ → Cu | 31.75 g Cu |\n| Al³⁺ | Al³⁺ + 3e⁻ → Al | 9 g Al |\n| H⁺ | 2H⁺ + 2e⁻ → H₂ | 11.2 L H₂ (STP) |\n| OH⁻ | 4OH⁻ → O₂ + 2H₂O + 4e⁻ | 5.6 L O₂ (STP) |\n\n**The two laws at a glance**\n\n| Basis | First law | Second law |\n|---|---|---|\n| Proportionality | m ∝ Q (one electrolyte) | m ∝ E (same Q, several electrolytes) |\n| Equation | m = ZIt | m₁/m₂ = E₁/E₂ |\n| Key constant | Z = E/96500 | F = 96500 C |\n| Typical question | Find mass from I and t | Series-cell mass ratios |",
+    "## 6. Common Confusions\n\n**Time must be seconds:** I × t with minutes or hours silently multiplies errors by 60 or 3600 — convert first, always.",
+    "**n is the ion's charge, not the element's valence in the compound:** Cu²⁺ → 2F per mole even though \"copper sulphate\" mentions no charge; Al³⁺ → 3F.",
+    "**First law needs one cell; second law needs several:** mixing them up in numericals produces ratio errors — check what the question actually varies.",
+    "## 7. Exam Application\n\n**NEB-style (3m): State Faraday's first law and calculate the mass of silver deposited when a current of 2 A passes through AgNO₃ solution for 30 minutes.** — First law: the mass deposited at an electrode is directly proportional to the quantity of charge passed, m = ZIt. Charge: Q = 2 × (30 × 60) = 3600 C. Faradays: 3600/96500 = 0.0373 F. Since Ag⁺ + e⁻ → Ag needs 1 F per mole (E = 108): **m = (108 × 3600)/96500 ≈ 4.03 g**.",
+    "**NEB-style (3m): The same current passes through two cells in series containing AgNO₃ and CuSO₄. If 5.4 g of silver deposits, what mass of copper deposits?** — By Faraday's second law, m(Ag)/m(Cu) = E(Ag)/E(Cu). E(Ag) = 108 (n = 1); E(Cu) = 63.5/2 = 31.75 (n = 2). **m(Cu) = 5.4 × 31.75/108 = 1.59 g.**",
+    "**NEB-style (2m): Calculate the volume of oxygen liberated at STP when a current of 2 A passes through acidulated water for 9650 s.** — Q = 2 × 9650 = 19300 C = 0.2 F. Oxygen: 4e⁻ per O₂, so 1 F gives 5.6 L; 0.2 F gives **1.12 L of O₂ at STP** (and 2.24 L of H₂ at the cathode)."
   ],
-  "confusion": [],
+  "confusion": [
+    "**Z and E are different numbers:** Z is per coulomb (mg/C), E is per faraday (g/F = equivalent mass); m = ZIt and m = (E × Q)/96500 are the same formula written twice.",
+    "**Deposited vs liberated:** metals deposit as atoms (mass directly); gases liberate as molecules — use 22.4/n litres per faraday, not 22.4."
+  ],
   "bounds": [
     "Covers only: electrolysis, quantitative aspect, faraday's laws of electrolysis (within Oxidation and Reduction).",
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  "practice": [
+    "A current of 0.5 A passes through CuSO₄ for 2 hours; find the copper deposited and the volume of O₂ at the anode.",
+    "In series cells of AgNO₃ and Al₂(SO₄)₃, 2.16 g of Ag deposits; find the aluminium deposited.",
+    "Derive the second law from the first law using the concept of the equivalent."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Every aluminium smelter is a Faraday's-law calculator: ~13–15 kWh per kilogram of Al follows directly from 3 × 96500 C per 9 g — electricity prices set metal prices."
+  ],
+  "examples": [
+    "***The copper coulometer*** — weigh a copper cathode before and after, divide the gain by 0.329 mg/C, and you have measured the charge without a single electronic meter."
+  ],
   "practiceQuestions": [
-    "Q. What mass of Cu is deposited by 2 A in 30 minutes? (Cu = 63.5, Cu2+) (3 marks) — Q = 2 × 1800 = 3600 C; m = 63.5 × 3600/(2 × 96500) ≈ 1.18 g.",
-    "Q. Same current through CuSO4 and AgNO3 deposits 0.3175 g Cu. Find Ag deposited. (2 marks) — mAg = 0.3175 × (108/31.75) ≈ 1.08 g."
+    "**NEB-style (3m): State Faraday's first law of electrolysis. Calculate the mass of silver deposited when a current of 2 A is passed through AgNO₃ solution for 30 minutes (Ag = 108, F = 96500 C).** — **First law:** the mass of a substance deposited or liberated at an electrode during electrolysis is directly proportional to the quantity of electric charge passed through the electrolyte: m ∝ Q, or m = ZIt, where Z (electrochemical equivalent) is the mass deposited per coulomb and Z = E/96500. **Calculation:** charge Q = I × t = 2 × (30 × 60) = 2 × 1800 = 3600 C. Moles of electrons = 3600/96500 = 0.0373 F. Since Ag⁺ + e⁻ → Ag, one faraday deposits one mole (108 g): m = (108 × 3600)/96500 = 388800/96500 ≈ **4.03 g of silver**.",
+    "**NEB-style (3m): The same quantity of electricity is passed through two cells in series containing AgNO₃ and CuSO₄ solutions. If 5.4 g of silver is deposited in the first cell, calculate the mass of copper deposited in the second (Ag = 108, Cu = 63.5).** — By **Faraday's second law**, masses deposited by the same charge in different electrolytes are proportional to their equivalent masses: m(Ag)/m(Cu) = E(Ag)/E(Cu). Equivalent mass of Ag: 108/1 = 108 (Ag⁺ takes 1 electron). Equivalent mass of Cu: 63.5/2 = 31.75 (Cu²⁺ takes 2 electrons). Therefore m(Cu) = m(Ag) × E(Cu)/E(Ag) = 5.4 × 31.75/108 = 5.4 × 0.294 ≈ **1.59 g of copper**. The same charge deposits one equivalent of each substance — 0.05 mol of Ag and 0.025 mol of Cu.",
+    "**NEB-style (2m): A current of 2 A is passed through acidulated water for 9650 s. Calculate the volume of oxygen liberated at the anode at STP (F = 96500 C).** — Charge passed: Q = I × t = 2 × 9650 = 19300 C. Faradays: 19300/96500 = **0.2 F**. At the anode, 4OH⁻ → O₂ + 2H₂O + 4e⁻: four faradays liberate one mole of O₂ (22.4 L at STP), so one faraday liberates 5.6 L. Volume of O₂ = 0.2 × 5.6 = **1.12 L at STP** (while 0.2 F at the cathode liberates 0.2 × 11.2 = 2.24 L of hydrogen — the 2 : 1 volume ratio of water's electrolysis)."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- Q = I × t (t in seconds)\n- First law: m = ZIt, Z = E/96500\n- Second law: m₁/m₂ = E₁/E₂\n- Moles of electrons = Q/96500\n- Gas at STP: V = (22.4/n) × (Q/96500) L"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -51,37 +54,258 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Electrolysis",
-    "• Quantitative aspect",
-    "• Faraday's laws of electrolysis"
+    "First law: m ∝ Q, m = ZIt, Z = E/96500. Second law: same Q through series electrolytes → m₁/m₂ = E₁/E₂; 1 F deposits 1 equivalent. F = 96500 C = 1 mol electrons. E values: Ag 108, Cu 31.75, Al 9. Numericals: 2 A × 30 min Ag → 4.03 g; 5.4 g Ag ⇒ 1.59 g Cu in series; 0.2 F → 1.12 L O₂, 2.24 L H₂ at STP. Gas: 1 F gives 11.2 L H₂ or 5.6 L O₂."
   ],
-  "summary": "Electrolysis: quantitative aspect (Faraday's laws of elec… (Oxidation and Reduction, Chemistry, class-11-notes) covers Electrolysis, quantitative aspect, Faraday's laws of electrolysis. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Faraday's laws are the exchange rate between electricity and matter. The **first law** — mass proportional to charge (m = ZIt, with the electrochemical equivalent Z = E/96500) — turns amperes and seconds into grams: 2 A for 30 minutes through AgNO₃ is 3600 C, 0.0373 faradays, **4.03 g of silver**. The **second law** — for the same charge through series electrolytes, masses are proportional to equivalent masses (m₁/m₂ = E₁/E₂) — follows because one faraday (96500 C, one mole of electrons) always deposits exactly **one equivalent**: 108 g of Ag⁺ (n = 1), 31.75 g of Cu²⁺ (n = 2), 9 g of Al³⁺ (n = 3), 11.2 L of H₂ or 5.6 L of O₂ at STP. Every numerical is the same pipeline — Q = It, divide by 96500, multiply by E (or by 22.4/n for gases) — with seconds as the unit trap and the ion's charge as the n-factor. The copper coulometer closes the loop: weighing an electrode is measuring charge.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Electrolysis: quantitative aspect (Faraday's laws of elec…\"?",
+      "question": "Faraday's first law states m is proportional to:",
       "options": [
-        "Electrolysis",
-        "Quantitative aspect",
-        "Unrelated topic",
-        "None of the above"
+        "Current only",
+        "Time only",
+        "Quantity of charge",
+        "Electrode area"
       ],
-      "answer": "A",
-      "explanation": "Electrolysis is listed among the official sub-ideas of Electrolysis: quantitative aspect (Faraday's laws of elec…; the others are not part of this topic."
+      "answer": "C",
+      "explanation": "m = ZIt - proportional to Q = It."
     },
     {
-      "question": "A common examiner point on \"Electrolysis: quantitative aspect (Faraday's laws of elec…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "One faraday is:",
       "options": [
-        "True",
-        "False"
+        "96500 J",
+        "96500 C",
+        "6.022e23 C",
+        "1.6e-19 C"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Charge on one mole of electrons."
+    },
+    {
+      "question": "The mass of Cu deposited by 2 F from CuSO4 is:",
+      "options": [
+        "31.75 g",
+        "63.5 g",
+        "127 g",
+        "15.9 g"
+      ],
+      "answer": "B",
+      "explanation": "Cu2+ needs 2F per mole - 2F gives 63.5 g."
+    },
+    {
+      "question": "Same charge through AgNO3 and CuSO4 in series deposits 108 g Ag; Cu deposited:",
+      "options": [
+        "108 g",
+        "63.5 g",
+        "31.75 g",
+        "15.875 g"
+      ],
+      "answer": "C",
+      "explanation": "One equivalent each - E(Cu) = 31.75."
+    },
+    {
+      "question": "The electrochemical equivalent of silver (mg/C) is about:",
+      "options": [
+        "0.329",
+        "1.118",
+        "0.0932",
+        "108"
+      ],
+      "answer": "B",
+      "explanation": "108/96500 g per coulomb."
+    },
+    {
+      "question": "Current 2 A for 9650 s through AgNO3 deposits:",
+      "options": [
+        "2.16 g",
+        "4.03 g",
+        "1.08 g",
+        "10.8 g"
+      ],
+      "answer": "A",
+      "explanation": "19300 C = 0.2F = 0.2 mol Ag = 2.16 g."
+    },
+    {
+      "question": "Volume of H2 at STP from 1 F in acidulated water:",
+      "options": [
+        "22.4 L",
+        "11.2 L",
+        "5.6 L",
+        "2.24 L"
+      ],
+      "answer": "B",
+      "explanation": "2H+ + 2e- gives H2 - half mole per faraday."
+    },
+    {
+      "question": "To deposit 27 g of aluminium (Al3+), the charge needed is:",
+      "options": [
+        "96500 C",
+        "193000 C",
+        "289500 C",
+        "9650 C"
+      ],
+      "answer": "C",
+      "explanation": "3F per mole - 3 x 96500 C."
     }
   ],
   "examShortTricks": [
-    "Trick 1: First law one line: m = ZIt with Z = E/96500 (E = equivalent mass) — every numerical is a direct substitution.",
-    "Trick 2: Second law in ratio form: masses deposited by the same charge are in the ratio of equivalent masses, m1/m2 = E1/E2.",
-    "Trick 3: Charge bookkeeping: Q = It (I in amperes, t in seconds); moles of electrons = Q/96500; then divide by the ion charge.",
-    "Trick 4: 1 F deposits 1 equivalent = 1 mole of electrons' worth — Ag (108 g), Cu 63.5/2, Al 27/3."
+    "Pipeline: Q = It → /96500 → × E. Seconds check before anything. Series shortcut: masses ∝ E. Gas per F: H₂ 11.2 L, O₂ 5.6 L, Cl₂ 11.2 L. Cu²⁺ 2F/mol, Al³⁺ 3F/mol, Ag⁺ 1F/mol."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Weighing Electricity\n\nFaraday's two laws (1833) turn coulombs into grams: the mass deposited at an electrode is proportional to the charge passed (first law) and, for the same charge through different electrolytes, proportional to the equivalent mass (second law). One constant — **96500 C per mole of electrons** — wires the whole quantitative side of electrolysis together, and every numerical in this chapter is one division away from it.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Faraday's first law\n\n- **Statement:** the mass of a substance deposited (or liberated) at an electrode is **directly proportional to the quantity of charge** passed through the electrolyte.\n- **m ∝ Q**; Q = I × t (current in amperes × time in seconds), so **m = Z × I × t**.\n- **Z (electrochemical equivalent, ECE):** mass deposited by **1 coulomb** — Z = E/96500, where E is the equivalent mass.\n\n### 2.2 Faraday's second law\n\n- **Statement:** when the **same quantity of charge** passes through different electrolytes connected in series, the masses deposited are **proportional to their equivalent masses**.\n- **m₁/m₂ = E₁/E₂** — silver deposits 108 g for every 31.75 g of copper from the same charge.\n- Consequence: one faraday (96500 C) deposits **one equivalent mass** of any substance.\n\n### 2.3 The faraday and the electron count\n\n- **1 faraday (F) = 96500 C** = the charge on **1 mole of electrons** (e = 1.6 × 10⁻¹⁹ C × 6.022 × 10²³ ≈ 96485 ≈ 96500 C).\n- Charge needed to deposit 1 mole of an ion = n × F, where n is the ion's charge: Na⁺ needs 1F, Cu²⁺ 2F, Al³⁺ 3F.\n- **ECE values:** Ag: 108/96500 = 1.118 mg/C; Cu: 31.75/96500 = 0.329 mg/C; Al: 9/96500 = 0.0932 mg/C.\n\n### 2.4 Worked numericals (the exam templates)\n\n- **Silver, direct:** current 2 A for 30 minutes through AgNO₃. Q = 2 × 1800 = 3600 C. m = (108 × 3600)/96500 = **4.03 g**.\n- **Copper, direct:** current 1.5 A for 1 hour through CuSO₄. Q = 1.5 × 3600 = 5400 C. m = (31.75 × 5400)/96500 = **1.77 g**.\n- **Second law, series cells:** the same charge deposits 5.4 g Ag from AgNO₃; what Cu mass deposits from CuSO₄? m(Cu) = m(Ag) × E(Cu)/E(Ag) = 5.4 × 31.75/108 = **1.59 g**.\n- **Gas volume:** 1 F liberates 1 equivalent: ½ mol H₂ (11.2 L at STP) or ¼ mol O₂ (5.6 L). Current 2 A for 9650 s → Q = 19300 C = 0.2 F → H₂ = 2.24 L, O₂ = 1.12 L.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value |\n|---|---|---|\n| **Faraday's first law** | m ∝ Q passed | m = ZIt |\n| **Faraday's second law** | Same Q: m ∝ E | m₁/m₂ = E₁/E₂ |\n| **Electrochemical equivalent (Z)** | Mass per coulomb | Ag: 1.118 mg/C |\n| **Faraday constant** | Charge of 1 mol electrons | 96500 C |\n| **Equivalent mass (E)** | Formula mass / n | Cu: 63.5/2 = 31.75 |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why one faraday deposits one equivalent\n\n- Every mole of electrons carries 96500 C; an ion of charge n needs n electrons per ion, so 1 mol electrons (1 F) reduces exactly 1/n mol — that is, **one equivalent** — of the ion. The second law is this sentence restated: equal charge → equal equivalents → masses in the ratio of equivalent masses.\n\n### 4.2 Setting up any numerical\n\n1. Compute **Q = I × t** (seconds!).\n2. Convert to faradays: **n(F) = Q/96500**.\n3. Mass = (equivalent mass) × n(F); or volume of gas = (22.4/n) × n(F) litres at STP.\n4. For series cells, skip recomputation — apply m₁/m₂ = E₁/E₂ directly.\n\n### 4.3 The copper voltameter as charge meter\n\n- Weigh the cathode before and after; the gain ÷ (E(Cu) × 96500) gives the charge — a **coulometer**. Historically this defined the ampere practically; exam numericals often hide a \"find the current\" reversal of the same algebra.",
+      "## 5. Comparison Tables\n\n**One faraday's harvest (1 F = 96500 C)**\n\n| Ion | Half-reaction | Deposited per F |\n|---|---|---|\n| Ag⁺ | Ag⁺ + e⁻ → Ag | 108 g Ag |\n| Cu²⁺ | Cu²⁺ + 2e⁻ → Cu | 31.75 g Cu |\n| Al³⁺ | Al³⁺ + 3e⁻ → Al | 9 g Al |\n| H⁺ | 2H⁺ + 2e⁻ → H₂ | 11.2 L H₂ (STP) |\n| OH⁻ | 4OH⁻ → O₂ + 2H₂O + 4e⁻ | 5.6 L O₂ (STP) |\n\n**The two laws at a glance**\n\n| Basis | First law | Second law |\n|---|---|---|\n| Proportionality | m ∝ Q (one electrolyte) | m ∝ E (same Q, several electrolytes) |\n| Equation | m = ZIt | m₁/m₂ = E₁/E₂ |\n| Key constant | Z = E/96500 | F = 96500 C |\n| Typical question | Find mass from I and t | Series-cell mass ratios |",
+      "## 6. Common Confusions\n\n**Time must be seconds:** I × t with minutes or hours silently multiplies errors by 60 or 3600 — convert first, always.",
+      "**n is the ion's charge, not the element's valence in the compound:** Cu²⁺ → 2F per mole even though \"copper sulphate\" mentions no charge; Al³⁺ → 3F.",
+      "**First law needs one cell; second law needs several:** mixing them up in numericals produces ratio errors — check what the question actually varies.",
+      "## 7. Exam Application\n\n**NEB-style (3m): State Faraday's first law and calculate the mass of silver deposited when a current of 2 A passes through AgNO₃ solution for 30 minutes.** — First law: the mass deposited at an electrode is directly proportional to the quantity of charge passed, m = ZIt. Charge: Q = 2 × (30 × 60) = 3600 C. Faradays: 3600/96500 = 0.0373 F. Since Ag⁺ + e⁻ → Ag needs 1 F per mole (E = 108): **m = (108 × 3600)/96500 ≈ 4.03 g**.",
+      "**NEB-style (3m): The same current passes through two cells in series containing AgNO₃ and CuSO₄. If 5.4 g of silver deposits, what mass of copper deposits?** — By Faraday's second law, m(Ag)/m(Cu) = E(Ag)/E(Cu). E(Ag) = 108 (n = 1); E(Cu) = 63.5/2 = 31.75 (n = 2). **m(Cu) = 5.4 × 31.75/108 = 1.59 g.**",
+      "**NEB-style (2m): Calculate the volume of oxygen liberated at STP when a current of 2 A passes through acidulated water for 9650 s.** — Q = 2 × 9650 = 19300 C = 0.2 F. Oxygen: 4e⁻ per O₂, so 1 F gives 5.6 L; 0.2 F gives **1.12 L of O₂ at STP** (and 2.24 L of H₂ at the cathode)."
+    ],
+    "confusion": [
+      "**Z and E are different numbers:** Z is per coulomb (mg/C), E is per faraday (g/F = equivalent mass); m = ZIt and m = (E × Q)/96500 are the same formula written twice.",
+      "**Deposited vs liberated:** metals deposit as atoms (mass directly); gases liberate as molecules — use 22.4/n litres per faraday, not 22.4."
+    ],
+    "keyPoints": [
+      "First law: m ∝ Q, m = ZIt, Z = E/96500. Second law: same Q through series electrolytes → m₁/m₂ = E₁/E₂; 1 F deposits 1 equivalent. F = 96500 C = 1 mol electrons. E values: Ag 108, Cu 31.75, Al 9. Numericals: 2 A × 30 min Ag → 4.03 g; 5.4 g Ag ⇒ 1.59 g Cu in series; 0.2 F → 1.12 L O₂, 2.24 L H₂ at STP. Gas: 1 F gives 11.2 L H₂ or 5.6 L O₂."
+    ],
+    "importantConcepts": [
+      "Faraday's constant is the meeting point of electrochemistry and the mole: 96500 C moves one mole of electrons, so charge ÷ 96500 = moles of electrons — the same conversion that powers cell potential calculations in later units."
+    ],
+    "examples": [
+      "***The copper coulometer*** — weigh a copper cathode before and after, divide the gain by 0.329 mg/C, and you have measured the charge without a single electronic meter."
+    ],
+    "universalFacts": [
+      "Every aluminium smelter is a Faraday's-law calculator: ~13–15 kWh per kilogram of Al follows directly from 3 × 96500 C per 9 g — electricity prices set metal prices."
+    ],
+    "importantStatements": [
+      "\"The mass of a substance deposited at an electrode is proportional to the quantity of electricity passed; and for the same quantity of electricity through different electrolytes, the masses deposited are proportional to their equivalent masses.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on Faraday's laws exists in the current bank (the 2024 set covers redox concepts, ON rules, balancing, the series, H₂O₂ and fluorine; 2021's equivalent-mass question is solved in topic 40); all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Pipeline: Q = It → /96500 → × E. Seconds check before anything. Series shortcut: masses ∝ E. Gas per F: H₂ 11.2 L, O₂ 5.6 L, Cl₂ 11.2 L. Cu²⁺ 2F/mol, Al³⁺ 3F/mol, Ag⁺ 1F/mol."
+    ],
+    "examNotes": [
+      "Quote both laws verbatim before the calculation — the statement carries marks. Keep 96500 symbolic until the final line; premature rounding compounds errors in multi-step numericals."
+    ],
+    "formulas": [
+      "- Q = I × t (t in seconds)\n- First law: m = ZIt, Z = E/96500\n- Second law: m₁/m₂ = E₁/E₂\n- Moles of electrons = Q/96500\n- Gas at STP: V = (22.4/n) × (Q/96500) L"
+    ],
+    "practice": [
+      "A current of 0.5 A passes through CuSO₄ for 2 hours; find the copper deposited and the volume of O₂ at the anode.",
+      "In series cells of AgNO₃ and Al₂(SO₄)₃, 2.16 g of Ag deposits; find the aluminium deposited.",
+      "Derive the second law from the first law using the concept of the equivalent."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): State Faraday's first law of electrolysis. Calculate the mass of silver deposited when a current of 2 A is passed through AgNO₃ solution for 30 minutes (Ag = 108, F = 96500 C).** — **First law:** the mass of a substance deposited or liberated at an electrode during electrolysis is directly proportional to the quantity of electric charge passed through the electrolyte: m ∝ Q, or m = ZIt, where Z (electrochemical equivalent) is the mass deposited per coulomb and Z = E/96500. **Calculation:** charge Q = I × t = 2 × (30 × 60) = 2 × 1800 = 3600 C. Moles of electrons = 3600/96500 = 0.0373 F. Since Ag⁺ + e⁻ → Ag, one faraday deposits one mole (108 g): m = (108 × 3600)/96500 = 388800/96500 ≈ **4.03 g of silver**.",
+      "**NEB-style (3m): The same quantity of electricity is passed through two cells in series containing AgNO₃ and CuSO₄ solutions. If 5.4 g of silver is deposited in the first cell, calculate the mass of copper deposited in the second (Ag = 108, Cu = 63.5).** — By **Faraday's second law**, masses deposited by the same charge in different electrolytes are proportional to their equivalent masses: m(Ag)/m(Cu) = E(Ag)/E(Cu). Equivalent mass of Ag: 108/1 = 108 (Ag⁺ takes 1 electron). Equivalent mass of Cu: 63.5/2 = 31.75 (Cu²⁺ takes 2 electrons). Therefore m(Cu) = m(Ag) × E(Cu)/E(Ag) = 5.4 × 31.75/108 = 5.4 × 0.294 ≈ **1.59 g of copper**. The same charge deposits one equivalent of each substance — 0.05 mol of Ag and 0.025 mol of Cu.",
+      "**NEB-style (2m): A current of 2 A is passed through acidulated water for 9650 s. Calculate the volume of oxygen liberated at the anode at STP (F = 96500 C).** — Charge passed: Q = I × t = 2 × 9650 = 19300 C. Faradays: 19300/96500 = **0.2 F**. At the anode, 4OH⁻ → O₂ + 2H₂O + 4e⁻: four faradays liberate one mole of O₂ (22.4 L at STP), so one faraday liberates 5.6 L. Volume of O₂ = 0.2 × 5.6 = **1.12 L at STP** (while 0.2 F at the cathode liberates 0.2 × 11.2 = 2.24 L of hydrogen — the 2 : 1 volume ratio of water's electrolysis)."
+    ]
+  },
+  "importantConcepts": [
+    "Faraday's constant is the meeting point of electrochemistry and the mole: 96500 C moves one mole of electrons, so charge ÷ 96500 = moles of electrons — the same conversion that powers cell potential calculations in later units."
+  ],
+  "importantStatements": [
+    "\"The mass of a substance deposited at an electrode is proportional to the quantity of electricity passed; and for the same quantity of electricity through different electrolytes, the masses deposited are proportional to their equivalent masses.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on Faraday's laws exists in the current bank (the 2024 set covers redox concepts, ON rules, balancing, the series, H₂O₂ and fluorine; 2021's equivalent-mass question is solved in topic 40); all items above are NEB-style practice."
+  ],
+  "examNotes": [
+    "Quote both laws verbatim before the calculation — the statement carries marks. Keep 96500 symbolic until the final line; premature rounding compounds errors in multi-step numericals."
+  ],
+  "mcs": [
+    {
+      "question": "Faraday's first law states m is proportional to:",
+      "options": [
+        "Current only",
+        "Time only",
+        "Quantity of charge",
+        "Electrode area"
+      ],
+      "answer": "C",
+      "explanation": "m = ZIt - proportional to Q = It."
+    },
+    {
+      "question": "One faraday is:",
+      "options": [
+        "96500 J",
+        "96500 C",
+        "6.022e23 C",
+        "1.6e-19 C"
+      ],
+      "answer": "B",
+      "explanation": "Charge on one mole of electrons."
+    },
+    {
+      "question": "The mass of Cu deposited by 2 F from CuSO4 is:",
+      "options": [
+        "31.75 g",
+        "63.5 g",
+        "127 g",
+        "15.9 g"
+      ],
+      "answer": "B",
+      "explanation": "Cu2+ needs 2F per mole - 2F gives 63.5 g."
+    },
+    {
+      "question": "Same charge through AgNO3 and CuSO4 in series deposits 108 g Ag; Cu deposited:",
+      "options": [
+        "108 g",
+        "63.5 g",
+        "31.75 g",
+        "15.875 g"
+      ],
+      "answer": "C",
+      "explanation": "One equivalent each - E(Cu) = 31.75."
+    },
+    {
+      "question": "The electrochemical equivalent of silver (mg/C) is about:",
+      "options": [
+        "0.329",
+        "1.118",
+        "0.0932",
+        "108"
+      ],
+      "answer": "B",
+      "explanation": "108/96500 g per coulomb."
+    },
+    {
+      "question": "Current 2 A for 9650 s through AgNO3 deposits:",
+      "options": [
+        "2.16 g",
+        "4.03 g",
+        "1.08 g",
+        "10.8 g"
+      ],
+      "answer": "A",
+      "explanation": "19300 C = 0.2F = 0.2 mol Ag = 2.16 g."
+    },
+    {
+      "question": "Volume of H2 at STP from 1 F in acidulated water:",
+      "options": [
+        "22.4 L",
+        "11.2 L",
+        "5.6 L",
+        "2.24 L"
+      ],
+      "answer": "B",
+      "explanation": "2H+ + 2e- gives H2 - half mole per faraday."
+    },
+    {
+      "question": "To deposit 27 g of aluminium (Al3+), the charge needed is:",
+      "options": [
+        "96500 C",
+        "193000 C",
+        "289500 C",
+        "9650 C"
+      ],
+      "answer": "C",
+      "explanation": "3F per mole - 3 x 96500 C."
+    }
   ]
 }

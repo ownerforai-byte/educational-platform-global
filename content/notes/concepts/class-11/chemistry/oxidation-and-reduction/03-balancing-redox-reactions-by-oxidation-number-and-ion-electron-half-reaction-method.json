@@ -7,55 +7,22 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Oxidation = loss e⁻ (OIL), Reduction = gain e⁻ (RIG).",
-    "Oxidation numbers identify redox.",
-    "Galvanic cells: chemical → electrical energy.",
-    "Faraday laws: m = ZIt.",
-    "# Balancing redox reactions by oxidation number and ion-electron (half reaction) method\n\n## 1. Introduction\nChemical picture of **Balancing redox reactions by oxidation number and ion-electron (half reaction) method** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Oxidation and Reduction fill pass.\n\n## 2. Concepts and definitions\n### Balancing redox reactions by oxidation number and ion-electron (half reaction) method\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Balancing redox reactions by oxidation number and ion-electron (half reaction) method — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Balancing redox reactions by oxidation number and ion-electron (half reaction) method — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Balancing redox reactions by oxidation number and ion-electron (half reaction) method — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Balancing redox reactions by oxidation number and ion-electron (half reaction) method — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Making Electrons Balance on Paper\n\nA redox equation must balance twice: atoms **and** electrons. Two formal methods deliver this — the **oxidation-number method** (compare numbers, equalise total increase and decrease) and the **ion-electron (half-reaction) method** (split into oxidation and reduction halves, balance each, add). Both converge on the same balanced equation; exams ask for either by name (NEB 2023 and NEB 2024 both tested them). Alongside sits the equivalent-mass calculation that turns a balanced redox into titration arithmetic.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Oxidation-number method — the steps\n\n1. Write the skeleton equation and assign oxidation numbers to every atom.\n2. Identify the elements whose numbers change; note the **increase** and **decrease** per atom.\n3. **Equalise** total increase = total decrease by multiplying species with suitable coefficients.\n4. Balance the remaining atoms by inspection (metals, then non-metals, then O with H₂O, then H with H⁺ if ionic/acidic).\n5. For ionic equations, add electrons implicitly via the numbers and check the charge balance.\n\n### 2.2 Ion-electron (half-reaction) method — the steps\n\n1. Write the **two half-reactions** — oxidation and reduction — in ionic form.\n2. Balance each: atoms other than O and H first; then O by adding **H₂O**; then H by adding **H⁺** (acidic medium; for basic medium, finish with OH⁻); finally **charge** by adding **electrons**.\n3. Multiply the halves so **electrons lost = electrons gained**.\n4. Add the halves; cancel common species (electrons, H⁺, H₂O appearing on both sides).\n\n### 2.3 Equivalent mass of an oxidant/reductant\n\n- **Equivalent mass = formula mass ÷ n-factor**, where n-factor = electrons gained or lost per formula unit in that reaction.\n- **K₂Cr₂O₇ in acid:** each Cr falls +6 → +3 (3 e⁻ × 2 Cr) → n = 6 → equivalent mass = 294/6 = **49**.\n- **KMnO₄ in acid:** Mn +7 → +2 → n = 5 → 158/5 = **31.6**; in neutral/basic (Mn +7 → +4, MnO₂): n = 3 → 158/3 ≈ 52.7.\n- Equivalent mass depends on the reaction — the same compound carries different equivalents in different media.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Half-reaction** | One half of a redox: oxidation or reduction alone | MnO₄⁻ → Mn²⁺ |\n| **Ion-electron method** | Balancing by adding balanced half-reactions | Electrons cancel |\n| **Oxidation-number method** | Balancing by equalising total ON change | Increase = decrease |\n| **n-factor** | Electrons transferred per formula unit | K₂Cr₂O₇: 6 |\n| **Equivalent mass** | Formula mass ÷ n-factor | K₂Cr₂O₇: 49 |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): ion-electron method — MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic)\n\n- **Reduction half:** MnO₄⁻ → Mn²⁺. Balance O: MnO₄⁻ → Mn²⁺ + 4H₂O. Balance H: 8H⁺ on the left. Balance charge: 8H⁺ + MnO₄⁻ (net +7) → Mn²⁺ + 4H₂O (net +2) → add **5e⁻ left**: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O.\n- **Oxidation half:** Fe²⁺ → Fe³⁺ + e⁻.\n- **Equalise electrons:** ×5 the iron half; **add:** MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O.\n- Check: charge left = −1 + 10 + 8 = +17; right = +2 + 15 = +17 ✓.\n\n### 4.2 Verified PYQ (NEB 2023): oxidation-number method — MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ + H₂O\n\n- Oxidation numbers: Mn +7 → +2 (**decrease 5**); C +3 → +4 (**increase 1 per C, 2 per C₂O₄²⁻**).\n- Equalise: increase per oxalate = 2, decrease per Mn = 5 → LCM 10 → **2 MnO₄⁻ and 5 C₂O₄²⁻**.\n- Skeleton with coefficients: 2MnO₄⁻ + 5C₂O₄²⁻ → 2Mn²⁺ + 10CO₂. Balance O/H with H⁺/H₂O: left has 8 + 10 = 18 O; right has 20 O + x from water → add **8H₂O right and 16H⁺ left**: 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O.\n- Check charge: left −2 −10 +16 = +4; right +4 ✓.\n\n### 4.3 Verified PYQ (NEB 2021): equivalent mass of K₂Cr₂O₇ as oxidant in acid\n\n- In acid, Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O: **6 electrons per formula unit** (each Cr +6 → +3).\n- Formula mass K₂Cr₂O₇ = 2(39) + 2(52) + 7(16) = 294.\n- **Equivalent mass = 294/6 = 49.**\n\n### 4.4 Choosing the method\n\n- Both give identical results; the ion-electron method is cleaner for ionic/acidic equations and required when half-reactions feed into electrochemistry (topic 41–42, cells); the oxidation-number method is fastest for molecular equations (C + HNO₃, Cu + H₂SO₄).",
+    "## 5. Comparison Tables\n\n**The two methods side by side**\n\n| Basis | Oxidation-number method | Ion-electron method |\n|---|---|---|\n| Principle | Total ON increase = total decrease | Electrons lost = electrons gained |\n| Works best for | Molecular equations | Ionic equations in acid/base |\n| Bookkeeping | Coefficients from ON changes | Half-reactions added |\n| Exam signal | \"by oxidation number method\" | \"by ion-electron (half-reaction) method\" |\n| Output | Same balanced equation | Same balanced equation |\n\n**Equivalent masses of the standard oxidants**\n\n| Oxidant | Medium | n-factor | Eq. mass |\n|---|---|---|---|\n| KMnO₄ (158) | Acidic | 5 | 31.6 |\n| KMnO₄ | Neutral/basic (→ MnO₂) | 3 | 52.7 |\n| K₂Cr₂O₇ (294) | Acidic | 6 | 49 |\n| I₂ (254) | — | 2 | 127 |",
+    "## 6. Common Confusions\n\n**Electrons never appear in the final answer:** they cancel when the halves are added — an equation with electrons left in it is unfinished work.",
+    "**Medium changes n-factor:** KMnO₄ takes 5 electrons in acid but only 3 in neutral solution (MnO₂ product) — quote the medium with every equivalent mass.",
+    "**Charge balance is the proof:** after balancing, check total charge on both sides; if it differs, an electron count is wrong.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): Balance by the ion-electron method: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic medium).** — Reduction half: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (O by water, H by H⁺, charge by electrons). Oxidation half: Fe²⁺ → Fe³⁺ + e⁻. Multiplying the iron half by 5 and adding: **MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O**. Charges balance at +17 both sides.",
+    "**Verified PYQ (NEB 2023): Balance by the oxidation number method: MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ + H₂O.** — Mn falls +7 → +2 (5 per Mn); carbon rises +3 → +4 (2 per oxalate). Equalising at LCM 10: 2 MnO₄⁻ and 5 C₂O₄²⁻. Balancing O and H with water and H⁺: **2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O**. Charge check: +4 on both sides.",
+    "**Verified PYQ (NEB 2021): Calculate the equivalent mass of K₂Cr₂O₇ acting as an oxidising agent in acid medium.** — In acid, dichromate accepts 6 electrons: Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O (each Cr drops +6 → +3). Formula mass = 2(39) + 2(52) + 7(16) = 294. **Equivalent mass = 294/6 = 49.**",
+    "**NEB-style (3m): Balance Cu + dilute HNO₃ → Cu(NO₃)₂ + NO + H₂O by the oxidation-number method.** — Cu: 0 → +2 (increase 2); N in HNO₃: +5 → +2 in NO (decrease 3). LCM 6: **3 Cu and 2 HNO₃ (reduced)**. Nitrate conservation needs 8 HNO₃ total (2 reduced + 6 providing Cu(NO₃)₂'s nitrate): 3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 2NO + 4H₂O. Hydrogen: 8 left, 8 in 4H₂O ✓."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
-    "❌ Electrolytic cells produce electricity. ✅ Galvanic/voltaic cells produce electricity; electrolytic cells consume it."
+    "**Balance O with H₂O and H with H⁺ — in that order:** reversing the sequence scrambles ionic equations; charge (electrons) always comes last.",
+    "**Equivalent mass is reaction-specific:** K₂Cr₂O₇ is 49 as an oxidant but different in other roles — always derive n from the actual half-reaction quoted."
   ],
   "bounds": [
     "Covers only: balancing redox reactions by oxidation number, ion-electron, half reaction, method (within Oxidation and Reduction).",
@@ -63,149 +30,126 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice balancing redox equations in acidic and basic media.",
-    "Practice calculating standard cell potential and ΔG°."
+    "Balance FeSO₄ + KMnO₄ + H₂SO₄ → Fe₂(SO₄)₃ + K₂SO₄ + MnSO₄ + H₂O by the ion-electron method.",
+    "Balance Zn + HNO₃ (dilute) → Zn(NO₃)₂ + NH₄NO₃ + H₂O by the oxidation-number method.",
+    "Calculate the equivalent masses of KMnO₄ in acidic and neutral media and explain the difference."
   ],
   "universalFacts": [
-    "answer pattern for \"Balancing redox reactions by oxidation number and ion-ele…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "Hydrogen sulphide scrubbers, bleaching plants and iron-and-manganese water filters all run balanced redox equations of this topic's type — the arithmetic keeps industrial chemistry lawful."
   ],
   "examples": [
-    "Zn|Zn²⁺||Cu²⁺|Cu: E°=+1.10V",
-    "Cu deposited by 2A for 30min: m≈1.19g"
+    "***The permanganate titration*** — every KMnO₄-vs-oxalate practical in the lab runs on the NEB 2023 equation: 2:5:16 stoichiometry, purple to colourless at the endpoint."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice balancing redox equations in acidic and basic media."
+    "**NEB 2024 (3m): Balance the redox reaction by the ion-electron method: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic medium).** — **Reduction half:** MnO₄⁻ → Mn²⁺. Balance oxygen with water: MnO₄⁻ → Mn²⁺ + 4H₂O. Balance hydrogen with H⁺: MnO₄⁻ + 8H⁺ → Mn²⁺ + 4H₂O. Balance charge with electrons: left +7, right +2, so add 5e⁻ to the left: **MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O**. **Oxidation half:** Fe²⁺ → Fe³⁺ + e⁻. **Equalise electrons:** multiply the iron half by 5. **Add and cancel 5e⁻:** MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O. Charge check: left = −1 + 10 + 8 = +17; right = +2 + 15 = +17 ✓.",
+    "**NEB 2023 (3m): Balance by the oxidation number (half-reaction) method: MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ + H₂O.** — Assign numbers: Mn falls from **+7 to +2** (decrease of 5 per Mn); carbon rises from **+3 to +4** (increase of 1 per C, i.e. 2 per C₂O₄²⁻). Total increase must equal total decrease: LCM of 5 and 2 is 10, so coefficient 2 for MnO₄⁻ and 5 for C₂O₄²⁻. Skeleton: 2MnO₄⁻ + 5C₂O₄²⁻ → 2Mn²⁺ + 10CO₂. Oxygen count: left 8 + 10 = 18; right 20 — add 8H₂O to the right and 16H⁺ to the left to balance hydrogen. **Balanced: 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O.** Charge check: left = −2 − 10 + 16 = +4; right = +4 ✓.",
+    "**NEB 2021 (2m): Calculate the equivalent mass (equivalent weight) of potassium dichromate, K₂Cr₂O₇, acting as an oxidising agent in acidic medium.** — In acid, the dichromate half-reaction is Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O: each chromium falls from +6 to +3 (3 electrons), and there are two chromium atoms, so the **n-factor is 6**. Formula mass of K₂Cr₂O₇ = 2(39) + 2(52) + 7(16) = **294**. **Equivalent mass = 294 ÷ 6 = 49.** This fixed value (unlike permanganate, which changes with medium) makes dichromate a preferred primary standard in redox titrations."
   ],
   "keyPoints": [
-    "• Balancing redox reactions by oxidation number",
-    "• Ion-electron",
-    "• Half reaction",
-    "• Method"
+    "Oxidation-number method: assign ONs, equalise increase = decrease, balance rest by inspection. Ion-electron: split halves, balance O→H₂O, H→H⁺, charge→e⁻, equalise electrons, add, cancel. Worked: MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O (NEB 2024); 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O (NEB 2023). Equivalent mass = M/n: K₂Cr₂O₇ 294/6 = 49 (NEB 2021); KMnO₄ acid 158/5 = 31.6, neutral 52.7. Charge balance is the final proof."
   ],
-  "summary": "Redox reactions involve electron transfer and are fundamental to electrochemistry and energy production.",
+  "summary": "Balancing redox is double-entry bookkeeping: atoms on one ledger, electrons on the other. The **oxidation-number method** equalises totals — find every number that moves, multiply until total increase equals total decrease, then mop up O with water and H with H⁺ (NEB 2023's MnO₄⁻/C₂O₄²⁻ lands on 2 : 5 : 16 → 2 : 10 : 8). The **ion-electron method** splits the reaction into two half-reactions, balances each in the fixed order O → H₂O, H → H⁺, charge → e⁻, equalises electrons, and adds (NEB 2024's MnO₄⁻/Fe²⁺ lands on 1 : 5 : 8 → 1 : 5 : 4); the electrons cancel and a charge check (+17 = +17) proves the work. The same half-reactions define **n-factors** — 5 for acid KMnO₄, 6 for K₂Cr₂O₇, 3 for neutral KMnO₄ — and dividing formula mass by n gives **equivalent masses** (31.6, 49, 52.7): the numbers that turn balanced equations into titration arithmetic. Medium matters, electrons never survive to the final equation, and the charge balance is always the last word.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Balancing redox reactions by oxidation number and ion-ele…\"?",
+      "question": "In the ion-electron method, oxygen is balanced by adding:",
       "options": [
-        "Balancing redox reactions by oxidation number",
-        "Ion-electron",
-        "Unrelated topic",
-        "None of the above"
+        "H+",
+        "H2O",
+        "OH-",
+        "Electrons"
+      ],
+      "answer": "B",
+      "explanation": "Water first, then H+ for hydrogen, then electrons for charge."
+    },
+    {
+      "question": "MnO4- + 5Fe2+ + 8H+ gives:",
+      "options": [
+        "Mn2+ + 5Fe3+ + 4H2O",
+        "MnO2 + 5Fe3+ + 2H2O",
+        "Mn + 5Fe3+",
+        "Mn3+ + 5Fe2+"
       ],
       "answer": "A",
-      "explanation": "Balancing redox reactions by oxidation number is listed among the official sub-ideas of Balancing redox reactions by oxidation number and ion-ele…; the others are not part of this topic."
+      "explanation": "The classic acid permanganate-iron(II) equation."
     },
     {
-      "question": "A common examiner point on \"Balancing redox reactions by oxidation number and ion-ele…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The n-factor of KMnO4 in acidic medium is:",
       "options": [
-        "True",
-        "False"
+        "3",
+        "5",
+        "6",
+        "7"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Mn +7 falls to +2 - five electrons."
     },
     {
-      "question": "In the reaction Zn → Zn²⁺ + 2e⁻, zinc is:",
+      "question": "The equivalent mass of K2Cr2O7 in acid is:",
       "options": [
-        "Oxidized",
-        "Reduced",
-        "Neither",
-        "Both"
+        "294",
+        "49",
+        "147",
+        "98"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "294 / 6 = 49."
     },
     {
-      "question": "Which is a strong oxidizing agent?",
+      "question": "In neutral medium KMnO4 is reduced to MnO2; its n-factor is:",
       "options": [
-        "Li",
-        "Na",
-        "F₂",
-        "K"
+        "5",
+        "4",
+        "3",
+        "1"
       ],
-      "answer": "C"
+      "answer": "C",
+      "explanation": "+7 to +4 - three electrons."
+    },
+    {
+      "question": "The oxidation-number method balances by making:",
+      "options": [
+        "Atoms equal first",
+        "Total increase equal total decrease",
+        "Charges equal first",
+        "Electrons explicit"
+      ],
+      "answer": "B",
+      "explanation": "Equalise ON rise and fall, then inspect the rest."
+    },
+    {
+      "question": "Electrons in a correctly combined redox equation:",
+      "options": [
+        "Appear on the left",
+        "Appear on the right",
+        "Cancel completely",
+        "Double in number"
+      ],
+      "answer": "C",
+      "explanation": "Lost = gained - they cancel when halves are added."
+    },
+    {
+      "question": "In 2MnO4- + 5C2O4(2-) + 16H+, the coefficient of H+ is:",
+      "options": [
+        "8",
+        "10",
+        "16",
+        "18"
+      ],
+      "answer": "C",
+      "explanation": "Hydrogen balance across 8 water molecules on the right."
     }
   ],
   "formulas": [
-    "E°cell = E°cathode - E°anode",
-    "Q = It",
-    "m = ZIt (Faraday's first law)"
+    "- MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O\n- Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O\n- MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O\n- 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O\n- Equivalent mass = formula mass / n-factor"
   ],
   "importantNotes": [
-    "Important note regarding 03 balancing redox reactions."
+    "Verified PYQs: NEB 2024 — ion-electron balancing of MnO₄⁻/Fe²⁺; NEB 2023 — oxidation-number balancing of MnO₄⁻/C₂O₄²⁻; NEB 2021 — equivalent mass of K₂Cr₂O₇ = 49 (all solved above). NEB 2022's H₂O₂ question is answered in topic 38. Other items are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Balancing Redox Reactions."
+    "Acid half-reaction recipe: \"O → H₂O, H → H⁺, charge → e⁻\". Common products: MnO₄⁻/H⁺ → Mn²⁺ (5e), Cr₂O₇²⁻/H⁺ → 2Cr³⁺ (6e), MnO₄⁻/H₂O → MnO₂ (3e). Eq masses: 31.6, 49, 52.7."
   ],
   "importantConcepts": [
-    "Key concept 1 for 03 balancing redox reactions."
+    "Both methods are the same conservation law in two costumes: electrons (or oxidation-number units) lost must equal gained. The ion-electron half-reactions reappear verbatim as electrode reactions in electrolysis and cells — learn them once, use them thrice."
   ],
   "importantTasks": [
     "Task for studying 03 balancing redox reactions."
@@ -216,9 +160,11 @@
     "Specialized insight for 03 balancing redox reactions."
   ],
   "importantStatements": [
-    "Key statement for 03 balancing redox reactions."
+    "\"In a balanced redox equation, the total increase in oxidation numbers equals the total decrease — equivalently, electrons lost equal electrons gained.\""
   ],
-  "examNotes": [],
+  "examNotes": [
+    "Write every intermediate step of the half-reactions — examiners award marks for O, H, charge balancing separately. Finish with the charge check; stating \"+17 both sides\" is a visible proof line."
+  ],
   "exercises": [
     {
       "id": "1",
@@ -237,5 +183,152 @@
     "component": "RedoxCellSim",
     "desc": "Interactive electrochemical cell"
   },
-  "visualType": "balancing-equations"
+  "visualType": "balancing-equations",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Making Electrons Balance on Paper\n\nA redox equation must balance twice: atoms **and** electrons. Two formal methods deliver this — the **oxidation-number method** (compare numbers, equalise total increase and decrease) and the **ion-electron (half-reaction) method** (split into oxidation and reduction halves, balance each, add). Both converge on the same balanced equation; exams ask for either by name (NEB 2023 and NEB 2024 both tested them). Alongside sits the equivalent-mass calculation that turns a balanced redox into titration arithmetic.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Oxidation-number method — the steps\n\n1. Write the skeleton equation and assign oxidation numbers to every atom.\n2. Identify the elements whose numbers change; note the **increase** and **decrease** per atom.\n3. **Equalise** total increase = total decrease by multiplying species with suitable coefficients.\n4. Balance the remaining atoms by inspection (metals, then non-metals, then O with H₂O, then H with H⁺ if ionic/acidic).\n5. For ionic equations, add electrons implicitly via the numbers and check the charge balance.\n\n### 2.2 Ion-electron (half-reaction) method — the steps\n\n1. Write the **two half-reactions** — oxidation and reduction — in ionic form.\n2. Balance each: atoms other than O and H first; then O by adding **H₂O**; then H by adding **H⁺** (acidic medium; for basic medium, finish with OH⁻); finally **charge** by adding **electrons**.\n3. Multiply the halves so **electrons lost = electrons gained**.\n4. Add the halves; cancel common species (electrons, H⁺, H₂O appearing on both sides).\n\n### 2.3 Equivalent mass of an oxidant/reductant\n\n- **Equivalent mass = formula mass ÷ n-factor**, where n-factor = electrons gained or lost per formula unit in that reaction.\n- **K₂Cr₂O₇ in acid:** each Cr falls +6 → +3 (3 e⁻ × 2 Cr) → n = 6 → equivalent mass = 294/6 = **49**.\n- **KMnO₄ in acid:** Mn +7 → +2 → n = 5 → 158/5 = **31.6**; in neutral/basic (Mn +7 → +4, MnO₂): n = 3 → 158/3 ≈ 52.7.\n- Equivalent mass depends on the reaction — the same compound carries different equivalents in different media.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Half-reaction** | One half of a redox: oxidation or reduction alone | MnO₄⁻ → Mn²⁺ |\n| **Ion-electron method** | Balancing by adding balanced half-reactions | Electrons cancel |\n| **Oxidation-number method** | Balancing by equalising total ON change | Increase = decrease |\n| **n-factor** | Electrons transferred per formula unit | K₂Cr₂O₇: 6 |\n| **Equivalent mass** | Formula mass ÷ n-factor | K₂Cr₂O₇: 49 |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): ion-electron method — MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic)\n\n- **Reduction half:** MnO₄⁻ → Mn²⁺. Balance O: MnO₄⁻ → Mn²⁺ + 4H₂O. Balance H: 8H⁺ on the left. Balance charge: 8H⁺ + MnO₄⁻ (net +7) → Mn²⁺ + 4H₂O (net +2) → add **5e⁻ left**: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O.\n- **Oxidation half:** Fe²⁺ → Fe³⁺ + e⁻.\n- **Equalise electrons:** ×5 the iron half; **add:** MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O.\n- Check: charge left = −1 + 10 + 8 = +17; right = +2 + 15 = +17 ✓.\n\n### 4.2 Verified PYQ (NEB 2023): oxidation-number method — MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ + H₂O\n\n- Oxidation numbers: Mn +7 → +2 (**decrease 5**); C +3 → +4 (**increase 1 per C, 2 per C₂O₄²⁻**).\n- Equalise: increase per oxalate = 2, decrease per Mn = 5 → LCM 10 → **2 MnO₄⁻ and 5 C₂O₄²⁻**.\n- Skeleton with coefficients: 2MnO₄⁻ + 5C₂O₄²⁻ → 2Mn²⁺ + 10CO₂. Balance O/H with H⁺/H₂O: left has 8 + 10 = 18 O; right has 20 O + x from water → add **8H₂O right and 16H⁺ left**: 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O.\n- Check charge: left −2 −10 +16 = +4; right +4 ✓.\n\n### 4.3 Verified PYQ (NEB 2021): equivalent mass of K₂Cr₂O₇ as oxidant in acid\n\n- In acid, Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O: **6 electrons per formula unit** (each Cr +6 → +3).\n- Formula mass K₂Cr₂O₇ = 2(39) + 2(52) + 7(16) = 294.\n- **Equivalent mass = 294/6 = 49.**\n\n### 4.4 Choosing the method\n\n- Both give identical results; the ion-electron method is cleaner for ionic/acidic equations and required when half-reactions feed into electrochemistry (topic 41–42, cells); the oxidation-number method is fastest for molecular equations (C + HNO₃, Cu + H₂SO₄).",
+      "## 5. Comparison Tables\n\n**The two methods side by side**\n\n| Basis | Oxidation-number method | Ion-electron method |\n|---|---|---|\n| Principle | Total ON increase = total decrease | Electrons lost = electrons gained |\n| Works best for | Molecular equations | Ionic equations in acid/base |\n| Bookkeeping | Coefficients from ON changes | Half-reactions added |\n| Exam signal | \"by oxidation number method\" | \"by ion-electron (half-reaction) method\" |\n| Output | Same balanced equation | Same balanced equation |\n\n**Equivalent masses of the standard oxidants**\n\n| Oxidant | Medium | n-factor | Eq. mass |\n|---|---|---|---|\n| KMnO₄ (158) | Acidic | 5 | 31.6 |\n| KMnO₄ | Neutral/basic (→ MnO₂) | 3 | 52.7 |\n| K₂Cr₂O₇ (294) | Acidic | 6 | 49 |\n| I₂ (254) | — | 2 | 127 |",
+      "## 6. Common Confusions\n\n**Electrons never appear in the final answer:** they cancel when the halves are added — an equation with electrons left in it is unfinished work.",
+      "**Medium changes n-factor:** KMnO₄ takes 5 electrons in acid but only 3 in neutral solution (MnO₂ product) — quote the medium with every equivalent mass.",
+      "**Charge balance is the proof:** after balancing, check total charge on both sides; if it differs, an electron count is wrong.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): Balance by the ion-electron method: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic medium).** — Reduction half: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (O by water, H by H⁺, charge by electrons). Oxidation half: Fe²⁺ → Fe³⁺ + e⁻. Multiplying the iron half by 5 and adding: **MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O**. Charges balance at +17 both sides.",
+      "**Verified PYQ (NEB 2023): Balance by the oxidation number method: MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ + H₂O.** — Mn falls +7 → +2 (5 per Mn); carbon rises +3 → +4 (2 per oxalate). Equalising at LCM 10: 2 MnO₄⁻ and 5 C₂O₄²⁻. Balancing O and H with water and H⁺: **2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O**. Charge check: +4 on both sides.",
+      "**Verified PYQ (NEB 2021): Calculate the equivalent mass of K₂Cr₂O₇ acting as an oxidising agent in acid medium.** — In acid, dichromate accepts 6 electrons: Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O (each Cr drops +6 → +3). Formula mass = 2(39) + 2(52) + 7(16) = 294. **Equivalent mass = 294/6 = 49.**",
+      "**NEB-style (3m): Balance Cu + dilute HNO₃ → Cu(NO₃)₂ + NO + H₂O by the oxidation-number method.** — Cu: 0 → +2 (increase 2); N in HNO₃: +5 → +2 in NO (decrease 3). LCM 6: **3 Cu and 2 HNO₃ (reduced)**. Nitrate conservation needs 8 HNO₃ total (2 reduced + 6 providing Cu(NO₃)₂'s nitrate): 3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 2NO + 4H₂O. Hydrogen: 8 left, 8 in 4H₂O ✓."
+    ],
+    "confusion": [
+      "**Balance O with H₂O and H with H⁺ — in that order:** reversing the sequence scrambles ionic equations; charge (electrons) always comes last.",
+      "**Equivalent mass is reaction-specific:** K₂Cr₂O₇ is 49 as an oxidant but different in other roles — always derive n from the actual half-reaction quoted."
+    ],
+    "keyPoints": [
+      "Oxidation-number method: assign ONs, equalise increase = decrease, balance rest by inspection. Ion-electron: split halves, balance O→H₂O, H→H⁺, charge→e⁻, equalise electrons, add, cancel. Worked: MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O (NEB 2024); 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O (NEB 2023). Equivalent mass = M/n: K₂Cr₂O₇ 294/6 = 49 (NEB 2021); KMnO₄ acid 158/5 = 31.6, neutral 52.7. Charge balance is the final proof."
+    ],
+    "importantConcepts": [
+      "Both methods are the same conservation law in two costumes: electrons (or oxidation-number units) lost must equal gained. The ion-electron half-reactions reappear verbatim as electrode reactions in electrolysis and cells — learn them once, use them thrice."
+    ],
+    "examples": [
+      "***The permanganate titration*** — every KMnO₄-vs-oxalate practical in the lab runs on the NEB 2023 equation: 2:5:16 stoichiometry, purple to colourless at the endpoint."
+    ],
+    "universalFacts": [
+      "Hydrogen sulphide scrubbers, bleaching plants and iron-and-manganese water filters all run balanced redox equations of this topic's type — the arithmetic keeps industrial chemistry lawful."
+    ],
+    "importantStatements": [
+      "\"In a balanced redox equation, the total increase in oxidation numbers equals the total decrease — equivalently, electrons lost equal electrons gained.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 — ion-electron balancing of MnO₄⁻/Fe²⁺; NEB 2023 — oxidation-number balancing of MnO₄⁻/C₂O₄²⁻; NEB 2021 — equivalent mass of K₂Cr₂O₇ = 49 (all solved above). NEB 2022's H₂O₂ question is answered in topic 38. Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Acid half-reaction recipe: \"O → H₂O, H → H⁺, charge → e⁻\". Common products: MnO₄⁻/H⁺ → Mn²⁺ (5e), Cr₂O₇²⁻/H⁺ → 2Cr³⁺ (6e), MnO₄⁻/H₂O → MnO₂ (3e). Eq masses: 31.6, 49, 52.7."
+    ],
+    "examNotes": [
+      "Write every intermediate step of the half-reactions — examiners award marks for O, H, charge balancing separately. Finish with the charge check; stating \"+17 both sides\" is a visible proof line."
+    ],
+    "formulas": [
+      "- MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O\n- Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O\n- MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O\n- 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O\n- Equivalent mass = formula mass / n-factor"
+    ],
+    "practice": [
+      "Balance FeSO₄ + KMnO₄ + H₂SO₄ → Fe₂(SO₄)₃ + K₂SO₄ + MnSO₄ + H₂O by the ion-electron method.",
+      "Balance Zn + HNO₃ (dilute) → Zn(NO₃)₂ + NH₄NO₃ + H₂O by the oxidation-number method.",
+      "Calculate the equivalent masses of KMnO₄ in acidic and neutral media and explain the difference."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (3m): Balance the redox reaction by the ion-electron method: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic medium).** — **Reduction half:** MnO₄⁻ → Mn²⁺. Balance oxygen with water: MnO₄⁻ → Mn²⁺ + 4H₂O. Balance hydrogen with H⁺: MnO₄⁻ + 8H⁺ → Mn²⁺ + 4H₂O. Balance charge with electrons: left +7, right +2, so add 5e⁻ to the left: **MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O**. **Oxidation half:** Fe²⁺ → Fe³⁺ + e⁻. **Equalise electrons:** multiply the iron half by 5. **Add and cancel 5e⁻:** MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O. Charge check: left = −1 + 10 + 8 = +17; right = +2 + 15 = +17 ✓.",
+      "**NEB 2023 (3m): Balance by the oxidation number (half-reaction) method: MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ + H₂O.** — Assign numbers: Mn falls from **+7 to +2** (decrease of 5 per Mn); carbon rises from **+3 to +4** (increase of 1 per C, i.e. 2 per C₂O₄²⁻). Total increase must equal total decrease: LCM of 5 and 2 is 10, so coefficient 2 for MnO₄⁻ and 5 for C₂O₄²⁻. Skeleton: 2MnO₄⁻ + 5C₂O₄²⁻ → 2Mn²⁺ + 10CO₂. Oxygen count: left 8 + 10 = 18; right 20 — add 8H₂O to the right and 16H⁺ to the left to balance hydrogen. **Balanced: 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O.** Charge check: left = −2 − 10 + 16 = +4; right = +4 ✓.",
+      "**NEB 2021 (2m): Calculate the equivalent mass (equivalent weight) of potassium dichromate, K₂Cr₂O₇, acting as an oxidising agent in acidic medium.** — In acid, the dichromate half-reaction is Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O: each chromium falls from +6 to +3 (3 electrons), and there are two chromium atoms, so the **n-factor is 6**. Formula mass of K₂Cr₂O₇ = 2(39) + 2(52) + 7(16) = **294**. **Equivalent mass = 294 ÷ 6 = 49.** This fixed value (unlike permanganate, which changes with medium) makes dichromate a preferred primary standard in redox titrations."
+    ]
+  },
+  "mcs": [
+    {
+      "question": "In the ion-electron method, oxygen is balanced by adding:",
+      "options": [
+        "H+",
+        "H2O",
+        "OH-",
+        "Electrons"
+      ],
+      "answer": "B",
+      "explanation": "Water first, then H+ for hydrogen, then electrons for charge."
+    },
+    {
+      "question": "MnO4- + 5Fe2+ + 8H+ gives:",
+      "options": [
+        "Mn2+ + 5Fe3+ + 4H2O",
+        "MnO2 + 5Fe3+ + 2H2O",
+        "Mn + 5Fe3+",
+        "Mn3+ + 5Fe2+"
+      ],
+      "answer": "A",
+      "explanation": "The classic acid permanganate-iron(II) equation."
+    },
+    {
+      "question": "The n-factor of KMnO4 in acidic medium is:",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": "B",
+      "explanation": "Mn +7 falls to +2 - five electrons."
+    },
+    {
+      "question": "The equivalent mass of K2Cr2O7 in acid is:",
+      "options": [
+        "294",
+        "49",
+        "147",
+        "98"
+      ],
+      "answer": "B",
+      "explanation": "294 / 6 = 49."
+    },
+    {
+      "question": "In neutral medium KMnO4 is reduced to MnO2; its n-factor is:",
+      "options": [
+        "5",
+        "4",
+        "3",
+        "1"
+      ],
+      "answer": "C",
+      "explanation": "+7 to +4 - three electrons."
+    },
+    {
+      "question": "The oxidation-number method balances by making:",
+      "options": [
+        "Atoms equal first",
+        "Total increase equal total decrease",
+        "Charges equal first",
+        "Electrons explicit"
+      ],
+      "answer": "B",
+      "explanation": "Equalise ON rise and fall, then inspect the rest."
+    },
+    {
+      "question": "Electrons in a correctly combined redox equation:",
+      "options": [
+        "Appear on the left",
+        "Appear on the right",
+        "Cancel completely",
+        "Double in number"
+      ],
+      "answer": "C",
+      "explanation": "Lost = gained - they cancel when halves are added."
+    },
+    {
+      "question": "In 2MnO4- + 5C2O4(2-) + 16H+, the coefficient of H+ is:",
+      "options": [
+        "8",
+        "10",
+        "16",
+        "18"
+      ],
+      "answer": "C",
+      "explanation": "Hydrogen balance across 8 water molecules on the right."
+    }
+  ]
 }

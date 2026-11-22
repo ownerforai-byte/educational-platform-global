@@ -7,32 +7,43 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
-    "**Fact.** Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
-    "**Fact.** Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion.",
-    "# Electrolysis: qualitative aspect\n\n## 1. Introduction\nChemical picture of **Electrolysis** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Oxidation and Reduction fill pass.\n\n## 2. Concepts and definitions\n### Electrolysis: qualitative aspect\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Electrolysis — plant or apparatus flow with conditions labelled (authored SVG)\n- **D2** — Electrolysis — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Electrolysis — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Electrolysis — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Forcing Reactions Backwards with Electricity\n\nSpontaneous redox runs a galvanic cell; electricity can also **drive non-spontaneous redox** — that is electrolysis. Pass a current through molten NaCl and sodium metal appears at one electrode, chlorine gas at the other; pass it through CuSO₄ solution and copper plates out. Which ion discharges first is not chance: the **preferential discharge rule** and the electrochemical series decide, and the electrode products of the classic electrolyses are stock exam answers.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The electrolytic cell\n\n- **Electrolysis:** chemical decomposition by passage of direct current through an electrolyte (molten or aqueous).\n- **Cathode:** the **negative** electrode in electrolysis — **reduction** happens here (cations migrate to it, gain electrons).\n- **Anode:** the **positive** electrode — **oxidation** happens here (anions migrate, lose electrons).\n- Memory hook: **AN OX / RED CAT**, with polarity *inverted* from a galvanic cell (electrolysis cathode is −, anode +).\n- Energy conversion: **electrical → chemical** (the reverse of a galvanic cell).\n\n### 2.2 Preferential discharge theory\n\n- When several ions crowd the electrodes, the one **discharged first** is the one requiring **less energy** — related to position in the electrochemical series and concentration.\n- **At the cathode (cations):** discharge ease follows the series *upward from the bottom*: Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > Ca²⁺ > K⁺ (low-series cations like Cu²⁺ grab electrons most readily; alkali metals resist).\n- **At the anode (anions):** discharge ease: OH⁻ (gives O₂) > I⁻ > Br⁻ > Cl⁻ > F⁻ and SO₄²⁻/NO₃⁻ (rarely discharged — water oxidises instead).\n- **Electrode material matters:** an inert anode (Pt, graphite) is unchanged; a **reactive anode (Cu, Ag) dissolves itself** instead of discharging anions.\n\n### 2.3 The classic electrolyses\n\n- **Molten NaCl (inert electrodes):** cathode: Na⁺ + e⁻ → Na (silvery metal beads); anode: 2Cl⁻ → Cl₂ + 2e⁻ (green-yellow gas). Overall: 2NaCl → 2Na + Cl₂.\n- **Aqueous CuSO₄ with Pt electrodes:** cathode: Cu²⁺ + 2e⁻ → Cu (pink-brown deposit); anode: 4OH⁻ → O₂ + 2H₂O + 4e⁻ (OH⁻ beats SO₄²⁻). Solution turns acidic as Cu²⁺ depletes.\n- **Aqueous CuSO₄ with copper electrodes:** the anode **dissolves**: Cu → Cu²⁺ + 2e⁻, replenishing exactly what the cathode plates out — solution concentration constant. This is the basis of **copper refining and electroplating**.\n- **Acidulated water (dilute H₂SO₄, Pt):** cathode: 2H⁺ + 2e⁻ → H₂; anode: 4OH⁻ → O₂ + 2H₂O + 4e⁻; overall 2H₂O → 2H₂ + O₂ (volume ratio 2 : 1 — Hoffmann voltameter).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Polarity in electrolysis |\n|---|---|---|\n| **Electrolysis** | Decomposition by direct current | — |\n| **Cathode** | Electrode where reduction occurs | Negative |\n| **Anode** | Electrode where oxidation occurs | Positive |\n| **Preferential discharge** | Ion needing least energy deposits first | — |\n| **Inert electrode** | Does not react (Pt, graphite) | Either |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why polarity flips between cell types\n\n- In a galvanic cell the anode (oxidation) is negative because the spontaneous chemistry pushes electrons out; in electrolysis the external battery *imposes* the flow — the electrode connected to the battery's negative terminal pulls cations and forces reduction, so it is the cathode. Same chemistry (AN OX / RED CAT), opposite polarity.\n\n### 4.2 The discharge order in action\n\n- **Brine (aqueous NaCl):** cathode — H⁺ beats Na⁺ (hydrogen evolves, not sodium); anode — Cl⁻ beats OH⁻ at high Cl⁻ concentration (chlorine evolves). Products: H₂, Cl₂, and NaOH left in solution — the chlor-alkali industry.\n- **Dilute Na₂SO₄ with Pt:** only water electrolyses — H₂ and O₂ in 2:1; the salt is a spectator carrying current.\n\n### 4.3 Applications to quote\n\n- **Electrorefining of copper:** impure anode dissolves; pure Cu plates the cathode; Ag/Au fall as anode mud.\n- **Electroplating:** object made cathode in a salt bath of the plating metal (Ag plating from AgCN bath).\n- **Extraction:** reactive metals (Na, Mg, Al) are won by electrolysis of their molten compounds precisely because chemical reductants cannot beat them — series logic again.",
+    "## 5. Comparison Tables\n\n**Electrolytic vs galvanic cell**\n\n| Basis | Electrolytic | Galvanic |\n|---|---|---|\n| Energy | Electrical → chemical | Chemical → electrical |\n| Spontaneity | Non-spontaneous, driven | Spontaneous |\n| Cathode polarity | Negative | Positive |\n| Anode polarity | Positive | Negative |\n| Example | Molten NaCl electrolysis | Daniell cell |\n\n**Cathode and anode chemistry**\n\n| Electrode | Process | Migrating species | Example half-reaction |\n|---|---|---|---|\n| Cathode (−) | Reduction | Cations | Cu²⁺ + 2e⁻ → Cu |\n| Anode (+) | Oxidation | Anions (or anode metal) | 2Cl⁻ → Cl₂ + 2e⁻ |\n\n**Products of the classic electrolyses**\n\n| Electrolyte | Electrodes | Cathode product | Anode product |\n|---|---|---|---|\n| Molten NaCl | Inert | Na metal | Cl₂ gas |\n| Aqueous CuSO₄ | Pt | Cu deposit | O₂ gas |\n| Aqueous CuSO₄ | Cu | Cu deposit | Anode dissolves (Cu²⁺) |\n| Dilute H₂SO₄ | Pt | H₂ gas | O₂ gas (2:1) |",
+    "## 6. Common Confusions\n\n**Cathode is negative — but only in electrolysis:** in a galvanic cell the cathode is positive. The process (reduction at cathode) never changes; the sign does. Always state the cell type.",
+    "**Na⁺ rarely discharges from water:** in aqueous NaCl the hydrogen comes from water/H⁺, not sodium — molten salt is required to win sodium metal.",
+    "**Anode is where oxidation happens even if the anode itself is the victim:** a copper anode oxidises *into solution* — still oxidation, still the anode.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Describe the electrolysis of molten NaCl with inert electrodes, giving the electrode reactions.** — Molten NaCl contains free Na⁺ and Cl⁻. On passing current, Na⁺ migrates to the **cathode (negative)** and is reduced: Na⁺ + e⁻ → Na (molten silvery sodium collects). Cl⁻ migrates to the **anode (positive)** and is oxidised: 2Cl⁻ → Cl₂ + 2e⁻ (greenish-yellow chlorine gas bubbles off). Overall: 2NaCl(l) → 2Na(l) + Cl₂(g) — electrical energy drives a non-spontaneous decomposition, the industrial route to sodium metal.",
+    "**NEB-style (3m): Compare the electrolysis of aqueous CuSO₄ using platinum electrodes versus copper electrodes.** — **With Pt:** cathode reduces Cu²⁺ → Cu (deposit); anode oxidises OH⁻ (from water) rather than SO₄²⁻: 4OH⁻ → O₂ + 2H₂O + 4e⁻. Copper leaves the solution and oxygen escapes, so blue colour fades and acidity rises. **With Cu:** the anode itself oxidises: Cu → Cu²⁺ + 2e⁻, dissolving copper at exactly the rate the cathode deposits it — Cu²⁺ concentration stays constant, no gas evolves. The Cu-anode version is the working principle of copper refining and electroplating.",
+    "**NEB-style (2m): State the preferential discharge order at the cathode and give one consequence.** — Discharge ease at the cathode rises down the electrochemical series: Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > Ca²⁺ > K⁺. Consequence: in aqueous NaCl, H⁺ (from water) discharges instead of Na⁺, so hydrogen — not sodium — evolves at the cathode; sodium metal can only be won from molten NaCl."
   ],
-  "confusion": [],
+  "confusion": [
+    "**Anions do not always reach the anode's oxidation:** SO₄²⁻, NO₃⁻ and F⁻ resist discharge — water's OH⁻ is oxidised instead, so oxygen, not the anion's element, appears.",
+    "**Concentration bends the rules:** in concentrated brine Cl⁻ out-competes OH⁻ at the anode even though OH⁻ is nominally easier to discharge — the textbook order assumes comparable concentrations."
+  ],
   "bounds": [
     "Limit to remember: electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
-    "Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
-    "Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
+  "practice": [
+    "Predict the products of electrolysis of aqueous AgNO₃ with (a) platinum and (b) silver electrodes.",
+    "Explain why the solution in the Pt-electrode electrolysis of CuSO₄ becomes acidic while the Cu-electrode version does not.",
+    "Why must aluminium be extracted electrolytically rather than by carbon reduction?"
   ],
-  "examples": [],
-  "practiceQuestions": [],
+  "universalFacts": [
+    "Aluminium exists in aircraft only because electrolysis (Hall–Héroult, molten Al₂O₃ in cryolite) can force the reverse of thermite's favourite reaction — electricity beating the series."
+  ],
+  "examples": [
+    "***Electrorefining copper*** — an impure anode dissolves, 99.99% copper plates the cathode, silver and gold collect as \"anode mud\" worth more than the copper itself."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): Describe the electrolysis of molten sodium chloride using inert electrodes, with electrode reactions.** — Molten NaCl is an ionic liquid containing mobile Na⁺ and Cl⁻ ions. When a direct current passes, **Na⁺ migrates to the cathode (negative electrode)** and is reduced: **Na⁺ + e⁻ → Na** — molten sodium metal collects beneath the surface. **Cl⁻ migrates to the anode (positive electrode)** and is oxidised: **2Cl⁻ → Cl₂ + 2e⁻** — greenish-yellow chlorine gas evolves. Adding the halves (electrons cancel) gives the overall decomposition **2NaCl(l) → 2Na(l) + Cl₂(g)**. Electrical energy drives this non-spontaneous redox — the electrolytic route is the only practical source of sodium metal, since no chemical reductant can do the job.",
+    "**NEB-style (3m): Compare the electrolysis of aqueous copper sulphate using platinum electrodes with that using copper electrodes.** — **Platinum (inert) electrodes:** at the cathode Cu²⁺ is preferentially discharged — Cu²⁺ + 2e⁻ → Cu (pink-brown deposit). At the anode, sulphate resists discharge, so hydroxide ions from water are oxidised: 4OH⁻ → O₂ + 2H₂O + 4e⁻ — oxygen gas evolves. Copper leaves the solution while no Cu²⁺ returns, so the blue colour fades and the solution becomes acidic (excess H⁺). **Copper electrodes:** the anode is no longer inert — copper itself oxidises: Cu → Cu²⁺ + 2e⁻, dissolving at exactly the rate the cathode plates copper out. Cu²⁺ concentration stays constant, no gas evolves, and the cell simply transports copper from anode to cathode — the principle of **copper refining** (impure anode, pure cathode, Ag/Au anode mud) and of **electroplating**.",
+    "**NEB-style (2m): State the preferential discharge order of cations at the cathode and explain one practical consequence.** — The ease of discharge at the cathode follows the electrochemical series from bottom (most easily reduced) upward: **Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > Ca²⁺ > K⁺** — ions of low-series metals accept electrons most readily; alkali-metal ions resist hardest. **Consequence:** in the electrolysis of aqueous NaCl (brine), H⁺ from water discharges in preference to Na⁺, so **hydrogen gas — not sodium — evolves at the cathode**, while chlorine forms at the anode and NaOH accumulates in solution (the chlor-alkali process). Sodium metal can only be obtained by electrolysing **molten** NaCl, where no competing H⁺ exists."
+  ],
   "formulas": [
-    "ΔG = −nFE",
-    "E = E° − (0.0592/n)log Q (25°C)",
-    "m = (M/F)Q"
+    "- Cathode: Na⁺ + e⁻ → Na; Cu²⁺ + 2e⁻ → Cu; 2H⁺ + 2e⁻ → H₂\n- Anode: 2Cl⁻ → Cl₂ + 2e⁻; 4OH⁻ → O₂ + 2H₂O + 4e⁻; Cu → Cu²⁺ + 2e⁻\n- Overall (molten NaCl): 2NaCl → 2Na + Cl₂\n- Water electrolysis: 2H₂O → 2H₂ + O₂ (2 : 1 by volume)"
   ],
   "numericals": [
     "Use  ΔG = −nFE  — pick reasonable values, solve, and check the units.",
@@ -40,19 +51,258 @@
     "Use  m = (M/F)Q  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Electrolysis",
-    "• Qualitative aspect"
+    "Electrolysis: current decomposes molten/aqueous electrolyte; electrical → chemical. Cathode − (reduction, cations); anode + (oxidation, anions); AN OX/RED CAT with polarity opposite to galvanic. Preferential discharge: cathode order Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > K⁺; anode OH⁻ > I⁻ > Br⁻ > Cl⁻ > SO₄²⁻/F⁻. Classic cells: molten NaCl → Na + Cl₂; CuSO₄/Pt → Cu + O₂ (blue fades); CuSO₄/Cu → Cu plates, anode dissolves (refining/plating); dilute H₂SO₄ → H₂ : O₂ = 2 : 1."
   ],
-  "summary": "Electrolysis: qualitative aspect (Oxidation and Reduction, Chemistry, class-11-notes) covers Electrolysis, qualitative aspect. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Electrolysis is redox driven backwards: a battery forces electrons into the **cathode (negative)**, where cations are reduced, and pulls them from the **anode (positive)**, where anions — or the anode itself — are oxidised; same AN OX/RED CAT chemistry as a galvanic cell, opposite polarity. Which ion discharges first obeys the **preferential discharge rule**: at the cathode the order runs Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > K⁺, at the anode OH⁻ > I⁻ > Br⁻ > Cl⁻ > SO₄²⁻ — which is why brine gives hydrogen and chlorine (the chlor-alkali process), why CuSO₄ with platinum plates copper and bubbles oxygen while its blue fades, and why swapping in a **copper anode** dissolves metal at exactly the rate the cathode plates it — the engine of copper refining and electroplating. Molten NaCl, with no water to compete, finally surrenders sodium metal; dilute H₂SO₄ simply splits water 2 : 1. The discharge ladder is the electrochemical series wearing work clothes — the third job of one ranking.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Electrolysis: qualitative aspect\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "In electrolysis, reduction occurs at the:",
       "options": [
-        "True",
-        "False"
+        "Anode, which is positive",
+        "Cathode, which is negative",
+        "Anode, which is negative",
+        "Cathode, which is positive"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Cathode negative in electrolysis; reduction always at cathode."
+    },
+    {
+      "question": "Electrolysis converts:",
+      "options": [
+        "Chemical to electrical energy",
+        "Electrical to chemical energy",
+        "Heat to light",
+        "Mass to energy"
+      ],
+      "answer": "B",
+      "explanation": "The battery drives a non-spontaneous reaction."
+    },
+    {
+      "question": "Electrolysing molten NaCl gives at the cathode:",
+      "options": [
+        "Chlorine",
+        "Sodium metal",
+        "Hydrogen",
+        "Sodium hydroxide"
+      ],
+      "answer": "B",
+      "explanation": "No water to compete - Na+ is reduced to Na."
+    },
+    {
+      "question": "Electrolysing aqueous CuSO4 with Pt electrodes gives at the anode:",
+      "options": [
+        "Copper",
+        "SO2",
+        "Oxygen",
+        "Hydrogen"
+      ],
+      "answer": "C",
+      "explanation": "OH- discharges before SO4(2-) - oxygen evolves."
+    },
+    {
+      "question": "With a copper anode in CuSO4 electrolysis, the anode:",
+      "options": [
+        "Stays unchanged",
+        "Dissolves as Cu2+",
+        "Releases oxygen",
+        "Releases hydrogen"
+      ],
+      "answer": "B",
+      "explanation": "Cu - Cu2+ + 2e: the anode feeds the cathode."
+    },
+    {
+      "question": "Which cation discharges most easily at the cathode?",
+      "options": [
+        "K+",
+        "Na+",
+        "Zn2+",
+        "Cu2+"
+      ],
+      "answer": "D",
+      "explanation": "Low in the series - strongest electron acceptor of the list."
+    },
+    {
+      "question": "Electrolysing acidulated water gives H2 and O2 in volume ratio:",
+      "options": [
+        "1:2",
+        "2:1",
+        "1:1",
+        "1:8"
+      ],
+      "answer": "B",
+      "explanation": "2H2O gives 2H2 + O2."
+    },
+    {
+      "question": "Copper refining works because the anode:",
+      "options": [
+        "Is platinum",
+        "Dissolves to replenish Cu2+",
+        "Releases chlorine",
+        "Is cooled"
+      ],
+      "answer": "B",
+      "explanation": "Impure Cu dissolves; pure Cu plates the cathode."
+    }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Forcing Reactions Backwards with Electricity\n\nSpontaneous redox runs a galvanic cell; electricity can also **drive non-spontaneous redox** — that is electrolysis. Pass a current through molten NaCl and sodium metal appears at one electrode, chlorine gas at the other; pass it through CuSO₄ solution and copper plates out. Which ion discharges first is not chance: the **preferential discharge rule** and the electrochemical series decide, and the electrode products of the classic electrolyses are stock exam answers.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The electrolytic cell\n\n- **Electrolysis:** chemical decomposition by passage of direct current through an electrolyte (molten or aqueous).\n- **Cathode:** the **negative** electrode in electrolysis — **reduction** happens here (cations migrate to it, gain electrons).\n- **Anode:** the **positive** electrode — **oxidation** happens here (anions migrate, lose electrons).\n- Memory hook: **AN OX / RED CAT**, with polarity *inverted* from a galvanic cell (electrolysis cathode is −, anode +).\n- Energy conversion: **electrical → chemical** (the reverse of a galvanic cell).\n\n### 2.2 Preferential discharge theory\n\n- When several ions crowd the electrodes, the one **discharged first** is the one requiring **less energy** — related to position in the electrochemical series and concentration.\n- **At the cathode (cations):** discharge ease follows the series *upward from the bottom*: Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > Ca²⁺ > K⁺ (low-series cations like Cu²⁺ grab electrons most readily; alkali metals resist).\n- **At the anode (anions):** discharge ease: OH⁻ (gives O₂) > I⁻ > Br⁻ > Cl⁻ > F⁻ and SO₄²⁻/NO₃⁻ (rarely discharged — water oxidises instead).\n- **Electrode material matters:** an inert anode (Pt, graphite) is unchanged; a **reactive anode (Cu, Ag) dissolves itself** instead of discharging anions.\n\n### 2.3 The classic electrolyses\n\n- **Molten NaCl (inert electrodes):** cathode: Na⁺ + e⁻ → Na (silvery metal beads); anode: 2Cl⁻ → Cl₂ + 2e⁻ (green-yellow gas). Overall: 2NaCl → 2Na + Cl₂.\n- **Aqueous CuSO₄ with Pt electrodes:** cathode: Cu²⁺ + 2e⁻ → Cu (pink-brown deposit); anode: 4OH⁻ → O₂ + 2H₂O + 4e⁻ (OH⁻ beats SO₄²⁻). Solution turns acidic as Cu²⁺ depletes.\n- **Aqueous CuSO₄ with copper electrodes:** the anode **dissolves**: Cu → Cu²⁺ + 2e⁻, replenishing exactly what the cathode plates out — solution concentration constant. This is the basis of **copper refining and electroplating**.\n- **Acidulated water (dilute H₂SO₄, Pt):** cathode: 2H⁺ + 2e⁻ → H₂; anode: 4OH⁻ → O₂ + 2H₂O + 4e⁻; overall 2H₂O → 2H₂ + O₂ (volume ratio 2 : 1 — Hoffmann voltameter).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Polarity in electrolysis |\n|---|---|---|\n| **Electrolysis** | Decomposition by direct current | — |\n| **Cathode** | Electrode where reduction occurs | Negative |\n| **Anode** | Electrode where oxidation occurs | Positive |\n| **Preferential discharge** | Ion needing least energy deposits first | — |\n| **Inert electrode** | Does not react (Pt, graphite) | Either |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why polarity flips between cell types\n\n- In a galvanic cell the anode (oxidation) is negative because the spontaneous chemistry pushes electrons out; in electrolysis the external battery *imposes* the flow — the electrode connected to the battery's negative terminal pulls cations and forces reduction, so it is the cathode. Same chemistry (AN OX / RED CAT), opposite polarity.\n\n### 4.2 The discharge order in action\n\n- **Brine (aqueous NaCl):** cathode — H⁺ beats Na⁺ (hydrogen evolves, not sodium); anode — Cl⁻ beats OH⁻ at high Cl⁻ concentration (chlorine evolves). Products: H₂, Cl₂, and NaOH left in solution — the chlor-alkali industry.\n- **Dilute Na₂SO₄ with Pt:** only water electrolyses — H₂ and O₂ in 2:1; the salt is a spectator carrying current.\n\n### 4.3 Applications to quote\n\n- **Electrorefining of copper:** impure anode dissolves; pure Cu plates the cathode; Ag/Au fall as anode mud.\n- **Electroplating:** object made cathode in a salt bath of the plating metal (Ag plating from AgCN bath).\n- **Extraction:** reactive metals (Na, Mg, Al) are won by electrolysis of their molten compounds precisely because chemical reductants cannot beat them — series logic again.",
+      "## 5. Comparison Tables\n\n**Electrolytic vs galvanic cell**\n\n| Basis | Electrolytic | Galvanic |\n|---|---|---|\n| Energy | Electrical → chemical | Chemical → electrical |\n| Spontaneity | Non-spontaneous, driven | Spontaneous |\n| Cathode polarity | Negative | Positive |\n| Anode polarity | Positive | Negative |\n| Example | Molten NaCl electrolysis | Daniell cell |\n\n**Cathode and anode chemistry**\n\n| Electrode | Process | Migrating species | Example half-reaction |\n|---|---|---|---|\n| Cathode (−) | Reduction | Cations | Cu²⁺ + 2e⁻ → Cu |\n| Anode (+) | Oxidation | Anions (or anode metal) | 2Cl⁻ → Cl₂ + 2e⁻ |\n\n**Products of the classic electrolyses**\n\n| Electrolyte | Electrodes | Cathode product | Anode product |\n|---|---|---|---|\n| Molten NaCl | Inert | Na metal | Cl₂ gas |\n| Aqueous CuSO₄ | Pt | Cu deposit | O₂ gas |\n| Aqueous CuSO₄ | Cu | Cu deposit | Anode dissolves (Cu²⁺) |\n| Dilute H₂SO₄ | Pt | H₂ gas | O₂ gas (2:1) |",
+      "## 6. Common Confusions\n\n**Cathode is negative — but only in electrolysis:** in a galvanic cell the cathode is positive. The process (reduction at cathode) never changes; the sign does. Always state the cell type.",
+      "**Na⁺ rarely discharges from water:** in aqueous NaCl the hydrogen comes from water/H⁺, not sodium — molten salt is required to win sodium metal.",
+      "**Anode is where oxidation happens even if the anode itself is the victim:** a copper anode oxidises *into solution* — still oxidation, still the anode.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Describe the electrolysis of molten NaCl with inert electrodes, giving the electrode reactions.** — Molten NaCl contains free Na⁺ and Cl⁻. On passing current, Na⁺ migrates to the **cathode (negative)** and is reduced: Na⁺ + e⁻ → Na (molten silvery sodium collects). Cl⁻ migrates to the **anode (positive)** and is oxidised: 2Cl⁻ → Cl₂ + 2e⁻ (greenish-yellow chlorine gas bubbles off). Overall: 2NaCl(l) → 2Na(l) + Cl₂(g) — electrical energy drives a non-spontaneous decomposition, the industrial route to sodium metal.",
+      "**NEB-style (3m): Compare the electrolysis of aqueous CuSO₄ using platinum electrodes versus copper electrodes.** — **With Pt:** cathode reduces Cu²⁺ → Cu (deposit); anode oxidises OH⁻ (from water) rather than SO₄²⁻: 4OH⁻ → O₂ + 2H₂O + 4e⁻. Copper leaves the solution and oxygen escapes, so blue colour fades and acidity rises. **With Cu:** the anode itself oxidises: Cu → Cu²⁺ + 2e⁻, dissolving copper at exactly the rate the cathode deposits it — Cu²⁺ concentration stays constant, no gas evolves. The Cu-anode version is the working principle of copper refining and electroplating.",
+      "**NEB-style (2m): State the preferential discharge order at the cathode and give one consequence.** — Discharge ease at the cathode rises down the electrochemical series: Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > Ca²⁺ > K⁺. Consequence: in aqueous NaCl, H⁺ (from water) discharges instead of Na⁺, so hydrogen — not sodium — evolves at the cathode; sodium metal can only be won from molten NaCl."
+    ],
+    "confusion": [
+      "**Anions do not always reach the anode's oxidation:** SO₄²⁻, NO₃⁻ and F⁻ resist discharge — water's OH⁻ is oxidised instead, so oxygen, not the anion's element, appears.",
+      "**Concentration bends the rules:** in concentrated brine Cl⁻ out-competes OH⁻ at the anode even though OH⁻ is nominally easier to discharge — the textbook order assumes comparable concentrations."
+    ],
+    "keyPoints": [
+      "Electrolysis: current decomposes molten/aqueous electrolyte; electrical → chemical. Cathode − (reduction, cations); anode + (oxidation, anions); AN OX/RED CAT with polarity opposite to galvanic. Preferential discharge: cathode order Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > K⁺; anode OH⁻ > I⁻ > Br⁻ > Cl⁻ > SO₄²⁻/F⁻. Classic cells: molten NaCl → Na + Cl₂; CuSO₄/Pt → Cu + O₂ (blue fades); CuSO₄/Cu → Cu plates, anode dissolves (refining/plating); dilute H₂SO₄ → H₂ : O₂ = 2 : 1."
+    ],
+    "importantConcepts": [
+      "Same half-reaction vocabulary as topic 40 — MnO₄⁻ reduction then, Cu²⁺ reduction now. The electrochemical series (topic 38) reappears as the discharge-order table: one ranking, three applications (displacement, EMF, electrolysis products)."
+    ],
+    "examples": [
+      "***Electrorefining copper*** — an impure anode dissolves, 99.99% copper plates the cathode, silver and gold collect as \"anode mud\" worth more than the copper itself."
+    ],
+    "universalFacts": [
+      "Aluminium exists in aircraft only because electrolysis (Hall–Héroult, molten Al₂O₃ in cryolite) can force the reverse of thermite's favourite reaction — electricity beating the series."
+    ],
+    "importantStatements": [
+      "\"Electrolysis is the process of chemical decomposition of an electrolyte by the passage of electricity: reduction occurs at the cathode and oxidation at the anode.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on electrolysis exists in the current bank (the 2024 set covers redox concepts, ON rules, balancing, the series, H₂O₂ and fluorine); all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Polarity: \"electrolysis cathode = minus\". Discharge ladder: \"Cu H Pb Fe Zn Na K\" at the cathode; \"OH I Br Cl SO4 F\" at the anode. Classic products table: molten NaCl → Na/Cl₂; CuSO₄/Pt → Cu/O₂; CuSO₄/Cu → Cu/Cu²⁺; H₂SO₄ → 2:1."
+    ],
+    "examNotes": [
+      "For each electrolysis answer, give three things: migrating ions, both half-equations, and the observed product at each electrode — one missing half-equation costs the bulk of the marks."
+    ],
+    "formulas": [
+      "- Cathode: Na⁺ + e⁻ → Na; Cu²⁺ + 2e⁻ → Cu; 2H⁺ + 2e⁻ → H₂\n- Anode: 2Cl⁻ → Cl₂ + 2e⁻; 4OH⁻ → O₂ + 2H₂O + 4e⁻; Cu → Cu²⁺ + 2e⁻\n- Overall (molten NaCl): 2NaCl → 2Na + Cl₂\n- Water electrolysis: 2H₂O → 2H₂ + O₂ (2 : 1 by volume)"
+    ],
+    "practice": [
+      "Predict the products of electrolysis of aqueous AgNO₃ with (a) platinum and (b) silver electrodes.",
+      "Explain why the solution in the Pt-electrode electrolysis of CuSO₄ becomes acidic while the Cu-electrode version does not.",
+      "Why must aluminium be extracted electrolytically rather than by carbon reduction?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Describe the electrolysis of molten sodium chloride using inert electrodes, with electrode reactions.** — Molten NaCl is an ionic liquid containing mobile Na⁺ and Cl⁻ ions. When a direct current passes, **Na⁺ migrates to the cathode (negative electrode)** and is reduced: **Na⁺ + e⁻ → Na** — molten sodium metal collects beneath the surface. **Cl⁻ migrates to the anode (positive electrode)** and is oxidised: **2Cl⁻ → Cl₂ + 2e⁻** — greenish-yellow chlorine gas evolves. Adding the halves (electrons cancel) gives the overall decomposition **2NaCl(l) → 2Na(l) + Cl₂(g)**. Electrical energy drives this non-spontaneous redox — the electrolytic route is the only practical source of sodium metal, since no chemical reductant can do the job.",
+      "**NEB-style (3m): Compare the electrolysis of aqueous copper sulphate using platinum electrodes with that using copper electrodes.** — **Platinum (inert) electrodes:** at the cathode Cu²⁺ is preferentially discharged — Cu²⁺ + 2e⁻ → Cu (pink-brown deposit). At the anode, sulphate resists discharge, so hydroxide ions from water are oxidised: 4OH⁻ → O₂ + 2H₂O + 4e⁻ — oxygen gas evolves. Copper leaves the solution while no Cu²⁺ returns, so the blue colour fades and the solution becomes acidic (excess H⁺). **Copper electrodes:** the anode is no longer inert — copper itself oxidises: Cu → Cu²⁺ + 2e⁻, dissolving at exactly the rate the cathode plates copper out. Cu²⁺ concentration stays constant, no gas evolves, and the cell simply transports copper from anode to cathode — the principle of **copper refining** (impure anode, pure cathode, Ag/Au anode mud) and of **electroplating**.",
+      "**NEB-style (2m): State the preferential discharge order of cations at the cathode and explain one practical consequence.** — The ease of discharge at the cathode follows the electrochemical series from bottom (most easily reduced) upward: **Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > Ca²⁺ > K⁺** — ions of low-series metals accept electrons most readily; alkali-metal ions resist hardest. **Consequence:** in the electrolysis of aqueous NaCl (brine), H⁺ from water discharges in preference to Na⁺, so **hydrogen gas — not sodium — evolves at the cathode**, while chlorine forms at the anode and NaOH accumulates in solution (the chlor-alkali process). Sodium metal can only be obtained by electrolysing **molten** NaCl, where no competing H⁺ exists."
+    ]
+  },
+  "importantConcepts": [
+    "Same half-reaction vocabulary as topic 40 — MnO₄⁻ reduction then, Cu²⁺ reduction now. The electrochemical series (topic 38) reappears as the discharge-order table: one ranking, three applications (displacement, EMF, electrolysis products)."
+  ],
+  "importantStatements": [
+    "\"Electrolysis is the process of chemical decomposition of an electrolyte by the passage of electricity: reduction occurs at the cathode and oxidation at the anode.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on electrolysis exists in the current bank (the 2024 set covers redox concepts, ON rules, balancing, the series, H₂O₂ and fluorine); all items above are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Polarity: \"electrolysis cathode = minus\". Discharge ladder: \"Cu H Pb Fe Zn Na K\" at the cathode; \"OH I Br Cl SO4 F\" at the anode. Classic products table: molten NaCl → Na/Cl₂; CuSO₄/Pt → Cu/O₂; CuSO₄/Cu → Cu/Cu²⁺; H₂SO₄ → 2:1."
+  ],
+  "examNotes": [
+    "For each electrolysis answer, give three things: migrating ions, both half-equations, and the observed product at each electrode — one missing half-equation costs the bulk of the marks."
+  ],
+  "mcs": [
+    {
+      "question": "In electrolysis, reduction occurs at the:",
+      "options": [
+        "Anode, which is positive",
+        "Cathode, which is negative",
+        "Anode, which is negative",
+        "Cathode, which is positive"
+      ],
+      "answer": "B",
+      "explanation": "Cathode negative in electrolysis; reduction always at cathode."
+    },
+    {
+      "question": "Electrolysis converts:",
+      "options": [
+        "Chemical to electrical energy",
+        "Electrical to chemical energy",
+        "Heat to light",
+        "Mass to energy"
+      ],
+      "answer": "B",
+      "explanation": "The battery drives a non-spontaneous reaction."
+    },
+    {
+      "question": "Electrolysing molten NaCl gives at the cathode:",
+      "options": [
+        "Chlorine",
+        "Sodium metal",
+        "Hydrogen",
+        "Sodium hydroxide"
+      ],
+      "answer": "B",
+      "explanation": "No water to compete - Na+ is reduced to Na."
+    },
+    {
+      "question": "Electrolysing aqueous CuSO4 with Pt electrodes gives at the anode:",
+      "options": [
+        "Copper",
+        "SO2",
+        "Oxygen",
+        "Hydrogen"
+      ],
+      "answer": "C",
+      "explanation": "OH- discharges before SO4(2-) - oxygen evolves."
+    },
+    {
+      "question": "With a copper anode in CuSO4 electrolysis, the anode:",
+      "options": [
+        "Stays unchanged",
+        "Dissolves as Cu2+",
+        "Releases oxygen",
+        "Releases hydrogen"
+      ],
+      "answer": "B",
+      "explanation": "Cu - Cu2+ + 2e: the anode feeds the cathode."
+    },
+    {
+      "question": "Which cation discharges most easily at the cathode?",
+      "options": [
+        "K+",
+        "Na+",
+        "Zn2+",
+        "Cu2+"
+      ],
+      "answer": "D",
+      "explanation": "Low in the series - strongest electron acceptor of the list."
+    },
+    {
+      "question": "Electrolysing acidulated water gives H2 and O2 in volume ratio:",
+      "options": [
+        "1:2",
+        "2:1",
+        "1:1",
+        "1:8"
+      ],
+      "answer": "B",
+      "explanation": "2H2O gives 2H2 + O2."
+    },
+    {
+      "question": "Copper refining works because the anode:",
+      "options": [
+        "Is platinum",
+        "Dissolves to replenish Cu2+",
+        "Releases chlorine",
+        "Is cooled"
+      ],
+      "answer": "B",
+      "explanation": "Impure Cu dissolves; pure Cu plates the cathode."
     }
   ]
 }
