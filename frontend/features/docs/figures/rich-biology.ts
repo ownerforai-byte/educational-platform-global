@@ -59,6 +59,18 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       "crossing over", // chiasma diagram
     ],
   },
+  "immune-system-and-immunity": {
+    title: "The adaptive immune response — antibodies and their cells",
+    figures: [
+      {
+        src: "/docs/figures/biology/immune-response.jpg",
+        caption:
+          "The third line of defense, drawn the way a molecular poster would stage it. At the centre is the antibody itself — an immunoglobulin protein shown as a ribbon model in gold and rust: two long heavy chains paired with two shorter light chains, folded so the molecule holds its arms open like a Y. Each arm's tip is the antigen-binding site, shaped to clamp exactly one epitope — the lock-and-key specificity every exam question turns on. Around it, the cells that make the system work. Left: a B lymphocyte, its ruffled surface studded with small Y-shaped receptors — membrane-bound antibodies; when one meets its matching antigen, the B cell multiplies and its clone pours out free antibodies like the small gold molecules floating here. Right: the T lymphocyte, smoother and smaller — it does not secrete antibodies; it kills infected body cells and coordinates the response. Above, the innate side: a large macrophage stretching pseudopod arms around a spiky virus particle, engulfing it by phagocytosis and presenting its fragments to the T cells — the hand-off between nonspecific and specific immunity. The tiny dots between cells are the chemical signals (cytokines) that keep the conversation going.",
+        alt: "Illustration of an immune response: a large gold Y-shaped antibody ribbon model at centre, a lavender B lymphocyte studded with Y-shaped receptors, a green T lymphocyte, and a macrophage engulfing a red virus particle, with small free antibodies and signal dots between the cells",
+        keyword: "innate",
+      },
+    ],
+  },
   "food-chain-food-web-trophic-level-ecological-pyramids-productivity": {
     title: "A food web you can walk into",
     figures: [
