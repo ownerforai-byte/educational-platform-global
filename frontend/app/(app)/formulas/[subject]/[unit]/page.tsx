@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, BookOpen, FileText, History, Sigma } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, FileText, FlaskConical, History, Sigma } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import {
   FORMULA_SUBJECTS,
@@ -10,6 +10,7 @@ import {
   isFormulaSubjectSlug,
 } from "@/lib/formula-sheet";
 import { AnnotationBlock, AnnotationBlockLegend, ClassifiedNotes } from "@/components/formulas/classified-notes";
+import { getUnitDerivationLinks } from "@/features/formulas/derivation-links";
 
 /**
  * Prerendered at build (see the subject page): every populate-able unit gets
@@ -60,6 +61,8 @@ export default async function UnitFormulaPage({
 
   let formulaNo = 0;
   const unitNotesHref = `/class-11-notes/${sheet.slug}/chapters/${unit.id}`;
+  const derivations = getUnitDerivationLinks(sheet.slug, unit.id);
+  const derivationSolvedTotal = derivations.reduce((n, d) => n + d.solvedCount, 0);
 
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-8 md:py-12">
@@ -168,6 +171,62 @@ export default async function UnitFormulaPage({
       ))}
 
       <AnnotationBlockLegend />
+
+      {derivations.length > 0 && (
+        <section className="space-y-3">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-border/50 pb-2">
+            <h2 className="text-lg font-bold tracking-tight text-foreground">
+              Derivations of these formulas
+            </h2>
+            <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">
+              <FlaskConical className="h-3 w-3" />
+              {derivationSolvedTotal} NEB-style solved example{derivationSolvedTotal !== 1 ? "s" : ""}
+            </span>
+          </div>
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            Full line-by-line derivations with difficult conceptual solved
+            examples in NEB board style — the step-by-step mark scheme, the
+            given/working/answer format and the traps that cost marks.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {derivations.map((d) => (
+              <Link
+                key={d.slug}
+                href={d.href}
+                className="group flex flex-col rounded-2xl border border-border/70 bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-emerald-500/40 hover:shadow-lg"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-sm font-bold leading-snug text-foreground group-hover:text-primary">
+                    {d.title}
+                  </h3>
+                  <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                </div>
+                <div className="mt-2 rounded-xl border border-border/50 bg-muted/20 px-3 py-2">
+                  <MathMarkdown content={d.coreFormula} className="text-sm" />
+                </div>
+                <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
+                  <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">
+                    {d.solvedCount} solved example{d.solvedCount !== 1 ? "s" : ""}
+                  </span>
+                  {d.examBadges.map((badge) => (
+                    <span
+                      key={badge}
+                      className="rounded-full border border-amber-500/20 bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:text-amber-300"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                  {d.hasSpecialCases && (
+                    <span className="rounded-full border border-sky-500/20 bg-sky-500/10 px-2 py-0.5 text-[10px] font-semibold text-sky-700 dark:text-sky-300">
+                      Special cases
+                    </span>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <nav className="flex flex-wrap items-center gap-3 border-t border-border/60 pt-5 text-sm">
         <Link

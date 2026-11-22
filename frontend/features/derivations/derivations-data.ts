@@ -27,6 +27,9 @@ import { THEOREM_FILL_CHEM_1B } from "@/lib/theorem-fill-chem-2b";
 import { THEOREM_FILL_CHEM_2 } from "@/lib/theorem-fill-chem-2";;
 import { THEOREM_FILL_BIO_MATH } from "@/lib/theorem-fill-bio-math";
 import { THEOREM_FILL_FINAL } from "@/lib/theorem-fill-final";
+import { PHYSICS_EXTRA_SOLVED } from "@/lib/solved-problems-physics";
+import { CHEMISTRY_EXTRA_SOLVED } from "@/lib/solved-problems-chemistry";
+import { MATH_EXTRA_SOLVED } from "@/lib/solved-problems-math";
 
 export type { SpecialCase };
 
@@ -2116,3 +2119,26 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
   ...THEOREM_FILL_BIO_MATH,
   ...THEOREM_FILL_FINAL,
 ];
+
+/**
+ * Wave 3: difficult NEB-style solved problems for derivations that shipped
+ * without any. Keyed by slug and merged once at module load so every consumer
+ * (detail pages, formula-sheet links, search) sees the enriched problems
+ * without touching the large wave files.
+ */
+const EXTRA_SOLVED_BY_SLUG: Record<string, SolvedProblem[]> = {
+  ...PHYSICS_EXTRA_SOLVED,
+  ...CHEMISTRY_EXTRA_SOLVED,
+  ...MATH_EXTRA_SOLVED,
+};
+
+/** Two pre-existing entries share a slug; enrich only the first copy. */
+const enrichedSlugs = new Set<string>();
+for (const derivation of DERIVATIONS_AND_THEOREMS) {
+  if (enrichedSlugs.has(derivation.slug)) continue;
+  const extra = EXTRA_SOLVED_BY_SLUG[derivation.slug];
+  if (extra && extra.length > 0) {
+    derivation.solvedProblems = [...(derivation.solvedProblems ?? []), ...extra];
+    enrichedSlugs.add(derivation.slug);
+  }
+}

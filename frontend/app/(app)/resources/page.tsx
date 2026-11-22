@@ -35,6 +35,7 @@ import {
 } from "@/lib/pdf-src";
 import { SHOW_SOURCE_BADGE } from "@/lib/stream-sources";
 import { publicOrigin } from "@/lib/site-url";
+import { ResourcesFormulasPanel } from "@/features/formulas/components/resources-formulas-panel";
 
 export type ResourceItem = {
   id: string;
@@ -327,6 +328,14 @@ export default function ResourcesPage() {
           </p>
         )}
       </div>
+
+      {/* ── Formulas & Derivations (wired for the science subjects) ─────── */}
+      {(selectedSubject === "All" ||
+        selectedSubject === "Physics" ||
+        selectedSubject === "Mathematics" ||
+        selectedSubject === "Chemistry") && (
+        <ResourcesFormulasPanel subject={selectedSubject} />
+      )}
 
       {/* ── Documents Classified by Subject, Chapters First, Then Others ──── */}
       {groupedBySubject.length === 0 ? (

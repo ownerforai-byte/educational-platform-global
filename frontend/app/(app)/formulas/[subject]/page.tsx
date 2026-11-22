@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, BookOpen, Clock, FileText, History } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, Clock, FileText, FlaskConical, History } from "lucide-react";
 import {
   FORMULA_SUBJECTS,
   getSubjectFormulaSheet,
   isFormulaSubjectSlug,
   type FormulaSheetUnit,
 } from "@/lib/formula-sheet";
+import { getSubjectDerivationCounts } from "@/features/formulas/derivation-links";
 
 /**
  * Prerendered at build (the extraction reads the shipped note tree, present in
@@ -44,9 +45,13 @@ const HEADER_COLORS: Record<string, string> = {
 function UnitCard({
   subject,
   unit,
+  derivationCount,
+  solvedCount,
 }: {
   subject: string;
   unit: FormulaSheetUnit;
+  derivationCount: number;
+  solvedCount: number;
 }) {
   const hasFormulas = unit.formulaCount > 0;
   return (
@@ -65,6 +70,12 @@ function UnitCard({
           <FileText className="h-3 w-3" />
           {unit.formulaCount} formulas
         </span>
+        {derivationCount > 0 && (
+          <span className="inline-flex shrink-0 items-center gap-1 rounded-md border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
+            <FlaskConical className="h-3 w-3" />
+            {derivationCount} derivation{derivationCount !== 1 ? "s" : ""} · {solvedCount} solved
+          </span>
+        )}
         {unit.isExtra && (
           <span className="inline-flex shrink-0 items-center gap-1 rounded-md border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold text-amber-600 dark:text-amber-400">
             <History className="h-3 w-3" />
@@ -113,6 +124,7 @@ export default async function SubjectFormulaPage({
   if (!sheet) notFound();
 
   const unitsWithFormulas = sheet.units.filter((u) => u.formulaCount > 0).length;
+  const derivationCounts = getSubjectDerivationCounts(sheet.slug);
   const colorClass = HEADER_COLORS[sheet.slug] ?? "from-primary to-primary/70";
 
   return (
@@ -161,7 +173,13 @@ export default async function SubjectFormulaPage({
           Units in official NEB order
         </h2>
         {sheet.units.map((unit) => (
-          <UnitCard key={unit.id} subject={sheet.slug} unit={unit} />
+          <UnitCard
+            key={unit.id}
+            subject={sheet.slug}
+            unit={unit}
+            derivationCount={derivationCounts.get(unit.id)?.count ?? 0}
+            solvedCount={derivationCounts.get(unit.id)?.solvedCount ?? 0}
+          />
         ))}
       </div>
 
@@ -176,7 +194,13 @@ export default async function SubjectFormulaPage({
             lost; the syllabus units above stay authoritative.
           </p>
           {sheet.extras.map((unit) => (
-            <UnitCard key={unit.id} subject={sheet.slug} unit={unit} />
+            <UnitCard
+              key={unit.id}
+              subject={sheet.slug}
+              unit={unit}
+              derivationCount={derivationCounts.get(unit.id)?.count ?? 0}
+              solvedCount={derivationCounts.get(unit.id)?.solvedCount ?? 0}
+            />
           ))}
         </div>
       )}
