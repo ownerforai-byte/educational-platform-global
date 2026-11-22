@@ -138,7 +138,7 @@ const cellHtml = (cell, chapter, no) => {
   return `<div class="cell">
 <p class="tag">${esc(topic)}</p>
 <p class="q"><span class="n">${no}.</span>${esc(q)}${
-    marks ? `<span class="mk">[${marks}]</span>` : ""
+    marks ? `&nbsp;<span class="mk">[${marks}]</span>` : ""
   }</p>
 <p class="work">${esc(work)}</p>
 <p class="ans">${esc(ans)}</p>

@@ -146,6 +146,7 @@ body {
 
 .cell .q .mk {
   font: 400 5.8pt/1 "Helvetica Neue", Arial, sans-serif;
+  white-space: nowrap;
   color: var(--tag);
   vertical-align: 0.4ex;
   margin-left: 0.6mm;

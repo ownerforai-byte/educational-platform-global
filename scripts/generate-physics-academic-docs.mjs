@@ -40,7 +40,15 @@ const WORD_NAMESPACES =
   'xmlns:w="urn:schemas-microsoft-com:office:word" ' +
   'xmlns="http://www.w3.org/TR/REC-html40"';
 
-const HTML_STYLE = `body{font-family:Georgia,'Times New Roman',serif;line-height:1.55;color:#111;max-width:52em;margin:0 auto;padding:2em 1.5em}h1{font-size:1.7em;margin:0 0 .2em}h2{font-size:1.2em;margin:1.6em 0 .5em;border-bottom:1px solid #ccc;padding-bottom:.2em}h3{font-size:1em;margin:1.1em 0 .35em}.meta{color:#444;font-size:.92em}.summary{font-size:1.05em;font-style:italic;color:#222}ol,ul{margin:.4em 0 .8em;padding-left:1.4em}li{margin:.35em 0}table{border-collapse:collapse;width:100%;margin:.5em 0 1em}td,th{border:1px solid #999;padding:.45em .6em;text-align:left;vertical-align:top}th{background:#eee}.mystery{border-left:3px solid #888;padding:.1em 0 .1em .8em;margin:.8em 0}.item{border-left:3px solid #aaa;padding:.1em 0 .1em .8em;margin:.8em 0}.status{font-size:.85em;color:#555;text-transform:uppercase;letter-spacing:.04em}a{color:#0b4f9c}.note{font-size:.88em;color:#444;border-top:1px solid #ccc;padding-top:.7em;margin-top:2em}@media print{body{max-width:none;padding:0}.mystery,.item{page-break-inside:avoid}}`;
+/*
+ * Page geometry, typography, tables and print rules come from the shared A4
+ * sheet in public/resources/a4-document.css, reached with a relative link from
+ * either output tree (frontend/public/resources/physics-xi/ and
+ * public/resources/physics-xi/ both sit one level under a resources/ folder).
+ * Do not reintroduce an inline <style>: scripts/format-a4-docs.mjs owns the
+ * document shell so every resource renders as the same A4 page.
+ */
+const SHEET_HREF = "../a4-document.css";
 
 function esc(value) {
   return String(value)
@@ -134,7 +142,7 @@ function renderHtml(unit, dataset) {
     `<meta name="viewport" content="width=device-width, initial-scale=1">\n` +
     `<title>Physics XI Unit ${unit.unitNo}: ${esc(unit.unitName)} — Academic Companion</title>\n` +
     `<meta name="description" content="${esc(unit.summary)}">\n` +
-    `<style>${HTML_STYLE}</style>\n</head>\n<body>\n` +
+    `<link rel="stylesheet" href="${SHEET_HREF}">\n</head>\n<body>\n` +
     unitBody(unit, dataset) +
     `\n</body>\n</html>\n`
   );
