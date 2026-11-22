@@ -54,6 +54,7 @@ vi.mock("@/lib/api/community-feed", () => ({
     { id: "biology", label: "Biology" },
   ],
   listFeed: vi.fn(),
+  listTrending: vi.fn(() => Promise.resolve({ posts: [], migrated: true })),
   listMine: vi.fn(),
   getPost: (...args: unknown[]) => getPost(...args),
   getPerson: vi.fn(),

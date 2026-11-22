@@ -7,6 +7,7 @@ import {
   ChevronDown,
   GraduationCap,
   MessageSquare,
+  PenLine,
   Radio,
   UserRound,
 } from "lucide-react";
@@ -16,7 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { chipBtn } from "@/features/community/community-ui";
+import { chipBtn, primaryCta } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
 
 export type CommunityNavKey = "feed" | "saved" | "mine" | "notifications" | "spaces" | "chat";
@@ -130,7 +131,18 @@ export function CommunitySubnav({
           className,
         )}
       >
-        <ul className="sticky top-20 space-y-1 rounded-2xl border border-border/70 bg-card p-3 shadow-elev-0">
+        <div className="sticky top-20 space-y-2">
+          <Link
+            href="/ai/community/new"
+            className={cn(
+              primaryCta,
+              "w-full justify-center gap-2 py-2.5 text-[13px] shadow-md shadow-primary/25",
+            )}
+          >
+            <PenLine className="h-4 w-4" aria-hidden />
+            Ask or share
+          </Link>
+          <ul className="space-y-1 rounded-2xl border border-border/70 bg-card p-3 shadow-elev-0">
           {ITEMS.map((item) => {
             const Icon = item.icon;
             const isSelected = item.key === active;
@@ -179,7 +191,11 @@ export function CommunitySubnav({
               </li>
             );
           })}
-        </ul>
+          </ul>
+          <p className="px-2 text-[11px] leading-relaxed text-muted-foreground">
+            Questions, notes and answers — open to every learner.
+          </p>
+        </div>
       </nav>
     </>
   );

@@ -40,6 +40,7 @@ const { getPost } = vi.hoisted(() => ({
 vi.mock("@/lib/api/community-feed", () => ({
   COMMUNITY_CATEGORIES: [{ id: "general", label: "General" }],
   listFeed: vi.fn(),
+  listTrending: vi.fn(() => Promise.resolve({ posts: [], migrated: true })),
   listMine: vi.fn(),
   getPost: (...args: unknown[]) => getPost(...args),
   getPerson: vi.fn(),

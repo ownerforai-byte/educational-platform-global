@@ -113,5 +113,45 @@ export function assistantPanel(): string {
     "border-primary/30 bg-gradient-to-br from-primary/[0.07] via-card to-card",
     "shadow-md shadow-primary/10 ring-1 ring-primary/15",
     "motion-safe:hover:translate-y-0",
-  );
+  );}
+
+/**
+ * Twitter-style compact relative time for feed rows: "now", "5m", "2h",
+ * "3d", then the short date. Falls back to the ISO string when parsing
+ * fails so the row never renders an empty timestamp.
+ */
+export function relativeTime(iso: string): string {
+  const then = new Date(iso).getTime();
+  if (Number.isNaN(then)) return iso;
+  const seconds = Math.round((Date.now() - then) / 1000);
+  if (seconds < 60) return "now";
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h`;
+  const days = Math.floor(hours / 24);
+  if (days < 7) return `${days}d`;
+  try {
+    return new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric" }).format(
+      new Date(iso),
+    );
+  } catch {
+    return iso;
+  }
+}
+
+/**
+ * Question lifecycle pill: distinct colours so open questions pop while
+ * scanning the timeline (amber = waiting for an answer, emerald = solved).
+ */
+export function questionStatusClass(kind: string | undefined, solved: boolean | undefined): string {
+  if (kind !== "question") return "";
+  return solved
+    ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
+    : "border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300";
+}
+
+export function questionStatusLabel(kind: string | undefined, solved: boolean | undefined): string {
+  if (kind !== "question") return "";
+  return solved ? "Solved" : "Open";
 }

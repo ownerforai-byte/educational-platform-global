@@ -89,6 +89,8 @@ const CommentRow = memo(function CommentRow({
     }
   }
 
+  const isAccepted = acceptedCommentId === comment.id;
+
   return (
     <div
       className={cn(
@@ -96,9 +98,17 @@ const CommentRow = memo(function CommentRow({
         "hover:border-border",
         followUpActive && "ring-1 ring-primary/25",
         botComment && "border-primary/30 bg-primary/[0.03]",
+        isAccepted &&
+          "border-emerald-500/40 bg-emerald-500/[0.04] ring-1 ring-emerald-500/20 hover:border-emerald-500/50",
       )}
     >
       <div className="space-y-2">
+        {isAccepted ? (
+          <p className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-[11px] font-bold text-emerald-700 dark:text-emerald-300">
+            <Award className="h-3.5 w-3.5" aria-hidden />
+            Accepted answer
+          </p>
+        ) : null}
         {pendingComment ? (
           <div className="flex items-center gap-1.5 rounded-lg bg-muted/70 px-2.5 py-1 text-xs font-medium text-muted-foreground">
             <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden />
@@ -240,17 +250,17 @@ const CommentRow = memo(function CommentRow({
             !botComment ? (
               <button
                 type="button"
-                aria-pressed={acceptedCommentId === comment.id}
+                aria-pressed={isAccepted}
                 onClick={() => onAcceptAnswer(comment.id)}
                 className={cn(
                   "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[12px] font-medium",
-                  acceptedCommentId === comment.id
+                  isAccepted
                     ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400"
                     : "text-muted-foreground hover:bg-muted",
                 )}
               >
                 <Award className="h-3.5 w-3.5" aria-hidden />
-                {acceptedCommentId === comment.id ? "Accepted" : "Accept answer"}
+                {isAccepted ? "Accepted" : "Accept answer"}
               </button>
             ) : null}
           </div>

@@ -23,24 +23,20 @@ import { BotAnswerButton } from "@/features/community/bot-answer-button";
 import { BotIdentityBadge } from "@/features/community/bot-identity-badge";
 import { CreatorIdentityBadge } from "@/features/community/creator-identity-badge";
 import { canDeleteCommunityFeed, looksLikeQuestion, plainExcerpt } from "@/features/community/community-helpers";
-import { actionBtn, categoryLabel, postKindLabel } from "@/features/community/community-ui";
+import {
+  actionBtn,
+  categoryLabel,
+  postKindLabel,
+  questionStatusClass,
+  questionStatusLabel,
+  relativeTime,
+} from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
 import type { SessionUser } from "@/features/auth/types";
 import { CommentList } from "@/features/community/comment-list";
 import { CommentComposer } from "@/features/community/comment-composer";
 import { FeedMediaStrip } from "@/features/community/feed-media-strip";
 import { QuotedPostCard } from "@/features/community/quoted-post-card";
-
-function formatCompactWhen(iso: string): string {
-  try {
-    return new Intl.DateTimeFormat(undefined, {
-      month: "short",
-      day: "numeric",
-    }).format(new Date(iso));
-  } catch {
-    return iso;
-  }
-}
 
 function attachmentSummary(files: FeedPost["attachments"]): {
   label: string;
@@ -192,7 +188,23 @@ export const FeedPostRow = memo(function FeedPostRow({
             {postKindLabel(item.kind) ? (
               <span className="rounded border border-border/70 bg-background px-1.5 py-px text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
                 {postKindLabel(item.kind)}
-                {item.solved ? " · Solved" : item.kind === "question" ? " · Open" : ""}
+              </span>
+            ) : null}
+            {item.kind === "question" ? (
+              <span
+                className={cn(
+                  "inline-flex items-center gap-1 rounded-full border px-1.5 py-px text-[10px] font-bold",
+                  questionStatusClass(item.kind, item.solved),
+                )}
+              >
+                <span
+                  aria-hidden
+                  className={cn(
+                    "h-1.5 w-1.5 rounded-full",
+                    item.solved ? "bg-emerald-500" : "bg-amber-500 animate-pulse motion-reduce:animate-none",
+                  )}
+                />
+                {questionStatusLabel(item.kind, item.solved)}
               </span>
             ) : null}
 
@@ -211,8 +223,12 @@ export const FeedPostRow = memo(function FeedPostRow({
               <CreatorIdentityBadge compact />
             ) : null}
 
-            <time dateTime={item.createdAt} className="text-xs text-muted-foreground">
-              {formatCompactWhen(item.createdAt)}
+            <time
+              dateTime={item.createdAt}
+              title={new Date(item.createdAt).toLocaleString()}
+              className="text-xs tabular-nums text-muted-foreground"
+            >
+              {relativeTime(item.createdAt)}
             </time>
 
             {filesMeta ? (

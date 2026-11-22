@@ -5,6 +5,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 const { listFeed, getPost, toggleSave, viewer, savedState } = vi.hoisted(() => ({
   listFeed: vi.fn(),
+  listTrending: vi.fn(() => Promise.resolve({ posts: [], migrated: true })),
   getPost: vi.fn(),
   toggleSave: vi.fn(),
   viewer: { id: "viewer-1", fullName: "Viewer", role: "member" },
