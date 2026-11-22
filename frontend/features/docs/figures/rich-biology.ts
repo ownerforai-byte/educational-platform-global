@@ -59,6 +59,32 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       "crossing over", // chiasma diagram
     ],
   },
+  "life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment": {
+    title: "Miller and Urey's spark in a bottle",
+    figures: [
+      {
+        src: "/docs/figures/biology/miller-urey-apparatus.jpg",
+        caption:
+          "The 1953 experiment that turned the Oparin–Haldane soup from speculation into chemistry, drawn as a museum wall chart. Read it as a closed loop. The lower flask is the primeval ocean: warm water, gently boiled by the flame beneath. Its vapour climbs into the upper sphere — the primeval atmosphere — filled with methane, ammonia and hydrogen, the strongly reducing gas mix Oparin and Haldane had argued the young Earth breathed. There, the two electrodes fire a continuous spark: lightning, the energy source that breaks those stable little molecules apart and lets their atoms recombine. The products are swept on, cooled in the condenser, and rain back down through the U-trap into the ocean flask — a cycle that ran for a week. What Stanley Miller then found in that water was remarkable: glycine, alanine and other amino acids — the building blocks of proteins, made from nothing but a reducing atmosphere and a spark. The plate shows the plumbing stylised; the logic is what matters — ocean vaporises, atmosphere sparks, condensate returns, organics accumulate.",
+        alt: "Illustration of the Miller-Urey apparatus: a heated round flask of pale blue liquid, glass tubing rising to a large sphere where two electrodes strike a bright violet spark, and a condenser loop returning amber-tinted condensate to the flask",
+        keyword: "electric discharge",
+      },
+    ],
+    keepSvg: [
+      // classification-style diagrams the raster plate does not supersede
+      "reducing atmosphere", // early-Earth conditions
+      "hot dilute soup", // Oparin–Haldane flow
+      "stromatolite", // origin grand timeline
+      "panspermia", // origin theories
+      "methane", // reducing-atmosphere chemistry
+      "abiogenesis", // abiogenesis vs biogenesis
+      "RNA", // RNA world hypothesis
+      "coacervate", // coacervate/protobiont
+      "amino acid", // yield chart
+      "lightning", // energy sources
+      "anaerobic", // first cells
+    ],
+  },
   "frog-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respirato": {
     title: "The frog heart — three chambers, two worlds of blood",
     figures: [
