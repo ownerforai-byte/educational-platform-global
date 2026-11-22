@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Download, ExternalLink, FileText } from "lucide-react";
+import { ArrowLeft, BookOpen, Download, ExternalLink, FileText, Printer } from "lucide-react";
 import {
   MATHEMATICS_XI_SOLUTIONS,
   MATHEMATICS_XI_TOTALS,
   MATHEMATICS_XI_UNITS,
   mathXiSolutionUrl,
 } from "@/lib/mathematics-xi-solutions";
+import {
+  MATH_XI_CHAPTERS,
+  MATH_XI_WORKBOOK_BASE,
+  MATH_XI_WORKBOOK_TOTALS,
+  mathXiChapterUrl,
+  mathXiChaptersByUnit,
+} from "@/lib/mathematics-xi-chapters";
 
 export const metadata: Metadata = {
   title: "Mathematics XI — Exercise Solutions & Conceptual Bank",
@@ -50,6 +57,7 @@ export default function MathematicsXiSolutionsPage() {
             { label: "Conceptual Q&A", value: MATHEMATICS_XI_TOTALS.conceptual },
             { label: "Long answers", value: MATHEMATICS_XI_TOTALS.longAnswers },
             { label: "Reasoning drills", value: MATHEMATICS_XI_TOTALS.drills },
+            { label: "A4 sheets", value: MATH_XI_WORKBOOK_TOTALS.sheets },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -73,6 +81,69 @@ export default function MathematicsXiSolutionsPage() {
           earns marks.
         </p>
       </div>
+
+      <section className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="flex items-center gap-2 text-lg font-semibold">
+              <Printer className="h-5 w-5 text-primary" />
+              A4 workbook — {MATH_XI_WORKBOOK_TOTALS.chapters} chapters, {" "}
+              {MATH_XI_WORKBOOK_TOTALS.questions} solved questions
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+              One printable document per chapter. Every page is a real A4 sheet holding{" "}
+              {MATH_XI_WORKBOOK_TOTALS.perSheet} solved questions in a 3 × 4 grid — question,
+              working and answer line — in {MATH_XI_WORKBOOK_TOTALS.sheets} sheets total. Open any
+              sheet and print (Ctrl/⌘ + P) for a PDF that keeps the page layout.
+            </p>
+          </div>
+          <a
+            href={`${MATH_XI_WORKBOOK_BASE}/index.html`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Open contents sheet
+          </a>
+        </div>
+
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {MATHEMATICS_XI_UNITS.map((unit) => {
+            const chapters = mathXiChaptersByUnit(unit.unitNo);
+            return (
+              <div key={unit.unitId} className="rounded-xl border border-border/60 bg-background p-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  Unit {unit.unitNo} · {chapters.length} chapters
+                </p>
+                <ul className="mt-2 space-y-1">
+                  {chapters.map((chapter) => (
+                    <li key={chapter.slug}>
+                      <a
+                        href={mathXiChapterUrl(chapter)}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-baseline justify-between gap-2 rounded px-1 py-0.5 text-sm hover:bg-primary/10"
+                      >
+                        <span className="truncate">
+                          <span className="mr-1.5 font-mono text-[11px] text-muted-foreground">
+                            {chapter.code}
+                          </span>
+                          {chapter.title}
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+        <p className="mt-4 text-xs text-muted-foreground">
+          {MATH_XI_CHAPTERS.length} chapter sheets · every syllabus topic covered ·{" "}
+          {MATH_XI_WORKBOOK_TOTALS.perSheet} questions per sheet.
+        </p>
+      </section>
 
       <ol className="space-y-5">
         {MATHEMATICS_XI_UNITS.map((unit) => (
