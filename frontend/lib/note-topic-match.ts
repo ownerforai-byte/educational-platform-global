@@ -33,6 +33,78 @@ function filenameStem(filename: string): string {
 }
 
 /**
+ * Match quality for a candidate note, higher is better:
+ *   3 — exact topic-slug match,
+ *   2 — the note filename carries the topic slug,
+ *   1 — compact-form prefix match,
+ *   0 — no match.
+ *
+ * Canonical selection must rank by this BEFORE duplicateType: short legacy
+ * stubs ("alkynes" → a 4-block summary) prefix-match long syllabus slugs
+ * ("alkynes-preparation-from-…") and, with duplicateType ties broken by
+ * manifest order, the stub used to beat the detailed note it duplicates.
+ */
+export type NoteMatchQuality = 0 | 1 | 2 | 3;
+
+export function noteMatchQuality(
+  entryTopicSlug: string | null | undefined,
+  filename: string | null | undefined,
+  topicSlug: string,
+): NoteMatchQuality {
+  if (!topicSlug) return 0;
+
+  const entrySlug = (entryTopicSlug ?? "").trim();
+  if (entrySlug && entrySlug === topicSlug) return 3;
+  if (filename && filename.includes(topicSlug)) return 2;
+
+  const wanted = compactSlug(topicSlug);
+  if (wanted.length < MIN_PREFIX_CHARS) return 0;
+
+  const candidates = [entrySlug];
+  if (filename) candidates.push(filenameStem(filename));
+  for (const candidate of candidates) {
+    const compact = compactSlug(candidate);
+    if (compact.length < MIN_PREFIX_CHARS) continue;
+    if (compact.startsWith(wanted) || wanted.startsWith(compact)) return 1;
+  }
+  return 0;
+}
+
+/**
+ * Pick the canonical note entry for a syllabus topic from manifest candidates:
+ * highest match quality first, then lowest duplicateType, then manifest order.
+ * Returns undefined when nothing matches.
+ */
+export function pickCanonicalNoteEntry<
+  T extends {
+    topicSlug?: string | null;
+    filename?: string | null;
+    duplicateType?: number;
+  },
+>(entries: readonly T[], topicSlug: string): T | undefined {
+  let best: T | undefined;
+  let bestQuality: NoteMatchQuality = 0;
+  let bestDup = Number.POSITIVE_INFINITY;
+  let bestIndex = Number.POSITIVE_INFINITY;
+  entries.forEach((entry, index) => {
+    const quality = noteMatchQuality(entry.topicSlug, entry.filename, topicSlug);
+    if (quality === 0) return;
+    const dup = entry.duplicateType ?? 1;
+    const better =
+      quality > bestQuality ||
+      (quality === bestQuality &&
+        (dup < bestDup || (dup === bestDup && index < bestIndex)));
+    if (better) {
+      best = entry;
+      bestQuality = quality;
+      bestDup = dup;
+      bestIndex = index;
+    }
+  });
+  return best;
+}
+
+/**
  * True when a note entry belongs to the syllabus topic.
  *
  * Match order (first hit wins, no scoring):
@@ -47,21 +119,5 @@ export function noteMatchesTopic(
   filename: string | null | undefined,
   topicSlug: string,
 ): boolean {
-  if (!topicSlug) return false;
-
-  const entrySlug = (entryTopicSlug ?? "").trim();
-  if (entrySlug && entrySlug === topicSlug) return true;
-  if (filename && filename.includes(topicSlug)) return true;
-
-  const wanted = compactSlug(topicSlug);
-  if (wanted.length < MIN_PREFIX_CHARS) return false;
-
-  const candidates = [entrySlug];
-  if (filename) candidates.push(filenameStem(filename));
-  for (const candidate of candidates) {
-    const compact = compactSlug(candidate);
-    if (compact.length < MIN_PREFIX_CHARS) continue;
-    if (compact.startsWith(wanted) || wanted.startsWith(compact)) return true;
-  }
-  return false;
+  return noteMatchQuality(entryTopicSlug, filename, topicSlug) > 0;
 }

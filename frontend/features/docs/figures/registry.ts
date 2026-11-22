@@ -1956,14 +1956,14 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The electron microscope is de Broglie's idea industrialised: accelerating electrons shrinks lambda = h/mv to a few thousandths of a nanometre, resolving detail light cannot touch.",
         alt: "Electron microscope versus light microscope resolution explained by de Broglie wavelength",
-        keyword: "microscope",
+        keyword: "electrons",
       },
       {
         Component: ProtonWavelengthDrill,
         caption:
           "Same speed, proton vs electron: the proton's wavelength comes out 1836 times shorter because mass sits in the denominator of lambda = h/mv.",
         alt: "Solved proton versus electron wavelength calculation at equal speed showing the mass ratio",
-        keyword: "proton",
+        keyword: "wavelength",
       },
     ],
   },
@@ -2050,7 +2050,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Chromium settles at 4s1 3d5 and copper at 4s1 3d10 - exactly half-filled and fully-filled subshells gain symmetry and exchange energy.",
         alt: "Chromium and copper configuration exceptions with expected versus actual configurations",
-        keyword: "chromium",
+        keyword: "fully-filled",
       },
       {
         Component: FeIonRemoval,
@@ -2259,7 +2259,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Na and Cl share the same ten inner electrons, so shielding is constant while Z climbs from 11 to 17 - Z effective rises from about +1 to +7.",
         alt: "Solved sodium versus chlorine effective nuclear charge contrast panel",
-        keyword: "sodium",
+        keyword: "electrons",
       },
       {
         Component: ZeffTrendArrows,
@@ -2397,7 +2397,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Count domains, name the hybrid: two gives sp, three sp2, four sp3 - VSEPR and hybridisation agree by construction.",
         alt: "Hybrid count drill electron domains to hybridisation type table",
-        keyword: "domains",
+        keyword: "hybrid",
       },
       {
         Component: ExtendedHybridPanel,
@@ -3353,7 +3353,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Prions break the rule: infection with no nucleic acid at all — one misfolded protein templates the rest, surviving boiling and causing spongiform brain disease.",
         alt: "Prion misfolded protein conversion scrapie BSE CJD spongiform disease",
-        keyword: "prion",
+        keyword: "infection",
       },
       {
         Component: HIVTransmissionRoutes,
@@ -3484,7 +3484,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "CRISPR's three steps: guide RNA matches the target DNA, Cas9 cuts both strands, and repair or replacement follows — bacterial immunity repurposed into the cheapest editing tool in biology.",
         alt: "CRISPR Cas9 mechanism steps guide RNA cut repair",
-        keyword: "crispr",
+        keyword: "bacterial",
       },
       {
         Component: GeneticEngineeringStepsDetail,
@@ -3505,7 +3505,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The GMO verdict sheet: Bt cotton and golden rice deliver real gains; gene flow, corporate seed lock-in and labelling demands are real costs — judge trait by trait, not slogan by slogan.",
         alt: "GMO debate benefits and risks verdicts",
-        keyword: "gmo",
+        keyword: "deliver",
       },
       {
         Component: CloningEthicsDebate,
@@ -3617,42 +3617,42 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The oath's four load-bearing beams: do no harm, benefit the patient, keep confidence, never exploit — modern bioethics adds autonomy, justice and informed consent to the same frame.",
         alt: "Hippocratic oath ethics principles do no harm confidentiality",
-        keyword: "ethical",
+        keyword: "benefit",
       },
       {
         Component: IvfEthicsSurplusEmbryos,
         caption:
           "IVF's surplus question: extra embryos from one cycle can be frozen, donated, used in research or discarded — each option is a different answer to 'when does moral status begin?'",
         alt: "IVF ethics surplus embryo options freezing donation research",
-        keyword: "ethical",
+        keyword: "different",
       },
       {
         Component: TestTubeBabyMilestonesDetail,
         caption:
           "From failure to routine: 1978's Louise Brown followed decades of scepticism; ICSI (1992) let one injected sperm overcome male infertility — IVF now accounts for a few percent of births in many countries.",
         alt: "Test tube baby milestones Louise Brown ICSI IVF history",
-        keyword: "ethical",
+        keyword: "ethic",
       },
       {
         Component: AmniocentesisEthics,
         caption:
           "Amniocentesis cuts both ways: it diagnoses chromosomal disorders at 15–18 weeks, and its misuse for sex selection is why Nepal bans disclosure of fetal sex — a test is never neutral.",
         alt: "Amniocentesis ethics diagnosis versus sex selection ban",
-        keyword: "ethical",
+        keyword: "ethic",
       },
       {
         Component: AmniocentesisChromosomeTest,
         caption:
           "What the amniotic fluid holds: fetal cells shed into the sample are karyotyped and tested — trisomy 21, thalassaemia and neural-tube markers (AFP) all readable from one 15 ml draw.",
         alt: "Amniocentesis chromosome test karyotype procedure",
-        keyword: "test",
+        keyword: "cells",
       },
       {
         Component: AntibodyStructureYShape,
         caption:
           "The Y is the function: two heavy and two light chains form an antibody whose arms bind one antigen and whose stem calls the immune system — the shape that makes monoclonal antibody drugs possible.",
         alt: "Antibody Y-shaped structure heavy light chains antigen binding",
-        keyword: "monoclonal",
+        keyword: "system",
       },
       {
         Component: IVFStepsTimeline,
@@ -3741,7 +3741,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Pollination is a service with a bill: about a third of food crops depend on animal pollinators, and bee declines carry a measurable yield cost — mutualism, monetised.",
         alt: "Pollination services by bees and crop dependence",
-        keyword: "pollination",
+        keyword: "mutualism",
       },
     ],
   },
@@ -4034,7 +4034,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The mangrove kit: salt glands excrete crystals, roots filter salt, pneumatophores breathe above the mud, and seedlings plant themselves while still on the tree.",
         alt: "Halophyte mangrove adaptations salt glands pneumatophores vivipary",
-        keyword: "halophyte",
+        keyword: "roots",
       },
       {
         Component: AnimalWaterSavingKit,
@@ -4055,7 +4055,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Adaptation is a compromise: cactus spines save water but cost growth, peacock tails win mates but invite predators — every trait is paid for.",
         alt: "Adaptation compromise trade-offs benefit and cost",
-        keyword: "trade",
+        keyword: "adaptation",
       },
     ],
   },
@@ -4102,7 +4102,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Four greenhouse gases, four sources: CO₂ from fuel and felled forest, CH₄ from paddies and cattle, N₂O from fertiliser, CFCs from old appliances.",
         alt: "Greenhouse gas sources CO2 CH4 N2O CFCs",
-        keyword: "methane",
+        keyword: "greenhouse",
       },
       {
         Component: MontrealProtocolSuccess,
@@ -4372,7 +4372,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "When ponds dry, amoeba encysts: a protective wall seals in the dormant cell until water returns — cysts also spread infection between hosts.",
         alt: "Encystment survival with protective cyst wall during drying conditions",
-        keyword: "encystment",
+        keyword: "amoeba",
       },
       {
         Component: ProtozoaHabitatsWater,
@@ -4501,7 +4501,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Control on three fronts: chemotherapy (quinine → chloroquine → artemisinin), vector attack (sprays, nets, larvivorous fish), and environmental drainage of breeding sites.",
         alt: "Three columns of malaria control chemotherapy vector control and environmental measures",
-        keyword: "quinine",
+        keyword: "artemisinin",
       },
       {
         Component: MalariaDiagnosisTreatment,
@@ -4639,7 +4639,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Two embryonic roads: protostomes (mouth first — arthropods, molluscs, annelids) versus deuterostomes (anus first — echinoderms, chordates) — a blastopore decision with a whole kingdom attached.",
         alt: "Protostome versus deuterostome development split by blastopore fate",
-        keyword: "protostome",
+        keyword: "echinoderms",
       },
       {
         Component: SymmetrySurvivalValue,
@@ -4667,7 +4667,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The classification flow: symmetry first, then germ layers, then coelom type — three questions that place any animal in its phylum.",
         alt: "Body plan classification flow from symmetry through germ layers to coelom",
-        keyword: "deuterostome",
+        keyword: "classification",
       },
       {
         Component: PseudocoelomRoundwormNiche,
@@ -4796,7 +4796,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Closed circulation with dorsal and ventral vessels joined by lateral hearts, and respiration through the moist skin — no lungs, just a capillary net at the surface.",
         alt: "Earthworm closed circulatory system vessels and cutaneous respiration",
-        keyword: "chloragogen",
+        keyword: "ventral",
       },
       {
         Component: EarthwormDigestiveGlands,
@@ -4845,7 +4845,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Breathing through the skin: mucus keeps the surface wet, oxygen dissolves and diffuses into dense sub-cutaneous capillaries — no lungs required.",
         alt: "Earthworm cutaneous respiration with oxygen diffusing through moist skin",
-        keyword: "cutaneous",
+        keyword: "through",
       },
       {
         Component: EarthwormClosedCirculation,
@@ -5063,7 +5063,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "A double life: webbed swimming and skin respiration in water, lung breathing on land — with hibernation in winter, aestivation in summer and monsoon breeding.",
         alt: "Frog amphibious habitat with hibernation aestivation and breeding seasons",
-        keyword: "hibernation",
+        keyword: "respiration",
       },
       {
         Component: FrogExternalFeatures,
@@ -5147,7 +5147,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Hibernation is shutdown, not sleep: buried in pond mud, the heart slows to a trickle, fat reserves burn slowly, and spring warmth restarts the system.",
         alt: "Frog hibernation in winter mud with slowed metabolism until spring",
-        keyword: "hibernation",
+        keyword: "buried",
       },
       {
         Component: FrogTympanumEardrum,
@@ -5311,7 +5311,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Making gametes: thousands of cheap motile sperm vs hundreds of yolk-loaded eggs — an asymmetry that external fertilisation in water demands.",
         alt: "Spermatogenesis versus oogenesis in the frog with gamete sizes",
-        keyword: "gamete",
+        keyword: "fertilisation",
       },
       {
         Component: FrogAmplexusFertilisation,
@@ -5325,7 +5325,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Early development: zygote → cleavage → blastula → gastrula (three germ layers) → neurula — with the organ fate table for ectoderm, mesoderm and endoderm.",
         alt: "Frog development stages from zygote to neurula with germ layer fates",
-        keyword: "gastrula",
+        keyword: "development",
       },
       {
         Component: FrogMetamorphosis,
@@ -5614,7 +5614,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Count the spores: hundreds in a sporangium, exactly eight in an ascus, four on a basidium — the case tells you the class.",
         alt: "Sporangium ascus and basidium spore cases compared",
-        keyword: "sporangium",
+        keyword: "basidium",
       },
       {
         Component: FungalLifeCycleGeneral,
@@ -5827,7 +5827,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Fungus vs plant, six features: no chlorophyll, chitin not cellulose, glycogen not starch, absorption not photosynthesis, hyphae not organs, spores not seeds.",
         alt: "Mushroom versus plant comparison table chitin glycogen spores",
-        keyword: "chitin",
+        keyword: "photosynthesis",
       },
       {
         Component: MushroomGillZoom,
@@ -6155,7 +6155,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Two free-living generations: sorus → spores → heart-shaped prothallus → fertilisation in water → new sporophyte — both generations photosynthesise independently.",
         alt: "Fern life cycle from sorus to prothallus to sporophyte",
-        keyword: "sorus",
+        keyword: "fertilisation",
       },
       {
         Component: FernProthallus,
@@ -6176,7 +6176,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Under the frond: sori are brown spore clusters on the pinna underside, each sporangium armed with a snapping annulus that flings spores on dry days.",
         alt: "Fern sori clusters under pinna with sporangium annulus zoom",
-        keyword: "sorus",
+        keyword: "sporangium",
       },
       {
         Component: HomosporousVsHeterosporous,
@@ -6293,7 +6293,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Cycas, the living fossil: unbranched trunk, crown of stiff leaflets, coralloid roots hosting nitrogen-fixing cyanobacteria, and sago starch inside.",
         alt: "Cycas profile trunk crown coralloid roots sago starch",
-        keyword: "sago",
+        keyword: "living",
       },
       {
         Component: ConiferForestBelt,
@@ -6553,7 +6553,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Why these families matter: mustard oil and pulses, potato and chilli, onion and aloe — food and pharmacy, each family a distinct chemistry kit.",
         alt: "Economic importance of the four families with crops",
-        keyword: "crops",
+        keyword: "families",
       },
       {
         Component: MustardEconomy,
@@ -6830,7 +6830,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Taxis vs kinesis: taxis is directional steering toward or away from a stimulus; kinesis is random, non-directional movement whose rate simply rises with the stimulus.",
         alt: "Taxis directional versus kinesis random movement",
-        keyword: "kinesis",
+        keyword: "stimulus",
       },
       {
         Component: DominanceHierarchy,
@@ -6844,7 +6844,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Two sources of behaviour: innate (genetically programmed, same in all members — reflexes, taxes, migration) versus learned (shaped by experience — habituation, imprinting, conditioning).",
         alt: "Innate versus learned behaviour comparison",
-        keyword: "learned",
+        keyword: "experience",
       },
       {
         Component: ReflexVsInstinctLayers,
@@ -6858,7 +6858,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Taxis steers, kinesis scurries: directional movement toward or away from a stimulus versus random movement whose rate simply rises — moth to lamp (taxis), woodlice speeding up in the dry (kinesis).",
         alt: "Taxes directional versus kinesis random movement contrast",
-        keyword: "kinesis",
+        keyword: "movement",
       },
       {
         Component: DominanceHierarchyPayoffs,
@@ -6898,35 +6898,35 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The word and the meaning: from Latin 'migrare' — the regular and periodic passing of animals from one place to another, an inborn behaviour shown by insects, birds, fishes, mammals and turtles.",
         alt: "Migration definition from Latin migrare with animal groups",
-        keyword: "migrare",
+        keyword: "periodic",
       },
       {
         Component: MigrationPurposes,
         caption:
           "Five purposes of migration: in search of food, to escape adverse environmental conditions, to find mate, and for shelter and reproduction.",
         alt: "Purposes of migration food safety mate shelter reproduction",
-        keyword: "in search of food",
+        keyword: "migration",
       },
       {
         Component: FishMigrationTypes,
         caption:
           "Fish migration classics: salmon fighting upstream to spawn in the stream where they were born; mackerel migrating seasonally in the Kosi and Gandaki rivers to feed and breed.",
         alt: "Fish migration salmon upstream and mackerel in Nepal rivers",
-        keyword: "salmon",
+        keyword: "migration",
       },
       {
         Component: BirdMigrationRoutes,
         caption:
           "Bird migration in Nepal: Himalayan birds such as the bar-headed goose descend to the Terai in winter; storks gather at lowland lakes.",
         alt: "Bird migration routes Himalaya to Terai",
-        keyword: "bar-headed goose",
+        keyword: "migration",
       },
       {
         Component: MigrationSurvivalValue,
         caption:
           "Why migration works: it is genetically programmed, locked to a seasonal clock, and astonishingly precise — salmon home to their natal stream; some birds fly over 10,000 km per year.",
         alt: "Migration survival value genetic programming and precision",
-        keyword: "genetically programmed",
+        keyword: "migration",
       },
       {
         Component: FishMigrationReasons,
@@ -6940,7 +6940,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The Arctic tern's commute: about 70,000 km a year between poles, navigated by sun compass, star patterns, magnetite and landmarks — the longest migration in the animal kingdom.",
         alt: "Bird migration navigation sun compass stars magnetite Arctic tern",
-        keyword: "navigation",
+        keyword: "migration",
       },
     ],
   },
@@ -7043,7 +7043,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The forgotten pollutants: noise above 85 dB damages hearing permanently, and thermal discharge from power plants drops dissolved oxygen — pollution is not always a chemical.",
         alt: "Noise and thermal pollution effects decibel scale dissolved oxygen",
-        keyword: "thermal",
+        keyword: "pollutants",
       },
       {
         Component: KathmanduValleyAirQuality,
@@ -7286,7 +7286,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The pesticide shelf: organochlorines (DDT — persistent), organophosphates and carbamates (nerve poisons), pyrethroids (fast-breaking), herbicides and fungicides — each class with its own trade-off.",
         alt: "Pesticide classes with examples and persistence notes",
-        keyword: "organochlorine",
+        keyword: "herbicides",
       },
       {
         Component: BiomagnificationDdt,
@@ -7300,7 +7300,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Nerve poisons: organophosphates and carbamates inhibit acetylcholinesterase, so the nerve signal never switches off — convulsions and respiratory failure in insects and humans alike.",
         alt: "Acetylcholinesterase inhibition by organophosphates and carbamates",
-        keyword: "acetylcholinesterase",
+        keyword: "insects",
       },
       {
         Component: PesticideBackfire,
@@ -7321,7 +7321,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Organochlorines never leave: DDT's half-life runs to decades, so it persists in soil, dissolves into fat and biomagnifies — persistence was the property that made it famous and infamous.",
         alt: "Organochlorine DDT persistence and biomagnification",
-        keyword: "organochlorine",
+        keyword: "never",
       },
       {
         Component: OrganophosphateNerveBlock,
@@ -7391,7 +7391,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Farms as resistance factories: routine low-dose antibiotics in livestock breed resistant bacteria that jump to people — one reason doctors now beg farmers to stop growth-promotion doses.",
         alt: "Antibiotic resistance from livestock farms to humans",
-        keyword: "antibiotic",
+        keyword: "resistance",
       },
       {
         Component: BiologicalControlCaseStudies,
@@ -7419,7 +7419,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Residue on the plate: washing removes surface pesticide, peeling removes systemic residues poorly — cooking helps for some compounds, never for all; the label's waiting period is the real control.",
         alt: "Pesticide residue removal washing peeling cooking",
-        keyword: "washing",
+        keyword: "pesticide",
       },
     ],
   },
@@ -7481,7 +7481,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Hotspot maths: at least 1,500 endemic plant species plus 70% habitat lost — both conditions must hold; the Himalaya qualifies, which makes Nepal a shareholder in a global emergency.",
         alt: "Biodiversity hotspot criteria endemic plants and habitat loss",
-        keyword: "hotspot",
+        keyword: "species",
       },
       {
         Component: SpeciesAreaRule,
@@ -7523,7 +7523,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The footprint's arithmetic: how many hectares of biologically productive land and sea does one lifestyle demand? — when humanity's total exceeds Earth's biocapacity, we are drawing down the principal.",
         alt: "Ecological footprint calculation hectares biocapacity",
-        keyword: "sustainable",
+        keyword: "demand",
       },
       {
         Component: EcologicalFootprintComponents,
@@ -7537,7 +7537,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Earth Overshoot Day: the date each year when consumption passes the planet's annual regeneration — it has moved from late December in the 1970s into July and August.",
         alt: "Earth overshoot day date moving earlier",
-        keyword: "sustainable",
+        keyword: "earth",
       },
       {
         Component: CarbonFootprintReductionActions,
@@ -7551,7 +7551,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Linear vs circular: take-make-waste ends in a landfill; the circular loop designs out waste — repair, remanufacture, recycle — so materials orbit the economy instead of falling off it.",
         alt: "Circular economy model linear versus circular loops",
-        keyword: "sustainable",
+        keyword: "instead",
       },
       {
         Component: GreenAccountingGdpCritique,
@@ -7565,7 +7565,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Three worldviews, one planet: anthropocentrism (nature serves people), biocentrism (every living thing counts), ecocentrism (the system itself is sacred) — your ethic decides your economics.",
         alt: "Environmental ethics worldviews anthropocentrism biocentrism ecocentrism",
-        keyword: "ethics",
+        keyword: "serves",
       },
       {
         Component: SustainableDevelopmentGoals,
@@ -7579,7 +7579,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "EIA's sequence: screening → scoping → baseline study → impact prediction → mitigation plan → public hearing → decision → monitoring — a project must walk the whole ladder in Nepal's law.",
         alt: "Environmental impact assessment steps screening to monitoring",
-        keyword: "sustainable",
+        keyword: "monitoring",
       },
       {
         Component: ReddPlusMechanism,
@@ -7600,7 +7600,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The global hotspot map: 36 regions qualify — the Himalaya, Indo-Burma and the Western Ghats–Sri Lanka flank Nepal — together holding most of Earth's endemic plants on a sliver of land.",
         alt: "Biodiversity hotspots world map Himalaya Indo-Burma Western Ghats",
-        keyword: "hotspots",
+        keyword: "plants",
       },
     ],
   },
@@ -7715,14 +7715,14 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Wildlife's three values: ecological (pollination, seed dispersal, nutrient cycling, pest control, food webs), economic (ecotourism, medicine, genetic diversity for agriculture) and cultural (aesthetic, ethical, indigenous knowledge).",
         alt: "Wildlife values ecological economic and cultural",
-        keyword: "ecosystem services",
+        keyword: "pollination",
       },
       {
         Component: ExtinctionCauses,
         caption:
           "Six roads to extinction: habitat destruction and fragmentation (the leading cause), overexploitation (ivory poaching, overfishing), invasive species (Lantana camara), pollution, climate change and disease.",
         alt: "Six major causes of extinction",
-        keyword: "habitat loss is the leading cause",
+        keyword: "overexploitation",
       },
       {
         Component: HabitatLossChain,
@@ -7743,7 +7743,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "CITES regulates cross-border trade in threatened species through three appendices: Appendix I bans commercial trade, II requires permits, III is a single-country listing.",
         alt: "CITES appendix I II and III trade rules",
-        keyword: "appendix i, ii, and iii listings",
+        keyword: "threatened",
       },
       {
         Component: PoachingEconomics,
@@ -7757,7 +7757,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Translocation worked: rhinos moved from Chitwan's crowded core to Bardiya and Shuklaphanta spread the risk — from 752 rhinos counted in 2021 (694 Chitwan, 38 Bardiya, 17 Shuklaphanta, 3 Parsa).",
         alt: "Rhino translocation from Chitwan to Bardiya and Shuklaphanta",
-        keyword: "rhino",
+        keyword: "worked",
       },
       {
         Component: HumanWildlifeConflictFence,
@@ -7771,7 +7771,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "In-situ or ex-situ? Protecting species in place keeps evolution running; zoos, seed banks and tissue culture are the insurance copy — every serious plan uses both.",
         alt: "In-situ and ex-situ conservation strategies pair",
-        keyword: "ex-situ",
+        keyword: "species",
       },
       {
         Component: SpeciesReintroductionPrograms,
@@ -7797,28 +7797,28 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The Red List ladder in decreasing severity: EX, EW, CR, EN, VU, NT, LC, plus DD and NE — with the definition of each category.",
         alt: "IUCN Red List categories severity ladder",
-        keyword: "in decreasing severity",
+        keyword: "definition",
       },
       {
         Component: IucnNepalExamples,
         caption:
           "The ladder with faces: tiger and red panda (EN), one-horned rhinoceros and snow leopard (VU), the dodo (EX) — and the scale: 42,000+ species threatened worldwide, 27 threatened mammals in Nepal.",
         alt: "IUCN categories with Nepal examples",
-        keyword: "tiger — endangered (en)",
+        keyword: "threatened",
       },
       {
         Component: RareVsThreatened,
         caption:
           "The three word-traps: rare ≠ endangered (population trend matters), threatened = CR+EN+VU collectively (not one category), and extinct in the wild ≠ extinct (EW species survive in captivity).",
         alt: "Rare versus threatened versus endangered misconceptions",
-        keyword: "rarity alone",
+        keyword: "endangered",
       },
       {
         Component: RedListScale,
         caption:
           "The Red List in numbers: more than 42,000 species threatened with extinction globally; Nepal lists 27 mammal species as threatened.",
         alt: "IUCN Red List global and Nepal numbers",
-        keyword: "more than 42,000 species threatened with extinction",
+        keyword: "threatened",
       },
       {
         Component: EndangeredSpeciesDefinition,
@@ -7990,7 +7990,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Biology's frontiers: genomics reads whole genomes, biotechnology edits genes, ecology tracks a warming biosphere, neurobiology maps the brain.",
         alt: "Biology today frontiers genomics CRISPR ecology neurobiology",
-        keyword: "genomics",
+        keyword: "biotechnology",
       },
     ],
   },
@@ -8244,7 +8244,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Fossils are history's pages: life was different in the past, complexity increases upward, and index fossils date the layer they sit in.",
         alt: "Paleontology strata story fossils in rock layers",
-        keyword: "paleontology",
+        keyword: "complexity",
       },
       {
         Component: FossilDatingLayers,
@@ -8669,35 +8669,35 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Nepal's six vegetation zones by altitude: tropical sal (below ~1000 m), subtropical chir pine, temperate oak–fir–rhododendron, subalpine birch–juniper, alpine meadows (bugyals), and the nival snowline with only lichens and mosses.",
         alt: "Vegetation zones of Nepal by altitude from tropical sal to nival lichens",
-        keyword: "altitudinal zonation",
+        keyword: "rhododendron",
       },
       {
         Component: TropicalVsTemperateForest,
         caption:
           "Tropical deciduous sal forest vs temperate evergreen oak–conifer: altitude, climate, dominant species, leaf habit and commercial value — deciduous shedding is a drought strategy, evergreen needles a year-round strategy.",
         alt: "Tropical deciduous sal forest versus temperate evergreen oak conifer comparison",
-        keyword: "deciduous",
+        keyword: "temperate",
       },
       {
         Component: TeraiVsBhabarVegetation,
         caption:
           "Terai (alluvial plain): tall sal forests, riverine sissoo–khair, tall grasslands (Saccharum, Phragmites, Themeda) — rhino and tiger habitat. Bhabar (porous boulder belt): drier sal and khair–sissoo forest with deep water tables.",
         alt: "Terai versus Bhabar vegetation alluvial plain and porous boulder belt",
-        keyword: "Bhabar",
+        keyword: "forest",
       },
       {
         Component: ZonationFactors,
         caption:
           "What controls the zones: temperature falls ~6 °C per 1000 m (the master variable), monsoon vs rain-shadow rainfall, thin air and intense UV at height, and soil depth and drainage.",
         alt: "Factors controlling vegetation zonation temperature rainfall altitude soil",
-        keyword: "rain-shadow",
+        keyword: "temperature",
       },
       {
         Component: AltitudeLatitudeRule,
         caption:
           "Rule of thumb: climbing 1000 m in Nepal ≈ travelling 1000 km toward the poles — a day's walk crosses climate zones that span a continent, from tropical sal to alpine meadow within 200 km.",
         alt: "Climbing 1000 metres equals travelling 1000 kilometres toward the poles",
-        keyword: "toward the poles",
+        keyword: "tropical",
       },
       {
         Component: SalTreeProfile,
@@ -8725,7 +8725,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Above the tree line: alpine bugyal meadows with cushion plants and yarsagumba, then the nival zone where only lichens and mosses persist.",
         alt: "Alpine meadow and nival zone life above tree line",
-        keyword: "nival",
+        keyword: "alpine",
       },
       {
         Component: VegetationTypesSummary,
@@ -8746,14 +8746,14 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Wetland vegetation: reed beds of Saccharum and Phragmites, floating-leaf plants and the invasive water hyacinth — fish nurseries and flood sponges worth protecting.",
         alt: "Wetland aquatic vegetation reeds floating plants hyacinth",
-        keyword: "wetland",
+        keyword: "vegetation",
       },
       {
         Component: VegetationZoneConservation,
         caption:
           "Every zone carries something worth keeping: sal parks protect rhino country, temperate forests guard springs, alpine meadows grow medicine — lose a zone, lose its gifts.",
         alt: "Vegetation zone conservation value protected areas by altitude",
-        keyword: "conservation",
+        keyword: "temperate",
       },
     ],
   },
@@ -8835,7 +8835,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Buffer zones pay the neighbours: shared tourism revenue, community forests and conflict insurance turn villagers into the park's guardians.",
         alt: "Buffer zone benefits community revenue sharing",
-        keyword: "buffer",
+        keyword: "community",
       },
       {
         Component: ConservationSuccessNumbers,
@@ -8952,7 +8952,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The glacial lake outburst flood: a moraine dam holding back a meltwater lake fails suddenly — Tsho Rolpa's lowering and early-warning siren show the engineering response.",
         alt: "Glacial lake outburst flood GLOF mechanism moraine dam",
-        keyword: "glacier",
+        keyword: "response",
       },
       {
         Component: HydroelectricDamHowItWorks,
@@ -9232,7 +9232,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "One mole is 6.022 x 10^23 particles - the same number counts atoms in 12 g of carbon-12, molecules in 22.4 L of any gas at STP and electrons in one faraday.",
         alt: "Avogadro number six point zero two two times ten twenty three particles per mole",
-        keyword: "avogadro",
+        keyword: "molecules",
       },
     ],
   },
@@ -9265,7 +9265,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The four-step method: correct formula, molar mass, element mass over molar mass times 100, then check the percentages sum to 100.",
         alt: "Percentage composition four step method with calcium hydroxide bracket trap",
-        keyword: "steps",
+        keyword: "percentages",
       },
       {
         Component: NitrogenFertilizerDrill,
@@ -9286,7 +9286,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Pure limestone is 40 percent calcium by mass (40 over 100); run backwards, a 2 g calcium yield from 5 g ore means 40 percent purity.",
         alt: "Solved limestone assay calcium carbonate forty percent calcium content",
-        keyword: "limestone",
+        keyword: "backwards",
       },
     ],
   },
@@ -9394,7 +9394,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Each law leans on a Dalton postulate: conservation on rearrangement, definite proportions on fixed ratios - the mapping exam answers reward.",
         alt: "Laws of stoichiometry linked to Dalton postulates mapping table",
-        keyword: "link",
+        keyword: "conservation",
       },
     ],
   },
@@ -9481,7 +9481,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Eight molar masses worth memorising - water 18, carbon dioxide 44, sodium chloride 58.5, sulphuric acid 98 and more - cover most NEB numericals.",
         alt: "Molar mass quick reference table common compounds",
-        keyword: "table",
+        keyword: "numericals",
       },
       {
         Component: MoleStpVolumePanel,
@@ -9542,14 +9542,14 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Normality equals molarity times the n-factor: sulphuric acid is 2 N per 1 M, sodium hydroxide 1 N per 1 M - and N1V1 = N2V2 settles titrations.",
         alt: "Normality equals molarity times n factor equivalents sulphuric acid sodium hydroxide",
-        keyword: "normality",
+        keyword: "molarity",
       },
       {
         Component: MassPercentDrill,
         caption:
           "10 g of salt in 90 g water is a 100 g solution, hence 10 percent by mass - divide by the solution, never the solvent.",
         alt: "Solved mass percent ten gram salt ninety gram water ten percent",
-        keyword: "percent",
+        keyword: "solution",
       },
       {
         Component: SolutionPrepSteps,
@@ -9575,7 +9575,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Balance, convert to moles, divide by coefficients, compare - the smaller quotient marks the limiting reactant every time.",
         alt: "Limiting reactant four step method balance moles coefficients compare",
-        keyword: "steps",
+        keyword: "quotient",
       },
       {
         Component: LimitingReactantDrill,
@@ -9610,7 +9610,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "In every calculation the limiting branch sits between mole conversion and product computation - single-reactant problems skip straight through.",
         alt: "Stoichiometry flowchart limiting reactant branch moles coefficients product",
-        keyword: "flow",
+        keyword: "calculation",
       },
     ],
   },
@@ -9657,7 +9657,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Push the equilibrium with excess reactant, remove product as it forms, catalyse, transfer quantitatively and recycle unreacted material - the Haber plant does all five.",
         alt: "Improving yield strategies equilibrium catalysts technique recycling Haber",
-        keyword: "improve",
+        keyword: "equilibrium",
       },
       {
         Component: YieldVsAtomEconomy,
@@ -9704,7 +9704,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Copper sulphate pentahydrate loses 90 g of its 250 g as water - 36 percent exactly; the same ratio method finds x in any hydrate.",
         alt: "Solved water of crystallisation copper sulphate pentahydrate thirty six percent",
-        keyword: "water",
+        keyword: "percent",
       },
       {
         Component: RatioClearingPanel,
@@ -9838,28 +9838,28 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Ozone's two canonical forms flip the double bond, yet experiment finds both bonds equal at 128 pm - the resonance hybrid, not either drawing.",
         alt: "Ozone resonance two canonical forms with 128 picometre equal bonds",
-        keyword: "128",
+        keyword: "resonance",
       },
       {
         Component: ResonanceCarbonateTrio,
         caption:
           "Carbonate's three equivalent forms share one double bond three ways: every C-O measures 129 pm and the bond order is one and a third.",
         alt: "Carbonate ion resonance three forms equal bonds bond order one third",
-        keyword: "carbonate",
+        keyword: "double",
       },
       {
         Component: ResonanceBenzenePanel,
         caption:
           "Benzene's Kekule pair and the circle notation: all six C-C bonds read 139 pm, between single and double - the classic resonance proof.",
         alt: "Benzene resonance Kekule structures circle notation 139 picometre bonds",
-        keyword: "139",
+        keyword: "resonance",
       },
       {
         Component: ResonanceVsEquilibrium,
         caption:
           "The resonance arrow is not the equilibrium arrow: one is bookkeeping with no reaction, the other is real molecules interconverting.",
         alt: "Resonance arrow versus equilibrium arrow contrast bookkeeping versus reaction",
-        keyword: "arrow",
+        keyword: "bookkeeping",
       },
       {
         Component: ResonanceBondOrderDrill,
@@ -10205,7 +10205,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "The bridge equation PV = one-third nMu(rms) squared links the lab dials (P, V) with the invisible molecular world - and yields u(rms) = sqrt(3RT/M).",
         alt: "Kinetic gas equation bridging macroscopic pressure volume with molecular speeds",
-        keyword: "bridge",
+        keyword: "molecular",
       },
     ],
   },
@@ -10292,7 +10292,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Four working forms: n = PV/RT for moles, m = nM for mass, d = PM/RT for density, M = dRT/P for identity - one equation, four answers.",
         alt: "Working forms of ideal gas equation moles mass density molar mass",
-        keyword: "forms",
+        keyword: "equation",
       },
       {
         Component: BoltzmannBridgePanel,
@@ -10313,7 +10313,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Charles's law on the road: a tyre reading 32 psi at 20 C climbs near 35 psi after an hour of driving - volume fixed, pressure tracks Kelvin temperature.",
         alt: "Tyre pressure rising with temperature Charles's law example",
-        keyword: "psi",
+        keyword: "temperature",
       },
     ],
   },
@@ -10367,7 +10367,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Liquefaction tracks a: ammonia condenses at 8 atm at room temperature, nitrogen needs 77 K, helium resists to 4 K - attraction decides.",
         alt: "Liquefaction ease ammonia nitrogen helium van der Waals attraction",
-        keyword: "77",
+        keyword: "liquefaction",
       },
     ],
   },
@@ -10619,8 +10619,8 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       { Component: QcDirectionCompass, caption: "Qc: the compass needle", alt: "Compass diagram showing Qc below Kc drives forward, above Kc drives reverse, equal means equilibrium", keyword: "direction" },
       { Component: Nh3KcNumerical, caption: "NEB 2024: the ammonia numerical", alt: "Step-by-step solution finding ammonia concentration 0.25 molar from Kc 0.5, nitrogen 1.0 and hydrogen 0.5 molar", keyword: "0.25" },
       { Component: KcImportanceMap, caption: "Four jobs for one constant", alt: "Map of Kc uses: extent of reaction, direction prediction, thermodynamic bridge and industrial design", keyword: "importance" },
-      { Component: IceTableSteps, caption: "The five-line recipe", alt: "Five step recipe for equilibrium calculations from balancing the equation to checking the answer", keyword: "steps" },
-      { Component: DgKcBridge, caption: "The yield-energy bridge", alt: "Diagram linking equilibrium constant to standard free energy through dG equals minus RT ln K", keyword: "free energy" },
+      { Component: IceTableSteps, caption: "The five-line recipe", alt: "Five step recipe for equilibrium calculations from balancing the equation to checking the answer", keyword: "constant" },
+      { Component: DgKcBridge, caption: "The yield-energy bridge", alt: "Diagram linking equilibrium constant to standard free energy through dG equals minus RT ln K", keyword: "bridge" },
       { Component: KcTemperatureRule, caption: "Who moves the position, who rewrites Kc", alt: "Panel separating concentration and pressure shifts from temperature being the only factor that changes Kc", keyword: "temperature" },
     ],
   },
@@ -10704,7 +10704,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       { Component: O2O3ContrastPanel, caption: "Siblings, opposite temperaments", alt: "Six row comparison of dioxygen and ozone covering odour colour magnetism stability bond order and oxidising power", keyword: "colourless" },
       { Component: StarchIodideTestFlow, caption: "The test, and its catch", alt: "Starch iodide test sequence for ozone with turpentine discrimination from hydrogen peroxide", keyword: "iodide" },
       { Component: OzoneUseMap, caption: "Ozone at work", alt: "Four uses of ozone with brief notes", keyword: "bleaching" },
-      { Component: OzoneUvShield, caption: "The planetary sunscreen", alt: "Stratospheric ozone layer at 15 to 35 kilometres absorbing UV-B and UV-C before it reaches the ground", keyword: "ultraviolet" },
+      { Component: OzoneUvShield, caption: "The planetary sunscreen", alt: "Stratospheric ozone layer at 15 to 35 kilometres absorbing UV-B and UV-C before it reaches the ground", keyword: "sunscreen" },
       { Component: NascentORelease, caption: "O3 to O2 plus O: the workhorse split", alt: "Ozone splitting into oxygen and nascent oxygen which performs all oxidising work", keyword: "nascent" },
     ],
   },
@@ -10736,8 +10736,8 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     title: "Ammonia: the reaction checklist",
     figures: [
       { Component: Nh3StructureLonePair, caption: "One lone pair runs the show", alt: "Pyramidal ammonia structure with 107 degree bond angle and lone pair driving basicity and donor behaviour", keyword: "lone pair" },
-      { Component: Cuso4TwoStepLadder, caption: "The two-step copper drama", alt: "Two step reaction of copper sulfate with ammonia: pale blue precipitate then deep blue complex on excess ammonia", keyword: "cuso4" },
-      { Component: Fecl3AmmoniaTest, caption: "FeCl3 plus NH4OH: brown and stubborn", alt: "Ferric chloride solution with ammonia giving reddish brown ferric hydroxide precipitate insoluble in excess ammonia", keyword: "fecl3" },
+      { Component: Cuso4TwoStepLadder, caption: "The two-step copper drama", alt: "Two step reaction of copper sulfate with ammonia: pale blue precipitate then deep blue complex on excess ammonia", keyword: "two-step" },
+      { Component: Fecl3AmmoniaTest, caption: "FeCl3 plus NH4OH: brown and stubborn", alt: "Ferric chloride solution with ammonia giving reddish brown ferric hydroxide precipitate insoluble in excess ammonia", keyword: "brown" },
       { Component: WhiteFumesTest, caption: "Two rods, one white cloud", alt: "Ammonia and hydrogen chloride gases meeting to form dense white fumes of ammonium chloride", keyword: "hcl" },
       { Component: TwoOxygenEquations, caption: "Same flame, two products - catalyst decides", alt: "Ammonia burning in oxygen without catalyst gives nitrogen while catalytic oxidation over platinum gives nitric oxide", keyword: "oxygen" },
       { Component: Nh3UseMap, caption: "Where NH3 goes", alt: "Four major uses of ammonia in fertilisers refrigeration nitric acid production and the laboratory", keyword: "fertiliser" },
@@ -10749,7 +10749,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     figures: [
       { Component: OxyacidLadderN, caption: "The nitrogen oxyacid ladder", alt: "Ladder of nitrogen oxyacids with formulas and oxidation states from hyponitrous to pernitric acid", keyword: "hyponitrous" },
       { Component: OstwaldThreeSteps, caption: "Ostwald: NH3 to HNO3 in three moves", alt: "Ostwald process three steps with conditions including platinum rhodium gauze at 800 to 900 degrees", keyword: "ostwald" },
-      { Component: Hno3ConcentrationCodes, caption: "The concentration code", alt: "Nitric acid reduction products depend on concentration: nitrogen dioxide nitric oxide or ammonium nitrate", keyword: "no2" },
+      { Component: Hno3ConcentrationCodes, caption: "The concentration code", alt: "Nitric acid reduction products depend on concentration: nitrogen dioxide nitric oxide or ammonium nitrate", keyword: "concentration" },
       { Component: No3ResonancePanel, caption: "NO3 minus: three drawings, one ion", alt: "Nitrate ion with three equivalent resonance structures giving bond order one and one third", keyword: "resonance" },
       { Component: AquaRegiaPanel, caption: "Aqua regia: the king-dissolver", alt: "Aqua regia three parts hydrochloric acid to one part nitric acid dissolving gold and platinum", keyword: "aqua regia" },
       { Component: PassivityFilmPanel, caption: "Passivity: the acid that builds its own wall", alt: "Concentrated nitric acid passivating iron aluminium and chromium with a thin oxide film", keyword: "passivity" },
@@ -10773,10 +10773,10 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     figures: [
       { Component: HalogenTrendLadder, caption: "Down the group: bigger, softer, weaker", alt: "Ladder of halogens with state colour electronegativity and oxidising power from fluorine to iodine", keyword: "fluorine" },
       { Component: HalogenDisplacementSeries, caption: "The bully always wins", alt: "Displacement series showing lighter halogens liberating heavier halides with observed colours", keyword: "displacement" },
-      { Component: ChlorineWaterEquilibrium, caption: "Chlorine water is HOCl in disguise", alt: "Chlorine water equilibrium forming hydrochloric and hypochlorous acids with nascent oxygen bleaching", keyword: "hypochlorous" },
+      { Component: ChlorineWaterEquilibrium, caption: "Chlorine water is HOCl in disguise", alt: "Chlorine water equilibrium forming hydrochloric and hypochlorous acids with nascent oxygen bleaching", keyword: "chlorine" },
       { Component: DisproportionationSplit, caption: "Same reagents, temperature picks the product", alt: "Chlorine disproportionation in cold dilute alkali stopping at plus one and in hot concentrated alkali reaching plus five", keyword: "disproportionation" },
-      { Component: OxoacidStrengthOrder, caption: "More oxygen, stronger acid (NEB 2024)", alt: "Acid strength order of chlorine oxoacids from hypochlorous to perchloric explained by conjugate base charge delocalisation", keyword: "perchloric" },
-      { Component: HalogenPrepRoutes, caption: "Making the halogens", alt: "Preparation routes for chlorine bromine and iodine in laboratory and industry", keyword: "mno2" },
+      { Component: OxoacidStrengthOrder, caption: "More oxygen, stronger acid (NEB 2024)", alt: "Acid strength order of chlorine oxoacids from hypochlorous to perchloric explained by conjugate base charge delocalisation", keyword: "oxygen" },
+      { Component: HalogenPrepRoutes, caption: "Making the halogens", alt: "Preparation routes for chlorine bromine and iodine in laboratory and industry", keyword: "making" },
       { Component: HalogenUseMap, caption: "Three halogens, three industries", alt: "Uses of chlorine bromine and iodine", keyword: "photographic" },
     ],
   },
@@ -10789,17 +10789,17 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       { Component: BleachingSpeedContrast, caption: "Bleaching power tracks oxidising power", alt: "Bleaching speed on moist litmus fast for chlorine slow for bromine and none for iodine", keyword: "bleach" },
       { Component: IodineSublimationPanel, caption: "Sublimation: solid to violet cloud and back", alt: "Iodine subliming from grey black crystals to violet vapour and depositing back on the cold surface", keyword: "sublim" },
       { Component: HalideTestFlowchart, caption: "Which halide? Follow the ladder", alt: "Flowchart for identifying chloride bromide and iodide using silver nitrate colour and ammonia solubility", keyword: "ammonia" },
-      { Component: WhiteFumesTest, caption: "Two rods, one white cloud", alt: "Ammonia and hydrogen chloride gases meeting to form dense white fumes of ammonium chloride", keyword: "nh4cl" },
+      { Component: WhiteFumesTest, caption: "Two rods, one white cloud", alt: "Ammonia and hydrogen chloride gases meeting to form dense white fumes of ammonium chloride", keyword: "white fumes" },
     ],
   },
   "haloacids-hcl-hbr-and-hi-comparative-study-on-preparation-properties-reducing-strength-acidic-na": {
     title: "Haloacids: HCl, HBr, HI",
     figures: [
       { Component: HalideBondLadder, caption: "The bond weakens, everything follows", alt: "Bond energy ladder of hydrogen halides 431 366 and 299 kilojoules per mole", keyword: "bond" },
-      { Component: H2so4VsH3po4Prep, caption: "Pick the acid to match the halide", alt: "Choice of sulphuric acid for hydrogen chloride and phosphoric acid for hydrogen bromide and iodide", keyword: "h3po4" },
-      { Component: HiReducesH2so4, caption: "The acid that eats its own product", alt: "Hydrogen iodide reducing concentrated sulphuric acid to iodine and sulphur dioxide contaminating its own preparation", keyword: "sulphuric acid" },
+      { Component: H2so4VsH3po4Prep, caption: "Pick the acid to match the halide", alt: "Choice of sulphuric acid for hydrogen chloride and phosphoric acid for hydrogen bromide and iodide", keyword: "halide" },
+      { Component: HiReducesH2so4, caption: "The acid that eats its own product", alt: "Hydrogen iodide reducing concentrated sulphuric acid to iodine and sulphur dioxide contaminating its own preparation", keyword: "product" },
       { Component: AcidityStabilityScissors, caption: "One bond, two opposite arrows", alt: "Opposing trends of increasing acidity and decreasing thermal stability down the hydrogen halides", keyword: "acidity" },
-      { Component: HclGastricPickling, caption: "The same acid digests lunch and de-scales steel", alt: "Hydrochloric acid in the stomach at pH 1.5 to 3.5 and in steel pickling baths", keyword: "stomach" },
+      { Component: HclGastricPickling, caption: "The same acid digests lunch and de-scales steel", alt: "Hydrochloric acid in the stomach at pH 1.5 to 3.5 and in steel pickling baths", keyword: "steel" },
       { Component: FumingHxMist, caption: "Why the bottle mouth smokes", alt: "Hydrogen halide gas meeting moist air to form white acidic mist of hydrohalic acid droplets", keyword: "fumes" },
       { Component: HalideReducingLadder, caption: "Reducing power climbs as the ion grows", alt: "Reducing power ladder of halides increasing from chloride to iodide", keyword: "reducing" },
     ],
@@ -10813,7 +10813,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       { Component: CatenationChampion, caption: "Why carbon chains and silicon doesn't", alt: "Carbon carbon bond 355 versus silicon silicon 222 kilojoules per mole explaining catenation", keyword: "catenation" },
       { Component: AmorphousAdsorptionPower, caption: "A tennis court folded into a sugar cube", alt: "Activated charcoal with enormous internal surface area about 1000 square metres per gram adsorbing gases and impurities", keyword: "adsorption" },
       { Component: CarbonUseMap, caption: "One element, four industries", alt: "Uses of carbon allotropes and amorphous forms", keyword: "lubricant" },
-      { Component: C14DatingPanel, caption: "C14: the radioactive clock", alt: "Carbon fourteen dating with 5730 year half-life decay curve", keyword: "radioactive" },
+      { Component: C14DatingPanel, caption: "C14: the radioactive clock", alt: "Carbon fourteen dating with 5730 year half-life decay curve", keyword: "graphite" },
     ],
   },
   "properties-reducing-action-reaction-with-metals-and-nonmetals-and-uses-of-carbon-monoxide": {
@@ -10824,7 +10824,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       { Component: CoBlastFurnaceReduction, caption: "The blast furnace's quiet worker", alt: "Blast furnace reduction of iron oxide by carbon monoxide", keyword: "blast furnace" },
       { Component: CarboxyhaemoglobinHijack, caption: "The hijacking ligand", alt: "Carbon monoxide binding haemoglobin iron 200 times more strongly than oxygen forming carboxyhaemoglobin", keyword: "haemoglobin" },
       { Component: MondProcessLoop, caption: "Mond: nickel travels as a vapour", alt: "Mond process loop forming nickel tetracarbonyl at 50 degrees and decomposing at 230 degrees", keyword: "nickel" },
-      { Component: CoVsCo2Contrast, caption: "One oxygen apart, worlds apart", alt: "Five row comparison of carbon monoxide and carbon dioxide", keyword: "co2" },
+      { Component: CoVsCo2Contrast, caption: "One oxygen apart, worlds apart", alt: "Five row comparison of carbon monoxide and carbon dioxide", keyword: "oxygen" },
       { Component: CoUseMap, caption: "The formal anhydride earns its keep", alt: "Four uses of carbon monoxide as fuel reducer synthesis feedstock and nickel refining", keyword: "phosgene" },
     ],
   },
@@ -10844,7 +10844,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     title: "Phosphine",
     figures: [
       { Component: Nh3VsPh3Contrast, caption: "Same shape, weaker grip", alt: "Six row comparison of ammonia and phosphine", keyword: "93.6" },
-      { Component: Ph3PrepRoutes, caption: "Two prep routes, both from P3-", alt: "Preparation of phosphine from white phosphorus with sodium hydroxide and from calcium phosphide with water", keyword: "sodium hydroxide" },
+      { Component: Ph3PrepRoutes, caption: "Two prep routes, both from P3-", alt: "Preparation of phosphine from white phosphorus with sodium hydroxide and from calcium phosphide with water", keyword: "naoh" },
       { Component: Ph3MetalSaltTests, caption: "Black precipitates and a mirror", alt: "Phosphine tests with copper mercury and silver salts giving black phosphides and silver mirror", keyword: "copper" },
       { Component: HolmesSignalSequence, caption: "Holme's signal: the sea's flare", alt: "Holmes signal of spontaneously burning phosphine used by wrecked ships", keyword: "signal" },
       { Component: Ph4SaltFormation, caption: "A base, but barely", alt: "Phosphonium salts formed by phosphine with hydrogen iodide and hydrobromic acid", keyword: "phosphonium" },
@@ -10880,7 +10880,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     title: "Sulphur dioxide",
     figures: [
       { Component: So2DualRedoxMap, caption: "+4: high enough to give, low enough to take", alt: "Sulphur dioxide dual redox nature as reducer to sulphate and oxidiser to sulphur", keyword: "reducing" },
-      { Component: So2PrepRoutes, caption: "Four doors into SO2", alt: "Four routes to sulphur dioxide in laboratory and industry", keyword: "sodium sulphite" },
+      { Component: So2PrepRoutes, caption: "Four doors into SO2", alt: "Four routes to sulphur dioxide in laboratory and industry", keyword: "sulphite" },
       { Component: So2BleachVsCl2, caption: "Two chemistries, two fates for colour", alt: "Temporary reduction bleaching by sulphur dioxide versus permanent oxidation bleaching by chlorine", keyword: "bleach" },
       { Component: SulphurFogDemo, caption: "The sulphur fog demo", alt: "Sulphur fog demonstration mixing hydrogen sulphide and sulphur dioxide to precipitate fine sulphur", keyword: "sulphur" },
       { Component: So2MoleculeShape, caption: "Bent, 119 degrees, resonating", alt: "Bent sulphur dioxide molecule with 119 degree bond angle and resonance structures", keyword: "angle" },
@@ -11053,7 +11053,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     { Component: SulphateLadderDetail, caption: "Sulphates \u2014 the collapsing ladder", alt: "Diagram: sulphates \u2014 the collapsing ladder", keyword: "2.4" },
     { Component: CarbonateLadder, caption: "Carbonates \u2014 sinking gently", alt: "Diagram: carbonates \u2014 sinking gently", keyword: "practically insoluble" },
     { Component: AnionSizeRule, caption: "The anion-size rule", alt: "Diagram: the anion-size rule", keyword: "anion" },
-    { Component: Baso4TestPanel, caption: "BaSO\u2084 \u2014 the test and the barium meal", alt: "Diagram: baso\u2084 \u2014 the test and the barium meal", keyword: "barium meal" },
+    { Component: Baso4TestPanel, caption: "BaSO\u2084 \u2014 the test and the barium meal", alt: "Diagram: baso\u2084 \u2014 the test and the barium meal", keyword: "barium" },
     { Component: HydrationEnergiesChart, caption: "Hydration energies fall fast", alt: "Diagram: hydration energies fall fast", keyword: "hydration" },
   ],
   },
@@ -11152,7 +11152,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     { Component: StudyMethodsToolkit, caption: "The organic toolkit of methods", alt: "Diagram: the organic toolkit of methods", keyword: "crystallisation" },
     { Component: ReactionSpeedContrast, caption: "Fast ionic versus slow molecular reactions", alt: "Diagram: fast ionic versus slow molecular reactions", keyword: "catalysed" },
     { Component: BorderCompoundsPanel, caption: "The conventional border compounds", alt: "Diagram: the conventional border compounds", keyword: "carbides" },
-    { Component: WohlerVerdictPanel, caption: "What died and what survived", alt: "Diagram: what died and what survived", keyword: "behavioural" },
+    { Component: WohlerVerdictPanel, caption: "What died and what survived", alt: "Diagram: what died and what survived", keyword: "behaviour" },
   ],
   },
   "tetra-covalency-and-catenation-properties-of-carbon": {
@@ -11195,9 +11195,9 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     title: "Four notations for one molecule",
     figures: [
     { Component: FormulaNotationLadder, caption: "Four notations for one molecule", alt: "Diagram: four notations for one molecule", keyword: "bond-line" },
-    { Component: C2H6OIsomerTest, caption: "Where the molecular formula fails", alt: "Diagram: where the molecular formula fails", keyword: "c2h6o" },
+    { Component: C2H6OIsomerTest, caption: "Where the molecular formula fails", alt: "Diagram: where the molecular formula fails", keyword: "molecular" },
     { Component: BondLineConventions, caption: "Conventions of bond-line formulas", alt: "Diagram: conventions of bond-line formulas", keyword: "vertex" },
-    { Component: EthanolThreeWays, caption: "Ethanol written three ways", alt: "Diagram: ethanol written three ways", keyword: "ch3ch2oh" },
+    { Component: EthanolThreeWays, caption: "Ethanol written three ways", alt: "Diagram: ethanol written three ways", keyword: "ethanol" },
     { Component: ZigzagReadingDrill, caption: "Reading a zig-zag as pentane", alt: "Diagram: reading a zig-zag as pentane", keyword: "pentane" },
     { Component: CondensedFormulaExamples, caption: "Condensed formulas of three compounds", alt: "Diagram: condensed formulas of three compounds", keyword: "acetic acid" },
     { Component: MultipleBondLines, caption: "Drawing single double and triple bonds", alt: "Diagram: drawing single double and triple bonds", keyword: "butane" },
@@ -11206,7 +11206,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
   "preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-g": {
     title: "Cracking cuts, reforming reshapes",
     figures: [
-    { Component: CrackingVsReforming, caption: "Cracking cuts, reforming reshapes", alt: "Diagram: cracking cuts, reforming reshapes", keyword: "c10h22" },
+    { Component: CrackingVsReforming, caption: "Cracking cuts, reforming reshapes", alt: "Diagram: cracking cuts, reforming reshapes", keyword: "reforming" },
     { Component: CatalyticCrackingFlow, caption: "Catalytic cracking over zeolite", alt: "Diagram: catalytic cracking over zeolite", keyword: "zeolite" },
     { Component: ReformingPlatforming, caption: "Platforming with platinum catalyst", alt: "Diagram: platforming with platinum catalyst", keyword: "platforming" },
     { Component: OctaneScalePanel, caption: "The octane number scale", alt: "Diagram: the octane number scale", keyword: "iso-octane" },
@@ -11332,7 +11332,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
 { Component: WurtzCouplingPanel, caption: "Wurtz reaction needs dry ether", alt: "Diagram: Wurtz reaction needs dry ether", keyword: "dry ether" },
 { Component: DecarboxylationFlow, caption: "Decarboxylation with soda-lime", alt: "Diagram: Decarboxylation with soda-lime", keyword: "soda-lime" },
 { Component: HaloalkaneReductionPanel, caption: "Three reducing agents for haloalkanes", alt: "Diagram: Three reducing agents for haloalkanes", keyword: "lialh" },
-{ Component: HydrogenationSurface, caption: "Catalytic hydrogenation on nickel", alt: "Diagram: Catalytic hydrogenation on nickel", keyword: "ni " },
+{ Component: HydrogenationSurface, caption: "Catalytic hydrogenation on nickel", alt: "Diagram: Catalytic hydrogenation on nickel", keyword: "hydrogenation" },
 { Component: WurtzLimitationPanel, caption: "Wurtz with mixed halides gives three products", alt: "Diagram: Wurtz with mixed halides gives three products", keyword: "mixture" },
 { Component: CarbonCountRules, caption: "Carbon accounting across the four routes", alt: "Diagram: Carbon accounting across the four routes", keyword: "one carbon fewer" },
   ],
@@ -11376,9 +11376,9 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
   "alkynes-preparation-from-carbon-and-hydrogen-1-2-dibromoethane-chloroform-iodoform-only": {
     title: "Building the triple bond",
     figures: [
-{ Component: AlkynePrepRoutes, caption: "Three routes to alkynes", alt: "Diagram: Three routes to alkynes", keyword: "carbide" },
+{ Component: AlkynePrepRoutes, caption: "Three routes to alkynes", alt: "Diagram: Three routes to alkynes", keyword: "alkynes" },
 { Component: CalciumCarbideTwoStep, caption: "Calcium carbide two step preparation", alt: "Diagram: Calcium carbide two step preparation", keyword: "2000" },
-{ Component: VicinalDihalideRoute, caption: "Vicinal dihalide to alkyne", alt: "Diagram: Vicinal dihalide to alkyne", keyword: "vinyl" },
+{ Component: VicinalDihalideRoute, caption: "Vicinal dihalide to alkyne", alt: "Diagram: Vicinal dihalide to alkyne", keyword: "alkyne" },
 { Component: HaloformSilverRoute, caption: "Haloform and hot silver route", alt: "Diagram: Haloform and hot silver route", keyword: "agcl" },
 { Component: DoubleEliminationLogic, caption: "Why the second elimination is harder", alt: "Diagram: Why the second elimination is harder", keyword: "nanh₂" },
 { Component: EthyneIdentityPanel, caption: "Ethyne and acetylene identity", alt: "Diagram: Ethyne and acetylene identity", keyword: "acetylene" },
@@ -11430,7 +11430,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
 { Component: SuccinateElectrolysisFlow, caption: "Succinate electrolysis to ethyne", alt: "Diagram: Succinate electrolysis to ethyne", keyword: "succinate" },
 { Component: KolbeProductTable, caption: "Kolbe products by electrolyte", alt: "Diagram: Kolbe products by electrolyte", keyword: "propionate" },
 { Component: CathodeHalfReaction, caption: "Cathode half reaction water reduction", alt: "Diagram: Cathode half reaction water reduction", keyword: "h₂" },
-{ Component: KolbeLegacyPanel, caption: "Kolbe legacy first total synthesis", alt: "Diagram: Kolbe legacy first total synthesis", keyword: "1845" },
+{ Component: KolbeLegacyPanel, caption: "Kolbe legacy first total synthesis", alt: "Diagram: Kolbe legacy first total synthesis", keyword: "kolbe" },
   ],
   },
 

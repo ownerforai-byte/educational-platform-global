@@ -1,5 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { compactSlug, noteMatchesTopic } from "@/lib/note-topic-match";
+import {
+  compactSlug,
+  noteMatchQuality,
+  noteMatchesTopic,
+  pickCanonicalNoteEntry,
+} from "@/lib/note-topic-match";
 
 /**
  * The shared topic ↔ note matcher (2026-11-08 pass: "notes exist but the page
@@ -82,5 +87,47 @@ describe("noteMatchesTopic", () => {
     // Stub slugs cannot claim topics.
     expect(noteMatchesTopic("dna", "01.json", "dna-structure-replication")).toBe(false);
     expect(noteMatchesTopic("", "", "")).toBe(false);
+  });
+});
+
+describe("noteMatchQuality + pickCanonicalNoteEntry", () => {
+  it("ranks exact slug above filename above prefix, 0 for no match", () => {
+    const topic = "alkynes-preparation-from-carbon-and-hydrogen-1-2-dibromoethane";
+    expect(noteMatchQuality(topic, "05-other.json", topic)).toBe(3);
+    expect(noteMatchQuality("other-topic", `05-${topic}.json`, topic)).toBe(2);
+    expect(noteMatchQuality("alkynes", "03-alkynes.json", topic)).toBe(1);
+    expect(noteMatchQuality("dna", "01.json", topic)).toBe(0);
+  });
+
+  it("a detailed exact match beats a prefix-matched stub even when the stub is first and duplicateType 1", () => {
+    // The real chemistry-manifest case: the 4-block "alkynes" stub used to win
+    // the 11-block detailed note purely by manifest order.
+    const topic = "alkynes-preparation-from-carbon-and-hydrogen-1-2-dibromoethane";
+    const winner = pickCanonicalNoteEntry(
+      [
+        { topicSlug: "alkynes", filename: "03-alkynes.json", duplicateType: 1 },
+        {
+          topicSlug: topic,
+          filename: "05-alkynes-preparation-from-carbon-and-hydrogen-1-2-dibromoethane.json",
+          duplicateType: 1,
+        },
+      ],
+      topic,
+    );
+    expect(winner?.filename).toBe("05-alkynes-preparation-from-carbon-and-hydrogen-1-2-dibromoethane.json");
+  });
+
+  it("breaks same-quality ties by duplicateType, then manifest order", () => {
+    const topic = "cell-division";
+    const entries = [
+      { topicSlug: topic, filename: "a.json", duplicateType: 2 },
+      { topicSlug: topic, filename: "b.json", duplicateType: 1 },
+      { topicSlug: topic, filename: "c.json", duplicateType: 1 },
+    ];
+    expect(pickCanonicalNoteEntry(entries, topic)?.filename).toBe("b.json");
+  });
+
+  it("returns undefined when nothing matches", () => {
+    expect(pickCanonicalNoteEntry([{ topicSlug: "dna", filename: "01.json" }], "photosynthesis")).toBeUndefined();
   });
 });

@@ -30,7 +30,6 @@ import { loadData } from "@/lib/data-loader";
 import { classDirOfTrack, parseContentPath, type ContentKind } from "@/lib/content/paths";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { NoteBlocks } from "@/components/content/rich-note";
-import { selectCanonicalNoteEntry } from "@/lib/note-routes";
 import { EntranceQuiz } from "@/components/content/entrance-quiz";
 import { TopicDocView } from "@/features/docs/doc-view";
 import { getEntranceQuestions } from "@/lib/entrance-questions";
@@ -47,7 +46,7 @@ import {
 import { resolveLabVisualEntry } from "@/lib/lab-visual-index";
 import { getLabVisualNode } from "@/lib/lab-visual-loaders";
 import { getActivityForTopic } from "@/lib/lab-manifest";
-import { noteMatchesTopic } from "@/lib/note-topic-match";
+import { noteMatchQuality, noteMatchesTopic } from "@/lib/note-topic-match";
 import { resolveUnitSlug } from "@/lib/syllabus-notes-manifest";
 import { ActivityJourney } from "@/components/lab/activity-journey";
 
@@ -604,16 +603,31 @@ export function TopicVerticalNotes({
               noteMatchesTopic(item.topicSlug, item.filename, topicSlug),
           );
           if (relevant.length > 0) {
-            const loaded = await Promise.all(
-              relevant.map(async (meta) => {
-                const data = await loadManifestNote(meta);
-                return data ? { meta, data } : null;
-              }),
-            );
-            if (cancelled) return;
-            const valid = loaded.filter((item): item is { meta: ManifestItem; data: RichTopicConcept } => item !== null);
-            const canonicalMeta = selectCanonicalNoteEntry(valid.map((source) => source.meta));
-            const canonical = valid.find((source) => source.meta === canonicalMeta);
+            // Rank candidates by match quality (exact slug beats a prefix-matched
+            // legacy stub) before duplicateType, then load in that order until one
+            // resolves — a 4-block stub must never outrank the detailed note it
+            // duplicates just because it appears first in the manifest.
+            const ranked = relevant
+              .map((meta, index) => ({ meta, index }))
+              .sort((a, b) => {
+                const qa = noteMatchQuality(a.meta.topicSlug, a.meta.filename, topicSlug);
+                const qb = noteMatchQuality(b.meta.topicSlug, b.meta.filename, topicSlug);
+                if (qa !== qb) return qb - qa;
+                const da = a.meta.duplicateType ?? 1;
+                const db = b.meta.duplicateType ?? 1;
+                if (da !== db) return da - db;
+                return a.index - b.index;
+              })
+              .map((r) => r.meta);
+            let canonical: { meta: ManifestItem; data: RichTopicConcept } | null = null;
+            for (const meta of ranked) {
+              const data = await loadManifestNote(meta);
+              if (cancelled) return;
+              if (data) {
+                canonical = { meta, data };
+                break;
+              }
+            }
             setSources(canonical ? [canonical] : []);
             if (!canonical) setNoteLoadFailed(true);
           } else {
