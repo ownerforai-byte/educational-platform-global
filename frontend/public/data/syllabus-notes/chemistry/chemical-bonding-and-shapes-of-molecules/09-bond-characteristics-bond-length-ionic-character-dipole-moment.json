@@ -5,47 +5,29 @@
   "topicTitle": "Bond characteristics: bond length, ionic character, dipole moment",
   "relevance": 100,
   "notes": [
-    "**Bond length:** The equilibrium internuclear distance at which the potential energy of a bond is minimized. It depends on: (1) atomic size — larger atoms form longer bonds (C–C: 154 pm, Si–Si: 235 pm), (2) bond order — higher order means shorter bonds (C–C: 154 pm, C=C: 134 pm, C≡C: 120 pm), (3) hybridization — more s-character shortens bonds (sp³ C–H: 109 pm, sp² C–H: 108 pm, sp C–H: 106 pm), (4) resonance — delocalization equalizes bond lengths (benzene C–C: 139 pm, intermediate between single and double).",
-    "**Bond energy (bond enthalpy):** The energy required to break one mole of a particular bond in the gas phase, producing gaseous atoms. Typical values: H–H 436 kJ/mol, C–H 413 kJ/mol, C–C 347 kJ/mol, C=C 614 kJ/mol, C≡C 839 kJ/mol, O=O 498 kJ/mol, N≡N 945 kJ/mol. Bond energy increases with bond order and decreases with increasing atomic size. The N≡C bond in N₂ is particularly strong, explaining nitrogen's low reactivity.",
-    "**Bond order:** The number of chemical bonds between a pair of atoms. In Lewis terms, bond order = (number of bonding electrons − number of antibonding electrons)/2 in MO theory. Higher bond order → shorter bond length and greater bond energy. For resonance structures, bond order is the average (e.g., O₃ has bond order 1.5, benzene C–C has bond order 1.5).",
-    "**Ionic character percentage:** No bond is 100% ionic (except in idealized models). The percent ionic character can be estimated using Pauling's equation: % ionic character = $\\left[1 - e^{-0.25(\\chi_A - \\chi_B)^2}\right] \\times 100$, where $\\chi$ represents electronegativity. For H–F ($\\chi_F - \\chi_H = 3.98 - 2.20 = 1.78$): % ionic ≈ 1 − e^(−0.25×3.17) ≈ 1 − 0.456 ≈ 54.4%. For NaCl ($\\Delta\\chi = 2.23$): % ionic ≈ 71%.",
-    "**Dipole moment ($\\mu$):** A vector quantity measuring the separation of positive and negative charges in a molecule. $\\mu = q \\times d$, where $q$ is the magnitude of charge separation and $d$ is the distance between the charges. Unit: Debye (D), where 1 D = 3.336 × 10⁻³⁰ C·m. For a 100% ionic bond with charge separation of one elementary charge (1.602 × 10⁻¹⁹ C) at 100 pm: $\\mu = 1.602 \\times 10^{-19} \\times 100 \\times 10^{-12} = 4.8$ D.",
-    "**Percentage ionic character from dipole moment:** % ionic character = $\\frac{\\mu_{observed}}{\\mu_{calculated\\ (100\\%\\ ionic)}} \\times 100$. For HCl: $\\mu_{obs} = 1.08$ D, $\\mu_{calc} = 4.8$ D (for 100 pm bond), so % ionic = $\\frac{1.08}{4.8} \\times 100 \\approx 22.5%$. This confirms HCl is predominantly covalent with partial ionic character.",
-    "**Net dipole moment in polyatomic molecules:** The molecular dipole moment is the vector sum of individual bond dipoles. In CO₂ (linear, O=C=O), the two C=O dipoles are equal and opposite → net $\\mu = 0$. In H₂O (bent, 104.5°), the two O–H dipoles add vectorially → $\\mu = 1.85$ D. In BF₃ (trigonal planar), the three B–F dipoles cancel → $\\mu = 0$. In NH₃ (trigonal pyramidal), the three N–H dipoles and the lone pair contribution add up → $\\mu = 1.47$ D.",
-    "**Factors affecting dipole moment:** (1) Electronegativity difference — greater difference → larger bond dipole, (2) Molecular geometry — symmetrical molecules may have zero net dipole despite polar bonds, (3) Lone pairs — contribute significantly to dipole moment (NH₃ > NF₃ despite F being more electronegative, because N's lone pair reinforces the N–F bond dipoles in NH₃ but opposes them in NF₃).",
-    "**Bond length trends in halides:** For a given halogen, bond length increases down the group: HF (92 pm) < HCl (127 pm) < HBr (141 pm) < HI (161 pm). This correlates with decreasing bond energy: HF (567) > HCl (431) > HBr (366) > HI (299) kJ/mol. Bond length and bond energy are inversely related — shorter bonds are stronger.",
-    "**Fajans' rules and covalent character in ionic compounds:** Small cations with high charge (e.g., Al³⁺, Be²⁺) and large anions (e.g., I⁻, S²⁻) polarize each other, introducing covalent character into supposedly ionic bonds. AlCl₃ is covalent (low melting point, soluble in organic solvents), while NaCl is ionic (high melting point, conducts when molten). This explains why AlCl₃ sublimes at 180°C while NaCl melts at 801°C.",
-    "**Bond length and resonance:** In nitrate ion NO₃⁻, all three N–O bonds are equivalent with bond length 124 pm, intermediate between N–O (140 pm) and N=O (115 pm). The bond order is 1.33, confirmed by X-ray diffraction. Similarly, in carbonate CO₃²⁻, all C–O bonds are 129 pm (between C–O single 143 pm and C=O double 120 pm).",
-    "**Dipole moment and molecular polarity:** A molecule is polar if it has a permanent dipole moment ($\\mu \neq 0$). Polarity affects boiling point (polar molecules have higher BP due to dipole-dipole interactions), solubility ('like dissolves like' — polar solutes dissolve in polar solvents), and intermolecular forces. CHCl₃ (chloroform, $\\mu = 1.01$ D) is polar; CCl₄ (carbon tetrachloride, $\\mu = 0$ D) is non-polar despite having four polar C–Cl bonds.",
-    "**Bond energy and thermodynamic cycles:** Bond energies can be used to estimate reaction enthalpies using Hess's Law: $\\Delta H_{rxn} \\approx \\sum BE_{reactants} - \\sum BE_{products}$. For combustion of CH₄: break 4×C–H (4×413 = 1652 kJ) + 2×O=O (2×498 = 996 kJ) = 2648 kJ input; form 2×C=O (2×799 = 1598 kJ) + 4×O–H (4×463 = 1852 kJ) = 3450 kJ released. $\\Delta H \\approx 2648 - 3450 = -802$ kJ/mol (experimental: −890 kJ/mol).",
-    "**Ionic character and solubility:** The percent ionic character predicts solubility behavior. NaCl (71% ionic) dissolves readily in water (dielectric constant 80) but not in hexane. AgCl (less ionic due to polarization by Ag⁺) is nearly insoluble in water. This is explained by Fajans' rules — the covalent character introduced by polarization reduces lattice energy dissolution driving force.",
-    "# Bond characteristics: bond length, ionic character, dipole moment\n\n## 1. Introduction\nChemical picture of **Bond characteristics** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Bond characteristics: bond length\n### ionic character\n### dipole moment\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Classification and trends**\n\n| Family or case | Rule or trend | Example | Exception |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Bond characteristics — shape gallery: structures with bond angles (authored SVG)\n- **D2** — Bond characteristics — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Bond characteristics — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Bond characteristics — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Measuring the Unevenness of Bonds\n\nA bond between unlike atoms is rarely purely ionic or purely covalent — it sits somewhere between, and three measurable quantities locate its position: **bond length** (how close the nuclei sit), **ionic character** (how far charge has shifted), and **dipole moment** (the electrical signature of that shift). This topic turns bonding from a picture into numbers.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Bond length\n\n- **Definition:** the equilibrium internuclear distance between the centres of two bonded atoms.\n- Measured by X-ray/electron diffraction or spectroscopy; equals the **sum of covalent radii** of the two atoms (covalent radius = half the internuclear distance in a homonuclear bond).\n- **Bond order shrinks length:** C–C 154 pm → C=C 134 pm → C≡C 120 pm; N–N 145 pm vs N≡N 110 pm.\n- **Atomic size grows length down a group:** H–F 92 pm, H–Cl 127 pm, H–Br 141 pm, H–I 160 pm.\n- Shorter bond → stronger bond (higher bond energy): H–F 565 kJ mol⁻¹ > H–Cl 431 > H–Br 364 > H–I 297.\n\n### 2.2 Ionic character and electronegativity difference\n\n- A 100% covalent bond has equal sharing; a 100% ionic bond has full transfer. Real bonds are **partially ionic** — the electron pair is pulled toward the more electronegative atom.\n- **Greater ΔEN → greater ionic character.** Pauling's scale: H 2.1, F 4.0, Cl 3.0, Br 2.8, I 2.5, Li 1.0, Na 0.9, Cs 0.7.\n- **Hannay–Smyth empirical relation:** % ionic character = 16(ΔEN) + 3.5(ΔEN)².\n  - HF: ΔEN = 1.9 → 16(1.9) + 3.5(3.61) = 30.4 + 12.6 ≈ **43%**.\n  - HCl: ΔEN = 0.9 → 14.4 + 2.8 ≈ **17%**; HBr ≈ 11%; HI ≈ 5%.\n- No bond is 100% ionic (even CsF retains covalent character); no homonuclear bond is 100% covalent-only in the polar sense — but homonuclear bonds are nonpolar by symmetry.\n\n### 2.3 Dipole moment\n\n- **Definition:** μ = q × d — the product of the charge separated and the distance of separation; a **vector** pointing from the positive to the negative end (chemists' convention: the crossbar of δ⁺→δ⁻).\n- **Unit:** debye (D); 1 D = 3.33564 × 10⁻³⁰ C·m. A full electron charge across 100 pm gives ≈ 4.8 D (the \"unit charge benchmark\").\n- **Molecular dipole = vector sum** of all bond dipoles:\n  - **Zero despite polar bonds:** CO₂ (linear, two equal dipoles cancel), BF₃ (trigonal planar, 120° three-way cancel), CH₄ and CCl₄ (tetrahedral symmetry).\n  - **Nonzero:** H₂O 1.85 D (bent 104.5°), NH₃ 1.47 D (pyramidal), HF 1.91 D, HCl 1.03 D, CH₃Cl 1.87 D, CHCl₃ 1.04 D.\n  - **NF₃ surprise:** same pyramidal shape as NH₃ but only 0.24 D — the N–F bond dipoles point *toward* F, opposing the lone-pair dipole, so they nearly cancel it. Shape alone does not fix the moment; direction matters.\n\n### 2.4 Applications of dipole moments\n\n- **Geometry decisions:** isomers with the same formula are told apart — cis-1,2-dichloroethene (1.90 D) vs trans (0 D); ortho-dichlorobenzene polar vs para (0 D).\n- **Ionic character ranking:** % ionic character ∝ μ(observed)/μ(100% ionic).\n- **Polarity → solubility and boiling point** downstream (topics 36's hydrogen bonding builds on this).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Bond length** | Equilibrium internuclear distance | C–C 154, C=C 134, C≡C 120 pm |\n| **Covalent radius** | Half the internuclear distance of a homonuclear bond | H 37 pm |\n| **Dipole moment** | μ = q × d; vector from δ⁺ to δ⁻ | 1 D = 3.33564 × 10⁻³⁰ C·m |\n| **Ionic character** | Fraction of charge transfer; from ΔEN | HF ≈ 43%, HCl ≈ 17% |\n| **Hannay–Smyth equation** | % ionic = 16(ΔEN) + 3.5(ΔEN)² | Empirical, dipole-based |",
+    "## 4. Detailed Explanation\n\n### 4.1 The HF ionic-character calculation (worked)\n\n- Observed μ(HF) = 1.91 D; H–F bond length = 92 pm.\n- Hypothetical 100% ionic dipole: μ = q·d = (1.602 × 10⁻¹⁹ C)(92 × 10⁻¹² m) = 1.47 × 10⁻²⁹ C·m = 4.42 D.\n- **% ionic character = 1.91/4.42 × 100 ≈ 43%** — matching the Hannay–Smyth estimate. HF is mostly covalent but strongly polar — the reason it hydrogen-bonds (topic 36).\n\n### 4.2 Why symmetry can erase polarity\n\n- Each C=O bond in CO₂ is strongly polar (C δ⁺, O δ⁻), but the two dipoles are equal and opposite along 180° — vector sum zero. Bend the molecule (as in SO₂, 119°) and cancellation fails → μ = 1.63 D.\n- This is how dipole moments *measured* molecular shapes historically: CO₂'s zero moment proved it linear before diffraction could.\n\n### 4.3 Bond parameters working together\n\n- Bond length, bond energy, bond order and ionic character move as a system: higher order → shorter → stronger; larger ΔEN → shorter (partial ionic attraction) *and* stronger, with HF the extreme (92 pm, 565 kJ mol⁻¹).\n- Percentage ionic character correlates with dipole moment — both measure the same charge shift from different directions.",
+    "## 5. Comparison Tables\n\n**Bond lengths and energies (selected)**\n\n| Bond | Length (pm) | Energy (kJ mol⁻¹) |\n|---|---|---|\n| H–H | 74 | 436 |\n| C–C | 154 | 348 |\n| C=C | 134 | 614 |\n| C≡C | 120 | 839 |\n| H–F | 92 | 565 |\n| H–Cl | 127 | 431 |\n| H–I | 160 | 297 |\n\n**Dipole moments: polar bonds vs polar molecules**\n\n| Molecule | Bond dipoles | Shape | Net μ (D) |\n|---|---|---|---|\n| CO₂ | 2 polar C=O | Linear 180° | 0 |\n| BF₃ | 3 polar B–F | Trigonal planar | 0 |\n| CH₄ / CCl₄ | 4 polar C–H/C–Cl | Tetrahedral | 0 |\n| H₂O | 2 polar O–H | Bent 104.5° | 1.85 |\n| NH₃ | 3 polar N–H | Pyramidal 107° | 1.47 |\n| NF₃ | 3 polar N–F | Pyramidal | 0.24 |\n| HF | 1 polar H–F | — | 1.91 |",
+    "## 6. Common Confusions\n\n**Polar bonds ≠ polar molecule:** CO₂ and CCl₄ have polar bonds but zero net moment — symmetry cancels. Polarity of a molecule is a vector question, not a bond question.",
+    "**Dipole direction convention:** the chemists' arrow points from positive to negative (crossed tail at δ⁺); physics defines the vector the opposite way. Quote μ magnitudes, not directions, unless the convention is stated.",
+    "**Ionic character is not all-or-nothing:** HF is 43% ionic and 57% covalent simultaneously — real bonds are mixtures, which is why Fajan's rules (topic 28) modulate ionic compounds toward covalency.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024/02, adapted to this topic): Explain why CO₂ has zero dipole moment while SO₂ does not.** — CO₂ is linear (180°): its two equal C=O bond dipoles point in exactly opposite directions and cancel, giving μ = 0. SO₂ is bent (≈119°, lone pair on S): the two S=O dipoles no longer oppose directly; their vector sum plus the lone-pair contribution gives a net moment ≈ 1.63 D. Geometry, not bond polarity alone, decides the molecular dipole.",
+    "**NEB-style (3m): Calculate the percentage ionic character of HF.** — μ(observed) = 1.91 D; bond length 92 pm; μ(100% ionic) = q·d = 1.602 × 10⁻¹⁹ × 92 × 10⁻¹² = 1.47 × 10⁻²⁹ C·m = 4.42 D; % ionic = 1.91/4.42 × 100 ≈ 43%. Cross-check with Hannay–Smyth: ΔEN = 1.9 → 16(1.9) + 3.5(1.9)² ≈ 43%.",
+    "**NEB-style (2m): Arrange HF, HCl, HBr, HI by bond length and bond strength, with reasons.** — Length: H–F 92 < H–Cl 127 < H–Br 141 < H–I 160 pm (halogen size grows down the group). Strength runs the reverse: 565 > 431 > 364 > 297 kJ mol⁻¹ — longer bonds overlap less effectively and are weaker; HF's extra strength also reflects its high ionic character (43%)."
   ],
   "confusion": [
-    "Dipole moment direction: The dipole moment vector points from positive to negative charge (by IUPAC convention in physics), but chemists often draw the arrow with the plus end at the less electronegative atom and a cross at the positive end. Remember: the partial positive ($\\delta^+$) is on the less electronegative atom, and $\\delta^-$ is on the more electronegative atom.",
-    "Zero dipole does not mean non-polar bonds: CO₂ and CCl₄ have zero net dipole moments, but their individual bonds are polar. The zero result comes from symmetrical geometry causing vector cancellation. Always distinguish between bond polarity (local) and molecular polarity (global).",
-    "Bond energy vs. bond length are inversely related but not perfectly: While generally shorter bonds are stronger, there are exceptions. For example, the F–F bond (159 pm, 159 kJ/mol) is anomalously weak compared to Cl–Cl (199 pm, 243 kJ/mol) due to lone pair–lone pair repulsion between the small fluorine atoms. Never assume bond energy monotonically decreases with bond length.",
-    "Ionic character percentage is approximate: Pauling's equation gives an estimate, not an exact value. The actual ionic character depends on the crystal environment, solvation, and other factors. For instance, gaseous NaCl has ~71% ionic character, but in the solid lattice, the ionic contribution is even more pronounced due to the collective electrostatic environment.",
-    "Bond order is not always an integer: In resonance structures and molecular orbital theory, bond orders can be fractional (1.5 for benzene C–C, 1.33 for carbonate, 2 for O₂ in MO theory). Fractional bond orders correspond to intermediate bond lengths and energies between the nearest integer values."
+    "**Zero dipole ≠ nonpolar bonds:** CO₂'s bonds are highly polar; the *molecule* is nonpolar. State both facts when answering.",
+    "**NF₃ vs NH₃:** same shape, opposite dipole logic — in NF₃ the bond dipoles oppose the lone pair's contribution (0.24 D); in NH₃ they reinforce it (1.47 D)."
   ],
   "practice": [
-    "Calculate the percent ionic character of the H–F bond given: observed dipole moment = 1.86 D, bond length = 92 pm. (Expected answer: calculated $\\mu = \\frac{1.602 \\times 10^{-19} \\times 92 \\times 10^{-12}}{3.336 \\times 10^{-30}} \\approx 4.41$ D; % ionic = $\\frac{1.86}{4.41} \\times 100 \\approx 42.2%$.)",
-    "Arrange the following in order of increasing bond length: C≡C, C=C, C–C, benzene C–C. Explain your ordering using bond order and resonance concepts. (Answer: C≡C 120 pm < C=C 134 pm < benzene 139 pm < C–C 154 pm.)",
-    "Predict which molecule has the larger dipole moment: NF₃ or NH₃. Explain using vector addition of bond dipoles and the contribution of the lone pair. (Answer: NH₃ has $\\mu = 1.47$ D > NF₃'s $\\mu = 0.23$ D. In NH₃, the lone pair dipole reinforces the N–H bond dipoles; in NF₃, the lone pair dipole opposes the N–F bond dipoles because fluorine is more electronegative than nitrogen.)",
-    "Using bond energies, estimate the enthalpy change for the reaction: N₂(g) + 3H₂(g) → 2NH₃(g). Given: N≡N = 945 kJ/mol, H–H = 436 kJ/mol, N–H = 391 kJ/mol. (Answer: $\\Delta H = [945 + 3(436)] - [6(391)] = 2253 - 2346 = -93$ kJ/mol. Experimental: −92 kJ/mol — excellent agreement!)",
-    ")"
+    "Why does NF₃ have a much smaller dipole moment than NH₃ despite the same pyramidal shape?",
+    "A bond has length 127 pm and observed dipole 1.03 D. Calculate its percentage ionic character and identify the bond.",
+    "Explain why para-dichlorobenzene has zero dipole moment while the ortho isomer does not."
   ],
   "universalFacts": [
-    "The N≡N triple bond in molecular nitrogen (945 kJ/mol) is one of the strongest bonds in chemistry. This extraordinary bond strength is why N₂ is so inert at room temperature and why nitrogen fixation (breaking N≡N) requires extreme conditions or biological enzymes (nitrogenase).",
-    "The bond length of H₂ (74 pm) is the shortest known covalent bond because hydrogen has the smallest atomic radius. The H–H bond energy (436 kJ/mol) is also remarkably high for such a short bond, reflecting the excellent 1s–1s overlap.",
-    "The dipole moment of water (1.85 D) is responsible for its extraordinary solvent properties. No other common liquid has a combination of high dipole moment, small size, and hydrogen bonding capability, making water the 'universal solvent' for biological and chemical systems.",
-    "Bond energy values are average values derived from many compounds. The C–H bond energy of 413 kJ/mol is an average across methane, ethane, propane, etc. The actual C–H bond energy in CH₄ (427 kJ/mol for the first bond) differs from the average because each successive bond removal requires different energy.",
-    "The relationship between electronegativity difference and ionic character is not linear. Going from $\\Delta\\chi = 0.5$ to $1.0$ roughly doubles the ionic character, but going from $2.0$ to $2.5$ adds much less. This is because the exponential function $e^{-0.25\\Delta\\chi^2}$ decays rapidly at first then levels off."
+    "Water's 1.85 D moment is why microwave ovens work — the rotating dipole absorbs 2.45 GHz radiation; a symmetric molecule like CO₂ would be transparent."
   ],
   "animation3D": "chemical-bonding-and-shapes-of-molecules",
   "motionGraphics": "chemical-bonding-and-shapes-of-molecules",
@@ -54,20 +36,269 @@
   "tabGroup": "Chemical-Bonding-Learner-Notes",
   "filename": "09-bond-characteristics-bond-length-ionic-character-dipole-moment.json",
   "examShortTricks": [
-    "Trick 1: Dipole-moment order for board exams: HF > HCl > HBr > HI (ΔEN falls) — and μ = q × d with direction from + to −.",
-    "Trick 2: % ionic character rises with ΔEN; a ΔEN ≥ 1.7 bond is taken as ionic, ≤ 0.4 as covalent — quick classification trick.",
-    "Trick 3: Bond length order: triple < double < single (C≡C < C=C < C–C); larger atoms → longer bonds (H–Cl < H–Br < H–I).",
-    "Trick 4: Zero dipole despite polar bonds = symmetric molecule (CO2, BF3, CCl4) — the vector sum cancels."
+    "μ = 0 club: CO₂, BF₃, CH₄, CCl₄, PCl₅, SF₆, trans-isomers, para-isomers. Ionic % ladder: HF 43 > HCl 17 > HBr 11 > HI 5. Length ladder: C–C 154 > C=C 134 > C≡C 120."
   ],
   "keyPoints": [
-    "Bond length: equilibrium distance between nuclei of bonded atoms; decreases with higher bond order.",
-    "Dipole moment μ = charge × distance; vector from the positive to the negative end.",
-    "Ionic character increases with electronegativity difference.",
-    "Symmetric molecules with polar bonds can have μ = 0."
+    "Bond length: order↑ → length↓ (154/134/120 pm C–C family); size↑ → length↓ the reverse. Dipole moment μ = q·d, unit debye (1 D = 3.33564 × 10⁻³⁰ C·m), vector sum over all bonds. Symmetric molecules (CO₂, BF₃, CH₄, CCl₄, trans-isomers) → μ = 0 despite polar bonds. % ionic character = μ(obs)/μ(ionic) × 100 or Hannay–Smyth 16ΔEN + 3.5ΔEN²; HF ≈ 43%, HCl ≈ 17%, HBr ≈ 11%, HI ≈ 5%. NF₃ 0.24 D vs NH₃ 1.47 D — direction matters."
   ],
   "practiceQuestions": [
-    "Q. Arrange HF, HCl, HBr, HI in increasing dipole moment. (1 mark) — HI < HBr < HCl < HF.",
-    "Q. CO2 has polar bonds but zero dipole moment — why? (2 marks) — linear molecule; the two equal bond dipoles point opposite and cancel.",
-    "Q. Which is longer, C–C or C=C, and why? (1 mark) — C–C; greater s-character/bond order pulls nuclei closer."
+    "**NEB-style (3m): Explain why CO₂ has zero dipole moment while SO₂ has a significant one.** — **CO₂:** the molecule is linear (O=C=O, 180°). Each C=O bond is strongly polar, but the two bond dipoles are equal in magnitude and exactly opposite in direction along the same axis; their vector sum is zero, so μ(CO₂) = 0 D. **SO₂:** the central sulphur carries a lone pair, so VSEPR gives a bent shape (O–S–O ≈ 119°). The two S=O bond dipoles no longer point in opposite directions — their resultant, added to the lone-pair contribution, leaves a net dipole of ≈ 1.63 D. **Conclusion:** molecular dipole moment is the vector sum of all bond dipoles; molecular geometry decides whether polar bonds cancel.",
+    "**NEB-style (3m): Calculate the percentage ionic character in HF (μ = 1.91 D, bond length = 92 pm).** — For a 100% ionic H–F bond the dipole would be one full electron charge separated by the bond length: μ(ionic) = q × d = (1.602 × 10⁻¹⁹ C) × (92 × 10⁻¹² m) = 1.47 × 10⁻²⁹ C·m. Converting: 1.47 × 10⁻²⁹ / 3.33564 × 10⁻³⁰ = **4.42 D**. Percentage ionic character = μ(observed)/μ(100% ionic) × 100 = 1.91/4.42 × 100 ≈ **43%**. Check via Hannay–Smyth: ΔEN(H–F) = 4.0 − 2.1 = 1.9 → 16(1.9) + 3.5(1.9)² = 30.4 + 12.6 ≈ 43%. HF is therefore a strongly polar covalent bond — the foundation of its hydrogen bonding.",
+    "**NEB-style (2m): Arrange HF, HCl, HBr and HI in order of (a) increasing bond length and (b) decreasing bond strength, giving reasons.** — (a) **H–F (92 pm) < H–Cl (127 pm) < H–Br (141 pm) < H–I (160 pm):** the halogen's covalent radius grows down the group (F → I), so the internuclear distance grows. (b) **HF (565) > HCl (431) > HBr (364) > HI (297 kJ mol⁻¹):** longer bonds have poorer orbital overlap and are weaker; in addition, ΔEN and hence ionic character fall down the group (43% → 5%), removing the extra electrostatic contribution HF enjoys. Length and strength move inversely along the series."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Measuring the Unevenness of Bonds\n\nA bond between unlike atoms is rarely purely ionic or purely covalent — it sits somewhere between, and three measurable quantities locate its position: **bond length** (how close the nuclei sit), **ionic character** (how far charge has shifted), and **dipole moment** (the electrical signature of that shift). This topic turns bonding from a picture into numbers.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Bond length\n\n- **Definition:** the equilibrium internuclear distance between the centres of two bonded atoms.\n- Measured by X-ray/electron diffraction or spectroscopy; equals the **sum of covalent radii** of the two atoms (covalent radius = half the internuclear distance in a homonuclear bond).\n- **Bond order shrinks length:** C–C 154 pm → C=C 134 pm → C≡C 120 pm; N–N 145 pm vs N≡N 110 pm.\n- **Atomic size grows length down a group:** H–F 92 pm, H–Cl 127 pm, H–Br 141 pm, H–I 160 pm.\n- Shorter bond → stronger bond (higher bond energy): H–F 565 kJ mol⁻¹ > H–Cl 431 > H–Br 364 > H–I 297.\n\n### 2.2 Ionic character and electronegativity difference\n\n- A 100% covalent bond has equal sharing; a 100% ionic bond has full transfer. Real bonds are **partially ionic** — the electron pair is pulled toward the more electronegative atom.\n- **Greater ΔEN → greater ionic character.** Pauling's scale: H 2.1, F 4.0, Cl 3.0, Br 2.8, I 2.5, Li 1.0, Na 0.9, Cs 0.7.\n- **Hannay–Smyth empirical relation:** % ionic character = 16(ΔEN) + 3.5(ΔEN)².\n  - HF: ΔEN = 1.9 → 16(1.9) + 3.5(3.61) = 30.4 + 12.6 ≈ **43%**.\n  - HCl: ΔEN = 0.9 → 14.4 + 2.8 ≈ **17%**; HBr ≈ 11%; HI ≈ 5%.\n- No bond is 100% ionic (even CsF retains covalent character); no homonuclear bond is 100% covalent-only in the polar sense — but homonuclear bonds are nonpolar by symmetry.\n\n### 2.3 Dipole moment\n\n- **Definition:** μ = q × d — the product of the charge separated and the distance of separation; a **vector** pointing from the positive to the negative end (chemists' convention: the crossbar of δ⁺→δ⁻).\n- **Unit:** debye (D); 1 D = 3.33564 × 10⁻³⁰ C·m. A full electron charge across 100 pm gives ≈ 4.8 D (the \"unit charge benchmark\").\n- **Molecular dipole = vector sum** of all bond dipoles:\n  - **Zero despite polar bonds:** CO₂ (linear, two equal dipoles cancel), BF₃ (trigonal planar, 120° three-way cancel), CH₄ and CCl₄ (tetrahedral symmetry).\n  - **Nonzero:** H₂O 1.85 D (bent 104.5°), NH₃ 1.47 D (pyramidal), HF 1.91 D, HCl 1.03 D, CH₃Cl 1.87 D, CHCl₃ 1.04 D.\n  - **NF₃ surprise:** same pyramidal shape as NH₃ but only 0.24 D — the N–F bond dipoles point *toward* F, opposing the lone-pair dipole, so they nearly cancel it. Shape alone does not fix the moment; direction matters.\n\n### 2.4 Applications of dipole moments\n\n- **Geometry decisions:** isomers with the same formula are told apart — cis-1,2-dichloroethene (1.90 D) vs trans (0 D); ortho-dichlorobenzene polar vs para (0 D).\n- **Ionic character ranking:** % ionic character ∝ μ(observed)/μ(100% ionic).\n- **Polarity → solubility and boiling point** downstream (topics 36's hydrogen bonding builds on this).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Bond length** | Equilibrium internuclear distance | C–C 154, C=C 134, C≡C 120 pm |\n| **Covalent radius** | Half the internuclear distance of a homonuclear bond | H 37 pm |\n| **Dipole moment** | μ = q × d; vector from δ⁺ to δ⁻ | 1 D = 3.33564 × 10⁻³⁰ C·m |\n| **Ionic character** | Fraction of charge transfer; from ΔEN | HF ≈ 43%, HCl ≈ 17% |\n| **Hannay–Smyth equation** | % ionic = 16(ΔEN) + 3.5(ΔEN)² | Empirical, dipole-based |",
+      "## 4. Detailed Explanation\n\n### 4.1 The HF ionic-character calculation (worked)\n\n- Observed μ(HF) = 1.91 D; H–F bond length = 92 pm.\n- Hypothetical 100% ionic dipole: μ = q·d = (1.602 × 10⁻¹⁹ C)(92 × 10⁻¹² m) = 1.47 × 10⁻²⁹ C·m = 4.42 D.\n- **% ionic character = 1.91/4.42 × 100 ≈ 43%** — matching the Hannay–Smyth estimate. HF is mostly covalent but strongly polar — the reason it hydrogen-bonds (topic 36).\n\n### 4.2 Why symmetry can erase polarity\n\n- Each C=O bond in CO₂ is strongly polar (C δ⁺, O δ⁻), but the two dipoles are equal and opposite along 180° — vector sum zero. Bend the molecule (as in SO₂, 119°) and cancellation fails → μ = 1.63 D.\n- This is how dipole moments *measured* molecular shapes historically: CO₂'s zero moment proved it linear before diffraction could.\n\n### 4.3 Bond parameters working together\n\n- Bond length, bond energy, bond order and ionic character move as a system: higher order → shorter → stronger; larger ΔEN → shorter (partial ionic attraction) *and* stronger, with HF the extreme (92 pm, 565 kJ mol⁻¹).\n- Percentage ionic character correlates with dipole moment — both measure the same charge shift from different directions.",
+      "## 5. Comparison Tables\n\n**Bond lengths and energies (selected)**\n\n| Bond | Length (pm) | Energy (kJ mol⁻¹) |\n|---|---|---|\n| H–H | 74 | 436 |\n| C–C | 154 | 348 |\n| C=C | 134 | 614 |\n| C≡C | 120 | 839 |\n| H–F | 92 | 565 |\n| H–Cl | 127 | 431 |\n| H–I | 160 | 297 |\n\n**Dipole moments: polar bonds vs polar molecules**\n\n| Molecule | Bond dipoles | Shape | Net μ (D) |\n|---|---|---|---|\n| CO₂ | 2 polar C=O | Linear 180° | 0 |\n| BF₃ | 3 polar B–F | Trigonal planar | 0 |\n| CH₄ / CCl₄ | 4 polar C–H/C–Cl | Tetrahedral | 0 |\n| H₂O | 2 polar O–H | Bent 104.5° | 1.85 |\n| NH₃ | 3 polar N–H | Pyramidal 107° | 1.47 |\n| NF₃ | 3 polar N–F | Pyramidal | 0.24 |\n| HF | 1 polar H–F | — | 1.91 |",
+      "## 6. Common Confusions\n\n**Polar bonds ≠ polar molecule:** CO₂ and CCl₄ have polar bonds but zero net moment — symmetry cancels. Polarity of a molecule is a vector question, not a bond question.",
+      "**Dipole direction convention:** the chemists' arrow points from positive to negative (crossed tail at δ⁺); physics defines the vector the opposite way. Quote μ magnitudes, not directions, unless the convention is stated.",
+      "**Ionic character is not all-or-nothing:** HF is 43% ionic and 57% covalent simultaneously — real bonds are mixtures, which is why Fajan's rules (topic 28) modulate ionic compounds toward covalency.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024/02, adapted to this topic): Explain why CO₂ has zero dipole moment while SO₂ does not.** — CO₂ is linear (180°): its two equal C=O bond dipoles point in exactly opposite directions and cancel, giving μ = 0. SO₂ is bent (≈119°, lone pair on S): the two S=O dipoles no longer oppose directly; their vector sum plus the lone-pair contribution gives a net moment ≈ 1.63 D. Geometry, not bond polarity alone, decides the molecular dipole.",
+      "**NEB-style (3m): Calculate the percentage ionic character of HF.** — μ(observed) = 1.91 D; bond length 92 pm; μ(100% ionic) = q·d = 1.602 × 10⁻¹⁹ × 92 × 10⁻¹² = 1.47 × 10⁻²⁹ C·m = 4.42 D; % ionic = 1.91/4.42 × 100 ≈ 43%. Cross-check with Hannay–Smyth: ΔEN = 1.9 → 16(1.9) + 3.5(1.9)² ≈ 43%.",
+      "**NEB-style (2m): Arrange HF, HCl, HBr, HI by bond length and bond strength, with reasons.** — Length: H–F 92 < H–Cl 127 < H–Br 141 < H–I 160 pm (halogen size grows down the group). Strength runs the reverse: 565 > 431 > 364 > 297 kJ mol⁻¹ — longer bonds overlap less effectively and are weaker; HF's extra strength also reflects its high ionic character (43%)."
+    ],
+    "confusion": [
+      "**Zero dipole ≠ nonpolar bonds:** CO₂'s bonds are highly polar; the *molecule* is nonpolar. State both facts when answering.",
+      "**NF₃ vs NH₃:** same shape, opposite dipole logic — in NF₃ the bond dipoles oppose the lone pair's contribution (0.24 D); in NH₃ they reinforce it (1.47 D)."
+    ],
+    "keyPoints": [
+      "Bond length: order↑ → length↓ (154/134/120 pm C–C family); size↑ → length↓ the reverse. Dipole moment μ = q·d, unit debye (1 D = 3.33564 × 10⁻³⁰ C·m), vector sum over all bonds. Symmetric molecules (CO₂, BF₃, CH₄, CCl₄, trans-isomers) → μ = 0 despite polar bonds. % ionic character = μ(obs)/μ(ionic) × 100 or Hannay–Smyth 16ΔEN + 3.5ΔEN²; HF ≈ 43%, HCl ≈ 17%, HBr ≈ 11%, HI ≈ 5%. NF₃ 0.24 D vs NH₃ 1.47 D — direction matters."
+    ],
+    "importantConcepts": [
+      "Dipole moments were how chemists *measured* molecular shape before diffraction: zero moment → symmetric geometry (CO₂ linear, para-dichlorobenzene), nonzero → bent/pyramidal. One measurement, two topics of payoff."
+    ],
+    "examples": [
+      "***Cis/trans discrimination*** — cis-1,2-dichloroethene 1.90 D vs trans 0 D: identical formula, identical bonds, geometry alone separates them on the dipole meter."
+    ],
+    "universalFacts": [
+      "Water's 1.85 D moment is why microwave ovens work — the rotating dipole absorbs 2.45 GHz radiation; a symmetric molecule like CO₂ would be transparent."
+    ],
+    "importantStatements": [
+      "\"Dipole moment is the product of the magnitude of charge at one end and the distance between the opposite charges; it measures the polarity of a bond or molecule.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ context: NEB 2024 (bank 02) asked hydrogen bonding/water bp — its polarity foundation sits in this topic. The CO₂/SO₂ dipole contrast and HF calculation above are NEB-style practice; no standalone dipole-moment PYQ exists in the bank yet."
+    ],
+    "examShortTricks": [
+      "μ = 0 club: CO₂, BF₃, CH₄, CCl₄, PCl₅, SF₆, trans-isomers, para-isomers. Ionic % ladder: HF 43 > HCl 17 > HBr 11 > HI 5. Length ladder: C–C 154 > C=C 134 > C≡C 120."
+    ],
+    "examNotes": [
+      "For calculations, show the unit conversion: 1 D = 3.33564 × 10⁻³⁰ C·m, and quote μ(100% ionic) before dividing — the marker looks for q·d setup, not just the final 43%."
+    ],
+    "formulas": [
+      "- μ = q × d; 1 D = 3.33564 × 10⁻³⁰ C·m\n- % ionic character = μ(observed)/μ(100% ionic) × 100\n- Hannay–Smyth: % ionic = 16(ΔEN) + 3.5(ΔEN)²\n- Covalent radius = ½ internuclear distance (homonuclear)"
+    ],
+    "practice": [
+      "Why does NF₃ have a much smaller dipole moment than NH₃ despite the same pyramidal shape?",
+      "A bond has length 127 pm and observed dipole 1.03 D. Calculate its percentage ionic character and identify the bond.",
+      "Explain why para-dichlorobenzene has zero dipole moment while the ortho isomer does not."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Explain why CO₂ has zero dipole moment while SO₂ has a significant one.** — **CO₂:** the molecule is linear (O=C=O, 180°). Each C=O bond is strongly polar, but the two bond dipoles are equal in magnitude and exactly opposite in direction along the same axis; their vector sum is zero, so μ(CO₂) = 0 D. **SO₂:** the central sulphur carries a lone pair, so VSEPR gives a bent shape (O–S–O ≈ 119°). The two S=O bond dipoles no longer point in opposite directions — their resultant, added to the lone-pair contribution, leaves a net dipole of ≈ 1.63 D. **Conclusion:** molecular dipole moment is the vector sum of all bond dipoles; molecular geometry decides whether polar bonds cancel.",
+      "**NEB-style (3m): Calculate the percentage ionic character in HF (μ = 1.91 D, bond length = 92 pm).** — For a 100% ionic H–F bond the dipole would be one full electron charge separated by the bond length: μ(ionic) = q × d = (1.602 × 10⁻¹⁹ C) × (92 × 10⁻¹² m) = 1.47 × 10⁻²⁹ C·m. Converting: 1.47 × 10⁻²⁹ / 3.33564 × 10⁻³⁰ = **4.42 D**. Percentage ionic character = μ(observed)/μ(100% ionic) × 100 = 1.91/4.42 × 100 ≈ **43%**. Check via Hannay–Smyth: ΔEN(H–F) = 4.0 − 2.1 = 1.9 → 16(1.9) + 3.5(1.9)² = 30.4 + 12.6 ≈ 43%. HF is therefore a strongly polar covalent bond — the foundation of its hydrogen bonding.",
+      "**NEB-style (2m): Arrange HF, HCl, HBr and HI in order of (a) increasing bond length and (b) decreasing bond strength, giving reasons.** — (a) **H–F (92 pm) < H–Cl (127 pm) < H–Br (141 pm) < H–I (160 pm):** the halogen's covalent radius grows down the group (F → I), so the internuclear distance grows. (b) **HF (565) > HCl (431) > HBr (364) > HI (297 kJ mol⁻¹):** longer bonds have poorer orbital overlap and are weaker; in addition, ΔEN and hence ionic character fall down the group (43% → 5%), removing the extra electrostatic contribution HF enjoys. Length and strength move inversely along the series."
+    ]
+  },
+  "importantConcepts": [
+    "Dipole moments were how chemists *measured* molecular shape before diffraction: zero moment → symmetric geometry (CO₂ linear, para-dichlorobenzene), nonzero → bent/pyramidal. One measurement, two topics of payoff."
+  ],
+  "examples": [
+    "***Cis/trans discrimination*** — cis-1,2-dichloroethene 1.90 D vs trans 0 D: identical formula, identical bonds, geometry alone separates them on the dipole meter."
+  ],
+  "importantStatements": [
+    "\"Dipole moment is the product of the magnitude of charge at one end and the distance between the opposite charges; it measures the polarity of a bond or molecule.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ context: NEB 2024 (bank 02) asked hydrogen bonding/water bp — its polarity foundation sits in this topic. The CO₂/SO₂ dipole contrast and HF calculation above are NEB-style practice; no standalone dipole-moment PYQ exists in the bank yet."
+  ],
+  "examNotes": [
+    "For calculations, show the unit conversion: 1 D = 3.33564 × 10⁻³⁰ C·m, and quote μ(100% ionic) before dividing — the marker looks for q·d setup, not just the final 43%."
+  ],
+  "formulas": [
+    "- μ = q × d; 1 D = 3.33564 × 10⁻³⁰ C·m\n- % ionic character = μ(observed)/μ(100% ionic) × 100\n- Hannay–Smyth: % ionic = 16(ΔEN) + 3.5(ΔEN)²\n- Covalent radius = ½ internuclear distance (homonuclear)"
+  ],
+  "summary": "Bond parameters turn bonding into measurement. **Bond length** — the equilibrium internuclear distance, the sum of covalent radii — shrinks as bond order rises (C–C 154 → C≡C 120 pm) and grows as atoms enlarge (H–F 92 → H–I 160 pm), moving inversely with bond strength. **Ionic character** quantifies how far a heteronuclear bond has slid from pure sharing toward transfer: it scales with electronegativity difference via the Hannay–Smyth relation (HF ≈ 43%, HCl ≈ 17%, HBr ≈ 11%, HI ≈ 5%), and no real bond is 100% of either kind. **Dipole moment** (μ = q·d, debye = 3.33564 × 10⁻³⁰ C·m) is the vector sum of all bond dipoles — so symmetric molecules (CO₂, BF₃, CH₄, CCl₄, trans and para isomers) read zero despite polar bonds, while bent H₂O (1.85 D) and pyramidal NH₃ (1.47 D) read large; NF₃'s 0.24 D shows that direction, not shape alone, decides the total. Divide the observed moment by the full-ionic value (q × bond length) and you recover the ionic percentage — one measurement connecting electronegativity, geometry and reactivity.",
+  "mcqs": [
+    {
+      "question": "The dipole moment of a molecule is zero when:",
+      "options": [
+        "Bonds are nonpolar",
+        "Polar bond dipoles cancel by symmetry",
+        "It is ionic",
+        "It has lone pairs"
+      ],
+      "answer": "B",
+      "explanation": "CO2, BF3, CH4 - polar bonds, symmetric cancellation."
+    },
+    {
+      "question": "1 debye equals:",
+      "options": [
+        "3.33564e-30 C.m",
+        "1.602e-19 C.m",
+        "6.023e23 C.m",
+        "9.648e4 C.m"
+      ],
+      "answer": "A",
+      "explanation": "The standard dipole unit conversion."
+    },
+    {
+      "question": "Which molecule has a nonzero dipole moment?",
+      "options": [
+        "CO2",
+        "BF3",
+        "CCl4",
+        "H2O"
+      ],
+      "answer": "D",
+      "explanation": "Bent shape - dipoles cannot cancel."
+    },
+    {
+      "question": "Bond length order for C-C, C=C, C=C:",
+      "options": [
+        "C-C < C=C < C=C",
+        "C-C > C=C > C=C",
+        "C=C > C-C > C=C",
+        "All equal"
+      ],
+      "answer": "B",
+      "explanation": "Higher bond order - shorter bond: 154, 134, 120 pm."
+    },
+    {
+      "question": "The percentage ionic character of HF is about:",
+      "options": [
+        "5%",
+        "17%",
+        "43%",
+        "100%"
+      ],
+      "answer": "C",
+      "explanation": "1.91 D observed vs 4.42 D fully ionic."
+    },
+    {
+      "question": "NF3 has a very small dipole moment because:",
+      "options": [
+        "It is nonpolar",
+        "N-F dipoles oppose the lone-pair contribution",
+        "F atoms are small",
+        "It is linear"
+      ],
+      "answer": "B",
+      "explanation": "Opposing contributions nearly cancel - 0.24 D."
+    },
+    {
+      "question": "According to Hannay-Smyth, ionic character increases with:",
+      "options": [
+        "Bond length",
+        "Electronegativity difference",
+        "Atomic mass",
+        "Bond order"
+      ],
+      "answer": "B",
+      "explanation": "% ionic = 16(EN) + 3.5(EN)2."
+    },
+    {
+      "question": "The strongest H-X bond among the halides is:",
+      "options": [
+        "H-F",
+        "H-Cl",
+        "H-Br",
+        "H-I"
+      ],
+      "answer": "A",
+      "explanation": "Shortest bond (92 pm) plus 43% ionic character - 565 kJ/mol."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "The dipole moment of a molecule is zero when:",
+      "options": [
+        "Bonds are nonpolar",
+        "Polar bond dipoles cancel by symmetry",
+        "It is ionic",
+        "It has lone pairs"
+      ],
+      "answer": "B",
+      "explanation": "CO2, BF3, CH4 - polar bonds, symmetric cancellation."
+    },
+    {
+      "question": "1 debye equals:",
+      "options": [
+        "3.33564e-30 C.m",
+        "1.602e-19 C.m",
+        "6.023e23 C.m",
+        "9.648e4 C.m"
+      ],
+      "answer": "A",
+      "explanation": "The standard dipole unit conversion."
+    },
+    {
+      "question": "Which molecule has a nonzero dipole moment?",
+      "options": [
+        "CO2",
+        "BF3",
+        "CCl4",
+        "H2O"
+      ],
+      "answer": "D",
+      "explanation": "Bent shape - dipoles cannot cancel."
+    },
+    {
+      "question": "Bond length order for C-C, C=C, C=C:",
+      "options": [
+        "C-C < C=C < C=C",
+        "C-C > C=C > C=C",
+        "C=C > C-C > C=C",
+        "All equal"
+      ],
+      "answer": "B",
+      "explanation": "Higher bond order - shorter bond: 154, 134, 120 pm."
+    },
+    {
+      "question": "The percentage ionic character of HF is about:",
+      "options": [
+        "5%",
+        "17%",
+        "43%",
+        "100%"
+      ],
+      "answer": "C",
+      "explanation": "1.91 D observed vs 4.42 D fully ionic."
+    },
+    {
+      "question": "NF3 has a very small dipole moment because:",
+      "options": [
+        "It is nonpolar",
+        "N-F dipoles oppose the lone-pair contribution",
+        "F atoms are small",
+        "It is linear"
+      ],
+      "answer": "B",
+      "explanation": "Opposing contributions nearly cancel - 0.24 D."
+    },
+    {
+      "question": "According to Hannay-Smyth, ionic character increases with:",
+      "options": [
+        "Bond length",
+        "Electronegativity difference",
+        "Atomic mass",
+        "Bond order"
+      ],
+      "answer": "B",
+      "explanation": "% ionic = 16(EN) + 3.5(EN)2."
+    },
+    {
+      "question": "The strongest H-X bond among the halides is:",
+      "options": [
+        "H-F",
+        "H-Cl",
+        "H-Br",
+        "H-I"
+      ],
+      "answer": "A",
+      "explanation": "Shortest bond (92 pm) plus 43% ionic character - 565 kJ/mol."
+    }
   ]
 }

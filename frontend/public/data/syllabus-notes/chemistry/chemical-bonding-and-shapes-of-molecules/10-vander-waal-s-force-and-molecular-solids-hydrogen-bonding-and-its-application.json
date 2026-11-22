@@ -5,149 +5,60 @@
   "topicTitle": "Vander Waal's force and molecular solids; hydrogen bonding and its application",
   "relevance": 100,
   "notes": [
-    "VSEPR theory predicts molecular geometry from electron pairs.",
-    "sp³: 4 pairs → tetrahedral (109.5°).",
-    "sp²: 3 pairs → trigonal planar (120°).",
-    "sp: 2 pairs → linear (180°).",
-    "Lone pairs compress bond angles.",
-    "# Vander Waal's force and molecular solids; hydrogen bonding and its application\n\n## 1. Introduction\nChemical picture of **Vander Waal's force and molecular solids; hydrogen bonding and its application** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Vander Waal's force and molecular solids\n### hydrogen bonding and its application\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Vander Waal's force and molecular solids; hydrogen bonding and its application — shape gallery: structures with bond angles (authored SVG)\n- **D2** — Vander Waal's force and molecular solids; hydrogen bonding and its application — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Vander Waal's force and molecular solids; hydrogen bonding and its application — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Vander Waal's force and molecular solids; hydrogen bonding and its application — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Weak Forces That Hold Matter Together\n\nCovalent bonds build molecules; **intermolecular forces** decide whether those molecules are gas, liquid or solid. Weakest to strongest: London dispersion → Debye (dipole-induced) → Keesom (dipole-dipole) → hydrogen bond. The hydrogen bond — 5 to 40 kJ mol⁻¹, an order of magnitude above the rest — is the one that sets water's boiling point at 100 °C, holds DNA's double helix together, and gives ice a structure that floats (NEB 2024's verified question).",
+    "## 2. Fundamental Concepts\n\n### 2.1 van der Waals forces — the three tiers\n\n- **London dispersion forces (instantaneous dipole–induced dipole):** electron clouds flicker; a momentary dipole induces one in the neighbour. Present in **all** molecules; the *only* force in nonpolar ones (N₂, noble gases). Strength grows with **polarisability** — more electrons, bigger cloud: I₂ (solid) vs Cl₂ (gas); boiling points climb down the halogen group.\n- **Debye forces (dipole–induced dipole):** a permanent dipole polarises a neighbouring nonpolar molecule (HCl … Ar).\n- **Keesom forces (dipole–dipole):** permanent dipoles align (HCl … HCl).\n- All three are weak (≈0.4–4 kJ mol⁻¹ per interaction), short-range (∝ 1/r⁶), and collectively called van der Waals forces.\n\n### 2.2 Molecular solids\n\n- Solids whose units are molecules held by intermolecular forces only: **nonpolar** (I₂, dry ice CO₂, naphthalene, solid noble gases — dispersion only) and **polar** (ice, solid HCl, glucose — plus dipole/H-bond terms).\n- Consequences: soft, low melting (often below 300 °C), volatile, electrical insulators, soluble in nonpolar (or matching-polarity) solvents. Contrast: ionic/ metallic/ covalent-network solids melt hundreds to thousands of degrees higher.\n\n### 2.3 The hydrogen bond\n\n- **Definition:** the attraction between a hydrogen bonded to a small, highly electronegative atom (F, O, N) and a lone pair on another such atom: **X–H ⋯ Y**, X, Y = F, O, N.\n- **Requirements:** H must carry a large δ⁺ (only F, O, N pull hard enough); Y must have a lone pair and high electronegativity; small size permits close approach.\n- **Strength:** 5–40 kJ mol⁻¹ per bond — far weaker than covalent (H–O 463 kJ mol⁻¹) but ~10× the strongest dispersion contact.\n- **Types:** **intermolecular** (H₂O ⋯ H₂O; HF chains; ethanol) and **intramolecular** (o-nitrophenol's O–H ⋯ O within one molecule — which *reduces* association between molecules and lowers its boiling point relative to para).\n\n### 2.4 Consequences to quote\n\n- **Water's anomaly:** H₂O boils at 100 °C; H₂S (same group, no H-bonds) at −60 °C. Each water can form up to four H-bonds (two donor H, two lone-pair acceptors) — a 3-D network that costs enormous energy to break (NEB 2024).\n- **HF 19.5 °C vs HCl −85 °C; NH₃ −33 °C vs PH₃ −87.7 °C** — the same story on the F and N rows.\n- **Ice floats:** in ice each O is tetrahedrally H-bonded to 4 neighbours → open hexagonal lattice with ≈11% empty space; density 0.92 g cm⁻³ < water 1.00. On melting, some H-bonds collapse and molecules pack closer — a rare solid-less-dense-than-liquid case.\n- **Biology:** the DNA double helix is zipped by A=T (2 H-bonds) and G≡C (3 H-bonds) pairs; proteins fold on backbone H-bonds.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **London dispersion** | Instantaneous dipole induces dipole in neighbour | Universal; ∝ polarisability |\n| **Keesom / Debye** | Dipole–dipole / dipole–induced-dipole | Permanent-dipole involvement |\n| **Hydrogen bond** | X–H ⋯ Y attraction, X/Y = F, O, N | 5–40 kJ mol⁻¹ |\n| **Molecular solid** | Molecules bound by intermolecular forces only | Soft, low mp, insulating |\n| **Intramolecular H-bond** | H-bond within one molecule | o-nitrophenol (lowers bp) |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024/02): what is hydrogen bonding? Why does water boil so high?\n\n- **Definition** (section 2.3) with the X–H ⋯ Y sketch and the F/O/N restriction.\n- **Why water boils high:** every H₂O can donate two H-bonds (its two O–H hydrogens) and accept two (oxygen's two lone pairs) — a four-connected 3-D network. Vaporising water means breaking a large fraction of this network, so the energy cost is enormous: bp 100 °C. The sulphur analogue H₂S, with no H-bonding (S is large, only weakly electronegative), relies on weak dispersion + dipole forces alone and boils at −60 °C — a 160 °C gap purely from hydrogen bonding.\n\n### 4.2 Verified PYQ (NEB 2024/04, cross-topic): NH₃ boils higher than PH₃\n\n- NH₃ (−33 °C) hydrogen-bonds (N: small, EN 3.0, one lone pair); PH₃ (−87.7 °C) cannot (P larger, EN 2.1, H–P barely polar). Shape and bonding together: the N–H ⋯ N network in liquid ammonia raises its boiling point ≈55 °C above phosphine's.\n\n### 4.3 The dispersion ladder — why I₂ is solid and Cl₂ is gas\n\n- Same bonding family, same nonpolarity; only size differs. I₂ (53 electrons) is highly polarisable — its flickering cloud induces strong correlated dipoles → solid at room temperature. Cl₂ (17 electrons) barely polarisable → gas. Boiling points: F₂ −188 °C, Cl₂ −34 °C, Br₂ 59 °C, I₂ 184 °C. Dispersion strength is a size story.\n\n### 4.4 Intramolecular vs intermolecular — the nitrophenol test\n\n- **o-Nitrophenol:** O–H ⋯ O=N within the same molecule (six-membered chelate ring) — the H-bond is \"used up\" internally, molecules stay unassociated → steam-volatile, lower bp.\n- **p-Nitrophenol:** the groups are too far apart for intramolecular bonding; molecules H-bond to each other → associated, higher bp, not steam-volatile. Same formula, different intermolecular architecture.",
+    "## 5. Comparison Tables\n\n**Intermolecular forces ranked**\n\n| Force | Between | Relative strength | Example |\n|---|---|---|---|\n| London dispersion | All molecules | Weakest (grows with size) | I₂ solid, N₂ liquid at 77 K |\n| Debye | Permanent + nonpolar | Weak | HCl ⋯ Ar |\n| Keesom | Two permanent dipoles | Weak | HCl ⋯ HCl |\n| Hydrogen bond | X–H ⋯ Y (F, O, N) | Strongest intermolecular | H₂O network |\n\n**Boiling points: hydrogen bonding on display**\n\n| Pair | Formula | bp (°C) | Reason |\n|---|---|---|---|\n| Water vs hydrogen sulphide | H₂O / H₂S | 100 / −60 | H-bond network vs none |\n| HF vs HCl | HF / HCl | 19.5 / −85 | F small + lone pairs vs Cl large |\n| NH₃ vs PH₃ | NH₃ / PH₃ | −33 / −87.7 | N–H ⋯ N vs none |\n| Ethanol vs dimethyl ether | C₂H₅OH / CH₃OCH₃ | 78 / −24 | O–H donor present vs absent |\n\n**Solids by bonding type**\n\n| Solid | Units | Force | mp character |\n|---|---|---|---|\n| Molecular (I₂, CO₂) | Molecules | Dispersion (± dipole) | Low, volatile |\n| Ionic (NaCl) | Ions | Electrostatic | High, brittle |\n| Metallic (Cu) | Ions + electron sea | Metallic | Variable, conducting |\n| Network (diamond) | Atoms | Covalent throughout | Very high |",
+    "## 6. Common Confusions\n\n**Hydrogen bonding needs F, O, N — not just any H:** C–H hydrogens are barely positive (C EN 2.5); CH₄ cannot hydrogen-bond. Chlorine, though EN 3.0, is too large for the close approach — HCl's \"H-bond\" is negligible.",
+    "**Intramolecular H-bonds lower, not raise, boiling points:** the bond is spent inside the molecule, leaving less for intermolecular association (o- vs p-nitrophenol).",
+    "**Dispersion forces are not \"nothing\":** they exist in every molecule, including water — they are simply dwarfed by the H-bond network there.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024/02): What is hydrogen bonding? Explain why water has an unusually high boiling point.** — Hydrogen bonding is the electrostatic attraction between a hydrogen atom covalently bonded to a highly electronegative small atom (F, O or N) and a lone pair on another electronegative atom: X–H ⋯ Y. In water each molecule donates two H-bonds via its O–H hydrogens and accepts two via oxygen's lone pairs, building a tetrahedral 3-D network. Boiling requires breaking much of this network; the energy cost pushes the boiling point to 100 °C, whereas non-hydrogen-bonded H₂S boils at −60 °C. The same effect gives HF (19.5 °C) and NH₃ (−33 °C) their anomalously high boiling points.",
+    "**Verified PYQ (NEB 2024/04): Ammonia has a higher boiling point than phosphine. Explain.** — NH₃: N is small and electronegative (3.0); N–H bonds are strongly polar; ammonia molecules link through N–H ⋯ N hydrogen bonds, so extra energy is needed to separate them — bp −33 °C. PH₃: P is larger and barely electronegative (2.1); P–H is nearly nonpolar and no H-bonding is possible — only weak dispersion/dipole forces hold the molecules — bp −87.7 °C. The ≈55 °C difference is the hydrogen-bond signature.",
+    "**NEB-style (2m): Why is ice less dense than liquid water?** — In ice, every oxygen is tetrahedrally hydrogen-bonded to four neighbours, producing an open hexagonal lattice with ≈11% unoccupied space (density 0.92 g cm⁻³). Melting collapses a fraction of the H-bonds, letting molecules pack closer (1.00 g cm⁻³) — which is why ice floats and lakes freeze from the top."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
-    "❌ Ionic bonds are non-directional. ✅ Ionic bonds are non-directional (electrostatic); covalent bonds are directional."
+    "**H-bond strength vs covalent strength:** an H-bond is ~10× weaker than the O–H covalent bond (5–40 vs 463 kJ mol⁻¹) — boiling breaks H-bonds, not covalent bonds; water does not decompose at 100 °C.",
+    "**\"van der Waals\" as umbrella:** the term covers dispersion + Debye + Keesom; the hydrogen bond is usually treated separately because it is far stronger and directional."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice drawing Lewis dot structures for molecules and polyatomic ions.",
-    "Practice predicting molecular shapes and bond angles using VSEPR."
+    "Why is the boiling point of ethanol (78 °C) far above that of its isomer dimethyl ether (−24 °C)?",
+    "Account for the boiling-point climb F₂ → I₂ using dispersion-force reasoning.",
+    "Explain why o-nitrophenol is steam-volatile but p-nitrophenol is not."
   ],
-  "universalFacts": [],
+  "universalFacts": [
+    "Gecko feet and the surface tension of water both trace to intermolecular attractions; capillary rise in soil and xylem is cohesion (H-bonds) plus adhesion."
+  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "H₂O: sp³, 2BP+2LP → bent",
-    "CO₂: sp, 2BP+0LP → linear"
+    "***DNA's zipper*** — A=T held by 2 H-bonds, G≡C by 3: weak individually, but thousands in sequence give a stable double helix that still unzips for replication — hydrogen bonding doing information storage."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice drawing Lewis dot structures for molecules and polyatomic ions."
+    "**NEB 2024 (3m): What is hydrogen bonding? Explain why water has an unusually high boiling point.** — **Definition:** a hydrogen bond is the electrostatic attraction between a hydrogen atom covalently bonded to a small, highly electronegative atom (F, O or N) and a lone pair on another electronegative atom — written X–H ⋯ Y. It is weaker than a covalent bond (≈5–40 kJ mol⁻¹) but roughly ten times stronger than ordinary dipole or dispersion contacts. **Water:** each H₂O molecule has two O–H hydrogens to donate and two lone pairs on oxygen to accept — up to **four hydrogen bonds per molecule**, forming a tetrahedral three-dimensional network throughout the liquid. To vaporise water, a large fraction of this network must be broken, so the energy required is very large and the boiling point is pushed to **100 °C**. Its group neighbour H₂S cannot hydrogen-bond (sulphur is large and only weakly electronegative) and boils at **−60 °C** — a 160 °C gap attributable almost entirely to hydrogen bonding. HF (19.5 °C) and NH₃ (−33 °C) show the same anomaly.",
+    "**NEB 2024 (2m): Ammonia has a higher boiling point than phosphine (PH₃). Explain on the basis of molecular shape and bonding.** — Both molecules are pyramidal with a lone pair, but the bonding differs: in **NH₃** nitrogen is small and highly electronegative (3.0), the N–H bonds are strongly polar, and neighbouring molecules link through **N–H ⋯ N hydrogen bonds** — breaking these costs extra energy, so NH₃ boils at **−33 °C**. In **PH₃** phosphorus is larger and much less electronegative (2.1); P–H is nearly nonpolar, no hydrogen bonding is possible, and only weak dispersion/dipole forces hold the molecules — bp **−87.7 °C**. The ≈55 °C difference is the hydrogen-bond signature of ammonia.",
+    "**NEB-style (2m): Why is ice less dense than liquid water, and what follows for aquatic life?** — In ice, every oxygen atom is tetrahedrally hydrogen-bonded to four neighbouring oxygens, producing an **open hexagonal lattice** with about 11% empty space; density ≈ **0.92 g cm⁻³**. On melting, part of the H-bond network collapses and molecules pack more closely — liquid water is denser (**1.00 g cm⁻³**), so ice floats. Consequence: ponds and lakes freeze from the surface downward; the floating ice layer insulates the water beneath, letting fish and aquatic plants survive winter — a small density anomaly with ecosystem-scale consequences."
   ],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nElectronegativity difference determines bond type.\n\nLone pairs compress bond angles below ideal geometry.",
+  "formulas": [
+    "- H-bond energy: 5–40 kJ mol⁻¹ (vs O–H covalent 463)\n- Boiling points: H₂O 100, H₂S −60, HF 19.5, HCl −85, NH₃ −33, PH₃ −87.7 °C\n- Ice density 0.92 g cm⁻³ < water 1.00\n- Halogen bp: F₂ −188, Cl₂ −34, Br₂ 59, I₂ 184 °C"
+  ],
+  "keyPoints": [
+    "Intermolecular ladder: London dispersion (universal, ∝ polarisability/size) < Debye < Keesom < hydrogen bond (5–40 kJ mol⁻¹, X–H ⋯ Y with F/O/N). Molecular solids: soft, low mp, insulators (I₂, dry ice, naphthalene). Water: 4-connected H-bond network → bp 100 °C vs H₂S −60 °C (NEB 2024); HF 19.5 vs HCl −85; NH₃ −33 vs PH₃ −87.7 (NEB 2024). Ice: open tetrahedral lattice, 0.92 g cm⁻³, floats. o-Nitrophenol intramolecular → steam-volatile; para intermolecular → high bp. Dispersion ladder: F₂ −188 → I₂ 184 °C."
+  ],
+  "summary": "Between molecules, the forces are a ladder: **London dispersion** (universal, growing with electron count — the reason I₂ is solid and Cl₂ gaseous), **Debye** and **Keesom** dipole terms, and above them the **hydrogen bond** — X–H ⋯ Y where X and Y are small, electronegative F, O or N, worth 5–40 kJ mol⁻¹. Molecular solids (I₂, dry ice, naphthalene) are soft, volatile insulators because only these weak forces bind them. Hydrogen bonding's fingerprints are the boiling-point anomalies: water's four-connected network lifts H₂O to 100 °C against H₂S's −60 °C (NEB 2024), HF to 19.5 °C against HCl's −85 °C, NH₃ to −33 °C against PH₃'s −87.7 °C (NEB 2024). The same network freezes into ice's open tetrahedral lattice — 0.92 g cm⁻³, floating, lake-insulating. And architecture matters as much as presence: o-nitrophenol spends its H-bond internally (steam-volatile) while para associates externally (high bp), and DNA stores its code in two-versus-three H-bond pairs. Weak forces, large consequences.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [
-    "Important note regarding 10 vander waal s force and molecular solids hydrogen bonding and its application."
+  "importantStatements": [
+    "\"Hydrogen bonding is the electrostatic attraction between a hydrogen atom bonded to a highly electronegative atom (F, O, N) and a lone pair of another electronegative atom.\""
   ],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantNotes": [
+    "Verified PYQs: NEB 2024 (bank 02) — hydrogen bonding definition + water's high bp (solved above); NEB 2024 (bank 04) — NH₃ vs PH₃ boiling points (solved above; the shape aspect was used in topic 32). Other items are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "H-bond recipe: \"small + electronegative (F, O, N) + lone pair\". bp anomalies: H₂O 100, HF 19.5, NH₃ −33 — each far above its group neighbours. Ice density 0.92; o-nitrophenol steam-volatile."
+  ],
+  "examNotes": [
+    "For the water question, draw one central H₂O with four dashed H-bonds (2 donated, 2 accepted) — the diagram earns the \"network\" marks even before the comparison with H₂S."
+  ],
   "mcs": [
     {
       "question": "Question about 10 vander waal s force and molecular solids hydrogen bonding and its application?",
@@ -161,7 +72,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 10 vander waal s force and molecular solids hydrogen bonding and its application."
+    "Two anomalous-property generators: (1) H-bond count per molecule — water's four-connectivity beats HF's chains and NH₃'s lower donor capacity, which is why water's bp rise is the largest of the trio; (2) intramolecular H-bonds subtract from intermolecular association."
   ],
   "importantTasks": [
     "Task for studying 10 vander waal s force and molecular solids hydrogen bonding and its application."
@@ -170,14 +81,92 @@
   "tabGroup": "10-vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application",
   "mcqs": [
     {
-      "question": "Question about 10 vander waal s force and molecular solids hydrogen bonding and its application?",
+      "question": "The strongest intermolecular force listed here is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "London dispersion",
+        "Debye force",
+        "Keesom force",
+        "Hydrogen bond"
       ],
-      "answer": "A"
+      "answer": "D",
+      "explanation": "5-40 kJ/mol vs about 1-4 for the others."
+    },
+    {
+      "question": "Hydrogen bonding requires hydrogen attached to:",
+      "options": [
+        "C, S or P",
+        "F, O or N",
+        "Any halogen",
+        "Any metal"
+      ],
+      "answer": "B",
+      "explanation": "Small highly electronegative atoms only."
+    },
+    {
+      "question": "H2S boils far below H2O because:",
+      "options": [
+        "S is heavier",
+        "No hydrogen bonding in H2S",
+        "H2S is nonpolar",
+        "S-H bonds are stronger"
+      ],
+      "answer": "B",
+      "explanation": "S is large, weakly electronegative - no X-H...Y network."
+    },
+    {
+      "question": "I2 is solid at room temperature while Cl2 is gas because:",
+      "options": [
+        "I2 is polar",
+        "I2 has stronger dispersion forces",
+        "I2 hydrogen bonds",
+        "Cl2 is ionic"
+      ],
+      "answer": "B",
+      "explanation": "More electrons - higher polarisability."
+    },
+    {
+      "question": "Ice floats because:",
+      "options": [
+        "H-bonds break on freezing",
+        "Its open tetrahedral lattice traps space",
+        "Air is trapped",
+        "O-H bonds lengthen"
+      ],
+      "answer": "B",
+      "explanation": "Four-connected hexagonal network - 0.92 g/cm3."
+    },
+    {
+      "question": "o-Nitrophenol is steam-volatile because its H-bond is:",
+      "options": [
+        "Intermolecular",
+        "Intramolecular",
+        "Ionic",
+        "Absent"
+      ],
+      "answer": "B",
+      "explanation": "Spent internally - molecules stay unassociated."
+    },
+    {
+      "question": "The boiling point of HF compared to HCl is:",
+      "options": [
+        "Lower",
+        "Higher",
+        "Equal",
+        "Unpredictable"
+      ],
+      "answer": "B",
+      "explanation": "19.5 vs -85 C - hydrogen bonding in HF."
+    },
+    {
+      "question": "In DNA, G pairs with C through:",
+      "options": [
+        "1 hydrogen bond",
+        "2 hydrogen bonds",
+        "3 hydrogen bonds",
+        "A covalent bond"
+      ],
+      "answer": "C",
+      "explanation": "G=C triple H-bond; A=T uses two."
     }
   ],
   "exercises": [],
@@ -187,5 +176,61 @@
     "desc": "3D molecular geometry predictor"
   },
   "visualType": "hydrogen",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Weak Forces That Hold Matter Together\n\nCovalent bonds build molecules; **intermolecular forces** decide whether those molecules are gas, liquid or solid. Weakest to strongest: London dispersion → Debye (dipole-induced) → Keesom (dipole-dipole) → hydrogen bond. The hydrogen bond — 5 to 40 kJ mol⁻¹, an order of magnitude above the rest — is the one that sets water's boiling point at 100 °C, holds DNA's double helix together, and gives ice a structure that floats (NEB 2024's verified question).",
+      "## 2. Fundamental Concepts\n\n### 2.1 van der Waals forces — the three tiers\n\n- **London dispersion forces (instantaneous dipole–induced dipole):** electron clouds flicker; a momentary dipole induces one in the neighbour. Present in **all** molecules; the *only* force in nonpolar ones (N₂, noble gases). Strength grows with **polarisability** — more electrons, bigger cloud: I₂ (solid) vs Cl₂ (gas); boiling points climb down the halogen group.\n- **Debye forces (dipole–induced dipole):** a permanent dipole polarises a neighbouring nonpolar molecule (HCl … Ar).\n- **Keesom forces (dipole–dipole):** permanent dipoles align (HCl … HCl).\n- All three are weak (≈0.4–4 kJ mol⁻¹ per interaction), short-range (∝ 1/r⁶), and collectively called van der Waals forces.\n\n### 2.2 Molecular solids\n\n- Solids whose units are molecules held by intermolecular forces only: **nonpolar** (I₂, dry ice CO₂, naphthalene, solid noble gases — dispersion only) and **polar** (ice, solid HCl, glucose — plus dipole/H-bond terms).\n- Consequences: soft, low melting (often below 300 °C), volatile, electrical insulators, soluble in nonpolar (or matching-polarity) solvents. Contrast: ionic/ metallic/ covalent-network solids melt hundreds to thousands of degrees higher.\n\n### 2.3 The hydrogen bond\n\n- **Definition:** the attraction between a hydrogen bonded to a small, highly electronegative atom (F, O, N) and a lone pair on another such atom: **X–H ⋯ Y**, X, Y = F, O, N.\n- **Requirements:** H must carry a large δ⁺ (only F, O, N pull hard enough); Y must have a lone pair and high electronegativity; small size permits close approach.\n- **Strength:** 5–40 kJ mol⁻¹ per bond — far weaker than covalent (H–O 463 kJ mol⁻¹) but ~10× the strongest dispersion contact.\n- **Types:** **intermolecular** (H₂O ⋯ H₂O; HF chains; ethanol) and **intramolecular** (o-nitrophenol's O–H ⋯ O within one molecule — which *reduces* association between molecules and lowers its boiling point relative to para).\n\n### 2.4 Consequences to quote\n\n- **Water's anomaly:** H₂O boils at 100 °C; H₂S (same group, no H-bonds) at −60 °C. Each water can form up to four H-bonds (two donor H, two lone-pair acceptors) — a 3-D network that costs enormous energy to break (NEB 2024).\n- **HF 19.5 °C vs HCl −85 °C; NH₃ −33 °C vs PH₃ −87.7 °C** — the same story on the F and N rows.\n- **Ice floats:** in ice each O is tetrahedrally H-bonded to 4 neighbours → open hexagonal lattice with ≈11% empty space; density 0.92 g cm⁻³ < water 1.00. On melting, some H-bonds collapse and molecules pack closer — a rare solid-less-dense-than-liquid case.\n- **Biology:** the DNA double helix is zipped by A=T (2 H-bonds) and G≡C (3 H-bonds) pairs; proteins fold on backbone H-bonds.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **London dispersion** | Instantaneous dipole induces dipole in neighbour | Universal; ∝ polarisability |\n| **Keesom / Debye** | Dipole–dipole / dipole–induced-dipole | Permanent-dipole involvement |\n| **Hydrogen bond** | X–H ⋯ Y attraction, X/Y = F, O, N | 5–40 kJ mol⁻¹ |\n| **Molecular solid** | Molecules bound by intermolecular forces only | Soft, low mp, insulating |\n| **Intramolecular H-bond** | H-bond within one molecule | o-nitrophenol (lowers bp) |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024/02): what is hydrogen bonding? Why does water boil so high?\n\n- **Definition** (section 2.3) with the X–H ⋯ Y sketch and the F/O/N restriction.\n- **Why water boils high:** every H₂O can donate two H-bonds (its two O–H hydrogens) and accept two (oxygen's two lone pairs) — a four-connected 3-D network. Vaporising water means breaking a large fraction of this network, so the energy cost is enormous: bp 100 °C. The sulphur analogue H₂S, with no H-bonding (S is large, only weakly electronegative), relies on weak dispersion + dipole forces alone and boils at −60 °C — a 160 °C gap purely from hydrogen bonding.\n\n### 4.2 Verified PYQ (NEB 2024/04, cross-topic): NH₃ boils higher than PH₃\n\n- NH₃ (−33 °C) hydrogen-bonds (N: small, EN 3.0, one lone pair); PH₃ (−87.7 °C) cannot (P larger, EN 2.1, H–P barely polar). Shape and bonding together: the N–H ⋯ N network in liquid ammonia raises its boiling point ≈55 °C above phosphine's.\n\n### 4.3 The dispersion ladder — why I₂ is solid and Cl₂ is gas\n\n- Same bonding family, same nonpolarity; only size differs. I₂ (53 electrons) is highly polarisable — its flickering cloud induces strong correlated dipoles → solid at room temperature. Cl₂ (17 electrons) barely polarisable → gas. Boiling points: F₂ −188 °C, Cl₂ −34 °C, Br₂ 59 °C, I₂ 184 °C. Dispersion strength is a size story.\n\n### 4.4 Intramolecular vs intermolecular — the nitrophenol test\n\n- **o-Nitrophenol:** O–H ⋯ O=N within the same molecule (six-membered chelate ring) — the H-bond is \"used up\" internally, molecules stay unassociated → steam-volatile, lower bp.\n- **p-Nitrophenol:** the groups are too far apart for intramolecular bonding; molecules H-bond to each other → associated, higher bp, not steam-volatile. Same formula, different intermolecular architecture.",
+      "## 5. Comparison Tables\n\n**Intermolecular forces ranked**\n\n| Force | Between | Relative strength | Example |\n|---|---|---|---|\n| London dispersion | All molecules | Weakest (grows with size) | I₂ solid, N₂ liquid at 77 K |\n| Debye | Permanent + nonpolar | Weak | HCl ⋯ Ar |\n| Keesom | Two permanent dipoles | Weak | HCl ⋯ HCl |\n| Hydrogen bond | X–H ⋯ Y (F, O, N) | Strongest intermolecular | H₂O network |\n\n**Boiling points: hydrogen bonding on display**\n\n| Pair | Formula | bp (°C) | Reason |\n|---|---|---|---|\n| Water vs hydrogen sulphide | H₂O / H₂S | 100 / −60 | H-bond network vs none |\n| HF vs HCl | HF / HCl | 19.5 / −85 | F small + lone pairs vs Cl large |\n| NH₃ vs PH₃ | NH₃ / PH₃ | −33 / −87.7 | N–H ⋯ N vs none |\n| Ethanol vs dimethyl ether | C₂H₅OH / CH₃OCH₃ | 78 / −24 | O–H donor present vs absent |\n\n**Solids by bonding type**\n\n| Solid | Units | Force | mp character |\n|---|---|---|---|\n| Molecular (I₂, CO₂) | Molecules | Dispersion (± dipole) | Low, volatile |\n| Ionic (NaCl) | Ions | Electrostatic | High, brittle |\n| Metallic (Cu) | Ions + electron sea | Metallic | Variable, conducting |\n| Network (diamond) | Atoms | Covalent throughout | Very high |",
+      "## 6. Common Confusions\n\n**Hydrogen bonding needs F, O, N — not just any H:** C–H hydrogens are barely positive (C EN 2.5); CH₄ cannot hydrogen-bond. Chlorine, though EN 3.0, is too large for the close approach — HCl's \"H-bond\" is negligible.",
+      "**Intramolecular H-bonds lower, not raise, boiling points:** the bond is spent inside the molecule, leaving less for intermolecular association (o- vs p-nitrophenol).",
+      "**Dispersion forces are not \"nothing\":** they exist in every molecule, including water — they are simply dwarfed by the H-bond network there.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024/02): What is hydrogen bonding? Explain why water has an unusually high boiling point.** — Hydrogen bonding is the electrostatic attraction between a hydrogen atom covalently bonded to a highly electronegative small atom (F, O or N) and a lone pair on another electronegative atom: X–H ⋯ Y. In water each molecule donates two H-bonds via its O–H hydrogens and accepts two via oxygen's lone pairs, building a tetrahedral 3-D network. Boiling requires breaking much of this network; the energy cost pushes the boiling point to 100 °C, whereas non-hydrogen-bonded H₂S boils at −60 °C. The same effect gives HF (19.5 °C) and NH₃ (−33 °C) their anomalously high boiling points.",
+      "**Verified PYQ (NEB 2024/04): Ammonia has a higher boiling point than phosphine. Explain.** — NH₃: N is small and electronegative (3.0); N–H bonds are strongly polar; ammonia molecules link through N–H ⋯ N hydrogen bonds, so extra energy is needed to separate them — bp −33 °C. PH₃: P is larger and barely electronegative (2.1); P–H is nearly nonpolar and no H-bonding is possible — only weak dispersion/dipole forces hold the molecules — bp −87.7 °C. The ≈55 °C difference is the hydrogen-bond signature.",
+      "**NEB-style (2m): Why is ice less dense than liquid water?** — In ice, every oxygen is tetrahedrally hydrogen-bonded to four neighbours, producing an open hexagonal lattice with ≈11% unoccupied space (density 0.92 g cm⁻³). Melting collapses a fraction of the H-bonds, letting molecules pack closer (1.00 g cm⁻³) — which is why ice floats and lakes freeze from the top."
+    ],
+    "confusion": [
+      "**H-bond strength vs covalent strength:** an H-bond is ~10× weaker than the O–H covalent bond (5–40 vs 463 kJ mol⁻¹) — boiling breaks H-bonds, not covalent bonds; water does not decompose at 100 °C.",
+      "**\"van der Waals\" as umbrella:** the term covers dispersion + Debye + Keesom; the hydrogen bond is usually treated separately because it is far stronger and directional."
+    ],
+    "keyPoints": [
+      "Intermolecular ladder: London dispersion (universal, ∝ polarisability/size) < Debye < Keesom < hydrogen bond (5–40 kJ mol⁻¹, X–H ⋯ Y with F/O/N). Molecular solids: soft, low mp, insulators (I₂, dry ice, naphthalene). Water: 4-connected H-bond network → bp 100 °C vs H₂S −60 °C (NEB 2024); HF 19.5 vs HCl −85; NH₃ −33 vs PH₃ −87.7 (NEB 2024). Ice: open tetrahedral lattice, 0.92 g cm⁻³, floats. o-Nitrophenol intramolecular → steam-volatile; para intermolecular → high bp. Dispersion ladder: F₂ −188 → I₂ 184 °C."
+    ],
+    "importantConcepts": [
+      "Two anomalous-property generators: (1) H-bond count per molecule — water's four-connectivity beats HF's chains and NH₃'s lower donor capacity, which is why water's bp rise is the largest of the trio; (2) intramolecular H-bonds subtract from intermolecular association."
+    ],
+    "examples": [
+      "***DNA's zipper*** — A=T held by 2 H-bonds, G≡C by 3: weak individually, but thousands in sequence give a stable double helix that still unzips for replication — hydrogen bonding doing information storage."
+    ],
+    "universalFacts": [
+      "Gecko feet and the surface tension of water both trace to intermolecular attractions; capillary rise in soil and xylem is cohesion (H-bonds) plus adhesion."
+    ],
+    "importantStatements": [
+      "\"Hydrogen bonding is the electrostatic attraction between a hydrogen atom bonded to a highly electronegative atom (F, O, N) and a lone pair of another electronegative atom.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 (bank 02) — hydrogen bonding definition + water's high bp (solved above); NEB 2024 (bank 04) — NH₃ vs PH₃ boiling points (solved above; the shape aspect was used in topic 32). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "H-bond recipe: \"small + electronegative (F, O, N) + lone pair\". bp anomalies: H₂O 100, HF 19.5, NH₃ −33 — each far above its group neighbours. Ice density 0.92; o-nitrophenol steam-volatile."
+    ],
+    "examNotes": [
+      "For the water question, draw one central H₂O with four dashed H-bonds (2 donated, 2 accepted) — the diagram earns the \"network\" marks even before the comparison with H₂S."
+    ],
+    "formulas": [
+      "- H-bond energy: 5–40 kJ mol⁻¹ (vs O–H covalent 463)\n- Boiling points: H₂O 100, H₂S −60, HF 19.5, HCl −85, NH₃ −33, PH₃ −87.7 °C\n- Ice density 0.92 g cm⁻³ < water 1.00\n- Halogen bp: F₂ −188, Cl₂ −34, Br₂ 59, I₂ 184 °C"
+    ],
+    "practice": [
+      "Why is the boiling point of ethanol (78 °C) far above that of its isomer dimethyl ether (−24 °C)?",
+      "Account for the boiling-point climb F₂ → I₂ using dispersion-force reasoning.",
+      "Explain why o-nitrophenol is steam-volatile but p-nitrophenol is not."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (3m): What is hydrogen bonding? Explain why water has an unusually high boiling point.** — **Definition:** a hydrogen bond is the electrostatic attraction between a hydrogen atom covalently bonded to a small, highly electronegative atom (F, O or N) and a lone pair on another electronegative atom — written X–H ⋯ Y. It is weaker than a covalent bond (≈5–40 kJ mol⁻¹) but roughly ten times stronger than ordinary dipole or dispersion contacts. **Water:** each H₂O molecule has two O–H hydrogens to donate and two lone pairs on oxygen to accept — up to **four hydrogen bonds per molecule**, forming a tetrahedral three-dimensional network throughout the liquid. To vaporise water, a large fraction of this network must be broken, so the energy required is very large and the boiling point is pushed to **100 °C**. Its group neighbour H₂S cannot hydrogen-bond (sulphur is large and only weakly electronegative) and boils at **−60 °C** — a 160 °C gap attributable almost entirely to hydrogen bonding. HF (19.5 °C) and NH₃ (−33 °C) show the same anomaly.",
+      "**NEB 2024 (2m): Ammonia has a higher boiling point than phosphine (PH₃). Explain on the basis of molecular shape and bonding.** — Both molecules are pyramidal with a lone pair, but the bonding differs: in **NH₃** nitrogen is small and highly electronegative (3.0), the N–H bonds are strongly polar, and neighbouring molecules link through **N–H ⋯ N hydrogen bonds** — breaking these costs extra energy, so NH₃ boils at **−33 °C**. In **PH₃** phosphorus is larger and much less electronegative (2.1); P–H is nearly nonpolar, no hydrogen bonding is possible, and only weak dispersion/dipole forces hold the molecules — bp **−87.7 °C**. The ≈55 °C difference is the hydrogen-bond signature of ammonia.",
+      "**NEB-style (2m): Why is ice less dense than liquid water, and what follows for aquatic life?** — In ice, every oxygen atom is tetrahedrally hydrogen-bonded to four neighbouring oxygens, producing an **open hexagonal lattice** with about 11% empty space; density ≈ **0.92 g cm⁻³**. On melting, part of the H-bond network collapses and molecules pack more closely — liquid water is denser (**1.00 g cm⁻³**), so ice floats. Consequence: ponds and lakes freeze from the surface downward; the floating ice layer insulates the water beneath, letting fish and aquatic plants survive winter — a small density anomaly with ecosystem-scale consequences."
+    ]
+  }
 }

@@ -5,161 +5,62 @@
   "topicTitle": "Metallic bonding and properties of metallic solids",
   "relevance": 100,
   "notes": [
-    "VSEPR theory predicts molecular geometry from electron pairs.",
-    "sp³: 4 pairs → tetrahedral (109.5°).",
-    "sp²: 3 pairs → trigonal planar (120°).",
-    "sp: 2 pairs → linear (180°).",
-    "Lone pairs compress bond angles.",
-    "# Metallic bonding and properties of metallic solids\n\n## 1. Introduction\nChemical picture of **Metallic bonding and properties of metallic solids** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Bonding and Shapes of Molecules fill pass.\n\n## 2. Concepts and definitions\n### Metallic bonding and properties of metallic solids\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Metallic bonding and properties of metallic solids — shape gallery: structures with bond angles (authored SVG)\n- **D2** — Metallic bonding and properties of metallic solids — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Metallic bonding and properties of metallic solids — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Metallic bonding and properties of metallic solids — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Bond That Bends Instead of Breaks\n\nMetals conduct, gleam, bend and hammer without shattering — behaviour no ionic or covalent model can explain. The **electron sea (band) model** can: metal atoms surrender their valence electrons to a delocalised cloud that binds the remaining cations electrostatically and flows freely. One picture, four properties — and the reason copper wires exist.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The electron sea model\n\n- **Structure:** a lattice of metal **cations** (Na⁺, Mg²⁺, Al³⁺ …) fixed in position, immersed in a \"sea\" or \"gas\" of **delocalised valence electrons** shared by the whole crystal.\n- **The metallic bond:** the electrostatic attraction between the positive cation lattice and the negative delocalised electron cloud. It is **non-directional** — unlike covalent bonds, no particular angle is favoured.\n- **Why metals have low ionisation energies:** group 1 and 2 elements (and Al) lose valence electrons easily; the energy cost of delocalisation is repaid by the lattice stabilisation of many cation–electron interactions at once.\n\n### 4.1 Band-theory refinement (elementary)\n\n- In a crystal, the valence atomic orbitals of ~10²³ atoms merge into continuous **energy bands**; the valence band is filled, the conduction band above it is empty or partly filled.\n- **Conductors (Cu, Ag):** conduction band partly filled or overlapping the valence band — electrons move freely under a field.\n- **Insulators:** large gap between filled valence band and empty conduction band (diamond ≈ 5.5 eV).\n- **Semiconductors (Si, Ge):** small gap (≈1 eV) — thermal energy promotes a few electrons; conductivity rises with temperature (opposite to metals).\n\n### 2.2 Properties explained by the model\n\n- **Electrical conductivity:** delocalised electrons drift under an applied potential — the best conductors (Ag, Cu, Al) have the loosest hold on valence electrons.\n- **Thermal conductivity:** the same mobile electrons carry kinetic energy through the lattice.\n- **Lustre:** free electrons absorb and re-emit light of all visible frequencies at the surface — the metallic sheen.\n- **Malleability and ductility:** the non-directional bond means cation layers can **slide** past one another without breaking the bonding (unlike ionic crystals, where sliding brings like charges together and the crystal shatters).\n- **High melting points (generally):** strong cation–electron attraction; trend follows charge density — Na 98 °C < Mg 650 < Al 660 (with Al's 3+ core binding three electrons per atom). Mercury is the liquid exception (29.8 °C) — a relativistic/electronic-configuration curiosity.\n- **Alloying:** atoms of similar radius substitute in the lattice (brass Cu/Zn, steel Fe/C) — non-directional bonding tolerates foreign atoms, which is why metals but not salts form continuous solid solutions easily.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Metallic bond** | Attraction between cation lattice and delocalised electron sea | Non-directional |\n| **Electron sea model** | Cations fixed in a mobile valence-electron cloud | Drude's picture |\n| **Band theory** | Atomic orbitals merge into valence/conduction bands | Conductor gap ≈ 0 |\n| **Semiconductor** | Small band gap, conductivity rises with temperature | Si ≈ 1 eV gap |\n| **Alloy** | Homogeneous metal mixture; substitutional or interstitial | Brass, steel |",
+    "## 4. Detailed Explanation\n\n### 4.1 Metallic vs ionic — the sliding test\n\n- Both are lattices of positive cores with mobile negative charge (electrons vs anions), but geometry decides failure mode. Ionic: sliding a layer aligns Na⁺ against Na⁺ → repulsion → **brittle fracture**. Metallic: sliding a Cu layer still leaves every cation bathed in the same electron sea → **bends, stays bonded**. This single contrast answers the classic \"why is a metal malleable but a salt crystal not\".\n- Conductivity contrast: metals conduct as solids (electrons); ionic solids conduct only when molten or dissolved (ions then mobile).\n\n### 4.2 Trend reasoning with the model\n\n- **Melting point across period 3:** Na (1 valence e⁻, 1+ core) 98 °C → Mg (2 e⁻, 2+) 650 °C → Al (3 e⁻, 3+) 660 °C — more delocalised electrons and higher cation charge strengthen the sea's grip.\n- **Conductivity ranking:** Ag > Cu > Au > Al — one electron loosely held per atom suffices; transition metals add d-electron contribution.\n- **Alloy hardness:** steel's interstitial carbon blocks slip planes; substitutional Sn in bronze distorts the lattice — both raise strength by impeding the very sliding that makes pure metals soft.\n\n### 4.3 Where the model stops (elementary)\n\n- The simple electron sea explains conduction and malleability but not why some metals are magnetic (Fe, Co, Ni) or why Hg is liquid — band theory with electron correlations handles those; the syllabus stops at the elementary band picture.",
+    "## 5. Comparison Tables\n\n**Three bonding types, one table**\n\n| Property | Ionic (NaCl) | Metallic (Cu) | Covalent network (diamond) |\n|---|---|---|---|\n| Units | Ions | Cations + electron sea | Atoms |\n| Bond direction | Non-directional | Non-directional | Directional |\n| Conducts (solid) | No | Yes (electrons) | No (except graphite) |\n| Malleability | Brittle — shatters | Malleable, ductile | Hard, brittle |\n| mp (°C) | 801 | 1085 | 3550 |\n| Solvent | Polar (water) | None | None |\n\n**Metals vs ionic crystals under stress**\n\n| Test | Metal | Ionic crystal |\n|---|---|---|\n| Layer slides | Still bonded (electron sea re-adjusts) | Like charges meet — shatters |\n| Hammered into sheet | Yes (malleable) | No — powder |\n| Drawn into wire | Yes (ductile) | No |",
+    "## 6. Common Confusions\n\n**The cations do not move during conduction:** only the electron sea flows; the lattice stays fixed. (In electrolysis the *ions* move — different process.)",
+    "**Metallic bonds are not covalent:** no localized shared pairs between specific atoms — the electrons are collective property of the crystal.",
+    "**Low mp metals exist:** Na (98 °C), Hg (liquid) — \"metals have high mp\" is a trend, not a law; the trend tracks valence electrons and cation charge.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Define the metallic bond and explain malleability, conductivity and lustre using the electron sea model.** — **Bond:** the electrostatic attraction between a lattice of metal cations and a cloud of delocalised valence electrons. **Malleability:** the bond is non-directional; when cation layers slide under stress, the electron sea immediately re-adjusts and bonding persists — the metal deforms instead of fracturing (ionic crystals shatter because sliding brings like charges face-to-face). **Conductivity:** the delocalised electrons are mobile; an applied potential drives them through the crystal (electrical), and their motion carries kinetic energy (thermal). **Lustre:** free electrons absorb and instantly re-emit light across the visible spectrum, giving the characteristic sheen.",
+    "**NEB-style (2m): Explain the melting-point rise Na (98 °C) → Mg (650 °C) → Al (660 °C).** — Moving across period 3 the valence electron count rises (1 → 2 → 3) and the cation core charge rises (Na⁺ → Mg²⁺ → Al³⁺) while the ionic radius shrinks. More delocalised electrons per atom and stronger cation–electron attraction mean more energy is needed to disrupt the lattice — melting point and hardness climb together.",
+    "**NEB-style (2m): Why do metals form alloys so readily while ionic crystals do not?** — The metallic bond is non-directional and tolerant: foreign atoms of similar radius simply substitute into the cation lattice (brass: Zn in Cu) or squeeze into interstitial sites (steel: C in Fe), with the electron sea adjusting. Ionic crystals demand strict charge and size balance — substituting Na⁺ by a differently charged ion breaks stoichiometry and electrostatics, so salts form only limited solid solutions."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
-    "❌ Ionic bonds are non-directional. ✅ Ionic bonds are non-directional (electrostatic); covalent bonds are directional."
+    "**Conduction is electron flow, not ion flow:** in a copper wire the Cu²⁺-core lattice never migrates; in molten NaCl it is the ions that carry current — keep the two mechanisms separate.",
+    "**\"Electron sea\" is a model, not a photograph:** it is the elementary picture; band theory is its quantum refinement — cite both for full marks on \"explain metallic bonding\"."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice drawing Lewis dot structures for molecules and polyatomic ions.",
-    "Practice predicting molecular shapes and bond angles using VSEPR."
+    "Why does a piece of copper bend while a crystal of sodium chloride shatters under the same hammer blow?",
+    "Explain why the electrical conductivity of silicon increases with temperature while that of copper decreases.",
+    "Account for the hardness of steel compared with pure iron using the interstitial model."
   ],
   "universalFacts": [
-    "Universal scientific fact for 11 metallic bonding and properties of metallic solids."
+    "Mercury is liquid at room temperature (29.8 °C mp) — the only metal — used in thermometers and barometers precisely because its electron sea still conducts while the lattice barely coheres."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "H₂O: sp³, 2BP+2LP → bent",
-    "CO₂: sp, 2BP+0LP → linear"
+    "***Brass and steel*** — Zn substitutes for Cu; C squeezes between Fe atoms — both distort the lattice just enough to block slip planes, hardening the metal without destroying the bond."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice drawing Lewis dot structures for molecules and polyatomic ions."
+    "**NEB-style (3m): Define the metallic bond and use the electron sea model to explain malleability, electrical conductivity and lustre of metals.** — **Definition:** a metallic bond is the electrostatic attraction between a three-dimensional lattice of metal cations and a cloud of delocalised valence electrons (the \"electron sea\") that belongs to the whole crystal. **Malleability:** the bond is non-directional. When a hammer blow slides one layer of cations past another, the delocalised electrons instantly re-adjust and every cation remains surrounded by negative charge — the deformation is absorbed without breaking the bond, so metals bend and flatten. (In an ionic crystal the same slide brings like charges face to face; repulsion shatters it.) **Electrical conductivity:** the valence electrons are not bound to any atom; an applied potential difference sets them drifting through the lattice, constituting current — the cations themselves stay fixed. **Lustre:** the free electrons absorb incident light of all visible frequencies and re-emit it at the surface, producing the characteristic metallic sheen.",
+    "**NEB-style (2m): Explain the rise in melting point from sodium (98 °C) through magnesium (650 °C) to aluminium (660 °C).** — Across period 3 each element contributes more valence electrons to the sea (1, 2 and 3 respectively) and forms a cation of higher charge (Na⁺, Mg²⁺, Al³⁺) with a smaller radius. The strength of the metallic bond therefore grows — more electrons per atom attracting a more highly charged, more closely packed cation lattice — so progressively more energy is needed to disrupt the lattice, and melting point (with hardness) climbs from Na through Mg to Al.",
+    "**NEB-style (2m): Silicon's conductivity rises with temperature but copper's falls. Explain using band theory.** — **Silicon (semiconductor, gap ≈ 1 eV):** at low temperature the conduction band is nearly empty; heating promotes electrons across the small gap into the conduction band, so the number of charge carriers grows exponentially and conductivity **increases**. **Copper (conductor):** the conduction band is already partly filled with abundant free electrons; heating increases lattice vibrations, which scatter the electrons and impede their drift — carrier number is unchanged while mobility drops, so conductivity **decreases**. The sign of the temperature response separates semiconductors from metals."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 11 metallic bonding and properties of metallic solids)"
+    "- mp trend (period 3 metals): Na 98 < Mg 650 < Al 660 °C\n- Band gaps: conductor ≈ 0; Si ≈ 1 eV; diamond ≈ 5.5 eV\n- Conductivity ranking: Ag > Cu > Au > Al"
   ],
   "keyPoints": [
-    "Core point for 11 metallic bonding and properties of metallic solids."
+    "Metallic bond = cation lattice + delocalised valence electrons; non-directional. Explains: conduction (mobile electrons), thermal conduction, lustre (re-emission), malleability/ductility (layers slide, sea re-adjusts — ionic crystals shatter instead), high mp trend Na < Mg < Al. Band theory: valence/conduction bands; conductors overlapping, semiconductors ≈1 eV gap (Si, Ge), insulators ≈5.5 eV (diamond); semiconductor conductivity rises with temperature. Alloys: substitutional (brass) or interstitial (steel); non-directional bonding tolerates them."
   ],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nElectronegativity difference determines bond type.\n\nLone pairs compress bond angles below ideal geometry.",
+  "summary": "The metallic bond is the crystal-scale bargain: metal atoms, with low ionisation energies, surrender their valence electrons into a **delocalised sea** that electrostatically binds the fixed cation lattice — non-directional, collective, and forgiving. That forgiveness is the property engine: layers of cations slide under a hammer and the sea re-adjusts (**malleability**, where ionic crystals shatter); the same mobile electrons drift under a potential (**conductivity**, Ag > Cu > Au > Al) and carry heat; they absorb and re-emit all visible light (**lustre**); and their count and cation charge set the melting ladder Na 98 → Mg 650 → Al 660 °C. Band theory refines the picture: overlapping or partly filled bands conduct, a ≈1 eV gap makes silicon a semiconductor whose conductivity *rises* with temperature, and diamond's 5.5 eV gap insulates. Non-directionality also welcomes guests — substitutional brass, interstitial steel — turning soft metals into engineering alloys. One delocalised cloud, four properties and an industry.",
   "specialNotes": [
     "Specialized insight for 11 metallic bonding and properties of metallic solids."
   ],
   "importantStatements": [
-    "Key statement for 11 metallic bonding and properties of metallic solids."
+    "\"A metallic bond is the electrostatic force of attraction between the metal cations and the delocalised sea of valence electrons surrounding them.\""
   ],
   "importantNotes": [
-    "Important note regarding 11 metallic bonding and properties of metallic solids."
+    "No verified PYQ on metallic bonding exists in the current bank (NEB 2024/02's hydrogen-bond question and the bonding set belong to earlier topics); all items above are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Metallic Bonding and Properties of Metallic Solids."
+    "Property → mechanism map: conducts → electron sea; malleable → non-directional bond; lustrous → re-emission; high mp → cation charge × electron count. Band gaps: metal 0, Si 1 eV, diamond 5.5 eV."
   ],
-  "examNotes": [],
+  "examNotes": [
+    "For \"explain metallic bonding\", name both players (cations + delocalised electrons) before any property — definitions without the two-component structure lose the first mark."
+  ],
   "mcs": [
     {
       "question": "Question about 11 metallic bonding and properties of metallic solids?",
@@ -173,7 +74,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 11 metallic bonding and properties of metallic solids."
+    "The sliding test is the master comparison: metal layers slide and stay bonded; ionic layers slide and repel apart. One geometric fact explains malleability vs brittleness across two entire bonding types."
   ],
   "importantTasks": [
     "Task for studying 11 metallic bonding and properties of metallic solids."
@@ -182,14 +83,92 @@
   "tabGroup": "11-metallic-bonding-and-properties-of-metallic-solids",
   "mcqs": [
     {
-      "question": "Question about 11 metallic bonding and properties of metallic solids?",
+      "question": "The metallic bond is the attraction between:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Two metal atoms sharing pairs",
+        "Cations and delocalised electrons",
+        "Metal and nonmetal ions",
+        "Molecules of metal"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Cation lattice immersed in an electron sea."
+    },
+    {
+      "question": "Metals are malleable because:",
+      "options": [
+        "Their bonds are directional",
+        "Layers slide and the electron sea re-adjusts",
+        "They contain free ions",
+        "They have low density"
+      ],
+      "answer": "B",
+      "explanation": "Non-directional bonding survives deformation."
+    },
+    {
+      "question": "An ionic crystal shatters when struck because sliding layers:",
+      "options": [
+        "Lose electrons",
+        "Bring like charges together",
+        "Melt instantly",
+        "Expand"
+      ],
+      "answer": "B",
+      "explanation": "Repulsion between like charges cleaves the crystal."
+    },
+    {
+      "question": "Metallic lustre results from:",
+      "options": [
+        "Reflection by cations",
+        "Absorption and re-emission by free electrons",
+        "Refraction in the lattice",
+        "Oxide coating"
+      ],
+      "answer": "B",
+      "explanation": "Delocalised electrons re-emit visible light."
+    },
+    {
+      "question": "Melting points of period-3 metals follow:",
+      "options": [
+        "Na > Mg > Al",
+        "Al > Mg > Na",
+        "Mg > Na > Al",
+        "All equal"
+      ],
+      "answer": "B",
+      "explanation": "More valence electrons and higher cation charge: 98 < 650 < 660 C."
+    },
+    {
+      "question": "In a copper wire, conduction is carried by:",
+      "options": [
+        "Cu2+ ions",
+        "Delocalised electrons",
+        "Protons",
+        "Holes only"
+      ],
+      "answer": "B",
+      "explanation": "The cation lattice stays fixed; electrons drift."
+    },
+    {
+      "question": "Silicon's conductivity increases with temperature because:",
+      "options": [
+        "Lattice vibrations help",
+        "More electrons cross the band gap",
+        "Ions become mobile",
+        "The gap widens"
+      ],
+      "answer": "B",
+      "explanation": "Thermal promotion into the conduction band."
+    },
+    {
+      "question": "Steel is harder than pure iron because carbon atoms:",
+      "options": [
+        "Replace iron atoms",
+        "Sit interstitially and block slip planes",
+        "Bond ionically",
+        "Evaporate"
+      ],
+      "answer": "B",
+      "explanation": "Interstitial distortion impedes layer sliding."
     }
   ],
   "exercises": [],
@@ -199,5 +178,61 @@
     "desc": "3D molecular geometry predictor"
   },
   "visualType": "avogadros-law-deduction",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Bond That Bends Instead of Breaks\n\nMetals conduct, gleam, bend and hammer without shattering — behaviour no ionic or covalent model can explain. The **electron sea (band) model** can: metal atoms surrender their valence electrons to a delocalised cloud that binds the remaining cations electrostatically and flows freely. One picture, four properties — and the reason copper wires exist.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The electron sea model\n\n- **Structure:** a lattice of metal **cations** (Na⁺, Mg²⁺, Al³⁺ …) fixed in position, immersed in a \"sea\" or \"gas\" of **delocalised valence electrons** shared by the whole crystal.\n- **The metallic bond:** the electrostatic attraction between the positive cation lattice and the negative delocalised electron cloud. It is **non-directional** — unlike covalent bonds, no particular angle is favoured.\n- **Why metals have low ionisation energies:** group 1 and 2 elements (and Al) lose valence electrons easily; the energy cost of delocalisation is repaid by the lattice stabilisation of many cation–electron interactions at once.\n\n### 4.1 Band-theory refinement (elementary)\n\n- In a crystal, the valence atomic orbitals of ~10²³ atoms merge into continuous **energy bands**; the valence band is filled, the conduction band above it is empty or partly filled.\n- **Conductors (Cu, Ag):** conduction band partly filled or overlapping the valence band — electrons move freely under a field.\n- **Insulators:** large gap between filled valence band and empty conduction band (diamond ≈ 5.5 eV).\n- **Semiconductors (Si, Ge):** small gap (≈1 eV) — thermal energy promotes a few electrons; conductivity rises with temperature (opposite to metals).\n\n### 2.2 Properties explained by the model\n\n- **Electrical conductivity:** delocalised electrons drift under an applied potential — the best conductors (Ag, Cu, Al) have the loosest hold on valence electrons.\n- **Thermal conductivity:** the same mobile electrons carry kinetic energy through the lattice.\n- **Lustre:** free electrons absorb and re-emit light of all visible frequencies at the surface — the metallic sheen.\n- **Malleability and ductility:** the non-directional bond means cation layers can **slide** past one another without breaking the bonding (unlike ionic crystals, where sliding brings like charges together and the crystal shatters).\n- **High melting points (generally):** strong cation–electron attraction; trend follows charge density — Na 98 °C < Mg 650 < Al 660 (with Al's 3+ core binding three electrons per atom). Mercury is the liquid exception (29.8 °C) — a relativistic/electronic-configuration curiosity.\n- **Alloying:** atoms of similar radius substitute in the lattice (brass Cu/Zn, steel Fe/C) — non-directional bonding tolerates foreign atoms, which is why metals but not salts form continuous solid solutions easily.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value to quote |\n|---|---|---|\n| **Metallic bond** | Attraction between cation lattice and delocalised electron sea | Non-directional |\n| **Electron sea model** | Cations fixed in a mobile valence-electron cloud | Drude's picture |\n| **Band theory** | Atomic orbitals merge into valence/conduction bands | Conductor gap ≈ 0 |\n| **Semiconductor** | Small band gap, conductivity rises with temperature | Si ≈ 1 eV gap |\n| **Alloy** | Homogeneous metal mixture; substitutional or interstitial | Brass, steel |",
+      "## 4. Detailed Explanation\n\n### 4.1 Metallic vs ionic — the sliding test\n\n- Both are lattices of positive cores with mobile negative charge (electrons vs anions), but geometry decides failure mode. Ionic: sliding a layer aligns Na⁺ against Na⁺ → repulsion → **brittle fracture**. Metallic: sliding a Cu layer still leaves every cation bathed in the same electron sea → **bends, stays bonded**. This single contrast answers the classic \"why is a metal malleable but a salt crystal not\".\n- Conductivity contrast: metals conduct as solids (electrons); ionic solids conduct only when molten or dissolved (ions then mobile).\n\n### 4.2 Trend reasoning with the model\n\n- **Melting point across period 3:** Na (1 valence e⁻, 1+ core) 98 °C → Mg (2 e⁻, 2+) 650 °C → Al (3 e⁻, 3+) 660 °C — more delocalised electrons and higher cation charge strengthen the sea's grip.\n- **Conductivity ranking:** Ag > Cu > Au > Al — one electron loosely held per atom suffices; transition metals add d-electron contribution.\n- **Alloy hardness:** steel's interstitial carbon blocks slip planes; substitutional Sn in bronze distorts the lattice — both raise strength by impeding the very sliding that makes pure metals soft.\n\n### 4.3 Where the model stops (elementary)\n\n- The simple electron sea explains conduction and malleability but not why some metals are magnetic (Fe, Co, Ni) or why Hg is liquid — band theory with electron correlations handles those; the syllabus stops at the elementary band picture.",
+      "## 5. Comparison Tables\n\n**Three bonding types, one table**\n\n| Property | Ionic (NaCl) | Metallic (Cu) | Covalent network (diamond) |\n|---|---|---|---|\n| Units | Ions | Cations + electron sea | Atoms |\n| Bond direction | Non-directional | Non-directional | Directional |\n| Conducts (solid) | No | Yes (electrons) | No (except graphite) |\n| Malleability | Brittle — shatters | Malleable, ductile | Hard, brittle |\n| mp (°C) | 801 | 1085 | 3550 |\n| Solvent | Polar (water) | None | None |\n\n**Metals vs ionic crystals under stress**\n\n| Test | Metal | Ionic crystal |\n|---|---|---|\n| Layer slides | Still bonded (electron sea re-adjusts) | Like charges meet — shatters |\n| Hammered into sheet | Yes (malleable) | No — powder |\n| Drawn into wire | Yes (ductile) | No |",
+      "## 6. Common Confusions\n\n**The cations do not move during conduction:** only the electron sea flows; the lattice stays fixed. (In electrolysis the *ions* move — different process.)",
+      "**Metallic bonds are not covalent:** no localized shared pairs between specific atoms — the electrons are collective property of the crystal.",
+      "**Low mp metals exist:** Na (98 °C), Hg (liquid) — \"metals have high mp\" is a trend, not a law; the trend tracks valence electrons and cation charge.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Define the metallic bond and explain malleability, conductivity and lustre using the electron sea model.** — **Bond:** the electrostatic attraction between a lattice of metal cations and a cloud of delocalised valence electrons. **Malleability:** the bond is non-directional; when cation layers slide under stress, the electron sea immediately re-adjusts and bonding persists — the metal deforms instead of fracturing (ionic crystals shatter because sliding brings like charges face-to-face). **Conductivity:** the delocalised electrons are mobile; an applied potential drives them through the crystal (electrical), and their motion carries kinetic energy (thermal). **Lustre:** free electrons absorb and instantly re-emit light across the visible spectrum, giving the characteristic sheen.",
+      "**NEB-style (2m): Explain the melting-point rise Na (98 °C) → Mg (650 °C) → Al (660 °C).** — Moving across period 3 the valence electron count rises (1 → 2 → 3) and the cation core charge rises (Na⁺ → Mg²⁺ → Al³⁺) while the ionic radius shrinks. More delocalised electrons per atom and stronger cation–electron attraction mean more energy is needed to disrupt the lattice — melting point and hardness climb together.",
+      "**NEB-style (2m): Why do metals form alloys so readily while ionic crystals do not?** — The metallic bond is non-directional and tolerant: foreign atoms of similar radius simply substitute into the cation lattice (brass: Zn in Cu) or squeeze into interstitial sites (steel: C in Fe), with the electron sea adjusting. Ionic crystals demand strict charge and size balance — substituting Na⁺ by a differently charged ion breaks stoichiometry and electrostatics, so salts form only limited solid solutions."
+    ],
+    "confusion": [
+      "**Conduction is electron flow, not ion flow:** in a copper wire the Cu²⁺-core lattice never migrates; in molten NaCl it is the ions that carry current — keep the two mechanisms separate.",
+      "**\"Electron sea\" is a model, not a photograph:** it is the elementary picture; band theory is its quantum refinement — cite both for full marks on \"explain metallic bonding\"."
+    ],
+    "keyPoints": [
+      "Metallic bond = cation lattice + delocalised valence electrons; non-directional. Explains: conduction (mobile electrons), thermal conduction, lustre (re-emission), malleability/ductility (layers slide, sea re-adjusts — ionic crystals shatter instead), high mp trend Na < Mg < Al. Band theory: valence/conduction bands; conductors overlapping, semiconductors ≈1 eV gap (Si, Ge), insulators ≈5.5 eV (diamond); semiconductor conductivity rises with temperature. Alloys: substitutional (brass) or interstitial (steel); non-directional bonding tolerates them."
+    ],
+    "importantConcepts": [
+      "The sliding test is the master comparison: metal layers slide and stay bonded; ionic layers slide and repel apart. One geometric fact explains malleability vs brittleness across two entire bonding types."
+    ],
+    "examples": [
+      "***Brass and steel*** — Zn substitutes for Cu; C squeezes between Fe atoms — both distort the lattice just enough to block slip planes, hardening the metal without destroying the bond."
+    ],
+    "universalFacts": [
+      "Mercury is liquid at room temperature (29.8 °C mp) — the only metal — used in thermometers and barometers precisely because its electron sea still conducts while the lattice barely coheres."
+    ],
+    "importantStatements": [
+      "\"A metallic bond is the electrostatic force of attraction between the metal cations and the delocalised sea of valence electrons surrounding them.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on metallic bonding exists in the current bank (NEB 2024/02's hydrogen-bond question and the bonding set belong to earlier topics); all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Property → mechanism map: conducts → electron sea; malleable → non-directional bond; lustrous → re-emission; high mp → cation charge × electron count. Band gaps: metal 0, Si 1 eV, diamond 5.5 eV."
+    ],
+    "examNotes": [
+      "For \"explain metallic bonding\", name both players (cations + delocalised electrons) before any property — definitions without the two-component structure lose the first mark."
+    ],
+    "formulas": [
+      "- mp trend (period 3 metals): Na 98 < Mg 650 < Al 660 °C\n- Band gaps: conductor ≈ 0; Si ≈ 1 eV; diamond ≈ 5.5 eV\n- Conductivity ranking: Ag > Cu > Au > Al"
+    ],
+    "practice": [
+      "Why does a piece of copper bend while a crystal of sodium chloride shatters under the same hammer blow?",
+      "Explain why the electrical conductivity of silicon increases with temperature while that of copper decreases.",
+      "Account for the hardness of steel compared with pure iron using the interstitial model."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Define the metallic bond and use the electron sea model to explain malleability, electrical conductivity and lustre of metals.** — **Definition:** a metallic bond is the electrostatic attraction between a three-dimensional lattice of metal cations and a cloud of delocalised valence electrons (the \"electron sea\") that belongs to the whole crystal. **Malleability:** the bond is non-directional. When a hammer blow slides one layer of cations past another, the delocalised electrons instantly re-adjust and every cation remains surrounded by negative charge — the deformation is absorbed without breaking the bond, so metals bend and flatten. (In an ionic crystal the same slide brings like charges face to face; repulsion shatters it.) **Electrical conductivity:** the valence electrons are not bound to any atom; an applied potential difference sets them drifting through the lattice, constituting current — the cations themselves stay fixed. **Lustre:** the free electrons absorb incident light of all visible frequencies and re-emit it at the surface, producing the characteristic metallic sheen.",
+      "**NEB-style (2m): Explain the rise in melting point from sodium (98 °C) through magnesium (650 °C) to aluminium (660 °C).** — Across period 3 each element contributes more valence electrons to the sea (1, 2 and 3 respectively) and forms a cation of higher charge (Na⁺, Mg²⁺, Al³⁺) with a smaller radius. The strength of the metallic bond therefore grows — more electrons per atom attracting a more highly charged, more closely packed cation lattice — so progressively more energy is needed to disrupt the lattice, and melting point (with hardness) climbs from Na through Mg to Al.",
+      "**NEB-style (2m): Silicon's conductivity rises with temperature but copper's falls. Explain using band theory.** — **Silicon (semiconductor, gap ≈ 1 eV):** at low temperature the conduction band is nearly empty; heating promotes electrons across the small gap into the conduction band, so the number of charge carriers grows exponentially and conductivity **increases**. **Copper (conductor):** the conduction band is already partly filled with abundant free electrons; heating increases lattice vibrations, which scatter the electrons and impede their drift — carrier number is unchanged while mobility drops, so conductivity **decreases**. The sign of the temperature response separates semiconductors from metals."
+    ]
+  }
 }
