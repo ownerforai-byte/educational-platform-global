@@ -34,6 +34,8 @@ export interface MathXiSolutionUnit {
   conceptualCount: number;
   /** Fully worked 4–6 mark long answers. */
   longAnswerCount: number;
+  /** Reasoning drills (why / what / where) — not routine exercise work. */
+  drillCount: number;
 }
 
 export const MATHEMATICS_XI_BASE = "/resources/mathematics-xi";
@@ -43,7 +45,7 @@ export const MATHEMATICS_XI_SOLUTIONS = {
   course: "NEB Grade 11 · Mathematics (Mat. 007)",
   subtitle:
     "Every exercise worked out in NEB answer style, plus the short conceptual questions the paper actually asks — one document per syllabus unit, in curriculum order.",
-  totalItems: 655,
+  totalItems: 845,
 } as const;
 
 export const MATHEMATICS_XI_UNITS: MathXiSolutionUnit[] = [
@@ -64,10 +66,13 @@ export const MATHEMATICS_XI_UNITS: MathXiSolutionUnit[] = [
       "Matrices and determinants",
       "Quadratic equations",
       "Complex numbers",
+      "Topic-by-topic extension",
+      "Concept drills: why, what, where",
     ],
-    exerciseCount: 83,
+    exerciseCount: 106,
     conceptualCount: 50,
     longAnswerCount: 9,
+    drillCount: 12,
   },
   {
     unitId: "trigonometry",
@@ -82,10 +87,13 @@ export const MATHEMATICS_XI_UNITS: MathXiSolutionUnit[] = [
       "Combination formulae",
       "General values of equations",
       "Equations restricted to an interval",
+      "Topic-by-topic extension",
+      "Concept drills: why, what, where",
     ],
-    exerciseCount: 38,
+    exerciseCount: 50,
     conceptualCount: 46,
     longAnswerCount: 7,
+    drillCount: 12,
   },
   {
     unitId: "analytic-geometry",
@@ -99,10 +107,13 @@ export const MATHEMATICS_XI_UNITS: MathXiSolutionUnit[] = [
       "Distance and angle bisectors",
       "Pair of straight lines",
       "Coordinates in space",
+      "Topic-by-topic extension",
+      "Concept drills: why, what, where",
     ],
-    exerciseCount: 30,
+    exerciseCount: 42,
     conceptualCount: 33,
     longAnswerCount: 6,
+    drillCount: 12,
   },
   {
     unitId: "vectors",
@@ -116,10 +127,13 @@ export const MATHEMATICS_XI_UNITS: MathXiSolutionUnit[] = [
       "Vector algebra and products",
       "Collinear and coplanar vectors",
       "Linear combination and independence",
+      "Topic-by-topic extension",
+      "Concept drills: why, what, where",
     ],
-    exerciseCount: 32,
+    exerciseCount: 44,
     conceptualCount: 36,
     longAnswerCount: 5,
+    drillCount: 12,
   },
   {
     unitId: "statistics-and-probability",
@@ -133,10 +147,13 @@ export const MATHEMATICS_XI_UNITS: MathXiSolutionUnit[] = [
       "Dispersion, CV and skewness",
       "Mathematical and empirical probability",
       "Addition, multiplication and independence",
+      "Topic-by-topic extension",
+      "Concept drills: why, what, where",
     ],
-    exerciseCount: 32,
+    exerciseCount: 45,
     conceptualCount: 40,
     longAnswerCount: 6,
+    drillCount: 12,
   },
   {
     unitId: "calculus",
@@ -155,10 +172,13 @@ export const MATHEMATICS_XI_UNITS: MathXiSolutionUnit[] = [
       "Monotonicity, extrema, tangents, concavity",
       "Anti-derivatives",
       "Definite integrals and area",
+      "Topic-by-topic extension",
+      "Concept drills: why, what, where",
     ],
-    exerciseCount: 82,
+    exerciseCount: 102,
     conceptualCount: 42,
     longAnswerCount: 8,
+    drillCount: 12,
   },
   {
     unitId: "computational-methods-or-mechanics",
@@ -175,10 +195,13 @@ export const MATHEMATICS_XI_UNITS: MathXiSolutionUnit[] = [
       "Simpson's one-third rule",
       "Statics: forces",
       "Dynamics: kinematics",
+      "Topic-by-topic extension",
+      "Concept drills: why, what, where",
     ],
-    exerciseCount: 28,
+    exerciseCount: 42,
     conceptualCount: 36,
     longAnswerCount: 6,
+    drillCount: 12,
   },
 ];
 
@@ -202,4 +225,5 @@ export const MATHEMATICS_XI_TOTALS = {
   exercises: MATHEMATICS_XI_UNITS.reduce((sum, unit) => sum + unit.exerciseCount, 0),
   conceptual: MATHEMATICS_XI_UNITS.reduce((sum, unit) => sum + unit.conceptualCount, 0),
   longAnswers: MATHEMATICS_XI_UNITS.reduce((sum, unit) => sum + unit.longAnswerCount, 0),
+  drills: MATHEMATICS_XI_UNITS.reduce((sum, unit) => sum + unit.drillCount, 0),
 };

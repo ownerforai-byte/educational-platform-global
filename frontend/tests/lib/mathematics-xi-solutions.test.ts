@@ -42,10 +42,12 @@ describe("Mathematics XI exercise solutions registry", () => {
       const exercises = (html.match(/<b>Q\d+\./g) ?? []).length;
       const conceptual = (html.match(/<b>C\d+\./g) ?? []).length;
       const longAnswers = (html.match(/<b>L\d+\./g) ?? []).length;
+      const drills = (html.match(/<b>D\d+\./g) ?? []).length;
 
       expect(exercises, `${unit.file} exercise count`).toBe(unit.exerciseCount);
       expect(conceptual, `${unit.file} conceptual count`).toBe(unit.conceptualCount);
       expect(longAnswers, `${unit.file} long-answer count`).toBe(unit.longAnswerCount);
+      expect(drills, `${unit.file} reasoning drill count`).toBe(unit.drillCount);
     }
   });
 
@@ -53,7 +55,8 @@ describe("Mathematics XI exercise solutions registry", () => {
     const total =
       MATHEMATICS_XI_TOTALS.exercises +
       MATHEMATICS_XI_TOTALS.conceptual +
-      MATHEMATICS_XI_TOTALS.longAnswers;
+      MATHEMATICS_XI_TOTALS.longAnswers +
+      MATHEMATICS_XI_TOTALS.drills;
     expect(total).toBe(MATHEMATICS_XI_SOLUTIONS.totalItems);
   });
 

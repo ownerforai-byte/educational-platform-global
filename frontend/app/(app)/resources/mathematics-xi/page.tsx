@@ -49,6 +49,7 @@ export default function MathematicsXiSolutionsPage() {
             { label: "Exercises solved", value: MATHEMATICS_XI_TOTALS.exercises },
             { label: "Conceptual Q&A", value: MATHEMATICS_XI_TOTALS.conceptual },
             { label: "Long answers", value: MATHEMATICS_XI_TOTALS.longAnswers },
+            { label: "Reasoning drills", value: MATHEMATICS_XI_TOTALS.drills },
           ].map((stat) => (
             <div
               key={stat.label}
