@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Longest chain: 4 carbons = butane\nOH on C-2 → **Butan-2-ol**",
-      "knowledgeNote": "IUPAC priority: carboxylic acid > ester > aldehyde > ketone > alcohol > amine > alkene/alkyne."
+      "knowledgeNote": "IUPAC priority: carboxylic acid > ester > aldehyde > ketone > alcohol > amine > alkene/alkyne.",
+      "answer": "CH₃CH(OH)CH₂CH₃ — the OH is the principal group, so numbering starts from the nearest end to it: C-1 = CH₃, C-2 = CH(OH), C-3 = CH₂, C-4 = CH₃ ⟹ parent **butane**, OH at **C-2**. **IUPAC name: butan-2-ol** (sec-butyl alcohol). **Deep point:** both ends are CH₃, so the tie is broken by the functional group's locant — numbering from the right would put OH at C-3, which is why the OH end wins."
     }
   ]
 }

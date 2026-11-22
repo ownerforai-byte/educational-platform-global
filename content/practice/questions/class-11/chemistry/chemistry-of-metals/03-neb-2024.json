@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Down's process:** electrolysis of molten NaCl mixed with CaCl₂ (which cuts the melting point from 801°C to ~600°C).\n\nAnode (graphite): 2Cl⁻ → Cl₂↑ + 2e⁻. Cathode (iron): Na⁺ + e⁻ → Na(l), collected under a steel bell.\n\nAqueous NaCl cannot be used — water reduces more easily than Na⁺.",
-      "knowledgeNote": "Same molten-salt logic as Hall-Heroult for aluminium — reactive metals need fused, not aqueous, electrolysis."
+      "knowledgeNote": "Same molten-salt logic as Hall-Heroult for aluminium — reactive metals need fused, not aqueous, electrolysis.",
+      "answer": "**Downs process — electrolysis of molten NaCl.** **Why molten:** in aqueous brine water is reduced at the cathode before Na⁺, so metallic sodium needs the dry fused salt. **Why the mixture:** pure NaCl melts at 801 °C; adding **CaCl₂/NaF** lowers the melting point to ~600 °C and improves conductivity, saving energy. **The cell:** steel tank with refractory lining; central **graphite anode** evolves **Cl₂** (collected under a hood); surrounding **steel ring cathode** where **Na⁺ + e⁻ → Na**; the molten sodium (less dense than the melt) floats and is drawn off through a pipe; a **steel-gauze diaphragm** keeps Na and Cl₂ apart (they would recombine violently). **Reactions:** cathode Na⁺ + e⁻ → Na; anode 2Cl⁻ → Cl₂ + 2e⁻; overall 2NaCl → 2Na + Cl₂. The Ca²⁺ is not reduced under operating conditions. **Deep point:** three engineering answers to one chemistry — melt it lower (CaCl₂), separate the products (gauze), and let density collect the metal."
     },
     {
       "question": "Describe the Hall-Heroult process for the extraction of aluminium.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Alumina dissolved in molten cryolite (Na₃AlF₆) is electrolysed in a carbon-lined cell at ~950°C.\n\nCathode: Al³⁺ + 3e⁻ → Al(l), sinking to the bottom. Anode (carbon): 2O²⁻ + C → CO₂↑ + 4e⁻ (anodes burn away and are replaced).\n\nCryolite lowers the melting point and dissolves Al₂O₃.",
-      "knowledgeNote": "Carbon-anode consumption is the process's running cost — the anodes are literally burnt into CO₂."
+      "knowledgeNote": "Carbon-anode consumption is the process's running cost — the anodes are literally burnt into CO₂.",
+      "answer": "**Hall–Héroult process:** purified **bauxite-derived alumina (Al₂O₃)** is dissolved in **molten cryolite (Na₃AlF₆)** plus fluorspar (CaF₂) — the cryolite lowers the working temperature from Al₂O₃'s ~2000 °C to **~950–980 °C** and raises the melt's conductivity. **The cell:** a steel shell lined with **carbon** (the cathode) with suspended **carbon blocks** as anodes. **Cathode:** Al³⁺ + 3e⁻ → **Al (molten)** — collects on the cell floor and is siphoned off. **Anode:** 2O²⁻ → O₂ + 4e⁻; the oxygen oxidises the carbon anode (C + O₂ → CO₂), so **anodes are consumed** and replaced periodically. **Overall:** 2Al₂O₃ → 4Al + 3O₂. The process is continuous and enormously electricity-hungry — aluminium is 'congealed electricity'. **Deep point:** cryolite is the process's economic key — it changes nothing chemically (a flux), but by dropping the temperature it converts an impossible electrolysis into the world's aluminium supply."
     },
     {
       "question": "Distinguish between calcination and roasting with one example of each.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Calcination:** heating an ore in limited air to expel volatiles — e.g. CaCO₃ → CaO + CO₂ (carbonates).\n\n**Roasting:** heating a sulphide ore in excess air to convert it to oxide — e.g. 2ZnS + 3O₂ → 2ZnO + 2SO₂.",
-      "knowledgeNote": "Carbonates calcinate, sulphides roast — the ore's anion picks the process."
+      "knowledgeNote": "Carbonates calcinate, sulphides roast — the ore's anion picks the process.",
+      "answer": "**Calcination:** heating the ore **in the absence (or limited supply) of air** to remove volatile matter — drives off water of hydration, CO₂ from carbonates, converts hydroxides to oxides. **Example:** ZnCO₃ --heat--> ZnO + CO₂ (calamine → zinc oxide); also CaCO₃ → CaO + CO₂. **Roasting:** heating the ore **in excess air** below its melting point — converts sulphide ores to oxides (and removes As/Sb as volatile oxides), with SO₂ released. **Example:** 2ZnS + 3O₂ → 2ZnO + 2SO₂ (zinc blende → zinc oxide). **Deep point:** the one-line discriminator is the atmosphere — no air (calcination, carbonates/hydroxides) versus excess air (roasting, sulphides)."
     },
     {
       "question": "What is froth flotation? For which ores is it used?",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Crushed ore is agitated with water, pine oil, and air: sulphide particles cling to oil-coated bubbles and float as froth, while gangue sinks.\n\nUsed for **sulphide ores** (galena PbS, zinc blende ZnS, copper pyrites).",
-      "knowledgeNote": "Wetting difference is the principle — collectors make sulphides hydrophobic, depressants keep gangue hydrophilic."
+      "knowledgeNote": "Wetting difference is the principle — collectors make sulphides hydrophobic, depressants keep gangue hydrophilic.",
+      "answer": "**Froth flotation:** a **concentration process for sulphide ores** — finely powdered ore is suspended in water with **pine oil** and a frothing agent; compressed air stirs up a froth, and the sulphide particles (rendered water-repelling by the oil) attach to the air bubbles and rise with the froth, while the heavier gangue (silica) sinks and is discarded. The froth is skimmed and broken to give the concentrated ore; collectors (xanthates) and depressants tune selectivity. **Used for:** **sulphide ores** — galena (PbS), zinc blende (ZnS), copper pyrites (CuFeS₂), cinnabar (HgS). **Deep point:** the method exploits one physical difference — sulphides are wetted by oil, gangue by water — which is why oxide and carbonate ores never use it (they use gravity/leaching instead)."
     },
     {
       "question": "Describe the electrolytic refining of copper.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Impure copper anode, pure copper cathode, CuSO₄ + dilute H₂SO₄ electrolyte.\n\nAnode dissolves (Cu → Cu²⁺ + 2e⁻); pure copper plates the cathode (Cu²⁺ + 2e⁻ → Cu). Noble impurities (Ag, Au) fall as anode mud — itself a precious-metal source.",
-      "knowledgeNote": "Anode mud from copper refining is where the world's silver and gold by-product comes from."
+      "knowledgeNote": "Anode mud from copper refining is where the world's silver and gold by-product comes from.",
+      "answer": "**Electrolytic refining of copper:** the impure copper (from the converter, ~99% Cu with Ag, Au, Ni, Fe, Zn) is cast as the **anode**; a thin sheet of **pure copper is the cathode**; the electrolyte is **acidified copper sulphate solution (CuSO₄ + H₂SO₄)**. **At the anode:** Cu → Cu²⁺ + 2e⁻ — the impure copper dissolves. **At the cathode:** Cu²⁺ + 2e⁻ → Cu — pure copper (99.99%) deposits on the cathode sheet. **The impurities' fate:** more active metals (Fe, Zn, Ni) stay dissolved as ions in the electrolyte; less active metals (**Ag, Au, Pt**) do not dissolve — they fall to the cell bottom as the valuable **anode mud/slime**, from which silver and gold are commercially recovered. **Deep point:** the anode mud pays for the process — copper refining is the classic case where the 'impurity' is precious metal and the economics run backwards."
     },
     {
       "question": "Write the composition of brass, bronze, and stainless steel, with one use of each.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Brass** (Cu + Zn): musical instruments, taps. **Bronze** (Cu + Sn): medals, statues. **Stainless steel** (Fe + Cr + Ni): cutlery, surgical tools (chromium's oxide film resists rust).",
-      "knowledgeNote": "Alloy properties are not averages — small additions transform the base metal entirely."
+      "knowledgeNote": "Alloy properties are not averages — small additions transform the base metal entirely.",
+      "answer": "**Brass:** **copper + zinc** (typically ~60–90% Cu, 40–10% Zn) — use: musical instruments, cartridge cases, ornaments, hardware (golden polish, machinable, corrosion-resistant). **Bronze:** **copper + tin** (typically ~88% Cu, 12% Sn) — use: statues, medals, bearings, ship propellers (hard, castable, seawater-resistant). **Stainless steel:** **iron + chromium (+ nickel)** — typically ~18% Cr, 8% Ni (18/8 steel) with the rest Fe — use: cutlery, surgical instruments, kitchenware and chemical plant (the chromium forms a passive Cr₂O₃ film that resists rust). **Deep point:** each alloy is one element's contribution read as a property — Zn gives brass its machinability, Sn gives bronze its casting and corrosion behaviour, Cr gives steel its passive skin."
     }
   ]
 }

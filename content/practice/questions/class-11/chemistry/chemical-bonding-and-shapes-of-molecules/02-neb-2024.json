@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "C (4 valence e⁻) shares double bonds with each O (6 valence e⁻): O=C=O, every atom octet-complete.\n\nVSEPR: 2 bond pairs, 0 lone pairs on carbon → **linear**, 180°.",
-      "knowledgeNote": "Linear symmetry cancels the two C=O dipoles — CO₂ is non-polar despite polar bonds."
+      "knowledgeNote": "Linear symmetry cancels the two C=O dipoles — CO₂ is non-polar despite polar bonds.",
+      "answer": "**Lewis dot structure of CO₂:** O=C=O — two C=O double bonds, each oxygen keeping two lone pairs; every atom completes its octet (carbon 8, each oxygen 8). **Shape:** the carbon has two electron domains (the two double bonds) and no lone pairs ⟹ sp hybridisation, 180° ⟹ **linear**. **Deep point:** a double bond is one VSEPR domain — count domains, not bonds."
     },
     {
       "question": "Draw the Lewis structures of H₂O and NH₃ and predict their shapes using VSEPR theory.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**H₂O:** O has 2 bond pairs + 2 lone pairs → **bent (V-shaped)**, 104.5°.\n\n**NH₃:** N has 3 bond pairs + 1 lone pair → **trigonal pyramidal**, 107°.\n\nLone pairs repel more strongly than bond pairs, squeezing both angles below the tetrahedral 109.5°.",
-      "knowledgeNote": "Lone-pair repulsion order lp–lp > lp–bp > bp–bp explains the whole 109.5° → 107° → 104.5° series."
+      "knowledgeNote": "Lone-pair repulsion order lp–lp > lp–bp > bp–bp explains the whole 109.5° → 107° → 104.5° series.",
+      "answer": "**H₂O:** two O–H bond pairs + **two lone pairs** on O ⟹ four domains, sp³ parent geometry ⟹ **bent (V-shaped)**, angle **104.5°** — compressed from 109.5° by the two lone pairs' extra repulsion. **NH₃:** three N–H bond pairs + **one lone pair** on N ⟹ four domains, sp³ ⟹ **pyramidal**, angle **107°** — compressed less, by one lone pair. **Deep point:** the lone-pair ladder is the answer's spine — 2 lone pairs > 1 lone pair > 0 gives 104.5° < 107° < 109.5° for H₂O < NH₃ < CH₄."
     },
     {
       "question": "Distinguish between ionic and covalent bonds with one example of each.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Ionic:** complete electron transfer, oppositely charged ions in a lattice — e.g. NaCl. High mp/bp, conducts when molten, brittle.\n\n**Covalent:** mutual sharing of electron pairs — e.g. H₂, CH₄. Low mp/bp, poor conductors, often gases/liquids.",
-      "knowledgeNote": "Large electronegativity difference (ΔEN > 1.7) favours ionic; small ΔEN favours covalent — a continuum, not a wall."
+      "knowledgeNote": "Large electronegativity difference (ΔEN > 1.7) favours ionic; small ΔEN favours covalent — a continuum, not a wall.",
+      "answer": "**Ionic bond:** complete **transfer** of electron(s) from a metal to a non-metal, producing oppositely charged ions held by electrostatic attraction — e.g. **NaCl** (Na → Na⁺ + e⁻; Cl + e⁻ → Cl⁻). Properties: crystalline, high m.p., conducts when molten/dissolved. **Covalent bond:** **sharing** of an electron pair between two non-metals — e.g. **H₂** (or CH₄); the shared pair counts toward both octets. Properties: molecular, low m.p., non-conducting. **Deep point:** the two bonds are the two answers to one question — what happens to the valence electrons: given away (ionic) or shared (covalent)."
     },
     {
       "question": "State Fajan's rules. How do they explain the covalent character of LiCl vs NaCl?",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Fajan's rules:** covalent character grows with (1) small, highly charged cations, (2) large, easily polarised anions.\n\nLi⁺ is far smaller than Na⁺, so it distorts Cl⁻'s electron cloud more — **LiCl is markedly more covalent** (more soluble in organic solvents, lower melting) than NaCl.",
-      "knowledgeNote": "Polarising power ∝ charge/(radius)² — the same rule orders BeCl₂ > MgCl₂ > CaCl₂ in covalency."
+      "knowledgeNote": "Polarising power ∝ charge/(radius)² — the same rule orders BeCl₂ > MgCl₂ > CaCl₂ in covalency.",
+      "answer": "**Fajans' rules:** a bond between a cation and an anion acquires covalent character when the **cation is small and highly charged** (high polarising power) and the **anion is large and highly charged** (high polarisability) — the cation distorts the anion's electron cloud and shares part of it. **LiCl vs NaCl:** Li⁺ is **smaller** than Na⁺ (both 1+), so Li⁺ polarises Cl⁻ more strongly ⟹ **LiCl has greater covalent character** than NaCl — seen in its greater solubility in organic solvents and lower melting point. **Deep point:** polarisation is the bridge concept — ionic and covalent are ends of a scale, and Fajans' rules tell you where a given pair sits on it."
     },
     {
       "question": "What is hydrogen bonding? Explain why water has an unusually high boiling point.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Hydrogen bonding** is the strong dipole attraction between H bound to N/O/F and a lone pair on a neighbouring N/O/F.\n\nEach H₂O molecule H-bonds to four neighbours, forming an extensive network. Breaking this network needs extra energy — so water boils at 100°C while similar-mass H₂S (no H-bonding) boils at −60°C.",
-      "knowledgeNote": "H-bonding also explains ice floating (open tetrahedral network) and proteins' shapes — one concept, many NEB questions."
+      "knowledgeNote": "H-bonding also explains ice floating (open tetrahedral network) and proteins' shapes — one concept, many NEB questions.",
+      "answer": "**Hydrogen bonding:** the attraction between a hydrogen bonded to a small, highly electronegative atom (**N, O, F**) and a lone pair on another such atom — X–H···:Y; it is a strong dipole–dipole interaction, weaker than a covalent bond but far stronger than ordinary van der Waals forces. **Water's high boiling point:** every H₂O can form up to **four H-bonds** (two via its H atoms, two via oxygen's lone pairs), building a 3-D network; vaporising water must break this network, so water boils at 100 °C where comparable hydrides (H₂S 60 °C, H₂Se, H₂Te) boil far lower — the anomaly is the network's cost. **Deep point:** the boiling point measures the energy of the *inter*molecular handshakes, and hydrogen bonds are the firmest handshakes molecular chemistry offers."
     },
     {
       "question": "Why is NH₃ pyramidal while CH₄ is tetrahedral, though both have four electron pairs?",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Both have tetrahedral electron geometry, but **shape counts only atom positions**.\n\nCH₄ has 4 bond pairs → tetrahedral molecule. NH₃ has 3 bond pairs + 1 lone pair → the lone pair occupies one tetrahedral corner unseen, leaving a **pyramid** of three H atoms.",
-      "knowledgeNote": "Electron geometry vs molecular shape: identical pairs, different visible skeletons — the VSEPR distinction NEB tests most."
+      "knowledgeNote": "Electron geometry vs molecular shape: identical pairs, different visible skeletons — the VSEPR distinction NEB tests most.",
+      "answer": "Both NH₃ and CH₄ have four electron pairs around the central atom, but the **pair types differ**: CH₄ has **four bond pairs** ⟹ regular tetrahedral, 109.5°; NH₃ has **three bond pairs + one lone pair** ⟹ the lone pair occupies a tetrahedral position but is invisible in the molecular shape, leaving a **pyramid** (trigonal pyramidal). The lone pair also repels the bond pairs more than they repel each other, compressing the H–N–H angle to 107°. **Deep point:** 'shape' means the shape of the atoms, not of the electron cloud — the lone pair is real (it shapes the angles) but unseen (it is not drawn in the molecular geometry)."
     }
   ]
 }

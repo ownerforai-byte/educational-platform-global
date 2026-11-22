@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Catalytic hydrogenation:** CH₂=CH₂ + H₂ → CH₃–CH₃ (Ni/Pt catalyst, ~200°C).\n\n**Mechanism:** (1) H₂ adsorbs and dissociates on the metal surface; (2) ethene adsorbs via its π-bond; (3) H atoms add stepwise to the carbons; (4) ethane desorbs.",
-      "knowledgeNote": "Addition (alkenes) vs substitution (alkanes) is the reactivity divide of the whole unit."
+      "knowledgeNote": "Addition (alkenes) vs substitution (alkanes) is the reactivity divide of the whole unit.",
+      "answer": "**Reaction:** CH₂=CH₂ + H₂ --(Ni, ~150–200 °C)--> CH₃–CH₃. **Mechanism (surface catalysis):** (1) H₂ **adsorbs** on the nickel surface and dissociates into surface H atoms; (2) ethene adsorbs π-side down, its π bond weakened; (3) the two H atoms add **syn** (one to each carbon, from the metal face); (4) the saturated ethane **desorbs**, freeing the site. The catalyst lowers the activation energy by activating both reactants on one surface. **Deep point:** heterogeneous hydrogenation is adsorption chemistry — the metal splits H₂ so the alkene never has to."
     },
     {
       "question": "State Markovnikov's rule and apply it to the addition of HBr to propene.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Markovnikov:** the H of HX adds to the doubly-bonded carbon already richer in H.\n\nCH₃–CH=CH₂ + HBr → **CH₃–CHBr–CH₃ (2-bromopropane)** — H goes to C-1, Br to the more stable secondary carbocation at C-2.",
-      "knowledgeNote": "Carbocation stability (3° > 2° > 1°) is the reason behind the rule — peroxides flip it (Kharasch effect)."
+      "knowledgeNote": "Carbocation stability (3° > 2° > 1°) is the reason behind the rule — peroxides flip it (Kharasch effect).",
+      "answer": "**Markovnikov's rule:** when an unsymmetrical reagent (HX) adds to an unsymmetrical alkene, the **hydrogen attaches to the carbon that already carries more hydrogens** ('the rich get richer'), so the halogen goes to the more substituted carbon — the rule's real basis is that addition proceeds via the **more stable carbocation**. **Applied to propene + HBr:** CH₃–CH=CH₂ + HBr — H adds to the terminal CH₂ (which has 2 H), leaving the carbocation on the middle carbon (secondary, more stable than primary): CH₃–CH⁺–CH₃; Br⁻ then attacks ⟹ **CH₃–CHBr–CH₃ (2-bromopropane, isopropyl bromide)** is the major product, not 1-bromopropane. **Deep point:** the rule is a shortcut for a stability argument — name the carbocation and the regiochemistry explains itself (and peroxide effects invert it precisely because the radical mechanism ranks stabilities differently)."
     },
     {
       "question": "How is ethane prepared by the Wurtz reaction? Write the chemical equation.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Alkyl halides couple with sodium in dry ether: **2CH₃Br + 2Na → CH₃–CH₃ + 2NaBr**.\n\nBest for symmetric alkanes — mixed halides give product mixtures.",
-      "knowledgeNote": "Dry ether is essential — water would destroy the organosodium intermediates."
+      "knowledgeNote": "Dry ether is essential — water would destroy the organosodium intermediates.",
+      "answer": "**Wurtz reaction:** an alkyl halide reacts with sodium in dry ether, coupling two alkyl groups: 2CH₃CH₂Br? — for **ethane**: 2CH₃Br + 2Na --(dry ether)--> **CH₃–CH₃** + 2NaBr (or 2CH₃Cl + 2Na → C₂H₆ + 2NaCl). The mechanism is radical/metal-organic (R• or RNa intermediates) and works best for making symmetrical higher alkanes. **Deep point:** the Wurtz reaction doubles — it always builds the C–C bond between two identical halides cleanly, and mixed halides give statistical mixtures, which is its practical limitation."
     },
     {
       "question": "What happens when ethene undergoes ozonolysis? Write the products.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "O₃ adds across the double bond (ozonide), and reductive work-up (Zn/H₂O) cleaves it:\n\nCH₂=CH₂ → **2HCHO (formaldehyde)**.\n\nOzonolysis locates double bonds — each =CH₂ fragment reports as formaldehyde.",
-      "knowledgeNote": "Oxidative work-up instead gives acids — the work-up reagent picks the product family."
+      "knowledgeNote": "Oxidative work-up instead gives acids — the work-up reagent picks the product family.",
+      "answer": "**Ozonolysis of ethene:** CH₂=CH₂ + O₃ → ozonide --(Zn/H₂O)--> **2 HCHO (methanol→formaldehyde, i.e. methanal)** + H₂O₂ (consumed by Zn). Each carbon of the double bond becomes a carbonyl; since each ethene carbon carries two hydrogens, each gives **methanal (formaldehyde, HCHO)**. **Deep point:** the products' identity confirms the rule — a =CH₂ end always yields HCHO, which is how ozonolysis diagnoses terminal double bonds."
     },
     {
       "question": "Acetylene is acidic in nature. Explain with a chemical test.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "The sp-hybridised C–H bond (50% s-character) holds electrons tightly, so HC≡CH loses H⁺ relatively easily.\n\n**Test:** with ammoniacal AgNO₃ it gives a **white precipitate of silver acetylide** (AgC≡CAg); with ammoniacal Cu₂Cl₂ a red copper acetylide — terminal alkynes only.",
-      "knowledgeNote": "Acidity: acetylene > ethylene > ethane — s-character order (50% > 33% > 25%)."
+      "knowledgeNote": "Acidity: acetylene > ethylene > ethane — s-character order (50% > 33% > 25%).",
+      "answer": "**Why acetylene (ethyne) is acidic:** the ≡C–H bond involves an **sp-hybridised carbon** — 50% s-character, which holds the electrons closer to the nucleus and makes the carbon effectively more electronegative; the C–H bond is therefore more polarised (Cδ⁻–Hδ⁺) than in sp² (ethene) or sp³ (ethane) carbons, and the H can be released as a proton to a strong base: HC≡CH + 2Na --(liquid NH₃)--> **NaC≡CNa (disodium acetylide)** + H₂; or HC≡CH + NaNH₂ → HC≡CNa + NH₃. **Chemical test:** pass ethyne through **ammoniacal silver nitrate** — a white precipitate of **silver acetylide (Ag₂C₂)** forms: HC≡CH + 2[Ag(NH₃)₂]⁺ + 2OH⁻ → AgC≡CAg↓ + 2NH₄⁺ + 2H₂O (ammoniacal CuCl gives the red Cu₂C₂). Ethene and ethane give no precipitate. **Deep point:** acidity in hydrocarbons is hybridisation in disguise — the s-character ladder sp > sp² > sp³ is why only terminal alkynes form acetylides, and the precipitate tests are that ladder made visible."
     },
     {
       "question": "How will you distinguish ethane, ethene, and ethyne using bromine water?",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Ethane:** no change (alkane, substitution needs UV). **Ethene:** brown Br₂ water decolourised (addition). **Ethyne:** also decolourised — then apply ammoniacal AgNO₃, which precipitates only with the terminal alkyne.",
-      "knowledgeNote": "Decolourisation = unsaturation (C=C or C≡C) — the fastest functional-group screen in qualitative analysis."
+      "knowledgeNote": "Decolourisation = unsaturation (C=C or C≡C) — the fastest functional-group screen in qualitative analysis.",
+      "answer": "**Bromine water test:** add bromine water (red-brown) to each gas/liquid in turn. **Ethane (alkane):** no reaction in the dark — the red colour persists (saturated; substitution needs UV light, not bromine water). **Ethene (alkene):** decolourises rapidly — adds Br₂ across the double bond to give 1,2-dibromoethane (colourless). **Ethyne (alkyne):** also decolourises — adds Br₂ (up to two equivalents, tetrabromoethane). **So bromine water alone separates ethane from the unsaturated pair but NOT ethene from ethyne** — for that, use the **ammoniacal AgNO₃ test**: ethyne gives a white Ag₂C₂ precipitate, ethene nothing. **Deep point:** the question's trap is that two unsaturations look identical to one — the acetylide test is the tiebreaker the answer must name."
     }
   ]
 }

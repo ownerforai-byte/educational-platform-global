@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Haber process:** N₂ + 3H₂ ⇌ 2NH₃ + heat\n\n**Conditions:**\n- Temperature: 450-500°C (compromise)\n- Pressure: 200 atm (high pressure favors NH₃)\n- Catalyst: Fe with Mo promoter\n- Unreacted gases recycled\n\n**Why high pressure?**\nReactants: 4 moles gas → Products: 2 moles gas.\nLe Chatelier: increased pressure shifts equilibrium to fewer moles (right → NH₃).\nAlso increases reaction rate.",
-      "knowledgeNote": "Ammonia is a precursor for fertilizers (NH₄NO₃, (NH₄)₂SO₄), explosives, and plastics."
+      "knowledgeNote": "Ammonia is a precursor for fertilizers (NH₄NO₃, (NH₄)₂SO₄), explosives, and plastics.",
+      "answer": "**The process:** nitrogen (from fractional distillation of liquid air) and hydrogen (steam reforming of natural gas: CH₄ + H₂O → CO + 3H₂, then CO + H₂O → CO₂ + H₂ with CO₂ removed) are purified and compressed to **200–300 atm** and passed over a **finely divided iron catalyst (promoted with K₂O/Al₂O₃)** at **450–500 °C**: N₂ + 3H₂ ⇌ 2NH₃ + 92 kJ. Exit gases are cooled — ammonia (bp −33 °C) liquefies in the condenser and is drawn off; unreacted N₂/H₂ are **recycled**, raising overall conversion from ~15% per pass to ~97%. **Why high pressure (three layers):** (1) **equilibrium** — 4 mol gas → 2 mol, so Le Chatelier shifts toward ammonia as pressure rises; (2) **rate** — higher pressure increases collision frequency on the catalyst, speeding the slow N₂ activation; (3) **separation** — high pressure raises NH₃'s dew point so the condenser works efficiently. **Deep point:** the three justifications are independent — a complete answer names all three and draws the recycle arrow."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Boyle (T const):** P ∝ 1/V. **Charles (P const):** V ∝ T.\n\nCombined: V ∝ T/P → PV/T = constant. For n moles the constant is nR: **PV = nRT**, with R = 8.314 J/mol·K.",
-      "knowledgeNote": "Both laws demand kelvin — Celsius breaks the proportionality (no true zero)."
+      "knowledgeNote": "Both laws demand kelvin — Celsius breaks the proportionality (no true zero).",
+      "answer": "**Boyle's law:** at constant T (and n), V ∝ 1/P ⟹ PV = constant. **Charles's law:** at constant P (and n), V ∝ T (kelvin) ⟹ V/T = constant. **Derivation:** combining the proportionalities with Avogadro's (V ∝ n): V ∝ nT/P. Writing the proportionality as the universal gas constant R (8.314 J K⁻¹ mol⁻¹) gives **PV = nRT** — which reduces to Boyle's law (PV = const at n, T fixed), Charles's law (V/T = const at n, P fixed) and Avogadro's law (V/n = const at T, P fixed). **Deep point:** one equation, three special cases — the derivation's logic is that each named law is the ideal gas equation with two of the four variables frozen."
     },
     {
       "question": "State Graham's law of diffusion. Hydrogen diffuses 4 times faster than an unknown gas under identical conditions. Find the unknown gas's molar mass.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Graham's law:** diffusion rate ∝ 1/√(density) at fixed T and P.\n\nr(H₂)/r(X) = √(Mₓ/M_H₂) → 4 = √(Mₓ/2) → Mₓ = 16 × 2 = **32 g/mol** (oxygen).",
-      "knowledgeNote": "Effusion through a pinhole obeys the same law — Graham covered both with one apparatus."
+      "knowledgeNote": "Effusion through a pinhole obeys the same law — Graham covered both with one apparatus.",
+      "answer": "**Graham's law:** the rate of diffusion of a gas is **inversely proportional to the square root of its density/molar mass**: r ∝ 1/√M, so r₁/r₂ = √(M₂/M₁). **Apply:** r(H₂)/r(unknown) = 4 = √(M_unknown/M_H₂) = √(M/2). **Solve:** square both sides: 16 = M/2 ⟹ **M_unknown = 32 g/mol** — the gas is oxygen (O₂). **Deep point:** the squaring step is where the factor of 4 becomes 16 — forgetting it is the one way to lose this question."
     },
     {
       "question": "State Dalton's law of partial pressures. Why is aqueous tension subtracted when a gas is collected over water?",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Dalton's law:** total pressure = sum of partial pressures, P = p₁ + p₂ + ….\n\nGas collected over water mixes with water vapour, so P_measured = P_dry_gas + aqueous tension. The vapour's contribution (**aqueous tension**, tabulated per temperature) must be subtracted to get the dry gas pressure.",
-      "knowledgeNote": "Aqueous tension rises steeply with T — the correction matters most for warm-water collections."
+      "knowledgeNote": "Aqueous tension rises steeply with T — the correction matters most for warm-water collections.",
+      "answer": "**Dalton's law of partial pressures:** the total pressure of a mixture of non-reacting gases is the **sum of the partial pressures** each gas would exert alone in the same volume at the same temperature: P_total = p₁ + p₂ + p₃ + … (each partial pressure pᵢ = xᵢ P_total). **Why aqueous tension is subtracted:** a gas collected **over water** is saturated with water vapour — the bubbles contain both the gas and water vapour, and the vapour contributes its own pressure (the **aqueous tension**, which depends only on temperature). The dry gas's true pressure is therefore P_gas = P_atm − aqueous tension; only after this subtraction can P V = nRT give the gas's actual number of moles. **Deep point:** the collected 'sample' is a mixture, and Dalton's law is precisely the tool that says so — subtracting aqueous tension is Dalton's law applied to the eudiometer."
     },
     {
       "question": "Write the postulates of the kinetic molecular theory of gases.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "(1) Countless tiny molecules in ceaseless random motion. (2) Negligible molecular volume vs container. (3) No intermolecular forces except at collision. (4) Perfectly elastic collisions. (5) Average KE ∝ absolute temperature.",
-      "knowledgeNote": "Postulate (5), ⟨KE⟩ = (3/2)kT, is the bridge from mechanics to thermometry."
+      "knowledgeNote": "Postulate (5), ⟨KE⟩ = (3/2)kT, is the bridge from mechanics to thermometry.",
+      "answer": "**Postulates of the kinetic molecular theory:** (1) gases consist of a very large number of tiny particles (molecules) in **continuous random motion**; (2) the volume of the molecules themselves is **negligible** compared with the container's volume (most of a gas is empty space); (3) molecules exert **no attractive/repulsive forces** on one another between collisions; (4) **collisions are perfectly elastic** — total kinetic energy is conserved; (5) the **average kinetic energy of the molecules is proportional to the absolute temperature** (KE ∝ T); (6) pressure arises from molecules **colliding with the container walls**, transferring momentum. **Deep point:** postulates (2) and (3) are exactly what real molecules violate at high pressure and low temperature — which is why they are precisely the two corrections van der Waals' equation adds."
     },
     {
       "question": "Under what conditions does a real gas deviate most from ideal behaviour? Explain using van der Waals' equation.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Deviations grow at **high pressure** (finite molecular volume matters) and **low temperature** (intermolecular attractions matter).\n\nvan der Waals corrects both: (P + a(n/V)²)(V − nb) = nRT — the a-term adds lost pressure from attractions, the b-term subtracts excluded volume.",
-      "knowledgeNote": "Easily liquefied gases (NH₃, CO₂ — large a) deviate most; H₂ and He least."
+      "knowledgeNote": "Easily liquefied gases (NH₃, CO₂ — large a) deviate most; H₂ and He least.",
+      "answer": "**Conditions of maximum deviation:** **high pressure and low temperature.** **Explanation via van der Waals' equation:** (P + a n²/V²)(V − nb) = nRT. The two correction terms are the two failed postulates: **nb** corrects for molecular volume (postulate 2) — at **high pressure** the molecules are pushed close together, so their own volume is no longer negligible compared with V; **a n²/V²** corrects for intermolecular attraction (postulate 3) — at **low temperature** the molecules move slowly enough for attractive forces to matter, pulling them together and making the observed pressure lower than ideal. Both corrections are negligible in the ideal regime (low P, high T) and both become dominant together at **high P, low T** — near condensation the deviation is largest and the gas liquefies. **Deep point:** the two correction terms are the kinetic theory's failed postulates written as algebra — read the equation as a list of apologies and the conditions of deviation fall out."
     },
     {
       "question": "2 L of a gas at 3 atm pressure expands isothermally. What volume will it occupy at 1 atm?",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Boyle's law (T const): P₁V₁ = P₂V₂ → V₂ = (3 × 2)/1 = **6 L**.",
-      "knowledgeNote": "Isothermal P–V is a rectangular hyperbola — doubling volume halves pressure, always."
+      "knowledgeNote": "Isothermal P–V is a rectangular hyperbola — doubling volume halves pressure, always.",
+      "answer": "**Boyle's law (isothermal, fixed n):** P₁V₁ = P₂V₂. **Solve:** V₂ = P₁V₁/P₂ = (3 atm × 2 L)/1 atm = **6 L**. **Check:** quartering the pressure doubles... — here pressure falls by a factor of 3, so volume triples: 2 L → 6 L ✓. **Deep point:** the inverse check is the fastest error-catcher — pressure divided by 3, volume multiplied by 3, and the arithmetic confirms what the intuition already knows."
     }
   ]
 }

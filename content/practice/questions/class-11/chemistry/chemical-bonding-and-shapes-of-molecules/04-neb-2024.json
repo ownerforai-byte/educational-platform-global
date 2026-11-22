@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**VSEPR:** electron pairs (bond + lone) repel and arrange to maximise separation; repulsion order lp–lp > lp–bp > bp–bp.\n\nCH₄ has 4 bond pairs, 0 lone pairs → pairs point to tetrahedron corners → **tetrahedral**, 109.5°.",
-      "knowledgeNote": "Count steric number (pairs) first, then hide lone pairs to read the molecular shape."
+      "knowledgeNote": "Count steric number (pairs) first, then hide lone pairs to read the molecular shape.",
+      "answer": "**Postulates of VSEPR theory:** (1) electron pairs around a central atom arrange themselves to be **as far apart as possible** — mutual repulsion minimised; (2) repulsion order: **lone pair–lone pair > lone pair–bond pair > bond pair–bond pair**; (3) double/triple bonds count as **one domain**; (4) the molecular shape is described by atom positions, with lone pairs shaping angles but invisible in the shape. **CH₄:** carbon has four bond pairs, no lone pairs ⟹ four domains spread to a regular **tetrahedron**, sp³, **109.5°**. **Deep point:** postulate (2) is the working engine — every angle-compression argument in the topic is postulate (2) applied once."
     },
     {
       "question": "Predict the shapes of BF₃ and PCl₅ using VSEPR theory. Give their hybridisation.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**BF₃:** 3 bond pairs, 0 lone pairs → **trigonal planar**, 120°, sp² hybridised B.\n\n**PCl₅:** 5 bond pairs, 0 lone pairs → **trigonal bipyramidal** (3 equatorial at 120°, 2 axial at 90°), sp³d hybridised P.",
-      "knowledgeNote": "Axial bonds (90° repulsions) are longer and weaker than equatorial — PCl₅'s axial Cl leaves first."
+      "knowledgeNote": "Axial bonds (90° repulsions) are longer and weaker than equatorial — PCl₅'s axial Cl leaves first.",
+      "answer": "**BF₃:** boron has 3 bond pairs, no lone pairs ⟹ three domains ⟹ **trigonal planar**, sp², 120° (an incomplete octet — B is content with 6 electrons). **PCl₅:** phosphorus has 5 bond pairs ⟹ five domains ⟹ **trigonal bipyramidal**, sp³d — three equatorial P–Cl at 120°, two axial at 90° to the plane. **Deep point:** the expanded octets of PCl₅ (and SF₆) are why 'always eight electrons' is a second-row rule, not a universal law — third-row atoms have room for sp³d/sp³d²."
     },
     {
       "question": "Explain why H₂O is bent while CO₂ is linear, though oxygen is the central atom in neither case the same way.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**H₂O:** O carries 2 bond pairs + 2 lone pairs — lone pairs compress the angle to **104.5° (bent)**.\n\n**CO₂:** C carries 2 bond pairs + 0 lone pairs — pairs oppose diametrically → **180° (linear)**.\n\nShape follows the lone-pair count, not the atoms present.",
-      "knowledgeNote": "2 pairs → linear; 3 → trigonal planar; 4 → tetrahedral electron geometry — then subtract lone pairs for shape."
+      "knowledgeNote": "2 pairs → linear; 3 → trigonal planar; 4 → tetrahedral electron geometry — then subtract lone pairs for shape.",
+      "answer": "**CO₂:** carbon has **two electron domains** (two C=O double bonds), no lone pairs ⟹ sp, **linear**, 180°. **H₂O:** oxygen has **four domains** — two bond pairs + **two lone pairs** ⟹ sp³ parent tetrahedron with the two lone pairs occupying two corners ⟹ **bent**, 104.5°. **The contrast:** the difference is not the central atom's identity but its **lone-pair count** — carbon spends all four valence electrons in bonds (0 lone pairs); oxygen, with six valence electrons, keeps two pairs to itself. Lone pairs push the remaining bonds together, bending the molecule. **Deep point:** same family (domains decide), different occupancy (lone pairs bend) — CO₂ and H₂O are the cleanest demonstration that shape is a count of domains, not of atoms."
     },
     {
       "question": "What is hybridisation? Show how sp³ hybridisation explains the shape of methane.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Hybridisation** mixes atomic orbitals into equal-energy hybrids aimed at bonding directions.\n\nCarbon's 2s + three 2p blend into **four sp³ hybrids** pointing to tetrahedron corners (109.5°). Each overlaps a H 1s orbital → four equal C–H bonds, tetrahedral CH₄.",
-      "knowledgeNote": "Hybridisation follows observed shape (it rationalises, never predicts alone) — VSEPR first, hybrids second."
+      "knowledgeNote": "Hybridisation follows observed shape (it rationalises, never predicts alone) — VSEPR first, hybrids second.",
+      "answer": "**Hybridisation:** the mathematical mixing of an atom's atomic orbitals (of slightly different energies) into an equal number of **equivalent hybrid orbitals** oriented for maximum overlap — hybrids are for σ bonds and lone pairs; unhybridised p orbitals make π bonds. **sp³ in methane:** carbon's 2s and three 2p orbitals mix to give **four sp³ hybrids** pointing to the corners of a tetrahedron (109.5°); each overlaps head-on with a hydrogen 1s orbital, forming four identical C–H σ bonds ⟹ CH₄ is **regular tetrahedral**, all angles 109.5°, all bonds equal. **Deep point:** hybridisation is the theory that makes VSEPR's shapes chemically mechanical — the four equivalent bonds of methane are impossible to explain with raw s and p orbitals."
     },
     {
       "question": "Predict the shape and hybridisation of SF₆ and IF₇.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**SF₆:** 6 bond pairs → **octahedral**, 90°, sp³d² hybridised S.\n\n**IF₇:** 7 bond pairs → **pentagonal bipyramidal**, sp³d³ hybridised I.",
-      "knowledgeNote": "Expanded octets need d-orbitals (period 3+) — period-2 elements stop at four pairs."
+      "knowledgeNote": "Expanded octets need d-orbitals (period 3+) — period-2 elements stop at four pairs.",
+      "answer": "**SF₆:** six bond pairs on S, no lone pairs ⟹ **octahedral**, sp³d², all F–S–F angles 90°. **IF₇:** seven bond pairs on I, no lone pairs ⟹ **pentagonal bipyramidal**, sp³d³ — five equatorial I–F at 72°, two axial at 90° to the plane. Both are expanded-octet species (12 and 14 electrons around the central atom), possible only for large third/fifth-row atoms with accessible d orbitals. **Deep point:** the VSEPR ladder continues past the tetrahedron — 5, 6, 7 domains map to trigonal bipyramidal, octahedral, pentagonal bipyramidal, and the exam expects all three names."
     },
     {
       "question": "Ammonia has a higher boiling point than phosphine (PH₃). Explain on the basis of molecular shape and bonding.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "NH₃ is pyramidal with a strongly polar N–H bond and a lone pair — molecules link by **hydrogen bonding**, needing much heat to separate (bp −33°C).\n\nPH₃ is larger, less electronegative, barely H-bonded — weak van der Waals forces only (bp −88°C). Shape concentrates the dipole that H-bonding requires.",
-      "knowledgeNote": "Same-group hydride anomalies (H₂O, HF, NH₃ high boilers) are all hydrogen-bonding verdicts."
+      "knowledgeNote": "Same-group hydride anomalies (H₂O, HF, NH₃ high boilers) are all hydrogen-bonding verdicts.",
+      "answer": "NH₃ boils at −33 °C, PH₃ at −88 °C — a 55° gap. **The cause is hydrogen bonding:** in NH₃ the H atoms are bonded to highly electronegative **nitrogen**, so each N–H is strongly polarised and NH₃ molecules hydrogen-bond to one another's lone pairs — extra intermolecular attraction that vaporisa-tion must pay for. In PH₃ the P–H bond is barely polar (P and H have nearly equal electronegativities), so PH₃ molecules attract each other only by weak van der Waals forces. **Shape's role:** both are pyramidal with a lone pair, so geometry is *not* the difference — the lone pair in NH₃ is a hydrogen-bond **acceptor**, which is what makes the N···H–N handshake possible. **Deep point:** the exam phrase is 'hydrogen bonding requires H on N, O or F' — PH₃ has the lone pair but not the polarised H, and the boiling-point gap is the receipt."
     }
   ]
 }

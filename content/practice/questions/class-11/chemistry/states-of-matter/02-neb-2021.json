@@ -15,7 +15,8 @@
       "year": 2021,
       "source": "NEB Past",
       "solution": "At constant pressure, Charles's law applies: $\\dfrac{V_1}{T_1} = \\dfrac{V_2}{T_2}$, with temperature in kelvin.\n\n**Step 1 — Convert to kelvin**\n\n$$T_1 = 27 + 273 = 300 \\ \\text{K}, \\qquad T_2 = 127 + 273 = 400 \\ \\text{K}$$\n\n**Step 2 — Apply the law**\n\n$$\\frac{V_1}{T_1} = \\frac{V_2}{T_2} \\Rightarrow V_2 = V_1 \\times \\frac{T_2}{T_1} = 500 \\times \\frac{400}{300}$$\n\n$$V_2 = 666.7 \\ \\text{cm}^3$$\n\nSince $T_2 > T_1$, the volume increases, as expected for Charles's law. If a balloon burst on a hot summer afternoon, this is exactly why.",
-      "knowledgeNote": "At constant pressure a gas volume is directly proportional to its absolute temperature in kelvin."
+      "knowledgeNote": "At constant pressure a gas volume is directly proportional to its absolute temperature in kelvin.",
+      "answer": "**Charles's law (constant P):** V₁/T₁ = V₂/T₂, with temperatures in kelvin. **Convert:** T₁ = 27 + 273 = 300 K; T₂ = 127 + 273 = 400 K. **Solve:** V₂ = V₁ × T₂/T₁ = 500 × 400/300 = **666.7 cm³ ≈ 667 cm³**. **Deep point:** the only trap in the question is the temperature scale — 27 °C and 127 °C differ by 100 °C but by 4/3 in kelvin; every gas-law arithmetic starts with +273."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Electronic configuration of Na (Z=11): 1s² 2s² 2p⁶ **3s¹**\n\nThe valence electron (3s¹) has:\nn = 3, l = 0, m_l = 0, m_s = +½",
-      "knowledgeNote": "n = principal quantum number (shell), l = azimuthal (subshell: 0=s, 1=p, 2=d, 3=f), m_l = magnetic, m_s = spin (+½ or -½)."
+      "knowledgeNote": "n = principal quantum number (shell), l = azimuthal (subshell: 0=s, 1=p, 2=d, 3=f), m_l = magnetic, m_s = spin (+½ or -½).",
+      "answer": "Sodium (Z = 11) has the configuration 1s² 2s² 2p⁶ 3s¹ — the valence electron is in the 3s subshell. **n = 3** (third shell), **l = 0** (s subshell), **mₗ = 0** (the only value allowed for l = 0), **mₛ = +½** (spin up — either spin is allowed, +½ is conventionally listed). So the four quantum numbers are **(3, 0, 0, +½)**. **Deep point:** the four numbers are a full address — shell, subshell, orbital, spin — and the s subshell's single orbital is why mₗ has no choice."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "Mass is obtained from density and volume:\n\n$$m = \\rho \\times V$$\n\nSubstituting the values:\n\n$$m = 0.8792 \\ \\text{g cm}^{-3} \\times 45.6 \\ \\text{cm}^3$$\n\n$$m = 40.09152 \\ \\text{g}$$\n\nIn a product the number of significant figures equals the least number of significant figures present in the factors. The figures are 4 (for 0.8792) and 3 (for 45.6), so the answer is reported to **3 significant figures**, i.e. the last digit (9) is rounded up because the next digit is 1.\n\n$$m = 40.1 \\ \\text{g}$$",
-      "knowledgeNote": "In a product, significant figures equal the least number of significant figures among the factors, which here is three from 45.6."
+      "knowledgeNote": "In a product, significant figures equal the least number of significant figures among the factors, which here is three from 45.6.",
+      "answer": "**Mass = density × volume:** m = 0.8792 g/cm³ × 45.6 cm³ = 40.09152 g. **Significant figures:** the volume (45.6) has 3 sig figs, the density 4 — the answer takes the **fewer: 3 sig figs** ⟹ **m = 40.1 g**. **Deep point:** the multiplication rule is 'fewest sig figs wins' — the calculator's eight digits are a lie about the measurement's precision, and 40.1 g is the honest answer."
     }
   ]
 }

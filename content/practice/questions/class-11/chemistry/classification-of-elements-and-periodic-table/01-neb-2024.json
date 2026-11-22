@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Step 1 — Number of electrons and period.**\n\nThe period number equals the number of electron shells (principal quantum number) occupied, i.e. the $n$ value of the outermost electron.\n\n**Step 2 — Group number.**\n\nFor elements of $s$- and $p$-blocks, group number $= (number of valence electrons) + 10$.\n\n| $Z$ | Element | Electronic configuration (outer part) | Period | Group |\n| --- | --- | --- | --- | --- |\n| 19 | Potassium (K) | $[\\text{Ar}]\\,4s^1$ | 4 | 1 |\n| 20 | Calcium (Ca) | $[\\text{Ar}]\\,4s^2$ | 4 | 2 |\n| 31 | Gallium (Ga) | $[\\text{Ar}]\\,3d^{10}4s^24p^1$ | 4 | 13 |\n| 36 | Krypton (Kr) | $[\\text{Ar}]\\,3d^{10}4s^24p^6$ | 4 | 18 |\n| 55 | Caesium (Cs) | $[\\text{Xe}]\\,6s^1$ | 6 | 1 |\n\nNotice that four of the five elements lie in period 4, whereas caesium (Z = 55) lies in period 6, showing that period length is not fixed.",
-      "knowledgeNote": "Period number equals the principal quantum number of the outermost electron, while group is decided by the valence electrons."
+      "knowledgeNote": "Period number equals the principal quantum number of the outermost electron, while group is decided by the valence electrons.",
+      "answer": "**Z = 19 — potassium (K):** configuration [Ar] 4s¹ ⟹ **period 4, group 1** (alkali metal). **Z = 20 — calcium (Ca):** [Ar] 4s² ⟹ **period 4, group 2** (alkaline earth). **Z = 31 — gallium (Ga):** [Ar] 3d¹⁰ 4s² 4p¹ ⟹ **period 4, group 13** (boron family — a p-block element following the first transition series). **Z = 36 — krypton (Kr):** [Ar] 3d¹⁰ 4s² 4p⁶ ⟹ **period 4, group 18** (noble gas). **Z = 55 — caesium (Cs):** [Xe] 6s¹ ⟹ **period 6, group 1** (alkali metal). **Deep point:** the method is always the same — write the configuration, and the highest n gives the period while the valence subshell's column gives the group (s¹→1, s²→2, p-block: group = 12 + valence p-electrons, ns²np⁶→18)."
     }
   ]
 }

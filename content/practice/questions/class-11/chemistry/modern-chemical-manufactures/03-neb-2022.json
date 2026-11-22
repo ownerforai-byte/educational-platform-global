@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Contact process:** Manufacturing sulfuric acid (H₂SO₄).\n\n**Reactions:**\n1. S + O₂ → SO₂\n2. 2SO₂ + O₂ ⇌ 2SO₃ (V₂O₅ catalyst, 450°C, 1-2 atm)\n3. SO₃ + H₂SO₄ → H₂S₂O₇ (oleum)\n4. H₂S₂O₇ + H₂O → 2H₂SO₄\n\n**Conditions:**\n- V₂O₅ catalyst, 450°C, excess O₂\n- SO₃ absorbed in H₂SO₄ (not directly in water — creates mist)",
-      "knowledgeNote": "Sulfuric acid is the most important industrial chemical — used in fertilizers, batteries, petroleum refining."
+      "knowledgeNote": "Sulfuric acid is the most important industrial chemical — used in fertilizers, batteries, petroleum refining.",
+      "answer": "**The Contact process** makes sulphuric acid by catalytic oxidation of SO₂ over V₂O₅. **Key reactions and conditions:** (1) S + O₂ → SO₂ (or 4FeS₂ + 11O₂ → 2Fe₂O₃ + 8SO₂); (2) gas purification (dust chamber, scrubber, drying tower, arsenic remover) to protect the catalyst from poisoning; (3) **2SO₂ + O₂ ⇌ 2SO₃ + 196 kJ over V₂O₅ at ~450 °C, 1–2 atm**, excess air — ~99% conversion, so no added pressure is needed; (4) SO₃ absorbed in **98% H₂SO₄** to oleum (H₂SO₄ + SO₃ → H₂S₂O₇), then diluted: H₂S₂O₇ + H₂O → 2H₂SO₄. **Deep point:** the two design decisions — low pressure (the equilibrium is already nearly complete) and oleum absorption (water would give an uncondensable acid fog) — are where the marks concentrate."
     },
     {
       "question": "Describe the Solvay process for the manufacture of sodium carbonate, giving balanced equations for each step.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Stage 1 — Saturation of brine with ammonia and carbon dioxide.**\n\nA concentrated solution of sodium chloride is saturated first with ammonia and then with carbon dioxide. Sodium hydrogencarbonate has a low solubility and precipitates out, while ammonium chloride stays in solution:\n\n$$\\text{NaCl} + \\text{NH}_3 + \\text{CO}_2 + \\text{H}_2\\text{O} \\rightarrow \\text{NaHCO}_3\\downarrow + \\text{NH}_4\\text{Cl}$$\n\n**Stage 2 — Decomposition (calcination) of the bicarbonate.**\n\nThe precipitated $NaHCO_3$ is filtered off and heated at about 500 °C to give anhydrous sodium carbonate:\n\n$$2\\text{NaHCO}_3 \\xrightarrow{\\Delta} \\text{Na}_2\\text{CO}_3 + \\text{H}_2\\text{O} + \\text{CO}_2\\uparrow$$\n\n**Recovery of ammonia.** The $NH_4Cl$ from stage 1 is treated with lime, Ca(OH)₂, to release ammonia which is recycled:\n\n$$2\\text{NH}_4\\text{Cl} + \\text{Ca(OH)}_2 \\rightarrow \\text{CaCl}_2 + 2\\text{NH}_3\\uparrow + 2\\text{H}_2\\text{O}$$\n\nSince ammonia is recovered and reused, the net cost is low and the products are cheap.",
-      "knowledgeNote": "In the Solvay process brine is saturated with NH₃ and CO₂, and the precipitated NaHCO₃ is calcined to Na₂CO₃."
+      "knowledgeNote": "In the Solvay process brine is saturated with NH₃ and CO₂, and the precipitated NaHCO₃ is calcined to Na₂CO₃.",
+      "answer": "**The Solvay (ammonia–soda) process** makes Na₂CO₃ from brine and limestone with recycled ammonia. **Step 1:** ammoniated brine is carbonated with kiln CO₂: NH₃ + CO₂ + H₂O → NH₄HCO₃. **Step 2:** the sparingly soluble bicarbonate precipitates: NH₄HCO₃ + NaCl → NaHCO₃↓ + NH₄Cl. **Step 3:** calcination: 2NaHCO₃ → Na₂CO₃ + H₂O + CO₂ (CO₂ recycled to step 1). **Step 4:** ammonia recovery with lime (from CaCO₃ → CaO + CO₂): 2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2NH₃↑ + 2H₂O. **Net:** 2NaCl + CaCO₃ → Na₂CO₃ + CaCl₂. **Deep point:** ammonia enters every step and vanishes from the net equation — the recycled carrier is the process's whole economy, and the NaHCO₃ precipitation is selectivity by solubility, not reaction."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Dalton (1808):** (1) matter consists of indivisible atoms; (2) atoms of an element are identical; (3) compounds form by simple whole-number union of atoms; (4) atoms are indestructible in reactions.\n\n**Drawbacks:** atoms ARE divisible (electrons, protons, neutrons); atoms of an element differ (isotopes); the theory cannot explain bonding or spectra.",
-      "knowledgeNote": "Dalton explained the laws of chemical combination — the next questions' topic — but isotopes and subatomic particles broke his indivisibility."
+      "knowledgeNote": "Dalton explained the laws of chemical combination — the next questions' topic — but isotopes and subatomic particles broke his indivisibility.",
+      "answer": "**Dalton's atomic theory:** (1) matter consists of tiny indivisible particles called **atoms**; (2) atoms of a given element are **identical** in mass and properties; (3) atoms of different elements differ in mass and properties; (4) compounds form when atoms **combine in small whole-number ratios**; (5) atoms are **neither created nor destroyed** in chemical reactions — only rearranged. **Two drawbacks:** (1) atoms **are divisible** — they contain subatomic particles (electrons, protons, neutrons); (2) atoms of the same element are **not all identical** — isotopes differ in mass. (Also: his theory could not explain why atoms bond, and treated matter as purely particulate, ignoring the wave nature later revealed.) **Deep point:** the theory's five postulates are right about combination ratios and conservation — its failures are precisely the two discoveries of the next century, the electron and the isotope."
     },
     {
       "question": "State the law of multiple proportions and illustrate it with carbon oxides.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "When two elements form more than one compound, the masses of one element combining with a fixed mass of the other are in a small whole-number ratio.\n\nCO: 12 g C joins 16 g O. CO₂: 12 g C joins 32 g O. Oxygen masses 16:32 = **1:2**.",
-      "knowledgeNote": "Definite proportions (one compound, fixed ratio) vs multiple proportions (several compounds, ratio of ratios) — NEB asks the pair together."
+      "knowledgeNote": "Definite proportions (one compound, fixed ratio) vs multiple proportions (several compounds, ratio of ratios) — NEB asks the pair together.",
+      "answer": "**Law of multiple proportions:** when two elements combine to form **more than one compound**, the masses of one element that combine with a **fixed mass** of the other are in a ratio of **small whole numbers**. **Carbon oxides:** in CO, 16 g of oxygen combines with 12 g of carbon; in CO₂, 32 g of oxygen combines with 12 g of carbon. **With carbon fixed at 12 g, the oxygen masses are 16 : 32 = 1 : 2** — a small whole-number ratio, exactly as the law requires (the extra oxygen in CO₂ is exactly double). **Deep point:** the law is the chemical evidence for atoms — whole-number ratios are what discrete, identical particles must produce."
     },
     {
       "question": "State Avogadro's law and write two of its applications.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Avogadro's law:** equal volumes of gases at the same T and P contain equal numbers of molecules.\n\n**Applications:** (1) proves diatomic nature of H₂, O₂, N₂ (Gay-Lussac volumes need it); (2) fixes atomic weights via vapour density (M = 2 × VD); (3) 1 mole of any gas occupies 22.4 L at STP.",
-      "knowledgeNote": "Avogadro reconciled Gay-Lussac's volume ratios with Dalton — H₂ + Cl₂ → 2HCl needs diatomic molecules."
+      "knowledgeNote": "Avogadro reconciled Gay-Lussac's volume ratios with Dalton — H₂ + Cl₂ → 2HCl needs diatomic molecules.",
+      "answer": "**Avogadro's law:** equal volumes of all gases, at the same temperature and pressure, contain **equal numbers of molecules** (V ∝ n at fixed T, P). **Two applications:** (1) **molar volume** — one mole of any ideal gas occupies 22.4 L at STP, the bridge between gas volume and moles in every stoichiometric calculation; (2) **deducing molecular formulae** — combining Gay-Lussac's law of gaseous volumes with Avogadro's law proved that hydrogen, oxygen, nitrogen etc. are **diatomic molecules** (e.g. 1 volume H₂ + 1 volume Cl₂ → 2 volumes HCl forces H₂ and Cl₂ to contain 2 atoms each), settling the atomic-mass scale. **Deep point:** the law is why chemistry can count by measuring volume — for gases, the measuring cylinder is a particle counter."
     },
     {
       "question": "Calculate the number of atoms in 5.6 g of iron. (Fe = 56)",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Moles = 5.6/56 = 0.1 mol.\n\nAtoms = 0.1 × 6.022 × 10²³ = **6.022 × 10²² atoms**.",
-      "knowledgeNote": "Grams → moles (÷ atomic mass) → particles (× Avogadro) is the universal two-step chain."
+      "knowledgeNote": "Grams → moles (÷ atomic mass) → particles (× Avogadro) is the universal two-step chain.",
+      "answer": "**Moles of Fe:** n = m/M = 5.6 g / 56 g/mol = 0.1 mol. **Atoms:** N = n × N_A = 0.1 × 6.022 × 10²³ = **6.022 × 10²² atoms**. **Deep point:** the two-step bridge — grams → moles → particles — is the single most-used chain in chemistry; the mole ratio (0.1) is the number worth checking before touching the exponent."
     },
     {
       "question": "Calculate the percentage of nitrogen in urea, CO(NH₂)₂. (C = 12, O = 16, N = 14, H = 1)",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Molar mass = 12 + 16 + 2(14 + 2) = 60 g/mol. Nitrogen mass = 28 g.\n\n%N = (28/60) × 100 ≈ **46.7%** — the highest N-content of common fertilisers, which is why urea dominates the market.",
-      "knowledgeNote": "% composition = (total mass of element / molar mass) × 100 — the same step that starts every empirical-formula problem."
+      "knowledgeNote": "% composition = (total mass of element / molar mass) × 100 — the same step that starts every empirical-formula problem.",
+      "answer": "**Molar mass of urea:** CO(NH₂)₂ = 12 + 16 + 2(14 + 2×1) = 12 + 16 + 32 = **60 g/mol**. **Mass of N per mole:** 2 × 14 = 28 g. **Percentage:** %N = (28/60) × 100 = **46.67% ≈ 46.7%**. **Deep point:** the 46% figure is why urea rules the fertiliser market — every stoichiometry here is an economics argument in disguise."
     },
     {
       "question": "State Gay-Lussac's law of gaseous volumes with one example.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "When gases react at the same T and P, their volumes are in a small whole-number ratio.\n\n**Example:** 1 vol H₂ + 1 vol Cl₂ → 2 vol HCl (1:1:2).",
-      "knowledgeNote": "Volume ratios mirror molecule ratios — the law only works for gases, never for solids or liquids."
+      "knowledgeNote": "Volume ratios mirror molecule ratios — the law only works for gases, never for solids or liquids.",
+      "answer": "**Gay-Lussac's law of gaseous volumes:** when gases react (or are produced) at the same temperature and pressure, the **volumes of the gaseous reactants and products are in simple whole-number ratios**. **Example:** 1 volume of hydrogen + 1 volume of chlorine → 2 volumes of hydrogen chloride (H₂ + Cl₂ → 2HCl) — the ratio 1 : 1 : 2; similarly 2 volumes H₂ + 1 volume O₂ → 2 volumes steam (2H₂ + O₂ → 2H₂O). **Deep point:** the law is Avogadro's law's experimental half — simple volume ratios are only possible because equal volumes hold equal numbers of molecules."
     }
   ]
 }

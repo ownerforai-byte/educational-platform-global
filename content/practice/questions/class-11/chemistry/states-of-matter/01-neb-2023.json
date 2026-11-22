@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Boyle's law:** At constant T, PV = constant (P ∝ 1/V).\n**Charles's law:** At constant P, V/T = constant (V ∝ T).\n\nCombining: PV/T = constant = nR → **PV = nRT** (ideal gas equation)\nwhere R = 8.314 J/(mol·K) or 0.0821 L·atm/(mol·K).",
-      "knowledgeNote": "At STP (0°C, 1 atm), 1 mol ideal gas occupies 22.4 L."
+      "knowledgeNote": "At STP (0°C, 1 atm), 1 mol ideal gas occupies 22.4 L.",
+      "answer": "**Boyle's law:** at constant temperature, the volume of a fixed mass of gas is **inversely proportional to its pressure**: V ∝ 1/P (T, n fixed) ⟹ PV = constant. **Charles's law:** at constant pressure, the volume of a fixed mass of gas is **directly proportional to its absolute temperature**: V ∝ T (P, n fixed) ⟹ V/T = constant. **Deriving PV = nRT:** start with Boyle: V ∝ 1/P. Add Charles: V ∝ T. Add Avogadro: V ∝ n. Combining all three: V ∝ nT/P ⟹ **V = constant × nT/P**, where the constant is universal (R): **PV = nRT**. (Equivalently: from Boyle PV = k₁; from Charles V = k₂T; combining for a fixed n gives PV/T = constant for any state change of a fixed gas, and normalising to 1 mole at STP fixes the constant as R = 8.314 J K⁻¹ mol⁻¹.) **Deep point:** the ideal gas equation is the three laws sharing one proportionality — each law holds two variables fixed, and the equation is what happens when nothing is fixed."
     }
   ]
 }

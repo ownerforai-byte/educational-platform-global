@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Huckel (4n+2) rule:** a planar, cyclic, conjugated system with (4n+2) π-electrons is aromatic.\n\nBenzene: cyclic, planar, fully conjugated, 6 π-electrons (n = 1) — delocalised in a ring current. All C–C bonds equal (139 pm), with ~152 kJ/mol resonance stabilisation.",
-      "knowledgeNote": "Cyclobutadiene (4π) is anti-aromatic — same checklist, opposite verdict."
+      "knowledgeNote": "Cyclobutadiene (4π) is anti-aromatic — same checklist, opposite verdict.",
+      "answer": "**Hückel's rule:** a planar, cyclic, fully conjugated system is aromatic if it contains **(4n + 2) π electrons** (n = 0, 1, 2, …). **Benzene:** six sp² carbons, each contributing one π electron to a cyclic, planar, fully conjugated system ⟹ **6 π electrons = 4(1) + 2**, satisfying the rule with n = 1. The six π electrons fill three bonding molecular orbitals in a closed shell, giving the extra stabilisation (~152 kJ/mol resonance energy) that defines aromaticity. **Deep point:** the rule's counterpart matters too — cyclic conjugated systems with 4n π electrons (cyclobutadiene, 4) are *antiaromatic* and destabilised, which is why the count, not the ring size, is the test."
     },
     {
       "question": "Describe the mechanism of nitration of benzene.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "(1) Electrophile generation: HNO₃ + 2H₂SO₄ → NO₂⁺ + H₃O⁺ + 2HSO₄⁻.\n\n(2) NO₂⁺ attacks the ring → resonance-stabilised σ-complex (carbocation).\n\n(3) HSO₄⁻ removes a ring proton → aromaticity restored, **nitrobenzene**.\n\nConditions: conc. HNO₃ + conc. H₂SO₄ at ~50°C.",
-      "knowledgeNote": "Electrophilic substitution (not addition) preserves the aromatic sextet — the motive of all benzene chemistry."
+      "knowledgeNote": "Electrophilic substitution (not addition) preserves the aromatic sextet — the motive of all benzene chemistry.",
+      "answer": "**Mechanism (electrophilic aromatic substitution):** **Step 1 — electrophile generation:** conc. H₂SO₄ protonates nitric acid: HNO₃ + 2H₂SO₄ → **NO₂⁺** (nitronium ion) + H₃O⁺ + 2HSO₄⁻. **Step 2 — σ-complex formation:** the ring's π electrons attack NO₂⁺, forming a **σ-complex (arenium ion)** in which the attacked carbon bears both the H and the NO₂ and the positive charge is delocalised over the ortho/para carbons — the aromatic sextet is temporarily broken. **Step 3 — proton loss:** HSO₄⁻ removes the proton from the sp³ carbon, restoring the aromatic sextet: C₆H₆ + HNO₃ --(conc. H₂SO₄, 50–60 °C)--> C₆H₅NO₂ + H₂O. The rate-determining step is the σ-complex formation; the fast deprotonation is what pays back the resonance energy. **Deep point:** the mechanism's bookkeeping — two electrons in, one proton out — is why substitution preserves the ring while addition would spend it."
     },
     {
       "question": "What is Friedel-Crafts alkylation? Write one of its limitations.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Benzene + alkyl halide with anhydrous AlCl₃ gives alkylbenzene: C₆H₆ + CH₃Cl → C₆H₅CH₃ + HCl (electrophilic substitution via R⁺).\n\n**Limitation:** carbocation rearrangement (n-propyl → isopropyl products) and polyalkylation — the product activates further, so mixtures form.",
-      "knowledgeNote": "Acylation avoids rearrangement (acylium ion is resonance-stabilised) — the workaround NEB often asks next."
+      "knowledgeNote": "Acylation avoids rearrangement (acylium ion is resonance-stabilised) — the workaround NEB often asks next.",
+      "answer": "**Friedel–Crafts alkylation:** introduction of an alkyl group (–R) onto the benzene ring using an alkyl halide (R–Cl) with anhydrous **AlCl₃** as Lewis-acid catalyst: C₆H₆ + CH₃Cl --(anhyd. AlCl₃)--> C₆H₅CH₃ + HCl. The catalyst generates the electrophile (CH₃⁺-like R⁺ from R–Cl·AlCl₃ complex). **A limitation:** the alkyl group introduced is electron-donating, so the product (e.g. toluene) is **more reactive than benzene** and alkylates further — giving polyalkylated mixtures rather than clean monoalkylation; over-alkylation is the classic drawback (also, aryl/vinyl halides and strongly deactivated rings fail). **Deep point:** the limitation is self-inflicted by the mechanism — the reaction's own product is a better substrate, so the only way to stop at monoalkylation is to use a large excess of benzene."
     },
     {
       "question": "What are ortho-para directors and meta directors? Give two examples of each.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**o/p-directors** (activating, lone-pair donors): –OH, –NH₂, –CH₃, halogens (deactivating but o/p).\n\n**m-directors** (deactivating, electron-withdrawing): –NO₂, –CHO, –COOH, –SO₃H.\n\nDirecting follows σ-complex stability — the electrophile enters where the positive charge avoids the substituent (meta) or is shared by it (ortho/para).",
-      "knowledgeNote": "Halogens are the odd ones: deactivating yet o/p-directing — the exception that proves the resonance rule."
+      "knowledgeNote": "Halogens are the odd ones: deactivating yet o/p-directing — the exception that proves the resonance rule.",
+      "answer": "**Ortho–para directors** donate electron density into the ring (or stabilise the o/p σ-complex), enriching those positions for the incoming electrophile: **–CH₃** (and other alkyls, +I), **–OH, –NH₂, –OCH₃** (lone-pair donation, +M). **Meta directors** withdraw electron density (−I/−M), deactivating o/p more than meta, which becomes the preferred site: **–NO₂**, **–COOH, –CHO, –CN, –SO₃H** (and –NR₃⁺). **Generalisation:** almost every substituent with a lone pair on the atom bonded to the ring directs o,p; every group with a multiple bond to an electronegative atom directs meta. **Deep point:** directing power and activating power usually share a sign — donors direct o,p and speed the ring up; withdrawers direct meta and slow it down — the two questions are one question."
     },
     {
       "question": "How is benzoic acid prepared from toluene? Write the reaction.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Strong side-chain oxidation: **C₆H₅CH₃ + 3[O] (alkaline KMnO₄, heat) → C₆H₅COOH + H₂O**.\n\nAny alkyl side chain, whatever its length, is chewed back to –COOH on the ring.",
-      "knowledgeNote": "Side-chain oxidation diagnoses alkylbenzenes — the surviving –COOH marks where the chain was attached."
+      "knowledgeNote": "Side-chain oxidation diagnoses alkylbenzenes — the surviving –COOH marks where the chain was attached.",
+      "answer": "Toluene's methyl side chain is oxidised all the way to the carboxyl group by hot alkaline KMnO₄ (followed by acidification): C₆H₅CH₃ --[KMnO₄/KOH, heat]--> C₆H₅COOK --[H⁺]--> **C₆H₅COOH** (benzoic acid) + MnO₂. Whatever the side-chain length, oxidation cuts it back to the ring's carboxyl carbon — toluene, ethylbenzene and propylbenzene all give benzoic acid. **Deep point:** the reaction is a reminder that the ring directs the side chain's fate — the benzylic position's weakness to oxidation is what makes every alkylbenzene a benzoic-acid precursor."
     },
     {
       "question": "Draw the two Kekule structures of benzene. Why are all carbon–carbon bond lengths in benzene equal?",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Kekule: two cyclohexatriene forms with alternating double bonds shifted by one position.\n\nReal benzene is the **resonance hybrid** — π-electrons delocalised over all six carbons, so every bond is identical (139 pm), between single (154) and double (134).",
-      "knowledgeNote": "Equal bond lengths killed Kekule's alternating structure experimentally — X-ray evidence for delocalisation."
+      "knowledgeNote": "Equal bond lengths killed Kekule's alternating structure experimentally — X-ray evidence for delocalisation.",
+      "answer": "**The two Kekulé structures:** the regular hexagon of six carbons with three alternating double bonds, and its partner with the double bonds shifted by one position (structure I: C1=C2, C3=C4, C5=C6; structure II: C2=C3, C4=C5, C6=C1). **Why all bonds are equal:** the real molecule is the **resonance hybrid** of these two structures — the six π electrons are delocalised cyclically over all six carbons, so no single bond is 'a double bond' and none is 'a single bond'; every C–C bond is identical at **139 pm**, exactly intermediate between a C–C single bond (154 pm) and a C=C double bond (134 pm). **Deep point:** equal bond length is the experimental verdict on resonance — the two Kekulé drawings are bookkeeping, the delocalised sextet is the molecule."
     }
   ]
 }
