@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.1 Logic and Sets — full-length answer (Mathematics XI)</title>
+<meta name="description" content="Logic and Sets — a full-mark NEB long answer with hints, a complete worked script, the marking split and the common pitfall.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/long.css">
+</head>
+<body>
+<section class="sheet" aria-label="Logic and Sets — long answer 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · long answer</span></div>
+<h1>1.1 · Logic and Sets — full-length answer</h1>
+<p class="topics"><b>Topics</b> Statements and connectives · Truth values · Sets and Venn diagrams · Cardinality</p>
+<p class="note">Complete NEB script: three hints, then Given → Required → Solution → Conclusion, with the marking split and the usual pitfall. One full-mark question per A4 page.</p>
+</header>
+<div class="grid hard long" data-cols="1" data-rows="1">
+<div class="cell">
+<p class="tag"><span>Cardinality</span> <span class="kind">Venn diagram</span> <span class="level">long answer</span></p>
+<p class="q"><span class="n">L1.</span>In a survey of 120 students, 65 read Nepali, 55 read English and 30 read both.
+(a) Write the exclusive regions of the Venn diagram.
+(b) Find how many read at least one language and how many read neither.
+(c) Verify the result with the inclusion–exclusion formula.&nbsp;<span class="mk">[6]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Start from the overlap: 30 read both, so subtract 30 from each single count.</li>
+<li><b>H2.</b> "At least one" is the union — the sum of the three regions inside the circles.</li>
+<li><b>H3.</b> "Neither" is the whole class minus the union.</li>
+</ol>
+<p class="work">Given: n(U) = 120, n(N) = 65, n(E) = 55, n(N ∩ E) = 30
+Required: exclusive regions, n(N ∪ E), n((N ∪ E)′)
+
+1. only Nepali     = 65 − 30 = 35
+2. only English    = 55 − 30 = 25
+3. both            = 30
+4. n(N ∪ E)        = 35 + 30 + 25 = 90
+5. n((N ∪ E)′)     = 120 − 90 = 30
+6. check: n(N) + n(E) − n(N ∩ E) = 65 + 55 − 30 = 90 ✓</p>
+<p class="ans">90 students read at least one language; 30 read neither.</p>
+<div class="marking">
+<div><b>Marking split</b> — regions 2 + 3 (b) + 1 + 1 (formula check) = 6</div>
+<div class="warn"><b>Common pitfall</b> — Counting the 30 in both circles twice — the union is 65 + 55 − 30, never 65 + 55.</div>
+</div>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 1 · Algebra</span>
+<span class="mid">Logic and Sets · long answer</span>
+<span>Page 1 of 1</span>
+</footer>
+</section>
+</body>
+</html>

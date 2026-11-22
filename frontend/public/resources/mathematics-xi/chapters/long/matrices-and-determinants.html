@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.6 Matrices and Determinants — full-length answer (Mathematics XI)</title>
+<meta name="description" content="Matrices and Determinants — a full-mark NEB long answer with hints, a complete worked script, the marking split and the common pitfall.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/long.css">
+</head>
+<body>
+<section class="sheet" aria-label="Matrices and Determinants — long answer 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · long answer</span></div>
+<h1>1.6 · Matrices and Determinants — full-length answer</h1>
+<p class="topics"><b>Topics</b> Algebra of matrices · Determinants · Inverse of a matrix · Solving systems</p>
+<p class="note">Complete NEB script: three hints, then Given → Required → Solution → Conclusion, with the marking split and the usual pitfall. One full-mark question per A4 page.</p>
+</header>
+<div class="grid hard long" data-cols="1" data-rows="1">
+<div class="cell">
+<p class="tag"><span>Inverse of a matrix</span> <span class="kind">Inverse and system</span> <span class="level">long answer</span></p>
+<p class="q"><span class="n">L1.</span>Let A = [[1, 2], [3, 5]].
+(a) Find A⁻¹.
+(b) Use it to solve x + 2y = 4, 3x + 5y = 11.
+(c) Verify that A² − 6A − I = 0.&nbsp;<span class="mk">[6]</span></p>
+<ol class="hints">
+<li><b>H1.</b> det A = 1·5 − 2·3 = −1; the adjugate swaps 1 and 5 and negates 2 and 3.</li>
+<li><b>H2.</b> Write the system as AX = B and multiply by A⁻¹ on the left.</li>
+<li><b>H3.</b> For the verification, compute A² and 6A and subtract I.</li>
+</ol>
+<p class="work">Given: A = [[1,2],[3,5]], system x + 2y = 4, 3x + 5y = 11
+Required: A⁻¹, the solution, and the Cayley–Hamilton check
+
+1. det A = 5 − 6 = −1, adj A = [[5, −2], [−3, 1]]
+2. A⁻¹ = −[[5, −2], [−3, 1]] = [[−5, 2], [3, −1]]
+3. X = A⁻¹B = [[−5, 2], [3, −1]]·[[4], [11]] = [[−20 + 22], [12 − 11]] = [[2], [1]]
+4. check in the original: 2 + 2 = 4 ✓ and 6 + 5 = 11 ✓
+5. A² = [[7, 12], [18, 31]], 6A = [[6, 12], [18, 30]]
+6. A² − 6A = [[1, 0], [0, 1]] = I ⇒ A² − 6A − I = 0 ✓</p>
+<p class="ans">A⁻¹ = [[−5, 2], [3, −1]]; x = 2, y = 1; and A² − 6A − I = 0 is verified.</p>
+<div class="marking">
+<div><b>Marking split</b> — inverse 2 + solution 2 + verification 2 = 6</div>
+<div class="warn"><b>Common pitfall</b> — Forgetting the minus sign of det A = −1, which flips every entry of the adjugate.</div>
+</div>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 1 · Algebra</span>
+<span class="mid">Matrices and Determinants · long answer</span>
+<span>Page 1 of 1</span>
+</footer>
+</section>
+</body>
+</html>

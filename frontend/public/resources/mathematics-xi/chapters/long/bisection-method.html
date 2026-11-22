@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.1 Bisection Method — full-length answer (Mathematics XI)</title>
+<meta name="description" content="Bisection Method — a full-mark NEB long answer with hints, a complete worked script, the marking split and the common pitfall.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/long.css">
+</head>
+<body>
+<section class="sheet" aria-label="Bisection Method — long answer 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · long answer</span></div>
+<h1>7.1 · Bisection Method — full-length answer</h1>
+<p class="topics"><b>Topics</b> Sign-change test · Bisection steps · Iteration tables · Accuracy and error</p>
+<p class="note">Complete NEB script: three hints, then Given → Required → Solution → Conclusion, with the marking split and the usual pitfall. One full-mark question per A4 page.</p>
+</header>
+<div class="grid hard long" data-cols="1" data-rows="1">
+<div class="cell">
+<p class="tag"><span>Bisection steps</span> <span class="kind">Iteration</span> <span class="level">long answer</span></p>
+<p class="q"><span class="n">L1.</span>The equation x³ − 2x − 5 = 0 has a root in [2, 3].
+(a) Perform three bisection steps.
+(b) State the bracket after each step and the maximum error after the third step.&nbsp;<span class="mk">[6]</span></p>
+<ol class="hints">
+<li><b>H1.</b> f(2) = −1 and f(3) = 16, so the sign change is confirmed.</li>
+<li><b>H2.</b> Take the midpoint, evaluate f, and keep the half where the sign change survives.</li>
+<li><b>H3.</b> After n steps the error is at most width/2ⁿ.</li>
+</ol>
+<p class="work">Given: f(x) = x³ − 2x − 5, bracket [2, 3]
+Required: three bisection steps, the final bracket, the error bound
+
+1. f(2) = 8 − 4 − 5 = −1, f(3) = 27 − 6 − 5 = 16 ⇒ root in (2, 3)
+2. x₁ = 2.5, f = 15.625 − 5 − 5 = 5.625 &gt; 0 ⇒ [2, 2.5]
+3. x₂ = 2.25, f = 11.3906 − 4.5 − 5 = 1.8906 &gt; 0 ⇒ [2, 2.25]
+4. x₃ = 2.125, f = 9.5957 − 4.25 − 5 = 0.3457 &gt; 0 ⇒ [2, 2.125]
+5. error bound after 3 steps: 1/2³ = 0.125
+6. estimate of the root: x₄ ≈ 2.0625, close to the true root 2.0946</p>
+<p class="ans">brackets [2, 2.5] → [2, 2.25] → [2, 2.125]; maximum error 0.125 and root ≈ 2.06 (true value 2.0946).</p>
+<div class="marking">
+<div><b>Marking split</b> — sign check 1 + three steps 4.5 + error bound 0.5 = 6</div>
+<div class="warn"><b>Common pitfall</b> — Keeping the half with the same sign at both ends. The bracket must always straddle the sign change.</div>
+</div>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Bisection Method · long answer</span>
+<span>Page 1 of 1</span>
+</footer>
+</section>
+</body>
+</html>

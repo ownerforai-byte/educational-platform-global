@@ -22,6 +22,7 @@ const ROOT = path.resolve(import.meta.dirname, "../..");
 const DATA_DIR = path.join(ROOT, "content-tools/math-xi-workbook/data");
 const OUT_DIR = path.join(ROOT, "frontend/public/resources/mathematics-xi/chapters");
 const HARD_OUT_DIR = path.join(OUT_DIR, "hard");
+const LONG_OUT_DIR = path.join(OUT_DIR, "long");
 const REGISTRY = path.join(ROOT, "frontend/lib/streams/mathematics-xi-chapters.ts");
 
 const PER_SHEET = 12; // 3 columns × 4 rows
@@ -32,6 +33,11 @@ const ROWS = 4;
 const HARD_PER_SHEET = 6;
 const HARD_COLS = 2;
 const HARD_ROWS = 3;
+
+/* long-answer sheets: one full-length question per A4 page */
+const LONG_PER_SHEET = 1;
+const LONG_COLS = 1;
+const LONG_ROWS = 1;
 const STREAM = "NEB Grade 11 · Mathematics (Mat. 007)";
 const BOOK = "Mathematics XI — Topic Workbook";
 
@@ -50,15 +56,25 @@ const esc = (value) =>
 
 const files = fs
   .readdirSync(DATA_DIR)
-  .filter((name) => name.endsWith(".mjs") && !name.endsWith(".more.mjs") && !name.endsWith(".hard.mjs"))
+  .filter(
+    (name) =>
+      name.endsWith(".mjs") &&
+      !name.endsWith(".more.mjs") &&
+      !name.endsWith(".hard.mjs") &&
+      !name.endsWith(".long.mjs"),
+  )
   .sort();
 const extraFiles = fs
   .readdirSync(DATA_DIR)
-  .filter((name) => name.endsWith(".more.mjs") && !name.endsWith(".hard.mjs"))
+  .filter((name) => name.endsWith(".more.mjs") && !name.endsWith(".hard.mjs") && !name.endsWith(".long.mjs"))
   .sort();
 const hardFiles = fs
   .readdirSync(DATA_DIR)
   .filter((name) => name.endsWith(".hard.mjs"))
+  .sort();
+const longFiles = fs
+  .readdirSync(DATA_DIR)
+  .filter((name) => name.endsWith(".long.mjs"))
   .sort();
 
 if (files.length === 0) fail("no data files found in content-tools/math-xi-workbook/data");
@@ -132,6 +148,29 @@ for (const [unitNo, list] of [...indexByUnit.entries()].sort((a, b) => a[0] - b[
     chapter.chapterNo = i + 1;
     chapter.code = `${unitNo}.${i + 1}`;
   });
+}
+
+/* long-answer sets: `*.long.mjs` exports LONG with one full-length question
+   per chapter, printed on its own A4 page with a formal NEB script. */
+for (const file of longFiles) {
+  const mod = await import(pathToFileURL(path.join(DATA_DIR, file)).href);
+  const list = mod.LONG ?? mod.default;
+  if (!Array.isArray(list) || list.length === 0) {
+    fail(`${file}: expected an exported LONG array`);
+    continue;
+  }
+  for (const entry of list) {
+    const chapter = chapters.find((candidate) => candidate.slug === entry.slug);
+    if (!chapter) {
+      fail(`${file}: no chapter with slug "${entry.slug}"`);
+      continue;
+    }
+    if (!Array.isArray(entry.items) || entry.items.length === 0) {
+      fail(`${file} → ${entry.slug}: long items must be a non-empty array`);
+      continue;
+    }
+    chapter.long = entry.items;
+  }
 }
 
 const seenSlugs = new Set();
@@ -216,6 +255,37 @@ for (const chapter of chapters) {
     if (kind !== undefined && (typeof kind !== "string" || kind.trim() === ""))
       fail(`${at}: question type must be a non-empty string when present`);
   });
+
+  if (chapter.long === undefined) continue;
+
+  chapter.long.forEach((item, i) => {
+    const at = `${chapter.slug} (long) L${i + 1}`;
+    if (!Array.isArray(item) || item.length < 4) {
+      fail(`${at}: expected [question, hints[], working, answer, marks?, topicIndex?, kind?, marking?, pitfall?]`);
+      return;
+    }
+    const [q, hints, work, ans, marks, topicIndex = 0, kind, marking, pitfall] = item;
+    for (const [label, value] of [
+      ["question", q],
+      ["working", work],
+      ["answer", ans],
+    ]) {
+      if (typeof value !== "string" || value.trim() === "")
+        fail(`${at}: ${label} must be a non-empty string`);
+    }
+    if (!Array.isArray(hints) || hints.length !== 3)
+      fail(`${at}: long answers carry exactly three hints`);
+    if (Number.isInteger(topicIndex) && (topicIndex < 0 || topicIndex >= chapter.topics.length))
+      fail(`${at}: topicIndex ${topicIndex} out of range (${chapter.topics.length} topics)`);
+    if (marks !== undefined && ![1, 2, 3, 4, 5, 6, 7, 8].includes(marks))
+      fail(`${at}: marks ${marks} is not a sensible NEB mark value`);
+    if (kind !== undefined && (typeof kind !== "string" || kind.trim() === ""))
+      fail(`${at}: question type must be a non-empty string when present`);
+    if (marking !== undefined && typeof marking !== "string")
+      fail(`${at}: marking must be a string when present`);
+    if (pitfall !== undefined && typeof pitfall !== "string")
+      fail(`${at}: pitfall must be a string when present`);
+  });
 }
 
 if (errors.length) {
@@ -257,6 +327,10 @@ const sheetHtml = (chapter, sheetIndex, sheetCount) => {
 <p class="note">NEB answer style — given → statement → working → answer. ${PER_SHEET} questions per sheet, 3 per row.${
     chapter.hard
       ? ` <a class="hardlink" href="/resources/mathematics-xi/chapters/hard/${chapter.slug}.html">Hardest set with hints →</a>`
+      : ""
+  }${
+    chapter.long
+      ? ` <a class="hardlink" href="/resources/mathematics-xi/chapters/long/${chapter.slug}.html">Full-length answer →</a>`
       : ""
   }</p>
 </header>
@@ -410,6 +484,124 @@ ${blocks}
 `;
 };
 
+const longCellHtml = (cell, chapter, no) => {
+  const [q, hints, work, ans, marks, topicIndex = 0, kind, marking, pitfall] = cell;
+  const topic = chapter.topics[topicIndex] ?? "";
+  const hintItems = hints
+    .map((hint, i) => `<li><b>H${i + 1}.</b> ${esc(hint)}</li>`)
+    .join("\n");
+  const notes = [
+    marking ? `<div><b>Marking split</b> — ${esc(marking)}</div>` : "",
+    pitfall ? `<div class="warn"><b>Common pitfall</b> — ${esc(pitfall)}</div>` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+  return `<div class="cell">
+<p class="tag"><span>${esc(topic)}</span>${kind ? ` <span class="kind">${esc(kind)}</span>` : ""} <span class="level">long answer</span></p>
+<p class="q"><span class="n">L${no}.</span>${esc(q)}${
+    marks ? `&nbsp;<span class="mk">[${marks}]</span>` : ""
+  }</p>
+<ol class="hints">
+${hintItems}
+</ol>
+<p class="work">${esc(work)}</p>
+<p class="ans">${esc(ans)}</p>
+${notes ? `<div class="marking">\n${notes}\n</div>` : ""}
+</div>`;
+};
+
+const longSheetHtml = (chapter, index, count) => {
+  const cell = chapter.long[index];
+  return `<section class="sheet" aria-label="${esc(chapter.title)} — long answer ${index + 1}">
+<header class="masthead">
+<div class="stream"><span>${esc(STREAM)}</span><span>${esc(BOOK)} · long answer</span></div>
+<h1>${esc(chapter.code)} · ${esc(chapter.title)} — full-length answer${count > 1 ? ` (${index + 1}/${count})` : ""}</h1>
+<p class="topics"><b>Topics</b> ${chapter.topics.map(esc).join(" · ")}</p>
+<p class="note">Complete NEB script: three hints, then Given → Required → Solution → Conclusion, with the marking split and the usual pitfall. One full-mark question per A4 page.</p>
+</header>
+<div class="grid hard long" data-cols="${LONG_COLS}" data-rows="${LONG_ROWS}">
+${longCellHtml(cell, chapter, index + 1)}
+</div>
+<footer class="foot">
+<span>Unit ${chapter.unitNo} · ${esc(chapter.unitName)}</span>
+<span class="mid">${esc(chapter.title)} · long answer</span>
+<span>Page ${index + 1} of ${count}</span>
+</footer>
+</section>`;
+};
+
+const longChapterHtml = (chapter) => {
+  const count = Math.ceil(chapter.long.length / LONG_PER_SHEET);
+  const sheets = Array.from({ length: count }, (_, i) => longSheetHtml(chapter, i, count));
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(chapter.code)} ${esc(chapter.title)} — full-length answer (Mathematics XI)</title>
+<meta name="description" content="${esc(
+    chapter.title,
+  )} — a full-mark NEB long answer with hints, a complete worked script, the marking split and the common pitfall.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/long.css">
+</head>
+<body>
+${sheets.join("\n")}
+</body>
+</html>
+`;
+};
+
+const longIndexHtml = () => {
+  const withLong = chapters.filter((chapter) => chapter.long);
+  const units = [...new Set(withLong.map((chapter) => chapter.unitNo))].sort((a, b) => a - b);
+  const blocks = units
+    .map((unitNo) => {
+      const list = withLong.filter((chapter) => chapter.unitNo === unitNo);
+      const items = list
+        .map(
+          (chapter) =>
+            `<li><a href="/resources/mathematics-xi/chapters/long/${chapter.slug}.html">${esc(
+              chapter.code,
+            )} ${esc(chapter.title)}</a> <span>· ${chapter.long.length} long answer</span></li>`,
+        )
+        .join("\n");
+      return `<h2>Unit ${unitNo} · ${esc(list[0].unitName)}</h2>
+<ol>
+${items}
+</ol>`;
+    })
+    .join("\n");
+  const total = withLong.reduce((sum, chapter) => sum + chapter.long.length, 0);
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — full-length answers</title>
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/long.css">
+</head>
+<body>
+<section class="sheet index">
+<header class="masthead">
+<div class="stream"><span>${esc(STREAM)}</span><span>${esc(BOOK)} · long answer</span></div>
+<h1>Full-length answers — contents</h1>
+<p class="topics"><b>Coverage</b> ${withLong.length} chapters · ${total} full-mark questions · ${total} A4 pages</p>
+<p class="note">One complete NEB script per chapter: hints, Given → Solution → Conclusion, marking split and the common pitfall.</p>
+</header>
+${blocks}
+<footer class="foot">
+<span>Units ${units.join(", ")}</span>
+<span class="mid">${withLong.length} chapters</span>
+<span>${total} long answers</span>
+</footer>
+</section>
+</body>
+</html>
+`;
+};
+
 const indexHtml = () => {
   const units = [...indexByUnit.entries()].sort((a, b) => a[0] - b[0]);
   const total = chapters.reduce((sum, chapter) => sum + chapter.items.length, 0);
@@ -427,6 +619,10 @@ const indexHtml = () => {
             )} ${esc(chapter.title)}</a> <span>· ${chapter.items.length} Q</span>${
               chapter.hard
                 ? ` <span>· <a href="/resources/mathematics-xi/chapters/hard/${chapter.slug}.html">${chapter.hard.length} hard with hints</a></span>`
+                : ""
+            }${
+              chapter.long
+                ? ` <span>· <a href="/resources/mathematics-xi/chapters/long/${chapter.slug}.html">full-length answer</a></span>`
                 : ""
             }</li>`,
         )
@@ -484,6 +680,8 @@ const registrySource = () => {
     sheetCount: ${Math.ceil(chapter.items.length / PER_SHEET)},
     hardCount: ${chapter.hard ? chapter.hard.length : 0},
     hardSheetCount: ${chapter.hard ? Math.ceil(chapter.hard.length / HARD_PER_SHEET) : 0},
+    longCount: ${chapter.long ? chapter.long.length : 0},
+    longSheetCount: ${chapter.long ? Math.ceil(chapter.long.length / LONG_PER_SHEET) : 0},
   },`,
     )
     .join("\n");
@@ -497,6 +695,7 @@ const registrySource = () => {
     (sum, chapter) => sum + (chapter.hard ? Math.ceil(chapter.hard.length / HARD_PER_SHEET) : 0),
     0,
   );
+  const longTotal = chapters.reduce((sum, chapter) => sum + (chapter.long?.length ?? 0), 0);
   return `/**
  * Mathematics XI — chapter workbook registry.
  *
@@ -513,6 +712,7 @@ const registrySource = () => {
 export const MATH_XI_WORKBOOK_BASE = "/resources/mathematics-xi/chapters";
 export const MATH_XI_QUESTIONS_PER_SHEET = ${PER_SHEET};
 export const MATH_XI_HARD_PER_SHEET = ${HARD_PER_SHEET};
+export const MATH_XI_LONG_PER_SHEET = ${LONG_PER_SHEET};
 
 export interface MathXiChapter {
   /** URL and file slug. */
@@ -534,6 +734,9 @@ export interface MathXiChapter {
   hardCount: number;
   /** A4 hard sheets (6 problems each). */
   hardSheetCount: number;
+  /** Full-length NEB answers (one per A4 page). 0 when unauthored. */
+  longCount: number;
+  longSheetCount: number;
 }
 
 export const MATH_XI_CHAPTERS: MathXiChapter[] = [
@@ -550,6 +753,10 @@ export const MATH_XI_WORKBOOK_TOTALS = {
   hardQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardCount, 0),
   hardSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardSheetCount, 0),
   hardPerSheet: MATH_XI_HARD_PER_SHEET,
+  longChapters: MATH_XI_CHAPTERS.filter((chapter) => chapter.longCount > 0).length,
+  longQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.longCount, 0),
+  longSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.longSheetCount, 0),
+  longPerSheet: MATH_XI_LONG_PER_SHEET,
 };
 
 export function mathXiHardUrl(chapter: Pick<MathXiChapter, "slug">): string {
@@ -562,6 +769,18 @@ export function mathXiHardPath(chapter: Pick<MathXiChapter, "slug">): string {
 
 export function mathXiHardChapters(): MathXiChapter[] {
   return MATH_XI_CHAPTERS.filter((chapter) => chapter.hardCount > 0);
+}
+
+export function mathXiLongUrl(chapter: Pick<MathXiChapter, "slug">): string {
+  return \`\${MATH_XI_WORKBOOK_BASE}/long/\${chapter.slug}.html\`;
+}
+
+export function mathXiLongPath(chapter: Pick<MathXiChapter, "slug">): string {
+  return \`public/resources/mathematics-xi/chapters/long/\${chapter.slug}.html\`;
+}
+
+export function mathXiLongChapters(): MathXiChapter[] {
+  return MATH_XI_CHAPTERS.filter((chapter) => chapter.longCount > 0);
 }
 
 export function mathXiChapterUrl(chapter: Pick<MathXiChapter, "slug">): string {
@@ -606,6 +825,19 @@ if (hardChapters.length > 0) {
   fs.writeFileSync(path.join(HARD_OUT_DIR, "index.html"), hardIndexHtml(), "utf8");
 }
 
+const longChapters = chapters.filter((chapter) => chapter.long);
+if (longChapters.length > 0) {
+  fs.mkdirSync(LONG_OUT_DIR, { recursive: true });
+  for (const chapter of longChapters) {
+    fs.writeFileSync(
+      path.join(LONG_OUT_DIR, `${chapter.slug}.html`),
+      longChapterHtml(chapter),
+      "utf8",
+    );
+  }
+  fs.writeFileSync(path.join(LONG_OUT_DIR, "index.html"), longIndexHtml(), "utf8");
+}
+
 fs.writeFileSync(REGISTRY, registrySource(), "utf8");
 
 const totalQuestions = chapters.reduce((sum, chapter) => sum + chapter.items.length, 0);
@@ -625,6 +857,12 @@ if (hardChapters.length > 0) {
   );
   console.log(
     `✓ ${hardChapters.length} hard sets · ${hardTotal} hardest problems · ${hardSheets} A4 pages (with hint ladders)`,
+  );
+}
+if (longChapters.length > 0) {
+  const longTotal = longChapters.reduce((sum, chapter) => sum + chapter.long.length, 0);
+  console.log(
+    `✓ ${longChapters.length} long answers · ${longTotal} full-mark questions · ${longTotal} A4 pages (formal scripts)`,
   );
 }
 for (const [unitNo, list] of [...indexByUnit.entries()].sort((a, b) => a[0] - b[0])) {

@@ -16,7 +16,7 @@ const page = await browser.newPage({ viewport: { width: 1000, height: 1400 } });
 let bad = 0;
 for (const file of files) {
   const raw = fs.readFileSync(path.join(dir, file), "utf8").replace(
-    /<link rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/,
+    /<link rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/g,
     (_, href) => `<style>${fs.readFileSync(path.join("frontend/public", href.replace(/^\//, "")), "utf8")}</style>`,
   );
   await page.setContent(raw, { waitUntil: "load" });

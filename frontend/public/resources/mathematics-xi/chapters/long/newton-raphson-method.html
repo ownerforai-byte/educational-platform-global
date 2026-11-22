@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.2 Newton–Raphson Method — full-length answer (Mathematics XI)</title>
+<meta name="description" content="Newton–Raphson Method — a full-mark NEB long answer with hints, a complete worked script, the marking split and the common pitfall.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/long.css">
+</head>
+<body>
+<section class="sheet" aria-label="Newton–Raphson Method — long answer 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · long answer</span></div>
+<h1>7.2 · Newton–Raphson Method — full-length answer</h1>
+<p class="topics"><b>Topics</b> The formula · Iteration steps · Convergence · Comparison with bisection</p>
+<p class="note">Complete NEB script: three hints, then Given → Required → Solution → Conclusion, with the marking split and the usual pitfall. One full-mark question per A4 page.</p>
+</header>
+<div class="grid hard long" data-cols="1" data-rows="1">
+<div class="cell">
+<p class="tag"><span>Iteration steps</span> <span class="kind">Iteration</span> <span class="level">long answer</span></p>
+<p class="q"><span class="n">L1.</span>Use the Newton–Raphson method with x₀ = 2 to find the root of x³ − 2x − 5 = 0 correct to three decimal places.
+(a) State the iteration formula.
+(b) Perform two iterations and comment on the speed of convergence.&nbsp;<span class="mk">[6]</span></p>
+<ol class="hints">
+<li><b>H1.</b> f′(x) = 3x² − 2, and x₁ = x₀ − f(x₀)/f′(x₀).</li>
+<li><b>H2.</b> f(2) = −1 and f′(2) = 10.</li>
+<li><b>H3.</b> Compare with the three bisection steps needed for the same accuracy.</li>
+</ol>
+<p class="work">Given: f(x) = x³ − 2x − 5, x₀ = 2
+Required: the iteration formula, two steps, and a note on convergence
+
+1. xₙ₊₁ = xₙ − (xₙ³ − 2xₙ − 5)/(3xₙ² − 2)
+2. x₁ = 2 − (−1)/10 = 2.1
+3. f(2.1) = 9.261 − 4.2 − 5 = 0.061; f′(2.1) = 13.23 − 2 = 11.23
+4. x₂ = 2.1 − 0.061/11.23 = 2.1 − 0.00543 = 2.09457
+5. x₂ = 2.095 to three decimals, matching the true root 2.09455
+6. two steps beat three bisection steps, and each further step roughly doubles the correct digits</p>
+<p class="ans">xₙ₊₁ = xₙ − (xₙ³ − 2xₙ − 5)/(3xₙ² − 2); x₁ = 2.1, x₂ ≈ 2.0946, so the root is 2.095 (three decimals) after two steps — quadratic convergence.</p>
+<div class="marking">
+<div><b>Marking split</b> — formula 1.5 + x₁ 1 + x₂ 2 + comment 1.5 = 6</div>
+<div class="warn"><b>Common pitfall</b> — Starting where f′ is small. Newton's method fails or wanders when the tangent is nearly horizontal.</div>
+</div>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Newton–Raphson Method · long answer</span>
+<span>Page 1 of 1</span>
+</footer>
+</section>
+</body>
+</html>

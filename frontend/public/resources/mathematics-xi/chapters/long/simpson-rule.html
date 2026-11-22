@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.4 Simpson's One-Third Rule — full-length answer (Mathematics XI)</title>
+<meta name="description" content="Simpson's One-Third Rule — a full-mark NEB long answer with hints, a complete worked script, the marking split and the common pitfall.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/long.css">
+</head>
+<body>
+<section class="sheet" aria-label="Simpson's One-Third Rule — long answer 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · long answer</span></div>
+<h1>7.4 · Simpson's One-Third Rule — full-length answer</h1>
+<p class="topics"><b>Topics</b> The formula · Odd/even strip requirement · Error order · Comparing with the trapezoidal rule</p>
+<p class="note">Complete NEB script: three hints, then Given → Required → Solution → Conclusion, with the marking split and the usual pitfall. One full-mark question per A4 page.</p>
+</header>
+<div class="grid hard long" data-cols="1" data-rows="1">
+<div class="cell">
+<p class="tag"><span>Odd/even strip requirement</span> <span class="kind">Two values of h</span> <span class="level">long answer</span></p>
+<p class="q"><span class="n">L1.</span>Estimate ∫₀¹ dx/(1 + x) by Simpson's rule with h = 0.5 and h = 0.25, and compare with ln 2 = 0.693147.&nbsp;<span class="mk">[6]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Simpson needs an even number of strips: h = 0.5 gives 2 strips and h = 0.25 gives 4.</li>
+<li><b>H2.</b> Weights go 1, 4, 2, 4, 1 and the multiplier is h/3.</li>
+<li><b>H3.</b> For h = 0.5 the ordinates are 1, 0.66667, 0.5.</li>
+</ol>
+<p class="work">Given: ∫₀¹ dx/(1 + x) = ln 2 = 0.693147
+Required: two Simpson estimates and their errors
+
+1. h = 0.5: S = (0.5/3)[1 + 0.5 + 4(0.66667)]
+2. = 0.16667 × 4.16667 = 0.69444, error 0.00130
+3. h = 0.25: y = 1, 0.8, 0.66667, 0.57143, 0.5
+4. S = (0.25/3)[1 + 0.5 + 4(0.8 + 0.57143) + 2(0.66667)]
+5. = 0.08333 × 8.31905 = 0.69326, error 0.00011
+6. the same h = 0.5 gives error 0.0013 for Simpson against 0.0026 for the trapezoidal rule, and the halving factor is about 12</p>
+<p class="ans">(a) 0.69444 (error 0.0013)  (b) 0.69326 (error 0.0001); Simpson is far more accurate than the trapezoidal rule for the same h.</p>
+<div class="marking">
+<div><b>Marking split</b> — each estimate 2 + comparison 2 = 6</div>
+<div class="warn"><b>Common pitfall</b> — Using an odd number of strips. Simpson's rule is undefined there — always pair the strips.</div>
+</div>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Simpson's One-Third Rule · long answer</span>
+<span>Page 1 of 1</span>
+</footer>
+</section>
+</body>
+</html>

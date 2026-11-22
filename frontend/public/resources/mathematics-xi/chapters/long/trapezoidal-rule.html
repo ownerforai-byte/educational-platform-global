@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.3 Trapezoidal Rule — full-length answer (Mathematics XI)</title>
+<meta name="description" content="Trapezoidal Rule — a full-mark NEB long answer with hints, a complete worked script, the marking split and the common pitfall.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/long.css">
+</head>
+<body>
+<section class="sheet" aria-label="Trapezoidal Rule — long answer 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · long answer</span></div>
+<h1>7.3 · Trapezoidal Rule — full-length answer</h1>
+<p class="topics"><b>Topics</b> The formula · Building the table · Error behaviour · Comparing with the exact value</p>
+<p class="note">Complete NEB script: three hints, then Given → Required → Solution → Conclusion, with the marking split and the usual pitfall. One full-mark question per A4 page.</p>
+</header>
+<div class="grid hard long" data-cols="1" data-rows="1">
+<div class="cell">
+<p class="tag"><span>Building the table</span> <span class="kind">Two values of h</span> <span class="level">long answer</span></p>
+<p class="q"><span class="n">L1.</span>Estimate ∫₀¹ dx/(1 + x²) with the trapezoidal rule using (a) h = 0.5 and (b) h = 0.25, and compare both with the exact value π/4.&nbsp;<span class="mk">[6]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Ordinates for h = 0.5: 1, 0.8, 0.5.</li>
+<li><b>H2.</b> For h = 0.25 you need five ordinates; the middle three are doubled.</li>
+<li><b>H3.</b> Compare each error with the exact 0.785398.</li>
+</ol>
+<p class="work">Given: ∫₀¹ dx/(1 + x²), exact π/4 = 0.785398
+Required: both trapezoidal estimates and their errors
+
+1. h = 0.5: y = 1, 0.8, 0.5 ⇒ T = 0.25[1 + 0.5 + 2(0.8)] = 0.25(3.1)
+2. T₁ = 0.7750, error = 0.01040
+3. h = 0.25: y = 1, 0.94118, 0.8, 0.64, 0.5
+4. middle sum = 0.94118 + 0.8 + 0.64 = 2.38118
+5. T₂ = 0.125[1.5 + 4.76236] = 0.125(6.26236) = 0.78280, error = 0.00260
+6. halving h cut the error by a factor of 4 — the h² behaviour of the rule</p>
+<p class="ans">(a) 0.7750 (error 0.0104)  (b) 0.7828 (error 0.0026); the error falls by a factor of 4 when h is halved.</p>
+<div class="marking">
+<div><b>Marking split</b> — h = 0.5 estimate 1.5 + h = 0.25 estimate 2.5 + error comparison 2 = 6</div>
+<div class="warn"><b>Common pitfall</b> — Doubling the first and last ordinates. Only the interior ordinates carry the factor 2.</div>
+</div>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Trapezoidal Rule · long answer</span>
+<span>Page 1 of 1</span>
+</footer>
+</section>
+</body>
+</html>

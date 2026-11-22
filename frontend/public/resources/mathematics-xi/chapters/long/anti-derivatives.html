@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.7 Anti-derivatives — full-length answer (Mathematics XI)</title>
+<meta name="description" content="Anti-derivatives — a full-mark NEB long answer with hints, a complete worked script, the marking split and the common pitfall.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/long.css">
+</head>
+<body>
+<section class="sheet" aria-label="Anti-derivatives — long answer 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · long answer</span></div>
+<h1>6.7 · Anti-derivatives — full-length answer</h1>
+<p class="topics"><b>Topics</b> Standard integrals · Substitution · By parts · Trigonometric integrals</p>
+<p class="note">Complete NEB script: three hints, then Given → Required → Solution → Conclusion, with the marking split and the usual pitfall. One full-mark question per A4 page.</p>
+</header>
+<div class="grid hard long" data-cols="1" data-rows="1">
+<div class="cell">
+<p class="tag"><span>By parts</span> <span class="kind">By parts, half-angle</span> <span class="level">long answer</span></p>
+<p class="q"><span class="n">L1.</span>Evaluate
+(a) ∫ x ln x dx,
+(b) ∫ cos²x dx.&nbsp;<span class="mk">[6]</span></p>
+<ol class="hints">
+<li><b>H1.</b> (a) is a product: take u = ln x and dv = x dx.</li>
+<li><b>H2.</b> For (b) replace cos²x by (1 + cos 2x)/2.</li>
+<li><b>H3.</b> Both answers need the constant of integration.</li>
+</ol>
+<p class="work">Given: two indefinite integrals
+Required: each antiderivative, with + C
+
+1. (a) u = lnx, dv = x dx ⇒ du = dx/x, v = x²/2
+2. ∫x lnx dx = (x²/2)lnx − ∫(x²/2)(1/x)dx
+3. = (x²/2)lnx − ∫(x/2)dx = (x²/2)lnx − x²/4 + C
+4. (b) cos²x = (1 + cos2x)/2
+5. ∫cos²x dx = x/2 + (sin2x)/4 + C
+6. differentiate back: d/dx[x/2 + sin2x/4] = 1/2 + cos2x/2 = cos²x ✓</p>
+<p class="ans">(a) (x²/2)ln x − x²/4 + C  (b) x/2 + (sin 2x)/4 + C.</p>
+<div class="marking">
+<div><b>Marking split</b> — by-parts setup 2 + completed integral 1.5 + half-angle 1.5 + constant 1 = 6</div>
+<div class="warn"><b>Common pitfall</b> — Dropping + C, or integrating cos²x as sin³x/3 (that would be for sin²x cosx).</div>
+</div>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 6 · Calculus</span>
+<span class="mid">Anti-derivatives · long answer</span>
+<span>Page 1 of 1</span>
+</footer>
+</section>
+</body>
+</html>

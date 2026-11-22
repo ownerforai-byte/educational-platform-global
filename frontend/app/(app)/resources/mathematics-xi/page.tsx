@@ -14,6 +14,7 @@ import {
   mathXiChapterUrl,
   mathXiChaptersByUnit,
   mathXiHardUrl,
+  mathXiLongUrl,
 } from "@/lib/mathematics-xi-chapters";
 
 export const metadata: Metadata = {
@@ -60,6 +61,7 @@ export default function MathematicsXiSolutionsPage() {
             { label: "Reasoning drills", value: MATHEMATICS_XI_TOTALS.drills },
             { label: "A4 sheets", value: MATH_XI_WORKBOOK_TOTALS.sheets },
             { label: "Hard + hints", value: MATH_XI_WORKBOOK_TOTALS.hardQuestions },
+            { label: "Long answers", value: MATH_XI_WORKBOOK_TOTALS.longQuestions },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -136,6 +138,17 @@ export default function MathematicsXiSolutionsPage() {
                           {chapter.title}
                         </span>
                       </a>
+                      {chapter.longCount > 0 ? (
+                        <a
+                          href={mathXiLongUrl(chapter)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="shrink-0 rounded border border-sky-500/40 px-1 text-[11px] font-semibold text-sky-700 hover:bg-sky-500/10 dark:text-sky-400"
+                          title="One full-mark NEB long answer with a complete script"
+                        >
+                          long
+                        </a>
+                      ) : null}
                       {chapter.hardCount > 0 ? (
                         <a
                           href={mathXiHardUrl(chapter)}
@@ -180,6 +193,29 @@ export default function MathematicsXiSolutionsPage() {
           >
             <ExternalLink className="h-4 w-4" />
             Open hard sets
+          </a>
+        </div>
+
+        <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-sky-500/30 bg-sky-500/5 p-4">
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold">
+              Full-length answers — {MATH_XI_WORKBOOK_TOTALS.longQuestions} complete NEB scripts
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {MATH_XI_WORKBOOK_TOTALS.longChapters} chapters ·{" "}
+              {MATH_XI_WORKBOOK_TOTALS.longSheets} A4 pages ·{" "}
+              {MATH_XI_WORKBOOK_TOTALS.longPerSheet} question per page. Three hints, then
+              Given → Required → Solution → Conclusion, the marking split and the common pitfall.
+            </p>
+          </div>
+          <a
+            href={`${MATH_XI_WORKBOOK_BASE}/long/index.html`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-sky-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-sky-700"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Open long answers
           </a>
         </div>
       </section>

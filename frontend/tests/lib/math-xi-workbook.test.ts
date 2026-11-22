@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import {
   MATH_XI_CHAPTERS,
   MATH_XI_HARD_PER_SHEET,
+  MATH_XI_LONG_PER_SHEET,
   MATH_XI_QUESTIONS_PER_SHEET,
   MATH_XI_WORKBOOK_TOTALS,
   mathXiChapterPath,
@@ -12,6 +13,9 @@ import {
   mathXiHardChapters,
   mathXiHardPath,
   mathXiHardUrl,
+  mathXiLongChapters,
+  mathXiLongPath,
+  mathXiLongUrl,
 } from "@/lib/streams/mathematics-xi-chapters";
 import { MATHEMATICS_XI_UNITS } from "@/lib/streams/mathematics-xi-solutions";
 
@@ -220,6 +224,47 @@ describe("Mathematics XI — hard sets with hint ladders", () => {
       expect(index).toContain(`${chapter.hardCount} hard Q`);
     }
     expect(index).toContain("3 hints each");
+  });
+
+  it("gives every chapter one full-length answer on its own A4 page", () => {
+    let answers = 0;
+    for (const chapter of MATH_XI_CHAPTERS) {
+      expect(chapter.longCount, `${chapter.slug}: long answers`).toBe(1);
+      expect(chapter.longSheetCount).toBe(Math.ceil(chapter.longCount / MATH_XI_LONG_PER_SHEET));
+
+      const html = read(mathXiLongPath(chapter));
+      const sheets = html.match(/<section class="sheet"/g) ?? [];
+      const questions = html.match(/<p class="q">/g) ?? [];
+      const hints = html.match(/<li><b>H\d+\.<\/b>/g) ?? [];
+
+      expect(sheets.length, `${chapter.slug}: one page per answer`).toBe(chapter.longSheetCount);
+      expect(questions.length).toBe(chapter.longCount);
+      expect(hints.length, `${chapter.slug}: three hints`).toBe(chapter.longCount * 3);
+      expect(html).toContain("Given:");
+      expect(html).toContain("Required:");
+      expect(html).toContain("<p class=\"ans\">");
+      expect(html).toContain("Marking split");
+      expect(html).toContain("Common pitfall");
+      expect(html).toContain("/resources/mathematics-xi/a4/long.css");
+      expect(html).not.toContain("<style");
+
+      answers += chapter.longCount;
+    }
+    expect(answers).toBe(MATH_XI_WORKBOOK_TOTALS.longQuestions);
+    expect(mathXiLongChapters().length).toBe(MATH_XI_CHAPTERS.length);
+  });
+
+  it("links the long answer from its chapter sheet and from the contents pages", () => {
+    const index = read("public/resources/mathematics-xi/chapters/long/index.html");
+    for (const chapter of mathXiLongChapters()) {
+      expect(existsSync(resolve(ROOT, mathXiLongPath(chapter)))).toBe(true);
+      expect(mathXiLongUrl(chapter)).toBe(
+        `/resources/mathematics-xi/chapters/long/${chapter.slug}.html`,
+      );
+      expect(read(mathXiChapterPath(chapter))).toContain(mathXiLongUrl(chapter));
+      expect(index).toContain(mathXiLongUrl(chapter));
+    }
+    expect(index).toContain("1 long answer");
   });
 });
 
