@@ -1,13 +1,101 @@
 {
   "title": "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)",
   "notes": [
-    "**Coefficients:** a₁ = −1, b₁ = −2, a₂ = 4, b₂ = 2 (constant terms already made positive)",
-    "**Step:** a₁a₂ + b₁b₂ = (−1)(4) + (−2)(2) = −4 − 4 = **−8**",
-    "Since the result is negative, the (+) sign bisector is acute and the (−) sign bisector is obtuse",
-    "**Acute Bisector (+ sign):** 6x + 6y − 1 = 0",
-    "**Obtuse Bisector (− sign):** 2x − 2y + 19 = 0"
+    "## 1. Topic Introduction — Angle Bisector Worked Example II (a Fresh Pair, Same Pipeline)\n\nThis canonical runs the **complete bisector pipeline on a second concrete pair** — the lines 2x + y − 7 = 0 and 2x − y + 1 = 0 — chosen so the bisectors come out axis-parallel. It is the companion worked example to the a₁a₂ + b₁b₂ rule canonical, exercising the same licences on different arithmetic.",
+    "## 2. Theorem Mirror (as used in the example)\n\n- **Standardise:** L₁: −2x − y + 7 = 0 (a₁ = −2, b₁ = −1, c₁ = 7 > 0); L₂: 2x − y + 1 = 0 (a₂ = 2, b₂ = −1, c₂ = 1 > 0).\n- **Normalisers:** both √5 — equal, so no lcm factor arises.\n- **Rule:** a₁a₂ + b₁b₂ = (−2)(2) + (−1)(−1) = −4 + 1 = **−3 < 0** ⟹ the (+) bisector is **acute**.\n- **Bisectors:** (+) −2x − y + 7 = 2x − y + 1 ⟹ **2x − 3 = 0** (acute, vertical); (−) −2x − y + 7 = −2x + y − 1 ⟹ **y = 4** (obtuse, horizontal). Perpendicular ✓ (vertical × horizontal).",
+    "## 3. Deep Conceptual — Equal Normalisers and the Shape of the Answer\n\n- With √(a₁²+b₁²) = √(a₂²+b₂²) = √5, the bisector skeleton collapses to **plain equation comparison**: N₁ = ±N₂ with no scaling factor. The example shows the pipeline's simplest possible arithmetic — and the answer's shape (x = constant, y = constant) shows what the bisectors of a symmetric-ish pair look like.\n- **Why axis-parallel bisectors arise:** the two lines have slopes −2 and +2 — mirror images about the vertical. Mirror-symmetric pairs have their angle bisectors along the symmetry axis (vertical here) and its perpendicular (horizontal). The answer's shape was visible in the slopes before any computation.\n- **The −3 verdict read geometrically:** the normals (−2, −1) and (2, −1) have a small negative dot product — the lines are *nearly perpendicular* (angle 53°), so the acute wedge is barely narrower than a right angle, and its bisector is the near-vertical one.",
+    "## 4. Deep Conceptual — Intersection as the Bisectors' Anchor\n\n- Both bisectors must pass through the lines' intersection: solving 2x + y = 7 and 2x − y = −1 gives (3/2, 4) — and indeed x = 3/2 and y = 4 cross exactly there. **The intersection test is the third verification channel**: two lines that miss the intersection cannot be bisectors, whatever else they are.\n- **The three-channel audit:** perpendicularity (slopes), equidistance (definition), intersection (anchor) — a computed bisector pair should pass all three; each catches a different class of error.",
+    "## 5. Worked Example Types\n\n- **Type A — equal-normaliser pipeline:** skeleton without lcm, direct comparison.\n- **Type B — slope symmetry reading:** predict the bisectors' shape from the slopes.\n- **Type C — three-channel audit:** perpendicularity + equidistance + intersection.\n- **Type D — classification:** the −3 verdict and its near-perpendicular geometry.",
+    "## 6. Common Confusions\n\n**\"Vertical bisectors are degenerate\":** x = 3/2 is a perfectly good bisector — slope-based tools need the axis-angle fallback, not avoidance. **\"Equal normalisers are luck\":** they are structure — |(a, b)| equal means the lines make equal-magnitude normal vectors, often from slope symmetry."
   ],
   "unitSlug": "analytic-geometry",
   "topicSlug": "02-angle-bisector-worked-example",
-  "topicTitle": "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)"
+  "topicTitle": "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Angle Bisector Worked Example II (a Fresh Pair, Same Pipeline)\n\nThis canonical runs the **complete bisector pipeline on a second concrete pair** — the lines 2x + y − 7 = 0 and 2x − y + 1 = 0 — chosen so the bisectors come out axis-parallel. It is the companion worked example to the a₁a₂ + b₁b₂ rule canonical, exercising the same licences on different arithmetic.",
+      "## 2. Theorem Mirror (as used in the example)\n\n- **Standardise:** L₁: −2x − y + 7 = 0 (a₁ = −2, b₁ = −1, c₁ = 7 > 0); L₂: 2x − y + 1 = 0 (a₂ = 2, b₂ = −1, c₂ = 1 > 0).\n- **Normalisers:** both √5 — equal, so no lcm factor arises.\n- **Rule:** a₁a₂ + b₁b₂ = (−2)(2) + (−1)(−1) = −4 + 1 = **−3 < 0** ⟹ the (+) bisector is **acute**.\n- **Bisectors:** (+) −2x − y + 7 = 2x − y + 1 ⟹ **2x − 3 = 0** (acute, vertical); (−) −2x − y + 7 = −2x + y − 1 ⟹ **y = 4** (obtuse, horizontal). Perpendicular ✓ (vertical × horizontal).",
+      "## 3. Deep Conceptual — Equal Normalisers and the Shape of the Answer\n\n- With √(a₁²+b₁²) = √(a₂²+b₂²) = √5, the bisector skeleton collapses to **plain equation comparison**: N₁ = ±N₂ with no scaling factor. The example shows the pipeline's simplest possible arithmetic — and the answer's shape (x = constant, y = constant) shows what the bisectors of a symmetric-ish pair look like.\n- **Why axis-parallel bisectors arise:** the two lines have slopes −2 and +2 — mirror images about the vertical. Mirror-symmetric pairs have their angle bisectors along the symmetry axis (vertical here) and its perpendicular (horizontal). The answer's shape was visible in the slopes before any computation.\n- **The −3 verdict read geometrically:** the normals (−2, −1) and (2, −1) have a small negative dot product — the lines are *nearly perpendicular* (angle 53°), so the acute wedge is barely narrower than a right angle, and its bisector is the near-vertical one.",
+      "## 4. Deep Conceptual — Intersection as the Bisectors' Anchor\n\n- Both bisectors must pass through the lines' intersection: solving 2x + y = 7 and 2x − y = −1 gives (3/2, 4) — and indeed x = 3/2 and y = 4 cross exactly there. **The intersection test is the third verification channel**: two lines that miss the intersection cannot be bisectors, whatever else they are.\n- **The three-channel audit:** perpendicularity (slopes), equidistance (definition), intersection (anchor) — a computed bisector pair should pass all three; each catches a different class of error.",
+      "## 5. Worked Example Types\n\n- **Type A — equal-normaliser pipeline:** skeleton without lcm, direct comparison.\n- **Type B — slope symmetry reading:** predict the bisectors' shape from the slopes.\n- **Type C — three-channel audit:** perpendicularity + equidistance + intersection.\n- **Type D — classification:** the −3 verdict and its near-perpendicular geometry.",
+      "## 6. Common Confusions\n\n**\"Vertical bisectors are degenerate\":** x = 3/2 is a perfectly good bisector — slope-based tools need the axis-angle fallback, not avoidance. **\"Equal normalisers are luck\":** they are structure — |(a, b)| equal means the lines make equal-magnitude normal vectors, often from slope symmetry."
+    ],
+    "keyPoints": [
+      "Pipeline on 2x+y-7=0 and 2x-y+1=0: standardise, equal normalisers sqrt5 (no lcm factor), rule a1a2+b1b2 = -3 < 0 => (+) acute. Bisectors: 2x-3 = 0 (acute, vertical) and y = 4 (obtuse, horizontal). Slope symmetry (-2 vs +2) predicts the axis-parallel shape. Three-channel audit: perpendicularity, equidistance, intersection (3/2, 4)."
+    ],
+    "importantConcepts": [
+      "Equal normalisers collapse the skeleton to plain equation comparison - the pipeline's simplest face."
+    ],
+    "examples": [
+      "***The predicted shape*** - slopes -2 and +2 are mirror images about the vertical, so the bisectors had to be vertical and horizontal - the answer's shape was readable before the algebra."
+    ],
+    "universalFacts": [
+      "Both bisectors pass through the lines' intersection - the anchor test catches mislabelled or miscomputed pairs."
+    ],
+    "importantStatements": [
+      "A near-perpendicular pair of lines has a small |dot product| - here -3, angle 53 degrees."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    ],
+    "examShortTricks": [
+      "Spot equal sqrt(a^2+b^2) before computing - it removes the scaling step entirely."
+    ],
+    "examNotes": [
+      "Verify the intersection anchor: both bisectors must pass through the lines' crossing point."
+    ],
+    "formulas": [
+      "- −2x − y + 7 = ±(2x − y + 1)\n- (+): 2x − 3 = 0 (acute); (−): y = 4 (obtuse)"
+    ],
+    "practice": [
+      "Derive both bisectors of 2x + y − 7 = 0 and 2x − y + 1 = 0.",
+      "Verify that (3/2, 4) lies on both bisectors and is the lines' intersection.",
+      "Predict the bisectors' shape from the slopes alone, then confirm."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Find the equations of the bisectors of the angles between 2x + y − 7 = 0 and 2x − y + 1 = 0, labelling the acute one.** — **Standardise:** L₁ ⟹ −2x − y + 7 = 0; L₂ already c = 1 > 0. **Normalisers:** √5 and √5 — equal ⟹ skeleton: (−2x−y+7)/√5 = ±(2x−y+1)/√5 ⟹ **−2x−y+7 = ±(2x−y+1)**. **(+):** −2x−y+7 = 2x−y+1 ⟹ −4x+6 = 0 ⟹ **2x−3 = 0**. **(−):** −2x−y+7 = −2x+y−1 ⟹ −2y+8 = 0 ⟹ **y = 4**. **Rule:** a₁a₂+b₁b₂ = −3 < 0 ⟹ (+) = 2x−3 = 0 is **acute**. **Checks:** vertical × horizontal ⟹ perpendicular ✓; intersection (3/2, 4) lies on both ✓. **Deep point:** the equal normalisers removed the lcm step, leaving pure equation comparison — the same pipeline as the √5/√20 example with the scaling difficulty removed; the method is invariant, only the arithmetic difficulty moves.",
+      "**NEB-style (6m): Verify by three independent channels that 2x − 3 = 0 and y = 4 are the bisectors of 2x + y − 7 = 0 and 2x − y + 1 = 0.** — **Channel 1 (perpendicularity):** vertical × horizontal ⟹ 90° ✓. **Channel 2 (equidistance):** take P(3/2, 0) on 2x−3=0: distance to L₁ = |2(3/2)+0−7|/√5 = 4/√5; to L₂ = |2(3/2)−0+1|/√5 = 4/√5 ✓ equal. Take Q(0, 4) on y=4: |0+4−7|/√5 = 3/√5; |0−4+1|/√5 = 3/√5 ✓ equal. **Channel 3 (anchor):** the lines meet at (3/2, 4) (solve 2x+y=7, 2x−y=−1) and both bisectors pass through it ✓. **Deep point:** three channels, three error classes — perpendicularity catches slope slips, equidistance catches normalisation slips, the anchor catches wrong-pair slips; a triple-passed answer is as strong as this unit's verifications get.",
+      "**NEB-style (5m): Predict the shape of the bisectors of 2x + y − 7 = 0 and 2x − y + 1 = 0 from the slopes alone, then confirm by computation.** — **Prediction:** slopes −2 and +2 are mirror images about the vertical direction ⟹ the pair is symmetric about a vertical line ⟹ one bisector is **vertical** (the symmetry axis) and the other **horizontal** (its perpendicular). **Confirmation:** the bisectors compute to 2x − 3 = 0 (vertical) and y = 4 (horizontal) ✓ — exactly the predicted shapes. **Position note:** symmetry predicts *direction*, not position — the constants 3/2 and 4 come from the lines' actual placement (their intersection (3/2, 4)), which slopes alone cannot supply. **Deep point:** structure reading (slope symmetry) narrows the answer's form before any algebra; the computation then only has to locate it — prediction plus confirmation is faster and safer than blind computation.",
+      "**NEB-style (6m): Find the angle between the lines 2x + y − 7 = 0 and 2x − y + 1 = 0, and verify that the acute bisector 2x − 3 = 0 splits it into two equal halves.** — **Angle between the lines:** slopes −2 and 2 ⟹ tan θ = |(2 − (−2))/(1 + (−2)(2))| = 4/|1 − 4| = **4/3** ⟹ θ ≈ 53.13° (the acute angle). **Half-angle target:** 26.57°, with tan(θ/2) = sin θ/(1 + cos θ); from the 3-4-5 shape of tan θ = 4/3: sin θ = 4/5, cos θ = 3/5 ⟹ tan(θ/2) = (4/5)/(8/5) = **1/2**. **Verification via axis angles:** L₂ (slope 2) sits at atan 2 ≈ 63.43° from the x-axis; the vertical bisector at 90° ⟹ angle between = **26.57°** ✓ — exactly the half-angle. **Deep point:** the 3-4-5 triangle hidden in tan θ = 4/3 supplies sin and cos without any calculator, and the half-angle formula converts the doubling check into one fraction — the same machinery as the tan θ verification canonical, exercised on a near-perpendicular pair."
+    ]
+  },
+  "keyPoints": [
+    "Pipeline on 2x+y-7=0 and 2x-y+1=0: standardise, equal normalisers sqrt5 (no lcm factor), rule a1a2+b1b2 = -3 < 0 => (+) acute. Bisectors: 2x-3 = 0 (acute, vertical) and y = 4 (obtuse, horizontal). Slope symmetry (-2 vs +2) predicts the axis-parallel shape. Three-channel audit: perpendicularity, equidistance, intersection (3/2, 4)."
+  ],
+  "importantConcepts": [
+    "Equal normalisers collapse the skeleton to plain equation comparison - the pipeline's simplest face."
+  ],
+  "examples": [
+    "***The predicted shape*** - slopes -2 and +2 are mirror images about the vertical, so the bisectors had to be vertical and horizontal - the answer's shape was readable before the algebra."
+  ],
+  "universalFacts": [
+    "Both bisectors pass through the lines' intersection - the anchor test catches mislabelled or miscomputed pairs."
+  ],
+  "importantStatements": [
+    "A near-perpendicular pair of lines has a small |dot product| - here -3, angle 53 degrees."
+  ],
+  "importantNotes": [
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+  ],
+  "examShortTricks": [
+    "Spot equal sqrt(a^2+b^2) before computing - it removes the scaling step entirely."
+  ],
+  "examNotes": [
+    "Verify the intersection anchor: both bisectors must pass through the lines' crossing point."
+  ],
+  "formulas": [
+    "- −2x − y + 7 = ±(2x − y + 1)\n- (+): 2x − 3 = 0 (acute); (−): y = 4 (obtuse)"
+  ],
+  "practice": [
+    "Derive both bisectors of 2x + y − 7 = 0 and 2x − y + 1 = 0.",
+    "Verify that (3/2, 4) lies on both bisectors and is the lines' intersection.",
+    "Predict the bisectors' shape from the slopes alone, then confirm."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Find the equations of the bisectors of the angles between 2x + y − 7 = 0 and 2x − y + 1 = 0, labelling the acute one.** — **Standardise:** L₁ ⟹ −2x − y + 7 = 0; L₂ already c = 1 > 0. **Normalisers:** √5 and √5 — equal ⟹ skeleton: (−2x−y+7)/√5 = ±(2x−y+1)/√5 ⟹ **−2x−y+7 = ±(2x−y+1)**. **(+):** −2x−y+7 = 2x−y+1 ⟹ −4x+6 = 0 ⟹ **2x−3 = 0**. **(−):** −2x−y+7 = −2x+y−1 ⟹ −2y+8 = 0 ⟹ **y = 4**. **Rule:** a₁a₂+b₁b₂ = −3 < 0 ⟹ (+) = 2x−3 = 0 is **acute**. **Checks:** vertical × horizontal ⟹ perpendicular ✓; intersection (3/2, 4) lies on both ✓. **Deep point:** the equal normalisers removed the lcm step, leaving pure equation comparison — the same pipeline as the √5/√20 example with the scaling difficulty removed; the method is invariant, only the arithmetic difficulty moves.",
+    "**NEB-style (6m): Verify by three independent channels that 2x − 3 = 0 and y = 4 are the bisectors of 2x + y − 7 = 0 and 2x − y + 1 = 0.** — **Channel 1 (perpendicularity):** vertical × horizontal ⟹ 90° ✓. **Channel 2 (equidistance):** take P(3/2, 0) on 2x−3=0: distance to L₁ = |2(3/2)+0−7|/√5 = 4/√5; to L₂ = |2(3/2)−0+1|/√5 = 4/√5 ✓ equal. Take Q(0, 4) on y=4: |0+4−7|/√5 = 3/√5; |0−4+1|/√5 = 3/√5 ✓ equal. **Channel 3 (anchor):** the lines meet at (3/2, 4) (solve 2x+y=7, 2x−y=−1) and both bisectors pass through it ✓. **Deep point:** three channels, three error classes — perpendicularity catches slope slips, equidistance catches normalisation slips, the anchor catches wrong-pair slips; a triple-passed answer is as strong as this unit's verifications get.",
+    "**NEB-style (5m): Predict the shape of the bisectors of 2x + y − 7 = 0 and 2x − y + 1 = 0 from the slopes alone, then confirm by computation.** — **Prediction:** slopes −2 and +2 are mirror images about the vertical direction ⟹ the pair is symmetric about a vertical line ⟹ one bisector is **vertical** (the symmetry axis) and the other **horizontal** (its perpendicular). **Confirmation:** the bisectors compute to 2x − 3 = 0 (vertical) and y = 4 (horizontal) ✓ — exactly the predicted shapes. **Position note:** symmetry predicts *direction*, not position — the constants 3/2 and 4 come from the lines' actual placement (their intersection (3/2, 4)), which slopes alone cannot supply. **Deep point:** structure reading (slope symmetry) narrows the answer's form before any algebra; the computation then only has to locate it — prediction plus confirmation is faster and safer than blind computation.",
+    "**NEB-style (6m): Find the angle between the lines 2x + y − 7 = 0 and 2x − y + 1 = 0, and verify that the acute bisector 2x − 3 = 0 splits it into two equal halves.** — **Angle between the lines:** slopes −2 and 2 ⟹ tan θ = |(2 − (−2))/(1 + (−2)(2))| = 4/|1 − 4| = **4/3** ⟹ θ ≈ 53.13° (the acute angle). **Half-angle target:** 26.57°, with tan(θ/2) = sin θ/(1 + cos θ); from the 3-4-5 shape of tan θ = 4/3: sin θ = 4/5, cos θ = 3/5 ⟹ tan(θ/2) = (4/5)/(8/5) = **1/2**. **Verification via axis angles:** L₂ (slope 2) sits at atan 2 ≈ 63.43° from the x-axis; the vertical bisector at 90° ⟹ angle between = **26.57°** ✓ — exactly the half-angle. **Deep point:** the 3-4-5 triangle hidden in tan θ = 4/3 supplies sin and cos without any calculator, and the half-angle formula converts the doubling check into one fraction — the same machinery as the tan θ verification canonical, exercised on a near-perpendicular pair."
+  ],
+  "summary": "The second worked example runs the identical pipeline on lines whose equal normalisers (√5 and √5) remove the scaling step: standardise, compare equations up to ±, apply the −3 verdict, and read off 2x − 3 = 0 (acute) and y = 4 (obtuse). The slopes' mirror symmetry predicted the axis-parallel shape in advance, and the three-channel audit — perpendicularity, equidistance, intersection anchor — certified the pair completely. The method is invariant; only the arithmetic's difficulty moves between examples."
 }

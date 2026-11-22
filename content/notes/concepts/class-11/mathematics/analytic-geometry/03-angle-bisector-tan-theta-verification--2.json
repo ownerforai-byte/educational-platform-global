@@ -1,13 +1,101 @@
 {
   "title": "Angle Bisector — Verifying with the tan θ Method",
   "notes": [
-    "As a cross-check, find the angle θ between one of the original lines and one candidate bisector using: tan θ = |(m₁ − m_b)/(1 + m₁·m_b)|, where m₁ is the original line's slope and m_b is the bisector's slope",
-    "**If tan θ < 1** (θ < 45°): since θ is half the angle between the two original lines, the total angle is less than 90°, so this bisector is the **acute** angle bisector",
-    "**If tan θ > 1** (θ > 45°): this bisector is the **obtuse** angle bisector",
-    "**Worked check:** slope of Bisector 1 (6x + 6y − 1 = 0) is m_b = −6/6 = −1; with the original line's slope m₁ = −1/2: tan θ = |(−1/2 − (−1))/(1 + (−1/2)(−1))| = |(1/2)/(3/2)| = 1/3",
-    "Since tan θ = 1/3 < 1, this confirms 6x + 6y − 1 = 0 is definitively the **acute angle bisector** — matching the a₁a₂ + b₁b₂ method"
+    "## 1. Topic Introduction — The tan θ Verification II (Axis-Parallel Bisectors)\n\nThis canonical runs the **tangent verification on the second worked pair** — the lines 2x + y − 7 = 0 and 2x − y + 1 = 0 with bisectors 2x − 3 = 0 (acute) and y = 4 (obtuse). The vertical bisector exercises the axis-angle fallback where slopes fail, completing the verification toolkit.",
+    "## 2. Theorem Mirror (as used here)\n\n- **Angle between two lines:** tan θ = |(m₂ − m₁)/(1 + m₁m₂)| — valid for finite slopes.\n- **Axis-angle fallback:** a line's inclination α = atan(m) (or 90° for vertical); the angle between two lines is the difference of inclinations, taken acutely.\n- **The threshold test:** tan θ < 1 ⟹ the candidate bisects the acute angle; tan θ > 1 ⟹ the obtuse one.\n- **The doubling check:** the lines' full angle, computed independently, must equal twice the verified half-angle.",
+    "## 3. Deep Conceptual — Where Slopes Fail, Angles Take Over\n\n- The vertical bisector 2x − 3 = 0 has **no slope** — the tangent formula cannot even be written for it. The axis-angle reading (a line's direction is its inclination α; the angle between lines is |α₂ − α₁| taken acutely) is the universal fallback, and it handles vertical lines as naturally as any other.\n- **The verification's full anatomy on this pair:** L₂'s inclination is atan 2 ≈ 63.43°, the vertical bisector's is 90° ⟹ half-angle 26.57° < 45° ⟹ acute ✓; the horizontal bisector against L₁ (inclination atan(−2), i.e. −63.43° ≡ 116.57°) gives 26.57°... measured to the horizontal: |0 − (−63.43°)| = 63.43° > 45° ⟹ obtuse ✓. Both labels certified, one by slope tangent, one by axis angles — the toolkit's two modes in one example.\n- **The doubling closure:** tan(angle between lines) = 4/3 ⟹ θ ≈ 53.13°; twice the verified half-angle 26.57° gives 53.13° ✓ — the half-angle story and the full-angle fact close the loop.",
+    "## 4. Deep Conceptual — Threshold Comparisons as Fraction Arithmetic\n\n- Every verdict in this canonical is a **comparison with 1**, never an angle computation: tan = 2 > 1 (obtuse), tan = 1/2 < 1 (acute). Keeping the arithmetic in fractions preserves exactness and speed; converting to decimals or degrees too early invites rounding doubt.\n- **The reciprocal signature:** the acute and obtuse half-angle tangents (1/2 and 2 here) are reciprocals because the half-angles are complementary — a quick internal consistency check that costs one glance.",
+    "## 5. Worked Example Types\n\n- **Type A — horizontal bisector audit:** plain slope tangent, threshold comparison.\n- **Type B — vertical bisector audit:** axis-angle fallback, same threshold.\n- **Type C — doubling closure:** full angle = 2 × half-angle, all in fractions.\n- **Type D — reciprocal signature:** the two half-angle tangents multiply to 1.",
+    "## 6. Common Confusions\n\n**\"Vertical lines break the method\":** they break the slope formula, not the method — axis angles are the fallback. **\"63° > 45° needs a calculator\":** tan 63.43° = 2 exactly here — the fractions carry the comparison."
   ],
   "unitSlug": "analytic-geometry",
   "topicSlug": "03-angle-bisector-tan-theta-verification",
-  "topicTitle": "Angle Bisector — Verifying with the tan θ Method"
+  "topicTitle": "Angle Bisector — Verifying with the tan θ Method",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The tan θ Verification II (Axis-Parallel Bisectors)\n\nThis canonical runs the **tangent verification on the second worked pair** — the lines 2x + y − 7 = 0 and 2x − y + 1 = 0 with bisectors 2x − 3 = 0 (acute) and y = 4 (obtuse). The vertical bisector exercises the axis-angle fallback where slopes fail, completing the verification toolkit.",
+      "## 2. Theorem Mirror (as used here)\n\n- **Angle between two lines:** tan θ = |(m₂ − m₁)/(1 + m₁m₂)| — valid for finite slopes.\n- **Axis-angle fallback:** a line's inclination α = atan(m) (or 90° for vertical); the angle between two lines is the difference of inclinations, taken acutely.\n- **The threshold test:** tan θ < 1 ⟹ the candidate bisects the acute angle; tan θ > 1 ⟹ the obtuse one.\n- **The doubling check:** the lines' full angle, computed independently, must equal twice the verified half-angle.",
+      "## 3. Deep Conceptual — Where Slopes Fail, Angles Take Over\n\n- The vertical bisector 2x − 3 = 0 has **no slope** — the tangent formula cannot even be written for it. The axis-angle reading (a line's direction is its inclination α; the angle between lines is |α₂ − α₁| taken acutely) is the universal fallback, and it handles vertical lines as naturally as any other.\n- **The verification's full anatomy on this pair:** L₂'s inclination is atan 2 ≈ 63.43°, the vertical bisector's is 90° ⟹ half-angle 26.57° < 45° ⟹ acute ✓; the horizontal bisector against L₁ (inclination atan(−2), i.e. −63.43° ≡ 116.57°) gives 26.57°... measured to the horizontal: |0 − (−63.43°)| = 63.43° > 45° ⟹ obtuse ✓. Both labels certified, one by slope tangent, one by axis angles — the toolkit's two modes in one example.\n- **The doubling closure:** tan(angle between lines) = 4/3 ⟹ θ ≈ 53.13°; twice the verified half-angle 26.57° gives 53.13° ✓ — the half-angle story and the full-angle fact close the loop.",
+      "## 4. Deep Conceptual — Threshold Comparisons as Fraction Arithmetic\n\n- Every verdict in this canonical is a **comparison with 1**, never an angle computation: tan = 2 > 1 (obtuse), tan = 1/2 < 1 (acute). Keeping the arithmetic in fractions preserves exactness and speed; converting to decimals or degrees too early invites rounding doubt.\n- **The reciprocal signature:** the acute and obtuse half-angle tangents (1/2 and 2 here) are reciprocals because the half-angles are complementary — a quick internal consistency check that costs one glance.",
+      "## 5. Worked Example Types\n\n- **Type A — horizontal bisector audit:** plain slope tangent, threshold comparison.\n- **Type B — vertical bisector audit:** axis-angle fallback, same threshold.\n- **Type C — doubling closure:** full angle = 2 × half-angle, all in fractions.\n- **Type D — reciprocal signature:** the two half-angle tangents multiply to 1.",
+      "## 6. Common Confusions\n\n**\"Vertical lines break the method\":** they break the slope formula, not the method — axis angles are the fallback. **\"63° > 45° needs a calculator\":** tan 63.43° = 2 exactly here — the fractions carry the comparison."
+    ],
+    "keyPoints": [
+      "tan theta = |(m2-m1)/(1+m1 m2)| for finite slopes; vertical lines use axis angles (inclination difference). Threshold: tan < 1 acute, > 1 obtuse - always a fraction comparison. Here: horizontal bisector vs L1 gives tan = 2 > 1 (obtuse); vertical bisector vs L2 gives 26.57 degrees < 45 (acute). Doubling closure: full angle tan = 4/3, twice the half-angle matches. The two half-angle tangents (2 and 1/2) are reciprocals - complementary half-angles."
+    ],
+    "importantConcepts": [
+      "The axis-angle reading is the universal fallback: every line has an inclination, vertical or not."
+    ],
+    "examples": [
+      "***The fraction verdict*** - tan = 2 > 1 certifies obtuse without any degree conversion - the comparison with 1 is the whole test."
+    ],
+    "universalFacts": [
+      "The acute and obtuse half-angle tangents are reciprocals - complementary angles in the arithmetic."
+    ],
+    "importantStatements": [
+      "Slopes fail on verticals; inclinations never do."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    ],
+    "examShortTricks": [
+      "Vertical bisector? Compare inclinations with the x-axis - the angle difference is the answer."
+    ],
+    "examNotes": [
+      "Close with the doubling check: full angle = 2 x half-angle, computed independently."
+    ],
+    "formulas": [
+      "- tan θ = |(m₂ − m₁)/(1 + m₁m₂)|; vertical lines: use inclinations α\n- tan θ(full) = 4/3 ⟹ θ ≈ 53.13° = 2 × 26.57°"
+    ],
+    "practice": [
+      "Verify via tangent that y = 4 is the obtuse bisector of 2x + y − 7 = 0 and 2x − y + 1 = 0.",
+      "Verify via axis angles that 2x − 3 = 0 is the acute bisector of the same pair.",
+      "Compute the full angle between the two lines and check it equals twice the half-angle."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Using the tangent formula, verify that y = 4 is the obtuse angle bisector of the lines 2x + y − 7 = 0 and 2x − y + 1 = 0.** — **Slopes:** bisector y = 4 ⟹ m_b = 0; L₁: y = 7 − 2x ⟹ m₁ = −2. **Tangent:** tan θ = |(0 − (−2))/(1 + (0)(−2))| = **2**. **Verdict:** tan θ = 2 > 1 ⟹ θ ≈ 63.43° > 45° ⟹ y = 4 splits the **obtuse** angle ✓. **Consistency:** the lines' obtuse angle is 180° − 53.13° = 126.87°, half is 63.43° ✓ — the half-angle lands exactly on the tangent's prediction. **Deep point:** the verdict never left fractions — tan = 2 was compared with 1 directly; the degree values in the narration are commentary, not computation.",
+      "**NEB-style (6m): Using axis angles (the vertical-line fallback), verify that 2x − 3 = 0 is the acute angle bisector of 2x + y − 7 = 0 and 2x − y + 1 = 0.** — **Inclinations:** L₂ (2x − y + 1 = 0 ⟹ y = 2x + 1) has α₂ = atan 2 ≈ 63.43°; the vertical bisector has α_b = 90°. **Angle between:** |90° − 63.43°| = **26.57°**. **Verdict:** 26.57° < 45° ⟹ the vertical bisector splits the **acute** angle ✓ — consistent with the a₁a₂ + b₁b₂ = −3 < 0 rule's verdict. **Fraction form:** tan(26.57°) = 1/2 exactly (from the 3-4-5 reading of the full angle), and 1/2 < 1 is the same verdict in tangent language. **Deep point:** the slope formula cannot even be written for the vertical bisector (no slope exists), but inclinations cover every line — the fallback is not an exception handler but the more general tool, with slopes as the special finite case.",
+      "**NEB-style (5m): Compute the full angle between 2x + y − 7 = 0 and 2x − y + 1 = 0, and verify the doubling closure against the verified half-angle.** — **Full angle:** tan θ = |(2 − (−2))/(1 + (−2)(2))| = 4/|−3| = **4/3** ⟹ θ ≈ 53.13° (acute angle between the lines). **Half-angle from verification:** the acute bisector made 26.57° with L₂ ⟹ doubled: 2 × 26.57° = 53.13° ✓ — the closure holds. **Exact chain:** tan(θ/2) = sin θ/(1 + cos θ) with the 3-4-5 reading (sin = 4/5, cos = 3/5) gives tan(θ/2) = (4/5)/(8/5) = 1/2, and atan(1/2) ≈ 26.57° ✓. **Deep point:** the doubling closure is the verification's final seal — half-angle (from the bisector), full angle (from the lines), and the factor 2 connecting them are three independent computations that must agree; when they do, the whole bisector story is internally consistent.",
+      "**NEB-style (6m): The half-angle tangents for this pair are 1/2 (acute side) and 2 (obtuse side). Explain their reciprocal relationship and verify it via the complementary-angle identity.** — **The relationship:** the acute half-angle (26.57°) and the obtuse half-angle (63.43°) are complementary (sum 90°) because the two bisectors are perpendicular — each bisector's half-angle lives on opposite sides of the right angle. **Identity:** tan(90° − φ) = cot φ = 1/tan φ ⟹ tan(63.43°) = 1/tan(26.57°) = 1/(1/2) = **2** ✓. **Geometric reading:** the two half-angles fill the right angle between the bisectors — their complementarity is the perpendicularity of the bisector pair, expressed in tangent arithmetic. **Deep point:** reciprocal half-angle tangents are a one-glance consistency check for any bisector pair: compute both, multiply, expect 1; a product ≠ 1 signals that the two \"half-angles\" do not belong to the same bisector system."
+    ]
+  },
+  "keyPoints": [
+    "tan theta = |(m2-m1)/(1+m1 m2)| for finite slopes; vertical lines use axis angles (inclination difference). Threshold: tan < 1 acute, > 1 obtuse - always a fraction comparison. Here: horizontal bisector vs L1 gives tan = 2 > 1 (obtuse); vertical bisector vs L2 gives 26.57 degrees < 45 (acute). Doubling closure: full angle tan = 4/3, twice the half-angle matches. The two half-angle tangents (2 and 1/2) are reciprocals - complementary half-angles."
+  ],
+  "importantConcepts": [
+    "The axis-angle reading is the universal fallback: every line has an inclination, vertical or not."
+  ],
+  "examples": [
+    "***The fraction verdict*** - tan = 2 > 1 certifies obtuse without any degree conversion - the comparison with 1 is the whole test."
+  ],
+  "universalFacts": [
+    "The acute and obtuse half-angle tangents are reciprocals - complementary angles in the arithmetic."
+  ],
+  "importantStatements": [
+    "Slopes fail on verticals; inclinations never do."
+  ],
+  "importantNotes": [
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+  ],
+  "examShortTricks": [
+    "Vertical bisector? Compare inclinations with the x-axis - the angle difference is the answer."
+  ],
+  "examNotes": [
+    "Close with the doubling check: full angle = 2 x half-angle, computed independently."
+  ],
+  "formulas": [
+    "- tan θ = |(m₂ − m₁)/(1 + m₁m₂)|; vertical lines: use inclinations α\n- tan θ(full) = 4/3 ⟹ θ ≈ 53.13° = 2 × 26.57°"
+  ],
+  "practice": [
+    "Verify via tangent that y = 4 is the obtuse bisector of 2x + y − 7 = 0 and 2x − y + 1 = 0.",
+    "Verify via axis angles that 2x − 3 = 0 is the acute bisector of the same pair.",
+    "Compute the full angle between the two lines and check it equals twice the half-angle."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Using the tangent formula, verify that y = 4 is the obtuse angle bisector of the lines 2x + y − 7 = 0 and 2x − y + 1 = 0.** — **Slopes:** bisector y = 4 ⟹ m_b = 0; L₁: y = 7 − 2x ⟹ m₁ = −2. **Tangent:** tan θ = |(0 − (−2))/(1 + (0)(−2))| = **2**. **Verdict:** tan θ = 2 > 1 ⟹ θ ≈ 63.43° > 45° ⟹ y = 4 splits the **obtuse** angle ✓. **Consistency:** the lines' obtuse angle is 180° − 53.13° = 126.87°, half is 63.43° ✓ — the half-angle lands exactly on the tangent's prediction. **Deep point:** the verdict never left fractions — tan = 2 was compared with 1 directly; the degree values in the narration are commentary, not computation.",
+    "**NEB-style (6m): Using axis angles (the vertical-line fallback), verify that 2x − 3 = 0 is the acute angle bisector of 2x + y − 7 = 0 and 2x − y + 1 = 0.** — **Inclinations:** L₂ (2x − y + 1 = 0 ⟹ y = 2x + 1) has α₂ = atan 2 ≈ 63.43°; the vertical bisector has α_b = 90°. **Angle between:** |90° − 63.43°| = **26.57°**. **Verdict:** 26.57° < 45° ⟹ the vertical bisector splits the **acute** angle ✓ — consistent with the a₁a₂ + b₁b₂ = −3 < 0 rule's verdict. **Fraction form:** tan(26.57°) = 1/2 exactly (from the 3-4-5 reading of the full angle), and 1/2 < 1 is the same verdict in tangent language. **Deep point:** the slope formula cannot even be written for the vertical bisector (no slope exists), but inclinations cover every line — the fallback is not an exception handler but the more general tool, with slopes as the special finite case.",
+    "**NEB-style (5m): Compute the full angle between 2x + y − 7 = 0 and 2x − y + 1 = 0, and verify the doubling closure against the verified half-angle.** — **Full angle:** tan θ = |(2 − (−2))/(1 + (−2)(2))| = 4/|−3| = **4/3** ⟹ θ ≈ 53.13° (acute angle between the lines). **Half-angle from verification:** the acute bisector made 26.57° with L₂ ⟹ doubled: 2 × 26.57° = 53.13° ✓ — the closure holds. **Exact chain:** tan(θ/2) = sin θ/(1 + cos θ) with the 3-4-5 reading (sin = 4/5, cos = 3/5) gives tan(θ/2) = (4/5)/(8/5) = 1/2, and atan(1/2) ≈ 26.57° ✓. **Deep point:** the doubling closure is the verification's final seal — half-angle (from the bisector), full angle (from the lines), and the factor 2 connecting them are three independent computations that must agree; when they do, the whole bisector story is internally consistent.",
+    "**NEB-style (6m): The half-angle tangents for this pair are 1/2 (acute side) and 2 (obtuse side). Explain their reciprocal relationship and verify it via the complementary-angle identity.** — **The relationship:** the acute half-angle (26.57°) and the obtuse half-angle (63.43°) are complementary (sum 90°) because the two bisectors are perpendicular — each bisector's half-angle lives on opposite sides of the right angle. **Identity:** tan(90° − φ) = cot φ = 1/tan φ ⟹ tan(63.43°) = 1/tan(26.57°) = 1/(1/2) = **2** ✓. **Geometric reading:** the two half-angles fill the right angle between the bisectors — their complementarity is the perpendicularity of the bisector pair, expressed in tangent arithmetic. **Deep point:** reciprocal half-angle tangents are a one-glance consistency check for any bisector pair: compute both, multiply, expect 1; a product ≠ 1 signals that the two \"half-angles\" do not belong to the same bisector system."
+  ],
+  "summary": "The second verification canonical completes the toolkit: the horizontal bisector's label falls to the plain slope tangent (tan = 2 > 1, obtuse), the vertical bisector's to the axis-angle fallback (26.57° < 45°, acute), and the doubling closure ties both to the lines' full angle tan = 4/3. Every verdict is a fraction comparison with 1, the reciprocal half-angle tangents encode the bisectors' perpendicularity, and inclinations succeed wherever slopes fail. Algebra labels the bisectors; geometry — in fractions — certifies the labels."
 }

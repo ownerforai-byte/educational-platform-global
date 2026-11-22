@@ -5,20 +5,31 @@
   "topicTitle": "Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
   "relevance": 71,
   "notes": [
-    "As a cross-check, find the angle θ between one of the original lines and one candidate bisector using: tan θ = |(m₁ − m_b)/(1 + m₁·m_b)|, where m₁ is the original line's slope and m_b is the bisector's slope",
-    "**If tan θ < 1** (θ < 45°): since θ is half the angle between the two original lines, the total angle is less than 90°, so this bisector is the **acute** angle bisector",
-    "**If tan θ > 1** (θ > 45°): this bisector is the **obtuse** angle bisector",
-    "**Worked check:** slope of Bisector 1 (6x + 6y − 1 = 0) is m_b = −6/6 = −1; with the original line's slope m₁ = −1/2: tan θ = |(−1/2 − (−1))/(1 + (−1/2)(−1))| = |(1/2)/(3/2)| = 1/3",
-    "Since tan θ = 1/3 < 1, this confirms 6x + 6y − 1 = 0 is definitively the **acute angle bisector** — matching the a₁a₂ + b₁b₂ method"
+    "## 1. Topic Introduction — The tan θ Verification of a Bisector\n\nThis canonical carries the **cross-check that certifies a bisector's label**: measure the angle θ between one original line and the claimed bisector; θ < 45° certifies the acute bisector, θ > 45° the obtuse one. It is the geometric audit that closes the algebraic pipeline.",
+    "## 2. Theorem Mirror\n\n- **Angle between two lines:** tan θ = |(m₂ − m₁)/(1 + m₁m₂)| for slopes m₁, m₂ (1 + m₁m₂ ≠ 0).\n- **The bisection fact:** each bisector makes equal angles with the two original lines; the acute bisector's half-angle is θ/2 < 45°, the obtuse bisector's is > 45° (when the lines' angle ≠ 90°).\n- **The test:** compute tan θ between an original line and the candidate bisector; **tan θ < 1 ⟹ acute bisector; tan θ > 1 ⟹ obtuse bisector.**\n- **Perpendicularity audit:** the two claimed bisectors must have slopes multiplying to −1.",
+    "## 3. Deep Conceptual — The Verification Reads the Angle's Own Geometry\n\n- The acute bisector splits the *small* angle: any ray inside the acute wedge makes an angle < 45° with each arm (when the wedge is narrower than 90°). The test exploits exactly this: measure one arm-to-bisector angle and compare with 45° — the threshold is the right angle, the wedge's boundary case.\n- **Why tan θ = 1 is the threshold:** θ = 45° ⟺ tan θ = 1; the comparison with 1 avoids ever computing the angle itself. One tangent, one comparison, one verdict — the arithmetic stays in fractions.\n- **The 1 + m₁m₂ = 0 escape:** when the denominator vanishes the lines are perpendicular and the angle is 90° — the formula's failure mode is itself the answer, read as \"vertical relative angle\".",
+    "## 4. Deep Conceptual — Verification as an Independent Channel\n\n- The tan θ test verifies the *label* (acute vs obtuse) through geometry, while the a₁a₂ + b₁b₂ rule derived it through algebra — two independent channels agreeing is far stronger evidence than one computation repeated. The habit of dual-channel verification (algebra says, geometry confirms) is the transferable skill.\n- **Slope-based limits:** the test needs slopes, so vertical lines require the reciprocal-angle trick (use the angle with the x-axis directly) — a small reminder that every slope-based tool has a domain, and the angle-with-axis reading is the universal fallback.",
+    "## 5. Worked Example Types\n\n- **Type A — certify the acute label:** tan θ < 1 with full fraction working.\n- **Type B — certify the obtuse label:** tan θ > 1.\n- **Type C — both bisectors audited:** the pair tested against each other's arms.\n- **Type D — perpendicularity re-check:** slopes product −1 as the companion audit.",
+    "## 6. Common Confusions\n\n**\"tan θ < 1 means the lines are acute\":** it means the *bisector* splits an angle below 45° — the statement is about the half-angle. **\"The test replaces the rule\":** it verifies it — the two channels agree, which is the point."
   ],
   "animation3D": "analytic-geometry",
   "motionGraphics": "analytic-geometry",
-  "keyPoints": [],
-  "summary": "Angle Bisector — Verifying with the tan θ Method covers essential principles and applications.",
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "importantConcepts": [],
+  "keyPoints": [
+    "tan theta = |(m2-m1)/(1+m1 m2)|. The acute bisector's half-angle is below 45 degrees, so tan theta < 1 certifies acute, > 1 certifies obtuse - the threshold is the right angle. One tangent comparison replaces angle computation. Dual-channel verification: algebra (the rule) derives, geometry (tan theta) confirms. 1 + m1 m2 = 0 means perpendicular - the formula's failure mode is the answer."
+  ],
+  "summary": "The tan θ verification is the geometric audit of a bisector's label: measure the arm-to-bisector tangent, compare with 1 — the right angle's threshold — and the acute/obtuse verdict is certified without computing any angle. The acute and obtuse half-angles emerge as tangent reciprocals, their complementarity being the bisectors' perpendicularity visible inside the arithmetic. Algebra derives the bisectors, geometry confirms them — dual-channel agreement is the standard of proof this unit teaches.",
+  "importantStatements": [
+    "The 45-degree threshold is the right angle - the wedge's boundary case."
+  ],
+  "importantNotes": [
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+  ],
+  "examShortTricks": [
+    "Compare tan theta with 1, not with 45 degrees - the fraction comparison is the whole test."
+  ],
+  "importantConcepts": [
+    "The test reads the wedge's own geometry: a ray inside the acute wedge stays below 45 degrees from each arm."
+  ],
   "visualType": "angle-bisector-formula",
   "mindmap": {
     "centralConcept": "Pair of straight lines from a second-degree equation",
@@ -79,5 +90,76 @@
         ]
       }
     ]
-  }
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The tan θ Verification of a Bisector\n\nThis canonical carries the **cross-check that certifies a bisector's label**: measure the angle θ between one original line and the claimed bisector; θ < 45° certifies the acute bisector, θ > 45° the obtuse one. It is the geometric audit that closes the algebraic pipeline.",
+      "## 2. Theorem Mirror\n\n- **Angle between two lines:** tan θ = |(m₂ − m₁)/(1 + m₁m₂)| for slopes m₁, m₂ (1 + m₁m₂ ≠ 0).\n- **The bisection fact:** each bisector makes equal angles with the two original lines; the acute bisector's half-angle is θ/2 < 45°, the obtuse bisector's is > 45° (when the lines' angle ≠ 90°).\n- **The test:** compute tan θ between an original line and the candidate bisector; **tan θ < 1 ⟹ acute bisector; tan θ > 1 ⟹ obtuse bisector.**\n- **Perpendicularity audit:** the two claimed bisectors must have slopes multiplying to −1.",
+      "## 3. Deep Conceptual — The Verification Reads the Angle's Own Geometry\n\n- The acute bisector splits the *small* angle: any ray inside the acute wedge makes an angle < 45° with each arm (when the wedge is narrower than 90°). The test exploits exactly this: measure one arm-to-bisector angle and compare with 45° — the threshold is the right angle, the wedge's boundary case.\n- **Why tan θ = 1 is the threshold:** θ = 45° ⟺ tan θ = 1; the comparison with 1 avoids ever computing the angle itself. One tangent, one comparison, one verdict — the arithmetic stays in fractions.\n- **The 1 + m₁m₂ = 0 escape:** when the denominator vanishes the lines are perpendicular and the angle is 90° — the formula's failure mode is itself the answer, read as \"vertical relative angle\".",
+      "## 4. Deep Conceptual — Verification as an Independent Channel\n\n- The tan θ test verifies the *label* (acute vs obtuse) through geometry, while the a₁a₂ + b₁b₂ rule derived it through algebra — two independent channels agreeing is far stronger evidence than one computation repeated. The habit of dual-channel verification (algebra says, geometry confirms) is the transferable skill.\n- **Slope-based limits:** the test needs slopes, so vertical lines require the reciprocal-angle trick (use the angle with the x-axis directly) — a small reminder that every slope-based tool has a domain, and the angle-with-axis reading is the universal fallback.",
+      "## 5. Worked Example Types\n\n- **Type A — certify the acute label:** tan θ < 1 with full fraction working.\n- **Type B — certify the obtuse label:** tan θ > 1.\n- **Type C — both bisectors audited:** the pair tested against each other's arms.\n- **Type D — perpendicularity re-check:** slopes product −1 as the companion audit.",
+      "## 6. Common Confusions\n\n**\"tan θ < 1 means the lines are acute\":** it means the *bisector* splits an angle below 45° — the statement is about the half-angle. **\"The test replaces the rule\":** it verifies it — the two channels agree, which is the point."
+    ],
+    "keyPoints": [
+      "tan theta = |(m2-m1)/(1+m1 m2)|. The acute bisector's half-angle is below 45 degrees, so tan theta < 1 certifies acute, > 1 certifies obtuse - the threshold is the right angle. One tangent comparison replaces angle computation. Dual-channel verification: algebra (the rule) derives, geometry (tan theta) confirms. 1 + m1 m2 = 0 means perpendicular - the formula's failure mode is the answer."
+    ],
+    "importantConcepts": [
+      "The test reads the wedge's own geometry: a ray inside the acute wedge stays below 45 degrees from each arm."
+    ],
+    "examples": [
+      "***The threshold*** - tan theta = 1/3 < 1 certifies the acute label in one fraction; no angle needs to be computed."
+    ],
+    "universalFacts": [
+      "Algebra deriving and geometry confirming is dual-channel verification - agreement is stronger evidence than repetition."
+    ],
+    "importantStatements": [
+      "The 45-degree threshold is the right angle - the wedge's boundary case."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    ],
+    "examShortTricks": [
+      "Compare tan theta with 1, not with 45 degrees - the fraction comparison is the whole test."
+    ],
+    "examNotes": [
+      "State the certifying sentence explicitly: \"tan theta < 1, hence the acute bisector\" - the conclusion needs its licence."
+    ],
+    "formulas": [
+      "- tan θ = |(m₂ − m₁)/(1 + m₁m₂)|\n- tan θ < 1 ⟹ acute bisector; tan θ > 1 ⟹ obtuse bisector"
+    ],
+    "practice": [
+      "Verify via tan θ that 6x + 6y − 1 = 0 is the acute bisector of x + 2y − 5 = 0 and 4x + 2y + 9 = 0.",
+      "Verify via tan θ that 2x − 2y + 19 = 0 is the obtuse bisector of the same pair.",
+      "Check that the two bisectors 6x + 6y − 1 = 0 and 2x − 2y + 19 = 0 are perpendicular."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Using the tangent formula, verify that 6x + 6y − 1 = 0 is the acute angle bisector of the lines x + 2y − 5 = 0 and 4x + 2y + 9 = 0.** — **Slopes:** bisector m_b = −6/6 = **−1**; L₁: y = (5−x)/2 ⟹ m₁ = **−1/2**. **Tangent:** tan θ = |(−1 − (−1/2))/(1 + (−1)(−1/2))| = |−1/2|/(1 + 1/2) = (1/2)/(3/2) = **1/3**. **Verdict:** tan θ = 1/3 < 1 ⟹ θ ≈ 18.4° < 45° ⟹ the bisector splits the **acute** angle ✓ — the label is certified geometrically. **Consistency:** the lines' full acute angle is 2θ ≈ 36.9°, plausible for slopes −1/2 and −2 (tan = |(−2+1/2)/(1+1)| = 3/4 ⟹ 36.9° ✓ — the doubling checks). **Deep point:** the verification's last line (the doubled angle matching the two lines' computed angle) is the complete audit: half-angle, threshold comparison, and doubling all agree — three independent confirmations in three fractions.",
+      "**NEB-style (6m): Verify that 2x − 2y + 19 = 0 is the obtuse bisector of x + 2y − 5 = 0 and 4x + 2y + 9 = 0.** — **Slopes:** bisector m_b = 1; L₁ slope m₁ = −1/2. **Tangent:** tan θ = |(1 + 1/2)/(1 + (1)(−1/2))| = (3/2)/(1/2) = **3**. **Verdict:** tan θ = 3 > 1 ⟹ θ ≈ 71.6° > 45° ⟹ this bisector splits the **obtuse** angle ✓. **Consistency:** the obtuse angle is 180° − 36.9° = 143.1°, half is 71.55° ✓ — the half-angle lands exactly where the tangent predicted. **Deep point:** the two verifications (1/3 and 3) are tangent reciprocals — the acute and obtuse half-angles are complementary (18.4° + 71.6° = 90°), which is the perpendicularity of the bisectors showing up inside the tangent arithmetic itself.",
+      "**NEB-style (5m): Show that the bisectors 6x + 6y − 1 = 0 and 2x − 2y + 19 = 0 are perpendicular, and explain why this had to happen.** — **Slopes:** m₁ = −6/6 = −1; m₂ = 2/2 = 1 ⟹ m₁m₂ = **−1** ⟹ perpendicular ✓. **Why necessary:** each bisector makes equal angles with the two arms; the two bisectors' directions differ by (half-angle + half-angle) measured around the intersection — one from the acute side, one from the obtuse — summing to half the full 180° sweep ⟹ 90°. Algebraically the normalised coefficients' cross terms cancel in the dot product (an identity). **Deep point:** the perpendicularity is the bisector system's invariant — it holds for *every* pair of intersecting lines, which is why it works as a falsification test: a non-right pair of \"bisectors\" is proof of an arithmetic slip somewhere.",
+      "**NEB-style (6m): The line y = 2x is claimed to be a bisector of the angle between x = 0 and y = x. Verify or refute using the tangent test.** — **Slopes:** candidate m_b = 2; arms m₁ = ∞ (the y-axis, vertical) and m₂ = 1. **Angle with the vertical arm (via axis angles):** y = 2x makes atan(2) ≈ 63.43° with the x-axis; the y-axis is at 90° ⟹ angle between = **26.57°**. **Angle with y = x (45°):** 63.43° − 45° = **18.43°**. **Verdict:** 26.57° ≠ 18.43° ⟹ the angles are **unequal** ⟹ y = 2x is **not** a bisector — refuted. **What the true bisector is:** the wedge between 90° and 45° has its bisector at 67.5° ⟹ slope tan(67.5°) = 1 + √2 ≈ 2.414, not 2. **Deep point:** the definition (equal angles) is the ultimate court — the tangent test compares against 45° for *labelled* bisectors, but the equal-angle check works even for vertical arms where slopes fail; when a claim is refuted, the definition shows what the true answer must be."
+    ]
+  },
+  "examples": [
+    "***The threshold*** - tan theta = 1/3 < 1 certifies the acute label in one fraction; no angle needs to be computed."
+  ],
+  "universalFacts": [
+    "Algebra deriving and geometry confirming is dual-channel verification - agreement is stronger evidence than repetition."
+  ],
+  "examNotes": [
+    "State the certifying sentence explicitly: \"tan theta < 1, hence the acute bisector\" - the conclusion needs its licence."
+  ],
+  "formulas": [
+    "- tan θ = |(m₂ − m₁)/(1 + m₁m₂)|\n- tan θ < 1 ⟹ acute bisector; tan θ > 1 ⟹ obtuse bisector"
+  ],
+  "practice": [
+    "Verify via tan θ that 6x + 6y − 1 = 0 is the acute bisector of x + 2y − 5 = 0 and 4x + 2y + 9 = 0.",
+    "Verify via tan θ that 2x − 2y + 19 = 0 is the obtuse bisector of the same pair.",
+    "Check that the two bisectors 6x + 6y − 1 = 0 and 2x − 2y + 19 = 0 are perpendicular."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Using the tangent formula, verify that 6x + 6y − 1 = 0 is the acute angle bisector of the lines x + 2y − 5 = 0 and 4x + 2y + 9 = 0.** — **Slopes:** bisector m_b = −6/6 = **−1**; L₁: y = (5−x)/2 ⟹ m₁ = **−1/2**. **Tangent:** tan θ = |(−1 − (−1/2))/(1 + (−1)(−1/2))| = |−1/2|/(1 + 1/2) = (1/2)/(3/2) = **1/3**. **Verdict:** tan θ = 1/3 < 1 ⟹ θ ≈ 18.4° < 45° ⟹ the bisector splits the **acute** angle ✓ — the label is certified geometrically. **Consistency:** the lines' full acute angle is 2θ ≈ 36.9°, plausible for slopes −1/2 and −2 (tan = |(−2+1/2)/(1+1)| = 3/4 ⟹ 36.9° ✓ — the doubling checks). **Deep point:** the verification's last line (the doubled angle matching the two lines' computed angle) is the complete audit: half-angle, threshold comparison, and doubling all agree — three independent confirmations in three fractions.",
+    "**NEB-style (6m): Verify that 2x − 2y + 19 = 0 is the obtuse bisector of x + 2y − 5 = 0 and 4x + 2y + 9 = 0.** — **Slopes:** bisector m_b = 1; L₁ slope m₁ = −1/2. **Tangent:** tan θ = |(1 + 1/2)/(1 + (1)(−1/2))| = (3/2)/(1/2) = **3**. **Verdict:** tan θ = 3 > 1 ⟹ θ ≈ 71.6° > 45° ⟹ this bisector splits the **obtuse** angle ✓. **Consistency:** the obtuse angle is 180° − 36.9° = 143.1°, half is 71.55° ✓ — the half-angle lands exactly where the tangent predicted. **Deep point:** the two verifications (1/3 and 3) are tangent reciprocals — the acute and obtuse half-angles are complementary (18.4° + 71.6° = 90°), which is the perpendicularity of the bisectors showing up inside the tangent arithmetic itself.",
+    "**NEB-style (5m): Show that the bisectors 6x + 6y − 1 = 0 and 2x − 2y + 19 = 0 are perpendicular, and explain why this had to happen.** — **Slopes:** m₁ = −6/6 = −1; m₂ = 2/2 = 1 ⟹ m₁m₂ = **−1** ⟹ perpendicular ✓. **Why necessary:** each bisector makes equal angles with the two arms; the two bisectors' directions differ by (half-angle + half-angle) measured around the intersection — one from the acute side, one from the obtuse — summing to half the full 180° sweep ⟹ 90°. Algebraically the normalised coefficients' cross terms cancel in the dot product (an identity). **Deep point:** the perpendicularity is the bisector system's invariant — it holds for *every* pair of intersecting lines, which is why it works as a falsification test: a non-right pair of \"bisectors\" is proof of an arithmetic slip somewhere.",
+    "**NEB-style (6m): The line y = 2x is claimed to be a bisector of the angle between x = 0 and y = x. Verify or refute using the tangent test.** — **Slopes:** candidate m_b = 2; arms m₁ = ∞ (the y-axis, vertical) and m₂ = 1. **Angle with the vertical arm (via axis angles):** y = 2x makes atan(2) ≈ 63.43° with the x-axis; the y-axis is at 90° ⟹ angle between = **26.57°**. **Angle with y = x (45°):** 63.43° − 45° = **18.43°**. **Verdict:** 26.57° ≠ 18.43° ⟹ the angles are **unequal** ⟹ y = 2x is **not** a bisector — refuted. **What the true bisector is:** the wedge between 90° and 45° has its bisector at 67.5° ⟹ slope tan(67.5°) = 1 + √2 ≈ 2.414, not 2. **Deep point:** the definition (equal angles) is the ultimate court — the tangent test compares against 45° for *labelled* bisectors, but the equal-angle check works even for vertical arms where slopes fail; when a claim is refuted, the definition shows what the true answer must be."
+  ]
 }
