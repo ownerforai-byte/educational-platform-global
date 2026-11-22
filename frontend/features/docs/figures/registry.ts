@@ -1628,6 +1628,69 @@ import { BenzeneKekulePair } from "./benzene-kekule-pair";
 import { ResonanceEnergyBar } from "./resonance-energy-bar";
 import { PlusRGroupFlow } from "./plus-r-group-flow";
 import { MinusRGroupFlow } from "./minus-r-group-flow";
+import { AlkanePrepRoutes } from "./alkane-prep-routes";
+import { WurtzCouplingPanel } from "./wurtz-coupling-panel";
+import { DecarboxylationFlow } from "./decarboxylation-flow";
+import { HaloalkaneReductionPanel } from "./haloalkane-reduction-panel";
+import { HydrogenationSurface } from "./hydrogenation-surface";
+import { WurtzLimitationPanel } from "./wurtz-limitation-panel";
+import { CarbonCountRules } from "./carbon-count-rules";
+import { MethaneChlorinationLadder } from "./methane-chlorination-ladder";
+import { HalogenReactivityLadder } from "./halogen-reactivity-ladder";
+import { RadicalMechanismSteps } from "./radical-mechanism-steps";
+import { VapourPhaseNitration } from "./vapour-phase-nitration";
+import { SulphonationPanel } from "./sulphonation-panel";
+import { ControlledOxidationEthane } from "./controlled-oxidation-ethane";
+import { CombustionEnergyPanel } from "./combustion-energy-panel";
+import { AlkenePrepRoutes } from "./alkene-prep-routes";
+import { DehydrationTemperatureFork } from "./dehydration-temperature-fork";
+import { DehydrohalogenationPanel } from "./dehydrohalogenation-panel";
+import { SaytzeffRulePanel } from "./saytzeff-rule-panel";
+import { LindlarCatalystPanel } from "./lindlar-catalyst-panel";
+import { HydrogenationMechanismSteps } from "./hydrogenation-mechanism-steps";
+import { AlkeneFamilyPanel } from "./alkene-family-panel";
+import { MarkovnikovRulePanel } from "./markovnikov-rule-panel";
+import { PropeneHbrDemo } from "./propene-hbr-demo";
+import { PeroxideEffectPanel } from "./peroxide-effect-panel";
+import { HydrationOfEthene } from "./hydration-of-ethene";
+import { H2so4AdditionRoute } from "./h2so4-addition-route";
+import { OzonolysisWorkflow } from "./ozonolysis-workflow";
+import { OzonolysisProductMap } from "./ozonolysis-product-map";
+import { AlkynePrepRoutes } from "./alkyne-prep-routes";
+import { CalciumCarbideTwoStep } from "./calcium-carbide-two-step";
+import { VicinalDihalideRoute } from "./vicinal-dihalide-route";
+import { HaloformSilverRoute } from "./haloform-silver-route";
+import { DoubleEliminationLogic } from "./double-elimination-logic";
+import { EthyneIdentityPanel } from "./ethyne-identity-panel";
+import { CarbideImpurityWash } from "./carbide-impurity-wash";
+import { AlkyneAdditionMap } from "./alkyne-addition-map";
+import { EthyneHydrationTautomer } from "./ethyne-hydration-tautomer";
+import { SpAcidityLadder } from "./sp-acidity-ladder";
+import { AcetylideFormation } from "./acetylide-formation";
+import { AmmoniacalSilverTest } from "./ammoniacal-silver-test";
+import { AmmoniacalCopperTest } from "./ammoniacal-copper-test";
+import { TerminalVsInternal } from "./terminal-vs-internal";
+import { BromineWaterTestPanel } from "./bromine-water-test-panel";
+import { BaeyerTestPanel } from "./baeyer-test-panel";
+import { GlycolProductPanel } from "./glycol-product-panel";
+import { TetrabromoethanePanel } from "./tetrabromoethane-panel";
+import { TestConditionsHonesty } from "./test-conditions-honesty";
+import { UnsaturationDecisionTree } from "./unsaturation-decision-tree";
+import { ThreeGasVerdicts } from "./three-gas-verdicts";
+import { ThreeFamilyFormulas } from "./three-family-formulas";
+import { StateLadderPanel } from "./state-ladder-panel";
+import { BpLadderPanel } from "./bp-ladder-panel";
+import { BranchingEffectDemo } from "./branching-effect-demo";
+import { SolubilityPanel } from "./solubility-panel";
+import { FlameComparisonPanel } from "./flame-comparison-panel";
+import { DensityPanel } from "./density-panel";
+import { KolbeAnodeCathode } from "./kolbe-anode-cathode";
+import { AcetateElectrolysisFlow } from "./acetate-electrolysis-flow";
+import { KolbeCarbonRule } from "./kolbe-carbon-rule";
+import { SuccinateElectrolysisFlow } from "./succinate-electrolysis-flow";
+import { KolbeProductTable } from "./kolbe-product-table";
+import { CathodeHalfReaction } from "./cathode-half-reaction";
+import { KolbeLegacyPanel } from "./kolbe-legacy-panel";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -11250,6 +11313,115 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
 { Component: ResonanceEnergyBar, caption: "Resonance energy of benzene", alt: "Diagram: Resonance energy of benzene", keyword: "150" },
 { Component: PlusRGroupFlow, caption: "Plus R groups enrich ortho para", alt: "Diagram: Plus R groups enrich ortho para", keyword: "ortho" },
 { Component: MinusRGroupFlow, caption: "Minus R groups direct meta", alt: "Diagram: Minus R groups direct meta", keyword: "meta" },
+  ],
+  },
+
+  "saturated-hydrocarbons-alkanes-preparation-from-haloalkanes-reduction-and-wurtz-reaction-decarbo": {
+    title: "Four doors to an alkane",
+    figures: [
+{ Component: AlkanePrepRoutes, caption: "Four routes to alkanes at a glance", alt: "Diagram: Four routes to alkanes at a glance", keyword: "wurtz" },
+{ Component: WurtzCouplingPanel, caption: "Wurtz reaction needs dry ether", alt: "Diagram: Wurtz reaction needs dry ether", keyword: "dry ether" },
+{ Component: DecarboxylationFlow, caption: "Decarboxylation with soda-lime", alt: "Diagram: Decarboxylation with soda-lime", keyword: "soda-lime" },
+{ Component: HaloalkaneReductionPanel, caption: "Three reducing agents for haloalkanes", alt: "Diagram: Three reducing agents for haloalkanes", keyword: "lialh" },
+{ Component: HydrogenationSurface, caption: "Catalytic hydrogenation on nickel", alt: "Diagram: Catalytic hydrogenation on nickel", keyword: "ni " },
+{ Component: WurtzLimitationPanel, caption: "Wurtz with mixed halides gives three products", alt: "Diagram: Wurtz with mixed halides gives three products", keyword: "mixture" },
+{ Component: CarbonCountRules, caption: "Carbon accounting across the four routes", alt: "Diagram: Carbon accounting across the four routes", keyword: "one carbon fewer" },
+  ],
+  },
+  "chemical-properties-of-alkanes-substitution-reactions-halogenation-nitration-and-sulphonation-on": {
+    title: "The substitution ladder",
+    figures: [
+{ Component: MethaneChlorinationLadder, caption: "Methane chlorination ladder", alt: "Diagram: Methane chlorination ladder", keyword: "ch₂cl₂" },
+{ Component: HalogenReactivityLadder, caption: "Halogen reactivity falls from fluorine to iodine", alt: "Diagram: Halogen reactivity falls from fluorine to iodine", keyword: "f₂" },
+{ Component: RadicalMechanismSteps, caption: "Free radical chlorination mechanism", alt: "Diagram: Free radical chlorination mechanism", keyword: "initiation" },
+{ Component: VapourPhaseNitration, caption: "Vapour phase nitration at 400 degrees", alt: "Diagram: Vapour phase nitration at 400 degrees", keyword: "400" },
+{ Component: SulphonationPanel, caption: "Sulphonation needs long chains", alt: "Diagram: Sulphonation needs long chains", keyword: "fuming" },
+{ Component: ControlledOxidationEthane, caption: "Controlled oxidation of ethane to acetaldehyde", alt: "Diagram: Controlled oxidation of ethane to acetaldehyde", keyword: "acetaldehyde" },
+{ Component: CombustionEnergyPanel, caption: "Combustion energy ledger", alt: "Diagram: Combustion energy ledger", keyword: "890" },
+  ],
+  },
+  "unsaturated-hydrocarbons-alkenes-preparation-by-dehydration-of-alcohol-dehydrohalogenation-catal": {
+    title: "Three doors to an alkene",
+    figures: [
+{ Component: AlkenePrepRoutes, caption: "Three routes to alkenes", alt: "Diagram: Three routes to alkenes", keyword: "dehydration" },
+{ Component: DehydrationTemperatureFork, caption: "Dehydration temperature fork ether vs ethene", alt: "Diagram: Dehydration temperature fork ether vs ethene", keyword: "170" },
+{ Component: DehydrohalogenationPanel, caption: "Dehydrohalogenation with alcoholic KOH", alt: "Diagram: Dehydrohalogenation with alcoholic KOH", keyword: "alcoholic koh" },
+{ Component: SaytzeffRulePanel, caption: "Saytzeff rule in action", alt: "Diagram: Saytzeff rule in action", keyword: "saytzeff" },
+{ Component: LindlarCatalystPanel, caption: "Lindlar catalyst stops at the alkene", alt: "Diagram: Lindlar catalyst stops at the alkene", keyword: "lindlar" },
+{ Component: HydrogenationMechanismSteps, caption: "Hydrogenation mechanism three steps", alt: "Diagram: Hydrogenation mechanism three steps", keyword: "adsorption" },
+{ Component: AlkeneFamilyPanel, caption: "The alkene family cnh2n", alt: "Diagram: The alkene family cnh2n", keyword: "cₙh₂ₙ" },
+  ],
+  },
+  "chemical-properties-of-alkenes-addition-reaction-with-hx-markovnikov-s-addition-and-peroxide-eff": {
+    title: "The pi bond under attack",
+    figures: [
+{ Component: MarkovnikovRulePanel, caption: "Markovnikov rule statement", alt: "Diagram: Markovnikov rule statement", keyword: "markovnikov" },
+{ Component: PropeneHbrDemo, caption: "Propene plus HBr carbocation fork", alt: "Diagram: Propene plus HBr carbocation fork", keyword: "2-bromopropane" },
+{ Component: PeroxideEffectPanel, caption: "Peroxide effect reverses HBr addition", alt: "Diagram: Peroxide effect reverses HBr addition", keyword: "peroxide" },
+{ Component: HydrationOfEthene, caption: "Hydration of ethene to ethanol", alt: "Diagram: Hydration of ethene to ethanol", keyword: "ethanol" },
+{ Component: H2so4AdditionRoute, caption: "H2SO4 addition via ethyl hydrogen sulphate", alt: "Diagram: H2SO4 addition via ethyl hydrogen sulphate", keyword: "ethyl hydrogen sulphate" },
+{ Component: OzonolysisWorkflow, caption: "Ozonolysis workflow to carbonyls", alt: "Diagram: Ozonolysis workflow to carbonyls", keyword: "ozonide" },
+{ Component: OzonolysisProductMap, caption: "Ozonolysis product map", alt: "Diagram: Ozonolysis product map", keyword: "hcho" },
+  ],
+  },
+  "alkynes-preparation-from-carbon-and-hydrogen-1-2-dibromoethane-chloroform-iodoform-only": {
+    title: "Building the triple bond",
+    figures: [
+{ Component: AlkynePrepRoutes, caption: "Three routes to alkynes", alt: "Diagram: Three routes to alkynes", keyword: "carbide" },
+{ Component: CalciumCarbideTwoStep, caption: "Calcium carbide two step preparation", alt: "Diagram: Calcium carbide two step preparation", keyword: "2000" },
+{ Component: VicinalDihalideRoute, caption: "Vicinal dihalide to alkyne", alt: "Diagram: Vicinal dihalide to alkyne", keyword: "vinyl" },
+{ Component: HaloformSilverRoute, caption: "Haloform and hot silver route", alt: "Diagram: Haloform and hot silver route", keyword: "agcl" },
+{ Component: DoubleEliminationLogic, caption: "Why the second elimination is harder", alt: "Diagram: Why the second elimination is harder", keyword: "nanh₂" },
+{ Component: EthyneIdentityPanel, caption: "Ethyne and acetylene identity", alt: "Diagram: Ethyne and acetylene identity", keyword: "acetylene" },
+{ Component: CarbideImpurityWash, caption: "Washing impure carbide gas", alt: "Diagram: Washing impure carbide gas", keyword: "ph₃" },
+  ],
+  },
+  "chemical-properties-of-alkynes-addition-reaction-with-h2-hx-h2o-acidic-nature-action-with-sodium": {
+    title: "Add like an alkene, acid like no other",
+    figures: [
+{ Component: AlkyneAdditionMap, caption: "Ethyne addition menu", alt: "Diagram: Ethyne addition menu", keyword: "vinyl chloride" },
+{ Component: EthyneHydrationTautomer, caption: "Ethyne hydration enol tautomer", alt: "Diagram: Ethyne hydration enol tautomer", keyword: "enol" },
+{ Component: SpAcidityLadder, caption: "Acidity ladder s-character", alt: "Diagram: Acidity ladder s-character", keyword: "25" },
+{ Component: AcetylideFormation, caption: "Acetylide formation with sodium amide", alt: "Diagram: Acetylide formation with sodium amide", keyword: "sodium acetylide" },
+{ Component: AmmoniacalSilverTest, caption: "Ammoniacal silver nitrate white precipitate", alt: "Diagram: Ammoniacal silver nitrate white precipitate", keyword: "white" },
+{ Component: AmmoniacalCopperTest, caption: "Ammoniacal cuprous chloride red precipitate", alt: "Diagram: Ammoniacal cuprous chloride red precipitate", keyword: "red" },
+{ Component: TerminalVsInternal, caption: "Terminal versus internal alkynes", alt: "Diagram: Terminal versus internal alkynes", keyword: "terminal" },
+  ],
+  },
+  "test-of-unsaturation-ethene-and-ethyne-bromine-water-test-and-baeyer-s-test": {
+    title: "Two drops that tell the truth",
+    figures: [
+{ Component: BromineWaterTestPanel, caption: "Bromine water decolourisation test", alt: "Diagram: Bromine water decolourisation test", keyword: "decolouris" },
+{ Component: BaeyerTestPanel, caption: "Baeyer test brown mno2", alt: "Diagram: Baeyer test brown mno2", keyword: "mno₂" },
+{ Component: GlycolProductPanel, caption: "Baeyer test organic product glycol", alt: "Diagram: Baeyer test organic product glycol", keyword: "glycol" },
+{ Component: TetrabromoethanePanel, caption: "Ethyne takes bromine twice", alt: "Diagram: Ethyne takes bromine twice", keyword: "tetrabromoethane" },
+{ Component: TestConditionsHonesty, caption: "Conditions keep the tests honest", alt: "Diagram: Conditions keep the tests honest", keyword: "dark" },
+{ Component: UnsaturationDecisionTree, caption: "Unsaturation decision tree", alt: "Diagram: Unsaturation decision tree", keyword: "unsaturation" },
+{ Component: ThreeGasVerdicts, caption: "Verdict table for three gases", alt: "Diagram: Verdict table for three gases", keyword: "ethane" },
+  ],
+  },
+  "comparative-studies-of-physical-properties-of-alkane-alkene-and-alkyne": {
+    title: "Three families, one table",
+    figures: [
+{ Component: ThreeFamilyFormulas, caption: "Three family formulas", alt: "Diagram: Three family formulas", keyword: "cₙh₂ₙ₊₂" },
+{ Component: StateLadderPanel, caption: "States across the carbon ladder", alt: "Diagram: States across the carbon ladder", keyword: "gases" },
+{ Component: BpLadderPanel, caption: "Boiling point ladder at equal carbon", alt: "Diagram: Boiling point ladder at equal carbon", keyword: "alkyne" },
+{ Component: BranchingEffectDemo, caption: "Branching effect on boiling point", alt: "Diagram: Branching effect on boiling point", keyword: "isobutane" },
+{ Component: SolubilityPanel, caption: "Like dissolves like solubility", alt: "Diagram: Like dissolves like solubility", keyword: "like dissolves like" },
+{ Component: FlameComparisonPanel, caption: "Flames as fingerprints", alt: "Diagram: Flames as fingerprints", keyword: "smoky" },
+{ Component: DensityPanel, caption: "Density always below water", alt: "Diagram: Density always below water", keyword: "float" },
+  ],
+  },
+  "kolbe-s-electrolysis-methods-for-the-preparation-of-alkanes-alkenes-and-alkynes": {
+    title: "Electricity builds hydrocarbons",
+    figures: [
+{ Component: KolbeAnodeCathode, caption: "Kolbe anode and cathode roles", alt: "Diagram: Kolbe anode and cathode roles", keyword: "anode" },
+{ Component: AcetateElectrolysisFlow, caption: "Acetate electrolysis to ethane", alt: "Diagram: Acetate electrolysis to ethane", keyword: "ethane" },
+{ Component: KolbeCarbonRule, caption: "Kolbe carbon counting rule", alt: "Diagram: Kolbe carbon counting rule", keyword: "co₂" },
+{ Component: SuccinateElectrolysisFlow, caption: "Succinate electrolysis to ethyne", alt: "Diagram: Succinate electrolysis to ethyne", keyword: "succinate" },
+{ Component: KolbeProductTable, caption: "Kolbe products by electrolyte", alt: "Diagram: Kolbe products by electrolyte", keyword: "propionate" },
+{ Component: CathodeHalfReaction, caption: "Cathode half reaction water reduction", alt: "Diagram: Cathode half reaction water reduction", keyword: "h₂" },
+{ Component: KolbeLegacyPanel, caption: "Kolbe legacy first total synthesis", alt: "Diagram: Kolbe legacy first total synthesis", keyword: "1845" },
   ],
   },
 
