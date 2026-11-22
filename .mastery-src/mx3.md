@@ -1,0 +1,122 @@
+@@notes@@
+## 1. Topic Introduction — Undoing Periodic Functions
+
+sin, cos, tan are many-to-one; their **inverse circular functions** pick the **principal branch** — a restricted domain where each function is one-to-one — so the inverse is a genuine function. The theorems: principal value branches, inverse compositions, and the addition formulas for sin⁻¹ ± cos⁻¹/tan⁻¹.
+
+%%%
+## 2. Fundamental Concepts
+
+### 2.1 Principal value branches (the core theorem)
+
+- **sin⁻¹:** domain [−1, 1], range **[−π/2, π/2]**.
+- **cos⁻¹:** domain [−1, 1], range **[0, π]**.
+- **tan⁻¹:** domain ℝ, range **(−π/2, π/2)**.
+- Proof idea: on these intervals each function is **bijective** (strictly monotone), so the inverse exists; the branch is *chosen* to make it so.
+
+### 2.2 Inverse compositions
+
+- **sin(sin⁻¹x) = x** for x ∈ [−1, 1]; but **sin⁻¹(sin θ) = θ only if θ ∈ [−π/2, π/2]** — outside the branch the answer is the branch-representative of θ.
+- Same discipline for cos⁻¹(cos θ) with θ ∈ [0, π] and tan⁻¹(tan θ) with θ ∈ (−π/2, π/2).
+
+### 2.3 Reciprocal and reflection relations
+
+- **sin⁻¹x + cos⁻¹x = π/2** for all x ∈ [−1, 1]; **tan⁻¹x + cot⁻¹x = π/2**; **sec⁻¹x + cosec⁻¹x = π/2**.
+- Proof idea: sin⁻¹x and cos⁻¹x measure complementary arcs of the same right triangle — their sum is the right angle.
+
+### 2.4 Addition theorems for inverses
+
+- **tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy))** for xy < 1; add **π** if x > 0, y > 0, xy > 1; subtract **π** if x < 0, y < 0, xy > 1.
+- **sin⁻¹x + sin⁻¹y = sin⁻¹(x√(1−y²) + y√(1−x²))** (when x² + y² ≤ 1 or the product sign permits).
+- **2tan⁻¹x = tan⁻¹(2x/(1−x²))** (|x| < 1) — the double-angle echo.
+
+%%%
+## 3. Scientific Definitions
+
+| Term | Scientific meaning | Example |
+|---|---|---|
+| **Principal value** | The unique value of the inverse in the standard branch | sin⁻¹(1/2) = π/6, not 5π/6 |
+| **Principal branch** | Domain interval where the trig function is one-to-one | [−π/2, π/2] for sine |
+| **Inverse composition** | f(f⁻¹(x)) = x only inside the branch | sin⁻¹(sin 2π/3) = π/3 |
+
+%%%
+## 4. Detailed Explanation
+
+### 4.1 Why branches are necessary
+
+- sin θ = 1/2 holds for π/6, 5π/6, 13π/6, … — a function must return **one** value, so the inverse is defined only on a branch where the original is injective. The branch is a convention, but a universal one.
+
+### 4.2 Reading inverse expressions geometrically
+
+- sin⁻¹x means "the angle whose sine is x, in the first/fourth quadrant". Draw the right triangle with opposite x, hypotenuse 1 — the third side √(1−x²) unlocks every addition formula.
+
+### 4.3 The quadrant adjustment in tan⁻¹ sums
+
+- The formula tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy)) can land outside (−π/2, π/2); the π corrections restore the principal branch. Check the sign conditions **before** quoting the result.
+
+%%%
+## 5. Comparison Tables
+
+**Principal branches**
+
+| Function | Domain | Range (branch) |
+|---|---|---|
+| sin⁻¹ | [−1, 1] | [−π/2, π/2] |
+| cos⁻¹ | [−1, 1] | [0, π] |
+| tan⁻¹ | ℝ | (−π/2, π/2) |
+| cot⁻¹ | ℝ | (0, π) |
+| sec⁻¹ | ℝ∖(−1,1) | [0, π] − {π/2} |
+| cosec⁻¹ | ℝ∖(−1,1) | [−π/2, π/2] − {0} |
+
+%%%
+## 6. Common Confusions
+
+**sin⁻¹(sin θ) ≠ θ in general:** only inside the branch; sin⁻¹(sin 120°) = 60°, not 120°.
+%%%
+**sin⁻¹x is not 1/sin x:** the −1 is inverse-function notation, never a reciprocal — cosecant is the reciprocal.
+%%%
+**cos⁻¹(−x) = π − cos⁻¹x:** negative inputs in cosine's branch reflect about π/2; the value stays in [0, π].
+
+%%%
+## 7. Exam Application
+
+**NEB 2024 (verified PYQ): Find the principal value of sin⁻¹(−1/2). (2m)** — Let θ = sin⁻¹(−1/2), so sin θ = −1/2 with **θ ∈ [−π/2, π/2]** (the principal branch). The reference angle with sine 1/2 is π/6; the negative sign puts θ in the **fourth quadrant** of the branch: **θ = −π/6**. Verification: sin(−π/6) = −1/2 ✓ and −π/6 lies in [−π/2, π/2] ✓. **Principal value: −π/6.**
+%%%
+**NEB 2023 (verified PYQ): Find cos⁻¹(√3/2) + sin⁻¹(1/2). (2m)** — **cos⁻¹(√3/2)**: cosine's branch is [0, π]; the angle with cosine √3/2 there is **π/6**. **sin⁻¹(1/2)**: sine's branch is [−π/2, π/2]; the angle is **π/6**. Sum: **π/6 + π/6 = π/3**. Cross-check with the complement theorem: sin⁻¹(1/2) = π/2 − cos⁻¹(1/2) = π/2 − π/3 = π/6 ✓.
+%%%
+**NEB-style (3m): Prove that tan⁻¹(1/2) + tan⁻¹(1/3) = π/4.** — Since xy = (1/2)(1/3) = 1/6 < 1, the addition theorem applies directly: tan⁻¹(1/2) + tan⁻¹(1/3) = tan⁻¹((1/2 + 1/3)/(1 − 1/6)) = tan⁻¹((5/6)/(5/6)) = **tan⁻¹(1) = π/4** (principal value in (−π/2, π/2)). Both summands are positive and less than π/4, so their sum is less than π/2 — no quadrant correction is needed. ∎
+
+@@keyPoints@@
+Principal branches: sin^-1 on [-1,1] -> [-pi/2, pi/2]; cos^-1 on [-1,1] -> [0, pi]; tan^-1 on R -> (-pi/2, pi/2); cot^-1 -> (0, pi); sec^-1, cosec^-1 on R minus (-1,1). Compositions: sin(sin^-1 x) = x on [-1,1]; sin^-1(sin th) = th only inside the branch (sin^-1(sin 2pi/3) = pi/3). Complement theorems: sin^-1 x + cos^-1 x = pi/2; tan^-1 x + cot^-1 x = pi/2; sec^-1 x + cosec^-1 x = pi/2. Addition: tan^-1 x + tan^-1 y = tan^-1((x+y)/(1-xy)) for xy < 1, add/subtract pi when xy > 1 by signs; 2tan^-1 x = tan^-1(2x/(1-x^2)) for |x| < 1. Negative inputs: sin^-1(-x) = -sin^-1 x; cos^-1(-x) = pi - cos^-1 x; tan^-1(-x) = -tan^-1 x.
+@@importantConcepts@@
+The branch is a choice that buys uniqueness: restrict the periodic function until it is one-to-one, and only then does the inverse exist.
+@@examples@@
+***The triangle shortcut*** — for any inverse expression, draw the right triangle with the given ratio, read the third side from Pythagoras, and every addition formula becomes visible geometry.
+@@universalFacts@@
+Calculators return principal values only — that is why sin(150 degrees) needs you, not the machine, to say 30 degrees when the branch demands it.
+@@importantStatements@@
+"sin^-1 x + cos^-1 x = pi/2 for all x in [-1, 1]: the two inverses measure complementary arcs of the same triangle."
+@@importantNotes@@
+Verified PYQs: NEB 2024 (principal value of sin^-1(-1/2)), NEB 2023 (cos^-1(sqrt3/2) + sin^-1(1/2)) — assigned to this row. Other items are NEB-style practice.
+@@examShortTricks@@
+Negative inputs: sine/tangent inverses are odd (keep the minus), cosine inverse gives pi - value. tan^-1 sums: check xy < 1 before the formula; correct by +- pi otherwise. sin^-1(sin th): reduce th into [-pi/2, pi/2] first.
+@@examNotes@@
+Always state the branch when quoting a principal value — "pi/6, since it lies in [0, pi]" is a mark-bearing sentence.
+@@formulas@@
+- sin⁻¹x + cos⁻¹x = π/2; tan⁻¹x + cot⁻¹x = π/2; sec⁻¹x + cosec⁻¹x = π/2
+- tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy)) (xy < 1)
+- 2tan⁻¹x = tan⁻¹(2x/(1−x²)) (|x| < 1)
+- sin⁻¹(−x) = −sin⁻¹x; cos⁻¹(−x) = π − cos⁻¹x; tan⁻¹(−x) = −tan⁻¹x
+@@practice@@
+Find the principal value of sin⁻¹(−1/2) and cos⁻¹(√3/2) + sin⁻¹(1/2).
+%%%
+Prove tan⁻¹(1/2) + tan⁻¹(1/3) = π/4.
+%%%
+Evaluate sin⁻¹(sin 2π/3) and explain why it is not 2π/3.
+@@practiceQuestions@@
+**NEB 2024 (verified PYQ): Find the principal value of sin⁻¹(−1/2). (2m)** — Let **θ = sin⁻¹(−1/2)**. By definition sin θ = −1/2 **and θ must lie in the principal branch [−π/2, π/2]**. The reference angle whose sine is 1/2 is π/6; the negative sign places θ in the fourth quadrant of the branch, so **θ = −π/6**. Verification: sin(−π/6) = −1/2 ✓ and −π/6 ∈ [−π/2, π/2] ✓. (Equivalently, use the oddness of the sine inverse: sin⁻¹(−1/2) = −sin⁻¹(1/2) = −π/6.) **Principal value: −π/6.**
+%%%
+**NEB 2023 (verified PYQ): Find cos⁻¹(√3/2) + sin⁻¹(1/2). (2m)** — **First term:** cos⁻¹(√3/2) asks for the angle in the **cosine branch [0, π]** with cosine √3/2 — that is **π/6**. **Second term:** sin⁻¹(1/2) asks for the angle in the **sine branch [−π/2, π/2]** with sine 1/2 — that is **π/6**. **Sum: π/6 + π/6 = π/3.** Consistency check via the complement theorem sin⁻¹x + cos⁻¹x = π/2 with x = 1/2: sin⁻¹(1/2) = π/2 − π/3 = π/6 ✓ — the two readings agree, confirming the branch discipline.
+%%%
+**NEB-style (3m): Prove that tan⁻¹(1/2) + tan⁻¹(1/3) = π/4.** — **Check the condition:** xy = (1/2)(1/3) = 1/6 < 1, so the addition theorem applies without quadrant correction: tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy)). **Substitute:** (1/2 + 1/3)/(1 − 1/6) = (5/6)/(5/6) = 1, so the sum equals **tan⁻¹(1)**. **Principal value:** tan⁻¹(1) = π/4, since π/4 ∈ (−π/2, π/2). Hence tan⁻¹(1/2) + tan⁻¹(1/3) = **π/4**. ∎ (Sanity check: both summands lie in (0, π/4), so their sum lies in (0, π/2) — the principal branch is respected and no π adjustment is needed.)
+@@summary@@
+Inverse circular functions exist only because the trig functions are **restricted to principal branches**: sin⁻¹ on [−1,1] → **[−π/2, π/2]**, cos⁻¹ on [−1,1] → **[0, π]**, tan⁻¹ on ℝ → **(−π/2, π/2)**. Inside the branch, f⁻¹(f(θ)) = θ; outside it, the answer is the branch-representative (sin⁻¹(sin 2π/3) = π/3). The **complement theorems** — sin⁻¹x + cos⁻¹x = π/2, and their tan/sec cousins — follow from two arcs of one right triangle. The **addition theorem** tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy)) holds for xy < 1 with π-corrections otherwise; NEB-style example: tan⁻¹(1/2) + tan⁻¹(1/3) = tan⁻¹(1) = **π/4**. Verified PYQs: **sin⁻¹(−1/2) = −π/6** (NEB 2024) and **cos⁻¹(√3/2) + sin⁻¹(1/2) = π/3** (NEB 2023) — both are branch-discipline questions at heart.

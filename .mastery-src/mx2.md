@@ -1,0 +1,118 @@
+@@notes@@
+## 1. Topic Introduction — From Solutions to Families
+
+A trigonometric **equation** is true for *some* angles; the job is to describe **all** of them. The key theorem: if sin θ = sin α (or cos θ = cos α, tan θ = tan α), then θ belongs to a **general value family** — infinitely many angles spaced by the function's period, plus a reflection about the axis.
+
+%%%
+## 2. Fundamental Concepts
+
+### 2.1 The general value theorems
+
+- **Theorem (sine):** sin θ = sin α ⟺ **θ = nπ + (−1)ⁿα**, n ∈ ℤ.
+- **Theorem (cosine):** cos θ = cos α ⟺ **θ = 2nπ ± α**, n ∈ ℤ.
+- **Theorem (tangent):** tan θ = tan α ⟺ **θ = nπ + α**, n ∈ ℤ (α in radians).
+- Proof idea (sine): sin θ = sin α means either θ = α + 2nπ (same position) or θ = π − α + 2nπ (mirror across π/2); both cases merge into θ = nπ + (−1)ⁿα. Cosine's two cases (θ = ±α + 2nπ) merge into 2nπ ± α.
+
+### 2.2 Principal values first
+
+- Solve the equation for its **principal value** α (the one in [−π/2, π/2] for sine/tangent, [0, π] for cosine), then attach the general family.
+
+### 2.3 Standard families worth memorising
+
+- **sin θ = 0 ⟹ θ = nπ**; **cos θ = 0 ⟹ θ = (2n+1)π/2**; **tan θ = 0 ⟹ θ = nπ**.
+- **sin θ = 1 ⟹ θ = 2nπ + π/2**; **cos θ = 1 ⟹ θ = 2nπ**; **sin θ = −1 ⟹ θ = 2nπ − π/2** (or (4n−1)π/2).
+
+### 2.4 Strategy for compound equations
+
+- Reduce to a **single trig function** of a **single angle** using identities (sin²+cos²=1, cos 2θ forms, sum→product), find the principal value, then apply the general-value theorem. Always respect the **given interval** — general values must be filtered.
+
+%%%
+## 3. Scientific Definitions
+
+| Term | Scientific meaning | Example |
+|---|---|---|
+| **General value** | The full family of solutions of a trig equation | sin θ = 1/2 ⟹ θ = nπ + (−1)ⁿ(π/6) |
+| **Principal value** | The representative solution in the standard branch | π/6 for sin θ = 1/2 |
+| **Period** | Smallest T with f(θ + T) = f(θ): π for tan, 2π for sin/cos | controls solution spacing |
+
+%%%
+## 4. Detailed Explanation
+
+### 4.1 Why the families look different
+
+- Sine is symmetric about π/2 (its mirror), so solutions alternate sides — captured by the (−1)ⁿ factor. Cosine is even (symmetric about 0), so solutions come in ± pairs. Tangent repeats with period π and has no mirror — hence the plain nπ + α.
+
+### 4.2 Filtering to the interval
+
+- For "solve for 0 ≤ θ ≤ 2π", substitute n = 0, 1, 2, … into the family and keep only values inside the interval. Every discarded value is still a solution of the equation — just outside the window.
+
+### 4.3 Squaring trap
+
+- Squaring an equation (e.g. from sin θ = cos θ) can introduce **extraneous roots** — verify each candidate in the original equation before listing it.
+
+%%%
+## 5. Comparison Tables
+
+**General values at a glance**
+
+| Equation | General solution | Spacing |
+|---|---|---|
+| sin θ = sin α | θ = nπ + (−1)ⁿα | alternates |
+| cos θ = cos α | θ = 2nπ ± α | paired |
+| tan θ = tan α | θ = nπ + α | uniform |
+| sin²θ = sin²α | θ = nπ ± α | paired |
+| cos²θ = cos²α | θ = nπ ± α | paired |
+| tan²θ = tan²α | θ = nπ ± α | paired |
+
+%%%
+## 6. Common Confusions
+
+**Degrees vs radians:** the general-value theorems are stated in **radians** — convert the interval before filtering.
+%%%
+**(−1)ⁿ belongs to sine only:** writing θ = nπ + (−1)ⁿα for cosine is a signature error; cosine uses 2nπ ± α.
+%%%
+**Interval endpoints:** "0 ≤ θ ≤ 2π" includes both ends — test n values that land exactly on 0 or 2π.
+
+%%%
+## 7. Exam Application
+
+**NEB 2024 (verified PYQ): Solve: 2sin²θ − sin θ − 1 = 0 for 0 ≤ θ ≤ 2π. (4m)** — Factor: **2sin²θ − sinθ − 1 = (2sinθ + 1)(sinθ − 1) = 0**. Case 1: **sin θ = 1** ⟹ principal α = π/2 ⟹ θ = 2nπ + π/2; inside [0, 2π]: **θ = π/2** (n = 0) and θ = 5π/2 is outside. Case 2: **sin θ = −1/2** ⟹ principal α = −π/6 ⟹ θ = nπ + (−1)ⁿ(−π/6). n = 0: θ = −π/6 (outside); n = 1: θ = π + π/6 = **7π/6**; n = 2: θ = 2π − π/6 = **11π/6**; n = 3: outside. **Solutions: θ = π/2, 7π/6, 11π/6.**
+%%%
+**NEB 2022 (verified PYQ): Solve: cos 2θ = cos θ. (4m)** — Use **cos 2θ = 2cos²θ − 1**: 2cos²θ − 1 = cos θ ⟹ **2cos²θ − cos θ − 1 = 0** ⟹ (2cos θ + 1)(cos θ − 1) = 0. Case 1: **cos θ = 1** ⟹ α = 0 ⟹ θ = 2nπ. Case 2: **cos θ = −1/2** ⟹ α = 2π/3 ⟹ θ = 2nπ ± 2π/3. General solution: **θ = 2nπ or θ = 2nπ ± 2π/3**, n ∈ ℤ. (If an interval is specified, filter: within [0, 2π] the solutions are 0, 2π/3, 4π/3, 2π.)
+%%%
+**NEB 2023 (verified PYQ): Find cos⁻¹(√3/2) + sin⁻¹(1/2). (2m)** — Principal values: **cos⁻¹(√3/2) = π/6** (cosine branch [0, π]) and **sin⁻¹(1/2) = π/6** (sine branch [−π/2, π/2]). Sum: **π/6 + π/6 = π/3**. (This item bridges to inverse functions but is solved by the principal-value discipline established here.)
+
+@@keyPoints@@
+General value theorems: sin th = sin a => th = n*pi + (-1)^n a; cos th = cos a => th = 2n*pi +- a; tan th = tan a => th = n*pi + a (radians). Squared versions all give th = n*pi +- a. Standard families: sin th = 0 => n*pi; cos th = 0 => (2n+1)pi/2; sin th = 1 => 2n*pi + pi/2; cos th = 1 => 2n*pi. Method: reduce to one function of one angle, find principal value in the standard branch, attach the family, filter to the interval. Squaring can add extraneous roots - verify in the original equation.
+@@importantConcepts@@
+The three families encode each function's symmetry: sine mirrors about pi/2 ((-1)^n), cosine is even (+-), tangent just repeats (n*pi).
+@@examples@@
+***Filter, don't forget*** — sin th = -1/2 has infinitely many solutions; the interval [0, 2pi] keeps exactly two of them (7pi/6 and 11pi/6) plus none from the sin = 1 branch.
+@@universalFacts@@
+Every trig equation has either no solution or infinitely many; the general value family is how "infinitely many" is written down.
+@@importantStatements@@
+"sin th = sin a iff th = n*pi + (-1)^n a; cos th = cos a iff th = 2n*pi +- a; tan th = tan a iff th = n*pi + a."
+@@importantNotes@@
+Verified PYQs: NEB 2024 (2sin^2 th - sin th - 1 = 0), NEB 2022 (cos 2th = cos th) — assigned to this row. NEB 2023's inverse-value item bridges to the next row.
+@@examShortTricks@@
+Factor first (2sin^2 - sin - 1 = (2sin+1)(sin-1)). Principal value in [-pi/2, pi/2] for sin/tan, [0, pi] for cos. Filter n = 0, 1, 2 into the interval. Squared equation: th = n*pi +- a for all three functions.
+@@examNotes@@
+List every solution inside the interval explicitly - the filter step carries marks even when the family is right.
+@@formulas@@
+- sin θ = sin α ⟹ θ = nπ + (−1)ⁿα; cos θ = cos α ⟹ θ = 2nπ ± α; tan θ = tan α ⟹ θ = nπ + α
+- sin²θ = sin²α ⟹ θ = nπ ± α (likewise cos², tan²)
+- sin θ = 0 ⟹ θ = nπ; cos θ = 0 ⟹ θ = (2n+1)π/2; sin θ = 1 ⟹ θ = 2nπ + π/2
+@@practice@@
+Solve 2sin²θ − sinθ − 1 = 0 for 0 ≤ θ ≤ 2π.
+%%%
+Solve cos 2θ = cos θ and write the general solution.
+%%%
+State the general values of sin θ = sin α and tan θ = tan α with one-line proofs.
+@@practiceQuestions@@
+**NEB 2024 (verified PYQ): Solve: 2sin²θ − sin θ − 1 = 0 for 0 ≤ θ ≤ 2π. (4m)** — **Factorise:** treat as a quadratic in sin θ: 2sin²θ − sinθ − 1 = **(2sinθ + 1)(sinθ − 1) = 0**, so sin θ = 1 or sin θ = −1/2. **Case sin θ = 1:** principal value α = π/2, so θ = 2nπ + π/2; inside [0, 2π] this gives **θ = π/2** only. **Case sin θ = −1/2:** principal value α = −π/6 (in [−π/2, π/2]), so θ = nπ + (−1)ⁿ(−π/6). Testing n: n = 0 gives −π/6 (outside); n = 1 gives π + π/6 = **7π/6**; n = 2 gives 2π − π/6 = **11π/6**; n = 3 gives outside. **Answer: θ = π/2, 7π/6, 11π/6.** All three verify in the original equation (no squaring was used, so no extraneous roots).
+%%%
+**NEB 2022 (verified PYQ): Solve: cos 2θ = cos θ. (4m)** — **Reduce to one function:** cos 2θ = 2cos²θ − 1, so the equation becomes 2cos²θ − 1 = cos θ, i.e. **2cos²θ − cosθ − 1 = 0**. **Factorise:** (2cosθ + 1)(cosθ − 1) = 0, giving cos θ = 1 or cos θ = −1/2. **Case cos θ = 1:** principal value α = 0, so θ = **2nπ**. **Case cos θ = −1/2:** principal value α = 2π/3 (in [0, π]), so θ = **2nπ ± 2π/3**. **General solution: θ = 2nπ or 2nπ ± 2π/3, n ∈ ℤ.** If restricted to [0, 2π]: θ = 0, 2π/3, 4π/3, 2π. (Writing cos 2θ = cos θ directly as 2θ = 2nπ ± θ would give only the cos θ = 1 branch and miss cos θ = −1/2 — the quadratic reduction is the safe route.)
+%%%
+**NEB-style (3m): Solve for x, 0° < x < 90°: 3sin²x − 4cos²x + 1 = 0.** — Replace cos²x = 1 − sin²x: 3sin²x − 4(1 − sin²x) + 1 = 0 ⟹ **7sin²x − 3 = 0** ⟹ sin²x = 3/7 ⟹ **sin x = √(3/7)** (positive, since 0° < x < 90°). Hence **x = sin⁻¹√(3/7) ≈ 40.9°**. The squared-equation family θ = nπ ± α collapses to the single first-quadrant value because the interval excludes every other branch — one solution, exactly as the restricted window demands.
+@@summary@@
+A trigonometric equation is solved in two moves: **reduce, then generalise**. Reduce to one function of one angle (factor quadratics in sin/cos; use cos 2θ = 2cos²θ − 1, sin² + cos² = 1, sum→product). Then apply the **general value theorems**: sin θ = sin α ⟹ **θ = nπ + (−1)ⁿα** (sine mirrors about π/2), cos θ = cos α ⟹ **θ = 2nπ ± α** (cosine is even), tan θ = tan α ⟹ **θ = nπ + α** (tangent just repeats); squared equations all give θ = nπ ± α. NEB 2024's 2sin²θ − sinθ − 1 = 0 factors into sin θ = 1 and sin θ = −1/2, yielding **π/2, 7π/6, 11π/6** inside [0, 2π]; NEB 2022's cos 2θ = cos θ becomes the quadratic 2cos²θ − cosθ − 1 = 0 with solutions **2nπ and 2nπ ± 2π/3**. Always filter the family to the requested interval, and verify candidates when squaring was involved.
