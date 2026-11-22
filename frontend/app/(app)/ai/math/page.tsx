@@ -22,6 +22,8 @@ import { StepCards } from "@/components/chat/step-cards";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { apiFetch } from "@/lib/api-client";
 import { reportClientError } from "@/lib/errors/app-error";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 import { AiToolShell } from "@/components/ai/ai-tool-shell";
@@ -88,6 +90,7 @@ const SYMBOLS = [
 ];
 
 export default function MathStudioPage() {
+  const { user } = useSession();
   const [problem, setProblem] = useState("");
   const [subject, setSubject] = useState<"mathematics" | "physics" | "chemistry">("mathematics");
   const [classLevel, setClassLevel] = useState<"11" | "12" | "general">("11");
@@ -122,6 +125,15 @@ export default function MathStudioPage() {
       });
 
       setResponse(res);
+      // Signed-in solves land in the account chat history (session
+      // `tool:math`) so they show up in AI History like every other Veer
+      // surface. Guests have no history to write to.
+      if (user) {
+        void recordAccountChatTurn("tool:math", [
+          { role: "user", content: problem.trim() },
+          { role: "assistant", content: res.solution },
+        ]);
+      }
       if (typeof res.remaining === "number") {
         writeGuestCount(Math.max(0, GUEST_DAILY_LIMIT - res.remaining));
       }

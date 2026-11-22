@@ -22,6 +22,8 @@ import { toast } from "sonner";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { apiFetch } from "@/lib/api-client";
 import { reportClientError } from "@/lib/errors/app-error";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { recordAccountChatTurn } from "@/features/ai/account-chat";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 import { AiToolShell } from "@/components/ai/ai-tool-shell";
@@ -72,6 +74,7 @@ const PRESETS = [
 ];
 
 export default function DeepDiveStudioPage() {
+  const { user } = useSession();
   const [topic, setTopic] = useState("");
   const [subject, setSubject] = useState("physics");
   const [classLevel, setClassLevel] = useState("12");
@@ -123,6 +126,15 @@ export default function DeepDiveStudioPage() {
       });
 
       setResponse(res);
+      // Signed-in deep dives land in the account chat history (session
+      // `tool:deep-dive`) so they show up in AI History like every other
+      // Veer surface. Guests have no history to write to.
+      if (user) {
+        void recordAccountChatTurn("tool:deep-dive", [
+          { role: "user", content: topic.trim() },
+          { role: "assistant", content: res.explanation },
+        ]);
+      }
       if (typeof res.remaining === "number") {
         writeGuestCount(Math.max(0, GUEST_DAILY_LIMIT - res.remaining));
       }

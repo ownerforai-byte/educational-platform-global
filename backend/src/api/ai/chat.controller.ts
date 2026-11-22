@@ -83,6 +83,24 @@ router.get("/spark", requireAuth, async (req: Request, res: Response) => {
   }
 });
 
+/**
+ * GET /api/ai/status — configuration probe for the status dot shown on every
+ * Veer surface (AiStatusDot polls it every 60s). Reports whether at least one
+ * AI provider is wired up — never which one, and never live provider health.
+ * No auth: the probe runs before sign-in so guests see an honest dot too.
+ */
+router.get("/status", (req: Request, res: Response) => {
+  try {
+    const configured = getService().getProviders().length > 0;
+    res.json({ configured, online: configured });
+  } catch (err) {
+    // A failed probe must read as "not configured", not a 500 the dot cannot
+    // interpret — the frontend treats any non-ok response as offline.
+    logServerError(err, newErrorId(), "ai-status-probe");
+    res.json({ configured: false, online: false });
+  }
+});
+
 router.post("/", requireAuth, requireVeerChatTier(), async (req: Request, res: Response) => {
   // Veer chat costs no CONTENT sparks (owner policy 2026-10-12). It is,
   // however, metered by AI sparks per tier since 2026-10-13 — see the gate
