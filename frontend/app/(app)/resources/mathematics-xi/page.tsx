@@ -233,8 +233,8 @@ export default function MathematicsXiSolutionsPage() {
               {MATH_XI_PAPER_MARKS} marks in 3 hours: Group A {MATH_XI_PAPER_GROUPS[0].count} ×{" "}
               {MATH_XI_PAPER_GROUPS[0].per}, Group B {MATH_XI_PAPER_GROUPS[1].count} ×{" "}
               {MATH_XI_PAPER_GROUPS[1].per}, Group C {MATH_XI_PAPER_GROUPS[2].count} ×{" "}
-              {MATH_XI_PAPER_GROUPS[2].per}. One paper per unit, each followed by the worked answer
-              key.
+              {MATH_XI_PAPER_GROUPS[2].per}. Two sets per unit — different questions, same grid — each
+              followed by the worked answer key.
             </p>
           </div>
           <a
@@ -267,15 +267,18 @@ export default function MathematicsXiSolutionsPage() {
                   {unit.exerciseCount} exercises · {unit.conceptualCount} conceptual ·{" "}
                   {unit.longAnswerCount} long answers
                 </span>
-                <a
-                  href={mathXiPaperUrl(unit.unitNo)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded border border-rose-500/40 px-1 font-semibold text-rose-700 hover:bg-rose-500/10 dark:text-rose-400"
-                  title={`NEB model paper for unit ${unit.unitNo}`}
-                >
-                  model paper
-                </a>
+                {(["A", "B"] as const).map((set) => (
+                  <a
+                    key={set}
+                    href={mathXiPaperUrl(unit.unitNo, set)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded border border-rose-500/40 px-1 font-semibold text-rose-700 hover:bg-rose-500/10 dark:text-rose-400"
+                    title={`NEB model paper for unit ${unit.unitNo}, Set ${set}`}
+                  >
+                    paper {set}
+                  </a>
+                ))}
               </p>
             </div>
 

@@ -272,8 +272,14 @@ describe("Mathematics XI — hard sets with hint ladders", () => {
     expect(index).toContain("1 long answer");
   });
 
-  it("publishes one 75-mark NEB model paper per unit, with a full answer key", () => {
-    expect(MATH_XI_PAPERS.length).toBe(MATHEMATICS_XI_UNITS.length);
+  it("publishes two 75-mark NEB model paper sets per unit, each with a full answer key", () => {
+    expect(MATH_XI_PAPERS.length).toBe(MATHEMATICS_XI_UNITS.length * 2);
+    for (const unit of MATHEMATICS_XI_UNITS) {
+      const sets = MATH_XI_PAPERS.filter((paper) => paper.unitNo === unit.unitNo).map(
+        (paper) => paper.set,
+      );
+      expect(sets, `unit ${unit.unitNo}: sets`).toEqual(["A", "B"]);
+    }
     expect(MATH_XI_PAPER_MARKS).toBe(75);
     expect(MATH_XI_PAPER_GROUPS.map((group) => [group.count, group.per])).toEqual([
       [11, 1],
@@ -283,7 +289,7 @@ describe("Mathematics XI — hard sets with hint ladders", () => {
 
     const index = read("public/resources/mathematics-xi/chapters/papers/index.html");
     for (const paper of MATH_XI_PAPERS) {
-      const html = read(mathXiPaperPath(paper.unitNo));
+      const html = read(mathXiPaperPath(paper.unitNo, paper.set));
       const mcq = html.match(/<ol class="mcq">([\s\S]*?)<\/ol>/)?.[1] ?? "";
       const written = html.match(/<ol class="written">([\s\S]*?)<\/ol>/)?.[1] ?? "";
       const long = html.match(/<ol class="written long">([\s\S]*?)<\/ol>/)?.[1] ?? "";
@@ -298,11 +304,18 @@ describe("Mathematics XI — hard sets with hint ladders", () => {
       expect(html).toContain("Full marks: 75");
       expect(html).toContain("/resources/mathematics-xi/a4/paper.css");
       expect(html).not.toContain("<style");
-      expect(index).toContain(mathXiPaperUrl(paper.unitNo));
+      expect(index).toContain(mathXiPaperUrl(paper.unitNo, paper.set));
+      expect(html).toContain(`Set ${paper.set}`);
     }
 
     expect(MATH_XI_PAPERS.every((paper) => paper.marks === 75)).toBe(true);
-    expect(MATH_XI_PAPERS.reduce((sum, paper) => sum + paper.questionCount, 0)).toBe(22 * 7);
+    expect(MATH_XI_PAPERS.reduce((sum, paper) => sum + paper.questionCount, 0)).toBe(22 * 14);
+    expect(mathXiPaperUrl(7, "B")).toBe(
+      "/resources/mathematics-xi/chapters/papers/unit-07-set-b.html",
+    );
+    expect(mathXiPaperPath(7)).toBe(
+      "public/resources/mathematics-xi/chapters/papers/unit-07.html",
+    );
   });
 });
 

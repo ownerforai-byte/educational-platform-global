@@ -657,9 +657,30 @@ for (const file of paperFiles) {
         }
       }
     }
-    papers.push({ ...paper, unitName: unitChapters[0].unitName, chapters: unitChapters });
+    const set = (paper.set ?? "A").toUpperCase();
+    if (!["A", "B", "C"].includes(set)) {
+      fail(`${at}: set must be A, B or C`);
+      continue;
+    }
+    if (papers.some((other) => other.unitNo === paper.unitNo && other.set === set)) {
+      fail(`${at}: set ${set} is defined twice`);
+      continue;
+    }
+    papers.push({
+      ...paper,
+      set,
+      unitName: unitChapters[0].unitName,
+      chapters: unitChapters,
+    });
   }
 }
+papers.sort((a, b) => a.unitNo - b.unitNo || a.set.localeCompare(b.set));
+
+/** File stem for a paper: set A keeps the plain unit name. */
+const paperStem = (paper) =>
+  paper.set === "A"
+    ? `unit-${String(paper.unitNo).padStart(2, "0")}`
+    : `unit-${String(paper.unitNo).padStart(2, "0")}-set-${paper.set.toLowerCase()}`;
 
 /* ── NEB model papers ─────────────────────────────────────────────────── */
 
@@ -726,14 +747,14 @@ ${items
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Unit ${paper.unitNo} ${esc(paper.title ?? paper.unitName)} — NEB model paper (Mathematics XI)</title>
+<title>Unit ${paper.unitNo} ${esc(paper.title ?? paper.unitName)} Set ${paper.set} — NEB model paper (Mathematics XI)</title>
 <meta name="description" content="Model NEB question paper for Unit ${paper.unitNo} of Mathematics XI: 75 marks, 3 hours, with the full answer key and marking notes.">
 <link rel="stylesheet" href="/resources/mathematics-xi/a4/paper.css">
 </head>
 <body>
 <section class="paper">
 <header class="phead">
-<div class="row"><span>NEB · Grade XI · Compulsory Mathematics</span><span>Model paper · Unit ${paper.unitNo}</span></div>
+<div class="row"><span>NEB · Grade XI · Compulsory Mathematics</span><span>Model paper · Unit ${paper.unitNo} · Set ${paper.set}</span></div>
 <h1>${esc(paper.title ?? paper.unitName)}</h1>
 <p class="sub"><b>Time: 3 hours</b> · <b>Full marks: ${PAPER_MARKS}</b> · Pass marks: 27 · Code 0071 ‘M’</p>
 <ul class="instructions">
@@ -759,8 +780,8 @@ ${groups}
 
 <section class="paper key">
 <header class="phead">
-<div class="row"><span>NEB · Grade XI · Compulsory Mathematics</span><span>Answer key · Unit ${paper.unitNo}</span></div>
-<h1>Answer key and marking notes — ${esc(paper.title ?? paper.unitName)}</h1>
+<div class="row"><span>NEB · Grade XI · Compulsory Mathematics</span><span>Answer key · Unit ${paper.unitNo} · Set ${paper.set}</span></div>
+<h1>Answer key and marking notes — ${esc(paper.title ?? paper.unitName)}, Set ${paper.set}</h1>
 <p class="sub"><b>${PAPER_MARKS} marks</b> · Group A 1 mark each · Group B 5 marks each · Group C 8 marks each</p>
 </header>
 ${paper.note ? `<p class="legend">${esc(paper.note)}</p>` : ""}
@@ -788,15 +809,18 @@ ${keyC}
 };
 
 const paperIndexHtml = () => {
-  const items = papers
-    .map(
-      (paper) =>
-        `<li><a href="/resources/mathematics-xi/chapters/papers/unit-${String(paper.unitNo).padStart(
-          2,
-          "0",
-        )}.html">Unit ${paper.unitNo} · ${esc(paper.title ?? paper.unitName)}</a> <span>· ${PAPER_GROUPS.map((g) => `${g.count}×${g.per}`).join(" + ")} = ${PAPER_MARKS} marks</span></li>`,
-    )
-    .join("\n");
+  const units = [...new Set(papers.map((paper) => paper.unitNo))].sort((a, b) => a - b);
+  const rows = units.map((unitNo) => {
+    const list = papers.filter((paper) => paper.unitNo === unitNo);
+    const links = list
+      .map(
+        (paper) =>
+          `<a href="/resources/mathematics-xi/chapters/papers/${paperStem(paper)}.html">Set ${paper.set}</a>`,
+      )
+      .join(" · ");
+    return `<li><span class="qtext">Unit ${unitNo} · ${esc(list[0].title ?? list[0].unitName)}</span> <span class="mk">${links} · ${list[0].questionCount} questions · ${PAPER_MARKS} marks</span></li>`;
+  });
+  const sets = [...new Set(papers.map((paper) => paper.set))].sort().join(" and ");
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -810,13 +834,13 @@ const paperIndexHtml = () => {
 <header class="phead">
 <div class="row"><span>${esc(STREAM)}</span><span>${esc(BOOK)} · model papers</span></div>
 <h1>NEB model question papers — contents</h1>
-<p class="sub"><b>${papers.length} papers</b> · ${PAPER_MARKS} marks each · 3 hours each · full answer key included</p>
+<p class="sub"><b>${papers.length} papers</b> in sets ${esc(sets)} · ${PAPER_MARKS} marks each · 3 hours each · full answer key included</p>
 </header>
 <ol class="written">
-${items}
+${rows.join("\n")}
 </ol>
 <footer class="foot">
-<span>Units ${papers.map((paper) => paper.unitNo).join(", ")}</span>
+<span>Units ${units.join(", ")}</span>
 <span class="mid">NEB split 11 × 1 + 8 × 5 + 3 × 8</span>
 <span>${papers.length} papers</span>
 </footer>
@@ -951,11 +975,11 @@ export const MATH_XI_PAPERS = [
 ${papers
   .map(
     (paper) =>
-      `  { unitNo: ${paper.unitNo}, title: ${JSON.stringify(
+      `  { unitNo: ${paper.unitNo}, set: ${JSON.stringify(paper.set)}, title: ${JSON.stringify(
         paper.title ?? paper.unitName,
       )}, unitName: ${JSON.stringify(paper.unitName)}, questionCount: ${
         paper.A.length + paper.B.length + paper.C.length
-      }, marks: ${PAPER_MARKS} },`,
+      }, marks: ${PAPER_MARKS}, url: \`\${MATH_XI_WORKBOOK_BASE}/papers/${paperStem(paper)}.html\`, path: \`public/resources/mathematics-xi/chapters/papers/${paperStem(paper)}.html\` },`,
   )
   .join("\n")}
 ] as const;
@@ -1029,12 +1053,17 @@ export function mathXiLongChapters(): MathXiChapter[] {
   return MATH_XI_CHAPTERS.filter((chapter) => chapter.longCount > 0);
 }
 
-export function mathXiPaperUrl(unitNo: number): string {
-  return \`\${MATH_XI_WORKBOOK_BASE}/papers/unit-\${String(unitNo).padStart(2, "0")}.html\`;
+/** Paper URL for a unit and set (set A is the default). */
+export function mathXiPaperUrl(unitNo: number, set = "A"): string {
+  const stem =
+    set === "A"
+      ? \`unit-\${String(unitNo).padStart(2, "0")}\`
+      : \`unit-\${String(unitNo).padStart(2, "0")}-set-\${set.toLowerCase()}\`;
+  return \`\${MATH_XI_WORKBOOK_BASE}/papers/\${stem}.html\`;
 }
 
-export function mathXiPaperPath(unitNo: number): string {
-  return \`public/resources/mathematics-xi/chapters/papers/unit-\${String(unitNo).padStart(2, "0")}.html\`;
+export function mathXiPaperPath(unitNo: number, set = "A"): string {
+  return \`public/resources/mathematics-xi/chapters/papers/\${mathXiPaperUrl(unitNo, set).split("/papers/")[1]}\`;
 }
 
 export function mathXiChapterUrl(chapter: Pick<MathXiChapter, "slug">): string {
@@ -1095,8 +1124,7 @@ if (longChapters.length > 0) {
 if (papers.length > 0) {
   fs.mkdirSync(PAPER_OUT_DIR, { recursive: true });
   for (const paper of papers) {
-    const name = `unit-${String(paper.unitNo).padStart(2, "0")}.html`;
-    fs.writeFileSync(path.join(PAPER_OUT_DIR, name), paperHtml(paper), "utf8");
+    fs.writeFileSync(path.join(PAPER_OUT_DIR, `${paperStem(paper)}.html`), paperHtml(paper), "utf8");
   }
   fs.writeFileSync(path.join(PAPER_OUT_DIR, "index.html"), paperIndexHtml(), "utf8");
 }
@@ -1130,7 +1158,7 @@ if (longChapters.length > 0) {
 }
 if (papers.length > 0) {
   console.log(
-    `✓ ${papers.length} model papers · ${PAPER_GROUPS.map((group) => `${group.count}×${group.per}`).join(" + ")} = ${PAPER_MARKS} marks each`,
+    `✓ ${papers.length} model papers in sets ${[...new Set(papers.map((paper) => paper.set))].sort().join(", ")} · ${PAPER_GROUPS.map((group) => `${group.count}×${group.per}`).join(" + ")} = ${PAPER_MARKS} marks each`,
   );
 }
 for (const [unitNo, list] of [...indexByUnit.entries()].sort((a, b) => a[0] - b[0])) {

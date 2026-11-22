@@ -26,13 +26,20 @@ export const MATH_XI_PAPER_GROUPS = [
 
 /** One NEB model paper per unit. */
 export const MATH_XI_PAPERS = [
-  { unitNo: 1, title: "Unit 1 — Algebra", unitName: "Algebra", questionCount: 22, marks: 75 },
-  { unitNo: 2, title: "Unit 2 — Trigonometry", unitName: "Trigonometry", questionCount: 22, marks: 75 },
-  { unitNo: 3, title: "Unit 3 — Analytic Geometry", unitName: "Analytic Geometry", questionCount: 22, marks: 75 },
-  { unitNo: 4, title: "Unit 4 — Vectors", unitName: "Vectors", questionCount: 22, marks: 75 },
-  { unitNo: 5, title: "Unit 5 — Statistics and Probability", unitName: "Statistics and Probability", questionCount: 22, marks: 75 },
-  { unitNo: 6, title: "Unit 6 — Calculus", unitName: "Calculus", questionCount: 22, marks: 75 },
-  { unitNo: 7, title: "Unit 7 — Computational Methods and Mechanics", unitName: "Computational Methods or Mechanics", questionCount: 22, marks: 75 },
+  { unitNo: 1, set: "A", title: "Unit 1 — Algebra", unitName: "Algebra", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-01.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-01.html` },
+  { unitNo: 1, set: "B", title: "Unit 1 — Algebra", unitName: "Algebra", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-01-set-b.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-01-set-b.html` },
+  { unitNo: 2, set: "A", title: "Unit 2 — Trigonometry", unitName: "Trigonometry", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-02.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-02.html` },
+  { unitNo: 2, set: "B", title: "Unit 2 — Trigonometry", unitName: "Trigonometry", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-02-set-b.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-02-set-b.html` },
+  { unitNo: 3, set: "A", title: "Unit 3 — Analytic Geometry", unitName: "Analytic Geometry", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-03.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-03.html` },
+  { unitNo: 3, set: "B", title: "Unit 3 — Analytic Geometry", unitName: "Analytic Geometry", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-03-set-b.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-03-set-b.html` },
+  { unitNo: 4, set: "A", title: "Unit 4 — Vectors", unitName: "Vectors", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-04.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-04.html` },
+  { unitNo: 4, set: "B", title: "Unit 4 — Vectors", unitName: "Vectors", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-04-set-b.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-04-set-b.html` },
+  { unitNo: 5, set: "A", title: "Unit 5 — Statistics and Probability", unitName: "Statistics and Probability", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-05.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-05.html` },
+  { unitNo: 5, set: "B", title: "Unit 5 — Statistics and Probability", unitName: "Statistics and Probability", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-05-set-b.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-05-set-b.html` },
+  { unitNo: 6, set: "A", title: "Unit 6 — Calculus", unitName: "Calculus", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-06.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-06.html` },
+  { unitNo: 6, set: "B", title: "Unit 6 — Calculus", unitName: "Calculus", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-06-set-b.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-06-set-b.html` },
+  { unitNo: 7, set: "A", title: "Unit 7 — Computational Methods and Mechanics", unitName: "Computational Methods or Mechanics", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-07.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-07.html` },
+  { unitNo: 7, set: "B", title: "Unit 7 — Computational Methods and Mechanics", unitName: "Computational Methods or Mechanics", questionCount: 22, marks: 75, url: `${MATH_XI_WORKBOOK_BASE}/papers/unit-07-set-b.html`, path: `public/resources/mathematics-xi/chapters/papers/unit-07-set-b.html` },
 ] as const;
 
 export interface MathXiChapter {
@@ -628,12 +635,17 @@ export function mathXiLongChapters(): MathXiChapter[] {
   return MATH_XI_CHAPTERS.filter((chapter) => chapter.longCount > 0);
 }
 
-export function mathXiPaperUrl(unitNo: number): string {
-  return `${MATH_XI_WORKBOOK_BASE}/papers/unit-${String(unitNo).padStart(2, "0")}.html`;
+/** Paper URL for a unit and set (set A is the default). */
+export function mathXiPaperUrl(unitNo: number, set = "A"): string {
+  const stem =
+    set === "A"
+      ? `unit-${String(unitNo).padStart(2, "0")}`
+      : `unit-${String(unitNo).padStart(2, "0")}-set-${set.toLowerCase()}`;
+  return `${MATH_XI_WORKBOOK_BASE}/papers/${stem}.html`;
 }
 
-export function mathXiPaperPath(unitNo: number): string {
-  return `public/resources/mathematics-xi/chapters/papers/unit-${String(unitNo).padStart(2, "0")}.html`;
+export function mathXiPaperPath(unitNo: number, set = "A"): string {
+  return `public/resources/mathematics-xi/chapters/papers/${mathXiPaperUrl(unitNo, set).split("/papers/")[1]}`;
 }
 
 export function mathXiChapterUrl(chapter: Pick<MathXiChapter, "slug">): string {
