@@ -66,6 +66,18 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       "crossing over", // chiasma diagram
     ],
   },
+  "mendels-laws-of-inheritance": {
+    title: "From DNA to trait — what a gene really is",
+    figures: [
+      {
+        src: "/docs/figures/biology/dna-double-helix.jpg",
+        caption:
+          "Mendel discovered the rules of inheritance without ever seeing the molecule — this is what his 'factors' turned out to be. On the left, DNA in its double helix: two twisting backbone ribbons wound around each other like a spiral ladder, every rung a base pair built from one of only four letters, and each letter pairing with exactly one partner (A with T, G with C) — the pairing rule is what lets DNA copy itself so faithfully. A gene is simply a stretch of those rungs — the glowing segment here — long enough to carry the recipe for one protein, and a protein is what makes a trait happen: the light beam runs from the gene to the flower it colours. Coil that filament further and further and you get the compact X-shaped chromosome on the right — the package in which DNA travels into every gamete. Mendel's alleles are just alternative versions of the same gene lying at the same spot on a pair of chromosomes: T and t are two spellings of one instruction, dominance decides which spelling gets read, and segregation is the fact that the two chromosomes of a pair part ways at gamete formation — the molecular truth behind every Punnett square.",
+        alt: "Illustration of a blue DNA double helix with coloured base-pair rungs, a glowing gold gene segment, the helix condensed into an X-shaped chromosome, and a small flower representing the trait",
+        keyword: "gene",
+      },
+    ],
+  },
   "immune-system-and-immunity": {
     title: "The adaptive immune response — antibodies and their cells",
     figures: [
