@@ -32,6 +32,13 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
         alt: "Detailed cutaway illustrations of a mitochondrion with cristae, a chloroplast with grana stacks and stroma, and rough endoplasmic reticulum with ribosomes leading to a Golgi apparatus with vesicles",
         keyword: "mitochondria",
       },
+      {
+        src: "/docs/figures/biology/chloroplast-grana-plate.jpg",
+        caption:
+          "The chloroplast opened up — the organelle that eats light. Slice through the oval body and you meet the same logic as the mitochondrion, run in reverse: a smooth double envelope encloses a fluid stroma, and inside it the working surface is multiplied into stacks. Each stack (a granum) is a pile of flat thylakoid discs, and the disc membranes are where the light reaction happens — chlorophyll packed into the membranes captures photons, splits water, releases the oxygen you see drifting as bubbles, and charges the cell's energy currencies ATP and NADPH. One stack is drawn pulled apart so you can see the coins separately; thin stroma lamellae tie the stacks together into one continuous membrane system. Around them, the stroma is the sugar factory: its enzymes run the Calvin cycle, fixing CO₂ into carbohydrate using that ATP and NADPH, and store the output first as the large pale starch granule. The small ring of circular DNA and the ribosome dots are the chloroplast's bacterial inheritance — like the mitochondrion, it was once a free-living cell.",
+        alt: "Cutaway illustration of a chloroplast with double envelope, green stroma, stacks of thylakoid discs (grana) joined by lamellae, a pale starch granule, a circular DNA ring, golden light rays and oxygen bubbles",
+        keyword: "chloroplast",
+      },
     ],
     keepSvg: [
       // classification-style diagrams the raster plate does not supersede
