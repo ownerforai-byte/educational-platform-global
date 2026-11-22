@@ -5,12 +5,12 @@
   "topicSlug": "continuity-of-function",
   "relevance": 100,
   "notes": [
-    "**The three conditions:** $f$ is continuous at $x=a$ if (i) $f(a)$ is DEFINED, (ii) $\\lim_{x \\to a} f(x)$ EXISTS, and (iii) the two are EQUAL. All three are required, and naming which one fails is exactly how discontinuity is classified.",
-    "**Intuitively:** the graph has no hole, no jump and no break at $a$ — it can be drawn without lifting the pencil. Since this is a limit statement, a function can be continuous everywhere yet fail to be differentiable at a corner (the case $|x|$ at 0).",
-    "**Elementary functions:** polynomials are continuous everywhere, so $\\lim_{x\\to a}P(x)=P(a)$ by direct substitution. $\\frac1x$, $\\tan x$, roots and logarithms are continuous only where defined.",
-    "**Continuity of a piece:** the test is $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$. For piece-wise functions this value-matches-both-sides check is almost always what a question intends.",
-    "**Removable discontinuity:** the limit exists but $f(a)$ is undefined or differs from it. Assigning the missing value equal to the limit repairs the function — a strong hint the break is removable.",
-    "**Composite and inverse:** $g\\circ f$ is continuous wherever $f$ is continuous and $g$ is continuous at $f(x)$; the inverse of a continuous one-to-one function is continuous on its range, which is why $\\sqrt{\\tan x}$ is continuous exactly where both parts are."
+    "## 1. Topic Introduction — The Companion Doorway to Continuity Overall\n\nThis canonical is the **catch-all continuity companion**: the definition, the three-point audit, the discontinuity catalogue, and the repair programme in one page. It mirrors the parent continuity canonicals and exists so learners entering through this door meet the same theorems.",
+    "## 2. Theorem Mirror\n\n- **Definition:** f is continuous at a ⟺ lim_{x→a}f(x) = f(a) — three facts: the limit exists (both sides agree), the value exists, and they match.\n- **The audit:** limit? value? match? — each question's failure names the discontinuity.\n- **Catalogue:** removable (limit exists, value missing or mismatched — hole or detached dot); jump (both one-sided limits exist, disagree — the cliff); infinite (one or both sides → ±∞ — the wall); oscillatory (no approach settles — sin(1/x) at 0).\n- **Continuity of standard functions:** polynomials everywhere; rationals off denominator zeros; roots on their domains; sin, cos everywhere; exp everywhere; ln on (0, ∞).",
+    "## 3. Deep Conceptual — Continuity Is a Contract Between Limit and Value\n\n- The definition welds two independent objects — the *approach behaviour* (limit) and the *anchored behaviour* (value) — into one demand. The audit's three questions are independent: each can fail alone, and the failure pattern is the classification.\n- **The catalogue is a taxonomy of mismatches:** removable = the approach is fine but the anchor is wrong (repairable by re-anchoring); jump = the two approaches disagree with each other (no single limit to anchor); infinite/oscillatory = the approach itself fails (nothing to anchor). Repair is possible exactly when the limit exists.\n- **Continuity is local, and functions are continuous almost everywhere they exist:** the standard functions fail only at their suspect points (denominator zeros, domain edges, piecewise joints) — the audit is always a pointwise question.",
+    "## 4. Deep Conceptual — The Repair Programme and the Extension Idea\n\n- **Removable repair:** define f(a) = lim_{x→a}f — one value re-anchors the function; the graph's hole is filled. This is the simplest instance of *extension*: enlarging a function's domain to make it continuous.\n- **Jump and wall are unrepairable:** no value at a can reconcile two different one-sided limits or an infinite one — the failure is in the approach, not the anchor. Knowing *which* failures are repairable is the practical payoff of the taxonomy.\n- **Piecewise welding:** for f defined by cases, the joint a is the only suspect — compute LHL and RHL from each formula, compare with the assigned value, and solve for any unknown parameter that makes the weld smooth. The audit becomes an equation for the parameter.",
+    "## 5. Worked Example Types\n\n- **Type A — three-question audit:** limit, value, match at a named point.\n- **Type B — classification:** name the discontinuity from the failure pattern.\n- **Type C — repair:** re-anchor a removable discontinuity.\n- **Type D — parameter weld:** find k (or a, b) making a piecewise function continuous.",
+    "## 6. Common Confusions\n\n**\"Continuous means you can draw it without lifting the pen\":** the folk picture — the definition is the three-point match, and it is local. **\"A hole breaks continuity forever\":** removable means one re-definition repairs it."
   ],
   "confusion": [
     "Checking only that $f(a)$ is defined and declaring continuity — the limit must exist and match.",
@@ -18,37 +18,32 @@
     "Using a one-sided limit in place of the two-sided one at a join point."
   ],
   "universalFacts": [
-    "The intermediate value theorem — a continuous function on $[a,b]$ takes every value between $f(a)$ and $f(b)$ — is why a graph with a hole can skip a root but a graph with a jump cannot.",
-    "Physical laws are modelled as continuous because the world is, to measurement precision, free of instantaneous jumps; discontinuities in models are usually deliberate idealisations."
+    "Continuity is local: every standard function is continuous everywhere except its named suspects."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
   "formulas": [
-    "Continuity at $a$: $f(a)$ defined, $\\lim_{x\\to a}f(x)=L$, and $f(a)=L$",
-    "One-sided test: $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$",
-    "Composite: $g\\circ f$ continuous if $f$ is and $g$ is continuous at $f(x)$",
-    "Polynomial: $\\lim_{x\\to a}P(x)=P(a)$"
+    "- f continuous at a ⟺ lim_{x→a}f(x) = f(a)\n- Repair: define f(a) = lim_{x→a}f(x)"
   ],
   "keyPoints": [
-    "All three conditions must hold; the failing one names the type of discontinuity.",
-    "Continuity does not imply differentiability — $|x|$ at 0 proves it.",
-    "Polynomials are continuous everywhere; rational functions except where the denominator vanishes."
+    "Continuity at a: lim = f(a) - three independent facts (limit exists, value exists, they match). Catalogue: removable (repairable by re-anchoring), jump (sides disagree), infinite (wall), oscillatory. Repair is possible exactly when the limit exists. Standard functions fail only at suspects: denominator zeros, domain edges, piecewise joints. Piecewise welds turn the audit into an equation for the parameter."
   ],
-  "summary": "Continuity at $a$ requires three things at once: $f(a)$ defined, the two-sided limit existing, and the two being equal. Polynomials and elementary functions are continuous on their domains and composite functions inherit continuity from their parts. Continuity is strictly weaker than differentiability, which is why $|x|$ is continuous but not differentiable at 0.",
+  "summary": "Continuity is a three-fact contract at each point — limit exists, value exists, they match — and the failure pattern classifies the discontinuity: removable (repairable by re-anchoring), jump (sides disagree), infinite (the approach itself fails), oscillatory. Repair is possible exactly when the limit exists, which is why the audit's order is the diagnosis. Standard functions fail only at their suspects, and piecewise welds convert the audit into an equation for the parameter — continuity problems are algebra wearing the limit's clothes.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Checking only that $f(a)$ is defined and declaring continuity — the limit must exist and match.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "A discontinuity is repairable exactly when the limit exists."
+  ],
   "importantNotes": [
-    "Topic anchor: Composite and inverse  $g circ f$ is continuous wherever $f$ is continuous and $g$ is continuous at $f(x)$; the inverse of a continuous one-to-one function is continuous on its range, which is why $ sqrt{ tan x}$ is cont"
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "When asked 'is it continuous at $a$?', name which of the three conditions fails rather than answering only 'no'.",
-    "A hole with a well-defined limit is removable — always check for that case first."
+    "Audit in order: limit (both sides), value, match - the first failure names the class."
   ],
   "examNotes": [
-    "Testing continuity of a piece-wise function at a join point is a standard 2–3 mark question."
+    "For parameter welds, write the matching equation explicitly before solving."
   ],
   "mcs": [
     {
@@ -86,9 +81,7 @@
     }
   ],
   "importantConcepts": [
-    "All three conditions must hold; the failing one names the type of discontinuity.",
-    "Continuity does not imply differentiability — $|x|$ at 0 proves it.",
-    "Polynomials are continuous everywhere; rational functions except where the denominator vanishes."
+    "The audit's three questions are independent; the failure pattern is the classification."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -101,9 +94,20 @@
     "**4. [Idea: the derivative test resolves $0/0$ at any point where the numerator also vanishes]** Classify the discontinuity of $g(x)=\\dfrac{\\sin(\\pi x)}{x(x-1)}$ at $x=0$ and at $x=1$.\\newline\\newline**Solution:** The form is $\\frac00$ at both, so apply the ratio-of-derivatives test.$^{\\bullet}$ **At 0:** $\\lim_{x\\to0}\\dfrac{\\pi\\cos(\\pi x)}{2x-1} = \\dfrac{\\pi}{1} = \\pi$. Finite ⇒ **removable**, $g(0)=\\pi$.$^{\\bullet}$ **At 1:** $\\lim_{x\\to1}\\dfrac{\\pi\\cos(\\pi x)}{2x-1} = \\dfrac{-\\pi}{1} = -\\pi$. Finite ⇒ **removable**, $g(1)=-\\pi$.\\newline\\newline**Answer:** removable at both, repaired values $\\pi$ and $-\\pi$. **Note:** the test succeeds at both points only because $\\sin(\\pi x)$ vanishes at BOTH $0$ and $1$; had it vanished at 0 but not 1, $x=1$ would have been an infinite discontinuity.",
     "**5. [Idea: compose the two limit statements, and notice where the hypothesis is used]** $f$ is continuous on $[a,b]$, $g$ is continuous on $[c,d]$, and $f([a,b])\\subseteq[c,d]$. Prove $g\\circ f$ is continuous on $[a,b]$.\\newline\\newline**Solution:** Fix $x_0\\in[a,b]$.$^{\\bullet}$ $f$ continuous at $x_0$: $\\lim_{x\\to x_0}f(x)=f(x_0)$.$^{\\bullet}$ $f(x_0)\\in[c,d]$ and $g$ continuous there: $\\lim_{u\\to f(x_0)}g(u)=g(f(x_0))$.\\newline\\newline$^{\\bullet}$ As $x\\to x_0$, $f(x)\\to f(x_0)$, so substituting $u=f(x)$ in the second statement gives$\\newline\\lim_{x\\to x_0}g(f(x)) = g(f(x_0))$.\\newline\\newlineThat is precisely continuity of $g\\circ f$ at $x_0$, and $x_0$ was arbitrary.\\newline\\newline**Answer:** $g\\circ f$ continuous on $[a,b]$. **Where the hypothesis matters:** the inclusion $f([a,b])\\subseteq[c,d]$ ensures the second limit is taken where $g$ is actually continuous — otherwise $f(x_0)$ could land on a hole in $g$."
   ],
-  "practice": [],
-  "examples": [],
-  "practiceQuestions": [],
+  "practice": [
+    "Audit f(x) = (x² − 4)/(x − 2) at x = 2.",
+    "Classify the discontinuity of f(x) = 1/(x + 3) at x = −3.",
+    "Find k making f continuous: f = x + k for x ≤ 2, 3x − 1 for x > 2."
+  ],
+  "examples": [
+    "***The weld equation*** - f = x+k for x<=2, 3x-1 for x>2: continuity demands 2+k = 5, so k = 3 - the audit becomes algebra for the parameter."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Audit f(x) = (x² − 4)/(x − 2) at x = 2 and repair if possible.** — **Limit:** 0/0 ⟹ factor: (x−2)(x+2)/(x−2) = x + 2 for x ≠ 2 ⟹ lim = **4** (both sides agree). **Value:** f(2) is undefined (0/0 was evaluated literally) ⟹ the value fails. **Classification:** **removable** — the limit exists, the anchor is missing. **Repair:** define f(2) = 4 ⟹ continuous; the graph's hole at (2, 4) is filled by one point. **Deep point:** the audit's order mattered — the limit succeeded first, which is exactly the condition that makes repair possible; had the sides disagreed, no re-anchoring could have helped.",
+    "**NEB-style (5m): Classify the discontinuity of f(x) = 1/(x + 3) at x = −3 and describe the graph's behaviour there.** — **Numerator at −3:** 1 ≠ 0 ⟹ a genuine wall. **Sides:** as x → −3⁺, denominator → 0⁺ ⟹ f → **+∞**; as x → −3⁻, → **−∞**. **Classification:** **infinite discontinuity** — splitting wall (the denominator's zero is simple, so the sides run opposite). **Repairability:** none — the approach itself fails; no value at −3 reconciles ±∞. **Deep point:** the numerator's nonzero value certified the wall before any sign work — the same c/0 diagnosis as the limits unit, now completing a continuity classification.",
+    "**NEB-style (6m): Find k so that f is continuous everywhere: f(x) = x + k for x ≤ 2, f(x) = 3x − 1 for x > 2.** — **The suspect:** the joint x = 2 (both formulas are polynomials — continuous on their own patches). **LHL (x → 2⁻):** 2 + k. **RHL (x → 2⁺):** 3(2) − 1 = 5. **Value:** f(2) = 2 + k (the first formula's patch). **Weld equation:** LHL = value = RHL ⟹ 2 + k = 5 ⟹ **k = 3**. **Check:** with k = 3, f(2) = 5 = RHL ✓ — continuous at 2, hence everywhere. **Deep point:** the weld turned the audit into one linear equation — the parameter is the unknown in \"LHL = value = RHL\"; piecewise continuity problems are always this equation with richer algebra on either side.",
+    "**NEB-style (6m): For f(x) = (x³ − 8)/(x − 2) for x ≠ 2 and f(2) = 9, run the full audit at x = 2 and classify.** — **Limit:** 0/0 ⟹ x³ − 8 = (x − 2)(x² + 2x + 4) ⟹ simplified form x² + 2x + 4 ⟹ lim = 4 + 4 + 4 = **12** (both sides agree — the simplified form is continuous). **Value:** f(2) = 9 (assigned). **Match?** 12 ≠ 9 ⟹ **discontinuous — removable (mismatch)**: a detached dot at (2, 9) hovering over the hole at (2, 12). **Repair:** re-define f(2) = 12. **Deep point:** the assigned value made the audit three-step instead of two — the limit existed (repair possible), the value existed but mismatched; the classification \"removable\" covers both the missing-anchor and wrong-anchor cases, and the repair is the same single re-definition."
+  ],
   "mindmap": {
     "centralConcept": "Continuity — no breaks in the graph",
     "branches": [
@@ -178,6 +182,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to Continuity Overall\n\nThis canonical is the **catch-all continuity companion**: the definition, the three-point audit, the discontinuity catalogue, and the repair programme in one page. It mirrors the parent continuity canonicals and exists so learners entering through this door meet the same theorems.",
+      "## 2. Theorem Mirror\n\n- **Definition:** f is continuous at a ⟺ lim_{x→a}f(x) = f(a) — three facts: the limit exists (both sides agree), the value exists, and they match.\n- **The audit:** limit? value? match? — each question's failure names the discontinuity.\n- **Catalogue:** removable (limit exists, value missing or mismatched — hole or detached dot); jump (both one-sided limits exist, disagree — the cliff); infinite (one or both sides → ±∞ — the wall); oscillatory (no approach settles — sin(1/x) at 0).\n- **Continuity of standard functions:** polynomials everywhere; rationals off denominator zeros; roots on their domains; sin, cos everywhere; exp everywhere; ln on (0, ∞).",
+      "## 3. Deep Conceptual — Continuity Is a Contract Between Limit and Value\n\n- The definition welds two independent objects — the *approach behaviour* (limit) and the *anchored behaviour* (value) — into one demand. The audit's three questions are independent: each can fail alone, and the failure pattern is the classification.\n- **The catalogue is a taxonomy of mismatches:** removable = the approach is fine but the anchor is wrong (repairable by re-anchoring); jump = the two approaches disagree with each other (no single limit to anchor); infinite/oscillatory = the approach itself fails (nothing to anchor). Repair is possible exactly when the limit exists.\n- **Continuity is local, and functions are continuous almost everywhere they exist:** the standard functions fail only at their suspect points (denominator zeros, domain edges, piecewise joints) — the audit is always a pointwise question.",
+      "## 4. Deep Conceptual — The Repair Programme and the Extension Idea\n\n- **Removable repair:** define f(a) = lim_{x→a}f — one value re-anchors the function; the graph's hole is filled. This is the simplest instance of *extension*: enlarging a function's domain to make it continuous.\n- **Jump and wall are unrepairable:** no value at a can reconcile two different one-sided limits or an infinite one — the failure is in the approach, not the anchor. Knowing *which* failures are repairable is the practical payoff of the taxonomy.\n- **Piecewise welding:** for f defined by cases, the joint a is the only suspect — compute LHL and RHL from each formula, compare with the assigned value, and solve for any unknown parameter that makes the weld smooth. The audit becomes an equation for the parameter.",
+      "## 5. Worked Example Types\n\n- **Type A — three-question audit:** limit, value, match at a named point.\n- **Type B — classification:** name the discontinuity from the failure pattern.\n- **Type C — repair:** re-anchor a removable discontinuity.\n- **Type D — parameter weld:** find k (or a, b) making a piecewise function continuous.",
+      "## 6. Common Confusions\n\n**\"Continuous means you can draw it without lifting the pen\":** the folk picture — the definition is the three-point match, and it is local. **\"A hole breaks continuity forever\":** removable means one re-definition repairs it."
+    ],
+    "keyPoints": [
+      "Continuity at a: lim = f(a) - three independent facts (limit exists, value exists, they match). Catalogue: removable (repairable by re-anchoring), jump (sides disagree), infinite (wall), oscillatory. Repair is possible exactly when the limit exists. Standard functions fail only at suspects: denominator zeros, domain edges, piecewise joints. Piecewise welds turn the audit into an equation for the parameter."
+    ],
+    "importantConcepts": [
+      "The audit's three questions are independent; the failure pattern is the classification."
+    ],
+    "examples": [
+      "***The weld equation*** - f = x+k for x<=2, 3x-1 for x>2: continuity demands 2+k = 5, so k = 3 - the audit becomes algebra for the parameter."
+    ],
+    "universalFacts": [
+      "Continuity is local: every standard function is continuous everywhere except its named suspects."
+    ],
+    "importantStatements": [
+      "A discontinuity is repairable exactly when the limit exists."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Audit in order: limit (both sides), value, match - the first failure names the class."
+    ],
+    "examNotes": [
+      "For parameter welds, write the matching equation explicitly before solving."
+    ],
+    "formulas": [
+      "- f continuous at a ⟺ lim_{x→a}f(x) = f(a)\n- Repair: define f(a) = lim_{x→a}f(x)"
+    ],
+    "practice": [
+      "Audit f(x) = (x² − 4)/(x − 2) at x = 2.",
+      "Classify the discontinuity of f(x) = 1/(x + 3) at x = −3.",
+      "Find k making f continuous: f = x + k for x ≤ 2, 3x − 1 for x > 2."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Audit f(x) = (x² − 4)/(x − 2) at x = 2 and repair if possible.** — **Limit:** 0/0 ⟹ factor: (x−2)(x+2)/(x−2) = x + 2 for x ≠ 2 ⟹ lim = **4** (both sides agree). **Value:** f(2) is undefined (0/0 was evaluated literally) ⟹ the value fails. **Classification:** **removable** — the limit exists, the anchor is missing. **Repair:** define f(2) = 4 ⟹ continuous; the graph's hole at (2, 4) is filled by one point. **Deep point:** the audit's order mattered — the limit succeeded first, which is exactly the condition that makes repair possible; had the sides disagreed, no re-anchoring could have helped.",
+      "**NEB-style (5m): Classify the discontinuity of f(x) = 1/(x + 3) at x = −3 and describe the graph's behaviour there.** — **Numerator at −3:** 1 ≠ 0 ⟹ a genuine wall. **Sides:** as x → −3⁺, denominator → 0⁺ ⟹ f → **+∞**; as x → −3⁻, → **−∞**. **Classification:** **infinite discontinuity** — splitting wall (the denominator's zero is simple, so the sides run opposite). **Repairability:** none — the approach itself fails; no value at −3 reconciles ±∞. **Deep point:** the numerator's nonzero value certified the wall before any sign work — the same c/0 diagnosis as the limits unit, now completing a continuity classification.",
+      "**NEB-style (6m): Find k so that f is continuous everywhere: f(x) = x + k for x ≤ 2, f(x) = 3x − 1 for x > 2.** — **The suspect:** the joint x = 2 (both formulas are polynomials — continuous on their own patches). **LHL (x → 2⁻):** 2 + k. **RHL (x → 2⁺):** 3(2) − 1 = 5. **Value:** f(2) = 2 + k (the first formula's patch). **Weld equation:** LHL = value = RHL ⟹ 2 + k = 5 ⟹ **k = 3**. **Check:** with k = 3, f(2) = 5 = RHL ✓ — continuous at 2, hence everywhere. **Deep point:** the weld turned the audit into one linear equation — the parameter is the unknown in \"LHL = value = RHL\"; piecewise continuity problems are always this equation with richer algebra on either side.",
+      "**NEB-style (6m): For f(x) = (x³ − 8)/(x − 2) for x ≠ 2 and f(2) = 9, run the full audit at x = 2 and classify.** — **Limit:** 0/0 ⟹ x³ − 8 = (x − 2)(x² + 2x + 4) ⟹ simplified form x² + 2x + 4 ⟹ lim = 4 + 4 + 4 = **12** (both sides agree — the simplified form is continuous). **Value:** f(2) = 9 (assigned). **Match?** 12 ≠ 9 ⟹ **discontinuous — removable (mismatch)**: a detached dot at (2, 9) hovering over the hole at (2, 12). **Repair:** re-define f(2) = 12. **Deep point:** the assigned value made the audit three-step instead of two — the limit existed (repair possible), the value existed but mismatched; the classification \"removable\" covers both the missing-anchor and wrong-anchor cases, and the repair is the same single re-definition."
     ]
   }
 }

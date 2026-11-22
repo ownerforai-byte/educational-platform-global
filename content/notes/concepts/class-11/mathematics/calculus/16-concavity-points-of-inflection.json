@@ -5,59 +5,59 @@
   "topicSlug": "concavity-points-of-inflection",
   "relevance": 100,
   "notes": [
-    "**Concavity is a property of an INTERVAL, not a point.** $f''>0$ on an interval means concave up, $f''<0$ concave down. Saying 'the curve is concave up at $x=2$' is loose; the correct statement is about a neighbourhood of 2.",
-    "**Concave up means the tangent lies BELOW the curve, and concave down means it lies above.** This tangent-versus-curve picture is the most reliable way to fix the direction in memory, and it is what the inequality $f(a+h)=f(a)+f'(a)h+\\tfrac12f''(a)h^2$ encodes.",
-    "**An inflection point needs a SIGN CHANGE in $f''$.** Vanishing at a point is not enough: $f=x^4$ has $f''(0)=0$ with no sign change and therefore no inflection, while $y=x^3$ at 0 is a genuine inflection with $f''$ also zero.",
-    "**An inflection point does not have to be a stationary point.** $y=x^3$ is increasing straight through 0 yet concave down before and concave up after, so 0 is an inflection with no extremum at all.",
-    "**An inflection can occur where $f''$ does not exist.** A cusp such as $y=x^{1/3}$ has infinite second derivative at 0 and an inflection there. So 'find where $f''=0$' is incomplete — also test where $f''$ is undefined.",
-    "**Use the second-derivative test to classify stationary points, not the first-derivative test's sign chart:** $f''(a)>0$ local minimum, $f''(a)<0$ local maximum, and $f''(a)=0$ inconclusive, requiring a return to the first-derivative test or a higher derivative."
+    "## 1. Topic Introduction — The Companion Doorway to Concavity and Points of Inflection\n\nThis canonical is the **short-form doorway** to concavity and points of inflection: the second derivative's sign, inflection detection, and the curve's bending story in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Concavity:** f″ > 0 on an interval ⟹ concave up (cup holds water; tangents below the curve); f″ < 0 ⟹ concave down (tangents above).\n- **Point of inflection:** a point where **concavity changes** — f″ changes sign. If f″ is continuous and f″(c) = 0, that is necessary but not sufficient; the sign change is the definition.\n- **Second-derivative test connection:** f″(c) > 0 at a stationary point ⟹ local min (the cup's bottom); f″(c) < 0 ⟹ local max.\n- **Inflection candidates:** where f″ = 0 **or f″ fails** — corners in the slope, vertical tangents, and zeros alike.",
+    "## 3. Deep Conceptual — Concavity Is the Slope's Story\n\n- f″ measures **how f′ changes**: concave up means slopes are increasing (the curve steepens or flattens upward); concave down means slopes are falling. The second derivative is the first derivative's derivative — concavity is the monotonicity of the slope function.\n- **Inflection = slope's extremum:** at an inflection point, f′ itself has a local max or min — the curve is steepest (or flattest) exactly where it switches its bend. This is why inflection points matter in data: they mark where growth *rate* peaks, even while growth continues.\n- **The zero-without-change trap:** f″(c) = 0 with no sign change (x⁴ at 0: f″ = 12x² ≥ 0) is not an inflection — the cup merely flattens. The definition is the sign change; the zero is only the candidate.",
+    "## 4. Deep Conceptual — The Full Sketching Protocol\n\n- **Five-layer sketch:** domain ⟹ symmetry/intercepts ⟹ f′ table (monotonicity, critical points) ⟹ f″ table (concavity, inflections) ⟹ asymptotes/end behaviour ⟹ assemble. Each layer uses one derivative; the picture is the derivative data made visible.\n- **Tangent-at-inflection:** at an inflection point the tangent crosses the curve — the unique line that is locally above on one side and below on the other. This geometric signature distinguishes inflections from mere stationary points.\n- **f″ = 0 ⟹ candidate, sign change ⟹ verdict:** the same candidate/verdict split as f′ = 0 for extrema; the parallel structure means one habit serves both tables.",
+    "## 5. Worked Example Types\n\n- **Type A — concavity map:** f″ sign table with inflection verdicts.\n- **Type B — inflection with derivative failure:** f″ undefined cases included.\n- **Type C — full sketch protocol:** all five layers for one cubic or quartic.\n- **Type D — tangent at inflection:** write the crossing tangent line.",
+    "## 6. Common Confusions\n\n**\"f″ = 0 ⟹ inflection\":** x⁴ at 0 forever — the sign change is the definition. **\"Concave up means increasing\":** concavity is about the slope's trend, not the function's direction; a decreasing function can be concave up."
   ],
   "confusion": [
     "Declaring an inflection wherever $f''=0$, which incorrectly includes $x^4$ at 0.",
     "Assuming every inflection point is also a maximum or minimum; $x^3$ at 0 refutes this.",
     "Testing only whether $f''=0$ and forgetting points where $f''$ is undefined but the concavity changes."
   ],
-  "practice": [],
+  "practice": [
+    "Find the intervals of concavity and inflection points of y = x³ − 6x² + 9x.",
+    "Show that y = x⁴ has no inflection point despite y″(0) = 0.",
+    "Find the inflection points of y = x⁴ − 6x²."
+  ],
   "universalFacts": [
-    "Sensors are designed to work near the linear region of a calibration curve, where the second derivative vanishes and the response is least sensitive to drift.",
-    "Inverted pendulums rely on the change of concavity: a pendulum is stable only while the potential is concave up, and a vertical rod is stable because the concavity reverses there."
+    "At an inflection point the tangent crosses the curve - the geometric signature of a bend switch."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The flattening cup*** - x^4 at 0: f'' = 12x^2 = 0 but no sign change - the cup flattens without switching bend, so no inflection."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Find the intervals of concavity and the inflection points of y = x³ − 6x² + 9x.** — **Second derivative:** y″ = 6x − 12 = 6(x − 2); zero at x = 2. **Sign table:** y″ < 0 on (−∞, 2) (test 0: −12) ⟹ concave down; y″ > 0 on (2, ∞) (test 3: 6) ⟹ concave up. **Inflection:** the sign changes at x = 2 ⟹ point (2, f(2)) = (2, 8 − 24 + 18) = **(2, 2)**. **Tangent there:** y′ = 3x² − 12x + 9 ⟹ y′(2) = −3 ⟹ tangent y − 2 = −3(x − 2), which crosses the curve at the inflection. **Deep point:** the candidate (y″ = 0) became a verdict only through the sign change — and the crossing tangent is the geometric certificate that the bend truly switched.",
+    "**NEB-style (5m): Show that y = x⁴ has no inflection point even though y″(0) = 0.** — **Second derivative:** y″ = 12x²; zero at x = 0. **Sign study:** 12x² ≥ 0 for **all** x — the second derivative never changes sign ⟹ concave up on (−∞, 0) and (0, ∞) alike ⟹ **no inflection at 0**. **What happens at 0:** the cup merely flattens (y′ = 4x³ has a horizontal tangent there and y′′′(0) = 0 too) — a stationary point and absolute minimum, but the bend never switches. **Deep point:** the definition of inflection is the *sign change*, and x⁴ is its permanent counterexample to the \"y″ = 0 ⟹ inflection\" reflex; candidate and verdict are different ranks.",
+    "**NEB-style (6m): Find all inflection points of y = x⁴ − 6x² and describe the curve's bend story.** — **Second derivative:** y″ = 12x² − 12 = 12(x − 1)(x + 1); candidates x = ±1. **Sign table:** y″ > 0 on (−∞, −1) (test −2: 36) ⟹ concave up; y″ < 0 on (−1, 1) (test 0: −12) ⟹ concave down; y″ > 0 on (1, ∞) ⟹ concave up. **Inflections:** sign changes at both ±1 ⟹ points (1, 1 − 6) = **(1, −5)** and (−1, −5). **Bend story:** the W-shaped quartic is cup-up outside ±1 (the two valleys' arms) and dome-down between them (the central hump at x = 0, y = 0). **Deep point:** two inflections frame the central dome — the quartic's extra pair of roots in y″ (compared to the cubic's one) is exactly the extra bend the W-shape demands; the concavity table is the curve's skeleton.",
+    "**NEB-style (6m): For y = x³ − 3x, find the local extrema and the inflection point, then assemble the sketch protocol's summary.** — **f′ = 3x² − 3 = 3(x−1)(x+1):** local max at (−1, 2), local min at (1, −2) (sign changes + → − and − → +). **f″ = 6x:** zero at 0, sign changes − to + ⟹ inflection at (0, 0). **Concavity:** down on (−∞, 0), up on (0, ∞). **Assembly:** the curve rises to the summit (−1, 2), descends through the inflection (0, 0) — where the descent is steepest (slope −3) — and bottoms at (1, −2) before rising again; the inflection sits exactly midway between the extremum pair, as symmetry demands for an odd cubic. **Deep point:** the inflection's slope (−3) is the steepest point of the descent — the slope's own minimum — confirming that inflection points are extrema of f′; the sketch protocol's layers interlock because each derivative narrates the next."
+  ],
   "formulas": [
-    "Concave up: $f''(x)>0$; concave down: $f''(x)<0$",
-    "Inflection: $f''$ changes sign at $x$",
-    "2nd-derivative test: $f''(a)>0$ min, $f''(a)<0$ max, $=0$ inconclusive",
-    "Taylor leading term: $f(a+h)=f(a)+f'(a)h+\\tfrac12f''(a)h^2+o(h^2)$"
+    "- f″ > 0 ⟹ concave up; f″ < 0 ⟹ concave down\n- Inflection at c ⟺ f″ changes sign at c"
   ],
   "keyPoints": [
-    "Concavity is an interval property, described by the sign of $f''$.",
-    "An inflection requires a SIGN CHANGE in $f''$, not merely $f''=0$.",
-    "An inflection point need not be a stationary point, and $f''$ may be undefined there."
+    "f'' > 0 => concave up (slopes increasing); f'' < 0 => concave down. Point of inflection: concavity CHANGES - f'' = 0 is only a candidate; x^4 at 0 is the counterexample. Inflection candidates include f'' failures. At an inflection, f' has its own extremum - the growth rate peaks there. Tangent at inflection crosses the curve. Sketching protocol: domain, symmetry, f' table, f'' table, asymptotes."
   ],
-  "summary": "Concavity records how the slope itself changes, and is read from the sign of $f''$ over an interval rather than at a point. Concave up places the tangent below the curve and concave down places it above, which is the quickest way to fix the direction. An inflection point requires a genuine sign change in $f''$ — not merely its vanishing, and not necessarily at a stationary point — and may occur where the second derivative does not exist at all.",
+  "summary": "Concavity is the slope's own story: f″ > 0 cups upward with increasing slopes, f″ < 0 domes downward, and inflection points are where the bend switches — the slope's own extrema, marked by crossing tangents. The candidate/verdict split rules both tables: f′ = 0 and f″ = 0 are candidate lists, sign changes are verdicts, and x⁴'s flattening cup is the permanent warning. The five-layer sketch protocol turns the two derivative tables into a picture whose every feature is a cited theorem.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Declaring an inflection wherever $f''=0$, which incorrectly includes $x^4$ at 0.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: $f''>0$ on an interval means the curve is concave up there.",
-    "Statement 2: An inflection point requires $f''$ to change sign.",
-    "Statement 3: $f''(a)=0$ makes the second-derivative test inconclusive.",
-    "Statement 4: An inflection point need not be a stationary point.",
-    "Statement 5: A point where $f''$ is undefined may still be an inflection."
+    "The definition of inflection is the sign change of f''; zeros are candidates, not verdicts."
   ],
   "importantNotes": [
-    "Topic anchor: Use the second-derivative test to classify stationary points, not the first-derivative test's sign chart  $f''(a)>0$ local minimum, $f''(a)<0$ local maximum, and $f''(a)=0$ inconclusive, requiring a return to the first-d"
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Write the sign of $f''$ on a number line and look only for a CHANGE of sign, not a zero.",
-    "When classifying a stationary point with $f''=0$, go straight to the first-derivative sign chart rather than the third derivative."
+    "Parallel habit: f' = 0 candidates need sign changes for extrema; f'' = 0 candidates need sign changes for inflections."
   ],
   "examNotes": [
-    "Finding points of inflection and classifying stationary points is a standard 4-mark question."
+    "In sketch questions, present the f'' table separately from the f' table - two tables, two marks."
   ],
   "mcs": [
     {
@@ -95,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "Concavity is an interval property, described by the sign of $f''$.",
-    "An inflection requires a SIGN CHANGE in $f''$, not merely $f''=0$.",
-    "An inflection point need not be a stationary point, and $f''$ may be undefined there."
+    "Concavity is the monotonicity of the slope: the second derivative tells the first derivative's story."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -162,6 +160,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to Concavity and Points of Inflection\n\nThis canonical is the **short-form doorway** to concavity and points of inflection: the second derivative's sign, inflection detection, and the curve's bending story in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Concavity:** f″ > 0 on an interval ⟹ concave up (cup holds water; tangents below the curve); f″ < 0 ⟹ concave down (tangents above).\n- **Point of inflection:** a point where **concavity changes** — f″ changes sign. If f″ is continuous and f″(c) = 0, that is necessary but not sufficient; the sign change is the definition.\n- **Second-derivative test connection:** f″(c) > 0 at a stationary point ⟹ local min (the cup's bottom); f″(c) < 0 ⟹ local max.\n- **Inflection candidates:** where f″ = 0 **or f″ fails** — corners in the slope, vertical tangents, and zeros alike.",
+      "## 3. Deep Conceptual — Concavity Is the Slope's Story\n\n- f″ measures **how f′ changes**: concave up means slopes are increasing (the curve steepens or flattens upward); concave down means slopes are falling. The second derivative is the first derivative's derivative — concavity is the monotonicity of the slope function.\n- **Inflection = slope's extremum:** at an inflection point, f′ itself has a local max or min — the curve is steepest (or flattest) exactly where it switches its bend. This is why inflection points matter in data: they mark where growth *rate* peaks, even while growth continues.\n- **The zero-without-change trap:** f″(c) = 0 with no sign change (x⁴ at 0: f″ = 12x² ≥ 0) is not an inflection — the cup merely flattens. The definition is the sign change; the zero is only the candidate.",
+      "## 4. Deep Conceptual — The Full Sketching Protocol\n\n- **Five-layer sketch:** domain ⟹ symmetry/intercepts ⟹ f′ table (monotonicity, critical points) ⟹ f″ table (concavity, inflections) ⟹ asymptotes/end behaviour ⟹ assemble. Each layer uses one derivative; the picture is the derivative data made visible.\n- **Tangent-at-inflection:** at an inflection point the tangent crosses the curve — the unique line that is locally above on one side and below on the other. This geometric signature distinguishes inflections from mere stationary points.\n- **f″ = 0 ⟹ candidate, sign change ⟹ verdict:** the same candidate/verdict split as f′ = 0 for extrema; the parallel structure means one habit serves both tables.",
+      "## 5. Worked Example Types\n\n- **Type A — concavity map:** f″ sign table with inflection verdicts.\n- **Type B — inflection with derivative failure:** f″ undefined cases included.\n- **Type C — full sketch protocol:** all five layers for one cubic or quartic.\n- **Type D — tangent at inflection:** write the crossing tangent line.",
+      "## 6. Common Confusions\n\n**\"f″ = 0 ⟹ inflection\":** x⁴ at 0 forever — the sign change is the definition. **\"Concave up means increasing\":** concavity is about the slope's trend, not the function's direction; a decreasing function can be concave up."
+    ],
+    "keyPoints": [
+      "f'' > 0 => concave up (slopes increasing); f'' < 0 => concave down. Point of inflection: concavity CHANGES - f'' = 0 is only a candidate; x^4 at 0 is the counterexample. Inflection candidates include f'' failures. At an inflection, f' has its own extremum - the growth rate peaks there. Tangent at inflection crosses the curve. Sketching protocol: domain, symmetry, f' table, f'' table, asymptotes."
+    ],
+    "importantConcepts": [
+      "Concavity is the monotonicity of the slope: the second derivative tells the first derivative's story."
+    ],
+    "examples": [
+      "***The flattening cup*** - x^4 at 0: f'' = 12x^2 = 0 but no sign change - the cup flattens without switching bend, so no inflection."
+    ],
+    "universalFacts": [
+      "At an inflection point the tangent crosses the curve - the geometric signature of a bend switch."
+    ],
+    "importantStatements": [
+      "The definition of inflection is the sign change of f''; zeros are candidates, not verdicts."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Parallel habit: f' = 0 candidates need sign changes for extrema; f'' = 0 candidates need sign changes for inflections."
+    ],
+    "examNotes": [
+      "In sketch questions, present the f'' table separately from the f' table - two tables, two marks."
+    ],
+    "formulas": [
+      "- f″ > 0 ⟹ concave up; f″ < 0 ⟹ concave down\n- Inflection at c ⟺ f″ changes sign at c"
+    ],
+    "practice": [
+      "Find the intervals of concavity and inflection points of y = x³ − 6x² + 9x.",
+      "Show that y = x⁴ has no inflection point despite y″(0) = 0.",
+      "Find the inflection points of y = x⁴ − 6x²."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Find the intervals of concavity and the inflection points of y = x³ − 6x² + 9x.** — **Second derivative:** y″ = 6x − 12 = 6(x − 2); zero at x = 2. **Sign table:** y″ < 0 on (−∞, 2) (test 0: −12) ⟹ concave down; y″ > 0 on (2, ∞) (test 3: 6) ⟹ concave up. **Inflection:** the sign changes at x = 2 ⟹ point (2, f(2)) = (2, 8 − 24 + 18) = **(2, 2)**. **Tangent there:** y′ = 3x² − 12x + 9 ⟹ y′(2) = −3 ⟹ tangent y − 2 = −3(x − 2), which crosses the curve at the inflection. **Deep point:** the candidate (y″ = 0) became a verdict only through the sign change — and the crossing tangent is the geometric certificate that the bend truly switched.",
+      "**NEB-style (5m): Show that y = x⁴ has no inflection point even though y″(0) = 0.** — **Second derivative:** y″ = 12x²; zero at x = 0. **Sign study:** 12x² ≥ 0 for **all** x — the second derivative never changes sign ⟹ concave up on (−∞, 0) and (0, ∞) alike ⟹ **no inflection at 0**. **What happens at 0:** the cup merely flattens (y′ = 4x³ has a horizontal tangent there and y′′′(0) = 0 too) — a stationary point and absolute minimum, but the bend never switches. **Deep point:** the definition of inflection is the *sign change*, and x⁴ is its permanent counterexample to the \"y″ = 0 ⟹ inflection\" reflex; candidate and verdict are different ranks.",
+      "**NEB-style (6m): Find all inflection points of y = x⁴ − 6x² and describe the curve's bend story.** — **Second derivative:** y″ = 12x² − 12 = 12(x − 1)(x + 1); candidates x = ±1. **Sign table:** y″ > 0 on (−∞, −1) (test −2: 36) ⟹ concave up; y″ < 0 on (−1, 1) (test 0: −12) ⟹ concave down; y″ > 0 on (1, ∞) ⟹ concave up. **Inflections:** sign changes at both ±1 ⟹ points (1, 1 − 6) = **(1, −5)** and (−1, −5). **Bend story:** the W-shaped quartic is cup-up outside ±1 (the two valleys' arms) and dome-down between them (the central hump at x = 0, y = 0). **Deep point:** two inflections frame the central dome — the quartic's extra pair of roots in y″ (compared to the cubic's one) is exactly the extra bend the W-shape demands; the concavity table is the curve's skeleton.",
+      "**NEB-style (6m): For y = x³ − 3x, find the local extrema and the inflection point, then assemble the sketch protocol's summary.** — **f′ = 3x² − 3 = 3(x−1)(x+1):** local max at (−1, 2), local min at (1, −2) (sign changes + → − and − → +). **f″ = 6x:** zero at 0, sign changes − to + ⟹ inflection at (0, 0). **Concavity:** down on (−∞, 0), up on (0, ∞). **Assembly:** the curve rises to the summit (−1, 2), descends through the inflection (0, 0) — where the descent is steepest (slope −3) — and bottoms at (1, −2) before rising again; the inflection sits exactly midway between the extremum pair, as symmetry demands for an odd cubic. **Deep point:** the inflection's slope (−3) is the steepest point of the descent — the slope's own minimum — confirming that inflection points are extrema of f′; the sketch protocol's layers interlock because each derivative narrates the next."
     ]
   }
 }

@@ -5,60 +5,59 @@
   "topicSlug": "types-of-discontinuity",
   "relevance": 100,
   "notes": [
-    "**Removable (hole):** $\\lim_{x\\to a^-}f=\\lim_{x\\to a^+}f=L\\ne f(a)$, or $f(a)$ undefined. Both one-sided limits AGREE, so only one point is wrong. Examples: $\\frac{x^2-4}{x-2}$ at 2, or $\\frac{\\sin x}{x}$ at 0 if its value is wrongly set to 1.",
-    "**Jump (step):** both one-sided limits exist but DIFFER, so the two-sided limit does not exist. $\\frac{x}{|x|}$ at 0 and the floor function at integers are standard. The jump SIZE is $|f(a^+)-f(a^-)|$.",
-    "**Infinite (second kind):** at least one one-sided limit is infinite, so a vertical asymptote passes through $x=a$. $\\frac1x$ at 0 and $\\tan x$ at $\\frac{\\pi}{2}$ are the standard examples. Opposite-sign divergence means the asymptote is approached from both sides.",
-    "**Classifying from one-sided limits:** equal and equal to $f(a)$ means continuous; equal but not equal to $f(a)$ is removable; both finite but different is a jump; either infinite is an infinite discontinuity. This four-way test settles every classification question.",
-    "**Why the type matters:** a removable discontinuity is repairable with a single reassigned value, a jump is not, and an infinite one means the function is unbounded near $a$. The intermediate value theorem fails at all three, but differently.",
-    "**Effect on the derivative:** differentiability presupposes continuity, so a discontinuity of ANY type rules out a derivative there — even a removable one, until the hole is filled."
+    "## 1. Topic Introduction — The Companion Doorway to the Discontinuity Taxonomy\n\nThis canonical is the **short-form doorway** to the types of discontinuity: the decision tree that sorts every break into removable, jump, infinite, or oscillatory in one page. The parent canonical carries the full taxonomy with graphs; this companion mirrors the classification, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **The two questions:** (1) do the one-sided limits exist and agree? (2) does f(a) match the merged limit?\n- **Removable:** sides agree (limit L exists) but f(a) is missing or ≠ L — hole or detached dot; **repairable** by f(a) = L.\n- **Jump:** sides exist, finite, **unequal** — vertical gap of size |RHL − LHL|; non-removable.\n- **Infinite:** at least one side blows up — vertical wall; odd-power zeros split the sides, even-power zeros unify them; non-removable.\n- **Oscillatory:** a side has no limit (sin(1/x)-type folding); non-removable.\n- **Rational triage:** after factoring, cancelled roots are holes, surviving denominator roots are walls.",
+    "## 3. Deep Conceptual — The Taxonomy Is a Decision Tree, Not a List\n\n- Two binary questions — sides agree? value matches? — generate all four types. Computing in the right order (sides first, value second) makes classification mechanical: no agreement ⟹ jump/infinite/oscillatory by the sides' behaviour; agreement ⟹ removable or continuous by the value.\n- **The repair test is the deepest cut:** \"can redefining finitely many point-values make f continuous?\" Removable: yes (the sickness is at the point). Jump/infinite/oscillatory: no (the sickness is in the neighbourhood). One question, clean boundary.\n- **Jump size is data:** |RHL − LHL| quantifies the break — in piecewise models it is the fee, threshold, or phase change, often the quantity the question actually wants.",
+    "## 4. Deep Conceptual — Where Each Type Lives in Mathematics\n\n- **Removable breaks are cancellation shadows:** 0/0 forms are shared roots wearing disguises; the limit sees through them, continuity does not.\n- **Jumps defeat every transformation tool by design:** the sides are not trying to agree, so factoring, stars, and L'Hôpital are all inapplicable — the verdict, not a computation, is the answer.\n- **Walls encode unboundedness:** c/0 forms are loud failures with side-by-side sign readings; they also expire the definite integral's default licence (improper integrals take over).",
+    "## 5. Worked Example Types\n\n- **Type A — rational audit:** factor fully; cancelled roots ⟹ holes with limits; surviving roots ⟹ walls with side signs.\n- **Type B — piecewise seam:** LHL from the left branch, RHL from the right, f(a) from the owning branch; unanimous agreement ⟹ continuous.\n- **Type C — assigned values:** f(a) given at a formula's excluded point ⟹ compare with the limit; mismatch ⟹ removable.\n- **Type D — jump measurement:** compute both sides, report the gap, state one-sided continuity of the dot.",
+    "## 6. Common Confusions\n\n**\"Any break is a jump\":** jumps need finite *unequal* sides — compute before naming. **\"f(a) defined ⟹ no discontinuity\":** a wrong value is a removable break, not immunity."
   ],
   "confusion": [
     "Calling $|x|$ at 0 removable — it is a JUMP, because the one-sided limits are governed by different branches rather than one wrong value.",
     "Saying an infinite discontinuity 'has limit infinity' — infinity is not a value, so the real limit does not exist.",
     "Assuming a hole is harmless for differentiation — it blocks the derivative even though both one-sided limits agree."
   ],
-  "practice": [],
+  "practice": [
+    "Classify the discontinuity of f(x) = (x² − 1)/(x − 1), x ≠ 1, f(1) = 3.",
+    "Find the walls of f(x) = (x + 1)/(x² − 5x + 6) with side behaviour.",
+    "For f(x) = x for x < 2, f(x) = 7 − 2x for x ≥ 2: classify at 2."
+  ],
   "universalFacts": [
-    "The jump in a sampled digital signal is the physical origin of quantisation noise in audio and image compression.",
-    "A removable discontinuity is why a computer's piecewise approximation to a smooth function can be made continuous by assigning the limit at the join."
+    "Removable breaks leave every limit intact; only continuity and value questions see them."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The wall with a dot*** - assigning f(2) = 1/4 at a wall's foot changes nothing: walls live in the neighbourhood, dots live at the point."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Classify the discontinuity of f(x) = (x² − 1)/(x − 1) for x ≠ 1 with f(1) = 3, and state the repair.** — **Sides:** (x²−1)/(x−1) = x + 1 for x ≠ 1 ⟹ LHL = **2**, RHL = **2** — sides exist and agree ⟹ limit L = 2. **Value:** f(1) = 3 ≠ 2. **Tree verdict:** agreement yes, match no ⟹ **removable discontinuity** — a detached dot at (1, 3) over the hole at (1, 2). **Repair:** f(1) = 2 ⟹ continuous. **Deep point:** the sides agreed, which immediately ruled out jump, infinite, and oscillatory — one computation pruned three of four branches; that is the decision tree's economy.",
+    "**NEB-style (6m): Find and classify all discontinuities of f(x) = (x + 1)/(x² − 5x + 6).** — **Factor:** (x − 2)(x − 3) ⟹ suspects {2, 3}; numerator at 2 is 3 ≠ 0, at 3 is 4 ≠ 0 ⟹ no cancellation, both are walls. **At x = 2:** denominator ≈ (x−2)(−1); x → 2⁺ ⟹ small negative ⟹ → **−∞**; x → 2⁻ ⟹ → **+∞** (splitting). **At x = 3:** denominator ≈ (x−3)(1); x → 3⁺ ⟹ → **+∞**; x → 3⁻ ⟹ → **−∞** (splitting). **Verdict:** two infinite discontinuities, both non-removable, continuous elsewhere (rational off its zeros). **Deep point:** the numerator's nonzero values at both roots guaranteed walls before any sign work — the parity of each root's power (both odd) predicted splitting walls.",
+    "**NEB-style (5m): For f(x) = x for x < 2, f(x) = 7 − 2x for x ≥ 2: classify the behaviour at x = 2 fully.** — **LHL:** lim_{x→2⁻} x = **2**. **RHL:** lim_{x→2⁺} (7 − 2x) = 7 − 4 = **3**. **Value:** f(2) = 3 (≥ owns the point). **Tree:** sides exist, finite, **unequal** ⟹ **jump discontinuity**, size |3 − 2| = 1. **One-sided continuity:** f(2) = 3 = RHL ⟹ right-continuous (filled dot on the right branch's end). **Deep point:** the jump size 1 is the measurable content of the break — and no redefinition of f(2) can merge sides that disagree; the break is structural.",
+    "**NEB-style (6m): For f(x) = (x³ − 1)/(x² − 1) for x ≠ 1 with f(1) = k: find k for continuity and classify what happens at x = −1.** — **Factor:** x³ − 1 = (x−1)(x² + x + 1); x² − 1 = (x−1)(x+1) ⟹ f(x) = (x² + x + 1)/(x + 1) for x ≠ 1. **At x = 1:** cancelled root ⟹ limit = 3/2 ⟹ **k = 3/2** for continuity (removable otherwise). **At x = −1:** surviving denominator root; numerator at −1: 1 − 1 + 1 = 1 ≠ 0 ⟹ wall: x → −1⁺ ⟹ denominator small positive ⟹ → **+∞**; x → −1⁻ ⟹ → **−∞** ⟹ **infinite, non-removable**. **Deep point:** one factorisation served two classifications — the cancelled root asked for a value (k = 3/2), the surviving root asked for signs; the audit is always: cancel, then read what remains."
+  ],
   "formulas": [
-    "Removable: $f(a^-)=f(a^+)=L\\ne f(a)$, or $f(a)$ undefined",
-    "Jump: $f(a^-),f(a^+)$ finite but $f(a^-)\\ne f(a^+)$",
-    "Jump size: $|f(a^+)-f(a^-)|$",
-    "Infinite: $f(a^-)=\\pm\\infty$ or $f(a^+)=\\pm\\infty$"
+    "- Removable: lim exists, f(a) ≠ L or undefined ⟹ repair f(a) = L\n- Jump: LHL ≠ RHL, both finite; size = |RHL − LHL|"
   ],
   "keyPoints": [
-    "Removable: the one-sided limits agree but the function value does not.",
-    "Jump: both one-sided limits exist and differ.",
-    "Infinite: at least one one-sided limit diverges, giving a vertical asymptote.",
-    "Any discontinuity rules out differentiability at that point."
+    "Decision tree: sides exist and agree? No -> jump (finite unequal), infinite (blow-up, odd splits/even unifies), or oscillatory. Yes -> limit L exists; f(a) = L? Yes -> continuous; No -> removable, repair f(a) = L. Rational triage: cancelled roots are holes, surviving denominator roots are walls. Jump size |RHL - LHL| is data. Repair test: only removable breaks yield to point-value edits."
   ],
-  "summary": "Discontinuities sort into three types, distinguished entirely by the one-sided limits. Removable means they agree but the function value differs, so one reassignment repairs it. Jump means both exist and differ, giving a finite step. Infinite means at least one diverges, producing a vertical asymptote. Differentiability is impossible at all three, because it presupposes continuity.",
+  "summary": "Every discontinuity answers two questions: do the sides exist and agree, and does the value match? Agreement plus mismatch is removable (repairable by one value); finite disagreement is a jump (size = |RHL − LHL|); blow-up is a wall (odd splits, even unifies); no side limit is oscillatory. Rational functions triage by factorisation — cancelled roots are holes, surviving roots are walls. The repair test is the deep boundary: point-sickness yields to edits, neighbourhood-sickness does not.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Calling $|x|$ at 0 removable — it is a JUMP, because the one-sided limits are governed by different branches rather than one wrong value.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: A removable discontinuity has equal one-sided limits.",
-    "Statement 2: A jump discontinuity has two finite but unequal one-sided limits.",
-    "Statement 3: An infinite discontinuity has at least one one-sided limit equal to $\\pm\\infty$.",
-    "Statement 4: A function cannot be differentiable where it is discontinuous.",
-    "Statement 5: The jump magnitude is $|f(a^+)-f(a^-)|$."
+    "Compute both sides before naming any discontinuity type."
   ],
   "importantNotes": [
-    "Topic anchor: Effect on the derivative  differentiability presupposes continuity, so a discontinuity of ANY type rules out a derivative there — even a removable one, until the hole is filled."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Compute BOTH one-sided limits first; comparing $(f(a^-), f(a^+), f(a))$ classifies every case.",
-    "If one side is infinite, stop — it is an infinite discontinuity regardless of the other side."
+    "Sides first, value second - the order of the tree is the order of the marks."
   ],
   "examNotes": [
-    "Classifying a discontinuity from its one-sided limits is a frequent 3-mark question."
+    "State the repair verdict explicitly: \"removable, repair f(a) = L\" or \"non-removable\"."
   ],
   "mcs": [
     {
@@ -96,10 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "Removable: the one-sided limits agree but the function value does not.",
-    "Jump: both one-sided limits exist and differ.",
-    "Infinite: at least one one-sided limit diverges, giving a vertical asymptote.",
-    "Any discontinuity rules out differentiability at that point."
+    "Two binary questions classify every discontinuity; the repair test separates point-sickness from neighbourhood-sickness."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -163,6 +159,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to the Discontinuity Taxonomy\n\nThis canonical is the **short-form doorway** to the types of discontinuity: the decision tree that sorts every break into removable, jump, infinite, or oscillatory in one page. The parent canonical carries the full taxonomy with graphs; this companion mirrors the classification, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **The two questions:** (1) do the one-sided limits exist and agree? (2) does f(a) match the merged limit?\n- **Removable:** sides agree (limit L exists) but f(a) is missing or ≠ L — hole or detached dot; **repairable** by f(a) = L.\n- **Jump:** sides exist, finite, **unequal** — vertical gap of size |RHL − LHL|; non-removable.\n- **Infinite:** at least one side blows up — vertical wall; odd-power zeros split the sides, even-power zeros unify them; non-removable.\n- **Oscillatory:** a side has no limit (sin(1/x)-type folding); non-removable.\n- **Rational triage:** after factoring, cancelled roots are holes, surviving denominator roots are walls.",
+      "## 3. Deep Conceptual — The Taxonomy Is a Decision Tree, Not a List\n\n- Two binary questions — sides agree? value matches? — generate all four types. Computing in the right order (sides first, value second) makes classification mechanical: no agreement ⟹ jump/infinite/oscillatory by the sides' behaviour; agreement ⟹ removable or continuous by the value.\n- **The repair test is the deepest cut:** \"can redefining finitely many point-values make f continuous?\" Removable: yes (the sickness is at the point). Jump/infinite/oscillatory: no (the sickness is in the neighbourhood). One question, clean boundary.\n- **Jump size is data:** |RHL − LHL| quantifies the break — in piecewise models it is the fee, threshold, or phase change, often the quantity the question actually wants.",
+      "## 4. Deep Conceptual — Where Each Type Lives in Mathematics\n\n- **Removable breaks are cancellation shadows:** 0/0 forms are shared roots wearing disguises; the limit sees through them, continuity does not.\n- **Jumps defeat every transformation tool by design:** the sides are not trying to agree, so factoring, stars, and L'Hôpital are all inapplicable — the verdict, not a computation, is the answer.\n- **Walls encode unboundedness:** c/0 forms are loud failures with side-by-side sign readings; they also expire the definite integral's default licence (improper integrals take over).",
+      "## 5. Worked Example Types\n\n- **Type A — rational audit:** factor fully; cancelled roots ⟹ holes with limits; surviving roots ⟹ walls with side signs.\n- **Type B — piecewise seam:** LHL from the left branch, RHL from the right, f(a) from the owning branch; unanimous agreement ⟹ continuous.\n- **Type C — assigned values:** f(a) given at a formula's excluded point ⟹ compare with the limit; mismatch ⟹ removable.\n- **Type D — jump measurement:** compute both sides, report the gap, state one-sided continuity of the dot.",
+      "## 6. Common Confusions\n\n**\"Any break is a jump\":** jumps need finite *unequal* sides — compute before naming. **\"f(a) defined ⟹ no discontinuity\":** a wrong value is a removable break, not immunity."
+    ],
+    "keyPoints": [
+      "Decision tree: sides exist and agree? No -> jump (finite unequal), infinite (blow-up, odd splits/even unifies), or oscillatory. Yes -> limit L exists; f(a) = L? Yes -> continuous; No -> removable, repair f(a) = L. Rational triage: cancelled roots are holes, surviving denominator roots are walls. Jump size |RHL - LHL| is data. Repair test: only removable breaks yield to point-value edits."
+    ],
+    "importantConcepts": [
+      "Two binary questions classify every discontinuity; the repair test separates point-sickness from neighbourhood-sickness."
+    ],
+    "examples": [
+      "***The wall with a dot*** - assigning f(2) = 1/4 at a wall's foot changes nothing: walls live in the neighbourhood, dots live at the point."
+    ],
+    "universalFacts": [
+      "Removable breaks leave every limit intact; only continuity and value questions see them."
+    ],
+    "importantStatements": [
+      "Compute both sides before naming any discontinuity type."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Sides first, value second - the order of the tree is the order of the marks."
+    ],
+    "examNotes": [
+      "State the repair verdict explicitly: \"removable, repair f(a) = L\" or \"non-removable\"."
+    ],
+    "formulas": [
+      "- Removable: lim exists, f(a) ≠ L or undefined ⟹ repair f(a) = L\n- Jump: LHL ≠ RHL, both finite; size = |RHL − LHL|"
+    ],
+    "practice": [
+      "Classify the discontinuity of f(x) = (x² − 1)/(x − 1), x ≠ 1, f(1) = 3.",
+      "Find the walls of f(x) = (x + 1)/(x² − 5x + 6) with side behaviour.",
+      "For f(x) = x for x < 2, f(x) = 7 − 2x for x ≥ 2: classify at 2."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Classify the discontinuity of f(x) = (x² − 1)/(x − 1) for x ≠ 1 with f(1) = 3, and state the repair.** — **Sides:** (x²−1)/(x−1) = x + 1 for x ≠ 1 ⟹ LHL = **2**, RHL = **2** — sides exist and agree ⟹ limit L = 2. **Value:** f(1) = 3 ≠ 2. **Tree verdict:** agreement yes, match no ⟹ **removable discontinuity** — a detached dot at (1, 3) over the hole at (1, 2). **Repair:** f(1) = 2 ⟹ continuous. **Deep point:** the sides agreed, which immediately ruled out jump, infinite, and oscillatory — one computation pruned three of four branches; that is the decision tree's economy.",
+      "**NEB-style (6m): Find and classify all discontinuities of f(x) = (x + 1)/(x² − 5x + 6).** — **Factor:** (x − 2)(x − 3) ⟹ suspects {2, 3}; numerator at 2 is 3 ≠ 0, at 3 is 4 ≠ 0 ⟹ no cancellation, both are walls. **At x = 2:** denominator ≈ (x−2)(−1); x → 2⁺ ⟹ small negative ⟹ → **−∞**; x → 2⁻ ⟹ → **+∞** (splitting). **At x = 3:** denominator ≈ (x−3)(1); x → 3⁺ ⟹ → **+∞**; x → 3⁻ ⟹ → **−∞** (splitting). **Verdict:** two infinite discontinuities, both non-removable, continuous elsewhere (rational off its zeros). **Deep point:** the numerator's nonzero values at both roots guaranteed walls before any sign work — the parity of each root's power (both odd) predicted splitting walls.",
+      "**NEB-style (5m): For f(x) = x for x < 2, f(x) = 7 − 2x for x ≥ 2: classify the behaviour at x = 2 fully.** — **LHL:** lim_{x→2⁻} x = **2**. **RHL:** lim_{x→2⁺} (7 − 2x) = 7 − 4 = **3**. **Value:** f(2) = 3 (≥ owns the point). **Tree:** sides exist, finite, **unequal** ⟹ **jump discontinuity**, size |3 − 2| = 1. **One-sided continuity:** f(2) = 3 = RHL ⟹ right-continuous (filled dot on the right branch's end). **Deep point:** the jump size 1 is the measurable content of the break — and no redefinition of f(2) can merge sides that disagree; the break is structural.",
+      "**NEB-style (6m): For f(x) = (x³ − 1)/(x² − 1) for x ≠ 1 with f(1) = k: find k for continuity and classify what happens at x = −1.** — **Factor:** x³ − 1 = (x−1)(x² + x + 1); x² − 1 = (x−1)(x+1) ⟹ f(x) = (x² + x + 1)/(x + 1) for x ≠ 1. **At x = 1:** cancelled root ⟹ limit = 3/2 ⟹ **k = 3/2** for continuity (removable otherwise). **At x = −1:** surviving denominator root; numerator at −1: 1 − 1 + 1 = 1 ≠ 0 ⟹ wall: x → −1⁺ ⟹ denominator small positive ⟹ → **+∞**; x → −1⁻ ⟹ → **−∞** ⟹ **infinite, non-removable**. **Deep point:** one factorisation served two classifications — the cancelled root asked for a value (k = 3/2), the surviving root asked for signs; the audit is always: cancel, then read what remains."
     ]
   }
 }

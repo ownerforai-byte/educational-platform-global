@@ -4,11 +4,12 @@
   "topicTitle": "Limits of a function",
   "relevance": 100,
   "notes": [
-    "**Meaning of a limit:** $\\lim_{x \\to a} f(x) = L$ means that as $x$ gets arbitrarily close to $a$ (from either side, and without ever requiring $x = a$) the value of $f(x)$ gets arbitrarily close to $L$. The point $x=a$ may be undefined and the limit still exist — which is why $\\frac{x^2-4}{x-2}$, undefined at 2, has limit 4.",
-    "**The $\\varepsilon$-$\\delta$ definition:** for every $\\varepsilon > 0$ there exists $\\delta > 0$ such that $0 < |x-a| < \\delta$ implies $|f(x)-L| < \\varepsilon$. The condition $0 < |x-a|$ EXCLUDES the point itself, and that exclusion is exactly what makes a limit independent of $f(a)$.",
-    "**One-sided limits:** $\\lim_{x \\to a^-}$ approaches from below, $\\lim_{x \\to a^+}$ from above. The two-sided limit exists **if and only if** both exist and are equal. Equal-but-different still means no limit — a jump discontinuity is the standard counter-example.",
-    "**Indeterminate forms are signals, not answers:** $0/0$, $\\infty-\\infty$, $0\\cdot\\infty$, $\\infty/\\infty$, $1^\\infty$, $0^0$, $\\infty^0$ mean direct substitution FAILED. Rewrite instead: factorise and cancel, rationalise with the conjugate, divide by the highest vanishing power, or use $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$.",
-    "**Infinite limits and asymptotes:** $\\infty$ is never a value, only shorthand for unbounded growth. Opposite-sign one-sided limits give a VERTICAL asymptote; a finite limit at infinity gives a HORIZONTAL asymptote, found by the dominant-term rule."
+    "## 1. Topic Introduction — The Capstone Limits Drill\n\nThis canonical is the **capstone limits drill**: mixed problems spanning the whole limits toolkit — substitution, transformation, stars, squeeze, walls, and infinity — in exam format. It mirrors the parent limit-system canonical; the drill's discipline is route selection under time pressure.",
+    "## 2. Theorem Mirror — The Route Table\n\n| Symptom | Route |\n|---|---|\n| Substitution works | cite continuity, evaluate |\n| 0/0 | factor / conjugate / steer / L'Hôpital |\n| c/0 | wall: signs by side |\n| Oscillator damped | squeeze |\n| Piecewise joint | LHL, RHL, compare |\n| ∞ forms | degrees, ladder, dominant division |\n| 1^∞, 0⁰, ∞⁰ | log bridge |",
+    "## 3. Deep Conceptual — Route Selection as the Exam Skill\n\n- Every limits problem has **several working routes and one cheapest**: the coefficient ratio beats the L'Hôpital passes; the ladder beats the dominant division; the squeeze beats any transformation of an oscillator. Capstone drills train the *selection*, which is where exam time is won.\n- **The route table is a decision procedure, not a menu:** read the symptom (form), take the row, execute. When a route stalls (form unchanged after a pass), the table says re-diagnose — persistence with a stalled route is the only real failure mode.\n- **Cross-checks close the loop:** star vs factoring, ladder vs L'Hôpital, squeeze vs damping — one confirming line turns a computed answer into a defended one.",
+    "## 4. Deep Conceptual — Mixed Problems Test Architecture, Not Memory\n\n- A capstone item like (e^{2x} − 1 − 2x)/x² requires *layered* diagnosis: the 2x term cancels the exponential's first order, so the contest is at second order — the (eᵘ − 1 − u)/u² → 1/2 refinement. Mixed drills expose whether the student owns the **order hierarchy** or only the first-order stars.\n- **Walls and squeeze in one problem:** x²·sin(1/x) over sin x needs both the damping (numerator → 0 like x) and the star (denominator ~ x) — the ratio → 1. Architecture questions chain two theorems in one expression; recognising the chain is the skill.",
+    "## 5. Worked Example Types\n\n- **Type A — layered 0/0:** first-order cancellation exposes second-order stars.\n- **Type B — squeeze + star chains:** damped oscillator over a vanishing denominator.\n- **Type C — wall + classification:** c/0 with side signs and the continuity verdict.\n- **Type D — capstone infinity:** mixed families with the ladder and a tie-case coefficient.",
+    "## 6. Common Confusions\n\n**\"Always L'Hôpital\":** the stars are cheaper and always legal where they apply. **\"The squeeze needs equal rails\":** it needs rails converging to the *same* value — boundedness alone proves nothing."
   ],
   "confusion": [
     "Substituting the point and stopping — the limit asks what the function APPROACHES, not what it equals there.",
@@ -16,50 +17,41 @@
     "Writing $\\lim = \\infty$ as a result — a divergent limit says the function is unbounded, not that it reached a value."
   ],
   "universalFacts": [
-    "The derivative is itself a limit, $f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$, so differential calculus rests entirely on the limit concept.",
-    "A speedometer reports a limit, not an average: it is the limit of average velocities as the averaging interval shrinks to zero."
+    "Every limits problem in the syllabus falls to one row of the route table."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
   "examples": [
-    "Instantaneous speed: the speedometer value is a limit of average velocities taken over a shrinking interval.",
-    "Camera shutter speeds: at very short exposures the 'instant' is really an average over sensor read-out time, so a limit is only ever approached."
+    "***The layered race*** - (e^{2x}-1-2x)/x^2: the 2x cancels the exponential's first order, leaving the second-order star 1/2 - diagnosis in layers, not one glance."
   ],
   "practiceQuestions": [
-    "Q1. State the $\\varepsilon$-$\\delta$ definition of $\\lim_{x\\to a}f(x)=L$ and explain why $0<|x-a|$ appears.",
-    "Q2. Evaluate $\\lim_{x\\to4}\\frac{x^2-16}{x-4}$ and $\\lim_{x\\to5}\\frac{x-2}{x-5}$, stating which is undefined at the point.",
-    "Q3. Find the horizontal and vertical asymptotes of $y=\\frac{2x+1}{x^2-4}$."
+    "**NEB-style (6m): Evaluate lim_{x→0} (e^{2x} − 1 − 2x)/x².** — **Layered diagnosis:** e^{2x} − 1 ~ 2x (first order) — so the numerator's first-order part 2x cancels it exactly, and the contest moves to **second order**. **Second-order star:** (eᵘ − 1 − u)/u² → **1/2** as u → 0 (the exponential's parabolic correction). **Apply with u = 2x:** (e^{2x} − 1 − 2x)/x² = 4·(e^{2x} − 1 − 2x)/(2x)² → 4·(1/2) = **2**. **L'Hôpital double-check:** pass 1 → (2e^{2x} − 2)/(2x) = (e^{2x} − 1)/x — still 0/0; pass 2 → 2e^{2x}/1 → **2** ✓. **Deep point:** the first-order cancellation was the diagnosis; the second-order star was the cure — layered forms are the hierarchy in action, and the two L'Hôpital passes are exactly the two orders climbed.",
+    "**NEB-style (6m): Evaluate lim_{x→0} [x²·sin(1/x)]/sin x.** — **Two theorems chained:** numerator — the damped oscillator x²sin(1/x) → **0** by squeeze (amplitude x² vanishes); denominator — sin x ~ **x** by the first-order star. **Assemble:** the expression = [x²sin(1/x)/x]·[x/sin x] → [x·sin(1/x)]·[1] → **0** by squeeze (amplitude x). **Direct version:** |x²sin(1/x)/sin x| ≤ x²/|sin x| ~ x → 0 ✓. **Deep point:** the expression chains squeeze (numerator) and star (denominator) — capstone architecture; either theorem alone stalls, together they resolve in three lines.",
+    "**NEB-style (5m): Evaluate lim_{x→π/2⁻} tan x and lim_{x→π/2⁺} tan x, and classify the discontinuity of tan at π/2.** — **Left side:** cos x → 0⁺ (x below π/2), sin x → 1 ⟹ tan x = sin/cos → **+∞**. **Right side:** cos x → 0⁻ ⟹ → **−∞**. **Classification:** **infinite discontinuity** — a splitting wall (the sides run to opposite infinities); tan is non-removable there, and the wall repeats at every π/2 + kπ. **Deep point:** the wall's geometry came from cos's *sign change* across π/2 — the denominator's simple zero with a sign-changing numerator neighbour; the side reading is the same c/0 machinery as rational walls, now in trigonometric clothing.",
+    "**NEB-style (6m): Evaluate lim_{x→∞} (x + sin x)/x, and explain why L'Hôpital's rule cannot certify it.** — **Route — split legally:** (x + sin x)/x = 1 + sin x/x → 1 + 0 = **1** (the star sin x/x → 0 at infinity by squeeze: |sin x/x| ≤ 1/x → 0). **Why L'Hôpital fails:** the derivative ratio is (1 + cos x)/1, which **oscillates in [0, 2]** — it has no limit, so the rule's hypothesis (\"lim f′/g′ exists\") fails even though the original limit exists. The rule is sufficient, not necessary. **Deep point:** the squeeze certified sin x/x → 0 where differentiation could not — the capstone's lesson is that the route table outranks any single tool, and L'Hôpital's hypotheses are checks, not formalities."
   ],
   "formulas": [
-    "Limit: $\\lim_{x \\to a} f(x) = L$",
-    "Epsilon-delta: $|f(x)-L|<\\varepsilon$ whenever $0<|x-a|<\\delta$",
-    "One-sided: $\\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=L$",
-    "Standard limit: $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ (radians only)",
-    "Conjugate: $\\frac{1-\\cos x}{1+\\cos x}=\\frac{\\sin^2x}{1+\\cos x}$"
+    "- (eᵘ − 1 − u)/u² → 1/2 (second-order exponential star)\n- u − sin u ~ u³/6; tan u − u ~ u³/3"
   ],
   "keyPoints": [
-    "A limit describes the value approached, not the value taken at the point.",
-    "The two-sided limit exists only if the one-sided limits are equal and finite.",
-    "$0/0$ signals failure of substitution, not a result of zero.",
-    "Infinity is never a value; it denotes unbounded growth or a vertical asymptote.",
-    "Horizontal asymptotes come from limits at infinity via the dominant-term rule."
+    "Route table: substitution (continuity), 0/0 (factor/conjugate/steer/L'Hopital), c/0 (wall signs), damped oscillator (squeeze), joints (two-sided audit), infinity (degrees/ladder), power forms (log bridge). Selection is the exam skill - cheapest working route wins. Layered diagnosis: first-order cancellation exposes second-order stars, e.g. (e^u - 1 - u)/u^2 -> 1/2."
   ],
-  "summary": "A limit fixes the value a function approaches as $x$ nears $a$, independently of whether $f(a)$ is defined, which is why $\\frac{x^2-4}{x-2}$ is undefined at 2 yet has limit 4. A two-sided limit requires matching one-sided limits. Forms such as $0/0$ are not answers but signals that the function must first be rewritten by factorising, rationalising, or using $\\lim\\frac{\\sin x}{x}=1$. Limits at infinity yield horizontal asymptotes.",
+  "summary": "The capstone drill trains route selection: read the form, take the route table's row, execute the cheapest legal cure, and close with a cross-check. Layered forms (first-order cancellation exposing second-order stars), chained theorems (squeeze feeding stars), wall classifications, and L'Hôpital's hypothesis failures are the drill's four disciplines. The table always answers; persistence with a stalled route is the only way to lose.",
   "specialNotes": [
     "The exclusion of $x=a$ in the epsilon-delta definition is the key subtlety: it is what makes a limit independent of the function's value at the point.",
     "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ holds only in radians; in degrees the value is $\\frac{\\pi}{180}$."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "When a route stalls, re-diagnose - persistence with a stalled route is the only failure."
+  ],
   "importantNotes": [
-    "A limit is a boundary of behaviour, never an attained value — the same reason $f'(a)$ is independent of $f(a)$."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
   ],
   "examShortTricks": [
-    "$0/0$ fix order: factorise, rationalise (conjugate), divide by the highest vanishing power, then use $\\lim\\frac{\\sin x}{x}=1$.",
-    "Degree check at infinity: smaller numerator degree gives 0, equal degrees gives the ratio of leading coefficients, larger gives $\\pm\\infty$.",
-    "Always state BOTH one-sided limits when asked about discontinuity at a point — the values carry the marks."
+    "Read the form, take the table's row, execute; stars before L'Hopital, ladder before division."
   ],
   "examNotes": [
-    "The epsilon-delta definition and evaluation of $0/0$ forms are the most frequently asked 2–3 mark items from this topic."
+    "One confirming cross-check per answer - star vs factor, ladder vs L'Hopital."
   ],
   "mcs": [
     {
@@ -97,10 +89,7 @@
     }
   ],
   "importantConcepts": [
-    "Informal and epsilon-delta meanings of a limit, and why $x=a$ is excluded.",
-    "Left-hand, right-hand and two-sided limits, and the jump discontinuity.",
-    "Indeterminate forms and the rewrites that resolve them.",
-    "Infinite limits, vertical asymptotes and horizontal asymptotes."
+    "Capstone problems test architecture: chained theorems in one expression, recognised before executed."
   ],
   "importantTasks": [
     "State and interpret the epsilon-delta definition.",
@@ -117,5 +106,57 @@
     "**5. [Idea: the standard limit $\\lim\\frac{e^u-1}{u}=1$ does all the work]** Evaluate $\\lim_{x \\to 0}\\dfrac{2^{\\sin^2 x} - 1}{x^2}$.\\newline\\newline**Solution:** The form is $\\frac00$. Direct differentiation is circular, and a squeeze using $-x^2 \\le \\sin^2x \\le x^2$ only bounds the expression by $\\frac{2^{x^2}-1}{x^2}$, which tends to $\\ln 2$ — **a non-zero bound proves nothing**.\\newline\\newlineConvert the base instead: $2^{\\sin^2x} = e^{\\sin^2x \\ln 2}$. Set $u = \\sin^2 x\\,\\ln 2$, so $u \\to 0$, and factor the expression into three pieces each with a known limit:$\\newline\\lim_{x\\to0}\\underbrace{\\frac{e^u-1}{u}}_{\\to\\,1}\\cdot\\underbrace{\\frac{u}{\\sin^2x}}_{\\to\\,\\ln2}\\cdot\\underbrace{\\frac{\\sin^2x}{x^2}}_{\\to\\,1}$.\\newline\\newline**Answer:** $1 \\times \\ln 2 \\times 1 = \\ln 2$. **Lesson:** when a squeeze bound tends to a non-zero constant, switch to factorisation.",
     "**6. [Idea: chain an unknown function's limit through a rationalising identity]** Given $\\lim_{x \\to 2}\\dfrac{f(x)-f(2)}{x-2} = 3$ and $f(2) = 6$, evaluate $\\lim_{x \\to 2}\\dfrac{f^2(x) - 36}{x^2-4}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$ and nothing can be computed without more information, so factor both sides:$^{\\bullet}$ Numerator: $f^2(x)-36 = \\left(f(x)-f(2)\\right)\\left(f(x)+f(2)\\right)$ since $36 = f^2(2)$.$^{\\bullet}$ Denominator: $x^2-4 = (x-2)(x+2)$.\\newline\\newlineThen$\\newline\\lim_{x\\to2}\\dfrac{f(x)-f(2)}{x-2}\\cdot\\dfrac{f(x)+f(2)}{x+2} = 3 \\cdot \\dfrac{6+6}{2+2} = 3 \\cdot 3$.\\newline\\newline**Answer:** $9$."
   ],
-  "practice": []
+  "practice": [
+    "Evaluate lim_{x→0} (e^{2x} − 1 − 2x)/x².",
+    "Evaluate lim_{x→0} x²·sin(1/x)/sin x.",
+    "Evaluate lim_{x→π/2⁻} tan x and classify the discontinuity."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Capstone Limits Drill\n\nThis canonical is the **capstone limits drill**: mixed problems spanning the whole limits toolkit — substitution, transformation, stars, squeeze, walls, and infinity — in exam format. It mirrors the parent limit-system canonical; the drill's discipline is route selection under time pressure.",
+      "## 2. Theorem Mirror — The Route Table\n\n| Symptom | Route |\n|---|---|\n| Substitution works | cite continuity, evaluate |\n| 0/0 | factor / conjugate / steer / L'Hôpital |\n| c/0 | wall: signs by side |\n| Oscillator damped | squeeze |\n| Piecewise joint | LHL, RHL, compare |\n| ∞ forms | degrees, ladder, dominant division |\n| 1^∞, 0⁰, ∞⁰ | log bridge |",
+      "## 3. Deep Conceptual — Route Selection as the Exam Skill\n\n- Every limits problem has **several working routes and one cheapest**: the coefficient ratio beats the L'Hôpital passes; the ladder beats the dominant division; the squeeze beats any transformation of an oscillator. Capstone drills train the *selection*, which is where exam time is won.\n- **The route table is a decision procedure, not a menu:** read the symptom (form), take the row, execute. When a route stalls (form unchanged after a pass), the table says re-diagnose — persistence with a stalled route is the only real failure mode.\n- **Cross-checks close the loop:** star vs factoring, ladder vs L'Hôpital, squeeze vs damping — one confirming line turns a computed answer into a defended one.",
+      "## 4. Deep Conceptual — Mixed Problems Test Architecture, Not Memory\n\n- A capstone item like (e^{2x} − 1 − 2x)/x² requires *layered* diagnosis: the 2x term cancels the exponential's first order, so the contest is at second order — the (eᵘ − 1 − u)/u² → 1/2 refinement. Mixed drills expose whether the student owns the **order hierarchy** or only the first-order stars.\n- **Walls and squeeze in one problem:** x²·sin(1/x) over sin x needs both the damping (numerator → 0 like x) and the star (denominator ~ x) — the ratio → 1. Architecture questions chain two theorems in one expression; recognising the chain is the skill.",
+      "## 5. Worked Example Types\n\n- **Type A — layered 0/0:** first-order cancellation exposes second-order stars.\n- **Type B — squeeze + star chains:** damped oscillator over a vanishing denominator.\n- **Type C — wall + classification:** c/0 with side signs and the continuity verdict.\n- **Type D — capstone infinity:** mixed families with the ladder and a tie-case coefficient.",
+      "## 6. Common Confusions\n\n**\"Always L'Hôpital\":** the stars are cheaper and always legal where they apply. **\"The squeeze needs equal rails\":** it needs rails converging to the *same* value — boundedness alone proves nothing."
+    ],
+    "keyPoints": [
+      "Route table: substitution (continuity), 0/0 (factor/conjugate/steer/L'Hopital), c/0 (wall signs), damped oscillator (squeeze), joints (two-sided audit), infinity (degrees/ladder), power forms (log bridge). Selection is the exam skill - cheapest working route wins. Layered diagnosis: first-order cancellation exposes second-order stars, e.g. (e^u - 1 - u)/u^2 -> 1/2."
+    ],
+    "importantConcepts": [
+      "Capstone problems test architecture: chained theorems in one expression, recognised before executed."
+    ],
+    "examples": [
+      "***The layered race*** - (e^{2x}-1-2x)/x^2: the 2x cancels the exponential's first order, leaving the second-order star 1/2 - diagnosis in layers, not one glance."
+    ],
+    "universalFacts": [
+      "Every limits problem in the syllabus falls to one row of the route table."
+    ],
+    "importantStatements": [
+      "When a route stalls, re-diagnose - persistence with a stalled route is the only failure."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    ],
+    "examShortTricks": [
+      "Read the form, take the table's row, execute; stars before L'Hopital, ladder before division."
+    ],
+    "examNotes": [
+      "One confirming cross-check per answer - star vs factor, ladder vs L'Hopital."
+    ],
+    "formulas": [
+      "- (eᵘ − 1 − u)/u² → 1/2 (second-order exponential star)\n- u − sin u ~ u³/6; tan u − u ~ u³/3"
+    ],
+    "practice": [
+      "Evaluate lim_{x→0} (e^{2x} − 1 − 2x)/x².",
+      "Evaluate lim_{x→0} x²·sin(1/x)/sin x.",
+      "Evaluate lim_{x→π/2⁻} tan x and classify the discontinuity."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Evaluate lim_{x→0} (e^{2x} − 1 − 2x)/x².** — **Layered diagnosis:** e^{2x} − 1 ~ 2x (first order) — so the numerator's first-order part 2x cancels it exactly, and the contest moves to **second order**. **Second-order star:** (eᵘ − 1 − u)/u² → **1/2** as u → 0 (the exponential's parabolic correction). **Apply with u = 2x:** (e^{2x} − 1 − 2x)/x² = 4·(e^{2x} − 1 − 2x)/(2x)² → 4·(1/2) = **2**. **L'Hôpital double-check:** pass 1 → (2e^{2x} − 2)/(2x) = (e^{2x} − 1)/x — still 0/0; pass 2 → 2e^{2x}/1 → **2** ✓. **Deep point:** the first-order cancellation was the diagnosis; the second-order star was the cure — layered forms are the hierarchy in action, and the two L'Hôpital passes are exactly the two orders climbed.",
+      "**NEB-style (6m): Evaluate lim_{x→0} [x²·sin(1/x)]/sin x.** — **Two theorems chained:** numerator — the damped oscillator x²sin(1/x) → **0** by squeeze (amplitude x² vanishes); denominator — sin x ~ **x** by the first-order star. **Assemble:** the expression = [x²sin(1/x)/x]·[x/sin x] → [x·sin(1/x)]·[1] → **0** by squeeze (amplitude x). **Direct version:** |x²sin(1/x)/sin x| ≤ x²/|sin x| ~ x → 0 ✓. **Deep point:** the expression chains squeeze (numerator) and star (denominator) — capstone architecture; either theorem alone stalls, together they resolve in three lines.",
+      "**NEB-style (5m): Evaluate lim_{x→π/2⁻} tan x and lim_{x→π/2⁺} tan x, and classify the discontinuity of tan at π/2.** — **Left side:** cos x → 0⁺ (x below π/2), sin x → 1 ⟹ tan x = sin/cos → **+∞**. **Right side:** cos x → 0⁻ ⟹ → **−∞**. **Classification:** **infinite discontinuity** — a splitting wall (the sides run to opposite infinities); tan is non-removable there, and the wall repeats at every π/2 + kπ. **Deep point:** the wall's geometry came from cos's *sign change* across π/2 — the denominator's simple zero with a sign-changing numerator neighbour; the side reading is the same c/0 machinery as rational walls, now in trigonometric clothing.",
+      "**NEB-style (6m): Evaluate lim_{x→∞} (x + sin x)/x, and explain why L'Hôpital's rule cannot certify it.** — **Route — split legally:** (x + sin x)/x = 1 + sin x/x → 1 + 0 = **1** (the star sin x/x → 0 at infinity by squeeze: |sin x/x| ≤ 1/x → 0). **Why L'Hôpital fails:** the derivative ratio is (1 + cos x)/1, which **oscillates in [0, 2]** — it has no limit, so the rule's hypothesis (\"lim f′/g′ exists\") fails even though the original limit exists. The rule is sufficient, not necessary. **Deep point:** the squeeze certified sin x/x → 0 where differentiation could not — the capstone's lesson is that the route table outranks any single tool, and L'Hôpital's hypotheses are checks, not formalities."
+    ]
+  }
 }

@@ -5,61 +5,59 @@
   "topicSlug": "limits5-1",
   "relevance": 100,
   "notes": [
-    "**Sum and difference:** if $\\lim f = L$ and $\\lim g = M$ then $\\lim(f\\pm g)=L\\pm M$. Limits commute with addition because they preserve the arithmetic structure of the reals.",
-    "**Product and quotient:** $\\lim(fg)=LM$ and, provided $M\\ne0$, $\\lim\\frac{f}{g}=\\frac{L}{M}$. The condition $M\\ne0$ is the whole reason $0/0$ is indeterminate — the product law guarantees $0$ while the quotient law is unavailable.",
-    "**Constant multiple and power:** $\\lim(cf)=cL$ and $\\lim f^n=L^n$. An even root additionally needs a non-negative limit, while an odd root does not, so sign information about $L$ decides whether $\\lim\\sqrt[n]{f}$ exists.",
-    "**Composition:** if $\\lim f=L$ and $g$ is continuous at $L$ then $\\lim g(f(x))=g(L)$. This licenses substituting into a continuous outer function, and it is why a discontinuous $g$ such as $\\tan$ at $\\pi/2$ breaks the rule.",
-    "**Squeeze (sandwich) theorem:** if $g(x)\\le f(x)\\le h(x)$ near $a$ and $\\lim g=\\lim h=L$ then $\\lim f=L$. This is the only reliable tool for a vanishing factor times an oscillating one, and it proves $\\lim_{x\\to0}x\\sin\\frac1x=0$ from $-|x|\\le x\\sin\\frac1x\\le|x|$.",
-    "**Why the laws survive discontinuity:** none of these need $f$ defined at $a$, only the limits to exist. That is exactly why a removable discontinuity does not spoil a limit, while a jump does — unequal one-sided limits mean the laws cannot be applied at all."
+    "## 1. Topic Introduction — Drill Gallery: Assembling Limits by the Laws\n\nThis canonical is the **first limits drill gallery**: problems whose limits assemble directly from the limit laws — sums, products, quotients, compositions — with the hypotheses named. It mirrors the algebraic-properties parent; the drill's discipline is legal assembly.",
+    "## 2. Theorem Mirror — The Assembly Kit\n\n- **Sum, product, constant multiple:** combine freely once every piece's limit exists.\n- **Quotient:** denominator's limit must be nonzero — check before dividing.\n- **Power/root:** apply to a converged base; even roots need a nonnegative limit.\n- **Composition:** outer function continuous at the inner limit ⟹ push the limit through.\n- **Polynomials:** continuous everywhere ⟹ substitution is all the laws at once.",
+    "## 3. Deep Conceptual — Naming Hypotheses Is the Drill\n\n- Each assembly step consumes a hypothesis: \"both limits exist,\" \"denominator ≠ 0,\" \"outer continuous at 9.\" The drill's discipline is naming each one — the laws are implications, and the working is the proof that the implications apply.\n- **When assembly stalls, re-group:** a decomposition with a nonexistent piece (sin(1/x) inside a product) is not a dead end but a *wrong decomposition* — regroup so every piece converges, or switch to the squeeze.\n- **Composition chains build depth:** lim f(g(h(x))) pushes through two licences — outer continuous at g's limit, g continuous at h's limit. Long chains are just repeated licence checks.",
+    "## 4. Deep Conceptual — Substitution as the Assembly Shortcut\n\n- For continuous integrands, the whole assembly collapses to one substitution — because continuity means every law applies at once. Knowing *when* the shortcut is licensed (the composition theorem, closure of continuity) is what separates substitution-as-habit from substitution-as-theorem.\n- **The boundary of the shortcut:** denominator zeros, domain edges, piecewise joints — exactly the suspect list. The drill's items deliberately park near these boundaries so the licence check has teeth.",
+    "## 5. Worked Example Types\n\n- **Type A — quotient with the check:** evaluate numerator and denominator, verify ≠ 0, divide.\n- **Type B — composition push:** inner limit, outer continuity, apply.\n- **Type C — regroup the illegal split:** identify the nonexistent piece, squeeze or damp it.\n- **Type D — root over quotient:** even root needs the inner limit ≥ 0 — check the domain edge.",
+    "## 6. Common Confusions\n\n**\"Substitute always\":** only where continuity is certified — the suspects list is exactly where it is not. **\"The laws are obvious\":** each is a theorem with a hypothesis; the drill grades the hypotheses."
   ],
   "confusion": [
     "Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is indeterminate.",
     "Taking $\\lim\\sqrt{f(x)}=\\sqrt{\\lim f}$ without checking the sign; an even root needs a non-negative limit.",
     "Applying the composition rule through a discontinuous outer function such as $\\tan$."
   ],
-  "practice": [],
+  "practice": [
+    "Evaluate lim_{x→2} (x³ − 1)/(x² + 2) by the laws.",
+    "Evaluate lim_{x→4} √(x)·(x² − 3) citing each licence.",
+    "Evaluate lim_{x→0} (x² + 1)·cos(1/x) — carefully."
+  ],
   "universalFacts": [
-    "The squeeze theorem is the bridge used to prove almost every standard limit, including $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$.",
-    "Audio codecs rely on a jump discontinuity: the mapping from continuous voltage to a discrete level is a jump, and the discontinuity is audible as a click."
+    "Continuity is the closure property that lets whole assemblies collapse into one substitution."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The licensed push*** - lim sqrt((x^2+8)) at x=1: inner limit 9, sqrt continuous at 9, answer 3 - two licence checks, one substitution."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Evaluate lim_{x→2} (x³ − 1)/(x² + 2), naming each law.** — **Numerator (power + difference laws):** 8 − 1 = **7**. **Denominator (sum of power and constant):** 4 + 2 = **6 ≠ 0** — quotient hypothesis ✓. **Quotient law: 7/6.** **Deep point:** the entire computation is three named laws; the check \"6 ≠ 0\" is the one that could have failed — at any root of x² + 2 (none real) the problem would have changed species, which is why the check is written even when it passes trivially.",
+    "**NEB-style (5m): Evaluate lim_{x→4} √x·(x² − 3), citing each licence.** — **First factor:** lim √x = **2** — root law with inner limit 4 ≥ 0 ✓ (continuity of √t at 4). **Second factor (power + difference):** 16 − 3 = **13**. **Product law:** 2 × 13 = **26**. **Deep point:** the root's licence (inner limit 4, inside the domain's interior) is the nontrivial hypothesis — at x → 0 the same product would need one-sided care because √x's domain edge truncates the two-sided theorem.",
+    "**NEB-style (6m): Evaluate lim_{x→0} (x² + 1)·cos(1/x), and justify the verdict rigorously.** — **The obstruction:** lim_{x→0} cos(1/x) does not exist, so the product law cannot assemble from the obvious decomposition. **Amplitude analysis:** the factor (x² + 1) → **1 ≠ 0** — the oscillation's amplitude does **not** vanish, so no damping occurs and the squeeze theorem cannot rescue a limit (its rails −(x²+1) and (x²+1) converge to *different* values −1 and 1, pinning nothing). **Rigorous non-existence certificate:** along xₙ = 1/(2nπ), cos(1/xₙ) = cos(2nπ) = 1 ⟹ f(xₙ) = xₙ² + 1 → **1**; along yₙ = 1/((2n+1)π), cos(1/yₙ) = cos((2n+1)π) = −1 ⟹ f(yₙ) = −(yₙ² + 1) → **−1**. Two approaches-to-zero sequences with different limits ⟹ **the limit does not exist**. **Deep point:** damping requires the amplitude to *vanish* — x²·cos(1/x) → 0 because x² → 0, but (x²+1)·cos(1/x) keeps swinging between ±(x²+1) → ±1; the subsequence argument is the standard certificate when the squeeze rails fail to meet.",
+    "**NEB-style (6m): Evaluate lim_{x→3} (2x + 1)² + √(x + 6), assembling by the laws with licences named.** — **Inner piece (sum + constant multiple):** lim (2x + 1) = 7. **Power law:** 7² = **49** — the square is continuous everywhere, licence trivial. **Root piece:** lim (x + 6) = 9 ≥ 0 ✓; √t continuous at 9 ⟹ **3**. **Sum law: 49 + 3 = 52.** **One-line shortcut check:** both pieces are continuous at 3 ⟹ substitution gives (7)² + 3 = 52 ✓. **Deep point:** the long route names the licences; the shortcut is the closure theorem compressing them — both routes are the same mathematics, and the drill's value is seeing the compression as earned, not automatic."
+  ],
   "formulas": [
-    "Sum/difference: $\\lim(f\\pm g)=L\\pm M$",
-    "Product: $\\lim(fg)=LM$",
-    "Quotient: $\\lim\\frac{f}{g}=\\frac{L}{M}$ for $M\\ne0$",
-    "Power: $\\lim f^n=L^n$",
-    "Composition: $\\lim g(f(x))=g(L)$ when $g$ is continuous at $L$",
-    "Squeeze: $g\\le f\\le h$ and $\\lim g=\\lim h=L \\Rightarrow \\lim f=L$"
+    "- lim f/g = lim f / lim g, provided lim g ≠ 0\n- lim f(g(x)) = f(lim g(x)) if f continuous at lim g(x)"
   ],
   "keyPoints": [
-    "The laws need only the LIMITS to exist, not the function to be defined at the point.",
-    "The quotient law is void when the denominator's limit is 0 — the root of $0/0$.",
-    "Squeeze is the only general method for a vanishing factor times an oscillating term."
+    "Assembly kit: sum/product/constant multiple need existing limits; quotient needs nonzero denominator; power/root need converged base (even roots: nonnegative); composition needs outer continuity at the inner limit. Polynomials: substitution = all laws at once. Stalled assembly means wrong decomposition - regroup or squeeze. Naming hypotheses is the drill."
   ],
-  "summary": "The algebraic limit laws cover sums, products, quotients, powers and composition, and each requires only that the individual limits exist — never that the functions be defined at the point. The quotient law fails precisely when the denominator tends to 0, which is why $0/0$ is indeterminate. When neither substitution nor the laws apply, the squeeze theorem settles a vanishing factor times an oscillating one.",
+  "summary": "Assembly drills train the limit laws' hypotheses: existing pieces for sums and products, a nonzero denominator for quotients, a converged base for powers and roots, outer continuity for compositions. When a decomposition stalls, regroup or squeeze — and when the amplitude of an oscillation does not vanish, the honest verdict is non-existence, certified by subsequences. Substitution is the closure theorem's compression of all the licences at once; the drill's discipline is knowing when that compression is earned.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is indeterminate.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: $\\lim(f\\pm g)=L\\pm M$ whenever both limits exist.",
-    "Statement 2: $\\lim\\frac{f}{g}=\\frac{L}{M}$ is valid only when $M\\ne0$.",
-    "Statement 3: $\\lim f^n=L^n$ holds for positive integers; an even root also needs a non-negative limit.",
-    "Statement 4: $\\lim g(f(x))=g(L)$ requires $g$ continuous at $L$.",
-    "Statement 5: If $g\\le f\\le h$ near $a$ and $\\lim g=\\lim h=L$ then $\\lim f=L$."
+    "Regroup before you split: every piece must converge."
   ],
   "importantNotes": [
-    "Topic anchor: Why the laws survive discontinuity  none of these need $f$ defined at $a$, only the limits to exist."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Check the denominator's limit FIRST — if it is 0 no law applies and the expression must be rewritten.",
-    "Small factor times a trigonometric or oscillating term means squeeze, immediately."
+    "Check the denominator's limit before dividing - one line, one mark, one avoided error."
   ],
   "examNotes": [
-    "Stating the limit laws with the $M\\ne0$ condition attached is a common 2-mark question."
+    "Name the theorem at each assembly step; unlabelled steps read as guesswork."
   ],
   "mcs": [
     {
@@ -97,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "The laws need only the LIMITS to exist, not the function to be defined at the point.",
-    "The quotient law is void when the denominator's limit is 0 — the root of $0/0$.",
-    "Squeeze is the only general method for a vanishing factor times an oscillating term."
+    "The laws are implications; the working is the proof that each implication's hypothesis holds."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -113,5 +109,53 @@
     "**4. [Idea: the $1^\\infty$ family with a trigonometric inner function]** Evaluate $\\lim_{x \\to 0}\\left(1+\\sin x\\right)^{\\frac{1}{\\sin x}}$.\\newline\\newline**Solution:** Let $y = \\left(1+\\sin x\\right)^{1/\\sin x}$ and take logarithms:$\\newline\\ln y = \\dfrac{\\ln(1+\\sin x)}{\\sin x}$, which is $\\frac00$.\\newline\\newlineL'Hôpital:$\\newline\\lim_{x\\to0}\\dfrac{\\frac{\\cos x}{1+\\sin x}}{\\cos x} = \\lim_{x\\to0}\\dfrac{1}{1+\\sin x} = 1$.\\newline\\newlineSo $\\ln y \\to 1$, hence $y \\to e$.\\newline\\newline**Answer:** $e$. **Check:** this is the general identity $\\lim_{u\\to0}(1+u)^{1/u}=e$ with $u = \\sin x$.",
     "**5. [Idea: the standard limit $\\lim\\frac{e^u-1}{u}=1$ does all the work]** Evaluate $\\lim_{x \\to 0}\\dfrac{2^{\\sin^2 x} - 1}{x^2}$.\\newline\\newline**Solution:** The form is $\\frac00$. Direct differentiation is circular, and a squeeze using $-x^2 \\le \\sin^2x \\le x^2$ only bounds the expression by $\\frac{2^{x^2}-1}{x^2}$, which tends to $\\ln 2$ — **a non-zero bound proves nothing**.\\newline\\newlineConvert the base instead: $2^{\\sin^2x} = e^{\\sin^2x \\ln 2}$. Set $u = \\sin^2 x\\,\\ln 2$, so $u \\to 0$, and factor the expression into three pieces each with a known limit:$\\newline\\lim_{x\\to0}\\underbrace{\\frac{e^u-1}{u}}_{\\to\\,1}\\cdot\\underbrace{\\frac{u}{\\sin^2x}}_{\\to\\,\\ln2}\\cdot\\underbrace{\\frac{\\sin^2x}{x^2}}_{\\to\\,1}$.\\newline\\newline**Answer:** $1 \\times \\ln 2 \\times 1 = \\ln 2$. **Lesson:** when a squeeze bound tends to a non-zero constant, switch to factorisation.",
     "**6. [Idea: chain an unknown function's limit through a rationalising identity]** Given $\\lim_{x \\to 2}\\dfrac{f(x)-f(2)}{x-2} = 3$ and $f(2) = 6$, evaluate $\\lim_{x \\to 2}\\dfrac{f^2(x) - 36}{x^2-4}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$ and nothing can be computed without more information, so factor both sides:$^{\\bullet}$ Numerator: $f^2(x)-36 = \\left(f(x)-f(2)\\right)\\left(f(x)+f(2)\\right)$ since $36 = f^2(2)$.$^{\\bullet}$ Denominator: $x^2-4 = (x-2)(x+2)$.\\newline\\newlineThen$\\newline\\lim_{x\\to2}\\dfrac{f(x)-f(2)}{x-2}\\cdot\\dfrac{f(x)+f(2)}{x+2} = 3 \\cdot \\dfrac{6+6}{2+2} = 3 \\cdot 3$.\\newline\\newline**Answer:** $9$."
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Drill Gallery: Assembling Limits by the Laws\n\nThis canonical is the **first limits drill gallery**: problems whose limits assemble directly from the limit laws — sums, products, quotients, compositions — with the hypotheses named. It mirrors the algebraic-properties parent; the drill's discipline is legal assembly.",
+      "## 2. Theorem Mirror — The Assembly Kit\n\n- **Sum, product, constant multiple:** combine freely once every piece's limit exists.\n- **Quotient:** denominator's limit must be nonzero — check before dividing.\n- **Power/root:** apply to a converged base; even roots need a nonnegative limit.\n- **Composition:** outer function continuous at the inner limit ⟹ push the limit through.\n- **Polynomials:** continuous everywhere ⟹ substitution is all the laws at once.",
+      "## 3. Deep Conceptual — Naming Hypotheses Is the Drill\n\n- Each assembly step consumes a hypothesis: \"both limits exist,\" \"denominator ≠ 0,\" \"outer continuous at 9.\" The drill's discipline is naming each one — the laws are implications, and the working is the proof that the implications apply.\n- **When assembly stalls, re-group:** a decomposition with a nonexistent piece (sin(1/x) inside a product) is not a dead end but a *wrong decomposition* — regroup so every piece converges, or switch to the squeeze.\n- **Composition chains build depth:** lim f(g(h(x))) pushes through two licences — outer continuous at g's limit, g continuous at h's limit. Long chains are just repeated licence checks.",
+      "## 4. Deep Conceptual — Substitution as the Assembly Shortcut\n\n- For continuous integrands, the whole assembly collapses to one substitution — because continuity means every law applies at once. Knowing *when* the shortcut is licensed (the composition theorem, closure of continuity) is what separates substitution-as-habit from substitution-as-theorem.\n- **The boundary of the shortcut:** denominator zeros, domain edges, piecewise joints — exactly the suspect list. The drill's items deliberately park near these boundaries so the licence check has teeth.",
+      "## 5. Worked Example Types\n\n- **Type A — quotient with the check:** evaluate numerator and denominator, verify ≠ 0, divide.\n- **Type B — composition push:** inner limit, outer continuity, apply.\n- **Type C — regroup the illegal split:** identify the nonexistent piece, squeeze or damp it.\n- **Type D — root over quotient:** even root needs the inner limit ≥ 0 — check the domain edge.",
+      "## 6. Common Confusions\n\n**\"Substitute always\":** only where continuity is certified — the suspects list is exactly where it is not. **\"The laws are obvious\":** each is a theorem with a hypothesis; the drill grades the hypotheses."
+    ],
+    "keyPoints": [
+      "Assembly kit: sum/product/constant multiple need existing limits; quotient needs nonzero denominator; power/root need converged base (even roots: nonnegative); composition needs outer continuity at the inner limit. Polynomials: substitution = all laws at once. Stalled assembly means wrong decomposition - regroup or squeeze. Naming hypotheses is the drill."
+    ],
+    "importantConcepts": [
+      "The laws are implications; the working is the proof that each implication's hypothesis holds."
+    ],
+    "examples": [
+      "***The licensed push*** - lim sqrt((x^2+8)) at x=1: inner limit 9, sqrt continuous at 9, answer 3 - two licence checks, one substitution."
+    ],
+    "universalFacts": [
+      "Continuity is the closure property that lets whole assemblies collapse into one substitution."
+    ],
+    "importantStatements": [
+      "Regroup before you split: every piece must converge."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Check the denominator's limit before dividing - one line, one mark, one avoided error."
+    ],
+    "examNotes": [
+      "Name the theorem at each assembly step; unlabelled steps read as guesswork."
+    ],
+    "formulas": [
+      "- lim f/g = lim f / lim g, provided lim g ≠ 0\n- lim f(g(x)) = f(lim g(x)) if f continuous at lim g(x)"
+    ],
+    "practice": [
+      "Evaluate lim_{x→2} (x³ − 1)/(x² + 2) by the laws.",
+      "Evaluate lim_{x→4} √(x)·(x² − 3) citing each licence.",
+      "Evaluate lim_{x→0} (x² + 1)·cos(1/x) — carefully."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Evaluate lim_{x→2} (x³ − 1)/(x² + 2), naming each law.** — **Numerator (power + difference laws):** 8 − 1 = **7**. **Denominator (sum of power and constant):** 4 + 2 = **6 ≠ 0** — quotient hypothesis ✓. **Quotient law: 7/6.** **Deep point:** the entire computation is three named laws; the check \"6 ≠ 0\" is the one that could have failed — at any root of x² + 2 (none real) the problem would have changed species, which is why the check is written even when it passes trivially.",
+      "**NEB-style (5m): Evaluate lim_{x→4} √x·(x² − 3), citing each licence.** — **First factor:** lim √x = **2** — root law with inner limit 4 ≥ 0 ✓ (continuity of √t at 4). **Second factor (power + difference):** 16 − 3 = **13**. **Product law:** 2 × 13 = **26**. **Deep point:** the root's licence (inner limit 4, inside the domain's interior) is the nontrivial hypothesis — at x → 0 the same product would need one-sided care because √x's domain edge truncates the two-sided theorem.",
+      "**NEB-style (6m): Evaluate lim_{x→0} (x² + 1)·cos(1/x), and justify the verdict rigorously.** — **The obstruction:** lim_{x→0} cos(1/x) does not exist, so the product law cannot assemble from the obvious decomposition. **Amplitude analysis:** the factor (x² + 1) → **1 ≠ 0** — the oscillation's amplitude does **not** vanish, so no damping occurs and the squeeze theorem cannot rescue a limit (its rails −(x²+1) and (x²+1) converge to *different* values −1 and 1, pinning nothing). **Rigorous non-existence certificate:** along xₙ = 1/(2nπ), cos(1/xₙ) = cos(2nπ) = 1 ⟹ f(xₙ) = xₙ² + 1 → **1**; along yₙ = 1/((2n+1)π), cos(1/yₙ) = cos((2n+1)π) = −1 ⟹ f(yₙ) = −(yₙ² + 1) → **−1**. Two approaches-to-zero sequences with different limits ⟹ **the limit does not exist**. **Deep point:** damping requires the amplitude to *vanish* — x²·cos(1/x) → 0 because x² → 0, but (x²+1)·cos(1/x) keeps swinging between ±(x²+1) → ±1; the subsequence argument is the standard certificate when the squeeze rails fail to meet.",
+      "**NEB-style (6m): Evaluate lim_{x→3} (2x + 1)² + √(x + 6), assembling by the laws with licences named.** — **Inner piece (sum + constant multiple):** lim (2x + 1) = 7. **Power law:** 7² = **49** — the square is continuous everywhere, licence trivial. **Root piece:** lim (x + 6) = 9 ≥ 0 ✓; √t continuous at 9 ⟹ **3**. **Sum law: 49 + 3 = 52.** **One-line shortcut check:** both pieces are continuous at 3 ⟹ substitution gives (7)² + 3 = 52 ✓. **Deep point:** the long route names the licences; the shortcut is the closure theorem compressing them — both routes are the same mathematics, and the drill's value is seeing the compression as earned, not automatic."
+    ]
+  }
 }

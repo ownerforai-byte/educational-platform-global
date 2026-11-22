@@ -5,54 +5,59 @@
   "topicSlug": "limits-algebraic-trig-exp-log",
   "relevance": 100,
   "notes": [
-    "**The standard limits that unlock everything else:** $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, $\\lim_{x\\to0}\\frac{\\tan x}{x}=1$, and $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$. The second follows from the first and the third from the half-angle identity, so only one needs proving.",
-    "**All three assume RADIANS.** In degrees each is scaled: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$ and $\\lim\\frac{1-\\cos x}{x^2}=\\frac{\\pi^2}{360}$. A calculator left in degree mode produces exactly the wrong value, which is the most practical trap in the topic.",
-    "**Rational functions and polynomials substitute directly:** since polynomials are continuous everywhere and rational functions are continuous away from their zeros, $\\lim_{x\\to a}\\frac{P(x)}{Q(x)}=\\frac{P(a)}{Q(a)}$ whenever $Q(a)\\ne0$.",
-    "**Exponential and logarithmic limits are continuous functions:** $\\lim_{x\\to a}e^{f(x)}=e^{f(a)}$ and $\\lim_{x\\to a}\\ln f(x)=\\ln f(a)$ for $f(a)>0$. The domain condition on the logarithm is what excludes $f(a)\\le0$.",
-    "**The $1^\\infty$ family via logarithms:** for $y=(1+\\frac{1}{x})^x$, take logs to get $\\lim x\\ln(1+\\frac1x)$, a $0/0$ form, and L'Hôpital then gives $\\lim\\frac{\\frac{1}{x}cdot\frac{1}{1+1/x}}{1}=1$, so the limit is $e$.",
-    "**Composition of continuous functions settles most limits:** if $f$ is continuous at $a$ and $g$ is continuous at $f(a)$, then $\\lim_{x\\to a}g(f(x))=g(f(a))$. This is why almost no work is needed for expressions built from polynomials, roots, exponentials and logarithms with well-behaved arguments."
+    "## 1. Topic Introduction — The Companion Doorway to the Four Families\n\nThis canonical is the **short-form doorway** to limits of algebraic, trigonometric, exponential and logarithmic functions: the stars of each family and the steering craft in one page. The parent canonicals carry the full treatment; this companion mirrors the stars, adds the family-by-family deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Algebraic stars:** (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹; (1 − cos u)/u² → 1/2; degree rules at ∞.\n- **Trigonometric stars (radians only):** sin u/u → 1; tan u/u → 1; (1 − cos u)/u → 0.\n- **Exponential/log stars:** (eᵘ − 1)/u → 1; ln(1 + u)/u → 1; aᵘ − 1 ~ u·ln a; (1 + u)^{1/u} → e.\n- **Steering:** rewrite A/B as (A·k)/(B·k) to manufacture the star's exact denominator, carrying the constant outside.\n- **All stars compose:** with u = g(x) → 0, sin(3x) ~ 3x, ln(1 + 5x) ~ 5x, e^{−2x} − 1 ~ −2x.",
+    "## 3. Deep Conceptual — Stars Are First-Order Taylor Approximations\n\n- Each star says a complicated function **agrees with a line (or a parabola) near its anchor**: sin u ~ u, eᵘ − 1 ~ u, ln(1+u) ~ u are all \"slope = 1 at the anchor\" statements; 1 − cos u ~ u²/2 is the parabolic correction. The star table is a table of local linearisations.\n- **Same-order contestants leave coefficient ratios:** sin 3x/tan 5x → 3/5 because both are order 1 with coefficients 3 and 5. Higher-order refinements (u − sin u ~ u³/6) decide the races that first order ties.\n- **The radian requirement is structural:** sin u ~ u holds when u measures arc length; in degrees the slope is π/180 and every star silently carries that factor. Radians are the unit where geometry and limits coincide.",
+    "## 4. Deep Conceptual — The Growth Ladder Across Families\n\n- At infinity the families race in a fixed order: **ln x < xᵖ < aˣ < xˣ**. Any higher rung dominates: x¹⁰⁰/eˣ → 0, ln(xⁿ)/x → 0, eˣ/xᵏ → ∞ — regardless of coefficients.\n- **Mechanism:** powers grow additively, exponentials multiplicatively, logs by diminishing increments. The ladder decides mixed-family limits by rung alone; coefficients only matter within a rung (degree comparison for polynomials, leading ratios for same-type exponentials).",
+    "## 5. Worked Example Types\n\n- **Type A — steer to sin u/u:** (sin 5x)/x = 5·(sin 5x)/(5x) → 5.\n- **Type B — second-order matching:** (1 − cos 4x)/x² = 16·(1 − cos 4x)/(4x)² → 16·(1/2) = 8.\n- **Type C — mixed exp/log:** (e^{3x} − 1)/ln(1 + 2x) → 3/2 by coefficient ratio.\n- **Type D — 1^∞ bridge:** (1 + k/x)^{mx} → e^{mk} via the log star.",
+    "## 6. Common Confusions\n\n**Degrees in the sine star:** sin u/u → 1 fails in degrees — convert first. **\"∞ − ∞ = 0\":** the form is indeterminate; merge fractions or rationalise before any verdict."
   ],
   "confusion": [
     "Using the standard limits with x in degrees, which changes every value by a factor involving $\\pi$.",
     "Applying $\\lim \\ln f = \\ln(\\lim f)$ when the limit of $f$ is negative, where the logarithm is not defined at all.",
     "Forgetting that the $1^\\infty$ case needs logarithms and cannot be handled by L'Hôpital directly."
   ],
-  "practice": [],
+  "practice": [
+    "Evaluate lim_{x→0} (tan 4x)/(2x).",
+    "Evaluate lim_{x→0} (e^{5x} − 1)/(3x).",
+    "Evaluate lim_{x→∞} (1 + 2/x)^{3x}."
+  ],
   "universalFacts": [
-    "The limit defining $e$ is exactly the $1^\\infty$ case, which is why $e$ governs continuous compounding rather than discrete interest steps.",
-    "In physics, $\\lim_{t\\to0}\\frac{\\sin\\theta}{\\theta}=1$ is why the small-angle approximation $\\sin\\theta\\approx\\theta$ is valid for pendulum and projectile work — and it only holds in radians."
+    "The star table plus the growth ladder resolves every standard limit in the syllabus."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***Steering in action*** - (sin 5x)/x = 5(sin 5x)/(5x) -> 5: the inserted 5x is the star's demanded denominator, the outside 5 pays for it."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Evaluate lim_{x→0} (tan 4x − sin 2x)/(3x).** — **Split legally** (both pieces' limits exist): = lim (tan 4x)/(3x) − lim (sin 2x)/(3x). **First piece (star tan u/u, u = 4x):** (4/3)·(tan 4x)/(4x) → 4/3. **Second piece (star sin u/u, u = 2x):** (2/3)·(sin 2x)/(2x) → 2/3. **Combine: 4/3 − 2/3 = 2/3.** **Order check:** tan 4x ~ 4x, sin 2x ~ 2x ⟹ numerator ~ 2x over 3x ⟹ 2/3 ✓. **Deep point:** differences of same-order stars reduce to coefficient arithmetic — the first-order Taylor view turns the whole expression into (4x − 2x)/3x before any steering.",
+    "**NEB-style (6m): Evaluate lim_{x→0} (1 − cos 2x)/(x·tan 3x).** — **Order diagnosis:** 1 − cos 2x ~ (2x)²/2 = 2x² (order 2); x·tan 3x ~ 3x² (order 2) ⟹ same order ⟹ ratio of coefficients 2/3. **Rigorous:** [(1 − cos 2x)/(2x)²]·[(2x)²/(x·tan 3x)] = [1/2]·[4x²/(3x²)]·[(tan 3x)/(3x)]^{-1} → (1/2)(4/3)(1) = **2/3** ✓. **Deep point:** matching orders of vanishing means matching powers of the steering factors — the star decomposition certifies the coefficient ratio the order reading predicted.",
+    "**NEB-style (6m): Evaluate lim_{x→∞} (ln(2x + 1))/(e^{3x} − 1)... interpreted as lim_{x→∞} ln(2x+1)/(e^{3x} − 1).** — **Identify the race:** log (bottom rung) vs exponential (top rung) — the ladder says the exponential dominates overwhelmingly. **Formalise:** both → ∞ ⟹ ∞/∞; the ladder predicts **0**. **Verification by rates:** ln(2x+1) ~ ln x grows by diminishing increments; e^{3x} − 1 multiplies by e³ per unit step — the ratio of a logarithmic creep to an exponential explosion → **0**. **Deep point:** mixed-family limits at infinity are decided by rung, not by coefficients — no amount of polynomial detail in the log's argument rescues it against an exponential; this is the ladder's starkest verdict.",
+    "**NEB-style (6m): Evaluate lim_{x→0} (2^x − 1)/(√(1 + x) − 1).** — **Form:** (1 − 1)/(1 − 1) = **0/0** ✓. **Numerator (general-base star):** 2ˣ − 1 ~ x·ln 2 ⟹ (2ˣ − 1)/x → **ln 2**. **Denominator (radical star):** √(1+x) − 1 ~ x/2 ⟹ (√(1+x) − 1)/x → **1/2** (conjugate: (√(1+x) − 1)(√(1+x) + 1) = x). **Ratio:** [x ln 2]/[x/2] = **2 ln 2 = ln 4**. **Deep point:** each family contributes its own linearisation — 2ˣ has slope ln 2 at 0, √(1+x) has slope 1/2 at 0 — and the limit is the ratio of slopes; the general-base tax ln a is the exponential family's signature."
+  ],
   "formulas": [
-    "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, $\\lim_{x\\to0}\\frac{\\tan x}{x}=1$",
-    "$\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$",
-    "Degrees: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$",
-    "Rational: $\\lim_{x\\to a}\\frac{P}{Q}=\\frac{P(a)}{Q(a)}$ for $Q(a)\\ne0$",
-    "$\\lim_{x\\to a}e^{f}=e^{f(a)}$, $\\lim_{x\\to a}\\ln f=\\ln f(a)$ for $f(a)>0$"
+    "- sin u/u → 1; tan u/u → 1; (1 − cos u)/u² → 1/2 (u → 0, radians)\n- (eᵘ − 1)/u → 1; ln(1+u)/u → 1; (1 + u)^{1/u} → e"
   ],
   "keyPoints": [
-    "All three standard trigonometric limits assume radians.",
-    "Continuous functions compose, so most limits need no special technique.",
-    "$1^\\infty$ limits are handled by taking logarithms first."
+    "Algebraic stars: (x^n - a^n)/(x-a) -> n a^(n-1); degree rules at infinity. Trig stars (radians): sin u/u -> 1, tan u/u -> 1, (1-cos u)/u -> 0, (1-cos u)/u^2 -> 1/2. Exp/log stars: (e^u - 1)/u -> 1, ln(1+u)/u -> 1, a^u - 1 ~ u ln a, (1+u)^(1/u) -> e. Steering manufactures the star's denominator; constants carry outside. Growth ladder at infinity: ln x < x^p < a^x < x^x."
   ],
-  "summary": "Three standard limits — the sine, tangent and cosine forms — unlock most of the topic, and all assume radians, which is the trap that changes every numerical answer. Rational functions and compositions of continuous functions settle themselves by direct substitution. The remaining family, limits of the form $(1+1/x)^x$, is handled by taking logarithms and reducing to a $0/0$ quotient, which is where the definition of $e$ itself comes from.",
+  "summary": "Four families, one architecture: algebraic stars from difference-of-powers identities, trigonometric stars from radian geometry, exponential and logarithmic stars from e's self-replication, all composed through u → 0 and steered by manufactured denominators. Same-order contestants leave coefficient ratios; the growth ladder (ln < power < exponential < super-exponential) decides mixed-family races at infinity. Annotate the star, name u, verify the approach — the annotation is the proof and the arithmetic is bookkeeping.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Using the standard limits with x in degrees, which changes every value by a factor involving $\\pi$.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "Match the star's form exactly, annotate u, verify u approaches its anchor."
+  ],
   "importantNotes": [
-    "Topic anchor: Composition of continuous functions settles most limits  if $f$ is continuous at $a$ and $g$ is continuous at $f(a)$, then $ lim_{x to a}g(f(x))=g(f(a))$."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
   ],
   "examShortTricks": [
-    "Switch the calculator to radians before evaluating anything in this topic.",
-    "If the answer involves $\\frac{\\pi}{180}$, the degrees/radians conversion was missed."
+    "Diagnose the family first; the family names the star; the star names the steering."
   ],
   "examNotes": [
-    "Combining a standard limit with a substitution such as $u=3x$ is a reliable 2–3 mark question."
+    "Annotating which star and which u is the working - the arithmetic is bookkeeping."
   ],
   "mcs": [
     {
@@ -90,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "All three standard trigonometric limits assume radians.",
-    "Continuous functions compose, so most limits need no special technique.",
-    "$1^\\infty$ limits are handled by taking logarithms first."
+    "Every star is a first-order approximation; same-order contestants leave coefficient ratios."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -106,5 +109,53 @@
     "**4. [Idea: the $1^\\infty$ family with a trigonometric inner function]** Evaluate $\\lim_{x \\to 0}\\left(1+\\sin x\\right)^{\\frac{1}{\\sin x}}$.\\newline\\newline**Solution:** Let $y = \\left(1+\\sin x\\right)^{1/\\sin x}$ and take logarithms:$\\newline\\ln y = \\dfrac{\\ln(1+\\sin x)}{\\sin x}$, which is $\\frac00$.\\newline\\newlineL'Hôpital:$\\newline\\lim_{x\\to0}\\dfrac{\\frac{\\cos x}{1+\\sin x}}{\\cos x} = \\lim_{x\\to0}\\dfrac{1}{1+\\sin x} = 1$.\\newline\\newlineSo $\\ln y \\to 1$, hence $y \\to e$.\\newline\\newline**Answer:** $e$. **Check:** this is the general identity $\\lim_{u\\to0}(1+u)^{1/u}=e$ with $u = \\sin x$.",
     "**5. [Idea: the standard limit $\\lim\\frac{e^u-1}{u}=1$ does all the work]** Evaluate $\\lim_{x \\to 0}\\dfrac{2^{\\sin^2 x} - 1}{x^2}$.\\newline\\newline**Solution:** The form is $\\frac00$. Direct differentiation is circular, and a squeeze using $-x^2 \\le \\sin^2x \\le x^2$ only bounds the expression by $\\frac{2^{x^2}-1}{x^2}$, which tends to $\\ln 2$ — **a non-zero bound proves nothing**.\\newline\\newlineConvert the base instead: $2^{\\sin^2x} = e^{\\sin^2x \\ln 2}$. Set $u = \\sin^2 x\\,\\ln 2$, so $u \\to 0$, and factor the expression into three pieces each with a known limit:$\\newline\\lim_{x\\to0}\\underbrace{\\frac{e^u-1}{u}}_{\\to\\,1}\\cdot\\underbrace{\\frac{u}{\\sin^2x}}_{\\to\\,\\ln2}\\cdot\\underbrace{\\frac{\\sin^2x}{x^2}}_{\\to\\,1}$.\\newline\\newline**Answer:** $1 \\times \\ln 2 \\times 1 = \\ln 2$. **Lesson:** when a squeeze bound tends to a non-zero constant, switch to factorisation.",
     "**6. [Idea: chain an unknown function's limit through a rationalising identity]** Given $\\lim_{x \\to 2}\\dfrac{f(x)-f(2)}{x-2} = 3$ and $f(2) = 6$, evaluate $\\lim_{x \\to 2}\\dfrac{f^2(x) - 36}{x^2-4}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$ and nothing can be computed without more information, so factor both sides:$^{\\bullet}$ Numerator: $f^2(x)-36 = \\left(f(x)-f(2)\\right)\\left(f(x)+f(2)\\right)$ since $36 = f^2(2)$.$^{\\bullet}$ Denominator: $x^2-4 = (x-2)(x+2)$.\\newline\\newlineThen$\\newline\\lim_{x\\to2}\\dfrac{f(x)-f(2)}{x-2}\\cdot\\dfrac{f(x)+f(2)}{x+2} = 3 \\cdot \\dfrac{6+6}{2+2} = 3 \\cdot 3$.\\newline\\newline**Answer:** $9$."
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to the Four Families\n\nThis canonical is the **short-form doorway** to limits of algebraic, trigonometric, exponential and logarithmic functions: the stars of each family and the steering craft in one page. The parent canonicals carry the full treatment; this companion mirrors the stars, adds the family-by-family deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Algebraic stars:** (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹; (1 − cos u)/u² → 1/2; degree rules at ∞.\n- **Trigonometric stars (radians only):** sin u/u → 1; tan u/u → 1; (1 − cos u)/u → 0.\n- **Exponential/log stars:** (eᵘ − 1)/u → 1; ln(1 + u)/u → 1; aᵘ − 1 ~ u·ln a; (1 + u)^{1/u} → e.\n- **Steering:** rewrite A/B as (A·k)/(B·k) to manufacture the star's exact denominator, carrying the constant outside.\n- **All stars compose:** with u = g(x) → 0, sin(3x) ~ 3x, ln(1 + 5x) ~ 5x, e^{−2x} − 1 ~ −2x.",
+      "## 3. Deep Conceptual — Stars Are First-Order Taylor Approximations\n\n- Each star says a complicated function **agrees with a line (or a parabola) near its anchor**: sin u ~ u, eᵘ − 1 ~ u, ln(1+u) ~ u are all \"slope = 1 at the anchor\" statements; 1 − cos u ~ u²/2 is the parabolic correction. The star table is a table of local linearisations.\n- **Same-order contestants leave coefficient ratios:** sin 3x/tan 5x → 3/5 because both are order 1 with coefficients 3 and 5. Higher-order refinements (u − sin u ~ u³/6) decide the races that first order ties.\n- **The radian requirement is structural:** sin u ~ u holds when u measures arc length; in degrees the slope is π/180 and every star silently carries that factor. Radians are the unit where geometry and limits coincide.",
+      "## 4. Deep Conceptual — The Growth Ladder Across Families\n\n- At infinity the families race in a fixed order: **ln x < xᵖ < aˣ < xˣ**. Any higher rung dominates: x¹⁰⁰/eˣ → 0, ln(xⁿ)/x → 0, eˣ/xᵏ → ∞ — regardless of coefficients.\n- **Mechanism:** powers grow additively, exponentials multiplicatively, logs by diminishing increments. The ladder decides mixed-family limits by rung alone; coefficients only matter within a rung (degree comparison for polynomials, leading ratios for same-type exponentials).",
+      "## 5. Worked Example Types\n\n- **Type A — steer to sin u/u:** (sin 5x)/x = 5·(sin 5x)/(5x) → 5.\n- **Type B — second-order matching:** (1 − cos 4x)/x² = 16·(1 − cos 4x)/(4x)² → 16·(1/2) = 8.\n- **Type C — mixed exp/log:** (e^{3x} − 1)/ln(1 + 2x) → 3/2 by coefficient ratio.\n- **Type D — 1^∞ bridge:** (1 + k/x)^{mx} → e^{mk} via the log star.",
+      "## 6. Common Confusions\n\n**Degrees in the sine star:** sin u/u → 1 fails in degrees — convert first. **\"∞ − ∞ = 0\":** the form is indeterminate; merge fractions or rationalise before any verdict."
+    ],
+    "keyPoints": [
+      "Algebraic stars: (x^n - a^n)/(x-a) -> n a^(n-1); degree rules at infinity. Trig stars (radians): sin u/u -> 1, tan u/u -> 1, (1-cos u)/u -> 0, (1-cos u)/u^2 -> 1/2. Exp/log stars: (e^u - 1)/u -> 1, ln(1+u)/u -> 1, a^u - 1 ~ u ln a, (1+u)^(1/u) -> e. Steering manufactures the star's denominator; constants carry outside. Growth ladder at infinity: ln x < x^p < a^x < x^x."
+    ],
+    "importantConcepts": [
+      "Every star is a first-order approximation; same-order contestants leave coefficient ratios."
+    ],
+    "examples": [
+      "***Steering in action*** - (sin 5x)/x = 5(sin 5x)/(5x) -> 5: the inserted 5x is the star's demanded denominator, the outside 5 pays for it."
+    ],
+    "universalFacts": [
+      "The star table plus the growth ladder resolves every standard limit in the syllabus."
+    ],
+    "importantStatements": [
+      "Match the star's form exactly, annotate u, verify u approaches its anchor."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    ],
+    "examShortTricks": [
+      "Diagnose the family first; the family names the star; the star names the steering."
+    ],
+    "examNotes": [
+      "Annotating which star and which u is the working - the arithmetic is bookkeeping."
+    ],
+    "formulas": [
+      "- sin u/u → 1; tan u/u → 1; (1 − cos u)/u² → 1/2 (u → 0, radians)\n- (eᵘ − 1)/u → 1; ln(1+u)/u → 1; (1 + u)^{1/u} → e"
+    ],
+    "practice": [
+      "Evaluate lim_{x→0} (tan 4x)/(2x).",
+      "Evaluate lim_{x→0} (e^{5x} − 1)/(3x).",
+      "Evaluate lim_{x→∞} (1 + 2/x)^{3x}."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Evaluate lim_{x→0} (tan 4x − sin 2x)/(3x).** — **Split legally** (both pieces' limits exist): = lim (tan 4x)/(3x) − lim (sin 2x)/(3x). **First piece (star tan u/u, u = 4x):** (4/3)·(tan 4x)/(4x) → 4/3. **Second piece (star sin u/u, u = 2x):** (2/3)·(sin 2x)/(2x) → 2/3. **Combine: 4/3 − 2/3 = 2/3.** **Order check:** tan 4x ~ 4x, sin 2x ~ 2x ⟹ numerator ~ 2x over 3x ⟹ 2/3 ✓. **Deep point:** differences of same-order stars reduce to coefficient arithmetic — the first-order Taylor view turns the whole expression into (4x − 2x)/3x before any steering.",
+      "**NEB-style (6m): Evaluate lim_{x→0} (1 − cos 2x)/(x·tan 3x).** — **Order diagnosis:** 1 − cos 2x ~ (2x)²/2 = 2x² (order 2); x·tan 3x ~ 3x² (order 2) ⟹ same order ⟹ ratio of coefficients 2/3. **Rigorous:** [(1 − cos 2x)/(2x)²]·[(2x)²/(x·tan 3x)] = [1/2]·[4x²/(3x²)]·[(tan 3x)/(3x)]^{-1} → (1/2)(4/3)(1) = **2/3** ✓. **Deep point:** matching orders of vanishing means matching powers of the steering factors — the star decomposition certifies the coefficient ratio the order reading predicted.",
+      "**NEB-style (6m): Evaluate lim_{x→∞} (ln(2x + 1))/(e^{3x} − 1)... interpreted as lim_{x→∞} ln(2x+1)/(e^{3x} − 1).** — **Identify the race:** log (bottom rung) vs exponential (top rung) — the ladder says the exponential dominates overwhelmingly. **Formalise:** both → ∞ ⟹ ∞/∞; the ladder predicts **0**. **Verification by rates:** ln(2x+1) ~ ln x grows by diminishing increments; e^{3x} − 1 multiplies by e³ per unit step — the ratio of a logarithmic creep to an exponential explosion → **0**. **Deep point:** mixed-family limits at infinity are decided by rung, not by coefficients — no amount of polynomial detail in the log's argument rescues it against an exponential; this is the ladder's starkest verdict.",
+      "**NEB-style (6m): Evaluate lim_{x→0} (2^x − 1)/(√(1 + x) − 1).** — **Form:** (1 − 1)/(1 − 1) = **0/0** ✓. **Numerator (general-base star):** 2ˣ − 1 ~ x·ln 2 ⟹ (2ˣ − 1)/x → **ln 2**. **Denominator (radical star):** √(1+x) − 1 ~ x/2 ⟹ (√(1+x) − 1)/x → **1/2** (conjugate: (√(1+x) − 1)(√(1+x) + 1) = x). **Ratio:** [x ln 2]/[x/2] = **2 ln 2 = ln 4**. **Deep point:** each family contributes its own linearisation — 2ˣ has slope ln 2 at 0, √(1+x) has slope 1/2 at 0 — and the limit is the ratio of slopes; the general-base tax ln a is the exponential family's signature."
+    ]
+  }
 }

@@ -5,12 +5,12 @@
   "topicSlug": "derivatives-algebraic-trig",
   "relevance": 100,
   "notes": [
-    "**The algebraic core:** constant ($\\frac{d}{dx}c=0$), sum/difference, product $\\frac{d}{dx}uv = u'v+uv'$, quotient $\\frac{d}{dx}\\frac{u}{v}=\\frac{u'v-uv'}{v^2}$, and power $\\frac{d}{dx}x^n = nx^{n-1}$.",
-    "**The power rule generalises to any real exponent** for $x>0$: $\\frac{d}{dx}x^a = ax^{a-1}$, so $x^{-1/2}$ gives $-\\frac12x^{-3/2}$ and $x^{1/3}$ gives $\\frac13x^{-2/3}$. The domain restriction $x>0$ is what makes negative bases illegal in general.",
-    "**The quotient rule's order is the whole difficulty:** the denominator's own derivative multiplies the second term with a MINUS sign, $\\frac{u'v - uv'}{v^2}$. A mnemonic that works is 'low d-high minus high d-low, over low squared'.",
-    "**Trigonometric derivatives are ratios of the next function:** $\\frac{d}{dx}\\sin x = \\cos x$, $\\frac{d}{dx}\\cos x = -\\sin x$, $\\frac{d}{dx}\\tan x = \\sec^2x$, and the cotangent and secant forms follow the same 'derivative over itself squared' pattern. All assume $x$ in RADIANS.",
-    "**The sine and cosine derivatives swap and change sign,** and every other trigonometric derivative is built from them: $\\frac{d}{dx}\\sec x = \\sec x\\tan x$ and $\\frac{d}{dx}\\csc x = -\\csc x\\cot x$. Forgetting the minus on cosine is the single most common slip in this table.",
-    "**Derivatives of nested forms need the chain rule:** $\\frac{d}{dx}\\sin^2x = 2\\sin x\\cos x = \\sin 2x$ and $\\frac{d}{dx}(3x+1)^5 = 15(3x+1)^4$. Treating $\\sin^2x$ as $\\sin(x^2)$ is a misreading, since the exponent applies to the VALUE."
+    "## 1. Topic Introduction — The Companion Doorway to Algebraic and Trig Derivatives\n\nThis canonical is the **short-form doorway** to derivatives of algebraic and trigonometric functions: the power rule, the trig table, and the first-principles engines behind them. The parent canonical carries the full treatment; this companion mirrors the table, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Power rule:** (xⁿ)′ = n·xⁿ⁻¹ for all real n (via the star naⁿ⁻¹); linearity: (af + bg)′ = af′ + bg′.\n- **Trig table (radians):** (sin x)′ = cos x; (cos x)′ = −sin x; (tan x)′ = sec²x; (cot x)′ = −cosec²x; (sec x)′ = sec x tan x; (cosec x)′ = −cosec x cot x.\n- **Engines:** sin and cos from angle addition plus the two stars; tan from the quotient rule; co-functions carry minus signs (co-derivative pattern).",
+    "## 3. Deep Conceptual — The Table Is Three Facts and Closure\n\n- The entire trig table follows from **two first-principles computations** ((sin)′ = cos, (cos)′ = −sin) plus the quotient rule: tan = sin/cos, cot = cos/sin, sec = 1/cos, cosec = 1/sin. Memorise two proofs, derive six entries.\n- **The co-derivative pattern:** differentiating a co-function (cos, cot, cosec) flips the sign — because co-functions are complements, cos x = sin(π/2 − x), and the chain rule's inner derivative is −1. The pattern is the chain rule wearing a mnemonic.\n- **The power rule's generality:** n real (not just integer) because the star (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹ holds for all real n — √x and 1/x are the same theorem as x⁵.",
+    "## 4. Deep Conceptual — Radians Are the Derivative's Native Unit\n\n- (sin x)′(0) = 1 **only in radians**: the star sin h/h → 1 measures the sine's slope at 0 as 1 when angle equals arc. In degrees every trig derivative carries a π/180 factor — the table as memorised is a radian table.\n- **Consequence chain:** the differential equations y′ = cos x, y′′ = −y (the sinusoid's eigen-equation) hold only in radians; physics written in degrees would carry conversion factors through every formula. The radian is the unit where calculus is clean.",
+    "## 5. Worked Example Types\n\n- **Type A — linearity + power:** differentiate term by term; negative and fractional powers included.\n- **Type B — trig table direct:** single entries and simple sums.\n- **Type C — quotient-derived entries:** tan, cot, sec, cosec via the quotient rule.\n- **Type D — first principles spot-check:** prove one table entry from scratch.",
+    "## 6. Common Confusions\n\n**\"(sin x)′ = cos x in degrees\":** no — radians only. **\"−sin x's minus is arbitrary\":** it encodes cosine decreasing at 0; the first-principles proof and the graph agree."
   ],
   "confusion": [
     "Forgetting the negative sign on $\\frac{d}{dx}\\cos x$ and on $\\frac{d}{dx}\\csc x$.",
@@ -18,49 +18,47 @@
     "Writing $\\sin^2x$ as $\\sin(x^2)$ — the exponent squares the value, not the argument.",
     "Applying these rules in degrees; the standard derivatives assume radians."
   ],
-  "practice": [],
+  "practice": [
+    "Differentiate y = 3x⁴ − 2x² + 7.",
+    "Differentiate y = √x + 1/x².",
+    "Derive (cot x)′ = −cosec²x from the quotient rule."
+  ],
   "universalFacts": [
-    "The derivatives of sine and cosine are only these simple values in radians; in degrees a factor of $\\frac{\\pi}{180}$ is required, which is why physics and calculus always work in radians.",
-    "The quotient rule is genuinely the derivative of a reciprocal: $\\frac{d}{dx}\\frac1{u}=-\\frac{u'}{u^2}$ follows by setting $v=1$, a check worth using to verify signs."
+    "The power rule's star holds for all real n - sqrt x and 1/x are the same theorem as x^5."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The co-derivative pattern*** - cos x = sin(pi/2 - x): the chain rule's inner derivative -1 explains every minus sign in the co-function column."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Differentiate y = 3x⁴ − 2x² + 7 and evaluate y′ at x = 1.** — **Linearity + power rule:** y′ = 3·4x³ − 2·2x + 0 = **12x³ − 4x**. **At x = 1:** 12 − 4 = **8**. **Deep point:** the constant's derivative is 0 because constants do not change — the power rule at n = 0; linearity lets each term ride its own coefficient, which is why polynomials differentiate term by term without ceremony.",
+    "**NEB-style (5m): Differentiate y = √x + 1/x² and state where each term's rule applies.** — **Rewrite in powers:** y = x^{1/2} + x^{−2}. **Power rule (real exponents):** y′ = (1/2)x^{−1/2} + (−2)x^{−3} = **1/(2√x) − 2/x³**. **Domains:** the first term needs x > 0 (the root's domain), the second x ≠ 0 ⟹ y′ valid for x > 0. **Deep point:** negative and fractional exponents are the power rule's full generality — rewriting roots and reciprocals as powers makes one rule serve the whole algebraic family; the domain statement travels with the answer.",
+    "**NEB-style (6m): Derive (cot x)′ = −cosec²x using the quotient rule, and explain the minus sign.** — **Quotient rule:** cot x = cos x/sin x ⟹ (cot)′ = [(cos)′·sin − cos·(sin)′]/sin²x = [(−sin x)·sin x − cos x·cos x]/sin²x = [−sin²x − cos²x]/sin²x = **−(sin²x + cos²x)/sin²x = −1/sin²x = −cosec²x** ∎. **The minus sign:** cot x is *decreasing* wherever it is defined (its graph falls through every quadrant) — the derivative's sign reports the function's direction; algebraically the minus came from (cos)′ = −sin, the co-derivative pattern. **Deep point:** one quotient-rule computation plus the Pythagorean identity produced the entry — the table's entries are derived facts, each reducible to the two first-principles proofs and one rule.",
+    "**NEB-style (6m): Using first principles, prove that d/dx (sin x) = cos x, and state where each standard limit is used.** — **Quotient:** [sin(x+h) − sin x]/h. **Angle addition:** sin(x+h) = sin x cos h + cos x sin h ⟹ numerator = sin x(cos h − 1) + cos x·sin h ⟹ quotient = sin x·[(cos h − 1)/h] + cos x·[sin h/h]. **The two stars (h → 0, radians):** (cos h − 1)/h → **0**; sin h/h → **1**. **Result:** sin x·0 + cos x·1 = **cos x** ∎. **Star roles:** the first star kills the sin x term; the second delivers the cos x term — the proof is exactly two standard limits and one identity. **Deep point:** the split into two pieces was licensed by the sum law (both pieces' limits exist) — even the derivative's founding proof audits its limit laws."
+  ],
   "formulas": [
-    "Power: $\\frac{d}{dx}x^n = nx^{n-1}$",
-    "Product: $\\frac{d}{dx}uv = u'v + uv'$",
-    "Quotient: $\\frac{d}{dx}\\frac{u}{v} = \\frac{u'v - uv'}{v^2}$",
-    "Reciprocal check: $\\frac{d}{dx}\\frac1u = -\\frac{u'}{u^2}$",
-    "Trig: $(\\sin x)'=\\cos x$, $(\\cos x)'=-\\sin x$, $(\\tan x)'=\\sec^2x$, $(\\cot x)'=-\\csc^2x$",
-    "Chain cases: $(\\sin^2x)'=2\\sin x\\cos x$, $((3x+1)^5)'=15(3x+1)^4$"
+    "- (xⁿ)′ = n·xⁿ⁻¹; (sin x)′ = cos x; (cos x)′ = −sin x\n- (tan x)′ = sec²x; (sec x)′ = sec x·tan x"
   ],
   "keyPoints": [
-    "Product rule ADDS; quotient rule subtracts with the order $u'v - uv'$.",
-    "The cosine derivative carries a minus sign, and so does csc.",
-    "All standard derivatives assume x in radians."
+    "Power rule (x^n)' = n x^(n-1) for all real n; linearity. Trig table (radians): sin->cos, cos->-sin, tan->sec^2, cot->-cosec^2, sec->sec tan, cosec->-cosec cot. Two first-principles proofs plus the quotient rule generate the whole table; co-functions carry minus signs. Radians are the derivative's native unit - slope 1 at 0."
   ],
-  "summary": "The rule table is built from the power, product and quotient rules, with trigonometric derivatives following the 'derivative over itself squared' pattern. The order of the two terms in the quotient rule, and the minus sign on the cosine derivative, are the two details that most often cost marks. Nested expressions such as $\\sin^2x$ require the chain rule, and the exponent applies to the value rather than the argument.",
+  "summary": "The algebraic and trigonometric derivative table is three facts and closure: the power rule for all real exponents, two first-principles trig proofs, and the quotient rule generating the remaining four entries — with the co-derivative pattern explaining every minus sign. Radians are the native unit, the domain statement travels with the answer, and linearity makes polynomials term-by-term. Know the two proofs and the rules, and the table is derivable rather than memorised.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Forgetting the negative sign on $\\frac{d}{dx}\\cos x$ and on $\\frac{d}{dx}\\csc x$.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: $\\frac{d}{dx}x^n = nx^{n-1}$ for $x>0$.",
-    "Statement 2: The quotient rule gives $\\frac{u'v - uv'}{v^2}$.",
-    "Statement 3: $\\frac{d}{dx}\\cos x = -\\sin x$.",
-    "Statement 4: $\\frac{d}{dx}\\tan x = \\sec^2x$.",
-    "Statement 5: These derivatives are valid for arguments measured in radians."
+    "The memorised trig table is a radian table; degrees carry pi/180 through every entry."
   ],
   "importantNotes": [
-    "Topic anchor: Derivatives of nested forms need the chain rule  $ frac{d}{dx} sin^2x = 2 sin x cos x =  sin 2x$ and $ frac{d}{dx}(3x+1)^5 = 15(3x+1)^4$."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Check the quotient rule with the reciprocal case: differentiate $1/u$ and it should give $-u'/u^2$.",
-    "Write $\\sin^2x$ as $(\\sin x)^2$ on paper — it removes the argument/value confusion instantly."
+    "Co-function? Flip the sign. Fractional power? The power rule still applies."
   ],
   "examNotes": [
-    "Differentiating a product, quotient or nested trigonometric form is the most common 3-mark derivative question."
+    "Write angles in radians throughout; convert any degree data first."
   ],
   "mcs": [
     {
@@ -98,9 +96,7 @@
     }
   ],
   "importantConcepts": [
-    "Product rule ADDS; quotient rule subtracts with the order $u'v - uv'$.",
-    "The cosine derivative carries a minus sign, and so does csc.",
-    "All standard derivatives assume x in radians."
+    "The table is three facts and closure: two first-principles computations, the quotient rule, and the co-derivative sign pattern."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -114,5 +110,53 @@
     "**4. [Idea: a parametric curve whose parameter cancels, with a vertical-tangent check]** A curve is $x = 3t - t^3$, $y = 3t^2$. Find $\\frac{dy}{dx}$ and where the tangent is vertical.\\newline\\newline**Solution:**$^{\\bullet}$ $\\dfrac{dx}{dt} = 3 - 3t^2$ and $\\dfrac{dy}{dt} = 6t$.$^{\\bullet}$ $\\dfrac{dy}{dx} = \\dfrac{6t}{3-3t^2} = \\dfrac{2t}{1-t^2}$.\\newline\\newline**Horizontal tangent** ($\\frac{dy}{dx}=0$): $2t=0 \\Rightarrow t=0$, giving the point $(0,0)$.\\newline\\newline**Vertical tangent** ($\\frac{dx}{dt}=0$): $3-3t^2=0 \\Rightarrow t=\\pm1$, giving points $(2,3)$ and $(-2,3)$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=\\frac{2t}{1-t^2}$; horizontal tangent at $t=0$, vertical at $t=\\pm1$. **Trap:** finding a vertical tangent by setting $\\frac{dy}{dx}$ infinite without checking that $\\frac{dx}{dt}$ is genuinely zero.",
     "**5. [Idea: a second implicit derivative needs the original relation substituted at the end]** For $x^2+y^2 = 25$, obtain $\\frac{d^2y}{dx^2}$ in terms of $y$ alone.\\newline\\newline**Solution:** From part 3, $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$. Differentiate this fraction — do NOT re-derive from scratch:$^{\\bullet}$ $\\dfrac{d}{dx}\\left(-xy^{-1}\\right) = -\\left[\\left(\\frac{dx}{dx}\\right)y^{-1} + x\\left(\\frac{d}{dx}y^{-1}\\right)\\right]$.\\newline\\newline$^{\\bullet}$ Since $\\frac{d}{dx}y^{-1} = -y^{-2}\\dfrac{dy}{dx} = -y^{-2}\\left(-\\frac{x}{y}\\right) = \\dfrac{x}{y^3}$:$\\newline\\frac{d^2y}{dx^2} = -\\left[\\frac{1}{y} + x\\cdot\\frac{x}{y^3}\\right] = -\\frac{y^2 + x^2}{y^3}$.\\newline\\newline$^{\\bullet}$ Finally substitute $x^2+y^2=25$ to remove $x$: $\\dfrac{d^2y}{dx^2} = -\\dfrac{25}{y^3}$.\\newline\\newline**Answer:** $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}=-\\frac{25}{y^3}$ for a circle of radius $r=5$.\\newline\\newline**Check at the top $(0,5)$:** $-\\frac{25}{125}=-\\frac15$, so the top of the circle is concave down with $|f''|=\\frac{1}{5}$ — exactly $\\frac1r$, as a circle of curvature $r$ requires. **Trap:** writing $625$ by squaring $25$ again; the $25$ is already $r^2$.",
     "**6. [Idea: logarithmic differentiation for a variable exponent]** Differentiate $y = x^x$ and hence find the stationary point of $y=\\dfrac{x^x}{e^x}$ for $x>0$.\\newline\\newline**Solution:** Differentiate $y=x^x$ by taking logs:$^{\\bullet}$ $\\ln y = x\\ln x$, so $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$.$^{\\bullet}$ Hence $\\dfrac{dy}{dx} = x^x(\\ln x + 1)$.\\newline\\newline**Now** $g(x)=\\dfrac{x^x}{e^x} = x^x e^{-x}$, so $\\dfrac{d}{dx}\\ln g = (\\ln x + 1) - 1 = \\ln x$.\\newline\\newlineSo $g'(x) = g(x)\\ln x$, which vanishes when $\\ln x = 0$, i.e. $x=1$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=x^x(\\ln x+1)$; the stationary point of $g$ is $x=1$. **Verification:** $g(1)=1\\cdot e^{-1}=e^{-1}$, and $g' = g\\ln x$ changes from negative ($x<1$) to positive ($x>1$), confirming a minimum."
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to Algebraic and Trig Derivatives\n\nThis canonical is the **short-form doorway** to derivatives of algebraic and trigonometric functions: the power rule, the trig table, and the first-principles engines behind them. The parent canonical carries the full treatment; this companion mirrors the table, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Power rule:** (xⁿ)′ = n·xⁿ⁻¹ for all real n (via the star naⁿ⁻¹); linearity: (af + bg)′ = af′ + bg′.\n- **Trig table (radians):** (sin x)′ = cos x; (cos x)′ = −sin x; (tan x)′ = sec²x; (cot x)′ = −cosec²x; (sec x)′ = sec x tan x; (cosec x)′ = −cosec x cot x.\n- **Engines:** sin and cos from angle addition plus the two stars; tan from the quotient rule; co-functions carry minus signs (co-derivative pattern).",
+      "## 3. Deep Conceptual — The Table Is Three Facts and Closure\n\n- The entire trig table follows from **two first-principles computations** ((sin)′ = cos, (cos)′ = −sin) plus the quotient rule: tan = sin/cos, cot = cos/sin, sec = 1/cos, cosec = 1/sin. Memorise two proofs, derive six entries.\n- **The co-derivative pattern:** differentiating a co-function (cos, cot, cosec) flips the sign — because co-functions are complements, cos x = sin(π/2 − x), and the chain rule's inner derivative is −1. The pattern is the chain rule wearing a mnemonic.\n- **The power rule's generality:** n real (not just integer) because the star (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹ holds for all real n — √x and 1/x are the same theorem as x⁵.",
+      "## 4. Deep Conceptual — Radians Are the Derivative's Native Unit\n\n- (sin x)′(0) = 1 **only in radians**: the star sin h/h → 1 measures the sine's slope at 0 as 1 when angle equals arc. In degrees every trig derivative carries a π/180 factor — the table as memorised is a radian table.\n- **Consequence chain:** the differential equations y′ = cos x, y′′ = −y (the sinusoid's eigen-equation) hold only in radians; physics written in degrees would carry conversion factors through every formula. The radian is the unit where calculus is clean.",
+      "## 5. Worked Example Types\n\n- **Type A — linearity + power:** differentiate term by term; negative and fractional powers included.\n- **Type B — trig table direct:** single entries and simple sums.\n- **Type C — quotient-derived entries:** tan, cot, sec, cosec via the quotient rule.\n- **Type D — first principles spot-check:** prove one table entry from scratch.",
+      "## 6. Common Confusions\n\n**\"(sin x)′ = cos x in degrees\":** no — radians only. **\"−sin x's minus is arbitrary\":** it encodes cosine decreasing at 0; the first-principles proof and the graph agree."
+    ],
+    "keyPoints": [
+      "Power rule (x^n)' = n x^(n-1) for all real n; linearity. Trig table (radians): sin->cos, cos->-sin, tan->sec^2, cot->-cosec^2, sec->sec tan, cosec->-cosec cot. Two first-principles proofs plus the quotient rule generate the whole table; co-functions carry minus signs. Radians are the derivative's native unit - slope 1 at 0."
+    ],
+    "importantConcepts": [
+      "The table is three facts and closure: two first-principles computations, the quotient rule, and the co-derivative sign pattern."
+    ],
+    "examples": [
+      "***The co-derivative pattern*** - cos x = sin(pi/2 - x): the chain rule's inner derivative -1 explains every minus sign in the co-function column."
+    ],
+    "universalFacts": [
+      "The power rule's star holds for all real n - sqrt x and 1/x are the same theorem as x^5."
+    ],
+    "importantStatements": [
+      "The memorised trig table is a radian table; degrees carry pi/180 through every entry."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Co-function? Flip the sign. Fractional power? The power rule still applies."
+    ],
+    "examNotes": [
+      "Write angles in radians throughout; convert any degree data first."
+    ],
+    "formulas": [
+      "- (xⁿ)′ = n·xⁿ⁻¹; (sin x)′ = cos x; (cos x)′ = −sin x\n- (tan x)′ = sec²x; (sec x)′ = sec x·tan x"
+    ],
+    "practice": [
+      "Differentiate y = 3x⁴ − 2x² + 7.",
+      "Differentiate y = √x + 1/x².",
+      "Derive (cot x)′ = −cosec²x from the quotient rule."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Differentiate y = 3x⁴ − 2x² + 7 and evaluate y′ at x = 1.** — **Linearity + power rule:** y′ = 3·4x³ − 2·2x + 0 = **12x³ − 4x**. **At x = 1:** 12 − 4 = **8**. **Deep point:** the constant's derivative is 0 because constants do not change — the power rule at n = 0; linearity lets each term ride its own coefficient, which is why polynomials differentiate term by term without ceremony.",
+      "**NEB-style (5m): Differentiate y = √x + 1/x² and state where each term's rule applies.** — **Rewrite in powers:** y = x^{1/2} + x^{−2}. **Power rule (real exponents):** y′ = (1/2)x^{−1/2} + (−2)x^{−3} = **1/(2√x) − 2/x³**. **Domains:** the first term needs x > 0 (the root's domain), the second x ≠ 0 ⟹ y′ valid for x > 0. **Deep point:** negative and fractional exponents are the power rule's full generality — rewriting roots and reciprocals as powers makes one rule serve the whole algebraic family; the domain statement travels with the answer.",
+      "**NEB-style (6m): Derive (cot x)′ = −cosec²x using the quotient rule, and explain the minus sign.** — **Quotient rule:** cot x = cos x/sin x ⟹ (cot)′ = [(cos)′·sin − cos·(sin)′]/sin²x = [(−sin x)·sin x − cos x·cos x]/sin²x = [−sin²x − cos²x]/sin²x = **−(sin²x + cos²x)/sin²x = −1/sin²x = −cosec²x** ∎. **The minus sign:** cot x is *decreasing* wherever it is defined (its graph falls through every quadrant) — the derivative's sign reports the function's direction; algebraically the minus came from (cos)′ = −sin, the co-derivative pattern. **Deep point:** one quotient-rule computation plus the Pythagorean identity produced the entry — the table's entries are derived facts, each reducible to the two first-principles proofs and one rule.",
+      "**NEB-style (6m): Using first principles, prove that d/dx (sin x) = cos x, and state where each standard limit is used.** — **Quotient:** [sin(x+h) − sin x]/h. **Angle addition:** sin(x+h) = sin x cos h + cos x sin h ⟹ numerator = sin x(cos h − 1) + cos x·sin h ⟹ quotient = sin x·[(cos h − 1)/h] + cos x·[sin h/h]. **The two stars (h → 0, radians):** (cos h − 1)/h → **0**; sin h/h → **1**. **Result:** sin x·0 + cos x·1 = **cos x** ∎. **Star roles:** the first star kills the sin x term; the second delivers the cos x term — the proof is exactly two standard limits and one identity. **Deep point:** the split into two pieces was licensed by the sum law (both pieces' limits exist) — even the derivative's founding proof audits its limit laws."
+    ]
+  }
 }

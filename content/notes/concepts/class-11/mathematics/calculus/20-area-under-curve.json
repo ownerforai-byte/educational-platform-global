@@ -5,59 +5,59 @@
   "topicSlug": "area-under-curve",
   "relevance": 100,
   "notes": [
-    "**Geometric area is an ABSOLUTE accumulation,** so it is $\\int_a^b |f(x)|dx$, not $\\int_a^b f(x)dx$. Whenever the curve crosses the axis inside the interval the signed integral cancels and understates the area — the most important distinction in the topic.",
-    "**Split at the roots.** Find where $f(x)=0$, split the interval at those points, and negate the negative pieces. For $f=x^2-4$ on $[-3,3]$ the roots are $\\pm2$, and the area is $\\int_{-3}^{-2}-f + \\int_{-2}^{2}f + \\int_{2}^{3}-f = \\frac{32}{3}$.",
-    "**Split also at any change in which curve is on top** when the region is bounded by more than one function, since otherwise the integrand switches sign mid-interval.",
-    "**The area is a definite integral, so no constant of integration appears** and the answer is a pure number with units of (function units) × (x-units).",
-    "**An infinite interval needs an improper limit:** $\\int_0^\\infty e^{-x}dx = \\lim_{b\\to\\infty}[-e^{-x}]_0^b = 1$. The limit must actually exist; the graph may rise to infinity while the area stays finite.",
-    "**Worked example, $y=x^2$ on $[0,3]$:** since $x^2\\ge0$ there is no split, and the area is $\\left[\\frac{x^3}{3}\\right]_0^3 = 9$ square units."
+    "## 1. Topic Introduction — The Companion Doorway to Area Under a Curve\n\nThis canonical is the **short-form doorway** to area under a curve: the signed-area reading of the definite integral and the standard area computations in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Signed area:** ∫ₐᵇf(x)dx counts area above the axis positively, below negatively — the integral is a *net*, not a total.\n- **True (geometric) area:** ∫ₐᵇ|f(x)|dx — split at the axis crossings, integrate each piece, add magnitudes.\n- **Area between curve and axis:** find the roots of f in [a, b], partition, integrate |f| piecewise.\n- **Standard results:** ∫₀ᵃ√(a² − x²)dx = πa²/4 (quarter circle); area of a triangle under a line = ½·base·height.",
+    "## 3. Deep Conceptual — Signed vs Geometric: The Ledger and the Map\n\n- The definite integral is a **ledger** (credits above the axis, debits below — the net displacement reading); the geometric area is a **map** (every region counts positively — the total distance reading). One number, two questions: \"where did I end up?\" vs \"how much ground did I cover?\"\n- **The split-at-roots protocol:** the sign of f can only change at its zeros, so the roots partition [a, b] into constant-sign strips — integrate each strip and add |·|. Skipping the split is the classic error whenever the curve dips below the axis.\n- **Velocity/position echo:** ∫v dt is displacement (signed); ∫|v| dt is distance (geometric) — the ledger/map distinction is the same one physics uses, which is why the area reading is more than geometry.",
+    "## 4. Deep Conceptual — Symmetry and Standard Shapes as Shortcuts\n\n- **Even/odd symmetry:** for even f, ∫₋ₐᵃf = 2∫₀ᵃf; for odd f, ∫₋ₐᵃf = 0 — the signed ledger cancels symmetric debits and credits. Half the work for even functions, zero work for odd ones.\n- **Recognisable shapes:** lines give triangles and trapezoids, circles give πa²/4 pieces — before integrating, ask whether the region is a standard shape; the integral is the general tool, geometry the shortcut.\n- **The quarter-circle result:** ∫₀ᵃ√(a²−x²)dx = πa²/4 comes from y² = a² − x² being the circle — recognising the integrand as a circle's upper half converts calculus to geometry.",
+    "## 5. Worked Example Types\n\n- **Type A — simple positive region:** one anti-derivative, endpoints, done.\n- **Type B — sign change mid-interval:** split at the root, add magnitudes.\n- **Type C — symmetry shortcut:** even/odd halving or cancellation.\n- **Type D — recognised shape:** line (triangle) or circle (quarter).",
+    "## 6. Common Confusions\n\n**\"The integral is the area\":** it is the signed area — split at roots for the geometric answer. **\"Always integrate\":** recognise triangles and circular quarters first."
   ],
   "confusion": [
     "Reporting the signed integral as the area when the curve dips below the axis.",
     "Forgetting to split at the roots before integrating.",
     "Writing $+C$ on an area calculation."
   ],
-  "practice": [],
+  "practice": [
+    "Find the area under y = x² from 0 to 3.",
+    "Find the geometric area between y = x² − 4 and the x-axis on [0, 5].",
+    "Find ∫₋₂² x³dx and interpret."
+  ],
   "universalFacts": [
-    "The area under a velocity–time graph equals the distance travelled, and the area under an acceleration–time graph equals the change in velocity — the same integral doing physical work in two different units.",
-    "The finite area under $e^{-x}$ despite infinite height is the reason probability densities can be normalised: a curve may grow unbounded while the probability it represents stays at 1."
+    "Every integral property has a picture; the picture is the fastest verification."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The dip below*** - a curve crossing the axis mid-interval: the raw integral understates the true area by twice the dipped part - split and add magnitudes."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Find the area under y = x² from x = 0 to x = 3.** — **Sign check:** x² ≥ 0 on [0, 3] ⟹ signed = geometric, no split needed. **Evaluate:** ∫₀³x²dx = [x³/3]₀³ = **9 square units**. **Shape note:** the region is a parabolic segment — no standard shape, so the integral is the tool. **Deep point:** the sign check precedes the evaluation — on intervals where the curve stays on one side, the ledger and the map agree and one anti-derivative answers both questions.",
+    "**NEB-style (6m): Find the geometric area between y = x² − 4 and the x-axis for 0 ≤ x ≤ 5.** — **Roots in [0, 5]:** x² − 4 = 0 ⟹ x = 2 (and −2, outside). **Sign strips:** f < 0 on [0, 2) (dips below), f > 0 on (2, 5]. **Piece 1:** ∫₀²(4 − x²)dx = [4x − x³/3]₀² = 8 − 8/3 = 16/3. **Piece 2:** ∫₂⁵(x² − 4)dx = [x³/3 − 4x]₂⁵ = (125/3 − 20) − (8/3 − 8) = 65/3 − (−16/3) = 65/3 − 8/3 + 8 = 57/3 + 8 = 19 + 8 = 27. **Geometric area: 16/3 + 27 = 16/3 + 81/3 = 97/3 ≈ 32.33.** **Signed comparison:** ∫₀⁵(x²−4)dx = [x³/3 − 4x]₀⁵ = 125/3 − 20 = 65/3 ≈ 21.67 — smaller by exactly 2·(16/3), the double-counted dip. **Deep point:** the raw integral understates the map by twice the below-axis region — the ledger's debit is counted once as negative and should count once as positive; the difference 2·16/3 is the signature of the skipped split.",
+    "**NEB-style (5m): Evaluate ∫₋₂²x³dx and ∫₋₂²x²dx, and explain the asymmetry.** — **Odd integrand:** x³ is odd ⟹ ∫₋₂²x³dx = **0** — the credit on [0, 2] exactly cancels the debit on [−2, 0]. **Even integrand:** x² is even ⟹ ∫₋₂²x²dx = 2∫₀²x²dx = 2·(8/3) = **16/3**. **Interpretation:** the odd function's signed ledger nets to zero while its geometric area is 2·∫₀²x³dx = 8 — symmetry statements are about the *signed* integral. **Deep point:** even/odd symmetry is a signed-area theorem: halving for even functions, cancellation for odd ones — and confusing the two readings (0 vs 8 for x³) is exactly the ledger/map distinction in action.",
+    "**NEB-style (6m): Find the area enclosed by y = √(9 − x²) and the x-axis, and verify by geometry.** — **Recognise the shape:** y² = 9 − x² ⟹ x² + y² = 9 — the upper semicircle of radius 3. **Domain:** −3 ≤ x ≤ 3; the integrand is nonnegative throughout ⟹ no split. **Evaluate:** area = ∫₋₃³√(9−x²)dx = 2∫₀³√(9−x²)dx = 2·(π·9/4) = **9π/2** — using the quarter-circle standard twice. **Geometric verification:** semicircle area = πr²/2 = 9π/2 ✓. **Deep point:** the integrand's form √(a² − x²) is the circle's signature — recognising it converts the computation to πa²/4 per quarter; the symmetry halving (even function) and the shape recognition are two shortcuts stacking on one integral."
+  ],
   "formulas": [
-    "Area: $A=\\int_a^b |f(x)|dx$",
-    "Signed: $\\int_a^b f(x)dx = F(b)-F(a)$",
-    "Split at roots: $A=\\int_a^{r_1}|f|+\\int_{r_1}^{r_2}|f|+\\dots$",
-    "Improper: $A=\\lim_{b\\to\\infty}\\int_a^b f(x)dx$"
+    "- Geometric area = ∫ₐᵇ|f(x)|dx\n- ∫₀ᵃ√(a² − x²)dx = πa²/4; ∫₋ₐᵃf = 2∫₀ᵃf (even), 0 (odd)"
   ],
   "keyPoints": [
-    "Area uses the ABSOLUTE value of the function; the signed integral can be smaller or zero.",
-    "Split the interval at every root of the integrand.",
-    "An infinite interval needs an improper limit, which may converge."
+    "Signed area: above the axis positive, below negative - the integral is a net. Geometric area: integral of |f| - split at the roots, integrate piecewise, add magnitudes. Displacement vs distance is the same distinction. Symmetry: even f halves the work, odd f cancels to zero on [-a, a]. Recognise standard shapes first: lines give triangles/trapezoids, sqrt(a^2 - x^2) gives quarter circles (pi a^2/4)."
   ],
-  "summary": "Geometric area is an absolute accumulation, so it is written with $|f|$ rather than $f$. Whenever the curve crosses the axis the signed integral partially cancels and understates the true area, which is why the interval must be split at the roots and the negative pieces negated. Infinite intervals are handled with an improper limit, and convergence is not guaranteed by the height of the graph.",
+  "summary": "Area under a curve begins with the ledger/map distinction: the definite integral is signed (net displacement), the geometric area is |f| split at the roots (total ground). Symmetry halves or cancels the signed work, and recognised shapes — triangles, trapezoids, quarter circles — replace anti-derivatives with geometry. Find the roots first, ask whether the region is standard, and state which area the question wants; the two answers differ by exactly twice the dipped region.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Reporting the signed integral as the area when the curve dips below the axis.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: Area $A=\\int_a^b|f(x)|dx$ is an absolute accumulation.",
-    "Statement 2: The integral must be split at the zeros of the integrand.",
-    "Statement 3: No constant of integration appears in an area calculation.",
-    "Statement 4: On an infinite interval the integral is defined by an improper limit.",
-    "Statement 5: An unbounded integrand may still have a finite integral."
+    "Ask \"is this a triangle or a quarter circle?\" before writing any anti-derivative."
   ],
   "importantNotes": [
-    "Topic anchor: Worked example, $y=x^2$ on $[0,3]$  since $x^2 ge0$ there is no split, and the area is $ left[ frac{x^3}{3} right]_0^3 = 9$ square units."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Sketch or sign-check first: if $f$ changes sign inside the interval, split before integrating.",
-    "For $f$ symmetric about an axis with $f\\ge0$, integrate from 0 and double."
+    "Find the roots in [a, b] first - they are the split points for geometric area."
   ],
   "examNotes": [
-    "Area under a curve that crosses the axis is a frequent 4-mark question, and the split is where the marks are."
+    "State whether the question asks for signed area or geometric area; the answers differ whenever the curve dips."
   ],
   "mcs": [
     {
@@ -95,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "Area uses the ABSOLUTE value of the function; the signed integral can be smaller or zero.",
-    "Split the interval at every root of the integrand.",
-    "An infinite interval needs an improper limit, which may converge."
+    "One number, two questions: the ledger (net, signed) and the map (total, geometric) - split at roots to convert."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -162,6 +160,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to Area Under a Curve\n\nThis canonical is the **short-form doorway** to area under a curve: the signed-area reading of the definite integral and the standard area computations in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Signed area:** ∫ₐᵇf(x)dx counts area above the axis positively, below negatively — the integral is a *net*, not a total.\n- **True (geometric) area:** ∫ₐᵇ|f(x)|dx — split at the axis crossings, integrate each piece, add magnitudes.\n- **Area between curve and axis:** find the roots of f in [a, b], partition, integrate |f| piecewise.\n- **Standard results:** ∫₀ᵃ√(a² − x²)dx = πa²/4 (quarter circle); area of a triangle under a line = ½·base·height.",
+      "## 3. Deep Conceptual — Signed vs Geometric: The Ledger and the Map\n\n- The definite integral is a **ledger** (credits above the axis, debits below — the net displacement reading); the geometric area is a **map** (every region counts positively — the total distance reading). One number, two questions: \"where did I end up?\" vs \"how much ground did I cover?\"\n- **The split-at-roots protocol:** the sign of f can only change at its zeros, so the roots partition [a, b] into constant-sign strips — integrate each strip and add |·|. Skipping the split is the classic error whenever the curve dips below the axis.\n- **Velocity/position echo:** ∫v dt is displacement (signed); ∫|v| dt is distance (geometric) — the ledger/map distinction is the same one physics uses, which is why the area reading is more than geometry.",
+      "## 4. Deep Conceptual — Symmetry and Standard Shapes as Shortcuts\n\n- **Even/odd symmetry:** for even f, ∫₋ₐᵃf = 2∫₀ᵃf; for odd f, ∫₋ₐᵃf = 0 — the signed ledger cancels symmetric debits and credits. Half the work for even functions, zero work for odd ones.\n- **Recognisable shapes:** lines give triangles and trapezoids, circles give πa²/4 pieces — before integrating, ask whether the region is a standard shape; the integral is the general tool, geometry the shortcut.\n- **The quarter-circle result:** ∫₀ᵃ√(a²−x²)dx = πa²/4 comes from y² = a² − x² being the circle — recognising the integrand as a circle's upper half converts calculus to geometry.",
+      "## 5. Worked Example Types\n\n- **Type A — simple positive region:** one anti-derivative, endpoints, done.\n- **Type B — sign change mid-interval:** split at the root, add magnitudes.\n- **Type C — symmetry shortcut:** even/odd halving or cancellation.\n- **Type D — recognised shape:** line (triangle) or circle (quarter).",
+      "## 6. Common Confusions\n\n**\"The integral is the area\":** it is the signed area — split at roots for the geometric answer. **\"Always integrate\":** recognise triangles and circular quarters first."
+    ],
+    "keyPoints": [
+      "Signed area: above the axis positive, below negative - the integral is a net. Geometric area: integral of |f| - split at the roots, integrate piecewise, add magnitudes. Displacement vs distance is the same distinction. Symmetry: even f halves the work, odd f cancels to zero on [-a, a]. Recognise standard shapes first: lines give triangles/trapezoids, sqrt(a^2 - x^2) gives quarter circles (pi a^2/4)."
+    ],
+    "importantConcepts": [
+      "One number, two questions: the ledger (net, signed) and the map (total, geometric) - split at roots to convert."
+    ],
+    "examples": [
+      "***The dip below*** - a curve crossing the axis mid-interval: the raw integral understates the true area by twice the dipped part - split and add magnitudes."
+    ],
+    "universalFacts": [
+      "Every integral property has a picture; the picture is the fastest verification."
+    ],
+    "importantStatements": [
+      "Ask \"is this a triangle or a quarter circle?\" before writing any anti-derivative."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Find the roots in [a, b] first - they are the split points for geometric area."
+    ],
+    "examNotes": [
+      "State whether the question asks for signed area or geometric area; the answers differ whenever the curve dips."
+    ],
+    "formulas": [
+      "- Geometric area = ∫ₐᵇ|f(x)|dx\n- ∫₀ᵃ√(a² − x²)dx = πa²/4; ∫₋ₐᵃf = 2∫₀ᵃf (even), 0 (odd)"
+    ],
+    "practice": [
+      "Find the area under y = x² from 0 to 3.",
+      "Find the geometric area between y = x² − 4 and the x-axis on [0, 5].",
+      "Find ∫₋₂² x³dx and interpret."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Find the area under y = x² from x = 0 to x = 3.** — **Sign check:** x² ≥ 0 on [0, 3] ⟹ signed = geometric, no split needed. **Evaluate:** ∫₀³x²dx = [x³/3]₀³ = **9 square units**. **Shape note:** the region is a parabolic segment — no standard shape, so the integral is the tool. **Deep point:** the sign check precedes the evaluation — on intervals where the curve stays on one side, the ledger and the map agree and one anti-derivative answers both questions.",
+      "**NEB-style (6m): Find the geometric area between y = x² − 4 and the x-axis for 0 ≤ x ≤ 5.** — **Roots in [0, 5]:** x² − 4 = 0 ⟹ x = 2 (and −2, outside). **Sign strips:** f < 0 on [0, 2) (dips below), f > 0 on (2, 5]. **Piece 1:** ∫₀²(4 − x²)dx = [4x − x³/3]₀² = 8 − 8/3 = 16/3. **Piece 2:** ∫₂⁵(x² − 4)dx = [x³/3 − 4x]₂⁵ = (125/3 − 20) − (8/3 − 8) = 65/3 − (−16/3) = 65/3 − 8/3 + 8 = 57/3 + 8 = 19 + 8 = 27. **Geometric area: 16/3 + 27 = 16/3 + 81/3 = 97/3 ≈ 32.33.** **Signed comparison:** ∫₀⁵(x²−4)dx = [x³/3 − 4x]₀⁵ = 125/3 − 20 = 65/3 ≈ 21.67 — smaller by exactly 2·(16/3), the double-counted dip. **Deep point:** the raw integral understates the map by twice the below-axis region — the ledger's debit is counted once as negative and should count once as positive; the difference 2·16/3 is the signature of the skipped split.",
+      "**NEB-style (5m): Evaluate ∫₋₂²x³dx and ∫₋₂²x²dx, and explain the asymmetry.** — **Odd integrand:** x³ is odd ⟹ ∫₋₂²x³dx = **0** — the credit on [0, 2] exactly cancels the debit on [−2, 0]. **Even integrand:** x² is even ⟹ ∫₋₂²x²dx = 2∫₀²x²dx = 2·(8/3) = **16/3**. **Interpretation:** the odd function's signed ledger nets to zero while its geometric area is 2·∫₀²x³dx = 8 — symmetry statements are about the *signed* integral. **Deep point:** even/odd symmetry is a signed-area theorem: halving for even functions, cancellation for odd ones — and confusing the two readings (0 vs 8 for x³) is exactly the ledger/map distinction in action.",
+      "**NEB-style (6m): Find the area enclosed by y = √(9 − x²) and the x-axis, and verify by geometry.** — **Recognise the shape:** y² = 9 − x² ⟹ x² + y² = 9 — the upper semicircle of radius 3. **Domain:** −3 ≤ x ≤ 3; the integrand is nonnegative throughout ⟹ no split. **Evaluate:** area = ∫₋₃³√(9−x²)dx = 2∫₀³√(9−x²)dx = 2·(π·9/4) = **9π/2** — using the quarter-circle standard twice. **Geometric verification:** semicircle area = πr²/2 = 9π/2 ✓. **Deep point:** the integrand's form √(a² − x²) is the circle's signature — recognising it converts the computation to πa²/4 per quarter; the symmetry halving (even function) and the shape recognition are two shortcuts stacking on one integral."
     ]
   }
 }

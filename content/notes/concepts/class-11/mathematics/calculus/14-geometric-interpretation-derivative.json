@@ -5,60 +5,59 @@
   "topicSlug": "geometric-interpretation-derivative",
   "relevance": 100,
   "notes": [
-    "**The derivative is the tangent slope.** $f'(a)$ is the slope of the tangent to $y=f(x)$ at $x=a$, obtained as the limit of chord slopes, so the tangent is the limiting position of secants as the second point approaches $a$.",
-    "**The tangent touches but does not cross.** Since $f(a+h)=f(a)+f'(a)h+o(h)$, the curve and its tangent agree to first order and differ only at second order. This is why the tangent line is a first-order approximation and why it may lie above or below the curve.",
-    "**A horizontal tangent means a stationary point,** $f'(a)=0$, where the graph neither rises nor falls. This is the condition for a maximum or a minimum, but not a guarantee of one — $y=x^3$ has a horizontal tangent at the origin with no extremum.",
-    "**The angle of inclination satisfies $\\tan\\theta = f'(a)$**, so a negative derivative corresponds to an obtuse angle when measured counterclockwise from the positive $x$-axis. Questions often ask for the angle, requiring this extra step.",
-    "**Parallel curves have equal derivatives at equal $x$:** if $f'(a)=g'(a)$ the tangents are parallel, and the vertical gap between the curves is stationary there. This is used to compare solutions of competing processes.",
-    "**Normal lines are perpendicular to the tangent,** so their slope is $-\\frac1{f'(a)}$, undefined when $f'(a)=0$ — precisely the case that gives a horizontal tangent and hence a VERTICAL normal."
+    "## 1. Topic Introduction — The Companion Doorway to the Derivative's Geometric Meaning\n\nThis canonical is the **short-form doorway** to the derivative's geometric interpretation: tangent slope, increasing/decreasing, and the rate reading in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Tangent slope:** f′(a) = slope of the tangent at (a, f(a)) — the limiting position of secants through (a, f(a)) and (a+h, f(a+h)).\n- **Tangent line:** y − f(a) = f′(a)(x − a); **normal line:** slope −1/f′(a) (f′(a) ≠ 0); vertical tangent when f′ → ±∞.\n- **Monotonicity reading:** f′ > 0 on an interval ⟹ increasing; f′ < 0 ⟹ decreasing; f′ = 0 at a point ⟹ stationary (not necessarily extreme).\n- **Rate reading:** f′(t) = instantaneous rate of change of f with respect to t — velocity, growth rate, marginal anything.",
+    "## 3. Deep Conceptual — Slope as the Limit of Secants\n\n- The tangent is **not** \"the line touching at one point\" — circles aside, that folk definition fails (cubics touch and cross). The correct definition is dynamic: the secant through two nearby points, with the second point sliding in. The limit of chords is the tangent; the limit of their slopes is f′(a).\n- **One-sided tangents:** where f′₊ ≠ f′₋ (a corner), two half-tangents exist and no single tangent does — the geometric face of the one-sided derivative test.\n- **Vertical tangents:** when the difference quotient blows up (f′ → ±∞) the tangent is vertical — x = a. The derivative's failure to be finite is itself geometric information.",
+    "## 4. Deep Conceptual — The Sign of f′ Is a Global Statement\n\n- **Local sign, global consequence:** if f′ > 0 at *every* point of an interval, the function is strictly increasing on the whole interval — the Mean Value Theorem converts the local derivative data into a global monotonicity statement. This is the bridge that makes derivative sign tables into curve-sketching tools.\n- **Rates are dimension-conscious:** f′ carries the units of f per unit of x — m/s for position, °C/min for temperature. The geometric slope and the physical rate are the same number read in two languages; problems that mix them (related rates) are translations, not new mathematics.",
+    "## 5. Worked Example Types\n\n- **Type A — tangent/normal at a point:** evaluate f and f′, write both lines.\n- **Type B — corner geometry:** one-sided slopes, two half-tangents, no tangent.\n- **Type C — sign table sketching:** f′ signs ⟹ increasing/decreasing intervals.\n- **Type D — rate interpretation:** read f′(t₀) as a physical rate with units.",
+    "## 6. Common Confusions\n\n**\"Tangent touches at exactly one point\":** the folk definition — the limit-of-secants definition is the real one. **\"f′ = 0 means a max or min\":** it means stationary; classification needs the second derivative or a sign study."
   ],
   "confusion": [
     "Computing $f'(a)$ and reporting it as the angle of inclination, forgetting to apply $\\theta=\\tan^{-1}(f'(a))$.",
     "Saying a horizontal tangent guarantees a maximum; it marks a candidate only.",
     "Computing the normal's slope as $-\\frac1{f'(a)}$ when $f'(a)=0$, which is division by zero — the normal is vertical instead."
   ],
-  "practice": [],
+  "practice": [
+    "Find the tangent to y = x² at (2, 4).",
+    "Find the tangent and normal to y = x³ − 2x at x = 1.",
+    "Interpret f′(3) = −5 for f(t) measuring temperature in °C at time t in minutes."
+  ],
   "universalFacts": [
-    "The tangent to a curve is the local linear model: an error of order $h^2$ in $x$ gives an error of order $h^2$ in the approximation, which is why linearising motion equations is the first step of most numerical simulation.",
-    "Refraction can be derived by demanding the path length be stationary, which is Fermat's condition and a direct application of the horizontal-tangent principle."
+    "The MVT is the bridge from local derivative signs to global monotonicity."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The touching test fails*** - y = x^3 at 0 touches the x-axis and crosses it; the limit-of-secants definition survives where the folk definition dies."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Find the tangent line to y = x² at (2, 4) and the normal line there.** — **Slope:** y′ = 2x ⟹ at x = 2: m = **4**. **Tangent:** y − 4 = 4(x − 2) ⟹ **y = 4x − 4**. **Normal:** slope −1/4 ⟹ y − 4 = −(1/4)(x − 2) ⟹ **x + 4y = 18**. **Geometric check:** the tangent passes through the origin? At x = 0: y = −4 — no; but the tangent's slope 4 equals the secant slope from (2,4) to (2+h, (2+h)²) in the limit: [(2+h)² − 4]/h = 4 + h → 4 ✓. **Deep point:** the normal's slope is the negative reciprocal because the two lines are perpendicular — the product of their slopes is −1; tangent-normal pairs are one computation and one reciprocal.",
+    "**NEB-style (6m): Find the tangent and normal to y = x³ − 2x at x = 1, and determine where the tangent crosses the x-axis.** — **Point:** f(1) = 1 − 2 = −1 ⟹ (1, −1). **Slope:** f′ = 3x² − 2 ⟹ f′(1) = **1**. **Tangent:** y + 1 = 1(x − 1) ⟹ **y = x − 2**; it crosses the x-axis at x = 2. **Normal:** slope −1 ⟹ y + 1 = −(x − 1) ⟹ **y = −x** — passing through the origin. **Deep point:** the tangent crossing the axis at x = 2 while the curve itself crosses at x = √2 ≈ 1.414 shows the tangent is a *local* linearisation — it matches the curve's direction at the point and drifts elsewhere; the gap between 2 and √2 is the linearisation error in action.",
+    "**NEB-style (5m): For f(x) = |x|, describe the tangent geometry at x = 0 and connect it to the derivative's failure.** — **Right side:** slope +1 ⟹ half-tangent y = x for x ≥ 0. **Left side:** slope −1 ⟹ half-tangent y = −x for x ≤ 0. **At 0:** the two half-tangents meet at a 90° angle — **no single tangent exists**, matching f′(0)'s non-existence (RHD +1, LHD −1). **Folk definition check:** infinitely many lines touch the graph only at the origin, yet none is \"the\" tangent — the limit-of-secants definition, not the touching count, is what fails here. **Deep point:** the corner is where geometry and analysis agree perfectly: the picture's kink and the quotient's disagreement are the same fact in two languages.",
+    "**NEB-style (6m): A body's position is s(t) = t³ − 6t² + 9t (metres, seconds). Find the velocity at t = 2 and interpret its sign; find when the body momentarily stops.** — **Velocity:** v(t) = s′(t) = 3t² − 12t + 9 = 3(t − 1)(t − 3). **At t = 2:** v = 3(1)(−1) = **−3 m/s** — moving in the negative direction at 3 m/s. **Stops when:** v = 0 ⟹ t = 1 and t = 3 — momentary rests. **Direction timeline:** v > 0 on (0, 1) (forward), v < 0 on (1, 3) (backward), v > 0 after 3 (forward again). **Deep point:** the derivative's sign is the physical direction — the sign table built for monotonicity is the same tool that reads a journey; position, velocity, acceleration are s, s′, s″, the geometric reading wearing a lab coat."
+  ],
   "formulas": [
-    "Tangent at $a$: $y - f(a) = f'(a)(x-a)$",
-    "Angle of inclination: $\\tan\\theta = f'(a)$",
-    "Stationary point: $f'(a)=0$",
-    "Normal slope: $-\\frac{1}{f'(a)}$ for $f'(a)\\ne0$",
-    "Expansion: $f(a+h)=f(a)+f'(a)h+o(h)$"
+    "- Tangent: y − f(a) = f′(a)(x − a); Normal: y − f(a) = −(1/f′(a))(x − a)\n- f′ > 0 on (a, b) ⟹ f strictly increasing on (a, b)"
   ],
   "keyPoints": [
-    "The derivative is the tangent slope, obtained as a limit of chord slopes.",
-    "A horizontal tangent marks a candidate extremum, not a guaranteed one.",
-    "Report an ANGLE, not a slope, when the question asks for the angle of inclination."
+    "Tangent slope = f'(a) = limit of secant slopes; tangent line y - f(a) = f'(a)(x - a); normal slope -1/f'(a); vertical tangent when f' -> +-inf. Corners have two half-tangents. f' > 0 on an interval implies increasing (MVT converts local signs to global monotonicity). f' = 0 means stationary, not necessarily extreme. The derivative is a rate with units - geometry and physics are the same number."
   ],
-  "summary": "Geometrically the derivative is the slope of the tangent, obtained as the limiting position of secants. The tangent is a first-order approximation, so it matches the curve to first order and may lie above or below it. A zero derivative gives a horizontal tangent, which is a candidate extremum but not a certainty, and the angle of inclination is $\\tan^{-1}$ of the slope rather than the slope itself.",
+  "summary": "The derivative's geometric meaning is dynamic: the tangent is the limiting secant, its slope f′(a), the normal its perpendicular partner, and a vertical tangent is the derivative's finite failure. The sign of f′ is a local fact that the Mean Value Theorem promotes to global monotonicity, and the same number reads as a physical rate with units. Corners split the tangent in two, x³ touches and crosses, and every curve-sketching table is this interpretation put to work.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Computing $f'(a)$ and reporting it as the angle of inclination, forgetting to apply $\\theta=\\tan^{-1}(f'(a))$.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: $f'(a)$ is the slope of the tangent to the curve at $x=a$.",
-    "Statement 2: $f'(a)=0$ indicates a horizontal tangent.",
-    "Statement 3: The angle of inclination satisfies $\\tan\\theta=f'(a)$.",
-    "Statement 4: A horizontal tangent makes the normal vertical, so the normal has no finite slope.",
-    "Statement 5: The tangent line agrees with the curve to first order near the point of contact."
+    "A vertical tangent is the derivative's failure to be finite - and that failure is information."
   ],
   "importantNotes": [
-    "Topic anchor: Normal lines are perpendicular to the tangent, so their slope is $- frac1{f'(a)}$, undefined when $f'(a)=0$ — precisely the case that gives a horizontal tangent and hence a VERTICAL normal."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "If the question says 'angle of inclination', finish with $\\tan^{-1}$ — reporting the raw slope loses the mark.",
-    "Sketch the curve and mark the tangent; a picture settles sign and quadrant questions faster than algebra."
+    "Tangent and normal in one breath: slope m, then -1/m, both through the same point."
   ],
   "examNotes": [
-    "Finding the equation of a tangent or normal at a point is a standard 3-mark question."
+    "Quote the units when interpreting a derivative as a rate - the mark is for the reading, not the number."
   ],
   "mcs": [
     {
@@ -96,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "The derivative is the tangent slope, obtained as a limit of chord slopes.",
-    "A horizontal tangent marks a candidate extremum, not a guaranteed one.",
-    "Report an ANGLE, not a slope, when the question asks for the angle of inclination."
+    "The tangent is defined dynamically - the limiting secant - not by a touching count."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -163,6 +160,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to the Derivative's Geometric Meaning\n\nThis canonical is the **short-form doorway** to the derivative's geometric interpretation: tangent slope, increasing/decreasing, and the rate reading in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Tangent slope:** f′(a) = slope of the tangent at (a, f(a)) — the limiting position of secants through (a, f(a)) and (a+h, f(a+h)).\n- **Tangent line:** y − f(a) = f′(a)(x − a); **normal line:** slope −1/f′(a) (f′(a) ≠ 0); vertical tangent when f′ → ±∞.\n- **Monotonicity reading:** f′ > 0 on an interval ⟹ increasing; f′ < 0 ⟹ decreasing; f′ = 0 at a point ⟹ stationary (not necessarily extreme).\n- **Rate reading:** f′(t) = instantaneous rate of change of f with respect to t — velocity, growth rate, marginal anything.",
+      "## 3. Deep Conceptual — Slope as the Limit of Secants\n\n- The tangent is **not** \"the line touching at one point\" — circles aside, that folk definition fails (cubics touch and cross). The correct definition is dynamic: the secant through two nearby points, with the second point sliding in. The limit of chords is the tangent; the limit of their slopes is f′(a).\n- **One-sided tangents:** where f′₊ ≠ f′₋ (a corner), two half-tangents exist and no single tangent does — the geometric face of the one-sided derivative test.\n- **Vertical tangents:** when the difference quotient blows up (f′ → ±∞) the tangent is vertical — x = a. The derivative's failure to be finite is itself geometric information.",
+      "## 4. Deep Conceptual — The Sign of f′ Is a Global Statement\n\n- **Local sign, global consequence:** if f′ > 0 at *every* point of an interval, the function is strictly increasing on the whole interval — the Mean Value Theorem converts the local derivative data into a global monotonicity statement. This is the bridge that makes derivative sign tables into curve-sketching tools.\n- **Rates are dimension-conscious:** f′ carries the units of f per unit of x — m/s for position, °C/min for temperature. The geometric slope and the physical rate are the same number read in two languages; problems that mix them (related rates) are translations, not new mathematics.",
+      "## 5. Worked Example Types\n\n- **Type A — tangent/normal at a point:** evaluate f and f′, write both lines.\n- **Type B — corner geometry:** one-sided slopes, two half-tangents, no tangent.\n- **Type C — sign table sketching:** f′ signs ⟹ increasing/decreasing intervals.\n- **Type D — rate interpretation:** read f′(t₀) as a physical rate with units.",
+      "## 6. Common Confusions\n\n**\"Tangent touches at exactly one point\":** the folk definition — the limit-of-secants definition is the real one. **\"f′ = 0 means a max or min\":** it means stationary; classification needs the second derivative or a sign study."
+    ],
+    "keyPoints": [
+      "Tangent slope = f'(a) = limit of secant slopes; tangent line y - f(a) = f'(a)(x - a); normal slope -1/f'(a); vertical tangent when f' -> +-inf. Corners have two half-tangents. f' > 0 on an interval implies increasing (MVT converts local signs to global monotonicity). f' = 0 means stationary, not necessarily extreme. The derivative is a rate with units - geometry and physics are the same number."
+    ],
+    "importantConcepts": [
+      "The tangent is defined dynamically - the limiting secant - not by a touching count."
+    ],
+    "examples": [
+      "***The touching test fails*** - y = x^3 at 0 touches the x-axis and crosses it; the limit-of-secants definition survives where the folk definition dies."
+    ],
+    "universalFacts": [
+      "The MVT is the bridge from local derivative signs to global monotonicity."
+    ],
+    "importantStatements": [
+      "A vertical tangent is the derivative's failure to be finite - and that failure is information."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Tangent and normal in one breath: slope m, then -1/m, both through the same point."
+    ],
+    "examNotes": [
+      "Quote the units when interpreting a derivative as a rate - the mark is for the reading, not the number."
+    ],
+    "formulas": [
+      "- Tangent: y − f(a) = f′(a)(x − a); Normal: y − f(a) = −(1/f′(a))(x − a)\n- f′ > 0 on (a, b) ⟹ f strictly increasing on (a, b)"
+    ],
+    "practice": [
+      "Find the tangent to y = x² at (2, 4).",
+      "Find the tangent and normal to y = x³ − 2x at x = 1.",
+      "Interpret f′(3) = −5 for f(t) measuring temperature in °C at time t in minutes."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Find the tangent line to y = x² at (2, 4) and the normal line there.** — **Slope:** y′ = 2x ⟹ at x = 2: m = **4**. **Tangent:** y − 4 = 4(x − 2) ⟹ **y = 4x − 4**. **Normal:** slope −1/4 ⟹ y − 4 = −(1/4)(x − 2) ⟹ **x + 4y = 18**. **Geometric check:** the tangent passes through the origin? At x = 0: y = −4 — no; but the tangent's slope 4 equals the secant slope from (2,4) to (2+h, (2+h)²) in the limit: [(2+h)² − 4]/h = 4 + h → 4 ✓. **Deep point:** the normal's slope is the negative reciprocal because the two lines are perpendicular — the product of their slopes is −1; tangent-normal pairs are one computation and one reciprocal.",
+      "**NEB-style (6m): Find the tangent and normal to y = x³ − 2x at x = 1, and determine where the tangent crosses the x-axis.** — **Point:** f(1) = 1 − 2 = −1 ⟹ (1, −1). **Slope:** f′ = 3x² − 2 ⟹ f′(1) = **1**. **Tangent:** y + 1 = 1(x − 1) ⟹ **y = x − 2**; it crosses the x-axis at x = 2. **Normal:** slope −1 ⟹ y + 1 = −(x − 1) ⟹ **y = −x** — passing through the origin. **Deep point:** the tangent crossing the axis at x = 2 while the curve itself crosses at x = √2 ≈ 1.414 shows the tangent is a *local* linearisation — it matches the curve's direction at the point and drifts elsewhere; the gap between 2 and √2 is the linearisation error in action.",
+      "**NEB-style (5m): For f(x) = |x|, describe the tangent geometry at x = 0 and connect it to the derivative's failure.** — **Right side:** slope +1 ⟹ half-tangent y = x for x ≥ 0. **Left side:** slope −1 ⟹ half-tangent y = −x for x ≤ 0. **At 0:** the two half-tangents meet at a 90° angle — **no single tangent exists**, matching f′(0)'s non-existence (RHD +1, LHD −1). **Folk definition check:** infinitely many lines touch the graph only at the origin, yet none is \"the\" tangent — the limit-of-secants definition, not the touching count, is what fails here. **Deep point:** the corner is where geometry and analysis agree perfectly: the picture's kink and the quotient's disagreement are the same fact in two languages.",
+      "**NEB-style (6m): A body's position is s(t) = t³ − 6t² + 9t (metres, seconds). Find the velocity at t = 2 and interpret its sign; find when the body momentarily stops.** — **Velocity:** v(t) = s′(t) = 3t² − 12t + 9 = 3(t − 1)(t − 3). **At t = 2:** v = 3(1)(−1) = **−3 m/s** — moving in the negative direction at 3 m/s. **Stops when:** v = 0 ⟹ t = 1 and t = 3 — momentary rests. **Direction timeline:** v > 0 on (0, 1) (forward), v < 0 on (1, 3) (backward), v > 0 after 3 (forward again). **Deep point:** the derivative's sign is the physical direction — the sign table built for monotonicity is the same tool that reads a journey; position, velocity, acceleration are s, s′, s″, the geometric reading wearing a lab coat."
     ]
   }
 }

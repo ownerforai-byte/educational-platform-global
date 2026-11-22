@@ -5,54 +5,59 @@
   "topicSlug": "rules-of-differentiation",
   "relevance": 100,
   "notes": [
-    "**The chain rule is the workhorse:** for $y=f(u(x))$, $\\frac{dy}{dx}=f'(u)\\cdot\\frac{du}{dx}$. Work OUTSIDE-IN, labelling each layer, then multiply the derivatives back in reverse order — this 'outside-in, inside-out' order is what prevents missed factors.",
-    "**The rule is valid for arbitrarily many layers:** $\\frac{d}{dx}(3x^2+1)^4 = 4(3x^2+1)^3\\cdot6x = 24x(3x^2+1)^3$. Three layers require two multiplications, and dropping the innermost derivative is the standard error.",
-    "**Sum and difference rules let you differentiate term by term.** A polynomial needs no product or chain rule at all, which is why $\\frac{d}{dx}(x^3-4x+7)=3x^2-4$ is a one-line exercise with the constant vanishing.",
-    "**Implicit differentiation:** for $F(x,y)=0$ differentiate BOTH sides with respect to $x$ and use $\\frac{dy}{dx}$ throughout, then collect $\\frac{dy}{dx}$ terms and solve. From $x^2+y^2=r^2$ we get $2x+2y\\frac{dy}{dx}=0$, hence $\\frac{dy}{dx}=-\\frac{x}{y}$ — the slope of a circle is never constant, which the formula makes obvious.",
-    "**Parametric forms:** if $x=x(t)$ and $y=y(t)$, then $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$, provided $\\frac{dx}{dt}\\ne0$. The parameter cancels, so $dx/dt=0$ is a point where the curve turns vertically.",
-    "**Logarithmic differentiation handles awkward powers:** for $y=u^v$ take logs, $\\ln y = v\\ln u$, differentiate, then exponentiate. This is the standard route for expressions like $y=x^x$ or $y=(1+x)^{1/x}$ where no ordinary rule applies."
+    "## 1. Topic Introduction — The Companion Doorway to the Rules of Differentiation\n\nThis canonical is the **short-form doorway** to the rules of differentiation: product, quotient, chain, and the log-differentiation power tool in one page. The parent canonical carries the full treatment; this companion mirrors the rules, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Product rule:** (fg)′ = f′g + fg′ — each factor differentiated while the other stands.\n- **Quotient rule:** (f/g)′ = (f′g − fg′)/g² — the product rule with a minus and a square.\n- **Chain rule:** (f∘g)′ = f′(g(x))·g′(x), i.e. dy/dx = dy/du·du/dx — outer table evaluated at u, times the inner derivative.\n- **Logarithmic differentiation:** for y = u(x)^{v(x)}: ln y = v ln u ⟹ y′ = y(v′ ln u + v·u′/u).\n- **Higher orders:** repeat the operation; Leibniz: (fg)⁽ⁿ⁾ = Σ C(n,k) f⁽ⁿ⁻ᵏ⁾g⁽ᵏ⁾.",
+    "## 3. Deep Conceptual — The Rules as Rate Algebra\n\n- The product rule is **rate composition for products**: a small change in f contributes f′·g, a small change in g contributes f·g′, and the cross-term dies in the limit. Leibniz's binomial coefficients are the same algebra iterated — the operator D behaves like a number in (D + A)ⁿ = Σ C(n,k) Dⁿ⁻ᵏAᵏ.\n- **The chain rule is the master:** every composite answer has the shape (outer table entry at u) × u′. Writing both factors explicitly is the discipline that makes dropped-inner-derivative errors impossible.\n- **Log-differentiation linearises:** ln converts powers to products and products to sums — the hardest differentiation problems become product-rule problems after one logarithm, with the universal shape y′ = y·(d/dx ln y).",
+    "## 4. Deep Conceptual — Choosing the Rule Is the Decision Procedure\n\n- **Triage:** a sum ⟹ term by term; a product of unlike types ⟹ product rule; a quotient ⟹ quotient rule; a composite ⟹ chain rule; a variable base **and** exponent ⟹ logs first.\n- **The power-tool's trigger:** u(x)^{v(x)} — both base and exponent varying — defeats the power rule (needs constant exponent) and the exponential rule (needs constant base) individually; ln y = v ln u is the only bridge.\n- **Rule stacking:** complicated functions are nestings of the four structures; differentiate outside-in, one rule per layer, and label each layer's rule in the working.",
+    "## 5. Worked Example Types\n\n- **Type A — product rule with a trig cross-term:** sin x·cos x → cos 2x patterns.\n- **Type B — quotient rule:** (u/v) with the minus sign audited.\n- **Type C — chain stacks:** √(1 + sin 2x)-type nestings.\n- **Type D — log differentiation:** xˣ, (sin x)^{cos x}, (1+x)^{1/x}.",
+    "## 6. Common Confusions\n\n**\"The derivative of a product is the product of derivatives\":** the classic error — the product rule has two terms. **\"Dropping the inner derivative\":** the chain rule's second factor is not optional."
   ],
   "confusion": [
     "Differentiating only the outer function of a composite and forgetting the inner derivative.",
     "In implicit differentiation, treating $y$ as a constant instead of a function of $x$.",
     "Writing $\\frac{d}{dx}(u^n)=nu^{n-1}$ for a general $u(x)$, which silently assumes $u$ is constant — the power rule only applies directly to $x^n$."
   ],
-  "practice": [],
+  "practice": [
+    "Differentiate y = x²·sin x.",
+    "Differentiate y = (x² + 1)/(x − 1).",
+    "Differentiate y = x^x for x > 0."
+  ],
   "universalFacts": [
-    "Rate problems are chain-rule problems in disguise: a falling tank's drain rate is the area rate composed with the depth rate, $\\frac{dV}{dt}=A(h)\\frac{dh}{dt}$.",
-    "The gradient of a circle $\\frac{dy}{dx}=-\\frac{x}{y}$ is infinite at the poles and zero at the equator, which is why a level tangent is the natural condition for the maximum or minimum of a circle's height."
+    "The chain rule is the master rule: product, quotient and inverse rules all follow from it."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The variable-power trigger*** - x^x defeats both the power rule (x is not constant) and the exponential rule (x is not constant as exponent) - ln y = x ln x is the only bridge."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Differentiate y = x²·sin x and simplify the answer.** — **Product rule:** y′ = (x²)′·sin x + x²·(sin x)′ = 2x·sin x + x²·cos x = **x(2 sin x + x cos x)**. **Structure check:** the answer is a sum of two products — each term differentiated one factor while the other stood, exactly the rule's anatomy. **Deep point:** the factored form is the exam-friendly presentation; the rule's two-term shape is the content, and factoring common pieces (x) is presentation, not new mathematics.",
+    "**NEB-style (6m): Differentiate y = (x² + 1)/(x − 1) and find the stationary points.** — **Quotient rule:** y′ = [(2x)(x − 1) − (x² + 1)(1)]/(x − 1)² = [2x² − 2x − x² − 1]/(x − 1)² = **(x² − 2x − 1)/(x − 1)²**. **Stationary points:** y′ = 0 ⟹ x² − 2x − 1 = 0 ⟹ x = 1 ± √2 (both ≠ 1, so both legal). **Audit:** the minus sign placed the −2x correctly — the classic quotient-rule error is flipping it; the cross-check is that y′(0) = −1/1 = −1, and indeed y is decreasing at 0 (from y(−1) = −1 to y(0.5) = −5). **Deep point:** the stationary-point hunt is the quotient rule's natural sequel — differentiate, set to zero, solve; the rule's minus sign is where every error in the chain lives.",
+    "**NEB-style (6m): Differentiate y = √(1 + sin 2x) and show the answer simplifies elegantly.** — **Outer (chain):** (1 + sin 2x)^{1/2} ⟹ (1/2)(1 + sin 2x)^{−1/2}·(inner). **Inner (chain again):** (sin 2x)′ = cos 2x·2 = 2cos 2x. **Assemble:** y′ = cos 2x/√(1 + sin 2x). **Simplify:** cos 2x = cos²x − sin²x; 1 + sin 2x = (sin x + cos x)² ⟹ y′ = (cos x − sin x)(cos x + sin x)/|sin x + cos x| — on intervals where sin x + cos x > 0: y′ = **cos x − sin x**. **Deep point:** two chain rules stacked, then an algebraic miracle — recognising 1 + sin 2x as a perfect square collapsed the radical; differentiation finds the rate, algebra makes it readable.",
+    "**NEB-style (6m): Differentiate y = (sin x)^{cos x} for 0 < x < π/2 using logarithmic differentiation.** — **Log bridge:** ln y = cos x·ln(sin x). **Differentiate both sides:** y′/y = (−sin x)·ln(sin x) + cos x·(cos x/sin x). **Solve:** y′ = y[sin x·(cot²x − ln(sin x))] = **(sin x)^{cos x}·[cos²x/sin x − sin x·ln(sin x)]**. **Verification at x = π/4:** sin = cos = 1/√2 ⟹ bracket = (1/2)/(1/√2) − (1/√2)·ln(1/√2) = √2/2 + (ln 2)/(2√2) > 0 ⟹ y increasing at π/4 — plausible since the base is near 1 and shrinking the exponent toward 0 raises the value. **Deep point:** the log bridge converted a variable-power into a product rule problem; the answer's shape y·(stuff) is universal for u^v — the function itself times the log-derivative, exactly as xˣ yields xˣ(1 + ln x)."
+  ],
   "formulas": [
-    "Chain: $\\frac{d}{dx}f(u)=f'(u)u'$",
-    "Sum/difference: $\\frac{d}{dx}(u\\pm v)=u'\\pm v'$",
-    "Implicit: differentiate $F(x,y)=0$ w.r.t. $x$ and solve for $y'$",
-    "Parametric: $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$, $dx/dt\\ne0$",
-    "Logarithmic: $y=u^v \\Rightarrow \\frac{y'}{y}=v'\\ln u + v\\frac{u'}{u}$"
+    "- (fg)′ = f′g + fg′; (f/g)′ = (f′g − fg′)/g²\n- y = uᵛ ⟹ y′ = y(v′ ln u + v·u′/u)"
   ],
   "keyPoints": [
-    "Chain rule: differentiate outside-in, multiply inside-out.",
-    "The power rule on $u(x)^n$ needs the chain rule, not the bare power rule.",
-    "For $y=u^v$ take logarithms — no ordinary rule handles a variable exponent."
+    "Product rule (fg)' = f'g + fg'; quotient rule (f'g - fg')/g^2; chain rule dy/dx = dy/du . du/dx - outer at u times inner. Log differentiation for u^v: ln y = v ln u => y' = y(v' ln u + v u'/u). Leibniz: (fg)^(n) = sum C(n,k) f^(n-k) g^(k). Triage: sum -> term by term; product -> product rule; quotient -> quotient rule; composite -> chain; variable base and exponent -> logs first."
   ],
-  "summary": "Differentiation is a decision procedure. Sums and differences go term by term, composites go through the chain rule worked outside-in, implicit relations are differentiated in $x$ with $y=y(x)$ treated as a function, and parametric curves divide the two parameter derivatives. When neither the base rules nor the chain rule fit — a variable exponent — logarithms reduce it to the earlier cases.",
+  "summary": "The differentiation rules are rate algebra: products add two contributions, quotients subtract and divide, chains multiply outer-at-u by inner, and logarithms linearise the variable-power forms that defeat every other rule. Triage names the outermost structure, one rule applies per layer, and labels in the working make the algebra auditable. The chain rule is the master — product, quotient and inverse rules all follow from it — and log differentiation is its bridge to u^v.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Differentiating only the outer function of a composite and forgetting the inner derivative.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "Differentiate outside-in, one rule per layer, and label each rule in the working."
+  ],
   "importantNotes": [
-    "Topic anchor: Logarithmic differentiation handles awkward powers  for $y=u^v$ take logs, $ ln y = v ln u$, differentiate, then exponentiate."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Label every layer of a composite before differentiating, then multiply the derivatives in reverse label order.",
-    "For $y=u^v$, always take logarithms first — it converts the problem into addition and multiplication."
+    "Triage first: name the outermost structure, apply its rule, recurse inward."
   ],
   "examNotes": [
-    "Chain-rule and implicit-differentiation problems are the two most reliable 3–4 mark derivative questions."
+    "For u^v forms, write y' = y (d/dx ln y) - the universal shape saves the final line."
   ],
   "mcs": [
     {
@@ -90,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "Chain rule: differentiate outside-in, multiply inside-out.",
-    "The power rule on $u(x)^n$ needs the chain rule, not the bare power rule.",
-    "For $y=u^v$ take logarithms — no ordinary rule handles a variable exponent."
+    "The rules are rate algebra: products add contributions, chains multiply them, logs linearise everything."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -181,6 +184,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to the Rules of Differentiation\n\nThis canonical is the **short-form doorway** to the rules of differentiation: product, quotient, chain, and the log-differentiation power tool in one page. The parent canonical carries the full treatment; this companion mirrors the rules, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Product rule:** (fg)′ = f′g + fg′ — each factor differentiated while the other stands.\n- **Quotient rule:** (f/g)′ = (f′g − fg′)/g² — the product rule with a minus and a square.\n- **Chain rule:** (f∘g)′ = f′(g(x))·g′(x), i.e. dy/dx = dy/du·du/dx — outer table evaluated at u, times the inner derivative.\n- **Logarithmic differentiation:** for y = u(x)^{v(x)}: ln y = v ln u ⟹ y′ = y(v′ ln u + v·u′/u).\n- **Higher orders:** repeat the operation; Leibniz: (fg)⁽ⁿ⁾ = Σ C(n,k) f⁽ⁿ⁻ᵏ⁾g⁽ᵏ⁾.",
+      "## 3. Deep Conceptual — The Rules as Rate Algebra\n\n- The product rule is **rate composition for products**: a small change in f contributes f′·g, a small change in g contributes f·g′, and the cross-term dies in the limit. Leibniz's binomial coefficients are the same algebra iterated — the operator D behaves like a number in (D + A)ⁿ = Σ C(n,k) Dⁿ⁻ᵏAᵏ.\n- **The chain rule is the master:** every composite answer has the shape (outer table entry at u) × u′. Writing both factors explicitly is the discipline that makes dropped-inner-derivative errors impossible.\n- **Log-differentiation linearises:** ln converts powers to products and products to sums — the hardest differentiation problems become product-rule problems after one logarithm, with the universal shape y′ = y·(d/dx ln y).",
+      "## 4. Deep Conceptual — Choosing the Rule Is the Decision Procedure\n\n- **Triage:** a sum ⟹ term by term; a product of unlike types ⟹ product rule; a quotient ⟹ quotient rule; a composite ⟹ chain rule; a variable base **and** exponent ⟹ logs first.\n- **The power-tool's trigger:** u(x)^{v(x)} — both base and exponent varying — defeats the power rule (needs constant exponent) and the exponential rule (needs constant base) individually; ln y = v ln u is the only bridge.\n- **Rule stacking:** complicated functions are nestings of the four structures; differentiate outside-in, one rule per layer, and label each layer's rule in the working.",
+      "## 5. Worked Example Types\n\n- **Type A — product rule with a trig cross-term:** sin x·cos x → cos 2x patterns.\n- **Type B — quotient rule:** (u/v) with the minus sign audited.\n- **Type C — chain stacks:** √(1 + sin 2x)-type nestings.\n- **Type D — log differentiation:** xˣ, (sin x)^{cos x}, (1+x)^{1/x}.",
+      "## 6. Common Confusions\n\n**\"The derivative of a product is the product of derivatives\":** the classic error — the product rule has two terms. **\"Dropping the inner derivative\":** the chain rule's second factor is not optional."
+    ],
+    "keyPoints": [
+      "Product rule (fg)' = f'g + fg'; quotient rule (f'g - fg')/g^2; chain rule dy/dx = dy/du . du/dx - outer at u times inner. Log differentiation for u^v: ln y = v ln u => y' = y(v' ln u + v u'/u). Leibniz: (fg)^(n) = sum C(n,k) f^(n-k) g^(k). Triage: sum -> term by term; product -> product rule; quotient -> quotient rule; composite -> chain; variable base and exponent -> logs first."
+    ],
+    "importantConcepts": [
+      "The rules are rate algebra: products add contributions, chains multiply them, logs linearise everything."
+    ],
+    "examples": [
+      "***The variable-power trigger*** - x^x defeats both the power rule (x is not constant) and the exponential rule (x is not constant as exponent) - ln y = x ln x is the only bridge."
+    ],
+    "universalFacts": [
+      "The chain rule is the master rule: product, quotient and inverse rules all follow from it."
+    ],
+    "importantStatements": [
+      "Differentiate outside-in, one rule per layer, and label each rule in the working."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Triage first: name the outermost structure, apply its rule, recurse inward."
+    ],
+    "examNotes": [
+      "For u^v forms, write y' = y (d/dx ln y) - the universal shape saves the final line."
+    ],
+    "formulas": [
+      "- (fg)′ = f′g + fg′; (f/g)′ = (f′g − fg′)/g²\n- y = uᵛ ⟹ y′ = y(v′ ln u + v·u′/u)"
+    ],
+    "practice": [
+      "Differentiate y = x²·sin x.",
+      "Differentiate y = (x² + 1)/(x − 1).",
+      "Differentiate y = x^x for x > 0."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Differentiate y = x²·sin x and simplify the answer.** — **Product rule:** y′ = (x²)′·sin x + x²·(sin x)′ = 2x·sin x + x²·cos x = **x(2 sin x + x cos x)**. **Structure check:** the answer is a sum of two products — each term differentiated one factor while the other stood, exactly the rule's anatomy. **Deep point:** the factored form is the exam-friendly presentation; the rule's two-term shape is the content, and factoring common pieces (x) is presentation, not new mathematics.",
+      "**NEB-style (6m): Differentiate y = (x² + 1)/(x − 1) and find the stationary points.** — **Quotient rule:** y′ = [(2x)(x − 1) − (x² + 1)(1)]/(x − 1)² = [2x² − 2x − x² − 1]/(x − 1)² = **(x² − 2x − 1)/(x − 1)²**. **Stationary points:** y′ = 0 ⟹ x² − 2x − 1 = 0 ⟹ x = 1 ± √2 (both ≠ 1, so both legal). **Audit:** the minus sign placed the −2x correctly — the classic quotient-rule error is flipping it; the cross-check is that y′(0) = −1/1 = −1, and indeed y is decreasing at 0 (from y(−1) = −1 to y(0.5) = −5). **Deep point:** the stationary-point hunt is the quotient rule's natural sequel — differentiate, set to zero, solve; the rule's minus sign is where every error in the chain lives.",
+      "**NEB-style (6m): Differentiate y = √(1 + sin 2x) and show the answer simplifies elegantly.** — **Outer (chain):** (1 + sin 2x)^{1/2} ⟹ (1/2)(1 + sin 2x)^{−1/2}·(inner). **Inner (chain again):** (sin 2x)′ = cos 2x·2 = 2cos 2x. **Assemble:** y′ = cos 2x/√(1 + sin 2x). **Simplify:** cos 2x = cos²x − sin²x; 1 + sin 2x = (sin x + cos x)² ⟹ y′ = (cos x − sin x)(cos x + sin x)/|sin x + cos x| — on intervals where sin x + cos x > 0: y′ = **cos x − sin x**. **Deep point:** two chain rules stacked, then an algebraic miracle — recognising 1 + sin 2x as a perfect square collapsed the radical; differentiation finds the rate, algebra makes it readable.",
+      "**NEB-style (6m): Differentiate y = (sin x)^{cos x} for 0 < x < π/2 using logarithmic differentiation.** — **Log bridge:** ln y = cos x·ln(sin x). **Differentiate both sides:** y′/y = (−sin x)·ln(sin x) + cos x·(cos x/sin x). **Solve:** y′ = y[sin x·(cot²x − ln(sin x))] = **(sin x)^{cos x}·[cos²x/sin x − sin x·ln(sin x)]**. **Verification at x = π/4:** sin = cos = 1/√2 ⟹ bracket = (1/2)/(1/√2) − (1/√2)·ln(1/√2) = √2/2 + (ln 2)/(2√2) > 0 ⟹ y increasing at π/4 — plausible since the base is near 1 and shrinking the exponent toward 0 raises the value. **Deep point:** the log bridge converted a variable-power into a product rule problem; the answer's shape y·(stuff) is universal for u^v — the function itself times the log-derivative, exactly as xˣ yields xˣ(1 + ln x)."
     ]
   }
 }

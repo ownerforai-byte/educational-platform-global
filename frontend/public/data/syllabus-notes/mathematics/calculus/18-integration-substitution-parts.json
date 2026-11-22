@@ -5,54 +5,59 @@
   "topicSlug": "integration-substitution-parts",
   "relevance": 100,
   "notes": [
-    "**Substitution reverses the chain rule.** Look for an inner expression whose derivative appears as a factor: $\\int 2x\\cos(x^2)\\,dx$ with $u=x^2$, $du=2x\\,dx$, gives $\\sin(x^2)+C$. Every inner derivative must be accounted for, or a constant factor is left behind.",
-    "**By parts reverses the product rule:** $\\int u\\,dv=uv-\\int v\\,du$. Choose $u$ by LIATE — Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential — so the two remaining integrals get progressively simpler. Choosing $u=x$ and $dv=e^x dx$ in $\\int xe^x dx$ makes things worse rather than better.",
-    "**Repeated integration by parts terminates** when a term eventually becomes $0$: for $\\int x^2e^x dx$ the three applications give $e^x(x^2-2x+2)+C$, and the constant of integration is added once at the end.",
-    "**Definite integrals after substitution need care.** Either change the LIMITS as well, or keep the original limits and back-substitute. Mixing the two — new limits with an un-substituted integrand — is the commonest error in the topic.",
-    "**The definite integral is a number, not a function,** so it has no constant of integration: the two boundary values cancel it. $\\int_1^2 x\\,dx = \\left[\\frac{x^2}{2}\right]_1^2 = 2 - \\frac12 = \\frac32$.",
-    "**Both methods fail on the same hard cases.** $\\int e^{-x^2}\\,dx$ and $\\int\\frac{\\sin x}{x}\\,dx$ are integrable numerically but not by elementary substitution or parts; recognising them saves time that would otherwise be lost to a doomed algebraic search."
+    "## 1. Topic Introduction — The Companion Doorway to Substitution and By Parts\n\nThis canonical is the **short-form doorway** to the two workhorse integration methods: substitution (the chain rule reversed) and integration by parts (the product rule reversed). The parent canonical carries the full treatment; this companion mirrors the methods, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Substitution:** ∫f(g(x))g′(x)dx = ∫f(u)du with u = g(x) — the chain rule read backwards; du = g′(x)dx.\n- **By parts:** ∫u dv = uv − ∫v du — the product rule integrated; choose u by the **LIATE** priority (Log, Inverse trig, Algebraic, Trig, Exponential).\n- **Method triggers:** a composite with its inner derivative visible ⟹ substitute; a product of unlike types with no inner derivative ⟹ parts.\n- **Definite versions:** substitution changes the limits; parts inherits the boundary term uv|ₐᵇ.",
+    "## 3. Deep Conceptual — Substitution Is a Change of Variables, Not a Trick\n\n- Substitution re-describes the same integral in variables where the anti-derivative is visible: the composite f(g(x)) becomes the plain f(u), and the Jacobian factor g′(x)dx becomes du. The chain rule's structure (outer′ × inner′) is exactly what makes the rewrite legal.\n- **Spotting u:** the inner function of the composite — and its derivative must appear (up to constant) in the integrand. When it does not, algebra first (complete the square, split the fraction) manufactures the match.\n- **Definite discipline:** change the limits with the substitution — never substitute back; the transformed integral in u with u-limits is complete and shorter.",
+    "## 4. Deep Conceptual — By Parts Trades One Integral for Another\n\n- ∫u dv = uv − ∫v du is a **bargain**: surrender the original integral, accept uv plus a new one. The choice of u makes the bargain good — LIATE picks the factor that *simplifies* when differentiated (logs and inverse trig vanish into algebra), leaving a new integral easier than the old.\n- **Cyclic parts:** ∫eˣsin x dx returns to itself after two applications — the equation is then solved algebraically (I = expression, solve for I). The method's self-reference is a feature: some integrals close only through their own reflection.\n- **Parts proves reduction formulas:** ∫xⁿeˣdx = xⁿeˣ − n∫xⁿ⁻¹eˣdx — each application peels one power, the same ladder logic as reduction in trigonometry.",
+    "## 5. Worked Example Types\n\n- **Type A — linear substitution:** ∫(ax + b)ⁿ — u = ax + b, the Jacobian 1/a.\n- **Type B — inner derivative visible:** ∫2x·e^{x²}dx — u = x², du = 2x dx.\n- **Type C — LIATE parts:** ∫x·eˣdx, ∫ln x dx, ∫x ln x dx.\n- **Type D — cyclic parts:** ∫eˣsin x dx solved as an equation.",
+    "## 6. Common Confusions\n\n**\"Substitute anything\":** u must be the composite's inner function with its derivative present. **\"Parts is for all products\":** only when substitution fails — ∫2x·e^{x²}dx is a substitution problem wearing a product's clothes."
   ],
   "confusion": [
     "Applying substitution without using the new limits in a definite integral, or changing limits without substituting the integrand.",
     "Choosing $u$ as the exponential or trigonometric factor in by parts, which makes the integral harder rather than easier.",
     "Leaving a $+C$ on a definite integral — the bounds absorb it."
   ],
-  "practice": [],
+  "practice": [
+    "Evaluate ∫(3x + 2)⁴dx.",
+    "Evaluate ∫x·e^{3x}dx.",
+    "Evaluate ∫ln x dx."
+  ],
   "universalFacts": [
-    "The error-function identity $\\int_0^\\infty e^{-x^2}dx=\\frac{\\sqrt\\pi}{2}$ is the standard link between the Gaussian curve and statistics, and it has no elementary antiderivative to fall back on.",
-    "The probability of a continuous random variable is an area under its density curve, so the entire cumulative distribution concept rests on definite integration of a positive function."
+    "LIATE ranks factors by how much they simplify under differentiation - logs vanish first."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The cyclic close*** - I = integral e^x sin x dx returns after two parts passes; solve for I algebraically - some integrals close through their own reflection."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Evaluate ∫(3x + 2)⁴dx.** — **Substitution:** u = 3x + 2 ⟹ du = 3dx ⟹ dx = du/3. **Transform:** ∫u⁴·(du/3) = (1/3)·u⁵/5 = u⁵/15. **Back-substitute:** **(3x + 2)⁵/15 + C**. **Verification:** d/dx[(3x+2)⁵/15] = 5(3x+2)⁴·3/15 = (3x+2)⁴ ✓ — the chain rule's 3 cancelled the Jacobian's 3, as it must. **Deep point:** the linear substitution is the pattern's simplest face — the inner derivative (3) appears as the Jacobian and is repaid exactly by the chain rule on verification; every substitution is this transaction.",
+    "**NEB-style (6m): Evaluate ∫x·e^{3x}dx.** — **Method triage:** the product x·e^{3x} has no visible inner derivative of a composite (e^{3x}'s inner 3 is constant) ⟹ **parts**. **LIATE:** u = x (algebraic), dv = e^{3x}dx ⟹ v = e^{3x}/3, du = dx. **Parts:** ∫x e^{3x}dx = x·e^{3x}/3 − ∫(e^{3x}/3)dx = **x·e^{3x}/3 − e^{3x}/9 + C** = e^{3x}(3x − 1)/9 + C. **Verification:** d/dx[e^{3x}(3x−1)/9] = e^{3x}·3(3x−1)/9 + e^{3x}·3/9 = e^{3x}[(3x−1) + 1]/3 = x e^{3x} ✓. **Deep point:** LIATE's choice made the new integral (∫e^{3x}dx/3) trivially easy — the bargain logic: differentiate the factor that simplifies, integrate the one that does not.",
+    "**NEB-style (6m): Evaluate ∫ln x dx for x > 0.** — **The surprise:** ln x has no standard entry — but parts with **u = ln x** (LIATE: log first), dv = dx ⟹ v = x, du = dx/x. **Parts:** ∫ln x dx = x·ln x − ∫x·(dx/x) = x ln x − ∫dx = **x ln x − x + C**. **Verification:** d/dx[x ln x − x] = ln x + 1 − 1 = ln x ✓. **Deep point:** the trick is seeing 1·dx as dv — every \"no table entry\" integral of a single factor is a parts problem with dv = dx; the log's simplification under differentiation (to 1/x) is what makes the bargain profitable.",
+    "**NEB-style (6m): Evaluate ∫eˣ·sin x dx using cyclic parts, and verify.** — **Parts pass 1:** u = sin x, dv = eˣdx ⟹ I = eˣ sin x − ∫eˣ cos x dx. **Parts pass 2 (on the new integral):** u = cos x, dv = eˣdx ⟹ ∫eˣcos x dx = eˣcos x + ∫eˣ sin x dx = eˣcos x + I. **Substitute back:** I = eˣsin x − eˣcos x − I ⟹ **2I = eˣ(sin x − cos x)** ⟹ **I = eˣ(sin x − cos x)/2 + C**. **Verification:** d/dx[eˣ(sin−cos)/2] = eˣ(sin−cos)/2 + eˣ(cos+sin)/2 = eˣ sin x ✓. **Deep point:** the second pass returned the original integral with a sign — the self-reference became a linear equation solved for I; the ±1/2 factor that emerges is the signature of every cyclic pair (eˣ with sin or cos), and forgetting it is the classic incomplete answer."
+  ],
   "formulas": [
-    "Substitution: $\\int f'(g(x))g'(x)dx=f(g(x))+C$",
-    "By parts: $\\int u\\,dv=uv-\\int v\\,du$",
-    "LIATE order for choosing $u$",
-    "Definite: $\\int_a^b f(x)dx=F(b)-F(a)$ (no $+C$)",
-    "Back-substitution for bounds: $\\int_a^b f(g(x))g'(x)dx=\\int_{g(a)}^{g(b)} f(u)du$"
+    "- ∫f(g(x))g′(x)dx = ∫f(u)du, u = g(x)\n- ∫u dv = uv − ∫v du"
   ],
   "keyPoints": [
-    "Substitution must account for the inner derivative or leave a constant factor.",
-    "Choose $u$ by LIATE so by-parts integrals get simpler, and stop before reaching 0.",
-    "In a definite integral, change the limits or back-substitute — never mix the two."
+    "Substitution = chain rule reversed: u = inner function, du = g'dx, the Jacobian is the price. Spot u as the composite's inner with its derivative visible (up to constant). Definite version: change the limits, never substitute back. By parts = product rule reversed: integral u dv = uv - integral v du; LIATE picks u (Log, Inverse trig, Algebraic, Trig, Exponential). Cyclic parts solve as equations. Parts trades one integral for an easier one."
   ],
-  "summary": "Substitution reverses the chain rule and by parts reverses the product rule, so together they handle everything an elementary course expects. The choice of $u$ by LIATE is what makes by parts terminate, and the boundary-value treatment differs crucially between indefinite and definite integrals. A handful of functions, notably the Gaussian, resist both methods and are integrable only numerically.",
+  "summary": "The two workhorse methods are the chain rule and the product rule read backwards: substitution re-describes a composite in variables where the anti-derivative shows, with the Jacobian as the price; by parts trades an integral for uv plus an easier one, with LIATE choosing the factor that simplifies under differentiation. Cyclic pairs close through their own reflection and are solved as equations. Triage first — substitution when the inner derivative is visible, parts when it is not — and verify every answer by differentiating it back.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Applying substitution without using the new limits in a definite integral, or changing limits without substituting the integrand.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "A product whose inner derivative is visible is a substitution problem, not a parts problem."
+  ],
   "importantNotes": [
-    "Topic anchor: Both methods fail on the same hard cases."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Write $du$ under the integral, then check the whole integrand has been consumed before integrating.",
-    "For by-parts, apply LIATE to pick $u$ and stop the moment a term reaches 0."
+    "Try substitution before parts - the cheaper method wins."
   ],
   "examNotes": [
-    "A substitution followed by a definite integral is a standard 4-mark question; the limits handling is where marks are lost."
+    "In definite substitution, write the new limits explicitly - the u-integral must be self-contained."
   ],
   "mcs": [
     {
@@ -90,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "Substitution must account for the inner derivative or leave a constant factor.",
-    "Choose $u$ by LIATE so by-parts integrals get simpler, and stop before reaching 0.",
-    "In a definite integral, change the limits or back-substitute — never mix the two."
+    "The two methods are the chain rule and the product rule read backwards - nothing new, only reversed."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -106,5 +109,53 @@
     "**4. [Idea: symmetry collapses the work before any integration happens]** Evaluate $\\int_{-2}^{2}\\left(x^3\\cos x + \\sqrt{4-x^2}\\right)dx$.\\newline\\newline**Solution: split by parity first.**$^{\\bullet}$ $x^3$ is ODD and $\\cos x$ is EVEN, so $x^3\\cos x$ is ODD. An odd function integrates to $0$ over $[-2,2]$:$\\newline\\int_{-2}^2 x^3\\cos x\\,dx = 0$.$^{\\bullet}$ $\\sqrt{4-x^2}$ is EVEN, so by King's rule $\\int_{-2}^{2}\\sqrt{4-x^2}\\,dx = 2\\int_0^2 \\sqrt{4-x^2}\\,dx$.\\newline\\newlineThis remaining integral is the area of a quarter circle of radius 2:$\\newline\\int_0^2\\sqrt{4-x^2}\\,dx = \\frac14 \\pi(2)^2 = \\pi$.\\newline\\newlineSo the total is $0 + 2\\pi$.\\newline\\newline**Answer:** $2\\pi$. **The idea:** the odd part was dispatched with no calculus at all. Attempting to integrate $x^3\\cos x$ directly needs repeated by parts for nothing.",
     "**5. [Idea: the bounds do not determine the top curve — solve the intersection first]** Find the area bounded by $y=x^2$ and $y=\\sqrt{x}$ for $x \\ge 0$.\\newline\\newline**Solution:** Find the intersections: $x^2 = \\sqrt{x} \\Rightarrow x^4 = x \\Rightarrow x(x^3-1)=0$, so $x=0$ and $x=1$.\\newline\\newline**Determine which is on top.** At $x=\\frac12$: $y_1 = x^2 = \\frac14$ and $y_2 = \\sqrt{x} = \\frac{1}{\\sqrt2} \\approx 0.707$. Since $\\sqrt{x} > x^2$ there, $\\sqrt{x}$ is the TOP curve.\\newline\\newline**Area:**$^{\\bullet}$ $\\displaystyle A = \\int_0^1 \\left(\\sqrt{x} - x^2\\right)dx = \\left[\\frac{2}{3}x^{3/2} - \\frac{x^3}{3}\\right]_0^1 = \\frac23 - \\frac13 = \\frac13$.\\newline\\newline**Answer:** $\\frac13$ square units. **Trap:** integrating $x^2-\\sqrt{x}$ and getting $-\\frac13$. The top-minus-bottom convention means a negative answer signals the curves were named backwards, not that the area is negative.",
     "**6. [Idea: the region is split because the bounding curve changes]** Find the area enclosed by $y=2x+1$, $y=x^2+2$ and the $y$-axis.\\newline\\newline**Solution:**$^{\\bullet}$ The two curves meet where $2x+1 = x^2+2$, i.e. $x^2-2x+1=0$, i.e. $(x-1)^2=0$, so they are **tangent at $x=1$**, meeting at $(1,3)$.\\newline\\newline$^{\\bullet}$ At $x=0$ the line gives $1$ and the parabola $2$, so the LINE is on top for $0\\le x \\le 1$ (tangent means they only just touch at $x=1$).$^{\\bullet}$ The $y$-axis closes the region at $x=0$.\\newline\\newline**Area:**$^{\\bullet}$ $\\displaystyle A = \\int_0^1 \\left[(2x+1)-(x^2+2)\\right]dx = \\int_0^1\\left(-x^2+2x-1\\right)dx = \\left[-\\frac{x^3}{3}+x^2-x\\right]_0^1 = -\\frac13+1-1 = -\\frac13$.\\newline\\newline**Answer:** area $= \\frac13$ square units (the negative integral confirms the curves were named the wrong way round, so the true area is $\\frac13$). **Note:** tangency gives a single intersection, so only one integral is needed — but the sign check is what catches the reversal."
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to Substitution and By Parts\n\nThis canonical is the **short-form doorway** to the two workhorse integration methods: substitution (the chain rule reversed) and integration by parts (the product rule reversed). The parent canonical carries the full treatment; this companion mirrors the methods, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Substitution:** ∫f(g(x))g′(x)dx = ∫f(u)du with u = g(x) — the chain rule read backwards; du = g′(x)dx.\n- **By parts:** ∫u dv = uv − ∫v du — the product rule integrated; choose u by the **LIATE** priority (Log, Inverse trig, Algebraic, Trig, Exponential).\n- **Method triggers:** a composite with its inner derivative visible ⟹ substitute; a product of unlike types with no inner derivative ⟹ parts.\n- **Definite versions:** substitution changes the limits; parts inherits the boundary term uv|ₐᵇ.",
+      "## 3. Deep Conceptual — Substitution Is a Change of Variables, Not a Trick\n\n- Substitution re-describes the same integral in variables where the anti-derivative is visible: the composite f(g(x)) becomes the plain f(u), and the Jacobian factor g′(x)dx becomes du. The chain rule's structure (outer′ × inner′) is exactly what makes the rewrite legal.\n- **Spotting u:** the inner function of the composite — and its derivative must appear (up to constant) in the integrand. When it does not, algebra first (complete the square, split the fraction) manufactures the match.\n- **Definite discipline:** change the limits with the substitution — never substitute back; the transformed integral in u with u-limits is complete and shorter.",
+      "## 4. Deep Conceptual — By Parts Trades One Integral for Another\n\n- ∫u dv = uv − ∫v du is a **bargain**: surrender the original integral, accept uv plus a new one. The choice of u makes the bargain good — LIATE picks the factor that *simplifies* when differentiated (logs and inverse trig vanish into algebra), leaving a new integral easier than the old.\n- **Cyclic parts:** ∫eˣsin x dx returns to itself after two applications — the equation is then solved algebraically (I = expression, solve for I). The method's self-reference is a feature: some integrals close only through their own reflection.\n- **Parts proves reduction formulas:** ∫xⁿeˣdx = xⁿeˣ − n∫xⁿ⁻¹eˣdx — each application peels one power, the same ladder logic as reduction in trigonometry.",
+      "## 5. Worked Example Types\n\n- **Type A — linear substitution:** ∫(ax + b)ⁿ — u = ax + b, the Jacobian 1/a.\n- **Type B — inner derivative visible:** ∫2x·e^{x²}dx — u = x², du = 2x dx.\n- **Type C — LIATE parts:** ∫x·eˣdx, ∫ln x dx, ∫x ln x dx.\n- **Type D — cyclic parts:** ∫eˣsin x dx solved as an equation.",
+      "## 6. Common Confusions\n\n**\"Substitute anything\":** u must be the composite's inner function with its derivative present. **\"Parts is for all products\":** only when substitution fails — ∫2x·e^{x²}dx is a substitution problem wearing a product's clothes."
+    ],
+    "keyPoints": [
+      "Substitution = chain rule reversed: u = inner function, du = g'dx, the Jacobian is the price. Spot u as the composite's inner with its derivative visible (up to constant). Definite version: change the limits, never substitute back. By parts = product rule reversed: integral u dv = uv - integral v du; LIATE picks u (Log, Inverse trig, Algebraic, Trig, Exponential). Cyclic parts solve as equations. Parts trades one integral for an easier one."
+    ],
+    "importantConcepts": [
+      "The two methods are the chain rule and the product rule read backwards - nothing new, only reversed."
+    ],
+    "examples": [
+      "***The cyclic close*** - I = integral e^x sin x dx returns after two parts passes; solve for I algebraically - some integrals close through their own reflection."
+    ],
+    "universalFacts": [
+      "LIATE ranks factors by how much they simplify under differentiation - logs vanish first."
+    ],
+    "importantStatements": [
+      "A product whose inner derivative is visible is a substitution problem, not a parts problem."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Try substitution before parts - the cheaper method wins."
+    ],
+    "examNotes": [
+      "In definite substitution, write the new limits explicitly - the u-integral must be self-contained."
+    ],
+    "formulas": [
+      "- ∫f(g(x))g′(x)dx = ∫f(u)du, u = g(x)\n- ∫u dv = uv − ∫v du"
+    ],
+    "practice": [
+      "Evaluate ∫(3x + 2)⁴dx.",
+      "Evaluate ∫x·e^{3x}dx.",
+      "Evaluate ∫ln x dx."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Evaluate ∫(3x + 2)⁴dx.** — **Substitution:** u = 3x + 2 ⟹ du = 3dx ⟹ dx = du/3. **Transform:** ∫u⁴·(du/3) = (1/3)·u⁵/5 = u⁵/15. **Back-substitute:** **(3x + 2)⁵/15 + C**. **Verification:** d/dx[(3x+2)⁵/15] = 5(3x+2)⁴·3/15 = (3x+2)⁴ ✓ — the chain rule's 3 cancelled the Jacobian's 3, as it must. **Deep point:** the linear substitution is the pattern's simplest face — the inner derivative (3) appears as the Jacobian and is repaid exactly by the chain rule on verification; every substitution is this transaction.",
+      "**NEB-style (6m): Evaluate ∫x·e^{3x}dx.** — **Method triage:** the product x·e^{3x} has no visible inner derivative of a composite (e^{3x}'s inner 3 is constant) ⟹ **parts**. **LIATE:** u = x (algebraic), dv = e^{3x}dx ⟹ v = e^{3x}/3, du = dx. **Parts:** ∫x e^{3x}dx = x·e^{3x}/3 − ∫(e^{3x}/3)dx = **x·e^{3x}/3 − e^{3x}/9 + C** = e^{3x}(3x − 1)/9 + C. **Verification:** d/dx[e^{3x}(3x−1)/9] = e^{3x}·3(3x−1)/9 + e^{3x}·3/9 = e^{3x}[(3x−1) + 1]/3 = x e^{3x} ✓. **Deep point:** LIATE's choice made the new integral (∫e^{3x}dx/3) trivially easy — the bargain logic: differentiate the factor that simplifies, integrate the one that does not.",
+      "**NEB-style (6m): Evaluate ∫ln x dx for x > 0.** — **The surprise:** ln x has no standard entry — but parts with **u = ln x** (LIATE: log first), dv = dx ⟹ v = x, du = dx/x. **Parts:** ∫ln x dx = x·ln x − ∫x·(dx/x) = x ln x − ∫dx = **x ln x − x + C**. **Verification:** d/dx[x ln x − x] = ln x + 1 − 1 = ln x ✓. **Deep point:** the trick is seeing 1·dx as dv — every \"no table entry\" integral of a single factor is a parts problem with dv = dx; the log's simplification under differentiation (to 1/x) is what makes the bargain profitable.",
+      "**NEB-style (6m): Evaluate ∫eˣ·sin x dx using cyclic parts, and verify.** — **Parts pass 1:** u = sin x, dv = eˣdx ⟹ I = eˣ sin x − ∫eˣ cos x dx. **Parts pass 2 (on the new integral):** u = cos x, dv = eˣdx ⟹ ∫eˣcos x dx = eˣcos x + ∫eˣ sin x dx = eˣcos x + I. **Substitute back:** I = eˣsin x − eˣcos x − I ⟹ **2I = eˣ(sin x − cos x)** ⟹ **I = eˣ(sin x − cos x)/2 + C**. **Verification:** d/dx[eˣ(sin−cos)/2] = eˣ(sin−cos)/2 + eˣ(cos+sin)/2 = eˣ sin x ✓. **Deep point:** the second pass returned the original integral with a sign — the self-reference became a linear equation solved for I; the ±1/2 factor that emerges is the signature of every cyclic pair (eˣ with sin or cos), and forgetting it is the classic incomplete answer."
+    ]
+  }
 }

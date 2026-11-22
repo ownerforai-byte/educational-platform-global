@@ -5,59 +5,59 @@
   "topicSlug": "area-between-two-curves",
   "relevance": 100,
   "notes": [
-    "**The rule in one line:** find the intersection points, then integrate (TOP function − BOTTOM function) over the interval between them. The intersections bound the region, and the integrand's sign encodes which curve is on top.",
-    "**Intersections come from solving equalities, not from the graph.** For $y=x^2$ and $y=4x^2$ the intersections are where $x^2=4x^2$, giving $x=0$ only, which is why the two parabolas touch at the origin and enclose no bounded region — a quick sanity check that the setup is wrong.",
-    "**A worked case, $y^2=4x$ and $x^2=4y$:** solving gives $(0,0)$ and $(4,4)$. Between them $y=\\frac{x^2}{4}$ is the lower boundary and $y=2\\sqrt{x}$ the upper, so the area is $\\int_0^4\\left(2\\sqrt{x}-\\frac{x^2}{4}\\right)dx = \\frac{32}{3}-\\frac{64}{12} = \\frac{32}{3}$ square units.",
-    "**When the top curve changes, split the integral.** Regions bounded by three or more curves require a piecewise integrand, and using a single function across the whole span gives a wrong answer that still looks plausible.",
-    "**The 'top minus bottom' sign is what guarantees a positive answer.** If an integral over a bounded region returns a negative number, the curves were named in the wrong order — reverse them rather than taking an absolute value at the end.",
-    "**Symmetry halves the work:** if the region is symmetric about the $y$-axis or a vertical line, integrate over half and double, then multiply by 2 again if it is symmetric about the $x$-axis as well."
+    "## 1. Topic Introduction — The Companion Doorway to Area Between Two Curves\n\nThis canonical is the **short-form doorway** to area between two curves: the top-minus-bottom integral, intersection finding, and the split protocol in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Basic formula:** area = ∫ₐᵇ[top − bottom]dx where top is the larger y on each strip — always nonnegative.\n- **Intersections:** solve f(x) = g(x) to find a and b (and any interior crossings that force splits).\n- **Split protocol:** if the curves cross inside [a, b], the top/bottom roles swap — partition at each crossing and sum the pieces.\n- **With respect to y:** for horizontally simple regions, area = ∫[right − left]dy — choose the axis that minimises splits.",
+    "## 3. Deep Conceptual — Top Minus Bottom Is |Difference| Made Structured\n\n- The area between curves is ∫|f − g|dx in principle; the **top-minus-bottom form is that absolute value resolved by knowledge of which curve is on top** — the intersection analysis converts |·| into an explicit order. Finding intersections is not bookkeeping; it is the absolute value's disassembly.\n- **Interior crossings swap roles:** between two crossings the sandwich may flip — the strip picture (vertical slices, who is on top?) is the reliable test on each subinterval, and one test point per strip settles it.\n- **Symmetric setups:** equal curves mirrored about an axis (y² = x vs x = 4-style pairs) often yield double-the-half regions — compute one symmetric half and double, provided the symmetry is verified, not assumed.",
+    "## 4. Deep Conceptual — Choosing the Slicing Axis\n\n- **Vertical slices (dx)** suit curves given as y = f(x); **horizontal slices (dy)** suit curves given as x = g(y) or regions bounded left-right by functions of y. The choice that avoids splitting is the cheaper computation.\n- **Parabola-and-line economy:** for y² = 4x and x = 1-style regions, integrating in dy uses one integral; in dx it needs two (the region's left boundary changes formula at the vertex). The slicing axis is a computational decision, made by counting the required splits.\n- **Sanity checks:** the answer must be positive; a rough sketch bounds it (compare with an enclosing rectangle); a known special case (line under line = triangle) validates the setup.",
+    "## 5. Worked Example Types\n\n- **Type A — no interior crossing:** one integral, top minus bottom.\n- **Type B — interior crossing:** split at the crossing, two integrals.\n- **Type C — dy slicing:** horizontal strips for x = g(y) boundaries.\n- **Type D — symmetric doubling:** verify symmetry, compute half, double.",
+    "## 6. Common Confusions\n\n**\"Top minus bottom needs absolute values\":** once the order is known per strip, plain subtraction is correct — the |·| was resolved by the analysis. **\"Integrate in dx always\":** count the splits; dy may halve the work."
   ],
   "confusion": [
     "Integrating one curve and ignoring the other instead of taking the difference.",
     "Using the same expression over the whole interval when the top curve changes partway.",
     "Failing to find the intersection points, which is what actually bounds the region."
   ],
-  "practice": [],
+  "practice": [
+    "Find the area between y = x² and y = x.",
+    "Find the area between y = 4 − x² and y = x + 2.",
+    "Find the area between x = y² and x = 4."
+  ],
   "universalFacts": [
-    "The area of a circular segment cut by a chord is exactly this integral, and the same computation gives the circular-segment formula in terms of the half-angle.",
-    "Hydrostatic pressure force on a curved surface is an area integral of pressure over depth, where the pressure varies with depth — an area computation with a non-constant integrand."
+    "The slicing axis is a computational decision: count the splits each choice demands."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The swap*** - two curves crossing mid-interval: the strip test (who is on top at a sample point?) settles each subinterval's order."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Find the area of the region bounded by y = x² and y = x.** — **Intersections:** x² = x ⟹ x = 0, 1 ⟹ limits [0, 1]. **Order test:** at x = 1/2: line 1/2 > parabola 1/4 ⟹ **line on top**. **Evaluate:** ∫₀¹(x − x²)dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = **1/6**. **Sanity:** the region sits inside the unit square (area 1) and is a slender sliver — 1/6 is plausible. **Deep point:** the order test at one interior point settles the whole strip (the order cannot change without a crossing, and there is none inside [0, 1]) — one sample point is a proof, not a guess.",
+    "**NEB-style (6m): Find the area between y = 4 − x² and y = x + 2.** — **Intersections:** 4 − x² = x + 2 ⟹ x² + x − 2 = 0 ⟹ (x + 2)(x − 1) = 0 ⟹ x = −2, 1. **Order test:** at x = 0: parabola 4 > line 2 ⟹ parabola on top throughout (no interior crossing). **Evaluate:** ∫₋₂¹[(4 − x²) − (x + 2)]dx = ∫₋₂¹(2 − x − x²)dx = [2x − x²/2 − x³/3]₋₂¹ = (2 − 1/2 − 1/3) − (−4 − 2 + 8/3) = (7/6) − (−10/3) = 7/6 + 20/6 = **27/6 = 9/2**. **Deep point:** the intersection solutions came from a quadratic whose factorisation was checked by expansion — the limits are the roots, and the order test confirmed a single-strip region; two integrals would have been wrong here, one was right.",
+    "**NEB-style (6m): Find the area of the region bounded by x = y² and x = 4.** — **Set-up choice:** the boundaries are x = y² (left) and x = 4 (right) — functions of y ⟹ **horizontal slices (dy)**. **Intersections:** y² = 4 ⟹ y = ±2 ⟹ limits y ∈ [−2, 2]. **Order:** at y = 1: right boundary 4 > left boundary y² = 1 ✓. **Evaluate:** ∫₋₂²(4 − y²)dy = 2∫₀²(4 − y²)dy (even) = 2[4y − y³/3]₀² = 2(8 − 8/3) = 2·(16/3) = **32/3**. **Cost comparison:** in dx this region needs two integrals (left boundary is √x for y > 0 and −√x for y < 0); in dy, one — the axis choice halved the work. **Deep point:** the slicing axis is decided by the boundary functions' form, and the symmetry doubling (even integrand in y) stacked a second saving; two cheap decisions replaced two hard integrals.",
+    "**NEB-style (6m): Find the area enclosed between y² = 2x and y = x − 4 — carefully identifying all boundary pieces.** — **Intersections:** substitute x = y + 4 into y² = 2x: y² = 2y + 8 ⟹ y² − 2y − 8 = 0 ⟹ (y − 4)(y + 2) = 0 ⟹ y = 4, −2 ⟹ points (8, 4) and (2, −2). **Slicing choice:** the parabola is naturally x = y²/2 (left boundary), the line x = y + 4 (right boundary) ⟹ **dy slices**, one integral. **Order test:** at y = 0: line x = 4 > parabola x = 0 ✓. **Evaluate:** ∫₋₂⁴[(y + 4) − y²/2]dy = [y²/2 + 4y − y³/6]₋₂⁴ = (8 + 16 − 64/6) − (2 − 8 + 8/6) = (24 − 32/3) − (−6 + 4/3) = 40/3 + 14/3 = **54/3 = 18**. **Deep point:** the classic trap is integrating in dx and missing that the region's left boundary changes at the vertex — the dy choice kept one formula per boundary; when curves are given as x = g(y), the horizontal slice is the honest native habitat."
+  ],
   "formulas": [
-    "$A=\\int_a^b\\big(f_{top}(x)-f_{bottom}(x)\\big)dx$",
-    "Intersections: solve $f_{top}(x)=f_{bottom}(x)$",
-    "Piecewise: split where the two functions exchange order",
-    "Symmetry: $A=2\\int_{half}$ about a vertical axis, $A=4\\int_{quarter}$ about both"
+    "- A = ∫ₐᵇ[f_top(x) − f_bottom(x)]dx\n- A = ∫[g_right(y) − g_left(y)]dy (horizontal slices)"
   ],
   "keyPoints": [
-    "Intersection points bound the region; the graph does not.",
-    "Top function minus bottom function, so the answer is automatically positive.",
-    "A negative answer means the curves were named in the wrong order."
+    "Area between curves = integral of (top - bottom) dx, nonnegative; intersections from f = g supply the limits and any splits. Interior crossings swap top/bottom - partition and test one point per strip. The formula is |f - g| with the absolute value resolved by the order analysis. Choose the slicing axis that minimises splits (dy for x = g(y) boundaries). Verify symmetry before doubling a half."
   ],
-  "summary": "Area between two curves is a single idea: find where the curves intersect, identify which is on top over each sub-interval, and integrate the difference. The intersections are what bound the region, and where the ordering changes the integral must be split. The top-minus-bottom convention guarantees a positive result, so a negative answer signals the curves were named backwards rather than a need to take an absolute value.",
+  "summary": "Area between two curves is |f − g| made structured: the intersections supply the limits and split points, the strip test fixes who is on top, and top-minus-bottom integrates the resolved order. Interior crossings swap the roles and demand partitioning; the slicing axis is chosen by counting splits; and verified symmetry doubles a half. Solve f = g first, sketch to bound the answer, and let a negative result send you back to the order test.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Integrating one curve and ignoring the other instead of taking the difference.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: The intersection points of the curves bound the region.",
-    "Statement 2: The integrand is the top function minus the bottom function.",
-    "Statement 3: The interval must be split wherever the curves exchange order.",
-    "Statement 4: A negative computed area indicates the curves were named in reverse.",
-    "Statement 5: Symmetry about a vertical axis halves the integration range."
+    "A sketch is not decoration - it bounds the answer and exposes the crossings."
   ],
   "importantNotes": [
-    "Topic anchor: Symmetry halves the work  if the region is symmetric about the $y$-axis or a vertical line, integrate over half and double, then multiply by 2 again if it is symmetric about the $x$-axis as well."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Solve for the intersections algebraically before doing any integration — if there are fewer than two, there is no bounded region.",
-    "Sketch the two curves; a wrong 'top' function is visible instantly and costs no algebra."
+    "Solve f = g first; the intersection x-values are the integral's limits and split points."
   ],
   "examNotes": [
-    "Area between curves with two or three intersection points is a standard 4–5 mark question."
+    "Negative answers mean the order was wrong on some strip - re-test with a sample point."
   ],
   "mcs": [
     {
@@ -95,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "Intersection points bound the region; the graph does not.",
-    "Top function minus bottom function, so the answer is automatically positive.",
-    "A negative answer means the curves were named in the wrong order."
+    "Top-minus-bottom is |f - g| disassembled: the intersection analysis resolves the absolute value into an explicit order."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -170,6 +168,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to Area Between Two Curves\n\nThis canonical is the **short-form doorway** to area between two curves: the top-minus-bottom integral, intersection finding, and the split protocol in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Basic formula:** area = ∫ₐᵇ[top − bottom]dx where top is the larger y on each strip — always nonnegative.\n- **Intersections:** solve f(x) = g(x) to find a and b (and any interior crossings that force splits).\n- **Split protocol:** if the curves cross inside [a, b], the top/bottom roles swap — partition at each crossing and sum the pieces.\n- **With respect to y:** for horizontally simple regions, area = ∫[right − left]dy — choose the axis that minimises splits.",
+      "## 3. Deep Conceptual — Top Minus Bottom Is |Difference| Made Structured\n\n- The area between curves is ∫|f − g|dx in principle; the **top-minus-bottom form is that absolute value resolved by knowledge of which curve is on top** — the intersection analysis converts |·| into an explicit order. Finding intersections is not bookkeeping; it is the absolute value's disassembly.\n- **Interior crossings swap roles:** between two crossings the sandwich may flip — the strip picture (vertical slices, who is on top?) is the reliable test on each subinterval, and one test point per strip settles it.\n- **Symmetric setups:** equal curves mirrored about an axis (y² = x vs x = 4-style pairs) often yield double-the-half regions — compute one symmetric half and double, provided the symmetry is verified, not assumed.",
+      "## 4. Deep Conceptual — Choosing the Slicing Axis\n\n- **Vertical slices (dx)** suit curves given as y = f(x); **horizontal slices (dy)** suit curves given as x = g(y) or regions bounded left-right by functions of y. The choice that avoids splitting is the cheaper computation.\n- **Parabola-and-line economy:** for y² = 4x and x = 1-style regions, integrating in dy uses one integral; in dx it needs two (the region's left boundary changes formula at the vertex). The slicing axis is a computational decision, made by counting the required splits.\n- **Sanity checks:** the answer must be positive; a rough sketch bounds it (compare with an enclosing rectangle); a known special case (line under line = triangle) validates the setup.",
+      "## 5. Worked Example Types\n\n- **Type A — no interior crossing:** one integral, top minus bottom.\n- **Type B — interior crossing:** split at the crossing, two integrals.\n- **Type C — dy slicing:** horizontal strips for x = g(y) boundaries.\n- **Type D — symmetric doubling:** verify symmetry, compute half, double.",
+      "## 6. Common Confusions\n\n**\"Top minus bottom needs absolute values\":** once the order is known per strip, plain subtraction is correct — the |·| was resolved by the analysis. **\"Integrate in dx always\":** count the splits; dy may halve the work."
+    ],
+    "keyPoints": [
+      "Area between curves = integral of (top - bottom) dx, nonnegative; intersections from f = g supply the limits and any splits. Interior crossings swap top/bottom - partition and test one point per strip. The formula is |f - g| with the absolute value resolved by the order analysis. Choose the slicing axis that minimises splits (dy for x = g(y) boundaries). Verify symmetry before doubling a half."
+    ],
+    "importantConcepts": [
+      "Top-minus-bottom is |f - g| disassembled: the intersection analysis resolves the absolute value into an explicit order."
+    ],
+    "examples": [
+      "***The swap*** - two curves crossing mid-interval: the strip test (who is on top at a sample point?) settles each subinterval's order."
+    ],
+    "universalFacts": [
+      "The slicing axis is a computational decision: count the splits each choice demands."
+    ],
+    "importantStatements": [
+      "A sketch is not decoration - it bounds the answer and exposes the crossings."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Solve f = g first; the intersection x-values are the integral's limits and split points."
+    ],
+    "examNotes": [
+      "Negative answers mean the order was wrong on some strip - re-test with a sample point."
+    ],
+    "formulas": [
+      "- A = ∫ₐᵇ[f_top(x) − f_bottom(x)]dx\n- A = ∫[g_right(y) − g_left(y)]dy (horizontal slices)"
+    ],
+    "practice": [
+      "Find the area between y = x² and y = x.",
+      "Find the area between y = 4 − x² and y = x + 2.",
+      "Find the area between x = y² and x = 4."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Find the area of the region bounded by y = x² and y = x.** — **Intersections:** x² = x ⟹ x = 0, 1 ⟹ limits [0, 1]. **Order test:** at x = 1/2: line 1/2 > parabola 1/4 ⟹ **line on top**. **Evaluate:** ∫₀¹(x − x²)dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = **1/6**. **Sanity:** the region sits inside the unit square (area 1) and is a slender sliver — 1/6 is plausible. **Deep point:** the order test at one interior point settles the whole strip (the order cannot change without a crossing, and there is none inside [0, 1]) — one sample point is a proof, not a guess.",
+      "**NEB-style (6m): Find the area between y = 4 − x² and y = x + 2.** — **Intersections:** 4 − x² = x + 2 ⟹ x² + x − 2 = 0 ⟹ (x + 2)(x − 1) = 0 ⟹ x = −2, 1. **Order test:** at x = 0: parabola 4 > line 2 ⟹ parabola on top throughout (no interior crossing). **Evaluate:** ∫₋₂¹[(4 − x²) − (x + 2)]dx = ∫₋₂¹(2 − x − x²)dx = [2x − x²/2 − x³/3]₋₂¹ = (2 − 1/2 − 1/3) − (−4 − 2 + 8/3) = (7/6) − (−10/3) = 7/6 + 20/6 = **27/6 = 9/2**. **Deep point:** the intersection solutions came from a quadratic whose factorisation was checked by expansion — the limits are the roots, and the order test confirmed a single-strip region; two integrals would have been wrong here, one was right.",
+      "**NEB-style (6m): Find the area of the region bounded by x = y² and x = 4.** — **Set-up choice:** the boundaries are x = y² (left) and x = 4 (right) — functions of y ⟹ **horizontal slices (dy)**. **Intersections:** y² = 4 ⟹ y = ±2 ⟹ limits y ∈ [−2, 2]. **Order:** at y = 1: right boundary 4 > left boundary y² = 1 ✓. **Evaluate:** ∫₋₂²(4 − y²)dy = 2∫₀²(4 − y²)dy (even) = 2[4y − y³/3]₀² = 2(8 − 8/3) = 2·(16/3) = **32/3**. **Cost comparison:** in dx this region needs two integrals (left boundary is √x for y > 0 and −√x for y < 0); in dy, one — the axis choice halved the work. **Deep point:** the slicing axis is decided by the boundary functions' form, and the symmetry doubling (even integrand in y) stacked a second saving; two cheap decisions replaced two hard integrals.",
+      "**NEB-style (6m): Find the area enclosed between y² = 2x and y = x − 4 — carefully identifying all boundary pieces.** — **Intersections:** substitute x = y + 4 into y² = 2x: y² = 2y + 8 ⟹ y² − 2y − 8 = 0 ⟹ (y − 4)(y + 2) = 0 ⟹ y = 4, −2 ⟹ points (8, 4) and (2, −2). **Slicing choice:** the parabola is naturally x = y²/2 (left boundary), the line x = y + 4 (right boundary) ⟹ **dy slices**, one integral. **Order test:** at y = 0: line x = 4 > parabola x = 0 ✓. **Evaluate:** ∫₋₂⁴[(y + 4) − y²/2]dy = [y²/2 + 4y − y³/6]₋₂⁴ = (8 + 16 − 64/6) − (2 − 8 + 8/6) = (24 − 32/3) − (−6 + 4/3) = 40/3 + 14/3 = **54/3 = 18**. **Deep point:** the classic trap is integrating in dx and missing that the region's left boundary changes at the vertex — the dy choice kept one formula per boundary; when curves are given as x = g(y), the horizontal slice is the honest native habitat."
     ]
   }
 }

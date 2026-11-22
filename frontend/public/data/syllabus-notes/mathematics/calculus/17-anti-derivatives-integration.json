@@ -5,54 +5,59 @@
   "topicSlug": "anti-derivatives-integration",
   "relevance": 100,
   "notes": [
-    "**An anti-derivative reverses differentiation:** if $F'(x)=f(x)$ then $F$ is an antiderivative of $f$. Every antiderivative of $f$ has the form $F+C$, because differentiating a constant gives zero — so $C$ is arbitrary and this is not a defect of the method but the reason the constant of integration must always appear.",
-    "**Integration reads the rule table backwards:** from $\\frac{d}{dx}x^n=nx^{n-1}$ we get $\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ for $n\\ne-1$. The case $n=-1$ is the exception and gives $\\ln|x|+C$, which is why $\\frac1x$ behaves differently from every other power.",
-    "**Reversing the trigonometric derivatives:** $\\int\\sin x\\,dx=-\\cos x+C$ and $\\int\\cos x\\,dx=\\sin x+C$, with the minus sign on the first coming from the negative derivative of cosine. From $\\int\\sec x\\tan x\\,dx=\\sec x+C$ and $\\int\\csc x\\cot x\\,dx=-\\csc x+C$ come the standard $\\sec$ and $\\csc$ integrals.",
-    "**The integral is a signed area, not a sum of positive pieces:** $\\int$ accumulates over an INTERVAL with orientation, so a function below the axis contributes negatively. This is why $\\int_{-2}^{2}x\\,dx=0$ — the two halves cancel exactly rather than summing to a positive area.",
-    "**The sum rule extends to any finite number of terms,** and constants of integration combine into a single $+C$ at the end. Writing a separate $C$ on every line is harmless but unnecessary.",
-    "**Some functions have no elementary antiderivative:** $\\int e^{-x^2}\\,dx$ has no expression in elementary functions and is written as $\\frac{\\sqrt\\pi}{2}\\operatorname{erf}(x)$. A question expecting an elementary answer always uses an integrable function, so recognising the un-integrable case prevents wasted effort."
+    "## 1. Topic Introduction — The Companion Doorway to Anti-Derivatives and Integration\n\nThis canonical is the **short-form doorway** to anti-derivatives and basic integration: the reverse of differentiation, the standard integral table, and the constant of integration in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Definition:** F is an anti-derivative of f on an interval if F′ = f there; ∫f(x)dx = F(x) + C.\n- **Constant of integration:** all anti-derivatives differ by a constant (MVT corollary: equal derivatives ⟹ equal up to constant) — the indefinite integral is a *family* of parallel curves.\n- **Linearity:** ∫(af + bg) = a∫f + b∫g — integration inherits differentiation's linearity.\n- **Standard table (mirror of the derivative table):** ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C; ∫eˣdx = eˣ + C; ∫sin x dx = −cos x + C; ∫cos x dx = sin x + C; ∫sec²x dx = tan x + C; ∫dx/(1+x²) = tan⁻¹x + C; ∫dx/√(1−x²) = sin⁻¹x + C.",
+    "## 3. Deep Conceptual — Integration Is Differentiation Read Backwards\n\n- Every integral table entry is a derivative table entry reversed: ∫cos = sin because (sin)′ = cos. The table is not new mathematics but the old table with the arrows flipped — and the + C is the price of reversing (derivatives erase constants, so anti-differentiation must restore a whole family).\n- **The verification habit:** every integral is checked by differentiating the answer — the Fundamental Theorem's daily use before it is formally met. d/dx[answer] = integrand is the proof; no integration answer is complete without it.\n- **The n = −1 gap:** the power rule fails at n = −1 because x⁰ = 1's derivative is 0 — the logarithm fills the gap, and the |x| in ln|x| is the domain repair letting one formula serve both signs.",
+    "## 4. Deep Conceptual — The Family Picture and Initial Conditions\n\n- ∫f dx = F + C draws **parallel curves**: vertical translates sharing one slope field. An initial condition (F(0) = 3) selects one member — this is exactly how velocity + initial position determines position, the first differential equation every student solves.\n- **Differential equations in embryo:** given f′ = 2x and f(1) = 4, integrate to f = x² + C, then C = 3 — one constant, one condition. Each further derivative condition would pin further constants, the pattern that generalises to higher-order equations.",
+    "## 5. Worked Example Types\n\n- **Type A — table direct:** single entries with + C written every time.\n- **Type B — linearity splits:** polynomials and sums term by term.\n- **Type C — initial conditions:** integrate, then pin C from given data.\n- **Type D — verification by differentiation:** prove the answer, don't assert it.",
+    "## 6. Common Confusions\n\n**\"Forgetting + C\":** the family is the answer; one curve is not. **\"∫x⁻¹dx = x⁰/0\":** the gap is real — the logarithm is a different species, not a special case."
   ],
   "confusion": [
     "Omitting the constant of integration on a definite integral, where it must be absent because the bounds cancel it.",
     "Forgetting that $\\int x^{-1}\\,dx = \\ln|x|$, which breaks the power rule's pattern.",
     "Sign error when reversing $\\frac{d}{dx}\\cos x=-\\sin x$."
   ],
-  "practice": [],
+  "practice": [
+    "Evaluate ∫(3x² − 4x + 5)dx.",
+    "Evaluate ∫(2eˣ + 1/x)dx for x > 0.",
+    "Find f given f′(x) = 6x² − 2 and f(1) = 3."
+  ],
   "universalFacts": [
-    "Accumulated radiation dose in radiotherapy is a definite integral of a rate, and the same structure gives total charge from current.",
-    "The normalisation of the Gaussian error function exists precisely because $\\int e^{-x^2}dx$ has no elementary closed form — the need to evaluate it anyway is what motivated the special function."
+    "The |x| in ln|x| is the domain repair that lets one antiderivative serve both half-lines."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The pinning*** - f' = 2x, f(1) = 4: integrate to x^2 + C, then C = 3 - one condition selects one curve from the parallel family."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Evaluate ∫(3x² − 4x + 5)dx and verify by differentiation.** — **Linearity + power rule (n + 1 over n + 1):** ∫3x²dx = x³; ∫4x dx = 2x²; ∫5dx = 5x ⟹ **x³ − 2x² + 5x + C**. **Verification:** d/dx[x³ − 2x² + 5x + C] = 3x² − 4x + 5 ✓ — the integrand returns exactly. **Deep point:** the power rule reversed divides by the new exponent because differentiation multiplied by it; the verification line is the Fundamental Theorem in daily clothes — every indefinite integral is a claimed anti-derivative until differentiated.",
+    "**NEB-style (5m): Evaluate ∫(2eˣ + 1/x)dx for x > 0.** — **Table entries:** ∫2eˣdx = 2eˣ (the exponential's self-replication); ∫dx/x = ln x on x > 0 (the |x| unnecessary on a positive domain) ⟹ **2eˣ + ln x + C**. **Verification:** 2eˣ + 1/x ✓. **Deep point:** the domain statement travels with the answer — on x < 0 the same integral reads 2eˣ + ln|x|; the absolute value is not pedantry but the record of which half-line the antiderivative lives on.",
+    "**NEB-style (6m): Find f(x) given f′(x) = 6x² − 2 and f(1) = 3.** — **Integrate:** f(x) = ∫(6x² − 2)dx = 2x³ − 2x + C — the parallel family. **Pin C:** f(1) = 2 − 2 + C = 3 ⟹ **C = 3** ⟹ f(x) = **2x³ − 2x + 3**. **Verification:** f′ = 6x² − 2 ✓ and f(1) = 2 − 2 + 3 = 3 ✓ — both conditions check. **Deep point:** the two-step (integrate, then pin) is the first boundary-value problem: the derivative condition narrowed the answer to a family, the value condition selected the member; every initial-value problem in later mathematics is this pattern with more constants.",
+    "**NEB-style (6m): A particle moves with velocity v(t) = 3t² − 6t (m/s) and s(0) = 2 m. Find s(t) and the times when the particle is at rest.** — **Integrate:** s(t) = ∫(3t² − 6t)dt = t³ − 3t² + C; s(0) = 2 ⟹ **C = 2** ⟹ s(t) = t³ − 3t² + 2. **At rest:** v = 3t² − 6t = 3t(t − 2) = 0 ⟹ **t = 0 and t = 2 s**. **Verification:** s′ = 3t² − 6t = v ✓. **Deep point:** the physical reading — velocity is the derivative of position, so position is the anti-derivative of velocity with the initial position as the pinning condition; the rest times are the velocity's zeros, the same critical-point machinery from monotonicity now narrating a journey."
+  ],
   "formulas": [
-    "Power: $\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ for $n\\ne-1$",
-    "Logarithmic: $\\int\\frac1x\\,dx=\\ln|x|+C$",
-    "Trig: $\\int\\sin x\\,dx=-\\cos x+C$, $\\int\\cos x\\,dx=\\sin x+C$",
-    "Exponential: $\\int e^x\\,dx=e^x+C$",
-    "Sum rule: $\\int(u\\pm v)\\,dx=\\int u\\,dx\\pm\\int v\\,dx$"
+    "- ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C\n- ∫dx/(1+x²) = tan⁻¹x + C; ∫dx/√(1−x²) = sin⁻¹x + C"
   ],
   "keyPoints": [
-    "Every antiderivative is $F+C$; the constant of integration is mandatory.",
-    "$n=-1$ is the exception to the power rule and gives $\\ln|x|$.",
-    "Integration is a signed accumulation, so parts below the axis subtract."
+    "Anti-derivative: F' = f; the indefinite integral is a FAMILY F + C (equal derivatives differ by a constant - MVT corollary). Linearity carries over. Table = derivative table reversed: x^(n+1)/(n+1) (n != -1), ln|x|, e^x, -cos, sin, sec^2, tan^-1, sin^-1. The n = -1 gap is filled by the logarithm. Verify every integral by differentiating the answer. Initial conditions pin C - the first differential equations."
   ],
-  "summary": "Integration is differentiation run backwards, so the rule table is read in reverse and $\\frac{x^{n+1}}{n+1}$ replaces $nx^{n-1}$. The exponent $n=-1$ is the one exception, giving a logarithm. Constants of integration must be carried on indefinite integrals and cancel from definite ones. Crucially the integral is a SIGNED accumulation over an interval, which is why an odd function integrates to zero over a symmetric interval.",
+  "summary": "Anti-differentiation is differentiation with the arrows flipped: the table is the derivative table reversed, the + C restores the family that differentiation erased, and linearity carries over intact. The n = −1 gap is the logarithm's home, initial conditions pin the family to a single curve, and every answer is verified by differentiating it back. Position from velocity is the pattern's physical face — the first differential equation, solved with one integration and one condition.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Omitting the constant of integration on a definite integral, where it must be absent because the bounds cancel it.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "No integral answer is complete until its derivative reproduces the integrand."
+  ],
   "importantNotes": [
-    "Topic anchor: Some functions have no elementary antiderivative  $ int e^{-x^2} ,dx$ has no expression in elementary functions and is written as $ frac{ sqrt pi}{2} operatorname{erf}(x)$."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Differentiate your answer to check it — the fastest possible verification of an indefinite integral.",
-    "Memorise $\\int\\frac{dx}{x}=\\ln|x|$ as the exception, so the power rule can be applied without hesitation everywhere else."
+    "Write + C on every indefinite integral - it is a mark, not a decoration."
   ],
   "examNotes": [
-    "Finding indefinite integrals of powers, trig and exponential functions is a guaranteed 3–4 mark question."
+    "Check answers by differentiation; the check line doubles as your error detector."
   ],
   "mcs": [
     {
@@ -90,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "Every antiderivative is $F+C$; the constant of integration is mandatory.",
-    "$n=-1$ is the exception to the power rule and gives $\\ln|x|$.",
-    "Integration is a signed accumulation, so parts below the axis subtract."
+    "Integration is differentiation with the arrows flipped; + C is the price of reversing."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -173,6 +176,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to Anti-Derivatives and Integration\n\nThis canonical is the **short-form doorway** to anti-derivatives and basic integration: the reverse of differentiation, the standard integral table, and the constant of integration in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Definition:** F is an anti-derivative of f on an interval if F′ = f there; ∫f(x)dx = F(x) + C.\n- **Constant of integration:** all anti-derivatives differ by a constant (MVT corollary: equal derivatives ⟹ equal up to constant) — the indefinite integral is a *family* of parallel curves.\n- **Linearity:** ∫(af + bg) = a∫f + b∫g — integration inherits differentiation's linearity.\n- **Standard table (mirror of the derivative table):** ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C; ∫eˣdx = eˣ + C; ∫sin x dx = −cos x + C; ∫cos x dx = sin x + C; ∫sec²x dx = tan x + C; ∫dx/(1+x²) = tan⁻¹x + C; ∫dx/√(1−x²) = sin⁻¹x + C.",
+      "## 3. Deep Conceptual — Integration Is Differentiation Read Backwards\n\n- Every integral table entry is a derivative table entry reversed: ∫cos = sin because (sin)′ = cos. The table is not new mathematics but the old table with the arrows flipped — and the + C is the price of reversing (derivatives erase constants, so anti-differentiation must restore a whole family).\n- **The verification habit:** every integral is checked by differentiating the answer — the Fundamental Theorem's daily use before it is formally met. d/dx[answer] = integrand is the proof; no integration answer is complete without it.\n- **The n = −1 gap:** the power rule fails at n = −1 because x⁰ = 1's derivative is 0 — the logarithm fills the gap, and the |x| in ln|x| is the domain repair letting one formula serve both signs.",
+      "## 4. Deep Conceptual — The Family Picture and Initial Conditions\n\n- ∫f dx = F + C draws **parallel curves**: vertical translates sharing one slope field. An initial condition (F(0) = 3) selects one member — this is exactly how velocity + initial position determines position, the first differential equation every student solves.\n- **Differential equations in embryo:** given f′ = 2x and f(1) = 4, integrate to f = x² + C, then C = 3 — one constant, one condition. Each further derivative condition would pin further constants, the pattern that generalises to higher-order equations.",
+      "## 5. Worked Example Types\n\n- **Type A — table direct:** single entries with + C written every time.\n- **Type B — linearity splits:** polynomials and sums term by term.\n- **Type C — initial conditions:** integrate, then pin C from given data.\n- **Type D — verification by differentiation:** prove the answer, don't assert it.",
+      "## 6. Common Confusions\n\n**\"Forgetting + C\":** the family is the answer; one curve is not. **\"∫x⁻¹dx = x⁰/0\":** the gap is real — the logarithm is a different species, not a special case."
+    ],
+    "keyPoints": [
+      "Anti-derivative: F' = f; the indefinite integral is a FAMILY F + C (equal derivatives differ by a constant - MVT corollary). Linearity carries over. Table = derivative table reversed: x^(n+1)/(n+1) (n != -1), ln|x|, e^x, -cos, sin, sec^2, tan^-1, sin^-1. The n = -1 gap is filled by the logarithm. Verify every integral by differentiating the answer. Initial conditions pin C - the first differential equations."
+    ],
+    "importantConcepts": [
+      "Integration is differentiation with the arrows flipped; + C is the price of reversing."
+    ],
+    "examples": [
+      "***The pinning*** - f' = 2x, f(1) = 4: integrate to x^2 + C, then C = 3 - one condition selects one curve from the parallel family."
+    ],
+    "universalFacts": [
+      "The |x| in ln|x| is the domain repair that lets one antiderivative serve both half-lines."
+    ],
+    "importantStatements": [
+      "No integral answer is complete until its derivative reproduces the integrand."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Write + C on every indefinite integral - it is a mark, not a decoration."
+    ],
+    "examNotes": [
+      "Check answers by differentiation; the check line doubles as your error detector."
+    ],
+    "formulas": [
+      "- ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C\n- ∫dx/(1+x²) = tan⁻¹x + C; ∫dx/√(1−x²) = sin⁻¹x + C"
+    ],
+    "practice": [
+      "Evaluate ∫(3x² − 4x + 5)dx.",
+      "Evaluate ∫(2eˣ + 1/x)dx for x > 0.",
+      "Find f given f′(x) = 6x² − 2 and f(1) = 3."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Evaluate ∫(3x² − 4x + 5)dx and verify by differentiation.** — **Linearity + power rule (n + 1 over n + 1):** ∫3x²dx = x³; ∫4x dx = 2x²; ∫5dx = 5x ⟹ **x³ − 2x² + 5x + C**. **Verification:** d/dx[x³ − 2x² + 5x + C] = 3x² − 4x + 5 ✓ — the integrand returns exactly. **Deep point:** the power rule reversed divides by the new exponent because differentiation multiplied by it; the verification line is the Fundamental Theorem in daily clothes — every indefinite integral is a claimed anti-derivative until differentiated.",
+      "**NEB-style (5m): Evaluate ∫(2eˣ + 1/x)dx for x > 0.** — **Table entries:** ∫2eˣdx = 2eˣ (the exponential's self-replication); ∫dx/x = ln x on x > 0 (the |x| unnecessary on a positive domain) ⟹ **2eˣ + ln x + C**. **Verification:** 2eˣ + 1/x ✓. **Deep point:** the domain statement travels with the answer — on x < 0 the same integral reads 2eˣ + ln|x|; the absolute value is not pedantry but the record of which half-line the antiderivative lives on.",
+      "**NEB-style (6m): Find f(x) given f′(x) = 6x² − 2 and f(1) = 3.** — **Integrate:** f(x) = ∫(6x² − 2)dx = 2x³ − 2x + C — the parallel family. **Pin C:** f(1) = 2 − 2 + C = 3 ⟹ **C = 3** ⟹ f(x) = **2x³ − 2x + 3**. **Verification:** f′ = 6x² − 2 ✓ and f(1) = 2 − 2 + 3 = 3 ✓ — both conditions check. **Deep point:** the two-step (integrate, then pin) is the first boundary-value problem: the derivative condition narrowed the answer to a family, the value condition selected the member; every initial-value problem in later mathematics is this pattern with more constants.",
+      "**NEB-style (6m): A particle moves with velocity v(t) = 3t² − 6t (m/s) and s(0) = 2 m. Find s(t) and the times when the particle is at rest.** — **Integrate:** s(t) = ∫(3t² − 6t)dt = t³ − 3t² + C; s(0) = 2 ⟹ **C = 2** ⟹ s(t) = t³ − 3t² + 2. **At rest:** v = 3t² − 6t = 3t(t − 2) = 0 ⟹ **t = 0 and t = 2 s**. **Verification:** s′ = 3t² − 6t = v ✓. **Deep point:** the physical reading — velocity is the derivative of position, so position is the anti-derivative of velocity with the initial position as the pinning condition; the rest times are the velocity's zeros, the same critical-point machinery from monotonicity now narrating a journey."
     ]
   }
 }

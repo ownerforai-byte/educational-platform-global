@@ -5,55 +5,59 @@
   "topicSlug": "limits5-3",
   "relevance": 100,
   "notes": [
-    "**Sum and difference:** if $\\lim f = L$ and $\\lim g = M$ then $\\lim(f\\pm g)=L\\pm M$. Limits commute with addition because they preserve the arithmetic structure of the reals.",
-    "**Product and quotient:** $\\lim(fg)=LM$ and, provided $M\\ne0$, $\\lim\\frac{f}{g}=\\frac{L}{M}$. The condition $M\\ne0$ is the whole reason $0/0$ is indeterminate — the product law guarantees $0$ while the quotient law is unavailable.",
-    "**Constant multiple and power:** $\\lim(cf)=cL$ and $\\lim f^n=L^n$. An even root additionally needs a non-negative limit, while an odd root does not, so sign information about $L$ decides whether $\\lim\\sqrt[n]{f}$ exists.",
-    "**Composition:** if $\\lim f=L$ and $g$ is continuous at $L$ then $\\lim g(f(x))=g(L)$. This licenses substituting into a continuous outer function, and it is why a discontinuous $g$ such as $\\tan$ at $\\pi/2$ breaks the rule.",
-    "**Squeeze (sandwich) theorem:** if $g(x)\\le f(x)\\le h(x)$ near $a$ and $\\lim g=\\lim h=L$ then $\\lim f=L$. This is the only reliable tool for a vanishing factor times an oscillating one, and it proves $\\lim_{x\\to0}x\\sin\\frac1x=0$ from $-|x|\\le x\\sin\\frac1x\\le|x|$.",
-    "**Why the laws survive discontinuity:** none of these need $f$ defined at $a$, only the limits to exist. That is exactly why a removable discontinuity does not spoil a limit, while a jump does — unequal one-sided limits mean the laws cannot be applied at all."
+    "## 1. Topic Introduction — Drill Gallery: Limits at Infinity\n\nThis canonical is the **third limits drill gallery**: behaviour at infinity — degree comparison, dominant-term division, the growth ladder, and horizontal asymptotes. It mirrors the infinity machinery of the parent canonicals; the drill's discipline is rung recognition.",
+    "## 2. Theorem Mirror — The Infinity Toolkit\n\n- **Degree comparison (rational):** top > bottom ⟹ ±∞; tie ⟹ leading-coefficient ratio; top < bottom ⟹ 0.\n- **Dominant division:** divide numerator and denominator by the fastest-growing term; everything slower dies like 1/xᵏ.\n- **Growth ladder:** ln x ≪ xᵖ ≪ aˣ ≪ xˣ — each rung dominates all below, coefficients irrelevant across rungs.\n- **Radicals at ±∞:** √(x² + k) ~ |x| — the absolute value splits the two directions; x → −∞ needs the sign flip.\n- **Horizontal asymptotes:** lim_{x→±∞} f = L ⟹ y = L is a horizontal asymptote (a destination, not a barrier).",
+    "## 3. Deep Conceptual — Rungs, Not Coefficients\n\n- At infinity, **family beats arithmetic**: an exponential with a tiny base beats a polynomial with a huge degree; a log with a huge argument loses to a humble x¹⁰⁰. Coefficients compete only *within* a rung (degree comparison, leading ratios); across rungs the verdict is fixed.\n- **Why the ladder is rigid:** exponentials compound multiplicatively, powers additively, logs by diminishing increments — the growth mechanisms are ordered, and no finite coefficients can reorder them. This is why eˣ/x¹⁰⁰ → ∞ *eventually*, even though x¹⁰⁰ leads for a long while: limits measure the destination, not the journey.\n- **The radical's absolute value is the trap:** √(x²) = |x|, so √(x² + 1) − x → 0 as x → +∞ but → 2 as x → −∞. Two-sided infinity questions always split by direction.",
+    "## 4. Deep Conceptual — Asymptotes as Readable Destinations\n\n- **Horizontal:** lim at ±∞ = L ⟹ the curve flattens toward y = L — the degree tie's leading ratio made visible.\n- **Vertical:** denominator zeros with nonzero numerator ⟹ walls — the finite analogue of the ladder's verdicts.\n- **Oblique (preview):** when top degree = bottom degree + 1, long division exposes a slanted destination y = mx + c — the degree rule's next case, met properly in later units.",
+    "## 5. Worked Example Types\n\n- **Type A — rational ties:** divide by the top power; leading ratio.\n- **Type B — mixed families:** identify the rungs; the higher rung's coefficient survives.\n- **Type C — radical two-sided:** |x| split; different answers at ±∞.\n- **Type D — ladder extremes:** exponential over polynomial, log over power — instant verdicts with a one-line certificate.",
+    "## 6. Common Confusions\n\n**\"Biggest coefficient wins\":** only within a rung; across rungs the family decides. **\"√(x² + 1) = x + …\":** it equals |x|√(1 + 1/x²) — the sign matters at −∞."
   ],
   "confusion": [
     "Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is indeterminate.",
     "Taking $\\lim\\sqrt{f(x)}=\\sqrt{\\lim f}$ without checking the sign; an even root needs a non-negative limit.",
     "Applying the composition rule through a discontinuous outer function such as $\\tan$."
   ],
-  "practice": [],
+  "practice": [
+    "Evaluate lim_{x→∞} (3x³ − x)/(5x³ + 2x²).",
+    "Evaluate lim_{x→∞} (ln x)/(√x).",
+    "Evaluate lim_{x→−∞} (√(4x² + 1) + 2x)."
+  ],
   "universalFacts": [
-    "The squeeze theorem is the bridge used to prove almost every standard limit, including $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$.",
-    "Audio codecs rely on a jump discontinuity: the mapping from continuous voltage to a discrete level is a jump, and the discontinuity is audible as a click."
+    "Limits at infinity measure destinations, not journeys - e^x trails x^100 for a long while and still wins."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The two-sided radical*** - sqrt(x^2+1) - x -> 0 at +inf but -> 2 at -inf: the |x| inside the root flips the race's sign."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Evaluate lim_{x→∞} (3x³ − x)/(5x³ + 2x²) and state the horizontal asymptote.** — **Degree tie (3 = 3):** divide by x³: (3 − 1/x²)/(5 + 2/x) → (3 − 0)/(5 + 0) = **3/5**. **Asymptote:** y = 3/5 — the curve flattens toward this line as x → ∞ (and identically at −∞). **Deep point:** the tie case's answer is the leading-coefficient ratio because every lower term dies like 1/xᵏ — the division by the top power is the mechanical realisation of \"coefficients compete only within a rung.\"",
+    "**NEB-style (5m): Evaluate lim_{x→∞} (ln x)/(√x) with a one-line certificate.** — **Rungs:** log (bottom) vs power x^{1/2} — the ladder says the power dominates ⟹ **0**. **Certificate:** the standard star lim_{x→∞} ln x/xᵖ = 0 for every p > 0 (L'Hôpital once: (1/x)/(p x^{p−1}) = 1/(p xᵖ) → 0) — here p = 1/2 ⟹ 0. **Deep point:** the ladder verdict needed no arithmetic; the one-line L'Hôpital certificate is what converts the rung intuition into an exam-grade proof — know both the verdict and its licence.",
+    "**NEB-style (6m): Evaluate lim_{x→−∞} (√(4x² + 1) + 2x).** — **Extract the |x|:** √(4x² + 1) = |2x|·√(1 + 1/(4x²)). **At −∞:** |2x| = −2x ⟹ the expression = −2x·√(1 + 1/(4x²)) + 2x = 2x[1 − √(1 + 1/(4x²))]. **Expand the root:** √(1 + u) ≈ 1 + u/2 with u = 1/(4x²) → 0 ⟹ 1 − √(1+u) ≈ −u/2 ⟹ the expression ≈ 2x·(−1/(8x²)) = −1/(4x) → **0**. **Contrast at +∞:** |2x| = 2x ⟹ expression = 2x[√(1+1/(4x²)) − 1] ≈ 2x·(1/(8x²)) = 1/(4x) → 0 as well — both directions give 0, but by opposite sign routes. **Deep point:** the |x| step is where two-sided radical questions are won or lost — writing √(4x²+1) = 2x (valid only for x > 0) is the classic error; the root always returns the *absolute* value, and the sign flip at −∞ is the whole computation.",
+    "**NEB-style (6m): Evaluate lim_{x→∞} (2·3ˣ + x¹⁰⁰)/(5·3ˣ − x³) and justify the rung reasoning.** — **Identify the rungs:** 3ˣ (exponential, top rung) vs x¹⁰⁰ and x³ (powers) — the exponential dominates both, despite x¹⁰⁰'s enormous degree. **Divide by 3ˣ:** (2 + x¹⁰⁰/3ˣ)/(5 − x³/3ˣ). **Ladder:** x¹⁰⁰/3ˣ → **0** and x³/3ˣ → **0** (exponential beats any fixed power). **Limit: 2/5.** **Journey note:** x¹⁰⁰ leads 3ˣ until x ≈ 210 — the limit reads the destination, not the journey. **Deep point:** the division by the *dominant* term (3ˣ, not x¹⁰⁰) is the drill's key move — dividing by the wrong leader would leave the ladder's verdict invisible; dominance, not degree, picks the divisor."
+  ],
   "formulas": [
-    "Sum/difference: $\\lim(f\\pm g)=L\\pm M$",
-    "Product: $\\lim(fg)=LM$",
-    "Quotient: $\\lim\\frac{f}{g}=\\frac{L}{M}$ for $M\\ne0$",
-    "Power: $\\lim f^n=L^n$",
-    "Composition: $\\lim g(f(x))=g(L)$ when $g$ is continuous at $L$",
-    "Squeeze: $g\\le f\\le h$ and $\\lim g=\\lim h=L \\Rightarrow \\lim f=L$"
+    "- lim xᵏ/eˣ = 0; lim ln x/xᵏ = 0; lim aˣ/xᵏ = ∞ (a > 1)\n- √(x² + k) = |x|·√(1 + k/x²)"
   ],
   "keyPoints": [
-    "The laws need only the LIMITS to exist, not the function to be defined at the point.",
-    "The quotient law is void when the denominator's limit is 0 — the root of $0/0$.",
-    "Squeeze is the only general method for a vanishing factor times an oscillating term."
+    "Degree rules: top>bottom -> +-inf; tie -> leading ratio; top<bottom -> 0. Dominant division kills slower terms. Ladder: ln x << x^p << a^x << x^x; rungs beat coefficients. Radicals: sqrt(x^2+k) = |x|sqrt(1+k/x^2) - split at -inf. Horizontal asymptote y = L iff lim at infinity = L."
   ],
-  "summary": "The algebraic limit laws cover sums, products, quotients, powers and composition, and each requires only that the individual limits exist — never that the functions be defined at the point. The quotient law fails precisely when the denominator tends to 0, which is why $0/0$ is indeterminate. When neither substitution nor the laws apply, the squeeze theorem settles a vanishing factor times an oscillating one.",
+  "summary": "Infinity drills are rung-reading exercises: within a family, degrees and leading coefficients compete; across families, the ladder (log ≪ power ≪ exponential ≪ super-exponential) decides with coefficients irrelevant. Divide by the dominant term, split radical limits by |x| at −∞, and state horizontal asymptotes as the tie case's visible destination. The ladder's verdicts are instant; their one-line certificates (a single L'Hôpital or star) are what make them exam-grade.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is indeterminate.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "Divide by the fastest-growing term; everything else dies like a power of 1/x."
+  ],
   "importantNotes": [
-    "Topic anchor: Why the laws survive discontinuity  none of these need $f$ defined at $a$, only the limits to exist."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
   ],
   "examShortTricks": [
-    "Check the denominator's limit FIRST — if it is 0 no law applies and the expression must be rewritten.",
-    "Small factor times a trigonometric or oscillating term means squeeze, immediately."
+    "Name the rungs first; if they differ, the answer is 0 or infinity with no arithmetic."
   ],
   "examNotes": [
-    "Stating the limit laws with the $M\\ne0$ condition attached is a common 2-mark question."
+    "For radical limits at -inf, write the |x| step explicitly - it is the mark-earning line."
   ],
   "mcs": [
     {
@@ -91,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "The laws need only the LIMITS to exist, not the function to be defined at the point.",
-    "The quotient law is void when the denominator's limit is 0 — the root of $0/0$.",
-    "Squeeze is the only general method for a vanishing factor times an oscillating term."
+    "At infinity, family beats arithmetic: rungs decide across families, coefficients only within one."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -107,5 +109,53 @@
     "**4. [Idea: the $1^\\infty$ family with a trigonometric inner function]** Evaluate $\\lim_{x \\to 0}\\left(1+\\sin x\\right)^{\\frac{1}{\\sin x}}$.\\newline\\newline**Solution:** Let $y = \\left(1+\\sin x\\right)^{1/\\sin x}$ and take logarithms:$\\newline\\ln y = \\dfrac{\\ln(1+\\sin x)}{\\sin x}$, which is $\\frac00$.\\newline\\newlineL'Hôpital:$\\newline\\lim_{x\\to0}\\dfrac{\\frac{\\cos x}{1+\\sin x}}{\\cos x} = \\lim_{x\\to0}\\dfrac{1}{1+\\sin x} = 1$.\\newline\\newlineSo $\\ln y \\to 1$, hence $y \\to e$.\\newline\\newline**Answer:** $e$. **Check:** this is the general identity $\\lim_{u\\to0}(1+u)^{1/u}=e$ with $u = \\sin x$.",
     "**5. [Idea: the standard limit $\\lim\\frac{e^u-1}{u}=1$ does all the work]** Evaluate $\\lim_{x \\to 0}\\dfrac{2^{\\sin^2 x} - 1}{x^2}$.\\newline\\newline**Solution:** The form is $\\frac00$. Direct differentiation is circular, and a squeeze using $-x^2 \\le \\sin^2x \\le x^2$ only bounds the expression by $\\frac{2^{x^2}-1}{x^2}$, which tends to $\\ln 2$ — **a non-zero bound proves nothing**.\\newline\\newlineConvert the base instead: $2^{\\sin^2x} = e^{\\sin^2x \\ln 2}$. Set $u = \\sin^2 x\\,\\ln 2$, so $u \\to 0$, and factor the expression into three pieces each with a known limit:$\\newline\\lim_{x\\to0}\\underbrace{\\frac{e^u-1}{u}}_{\\to\\,1}\\cdot\\underbrace{\\frac{u}{\\sin^2x}}_{\\to\\,\\ln2}\\cdot\\underbrace{\\frac{\\sin^2x}{x^2}}_{\\to\\,1}$.\\newline\\newline**Answer:** $1 \\times \\ln 2 \\times 1 = \\ln 2$. **Lesson:** when a squeeze bound tends to a non-zero constant, switch to factorisation.",
     "**6. [Idea: chain an unknown function's limit through a rationalising identity]** Given $\\lim_{x \\to 2}\\dfrac{f(x)-f(2)}{x-2} = 3$ and $f(2) = 6$, evaluate $\\lim_{x \\to 2}\\dfrac{f^2(x) - 36}{x^2-4}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$ and nothing can be computed without more information, so factor both sides:$^{\\bullet}$ Numerator: $f^2(x)-36 = \\left(f(x)-f(2)\\right)\\left(f(x)+f(2)\\right)$ since $36 = f^2(2)$.$^{\\bullet}$ Denominator: $x^2-4 = (x-2)(x+2)$.\\newline\\newlineThen$\\newline\\lim_{x\\to2}\\dfrac{f(x)-f(2)}{x-2}\\cdot\\dfrac{f(x)+f(2)}{x+2} = 3 \\cdot \\dfrac{6+6}{2+2} = 3 \\cdot 3$.\\newline\\newline**Answer:** $9$."
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Drill Gallery: Limits at Infinity\n\nThis canonical is the **third limits drill gallery**: behaviour at infinity — degree comparison, dominant-term division, the growth ladder, and horizontal asymptotes. It mirrors the infinity machinery of the parent canonicals; the drill's discipline is rung recognition.",
+      "## 2. Theorem Mirror — The Infinity Toolkit\n\n- **Degree comparison (rational):** top > bottom ⟹ ±∞; tie ⟹ leading-coefficient ratio; top < bottom ⟹ 0.\n- **Dominant division:** divide numerator and denominator by the fastest-growing term; everything slower dies like 1/xᵏ.\n- **Growth ladder:** ln x ≪ xᵖ ≪ aˣ ≪ xˣ — each rung dominates all below, coefficients irrelevant across rungs.\n- **Radicals at ±∞:** √(x² + k) ~ |x| — the absolute value splits the two directions; x → −∞ needs the sign flip.\n- **Horizontal asymptotes:** lim_{x→±∞} f = L ⟹ y = L is a horizontal asymptote (a destination, not a barrier).",
+      "## 3. Deep Conceptual — Rungs, Not Coefficients\n\n- At infinity, **family beats arithmetic**: an exponential with a tiny base beats a polynomial with a huge degree; a log with a huge argument loses to a humble x¹⁰⁰. Coefficients compete only *within* a rung (degree comparison, leading ratios); across rungs the verdict is fixed.\n- **Why the ladder is rigid:** exponentials compound multiplicatively, powers additively, logs by diminishing increments — the growth mechanisms are ordered, and no finite coefficients can reorder them. This is why eˣ/x¹⁰⁰ → ∞ *eventually*, even though x¹⁰⁰ leads for a long while: limits measure the destination, not the journey.\n- **The radical's absolute value is the trap:** √(x²) = |x|, so √(x² + 1) − x → 0 as x → +∞ but → 2 as x → −∞. Two-sided infinity questions always split by direction.",
+      "## 4. Deep Conceptual — Asymptotes as Readable Destinations\n\n- **Horizontal:** lim at ±∞ = L ⟹ the curve flattens toward y = L — the degree tie's leading ratio made visible.\n- **Vertical:** denominator zeros with nonzero numerator ⟹ walls — the finite analogue of the ladder's verdicts.\n- **Oblique (preview):** when top degree = bottom degree + 1, long division exposes a slanted destination y = mx + c — the degree rule's next case, met properly in later units.",
+      "## 5. Worked Example Types\n\n- **Type A — rational ties:** divide by the top power; leading ratio.\n- **Type B — mixed families:** identify the rungs; the higher rung's coefficient survives.\n- **Type C — radical two-sided:** |x| split; different answers at ±∞.\n- **Type D — ladder extremes:** exponential over polynomial, log over power — instant verdicts with a one-line certificate.",
+      "## 6. Common Confusions\n\n**\"Biggest coefficient wins\":** only within a rung; across rungs the family decides. **\"√(x² + 1) = x + …\":** it equals |x|√(1 + 1/x²) — the sign matters at −∞."
+    ],
+    "keyPoints": [
+      "Degree rules: top>bottom -> +-inf; tie -> leading ratio; top<bottom -> 0. Dominant division kills slower terms. Ladder: ln x << x^p << a^x << x^x; rungs beat coefficients. Radicals: sqrt(x^2+k) = |x|sqrt(1+k/x^2) - split at -inf. Horizontal asymptote y = L iff lim at infinity = L."
+    ],
+    "importantConcepts": [
+      "At infinity, family beats arithmetic: rungs decide across families, coefficients only within one."
+    ],
+    "examples": [
+      "***The two-sided radical*** - sqrt(x^2+1) - x -> 0 at +inf but -> 2 at -inf: the |x| inside the root flips the race's sign."
+    ],
+    "universalFacts": [
+      "Limits at infinity measure destinations, not journeys - e^x trails x^100 for a long while and still wins."
+    ],
+    "importantStatements": [
+      "Divide by the fastest-growing term; everything else dies like a power of 1/x."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    ],
+    "examShortTricks": [
+      "Name the rungs first; if they differ, the answer is 0 or infinity with no arithmetic."
+    ],
+    "examNotes": [
+      "For radical limits at -inf, write the |x| step explicitly - it is the mark-earning line."
+    ],
+    "formulas": [
+      "- lim xᵏ/eˣ = 0; lim ln x/xᵏ = 0; lim aˣ/xᵏ = ∞ (a > 1)\n- √(x² + k) = |x|·√(1 + k/x²)"
+    ],
+    "practice": [
+      "Evaluate lim_{x→∞} (3x³ − x)/(5x³ + 2x²).",
+      "Evaluate lim_{x→∞} (ln x)/(√x).",
+      "Evaluate lim_{x→−∞} (√(4x² + 1) + 2x)."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Evaluate lim_{x→∞} (3x³ − x)/(5x³ + 2x²) and state the horizontal asymptote.** — **Degree tie (3 = 3):** divide by x³: (3 − 1/x²)/(5 + 2/x) → (3 − 0)/(5 + 0) = **3/5**. **Asymptote:** y = 3/5 — the curve flattens toward this line as x → ∞ (and identically at −∞). **Deep point:** the tie case's answer is the leading-coefficient ratio because every lower term dies like 1/xᵏ — the division by the top power is the mechanical realisation of \"coefficients compete only within a rung.\"",
+      "**NEB-style (5m): Evaluate lim_{x→∞} (ln x)/(√x) with a one-line certificate.** — **Rungs:** log (bottom) vs power x^{1/2} — the ladder says the power dominates ⟹ **0**. **Certificate:** the standard star lim_{x→∞} ln x/xᵖ = 0 for every p > 0 (L'Hôpital once: (1/x)/(p x^{p−1}) = 1/(p xᵖ) → 0) — here p = 1/2 ⟹ 0. **Deep point:** the ladder verdict needed no arithmetic; the one-line L'Hôpital certificate is what converts the rung intuition into an exam-grade proof — know both the verdict and its licence.",
+      "**NEB-style (6m): Evaluate lim_{x→−∞} (√(4x² + 1) + 2x).** — **Extract the |x|:** √(4x² + 1) = |2x|·√(1 + 1/(4x²)). **At −∞:** |2x| = −2x ⟹ the expression = −2x·√(1 + 1/(4x²)) + 2x = 2x[1 − √(1 + 1/(4x²))]. **Expand the root:** √(1 + u) ≈ 1 + u/2 with u = 1/(4x²) → 0 ⟹ 1 − √(1+u) ≈ −u/2 ⟹ the expression ≈ 2x·(−1/(8x²)) = −1/(4x) → **0**. **Contrast at +∞:** |2x| = 2x ⟹ expression = 2x[√(1+1/(4x²)) − 1] ≈ 2x·(1/(8x²)) = 1/(4x) → 0 as well — both directions give 0, but by opposite sign routes. **Deep point:** the |x| step is where two-sided radical questions are won or lost — writing √(4x²+1) = 2x (valid only for x > 0) is the classic error; the root always returns the *absolute* value, and the sign flip at −∞ is the whole computation.",
+      "**NEB-style (6m): Evaluate lim_{x→∞} (2·3ˣ + x¹⁰⁰)/(5·3ˣ − x³) and justify the rung reasoning.** — **Identify the rungs:** 3ˣ (exponential, top rung) vs x¹⁰⁰ and x³ (powers) — the exponential dominates both, despite x¹⁰⁰'s enormous degree. **Divide by 3ˣ:** (2 + x¹⁰⁰/3ˣ)/(5 − x³/3ˣ). **Ladder:** x¹⁰⁰/3ˣ → **0** and x³/3ˣ → **0** (exponential beats any fixed power). **Limit: 2/5.** **Journey note:** x¹⁰⁰ leads 3ˣ until x ≈ 210 — the limit reads the destination, not the journey. **Deep point:** the division by the *dominant* term (3ˣ, not x¹⁰⁰) is the drill's key move — dividing by the wrong leader would leave the ladder's verdict invisible; dominance, not degree, picks the divisor."
+    ]
+  }
 }

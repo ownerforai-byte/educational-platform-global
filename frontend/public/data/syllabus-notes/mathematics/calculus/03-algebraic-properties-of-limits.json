@@ -5,55 +5,59 @@
   "topicSlug": "algebraic-properties-of-limits",
   "relevance": 100,
   "notes": [
-    "**Sum and difference:** if $\\lim f = L$ and $\\lim g = M$ then $\\lim(f\\pm g)=L\\pm M$. Limits commute with addition because they preserve the arithmetic structure of the reals.",
-    "**Product and quotient:** $\\lim(fg)=LM$ and, provided $M\\ne0$, $\\lim\\frac{f}{g}=\\frac{L}{M}$. The condition $M\\ne0$ is the whole reason $0/0$ is indeterminate — the product law guarantees $0$ while the quotient law is unavailable.",
-    "**Constant multiple and power:** $\\lim(cf)=cL$ and $\\lim f^n=L^n$. An even root additionally needs a non-negative limit, while an odd root does not, so sign information about $L$ decides whether $\\lim\\sqrt[n]{f}$ exists.",
-    "**Composition:** if $\\lim f=L$ and $g$ is continuous at $L$ then $\\lim g(f(x))=g(L)$. This licenses substituting into a continuous outer function, and it is why a discontinuous $g$ such as $\\tan$ at $\\pi/2$ breaks the rule.",
-    "**Squeeze (sandwich) theorem:** if $g(x)\\le f(x)\\le h(x)$ near $a$ and $\\lim g=\\lim h=L$ then $\\lim f=L$. This is the only reliable tool for a vanishing factor times an oscillating one, and it proves $\\lim_{x\\to0}x\\sin\\frac1x=0$ from $-|x|\\le x\\sin\\frac1x\\le|x|$.",
-    "**Why the laws survive discontinuity:** none of these need $f$ defined at $a$, only the limits to exist. That is exactly why a removable discontinuity does not spoil a limit, while a jump does — unequal one-sided limits mean the laws cannot be applied at all."
+    "## 1. Topic Introduction — The Companion Doorway to the Limit Laws\n\nThis canonical is the **short-form doorway** to the algebraic properties of limits: the sum, product, quotient, power, root, squeeze, and composition theorems in one page. The parent canonical carries the full theorem-grade treatment; this companion mirrors the laws, explains why their hypotheses matter, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Sum/difference:** lim (f ± g) = lim f ± lim g — *provided both limits exist* (finite; ∞ − ∞ is banned).\n- **Product:** lim (f·g) = (lim f)(lim g) — both must exist; constants pull out: lim c·f = c·lim f.\n- **Quotient:** lim f/g = (lim f)/(lim g) — both exist **and lim g ≠ 0**.\n- **Power/root:** lim fⁿ = (lim f)ⁿ; lim ⁿ√f = ⁿ√(lim f) (even roots need lim f ≥ 0).\n- **Squeeze:** g ≤ f ≤ h with lim g = lim h = L ⟹ lim f = L.\n- **Composition:** g continuous at a, f continuous at g(a) ⟹ lim f(g(x)) = f(lim g(x)).",
+    "## 3. Deep Conceptual — The Laws Do Not Reverse\n\n- The laws say: *if* the pieces' limits exist (and the quotient's denominator is nonzero), *then* the combined limit is the combination. They do **not** say a combined limit's existence forces the pieces' limits to exist — lim x·sin(1/x) = 0 exists while lim sin(1/x) does not.\n- **Why the hypothesis discipline matters:** splitting a limit into pieces whose limits do not exist is the most common illegal move in limit work. The laws license *assembly* from known parts, never *disassembly* into unknown ones.\n- **The exception that proves the rule:** the squeeze theorem exists precisely for pieces without limits — it is the sanctioned way to handle a factor that oscillates, by caging it between converging rails instead of splitting it.",
+    "## 4. Deep Conceptual — Composition as the Substitution Licence\n\n- The composition theorem is the *proof* behind \"just substitute\": pushing a limit through f is legal exactly when f is continuous at the inner limit. Every substitution step in every solution is an appeal to this theorem.\n- **Where the licence expires:** if f is discontinuous at the inner limit, lim f(g(x)) and f(lim g(x)) can differ — the one-sided machinery takes over. Locating a function's discontinuities is locating where substitution reasoning must stop.",
+    "## 5. Worked Example Types\n\n- **Type A — legal assembly:** each piece's limit exists ⟹ combine by the laws (polynomials, continuous pieces).\n- **Type B — illegal split avoided:** a factor oscillates ⟹ do not split; squeeze or damp it.\n- **Type C — quotient with dying denominator:** check lim g ≠ 0 before dividing; if it is 0, re-diagnose (0/0 or wall).\n- **Type D — composition chain:** evaluate the inner limit, then apply the outer function *only if* it is continuous there.",
+    "## 6. Common Confusions\n\n**\"lim(A + B) always = lim A + lim B\":** only when both exist — ∞ − ∞ and missing sides break it. **\"c/0 is ∞/∞\":** no — one contestant is standing still; L'Hôpital does not apply."
   ],
   "confusion": [
     "Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is indeterminate.",
     "Taking $\\lim\\sqrt{f(x)}=\\sqrt{\\lim f}$ without checking the sign; an even root needs a non-negative limit.",
     "Applying the composition rule through a discontinuous outer function such as $\\tan$."
   ],
-  "practice": [],
+  "practice": [
+    "Evaluate lim_{x→3} (x² + 2x)/(x + 1) by the limit laws.",
+    "Show that lim_{x→0} x·cos(1/x) = 0 without splitting illegally.",
+    "Evaluate lim_{x→1} √(x² + 8) using the composition theorem."
+  ],
   "universalFacts": [
-    "The squeeze theorem is the bridge used to prove almost every standard limit, including $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$.",
-    "Audio codecs rely on a jump discontinuity: the mapping from continuous voltage to a discrete level is a jump, and the discontinuity is audible as a click."
+    "Continuity is exactly the property that makes every limit law applicable at a point in one stroke."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The banned split*** - lim x·sin(1/x) = 0 exists, but splitting into (lim x)(lim sin(1/x)) fails since sin(1/x) has no limit - the squeeze handles it instead."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Evaluate lim_{x→3} (x² + 2x)/(x + 1), citing each law used.** — **Numerator (sum + power laws):** lim (x² + 2x) = (lim x²) + (lim 2x) = 9 + 6 = **15** — polynomials are continuous, so substitution is the laws in one stroke. **Denominator:** lim (x + 1) = **4 ≠ 0** — the quotient theorem's hypothesis holds. **Quotient: 15/4.** **Deep point:** the check \"lim g ≠ 0\" is not decoration — at x = −1 the same expression would need re-diagnosis (0/0 or wall), and naming the check is what distinguishes a lawful computation from a habitual one.",
+    "**NEB-style (6m): Show that lim_{x→0} x·cos(1/x) = 0, and explain why the product law cannot be used directly.** — **The product law's failure:** lim_{x→0} cos(1/x) does **not** exist (oscillation), so lim (x)·lim cos(1/x) is not a legal assembly — one piece is missing. **The squeeze route:** −1 ≤ cos(1/x) ≤ 1 ⟹ −|x| ≤ x·cos(1/x) ≤ |x| (multiplying by |x| ≥ 0). **Rails:** both ±|x| → 0 ⟹ **lim = 0** by the squeeze theorem. **Deep point:** the squeeze theorem is the sanctioned replacement for an illegal split — it handles the oscillating factor by caging it, converting \"the piece has no limit\" into \"the piece is bounded,\" which is all the product needs.",
+    "**NEB-style (5m): Evaluate lim_{x→1} √(x² + 8), citing the composition theorem explicitly.** — **Inner limit:** lim_{x→1} (x² + 8) = 9 (polynomial ⟹ substitution). **Outer continuity:** √t is continuous at t = 9 (9 > 0, inside the root's domain interior). **Composition theorem:** lim √(x² + 8) = √(lim (x² + 8)) = **√9 = 3**. **Contrast:** at x = −3 the same composition works (inner limit 17); but lim_{x→0⁺} √x·ln-style compositions at domain edges need one-sided care — the theorem's hypotheses travel with the point, not the formula. **Deep point:** the composition theorem is the general licence of which \"substitute into the outer function\" is the everyday instance; continuity of the outer function at the inner limit is the exact condition, no stronger and no weaker.",
+    "**NEB-style (6m): A student writes lim_{x→0} (sin x + x·sin(1/x))/x = lim sin x/x + lim sin(1/x) = 1 + (does not exist) and concludes the limit does not exist. Assess and correct.** — **The error:** the sum law requires **both** pieces' limits to exist; the second piece sin(1/x) has no limit, so the split is illegal and the \"does not exist\" conclusion does not follow — the failure of a *method* is not the failure of the limit. **Correct route:** lim sin x/x = 1 (star) and lim x·sin(1/x) = 0 (squeeze, as shown in the standard example) ⟹ the sum law **is** applicable to these two *converging* pieces: lim = 1 + 0 = **1**. **Deep point:** regroup before you split — the art of using the limit laws is choosing a decomposition in which every piece converges; the laws never fail, but careless decompositions do."
+  ],
   "formulas": [
-    "Sum/difference: $\\lim(f\\pm g)=L\\pm M$",
-    "Product: $\\lim(fg)=LM$",
-    "Quotient: $\\lim\\frac{f}{g}=\\frac{L}{M}$ for $M\\ne0$",
-    "Power: $\\lim f^n=L^n$",
-    "Composition: $\\lim g(f(x))=g(L)$ when $g$ is continuous at $L$",
-    "Squeeze: $g\\le f\\le h$ and $\\lim g=\\lim h=L \\Rightarrow \\lim f=L$"
+    "- lim (f ± g) = lim f ± lim g; lim f·g = lim f · lim g\n- lim f/g = lim f / lim g (lim g ≠ 0); lim fⁿ = (lim f)ⁿ"
   ],
   "keyPoints": [
-    "The laws need only the LIMITS to exist, not the function to be defined at the point.",
-    "The quotient law is void when the denominator's limit is 0 — the root of $0/0$.",
-    "Squeeze is the only general method for a vanishing factor times an oscillating term."
+    "Limit laws: sum, difference, product, quotient (denominator nonzero), constant multiple, power, root - each needs the pieces' limits to exist. Squeeze: converging rails cage the middle. Composition: continuous outer function commutes with the inner limit. The laws assemble limits from known pieces; they never license splitting into nonexistent pieces."
   ],
-  "summary": "The algebraic limit laws cover sums, products, quotients, powers and composition, and each requires only that the individual limits exist — never that the functions be defined at the point. The quotient law fails precisely when the denominator tends to 0, which is why $0/0$ is indeterminate. When neither substitution nor the laws apply, the squeeze theorem settles a vanishing factor times an oscillating one.",
+  "summary": "The algebraic limit laws — sum, product, quotient, power, root, squeeze, composition — assemble limits from pieces whose limits already exist, with the quotient demanding a nonzero denominator and the composition demanding outer continuity. Their hypotheses are the mathematics: assembly is licensed, disassembly into nonexistent pieces is not, and the squeeze theorem is the sanctioned cure for oscillating factors. Every substitution step in limit work is the composition theorem in action; every split should name its pieces' limits first. Master the hypotheses and the laws become a complete algebra of approach.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is indeterminate.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "Each limit law is an implication with hypotheses; the hypotheses are the mathematics."
+  ],
   "importantNotes": [
-    "Topic anchor: Why the laws survive discontinuity  none of these need $f$ defined at $a$, only the limits to exist."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Check the denominator's limit FIRST — if it is 0 no law applies and the expression must be rewritten.",
-    "Small factor times a trigonometric or oscillating term means squeeze, immediately."
+    "Before any split, name each piece's limit; if one is missing, squeeze instead."
   ],
   "examNotes": [
-    "Stating the limit laws with the $M\\ne0$ condition attached is a common 2-mark question."
+    "Citing the law by name (quotient theorem, composition theorem) earns the method mark even when the arithmetic is trivial."
   ],
   "mcs": [
     {
@@ -91,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "The laws need only the LIMITS to exist, not the function to be defined at the point.",
-    "The quotient law is void when the denominator's limit is 0 — the root of $0/0$.",
-    "Squeeze is the only general method for a vanishing factor times an oscillating term."
+    "Assembly is licensed, disassembly is not: the laws build limits from existing pieces and never reverse."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -107,5 +109,53 @@
     "**4. [Idea: the $1^\\infty$ family with a trigonometric inner function]** Evaluate $\\lim_{x \\to 0}\\left(1+\\sin x\\right)^{\\frac{1}{\\sin x}}$.\\newline\\newline**Solution:** Let $y = \\left(1+\\sin x\\right)^{1/\\sin x}$ and take logarithms:$\\newline\\ln y = \\dfrac{\\ln(1+\\sin x)}{\\sin x}$, which is $\\frac00$.\\newline\\newlineL'Hôpital:$\\newline\\lim_{x\\to0}\\dfrac{\\frac{\\cos x}{1+\\sin x}}{\\cos x} = \\lim_{x\\to0}\\dfrac{1}{1+\\sin x} = 1$.\\newline\\newlineSo $\\ln y \\to 1$, hence $y \\to e$.\\newline\\newline**Answer:** $e$. **Check:** this is the general identity $\\lim_{u\\to0}(1+u)^{1/u}=e$ with $u = \\sin x$.",
     "**5. [Idea: the standard limit $\\lim\\frac{e^u-1}{u}=1$ does all the work]** Evaluate $\\lim_{x \\to 0}\\dfrac{2^{\\sin^2 x} - 1}{x^2}$.\\newline\\newline**Solution:** The form is $\\frac00$. Direct differentiation is circular, and a squeeze using $-x^2 \\le \\sin^2x \\le x^2$ only bounds the expression by $\\frac{2^{x^2}-1}{x^2}$, which tends to $\\ln 2$ — **a non-zero bound proves nothing**.\\newline\\newlineConvert the base instead: $2^{\\sin^2x} = e^{\\sin^2x \\ln 2}$. Set $u = \\sin^2 x\\,\\ln 2$, so $u \\to 0$, and factor the expression into three pieces each with a known limit:$\\newline\\lim_{x\\to0}\\underbrace{\\frac{e^u-1}{u}}_{\\to\\,1}\\cdot\\underbrace{\\frac{u}{\\sin^2x}}_{\\to\\,\\ln2}\\cdot\\underbrace{\\frac{\\sin^2x}{x^2}}_{\\to\\,1}$.\\newline\\newline**Answer:** $1 \\times \\ln 2 \\times 1 = \\ln 2$. **Lesson:** when a squeeze bound tends to a non-zero constant, switch to factorisation.",
     "**6. [Idea: chain an unknown function's limit through a rationalising identity]** Given $\\lim_{x \\to 2}\\dfrac{f(x)-f(2)}{x-2} = 3$ and $f(2) = 6$, evaluate $\\lim_{x \\to 2}\\dfrac{f^2(x) - 36}{x^2-4}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$ and nothing can be computed without more information, so factor both sides:$^{\\bullet}$ Numerator: $f^2(x)-36 = \\left(f(x)-f(2)\\right)\\left(f(x)+f(2)\\right)$ since $36 = f^2(2)$.$^{\\bullet}$ Denominator: $x^2-4 = (x-2)(x+2)$.\\newline\\newlineThen$\\newline\\lim_{x\\to2}\\dfrac{f(x)-f(2)}{x-2}\\cdot\\dfrac{f(x)+f(2)}{x+2} = 3 \\cdot \\dfrac{6+6}{2+2} = 3 \\cdot 3$.\\newline\\newline**Answer:** $9$."
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to the Limit Laws\n\nThis canonical is the **short-form doorway** to the algebraic properties of limits: the sum, product, quotient, power, root, squeeze, and composition theorems in one page. The parent canonical carries the full theorem-grade treatment; this companion mirrors the laws, explains why their hypotheses matter, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Sum/difference:** lim (f ± g) = lim f ± lim g — *provided both limits exist* (finite; ∞ − ∞ is banned).\n- **Product:** lim (f·g) = (lim f)(lim g) — both must exist; constants pull out: lim c·f = c·lim f.\n- **Quotient:** lim f/g = (lim f)/(lim g) — both exist **and lim g ≠ 0**.\n- **Power/root:** lim fⁿ = (lim f)ⁿ; lim ⁿ√f = ⁿ√(lim f) (even roots need lim f ≥ 0).\n- **Squeeze:** g ≤ f ≤ h with lim g = lim h = L ⟹ lim f = L.\n- **Composition:** g continuous at a, f continuous at g(a) ⟹ lim f(g(x)) = f(lim g(x)).",
+      "## 3. Deep Conceptual — The Laws Do Not Reverse\n\n- The laws say: *if* the pieces' limits exist (and the quotient's denominator is nonzero), *then* the combined limit is the combination. They do **not** say a combined limit's existence forces the pieces' limits to exist — lim x·sin(1/x) = 0 exists while lim sin(1/x) does not.\n- **Why the hypothesis discipline matters:** splitting a limit into pieces whose limits do not exist is the most common illegal move in limit work. The laws license *assembly* from known parts, never *disassembly* into unknown ones.\n- **The exception that proves the rule:** the squeeze theorem exists precisely for pieces without limits — it is the sanctioned way to handle a factor that oscillates, by caging it between converging rails instead of splitting it.",
+      "## 4. Deep Conceptual — Composition as the Substitution Licence\n\n- The composition theorem is the *proof* behind \"just substitute\": pushing a limit through f is legal exactly when f is continuous at the inner limit. Every substitution step in every solution is an appeal to this theorem.\n- **Where the licence expires:** if f is discontinuous at the inner limit, lim f(g(x)) and f(lim g(x)) can differ — the one-sided machinery takes over. Locating a function's discontinuities is locating where substitution reasoning must stop.",
+      "## 5. Worked Example Types\n\n- **Type A — legal assembly:** each piece's limit exists ⟹ combine by the laws (polynomials, continuous pieces).\n- **Type B — illegal split avoided:** a factor oscillates ⟹ do not split; squeeze or damp it.\n- **Type C — quotient with dying denominator:** check lim g ≠ 0 before dividing; if it is 0, re-diagnose (0/0 or wall).\n- **Type D — composition chain:** evaluate the inner limit, then apply the outer function *only if* it is continuous there.",
+      "## 6. Common Confusions\n\n**\"lim(A + B) always = lim A + lim B\":** only when both exist — ∞ − ∞ and missing sides break it. **\"c/0 is ∞/∞\":** no — one contestant is standing still; L'Hôpital does not apply."
+    ],
+    "keyPoints": [
+      "Limit laws: sum, difference, product, quotient (denominator nonzero), constant multiple, power, root - each needs the pieces' limits to exist. Squeeze: converging rails cage the middle. Composition: continuous outer function commutes with the inner limit. The laws assemble limits from known pieces; they never license splitting into nonexistent pieces."
+    ],
+    "importantConcepts": [
+      "Assembly is licensed, disassembly is not: the laws build limits from existing pieces and never reverse."
+    ],
+    "examples": [
+      "***The banned split*** - lim x·sin(1/x) = 0 exists, but splitting into (lim x)(lim sin(1/x)) fails since sin(1/x) has no limit - the squeeze handles it instead."
+    ],
+    "universalFacts": [
+      "Continuity is exactly the property that makes every limit law applicable at a point in one stroke."
+    ],
+    "importantStatements": [
+      "Each limit law is an implication with hypotheses; the hypotheses are the mathematics."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Before any split, name each piece's limit; if one is missing, squeeze instead."
+    ],
+    "examNotes": [
+      "Citing the law by name (quotient theorem, composition theorem) earns the method mark even when the arithmetic is trivial."
+    ],
+    "formulas": [
+      "- lim (f ± g) = lim f ± lim g; lim f·g = lim f · lim g\n- lim f/g = lim f / lim g (lim g ≠ 0); lim fⁿ = (lim f)ⁿ"
+    ],
+    "practice": [
+      "Evaluate lim_{x→3} (x² + 2x)/(x + 1) by the limit laws.",
+      "Show that lim_{x→0} x·cos(1/x) = 0 without splitting illegally.",
+      "Evaluate lim_{x→1} √(x² + 8) using the composition theorem."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Evaluate lim_{x→3} (x² + 2x)/(x + 1), citing each law used.** — **Numerator (sum + power laws):** lim (x² + 2x) = (lim x²) + (lim 2x) = 9 + 6 = **15** — polynomials are continuous, so substitution is the laws in one stroke. **Denominator:** lim (x + 1) = **4 ≠ 0** — the quotient theorem's hypothesis holds. **Quotient: 15/4.** **Deep point:** the check \"lim g ≠ 0\" is not decoration — at x = −1 the same expression would need re-diagnosis (0/0 or wall), and naming the check is what distinguishes a lawful computation from a habitual one.",
+      "**NEB-style (6m): Show that lim_{x→0} x·cos(1/x) = 0, and explain why the product law cannot be used directly.** — **The product law's failure:** lim_{x→0} cos(1/x) does **not** exist (oscillation), so lim (x)·lim cos(1/x) is not a legal assembly — one piece is missing. **The squeeze route:** −1 ≤ cos(1/x) ≤ 1 ⟹ −|x| ≤ x·cos(1/x) ≤ |x| (multiplying by |x| ≥ 0). **Rails:** both ±|x| → 0 ⟹ **lim = 0** by the squeeze theorem. **Deep point:** the squeeze theorem is the sanctioned replacement for an illegal split — it handles the oscillating factor by caging it, converting \"the piece has no limit\" into \"the piece is bounded,\" which is all the product needs.",
+      "**NEB-style (5m): Evaluate lim_{x→1} √(x² + 8), citing the composition theorem explicitly.** — **Inner limit:** lim_{x→1} (x² + 8) = 9 (polynomial ⟹ substitution). **Outer continuity:** √t is continuous at t = 9 (9 > 0, inside the root's domain interior). **Composition theorem:** lim √(x² + 8) = √(lim (x² + 8)) = **√9 = 3**. **Contrast:** at x = −3 the same composition works (inner limit 17); but lim_{x→0⁺} √x·ln-style compositions at domain edges need one-sided care — the theorem's hypotheses travel with the point, not the formula. **Deep point:** the composition theorem is the general licence of which \"substitute into the outer function\" is the everyday instance; continuity of the outer function at the inner limit is the exact condition, no stronger and no weaker.",
+      "**NEB-style (6m): A student writes lim_{x→0} (sin x + x·sin(1/x))/x = lim sin x/x + lim sin(1/x) = 1 + (does not exist) and concludes the limit does not exist. Assess and correct.** — **The error:** the sum law requires **both** pieces' limits to exist; the second piece sin(1/x) has no limit, so the split is illegal and the \"does not exist\" conclusion does not follow — the failure of a *method* is not the failure of the limit. **Correct route:** lim sin x/x = 1 (star) and lim x·sin(1/x) = 0 (squeeze, as shown in the standard example) ⟹ the sum law **is** applicable to these two *converging* pieces: lim = 1 + 0 = **1**. **Deep point:** regroup before you split — the art of using the limit laws is choosing a decomposition in which every piece converges; the laws never fail, but careless decompositions do."
+    ]
+  }
 }

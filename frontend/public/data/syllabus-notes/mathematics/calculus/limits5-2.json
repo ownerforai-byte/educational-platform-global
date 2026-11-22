@@ -5,55 +5,59 @@
   "topicSlug": "limits5-2",
   "relevance": 100,
   "notes": [
-    "**Sum and difference:** if $\\lim f = L$ and $\\lim g = M$ then $\\lim(f\\pm g)=L\\pm M$. Limits commute with addition because they preserve the arithmetic structure of the reals.",
-    "**Product and quotient:** $\\lim(fg)=LM$ and, provided $M\\ne0$, $\\lim\\frac{f}{g}=\\frac{L}{M}$. The condition $M\\ne0$ is the whole reason $0/0$ is indeterminate — the product law guarantees $0$ while the quotient law is unavailable.",
-    "**Constant multiple and power:** $\\lim(cf)=cL$ and $\\lim f^n=L^n$. An even root additionally needs a non-negative limit, while an odd root does not, so sign information about $L$ decides whether $\\lim\\sqrt[n]{f}$ exists.",
-    "**Composition:** if $\\lim f=L$ and $g$ is continuous at $L$ then $\\lim g(f(x))=g(L)$. This licenses substituting into a continuous outer function, and it is why a discontinuous $g$ such as $\\tan$ at $\\pi/2$ breaks the rule.",
-    "**Squeeze (sandwich) theorem:** if $g(x)\\le f(x)\\le h(x)$ near $a$ and $\\lim g=\\lim h=L$ then $\\lim f=L$. This is the only reliable tool for a vanishing factor times an oscillating one, and it proves $\\lim_{x\\to0}x\\sin\\frac1x=0$ from $-|x|\\le x\\sin\\frac1x\\le|x|$.",
-    "**Why the laws survive discontinuity:** none of these need $f$ defined at $a$, only the limits to exist. That is exactly why a removable discontinuity does not spoil a limit, while a jump does — unequal one-sided limits mean the laws cannot be applied at all."
+    "## 1. Topic Introduction — Drill Gallery: 0/0 Transformation Speed\n\nThis canonical is the **second limits drill gallery**: 0/0 forms resolved at speed by factoring, conjugates, and star-steering. It mirrors the transformation machinery of the parent canonicals; the drill's discipline is choosing the fastest legal cure.",
+    "## 2. Theorem Mirror — The 0/0 Toolkit\n\n- **Factoring:** 0/0 at a ⟹ (x − a) divides the numerator (factor theorem); double factoring when both die; higher powers re-diagnose after each cancellation.\n- **Conjugates:** √g(x) − √g(a) = [g(x) − g(a)]/[√g(x) + √g(a)] — radicals become polynomials.\n- **Stars:** matched first-order contestants ⟹ coefficient ratio; second-order needs (1 − cos u)/u² → 1/2.\n- **Re-diagnosis rule:** after each cancellation, substitute again — 0/0 means factor again, c/0 means wall.",
+    "## 3. Deep Conceptual — Speed Comes From Recognition, Not Algebra\n\n- Every 0/0 drill is three moves — diagnose, transform, substitute — and the *variation* is only in the transform. Speed comes from pattern recognition: difference of powers ⟹ factor; radical difference ⟹ conjugate; trig ratio ⟹ steer; exp/log ⟹ coefficient ratio.\n- **The re-diagnosis habit separates levels:** beginners cancel once and substitute blindly; strong students substitute after *every* cancellation because the form may have changed species (0/0 → 0/0 → c/0 wall). The form is a property of the current expression.\n- **Cross-checks are one line:** the star (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹ verifies every factoring answer; the conjugate identity verifies every radical answer. Drills build the verification reflex.",
+    "## 4. Deep Conceptual — Why 0/0 Always Yields\n\n- A 0/0 form at a means **both** functions vanish at a ⟹ both carry (x − a) as a factor ⟹ cancellation is always available in principle. The form is a *promise* of a shared root, which is why 0/0 never dead-ends: the only question is which identity exposes the factor fastest.\n- **When the shared root is hidden:** radicals hide it behind roots (conjugate needed), trig functions behind identities (sin x − tan x needs factoring out sin x), exponentials behind the star (eˣ − 1 needs the standard limit). The toolkit is the list of hiding places.",
+    "## 5. Worked Example Types\n\n- **Type A — polynomial over polynomial:** double factor, cancel once, substitute.\n- **Type B — radical difference:** conjugate, cancel, substitute; verify by the radical star.\n- **Type C — trig ratios:** steer to matched stars; coefficient ratio.\n- **Type D — mixed families:** each family contributes its slope; ratio of slopes.",
+    "## 6. Common Confusions\n\n**\"Cancel then forget the licence\":** write x ≠ a — the cancelled form agrees with the original only off the excluded point. **\"0/0 after cancellation means failure\":** it means factor again — higher-multiplicity roots."
   ],
   "confusion": [
     "Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is indeterminate.",
     "Taking $\\lim\\sqrt{f(x)}=\\sqrt{\\lim f}$ without checking the sign; an even root needs a non-negative limit.",
     "Applying the composition rule through a discontinuous outer function such as $\\tan$."
   ],
-  "practice": [],
+  "practice": [
+    "Evaluate lim_{x→3} (x² − 8x + 15)/(x² − 9).",
+    "Evaluate lim_{x→0} (√(4 + x) − 2)/x.",
+    "Evaluate lim_{x→0} (sin 5x − tan 5x)/x³."
+  ],
   "universalFacts": [
-    "The squeeze theorem is the bridge used to prove almost every standard limit, including $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$.",
-    "Audio codecs rely on a jump discontinuity: the mapping from continuous voltage to a discrete level is a jump, and the discontinuity is audible as a click."
+    "Both functions vanishing at a is exactly the condition that (x - a) divides both - 0/0 never dead-ends."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The re-diagnosis*** - (x^2-a^2)/(x-a)^2 cancels to (x+a)/(x-a): re-substituting gives c/0, a wall - the second look changed the species."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Evaluate lim_{x→3} (x² − 8x + 15)/(x² − 9).** — **Form:** (9 − 24 + 15)/(9 − 9) = **0/0** ✓. **Double factor:** numerator (x − 3)(x − 5); denominator (x − 3)(x + 3) ⟹ for x ≠ 3: (x − 5)/(x + 3). **Substitute:** (−2)/(6) = **−1/3**. **Cross-check:** both stars give numerator 2·3 = 6, denominator 2·3 = 6 ⟹ 6/6? — no: the stars give the *derivatives'* ratio only for the shared-factor part; the correct check is that after cancelling (x−3), the remaining factors at 3 are (3−5) = −2 and (3+3) = 6 ✓. **Deep point:** the star cross-check applies to each factor's vanishing part — the surviving factors are evaluated by substitution; knowing which part the star prices avoids its misuse.",
+    "**NEB-style (5m): Evaluate lim_{x→0} (√(4 + x) − 2)/x.** — **Form:** (2 − 2)/0 = **0/0** ✓. **Conjugate:** multiply by (√(4+x) + 2)/(same): numerator = (4 + x) − 4 = x ⟹ expression = 1/(√(4+x) + 2) for x ≠ 0. **Substitute:** 1/(2 + 2) = **1/4**. **Cross-check:** the radical star √(a+u) − √a ~ u/(2√a) at a = 4 gives 1/(2·2) = 1/4 ✓. **Deep point:** the answer 1/4 is the square root's slope at 4 — d/dx √x = 1/(2√x); every conjugate drill is a derivative in embryo, which is why the star cross-check works.",
+    "**NEB-style (6m): Evaluate lim_{x→0} (sin 5x − tan 5x)/x³.** — **Identity reshape:** sin 5x − tan 5x = sin 5x(1 − cos 5x)/cos 5x. **Assemble:** = [(sin 5x)/(5x)]·[(1 − cos 5x)/(5x)²]·[(5x)³/x³]·[1/cos 5x]. **Stars:** 1 · 1/2 · 125 · 1 = **125/2**. **Order check:** sin 5x − tan 5x ~ 5x·(25x²/2) = 125x³/2 ⟹ over x³ ⟹ 125/2 ✓. **Deep point:** the difference of two order-1 functions is order 3 — the leading orders cancel, which is why the answer lives at x³ and why factoring out the common sin 5x was the enabling move; leading-order cancellation is the mechanism behind every higher-order drill.",
+    "**NEB-style (6m): Evaluate lim_{x→2} (√(x + 2) − 2)/(x² − 4).** — **Form:** (2 − 2)/0 = **0/0** ✓. **Both functions vanish at 2:** the numerator hides its root behind the radical; the denominator factors (x−2)(x+2). **Conjugate the numerator:** √(x+2) − 2 = (x − 2)/(√(x+2) + 2) ⟹ the expression = (x − 2)/[(√(x+2) + 2)(x − 2)(x + 2)] = 1/[(√(x+2) + 2)(x + 2)] for x ≠ 2. **Substitute:** 1/[(2 + 2)(4)] = **1/16**. **Deep point:** two cures in one problem — the conjugate exposed the numerator's shared root, which then cancelled against the denominator's explicit factor; composite 0/0 forms are solved by treating each hiding place in turn until one clean quotient remains."
+  ],
   "formulas": [
-    "Sum/difference: $\\lim(f\\pm g)=L\\pm M$",
-    "Product: $\\lim(fg)=LM$",
-    "Quotient: $\\lim\\frac{f}{g}=\\frac{L}{M}$ for $M\\ne0$",
-    "Power: $\\lim f^n=L^n$",
-    "Composition: $\\lim g(f(x))=g(L)$ when $g$ is continuous at $L$",
-    "Squeeze: $g\\le f\\le h$ and $\\lim g=\\lim h=L \\Rightarrow \\lim f=L$"
+    "- Aⁿ − Bⁿ = (A − B)(Aⁿ⁻¹ + Aⁿ⁻²B + ⋯ + Bⁿ⁻¹)\n- √g(x) − √g(a) = [g(x) − g(a)]/[√g(x) + √g(a)]"
   ],
   "keyPoints": [
-    "The laws need only the LIMITS to exist, not the function to be defined at the point.",
-    "The quotient law is void when the denominator's limit is 0 — the root of $0/0$.",
-    "Squeeze is the only general method for a vanishing factor times an oscillating term."
+    "0/0 toolkit: factor theorem promises the shared root; double factoring for rational pairs; conjugate for radical differences; steering for trig ratios; coefficient ratios for matched stars; slope ratios for mixed families. Re-diagnose after every cancellation - the form may change species. Every answer cross-checks against the corresponding star."
   ],
-  "summary": "The algebraic limit laws cover sums, products, quotients, powers and composition, and each requires only that the individual limits exist — never that the functions be defined at the point. The quotient law fails precisely when the denominator tends to 0, which is why $0/0$ is indeterminate. When neither substitution nor the laws apply, the squeeze theorem settles a vanishing factor times an oscillating one.",
+  "summary": "The 0/0 drill's speed comes from recognition: polynomials hide their shared root in factors (conjugate-free), radicals behind roots (conjugate), trig functions behind identities (factor out the common term), exponentials and logs behind their stars (slope ratios). The form is a promise — both functions vanish, so cancellation always exists — and re-diagnosis after every cancellation keeps the species honest. Substitute, cross-check against the matching star, and the fastest legal cure is always the right answer.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is indeterminate.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "Substitute after every cancellation; the form is a property of the current expression."
+  ],
   "importantNotes": [
-    "Topic anchor: Why the laws survive discontinuity  none of these need $f$ defined at $a$, only the limits to exist."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
   ],
   "examShortTricks": [
-    "Check the denominator's limit FIRST — if it is 0 no law applies and the expression must be rewritten.",
-    "Small factor times a trigonometric or oscillating term means squeeze, immediately."
+    "Name the hiding place: polynomial (factor), radical (conjugate), trig (steer), exp/log (slope)."
   ],
   "examNotes": [
-    "Stating the limit laws with the $M\\ne0$ condition attached is a common 2-mark question."
+    "Cross-check factoring answers with the star (x^n - a^n)/(x - a) -> n a^(n-1) - one line, full confidence."
   ],
   "mcs": [
     {
@@ -91,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "The laws need only the LIMITS to exist, not the function to be defined at the point.",
-    "The quotient law is void when the denominator's limit is 0 — the root of $0/0$.",
-    "Squeeze is the only general method for a vanishing factor times an oscillating term."
+    "0/0 is a promise of a shared root; the toolkit is the list of places roots hide."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -106,5 +108,53 @@
     "**4. [Idea: the $1^\\infty$ family with a trigonometric inner function]** Evaluate $\\lim_{x \\to 0}\\left(1+\\sin x\\right)^{\\frac{1}{\\sin x}}$.\\newline\\newline**Solution:** Let $y = \\left(1+\\sin x\\right)^{1/\\sin x}$ and take logarithms:$\\newline\\ln y = \\dfrac{\\ln(1+\\sin x)}{\\sin x}$, which is $\\frac00$.\\newline\\newlineL'Hôpital:$\\newline\\lim_{x\\to0}\\dfrac{\\frac{\\cos x}{1+\\sin x}}{\\cos x} = \\lim_{x\\to0}\\dfrac{1}{1+\\sin x} = 1$.\\newline\\newlineSo $\\ln y \\to 1$, hence $y \\to e$.\\newline\\newline**Answer:** $e$. **Check:** this is the general identity $\\lim_{u\\to0}(1+u)^{1/u}=e$ with $u = \\sin x$.",
     "**5. [Idea: the standard limit $\\lim\\frac{e^u-1}{u}=1$ does all the work]** Evaluate $\\lim_{x \\to 0}\\dfrac{2^{\\sin^2 x} - 1}{x^2}$.\\newline\\newline**Solution:** The form is $\\frac00$. Direct differentiation is circular, and a squeeze using $-x^2 \\le \\sin^2x \\le x^2$ only bounds the expression by $\\frac{2^{x^2}-1}{x^2}$, which tends to $\\ln 2$ — **a non-zero bound proves nothing**.\\newline\\newlineConvert the base instead: $2^{\\sin^2x} = e^{\\sin^2x \\ln 2}$. Set $u = \\sin^2 x\\,\\ln 2$, so $u \\to 0$, and factor the expression into three pieces each with a known limit:$\\newline\\lim_{x\\to0}\\underbrace{\\frac{e^u-1}{u}}_{\\to\\,1}\\cdot\\underbrace{\\frac{u}{\\sin^2x}}_{\\to\\,\\ln2}\\cdot\\underbrace{\\frac{\\sin^2x}{x^2}}_{\\to\\,1}$.\\newline\\newline**Answer:** $1 \\times \\ln 2 \\times 1 = \\ln 2$. **Lesson:** when a squeeze bound tends to a non-zero constant, switch to factorisation.",
     "**6. [Idea: chain an unknown function's limit through a rationalising identity]** Given $\\lim_{x \\to 2}\\dfrac{f(x)-f(2)}{x-2} = 3$ and $f(2) = 6$, evaluate $\\lim_{x \\to 2}\\dfrac{f^2(x) - 36}{x^2-4}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$ and nothing can be computed without more information, so factor both sides:$^{\\bullet}$ Numerator: $f^2(x)-36 = \\left(f(x)-f(2)\\right)\\left(f(x)+f(2)\\right)$ since $36 = f^2(2)$.$^{\\bullet}$ Denominator: $x^2-4 = (x-2)(x+2)$.\\newline\\newlineThen$\\newline\\lim_{x\\to2}\\dfrac{f(x)-f(2)}{x-2}\\cdot\\dfrac{f(x)+f(2)}{x+2} = 3 \\cdot \\dfrac{6+6}{2+2} = 3 \\cdot 3$.\\newline\\newline**Answer:** $9$."
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Drill Gallery: 0/0 Transformation Speed\n\nThis canonical is the **second limits drill gallery**: 0/0 forms resolved at speed by factoring, conjugates, and star-steering. It mirrors the transformation machinery of the parent canonicals; the drill's discipline is choosing the fastest legal cure.",
+      "## 2. Theorem Mirror — The 0/0 Toolkit\n\n- **Factoring:** 0/0 at a ⟹ (x − a) divides the numerator (factor theorem); double factoring when both die; higher powers re-diagnose after each cancellation.\n- **Conjugates:** √g(x) − √g(a) = [g(x) − g(a)]/[√g(x) + √g(a)] — radicals become polynomials.\n- **Stars:** matched first-order contestants ⟹ coefficient ratio; second-order needs (1 − cos u)/u² → 1/2.\n- **Re-diagnosis rule:** after each cancellation, substitute again — 0/0 means factor again, c/0 means wall.",
+      "## 3. Deep Conceptual — Speed Comes From Recognition, Not Algebra\n\n- Every 0/0 drill is three moves — diagnose, transform, substitute — and the *variation* is only in the transform. Speed comes from pattern recognition: difference of powers ⟹ factor; radical difference ⟹ conjugate; trig ratio ⟹ steer; exp/log ⟹ coefficient ratio.\n- **The re-diagnosis habit separates levels:** beginners cancel once and substitute blindly; strong students substitute after *every* cancellation because the form may have changed species (0/0 → 0/0 → c/0 wall). The form is a property of the current expression.\n- **Cross-checks are one line:** the star (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹ verifies every factoring answer; the conjugate identity verifies every radical answer. Drills build the verification reflex.",
+      "## 4. Deep Conceptual — Why 0/0 Always Yields\n\n- A 0/0 form at a means **both** functions vanish at a ⟹ both carry (x − a) as a factor ⟹ cancellation is always available in principle. The form is a *promise* of a shared root, which is why 0/0 never dead-ends: the only question is which identity exposes the factor fastest.\n- **When the shared root is hidden:** radicals hide it behind roots (conjugate needed), trig functions behind identities (sin x − tan x needs factoring out sin x), exponentials behind the star (eˣ − 1 needs the standard limit). The toolkit is the list of hiding places.",
+      "## 5. Worked Example Types\n\n- **Type A — polynomial over polynomial:** double factor, cancel once, substitute.\n- **Type B — radical difference:** conjugate, cancel, substitute; verify by the radical star.\n- **Type C — trig ratios:** steer to matched stars; coefficient ratio.\n- **Type D — mixed families:** each family contributes its slope; ratio of slopes.",
+      "## 6. Common Confusions\n\n**\"Cancel then forget the licence\":** write x ≠ a — the cancelled form agrees with the original only off the excluded point. **\"0/0 after cancellation means failure\":** it means factor again — higher-multiplicity roots."
+    ],
+    "keyPoints": [
+      "0/0 toolkit: factor theorem promises the shared root; double factoring for rational pairs; conjugate for radical differences; steering for trig ratios; coefficient ratios for matched stars; slope ratios for mixed families. Re-diagnose after every cancellation - the form may change species. Every answer cross-checks against the corresponding star."
+    ],
+    "importantConcepts": [
+      "0/0 is a promise of a shared root; the toolkit is the list of places roots hide."
+    ],
+    "examples": [
+      "***The re-diagnosis*** - (x^2-a^2)/(x-a)^2 cancels to (x+a)/(x-a): re-substituting gives c/0, a wall - the second look changed the species."
+    ],
+    "universalFacts": [
+      "Both functions vanishing at a is exactly the condition that (x - a) divides both - 0/0 never dead-ends."
+    ],
+    "importantStatements": [
+      "Substitute after every cancellation; the form is a property of the current expression."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    ],
+    "examShortTricks": [
+      "Name the hiding place: polynomial (factor), radical (conjugate), trig (steer), exp/log (slope)."
+    ],
+    "examNotes": [
+      "Cross-check factoring answers with the star (x^n - a^n)/(x - a) -> n a^(n-1) - one line, full confidence."
+    ],
+    "formulas": [
+      "- Aⁿ − Bⁿ = (A − B)(Aⁿ⁻¹ + Aⁿ⁻²B + ⋯ + Bⁿ⁻¹)\n- √g(x) − √g(a) = [g(x) − g(a)]/[√g(x) + √g(a)]"
+    ],
+    "practice": [
+      "Evaluate lim_{x→3} (x² − 8x + 15)/(x² − 9).",
+      "Evaluate lim_{x→0} (√(4 + x) − 2)/x.",
+      "Evaluate lim_{x→0} (sin 5x − tan 5x)/x³."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Evaluate lim_{x→3} (x² − 8x + 15)/(x² − 9).** — **Form:** (9 − 24 + 15)/(9 − 9) = **0/0** ✓. **Double factor:** numerator (x − 3)(x − 5); denominator (x − 3)(x + 3) ⟹ for x ≠ 3: (x − 5)/(x + 3). **Substitute:** (−2)/(6) = **−1/3**. **Cross-check:** both stars give numerator 2·3 = 6, denominator 2·3 = 6 ⟹ 6/6? — no: the stars give the *derivatives'* ratio only for the shared-factor part; the correct check is that after cancelling (x−3), the remaining factors at 3 are (3−5) = −2 and (3+3) = 6 ✓. **Deep point:** the star cross-check applies to each factor's vanishing part — the surviving factors are evaluated by substitution; knowing which part the star prices avoids its misuse.",
+      "**NEB-style (5m): Evaluate lim_{x→0} (√(4 + x) − 2)/x.** — **Form:** (2 − 2)/0 = **0/0** ✓. **Conjugate:** multiply by (√(4+x) + 2)/(same): numerator = (4 + x) − 4 = x ⟹ expression = 1/(√(4+x) + 2) for x ≠ 0. **Substitute:** 1/(2 + 2) = **1/4**. **Cross-check:** the radical star √(a+u) − √a ~ u/(2√a) at a = 4 gives 1/(2·2) = 1/4 ✓. **Deep point:** the answer 1/4 is the square root's slope at 4 — d/dx √x = 1/(2√x); every conjugate drill is a derivative in embryo, which is why the star cross-check works.",
+      "**NEB-style (6m): Evaluate lim_{x→0} (sin 5x − tan 5x)/x³.** — **Identity reshape:** sin 5x − tan 5x = sin 5x(1 − cos 5x)/cos 5x. **Assemble:** = [(sin 5x)/(5x)]·[(1 − cos 5x)/(5x)²]·[(5x)³/x³]·[1/cos 5x]. **Stars:** 1 · 1/2 · 125 · 1 = **125/2**. **Order check:** sin 5x − tan 5x ~ 5x·(25x²/2) = 125x³/2 ⟹ over x³ ⟹ 125/2 ✓. **Deep point:** the difference of two order-1 functions is order 3 — the leading orders cancel, which is why the answer lives at x³ and why factoring out the common sin 5x was the enabling move; leading-order cancellation is the mechanism behind every higher-order drill.",
+      "**NEB-style (6m): Evaluate lim_{x→2} (√(x + 2) − 2)/(x² − 4).** — **Form:** (2 − 2)/0 = **0/0** ✓. **Both functions vanish at 2:** the numerator hides its root behind the radical; the denominator factors (x−2)(x+2). **Conjugate the numerator:** √(x+2) − 2 = (x − 2)/(√(x+2) + 2) ⟹ the expression = (x − 2)/[(√(x+2) + 2)(x − 2)(x + 2)] = 1/[(√(x+2) + 2)(x + 2)] for x ≠ 2. **Substitute:** 1/[(2 + 2)(4)] = **1/16**. **Deep point:** two cures in one problem — the conjugate exposed the numerator's shared root, which then cancelled against the denominator's explicit factor; composite 0/0 forms are solved by treating each hiding place in turn until one clean quotient remains."
+    ]
+  }
 }

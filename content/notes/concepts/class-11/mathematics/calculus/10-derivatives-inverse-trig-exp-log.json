@@ -5,60 +5,59 @@
   "topicSlug": "derivatives-inverse-trig-exp-log",
   "relevance": 100,
   "notes": [
-    "**Inverse trigonometric derivatives all carry a denominator:** $\\frac{d}{dx}\\arcsin x = \\frac1{\\sqrt{1-x^2}}$, $\\frac{d}{dx}\\arccos x = -\\frac1{\\sqrt{1-x^2}}$, $\\frac{d}{dx}\\arctan x = \\frac1{1+x^2}$. Arccos carries a minus sign, which is the detail most often lost.",
-    "**The remaining three follow the same shape:** $\\frac{d}{dx}\\operatorname{arccot}x = -\\frac1{1+x^2}$, $\\frac{d}{dx}\\operatorname{arcsec}x = \\frac1{|x|\\sqrt{x^2-1}}$, $\\frac{d}{dx}\\operatorname{arccsc}x = -\\frac1{|x|\\sqrt{x^2-1}}$. The absolute value on $x$ is required, not optional.",
-    "**Exponential:** $\\frac{d}{dx}e^x = e^x$ is unique in being its own derivative. For $a^x$ use $\\frac{d}{dx}a^x = a^x\\ln a$, so $a^x$ is its own derivative only when $a=e$.",
-    "**Logarithms:** $\\frac{d}{dx}\\ln x = \\frac1x$ and $\\frac{d}{dx}\\log_a x = \\frac1{x\\ln a}$. The identity $\\frac{d}{dx}\\log_a u = \\frac{u'}{u\\ln a}$ is what makes $\\log$ a natural tool for exponential-growth problems, since $\\frac{d}{dx}a^x$ contains exactly the factor $\\ln a$ that $\\log$ removes.",
-    "**Log of a product splits into a sum:** $\\ln(xy)=\\ln x+\\ln y$, so $\\frac{d}{dx}\\ln(xy)=\\frac1y+\\frac1x$ — the chain rule applied to a product, which is a classic exam step.",
-    "**The derivative of $\\ln$ inverts the exponent:** since $e^x$ is its own derivative, $\\frac{d}{dx}\\ln x = \\frac1x$ follows by inverse-function differentiation. The same logic gives $\\frac{d}{dx}\\arctan x$ once $\\frac{d}{dx}\\tan x=\\sec^2x$ is known."
+    "## 1. Topic Introduction — The Companion Doorway to Inverse Trig, Exp and Log Derivatives\n\nThis canonical is the **short-form doorway** to derivatives of inverse trigonometric, exponential and logarithmic functions: the inverse-engine rule and the base-e story in one page. The parent canonical carries the full treatment; this companion mirrors the table, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Inverse-engine rule:** if f is invertible and differentiable with f′ ≠ 0, then (f⁻¹)′(f(x)) = 1/f′(x) — differentiate the identity f⁻¹(f(x)) = x by the chain rule.\n- **Inverse trig table:** (sin⁻¹x)′ = 1/√(1−x²); (cos⁻¹x)′ = −1/√(1−x²); (tan⁻¹x)′ = 1/(1+x²); (cot⁻¹x)′ = −1/(1+x²); (sec⁻¹x)′ = 1/(|x|√(x²−1)); (cosec⁻¹x)′ = −1/(|x|√(x²−1)).\n- **Exp/log table:** (eˣ)′ = eˣ; (aˣ)′ = aˣ ln a; (ln x)′ = 1/x; (log_a x)′ = 1/(x ln a).\n- **Domains:** inverse trig entries valid on their interiors (|x| < 1 for sin/cos⁻¹; |x| > 1 for sec/cosec⁻¹).",
+    "## 3. Deep Conceptual — One Engine, Six Derivatives\n\n- The inverse-engine rule derives the **entire inverse trig table**: sin⁻¹ via 1/cos y = 1/√(1−x²) (the positive root forced by the principal branch); tan⁻¹ via 1/sec²y = cos²y = 1/(1+x²). One theorem plus branch discipline replaces six memorisations.\n- **Every inverse singularity is a horizontal tangent:** sin⁻¹x's derivative blows up at x = ±1 exactly where sin y has f′ = 0 (y = ±π/2). The f′ ≠ 0 hypothesis is where the rule's licence expires — and the blow-up points are visible on the original graph.\n- **e is the unique self-replicating base:** (aˣ)′ = aˣ ln a, so self-replication forces ln a = 1. The natural base pays no tax; every other base is e wearing a constant — which is why natural logs are natural.",
+    "## 4. Deep Conceptual — Branches Supply the Signs\n\n- The inverse trig derivatives' signs come from the **principal branches**: on y ∈ [−π/2, π/2], cos y ≥ 0, so the square root in (sin⁻¹)′ is positive; the co-function minus signs are the branch's mirror. Sign errors in this table are almost always branch errors.\n- **The log's two tables:** (ln x)′ = 1/x on (0, ∞); the f′/f pattern ∫ later extends it to ln|f| — the absolute value is the domain repair that lets one formula serve both signs.",
+    "## 5. Worked Example Types\n\n- **Type A — engine derivation:** derive one inverse trig entry from the rule, stating the branch.\n- **Type B — base conversions:** (aˣ)′ and (log_a x)′ with the ln a tax made explicit.\n- **Type C — chain-wrapped entries:** sin⁻¹(u), ln(u), eᵘ with the inner derivative attached.\n- **Type D — singularity reading:** locate where an inverse derivative blows up and match to the original's horizontal tangents.",
+    "## 6. Common Confusions\n\n**\"1/√(1−x²) needs a ±\":** the branch decides — principal branches make it positive. **\"(aˣ)′ = aˣ\":** only for a = e; the ln a tax is otherwise mandatory."
   ],
   "confusion": [
     "Omitting the minus sign on the arccos derivative — it is the one inverse trig derivative that is negative among the three principal ones.",
     "Writing $\\frac{d}{dx}a^x = a^x$ instead of $a^x\\ln a$; only the natural exponential is self-derivative.",
     "Dropping the absolute value in the arcsec and arccsc derivatives."
   ],
-  "practice": [],
+  "practice": [
+    "Derive (tan⁻¹x)′ = 1/(1 + x²) from the inverse-engine rule.",
+    "Differentiate y = 5ˣ and y = log₃x.",
+    "Differentiate y = sin⁻¹(3x)."
+  ],
   "universalFacts": [
-    "Compound interest is the reason $e$ matters: continuous growth is $e^{rt}$, and the derivative of the exponential is what makes that growth self-similar in time.",
-    "The curve $y=\\ln x$ is the inverse of $y=e^x$ and shares its steepness there, because a function and its inverse are reflections in $y=x$ and have reciprocal slopes."
+    "The ln a factor is the general-base tax; e is the unique base that pays none."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The branch decides the sign*** - on y in [-pi/2, pi/2], cos y >= 0 forces the positive root in (sin^-1)' - the ± temptation dies at the branch."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Derive (tan⁻¹x)′ = 1/(1 + x²) using the inverse-engine rule, stating the branch.** — **Setup:** y = tan⁻¹x ⟹ x = tan y with y ∈ (−π/2, π/2) — the principal branch, on which tan is one-to-one and sec y > 0. **Engine:** (tan⁻¹)′(x) = 1/(tan)′(y) = 1/sec²y. **Express in x:** sec²y = 1 + tan²y = **1 + x²** (the Pythagorean identity). **Result: 1/(1 + x²)** — valid for all real x (the branch covers ℝ). **Deep point:** the Pythagorean identities are the engine's translation dictionary — each inverse trig derivative is 1/(the partner's derivative), rewritten in x by the matching identity; no memorisation survives the derivation.",
+    "**NEB-style (5m): Differentiate y = 5ˣ and y = log₃x, making each base tax explicit.** — **Exponential:** (5ˣ)′ = 5ˣ·ln 5 — the general-base tax ln 5 ≈ 1.609; only e pays none. **Logarithm:** (log₃x)′ = 1/(x·ln 3) — the same tax in the denominator; equivalently log₃x = ln x/ln 3 and the constant multiple rule delivers it. **Cross-check:** the two taxes are reciprocals' mirrors — each is ln of the base, because aˣ = e^{x ln a} and log_a x = ln x/ln a are the same conversion worn outside-in. **Deep point:** base conversions are e's algebra in disguise: rewrite in base e, differentiate with the natural rules, and the ln a factors appear mechanically.",
+    "**NEB-style (5m): Differentiate y = sin⁻¹(3x) and state the domain of the answer.** — **Chain rule (outer table, inner derivative):** (sin⁻¹)′(u) = 1/√(1 − u²) with u = 3x, u′ = 3 ⟹ y′ = 3/√(1 − 9x²). **Domain:** the outer table needs |u| < 1 ⟹ |3x| < 1 ⟹ **|x| < 1/3**; at x = ±1/3 the derivative blows up (the original's horizontal tangents at y = ±π/2). **Deep point:** the chain rule wraps every table entry — write both factors (outer evaluated at u, inner derivative) explicitly and the composition can never be forgotten; the domain shrinks with the inner function's range.",
+    "**NEB-style (6m): Using the inverse-engine rule, derive (sec⁻¹x)′ = 1/(|x|√(x² − 1)) and explain the absolute value.** — **Setup:** y = sec⁻¹x ⟹ x = sec y, y ∈ [0, π] \\\\ {π/2} (the principal branch). **Engine:** (sec⁻¹)′(x) = 1/(sec)′(y) = 1/(sec y·tan y) = 1/(x·tan y). **Express tan y:** sec²y − 1 = tan²y ⟹ |tan y| = √(x² − 1) (x = sec y satisfies |x| ≥ 1). **The absolute value:** on the branch, tan y is positive for y ∈ [0, π/2) and negative for y ∈ (π/2, π] — so x·tan y = |x|·√(x²−1) in both halves (the signs of x and tan y match on the branch) ⟹ **(sec⁻¹x)′ = 1/(|x|√(x² − 1))**, valid for |x| > 1. **Deep point:** the absolute value is not decoration — it is the branch's sign bookkeeping compressed into one symbol; dropping it halves the table's correctness on the negative side."
+  ],
   "formulas": [
-    "$(\\arcsin x)' = \\frac1{\\sqrt{1-x^2}}$, $(\\arccos x)' = -\\frac1{\\sqrt{1-x^2}}$",
-    "$(\\arctan x)' = \\frac1{1+x^2}$, $(\\operatorname{arccot}x)' = -\\frac1{1+x^2}$",
-    "$(\\operatorname{arcsec}x)' = \\frac1{|x|\\sqrt{x^2-1}}$, $(\\operatorname{arccsc}x)' = -\\frac1{|x|\\sqrt{x^2-1}}$",
-    "$(e^x)' = e^x$, $(a^x)' = a^x\\ln a$",
-    "$(\\ln x)' = \\frac1x$, $(\\log_a x)' = \\frac1{x\\ln a}$"
+    "- (f⁻¹)′(f(x)) = 1/f′(x)\n- (tan⁻¹x)′ = 1/(1 + x²); (aˣ)′ = aˣ·ln a"
   ],
   "keyPoints": [
-    "Arccos and arccot derivatives are negative; the others are positive.",
-    "Only $e^x$ is its own derivative — $a^x$ needs the $\\ln a$ factor.",
-    "The arcsec and arccsc derivatives require an absolute value on $x$."
+    "Inverse-engine rule: (f^-1)'(f(x)) = 1/f'(x), f' != 0 - derives the whole inverse trig table. Entries: sin^-1 -> 1/sqrt(1-x^2); tan^-1 -> 1/(1+x^2); sec^-1 -> 1/(|x|sqrt(x^2-1)); co-functions carry minus signs; branches supply positivity. Exp/log: (e^x)' = e^x; (a^x)' = a^x ln a; (ln x)' = 1/x; (log_a x)' = 1/(x ln a). Every inverse singularity is a horizontal tangent of the original."
   ],
-  "summary": "Every inverse trigonometric derivative takes the form 'one over the derivative of its partner', with a sign that is negative for arccos and arccot. The exponential $e^x$ is uniquely self-derivative, while $a^x$ carries an extra $\\ln a$ factor — the same factor that differentiating a logarithm removes, which is why logs and exponentials are paired. Domains and absolute values are part of these formulas, not decorations.",
+  "summary": "Inverse trigonometric, exponential and logarithmic derivatives come from one engine — (f⁻¹)′ = 1/f′ — plus branch discipline and the Pythagorean dictionary; every singularity of an inverse derivative is the original's horizontal tangent made visible. The exponential family orbits e: the self-replicating base pays no ln a tax, every other base wears one, and the log's reciprocal rule completes the inverse pair. Derive rather than recall, and state the domain with every answer.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Omitting the minus sign on the arccos derivative — it is the one inverse trig derivative that is negative among the three principal ones.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: $\\frac{d}{dx}\\arccos x = -\\frac1{\\sqrt{1-x^2}}$.",
-    "Statement 2: $\\frac{d}{dx}\\arctan x = \\frac1{1+x^2}$.",
-    "Statement 3: $\\frac{d}{dx}e^x = e^x$ but $\\frac{d}{dx}a^x = a^x\\ln a$.",
-    "Statement 4: $\\frac{d}{dx}\\ln x = \\frac1x$.",
-    "Statement 5: The arcsec and arccsc derivatives involve $|x|$ in the denominator."
+    "Every singularity of an inverse derivative is a horizontal tangent of the original function."
   ],
   "importantNotes": [
-    "Topic anchor: The derivative of $ ln$ inverts the exponent  since $e^x$ is its own derivative, $ frac{d}{dx} ln x =  frac1x$ follows by inverse-function differentiation."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Inverse trig derivative = 1 over the partner's derivative, then adjust the sign for the 'co' functions (cos, cot, csc, sec).",
-    "For $a^x$, always write $a^x\\ln a$ — omitting $\\ln a$ is the common slip."
+    "Derive, do not recall: state the engine, name the branch, read the sign."
   ],
   "examNotes": [
-    "Differentiating inverse trig and logarithmic expressions with the chain rule is a reliable 3-mark question."
+    "State domains with inverse trig derivatives - |x| < 1 or |x| > 1 is part of the answer."
   ],
   "mcs": [
     {
@@ -96,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "Arccos and arccot derivatives are negative; the others are positive.",
-    "Only $e^x$ is its own derivative — $a^x$ needs the $\\ln a$ factor.",
-    "The arcsec and arccsc derivatives require an absolute value on $x$."
+    "One engine and branch discipline replace six memorisations; e is the unique base whose derivative is itself."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -112,5 +109,53 @@
     "**4. [Idea: a parametric curve whose parameter cancels, with a vertical-tangent check]** A curve is $x = 3t - t^3$, $y = 3t^2$. Find $\\frac{dy}{dx}$ and where the tangent is vertical.\\newline\\newline**Solution:**$^{\\bullet}$ $\\dfrac{dx}{dt} = 3 - 3t^2$ and $\\dfrac{dy}{dt} = 6t$.$^{\\bullet}$ $\\dfrac{dy}{dx} = \\dfrac{6t}{3-3t^2} = \\dfrac{2t}{1-t^2}$.\\newline\\newline**Horizontal tangent** ($\\frac{dy}{dx}=0$): $2t=0 \\Rightarrow t=0$, giving the point $(0,0)$.\\newline\\newline**Vertical tangent** ($\\frac{dx}{dt}=0$): $3-3t^2=0 \\Rightarrow t=\\pm1$, giving points $(2,3)$ and $(-2,3)$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=\\frac{2t}{1-t^2}$; horizontal tangent at $t=0$, vertical at $t=\\pm1$. **Trap:** finding a vertical tangent by setting $\\frac{dy}{dx}$ infinite without checking that $\\frac{dx}{dt}$ is genuinely zero.",
     "**5. [Idea: a second implicit derivative needs the original relation substituted at the end]** For $x^2+y^2 = 25$, obtain $\\frac{d^2y}{dx^2}$ in terms of $y$ alone.\\newline\\newline**Solution:** From part 3, $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$. Differentiate this fraction — do NOT re-derive from scratch:$^{\\bullet}$ $\\dfrac{d}{dx}\\left(-xy^{-1}\\right) = -\\left[\\left(\\frac{dx}{dx}\\right)y^{-1} + x\\left(\\frac{d}{dx}y^{-1}\\right)\\right]$.\\newline\\newline$^{\\bullet}$ Since $\\frac{d}{dx}y^{-1} = -y^{-2}\\dfrac{dy}{dx} = -y^{-2}\\left(-\\frac{x}{y}\\right) = \\dfrac{x}{y^3}$:$\\newline\\frac{d^2y}{dx^2} = -\\left[\\frac{1}{y} + x\\cdot\\frac{x}{y^3}\\right] = -\\frac{y^2 + x^2}{y^3}$.\\newline\\newline$^{\\bullet}$ Finally substitute $x^2+y^2=25$ to remove $x$: $\\dfrac{d^2y}{dx^2} = -\\dfrac{25}{y^3}$.\\newline\\newline**Answer:** $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}=-\\frac{25}{y^3}$ for a circle of radius $r=5$.\\newline\\newline**Check at the top $(0,5)$:** $-\\frac{25}{125}=-\\frac15$, so the top of the circle is concave down with $|f''|=\\frac{1}{5}$ — exactly $\\frac1r$, as a circle of curvature $r$ requires. **Trap:** writing $625$ by squaring $25$ again; the $25$ is already $r^2$.",
     "**6. [Idea: logarithmic differentiation for a variable exponent]** Differentiate $y = x^x$ and hence find the stationary point of $y=\\dfrac{x^x}{e^x}$ for $x>0$.\\newline\\newline**Solution:** Differentiate $y=x^x$ by taking logs:$^{\\bullet}$ $\\ln y = x\\ln x$, so $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$.$^{\\bullet}$ Hence $\\dfrac{dy}{dx} = x^x(\\ln x + 1)$.\\newline\\newline**Now** $g(x)=\\dfrac{x^x}{e^x} = x^x e^{-x}$, so $\\dfrac{d}{dx}\\ln g = (\\ln x + 1) - 1 = \\ln x$.\\newline\\newlineSo $g'(x) = g(x)\\ln x$, which vanishes when $\\ln x = 0$, i.e. $x=1$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=x^x(\\ln x+1)$; the stationary point of $g$ is $x=1$. **Verification:** $g(1)=1\\cdot e^{-1}=e^{-1}$, and $g' = g\\ln x$ changes from negative ($x<1$) to positive ($x>1$), confirming a minimum."
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to Inverse Trig, Exp and Log Derivatives\n\nThis canonical is the **short-form doorway** to derivatives of inverse trigonometric, exponential and logarithmic functions: the inverse-engine rule and the base-e story in one page. The parent canonical carries the full treatment; this companion mirrors the table, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Inverse-engine rule:** if f is invertible and differentiable with f′ ≠ 0, then (f⁻¹)′(f(x)) = 1/f′(x) — differentiate the identity f⁻¹(f(x)) = x by the chain rule.\n- **Inverse trig table:** (sin⁻¹x)′ = 1/√(1−x²); (cos⁻¹x)′ = −1/√(1−x²); (tan⁻¹x)′ = 1/(1+x²); (cot⁻¹x)′ = −1/(1+x²); (sec⁻¹x)′ = 1/(|x|√(x²−1)); (cosec⁻¹x)′ = −1/(|x|√(x²−1)).\n- **Exp/log table:** (eˣ)′ = eˣ; (aˣ)′ = aˣ ln a; (ln x)′ = 1/x; (log_a x)′ = 1/(x ln a).\n- **Domains:** inverse trig entries valid on their interiors (|x| < 1 for sin/cos⁻¹; |x| > 1 for sec/cosec⁻¹).",
+      "## 3. Deep Conceptual — One Engine, Six Derivatives\n\n- The inverse-engine rule derives the **entire inverse trig table**: sin⁻¹ via 1/cos y = 1/√(1−x²) (the positive root forced by the principal branch); tan⁻¹ via 1/sec²y = cos²y = 1/(1+x²). One theorem plus branch discipline replaces six memorisations.\n- **Every inverse singularity is a horizontal tangent:** sin⁻¹x's derivative blows up at x = ±1 exactly where sin y has f′ = 0 (y = ±π/2). The f′ ≠ 0 hypothesis is where the rule's licence expires — and the blow-up points are visible on the original graph.\n- **e is the unique self-replicating base:** (aˣ)′ = aˣ ln a, so self-replication forces ln a = 1. The natural base pays no tax; every other base is e wearing a constant — which is why natural logs are natural.",
+      "## 4. Deep Conceptual — Branches Supply the Signs\n\n- The inverse trig derivatives' signs come from the **principal branches**: on y ∈ [−π/2, π/2], cos y ≥ 0, so the square root in (sin⁻¹)′ is positive; the co-function minus signs are the branch's mirror. Sign errors in this table are almost always branch errors.\n- **The log's two tables:** (ln x)′ = 1/x on (0, ∞); the f′/f pattern ∫ later extends it to ln|f| — the absolute value is the domain repair that lets one formula serve both signs.",
+      "## 5. Worked Example Types\n\n- **Type A — engine derivation:** derive one inverse trig entry from the rule, stating the branch.\n- **Type B — base conversions:** (aˣ)′ and (log_a x)′ with the ln a tax made explicit.\n- **Type C — chain-wrapped entries:** sin⁻¹(u), ln(u), eᵘ with the inner derivative attached.\n- **Type D — singularity reading:** locate where an inverse derivative blows up and match to the original's horizontal tangents.",
+      "## 6. Common Confusions\n\n**\"1/√(1−x²) needs a ±\":** the branch decides — principal branches make it positive. **\"(aˣ)′ = aˣ\":** only for a = e; the ln a tax is otherwise mandatory."
+    ],
+    "keyPoints": [
+      "Inverse-engine rule: (f^-1)'(f(x)) = 1/f'(x), f' != 0 - derives the whole inverse trig table. Entries: sin^-1 -> 1/sqrt(1-x^2); tan^-1 -> 1/(1+x^2); sec^-1 -> 1/(|x|sqrt(x^2-1)); co-functions carry minus signs; branches supply positivity. Exp/log: (e^x)' = e^x; (a^x)' = a^x ln a; (ln x)' = 1/x; (log_a x)' = 1/(x ln a). Every inverse singularity is a horizontal tangent of the original."
+    ],
+    "importantConcepts": [
+      "One engine and branch discipline replace six memorisations; e is the unique base whose derivative is itself."
+    ],
+    "examples": [
+      "***The branch decides the sign*** - on y in [-pi/2, pi/2], cos y >= 0 forces the positive root in (sin^-1)' - the ± temptation dies at the branch."
+    ],
+    "universalFacts": [
+      "The ln a factor is the general-base tax; e is the unique base that pays none."
+    ],
+    "importantStatements": [
+      "Every singularity of an inverse derivative is a horizontal tangent of the original function."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Derive, do not recall: state the engine, name the branch, read the sign."
+    ],
+    "examNotes": [
+      "State domains with inverse trig derivatives - |x| < 1 or |x| > 1 is part of the answer."
+    ],
+    "formulas": [
+      "- (f⁻¹)′(f(x)) = 1/f′(x)\n- (tan⁻¹x)′ = 1/(1 + x²); (aˣ)′ = aˣ·ln a"
+    ],
+    "practice": [
+      "Derive (tan⁻¹x)′ = 1/(1 + x²) from the inverse-engine rule.",
+      "Differentiate y = 5ˣ and y = log₃x.",
+      "Differentiate y = sin⁻¹(3x)."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Derive (tan⁻¹x)′ = 1/(1 + x²) using the inverse-engine rule, stating the branch.** — **Setup:** y = tan⁻¹x ⟹ x = tan y with y ∈ (−π/2, π/2) — the principal branch, on which tan is one-to-one and sec y > 0. **Engine:** (tan⁻¹)′(x) = 1/(tan)′(y) = 1/sec²y. **Express in x:** sec²y = 1 + tan²y = **1 + x²** (the Pythagorean identity). **Result: 1/(1 + x²)** — valid for all real x (the branch covers ℝ). **Deep point:** the Pythagorean identities are the engine's translation dictionary — each inverse trig derivative is 1/(the partner's derivative), rewritten in x by the matching identity; no memorisation survives the derivation.",
+      "**NEB-style (5m): Differentiate y = 5ˣ and y = log₃x, making each base tax explicit.** — **Exponential:** (5ˣ)′ = 5ˣ·ln 5 — the general-base tax ln 5 ≈ 1.609; only e pays none. **Logarithm:** (log₃x)′ = 1/(x·ln 3) — the same tax in the denominator; equivalently log₃x = ln x/ln 3 and the constant multiple rule delivers it. **Cross-check:** the two taxes are reciprocals' mirrors — each is ln of the base, because aˣ = e^{x ln a} and log_a x = ln x/ln a are the same conversion worn outside-in. **Deep point:** base conversions are e's algebra in disguise: rewrite in base e, differentiate with the natural rules, and the ln a factors appear mechanically.",
+      "**NEB-style (5m): Differentiate y = sin⁻¹(3x) and state the domain of the answer.** — **Chain rule (outer table, inner derivative):** (sin⁻¹)′(u) = 1/√(1 − u²) with u = 3x, u′ = 3 ⟹ y′ = 3/√(1 − 9x²). **Domain:** the outer table needs |u| < 1 ⟹ |3x| < 1 ⟹ **|x| < 1/3**; at x = ±1/3 the derivative blows up (the original's horizontal tangents at y = ±π/2). **Deep point:** the chain rule wraps every table entry — write both factors (outer evaluated at u, inner derivative) explicitly and the composition can never be forgotten; the domain shrinks with the inner function's range.",
+      "**NEB-style (6m): Using the inverse-engine rule, derive (sec⁻¹x)′ = 1/(|x|√(x² − 1)) and explain the absolute value.** — **Setup:** y = sec⁻¹x ⟹ x = sec y, y ∈ [0, π] \\\\ {π/2} (the principal branch). **Engine:** (sec⁻¹)′(x) = 1/(sec)′(y) = 1/(sec y·tan y) = 1/(x·tan y). **Express tan y:** sec²y − 1 = tan²y ⟹ |tan y| = √(x² − 1) (x = sec y satisfies |x| ≥ 1). **The absolute value:** on the branch, tan y is positive for y ∈ [0, π/2) and negative for y ∈ (π/2, π] — so x·tan y = |x|·√(x²−1) in both halves (the signs of x and tan y match on the branch) ⟹ **(sec⁻¹x)′ = 1/(|x|√(x² − 1))**, valid for |x| > 1. **Deep point:** the absolute value is not decoration — it is the branch's sign bookkeeping compressed into one symbol; dropping it halves the table's correctness on the negative side."
+    ]
+  }
 }

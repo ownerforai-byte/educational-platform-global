@@ -5,60 +5,59 @@
   "topicSlug": "higher-order-derivatives",
   "relevance": 100,
   "notes": [
-    "**Repeated differentiation:** $f''(x)=\\frac{d}{dx}\\left(\\frac{df}{dx}\\right)$ and so on. Each derivative lowers the degree by one, so the $n$-th derivative of a degree-$n$ polynomial is a constant and the $(n+1)$-th is zero — a clean statement that polynomial growth cannot be exceeded by repeated differentiation.",
-    "**Second derivative as change of slope:** $f''$ is not a rate in a new direction; it is how fast the FIRST derivative changes. That is what gives concavity its meaning — $f''>0$ means the slope is increasing, so the curve bends upward.",
-    "**Newton–Raphson iteration:** $x_{n+1}=x_n-\\frac{f(x_n)}{f'(x_n)}$. This is the tangent-line approximation, so it converges quadratically near a simple root but overshoots or diverges if started badly or if $f'=0$ at the starting point.",
-    "**Inflection points:** where $f''$ changes SIGN. The point need not be where the curve crosses an axis, and $f''=0$ alone is not sufficient — $x^4$ has $f''(0)=0$ yet no inflection, because the sign never changes.",
-    "**Repeated application raises chain-rule layers:** $\\frac{d^2}{dx^2}(2x+1)^3 = 12(2x+1)$, multiplying the inner derivative each time: $3\\cdot2=6$, then $2\\cdot6=12$.",
-    "**Leibniz's rule for products:** $\\frac{d^n}{dx^n}(uv)=\\sum_{k=0}^{n}\\binom{n}{k}u^{(k)}v^{(n-k)}$, generalising the product rule so products can be differentiated repeatedly without expansion."
+    "## 1. Topic Introduction — The Companion Doorway to Higher-Order Derivatives\n\nThis canonical is the **short-form doorway** to higher-order derivatives: repeated differentiation, the acceleration reading, and the sinusoid's eigen-equation in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Definition:** f″(x) = d/dx[f′(x)] — the derivative of the derivative; f⁽ⁿ⁾ by iteration.\n- **Notations:** d²y/dx², y″, f″(x), D²y — all the same object.\n- **Parametric second derivative:** d²y/dx² = [d(dy/dx)/dt]/(dx/dt) — the two-step recipe.\n- **Leibniz:** (fg)⁽ⁿ⁾ = Σ C(n,k) f⁽ⁿ⁻ᵏ⁾g⁽ᵏ⁾ — the product rule's binomial generalisation.\n- **Key patterns:** (sin mx)⁽ⁿ⁾ = mⁿ sin(mx + nπ/2); (e^{mx})⁽ⁿ⁾ = mⁿe^{mx}; (1/(x−a))⁽ⁿ⁾ = (−1)ⁿn!/(x−a)ⁿ⁺¹.",
+    "## 3. Deep Conceptual — The Second Derivative's Personalities\n\n- f″ measures **how the slope changes** — concavity (f″ > 0: cup up), acceleration (velocity's rate), and curvature's sign. The second derivative is the first place the derivative's own behaviour becomes an object of study.\n- **The sinusoid's eigen-equation:** y = A sin(mx + φ) satisfies **y″ = −m²y** — differentiating twice returns the function times −m². This is the defining property of sinusoids and the seed of every oscillation equation in physics; the operator D² acting on sin is multiplication by −m².\n- **The exponential's eigen-simplicity:** (e^{mx})⁽ⁿ⁾ = mⁿe^{mx} for every n — the exponential is the unique function (up to constant) that is its own derivative family. Polynomials die under repeated differentiation (degree n → 0 after n+1 passes); exponentials and sinusoids cycle or scale forever.",
+    "## 4. Deep Conceptual — Repeated Differentiation as an Operator Game\n\n- D (the differentiation operator) can be treated as an algebraic object: D²y = D(Dy), and Leibniz's formula is literally the binomial theorem (D + A)ⁿ applied to fg with A = \"multiply by g\". The binomial coefficients C(n,k) appear because each pass either differentiates f or leaves it — counting the choices.\n- **Pattern tables beat repeated work:** the n-th derivatives of sin, cos, e^{mx}, 1/(x−a), ln(1+x) follow closed patterns; drilling the first four derivatives of each reveals the cycle, and the pattern generalises. The exam skill is seeing the cycle by the third pass.",
+    "## 5. Worked Example Types\n\n- **Type A — repeated power differentiation:** y = x⁴ → 24, the factorial pattern.\n- **Type B — sinusoid eigen-check:** verify y″ = −m²y for a given sinusoid.\n- **Type C — parametric second derivative:** the two-step recipe applied.\n- **Type D — Leibniz:** (x²eˣ)⁽ⁿ⁾ or (x² sin x)″ by the binomial formula.",
+    "## 6. Common Confusions\n\n**\"d²y/dx² means square the first derivative\":** it means differentiate twice — the notation is ordinal, not arithmetic. **\"Higher derivatives always simplify\":** they usually complicate — patterns, not simplification, are the goal."
   ],
   "confusion": [
     "Believing $f''=0$ implies an inflection — $x^4$ at 0 disproves it; a sign CHANGE is required.",
     "Omitting the inner derivative when differentiating a composite twice.",
     "Reading $f''$ as 'the rate of speed' rather than the rate of change of slope."
   ],
-  "practice": [],
+  "practice": [
+    "Find y″ for y = x⁴ − 3x² + 2x.",
+    "Verify that y = 4 sin(2x) satisfies y″ = −4y.",
+    "Find the n-th derivative of 1/(x + 1)."
+  ],
   "universalFacts": [
-    "Newton–Raphson underpins root-finding in spacecraft trajectory correction and in nonlinear circuit and chemical-equilibrium solving.",
-    "The second derivative of a position–time graph is jerk, a quantity engineers bound deliberately because passengers feel it when a lift starts and stops."
+    "The exponential is the unique function (up to constant) whose derivative family never changes shape."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The eigen-equation*** - y = 5 sin(3x): y'' = -45 sin(3x) = -9y - differentiating twice returns the function scaled by -m^2."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Find y″ for y = x⁴ − 3x² + 2x and state the factorial pattern for (xⁿ)⁽ⁿ⁾.** — **First pass:** y′ = 4x³ − 6x + 2. **Second pass:** y″ = 12x² − 6. **Pattern:** (xⁿ)′ = n xⁿ⁻¹, (xⁿ)″ = n(n−1)xⁿ⁻², …, (xⁿ)⁽ⁿ⁾ = **n!** — the falling factorial product exhausts the power exactly at pass n, then further passes give 0. **Check:** (x⁴)⁽⁴⁾ = 4·3·2·1 = 24 ✓. **Deep point:** repeated differentiation of a polynomial is a countdown — each pass multiplies by the current exponent and decrements it; the factorial is the countdown's completed product, which is why n! appears throughout combinatorics via this same differentiation game (the exponential generating function).",
+    "**NEB-style (6m): Verify that y = 4 sin(2x) satisfies y″ = −4y, and generalise to y = A sin(mx + φ).** — **First pass:** y′ = 8 cos 2x. **Second pass:** y″ = −16 sin 2x. **Compare:** −4y = −16 sin 2x ✓ — the eigen-equation holds with m² = 4. **General case:** y′ = Am cos(mx + φ); y″ = −Am² cos(mx + φ)·... carefully: d/dx[Am cos(mx+φ)] = Am·(−m sin(mx+φ)) = −Am² sin(mx+φ) = **−m²y** ∎. **Interpretation:** each sinusoid is an eigenfunction of D² with eigenvalue −m²; m is read off the eigenvalue — frequency is measurable from the second derivative alone. **Deep point:** y″ = −m²y is the differential equation of oscillation — every spring, pendulum (small-angle) and AC circuit satisfies it, and the sinusoid is its complete solution; the calculus fact and the physics fact are the same statement.",
+    "**NEB-style (6m): Find the n-th derivative of f(x) = 1/(x + 1) and evaluate f⁽ⁿ⁾(0).** — **Pattern hunt:** f′ = −(x+1)⁻²; f″ = 2(x+1)⁻³; f‴ = −6(x+1)⁻⁴; f⁽⁴⁾ = 24(x+1)⁻⁵. **Pattern:** f⁽ⁿ⁾ = **(−1)ⁿ·n!/(x + 1)ⁿ⁺¹** — sign alternates, factorial grows, power increments by one each pass. **At 0:** f⁽ⁿ⁾(0) = (−1)ⁿ·n! — the Taylor coefficients of 1/(1+x) up to sign, i.e. the geometric series 1 − x + x² − ⋯ read backwards. **Deep point:** the pattern's three ingredients (alternating sign, factorial, shifting power) are visible by the third pass — drill the pattern, then state it with n as a parameter; the connection to the geometric series shows differentiation and series expansion are two views of one object.",
+    "**NEB-style (6m): Use Leibniz's theorem to find the second derivative of y = x²·eˣ, and state the general n-th derivative.** — **Leibniz (n = 2):** (fg)″ = f″g + 2f′g′ + fg″ with f = x², g = eˣ: f′ = 2x, f″ = 2; g′ = g″ = eˣ ⟹ y″ = 2eˣ + 4x·eˣ + x²·eˣ = **eˣ(x² + 4x + 2)**. **General n:** all derivatives of eˣ are eˣ, and f⁽ᵏ⁾ of x² vanishes for k ≥ 3 ⟹ (x²eˣ)⁽ⁿ⁾ = eˣ[C(n,0)x² + C(n,1)·2x + C(n,2)·2] = **eˣ[x² + 2nx + n(n−1)]**. **Check n = 2:** eˣ[x² + 4x + 2] ✓. **Deep point:** Leibniz's binomial structure shines when one factor's derivatives die (polynomial) — the sum truncates, and the answer is a closed polynomial times the surviving factor; this is the standard engine for n-th derivatives of products."
+  ],
   "formulas": [
-    "$f^{(n)}=\\frac{d}{dx}f^{(n-1)}$",
-    "Newton–Raphson: $x_{n+1}=x_n-\\frac{f(x_n)}{f'(x_n)}$",
-    "Inflection: $f''$ changes sign at $x$",
-    "Repeated chain: $\\frac{d^2}{dx^2}(ax+b)^n=a^2n(n-1)(ax+b)^{n-2}$",
-    "Leibniz: $\\frac{d^n}{dx^n}(uv)=\\sum_{k=0}^{n}\\binom{n}{k}u^{(k)}v^{(n-k)}$"
+    "- (fg)⁽ⁿ⁾ = Σₖ C(n,k)·f⁽ⁿ⁻ᵏ⁾·g⁽ᵏ⁾\n- (sin mx)⁽ⁿ⁾ = mⁿ·sin(mx + nπ/2); (e^{mx})⁽ⁿ⁾ = mⁿ·e^{mx}"
   ],
   "keyPoints": [
-    "An inflection needs a sign change in $f''$, not merely $f''=0$.",
-    "The n-th derivative of a degree-n polynomial is a nonzero constant.",
-    "Newton–Raphson is the tangent method and requires $f'(x_n)\\ne0$."
+    "f'' = derivative of the derivative; d2y/dx2 is ordinal notation, not arithmetic. Parametric second derivative: two-step recipe. Leibniz: (fg)^(n) = sum C(n,k) f^(n-k) g^(k) - the product rule's binomial generalisation. Patterns: (sin mx)^(n) = m^n sin(mx + n pi/2); (e^{mx})^(n) = m^n e^{mx}; (1/(x-a))^(n) = (-1)^n n!/(x-a)^(n+1). Sinusoids satisfy y'' = -m^2 y (the eigen-equation); polynomials die under repeated differentiation."
   ],
-  "summary": "Higher derivatives are differentiation repeated, and the second derivative has a precise meaning: it measures how quickly the slope changes, which is exactly what concavity records. Because each differentiation lowers a polynomial's degree, an n-th derivative of a degree-n polynomial is constant. Newton's method reuses the first derivative to refine roots, and Leibniz's rule generalises the product rule for repeated differentiation.",
+  "summary": "Higher-order derivatives are repeated passes of the same operator: the second derivative reads concavity and acceleration, the notation is ordinal, and the parametric second derivative keeps its two-step recipe. Patterns rule the n-th derivative game — falling factorials for powers, phase-shifted sinusoids, the exponential's eternal self, alternating factorials over shifted powers — and Leibniz's binomial formula is the product rule grown up. The sinusoid's eigen-equation y″ = −m²y is the bridge where this calculus fact becomes every oscillation in physics.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Believing $f''=0$ implies an inflection — $x^4$ at 0 disproves it; a sign CHANGE is required.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: The $n$-th derivative of a degree-$n$ polynomial is a nonzero constant.",
-    "Statement 2: $f''>0$ means the slope is increasing (concave up).",
-    "Statement 3: An inflection point requires $f''$ to change sign, not merely vanish.",
-    "Statement 4: Newton's method is $x_{n+1}=x_n-\\frac{f(x_n)}{f'(x_n)}$.",
-    "Statement 5: Repeated differentiation of a composite multiplies the inner derivative each time."
+    "D behaves like a number in operator algebra; Leibniz's formula is the binomial theorem for differentiation."
   ],
   "importantNotes": [
-    "Topic anchor: Leibniz's rule for products  $ frac{d^n}{dx^n}(uv)= sum_{k=0}^{n} binom{n}{k}u^{(k)}v^{(n-k)}$, generalising the product rule so products can be differentiated repeatedly without expansion."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "To test for an inflection, evaluate $f''$ on BOTH sides — the sign change is the whole test.",
-    "For $(ax+b)^n$ twice, multiply the inner derivative twice: $a\\cdot2$, then $a\\cdot6$."
+    "Differentiate three times, spot the cycle, generalise to the n-th derivative."
   ],
   "examNotes": [
-    "Using the second derivative to classify stationary points and locate inflections is a standard 3–4 mark question."
+    "For d2y/dx2 questions, show the intermediate y' explicitly - the ordinal notation hides two passes."
   ],
   "mcs": [
     {
@@ -96,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "An inflection needs a sign change in $f''$, not merely $f''=0$.",
-    "The n-th derivative of a degree-n polynomial is a nonzero constant.",
-    "Newton–Raphson is the tangent method and requires $f'(x_n)\\ne0$."
+    "The second derivative's personalities: concavity, acceleration, curvature sign - the slope's own behaviour as an object."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -171,6 +168,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to Higher-Order Derivatives\n\nThis canonical is the **short-form doorway** to higher-order derivatives: repeated differentiation, the acceleration reading, and the sinusoid's eigen-equation in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Definition:** f″(x) = d/dx[f′(x)] — the derivative of the derivative; f⁽ⁿ⁾ by iteration.\n- **Notations:** d²y/dx², y″, f″(x), D²y — all the same object.\n- **Parametric second derivative:** d²y/dx² = [d(dy/dx)/dt]/(dx/dt) — the two-step recipe.\n- **Leibniz:** (fg)⁽ⁿ⁾ = Σ C(n,k) f⁽ⁿ⁻ᵏ⁾g⁽ᵏ⁾ — the product rule's binomial generalisation.\n- **Key patterns:** (sin mx)⁽ⁿ⁾ = mⁿ sin(mx + nπ/2); (e^{mx})⁽ⁿ⁾ = mⁿe^{mx}; (1/(x−a))⁽ⁿ⁾ = (−1)ⁿn!/(x−a)ⁿ⁺¹.",
+      "## 3. Deep Conceptual — The Second Derivative's Personalities\n\n- f″ measures **how the slope changes** — concavity (f″ > 0: cup up), acceleration (velocity's rate), and curvature's sign. The second derivative is the first place the derivative's own behaviour becomes an object of study.\n- **The sinusoid's eigen-equation:** y = A sin(mx + φ) satisfies **y″ = −m²y** — differentiating twice returns the function times −m². This is the defining property of sinusoids and the seed of every oscillation equation in physics; the operator D² acting on sin is multiplication by −m².\n- **The exponential's eigen-simplicity:** (e^{mx})⁽ⁿ⁾ = mⁿe^{mx} for every n — the exponential is the unique function (up to constant) that is its own derivative family. Polynomials die under repeated differentiation (degree n → 0 after n+1 passes); exponentials and sinusoids cycle or scale forever.",
+      "## 4. Deep Conceptual — Repeated Differentiation as an Operator Game\n\n- D (the differentiation operator) can be treated as an algebraic object: D²y = D(Dy), and Leibniz's formula is literally the binomial theorem (D + A)ⁿ applied to fg with A = \"multiply by g\". The binomial coefficients C(n,k) appear because each pass either differentiates f or leaves it — counting the choices.\n- **Pattern tables beat repeated work:** the n-th derivatives of sin, cos, e^{mx}, 1/(x−a), ln(1+x) follow closed patterns; drilling the first four derivatives of each reveals the cycle, and the pattern generalises. The exam skill is seeing the cycle by the third pass.",
+      "## 5. Worked Example Types\n\n- **Type A — repeated power differentiation:** y = x⁴ → 24, the factorial pattern.\n- **Type B — sinusoid eigen-check:** verify y″ = −m²y for a given sinusoid.\n- **Type C — parametric second derivative:** the two-step recipe applied.\n- **Type D — Leibniz:** (x²eˣ)⁽ⁿ⁾ or (x² sin x)″ by the binomial formula.",
+      "## 6. Common Confusions\n\n**\"d²y/dx² means square the first derivative\":** it means differentiate twice — the notation is ordinal, not arithmetic. **\"Higher derivatives always simplify\":** they usually complicate — patterns, not simplification, are the goal."
+    ],
+    "keyPoints": [
+      "f'' = derivative of the derivative; d2y/dx2 is ordinal notation, not arithmetic. Parametric second derivative: two-step recipe. Leibniz: (fg)^(n) = sum C(n,k) f^(n-k) g^(k) - the product rule's binomial generalisation. Patterns: (sin mx)^(n) = m^n sin(mx + n pi/2); (e^{mx})^(n) = m^n e^{mx}; (1/(x-a))^(n) = (-1)^n n!/(x-a)^(n+1). Sinusoids satisfy y'' = -m^2 y (the eigen-equation); polynomials die under repeated differentiation."
+    ],
+    "importantConcepts": [
+      "The second derivative's personalities: concavity, acceleration, curvature sign - the slope's own behaviour as an object."
+    ],
+    "examples": [
+      "***The eigen-equation*** - y = 5 sin(3x): y'' = -45 sin(3x) = -9y - differentiating twice returns the function scaled by -m^2."
+    ],
+    "universalFacts": [
+      "The exponential is the unique function (up to constant) whose derivative family never changes shape."
+    ],
+    "importantStatements": [
+      "D behaves like a number in operator algebra; Leibniz's formula is the binomial theorem for differentiation."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Differentiate three times, spot the cycle, generalise to the n-th derivative."
+    ],
+    "examNotes": [
+      "For d2y/dx2 questions, show the intermediate y' explicitly - the ordinal notation hides two passes."
+    ],
+    "formulas": [
+      "- (fg)⁽ⁿ⁾ = Σₖ C(n,k)·f⁽ⁿ⁻ᵏ⁾·g⁽ᵏ⁾\n- (sin mx)⁽ⁿ⁾ = mⁿ·sin(mx + nπ/2); (e^{mx})⁽ⁿ⁾ = mⁿ·e^{mx}"
+    ],
+    "practice": [
+      "Find y″ for y = x⁴ − 3x² + 2x.",
+      "Verify that y = 4 sin(2x) satisfies y″ = −4y.",
+      "Find the n-th derivative of 1/(x + 1)."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Find y″ for y = x⁴ − 3x² + 2x and state the factorial pattern for (xⁿ)⁽ⁿ⁾.** — **First pass:** y′ = 4x³ − 6x + 2. **Second pass:** y″ = 12x² − 6. **Pattern:** (xⁿ)′ = n xⁿ⁻¹, (xⁿ)″ = n(n−1)xⁿ⁻², …, (xⁿ)⁽ⁿ⁾ = **n!** — the falling factorial product exhausts the power exactly at pass n, then further passes give 0. **Check:** (x⁴)⁽⁴⁾ = 4·3·2·1 = 24 ✓. **Deep point:** repeated differentiation of a polynomial is a countdown — each pass multiplies by the current exponent and decrements it; the factorial is the countdown's completed product, which is why n! appears throughout combinatorics via this same differentiation game (the exponential generating function).",
+      "**NEB-style (6m): Verify that y = 4 sin(2x) satisfies y″ = −4y, and generalise to y = A sin(mx + φ).** — **First pass:** y′ = 8 cos 2x. **Second pass:** y″ = −16 sin 2x. **Compare:** −4y = −16 sin 2x ✓ — the eigen-equation holds with m² = 4. **General case:** y′ = Am cos(mx + φ); y″ = −Am² cos(mx + φ)·... carefully: d/dx[Am cos(mx+φ)] = Am·(−m sin(mx+φ)) = −Am² sin(mx+φ) = **−m²y** ∎. **Interpretation:** each sinusoid is an eigenfunction of D² with eigenvalue −m²; m is read off the eigenvalue — frequency is measurable from the second derivative alone. **Deep point:** y″ = −m²y is the differential equation of oscillation — every spring, pendulum (small-angle) and AC circuit satisfies it, and the sinusoid is its complete solution; the calculus fact and the physics fact are the same statement.",
+      "**NEB-style (6m): Find the n-th derivative of f(x) = 1/(x + 1) and evaluate f⁽ⁿ⁾(0).** — **Pattern hunt:** f′ = −(x+1)⁻²; f″ = 2(x+1)⁻³; f‴ = −6(x+1)⁻⁴; f⁽⁴⁾ = 24(x+1)⁻⁵. **Pattern:** f⁽ⁿ⁾ = **(−1)ⁿ·n!/(x + 1)ⁿ⁺¹** — sign alternates, factorial grows, power increments by one each pass. **At 0:** f⁽ⁿ⁾(0) = (−1)ⁿ·n! — the Taylor coefficients of 1/(1+x) up to sign, i.e. the geometric series 1 − x + x² − ⋯ read backwards. **Deep point:** the pattern's three ingredients (alternating sign, factorial, shifting power) are visible by the third pass — drill the pattern, then state it with n as a parameter; the connection to the geometric series shows differentiation and series expansion are two views of one object.",
+      "**NEB-style (6m): Use Leibniz's theorem to find the second derivative of y = x²·eˣ, and state the general n-th derivative.** — **Leibniz (n = 2):** (fg)″ = f″g + 2f′g′ + fg″ with f = x², g = eˣ: f′ = 2x, f″ = 2; g′ = g″ = eˣ ⟹ y″ = 2eˣ + 4x·eˣ + x²·eˣ = **eˣ(x² + 4x + 2)**. **General n:** all derivatives of eˣ are eˣ, and f⁽ᵏ⁾ of x² vanishes for k ≥ 3 ⟹ (x²eˣ)⁽ⁿ⁾ = eˣ[C(n,0)x² + C(n,1)·2x + C(n,2)·2] = **eˣ[x² + 2nx + n(n−1)]**. **Check n = 2:** eˣ[x² + 4x + 2] ✓. **Deep point:** Leibniz's binomial structure shines when one factor's derivatives die (polynomial) — the sum truncates, and the answer is a closed polynomial times the surviving factor; this is the standard engine for n-th derivatives of products."
     ]
   }
 }

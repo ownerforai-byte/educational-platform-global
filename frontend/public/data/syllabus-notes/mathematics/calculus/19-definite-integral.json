@@ -5,54 +5,59 @@
   "topicSlug": "definite-integral",
   "relevance": 100,
   "notes": [
-    "**Definition as a limit of sums:** $\\int_a^b f = \\lim_{n\\to\\infty}\\sum_{i=1}^n f(x_i^*)\\Delta x$. The value depends only on the function and the interval, not on where the sample points are taken — this insensitivity is what makes the integral well defined.",
-    "**The Fundamental Theorem connects the two halves:** if $F'=f$ then $\\int_a^b f(x)dx = F(b)-F(a)$. It converts an apparently infinite limiting process into a pair of function evaluations, which is the single most powerful idea in the topic.",
-    "**Signed, not absolute:** the value is an algebraic accumulation, so negative regions subtract. $\\int_{-1}^1 x^2 dx = \\frac23$, while $\\int_{-1}^1 x\\,dx = 0$ because the odd part cancels.",
-    "**Reversing the limits negates the result:** $\\int_b^a f = -\\int_a^b f$, a direct consequence of how the limit of sums is oriented. Adding an integral over $[a,b]$ and $[b,a]$ therefore gives exactly zero, a useful consistency check.",
-    "**Splitting at a point of discontinuity is still valid:** $\\int_a^b f = \\int_a^c f + \\int_c^b f$ even when $f$ is unbounded or undefined at $c$, provided the improper integrals converge. The graph of $\\frac1{\\sqrt{x}}$ from 0 to 1 has infinite height at 0 yet a finite area.",
-    "**Positivity and comparison follow from the definition:** if $f\\le g$ on $[a,b]$ then $\\int_a^b f \\le \\int_a^b g$, which is what makes integral comparison tests possible."
+    "## 1. Topic Introduction — The Companion Doorway to the Definite Integral\n\nThis canonical is the **short-form doorway** to the definite integral: Riemann sums, the Fundamental Theorem, and the evaluation rules in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+    "## 2. Theorem Mirror\n\n- **Definition:** ∫ₐᵇf(x)dx = lim Σf(xᵢ*)Δx — the limit of Riemann sums as the partition refines (n → ∞).\n- **FTC Part 1:** d/dx[∫ₐˣf(t)dt] = f(x) — differentiation undoes accumulation.\n- **FTC Part 2:** ∫ₐᵇf(x)dx = F(b) − F(a) for any anti-derivative F — evaluation needs no limit, only the endpoints.\n- **Properties:** linearity; additivity ∫ₐᵇ + ∫ᵦᶜ = ∫ₐᶜ; reversal ∫ₐᵇ = −∫ᵦₐ; same-value ∫ₐᵇ = ∫ₐᵇ; the constant c·(b − a).",
+    "## 3. Deep Conceptual — Riemann Sums vs FTC: Two Doors, One Room\n\n- The Riemann definition is **local and constructive**: chop, sample, sum, refine — it defines what the integral *is* and works even when no anti-derivative exists (∫e^{−x²}dx has no elementary form yet a perfectly good definite value). The FTC is **global and computational**: it converts accumulation into endpoint arithmetic when F is available.\n- **The two doors answer different questions:** \"does the area have a value?\" is Riemann's question (existence); \"what is it, cheaply?\" is FTC's question (evaluation). Exam problems asking for a limit of sums are testing door one; standard evaluations test door two.\n- **The accumulation function A(x) = ∫ₐˣf(t)dt is the bridge:** its derivative is f (Part 1), and its value at b is the definite integral (Part 2) — one object, two theorems, the subject's crown jewel.",
+    "## 4. Deep Conceptual — The Dummy Variable and the Boundary Terms\n\n- ∫ₐᵇf(t)dt is a **number**; the t is a dummy — rename it freely. But ∫ₐˣf(t)dt is a **function of x** (the upper limit is live). Confusing the two is the classic Part 1 error.\n- **FTC Part 1 with variable limits:** d/dx[∫ₐ^{g(x)}f(t)dt] = f(g(x))·g′(x) — the chain rule rides on top of Part 1; and for a variable *lower* limit, the reversal property supplies the minus sign.\n- **The constant's geometry:** ∫ₐᵇc dx = c(b − a) — a rectangle's area; every integral property has a picture, and the picture is the fastest verification.",
+    "## 5. Worked Example Types\n\n- **Type A — FTC evaluation:** anti-derivative, endpoints, subtract.\n- **Type B — Riemann limit:** the right-endpoint sum for x² or x, evaluated as n → ∞.\n- **Type C — accumulation functions:** d/dx of an integral with variable or function limits.\n- **Type D — properties arithmetic:** additivity, reversal, and constant rules combining known pieces.",
+    "## 6. Common Confusions\n\n**\"The definite integral needs + C\":** no — endpoints subtract the constant away. **\"∫ₐˣf(t)dt and ∫f(x)dx are the same kind of thing\":** one is a function, the other a family."
   ],
   "confusion": [
     "Adding a constant of integration to a definite integral — it cancels.",
     "Treating the value as a positive area when part of the region lies below the axis.",
     "Forgetting to flip the sign when the limits are given in the order $b$ to $a$."
   ],
-  "practice": [],
+  "practice": [
+    "Evaluate ∫₁³(2x + 1)dx.",
+    "Evaluate lim_{n→∞} Σᵢ₌₁ⁿ (i/n)²·(1/n).",
+    "Find d/dx[∫₁^{x²} e^{t}dt]."
+  ],
   "universalFacts": [
-    "A lightning bolt's total charge is an integral of current over time, and a pacemaker's delivered energy is an integral of power — both are signed accumulations over a measured interval.",
-    "The Gaussian area $\\int_{-\\infty}^{\\infty} e^{-x^2}dx=\\sqrt\\pi$ is the normalisation that makes the normal distribution a probability density, and it is why the most common distribution in nature has that constant."
+    "The accumulation function is the bridge object: its derivative is f (Part 1), its value at b is the definite integral (Part 2)."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***The dummy variable*** - integral_a^x f(t) dt is a function of x while integral_a^b f(t) dt is a number - the live limit is the difference."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (5m): Evaluate ∫₁³(2x + 1)dx and interpret the answer geometrically.** — **FTC Part 2:** F(x) = x² + x ⟹ F(3) − F(1) = 12 − 2 = **10**. **Geometry:** the region under y = 2x + 1 from 1 to 3 is a trapezoid with parallel sides f(1) = 3 and f(3) = 7, width 2 ⟹ area = ½(3 + 7)(2) = 10 ✓. **Deep point:** the trapezoid check is the picture verifying the theorem — for linear integrands the Riemann limit is finite geometry, and the agreement is the FTC made visible.",
+    "**NEB-style (6m): Evaluate lim_{n→∞} Σᵢ₌₁ⁿ (i/n)²·(1/n) by recognising it as a definite integral.** — **Recognise the anatomy:** Δx = 1/n ⟹ b − a = 1 with a = 0; xᵢ = i/n ⟹ right endpoints of [0, 1]; f(xᵢ) = (i/n)² = xᵢ². **Identify:** the sum is the right-endpoint Riemann sum of f(x) = x² on [0, 1]. **Evaluate:** lim = ∫₀¹x²dx = [x³/3]₀¹ = **1/3**. **Cross-check:** the closed form Σi² = n(n+1)(2n+1)/6 gives the sum = (1/n³)·n(n+1)(2n+1)/6 → 2/6 = 1/3 ✓. **Deep point:** the Riemann door and the algebraic door agree — the sum's closed form is the long route, the FTC the short one; recognising Δx and the sample points is the entire translation skill.",
+    "**NEB-style (6m): Find d/dx[∫₁^{x²} e^{t}dt] and d/dx[∫ₓ⁵ cos(t²)dt].** — **First (upper limit is a function):** FTC Part 1 + chain rule: f(g(x))·g′(x) = e^{x²}·2x = **2x·e^{x²}**. **Second (lower limit is live):** reversal first: ∫ₓ⁵cos(t²)dt = −∫₅ˣcos(t²)dt ⟹ derivative = **−cos(x²)**. **Verification of the first by Part 2:** ∫₁^{x²}e^t dt = e^{x²} − e ⟹ derivative = 2x·e^{x²} ✓. **Deep point:** the live limit is the whole game — a function in the upper limit contributes the chain-rule factor, a function in the lower limit contributes a minus; cos(t²) has no elementary anti-derivative, yet Part 1 differentiates its accumulation anyway — the theorem outruns the table.",
+    "**NEB-style (6m): Given ∫₁⁴f(x)dx = 5 and ∫₄⁶f(x)dx = −2, find ∫₆¹f(x)dx and ∫₁⁶f(x)dx, citing the properties.** — **Additivity:** ∫₁⁶f = ∫₁⁴f + ∫₄⁶f = 5 + (−2) = **3**. **Reversal:** ∫₆¹f = −∫₁⁶f = **−3**. **Consistency picture:** the signed area from 1 to 4 is +5, from 4 to 6 is −2 (the curve dips below the axis); the total 3 and its reversed −3 are the ledger's two directions. **Deep point:** signed area is the bookkeeping — additivity concatenates journeys, reversal walks them backwards; every property is a statement about walking the x-axis, which is why the pictures verify them instantly."
+  ],
   "formulas": [
-    "Riemann sum: $\\int_a^b f=\\lim_{n\\to\\infty}\\sum f(x_i^*)\\Delta x$",
-    "FTC: $\\int_a^b f(x)dx=F(b)-F(a)$ when $F'=f$",
-    "Reversal: $\\int_b^a f=-\\int_a^b f$",
-    "Additivity: $\\int_a^b f=\\int_a^c f+\\int_c^b f$",
-    "Comparison: $f\\le g$ on $[a,b]\\Rightarrow\\int_a^b f\\le\\int_a^b g$"
+    "- ∫ₐᵇf = F(b) − F(a); d/dx[∫ₐˣf(t)dt] = f(x)\n- ∫ₐᵇ + ∫ᵦᶜ = ∫ₐᶜ; ∫ₐᵇ = −∫ᵦₐ"
   ],
   "keyPoints": [
-    "The value is a signed accumulation, not a positive area.",
-    "Reversing the limits negates the result.",
-    "The Fundamental Theorem turns an infinite limit into two evaluations."
+    "Definite integral = limit of Riemann sums (chop, sample, sum, refine) - the definition; FTC Part 2 = F(b) - F(a) - the computation. FTC Part 1: d/dx of the accumulation function = f(x). Dummy variable: the t in a number-integral is renameable; a variable upper limit makes it a function. Variable limits: chain rule rides on Part 1; lower-limit variables flip the sign. Properties: linearity, additivity, reversal, constant c(b-a). Every property has a picture."
   ],
-  "summary": "The definite integral is a limit of sums and is independent of how the interval is sampled, which is what makes it well defined. The Fundamental Theorem is its decisive property: if $F'=f$ then the integral is simply $F(b)-F(a)$. Values are signed, reversing the limits negates the result, and additivity holds even across a point of discontinuity, which is how divergent-looking integrands can still have finite integrals.",
+  "summary": "The definite integral lives behind two doors: Riemann's limit defines it (chop, sample, sum, refine — valid even without anti-derivatives) and the Fundamental Theorem computes it (F(b) − F(a) — valid whenever F exists). The accumulation function is the bridge, the dummy variable distinguishes numbers from functions, and live limits bring the chain rule and the reversal minus. Linearity, additivity and reversal are the properties, each with a picture that verifies it.",
   "specialNotes": [
     "Where a formula is quoted it is valid only under the conditions stated; Adding a constant of integration to a definite integral — it cancels.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "Endpoints subtract the constant away - the definite integral needs no + C."
+  ],
   "importantNotes": [
-    "Topic anchor: Positivity and comparison follow from the definition  if $f le g$ on $[a,b]$ then $ int_a^b f  le  int_a^b g$, which is what makes integral comparison tests possible."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Always evaluate $F$ at the upper limit first, then subtract the lower — reversing the order is the easy slip.",
-    "For odd integrands on symmetric intervals, write 0 before attempting any calculation."
+    "Riemann sum question? Write Delta x = (b-a)/n and x_i = a + i Delta x first."
   ],
   "examNotes": [
-    "Evaluating definite integrals by the Fundamental Theorem, with attention to sign, is a guaranteed 3-mark question."
+    "For Part 1 with function limits, write the chain-rule factor g'(x) explicitly."
   ],
   "mcs": [
     {
@@ -90,9 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "The value is a signed accumulation, not a positive area.",
-    "Reversing the limits negates the result.",
-    "The Fundamental Theorem turns an infinite limit into two evaluations."
+    "Two doors, one room: Riemann defines, FTC computes - and works even where no anti-derivative exists."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -173,6 +176,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Companion Doorway to the Definite Integral\n\nThis canonical is the **short-form doorway** to the definite integral: Riemann sums, the Fundamental Theorem, and the evaluation rules in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.",
+      "## 2. Theorem Mirror\n\n- **Definition:** ∫ₐᵇf(x)dx = lim Σf(xᵢ*)Δx — the limit of Riemann sums as the partition refines (n → ∞).\n- **FTC Part 1:** d/dx[∫ₐˣf(t)dt] = f(x) — differentiation undoes accumulation.\n- **FTC Part 2:** ∫ₐᵇf(x)dx = F(b) − F(a) for any anti-derivative F — evaluation needs no limit, only the endpoints.\n- **Properties:** linearity; additivity ∫ₐᵇ + ∫ᵦᶜ = ∫ₐᶜ; reversal ∫ₐᵇ = −∫ᵦₐ; same-value ∫ₐᵇ = ∫ₐᵇ; the constant c·(b − a).",
+      "## 3. Deep Conceptual — Riemann Sums vs FTC: Two Doors, One Room\n\n- The Riemann definition is **local and constructive**: chop, sample, sum, refine — it defines what the integral *is* and works even when no anti-derivative exists (∫e^{−x²}dx has no elementary form yet a perfectly good definite value). The FTC is **global and computational**: it converts accumulation into endpoint arithmetic when F is available.\n- **The two doors answer different questions:** \"does the area have a value?\" is Riemann's question (existence); \"what is it, cheaply?\" is FTC's question (evaluation). Exam problems asking for a limit of sums are testing door one; standard evaluations test door two.\n- **The accumulation function A(x) = ∫ₐˣf(t)dt is the bridge:** its derivative is f (Part 1), and its value at b is the definite integral (Part 2) — one object, two theorems, the subject's crown jewel.",
+      "## 4. Deep Conceptual — The Dummy Variable and the Boundary Terms\n\n- ∫ₐᵇf(t)dt is a **number**; the t is a dummy — rename it freely. But ∫ₐˣf(t)dt is a **function of x** (the upper limit is live). Confusing the two is the classic Part 1 error.\n- **FTC Part 1 with variable limits:** d/dx[∫ₐ^{g(x)}f(t)dt] = f(g(x))·g′(x) — the chain rule rides on top of Part 1; and for a variable *lower* limit, the reversal property supplies the minus sign.\n- **The constant's geometry:** ∫ₐᵇc dx = c(b − a) — a rectangle's area; every integral property has a picture, and the picture is the fastest verification.",
+      "## 5. Worked Example Types\n\n- **Type A — FTC evaluation:** anti-derivative, endpoints, subtract.\n- **Type B — Riemann limit:** the right-endpoint sum for x² or x, evaluated as n → ∞.\n- **Type C — accumulation functions:** d/dx of an integral with variable or function limits.\n- **Type D — properties arithmetic:** additivity, reversal, and constant rules combining known pieces.",
+      "## 6. Common Confusions\n\n**\"The definite integral needs + C\":** no — endpoints subtract the constant away. **\"∫ₐˣf(t)dt and ∫f(x)dx are the same kind of thing\":** one is a function, the other a family."
+    ],
+    "keyPoints": [
+      "Definite integral = limit of Riemann sums (chop, sample, sum, refine) - the definition; FTC Part 2 = F(b) - F(a) - the computation. FTC Part 1: d/dx of the accumulation function = f(x). Dummy variable: the t in a number-integral is renameable; a variable upper limit makes it a function. Variable limits: chain rule rides on Part 1; lower-limit variables flip the sign. Properties: linearity, additivity, reversal, constant c(b-a). Every property has a picture."
+    ],
+    "importantConcepts": [
+      "Two doors, one room: Riemann defines, FTC computes - and works even where no anti-derivative exists."
+    ],
+    "examples": [
+      "***The dummy variable*** - integral_a^x f(t) dt is a function of x while integral_a^b f(t) dt is a number - the live limit is the difference."
+    ],
+    "universalFacts": [
+      "The accumulation function is the bridge object: its derivative is f (Part 1), its value at b is the definite integral (Part 2)."
+    ],
+    "importantStatements": [
+      "Endpoints subtract the constant away - the definite integral needs no + C."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Riemann sum question? Write Delta x = (b-a)/n and x_i = a + i Delta x first."
+    ],
+    "examNotes": [
+      "For Part 1 with function limits, write the chain-rule factor g'(x) explicitly."
+    ],
+    "formulas": [
+      "- ∫ₐᵇf = F(b) − F(a); d/dx[∫ₐˣf(t)dt] = f(x)\n- ∫ₐᵇ + ∫ᵦᶜ = ∫ₐᶜ; ∫ₐᵇ = −∫ᵦₐ"
+    ],
+    "practice": [
+      "Evaluate ∫₁³(2x + 1)dx.",
+      "Evaluate lim_{n→∞} Σᵢ₌₁ⁿ (i/n)²·(1/n).",
+      "Find d/dx[∫₁^{x²} e^{t}dt]."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Evaluate ∫₁³(2x + 1)dx and interpret the answer geometrically.** — **FTC Part 2:** F(x) = x² + x ⟹ F(3) − F(1) = 12 − 2 = **10**. **Geometry:** the region under y = 2x + 1 from 1 to 3 is a trapezoid with parallel sides f(1) = 3 and f(3) = 7, width 2 ⟹ area = ½(3 + 7)(2) = 10 ✓. **Deep point:** the trapezoid check is the picture verifying the theorem — for linear integrands the Riemann limit is finite geometry, and the agreement is the FTC made visible.",
+      "**NEB-style (6m): Evaluate lim_{n→∞} Σᵢ₌₁ⁿ (i/n)²·(1/n) by recognising it as a definite integral.** — **Recognise the anatomy:** Δx = 1/n ⟹ b − a = 1 with a = 0; xᵢ = i/n ⟹ right endpoints of [0, 1]; f(xᵢ) = (i/n)² = xᵢ². **Identify:** the sum is the right-endpoint Riemann sum of f(x) = x² on [0, 1]. **Evaluate:** lim = ∫₀¹x²dx = [x³/3]₀¹ = **1/3**. **Cross-check:** the closed form Σi² = n(n+1)(2n+1)/6 gives the sum = (1/n³)·n(n+1)(2n+1)/6 → 2/6 = 1/3 ✓. **Deep point:** the Riemann door and the algebraic door agree — the sum's closed form is the long route, the FTC the short one; recognising Δx and the sample points is the entire translation skill.",
+      "**NEB-style (6m): Find d/dx[∫₁^{x²} e^{t}dt] and d/dx[∫ₓ⁵ cos(t²)dt].** — **First (upper limit is a function):** FTC Part 1 + chain rule: f(g(x))·g′(x) = e^{x²}·2x = **2x·e^{x²}**. **Second (lower limit is live):** reversal first: ∫ₓ⁵cos(t²)dt = −∫₅ˣcos(t²)dt ⟹ derivative = **−cos(x²)**. **Verification of the first by Part 2:** ∫₁^{x²}e^t dt = e^{x²} − e ⟹ derivative = 2x·e^{x²} ✓. **Deep point:** the live limit is the whole game — a function in the upper limit contributes the chain-rule factor, a function in the lower limit contributes a minus; cos(t²) has no elementary anti-derivative, yet Part 1 differentiates its accumulation anyway — the theorem outruns the table.",
+      "**NEB-style (6m): Given ∫₁⁴f(x)dx = 5 and ∫₄⁶f(x)dx = −2, find ∫₆¹f(x)dx and ∫₁⁶f(x)dx, citing the properties.** — **Additivity:** ∫₁⁶f = ∫₁⁴f + ∫₄⁶f = 5 + (−2) = **3**. **Reversal:** ∫₆¹f = −∫₁⁶f = **−3**. **Consistency picture:** the signed area from 1 to 4 is +5, from 4 to 6 is −2 (the curve dips below the axis); the total 3 and its reversed −3 are the ledger's two directions. **Deep point:** signed area is the bookkeeping — additivity concatenates journeys, reversal walks them backwards; every property is a statement about walking the x-axis, which is why the pictures verify them instantly."
     ]
   }
 }

@@ -4,63 +4,59 @@
   "topicTitle": "Limits of a function",
   "relevance": 100,
   "notes": [
-    "**Meaning of a limit:** $\\lim_{x \\to a} f(x) = L$ means that as $x$ gets arbitrarily close to $a$ (from either side, and without ever requiring $x = a$) the value of $f(x)$ gets arbitrarily close to $L$. The point $x=a$ may be undefined and the limit still exist — which is why $\\frac{x^2-4}{x-2}$, undefined at 2, has limit 4.",
-    "**The $\\varepsilon$-$\\delta$ definition:** for every $\\varepsilon > 0$ there exists $\\delta > 0$ such that $0 < |x-a| < \\delta$ implies $|f(x)-L| < \\varepsilon$. The condition $0 < |x-a|$ EXCLUDES the point itself, and that exclusion is exactly what makes a limit independent of $f(a)$.",
-    "**One-sided limits:** $\\lim_{x \\to a^-}$ approaches from below, $\\lim_{x \\to a^+}$ from above. The two-sided limit exists **if and only if** both exist and are equal. Equal-but-different still means no limit — a jump discontinuity is the standard counter-example.",
-    "**Indeterminate forms are signals, not answers:** $0/0$, $\\infty-\\infty$, $0\\cdot\\infty$, $\\infty/\\infty$, $1^\\infty$, $0^0$, $\\infty^0$ mean direct substitution FAILED. Rewrite instead: factorise and cancel, rationalise with the conjugate, divide by the highest vanishing power, or use $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$.",
-    "**Infinite limits and asymptotes:** $\\infty$ is never a value, only shorthand for unbounded growth. Opposite-sign one-sided limits give a VERTICAL asymptote; a finite limit at infinity gives a HORIZONTAL asymptote, found by the dominant-term rule."
+    "## 1. Topic Introduction — The Introductory Limits Drill\n\nThis canonical is the **introductory limits drill**: first-contact problems that build the substitution-then-transform reflex gently, mirroring the parent limit-system canonical's opening. The drill's discipline is the four-line rhythm done slowly and completely.",
+    "## 2. Theorem Mirror — The Starter Kit\n\n- **Substitution:** licensed wherever the function is continuous — polynomials, roots at interior points, |x|, rational functions off zeros.\n- **0/0 recognition:** substitute first; a 0/0 result is the signal to transform, never a verdict.\n- **Basic transforms:** difference of squares/cubes factoring; single conjugate; the two simplest stars (sin u/u → 1, (eᵘ−1)/u → 1).\n- **The rhythm:** form ⟹ transform ⟹ licence ⟹ value.",
+    "## 3. Deep Conceptual — Why Beginners Must Write All Four Lines\n\n- The four-line rhythm is **training wheels for the theorems**: the form line practices diagnosis, the transform line practices identities, the licence line practices the x ≠ a justification, the value line practices continuity-licensed substitution. Skipping lines skips the theorems.\n- **The licence line is where understanding lives:** \"for x ≠ 2\" is the entire reason cancellation is legal — the limit's excluded point is what makes the rewritten expression equivalent *for the limit's purposes*. Students who internalise this line have internalised the definition.\n- **Slow drills build the cross-check reflex:** verifying (x² − 9)/(x − 3) → 6 against the star naⁿ⁻¹ = 2·3 costs one line and builds the habit that later saves marks on harder problems.",
+    "## 4. Deep Conceptual — The First Contact With \"Approach\"\n\n- Introductory drills should be *narrated*: at x = 2.9, 2.99, 2.999 the function reads 5.9, 5.99, 5.999 — the approach is visible numerically before it is formal. The numeric preview (f(a ± h) for small h) is the bridge from intuition to definition, and it doubles as an error-catching cross-check.\n- **Value vs limit, first taste:** f(2) undefined next to lim = 6 is the subject's first surprise; the drill's job is to make the surprise familiar — the road and the destination sign are different objects.",
+    "## 5. Worked Example Types\n\n- **Type A — pure substitution:** polynomials and continuous pieces; cite continuity.\n- **Type B — first 0/0:** difference of squares, cancel, substitute, star-check.\n- **Type C — first conjugate:** single radical, one multiplication, one cancellation.\n- **Type D — numeric preview:** table the approach, then confirm algebraically.",
+    "## 6. Common Confusions\n\n**\"0/0 means the limit is 0\":** it means transform — the answer could be anything. **\"Cancelling changes the function\":** only at the excluded point, which the limit never visits."
   ],
   "confusion": [
     "Substituting the point and stopping — the limit asks what the function APPROACHES, not what it equals there.",
     "Concluding the limit exists because both sides are 'big' — they must be the SAME FINITE number; $0/0$ or $-\\infty/+\\infty$ is a jump.",
     "Writing $\\lim = \\infty$ as a result — a divergent limit says the function is unbounded, not that it reached a value."
   ],
-  "practice": [],
+  "practice": [
+    "Evaluate lim_{x→7} (2x − 3) and cite the theorem.",
+    "Evaluate lim_{x→1} (x² − 1)/(x − 1) with all four lines.",
+    "Evaluate lim_{h→0} ((2 + h)² − 4)/h."
+  ],
   "universalFacts": [
-    "The derivative is itself a limit, $f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$, so differential calculus rests entirely on the limit concept.",
-    "A speedometer reports a limit, not an average: it is the limit of average velocities as the averaging interval shrinks to zero."
+    "Every hard limit technique is a faster version of a rhythm learned on these starter problems."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
   "examples": [
-    "Instantaneous speed: the speedometer value is a limit of average velocities taken over a shrinking interval.",
-    "Camera shutter speeds: at very short exposures the 'instant' is really an average over sensor read-out time, so a limit is only ever approached."
+    "***The numeric preview*** - f(2.9), f(2.99), f(2.999) reading 5.9, 5.99, 5.999 previews lim = 6 before any algebra."
   ],
   "practiceQuestions": [
-    "Q1. State the $\\varepsilon$-$\\delta$ definition of $\\lim_{x\\to a}f(x)=L$ and explain why $0<|x-a|$ appears.",
-    "Q2. Evaluate $\\lim_{x\\to4}\\frac{x^2-16}{x-4}$ and $\\lim_{x\\to5}\\frac{x-2}{x-5}$, stating which is undefined at the point.",
-    "Q3. Find the horizontal and vertical asymptotes of $y=\\frac{2x+1}{x^2-4}$."
+    "**NEB-style (4m): Evaluate lim_{x→7} (2x − 3), citing the theorem.** — **Theorem:** every polynomial is continuous on ℝ ⟹ lim_{x→a} P(x) = P(a) — direct substitution licensed. **Value:** 2(7) − 3 = **11**. **Deep point:** \"just plug in\" is the continuity theorem in action; naming it converts a habit into a justification, and the same licence covers roots and |x| at interior points of their domains.",
+    "**NEB-style (5m): Evaluate lim_{x→1} (x² − 1)/(x − 1) with the four-line rhythm.** — **Form:** (1 − 1)/0 = **0/0** — indeterminate, transform required. **Transform:** x² − 1 = (x − 1)(x + 1) ⟹ expression = x + 1 for x ≠ 1. **Licence:** the cancellation is valid for x ≠ 1 — exactly the punctured neighbourhood the limit reads. **Value:** 1 + 1 = **2**. **Cross-check:** the star gives 2·1 = 2 ✓. **Deep point:** the form line diagnosed, the transform line cured, the licence line justified, the value line finished — four theorems, four lines, one habit.",
+    "**NEB-style (5m): Evaluate lim_{h→0} ((2 + h)² − 4)/h and connect the answer to a derivative.** — **Form:** (4 − 4)/0 = **0/0** ✓. **Transform:** (2 + h)² − 4 = 4 + 4h + h² − 4 = h(4 + h) ⟹ expression = 4 + h for h ≠ 0. **Value:** lim = **4**. **Connection:** this is exactly the difference quotient [f(2+h) − f(2)]/h for f(x) = x² — the limit **is** f′(2) = 4, the derivative met later as the slope of the tangent. **Deep point:** the introductory drill's h-form is the derivative's native habitat — every first-principles derivative is this rhythm with f's algebra substituted in; the limits unit and the derivative unit are one continuous story.",
+    "**NEB-style (6m): For f(x) = (x³ − 1)/(x − 1), make a numeric preview table near x = 1, state the limit, and verify algebraically.** — **Preview:** f(0.9) = (0.729 − 1)/(−0.1) = 2.71; f(0.99) = (0.970299 − 1)/(−0.01) = 2.9701; f(1.01) = (1.030301 − 1)/(0.01) = 3.0301 ⟹ the values bracket **3** from both sides. **Algebraic:** x³ − 1 = (x − 1)(x² + x + 1) ⟹ expression = x² + x + 1 for x ≠ 1 ⟹ limit = 1 + 1 + 1 = **3** ✓ — matching the preview. **Deep point:** the numeric preview is a legitimate cross-check — it catches sign slips and wrong-factor errors before they reach the answer line, and it makes \"approach\" tangible: the function is *heading* to 3 through values it never needs to reach."
   ],
   "formulas": [
-    "Limit: $\\lim_{x \\to a} f(x) = L$",
-    "Epsilon-delta: $|f(x)-L|<\\varepsilon$ whenever $0<|x-a|<\\delta$",
-    "One-sided: $\\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=L$",
-    "Standard limit: $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ (radians only)",
-    "Conjugate: $\\frac{1-\\cos x}{1+\\cos x}=\\frac{\\sin^2x}{1+\\cos x}$"
+    "- x² − a² = (x − a)(x + a); x³ − a³ = (x − a)(x² + ax + a²)\n- sin u/u → 1; (eᵘ − 1)/u → 1 (u → 0)"
   ],
   "keyPoints": [
-    "A limit describes the value approached, not the value taken at the point.",
-    "The two-sided limit exists only if the one-sided limits are equal and finite.",
-    "$0/0$ signals failure of substitution, not a result of zero.",
-    "Infinity is never a value; it denotes unbounded growth or a vertical asymptote.",
-    "Horizontal asymptotes come from limits at infinity via the dominant-term rule."
+    "Starter kit: substitution where continuous; 0/0 as the transform signal; difference-of-powers factoring; single conjugate; first stars sin u/u and (e^u-1)/u. Four-line rhythm: form, transform, licence, value - each line is a theorem. Numeric preview (f(a +- h)) bridges intuition and definition and doubles as a cross-check."
   ],
-  "summary": "A limit fixes the value a function approaches as $x$ nears $a$, independently of whether $f(a)$ is defined, which is why $\\frac{x^2-4}{x-2}$ is undefined at 2 yet has limit 4. A two-sided limit requires matching one-sided limits. Forms such as $0/0$ are not answers but signals that the function must first be rewritten by factorising, rationalising, or using $\\lim\\frac{\\sin x}{x}=1$. Limits at infinity yield horizontal asymptotes.",
+  "summary": "The introductory drill builds the subject's reflexes slowly: substitute where continuity is licensed, read 0/0 as a transform signal, run the four-line rhythm — form, transform, licence, value — and cross-check against the matching star or a numeric preview. The licence line carries the definition's deepest idea (the excluded point makes rewriting legal), and the h-form problems are the derivative unit arriving early. Master the rhythm here and every harder limit is the same four lines at speed.",
   "specialNotes": [
     "The exclusion of $x=a$ in the epsilon-delta definition is the key subtlety: it is what makes a limit independent of the function's value at the point.",
     "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ holds only in radians; in degrees the value is $\\frac{\\pi}{180}$."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "0/0 is a signal to transform, never a verdict."
+  ],
   "importantNotes": [
-    "A limit is a boundary of behaviour, never an attained value — the same reason $f'(a)$ is independent of $f(a)$."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "$0/0$ fix order: factorise, rationalise (conjugate), divide by the highest vanishing power, then use $\\lim\\frac{\\sin x}{x}=1$.",
-    "Degree check at infinity: smaller numerator degree gives 0, equal degrees gives the ratio of leading coefficients, larger gives $\\pm\\infty$.",
-    "Always state BOTH one-sided limits when asked about discontinuity at a point — the values carry the marks."
+    "Write all four lines even when the algebra is easy - the rhythm is the marks."
   ],
   "examNotes": [
-    "The epsilon-delta definition and evaluation of $0/0$ forms are the most frequently asked 2–3 mark items from this topic."
+    "Preview numerically when unsure: f(a + 0.01) and f(a - 0.01) bracket the answer."
   ],
   "mcs": [
     {
@@ -98,10 +94,7 @@
     }
   ],
   "importantConcepts": [
-    "Informal and epsilon-delta meanings of a limit, and why $x=a$ is excluded.",
-    "Left-hand, right-hand and two-sided limits, and the jump discontinuity.",
-    "Indeterminate forms and the rewrites that resolve them.",
-    "Infinite limits, vertical asymptotes and horizontal asymptotes."
+    "The licence line (\"for x != a\") is where the definition is understood - the excluded point makes cancellation legal."
   ],
   "importantTasks": [
     "State and interpret the epsilon-delta definition.",
@@ -198,6 +191,54 @@
           }
         ]
       }
+    ]
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Introductory Limits Drill\n\nThis canonical is the **introductory limits drill**: first-contact problems that build the substitution-then-transform reflex gently, mirroring the parent limit-system canonical's opening. The drill's discipline is the four-line rhythm done slowly and completely.",
+      "## 2. Theorem Mirror — The Starter Kit\n\n- **Substitution:** licensed wherever the function is continuous — polynomials, roots at interior points, |x|, rational functions off zeros.\n- **0/0 recognition:** substitute first; a 0/0 result is the signal to transform, never a verdict.\n- **Basic transforms:** difference of squares/cubes factoring; single conjugate; the two simplest stars (sin u/u → 1, (eᵘ−1)/u → 1).\n- **The rhythm:** form ⟹ transform ⟹ licence ⟹ value.",
+      "## 3. Deep Conceptual — Why Beginners Must Write All Four Lines\n\n- The four-line rhythm is **training wheels for the theorems**: the form line practices diagnosis, the transform line practices identities, the licence line practices the x ≠ a justification, the value line practices continuity-licensed substitution. Skipping lines skips the theorems.\n- **The licence line is where understanding lives:** \"for x ≠ 2\" is the entire reason cancellation is legal — the limit's excluded point is what makes the rewritten expression equivalent *for the limit's purposes*. Students who internalise this line have internalised the definition.\n- **Slow drills build the cross-check reflex:** verifying (x² − 9)/(x − 3) → 6 against the star naⁿ⁻¹ = 2·3 costs one line and builds the habit that later saves marks on harder problems.",
+      "## 4. Deep Conceptual — The First Contact With \"Approach\"\n\n- Introductory drills should be *narrated*: at x = 2.9, 2.99, 2.999 the function reads 5.9, 5.99, 5.999 — the approach is visible numerically before it is formal. The numeric preview (f(a ± h) for small h) is the bridge from intuition to definition, and it doubles as an error-catching cross-check.\n- **Value vs limit, first taste:** f(2) undefined next to lim = 6 is the subject's first surprise; the drill's job is to make the surprise familiar — the road and the destination sign are different objects.",
+      "## 5. Worked Example Types\n\n- **Type A — pure substitution:** polynomials and continuous pieces; cite continuity.\n- **Type B — first 0/0:** difference of squares, cancel, substitute, star-check.\n- **Type C — first conjugate:** single radical, one multiplication, one cancellation.\n- **Type D — numeric preview:** table the approach, then confirm algebraically.",
+      "## 6. Common Confusions\n\n**\"0/0 means the limit is 0\":** it means transform — the answer could be anything. **\"Cancelling changes the function\":** only at the excluded point, which the limit never visits."
+    ],
+    "keyPoints": [
+      "Starter kit: substitution where continuous; 0/0 as the transform signal; difference-of-powers factoring; single conjugate; first stars sin u/u and (e^u-1)/u. Four-line rhythm: form, transform, licence, value - each line is a theorem. Numeric preview (f(a +- h)) bridges intuition and definition and doubles as a cross-check."
+    ],
+    "importantConcepts": [
+      "The licence line (\"for x != a\") is where the definition is understood - the excluded point makes cancellation legal."
+    ],
+    "examples": [
+      "***The numeric preview*** - f(2.9), f(2.99), f(2.999) reading 5.9, 5.99, 5.999 previews lim = 6 before any algebra."
+    ],
+    "universalFacts": [
+      "Every hard limit technique is a faster version of a rhythm learned on these starter problems."
+    ],
+    "importantStatements": [
+      "0/0 is a signal to transform, never a verdict."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Write all four lines even when the algebra is easy - the rhythm is the marks."
+    ],
+    "examNotes": [
+      "Preview numerically when unsure: f(a + 0.01) and f(a - 0.01) bracket the answer."
+    ],
+    "formulas": [
+      "- x² − a² = (x − a)(x + a); x³ − a³ = (x − a)(x² + ax + a²)\n- sin u/u → 1; (eᵘ − 1)/u → 1 (u → 0)"
+    ],
+    "practice": [
+      "Evaluate lim_{x→7} (2x − 3) and cite the theorem.",
+      "Evaluate lim_{x→1} (x² − 1)/(x − 1) with all four lines.",
+      "Evaluate lim_{h→0} ((2 + h)² − 4)/h."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (4m): Evaluate lim_{x→7} (2x − 3), citing the theorem.** — **Theorem:** every polynomial is continuous on ℝ ⟹ lim_{x→a} P(x) = P(a) — direct substitution licensed. **Value:** 2(7) − 3 = **11**. **Deep point:** \"just plug in\" is the continuity theorem in action; naming it converts a habit into a justification, and the same licence covers roots and |x| at interior points of their domains.",
+      "**NEB-style (5m): Evaluate lim_{x→1} (x² − 1)/(x − 1) with the four-line rhythm.** — **Form:** (1 − 1)/0 = **0/0** — indeterminate, transform required. **Transform:** x² − 1 = (x − 1)(x + 1) ⟹ expression = x + 1 for x ≠ 1. **Licence:** the cancellation is valid for x ≠ 1 — exactly the punctured neighbourhood the limit reads. **Value:** 1 + 1 = **2**. **Cross-check:** the star gives 2·1 = 2 ✓. **Deep point:** the form line diagnosed, the transform line cured, the licence line justified, the value line finished — four theorems, four lines, one habit.",
+      "**NEB-style (5m): Evaluate lim_{h→0} ((2 + h)² − 4)/h and connect the answer to a derivative.** — **Form:** (4 − 4)/0 = **0/0** ✓. **Transform:** (2 + h)² − 4 = 4 + 4h + h² − 4 = h(4 + h) ⟹ expression = 4 + h for h ≠ 0. **Value:** lim = **4**. **Connection:** this is exactly the difference quotient [f(2+h) − f(2)]/h for f(x) = x² — the limit **is** f′(2) = 4, the derivative met later as the slope of the tangent. **Deep point:** the introductory drill's h-form is the derivative's native habitat — every first-principles derivative is this rhythm with f's algebra substituted in; the limits unit and the derivative unit are one continuous story.",
+      "**NEB-style (6m): For f(x) = (x³ − 1)/(x − 1), make a numeric preview table near x = 1, state the limit, and verify algebraically.** — **Preview:** f(0.9) = (0.729 − 1)/(−0.1) = 2.71; f(0.99) = (0.970299 − 1)/(−0.01) = 2.9701; f(1.01) = (1.030301 − 1)/(0.01) = 3.0301 ⟹ the values bracket **3** from both sides. **Algebraic:** x³ − 1 = (x − 1)(x² + x + 1) ⟹ expression = x² + x + 1 for x ≠ 1 ⟹ limit = 1 + 1 + 1 = **3** ✓ — matching the preview. **Deep point:** the numeric preview is a legitimate cross-check — it catches sign slips and wrong-factor errors before they reach the answer line, and it makes \"approach\" tangible: the function is *heading* to 3 through values it never needs to reach."
     ]
   }
 }

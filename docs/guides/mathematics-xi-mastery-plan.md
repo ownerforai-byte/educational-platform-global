@@ -1,4 +1,4 @@
-# Mathematics XI Mastery Plan
+﻿# Mathematics XI Mastery Plan
 
 Working document for the class-11 mathematics notes enrichment campaign.
 Goal: every canonical topic gets theorem-grade content — properly stated
@@ -103,35 +103,35 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 | 51 | Calculus | Anti-derivatives and integration; substitution and by parts | `calculus/06-anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-meth.json` | Done — mx49: anti-derivative family +C, basic table, substitution workhorses, parts + LIATE; PYQ NEB 2023 integral 3x^2+2x-1 |
 | 52 | Calculus | Definite integral as area under curve | `calculus/05-the-definite-integral-as-an-area-under-a-curve.json` | Done — mx50: Riemann sums, signed area, properties, FTC Parts 1-2; PYQ NEB 2022 integral 0 to 1 x^2 dx = 1/3 |
 | 53 | Calculus | L'Hôpital's rule | `calculus/01-lhopital-rule.json` | Done — mx51: rule + hypotheses, Cauchy MVT engine, form conversions, e-ladder, failure case; NEB-style practice |
-| 54 | Calculus | Limits of a function (extra canonical) | `calculus/01-limits-of-function.json` | Pending |
-| 55 | Calculus | Algebraic properties of limits (extra canonical) | `calculus/03-algebraic-properties-of-limits.json` | Pending |
-| 56 | Calculus | Limits: algebraic, trig, exp, log (extra canonical) | `calculus/04-limits-algebraic-trig-exp-log.json` | Pending |
-| 57 | Calculus | Types of discontinuity (extra canonical) | `calculus/06-types-of-discontinuity.json` | Pending |
-| 58 | Calculus | Graphs of discontinuous functions (extra canonical) | `calculus/07-graphs-of-discontinuous-function.json` | Pending |
-| 59 | Calculus | Continuity of a function (extra canonical) | `calculus/07-continuity-of-a-function.json` | Pending |
-| 60 | Calculus | Limits (extra canonical) | `calculus/limits.json` | Pending |
-| 61 | Calculus | Indeterminate forms (extra canonical) | `calculus/indeterminate-forms.json` | Pending |
-| 62 | Calculus | Limit drill 5.1 (extra canonical) | `calculus/limit5-01.json` | Pending |
-| 63 | Calculus | Limits 5.1 (extra canonical) | `calculus/limits5-1.json` | Pending |
-| 64 | Calculus | Limits 5.2 (extra canonical) | `calculus/limits5-2.json` | Pending |
-| 65 | Calculus | Limits 5.3 (extra canonical) | `calculus/limits5-3.json` | Pending |
-| 66 | Calculus | Derivative definition (extra canonical) | `calculus/08-derivatives-definition.json` | Pending |
-| 67 | Calculus | Derivatives: algebraic and trig (extra canonical) | `calculus/09-derivatives-algebraic-trig.json` | Pending |
-| 68 | Calculus | Derivatives: inverse trig, exp, log (extra canonical) | `calculus/10-derivatives-inverse-trig-exp-log.json` | Pending |
-| 69 | Calculus | Rules of differentiation (extra canonical) | `calculus/11-rules-of-differentiation.json` | Pending |
-| 70 | Calculus | Parametric and implicit derivatives (extra canonical) | `calculus/12-parametric-implicit-derivatives.json` | Pending |
-| 71 | Calculus | Higher-order derivatives (extra canonical) | `calculus/13-higher-order-derivatives.json` | Pending |
-| 72 | Calculus | Geometric interpretation (extra canonical) | `calculus/14-geometric-interpretation-derivative.json` | Pending |
-| 73 | Calculus | Monotonicity and extreme values (extra canonical) | `calculus/15-monotonicity-extreme-values.json` | Pending |
-| 74 | Calculus | Concavity and points of inflection (extra canonical) | `calculus/16-concavity-points-of-inflection.json` | Pending |
-| 75 | Calculus | Anti-derivatives and integration (extra canonical) | `calculus/17-anti-derivatives-integration.json` | Pending |
-| 76 | Calculus | Integration: substitution and by parts (extra canonical) | `calculus/18-integration-substitution-parts.json` | Pending |
-| 77 | Calculus | Definite integral (extra canonical) | `calculus/19-definite-integral.json` | Pending |
-| 78 | Calculus | Area under curve (extra canonical) | `calculus/20-area-under-curve.json` | Pending |
-| 79 | Calculus | Area between two curves (extra canonical) | `calculus/21-area-between-two-curves.json` | Pending |
-| 80 | Calculus | Limit drill c (extra canonical) | `calculus/limitc.json` | Pending |
-| 81 | Calculus | Limits intro (extra canonical) | `calculus/limits-intro.json` | Pending |
-| 82 | Calculus | Definite integral, area, between curves (extra canonical) | `calculus/07-the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu.json` | Pending |
+| 54 | Calculus | Limits of a function (extra canonical) | `calculus/01-limits-of-function.json` | Completed |
+| 55 | Calculus | Algebraic properties of limits (extra canonical) | `calculus/03-algebraic-properties-of-limits.json` | Completed |
+| 56 | Calculus | Limits: algebraic, trig, exp, log (extra canonical) | `calculus/04-limits-algebraic-trig-exp-log.json` | Completed |
+| 57 | Calculus | Types of discontinuity (extra canonical) | `calculus/06-types-of-discontinuity.json` | Completed |
+| 58 | Calculus | Graphs of discontinuous functions (extra canonical) | `calculus/07-graphs-of-discontinuous-function.json` | Completed |
+| 59 | Calculus | Continuity of a function (extra canonical) | `calculus/07-continuity-of-a-function.json` | Completed |
+| 60 | Calculus | Limits (extra canonical) | `calculus/limits.json` | Completed |
+| 61 | Calculus | Indeterminate forms (extra canonical) | `calculus/indeterminate-forms.json` | Completed |
+| 62 | Calculus | Limit drill 5.1 (extra canonical) | `calculus/limit5-01.json` | Completed |
+| 63 | Calculus | Limits 5.1 (extra canonical) | `calculus/limits5-1.json` | Completed |
+| 64 | Calculus | Limits 5.2 (extra canonical) | `calculus/limits5-2.json` | Completed |
+| 65 | Calculus | Limits 5.3 (extra canonical) | `calculus/limits5-3.json` | Completed |
+| 66 | Calculus | Derivative definition (extra canonical) | `calculus/08-derivatives-definition.json` | Completed |
+| 67 | Calculus | Derivatives: algebraic and trig (extra canonical) | `calculus/09-derivatives-algebraic-trig.json` | Completed |
+| 68 | Calculus | Derivatives: inverse trig, exp, log (extra canonical) | `calculus/10-derivatives-inverse-trig-exp-log.json` | Completed |
+| 69 | Calculus | Rules of differentiation (extra canonical) | `calculus/11-rules-of-differentiation.json` | Completed |
+| 70 | Calculus | Parametric and implicit derivatives (extra canonical) | `calculus/12-parametric-implicit-derivatives.json` | Completed |
+| 71 | Calculus | Higher-order derivatives (extra canonical) | `calculus/13-higher-order-derivatives.json` | Completed |
+| 72 | Calculus | Geometric interpretation (extra canonical) | `calculus/14-geometric-interpretation-derivative.json` | Completed |
+| 73 | Calculus | Monotonicity and extreme values (extra canonical) | `calculus/15-monotonicity-extreme-values.json` | Completed |
+| 74 | Calculus | Concavity and points of inflection (extra canonical) | `calculus/16-concavity-points-of-inflection.json` | Completed |
+| 75 | Calculus | Anti-derivatives and integration (extra canonical) | `calculus/17-anti-derivatives-integration.json` | Completed |
+| 76 | Calculus | Integration: substitution and by parts (extra canonical) | `calculus/18-integration-substitution-parts.json` | Completed |
+| 77 | Calculus | Definite integral (extra canonical) | `calculus/19-definite-integral.json` | Completed |
+| 78 | Calculus | Area under curve (extra canonical) | `calculus/20-area-under-curve.json` | Completed |
+| 79 | Calculus | Area between two curves (extra canonical) | `calculus/21-area-between-two-curves.json` | Completed |
+| 80 | Calculus | Limit drill c (extra canonical) | `calculus/limitc.json` | Completed |
+| 81 | Calculus | Limits intro (extra canonical) | `calculus/limits-intro.json` | Completed |
+| 82 | Calculus | Definite integral, area, between curves (extra canonical) | `calculus/07-the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu.json` | Completed |
 
 ## Analytic geometry (9 topics)
 
@@ -158,6 +158,8 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 | 96 | Mechanics | Dynamics: straight-line motion, uniform acceleration | `computational-methods-or-mechanics/04-mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-accelerati.json` | Pending |
 
 ## Progress log
+
+- Session 8 - Calculus companion canonicals (rows 54-82, 29/29) + continuity.json: all 30 thin companions enriched to the deep-conceptual + heavy-mark pattern (6 note sections incl. 2 Deep Conceptual readings, 4 NEB-style solved heavy-mark questions with full working and cross-checks). Sources mx52-mx80 assembled into 01-limits-of-function, 03-algebraic-properties-of-limits, 04-limits-algebraic-trig-exp-log, 06-types-of-discontinuity, 07-graphs-of-discontinuous-function, 07-continuity-of-a-function, indeterminate-forms, limit5-01, limits5-1/2/3, limitc, limits-intro, 08-derivatives-definition through 16-concavity-points-of-inflection, 17-anti-derivatives-integration, 18-integration-substitution-parts, 19-definite-integral, 20-area-under-curve, 21-area-between-two-curves, continuity.json. limits.json (17 notes) and 07-the-definite-integral (10 notes) kept their richer note sets and gained 4 heavy-mark solved questions each (7 pq total; the latter also got a full summary rewrite). Deep layers: limits as the universal joint, determinate forms as answers, forms as rate-races, diagnosis-table drilling, amplitude non-vanishing verdicts, layered second-order stars; derivative as local linearisation, co-derivative sign pattern, radian nativeness, inverse-engine derivations with branch discipline, rules as rate algebra with triage, parametric two-step second-derivative recipe (cycloid concave-down witness), eigen-equation y''=-m^2y, limit-of-secants tangent definition, sign-table monotonicity via MVT, candidate/verdict split for extrema and inflections, five-layer sketch protocol; integration as reversed differentiation with +C as the family price, substitution as change of variables with Jacobian, parts as strategic regression with LIATE and cyclic closes, Riemann-vs-FTC two doors, dummy variables and live limits, ledger-vs-map signed area, top-minus-bottom as disassembled absolute value, slicing-axis economy. Build 101 entries, validator 0 broken.
 
 - Session 6b - Limits & Continuity deep-conceptual + heavy-mark enrichment (rows 27-43, all 17 canonicals): every file expanded from 11 to 13-14 note sections and 3 to 7 solved questions. Deep-conceptual layers: neighbourhood-not-point principle, two-sided agreement as necessity, limits as the contract calculus rests on; notation precision (machine vs value, domain-first triage, piecewise joints as conditional machines); substitution as a theorem with named failure modes, value/limit independence, evaluation errors as limit errors; one-sided limits as domain edges and asymmetric-pathology descriptors; existence as a two-gate theorem (sides exist, then agree), disagreement as measurement, transformation-preserves-existence; stars as tangent approximations, steering/manufactured denominators, orders-of-vanishing hierarchy, star proof network; pen test as physical model, continuity as composition insurance, IVT/EVT deep content; epsilon as challenge/delta as answer, quantifier order, closure theorems as inherited continuity, preliminary-window trick; removability as neighbourhood health, cancellation shadows, repair test as classifier; jumps as engineered decisions, jump size as data, IVT counterexample, Darboux note; walls as unboundedness with odd/even parity geometry, c/0 vs inf/inf distinction, numerator-at-a sorting; sine star as squeeze-of-geometry, trig vanishing hierarchy, nesting depth and degree-unit discipline; e as fixed point of the rate map, growth ladder, log as lineariser; drill rhythm as proof discipline, double factoring, coefficient conservation mantra, 1^inf bridge, split legality, continuity audit as cost accounting, classification decision tree, seam linear systems. 68 new heavy-mark solved questions (4-8m) with full working and cross-checks, including epsilon-delta proofs (3x+1, x^2 at 2, 1/x at 3), IVT root certificates, piecewise seam weldings, full rational-function continuity audits, composite trig star products, 1^inf bridges, degree-rule infinity limits, and x ln x / x^x power forms. Build 101 entries, validator 0 broken.
 

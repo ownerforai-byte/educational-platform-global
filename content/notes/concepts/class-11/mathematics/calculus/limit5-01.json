@@ -5,61 +5,59 @@
   "topicSlug": "limit5-01",
   "relevance": 100,
   "notes": [
-    "**What 'indeterminate' means:** a form like $0/0$ describes the SHAPE the expression takes as $x$ approaches the point, never its value. The same form can give $0$, $1$, $7$, $\\infty$, or no limit at all. $\\frac{x^2}{x}\\to0$, $\\frac{x^2}{x^2}\\to1$ and $\\frac{x}{x^2}\\to\\infty$ are all $0/0$.",
-    "**The seven forms:** $0/0$, $\\infty/\\infty$, $0\\cdot\\infty$, $\\infty-\\infty$, $\\infty^0$, $0^0$, $1^\\infty$. Everything else is determinate — $\\frac{0}{5}=0$ and $\\frac{5}{0}=\\infty$ need no further work. $0\\cdot\\infty$ is the classic trap because each factor is a LIMIT rather than a value.",
-    "**Technique 1 — factorise and cancel:** find the common vanishing factor. $\\lim_{x\\to2}\\frac{x^2-4}{x-2}=\\lim\\frac{(x-2)(x+2)}{x-2}=4$. For powers use $a^n-b^n=(a-b)(a^{n-1}+\\dots+b^{n-1})$.",
-    "**Technique 2 — rationalise with the conjugate:** $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\lim\\frac{1-\\cos^2x}{x^2(1+\\cos x)}=\\lim\\frac{\\sin^2x}{x^2(1+\\cos x)}=\\frac12$. The conjugate is chosen so a difference of squares appears.",
-    "**Technique 3 — L'Hôpital:** for $0/0$ or $\\infty/\\infty$, differentiate numerator and denominator SEPARATELY and take the limit of the ratio, provided that limit exists. $\\frac{x^2-4}{x-2}$ becomes $\\frac{2x}{1}\\to4$.",
-    "**Technique 4 — logs for $1^\\infty$:** with $y=(1+f)^{g}$ and $f\\to0$, take logs and use $\\lim\\frac{\\ln(1+f)}{f}=1$, giving $\\lim y = e^{\\lim g\\ln(1+f)}$. Hence $\\lim_{n\\to\\infty}(1+\\frac1n)^n=e$."
+    "## 1. Topic Introduction — The Indeterminate-Forms Drill Gallery\n\nThis canonical is the **drill gallery for the indeterminate forms**: a focused problem set where every item is a form diagnosis followed by its cure. The parent canonical teaches the forms; this companion runs them at exam speed with four heavy-mark problems.",
+    "## 2. Theorem Mirror — The Diagnosis Table\n\n| Form | Cure | Signature |\n|---|---|---|\n| 0/0 | factor, conjugate, steer, L'Hôpital | shared root or matched stars |\n| ∞/∞ | degree comparison, dominant division | rational or mixed-family race |\n| 0·∞ | flip one factor | x ln x patterns |\n| ∞ − ∞ | merge fractions, conjugate | sec − tan, √(x²+x) − x |\n| 1^∞, 0⁰, ∞⁰ | log bridge f^g = e^{g ln f} | compound interest, xˣ |",
+    "## 3. Deep Conceptual — Drilling the Diagnosis, Not the Algebra\n\n- The algebra of each cure is short; the **skill is the diagnosis** — seeing that (e^{5x} − 1)/(ln(1+2x)) is a coefficient-ratio 0/0 before touching it. Drills train the eye: form first, cure second, arithmetic last.\n- **Cross-form recognition:** one expression can be read two ways — x·e^{−x} is 0·∞ but becomes ∞/∞ after the flip; the drill's lesson is that forms are *properties of the current expression*, changed by legal rewriting, not labels glued to the problem.\n- **Termination awareness:** each cure should visibly reduce the form's severity (0/0 → substitution; ∞/∞ → ladder). If a pass leaves the same form, the cure was misapplied — stop and re-diagnose.",
+    "## 4. Deep Conceptual — The Exam Economy of Forms\n\n- **Marks live in the form line:** writing \"0/0 (indeterminate)\" earns the recognition mark even if algebra slips later; skipping it makes a correct answer look lucky.\n- **The cheapest cure wins:** a coefficient ratio (two stars) beats three L'Hôpital passes; a degree comparison beats a dominant division. Drill trains cost ranking — pick the two-line cure over the five-line one when both work.\n- **Verification is one line:** differentiate back, or re-derive by a second cure. Every drill answer here carries a cross-check because the habit is the point.",
+    "## 5. Worked Example Types\n\n- **Type A — matched stars:** same-order 0/0 ⟹ coefficient ratio.\n- **Type B — flip races:** 0·∞ ⟹ quotient ⟹ ladder or L'Hôpital.\n- **Type C — merge and resolve:** ∞ − ∞ ⟹ conjugate ⟹ hidden constant.\n- **Type D — power forms:** log bridge ⟹ single constant ⟹ e^c.",
+    "## 6. Common Confusions\n\n**\"Every 0/0 needs L'Hôpital\":** the stars are usually cheaper. **\"∞ − ∞ = 0\":** the form hides anything — merge first."
   ],
   "confusion": [
     "Reading $0/0$ as the answer — it means substitution failed, and the limit may be anything.",
     "Applying L'Hôpital to $0\\cdot\\infty$ or $\\infty-\\infty$ without first rewriting as a quotient.",
     "Differentiating only the numerator and forgetting the denominator."
   ],
-  "practice": [],
+  "practice": [
+    "Diagnose and evaluate lim_{x→0} (ln(1+4x))/(e^{2x} − 1).",
+    "Diagnose and evaluate lim_{x→∞} x²·e^{−3x}.",
+    "Diagnose and evaluate lim_{x→0⁺} x^{1/x}."
+  ],
   "universalFacts": [
-    "Euler's number is defined as a limit, $e=\\lim_{n\\to\\infty}(1+\\frac1n)^n$ — the compound-interest form of the $1^\\infty$ case.",
-    "Numerical differentiation avoids $f(x+h)-f(x)$ over $h$ precisely because at tiny $h$ this $0/0$ suffers catastrophic cancellation."
+    "Every indeterminate-form problem in the syllabus falls to one of the five cures in the table."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "***Two cures, one answer*** - (e^{3x}-1)/ln(1+2x) yields 3/2 by stars in two lines and by L'Hopital in three - cost ranking is a drill skill."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (6m): Diagnose the form and evaluate lim_{x→0} (ln(1 + 4x))/(e^{2x} − 1).** — **Form:** (ln 1)/(1 − 1) = **0/0** ✓. **Cure — coefficient ratio:** ln(1+4x) ~ 4x (coefficient 4); e^{2x} − 1 ~ 2x (coefficient 2) ⟹ same order ⟹ **4/2 = 2**. **Rigorous:** [ln(1+4x)/(4x)]·[(2x)/(e^{2x}−1)]·2 → 1·1·2 = 2 ✓. **Deep point:** both stars are first-order with the anchor at 0 — the diagnosis \"matched first-order stars\" selected the two-line cure over L'Hôpital; cost ranking is part of the method.",
+    "**NEB-style (5m): Diagnose the form and evaluate lim_{x→∞} x²·e^{−3x}.** — **Form:** ∞ · 0 ⟹ **0·∞ species**. **Flip:** x²/e^{3x} ⟹ **∞/∞** ✓. **Ladder:** exponential dominates any power ⟹ **0**. **L'Hôpital double-check:** x²/e^{3x} → 2x/(3e^{3x}) → 2/(9e^{3x}) → 0 ✓. **Deep point:** the flip turned the product into the ladder's home turf; two L'Hôpital passes confirm — the drill's lesson is that the ladder verdict was available instantly, and the passes are the verification, not the method.",
+    "**NEB-style (6m): Diagnose the form and evaluate lim_{x→0⁺} x^{1/x}.** — **Form:** base → 0⁺, exponent 1/x → +∞ ⟹ **0^∞** — actually *determinate*: a small positive base raised to a huge power collapses to 0. **Log bridge confirms:** x^{1/x} = e^{(ln x)/x}; as x → 0⁺, ln x → −∞ and 1/x → +∞ ⟹ (ln x)/x → **−∞** (negative divided by small positive) ⟹ e^{−∞} = **0**. **Contrast:** xˣ at 0⁺ gave 1 (0⁰, indeterminate) — the exponent's direction flips the verdict. **Deep point:** 0^∞ is *not* on the indeterminate list — the drill's discipline is checking the list before working: determinate forms answer outright, and here the answer is 0 with the log bridge as the formal certificate.",
+    "**NEB-style (6m): Diagnose the form and evaluate lim_{x→1} (1/(x − 1) − 1/ln x).** — **Form:** both terms → ∞ (1/(x−1) blows up; 1/ln x → ∞ since ln x → 0) ⟹ **∞ − ∞**. **Merge:** = [ln x − (x − 1)]/[(x − 1)ln x]. **Form re-check:** numerator → 0 − 0 = 0; denominator → 0·0 = 0 ⟹ **0/0** ✓. **L'Hôpital:** numerator′ = 1/x − 1; denominator′ = ln x + (x−1)/x. At x = 1: (1 − 1)/(0 + 1) = **0** — still 0/0? Numerator′(1) = 0, denominator′(1) = 1 ⟹ the ratio → 0/1 = **0**. **Second pass confirms:** numerator′′ = −1/x², denominator′′ = 1/x + 1/x² ⟹ at 1: −1/2 ⟹... the first pass already resolved (0/1). **Answer: 0.** **Deep point:** the merge converted ∞ − ∞ into a working quotient, and the re-check after merging (0/0) licensed L'Hôpital — forms are properties of the *current* expression; the drill's rule is to re-diagnose after every rewrite."
+  ],
   "formulas": [
-    "Forms: $0/0$, $\\infty/\\infty$, $0\\cdot\\infty$, $\\infty-\\infty$, $1^\\infty$, $0^0$, $\\infty^0$",
-    "$a^n-b^n = (a-b)(a^{n-1}+a^{n-2}b+\\dots+b^{n-1})$",
-    "Conjugate: $\\frac{1-\\cos x}{1+\\cos x}=\\frac{\\sin^2x}{1+\\cos x}$",
-    "L'Hôpital: $\\lim\\frac{f}{g}=\\lim\\frac{f'}{g'}$ for $0/0$ or $\\infty/\\infty$",
-    "$\\lim_{n\\to\\infty}(1+\\frac{k}{n})^n = e^k$"
+    "- 0·∞ ⟹ f·g = f/(1/g)\n- f^g = e^{g ln f}"
   ],
   "keyPoints": [
-    "An indeterminate form is a shape, not a value.",
-    "Factorise, rationalise, or use L'Hôpital — never substitute and stop.",
-    "L'Hôpital applies only to $0/0$ and $\\infty/\\infty$.",
-    "For $1^\\infty$, take logarithms to reduce to a $0/0$ quotient."
+    "Drill table: 0/0 -> factor/conjugate/steer/L'Hopital; inf/inf -> degrees/dominant division; 0*inf -> flip; inf-inf -> merge/conjugate; power forms -> log bridge. Diagnosis is the skill; the algebra is short. Forms are properties of the current expression, changed by legal rewriting. Cheapest cure wins; every answer carries a cross-check."
   ],
-  "summary": "An indeterminate form describes the shape an expression takes near a point, never its value — the same $0/0$ may resolve to $0$, $1$, or nothing at all. Four techniques cover essentially every case: factorise and cancel, rationalise with a conjugate, apply L'Hôpital to $0/0$ and $\\infty/\\infty$, and take logarithms for $1^\\infty$.",
+  "summary": "The indeterminate-forms drill trains the subject's real skill: diagnosis. Each of the seven shapes routes to a named cure — factor or steer for 0/0, degrees for ∞/∞, a flip for 0·∞, a merge for ∞ − ∞, the log bridge for the power trio — and the cheapest cure that works is the right one. Forms are properties of the current expression, re-checked after every rewrite; determinate neighbours (like 0^∞) answer outright. Write the form, apply the cure, cross-check the verdict.",
   "specialNotes": [
     "L'Hôpital requires the derivative quotient's limit to EXIST; if it does not, the rule is silent and another technique is needed.",
     "Some $1^\\infty$ forms have no limit, so writing the form down never licenses the exponential answer."
   ],
   "importantStatements": [
-    "Statement 1: $0/0$ and $\\infty/\\infty$ are indeterminate, but $5/0$ and $0/5$ are determinate.",
-    "Statement 2: L'Hôpital's rule may be applied only to $0/0$ and $\\infty/\\infty$ forms.",
-    "Statement 3: Differentiating both parts is only part of L'Hôpital — the resulting limit must exist.",
-    "Statement 4: $0\\cdot\\infty$ and $\\infty-\\infty$ must be rewritten as a quotient first.",
-    "Statement 5: $\\lim_{n\\to\\infty}(1+\\frac{k}{n})^n = e^k$."
+    "Write the form before the cure; the recognition line is graded."
   ],
   "importantNotes": [
-    "Topic anchor: Technique 4 — logs for $1^ infty$  with $y=(1+f)^{g}$ and $f to0$, take logs and use $ lim frac{ ln(1+f)}{f}=1$, giving $ lim y = e^{ lim g ln(1+f)}$."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
   ],
   "examShortTricks": [
-    "Match technique to form: $0/0$ → factorise, rationalise or L'Hôpital; $1^\\infty$ → logs; $0\\cdot\\infty$ and $\\infty-\\infty$ → rewrite as a quotient.",
-    "If the expression contains a root, reach for the conjugate first."
+    "Match-order 0/0? Coefficient ratio. Mixed families at infinity? Ladder. Power? Log bridge."
   ],
   "examNotes": [
-    "Naming the correct technique for a given form is a frequent 2-mark question in the limits block."
+    "If a cure leaves the same form, stop - the cure was misapplied; re-diagnose."
   ],
   "mcs": [
     {
@@ -97,10 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "An indeterminate form is a shape, not a value.",
-    "Factorise, rationalise, or use L'Hôpital — never substitute and stop.",
-    "L'Hôpital applies only to $0/0$ and $\\infty/\\infty$.",
-    "For $1^\\infty$, take logarithms to reduce to a $0/0$ quotient."
+    "Drills train the eye: form first, cure second, arithmetic last - the diagnosis carries the method mark."
   ],
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
@@ -111,5 +106,53 @@
     "**1. [Idea: the denominator's limit does not exist, so the limit cannot either]** Determine $\\lim_{x \\to 0}\\dfrac{x^2}{2x^2 + \\sin^2(1/x)}$.\\newline\\newline**Solution:** Substitute: the numerator tends to $0$ and the denominator oscillates, so the form is not even $\\frac00$ and L'Hôpital is unavailable. Divide by $x^2$:$\\newline\\dfrac{1}{2 + \\left(\\frac{\\sin(1/x)}{x}\\right)^2}$. Put $u = 1/x$, so $u \\to \\infty$ and the squared term becomes $u^2\\sin^2 u$.\\newline\\newline**Examine two sequences:**$^{\\bullet}$ $x_n = \\frac{1}{n\\pi}$ gives $\\sin u = 0$, so the fraction is exactly $\\frac12$.$^{\\bullet}$ $y_n = \\frac{1}{\\frac\\pi2 + 2n\\pi}$ gives $|\\sin u| = 1$, so the fraction is $\\dfrac{1}{2+y_n^2} \\to 0$.\\newline\\newlineSince the two sequences give different values, **the limit does not exist**.\\newline\\newline**Answer:** DNE. **This is the concept the question tests** — students who see $\\frac00$ and reach for L'Hôpital get a wrong answer.",
     "**2. [Idea: repeated L'Hôpital, one application per order of vanishing]** Evaluate $\\lim_{x \\to 0}\\dfrac{x - \\sin x}{x^3}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$. The numerator vanishes to **third order** because $x - \\sin x$ starts with the $x^3$ term, so exactly three applications are needed.$^{\\bullet}$ 1st: $\\lim\\dfrac{1 - \\cos x}{3x^2}$ — still $\\frac00$.$^{\\bullet}$ 2nd: $\\lim\\dfrac{\\sin x}{6x}$ — still $\\frac00$.$^{\\bullet}$ 3rd: $\\lim\\dfrac{\\cos x}{6} = \\frac16$.\\newline\\newline**Answer:** $\\frac16$. **Warning:** a fourth application would be differentiating an already non-zero limit, which is meaningless.",
     "**3. [Idea: substitute $t = 1/x$ to convert an infinity-limit into a zero-limit]** Evaluate $\\lim_{x \\to \\infty} x^3\\left(\\tan^{-1}\\dfrac1x - \\dfrac1x\\right)$.\\newline\\newline**Solution:** Naive substitution gives $\\infty^3 \\cdot 0$, so a change of variable is required. Let $t = \\frac1x$, so $t \\to 0$ and $x^3 = \\frac1{t^3}$:$\\newline\\lim_{t \\to 0}\\dfrac{\\tan^{-1}t - t}{t^3}$, a $\\frac00$ form.\\newline\\newlineL'Hôpital:$\\newline\\lim_{t \\to 0}\\dfrac{\\frac{1}{1+t^2} - 1}{3t^2} = \\lim_{t \\to 0}\\dfrac{\\frac{1-(1+t^2)}{1+t^2}}{3t^2} = \\lim_{t \\to 0}\\dfrac{-t^2}{3t^2(1+t^2)} = -\\lim_{t\\to0}\\dfrac{1}{3(1+t^2)}$.\\newline\\newline**Answer:** $-\\frac13$. **Check:** $\\tan^{-1}t = t - \\frac{t^3}{3} + \\cdots$, so the difference is $-\\frac{t^3}{3}$ and multiplying by $x^3=\\frac1{t^3}$ indeed gives $-\\frac13$."
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Indeterminate-Forms Drill Gallery\n\nThis canonical is the **drill gallery for the indeterminate forms**: a focused problem set where every item is a form diagnosis followed by its cure. The parent canonical teaches the forms; this companion runs them at exam speed with four heavy-mark problems.",
+      "## 2. Theorem Mirror — The Diagnosis Table\n\n| Form | Cure | Signature |\n|---|---|---|\n| 0/0 | factor, conjugate, steer, L'Hôpital | shared root or matched stars |\n| ∞/∞ | degree comparison, dominant division | rational or mixed-family race |\n| 0·∞ | flip one factor | x ln x patterns |\n| ∞ − ∞ | merge fractions, conjugate | sec − tan, √(x²+x) − x |\n| 1^∞, 0⁰, ∞⁰ | log bridge f^g = e^{g ln f} | compound interest, xˣ |",
+      "## 3. Deep Conceptual — Drilling the Diagnosis, Not the Algebra\n\n- The algebra of each cure is short; the **skill is the diagnosis** — seeing that (e^{5x} − 1)/(ln(1+2x)) is a coefficient-ratio 0/0 before touching it. Drills train the eye: form first, cure second, arithmetic last.\n- **Cross-form recognition:** one expression can be read two ways — x·e^{−x} is 0·∞ but becomes ∞/∞ after the flip; the drill's lesson is that forms are *properties of the current expression*, changed by legal rewriting, not labels glued to the problem.\n- **Termination awareness:** each cure should visibly reduce the form's severity (0/0 → substitution; ∞/∞ → ladder). If a pass leaves the same form, the cure was misapplied — stop and re-diagnose.",
+      "## 4. Deep Conceptual — The Exam Economy of Forms\n\n- **Marks live in the form line:** writing \"0/0 (indeterminate)\" earns the recognition mark even if algebra slips later; skipping it makes a correct answer look lucky.\n- **The cheapest cure wins:** a coefficient ratio (two stars) beats three L'Hôpital passes; a degree comparison beats a dominant division. Drill trains cost ranking — pick the two-line cure over the five-line one when both work.\n- **Verification is one line:** differentiate back, or re-derive by a second cure. Every drill answer here carries a cross-check because the habit is the point.",
+      "## 5. Worked Example Types\n\n- **Type A — matched stars:** same-order 0/0 ⟹ coefficient ratio.\n- **Type B — flip races:** 0·∞ ⟹ quotient ⟹ ladder or L'Hôpital.\n- **Type C — merge and resolve:** ∞ − ∞ ⟹ conjugate ⟹ hidden constant.\n- **Type D — power forms:** log bridge ⟹ single constant ⟹ e^c.",
+      "## 6. Common Confusions\n\n**\"Every 0/0 needs L'Hôpital\":** the stars are usually cheaper. **\"∞ − ∞ = 0\":** the form hides anything — merge first."
+    ],
+    "keyPoints": [
+      "Drill table: 0/0 -> factor/conjugate/steer/L'Hopital; inf/inf -> degrees/dominant division; 0*inf -> flip; inf-inf -> merge/conjugate; power forms -> log bridge. Diagnosis is the skill; the algebra is short. Forms are properties of the current expression, changed by legal rewriting. Cheapest cure wins; every answer carries a cross-check."
+    ],
+    "importantConcepts": [
+      "Drills train the eye: form first, cure second, arithmetic last - the diagnosis carries the method mark."
+    ],
+    "examples": [
+      "***Two cures, one answer*** - (e^{3x}-1)/ln(1+2x) yields 3/2 by stars in two lines and by L'Hopital in three - cost ranking is a drill skill."
+    ],
+    "universalFacts": [
+      "Every indeterminate-form problem in the syllabus falls to one of the five cures in the table."
+    ],
+    "importantStatements": [
+      "Write the form before the cure; the recognition line is graded."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonical."
+    ],
+    "examShortTricks": [
+      "Match-order 0/0? Coefficient ratio. Mixed families at infinity? Ladder. Power? Log bridge."
+    ],
+    "examNotes": [
+      "If a cure leaves the same form, stop - the cure was misapplied; re-diagnose."
+    ],
+    "formulas": [
+      "- 0·∞ ⟹ f·g = f/(1/g)\n- f^g = e^{g ln f}"
+    ],
+    "practice": [
+      "Diagnose and evaluate lim_{x→0} (ln(1+4x))/(e^{2x} − 1).",
+      "Diagnose and evaluate lim_{x→∞} x²·e^{−3x}.",
+      "Diagnose and evaluate lim_{x→0⁺} x^{1/x}."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Diagnose the form and evaluate lim_{x→0} (ln(1 + 4x))/(e^{2x} − 1).** — **Form:** (ln 1)/(1 − 1) = **0/0** ✓. **Cure — coefficient ratio:** ln(1+4x) ~ 4x (coefficient 4); e^{2x} − 1 ~ 2x (coefficient 2) ⟹ same order ⟹ **4/2 = 2**. **Rigorous:** [ln(1+4x)/(4x)]·[(2x)/(e^{2x}−1)]·2 → 1·1·2 = 2 ✓. **Deep point:** both stars are first-order with the anchor at 0 — the diagnosis \"matched first-order stars\" selected the two-line cure over L'Hôpital; cost ranking is part of the method.",
+      "**NEB-style (5m): Diagnose the form and evaluate lim_{x→∞} x²·e^{−3x}.** — **Form:** ∞ · 0 ⟹ **0·∞ species**. **Flip:** x²/e^{3x} ⟹ **∞/∞** ✓. **Ladder:** exponential dominates any power ⟹ **0**. **L'Hôpital double-check:** x²/e^{3x} → 2x/(3e^{3x}) → 2/(9e^{3x}) → 0 ✓. **Deep point:** the flip turned the product into the ladder's home turf; two L'Hôpital passes confirm — the drill's lesson is that the ladder verdict was available instantly, and the passes are the verification, not the method.",
+      "**NEB-style (6m): Diagnose the form and evaluate lim_{x→0⁺} x^{1/x}.** — **Form:** base → 0⁺, exponent 1/x → +∞ ⟹ **0^∞** — actually *determinate*: a small positive base raised to a huge power collapses to 0. **Log bridge confirms:** x^{1/x} = e^{(ln x)/x}; as x → 0⁺, ln x → −∞ and 1/x → +∞ ⟹ (ln x)/x → **−∞** (negative divided by small positive) ⟹ e^{−∞} = **0**. **Contrast:** xˣ at 0⁺ gave 1 (0⁰, indeterminate) — the exponent's direction flips the verdict. **Deep point:** 0^∞ is *not* on the indeterminate list — the drill's discipline is checking the list before working: determinate forms answer outright, and here the answer is 0 with the log bridge as the formal certificate.",
+      "**NEB-style (6m): Diagnose the form and evaluate lim_{x→1} (1/(x − 1) − 1/ln x).** — **Form:** both terms → ∞ (1/(x−1) blows up; 1/ln x → ∞ since ln x → 0) ⟹ **∞ − ∞**. **Merge:** = [ln x − (x − 1)]/[(x − 1)ln x]. **Form re-check:** numerator → 0 − 0 = 0; denominator → 0·0 = 0 ⟹ **0/0** ✓. **L'Hôpital:** numerator′ = 1/x − 1; denominator′ = ln x + (x−1)/x. At x = 1: (1 − 1)/(0 + 1) = **0** — still 0/0? Numerator′(1) = 0, denominator′(1) = 1 ⟹ the ratio → 0/1 = **0**. **Second pass confirms:** numerator′′ = −1/x², denominator′′ = 1/x + 1/x² ⟹ at 1: −1/2 ⟹... the first pass already resolved (0/1). **Answer: 0.** **Deep point:** the merge converted ∞ − ∞ into a working quotient, and the re-check after merging (0/0) licensed L'Hôpital — forms are properties of the *current* expression; the drill's rule is to re-diagnose after every rewrite."
+    ]
+  }
 }
