@@ -136,14 +136,24 @@ function loadAdmin(): AdminNamespace | null {
     if (typeof admin.initializeApp !== "function") {
       // Fall back to the prototype chain of the required module (v13 keeps
       // initializeApp there) — bind to the module so `this` stays correct.
-      const proto = Object.getPrototypeOf(mod) as Record<string, unknown>;
+      const proto = Object.getPrototypeOf(mod) as Record<string, unknown> | null;
       if (proto && typeof proto.initializeApp === "function") {
         admin.initializeApp = (proto.initializeApp as (...a: unknown[]) => AdminApp).bind(mod);
       }
       if (typeof admin.app !== "function" && proto && typeof proto.app === "function") {
         admin.app = (proto.app as (...a: unknown[]) => AdminApp).bind(mod);
       }
-      if (!Array.isArray(admin.apps) && typeof admin.getApps !== "function" && proto && typeof proto.apps !== "undefined") {
+      // NB: do NOT touch proto.apps directly — it is a live getter whose `this`
+      // must be the module instance (reading it off the prototype throws
+      // "Cannot read properties of undefined (reading 'apps')"). Check the
+      // descriptor instead and re-expose the getter bound to the module.
+      const appsDesc = proto ? Object.getOwnPropertyDescriptor(proto, "apps") : undefined;
+      if (
+        appsDesc &&
+        typeof appsDesc.get === "function" &&
+        !Array.isArray(admin.apps) &&
+        typeof admin.getApps !== "function"
+      ) {
         Object.defineProperty(admin, "apps", {
           get: () => (mod as { apps?: AdminApp[] }).apps,
           enumerable: true,
