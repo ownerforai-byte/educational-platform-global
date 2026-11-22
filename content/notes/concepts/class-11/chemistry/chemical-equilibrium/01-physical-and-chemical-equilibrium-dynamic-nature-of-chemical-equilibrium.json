@@ -7,19 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "Dynamic equilibrium: forward rate = backward rate.",
-    "Kc = [products]/[reactants].",
-    "Le Chatelier's principle.",
-    "pH = -log[H⁺].",
-    "# Physical and chemical equilibrium; dynamic nature of chemical equilibrium\n\n## 1. Introduction\nChemical picture of **Physical and chemical equilibrium; dynamic nature of chemical equilibrium** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Equilibrium fill pass.\n\n## 2. Concepts and definitions\n### Physical and chemical equilibrium\n### dynamic nature of chemical equilibrium\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Physical and chemical equilibrium; dynamic nature of chemical equilibrium — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Physical and chemical equilibrium; dynamic nature of chemical equilibrium — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Physical and chemical equilibrium; dynamic nature of chemical equilibrium — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Physical and chemical equilibrium; dynamic nature of chemical equilibrium — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Reactions That Refuse to Finish\n\nMost reactions in a closed flask never \"complete\": forward and reverse processes run side by side until their rates tie. That tie is **equilibrium** — dynamic, not dead. This topic separates physical from chemical equilibrium, establishes the reversibility and constancy criteria, and sets up the quantitative machinery (mass action, Kc, Kp) of the next three topics.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Reversible reactions and the approach to equilibrium\n\n- A **reversible reaction** proceeds in both directions simultaneously, written with the double arrow ⇌: N₂ + 3H₂ ⇌ 2NH₃.\n- Starting from reactants only, the forward rate is initially maximal and falls as reactants deplete; the reverse rate starts at zero and climbs as products accumulate.\n- When the two rates become **equal**, concentrations stop changing — the **equilibrium state**.\n\n### 2.2 Physical vs chemical equilibrium\n\n- **Physical equilibrium:** the same substance changes state or phase, composition unchanged — H₂O(l) ⇌ H₂O(vap) in a closed flask; dissolution of sugar in saturated solution; sublimation of iodine.\n- **Chemical equilibrium:** different substances interconvert with **recomposition** — CaCO₃(s) ⇌ CaO(s) + CO₂(g); N₂O₄ ⇌ 2NO₂; esterification CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O.\n- Both share the same signature: opposing processes at equal rates, macroscopic constancy.\n\n### 2.3 Dynamic nature — the defining idea\n\n- Equilibrium is **not a stop**: both reactions continue at equal rates, so the net composition is constant while molecules endlessly interconvert.\n- Evidence: radioactive tracer experiments — labelled reactants added at equilibrium appear in products, proving the forward reaction still runs.\n- The equilibrium is reached **from either side** — starting with pure reactants or pure products gives the same final state (at the same T).\n\n### 2.4 Characteristics of chemical equilibrium\n\n1. **Constancy of composition:** concentrations of all species stay constant (not equal).\n2. **Dynamic activity:** forward and reverse reactions continue at equal rates.\n3. **Attainable from either direction.**\n4. **Influence of catalysts:** a catalyst speeds both directions equally — equilibrium is reached **faster** but its **position is unchanged**.\n5. **Dependence on conditions:** temperature, pressure, concentration shifts can move the equilibrium point (Le Chatelier, topic 56).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Reversible reaction** | Proceeds both directions simultaneously | N₂ + 3H₂ ⇌ 2NH₃ |\n| **Physical equilibrium** | Equal rates of phase change, no new substances | H₂O(l) ⇌ H₂O(g) |\n| **Chemical equilibrium** | Equal rates of opposed chemical reactions | 2SO₂ + O₂ ⇌ 2SO₃ |\n| **Dynamic equilibrium** | Constant composition with ongoing equal-rate change | Tracer experiments |\n| **Equilibrium state** | Net composition unchanging; rates tied | Any closed reacting system |",
+    "## 4. Detailed Explanation\n\n### 4.1 The rate picture of approach to equilibrium\n\n- Plot rate vs time: forward rate falls from its maximum, reverse rate rises from zero; they cross at the equilibrium time. After the crossing, both continue — equal, opposite, unending.\n\n### 4.2 Why equilibrium needs a closed system\n\n- In an open vessel products escape and the reverse reaction never builds — the reaction runs to completion. The sealed flask is what lets products accumulate and push back.\n\n### 4.3 Tracer evidence for dynamism\n\n- Inject a trace of radioactive reactant at equilibrium: radioactivity appears in products at unchanged concentrations — the only explanation is ongoing forward conversion. Equilibrium is a balance of activity, not a halt.\n\n### 4.4 Equilibrium is independent of the starting point\n\n- From pure N₂O₄ or pure NO₂ at the same temperature, the same equilibrium mixture results (same Kc) — position depends on conditions, not history.",
+    "## 5. Comparison Tables\n\n**Physical vs chemical equilibrium**\n\n| Basis | Physical | Chemical |\n|---|---|---|\n| Change | State/phase only | Composition changes |\n| New substances | None | Formed |\n| Example | H₂O(l) ⇌ H₂O(g) | CaCO₃ ⇌ CaO + CO₂ |\n| Rate equality | Condensation = evaporation | Forward = reverse reaction |\n\n**Complete vs reversible reaction**\n\n| Basis | Complete | Reversible |\n|---|---|---|\n| Arrow | → | ⇌ |\n| Products | Escape or precipitate | Accumulate and push back |\n| Extent | 100 % | Partial, equilibrium-limited |\n| System | Often open | Must be closed |",
+    "## 6. Common Confusions\n\n**Equal rates ≠ equal concentrations:** at equilibrium the forward and reverse *rates* are equal, but the *amounts* of reactants and products are generally unequal — Kc decides the ratio.",
+    "**A catalyst does not shift equilibrium:** it only shortens the road — same position, faster arrival. Answers that claim catalysts change yield lose the mark.",
+    "**Dynamic means active:** \"nothing is happening\" is the classic misread — everything is happening, in balance.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Distinguish physical and chemical equilibrium with one example each, and explain the dynamic nature of chemical equilibrium.** — **Physical equilibrium** involves a change of state with no new substances: in a closed flask at 25 °C, water evaporates at the same rate as vapour condenses (H₂O(l) ⇌ H₂O(g)), so the vapour pressure is constant. **Chemical equilibrium** involves interconversion of different substances: in CaCO₃(s) ⇌ CaO(s) + CO₂(g), calcium carbonate decomposes at the same rate as calcium oxide and carbon dioxide recombine. **Dynamic nature:** at equilibrium neither reaction stops — both continue at equal rates, so concentrations stay constant while molecules endlessly interconvert. Tracer experiments prove it: radioactive reactant added at equilibrium appears in the products without any change in concentrations.",
+    "**NEB-style (2m): List four characteristics of chemical equilibrium.** — (1) Concentrations of all species remain constant (though not necessarily equal). (2) The forward and reverse reactions proceed at equal rates — the equilibrium is dynamic. (3) The same equilibrium is reached whether one starts from reactants or from products. (4) A catalyst accelerates both directions equally, so it changes only the time to reach equilibrium, not its position; temperature, pressure and concentration changes can shift the position.",
+    "**NEB-style (2m): Why can a reversible reaction not go to completion in a closed vessel?** — As the forward reaction proceeds, products accumulate; they begin to react back. The reverse rate grows as the forward rate falls, until the two are equal — beyond which no net change is possible. The accumulated products are the brake that stops completion; only if products continuously escape (open system) can the reaction go to completion."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -68,97 +66,23 @@
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating Kc and Kp from equilibrium concentrations.",
-    "Practice solving for equilibrium concentrations from initial values and K."
+    "Classify as physical or chemical equilibrium: (a) iodine subliming in a closed jar, (b) PCl₅ ⇌ PCl₃ + Cl₂, (c) sugar in saturated solution.",
+    "Explain how a tracer experiment demonstrates the dynamic nature of equilibrium.",
+    "Why does a catalyst not change the equilibrium composition?"
   ],
   "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+    "Haemoglobin + O₂ ⇌ oxyhaemoglobin in blood is a physiological equilibrium — altitude shifts it, which is why climbers pant and why oxygen masks exist."
   ],
   "examples": [
-    "Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)"
+    "***The sealed soda bottle*** — CO₂ dissolves and escapes at equal rates; open the cap, the dissolved gas rushes out because the equilibrium that held it is destroyed."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating Kc and Kp from equilibrium concentrations."
+    "**NEB-style (3m): Distinguish physical and chemical equilibrium with one example each, and explain why chemical equilibrium is called dynamic.** — **Physical equilibrium** is established between two states of the same substance, with no new substances formed: in a closed flask at constant temperature, water evaporates at the same rate as vapour condenses (H₂O(l) ⇌ H₂O(g)), giving a constant vapour pressure. **Chemical equilibrium** is established between different substances that interconvert: in CaCO₃(s) ⇌ CaO(s) + CO₂(g), decomposition and recombination run at equal rates, so the masses of all three stay constant. **Dynamic nature:** at equilibrium neither opposing reaction stops — both continue at exactly equal rates, so the composition is constant while individual molecules endlessly interconvert between reactant and product. The experimental proof is the **radioactive tracer experiment**: a trace of labelled reactant injected at equilibrium appears in the products even though the measured concentrations do not change — proof that the forward reaction continues at equilibrium.",
+    "**NEB-style (2m): State four characteristics of chemical equilibrium.** — **(1) Constancy of composition:** the concentrations of all reactants and products become and remain constant (though not necessarily equal to each other). **(2) Dynamic activity:** the forward and reverse reactions continue indefinitely at equal rates. **(3) Approach from either side:** starting from pure reactants or from pure products at the same temperature leads to the same equilibrium state. **(4) Catalyst and conditions:** a catalyst speeds both directions equally and changes only the time needed to reach equilibrium, never its position; temperature, pressure and concentration changes can shift the equilibrium position (Le Chatelier's principle).",
+    "**NEB-style (2m): Why can a reversible reaction never go to completion in a closed vessel?** — In a closed vessel the products cannot escape, so as the forward reaction runs, products accumulate and begin to react backwards. The reverse rate rises while the forward rate falls (reactants depleting), until the two rates become equal — the equilibrium state. From that moment there is no net change in either direction, so the reaction stops short of completion by built-in design. Completion is possible only in an open system where a product is continuously removed (escape of a gas, precipitation), because then the reverse reaction never gets material to work with."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I",
-    "Kc = [Products]/[Reactants]",
-    "Kp = Kc(RT)^Δn",
-    "pH = -log[H⁺]",
-    "Ka × Kb = Kw"
+    "- N₂ + 3H₂ ⇌ 2NH₃; CaCO₃(s) ⇌ CaO(s) + CO₂(g)\n- H₂O(l) ⇌ H₂O(g) (physical)\n- rate(forward) = rate(reverse) at equilibrium"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -166,61 +90,107 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Physical",
-    "• Chemical equilibrium",
-    "• Dynamic nature of chemical equilibrium"
+    "Reversible reaction: both directions at once (⇌); closed system required. Physical equilibrium: phase change, no new substances (H₂O(l) ⇌ H₂O(g)); chemical: recomposition (CaCO₃ ⇌ CaO + CO₂). Dynamic: equal opposing rates, constant composition, tracer-proven. Characteristics: constant (not equal) concentrations; dynamic; reached from either side; catalyst speeds both ways (position unchanged); conditions shift position."
   ],
-  "summary": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
+  "summary": "Equilibrium is chemistry's steady state: opposing processes running **at equal rates** so that nothing observable changes while everything molecular continues. A **reversible reaction** in a closed vessel marches toward that tie automatically — forward rate falling, reverse rate climbing, crossing at equilibrium. **Physical equilibrium** trades only states (water and its vapour; sugar and its saturated solution); **chemical equilibrium** trades identity (CaCO₃ with CaO and CO₂; N₂O₄ with NO₂). The state is **dynamic** — proven by radioactive tracers that flow from reactant to product at unchanged concentrations — and it is reached **from either side**, sits at **constant but unequal concentrations**, is **sped but not shifted by catalysts**, and moves only when conditions (temperature, pressure, concentration) change. Equal rates, not equal amounts: that sentence is the hinge on which the next three topics — mass action, Kc, Kp, and Le Chatelier — all turn.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Physical and chemical equilibrium; dynamic nature of chem…\"?",
+      "question": "At chemical equilibrium:",
       "options": [
-        "Physical",
-        "Chemical equilibrium",
-        "Unrelated topic",
-        "None of the above"
+        "Reaction stops",
+        "Forward rate equals reverse rate",
+        "Reactants equal products",
+        "Both rates are zero"
       ],
-      "answer": "Physical",
-      "explanation": "Physical is listed among the official sub-ideas of Physical and chemical equilibrium; dynamic nature of chem…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "Dynamic tie - composition constant, activity continues."
     },
     {
-      "question": "A common examiner point on \"Physical and chemical equilibrium; dynamic nature of chem…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "A catalyst at equilibrium:",
       "options": [
-        "True",
-        "False"
+        "Shifts position right",
+        "Shifts position left",
+        "Changes only the time to equilibrate",
+        "Changes Kc"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C",
+      "explanation": "Speeds both directions equally."
     },
     {
-      "question": "What happens to K when temperature increases for an exothermic reaction?",
+      "question": "Which is a physical equilibrium?",
       "options": [
-        "Increases",
-        "Decreases",
-        "Remains same",
-        "Becomes zero"
+        "PCl5 = PCl3 + Cl2",
+        "H2O(l) = H2O(g)",
+        "CaCO3 = CaO + CO2",
+        "Esterification"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Phase change only - no new substances."
     },
     {
-      "question": "Which principle explains the effect of concentration on equilibrium?",
+      "question": "Evidence for dynamic equilibrium comes from:",
       "options": [
-        "Le Chatelier's",
-        "Boyle's",
-        "Charles's",
-        "Avogadro's"
+        "Colour change",
+        "Radioactive tracer experiments",
+        "Pressure gauges",
+        "Catalysts"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Labelled reactants appear in products at constant concentrations."
+    },
+    {
+      "question": "A reversible reaction in a closed vessel:",
+      "options": [
+        "Goes to completion",
+        "Stops at half completion",
+        "Reaches equilibrium short of completion",
+        "Never starts"
+      ],
+      "answer": "C",
+      "explanation": "Accumulated products push back."
+    },
+    {
+      "question": "Equilibrium concentrations are:",
+      "options": [
+        "Always equal",
+        "Constant but generally unequal",
+        "Zero",
+        "Increasing"
+      ],
+      "answer": "B",
+      "explanation": "Kc sets the constant ratio."
+    },
+    {
+      "question": "The same equilibrium is reached from:",
+      "options": [
+        "Reactants only",
+        "Products only",
+        "Either side",
+        "Neither"
+      ],
+      "answer": "C",
+      "explanation": "Position depends on conditions, not history."
+    },
+    {
+      "question": "An open vessel prevents equilibrium because:",
+      "options": [
+        "Reaction stops",
+        "Products escape - reverse never builds",
+        "Catalyst lost",
+        "Temperature rises"
+      ],
+      "answer": "B",
+      "explanation": "No product accumulation, no push back."
     }
   ],
   "importantNotes": [
-    "Important note regarding 01 physical and chemical equilibrium dynamic nature."
+    "No verified PYQ on dynamic equilibrium exists in the current bank (the 2024 set tests Le Chatelier and a Kc calculation — solved in topics 56 and 54; NEB 2022's N₂O₄ question is solved in topic 56); all items above are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Physical and Chemical Equilibrium — Dynamic Nature."
+    "\"Rates equal, concentrations constant, not equal\". Catalyst = faster arrival, same destination. Tracer test = dynamism proof. Physical = phase; chemical = new substances."
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 physical and chemical equilibrium dynamic nature."
+    "Equal rates, not equal amounts — the whole quantitative story of topics 53–55 flows from this one sentence: Kc measures the constant ratio the tied rates produce."
   ],
   "importantTasks": [
     "Task for studying 01 physical and chemical equilibrium dynamic nature."
@@ -231,9 +201,11 @@
     "Specialized insight for 01 physical and chemical equilibrium dynamic nature."
   ],
   "importantStatements": [
-    "Key statement for 01 physical and chemical equilibrium dynamic nature."
+    "\"At equilibrium, the rate of the forward reaction equals the rate of the reverse reaction, and the concentrations of the reactants and products remain constant.\""
   ],
-  "examNotes": [],
+  "examNotes": [
+    "For \"dynamic nature\" answers, always include the tracer evidence — it converts a assertion into a proof and examiners reserve a mark for it."
+  ],
   "exercises": [
     {
       "id": "1",
@@ -251,5 +223,147 @@
     "component": "EquilibriumShiftSim",
     "desc": "Le Chatelier principle interactive simulation"
   },
-  "visualType": "chemical-equilibrium"
+  "visualType": "chemical-equilibrium",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Reactions That Refuse to Finish\n\nMost reactions in a closed flask never \"complete\": forward and reverse processes run side by side until their rates tie. That tie is **equilibrium** — dynamic, not dead. This topic separates physical from chemical equilibrium, establishes the reversibility and constancy criteria, and sets up the quantitative machinery (mass action, Kc, Kp) of the next three topics.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Reversible reactions and the approach to equilibrium\n\n- A **reversible reaction** proceeds in both directions simultaneously, written with the double arrow ⇌: N₂ + 3H₂ ⇌ 2NH₃.\n- Starting from reactants only, the forward rate is initially maximal and falls as reactants deplete; the reverse rate starts at zero and climbs as products accumulate.\n- When the two rates become **equal**, concentrations stop changing — the **equilibrium state**.\n\n### 2.2 Physical vs chemical equilibrium\n\n- **Physical equilibrium:** the same substance changes state or phase, composition unchanged — H₂O(l) ⇌ H₂O(vap) in a closed flask; dissolution of sugar in saturated solution; sublimation of iodine.\n- **Chemical equilibrium:** different substances interconvert with **recomposition** — CaCO₃(s) ⇌ CaO(s) + CO₂(g); N₂O₄ ⇌ 2NO₂; esterification CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O.\n- Both share the same signature: opposing processes at equal rates, macroscopic constancy.\n\n### 2.3 Dynamic nature — the defining idea\n\n- Equilibrium is **not a stop**: both reactions continue at equal rates, so the net composition is constant while molecules endlessly interconvert.\n- Evidence: radioactive tracer experiments — labelled reactants added at equilibrium appear in products, proving the forward reaction still runs.\n- The equilibrium is reached **from either side** — starting with pure reactants or pure products gives the same final state (at the same T).\n\n### 2.4 Characteristics of chemical equilibrium\n\n1. **Constancy of composition:** concentrations of all species stay constant (not equal).\n2. **Dynamic activity:** forward and reverse reactions continue at equal rates.\n3. **Attainable from either direction.**\n4. **Influence of catalysts:** a catalyst speeds both directions equally — equilibrium is reached **faster** but its **position is unchanged**.\n5. **Dependence on conditions:** temperature, pressure, concentration shifts can move the equilibrium point (Le Chatelier, topic 56).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Reversible reaction** | Proceeds both directions simultaneously | N₂ + 3H₂ ⇌ 2NH₃ |\n| **Physical equilibrium** | Equal rates of phase change, no new substances | H₂O(l) ⇌ H₂O(g) |\n| **Chemical equilibrium** | Equal rates of opposed chemical reactions | 2SO₂ + O₂ ⇌ 2SO₃ |\n| **Dynamic equilibrium** | Constant composition with ongoing equal-rate change | Tracer experiments |\n| **Equilibrium state** | Net composition unchanging; rates tied | Any closed reacting system |",
+      "## 4. Detailed Explanation\n\n### 4.1 The rate picture of approach to equilibrium\n\n- Plot rate vs time: forward rate falls from its maximum, reverse rate rises from zero; they cross at the equilibrium time. After the crossing, both continue — equal, opposite, unending.\n\n### 4.2 Why equilibrium needs a closed system\n\n- In an open vessel products escape and the reverse reaction never builds — the reaction runs to completion. The sealed flask is what lets products accumulate and push back.\n\n### 4.3 Tracer evidence for dynamism\n\n- Inject a trace of radioactive reactant at equilibrium: radioactivity appears in products at unchanged concentrations — the only explanation is ongoing forward conversion. Equilibrium is a balance of activity, not a halt.\n\n### 4.4 Equilibrium is independent of the starting point\n\n- From pure N₂O₄ or pure NO₂ at the same temperature, the same equilibrium mixture results (same Kc) — position depends on conditions, not history.",
+      "## 5. Comparison Tables\n\n**Physical vs chemical equilibrium**\n\n| Basis | Physical | Chemical |\n|---|---|---|\n| Change | State/phase only | Composition changes |\n| New substances | None | Formed |\n| Example | H₂O(l) ⇌ H₂O(g) | CaCO₃ ⇌ CaO + CO₂ |\n| Rate equality | Condensation = evaporation | Forward = reverse reaction |\n\n**Complete vs reversible reaction**\n\n| Basis | Complete | Reversible |\n|---|---|---|\n| Arrow | → | ⇌ |\n| Products | Escape or precipitate | Accumulate and push back |\n| Extent | 100 % | Partial, equilibrium-limited |\n| System | Often open | Must be closed |",
+      "## 6. Common Confusions\n\n**Equal rates ≠ equal concentrations:** at equilibrium the forward and reverse *rates* are equal, but the *amounts* of reactants and products are generally unequal — Kc decides the ratio.",
+      "**A catalyst does not shift equilibrium:** it only shortens the road — same position, faster arrival. Answers that claim catalysts change yield lose the mark.",
+      "**Dynamic means active:** \"nothing is happening\" is the classic misread — everything is happening, in balance.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Distinguish physical and chemical equilibrium with one example each, and explain the dynamic nature of chemical equilibrium.** — **Physical equilibrium** involves a change of state with no new substances: in a closed flask at 25 °C, water evaporates at the same rate as vapour condenses (H₂O(l) ⇌ H₂O(g)), so the vapour pressure is constant. **Chemical equilibrium** involves interconversion of different substances: in CaCO₃(s) ⇌ CaO(s) + CO₂(g), calcium carbonate decomposes at the same rate as calcium oxide and carbon dioxide recombine. **Dynamic nature:** at equilibrium neither reaction stops — both continue at equal rates, so concentrations stay constant while molecules endlessly interconvert. Tracer experiments prove it: radioactive reactant added at equilibrium appears in the products without any change in concentrations.",
+      "**NEB-style (2m): List four characteristics of chemical equilibrium.** — (1) Concentrations of all species remain constant (though not necessarily equal). (2) The forward and reverse reactions proceed at equal rates — the equilibrium is dynamic. (3) The same equilibrium is reached whether one starts from reactants or from products. (4) A catalyst accelerates both directions equally, so it changes only the time to reach equilibrium, not its position; temperature, pressure and concentration changes can shift the position.",
+      "**NEB-style (2m): Why can a reversible reaction not go to completion in a closed vessel?** — As the forward reaction proceeds, products accumulate; they begin to react back. The reverse rate grows as the forward rate falls, until the two are equal — beyond which no net change is possible. The accumulated products are the brake that stops completion; only if products continuously escape (open system) can the reaction go to completion."
+    ],
+    "keyPoints": [
+      "Reversible reaction: both directions at once (⇌); closed system required. Physical equilibrium: phase change, no new substances (H₂O(l) ⇌ H₂O(g)); chemical: recomposition (CaCO₃ ⇌ CaO + CO₂). Dynamic: equal opposing rates, constant composition, tracer-proven. Characteristics: constant (not equal) concentrations; dynamic; reached from either side; catalyst speeds both ways (position unchanged); conditions shift position."
+    ],
+    "importantConcepts": [
+      "Equal rates, not equal amounts — the whole quantitative story of topics 53–55 flows from this one sentence: Kc measures the constant ratio the tied rates produce."
+    ],
+    "examples": [
+      "***The sealed soda bottle*** — CO₂ dissolves and escapes at equal rates; open the cap, the dissolved gas rushes out because the equilibrium that held it is destroyed."
+    ],
+    "universalFacts": [
+      "Haemoglobin + O₂ ⇌ oxyhaemoglobin in blood is a physiological equilibrium — altitude shifts it, which is why climbers pant and why oxygen masks exist."
+    ],
+    "importantStatements": [
+      "\"At equilibrium, the rate of the forward reaction equals the rate of the reverse reaction, and the concentrations of the reactants and products remain constant.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on dynamic equilibrium exists in the current bank (the 2024 set tests Le Chatelier and a Kc calculation — solved in topics 56 and 54; NEB 2022's N₂O₄ question is solved in topic 56); all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"Rates equal, concentrations constant, not equal\". Catalyst = faster arrival, same destination. Tracer test = dynamism proof. Physical = phase; chemical = new substances."
+    ],
+    "examNotes": [
+      "For \"dynamic nature\" answers, always include the tracer evidence — it converts a assertion into a proof and examiners reserve a mark for it."
+    ],
+    "formulas": [
+      "- N₂ + 3H₂ ⇌ 2NH₃; CaCO₃(s) ⇌ CaO(s) + CO₂(g)\n- H₂O(l) ⇌ H₂O(g) (physical)\n- rate(forward) = rate(reverse) at equilibrium"
+    ],
+    "practice": [
+      "Classify as physical or chemical equilibrium: (a) iodine subliming in a closed jar, (b) PCl₅ ⇌ PCl₃ + Cl₂, (c) sugar in saturated solution.",
+      "Explain how a tracer experiment demonstrates the dynamic nature of equilibrium.",
+      "Why does a catalyst not change the equilibrium composition?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Distinguish physical and chemical equilibrium with one example each, and explain why chemical equilibrium is called dynamic.** — **Physical equilibrium** is established between two states of the same substance, with no new substances formed: in a closed flask at constant temperature, water evaporates at the same rate as vapour condenses (H₂O(l) ⇌ H₂O(g)), giving a constant vapour pressure. **Chemical equilibrium** is established between different substances that interconvert: in CaCO₃(s) ⇌ CaO(s) + CO₂(g), decomposition and recombination run at equal rates, so the masses of all three stay constant. **Dynamic nature:** at equilibrium neither opposing reaction stops — both continue at exactly equal rates, so the composition is constant while individual molecules endlessly interconvert between reactant and product. The experimental proof is the **radioactive tracer experiment**: a trace of labelled reactant injected at equilibrium appears in the products even though the measured concentrations do not change — proof that the forward reaction continues at equilibrium.",
+      "**NEB-style (2m): State four characteristics of chemical equilibrium.** — **(1) Constancy of composition:** the concentrations of all reactants and products become and remain constant (though not necessarily equal to each other). **(2) Dynamic activity:** the forward and reverse reactions continue indefinitely at equal rates. **(3) Approach from either side:** starting from pure reactants or from pure products at the same temperature leads to the same equilibrium state. **(4) Catalyst and conditions:** a catalyst speeds both directions equally and changes only the time needed to reach equilibrium, never its position; temperature, pressure and concentration changes can shift the equilibrium position (Le Chatelier's principle).",
+      "**NEB-style (2m): Why can a reversible reaction never go to completion in a closed vessel?** — In a closed vessel the products cannot escape, so as the forward reaction runs, products accumulate and begin to react backwards. The reverse rate rises while the forward rate falls (reactants depleting), until the two rates become equal — the equilibrium state. From that moment there is no net change in either direction, so the reaction stops short of completion by built-in design. Completion is possible only in an open system where a product is continuously removed (escape of a gas, precipitation), because then the reverse reaction never gets material to work with."
+    ]
+  },
+  "mcs": [
+    {
+      "question": "At chemical equilibrium:",
+      "options": [
+        "Reaction stops",
+        "Forward rate equals reverse rate",
+        "Reactants equal products",
+        "Both rates are zero"
+      ],
+      "answer": "B",
+      "explanation": "Dynamic tie - composition constant, activity continues."
+    },
+    {
+      "question": "A catalyst at equilibrium:",
+      "options": [
+        "Shifts position right",
+        "Shifts position left",
+        "Changes only the time to equilibrate",
+        "Changes Kc"
+      ],
+      "answer": "C",
+      "explanation": "Speeds both directions equally."
+    },
+    {
+      "question": "Which is a physical equilibrium?",
+      "options": [
+        "PCl5 = PCl3 + Cl2",
+        "H2O(l) = H2O(g)",
+        "CaCO3 = CaO + CO2",
+        "Esterification"
+      ],
+      "answer": "B",
+      "explanation": "Phase change only - no new substances."
+    },
+    {
+      "question": "Evidence for dynamic equilibrium comes from:",
+      "options": [
+        "Colour change",
+        "Radioactive tracer experiments",
+        "Pressure gauges",
+        "Catalysts"
+      ],
+      "answer": "B",
+      "explanation": "Labelled reactants appear in products at constant concentrations."
+    },
+    {
+      "question": "A reversible reaction in a closed vessel:",
+      "options": [
+        "Goes to completion",
+        "Stops at half completion",
+        "Reaches equilibrium short of completion",
+        "Never starts"
+      ],
+      "answer": "C",
+      "explanation": "Accumulated products push back."
+    },
+    {
+      "question": "Equilibrium concentrations are:",
+      "options": [
+        "Always equal",
+        "Constant but generally unequal",
+        "Zero",
+        "Increasing"
+      ],
+      "answer": "B",
+      "explanation": "Kc sets the constant ratio."
+    },
+    {
+      "question": "The same equilibrium is reached from:",
+      "options": [
+        "Reactants only",
+        "Products only",
+        "Either side",
+        "Neither"
+      ],
+      "answer": "C",
+      "explanation": "Position depends on conditions, not history."
+    },
+    {
+      "question": "An open vessel prevents equilibrium because:",
+      "options": [
+        "Reaction stops",
+        "Products escape - reverse never builds",
+        "Catalyst lost",
+        "Temperature rises"
+      ],
+      "answer": "B",
+      "explanation": "No product accumulation, no push back."
+    }
+  ]
 }

@@ -5,16 +5,17 @@
   "topicTitle": "Expression for equilibrium constant and its importance",
   "relevance": 100,
   "notes": [
-    "Dynamic equilibrium: forward rate = backward rate.",
-    "Kc = [products]/[reactants].",
-    "Le Chatelier's principle.",
-    "pH = -log[H⁺].",
-    "# Expression for equilibrium constant and its importance\n\n## 1. Introduction\nChemical picture of **Expression for equilibrium constant and its importance** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Equilibrium fill pass.\n\n## 2. Concepts and definitions\n### Expression for equilibrium constant and its importance\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Expression for equilibrium constant and its importance — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Expression for equilibrium constant and its importance — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Expression for equilibrium constant and its importance — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Expression for equilibrium constant and its importance — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Reading the Constant, Computing the Concentration\n\nKc is more than a fraction: its **size** grades how far a reaction proceeds, its **units** encode the stoichiometry, and its algebra solves the classic NEB numerical — \"given some equilibrium concentrations, find the missing one.\" This topic turns the law of mass action into a working calculator.",
+    "## 2. Fundamental Concepts\n\n### 2.1 What the size of Kc means\n\n- **Kc very large (≫1):** products dominate at equilibrium — reaction nearly complete (e.g. Kc ~ 10²⁵ for H₂ + ½O₂ → H₂O at 25 °C).\n- **Kc very small (≪1):** reactants dominate — hardly any conversion (e.g. N₂ + O₂ ⇌ 2NO, Kc ~ 10⁻³¹ at 25 °C).\n- **Kc ≈ 1:** appreciable amounts of both — a genuine balance.\n\n### 2.2 Importance of the equilibrium constant\n\n1. **Predicts extent:** how much product to expect at equilibrium.\n2. **Predicts direction:** compare the reaction quotient Qc with Kc (Qc < Kc → forward; Qc > Kc → reverse; Qc = Kc → at equilibrium).\n3. **Links to thermodynamics:** Kc fixes ΔG° (ΔG° = −RT ln K), so the constant is chemistry's yield-and-energy bridge.\n4. **Industrial design:** Haber and contact processes tune conditions against a known Kc.\n\n### 2.3 The ICE-style calculation\n\n- For many problems: write the balanced equation, tabulate known equilibrium concentrations, substitute into the Kc expression, solve for the unknown — usually a square root or a simple cube.\n\n### 2.4 Reaction quotient Qc\n\n- Same expression as Kc but with **non-equilibrium** concentrations. Qc < Kc: forward reaction runs; Qc = Kc: equilibrium; Qc > Kc: reverse reaction runs.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Equilibrium constant Kc** | Ratio of product to reactant active masses at equilibrium, fixed T | [NH₃]²/([N₂][H₂]³) |\n| **Reaction quotient Qc** | Same ratio with arbitrary concentrations | Direction indicator |\n| **Extent of reaction** | Degree of conversion at equilibrium, graded by Kc size | Kc ≫ 1 → nearly complete |\n| **ΔG° link** | ΔG° = −RT ln K | Thermodynamic bridge |",
+    "## 4. Detailed Explanation\n\n### 4.1 The verified NEB numerical, step by step\n\n- **Problem (NEB 2024):** For N₂(g) + 3H₂(g) ⇌ 2NH₃(g), Kc = 0.5 at a certain temperature. If [N₂] = 1.0 M and [H₂] = 0.5 M at equilibrium, calculate the equilibrium concentration of ammonia.\n- **Kc expression:** Kc = [NH₃]²/([N₂][H₂]³).\n- **Substitute:** 0.5 = [NH₃]² / (1.0 × (0.5)³) = [NH₃]² / (1.0 × 0.125) = [NH₃]² / 0.125.\n- **Solve:** [NH₃]² = 0.5 × 0.125 = 0.0625 → **[NH₃] = √0.0625 = 0.25 M**.\n\n### 4.2 Reading direction with Qc — a worked mini-case\n\n- N₂O₄ ⇌ 2NO₂ with Kc = 4.0 at some T; a flask holds [N₂O₄] = 0.5 M, [NO₂] = 1.0 M.\n- Qc = (1.0)²/0.5 = 2.0 < 4.0 → the system is **product-poor** relative to equilibrium → forward reaction proceeds (more NO₂ forms) until Qc climbs to 4.0.\n\n### 4.3 Why Kc ignores starting amounts\n\n- Whatever the initial mixture, the reaction runs until the fraction equals Kc — the constant is the destination, the initial concentrations merely the road.",
+    "## 5. Comparison Tables\n\n**Kc size and reaction extent**\n\n| Kc value | Meaning at equilibrium | Example scale |\n|---|---|---|\n| Kc ≫ 1 (10⁵+) | Products dominate; nearly complete | H₂O formation |\n| Kc ≈ 1 | Both appreciable | HI formation |\n| Kc ≪ 1 (10⁻⁵−) | Reactants dominate; negligible yield | NO from N₂ + O₂ |\n\n**Qc vs Kc direction rules**\n\n| Comparison | Net direction |\n|---|---|\n| Qc < Kc | Forward (toward products) |\n| Qc = Kc | At equilibrium |\n| Qc > Kc | Reverse (toward reactants) |",
+    "## 6. Common Confusions\n\n**Powers, not multipliers:** the NH₃ numerical dies if [H₂]³ is computed as 3 × 0.5. The coefficient is an exponent: (0.5)³ = 0.125.",
+    "**Kc ≠ yield percentage:** a large Kc says the equilibrium mixture is product-rich, not that any arbitrary starting mixture converts fully — extent is judged at equilibrium only.",
+    "**Qc is Kc's living twin:** same formula, different moment; mixing the two names costs the direction argument.",
+    "## 7. Exam Application\n\n**Verified NEB 2024 (numerical): For N₂(g) + 3H₂(g) ⇌ 2NH₃(g), Kc = 0.5 at a certain temperature. If [N₂] = 1.0 M and [H₂] = 0.5 M at equilibrium, calculate the equilibrium concentration of ammonia.** — Kc = [NH₃]²/([N₂][H₂]³) = 0.5. Substituting: 0.5 = [NH₃]²/(1.0 × 0.125) = [NH₃]²/0.125, so [NH₃]² = 0.0625 and **[NH₃] = 0.25 M**.",
+    "**NEB-style (2m): State two pieces of information that the magnitude of Kc provides about a reaction.** — (1) **Extent:** a very large Kc means products dominate at equilibrium (reaction nearly complete); a very small Kc means reactants dominate (negligible conversion); Kc ≈ 1 means appreciable amounts of both. (2) **Direction of spontaneous change:** comparing the reaction quotient Qc with Kc tells which way the system must move — Qc < Kc drives the forward reaction, Qc > Kc the reverse.",
+    "**NEB-style (2m): For N₂O₄ ⇌ 2NO₂, Kc = 4.0 at temperature T. A vessel contains [N₂O₄] = 0.5 M and [NO₂] = 1.0 M. In which direction does the reaction proceed?** — Qc = [NO₂]²/[N₂O₄] = (1.0)²/0.5 = 2.0. Since Qc (2.0) < Kc (4.0), the mixture contains too little product for equilibrium: the **forward reaction** proceeds, converting N₂O₄ to NO₂ until Qc rises to 4.0."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -57,111 +58,45 @@
     "❌ K = 1 means no reaction. ✅ K = 1 means reactants and products are equally favored at equilibrium."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating Kc and Kp from equilibrium concentrations.",
-    "Practice solving for equilibrium concentrations from initial values and K."
+    "For PCl₅ ⇌ PCl₃ + Cl₂, Kc = 0.08 at 250 °C. At equilibrium [PCl₃] = [Cl₂] = 0.2 M. Find [PCl₅].",
+    "Kc = 50 for A ⇌ B. A mixture has [A] = 2 M, [B] = 0.1 M. Which way does it move?",
+    "Classify as nearly complete / negligible / balanced: Kc = 10¹², Kc = 10⁻⁸, Kc = 0.8."
   ],
   "universalFacts": [
-    "Universal scientific fact for 03 expression for equilibrium constant and its importance."
+    "Atmospheric nitrogen and oxygen coexist because Kc for NO formation is ~10⁻³¹ at 25 °C — the same reaction runs furiously inside engines at 2500 K, where Kc leaps and smog is born."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)"
+    "***The 0.25 M answer*** — the exact numerical NEB 2024 demanded: square the hydrogen concentration (0.125), multiply by Kc (0.0625), take the root (0.25 M). Four lines, full marks."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating Kc and Kp from equilibrium concentrations."
+    "**Verified NEB 2024 (2m): For the reaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g), Kc = 0.5 at a certain temperature. If [N₂] = 1.0 M and [H₂] = 0.5 M at equilibrium, calculate the equilibrium concentration of ammonia.** — The equilibrium constant expression is Kc = [NH₃]²/([N₂][H₂]³). Substituting the given values: 0.5 = [NH₃]² / (1.0 × (0.5)³) = [NH₃]² / (1.0 × 0.125) = [NH₃]² / 0.125. Hence [NH₃]² = 0.5 × 0.125 = 0.0625, and taking the square root gives **[NH₃] = 0.25 mol/L**. (Note the coefficient 3 on H₂ enters as a cube, and the coefficient 2 on NH₃ as a square — the stoichiometry is carried entirely by the exponents.)",
+    "**NEB-style (2m): State two uses of the equilibrium constant.** — **(1) Predicting the extent of reaction:** the magnitude of Kc tells how far the reaction proceeds before equilibrium — a very large Kc means the products overwhelmingly dominate the equilibrium mixture (the reaction is virtually complete), a very small Kc means the reactants remain dominant (negligible conversion), and Kc ≈ 1 means appreciable quantities of both. **(2) Predicting the direction of a reaction:** by computing the reaction quotient Qc from the concentrations present and comparing it with Kc — if Qc < Kc the forward reaction proceeds, if Qc > Kc the reverse reaction proceeds, and if Qc = Kc the system is already at equilibrium. (Additionally, Kc connects to energetics through ΔG° = −RT ln K and guides industrial condition-setting, e.g. the Haber process.)",
+    "**NEB-style (2m): For N₂O₄(g) ⇌ 2NO₂(g), Kc = 4.0 at temperature T. A vessel contains [N₂O₄] = 0.5 M and [NO₂] = 1.0 M. Predict the direction of the net reaction.** — Compute the reaction quotient with the same expression as Kc: Qc = [NO₂]²/[N₂O₄] = (1.0)²/(0.5) = 2.0. Since Qc (2.0) is less than Kc (4.0), the ratio of products to reactants is below its equilibrium value — the vessel holds too little NO₂. The **forward reaction proceeds** (N₂O₄ → NO₂), consuming N₂O₄ and raising [NO₂] until Qc climbs to 4.0 and equilibrium is restored."
   ],
   "formulas": [
-    "Kc = [Products]/[Reactants]",
-    "Kp = Kc(RT)^Δn",
-    "pH = -log[H⁺]",
-    "Ka × Kb = Kw"
+    "- Kc = [C]^c[D]^d / [A]^a[B]^b\n- Qc = same expression, non-equilibrium concentrations\n- ΔG° = −RT ln K\n- N₂ + 3H₂ ⇌ 2NH₃: Kc = [NH₃]²/([N₂][H₂]³); NEB 2024: [NH₃] = 0.25 M"
   ],
   "keyPoints": [
-    "Core point for 03 expression for equilibrium constant and its importance."
+    "Kc ≫ 1: products dominate; Kc ≪ 1: reactants dominate; Kc ≈ 1: both appreciable. Qc (same expression, any moment): Qc<Kc forward, Qc>Kc reverse, Qc=Kc equilibrium. Kc depends only on T. Importance: extent, direction, ΔG° = −RT ln K, industrial design. Worked NEB 2024: Kc = 0.5 = [NH3]2/(1.0 × 0.125) → [NH3] = 0.25 M."
   ],
-  "summary": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
+  "summary": "Kc is a number that speaks. **Big Kc** (10⁵ and up) declares the reaction practically complete; **small Kc** (10⁻⁵ and down) declares it stillborn; **Kc near 1** declares a true contest. The same fraction evaluated off-equilibrium is the **reaction quotient Qc** — Qc < Kc drives forward, Qc > Kc drives back, Qc = Kc is the resting state — making the constant a compass as well as a scoreboard. Its practical importance reaches into thermodynamics (ΔG° = −RT ln K) and industry (Haber and contact processes tune pressure and temperature against a known Kc). Numerically, the skill is mechanical: write the mass-action fraction, substitute the known equilibrium concentrations with coefficients as exponents, and solve — as NEB 2024 required for ammonia synthesis, where Kc = 0.5, [N₂] = 1.0 M and [H₂] = 0.5 M gave [NH₃]² = 0.0625 and **[NH₃] = 0.25 M**. Powers as exponents, solids as absent, temperature as the only parent: three habits that make every equilibrium numerical routine.",
   "specialNotes": [
     "Specialized insight for 03 expression for equilibrium constant and its importance."
   ],
   "importantStatements": [
-    "Key statement for 03 expression for equilibrium constant and its importance."
+    "\"The larger the value of the equilibrium constant, the greater the proportion of products at equilibrium.\""
   ],
   "importantNotes": [
-    "Important note regarding 03 expression for equilibrium constant and its importance."
+    "Verified PYQ: NEB 2024 Kc numerical ([NH₃] = 0.25 M) solved above; direction-prediction items are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Equilibrium Constant Expression and Its Importance."
+    "Numerical recipe: expression → substitute → isolate square → root. (0.5)³ = 0.125 by heart. Qc<Kc → forward. Big Kc = product-rich."
   ],
-  "examNotes": [],
+  "examNotes": [
+    "Always write the Kc expression before substituting — the substitution without the expression forfeits a method mark even if the arithmetic is right."
+  ],
   "mcs": [
     {
       "question": "Question about 03 expression for equilibrium constant and its importance?",
@@ -175,7 +110,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 03 expression for equilibrium constant and its importance."
+    "The single most reused NEB skill: substitute equilibrium concentrations into the mass-action fraction and solve for the unknown — every power is an exponent, every solid is silent."
   ],
   "importantTasks": [
     "Task for studying 03 expression for equilibrium constant and its importance."
@@ -184,24 +119,92 @@
   "tabGroup": "03-expression-for-equilibrium-constant-and-its-importance",
   "mcqs": [
     {
-      "question": "What happens to K when temperature increases for an exothermic reaction?",
+      "question": "A very large Kc indicates:",
       "options": [
-        "Increases",
-        "Decreases",
-        "Remains same",
-        "Becomes zero"
+        "Reactants dominate",
+        "Products dominate",
+        "No reaction",
+        "Slow reaction"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Product-rich equilibrium - nearly complete."
     },
     {
-      "question": "Which principle explains the effect of concentration on equilibrium?",
+      "question": "If Qc < Kc, the reaction:",
       "options": [
-        "Le Chatelier's",
-        "Boyle's",
-        "Charles's",
-        "Avogadro's"
+        "Is at equilibrium",
+        "Runs forward",
+        "Runs reverse",
+        "Stops"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Too little product - must move forward."
+    },
+    {
+      "question": "Qc differs from Kc in that Qc uses:",
+      "options": [
+        "Equilibrium concentrations",
+        "Any concentrations",
+        "Only gases",
+        "Only solids"
+      ],
+      "answer": "B",
+      "explanation": "Same expression, arbitrary moment."
+    },
+    {
+      "question": "(0.5)3 equals:",
+      "options": [
+        "1.5",
+        "0.125",
+        "0.0125",
+        "0.15"
+      ],
+      "answer": "B",
+      "explanation": "Coefficient as exponent - the NEB 2024 step."
+    },
+    {
+      "question": "In the NEB 2024 numerical, [NH3] equals:",
+      "options": [
+        "0.5 M",
+        "0.25 M",
+        "0.0625 M",
+        "0.125 M"
+      ],
+      "answer": "B",
+      "explanation": "sqrt(0.5 x 0.125) = 0.25 M."
+    },
+    {
+      "question": "Kc relates to free energy through:",
+      "options": [
+        "dG = dH - TdS",
+        "dG° = -RT ln K",
+        "PV = nRT",
+        "E = mc2"
+      ],
+      "answer": "B",
+      "explanation": "The thermodynamic bridge."
+    },
+    {
+      "question": "Kc = 10-31 for N2 + O2 = 2NO at 25 °C means:",
+      "options": [
+        "NO forms freely",
+        "Negligible NO at equilibrium",
+        "Equilibrium instantly",
+        "Reaction explosive"
+      ],
+      "answer": "B",
+      "explanation": "Reactants dominate - why air is stable until heated."
+    },
+    {
+      "question": "The units of Kc are determined by:",
+      "options": [
+        "Temperature",
+        "Dn of gaseous species",
+        "Catalyst",
+        "Pressure"
+      ],
+      "answer": "B",
+      "explanation": "(mol/L) raised to the gas-mole change."
     }
   ],
   "exercises": [
@@ -222,5 +225,57 @@
     "desc": "Le Chatelier principle interactive simulation"
   },
   "visualType": "equilibrium-constant",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Reading the Constant, Computing the Concentration\n\nKc is more than a fraction: its **size** grades how far a reaction proceeds, its **units** encode the stoichiometry, and its algebra solves the classic NEB numerical — \"given some equilibrium concentrations, find the missing one.\" This topic turns the law of mass action into a working calculator.",
+      "## 2. Fundamental Concepts\n\n### 2.1 What the size of Kc means\n\n- **Kc very large (≫1):** products dominate at equilibrium — reaction nearly complete (e.g. Kc ~ 10²⁵ for H₂ + ½O₂ → H₂O at 25 °C).\n- **Kc very small (≪1):** reactants dominate — hardly any conversion (e.g. N₂ + O₂ ⇌ 2NO, Kc ~ 10⁻³¹ at 25 °C).\n- **Kc ≈ 1:** appreciable amounts of both — a genuine balance.\n\n### 2.2 Importance of the equilibrium constant\n\n1. **Predicts extent:** how much product to expect at equilibrium.\n2. **Predicts direction:** compare the reaction quotient Qc with Kc (Qc < Kc → forward; Qc > Kc → reverse; Qc = Kc → at equilibrium).\n3. **Links to thermodynamics:** Kc fixes ΔG° (ΔG° = −RT ln K), so the constant is chemistry's yield-and-energy bridge.\n4. **Industrial design:** Haber and contact processes tune conditions against a known Kc.\n\n### 2.3 The ICE-style calculation\n\n- For many problems: write the balanced equation, tabulate known equilibrium concentrations, substitute into the Kc expression, solve for the unknown — usually a square root or a simple cube.\n\n### 2.4 Reaction quotient Qc\n\n- Same expression as Kc but with **non-equilibrium** concentrations. Qc < Kc: forward reaction runs; Qc = Kc: equilibrium; Qc > Kc: reverse reaction runs.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Equilibrium constant Kc** | Ratio of product to reactant active masses at equilibrium, fixed T | [NH₃]²/([N₂][H₂]³) |\n| **Reaction quotient Qc** | Same ratio with arbitrary concentrations | Direction indicator |\n| **Extent of reaction** | Degree of conversion at equilibrium, graded by Kc size | Kc ≫ 1 → nearly complete |\n| **ΔG° link** | ΔG° = −RT ln K | Thermodynamic bridge |",
+      "## 4. Detailed Explanation\n\n### 4.1 The verified NEB numerical, step by step\n\n- **Problem (NEB 2024):** For N₂(g) + 3H₂(g) ⇌ 2NH₃(g), Kc = 0.5 at a certain temperature. If [N₂] = 1.0 M and [H₂] = 0.5 M at equilibrium, calculate the equilibrium concentration of ammonia.\n- **Kc expression:** Kc = [NH₃]²/([N₂][H₂]³).\n- **Substitute:** 0.5 = [NH₃]² / (1.0 × (0.5)³) = [NH₃]² / (1.0 × 0.125) = [NH₃]² / 0.125.\n- **Solve:** [NH₃]² = 0.5 × 0.125 = 0.0625 → **[NH₃] = √0.0625 = 0.25 M**.\n\n### 4.2 Reading direction with Qc — a worked mini-case\n\n- N₂O₄ ⇌ 2NO₂ with Kc = 4.0 at some T; a flask holds [N₂O₄] = 0.5 M, [NO₂] = 1.0 M.\n- Qc = (1.0)²/0.5 = 2.0 < 4.0 → the system is **product-poor** relative to equilibrium → forward reaction proceeds (more NO₂ forms) until Qc climbs to 4.0.\n\n### 4.3 Why Kc ignores starting amounts\n\n- Whatever the initial mixture, the reaction runs until the fraction equals Kc — the constant is the destination, the initial concentrations merely the road.",
+      "## 5. Comparison Tables\n\n**Kc size and reaction extent**\n\n| Kc value | Meaning at equilibrium | Example scale |\n|---|---|---|\n| Kc ≫ 1 (10⁵+) | Products dominate; nearly complete | H₂O formation |\n| Kc ≈ 1 | Both appreciable | HI formation |\n| Kc ≪ 1 (10⁻⁵−) | Reactants dominate; negligible yield | NO from N₂ + O₂ |\n\n**Qc vs Kc direction rules**\n\n| Comparison | Net direction |\n|---|---|\n| Qc < Kc | Forward (toward products) |\n| Qc = Kc | At equilibrium |\n| Qc > Kc | Reverse (toward reactants) |",
+      "## 6. Common Confusions\n\n**Powers, not multipliers:** the NH₃ numerical dies if [H₂]³ is computed as 3 × 0.5. The coefficient is an exponent: (0.5)³ = 0.125.",
+      "**Kc ≠ yield percentage:** a large Kc says the equilibrium mixture is product-rich, not that any arbitrary starting mixture converts fully — extent is judged at equilibrium only.",
+      "**Qc is Kc's living twin:** same formula, different moment; mixing the two names costs the direction argument.",
+      "## 7. Exam Application\n\n**Verified NEB 2024 (numerical): For N₂(g) + 3H₂(g) ⇌ 2NH₃(g), Kc = 0.5 at a certain temperature. If [N₂] = 1.0 M and [H₂] = 0.5 M at equilibrium, calculate the equilibrium concentration of ammonia.** — Kc = [NH₃]²/([N₂][H₂]³) = 0.5. Substituting: 0.5 = [NH₃]²/(1.0 × 0.125) = [NH₃]²/0.125, so [NH₃]² = 0.0625 and **[NH₃] = 0.25 M**.",
+      "**NEB-style (2m): State two pieces of information that the magnitude of Kc provides about a reaction.** — (1) **Extent:** a very large Kc means products dominate at equilibrium (reaction nearly complete); a very small Kc means reactants dominate (negligible conversion); Kc ≈ 1 means appreciable amounts of both. (2) **Direction of spontaneous change:** comparing the reaction quotient Qc with Kc tells which way the system must move — Qc < Kc drives the forward reaction, Qc > Kc the reverse.",
+      "**NEB-style (2m): For N₂O₄ ⇌ 2NO₂, Kc = 4.0 at temperature T. A vessel contains [N₂O₄] = 0.5 M and [NO₂] = 1.0 M. In which direction does the reaction proceed?** — Qc = [NO₂]²/[N₂O₄] = (1.0)²/0.5 = 2.0. Since Qc (2.0) < Kc (4.0), the mixture contains too little product for equilibrium: the **forward reaction** proceeds, converting N₂O₄ to NO₂ until Qc rises to 4.0."
+    ],
+    "keyPoints": [
+      "Kc ≫ 1: products dominate; Kc ≪ 1: reactants dominate; Kc ≈ 1: both appreciable. Qc (same expression, any moment): Qc<Kc forward, Qc>Kc reverse, Qc=Kc equilibrium. Kc depends only on T. Importance: extent, direction, ΔG° = −RT ln K, industrial design. Worked NEB 2024: Kc = 0.5 = [NH3]2/(1.0 × 0.125) → [NH3] = 0.25 M."
+    ],
+    "importantConcepts": [
+      "The single most reused NEB skill: substitute equilibrium concentrations into the mass-action fraction and solve for the unknown — every power is an exponent, every solid is silent."
+    ],
+    "examples": [
+      "***The 0.25 M answer*** — the exact numerical NEB 2024 demanded: square the hydrogen concentration (0.125), multiply by Kc (0.0625), take the root (0.25 M). Four lines, full marks."
+    ],
+    "universalFacts": [
+      "Atmospheric nitrogen and oxygen coexist because Kc for NO formation is ~10⁻³¹ at 25 °C — the same reaction runs furiously inside engines at 2500 K, where Kc leaps and smog is born."
+    ],
+    "importantStatements": [
+      "\"The larger the value of the equilibrium constant, the greater the proportion of products at equilibrium.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2024 Kc numerical ([NH₃] = 0.25 M) solved above; direction-prediction items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Numerical recipe: expression → substitute → isolate square → root. (0.5)³ = 0.125 by heart. Qc<Kc → forward. Big Kc = product-rich."
+    ],
+    "examNotes": [
+      "Always write the Kc expression before substituting — the substitution without the expression forfeits a method mark even if the arithmetic is right."
+    ],
+    "formulas": [
+      "- Kc = [C]^c[D]^d / [A]^a[B]^b\n- Qc = same expression, non-equilibrium concentrations\n- ΔG° = −RT ln K\n- N₂ + 3H₂ ⇌ 2NH₃: Kc = [NH₃]²/([N₂][H₂]³); NEB 2024: [NH₃] = 0.25 M"
+    ],
+    "practice": [
+      "For PCl₅ ⇌ PCl₃ + Cl₂, Kc = 0.08 at 250 °C. At equilibrium [PCl₃] = [Cl₂] = 0.2 M. Find [PCl₅].",
+      "Kc = 50 for A ⇌ B. A mixture has [A] = 2 M, [B] = 0.1 M. Which way does it move?",
+      "Classify as nearly complete / negligible / balanced: Kc = 10¹², Kc = 10⁻⁸, Kc = 0.8."
+    ],
+    "practiceQuestions": [
+      "**Verified NEB 2024 (2m): For the reaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g), Kc = 0.5 at a certain temperature. If [N₂] = 1.0 M and [H₂] = 0.5 M at equilibrium, calculate the equilibrium concentration of ammonia.** — The equilibrium constant expression is Kc = [NH₃]²/([N₂][H₂]³). Substituting the given values: 0.5 = [NH₃]² / (1.0 × (0.5)³) = [NH₃]² / (1.0 × 0.125) = [NH₃]² / 0.125. Hence [NH₃]² = 0.5 × 0.125 = 0.0625, and taking the square root gives **[NH₃] = 0.25 mol/L**. (Note the coefficient 3 on H₂ enters as a cube, and the coefficient 2 on NH₃ as a square — the stoichiometry is carried entirely by the exponents.)",
+      "**NEB-style (2m): State two uses of the equilibrium constant.** — **(1) Predicting the extent of reaction:** the magnitude of Kc tells how far the reaction proceeds before equilibrium — a very large Kc means the products overwhelmingly dominate the equilibrium mixture (the reaction is virtually complete), a very small Kc means the reactants remain dominant (negligible conversion), and Kc ≈ 1 means appreciable quantities of both. **(2) Predicting the direction of a reaction:** by computing the reaction quotient Qc from the concentrations present and comparing it with Kc — if Qc < Kc the forward reaction proceeds, if Qc > Kc the reverse reaction proceeds, and if Qc = Kc the system is already at equilibrium. (Additionally, Kc connects to energetics through ΔG° = −RT ln K and guides industrial condition-setting, e.g. the Haber process.)",
+      "**NEB-style (2m): For N₂O₄(g) ⇌ 2NO₂(g), Kc = 4.0 at temperature T. A vessel contains [N₂O₄] = 0.5 M and [NO₂] = 1.0 M. Predict the direction of the net reaction.** — Compute the reaction quotient with the same expression as Kc: Qc = [NO₂]²/[N₂O₄] = (1.0)²/(0.5) = 2.0. Since Qc (2.0) is less than Kc (4.0), the ratio of products to reactants is below its equilibrium value — the vessel holds too little NO₂. The **forward reaction proceeds** (N₂O₄ → NO₂), consuming N₂O₄ and raising [NO₂] until Qc climbs to 4.0 and equilibrium is restored."
+    ]
+  }
 }

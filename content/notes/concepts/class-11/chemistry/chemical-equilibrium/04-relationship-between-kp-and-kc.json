@@ -5,16 +5,17 @@
   "topicTitle": "Relationship between Kp and Kc",
   "relevance": 100,
   "notes": [
-    "Dynamic equilibrium: forward rate = backward rate.",
-    "Kc = [products]/[reactants].",
-    "Le Chatelier's principle.",
-    "pH = -log[H⁺].",
-    "# Relationship between Kp and Kc\n\n## 1. Introduction\nChemical picture of **Relationship between Kp and Kc** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Equilibrium fill pass.\n\n## 2. Concepts and definitions\n### Relationship between Kp and Kc\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Relationship between Kp and Kc — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Relationship between Kp and Kc — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Relationship between Kp and Kc — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Relationship between Kp and Kc — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Two Constants, One Reaction, One Bridge\n\nGas-phase equilibria can be written in concentrations (Kc) or in partial pressures (Kp). The two are not rivals but conversions of the same fact, and **Kp = Kc(RT)^Δn** is the bridge — where Δn is the change in gas moles and T is absolute temperature. Master the sign of Δn and every conversion becomes a one-liner.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Kp — the pressure-side constant\n\n- For gas reactions, the active mass of each gas is proportional to its **partial pressure** (from the ideal gas law: pV = nRT → p = (n/V)RT = CRT).\n- For aA(g) + bB(g) ⇌ cC(g) + dD(g): **Kp = (pC)^c(pD)^d / (pA)^a(pB)^b** — partial pressures replacing concentrations.\n\n### 2.2 Deriving the bridge\n\n- Each partial pressure p_i = C_iRT = [i]RT.\n- Substitute into Kp: Kp = ([C]RT)^c([D]RT)^d / ([A]RT)^a([B]RT)^b = Kc × (RT)^(c+d−a−b).\n- Define **Δn = moles of gaseous products − moles of gaseous reactants**:\n  **Kp = Kc(RT)^Δn**\n\n### 2.3 The three cases of Δn\n\n- **Δn = 0 (no gas-mole change):** Kp = Kc — e.g. H₂ + I₂ ⇌ 2HI.\n- **Δn > 0 (more gas on the product side):** Kp > Kc (for RT > 1) — e.g. N₂O₄ ⇌ 2NO₂ (Δn = +1).\n- **Δn < 0 (fewer gas moles in products):** Kp < Kc — e.g. N₂ + 3H₂ ⇌ 2NH₃ (Δn = −2).\n\n### 2.4 Units and the temperature rule\n\n- Kp carries the units of pressure^Δn (atm^Δn or bar^Δn); Kc carries (mol/L)^Δn. When Δn = 0 both are dimensionless.\n- R must match the pressure unit: 0.0821 L·atm/(mol·K) for atm; 8.314 J/(mol·K) for bar/pascal-based work.\n- T is always **kelvin**; and Kp, like Kc, depends only on temperature.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Partial pressure** | Pressure a gas would exert alone in the mixture volume | p(N₂) in air ≈ 0.78 atm |\n| **Kp** | Equilibrium constant in partial pressures | (pNH₃)²/(pN₂·pH₂³) |\n| **Δn** | Gas moles products − gas moles reactants | +1 for N₂O₄ ⇌ 2NO₂ |\n| **Bridge equation** | Kp = Kc(RT)^Δn | Converts one constant to the other |\n| **Δn = 0 case** | Kp = Kc | H₂ + I₂ ⇌ 2HI |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why partial pressures are active masses in disguise\n\n- The ideal gas law rearranges to p = CRT: concentration times RT. So pressure is just concentration wearing a different coat — which is why the two constants differ only by the (RT)^Δn correction for the change in gas moles.\n\n### 4.2 Worked conversions\n\n- **H₂ + I₂ ⇌ 2HI:** Δn = 2 − 2 = 0 → **Kp = Kc**.\n- **N₂O₄ ⇌ 2NO₂:** Δn = 2 − 1 = +1 → **Kp = Kc(RT)** — at 300 K with Kc = 0.16: Kp = 0.16 × 0.0821 × 300 ≈ 3.94.\n- **N₂ + 3H₂ ⇌ 2NH₃:** Δn = 2 − 4 = −2 → **Kp = Kc(RT)⁻² = Kc/(RT)²** — at 500 K with Kc = 0.061: Kp = 0.061/(0.0821 × 500)² ≈ 3.6 × 10⁻⁵.\n- **PCl₅ ⇌ PCl₃ + Cl₂:** Δn = +1 → Kp = Kc(RT).\n\n### 4.3 The reverse and scaled equations\n\n- The same flip/scale rules as Kc apply to Kp: reverse → 1/Kp; double coefficients → (Kp)²; Δn changes sign or doubles accordingly.",
+    "## 5. Comparison Tables\n\n**Kc vs Kp**\n\n| Basis | Kc | Kp |\n|---|---|---|\n| Currency | Concentration (mol/L) | Partial pressure (atm/bar) |\n| Expression | [C]^c[D]^d/[A]^a[B]^b | (pC)^c(pD)^d/(pA)^a(pB)^b |\n| Units | (mol/L)^Δn | atm^Δn |\n| Bridge | Kp = Kc(RT)^Δn | Kc = Kp/(RT)^Δn |\n| Equal when | Δn = 0 | Δn = 0 |\n\n**Δn sign and the bridge**\n\n| Δn | Relation | Example |\n|---|---|---|\n| 0 | Kp = Kc | H₂ + I₂ ⇌ 2HI |\n| +1 | Kp = Kc(RT) | N₂O₄ ⇌ 2NO₂; PCl₅ ⇌ PCl₃ + Cl₂ |\n| −2 | Kp = Kc/(RT)² | N₂ + 3H₂ ⇌ 2NH₃ |",
+    "## 6. Common Confusions\n\n**Δn counts gases only:** for CaCO₃(s) ⇌ CaO(s) + CO₂(g), Δn = +1 (the solids contribute nothing); counting all moles (3 − 2 = +1 here coincidentally, but wrong in general) misleads — only gas moles enter.",
+    "**Kelvin, always:** using 25 °C as 25 in the bridge is the standard error — T must be 298 K.",
+    "**R must match the pressure unit:** pairing atm pressures with R = 8.314 (SI) mixes systems — 0.0821 goes with atm.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Derive the relationship Kp = Kc(RT)^Δn.** — For a gas-phase reaction aA(g) + bB(g) ⇌ cC(g) + dD(g), the ideal gas law gives the partial pressure of each gas as p_i = n_iRT/V = [i]RT, i.e. partial pressure equals molar concentration times RT. The pressure-based constant is Kp = (pC)^c(pD)^d/(pA)^a(pB)^b. Substituting p_i = [i]RT: Kp = ([C]RT)^c([D]RT)^d/([A]RT)^a([B]RT)^b = ([C]^c[D]^d/[A]^a[B]^b) × (RT)^(c+d−a−b). The bracketed ratio is exactly Kc, and the exponent c + d − a − b is the change in gaseous moles Δn. Hence **Kp = Kc(RT)^Δn**, with T in kelvin.",
+    "**NEB-style (2m): For which of the following is Kp = Kc: (a) N₂ + 3H₂ ⇌ 2NH₃, (b) H₂ + I₂ ⇌ 2HI, (c) N₂O₄ ⇌ 2NO₂? Give Δn for each.** — (a) Δn = 2 − 4 = −2, so Kp = Kc(RT)⁻² < Kc. (b) Δn = 2 − 2 = **0, so Kp = Kc**. (c) Δn = 2 − 1 = +1, so Kp = Kc(RT) > Kc. Only (b) has equal constants, because the gas-mole count does not change.",
+    "**NEB-style (2m numerical): For N₂O₄ ⇌ 2NO₂, Kc = 0.16 at 300 K. Calculate Kp (R = 0.0821 L atm mol⁻¹ K⁻¹).** — Δn = 2 − 1 = +1, so Kp = Kc(RT) = 0.16 × 0.0821 × 300 = **3.94** (units atm¹)."
   ],
   "confusion": [
     "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
@@ -53,108 +54,45 @@
     "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Find Kp/Kc ratios (or equality) for: 2SO₂ + O₂ ⇌ 2SO₃; PCl₅ ⇌ PCl₃ + Cl₂; H₂ + Br₂ ⇌ 2HBr.",
+    "Kc = 4.0 for H₂ + I₂ ⇌ 2HI at 400 K. Find Kp for the reverse reaction at the same T.",
+    "For PCl₅ ⇌ PCl₃ + Cl₂, Kp = 1.8 at 500 K. Find Kc."
   ],
   "universalFacts": [
-    "Universal scientific fact for 04 relationship between kp and kc."
+    "High-altitude physiology and pressure cookers both live on p = CRT: the same relation that turns concentrations into partial pressures governs how thin air and sealed steam behave."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)"
+    "***The ammonia check*** — Kc = 0.061 at 500 K for N₂ + 3H₂ ⇌ 2NH₃: dividing by (0.0821 × 500)² ≈ 1681 gives Kp ≈ 3.6 × 10⁻⁵ — four orders smaller, because four gas moles collapse into two."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB-style (3m): Derive the relationship between Kp and Kc for a gaseous reaction.** — Consider aA(g) + bB(g) ⇌ cC(g) + dD(g). By the ideal gas law, the partial pressure of any gaseous component is p_i = n_iRT/V = [i]RT, where [i] is its molar concentration. The pressure-based equilibrium constant is Kp = (pC)^c(pD)^d / (pA)^a(pB)^b. Substituting p_i = [i]RT throughout: Kp = ([C]RT)^c([D]RT)^d / ([A]RT)^a([B]RT)^b = ([C]^c[D]^d / [A]^a[B]^b) × (RT)^(c+d−a−b). The ratio in brackets is the concentration-based constant Kc, and the exponent c + d − a − b is the change in the number of gaseous moles, Δn. Therefore **Kp = Kc(RT)^Δn**, with T in kelvin and R consistent with the pressure units. Special cases: Δn = 0 gives Kp = Kc; Δn > 0 gives Kp > Kc; Δn < 0 gives Kp < Kc.",
+    "**NEB-style (2m): For which reaction is Kp = Kc: (a) N₂(g) + 3H₂(g) ⇌ 2NH₃(g), (b) H₂(g) + I₂(g) ⇌ 2HI(g), (c) N₂O₄(g) ⇌ 2NO₂(g)? Compute Δn for each.** — **(a)** Δn = (2) − (1 + 3) = −2; Kp = Kc(RT)⁻² = Kc/(RT)², so Kp < Kc. **(b)** Δn = (2) − (1 + 1) = **0**; Kp = Kc(RT)⁰ = **Kc** — the constants are equal because the total gaseous moles are unchanged. **(c)** Δn = (2) − (1) = +1; Kp = Kc(RT), so Kp > Kc. Only reaction (b) has Kp = Kc.",
+    "**NEB-style (2m numerical): For N₂O₄(g) ⇌ 2NO₂(g), Kc = 0.16 at 300 K. Calculate Kp (R = 0.0821 L atm mol⁻¹ K⁻¹).** — Δn = 2 − 1 = +1, so Kp = Kc(RT)^1 = 0.16 × 0.0821 × 300. Multiplying: 0.0821 × 300 = 24.63; 0.16 × 24.63 ≈ **3.94**. Since Δn = +1, Kp carries the units of pressure (atm¹). (Cross-check: at 300 K, RT ≈ 24.6 > 1, so Kp must exceed Kc — 3.94 > 0.16, consistent.)"
   ],
   "formulas": [
-    "Kc = [Products]/[Reactants]",
-    "Kp = Kc(RT)^Δn",
-    "pH = -log[H⁺]",
-    "Ka × Kb = Kw"
+    "- p_i = [i]RT\n- Kp = (pC)^c(pD)^d / (pA)^a(pB)^b\n- Kp = Kc(RT)^Δn; Kc = Kp/(RT)^Δn\n- Δn = Σ gas moles (products) − Σ gas moles (reactants)\n- Worked: Kc = 0.16, T = 300 K, Δn = +1 → Kp = 3.94"
   ],
   "keyPoints": [
-    "Core point for 04 relationship between kp and kc."
+    "Partial pressure = CRT (ideal gas) - pressures are concentrations in disguise. Kp = (pC)^c(pD)^d/(pA)^a(pB)^b. Bridge: Kp = Kc(RT)^dn, dn = gas moles products - reactants; T in kelvin; R matches pressure unit. dn = 0: Kp = Kc (HI). dn = +1: Kp = Kc(RT) (N2O4, PCl5). dn = -2: Kp = Kc/(RT)2 (NH3). Units atm^dn. Worked: Kc = 0.16 at 300 K for N2O4 gives Kp = 3.94."
   ],
-  "summary": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
+  "summary": "Gas equilibria speak two dialects — concentrations and partial pressures — and **Kp = Kc(RT)^Δn** is the dictionary. The derivation is one ideal-gas line: p = [i]RT turns every pressure into a concentration, and collecting the leftover RT factors leaves (RT) raised to Δn, the change in **gaseous** moles between products and reactants. The sign of Δn then does all the talking: **Δn = 0** (H₂ + I₂ ⇌ 2HI) makes the constants identical; **Δn = +1** (N₂O₄ ⇌ 2NO₂, PCl₅ ⇌ PCl₃ + Cl₂) multiplies Kc by RT, so Kp exceeds Kc; **Δn = −2** (N₂ + 3H₂ ⇌ 2NH₃) divides by (RT)², so Kp collapses below Kc — 0.061 at 500 K becomes 3.6 × 10⁻⁵. Units follow Δn on each side ((mol/L)^Δn for Kc, atm^Δn for Kp), temperature must be kelvin, and R must match the pressure unit. Worked once — Kc = 0.16 at 300 K giving Kp = 3.94 for the N₂O₄/NO₂ pair — the conversion becomes a two-line exam answer.",
   "specialNotes": [
     "Specialized insight for 04 relationship between kp and kc."
   ],
   "importantStatements": [
-    "Key statement for 04 relationship between kp and kc."
+    "\"Kp = Kc(RT)^Δn, where Δn is the difference between the number of moles of gaseous products and gaseous reactants.\""
   ],
   "importantNotes": [
-    "Important note regarding 04 relationship between kp and kc."
+    "No verified PYQ on the Kp–Kc relationship exists in the current bank (the 2024 set tests Le Chatelier and a Kc calculation — solved in topics 56 and 54); all items above are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Relationship Between Kp and Kc."
+    "Count gas moles first: Δn = 0 → answer \"Kp = Kc\" instantly. Bridge ladder: +1 → ×RT; −1 → ÷RT; −2 → ÷(RT)². Kelvin conversion: °C + 273."
   ],
-  "examNotes": [],
+  "examNotes": [
+    "In derivations, state p = [i]RT explicitly — that single ideal-gas line is where the (RT)^Δn factor comes from, and examiners look for it."
+  ],
   "mcs": [
     {
       "question": "Question about 04 relationship between kp and kc?",
@@ -168,7 +106,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 04 relationship between kp and kc."
+    "One sign decides everything: Δn. Zero means the two constants are twins; positive makes Kp larger; negative makes Kc larger — read the balanced equation before touching the calculator."
   ],
   "importantTasks": [
     "Task for studying 04 relationship between kp and kc."
@@ -177,24 +115,92 @@
   "tabGroup": "04-relationship-between-kp-and-kc",
   "mcqs": [
     {
-      "question": "What happens to K when temperature increases for an exothermic reaction?",
+      "question": "Partial pressure relates to concentration by:",
       "options": [
-        "Increases",
-        "Decreases",
-        "Remains same",
-        "Becomes zero"
+        "p = C/RT",
+        "p = CRT",
+        "p = C + RT",
+        "p = RT/C"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Ideal gas law rearranged - the bridge's origin."
     },
     {
-      "question": "Which principle explains the effect of concentration on equilibrium?",
+      "question": "Kp = Kc when:",
       "options": [
-        "Le Chatelier's",
-        "Boyle's",
-        "Charles's",
-        "Avogadro's"
+        "T = 300 K",
+        "dn = 0",
+        "dn > 0",
+        "Catalyst used"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "(RT)0 = 1 - gas moles unchanged."
+    },
+    {
+      "question": "For N2 + 3H2 = 2NH3, dn equals:",
+      "options": [
+        "+2",
+        "-2",
+        "+1",
+        "0"
+      ],
+      "answer": "B",
+      "explanation": "2 - 4 = -2 - fewer gas moles in products."
+    },
+    {
+      "question": "For N2O4 = 2NO2, Kp relative to Kc is:",
+      "options": [
+        "Equal",
+        "Larger",
+        "Smaller",
+        "Unrelated"
+      ],
+      "answer": "B",
+      "explanation": "dn = +1, Kp = Kc(RT) with RT > 1."
+    },
+    {
+      "question": "In the bridge equation, T must be in:",
+      "options": [
+        "Celsius",
+        "Kelvin",
+        "Fahrenheit",
+        "Any scale"
+      ],
+      "answer": "B",
+      "explanation": "Absolute temperature only."
+    },
+    {
+      "question": "Kc = 0.16 at 300 K for N2O4 = 2NO2 gives Kp:",
+      "options": [
+        "0.16",
+        "0.013",
+        "3.94",
+        "39.4"
+      ],
+      "answer": "C",
+      "explanation": "0.16 x 0.0821 x 300 = 3.94."
+    },
+    {
+      "question": "For CaCO3(s) = CaO(s) + CO2(g), dn equals:",
+      "options": [
+        "0",
+        "+1",
+        "-1",
+        "+2"
+      ],
+      "answer": "B",
+      "explanation": "Solids do not count - one gas appears."
+    },
+    {
+      "question": "The units of Kp are:",
+      "options": [
+        "mol/L",
+        "atm raised to dn",
+        "dimensionless always",
+        "atm x mol"
+      ],
+      "answer": "B",
+      "explanation": "Pressure to the gas-mole-change power."
     }
   ],
   "exercises": [
@@ -215,5 +221,57 @@
     "desc": "Le Chatelier principle interactive simulation"
   },
   "visualType": "kp-kc-relationship",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Two Constants, One Reaction, One Bridge\n\nGas-phase equilibria can be written in concentrations (Kc) or in partial pressures (Kp). The two are not rivals but conversions of the same fact, and **Kp = Kc(RT)^Δn** is the bridge — where Δn is the change in gas moles and T is absolute temperature. Master the sign of Δn and every conversion becomes a one-liner.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Kp — the pressure-side constant\n\n- For gas reactions, the active mass of each gas is proportional to its **partial pressure** (from the ideal gas law: pV = nRT → p = (n/V)RT = CRT).\n- For aA(g) + bB(g) ⇌ cC(g) + dD(g): **Kp = (pC)^c(pD)^d / (pA)^a(pB)^b** — partial pressures replacing concentrations.\n\n### 2.2 Deriving the bridge\n\n- Each partial pressure p_i = C_iRT = [i]RT.\n- Substitute into Kp: Kp = ([C]RT)^c([D]RT)^d / ([A]RT)^a([B]RT)^b = Kc × (RT)^(c+d−a−b).\n- Define **Δn = moles of gaseous products − moles of gaseous reactants**:\n  **Kp = Kc(RT)^Δn**\n\n### 2.3 The three cases of Δn\n\n- **Δn = 0 (no gas-mole change):** Kp = Kc — e.g. H₂ + I₂ ⇌ 2HI.\n- **Δn > 0 (more gas on the product side):** Kp > Kc (for RT > 1) — e.g. N₂O₄ ⇌ 2NO₂ (Δn = +1).\n- **Δn < 0 (fewer gas moles in products):** Kp < Kc — e.g. N₂ + 3H₂ ⇌ 2NH₃ (Δn = −2).\n\n### 2.4 Units and the temperature rule\n\n- Kp carries the units of pressure^Δn (atm^Δn or bar^Δn); Kc carries (mol/L)^Δn. When Δn = 0 both are dimensionless.\n- R must match the pressure unit: 0.0821 L·atm/(mol·K) for atm; 8.314 J/(mol·K) for bar/pascal-based work.\n- T is always **kelvin**; and Kp, like Kc, depends only on temperature.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Partial pressure** | Pressure a gas would exert alone in the mixture volume | p(N₂) in air ≈ 0.78 atm |\n| **Kp** | Equilibrium constant in partial pressures | (pNH₃)²/(pN₂·pH₂³) |\n| **Δn** | Gas moles products − gas moles reactants | +1 for N₂O₄ ⇌ 2NO₂ |\n| **Bridge equation** | Kp = Kc(RT)^Δn | Converts one constant to the other |\n| **Δn = 0 case** | Kp = Kc | H₂ + I₂ ⇌ 2HI |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why partial pressures are active masses in disguise\n\n- The ideal gas law rearranges to p = CRT: concentration times RT. So pressure is just concentration wearing a different coat — which is why the two constants differ only by the (RT)^Δn correction for the change in gas moles.\n\n### 4.2 Worked conversions\n\n- **H₂ + I₂ ⇌ 2HI:** Δn = 2 − 2 = 0 → **Kp = Kc**.\n- **N₂O₄ ⇌ 2NO₂:** Δn = 2 − 1 = +1 → **Kp = Kc(RT)** — at 300 K with Kc = 0.16: Kp = 0.16 × 0.0821 × 300 ≈ 3.94.\n- **N₂ + 3H₂ ⇌ 2NH₃:** Δn = 2 − 4 = −2 → **Kp = Kc(RT)⁻² = Kc/(RT)²** — at 500 K with Kc = 0.061: Kp = 0.061/(0.0821 × 500)² ≈ 3.6 × 10⁻⁵.\n- **PCl₅ ⇌ PCl₃ + Cl₂:** Δn = +1 → Kp = Kc(RT).\n\n### 4.3 The reverse and scaled equations\n\n- The same flip/scale rules as Kc apply to Kp: reverse → 1/Kp; double coefficients → (Kp)²; Δn changes sign or doubles accordingly.",
+      "## 5. Comparison Tables\n\n**Kc vs Kp**\n\n| Basis | Kc | Kp |\n|---|---|---|\n| Currency | Concentration (mol/L) | Partial pressure (atm/bar) |\n| Expression | [C]^c[D]^d/[A]^a[B]^b | (pC)^c(pD)^d/(pA)^a(pB)^b |\n| Units | (mol/L)^Δn | atm^Δn |\n| Bridge | Kp = Kc(RT)^Δn | Kc = Kp/(RT)^Δn |\n| Equal when | Δn = 0 | Δn = 0 |\n\n**Δn sign and the bridge**\n\n| Δn | Relation | Example |\n|---|---|---|\n| 0 | Kp = Kc | H₂ + I₂ ⇌ 2HI |\n| +1 | Kp = Kc(RT) | N₂O₄ ⇌ 2NO₂; PCl₅ ⇌ PCl₃ + Cl₂ |\n| −2 | Kp = Kc/(RT)² | N₂ + 3H₂ ⇌ 2NH₃ |",
+      "## 6. Common Confusions\n\n**Δn counts gases only:** for CaCO₃(s) ⇌ CaO(s) + CO₂(g), Δn = +1 (the solids contribute nothing); counting all moles (3 − 2 = +1 here coincidentally, but wrong in general) misleads — only gas moles enter.",
+      "**Kelvin, always:** using 25 °C as 25 in the bridge is the standard error — T must be 298 K.",
+      "**R must match the pressure unit:** pairing atm pressures with R = 8.314 (SI) mixes systems — 0.0821 goes with atm.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Derive the relationship Kp = Kc(RT)^Δn.** — For a gas-phase reaction aA(g) + bB(g) ⇌ cC(g) + dD(g), the ideal gas law gives the partial pressure of each gas as p_i = n_iRT/V = [i]RT, i.e. partial pressure equals molar concentration times RT. The pressure-based constant is Kp = (pC)^c(pD)^d/(pA)^a(pB)^b. Substituting p_i = [i]RT: Kp = ([C]RT)^c([D]RT)^d/([A]RT)^a([B]RT)^b = ([C]^c[D]^d/[A]^a[B]^b) × (RT)^(c+d−a−b). The bracketed ratio is exactly Kc, and the exponent c + d − a − b is the change in gaseous moles Δn. Hence **Kp = Kc(RT)^Δn**, with T in kelvin.",
+      "**NEB-style (2m): For which of the following is Kp = Kc: (a) N₂ + 3H₂ ⇌ 2NH₃, (b) H₂ + I₂ ⇌ 2HI, (c) N₂O₄ ⇌ 2NO₂? Give Δn for each.** — (a) Δn = 2 − 4 = −2, so Kp = Kc(RT)⁻² < Kc. (b) Δn = 2 − 2 = **0, so Kp = Kc**. (c) Δn = 2 − 1 = +1, so Kp = Kc(RT) > Kc. Only (b) has equal constants, because the gas-mole count does not change.",
+      "**NEB-style (2m numerical): For N₂O₄ ⇌ 2NO₂, Kc = 0.16 at 300 K. Calculate Kp (R = 0.0821 L atm mol⁻¹ K⁻¹).** — Δn = 2 − 1 = +1, so Kp = Kc(RT) = 0.16 × 0.0821 × 300 = **3.94** (units atm¹)."
+    ],
+    "keyPoints": [
+      "Partial pressure = CRT (ideal gas) - pressures are concentrations in disguise. Kp = (pC)^c(pD)^d/(pA)^a(pB)^b. Bridge: Kp = Kc(RT)^dn, dn = gas moles products - reactants; T in kelvin; R matches pressure unit. dn = 0: Kp = Kc (HI). dn = +1: Kp = Kc(RT) (N2O4, PCl5). dn = -2: Kp = Kc/(RT)2 (NH3). Units atm^dn. Worked: Kc = 0.16 at 300 K for N2O4 gives Kp = 3.94."
+    ],
+    "importantConcepts": [
+      "One sign decides everything: Δn. Zero means the two constants are twins; positive makes Kp larger; negative makes Kc larger — read the balanced equation before touching the calculator."
+    ],
+    "examples": [
+      "***The ammonia check*** — Kc = 0.061 at 500 K for N₂ + 3H₂ ⇌ 2NH₃: dividing by (0.0821 × 500)² ≈ 1681 gives Kp ≈ 3.6 × 10⁻⁵ — four orders smaller, because four gas moles collapse into two."
+    ],
+    "universalFacts": [
+      "High-altitude physiology and pressure cookers both live on p = CRT: the same relation that turns concentrations into partial pressures governs how thin air and sealed steam behave."
+    ],
+    "importantStatements": [
+      "\"Kp = Kc(RT)^Δn, where Δn is the difference between the number of moles of gaseous products and gaseous reactants.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on the Kp–Kc relationship exists in the current bank (the 2024 set tests Le Chatelier and a Kc calculation — solved in topics 56 and 54); all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Count gas moles first: Δn = 0 → answer \"Kp = Kc\" instantly. Bridge ladder: +1 → ×RT; −1 → ÷RT; −2 → ÷(RT)². Kelvin conversion: °C + 273."
+    ],
+    "examNotes": [
+      "In derivations, state p = [i]RT explicitly — that single ideal-gas line is where the (RT)^Δn factor comes from, and examiners look for it."
+    ],
+    "formulas": [
+      "- p_i = [i]RT\n- Kp = (pC)^c(pD)^d / (pA)^a(pB)^b\n- Kp = Kc(RT)^Δn; Kc = Kp/(RT)^Δn\n- Δn = Σ gas moles (products) − Σ gas moles (reactants)\n- Worked: Kc = 0.16, T = 300 K, Δn = +1 → Kp = 3.94"
+    ],
+    "practice": [
+      "Find Kp/Kc ratios (or equality) for: 2SO₂ + O₂ ⇌ 2SO₃; PCl₅ ⇌ PCl₃ + Cl₂; H₂ + Br₂ ⇌ 2HBr.",
+      "Kc = 4.0 for H₂ + I₂ ⇌ 2HI at 400 K. Find Kp for the reverse reaction at the same T.",
+      "For PCl₅ ⇌ PCl₃ + Cl₂, Kp = 1.8 at 500 K. Find Kc."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Derive the relationship between Kp and Kc for a gaseous reaction.** — Consider aA(g) + bB(g) ⇌ cC(g) + dD(g). By the ideal gas law, the partial pressure of any gaseous component is p_i = n_iRT/V = [i]RT, where [i] is its molar concentration. The pressure-based equilibrium constant is Kp = (pC)^c(pD)^d / (pA)^a(pB)^b. Substituting p_i = [i]RT throughout: Kp = ([C]RT)^c([D]RT)^d / ([A]RT)^a([B]RT)^b = ([C]^c[D]^d / [A]^a[B]^b) × (RT)^(c+d−a−b). The ratio in brackets is the concentration-based constant Kc, and the exponent c + d − a − b is the change in the number of gaseous moles, Δn. Therefore **Kp = Kc(RT)^Δn**, with T in kelvin and R consistent with the pressure units. Special cases: Δn = 0 gives Kp = Kc; Δn > 0 gives Kp > Kc; Δn < 0 gives Kp < Kc.",
+      "**NEB-style (2m): For which reaction is Kp = Kc: (a) N₂(g) + 3H₂(g) ⇌ 2NH₃(g), (b) H₂(g) + I₂(g) ⇌ 2HI(g), (c) N₂O₄(g) ⇌ 2NO₂(g)? Compute Δn for each.** — **(a)** Δn = (2) − (1 + 3) = −2; Kp = Kc(RT)⁻² = Kc/(RT)², so Kp < Kc. **(b)** Δn = (2) − (1 + 1) = **0**; Kp = Kc(RT)⁰ = **Kc** — the constants are equal because the total gaseous moles are unchanged. **(c)** Δn = (2) − (1) = +1; Kp = Kc(RT), so Kp > Kc. Only reaction (b) has Kp = Kc.",
+      "**NEB-style (2m numerical): For N₂O₄(g) ⇌ 2NO₂(g), Kc = 0.16 at 300 K. Calculate Kp (R = 0.0821 L atm mol⁻¹ K⁻¹).** — Δn = 2 − 1 = +1, so Kp = Kc(RT)^1 = 0.16 × 0.0821 × 300. Multiplying: 0.0821 × 300 = 24.63; 0.16 × 24.63 ≈ **3.94**. Since Δn = +1, Kp carries the units of pressure (atm¹). (Cross-check: at 300 K, RT ≈ 24.6 > 1, so Kp must exceed Kc — 3.94 > 0.16, consistent.)"
+    ]
+  }
 }

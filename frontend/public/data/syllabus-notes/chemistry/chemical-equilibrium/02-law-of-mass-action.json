@@ -5,16 +5,17 @@
   "topicTitle": "Law of mass action",
   "relevance": 100,
   "notes": [
-    "Dynamic equilibrium: forward rate = backward rate.",
-    "Kc = [products]/[reactants].",
-    "Le Chatelier's principle.",
-    "pH = -log[H⁺].",
-    "# Law of mass action\n\n## 1. Introduction\nChemical picture of **Law of mass action** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Equilibrium fill pass.\n\n## 2. Concepts and definitions\n### Law of mass action\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Law of mass action — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Law of mass action — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Law of mass action — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Law of mass action — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Law Behind Every Equilibrium Constant\n\nGuldberg and Waage (1864) turned the rate-tie of equilibrium into algebra: at equilibrium, the product of the products' concentrations divided by the product of the reactants' concentrations is a **constant** at fixed temperature. One law generates every Kc expression in chemistry — and its active-mass premise explains why concentrations, not amounts, matter.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Active mass\n\n- **Active mass = molar concentration** (mol/L), symbolised [A]; for dilute solutions and gases it is proportional to the number of moles per litre.\n- Active masses of **pure solids and pure liquids are constant** (taken as unity) — they never appear in equilibrium expressions; only gases and solutes do.\n\n### 2.2 The law of mass action\n\n- **Statement:** at constant temperature, the rate of a chemical reaction is directly proportional to the product of the active masses of the reactants (each raised to its stoichiometric coefficient).\n- For aA + bB → products: rate = k[A]^a[B]^b.\n\n### 2.3 Deriving the equilibrium constant\n\n- For the reversible reaction **aA + bB ⇌ cC + dD**:\n  - rate(forward) = k_f [A]^a[B]^b; rate(reverse) = k_r [C]^c[D]^d.\n- At equilibrium the rates tie: k_f[A]^a[B]^b = k_r[C]^c[D]^d.\n- Rearranged: **[C]^c[D]^d / [A]^a[B]^b = k_f/k_r = Kc** — a constant at fixed temperature.\n- **Kc = products (coefficient powers) over reactants (coefficient powers)** — the equilibrium constant in concentration units.\n\n### 2.4 What Kc depends on — and what it ignores\n\n- **Depends only on temperature** — not on initial concentrations, pressure, volume, or catalysts.\n- A catalyst changes k_f and k_r proportionally, so their ratio Kc is untouched.\n\n### 2.5 Applications of the law\n\n- Writing equilibrium expressions for any balanced equation (heterogeneous included).\n- Predicting reaction extent from Kc's size (topic 54).\n- Explaining the effect of concentration changes (Le Chatelier's quantitative root, topic 56).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Active mass** | Molar concentration, mol/L | [H₂] in mol/L |\n| **Law of mass action** | Rate proportional to product of active masses | rate = k[A]^a[B]^b |\n| **Equilibrium constant Kc** | k_f/k_r at equilibrium, fixed T | [C]^c[D]^d/[A]^a[B]^b |\n| **Heterogeneous equilibrium** | Species in more than one phase | CaCO₃(s) ⇌ CaO(s) + CO₂(g) |\n| **Constant active mass** | Pure solids/liquids = 1 | Omitted from Kc |",
+    "## 4. Detailed Explanation\n\n### 4.1 Worked expressions\n\n- **N₂ + 3H₂ ⇌ 2NH₃:** Kc = [NH₃]²/([N₂][H₂]³).\n- **N₂O₄ ⇌ 2NO₂:** Kc = [NO₂]²/[N₂O₄].\n- **PCl₅ ⇌ PCl₃ + Cl₂:** Kc = [PCl₃][Cl₂]/[PCl₅].\n- **CaCO₃(s) ⇌ CaO(s) + CO₂(g):** Kc = [CO₂] — both solids omitted.\n- **H₂(g) + I₂(g) ⇌ 2HI(g):** Kc = [HI]²/([H₂][I₂]) — coefficients equal, so a \"balanced-looking\" fraction.\n\n### 4.2 The reverse reaction's constant\n\n- Reverse the equation and Kc inverts: Kc(reverse) = 1/Kc(forward). Multiply coefficients by 2 and Kc squares: Kc' = (Kc)². The constant is married to the equation as written.\n\n### 4.3 Units of Kc\n\n- Units = (mol/L)^Δn where Δn = moles of gaseous products − moles of gaseous reactants.\n- N₂ + 3H₂ ⇌ 2NH₃: Δn = 2 − 4 = −2 → units (mol/L)⁻²; H₂ + I₂ ⇌ 2HI: Δn = 0 → dimensionless.",
+    "## 5. Comparison Tables\n\n**What appears in Kc — and what does not**\n\n| Species | In Kc? | Why |\n|---|---|---|\n| Gases | Yes | Active mass varies |\n| Solutes in solution | Yes | Active mass varies |\n| Pure solids | No | Active mass constant (=1) |\n| Pure liquids | No | Active mass constant (=1) |\n| Solvent (excess) | No | Effectively constant |\n\n**Changing the equation changes Kc**\n\n| Operation | Effect on Kc |\n|---|---|\n| Reverse the equation | Kc → 1/Kc |\n| Double all coefficients | Kc → (Kc)² |\n| Halve all coefficients | Kc → √Kc |\n| Change temperature | New value entirely |\n| Add catalyst | No change |",
+    "## 6. Common Confusions\n\n**Coefficients become exponents:** [NH₃]² over [N₂][H₂]³ — students who copy the coefficients as multipliers instead of powers lose every expression.",
+    "**Solids and liquids are silent:** writing [CaCO₃] in a Kc expression is a guaranteed deduction — pure condensed phases are omitted by law.",
+    "**Kc is temperature's child:** quoting \"Kc always 0.5\" without naming the temperature is meaningless — every Kc answer should carry its temperature.",
+    "## 7. Exam Application\n\n**NEB-style (3m): State the law of mass action and derive the expression for the equilibrium constant for aA + bB ⇌ cC + dD.** — **Law:** at constant temperature, the rate of a reaction is directly proportional to the product of the active masses (molar concentrations) of the reactants, each raised to the power of its stoichiometric coefficient. **Derivation:** rate(forward) = k_f[A]^a[B]^b and rate(reverse) = k_r[C]^c[D]^d. At equilibrium the two rates are equal: k_f[A]^a[B]^b = k_r[C]^c[D]^d. Rearranging, [C]^c[D]^d/[A]^a[B]^b = k_f/k_r = **Kc**, a constant at that temperature since both k's depend only on temperature.",
+    "**NEB-style (2m): Write the equilibrium constant expressions for (a) N₂ + 3H₂ ⇌ 2NH₃ and (b) CaCO₃(s) ⇌ CaO(s) + CO₂(g), giving units.** — (a) **Kc = [NH₃]²/([N₂][H₂]³)**; Δn = 2 − 4 = −2, so units (mol/L)⁻². (b) The solids CaCO₃ and CaO have constant active masses (unity) and are omitted: **Kc = [CO₂]**; Δn = 1, units mol/L.",
+    "**NEB-style (2m): The Kc for H₂ + I₂ ⇌ 2HI is 49 at a certain temperature. What is Kc for 2HI ⇌ H₂ + I₂ and for ½H₂ + ½I₂ ⇌ HI?** — Reversing the equation inverts the constant: Kc(reverse) = **1/49**. Halving the coefficients takes the square root: Kc = **√49 = 7**."
   ],
   "confusion": [
     "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
@@ -53,98 +54,43 @@
     "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Write Kc expressions with units for PCl₅ ⇌ PCl₃ + Cl₂ and 2SO₂ + O₂ ⇌ 2SO₃.",
+    "If Kc = 4 for A ⇌ B, find Kc for 2B ⇌ 2A.",
+    "Explain why the active mass of pure water is omitted in esterification equilibria."
   ],
-  "universalFacts": [],
+  "universalFacts": [
+    "Blood's oxygen loading obeys mass action: more O₂ partial pressure (deep breathing) pushes haemoglobin toward the loaded form — the law written in physiology."
+  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "examples": [
-    "Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)"
+    "***The Haber expression*** — [NH₃]²/([N₂][H₂]³) printed on every fertiliser-plant flow sheet: the whole ammonia industry optimises against one fraction."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB-style (3m): State the law of mass action. Derive the expression for the equilibrium constant Kc for the general reaction aA + bB ⇌ cC + dD.** — **Statement:** at constant temperature, the rate of a chemical reaction is directly proportional to the product of the active masses (molar concentrations) of the reactants, each raised to the power of its stoichiometric coefficient in the balanced equation. **Derivation:** for aA + bB ⇌ cC + dD, the law gives rate(forward) = k_f[A]^a[B]^b and rate(reverse) = k_r[C]^c[D]^d, where k_f and k_r are the specific rate constants of the forward and reverse reactions. At equilibrium the two rates are equal: k_f[A]^a[B]^b = k_r[C]^c[D]^d. Dividing both sides by [A]^a[B]^b and by k_r: [C]^c[D]^d / [A]^a[B]^b = k_f/k_r. The ratio of two constants (both depending only on temperature) is itself a constant — the **equilibrium constant Kc**: Kc = [C]^c[D]^d / [A]^a[B]^b. Its value depends only on temperature; initial concentrations, pressure and catalysts do not affect it.",
+    "**NEB-style (2m): Write the equilibrium constant expression and units for (a) N₂(g) + 3H₂(g) ⇌ 2NH₃(g) and (b) CaCO₃(s) ⇌ CaO(s) + CO₂(g).** — **(a)** Kc = [NH₃]² / ([N₂][H₂]³) — each coefficient becomes a power. Δn = (moles gaseous products) − (moles gaseous reactants) = 2 − 4 = −2, so the units are (mol/L)⁻², i.e. L²/mol². **(b)** Calcium carbonate and calcium oxide are pure solids: their active masses are constant and conventionally taken as unity, so they do not appear. Kc = **[CO₂]**, with Δn = 1 and units mol/L.",
+    "**NEB-style (2m): The equilibrium constant for H₂(g) + I₂(g) ⇌ 2HI(g) is 49 at 450 °C. Calculate Kc for (a) 2HI ⇌ H₂ + I₂ and (b) ½H₂ + ½I₂ ⇌ HI at the same temperature.** — **(a)** Reversing an equation inverts its equilibrium constant: Kc = 1/49 ≈ **0.0204**. **(b)** Halving all coefficients takes the square root of the constant: Kc = √49 = **7**. Both values hold only at the same temperature (450 °C), since Kc is a function of temperature alone."
   ],
   "formulas": [
-    "Kc = [Products]/[Reactants]",
-    "Kp = Kc(RT)^Δn",
-    "pH = -log[H⁺]",
-    "Ka × Kb = Kw"
+    "- rate = k[A]^a[B]^b\n- Kc = [C]^c[D]^d / [A]^a[B]^b = k_f/k_r\n- N₂ + 3H₂ ⇌ 2NH₃: Kc = [NH₃]²/([N₂][H₂]³)\n- CaCO₃(s) ⇌ CaO(s) + CO₂(g): Kc = [CO₂]\n- Units of Kc = (mol/L)^Δn"
   ],
-  "keyPoints": [],
-  "summary": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
+  "keyPoints": [
+    "Active mass = molar concentration; solids/pure liquids = constant (omitted). Law of mass action: rate proportional to product of active masses raised to coefficients. Derivation: k_f[A]^a[B]^b = k_r[C]^c[D]^d → Kc = k_f/k_r = [C]^c[D]^d/[A]^a[B]^b. Kc depends only on temperature; catalyst no effect. Reverse → 1/Kc; double → Kc². Units (mol/L)^Δn; N₂+3H₂⇌2NH₃ gives (mol/L)⁻²; HI gives dimensionless."
+  ],
+  "summary": "The law of mass action converts equilibrium's rate-tie into a fraction. **Active mass** is molar concentration — except for pure solids and liquids, whose constant active masses (unity) banish them from every expression. Stated, the law says rate ∝ product of active masses raised to their coefficients; applied to aA + bB ⇌ cC + dD, the tie k_f[A]^a[B]^b = k_r[C]^c[D]^d rearranges to **Kc = [C]^c[D]^d/[A]^a[B]^b = k_f/k_r** — a constant that answers to temperature alone. The bookkeeping rules follow: reverse the equation and Kc flips to 1/Kc, scale the coefficients and Kc takes the corresponding power, and units are (mol/L)^Δn (−2 for ammonia synthesis, zero for HI). The expression gallery — [NH₃]²/([N₂][H₂]³), [NO₂]²/[N₂O₄], bare [CO₂] for calcite — is the alphabet of topics 54 and 55, and the same fraction unbalancing under added reactant is the engine of Le Chatelier.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [
-    "Important note regarding 02 law of mass action."
+  "importantStatements": [
+    "\"At constant temperature, the rate of a chemical reaction is directly proportional to the product of the active masses of the reactants.\""
   ],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantNotes": [
+    "No verified PYQ on the law of mass action exists in the current bank (NEB 2024's Kc numerical is solved in topic 54); all items above are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Expression recipe: \"products up, reactants down, coefficients as powers, solids out\". Flip/scale rules: reverse 1/Kc, double Kc², halve √Kc. Units: (mol/L)^Δn."
+  ],
+  "examNotes": [
+    "In derivations, define active mass before using it and show the rate-equality step explicitly — the algebra from rates to Kc is where the marks live."
+  ],
   "mcs": [
     {
       "question": "Question about 02 law of mass action?",
@@ -158,7 +104,7 @@
     }
   ],
   "importantConcepts": [
-    "Key concept 1 for 02 law of mass action."
+    "The law of mass action is Le Chatelier's quantitative root: adding reactant raises the denominator, unbalancing the fraction, and the reaction must shift forward to restore Kc — concentration effects are arithmetic, not mystery."
   ],
   "importantTasks": [
     "Task for studying 02 law of mass action."
@@ -167,24 +113,92 @@
   "tabGroup": "02-law-of-mass-action",
   "mcqs": [
     {
-      "question": "What happens to K when temperature increases for an exothermic reaction?",
+      "question": "Active mass means:",
       "options": [
-        "Increases",
-        "Decreases",
-        "Remains same",
-        "Becomes zero"
+        "Total moles",
+        "Molar concentration",
+        "Mass in grams",
+        "Pressure only"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Concentration in mol/L - the law's currency."
     },
     {
-      "question": "Which principle explains the effect of concentration on equilibrium?",
+      "question": "Pure solids in a Kc expression are:",
       "options": [
-        "Le Chatelier's",
-        "Boyle's",
-        "Charles's",
-        "Avogadro's"
+        "Raised to unit power",
+        "Omitted",
+        "Doubled",
+        "Squared"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Constant active mass = unity."
+    },
+    {
+      "question": "For N2 + 3H2 = 2NH3, Kc is:",
+      "options": [
+        "[NH3]2/([N2][H2]3)",
+        "[NH3]/([N2][H2])",
+        "[N2][H2]3/[NH3]2",
+        "[NH3]3/[N2]"
+      ],
+      "answer": "A",
+      "explanation": "Coefficients become powers."
+    },
+    {
+      "question": "Kc depends on:",
+      "options": [
+        "Pressure",
+        "Concentration",
+        "Temperature only",
+        "Catalyst"
+      ],
+      "answer": "C",
+      "explanation": "The ratio kf/kr is temperature's child."
+    },
+    {
+      "question": "Reversing an equation changes Kc to:",
+      "options": [
+        "Kc squared",
+        "1/Kc",
+        "sqrt(Kc)",
+        "-Kc"
+      ],
+      "answer": "B",
+      "explanation": "Products and reactants swap places."
+    },
+    {
+      "question": "Units of Kc for H2 + I2 = 2HI:",
+      "options": [
+        "mol/L",
+        "(mol/L)2",
+        "(mol/L)-2",
+        "None"
+      ],
+      "answer": "D",
+      "explanation": "Dn = 2 - 2 = 0 - dimensionless."
+    },
+    {
+      "question": "Doubling all coefficients of an equation makes Kc:",
+      "options": [
+        "2Kc",
+        "Kc/2",
+        "(Kc)2",
+        "sqrt(Kc)"
+      ],
+      "answer": "C",
+      "explanation": "Scaling coefficients scales the exponent powers."
+    },
+    {
+      "question": "For CaCO3(s) = CaO(s) + CO2(g), Kc equals:",
+      "options": [
+        "[CaO][CO2]/[CaCO3]",
+        "[CO2]",
+        "1/[CO2]",
+        "[CaCO3]/[CaO]"
+      ],
+      "answer": "B",
+      "explanation": "Both solids omitted - only the gas remains."
     }
   ],
   "exercises": [
@@ -205,5 +219,57 @@
     "desc": "Le Chatelier principle interactive simulation"
   },
   "visualType": "law-of-mass-action",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Law Behind Every Equilibrium Constant\n\nGuldberg and Waage (1864) turned the rate-tie of equilibrium into algebra: at equilibrium, the product of the products' concentrations divided by the product of the reactants' concentrations is a **constant** at fixed temperature. One law generates every Kc expression in chemistry — and its active-mass premise explains why concentrations, not amounts, matter.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Active mass\n\n- **Active mass = molar concentration** (mol/L), symbolised [A]; for dilute solutions and gases it is proportional to the number of moles per litre.\n- Active masses of **pure solids and pure liquids are constant** (taken as unity) — they never appear in equilibrium expressions; only gases and solutes do.\n\n### 2.2 The law of mass action\n\n- **Statement:** at constant temperature, the rate of a chemical reaction is directly proportional to the product of the active masses of the reactants (each raised to its stoichiometric coefficient).\n- For aA + bB → products: rate = k[A]^a[B]^b.\n\n### 2.3 Deriving the equilibrium constant\n\n- For the reversible reaction **aA + bB ⇌ cC + dD**:\n  - rate(forward) = k_f [A]^a[B]^b; rate(reverse) = k_r [C]^c[D]^d.\n- At equilibrium the rates tie: k_f[A]^a[B]^b = k_r[C]^c[D]^d.\n- Rearranged: **[C]^c[D]^d / [A]^a[B]^b = k_f/k_r = Kc** — a constant at fixed temperature.\n- **Kc = products (coefficient powers) over reactants (coefficient powers)** — the equilibrium constant in concentration units.\n\n### 2.4 What Kc depends on — and what it ignores\n\n- **Depends only on temperature** — not on initial concentrations, pressure, volume, or catalysts.\n- A catalyst changes k_f and k_r proportionally, so their ratio Kc is untouched.\n\n### 2.5 Applications of the law\n\n- Writing equilibrium expressions for any balanced equation (heterogeneous included).\n- Predicting reaction extent from Kc's size (topic 54).\n- Explaining the effect of concentration changes (Le Chatelier's quantitative root, topic 56).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Active mass** | Molar concentration, mol/L | [H₂] in mol/L |\n| **Law of mass action** | Rate proportional to product of active masses | rate = k[A]^a[B]^b |\n| **Equilibrium constant Kc** | k_f/k_r at equilibrium, fixed T | [C]^c[D]^d/[A]^a[B]^b |\n| **Heterogeneous equilibrium** | Species in more than one phase | CaCO₃(s) ⇌ CaO(s) + CO₂(g) |\n| **Constant active mass** | Pure solids/liquids = 1 | Omitted from Kc |",
+      "## 4. Detailed Explanation\n\n### 4.1 Worked expressions\n\n- **N₂ + 3H₂ ⇌ 2NH₃:** Kc = [NH₃]²/([N₂][H₂]³).\n- **N₂O₄ ⇌ 2NO₂:** Kc = [NO₂]²/[N₂O₄].\n- **PCl₅ ⇌ PCl₃ + Cl₂:** Kc = [PCl₃][Cl₂]/[PCl₅].\n- **CaCO₃(s) ⇌ CaO(s) + CO₂(g):** Kc = [CO₂] — both solids omitted.\n- **H₂(g) + I₂(g) ⇌ 2HI(g):** Kc = [HI]²/([H₂][I₂]) — coefficients equal, so a \"balanced-looking\" fraction.\n\n### 4.2 The reverse reaction's constant\n\n- Reverse the equation and Kc inverts: Kc(reverse) = 1/Kc(forward). Multiply coefficients by 2 and Kc squares: Kc' = (Kc)². The constant is married to the equation as written.\n\n### 4.3 Units of Kc\n\n- Units = (mol/L)^Δn where Δn = moles of gaseous products − moles of gaseous reactants.\n- N₂ + 3H₂ ⇌ 2NH₃: Δn = 2 − 4 = −2 → units (mol/L)⁻²; H₂ + I₂ ⇌ 2HI: Δn = 0 → dimensionless.",
+      "## 5. Comparison Tables\n\n**What appears in Kc — and what does not**\n\n| Species | In Kc? | Why |\n|---|---|---|\n| Gases | Yes | Active mass varies |\n| Solutes in solution | Yes | Active mass varies |\n| Pure solids | No | Active mass constant (=1) |\n| Pure liquids | No | Active mass constant (=1) |\n| Solvent (excess) | No | Effectively constant |\n\n**Changing the equation changes Kc**\n\n| Operation | Effect on Kc |\n|---|---|\n| Reverse the equation | Kc → 1/Kc |\n| Double all coefficients | Kc → (Kc)² |\n| Halve all coefficients | Kc → √Kc |\n| Change temperature | New value entirely |\n| Add catalyst | No change |",
+      "## 6. Common Confusions\n\n**Coefficients become exponents:** [NH₃]² over [N₂][H₂]³ — students who copy the coefficients as multipliers instead of powers lose every expression.",
+      "**Solids and liquids are silent:** writing [CaCO₃] in a Kc expression is a guaranteed deduction — pure condensed phases are omitted by law.",
+      "**Kc is temperature's child:** quoting \"Kc always 0.5\" without naming the temperature is meaningless — every Kc answer should carry its temperature.",
+      "## 7. Exam Application\n\n**NEB-style (3m): State the law of mass action and derive the expression for the equilibrium constant for aA + bB ⇌ cC + dD.** — **Law:** at constant temperature, the rate of a reaction is directly proportional to the product of the active masses (molar concentrations) of the reactants, each raised to the power of its stoichiometric coefficient. **Derivation:** rate(forward) = k_f[A]^a[B]^b and rate(reverse) = k_r[C]^c[D]^d. At equilibrium the two rates are equal: k_f[A]^a[B]^b = k_r[C]^c[D]^d. Rearranging, [C]^c[D]^d/[A]^a[B]^b = k_f/k_r = **Kc**, a constant at that temperature since both k's depend only on temperature.",
+      "**NEB-style (2m): Write the equilibrium constant expressions for (a) N₂ + 3H₂ ⇌ 2NH₃ and (b) CaCO₃(s) ⇌ CaO(s) + CO₂(g), giving units.** — (a) **Kc = [NH₃]²/([N₂][H₂]³)**; Δn = 2 − 4 = −2, so units (mol/L)⁻². (b) The solids CaCO₃ and CaO have constant active masses (unity) and are omitted: **Kc = [CO₂]**; Δn = 1, units mol/L.",
+      "**NEB-style (2m): The Kc for H₂ + I₂ ⇌ 2HI is 49 at a certain temperature. What is Kc for 2HI ⇌ H₂ + I₂ and for ½H₂ + ½I₂ ⇌ HI?** — Reversing the equation inverts the constant: Kc(reverse) = **1/49**. Halving the coefficients takes the square root: Kc = **√49 = 7**."
+    ],
+    "keyPoints": [
+      "Active mass = molar concentration; solids/pure liquids = constant (omitted). Law of mass action: rate proportional to product of active masses raised to coefficients. Derivation: k_f[A]^a[B]^b = k_r[C]^c[D]^d → Kc = k_f/k_r = [C]^c[D]^d/[A]^a[B]^b. Kc depends only on temperature; catalyst no effect. Reverse → 1/Kc; double → Kc². Units (mol/L)^Δn; N₂+3H₂⇌2NH₃ gives (mol/L)⁻²; HI gives dimensionless."
+    ],
+    "importantConcepts": [
+      "The law of mass action is Le Chatelier's quantitative root: adding reactant raises the denominator, unbalancing the fraction, and the reaction must shift forward to restore Kc — concentration effects are arithmetic, not mystery."
+    ],
+    "examples": [
+      "***The Haber expression*** — [NH₃]²/([N₂][H₂]³) printed on every fertiliser-plant flow sheet: the whole ammonia industry optimises against one fraction."
+    ],
+    "universalFacts": [
+      "Blood's oxygen loading obeys mass action: more O₂ partial pressure (deep breathing) pushes haemoglobin toward the loaded form — the law written in physiology."
+    ],
+    "importantStatements": [
+      "\"At constant temperature, the rate of a chemical reaction is directly proportional to the product of the active masses of the reactants.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on the law of mass action exists in the current bank (NEB 2024's Kc numerical is solved in topic 54); all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Expression recipe: \"products up, reactants down, coefficients as powers, solids out\". Flip/scale rules: reverse 1/Kc, double Kc², halve √Kc. Units: (mol/L)^Δn."
+    ],
+    "examNotes": [
+      "In derivations, define active mass before using it and show the rate-equality step explicitly — the algebra from rates to Kc is where the marks live."
+    ],
+    "formulas": [
+      "- rate = k[A]^a[B]^b\n- Kc = [C]^c[D]^d / [A]^a[B]^b = k_f/k_r\n- N₂ + 3H₂ ⇌ 2NH₃: Kc = [NH₃]²/([N₂][H₂]³)\n- CaCO₃(s) ⇌ CaO(s) + CO₂(g): Kc = [CO₂]\n- Units of Kc = (mol/L)^Δn"
+    ],
+    "practice": [
+      "Write Kc expressions with units for PCl₅ ⇌ PCl₃ + Cl₂ and 2SO₂ + O₂ ⇌ 2SO₃.",
+      "If Kc = 4 for A ⇌ B, find Kc for 2B ⇌ 2A.",
+      "Explain why the active mass of pure water is omitted in esterification equilibria."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): State the law of mass action. Derive the expression for the equilibrium constant Kc for the general reaction aA + bB ⇌ cC + dD.** — **Statement:** at constant temperature, the rate of a chemical reaction is directly proportional to the product of the active masses (molar concentrations) of the reactants, each raised to the power of its stoichiometric coefficient in the balanced equation. **Derivation:** for aA + bB ⇌ cC + dD, the law gives rate(forward) = k_f[A]^a[B]^b and rate(reverse) = k_r[C]^c[D]^d, where k_f and k_r are the specific rate constants of the forward and reverse reactions. At equilibrium the two rates are equal: k_f[A]^a[B]^b = k_r[C]^c[D]^d. Dividing both sides by [A]^a[B]^b and by k_r: [C]^c[D]^d / [A]^a[B]^b = k_f/k_r. The ratio of two constants (both depending only on temperature) is itself a constant — the **equilibrium constant Kc**: Kc = [C]^c[D]^d / [A]^a[B]^b. Its value depends only on temperature; initial concentrations, pressure and catalysts do not affect it.",
+      "**NEB-style (2m): Write the equilibrium constant expression and units for (a) N₂(g) + 3H₂(g) ⇌ 2NH₃(g) and (b) CaCO₃(s) ⇌ CaO(s) + CO₂(g).** — **(a)** Kc = [NH₃]² / ([N₂][H₂]³) — each coefficient becomes a power. Δn = (moles gaseous products) − (moles gaseous reactants) = 2 − 4 = −2, so the units are (mol/L)⁻², i.e. L²/mol². **(b)** Calcium carbonate and calcium oxide are pure solids: their active masses are constant and conventionally taken as unity, so they do not appear. Kc = **[CO₂]**, with Δn = 1 and units mol/L.",
+      "**NEB-style (2m): The equilibrium constant for H₂(g) + I₂(g) ⇌ 2HI(g) is 49 at 450 °C. Calculate Kc for (a) 2HI ⇌ H₂ + I₂ and (b) ½H₂ + ½I₂ ⇌ HI at the same temperature.** — **(a)** Reversing an equation inverts its equilibrium constant: Kc = 1/49 ≈ **0.0204**. **(b)** Halving all coefficients takes the square root of the constant: Kc = √49 = **7**. Both values hold only at the same temperature (450 °C), since Kc is a function of temperature alone."
+    ]
+  }
 }

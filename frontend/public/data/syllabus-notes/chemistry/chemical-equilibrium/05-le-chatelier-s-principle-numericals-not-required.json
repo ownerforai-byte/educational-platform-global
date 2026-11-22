@@ -7,49 +7,288 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Le Chatelier's principle: if a system at equilibrium is disturbed by a change in concentration, pressure, or temperature, the equilibrium shifts in the direction that tends to oppose that change.",
-    "Adding a reactant, or removing a product, shifts the equilibrium toward the products. Adding a product, or removing a reactant, shifts it toward the reactants.",
-    "Raising the pressure shifts a gas equilibrium toward the side with fewer moles of gas. Lowering the pressure shifts it toward the side with more moles of gas. If both sides have the same number of gas moles, a pressure change does not move the position.",
-    "For an exothermic forward reaction, raising the temperature shifts the equilibrium toward the reactants, the endothermic direction. Lowering the temperature shifts it toward the products. A catalyst speeds both directions equally and does not change the equilibrium position.",
-    "This topic asks for the direction of the shift. It does not ask for a new numerical value of the equilibrium constant.",
-    "# Le Chatelier's Principle (numericals not required)\n\n## 1. Introduction\nChemical picture of **Le Chatelier's Principle (numericals not required)** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemical Equilibrium fill pass.\n\n## 2. Concepts and definitions\n### Le Chatelier's Principle (numericals not required)\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Le Chatelier's Principle (numericals not required) — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Le Chatelier's Principle (numericals not required) — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Le Chatelier's Principle (numericals not required) — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Le Chatelier's Principle (numericals not required) — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Rule That Runs the Chemical Industry\n\nLe Chatelier's principle (1888) predicts which way an equilibrium moves when conditions change: the system shifts to **oppose** the change. One sentence decides the Haber process's pressure, the contact process's temperature, and the marks on every equilibrium question — including two verified NEB sets (2024 and 2022) solved below.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The principle\n\n- **Statement:** when a system at equilibrium is subjected to a change in concentration, pressure (volume), or temperature, the equilibrium shifts in the direction that tends to **reduce (oppose) the effect** of that change.\n- It is qualitative — it predicts direction, never the new Kc (which only temperature alters).\n\n### 2.2 Effect of concentration\n\n- **Adding a reactant (or removing a product):** shifts the equilibrium **forward** (toward products) to consume the addition.\n- **Removing a reactant (or adding a product):** shifts **backward**.\n- Root: adding reactant raises Qc's denominator; the fraction drops below Kc and only forward reaction restores it.\n- Industrial use: continuous removal of NH₃ in Haber, or SO₃ in the contact process, drags the equilibrium forward — yield without changing Kc.\n\n### 2.3 Effect of pressure (volume)\n\n- **Increasing pressure** (decreasing volume) shifts toward the side with **fewer gaseous moles**; **decreasing pressure** shifts toward more gas moles.\n- **Δn = 0 reactions (e.g. H₂ + I₂ ⇌ 2HI):** pressure has **no effect** on the position.\n- Inert gas at constant volume: no shift (partial pressures unchanged); inert gas at constant pressure: shifts toward more gas moles (dilution effect).\n\n### 2.4 Effect of temperature\n\n- **Heating favours the endothermic direction; cooling favours the exothermic direction** — heat is treated as a \"product\" of exothermic reactions and a \"reactant\" of endothermic ones.\n- Temperature is the **only** factor that changes Kc itself: for an exothermic reaction Kc falls as T rises; for an endothermic one Kc rises.\n\n### 2.5 Catalyst\n\n- No effect on position — speeds both directions equally; equilibrium arrives sooner at the same composition.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Le Chatelier's principle** | Equilibrium shifts to oppose an imposed change | Pressure ↑ on NH₃ synthesis → forward |\n| **Endothermic shift** | Heating drives the heat-consuming direction | N₂O₄ → 2NO₂ on heating |\n| **Exothermic shift** | Cooling drives the heat-releasing direction | 2SO₂ + O₂ → 2SO₃ favoured low T |\n| **Δn = 0 case** | Pressure change does not move equilibrium | H₂ + I₂ ⇌ 2HI |\n| **Kc change** | Only temperature alters the constant | Exothermic: Kc ↓ as T ↑ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified NEB 2024 — pressure on ammonia synthesis\n\n- **Problem:** State Le Chatelier's principle. Predict the effect of increasing pressure on N₂(g) + 3H₂(g) ⇌ 2NH₃(g).\n- **Principle:** when a system at equilibrium is subjected to a change (concentration, pressure, temperature), it shifts in the direction that opposes the change.\n- **Analysis:** left side has 1 + 3 = **4 gas moles**; right side has **2**. Increasing pressure squeezes the system, which opposes by shifting toward fewer gas moles — the **forward direction**. More ammonia forms; the yield of NH₃ increases.\n\n### 4.2 Verified NEB 2022 — the N₂O₄/NO₂ balance\n\n- **Problem:** For N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ mol⁻¹, state and explain the effect of (i) increasing temperature and (ii) increasing pressure.\n- **(i) Temperature:** the forward reaction is **endothermic** (ΔH positive). Heating adds heat, which behaves like a reactant; the system consumes it by shifting **forward** — more NO₂ forms, and the brown colour deepens (NO₂ is brown, N₂O₄ colourless). Kc increases with temperature.\n- **(ii) Pressure:** left side 1 gas mole, right side 2. Increasing pressure shifts toward fewer moles — **backward** toward N₂O₄; the colour pales.\n\n### 4.3 The industrial synthesis of the principle\n\n- **Haber (N₂ + 3H₂ ⇌ 2NH₃, exothermic):** high pressure (forward, fewer moles) but moderate temperature (~450 °C) — high T would kill the exothermic yield, so a catalyst supplies the rate that low-ish temperature costs.\n- **Contact process (2SO₂ + O₂ ⇌ 2SO₃, exothermic):** excess air (concentration push) and pressure near atmospheric (Δn = 3 → 2 favours forward, but the gain is small so high pressure is not worth it); optimal ~450 °C with V₂O₅ catalyst.",
+    "## 5. Comparison Tables\n\n**The three levers at a glance**\n\n| Change | Shift direction | Why |\n|---|---|---|\n| Add reactant | Forward | Consume the addition |\n| Add product | Backward | Consume the addition |\n| Increase pressure | Fewer gas moles | Oppose compression |\n| Decrease pressure | More gas moles | Oppose expansion |\n| Heat | Endothermic side | Consume the added heat |\n| Cool | Exothermic side | Replenish removed heat |\n| Catalyst | None | Equal speed-up both ways |\n\n**Two verified NEB reactions**\n\n| Reaction | ΔH | Pressure ↑ | Temperature ↑ |\n|---|---|---|---|\n| N₂ + 3H₂ ⇌ 2NH₃ | −ve | Forward (4→2 moles) | Backward (exothermic) |\n| N₂O₄ ⇌ 2NO₂ | +57 kJ/mol | Backward (1→2 moles) | Forward (endothermic) |",
+    "## 6. Common Confusions\n\n**Pressure acts on gas moles, not molecules' weight:** count moles of gas only — solids and liquids (CaCO₃ ⇌ CaO + CO₂: Δn = +1 from gases alone) are invisible to pressure.",
+    "**Heating helps endothermic, not \"everything\":** students shift every reaction forward on heating; the direction is decided by which side absorbs the heat.",
+    "**Temperature is special:** concentration and pressure changes move the position but leave Kc untouched; only temperature writes a new Kc — mixing this up loses both reasoning marks.",
+    "## 7. Exam Application\n\n**Verified NEB 2024 (3m): State Le Chatelier's principle. Predict the effect of increasing pressure on N₂(g) + 3H₂(g) ⇌ 2NH₃(g).** — **Principle:** when a system at equilibrium is subjected to a change in concentration, pressure or temperature, the equilibrium shifts in the direction that tends to oppose (nullify) the change. **Effect of pressure:** the reactant side has 1 + 3 = 4 moles of gas while the product side has 2 moles. Increasing the pressure shifts the equilibrium toward the side with fewer gaseous moles to oppose the compression — the **forward direction**, increasing the yield of ammonia.",
+    "**Verified NEB 2022 (2m): For N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ mol⁻¹, state and explain the effect of increasing temperature on the equilibrium.** — The forward reaction is endothermic (ΔH positive). Raising the temperature adds heat to the system; by Le Chatelier's principle the equilibrium shifts in the direction that consumes the added heat — the **forward (endothermic) direction**. N₂O₄ dissociates further into NO₂: the concentration of NO₂ rises (the reddish-brown colour deepens) and Kc increases with temperature.",
+    "**NEB-style (2m): Why does continuous removal of ammonia increase its yield in the Haber process?** — Removing the product NH₃ lowers its concentration, so the reaction quotient Qc falls below Kc. By Le Chatelier's principle the equilibrium shifts **forward** to replace the removed ammonia, converting more N₂ and H₂. The constant Kc itself is unchanged — removal simply keeps pulling the position toward products, which is why industrial plants condense out ammonia continuously."
   ],
   "confusion": [],
   "bounds": [],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Le Chatelier's Principle (numericals not required)\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Predict the shift for 2SO₂ + O₂ ⇌ 2SO₃ (ΔH < 0) when: pressure increases, temperature increases, O₂ is added, SO₃ is removed.",
+    "For H₂ + I₂ ⇌ 2HI, does compressing the vessel change the equilibrium composition?",
+    "Why is the contact process run at ~450 °C rather than at 25 °C despite the exothermic ΔH?"
   ],
-  "examples": [],
+  "universalFacts": [
+    "Haemoglobin's oxygen loading is Le Chatelier in the bloodstream: at high altitude, lower O₂ partial pressure shifts the equilibrium toward release — the body compensates with more haemoglobin (concentration shift, the mountaineers' polycythaemia)."
+  ],
+  "examples": [
+    "***The two NEB answers*** — 2024's pressure question: count 4 gas moles left, 2 right, shift forward. 2022's temperature question: ΔH positive means heat sits on the reactant side, so added heat drives forward and the brown deepens. Two questions, one principle, opposite directions."
+  ],
   "practiceQuestions": [
-    "Q. Predict the shift for N2 + 3H2 ⇌ 2NH3 (ΔH < 0) when (a) pressure rises, (b) temperature rises. (2 marks) — (a) forward (4 → 2 moles), (b) backward (exothermic).",
-    "Q. Why does a catalyst not affect the yield of NH3? (1 mark) — it changes only the rate, not the equilibrium constant or position."
+    "**Verified NEB 2024 (3m): State Le Chatelier's principle. Predict the effect of increasing pressure on the equilibrium N₂(g) + 3H₂(g) ⇌ 2NH₃(g).** — **Principle:** when a change is imposed on a system at equilibrium (change in concentration, pressure or temperature), the equilibrium shifts in the direction that tends to oppose or nullify the effect of that change. **Prediction:** the balanced equation shows 1 + 3 = **4 moles of gas** on the reactant side and **2 moles of gas** on the product side. Increasing the pressure (by decreasing the volume) stresses the system by compression; the equilibrium opposes this by shifting toward the side occupying fewer moles of gas — the **forward (product) direction**. Therefore more NH₃ is formed at equilibrium: the yield of ammonia increases. (Note: the value of Kc itself is unchanged — pressure shifts the position, not the constant.)",
+    "**Verified NEB 2022 (2m): For the equilibrium N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ mol⁻¹. State and explain the effect of increasing temperature on this equilibrium.** — Since ΔH is positive, the forward reaction (N₂O₄ → 2NO₂) is **endothermic** and the reverse is exothermic. When the temperature is raised, heat is supplied to the system; by Le Chatelier's principle the equilibrium shifts in the direction that absorbs the added heat — the **endothermic forward direction**. More N₂O₄ dissociates: the concentration of NO₂ increases and the reddish-brown colour of the mixture deepens. The equilibrium constant Kc itself increases with temperature for this endothermic reaction.",
+    "**NEB-style (2m): In the Haber process, ammonia is continuously removed by liquefaction. Explain, using Le Chatelier's principle, why this increases the yield.** — Removing the product NH₃ decreases its concentration, so the reaction quotient Qc = [NH₃]²/([N₂][H₂]³) falls below Kc. The system is now product-poor, and by Le Chatelier's principle the equilibrium shifts **forward** to replace the removed ammonia, consuming more N₂ and H₂. Because the product never accumulates, the reverse reaction is perpetually starved and the overall conversion approaches completion — a higher practical yield than a static closed vessel allows, even though Kc itself is unchanged."
   ],
   "keyPoints": [
-    "• Le Chatelier's Principle",
-    "• Numericals not required"
+    "Principle: equilibrium shifts to OPPOSE the imposed change (concentration/pressure/temperature). Concentration: add reactant/remove product -> forward; reverse -> backward. Pressure: toward fewer gas moles (dn = 0: no effect; inert gas at constant V: no effect). Temperature: heat favours endothermic side, cooling favours exothermic side; ONLY temperature changes Kc. Catalyst: no shift. NEB 2024: pressure up on N2+3H2=2NH3 -> forward (4->2 moles). NEB 2022: N2O4=2NO2, dH = +57: heat -> forward (browner), pressure -> backward (paler). Haber: high P, moderate T, NH3 removal. Contact: excess O2, ~450 C, V2O5."
   ],
-  "summary": "Le Chatelier's Principle (numericals not required) (Chemical Equilibrium, Chemistry, class-11-notes) covers Le Chatelier's Principle, numericals not required. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Le Chatelier's principle is chemistry's thermostat: disturb an equilibrium and it moves to **oppose** you. **Concentration** changes shift toward consuming what you added (or restoring what you removed) — the arithmetic behind Qc falling below or rising above Kc. **Pressure** changes squeeze the side with more gas moles, so the balance retreats to fewer moles — 4 → 2 for ammonia synthesis (NEB 2024: shift forward, higher yield), 1 → 2 for N₂O₄ dissociation (shift backward); Δn = 0 systems like HI feel nothing. **Temperature** is the profound lever: heat joins the endothermic side, so warming N₂O₄ ⇌ 2NO₂ (ΔH = +57 kJ/mol, NEB 2022) drives it forward and deepens the brown, while warming the exothermic Haber reaction would strangle its own yield — hence the compromise ~450 °C with a catalyst. Only temperature rewrites Kc; catalysts change nothing but the clock. Industry reads the principle like a manual: Haber runs high pressure, moderate heat, and continuous ammonia removal; the contact process floods in cheap oxygen and condenses its SO₃. Count the gas moles, place the heat, oppose the change — the whole topic in one habit.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Le Chatelier's Principle (numericals not required)\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Le Chatelier's principle predicts the shift that:",
       "options": [
-        "True",
-        "False"
+        "Speeds the reaction",
+        "Opposes the imposed change",
+        "Increases Kc",
+        "Completes the reaction"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Opposition is the whole rule."
+    },
+    {
+      "question": "Increasing pressure on N2 + 3H2 = 2NH3 shifts:",
+      "options": [
+        "Backward",
+        "Forward",
+        "No change",
+        "Stops reaction"
+      ],
+      "answer": "B",
+      "explanation": "4 gas moles -> 2: fewer-mole side wins (NEB 2024)."
+    },
+    {
+      "question": "Heating N2O4 = 2NO2 (dH = +57) shifts:",
+      "options": [
+        "Backward",
+        "Forward",
+        "No change",
+        "Depends on catalyst"
+      ],
+      "answer": "B",
+      "explanation": "Endothermic forward absorbs the added heat (NEB 2022)."
+    },
+    {
+      "question": "Which factor changes the value of Kc?",
+      "options": [
+        "Concentration",
+        "Pressure",
+        "Temperature",
+        "Catalyst"
+      ],
+      "answer": "C",
+      "explanation": "Only temperature rewrites the constant."
+    },
+    {
+      "question": "Pressure has no effect on the position of:",
+      "options": [
+        "N2 + 3H2 = 2NH3",
+        "H2 + I2 = 2HI",
+        "N2O4 = 2NO2",
+        "PCl5 = PCl3 + Cl2"
+      ],
+      "answer": "B",
+      "explanation": "dn = 0 - equal gas moles both sides."
+    },
+    {
+      "question": "Removing NH3 continuously in Haber:",
+      "options": [
+        "Shifts backward",
+        "Shifts forward",
+        "Changes Kc",
+        "Stops reaction"
+      ],
+      "answer": "B",
+      "explanation": "Product removal drags the position forward."
+    },
+    {
+      "question": "An inert gas added at constant volume:",
+      "options": [
+        "Shifts forward",
+        "Shifts backward",
+        "No shift",
+        "Changes Kc"
+      ],
+      "answer": "C",
+      "explanation": "Partial pressures unchanged - no stress."
+    },
+    {
+      "question": "For the exothermic contact process, raising temperature:",
+      "options": [
+        "Increases SO3 yield",
+        "Decreases SO3 yield",
+        "No effect",
+        "Changes dn"
+      ],
+      "answer": "B",
+      "explanation": "Heat favours the endothermic reverse."
     }
   ],
   "examShortTricks": [
-    "Trick 1: One sentence covers all shifts: the system opposes ANY imposed change — add reactant → forward; add product → backward; raise T → endothermic direction; raise P → fewer gas moles.",
-    "Trick 2: For Haber (N2 + 3H2 ⇌ 2NH3, exothermic): high P, low T, remove NH3 — the standard 3-mark application.",
-    "Trick 3: Catalysts shift NOTHING — they only speed both directions equally; saying 'catalyst shifts equilibrium' loses the mark.",
-    "Trick 4: Inert gas at constant volume: no shift; at constant pressure: shifts toward more moles."
+    "Mole count first: fewer gas moles wins under pressure. Heat on the reactant side = endothermic = heating drives forward. \"Only T changes Kc\" - write it in every answer. Colour cue: NO2 brown, N2O4 colourless."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Rule That Runs the Chemical Industry\n\nLe Chatelier's principle (1888) predicts which way an equilibrium moves when conditions change: the system shifts to **oppose** the change. One sentence decides the Haber process's pressure, the contact process's temperature, and the marks on every equilibrium question — including two verified NEB sets (2024 and 2022) solved below.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The principle\n\n- **Statement:** when a system at equilibrium is subjected to a change in concentration, pressure (volume), or temperature, the equilibrium shifts in the direction that tends to **reduce (oppose) the effect** of that change.\n- It is qualitative — it predicts direction, never the new Kc (which only temperature alters).\n\n### 2.2 Effect of concentration\n\n- **Adding a reactant (or removing a product):** shifts the equilibrium **forward** (toward products) to consume the addition.\n- **Removing a reactant (or adding a product):** shifts **backward**.\n- Root: adding reactant raises Qc's denominator; the fraction drops below Kc and only forward reaction restores it.\n- Industrial use: continuous removal of NH₃ in Haber, or SO₃ in the contact process, drags the equilibrium forward — yield without changing Kc.\n\n### 2.3 Effect of pressure (volume)\n\n- **Increasing pressure** (decreasing volume) shifts toward the side with **fewer gaseous moles**; **decreasing pressure** shifts toward more gas moles.\n- **Δn = 0 reactions (e.g. H₂ + I₂ ⇌ 2HI):** pressure has **no effect** on the position.\n- Inert gas at constant volume: no shift (partial pressures unchanged); inert gas at constant pressure: shifts toward more gas moles (dilution effect).\n\n### 2.4 Effect of temperature\n\n- **Heating favours the endothermic direction; cooling favours the exothermic direction** — heat is treated as a \"product\" of exothermic reactions and a \"reactant\" of endothermic ones.\n- Temperature is the **only** factor that changes Kc itself: for an exothermic reaction Kc falls as T rises; for an endothermic one Kc rises.\n\n### 2.5 Catalyst\n\n- No effect on position — speeds both directions equally; equilibrium arrives sooner at the same composition.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Le Chatelier's principle** | Equilibrium shifts to oppose an imposed change | Pressure ↑ on NH₃ synthesis → forward |\n| **Endothermic shift** | Heating drives the heat-consuming direction | N₂O₄ → 2NO₂ on heating |\n| **Exothermic shift** | Cooling drives the heat-releasing direction | 2SO₂ + O₂ → 2SO₃ favoured low T |\n| **Δn = 0 case** | Pressure change does not move equilibrium | H₂ + I₂ ⇌ 2HI |\n| **Kc change** | Only temperature alters the constant | Exothermic: Kc ↓ as T ↑ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified NEB 2024 — pressure on ammonia synthesis\n\n- **Problem:** State Le Chatelier's principle. Predict the effect of increasing pressure on N₂(g) + 3H₂(g) ⇌ 2NH₃(g).\n- **Principle:** when a system at equilibrium is subjected to a change (concentration, pressure, temperature), it shifts in the direction that opposes the change.\n- **Analysis:** left side has 1 + 3 = **4 gas moles**; right side has **2**. Increasing pressure squeezes the system, which opposes by shifting toward fewer gas moles — the **forward direction**. More ammonia forms; the yield of NH₃ increases.\n\n### 4.2 Verified NEB 2022 — the N₂O₄/NO₂ balance\n\n- **Problem:** For N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ mol⁻¹, state and explain the effect of (i) increasing temperature and (ii) increasing pressure.\n- **(i) Temperature:** the forward reaction is **endothermic** (ΔH positive). Heating adds heat, which behaves like a reactant; the system consumes it by shifting **forward** — more NO₂ forms, and the brown colour deepens (NO₂ is brown, N₂O₄ colourless). Kc increases with temperature.\n- **(ii) Pressure:** left side 1 gas mole, right side 2. Increasing pressure shifts toward fewer moles — **backward** toward N₂O₄; the colour pales.\n\n### 4.3 The industrial synthesis of the principle\n\n- **Haber (N₂ + 3H₂ ⇌ 2NH₃, exothermic):** high pressure (forward, fewer moles) but moderate temperature (~450 °C) — high T would kill the exothermic yield, so a catalyst supplies the rate that low-ish temperature costs.\n- **Contact process (2SO₂ + O₂ ⇌ 2SO₃, exothermic):** excess air (concentration push) and pressure near atmospheric (Δn = 3 → 2 favours forward, but the gain is small so high pressure is not worth it); optimal ~450 °C with V₂O₅ catalyst.",
+      "## 5. Comparison Tables\n\n**The three levers at a glance**\n\n| Change | Shift direction | Why |\n|---|---|---|\n| Add reactant | Forward | Consume the addition |\n| Add product | Backward | Consume the addition |\n| Increase pressure | Fewer gas moles | Oppose compression |\n| Decrease pressure | More gas moles | Oppose expansion |\n| Heat | Endothermic side | Consume the added heat |\n| Cool | Exothermic side | Replenish removed heat |\n| Catalyst | None | Equal speed-up both ways |\n\n**Two verified NEB reactions**\n\n| Reaction | ΔH | Pressure ↑ | Temperature ↑ |\n|---|---|---|---|\n| N₂ + 3H₂ ⇌ 2NH₃ | −ve | Forward (4→2 moles) | Backward (exothermic) |\n| N₂O₄ ⇌ 2NO₂ | +57 kJ/mol | Backward (1→2 moles) | Forward (endothermic) |",
+      "## 6. Common Confusions\n\n**Pressure acts on gas moles, not molecules' weight:** count moles of gas only — solids and liquids (CaCO₃ ⇌ CaO + CO₂: Δn = +1 from gases alone) are invisible to pressure.",
+      "**Heating helps endothermic, not \"everything\":** students shift every reaction forward on heating; the direction is decided by which side absorbs the heat.",
+      "**Temperature is special:** concentration and pressure changes move the position but leave Kc untouched; only temperature writes a new Kc — mixing this up loses both reasoning marks.",
+      "## 7. Exam Application\n\n**Verified NEB 2024 (3m): State Le Chatelier's principle. Predict the effect of increasing pressure on N₂(g) + 3H₂(g) ⇌ 2NH₃(g).** — **Principle:** when a system at equilibrium is subjected to a change in concentration, pressure or temperature, the equilibrium shifts in the direction that tends to oppose (nullify) the change. **Effect of pressure:** the reactant side has 1 + 3 = 4 moles of gas while the product side has 2 moles. Increasing the pressure shifts the equilibrium toward the side with fewer gaseous moles to oppose the compression — the **forward direction**, increasing the yield of ammonia.",
+      "**Verified NEB 2022 (2m): For N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ mol⁻¹, state and explain the effect of increasing temperature on the equilibrium.** — The forward reaction is endothermic (ΔH positive). Raising the temperature adds heat to the system; by Le Chatelier's principle the equilibrium shifts in the direction that consumes the added heat — the **forward (endothermic) direction**. N₂O₄ dissociates further into NO₂: the concentration of NO₂ rises (the reddish-brown colour deepens) and Kc increases with temperature.",
+      "**NEB-style (2m): Why does continuous removal of ammonia increase its yield in the Haber process?** — Removing the product NH₃ lowers its concentration, so the reaction quotient Qc falls below Kc. By Le Chatelier's principle the equilibrium shifts **forward** to replace the removed ammonia, converting more N₂ and H₂. The constant Kc itself is unchanged — removal simply keeps pulling the position toward products, which is why industrial plants condense out ammonia continuously."
+    ],
+    "keyPoints": [
+      "Principle: equilibrium shifts to OPPOSE the imposed change (concentration/pressure/temperature). Concentration: add reactant/remove product -> forward; reverse -> backward. Pressure: toward fewer gas moles (dn = 0: no effect; inert gas at constant V: no effect). Temperature: heat favours endothermic side, cooling favours exothermic side; ONLY temperature changes Kc. Catalyst: no shift. NEB 2024: pressure up on N2+3H2=2NH3 -> forward (4->2 moles). NEB 2022: N2O4=2NO2, dH = +57: heat -> forward (browner), pressure -> backward (paler). Haber: high P, moderate T, NH3 removal. Contact: excess O2, ~450 C, V2O5."
+    ],
+    "importantConcepts": [
+      "Heat is a participant: write it on the exothermic product side (N₂ + 3H₂ ⇌ 2NH₃ + heat) or the endothermic reactant side (N₂O₄ + heat ⇌ 2NO₂) and every temperature question becomes reading the equation."
+    ],
+    "examples": [
+      "***The two NEB answers*** — 2024's pressure question: count 4 gas moles left, 2 right, shift forward. 2022's temperature question: ΔH positive means heat sits on the reactant side, so added heat drives forward and the brown deepens. Two questions, one principle, opposite directions."
+    ],
+    "universalFacts": [
+      "Haemoglobin's oxygen loading is Le Chatelier in the bloodstream: at high altitude, lower O₂ partial pressure shifts the equilibrium toward release — the body compensates with more haemoglobin (concentration shift, the mountaineers' polycythaemia)."
+    ],
+    "importantStatements": [
+      "\"When a system at equilibrium is subjected to a change in concentration, temperature or pressure, the system shifts its equilibrium position to counteract the effect of the change.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 (Le Chatelier statement + pressure effect on ammonia synthesis) and NEB 2022 (temperature effect on N₂O₄ ⇌ 2NO₂, ΔH = +57 kJ/mol) — both solved above; remaining items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Mole count first: fewer gas moles wins under pressure. Heat on the reactant side = endothermic = heating drives forward. \"Only T changes Kc\" - write it in every answer. Colour cue: NO2 brown, N2O4 colourless."
+    ],
+    "examNotes": [
+      "For full marks pair the shift with its reason (\"fewer moles opposes the compression\") and state the observable (more NH3 / deeper brown) — prediction plus explanation is the NEB pattern."
+    ],
+    "formulas": [
+      "- N₂(g) + 3H₂(g) ⇌ 2NH₃(g), ΔH < 0: pressure ↑ → forward (4 → 2 gas moles)\n- N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ/mol: T ↑ → forward; P ↑ → backward\n- 2SO₂ + O₂ ⇌ 2SO₃, ΔH < 0: low T, excess O₂ favour SO₃\n- Qc vs Kc logic behind every concentration shift"
+    ],
+    "practice": [
+      "Predict the shift for 2SO₂ + O₂ ⇌ 2SO₃ (ΔH < 0) when: pressure increases, temperature increases, O₂ is added, SO₃ is removed.",
+      "For H₂ + I₂ ⇌ 2HI, does compressing the vessel change the equilibrium composition?",
+      "Why is the contact process run at ~450 °C rather than at 25 °C despite the exothermic ΔH?"
+    ],
+    "practiceQuestions": [
+      "**Verified NEB 2024 (3m): State Le Chatelier's principle. Predict the effect of increasing pressure on the equilibrium N₂(g) + 3H₂(g) ⇌ 2NH₃(g).** — **Principle:** when a change is imposed on a system at equilibrium (change in concentration, pressure or temperature), the equilibrium shifts in the direction that tends to oppose or nullify the effect of that change. **Prediction:** the balanced equation shows 1 + 3 = **4 moles of gas** on the reactant side and **2 moles of gas** on the product side. Increasing the pressure (by decreasing the volume) stresses the system by compression; the equilibrium opposes this by shifting toward the side occupying fewer moles of gas — the **forward (product) direction**. Therefore more NH₃ is formed at equilibrium: the yield of ammonia increases. (Note: the value of Kc itself is unchanged — pressure shifts the position, not the constant.)",
+      "**Verified NEB 2022 (2m): For the equilibrium N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ mol⁻¹. State and explain the effect of increasing temperature on this equilibrium.** — Since ΔH is positive, the forward reaction (N₂O₄ → 2NO₂) is **endothermic** and the reverse is exothermic. When the temperature is raised, heat is supplied to the system; by Le Chatelier's principle the equilibrium shifts in the direction that absorbs the added heat — the **endothermic forward direction**. More N₂O₄ dissociates: the concentration of NO₂ increases and the reddish-brown colour of the mixture deepens. The equilibrium constant Kc itself increases with temperature for this endothermic reaction.",
+      "**NEB-style (2m): In the Haber process, ammonia is continuously removed by liquefaction. Explain, using Le Chatelier's principle, why this increases the yield.** — Removing the product NH₃ decreases its concentration, so the reaction quotient Qc = [NH₃]²/([N₂][H₂]³) falls below Kc. The system is now product-poor, and by Le Chatelier's principle the equilibrium shifts **forward** to replace the removed ammonia, consuming more N₂ and H₂. Because the product never accumulates, the reverse reaction is perpetually starved and the overall conversion approaches completion — a higher practical yield than a static closed vessel allows, even though Kc itself is unchanged."
+    ]
+  },
+  "importantConcepts": [
+    "Heat is a participant: write it on the exothermic product side (N₂ + 3H₂ ⇌ 2NH₃ + heat) or the endothermic reactant side (N₂O₄ + heat ⇌ 2NO₂) and every temperature question becomes reading the equation."
+  ],
+  "importantStatements": [
+    "\"When a system at equilibrium is subjected to a change in concentration, temperature or pressure, the system shifts its equilibrium position to counteract the effect of the change.\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2024 (Le Chatelier statement + pressure effect on ammonia synthesis) and NEB 2022 (temperature effect on N₂O₄ ⇌ 2NO₂, ΔH = +57 kJ/mol) — both solved above; remaining items are NEB-style practice."
+  ],
+  "examNotes": [
+    "For full marks pair the shift with its reason (\"fewer moles opposes the compression\") and state the observable (more NH3 / deeper brown) — prediction plus explanation is the NEB pattern."
+  ],
+  "formulas": [
+    "- N₂(g) + 3H₂(g) ⇌ 2NH₃(g), ΔH < 0: pressure ↑ → forward (4 → 2 gas moles)\n- N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ/mol: T ↑ → forward; P ↑ → backward\n- 2SO₂ + O₂ ⇌ 2SO₃, ΔH < 0: low T, excess O₂ favour SO₃\n- Qc vs Kc logic behind every concentration shift"
+  ],
+  "mcs": [
+    {
+      "question": "Le Chatelier's principle predicts the shift that:",
+      "options": [
+        "Speeds the reaction",
+        "Opposes the imposed change",
+        "Increases Kc",
+        "Completes the reaction"
+      ],
+      "answer": "B",
+      "explanation": "Opposition is the whole rule."
+    },
+    {
+      "question": "Increasing pressure on N2 + 3H2 = 2NH3 shifts:",
+      "options": [
+        "Backward",
+        "Forward",
+        "No change",
+        "Stops reaction"
+      ],
+      "answer": "B",
+      "explanation": "4 gas moles -> 2: fewer-mole side wins (NEB 2024)."
+    },
+    {
+      "question": "Heating N2O4 = 2NO2 (dH = +57) shifts:",
+      "options": [
+        "Backward",
+        "Forward",
+        "No change",
+        "Depends on catalyst"
+      ],
+      "answer": "B",
+      "explanation": "Endothermic forward absorbs the added heat (NEB 2022)."
+    },
+    {
+      "question": "Which factor changes the value of Kc?",
+      "options": [
+        "Concentration",
+        "Pressure",
+        "Temperature",
+        "Catalyst"
+      ],
+      "answer": "C",
+      "explanation": "Only temperature rewrites the constant."
+    },
+    {
+      "question": "Pressure has no effect on the position of:",
+      "options": [
+        "N2 + 3H2 = 2NH3",
+        "H2 + I2 = 2HI",
+        "N2O4 = 2NO2",
+        "PCl5 = PCl3 + Cl2"
+      ],
+      "answer": "B",
+      "explanation": "dn = 0 - equal gas moles both sides."
+    },
+    {
+      "question": "Removing NH3 continuously in Haber:",
+      "options": [
+        "Shifts backward",
+        "Shifts forward",
+        "Changes Kc",
+        "Stops reaction"
+      ],
+      "answer": "B",
+      "explanation": "Product removal drags the position forward."
+    },
+    {
+      "question": "An inert gas added at constant volume:",
+      "options": [
+        "Shifts forward",
+        "Shifts backward",
+        "No shift",
+        "Changes Kc"
+      ],
+      "answer": "C",
+      "explanation": "Partial pressures unchanged - no stress."
+    },
+    {
+      "question": "For the exothermic contact process, raising temperature:",
+      "options": [
+        "Increases SO3 yield",
+        "Decreases SO3 yield",
+        "No effect",
+        "Changes dn"
+      ],
+      "answer": "B",
+      "explanation": "Heat favours the endothermic reverse."
+    }
   ]
 }
