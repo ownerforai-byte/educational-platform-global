@@ -261,32 +261,33 @@ describe("signup stores the account", () => {
   it("writes the profile row, the Firestore doc and the device binding", async () => {
     const { res, body, deviceCookie } = await signup(NEW_UID, "student@example.com");
 
+    // The approval gate is retired (owner decision): the signup session starts
+    // immediately, on the member plan.
     expect(res.status).toBe(200);
-    expect(body.code).toBe("PENDING_APPROVAL");
-    expect(typeof body.statusToken).toBe("string");
-    expect(body.accessToken).toBeNull();
+    expect(body.code).toBeUndefined();
+    expect((body.user as { id?: string }).id).toBe(NEW_UID);
+    expect(typeof body.accessToken).toBe("string");
 
     // Supabase is the source of truth for what the app reads.
     const row = state.profiles.get(NEW_UID);
     expect(row).toBeTruthy();
-    expect(row).toMatchObject({ access_status: "PENDING", role: "member", full_name: "Test Student" });
+    expect(row).toMatchObject({ access_status: "ACTIVE", role: "member", plan: "member", full_name: "Test Student" });
     expect(typeof row?.created_at).toBe("string");
 
-    // ...and the Firestore contract doc the approval bot watches exists too.
-    expect(state.firestore.get(NEW_UID)).toMatchObject({ access_status: "PENDING" });
+    // ...and the Firestore contract doc carries the same state.
+    expect(state.firestore.get(NEW_UID)).toMatchObject({ access_status: "ACTIVE" });
 
     // The device is bound so a second account cannot slip through.
     expect(deviceCookie).toMatch(/^neb-gid=/);
     expect([...state.usage.keys()].some((key) => key.startsWith("signupdev:") && key.endsWith(NEW_UID))).toBe(true);
   });
 
-  it("still answers pending when the profile write fails — not a 500", async () => {
+  it("still signs the user in when the profile write fails — not a 500", async () => {
     state.failSupabaseWrites.value = true;
     const { res, body } = await signup(NEW_UID, "student@example.com");
     expect(res.status).toBe(200);
-    expect(body.code).toBe("PENDING_APPROVAL");
-    expect(typeof body.statusToken).toBe("string");
-    expect(body.message).toMatch(/waiting for owner approval/i);
+    expect((body.user as { id?: string }).id).toBe(NEW_UID);
+    expect(typeof body.accessToken).toBe("string");
   });
 
   it("lets the owner through immediately with a session", async () => {
@@ -323,13 +324,15 @@ describe("login reflects the stored approval state", () => {
     expect(session?.toLowerCase()).toContain("httponly");
   });
 
-  it("answers pending (no session) while the account waits for approval", async () => {
+  it("signs a legacy PENDING account in (the approval gate is retired)", async () => {
     await signup(NEW_UID, "student@example.com");
+    const row = state.profiles.get(NEW_UID);
+    if (row) row.access_status = "PENDING"; // a row left from the gate's era
     const res = await login(NEW_UID, "student@example.com");
     expect(res.status).toBe(200);
-    const body = (await res.json()) as { code?: string };
-    expect(body.code).toBe("PENDING_APPROVAL");
-    expect(res.headers.getSetCookie().some((c) => c.startsWith("sb-access-token="))).toBe(false);
+    const body = (await res.json()) as { user?: { id: string } };
+    expect(body.user?.id).toBe(NEW_UID);
+    expect(res.headers.getSetCookie().some((c) => c.startsWith("sb-access-token="))).toBe(true);
   });
 
   it("rejects a denied account with the actionable code", async () => {

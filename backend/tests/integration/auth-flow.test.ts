@@ -357,7 +357,9 @@ describe("auth flow", () => {
     expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(true);
   });
 
-  test("OAuth session routes pending accounts to the waiting screen without issuing cookies", async () => {
+  test("OAuth session treats a legacy PENDING account as active and issues cookies", async () => {
+    // The approval gate is retired (owner decision): a PENDING row left from
+    // the gate's era signs in like any other account. Only REJECTED is denied.
     const userId = "11111111-1111-4111-8111-111111111111";
     mocked.auth.getUser.mockResolvedValue({
       data: { user: { id: userId, email: "google@example.com", app_metadata: { provider: "google" } } },
@@ -365,36 +367,25 @@ describe("auth flow", () => {
     });
     mockProfiles({ access_status: "PENDING" });
     const state = "d".repeat(64);
-    const originalKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    process.env.SUPABASE_SERVICE_ROLE_KEY = "test-status-signing-key";
-    try {
-      const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
-        method: "POST",
-        headers: {
-          Origin: "http://localhost:5173",
-          Cookie: `oauth-csrf-token=${state}`,
-          "X-CSRF-Token": state,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "refresh", state }),
-      });
-      // PENDING is not a deny: 200 + statusToken so the client shows the
-      // waiting screen while the auto-approval bot runs (contract 2026).
-      expect(res.status).toBe(200);
-      expect(res.headers.get("cache-control")).toBe("no-store");
-      const payload = await res.json();
-      expect(payload).toMatchObject({
-        code: "PENDING_APPROVAL",
-        accessStatus: "PENDING",
-        user: null,
-        accessToken: null,
-      });
-      expect(verifyStatusToken(payload.statusToken)).toBe(userId);
-      expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
-    } finally {
-      if (originalKey === undefined) delete process.env.SUPABASE_SERVICE_ROLE_KEY;
-      else process.env.SUPABASE_SERVICE_ROLE_KEY = originalKey;
-    }
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "refresh", state }),
+    });
+    expect(res.status).toBe(200);
+    expect(res.headers.get("cache-control")).toBe("no-store");
+    expect(await res.json()).toMatchObject({
+      user: { id: userId, email: "google@example.com" },
+      accessToken: VALID_TOKEN,
+    });
+    const cookies = setCookiesOf(res);
+    expect(cookies.some((cookie) => cookie.startsWith(`sb-access-token=${VALID_TOKEN}`))).toBe(true);
+    expect(cookies.some((cookie) => cookie.startsWith("sb-refresh-token=refresh"))).toBe(true);
   });
 
   test("login success returns 200 and sets sb-access-token session cookie", async () => {
@@ -468,13 +459,14 @@ describe("auth flow", () => {
   test.each([
     { name: "pending", profile: { role: "member", access_status: "PENDING" }, error: null },
     { name: "rejected", profile: { role: "member", access_status: "REJECTED" }, error: null },
-    // "approved" is a recognized state (normalized to ACTIVE); fail-closed is
-    // asserted with a genuinely unknown status value.
+    // The approval gate is retired (owner decision): a legacy PENDING row and
+    // any unrecognized/missing status sign in like an active account. Only a
+    // REJECTED account — an owner decision on that account — is denied.
     { name: "unknown status", profile: { role: "member", access_status: "bogus_status" }, error: null },
     { name: "missing status", profile: { role: "member" }, error: null },
     { name: "missing profile", profile: null, error: null },
     { name: "profile lookup failure", profile: null, error: { message: "Unavailable" } },
-  ])("login never issues a session for a non-owner with $name", async ({ name, profile, error }) => {
+  ])("login issues a session for a non-owner with $name unless REJECTED", async ({ name, profile, error }) => {
     const userId = "11111111-1111-4111-8111-111111111111";
     mocked.auth.signInWithPassword.mockResolvedValue({
       data: {
@@ -484,47 +476,36 @@ describe("auth flow", () => {
       error: null,
     });
     mockProfiles(profile, error);
-    vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "test-status-signing-key");
-    try {
-      const res = await fetch(`${baseUrl}/api/auth/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: "student@example.com", password: "password123" }),
-      });
-      // REJECTED stays a hard deny (403); PENDING-ish states get the 200
-      // "waiting" contract response — never a session either way.
-      expect(res.status).toBe(name === "rejected" ? 403 : 200);
-      expect(res.headers.get("cache-control")).toBe("private, no-store");
+    const res = await fetch(`${baseUrl}/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "student@example.com", password: "password123" }),
+    });
+    expect(res.headers.get("cache-control")).toBe("private, no-store");
+    if (name === "rejected") {
+      // REJECTED stays a hard deny (403 + signed statusToken, never a session).
+      expect(res.status).toBe(403);
       const body = await res.json();
+      expect(body.code).toBe("ACCOUNT_REJECTED");
       expect(verifyStatusToken(body.statusToken)).toBe(userId);
-      if (name === "rejected") {
-        expect(body.code).toBe("ACCOUNT_REJECTED");
-        expect(body).not.toHaveProperty("accessToken");
-        expect(body).not.toHaveProperty("user");
-      } else {
-        expect(body.code).toBe("PENDING_APPROVAL");
-        expect(body.accessStatus).toBe("PENDING");
-        expect(body.accessToken).toBeNull();
-        expect(body.user).toBeNull();
-      }
+      expect(body).not.toHaveProperty("accessToken");
+      expect(body).not.toHaveProperty("user");
       expect(setCookiesOf(res)).toEqual([]);
-      // Approval is manual (owner console), so login never starts the timed
-      // access-request clock — no PENDING path touches user_access_requests.
-      await vi.waitFor(() => {
-        const tables = mocked.from.mock.calls.map((call) => call[0]);
-        expect(tables[0]).toBe("profiles");
-        expect(tables.filter((t) => t === "profiles").length).toBeGreaterThanOrEqual(1);
-        expect(tables).not.toContain("user_access_requests");
-      });
-    } finally {
-      vi.unstubAllEnvs();
+      return;
     }
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.user).toMatchObject({ id: userId, email: "student@example.com" });
+    expect(body.accessToken).toBe(VALID_TOKEN);
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith(`sb-access-token=${VALID_TOKEN}`))).toBe(true);
   });
 
   test.each([
     { email: "sahrocky81@gmail.com", profile: null },
     { email: "operator@example.com", profile: { role: "owner", access_status: "REJECTED" } },
-  ])("existing owner $email can still sign in independently", async ({ email, profile }) => {
+  ])("existing owner $email signs in like any account ($profile)", async ({ email, profile }) => {
+    // The gate is retired: an owner signs in through the same path. A REJECTED
+    // status is an owner decision on that account and denies it like anyone.
     mocked.auth.signInWithPassword.mockResolvedValue({
       data: {
         user: { id: "owner-1", email },
@@ -538,6 +519,11 @@ describe("auth flow", () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password: "password123" }),
     });
+    if (profile && profile.access_status === "REJECTED") {
+      expect(res.status).toBe(403);
+      expect(setCookiesOf(res)).toEqual([]);
+      return;
+    }
     expect(res.status).toBe(200);
     expect((await res.json()).user.role).toBe("owner");
     expect(res.headers.get("cache-control")).toBe("private, no-store");
@@ -643,15 +629,16 @@ describe("auth flow", () => {
   });
 
   test.each([
-    { name: "PENDING", profile: { role: "member", access_status: "PENDING" }, error: null },
-    { name: "REJECTED", profile: { role: "member", access_status: "REJECTED" }, error: null },
-    // "approved" is a recognized state (normalized to ACTIVE); fail-closed is
-    // asserted with a genuinely unknown status value.
-    { name: "unknown status", profile: { role: "member", access_status: "bogus_status" }, error: null },
-    { name: "missing status", profile: { role: "member" }, error: null },
-    { name: "missing profile", profile: null, error: null },
-    { name: "profile read error", profile: null, error: { message: "Profile unavailable" } },
-  ])("valid JWT with $name cannot read private /api/progress", async ({ profile, error }) => {
+    { name: "REJECTED", profile: { role: "member", access_status: "REJECTED" }, error: null, denied: true },
+    // The approval gate is retired (owner decision): a legacy PENDING row and
+    // any unrecognized/missing status read like an active account. Only a
+    // REJECTED account — an owner decision on that account — is denied.
+    { name: "PENDING", profile: { role: "member", access_status: "PENDING" }, error: null, denied: false },
+    { name: "unknown status", profile: { role: "member", access_status: "bogus_status" }, error: null, denied: false },
+    { name: "missing status", profile: { role: "member" }, error: null, denied: false },
+    { name: "missing profile", profile: null, error: null, denied: false },
+    { name: "profile read error", profile: null, error: { message: "Profile unavailable" }, denied: false },
+  ])("valid JWT with $name reads private /api/progress unless REJECTED", async ({ profile, error, denied }) => {
     mocked.auth.getUser.mockResolvedValue({
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
@@ -662,11 +649,16 @@ describe("auth flow", () => {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
 
-    expect(res.status).toBe(401);
-    expect(await res.json()).toEqual({ error: "Unauthorized" });
     expect(res.headers.get("cache-control")).toBe("private, no-store");
     expect(mocked.auth.getUser).toHaveBeenCalledExactlyOnceWith(VALID_TOKEN);
     expectOnlyResolverReads(chains, "user-1");
+    if (denied) {
+      expect(res.status).toBe(401);
+      expect(await res.json()).toEqual({ error: "Unauthorized" });
+      return;
+    }
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual([]);
   });
 
   test("a rejected Pro cannot read /api/progress even with a Pro plan and premium flag", async () => {
@@ -719,10 +711,12 @@ describe("auth flow", () => {
   );
 
   test.each([
-    { name: "allowlisted owner with unavailable profile", email: "sahrocky81@gmail.com", profile: null, error: { message: "Profile unavailable" } },
-    { name: "persisted owner with REJECTED status", email: "operator@example.com", profile: { role: "owner", access_status: "REJECTED" }, error: null },
-    { name: "normalized legacy owner with PENDING status", email: "operator@example.com", profile: { role: " ADMIN ", access_status: "PENDING" }, error: null },
-  ])("$name retains independent authenticated owner access", async ({ email, profile, error }) => {
+    { name: "allowlisted owner with unavailable profile", email: "sahrocky81@gmail.com", profile: null, error: { message: "Profile unavailable" }, denied: false },
+    { name: "normalized legacy owner with PENDING status", email: "operator@example.com", profile: { role: " ADMIN ", access_status: "PENDING" }, error: null, denied: false },
+    // A REJECTED status is an owner decision on that account and denies it
+    // like any other account — the retired gate kept this one denial.
+    { name: "persisted owner with REJECTED status", email: "operator@example.com", profile: { role: "owner", access_status: "REJECTED" }, error: null, denied: true },
+  ])("$name", async ({ email, profile, error, denied }) => {
     mocked.auth.getUser.mockResolvedValue({
       data: { user: { id: "owner-1", email } },
       error: null,
@@ -733,10 +727,15 @@ describe("auth flow", () => {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
 
-    expect(res.status).toBe(200);
-    expect(await res.json()).toEqual({ ok: "owner" });
     expect(res.headers.get("cache-control")).toBe("private, no-store");
     expectOnlyResolverReads(chains, "owner-1");
+    if (denied) {
+      expect(res.status).toBe(401);
+      expect(await res.json()).toEqual({ error: "Unauthorized" });
+      return;
+    }
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ ok: "owner" });
   });
 
   test("logout clears sb-access-token cookie and responds ok", async () => {
@@ -972,7 +971,9 @@ describe("auth flow", () => {
     expect(mocked.auth.admin.updateUserById).not.toHaveBeenCalled();
   });
 
-  test("the real admin premium list remains available to a persisted owner without ACTIVE status", async () => {
+  test("the real admin premium list denies a persisted owner with REJECTED status", async () => {
+    // A REJECTED status is an owner decision on that account; the retired
+    // approval gate kept exactly this denial, for owners too.
     mocked.auth.getUser.mockResolvedValue({
       data: { user: { id: "owner-1", email: "operator@example.com" } },
       error: null,
@@ -983,12 +984,9 @@ describe("auth flow", () => {
       headers: { Authorization: `Bearer ${VALID_TOKEN}` },
     });
 
-    expect(res.status).toBe(200);
-    expect(await res.json()).toEqual([]);
+    expect(res.status).toBe(401);
+    expect(await res.json()).toEqual({ error: "Unauthorized" });
     expect(res.headers.get("cache-control")).toBe("private, no-store");
-    expect(mocked.from.mock.calls).toEqual([
-      ["profiles"], ["profiles"], ["profiles"], ["premium_requests"],
-    ]);
   });
 
   test("role guard: unauthenticated requests to guarded routes return 401", async () => {
@@ -1025,13 +1023,16 @@ describe("auth flow", () => {
     expect(cookies.some((c) => c.startsWith("sb-refresh-token=new-refresh"))).toBe(true);
   });
 
-  test.each(["PENDING", "REJECTED"].flatMap((accessStatus) => [
+  test.each(["REJECTED"].flatMap((accessStatus) => [
     { accessStatus, method: "GET", path: "/api/auth/me", cookie: `sb-access-token=${VALID_TOKEN}` },
     { accessStatus, method: "POST", path: "/api/auth/refresh", cookie: `sb-access-token=${VALID_TOKEN}` },
     { accessStatus, method: "POST", path: "/api/auth/refresh", cookie: "sb-refresh-token=old-refresh" },
   ]))("$accessStatus $method $path ($cookie) keeps the signed-statusToken 403 path", async ({
     accessStatus, method, path, cookie,
   }) => {
+    // The approval gate is retired: a session for a REJECTED account is still
+    // refused with the signed statusToken (the client's denied screen), and a
+    // legacy PENDING row signs in like any active account.
     const userId = "11111111-1111-4111-8111-111111111111";
     mocked.auth.getUser.mockResolvedValue({
       data: { user: { id: userId, email: "student@example.com" } },
@@ -1052,22 +1053,19 @@ describe("auth flow", () => {
 
       expect(res.status).toBe(403);
       const payload = await res.json();
-      expect(payload.code).toBe(accessStatus === "PENDING" ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED");
+      expect(payload.code).toBe("ACCOUNT_REJECTED");
       expect(verifyStatusToken(payload.statusToken)).toBe(userId);
       expect(payload).not.toHaveProperty("accessToken");
       expect(payload).not.toHaveProperty("user");
       const cleared = setCookiesOf(res).find((value) => value.startsWith("sb-access-token="));
       expect(cleared).toMatch(/expires=thu, 01 jan 1970/i);
       expect(setCookiesOf(res).some((value) => value.startsWith("sb-refresh-token=new-refresh"))).toBe(false);
-      // PENDING denial also ensures an access-request row (FCM clock); REJECTED does not.
+      // The denial never touches the access-request clock — that bot is part
+      // of the retired approval flow.
       await vi.waitFor(() => {
         const tables = mocked.from.mock.calls.map((call) => call[0]);
         expect(tables.filter((table) => table === "profiles").length).toBeGreaterThanOrEqual(4);
-        if (accessStatus === "PENDING") {
-          expect(tables).toContain("user_access_requests");
-        } else {
-          expect(tables.every((table) => table === "profiles")).toBe(true);
-        }
+        expect(tables.every((table) => table === "profiles")).toBe(true);
       });
     } finally {
       if (originalKey === undefined) delete process.env.SUPABASE_SERVICE_ROLE_KEY;

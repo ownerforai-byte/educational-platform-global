@@ -249,24 +249,30 @@ beforeEach(() => {
 });
 
 describe("direct editor approval gates", () => {
-  const cases = ["PENDING", "REJECTED"].flatMap((accessStatus) => [
+  // The approval gate is retired (owner decision): a PENDING status is treated
+  // as active. Only a REJECTED account — an owner decision on that account —
+  // is still denied everywhere.
+  const cases = ["REJECTED"].flatMap((accessStatus) => [
     {
       accessStatus, role: "plus", router: resourcesRouter, mountPath: "/api/resources",
       method: "PATCH", path: "/api/resources/r1", body: { title: "Renamed" },
+      select: "role, access_status",
     },
     {
       accessStatus, role: "pro", router: controllerRouter, mountPath: "/api/controller",
       method: "PATCH", path: "/api/controller/settings", body: { key: "site_name", value: "X" },
+      select: "role, access_status",
     },
     {
       accessStatus, role: "plus", router: storageRoutes, mountPath: "/api/storage",
       method: "POST", path: "/api/storage/upload",
       body: { path: "img.png", contentType: "image/png", dataBase64: "iVBORw==" },
+      select: "role, plan, access_status",
     },
   ]);
 
   it.each(cases)("$accessStatus $role cannot edit $path", async ({
-    accessStatus, role, router, mountPath, method, path, body,
+    accessStatus, role, router, mountPath, method, path, body, select,
   }) => {
     const { request } = await mount(router, mountPath);
     h.mockRole(role, accessStatus);
@@ -279,7 +285,7 @@ describe("direct editor approval gates", () => {
     // A single role/status read remains enough; no handler data or writes.
     expect(h.calls.every((call) => call.table === "profiles")).toBe(true);
     expect(h.opsFor("profiles").filter((call) => call.method === "select").map((call) => call.args))
-      .toEqual([["role, access_status"]]);
+      .toEqual([[select]]);
     expect(h.opsFor("profiles").filter((call) => call.method === "eq").map((call) => call.args))
       .toEqual([["id", "user-1"]]);
     expect(h.opsFor("profiles").filter((call) => ["single", "maybeSingle"].includes(call.method)))
@@ -991,7 +997,8 @@ describe("POST /api/storage/upload", () => {
 
   it("uploads via free-tier R2 and returns path + publicUrl", async () => {
     const { request } = await mountedStorage();
-    h.r2Upload.mockResolvedValue({ url: "https://pub.r2.example/folder/img.png" });
+    // Every upload lands in the uploader's own namespace (accounts/<uid>/...).
+    h.r2Upload.mockResolvedValue({ url: "https://pub.r2.example/accounts/user-1/folder/img.png" });
 
     const res = await request("POST", "/api/storage/upload", {
       path: "folder/img.png",
@@ -1001,13 +1008,13 @@ describe("POST /api/storage/upload", () => {
 
     expect(res.status).toBe(201);
     expect(res.body).toEqual({
-      path: "folder/img.png",
-      publicUrl: "https://pub.r2.example/folder/img.png",
+      path: "accounts/user-1/folder/img.png",
+      publicUrl: "https://pub.r2.example/accounts/user-1/folder/img.png",
       storedIn: "r2",
       tier: 3,
     });
     expect(h.r2Upload).toHaveBeenCalledWith(
-      "folder/img.png",
+      "accounts/user-1/folder/img.png",
       expect.any(Buffer),
       "image/png",
     );

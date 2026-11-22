@@ -125,7 +125,7 @@ afterEach(() => {
 });
 
 describe("Firestore profiles contract (signup writer)", () => {
-  it("creates the shared-contract doc on signup: PENDING + created_at + tier defaults", async () => {
+  it("creates the shared-contract doc on signup: ACTIVE + created_at + member defaults", async () => {
     await ensureAuthProfile(UID, {
       email: "student@example.com",
       fullName: "Student One",
@@ -136,7 +136,7 @@ describe("Firestore profiles contract (signup writer)", () => {
       id: UID,
       full_name: "Student One",
       email: "student@example.com",
-      access_status: "PENDING",
+      access_status: "ACTIVE",
       role: "member",
       plan: "member",
       premium_status: false,
@@ -155,10 +155,10 @@ describe("Firestore profiles contract (signup writer)", () => {
     });
   });
 
-  it("first-login creation stamps PENDING + created_at so the bot clock runs", async () => {
+  it("first-login creation stamps ACTIVE + created_at", async () => {
     await ensureAuthProfile(UID, { email: "student@example.com" });
     const doc = h.docs.get(UID)!;
-    expect(doc.access_status).toBe("PENDING");
+    expect(doc.access_status).toBe("ACTIVE");
     expect(typeof doc.created_at).toBe("string");
   });
 

@@ -39,7 +39,7 @@ async function requireContentEditor(req: Request, res: Response) {
     .eq("id", user.id)
     .single();
 
-  if (!isApprovedAccount({ email: user.email, role: profile?.role }, profile?.access_status)) {
+  if (!isApprovedAccount(profile?.access_status)) {
     res.status(401).json({ error: "Unauthorized" });
     return null;
   }

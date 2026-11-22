@@ -14,7 +14,7 @@ import { getGuestDeviceId, issueGuestDeviceCookie } from "./guestQuota";
  */
 
 export const DEVICE_SIGNUP_LIMIT_MESSAGE =
-  "Only one account can be created from this device until the owner approves it.";
+  "Only one account can be created from this device.";
 
 /** Far-future day: survives the guest_chat_usage `day < today` cleanup. */
 const PERMANENT_DAY = "9999-12-31";

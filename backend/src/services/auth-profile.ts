@@ -4,7 +4,6 @@ import {
   upsertProfileFields,
 } from "../db/repositories/user.repository.js";
 import { readProfileDoc } from "../storage/firebase-store.js";
-import { isAccessApprovalRequired, memberSignupAccessStatus } from "../config/access-approval.js";
 import { isOwnerEmail } from "../middleware/auth.js";
 
 /**
@@ -13,16 +12,15 @@ import { isOwnerEmail } from "../middleware/auth.js";
  * `USE_FIREBASE_AUTH=true`.
  *
  * Firestore `profiles` (doc id = uid) is the contract store for access fields.
- * New signups default to member ACTIVE when approval is disabled
- * (`ACCESS_APPROVAL_REQUIRED` unset/false); otherwise PENDING until the owner
- * console (or bot) sets ACTIVE. Approval code stays; only the gate is toggled.
+ * New signups default to member ACTIVE — the approval gate is retired (owner
+ * decision); only a legacy REJECTED state carries over.
  */
 export async function ensureAuthProfile(
   userId: string,
   options: {
     email?: string | null;
     fullName?: string | null;
-    /** First-time signup path — applies pending/owner tier defaults. */
+    /** First-time signup path — applies the member/owner tier defaults. */
     isSignup?: boolean;
   } = {},
 ): Promise<void> {
@@ -51,15 +49,11 @@ export async function ensureAuthProfile(
   if (email || creating) fields.email = email;
 
   if (creating) {
-    // Contract fields on create: the approval bot discovers PENDING docs by
-    // `access_status` aged by `created_at`, so both must exist. Decisive
-    // legacy states (ACTIVE/REJECTED) carry over instead of being reset.
-    const memberDefault = memberSignupAccessStatus();
-    fields.access_status = owner
-      ? "ACTIVE"
-      : carriedStatus === "ACTIVE" || carriedStatus === "REJECTED"
-        ? carriedStatus
-        : memberDefault;
+    // Contract fields on create: the approval bot discovered PENDING docs by
+    // `access_status` aged by `created_at`, so both must exist. The approval
+    // gate is retired (owner decision): a new account is ACTIVE. A decisive
+    // legacy REJECTED state carries over instead of being reset.
+    fields.access_status = carriedStatus === "REJECTED" ? "REJECTED" : "ACTIVE";
     fields.created_at = knownCreatedAt ?? new Date().toISOString();
     fields.role = owner ? "owner" : "member";
     fields.plan = owner ? "pro" : "member";
@@ -77,7 +71,7 @@ export async function ensureAuthProfile(
             premium_status: true,
           }
         : {
-            access_status: memberSignupAccessStatus(),
+            access_status: "ACTIVE",
             role: "member",
             plan: "member",
             premium_status: false,
@@ -104,7 +98,6 @@ export async function alignNonOwnerToMemberBaseline(
   userId: string,
   email?: string | null,
 ): Promise<void> {
-  if (isAccessApprovalRequired()) return;
   if (isOwnerEmail(email)) return;
   if (userId === "rn-study-assistant") return;
   const { error } = await updateProfileFields(userId, {

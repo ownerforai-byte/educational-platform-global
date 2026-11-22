@@ -31,7 +31,7 @@ async function requireAdmin(req: Request, res: Response) {
     .eq("id", authUser.id)
     .single();
 
-  if (!isApprovedAccount({ email: authUser.email, role: profile?.role }, profile?.access_status)) {
+  if (!isApprovedAccount(profile?.access_status)) {
     res.status(401).json({ error: "Unauthorized" });
     return null;
   }

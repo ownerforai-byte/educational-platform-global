@@ -51,7 +51,7 @@ async function requireContentEditor(req: Request, res: Response) {
     .eq("id", user.id)
     .maybeSingle();
 
-  if (!isApprovedAccount({ email: user.email, role: profile?.role }, profile?.access_status)) {
+  if (!isApprovedAccount(profile?.access_status)) {
     res.status(401).json({ error: "Unauthorized" });
     return null;
   }
@@ -72,7 +72,7 @@ router.get("/health", async (req: Request, res: Response) => {
   if (!auth) return;
 
   const profileAccess = await loadProfileAccess(auth.id);
-  if (!isApprovedAccount({ email: auth.email, role: profileAccess.role }, profileAccess.accessStatus)) {
+  if (!isApprovedAccount(profileAccess.accessStatus)) {
     res.status(401).json({ error: "Unauthorized" });
     return;
   }

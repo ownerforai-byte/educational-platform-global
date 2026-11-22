@@ -11,7 +11,6 @@ import {
   type UserRole,
   type SessionUser,
 } from "../auth/types";
-import { isAccessApprovalRequired } from "../config/access-approval.js";
 
 /** Request augmented with the validated session user after requireAuth. */
 export type AuthedRequest = Request & { user: SessionUser };
@@ -131,18 +130,13 @@ export function isOwnerAccount(
 }
 
 /**
- * Live approval: root owner + assigned owners always in; everyone else needs
- * profiles.access_status === ACTIVE (set from the owner console).
+ * Account access: only a REJECTED account — an owner decision on that one
+ * specific account — is denied. The approval gate is retired (owner decision):
+ * every account is active, and a legacy PENDING row from the gate's era is
+ * treated as active too.
  */
-export function isApprovedAccount(
-  user: { email?: string | null; role?: string | null },
-  accessStatus: unknown,
-): boolean {
-  if (!isAccessApprovalRequired()) {
-    if (accessStatus === "REJECTED") return false;
-    return true;
-  }
-  return isOwnerAccount(user) || accessStatus === "ACTIVE";
+export function isApprovedAccount(accessStatus: unknown): boolean {
+  return accessStatus !== "REJECTED";
 }
 
 export function buildSessionUser(
@@ -189,10 +183,7 @@ export async function getUserFromRequest(
       loadProfileFullName(identity.id),
       loadProfilePlan(identity.id),
     ]);
-    if (
-      !allowUnapproved &&
-      !isApprovedAccount({ email: identity.email, role: profileAccess.role }, profileAccess.accessStatus)
-    ) {
+    if (!allowUnapproved && !isApprovedAccount(profileAccess.accessStatus)) {
       return null;
     }
     return buildSessionUser(

@@ -15,7 +15,6 @@ import {
   checkDeviceSignupLimit,
 } from "../../utils/deviceSignup";
 import { createStatusToken, verifyStatusToken } from "../../utils/statusToken";
-import { ensureAccessRequest } from "../../services/access-requests";
 import { useFirebaseAuth } from "../../auth/auth-mode.js";
 import {
   firebaseCreateUser,
@@ -35,7 +34,6 @@ import {
   AuthProviderError,
 } from "../../auth/supabase";
 import { alignNonOwnerToMemberBaseline, ensureAuthProfile } from "../../services/auth-profile.js";
-import { isAccessApprovalRequired, memberSignupAccessStatus } from "../../config/access-approval.js";
 import {
   SESSION_COOKIE,
   extractToken,
@@ -136,17 +134,9 @@ const oauthSessionSchema = z.object({
 
 type AccessStatus = "PENDING" | "ACTIVE" | "REJECTED";
 
-const PENDING_MESSAGE =
-  "Your account is waiting for owner approval — you can sign in once it is approved in the owner console.";
-
-async function startAccessRequestClockIfEnabled(userId: string, ownerSignup: boolean): Promise<void> {
-  if (ownerSignup || !isAccessApprovalRequired()) return;
-  await ensureAccessRequest(userId);
-}
-
 function memberSignupProfileFields(fullName?: string | null): Record<string, unknown> {
   return {
-    access_status: memberSignupAccessStatus(),
+    access_status: "ACTIVE",
     role: "member",
     plan: "member",
     premium_status: false,
@@ -155,34 +145,15 @@ function memberSignupProfileFields(fullName?: string | null): Record<string, unk
 }
 
 /**
- * Live approval state — Firestore `profiles` merged with the legacy Supabase row.
+ * Live access state — Firestore `profiles` merged with the legacy Supabase row.
+ * The approval gate is retired: only a REJECTED account (an owner decision on
+ * that one account) is denied; everything else, including a legacy PENDING
+ * row from the gate's era, is active.
  */
-async function readAccessStatus(userId: string, email?: string): Promise<AccessStatus> {
-  const { role, accessStatus } = await loadProfileAccess(userId);
-  if (!isAccessApprovalRequired()) {
-    const raw =
-      typeof accessStatus === "string" ? accessStatus.trim().toUpperCase() : "";
-    if (raw === "REJECTED") return "REJECTED";
-    return "ACTIVE";
-  }
-  if (isApprovedAccount({ email, role }, accessStatus)) return "ACTIVE";
-  return accessStatus === "REJECTED" ? "REJECTED" : "PENDING";
-}
-
-/**
- * 200 "waiting" response for a PENDING account on login/signup — NOT a deny.
- * The client shows the waiting screen and polls /api/auth/account-status with
- * the signed statusToken until the owner grants ACTIVE. No session on this path.
- */
-async function pendingApproval(res: Response, userId: string): Promise<void> {
-  res.status(200).json({
-    code: "PENDING_APPROVAL",
-    message: PENDING_MESSAGE,
-    statusToken: createStatusToken(userId),
-    accessStatus: "PENDING",
-    user: null,
-    accessToken: null,
-  });
+async function readAccessStatus(userId: string): Promise<AccessStatus> {
+  const { accessStatus } = await loadProfileAccess(userId);
+  const raw = typeof accessStatus === "string" ? accessStatus.trim().toUpperCase() : "";
+  return raw === "REJECTED" ? "REJECTED" : "ACTIVE";
 }
 
 /**
@@ -192,17 +163,10 @@ async function pendingApproval(res: Response, userId: string): Promise<void> {
  * of stranding them on the login form with an error they cannot act on.
  */
 function accessDenied(res: Response, status: AccessStatus, userId?: string): void {
-  const pending = status === "PENDING";
-  if (pending && userId && isAccessApprovalRequired()) {
-    // Best-effort: (re)start the timed access-bot clock for FCM automation.
-    void ensureAccessRequest(userId);
-  }
   res.status(403).json({
-    error: pending ? "Account pending approval" : "Account denied",
-    code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
-    message: pending
-      ? PENDING_MESSAGE
-      : "This account was denied. You can create a new account, or leave a message to sahrocky81@gmail.com.",
+    error: "Account denied",
+    code: "ACCOUNT_REJECTED",
+    message: "This account was denied. You can create a new account, or leave a message to sahrocky81@gmail.com.",
     statusToken: userId ? createStatusToken(userId) : undefined,
   });
 }
@@ -361,25 +325,10 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
       isSignup: true,
     });
 
-    const accessStatus = await readAccessStatus(identity.id, identity.email);
-    if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
+    const accessStatus = await readAccessStatus(identity.id);
+    if (accessStatus === "REJECTED") {
       res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
-      if (accessStatus === "REJECTED") {
-        accessDenied(res, accessStatus, identity.id);
-        return;
-      }
-      // A pending OAuth account is also the device's one account: refuse a
-      // DIFFERENT unapproved account on this device, otherwise bind this one
-      // (the same account re-signing in must not block itself).
-      const device = await checkDeviceSignupLimit(req, res, identity.id);
-      if (device.limited) {
-        res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
-        return;
-      }
-      await bindDeviceToAccount(device.deviceId, identity.id);
-      // PENDING is not a deny: 200 + statusToken → the client shows the
-      // waiting screen while the bot auto-approves within ~5 minutes.
-      await pendingApproval(res, identity.id);
+      accessDenied(res, accessStatus, identity.id);
       return;
     }
 
@@ -436,13 +385,9 @@ router.post("/login", async (req: Request, res: Response) => {
       return;
     }
     await ensureAuthProfile(verified.uid, { email: accountEmail, fullName: verified.displayName });
-    const accessStatus = await readAccessStatus(verified.uid, accountEmail);
+    const accessStatus = await readAccessStatus(verified.uid);
     if (accessStatus === "REJECTED") {
       accessDenied(res, accessStatus, verified.uid);
-      return;
-    }
-    if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
-      await pendingApproval(res, verified.uid);
       return;
     }
     await alignNonOwnerToMemberBaseline(verified.uid, accountEmail);
@@ -463,17 +408,11 @@ router.post("/login", async (req: Request, res: Response) => {
     return;
   }
 
-  // Credentials are valid, but access may not be: PENDING/REJECTED accounts
-  // never receive a session (no cookies are set on this path). PENDING is no
-  // longer a hard deny — the bot auto-approves within ~5 minutes, so the
-  // client gets 200 + statusToken and shows the waiting screen.
-  const accessStatus = await readAccessStatus(data.user.id, data.user.email);
+  // Credentials are valid, but access may not be: a REJECTED account never
+  // receives a session (no cookies are set on this path).
+  const accessStatus = await readAccessStatus(data.user.id);
   if (accessStatus === "REJECTED") {
     accessDenied(res, accessStatus, data.user.id);
-    return;
-  }
-  if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
-    await pendingApproval(res, data.user.id);
     return;
   }
 
@@ -571,23 +510,10 @@ router.post("/signup", async (req: Request, res: Response) => {
         : memberSignupProfileFields(fullName),
     );
     if (profileErr) console.error("[auth] signup profile tier write failed:", profileErr.message);
-    await startAccessRequestClockIfEnabled(uid, ownerSignup);
 
-    const accessStatus = await readAccessStatus(uid, email);
-    if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
-      if (accessStatus === "REJECTED") {
-        accessDenied(res, accessStatus, uid);
-        return;
-      }
-      const body: SignupResponse & { code: string } = {
-        code: "PENDING_APPROVAL",
-        user: null,
-        accessToken: null,
-        message: PENDING_MESSAGE,
-        statusToken: createStatusToken(uid),
-        accessStatus: "PENDING",
-      };
-      res.json(body);
+    const accessStatus = await readAccessStatus(uid);
+    if (accessStatus === "REJECTED") {
+      accessDenied(res, accessStatus, uid);
       return;
     }
 
@@ -633,25 +559,18 @@ router.post("/signup", async (req: Request, res: Response) => {
 
     // Enforce email-verified signup: Supabase returns `needsEmailConfirmation`
     // when the user must confirm their email before the session can be used.
-    // Unconfirmed accounts are held at PENDING and the client must flip to the
-    // email-confirmation screen rather than receiving a session. This prevents
-    // unverified/phantom accounts from being created against the platform.
+    // The unconfirmed account gets no session; the client flips to the
+    // email-confirmation screen. This prevents unverified/phantom accounts
+    // from being created against the platform.
     if (result.user && result.needsEmailConfirmation) {
       const { error: profileErr } = await updateProfileFields(
         result.user.id,
         memberSignupProfileFields(parsed.data.fullName),
       );
       if (profileErr) console.error("[auth] signup profile tier write failed:", profileErr.message);
-      await startAccessRequestClockIfEnabled(result.user.id, ownerSignup);
 
       res.status(202).json({
-        ...(isAccessApprovalRequired()
-          ? {
-              code: "PENDING_APPROVAL" as const,
-              accessStatus: "PENDING" as const,
-              statusToken: createStatusToken(result.user.id),
-            }
-          : { code: "EMAIL_CONFIRMATION_REQUIRED" as const }),
+        code: "EMAIL_CONFIRMATION_REQUIRED" as const,
         user: null,
         accessToken: null,
         message: "Check your email to confirm your account before logging in.",
@@ -659,8 +578,8 @@ router.post("/signup", async (req: Request, res: Response) => {
       return;
     }
 
-// Bind the new account to this device before any early return, so a
-// pending or email-confirmation signup still counts as the device's one
+// Bind the new account to this device before any early return, so an
+// email-confirmation signup still counts as the device's one
 // account. Best-effort — never fails the signup response.
 if (result.user && deviceId) {
   await bindDeviceToAccount(deviceId, result.user.id);
@@ -669,7 +588,7 @@ if (result.user && deviceId) {
 // Force the live profile tier on every signup. The profiles.role column
 // must accept ladder text (member/plus/pro/owner); a leftover user_role
 // enum made these writes fail silently and left STUDENT/OWNER defaults
-// that graded as owner. Non-owner tier follows memberSignupAccessStatus() (ACTIVE when approval off).
+// that graded as owner. Non-owner tier is member ACTIVE (approval gate retired).
 if (result.user) {
   const { error: profileErr } = await updateProfileFields(
     result.user.id,
@@ -680,7 +599,6 @@ if (result.user) {
   if (profileErr) {
     console.error("[auth] signup profile tier write failed:", profileErr.message);
   }
-  await startAccessRequestClockIfEnabled(result.user.id, ownerSignup);
 }
 
 if (result.needsEmailConfirmation || !result.user || !result.session) {
@@ -693,26 +611,11 @@ if (result.needsEmailConfirmation || !result.user || !result.session) {
   return;
 }
 
-// ── Account creation flow: new accounts start PENDING ──
-// NO session cookies are issued; the client gets a signed status token
-// and is sent to the waiting screen instead of being logged in. The bot
-// auto-approves within ~5 minutes (200, not a hard deny).
-const accessStatus = await readAccessStatus(result.user.id, result.user.email);
-  if (isAccessApprovalRequired() && accessStatus !== "ACTIVE") {
-    if (accessStatus === "REJECTED") {
-      accessDenied(res, accessStatus, result.user.id);
-      return;
-    }
-    await ensureAccessRequest(result.user.id);
-    const body: SignupResponse & { code: string } = {
-      code: "PENDING_APPROVAL",
-    user: null,
-    accessToken: null,
-    message: PENDING_MESSAGE,
-    statusToken: createStatusToken(result.user.id),
-    accessStatus: "PENDING",
-  };
-  res.json(body);
+// ── Account created: the session starts immediately (approval gate retired).
+// Only a REJECTED account is denied.
+const accessStatus = await readAccessStatus(result.user.id);
+if (accessStatus === "REJECTED") {
+  accessDenied(res, accessStatus, result.user.id);
   return;
 }
 
@@ -782,7 +685,7 @@ router.post("/refresh", async (req: Request, res: Response) => {
       res.status(401).json({ error: "Invalid or expired session" });
       return;
     }
-    const accessStatus = await readAccessStatus(user.id, user.email);
+    const accessStatus = await readAccessStatus(user.id);
     if (accessStatus !== "ACTIVE") {
       clearSessionCookie(res);
       accessDenied(res, accessStatus, user.id);
@@ -811,7 +714,7 @@ router.post("/refresh", async (req: Request, res: Response) => {
       } as unknown as Request, { allowUnapproved: true });
       if (user) {
         // A revoked (PENDING/REJECTED) account must not renew its session.
-        const accessStatus = await readAccessStatus(user.id, user.email);
+        const accessStatus = await readAccessStatus(user.id);
         if (accessStatus !== "ACTIVE") {
           clearSessionCookie(res);
           accessDenied(res, accessStatus, user.id);
@@ -845,7 +748,7 @@ router.post("/refresh", async (req: Request, res: Response) => {
   }
 
   // Legacy branch: same approval gate as the refresh-token path.
-  const legacyAccess = await readAccessStatus(user.id, user.email);
+  const legacyAccess = await readAccessStatus(user.id);
   if (legacyAccess !== "ACTIVE") {
     clearSessionCookie(res);
     accessDenied(res, legacyAccess, user.id);
@@ -940,7 +843,7 @@ router.get("/account-status", async (req: Request, res: Response) => {
     typeof profile.email === "string" && profile.email.trim()
       ? profile.email.trim()
       : undefined;
-  const accessStatus = await readAccessStatus(userId, email);
+  const accessStatus = await readAccessStatus(userId);
   res.json({
     accessStatus,
     fullName: (profile.full_name as string | null) ?? null,
@@ -970,7 +873,7 @@ router.get("/me", async (req: Request, res: Response) => {
 
   // Live approval gate: an account revoked mid-session loses its profile
   // immediately (the client clears state on this 403).
-  const accessStatus = await readAccessStatus(user.id, user.email);
+  const accessStatus = await readAccessStatus(user.id);
   if (accessStatus !== "ACTIVE") {
     clearSessionCookie(res);
     accessDenied(res, accessStatus, user.id);

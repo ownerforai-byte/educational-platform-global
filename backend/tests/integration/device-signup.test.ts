@@ -225,9 +225,10 @@ describe("device signup limit (one account per device without approval)", () => 
   it("first signup is allowed, binds the device, and mints the HttpOnly device cookie", async () => {
     const { signup } = await mount();
     const res = await signup("first@example.com");
+    // The approval gate is retired: the signup session starts immediately.
     expect(res.status).toBe(200);
-    expect(res.body.accessStatus).toBe("PENDING");
-    expect(res.body.statusToken).toBeTruthy();
+    expect((res.body.user as { id?: string }).id).toBeTruthy();
+    expect(typeof res.body.accessToken).toBe("string");
     expect(res.deviceCookie).toMatch(/^neb-gid=[a-f0-9]{16,64}$/);
     expect(h.store.usage.size).toBe(1);
     expect(h.signUp).toHaveBeenCalledTimes(1);
@@ -243,19 +244,19 @@ describe("device signup limit (one account per device without approval)", () => 
       code: "DEVICE_SIGNUP_LIMIT",
     });
     expect(DEVICE_SIGNUP_LIMIT_MESSAGE).toBe(
-      "Only one account can be created from this device until the owner approves it.",
+      "Only one account can be created from this device.",
     );
     // The blocked attempt never creates an auth user or a second binding.
     expect(h.signUp).toHaveBeenCalledTimes(1);
     expect(h.store.usage.size).toBe(1);
   });
 
-  it("a different device (no cookie) is unaffected by the first device's pending account", async () => {
+  it("a different device (no cookie) is unaffected by the first device's account", async () => {
     const { signup } = await mount();
     await signup("first@example.com");
     const other = await signup("other@example.com");
     expect(other.status).toBe(200);
-    expect(other.body.accessStatus).toBe("PENDING");
+    expect((other.body.user as { id?: string }).id).toBeTruthy();
     expect(h.signUp).toHaveBeenCalledTimes(2);
   });
 
@@ -282,7 +283,7 @@ describe("device signup limit (one account per device without approval)", () => 
 
     const second = await signup("second@example.com", first.deviceCookie);
     expect(second.status).toBe(200);
-    expect(second.body.accessStatus).toBe("PENDING");
+    expect((second.body.user as { id?: string }).id).toBeTruthy();
     expect(h.signUp).toHaveBeenCalledTimes(2);
   });
 

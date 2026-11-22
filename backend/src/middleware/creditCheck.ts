@@ -54,7 +54,7 @@ async function resolveCreditUser(req: Request): Promise<ResolvedCreditUser | nul
   const userId = authUser.id;
   const profile = await getProfileGateRow(userId);
 
-  if (!isApprovedAccount({ email: authUser.email, role: profile?.role }, profile?.access_status)) {
+  if (!isApprovedAccount(profile?.access_status)) {
     return null;
   }
 
