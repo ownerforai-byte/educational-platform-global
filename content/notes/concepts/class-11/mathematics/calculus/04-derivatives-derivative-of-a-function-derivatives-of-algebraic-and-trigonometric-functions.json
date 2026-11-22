@@ -5,61 +5,40 @@
   "topicTitle": "Derivatives: derivative of a function, derivatives of algebraic and trigonometric functions",
   "relevance": 100,
   "notes": [
-    "### 1. Derivative Definition",
-    "The derivative of f(x) at x is: f'(x) = lim(h->0) [f(x+h) - f(x)]/h",
-    "Represents the instantaneous rate of change or slope of the tangent line.",
-    "### 2. Basic Derivative Rules",
-    "- Constant: d/dx(c) = 0",
-    "- Power rule: d/dx(x^n) = nx^(n-1)",
-    "- Constant multiple: d/dx[cf(x)] = cf'(x)",
-    "- Sum/Difference: d/dx[f +/- g] = f' +/- g'",
-    "### 3. Trigonometric Derivatives",
-    "- d/dx(sin x) = cos x",
-    "- d/dx(cos x) = -sin x",
-    "- d/dx(tan x) = sec^2 x",
-    "- d/dx(cot x) = -csc^2 x",
-    "- d/dx(sec x) = sec x tan x",
-    "- d/dx(csc x) = -csc x cot x",
-    "### 4. Key Algebraic Derivatives",
-    "- d/dx(x^n) = nx^(n-1)",
-    "- d/dx(e^x) = e^x",
-    "- d/dx(a^x) = a^x ln a",
-    "- d/dx(ln x) = 1/x",
-    "- d/dx(sqrt(x)) = 1/(2sqrt(x))",
-    "### 5. Product and Quotient Rules",
-    "- Product: (fg)' = f'g + fg'",
-    "- Quotient: (f/g)' = (f'g - fg')/g^2",
-    "### 6. Chain Rule",
-    "d/dx[f(g(x))] = f'(g(x)) x g'(x)",
-    "### 7. Entrance Exam Focus",
-    "Find derivative using first principle; Differentiate trigonometric functions; Apply chain rule."
+    "## 1. Topic Introduction — The Derivative Is Born\n\n**The derivative of a function** via first principles, and the **derivatives of algebraic and trigonometric functions** — the moment calculus becomes computation.",
+    "## 2. Fundamental Concepts\n\n### 2.1 First principles (the definition)\n\n- **f′(x) = lim_{h→0} [f(x + h) − f(x)]/h** — the limit of difference quotients; equivalently lim_{x→a} [f(x) − f(a)]/(x − a).\n- Geometric meaning: the **slope of the tangent** — the secant through (x, f(x)) and (x+h, f(x+h)) pivots into the tangent as h → 0. Kinematic meaning: **instantaneous rate** (velocity is d(s)/dt).\n\n### 2.2 Differentiability implies continuity\n\n- **Theorem:** if f′(a) exists, f is continuous at a. Proof: f(x) − f(a) = [(f(x)−f(a))/(x−a)]·(x−a) → f′(a)·0 = 0. **Converse false:** |x| is continuous at 0 but not differentiable there (corner: left slope −1, right +1).\n\n### 2.3 The algebraic derivative table (from first principles)\n\n- **d/dx (c) = 0; d/dx xⁿ = n·xⁿ⁻¹** (proved via the binomial expansion or the (xⁿ−aⁿ)/(x−a) star). **d/dx √x = 1/(2√x)** (conjugate route). **d/dx (1/x) = −1/x².**\n- **Linearity:** (af + bg)′ = af′ + bg′ — the sum/difference and constant-multiple rules, proved straight from the definition.\n\n### 2.4 The trigonometric derivatives\n\n- **d/dx sin x = cos x; d/dx cos x = −sin x** — from first principles using sin(x+h) = sin x cos h + cos x sin h and the stars sin h/h → 1, (cos h − 1)/h → 0.\n- **d/dx tan x = sec²x** (quotient rule on sin/cos).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Derivative** | Limit of difference quotients | f′(x) |\n| **Tangent slope** | Secant limit | geometric reading |\n| **Instantaneous rate** | d(s)/dt velocity | kinematic reading |\n| **Corner** | One-sided slopes differ | \\|x\\| at 0 |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why the definition needs a limit\n\n- At a single h the difference quotient is a secant slope — an average. Only the limit kills the averaging and isolates the instantaneous rate: the derivative is the *destination* of the secants, not any secant.\n\n### 4.2 The xⁿ proof as a star reprise\n\n- [f(x) − f(a)]/(x − a) = (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹: the derivative of xⁿ at a *is* the algebraic star — the limits unit was secretly building the derivative.\n\n### 4.3 The sin derivative's engine\n\n- sin(x+h) − sin x = sin x(cos h − 1) + cos x·sin h; dividing by h and using (cos h − 1)/h → 0, sin h/h → 1 gives cos x. The standard limits of the previous unit are the proof's moving parts.",
+    "## 5. Comparison Tables\n\n**First-principles starter table**\n\n| f | f′ | Route |\n|---|---|---|\n| c | 0 | constant quotient |\n| xⁿ | n xⁿ⁻¹ | star/binomial |\n| √x | 1/(2√x) | conjugate |\n| 1/x | −1/x² | algebra |\n| sin x | cos x | angle addition + stars |\n| cos x | −sin x | angle addition + stars |",
+    "## 6. Common Confusions\n\n**Continuous ≠ differentiable:** |x| bends without breaking — continuity is necessary, never sufficient.",
+    "**The power rule is not \"bring down and subtract\" by magic:** it is the star limit — quote the route in first-principles questions.",
+    "**cos x loses, sin gains:** d/dx cos x = **−sin x** — the sign slip is the classic error.",
+    "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): Find dy/dx if y = x³ + 2x² − 5x + 3. (2m)** — **Linearity + power rule term by term:** d/dx x³ = 3x²; d/dx 2x² = 4x; d/dx (−5x) = −5; d/dx 3 = 0. **dy/dx = 3x² + 4x − 5.**",
+    "**NEB 2021 (verified PYQ): Using first principles, show that d/dx (x^{1/3}) = 1/(3x^{2/3}). (4m)** — **Definition:** f′(x) = lim_{h→0} [(x+h)^{1/3} − x^{1/3}]/h. **Rationalise the cube roots:** set A = (x+h)^{1/3}, B = x^{1/3}; use A − B = (A³ − B³)/(A² + AB + B²) = h/(A² + AB + B²). So the quotient = 1/(A² + AB + B²). **Limit:** as h → 0, A → B, so the denominator → B² + B² + B² = 3B² = 3x^{2/3} ⟹ **f′(x) = 1/(3x^{2/3})** ∎. (The difference-of-cubes identity is the conjugate trick's cubic cousin.)",
+    "**NEB-style (3m): Derive d/dx sin x = cos x from first principles.** — Quotient: [sin(x+h) − sin x]/h = [sin x(cos h − 1) + cos x·sin h]/h = sin x·[(cos h − 1)/h] + cos x·[sin h/h]. **Stars:** (cos h − 1)/h → 0 and sin h/h → 1 (h → 0, radians) ⟹ f′(x) = sin x·0 + cos x·1 = **cos x** ∎ — the two standard limits are the entire engine.",
+    "## 8. Deep Conceptual — Why Differentiability Is Stronger Than Continuity\n\n- **Continuity** demands the *values* f(x) → f(a); **differentiability** demands the *rates* [f(x) − f(a)]/(x − a) → f′(a). Rates are a stricter contract: they compare f at *pairs* of nearby points, not just against the anchor.\n- **The failure gallery:** |x| (corner — one-sided slopes disagree); x^{2/3} (cusp — vertical tangent, difference quotients → ∞); x sin(1/x)-type oscillation (slopes swing without settling). Each species is continuous at the bad point yet non-differentiable there.\n- **One-sided derivatives:** f′₋(a) = lim_{h→0⁻} [f(a+h) − f(a)]/h and f′₊(a) similarly. **Theorem:** f′(a) exists ⟺ both one-sided derivatives exist and are equal — the limit-existence theorem transplanted to difference quotients.",
+    "## 9. Deep Conceptual — The Derivative as a Local Linear Approximation\n\n- f′(a) = L means **f(x) ≈ f(a) + L(x − a)** near a with error o(x − a) — the tangent line is the best linear approximation. This is the *definition* of the derivative restated: f(a + h) = f(a) + f′(a)h + h·ε(h) with ε(h) → 0.\n- **Why this reading matters:** every standard limit from the limits unit is a tangent statement — sin h ≈ h says (sin)′(0) = 1; (eʰ − 1)/h → 1 says (eˣ)′(0) = 1; ln(1+h)/h → 1 says (ln)′(1) = 1. The stars were derivative facts all along.\n- **Consequence:** differentiability at a is exactly the existence of a good linear approximation — functions with corners have two competing lines, cusps have none finite, oscillators have none at all.",
+    "## 10. Deep Conceptual — Reading the Difference Quotient's Denominator\n\n- Every first-principles proof is the same three moves: **(1)** write the difference quotient; **(2)** create the factor h in the numerator (by identity, conjugate, or series); **(3)** cancel and take the limit with the standard stars.\n- **The identity bank:** difference of powers Aⁿ − Bⁿ (n = 2, 3, ½ via conjugate, 1/3 via cubes), angle-addition for trig, ln(1+h) factoring for logs. Each identity's job is identical: expose the h that cancels the denominator's h.\n- **After cancellation the limit is always a star:** sin h/h → 1, (eʰ−1)/h → 1, (cos h − 1)/h → 0, or plain substitution. First-principles proofs never invent new limits — they *reduce* to the ones already owned."
   ],
   "confusion": [
     "x d/dx(sin x) = cos x means slope is always positive. x Slope varies with x.",
     "x d/dx(f.g) = f'.g. x Must use product rule: f'g + fg'.",
     "x Derivative = slope of secant. x Derivative = slope of TANGENT line."
   ],
-  "practice": [],
-  "formulas": [
-    "f'(x) = lim(h->0) [f(x+h) - f(x)]/h",
-    "(fg)' = f'g + fg'",
-    "d/dx[f(g(x))] = f'(g(x)) x g'(x)"
+  "practice": [
+    "Find dy/dx for y = x³ + 2x² − 5x + 3.",
+    "Prove d/dx (x^{1/3}) = 1/(3x^{2/3}) from first principles.",
+    "Derive (sin x)′ = cos x from first principles."
   ],
-  "summary": "The derivative f'(x) = lim(h->0) [f(x+h) - f(x)]/h is the limit of the difference quotient, so it gives the instantaneous rate of change of f at x and the slope of the tangent there. From first principles one builds the rule set: constants differentiate to 0, d/dx(x^n) = n x^(n-1), and sums and constant multiples are handled by the sum and multiple rules. The trigonometric functions give d/dx(sin x) = cos x, d/dx(cos x) = -sin x and d/dx(tan x) = sec^2 x, the product and quotient rules handle factors and fractions, and the chain rule d/dx[f(g(x))] = f'(g(x)) x g'(x) extends the power rule to composite functions.",
+  "formulas": [
+    "- f′(x) = lim_{h→0} [f(x+h) − f(x)]/h\n- (xⁿ)′ = n·xⁿ⁻¹; (√x)′ = 1/(2√x); (1/x)′ = −1/x²\n- (sin x)′ = cos x; (cos x)′ = −sin x; (tan x)′ = sec²x"
+  ],
+  "summary": "The **derivative** is born: f′(x) = lim_{h→0} [f(x+h) − f(x)]/h — the secant's limit, the tangent's slope, the instantaneous rate. **Differentiability implies continuity** (factor the difference; the derivative times the vanishing h), but never conversely — |x|'s corner has slopes −1 and +1. The **algebraic table** comes from first principles: (xⁿ)′ = nxⁿ⁻¹ *is* the (xⁿ−aⁿ)/(x−a) star; (√x)′ = 1/(2√x) is the conjugate; linearity makes polynomials one-line work (NEB 2024: 3x² + 4x − 5). **Fractional powers** yield to the difference-of-cubes identity: d/dx x^{1/3} = 1/(3x^{2/3}) (NEB 2021's four-marker). The **trigonometric derivatives** run on the standard limits: sin(x+h) − sin x splits via angle addition, and sin h/h → 1, (cos h−1)/h → 0 deliver (sin x)′ = cos x, (cos x)′ = −sin x, (tan x)′ = sec²x. The limits unit was the prologue; this is the play.",
   "importantConcepts": [
-    "Derivative at a point: the limit of the difference quotient, equal to the slope of the tangent line and the instantaneous rate of change.",
-    "First principles versus rules: the rules are shortcuts proved from f'(x) = lim(h->0)[f(x+h) - f(x)]/h, and both routes must give the same answer.",
-    "Power, constant and sum rules: d/dx(c) = 0, d/dx(x^n) = n x^(n-1), d/dx[cf] = cf' and d/dx[f ± g] = f' ± g'.",
-    "Product rule (fg)' = f'g + fg' and quotient rule (f/g)' = (f'g - fg')/g^2, the latter valid only where g != 0.",
-    "Chain rule d/dx[f(g(x))] = f'(g(x)) x g'(x), needed whenever one function is composed with another.",
-    "Exponential and logarithmic derivatives: d/dx(e^x) = e^x, d/dx(a^x) = a^x ln a, d/dx(ln x) = 1/x and d/dx(sqrt x) = 1/(2 sqrt x)."
+    "The derivative is the limit unit's destination: the (x^n - a^n)/(x - a) star and the trig stars are the moving parts of every first-principles proof."
   ],
   "importantStatements": [
-    "The derivative of f at x is f'(x) = lim(h->0) [f(x+h) - f(x)]/h, the limit of the slope of the secant from x to x+h as h tends to 0.",
-    "The power rule d/dx(x^n) = n x^(n-1) holds for every real exponent n, and is used with d/dx(c) = 0 and d/dx[f ± g] = f' ± g'.",
-    "d/dx(sin x) = cos x, d/dx(cos x) = -sin x, d/dx(tan x) = sec^2 x, d/dx(cot x) = -csc^2 x, d/dx(sec x) = sec x tan x and d/dx(csc x) = -csc x cot x.",
-    "The product rule is (fg)' = f'g + fg' and the quotient rule is (f/g)' = (f'g - fg')/g^2 for g != 0.",
-    "The chain rule gives d/dx[f(g(x))] = f'(g(x)) x g'(x), so d/dx(sin^2 x) = 2 sin x cos x and d/dx(e^(3x)) = 3e^(3x)."
+    "\"f'(x) = lim_{h->0} [f(x+h) - f(x)]/h; (x^n)' = n x^(n-1); (sin x)' = cos x; differentiability implies continuity.\""
   ],
   "importantTasks": [
     "Find dy/dx from first principles for a simple polynomial such as x^2 or 3x, expanding (x+h)^n, cancelling and only then setting h = 0.",
@@ -68,11 +47,7 @@
     "Differentiate trigonometric expressions such as sin^2 x, tan(x^3) or cos 2x, applying the chain rule outside and the standard derivative inside."
   ],
   "keyPoints": [
-    "The derivative is the slope of the tangent, not of the secant; the secant slope becomes the tangent slope only in the limit h -> 0.",
-    "d/dx(sin x) = cos x says the slope equals cos x at that point, not that the slope is constant or always positive.",
-    "Every product needs (fg)' = f'g + fg'; the tempting 'differentiate each factor and multiply' is wrong.",
-    "In the chain rule, differentiate the outer function leaving the inner one untouched, then multiply by the derivative of the inner function.",
-    "d/dx(sqrt x) follows from the power rule with n = 1/2, giving 1/(2 sqrt x) for x > 0."
+    "First principles: f'(x) = lim_{h->0} [f(x+h) - f(x)]/h - tangent slope, instantaneous rate. Differentiability => continuity (proof via factoring the difference); converse false (|x| corner). Algebraic table: c' = 0; (x^n)' = n x^(n-1) via the star; (sqrt x)' = 1/(2sqrt x); (1/x)' = -1/x^2. Linearity: (af + bg)' = af' + bg'. Trig: (sin x)' = cos x and (cos x)' = -sin x via angle addition + stars sin h/h -> 1, (cos h - 1)/h -> 0; (tan x)' = sec^2 x. First-principles toolkit: difference of cubes A - B = (A^3 - B^3)/(A^2 + AB + B^2) for fractional powers."
   ],
   "specialNotes": [
     "Five derivatives are worth memorising as a block: d/dx(sin x) = cos x, d/dx(cos x) = -sin x, d/dx(e^x) = e^x, d/dx(ln x) = 1/x and d/dx(x) = 1.",
@@ -82,24 +57,19 @@
     "Every rule assumes the expression is defined at the point in question, so a derivative also requires the original function to exist there."
   ],
   "examShortTricks": [
-    "For first principles, keep h to the last moment: expand, cancel, divide by h, and only then put h = 0.",
-    "Factor before differentiating, since an expression written as one fraction wants the quotient rule and one written as two factors wants the product rule.",
-    "Count the layers of a composite function, as each layer contributes its own derivative factor, so d/dx(sin^2 x) = 2 sin x cos x has two factors.",
-    "Sanity-check a result at a special point, where the derivative of x^n is 1 for n = 1 and 0 at x = 0 for n > 1."
+    "First-principles questions: write the definition, create the h-factor, use stars/conjugates. Power rule: bring down n, subtract 1. Sine gains cos; cosine loses sin."
   ],
   "examNotes": [
-    "Differentiating a polynomial or a product of elementary functions is the standard 2 to 5 mark question.",
-    "Differentiation from first principles on a given function is usually a 5 mark question in the form find dy/dx at a stated point.",
-    "Chain-rule expressions such as y = (3x^2 + 2)^4 or y = sin(x^3) appear as 5 mark questions and test correct nesting.",
-    "MCQs often give a derivative and ask for the original function, so read the constant multiple and the signs carefully."
+    "In first-principles proofs, name the standard limits you invoke - the citation is the method mark."
   ],
   "practiceQuestions": [
-    "Find dy/dx if y = 3x^4 - 2x^3 + 5x - 1.",
-    "Differentiate y = sin^2 x using the chain rule.",
-    "Find dy/dx if y = x^3 sin x, using the product rule.",
-    "Differentiate y = (3x^2 + 2)^4 and y = e^(3x).",
-    "Find the derivative of y = (2x + 1)/(x^2 + 3) by the quotient rule and state the domain of the result.",
-    "Find dy/dx from first principles for y = x^2 + 3x."
+    "**NEB 2024 (verified PYQ): Find dy/dx if y = x³ + 2x² − 5x + 3. (2m)** — **Differentiate term by term** (the linearity theorem licenses this): d/dx x³ = **3x²** (power rule); d/dx 2x² = **4x** (constant multiple + power rule); d/dx (−5x) = **−5**; d/dx 3 = **0** (constant rule). **Sum:** **dy/dx = 3x² + 4x − 5**. Each term's rule is a first-principles theorem in disguise — the polynomial case is where the machinery becomes one-line computation.",
+    "**NEB 2021 (verified PYQ): Using the first principles of differentiation, show that d/dx (x^{1/3}) = 1/(3x^{2/3}). (4m)** — **Definition:** f′(x) = lim_{h→0} [(x+h)^{1/3} − x^{1/3}]/h. **Create the h-factor:** let A = (x+h)^{1/3} and B = x^{1/3}; then A³ − B³ = (x + h) − x = h, and the **difference-of-cubes factorisation** A³ − B³ = (A − B)(A² + AB + B²) gives A − B = h/(A² + AB + B²). **Substitute:** the difference quotient = [h/(A² + AB + B²)]/h = **1/(A² + AB + B²)**. **Take the limit:** as h → 0, A → B (continuity of the cube root), so the denominator → B² + B² + B² = 3B² = **3x^{2/3}**. **Conclusion:** f′(x) = 1/(3x^{2/3}) ∎ — the conjugate-rationalisation strategy, upgraded to cube roots, exactly mirroring the limits unit's (√(7+x)−3)/(x−2) technique.",
+    "**NEB-style (3m): Derive the derivative of sin x from first principles.** — **Definition:** f′(x) = lim_{h→0} [sin(x+h) − sin x]/h. **Angle-addition expansion:** sin(x + h) = sin x cos h + cos x sin h, so the numerator = sin x(cos h − 1) + cos x·sin h. **Split the quotient** (both pieces' limits exist — the split is licensed): = sin x·[(cos h − 1)/h] + cos x·[sin h/h]. **Apply the stars** (h → 0, radians): (cos h − 1)/h → **0** and sin h/h → **1**. **Result:** f′(x) = sin x·0 + cos x·1 = **cos x** ∎. The entire proof rests on the two standard limits from the limits unit — first-principles trigonometric differentiation is applied limit theory.",
+    "**NEB-style (6m): Using first principles, prove that d/dx (cos x) = −sin x.** — **Definition:** f′(x) = lim_{h→0} [cos(x+h) − cos x]/h. **Angle addition:** cos(x + h) = cos x cos h − sin x sin h, so the numerator = cos x(cos h − 1) − sin x·sin h. **Split the quotient** (both pieces' limits exist — the split is licensed): = cos x·[(cos h − 1)/h] − sin x·[sin h/h]. **Apply the stars** (h → 0, radians): (cos h − 1)/h → **0** and sin h/h → **1**. **Result:** f′(x) = cos x·0 − sin x·1 = **−sin x** ∎. **Deep points:** (1) the minus sign is not an accident — cos starts *decreasing* at x = 0 (cos h < 1 for small h ≠ 0), so its rate there is negative; the first-principles computation and the graph's behaviour tell one story; (2) the proof consumes exactly two standard limits — the trig stars are the entire engine, and every first-principles trig derivative is this proof with a different angle-addition identity.",
+    "**NEB-style (5m): Using first principles, prove that d/dx (√x) = 1/(2√x) for x > 0.** — **Definition:** f′(x) = lim_{h→0} [√(x+h) − √x]/h. **Create the h-factor (conjugate):** multiply numerator and denominator by √(x+h) + √x: numerator = (x + h) − x = **h**, so the quotient = h/[h(√(x+h) + √x)] = **1/(√(x+h) + √x)** for h ≠ 0. **Take the limit:** as h → 0, √(x+h) → √x (continuity of the square root) ⟹ the denominator → 2√x ⟹ **f′(x) = 1/(2√x)** ∎. **Deep points:** (1) the conjugate is the difference-of-squares identity in working clothes — A − B = (A² − B²)/(A + B) with A = √(x+h), B = √x; (2) the result confirms the star (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹ at n = ½: (1/2)x^{−1/2} = 1/(2√x) ✓; (3) the derivative *blows up* as x → 0⁺ — the square-root curve has a vertical tangent at the origin, which is why x^{1/2} is the boundary between differentiable (n > 1) and non-differentiable (n < 1) powers at 0.",
+    "**NEB-style (6m): Show that f(x) = |x| is continuous everywhere but differentiable nowhere at 0, computing both one-sided derivatives.** — **Continuity:** |x| = √(x²) is a composition of continuous functions ⟹ continuous on ℝ; directly: lim_{x→0} |x| = 0 = |0| ✓. **Right-hand derivative:** for h > 0, [|h| − 0]/h = h/h = 1 ⟹ f′₊(0) = **+1**. **Left-hand derivative:** for h < 0, [|h| − 0]/h = (−h)/h = −1 ⟹ f′₋(0) = **−1**. **Verdict:** the one-sided derivatives exist but **disagree** (+1 ≠ −1) ⟹ f′(0) does **not exist** — a **corner**: the graph has two competing tangent lines (slope +1 from the right, −1 from the left) and no single tangent. **Deep conceptual point:** continuity asks the *values* to converge (they do — both sides approach 0); differentiability asks the *rates* to converge (they do not — the V-shape bends abruptly). The one-sided-derivative test is the limit-existence theorem applied to difference quotients, and |x| is its canonical counterexample separating the two concepts.",
+    "**NEB-style (5m): Prove that differentiability implies continuity: if f′(a) exists, then f is continuous at a. Is the converse true? Justify.** — **Proof:** write the change in f using the difference quotient: f(x) − f(a) = [(f(x) − f(a))/(x − a)]·(x − a). As x → a, the bracketed factor → f′(a) (which exists) and (x − a) → 0, so by the **product rule for limits**: lim_{x→a} [f(x) − f(a)] = f′(a)·0 = **0**, i.e. lim_{x→a} f(x) = f(a) — f is continuous at a ∎. **The converse fails:** f(x) = |x| is continuous at 0 (lim |x| = 0 = f(0)) but not differentiable there (one-sided slopes −1 and +1 disagree). **Deeper counterexample:** f(x) = x·sin(1/x) with f(0) = 0 is continuous at 0 (squeeze) and *also* differentiable at 0 (f′(0) = 0 by squeeze), yet its derivative is discontinuous — even differentiability does not buy continuous differentiability. **Hierarchy:** continuous ⊃ differentiable ⊃ continuously differentiable — three strictly nested classes, each counterexample more refined than the last."
   ],
   "mcs": [
     {
@@ -165,5 +135,73 @@
     "**4. [Idea: a parametric curve whose parameter cancels, with a vertical-tangent check]** A curve is $x = 3t - t^3$, $y = 3t^2$. Find $\\frac{dy}{dx}$ and where the tangent is vertical.\\newline\\newline**Solution:**$^{\\bullet}$ $\\dfrac{dx}{dt} = 3 - 3t^2$ and $\\dfrac{dy}{dt} = 6t$.$^{\\bullet}$ $\\dfrac{dy}{dx} = \\dfrac{6t}{3-3t^2} = \\dfrac{2t}{1-t^2}$.\\newline\\newline**Horizontal tangent** ($\\frac{dy}{dx}=0$): $2t=0 \\Rightarrow t=0$, giving the point $(0,0)$.\\newline\\newline**Vertical tangent** ($\\frac{dx}{dt}=0$): $3-3t^2=0 \\Rightarrow t=\\pm1$, giving points $(2,3)$ and $(-2,3)$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=\\frac{2t}{1-t^2}$; horizontal tangent at $t=0$, vertical at $t=\\pm1$. **Trap:** finding a vertical tangent by setting $\\frac{dy}{dx}$ infinite without checking that $\\frac{dx}{dt}$ is genuinely zero.",
     "**5. [Idea: a second implicit derivative needs the original relation substituted at the end]** For $x^2+y^2 = 25$, obtain $\\frac{d^2y}{dx^2}$ in terms of $y$ alone.\\newline\\newline**Solution:** From part 3, $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$. Differentiate this fraction — do NOT re-derive from scratch:$^{\\bullet}$ $\\dfrac{d}{dx}\\left(-xy^{-1}\\right) = -\\left[\\left(\\frac{dx}{dx}\\right)y^{-1} + x\\left(\\frac{d}{dx}y^{-1}\\right)\\right]$.\\newline\\newline$^{\\bullet}$ Since $\\frac{d}{dx}y^{-1} = -y^{-2}\\dfrac{dy}{dx} = -y^{-2}\\left(-\\frac{x}{y}\\right) = \\dfrac{x}{y^3}$:$\\newline\\frac{d^2y}{dx^2} = -\\left[\\frac{1}{y} + x\\cdot\\frac{x}{y^3}\\right] = -\\frac{y^2 + x^2}{y^3}$.\\newline\\newline$^{\\bullet}$ Finally substitute $x^2+y^2=25$ to remove $x$: $\\dfrac{d^2y}{dx^2} = -\\dfrac{25}{y^3}$.\\newline\\newline**Answer:** $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}=-\\frac{25}{y^3}$ for a circle of radius $r=5$.\\newline\\newline**Check at the top $(0,5)$:** $-\\frac{25}{125}=-\\frac15$, so the top of the circle is concave down with $|f''|=\\frac{1}{5}$ — exactly $\\frac1r$, as a circle of curvature $r$ requires. **Trap:** writing $625$ by squaring $25$ again; the $25$ is already $r^2$.",
     "**6. [Idea: logarithmic differentiation for a variable exponent]** Differentiate $y = x^x$ and hence find the stationary point of $y=\\dfrac{x^x}{e^x}$ for $x>0$.\\newline\\newline**Solution:** Differentiate $y=x^x$ by taking logs:$^{\\bullet}$ $\\ln y = x\\ln x$, so $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$.$^{\\bullet}$ Hence $\\dfrac{dy}{dx} = x^x(\\ln x + 1)$.\\newline\\newline**Now** $g(x)=\\dfrac{x^x}{e^x} = x^x e^{-x}$, so $\\dfrac{d}{dx}\\ln g = (\\ln x + 1) - 1 = \\ln x$.\\newline\\newlineSo $g'(x) = g(x)\\ln x$, which vanishes when $\\ln x = 0$, i.e. $x=1$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=x^x(\\ln x+1)$; the stationary point of $g$ is $x=1$. **Verification:** $g(1)=1\\cdot e^{-1}=e^{-1}$, and $g' = g\\ln x$ changes from negative ($x<1$) to positive ($x>1$), confirming a minimum."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Derivative Is Born\n\n**The derivative of a function** via first principles, and the **derivatives of algebraic and trigonometric functions** — the moment calculus becomes computation.",
+      "## 2. Fundamental Concepts\n\n### 2.1 First principles (the definition)\n\n- **f′(x) = lim_{h→0} [f(x + h) − f(x)]/h** — the limit of difference quotients; equivalently lim_{x→a} [f(x) − f(a)]/(x − a).\n- Geometric meaning: the **slope of the tangent** — the secant through (x, f(x)) and (x+h, f(x+h)) pivots into the tangent as h → 0. Kinematic meaning: **instantaneous rate** (velocity is d(s)/dt).\n\n### 2.2 Differentiability implies continuity\n\n- **Theorem:** if f′(a) exists, f is continuous at a. Proof: f(x) − f(a) = [(f(x)−f(a))/(x−a)]·(x−a) → f′(a)·0 = 0. **Converse false:** |x| is continuous at 0 but not differentiable there (corner: left slope −1, right +1).\n\n### 2.3 The algebraic derivative table (from first principles)\n\n- **d/dx (c) = 0; d/dx xⁿ = n·xⁿ⁻¹** (proved via the binomial expansion or the (xⁿ−aⁿ)/(x−a) star). **d/dx √x = 1/(2√x)** (conjugate route). **d/dx (1/x) = −1/x².**\n- **Linearity:** (af + bg)′ = af′ + bg′ — the sum/difference and constant-multiple rules, proved straight from the definition.\n\n### 2.4 The trigonometric derivatives\n\n- **d/dx sin x = cos x; d/dx cos x = −sin x** — from first principles using sin(x+h) = sin x cos h + cos x sin h and the stars sin h/h → 1, (cos h − 1)/h → 0.\n- **d/dx tan x = sec²x** (quotient rule on sin/cos).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Derivative** | Limit of difference quotients | f′(x) |\n| **Tangent slope** | Secant limit | geometric reading |\n| **Instantaneous rate** | d(s)/dt velocity | kinematic reading |\n| **Corner** | One-sided slopes differ | \\|x\\| at 0 |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why the definition needs a limit\n\n- At a single h the difference quotient is a secant slope — an average. Only the limit kills the averaging and isolates the instantaneous rate: the derivative is the *destination* of the secants, not any secant.\n\n### 4.2 The xⁿ proof as a star reprise\n\n- [f(x) − f(a)]/(x − a) = (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹: the derivative of xⁿ at a *is* the algebraic star — the limits unit was secretly building the derivative.\n\n### 4.3 The sin derivative's engine\n\n- sin(x+h) − sin x = sin x(cos h − 1) + cos x·sin h; dividing by h and using (cos h − 1)/h → 0, sin h/h → 1 gives cos x. The standard limits of the previous unit are the proof's moving parts.",
+      "## 5. Comparison Tables\n\n**First-principles starter table**\n\n| f | f′ | Route |\n|---|---|---|\n| c | 0 | constant quotient |\n| xⁿ | n xⁿ⁻¹ | star/binomial |\n| √x | 1/(2√x) | conjugate |\n| 1/x | −1/x² | algebra |\n| sin x | cos x | angle addition + stars |\n| cos x | −sin x | angle addition + stars |",
+      "## 6. Common Confusions\n\n**Continuous ≠ differentiable:** |x| bends without breaking — continuity is necessary, never sufficient.",
+      "**The power rule is not \"bring down and subtract\" by magic:** it is the star limit — quote the route in first-principles questions.",
+      "**cos x loses, sin gains:** d/dx cos x = **−sin x** — the sign slip is the classic error.",
+      "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): Find dy/dx if y = x³ + 2x² − 5x + 3. (2m)** — **Linearity + power rule term by term:** d/dx x³ = 3x²; d/dx 2x² = 4x; d/dx (−5x) = −5; d/dx 3 = 0. **dy/dx = 3x² + 4x − 5.**",
+      "**NEB 2021 (verified PYQ): Using first principles, show that d/dx (x^{1/3}) = 1/(3x^{2/3}). (4m)** — **Definition:** f′(x) = lim_{h→0} [(x+h)^{1/3} − x^{1/3}]/h. **Rationalise the cube roots:** set A = (x+h)^{1/3}, B = x^{1/3}; use A − B = (A³ − B³)/(A² + AB + B²) = h/(A² + AB + B²). So the quotient = 1/(A² + AB + B²). **Limit:** as h → 0, A → B, so the denominator → B² + B² + B² = 3B² = 3x^{2/3} ⟹ **f′(x) = 1/(3x^{2/3})** ∎. (The difference-of-cubes identity is the conjugate trick's cubic cousin.)",
+      "**NEB-style (3m): Derive d/dx sin x = cos x from first principles.** — Quotient: [sin(x+h) − sin x]/h = [sin x(cos h − 1) + cos x·sin h]/h = sin x·[(cos h − 1)/h] + cos x·[sin h/h]. **Stars:** (cos h − 1)/h → 0 and sin h/h → 1 (h → 0, radians) ⟹ f′(x) = sin x·0 + cos x·1 = **cos x** ∎ — the two standard limits are the entire engine.",
+      "## 8. Deep Conceptual — Why Differentiability Is Stronger Than Continuity\n\n- **Continuity** demands the *values* f(x) → f(a); **differentiability** demands the *rates* [f(x) − f(a)]/(x − a) → f′(a). Rates are a stricter contract: they compare f at *pairs* of nearby points, not just against the anchor.\n- **The failure gallery:** |x| (corner — one-sided slopes disagree); x^{2/3} (cusp — vertical tangent, difference quotients → ∞); x sin(1/x)-type oscillation (slopes swing without settling). Each species is continuous at the bad point yet non-differentiable there.\n- **One-sided derivatives:** f′₋(a) = lim_{h→0⁻} [f(a+h) − f(a)]/h and f′₊(a) similarly. **Theorem:** f′(a) exists ⟺ both one-sided derivatives exist and are equal — the limit-existence theorem transplanted to difference quotients.",
+      "## 9. Deep Conceptual — The Derivative as a Local Linear Approximation\n\n- f′(a) = L means **f(x) ≈ f(a) + L(x − a)** near a with error o(x − a) — the tangent line is the best linear approximation. This is the *definition* of the derivative restated: f(a + h) = f(a) + f′(a)h + h·ε(h) with ε(h) → 0.\n- **Why this reading matters:** every standard limit from the limits unit is a tangent statement — sin h ≈ h says (sin)′(0) = 1; (eʰ − 1)/h → 1 says (eˣ)′(0) = 1; ln(1+h)/h → 1 says (ln)′(1) = 1. The stars were derivative facts all along.\n- **Consequence:** differentiability at a is exactly the existence of a good linear approximation — functions with corners have two competing lines, cusps have none finite, oscillators have none at all.",
+      "## 10. Deep Conceptual — Reading the Difference Quotient's Denominator\n\n- Every first-principles proof is the same three moves: **(1)** write the difference quotient; **(2)** create the factor h in the numerator (by identity, conjugate, or series); **(3)** cancel and take the limit with the standard stars.\n- **The identity bank:** difference of powers Aⁿ − Bⁿ (n = 2, 3, ½ via conjugate, 1/3 via cubes), angle-addition for trig, ln(1+h) factoring for logs. Each identity's job is identical: expose the h that cancels the denominator's h.\n- **After cancellation the limit is always a star:** sin h/h → 1, (eʰ−1)/h → 1, (cos h − 1)/h → 0, or plain substitution. First-principles proofs never invent new limits — they *reduce* to the ones already owned."
+    ],
+    "keyPoints": [
+      "First principles: f'(x) = lim_{h->0} [f(x+h) - f(x)]/h - tangent slope, instantaneous rate. Differentiability => continuity (proof via factoring the difference); converse false (|x| corner). Algebraic table: c' = 0; (x^n)' = n x^(n-1) via the star; (sqrt x)' = 1/(2sqrt x); (1/x)' = -1/x^2. Linearity: (af + bg)' = af' + bg'. Trig: (sin x)' = cos x and (cos x)' = -sin x via angle addition + stars sin h/h -> 1, (cos h - 1)/h -> 0; (tan x)' = sec^2 x. First-principles toolkit: difference of cubes A - B = (A^3 - B^3)/(A^2 + AB + B^2) for fractional powers."
+    ],
+    "importantConcepts": [
+      "The derivative is the limit unit's destination: the (x^n - a^n)/(x - a) star and the trig stars are the moving parts of every first-principles proof."
+    ],
+    "examples": [
+      "***The corner*** - |x| has left slope -1 and right slope +1 at 0: continuous everywhere, differentiable nowhere at the kink - the counterexample that keeps the definitions honest."
+    ],
+    "universalFacts": [
+      "Speedometer vs odometer: the odometer gives average rate over a trip (secant), the speedometer reads the instantaneous rate (derivative) - same data, limit apart."
+    ],
+    "importantStatements": [
+      "\"f'(x) = lim_{h->0} [f(x+h) - f(x)]/h; (x^n)' = n x^(n-1); (sin x)' = cos x; differentiability implies continuity.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 dy/dx of x^3 + 2x^2 - 5x + 3; NEB 2021 first-principles d/dx x^(1/3) - assigned to this row. Other items NEB-style practice."
+    ],
+    "examShortTricks": [
+      "First-principles questions: write the definition, create the h-factor, use stars/conjugates. Power rule: bring down n, subtract 1. Sine gains cos; cosine loses sin."
+    ],
+    "examNotes": [
+      "In first-principles proofs, name the standard limits you invoke - the citation is the method mark."
+    ],
+    "formulas": [
+      "- f′(x) = lim_{h→0} [f(x+h) − f(x)]/h\n- (xⁿ)′ = n·xⁿ⁻¹; (√x)′ = 1/(2√x); (1/x)′ = −1/x²\n- (sin x)′ = cos x; (cos x)′ = −sin x; (tan x)′ = sec²x"
+    ],
+    "practice": [
+      "Find dy/dx for y = x³ + 2x² − 5x + 3.",
+      "Prove d/dx (x^{1/3}) = 1/(3x^{2/3}) from first principles.",
+      "Derive (sin x)′ = cos x from first principles."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (verified PYQ): Find dy/dx if y = x³ + 2x² − 5x + 3. (2m)** — **Differentiate term by term** (the linearity theorem licenses this): d/dx x³ = **3x²** (power rule); d/dx 2x² = **4x** (constant multiple + power rule); d/dx (−5x) = **−5**; d/dx 3 = **0** (constant rule). **Sum:** **dy/dx = 3x² + 4x − 5**. Each term's rule is a first-principles theorem in disguise — the polynomial case is where the machinery becomes one-line computation.",
+      "**NEB 2021 (verified PYQ): Using the first principles of differentiation, show that d/dx (x^{1/3}) = 1/(3x^{2/3}). (4m)** — **Definition:** f′(x) = lim_{h→0} [(x+h)^{1/3} − x^{1/3}]/h. **Create the h-factor:** let A = (x+h)^{1/3} and B = x^{1/3}; then A³ − B³ = (x + h) − x = h, and the **difference-of-cubes factorisation** A³ − B³ = (A − B)(A² + AB + B²) gives A − B = h/(A² + AB + B²). **Substitute:** the difference quotient = [h/(A² + AB + B²)]/h = **1/(A² + AB + B²)**. **Take the limit:** as h → 0, A → B (continuity of the cube root), so the denominator → B² + B² + B² = 3B² = **3x^{2/3}**. **Conclusion:** f′(x) = 1/(3x^{2/3}) ∎ — the conjugate-rationalisation strategy, upgraded to cube roots, exactly mirroring the limits unit's (√(7+x)−3)/(x−2) technique.",
+      "**NEB-style (3m): Derive the derivative of sin x from first principles.** — **Definition:** f′(x) = lim_{h→0} [sin(x+h) − sin x]/h. **Angle-addition expansion:** sin(x + h) = sin x cos h + cos x sin h, so the numerator = sin x(cos h − 1) + cos x·sin h. **Split the quotient** (both pieces' limits exist — the split is licensed): = sin x·[(cos h − 1)/h] + cos x·[sin h/h]. **Apply the stars** (h → 0, radians): (cos h − 1)/h → **0** and sin h/h → **1**. **Result:** f′(x) = sin x·0 + cos x·1 = **cos x** ∎. The entire proof rests on the two standard limits from the limits unit — first-principles trigonometric differentiation is applied limit theory.",
+      "**NEB-style (6m): Using first principles, prove that d/dx (cos x) = −sin x.** — **Definition:** f′(x) = lim_{h→0} [cos(x+h) − cos x]/h. **Angle addition:** cos(x + h) = cos x cos h − sin x sin h, so the numerator = cos x(cos h − 1) − sin x·sin h. **Split the quotient** (both pieces' limits exist — the split is licensed): = cos x·[(cos h − 1)/h] − sin x·[sin h/h]. **Apply the stars** (h → 0, radians): (cos h − 1)/h → **0** and sin h/h → **1**. **Result:** f′(x) = cos x·0 − sin x·1 = **−sin x** ∎. **Deep points:** (1) the minus sign is not an accident — cos starts *decreasing* at x = 0 (cos h < 1 for small h ≠ 0), so its rate there is negative; the first-principles computation and the graph's behaviour tell one story; (2) the proof consumes exactly two standard limits — the trig stars are the entire engine, and every first-principles trig derivative is this proof with a different angle-addition identity.",
+      "**NEB-style (5m): Using first principles, prove that d/dx (√x) = 1/(2√x) for x > 0.** — **Definition:** f′(x) = lim_{h→0} [√(x+h) − √x]/h. **Create the h-factor (conjugate):** multiply numerator and denominator by √(x+h) + √x: numerator = (x + h) − x = **h**, so the quotient = h/[h(√(x+h) + √x)] = **1/(√(x+h) + √x)** for h ≠ 0. **Take the limit:** as h → 0, √(x+h) → √x (continuity of the square root) ⟹ the denominator → 2√x ⟹ **f′(x) = 1/(2√x)** ∎. **Deep points:** (1) the conjugate is the difference-of-squares identity in working clothes — A − B = (A² − B²)/(A + B) with A = √(x+h), B = √x; (2) the result confirms the star (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹ at n = ½: (1/2)x^{−1/2} = 1/(2√x) ✓; (3) the derivative *blows up* as x → 0⁺ — the square-root curve has a vertical tangent at the origin, which is why x^{1/2} is the boundary between differentiable (n > 1) and non-differentiable (n < 1) powers at 0.",
+      "**NEB-style (6m): Show that f(x) = |x| is continuous everywhere but differentiable nowhere at 0, computing both one-sided derivatives.** — **Continuity:** |x| = √(x²) is a composition of continuous functions ⟹ continuous on ℝ; directly: lim_{x→0} |x| = 0 = |0| ✓. **Right-hand derivative:** for h > 0, [|h| − 0]/h = h/h = 1 ⟹ f′₊(0) = **+1**. **Left-hand derivative:** for h < 0, [|h| − 0]/h = (−h)/h = −1 ⟹ f′₋(0) = **−1**. **Verdict:** the one-sided derivatives exist but **disagree** (+1 ≠ −1) ⟹ f′(0) does **not exist** — a **corner**: the graph has two competing tangent lines (slope +1 from the right, −1 from the left) and no single tangent. **Deep conceptual point:** continuity asks the *values* to converge (they do — both sides approach 0); differentiability asks the *rates* to converge (they do not — the V-shape bends abruptly). The one-sided-derivative test is the limit-existence theorem applied to difference quotients, and |x| is its canonical counterexample separating the two concepts.",
+      "**NEB-style (5m): Prove that differentiability implies continuity: if f′(a) exists, then f is continuous at a. Is the converse true? Justify.** — **Proof:** write the change in f using the difference quotient: f(x) − f(a) = [(f(x) − f(a))/(x − a)]·(x − a). As x → a, the bracketed factor → f′(a) (which exists) and (x − a) → 0, so by the **product rule for limits**: lim_{x→a} [f(x) − f(a)] = f′(a)·0 = **0**, i.e. lim_{x→a} f(x) = f(a) — f is continuous at a ∎. **The converse fails:** f(x) = |x| is continuous at 0 (lim |x| = 0 = f(0)) but not differentiable there (one-sided slopes −1 and +1 disagree). **Deeper counterexample:** f(x) = x·sin(1/x) with f(0) = 0 is continuous at 0 (squeeze) and *also* differentiable at 0 (f′(0) = 0 by squeeze), yet its derivative is discontinuous — even differentiability does not buy continuous differentiability. **Hierarchy:** continuous ⊃ differentiable ⊃ continuously differentiable — three strictly nested classes, each counterexample more refined than the last."
+    ]
+  },
+  "examples": [
+    "***The corner*** - |x| has left slope -1 and right slope +1 at 0: continuous everywhere, differentiable nowhere at the kink - the counterexample that keeps the definitions honest."
+  ],
+  "universalFacts": [
+    "Speedometer vs odometer: the odometer gives average rate over a trip (secant), the speedometer reads the instantaneous rate (derivative) - same data, limit apart."
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2024 dy/dx of x^3 + 2x^2 - 5x + 3; NEB 2021 first-principles d/dx x^(1/3) - assigned to this row. Other items NEB-style practice."
   ]
 }

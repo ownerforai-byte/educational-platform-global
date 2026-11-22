@@ -5,50 +5,20 @@
   "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
   "relevance": 100,
   "notes": [
-    "**Exponential function limits:** $\\lim_{x \\to a} e^x = e^a$ for all real $a$. The exponential function is continuous everywhere.",
-    "**Important exponential limit:** $\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1$. This is the exponential analogue of $\\lim_{x \\to 0} (\\sin x)/x = 1$.",
-    "**Generalised form:** $\\lim_{x \\to 0} \\frac{e^{ax} - 1}{bx} = \\frac{a}{b}$.",
-    "**Logarithmic function limits:** $\\lim_{x \\to a} \\ln x = \\ln a$ for all $a > 0$. The natural logarithm is continuous on $(0, \\infty)$.",
-    "**Important logarithmic limit:** $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$. Equivalently, $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$.",
-    "**Generalised form:** $\\lim_{x \\to 0} \\frac{\\ln(1 + ax)}{bx} = \\frac{a}{b}$.",
-    "**Limits at infinity for exponential:** $\\lim_{x \\to \\infty} e^x = \\infty$ and $\\lim_{x \\to -\\infty} e^x = 0$.",
-    "**Limits at infinity for logarithmic:** $\\lim_{x \\to \\infty} \\ln x = \\infty$ (slow growth) and $\\lim_{x \\to 0^+} \\ln x = -\\infty$.",
-    "**The number $e$ defined as a limit:** $e = \\lim_{n \\to \\infty} (1 + 1/n)^n \\approx 2.71828$.",
-    "**Fundamental trigonometric limit:** $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$, where $x$ is measured in radians. This is the most important limit in introductory calculus.",
-    "**Corollary:** $\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1$ and $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0$.",
-    "**Generalised form:** $\\lim_{x \\to 0} \\frac{\\sin(ax)}{bx} = \\frac{a}{b}$ and $\\lim_{x \\to 0} \\frac{\\sin(ax)}{\\sin(bx)} = \\frac{a}{b}$.",
-    "**Limits at $\\pi/2$:** $\\lim_{x \\to \\pi/2} \\frac{\\cos x}{\\pi/2 - x} = 1$ and $\\lim_{x \\to \\pi/2} \\frac{\\sin x}{\\cos x} \\neq$ straightforward — use substitutions.",
-    "**Working strategy:** When you see $\\sin(\\text{something})$ in a limit, try to make the \"something\" match the other factor by multiplying and dividing.",
-    "**Example:** $\\lim_{x \\to 0} \\frac{\\sin 3x}{x} = \\lim_{x \\to 0} \\frac{\\sin 3x}{3x} \\cdot 3 = 1 \\cdot 3 = 3$.",
-    "**Example:** $\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$ requires Taylor expansion or repeated applications of L'Hopital's rule (advanced).",
-    "**Reciprocal forms:** $\\lim_{x \\to 0} \\frac{x}{\\sin x} = 1$ follows immediately from the fundamental limit.",
-    "**Sum rule:** $\\lim_{x \\to a} [f(x) + g(x)] = \\lim_{x \\to a} f(x) + \\lim_{x \\to a} g(x)$, provided both limits exist.",
-    "**Difference rule:** $\\lim_{x \\to a} [f(x) - g(x)] = \\lim_{x \\to a} f(x) - \\lim_{x \\to a} g(x)$.",
-    "**Product rule:** $\\lim_{x \\to a} [f(x) \\cdot g(x)] = \\lim_{x \\to a} f(x) \\cdot \\lim_{x \\to a} g(x)$.",
-    "**Quotient rule:** $\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to a} f(x)}{\\lim_{x \\to a} g(x)}$, provided the denominator limit is non-zero.",
-    "**Constant multiple rule:** $\\lim_{x \\to a} [c \\cdot f(x)] = c \\cdot \\lim_{x \\to a} f(x)$ for any constant $c$.",
-    "**Power rule:** $\\lim_{x \\to a} [f(x)]^n = [\\lim_{x \\to a} f(x)]^n$ for any positive integer $n$.",
-    "**Root rule:** $\\lim_{x \\to a} \\sqrt[n]{f(x)} = \\sqrt[n]{\\lim_{x \\to a} f(x)}$, provided the limit is positive when $n$ is even.",
-    "**Sandwich (Squeeze) theorem:** If $g(x) \\leq f(x) \\leq h(x)$ near $a$ and $\\lim_{x \\to a} g(x) = \\lim_{x \\to a} h(x) = L$, then $\\lim_{x \\to a} f(x) = L$.",
-    "**What is an indeterminate form?** When direct substitution into a limit gives an expression like $0/0$, $\\infty/\\infty$, $0 \\cdot \\infty$, $\\infty - \\infty$, $1^\\infty$, $0^0$, or $\\infty^0$, the result is indeterminate — the limit may exist but cannot be determined from this form alone.",
-    "**$0/0$ form:** The most common indeterminate form. Factor or simplify the expression to cancel the zero-producing factor, then substitute.",
-    "**$\\infty/\\infty$ form:** Common in limits at infinity. Divide numerator and denominator by the highest power of $x$, or use L'Hopital's rule (studied later).",
-    "**$\\infty - \\infty$ form:** Rationalize, combine fractions, or use a common denominator to convert into a $0/0$ or $\\infty/\\infty$ form.",
-    "**$0 \\cdot \\infty$ form:** Rewrite as $0/\\frac{1}{\\infty} = 0/0$ or $\\infty/\\frac{1}{0} = \\infty/\\infty$, then apply standard techniques.",
-    "**$1^\\infty$, $0^0$, $\\infty^0$ forms:** Take the natural logarithm of the expression, evaluate the limit of the logarithm, then exponentiate back.",
-    "**Important note:** Not every indeterminate form evaluates to zero or infinity. For example, $\\lim_{x \\to 0} (\\sin x)/x = 1$ despite being a $0/0$ form.",
-    "**Polynomial limit theorem:** For any polynomial $p(x)$, $\\lim_{x \\to a} p(x) = p(a)$. Simply substitute $x = a$.",
-    "**Rational function theorem:** For a rational function $r(x) = p(x)/q(x)$, if $q(a) \\neq 0$, then $\\lim_{x \\to a} r(x) = p(a)/q(a)$. Direct substitution works.",
-    "**When direct substitution fails ($0/0$ form):** Factor the numerator and denominator, cancel common factors, then substitute.",
-    "**Limits at infinity for polynomials:** $\\lim_{x \\to \\infty} a_nx^n + \\cdots = \\begin{cases} \\infty & \\text{if } a_n > 0 \\\\ -\\infty & \\text{if } a_n < 0 \\end{cases}$ (for $n \\geq 1$).",
-    "**Limits at infinity for rational functions:** Divide every term by the highest power of $x$ in the denominator. If degree of numerator < degree of denominator, limit = 0. If equal, limit = ratio of leading coefficients.",
-    "**Example:** $\\lim_{x \\to \\infty} \\frac{3x^2 + 5x - 1}{2x^2 - 7} = \\frac{3}{2}$ (same degree, ratio of leading coefficients).",
-    "**Nested radicals:** For $\\lim_{x \\to a} (\\sqrt{f(x)} - L)$ type limits, rationalize by multiplying by the conjugate $\\sqrt{f(x)} + L$.",
-    "**Definition of limit:** $\\lim_{x \\to a} f(x) = L$ means that as $x$ approaches $a$ (but $x \\neq a$), the value of $f(x)$ approaches $L$.",
-    "**One-sided limits:** The left-hand limit $\\lim_{x \\to a^-} f(x)$ considers values of $x$ less than $a$; the right-hand limit $\\lim_{x \\to a^+} f(x)$ considers values greater than $a$. For the limit to exist, both one-sided limits must be equal.",
-    "**Existence of a limit:** $\\lim_{x \\to a} f(x) = L$ exists if and only if $\\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L$.",
-    "**Geometric interpretation:** On the graph of $y = f(x)$, the limit $\\lim_{x \\to a} f(x) = L$ means the $y$-value approaches $L$ as the curve is traced toward $x = a$ from both sides. The function need not be defined at $x = a$ itself.",
-    "**Physical interpretation:** If $f(t)$ represents position at time $t$, then $\\lim_{t \\to a} f(t)$ gives the position approached at time $a$, regardless of whether the object is actually at that position."
+    "## 1. Topic Introduction — The Limit Menagerie by Family\n\nEvaluating limits of **algebraic, trigonometric, exponential and logarithmic** functions: each family has its reduction grammar — factoring for polynomials, standard stars for trig, e-limits for exp/log.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Algebraic limits\n\n- **Polynomials:** direct substitution (continuity). **Rationals at a:** substitute; 0/0 ⟹ factor-and-cancel or conjugate; c/0 ⟹ ±∞ by side-sign. **Rationals at ∞:** degree rule.\n- **Surds:** conjugate multiplication; (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹ for fractional n too.\n\n### 2.2 Trigonometric limits\n\n- Everything reduces to the stars: sin u/u → 1, tan u/u → 1, (1 − cos u)/u² → 1/2, all in **radians**. Rescaling sin(kx)/x → k; compound-angle identities as reducers; squeeze as safety net.\n\n### 2.3 Exponential and logarithmic limits\n\n- (eᵘ − 1)/u → 1; (aᵘ − 1)/u → ln a; ln(1+u)/u → 1; (1+u)^{1/u} → e; 1^∞ via the bridge e^{lim uv}. Growth ladder for contests at ∞: ln x ≪ xᵃ ≪ aˣ.\n\n### 2.4 The universal recipe\n\n- Substitute → classify the form → pick the family's grammar → transform to a standard form → answer. The families differ only in their standard forms; the recipe is one.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Algebraic grammar** | Factor, conjugate, degrees | (x²−4)/(x−2) |\n| **Trig grammar** | sin u/u stars, radians | sin 3x/x → 3 |\n| **Exp/log grammar** | e-stars, ln stars, bridge | (e²ˣ−1)/x → 2 |\n| **Universal recipe** | Substitute, classify, transform | the loop |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why families need different grammars\n\n- Each family's singularities have different structure: polynomial zeros factor; trig singularities oscillate; exp/log singularities curve. The standard limits encode each structure once, so every member reduces to its family's stars.\n\n### 4.2 Mixed-family expressions\n\n- Split into factors (when limits exist) and evaluate each by its own grammar: (e^{2x} − 1)/ln(1+4x) is an exp star over a log star via the x-bridge → 2/4 = 1/2. Mixed forms are the exam's favourite compound.\n\n### 4.3 The radian and base disciplines\n\n- Two silent assumptions break trig and log limits: degrees (sin x/x fails) and non-natural logs (ln(1+u)/u → 1 only for natural log). State them; convert when needed.",
+    "## 5. Comparison Tables\n\n**Family grammar sheet**\n\n| Family | 0/0 tool | Star |\n|---|---|---|\n| algebraic | factor/conjugate | (xⁿ−aⁿ)/(x−a) → naⁿ⁻¹ |\n| trig | identities + insertion | sin u/u → 1 |\n| exponential | e-steering | (eᵘ−1)/u → 1 |\n| logarithm | ln-steering | ln(1+u)/u → 1 |",
+    "## 6. Common Confusions\n\n**Mixing grammars:** a trig expression needs trig stars, not factoring — (1 − cos x)/x² is ½ by half-angle, not by \"cancelling cos\".",
+    "**Forgetting the coefficient:** sin 3x/x → 3 (the a survives); (e^{2x}−1)/x → 2.",
+    "**Log base slips:** ln(1+x)/x → 1 is natural-log only; log₁₀(1+x)/x → 1/ln 10.",
+    "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): Evaluate lim_{x→0} (sin 3x)/x. (2m)** — **Rescaling:** sin 3x/x = 3·[sin 3x/(3x)]; as x → 0, 3x → 0 and the star gives sin 3x/(3x) → 1 ⟹ limit = **3**. (General: sin(kx)/x → k — the coefficient survives, the argument dies.)",
+    "**NEB-style (3m): Evaluate lim_{x→0} (e^{5x} − 1)/(sin 2x).** — **Split via stars:** = [(e^{5x} − 1)/(5x)]·(5x)/[(sin 2x/(2x))·(2x)] — insert the argument factors: = (5/2)·[e^{5x}−1)/(5x)]/[sin 2x/2x] → (5/2)·(1/1) = **5/2**. Exponential star over trig star, coefficient ratio deciding.",
+    "**NEB-style (3m): Evaluate lim_{x→1} (x − 1)/ln x.** — **Substitute:** 0/0. **Steer:** set u = x − 1 → 0; ln x = ln(1 + u) ⟹ expression = u/ln(1+u) = 1/[ln(1+u)/u] → 1/1 = **1**. The log star resolves the classic log-versus-linear race at 1.",
+    "## 8. Deep Conceptual — Why Each Family Has Its Own Singularity Structure\n\n- **Polynomial zeros are algebraic:** they factor cleanly, so 0/0 in rational functions always surrenders to factoring — the factor theorem guarantees the cancellation exists.\n- **Trigonometric singularities are geometric:** sin x vanishes *like x* (its first-order tangent), cos x vanishes like a *square* near π/2 (1 − cos u ~ u²/2). The standard stars encode these **orders of vanishing**: sin u ~ u, 1 − cos u ~ u²/2, tan u ~ u.\n- **Exponential/logarithmic singularities are self-referential:** eᵘ − 1 ~ u (the base's own rate) and ln(1+u) ~ u (the log's tangent). The exponential's vanishing *is* the number e; the log's vanishing *is* the natural base's inverse.\n- **The deep unity:** every standard limit is a **first-order Taylor approximation in disguise** — sin u ≈ u, eᵘ ≈ 1 + u, ln(1+u) ≈ u. The families differ because their functions' tangents differ; the recipe is one because tangents are always linear.",
+    "## 9. Deep Conceptual — Orders of Vanishing and the Hierarchy of Small\n\n- As u → 0: **u ≫ u² ≫ u³ ≫ …** — higher powers vanish faster. When a limit's numerator and denominator vanish at the *same* order, the ratio survives as a constant; when the numerator vanishes faster, the limit is 0; slower, ±∞.\n- **Worked hierarchy:** sin u ~ u (order 1), 1 − cos u ~ u²/2 (order 2), u − sin u ~ u³/6 (order 3), tan u − sin u ~ u³/2 (order 3). These orders predict limits before any computation: (tan u − sin u)/u³ must be a nonzero constant because both sides are order 3.\n- **Exam power:** before computing, estimate the order of every factor. If numerator order = denominator order ⟹ finite nonzero; unequal ⟹ 0 or ∞. The computation then merely finds the constant.",
+    "## 10. Deep Conceptual — The x-Bridge as Separation of Rates\n\n- Mixed-family ratios like (e^{5x} − 1)/sin 2x are resolved by **inserting x/x** — which is secretly dividing both contestants by the common yardstick x and comparing each to it. Each star measures \"how fast this function vanishes relative to x\", and the answer is the ratio of those relative rates.\n- This is the exact structure of **comparing via a reference standard**: the star sin u/u → 1 says \"sin u behaves like u\"; the bridge says \"so sin 2x behaves like 2x and e^{5x} − 1 behaves like 5x; their ratio behaves like 5x/2x = 5/2\".\n- **Generalisation preview:** this is L'Hôpital's rule in embryo — comparing two vanishing functions via their linear approximations. The x-bridge is the elementary special case where the approximations are known stars."
   ],
   "confusion": [
     "$\\ln x$ is only defined for $x > 0$. Never attempt $\\ln(0)$ or $\\ln(-1)$.",
@@ -67,37 +37,104 @@
     "Do not substitute $x = a$ directly as a first step — many limits yield $0/0$ which requires algebraic simplification before substitution."
   ],
   "practice": [
-    "Evaluate $\\lim_{x \\to 0} \\frac{e^{3x} - 1}{x}$.",
-    "Find $\\lim_{x \\to 0} \\frac{\\ln(1 + 5x)}{x}$.",
-    "Evaluate $\\lim_{x \\to \\infty} \\frac{e^x}{x^{10}}$ (answer: $\\infty$, since $e^x$ dominates).",
-    "Evaluate $\\lim_{x \\to 0} \\frac{\\sin 5x}{\\sin 2x}$.",
-    "Find $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2}$ using the identity $1 - \\cos x = 2\\sin^2(x/2)$.",
-    "Evaluate $\\lim_{x \\to \\pi/4} \\frac{\\tan x - 1}{x - \\pi/4}$.",
-    "If $\\lim_{x \\to 2} f(x) = 5$ and $\\lim_{x \\to 2} g(x) = 3$, find $\\lim_{x \\to 2} [3f(x) - 2g(x)]$.",
-    "Use the product rule to evaluate $\\lim_{x \\to 1} (x^2 + 1)(3x - 1)$ by splitting into a product.",
-    "Use the sandwich theorem to prove $\\lim_{x \\to 0} x^2 \\sin(1/x) = 0$.",
-    "Evaluate $\\lim_{x \\to 3} (x^2 - 9)/(x - 3)$ — a $0/0$ form solved by factoring.",
-    "Find $\\lim_{x \\to 0} (1 - \\cos x)/x^2$ by using the identity $1 - \\cos x = 2\\sin^2(x/2)$.",
-    "Determine $\\lim_{x \\to \\infty} (3x^2 + 2x)/(5x^2 - 1)$ by dividing by $x^2$.",
-    "Evaluate $\\lim_{x \\to -1} \\frac{x^3 + 1}{x + 1}$ by factoring.",
-    "Find $\\lim_{x \\to \\infty} \\frac{5x^3 - 2x}{3x^3 + 4x^2}$.",
-    "Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$ by rationalizing the numerator.",
-    "Evaluate $\\lim_{x \\to 2} (x^2 - 4)/(x - 2)$ by factoring and simplifying.",
-    "Find the left-hand and right-hand limits of $f(x) = |x|/x$ as $x \\to 0$ and determine whether the limit exists.",
-    "Sketch a function where the left-hand and right-hand limits exist but are not equal."
+    "Evaluate lim_{x→0} (sin 3x)/x.",
+    "Evaluate lim_{x→0} (e^{5x} − 1)/(sin 2x).",
+    "Evaluate lim_{x→1} (x − 1)/ln x."
   ],
   "universalFacts": [
-    "The two key limits $\\lim_{x \\to 0} (e^x - 1)/x = 1$ and $\\lim_{x \\to 0} \\ln(1+x)/x = 1$ are the foundations for differentiating exponential and logarithmic functions.",
-    "The exponential function's unique property is that it is its own derivative: $\\frac{d}{dx}e^x = e^x$, which follows directly from the limit $\\lim_{h \\to 0}(e^h - 1)/h = 1$.",
-    "The small-angle approximation $\\sin x \\approx x$ (for small $x$) comes directly from this limit and is widely used in physics.",
-    "All other trigonometric limits at 0 can be derived from the fundamental limit $\\lim_{x \\to 0} (\\sin x)/x = 1$.",
-    "These algebraic properties allow you to break complex limits into simpler ones, which is the primary strategy for limit evaluation.",
-    "The properties extend to finite sums and products of any number of functions.",
-    "The seven indeterminate forms are: $0/0$, $\\infty/\\infty$, $0 \\cdot \\infty$, $\\infty - \\infty$, $1^\\infty$, $0^0$, $\\infty^0$.",
-    "Recognizing an indeterminate form is the critical first step — it tells you that more work is needed, not that the limit does not exist.",
-    "For polynomials and rational functions, the first strategy is always direct substitution. Only when it fails do you need algebraic manipulation.",
-    "The degree comparison rule for limits at infinity is a quick diagnostic tool that avoids unnecessary computation.",
-    "Limits are the foundation of all calculus — derivatives and integrals are both defined via limits.",
-    "The concept of a limit extends naturally to sequences: $\\lim_{n \\to \\infty} a_n = L$ means the sequence values approach $L$."
-  ]
+    "Camera exposure triangles mirror the recipe: one scene (limit), three dials (families) - each dial has its own grammar but the goal is one well-formed image."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Limit Menagerie by Family\n\nEvaluating limits of **algebraic, trigonometric, exponential and logarithmic** functions: each family has its reduction grammar — factoring for polynomials, standard stars for trig, e-limits for exp/log.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Algebraic limits\n\n- **Polynomials:** direct substitution (continuity). **Rationals at a:** substitute; 0/0 ⟹ factor-and-cancel or conjugate; c/0 ⟹ ±∞ by side-sign. **Rationals at ∞:** degree rule.\n- **Surds:** conjugate multiplication; (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹ for fractional n too.\n\n### 2.2 Trigonometric limits\n\n- Everything reduces to the stars: sin u/u → 1, tan u/u → 1, (1 − cos u)/u² → 1/2, all in **radians**. Rescaling sin(kx)/x → k; compound-angle identities as reducers; squeeze as safety net.\n\n### 2.3 Exponential and logarithmic limits\n\n- (eᵘ − 1)/u → 1; (aᵘ − 1)/u → ln a; ln(1+u)/u → 1; (1+u)^{1/u} → e; 1^∞ via the bridge e^{lim uv}. Growth ladder for contests at ∞: ln x ≪ xᵃ ≪ aˣ.\n\n### 2.4 The universal recipe\n\n- Substitute → classify the form → pick the family's grammar → transform to a standard form → answer. The families differ only in their standard forms; the recipe is one.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Algebraic grammar** | Factor, conjugate, degrees | (x²−4)/(x−2) |\n| **Trig grammar** | sin u/u stars, radians | sin 3x/x → 3 |\n| **Exp/log grammar** | e-stars, ln stars, bridge | (e²ˣ−1)/x → 2 |\n| **Universal recipe** | Substitute, classify, transform | the loop |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why families need different grammars\n\n- Each family's singularities have different structure: polynomial zeros factor; trig singularities oscillate; exp/log singularities curve. The standard limits encode each structure once, so every member reduces to its family's stars.\n\n### 4.2 Mixed-family expressions\n\n- Split into factors (when limits exist) and evaluate each by its own grammar: (e^{2x} − 1)/ln(1+4x) is an exp star over a log star via the x-bridge → 2/4 = 1/2. Mixed forms are the exam's favourite compound.\n\n### 4.3 The radian and base disciplines\n\n- Two silent assumptions break trig and log limits: degrees (sin x/x fails) and non-natural logs (ln(1+u)/u → 1 only for natural log). State them; convert when needed.",
+      "## 5. Comparison Tables\n\n**Family grammar sheet**\n\n| Family | 0/0 tool | Star |\n|---|---|---|\n| algebraic | factor/conjugate | (xⁿ−aⁿ)/(x−a) → naⁿ⁻¹ |\n| trig | identities + insertion | sin u/u → 1 |\n| exponential | e-steering | (eᵘ−1)/u → 1 |\n| logarithm | ln-steering | ln(1+u)/u → 1 |",
+      "## 6. Common Confusions\n\n**Mixing grammars:** a trig expression needs trig stars, not factoring — (1 − cos x)/x² is ½ by half-angle, not by \"cancelling cos\".",
+      "**Forgetting the coefficient:** sin 3x/x → 3 (the a survives); (e^{2x}−1)/x → 2.",
+      "**Log base slips:** ln(1+x)/x → 1 is natural-log only; log₁₀(1+x)/x → 1/ln 10.",
+      "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): Evaluate lim_{x→0} (sin 3x)/x. (2m)** — **Rescaling:** sin 3x/x = 3·[sin 3x/(3x)]; as x → 0, 3x → 0 and the star gives sin 3x/(3x) → 1 ⟹ limit = **3**. (General: sin(kx)/x → k — the coefficient survives, the argument dies.)",
+      "**NEB-style (3m): Evaluate lim_{x→0} (e^{5x} − 1)/(sin 2x).** — **Split via stars:** = [(e^{5x} − 1)/(5x)]·(5x)/[(sin 2x/(2x))·(2x)] — insert the argument factors: = (5/2)·[e^{5x}−1)/(5x)]/[sin 2x/2x] → (5/2)·(1/1) = **5/2**. Exponential star over trig star, coefficient ratio deciding.",
+      "**NEB-style (3m): Evaluate lim_{x→1} (x − 1)/ln x.** — **Substitute:** 0/0. **Steer:** set u = x − 1 → 0; ln x = ln(1 + u) ⟹ expression = u/ln(1+u) = 1/[ln(1+u)/u] → 1/1 = **1**. The log star resolves the classic log-versus-linear race at 1.",
+      "## 8. Deep Conceptual — Why Each Family Has Its Own Singularity Structure\n\n- **Polynomial zeros are algebraic:** they factor cleanly, so 0/0 in rational functions always surrenders to factoring — the factor theorem guarantees the cancellation exists.\n- **Trigonometric singularities are geometric:** sin x vanishes *like x* (its first-order tangent), cos x vanishes like a *square* near π/2 (1 − cos u ~ u²/2). The standard stars encode these **orders of vanishing**: sin u ~ u, 1 − cos u ~ u²/2, tan u ~ u.\n- **Exponential/logarithmic singularities are self-referential:** eᵘ − 1 ~ u (the base's own rate) and ln(1+u) ~ u (the log's tangent). The exponential's vanishing *is* the number e; the log's vanishing *is* the natural base's inverse.\n- **The deep unity:** every standard limit is a **first-order Taylor approximation in disguise** — sin u ≈ u, eᵘ ≈ 1 + u, ln(1+u) ≈ u. The families differ because their functions' tangents differ; the recipe is one because tangents are always linear.",
+      "## 9. Deep Conceptual — Orders of Vanishing and the Hierarchy of Small\n\n- As u → 0: **u ≫ u² ≫ u³ ≫ …** — higher powers vanish faster. When a limit's numerator and denominator vanish at the *same* order, the ratio survives as a constant; when the numerator vanishes faster, the limit is 0; slower, ±∞.\n- **Worked hierarchy:** sin u ~ u (order 1), 1 − cos u ~ u²/2 (order 2), u − sin u ~ u³/6 (order 3), tan u − sin u ~ u³/2 (order 3). These orders predict limits before any computation: (tan u − sin u)/u³ must be a nonzero constant because both sides are order 3.\n- **Exam power:** before computing, estimate the order of every factor. If numerator order = denominator order ⟹ finite nonzero; unequal ⟹ 0 or ∞. The computation then merely finds the constant.",
+      "## 10. Deep Conceptual — The x-Bridge as Separation of Rates\n\n- Mixed-family ratios like (e^{5x} − 1)/sin 2x are resolved by **inserting x/x** — which is secretly dividing both contestants by the common yardstick x and comparing each to it. Each star measures \"how fast this function vanishes relative to x\", and the answer is the ratio of those relative rates.\n- This is the exact structure of **comparing via a reference standard**: the star sin u/u → 1 says \"sin u behaves like u\"; the bridge says \"so sin 2x behaves like 2x and e^{5x} − 1 behaves like 5x; their ratio behaves like 5x/2x = 5/2\".\n- **Generalisation preview:** this is L'Hôpital's rule in embryo — comparing two vanishing functions via their linear approximations. The x-bridge is the elementary special case where the approximations are known stars."
+    ],
+    "keyPoints": [
+      "Algebraic grammar: polynomials substitute; rationals 0/0 factor/conjugate, c/0 side-sign infinities, infinity degree rule; surds conjugate; (x^n - a^n)/(x - a) -> n a^(n-1) for all rational n. Trig grammar: sin u/u -> 1, tan u/u -> 1, (1 - cos u)/u^2 -> 1/2 (radians); rescaling sin(kx)/x -> k; identities reduce, squeeze rescues. Exp/log grammar: (e^u - 1)/u -> 1, (a^u - 1)/u -> ln a, ln(1+u)/u -> 1, (1+u)^(1/u) -> e, 1^inf bridge e^(lim uv); growth ladder at infinity. Universal recipe: substitute, classify, transform to a family star, answer. Mixed forms: split into factors (limits must exist), evaluate each by its own grammar."
+    ],
+    "importantConcepts": [
+      "One recipe, four grammars: every limit is substitute-classify-transform, and the families differ only in which standard forms their singularities reduce to."
+    ],
+    "examples": [
+      "***The x-bridge across families*** - (e^(5x) - 1)/sin(2x) is an exponential star divided by a trig star: insert 5x/5x and 2x/2x, and the coefficient ratio 5/2 is the whole answer."
+    ],
+    "universalFacts": [
+      "Camera exposure triangles mirror the recipe: one scene (limit), three dials (families) - each dial has its own grammar but the goal is one well-formed image."
+    ],
+    "importantStatements": [
+      "\"Algebraic: factor/conjugate/degrees. Trig: sin u/u = 1 (radians). Exp: (e^u - 1)/u = 1. Log: ln(1+u)/u = 1. One recipe binds them.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2024 lim (sin 3x)/x = 3 - assigned to this row. Other items NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Insert kx/kx. Half-angle for 1 - cos. e-star for exponentials, ln-star for logs, x-bridge for mixed ratios. Radians and natural logs always."
+    ],
+    "examNotes": [
+      "Show the insertion factors (kx/kx) in working - the steering visible is the method visible."
+    ],
+    "formulas": [
+      "- (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹; sin(kx)/x → k; tan(kx)/x → k\n- (1 − cos kx)/x² → k²/2; (e^{kx} − 1)/x → k; ln(1+kx)/x → k\n- (aˣ − 1)/x → ln a; (1+u)^v → e^{lim uv}; ln x/x → 0"
+    ],
+    "practice": [
+      "Evaluate lim_{x→0} (sin 3x)/x.",
+      "Evaluate lim_{x→0} (e^{5x} − 1)/(sin 2x).",
+      "Evaluate lim_{x→1} (x − 1)/ln x."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (verified PYQ): Evaluate lim_{x→0} (sin 3x)/x. (2m)** — **Rescaling insertion:** multiply and divide by 3: sin 3x/x = **3·[sin 3x/(3x)]**. **Star:** as x → 0, the argument 3x → 0, so by the fundamental star (radians) sin 3x/(3x) → **1**. **Result:** 3·1 = **3**. **General theorem harvested:** lim_{x→0} sin(kx)/x = k — the coefficient survives, the argument dies into the star. This is the 15.2/45 reduction grammar in its purest one-line form.",
+      "**NEB-style (3m): Evaluate lim_{x→0} (e^{5x} − 1)/(sin 2x).** — **Form:** 0/0 mixing two families — exponential over trigonometric. **Double insertion:** (e^{5x} − 1)/(sin 2x) = [(e^{5x} − 1)/(5x)] · (5x) / { [sin 2x/(2x)] · (2x) } = **(5/2) · [(e^{5x} − 1)/(5x)] / [sin 2x/(2x)]**. **Stars:** e^{5x} − 1 over 5x → **1** (exponential star, u = 5x → 0); sin 2x/(2x) → **1** (trigonometric star, radians). **Result:** (5/2)·(1/1) = **5/2**. The x-bridge converts a mixed-family 0/0 into a ratio of coefficients — the standard move whenever exp meets trig in one fraction.",
+      "**NEB-style (3m): Evaluate lim_{x→1} (x − 1)/ln x.** — **Substitute:** (1 − 1)/ln 1 = 0/0 ⟹ transform. **Steer into the log star:** set u = x − 1, so u → 0 as x → 1 and ln x = ln(1 + u) (composition theorem licenses the rewrite). The expression becomes **u/ln(1+u) = 1/[ln(1+u)/u]**. **Star:** ln(1+u)/u → **1** as u → 0 (natural log mandatory). **Result:** 1/1 = **1**. **Reading:** near x = 1 the logarithm grows exactly as fast as the linear term — ln x ≈ x − 1 is the first-order tangent approximation, and this limit is its certificate.",
+      "**NEB-style (5m): Evaluate lim_{x→0} (sin x − tan x)/x³ and explain the sign.** — **Factor the difference:** sin x − tan x = sin x(1 − 1/cos x) = sin x·(cos x − 1)/cos x = **−sin x·(1 − cos x)/cos x**. **Split into stars** (all factor limits exist): = −[sin x/x]·[(1 − cos x)/x²]·[1/cos x]. **Evaluate each:** sin x/x → **1** (order 1 star); (1 − cos x)/x² → **1/2** (order 2 star, half-angle); 1/cos x → **1**. **Product:** −(1)(1/2)(1) = **−1/2**. **Why negative:** tan x > sin x for small positive x (tan = sin/cos with cos < 1 inflates it), so the difference is negative — the algebraic sign and the function comparison agree. **Order check:** sin x (order 1) times 1 − cos x (order 2) = order 3, matching x³ — a finite nonzero constant was guaranteed before any computation.",
+      "**NEB-style (5m): Evaluate lim_{x→∞} (√(x² + 3x) − x).** — **Form:** ∞ − ∞ — an indeterminate difference of two diverging quantities. **Conjugate:** multiply by (√(x²+3x) + x)/(√(x²+3x) + x): numerator = (x² + 3x) − x² = **3x**, giving 3x/(√(x²+3x) + x). **Divide by x** (x > 0 so √(x²)/x = 1): = 3/(√(1 + 3/x) + 1). **Limit:** 3/x → 0 ⟹ 3/(1 + 1) = **3/2**. **Deep conceptual point:** the two contestants are nearly equal — √(x²+3x) ≈ x√(1+3/x) ≈ x(1 + 3/(2x)) = x + 3/2 — the conjugate exposes the constant *offset* between the two giants. ∞ − ∞ questions always hide a finite difference between infinite quantities; the conjugate (or a common denominator) is how it is excavated.",
+      "**NEB-style (6m): Evaluate lim_{x→0} (1 + sin x)^{2/x} using the exponential bridge, stating the form first.** — **Form check:** base 1 + sin x → 1, exponent 2/x → ∞ ⟹ the **1^∞ indeterminate form** — not 1. **Bridge:** (1 + sin x)^{2/x} = e^{(2/x)·ln(1+sin x)} identically, so the limit is **e^L** with L = lim_{x→0} (2/x)·ln(1 + sin x). **Steer L into stars:** ln(1 + sin x) ~ sin x (log star with u = sin x → 0), and sin x ~ x (trig star) ⟹ ln(1 + sin x) ~ x. Hence L = lim (2/x)·x = **2**. **Answer: e².** **Full bookkeeping shown via the chain:** (2/x)ln(1+sin x) = 2·[ln(1+sin x)/sin x]·[sin x/x] → 2·1·1 = 2 ✓. **Deep point:** the 1^∞ battle is entirely in the exponent — the base's approach to 1 and the exponent's escape to ∞ fight to a draw whose score is lim (exponent × base's displacement), here 2/x × sin x → 2.",
+      "**NEB-style (5m): Evaluate lim_{x→π/2} (1 − sin x)/(π/2 − x)².** — **Substitution steering:** set u = π/2 − x; as x → π/2, u → 0, and sin x = sin(π/2 − u) = **cos u** (compound angle). The limit becomes lim_{u→0} (1 − cos u)/u². **Half-angle star:** 1 − cos u = 2sin²(u/2) ⟹ (1 − cos u)/u² = 2·[sin(u/2)/u]² = 2·(1/4)·[sin(u/2)/(u/2)]² = (1/2)·[sin(u/2)/(u/2)]² → (1/2)·1² = **1/2**. **Deep points:** (1) substitution converts a limit at a *nonzero* point into the standard at-0 theory — every trig limit away from 0 is one substitution away from home; (2) the answer confirms the **order bookkeeping**: 1 − sin x vanishes to order 2 at π/2 (its Taylor expansion there is (π/2−x)²/2), so the ratio against a quadratic must be a constant — and the constant is exactly the second-order coefficient 1/2."
+    ]
+  },
+  "keyPoints": [
+    "Algebraic grammar: polynomials substitute; rationals 0/0 factor/conjugate, c/0 side-sign infinities, infinity degree rule; surds conjugate; (x^n - a^n)/(x - a) -> n a^(n-1) for all rational n. Trig grammar: sin u/u -> 1, tan u/u -> 1, (1 - cos u)/u^2 -> 1/2 (radians); rescaling sin(kx)/x -> k; identities reduce, squeeze rescues. Exp/log grammar: (e^u - 1)/u -> 1, (a^u - 1)/u -> ln a, ln(1+u)/u -> 1, (1+u)^(1/u) -> e, 1^inf bridge e^(lim uv); growth ladder at infinity. Universal recipe: substitute, classify, transform to a family star, answer. Mixed forms: split into factors (limits must exist), evaluate each by its own grammar."
+  ],
+  "importantConcepts": [
+    "One recipe, four grammars: every limit is substitute-classify-transform, and the families differ only in which standard forms their singularities reduce to."
+  ],
+  "examples": [
+    "***The x-bridge across families*** - (e^(5x) - 1)/sin(2x) is an exponential star divided by a trig star: insert 5x/5x and 2x/2x, and the coefficient ratio 5/2 is the whole answer."
+  ],
+  "importantStatements": [
+    "\"Algebraic: factor/conjugate/degrees. Trig: sin u/u = 1 (radians). Exp: (e^u - 1)/u = 1. Log: ln(1+u)/u = 1. One recipe binds them.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2024 lim (sin 3x)/x = 3 - assigned to this row. Other items NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Insert kx/kx. Half-angle for 1 - cos. e-star for exponentials, ln-star for logs, x-bridge for mixed ratios. Radians and natural logs always."
+  ],
+  "examNotes": [
+    "Show the insertion factors (kx/kx) in working - the steering visible is the method visible."
+  ],
+  "formulas": [
+    "- (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹; sin(kx)/x → k; tan(kx)/x → k\n- (1 − cos kx)/x² → k²/2; (e^{kx} − 1)/x → k; ln(1+kx)/x → k\n- (aˣ − 1)/x → ln a; (1+u)^v → e^{lim uv}; ln x/x → 0"
+  ],
+  "practiceQuestions": [
+    "**NEB 2024 (verified PYQ): Evaluate lim_{x→0} (sin 3x)/x. (2m)** — **Rescaling insertion:** multiply and divide by 3: sin 3x/x = **3·[sin 3x/(3x)]**. **Star:** as x → 0, the argument 3x → 0, so by the fundamental star (radians) sin 3x/(3x) → **1**. **Result:** 3·1 = **3**. **General theorem harvested:** lim_{x→0} sin(kx)/x = k — the coefficient survives, the argument dies into the star. This is the 15.2/45 reduction grammar in its purest one-line form.",
+    "**NEB-style (3m): Evaluate lim_{x→0} (e^{5x} − 1)/(sin 2x).** — **Form:** 0/0 mixing two families — exponential over trigonometric. **Double insertion:** (e^{5x} − 1)/(sin 2x) = [(e^{5x} − 1)/(5x)] · (5x) / { [sin 2x/(2x)] · (2x) } = **(5/2) · [(e^{5x} − 1)/(5x)] / [sin 2x/(2x)]**. **Stars:** e^{5x} − 1 over 5x → **1** (exponential star, u = 5x → 0); sin 2x/(2x) → **1** (trigonometric star, radians). **Result:** (5/2)·(1/1) = **5/2**. The x-bridge converts a mixed-family 0/0 into a ratio of coefficients — the standard move whenever exp meets trig in one fraction.",
+    "**NEB-style (3m): Evaluate lim_{x→1} (x − 1)/ln x.** — **Substitute:** (1 − 1)/ln 1 = 0/0 ⟹ transform. **Steer into the log star:** set u = x − 1, so u → 0 as x → 1 and ln x = ln(1 + u) (composition theorem licenses the rewrite). The expression becomes **u/ln(1+u) = 1/[ln(1+u)/u]**. **Star:** ln(1+u)/u → **1** as u → 0 (natural log mandatory). **Result:** 1/1 = **1**. **Reading:** near x = 1 the logarithm grows exactly as fast as the linear term — ln x ≈ x − 1 is the first-order tangent approximation, and this limit is its certificate.",
+    "**NEB-style (5m): Evaluate lim_{x→0} (sin x − tan x)/x³ and explain the sign.** — **Factor the difference:** sin x − tan x = sin x(1 − 1/cos x) = sin x·(cos x − 1)/cos x = **−sin x·(1 − cos x)/cos x**. **Split into stars** (all factor limits exist): = −[sin x/x]·[(1 − cos x)/x²]·[1/cos x]. **Evaluate each:** sin x/x → **1** (order 1 star); (1 − cos x)/x² → **1/2** (order 2 star, half-angle); 1/cos x → **1**. **Product:** −(1)(1/2)(1) = **−1/2**. **Why negative:** tan x > sin x for small positive x (tan = sin/cos with cos < 1 inflates it), so the difference is negative — the algebraic sign and the function comparison agree. **Order check:** sin x (order 1) times 1 − cos x (order 2) = order 3, matching x³ — a finite nonzero constant was guaranteed before any computation.",
+    "**NEB-style (5m): Evaluate lim_{x→∞} (√(x² + 3x) − x).** — **Form:** ∞ − ∞ — an indeterminate difference of two diverging quantities. **Conjugate:** multiply by (√(x²+3x) + x)/(√(x²+3x) + x): numerator = (x² + 3x) − x² = **3x**, giving 3x/(√(x²+3x) + x). **Divide by x** (x > 0 so √(x²)/x = 1): = 3/(√(1 + 3/x) + 1). **Limit:** 3/x → 0 ⟹ 3/(1 + 1) = **3/2**. **Deep conceptual point:** the two contestants are nearly equal — √(x²+3x) ≈ x√(1+3/x) ≈ x(1 + 3/(2x)) = x + 3/2 — the conjugate exposes the constant *offset* between the two giants. ∞ − ∞ questions always hide a finite difference between infinite quantities; the conjugate (or a common denominator) is how it is excavated.",
+    "**NEB-style (6m): Evaluate lim_{x→0} (1 + sin x)^{2/x} using the exponential bridge, stating the form first.** — **Form check:** base 1 + sin x → 1, exponent 2/x → ∞ ⟹ the **1^∞ indeterminate form** — not 1. **Bridge:** (1 + sin x)^{2/x} = e^{(2/x)·ln(1+sin x)} identically, so the limit is **e^L** with L = lim_{x→0} (2/x)·ln(1 + sin x). **Steer L into stars:** ln(1 + sin x) ~ sin x (log star with u = sin x → 0), and sin x ~ x (trig star) ⟹ ln(1 + sin x) ~ x. Hence L = lim (2/x)·x = **2**. **Answer: e².** **Full bookkeeping shown via the chain:** (2/x)ln(1+sin x) = 2·[ln(1+sin x)/sin x]·[sin x/x] → 2·1·1 = 2 ✓. **Deep point:** the 1^∞ battle is entirely in the exponent — the base's approach to 1 and the exponent's escape to ∞ fight to a draw whose score is lim (exponent × base's displacement), here 2/x × sin x → 2.",
+    "**NEB-style (5m): Evaluate lim_{x→π/2} (1 − sin x)/(π/2 − x)².** — **Substitution steering:** set u = π/2 − x; as x → π/2, u → 0, and sin x = sin(π/2 − u) = **cos u** (compound angle). The limit becomes lim_{u→0} (1 − cos u)/u². **Half-angle star:** 1 − cos u = 2sin²(u/2) ⟹ (1 − cos u)/u² = 2·[sin(u/2)/u]² = 2·(1/4)·[sin(u/2)/(u/2)]² = (1/2)·[sin(u/2)/(u/2)]² → (1/2)·1² = **1/2**. **Deep points:** (1) substitution converts a limit at a *nonzero* point into the standard at-0 theory — every trig limit away from 0 is one substitution away from home; (2) the answer confirms the **order bookkeeping**: 1 − sin x vanishes to order 2 at π/2 (its Taylor expansion there is (π/2−x)²/2), so the ratio against a quadratic must be a constant — and the constant is exactly the second-order coefficient 1/2."
+  ],
+  "summary": "Limit evaluation is **one recipe with four grammars**. **Algebraic:** substitute; 0/0 factors or rationalises ((xⁿ−aⁿ)/(x−a) → naⁿ⁻¹ even for fractional n); c/0 is determinately infinite by side-sign; ∞/∞ compares degrees. **Trigonometric** (radians only): everything steers into sin u/u → 1, tan u/u → 1, (1 − cos u)/u² → 1/2, with rescaling sin(kx)/x → k. **Exponential:** (eᵘ−1)/u → 1, (aᵘ−1)/u → ln a, the e-powers via (1+u)^{1/u} → e. **Logarithmic:** ln(1+u)/u → 1 (natural base mandatory). **Mixed-family forms** surrender to the x-bridge and legal splitting: (e^{5x}−1)/sin 2x → 5/2 (NEB-style), (x−1)/ln x → 1 (the tangent approximation of ln at 1). NEB 2024's sin 3x/x → 3 is the mantra made flesh: *the coefficient survives, the argument dies*."
 }
