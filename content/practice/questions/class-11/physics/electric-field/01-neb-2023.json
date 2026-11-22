@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Gauss's law:** Total electric flux through a closed surface = q_enclosed/ε₀.\n\nFor infinite plane with surface charge σ: Use a cylindrical Gaussian pillbox.\nFlux = E×A (both sides) = σA/ε₀\n→ **E = σ/(2ε₀)** — uniform field independent of distance from sheet.",
-      "knowledgeNote": "Electric field due to infinite plane sheet is uniform and perpendicular to the sheet."
+      "knowledgeNote": "Electric field due to infinite plane sheet is uniform and perpendicular to the sheet.",
+      "answer": "**Gauss's law:** the total electric flux through any closed surface equals **1/ε₀ times the net charge enclosed**: **∮E·dA = q_enc/ε₀**. The surface (Gaussian surface) is imaginary; the flux counts field lines crossing it, and charges outside contribute zero net flux. **Infinite plane sheet of charge (surface density σ):** choose a **cylindrical Gaussian surface** (a 'pillbox') piercing the sheet, with flat caps of area A parallel to the sheet. **(1) Symmetry:** the field must be perpendicular to the sheet and equal on both sides. **(2) Flux:** through the curved side, E is parallel to the surface ⟹ zero flux; through each flat cap, E is perpendicular ⟹ flux EA each ⟹ total flux = 2EA. **(3) Enclosed charge:** q = σA. **(4) Gauss:** 2EA = σA/ε₀ ⟹ **E = σ/2ε₀**, directed away from a positive sheet (toward a negative one), on both sides. **Deep point:** the field is uniform — independent of distance from the sheet — because the sheet is infinite; the pillbox's two caps are why the answer carries the factor 2."
     },
     {
       "question": "Find the electric field intensity at a point 2 m from a point charge of +4 microC. Take $k = 9 \\times 10^9\\ \\text{N m}^2\\text{C}^{-2}$.",
@@ -23,7 +24,8 @@
       "year": 2023,
       "source": "NEB Past",
       "solution": "**Step 1 — Given:** $q = 4 \\times 10^{-6}\\ \\text{C},\\ r = 2\\ \\text{m}$\n\n**Step 2 — Electric field intensity due to a point charge:**\n$$E = \\frac{kq}{r^2} = \\frac{(9 \\times 10^9)(4 \\times 10^{-6})}{(2)^2}$$\n$$E = \\frac{36 \\times 10^3}{4}$$\n$$\\boxed{E = \\mathbf{9 \\times 10^3\\ \\text{N/C}}$$\n\n**Step 3 — Direction:** The charge is positive, so the field is directed **radially outward** from the charge.\n\n**Step 4 — Alternative form using force on a test charge:**\n$$\\text{If } q_0 = 1\\ \\mu\\text{C}, \\quad F = kq q_0/r^2 = 9\\times10^9 \\times 4\\times10^{-6}\\times10^{-6}/4 = 9 \\times 10^{-3}\\ \\text{N}$$\n$$E = \\frac{F}{q_0} = \\frac{9 \\times 10^{-3}}{10^{-6}} = 9 \\times 10^3\\ \\text{N/C}$$ ✓",
-      "knowledgeNote": "Electric field intensity of a point charge equals kq divided by the square of the distance, in newtons per coulomb."
+      "knowledgeNote": "Electric field intensity of a point charge equals kq divided by the square of the distance, in newtons per coulomb.",
+      "answer": "**Formula:** E = kq/r² = (1/4πε₀) q/r². **Substitute:** k = 9 × 10⁹; q = 4 μC = 4 × 10⁻⁶ C; r = 2 m. E = (9 × 10⁹ × 4 × 10⁻⁶)/4 = (3.6 × 10⁴)/4 = **9 × 10³ N/C = 9000 N/C**, directed radially away from the positive charge. **Deep point:** the inverse-square is why field falls fast — double the distance, quarter the field; and 'N/C' and 'V/m' are the same unit in two costumes."
     }
   ]
 }

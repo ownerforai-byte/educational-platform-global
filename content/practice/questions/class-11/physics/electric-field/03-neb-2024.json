@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Gauss's law:** the total electric flux through any closed surface equals q_enclosed/ε₀.\n\nFor an infinite sheet of surface charge density σ, take a cylindrical Gaussian pillbox piercing the sheet. Flux leaves through both faces: Φ = E·A + E·A = 2EA. Enclosed charge = σA.\n\n2EA = σA/ε₀ → **E = σ/(2ε₀)** — uniform, independent of distance, pointing away on both sides.",
-      "knowledgeNote": "One sheet gives σ/2ε₀; two oppositely charged parallel sheets (a capacitor) give σ/ε₀ between them and zero outside."
+      "knowledgeNote": "One sheet gives σ/2ε₀; two oppositely charged parallel sheets (a capacitor) give σ/ε₀ between them and zero outside.",
+      "answer": "**Gauss's law:** ∮E·dA = q_enc/ε₀ — total flux through a closed surface equals the enclosed charge divided by ε₀. **Infinite plane sheet (σ):** pillbox Gaussian surface with caps of area A parallel to the sheet; flux = 2EA (two caps; zero through the curved side); enclosed charge σA; 2EA = σA/ε₀ ⟹ **E = σ/2ε₀** on each side, perpendicular to the sheet, uniform with distance. **Deep point:** the factor 2 comes from the two caps, and the distance-independence from the infinite symmetry — both are examinable."
     },
     {
       "question": "Calculate the electric field strength at 0.3 m from a point charge of 6 μC in air.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "E = kq/r² = (9 × 10⁹ × 6 × 10⁻⁶)/(0.3)² = 54,000/0.09 = **6 × 10⁵ N/C**, directed away from the (positive) charge.",
-      "knowledgeNote": "Point-charge field falls as 1/r² while its potential falls only as 1/r — field is the steeper quantity."
+      "knowledgeNote": "Point-charge field falls as 1/r² while its potential falls only as 1/r — field is the steeper quantity.",
+      "answer": "**E = kq/r²** = (9 × 10⁹ × 6 × 10⁻⁶)/(0.3)² = (5.4 × 10⁴)/0.09 = **6 × 10⁵ N/C**, radially outward from the positive charge. **Deep point:** (0.3)² = 0.09 — the squared-distance slip is the only hazard in an otherwise one-line substitution."
     },
     {
       "question": "State any four properties of electric field lines.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "(1) They start on positive charges and end on negative charges (or infinity). (2) They never cross — crossing would mean two field directions at one point. (3) Their density measures field strength (crowded = strong). (4) They meet a conductor's surface at right angles.",
-      "knowledgeNote": "Field lines are a map, not a physical thing — a test charge's path coincides with them only if it starts from rest."
+      "knowledgeNote": "Field lines are a map, not a physical thing — a test charge's path coincides with them only if it starts from rest.",
+      "answer": "**Properties of electric field lines:** (1) they originate on **positive charges and terminate on negative charges** (or at infinity); (2) **two lines never cross** (the field has a unique direction at every point); (3) the **density of lines is proportional to the field strength** (crowded lines = strong field); (4) lines are **perpendicular to conductor surfaces** in electrostatic equilibrium and never form closed loops (electrostatic field is conservative); (5) a tangent to a line at any point gives the field's direction there. **Deep point:** 'never cross' is the property with a reason — crossing would mean two directions for E at one point, which is impossible."
     },
     {
       "question": "Use Gauss's law to find the electric field due to a uniformly charged spherical shell of radius R carrying charge Q, at points outside and inside the shell.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Outside (r > R):** a spherical Gaussian surface encloses all Q: E·4πr² = Q/ε₀ → **E = Q/(4πε₀r²)** — as if all charge sat at the centre.\n\n**Inside (r < R):** the Gaussian surface encloses no charge: E·4πr² = 0 → **E = 0** everywhere inside.",
-      "knowledgeNote": "Zero field inside is why a car (a rough metal shell) shields you in a lightning storm — the Faraday-cage effect."
+      "knowledgeNote": "Zero field inside is why a car (a rough metal shell) shields you in a lightning storm — the Faraday-cage effect.",
+      "answer": "**Gauss's law:** ∮E·dA = q_enc/ε₀. **Outside (r > R):** choose a **concentric spherical Gaussian surface** of radius r. By symmetry E is radial and constant on the surface ⟹ flux = E × 4πr². Enclosed charge = Q. E × 4πr² = Q/ε₀ ⟹ **E = Q/(4πε₀r²) = kQ/r²** — the shell acts as if all its charge were concentrated at its centre. **Inside (r < R):** the Gaussian sphere of radius r encloses **no charge** (all charge lies on the shell at radius R) ⟹ flux = 0 ⟹ **E = 0 everywhere inside**. **(On the surface, r = R: E = kQ/R².**)** **Deep point:** the inside result is the shell theorem's electric half — a hollow charged sphere exerts no field on its own interior, the same geometry that makes the outside field look point-like."
     },
     {
       "question": "An electric dipole consists of +4 μC and −4 μC charges 0.2 m apart. Calculate its dipole moment and the field on its axis 0.5 m from its centre.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Dipole moment p = q·d = (4 × 10⁻⁶)(0.2) = **8 × 10⁻⁷ C·m**.\n\nAxial field (r ≫ d): E = 2kpr/(r²)³ ≈ 2kp/r³ = (2 × 9 × 10⁹ × 8 × 10⁻⁷)/(0.5)³ = 14,400/0.125 = **1.15 × 10⁵ N/C** along the dipole axis.",
-      "knowledgeNote": "Axial field (2kp/r³) is twice the equatorial field (kp/r³) at the same distance — the factor 2 is the classic comparison question."
+      "knowledgeNote": "Axial field (2kp/r³) is twice the equatorial field (kp/r³) at the same distance — the factor 2 is the classic comparison question.",
+      "answer": "**Dipole moment:** p = q × (separation) — the product of either charge and the vector distance from −q to +q, directed along the axis from negative to positive. **p = 4 × 10⁻⁶ C × 0.2 m = 8 × 10⁻⁷ C·m**. **Field on the axis at distance x = 0.5 m from the centre:** E_axial = (1/4πε₀) × 2p/x³ (for x ≫ separation) = (9 × 10⁹ × 2 × 8 × 10⁻⁷)/(0.5)³ = (1.44 × 10⁴)/0.125 = **1.152 × 10⁵ N/C ≈ 1.15 × 10⁵ N/C**, directed along the dipole axis (from −q toward +q, pointing away from the dipole on this side). **Deep point:** the axial field falls as 1/x³ — one power faster than a point charge, the signature of a dipole's two cancelling monopoles."
     },
     {
       "question": "Why is the electric field zero everywhere inside a conductor in electrostatic equilibrium?",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Free electrons in the conductor move until no net force acts on them — and zero force means zero field. Any internal field would keep pushing charges around, contradicting equilibrium.\n\nSo all excess charge ends up on the outer surface, arranged exactly so its field cancels inside.",
-      "knowledgeNote": "This is also why the whole volume of a conductor is an equipotential — no field means no potential difference to cross."
+      "knowledgeNote": "This is also why the whole volume of a conductor is an equipotential — no field means no potential difference to cross.",
+      "answer": "**Because of electrostatic induction and Gauss's law:** in equilibrium the conduction electrons redistribute until the field they create inside exactly cancels the applied field — any residual field would drive further current (electron flow), and 'equilibrium' means no current flows. Formally: choose a Gaussian surface just inside the conductor; the field is zero everywhere on it (else charges would move), so the enclosed charge is zero — excess charge resides on the **surface**, and the interior is field-free. **Deep point:** zero internal field is not an assumption but the definition of electrostatic equilibrium — 'no moving charges' *means* 'no field to move them'."
     }
   ]
 }

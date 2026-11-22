@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Model",
       "solution": "**Correct option: (a) 0.15 N attractive.**\n\n**Step 1 — Magnitude of the force:**\n$$F = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1q_2}{r^2} = 9 \\times 10^9 \\times \\frac{(2 \\times 10^{-6})(3 \\times 10^{-6})}{(0.6)^2}$$\n$$F = 9 \\times 10^9 \\times \\frac{6 \\times 10^{-12}}{0.36} = 9 \\times 10^9 \\times 1.67 \\times 10^{-11}$$\n$$F = \\mathbf{0.15\\ \\text{N}}$$\n\n**Step 2 — Direction:** The charges have **opposite** signs, so the force is **attractive**.\n\nHence the correct answer is option **(a)**, and options (b), (c) and (d) are wrong.",
-      "knowledgeNote": "Opposite charges attract; using nine times ten to the ninth gives 0.15 newtons for these microCoulomb charges."
+      "knowledgeNote": "Opposite charges attract; using nine times ten to the ninth gives 0.15 newtons for these microCoulomb charges.",
+      "answer": "**Compute:** F = k|q₁q₂|/r² = (9 × 10⁹ × 2 × 10⁻⁶ × 3 × 10⁻⁶)/(0.6)² = (9 × 10⁹ × 6 × 10⁻¹²)/0.36 = (5.4 × 10⁻²)/0.36 = **0.15 N**. **Direction:** the charges are **opposite signs (+2 μC, −3 μC)** ⟹ the force is **attractive**. **Answer: (a) 0.15 N attractive.** **Deep point:** magnitude from the product of |q|'s, direction from the signs — the arithmetic gives 0.15 N and the signs give 'attractive'; option (b) is the sign-slip distractor."
     }
   ]
 }

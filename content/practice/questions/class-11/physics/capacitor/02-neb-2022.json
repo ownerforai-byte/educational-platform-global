@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Step 1 — Given:** $C = 6\\times10^{-6}\\ \\text{F},\\ V = 100\\ \\text{V}$\n\n**Step 2 — Energy stored in a capacitor:**\n$$U = \\frac{1}{2}CV^2$$\n\n**Step 3 — Substitute:**\n$$U = \\frac{1}{2} \\times (6 \\times 10^{-6}) \\times (100)^2 = \\frac{1}{2} \\times 6\\times10^{-6} \\times 10^4$$\n$$U = 3 \\times 10^{-2}$$\n$$\\boxed{U = \\mathbf{0.03\\ \\text{J}} = \\mathbf{3.0 \\times 10^{-2}\\ \\text{J}} = 30\\ \\text{mJ}}$$\n\n**Step 4 — Verification:** Charge stored $Q = CV = 6\\times10^{-6}\\times100 = 6\\times10^{-4}\\ \\text{C}$, and $U = \\tfrac{1}{2}QV = \\tfrac{1}{2}\\times6\\times10^{-4}\\times100 = 0.03\\ \\text{J}$ ✓\n\n**Equivalent forms:** $U = \\frac{1}{2}CV^2 = \\frac{1}{2}Q^2C = \\frac{1}{2}QV$; energy density $= \\tfrac{1}{2}\\varepsilon_0E^2$.",
-      "knowledgeNote": "Energy stored in a capacitor equals one-half of capacitance times potential difference squared, here 0.03 joules."
+      "knowledgeNote": "Energy stored in a capacitor equals one-half of capacitance times potential difference squared, here 0.03 joules.",
+      "answer": "**Formula:** energy stored in a capacitor, U = ½CV². **Substitute:** C = 6 μF = 6 × 10⁻⁶ F; V = 100 V. U = ½ × 6 × 10⁻⁶ × (100)² = ½ × 6 × 10⁻⁶ × 10⁴ = 3 × 10⁻² J = **0.03 J**. **Deep point:** the V² dependence is the memory hook — doubling the charging voltage quadruples the stored energy, which is why capacitor banks are rated in volts as much as in farads."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Dispersion** is the splitting of white light into its colours by a prism.\n\nCause: refractive index depends on wavelength (Cauchy: n = a + b/λ²), so violet (short λ) is slowed and deviated most while red deviates least — the beam fans out into a spectrum.",
-      "knowledgeNote": "Dispersion needs a wavelength-dependent n; a mirror reflects all colours equally, so spectra never form there."
+      "knowledgeNote": "Dispersion needs a wavelength-dependent n; a mirror reflects all colours equally, so spectra never form there.",
+      "answer": "**Dispersion of light:** the splitting of white light into its constituent colours on passing through a prism (or any refracting medium), because the colours emerge at different angles. **Cause:** the **refractive index depends on wavelength** — n is largest for violet (short λ) and smallest for red (long λ), since higher-frequency light interacts more strongly with the medium's electrons. Each colour obeys Snell's law with its own n, so each bends by a different amount at each face; because the prism's faces are non-parallel, the differences accumulate on exit and the colours fan out into a spectrum. **Deep point:** wavelength-dependent n is the cause; non-parallel faces are the amplifier — a slab has the same n(λ) but cancels the spread."
     },
     {
       "question": "Define angular dispersion and dispersive power of a prism. Write the formula for dispersive power.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Angular dispersion** (δv − δr) is the angle between the extreme violet and red rays.\n\n**Dispersive power** ω = (δv − δr)/δy = **(nv − nr)/(ny − 1)** — the spread per unit mean deviation, a pure number characterising the glass.",
-      "knowledgeNote": "Flint glass (ω ≈ 0.05) spreads far more than crown (ω ≈ 0.02) — material choice, not prism size, sets ω."
+      "knowledgeNote": "Flint glass (ω ≈ 0.05) spreads far more than crown (ω ≈ 0.02) — material choice, not prism size, sets ω.",
+      "answer": "**Angular dispersion:** the angle between the emergent extreme rays — δ_v − δ_r; for a thin prism, (n_v − n_r)A. **Dispersive power:** the angular dispersion per unit mean (yellow) deviation — the material's intrinsic spreading ability: **ω = (δ_v − δ_r)/δ_y = (n_v − n_r)/(n_y − 1)**. It is dimensionless and independent of the prism angle. **Deep point:** dispersion is an angle; dispersive power is a *ratio* — dividing by the mean deviation removes the geometry and leaves the glass."
     },
     {
       "question": "For a glass, nv = 1.53, nr = 1.51, and ny = 1.52. Calculate its dispersive power.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "ω = (nv − nr)/(ny − 1) = (1.53 − 1.51)/(1.52 − 1) = 0.02/0.52 ≈ **0.0385**.",
-      "knowledgeNote": "ω has no units — if your answer carries any, the formula went wrong."
+      "knowledgeNote": "ω has no units — if your answer carries any, the formula went wrong.",
+      "answer": "**Formula:** ω = (n_v − n_r)/(n_y − 1). **Substitute:** n_v = 1.53, n_r = 1.51, n_y = 1.52: ω = (1.53 − 1.51)/(1.52 − 1) = 0.02/0.52 = **0.038 (≈ 3.8%)**. **Deep point:** the numerator is the spread, the denominator the mean bend — a dispersive power of 0.038 means the spectrum's width is about 4% of the mean deviation, typical of crown glass."
     },
     {
       "question": "Explain the formation of the primary rainbow.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Sunlight enters a raindrop (refraction → dispersion), reflects once inside (TIR), and refracts out again. Each colour leaves at its own ~42° cone angle.\n\nViolet bends most (inner edge), red least (outer edge) — the sky wears a 42° circular spectrum centred on the antisolar point.",
-      "knowledgeNote": "Secondary rainbow: two internal reflections, reversed colours, wider 51° cone — fainter because each reflection loses light."
+      "knowledgeNote": "Secondary rainbow: two internal reflections, reversed colours, wider 51° cone — fainter because each reflection loses light.",
+      "answer": "**Primary rainbow formation:** sunlight enters a **raindrop**, refracts at the front surface, **undergoes one total internal reflection** at the back of the drop, and refracts out of the front again — a net deviation of about 138° (so the light returns at ~42° from the antisolar point). **Dispersion at each refraction** separates the colours: red, being least refracted, emerges at the larger angle (~42°) and lies on the **outer (top) edge** of the bow; violet, most refracted, at ~40° on the inner edge. Every drop on the cone of semi-angle ~42° about the sun-observer line contributes, building the arc. **Deep point:** one internal reflection = primary (42°, red outside); two reflections = secondary (51°, colours reversed, fainter) — the count of reflections inside the drop orders the bows."
     },
     {
       "question": "What is an achromatic combination of prisms? Write its condition.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Two prisms of different glasses that cancel each other's dispersion while keeping a net deviation — white light stays white.\n\nCondition: equal and opposite angular dispersions, (δv − δr)₁ = (δv − δr)₂, i.e. **ω₁δy₁ = ω₂δy₂** with the prisms oppositely oriented.",
-      "knowledgeNote": "Camera lenses stack crown (converging) and flint (diverging) elements on exactly this condition — achromatic doublets."
+      "knowledgeNote": "Camera lenses stack crown (converging) and flint (diverging) elements on exactly this condition — achromatic doublets.",
+      "answer": "**Achromatic combination:** two prisms (usually crown and flint glass) cemented with their refracting angles opposed, so that the **dispersion of one cancels the dispersion of the other** while a net deviation remains — the combination disperses no white light but still bends it. **Condition:** the angular dispersions are equal and opposite: **(n_v − n_r)A = (n′_v − n′_r)A′** (dispersive powers × angles equal: ωA = ω′A′). The net deviation is then δ = (n_y − 1)A − (n′_y − 1)A′ ≠ 0. **Deep point:** the condition cancels the *spread* but not the *mean bend* — which is exactly what a direct-vision spectroscope needs: deviation without spectrum."
     },
     {
       "question": "Why does red light deviate least and violet most through a prism?",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Deviation grows with refractive index, and n is largest for the shortest wavelength (violet interacts most strongly with the glass's electrons).\n\nSo violet is slowed and bent most, red least — VIBGYOR order from most to least deviated.",
-      "knowledgeNote": "n_red < n_yellow < n_violet is the three-inequality chain behind every dispersion numerical."
+      "knowledgeNote": "n_red < n_yellow < n_violet is the three-inequality chain behind every dispersion numerical.",
+      "answer": "**Because the refractive index decreases with wavelength:** violet (shortest λ) has the largest n and obeys Snell's law with the greatest bending at both faces; red (longest λ) has the smallest n and bends least. Deviation for a thin prism is δ = (n − 1)A, so δ_v = (n_v − 1)A > δ_r = (n_r − 1)A. **Deep point:** the formula δ = (n − 1)A compresses the answer — bigger n, bigger δ, and violet always owns the biggest n."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**KCL (junction rule):** the algebraic sum of currents at a junction is zero — charge is conserved.\n\n**KVL (loop rule):** the algebraic sum of emfs round any closed loop equals the sum of the IR drops — energy is conserved.\n\nSingle loop: E = I(R + r) → I = 5/(5 + 2) = **0.71 A**.",
-      "knowledgeNote": "KCL ← charge conservation; KVL ← energy conservation — stating the conservation root earns the explanation mark."
+      "knowledgeNote": "KCL ← charge conservation; KVL ← energy conservation — stating the conservation root earns the explanation mark.",
+      "answer": "**Kirchhoff's laws:** (1) **junction rule** — ΣI = 0 at any junction (charge conservation); (2) **loop rule** — Σε = ΣIR around any closed loop (energy conservation). **Application:** single loop with emf ε = 5 V, internal resistance r = 2 Ω, external R = 5 Ω: ε = I(R + r) ⟹ I = 5/(5 + 2) = **5/7 ≈ 0.71 A**. **Deep point:** with one loop, Kirchhoff's loop rule *is* the whole circuit equation — emf equals the sum of all drops, internal and external."
     },
     {
       "question": "Resistors of 6 Ω and 3 Ω are connected in parallel across a 12 V battery. Find the current through each resistor and the total current.",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Parallel branches share the full voltage: I₁ = V/R₁ = 12/6 = **2 A**; I₂ = 12/3 = **4 A**.\n\nTotal I = 2 + 4 = **6 A** (check: R_eq = 2 Ω, 12/2 = 6 A ✓).",
-      "knowledgeNote": "In parallel, the smaller resistor hogs the current — current divides in the inverse resistance ratio."
+      "knowledgeNote": "In parallel, the smaller resistor hogs the current — current divides in the inverse resistance ratio.",
+      "answer": "**Branch currents (same 12 V across each):** I₆ = V/R = 12/6 = **2 A**; I₃ = 12/3 = **4 A**. **Total current:** I = 2 + 4 = **6 A** (equivalently R = 6×3/(6+3) = 2 Ω, I = 12/2 = 6 A ✓). **Deep point:** in parallel, voltage is common and currents add — the product-over-sum resistance is just the shortcut to the same total."
     },
     {
       "question": "State the principle of the Wheatstone bridge and write its balance condition.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Four resistors form a diamond; the bridge is **balanced** when no current flows through the middle galvanometer, so the two branch points are at equal potential.\n\nBalance condition: **P/Q = R/S** (ratios of adjacent arms equal). An unknown resistance follows from three known ones.",
-      "knowledgeNote": "The metre bridge is a Wheatstone bridge stretched into a wire — same P/Q = R/S, with lengths standing in for two arms."
+      "knowledgeNote": "The metre bridge is a Wheatstone bridge stretched into a wire — same P/Q = R/S, with lengths standing in for two arms.",
+      "answer": "**Wheatstone bridge principle:** four resistances P, Q, R, S form a quadrilateral fed by a cell across one diagonal and a galvanometer across the other; when the bridge is **balanced** (galvanometer shows no deflection), no current flows through the galvanometer branch and the two voltage dividers agree — the potential at the galvanometer's ends is equal. **Balance condition: P/Q = R/S** (product of opposite arms equal: PS = QR). **Deep point:** 'no deflection' is the experimental signature and P/Q = R/S the algebraic translation — the bridge measures an unknown resistance by comparison, null methods being immune to meter errors."
     },
     {
       "question": "A cell of emf 2 V and internal resistance 0.5 Ω is connected to a 3.5 Ω resistor. Calculate the terminal voltage of the cell.",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "Current I = E/(R + r) = 2/(3.5 + 0.5) = **0.5 A**.\n\nTerminal voltage V = E − Ir = 2 − (0.5 × 0.5) = **1.75 V** (equivalently V = IR = 0.5 × 3.5 = 1.75 V).",
-      "knowledgeNote": "V = E only on open circuit — the moment current flows, Ir is lost inside the cell."
+      "knowledgeNote": "V = E only on open circuit — the moment current flows, Ir is lost inside the cell.",
+      "answer": "**Current:** I = ε/(R + r) = 2/(3.5 + 0.5) = 2/4 = **0.5 A**. **Terminal voltage:** V = ε − Ir = 2 − 0.5 × 0.5 = 2 − 0.25 = **1.75 V** (equivalently V = IR = 0.5 × 3.5 = 1.75 V ✓). **Deep point:** the two routes to V (subtract the internal drop, or multiply the external drop) must agree — their agreement is the check that r was included once, not twice."
     },
     {
       "question": "Define drift velocity and derive the relation I = neAv_d.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Drift velocity** is the slow average velocity electrons acquire along a wire under an electric field (≈ mm/s).\n\nIn time t, electrons in length v_d·t cross a section: N = n·A·v_d·t carriers, charge Q = Ne = neAv_d·t. So I = Q/t = **neAv_d**.",
-      "knowledgeNote": "Signals travel near light speed (field propagation) while electrons merely drift — that is why the bulb lights 'instantly'."
+      "knowledgeNote": "Signals travel near light speed (field propagation) while electrons merely drift — that is why the bulb lights 'instantly'.",
+      "answer": "**Drift velocity:** the average velocity acquired by free electrons in a conductor along the field direction, superimposed on their random thermal motion — small (≈mm/s) because collisions with the lattice repeatedly reset the motion. **Derivation of I = neAv_d:** in time t, every electron within a length v_d t of a cross-section A passes through it — a cylinder of volume A v_d t containing **n A v_d t** electrons (n = number density), carrying charge q = neAv_d t. **Current** is charge per time: **I = q/t = neAv_d**. **Deep point:** the derivation is geometry, not electronics — count the electrons in the drift cylinder; the formula's four factors (density, charge, area, drift speed) are exactly the four things that set a wire's current."
     },
     {
       "question": "State the principle of a potentiometer. How is it used to compare the emfs of two cells?",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Principle:** for a uniform wire carrying steady current, the potential drop per unit length is constant — balancing length ∝ emf.\n\nEach cell in turn is balanced against the wire (null deflection): E₁/E₂ = **l₁/l₂**. Because readings are taken at null, the cell supplies no current — the true emf, not the terminal voltage, is compared.",
-      "knowledgeNote": "Null-method advantage: no current drawn from the test cell, so internal resistance never corrupts the result."
+      "knowledgeNote": "Null-method advantage: no current drawn from the test cell, so internal resistance never corrupts the result.",
+      "answer": "**Potentiometer principle:** the potential drop across a uniform resistance wire is **proportional to its length** when a steady current flows (V = kL, k = fall of potential per unit length); a sliding contact taps any desired potential difference along the wire. Because it balances an unknown emf against a measured length **without drawing current from the cell at balance**, it measures true emf (no internal-drop error). **Comparing two emfs:** connect cell 1, find the balance length L₁ (galvanometer null); connect cell 2, find balance length L₂. Since each emf equals k × its balance length: **ε₁/ε₂ = L₁/L₂**. **Deep point:** the null method is the potentiometer's whole virtue — at balance no current flows through the cell, so the reading is the emf itself, unpolluted by internal resistance."
     }
   ]
 }

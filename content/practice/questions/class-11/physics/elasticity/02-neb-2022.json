@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "Stress = F/A = 100 N / (2 Ã— 10â»â¶ mÂ²) = **5 Ã— 10â· Pa**\n\nStrain = Stress / Y = (5 Ã— 10â·) / (2 Ã— 10Â¹Â¹) = **2.5 Ã— 10â»â´**",
-      "knowledgeNote": "Elastic limit of steel â‰ˆ 10â¸ Pa. Hooke's law: stress âˆ strain up to elastic limit."
+      "knowledgeNote": "Elastic limit of steel â‰ˆ 10â¸ Pa. Hooke's law: stress âˆ strain up to elastic limit.",
+      "answer": "**Stress:** F/A with A = 2 mm² = 2 × 10⁻⁶ m²: stress = 100/(2 × 10⁻⁶) = **5 × 10⁷ Pa = 50 MPa**. **Strain:** strain = stress/Y = (5 × 10⁷)/(2 × 10¹¹) = **2.5 × 10⁻⁴**. **(Bonus check:** for a 2 m wire this means ΔL = strain × L = 5 × 10⁻⁴ m = 0.5 mm.**)** **Deep point:** the mm² → m² conversion (× 10⁻⁶) is the only trap — get it wrong by a factor of a thousand and both answers follow the error."
     }
   ]
 }

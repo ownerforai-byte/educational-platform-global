@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "Angular velocity Ï‰ = v/r = 10/50 = **0.2 rad/s**\n\nCentripetal acceleration ac = vÂ²/r = 100/50 = **2 m/sÂ²**",
-      "knowledgeNote": "Ï‰ = v/r (rad/s). Period T = 2Ï€/Ï‰. Centripetal acceleration always points toward center."
+      "knowledgeNote": "Ï‰ = v/r (rad/s). Period T = 2Ï€/Ï‰. Centripetal acceleration always points toward center.",
+      "answer": "**Angular velocity:** ω = v/r = 10/50 = **0.2 rad/s**. **Centripetal acceleration:** a = v²/r = (10)²/50 = 100/50 = **2 m/s²**, directed toward the centre of the turn. **Deep point:** two formulas, one division each — and the direction clause ('toward the centre') is the physics half of the centripetal answer."
     },
     {
       "question": "An artificial satellite revolves in a circular orbit 600 km above the surface of the earth. Take the radius of the earth as $6.4 \\times 10^6$ m and $G = 6.67 \\times 10^{-11}\\ \\text{N m}^2\\text{kg}^{-2}$, $M = 6 \\times 10^{24}$ kg. Find the orbital speed of the satellite.",
@@ -23,7 +24,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Step 1 — Orbital radius from the centre of the earth:**\n$$r = R + h = 6.4 \\times 10^6 + 6 \\times 10^5 = 7.0 \\times 10^6\\ \\text{m}$$\n\n**Step 2 — For a circular orbit,** gravitational force provides the centripetal force:\n$$\\frac{GMm}{r^2} = \\frac{mv^2}{r} \\;\\Rightarrow\\; v = \\sqrt{\\frac{GM}{r}}$$\n\n**Step 3 — Substitute:**\n$$v = \\sqrt{\\frac{6.67 \\times 10^{-11} \\times 6 \\times 10^{24}}{7.0 \\times 10^6}}$$\n$$v = \\sqrt{\\frac{4.002 \\times 10^{14}}{7.0 \\times 10^6}} = \\sqrt{5.717 \\times 10^{7}}$$\n\n**Step 4 — Result:**\n$$\\boxed{v \\approx 7.56 \\times 10^3\\ \\text{m/s} \\approx 7.6\\ \\text{km/s}}$$\n\n**Step 5 — Period of revolution:**\n$$T = \\frac{2\\pi r}{v} = \\frac{2 \\times 3.142 \\times 7.0 \\times 10^6}{7.56 \\times 10^3} \\approx 5.82 \\times 10^3\\ \\text{s} \\approx \\mathbf{97\\ \\text{min}}$$",
-      "knowledgeNote": "Orbital speed in a circular orbit is the square root of GM divided by the orbital radius from the earth's centre."
+      "knowledgeNote": "Orbital speed in a circular orbit is the square root of GM divided by the orbital radius from the earth's centre.",
+      "answer": "**Orbital speed:** for a circular orbit, gravity supplies the centripetal force: GMm/r² = mv²/r ⟹ **v = √(GM/r)**. **Orbit radius:** r = R + h = 6.4 × 10⁶ + 6 × 10⁵ = 7.0 × 10⁶ m. **Substitute:** v = √(6.67 × 10⁻¹¹ × 6 × 10²⁴ / 7 × 10⁶) = √(4.002 × 10¹⁴/7 × 10⁶) = √(5.717 × 10⁷) ≈ **7.56 × 10³ m/s ≈ 7.6 km/s**. **Deep point:** v = √(GM/r) contains no satellite mass — orbital speed is set by the planet and the orbit's radius alone, the same mass-independence that makes all masses fall alike."
     }
   ]
 }

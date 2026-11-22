@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Dispersion:** The splitting of a beam of white light into its constituent seven colours (VIBGYOR) when it passes through a dispersive medium is called dispersion.\n\n**Reason:** The refractive index $\\mu$ of the glass is **different for different colours**, and since $\\mu$ depends on the wavelength (or frequency) of light, violet light (shortest wavelength) is deviated most and red light (longest wavelength) is deviated least.\n$$\\mu_v > \\mu_r$$\nTherefore the band of colours fans out and they appear separately on the screen.",
-      "knowledgeNote": "Dispersion happens because refractive index of the medium varies with the wavelength of light."
+      "knowledgeNote": "Dispersion happens because refractive index of the medium varies with the wavelength of light.",
+      "answer": "**Dispersion of light:** the splitting of white (composite) light into its constituent colours when it passes through a refracting medium — red bends least, violet most, giving the spectrum. **Why it happens:** the **refractive index of a material depends on the wavelength (colour) of light** (normal dispersion: n decreases as λ increases, because higher frequencies interact more strongly with the medium's electrons). White light contains all wavelengths; in the prism each colour obeys Snell's law sin i/sin r = n_λ with its own n: violet (largest n ≈ 1.53) refracts most, red (smallest n ≈ 1.51) least. Since the prism's faces are not parallel, the tiny per-refraction differences are **not cancelled on exit** — the colours emerge at different angles and spread into the spectrum (seven colours: violet, indigo, blue, green, yellow, orange, red). **Deep point:** dispersion needs two ingredients — wavelength-dependent n *and* non-parallel surfaces; a glass slab refracts all colours by different amounts too, but its parallel faces recombine them, so no spectrum appears."
     }
   ]
 }

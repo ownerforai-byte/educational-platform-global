@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Capacitance** C = Q/V: charge stored per unit voltage. SI unit: **farad (F)**.\n\nTwo plates of area A, separation d, charge ±Q: field E = σ/ε₀ = Q/(Aε₀). Potential V = Ed = Qd/(Aε₀).\n\nC = Q/V = **ε₀A/d**. With a dielectric of constant εᵣ filling the gap: C = εᵣε₀A/d.",
-      "knowledgeNote": "1 F is enormous — real capacitors live in the pF–mF range, so NEB answers in μF/pF are a sanity check."
+      "knowledgeNote": "1 F is enormous — real capacitors live in the pF–mF range, so NEB answers in μF/pF are a sanity check.",
+      "answer": "**Definition:** capacitance C = Q/V — the charge stored per unit potential difference; SI unit the **farad** (1 F = 1 C/V). **Derivation:** plates of area A, separation d, charge Q, surface density σ = Q/A. (1) By Gauss's law the field between the plates is E = σ/ε₀ = Q/(ε₀A) (the two plates' fields add in the gap, cancel outside); (2) for a uniform field V = Ed = Qd/(ε₀A); (3) C = Q/V = **ε₀A/d** (with dielectric K: C = Kε₀A/d). **Deep point:** the formula contains neither Q nor V — capacitance is geometry (area up, gap down), not charge."
     },
     {
       "question": "A parallel plate air capacitor has plates of area 0.04 m² separated by 2 mm. Calculate its capacitance. (ε₀ = 8.85 × 10⁻¹² F/m)",
@@ -23,7 +24,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "C = ε₀A/d = (8.85 × 10⁻¹² × 0.04)/(2 × 10⁻³)\n\nC = 3.54 × 10⁻¹³/2 × 10⁻³ = 1.77 × 10⁻¹⁰ F ≈ **177 pF**.",
-      "knowledgeNote": "C ∝ A/d — doubling the plate area or halving the gap doubles the capacitance."
+      "knowledgeNote": "C ∝ A/d — doubling the plate area or halving the gap doubles the capacitance.",
+      "answer": "**Formula:** C = ε₀A/d (air). **Substitute:** A = 0.04 m²; d = 2 mm = 2 × 10⁻³ m. C = (8.85 × 10⁻¹² × 0.04)/(2 × 10⁻³) = (3.54 × 10⁻¹³)/(2 × 10⁻³) = **1.77 × 10⁻¹⁰ F ≈ 177 pF**. **Deep point:** the pF scale is the everyday reality of air capacitors — ε₀'s tiny value means practical capacitances live in picofarads unless area is huge or a high-K dielectric is used."
     },
     {
       "question": "Capacitors of 2 μF and 3 μF are connected (i) in series and (ii) in parallel. Find the equivalent capacitance in each case.",
@@ -31,7 +33,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "(i) Series: 1/C = 1/2 + 1/3 = 5/6 → C = **1.2 μF** (series is always smaller than the smallest).\n\n(ii) Parallel: C = 2 + 3 = **5 μF**.",
-      "knowledgeNote": "Capacitors combine oppositely to resistors: series shrinks, parallel adds — mixing them up is the standard trap."
+      "knowledgeNote": "Capacitors combine oppositely to resistors: series shrinks, parallel adds — mixing them up is the standard trap.",
+      "answer": "**(i) Series:** 1/C = 1/C₁ + 1/C₂ = 1/2 + 1/3 = 5/6 ⟹ C = 6/5 = **1.2 μF** (smaller than either — series reduces capacitance, same charge on each). **(ii) Parallel:** C = C₁ + C₂ = 2 + 3 = **5 μF** (larger than either — parallel adds plate area, same voltage on each). **Deep point:** series and parallel capacitors combine opposite to resistors — memorise it as 'capacitors add in parallel, reciprocals add in series', and check the sanity: series must come out below the smallest, parallel above the largest."
     },
     {
       "question": "A 12 μF capacitor is charged to 100 V. How much energy is stored in it?",
@@ -39,7 +42,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "U = ½CV² = ½ × (12 × 10⁻⁶) × (100)² = ½ × 12 × 10⁻⁶ × 10⁴ = **0.06 J**.",
-      "knowledgeNote": "U = ½CV² = Q²/2C = ½QV — pick the form matching the given pair (C,V), (C,Q), or (Q,V)."
+      "knowledgeNote": "U = ½CV² = Q²/2C = ½QV — pick the form matching the given pair (C,V), (C,Q), or (Q,V).",
+      "answer": "**U = ½CV²** = ½ × 12 × 10⁻⁶ × (100)² = ½ × 12 × 10⁻⁶ × 10⁴ = 6 × 10⁻² J = **0.06 J**. **Deep point:** same arithmetic as any ½CV² question — convert μF to F first, and the volts squared does the scaling."
     },
     {
       "question": "What is a dielectric? Explain how inserting a dielectric slab increases the capacitance of a capacitor.",
@@ -47,7 +51,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "A **dielectric** is an insulating material whose molecules polarise in an electric field.\n\nThe induced surface charges oppose the plate charges, weakening the internal field E. Since V = Ed falls while Q stays fixed, C = Q/V **rises by the dielectric constant εᵣ** (C = εᵣC₀).",
-      "knowledgeNote": "Battery connected (V fixed) vs isolated (Q fixed) give opposite energy answers — always check which is held constant."
+      "knowledgeNote": "Battery connected (V fixed) vs isolated (Q fixed) give opposite energy answers — always check which is held constant.",
+      "answer": "**Dielectric:** an insulating material (paper, mica, glass, ceramic) placed between capacitor plates; its molecules have no free charges but polarise in a field. **How it increases capacitance:** when the slab fills the gap, its molecules polarise — positive ends face the negative plate and vice versa — producing an **induced internal field opposite to the applied field**. The net field inside falls to E/K (K = dielectric constant > 1), so the potential difference for the *same charge* falls to V/K; since C = Q/V and Q is unchanged, **C rises to K times its air value**: C = Kε₀A/d. (Equivalently, at constant V the polarised surface charges let the plates hold K times more charge.) **Deep point:** the dielectric never conducts — it *screens*: the induced field is the mechanism, and K is just the ratio measuring how well the material screens."
     },
     {
       "question": "Write any four uses of capacitors.",
@@ -55,7 +60,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "(1) Smoothing/filtering ripples in power supplies. (2) Tuning radio circuits (with an inductor). (3) Storing the firing energy in camera flashes and defibrillators. (4) Power-factor correction in factories; (5) blocking DC while passing AC between amplifier stages.",
-      "knowledgeNote": "Every use exploits one property: capacitors store charge, block DC, and pass AC."
+      "knowledgeNote": "Every use exploits one property: capacitors store charge, block DC, and pass AC.",
+      "answer": "**Four uses of capacitors:** (1) **storing charge/energy** — camera flash, defibrillators, SMPS filters; (2) **smoothing/filtering** in power supplies (rectifier output → steady DC); (3) **tuning circuits** in radios (variable capacitor sets the resonant frequency); (4) **blocking DC while passing AC** — coupling stages in amplifiers; (also: time-delay circuits with resistors, motor starting, power-factor correction). **Deep point:** every use trades on one property — a capacitor stores charge in an electric field and resists sudden voltage changes."
     }
   ]
 }

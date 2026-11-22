@@ -15,7 +15,8 @@
       "year": 2022,
       "source": "NEB Past",
       "solution": "**Kirchhoff's Current Law (KCL):** Sum of currents at a junction = 0 (conservation of charge).\n**Kirchhoff's Voltage Law (KVL):** Sum of emfs in a loop = sum of potential drops (conservation of energy).\n\nExample: Two cells (E₁=2V, E₂=3V) in series with R=5Ω and r₁=r₂=1Ω:\nTotal E = 5V, total R = 7Ω → I = 5/7 = **0.71 A**",
-      "knowledgeNote": "KCL is based on charge conservation; KVL on energy conservation."
+      "knowledgeNote": "KCL is based on charge conservation; KVL on energy conservation.",
+      "answer": "**Kirchhoff's laws:** **(1) Current law (junction rule):** the algebraic sum of currents meeting at a junction is zero — ΣI = 0 (charge conservation: charge neither accumulates nor vanishes at a junction). **(2) Voltage law (loop rule):** the algebraic sum of potential differences (emfs and IR drops) around any closed loop is zero — Σε = ΣIR (energy conservation: a charge returning to its starting point has zero net energy change). **Worked example:** a cell of emf ε = 6 V, internal resistance r = 1 Ω, drives two resistors R₁ = 2 Ω and R₂ = 3 Ω in series. **Loop equation:** ε = I(R₁ + R₂ + r) ⟹ I = 6/(2 + 3 + 1) = **1 A**. (Checks: terminal voltage V = ε − Ir = 6 − 1 = 5 V = I(R₁ + R₂) = 1 × 5 ✓.) **Deep point:** the two laws are the two conservation principles in circuit clothing — charge (junction) and energy (loop) — and every circuit solution is just their bookkeeping."
     }
   ]
 }

@@ -15,7 +15,8 @@
       "year": 2024,
       "source": "NEB Model",
       "solution": "**Coulomb's law:** F = kq₁q₂/r² where k = 1/(4πε₀) = 9×10⁹ N·m²/C²\n\nF = (9×10⁹ × 2×10⁻⁶ × 3×10⁻⁶)/(0.1)²\nF = (9×10⁹ × 6×10⁻¹²)/0.01 = 54×10⁻³/0.01 = **5.4 N** (repulsive)",
-      "knowledgeNote": "Coulomb's law: inverse square law. Force is along the line joining the charges."
+      "knowledgeNote": "Coulomb's law: inverse square law. Force is along the line joining the charges.",
+      "answer": "**Coulomb's law:** the force between two point charges is **directly proportional to the product of the charges and inversely proportional to the square of the distance between them**, acting along the line joining them: **F = (1/4πε₀) q₁q₂/r² = k q₁q₂/r²**, with k = 9 × 10⁹ N m² C⁻² in air/vacuum. Like charges repel, unlike attract. **Calculation:** q₁ = 2 μC = 2 × 10⁻⁶ C; q₂ = 3 μC = 3 × 10⁻⁶ C; r = 0.1 m. F = (9 × 10⁹ × 2 × 10⁻⁶ × 3 × 10⁻⁶)/(0.1)² = (9 × 10⁹ × 6 × 10⁻¹²)/10⁻² = (5.4 × 10⁻²)/10⁻² = **5.4 N, repulsive** (both charges positive). **Deep point:** the micro-to-coulomb conversion (× 10⁻⁶ twice) and the squared distance are the two classic slip points — the exponent bookkeeping decides the answer."
     }
   ]
 }

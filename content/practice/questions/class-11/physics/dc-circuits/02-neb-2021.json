@@ -15,7 +15,8 @@
       "year": 2021,
       "source": "NEB Past",
       "solution": "**Step 1 — For resistors in parallel,** the reciprocals add:\n$$\\frac{1}{R} = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{6} = \\frac{3 + 2 + 1}{6} = \\frac{6}{6} = 1$$\n$$\\boxed{R = 1\\ \\Omega}$$\n\n**Step 2 — Ohm's law for the whole combination:**\n$$I = \\frac{V}{R} = \\frac{12}{1}$$\n$$\\boxed{I = \\mathbf{12\\ \\text{A}}$$\n\n**Step 3 — Check by branch currents:**\n$$I_1 = 12/2 = 6\\ \\text{A}, \\quad I_2 = 12/3 = 4\\ \\text{A}, \\quad I_3 = 12/6 = 2\\ \\text{A}$$\n$$I_{total} = 6 + 4 + 2 = 12\\ \\text{A}$$ ✓\n\n**Note:** The equivalent resistance of a parallel combination is always **less than** the smallest individual resistance (1 $\\Omega < 2\\ \\Omega$ ✓). The potential difference across each branch is 12 V.",
-      "knowledgeNote": "In a parallel combination reciprocals of resistances add, so two, three and six ohm give one ohm total."
+      "knowledgeNote": "In a parallel combination reciprocals of resistances add, so two, three and six ohm give one ohm total.",
+      "answer": "**Parallel resistance:** 1/R = 1/2 + 1/3 + 1/6 = (3 + 2 + 1)/6 = 6/6 = 1 ⟹ **R = 1 Ω**. **Total current:** I = V/R = 12/1 = **12 A**. **(Check by branches:** I₂Ω = 6 A, I₃Ω = 4 A, I₆Ω = 2 A; sum = 12 A ✓.**)** **Deep point:** the parallel-6 pairing (2, 3, 6) is built to collapse to 1 Ω — always sum the branch currents as a check; if they don't add to the total current, a reciprocal slipped."
     }
   ]
 }

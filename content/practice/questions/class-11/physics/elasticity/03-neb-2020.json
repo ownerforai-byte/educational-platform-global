@@ -15,7 +15,8 @@
       "year": 2020,
       "source": "NEB Past",
       "solution": "**Step 1 — Given and converted to SI:**\n$F = 200\\ \\text{N},\\ L = 2\\ \\text{m},\\ A = 2 \\times 10^{-5}\\ \\text{m}^2,\\ \\Delta L = 2\\ \\text{mm} = 2 \\times 10^{-3}\\ \\text{m}$\n\n**Step 2 — Young's modulus:**\n$$Y = \\frac{FL}{A\\Delta L}$$\n\n**Step 3 — Substitute:**\n$$Y = \\frac{200 \\times 2}{(2 \\times 10^{-5})(2 \\times 10^{-3})} = \\frac{400}{4 \\times 10^{-8}}$$\n\n**Step 4 — Result:**\n$$\\boxed{Y = 1.0 \\times 10^{10}\\ \\text{N m}^{-2} = 1.0 \\times 10^{10}\\ \\text{Pa}}$$\n\n**Verification:** Stress $= 200/2\\times10^{-5} = 1 \\times 10^{7}\\ \\text{Pa}$; Strain $= 2\\times10^{-3}/2 = 1 \\times 10^{-3}$.\n$$Y = \\frac{10^{7}}{10^{-3}} = 10^{10}\\ \\text{Pa}$$ ✓",
-      "knowledgeNote": "Young's modulus is computed as force times original length divided by area times extension."
+      "knowledgeNote": "Young's modulus is computed as force times original length divided by area times extension.",
+      "answer": "**Formula:** Y = FL/(AΔL). **Substitute:** F = 200 N; L = 2 m; A = 2 × 10⁻⁵ m²; ΔL = 2 mm = 2 × 10⁻³ m. Y = (200 × 2)/(2 × 10⁻⁵ × 2 × 10⁻³) = 400/(4 × 10⁻⁸) = **1 × 10¹⁰ Pa = 10 GPa**. **(Sanity:** this is low for copper (typical ~1.1 × 10¹¹ Pa) — the given numbers describe a very stretchy wire; the method is what the marks reward.**)** **Deep point:** the four-factor formula is dimensionally a force × length over area × extension — writing it as (F/A)/(ΔL/L) first keeps the stress and strain visible, and the Pa answer follows from N/m² × dimensionless."
     }
   ]
 }

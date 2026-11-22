@@ -15,7 +15,8 @@
       "year": 2023,
       "source": "NEB Model",
       "solution": "**Capacitance:** C = Q/V — ability to store charge per unit voltage. SI unit: Farad (F).\n\n**Parallel plate capacitor:** Two plates of area A separated by distance d.\nE = σ/ε₀ = Q/(Aε₀)\nV = Ed = Qd/(Aε₀)\nC = Q/V = Q/(Qd/Aε₀) = **ε₀A/d**\n\nWith dielectric (εᵣ): C = εᵣε₀A/d",
-      "knowledgeNote": "1 F is very large. Typical capacitors: pF to mF range. Parallel plate: C = ε₀A/d"
+      "knowledgeNote": "1 F is very large. Typical capacitors: pF to mF range. Parallel plate: C = ε₀A/d",
+      "answer": "**Definition:** capacitance is the ratio of the charge stored on a conductor to the potential difference between it and earth (or between the two plates of a capacitor): **C = Q/V**. Its SI unit is the **farad (F)**: 1 F = 1 coulomb per volt. A 1 F capacitor stores 1 C of charge at 1 V. **Derivation (parallel plate):** consider two parallel plates of area A, separation d, carrying charges +Q and −Q, with surface charge density σ = Q/A. (1) **Field between the plates:** by Gauss's law, each plate produces E = σ/2ε₀ between them; the two fields add in the gap and cancel outside, so the resultant field is **E = σ/ε₀ = Q/(ε₀A)**, uniform between the plates. (2) **Potential difference:** for a uniform field, V = Ed = Qd/(ε₀A). (3) **Capacitance:** C = Q/V = Q / (Qd/ε₀A) = **C = ε₀A/d**. Capacitance increases with plate area, decreases with separation, and is filled-space independent of charge — with a dielectric (constant K) it becomes C = Kε₀A/d. **Deep point:** the derivation is a three-step ladder — Gauss gives E, E gives V, V gives C — and the final formula contains no Q or V, which is the physical statement that capacitance is a property of the geometry, not of the charge."
     }
   ]
 }
