@@ -5,49 +5,105 @@
   "topicTitle": "Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane",
   "relevance": 100,
   "notes": [
-    "Statics studies forces on a body at rest or in uniform motion, so the resultant force is zero. Dynamics studies the motion produced when the resultant force is not zero.",
-    "Parallelogram law: if two forces at a point are drawn as adjacent sides of a parallelogram, their resultant is the diagonal from that point. For forces P and Q with included angle θ, the resultant has magnitude √(P² + Q² + 2PQ cos θ).",
-    "A force F at an angle θ to the x-axis has components F cos θ and F sin θ. For several coplanar forces at one point, the resultant has components ΣFx and ΣFy and magnitude √((ΣFx)² + (ΣFy)²).",
-    "Along a straight line with constant acceleration a, the equations are v = u + at, s = ut + ½at², and v² = u² + 2as.",
-    "Under gravity, take the acceleration as g downward. On a smooth incline of angle α the acceleration down the plane is g sin α, because the component of the weight along the plane is mg sin α and friction is absent."
+    "## 1. Topic Introduction — Statics and Dynamics: The Two Halves of Mechanics\n\nMechanics splits by one question: is the body accelerating? **Statics** studies bodies at rest or in uniform motion — forces in balance; **dynamics** studies accelerated motion — forces causing change. This canonical is the overview that anchors both halves in Newton's three laws.",
+    "## 2. Theorem Mirror\n\n- **First law (inertia):** a body remains at rest or in uniform straight-line motion unless a net external force acts — rest and uniform motion are the same state, distinguished by frame only.\n- **Second law:** net force = rate of change of momentum = ma (for constant mass) — the quantitative engine of dynamics.\n- **Third law:** forces occur in mutual pairs, equal and opposite, acting on *different* bodies — never cancelling on one body.\n- **Statics' condition:** equilibrium ⟺ ΣF = 0 (and Σmoment = 0 for extended bodies); dynamics' condition: ΣF = ma.\n- **Kinematics toolkit:** v = u + at, s = ut + ½at², v² = u² + 2as — the three equations of uniformly accelerated motion.",
+    "## 3. Deep Conceptual — Statics as the Degenerate Case of Dynamics\n\n- Setting a = 0 in ΣF = ma collapses dynamics into statics: the second law doesn't retire at equilibrium — it reads \"the forces sum to zero.\" Every statics problem is a dynamics problem whose acceleration is known to be zero.\n- **Why the third law never cancels forces:** action and reaction act on *different* bodies, so they never appear together in one body's ΣF — the common misconception that they \"balance\" confuses the bookkeeping of two bodies with the balance of one. Equilibrium is about *one* body's force inventory; the third law is about *pairs* of bodies.\n- **Inertia as the zero-force behaviour:** the first law is not a preamble to the second but its a = 0 reading plus a claim about frames — it defines the inertial frames in which ΣF = ma is even true.",
+    "## 4. Deep Conceptual — The Three Equations as a Complete System\n\n- For uniform acceleration, the three kinematic equations connect the five quantities (u, v, a, t, s); any problem supplies three and asks for the others. **Choosing the equation that omits the unknown you don't care about** is the whole solution strategy: no t ⟹ v² = u² + 2as; no s ⟹ v = u + at; no v ⟹ s = ut + ½at².\n- **Sign discipline is the hidden content:** gravity down, initial velocity up — the equations are vector statements along one axis; every \"tricky\" projectile-style answer error is a sign error, not a physics error. Declaring the positive direction first is the discipline that makes the algebra mechanical.",
+    "## 5. Worked Example Types\n\n- **Type A — statics identification:** decide equilibrium versus acceleration from ΣF.\n- **Type B — equation selection:** pick the kinematic equation omitting the irrelevant quantity.\n- **Type C — sign discipline:** motion under gravity with declared positive direction.\n- **Type D — law application:** identify which Newton law answers a given scenario.",
+    "## 6. Common Confusions\n\n**\"Action–reaction cancel\":** they act on different bodies — only forces on the *same* body can cancel. **\"An object at rest has no forces\":** it has forces in balance — ΣF = 0, not F = 0 on each."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "A body at rest on a table: identify the forces and show they balance.",
+    "Choose the right kinematic equation for \"find distance without knowing the final velocity\".",
+    "State Newton's third law and explain why its pair never cancels."
+  ],
+  "universalFacts": [
+    "Any three of (u, v, a, t, s) determine the other two through the kinematic system."
+  ],
   "animation3D": "computational-methods-or-mechanics",
   "motionGraphics": "computational-methods-or-mechanics",
   "examples": [
-    "Application of Mechanics â€” Statics and Dynamics"
+    "***The third law's bookkeeping*** - action and reaction act on different bodies, so they never meet in one body's force sum; equilibrium is one body's inventory."
   ],
   "practiceQuestions": [
-    "Q1. Define Mechanics â€” Statics and Dynamics.",
-    "Q3. Problem on Mechanics â€” Statics and Dynamics."
+    "**NEB-style (5m): A book rests on a table. Identify all forces acting on it and show they balance; explain why the book's weight and its reaction on the table do not cancel.** — **Forces on the book:** weight W (down, the Earth's pull) and the table's normal reaction N (up). **Balance:** no acceleration ⟹ ΣF = 0 ⟹ N = W. **The non-cancellation:** the book's weight and the book's reaction on the table (equal to N by the third law) act on *different* bodies — table and book — so they never enter the same force sum; the book is in equilibrium because *its own two* forces (W and N) cancel, not because of any action–reaction pair. **Deep point:** equilibrium is one body's ledger; the third law is a two-body pairing rule — confusing them produces the classic \"everything cancels so nothing moves\" paradox, dissolved by asking \"forces on *whom*?\"",
+    "**NEB-style (6m): A particle starts from rest with uniform acceleration 4 m/s². Find its velocity and displacement after 3 s, and verify with a third equation.** — **Data:** u = 0, a = 4, t = 3. **Velocity:** v = u + at = 0 + 12 = **12 m/s**. **Displacement:** s = ut + ½at² = 0 + ½·4·9 = **18 m**. **Cross-check via v² = u² + 2as:** 144 = 0 + 2·4·s ⟹ s = 144/8 = **18 m** ✓ — two independent routes agree. **Deep point:** the verification used the equation that omits t — the one quantity already consumed; a three-equation system on three knowns is overdetermined, and the spare equation is a free correctness check worth one line.",
+    "**NEB-style (6m): A stone is dropped from a height of 80 m (take g = 10 m/s²). Find the time of fall and the impact speed, declaring your positive direction.** — **Positive direction: downward** (the motion's direction). **Data:** u = 0, a = g = 10, s = 80. **Time (omitting v):** s = ut + ½at² ⟹ 80 = 5t² ⟹ t² = 16 ⟹ **t = 4 s**. **Impact speed (omitting t):** v² = u² + 2as = 0 + 2·10·80 = 1600 ⟹ **v = 40 m/s**. **Consistency:** v = u + at = 0 + 10·4 = 40 ✓ — all three equations agree. **Deep point:** declaring \"downward positive\" before computing is what lets g enter as +10 and every sign follow mechanically; the same problem with \"upward positive\" works identically with g = −10 — the physics never depended on the choice, only the signs did.",
+    "**NEB-style (6m): A ball is thrown vertically upward at 20 m/s (g = 10 m/s²). Find the maximum height, the time to reach it, and the total flight time — and explain the symmetry.** — **Positive direction: upward.** **At the top v = 0:** v² = u² + 2as ⟹ 0 = 400 − 20s ⟹ **h = 20 m**. **Time up:** v = u + at ⟹ 0 = 20 − 10t ⟹ **t = 2 s**. **Total flight:** by symmetry the fall from 20 m takes the same 2 s ⟹ **4 s** total; algebraically s = ut + ½at² with s = 0 (return to start): 0 = 20t − 5t² ⟹ t = 4 (the non-zero root). **Symmetry explained:** with constant g and no air resistance, the upward and downward legs traverse the same height profile with accelerations equal in magnitude — time up = time down, and the impact speed equals the launch speed (energy conservation's kinematic face). **Deep point:** the s = 0 root of the displacement equation is where the \"total flight\" answer hides — reading a quadratic's roots as physical events (launch and return) is the sign-disciplined way to see symmetry instead of assuming it."
   ],
-  "formulas": [],
+  "formulas": [
+    "- ΣF = 0 (equilibrium); ΣF = ma (dynamics)\n- v = u + at; s = ut + ½at²; v² = u² + 2as"
+  ],
   "keyPoints": [
-    "Application of Mechanics â€” Statics and Dynamics",
-    "Connection of Mechanics â€” Statics and Dynamics to other topics"
+    "Statics: equilibrium, sum F = 0. Dynamics: acceleration, sum F = ma - the second law covers both, statics is the a = 0 case. Three laws: inertia (and inertial frames), F = dp/dt = ma, mutual pairs on different bodies. Kinematics: v = u + at, s = ut + at^2/2, v^2 = u^2 + 2as - choose the equation omitting the unneeded quantity. Sign discipline first: declare the positive direction, then the algebra is mechanical."
   ],
-  "summary": "Mechanics â€” Statics and Dynamics covers essential principles and applications.",
+  "summary": "Mechanics' two halves share one law: statics is ΣF = ma with a = 0, dynamics is the full equation. Newton's three laws supply the frame (inertia), the engine (F = ma), and the bookkeeping rule (pairs on different bodies — never cancelling within one body's ledger). The kinematic system v = u + at, s = ut + ½at², v² = u² + 2as is complete: three knowns of (u, v, a, t, s) fix the rest, the choice of equation omits the irrelevant quantity, and the spare equation verifies. Declare the positive direction first; the signs then do the physics for you.",
   "specialNotes": [],
   "importantStatements": [
-    "Statement 1: Definition of Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane",
-    "Statement 2: Theorem related to Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane",
-    "Statement 3: Condition for Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane to be valid",
-    "Statement 4: Principle governing Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane",
-    "Statement 5: Corollary or consequence of Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane"
+    "Rest and uniform motion are the same state - the first law says so."
   ],
   "importantNotes": [
-    "Mechanics â€” Statics and Dynamics is based on fundamental principles."
+    "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
   ],
   "examShortTricks": [
-    "Recall the formula for Mechanics â€” Statics and Dynamics."
+    "List knowns against (u, v, a, t, s) - the missing two pick the equation before any algebra."
   ],
-  "examNotes": [],
+  "examNotes": [
+    "State the positive direction explicitly in every motion answer - markers award the discipline."
+  ],
   "mcs": [],
   "importantConcepts": [
-    "Definition and significance of Mechanics â€” Statics and Dynamics."
+    "Statics is dynamics with a = 0 - one law, two subjects."
   ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Statics and Dynamics: The Two Halves of Mechanics\n\nMechanics splits by one question: is the body accelerating? **Statics** studies bodies at rest or in uniform motion — forces in balance; **dynamics** studies accelerated motion — forces causing change. This canonical is the overview that anchors both halves in Newton's three laws.",
+      "## 2. Theorem Mirror\n\n- **First law (inertia):** a body remains at rest or in uniform straight-line motion unless a net external force acts — rest and uniform motion are the same state, distinguished by frame only.\n- **Second law:** net force = rate of change of momentum = ma (for constant mass) — the quantitative engine of dynamics.\n- **Third law:** forces occur in mutual pairs, equal and opposite, acting on *different* bodies — never cancelling on one body.\n- **Statics' condition:** equilibrium ⟺ ΣF = 0 (and Σmoment = 0 for extended bodies); dynamics' condition: ΣF = ma.\n- **Kinematics toolkit:** v = u + at, s = ut + ½at², v² = u² + 2as — the three equations of uniformly accelerated motion.",
+      "## 3. Deep Conceptual — Statics as the Degenerate Case of Dynamics\n\n- Setting a = 0 in ΣF = ma collapses dynamics into statics: the second law doesn't retire at equilibrium — it reads \"the forces sum to zero.\" Every statics problem is a dynamics problem whose acceleration is known to be zero.\n- **Why the third law never cancels forces:** action and reaction act on *different* bodies, so they never appear together in one body's ΣF — the common misconception that they \"balance\" confuses the bookkeeping of two bodies with the balance of one. Equilibrium is about *one* body's force inventory; the third law is about *pairs* of bodies.\n- **Inertia as the zero-force behaviour:** the first law is not a preamble to the second but its a = 0 reading plus a claim about frames — it defines the inertial frames in which ΣF = ma is even true.",
+      "## 4. Deep Conceptual — The Three Equations as a Complete System\n\n- For uniform acceleration, the three kinematic equations connect the five quantities (u, v, a, t, s); any problem supplies three and asks for the others. **Choosing the equation that omits the unknown you don't care about** is the whole solution strategy: no t ⟹ v² = u² + 2as; no s ⟹ v = u + at; no v ⟹ s = ut + ½at².\n- **Sign discipline is the hidden content:** gravity down, initial velocity up — the equations are vector statements along one axis; every \"tricky\" projectile-style answer error is a sign error, not a physics error. Declaring the positive direction first is the discipline that makes the algebra mechanical.",
+      "## 5. Worked Example Types\n\n- **Type A — statics identification:** decide equilibrium versus acceleration from ΣF.\n- **Type B — equation selection:** pick the kinematic equation omitting the irrelevant quantity.\n- **Type C — sign discipline:** motion under gravity with declared positive direction.\n- **Type D — law application:** identify which Newton law answers a given scenario.",
+      "## 6. Common Confusions\n\n**\"Action–reaction cancel\":** they act on different bodies — only forces on the *same* body can cancel. **\"An object at rest has no forces\":** it has forces in balance — ΣF = 0, not F = 0 on each."
+    ],
+    "keyPoints": [
+      "Statics: equilibrium, sum F = 0. Dynamics: acceleration, sum F = ma - the second law covers both, statics is the a = 0 case. Three laws: inertia (and inertial frames), F = dp/dt = ma, mutual pairs on different bodies. Kinematics: v = u + at, s = ut + at^2/2, v^2 = u^2 + 2as - choose the equation omitting the unneeded quantity. Sign discipline first: declare the positive direction, then the algebra is mechanical."
+    ],
+    "importantConcepts": [
+      "Statics is dynamics with a = 0 - one law, two subjects."
+    ],
+    "examples": [
+      "***The third law's bookkeeping*** - action and reaction act on different bodies, so they never meet in one body's force sum; equilibrium is one body's inventory."
+    ],
+    "universalFacts": [
+      "Any three of (u, v, a, t, s) determine the other two through the kinematic system."
+    ],
+    "importantStatements": [
+      "Rest and uniform motion are the same state - the first law says so."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    ],
+    "examShortTricks": [
+      "List knowns against (u, v, a, t, s) - the missing two pick the equation before any algebra."
+    ],
+    "examNotes": [
+      "State the positive direction explicitly in every motion answer - markers award the discipline."
+    ],
+    "formulas": [
+      "- ΣF = 0 (equilibrium); ΣF = ma (dynamics)\n- v = u + at; s = ut + ½at²; v² = u² + 2as"
+    ],
+    "practice": [
+      "A body at rest on a table: identify the forces and show they balance.",
+      "Choose the right kinematic equation for \"find distance without knowing the final velocity\".",
+      "State Newton's third law and explain why its pair never cancels."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): A book rests on a table. Identify all forces acting on it and show they balance; explain why the book's weight and its reaction on the table do not cancel.** — **Forces on the book:** weight W (down, the Earth's pull) and the table's normal reaction N (up). **Balance:** no acceleration ⟹ ΣF = 0 ⟹ N = W. **The non-cancellation:** the book's weight and the book's reaction on the table (equal to N by the third law) act on *different* bodies — table and book — so they never enter the same force sum; the book is in equilibrium because *its own two* forces (W and N) cancel, not because of any action–reaction pair. **Deep point:** equilibrium is one body's ledger; the third law is a two-body pairing rule — confusing them produces the classic \"everything cancels so nothing moves\" paradox, dissolved by asking \"forces on *whom*?\"",
+      "**NEB-style (6m): A particle starts from rest with uniform acceleration 4 m/s². Find its velocity and displacement after 3 s, and verify with a third equation.** — **Data:** u = 0, a = 4, t = 3. **Velocity:** v = u + at = 0 + 12 = **12 m/s**. **Displacement:** s = ut + ½at² = 0 + ½·4·9 = **18 m**. **Cross-check via v² = u² + 2as:** 144 = 0 + 2·4·s ⟹ s = 144/8 = **18 m** ✓ — two independent routes agree. **Deep point:** the verification used the equation that omits t — the one quantity already consumed; a three-equation system on three knowns is overdetermined, and the spare equation is a free correctness check worth one line.",
+      "**NEB-style (6m): A stone is dropped from a height of 80 m (take g = 10 m/s²). Find the time of fall and the impact speed, declaring your positive direction.** — **Positive direction: downward** (the motion's direction). **Data:** u = 0, a = g = 10, s = 80. **Time (omitting v):** s = ut + ½at² ⟹ 80 = 5t² ⟹ t² = 16 ⟹ **t = 4 s**. **Impact speed (omitting t):** v² = u² + 2as = 0 + 2·10·80 = 1600 ⟹ **v = 40 m/s**. **Consistency:** v = u + at = 0 + 10·4 = 40 ✓ — all three equations agree. **Deep point:** declaring \"downward positive\" before computing is what lets g enter as +10 and every sign follow mechanically; the same problem with \"upward positive\" works identically with g = −10 — the physics never depended on the choice, only the signs did.",
+      "**NEB-style (6m): A ball is thrown vertically upward at 20 m/s (g = 10 m/s²). Find the maximum height, the time to reach it, and the total flight time — and explain the symmetry.** — **Positive direction: upward.** **At the top v = 0:** v² = u² + 2as ⟹ 0 = 400 − 20s ⟹ **h = 20 m**. **Time up:** v = u + at ⟹ 0 = 20 − 10t ⟹ **t = 2 s**. **Total flight:** by symmetry the fall from 20 m takes the same 2 s ⟹ **4 s** total; algebraically s = ut + ½at² with s = 0 (return to start): 0 = 20t − 5t² ⟹ t = 4 (the non-zero root). **Symmetry explained:** with constant g and no air resistance, the upward and downward legs traverse the same height profile with accelerations equal in magnitude — time up = time down, and the impact speed equals the launch speed (energy conservation's kinematic face). **Deep point:** the s = 0 root of the displacement equation is where the \"total flight\" answer hides — reading a quadratic's roots as physical events (launch and return) is the sign-disciplined way to see symmetry instead of assuming it."
+    ]
+  }
 }
