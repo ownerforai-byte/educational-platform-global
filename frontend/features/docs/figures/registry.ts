@@ -1516,6 +1516,55 @@ import { MinamataStory } from "./minamata-story";
 import { LeadHaemBlock } from "./lead-haem-block";
 import { ArsenicGroundwater } from "./arsenic-groundwater";
 import { ChelationTherapyPanel } from "./chelation-therapy-panel";
+import { WohlerUreaExperiment } from "./wohler-urea-experiment";
+import { OrganicCompoundSources } from "./organic-compound-sources";
+import { OrganicVsInorganicProps } from "./organic-vs-inorganic-props";
+import { CarbonCompoundExclusions } from "./carbon-compound-exclusions";
+import { VitalForceTimeline } from "./vital-force-timeline";
+import { OrganicPropertySix } from "./organic-property-six";
+import { IsomerPairC2H6O } from "./isomer-pair-c2h6o";
+import { SeparateStudyReasons } from "./separate-study-reasons";
+import { CatenationCountContrast } from "./catenation-count-contrast";
+import { CovalentVsIonicLattice } from "./covalent-vs-ionic-lattice";
+import { StudyMethodsToolkit } from "./study-methods-toolkit";
+import { ReactionSpeedContrast } from "./reaction-speed-contrast";
+import { BorderCompoundsPanel } from "./border-compounds-panel";
+import { WohlerVerdictPanel } from "./wohler-verdict-panel";
+import { CarbonExcitedState } from "./carbon-excited-state";
+import { TetravalencyEnergyLedger } from "./tetravalency-energy-ledger";
+import { MethaneTetrahedral } from "./methane-tetrahedral";
+import { CatenationChainTypes } from "./catenation-chain-types";
+import { CcVsSisiLadder } from "./cc-vs-sisi-ladder";
+import { IsomerExplosionChart } from "./isomer-explosion-chart";
+import { AllotropeVariety } from "./allotrope-variety";
+import { OrganicClassificationTree } from "./organic-classification-tree";
+import { SaturationLadder } from "./saturation-ladder";
+import { AlicyclicVsAromatic } from "./alicyclic-vs-aromatic";
+import { HeterocycleTrio } from "./heterocycle-trio";
+import { FunctionalFamilyMap } from "./functional-family-map";
+import { AromaticStabilityNote } from "./aromatic-stability-note";
+import { ClassificationExamples } from "./classification-examples";
+import { AlkylGroupDerivation } from "./alkyl-group-derivation";
+import { FunctionalGroupGallery } from "./functional-group-gallery";
+import { HomologousLadderAlkanols } from "./homologous-ladder-alkanols";
+import { Ch2IncrementRule } from "./ch2-increment-rule";
+import { GradationVsUniformity } from "./gradation-vs-uniformity";
+import { Neb2022HomologuePanel } from "./neb2022-homologue-panel";
+import { RGroupAnatomy } from "./r-group-anatomy";
+import { FormulaNotationLadder } from "./formula-notation-ladder";
+import { C2H6OIsomerTest } from "./c2h6o-isomer-test";
+import { BondLineConventions } from "./bond-line-conventions";
+import { EthanolThreeWays } from "./ethanol-three-ways";
+import { ZigzagReadingDrill } from "./zigzag-reading-drill";
+import { CondensedFormulaExamples } from "./condensed-formula-examples";
+import { MultipleBondLines } from "./multiple-bond-lines";
+import { CrackingVsReforming } from "./cracking-vs-reforming";
+import { CatalyticCrackingFlow } from "./catalytic-cracking-flow";
+import { ReformingPlatforming } from "./reforming-platforming";
+import { OctaneScalePanel } from "./octane-scale-panel";
+import { CetaneScalePanel } from "./cetane-scale-panel";
+import { KnockingMechanism } from "./knocking-mechanism";
+import { FuelAdditiveTimeline } from "./fuel-additive-timeline";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -10944,6 +10993,91 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     { Component: LeadHaemBlock, caption: "Lead blocks the haem line", alt: "Diagram: lead blocks the haem line", keyword: "ala dehydratase" },
     { Component: ArsenicGroundwater, caption: "Arsenic in well water", alt: "Diagram: arsenic in well water", keyword: "10 ppb" },
     { Component: ChelationTherapyPanel, caption: "Chelation therapy antidotes", alt: "Diagram: chelation therapy antidotes", keyword: "chelation therapy" },
+  ],
+  },
+
+  "introduction-to-organic-chemistry-and-organic-compounds": {
+    title: "Wohler 1828: ammonium cyanate into urea",
+    figures: [
+    { Component: WohlerUreaExperiment, caption: "Wohler 1828: ammonium cyanate into urea", alt: "Diagram: wohler 1828: ammonium cyanate into urea", keyword: "vital force" },
+    { Component: OrganicCompoundSources, caption: "Sources of organic compounds", alt: "Diagram: sources of organic compounds", keyword: "petroleum" },
+    { Component: OrganicVsInorganicProps, caption: "Organic vs inorganic properties", alt: "Diagram: organic vs inorganic properties", keyword: "flammable" },
+    { Component: CarbonCompoundExclusions, caption: "Carbon compounds excluded from organic chemistry", alt: "Diagram: carbon compounds excluded from organic chemistry", keyword: "cyanide" },
+    { Component: VitalForceTimeline, caption: "From vital force to synthetic chemistry", alt: "Diagram: from vital force to synthetic chemistry", keyword: "berzelius" },
+    { Component: OrganicPropertySix, caption: "Six characteristic properties", alt: "Diagram: six characteristic properties", keyword: "isomerism" },
+    { Component: IsomerPairC2H6O, caption: "One formula, two compounds", alt: "Diagram: one formula, two compounds", keyword: "dimethyl ether" },
+  ],
+  },
+  "reasons-for-the-separate-study-of-organic-compounds-from-inorganic-compounds": {
+    title: "Three reasons for separate study",
+    figures: [
+    { Component: SeparateStudyReasons, caption: "Three reasons for separate study", alt: "Diagram: three reasons for separate study", keyword: "chromatography" },
+    { Component: CatenationCountContrast, caption: "The count gap between organic and inorganic", alt: "Diagram: the count gap between organic and inorganic", keyword: "tens of millions" },
+    { Component: CovalentVsIonicLattice, caption: "Molecules versus ionic lattices", alt: "Diagram: molecules versus ionic lattices", keyword: "ionic" },
+    { Component: StudyMethodsToolkit, caption: "The organic toolkit of methods", alt: "Diagram: the organic toolkit of methods", keyword: "crystallisation" },
+    { Component: ReactionSpeedContrast, caption: "Fast ionic versus slow molecular reactions", alt: "Diagram: fast ionic versus slow molecular reactions", keyword: "catalysed" },
+    { Component: BorderCompoundsPanel, caption: "The conventional border compounds", alt: "Diagram: the conventional border compounds", keyword: "carbides" },
+    { Component: WohlerVerdictPanel, caption: "What died and what survived", alt: "Diagram: what died and what survived", keyword: "behavioural" },
+  ],
+  },
+  "tetra-covalency-and-catenation-properties-of-carbon": {
+    title: "Excited state gives four unpaired electrons",
+    figures: [
+    { Component: CarbonExcitedState, caption: "Excited state gives four unpaired electrons", alt: "Diagram: excited state gives four unpaired electrons", keyword: "excited" },
+    { Component: TetravalencyEnergyLedger, caption: "The energy ledger of tetravalency", alt: "Diagram: the energy ledger of tetravalency", keyword: "406" },
+    { Component: MethaneTetrahedral, caption: "Methane: four equivalent bonds", alt: "Diagram: methane: four equivalent bonds", keyword: "tetrahedral" },
+    { Component: CatenationChainTypes, caption: "Straight, branched and cyclic chains", alt: "Diagram: straight, branched and cyclic chains", keyword: "branched" },
+    { Component: CcVsSisiLadder, caption: "C-C versus Si-Si bond strengths", alt: "Diagram: c-c versus si-si bond strengths", keyword: "226" },
+    { Component: IsomerExplosionChart, caption: "The isomer explosion with carbon count", alt: "Diagram: the isomer explosion with carbon count", keyword: "300,000" },
+    { Component: AllotropeVariety, caption: "Allotropic variety of carbon", alt: "Diagram: allotropic variety of carbon", keyword: "diamond" },
+  ],
+  },
+  "classification-of-organic-compounds": {
+    title: "The classification tree of organic compounds",
+    figures: [
+    { Component: OrganicClassificationTree, caption: "The classification tree of organic compounds", alt: "Diagram: the classification tree of organic compounds", keyword: "heterocyclic" },
+    { Component: SaturationLadder, caption: "Saturated versus unsaturated bonds", alt: "Diagram: saturated versus unsaturated bonds", keyword: "ethyne" },
+    { Component: AlicyclicVsAromatic, caption: "Alicyclic versus aromatic rings", alt: "Diagram: alicyclic versus aromatic rings", keyword: "cyclohexane" },
+    { Component: HeterocycleTrio, caption: "Pyridine, furan and pyrrole", alt: "Diagram: pyridine, furan and pyrrole", keyword: "pyrrole" },
+    { Component: FunctionalFamilyMap, caption: "Functional groups mapped to families", alt: "Diagram: functional groups mapped to families", keyword: "ester" },
+    { Component: AromaticStabilityNote, caption: "Aromaticity as pi-electron stability", alt: "Diagram: aromaticity as pi-electron stability", keyword: "delocalised" },
+    { Component: ClassificationExamples, caption: "Sorting compounds into their leaves", alt: "Diagram: sorting compounds into their leaves", keyword: "naphthalene" },
+  ],
+  },
+  "alkyl-groups-functional-groups-and-homologous-series": {
+    title: "Alkane minus one hydrogen gives an alkyl group",
+    figures: [
+    { Component: AlkylGroupDerivation, caption: "Alkane minus one hydrogen gives an alkyl group", alt: "Diagram: alkane minus one hydrogen gives an alkyl group", keyword: "isopropyl" },
+    { Component: FunctionalGroupGallery, caption: "Gallery of functional groups", alt: "Diagram: gallery of functional groups", keyword: "amine" },
+    { Component: HomologousLadderAlkanols, caption: "The alkanol ladder of boiling points", alt: "Diagram: the alkanol ladder of boiling points", keyword: "propan-1-ol" },
+    { Component: Ch2IncrementRule, caption: "Successive homologues differ by CH2", alt: "Diagram: successive homologues differ by ch2", keyword: "14 u" },
+    { Component: GradationVsUniformity, caption: "Gradation in physics, uniformity in chemistry", alt: "Diagram: gradation in physics, uniformity in chemistry", keyword: "gradation" },
+    { Component: Neb2022HomologuePanel, caption: "NEB 2022: functional group and homologous series", alt: "Diagram: neb 2022: functional group and homologous series", keyword: "alkanol" },
+    { Component: RGroupAnatomy, caption: "Anatomy of an organic molecule: R plus X", alt: "Diagram: anatomy of an organic molecule: r plus x", keyword: "monovalent" },
+  ],
+  },
+  "idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula": {
+    title: "Four notations for one molecule",
+    figures: [
+    { Component: FormulaNotationLadder, caption: "Four notations for one molecule", alt: "Diagram: four notations for one molecule", keyword: "bond-line" },
+    { Component: C2H6OIsomerTest, caption: "Where the molecular formula fails", alt: "Diagram: where the molecular formula fails", keyword: "c2h6o" },
+    { Component: BondLineConventions, caption: "Conventions of bond-line formulas", alt: "Diagram: conventions of bond-line formulas", keyword: "vertex" },
+    { Component: EthanolThreeWays, caption: "Ethanol written three ways", alt: "Diagram: ethanol written three ways", keyword: "ch3ch2oh" },
+    { Component: ZigzagReadingDrill, caption: "Reading a zig-zag as pentane", alt: "Diagram: reading a zig-zag as pentane", keyword: "pentane" },
+    { Component: CondensedFormulaExamples, caption: "Condensed formulas of three compounds", alt: "Diagram: condensed formulas of three compounds", keyword: "acetic acid" },
+    { Component: MultipleBondLines, caption: "Drawing single double and triple bonds", alt: "Diagram: drawing single double and triple bonds", keyword: "butane" },
+  ],
+  },
+  "preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-g": {
+    title: "Cracking cuts, reforming reshapes",
+    figures: [
+    { Component: CrackingVsReforming, caption: "Cracking cuts, reforming reshapes", alt: "Diagram: cracking cuts, reforming reshapes", keyword: "c10h22" },
+    { Component: CatalyticCrackingFlow, caption: "Catalytic cracking over zeolite", alt: "Diagram: catalytic cracking over zeolite", keyword: "zeolite" },
+    { Component: ReformingPlatforming, caption: "Platforming with platinum catalyst", alt: "Diagram: platforming with platinum catalyst", keyword: "platforming" },
+    { Component: OctaneScalePanel, caption: "The octane number scale", alt: "Diagram: the octane number scale", keyword: "iso-octane" },
+    { Component: CetaneScalePanel, caption: "The cetane number scale", alt: "Diagram: the cetane number scale", keyword: "methylnaphthalene" },
+    { Component: KnockingMechanism, caption: "Knocking and why branching prevents it", alt: "Diagram: knocking and why branching prevents it", keyword: "knock" },
+    { Component: FuelAdditiveTimeline, caption: "The gasoline additive story", alt: "Diagram: the gasoline additive story", keyword: "mtbe" },
   ],
   },
 
