@@ -5,24 +5,31 @@
   "topicTitle": "Limits: definition, standard limits, evaluation of limits",
   "relevance": 87,
   "notes": [
-    "**Statement:** If $\\lim_{x \\to a} \\dfrac{f(x)}{g(x)}$ is of the form $\\dfrac{0}{0}$ or $\\dfrac{\\infty}{\\infty}$, and $f$, $g$ are differentiable near $a$ with $g'(x) \\neq 0$, then",
-    "$\\displaystyle \\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\lim_{x \\to a} \\frac{f'(x)}{g'(x)}$",
-    "The rule may be applied repeatedly if the quotient of derivatives is again indeterminate — keep differentiating until a determinate limit appears.",
-    "**Example 1 — classic 0/0:** $\\lim_{x \\to 0} \\dfrac{\\sin x}{x} = \\lim_{x \\to 0} \\dfrac{\\cos x}{1} = 1$",
-    "**Example 2 — repeated use:** $\\lim_{x \\to 0} \\dfrac{e^x - 1 - x}{x^2} = \\lim_{x \\to 0} \\dfrac{e^x - 1}{2x} = \\lim_{x \\to 0} \\dfrac{e^x}{2} = \\dfrac{1}{2}$",
-    "**Example 3 — ∞/∞:** $\\lim_{x \\to \\infty} \\dfrac{\\ln x}{x} = \\lim_{x \\to \\infty} \\dfrac{1/x}{1} = 0$",
-    "**Caution:** L'Hôpital's rule applies ONLY to $\\dfrac{0}{0}$ or $\\dfrac{\\infty}{\\infty}$. Other forms ($0 \\cdot \\infty$, $\\infty - \\infty$, $1^\\infty$, …) must first be rewritten into one of these two forms before differentiating."
+    "## 1. Topic Introduction — L'Hôpital's Rule\n\n**L'Hôpital's rule**: the derivative-based resolver for 0/0 and ∞/∞ — one theorem that mechanises the whole limits unit's transformation art.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The theorem\n\n- **L'Hôpital's rule:** if f(a) = g(a) = 0 (or both → ∞), and lim f′/g′ exists (finite or ±∞), then **lim_{x→a} f/g = lim_{x→a} f′/g′**.\n- **Hypotheses (all mandatory):** the form is genuinely 0/0 or ∞/∞; f, g differentiable near a (g′ ≠ 0 near a); the derived limit exists. **One differentiation at a time** — re-check the form after each pass.\n\n### 2.2 Why it works (Cauchy's MVT sketch)\n\n- f/g = [f − f(a)]/[g − g(a)] = f′(c)/g′(c) for some c between a and x (Cauchy's Mean Value Theorem) — as x → a, c → a, and the ratio of derivatives converges to the ratio's limit. The MVT of the monotonicity unit, dressed for quotients.\n\n### 2.3 The extended forms\n\n- **∞/∞:** same theorem. **0·∞:** rewrite as 0/(1/∞) = 0/0 or ∞/(1/0) = ∞/∞. **∞ − ∞:** combine into a single fraction (common denominator) → 0/0. **1^∞, 0⁰, ∞⁰:** take logs — lim f^g = e^{lim g·ln f}, and g·ln f is a 0·∞ form resolved by L'Hôpital.\n\n### 2.4 The eˣ ladder\n\n- **lim x/eˣ = 0** (two passes: 1/eˣ → 0); **lim xⁿ/eˣ = 0** (n passes); **lim ln x/x = 0**; **lim x^{1/x} = 1** (via ln). L'Hôpital re-derives the growth ladder on demand.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **L'Hôpital's rule** | lim f/g = lim f′/g′ | 0/0, ∞/∞ |\n| **Cauchy MVT** | f′(c)/g′(c) intermediate | the proof engine |\n| **Form conversion** | 0·∞, ∞−∞ → quotient forms | algebra first |\n| **Log bridge** | f^g = e^{g ln f} | power forms |",
+    "## 4. Detailed Explanation\n\n### 4.1 Differentiate the ratio, not the quotient\n\n- f′/g′ is the ratio of the separate derivatives — **not** the derivative of the quotient (that would be the quotient rule). The rule compares *rates*, not slopes of the combined function.\n\n### 4.2 Form discipline\n\n- Applying L'Hôpital to a determinate form (c/0, 0/c) is illegal and often wrong. Check the form by substitution **before** each differentiation; stop the moment the form resolves.\n\n### 4.3 When L'Hôpital fails\n\n- The derived limit may not exist even when the original does: lim (x + sin x)/x → 1 (since sin x/x → 0) but f′/g′ = 1 + cos x has no limit — the rule is sufficient, not necessary. Fallback: algebra, standard limits, squeeze.",
+    "## 5. Comparison Tables\n\n**Form conversion table**\n\n| Form | Conversion | Then |\n|---|---|---|\n| 0/0, ∞/∞ | direct | differentiate ratio |\n| 0·∞ | f/(1/g) | 0/0 or ∞/∞ |\n| ∞ − ∞ | common denominator | 0/0 |\n| 1^∞, 0⁰, ∞⁰ | f^g = e^{g ln f} | 0·∞ inside |",
+    "## 6. Common Confusions\n\n**Differentiating the whole quotient:** (f/g)′ ≠ f′/g′ — L'Hôpital needs the ratio of derivatives, each differentiated separately.\n**Skipping the form check:** every pass needs a fresh 0/0 or ∞/∞ verdict.\n**∞ − ∞ by \"subtracting infinities\":** combine into one fraction first — the algebra is the mathematics.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/sin 3x by L'Hôpital's rule.** — **Form:** 0/0 ✓. **Differentiate separately:** numerator 2e^{2x}; denominator 3cos 3x. **Ratio:** 2e^{2x}/(3cos 3x) → 2/(3·1) = **2/3**. (Cross-check by stars: (e^{2x}−1)/x → 2, sin 3x/x → 3 ⟹ 2/3 ✓.)",
+    "**NEB-style (3m): Evaluate lim_{x→∞} (ln x)/x.** — **Form:** ∞/∞ ✓. **Differentiate:** (1/x)/1 = 1/x → **0**. The growth ladder's first rung re-derived: logarithms lose to linear powers — and iterating gives ln x/xᵃ → 0 for every a > 0.",
+    "**NEB-style (3m): Evaluate lim_{x→0⁺} x·ln x.** — **Form:** 0·∞ ⟹ convert: x·ln x = ln x/(1/x) — now **∞/∞** ✓. **Differentiate:** (1/x)/(−1/x²) = −x → **0**. So x ln x → 0⁻: the log's slow growth loses to x's vanishing — the standard ∞·0 resolution."
   ],
-  "examples": [],
+  "examples": [
+    "***The failing case*** - (x + sin x)/x converges to 1 while its derivative ratio 1 + cos x oscillates: L'Hopital is a one-way licence, not an equivalence."
+  ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Limits: definition, standard limits, evaluation of limits.",
-    "Q3. Differentiate between various aspects of Limits: definition, standard limits, evaluation of limits.",
-    "Q4. Derive the key formula related to Limits: definition, standard limits, evaluation of limits.",
-    "Q5. What are the applications of Limits: definition, standard limits, evaluation of limits?"
+    "**NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/sin 3x using L'Hôpital's rule.** — **Form check:** substitution gives (1 − 1)/0 = **0/0** — the rule's hypothesis holds. **Differentiate separately** (the ratio of derivatives, not the quotient rule): numerator d/dx(e^{2x} − 1) = **2e^{2x}** (chain rule); denominator d/dx(sin 3x) = **3cos 3x**. **New ratio:** 2e^{2x}/(3cos 3x) — substituting x = 0: 2·1/(3·1) = **2/3** (no second pass needed — the form resolved). **Cross-check by standard limits:** (e^{2x} − 1)/x → 2 and sin 3x/x → 3 ⟹ the quotient → 2/3 ✓. Two independent routes agreeing — L'Hôpital mechanises what the stars did by steering.",
+    "**NEB-style (3m): Evaluate lim_{x→∞} (ln x)/x.** — **Form check:** ∞/∞ ✓. **Differentiate separately:** numerator d/dx(ln x) = 1/x; denominator d/dx(x) = 1. **New ratio:** (1/x)/1 = 1/x → **0** as x → ∞. **Conclusion:** logarithms grow strictly slower than any positive power — here the first power suffices. **Iteration:** applying the rule n more times to ln x/xᵃ (still ∞/∞) gives a/(a·xᵃ) → 0 — the **growth ladder** re-derived mechanically: ln x ≪ xᵃ for every a > 0. L'Hôpital turns the ladder from a quoted theorem into a repeatable computation.",
+    "**NEB-style (3m): Evaluate lim_{x→0⁺} x·ln x.** — **Form check:** 0·(−∞) — the **0·∞ species**, not directly covered ⟹ **convert**. Flip one factor: x·ln x = ln x/(1/x) — now **∞/∞** (ln x → ∞, 1/x → ∞ as x → 0⁺) ✓. **Differentiate separately:** numerator 1/x; denominator d/dx(1/x) = −1/x². **New ratio:** (1/x)/(−1/x²) = **−x** → **0**. **Conclusion:** lim_{x→0⁺} x ln x = **0** (approached from below — ln x < 0). **Reading:** near 0 the logarithm's dive is *slower* than x's collapse, so their product vanishes — the standard fact underpinning x^x → 1 via the log bridge."
   ],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Limits: definition, standard limits, evaluation of limits is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "formulas": [
+    "- lim_{x→a} f/g = lim_{x→a} f′/g′ (0/0 or ∞/∞, derived limit existing)\n- x/eˣ → 0; ln x/x → 0; x·ln x → 0 (x → 0⁺)\n- lim f^g = e^{lim g·ln f}"
+  ],
+  "keyPoints": [
+    "L'Hopital's rule: for 0/0 or inf/inf with the derived limit existing, lim f/g = lim f'/g' (ratio of separate derivatives, NOT the quotient rule). Hypotheses: genuine form, differentiability near a, g' != 0, derived limit exists; re-check the form after every pass. Proof engine: Cauchy's MVT - f/g = f'(c)/g'(c) for c between a and x. Extended forms: 0*inf => f/(1/g); inf - inf => common denominator; 1^inf, 0^0, inf^0 => e^(lim g ln f). E-ladder re-derived: x/e^x -> 0, ln x/x -> 0, x ln x -> 0. Rule is sufficient not necessary: (x + sin x)/x -> 1 but 1 + cos x has no limit."
+  ],
+  "summary": "**L'Hôpital's rule** mechanises the rate race: for a genuine **0/0 or ∞/∞**, lim f/g = **lim f′/g′** — the ratio of the *separate* derivatives (never the quotient rule), justified by **Cauchy's MVT** (f/g = f′(c)/g′(c) for an intermediate c). Discipline is everything: check the form before **every** pass, differentiate separately, stop when the form resolves ((e^{2x}−1)/sin 3x → 2e^{2x}/3cos 3x → 2/3). The **extended forms** convert first: 0·∞ flips a factor (x ln x → ln x/(1/x) → −x → 0), ∞ − ∞ combines fractions, and the power forms 1^∞, 0⁰, ∞⁰ go through the log bridge e^{lim g ln f}. The rule re-derives the **growth ladder** on demand (ln x/x → 0, x/eˣ → 0) — but it is **sufficient, not necessary**: (x + sin x)/x → 1 while 1 + cos x has no limit, so algebra, stars and squeeze remain in the toolkit. Form, differentiate, repeat — with the hypotheses held visibly.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Limits: definition, standard limits, evaluation of limits applies",
     "Note 2: Limits: definition, standard limits, evaluation of limits connects to multiple other topics in Science",
@@ -30,25 +37,17 @@
     "Note 4: Remember the units and dimensions involved in Limits: definition, standard limits, evaluation of limits",
     "Note 5: Limits: definition, standard limits, evaluation of limits frequently appears in examination questions"
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"If f/g is 0/0 or inf/inf and lim f'/g' exists, then lim f/g = lim f'/g'; convert 0*inf and inf-inf to quotient forms first.\""
+  ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Limits: definition, standard limits, evaluation of limits",
-    "Note 3: Limits: definition, standard limits, evaluation of limits has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Limits: definition, standard limits, evaluation of limits",
-    "Note 5: Cross-check your answers using alternative methods for Limits: definition, standard limits, evaluation of limits"
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Limits: definition, standard limits, evaluation of limits formula",
-    "Trick 2: Elimination technique for Limits: definition, standard limits, evaluation of limits MCQs",
-    "Trick 3: Dimensional analysis shortcut for Limits: definition, standard limits, evaluation of limits",
-    "Trick 4: Memory aid for Limits: definition, standard limits, evaluation of limits formulas",
-    "Trick 5: Time-saving approach for Limits: definition, standard limits, evaluation of limits problems"
+    "Check the form, differentiate separately, repeat. 0*inf: flip one factor. inf - inf: common denominator. Powers: log bridge. Fallback: stars and squeeze."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Limits: definition, standard limits, evaluation of limits",
-    "Exam Tip 2: Practice previous year questions on Limits: definition, standard limits, evaluation of limits",
-    "Exam Tip 4: Learn the derivations for Limits: definition, standard limits, evaluation of limits thoroughly",
-    "Exam Tip 5: Review common mistakes related to Limits: definition, standard limits, evaluation of limits"
+    "Write the form check (0/0) before each differentiation - unannotated differentiation passes lose the hypothesis marks."
   ],
   "mcs": [
     {
@@ -93,11 +92,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Limits: definition, standard limits, evaluation of limits",
-    "Concept 2: Key theorem or principle in Limits: definition, standard limits, evaluation of limits",
-    "Concept 3: Important application area of Limits: definition, standard limits, evaluation of limits",
-    "Concept 4: Fundamental relationship in Limits: definition, standard limits, evaluation of limits",
-    "Concept 5: Connection between Limits: definition, standard limits, evaluation of limits and other topics"
+    "L'Hopital mechanises rate-comparison: when two quantities race to zero or infinity, their ratio's fate is decided by the ratio of their instantaneous rates."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Limits: definition, standard limits, evaluation of limits",
@@ -105,5 +100,63 @@
     "Task 3: Create a concept map for Limits: definition, standard limits, evaluation of limits",
     "Task 4: Practice previous year exam questions on Limits: definition, standard limits, evaluation of limits",
     "Task 5: Explain Limits: definition, standard limits, evaluation of limits to a peer or study group"
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — L'Hôpital's Rule\n\n**L'Hôpital's rule**: the derivative-based resolver for 0/0 and ∞/∞ — one theorem that mechanises the whole limits unit's transformation art.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The theorem\n\n- **L'Hôpital's rule:** if f(a) = g(a) = 0 (or both → ∞), and lim f′/g′ exists (finite or ±∞), then **lim_{x→a} f/g = lim_{x→a} f′/g′**.\n- **Hypotheses (all mandatory):** the form is genuinely 0/0 or ∞/∞; f, g differentiable near a (g′ ≠ 0 near a); the derived limit exists. **One differentiation at a time** — re-check the form after each pass.\n\n### 2.2 Why it works (Cauchy's MVT sketch)\n\n- f/g = [f − f(a)]/[g − g(a)] = f′(c)/g′(c) for some c between a and x (Cauchy's Mean Value Theorem) — as x → a, c → a, and the ratio of derivatives converges to the ratio's limit. The MVT of the monotonicity unit, dressed for quotients.\n\n### 2.3 The extended forms\n\n- **∞/∞:** same theorem. **0·∞:** rewrite as 0/(1/∞) = 0/0 or ∞/(1/0) = ∞/∞. **∞ − ∞:** combine into a single fraction (common denominator) → 0/0. **1^∞, 0⁰, ∞⁰:** take logs — lim f^g = e^{lim g·ln f}, and g·ln f is a 0·∞ form resolved by L'Hôpital.\n\n### 2.4 The eˣ ladder\n\n- **lim x/eˣ = 0** (two passes: 1/eˣ → 0); **lim xⁿ/eˣ = 0** (n passes); **lim ln x/x = 0**; **lim x^{1/x} = 1** (via ln). L'Hôpital re-derives the growth ladder on demand.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **L'Hôpital's rule** | lim f/g = lim f′/g′ | 0/0, ∞/∞ |\n| **Cauchy MVT** | f′(c)/g′(c) intermediate | the proof engine |\n| **Form conversion** | 0·∞, ∞−∞ → quotient forms | algebra first |\n| **Log bridge** | f^g = e^{g ln f} | power forms |",
+      "## 4. Detailed Explanation\n\n### 4.1 Differentiate the ratio, not the quotient\n\n- f′/g′ is the ratio of the separate derivatives — **not** the derivative of the quotient (that would be the quotient rule). The rule compares *rates*, not slopes of the combined function.\n\n### 4.2 Form discipline\n\n- Applying L'Hôpital to a determinate form (c/0, 0/c) is illegal and often wrong. Check the form by substitution **before** each differentiation; stop the moment the form resolves.\n\n### 4.3 When L'Hôpital fails\n\n- The derived limit may not exist even when the original does: lim (x + sin x)/x → 1 (since sin x/x → 0) but f′/g′ = 1 + cos x has no limit — the rule is sufficient, not necessary. Fallback: algebra, standard limits, squeeze.",
+      "## 5. Comparison Tables\n\n**Form conversion table**\n\n| Form | Conversion | Then |\n|---|---|---|\n| 0/0, ∞/∞ | direct | differentiate ratio |\n| 0·∞ | f/(1/g) | 0/0 or ∞/∞ |\n| ∞ − ∞ | common denominator | 0/0 |\n| 1^∞, 0⁰, ∞⁰ | f^g = e^{g ln f} | 0·∞ inside |",
+      "## 6. Common Confusions\n\n**Differentiating the whole quotient:** (f/g)′ ≠ f′/g′ — L'Hôpital needs the ratio of derivatives, each differentiated separately.\n**Skipping the form check:** every pass needs a fresh 0/0 or ∞/∞ verdict.\n**∞ − ∞ by \"subtracting infinities\":** combine into one fraction first — the algebra is the mathematics.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/sin 3x by L'Hôpital's rule.** — **Form:** 0/0 ✓. **Differentiate separately:** numerator 2e^{2x}; denominator 3cos 3x. **Ratio:** 2e^{2x}/(3cos 3x) → 2/(3·1) = **2/3**. (Cross-check by stars: (e^{2x}−1)/x → 2, sin 3x/x → 3 ⟹ 2/3 ✓.)",
+      "**NEB-style (3m): Evaluate lim_{x→∞} (ln x)/x.** — **Form:** ∞/∞ ✓. **Differentiate:** (1/x)/1 = 1/x → **0**. The growth ladder's first rung re-derived: logarithms lose to linear powers — and iterating gives ln x/xᵃ → 0 for every a > 0.",
+      "**NEB-style (3m): Evaluate lim_{x→0⁺} x·ln x.** — **Form:** 0·∞ ⟹ convert: x·ln x = ln x/(1/x) — now **∞/∞** ✓. **Differentiate:** (1/x)/(−1/x²) = −x → **0**. So x ln x → 0⁻: the log's slow growth loses to x's vanishing — the standard ∞·0 resolution."
+    ],
+    "keyPoints": [
+      "L'Hopital's rule: for 0/0 or inf/inf with the derived limit existing, lim f/g = lim f'/g' (ratio of separate derivatives, NOT the quotient rule). Hypotheses: genuine form, differentiability near a, g' != 0, derived limit exists; re-check the form after every pass. Proof engine: Cauchy's MVT - f/g = f'(c)/g'(c) for c between a and x. Extended forms: 0*inf => f/(1/g); inf - inf => common denominator; 1^inf, 0^0, inf^0 => e^(lim g ln f). E-ladder re-derived: x/e^x -> 0, ln x/x -> 0, x ln x -> 0. Rule is sufficient not necessary: (x + sin x)/x -> 1 but 1 + cos x has no limit."
+    ],
+    "importantConcepts": [
+      "L'Hopital mechanises rate-comparison: when two quantities race to zero or infinity, their ratio's fate is decided by the ratio of their instantaneous rates."
+    ],
+    "examples": [
+      "***The failing case*** - (x + sin x)/x converges to 1 while its derivative ratio 1 + cos x oscillates: L'Hopital is a one-way licence, not an equivalence."
+    ],
+    "universalFacts": [
+      "Two sprinters' photo finish is decided by instantaneous speeds at the line, not average speeds - L'Hopital is the mathematics of the photo finish."
+    ],
+    "importantStatements": [
+      "\"If f/g is 0/0 or inf/inf and lim f'/g' exists, then lim f/g = lim f'/g'; convert 0*inf and inf-inf to quotient forms first.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Check the form, differentiate separately, repeat. 0*inf: flip one factor. inf - inf: common denominator. Powers: log bridge. Fallback: stars and squeeze."
+    ],
+    "examNotes": [
+      "Write the form check (0/0) before each differentiation - unannotated differentiation passes lose the hypothesis marks."
+    ],
+    "formulas": [
+      "- lim_{x→a} f/g = lim_{x→a} f′/g′ (0/0 or ∞/∞, derived limit existing)\n- x/eˣ → 0; ln x/x → 0; x·ln x → 0 (x → 0⁺)\n- lim f^g = e^{lim g·ln f}"
+    ],
+    "practice": [
+      "Evaluate (e^{2x} − 1)/sin 3x by L'Hôpital.",
+      "Evaluate lim_{x→∞} (ln x)/x.",
+      "Evaluate lim_{x→0⁺} x·ln x."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/sin 3x using L'Hôpital's rule.** — **Form check:** substitution gives (1 − 1)/0 = **0/0** — the rule's hypothesis holds. **Differentiate separately** (the ratio of derivatives, not the quotient rule): numerator d/dx(e^{2x} − 1) = **2e^{2x}** (chain rule); denominator d/dx(sin 3x) = **3cos 3x**. **New ratio:** 2e^{2x}/(3cos 3x) — substituting x = 0: 2·1/(3·1) = **2/3** (no second pass needed — the form resolved). **Cross-check by standard limits:** (e^{2x} − 1)/x → 2 and sin 3x/x → 3 ⟹ the quotient → 2/3 ✓. Two independent routes agreeing — L'Hôpital mechanises what the stars did by steering.",
+      "**NEB-style (3m): Evaluate lim_{x→∞} (ln x)/x.** — **Form check:** ∞/∞ ✓. **Differentiate separately:** numerator d/dx(ln x) = 1/x; denominator d/dx(x) = 1. **New ratio:** (1/x)/1 = 1/x → **0** as x → ∞. **Conclusion:** logarithms grow strictly slower than any positive power — here the first power suffices. **Iteration:** applying the rule n more times to ln x/xᵃ (still ∞/∞) gives a/(a·xᵃ) → 0 — the **growth ladder** re-derived mechanically: ln x ≪ xᵃ for every a > 0. L'Hôpital turns the ladder from a quoted theorem into a repeatable computation.",
+      "**NEB-style (3m): Evaluate lim_{x→0⁺} x·ln x.** — **Form check:** 0·(−∞) — the **0·∞ species**, not directly covered ⟹ **convert**. Flip one factor: x·ln x = ln x/(1/x) — now **∞/∞** (ln x → ∞, 1/x → ∞ as x → 0⁺) ✓. **Differentiate separately:** numerator 1/x; denominator d/dx(1/x) = −1/x². **New ratio:** (1/x)/(−1/x²) = **−x** → **0**. **Conclusion:** lim_{x→0⁺} x ln x = **0** (approached from below — ln x < 0). **Reading:** near 0 the logarithm's dive is *slower* than x's collapse, so their product vanishes — the standard fact underpinning x^x → 1 via the log bridge."
+    ]
+  },
+  "universalFacts": [
+    "Two sprinters' photo finish is decided by instantaneous speeds at the line, not average speeds - L'Hopital is the mathematics of the photo finish."
+  ],
+  "practice": [
+    "Evaluate (e^{2x} − 1)/sin 3x by L'Hôpital.",
+    "Evaluate lim_{x→∞} (ln x)/x.",
+    "Evaluate lim_{x→0⁺} x·ln x."
   ]
 }

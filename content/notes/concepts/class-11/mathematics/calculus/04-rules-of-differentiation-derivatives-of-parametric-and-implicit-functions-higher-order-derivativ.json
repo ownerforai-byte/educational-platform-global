@@ -7,20 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Rules of differentiation; derivatives of parametric and i… — Calculus, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: rules of differentiation, derivatives of parametric, implicit functions, higher order derivatives · one worked example · one misconception each.",
-    "**Fact.** Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.",
-    "**Fact.** d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.",
-    "**Fact.** Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test).",
-    "**Derivatives of parametric.** one-line definition + one-line exam use.",
-    "**Implicit functions.** one-line definition + one-line exam use.",
-    "**Higher order derivatives.** one-line definition + one-line exam use.",
-    "# Rules of differentiation; derivatives of parametric and implicit functions; higher order derivatives\n\n## 1. Introduction and motivation\nWhat the tool **Rules of differentiation; derivatives of parametric and implicit functions; higher order derivatives** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Calculus fill pass.\n\n## 2. Definitions and theorems\n### Rules of differentiation\n### derivatives of parametric and implicit functions\n### higher order derivatives\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
-    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
-    "## 4. Methods and standard forms\n**Table 2 — Standard forms and rules**\n\n| Form | Rule | Worked example | Trap |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 5. Figures and graphs\n- **F1** — Rules of differentiation; derivatives of parametric and implicit functions; higher order derivatives — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Rules of differentiation; derivatives of parametric and implicit functions; higher order derivatives — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Rules of differentiation; derivatives of parametric and implicit functions; higher order derivatives — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
-    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
-    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+    "## 1. Topic Introduction — The Differentiation Toolkit\n\n**Rules of differentiation** — product, quotient, chain — plus **parametric, implicit and higher-order derivatives**: the machinery that makes every function differentiable in practice.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Product and quotient rules\n\n- **Product:** (fg)′ = f′g + fg′ (proved by adding and subtracting f(x+h)g(x)). **Quotient:** (f/g)′ = (f′g − fg′)/g² (g ≠ 0).\n- **Memory:** product keeps order symmetry; quotient is \"low d-high minus high d-low over low squared\".\n\n### 2.2 The chain rule\n\n- **Theorem:** if g is differentiable at x and f differentiable at g(x), then (f∘g)′(x) = f′(g(x))·g′(x) — dy/dx = dy/du · du/dx.\n- The engine of composite differentiation: outer table, inner derivative, multiply.\n\n### 2.3 Parametric differentiation\n\n- **x = x(t), y = y(t):** dy/dx = (dy/dt)/(dx/dt) (dx/dt ≠ 0); **second derivative:** d²y/dx² = d/dx(dy/dx) = [d/dt(dy/dx)]/(dx/dt) — divide by dx/dt again, not by itself.\n\n### 2.4 Implicit differentiation\n\n- For F(x, y) = 0 defining y(x): differentiate both sides in x, treating y as y(x) (chain rule inserts dy/dx), then solve for dy/dx.\n- **Logarithmic differentiation** (the power-tool): y = u^v ⟹ ln y = v ln u ⟹ y′/y = v′ ln u + v·u′/u ⟹ y′ = y(v′ ln u + vu′/u) — handles x^x and (sin x)^{cos x}.\n\n### 2.5 Higher-order derivatives\n\n- **f′′, f′′′, …, f⁽ⁿ⁾:** differentiate repeatedly. **Notation:** d²y/dx², Dⁿy. **Leibniz (statement):** (fg)⁽ⁿ⁾ = Σ C(n,k) f⁽ⁿ⁻ᵏ⁾g⁽ᵏ⁾ — the product rule's binomial generalisation.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Product rule** | (fg)′ = f′g + fg′ | sin x·cos x |\n| **Chain rule** | (f∘g)′ = f′(g)·g′ | ln(sin x) |\n| **Parametric dy/dx** | (dy/dt)/(dx/dt) | ellipse tangents |\n| **Logarithmic diff** | ln y first, then solve | xˣ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why the chain rule is the master rule\n\n- Product and quotient rules are special cases of treating expressions as composites; every \"hard\" derivative is a chain rule in disguise. Master dy/du · du/dx and the table becomes universal.\n\n### 4.2 Logarithmic differentiation's domain\n\n- Use when y = u(x)^{v(x)} with **both base and exponent variable** (xˣ, (sin x)^{cos x}, x^{1/x}) — neither the power rule (variable base) nor the exponential rule (variable exponent) applies alone.\n\n### 4.3 The parametric second-derivative trap\n\n- d²y/dx² ≠ (d²y/dt²)/(d²x/dt²). The correct route: differentiate dy/dx *with respect to t*, then divide by dx/dt — the operator d/dx = (1/(dx/dt))·d/dt applied twice.",
+    "## 5. Comparison Tables\n\n**Rule selector**\n\n| Situation | Rule |\n|---|---|\n| product of functions | (fg)′ = f′g + fg′ |\n| quotient | (f′g − fg′)/g² |\n| composite | f′(g)·g′ |\n| x = x(t), y = y(t) | (dy/dt)/(dx/dt) |\n| equation in x, y | implicit + solve |\n| u^v both variable | logarithmic diff |",
+    "## 6. Common Confusions\n\n**Chain rule amnesia:** ln(sin x) is cot x only because the inner derivative cos x survives — dropping u′ is the classic error.",
+    "**Parametric second derivative:** divide by dx/dt again after differentiating dy/dx in t — not the ratio of second t-derivatives.",
+    "**x^x is not x·x^{x−1}:** the power rule needs constant exponent; xˣ demands logarithmic differentiation.",
+    "## 7. Exam Application\n\n**NEB 2023 (verified PYQ): Find the derivative of y = sin x · cos x using the product rule. (3m)** — **Product rule:** y′ = (sin x)′·cos x + sin x·(cos x)′ = cos x·cos x + sin x·(−sin x) = cos²x − sin²x = **cos 2x**. (Cross-check: y = ½ sin 2x ⟹ y′ = ½·2cos 2x = cos 2x ✓.)",
+    "**NEB 2022 (verified PYQ): Differentiate (i) y = xˣ, (ii) y = sin²x·eˣ, (iii) y = (1+x)^{1/x}. (3m)** — **(i) Logarithmic:** ln y = x ln x ⟹ y′/y = ln x + 1 ⟹ **y′ = xˣ(ln x + 1)**. **(ii) Product + chain:** y′ = (2 sin x cos x)·eˣ + sin²x·eˣ = **eˣ(sin 2x + sin²x)**. **(iii) Logarithmic:** ln y = (1/x)ln(1+x) ⟹ y′/y = [x/(1+x) − ln(1+x)]/x² ⟹ **y′ = (1+x)^{1/x}·[x/(1+x) − ln(1+x)]/x²**.",
+    "**NEB 2023 (verified PYQ): If y = (sin x)^{cos x}, show that dy/dx = y(cos x·cot x − sin x·log_e(sin x)). (3m)** — **Logarithmic differentiation:** ln y = cos x·ln(sin x). **Differentiate:** y′/y = (−sin x)·ln(sin x) + cos x·(cos x/sin x) = −sin x·ln(sin x) + cos x·cot x. **Multiply by y:** dy/dx = **y(cos x·cot x − sin x·log_e(sin x))** ∎ — exactly the claimed form."
   ],
   "confusion": [
     "❌ treat \"Rules of differentiation\" as one blob → ✅ split into: rules of differentiation, derivatives of parametric, implicit functions.",
@@ -35,27 +32,23 @@
     "Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain."
   ],
   "practice": [
-    "define + example each sub-idea: rules of differentiation, derivatives of parametric, implicit functions, higher order derivatives.",
-    "one worked example for \"Rules of differentiation; derivatives of parametric and i…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Differentiate sin x·cos x by the product rule.",
+    "Differentiate xˣ, sin²x·eˣ, (1+x)^{1/x}.",
+    "Show dy/dx for y = (sin x)^{cos x}."
   ],
   "universalFacts": [
-    "Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.",
-    "d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.",
-    "Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+    "Gear trains multiply rates like the chain rule: output speed = gear ratio (outer) times input speed (inner) - differentiation's mechanics is mechanics."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***The x^x litmus test*** - neither power nor exponential rule applies when both base and exponent vary: ln y = x ln x is the universal escape hatch."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Rules of differentiation; derivatives of parametric and i…\" with one example.",
-    "compare \"Rules of differentiation\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Rules of differentiation; derivatives of parametric and i…\" and verify the answer is plausible."
+    "**NEB 2023 (verified PYQ): Find the derivative of y = sin x · cos x using the product rule. (3m)** — **Product rule:** y′ = (sin x)′·cos x + sin x·(cos x)′ = **cos x·cos x + sin x·(−sin x)** = cos²x − sin²x. **Simplify:** by the double-angle identity, cos²x − sin²x = **cos 2x**. **Cross-check:** sin x·cos x = ½·sin 2x, so differentiating directly gives ½·2cos 2x = cos 2x ✓ — the two routes agree, and the product rule has delivered a double angle.",
+    "**NEB 2022 (verified PYQ): Differentiate with respect to x: (i) y = xˣ, (ii) y = sin²x · eˣ, (iii) y = (1+x)^{1/x}. (3m)** — **(i) Logarithmic differentiation** (both base and exponent variable — neither single rule applies): ln y = x ln x ⟹ y′/y = 1·ln x + x·(1/x) = ln x + 1 ⟹ **y′ = xˣ(ln x + 1)**. **(ii) Product + chain:** y′ = [d/dx(sin²x)]·eˣ + sin²x·(eˣ)′ = (2 sin x cos x)·eˣ + sin²x·eˣ = **eˣ(sin 2x + sin²x)** (using 2 sin x cos x = sin 2x). **(iii) Logarithmic:** ln y = (1/x)·ln(1+x); differentiate the product: y′/y = (−1/x²)·ln(1+x) + (1/x)·(1/(1+x)) ⟹ **y′ = (1+x)^{1/x}·[x/(1+x) − ln(1+x)]/x²**. Three different rule-combinations, one page — the toolkit triage in a single question.",
+    "**NEB 2023 (verified PYQ): If y = (sin x)^{cos x}, show that dy/dx = y(cos x · cot x − sin x · log_e(sin x)). (3m)** — **Step 1 — take logs** (u^v with both parts variable): ln y = cos x · ln(sin x). **Step 2 — differentiate both sides in x** (product rule on the right; chain rule inserts y′/y on the left): y′/y = (−sin x)·ln(sin x) + cos x·[cos x/sin x] = **−sin x·ln(sin x) + cos x·cot x**. **Step 3 — solve for y′:** multiply by y: dy/dx = **y(cos x·cot x − sin x·log_e(sin x))** ∎ — matching the required form exactly, with y retained (the target keeps y unexpanded; substituting (sin x)^{cos x} back is optional but the shown form is the mark)."
   ],
   "formulas": [
-    "f'(x) = lim [f(x+h)−f(x)]/h",
-    "(fg)' = f'g + fg'",
-    "d/dx xⁿ = nx^{n−1}"
+    "- (fg)′ = f′g + fg′; (f/g)′ = (f′g − fg′)/g²\n- chain: dy/dx = (dy/du)(du/dx)\n- parametric: dy/dx = (dy/dt)/(dx/dt); d²y/dx² = (d/dt(dy/dx))/(dx/dt)\n- log-diff: y = u^v ⟹ y′ = y(v′ ln u + vu′/u)"
   ],
   "numericals": [
     "Use  f'(x) = lim [f(x+h)−f(x)]/h  — pick reasonable values, solve, and check the units.",
@@ -63,12 +56,9 @@
     "Use  d/dx xⁿ = nx^{n−1}  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Rules of differentiation",
-    "• Derivatives of parametric",
-    "• Implicit functions",
-    "• Higher order derivatives"
+    "Product rule: (fg)' = f'g + fg'. Quotient rule: (f/g)' = (f'g - fg')/g^2. Chain rule: (f o g)' = f'(g(x)) g'(x), i.e. dy/dx = dy/du du/dx - the master rule. Parametric: x = x(t), y = y(t) => dy/dx = (dy/dt)/(dx/dt); d^2y/dx^2 = [d/dt(dy/dx)]/(dx/dt) - divide by dx/dt again. Implicit: differentiate F(x, y) = 0 in x with y = y(x), solve for dy/dx. Logarithmic differentiation for u(x)^v(x): ln y = v ln u => y' = y(v' ln u + vu'/u) - handles x^x, (sin x)^cos x, (1+x)^(1/x). Higher orders: f'', f'''...; Leibniz: (fg)^(n) = sum C(n,k) f^(n-k) g^(k)."
   ],
-  "summary": "Rules of differentiation; derivatives of parametric and i… (Calculus, Mathematics, class-11-notes) covers Rules of differentiation, derivatives of parametric, implicit functions. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "The **differentiation toolkit** turns the table into universal machinery. **Product rule** (fg)′ = f′g + fg′ (sin x·cos x → cos²x − sin²x = cos 2x, NEB 2023) and **quotient rule** (f′g − fg′)/g² are the workhorses; the **chain rule** dy/dx = dy/du·du/dx is the master — outer table, inner derivative, multiply. **Parametric curves** differentiate as (dy/dt)/(dx/dt), with the second derivative requiring a *second* division by dx/dt (the classic trap). **Implicit equations** differentiate through with y = y(x), then solve linearly for y′. And **logarithmic differentiation** is the power-tool for u(x)^{v(x)} — ln y = v ln u, then y′ = y(v′ ln u + vu′/u): xˣ → xˣ(ln x + 1), (1+x)^{1/x}, and NEB 2023's show-that (sin x)^{cos x} → y(cos x·cot x − sin x·ln(sin x)). **Higher orders** repeat the operation, with **Leibniz** generalising the product rule binomially. Triage the situation, pick the rule, execute.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Rules of differentiation; derivatives of parametric and i…\"?",
@@ -92,9 +82,70 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Order of tools: product rule → quotient rule → chain rule; write u′v + uv′ or (u′v − uv′)/v² before substituting to avoid sign slips.",
-    "Trick 2: Parametric second derivative: dy/dx = (dy/dt)/(dx/dt); d²y/dx² = d(dy/dx)/dt ÷ dx/dt — the ÷(dx/dt) is the mark students forget.",
-    "Trick 3: Implicit: differentiate both sides treating y as y(x), collect dy/dx terms on one side, factor — never solve for y first.",
-    "Trick 4: For nth derivatives of standard forms memorise: (ax+b)^n → n! pattern; y = e^{ax} sin bx → r^n e^{ax} sin(bx + n tan^-1(b/a))."
+    "u^v both variable: ln y first. Parametric: dy/dt over dx/dt; second derivative divides by dx/dt again. Implicit: differentiate through, solve linearly for y'."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Differentiation Toolkit\n\n**Rules of differentiation** — product, quotient, chain — plus **parametric, implicit and higher-order derivatives**: the machinery that makes every function differentiable in practice.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Product and quotient rules\n\n- **Product:** (fg)′ = f′g + fg′ (proved by adding and subtracting f(x+h)g(x)). **Quotient:** (f/g)′ = (f′g − fg′)/g² (g ≠ 0).\n- **Memory:** product keeps order symmetry; quotient is \"low d-high minus high d-low over low squared\".\n\n### 2.2 The chain rule\n\n- **Theorem:** if g is differentiable at x and f differentiable at g(x), then (f∘g)′(x) = f′(g(x))·g′(x) — dy/dx = dy/du · du/dx.\n- The engine of composite differentiation: outer table, inner derivative, multiply.\n\n### 2.3 Parametric differentiation\n\n- **x = x(t), y = y(t):** dy/dx = (dy/dt)/(dx/dt) (dx/dt ≠ 0); **second derivative:** d²y/dx² = d/dx(dy/dx) = [d/dt(dy/dx)]/(dx/dt) — divide by dx/dt again, not by itself.\n\n### 2.4 Implicit differentiation\n\n- For F(x, y) = 0 defining y(x): differentiate both sides in x, treating y as y(x) (chain rule inserts dy/dx), then solve for dy/dx.\n- **Logarithmic differentiation** (the power-tool): y = u^v ⟹ ln y = v ln u ⟹ y′/y = v′ ln u + v·u′/u ⟹ y′ = y(v′ ln u + vu′/u) — handles x^x and (sin x)^{cos x}.\n\n### 2.5 Higher-order derivatives\n\n- **f′′, f′′′, …, f⁽ⁿ⁾:** differentiate repeatedly. **Notation:** d²y/dx², Dⁿy. **Leibniz (statement):** (fg)⁽ⁿ⁾ = Σ C(n,k) f⁽ⁿ⁻ᵏ⁾g⁽ᵏ⁾ — the product rule's binomial generalisation.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Product rule** | (fg)′ = f′g + fg′ | sin x·cos x |\n| **Chain rule** | (f∘g)′ = f′(g)·g′ | ln(sin x) |\n| **Parametric dy/dx** | (dy/dt)/(dx/dt) | ellipse tangents |\n| **Logarithmic diff** | ln y first, then solve | xˣ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why the chain rule is the master rule\n\n- Product and quotient rules are special cases of treating expressions as composites; every \"hard\" derivative is a chain rule in disguise. Master dy/du · du/dx and the table becomes universal.\n\n### 4.2 Logarithmic differentiation's domain\n\n- Use when y = u(x)^{v(x)} with **both base and exponent variable** (xˣ, (sin x)^{cos x}, x^{1/x}) — neither the power rule (variable base) nor the exponential rule (variable exponent) applies alone.\n\n### 4.3 The parametric second-derivative trap\n\n- d²y/dx² ≠ (d²y/dt²)/(d²x/dt²). The correct route: differentiate dy/dx *with respect to t*, then divide by dx/dt — the operator d/dx = (1/(dx/dt))·d/dt applied twice.",
+      "## 5. Comparison Tables\n\n**Rule selector**\n\n| Situation | Rule |\n|---|---|\n| product of functions | (fg)′ = f′g + fg′ |\n| quotient | (f′g − fg′)/g² |\n| composite | f′(g)·g′ |\n| x = x(t), y = y(t) | (dy/dt)/(dx/dt) |\n| equation in x, y | implicit + solve |\n| u^v both variable | logarithmic diff |",
+      "## 6. Common Confusions\n\n**Chain rule amnesia:** ln(sin x) is cot x only because the inner derivative cos x survives — dropping u′ is the classic error.",
+      "**Parametric second derivative:** divide by dx/dt again after differentiating dy/dx in t — not the ratio of second t-derivatives.",
+      "**x^x is not x·x^{x−1}:** the power rule needs constant exponent; xˣ demands logarithmic differentiation.",
+      "## 7. Exam Application\n\n**NEB 2023 (verified PYQ): Find the derivative of y = sin x · cos x using the product rule. (3m)** — **Product rule:** y′ = (sin x)′·cos x + sin x·(cos x)′ = cos x·cos x + sin x·(−sin x) = cos²x − sin²x = **cos 2x**. (Cross-check: y = ½ sin 2x ⟹ y′ = ½·2cos 2x = cos 2x ✓.)",
+      "**NEB 2022 (verified PYQ): Differentiate (i) y = xˣ, (ii) y = sin²x·eˣ, (iii) y = (1+x)^{1/x}. (3m)** — **(i) Logarithmic:** ln y = x ln x ⟹ y′/y = ln x + 1 ⟹ **y′ = xˣ(ln x + 1)**. **(ii) Product + chain:** y′ = (2 sin x cos x)·eˣ + sin²x·eˣ = **eˣ(sin 2x + sin²x)**. **(iii) Logarithmic:** ln y = (1/x)ln(1+x) ⟹ y′/y = [x/(1+x) − ln(1+x)]/x² ⟹ **y′ = (1+x)^{1/x}·[x/(1+x) − ln(1+x)]/x²**.",
+      "**NEB 2023 (verified PYQ): If y = (sin x)^{cos x}, show that dy/dx = y(cos x·cot x − sin x·log_e(sin x)). (3m)** — **Logarithmic differentiation:** ln y = cos x·ln(sin x). **Differentiate:** y′/y = (−sin x)·ln(sin x) + cos x·(cos x/sin x) = −sin x·ln(sin x) + cos x·cot x. **Multiply by y:** dy/dx = **y(cos x·cot x − sin x·log_e(sin x))** ∎ — exactly the claimed form."
+    ],
+    "keyPoints": [
+      "Product rule: (fg)' = f'g + fg'. Quotient rule: (f/g)' = (f'g - fg')/g^2. Chain rule: (f o g)' = f'(g(x)) g'(x), i.e. dy/dx = dy/du du/dx - the master rule. Parametric: x = x(t), y = y(t) => dy/dx = (dy/dt)/(dx/dt); d^2y/dx^2 = [d/dt(dy/dx)]/(dx/dt) - divide by dx/dt again. Implicit: differentiate F(x, y) = 0 in x with y = y(x), solve for dy/dx. Logarithmic differentiation for u(x)^v(x): ln y = v ln u => y' = y(v' ln u + vu'/u) - handles x^x, (sin x)^cos x, (1+x)^(1/x). Higher orders: f'', f'''...; Leibniz: (fg)^(n) = sum C(n,k) f^(n-k) g^(k)."
+    ],
+    "importantConcepts": [
+      "The chain rule is the master rule: outer table derivative times inner derivative - product, quotient and every composite reduce to it."
+    ],
+    "examples": [
+      "***The x^x litmus test*** - neither power nor exponential rule applies when both base and exponent vary: ln y = x ln x is the universal escape hatch."
+    ],
+    "universalFacts": [
+      "Gear trains multiply rates like the chain rule: output speed = gear ratio (outer) times input speed (inner) - differentiation's mechanics is mechanics."
+    ],
+    "importantStatements": [
+      "\"(fg)' = f'g + fg'; (f/g)' = (f'g - fg')/g^2; dy/dx = dy/du du/dx; y = u^v => y' = y(v' ln u + vu'/u).\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2023 product rule sin x cos x; NEB 2022 x^x, sin^2 x e^x, (1+x)^(1/x); NEB 2023 (sin x)^cos x - assigned to this row. Other items NEB-style practice."
+    ],
+    "examShortTricks": [
+      "u^v both variable: ln y first. Parametric: dy/dt over dx/dt; second derivative divides by dx/dt again. Implicit: differentiate through, solve linearly for y'."
+    ],
+    "examNotes": [
+      "For \"show that\" derivative questions, keep y in the final answer when the target form does - substituting it out loses the match."
+    ],
+    "formulas": [
+      "- (fg)′ = f′g + fg′; (f/g)′ = (f′g − fg′)/g²\n- chain: dy/dx = (dy/du)(du/dx)\n- parametric: dy/dx = (dy/dt)/(dx/dt); d²y/dx² = (d/dt(dy/dx))/(dx/dt)\n- log-diff: y = u^v ⟹ y′ = y(v′ ln u + vu′/u)"
+    ],
+    "practice": [
+      "Differentiate sin x·cos x by the product rule.",
+      "Differentiate xˣ, sin²x·eˣ, (1+x)^{1/x}.",
+      "Show dy/dx for y = (sin x)^{cos x}."
+    ],
+    "practiceQuestions": [
+      "**NEB 2023 (verified PYQ): Find the derivative of y = sin x · cos x using the product rule. (3m)** — **Product rule:** y′ = (sin x)′·cos x + sin x·(cos x)′ = **cos x·cos x + sin x·(−sin x)** = cos²x − sin²x. **Simplify:** by the double-angle identity, cos²x − sin²x = **cos 2x**. **Cross-check:** sin x·cos x = ½·sin 2x, so differentiating directly gives ½·2cos 2x = cos 2x ✓ — the two routes agree, and the product rule has delivered a double angle.",
+      "**NEB 2022 (verified PYQ): Differentiate with respect to x: (i) y = xˣ, (ii) y = sin²x · eˣ, (iii) y = (1+x)^{1/x}. (3m)** — **(i) Logarithmic differentiation** (both base and exponent variable — neither single rule applies): ln y = x ln x ⟹ y′/y = 1·ln x + x·(1/x) = ln x + 1 ⟹ **y′ = xˣ(ln x + 1)**. **(ii) Product + chain:** y′ = [d/dx(sin²x)]·eˣ + sin²x·(eˣ)′ = (2 sin x cos x)·eˣ + sin²x·eˣ = **eˣ(sin 2x + sin²x)** (using 2 sin x cos x = sin 2x). **(iii) Logarithmic:** ln y = (1/x)·ln(1+x); differentiate the product: y′/y = (−1/x²)·ln(1+x) + (1/x)·(1/(1+x)) ⟹ **y′ = (1+x)^{1/x}·[x/(1+x) − ln(1+x)]/x²**. Three different rule-combinations, one page — the toolkit triage in a single question.",
+      "**NEB 2023 (verified PYQ): If y = (sin x)^{cos x}, show that dy/dx = y(cos x · cot x − sin x · log_e(sin x)). (3m)** — **Step 1 — take logs** (u^v with both parts variable): ln y = cos x · ln(sin x). **Step 2 — differentiate both sides in x** (product rule on the right; chain rule inserts y′/y on the left): y′/y = (−sin x)·ln(sin x) + cos x·[cos x/sin x] = **−sin x·ln(sin x) + cos x·cot x**. **Step 3 — solve for y′:** multiply by y: dy/dx = **y(cos x·cot x − sin x·log_e(sin x))** ∎ — matching the required form exactly, with y retained (the target keeps y unexpanded; substituting (sin x)^{cos x} back is optional but the shown form is the mark)."
+    ]
+  },
+  "importantConcepts": [
+    "The chain rule is the master rule: outer table derivative times inner derivative - product, quotient and every composite reduce to it."
+  ],
+  "importantStatements": [
+    "\"(fg)' = f'g + fg'; (f/g)' = (f'g - fg')/g^2; dy/dx = dy/du du/dx; y = u^v => y' = y(v' ln u + vu'/u).\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2023 product rule sin x cos x; NEB 2022 x^x, sin^2 x e^x, (1+x)^(1/x); NEB 2023 (sin x)^cos x - assigned to this row. Other items NEB-style practice."
+  ],
+  "examNotes": [
+    "For \"show that\" derivative questions, keep y in the final answer when the target form does - substituting it out loses the match."
   ]
 }

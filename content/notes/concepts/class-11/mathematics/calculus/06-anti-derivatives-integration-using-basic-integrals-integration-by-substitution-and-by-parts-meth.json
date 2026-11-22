@@ -7,20 +7,15 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Anti-derivatives: integration using basic integrals, inte… — Calculus, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: anti-derivatives, integration using basic integrals, integration by substitution, by parts methods · one worked example · one misconception each.",
-    "**Fact.** Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.",
-    "**Fact.** d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.",
-    "**Fact.** Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test).",
-    "**Integration using basic integrals.** one-line definition + one-line exam use.",
-    "**Integration by substitution.** one-line definition + one-line exam use.",
-    "**By parts methods.** one-line definition + one-line exam use.",
-    "# Anti-derivatives: integration using basic integrals, integration by substitution and by parts methods\n\n## 1. Introduction and motivation\nWhat the tool **Anti-derivatives** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Calculus fill pass.\n\n## 2. Definitions and theorems\n### Anti-derivatives: integration using basic integrals\n### integration by substitution and by parts methods\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
-    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
-    "## 4. Methods and standard forms\n**Table 2 — Standard forms and rules**\n\n| Form | Rule | Worked example | Trap |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 5. Figures and graphs\n- **F1** — Anti-derivatives — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Anti-derivatives — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Anti-derivatives — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
-    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
-    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+    "## 1. Topic Introduction — Differentiation in Reverse\n\n**Anti-derivatives and integration**: the basic integral table, **integration by substitution**, and **integration by parts** — running the derivative machinery backwards.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Anti-derivative and the indefinite integral\n\n- **F is an anti-derivative of f** ⟺ F′ = f. **∫f(x)dx = F(x) + C** — the whole family, since constants differentiate to 0. **Uniqueness theorem:** two anti-derivatives of the same f differ by a constant.\n- **Basic table (reverse of the derivative table):** ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C; ∫eˣdx = eˣ + C; ∫aˣdx = aˣ/ln a + C; ∫sin x dx = −cos x + C; ∫cos x dx = sin x + C; ∫sec²x dx = tan x + C; ∫1/(1+x²)dx = tan⁻¹x + C; ∫1/√(1−x²)dx = sin⁻¹x + C.\n\n### 2.2 Linearity\n\n- ∫(af + bg)dx = a∫f dx + b∫g dx — term-by-term integration with constants carried.\n\n### 2.3 Integration by substitution\n\n- **Theorem:** ∫f(g(x))g′(x)dx = ∫f(u)du with u = g(x) — the chain rule reversed. Procedure: spot the inner function, let u = g(x), compute du = g′(x)dx, transform, integrate, substitute back.\n- **Workhorses:** ∫f(ax+b)dx = (1/a)F(ax+b) + C; ∫f′/f dx = ln|f| + C; ∫fⁿf′dx = fⁿ⁺¹/(n+1) + C.\n\n### 2.4 Integration by parts\n\n- **Theorem:** ∫u·v dx = u·v − ∫u′·v dx (from the product rule integrated). **LIATE ordering** for choosing u: Log, Inverse trig, Algebraic, Trig, Exponential — differentiate the earlier class.\n- **Classic cycles:** ∫x·eˣdx = xeˣ − eˣ + C; ∫ln x dx = x ln x − x + C; ∫x·sin x dx = −x cos x + sin x + C; repeated parts for ∫eˣ sin x dx (two cycles then solve linearly).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Anti-derivative** | F′ = f | x² for 2x |\n| **+C** | The constant family | all solutions |\n| **Substitution** | Chain rule reversed | u = g(x) |\n| **Parts** | Product rule reversed | ∫u dv = uv − ∫v du |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why + C is not decoration\n\n- Differentiation destroys constants; integration must restore the whole family. Initial conditions (a point the curve passes through) pin C — the constant is where physical initial data enters calculus.\n\n### 4.2 Substitution as pattern recognition\n\n- The integrand must contain the inner function's derivative (up to a constant): ∫2x·e^{x²}dx has g = x², g′ = 2x present ⟹ u = x² gives ∫eᵘdu = e^{x²} + C. When g′ is absent, rescale constants; when absent entirely, substitution fails.\n\n### 4.3 Parts as rearrangement\n\n- Parts trades one integral for another: choose u so that u′ simplifies (LIATE) and dv so that ∫v dx is doable. Cyclic integrands (eˣ sin x) return to themselves after two applications — solve the resulting linear equation.",
+    "## 5. Comparison Tables\n\n**Method selector**\n\n| Integrand shape | Method |\n|---|---|\n| f(ax + b) | linear substitution |\n| f′(x)/f(x) | u = f: ln\\|f\\| |\n| fⁿ·f′ | power substitution |\n| xⁿ·(exp/trig) | parts (u = xⁿ) |\n| ln x, tan⁻¹x alone | parts (u = the function) |\n| eˣ·sin x | parts twice + solve |",
+    "## 6. Common Confusions\n\n**Forgetting + C:** the indefinite integral is a family; omitting C loses a mark every time.\n**∫dx/x = ln|x|:** the absolute value is part of the answer (domain symmetry).\n**Parts u-choice:** differentiate the LIATE-earlier factor — choosing u = eˣ in ∫xeˣdx loops forever.",
+    "## 7. Exam Application\n\n**NEB 2023 (verified PYQ): Evaluate ∫(3x² + 2x − 1)dx. (3m)** — **Linearity + power rule reversed:** ∫3x²dx = x³; ∫2x dx = x²; ∫(−1)dx = −x. **Result: x³ + x² − x + C.** (Check: d/dx(x³ + x² − x + C) = 3x² + 2x − 1 ✓.)",
+    "**NEB-style (3m): Evaluate ∫2x·e^{x²}dx.** — **Substitution:** u = x², du = 2x dx ⟹ ∫eᵘdu = eᵘ + C ⟹ **e^{x²} + C**. The integrand contains the inner function's derivative exactly — the substitution licence is complete.",
+    "**NEB-style (3m): Evaluate ∫x·ln x dx.** — **Parts** (LIATE: Log before Algebraic ⟹ u = ln x, dv = x dx): du = dx/x, v = x²/2. ∫x ln x dx = (x²/2)ln x − ∫(x²/2)(1/x)dx = (x²/2)ln x − (1/2)∫x dx = **(x²/2)ln x − x²/4 + C**."
   ],
   "confusion": [
     "❌ treat \"Anti-derivatives\" as one blob → ✅ split into: anti-derivatives, integration using basic integrals, integration by substitution.",
@@ -35,27 +30,23 @@
     "Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain."
   ],
   "practice": [
-    "define + example each sub-idea: anti-derivatives, integration using basic integrals, integration by substitution, by parts methods.",
-    "one worked example for \"Anti-derivatives: integration using basic integrals, inte…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Evaluate ∫(3x² + 2x − 1)dx.",
+    "Evaluate ∫2x·e^{x²}dx.",
+    "Evaluate ∫x·ln x dx."
   ],
   "universalFacts": [
-    "Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.",
-    "d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.",
-    "Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+    "Odometers integrate speedometers: distance is the anti-derivative of velocity - the + C is where the trip started."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***The cyclic integral*** - e^x sin x returns to itself after two parts applications: I = e^x(sin x - cos x)/2 - the equation-solving finish that parts uniquely demands."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Anti-derivatives: integration using basic integrals, inte…\" with one example.",
-    "compare \"Anti-derivatives\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Anti-derivatives: integration using basic integrals, inte…\" and verify the answer is plausible."
+    "**NEB 2023 (verified PYQ): Evaluate ∫(3x² + 2x − 1)dx. (3m)** — **Linearity:** split into three integrals with constants carried: ∫3x²dx + ∫2x dx + ∫(−1)dx. **Power rule reversed term by term:** ∫3x²dx = 3·x³/3 = **x³**; ∫2x dx = 2·x²/2 = **x²**; ∫(−1)dx = **−x**. **Result: x³ + x² − x + C** — the constant C is mandatory (the anti-derivative is a family). **Verification:** d/dx(x³ + x² − x + C) = 3x² + 2x − 1 ✓ — differentiation returns the integrand exactly.",
+    "**NEB-style (3m): Evaluate ∫2x·e^{x²}dx.** — **Spot the composite:** e^{x²} is e^u with u = x², and the integrand contains u′ = 2x as a factor — the substitution licence is complete. **Transform:** let u = x², du = 2x dx; the integral becomes ∫eᵘdu. **Integrate:** eᵘ + C. **Substitute back: e^{x²} + C.** **Verify:** d/dx e^{x²} = e^{x²}·2x ✓ (chain rule) — the answer differentiates back to the integrand. This is the chain rule reversed in its purest recognisable form: inner function present, inner derivative attached.",
+    "**NEB-style (3m): Evaluate ∫x·ln x dx.** — **Method selection:** a product of unlike types (algebraic × logarithmic) ⟹ **integration by parts**. **LIATE ordering:** Log ranks before Algebraic ⟹ choose **u = ln x** (differentiate the logarithm) and **dv = x dx** (integrate the power). **Compute pieces:** du = dx/x; v = ∫x dx = x²/2. **Apply the formula** ∫u dv = uv − ∫v du: ∫x ln x dx = (x²/2)·ln x − ∫(x²/2)·(1/x)dx = (x²/2)ln x − (1/2)∫x dx = **(x²/2)ln x − x²/4 + C**. **Verify:** d/dx[(x²/2)ln x − x²/4] = x ln x + x/2 − x/2 = x ln x ✓. The LIATE choice is what made the new integral *simpler* — the whole art of parts."
   ],
   "formulas": [
-    "f'(x) = lim [f(x+h)−f(x)]/h",
-    "(fg)' = f'g + fg'",
-    "d/dx xⁿ = nx^{n−1}"
+    "- ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C; ∫eˣdx = eˣ + C\n- ∫f(g)g′dx = ∫f(u)du; ∫f′/f dx = ln|f| + C\n- ∫u dv = uv − ∫v du (LIATE for u)"
   ],
   "numericals": [
     "Use  f'(x) = lim [f(x+h)−f(x)]/h  — pick reasonable values, solve, and check the units.",
@@ -63,12 +54,9 @@
     "Use  d/dx xⁿ = nx^{n−1}  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Anti-derivatives",
-    "• Integration using basic integrals",
-    "• Integration by substitution",
-    "• By parts methods"
+    "Anti-derivative: F' = f; indefinite integral is the family F + C (two anti-derivatives differ by a constant). Basic table: x^(n+1)/(n+1) (n != -1), ln|x|, e^x, a^x/ln a, -cos x, sin x, tan x, tan^-1 x, sin^-1 x. Linearity: term by term. Substitution (chain rule reversed): u = g(x), du = g' dx; workhorses f(ax+b) => (1/a)F(ax+b), f'/f => ln|f|, f^n f' => f^(n+1)/(n+1). Parts (product rule reversed): integral u dv = uv - integral v du; LIATE picks u (Log, Inverse trig, Algebraic, Trig, Exponential); cyclic integrands (e^x sin x) need two passes plus linear solve."
   ],
-  "summary": "Anti-derivatives: integration using basic integrals, inte… (Calculus, Mathematics, class-11-notes) covers Anti-derivatives, integration using basic integrals, integration by substitution. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "**Integration** runs differentiation backwards. An **anti-derivative** satisfies F′ = f, and ∫f dx = F + C — the **+C** restores the family constants destroyed by differentiation (two anti-derivatives differ by a constant). The **basic table** mirrors the derivative table (power rule reversed, ln|x|, eˣ, −cos x, tan⁻¹x, sin⁻¹x), and **linearity** integrates term by term (NEB 2023: 3x² + 2x − 1 → x³ + x² − x + C). **Substitution** reverses the chain rule: spot the inner function with its derivative attached (2x·e^{x²} → e^{x²} + C), with the workhorses f(ax+b), f′/f → ln|f|, fⁿf′. **Parts** reverses the product rule — ∫u dv = uv − ∫v du — with **LIATE** choosing u so the new integral simplifies (∫x ln x dx → (x²/2)ln x − x²/4 + C); cyclic integrands like eˣ sin x need two passes and a linear solve. Method selection is the exam skill: spot f′, or multiply unlike types, or differentiate the LIATE-earlier factor — then verify by differentiating back.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Anti-derivatives: integration using basic integrals, inte…\"?",
@@ -92,9 +80,68 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Method picker — see √(a²−x²), a²+x² etc. → trigonometric substitution; see f(g(x))·g′(x) → substitution; see product of two unlike functions → by parts.",
-    "Trick 2: By parts ILATE order (Inverse, Log, Algebraic, Trig, Exponential) — the factor that comes later in ILATE is 'v'; wrong choice doubles the work.",
-    "Trick 3: Definite integrals of even/odd functions over [−a, a]: even → 2×(0 to a), odd → 0 — instant marks.",
-    "Trick 4: Standard results bank: ∫dx/(x²+a²) = (1/a)tan^-1(x/a); ∫dx/√(a²−x²) = sin^-1(x/a); ∫e^x(f + f′)dx = e^x f — quote the matching standard form before integrating."
+    "Spot f' inside: substitute. Product of unlike types: parts with LIATE. ln x alone: parts with u = ln x. Always + C; always check by differentiating."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Differentiation in Reverse\n\n**Anti-derivatives and integration**: the basic integral table, **integration by substitution**, and **integration by parts** — running the derivative machinery backwards.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Anti-derivative and the indefinite integral\n\n- **F is an anti-derivative of f** ⟺ F′ = f. **∫f(x)dx = F(x) + C** — the whole family, since constants differentiate to 0. **Uniqueness theorem:** two anti-derivatives of the same f differ by a constant.\n- **Basic table (reverse of the derivative table):** ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C; ∫eˣdx = eˣ + C; ∫aˣdx = aˣ/ln a + C; ∫sin x dx = −cos x + C; ∫cos x dx = sin x + C; ∫sec²x dx = tan x + C; ∫1/(1+x²)dx = tan⁻¹x + C; ∫1/√(1−x²)dx = sin⁻¹x + C.\n\n### 2.2 Linearity\n\n- ∫(af + bg)dx = a∫f dx + b∫g dx — term-by-term integration with constants carried.\n\n### 2.3 Integration by substitution\n\n- **Theorem:** ∫f(g(x))g′(x)dx = ∫f(u)du with u = g(x) — the chain rule reversed. Procedure: spot the inner function, let u = g(x), compute du = g′(x)dx, transform, integrate, substitute back.\n- **Workhorses:** ∫f(ax+b)dx = (1/a)F(ax+b) + C; ∫f′/f dx = ln|f| + C; ∫fⁿf′dx = fⁿ⁺¹/(n+1) + C.\n\n### 2.4 Integration by parts\n\n- **Theorem:** ∫u·v dx = u·v − ∫u′·v dx (from the product rule integrated). **LIATE ordering** for choosing u: Log, Inverse trig, Algebraic, Trig, Exponential — differentiate the earlier class.\n- **Classic cycles:** ∫x·eˣdx = xeˣ − eˣ + C; ∫ln x dx = x ln x − x + C; ∫x·sin x dx = −x cos x + sin x + C; repeated parts for ∫eˣ sin x dx (two cycles then solve linearly).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Anti-derivative** | F′ = f | x² for 2x |\n| **+C** | The constant family | all solutions |\n| **Substitution** | Chain rule reversed | u = g(x) |\n| **Parts** | Product rule reversed | ∫u dv = uv − ∫v du |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why + C is not decoration\n\n- Differentiation destroys constants; integration must restore the whole family. Initial conditions (a point the curve passes through) pin C — the constant is where physical initial data enters calculus.\n\n### 4.2 Substitution as pattern recognition\n\n- The integrand must contain the inner function's derivative (up to a constant): ∫2x·e^{x²}dx has g = x², g′ = 2x present ⟹ u = x² gives ∫eᵘdu = e^{x²} + C. When g′ is absent, rescale constants; when absent entirely, substitution fails.\n\n### 4.3 Parts as rearrangement\n\n- Parts trades one integral for another: choose u so that u′ simplifies (LIATE) and dv so that ∫v dx is doable. Cyclic integrands (eˣ sin x) return to themselves after two applications — solve the resulting linear equation.",
+      "## 5. Comparison Tables\n\n**Method selector**\n\n| Integrand shape | Method |\n|---|---|\n| f(ax + b) | linear substitution |\n| f′(x)/f(x) | u = f: ln\\|f\\| |\n| fⁿ·f′ | power substitution |\n| xⁿ·(exp/trig) | parts (u = xⁿ) |\n| ln x, tan⁻¹x alone | parts (u = the function) |\n| eˣ·sin x | parts twice + solve |",
+      "## 6. Common Confusions\n\n**Forgetting + C:** the indefinite integral is a family; omitting C loses a mark every time.\n**∫dx/x = ln|x|:** the absolute value is part of the answer (domain symmetry).\n**Parts u-choice:** differentiate the LIATE-earlier factor — choosing u = eˣ in ∫xeˣdx loops forever.",
+      "## 7. Exam Application\n\n**NEB 2023 (verified PYQ): Evaluate ∫(3x² + 2x − 1)dx. (3m)** — **Linearity + power rule reversed:** ∫3x²dx = x³; ∫2x dx = x²; ∫(−1)dx = −x. **Result: x³ + x² − x + C.** (Check: d/dx(x³ + x² − x + C) = 3x² + 2x − 1 ✓.)",
+      "**NEB-style (3m): Evaluate ∫2x·e^{x²}dx.** — **Substitution:** u = x², du = 2x dx ⟹ ∫eᵘdu = eᵘ + C ⟹ **e^{x²} + C**. The integrand contains the inner function's derivative exactly — the substitution licence is complete.",
+      "**NEB-style (3m): Evaluate ∫x·ln x dx.** — **Parts** (LIATE: Log before Algebraic ⟹ u = ln x, dv = x dx): du = dx/x, v = x²/2. ∫x ln x dx = (x²/2)ln x − ∫(x²/2)(1/x)dx = (x²/2)ln x − (1/2)∫x dx = **(x²/2)ln x − x²/4 + C**."
+    ],
+    "keyPoints": [
+      "Anti-derivative: F' = f; indefinite integral is the family F + C (two anti-derivatives differ by a constant). Basic table: x^(n+1)/(n+1) (n != -1), ln|x|, e^x, a^x/ln a, -cos x, sin x, tan x, tan^-1 x, sin^-1 x. Linearity: term by term. Substitution (chain rule reversed): u = g(x), du = g' dx; workhorses f(ax+b) => (1/a)F(ax+b), f'/f => ln|f|, f^n f' => f^(n+1)/(n+1). Parts (product rule reversed): integral u dv = uv - integral v du; LIATE picks u (Log, Inverse trig, Algebraic, Trig, Exponential); cyclic integrands (e^x sin x) need two passes plus linear solve."
+    ],
+    "importantConcepts": [
+      "Integration is differentiation reversed: substitution reverses the chain rule, parts reverses the product rule - every method is a derivative theorem read backwards."
+    ],
+    "examples": [
+      "***The cyclic integral*** - e^x sin x returns to itself after two parts applications: I = e^x(sin x - cos x)/2 - the equation-solving finish that parts uniquely demands."
+    ],
+    "universalFacts": [
+      "Odometers integrate speedometers: distance is the anti-derivative of velocity - the + C is where the trip started."
+    ],
+    "importantStatements": [
+      "\"F' = f defines the anti-derivative; substitution reverses the chain rule; parts: uv - integral v du with LIATE choosing u.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2023 integral of 3x^2 + 2x - 1 - assigned to this row. Other items NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Spot f' inside: substitute. Product of unlike types: parts with LIATE. ln x alone: parts with u = ln x. Always + C; always check by differentiating."
+    ],
+    "examNotes": [
+      "Verify your answer by differentiating it back - the check is fast and catches sign slips in parts computations."
+    ],
+    "formulas": [
+      "- ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C; ∫eˣdx = eˣ + C\n- ∫f(g)g′dx = ∫f(u)du; ∫f′/f dx = ln|f| + C\n- ∫u dv = uv − ∫v du (LIATE for u)"
+    ],
+    "practice": [
+      "Evaluate ∫(3x² + 2x − 1)dx.",
+      "Evaluate ∫2x·e^{x²}dx.",
+      "Evaluate ∫x·ln x dx."
+    ],
+    "practiceQuestions": [
+      "**NEB 2023 (verified PYQ): Evaluate ∫(3x² + 2x − 1)dx. (3m)** — **Linearity:** split into three integrals with constants carried: ∫3x²dx + ∫2x dx + ∫(−1)dx. **Power rule reversed term by term:** ∫3x²dx = 3·x³/3 = **x³**; ∫2x dx = 2·x²/2 = **x²**; ∫(−1)dx = **−x**. **Result: x³ + x² − x + C** — the constant C is mandatory (the anti-derivative is a family). **Verification:** d/dx(x³ + x² − x + C) = 3x² + 2x − 1 ✓ — differentiation returns the integrand exactly.",
+      "**NEB-style (3m): Evaluate ∫2x·e^{x²}dx.** — **Spot the composite:** e^{x²} is e^u with u = x², and the integrand contains u′ = 2x as a factor — the substitution licence is complete. **Transform:** let u = x², du = 2x dx; the integral becomes ∫eᵘdu. **Integrate:** eᵘ + C. **Substitute back: e^{x²} + C.** **Verify:** d/dx e^{x²} = e^{x²}·2x ✓ (chain rule) — the answer differentiates back to the integrand. This is the chain rule reversed in its purest recognisable form: inner function present, inner derivative attached.",
+      "**NEB-style (3m): Evaluate ∫x·ln x dx.** — **Method selection:** a product of unlike types (algebraic × logarithmic) ⟹ **integration by parts**. **LIATE ordering:** Log ranks before Algebraic ⟹ choose **u = ln x** (differentiate the logarithm) and **dv = x dx** (integrate the power). **Compute pieces:** du = dx/x; v = ∫x dx = x²/2. **Apply the formula** ∫u dv = uv − ∫v du: ∫x ln x dx = (x²/2)·ln x − ∫(x²/2)·(1/x)dx = (x²/2)ln x − (1/2)∫x dx = **(x²/2)ln x − x²/4 + C**. **Verify:** d/dx[(x²/2)ln x − x²/4] = x ln x + x/2 − x/2 = x ln x ✓. The LIATE choice is what made the new integral *simpler* — the whole art of parts."
+    ]
+  },
+  "importantConcepts": [
+    "Integration is differentiation reversed: substitution reverses the chain rule, parts reverses the product rule - every method is a derivative theorem read backwards."
+  ],
+  "importantStatements": [
+    "\"F' = f defines the anti-derivative; substitution reverses the chain rule; parts: uv - integral v du with LIATE choosing u.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2023 integral of 3x^2 + 2x - 1 - assigned to this row. Other items NEB-style practice."
+  ],
+  "examNotes": [
+    "Verify your answer by differentiating it back - the check is fast and catches sign slips in parts computations."
   ]
 }

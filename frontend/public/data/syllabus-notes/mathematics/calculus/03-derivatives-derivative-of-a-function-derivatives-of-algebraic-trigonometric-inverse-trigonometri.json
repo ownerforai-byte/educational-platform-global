@@ -7,15 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.",
-    "**Fact.** d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.",
-    "**Fact.** Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test).",
-    "# Derivatives: derivative of a function, derivatives of algebraic, trigonometric, inverse trigonometric, exponential and logarithmic functions by definition (simple forms)\n\n## 1. Introduction and motivation\nWhat the tool **Derivatives** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Calculus fill pass.\n\n## 2. Definitions and theorems\n### Derivatives: derivative of a function\n### derivatives of algebraic\n### trigonometric\n### inverse trigonometric\n### exponential and logarithmic functions by definition (simple forms)\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
-    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
-    "## 4. Methods and standard forms\n**Table 2 — Standard forms and rules**\n\n| Form | Rule | Worked example | Trap |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 5. Figures and graphs\n- **F1** — Derivatives — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Derivatives — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Derivatives — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
-    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
-    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+    "## 1. Topic Introduction — The Extended Derivative Table\n\n**Derivatives of inverse trigonometric, exponential and logarithmic functions** — completing the standard table that every chain-rule computation consumes.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Inverse trigonometric derivatives\n\n- **d/dx sin⁻¹x = 1/√(1 − x²)** (|x| < 1); **d/dx cos⁻¹x = −1/√(1 − x²)**; **d/dx tan⁻¹x = 1/(1 + x²)**; **d/dx cot⁻¹x = −1/(1 + x²)**; **d/dx sec⁻¹x = 1/(|x|√(x² − 1))**; **d/dx cosec⁻¹x = −1/(|x|√(x² − 1))**.\n- **Memory pattern:** co-functions carry minus signs; sin/cos and tan/cot pairs are ± of each other.\n\n### 2.2 The inverse-derivation engine\n\n- **Theorem:** if f is invertible with f′ ≠ 0, then (f⁻¹)′(y) = 1/f′(x) at y = f(x) — the inverse's slope is the reciprocal. Applied to sin⁻¹: x = sin y ⟹ dy/dx = 1/cos y = 1/√(1 − sin²y) = 1/√(1 − x²).\n\n### 2.3 Exponential and logarithmic derivatives\n\n- **d/dx eˣ = eˣ** (from (eʰ − 1)/h → 1 — the star that defines e). **d/dx aˣ = aˣ ln a.** **d/dx ln x = 1/x** (from (ln(1+h))/h → 1). **d/dx log_a x = 1/(x ln a).**\n- **Memory pattern:** base e kills the constant; general bases carry ln a.\n\n### 2.4 The exponential–log inverse pair\n\n- eˣ and ln x are inverses: their derivatives are reciprocals — (eˣ)′ = eˣ at x = ln y matches (ln y)′ = 1/y. The inverse-engine theorem in its cleanest instance.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Inverse-engine rule** | (f⁻¹)′ = 1/f′ | sin⁻¹ from sin |\n| **Self-replicating base** | (eˣ)′ = eˣ | the natural perk |\n| **ln a factor** | General-base tax | (aˣ)′ = aˣ ln a |\n| **Co-minus pattern** | Co-functions negate | cos⁻¹ vs sin⁻¹ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why e is the natural base\n\n- (eˣ)′ = eˣ means the exponential's rate equals its value — self-replication. Every other base pays the ln a tax. This uniqueness is why calculus is written in e.\n\n### 4.2 Deriving tan⁻¹ geometrically\n\n- x = tan y ⟹ dy/dx = 1/sec²y = cos²y; with tan y = x, cos²y = 1/(1 + tan²y) = 1/(1 + x²) ⟹ dy/dx = 1/(1 + x²) — no |x| needed since sec² > 0 always.\n\n### 4.3 The table as chain-rule feedstock\n\n- These derivatives are rarely used bare: the chain rule wraps them — d/dx sin⁻¹(u) = u′/√(1−u²), d/dx ln(u) = u′/u, d/dx e^{u} = e^{u}·u′. The table is the alphabet; the chain rule writes the words.",
+    "## 5. Comparison Tables\n\n**Extended table**\n\n| f(x) | f′(x) |\n|---|---|\n| sin⁻¹x | 1/√(1−x²) |\n| cos⁻¹x | −1/√(1−x²) |\n| tan⁻¹x | 1/(1+x²) |\n| cot⁻¹x | −1/(1+x²) |\n| eˣ | eˣ |\n| aˣ | aˣ ln a |\n| ln x | 1/x |\n| log_a x | 1/(x ln a) |",
+    "## 6. Common Confusions\n\n**The ± pattern:** cos⁻¹, cot⁻¹, cosec⁻¹ all carry minus signs — forgetting the sign flips the answer.",
+    "**(aˣ)′ ≠ x·aˣ⁻¹:** that is the power rule for variable base, constant exponent — aˣ has constant base, variable exponent and needs ln a.",
+    "**Domains:** sin⁻¹/cos⁻¹ formulas need |x| < 1 (interior of the domain); sec⁻¹/cosec⁻¹ need |x| > 1.",
+    "## 7. Exam Application\n\n**NEB 2020 (verified PYQ): d/dx [log_a(sin x)] equals: (a) 1/(sin x·log_e a) (b) cot x/... (MCQ, 1m)** — **Chain rule:** d/dx log_a(sin x) = [1/(sin x·ln a)]·cos x = **cot x/ln a**. Compare with the options: the form matching cot x/(ln a) — i.e. cos x/(sin x·log_e a) — is correct; option (a) 1/(sin x log_e a) misses the cos x factor, so the correct choice is the one carrying **cot x/ln a** (the option displaying cos x/(sin x·log_e a)).",
+    "**NEB 2022 (verified PYQ): Find dy/dx for y = ln(sin x). (3m)** — **Chain rule:** dy/dx = (1/sin x)·d/dx(sin x) = (1/sin x)·cos x = **cot x**. (Equivalently: ln(sin x) = ln|sin x| on the domain sin x > 0; the derivative is cot x wherever defined.)",
+    "**NEB-style (2m): Differentiate y = tan⁻¹(3x) and y = e^{−x²}.** — **Chain rule:** d/dx tan⁻¹(3x) = 3/(1 + 9x²) (u′ = 3 over 1 + u²). d/dx e^{−x²} = e^{−x²}·(−2x) = **−2x·e^{−x²}** (u′ = −2x). The table supplies the outer derivatives; the chain rule supplies the inner."
   ],
   "confusion": [
     "❌ answer with no steps → ✅ show each step and box the result.",
@@ -25,26 +27,23 @@
     "Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain."
   ],
   "practice": [
-    "one worked example for \"Derivatives: derivative of a function, derivatives of alg…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Differentiate ln(sin x).",
+    "Match d/dx log_a(sin x) to its MCQ options.",
+    "Differentiate tan⁻¹(3x) and e^{−x²}."
   ],
   "universalFacts": [
-    "Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.",
-    "d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.",
-    "Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+    "Population growth and radioactive decay are a^t curves; only e^t has growth rate proportional to itself with constant 1 - nature's default is e."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***The self-replicating base*** - e^x is the unique function equal to its own derivative: the (e^h - 1)/h -> 1 star is the whole story of why e rules calculus."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Derivatives: derivative of a function, derivatives of alg…\" with one example.",
-    "compare \"Derivatives\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Derivatives: derivative of a function, derivatives of alg…\" and verify the answer is plausible."
+    "**NEB 2020 (verified PYQ): d/dx [log_a(sin x)] equals: (choose the correct option). (1m)** — **Chain rule, outer first:** the outer function is log_a(u) with u = sin x; its derivative is 1/(u ln a) (the general-base log derivative, carrying the ln a tax). **Inner:** (sin x)′ = cos x. **Compose:** d/dx log_a(sin x) = [1/(sin x·ln a)]·cos x = **cos x/(sin x·ln a) = cot x/ln a**. **Option matching:** the correct option is the one displaying cot x (equivalently cos x/(sin x·log_e a)); any option lacking the cos x factor (such as a bare 1/(sin x·log_e a)) is the classic incomplete-chain distractor. **Moral:** compute the full chain, then match — never pattern-match half-differentiated options.",
+    "**NEB 2022 (verified PYQ): Find dy/dx for y = ln(sin x). (3m)** — **Chain rule:** the outer function is ln(u) with derivative 1/u; the inner is u = sin x with derivative cos x. **Compose:** dy/dx = (1/sin x)·cos x = **cos x/sin x = cot x**. **Domain note:** ln requires sin x > 0 (x in intervals where sine is positive); on that domain cot x is defined and the answer stands. **Cross-check:** at x = π/2, y = ln 1 = 0 and dy/dx = cot(π/2) = 0 — the log curve flattens exactly where sin x peaks ✓. The composition ln ∘ sin is the archetype of \"outer table, inner derivative\".",
+    "**NEB-style (2m): Differentiate (i) y = tan⁻¹(3x), (ii) y = e^{−x²}.** — **(i)** Outer: (tan⁻¹u)′ = 1/(1 + u²); inner u = 3x, u′ = 3. Compose: dy/dx = **3/(1 + 9x²)** — the coefficient lands in both numerator and inside the square. **(ii)** Outer: (eᵘ)′ = eᵘ (self-replicating); inner u = −x², u′ = −2x. Compose: dy/dx = **−2x·e^{−x²}** — the Gaussian bell's slope, negative for x > 0 and positive for x < 0, zero at the peak. Both are pure chain-rule applications: the extended table supplies the outer derivative, the inner function supplies u′."
   ],
   "formulas": [
-    "f'(x) = lim [f(x+h)−f(x)]/h",
-    "(fg)' = f'g + fg'",
-    "d/dx xⁿ = nx^{n−1}"
+    "- (sin⁻¹x)′ = 1/√(1−x²); (tan⁻¹x)′ = 1/(1+x²); co-forms negate\n- (eˣ)′ = eˣ; (aˣ)′ = aˣ ln a; (ln x)′ = 1/x; (log_a x)′ = 1/(x ln a)\n- chain: d/dx F(u) = F′(u)·u′"
   ],
   "numericals": [
     "Use  f'(x) = lim [f(x+h)−f(x)]/h  — pick reasonable values, solve, and check the units.",
@@ -52,14 +51,9 @@
     "Use  d/dx xⁿ = nx^{n−1}  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Derivatives",
-    "• Derivative of a function",
-    "• Derivatives of algebraic",
-    "• Trigonometric",
-    "• Inverse trigonometric",
-    "• Exponential"
+    "Inverse trig derivatives: (sin^-1 x)' = 1/sqrt(1-x^2); (cos^-1 x)' = -1/sqrt(1-x^2); (tan^-1 x)' = 1/(1+x^2); (cot^-1 x)' = -1/(1+x^2); (sec^-1 x)' = 1/(|x| sqrt(x^2-1)); (cosec^-1 x)' = -1/(|x| sqrt(x^2-1)). Co-functions carry minus signs. Inverse-engine theorem: (f^-1)'(y) = 1/f'(x) at y = f(x) - derives the whole set. Exp/log: (e^x)' = e^x (from (e^h-1)/h -> 1); (a^x)' = a^x ln a; (ln x)' = 1/x; (log_a x)' = 1/(x ln a). Base e kills the constant; general bases pay ln a. Chain rule wraps everything: d/dx sin^-1(u) = u'/sqrt(1-u^2), d/dx ln(u) = u'/u, d/dx e^u = e^u u'."
   ],
-  "summary": "Derivatives: derivative of a function, derivatives of alg… (Calculus, Mathematics, class-11-notes) covers Derivatives, derivative of a function, derivatives of algebraic. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "The **extended table** completes the derivative alphabet. **Inverse trigonometric:** (sin⁻¹x)′ = 1/√(1−x²), (tan⁻¹x)′ = 1/(1+x²), with the **co-functions negated** (cos⁻¹, cot⁻¹, cosec⁻¹ carry minus signs) — all six derived from one theorem, the **inverse-engine rule** (f⁻¹)′ = 1/f′ (sin⁻¹ via 1/cos y = 1/√(1−x²); tan⁻¹ via cos²y = 1/(1+x²)). **Exponential/logarithmic:** (eˣ)′ = **eˣ** — the self-replicating base, certified by the star (eʰ−1)/h → 1; (aˣ)′ = aˣ ln a (the ln a tax); (ln x)′ = 1/x (the ln(1+h)/h star); (log_a x)′ = 1/(x ln a). The **chain rule** wraps the table: log_a(sin x) → cot x/ln a (NEB 2020 MCQ — compute fully, then match), ln(sin x) → **cot x** (NEB 2022), tan⁻¹(3x) → 3/(1+9x²), e^{−x²} → −2xe^{−x²}. Outer table, inner derivative — the whole art.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Derivatives: derivative of a function, derivatives of alg…\"?",
@@ -81,5 +75,72 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Extended Derivative Table\n\n**Derivatives of inverse trigonometric, exponential and logarithmic functions** — completing the standard table that every chain-rule computation consumes.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Inverse trigonometric derivatives\n\n- **d/dx sin⁻¹x = 1/√(1 − x²)** (|x| < 1); **d/dx cos⁻¹x = −1/√(1 − x²)**; **d/dx tan⁻¹x = 1/(1 + x²)**; **d/dx cot⁻¹x = −1/(1 + x²)**; **d/dx sec⁻¹x = 1/(|x|√(x² − 1))**; **d/dx cosec⁻¹x = −1/(|x|√(x² − 1))**.\n- **Memory pattern:** co-functions carry minus signs; sin/cos and tan/cot pairs are ± of each other.\n\n### 2.2 The inverse-derivation engine\n\n- **Theorem:** if f is invertible with f′ ≠ 0, then (f⁻¹)′(y) = 1/f′(x) at y = f(x) — the inverse's slope is the reciprocal. Applied to sin⁻¹: x = sin y ⟹ dy/dx = 1/cos y = 1/√(1 − sin²y) = 1/√(1 − x²).\n\n### 2.3 Exponential and logarithmic derivatives\n\n- **d/dx eˣ = eˣ** (from (eʰ − 1)/h → 1 — the star that defines e). **d/dx aˣ = aˣ ln a.** **d/dx ln x = 1/x** (from (ln(1+h))/h → 1). **d/dx log_a x = 1/(x ln a).**\n- **Memory pattern:** base e kills the constant; general bases carry ln a.\n\n### 2.4 The exponential–log inverse pair\n\n- eˣ and ln x are inverses: their derivatives are reciprocals — (eˣ)′ = eˣ at x = ln y matches (ln y)′ = 1/y. The inverse-engine theorem in its cleanest instance.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Inverse-engine rule** | (f⁻¹)′ = 1/f′ | sin⁻¹ from sin |\n| **Self-replicating base** | (eˣ)′ = eˣ | the natural perk |\n| **ln a factor** | General-base tax | (aˣ)′ = aˣ ln a |\n| **Co-minus pattern** | Co-functions negate | cos⁻¹ vs sin⁻¹ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why e is the natural base\n\n- (eˣ)′ = eˣ means the exponential's rate equals its value — self-replication. Every other base pays the ln a tax. This uniqueness is why calculus is written in e.\n\n### 4.2 Deriving tan⁻¹ geometrically\n\n- x = tan y ⟹ dy/dx = 1/sec²y = cos²y; with tan y = x, cos²y = 1/(1 + tan²y) = 1/(1 + x²) ⟹ dy/dx = 1/(1 + x²) — no |x| needed since sec² > 0 always.\n\n### 4.3 The table as chain-rule feedstock\n\n- These derivatives are rarely used bare: the chain rule wraps them — d/dx sin⁻¹(u) = u′/√(1−u²), d/dx ln(u) = u′/u, d/dx e^{u} = e^{u}·u′. The table is the alphabet; the chain rule writes the words.",
+      "## 5. Comparison Tables\n\n**Extended table**\n\n| f(x) | f′(x) |\n|---|---|\n| sin⁻¹x | 1/√(1−x²) |\n| cos⁻¹x | −1/√(1−x²) |\n| tan⁻¹x | 1/(1+x²) |\n| cot⁻¹x | −1/(1+x²) |\n| eˣ | eˣ |\n| aˣ | aˣ ln a |\n| ln x | 1/x |\n| log_a x | 1/(x ln a) |",
+      "## 6. Common Confusions\n\n**The ± pattern:** cos⁻¹, cot⁻¹, cosec⁻¹ all carry minus signs — forgetting the sign flips the answer.",
+      "**(aˣ)′ ≠ x·aˣ⁻¹:** that is the power rule for variable base, constant exponent — aˣ has constant base, variable exponent and needs ln a.",
+      "**Domains:** sin⁻¹/cos⁻¹ formulas need |x| < 1 (interior of the domain); sec⁻¹/cosec⁻¹ need |x| > 1.",
+      "## 7. Exam Application\n\n**NEB 2020 (verified PYQ): d/dx [log_a(sin x)] equals: (a) 1/(sin x·log_e a) (b) cot x/... (MCQ, 1m)** — **Chain rule:** d/dx log_a(sin x) = [1/(sin x·ln a)]·cos x = **cot x/ln a**. Compare with the options: the form matching cot x/(ln a) — i.e. cos x/(sin x·log_e a) — is correct; option (a) 1/(sin x log_e a) misses the cos x factor, so the correct choice is the one carrying **cot x/ln a** (the option displaying cos x/(sin x·log_e a)).",
+      "**NEB 2022 (verified PYQ): Find dy/dx for y = ln(sin x). (3m)** — **Chain rule:** dy/dx = (1/sin x)·d/dx(sin x) = (1/sin x)·cos x = **cot x**. (Equivalently: ln(sin x) = ln|sin x| on the domain sin x > 0; the derivative is cot x wherever defined.)",
+      "**NEB-style (2m): Differentiate y = tan⁻¹(3x) and y = e^{−x²}.** — **Chain rule:** d/dx tan⁻¹(3x) = 3/(1 + 9x²) (u′ = 3 over 1 + u²). d/dx e^{−x²} = e^{−x²}·(−2x) = **−2x·e^{−x²}** (u′ = −2x). The table supplies the outer derivatives; the chain rule supplies the inner."
+    ],
+    "keyPoints": [
+      "Inverse trig derivatives: (sin^-1 x)' = 1/sqrt(1-x^2); (cos^-1 x)' = -1/sqrt(1-x^2); (tan^-1 x)' = 1/(1+x^2); (cot^-1 x)' = -1/(1+x^2); (sec^-1 x)' = 1/(|x| sqrt(x^2-1)); (cosec^-1 x)' = -1/(|x| sqrt(x^2-1)). Co-functions carry minus signs. Inverse-engine theorem: (f^-1)'(y) = 1/f'(x) at y = f(x) - derives the whole set. Exp/log: (e^x)' = e^x (from (e^h-1)/h -> 1); (a^x)' = a^x ln a; (ln x)' = 1/x; (log_a x)' = 1/(x ln a). Base e kills the constant; general bases pay ln a. Chain rule wraps everything: d/dx sin^-1(u) = u'/sqrt(1-u^2), d/dx ln(u) = u'/u, d/dx e^u = e^u u'."
+    ],
+    "importantConcepts": [
+      "The inverse-engine rule (f^-1)' = 1/f' derives the entire inverse-trig table from the trig table - one theorem, six derivatives."
+    ],
+    "examples": [
+      "***The self-replicating base*** - e^x is the unique function equal to its own derivative: the (e^h - 1)/h -> 1 star is the whole story of why e rules calculus."
+    ],
+    "universalFacts": [
+      "Population growth and radioactive decay are a^t curves; only e^t has growth rate proportional to itself with constant 1 - nature's default is e."
+    ],
+    "importantStatements": [
+      "\"(sin^-1 x)' = 1/sqrt(1-x^2); (tan^-1 x)' = 1/(1+x^2); (e^x)' = e^x; (ln x)' = 1/x; (a^x)' = a^x ln a.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2020 log_a(sin x) MCQ; NEB 2022 dy/dx ln(sin x) = cot x - assigned to this row. Other items NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Co-functions: minus sign. tan^-1: no absolute value needed. a^x: multiply by ln a. Chain rule: outer table + inner derivative."
+    ],
+    "examNotes": [
+      "For MCQs on log_a(sin x)-type derivatives, compute the chain rule fully then match - do not pattern-match partially differentiated options."
+    ],
+    "formulas": [
+      "- (sin⁻¹x)′ = 1/√(1−x²); (tan⁻¹x)′ = 1/(1+x²); co-forms negate\n- (eˣ)′ = eˣ; (aˣ)′ = aˣ ln a; (ln x)′ = 1/x; (log_a x)′ = 1/(x ln a)\n- chain: d/dx F(u) = F′(u)·u′"
+    ],
+    "practice": [
+      "Differentiate ln(sin x).",
+      "Match d/dx log_a(sin x) to its MCQ options.",
+      "Differentiate tan⁻¹(3x) and e^{−x²}."
+    ],
+    "practiceQuestions": [
+      "**NEB 2020 (verified PYQ): d/dx [log_a(sin x)] equals: (choose the correct option). (1m)** — **Chain rule, outer first:** the outer function is log_a(u) with u = sin x; its derivative is 1/(u ln a) (the general-base log derivative, carrying the ln a tax). **Inner:** (sin x)′ = cos x. **Compose:** d/dx log_a(sin x) = [1/(sin x·ln a)]·cos x = **cos x/(sin x·ln a) = cot x/ln a**. **Option matching:** the correct option is the one displaying cot x (equivalently cos x/(sin x·log_e a)); any option lacking the cos x factor (such as a bare 1/(sin x·log_e a)) is the classic incomplete-chain distractor. **Moral:** compute the full chain, then match — never pattern-match half-differentiated options.",
+      "**NEB 2022 (verified PYQ): Find dy/dx for y = ln(sin x). (3m)** — **Chain rule:** the outer function is ln(u) with derivative 1/u; the inner is u = sin x with derivative cos x. **Compose:** dy/dx = (1/sin x)·cos x = **cos x/sin x = cot x**. **Domain note:** ln requires sin x > 0 (x in intervals where sine is positive); on that domain cot x is defined and the answer stands. **Cross-check:** at x = π/2, y = ln 1 = 0 and dy/dx = cot(π/2) = 0 — the log curve flattens exactly where sin x peaks ✓. The composition ln ∘ sin is the archetype of \"outer table, inner derivative\".",
+      "**NEB-style (2m): Differentiate (i) y = tan⁻¹(3x), (ii) y = e^{−x²}.** — **(i)** Outer: (tan⁻¹u)′ = 1/(1 + u²); inner u = 3x, u′ = 3. Compose: dy/dx = **3/(1 + 9x²)** — the coefficient lands in both numerator and inside the square. **(ii)** Outer: (eᵘ)′ = eᵘ (self-replicating); inner u = −x², u′ = −2x. Compose: dy/dx = **−2x·e^{−x²}** — the Gaussian bell's slope, negative for x > 0 and positive for x < 0, zero at the peak. Both are pure chain-rule applications: the extended table supplies the outer derivative, the inner function supplies u′."
+    ]
+  },
+  "importantConcepts": [
+    "The inverse-engine rule (f^-1)' = 1/f' derives the entire inverse-trig table from the trig table - one theorem, six derivatives."
+  ],
+  "importantStatements": [
+    "\"(sin^-1 x)' = 1/sqrt(1-x^2); (tan^-1 x)' = 1/(1+x^2); (e^x)' = e^x; (ln x)' = 1/x; (a^x)' = a^x ln a.\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2020 log_a(sin x) MCQ; NEB 2022 dy/dx ln(sin x) = cot x - assigned to this row. Other items NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Co-functions: minus sign. tan^-1: no absolute value needed. a^x: multiply by ln a. Chain rule: outer table + inner derivative."
+  ],
+  "examNotes": [
+    "For MCQs on log_a(sin x)-type derivatives, compute the chain rule fully then match - do not pattern-match partially differentiated options."
   ]
 }
