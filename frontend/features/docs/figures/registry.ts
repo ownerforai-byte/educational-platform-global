@@ -1565,6 +1565,69 @@ import { OctaneScalePanel } from "./octane-scale-panel";
 import { CetaneScalePanel } from "./cetane-scale-panel";
 import { KnockingMechanism } from "./knocking-mechanism";
 import { FuelAdditiveTimeline } from "./fuel-additive-timeline";
+import { IupacNamingWorkflow } from "./iupac-naming-workflow";
+import { CarbonRootLadder } from "./carbon-root-ladder";
+import { SuffixPriorityPanel } from "./suffix-priority-panel";
+import { LocantRuleDemo } from "./locant-rule-demo";
+import { Butan2olNaming } from "./butan-2-ol-naming";
+import { Neb2023NameWalkthrough } from "./neb-2023-name-walkthrough";
+import { CommonVsIupacNames } from "./common-vs-iupac-names";
+import { LassaigneTestFlow } from "./lassaigne-test-flow";
+import { SodiumFusionExtract } from "./sodium-fusion-extract";
+import { NitrogenPrussianBlue } from "./nitrogen-prussian-blue";
+import { SulphurTestsPanel } from "./sulphur-tests-panel";
+import { HalideSilverTests } from "./halide-silver-tests";
+import { BloodRedComplication } from "./blood-red-complication";
+import { ElementDetectionMap } from "./element-detection-map";
+import { IsomerismDefinitionPanel } from "./isomerism-definition-panel";
+import { IsomerismFamilyTree } from "./isomerism-family-tree";
+import { StructuralBranchOverview } from "./structural-branch-overview";
+import { StereoBranchOverview } from "./stereo-branch-overview";
+import { C4H10IsomerPair } from "./c4h10-isomer-pair";
+import { C2H6OFunctionalPair } from "./c2h6o-functional-pair";
+import { IsomerCountLadder } from "./isomer-count-ladder";
+import { ChainIsomerismDemo } from "./chain-isomerism-demo";
+import { PositionIsomerismDemo } from "./position-isomerism-demo";
+import { FunctionalIsomerismDemo } from "./functional-isomerism-demo";
+import { MetamerismDemo } from "./metamerism-demo";
+import { TautomerismDemo } from "./tautomerism-demo";
+import { FiveTypesQuickId } from "./five-types-quick-id";
+import { StructuralVsStereoLine } from "./structural-vs-stereo-line";
+import { CisTransBut2ene } from "./cis-trans-but2ene";
+import { PiBondRotationLock } from "./pi-bond-rotation-lock";
+import { CisTransPropertyContrast } from "./cis-trans-property-contrast";
+import { ChiralCentreLactic } from "./chiral-centre-lactic";
+import { PlanePolarisedLightTest } from "./plane-polarised-light-test";
+import { DLPairPanel } from "./d-l-pair-panel";
+import { RacemicMixturePanel } from "./racemic-mixture-panel";
+import { BondFissionTwoWays } from "./bond-fission-two-ways";
+import { HomolysisRadicalBirth } from "./homolysis-radical-birth";
+import { HeterolysisIonBirth } from "./heterolysis-ion-birth";
+import { RadicalVsIonSpecies } from "./radical-vs-ion-species";
+import { CurlyArrowNotation } from "./curly-arrow-notation";
+import { MethaneChlorinationChain } from "./methane-chlorination-chain";
+import { FissionConditionMap } from "./fission-condition-map";
+import { ThreeAttackerClasses } from "./three-attacker-classes";
+import { ElectrophileRoster } from "./electrophile-roster";
+import { NucleophileRoster } from "./nucleophile-roster";
+import { RadicalChainStages } from "./radical-chain-stages";
+import { AttackerTargetMatch } from "./attacker-target-match";
+import { LewisAcidBaseLink } from "./lewis-acid-base-link";
+import { NeutralMemberExamples } from "./neutral-member-examples";
+import { InductiveEffectConcept } from "./inductive-effect-concept";
+import { MinusIGroupRoster } from "./minus-i-group-roster";
+import { PlusIGroupRoster } from "./plus-i-group-roster";
+import { DistanceDecayPanel } from "./distance-decay-panel";
+import { AcidityLadderCcx } from "./acidity-ladder-ccx";
+import { CarbocationStabilityOrder } from "./carbocation-stability-order";
+import { ChargeDispersalLogic } from "./charge-dispersal-logic";
+import { ResonanceHybridIdea } from "./resonance-hybrid-idea";
+import { CanonicalRulesPanel } from "./canonical-rules-panel";
+import { OzoneCanonicalStructures } from "./ozone-canonical-structures";
+import { BenzeneKekulePair } from "./benzene-kekule-pair";
+import { ResonanceEnergyBar } from "./resonance-energy-bar";
+import { PlusRGroupFlow } from "./plus-r-group-flow";
+import { MinusRGroupFlow } from "./minus-r-group-flow";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -11078,6 +11141,115 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     { Component: CetaneScalePanel, caption: "The cetane number scale", alt: "Diagram: the cetane number scale", keyword: "methylnaphthalene" },
     { Component: KnockingMechanism, caption: "Knocking and why branching prevents it", alt: "Diagram: knocking and why branching prevents it", keyword: "knock" },
     { Component: FuelAdditiveTimeline, caption: "The gasoline additive story", alt: "Diagram: the gasoline additive story", keyword: "mtbe" },
+  ],
+  },
+
+    "iupac-nomenclature-of-organic-compounds-up-to-chain-having-6-carbon-atoms": {
+    title: "Name it right: the IUPAC system",
+    figures: [
+{ Component: IupacNamingWorkflow, caption: "The five-step IUPAC naming workflow", alt: "Diagram: The five-step IUPAC naming workflow", keyword: "nomenclature" },
+{ Component: CarbonRootLadder, caption: "Root names meth through hex", alt: "Diagram: Root names meth through hex", keyword: "hex" },
+{ Component: SuffixPriorityPanel, caption: "The suffix ladder of functional groups", alt: "Diagram: The suffix ladder of functional groups", keyword: "suffix" },
+{ Component: LocantRuleDemo, caption: "The lowest-locant rule on pentane", alt: "Diagram: The lowest-locant rule on pentane", keyword: "locant" },
+{ Component: Butan2olNaming, caption: "NEB 2024 PYQ: naming butan-2-ol", alt: "Diagram: NEB 2024 PYQ: naming butan-2-ol", keyword: "butan-2-ol" },
+{ Component: Neb2023NameWalkthrough, caption: "NEB 2023 PYQ: 2-ethyl-5-methylhexan-1-ol", alt: "Diagram: NEB 2023 PYQ: 2-ethyl-5-methylhexan-1-ol", keyword: "ethyl" },
+{ Component: CommonVsIupacNames, caption: "Common versus IUPAC names", alt: "Diagram: Common versus IUPAC names", keyword: "acetic" },
+  ],
+  },
+  "qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassaigne-s-test": {
+    title: "Lassaigne: one fusion, four verdicts",
+    figures: [
+{ Component: LassaigneTestFlow, caption: "Lassaigne's test workflow", alt: "Diagram: Lassaigne's test workflow", keyword: "fusion" },
+{ Component: SodiumFusionExtract, caption: "The sodium fusion extract", alt: "Diagram: The sodium fusion extract", keyword: "sodium" },
+{ Component: NitrogenPrussianBlue, caption: "Nitrogen test: Prussian blue", alt: "Diagram: Nitrogen test: Prussian blue", keyword: "prussian blue" },
+{ Component: SulphurTestsPanel, caption: "Sulphur tests: nitroprusside and lead acetate", alt: "Diagram: Sulphur tests: nitroprusside and lead acetate", keyword: "nitroprusside" },
+{ Component: HalideSilverTests, caption: "Halide tests with silver nitrate", alt: "Diagram: Halide tests with silver nitrate", keyword: "agno₃" },
+{ Component: BloodRedComplication, caption: "N plus S giving blood-red thiocyanate", alt: "Diagram: N plus S giving blood-red thiocyanate", keyword: "blood red" },
+{ Component: ElementDetectionMap, caption: "Complete Lassaigne detection map", alt: "Diagram: Complete Lassaigne detection map", keyword: "lassaigne" },
+  ],
+  },
+  "isomerism-in-organic-compounds-definition-and-classification-of-isomerism": {
+    title: "Same formula, different compounds",
+    figures: [
+{ Component: IsomerismDefinitionPanel, caption: "Isomerism: the definition", alt: "Diagram: Isomerism: the definition", keyword: "same molecular formula" },
+{ Component: IsomerismFamilyTree, caption: "The isomerism family tree", alt: "Diagram: The isomerism family tree", keyword: "stereoisomerism" },
+{ Component: StructuralBranchOverview, caption: "Five types of structural isomerism", alt: "Diagram: Five types of structural isomerism", keyword: "structural" },
+{ Component: StereoBranchOverview, caption: "Two types of stereoisomerism", alt: "Diagram: Two types of stereoisomerism", keyword: "geometrical" },
+{ Component: C4H10IsomerPair, caption: "Butane chain isomers of C4H10", alt: "Diagram: Butane chain isomers of C4H10", keyword: "butane" },
+{ Component: C2H6OFunctionalPair, caption: "Ethanol and dimethyl ether", alt: "Diagram: Ethanol and dimethyl ether", keyword: "dimethyl ether" },
+{ Component: IsomerCountLadder, caption: "Isomer count rising with carbon number", alt: "Diagram: Isomer count rising with carbon number", keyword: "isomers" },
+  ],
+  },
+  "structural-isomerism-and-its-types-chain-isomerism-position-isomerism-functional-isomerism-metam": {
+    title: "Five ways to rewire a molecule",
+    figures: [
+{ Component: ChainIsomerismDemo, caption: "Chain isomerism: pentane skeletons", alt: "Diagram: Chain isomerism: pentane skeletons", keyword: "chain" },
+{ Component: PositionIsomerismDemo, caption: "Position isomerism: propanols", alt: "Diagram: Position isomerism: propanols", keyword: "position" },
+{ Component: FunctionalIsomerismDemo, caption: "Functional isomerism pairs", alt: "Diagram: Functional isomerism pairs", keyword: "ethanol" },
+{ Component: MetamerismDemo, caption: "Metamerism: ether alkyl splits", alt: "Diagram: Metamerism: ether alkyl splits", keyword: "metamerism" },
+{ Component: TautomerismDemo, caption: "Tautomerism: keto-enol equilibrium", alt: "Diagram: Tautomerism: keto-enol equilibrium", keyword: "tautomerism" },
+{ Component: FiveTypesQuickId, caption: "Quick identification of the five types", alt: "Diagram: Quick identification of the five types", keyword: "skeleton" },
+{ Component: StructuralVsStereoLine, caption: "Connectivity divides structural from stereo", alt: "Diagram: Connectivity divides structural from stereo", keyword: "connectivity" },
+  ],
+  },
+  "concept-of-geometrical-isomerism-cis-and-trans-and-optical-isomerism-d-and-l-form": {
+    title: "Locked in space: cis-trans and d/l",
+    figures: [
+{ Component: CisTransBut2ene, caption: "Cis and trans but-2-ene", alt: "Diagram: Cis and trans but-2-ene", keyword: "but-2-ene" },
+{ Component: PiBondRotationLock, caption: "Pi bond rotation lock", alt: "Diagram: Pi bond rotation lock", keyword: "rotation" },
+{ Component: CisTransPropertyContrast, caption: "Property contrast of cis and trans", alt: "Diagram: Property contrast of cis and trans", keyword: "dipole" },
+{ Component: ChiralCentreLactic, caption: "Chiral carbon of lactic acid", alt: "Diagram: Chiral carbon of lactic acid", keyword: "lactic" },
+{ Component: PlanePolarisedLightTest, caption: "Polarimeter test of optical activity", alt: "Diagram: Polarimeter test of optical activity", keyword: "plane" },
+{ Component: DLPairPanel, caption: "Dextrorotatory and laevorotatory pair", alt: "Diagram: Dextrorotatory and laevorotatory pair", keyword: "dextrorotatory" },
+{ Component: RacemicMixturePanel, caption: "Racemic mixture optical cancellation", alt: "Diagram: Racemic mixture optical cancellation", keyword: "racemic" },
+  ],
+  },
+  "preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission": {
+    title: "How bonds break: two fissions",
+    figures: [
+{ Component: BondFissionTwoWays, caption: "Homolytic versus heterolytic fission", alt: "Diagram: Homolytic versus heterolytic fission", keyword: "homolytic" },
+{ Component: HomolysisRadicalBirth, caption: "Chlorine homolysis in sunlight", alt: "Diagram: Chlorine homolysis in sunlight", keyword: "cl₂" },
+{ Component: HeterolysisIonBirth, caption: "Heterolysis of tert-butyl chloride", alt: "Diagram: Heterolysis of tert-butyl chloride", keyword: "carbocation" },
+{ Component: RadicalVsIonSpecies, caption: "Radical, carbocation, carbanion", alt: "Diagram: Radical, carbocation, carbanion", keyword: "carbanion" },
+{ Component: CurlyArrowNotation, caption: "Curly arrow notation", alt: "Diagram: Curly arrow notation", keyword: "arrow" },
+{ Component: MethaneChlorinationChain, caption: "Methane chlorination chain steps", alt: "Diagram: Methane chlorination chain steps", keyword: "chlorination" },
+{ Component: FissionConditionMap, caption: "Conditions selecting the fission mode", alt: "Diagram: Conditions selecting the fission mode", keyword: "polar" },
+  ],
+  },
+  "electrophiles-nucleophiles-and-free-radicals": {
+    title: "The three attackers",
+    figures: [
+{ Component: ThreeAttackerClasses, caption: "The three reagent classes", alt: "Diagram: The three reagent classes", keyword: "electrophile" },
+{ Component: ElectrophileRoster, caption: "Electrophile roster with BF3", alt: "Diagram: Electrophile roster with BF3", keyword: "bf₃" },
+{ Component: NucleophileRoster, caption: "Nucleophile roster", alt: "Diagram: Nucleophile roster", keyword: "nucleophile" },
+{ Component: RadicalChainStages, caption: "Initiation, propagation, termination", alt: "Diagram: Initiation, propagation, termination", keyword: "initiation" },
+{ Component: AttackerTargetMatch, caption: "Attacker to target matching", alt: "Diagram: Attacker to target matching", keyword: "electron-rich" },
+{ Component: LewisAcidBaseLink, caption: "Lewis acid-base connection", alt: "Diagram: Lewis acid-base connection", keyword: "lewis" },
+{ Component: NeutralMemberExamples, caption: "Neutral electrophiles and nucleophiles", alt: "Diagram: Neutral electrophiles and nucleophiles", keyword: "ammonia" },
+  ],
+  },
+  "inductive-effect-i-and-i-effect": {
+    title: "Polarisation that travels the chain",
+    figures: [
+{ Component: InductiveEffectConcept, caption: "Inductive effect concept", alt: "Diagram: Inductive effect concept", keyword: "inductive" },
+{ Component: MinusIGroupRoster, caption: "Minus I electron-withdrawing groups", alt: "Diagram: Minus I electron-withdrawing groups", keyword: "electron-withdrawing" },
+{ Component: PlusIGroupRoster, caption: "Plus I alkyl electron releasers", alt: "Diagram: Plus I alkyl electron releasers", keyword: "alkyl" },
+{ Component: DistanceDecayPanel, caption: "Inductive effect fading with distance", alt: "Diagram: Inductive effect fading with distance", keyword: "distance" },
+{ Component: AcidityLadderCcx, caption: "Acidity ladder of chloroacetic acids", alt: "Diagram: Acidity ladder of chloroacetic acids", keyword: "chloroacetic" },
+{ Component: CarbocationStabilityOrder, caption: "Carbocation stability order", alt: "Diagram: Carbocation stability order", keyword: "tertiary" },
+{ Component: ChargeDispersalLogic, caption: "Charge dispersal stabilises ions", alt: "Diagram: Charge dispersal stabilises ions", keyword: "dispersal" },
+  ],
+  },
+  "resonance-effect-r-and-r-effect": {
+    title: "One molecule, several drawings",
+    figures: [
+{ Component: ResonanceHybridIdea, caption: "The resonance hybrid idea", alt: "Diagram: The resonance hybrid idea", keyword: "hybrid" },
+{ Component: CanonicalRulesPanel, caption: "Rules for canonical structures", alt: "Diagram: Rules for canonical structures", keyword: "atoms" },
+{ Component: OzoneCanonicalStructures, caption: "Ozone canonical structures", alt: "Diagram: Ozone canonical structures", keyword: "ozone" },
+{ Component: BenzeneKekulePair, caption: "Benzene Kekule pair", alt: "Diagram: Benzene Kekule pair", keyword: "kekulé" },
+{ Component: ResonanceEnergyBar, caption: "Resonance energy of benzene", alt: "Diagram: Resonance energy of benzene", keyword: "150" },
+{ Component: PlusRGroupFlow, caption: "Plus R groups enrich ortho para", alt: "Diagram: Plus R groups enrich ortho para", keyword: "ortho" },
+{ Component: MinusRGroupFlow, caption: "Minus R groups direct meta", alt: "Diagram: Minus R groups direct meta", keyword: "meta" },
   ],
   },
 
