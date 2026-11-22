@@ -1,0 +1,256 @@
+/*
+ * language-notes.css — paper styling for the English and Nepali note pages
+ * (materials/WRITING_HUB.html and materials/NEPALI_HUB.html).
+ *
+ * Those two files were built as dark screen apps: a sticky sidebar, one tab
+ * visible at a time, and a navy palette. scripts/paperize-language-notes.mjs
+ * turns each of them into one continuous paper document — the tabs become a
+ * contents list, every section is visible at once, and a4-paginate.js lays the
+ * result out as a stack of A4 pages.
+ *
+ * Everything below is the paper vocabulary those documents use, rendered on the
+ * shared A4 sheet. It never redefines page size, margins or print rules: those
+ * belong to a4-document.css alone.
+ */
+
+@import url("../resources/a4-document.css");
+
+/* ---------- the former app shell ---------- */
+
+#app {
+  display: block;
+}
+
+main {
+  max-width: none;
+  padding: 0;
+}
+
+/* a tabbed section becomes one visible page of notes */
+.page {
+  display: block;
+  padding: 0 0 4mm;
+  margin: 0 0 5mm;
+  border-bottom: 0.6pt solid #d3d8e0;
+}
+
+.page:last-of-type {
+  border-bottom: 0;
+}
+
+.page > h2.pt:first-child {
+  margin-top: 0;
+}
+
+h2.pt {
+  font-size: 13pt;
+  line-height: 1.2;
+  color: var(--accent);
+  margin: 0 0 1.4mm;
+  padding-bottom: 1.2mm;
+  border-bottom: 0.6pt solid #d3d8e0;
+}
+
+h2.pt + .lead {
+  margin-top: 0;
+}
+
+.lead {
+  font-size: 9.4pt;
+  color: var(--muted);
+  margin: 0 0 3mm;
+}
+
+.sub {
+  font-size: 8pt;
+  color: var(--muted);
+}
+
+/* ---------- contents list built from the old sidebar ---------- */
+
+.notation-toc {
+  border: 0.5pt solid #d3d8e0;
+  border-radius: 1.2mm;
+  background: #f5f7fb;
+  padding: 2.4mm 3mm;
+  margin: 0 0 5mm;
+  font-size: 8.6pt;
+}
+
+.notation-toc > b {
+  display: block;
+  font-size: 7.4pt;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.4mm;
+}
+
+.notation-toc ol {
+  margin: 0;
+  padding-left: 5mm;
+  columns: 2;
+  column-gap: 6mm;
+}
+
+.notation-toc li {
+  margin: 0.6mm 0;
+  break-inside: avoid;
+}
+
+.notation-toc a {
+  text-decoration: none;
+}
+
+/* ---------- content blocks ---------- */
+
+card {
+  display: block;
+  background: #f7f8fb;
+  border: 0.5pt solid #d3d8e0;
+  border-left: 2pt solid var(--accent);
+  border-radius: 0 1.2mm 1.2mm 0;
+  padding: 2mm 2.6mm;
+  margin: 2mm 0;
+  font-size: 9.2pt;
+}
+
+card > :first-child {
+  margin-top: 0;
+}
+
+card > :last-child {
+  margin-bottom: 0;
+}
+
+/* vocabulary chips: the dominant unit of these two documents */
+.chip {
+  display: inline-block;
+  background: #f5f7fb;
+  border: 0.5pt solid #c3cad6;
+  border-radius: 1.4mm;
+  padding: 0.3mm 1.4mm;
+  margin: 0.3mm 0.4mm;
+  font-size: 8.2pt;
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.chip.pro {
+  border-color: #9ecfb6;
+  background: #f1f8f4;
+  color: #0f5c3c;
+  font-weight: 600;
+}
+
+.chip.weak {
+  border-color: #e2b4b4;
+  background: #fdf4f4;
+  color: #8c2222;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 7.2pt;
+  padding: 0.2mm 1.4mm;
+  border-radius: 1.2mm;
+  background: #eef1f6;
+  border: 0.5pt solid #d3d8e0;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* inline emphasis palette used throughout both notes */
+.gold-t { color: #7a3b00; font-weight: 600; }
+.blue-t { color: var(--accent); font-weight: 600; }
+.green-t { color: #0f5c3c; font-weight: 600; }
+.red-t { color: #8c2222; font-weight: 600; }
+
+/* wrong / right word pairs */
+.wk { color: #8c2222; }
+.pr { color: #0f5c3c; font-weight: 600; }
+.wk::after { content: ""; }
+
+/* wrong-versus-right example grid */
+.eg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2mm;
+  margin: 2mm 0;
+  break-inside: avoid;
+}
+
+.eg > div {
+  padding: 1.8mm 2.2mm;
+  border-radius: 1mm;
+  font-size: 8.8pt;
+}
+
+.eg .a {
+  background: #fdf4f4;
+  border: 0.5pt dashed #c98c8c;
+}
+
+.eg .b {
+  background: #f1f8f4;
+  border: 0.5pt dashed #7cb79a;
+}
+
+/* call-outs: the notes' own names win over the sheet's */
+.note {
+  background: #f1f7fb;
+  border-left: 2.2pt solid var(--accent);
+  padding: 1.8mm 2.6mm;
+  margin: 2mm 0;
+  font-size: 9pt;
+  color: var(--ink);
+  border-radius: 0 1mm 1mm 0;
+  break-inside: avoid;
+}
+
+.warn {
+  background: #fdf7f0;
+  border-left: 2.2pt solid #b45f00;
+  padding: 1.8mm 2.6mm;
+  margin: 2mm 0;
+  font-size: 9pt;
+  color: #7a3b00;
+  border-radius: 0 1mm 1mm 0;
+  break-inside: avoid;
+}
+
+details {
+  background: #f7f8fb;
+  border: 0.5pt solid #d3d8e0;
+  border-radius: 1mm;
+  padding: 1.6mm 2.4mm;
+  margin: 2mm 0;
+  break-inside: avoid;
+}
+
+summary {
+  cursor: default;
+  font-weight: 700;
+  font-size: 9pt;
+  color: var(--ink);
+}
+
+details[open] {
+  border-color: #b9c4d3;
+}
+
+/* ---------- the parts that only made sense as an app ---------- */
+
+/* quiz controls, score bars and mastery checkboxes carry no information on
+   paper: the answers they reveal are already printed in the tables above */
+input,
+.btn,
+.bar {
+  display: none;
+}
+
+label {
+  display: inline;
+}

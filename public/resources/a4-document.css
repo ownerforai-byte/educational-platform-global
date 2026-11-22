@@ -71,13 +71,24 @@ body {
   color: var(--ink);
   margin: 0;
 
-  /* report type: small, tight, tabular — the proportions of a printed note */
-  font-family: Georgia, "Times New Roman", "Liberation Serif", serif;
+  /* report type: small, tight, tabular — the proportions of a printed note.
+     The Devanagari faces follow the Latin ones so the Nepali notes keep their
+     own script instead of falling back to whichever serif the OS picks. */
+  font-family:
+    Georgia, "Times New Roman", "Liberation Serif",
+    "Nirmala UI", "Noto Sans Devanagari", "Noto Serif Devanagari", Mangal,
+    serif;
   font-size: 9.6pt;
   line-height: 1.5;
   font-variant-numeric: tabular-nums lining-nums;
   orphans: 3;
   widows: 3;
+}
+
+/* Devanagari needs more leading than Latin at the same point size */
+:lang(ne),
+:lang(ne) body {
+  line-height: 1.72;
 }
 
 /* ---------- the sheet ---------- */

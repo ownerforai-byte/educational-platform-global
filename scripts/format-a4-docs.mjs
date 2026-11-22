@@ -52,7 +52,7 @@ const TREES = [
 
 /** Files that are navigation or interactive surfaces, never printed. */
 const SKIP = [
-  /\/materials\/[A-Z_]+_HUB\.html$/, // subject hubs (tabs, galleries)
+  /\/materials\/(?:CHEMISTRY|STUDY)_HUB\.html$/, // navigation hubs (tabs, galleries)
   /\/materials\/topics-mindmap\//, // mindmap viewers
   /\/resources\/mathematics-xi\/a4\//, // workbook sheets bring their own sheet css
   /\/resources\/mathematics-xi\/chapters\//, // same workbook sheets
@@ -60,7 +60,15 @@ const SKIP = [
 ];
 
 /** Sheets that already resolve to the shared A4 base (directly or via @import). */
-const A4_SHEETS = [/a4-document\.css/, /physics-xi-solutions\.css/, /math-xi-solutions\.css/];
+const A4_SHEETS = [
+  /a4-document\.css/,
+  /physics-xi-solutions\.css/,
+  /math-xi-solutions\.css/,
+  /language-notes\.css/, // paper rendering of the English and Nepali notes
+];
+
+/** Documents already converted to paper by another contract are never app surfaces. */
+const PAPER_MARKERS = /data-paper="language-notes"/;
 
 /** The paginator that turns the one long file into a stack of A4 pages. */
 const A4_PAGER = /a4-paginate\.js/;
@@ -100,7 +108,9 @@ function planned(file) {
   if (SKIP.some((re) => re.test(rel))) return { action: "skip", reason: "not paper" };
 
   const html = fs.readFileSync(file, "utf8");
-  if (APP_MARKERS.test(html)) return { action: "skip", reason: "interactive surface" };
+  if (!PAPER_MARKERS.test(html) && APP_MARKERS.test(html)) {
+    return { action: "skip", reason: "interactive surface" };
+  }
   if (!/<head>/i.test(html) || !/<\/head>/i.test(html)) return { action: "skip", reason: "no head" };
 
   const hasSheet = A4_SHEETS.some((re) => re.test(html));

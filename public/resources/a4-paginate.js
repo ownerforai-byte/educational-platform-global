@@ -27,6 +27,8 @@
   var PAGE_CLASS = "a4-page";
   var MAX_SPLIT_DEPTH = 6; // table-in-table nesting we are willing to split
   var TOLERANCE = 1; // px of rounding slack when testing a fit
+  /* Blocks that are a single unit: they move whole or grow their sheet. */
+  var NO_SPLIT_TAGS = /^(?:TABLE|P|UL|OL|LI|PRE|H1|H2|H3|H4|H5|H6|IMG|HR|QGRID|SVG|FIGURE|BLOCKQUOTE|TR|TD|TH|INPUT|LABEL|SPAN|A|B|I|CODE)$/;
 
   var snapshot = null; // original body HTML without scripts
   var lastWidth = 0;
@@ -73,6 +75,8 @@
     snapshot = holder.innerHTML;
   }
 
+  var insertAfter = null; // a repair pass anchors new sheets mid-document
+
   function newPage(desk, label) {
     var page = document.createElement("section");
     page.className = PAGE_CLASS;
@@ -110,7 +114,13 @@
     foot.appendChild(footRight);
     page.appendChild(foot);
 
-    desk.appendChild(page);
+    if (insertAfter && insertAfter.parentNode === desk) {
+      desk.insertBefore(page, insertAfter.nextSibling);
+    } else {
+      desk.appendChild(page);
+    }
+    insertAfter = page;
+
     return { page: page, flow: flow, foot: footRight };
   }
 
@@ -119,14 +129,24 @@
      survives. Returns the flow it finished in, or null when not splittable. */
   function splitWrapper(el, flow, desk, label) {
     var tag = el.tagName;
-    if (tag !== "SECTION" && tag !== "DIV" && tag !== "ARTICLE" && tag !== "MAIN") return null;
+
+    // never split something that is already a single unit of meaning
+    if (NO_SPLIT_TAGS.test(tag)) return null;
     if (el.classList.contains("qgrid") || el.classList.contains("item")) return null;
     if (el.children.length < 2) return null;
 
     var children = [].slice.call(el.childNodes);
     if (el.parentNode) el.parentNode.removeChild(el);
 
+    // a <details> keeps its summary on every continuation, like a table header
+    var repeatHead = null;
+    if (tag === "DETAILS") {
+      var summary = el.querySelector("summary");
+      if (summary) repeatHead = summary.cloneNode(true);
+    }
+
     var current = el.cloneNode(false);
+    current.removeAttribute("id"); // a continuation must not copy the anchor
     flow.appendChild(current);
 
     for (var i = 0; i < children.length; i++) {
@@ -141,7 +161,9 @@
       carryHeading(flow, next.flow);
       flow = next.flow;
       current = el.cloneNode(false);
+      current.removeAttribute("id");
       flow.appendChild(current);
+      if (repeatHead) current.appendChild(repeatHead.cloneNode(true));
       current.appendChild(last);
     }
 
@@ -166,6 +188,22 @@
     if (!isHeading(last)) return;
     if (!prevFlow.children.length) return;
     nextFlow.insertBefore(last, nextFlow.firstChild);
+  }
+
+  /* Replace a chain of single-child wrappers (.page > card > div) with the
+     innermost block, so the thing that actually overflows can be split. */
+  function descendSingleChild(flow) {
+    for (var i = 0; i < 8; i++) {
+      var last = flow.lastElementChild;
+      if (!last) return;
+      if (NO_SPLIT_TAGS.test(last.tagName)) return;
+      if (last.classList.contains("qgrid") || last.classList.contains("item")) return;
+      if (last.children.length !== 1) return;
+
+      var only = last.firstElementChild;
+      flow.insertBefore(only, last);
+      flow.removeChild(last);
+    }
   }
 
   /* Split a table across sheets by row, repeating <thead> on each part. */
@@ -285,9 +323,46 @@
         nextPage();
       }
 
+      // how much of the sheet is already in use before this block lands
+      var usedBefore = 0;
+      var lastKid = current.flow.lastElementChild;
+      if (lastKid) {
+        usedBefore = lastKid.getBoundingClientRect().bottom - current.flow.getBoundingClientRect().top;
+      }
+
       current.flow.appendChild(block);
 
       if (!overflows(current.flow)) continue;
+
+      // a wrapper whose only child is the real content: let that child be the
+      // block, so its own rows or children can be split across sheets
+      descendSingleChild(current.flow);
+      block = current.flow.lastElementChild || block;
+
+      if (!overflows(current.flow)) continue;
+
+      // a block that can never fit on a sheet — longer than a whole page even
+      // when it starts at the top — is split here so this sheet fills up
+      var pageHeight = current.flow.clientHeight;
+      var blockHeight = block.getBoundingClientRect().height;
+      var oversize = blockHeight > pageHeight + TOLERANCE;
+
+      if (oversize) {
+        current.flow.removeChild(block);
+        var resumedHere =
+          block.tagName === "TABLE"
+            ? splitTable(block, current.flow, desk, label, 0)
+            : splitWrapper(block, current.flow, desk, label);
+
+        if (resumedHere) {
+          current = { page: resumedHere.parentNode, flow: resumedHere, foot: null };
+          continue;
+        }
+        // nothing to split: put it back and let the sheet grow
+        current.flow.appendChild(block);
+        if (current.page) current.page.classList.add("a4-page--tall");
+        continue;
+      }
 
       // does not fit on a page that already has content: try the next sheet
       if (current.flow.childNodes.length > 1) {
@@ -300,7 +375,7 @@
 
       if (!overflows(current.flow)) continue;
 
-      // still too big on an empty sheet
+      // a block that only just exceeds an empty sheet: split it there
       if (block.tagName === "TABLE") {
         current.flow.removeChild(block);
         var resumed = splitTable(block, current.flow, desk, label, 0);
@@ -323,54 +398,124 @@
       if (current.page) current.page.classList.add("a4-page--tall");
     }
 
-    // final sweep: nothing may overflow its sheet and no heading may sit alone at a
+    // balance(): nothing may overflow its sheet and no heading may sit alone at a
     // page foot. Repeats until stable, because both moves can push a block onwards.
-    var allSheets = [].slice.call(desk.querySelectorAll("." + PAGE_CLASS));
-    for (var pass = 0; pass < 40; pass++) {
-      var changed = false;
+    function balance() {
+      var allSheets = [].slice.call(desk.querySelectorAll("." + PAGE_CLASS));
 
-      for (var s = 0; s < allSheets.length; s++) {
-        var pageFlow = allSheets[s].querySelector(".a4-page__body");
-        var nextFlow = allSheets[s + 1]
-          ? allSheets[s + 1].querySelector(".a4-page__body")
-          : null;
+      for (var pass = 0; pass < 40; pass++) {
+        var changed = false;
 
-        if (!pageFlow) continue;
+        for (var s = 0; s < allSheets.length; s++) {
+          var pageFlow = allSheets[s].querySelector(".a4-page__body");
+          var nextFlow = allSheets[s + 1]
+            ? allSheets[s + 1].querySelector(".a4-page__body")
+            : null;
 
-        if (!nextFlow) {
-          if (overflows(pageFlow) && pageFlow.children.length) {
-            allSheets[s].classList.add("a4-page--tall");
+          if (!pageFlow) continue;
+
+          if (!nextFlow) {
+            if (overflows(pageFlow) && pageFlow.children.length) {
+              allSheets[s].classList.add("a4-page--tall");
+            }
+            continue;
           }
-          continue;
-        }
 
-        // a heading must never be the last thing on a sheet
-        if (isHeading(pageFlow.lastElementChild)) {
-          nextFlow.insertBefore(pageFlow.lastElementChild, nextFlow.firstChild);
-          changed = true;
-        }
+          // a nearly empty sheet pulls the next sheet's opening block back up,
+          // so pages read full rather than one short fragment per sheet
+          var nextFirst = nextFlow.firstElementChild;
+          if (nextFirst && !isHeading(nextFirst) && !overflows(pageFlow)) {
+            pageFlow.appendChild(nextFirst);
+            if (overflows(pageFlow)) {
+              pageFlow.removeChild(nextFirst);
+              nextFlow.insertBefore(nextFirst, nextFlow.firstChild);
+            } else {
+              changed = true;
+            }
+          }
 
-        // spill anything that still does not fit onto the next sheet
-        var guard = 0;
-        while (overflows(pageFlow) && pageFlow.children.length > 1 && guard++ < 60) {
-          var spill = pageFlow.lastElementChild;
-          pageFlow.removeChild(spill);
-          nextFlow.insertBefore(spill, nextFlow.firstChild);
-          changed = true;
+          // a heading must never be the last thing on a sheet
           if (isHeading(pageFlow.lastElementChild)) {
             nextFlow.insertBefore(pageFlow.lastElementChild, nextFlow.firstChild);
+            changed = true;
+          }
+
+          // spill anything that still does not fit onto the next sheet
+          var guard = 0;
+          while (overflows(pageFlow) && pageFlow.children.length > 1 && guard++ < 60) {
+            var spill = pageFlow.lastElementChild;
+            pageFlow.removeChild(spill);
+            nextFlow.insertBefore(spill, nextFlow.firstChild);
+            changed = true;
+            if (isHeading(pageFlow.lastElementChild)) {
+              nextFlow.insertBefore(pageFlow.lastElementChild, nextFlow.firstChild);
+            }
           }
         }
-      }
 
-      if (!changed) break;
+        if (!changed) break;
+      }
     }
 
+    // repair(): balancing can strand one oversized block alone on a sheet, and a
+    // lone block cannot be pushed anywhere. Split it in place and insert the
+    // continuation sheets straight after it, so document order is preserved.
+    function repair() {
+      var fixed = 0;
+
+      for (var i = 0; i < desk.children.length && fixed < 80; i++) {
+        var sheet = desk.children[i];
+        if (!sheet.classList || !sheet.classList.contains(PAGE_CLASS)) continue;
+
+        var flow = sheet.querySelector(".a4-page__body");
+        if (!flow || !overflows(flow)) continue;
+        if (flow.children.length !== 1) continue;
+
+        var target = flow.firstElementChild;
+
+        // unwrap single-child chains down to the block that actually splits
+        for (var d = 0; d < 8; d++) {
+          if (target.tagName === "TABLE") break;
+          if (NO_SPLIT_TAGS.test(target.tagName)) break;
+          if (target.classList.contains("qgrid") || target.classList.contains("item")) break;
+          if (target.children.length !== 1) break;
+          target = target.children[0];
+        }
+
+        if (target !== flow.firstElementChild) {
+          // drop the wrappers, keep the innermost content where it was
+          flow.appendChild(target);
+          var stale = flow.firstElementChild;
+          if (stale && stale !== target && stale.parentNode) stale.parentNode.removeChild(stale);
+        }
+
+        if (target.parentNode) target.parentNode.removeChild(target);
+
+        insertAfter = sheet;
+        var done = null;
+        try {
+          done =
+            target.tagName === "TABLE"
+              ? splitTable(target, flow, desk, label, 0)
+              : splitWrapper(target, flow, desk, label);
+        } finally {
+          insertAfter = null;
+        }
+
+        if (done) fixed++;
+      }
+    }
+
+    balance();
+    repair();
+    balance();
+
     // carrying headings can leave a sheet holding nothing at all: drop it
-    for (var e = 0; e < allSheets.length; e++) {
-      var emptyFlow = allSheets[e].querySelector(".a4-page__body");
-      if (emptyFlow && !emptyFlow.children.length) {
-        if (allSheets[e].parentNode) allSheets[e].parentNode.removeChild(allSheets[e]);
+    var empties = [].slice.call(desk.querySelectorAll("." + PAGE_CLASS));
+    for (var e = 0; e < empties.length; e++) {
+      var emptyFlow = empties[e].querySelector(".a4-page__body");
+      if (emptyFlow && !emptyFlow.children.length && empties[e].parentNode) {
+        empties[e].parentNode.removeChild(empties[e]);
       }
     }
 

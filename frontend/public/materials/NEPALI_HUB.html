@@ -1,67 +1,34 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="ne" data-paper="language-notes">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>नेपाली लेखन हब — नौबिले देखि प्रोसम्म</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Noto Sans Devanagari','Mangal',system-ui,sans-serif;background:#0a0e17;color:#cdd6e8;line-height:1.75}
-#app{display:flex;min-height:100vh}
-nav{width:260px;background:#0f1420;border-right:1px solid #232c44;padding:18px 12px;position:sticky;top:0;height:100vh;overflow-y:auto}
-nav h1{font-size:16px;color:#ffd166;margin:4px 0 2px}
-nav .sub{font-size:11px;color:#8ea0c0;margin-bottom:14px}
-.nav-item{display:block;padding:9px 12px;margin:3px 0;border-radius:8px;color:#cdd6e8;text-decoration:none;font-size:13px;cursor:pointer;border:1px solid transparent}
-.nav-item:hover{background:#1d2740}
-.nav-item.active{background:#2547a8;border-color:#7ea6ff;color:#fff}
-main{flex:1;padding:26px 34px;max-width:1150px}
-.page{display:block;padding:26px 0 40px;border-bottom:2px solid #232c44;scroll-margin-top:16px}
-h2.pt{font-size:25px;color:#7ea6ff;margin-bottom:4px}
-.lead{color:#8ea0c0;font-size:13.5px;margin-bottom:22px}
-h3{color:#ffd166;font-size:17px;margin:26px 0 10px}
-h4{color:#9db9ff;font-size:14.5px;margin:16px 0 8px}
-card{display:block;background:#1d2740;border:1px solid #2c3752;border-radius:12px;padding:18px 20px;margin:12px 0}
-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
-th{background:#2547a8;color:#fff;text-align:left;padding:9px 10px;font-size:12.5px}
-td{padding:8px 10px;border-bottom:1px solid #232c44;vertical-align:top}
-tr:hover td{background:#16203a}
-.chip{display:inline-block;background:#1d2740;border:1px solid #7ea6ff;color:#9db9ff;border-radius:14px;padding:1px 10px;margin:2px 3px;font-size:12.5px}
-.chip.weak{border-color:#ff6b6b;color:#ff9c9c;font-weight:600}
-.chip.pro{border-color:#4cc38a;color:#6fd3b8}
-.tag{font-size:10.5px;padding:1px 8px;border-radius:9px;background:#1d2740;color:#8ea0c0;border:1px solid #2c3752}
-.note{background:#12201a;border-left:3px solid #4cc38a;padding:10px 14px;border-radius:0 8px 8px 0;font-size:13px;margin:10px 0}
-.warn{background:#1a1212;border-left:3px solid #ff6b6b}
-.gold-t{color:#ffd166}.blue-t{color:#9db9ff}.green-t{color:#6fd3b8}.red-t{color:#ff9c9c}
-.wk{color:#ff9c9c}.pr{color:#6fd3b8}
-.eg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
-.eg>div{padding:12px 14px;border-radius:10px;font-size:13px}
-.eg .a{background:#1a1212;border:1px dashed #ff6b6b}
-.eg .b{background:#12201a;border:1px dashed #4cc38a}
-ul,ol{padding-left:22px;font-size:13.5px}
-details{background:#1d2740;border:1px solid #2c3752;border-radius:10px;padding:12px 16px;margin:8px 0}
-summary{cursor:pointer;color:#ffd166;font-size:14px;font-weight:600}
-details[open]{border-color:#7ea6ff}
-@media(max-width:860px){#app{flex-direction:column}nav{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #232c44}main{padding:18px}.eg{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<div id="app">
-<nav>
-  <h1>&#9997;&#65039; नेपाली लेखन हब</h1>
-  <div class="sub">सामान्य शब्दबाट प्राज्ञिक शब्दसम्म</div>
-  <a class="nav-item active" href="#pg-home">&#127968; सुरु यहाँबाट</a>
-  <a class="nav-item" href="#pg-shabd">&#128483; शब्द स्तरवृद्धि</a>
-  <a class="nav-item" href="#pg-tatsam">&#129513; तत्सम–तद्भव</a>
-  <a class="nav-item" href="#pg-structure">&#127959; वाक्य संरचना</a>
-  <a class="nav-item" href="#pg-style">&#127912; शैली र स्वर</a>
-  <a class="nav-item" href="#pg-grammar">&#10067; त्रुटि र शुद्धता</a>
-  <a class="nav-item" href="#pg-wordbuild">&#128208; शब्द निर्माण</a>
-  <a class="nav-item" href="#pg-phrase">&#128220; वाक्यांश भण्डार</a>
-  <a class="nav-item" href="#pg-vivid">&#128064; चित्रात्मक शब्द</a>
-  <a class="nav-item" href="#pg-chitra-prakriti">&#127807; चित्र: प्रकृति दृश्य</a><a class="nav-item" href="#pg-chitra-dhwani">&#128266; चित्र: ध्वनि इन्द्रिय</a><a class="nav-item" href="#pg-chitra-bhavna">&#128150; चित्र: भावना चरित्र</a><a class="nav-item" href="#pg-alankar">&#127912; अलङ्कार (काव्य)</a><a class="nav-item" href="#pg-vision">&#128065; दृष्टिकोण लेखन</a><a class="nav-item" href="#pg-sustain">&#127793; दिगो विकास लेखन</a><a class="nav-item" href="#pg-pardarshik">&#128269; पारदर्शी लेखन</a>
-  <a class="nav-item" href="#pg-practice">&#127919; अभ्यास क्षेत्र</a>
+<link rel="stylesheet" href="language-notes.css">
+<script src="../resources/a4-paginate.js" defer></script></head>
+<body class="language-note">
+<nav class="notation-toc">
+  <b>Contents — every section of this note</b>
+  <ol>
+      <li><a href="#pg-home">&#127968; सुरु यहाँबाट</a></li>
+      <li><a href="#pg-shabd">&#128483; शब्द स्तरवृद्धि</a></li>
+      <li><a href="#pg-tatsam">&#129513; तत्सम–तद्भव</a></li>
+      <li><a href="#pg-structure">&#127959; वाक्य संरचना</a></li>
+      <li><a href="#pg-style">&#127912; शैली र स्वर</a></li>
+      <li><a href="#pg-grammar">&#10067; त्रुटि र शुद्धता</a></li>
+      <li><a href="#pg-wordbuild">&#128208; शब्द निर्माण</a></li>
+      <li><a href="#pg-phrase">&#128220; वाक्यांश भण्डार</a></li>
+      <li><a href="#pg-vivid">&#128064; चित्रात्मक शब्द</a></li>
+      <li><a href="#pg-chitra-prakriti">&#127807; चित्र: प्रकृति दृश्य</a></li>
+      <li><a href="#pg-chitra-dhwani">&#128266; चित्र: ध्वनि इन्द्रिय</a></li>
+      <li><a href="#pg-chitra-bhavna">&#128150; चित्र: भावना चरित्र</a></li>
+      <li><a href="#pg-alankar">&#127912; अलङ्कार (काव्य)</a></li>
+      <li><a href="#pg-vision">&#128065; दृष्टिकोण लेखन</a></li>
+      <li><a href="#pg-sustain">&#127793; दिगो विकास लेखन</a></li>
+      <li><a href="#pg-pardarshik">&#128269; पारदर्शी लेखन</a></li>
+      <li><a href="#pg-practice">&#127919; अभ्यास क्षेत्र</a></li>
+  </ol>
 </nav>
-<main>
 
 <!-- ==================== HOME ==================== -->
 <div class="page" id="pg-home">
@@ -89,7 +56,7 @@ details[open]{border-color:#7ea6ff}
 </card>
 <card>
 <h4>&#128161; प्रो नेपालीको पहिलो रहस्य: तत्सम शब्द</h4>
-<p style="font-size:13.5px">नेपालीमा प्रायः हरेक तद्भव (दैनिक) शब्दको तत्सम (संस्कृतनिष्ठ) जोडी हुन्छ — र त्यही तत्सम रूप नै प्राज्ञिक लेखनको मुहार हो:</p>
+<p style="font-size:10.1pt">नेपालीमा प्रायः हरेक तद्भव (दैनिक) शब्दको तत्सम (संस्कृतनिष्ठ) जोडी हुन्छ — र त्यही तत्सम रूप नै प्राज्ञिक लेखनको मुहार हो:</p>
 <eg class="eg">
 <div class="a"><span class="wk">दैनिक:</span> पानी, आँखा, घर, सूर्य, काम, पैसा</div>
 <div class="b"><span class="pr">प्राज्ञिक:</span> जल, नेत्र, गृह, रवि, कर्म, धन</div>
@@ -198,7 +165,7 @@ details[open]{border-color:#7ea6ff}
 </card>
 
 <card><h3>&#128161; प्राज्ञिक लेखनका ५० सुनौला शब्द</h3>
-<p style="font-size:13px"><span class="pr">अन्तर्वार्ता, अवधारणा, आधारभूत, आवश्यकता, उपलब्ध, उत्तरदायी, एकीकरण, कार्यान्वयन, क्रियाशील, खाडलपन, गरिमामय, घनिष्ठ, चरितार्थ, चित्ताकर्षक, छानबिन, जनचेतना, टिकाउ, डढेकोपन, तत्पर, दृश्यतामा, दोहोरिने, निर्णायक, परिणाम, परिरोधक, पहुँच, प्रभावकारी, प्रारम्भिक, फड्को, बहस, भावनात्मक, भीडभाड, मर्यादित, यथार्थ, रचनात्मक, लगनशील, वातावरण, विकल्प, विश्वसनीय, शुद्धता, संवेदनशील, सक्रिय, सरल, सामर्थ्य, सीमांकन, हस्तान्तरण, हृदयस्पर्शी, स्वस्थ, सर्वसाधारण, अभियान</span></p>
+<p style="font-size:9.8pt"><span class="pr">अन्तर्वार्ता, अवधारणा, आधारभूत, आवश्यकता, उपलब्ध, उत्तरदायी, एकीकरण, कार्यान्वयन, क्रियाशील, खाडलपन, गरिमामय, घनिष्ठ, चरितार्थ, चित्ताकर्षक, छानबिन, जनचेतना, टिकाउ, डढेकोपन, तत्पर, दृश्यतामा, दोहोरिने, निर्णायक, परिणाम, परिरोधक, पहुँच, प्रभावकारी, प्रारम्भिक, फड्को, बहस, भावनात्मक, भीडभाड, मर्यादित, यथार्थ, रचनात्मक, लगनशील, वातावरण, विकल्प, विश्वसनीय, शुद्धता, संवेदनशील, सक्रिय, सरल, सामर्थ्य, सीमांकन, हस्तान्तरण, हृदयस्पर्शी, स्वस्थ, सर्वसाधारण, अभियान</span></p>
 <div class="note">यी शब्द निबन्ध, प्रतिवेदन र अन्तर्वार्तामा उपयुक्त हुन्छन् — तर अर्थ साँचो मिल्दा मात्र। गलत ठाउँमा प्राज्ञिक शब्द, इमानदार सामान्य शब्दभन्दा नराम्रो।</div>
 </card>
 </div>
@@ -745,7 +712,7 @@ details[open]{border-color:#7ea6ff}
 
 <card>
 <h3>&#127965; मनोदशा र माहोल मिलाउने (Pathetic Fallacy)</h3>
-<p style="font-size:13.5px">प्रकृतिको माहोललाई पात्रको मनोदशासँग जोड्दा वर्णन गहिरो हुन्छ।</p>
+<p style="font-size:10.1pt">प्रकृतिको माहोललाई पात्रको मनोदशासँग जोड्दा वर्णन गहिरो हुन्छ।</p>
 <table>
 <tr><th>मनोदशा</th><th>मिल्ने माहोल</th><th>उदाहरण</th></tr>
 <tr><td>निराशा</td><td class="pr">कुहिरो, पात झरेको, ढिलो साँझ</td><td>कुहिरोले गाउँ ओढिरहेको थियो — उसको मन पनि त्यस्तै।</td></tr>
@@ -926,7 +893,7 @@ details[open]{border-color:#7ea6ff}
 
 <card>
 <h3>&#128218; दिगो विकास निबन्ध खण्ड (नमुना)</h3>
-<p style="font-size:13.5px"><span class="pr">"नेपाल जलस्रोत र जैविक विविधताले भरिपूर्ण भए पनि वातावरणीय असन्तुलन यहाँको ठूलो चुनौती हो। वन कटान, अत्यधिक दोहन र अव्यवस्थित विकासले पारिस्थितिकीलाई कमजोर पारेको छ। यसको समाधान एकलिङ्गिक होइन — नवीकरणीय ऊर्जाको प्रयोग, वन संरक्षण र स्थानीय सहभागितालाई <b>दिगो</b> रूपमा जोड्नुपर्छ। हाम्रो दृष्टिकोण स्पष्ट हुनुपर्छ: विकास भोलिका पुस्ताको हकमा बाधा नपरोस्।"</span></p>
+<p style="font-size:10.1pt"><span class="pr">"नेपाल जलस्रोत र जैविक विविधताले भरिपूर्ण भए पनि वातावरणीय असन्तुलन यहाँको ठूलो चुनौती हो। वन कटान, अत्यधिक दोहन र अव्यवस्थित विकासले पारिस्थितिकीलाई कमजोर पारेको छ। यसको समाधान एकलिङ्गिक होइन — नवीकरणीय ऊर्जाको प्रयोग, वन संरक्षण र स्थानीय सहभागितालाई <b>दिगो</b> रूपमा जोड्नुपर्छ। हाम्रो दृष्टिकोण स्पष्ट हुनुपर्छ: विकास भोलिका पुस्ताको हकमा बाधा नपरोस्।"</span></p>
 <div class="note"><b>प्रो चाल:</b> दिगो लेखनमा <b>समस्या → कारण → समाधान → सहभागिता</b> को क्रम राख्नुहोस् — त्यही सन्तुलित विकासको भाषा हो।</div>
 </card>
 
@@ -1010,8 +977,6 @@ details[open]{border-color:#7ea6ff}
 </table>
 <div class="note"><b>एक सूत्र:</b> राम्रो लेखन = <b>सटीक शब्द</b> + <b>चित्रात्मक विवरण</b> + <b>स्पष्ट संरचना</b> + <b>प्रमाणित दाबी</b>। यी चारै हुनुपर्छ।</div>
 </card>
-</div>
-</main>
 </div>
 </body>
 </html>

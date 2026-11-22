@@ -25,7 +25,9 @@ const docsTrees: Array<[string, string]> = [
   [REPO, "public/resources/physics-xi"],
 ];
 
-const SKIP = /_HUB\.html$|topics-mindmap|mathematics-xi\/(?:a4|chapters)\//;
+const SKIP = /(?:CHEMISTRY|STUDY)_HUB\.html$|topics-mindmap|mathematics-xi\/(?:a4|chapters)\//;
+
+const LANGUAGE_NOTES = ["WRITING_HUB.html", "NEPALI_HUB.html"]; // English and Nepali
 
 const papers: Array<[string, string]> = []; // [base, rel]
 for (const [base, dir] of docsTrees) {
@@ -107,13 +109,43 @@ describe("A4 paged documents", () => {
     const broken: string[] = [];
     for (const [base, doc] of papers) {
       const html = readFrom(base, doc);
-      if (!/a4-document\.css|physics-xi-solutions\.css|math-xi-solutions\.css/.test(html)) {
+      if (!/a4-document\.css|physics-xi-solutions\.css|math-xi-solutions\.css|language-notes\.css/.test(html)) {
         broken.push(`${doc}: no A4 sheet`);
       }
       if (!/a4-paginate\.js/.test(html)) broken.push(`${doc}: no paginator`);
     }
 
     expect(broken, `documents not on the A4 page contract:\n${broken.slice(0, 12).join("\n")}`).toEqual([]);
+  });
+
+  it("renders the English and Nepali notes as paper, not as the old dark tab apps", () => {
+    const css = read("public/materials/language-notes.css");
+    expect(css).toContain('@import url("../resources/a4-document.css")');
+    // the sheet keeps page geometry; this file must never redefine it
+    expect(css).not.toMatch(/@page\s*\{/);
+    expect(css).not.toMatch(/--page-height/);
+    expect(css).toContain("#app {");
+
+    const problems: string[] = [];
+    for (const name of LANGUAGE_NOTES) {
+      const rel = `public/materials/${name}`;
+      const html = read(rel);
+
+      if (!html.includes('data-paper="language-notes"')) problems.push(`${name}: not paperized`);
+      if (!html.includes("language-notes.css")) problems.push(`${name}: no paper stylesheet`);
+      if (!html.includes("a4-paginate.js")) problems.push(`${name}: no paginator`);
+      if (/<nav>/.test(html)) problems.push(`${name}: sidebar still present`);
+      if (/<script(?![^>]*a4-paginate)/.test(html)) problems.push(`${name}: app scripts still present`);
+      if (/on(?:click|input|change)=/.test(html)) problems.push(`${name}: inline handlers still present`);
+      if (!/class="notation-toc"/.test(html)) problems.push(`${name}: no printed contents list`);
+      if (/<details(?!\s+open)/.test(html)) problems.push(`${name}: collapsed <details> on paper`);
+      // the old dark palette must not survive into the paper document
+      for (const dark of ["#0a0e17", "#0f1420", "#1d2740", "#cdd6e8", "#8ea0c0"]) {
+        if (html.includes(dark)) problems.push(`${name}: dark colour ${dark} left in`);
+      }
+    }
+
+    expect(problems, problems.join("\n")).toEqual([]);
   });
 
   it("lays the Mathematics XI rapid drill out as three solved questions in one row", () => {
