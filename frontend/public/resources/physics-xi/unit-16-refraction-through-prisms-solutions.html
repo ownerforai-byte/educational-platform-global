@@ -34,6 +34,7 @@
 <li>Exercise 16.4 — The i–D curve</li>
 <li>Exercise 16.5 — The small-angle (thin) prism</li>
 <li>Exercise 16.6 — Grazing emergence and total internal reflection</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -277,6 +278,138 @@ Critical angle: C = sin⁻¹(1/1.5) = 41.8°
 Since r₂ = 31.9° &lt; C, the ray does emerge.
 sin i₂ = 1.5 sin31.9° = 1.5 × 0.5284 = 0.7926 ⇒ i₂ = 52.4°</p>
 <p class="ans">Yes, it emerges at 52.4°, with total deviation D = i₁ + i₂ − A = 45 + 52.4 − 60 = 37.4°.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Prism questions are bookkeeping around A + D = i₁ + i₂. The eight shapes below take you from a full numerical through the minimum-deviation derivation to the limiting case of grazing emergence.</p>
+
+<div class="item">
+<p class="q"><b>Q20.</b> [Multi-step numerical] A prism of refracting angle 60° and μ = 1.50 is set at an incidence of 50°. Find the angles r₁, r₂, i₂ and the deviation.</p>
+<div class="sol">
+<p class="work">sin r₁ = sin i₁/μ = sin50°/1.5 = 0.766/1.5 = 0.511  ⇒  r₁ = 30.7°
+  r₂ = A − r₁ = 60 − 30.7 = 29.3°
+  sin i₂ = μ sin r₂ = 1.5 × 0.489 = 0.734  ⇒  i₂ = 47.2°
+
+  D = i₁ + i₂ − A = 50 + 47.2 − 60 = 37.2°</p>
+<p>Note that i₂ ≠ i₁: the ray is not symmetrical, so this is not the minimum-deviation position (which for A = 60°, μ = 1.5 would be D_m ≈ 37.2° at i = 49.9° — very close here, which is why minimum deviation is measured by rotating the prism until D stops decreasing).</p>
+<p class="ans">r₁ = 30.7°, r₂ = 29.3°, i₂ = 47.2°, D = 37.2°.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> [Derivation] Derive the prism formula A + D = i₁ + i₂, and hence μ = sin[(A + D_m)/2]/sin(A/2).</p>
+<div class="sol">
+<p class="work">In the prism, the cross-section is a quadrilateral with two normals:
+  at the first face:  angle between the normal and the ray = i₁ − r₁
+  at the second face: the same,  i₂ − r₂
+Exterior angle of the quadrilateral:
+  D = (i₁ − r₁) + (i₂ − r₂)
+  and  A = r₁ + r₂
+
+  ⇒  D = i₁ + i₂ − (r₁ + r₂) = i₁ + i₂ − A
+  ⇒  A + D = i₁ + i₂
+
+At minimum deviation the i–D curve is flat, so di₂/di₁ = 0, which forces
+r₁ = r₂ = A/2 and i₁ = i₂ = (A + D_m)/2. Applying Snell at one face:
+  μ = sin i₁/sin r₁ = sin[(A + D_m)/2]/sin(A/2)</p>
+<p>The condition r₁ = r₂ is the statement that the ray passes symmetrically through the prism — parallel to the base. This is the only position in which the deviation is stationary, and therefore the only position in which the measurement of D can be repeated without the result depending on a tiny error in the prism angle.</p>
+<p class="ans">D = i₁ + i₂ − A from the quadrilateral, with A = r₁ + r₂; at minimum deviation r₁ = r₂ = A/2, giving μ = sin[(A + D_m)/2]/sin(A/2).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> [Graph reading] A thin prism of angle 60° gives minimum deviation 40°. (a) Find μ. (b) A graph of D against i shows D falling to 40° then rising; what does the flat bottom of the curve tell you?</p>
+<div class="sol">
+<p class="work">(a) μ = sin[(A + D_m)/2]/sin(A/2)
+       = sin[(60 + 40)/2]/sin(60/2)
+       = sin50°/sin30° = 0.766/0.500 = 1.53
+
+(b) At the minimum the derivative dD/di = 0, so a range of i gives essentially the same D.
+    That is why the experiment rotates the prism until D is at its least, then reads i:
+    an error in i produces almost no error in D.</p>
+<p>The i–D curve is asymmetric about its minimum only because the prism is not perfectly symmetric; for an ideal prism it is a smooth U. Two examinable features: the minimum occurs where i₁ = i₂, and the curve becomes vertical at the extremes where the emergent ray is at grazing emergence.</p>
+<p class="ans">μ = 1.53; the flat bottom means dD/di = 0, so D_m can be measured accurately even if i is set roughly.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> [Combined concept] A thin prism of angle 6° and μ = 1.5 is used to deviate a beam. Find the deviation, and the deviation of the same prism if it is immersed in water (μ_w = 1.33).</p>
+<div class="sol">
+<p class="work">In air:  δ = (μ − 1)A = (1.5 − 1) × 6° = 3.0°
+
+In water the relevant index is relative:  μ_rel = 1.5/1.33 = 1.128
+  δ = (1.128 − 1) × 6° = 0.77°</p>
+<p>Immersion reduces the deviation by a factor of about 4, because what matters is the <em>difference</em> of refractive index between the prism and its surroundings. The same principle explains why a lens loses most of its power underwater: both the prism deviation and the lens focal length depend on (μ_rel − 1), not on μ alone.</p>
+<p class="ans">δ = 3.0° in air but only 0.77° in water, because δ ∝ (μ_rel − 1).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> [Assertion–reason] <b>Assertion (A):</b> At minimum deviation the ray passes symmetrically through the prism. <b>Reason (R):</b> At minimum deviation i₁ = i₂ and r₁ = r₂.</p>
+<div class="sol">
+<p>Both statements are true, and R is the reason for A.</p>
+<p class="work">With r₁ = r₂ = A/2 and i₁ = i₂, the path inside the prism is parallel to the base —
+the symmetry is geometric, not an extra assumption. Then:
+
+  D_m = 2i − A, with sin i = μ sin(A/2)</p>
+<p>A useful consequence: at minimum deviation the emergent ray makes the same angle with the second face as the incident ray does with the first, so reversing the light path reproduces the same deviation. That reversibility is what makes the minimum a stationary point, and it is the reason the prism is rotated until D is least before measuring μ.</p>
+<p class="ans">Both true, R explains A: symmetry (r₁ = r₂, i₁ = i₂) makes the internal ray parallel to the base, and that is the minimum-deviation condition.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> [Experiment/observation table] In a prism experiment the following minimum deviations are recorded for different prism angles with the same glass. Complete the last column and find μ.</p>
+<table>
+<tr><th>A</th><th>D_m</th><th>μ = sin[(A+D_m)/2]/sin(A/2)</th></tr>
+<tr><td>40°</td><td>24°</td><td>?</td></tr>
+<tr><td>50°</td><td>31°</td><td>?</td></tr>
+<tr><td>60°</td><td>38°</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">A = 40°, D = 24°: sin32°/sin20° = 0.530/0.342 = 1.549
+A = 50°, D = 31°: sin40.5°/sin25° = 0.649/0.423 = 1.535
+A = 60°, D = 38°: sin49°/sin30° = 0.755/0.500 = 1.510
+
+mean μ ≈ 1.53</p>
+<p>The three values agree to within 2.5%, and the small downward drift with A is a real effect (the minimum-deviation formula is exact, but the prism is not perfectly thin and the angle measurement carries a fixed error that matters more at large A). Reporting μ = 1.53 with the three readings shown is the expected answer; quoting only one row is not.</p>
+<p class="ans">1.55, 1.53, 1.51 — mean μ ≈ 1.53 for the glass.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Estimation and limiting case] Find the maximum deviation produced by a 60° prism of μ = 1.5, and state the condition for grazing emergence.</p>
+<div class="sol">
+<p class="work">Grazing emergence: i₂ = 90°, so sin r₂ = 1/μ = 0.667  ⇒  r₂ = 41.8°
+  r₁ = A − r₂ = 60 − 41.8 = 18.2°
+  sin i₁ = μ sin r₁ = 1.5 × 0.312 = 0.469  ⇒  i₁ = 28.0°
+  D_max = i₁ + 90 − A = 28.0 + 90 − 60 = 58.0°
+
+Compare: D_m = 37.2°, and D at i₁ = 50° was 37.2° too — so the deviation ranges
+from about 37° up to 58° as the entry angle is reduced.</p>
+<p><b>Grazing emergence</b> means the emergent ray skims the second face (i₂ = 90°); reduce i₁ further and the ray is totally internally reflected at the second face instead of emerging. The critical incidence for TIR at the second face is therefore the practical limit of the prism's use as a deviating element — and the reason a prism cannot bend light by more than about 58° here, no matter how it is turned.</p>
+<p class="ans">D_max ≈ 58° at i₁ = 28°, where the emergent ray grazes the second face; below that incidence TIR takes over.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Error-hunting] Correct each false statement.<br>
+(i) “The deviation produced by a prism is independent of the angle of the prism.”<br>
+(ii) “A prism disperses light because the glass slows all colours equally.”<br>
+(iii) “At minimum deviation the emergent ray is parallel to the incident ray.”<br>
+(iv) “A 60° prism with μ = 1.5 can never produce total internal reflection at the second face.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — D = i₁ + i₂ − A depends on A directly, and μ enters through both angles.
+(ii) FALSE — dispersion happens precisely because μ IS different for each colour, so each
+     colour has a different D. Equal slowing would mean equal deviation and no spectrum.
+(iii) FALSE — at minimum deviation the ray inside the prism is parallel to the BASE; the
+     incident and emergent rays are inclined at D_m to each other.
+(iv) FALSE — for A = 60°, μ = 1.5 the critical angle is 41.8°, and r₂ can exceed it when the
+     incidence is small; that is exactly the grazing-emergence limit computed above.</p>
+<p>Statement (iii) is the one that appears most often in exam scripts: “parallel to the base” is the internal ray, not the external one.</p>
+<p class="ans">(i) D depends on A; (ii) μ differs per colour, that is the dispersion; (iii) the internal ray is parallel to the base; (iv) TIR is possible below i₁ ≈ 28°.</p>
 </div>
 </div>
 

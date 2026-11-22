@@ -36,6 +36,7 @@
 <li>Exercise 18.6 — Achromatic combination of prisms</li>
 <li>Exercise 18.7 — Scattering of light</li>
 <li>Exercise 18.8 — Chromatic and spherical aberration</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -345,6 +346,149 @@ of opposite aberration (a plano-convex + plano-concave pair), or use an aspheric
 <tr><td>Produces coloured fringes</td><td>Produces overall blur and a soft focus</td></tr>
 </table>
 <p class="ans">Spherical aberration is a zone-dependent focus error for a single colour; chromatic aberration is a wavelength-dependent focus error. The cures and the appearance of the images differ.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Dispersion is measured by three numbers — μ_v, μ_r and ω — and explained by two applications: the rainbow and the achromatic combination. The eight shapes below cover both.</p>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Multi-step numerical] For a glass, μ_v = 1.523, μ_r = 1.514 and μ_y = 1.517, with a 60° prism. Find the dispersive power and the angular dispersion.</p>
+<div class="sol">
+<p class="work">ω = (μ_v − μ_r)/(μ_y − 1)
+  = (1.523 − 1.514)/(1.517 − 1)
+  = 0.009/0.517 = 0.0174
+
+angular dispersion = (μ_v − μ_r)A
+  = 0.009 × 60° = 0.54°
+
+mean deviation = (μ_y − 1)A = 0.517 × 60° = 31.0°</p>
+<p>Note the distinction: angular dispersion is the angle <em>between</em> the violet and red rays (0.54°), while dispersive power is the ratio of that spread to the mean deviation — a pure number that characterises the material. A glass with high dispersion but low deviation (flint) is exactly what an achromatic combination needs.</p>
+<p class="ans">ω = 0.017 and angular dispersion = 0.54° across a 60° prism (mean deviation 31°).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Derivation] Derive the condition for an achromatic combination of two thin prisms.</p>
+<div class="sol">
+<p class="work">Deviation of each prism:  δ = (μ − 1)A
+Dispersion of each:       dδ = (μ_v − μ_r)A = ω(μ_y − 1)A = ωδ
+
+For the combination to be achromatic the net dispersion must vanish:
+  ω₁δ₁ + ω₂δ₂ = 0
+
+For a net deviation δ_net = δ₁ + δ₂ ≠ 0 we need the second prism to deviate the
+other way, so δ₂ is negative:
+  ω₁δ₁ = ω₂|δ₂|
+  ⇒  |δ₂|/δ₁ = ω₁/ω₂
+
+In focal lengths (thin prisms used as lenses):
+  ω₁/f₁ + ω₂/f₂ = 0  ⇒  f₂/f₁ = −ω₂/ω₁</p>
+<p>The condition says the two prisms must disperse in opposite directions with dispersions in proportion to their deviations — equivalently, the crown-glass component must be the more powerful one because its ω is smaller. This is the design principle of every achromatic doublet and of the achromatic prism combination in the syllabus.</p>
+<p class="ans">ω₁δ₁ + ω₂δ₂ = 0 with opposite deviations, i.e. |δ₂|/δ₁ = ω₁/ω₂ (or f₂/f₁ = −ω₂/ω₁ for lenses).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Graph reading] A graph of refractive index against wavelength gives μ = 1.520 at 400 nm, 1.517 at 550 nm and 1.512 at 700 nm. Find ω and describe the shape of the curve.</p>
+<div class="sol">
+<p class="work">ω = (μ_v − μ_r)/(μ_y − 1)
+  = (1.520 − 1.512)/(1.517 − 1)
+  = 0.008/0.517 = 0.0155
+
+The curve μ(λ) falls as λ increases — the normal dispersion of transparent media.
+It is steep in the blue/violet and flattens in the red, so equal wavelength intervals
+produce unequal changes in μ (that is why the blue end of a spectrum is spread out).</p>
+<p>The violet end deviates most because it has the largest μ; that is the whole explanation of “violet bends more than red” and of the colour order in a prism spectrum. Anomalous dispersion — μ rising with λ — occurs near an absorption band and is not the case here.</p>
+<p class="ans">ω ≈ 0.016; μ falls with increasing wavelength, steeply at the blue end and flattening in the red.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Combined concept] Explain the primary rainbow in terms of dispersion and total internal reflection, and say why the secondary bow has reversed colours.</p>
+<div class="sol">
+<p class="work">PRIMARY bow (deviation ≈ 42°):
+  refraction into the drop → ONE internal reflection → refraction out.
+  Violet emerges at about 40.6°, red at about 42.4°, so red is on the OUTSIDE.
+
+SECONDARY bow (deviation ≈ 51°, fainter):
+  refraction in → TWO internal reflections → refraction out.
+  The extra reflection reverses the order, so red is on the INSIDE.</p>
+<p>Dispersion is the angular separation of colours (μ_v &gt; μ_r); total internal reflection keeps the light inside the drop long enough for the separation to accumulate. The 42° geometry is why a rainbow always appears opposite the Sun and why it moves as you move — the angle, not the position, is what is fixed. The dark region between the bows (Alexander's band) arises because no ray emerges between 42° and 51°.</p>
+<p class="ans">One internal reflection gives the 42° primary bow with red outside; two reflections give the 51° secondary bow with the colours reversed and the intensity much lower.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Assertion–reason] <b>Assertion (A):</b> Violet light is deviated more than red light by a prism. <b>Reason (R):</b> The refractive index of glass is greater for violet than for red.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">D = (μ − 1)A for a thin prism, and μ_v &gt; μ_r, so D_v &gt; D_r.
+The spread is angular dispersion = (μ_v − μ_r)A.
+Since the frequency is unchanged on refraction, the difference is entirely in the
+speed: v_violet &lt; v_red in glass, so μ = c/v is larger for violet.</p>
+<p>This is normal dispersion, and it holds in the visible range for all ordinary transparent media. The blue sky, however, is not a prism effect: it is Rayleigh scattering, where intensity ∝ 1/λ⁴, so blue is scattered far more strongly than red. The distinction between dispersion (separation by refraction) and scattering (redirection by small particles) is a standard 2-mark question.</p>
+<p class="ans">Both true, R explains A: μ_v &gt; μ_r because violet travels slower in glass, so D = (μ − 1)A is larger for violet.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Experiment/observation table] In a spectrometer experiment the minimum deviations of the colours are measured with a 60° prism. Complete the table and find ω.</p>
+<table>
+<tr><th>Colour</th><th>D_m</th><th>μ = sin[(60+D_m)/2]/sin30°</th></tr>
+<tr><td>Red</td><td>37.0°</td><td>?</td></tr>
+<tr><td>Yellow</td><td>38.0°</td><td>?</td></tr>
+<tr><td>Violet</td><td>39.2°</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">μ = sin[(60 + D)/2]/0.500 = 2 sin[(60 + D)/2]
+
+Red:    2 sin48.5° = 2(0.749) = 1.498
+Yellow: 2 sin49.0° = 2(0.755) = 1.510
+Violet: 2 sin49.6° = 2(0.762) = 1.524
+
+ω = (μ_v − μ_r)/(μ_y − 1) = (1.524 − 1.498)/(1.510 − 1)
+  = 0.026/0.510 = 0.051</p>
+<p>A dispersive power of 0.051 is a flint-glass value, and it is consistent with the large spread in the table: μ falls by 0.026 from violet to red, about three times the 0.009 of the crown-glass example. Reporting ω together with the three μ values is the expected answer form — a bare number says nothing about the measurement.</p>
+<p class="ans">μ = 1.498, 1.510, 1.524 for red, yellow and violet; ω ≈ 0.051 — a flint glass, strongly dispersive.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Estimation and limiting case] A crown lens has ω₁ = 0.016 and f₁ = 20 cm. What focal length of flint glass (ω₂ = 0.032) makes the combination achromatic, and what is the combined focal length?</p>
+<div class="sol">
+<p class="work">Achromatic condition:  ω₁/f₁ + ω₂/f₂ = 0
+  0.016/20 + 0.032/f₂ = 0
+  ⇒  f₂ = −(ω₂/ω₁)f₁ = −(0.032/0.016)(20) = −40 cm
+
+Combined: 1/F = 1/20 + 1/(−40) = (2 − 1)/40 = 1/40  ⇒  F = +40 cm</p>
+<p>So a +20 cm crown and a −40 cm flint, cemented together, give a converging lens of 40 cm focal length with the colour spread cancelled. Note that the combination is weaker than the crown lens alone — the price of achromatism is reduced power, which is why a well-corrected objective needs a longer tube than a simple lens of the same aperture.</p>
+<p><b>Limiting case:</b> if the two glasses had identical ω (impossible in practice), the condition would force f₂ = −f₁, i.e. a zero-power combination — no achromat can be made from two glasses of the same dispersive power.</p>
+<p class="ans">f₂ = −40 cm; combined F = +40 cm, weaker than the crown alone but achromatic.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Dispersive power has the unit of degree.”<br>
+(ii) “The blue colour of the sky is due to dispersion in the atmosphere.”<br>
+(iii) “In a prism spectrum, red is deviated most because it has the longest wavelength.”<br>
+(iv) “Chromatic aberration can be removed by stopping down the lens.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — ω = (μ_v − μ_r)/(μ_y − 1) is a ratio of two refractive-index differences,
+     so it is a pure number (0.016, with no unit).
+(ii) FALSE — it is Rayleigh SCATTERING by molecules, with intensity ∝ 1/λ⁴. Dispersion in
+     air is far too weak to separate colours; scattering also explains the red sunset.
+(iii) FALSE — red is deviated LEAST because its μ is smallest. The order from least to most
+     deviation is red, orange, yellow, green, blue, violet.
+(iv) FALSE — stopping down reduces SPHERICAL aberration (marginal rays cut off) but leaves
+     chromatic aberration unchanged, because it comes from the material's dispersion on
+     the axis as well. Chromatic aberration needs an achromatic doublet or a different glass.
+      (Spherical aberration does depend on aperture, which is why stopping down helps there.)</p>
+<p>The pairing (iii)–(iv) is deliberate: both errors come from mixing up which aberration depends on what.</p>
+<p class="ans">(i) ω is dimensionless; (ii) it is scattering, ∝ 1/λ⁴; (iii) red is deviated least; (iv) stopping down fixes spherical, not chromatic, aberration.</p>
 </div>
 </div>
 

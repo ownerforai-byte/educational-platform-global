@@ -34,6 +34,7 @@
 <li>Exercise 15.4 — Relation between refractive indices of two media</li>
 <li>Exercise 15.5 — Lateral shift</li>
 <li>Exercise 15.6 — Total internal reflection and its applications</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -294,6 +295,148 @@ Diamond: sin C = 1/2.42 = 0.413 ⇒ C = 24.4°</p>
 <div class="sol">
 <p>Diamond's refractive index is very high (2.42), so its critical angle is only 24.4° — a very wide range of internal angles is therefore totally internally reflected. Light entering the diamond bounces several times inside before emerging through the top facets, and because the facets are cut at specific angles it emerges in concentrated flashes. Diamond also has high dispersion, so the flashes are split into colours.</p>
 <p class="ans">A small critical angle (24°) traps light through many internal reflections and the high dispersion splits it into colours — sparkle plus fire.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Refraction questions are ratio questions: μ = c/v = sin i/sin r = real depth/apparent depth = 1/sin C. The skill is choosing the right ratio and knowing which quantity does not change. The eight shapes follow.</p>
+
+<div class="item">
+<p class="q"><b>Q25.</b> [Multi-step numerical] A tank contains 12 cm of water (μ = 4/3) over a 6.0 cm thick glass slab (μ = 1.5). Find the apparent depth of the bottom as seen from directly above, and the total shift.</p>
+<div class="sol">
+<p class="work">For each layer, apparent depth = real depth/μ:
+  water: 12/(4/3) = 9.0 cm
+  glass: 6.0/1.5   = 4.0 cm
+  apparent depth  = 9.0 + 4.0 = 13 cm
+
+real depth = 18 cm  ⇒  shift = 18 − 13 = 5.0 cm
+
+Check by shifts: 12(1 − 3/4) + 6(1 − 2/3) = 3.0 + 2.0 = 5.0 cm ✓</p>
+<p>Layers add in <em>apparent depth</em>, not in shift-per-unit-thickness, and each layer uses its own μ — the two common errors are to add the shifts as if the mediums were the same and to use a single combined μ. The observer sees the bottom 5 cm higher than it really is.</p>
+<p class="ans">Apparent depth 13 cm from the surface, i.e. the bottom appears raised by 5.0 cm.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Derivation] Derive the relation between real depth and apparent depth for an object viewed normally from above.</p>
+<div class="sol">
+<p class="work">Let O be the object at real depth d, and O′ its image at apparent depth d′.
+A ray from O meets the surface at P with angle of incidence i in the medium and
+refracts into air at angle r.
+
+For near-normal viewing both angles are small:
+  tan i ≈ sin i ≈ 1/μ × sin r  … and geometry gives
+  tan i = x/d,   tan r = x/d′   (x = horizontal distance of P from the normal)
+
+⇒ d′/d = tan i/tan r ≈ sin i/sin r = 1/μ
+
+  d′ = d/μ</p>
+<p>The derivation makes the small-angle assumption explicit: for oblique viewing the image is not simply raised but also displaced sideways, and the simple ratio fails. In the NEB examination the phrase “viewed from directly above” is the signal that d′ = d/μ applies.</p>
+<p class="ans">d′ = d/μ from tan i/tan r ≈ sin i/sin r; the result holds only for near-normal viewing.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Graph reading] A graph of sin i against sin r for a ray entering a medium is a straight line of slope 1.50. Find the refractive index, the speed of light in the medium, and the critical angle.</p>
+<div class="sol">
+<p class="work">Snell's law: sin i = μ sin r, so slope = μ = 1.50
+
+  v = c/μ = 3.00 × 10⁸/1.50 = 2.0 × 10⁸ m s⁻¹
+
+  sin C = 1/μ = 1/1.50 = 0.667  ⇒  C = 41.8°</p>
+<p>The critical angle exists only for the denser-to-rarer direction: at i = C the refracted ray grazes the surface (r = 90°), and beyond C there is no refracted ray at all. The same μ gives both results, which is why one measurement of the slope settles the speed and the critical angle in one go.</p>
+<p class="ans">μ = 1.50 from the slope; v = 2.0 × 10⁸ m s⁻¹; C = 41.8°.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Combined concept] An optical fibre has core μ = 1.50 and cladding μ = 1.45. Find the critical angle at the core–cladding boundary and the maximum angle at which light can enter the fibre face and still be guided.</p>
+<div class="sol">
+<p class="work">At the core–cladding boundary (core is denser):
+  sin C = n_clad/n_core = 1.45/1.50 = 0.967  ⇒  C = 75.1°
+
+Acceptance angle at the end face (air to core):
+  n₀ sin θ₀ = √(n_core² − n_clad²)
+  sin θ₀ = √(2.250 − 2.1025) = √0.1475 = 0.384
+  θ₀ = 22.6°</p>
+<p>So the fibre accepts a cone of half-angle 22.6° — the numerical aperture is 0.384. Light entering within that cone strikes the core-cladding wall at more than 75.1° and is totally internally reflected along the fibre. Increase the core–cladding difference and the acceptance cone widens, which is why multimode fibres use a larger step in μ but lose more light per metre.</p>
+<p class="ans">C = 75.1°; acceptance half-angle 22.6° (numerical aperture 0.384).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Assertion–reason] <b>Assertion (A):</b> A coin at the bottom of a tank of water appears raised. <b>Reason (R):</b> Rays from the coin bend away from the normal as they leave the water, so they appear to come from a point nearer the surface.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Water (μ = 4/3) to air: the ray bends AWAY from the normal
+  sin r = μ sin i &gt; sin i  ⇒  r &gt; i
+
+Back-extending the emergent ray meets the vertical through the coin above the true coin:
+  apparent depth = real depth/μ = 30/1.333 = 22.5 cm for a 30 cm tank
+  the coin looks 7.5 cm higher than it is</p>
+<p>The same reasoning explains why a pool looks shallower than it is (and why it is dangerous to dive into a pool whose depth you judged by eye), why a stick in water looks bent at the surface, and why the underwater part of a fish looks closer to the surface than the fish's real position.</p>
+<p class="ans">Both true, R explains A: refraction away from the normal on emerging makes the coin appear raised by real depth × (1 − 1/μ).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Experiment/observation table] In a glass-slab experiment the following readings are taken. Complete the last column, find μ, and state the lateral shift for a 5.0 cm slab.</p>
+<table>
+<tr><th>i</th><th>r</th><th>sin i</th><th>sin r</th><th>μ = sin i/sin r</th></tr>
+<tr><td>30°</td><td>19.5°</td><td>0.500</td><td>0.334</td><td>?</td></tr>
+<tr><td>45°</td><td>28.1°</td><td>0.707</td><td>0.471</td><td>?</td></tr>
+<tr><td>60°</td><td>35.3°</td><td>0.866</td><td>0.578</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">μ = 0.500/0.334 = 1.497
+    0.707/0.471 = 1.501
+    0.866/0.578 = 1.498
+  mean μ = 1.50
+
+Lateral shift (t = 5.0 cm, i = 45°, r = 28.1°):
+  x = t sin(i − r)/cos r = 5.0 × sin(16.9°)/cos(28.1°)
+    = 5.0 × 0.291/0.882 = 1.65 cm</p>
+<p>The emergent ray is parallel to the incident ray (both faces are parallel, so the two refractions cancel in direction) but displaced sideways — the defining property of a parallel-sided slab, and the reason a thick window pane makes objects look shifted rather than bent. μ is constant across the three rows, which is the verification of Snell's law.</p>
+<p class="ans">μ = 1.50 from every row; lateral shift 1.65 cm for a 5 cm slab at 45°.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Estimation and limiting case] Estimate the critical angle for water (μ = 4/3) and for diamond (μ = 2.42), and state the limiting cases i → C and i → 0.</p>
+<div class="sol">
+<p class="work">water:    sin C = 3/4 = 0.750  ⇒  C = 48.6°
+ diamond:  sin C = 1/2.42 = 0.413 ⇒  C = 24.4°
+
+Compare glass (μ = 1.5): C = 41.8°, and air (μ ≈ 1): no critical angle at all.</p>
+<p><b>Limiting cases:</b></p>
+<p class="work">i → 0      r → 0: no bending, the ray passes straight through (normal incidence)
+i → C      r → 90°: the refracted ray grazes the surface — the onset of TIR
+i &gt; C      no refracted ray exists; all the light is reflected internally
+μ₂ &gt; μ₁    C does not exist: light bends TOWARDS the normal and cannot be trapped</p>
+<p>Diamond's small critical angle (24.4°) is why it sparkles: light entering the stone is trapped and bounces many times before escaping through a facet, and the wide angle between the facets cuts it into brilliant flashes. Water's larger 48.6° is why a fish's window of the sky above is a narrow cone.</p>
+<p class="ans">C = 48.6° for water and 24.4° for diamond; at i → C the ray grazes, at i → 0 there is no deviation, and TIR is impossible going into a denser medium.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Refractive index has the unit m s⁻¹.”<br>
+(ii) “Total internal reflection occurs when light passes from a rarer to a denser medium.”<br>
+(iii) “When light enters glass, its frequency changes.”<br>
+(iv) “A ray incident normally on a glass slab is deviated.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — μ = c/v is a ratio of two speeds, so it is dimensionless (1.5, not 1.5 m s⁻¹).
+(ii) FALSE — TIR needs the DENSER-to-RARER direction (glass to air), otherwise there is no
+     angle for which r reaches 90°.
+(iii) FALSE — frequency is set by the source and does not change on refraction; it is the
+     WAVELENGTH (and speed) that change: λ_glass = λ_air/μ. Colour, which depends on
+     frequency, therefore does not change.
+(iv) FALSE — a ray along the normal has i = 0, so r = 0: it passes straight through with no
+     deviation (because sin i = μ sin r gives r = 0).</p>
+<p>Statement (iii) is the one that costs marks in the dispersion chapter later: since frequency is constant, a single colour cannot be split by refraction — only the different μ values separate the colours.</p>
+<p class="ans">(i) μ is dimensionless; (ii) denser to rarer; (iii) frequency is unchanged, λ and v change; (iv) normal incidence is undeviated.</p>
 </div>
 </div>
 

@@ -35,6 +35,7 @@
 <li>Exercise 17.5 — Power of a lens</li>
 <li>Exercise 17.6 — Combination of thin lenses in contact</li>
 <li>Exercise 17.7 — The lens maker's formula</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -374,6 +375,142 @@ P = 1/0.12 = +8.3 D</p>
 <div class="sol">
 <p>Yes. If the surrounding medium has n greater than 1.5 — for example carbon disulphide, n = 1.63 — then the relative refractive index is less than 1. The lens, which is thicker at the centre, then slows its central rays less than its edges, so it diverges: its focal length changes sign. A biconvex glass lens in such a liquid behaves as a diverging lens.</p>
 <p class="ans">If n_surround &gt; n_lens the sign of f reverses, so a biconvex lens acts as a diverging lens.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Lens questions use one formula with a sign convention, plus power. The eight shapes below include the maker's formula, the combination rule with separation, and the magnifying-glass limit.</p>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Multi-step numerical] An object is 30 cm from a convex lens of focal length 20 cm. Find the image position, its nature, the magnification and the power of the lens.</p>
+<div class="sol">
+<p class="work">1/v − 1/u = 1/f   with u = −30 cm, f = +20 cm
+  1/v = 1/20 + 1/(−30) = (3 − 2)/60 = 1/60
+  v = +60 cm   (real, on the other side)
+
+  m = v/u = 60/(−30) = −2   (inverted, 2× enlarged)
+
+  P = 1/f = 1/0.20 = +5.0 D</p>
+<p>The object lies between f and 2f, so the image is beyond 2f — the projector arrangement. Two independent checks: a real image has positive v, and |m| = v/u = 2 with the image twice as far as the object. Power is quoted in dioptres (m⁻¹), so f must be in metres, and the sign of P follows the sign of f.</p>
+<p class="ans">v = +60 cm (real, inverted, 2× enlarged); P = +5.0 D.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Derivation] Derive the lens maker's formula for a thin lens.</p>
+<div class="sol">
+<p class="work">Refraction at the first surface (radius R₁) forms an intermediate image I₁:
+  μ₂/v₁ − μ₁/u = (μ₂ − μ₁)/R₁
+Refraction at the second surface (radius R₂) uses I₁ as its object:
+  μ₁/v − μ₂/v₁ = (μ₁ − μ₂)/R₂
+
+Adding the two equations eliminates v₁:
+  μ₁/v − μ₁/u = (μ₂ − μ₁)(1/R₁ − 1/R₂)
+
+With μ₁ = 1 (air), μ₂ = μ:
+  1/v − 1/u = (μ − 1)(1/R₁ − 1/R₂)
+
+Since 1/v − 1/u = 1/f:
+  1/f = (μ − 1)(1/R₁ − 1/R₂)</p>
+<p>The formula explains three examinable facts at once: the focal length depends on the material (μ − 1), on the curvatures (R₁, R₂) and on nothing else — not on the size of the lens. It also shows why a lens in water has a longer focal length: μ_rel becomes 1.5/1.33, so (μ − 1) drops from 0.5 to 0.128 and f grows about fourfold.</p>
+<p class="ans">Adding the two surface refractions gives 1/f = (μ − 1)(1/R₁ − 1/R₂) — f depends on material and curvature only.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Graph reading] For a convex lens, a graph of 1/v against 1/u is a straight line of slope −1 with intercept 0.050 cm⁻¹. (a) Find f. (b) A pair of readings gives u = −30 cm, v = +60 cm. Does it lie on the line?</p>
+<div class="sol">
+<p class="work">(a) 1/v − 1/u = 1/f  ⇒  intercept = 1/f = 0.050 cm⁻¹
+    f = 1/0.050 = 20 cm
+
+(b) 1/v = 1/60 = 0.0167,   1/u = −1/30 = −0.0333
+    1/v − 1/u = 0.0167 + 0.0333 = 0.0500  ✓ on the line</p>
+<p>The line is 1/v = 1/u + 1/f, i.e. y = x + 1/f, so the slope is +1 in this arrangement and the intercept is 1/f — the sign of the slope depends on which way the convention is applied, which is why NEB answers usually plot 1/v against 1/u with u measured positive and quote the intercept. The single-pair method cannot detect a systematic error; the graph can.</p>
+<p class="ans">Intercept 0.050 cm⁻¹ → f = 20 cm; the (30, 60) pair satisfies 1/v − 1/u = 0.050 exactly.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Combined concept] A convex lens of f₁ = 10 cm is in contact with a concave lens of f₂ = −15 cm. Find the combined focal length and power. Then find the focal length if they are separated by 5.0 cm.</p>
+<div class="sol">
+<p class="work">In contact:
+  1/F = 1/f₁ + 1/f₂ = 1/10 − 1/15 = (3 − 2)/30 = 1/30
+  F = +30 cm,  P = 100/30 = +3.3 D
+
+Separated by d = 5.0 cm:
+  1/F = 1/f₁ + 1/f₂ − d/(f₁f₂)
+      = 1/30 − 5.0/(10 × (−15))
+      = 0.0333 + 0.0333 = 0.0667
+  F = 15 cm</p>
+<p>Separation changes the answer by a factor of two here — a 15 cm separation is not a small perturbation. The rule is: lenses in contact simply add in power, while separated lenses lose part of the addition because the second lens sees a converging (or diverging) beam rather than parallel light. This is why the eyepiece of a telescope must be positioned at a specific distance, not just chosen with the right focal length.</p>
+<p class="ans">In contact F = +30 cm (P = +3.3 D); separated by 5 cm, F = 15 cm — the −d/f₁f₂ term matters.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Assertion–reason] <b>Assertion (A):</b> A convex lens can form a virtual image. <b>Reason (R):</b> When the object lies within the focal length, the refracted rays diverge and only their backward extensions meet.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">f = +10 cm, u = −5 cm:
+  1/v = 1/10 − 1/5 = (1 − 2)/10 = −0.10
+  v = −10 cm   (virtual, on the same side as the object)
+  m = v/u = −10/(−5) = +2   (erect, magnified)</p>
+<p>That is the magnifying glass. The rays leaving the lens are diverging, so no screen can catch the image; the eye sees an enlarged virtual object behind the lens. The same formula covers the real case (u beyond f), the virtual case (u inside f) and the parallel case (u = f, image at infinity), which is why the sign convention is the whole method.</p>
+<p class="ans">Both true, R explains A: inside the focus v is negative and the diverging rays only appear to meet — the magnifier case.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Experiment/observation table] In a lens experiment the following u–v pairs are measured. Complete the last column, find f, and state the pair that is easiest to measure accurately.</p>
+<table>
+<tr><th>u (cm)</th><th>v (cm)</th><th>f = uv/(u + v) (cm)</th></tr>
+<tr><td>60.0</td><td>30.0</td><td>?</td></tr>
+<tr><td>40.0</td><td>40.0</td><td>?</td></tr>
+<tr><td>30.0</td><td>60.0</td><td>?</td></tr>
+<tr><td>25.0</td><td>100.0</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">f = uv/(u + v):
+  60 × 30/90  = 20.0 cm
+  40 × 40/80  = 20.0 cm
+  30 × 60/90  = 20.0 cm
+  25 × 100/125 = 20.0 cm</p>
+<p>The u = v = 40 cm pair is the most reliable: the image and object are then equidistant from the lens (u = v = 2f), so a positional error in either favours neither, and the image is neither at infinity nor extremely small. The (25, 100) pair has a large magnification (4×), so the image is dim and its position is hard to judge — a good example of why “more extreme” does not mean “more accurate” in this experiment.</p>
+<p class="ans">f = 20.0 cm from all four pairs; the u = v = 2f row is the most reliable.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Estimation and limiting case] Find the angular magnification of a magnifying glass of focal length 5.0 cm when the image is at the near point (D = 25 cm) and when the image is at infinity. Then state the limit as f → 0.</p>
+<div class="sol">
+<p class="work">Image at near point:  M = 1 + D/f = 1 + 25/5 = 6
+Image at infinity:   M = D/f = 25/5 = 5
+
+(relaxed viewing gives 5×; the extra 1 comes from the eye's own accommodation)</p>
+<p><b>Limit f → 0:</b> M → ∞, but the lens diameter cannot exceed a few centimetres, so the usable field collapses to a point and the aberrations grow without bound. In practice simple magnifiers stop at about 20× (f ≈ 1.2 cm); beyond that one uses a compound microscope, whose objective supplies the extra magnification without needing a tiny single lens.</p>
+<p>This is the standard example of a physical limit met by geometry: magnification can be increased either by shortening f or by adding a second lens, and the second route is the only one that keeps the field of view usable.</p>
+<p class="ans">M = 6 with the image at the near point, 5 with it at infinity; as f → 0 magnification diverges but field and aberration limits stop it near 20×.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q35.</b> [Error-hunting] Correct each false statement.<br>
+(i) “The power of a concave lens is positive.”<br>
+(ii) “A lens of focal length 20 cm has power 20 D.”<br>
+(iii) “The focal length of a glass lens is the same in water as in air.”<br>
+(iv) “A convex lens always forms a real image.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — a concave (diverging) lens has negative focal length, hence NEGATIVE power,
+     e.g. −5 D for f = −20 cm.
+(ii) FALSE — P = 1/f with f in METRES: P = 1/0.20 = +5.0 D (not 20 D).
+(iii) FALSE — 1/f = (μ − 1)(1/R₁ − 1/R₂); in water μ_rel = 1.5/1.33 = 1.13, so (μ − 1)
+     falls from 0.5 to 0.13 and f becomes about four times longer.
+(iv) FALSE — inside the focal length the image is virtual (the magnifier case); and a convex
+     lens used with an object at f gives no image at all (rays parallel).</p>
+<p>Statements (ii) and (iv) are the two most frequent errors, and both come from skipping the units or the sign convention.</p>
+<p class="ans">(i) concave → negative power; (ii) P = 5.0 D, f in metres; (iii) f grows in water; (iv) a convex lens gives a virtual image inside f.</p>
 </div>
 </div>
 
