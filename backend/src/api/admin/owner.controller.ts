@@ -420,6 +420,77 @@ router.post("/users/revoke-all", requireAuth, async (req: Request, res: Response
 });
 
 /**
+ * POST /api/owner/users/member-baseline-all
+ * Reset every non-owner profile to ACTIVE member (fresh baseline). Owner
+ * accounts and the community bot profile are skipped.
+ */
+router.post("/users/member-baseline-all", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  try {
+    const { data, error } = await supabaseAdmin
+      .from("profiles")
+      .select("id, role, access_status, plan, premium_status")
+      .limit(5000);
+
+    if (error) {
+      console.error("[owner] member-baseline-all list failed:", error.message);
+      res.status(500).json({ error: "Failed to list profiles" });
+      return;
+    }
+
+    const emails = await authEmailsById();
+    const applied: string[] = [];
+    const skipped: Array<{ userId: string; reason: string }> = [];
+
+    for (const row of data ?? []) {
+      const userId = String(row.id);
+      if (userId === "rn-study-assistant") {
+        skipped.push({ userId, reason: "Community bot profile" });
+        continue;
+      }
+      const email = emails.get(userId) ?? null;
+      if (email && isOwnerEmail(email)) {
+        skipped.push({ userId, reason: "Owner email — kept" });
+        continue;
+      }
+      if (typeof row.role === "string" && row.role.toLowerCase() === "owner") {
+        skipped.push({ userId, reason: "Owner role — kept" });
+        continue;
+      }
+
+      const { error: updErr } = await updateProfileFields(userId, {
+        access_status: "ACTIVE",
+        role: "member",
+        plan: "member",
+        premium_status: false,
+      });
+
+      if (updErr) {
+        skipped.push({ userId, reason: "Update failed" });
+        continue;
+      }
+      applied.push(userId);
+    }
+
+    console.info(
+      `[owner] member-baseline-all by ${owner.user.email}: reset ${applied.length}, skipped ${skipped.length}`,
+    );
+
+    res.json({
+      success: true,
+      reset: applied.length,
+      applied,
+      skipped,
+    });
+  } catch (err: any) {
+    console.error("[owner] member-baseline-all error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
  * POST /api/owner/users/bulk-status
  * Approve or revoke access for up to 100 accounts in one call.
  */

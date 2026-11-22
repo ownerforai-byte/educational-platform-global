@@ -86,9 +86,8 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
   const copy = useCallback(
     async (id: string) => {
       await copyLink(id);
-      showCelebration("shared", id);
     },
-    [copyLink, showCelebration],
+    [copyLink],
   );
   const { savedIds, savedCount, isSaved, reconcile: reconcileSaved } = useSavedPosts(user?.id);
 

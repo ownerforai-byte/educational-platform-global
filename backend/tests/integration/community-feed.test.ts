@@ -42,7 +42,7 @@ const memory = vi.hoisted(() => {
         id: "rn-study-assistant",
         role: "assistant",
         access_status: "ACTIVE",
-        full_name: "Community bot",
+        full_name: "Veer AI",
         username: "community-bot",
         plan: "pro",
         premium_status: false,
@@ -552,7 +552,7 @@ describe("community feed", () => {
       assistantReply: { posted: boolean; canApprove: boolean };
     };
     expect(publishedBody.comment.author.id).toBe("rn-study-assistant");
-    expect(publishedBody.comment.author.fullName).toBe("Community bot");
+    expect(publishedBody.comment.author.fullName).toBe("Veer AI");
     expect(publishedBody.comment.author.role).toBe("assistant");
     expect(publishedBody.comment.body).toContain("assistant");
     expect(publishedBody.assistantReply).toEqual({ posted: true, canApprove: false });
@@ -891,7 +891,7 @@ describe("community feed", () => {
     expect(publishedBody.comment.parentId).toBeNull();
     expect(publishedBody.comment.replyTo).toMatchObject({ id: USER_ID, fullName: "Member Student" });
 
-    // (d) A human follow-up threads under the bot comment ("Replying to @Community bot").
+    // (d) A human follow-up threads under the bot comment ("Replying to @Veer AI").
     const followUp = await fetch(`${base}/feed/${postId}/comments`, {
       method: "POST",
       headers: { Authorization: "Bearer other-token", "Content-Type": "application/json" },
@@ -909,7 +909,7 @@ describe("community feed", () => {
     expect(followUpBody.comment.parentId).toBe(publishedBody.comment.id);
     expect(followUpBody.comment.replyTo).toMatchObject({
       id: "rn-study-assistant",
-      fullName: "Community bot",
+      fullName: "Veer AI",
       username: "community-bot",
     });
 
@@ -943,7 +943,7 @@ describe("community feed", () => {
     });
     expect(detail.find((comment) => comment.id === humanCommentId)).toMatchObject({
       parentId: publishedBody.comment.id,
-      replyTo: { id: "rn-study-assistant", fullName: "Community bot", username: "community-bot" },
+      replyTo: { id: "rn-study-assistant", fullName: "Veer AI", username: "community-bot" },
     });
     expect(detail.find((comment) => comment.id === plainBody.comment.id)).toMatchObject({
       parentId: null,

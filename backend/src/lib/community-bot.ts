@@ -7,7 +7,7 @@ export const COMMUNITY_BOT_ID = "rn-study-assistant";
 
 export const COMMUNITY_BOT_USERNAME = "community-bot";
 
-export const COMMUNITY_BOT_DISPLAY_NAME = "Community bot";
+export const COMMUNITY_BOT_DISPLAY_NAME = "Veer AI";
 
 export const COMMUNITY_BOT_AVATAR_URL = "/avatars/community-bot.svg";
 
@@ -19,7 +19,7 @@ export function isCommunityBotId(id: string): boolean {
 
 /** True when the text tags the community bot, e.g. `@community-bot`. */
 export function mentionsCommunityBot(text: string): boolean {
-  return /(?:^|[^\w@])@community-bot\b/i.test(text);
+  return /(?:^|[^\w@])@(?:community-bot|veer(?:-ai)?)\b/i.test(text);
 }
 
 /** @deprecated Use {@link isCommunityBotId} */

@@ -45,6 +45,7 @@ import {
 } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
 import { COMMUNITY_BOT_USERNAME } from "@/lib/community-bot";
+import { useCommunityMentionSuggest } from "@/features/community/community-mention-suggest";
 import {
   AlertCircle,
   AtSign,
@@ -95,6 +96,8 @@ export function PostComposer({
 
   const [title, setTitle] = useState(initial?.title ?? "");
   const [body, setBody] = useState(initial?.body ?? "");
+  const { mentionPanel, syncFromTextarea, onTextareaBlur, openFromAtButton, insertBotMention } =
+    useCommunityMentionSuggest({ body, setBody, textareaRef: bodyRef });
   const [category, setCategory] = useState(initial?.category ?? "general");
   const [postKind, setPostKind] = useState<CommunityPostKind>(initial?.kind ?? "discussion");
   const [editorTab, setEditorTab] = useState<"write" | "preview">("write");
@@ -164,15 +167,12 @@ export function PostComposer({
     return () => window.clearTimeout(timer);
   }, [title, body, category, draftRouteKey, initial, mode]);
 
-  const botTag = `@${COMMUNITY_BOT_USERNAME}`;
-  const tagged = new RegExp(`(?:^|[^\\w@])${botTag}\\b`, "i").test(body);
+  const tagged = /@(?:community-bot|veer(?:-ai)?)\b/i.test(body);
 
   function tagBot() {
     if (tagged) return;
-    const next = body.trim().length ? `${body.trimEnd()}\n\n${botTag} ` : `${botTag} `;
-    setBody(next);
+    insertBotMention();
     setEditorTab("write");
-    requestAnimationFrame(() => bodyRef.current?.focus());
   }
 
   function insertMarkup(before: string, after = "") {
@@ -499,10 +499,10 @@ export function PostComposer({
               className={cn(toolbarBtn, "min-h-11", tagged && "bg-primary/12 text-primary")}
               aria-label="Tag bot"
               aria-pressed={tagged}
-              onClick={tagBot}
+              onClick={() => (tagged ? tagBot() : openFromAtButton())}
             >
               <AtSign className="h-3.5 w-3.5" aria-hidden />
-              Tag bot
+              Mention
             </button>
           </div>
         ) : null}
@@ -516,12 +516,19 @@ export function PostComposer({
       ) : null}
 
       {editorTab === "write" ? (
-        <label className="block text-sm">
+        <label className="relative block text-sm">
           <span className="mb-1.5 block text-[13px] font-medium text-muted-foreground">Body</span>
+          {mentionPanel}
           <textarea
             ref={bodyRef}
             value={body}
-            onChange={(event) => setBody(event.target.value)}
+            onChange={(event) => {
+              setBody(event.target.value);
+              syncFromTextarea();
+            }}
+            onKeyUp={syncFromTextarea}
+            onClick={syncFromTextarea}
+            onBlur={onTextareaBlur}
             onKeyDown={(event) => {
               if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
                 event.preventDefault();
@@ -531,7 +538,7 @@ export function PostComposer({
             rows={7}
             maxLength={20000}
             required
-            placeholder="Write anything. Tag @community-bot and it replies on this post."
+            placeholder="Write anything. Type @ to tag Veer AI (@community-bot) for a reply."
             aria-label="Body"
             className={cn(inputClass, "min-h-[10rem] resize-y text-base sm:text-sm")}
           />

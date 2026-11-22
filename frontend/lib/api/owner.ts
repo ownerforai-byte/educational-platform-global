@@ -219,6 +219,16 @@ export function revokeAllOwnerAccess(): Promise<{
   return apiFetch("/api/owner/users/revoke-all", { method: "POST" });
 }
 
+/** Reset all non-owner accounts to ACTIVE member plan (owner upgrades later). */
+export function resetAllUsersToMemberBaseline(): Promise<{
+  success: true;
+  reset: number;
+  applied: string[];
+  skipped: Array<{ userId: string; reason: string }>;
+}> {
+  return apiFetch("/api/owner/users/member-baseline-all", { method: "POST" });
+}
+
 export function getOwnerPremiumRequests(): Promise<OwnerPremiumRequest[]> {
   return apiFetch<OwnerPremiumRequest[]>("/api/owner/premium-requests");
 }

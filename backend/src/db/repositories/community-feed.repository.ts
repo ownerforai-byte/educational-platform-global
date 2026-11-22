@@ -29,3 +29,39 @@ export async function deleteCommunityFeedPostsByAuthor(
     deleted: count ?? null,
   };
 }
+
+export type CommunityPostBotBackfillRow = {
+  id: string;
+  author_id: string;
+  title: string;
+  body: string;
+  category: string;
+};
+
+export async function listRecentCommunityPostsForBotBackfill(
+  fetchLimit: number,
+): Promise<{ data: CommunityPostBotBackfillRow[] | null; error: { message: string } | null }> {
+  const { data, error } = await getAdminClient()
+    .from("community_feed_posts")
+    .select("id, author_id, title, body, category")
+    .order("created_at", { ascending: false })
+    .limit(fetchLimit);
+  return {
+    data: (data as CommunityPostBotBackfillRow[] | null) ?? null,
+    error: error ? { message: error.message ?? "select failed" } : null,
+  };
+}
+
+export async function communityPostHasBotComment(
+  postId: string,
+  botAuthorId: string,
+): Promise<boolean> {
+  const { data, error } = await getAdminClient()
+    .from("community_feed_comments")
+    .select("id")
+    .eq("post_id", postId)
+    .eq("author_id", botAuthorId)
+    .limit(1);
+  if (error) return true;
+  return (data ?? []).length > 0;
+}

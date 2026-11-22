@@ -20,7 +20,8 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import type { AddressInfo } from "node:net";
 import type { Server } from "node:http";
-import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
+import { restoreAccessApprovalEnv, stubAccessApprovalRequired } from "../helpers/access-approval-env";
 
 interface Row {
   [key: string]: unknown;
@@ -215,9 +216,14 @@ beforeAll(async () => {
 afterAll(() => new Promise<void>((resolve, reject) => server.close((err) => (err ? reject(err) : resolve()))));
 
 beforeEach(() => {
+  stubAccessApprovalRequired();
   state.reset();
   resetDeviceSignupMemory();
   token.verify.mockReset();
+});
+
+afterEach(() => {
+  restoreAccessApprovalEnv();
 });
 
 const NEW_UID = "uid-new-student-1";

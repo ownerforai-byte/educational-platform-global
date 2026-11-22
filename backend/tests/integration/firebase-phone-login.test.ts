@@ -1,5 +1,6 @@
 import type { Express } from "express";
-import { afterAll, beforeAll, beforeEach, describe, expect, test, vi, type Mock } from "vitest";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, test, vi, type Mock } from "vitest";
+import { restoreAccessApprovalEnv, stubAccessApprovalRequired } from "../helpers/access-approval-env";
 
 const PHONE_TOKEN = "firebase-phone-id-token";
 const PHONE_UID = "firebasePhoneUid12345678";
@@ -118,6 +119,7 @@ let server: ReturnType<Express["listen"]>;
 let baseUrl: string;
 
 beforeEach(() => {
+  stubAccessApprovalRequired();
   vi.clearAllMocks();
   mocked.from.mockReset();
   mocked.from.mockImplementation(() => makeQueryChain({ data: [], error: null }));
@@ -130,6 +132,10 @@ beforeEach(() => {
     emailVerified: false,
     providerIds: ["phone"],
   });
+});
+
+afterEach(() => {
+  restoreAccessApprovalEnv();
 });
 
 beforeAll(async () => {

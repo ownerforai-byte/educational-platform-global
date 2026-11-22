@@ -9,6 +9,7 @@ import {
   FileText,
   Heart,
   ImageIcon,
+  Link2,
   MessageCircle,
   Paperclip,
   Pencil,
@@ -173,19 +174,6 @@ export const FeedPostRow = memo(function FeedPostRow({
   const savedNow = Boolean(saved || item.savedByYou);
 
   const warm = () => onPrefetch?.(item.id);
-
-  async function sharePost() {
-    const url = `${window.location.origin}${postHref}`;
-    if (typeof navigator !== "undefined" && navigator.share) {
-      try {
-        await navigator.share({ title: item.title, url });
-        return;
-      } catch (error) {
-        if ((error as DOMException)?.name === "AbortError") return;
-      }
-    }
-    onCopyLink(item.id);
-  }
 
   return (
     <article
@@ -383,15 +371,15 @@ export const FeedPostRow = memo(function FeedPostRow({
 
           <button
             type="button"
-            onClick={() => void sharePost()}
-            aria-label={copied ? "Link copied" : "Share post"}
+            onClick={() => onCopyLink(item.id)}
+            aria-label={copied ? "Link copied" : "Copy post link"}
             className={cn(
               actionBtn,
               "min-h-11 min-w-11 justify-center px-2 text-muted-foreground hover:bg-muted/70 hover:text-foreground",
               copied && "text-primary",
             )}
           >
-            {copied ? <Check className="h-4 w-4" aria-hidden /> : <Share2 className="h-4 w-4" aria-hidden />}
+            {copied ? <Check className="h-4 w-4" aria-hidden /> : <Link2 className="h-4 w-4" aria-hidden />}
           </button>
 
           {canEditPost ? (

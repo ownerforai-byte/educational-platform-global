@@ -38,6 +38,7 @@ import {
   setOwnerUserAccessStatus,
   bulkOwnerUserAccessStatus,
   revokeAllOwnerAccess,
+  resetAllUsersToMemberBaseline,
 } from "@/lib/api/owner";
 import type { OwnerUser, OwnerUserDetail } from "@/lib/api/owner";
 import { useOwnerUserDirectory } from "@/lib/hooks/use-owner-user-directory";
@@ -228,6 +229,7 @@ export default function OwnerUsersPage() {
   const [bulkTier, setBulkTier] = useState<GrantableTier>("plus");
   const [approvalTier, setApprovalTier] = useState<GrantableTier>("member");
   const [revokeBusy, setRevokeBusy] = useState(false);
+  const [baselineBusy, setBaselineBusy] = useState(false);
   const switchSystem = useCallback((next: OwnerSystem) => {
     setSelected(new Set());
     setSystem(next);
@@ -456,6 +458,27 @@ export default function OwnerUsersPage() {
     }
   };
 
+  const resetEveryoneToMember = async () => {
+    if (
+      !window.confirm(
+        "Set every non-owner account to ACTIVE member?\n\nHigher tiers are cleared until you upgrade them again in this console.",
+      )
+    ) {
+      return;
+    }
+    setBaselineBusy(true);
+    try {
+      const res = await resetAllUsersToMemberBaseline();
+      toast.success(`Reset ${res.reset} account(s) to member baseline.`);
+      setSelected(new Set());
+      reload();
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Member baseline reset failed");
+    } finally {
+      setBaselineBusy(false);
+    }
+  };
+
   const revokeEveryoneExceptOwner = async () => {
     if (
       !window.confirm(
@@ -498,10 +521,19 @@ export default function OwnerUsersPage() {
         </div>
         <div className="flex flex-wrap gap-2">
           <Button
+            variant="outline"
+            size="sm"
+            onClick={resetEveryoneToMember}
+            disabled={isLoading || baselineBusy || revokeBusy || bulkBusy}
+          >
+            <Users className="h-4 w-4 mr-1" />
+            {baselineBusy ? "Resetting…" : "All → member baseline"}
+          </Button>
+          <Button
             variant="destructive"
             size="sm"
             onClick={revokeEveryoneExceptOwner}
-            disabled={isLoading || revokeBusy || bulkBusy}
+            disabled={isLoading || revokeBusy || bulkBusy || baselineBusy}
           >
             <AlertTriangle className="h-4 w-4 mr-1" />
             {revokeBusy ? "Revoking…" : "Revoke all except owner"}

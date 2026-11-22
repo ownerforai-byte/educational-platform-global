@@ -8,7 +8,8 @@ export const COMMUNITY_BOT_ID = "rn-study-assistant";
 
 export const COMMUNITY_BOT_USERNAME = "community-bot";
 
-export const COMMUNITY_BOT_DISPLAY_NAME = "Community bot";
+/** Public name on the community feed (Veer AI product, bot profile in threads). */
+export const COMMUNITY_BOT_DISPLAY_NAME = "Veer AI";
 
 /** Static asset served from `frontend/public/avatars/community-bot.svg`. */
 export const COMMUNITY_BOT_AVATAR_URL = "/avatars/community-bot.svg";

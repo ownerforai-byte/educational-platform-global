@@ -5,6 +5,7 @@ import { AlertCircle, Loader2, X } from "lucide-react";
 import type { FeedComment } from "@/lib/api/community-feed";
 import { isCommunityBot } from "@/lib/community-bot";
 import { cn } from "@/lib/utils";
+import { useCommunityMentionSuggest } from "@/features/community/community-mention-suggest";
 
 export interface CommentComposerProps {
   signedIn: boolean;
@@ -44,6 +45,11 @@ export function CommentComposer({
   const [posted, setPosted] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const { mentionPanel, syncFromTextarea, onTextareaBlur, openFromAtButton } = useCommunityMentionSuggest({
+    body,
+    setBody,
+    textareaRef,
+  });
 
   const handle = replyTo?.author.username || replyTo?.author.fullName || "";
   const answeringBot = Boolean(
@@ -125,8 +131,9 @@ export function CommentComposer({
             </button>
           </p>
         ) : null}
-        <label className="block">
+        <label className="relative block">
           <span className="sr-only">Post your reply</span>
+          {signedIn ? mentionPanel : null}
           <textarea
             ref={textareaRef}
             value={body}
@@ -138,7 +145,7 @@ export function CommentComposer({
                 ? "Sign in to reply"
                 : handle
                   ? `Reply to @${handle}`
-                  : "Post your reply"
+                  : "Post your reply — type @ for Veer AI"
             }
             aria-label="Post your reply"
             className="max-h-40 min-h-10 w-full resize-none border-0 bg-transparent py-2 text-[15px] leading-5 text-foreground outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed"
@@ -146,7 +153,11 @@ export function CommentComposer({
               setBody(event.target.value);
               if (localError) setLocalError(null);
               grow(event.currentTarget);
+              syncFromTextarea();
             }}
+            onKeyUp={syncFromTextarea}
+            onClick={syncFromTextarea}
+            onBlur={onTextareaBlur}
             onKeyDown={(event) => {
               if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
                 event.preventDefault();
@@ -176,7 +187,18 @@ export function CommentComposer({
             {localError}
           </p>
         ) : null}
-        <div className="flex items-center justify-end border-t border-border/70 pt-2">
+        <div className="flex items-center justify-between gap-2 border-t border-border/70 pt-2">
+          {signedIn ? (
+            <button
+              type="button"
+              onClick={openFromAtButton}
+              className="text-[12px] font-medium text-muted-foreground hover:text-primary"
+            >
+              @ Mention
+            </button>
+          ) : (
+            <span />
+          )}
           <button
             type="submit"
             disabled={submitting || !signedIn || !body.trim()}

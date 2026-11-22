@@ -34,7 +34,7 @@ import {
   signOut,
   AuthProviderError,
 } from "../../auth/supabase";
-import { ensureAuthProfile } from "../../services/auth-profile.js";
+import { alignNonOwnerToMemberBaseline, ensureAuthProfile } from "../../services/auth-profile.js";
 import { isAccessApprovalRequired, memberSignupAccessStatus } from "../../config/access-approval.js";
 import {
   SESSION_COOKIE,
@@ -588,6 +588,7 @@ router.post("/signup", async (req: Request, res: Response) => {
       return;
     }
 
+    await alignNonOwnerToMemberBaseline(uid, email);
     const user = await resolveSessionUser(uid, email);
     const extended = await buildExtendedUser(user.id, user.email, user.role, fullName);
     if (!accessToken) {
@@ -712,6 +713,7 @@ const accessStatus = await readAccessStatus(result.user.id, result.user.email);
   return;
 }
 
+await alignNonOwnerToMemberBaseline(result.user.id, result.user.email);
 const user = await resolveSessionUser(result.user.id, result.user.email);
 const extended = await buildExtendedUser(
   user.id,

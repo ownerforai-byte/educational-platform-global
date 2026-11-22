@@ -1,6 +1,7 @@
 import express, { Express } from "express";
 import cookieParser from "cookie-parser";
-import { afterAll, beforeAll, beforeEach, describe, expect, test, vi, type Mock } from "vitest";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, test, vi, type Mock } from "vitest";
+import { restoreAccessApprovalEnv, stubAccessApprovalRequired } from "../helpers/access-approval-env";
 
 vi.mock("../../src/db/supabase", () => {
   const admin = {
@@ -148,6 +149,7 @@ async function startServers() {
 }
 
 beforeEach(() => {
+  stubAccessApprovalRequired();
   vi.clearAllMocks();
   // Discard any unused FIFO implementations before the next auth fixture.
   mocked.from.mockReset();
@@ -160,6 +162,10 @@ beforeEach(() => {
   // The tiered limiter (strict 10/min on auth endpoints) must not leak hits
   // between tests — the suite makes many refresh/login calls per IP.
   resetRateLimits();
+});
+
+afterEach(() => {
+  restoreAccessApprovalEnv();
 });
 
 beforeAll(async () => {

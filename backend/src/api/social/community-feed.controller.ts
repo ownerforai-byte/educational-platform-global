@@ -40,6 +40,7 @@ import {
   runCommunityBotDailyPublicPost,
   runCommunityBotProfileDiscoveryPost,
 } from "../../services/community-bot-scheduler";
+import { runTaggedBotReplyBackfill } from "../../services/community-bot-tag-backfill.js";
 import { ERROR_ID_HEADER, ERROR_NO_HEADER, logServerError, newErrorId } from "../../middleware/error-handler";
 import { resolveErrorNumber } from "../../lib/error-numbers.js";
 import {
@@ -2405,8 +2406,9 @@ router.post(
       }),
     };
 
+    const taggedBot = mentionsCommunityBot(parsed.data.body);
     const wantBotReply =
-      parsed.data.followUpToBot === true || isCommunityBotId(found.row.author_id);
+      parsed.data.followUpToBot === true || isCommunityBotId(found.row.author_id) || taggedBot;
 
     if (found.row.author_id !== user.id) {
       void recordSocialNotification({
@@ -2485,6 +2487,36 @@ router.post(
       return;
     }
     const result = await runCommunityBotProfileDiscoveryPost();
+    res.json(result);
+  }),
+);
+
+router.post(
+  "/cron/tagged-replies",
+  asyncHandler(async (req, res) => {
+    if (!cronKeyOk(req)) {
+      bad(res, "Unauthorized", 401);
+      return;
+    }
+    const limit =
+      typeof req.body?.limit === "number"
+        ? req.body.limit
+        : typeof req.query.limit === "string"
+          ? Number(req.query.limit)
+          : 40;
+    const result = await runTaggedBotReplyBackfill(
+      (row, approvedBy) =>
+        publishTaggedBotReply(
+          {
+            ...row,
+            visibility: "public",
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+          } as PostRow,
+          approvedBy,
+        ),
+      { limit: Number.isFinite(limit) ? limit : 40 },
+    );
     res.json(result);
   }),
 );

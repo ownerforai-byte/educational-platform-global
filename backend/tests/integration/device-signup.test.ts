@@ -3,7 +3,8 @@ import type { AddressInfo } from "node:net";
 import { randomUUID } from "node:crypto";
 import express from "express";
 import cookieParser from "cookie-parser";
-import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { restoreAccessApprovalEnv, stubAccessApprovalRequired } from "../helpers/access-approval-env";
 
 // ───────────────────────────────────────────────────────────────────────────
 // Stateful supabaseAdmin mock: a real in-test store for guest_chat_usage
@@ -211,8 +212,13 @@ afterAll(async () => {
 });
 
 beforeEach(() => {
+  stubAccessApprovalRequired();
   h.reset();
   resetDeviceSignupMemory();
+});
+
+afterEach(() => {
+  restoreAccessApprovalEnv();
 });
 
 describe("device signup limit (one account per device without approval)", () => {

@@ -68,23 +68,10 @@ describe("FeedPostRow actions", () => {
     expect(screen.getByRole("button", { name: "Show 2 comments" })).toBeInTheDocument();
   });
 
-  it("uses the share button and clipboard fallback when native sharing is unavailable", async () => {
+  it("copies the post link from the copy control", () => {
     const { onCopyLink } = renderRow();
-    fireEvent.click(screen.getByRole("button", { name: "Share post" }));
+    fireEvent.click(screen.getByRole("button", { name: "Copy post link" }));
     expect(onCopyLink).toHaveBeenCalledWith(post.id);
-  });
-
-  it("prefers native sharing when available", async () => {
-    const original = Object.getOwnPropertyDescriptor(navigator, "share");
-    const share = vi.fn().mockResolvedValue(undefined);
-    Object.defineProperty(navigator, "share", { configurable: true, value: share });
-    const { onCopyLink, unmount } = renderRow();
-    fireEvent.click(screen.getByRole("button", { name: "Share post" }));
-    expect(share).toHaveBeenCalledWith({ title: post.title, url: `${window.location.origin}/ai/community/posts/${post.id}` });
-    expect(onCopyLink).not.toHaveBeenCalled();
-    unmount();
-    if (original) Object.defineProperty(navigator, "share", original);
-    else Reflect.deleteProperty(navigator, "share");
   });
 
   it("reconciles the saved active style with the server value on the row", () => {

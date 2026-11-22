@@ -4,7 +4,8 @@
  * auto-approval Cloud Function consumes, and merged reads must honour the
  * decisive states of both stores while legacy rows are still being migrated.
  */
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { restoreAccessApprovalEnv, stubAccessApprovalRequired } from "../helpers/access-approval-env";
 
 const h = vi.hoisted(() => {
   const docs = new Map<string, Record<string, unknown>>();
@@ -114,8 +115,13 @@ import { profileImagePath } from "../../src/services/profile-image";
 const UID = "11111111-1111-4111-8111-111111111111";
 
 beforeEach(() => {
+  stubAccessApprovalRequired();
   h.docs.clear();
   h.rows.clear();
+});
+
+afterEach(() => {
+  restoreAccessApprovalEnv();
 });
 
 describe("Firestore profiles contract (signup writer)", () => {

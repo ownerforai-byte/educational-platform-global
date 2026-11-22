@@ -1,10 +1,11 @@
-import { isOwnerEmail } from "../middleware/auth.js";
 import {
   getProfileById,
+  updateProfileFields,
   upsertProfileFields,
 } from "../db/repositories/user.repository.js";
 import { readProfileDoc } from "../storage/firebase-store.js";
-import { memberSignupAccessStatus } from "../config/access-approval.js";
+import { isAccessApprovalRequired, memberSignupAccessStatus } from "../config/access-approval.js";
+import { isOwnerEmail } from "../middleware/auth.js";
 
 /**
  * Ensure a `profiles` doc exists for a Firebase (or any) auth uid on first
@@ -92,5 +93,27 @@ export async function ensureAuthProfile(
     if (!msg.includes("duplicate") && !msg.includes("unique")) {
       console.error("[auth] ensureAuthProfile failed:", error.message);
     }
+  }
+}
+
+/**
+ * When owner approval is off, every non-owner session uses the member baseline
+ * (ACTIVE + member plan). Owner upgrades tiers later from the console.
+ */
+export async function alignNonOwnerToMemberBaseline(
+  userId: string,
+  email?: string | null,
+): Promise<void> {
+  if (isAccessApprovalRequired()) return;
+  if (isOwnerEmail(email)) return;
+  if (userId === "rn-study-assistant") return;
+  const { error } = await updateProfileFields(userId, {
+    access_status: "ACTIVE",
+    role: "member",
+    plan: "member",
+    premium_status: false,
+  });
+  if (error) {
+    console.error("[auth] alignNonOwnerToMemberBaseline failed:", error.message);
   }
 }
