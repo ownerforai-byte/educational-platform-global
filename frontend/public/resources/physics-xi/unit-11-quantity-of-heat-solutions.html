@@ -33,6 +33,7 @@
 <li>Exercise 11.3 — Change of phase and latent heat</li>
 <li>Exercise 11.4 — Measurement of specific latent heat</li>
 <li>Exercise 11.5 — Phase diagrams, triple point and cooling curves</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -315,6 +316,139 @@ Balance: 11 300 + 21(100 − θ) = 840(θ − 20)
 <p>Sublimation is the direct change of a solid into vapour without passing through the liquid state. Example: solid carbon dioxide ("dry ice") at atmospheric pressure, camphor, iodine and snow on a dry cold day.</p>
 <p>It occurs when the substance's triple-point pressure is above the ambient pressure, so the liquid phase is not stable at that pressure and the solid converts directly to vapour.</p>
 <p class="ans">Solid → vapour directly; it happens when the ambient pressure lies below the triple-point pressure of the substance, so the liquid phase cannot exist.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Quantity-of-heat questions are energy bookkeeping, and the only real difficulty is knowing whether a latent term belongs in the equation. The eight shapes below cover mixtures, cooling, ice-and-steam problems and the phase-plateau reasoning.</p>
+
+<div class="item">
+<p class="q"><b>Q23.</b> [Multi-step numerical] 100 g of copper at 300 °C is dropped into 200 g of water at 20 °C. Find the final temperature. (c_copper = 385 J kg⁻¹ K⁻¹, c_water = 4200 J kg⁻¹ K⁻¹)</p>
+<div class="sol">
+<p class="work">Heat lost by copper = heat gained by water:
+  0.100 × 385 × (300 − θ) = 0.200 × 4200 × (θ − 20)
+  38.5(300 − θ) = 840(θ − 20)
+  11550 − 38.5θ = 840θ − 16800
+  28350 = 878.5θ
+  θ = 32.3 °C</p>
+<p>The result sits much closer to the water's starting temperature than to the copper's, because the water's heat capacity (840 J K⁻¹) is 22 times the copper's (38.5 J K⁻¹). This is the expected behaviour, not an error: the final temperature is weighted by m·c, never by mass alone.</p>
+<p class="ans">θ ≈ 32 °C — pulled towards the water because its heat capacity dominates 22 : 1.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> [Derivation] Derive the exponential form of Newton's law of cooling from the statement that the rate of loss is proportional to the excess temperature.</p>
+<div class="sol">
+<p class="work">Let θ be the body's temperature and θ₀ the surroundings.
+  dθ/dt = −k(θ − θ₀)
+
+Set x = θ − θ₀:     dx/dt = −kx
+  ∫dx/x = −k∫dt   ⇒  ln x = −kt + C
+  x = x₀ e^(−kt)
+
+  θ − θ₀ = (θᵢ − θ₀) e^(−kt)
+  or, taking logs:   ln[(θ − θ₀)/(θᵢ − θ₀)] = −kt</p>
+<p>For a small excess (θ − θ₀ ≪ θ), the exponential is nearly linear, θ ≈ θᵢ − k(θᵢ − θ₀)t, which is the form in which Newton's law is normally tested. The log form is what makes the verification experiment possible: plot ln(θ − θ₀) against t, and a straight line of slope −k confirms the law even when the excess is large.</p>
+<p class="ans">Integrating dθ/dt = −k(θ − θ₀) gives θ − θ₀ = (θᵢ − θ₀)e^(−kt), linear in time only for small excess temperature.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> [Graph reading] A body cools from 80 °C to 52.5 °C in 5.0 min in a room at 20 °C. Find the cooling constant and the time constant, and predict the temperature after a further 5 min.</p>
+<div class="sol">
+<p class="work">θ − θ₀ = (θᵢ − θ₀)e^(−kt)
+  52.5 − 20 = (80 − 20)e^(−5k)
+  32.5 = 60 e^(−5k)
+  e^(−5k) = 0.5417
+  −5k = ln 0.5417 = −0.613
+  k = 0.123 min⁻¹    time constant τ = 1/k = 8.2 min
+
+After 10 min:  θ = 20 + 60 e^(−1.23) = 20 + 60(0.292) = 37.5 °C</p>
+<p>The cooling curve is exponential, so equal time intervals remove equal <em>fractions</em> of the remaining excess, not equal numbers of degrees: the first 5 min removed 27.5 °C, the second only 15 °C. Reading the curve correctly means checking that (θ − θ₀) halves every 5.7 min (the half-life = τ ln 2), not that θ falls by a fixed amount.</p>
+<p class="ans">k = 0.123 min⁻¹, τ = 8.2 min; after 10 min the body is at about 37.5 °C.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Combined concept] 50 g of ice at 0 °C is added to 200 g of water at 30 °C. Find the final temperature. (L_f = 3.34 × 10⁵ J kg⁻¹, c_water = 4200 J kg⁻¹ K⁻¹)</p>
+<div class="sol">
+<p class="work">Step 1 — can the water melt all the ice?
+  heat available cooling to 0 °C: 0.200 × 4200 × 30 = 25 200 J
+  heat needed to melt the ice:    0.050 × 3.34 × 10⁵ = 16 700 J
+  25 200 &gt; 16 700  ✓  all the ice melts
+
+Step 2 — what is left over?
+  25 200 − 16 700 = 8 500 J to warm the 0.250 kg of melt water
+  Δθ = 8500/(0.250 × 4200) = 8.1 K
+
+  final temperature = 0 + 8.1 = 8.1 °C</p>
+<p>The two-step structure is compulsory: first check whether the available heat exceeds the latent requirement, then apply the remainder to the combined mass. If the water had been at 15 °C, only 12 600 J would be available, less than 16 700 J, and the answer would be “all 200 g of water freezes” with the ice ending below 0 °C — a different problem entirely.</p>
+<p class="ans">All the ice melts; final temperature ≈ 8 °C after 8.5 kJ is left to warm the 250 g of water.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Assertion–reason] <b>Assertion (A):</b> Steam at 100 °C causes a more severe burn than water at 100 °C. <b>Reason (R):</b> Steam releases its latent heat of vaporisation on condensing, in addition to the heat released on cooling.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">1 g of water at 100 °C cooling to skin (37 °C):
+  Q = 0.001 × 4200 × 63 = 265 J
+
+1 g of steam at 100 °C condensing then cooling to 37 °C:
+  condensation: 0.001 × 2.26 × 10⁶ = 2260 J
+  cooling:                            265 J
+  total:                             2525 J ≈ 9.5 times more</p>
+<p>The latent term dominates by an order of magnitude — that is why steam burns are far worse than hot-water burns even though both are at the same temperature. The same physics explains why steam heating is efficient: it delivers 2260 J per gram while condensing, and can be piped at atmospheric pressure without a pump.</p>
+<p class="ans">Both true, R explains A: condensation adds 2.26 × 10⁶ J kg⁻¹, about 9.5 times the sensible heat from 100 °C to skin temperature.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Experiment/observation table] In a method-of-mixtures experiment, 100 g of metal at 100 °C is dropped into 200 g of water at 25.0 °C and the mixture settles at 28.2 °C. Find the specific heat of the metal and identify it.</p>
+<div class="sol">
+<p class="work">Heat gained by water = 0.200 × 4200 × (28.2 − 25.0) = 0.200 × 4200 × 3.2 = 2688 J
+Heat lost by metal  = 0.100 × c × (100 − 28.2) = 7.18 c
+
+7.18 c = 2688  ⇒  c = 374 J kg⁻¹ K⁻¹</p>
+<p>The value matches copper (385 J kg⁻¹ K⁻¹, a 3% discrepancy consistent with heat lost to the calorimeter and the surroundings). Three experimental precautions are examinable: the metal must be transferred quickly (to limit cooling on the way), the calorimeter's own heat capacity must be allowed for, and the water must be stirred so that the thermometer reads the true mixture temperature.</p>
+<p class="ans">c ≈ 374 J kg⁻¹ K⁻¹ → copper; the 3% shortfall is heat lost during transfer and to the calorimeter.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Estimation and limiting case] Estimate the energy needed to convert 1 kg of ice at −10 °C into steam at 100 °C, and state the limiting case that makes the largest single contribution to the total.</p>
+<div class="sol">
+<p class="work">Warm the ice:   0.0 → 1 × 2100 × 10   = 2.1 × 10⁴ J
+Melt the ice:    1 × 3.34 × 10⁵        = 3.34 × 10⁵ J
+Warm the water:  1 × 4200 × 100        = 4.20 × 10⁵ J
+Boil the water:  1 × 2.26 × 10⁶        = 2.26 × 10⁶ J
+Total                                  = 3.03 × 10⁶ J ≈ 3.0 MJ</p>
+<p>Vaporisation alone is 75% of the total — about 2.26 MJ per kilogram, roughly 540 kcal. That is the single largest item, and it is the reason boiling a kettle dry takes so much longer than heating it to the boil: the temperature stops rising at 100 °C while the latent heat is absorbed at constant temperature.</p>
+<p><b>Limiting case:</b> the latent heat is released/absorbed at constant temperature, so the heating curve has flat plateaus (at 0 °C and at 100 °C). In the limit of infinite heating rate the plateaus shorten in time but do not vanish — the energy is still required.</p>
+<p class="ans">About 3.0 MJ per kg, of which 2.26 MJ (75%) is the latent heat of vaporisation, absorbed at constant 100 °C.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Latent heat is the heat needed to raise the temperature of 1 kg by 1 K.”<br>
+(ii) “During a change of phase the temperature rises steadily.”<br>
+(iii) “Specific heat capacity is the same for all substances.”<br>
+(iv) “Ice at 0 °C and water at 0 °C contain the same heat.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — that is specific heat capacity. Latent heat is the heat absorbed at CONSTANT
+     temperature to change phase: L = Q/m, in J kg⁻¹.
+(ii) FALSE — during a phase change the temperature is constant; the supplied energy goes
+     into breaking bonds, not into raising the mean KE. Hence the plateaus on the curve.
+(iii) FALSE — c varies by substance (water 4200, copper 385, lead 130 J kg⁻¹ K⁻¹) and
+     mildly with temperature; that is why the same heat raises water and copper by
+     different amounts.
+(iv) FALSE — water at 0 °C holds 3.34 × 10⁵ J kg⁻¹ more than ice at 0 °C: the latent heat
+     was absorbed to melt it. Equal temperature does not mean equal internal energy.</p>
+<p>All four errors come from the same place: treating temperature as a measure of stored heat.</p>
+<p class="ans">(i) that is specific heat; (ii) temperature is constant during a phase change; (iii) c is material-dependent; (iv) water at 0 °C holds the latent heat that ice lacks.</p>
 </div>
 </div>
 

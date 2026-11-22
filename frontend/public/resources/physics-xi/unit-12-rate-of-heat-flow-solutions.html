@@ -34,6 +34,7 @@
 <li>Exercise 12.4 — Radiation, absorptive and emissive power</li>
 <li>Exercise 12.5 — The Stefan–Boltzmann law</li>
 <li>Exercise 12.6 — Applications: thermos flask, greenhouse, insulation</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -322,6 +323,146 @@ T halved:  P' = P/16</p>
 <div class="sol">
 <p>In a single glazing the air next to the glass conducts and convects heat away readily. In double glazing a layer of air (or argon) is trapped between two panes; since the trapped layer is thin and still, convection is suppressed and only the low conduction of air (k ≈ 0.026 W m⁻¹ K⁻¹) remains. The conduction through 12 mm of still air is far less than through the same thickness of ordinary convective loss, so the overall heat transfer is reduced.</p>
 <p class="ans">The trapped air layer cannot convect, and air conducts poorly — a much lower effective k than a single pane with free convection on both sides.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Heat-flow numericals are the thermal version of series resistors: resistance = L/kA, and the same heat current passes through every layer. The eight shapes below are built on that analogy.</p>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Multi-step numerical] A wall consists of 5.0 cm of brick (k = 0.50 W m⁻¹ K⁻¹) and 10 cm of insulation (k = 0.20 W m⁻¹ K⁻¹), area 2.0 m². The inside is at 100 °C and the outside at 0 °C. Find the heat current and the temperature at the interface.</p>
+<div class="sol">
+<p class="work">Thermal resistance R = L/(kA):
+  brick:      R₁ = 0.05/(0.50 × 2.0) = 0.050 K W⁻¹
+  insulation: R₂ = 0.10/(0.20 × 2.0) = 0.250 K W⁻¹
+  total:      R  = 0.300 K W⁻¹
+
+Heat current = Δθ/R = 100/0.300 = 333 W ≈ 3.3 × 10² W
+
+Temperature drop across the brick:
+  Δθ₁ = Q̇ R₁ = 333 × 0.050 = 16.7 K
+  interface temperature = 100 − 16.7 = 83 °C
+
+check: drop across insulation = 333 × 0.250 = 83.3 K, arriving at 0 °C ✓</p>
+<p>The insulation carries five times the brick's resistance, so it takes five times the temperature drop: 83 K across 10 cm of insulation versus 17 K across 5 cm of brick. That is the whole purpose of insulation — it does not stop the heat, it concentrates the temperature fall in a layer where little heat is flowing.</p>
+<p class="ans">Q̇ = 3.3 × 10² W; interface at ≈ 83 °C (17 K dropped across the brick, 83 K across the insulation).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Derivation] From Q̇ = kAΔθ/L, show that the temperature gradient in a composite wall is inversely proportional to the conductivity of each layer.</p>
+<div class="sol">
+<p class="work">In the steady state the same heat current passes every layer (energy cannot pile up):
+
+  Q̇ = k₁A(dθ/dx)₁ = k₂A(dθ/dx)₂ = … = constant
+
+⇒  k₁(dθ/dx)₁ = k₂(dθ/dx)₂
+⇒  (dθ/dx)₁/(dθ/dx)₂ = k₂/k₁
+
+So the layer with the SMALLER k has the STEEPER gradient:</p>
+<p class="work">gradient ∝ 1/k</p>
+<p>For brick (k = 0.5) and insulation (k = 0.2), the gradients are in the ratio 0.2 : 0.5 = 2 : 5, i.e. the insulation's gradient is 2.5 times steeper — exactly the 17 K vs 83 K split computed above. This is why a graph of temperature against distance across a composite wall is a broken line whose slopes are inversely proportional to the conductivities, and why the kink identifies the interface.</p>
+<p class="ans">Steady state forces k₁(dθ/dx)₁ = k₂(dθ/dx)₂, so gradient ∝ 1/k: the poorer conductor shows the steeper temperature drop.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Graph reading] Across a two-layer wall the temperature falls from 90 °C to 70 °C over the first 6 cm and from 70 °C to 10 °C over the next 4 cm. Which layer conducts better, and by what factor?</p>
+<div class="sol">
+<p class="work">Gradients:
+  layer 1: (90 − 70)/0.06 = 333 K m⁻¹
+  layer 2: (70 − 10)/0.04 = 1500 K m⁻¹
+
+k₁/k₂ = gradient₂/gradient₁ = 1500/333 = 4.5
+
+Layer 1 conducts 4.5 times better than layer 2.</p>
+<p>The poorly conducting layer is the second one: it drops 60 K in only 4 cm, so its gradient is 4.5 times steeper. Reading a temperature–distance graph is therefore diagnostic: equal slopes mean equal conductivities, a kink means a change of material, and the ratio of slopes is the inverse ratio of the k's.</p>
+<p class="ans">Layer 1 conducts 4.5 times better (gradients 333 vs 1500 K m⁻¹, and gradient ∝ 1/k).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Combined concept] A tungsten filament of area 5.0 × 10⁻⁵ m² at 2000 K has emissivity 0.40. Find the power radiated, and state how much the surroundings at 300 K return.</p>
+<div class="sol">
+<p class="work">P = eσAT⁴
+  = 0.40 × 5.67 × 10⁻⁸ × 5.0 × 10⁻⁵ × (2000)⁴
+  = 0.40 × 5.67 × 10⁻⁸ × 5.0 × 10⁻⁵ × 1.6 × 10¹³
+  = 18 W
+
+Net loss if the surroundings are at 300 K:
+  P_net = eσA(T⁴ − T₀⁴)
+        = 18 × [1 − (300/2000)⁴] = 18 × (1 − 0.0005) ≈ 18 W</p>
+<p>The T⁴ dependence is brutal: doubling the temperature multiplies the radiated power by 16, which is why a filament runs at 2000–3000 K to be visibly bright and why a 60 W bulb is far hotter than a 15 W one of the same size. The surroundings' contribution is negligible at these temperatures but dominates for a human body, whose net radiative loss is calculated from a T⁴ difference with T ≈ 310 K.</p>
+<p class="ans">P ≈ 18 W radiated; the 300 K surroundings return only 0.05% of it, so the net loss is essentially the same.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Assertion–reason] <b>Assertion (A):</b> A thermos flask slows all three modes of heat transfer. <b>Reason (R):</b> The vacuum between the walls stops conduction and convection, and the silvered surfaces reduce radiation.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Conduction: no solid path across the vacuum; the cork stopper and the supports are
+            poor conductors.
+Convection: no fluid in the vacuum, so no convection current.
+Radiation: silvered (low-emissivity) walls reflect most incident radiation; the small
+            remaining transfer is why a flask is not perfect.
+
+Residual loss ≈ 1–2% per hour for hot drinks — measurable, so the flask is a reducer,
+not an eliminator.</p>
+<p>Note the asymmetry in why the surfaces are silvered: for a <em>hot</em> drink, low emissivity limits the outward radiation; for a <em>cold</em> one, low absorptivity limits the inward radiation. Both come from the same surface property (Kirchhoff's law), which is why one flask works for either.</p>
+<p class="ans">Both true, R explains A: vacuum kills conduction/convection and silvering kills radiation, leaving only 1–2% per hour.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Experiment/observation table] In a Searle's-bar experiment, 20 g of water in the jacket rises 4.3 K in 120 s. The bar has cross-section 5.0 × 10⁻⁴ m² and the temperature gradient between the two thermometers is 15 K m⁻¹. Find the thermal conductivity.</p>
+<div class="sol">
+<p class="work">Heat collected per second:
+  Q̇ = mcΔθ/t = 0.020 × 4200 × 4.3/120
+    = 361/120 = 3.0 W
+
+k = Q̇/(A × gradient)
+  = 3.0/(5.0 × 10⁻⁴ × 15)
+  = 3.0/7.5 × 10⁻³
+  = 4.0 × 10² W m⁻¹ K⁻¹</p>
+<p>The result matches copper (≈ 400 W m⁻¹ K⁻¹), which is why copper is the usual bar. Two precautions earn marks: the bar is lagged so heat is not lost sideways, and the water is stirred so the thermometer reads the mean temperature. The steam chamber at one end and the water jacket at the other are designed to hold the two ends at known, steady temperatures — the experiment is only valid in the steady state.</p>
+<p class="ans">Q̇ = 3.0 W; k ≈ 4.0 × 10² W m⁻¹ K⁻¹, consistent with copper.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Estimation and limiting case] Estimate the heat lost by conduction through 5 mm of clothing (k = 0.04 W m⁻¹ K⁻¹) over 1.8 m² of skin when the skin is 12 K warmer than the outside of the clothing. Then state what the model predicts as the layer thickness tends to zero.</p>
+<div class="sol">
+<p class="work">Q̇ = kAΔθ/L
+  = 0.04 × 1.8 × 12/0.005
+  = 0.864/0.005 = 173 W
+
+A resting adult produces about 100 W of metabolic heat, so this layer is roughly
+right: doubling the thickness (1 cm) halves the loss to 86 W, which is why a second
+jumper works.</p>
+<p><b>Limiting case:</b> as L → 0, Q̇ → ∞ — the model predicts unlimited conduction through zero thickness. In reality the interface resistance and the skin's own surface temperature prevent this, and radiation/convection from bare skin take over as the dominant loss (about 100–200 W at rest). This is why “no clothing” is not the fastest possible cooling: the body still has to shed heat through a layer of still air.</p>
+<p class="ans">Q̇ ≈ 1.7 × 10² W through 5 mm; doubling the thickness halves it, and as L → 0 the formula diverges, so surface resistances must be included.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Thermal conductivity depends on the thickness of the material.”<br>
+(ii) “Radiation needs a material medium to travel.”<br>
+(iii) “A black surface absorbs and emits more radiation than a white one.”<br>
+(iv) “Convection can occur in a solid.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — k is a property of the MATERIAL (like density). Thickness affects the RATE of
+     heat flow (Q̇ = kAΔθ/L), not k itself.
+(ii) FALSE — radiation is electromagnetic and crosses a vacuum; that is how the Sun's heat
+     reaches us. Conduction and convection need a medium; radiation does not.
+(iii) TRUE — a black (high-emissivity) surface has both the highest absorptivity and the
+     highest emissivity, by Kirchhoff's law (good absorbers are good emitters).
+(iv) FALSE — convection requires a fluid that can flow; solids conduct but do not convect.</p>
+<p>Statement (i) is the direct counterpart of the Young-modulus trap: students “improve” a material constant by dividing it by a dimension that belongs in the rate equation.</p>
+<p class="ans">(i) k is a material constant; (ii) radiation crosses a vacuum; (iii) true; (iv) convection needs a fluid.</p>
 </div>
 </div>
 

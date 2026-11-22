@@ -35,6 +35,7 @@
 <li>Exercise 13.5 — Boltzmann constant and rms speed</li>
 <li>Exercise 13.6 — Degrees of freedom and heat capacities</li>
 <li>Exercise 13.7 — Heat capacities of solids</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -334,6 +335,149 @@ Cp = γCv = 1.40 × 20.8 = 29.1 J mol⁻¹ K⁻¹  (= 3.5R ✓)</p>
 <div class="sol">
 <p>A gas can be heated at constant volume (no expansion work) or at constant pressure (expanding while doing work), giving two different values Cv and Cp. A solid is held by its own rigidity: its volume changes only very slightly on heating (γ ≈ 10⁻⁵ K⁻¹), so the expansion work is negligible and Cv ≈ Cp. Effectively there is only one measurable heat capacity, and Dulong and Petit's 3R applies to it.</p>
 <p class="ans">The expansion work of a solid is negligible, so Cp ≈ Cv and a single value is quoted; a gas does significant pΔV work, so Cp − Cv = R.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Ideal-gas numericals reduce to PV = nRT plus the kinetic relations. The eight shapes below cover the gas laws, the kinetic interpretation, and the limiting cases where the model fails.</p>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Multi-step numerical] 2.0 L of gas at 27 °C and 1.0 atm is heated at constant pressure to 127 °C. Find the new volume, the number of moles, and the number of molecules.</p>
+<div class="sol">
+<p class="work">T₁ = 300 K, T₂ = 400 K, constant pressure:
+  V₂ = V₁(T₂/T₁) = 2.0 × 400/300 = 2.67 L
+
+n = PV/RT = (1.01 × 10⁵ × 2.0 × 10⁻³)/(8.31 × 300)
+  = 202/2493 = 8.1 × 10⁻² mol
+
+N = nN_A = 8.1 × 10⁻² × 6.02 × 10²³ = 4.9 × 10²² molecules</p>
+<p>Temperatures must be in kelvin — using 27 and 127 gives a ratio of 4.7 instead of 1.33, which is the single most common error in the unit. Note that the pressure was never needed for the volume ratio (Charles's law) but is needed for the mole count.</p>
+<p class="ans">V₂ = 2.7 L; n = 8.1 × 10⁻² mol; N ≈ 4.9 × 10²² molecules.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Derivation] Starting from the kinetic model result p = ⅓ρc̄², derive the average translational kinetic energy per molecule, and show that it depends only on temperature.</p>
+<div class="sol">
+<p class="work">p = ⅓ρc̄² with ρ = Nm/V:
+  pV = ⅓Nmc̄²
+
+Compare with the ideal gas law pV = NkT:
+  ⅓Nmc̄² = NkT  ⇒  ½mc̄² = (3/2)kT
+
+So the mean translational KE per molecule:
+  ε = ½mc̄² = (3/2)kT
+and per mole:  (3/2)RT
+Internal energy of a monatomic ideal gas:  U = (3/2)nRT</p>
+<p>The derivation contains the whole content of the kinetic theory: pressure is the momentum flux of molecular collisions, and temperature is a direct measure of mean translational KE. Because the mass cancels, a hydrogen molecule and an oxygen molecule at the same temperature have the same mean KE — but very different rms speeds, since ½mc̄² is fixed and c̄² ∝ 1/m.</p>
+<p class="ans">pV = ⅓Nmc̄² = NkT gives ε = (3/2)kT per molecule, (3/2)RT per mole — independent of the gas.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Graph reading] On a V–T graph at constant pressure, a sample gives a straight line through the origin with slope 8.0 × 10⁻⁶ m³ K⁻¹. If the pressure is 1.0 × 10⁵ Pa, find the number of moles.</p>
+<div class="sol">
+<p class="work">V = (nR/P) T, so slope = nR/P
+
+n = slope × P/R = 8.0 × 10⁻⁶ × 1.0 × 10⁵/8.31
+  = 0.80/8.31 = 9.6 × 10⁻² mol
+
+Check at T = 300 K:  V = 8.0 × 10⁻⁶ × 300 = 2.4 × 10⁻³ m³ = 2.4 L,
+and PV/RT = (1.0 × 10⁵ × 2.4 × 10⁻³)/(8.31 × 300) = 0.096 mol ✓</p>
+<p>A straight line through the origin on a V–T graph is Charles's law, and its slope carries nR/P. Two examinable features of the graph: the line must pass through the origin only if T is absolute (in Celsius it intersects at −273 °C), and a steeper line means more gas at the same pressure or lower pressure for the same amount.</p>
+<p class="ans">Slope = nR/P, so n = 9.6 × 10⁻² mol; the intercept is the origin only on the kelvin scale.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Combined concept] Find the rms speed of oxygen molecules at 300 K and compare it with hydrogen at the same temperature. (M_O₂ = 0.032 kg mol⁻¹, M_H₂ = 0.002 kg mol⁻¹)</p>
+<div class="sol">
+<p class="work">c_rms = √(3RT/M)
+
+O₂: c_rms = √(3 × 8.31 × 300/0.032) = √(2.34 × 10⁵) = 4.8 × 10² m s⁻¹
+H₂: c_rms = √(3 × 8.31 × 300/0.002) = √(3.74 × 10⁶) = 1.9 × 10³ m s⁻¹
+
+ratio = √(32/2) = 4.0  (same as √(M_O₂/M_H₂))</p>
+<p>Equal temperatures give equal mean kinetic energy but speeds in the ratio √(M_H₂ : M_O₂) = 1 : 4. This is why hydrogen escapes from the Earth's atmosphere and oxygen does not: at 300 K the hydrogen rms speed (1.9 km s⁻¹) is already an appreciable fraction of the 11.2 km s⁻¹ escape speed, and the high-speed tail of the distribution supplies the rest. It is also why helium balloons deflate faster than air-filled ones.</p>
+<p class="ans">O₂ ≈ 4.8 × 10² m s⁻¹, H₂ ≈ 1.9 × 10³ m s⁻¹ — equal mean KE, speeds inversely proportional to √M.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Assertion–reason] <b>Assertion (A):</b> A gas exerts pressure on the walls of its container. <b>Reason (R):</b> Molecules collide with the walls and their momentum is reversed, so a force acts on the wall.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">One molecule, mass m, normal component u, rebounding elastically:
+  Δp = 2mu per collision
+Collisions per second on area A (number density n):
+  rate = ½ n A u        (the ½ accounts for molecules moving away from the wall)
+Force = Δp × rate = 2mu × ½nAu = nAmu²
+Pressure = F/A = nmu²  →  averaged over directions: ⅓nmc̄²</p>
+<p>The factor ⅓ is the one examinable detail: at any instant only one third of the mean square velocity is directed at a given pair of walls. The derivation also shows why pressure is independent of the mass of the molecules at fixed N, V and T — the heavier molecule moves slower but delivers more momentum per collision, and the two effects cancel exactly.</p>
+<p class="ans">Both true, R explains A: pressure is the rate of momentum transfer per unit area, giving p = ⅓nmc̄² = ⅓ρc̄².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Experiment/observation table] In a Boyle's-law experiment the following pressure–volume readings are taken at constant temperature. Complete the last column and state the conclusion.</p>
+<table>
+<tr><th>P (× 10⁵ Pa)</th><th>V (× 10⁻³ m³)</th><th>PV (J)</th></tr>
+<tr><td>1.00</td><td>2.40</td><td>?</td></tr>
+<tr><td>1.50</td><td>1.60</td><td>?</td></tr>
+<tr><td>2.00</td><td>1.20</td><td>?</td></tr>
+<tr><td>3.00</td><td>0.80</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">PV = 1.00 × 10⁵ × 2.40 × 10⁻³ = 240 J
+     1.50 × 10⁵ × 1.60 × 10⁻³ = 240 J
+     2.00 × 10⁵ × 1.20 × 10⁻³ = 240 J
+     3.00 × 10⁵ × 0.80 × 10⁻³ = 240 J</p>
+<p>PV is constant at 240 J, which is Boyle's law: at constant temperature p ∝ 1/V. The constant is also nRT, so n = 240/(8.31 × T); at 300 K that is 0.096 mol — the same sample as the V–T graph above. A graph of P against 1/V would be a straight line through the origin with slope 240 J, which is the preferred way to present the result because a straight line is easier to verify than a hyperbola.</p>
+<p class="ans">PV = 240 J for every reading — Boyle's law verified; the constant equals nRT.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Estimation and limiting case] Estimate the number of air molecules in a room 5 m × 4 m × 3 m at 20 °C and 1.0 atm, and state the two limits in which the ideal-gas model fails.</p>
+<div class="sol">
+<p class="work">V = 60 m³, T = 293 K, P = 1.01 × 10⁵ Pa
+
+n = PV/RT = (1.01 × 10⁵ × 60)/(8.31 × 293)
+  = 6.06 × 10⁶/2435 = 2.5 × 10³ mol
+
+N = nN_A = 2.5 × 10³ × 6.02 × 10²³ = 1.5 × 10²⁷ molecules
+mass ≈ n × 0.029 = 72 kg of air (about the mass of a person — air is heavy!)</p>
+<p><b>Limits of the ideal-gas model:</b></p>
+<p class="work">High pressure / low temperature — molecules are close enough for intermolecular forces
+  to matter and the gas liquefies; the van der Waals equation
+  (P + a/V²)(V − b) = nRT corrects for attraction (a) and finite molecular volume (b).
+Very low density — even then the model is excellent, which is why it is used for
+  atmospheres and for the interstellar medium.</p>
+<p>The kinetic model also assumes molecular chaos and negligible collision duration; both hold at ordinary pressures, which is why the ideal-gas law describes air to better than 0.1%.</p>
+<p class="ans">About 2.5 × 10³ mol, 1.5 × 10²⁷ molecules and roughly 72 kg of air; the model fails at high pressure/low temperature (liquefaction) where molecular volume and attraction matter.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Error-hunting] Correct each false statement.<br>
+(i) “At constant temperature the rms speed of a gas doubles if the pressure doubles.”<br>
+(ii) “The internal energy of an ideal gas depends on both its pressure and volume.”<br>
+(iii) “Absolute zero is the temperature at which an ideal gas would have zero volume.”<br>
+(iv) “All molecules of a gas move with the same speed.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — c_rms = √(3RT/M) depends only on T and M. At constant T it is unchanged;
+     doubling the pressure at constant T halves the volume, not the speed.
+(ii) FALSE — for an IDEAL gas U = (3/2)nRT depends only on T; the molecules have no
+     potential energy. (For a real gas it does depend on V through intermolecular forces.)
+(iii) TRUE for the ideal-gas model — extrapolating V ∝ T to V = 0 gives 0 K. But real gases
+     liquefy first, so the statement is a limit of the model, not a physical fact.
+(iv) FALSE — molecular speeds follow the Maxwell–Boltzmann distribution: a small fraction
+     is always far above the rms value, which is what makes evaporation, chemical reaction
+     and atmospheric escape possible at ordinary temperatures.</p>
+<p>Statement (i) is the classic trap: pressure and temperature are independent variables, and only temperature sets the mean kinetic energy.</p>
+<p class="ans">(i) c_rms depends only on T; (ii) U = (3/2)nRT for an ideal gas; (iii) true as a model limit (real gases liquefy); (iv) speeds follow a Maxwell distribution.</p>
 </div>
 </div>
 

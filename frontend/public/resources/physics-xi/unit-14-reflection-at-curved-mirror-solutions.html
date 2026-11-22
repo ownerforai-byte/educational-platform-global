@@ -34,6 +34,7 @@
 <li>Exercise 14.4 — Concave mirror numericals</li>
 <li>Exercise 14.5 — Convex mirror numericals</li>
 <li>Exercise 14.6 — Real vs virtual images and applications</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -323,6 +324,148 @@ h' = m h = 0.0385 × 200 cm = 7.7 cm</p>
 <p>For a mirror of large aperture, rays parallel to the axis but far from it (marginal rays) do not converge at the same point as paraxial rays — the outer rays focus closer to the pole. The image is therefore blurred rather than a sharp point.</p>
 <p>It is reduced by using a small aperture (a stop), by covering the outer zone of the mirror, or by using a parabolic mirror, which brings all parallel rays to a single focus.</p>
 <p class="ans">Marginal and paraxial rays focus at different points, blurring the image; use a small aperture or a parabolic surface.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Mirror questions are decided by one thing: the sign convention, applied the same way every time. The eight shapes below include the f = R/2 derivation, the 1/v–1/u line, and the limiting cases that explain the shaving mirror and the wing mirror.</p>
+
+<div class="item">
+<p class="q"><b>Q24.</b> [Multi-step numerical] An object 10 cm in front of a concave mirror of focal length 15 cm. Find the image position, its nature, and the magnification. (Real-positive convention: u = +10 cm, f = +15 cm)</p>
+<div class="sol">
+<p class="work">1/v + 1/u = 1/f
+1/v = 1/f − 1/u = 1/15 − 1/10
+    = (2 − 3)/30 = −1/30
+v = −30 cm
+
+The minus sign marks a virtual image 30 cm BEHIND the mirror.
+m = −v/u = −(−30)/10 = +3
+
+Image: virtual, erect (positive m), three times enlarged.</p>
+<p>This is the shaving-mirror case — the object inside the focus. The algebra is the same as for any other position; only the sign of v changes. Two checks make the answer safe: a virtual image always has negative v, and a virtual image from a single mirror is always erect and magnified (for a concave mirror with the object inside F).</p>
+<p class="ans">v = −30 cm (virtual, behind the mirror), m = +3, erect and 3× enlarged.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> [Derivation] Show that the focal length of a spherical mirror is half its radius of curvature, for paraxial rays.</p>
+<div class="sol">
+<p class="work">A ray parallel to the axis strikes the mirror at P, making angle θ with the normal CP
+(C = centre of curvature). By the law of reflection the reflected ray makes angle θ on
+the other side of the normal.
+
+In triangle CPF (F = focus):
+  exterior angle at F = 2θ, and the angle at C = θ
+  ⇒ angle at P = θ  ⇒ triangle CPF is isosceles  ⇒ CF = FP
+
+For paraxial rays the point P is close to the pole, so FP ≈ FV and CF ≈ CV − FV
+  CV − FV = FV  ⇒  FV = CV/2
+  ⇒  f = R/2</p>
+<p>The approximation “paraxial” is essential: only rays near the axis (small θ) focus at a single point. Wide rays suffer spherical aberration, which is why large telescope mirrors are parabolic, and why the school formula f = R/2 is quoted as an approximation.</p>
+<p class="ans">CF = FP from the isosceles triangle, and FP ≈ FV for paraxial rays, giving f = R/2.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Graph reading] For a concave mirror, a graph of 1/v (vertical) against 1/u (horizontal) is a straight line of slope −1 with intercept +0.100 cm⁻¹ on both axes. Find f, and check it against the measured pair u = 30 cm, v = 15 cm.</p>
+<div class="sol">
+<p class="work">1/v + 1/u = 1/f is the line y + x = 1/f, so the intercept is 1/f:
+  intercept = 0.100 cm⁻¹  ⇒  f = 1/0.100 = 10.0 cm
+
+Check with u = 30, v = 15:
+  1/30 + 1/15 = 0.0333 + 0.0667 = 0.100 cm⁻¹ ✓  (f = 10.0 cm)</p>
+<p>The line is 1/v = 1/f − 1/u — slope −1, intercept 1/f — and it is the most reliable way to find f, because every measurement contributes to the intercept rather than a single u–v pair. A plot against 1/u is standard practice in NEB practical work precisely because it averages the errors.</p>
+<p class="ans">Intercept 0.100 cm⁻¹ → f = 10.0 cm, confirmed by the (30, 15) pair; the graph is preferred over a single pair because every measurement contributes to the intercept.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Combined concept] An object 5.0 cm in front of a concave mirror of f = 10 cm. Find the image, and explain why the same mirror is used as a shaving mirror but still forms a real image of a distant tree.</p>
+<div class="sol">
+<p class="work">u = +5, f = +10:
+  1/v = 1/10 − 1/5 = (1 − 2)/10 = −1/10
+  v = −10 cm,  m = −(−10)/5 = +2
+  image: virtual, erect, 2× magnified, 10 cm behind the mirror
+
+Distant object (u → ∞):
+  1/v = 1/f  ⇒  v = +10 cm, m ≈ 0  (real, inverted, at the focus, tiny)</p>
+<p>Both uses are the same formula with different u. Near objects (u &lt; f) give a magnified virtual image — the shaving mirror. Distant objects (u ≫ 2f) give a small real image at the focus — the astronomical telescope's objective. The transition between the two behaviours happens at u = f, where v → ∞ (the image is at infinity).</p>
+<p class="ans">u = 5 cm gives v = −10 cm, m = +2 (virtual, erect); u → ∞ gives a real inverted image at 10 cm — one formula, two applications.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Assertion–reason] <b>Assertion (A):</b> A concave mirror forms a real, inverted, magnified image when the object lies between the focus and the centre of curvature. <b>Reason (R):</b> In that position |v| &gt; |u|, so the magnification is greater than one.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Take f = 10 cm and u = 15 cm (between f = 10 and R = 20):
+  1/v = 1/10 − 1/15 = (3 − 2)/30 = 1/30  ⇒  v = +30 cm
+  m = −v/u = −30/15 = −2
+
+v is positive (real, in front) and |m| = 2 &gt; 1 (magnified); m negative ⇒ inverted.</p>
+<p>The six standard positions are all consequences of the same formula: u &gt; 2f gives a diminished real image; u = 2f gives an equal real image; f &lt; u &lt; 2f gives a magnified real image; u = f gives an image at infinity; u &lt; f gives a virtual magnified image. Drawing the two rays (parallel-to-axis and through-the-centre) then becomes a check on the algebra rather than a memory test.</p>
+<p class="ans">Both true, R explains A: between F and C the image falls beyond C, where |v| &gt; |u| gives |m| &gt; 1 with a negative sign (inverted).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Experiment/observation table] In a u–v experiment with a concave mirror the following readings are taken. Complete the last column and find f.</p>
+<table>
+<tr><th>u (cm)</th><th>v (cm)</th><th>f = uv/(u + v) (cm)</th></tr>
+<tr><td>30.0</td><td>15.0</td><td>?</td></tr>
+<tr><td>20.0</td><td>20.0</td><td>?</td></tr>
+<tr><td>15.0</td><td>30.0</td><td>?</td></tr>
+<tr><td>12.0</td><td>60.0</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">f = uv/(u + v):
+  30 × 15/45  = 10.0 cm
+  20 × 20/40  = 10.0 cm
+  15 × 30/45  = 10.0 cm
+  12 × 60/72  = 10.0 cm
+
+Mean f = 10.0 cm, i.e. R = 20.0 cm.</p>
+<p>All four pairs give the same f, which is the verification of the mirror formula. Note the reciprocal symmetry (30, 15) and (15, 30): reversing u and v leaves f unchanged, which is the principle of reversibility of light. The u = v = 2f row is the one used to set the mirror square to the optical bench, because there the image and object are equidistant from the pole.</p>
+<p class="ans">f = 10.0 cm from every pair; R = 2f = 20.0 cm.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Estimation and limiting case] Find the image position as the object of a concave mirror of f = 10 cm moves from u = 100 cm to u = 10 cm, and state the two limiting cases at u → ∞ and u → f.</p>
+<div class="sol">
+<p class="work">u = 100: 1/v = 1/10 − 1/100 = 0.090  ⇒  v = 11.1 cm,  m = −0.11
+ u = 20: 1/v = 1/10 − 1/20  = 0.050  ⇒  v = 20.0 cm,  m = −1.00
+ u = 15: 1/v = 1/10 − 1/15  = 0.0333 ⇒  v = 30.0 cm,  m = −2.00
+ u = 12: 1/v = 1/10 − 1/12  = 0.0167 ⇒  v = 60.0 cm,  m = −5.00
+ u = 11: 1/v = 1/10 − 1/11  = 0.00909 ⇒ v = 110 cm,  m = −10.0
+ u = 10: 1/v = 0            ⇒  v = ∞</p>
+<p><b>Limiting cases:</b> as u → ∞ the image tends to the focal point (v → f, m → 0), which is why the Sun's image is formed at the focus. As u → f the image recedes to infinity and the magnification diverges — practically, the reflected rays become parallel and no image is formed on a screen.</p>
+<p>Reading down the table is the fastest way to internalise the six standard positions: the image moves outward faster than the object moves inward, which is why a small change near u = f makes the image jump a long way.</p>
+<p class="ans">v goes 11.1 → 20 → 30 → 60 → 110 → ∞ cm as u goes 100 → 20 → 15 → 12 → 11 → 10 cm; u → ∞ gives the focus, u → f gives infinity.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Error-hunting] Correct each false statement.<br>
+(i) “A convex mirror is used as a headlight reflector.”<br>
+(ii) “A plane mirror has zero focal length.”<br>
+(iii) “Real images are always inverted.”<br>
+(iv) “The mirror formula needs no sign convention if you draw the diagram.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — headlights use a CONCAVE mirror with the bulb at the focus, so the reflected
+     beam is parallel. A convex mirror would spread the beam.
+(ii) FALSE — a plane mirror has infinite focal length (R = ∞); that is why the mirror
+     formula reduces to v = −u for it (image as far behind as the object is in front).
+(iii) TRUE for a single mirror/lens: a real image is inverted. (A combination can invert
+     again and restore the original orientation, which is how a telescope gives an upright
+     image with two inversions.)
+(iv) FALSE — the sign convention is what makes one formula cover every case; without it
+     you must re-derive the relation for each position, which is where most marks are lost.</p>
+<p>Statement (i) and (ii) are the two most common factual errors in the unit, and both are
+settled by one line of algebra from 1/v + 1/u = 1/f with f = ∞.</p>
+<p class="ans">(i) headlights use a concave mirror; (ii) a plane mirror has f = ∞ (v = −u); (iii) true, with two-inversion exceptions; (iv) the convention is compulsory.</p>
 </div>
 </div>
 
