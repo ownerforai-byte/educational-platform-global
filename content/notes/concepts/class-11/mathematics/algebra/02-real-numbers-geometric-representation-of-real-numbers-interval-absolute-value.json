@@ -15,19 +15,20 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "one worked example for \"Real numbers: geometric representation of real numbers, i…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Solve |2x − 3| < 5 and write the answer as an interval.",
+    "Solve |x + 1| = |2x − 1|.",
+    "Prove the triangle inequality and state the equality case."
   ],
   "universalFacts": [
-    "answer pattern for \"Real numbers: geometric representation of real numbers, i…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "The triangle inequality is GPS logic: any detour (via an intermediate point) is at least as long as the direct route."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***The delta-window*** — |x - a| < delta is \"within delta of a\": the same picture that defines limits later, met here first as an inequality drill."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Real numbers: geometric representation of real numbers, i…\" with one example.",
-    "compare \"Real numbers\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Real numbers: geometric representation of real numbers, i…\" and verify the answer is plausible."
+    "**NEB-style (3m): Solve |2x − 3| < 5 and express the solution set as an interval.** — **Rule:** |u| < a ⟺ −a < u < a (a > 0). Apply with u = 2x − 3: −5 < 2x − 3 < 5. **Add 3 throughout:** −2 < 2x < 8. **Divide by 2:** −1 < x < 4, so **x ∈ (−1, 4)** — an open interval. **Geometric check:** dividing by |2| rewrites the inequality as |x − 3/2| < 5/2 — the points within distance 2.5 of 1.5, whose window (−1, 4) has centre (−1+4)/2 = 1.5 ✓ and half-width 2.5 ✓. Every absolute-value inequality is a centre-and-radius statement in disguise.",
+    "**NEB-style (2m): Solve |x + 1| = |2x − 1|.** — **Rule:** |u| = |v| ⟺ u² = v² ⟺ u = ±v (squaring is safe here because both sides are non-negative). **Case 1 (u = v):** x + 1 = 2x − 1 ⟹ x = **2**. **Case 2 (u = −v):** x + 1 = −2x + 1 ⟹ 3x = 0 ⟹ x = **0**. **Verification:** x = 2: |3| = |3| ✓; x = 0: |1| = |−1| ✓. **Solutions: {0, 2}** — geometrically, the two points equidistant from −1 and 1/2 on the line.",
+    "**NEB-style (2m): Prove the triangle inequality |x + y| ≤ |x| + |y| for real numbers, and state when equality holds.** — **Proof:** both sides are non-negative, so it suffices to compare squares. |x + y|² = (x + y)² = x² + 2xy + y². Since **xy ≤ |xy|** for all reals, x² + 2xy + y² ≤ x² + 2|xy| + y² = |x|² + 2|x||y| + |y|² = (|x| + |y|)². Taking square roots of the non-negative sides preserves order: |x + y| ≤ |x| + |y|. ∎ **Equality analysis:** the chain tightened only at 2xy ≤ 2|xy|, which is equality exactly when xy ≥ 0 — same sign (or one is zero). So equality holds iff x and y have the same sign (or either is 0): the \"detour\" |x| + |y| is wasted only when the two legs point the same way."
   ],
   "numericals": [
     "Set up the defining equation for \"Real numbers: geometric representation of real numbers, i…\", substitute simple values, and compute the result with units.",
@@ -35,13 +36,9 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Real numbers",
-    "• Geometric representation of real numbers",
-    "• Interval",
-    "• Absolute value",
-    "Connection of Real Numbers to other topics"
+    "R = rationals + irrationals; the line is complete (no gaps); rationals terminate or repeat, irrationals do not. Intervals: open (a,b), closed [a,b], half-open, unbounded; intersection of intervals is an interval. |x| = distance from 0; |x - a| = distance between x and a. Theorems: |xy| = |x||y|; triangle inequality |x+y| <= |x|+|y| with equality iff xy >= 0; reverse triangle |x-y| >= ||x|-|y||. Solution rules: |x| = a <=> x = +-a (a >= 0); |x| < a <=> -a < x < a; |x| > a <=> x < -a or x > a (union); |x - a| < δ <=> a - δ < x < a + δ (delta-window). sqrt(x^2) = |x|."
   ],
-  "summary": "Real Numbers covers essential principles and applications.",
+  "summary": "Real numbers complete the line — no gaps, unlike ℚ — and **intervals** name its pieces: open (a, b) excludes endpoints, closed [a, b] includes them, and intersections of intervals remain intervals. **Absolute value is distance**: |x| from 0, |x − a| between x and a. Its theorems: |xy| = |x||y|, the **triangle inequality** |x+y| ≤ |x|+|y| (proved by squaring and xy ≤ |xy|, equality exactly when the signs agree), and the reverse form |x−y| ≥ ||x|−|y||. Solving follows three rules: |x| = a ⟺ x = ±a; **|x| < a ⟺ −a < x < a** (the sandwich — |2x−3| < 5 gives (−1, 4)); **|x| > a ⟺ x < −a or x > a** (a union of rays, the classic trap); and the **δ-window** |x − a| < δ ⟺ a − δ < x < a + δ — the picture that limits will reuse. Isolate, split by cases, verify: extraneous roots live in the signs.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Real numbers: geometric representation of real numbers, i…\"?",
@@ -65,33 +62,90 @@
     }
   ],
   "importantStatements": [
-    "Statement 1: Definition of Real Numbers",
-    "Statement 2: Theorem related to Real Numbers",
-    "Statement 3: Condition for Real Numbers to be valid",
-    "Statement 4: Principle governing Real Numbers",
-    "Statement 5: Corollary or consequence of Real Numbers"
+    "\"|x + y| <= |x| + |y|, equality iff xy >= 0; |x| < a <=> -a < x < a; |x| > a <=> x < -a or x > a.\""
   ],
   "importantNotes": [
-    "Real Numbers is based on fundamental principles."
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Real Numbers."
+    "|u| < a: sandwich -a < u < a. |u| > a: two rays. |u| = |v|: u = +-v. Isolate, split by cases, check against the original."
   ],
   "importantConcepts": [
-    "Definition and significance of Real Numbers."
+    "Absolute value is distance, deaf to direction: every |·| equation or inequality is a geometry statement about windows on the line."
   ],
   "notes": [
-    "# Real numbers: geometric representation of real numbers, interval, absolute value\n\n## 1. Introduction and motivation\nWhat the tool **Real numbers** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Algebra fill pass.\n\n## 2. Definitions and theorems\n### Real numbers: geometric representation of real numbers\n### interval\n### absolute value\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
-    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
-    "## 4. Methods and standard forms\n**Table 2 — Theorem and method sheet**\n\n| Result or method | Hypotheses | Worked example | If the condition is dropped |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 5. Figures and graphs\n- **F1** — Real numbers — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Real numbers — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Real numbers — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
-    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
-    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+    "## 1. Topic Introduction — The Number Line and Its Distances\n\nReal numbers fill the line without gaps; **intervals** name its pieces; **absolute value** measures distance, deaf to direction. The theorems: interval unions/intersections, the triangle inequality, and the |x − a| < δ \"distance window\" that later powers limits.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Real numbers and the line\n\n- ℝ = rationals ∪ irrationals; **every point of the line is a real number and every real number is a point** — completeness is the property that leaves no gaps (unlike ℚ, which misses √2).\n- **Decimal character:** rationals terminate or repeat; irrationals do neither.\n\n### 2.2 Intervals\n\n- **Open** (a, b): a < x < b — endpoints excluded. **Closed** [a, b]: a ≤ x ≤ b — endpoints included. **Half-open** mixes. **Unbounded:** (a, ∞), (−∞, b], ℝ = (−∞, ∞).\n- **Theorem:** the intersection of intervals is an interval (possibly empty); unions of overlapping intervals are intervals; disjoint unions generally are not.\n\n### 2.3 Absolute value theorems\n\n- **Definition:** |x| = x if x ≥ 0, −x if x < 0; geometrically the distance from 0.\n- **Theorems:** |xy| = |x||y|; |x/y| = |x|/|y|; **triangle inequality** |x + y| ≤ |x| + |y| (equality iff xy ≥ 0); **reverse triangle** |x − y| ≥ ||x| − |y||.\n- **Distance form:** |x − a| = distance between x and a on the line.\n\n### 2.4 Equations and inequalities with |·|\n\n- **|x| = a ⟺ x = ±a** (a ≥ 0); **|x| < a ⟺ −a < x < a** (a > 0); **|x| > a ⟺ x < −a or x > a**.\n- **|x − a| < δ ⟺ a − δ < x < a + δ** — the δ-window about a.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Open interval** | Endpoints excluded | (0, 1): 0 < x < 1 |\n| **Absolute value** | Distance from 0, never negative | |−3| = 3 |\n| **Triangle inequality** | |x+y| ≤ |x|+|y| | detour ≥ direct path |\n| **Completeness** | No gaps in the line | √2 lives in ℝ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why |x| is distance\n\n- |x − a| answers \"how far from a\" with no direction. Every absolute-value equation/inequality is a distance statement: |x − 2| < 3 means \"within 3 of 2\", i.e. −1 < x < 5.\n\n### 4.2 Open vs closed matters later\n\n- Limits care about approach, so open intervals (no endpoint to bump into) are the natural habitat; closed intervals carry max/min theorems. The notation choice encodes real mathematics.\n\n### 4.3 Solving strategy\n\n- Isolate the absolute value; split into cases by the definition; solve each case; **check against the original** — extraneous roots appear when both sides' signs are ignored.",
+    "## 5. Comparison Tables\n\n**Absolute value rules**\n\n| Statement | Equivalent | Caution |\n|---|---|---|\n| \\|x\\| = a | x = ±a | needs a ≥ 0 |\n| \\|x\\| < a | −a < x < a | a > 0 |\n| \\|x\\| > a | x < −a or x > a | union, not intersection |\n| \\|x − a\\| < δ | a − δ < x < a + δ | the δ-window |",
+    "## 6. Common Confusions\n\n**|x| > a splits into a union:** \"farther than a\" is two rays, not one interval — the classic sign error.",
+    "**Squaring both sides needs checking:** |x − 1| = −2 has no solution; |x|=|y| allows x = ±y, not just x = y.",
+    "**√(x²) = |x|:** not x — the square root returns the non-negative root, so the absolute value is mandatory.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Solve |2x − 3| < 5 and express the solution as an interval.** — **Window form:** |u| < a ⟺ −a < u < a: −5 < 2x − 3 < 5 ⟹ add 3: −2 < 2x < 8 ⟹ divide by 2: **−1 < x < 4**, i.e. x ∈ (−1, 4). Geometric reading: the solutions are exactly the points within distance 5 of 3/2 — and indeed (−1 + 4)/2 = 3/2 with half-width 5/2 = 5/2... half-width (4 − (−1))/2 = 2.5 ✓ matches |2x−3| < 5 ⟺ |x − 3/2| < 5/2.",
+    "**NEB-style (2m): Solve |x + 1| = |2x − 1|.** — **Squaring route:** |u| = |v| ⟺ u² = v² ⟺ u = ±v. Case 1: x + 1 = 2x − 1 ⟹ x = 2. Case 2: x + 1 = −(2x − 1) ⟹ x + 1 = −2x + 1 ⟹ 3x = 0 ⟹ x = 0. **Solutions: x = 0, 2.** Check: x = 0: |1| = |−1| ✓; x = 2: |3| = |3| ✓.",
+    "**NEB-style (2m): Prove the triangle inequality |x + y| ≤ |x| + |y|.** — Both sides are non-negative, so square: |x+y|² = (x+y)² = x² + 2xy + y² ≤ x² + 2|xy| + y² = (|x| + |y|)², since **2xy ≤ 2|xy|** always. Taking square roots (both sides non-negative) gives |x + y| ≤ |x| + |y|. ∎ **Equality case:** xy ≥ 0 — same sign or zero, i.e. x and y point the same way on the line."
   ],
   "animation3D": "algebra",
   "motionGraphics": "algebra",
-  "formulas": [],
+  "formulas": [
+    "- |x| = {x, x ≥ 0; −x, x < 0}; √(x²) = |x|\n- |xy| = |x||y|; |x+y| ≤ |x|+|y| (equality iff xy ≥ 0); |x−y| ≥ ||x|−|y||\n- |x| < a ⟺ −a < x < a; |x| > a ⟺ x < −a ∪ x > a; |x−a| < δ ⟺ a−δ < x < a+δ"
+  ],
   "specialNotes": [],
-  "examNotes": [],
-  "importantTasks": []
+  "examNotes": [
+    "State the equivalence rule you are using before solving - the rule name is the method mark; always test candidate roots in the original equation."
+  ],
+  "importantTasks": [],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Number Line and Its Distances\n\nReal numbers fill the line without gaps; **intervals** name its pieces; **absolute value** measures distance, deaf to direction. The theorems: interval unions/intersections, the triangle inequality, and the |x − a| < δ \"distance window\" that later powers limits.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Real numbers and the line\n\n- ℝ = rationals ∪ irrationals; **every point of the line is a real number and every real number is a point** — completeness is the property that leaves no gaps (unlike ℚ, which misses √2).\n- **Decimal character:** rationals terminate or repeat; irrationals do neither.\n\n### 2.2 Intervals\n\n- **Open** (a, b): a < x < b — endpoints excluded. **Closed** [a, b]: a ≤ x ≤ b — endpoints included. **Half-open** mixes. **Unbounded:** (a, ∞), (−∞, b], ℝ = (−∞, ∞).\n- **Theorem:** the intersection of intervals is an interval (possibly empty); unions of overlapping intervals are intervals; disjoint unions generally are not.\n\n### 2.3 Absolute value theorems\n\n- **Definition:** |x| = x if x ≥ 0, −x if x < 0; geometrically the distance from 0.\n- **Theorems:** |xy| = |x||y|; |x/y| = |x|/|y|; **triangle inequality** |x + y| ≤ |x| + |y| (equality iff xy ≥ 0); **reverse triangle** |x − y| ≥ ||x| − |y||.\n- **Distance form:** |x − a| = distance between x and a on the line.\n\n### 2.4 Equations and inequalities with |·|\n\n- **|x| = a ⟺ x = ±a** (a ≥ 0); **|x| < a ⟺ −a < x < a** (a > 0); **|x| > a ⟺ x < −a or x > a**.\n- **|x − a| < δ ⟺ a − δ < x < a + δ** — the δ-window about a.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Open interval** | Endpoints excluded | (0, 1): 0 < x < 1 |\n| **Absolute value** | Distance from 0, never negative | |−3| = 3 |\n| **Triangle inequality** | |x+y| ≤ |x|+|y| | detour ≥ direct path |\n| **Completeness** | No gaps in the line | √2 lives in ℝ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why |x| is distance\n\n- |x − a| answers \"how far from a\" with no direction. Every absolute-value equation/inequality is a distance statement: |x − 2| < 3 means \"within 3 of 2\", i.e. −1 < x < 5.\n\n### 4.2 Open vs closed matters later\n\n- Limits care about approach, so open intervals (no endpoint to bump into) are the natural habitat; closed intervals carry max/min theorems. The notation choice encodes real mathematics.\n\n### 4.3 Solving strategy\n\n- Isolate the absolute value; split into cases by the definition; solve each case; **check against the original** — extraneous roots appear when both sides' signs are ignored.",
+      "## 5. Comparison Tables\n\n**Absolute value rules**\n\n| Statement | Equivalent | Caution |\n|---|---|---|\n| \\|x\\| = a | x = ±a | needs a ≥ 0 |\n| \\|x\\| < a | −a < x < a | a > 0 |\n| \\|x\\| > a | x < −a or x > a | union, not intersection |\n| \\|x − a\\| < δ | a − δ < x < a + δ | the δ-window |",
+      "## 6. Common Confusions\n\n**|x| > a splits into a union:** \"farther than a\" is two rays, not one interval — the classic sign error.",
+      "**Squaring both sides needs checking:** |x − 1| = −2 has no solution; |x|=|y| allows x = ±y, not just x = y.",
+      "**√(x²) = |x|:** not x — the square root returns the non-negative root, so the absolute value is mandatory.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Solve |2x − 3| < 5 and express the solution as an interval.** — **Window form:** |u| < a ⟺ −a < u < a: −5 < 2x − 3 < 5 ⟹ add 3: −2 < 2x < 8 ⟹ divide by 2: **−1 < x < 4**, i.e. x ∈ (−1, 4). Geometric reading: the solutions are exactly the points within distance 5 of 3/2 — and indeed (−1 + 4)/2 = 3/2 with half-width 5/2 = 5/2... half-width (4 − (−1))/2 = 2.5 ✓ matches |2x−3| < 5 ⟺ |x − 3/2| < 5/2.",
+      "**NEB-style (2m): Solve |x + 1| = |2x − 1|.** — **Squaring route:** |u| = |v| ⟺ u² = v² ⟺ u = ±v. Case 1: x + 1 = 2x − 1 ⟹ x = 2. Case 2: x + 1 = −(2x − 1) ⟹ x + 1 = −2x + 1 ⟹ 3x = 0 ⟹ x = 0. **Solutions: x = 0, 2.** Check: x = 0: |1| = |−1| ✓; x = 2: |3| = |3| ✓.",
+      "**NEB-style (2m): Prove the triangle inequality |x + y| ≤ |x| + |y|.** — Both sides are non-negative, so square: |x+y|² = (x+y)² = x² + 2xy + y² ≤ x² + 2|xy| + y² = (|x| + |y|)², since **2xy ≤ 2|xy|** always. Taking square roots (both sides non-negative) gives |x + y| ≤ |x| + |y|. ∎ **Equality case:** xy ≥ 0 — same sign or zero, i.e. x and y point the same way on the line."
+    ],
+    "keyPoints": [
+      "R = rationals + irrationals; the line is complete (no gaps); rationals terminate or repeat, irrationals do not. Intervals: open (a,b), closed [a,b], half-open, unbounded; intersection of intervals is an interval. |x| = distance from 0; |x - a| = distance between x and a. Theorems: |xy| = |x||y|; triangle inequality |x+y| <= |x|+|y| with equality iff xy >= 0; reverse triangle |x-y| >= ||x|-|y||. Solution rules: |x| = a <=> x = +-a (a >= 0); |x| < a <=> -a < x < a; |x| > a <=> x < -a or x > a (union); |x - a| < δ <=> a - δ < x < a + δ (delta-window). sqrt(x^2) = |x|."
+    ],
+    "importantConcepts": [
+      "Absolute value is distance, deaf to direction: every |·| equation or inequality is a geometry statement about windows on the line."
+    ],
+    "examples": [
+      "***The delta-window*** — |x - a| < delta is \"within delta of a\": the same picture that defines limits later, met here first as an inequality drill."
+    ],
+    "universalFacts": [
+      "The triangle inequality is GPS logic: any detour (via an intermediate point) is at least as long as the direct route."
+    ],
+    "importantStatements": [
+      "\"|x + y| <= |x| + |y|, equality iff xy >= 0; |x| < a <=> -a < x < a; |x| > a <=> x < -a or x > a.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "|u| < a: sandwich -a < u < a. |u| > a: two rays. |u| = |v|: u = +-v. Isolate, split by cases, check against the original."
+    ],
+    "examNotes": [
+      "State the equivalence rule you are using before solving - the rule name is the method mark; always test candidate roots in the original equation."
+    ],
+    "formulas": [
+      "- |x| = {x, x ≥ 0; −x, x < 0}; √(x²) = |x|\n- |xy| = |x||y|; |x+y| ≤ |x|+|y| (equality iff xy ≥ 0); |x−y| ≥ ||x|−|y||\n- |x| < a ⟺ −a < x < a; |x| > a ⟺ x < −a ∪ x > a; |x−a| < δ ⟺ a−δ < x < a+δ"
+    ],
+    "practice": [
+      "Solve |2x − 3| < 5 and write the answer as an interval.",
+      "Solve |x + 1| = |2x − 1|.",
+      "Prove the triangle inequality and state the equality case."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Solve |2x − 3| < 5 and express the solution set as an interval.** — **Rule:** |u| < a ⟺ −a < u < a (a > 0). Apply with u = 2x − 3: −5 < 2x − 3 < 5. **Add 3 throughout:** −2 < 2x < 8. **Divide by 2:** −1 < x < 4, so **x ∈ (−1, 4)** — an open interval. **Geometric check:** dividing by |2| rewrites the inequality as |x − 3/2| < 5/2 — the points within distance 2.5 of 1.5, whose window (−1, 4) has centre (−1+4)/2 = 1.5 ✓ and half-width 2.5 ✓. Every absolute-value inequality is a centre-and-radius statement in disguise.",
+      "**NEB-style (2m): Solve |x + 1| = |2x − 1|.** — **Rule:** |u| = |v| ⟺ u² = v² ⟺ u = ±v (squaring is safe here because both sides are non-negative). **Case 1 (u = v):** x + 1 = 2x − 1 ⟹ x = **2**. **Case 2 (u = −v):** x + 1 = −2x + 1 ⟹ 3x = 0 ⟹ x = **0**. **Verification:** x = 2: |3| = |3| ✓; x = 0: |1| = |−1| ✓. **Solutions: {0, 2}** — geometrically, the two points equidistant from −1 and 1/2 on the line.",
+      "**NEB-style (2m): Prove the triangle inequality |x + y| ≤ |x| + |y| for real numbers, and state when equality holds.** — **Proof:** both sides are non-negative, so it suffices to compare squares. |x + y|² = (x + y)² = x² + 2xy + y². Since **xy ≤ |xy|** for all reals, x² + 2xy + y² ≤ x² + 2|xy| + y² = |x|² + 2|x||y| + |y|² = (|x| + |y|)². Taking square roots of the non-negative sides preserves order: |x + y| ≤ |x| + |y|. ∎ **Equality analysis:** the chain tightened only at 2xy ≤ 2|xy|, which is equality exactly when xy ≥ 0 — same sign (or one is zero). So equality holds iff x and y have the same sign (or either is 0): the \"detour\" |x| + |y| is wasted only when the two legs point the same way."
+    ]
+  }
 }

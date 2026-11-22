@@ -7,15 +7,18 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Stress = F/A, strain = ΔL/L (dimensionless). Hooke's law (elastic limit): stress ∝ strain.",
-    "**Fact.** Elastic moduli: Young's Y = (F/A)/(ΔL/L); Bulk K = −P/(ΔV/V); Shear G = (F/A)/(Δx/L).",
-    "**Fact.** Elastic potential energy U = ½FΔL = ½kx². Poisson's ratio σ = −(lateral strain)/(longitudinal strain) ≈ 0.25–0.35 for most metals.",
-    "# Complex number: imaginary unit, algebra of complex numbers, geometric representation, absolute (modulus) value and conjugate of complex numbers and their properties, square root of a complex number\n\n## 1. Introduction and motivation\nWhat the tool **Complex number** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Algebra fill pass.\n\n## 2. Definitions and theorems\n### Complex number: imaginary unit\n### algebra of complex numbers\n### geometric representation\n### absolute (modulus) value and conjugate of complex numbers and their properties\n### square root of a complex number\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
-    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
-    "## 4. Methods and standard forms\n**Table 2 — Theorem and method sheet**\n\n| Result or method | Hypotheses | Worked example | If the condition is dropped |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 5. Figures and graphs\n- **F1** — Complex number — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Complex number — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Complex number — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
-    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
-    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+    "## 1. Topic Introduction — √(−1) Becomes Legitimate\n\nThe **imaginary unit i** with i² = −1 extends ℝ to ℂ, making every quadratic solvable. The theorems: algebra of complex numbers, **conjugate properties**, **modulus** |z| = √(x² + y²), and the geometric (Argand) representation where multiplication becomes rotation-and-scaling.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The imaginary unit and standard form\n\n- **i² = −1**; every complex number is **z = x + iy** (x = real part Re z, y = imaginary part Im z).\n- Equality: x + iy = u + vi ⟺ x = u and y = v — real and imaginary parts match separately.\n- **Theorem (quadratic solvability):** ax² + bx + c = 0 with negative discriminant has roots (−b ± i√|D|)/2a — ℂ is algebraically closed for quadratics.\n\n### 2.2 Algebra of complex numbers\n\n- Addition/subtraction componentwise; **multiplication:** (x + iy)(u + iv) = (xu − yv) + i(xv + yu) — expand and replace i² by −1.\n- **Division:** multiply by the conjugate of the denominator: z₁/z₂ = z₁z̄₂/|z₂|².\n- Powers of i cycle with period 4: i, −1, −i, 1 — iⁿ = i^(n mod 4).\n\n### 2.3 Conjugate theorems\n\n- **z̄ = x − iy**; z + z̄ = 2x (real), z − z̄ = 2iy (imaginary), **z·z̄ = |z|² = x² + y²**.\n- **Theorems:** conjugation distributes: (z̄₁+z̄₂) = z̄₁ + z̄₂, (z₁z₂)‾ = z̄₁z̄₂, (z₁/z₂)‾ = z̄₁/z̄₂; z real ⟺ z = z̄.\n\n### 2.4 Modulus and the Argand plane\n\n- **|z| = √(x² + y²)** — distance from the origin; satisfies the **triangle inequality |z₁ + z₂| ≤ |z₁| + |z₂|** and |z₁z₂| = |z₁||z₂|.\n- Argand diagram: z = x + iy is the point (x, y); |z − z₀| = r is a **circle** of radius r about z₀; conjugation reflects in the real axis.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Imaginary unit** | i² = −1 | √(−9) = 3i |\n| **Conjugate** | z̄ = x − iy — mirror in real axis | (2 + 3i)‾ = 2 − 3i |\n| **Modulus** | |z| = √(x² + y²) — distance from 0 | |3 + 4i| = 5 |\n| **Argand diagram** | Complex plane: (x, y) ↔ x + iy | geometry of ℂ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why ℂ is closed\n\n- ℝ failed √(−1); ℂ fixes it, and the price is small: order is lost (no \"z₁ < z₂\" for complex numbers). Gain: every quadratic equation now has two roots.\n\n### 4.2 Conjugates as the division tool\n\n- Dividing by z multiplies by z̄/|z|²: the conjugate realises the denominator, and the modulus² normalises it. Conjugation is the workhorse of complex arithmetic.\n\n### 4.3 Multiplication is rotation\n\n- In polar form z = r(cos θ + i sin θ), multiplying multiplies moduli and **adds angles** — multiplication by i is a 90° rotation. The Argand plane turns algebra into geometry.",
+    "## 5. Comparison Tables\n\n**Real vs complex arithmetic**\n\n| Operation | ℝ | ℂ |\n|---|---|---|\n| √ of negative | undefined | defined via i |\n| order | yes | **no** |\n| conjugate | trivial (x̄ = x) | non-trivial, essential |\n| algebraically closed | no | yes |",
+    "## 6. Common Confusions\n\n**√(−a) = i√a, not ±:** the principal root carries the i; the ± appears when solving equations, not when evaluating the radical.",
+    "**|z| is not z's \"absolute value\" algebraically:** it is √(z·z̄) — the distance — and obeys |z₁z₂| = |z₁||z₂| but not |z₁ + z₂| = |z₁| + |z₂|.",
+    "**iⁿ cycles mod 4:** i⁴⁰⁰ = 1, i⁴⁰¹ = i — reduce the exponent modulo 4 before anything else.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Express (2 + 3i)(1 − 2i) + (3 − i)/(1 + i) in the form x + iy.** — **Product:** (2 + 3i)(1 − 2i) = 2 − 4i + 3i − 6i² = 2 − i + 6 = **8 − i**. **Quotient:** multiply by the conjugate: (3 − i)(1 − i)/(1 + i)(1 − i) = (3 − 3i − i + i²)/2 = (2 − 4i)/2 = **1 − 2i**. **Sum:** (8 − i) + (1 − 2i) = **9 − 3i**.",
+    "**NEB-style (2m): Find the modulus and conjugate of z = (1 + 2i)/(3 − 4i).** — **Rationalise:** z = (1 + 2i)(3 + 4i)/(9 + 16) = (3 + 4i + 6i + 8i²)/25 = (3 − 8 + 10i)/25 = (−5 + 10i)/25 = **(−1 + 2i)/5**. **Modulus:** |z| = √(1 + 4)/5 = √5/5 = **1/√5** (equivalently |1+2i|/|3−4i| = √5/5 ✓ — moduli divide). **Conjugate: z̄ = (−1 − 2i)/5.**",
+    "**NEB-style (2m): If z = 2 + i, express z² + z̄² in the form x + iy and deduce that it is real.** — z² = (2 + i)² = 4 + 4i + i² = **3 + 4i**; z̄² = (2 − i)² = 3 − 4i. Sum: **6 + 0i — purely real**. Deduction: z² + z̄² = 2Re(z²) = 2(3) = 6 — the general theorem z² + z̄² = 2Re(z²) ∈ ℝ at work.",
+    "**NEB-style (2m): Solve x² + x + 1 = 0 over ℂ.** — D = 1 − 4 = −3 < 0 ⟹ complex roots: x = (−1 ± i√3)/2 — the **cube roots of unity** (excluding 1). The quadratic formula extends verbatim to negative discriminants once i is admitted."
   ],
   "confusion": [
     "❌ answer with no steps → ✅ show each step and box the result.",
@@ -25,26 +28,23 @@
     "Limit to remember: stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain."
   ],
   "practice": [
-    "one worked example for \"Complex number: imaginary unit, algebra of complex number…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Express (2 + 3i)(1 − 2i) + (3 − i)/(1 + i) in the form x + iy.",
+    "Find the modulus and conjugate of (1 + 2i)/(3 − 4i).",
+    "Solve x² + x + 1 = 0 over ℂ."
   ],
   "universalFacts": [
-    "Stress = F/A, strain = ΔL/L (dimensionless). Hooke's law (elastic limit): stress ∝ strain.",
-    "Elastic moduli: Young's Y = (F/A)/(ΔL/L); Bulk K = −P/(ΔV/V); Shear G = (F/A)/(Δx/L).",
-    "Elastic potential energy U = ½FΔL = ½kx². Poisson's ratio σ = −(lateral strain)/(longitudinal strain) ≈ 0.25–0.35 for most metals."
+    "AC circuit analysis uses complex impedance: inductors add +i omega L, capacitors -i/(omega C) - the imaginary axis is physical phase."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***Ninety degrees on command*** - multiplying by i rotates any point a quarter turn: 1 -> i -> -1 -> -i -> 1, the cycle that defines i geometrically."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Complex number: imaginary unit, algebra of complex number…\" with one example.",
-    "compare \"Complex number\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Complex number: imaginary unit, algebra of complex number…\" and verify the answer is plausible."
+    "**NEB-style (3m): Express (2 + 3i)(1 − 2i) + (3 − i)/(1 + i) in the form x + iy.** — **Product:** (2 + 3i)(1 − 2i) = 2·1 + 2·(−2i) + 3i·1 + 3i·(−2i) = 2 − 4i + 3i − 6i² = 2 − i + 6 = **8 − i** (i² = −1 flips the sign of the last term). **Quotient:** multiply numerator and denominator by the conjugate (1 − i): (3 − i)(1 − i)/[(1 + i)(1 − i)] = (3 − 3i − i + i²)/(1 − i²) = (3 − 4i − 1)/2 = (2 − 4i)/2 = **1 − 2i**. **Sum:** (8 − i) + (1 − 2i) = **9 − 3i** — real part 9, imaginary part −3. Every complex computation reduces to: expand with i² = −1, and divide via the conjugate.",
+    "**NEB-style (2m): Find the modulus and the conjugate of z = (1 + 2i)/(3 − 4i).** — **Rationalise:** z = (1 + 2i)(3 + 4i)/[(3 − 4i)(3 + 4i)] = (3 + 4i + 6i + 8i²)/(9 + 16) = (3 − 8 + 10i)/25 = (−5 + 10i)/25 = **(−1 + 2i)/5**. **Modulus:** |z| = √((−1/5)² + (2/5)²) = √5/5 = **1/√5**. **Cross-check by the modulus theorem:** |z| = |1 + 2i|/|3 − 4i| = √5/√25 = √5/5 ✓ — moduli of quotients divide, exactly as |z₁/z₂| = |z₁|/|z₂| demands. **Conjugate:** conjugating termwise, **z̄ = (−1 − 2i)/5** — equivalently conjugate before rationalising; both routes agree since conjugation respects division.",
+    "**NEB-style (2m): Solve the equation x² + x + 1 = 0 over the complex numbers.** — **Discriminant:** D = b² − 4ac = 1 − 4 = **−3 < 0** — no real roots, but ℂ supplies them. **Quadratic formula with i:** x = (−1 ± √(−3))/2 = (−1 ± i√3)/2. **Roots: x = (−1 + i√3)/2 and x = (−1 − i√3)/2** — a conjugate pair (real quadratics always have conjugate-pair roots). **Identification:** these are the primitive **cube roots of unity** ω and ω², satisfying 1 + ω + ω² = 0 and ω³ = 1 — the same pair that powers the factorisation x³ − 1 = (x − 1)(x² + x + 1)."
   ],
   "formulas": [
-    "Y = FL/(A ΔL)",
-    "K = −P/(ΔV/V)",
-    "U = ½kx²"
+    "- (x + iy)(u + iv) = (xu − yv) + i(xv + yu); z₁/z₂ = z₁z̄₂/|z₂|²\n- z·z̄ = |z|² = x² + y²; |z| = √(x² + y²); iⁿ = i^(n mod 4)\n- |z₁z₂| = |z₁||z₂|; |z₁+z₂| ≤ |z₁|+|z₂|; D < 0 ⟹ x = (−b ± i√|D|)/2a"
   ],
   "numericals": [
     "Use  Y = FL/(A ΔL)  — pick reasonable values, solve, and check the units.",
@@ -52,14 +52,9 @@
     "Use  U = ½kx²  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Complex number",
-    "• Imaginary unit",
-    "• Algebra of complex numbers",
-    "• Geometric representation",
-    "• Absolute",
-    "• Modulus"
+    "i^2 = -1; z = x + iy with Re z = x, Im z = y; equality is componentwise. Multiplication: (x + iy)(u + iv) = (xu - yv) + i(xv + yu). Division: multiply by the conjugate over |z2|^2. Powers of i cycle mod 4: i, -1, -i, 1. Conjugate theorems: z + z-bar = 2x; z - z-bar = 2iy; z z-bar = |z|^2; conjugation distributes over +, x, /; z real iff z = z-bar. Modulus |z| = sqrt(x^2 + y^2) = sqrt(z z-bar); |z1 z2| = |z1||z2|; triangle inequality |z1 + z2| <= |z1| + |z2|. Argand: z is the point (x, y); |z - z0| = r is a circle; conjugation reflects in the real axis; multiplication multiplies moduli and adds angles. Quadratic with D < 0: roots (-b +- i sqrt|D|)/2a."
   ],
-  "summary": "Complex number: imaginary unit, algebra of complex number… (Algebra, Mathematics, class-11-notes) covers Complex number, imaginary unit, algebra of complex numbers. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "The **imaginary unit** i² = −1 extends ℝ to ℂ = {x + iy}, making every quadratic solvable (D < 0 ⟹ roots (−b ± i√|D|)/2a — x² + x + 1 = 0 yields the cube roots of unity). **Algebra:** multiplication expands with i² → −1, division multiplies by the conjugate over |z₂|², and powers of i cycle mod 4. The **conjugate theorems** do the heavy lifting: z·z̄ = |z|², conjugation distributes over +, ×, ÷, z real ⟺ z = z̄, and z² + z̄² = 2Re(z²) is always real. The **modulus** |z| = √(x² + y²) = √(z·z̄) is distance from the origin, obeying |z₁z₂| = |z₁||z₂| and the triangle inequality — for (1+2i)/(3−4i) = (−1+2i)/5, |z| = 1/√5 by either route. In the **Argand plane**, z is a point, |z − z₀| = r a circle, conjugation a reflection, and multiplication a rotation-plus-scaling — complex numbers are geometry wearing algebra.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Complex number: imaginary unit, algebra of complex number…\"?",
@@ -83,9 +78,71 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: i² = −1 powers cycle in fours: i, −1, −i, 1 — reduce any i^n by dividing n by 4.",
-    "Trick 2: Modulus–argument pack: |z| = √(x² + y²); arg z = tan^-1(y/x) with quadrant check; polar form z = r(cos θ + i sin θ).",
-    "Trick 3: Conjugate tricks: z z̄ = |z|²; to divide by a complex number multiply by the conjugate of the DENOMINATOR — standardises every fraction problem.",
-    "Trick 4: Geometric: |z − z1| = |z − z2| is the perpendicular bisector of the segment z1z2; |z| = r is a circle — recognising the locus halves the work."
+    "i^n: reduce exponent mod 4. Divide: conjugate of the denominator. |z| via sqrt(z z-bar). z^2 + z-bar^2 = 2 Re(z^2) is always real."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — √(−1) Becomes Legitimate\n\nThe **imaginary unit i** with i² = −1 extends ℝ to ℂ, making every quadratic solvable. The theorems: algebra of complex numbers, **conjugate properties**, **modulus** |z| = √(x² + y²), and the geometric (Argand) representation where multiplication becomes rotation-and-scaling.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The imaginary unit and standard form\n\n- **i² = −1**; every complex number is **z = x + iy** (x = real part Re z, y = imaginary part Im z).\n- Equality: x + iy = u + vi ⟺ x = u and y = v — real and imaginary parts match separately.\n- **Theorem (quadratic solvability):** ax² + bx + c = 0 with negative discriminant has roots (−b ± i√|D|)/2a — ℂ is algebraically closed for quadratics.\n\n### 2.2 Algebra of complex numbers\n\n- Addition/subtraction componentwise; **multiplication:** (x + iy)(u + iv) = (xu − yv) + i(xv + yu) — expand and replace i² by −1.\n- **Division:** multiply by the conjugate of the denominator: z₁/z₂ = z₁z̄₂/|z₂|².\n- Powers of i cycle with period 4: i, −1, −i, 1 — iⁿ = i^(n mod 4).\n\n### 2.3 Conjugate theorems\n\n- **z̄ = x − iy**; z + z̄ = 2x (real), z − z̄ = 2iy (imaginary), **z·z̄ = |z|² = x² + y²**.\n- **Theorems:** conjugation distributes: (z̄₁+z̄₂) = z̄₁ + z̄₂, (z₁z₂)‾ = z̄₁z̄₂, (z₁/z₂)‾ = z̄₁/z̄₂; z real ⟺ z = z̄.\n\n### 2.4 Modulus and the Argand plane\n\n- **|z| = √(x² + y²)** — distance from the origin; satisfies the **triangle inequality |z₁ + z₂| ≤ |z₁| + |z₂|** and |z₁z₂| = |z₁||z₂|.\n- Argand diagram: z = x + iy is the point (x, y); |z − z₀| = r is a **circle** of radius r about z₀; conjugation reflects in the real axis.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Imaginary unit** | i² = −1 | √(−9) = 3i |\n| **Conjugate** | z̄ = x − iy — mirror in real axis | (2 + 3i)‾ = 2 − 3i |\n| **Modulus** | |z| = √(x² + y²) — distance from 0 | |3 + 4i| = 5 |\n| **Argand diagram** | Complex plane: (x, y) ↔ x + iy | geometry of ℂ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why ℂ is closed\n\n- ℝ failed √(−1); ℂ fixes it, and the price is small: order is lost (no \"z₁ < z₂\" for complex numbers). Gain: every quadratic equation now has two roots.\n\n### 4.2 Conjugates as the division tool\n\n- Dividing by z multiplies by z̄/|z|²: the conjugate realises the denominator, and the modulus² normalises it. Conjugation is the workhorse of complex arithmetic.\n\n### 4.3 Multiplication is rotation\n\n- In polar form z = r(cos θ + i sin θ), multiplying multiplies moduli and **adds angles** — multiplication by i is a 90° rotation. The Argand plane turns algebra into geometry.",
+      "## 5. Comparison Tables\n\n**Real vs complex arithmetic**\n\n| Operation | ℝ | ℂ |\n|---|---|---|\n| √ of negative | undefined | defined via i |\n| order | yes | **no** |\n| conjugate | trivial (x̄ = x) | non-trivial, essential |\n| algebraically closed | no | yes |",
+      "## 6. Common Confusions\n\n**√(−a) = i√a, not ±:** the principal root carries the i; the ± appears when solving equations, not when evaluating the radical.",
+      "**|z| is not z's \"absolute value\" algebraically:** it is √(z·z̄) — the distance — and obeys |z₁z₂| = |z₁||z₂| but not |z₁ + z₂| = |z₁| + |z₂|.",
+      "**iⁿ cycles mod 4:** i⁴⁰⁰ = 1, i⁴⁰¹ = i — reduce the exponent modulo 4 before anything else.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Express (2 + 3i)(1 − 2i) + (3 − i)/(1 + i) in the form x + iy.** — **Product:** (2 + 3i)(1 − 2i) = 2 − 4i + 3i − 6i² = 2 − i + 6 = **8 − i**. **Quotient:** multiply by the conjugate: (3 − i)(1 − i)/(1 + i)(1 − i) = (3 − 3i − i + i²)/2 = (2 − 4i)/2 = **1 − 2i**. **Sum:** (8 − i) + (1 − 2i) = **9 − 3i**.",
+      "**NEB-style (2m): Find the modulus and conjugate of z = (1 + 2i)/(3 − 4i).** — **Rationalise:** z = (1 + 2i)(3 + 4i)/(9 + 16) = (3 + 4i + 6i + 8i²)/25 = (3 − 8 + 10i)/25 = (−5 + 10i)/25 = **(−1 + 2i)/5**. **Modulus:** |z| = √(1 + 4)/5 = √5/5 = **1/√5** (equivalently |1+2i|/|3−4i| = √5/5 ✓ — moduli divide). **Conjugate: z̄ = (−1 − 2i)/5.**",
+      "**NEB-style (2m): If z = 2 + i, express z² + z̄² in the form x + iy and deduce that it is real.** — z² = (2 + i)² = 4 + 4i + i² = **3 + 4i**; z̄² = (2 − i)² = 3 − 4i. Sum: **6 + 0i — purely real**. Deduction: z² + z̄² = 2Re(z²) = 2(3) = 6 — the general theorem z² + z̄² = 2Re(z²) ∈ ℝ at work.",
+      "**NEB-style (2m): Solve x² + x + 1 = 0 over ℂ.** — D = 1 − 4 = −3 < 0 ⟹ complex roots: x = (−1 ± i√3)/2 — the **cube roots of unity** (excluding 1). The quadratic formula extends verbatim to negative discriminants once i is admitted."
+    ],
+    "keyPoints": [
+      "i^2 = -1; z = x + iy with Re z = x, Im z = y; equality is componentwise. Multiplication: (x + iy)(u + iv) = (xu - yv) + i(xv + yu). Division: multiply by the conjugate over |z2|^2. Powers of i cycle mod 4: i, -1, -i, 1. Conjugate theorems: z + z-bar = 2x; z - z-bar = 2iy; z z-bar = |z|^2; conjugation distributes over +, x, /; z real iff z = z-bar. Modulus |z| = sqrt(x^2 + y^2) = sqrt(z z-bar); |z1 z2| = |z1||z2|; triangle inequality |z1 + z2| <= |z1| + |z2|. Argand: z is the point (x, y); |z - z0| = r is a circle; conjugation reflects in the real axis; multiplication multiplies moduli and adds angles. Quadratic with D < 0: roots (-b +- i sqrt|D|)/2a."
+    ],
+    "importantConcepts": [
+      "The conjugate is complex arithmetic's workhorse: it realises denominators, detects reality (z = z-bar), and reflects the Argand plane."
+    ],
+    "examples": [
+      "***Ninety degrees on command*** - multiplying by i rotates any point a quarter turn: 1 -> i -> -1 -> -i -> 1, the cycle that defines i geometrically."
+    ],
+    "universalFacts": [
+      "AC circuit analysis uses complex impedance: inductors add +i omega L, capacitors -i/(omega C) - the imaginary axis is physical phase."
+    ],
+    "importantStatements": [
+      "\"i^2 = -1; z z-bar = |z|^2; |z| = sqrt(x^2 + y^2); division by z uses the conjugate z-bar/|z|^2.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "i^n: reduce exponent mod 4. Divide: conjugate of the denominator. |z| via sqrt(z z-bar). z^2 + z-bar^2 = 2 Re(z^2) is always real."
+    ],
+    "examNotes": [
+      "State answers strictly in x + iy form; a half-simplified quotient loses the final mark even when the algebra is right."
+    ],
+    "formulas": [
+      "- (x + iy)(u + iv) = (xu − yv) + i(xv + yu); z₁/z₂ = z₁z̄₂/|z₂|²\n- z·z̄ = |z|² = x² + y²; |z| = √(x² + y²); iⁿ = i^(n mod 4)\n- |z₁z₂| = |z₁||z₂|; |z₁+z₂| ≤ |z₁|+|z₂|; D < 0 ⟹ x = (−b ± i√|D|)/2a"
+    ],
+    "practice": [
+      "Express (2 + 3i)(1 − 2i) + (3 − i)/(1 + i) in the form x + iy.",
+      "Find the modulus and conjugate of (1 + 2i)/(3 − 4i).",
+      "Solve x² + x + 1 = 0 over ℂ."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Express (2 + 3i)(1 − 2i) + (3 − i)/(1 + i) in the form x + iy.** — **Product:** (2 + 3i)(1 − 2i) = 2·1 + 2·(−2i) + 3i·1 + 3i·(−2i) = 2 − 4i + 3i − 6i² = 2 − i + 6 = **8 − i** (i² = −1 flips the sign of the last term). **Quotient:** multiply numerator and denominator by the conjugate (1 − i): (3 − i)(1 − i)/[(1 + i)(1 − i)] = (3 − 3i − i + i²)/(1 − i²) = (3 − 4i − 1)/2 = (2 − 4i)/2 = **1 − 2i**. **Sum:** (8 − i) + (1 − 2i) = **9 − 3i** — real part 9, imaginary part −3. Every complex computation reduces to: expand with i² = −1, and divide via the conjugate.",
+      "**NEB-style (2m): Find the modulus and the conjugate of z = (1 + 2i)/(3 − 4i).** — **Rationalise:** z = (1 + 2i)(3 + 4i)/[(3 − 4i)(3 + 4i)] = (3 + 4i + 6i + 8i²)/(9 + 16) = (3 − 8 + 10i)/25 = (−5 + 10i)/25 = **(−1 + 2i)/5**. **Modulus:** |z| = √((−1/5)² + (2/5)²) = √5/5 = **1/√5**. **Cross-check by the modulus theorem:** |z| = |1 + 2i|/|3 − 4i| = √5/√25 = √5/5 ✓ — moduli of quotients divide, exactly as |z₁/z₂| = |z₁|/|z₂| demands. **Conjugate:** conjugating termwise, **z̄ = (−1 − 2i)/5** — equivalently conjugate before rationalising; both routes agree since conjugation respects division.",
+      "**NEB-style (2m): Solve the equation x² + x + 1 = 0 over the complex numbers.** — **Discriminant:** D = b² − 4ac = 1 − 4 = **−3 < 0** — no real roots, but ℂ supplies them. **Quadratic formula with i:** x = (−1 ± √(−3))/2 = (−1 ± i√3)/2. **Roots: x = (−1 + i√3)/2 and x = (−1 − i√3)/2** — a conjugate pair (real quadratics always have conjugate-pair roots). **Identification:** these are the primitive **cube roots of unity** ω and ω², satisfying 1 + ω + ω² = 0 and ω³ = 1 — the same pair that powers the factorisation x³ − 1 = (x − 1)(x² + x + 1)."
+    ]
+  },
+  "importantConcepts": [
+    "The conjugate is complex arithmetic's workhorse: it realises denominators, detects reality (z = z-bar), and reflects the Argand plane."
+  ],
+  "importantStatements": [
+    "\"i^2 = -1; z z-bar = |z|^2; |z| = sqrt(x^2 + y^2); division by z uses the conjugate z-bar/|z|^2.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examNotes": [
+    "State answers strictly in x + iy form; a half-simplified quotient loses the final mark even when the algebra is right."
   ]
 }

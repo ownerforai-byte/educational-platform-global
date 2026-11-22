@@ -5,32 +5,17 @@
   "topicTitle": "Matrices and determinants: transpose, properties, inverse",
   "relevance": 100,
   "notes": [
-    "### 1. Matrix Definition",
-    "A rectangular array of numbers arranged in rows and columns. Order: m x n (m rows, n columns).",
-    "### 2. Types of Matrices",
-    "- Square: m = n",
-    "- Diagonal: All non-diagonal elements are zero",
-    "- Identity (I): Diagonal elements = 1, others = 0",
-    "- Zero matrix: All elements = 0",
-    "- Symmetric: A = A^T",
-    "- Skew-symmetric: A = -A^T (diagonal elements = 0)",
-    "### 3. Transpose",
-    "Interchanging rows and columns: (A^T)_ij = A_ji",
-    "- Properties: (A^T)^T = A, (A+B)^T = A^T + B^T, (AB)^T = B^T A^T",
-    "### 4. Determinant (2x2 and 3x3)",
-    "- |A| = ad - bc for A = [[a,b],[c,d]]",
-    "- |A| = 0 -> singular matrix (no inverse)",
-    "- |A| != 0 -> non-singular (inverse exists)",
-    "### 5. Inverse of a Matrix",
-    "A^-1 = (1/|A|) x adj(A) where adj(A) is the adjoint (transpose of cofactor matrix).",
-    "### 6. Cramer's Rule",
-    "For system ax + by = e, cx + dy = f:",
-    "x = Dx/D, y = Dy/D where D = |A|, Dx replaces column 1 with constants, Dy replaces column 2.",
-    "### 7. Entrance Exam Formulas",
-    "- |AB| = |A| x |B|",
-    "- |A^T| = |A|",
-    "- A x adj(A) = |A| x I",
-    "- (A^-1)^T = (A^T)^-1"
+    "## 1. Topic Introduction — Rectangular Arrays With Algebra\n\nA **matrix** is a rectangular array; its algebra (transpose, sums, products) and the determinant machinery turn linear systems into single computations. The theorems: transpose laws, matrix multiplication's non-commutativity, invertibility via |A| ≠ 0, and **A⁻¹ = adj A/|A|**.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Matrix basics and algebra\n\n- Order m × n; equality needs equal orders and matching entries. **Addition** entrywise (same orders only); **scalar multiplication** distributes.\n- **Transpose:** Aᵀ swaps rows and columns. **Theorems:** (Aᵀ)ᵀ = A; **(A + B)ᵀ = Aᵀ + Bᵀ**; **(AB)ᵀ = BᵀAᵀ** (reversal law); (kA)ᵀ = kAᵀ.\n\n### 2.2 Multiplication and its laws\n\n- **(AB)ᵢⱼ = Σₖ aᵢₖbₖⱼ** — row of A dotted into column of B; defined only when cols(A) = rows(B).\n- Associative: (AB)C = A(BC); distributive: A(B + C) = AB + AC; **not commutative**: AB ≠ BA in general (even when both are defined).\n- **Identity I** and **zero matrix O** act as neutral/absorbing elements; AB = O does **not** imply A = O or B = O (zero divisors exist).\n\n### 2.3 Determinants\n\n- **2×2:** |A| = ad − bc. **3×3:** cofactor expansion along any row or column.\n- **Theorems:** |Aᵀ| = |A|; |AB| = |A||B|; swapping two rows flips the sign; a zero row ⟹ |A| = 0; identical rows ⟹ |A| = 0.\n\n### 2.4 Inverse (the theorem)\n\n- **A is invertible ⟺ |A| ≠ 0** (non-singular). **A⁻¹ = adj A/|A|**, where adj A is the transpose of the cofactor matrix.\n- **Theorems:** AA⁻¹ = A⁻¹A = I; (AB)⁻¹ = **B⁻¹A⁻¹** (reversal); (A⁻¹)⁻¹ = A; (Aᵀ)⁻¹ = (A⁻¹)ᵀ; |A⁻¹| = 1/|A|.\n- **Solving AX = B:** X = A⁻¹B — unique exactly when |A| ≠ 0.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Transpose** | Rows ↔ columns | (AB)ᵀ = BᵀAᵀ |\n| **Non-singular** | |A| ≠ 0 — invertible | rotation matrices |\n| **Adjoint** | Transpose of the cofactor matrix | adj A feeds A⁻¹ |\n| **Singular** | |A| = 0 — no inverse | projection matrices |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why multiplication reverses order\n\n- (AB)ᵀ = BᵀAᵀ and (AB)⁻¹ = B⁻¹A⁻¹ both reflect the same fact: to undo \"apply A then B\" you must undo B first, then A — socks before shoes, shoes off before socks.\n\n### 4.2 The determinant as an area/volume scale\n\n- |A| scales areas (2D) or volumes (3D) under the map x ↦ Ax; |A| = 0 collapses space — which is exactly why no inverse can restore it.\n\n### 4.3 AB = O with A, B ≠ O\n\n- Multiplication by a singular matrix can annihilate information: non-zero factors with zero product exist, so matrix algebra has no cancellation law.",
+    "## 5. Comparison Tables\n\n**Scalar vs matrix algebra**\n\n| Law | Scalars | Matrices |\n|---|---|---|\n| commutative product | yes | **no** |\n| AB = 0 ⟹ A = 0 or B = 0 | yes | **no** |\n| (AB)⁻¹ | 1/(ab) = (1/a)(1/b) | B⁻¹A⁻¹ (order reverses) |\n| cancellation | yes | only if invertible |",
+    "## 6. Common Confusions\n\n**Multiplication order:** AB needs cols(A) = rows(B); reversing kills the definition, not just the value.",
+    "**(AB)⁻¹ = B⁻¹A⁻¹, not A⁻¹B⁻¹:** the reversal law — the transpose version (AB)ᵀ = BᵀAᵀ is its twin.",
+    "**adj A is the transpose of cofactors:** forgetting the transpose is the classic inverse-computation error.",
+    "## 7. Exam Application\n\n**NEB 2023 (verified PYQ): If A = [[2, 1], [3, 4]], find det(A) and A⁻¹. (3m)** — **Determinant:** |A| = (2)(4) − (1)(3) = 8 − 3 = **5** ≠ 0 ⟹ invertible. **Cofactors:** C₁₁ = 4, C₁₂ = −3, C₂₁ = −1, C₂₂ = 2; cofactor matrix [[4, −3], [−1, 2]]; **adj A = transpose = [[4, −1], [−3, 2]]**. **A⁻¹ = adj A/|A| = (1/5)[[4, −1], [−3, 2]].** Check: A·A⁻¹ = (1/5)[[8−3, −2+2], [12−12, −3+8]] = (1/5)[[5, 0], [0, 5]] = I ✓.",
+    "**NEB-style (2m): Show that (AB)ᵀ = BᵀAᵀ for A = [[1, 2], [0, 1]], B = [[1, 0], [3, 1]].** — AB = [[1+6, 0+2], [3, 1]] = [[7, 2], [3, 1]] ⟹ (AB)ᵀ = [[7, 3], [2, 1]]. BᵀAᵀ = [[1, 3], [0, 1]]·[[1, 0], [2, 1]] = [[1+6, 3], [2, 1]] = [[7, 3], [2, 1]] ✓ — equal, as the reversal law demands.",
+    "**NEB-style (3m): Solve the system x + y = 5, 2x − y = 1 by the inverse-matrix method.** — **AX = B** with A = [[1, 1], [2, −1]], X = [x, y]ᵀ, B = [5, 1]ᵀ. |A| = (1)(−1) − (1)(2) = −3 ≠ 0. adj A = [[−1, −1], [−2, 1]]. **X = A⁻¹B = (1/−3)[[−1, −1], [−2, 1]]·[5, 1]ᵀ = (1/−3)[−6, −9]ᵀ = [2, 3]ᵀ** ⟹ **x = 2, y = 3**. Check: 2 + 3 = 5 ✓, 4 − 3 = 1 ✓."
   ],
   "confusion": [
     "x (AB)^T = A^T B^T. x (AB)^T = B^T A^T (order reverses!).",
@@ -38,30 +23,19 @@
     "x AB = BA always. x Matrix multiplication is NOT commutative."
   ],
   "practice": [
-    "Find the transpose and determinant of A = [[2,3],[1,4]].",
-    "Find the inverse of A = [[1,2],[3,5]].",
-    "Solve using Cramer's rule: 2x + 3y = 8, x - y = 1.",
-    "If |A| = 5, find |adj(A)| for a 3x3 matrix."
+    "Find det(A) and A⁻¹ for A = [[2, 1], [3, 4]].",
+    "Verify (AB)ᵀ = BᵀAᵀ for 2×2 matrices A, B of your choice.",
+    "Solve x + y = 5, 2x − y = 1 by the inverse-matrix method."
   ],
   "formulas": [
-    "A^-1 = (1/|A|) adj(A)",
-    "Dx = det(replace col1 with constants), Dy = det(replace col2 with constants)"
+    "- (AB)ᵀ = BᵀAᵀ; (AB)⁻¹ = B⁻¹A⁻¹; |AB| = |A||B|\n- 2×2: A⁻¹ = (1/(ad−bc))[[d, −b], [−c, a]]\n- A⁻¹ = adj A/|A|; AA⁻¹ = I; |A⁻¹| = 1/|A|; AX = B ⟹ X = A⁻¹B"
   ],
-  "summary": "A matrix is a rectangular array of numbers of order m x n, and the special types that matter here are square, diagonal, identity, zero, symmetric (A = A^T) and skew-symmetric (A = -A^T, whose diagonal entries are all zero). The transpose interchanges rows and columns, (A^T)_ij = A_ji, with (AB)^T = B^T A^T, so the order reverses. The determinant of A = [[a,b],[c,d]] is ad - bc; |A| = 0 makes the matrix singular, and only a square matrix with |A| != 0 has an inverse, obtained as A^-1 = (1/|A|) adj(A), the same tool that gives Cramer's rule.",
+  "summary": "Matrices bring algebra to arrays. **Transpose** swaps rows and columns and obeys (Aᵀ)ᵀ = A, (A+B)ᵀ = Aᵀ+Bᵀ and the **reversal law (AB)ᵀ = BᵀAᵀ**; **multiplication** (AB)ᵢⱼ = Σₖ aᵢₖbₖⱼ is associative and distributive but **never commutative**, and AB = O tolerates non-zero factors. **Determinants** — ad − bc in 2×2, cofactor expansion in 3×3 — satisfy |Aᵀ| = |A| and **|AB| = |A||B|**, with zero/equal rows forcing zero. The **inverse theorem**: A⁻¹ exists ⟺ |A| ≠ 0, computed as **adj A/|A|** (adj = transposed cofactors — NEB 2023: A = [[2,1],[3,4]] gives |A| = 5 and A⁻¹ = (1/5)[[4,−1],[−3,2]], verified by AA⁻¹ = I). Inverses reverse order too: **(AB)⁻¹ = B⁻¹A⁻¹** — socks-before-shoes logic. Linear systems become **X = A⁻¹B**, unique exactly when the determinant stands guard ≠ 0 (x = 2, y = 3 for the sample system).",
   "importantConcepts": [
-    "Order m x n means m rows and n columns; a matrix is square only when m = n.",
-    "Transpose: (A^T)_ij = A_ji, so the order becomes n x m while the main diagonal is unchanged.",
-    "The determinant of A = [[a,b],[c,d]] is ad - bc; it is a single number attached to the whole matrix, not to its entries.",
-    "Singular matrix: |A| = 0, so no inverse exists. Non-singular: |A| != 0, so the inverse exists and is unique.",
-    "The adjoint adj(A) is the transpose of the cofactor matrix; A x adj(A) = |A| x I, hence A^-1 = (1/|A|) adj(A).",
-    "Cramer's rule: x = Dx/D and y = Dy/D, where D = |A| and Dx, Dy are D with column 1 or column 2 replaced by the constants."
+    "Reversal laws share one reason: undoing \"A then B\" means undoing B first - transpose and inverse both read right to left."
   ],
   "importantStatements": [
-    "The transpose interchanges rows and columns and satisfies (A^T)^T = A, (A + B)^T = A^T + B^T and (AB)^T = B^T A^T.",
-    "For A = [[a,b],[c,d]] the determinant is |A| = ad - bc, and a matrix is singular exactly when |A| = 0.",
-    "A^-1 = (1/|A|) adj(A) exists if and only if A is square and |A| != 0, and the inverse it produces is unique.",
-    "Cramer's rule solves ax + by = e and cx + dy = f by x = Dx/D and y = Dy/D with D = |A|.",
-    "Determinants obey |AB| = |A| x |B| and |A^T| = |A|, while (A^-1)^T = (A^T)^-1 and A x A^-1 = I."
+    "\"A is invertible iff |A| != 0; A^-1 = adj A/|A|; (AB)^-1 = B^-1 A^-1; (AB)^T = B^T A^T.\""
   ],
   "importantTasks": [
     "Find the transpose and the determinant of a 2x2 or 3x3 matrix, expanding a 3x3 determinant along the row or column with the most zeros.",
@@ -70,11 +44,7 @@
     "Classify a given matrix as square, diagonal, identity, zero, symmetric or skew-symmetric, and confirm that a skew-symmetric matrix has a zero diagonal."
   ],
   "keyPoints": [
-    "Matrix multiplication is not commutative, and (AB)^T = B^T A^T reverses the order for exactly the same reason.",
-    "Only square matrices can have an inverse, and only when |A| != 0; a rectangular matrix has neither determinant nor inverse.",
-    "The adjoint is the transpose of the cofactor matrix, not the cofactor matrix itself.",
-    "|A^T| = |A|, and a 3x3 determinant uses the cofactor signs + - + along the first row.",
-    "For an n x n matrix, |adj A| = |A|^(n-1), so for a 3x3 matrix the power is 2."
+    "Matrix: rectangular array, order m x n; addition entrywise for equal orders. Transpose theorems: (A^T)^T = A; (A + B)^T = A^T + B^T; (AB)^T = B^T A^T (reversal); (kA)^T = kA^T. Multiplication: (AB)_ij = sum_k a_ik b_kj, needs cols(A) = rows(B); associative, distributive, NOT commutative; AB = O does not force A = O or B = O. Determinants: 2x2 ad - bc; |A^T| = |A|; |AB| = |A||B|; row swap flips sign; zero or equal rows give 0. Inverse theorem: A invertible iff |A| != 0; A^-1 = adj A/|A| with adj A = transpose of cofactor matrix; (AB)^-1 = B^-1 A^-1; (A^-1)^-1 = A; |A^-1| = 1/|A|. Solving AX = B: X = A^-1 B, unique iff |A| != 0."
   ],
   "specialNotes": [
     "A skew-symmetric matrix can also be symmetric only in the trivial case A = 0, since A = A^T = -A^T forces every entry to be zero.",
@@ -84,23 +54,15 @@
     "If |A| = 5 for a 3x3 matrix then |adj A| = 5^2 = 25, not 5, because the exponent is n - 1."
   ],
   "examShortTricks": [
-    "Expand a 3x3 determinant along the row with the most zeros, which keeps the signs and the arithmetic simple.",
-    "For a 2x2 matrix adj([[a,b],[c,d]]) = [[d,-b],[-c,a]], and A^-1 is that matrix divided by (ad - bc).",
-    "Cramer's rule is only a substitution: copy D and swap column 1 for the constants to get Dx, and column 2 for Dy.",
-    "If only |A| and |AB| are given, use |AB| = |A| x |B| and |A^T| = |A| instead of expanding anything."
+    "2x2 inverse: swap diagonal, negate off-diagonal, divide by |A|. |AB| = |A||B|. Solve AX = B: find |A|, adj A, multiply. Transpose and inverse: reverse the order."
   ],
   "examNotes": [
-    "Transpose questions are 1 to 2 marks and test the reversed order in (AB)^T rather than any computation.",
-    "Finding a 2x2 inverse, or solving a 2x2 system by Cramer's rule, is a standard 5-mark question.",
-    "Determinants of 3x3 matrices and the classification of matrices as symmetric or skew-symmetric are common 5-mark items.",
-    "MCQs often ask which of the given matrices is singular, or ask for the order and entries after a transpose."
+    "Always verify A A^-1 = I after computing an inverse - the check is quick and catches transpose/cofactor slips."
   ],
   "practiceQuestions": [
-    "Find the transpose and the determinant of A = [[2,3],[1,4]].",
-    "Find the inverse of A = [[1,2],[3,5]] and verify it by computing A A^-1.",
-    "Solve 2x + 3y = 8 and x - y = 1 by Cramer's rule.",
-    "If |A| = 5 for a 3x3 matrix, find |adj A| and state the general formula for |adj A|.",
-    "Show that A + A^T is always symmetric for any square matrix A."
+    "**NEB 2023 (verified PYQ): If A = [[2, 1], [3, 4]], find det(A) and A⁻¹. (3m)** — **Determinant:** |A| = (2)(4) − (1)(3) = 8 − 3 = **5 ≠ 0** ⟹ A is non-singular and invertible. **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −1, C₂₂ = +2 ⟹ cofactor matrix [[4, −3], [−1, 2]]; **adj A = its transpose = [[4, −1], [−3, 2]]**. **Inverse:** A⁻¹ = adj A/|A| = **(1/5)[[4, −1], [−3, 2]]**. (2×2 shortcut: swap the diagonal entries, negate the off-diagonal ones, divide by |A| — same result.) **Verification:** AA⁻¹ = (1/5)[[2·4 + 1·(−3), 2·(−1) + 1·2], [3·4 + 4·(−3), 3·(−1) + 4·2]] = (1/5)[[5, 0], [0, 5]] = **I** ✓.",
+    "**NEB-style (2m): Verify the reversal law (AB)ᵀ = BᵀAᵀ for A = [[1, 2], [0, 1]] and B = [[1, 0], [3, 1]].** — **Left side:** AB = [[1·1 + 2·3, 1·0 + 2·1], [0·1 + 1·3, 0·0 + 1·1]] = [[7, 2], [3, 1]]; its transpose: **(AB)ᵀ = [[7, 3], [2, 1]]**. **Right side:** Bᵀ = [[1, 3], [0, 1]], Aᵀ = [[1, 0], [2, 1]]; BᵀAᵀ = [[1·1 + 3·2, 1·0 + 3·1], [0·1 + 1·2, 0·0 + 1·1]] = **[[7, 3], [2, 1]]**. Both sides agree ✓ — the reversal law holds: transposing a product reverses the order of the factors, never preserves it.",
+    "**NEB-style (3m): Solve the system x + y = 5, 2x − y = 1 by the matrix (inverse) method.** — **Matrix form:** A = [[1, 1], [2, −1]], X = [x, y]ᵀ, B = [5, 1]ᵀ, so **AX = B**. **Determinant:** |A| = (1)(−1) − (1)(2) = −3 ≠ 0 ⟹ unique solution exists. **Adjoint:** cofactor matrix [[−1, −2], [−1, 1]] ⟹ **adj A = [[−1, −1], [−2, 1]]**. **Solution:** X = A⁻¹B = (1/−3)[[−1, −1], [−2, 1]]·[5, 1]ᵀ = (1/−3)[(−5 − 1), (−10 + 1)]ᵀ = (1/−3)[−6, −9]ᵀ = **[2, 3]ᵀ**. **Answer: x = 2, y = 3.** **Check in both equations:** 2 + 3 = 5 ✓ and 2(2) − 3 = 1 ✓ — the inverse method's uniqueness guarantee means no other solution can exist."
   ],
   "mcs": [
     {
@@ -158,5 +120,66 @@
       "answer": "B",
       "explanation": "A^-1 = (1/|A|) adj(A) requires a non-zero determinant. When |A| = 0 the matrix is singular and the division is impossible, while symmetry or diagonality says nothing about the determinant."
     }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Rectangular Arrays With Algebra\n\nA **matrix** is a rectangular array; its algebra (transpose, sums, products) and the determinant machinery turn linear systems into single computations. The theorems: transpose laws, matrix multiplication's non-commutativity, invertibility via |A| ≠ 0, and **A⁻¹ = adj A/|A|**.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Matrix basics and algebra\n\n- Order m × n; equality needs equal orders and matching entries. **Addition** entrywise (same orders only); **scalar multiplication** distributes.\n- **Transpose:** Aᵀ swaps rows and columns. **Theorems:** (Aᵀ)ᵀ = A; **(A + B)ᵀ = Aᵀ + Bᵀ**; **(AB)ᵀ = BᵀAᵀ** (reversal law); (kA)ᵀ = kAᵀ.\n\n### 2.2 Multiplication and its laws\n\n- **(AB)ᵢⱼ = Σₖ aᵢₖbₖⱼ** — row of A dotted into column of B; defined only when cols(A) = rows(B).\n- Associative: (AB)C = A(BC); distributive: A(B + C) = AB + AC; **not commutative**: AB ≠ BA in general (even when both are defined).\n- **Identity I** and **zero matrix O** act as neutral/absorbing elements; AB = O does **not** imply A = O or B = O (zero divisors exist).\n\n### 2.3 Determinants\n\n- **2×2:** |A| = ad − bc. **3×3:** cofactor expansion along any row or column.\n- **Theorems:** |Aᵀ| = |A|; |AB| = |A||B|; swapping two rows flips the sign; a zero row ⟹ |A| = 0; identical rows ⟹ |A| = 0.\n\n### 2.4 Inverse (the theorem)\n\n- **A is invertible ⟺ |A| ≠ 0** (non-singular). **A⁻¹ = adj A/|A|**, where adj A is the transpose of the cofactor matrix.\n- **Theorems:** AA⁻¹ = A⁻¹A = I; (AB)⁻¹ = **B⁻¹A⁻¹** (reversal); (A⁻¹)⁻¹ = A; (Aᵀ)⁻¹ = (A⁻¹)ᵀ; |A⁻¹| = 1/|A|.\n- **Solving AX = B:** X = A⁻¹B — unique exactly when |A| ≠ 0.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Transpose** | Rows ↔ columns | (AB)ᵀ = BᵀAᵀ |\n| **Non-singular** | |A| ≠ 0 — invertible | rotation matrices |\n| **Adjoint** | Transpose of the cofactor matrix | adj A feeds A⁻¹ |\n| **Singular** | |A| = 0 — no inverse | projection matrices |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why multiplication reverses order\n\n- (AB)ᵀ = BᵀAᵀ and (AB)⁻¹ = B⁻¹A⁻¹ both reflect the same fact: to undo \"apply A then B\" you must undo B first, then A — socks before shoes, shoes off before socks.\n\n### 4.2 The determinant as an area/volume scale\n\n- |A| scales areas (2D) or volumes (3D) under the map x ↦ Ax; |A| = 0 collapses space — which is exactly why no inverse can restore it.\n\n### 4.3 AB = O with A, B ≠ O\n\n- Multiplication by a singular matrix can annihilate information: non-zero factors with zero product exist, so matrix algebra has no cancellation law.",
+      "## 5. Comparison Tables\n\n**Scalar vs matrix algebra**\n\n| Law | Scalars | Matrices |\n|---|---|---|\n| commutative product | yes | **no** |\n| AB = 0 ⟹ A = 0 or B = 0 | yes | **no** |\n| (AB)⁻¹ | 1/(ab) = (1/a)(1/b) | B⁻¹A⁻¹ (order reverses) |\n| cancellation | yes | only if invertible |",
+      "## 6. Common Confusions\n\n**Multiplication order:** AB needs cols(A) = rows(B); reversing kills the definition, not just the value.",
+      "**(AB)⁻¹ = B⁻¹A⁻¹, not A⁻¹B⁻¹:** the reversal law — the transpose version (AB)ᵀ = BᵀAᵀ is its twin.",
+      "**adj A is the transpose of cofactors:** forgetting the transpose is the classic inverse-computation error.",
+      "## 7. Exam Application\n\n**NEB 2023 (verified PYQ): If A = [[2, 1], [3, 4]], find det(A) and A⁻¹. (3m)** — **Determinant:** |A| = (2)(4) − (1)(3) = 8 − 3 = **5** ≠ 0 ⟹ invertible. **Cofactors:** C₁₁ = 4, C₁₂ = −3, C₂₁ = −1, C₂₂ = 2; cofactor matrix [[4, −3], [−1, 2]]; **adj A = transpose = [[4, −1], [−3, 2]]**. **A⁻¹ = adj A/|A| = (1/5)[[4, −1], [−3, 2]].** Check: A·A⁻¹ = (1/5)[[8−3, −2+2], [12−12, −3+8]] = (1/5)[[5, 0], [0, 5]] = I ✓.",
+      "**NEB-style (2m): Show that (AB)ᵀ = BᵀAᵀ for A = [[1, 2], [0, 1]], B = [[1, 0], [3, 1]].** — AB = [[1+6, 0+2], [3, 1]] = [[7, 2], [3, 1]] ⟹ (AB)ᵀ = [[7, 3], [2, 1]]. BᵀAᵀ = [[1, 3], [0, 1]]·[[1, 0], [2, 1]] = [[1+6, 3], [2, 1]] = [[7, 3], [2, 1]] ✓ — equal, as the reversal law demands.",
+      "**NEB-style (3m): Solve the system x + y = 5, 2x − y = 1 by the inverse-matrix method.** — **AX = B** with A = [[1, 1], [2, −1]], X = [x, y]ᵀ, B = [5, 1]ᵀ. |A| = (1)(−1) − (1)(2) = −3 ≠ 0. adj A = [[−1, −1], [−2, 1]]. **X = A⁻¹B = (1/−3)[[−1, −1], [−2, 1]]·[5, 1]ᵀ = (1/−3)[−6, −9]ᵀ = [2, 3]ᵀ** ⟹ **x = 2, y = 3**. Check: 2 + 3 = 5 ✓, 4 − 3 = 1 ✓."
+    ],
+    "keyPoints": [
+      "Matrix: rectangular array, order m x n; addition entrywise for equal orders. Transpose theorems: (A^T)^T = A; (A + B)^T = A^T + B^T; (AB)^T = B^T A^T (reversal); (kA)^T = kA^T. Multiplication: (AB)_ij = sum_k a_ik b_kj, needs cols(A) = rows(B); associative, distributive, NOT commutative; AB = O does not force A = O or B = O. Determinants: 2x2 ad - bc; |A^T| = |A|; |AB| = |A||B|; row swap flips sign; zero or equal rows give 0. Inverse theorem: A invertible iff |A| != 0; A^-1 = adj A/|A| with adj A = transpose of cofactor matrix; (AB)^-1 = B^-1 A^-1; (A^-1)^-1 = A; |A^-1| = 1/|A|. Solving AX = B: X = A^-1 B, unique iff |A| != 0."
+    ],
+    "importantConcepts": [
+      "Reversal laws share one reason: undoing \"A then B\" means undoing B first - transpose and inverse both read right to left."
+    ],
+    "examples": [
+      "***The determinant as a volume meter*** - |A| scales areas and volumes under x -> Ax; |A| = 0 collapses space, which is precisely why the inverse cannot exist."
+    ],
+    "universalFacts": [
+      "Computer graphics composes transforms as matrix products - and un-composes them in reverse order, the reversal law on screen."
+    ],
+    "importantStatements": [
+      "\"A is invertible iff |A| != 0; A^-1 = adj A/|A|; (AB)^-1 = B^-1 A^-1; (AB)^T = B^T A^T.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2023 (det and inverse of [[2,1],[3,4]]) - assigned to this row. Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "2x2 inverse: swap diagonal, negate off-diagonal, divide by |A|. |AB| = |A||B|. Solve AX = B: find |A|, adj A, multiply. Transpose and inverse: reverse the order."
+    ],
+    "examNotes": [
+      "Always verify A A^-1 = I after computing an inverse - the check is quick and catches transpose/cofactor slips."
+    ],
+    "formulas": [
+      "- (AB)ᵀ = BᵀAᵀ; (AB)⁻¹ = B⁻¹A⁻¹; |AB| = |A||B|\n- 2×2: A⁻¹ = (1/(ad−bc))[[d, −b], [−c, a]]\n- A⁻¹ = adj A/|A|; AA⁻¹ = I; |A⁻¹| = 1/|A|; AX = B ⟹ X = A⁻¹B"
+    ],
+    "practice": [
+      "Find det(A) and A⁻¹ for A = [[2, 1], [3, 4]].",
+      "Verify (AB)ᵀ = BᵀAᵀ for 2×2 matrices A, B of your choice.",
+      "Solve x + y = 5, 2x − y = 1 by the inverse-matrix method."
+    ],
+    "practiceQuestions": [
+      "**NEB 2023 (verified PYQ): If A = [[2, 1], [3, 4]], find det(A) and A⁻¹. (3m)** — **Determinant:** |A| = (2)(4) − (1)(3) = 8 − 3 = **5 ≠ 0** ⟹ A is non-singular and invertible. **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −1, C₂₂ = +2 ⟹ cofactor matrix [[4, −3], [−1, 2]]; **adj A = its transpose = [[4, −1], [−3, 2]]**. **Inverse:** A⁻¹ = adj A/|A| = **(1/5)[[4, −1], [−3, 2]]**. (2×2 shortcut: swap the diagonal entries, negate the off-diagonal ones, divide by |A| — same result.) **Verification:** AA⁻¹ = (1/5)[[2·4 + 1·(−3), 2·(−1) + 1·2], [3·4 + 4·(−3), 3·(−1) + 4·2]] = (1/5)[[5, 0], [0, 5]] = **I** ✓.",
+      "**NEB-style (2m): Verify the reversal law (AB)ᵀ = BᵀAᵀ for A = [[1, 2], [0, 1]] and B = [[1, 0], [3, 1]].** — **Left side:** AB = [[1·1 + 2·3, 1·0 + 2·1], [0·1 + 1·3, 0·0 + 1·1]] = [[7, 2], [3, 1]]; its transpose: **(AB)ᵀ = [[7, 3], [2, 1]]**. **Right side:** Bᵀ = [[1, 3], [0, 1]], Aᵀ = [[1, 0], [2, 1]]; BᵀAᵀ = [[1·1 + 3·2, 1·0 + 3·1], [0·1 + 1·2, 0·0 + 1·1]] = **[[7, 3], [2, 1]]**. Both sides agree ✓ — the reversal law holds: transposing a product reverses the order of the factors, never preserves it.",
+      "**NEB-style (3m): Solve the system x + y = 5, 2x − y = 1 by the matrix (inverse) method.** — **Matrix form:** A = [[1, 1], [2, −1]], X = [x, y]ᵀ, B = [5, 1]ᵀ, so **AX = B**. **Determinant:** |A| = (1)(−1) − (1)(2) = −3 ≠ 0 ⟹ unique solution exists. **Adjoint:** cofactor matrix [[−1, −2], [−1, 1]] ⟹ **adj A = [[−1, −1], [−2, 1]]**. **Solution:** X = A⁻¹B = (1/−3)[[−1, −1], [−2, 1]]·[5, 1]ᵀ = (1/−3)[(−5 − 1), (−10 + 1)]ᵀ = (1/−3)[−6, −9]ᵀ = **[2, 3]ᵀ**. **Answer: x = 2, y = 3.** **Check in both equations:** 2 + 3 = 5 ✓ and 2(2) − 3 = 1 ✓ — the inverse method's uniqueness guarantee means no other solution can exist."
+    ]
+  },
+  "examples": [
+    "***The determinant as a volume meter*** - |A| scales areas and volumes under x -> Ax; |A| = 0 collapses space, which is precisely why the inverse cannot exist."
+  ],
+  "universalFacts": [
+    "Computer graphics composes transforms as matrix products - and un-composes them in reverse order, the reversal law on screen."
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2023 (det and inverse of [[2,1],[3,4]]) - assigned to this row. Other items are NEB-style practice."
   ]
 }

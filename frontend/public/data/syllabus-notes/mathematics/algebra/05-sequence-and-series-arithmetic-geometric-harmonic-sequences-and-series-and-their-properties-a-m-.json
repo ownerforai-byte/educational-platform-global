@@ -7,15 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** AP: aₙ = a + (n−1)d; Sₙ = n/2 [2a + (n−1)d]. GP: aₙ = ar^{n−1}; Sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): S = a/(1−r).",
-    "**Fact.** AM ≤ GM ≤ HM: AM = (a+b)/2, GM = √(ab), HM = 2ab/(a+b).",
-    "**Fact.** Convergence of a series needs term → 0 (necessary, not sufficient).",
-    "# Sequence and series: arithmetic, geometric, harmonic sequences and series and their properties; A.M, G.M, H.M and their relations; sum of infinite geometric series\n\n## 1. Introduction and motivation\nWhat the tool **Sequence and series** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Algebra fill pass.\n\n## 2. Definitions and theorems\n### Sequence and series: arithmetic\n### geometric\n### harmonic sequences and series and their properties\n### A.M\n### G.M\n### H.M and their relations\n### sum of infinite geometric series\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
-    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
-    "## 4. Methods and standard forms\n**Table 2 — Theorem and method sheet**\n\n| Result or method | Hypotheses | Worked example | If the condition is dropped |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 5. Figures and graphs\n- **F1** — Sequence and series — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Sequence and series — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Sequence and series — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
-    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
-    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+    "## 1. Topic Introduction — Series With Structure\n\nBeyond AP/GP lie the **special sums** (Σi, Σi², Σi³), **telescoping series**, and **arithmetico-geometric series**. Each carries a theorem-grade derivation — induction, telescoping collapse, or the shift trick — and each is a standard NEB computation.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The special sums (theorems with proofs)\n\n- **Σᵢ₌₁ⁿ i = n(n+1)/2** — Gauss pairing: S forwards + S backwards = n columns of (n+1).\n- **Σi² = n(n+1)(2n+1)/6** — telescoping via (k+1)³ − k³ = 3k² + 3k + 1 summed over k.\n- **Σi³ = [n(n+1)/2]²** — same telescoping with (k² − (k−1)²)² or induction; the cube sum is the **square of the triangular sum**.\n- **Σk³ telescoping proof:** (k+1)³ − k³ = 3k² + 3k + 1. Summing k = 1…n: (n+1)³ − 1 = 3Σk² + 3Σk + n — this *derives* Σk²; the companion identity (k² − (k−1)²)² = ... gives Σk³.\n\n### 2.2 Telescoping series\n\n- **Definition:** a series whose partial sums collapse: Σ(bₖ − bₖ₊₁) = b₁ − bₙ₊₁ → b₁ − lim bₙ₊₁.\n- **Theorem:** a telescoping series converges iff the tail sequence bₙ converges; the sum is b₁ − lim bₙ.\n- Method: partial fractions often manufacture the telescope (e.g. 1/(k(k+1)) = 1/k − 1/(k+1), sum = 1 − 1/(n+1) → 1).\n\n### 2.3 Arithmetico-geometric series\n\n- Terms like (a + (n−1)d)rⁿ⁻¹: multiply the partial sum by r, subtract (the **shift trick**), and the AP part collapses to a GP — S − rS isolates the sum.\n- **Σ n xⁿ⁻¹ = 1/(1−x)² for |x| < 1** — the derivative of the GP sum, the calculus twin of the shift trick.\n\n### 2.4 Properties of summation\n\n- Linearity: Σ(caₖ + dbₖ) = cΣaₖ + dΣbₖ; index shifts change nothing if applied consistently — the working grammar of all series manipulation.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Telescoping sum** | Partial sums collapse to ends | Σ1/k(k+1) = 1 − 1/(n+1) |\n| **Shift trick** | Multiply by r, subtract to collapse | sum of n·2ⁿ⁻¹ type |\n| **Special sums** | Closed forms for Σi, Σi², Σi³ | Σi³ = [n(n+1)/2]² |\n| **Linearity** | Sums distribute over addition and scalars | split-and-combine |",
+    "## 4. Detailed Explanation\n\n### 4.1 Telescoping as cancellation engineering\n\n- Each term cancels its neighbour's counterpart, leaving only the first and last — the series \"telescopes\" like a collapsing spyglass. Partial fractions are the standard factory for telescopes.\n\n### 4.2 The shift trick's algebra\n\n- For S = Σₖ₌₁ⁿ k·2ᵏ⁻¹: 2S = Σ k·2ᵏ. Subtracting aligned indices turns the coefficient k into a constant 1 inside a pure GP — the arithmetic part is annihilated.\n\n### 4.3 Induction as the auditor\n\n- Every closed form here can be verified by induction: check n = 1, assume n, prove n+1. Derivation shows *why*; induction confirms *that*.",
+    "## 5. Comparison Tables\n\n**Series types and tools**\n\n| Type | Signature | Tool |\n|---|---|---|\n| special sums | i, i², i³ | pairing / telescoping / induction |\n| telescoping | bₖ − bₖ₊₁ | partial fractions |\n| arithmetico-geometric | n·rⁿ | shift trick |\n| GP | rⁿ | a(rⁿ−1)/(r−1) |",
+    "## 6. Common Confusions\n\n**Telescoping needs the limit:** the sum is b₁ − **lim** bₙ₊₁, not b₁ − bₙ₊₁ — forgetting the limit leaves a variable in the \"answer\".",
+    "**Shift-trick alignment:** subtract S from rS with indices aligned (rS = Σₖ₌₂ⁿ⁺¹ (k−1)2ᵏ⁻¹) — misalignment produces nonsense.",
+    "**Σi³ vs (Σi)²:** they are equal — that is a theorem, not a definition; students who \"simplify\" it away lose the identity.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Find the sum of 1·2 + 2·3 + 3·4 + ⋯ + n(n+1).** — k(k+1) = k² + k, so S = Σk² + Σk = n(n+1)(2n+1)/6 + n(n+1)/2 = n(n+1)[(2n+1) + 3]/6 = **n(n+1)(n+2)/3**. Check n = 3: 2 + 6 + 12 = 20 and 3·4·5/3 = 20 ✓.",
+    "**NEB-style (3m): Sum to infinity: 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯** — **Partial fractions:** 1/(k(k+1)) = 1/k − 1/(k+1). **Telescoping partial sum:** Sₙ = (1 − ½) + (½ − ⅓) + ⋯ + (1/n − 1/(n+1)) = **1 − 1/(n+1)** — every middle term cancels. **Limit:** S = lim Sₙ = 1 − 0 = **1**. The tail 1/(n+1) → 0 is the convergence licence.",
+    "**NEB-style (3m): Find the sum Sₙ = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ for x ≠ 1.** — **Shift trick:** xS = x + 2x² + ⋯ + (n−1)xⁿ⁻¹ + nxⁿ. Subtract: S − xS = 1 + x + x² + ⋯ + xⁿ⁻¹ − nxⁿ = (1 − xⁿ)/(1 − x) − nxⁿ. Hence **S = (1 − xⁿ)/(1 − x)² − nxⁿ/(1 − x)**. For |x| < 1 the limit is **1/(1−x)²** — the closed form quoted in the theorem."
   ],
   "confusion": [
     "❌ answer with no steps → ✅ show each step and box the result.",
@@ -25,26 +27,23 @@
     "Limit to remember: ap: aₙ = a + (n−1)d; sₙ = n/2 [2a + (n−1)d]. gp: aₙ = ar^{n−1}; sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): s = a/(1−r)."
   ],
   "practice": [
-    "one worked example for \"Sequence and series: arithmetic, geometric, harmonic sequ…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Find the sum 1·2 + 2·3 + ⋯ + n(n+1).",
+    "Sum to infinity: 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯",
+    "Derive Sₙ = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ by the shift trick."
   ],
   "universalFacts": [
-    "AP: aₙ = a + (n−1)d; Sₙ = n/2 [2a + (n−1)d]. GP: aₙ = ar^{n−1}; Sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): S = a/(1−r).",
-    "AM ≤ GM ≤ HM: AM = (a+b)/2, GM = √(ab), HM = 2ab/(a+b).",
-    "Convergence of a series needs term → 0 (necessary, not sufficient)."
+    "Compound-interest schedules and depreciation tables are arithmetico-geometric sums - the shift trick is their accountant."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***The collapsing spyglass*** - in sum 1/k - 1/(k+1) every interior term cancels its neighbour; only 1 and 1/(n+1) survive, and the limit finishes the job."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Sequence and series: arithmetic, geometric, harmonic sequ…\" with one example.",
-    "compare \"Sequence\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Sequence and series: arithmetic, geometric, harmonic sequ…\" and verify the answer is plausible."
+    "**NEB-style (3m): Find the sum of the series 1·2 + 2·3 + 3·4 + ⋯ + n(n+1).** — **Split by linearity:** k(k+1) = k² + k, so Sₙ = Σk² + Σk. **Apply the special sums:** Σk² = n(n+1)(2n+1)/6 and Σk = n(n+1)/2. **Combine:** Sₙ = n(n+1)(2n+1)/6 + n(n+1)/2 = n(n+1)[(2n+1) + 3]/6 = **n(n+1)(n+2)/3**. **Verification (n = 3):** direct sum 1·2 + 2·3 + 3·4 = 2 + 6 + 12 = 20; formula 3·4·5/3 = 20 ✓. (Bonus structure: n(n+1)(n+2)/3 = 2·C(n+2, 3) — the sum counts twice the triples chosen from n+2 objects.)",
+    "**NEB-style (3m): Find the sum to infinity of the series 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯** — **Step 1 — partial fractions:** 1/(k(k+1)) = 1/k − 1/(k+1) (check: (k+1) − k = 1 over k(k+1) ✓). **Step 2 — telescoping partial sum:** Sₙ = (1 − ½) + (½ − ⅓) + (⅓ − ¼) + ⋯ + (1/n − 1/(n+1)). Every interior term appears once positive and once negative — all cancel, leaving **Sₙ = 1 − 1/(n+1)**. **Step 3 — take the limit:** S = limₙ→∞ Sₙ = 1 − 0 = **1**. The convergence licence is exactly the vanishing tail 1/(n+1) → 0; without that limit the collapse is incomplete and the \"sum\" would still contain n.",
+    "**NEB-style (3m): Sum the series S = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ (x ≠ 1) and find its limit for |x| < 1.** — **Shift trick:** form xS = x + 2x² + ⋯ + (n−1)xⁿ⁻¹ + nxⁿ. **Subtract aligned:** S − xS = 1 + (2−1)x + (3−2)x² + ⋯ + (n−(n−1))xⁿ⁻¹ − nxⁿ = 1 + x + x² + ⋯ + xⁿ⁻¹ − nxⁿ. The coefficient arithmetic collapsed into a pure GP: **(1 − x)S = (1 − xⁿ)/(1 − x) − nxⁿ**, hence **S = (1 − xⁿ)/(1 − x)² − nxⁿ/(1 − x)**. **Limit for |x| < 1:** xⁿ → 0 and nxⁿ → 0 (exponential beats linear), so **S → 1/(1 − x)²** — the closed form; e.g. 1 + 2(½) + 3(¼) + ⋯ = 4. The shift trick is the algebraic twin of differentiating the GP sum 1/(1−x)."
   ],
   "formulas": [
-    "AP: Sₙ = n/2[2a+(n−1)d]",
-    "GP infinite: S = a/(1−r), |r|<1",
-    "AM ≥ GM ≥ HM"
+    "- Σi = n(n+1)/2; Σi² = n(n+1)(2n+1)/6; Σi³ = [n(n+1)/2]²\n- Σₖ₌₁ⁿ (bₖ − bₖ₊₁) = b₁ − bₙ₊₁; sum to ∞: b₁ − lim bₙ\n- Σₖ₌₁ⁿ kxᵏ⁻¹ = (1 − xⁿ)/(1−x)² − nxⁿ/(1−x) → 1/(1−x)² for |x| < 1"
   ],
   "numericals": [
     "Use  AP: Sₙ = n/2[2a+(n−1)d]  — pick reasonable values, solve, and check the units.",
@@ -52,14 +51,9 @@
     "Use  AM ≥ GM ≥ HM  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Sequence",
-    "• Series: arithmetic",
-    "• Geometric",
-    "• Harmonic sequences",
-    "• Series",
-    "• Their properties"
+    "Special sums: sum i = n(n+1)/2 (Gauss pairing); sum i^2 = n(n+1)(2n+1)/6 and sum i^3 = [n(n+1)/2]^2 (telescoping via (k+1)^3 - k^3 = 3k^2 + 3k + 1, or induction). Telescoping: sum (b_k - b_{k+1}) = b_1 - lim b_{n+1}; converges iff the tail converges; partial fractions manufacture telescopes (1/(k(k+1)) = 1/k - 1/(k+1), sum to infinity = 1). Arithmetico-geometric (a + (n-1)d)r^(n-1): shift trick - multiply by r, subtract aligned indices; sum n x^(n-1) = (1 - x^n)/(1-x)^2 - n x^n/(1-x), limit 1/(1-x)^2 for |x| < 1. Linearity of summation: split and scale."
   ],
-  "summary": "Sequence and series: arithmetic, geometric, harmonic sequ… (Algebra, Mathematics, class-11-notes) covers Sequence, series: arithmetic, geometric. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Structured series yield to three tools. The **special sums**: Σi = n(n+1)/2 by Gauss pairing, Σi² = n(n+1)(2n+1)/6 and **Σi³ = [n(n+1)/2]²** by telescoping (k+1)³ − k³ = 3k² + 3k + 1 — the cube sum literally squares the triangular sum. **Telescoping series** collapse to their endpoints: partial fractions manufacture them (1/(k(k+1)) = 1/k − 1/(k+1)) and the sum to infinity is b₁ − **lim** bₙ — for 1/(1·2) + 1/(2·3) + ⋯ exactly **1**. **Arithmetico-geometric series** (n·xⁿ⁻¹ forms) surrender to the **shift trick**: multiply by x, subtract aligned, watch the arithmetic part collapse to a GP — S = (1 − xⁿ)/(1−x)² − nxⁿ/(1−x), tending to **1/(1−x)²** as |x| < 1. Split-and-shift-and-cancel: the three verbs of every computation here.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Sequence and series: arithmetic, geometric, harmonic sequ…\"?",
@@ -81,5 +75,72 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Series With Structure\n\nBeyond AP/GP lie the **special sums** (Σi, Σi², Σi³), **telescoping series**, and **arithmetico-geometric series**. Each carries a theorem-grade derivation — induction, telescoping collapse, or the shift trick — and each is a standard NEB computation.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The special sums (theorems with proofs)\n\n- **Σᵢ₌₁ⁿ i = n(n+1)/2** — Gauss pairing: S forwards + S backwards = n columns of (n+1).\n- **Σi² = n(n+1)(2n+1)/6** — telescoping via (k+1)³ − k³ = 3k² + 3k + 1 summed over k.\n- **Σi³ = [n(n+1)/2]²** — same telescoping with (k² − (k−1)²)² or induction; the cube sum is the **square of the triangular sum**.\n- **Σk³ telescoping proof:** (k+1)³ − k³ = 3k² + 3k + 1. Summing k = 1…n: (n+1)³ − 1 = 3Σk² + 3Σk + n — this *derives* Σk²; the companion identity (k² − (k−1)²)² = ... gives Σk³.\n\n### 2.2 Telescoping series\n\n- **Definition:** a series whose partial sums collapse: Σ(bₖ − bₖ₊₁) = b₁ − bₙ₊₁ → b₁ − lim bₙ₊₁.\n- **Theorem:** a telescoping series converges iff the tail sequence bₙ converges; the sum is b₁ − lim bₙ.\n- Method: partial fractions often manufacture the telescope (e.g. 1/(k(k+1)) = 1/k − 1/(k+1), sum = 1 − 1/(n+1) → 1).\n\n### 2.3 Arithmetico-geometric series\n\n- Terms like (a + (n−1)d)rⁿ⁻¹: multiply the partial sum by r, subtract (the **shift trick**), and the AP part collapses to a GP — S − rS isolates the sum.\n- **Σ n xⁿ⁻¹ = 1/(1−x)² for |x| < 1** — the derivative of the GP sum, the calculus twin of the shift trick.\n\n### 2.4 Properties of summation\n\n- Linearity: Σ(caₖ + dbₖ) = cΣaₖ + dΣbₖ; index shifts change nothing if applied consistently — the working grammar of all series manipulation.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Telescoping sum** | Partial sums collapse to ends | Σ1/k(k+1) = 1 − 1/(n+1) |\n| **Shift trick** | Multiply by r, subtract to collapse | sum of n·2ⁿ⁻¹ type |\n| **Special sums** | Closed forms for Σi, Σi², Σi³ | Σi³ = [n(n+1)/2]² |\n| **Linearity** | Sums distribute over addition and scalars | split-and-combine |",
+      "## 4. Detailed Explanation\n\n### 4.1 Telescoping as cancellation engineering\n\n- Each term cancels its neighbour's counterpart, leaving only the first and last — the series \"telescopes\" like a collapsing spyglass. Partial fractions are the standard factory for telescopes.\n\n### 4.2 The shift trick's algebra\n\n- For S = Σₖ₌₁ⁿ k·2ᵏ⁻¹: 2S = Σ k·2ᵏ. Subtracting aligned indices turns the coefficient k into a constant 1 inside a pure GP — the arithmetic part is annihilated.\n\n### 4.3 Induction as the auditor\n\n- Every closed form here can be verified by induction: check n = 1, assume n, prove n+1. Derivation shows *why*; induction confirms *that*.",
+      "## 5. Comparison Tables\n\n**Series types and tools**\n\n| Type | Signature | Tool |\n|---|---|---|\n| special sums | i, i², i³ | pairing / telescoping / induction |\n| telescoping | bₖ − bₖ₊₁ | partial fractions |\n| arithmetico-geometric | n·rⁿ | shift trick |\n| GP | rⁿ | a(rⁿ−1)/(r−1) |",
+      "## 6. Common Confusions\n\n**Telescoping needs the limit:** the sum is b₁ − **lim** bₙ₊₁, not b₁ − bₙ₊₁ — forgetting the limit leaves a variable in the \"answer\".",
+      "**Shift-trick alignment:** subtract S from rS with indices aligned (rS = Σₖ₌₂ⁿ⁺¹ (k−1)2ᵏ⁻¹) — misalignment produces nonsense.",
+      "**Σi³ vs (Σi)²:** they are equal — that is a theorem, not a definition; students who \"simplify\" it away lose the identity.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Find the sum of 1·2 + 2·3 + 3·4 + ⋯ + n(n+1).** — k(k+1) = k² + k, so S = Σk² + Σk = n(n+1)(2n+1)/6 + n(n+1)/2 = n(n+1)[(2n+1) + 3]/6 = **n(n+1)(n+2)/3**. Check n = 3: 2 + 6 + 12 = 20 and 3·4·5/3 = 20 ✓.",
+      "**NEB-style (3m): Sum to infinity: 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯** — **Partial fractions:** 1/(k(k+1)) = 1/k − 1/(k+1). **Telescoping partial sum:** Sₙ = (1 − ½) + (½ − ⅓) + ⋯ + (1/n − 1/(n+1)) = **1 − 1/(n+1)** — every middle term cancels. **Limit:** S = lim Sₙ = 1 − 0 = **1**. The tail 1/(n+1) → 0 is the convergence licence.",
+      "**NEB-style (3m): Find the sum Sₙ = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ for x ≠ 1.** — **Shift trick:** xS = x + 2x² + ⋯ + (n−1)xⁿ⁻¹ + nxⁿ. Subtract: S − xS = 1 + x + x² + ⋯ + xⁿ⁻¹ − nxⁿ = (1 − xⁿ)/(1 − x) − nxⁿ. Hence **S = (1 − xⁿ)/(1 − x)² − nxⁿ/(1 − x)**. For |x| < 1 the limit is **1/(1−x)²** — the closed form quoted in the theorem."
+    ],
+    "keyPoints": [
+      "Special sums: sum i = n(n+1)/2 (Gauss pairing); sum i^2 = n(n+1)(2n+1)/6 and sum i^3 = [n(n+1)/2]^2 (telescoping via (k+1)^3 - k^3 = 3k^2 + 3k + 1, or induction). Telescoping: sum (b_k - b_{k+1}) = b_1 - lim b_{n+1}; converges iff the tail converges; partial fractions manufacture telescopes (1/(k(k+1)) = 1/k - 1/(k+1), sum to infinity = 1). Arithmetico-geometric (a + (n-1)d)r^(n-1): shift trick - multiply by r, subtract aligned indices; sum n x^(n-1) = (1 - x^n)/(1-x)^2 - n x^n/(1-x), limit 1/(1-x)^2 for |x| < 1. Linearity of summation: split and scale."
+    ],
+    "importantConcepts": [
+      "Telescoping is cancellation engineering: partial fractions build the collapse, and the limit of the surviving tail decides convergence."
+    ],
+    "examples": [
+      "***The collapsing spyglass*** - in sum 1/k - 1/(k+1) every interior term cancels its neighbour; only 1 and 1/(n+1) survive, and the limit finishes the job."
+    ],
+    "universalFacts": [
+      "Compound-interest schedules and depreciation tables are arithmetico-geometric sums - the shift trick is their accountant."
+    ],
+    "importantStatements": [
+      "\"sum i^3 = [n(n+1)/2]^2; telescoping sum = b_1 - lim b_{n+1}; sum n x^(n-1) -> 1/(1-x)^2 for |x| < 1.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "n(n+1) sums: split into k^2 + k. 1/(k(k+1)): partial fractions then telescope. n x^(n-1): shift trick. Always end telescoping answers with the limit."
+    ],
+    "examNotes": [
+      "State the telescoping collapse explicitly (show 2-3 cancelling terms) before writing the closed form - the visible cancellation is the proof."
+    ],
+    "formulas": [
+      "- Σi = n(n+1)/2; Σi² = n(n+1)(2n+1)/6; Σi³ = [n(n+1)/2]²\n- Σₖ₌₁ⁿ (bₖ − bₖ₊₁) = b₁ − bₙ₊₁; sum to ∞: b₁ − lim bₙ\n- Σₖ₌₁ⁿ kxᵏ⁻¹ = (1 − xⁿ)/(1−x)² − nxⁿ/(1−x) → 1/(1−x)² for |x| < 1"
+    ],
+    "practice": [
+      "Find the sum 1·2 + 2·3 + ⋯ + n(n+1).",
+      "Sum to infinity: 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯",
+      "Derive Sₙ = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ by the shift trick."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Find the sum of the series 1·2 + 2·3 + 3·4 + ⋯ + n(n+1).** — **Split by linearity:** k(k+1) = k² + k, so Sₙ = Σk² + Σk. **Apply the special sums:** Σk² = n(n+1)(2n+1)/6 and Σk = n(n+1)/2. **Combine:** Sₙ = n(n+1)(2n+1)/6 + n(n+1)/2 = n(n+1)[(2n+1) + 3]/6 = **n(n+1)(n+2)/3**. **Verification (n = 3):** direct sum 1·2 + 2·3 + 3·4 = 2 + 6 + 12 = 20; formula 3·4·5/3 = 20 ✓. (Bonus structure: n(n+1)(n+2)/3 = 2·C(n+2, 3) — the sum counts twice the triples chosen from n+2 objects.)",
+      "**NEB-style (3m): Find the sum to infinity of the series 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯** — **Step 1 — partial fractions:** 1/(k(k+1)) = 1/k − 1/(k+1) (check: (k+1) − k = 1 over k(k+1) ✓). **Step 2 — telescoping partial sum:** Sₙ = (1 − ½) + (½ − ⅓) + (⅓ − ¼) + ⋯ + (1/n − 1/(n+1)). Every interior term appears once positive and once negative — all cancel, leaving **Sₙ = 1 − 1/(n+1)**. **Step 3 — take the limit:** S = limₙ→∞ Sₙ = 1 − 0 = **1**. The convergence licence is exactly the vanishing tail 1/(n+1) → 0; without that limit the collapse is incomplete and the \"sum\" would still contain n.",
+      "**NEB-style (3m): Sum the series S = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ (x ≠ 1) and find its limit for |x| < 1.** — **Shift trick:** form xS = x + 2x² + ⋯ + (n−1)xⁿ⁻¹ + nxⁿ. **Subtract aligned:** S − xS = 1 + (2−1)x + (3−2)x² + ⋯ + (n−(n−1))xⁿ⁻¹ − nxⁿ = 1 + x + x² + ⋯ + xⁿ⁻¹ − nxⁿ. The coefficient arithmetic collapsed into a pure GP: **(1 − x)S = (1 − xⁿ)/(1 − x) − nxⁿ**, hence **S = (1 − xⁿ)/(1 − x)² − nxⁿ/(1 − x)**. **Limit for |x| < 1:** xⁿ → 0 and nxⁿ → 0 (exponential beats linear), so **S → 1/(1 − x)²** — the closed form; e.g. 1 + 2(½) + 3(¼) + ⋯ = 4. The shift trick is the algebraic twin of differentiating the GP sum 1/(1−x)."
+    ]
+  },
+  "importantConcepts": [
+    "Telescoping is cancellation engineering: partial fractions build the collapse, and the limit of the surviving tail decides convergence."
+  ],
+  "importantStatements": [
+    "\"sum i^3 = [n(n+1)/2]^2; telescoping sum = b_1 - lim b_{n+1}; sum n x^(n-1) -> 1/(1-x)^2 for |x| < 1.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "n(n+1) sums: split into k^2 + k. 1/(k(k+1)): partial fractions then telescope. n x^(n-1): shift trick. Always end telescoping answers with the limit."
+  ],
+  "examNotes": [
+    "State the telescoping collapse explicitly (show 2-3 cancelling terms) before writing the closed form - the visible cancellation is the proof."
   ]
 }

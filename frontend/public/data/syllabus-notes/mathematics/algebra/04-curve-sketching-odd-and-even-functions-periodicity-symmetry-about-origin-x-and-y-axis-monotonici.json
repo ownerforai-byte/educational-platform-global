@@ -7,47 +7,50 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "# Curve sketching: odd and even functions, periodicity, symmetry (about origin, X- and Y-axis), monotonicity; graphs of quadratic, cubic and rational functions, trigonometric (asinbx and acosbx), exponential (e^x), logarithmic (lnx)\n\n## 1. Introduction and motivation\nWhat the tool **Curve sketching** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Algebra fill pass.\n\n## 2. Definitions and theorems\n### Curve sketching: odd and even functions\n### periodicity\n### symmetry (about origin, X- and Y-axis)\n### monotonicity\n### graphs of quadratic\n### cubic and rational functions\n### trigonometric (asinbx and acosbx)\n### exponential (e^x)\n### logarithmic (lnx)\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
-    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
-    "## 4. Methods and standard forms\n**Table 2 — Theorem and method sheet**\n\n| Result or method | Hypotheses | Worked example | If the condition is dropped |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 5. Figures and graphs\n- **F1** — Curve sketching — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Curve sketching — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Curve sketching — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
-    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
-    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+    "## 1. Topic Introduction — Reading Graphs Like a Pro\n\nBefore calculus, curve sketching extracts everything from the formula by classification: **symmetry** (odd/even), **periodicity**, **monotonicity**, and intercepts. Each is a theorem-shaped test applied to f's formula.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Symmetry tests (the theorems)\n\n- **Even function:** f(−x) = f(x) ⟺ graph symmetric about the **y-axis** (cos x, x²).\n- **Odd function:** f(−x) = −f(x) ⟺ symmetric about the **origin** (sin x, x³); consequence: f(0) = 0 for odd functions defined at 0.\n- **Neither** is the common case (e.g. x + x²). **Symmetry about x-axis** (y²-forms) fails the function test unless restricted.\n\n### 2.2 Periodicity\n\n- **f(x + T) = f(x)** for all x, T > 0 minimal ⟹ period T. sin, cos: 2π; tan: π; |sin x|: π.\n- **Theorem:** if f has period T, then f(ax + b) has period **T/|a|** — horizontal compression divides the period.\n\n### 2.3 Monotonicity (pre-calculus version)\n\n- **Increasing on I:** a < b ⟹ f(a) < f(b); decreasing: f(a) > f(b). Test by algebra on f(b) − f(a) (or later by the derivative's sign).\n- **Theorem:** a strictly monotone function is one-to-one — hence invertible; this is the standard proof route for invertibility.\n\n### 2.4 Intercepts and the sketching protocol\n\n- **y-intercept:** f(0) (if 0 ∈ domain). **x-intercepts:** solve f(x) = 0. Protocol: domain → symmetry → periodicity → intercepts → asymptotes → monotonic shape → sketch.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Even function** | f(−x) = f(x) — y-axis mirror | x², cos x, |x| |\n| **Odd function** | f(−x) = −f(x) — origin rotation | x³, sin x, 1/x |\n| **Period** | Least T > 0 with f(x+T) = f(x) | 2π for sin |\n| **Monotone** | Steady rise or fall on an interval | eˣ increasing |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why symmetry halves the work\n\n- An even graph needs sketching only for x ≥ 0 — mirror the rest. An odd graph needs a quarter's work rotated. Symmetry is labour-saving, not decoration.\n\n### 4.2 The period-shift theorem at work\n\n- sin 2x has period 2π/2 = π: doubling the frequency halves the period. |sin x| has period π because the fold makes negative humps positive — the folded wave repeats twice as fast.\n\n### 4.3 Monotonicity as invertibility certificate\n\n- Showing f(b) − f(a) keeps a fixed sign for a < b proves strict monotonicity, which forces one-to-one, which licenses an inverse — a three-step logical chain worth memorising.",
+    "## 5. Comparison Tables\n\n**Symmetry tests at a glance**\n\n| Test | Equation | Geometry |\n|---|---|---|\n| even | f(−x) = f(x) | mirror in y-axis |\n| odd | f(−x) = −f(x) | half-turn about origin |\n| neither | both fail | no global symmetry |",
+    "## 6. Common Confusions\n\n**Odd ⟹ f(0) = 0:** only when 0 is in the domain — 1/x is odd but undefined at 0.",
+    "**Products of parities:** even×even = even, odd×odd = even, even×odd = odd — parity multiplies like signs.",
+    "**Period of f(ax):** T/|a|, not aT — compression shrinks the period.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Determine whether f(x) = x³ + x is even, odd or neither, and interpret geometrically.** — f(−x) = (−x)³ + (−x) = −x³ − x = −(x³ + x) = **−f(x)** ⟹ **odd**: the graph is symmetric about the origin (a 180° rotation maps it onto itself). Consequences visible on the graph: f(0) = 0 passes through the origin, and every point (a, b) has the partner (−a, −b).",
+    "**NEB-style (2m): Find the period of (i) sin 3x, (ii) |sin x|.** — (i) sin has period 2π; by the period-shift theorem f(ax) has period 2π/|a|: **π·... 2π/3** for sin 3x. (ii) folding negatives up, |sin(x + π)| = |−sin x| = |sin x|, and no smaller positive T works: **period π** — the fold doubles the repetition rate.",
+    "**NEB-style (3m): Show that f(x) = x³ is strictly increasing on ℝ and deduce that it has an inverse.** — Take a < b; then b³ − a³ = (b − a)(b² + ab + a²). The first factor is positive; the second equals (b² + ab + a²) = (a + b/2)²·... always positive since b² + ab + a² = ½[(a+b)² + a² + b²] > 0 unless a = b = 0 (excluded as a < b). Hence b³ − a³ > 0 ⟹ f strictly increasing on ℝ. **Strictly monotone ⟹ one-to-one ⟹ invertible** — the inverse is the cube root x^{1/3}, defined on all of ℝ (note: unlike x², the cube keeps negatives negative, so no domain restriction is needed)."
   ],
   "confusion": [
     "❌ answer with no steps → ✅ show each step and box the result."
   ],
   "bounds": [],
   "practice": [
-    "one worked example for \"Curve sketching: odd and even functions, periodicity, sym…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Classify f(x) = x³ + x as even, odd or neither.",
+    "Find the periods of sin 3x and |sin x|.",
+    "Show x³ is strictly increasing on ℝ and deduce invertibility."
   ],
   "universalFacts": [
-    "answer pattern for \"Curve sketching: odd and even functions, periodicity, sym…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "AC electricity is periodic with 50 Hz in Nepal: the period 1/50 s is the period-shift theorem powering the grid's frequency bookkeeping."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***The compressed wave*** - sin 3x has period 2pi/3: frequency and period are reciprocals, so tripling the frequency thirds the period."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Curve sketching: odd and even functions, periodicity, sym…\" with one example.",
-    "compare \"Curve sketching\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Curve sketching: odd and even functions, periodicity, sym…\" and verify the answer is plausible."
+    "**NEB-style (2m): Determine whether f(x) = x³ + x is even, odd, or neither, and state the geometric meaning.** — **Test:** replace x by −x: f(−x) = (−x)³ + (−x) = −x³ − x = **−(x³ + x) = −f(x)**. The odd-function identity holds ⟹ **f is odd**. **Geometry:** the graph is symmetric about the **origin** — rotating the plane by 180° maps the curve onto itself. **Visible consequences:** f(0) = 0 (the graph passes through the origin) and each point (a, b) on the curve forces (−a, −b) onto it as well. (Both terms x³ and x are odd, and odd + odd = odd — parity addition follows the sign rule.)",
+    "**NEB-style (2m): Find the period of (i) f(x) = sin 3x and (ii) g(x) = |sin x|.** — **(i)** sin x has period 2π. By the **period-shift theorem**, f(ax + b) has period T/|a|: sin 3x has period 2π/|3| = **2π/3** — tripling the frequency thirds the period. **(ii)** Check T = π: |sin(x + π)| = |−sin x| = |sin x| ✓, so π is a period. No smaller positive T works (on (0, π/2) the folded sine is strictly monotone), so the **period of |sin x| is π** — taking absolute values folds the negative humps upward, making the wave repeat twice as often as the unfolded sine.",
+    "**NEB-style (3m): Show that f(x) = x³ is strictly increasing on ℝ, and deduce that it possesses an inverse function.** — **Monotonicity:** take any a < b and form b³ − a³ = (b − a)(b² + ab + a²). The first factor b − a > 0. The second: b² + ab + a² = ½[(a + b)² + a² + b²] ≥ 0, with equality only when a = b = 0 — impossible since a < b. Hence b² + ab + a² > 0, so **b³ − a³ > 0**, i.e. a < b ⟹ f(a) < f(b): f is **strictly increasing on all of ℝ**. **Deduction:** strictly monotone functions are **one-to-one** (unequal inputs give unequal outputs in the same order), and one-to-one functions are exactly those that possess inverses. Hence x³ is invertible on ℝ with inverse **x^{1/3}** — no domain restriction needed, because the cube preserves sign (contrast x², which folds ±a together and must be restricted to [0, ∞) before inversion)."
   ],
-  "formulas": [],
+  "formulas": [
+    "- even: f(−x) = f(x); odd: f(−x) = −f(x)\n- period of f(ax + b) = T/|a| where T = period of f\n- b³ − a³ = (b − a)(b² + ab + a²)"
+  ],
   "numericals": [
     "Set up the defining equation for \"Curve sketching: odd and even functions, periodicity, sym…\", substitute simple values, and compute the result with units.",
     "Re-derive the standard result from first principles in ≤ 4 steps.",
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Curve sketching",
-    "• Even functions",
-    "• Periodicity",
-    "• Symmetry",
-    "• About origin",
-    "• Y-axis"
+    "Even: f(-x) = f(x), symmetric about y-axis (x^2, cos x, |x|). Odd: f(-x) = -f(x), symmetric about origin (x^3, sin x, 1/x); f(0) = 0 if 0 in domain. Parity multiplication: even x even = even, odd x odd = even, even x odd = odd. Period: f(x + T) = f(x), least T; sin/cos 2pi, tan pi; f(ax + b) has period T/|a|; |sin x| has period pi. Monotonicity: a < b => f(a) < f(b) (increasing) or > (decreasing); test via sign of f(b) - f(a). Strictly monotone => one-to-one => invertible. Sketching protocol: domain, symmetry, periodicity, intercepts, asymptotes, monotonic shape."
   ],
-  "summary": "Curve sketching: odd and even functions, periodicity, sym… (Algebra, Mathematics, class-11-notes) covers Curve sketching, even functions, periodicity. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Curve sketching is classification before plotting. **Symmetry theorems:** f(−x) = f(x) ⟹ even, mirror in the y-axis (x², cos x); f(−x) = −f(x) ⟹ odd, half-turn about the origin (x³ + x is odd; f(0) = 0 when defined there); parity multiplies like signs, and odd+odd = odd. **Periodicity:** f(x + T) = f(x) with least T — 2π for sin/cos, π for tan — and the shift theorem f(ax + b) has period **T/|a|** (sin 3x: 2π/3; |sin x|: π by folding). **Monotonicity** tested through the sign of f(b) − f(a): x³'s difference factors as (b−a)(b²+ab+a²) with both factors positive ⟹ strictly increasing ⟹ **one-to-one ⟹ invertible** (cube root on all of ℝ, no restriction needed). The sketching protocol — domain, symmetry, periodicity, intercepts, asymptotes, shape — turns a formula into a faithful graph with no plotting table at all.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Curve sketching: odd and even functions, periodicity, sym…\"?",
@@ -71,9 +74,70 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Symmetry tests in three lines — even: f(−x) = f(x) (mirror about y-axis); odd: f(−x) = −f(x) (rotation about origin); neither: no symmetry.",
-    "Trick 2: Periodicity: find smallest T > 0 with f(x + T) = f(x); for sin/cos T = 2π, tan T = π — check the constant term first.",
-    "Trick 3: Monotonicity from the sign of f′: f′ > 0 increasing, f′ < 0 decreasing; mark the turning points where f′ = 0 and sketch through them.",
-    "Trick 4: Always list intercepts (f(0), f(x) = 0), domain and asymptotes BEFORE drawing — the marking scheme rewards these checkpoints."
+    "Parity: substitute -x and compare. Period of f(ax): T/|a|. Invertibility: prove strict monotonicity via f(b) - f(a). Intercepts: f(0) and f(x) = 0."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Reading Graphs Like a Pro\n\nBefore calculus, curve sketching extracts everything from the formula by classification: **symmetry** (odd/even), **periodicity**, **monotonicity**, and intercepts. Each is a theorem-shaped test applied to f's formula.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Symmetry tests (the theorems)\n\n- **Even function:** f(−x) = f(x) ⟺ graph symmetric about the **y-axis** (cos x, x²).\n- **Odd function:** f(−x) = −f(x) ⟺ symmetric about the **origin** (sin x, x³); consequence: f(0) = 0 for odd functions defined at 0.\n- **Neither** is the common case (e.g. x + x²). **Symmetry about x-axis** (y²-forms) fails the function test unless restricted.\n\n### 2.2 Periodicity\n\n- **f(x + T) = f(x)** for all x, T > 0 minimal ⟹ period T. sin, cos: 2π; tan: π; |sin x|: π.\n- **Theorem:** if f has period T, then f(ax + b) has period **T/|a|** — horizontal compression divides the period.\n\n### 2.3 Monotonicity (pre-calculus version)\n\n- **Increasing on I:** a < b ⟹ f(a) < f(b); decreasing: f(a) > f(b). Test by algebra on f(b) − f(a) (or later by the derivative's sign).\n- **Theorem:** a strictly monotone function is one-to-one — hence invertible; this is the standard proof route for invertibility.\n\n### 2.4 Intercepts and the sketching protocol\n\n- **y-intercept:** f(0) (if 0 ∈ domain). **x-intercepts:** solve f(x) = 0. Protocol: domain → symmetry → periodicity → intercepts → asymptotes → monotonic shape → sketch.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Even function** | f(−x) = f(x) — y-axis mirror | x², cos x, |x| |\n| **Odd function** | f(−x) = −f(x) — origin rotation | x³, sin x, 1/x |\n| **Period** | Least T > 0 with f(x+T) = f(x) | 2π for sin |\n| **Monotone** | Steady rise or fall on an interval | eˣ increasing |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why symmetry halves the work\n\n- An even graph needs sketching only for x ≥ 0 — mirror the rest. An odd graph needs a quarter's work rotated. Symmetry is labour-saving, not decoration.\n\n### 4.2 The period-shift theorem at work\n\n- sin 2x has period 2π/2 = π: doubling the frequency halves the period. |sin x| has period π because the fold makes negative humps positive — the folded wave repeats twice as fast.\n\n### 4.3 Monotonicity as invertibility certificate\n\n- Showing f(b) − f(a) keeps a fixed sign for a < b proves strict monotonicity, which forces one-to-one, which licenses an inverse — a three-step logical chain worth memorising.",
+      "## 5. Comparison Tables\n\n**Symmetry tests at a glance**\n\n| Test | Equation | Geometry |\n|---|---|---|\n| even | f(−x) = f(x) | mirror in y-axis |\n| odd | f(−x) = −f(x) | half-turn about origin |\n| neither | both fail | no global symmetry |",
+      "## 6. Common Confusions\n\n**Odd ⟹ f(0) = 0:** only when 0 is in the domain — 1/x is odd but undefined at 0.",
+      "**Products of parities:** even×even = even, odd×odd = even, even×odd = odd — parity multiplies like signs.",
+      "**Period of f(ax):** T/|a|, not aT — compression shrinks the period.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Determine whether f(x) = x³ + x is even, odd or neither, and interpret geometrically.** — f(−x) = (−x)³ + (−x) = −x³ − x = −(x³ + x) = **−f(x)** ⟹ **odd**: the graph is symmetric about the origin (a 180° rotation maps it onto itself). Consequences visible on the graph: f(0) = 0 passes through the origin, and every point (a, b) has the partner (−a, −b).",
+      "**NEB-style (2m): Find the period of (i) sin 3x, (ii) |sin x|.** — (i) sin has period 2π; by the period-shift theorem f(ax) has period 2π/|a|: **π·... 2π/3** for sin 3x. (ii) folding negatives up, |sin(x + π)| = |−sin x| = |sin x|, and no smaller positive T works: **period π** — the fold doubles the repetition rate.",
+      "**NEB-style (3m): Show that f(x) = x³ is strictly increasing on ℝ and deduce that it has an inverse.** — Take a < b; then b³ − a³ = (b − a)(b² + ab + a²). The first factor is positive; the second equals (b² + ab + a²) = (a + b/2)²·... always positive since b² + ab + a² = ½[(a+b)² + a² + b²] > 0 unless a = b = 0 (excluded as a < b). Hence b³ − a³ > 0 ⟹ f strictly increasing on ℝ. **Strictly monotone ⟹ one-to-one ⟹ invertible** — the inverse is the cube root x^{1/3}, defined on all of ℝ (note: unlike x², the cube keeps negatives negative, so no domain restriction is needed)."
+    ],
+    "keyPoints": [
+      "Even: f(-x) = f(x), symmetric about y-axis (x^2, cos x, |x|). Odd: f(-x) = -f(x), symmetric about origin (x^3, sin x, 1/x); f(0) = 0 if 0 in domain. Parity multiplication: even x even = even, odd x odd = even, even x odd = odd. Period: f(x + T) = f(x), least T; sin/cos 2pi, tan pi; f(ax + b) has period T/|a|; |sin x| has period pi. Monotonicity: a < b => f(a) < f(b) (increasing) or > (decreasing); test via sign of f(b) - f(a). Strictly monotone => one-to-one => invertible. Sketching protocol: domain, symmetry, periodicity, intercepts, asymptotes, monotonic shape."
+    ],
+    "importantConcepts": [
+      "Symmetry is labour-saving: even graphs need half the sketch, odd graphs a quarter - and parity multiplies like signs."
+    ],
+    "examples": [
+      "***The compressed wave*** - sin 3x has period 2pi/3: frequency and period are reciprocals, so tripling the frequency thirds the period."
+    ],
+    "universalFacts": [
+      "AC electricity is periodic with 50 Hz in Nepal: the period 1/50 s is the period-shift theorem powering the grid's frequency bookkeeping."
+    ],
+    "importantStatements": [
+      "\"f(-x) = f(x) (even, y-axis); f(-x) = -f(x) (odd, origin); f(ax + b) has period T/|a|; strictly monotone functions are invertible.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Parity: substitute -x and compare. Period of f(ax): T/|a|. Invertibility: prove strict monotonicity via f(b) - f(a). Intercepts: f(0) and f(x) = 0."
+    ],
+    "examNotes": [
+      "For odd/even questions, write the comparison chain f(-x) -> simplify -> equals f(x) or -f(x) or neither - the verdict needs the simplified middle step."
+    ],
+    "formulas": [
+      "- even: f(−x) = f(x); odd: f(−x) = −f(x)\n- period of f(ax + b) = T/|a| where T = period of f\n- b³ − a³ = (b − a)(b² + ab + a²)"
+    ],
+    "practice": [
+      "Classify f(x) = x³ + x as even, odd or neither.",
+      "Find the periods of sin 3x and |sin x|.",
+      "Show x³ is strictly increasing on ℝ and deduce invertibility."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Determine whether f(x) = x³ + x is even, odd, or neither, and state the geometric meaning.** — **Test:** replace x by −x: f(−x) = (−x)³ + (−x) = −x³ − x = **−(x³ + x) = −f(x)**. The odd-function identity holds ⟹ **f is odd**. **Geometry:** the graph is symmetric about the **origin** — rotating the plane by 180° maps the curve onto itself. **Visible consequences:** f(0) = 0 (the graph passes through the origin) and each point (a, b) on the curve forces (−a, −b) onto it as well. (Both terms x³ and x are odd, and odd + odd = odd — parity addition follows the sign rule.)",
+      "**NEB-style (2m): Find the period of (i) f(x) = sin 3x and (ii) g(x) = |sin x|.** — **(i)** sin x has period 2π. By the **period-shift theorem**, f(ax + b) has period T/|a|: sin 3x has period 2π/|3| = **2π/3** — tripling the frequency thirds the period. **(ii)** Check T = π: |sin(x + π)| = |−sin x| = |sin x| ✓, so π is a period. No smaller positive T works (on (0, π/2) the folded sine is strictly monotone), so the **period of |sin x| is π** — taking absolute values folds the negative humps upward, making the wave repeat twice as often as the unfolded sine.",
+      "**NEB-style (3m): Show that f(x) = x³ is strictly increasing on ℝ, and deduce that it possesses an inverse function.** — **Monotonicity:** take any a < b and form b³ − a³ = (b − a)(b² + ab + a²). The first factor b − a > 0. The second: b² + ab + a² = ½[(a + b)² + a² + b²] ≥ 0, with equality only when a = b = 0 — impossible since a < b. Hence b² + ab + a² > 0, so **b³ − a³ > 0**, i.e. a < b ⟹ f(a) < f(b): f is **strictly increasing on all of ℝ**. **Deduction:** strictly monotone functions are **one-to-one** (unequal inputs give unequal outputs in the same order), and one-to-one functions are exactly those that possess inverses. Hence x³ is invertible on ℝ with inverse **x^{1/3}** — no domain restriction needed, because the cube preserves sign (contrast x², which folds ±a together and must be restricted to [0, ∞) before inversion)."
+    ]
+  },
+  "importantConcepts": [
+    "Symmetry is labour-saving: even graphs need half the sketch, odd graphs a quarter - and parity multiplies like signs."
+  ],
+  "importantStatements": [
+    "\"f(-x) = f(x) (even, y-axis); f(-x) = -f(x) (odd, origin); f(ax + b) has period T/|a|; strictly monotone functions are invertible.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examNotes": [
+    "For odd/even questions, write the comparison chain f(-x) -> simplify -> equals f(x) or -f(x) or neither - the verdict needs the simplified middle step."
   ]
 }

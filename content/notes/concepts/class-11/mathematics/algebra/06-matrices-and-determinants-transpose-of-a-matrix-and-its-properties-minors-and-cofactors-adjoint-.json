@@ -7,26 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Matrices and determinants: transpose of a matrix and its … — Algebra, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: matrices, determinants: transpose of a matrix, its properties, minors · one worked example · one misconception each.",
-    "**Fact.** Transpose (AB)ᵀ = BᵀAᵀ. Inverse: A⁻¹ = adj(A)/det(A) (2×2: [d −b; −c a]/(ad−bc)).",
-    "**Fact.** Properties: det(AB) = det A·det B; det A⁻¹ = 1/det A; det kA = kⁿ det A for n×n.",
-    "**Fact.** Cofactors: Cᵢⱼ = (−1)^{i+j} Mᵢⱼ; adj = cofactor matrix transposed; A·adj(A) = det(A) I.",
-    "**Determinants: transpose of a matrix.** one-line definition + one-line exam use.",
-    "**Its properties.** one-line definition + one-line exam use.",
-    "**Minors.** one-line definition + one-line exam use.",
-    "**Cofactors.** one-line definition + one-line exam use.",
-    "**Adjoint.** one-line definition + one-line exam use.",
-    "**Inverse matrix.** one-line definition + one-line exam use.",
-    "**Determinant.** one-line definition + one-line exam use.",
-    "**Properties of determinants.** one-line definition + one-line exam use.",
-    "**Without proof.** one-line definition + one-line exam use.",
-    "# Matrices and determinants: transpose of a matrix and its properties; minors and cofactors, adjoint, inverse matrix, determinant, properties of determinants (without proof)\n\n## 1. Introduction and motivation\nWhat the tool **Matrices and determinants** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Algebra fill pass.\n\n## 2. Definitions and theorems\n### Matrices and determinants: transpose of a matrix and its properties\n### minors and cofactors\n### adjoint\n### inverse matrix\n### determinant\n### properties of determinants (without proof)\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
-    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
-    "## 4. Methods and standard forms\n**Table 2 — Theorem and method sheet**\n\n| Result or method | Hypotheses | Worked example | If the condition is dropped |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 5. Figures and graphs\n- **F1** — Matrices and determinants — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Matrices and determinants — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Matrices and determinants — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
-    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
-    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+    "## 1. Topic Introduction — The Determinant's Inner Machinery\n\n**Minors, cofactors and the adjoint** are the moving parts inside every determinant: the expansion theorem, the product rule |AB| = |A||B|, and the inverse formula A⁻¹ = adj A/|A|. This topic builds them carefully for 3×3 and beyond.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Minors and cofactors\n\n- **Minor Mᵢⱼ:** the determinant of the submatrix left after deleting row i and column j.\n- **Cofactor:** **Cᵢⱼ = (−1)^(i+j) Mᵢⱼ** — the checkerboard sign pattern (+ − + / − + − / + − +).\n- **Theorem (Laplace expansion):** |A| = Σⱼ aᵢⱼCᵢⱼ along **any** row or column — all choices give the same value; pick the row with the most zeros.\n\n### 2.2 Adjoint\n\n- **adj A** = transpose of the cofactor matrix: (adj A)ᵢⱼ = Cⱼᵢ.\n- **Theorem (the adjoint identity):** **A·adj A = adj A·A = |A|·I** — the master identity from which the inverse formula falls out: A⁻¹ = adj A/|A| when |A| ≠ 0.\n\n### 2.3 Determinant theorems\n\n- |Aᵀ| = |A|; **|AB| = |A||B|**; |kA| = kⁿ|A| for n×n; row swap flips sign; adding a multiple of one row to another changes nothing; identical/zero rows ⟹ 0.\n- **Cramer's rule:** for AX = B with |A| ≠ 0, xᵢ = |Aᵢ|/|A| where Aᵢ replaces column i by B.\n\n### 2.4 Singularity\n\n- |A| = 0 ⟺ rows are linearly dependent ⟺ A has no inverse ⟺ AX = 0 has non-trivial solutions — one condition, four faces.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Minor** | Determinant of the delete-row/delete-column submatrix | M₁₁ of a 3×3 |\n| **Cofactor** | Signed minor: (−1)^(i+j)Mᵢⱼ | checkerboard signs |\n| **Adjoint** | Transpose of the cofactor matrix | A·adj A = |A|I |\n| **Cramer's rule** | xᵢ = |Aᵢ|/|A| | determinant ratios |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why the checkerboard sign\n\n- The sign (−1)^(i+j) compensates for the row/column swaps hidden in the submatrix; without it, expansions along different rows would disagree.\n\n### 4.2 The adjoint identity as the keystone\n\n- A·adj A = |A|I is simultaneously: the inverse formula (divide by |A|), the reason singular matrices have no inverse (division by zero), and a fast check on adj computations.\n\n### 4.3 Expansion strategy\n\n- Create zeros first (row operations that don't change |A|), then expand along the zero-rich row — the 3×3 slog becomes a 2×2 snap.",
+    "## 5. Comparison Tables\n\n**Cofactor bookkeeping for 3×3**\n\n| Position | Sign | Role |\n|---|---|---|\n| (1,1), (1,3), (2,2), (3,1), (3,3) | + | M as is |\n| (1,2), (2,1), (2,3), (3,2) | − | negate the minor |\n| adj A | transpose | (adj A)ᵢⱼ = Cⱼᵢ |",
+    "## 6. Common Confusions\n\n**Sign pattern starts with + at (1,1):** (−1)^(1+1) = +1; the alternating pattern is + − + / − + − / + − +.",
+    "**adj A transposes the cofactor matrix:** using cofactors untransposed poisons every inverse computation.",
+    "**|kA| = kⁿ|A|:** the scalar crosses each of n rows — for 3×3, |2A| = 8|A|, not 2|A|.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Find the cofactors of all entries of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]] and hence |A|.** — C₁₁ = +(5·10 − 6·8) = 2; C₁₂ = −(4·10 − 6·7) = −(40−42) = 2; C₁₃ = +(4·8 − 5·7) = −3; C₂₁ = −(2·10 − 3·8) = −(20−24) = 4; C₂₂ = +(1·10 − 3·7) = −11; C₂₃ = −(1·8 − 2·7) = 6; C₃₁ = +(2·6 − 3·5) = −3; C₃₂ = −(1·6 − 3·4) = 6; C₃₃ = +(1·5 − 2·4) = −3. **|A| = a₁₁C₁₁ + a₁₂C₁₂ + a₁₃C₁₃ = 2 + 4 − 9 = −3** (expanding along row 1). Any row/column gives −3 — the expansion theorem's consistency.",
+    "**NEB-style (3m): Verify A·adj A = |A|I for A = [[2, 1], [3, 4]].** — Cofactors: C₁₁ = 4, C₁₂ = −3, C₂₁ = −1, C₂₂ = 2 ⟹ adj A = [[4, −1], [−3, 2]]. A·adj A = [[2·4 + 1·(−3), 2·(−1) + 1·2], [3·4 + 4·(−3), 3·(−1) + 4·2]] = [[5, 0], [0, 5]] = **5I = |A|I** ✓ — the master identity, and the reason A⁻¹ = adj A/|A| works.",
+    "**NEB-style (3m): Solve by Cramer's rule: 2x + 3y = 8, x − y = −1.** — |A| = 2(−1) − 3(1) = −5. |A₁| (replace column 1 by B) = 8(−1) − 3(−1) = −5 ⟹ x = −5/−5 = **1**. |A₂| = 2(−1) − 8(1) = −10 ⟹ y = −10/−5 = **2**. Check: 2 + 6 = 8 ✓, 1 − 2 = −1 ✓."
   ],
   "confusion": [
     "❌ treat \"Matrices\" as one blob → ✅ split into: matrices, determinants: transpose of a matrix, its properties.",
@@ -41,27 +32,23 @@
     "Limit to remember: transpose (ab)ᵀ = bᵀaᵀ. inverse: a⁻¹ = adj(a)/det(a) (2×2: [d −b; −c a]/(ad−bc))."
   ],
   "practice": [
-    "define + example each sub-idea: matrices, determinants: transpose of a matrix, its properties, minors.",
-    "one worked example for \"Matrices and determinants: transpose of a matrix and its …\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Compute all cofactors of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]] and hence |A|.",
+    "Verify A·adj A = |A|I for A = [[2, 1], [3, 4]].",
+    "Solve 2x + 3y = 8, x − y = −1 by Cramer's rule."
   ],
   "universalFacts": [
-    "Transpose (AB)ᵀ = BᵀAᵀ. Inverse: A⁻¹ = adj(A)/det(A) (2×2: [d −b; −c a]/(ad−bc)).",
-    "Properties: det(AB) = det A·det B; det A⁻¹ = 1/det A; det kA = kⁿ det A for n×n.",
-    "Cofactors: Cᵢⱼ = (−1)^{i+j} Mᵢⱼ; adj = cofactor matrix transposed; A·adj(A) = det(A) I."
+    "Cramer's rule is why determinants predate matrices historically: each unknown is a ratio of two volumes."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***The zero-rich row*** - create zeros with row additions (which leave |A| unchanged), then expand along that row: the 3x3 slog collapses to one 2x2 determinant."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Matrices and determinants: transpose of a matrix and its …\" with one example.",
-    "compare \"Matrices\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Matrices and determinants: transpose of a matrix and its …\" and verify the answer is plausible."
+    "**NEB-style (3m): Find all cofactors of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]] and evaluate |A| by expansion.** — **Cofactors (sign × minor):** C₁₁ = +(5·10 − 6·8) = +2; C₁₂ = −(4·10 − 6·7) = −(−2) = +2; C₁₃ = +(4·8 − 5·7) = −3; C₂₁ = −(2·10 − 3·8) = +4; C₂₂ = +(1·10 − 3·7) = −11; C₂₃ = −(1·8 − 2·7) = +6; C₃₁ = +(2·6 − 3·5) = −3; C₃₂ = −(1·6 − 3·4) = +6; C₃₃ = +(1·5 − 2·4) = −3. **Expansion along row 1:** |A| = a₁₁C₁₁ + a₁₂C₁₂ + a₁₃C₁₃ = (1)(2) + (2)(2) + (3)(−3) = 2 + 4 − 9 = **−3**. **Consistency check along column 1:** (1)(2) + (4)(4) + (7)(−3) = 2 + 16 − 21 = −3 ✓ — the Laplace theorem guarantees every row/column choice yields the same determinant.",
+    "**NEB-style (3m): Verify the adjoint identity A·adj A = |A|·I for A = [[2, 1], [3, 4]].** — **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −1, C₂₂ = +2 ⟹ cofactor matrix [[4, −3], [−1, 2]] ⟹ **adj A = transpose = [[4, −1], [−3, 2]]**. **Product:** A·adj A = [[2·4 + 1·(−3), 2·(−1) + 1·2], [3·4 + 4·(−3), 3·(−1) + 4·2]] = [[8 − 3, −2 + 2], [12 − 12, −3 + 8]] = **[[5, 0], [0, 5]]**. **Compare:** |A| = 8 − 3 = 5, and |A|·I = 5I = [[5, 0], [0, 5]] ✓ — the identity holds. **Why it matters:** dividing the identity by |A| gives A⁻¹ = adj A/|A| = (1/5)[[4, −1], [−3, 2]]; and when |A| = 0 the equation A·adj A = 0 admits no inverse — singularity in one line.",
+    "**NEB-style (3m): Solve the system 2x + 3y = 8, x − y = −1 using Cramer's rule.** — **Coefficient determinant:** |A| = |2 3; 1 −1| = (2)(−1) − (3)(1) = −5 ≠ 0 ⟹ Cramer applies. **x-determinant** (replace column 1 with B = [8, −1]): |A₁| = |8 3; −1 −1| = (8)(−1) − (3)(−1) = −8 + 3 = −5 ⟹ **x = |A₁|/|A| = −5/−5 = 1**. **y-determinant** (replace column 2): |A₂| = |2 8; 1 −1| = (2)(−1) − (8)(1) = −10 ⟹ **y = −10/−5 = 2**. **Verification:** 2(1) + 3(2) = 8 ✓ and 1 − 2 = −1 ✓. Cramer's rule works because each unknown is the ratio of two \"volumes\": the numerator measures how far B tilts the corresponding column."
   ],
   "formulas": [
-    "det([[a,b],[c,d]]) = ad − bc",
-    "A⁻¹ = adj(A)/det(A)",
-    "det(AB) = det A·det B"
+    "- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; |A| = Σⱼ aᵢⱼCᵢⱼ (any row/column)\n- adj A = Cᵀ; A·adj A = |A|·I; A⁻¹ = adj A/|A|\n- |AB| = |A||B|; |kA| = kⁿ|A|; Cramer: xᵢ = |Aᵢ|/|A|"
   ],
   "numericals": [
     "Use  det([[a,b],[c,d]]) = ad − bc  — pick reasonable values, solve, and check the units.",
@@ -69,14 +56,9 @@
     "Use  det(AB) = det A·det B  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Matrices",
-    "• Determinants: transpose of a matrix",
-    "• Its properties",
-    "• Minors",
-    "• Cofactors",
-    "• Adjoint"
+    "Minor M_ij: determinant after deleting row i, column j. Cofactor C_ij = (-1)^(i+j) M_ij (checkerboard + - + / - + - / + - +). Laplace expansion: |A| = sum a_ij C_ij along any row or column - all agree; choose the zero-rich row. Adjoint: transpose of the cofactor matrix, (adj A)_ij = C_ji. Master identity: A adj A = adj A A = |A| I, giving A^-1 = adj A/|A| for |A| != 0. Determinant theorems: |A^T| = |A|; |AB| = |A||B|; |kA| = k^n |A|; row swap flips sign; row-addition changes nothing; zero/equal rows give 0. Cramer's rule: x_i = |A_i|/|A|. |A| = 0 iff rows dependent iff no inverse iff AX = 0 has non-trivial solutions."
   ],
-  "summary": "Matrices and determinants: transpose of a matrix and its … (Algebra, Mathematics, class-11-notes) covers Matrices, determinants: transpose of a matrix, its properties. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Determinants have anatomy. The **minor** Mᵢⱼ deletes row i and column j; the **cofactor** Cᵢⱼ = (−1)^(i+j)Mᵢⱼ stamps the checkerboard sign (+−+/−+−/++- pattern starting + at (1,1)); and the **Laplace expansion** |A| = Σ aᵢⱼCᵢⱼ works along any row or column — all choices agree (the 3×3 with cofactors 2, 2, −3, … expands to −3 along row 1 and column 1 alike). The **adjoint** transposes the cofactor matrix and satisfies the keystone identity **A·adj A = |A|·I**, verified directly for [[2,1],[3,4]] — from which **A⁻¹ = adj A/|A|** follows, and whose failure at |A| = 0 is exactly singularity. Supporting theorems: |Aᵀ| = |A|, **|AB| = |A||B|**, |kA| = kⁿ|A|, row-swap sign flips, row-addition neutrality. **Cramer's rule** xᵢ = |Aᵢ|/|A| solves systems as volume ratios (x = 1, y = 2 for the sample pair). Sign, transpose, identity: the three places errors and marks live.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Matrices and determinants: transpose of a matrix and its …\"?",
@@ -98,5 +80,72 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Determinant's Inner Machinery\n\n**Minors, cofactors and the adjoint** are the moving parts inside every determinant: the expansion theorem, the product rule |AB| = |A||B|, and the inverse formula A⁻¹ = adj A/|A|. This topic builds them carefully for 3×3 and beyond.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Minors and cofactors\n\n- **Minor Mᵢⱼ:** the determinant of the submatrix left after deleting row i and column j.\n- **Cofactor:** **Cᵢⱼ = (−1)^(i+j) Mᵢⱼ** — the checkerboard sign pattern (+ − + / − + − / + − +).\n- **Theorem (Laplace expansion):** |A| = Σⱼ aᵢⱼCᵢⱼ along **any** row or column — all choices give the same value; pick the row with the most zeros.\n\n### 2.2 Adjoint\n\n- **adj A** = transpose of the cofactor matrix: (adj A)ᵢⱼ = Cⱼᵢ.\n- **Theorem (the adjoint identity):** **A·adj A = adj A·A = |A|·I** — the master identity from which the inverse formula falls out: A⁻¹ = adj A/|A| when |A| ≠ 0.\n\n### 2.3 Determinant theorems\n\n- |Aᵀ| = |A|; **|AB| = |A||B|**; |kA| = kⁿ|A| for n×n; row swap flips sign; adding a multiple of one row to another changes nothing; identical/zero rows ⟹ 0.\n- **Cramer's rule:** for AX = B with |A| ≠ 0, xᵢ = |Aᵢ|/|A| where Aᵢ replaces column i by B.\n\n### 2.4 Singularity\n\n- |A| = 0 ⟺ rows are linearly dependent ⟺ A has no inverse ⟺ AX = 0 has non-trivial solutions — one condition, four faces.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Minor** | Determinant of the delete-row/delete-column submatrix | M₁₁ of a 3×3 |\n| **Cofactor** | Signed minor: (−1)^(i+j)Mᵢⱼ | checkerboard signs |\n| **Adjoint** | Transpose of the cofactor matrix | A·adj A = |A|I |\n| **Cramer's rule** | xᵢ = |Aᵢ|/|A| | determinant ratios |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why the checkerboard sign\n\n- The sign (−1)^(i+j) compensates for the row/column swaps hidden in the submatrix; without it, expansions along different rows would disagree.\n\n### 4.2 The adjoint identity as the keystone\n\n- A·adj A = |A|I is simultaneously: the inverse formula (divide by |A|), the reason singular matrices have no inverse (division by zero), and a fast check on adj computations.\n\n### 4.3 Expansion strategy\n\n- Create zeros first (row operations that don't change |A|), then expand along the zero-rich row — the 3×3 slog becomes a 2×2 snap.",
+      "## 5. Comparison Tables\n\n**Cofactor bookkeeping for 3×3**\n\n| Position | Sign | Role |\n|---|---|---|\n| (1,1), (1,3), (2,2), (3,1), (3,3) | + | M as is |\n| (1,2), (2,1), (2,3), (3,2) | − | negate the minor |\n| adj A | transpose | (adj A)ᵢⱼ = Cⱼᵢ |",
+      "## 6. Common Confusions\n\n**Sign pattern starts with + at (1,1):** (−1)^(1+1) = +1; the alternating pattern is + − + / − + − / + − +.",
+      "**adj A transposes the cofactor matrix:** using cofactors untransposed poisons every inverse computation.",
+      "**|kA| = kⁿ|A|:** the scalar crosses each of n rows — for 3×3, |2A| = 8|A|, not 2|A|.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Find the cofactors of all entries of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]] and hence |A|.** — C₁₁ = +(5·10 − 6·8) = 2; C₁₂ = −(4·10 − 6·7) = −(40−42) = 2; C₁₃ = +(4·8 − 5·7) = −3; C₂₁ = −(2·10 − 3·8) = −(20−24) = 4; C₂₂ = +(1·10 − 3·7) = −11; C₂₃ = −(1·8 − 2·7) = 6; C₃₁ = +(2·6 − 3·5) = −3; C₃₂ = −(1·6 − 3·4) = 6; C₃₃ = +(1·5 − 2·4) = −3. **|A| = a₁₁C₁₁ + a₁₂C₁₂ + a₁₃C₁₃ = 2 + 4 − 9 = −3** (expanding along row 1). Any row/column gives −3 — the expansion theorem's consistency.",
+      "**NEB-style (3m): Verify A·adj A = |A|I for A = [[2, 1], [3, 4]].** — Cofactors: C₁₁ = 4, C₁₂ = −3, C₂₁ = −1, C₂₂ = 2 ⟹ adj A = [[4, −1], [−3, 2]]. A·adj A = [[2·4 + 1·(−3), 2·(−1) + 1·2], [3·4 + 4·(−3), 3·(−1) + 4·2]] = [[5, 0], [0, 5]] = **5I = |A|I** ✓ — the master identity, and the reason A⁻¹ = adj A/|A| works.",
+      "**NEB-style (3m): Solve by Cramer's rule: 2x + 3y = 8, x − y = −1.** — |A| = 2(−1) − 3(1) = −5. |A₁| (replace column 1 by B) = 8(−1) − 3(−1) = −5 ⟹ x = −5/−5 = **1**. |A₂| = 2(−1) − 8(1) = −10 ⟹ y = −10/−5 = **2**. Check: 2 + 6 = 8 ✓, 1 − 2 = −1 ✓."
+    ],
+    "keyPoints": [
+      "Minor M_ij: determinant after deleting row i, column j. Cofactor C_ij = (-1)^(i+j) M_ij (checkerboard + - + / - + - / + - +). Laplace expansion: |A| = sum a_ij C_ij along any row or column - all agree; choose the zero-rich row. Adjoint: transpose of the cofactor matrix, (adj A)_ij = C_ji. Master identity: A adj A = adj A A = |A| I, giving A^-1 = adj A/|A| for |A| != 0. Determinant theorems: |A^T| = |A|; |AB| = |A||B|; |kA| = k^n |A|; row swap flips sign; row-addition changes nothing; zero/equal rows give 0. Cramer's rule: x_i = |A_i|/|A|. |A| = 0 iff rows dependent iff no inverse iff AX = 0 has non-trivial solutions."
+    ],
+    "importantConcepts": [
+      "The adjoint identity A adj A = |A| I is the keystone: it is the inverse formula, the singularity obstruction, and a free check on adj computations all at once."
+    ],
+    "examples": [
+      "***The zero-rich row*** - create zeros with row additions (which leave |A| unchanged), then expand along that row: the 3x3 slog collapses to one 2x2 determinant."
+    ],
+    "universalFacts": [
+      "Cramer's rule is why determinants predate matrices historically: each unknown is a ratio of two volumes."
+    ],
+    "importantStatements": [
+      "\"C_ij = (-1)^(i+j) M_ij; |A| = sum a_ij C_ij along any row or column; A adj A = |A| I; A^-1 = adj A/|A|.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Sign checkerboard from + at (1,1). Expand along zeros. adj = transpose of cofactors. |kA| = k^n |A|. Cramer: replace one column at a time."
+    ],
+    "examNotes": [
+      "In cofactor questions, write the sign and the minor separately before multiplying - merging them is where sign errors breed."
+    ],
+    "formulas": [
+      "- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; |A| = Σⱼ aᵢⱼCᵢⱼ (any row/column)\n- adj A = Cᵀ; A·adj A = |A|·I; A⁻¹ = adj A/|A|\n- |AB| = |A||B|; |kA| = kⁿ|A|; Cramer: xᵢ = |Aᵢ|/|A|"
+    ],
+    "practice": [
+      "Compute all cofactors of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]] and hence |A|.",
+      "Verify A·adj A = |A|I for A = [[2, 1], [3, 4]].",
+      "Solve 2x + 3y = 8, x − y = −1 by Cramer's rule."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Find all cofactors of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]] and evaluate |A| by expansion.** — **Cofactors (sign × minor):** C₁₁ = +(5·10 − 6·8) = +2; C₁₂ = −(4·10 − 6·7) = −(−2) = +2; C₁₃ = +(4·8 − 5·7) = −3; C₂₁ = −(2·10 − 3·8) = +4; C₂₂ = +(1·10 − 3·7) = −11; C₂₃ = −(1·8 − 2·7) = +6; C₃₁ = +(2·6 − 3·5) = −3; C₃₂ = −(1·6 − 3·4) = +6; C₃₃ = +(1·5 − 2·4) = −3. **Expansion along row 1:** |A| = a₁₁C₁₁ + a₁₂C₁₂ + a₁₃C₁₃ = (1)(2) + (2)(2) + (3)(−3) = 2 + 4 − 9 = **−3**. **Consistency check along column 1:** (1)(2) + (4)(4) + (7)(−3) = 2 + 16 − 21 = −3 ✓ — the Laplace theorem guarantees every row/column choice yields the same determinant.",
+      "**NEB-style (3m): Verify the adjoint identity A·adj A = |A|·I for A = [[2, 1], [3, 4]].** — **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −1, C₂₂ = +2 ⟹ cofactor matrix [[4, −3], [−1, 2]] ⟹ **adj A = transpose = [[4, −1], [−3, 2]]**. **Product:** A·adj A = [[2·4 + 1·(−3), 2·(−1) + 1·2], [3·4 + 4·(−3), 3·(−1) + 4·2]] = [[8 − 3, −2 + 2], [12 − 12, −3 + 8]] = **[[5, 0], [0, 5]]**. **Compare:** |A| = 8 − 3 = 5, and |A|·I = 5I = [[5, 0], [0, 5]] ✓ — the identity holds. **Why it matters:** dividing the identity by |A| gives A⁻¹ = adj A/|A| = (1/5)[[4, −1], [−3, 2]]; and when |A| = 0 the equation A·adj A = 0 admits no inverse — singularity in one line.",
+      "**NEB-style (3m): Solve the system 2x + 3y = 8, x − y = −1 using Cramer's rule.** — **Coefficient determinant:** |A| = |2 3; 1 −1| = (2)(−1) − (3)(1) = −5 ≠ 0 ⟹ Cramer applies. **x-determinant** (replace column 1 with B = [8, −1]): |A₁| = |8 3; −1 −1| = (8)(−1) − (3)(−1) = −8 + 3 = −5 ⟹ **x = |A₁|/|A| = −5/−5 = 1**. **y-determinant** (replace column 2): |A₂| = |2 8; 1 −1| = (2)(−1) − (8)(1) = −10 ⟹ **y = −10/−5 = 2**. **Verification:** 2(1) + 3(2) = 8 ✓ and 1 − 2 = −1 ✓. Cramer's rule works because each unknown is the ratio of two \"volumes\": the numerator measures how far B tilts the corresponding column."
+    ]
+  },
+  "importantConcepts": [
+    "The adjoint identity A adj A = |A| I is the keystone: it is the inverse formula, the singularity obstruction, and a free check on adj computations all at once."
+  ],
+  "importantStatements": [
+    "\"C_ij = (-1)^(i+j) M_ij; |A| = sum a_ij C_ij along any row or column; A adj A = |A| I; A^-1 = adj A/|A|.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Sign checkerboard from + at (1,1). Expand along zeros. adj = transpose of cofactors. |kA| = k^n |A|. Cramer: replace one column at a time."
+  ],
+  "examNotes": [
+    "In cofactor questions, write the sign and the minor separately before multiplying - merging them is where sign errors breed."
   ]
 }
