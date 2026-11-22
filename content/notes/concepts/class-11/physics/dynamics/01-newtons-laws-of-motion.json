@@ -185,5 +185,81 @@
   "relevance": 94,
   "unitSlug": "dynamics",
   "topicSlug": "01-newtons-laws-of-motion",
-  "topicTitle": "Newton's Laws of Motion (Foundations of Dynamics)"
+  "topicTitle": "Newton's Laws of Motion (Foundations of Dynamics)",
+  "mindmap": {
+    "centralConcept": "Newton's three laws of motion",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the three laws",
+        "subtopics": [
+          {
+            "name": "First law — inertia",
+            "points": [
+              "A body remains at rest or in uniform motion unless acted on by a net external force",
+              "Defines force as the cause of change in motion",
+              "Inertia is the resistance to change in motion, measured by mass"
+            ]
+          },
+          {
+            "name": "Second law — F = ma",
+            "points": [
+              "Net force equals rate of change of momentum: F = dp/dt",
+              "For constant mass this reduces to F = ma",
+              "Force and acceleration are both vectors, in the same direction"
+            ]
+          },
+          {
+            "name": "Third law — action-reaction",
+            "points": [
+              "Every action has an equal and opposite reaction",
+              "The pair acts on DIFFERENT bodies, which is why they do not cancel",
+              "Explains walking, rocket propulsion and recoil"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: applying the laws",
+        "subtopics": [
+          {
+            "name": "Free body diagrams",
+            "points": [
+              "Draw every force acting ON the body, never forces it exerts",
+              "Choose axes along the likely acceleration",
+              "Resolve forces and apply F = ma along each axis"
+            ]
+          },
+          {
+            "name": "Common force types",
+            "points": [
+              "Weight mg downward, normal reaction perpendicular to the surface",
+              "Tension along the string, friction opposing relative motion",
+              "Spring force proportional to extension"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: frames and limits",
+        "subtopics": [
+          {
+            "name": "Inertial and non-inertial frames",
+            "points": [
+              "Newton's laws hold only in inertial (non-accelerating) frames",
+              "In an accelerating frame a pseudo force -ma must be added",
+              "Centrifugal force is a pseudo force of this kind"
+            ]
+          },
+          {
+            "name": "Limits of validity",
+            "points": [
+              "Fails at speeds near c — special relativity is required",
+              "Fails at atomic scales — quantum mechanics is required",
+              "Within its domain it is exact, which is why engineering still uses it"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

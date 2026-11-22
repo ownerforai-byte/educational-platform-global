@@ -1,0 +1,1181 @@
+{
+  "class-11/mathematics/calculus/limits": {
+    "centralConcept": "Limits — the value a function approaches",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the idea",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "The limit of f(x) as x tends to a is L if f(x) gets arbitrarily close to L as x approaches a",
+              "x approaches a but never needs to equal a",
+              "The function may be undefined at a and still have a limit there"
+            ]
+          },
+          {
+            "name": "One-sided limits",
+            "points": [
+              "Left-hand limit uses x approaching from below a",
+              "Right-hand limit uses x approaching from above a",
+              "The two-sided limit exists only if both one-sided limits exist and are equal"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: evaluating limits",
+        "subtopics": [
+          {
+            "name": "Algebraic methods",
+            "points": [
+              "Direct substitution first — if it gives a finite value, that is the limit",
+              "Factorisation and cancellation for 0/0 forms",
+              "Rationalisation for limits involving square roots"
+            ]
+          },
+          {
+            "name": "Standard limits",
+            "points": [
+              "lim (x to 0) sin x / x = 1",
+              "lim (x to 0) (e^x - 1)/x = 1 and lim (x to 0) log(1+x)/x = 1",
+              "lim (x to 0) (a^x - 1)/x = log a"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: indeterminate forms and techniques",
+        "subtopics": [
+          {
+            "name": "The seven indeterminate forms",
+            "points": [
+              "0/0, infinity/infinity, 0 x infinity, infinity - infinity",
+              "1^infinity, 0^0, infinity^0",
+              "Each requires a specific technique, not substitution"
+            ]
+          },
+          {
+            "name": "Advanced tools",
+            "points": [
+              "L'Hopital's rule for 0/0 and infinity/infinity forms",
+              "Expansion (Taylor or binomial) for small x",
+              "For 1^infinity use the exponential limit form: take log first"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Exam traps",
+        "subtopics": [
+          {
+            "name": "Frequently missed",
+            "points": [
+              "A limit existing does not mean the function is continuous there",
+              "Left and right limits must agree — checking only one is the commonest error",
+              "Do not apply L'Hopital's rule before confirming the form is indeterminate"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/limits-of-function": {
+    "centralConcept": "Limits of a function",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Notation and meaning",
+            "points": [
+              "lim x to a f(x) = L means f(x) approaches L as x approaches a",
+              "The value f(a) itself is irrelevant to the limit",
+              "Limits describe behaviour near a point, not at it"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Existence",
+            "points": [
+              "Limit exists only when left and right limits are equal",
+              "A jump discontinuity gives unequal one-sided limits, so no limit exists",
+              "Infinite limits describe vertical asymptotes"
+            ]
+          },
+          {
+            "name": "Algebra of limits",
+            "points": [
+              "Limit of a sum equals the sum of limits, provided both exist",
+              "Same for difference, product and quotient (quotient requires non-zero denominator limit)",
+              "Limit of a constant multiple equals the constant times the limit"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Limits at infinity",
+            "points": [
+              "Divide by the highest power of x to evaluate rational functions at infinity",
+              "Degree of numerator less than denominator gives limit 0",
+              "Equal degrees give the ratio of leading coefficients"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/continuity-of-function": {
+    "centralConcept": "Continuity — no breaks in the graph",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the three conditions",
+        "subtopics": [
+          {
+            "name": "Definition at a point",
+            "points": [
+              "f(a) must be defined",
+              "lim x to a f(x) must exist",
+              "The limit must equal f(a)"
+            ]
+          },
+          {
+            "name": "All three are required",
+            "points": [
+              "Failing any one condition makes the function discontinuous at a",
+              "A removable discontinuity fails only the third condition",
+              "Continuity on an interval means continuity at every point of it"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: types of discontinuity",
+        "subtopics": [
+          {
+            "name": "Removable",
+            "points": [
+              "The limit exists but does not equal f(a), or f(a) is undefined",
+              "Graph has a hole at that point",
+              "Can be fixed by redefining the function at that single point"
+            ]
+          },
+          {
+            "name": "Jump",
+            "points": [
+              "Left and right limits both exist but are unequal",
+              "Graph has a visible break",
+              "Cannot be removed by redefining one point"
+            ]
+          },
+          {
+            "name": "Infinite",
+            "points": [
+              "The function tends to infinity at the point",
+              "Vertical asymptote in the graph",
+              "Also called an essential discontinuity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Theorems that need continuity",
+            "points": [
+              "Intermediate value theorem: a continuous function takes every value between f(a) and f(b)",
+              "Extreme value theorem: a continuous function on a closed interval attains its maximum and minimum",
+              "Differentiability implies continuity, but continuity does not imply differentiability"
+            ]
+          },
+          {
+            "name": "Standard counterexample",
+            "points": [
+              "f(x) = |x| is continuous at 0 but not differentiable there",
+              "This is the standard example for the one-way implication",
+              "Weierstrass functions are continuous everywhere and differentiable nowhere"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/types-of-discontinuity": {
+    "centralConcept": "Classifying discontinuities",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Why classify",
+            "points": [
+              "The type of discontinuity determines whether it can be repaired",
+              "Classification follows from the behaviour of the one-sided limits",
+              "Three main types: removable, jump, infinite"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "The three types",
+            "points": [
+              "Removable: limit exists, value differs or is missing — a hole",
+              "Jump: both one-sided limits finite but unequal — a step",
+              "Infinite: at least one one-sided limit is infinite — an asymptote"
+            ]
+          },
+          {
+            "name": "Testing procedure",
+            "points": [
+              "Compute the left-hand limit",
+              "Compute the right-hand limit",
+              "Compare both with f(a) and classify from the pattern"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Examples",
+            "points": [
+              "(x^2 - 1)/(x - 1) at x = 1 is removable — limit 2, value undefined",
+              "The sign function at 0 is a jump discontinuity",
+              "1/x at 0 is an infinite discontinuity"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/graphs-of-discontinuous-function": {
+    "centralConcept": "Reading discontinuity from a graph",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Visual signatures",
+            "points": [
+              "A hole means removable discontinuity",
+              "A break with a vertical gap means jump discontinuity",
+              "A vertical asymptote means infinite discontinuity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Reading the graph",
+            "points": [
+              "Trace from the left and from the right separately",
+              "Note whether the two traces meet, miss, or diverge",
+              "Check whether a solid dot fills the gap"
+            ]
+          },
+          {
+            "name": "Piecewise functions",
+            "points": [
+              "Piecewise definitions are the commonest source of jumps",
+              "Check the boundary point of each piece",
+              "Continuity at the boundary requires matching one-sided limits"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Graph to formula",
+            "points": [
+              "A graph with a hole suggests a cancelled common factor",
+              "A vertical asymptote suggests a zero in the denominator",
+              "A jump suggests a piecewise definition with mismatched pieces"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/derivatives-definition": {
+    "centralConcept": "The derivative as a limit",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the definition",
+        "subtopics": [
+          {
+            "name": "First principles",
+            "points": [
+              "f'(x) = lim (h to 0) [f(x+h) - f(x)] / h",
+              "The derivative is the instantaneous rate of change",
+              "It is the limit of the difference quotient"
+            ]
+          },
+          {
+            "name": "Geometric meaning",
+            "points": [
+              "The derivative is the slope of the tangent at a point",
+              "The secant slope approaches the tangent slope as h tends to 0",
+              "f'(a) is the gradient of the curve at x = a"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: differentiation from first principles",
+        "subtopics": [
+          {
+            "name": "The standard procedure",
+            "points": [
+              "Write f(x+h), expand, subtract f(x)",
+              "Divide by h and simplify to remove the h in the denominator",
+              "Take the limit as h tends to 0"
+            ]
+          },
+          {
+            "name": "Key results",
+            "points": [
+              "d/dx (x^n) = n x^(n-1)",
+              "d/dx (sin x) = cos x, d/dx (cos x) = -sin x",
+              "d/dx (e^x) = e^x, d/dx (log x) = 1/x"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Differentiability",
+            "points": [
+              "Differentiable at a point requires the limit of the difference quotient to exist",
+              "Differentiability implies continuity, not the reverse",
+              "Corners, cusps and vertical tangents are points of non-differentiability"
+            ]
+          },
+          {
+            "name": "Notation",
+            "points": [
+              "f'(x), dy/dx, and Df(x) all denote the derivative",
+              "Leibniz notation dy/dx emphasises the ratio of small changes",
+              "Newton's dot notation is used for time derivatives"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/rules-of-differentiation": {
+    "centralConcept": "Rules for differentiating combinations of functions",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the basic rules",
+        "subtopics": [
+          {
+            "name": "Power and constant rules",
+            "points": [
+              "d/dx (x^n) = n x^(n-1) for any real n",
+              "Derivative of a constant is zero",
+              "Derivative of a constant multiple is the constant times the derivative"
+            ]
+          },
+          {
+            "name": "Sum and difference",
+            "points": [
+              "The derivative of a sum is the sum of derivatives",
+              "Same for difference",
+              "Differentiation is linear"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: product, quotient, chain",
+        "subtopics": [
+          {
+            "name": "Product rule",
+            "points": [
+              "d/dx (uv) = u dv/dx + v du/dx",
+              "First times derivative of second plus second times derivative of first",
+              "Extends to three factors by repeated application"
+            ]
+          },
+          {
+            "name": "Quotient rule",
+            "points": [
+              "d/dx (u/v) = (v du/dx - u dv/dx) / v^2",
+              "Order matters — reversing the numerator sign is the classic error",
+              "Memory aid: low d-high minus high d-low over low squared"
+            ]
+          },
+          {
+            "name": "Chain rule",
+            "points": [
+              "d/dx f(g(x)) = f'(g(x)) x g'(x)",
+              "Differentiate the outside, keep the inside, multiply by the inside's derivative",
+              "The most used rule in the whole course"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Standard derivatives to memorise",
+            "points": [
+              "d/dx (tan x) = sec^2 x, d/dx (cot x) = -cosec^2 x",
+              "d/dx (sec x) = sec x tan x, d/dx (cosec x) = -cosec x cot x",
+              "d/dx (sin^-1 x) = 1/sqrt(1-x^2), d/dx (tan^-1 x) = 1/(1+x^2)"
+            ]
+          },
+          {
+            "name": "Logarithmic differentiation",
+            "points": [
+              "Take log of both sides before differentiating when the function is a variable power",
+              "Essential for f(x)^g(x) forms",
+              "Also simplifies long products and quotients"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/parametric-implicit-derivatives": {
+    "centralConcept": "Differentiating parametric and implicit functions",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Parametric form",
+            "points": [
+              "x and y are both given in terms of a parameter t",
+              "dy/dx = (dy/dt) / (dx/dt)",
+              "Requires dx/dt to be non-zero"
+            ]
+          },
+          {
+            "name": "Implicit form",
+            "points": [
+              "The relation between x and y is not solved for y",
+              "Differentiate both sides with respect to x, treating y as a function of x",
+              "Collect dy/dx terms and solve"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Worked patterns",
+            "points": [
+              "x = a cos t, y = a sin t gives dy/dx = -cot t",
+              "x^2 + y^2 = a^2 gives dy/dx = -x/y",
+              "Always apply the chain rule to y terms when differentiating implicitly"
+            ]
+          },
+          {
+            "name": "Second derivatives",
+            "points": [
+              "For parametric, d2y/dx2 = (d/dt of dy/dx) / (dx/dt)",
+              "For implicit, differentiate dy/dx again and substitute",
+              "Second derivatives are where most marks are lost"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Choosing the method",
+            "points": [
+              "Parametric when both coordinates come from a parameter — circles, ellipses, cycloids",
+              "Implicit when solving for y is awkward or impossible",
+              "Logarithmic when the function is a variable power"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/higher-order-derivatives": {
+    "centralConcept": "Successive derivatives",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Notation",
+            "points": [
+              "Second derivative written f''(x) or d2y/dx2",
+              "nth derivative written f^(n)(x) or dny/dxn",
+              "Each differentiation is applied to the previous result"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: meaning",
+        "subtopics": [
+          {
+            "name": "Physical interpretation",
+            "points": [
+              "First derivative of displacement is velocity",
+              "Second derivative is acceleration",
+              "Third derivative is jerk"
+            ]
+          },
+          {
+            "name": "Geometric interpretation",
+            "points": [
+              "Second derivative gives concavity",
+              "Positive means concave up, negative means concave down",
+              "Zero with a sign change marks a point of inflection"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Standard nth derivatives",
+            "points": [
+              "d^n/dx^n (x^m) = m!/(m-n)! x^(m-n)",
+              "d^n/dx^n (e^ax) = a^n e^ax",
+              "d^n/dx^n (sin x) = sin(x + n pi/2)"
+            ]
+          },
+          {
+            "name": "Leibniz theorem",
+            "points": [
+              "Gives the nth derivative of a product as a binomial expansion of derivatives",
+              "Useful when one factor is a polynomial that eventually differentiates to zero",
+              "Reduces long repeated differentiation to one formula"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/geometric-interpretation-derivative": {
+    "centralConcept": "The derivative as slope and rate",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Tangent slope",
+            "points": [
+              "f'(a) is the slope of the tangent to y = f(x) at x = a",
+              "Tangent equation: y - f(a) = f'(a)(x - a)",
+              "Normal is perpendicular, with slope -1/f'(a)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: applications",
+        "subtopics": [
+          {
+            "name": "Rates of change",
+            "points": [
+              "dy/dx measures how fast y changes with x",
+              "Related rates problems chain derivatives through time",
+              "Marginal cost and marginal revenue are derivatives in economics"
+            ]
+          },
+          {
+            "name": "Increasing and decreasing",
+            "points": [
+              "f'(x) > 0 means the function is increasing",
+              "f'(x) < 0 means decreasing",
+              "Critical points occur where f'(x) = 0 or is undefined"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Curve sketching",
+            "points": [
+              "First derivative locates turning points and monotonicity",
+              "Second derivative locates concavity and inflection",
+              "Together they give a complete qualitative picture"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/monotonicity-extreme-values": {
+    "centralConcept": "Monotonicity and extreme values",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Monotonicity",
+            "points": [
+              "Increasing on an interval if f'(x) > 0 throughout",
+              "Decreasing if f'(x) < 0 throughout",
+              "Strictly monotonic means never flat"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: extrema",
+        "subtopics": [
+          {
+            "name": "First derivative test",
+            "points": [
+              "Find critical points where f'(x) = 0",
+              "If f' changes from positive to negative, it is a local maximum",
+              "If f' changes from negative to positive, it is a local minimum"
+            ]
+          },
+          {
+            "name": "Second derivative test",
+            "points": [
+              "At a critical point, f'' < 0 gives a local maximum",
+              "f'' > 0 gives a local minimum",
+              "f'' = 0 is inconclusive — fall back to the first derivative test"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Global extrema on a closed interval",
+            "points": [
+              "Evaluate f at all critical points inside the interval",
+              "Also evaluate f at both endpoints",
+              "The largest and smallest of these are the global extrema"
+            ]
+          },
+          {
+            "name": "Optimisation problems",
+            "points": [
+              "Express the quantity to be optimised as a function of one variable",
+              "Use the constraint to eliminate the second variable",
+              "Check that the critical point is a maximum or minimum, and that it lies in the valid domain"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/concavity-points-of-inflection": {
+    "centralConcept": "Concavity and points of inflection",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Concavity",
+            "points": [
+              "Concave up when f''(x) > 0 — the curve holds water",
+              "Concave down when f''(x) < 0 — the curve spills water",
+              "Concavity describes how the slope itself is changing"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Points of inflection",
+            "points": [
+              "A point where concavity changes sign",
+              "Necessary condition: f''(x) = 0 or undefined",
+              "Must verify the sign of f'' actually changes across the point"
+            ]
+          },
+          {
+            "name": "Testing",
+            "points": [
+              "Find where f''(x) = 0",
+              "Test the sign of f'' on each side",
+              "A sign change confirms an inflection; no change means it is not one"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Traps",
+            "points": [
+              "f''(x) = 0 does NOT guarantee an inflection — f(x) = x^4 at 0 is the standard counterexample",
+              "An inflection point need not be a stationary point",
+              "Concavity and monotonicity are independent properties"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/anti-derivatives-integration": {
+    "centralConcept": "Integration as anti-differentiation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The indefinite integral",
+            "points": [
+              "Integration reverses differentiation",
+              "Integral of f(x) dx is F(x) + C where F'(x) = f(x)",
+              "The constant C is essential — infinitely many antiderivatives exist"
+            ]
+          },
+          {
+            "name": "Standard integrals",
+            "points": [
+              "Integral of x^n dx = x^(n+1)/(n+1) + C for n not equal to -1",
+              "Integral of 1/x dx = log|x| + C",
+              "Integral of e^x dx = e^x + C"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: techniques",
+        "subtopics": [
+          {
+            "name": "Substitution",
+            "points": [
+              "Choose u so that du appears in the integrand",
+              "Rewrite the whole integral in terms of u",
+              "Always convert back to the original variable for indefinite integrals"
+            ]
+          },
+          {
+            "name": "By parts",
+            "points": [
+              "Integral of u dv = uv - integral of v du",
+              "Choose u by the ILATE order: inverse trig, log, algebraic, trig, exponential",
+              "Works when the integrand is a product of unlike functions"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Partial fractions",
+            "points": [
+              "Decompose a rational function before integrating",
+              "Distinct linear factors, repeated factors and quadratic factors each have a standard form",
+              "Reduces complex rational integrals to logs and arctangents"
+            ]
+          },
+          {
+            "name": "Choosing a technique",
+            "points": [
+              "Look for a function and its derivative — substitution",
+              "Look for a product of unlike types — by parts",
+              "Look for a rational function — partial fractions"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/definite-integral": {
+    "centralConcept": "The definite integral",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "The definite integral from a to b is the limit of a sum of areas of thin rectangles",
+              "Written as integral from a to b of f(x) dx",
+              "It is a number, not a function — no constant of integration"
+            ]
+          },
+          {
+            "name": "Fundamental theorem",
+            "points": [
+              "If F is an antiderivative of f, the definite integral equals F(b) - F(a)",
+              "This links area to anti-differentiation",
+              "It is the central result of calculus"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: properties",
+        "subtopics": [
+          {
+            "name": "Key properties",
+            "points": [
+              "Integral from a to b equals negative of integral from b to a",
+              "Integral from a to a is zero",
+              "Integral splits at an intermediate point: a to b plus b to c equals a to c"
+            ]
+          },
+          {
+            "name": "Symmetry shortcuts",
+            "points": [
+              "For an odd function, the integral over a symmetric interval is zero",
+              "For an even function, it doubles the integral from 0 to a",
+              "Always check symmetry before computing"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Signed area",
+            "points": [
+              "Area below the x-axis counts as negative",
+              "For total geometric area, split at the zeros and take absolute values",
+              "This distinction is a standard exam trap"
+            ]
+          },
+          {
+            "name": "Approximation",
+            "points": [
+              "Trapezoidal rule and Simpson's rule approximate numerically",
+              "Used when no elementary antiderivative exists",
+              "Accuracy improves with more subintervals"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/area-under-curve": {
+    "centralConcept": "Area under a curve",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The basic result",
+            "points": [
+              "Area between y = f(x), the x-axis, and x = a to x = b is the definite integral of f",
+              "Assumes f(x) is non-negative on the interval",
+              "Unit of area is the product of the axis units"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "When f is negative",
+            "points": [
+              "The integral gives signed area, which may be negative",
+              "For geometric area, integrate the absolute value",
+              "Split the interval at the x-intercepts"
+            ]
+          },
+          {
+            "name": "Area with respect to y",
+            "points": [
+              "Integrate x dy when the curve is easier to express as x = g(y)",
+              "Choose the axis that avoids splitting the region",
+              "The two approaches must give the same area"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Standard procedure",
+            "points": [
+              "Sketch the region first — most errors are setup errors",
+              "Find intersection points to get the limits",
+              "Decide which curve is upper and integrate upper minus lower"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/calculus/area-between-two-curves": {
+    "centralConcept": "Area between two curves",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The formula",
+            "points": [
+              "Area = integral from a to b of (upper curve - lower curve) dx",
+              "a and b are the x-coordinates of the intersection points",
+              "Subtracting handles the case where both curves are below the axis"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Finding the limits",
+            "points": [
+              "Set the two equations equal and solve for x",
+              "Intersection points give the integration limits",
+              "If curves cross inside the interval, split the integral there"
+            ]
+          },
+          {
+            "name": "Which curve is upper",
+            "points": [
+              "Test a point between the intersections",
+              "The larger y-value at that test point belongs to the upper curve",
+              "Getting this backwards gives a negative area"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Choosing the variable",
+            "points": [
+              "If the region is bounded left and right by curves, integrate with respect to y",
+              "Right minus left when integrating dy",
+              "Picking the wrong variable can force an unnecessary split"
+            ]
+          },
+          {
+            "name": "Common exam shapes",
+            "points": [
+              "Line and parabola, circle and line, two parabolas",
+              "Symmetry often halves the work",
+              "Always sketch — the sketch is worth marks on its own"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/analytic-geometry/straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles": {
+    "centralConcept": "Perpendicular distance and angle bisectors of lines",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Perpendicular distance",
+            "points": [
+              "Distance from (x1, y1) to ax + by + c = 0 is |ax1 + by1 + c| / sqrt(a^2 + b^2)",
+              "The absolute value ensures a positive distance",
+              "Distance between parallel lines ax+by+c1=0 and ax+by+c2=0 is |c1-c2|/sqrt(a^2+b^2)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: angle bisectors",
+        "subtopics": [
+          {
+            "name": "Bisectors of two lines",
+            "points": [
+              "For lines a1x+b1y+c1=0 and a2x+b2y+c2=0, the bisectors are (a1x+b1y+c1)/sqrt(a1^2+b1^2) = ±(a2x+b2y+c2)/sqrt(a2^2+b2^2)",
+              "The two signs give the two bisectors, which are perpendicular to each other",
+              "The bisector of the acute angle is the one nearer the origin for lines with positive constants"
+            ]
+          },
+          {
+            "name": "Identifying acute versus obtuse",
+            "points": [
+              "Compute a1a2 + b1b2; if positive the angle between lines is acute",
+              "The sign rule then selects which bisector is the acute one",
+              "This is where most marks are lost"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Applications",
+            "points": [
+              "Finding the incentre of a triangle from two bisectors",
+              "Locating points equidistant from two lines",
+              "Reflection of a point in a line uses the perpendicular foot"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/analytic-geometry/pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines": {
+    "centralConcept": "Pair of straight lines from a second-degree equation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "General second-degree equation",
+            "points": [
+              "ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0",
+              "Represents a pair of straight lines when a specific condition holds",
+              "The condition is abc + 2fgh - af^2 - bg^2 - ch^2 = 0"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: homogeneous case",
+        "subtopics": [
+          {
+            "name": "Homogeneous equation",
+            "points": [
+              "ax^2 + 2hxy + by^2 = 0 always represents two lines through the origin",
+              "Divide by x^2 to get a quadratic in (y/x)",
+              "The two roots are the slopes of the two lines"
+            ]
+          },
+          {
+            "name": "Angle between the lines",
+            "points": [
+              "tan(theta) = 2 sqrt(h^2 - ab) / (a + b)",
+              "Lines are perpendicular when a + b = 0",
+              "Lines are coincident when h^2 = ab"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Bisectors and combined properties",
+            "points": [
+              "The bisectors of a homogeneous pair are given by h(x^2 - y^2) = (a - b)xy",
+              "Sum and product of slopes come from the quadratic in y/x",
+              "The non-homogeneous case factorises into two lines not necessarily through the origin"
+            ]
+          },
+          {
+            "name": "Exam technique",
+            "points": [
+              "Check the condition for a pair of lines before factorising",
+              "Factorise by treating the equation as a quadratic in one variable",
+              "Verify by expanding the factorised form back"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/mathematics/analytic-geometry/coordinates-in-space-points-in-space-distance-between-two-points-direction-cosines-and-ratios-of": {
+    "centralConcept": "Coordinates in three-dimensional space",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The coordinate system",
+            "points": [
+              "Three mutually perpendicular axes x, y, z meeting at the origin",
+              "A point is written as an ordered triple (x, y, z)",
+              "The eight octants correspond to the sign combinations"
+            ]
+          },
+          {
+            "name": "Distance formula",
+            "points": [
+              "Distance between two points is sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2)",
+              "Distance from origin is sqrt(x^2 + y^2 + z^2)",
+              "Direct extension of the two-dimensional formula"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: direction",
+        "subtopics": [
+          {
+            "name": "Direction cosines",
+            "points": [
+              "Direction cosines are cos alpha, cos beta, cos gamma, the cosines of angles with the axes",
+              "They satisfy cos^2 alpha + cos^2 beta + cos^2 gamma = 1",
+              "Direction ratios are any three numbers proportional to the direction cosines"
+            ]
+          },
+          {
+            "name": "Section formula",
+            "points": [
+              "Point dividing a segment in ratio m:n has coordinates (mx2+nx1)/(m+n) and similarly for y and z",
+              "Midpoint is the special case m = n",
+              "External division uses m:n with a minus sign in the denominator"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Centroid and applications",
+            "points": [
+              "Centroid of a triangle is the average of the three vertex coordinates",
+              "Direction cosines normalise direction ratios by dividing by their magnitude",
+              "These tools underpin the vector treatment of three-dimensional geometry"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

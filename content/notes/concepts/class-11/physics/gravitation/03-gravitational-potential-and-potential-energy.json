@@ -512,5 +512,73 @@
       ],
       "answer": "B"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Gravitational potential and potential energy",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Potential energy",
+            "points": [
+              "U = -GMm/r, with zero defined at infinity",
+              "Negative because gravity is attractive and work must be done to separate the masses",
+              "Near the surface this reduces to U = mgh"
+            ]
+          },
+          {
+            "name": "Potential",
+            "points": [
+              "V = U/m = -GM/r, the work per unit mass to bring a unit mass from infinity",
+              "Potential is a scalar, so it adds algebraically with no vector work",
+              "Units are J/kg"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Relation to field",
+            "points": [
+              "g = -dV/dr — field strength is the negative potential gradient",
+              "Potential decreases toward the mass; field points in the direction of decreasing potential",
+              "Equipotential surfaces are perpendicular to field lines"
+            ]
+          },
+          {
+            "name": "Work done",
+            "points": [
+              "Work done moving a mass between two points equals m times the potential difference",
+              "Work done along an equipotential is zero",
+              "Work done depends only on endpoints, not the path — gravity is conservative"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Escape and binding",
+            "points": [
+              "Total energy zero means the body just escapes",
+              "Binding energy is the energy needed to remove a mass to infinity",
+              "For a satellite, total energy is -GMm/2r and binding energy is +GMm/2r"
+            ]
+          },
+          {
+            "name": "Standard traps",
+            "points": [
+              "Potential at the centre of a uniform sphere is finite, not infinite",
+              "Potential inside a shell is constant and equals its surface value",
+              "Do not confuse potential (J/kg) with potential energy (J)"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

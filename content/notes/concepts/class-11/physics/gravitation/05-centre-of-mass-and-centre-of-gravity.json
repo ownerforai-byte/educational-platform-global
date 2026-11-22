@@ -275,5 +275,65 @@
       "answer": "C",
       "explanation": "Closer to the heavier mass."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Centre of mass and centre of gravity",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Centre of mass",
+            "points": [
+              "The point where the entire mass of a system may be considered concentrated for translational motion",
+              "For two masses, it divides the separation in inverse ratio to the masses",
+              "It is a property of the mass distribution alone"
+            ]
+          },
+          {
+            "name": "Centre of gravity",
+            "points": [
+              "The point where the total gravitational force may be considered to act",
+              "Coincides with the centre of mass in a uniform gravitational field",
+              "Differs from it only over distances where g varies appreciably"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Formulas",
+            "points": [
+              "x_cm = (m1 x1 + m2 x2)/(m1 + m2)",
+              "For a uniform body the centre of mass is at its geometric centre",
+              "For a hollow shape it may lie outside the material"
+            ]
+          },
+          {
+            "name": "Stability",
+            "points": [
+              "A body topples when its centre of gravity falls outside its base",
+              "Lower centre of gravity and wider base mean greater stability",
+              "Explains why racing cars are built low and wide"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Motion of the centre of mass",
+            "points": [
+              "The centre of mass moves as if all external forces acted on all the mass there",
+              "Internal forces cannot change the motion of the centre of mass",
+              "Explains why a exploding shell's fragments have a centre of mass continuing on the original parabola"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

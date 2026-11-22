@@ -234,5 +234,65 @@
       "**NEB-style (3m): Explain the resonance in the carbonate ion and its consequences.** — CO₃²⁻ (24 valence electrons) has three equivalent canonical forms in which the C=O double bond occupies each of the three C–O positions in turn, with the two negative charges residing on the two singly bonded oxygens. The **resonance hybrid** delocalises the π bond and the −2 charge over all three oxygens: every C–O bond has **bond order 1⅓** and the measured length ≈129 pm — identical for all three. Consequences: the anion has no special \"double-bond\" oxygen, all three oxygens carry equal charge (−⅔ each), and its reactions show no positional preference.",
       "**NEB-style (3m): Define resonance energy. How is benzene's resonance energy estimated from heats of hydrogenation?** — Resonance energy is the difference in stability between the real (hybrid) molecule and its most stable single canonical form. **Estimation:** hydrogenating one C=C in cyclohexene releases ≈120 kJ mol⁻¹; a hypothetical \"cyclohexatriene\" with three isolated double bonds would release ≈360 kJ mol⁻¹. Benzene actually releases only ≈208 kJ mol⁻¹. The shortfall, **≈150 kJ mol⁻¹**, is benzene's resonance energy — the extra stability of the delocalised π cloud, and the reason benzene prefers substitution over addition."
     ]
+  },
+  "mindmap": {
+    "centralConcept": "Resonance — one real structure, several drawings",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "Resonance describes a molecule for which more than one valid Lewis structure can be drawn",
+              "The real molecule is a hybrid of all contributing structures, not any one of them",
+              "Double-headed arrow links the contributing structures"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: rules and examples",
+        "subtopics": [
+          {
+            "name": "Rules for valid contributors",
+            "points": [
+              "Only electrons move — atomic positions stay fixed",
+              "Contributors must have the same number of paired electrons",
+              "The more covalent bonds and the fewer formal charges, the more stable the contributor"
+            ]
+          },
+          {
+            "name": "Standard examples",
+            "points": [
+              "Ozone O3: two equivalent contributors, bond order 1.5",
+              "Carbonate CO3 2-: three equivalent contributors, all C-O bonds equal",
+              "Benzene: two Kekule structures, all six C-C bonds identical at 139 pm"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: consequences",
+        "subtopics": [
+          {
+            "name": "Stabilisation",
+            "points": [
+              "Resonance delocalises electrons and lowers the energy — this is resonance stabilisation",
+              "Explains why benzene does not behave like an alkene",
+              "Explains the acidity of carboxylic acids: the conjugate base is resonance stabilised"
+            ]
+          },
+          {
+            "name": "Bond order",
+            "points": [
+              "Resonance bond order = total bonds / number of resonance positions",
+              "Benzene C-C bond order is 1.5, between single and double",
+              "Explains intermediate bond lengths that match neither single nor double"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

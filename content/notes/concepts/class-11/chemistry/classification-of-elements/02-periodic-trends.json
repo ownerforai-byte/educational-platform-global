@@ -185,5 +185,73 @@
     "component": "PeriodicTableView",
     "desc": "Interactive periodic table"
   },
-  "visualType": "periodic-trends"
+  "visualType": "periodic-trends",
+  "mindmap": {
+    "centralConcept": "Periodic trends — how size, energy and character change",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the two directions",
+        "subtopics": [
+          {
+            "name": "Across a period",
+            "points": [
+              "Nuclear charge increases while electrons enter the same shell",
+              "Effective nuclear charge rises, so the atom contracts",
+              "Atomic radius decreases left to right"
+            ]
+          },
+          {
+            "name": "Down a group",
+            "points": [
+              "A new shell is added each period",
+              "Shielding increases faster than nuclear charge",
+              "Atomic radius increases down the group"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the trends",
+        "subtopics": [
+          {
+            "name": "Ionisation energy and electron affinity",
+            "points": [
+              "Ionisation energy increases across a period, decreases down a group",
+              "Electron affinity becomes more negative across a period",
+              "Exceptions: Be > B and N > O in ionisation energy, due to filled or half-filled subshells"
+            ]
+          },
+          {
+            "name": "Electronegativity and metallic character",
+            "points": [
+              "Electronegativity increases across a period, decreases down a group",
+              "Fluorine is the most electronegative element at 3.98",
+              "Metallic character decreases across a period, increases down a group"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: explaining the exceptions",
+        "subtopics": [
+          {
+            "name": "Why anomalies occur",
+            "points": [
+              "Half-filled and fully-filled subshells are extra stable, raising ionisation energy",
+              "N has 2p3 half-filled, so its ionisation energy exceeds O's",
+              "Be has 2s2 filled, so it exceeds B's"
+            ]
+          },
+          {
+            "name": "Ionic versus atomic radius",
+            "points": [
+              "Cations are smaller than their parent atoms; anions are larger",
+              "Isoelectronic species: more protons means smaller radius (Na+ < F- < O2-)",
+              "Across an isoelectronic series, radius falls as nuclear charge rises"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

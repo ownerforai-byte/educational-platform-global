@@ -94,5 +94,65 @@
   "specialNotes": [],
   "examNotes": [],
   "importantTasks": [],
-  "visualType": "direction-cosines"
+  "visualType": "direction-cosines",
+  "mindmap": {
+    "centralConcept": "Coordinates in three-dimensional space",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The coordinate system",
+            "points": [
+              "Three mutually perpendicular axes x, y, z meeting at the origin",
+              "A point is written as an ordered triple (x, y, z)",
+              "The eight octants correspond to the sign combinations"
+            ]
+          },
+          {
+            "name": "Distance formula",
+            "points": [
+              "Distance between two points is sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2)",
+              "Distance from origin is sqrt(x^2 + y^2 + z^2)",
+              "Direct extension of the two-dimensional formula"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: direction",
+        "subtopics": [
+          {
+            "name": "Direction cosines",
+            "points": [
+              "Direction cosines are cos alpha, cos beta, cos gamma, the cosines of angles with the axes",
+              "They satisfy cos^2 alpha + cos^2 beta + cos^2 gamma = 1",
+              "Direction ratios are any three numbers proportional to the direction cosines"
+            ]
+          },
+          {
+            "name": "Section formula",
+            "points": [
+              "Point dividing a segment in ratio m:n has coordinates (mx2+nx1)/(m+n) and similarly for y and z",
+              "Midpoint is the special case m = n",
+              "External division uses m:n with a minus sign in the denominator"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Centroid and applications",
+            "points": [
+              "Centroid of a triangle is the average of the three vertex coordinates",
+              "Direction cosines normalise direction ratios by dividing by their magnitude",
+              "These tools underpin the vector treatment of three-dimensional geometry"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -234,5 +234,57 @@
       "**NEB-style (2m): Distinguish sigma and pi bonds on the basis of overlap, electron density and rotation.** — **Sigma:** head-on (axial) overlap of s–s, s–p or p–p orbitals; electron density is symmetric about and concentrated on the internuclear axis; stronger; free rotation of the bonded atoms is possible; can exist alone. **Pi:** sideways overlap of two parallel p orbitals; electron density lies above and below the axis with a nodal plane through it; weaker; rotation is blocked (it would destroy the overlap); always accompanies a sigma bond.",
       "**NEB-style (2m): Explain the bond-energy data: C–C 348, C=C 614, C≡C 839 kJ mol⁻¹.** — A single bond is one σ (348). The double bond adds one π: 614 − 348 = 266 kJ mol⁻¹ for the π component. The triple bond adds a second π: 839 − 614 = 225 kJ mol⁻¹ for the second π. Each π contributes less than a σ would, and successive π bonds contribute less than the first — sideways overlap is intrinsically weaker and becomes less effective as electron density accumulates. Total strength still rises with multiplicity, but in shrinking increments."
     ]
+  },
+  "mindmap": {
+    "centralConcept": "Valence bond theory — bonds as overlapping orbitals",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The central claim",
+            "points": [
+              "A covalent bond forms when two half-filled orbitals overlap",
+              "Greater overlap means a stronger bond",
+              "The two electrons must have opposite spins to pair"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Types of overlap",
+            "points": [
+              "s-s overlap: H2",
+              "s-p overlap: HCl",
+              "p-p head-on overlap gives sigma; p-p sideways overlap gives pi"
+            ]
+          },
+          {
+            "name": "Strengths and limits",
+            "points": [
+              "Sigma overlap is more effective than pi, so sigma bonds are stronger",
+              "VBT explains geometry through hybridization",
+              "VBT cannot explain the paramagnetism of oxygen"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Where VBT falls short",
+            "points": [
+              "O2 is predicted diamagnetic by VBT but is actually paramagnetic",
+              "Cannot explain the detailed electronic spectra of complexes",
+              "Molecular orbital theory was developed to fix exactly these failures"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -234,5 +234,57 @@
   },
   "universalFacts": [
     "Ethyne's sp C–H bonds (50% s-character) are acidic enough (pKₐ ≈ 25) to form acetylides with strong bases — hybridisation strength you can deprotonate."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "sp, sp2 and sp3 hybridization in organic molecules",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Sigma and pi frames",
+            "points": [
+              "Sigma bonds form by head-on overlap and lie along the internuclear axis",
+              "Pi bonds form by sideways overlap and lie above and below the axis",
+              "Only unhybridized p orbitals can form pi bonds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: assignment in molecules",
+        "subtopics": [
+          {
+            "name": "Worked assignments",
+            "points": [
+              "Ethane C2H6: both carbons sp3, all single bonds, free rotation",
+              "Ethene C2H4: both carbons sp2, one pi bond, planar, no rotation",
+              "Ethyne C2H2: both carbons sp, two pi bonds, linear"
+            ]
+          },
+          {
+            "name": "Mixed examples",
+            "points": [
+              "Benzene: every carbon sp2, giving a planar ring with delocalised pi electrons",
+              "Acetaldehyde CH3CHO: CH3 carbon sp3, carbonyl carbon sp2",
+              "Carbon dioxide: carbon sp hybridized, two pi bonds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Reading hybridization from structure",
+            "points": [
+              "Count sigma bonds plus lone pairs on the atom — that is the steric number",
+              "An atom with one double bond and two single bonds is sp2",
+              "Hybridization explains geometry; geometry does not explain hybridization"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

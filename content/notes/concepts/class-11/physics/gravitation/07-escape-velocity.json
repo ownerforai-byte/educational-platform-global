@@ -350,5 +350,65 @@
       "answer": "About 1.1 × 10^4 m/s."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "mindmap": {
+    "centralConcept": "Escape velocity — the speed to break free",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "The minimum speed needed to escape a gravitational field without further propulsion",
+              "Derived by setting total mechanical energy to zero at infinity",
+              "Independent of the direction of projection and of the projectile's mass"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the formula",
+        "subtopics": [
+          {
+            "name": "Derivation and value",
+            "points": [
+              "Kinetic energy at surface equals magnitude of potential energy: 1/2 m v^2 = GMm/R",
+              "v_e = sqrt(2GM/R) = sqrt(2gR)",
+              "For Earth: about 11.2 km/s"
+            ]
+          },
+          {
+            "name": "Scaling",
+            "points": [
+              "v_e is proportional to sqrt(M/R)",
+              "Moon's escape velocity is about 2.4 km/s because of its small mass",
+              "Escape velocity from a black hole's event horizon exceeds the speed of light"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: related speeds",
+        "subtopics": [
+          {
+            "name": "Orbital versus escape",
+            "points": [
+              "Orbital velocity v_o = sqrt(GM/r) at radius r",
+              "v_e = sqrt(2) x v_o — escape is always 1.414 times orbital speed",
+              "This ratio holds for any body and any circular orbit"
+            ]
+          },
+          {
+            "name": "Atmospheric and practical limits",
+            "points": [
+              "Escape velocity is a lower bound; atmospheric drag and Earth's rotation modify the practical requirement",
+              "Launching eastward from the equator gains about 460 m/s from rotation",
+              "Gas molecules escape a planet's atmosphere when their thermal speed approaches v_e"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -593,5 +593,73 @@
       ],
       "answer": "C"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Work-energy theorem",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Work",
+            "points": [
+              "W = F d cos(theta), the component of force along displacement",
+              "Work is zero when force is perpendicular to displacement",
+              "Unit joule; work can be negative when force opposes motion"
+            ]
+          },
+          {
+            "name": "The theorem",
+            "points": [
+              "Net work done on a body equals its change in kinetic energy",
+              "W_net = KE_final - KE_initial = 1/2 m v^2 - 1/2 m u^2",
+              "Holds for all forces, conservative or not"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: variable force",
+        "subtopics": [
+          {
+            "name": "Work by a variable force",
+            "points": [
+              "W = integral of F dx, the area under a force-displacement graph",
+              "For a spring, W = 1/2 k x^2",
+              "Graphical area is often the fastest route in exams"
+            ]
+          },
+          {
+            "name": "Kinetic energy",
+            "points": [
+              "KE = 1/2 m v^2, always positive",
+              "Scales with the square of speed, which is why braking distance quadruples when speed doubles",
+              "Momentum and kinetic energy are related by KE = p^2/2m"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why the theorem is powerful",
+            "points": [
+              "It converts a force problem into an energy accounting problem",
+              "Avoids needing the detailed path when only endpoints matter",
+              "Especially useful for friction and variable forces"
+            ]
+          },
+          {
+            "name": "Limits",
+            "points": [
+              "Requires an inertial frame",
+              "Kinetic energy is frame-dependent, so the theorem must be applied in one consistent frame",
+              "For rotational motion a rotational analogue exists with moment of inertia"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

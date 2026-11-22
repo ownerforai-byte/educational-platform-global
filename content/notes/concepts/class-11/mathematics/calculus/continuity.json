@@ -109,5 +109,81 @@
   ],
   "practice": [],
   "examples": [],
-  "practiceQuestions": []
+  "practiceQuestions": [],
+  "mindmap": {
+    "centralConcept": "Continuity — no breaks in the graph",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the three conditions",
+        "subtopics": [
+          {
+            "name": "Definition at a point",
+            "points": [
+              "f(a) must be defined",
+              "lim x to a f(x) must exist",
+              "The limit must equal f(a)"
+            ]
+          },
+          {
+            "name": "All three are required",
+            "points": [
+              "Failing any one condition makes the function discontinuous at a",
+              "A removable discontinuity fails only the third condition",
+              "Continuity on an interval means continuity at every point of it"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: types of discontinuity",
+        "subtopics": [
+          {
+            "name": "Removable",
+            "points": [
+              "The limit exists but does not equal f(a), or f(a) is undefined",
+              "Graph has a hole at that point",
+              "Can be fixed by redefining the function at that single point"
+            ]
+          },
+          {
+            "name": "Jump",
+            "points": [
+              "Left and right limits both exist but are unequal",
+              "Graph has a visible break",
+              "Cannot be removed by redefining one point"
+            ]
+          },
+          {
+            "name": "Infinite",
+            "points": [
+              "The function tends to infinity at the point",
+              "Vertical asymptote in the graph",
+              "Also called an essential discontinuity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Theorems that need continuity",
+            "points": [
+              "Intermediate value theorem: a continuous function takes every value between f(a) and f(b)",
+              "Extreme value theorem: a continuous function on a closed interval attains its maximum and minimum",
+              "Differentiability implies continuity, but continuity does not imply differentiability"
+            ]
+          },
+          {
+            "name": "Standard counterexample",
+            "points": [
+              "f(x) = |x| is continuous at 0 but not differentiable there",
+              "This is the standard example for the one-way implication",
+              "Weierstrass functions are continuous everywhere and differentiable nowhere"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

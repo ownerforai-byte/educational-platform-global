@@ -301,5 +301,57 @@
       "answer": "B",
       "explanation": "Water coordinate-bonds the proton into hydronium."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Covalent and coordinate bonds and the properties they produce",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Sharing versus donation",
+            "points": [
+              "Ordinary covalent: each atom contributes one electron",
+              "Coordinate covalent: one atom contributes both",
+              "Once formed, a coordinate bond is indistinguishable from an ordinary covalent bond"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Properties",
+            "points": [
+              "Simple molecular compounds: low melting point, soft, volatile",
+              "Non-conducting in all states unless they ionise in water",
+              "Intermolecular forces, not covalent bonds, are broken on melting"
+            ]
+          },
+          {
+            "name": "Coordinate bond examples",
+            "points": [
+              "NH3 + H+ gives NH4+ — nitrogen donates its lone pair",
+              "H2O + H+ gives H3O+",
+              "Carbon monoxide has a coordinate bond from oxygen to carbon"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Consequences",
+            "points": [
+              "Coordinate bonding explains why NH4+ salts behave like ionic compounds despite a covalent cation",
+              "Ligand bonding in complexes is coordinate bonding",
+              "Giant covalent solids break the low-melting-point generalisation"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

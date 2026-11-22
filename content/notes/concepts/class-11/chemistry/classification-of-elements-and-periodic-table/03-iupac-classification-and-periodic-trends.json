@@ -310,5 +310,57 @@
       "answer": "C",
       "explanation": "Noble gases are group 18."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "IUPAC naming and numbering of the periodic table",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The 1-18 convention",
+            "points": [
+              "IUPAC replaced the old IA-VIIIA and IB-VIIB labels with groups 1 to 18",
+              "Removes ambiguity between American and European conventions",
+              "Groups 1-2 and 13-18 are main group; 3-12 are transition"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Naming rules",
+            "points": [
+              "New elements get a systematic name from their atomic number until confirmed",
+              "Roots: nil, un, bi, tri, quad, pent, hex, sept, oct, enn, plus the ending -ium",
+              "Example: element 118 was ununoctium before being named oganesson"
+            ]
+          },
+          {
+            "name": "Group naming",
+            "points": [
+              "Trivial names persist: alkali metals, halogens, noble gases, chalcogens",
+              "IUPAC accepts both numeric and trivial names",
+              "Group 3 membership (Sc, Y, La/Ac versus Lu/Lr) remains debated"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why standardisation matters",
+            "points": [
+              "A single numbering allows unambiguous cross-referencing in literature",
+              "Systematic naming prevents priority disputes over new elements",
+              "IUPAC also sets atomic weight and isotope conventions"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

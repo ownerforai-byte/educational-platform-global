@@ -507,5 +507,65 @@
       "**Period Law:** $T = 2\\pi\\sqrt{r^3/GM}$ is Kepler's third law for circular orbits. Squaring gives $T^2 \\propto r^3$, independent of satellite mass. This is valid only for bound circular/elliptical orbits — not for escape trajectories ($E \\ge 0$).",
       "**Energy Relations:** For circular orbits: $K = GMm/2r$, $U = -GMm/r$, $E = -GMm/2r$. Notice $K = -U/2$ and $E = U/2$. The negative total energy confirms a bound orbit. To raise an orbit, you ADD energy (thrust), but the orbital speed *decreases* because $v_0 \\propto 1/\\sqrt{r}$."
     ]
+  },
+  "mindmap": {
+    "centralConcept": "Satellite motion — orbital velocity and period",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Why a satellite stays up",
+            "points": [
+              "Gravity provides exactly the centripetal force needed for circular motion",
+              "A satellite is in continuous free fall, but its tangential speed keeps it missing the Earth",
+              "No propulsion is needed once in a stable orbit"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the two key formulas",
+        "subtopics": [
+          {
+            "name": "Orbital velocity",
+            "points": [
+              "GMm/r^2 = mv^2/r gives v = sqrt(GM/r)",
+              "v decreases as orbital radius increases",
+              "For a low Earth orbit v is about 7.9 km/s"
+            ]
+          },
+          {
+            "name": "Time period",
+            "points": [
+              "T = 2 pi r / v = 2 pi sqrt(r^3/GM)",
+              "T^2 proportional to r^3 — this is Kepler's third law",
+              "Higher orbits are slower and take longer"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: energy and special orbits",
+        "subtopics": [
+          {
+            "name": "Energy of a satellite",
+            "points": [
+              "KE = GMm/2r, PE = -GMm/r, total E = -GMm/2r",
+              "Total energy is negative for a bound orbit",
+              "Total energy equals half the potential energy — a standard exam result"
+            ]
+          },
+          {
+            "name": "Geostationary orbit",
+            "points": [
+              "Period exactly 24 hours, equatorial, prograde, giving a fixed point above the ground",
+              "Radius about 42,000 km from the Earth's centre, altitude about 36,000 km",
+              "Used for communication and weather satellites"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

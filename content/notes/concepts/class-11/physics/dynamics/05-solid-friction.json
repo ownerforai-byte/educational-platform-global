@@ -559,5 +559,73 @@
     "Covers only: solid friction, laws of solid friction, their verifications (within Dynamics).",
     "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Friction between solid surfaces",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Types",
+            "points": [
+              "Static friction acts before motion starts",
+              "Kinetic friction acts during sliding",
+              "Rolling friction is much smaller than sliding friction"
+            ]
+          },
+          {
+            "name": "The laws",
+            "points": [
+              "Friction is proportional to the normal reaction: f = mu N",
+              "Friction is independent of the apparent area of contact",
+              "Static friction exceeds kinetic friction for the same surfaces"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: angles and coefficients",
+        "subtopics": [
+          {
+            "name": "Angle of friction",
+            "points": [
+              "tan(lambda) = mu, where lambda is the angle of friction",
+              "The resultant of normal reaction and limiting friction makes this angle with the normal",
+              "Angle of repose equals the angle of friction"
+            ]
+          },
+          {
+            "name": "Angle of repose",
+            "points": [
+              "The steepest angle at which a body rests without sliding",
+              "tan(theta) = mu_s",
+              "Independent of the mass of the body"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Microscopic origin",
+            "points": [
+              "Friction arises from adhesion at real contact points and surface roughness",
+              "Real contact area is far smaller than apparent area, which is why area does not matter",
+              "Lubrication works by separating surfaces with a fluid film"
+            ]
+          },
+          {
+            "name": "Necessary friction",
+            "points": [
+              "Walking, braking, belt drives and nails all depend on friction",
+              "Friction is not simply a nuisance to be eliminated",
+              "Anti-lock brakes exploit static friction by preventing skidding"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -1,0 +1,1438 @@
+{
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/valence-shell-valence-electron-and-octet-theory": {
+    "centralConcept": "Octet theory — why atoms bond at all",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the vocabulary",
+        "subtopics": [
+          {
+            "name": "Shells and valence electrons",
+            "points": [
+              "Electrons occupy shells K, L, M, N at increasing distance and energy",
+              "Valence electrons are those in the outermost shell — they decide chemical behaviour",
+              "Valency is the combining capacity, equal to electrons gained, lost or shared to reach an octet"
+            ]
+          },
+          {
+            "name": "The octet rule",
+            "points": [
+              "Atoms tend to attain eight electrons in the outermost shell, matching the noble gas configuration",
+              "Kossel and Lewis proposed it independently in 1916",
+              "Noble gases are already stable, which is why they rarely bond"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: how the octet is achieved",
+        "subtopics": [
+          {
+            "name": "Three routes to an octet",
+            "points": [
+              "Transfer of electrons — ionic bonding (metal loses, non-metal gains)",
+              "Sharing of electrons — covalent bonding (both contribute)",
+              "Coordination — one atom donates a lone pair to another"
+            ]
+          },
+          {
+            "name": "Lewis structures",
+            "points": [
+              "Dots represent valence electrons; a shared pair is a bond",
+              "Total valence electrons must be conserved when drawing",
+              "Formal charge helps decide between competing structures"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: where the octet rule fails",
+        "subtopics": [
+          {
+            "name": "Exceptions",
+            "points": [
+              "Incomplete octet: BeCl2 (4 electrons), BF3 (6 electrons), LiCl",
+              "Expanded octet: PCl5 (10), SF6 (12) — possible only for period 3 and below with accessible d orbitals",
+              "Odd-electron species: NO and NO2 have unpaired electrons and cannot satisfy an octet"
+            ]
+          },
+          {
+            "name": "Why it still matters",
+            "points": [
+              "The octet rule is a useful first approximation, not a law",
+              "Molecular orbital theory is needed for O2 paramagnetism, which the octet picture cannot explain",
+              "Hydrogen obeys a duet rule, not an octet"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/ionic-bond-and-its-properties": {
+    "centralConcept": "Ionic bonding — electrostatic attraction after electron transfer",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: formation",
+        "subtopics": [
+          {
+            "name": "Electron transfer",
+            "points": [
+              "A metal with low ionisation energy loses electrons to form a cation",
+              "A non-metal with high electron affinity gains them to form an anion",
+              "The ions are held by electrostatic attraction in a giant lattice"
+            ]
+          },
+          {
+            "name": "Energetics",
+            "points": [
+              "Lattice enthalpy is the energy released when gaseous ions form the solid",
+              "Born-Haber cycle accounts for the full energy balance",
+              "High lattice enthalpy means a high melting point"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: properties explained",
+        "subtopics": [
+          {
+            "name": "Physical properties",
+            "points": [
+              "High melting and boiling points — strong electrostatic forces must be broken",
+              "Hard and brittle — a shift brings like charges together and the crystal cleaves",
+              "Usually soluble in polar solvents such as water, insoluble in non-polar solvents"
+            ]
+          },
+          {
+            "name": "Electrical behaviour",
+            "points": [
+              "Solid does not conduct — ions are locked in the lattice",
+              "Molten or aqueous state conducts — ions become mobile",
+              "This is the classic test distinguishing ionic from covalent compounds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: polarisation and character",
+        "subtopics": [
+          {
+            "name": "Fajans' rules",
+            "points": [
+              "Small, highly charged cations polarise anions strongly, adding covalent character",
+              "LiCl and BeCl2 are more covalent than NaCl and MgCl2 for this reason",
+              "No bond is purely ionic — all have some covalent character"
+            ]
+          },
+          {
+            "name": "Real examples",
+            "points": [
+              "NaCl: melting point 801 degrees Celsius, conducts when molten",
+              "MgO: very high lattice enthalpy, melting point ~2852 degrees Celsius",
+              "Ionic liquids are salts molten near room temperature — a modern exception"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/covalent-bond-and-coordinate-covalent-bond-and-properties-of-covalent-compounds": {
+    "centralConcept": "Covalent bonding — sharing electrons to complete an octet",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the shared pair",
+        "subtopics": [
+          {
+            "name": "Formation",
+            "points": [
+              "Two atoms each contribute one electron to a shared pair",
+              "The shared pair is attracted to both nuclei, lowering the energy",
+              "Bond order one is a single bond; two and three are double and triple"
+            ]
+          },
+          {
+            "name": "Bond length and strength",
+            "points": [
+              "Shorter bond generally means stronger bond",
+              "Triple shorter and stronger than double, which is shorter and stronger than single",
+              "C-C 154 pm, C=C 134 pm, C triple bond C 120 pm"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: coordinate bonding and properties",
+        "subtopics": [
+          {
+            "name": "Coordinate (dative) covalent bond",
+            "points": [
+              "One atom donates both electrons of the shared pair; the other supplies none",
+              "The donor must have a lone pair; the acceptor an empty orbital",
+              "Examples: NH4+, H3O+, and the coordinate bonds in metal complexes"
+            ]
+          },
+          {
+            "name": "Properties of covalent compounds",
+            "points": [
+              "Low melting and boiling points for simple molecular substances — weak intermolecular forces",
+              "Generally poor conductors — no free ions or electrons",
+              "Usually soluble in non-polar solvents, insoluble in water unless they can hydrogen-bond"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: giant covalent structures",
+        "subtopics": [
+          {
+            "name": "Network solids are the exception",
+            "points": [
+              "Diamond, graphite, silicon dioxide and silicon carbide are giant covalent lattices",
+              "Very high melting points because covalent bonds must be broken, not just intermolecular forces",
+              "Graphite conducts because of delocalised electrons between layers; diamond does not"
+            ]
+          },
+          {
+            "name": "Bond polarity",
+            "points": [
+              "A bond between different elements is polar unless the electronegativity difference is zero",
+              "Electronegativity difference above roughly 1.7 gives predominantly ionic character",
+              "Polar bonds may or may not give a polar molecule — symmetry decides"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds": {
+    "centralConcept": "Covalent and coordinate bonds and the properties they produce",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Sharing versus donation",
+            "points": [
+              "Ordinary covalent: each atom contributes one electron",
+              "Coordinate covalent: one atom contributes both",
+              "Once formed, a coordinate bond is indistinguishable from an ordinary covalent bond"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Properties",
+            "points": [
+              "Simple molecular compounds: low melting point, soft, volatile",
+              "Non-conducting in all states unless they ionise in water",
+              "Intermolecular forces, not covalent bonds, are broken on melting"
+            ]
+          },
+          {
+            "name": "Coordinate bond examples",
+            "points": [
+              "NH3 + H+ gives NH4+ — nitrogen donates its lone pair",
+              "H2O + H+ gives H3O+",
+              "Carbon monoxide has a coordinate bond from oxygen to carbon"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Consequences",
+            "points": [
+              "Coordinate bonding explains why NH4+ salts behave like ionic compounds despite a covalent cation",
+              "Ligand bonding in complexes is coordinate bonding",
+              "Giant covalent solids break the low-melting-point generalisation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements": {
+    "centralConcept": "Lewis structures — drawing where the electrons are",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the method",
+        "subtopics": [
+          {
+            "name": "Step-by-step construction",
+            "points": [
+              "Count total valence electrons from all atoms, adjusting for charge",
+              "Connect atoms with single bonds, then place remaining electrons as lone pairs",
+              "Form multiple bonds if an octet is still incomplete"
+            ]
+          },
+          {
+            "name": "Formal charge",
+            "points": [
+              "Formal charge = valence electrons - (lone pair electrons/2) - bonds",
+              "The structure with formal charges closest to zero is preferred",
+              "Negative formal charge belongs on the more electronegative atom"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: s and p block examples",
+        "subtopics": [
+          {
+            "name": "Common structures",
+            "points": [
+              "H2O: two O-H bonds plus two lone pairs on oxygen, bent",
+              "NH3: three N-H bonds plus one lone pair, pyramidal",
+              "CO2: two double bonds, linear, no lone pairs on carbon"
+            ]
+          },
+          {
+            "name": "Expanded octet cases",
+            "points": [
+              "PCl5 has five bonding pairs on phosphorus — 10 electrons",
+              "SF6 has six bonding pairs on sulfur — 12 electrons",
+              "Only period 3 elements and below can expand their octet"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: resonance and limits",
+        "subtopics": [
+          {
+            "name": "Resonance structures",
+            "points": [
+              "When more than one valid Lewis structure exists, the real molecule is a hybrid",
+              "Ozone and carbonate ion are standard examples",
+              "Resonance stabilises the molecule by delocalising electrons"
+            ]
+          },
+          {
+            "name": "Limits of the Lewis model",
+            "points": [
+              "Cannot explain O2 paramagnetism",
+              "Gives no information about bond angles or three-dimensional shape",
+              "Molecular orbital theory is required for these"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/02-vsepr-theory": {
+    "centralConcept": "VSEPR — electron pairs repel and set the shape",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the core idea",
+        "subtopics": [
+          {
+            "name": "The principle",
+            "points": [
+              "Valence Shell Electron Pair Repulsion theory: electron pairs around a central atom arrange to minimise repulsion",
+              "Lone pairs repel more strongly than bond pairs",
+              "Multiple bonds repel more strongly than single bonds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: geometries by electron-pair number",
+        "subtopics": [
+          {
+            "name": "Two to four pairs",
+            "points": [
+              "2 pairs: linear, 180 degrees (BeCl2, CO2)",
+              "3 pairs: trigonal planar, 120 degrees (BF3); one lone pair gives bent ~119 degrees (SO2)",
+              "4 pairs: tetrahedral, 109.5 degrees (CH4); one lone pair gives pyramidal ~107 degrees (NH3); two lone pairs give bent ~104.5 degrees (H2O)"
+            ]
+          },
+          {
+            "name": "Five and six pairs",
+            "points": [
+              "5 pairs: trigonal bipyramidal (PCl5); lone pairs occupy equatorial positions (SF4 seesaw, ClF3 T-shaped)",
+              "6 pairs: octahedral (SF6); lone pairs give square pyramidal (BrF5) or square planar (XeF4)",
+              "Lone pairs always take the position that minimises repulsion"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: the repulsion order",
+        "subtopics": [
+          {
+            "name": "Why angles shrink",
+            "points": [
+              "Repulsion order: lone pair-lone pair > lone pair-bond pair > bond pair-bond pair",
+              "Each lone pair compresses the bond angle by roughly 2 to 3 degrees",
+              "CH4 109.5 > NH3 107 > H2O 104.5 is the standard demonstration"
+            ]
+          },
+          {
+            "name": "Limitations",
+            "points": [
+              "VSEPR predicts shape, not bond energy or magnetic behaviour",
+              "Fails for some transition metal compounds where d electrons matter",
+              "Does not explain why a shape is stable, only that it is least repulsive"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/vsepr-theory-and-shapes-of-simple-molecules-bef2-bf3-ch4-ch3cl-pcl5-sf6-h2o-nh3-co2-h2s-ph3": {
+    "centralConcept": "Predicting molecular shape from electron-pair repulsion",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: counting pairs",
+        "subtopics": [
+          {
+            "name": "Steric number",
+            "points": [
+              "Steric number = bonding pairs + lone pairs on the central atom",
+              "The steric number sets the electron geometry; lone pairs then modify the molecular shape",
+              "Always draw the Lewis structure first"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the named molecules",
+        "subtopics": [
+          {
+            "name": "No lone pairs",
+            "points": [
+              "BeF2: 2 pairs, linear, 180 degrees",
+              "BF3: 3 pairs, trigonal planar, 120 degrees",
+              "CH4: 4 pairs, tetrahedral, 109.5 degrees",
+              "PCl5: 5 pairs, trigonal bipyramidal; SF6: 6 pairs, octahedral"
+            ]
+          },
+          {
+            "name": "With lone pairs",
+            "points": [
+              "H2O: 4 pairs, 2 lone, bent, 104.5 degrees",
+              "NH3: 4 pairs, 1 lone, pyramidal, 107 degrees",
+              "H2S: bent, ~92 degrees — smaller than water because sulfur is less electronegative",
+              "PH3: pyramidal, ~93.5 degrees"
+            ]
+          },
+          {
+            "name": "Special cases",
+            "points": [
+              "CO2: two double bonds, linear, 180 degrees",
+              "CH3Cl: tetrahedral geometry, but the molecule is polar because of the C-Cl bond",
+              "Multiple bonds count as one electron domain for geometry"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: polarity follows shape",
+        "subtopics": [
+          {
+            "name": "Symmetry decides polarity",
+            "points": [
+              "CO2 has polar bonds but is non-polar — the two dipoles cancel",
+              "H2O has polar bonds and is polar — the bent shape leaves a net dipole",
+              "CCl4 is non-polar while CHCl3 is polar, purely because of symmetry"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/03-hybridization": {
+    "centralConcept": "Hybridization — mixing orbitals to explain real geometry",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: why hybridize",
+        "subtopics": [
+          {
+            "name": "The problem",
+            "points": [
+              "Carbon's ground state has two unpaired electrons, predicting only two bonds, yet it forms four",
+              "Pure s and p orbitals would give unequal bond angles, which is not observed",
+              "Hybridization mixes orbitals of similar energy to give equivalent new orbitals"
+            ]
+          },
+          {
+            "name": "Definition",
+            "points": [
+              "Hybrid orbitals have identical shape and energy, directed to minimise repulsion",
+              "Number of hybrid orbitals equals the number of atomic orbitals mixed",
+              "Hybridization is a model, not a physical process that can be observed"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the standard types",
+        "subtopics": [
+          {
+            "name": "sp3, sp2, sp",
+            "points": [
+              "sp3: one s + three p, four orbitals, tetrahedral, 109.5 degrees (CH4, NH3, H2O)",
+              "sp2: one s + two p, three orbitals, trigonal planar, 120 degrees, leaves one p for a pi bond (C2H4)",
+              "sp: one s + one p, two orbitals, linear, 180 degrees, leaves two p for two pi bonds (C2H2)"
+            ]
+          },
+          {
+            "name": "Steric number link",
+            "points": [
+              "Steric number 4 gives sp3; 3 gives sp2; 2 gives sp",
+              "Lone pairs occupy hybrid orbitals and affect shape but not the hybridization label",
+              "Water is sp3 hybridized although its molecular shape is bent"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: consequences",
+        "subtopics": [
+          {
+            "name": "Bond length and strength",
+            "points": [
+              "More s character means a shorter, stronger bond",
+              "sp has 50% s character, sp2 33%, sp3 25%",
+              "C-H bond length: sp 106 pm < sp2 108 pm < sp3 109 pm"
+            ]
+          },
+          {
+            "name": "Pi bonding and rotation",
+            "points": [
+              "Unhybridized p orbitals form pi bonds by sideways overlap",
+              "Pi bonds prevent free rotation, which is why alkenes show cis-trans isomerism",
+              "A double bond is one sigma plus one pi; a triple bond is one sigma plus two pi"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/hybridization-involving-s-and-p-orbitals-only": {
+    "centralConcept": "sp, sp2 and sp3 hybridization in organic molecules",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Sigma and pi frames",
+            "points": [
+              "Sigma bonds form by head-on overlap and lie along the internuclear axis",
+              "Pi bonds form by sideways overlap and lie above and below the axis",
+              "Only unhybridized p orbitals can form pi bonds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: assignment in molecules",
+        "subtopics": [
+          {
+            "name": "Worked assignments",
+            "points": [
+              "Ethane C2H6: both carbons sp3, all single bonds, free rotation",
+              "Ethene C2H4: both carbons sp2, one pi bond, planar, no rotation",
+              "Ethyne C2H2: both carbons sp, two pi bonds, linear"
+            ]
+          },
+          {
+            "name": "Mixed examples",
+            "points": [
+              "Benzene: every carbon sp2, giving a planar ring with delocalised pi electrons",
+              "Acetaldehyde CH3CHO: CH3 carbon sp3, carbonyl carbon sp2",
+              "Carbon dioxide: carbon sp hybridized, two pi bonds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Reading hybridization from structure",
+            "points": [
+              "Count sigma bonds plus lone pairs on the atom — that is the steric number",
+              "An atom with one double bond and two single bonds is sp2",
+              "Hybridization explains geometry; geometry does not explain hybridization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/elementary-idea-of-valence-bond-theory": {
+    "centralConcept": "Valence bond theory — bonds as overlapping orbitals",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The central claim",
+            "points": [
+              "A covalent bond forms when two half-filled orbitals overlap",
+              "Greater overlap means a stronger bond",
+              "The two electrons must have opposite spins to pair"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Types of overlap",
+            "points": [
+              "s-s overlap: H2",
+              "s-p overlap: HCl",
+              "p-p head-on overlap gives sigma; p-p sideways overlap gives pi"
+            ]
+          },
+          {
+            "name": "Strengths and limits",
+            "points": [
+              "Sigma overlap is more effective than pi, so sigma bonds are stronger",
+              "VBT explains geometry through hybridization",
+              "VBT cannot explain the paramagnetism of oxygen"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Where VBT falls short",
+            "points": [
+              "O2 is predicted diamagnetic by VBT but is actually paramagnetic",
+              "Cannot explain the detailed electronic spectra of complexes",
+              "Molecular orbital theory was developed to fix exactly these failures"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/molecular-orbital-theory": {
+    "centralConcept": "Molecular orbital theory — electrons belong to the whole molecule",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Atomic to molecular orbitals",
+            "points": [
+              "Atomic orbitals combine to give molecular orbitals spanning the whole molecule",
+              "Combining n atomic orbitals gives n molecular orbitals",
+              "Bonding MOs are lower in energy; antibonding MOs are higher and marked with a star"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the key quantities",
+        "subtopics": [
+          {
+            "name": "Bond order",
+            "points": [
+              "Bond order = (bonding electrons - antibonding electrons) / 2",
+              "Bond order zero means the molecule does not exist (He2)",
+              "Higher bond order means shorter, stronger bond"
+            ]
+          },
+          {
+            "name": "Magnetic behaviour",
+            "points": [
+              "Unpaired electrons in an MO make the species paramagnetic",
+              "O2 has two unpaired electrons in pi-star orbitals, so it is paramagnetic — VBT fails here",
+              "N2 has bond order 3 and is diamagnetic"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: applications",
+        "subtopics": [
+          {
+            "name": "Explaining the unexplainable",
+            "points": [
+              "O2 paramagnetism, and why O2+ has a higher bond order than O2",
+              "Why NO is paramagnetic while NO+ is not",
+              "H2+ exists with bond order 0.5, which no Lewis structure can describe"
+            ]
+          },
+          {
+            "name": "Limits",
+            "points": [
+              "MO theory is mathematically heavier than VBT",
+              "For most organic molecules VBT plus hybridization is sufficient and simpler",
+              "Both models are approximations of the same quantum reality"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/resonance": {
+    "centralConcept": "Resonance — one real structure, several drawings",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "Resonance describes a molecule for which more than one valid Lewis structure can be drawn",
+              "The real molecule is a hybrid of all contributing structures, not any one of them",
+              "Double-headed arrow links the contributing structures"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: rules and examples",
+        "subtopics": [
+          {
+            "name": "Rules for valid contributors",
+            "points": [
+              "Only electrons move — atomic positions stay fixed",
+              "Contributors must have the same number of paired electrons",
+              "The more covalent bonds and the fewer formal charges, the more stable the contributor"
+            ]
+          },
+          {
+            "name": "Standard examples",
+            "points": [
+              "Ozone O3: two equivalent contributors, bond order 1.5",
+              "Carbonate CO3 2-: three equivalent contributors, all C-O bonds equal",
+              "Benzene: two Kekule structures, all six C-C bonds identical at 139 pm"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: consequences",
+        "subtopics": [
+          {
+            "name": "Stabilisation",
+            "points": [
+              "Resonance delocalises electrons and lowers the energy — this is resonance stabilisation",
+              "Explains why benzene does not behave like an alkene",
+              "Explains the acidity of carboxylic acids: the conjugate base is resonance stabilised"
+            ]
+          },
+          {
+            "name": "Bond order",
+            "points": [
+              "Resonance bond order = total bonds / number of resonance positions",
+              "Benzene C-C bond order is 1.5, between single and double",
+              "Explains intermediate bond lengths that match neither single nor double"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/bond-characteristics-bond-length-ionic-character-dipole-moment": {
+    "centralConcept": "Bond characteristics — measuring what a bond is like",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: bond length and order",
+        "subtopics": [
+          {
+            "name": "Bond length",
+            "points": [
+              "The equilibrium distance between two bonded nuclei",
+              "Increases with atomic size, decreases with bond order",
+              "Measured in picometres (pm) or angstroms"
+            ]
+          },
+          {
+            "name": "Bond order and energy",
+            "points": [
+              "Bond order is the number of electron pairs shared",
+              "Higher bond order gives shorter, stronger bonds",
+              "Bond dissociation energy is the energy needed to break one mole of bonds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: polarity measures",
+        "subtopics": [
+          {
+            "name": "Dipole moment",
+            "points": [
+              "Dipole moment mu = charge x distance, measured in debye (D)",
+              "A polar bond has a non-zero dipole moment",
+              "A symmetric molecule can have polar bonds but zero net dipole moment"
+            ]
+          },
+          {
+            "name": "Ionic character",
+            "points": [
+              "Percentage ionic character = (observed dipole / calculated for full charge) x 100",
+              "HF is about 43% ionic character despite being called a covalent molecule",
+              "Electronegativity difference drives ionic character"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: bond angle and comparisons",
+        "subtopics": [
+          {
+            "name": "Bond angle",
+            "points": [
+              "The angle between two bonds at the central atom",
+              "Lone pair repulsion compresses bond angles",
+              "Hybridization sets the base angle: sp 180, sp2 120, sp3 109.5"
+            ]
+          },
+          {
+            "name": "Ordering questions",
+            "points": [
+              "Bond length order: single > double > triple",
+              "Bond strength order: triple > double > single",
+              "Dipole moment: NH3 > NF3 because the lone pair and bond dipoles reinforce in NH3"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/metallic-bonding-and-properties-of-metallic-solids": {
+    "centralConcept": "Metallic bonding — a sea of delocalised electrons",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The electron sea model",
+            "points": [
+              "Metal atoms release their valence electrons into a common pool",
+              "Positive metal ions sit in a lattice surrounded by mobile electrons",
+              "Attraction between ions and the electron sea holds the solid together"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: properties explained",
+        "subtopics": [
+          {
+            "name": "Physical properties",
+            "points": [
+              "Good conductors of heat and electricity — free electrons carry charge and energy",
+              "Malleable and ductile — layers can slide without breaking the bonding",
+              "Lustrous because free electrons absorb and re-emit light"
+            ]
+          },
+          {
+            "name": "Melting points",
+            "points": [
+              "Vary widely: mercury is liquid at room temperature, tungsten melts at 3422 degrees Celsius",
+              "Strength depends on the number of delocalised electrons and nuclear charge",
+              "Group 1 metals are soft and low-melting; transition metals are hard and high-melting"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: band theory",
+        "subtopics": [
+          {
+            "name": "From sea to bands",
+            "points": [
+              "Band theory: overlapping atomic orbitals form continuous energy bands",
+              "Conductors have a partly filled band; insulators have a large band gap",
+              "Semiconductors have a small gap and conduct when thermally excited"
+            ]
+          },
+          {
+            "name": "Alloys",
+            "points": [
+              "Adding a different-sized atom distorts layers and increases hardness",
+              "Steel, brass and bronze are substitutional or interstitial alloys",
+              "Explains why alloys are harder than pure metals"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application": {
+    "centralConcept": "Intermolecular forces — the weak forces that decide physical state",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the hierarchy",
+        "subtopics": [
+          {
+            "name": "Strength order",
+            "points": [
+              "Hydrogen bond > dipole-dipole > London dispersion forces",
+              "All are far weaker than covalent bonds, typically under 40 kJ/mol",
+              "They determine melting point, boiling point and solubility, not molecular identity"
+            ]
+          },
+          {
+            "name": "London dispersion forces",
+            "points": [
+              "Instantaneous dipole-induced dipole attraction present in all molecules",
+              "Strength increases with the number of electrons and surface area",
+              "Explains why boiling point rises down a noble gas group"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: hydrogen bonding",
+        "subtopics": [
+          {
+            "name": "Conditions",
+            "points": [
+              "Hydrogen must be covalently bonded to a highly electronegative N, O or F",
+              "The H becomes strongly positive and attracts a lone pair on a neighbouring atom",
+              "Typical energy 10-40 kJ/mol, much stronger than other intermolecular forces"
+            ]
+          },
+          {
+            "name": "Consequences",
+            "points": [
+              "Water boils at 100 degrees Celsius, far above H2S at -60 degrees Celsius",
+              "Ice is less dense than water because the hydrogen-bonded lattice is open",
+              "Ethanol is miscible with water while ethane is not"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: applications",
+        "subtopics": [
+          {
+            "name": "Biological and material roles",
+            "points": [
+              "DNA base pairing (A-T two bonds, G-C three bonds) and protein secondary structure",
+              "Hydrogen bonding in nylon and in cellulose gives strength and water absorption",
+              "Anomalous properties of water: high specific heat, high surface tension, high latent heat"
+            ]
+          },
+          {
+            "name": "Intramolecular vs intermolecular",
+            "points": [
+              "Intramolecular hydrogen bonding (as in ortho-nitrophenol) lowers boiling point",
+              "Intermolecular hydrogen bonding (as in para-nitrophenol) raises it",
+              "This is a classic exam distinction"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/chemical-bonding-and-shapes-of-molecules/ionic-covalent-bond": {
+    "centralConcept": "Ionic versus covalent bonding",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Two mechanisms",
+            "points": [
+              "Ionic: complete transfer of electrons, giving discrete ions",
+              "Covalent: sharing of electron pairs between atoms",
+              "The choice depends on ionisation energy and electron affinity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: comparison",
+        "subtopics": [
+          {
+            "name": "Contrasting properties",
+            "points": [
+              "Ionic compounds: high melting point, conduct when molten, usually water-soluble",
+              "Covalent compounds: low melting point, non-conducting, usually non-polar solvents",
+              "Ionic bonds form between metal and non-metal; covalent between non-metals"
+            ]
+          },
+          {
+            "name": "The continuum",
+            "points": [
+              "Bonding is a continuum, not a binary",
+              "Electronegativity difference above ~1.7 gives predominantly ionic character",
+              "Below that, the bond is polar covalent"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Intermediate cases",
+            "points": [
+              "HF has significant ionic character yet is a covalent molecule",
+              "BeCl2 is covalent despite being metal plus non-metal, because of high polarising power",
+              "Fajans' rules predict the drift toward covalency"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/classification-of-elements/modern-periodic-law": {
+    "centralConcept": "Modern periodic law — properties are periodic functions of atomic number",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: from Mendeleev to Moseley",
+        "subtopics": [
+          {
+            "name": "Mendeleev's law and its problem",
+            "points": [
+              "Mendeleev arranged elements by atomic mass and left gaps for undiscovered elements",
+              "Some pairs were out of order — tellurium and iodine — because mass order conflicts with chemical behaviour",
+              "The anomaly was resolved by atomic number"
+            ]
+          },
+          {
+            "name": "Moseley's contribution",
+            "points": [
+              "Moseley (1913) showed that the frequency of X-rays emitted depends on nuclear charge",
+              "This established atomic number as the fundamental ordering principle",
+              "Modern periodic law: properties are periodic functions of atomic number"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: structure of the table",
+        "subtopics": [
+          {
+            "name": "Periods and groups",
+            "points": [
+              "Seven periods; period number equals the outermost principal quantum number",
+              "Eighteen groups in the long form; group number relates to valence electrons",
+              "Elements in a group share valence configuration and therefore similar chemistry"
+            ]
+          },
+          {
+            "name": "Blocks",
+            "points": [
+              "s-block: groups 1 and 2, filling s orbitals",
+              "p-block: groups 13 to 18, filling p orbitals",
+              "d-block: transition metals; f-block: lanthanides and actinides"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: why the table works",
+        "subtopics": [
+          {
+            "name": "Electronic basis",
+            "points": [
+              "Periodicity arises because valence configuration repeats after each noble gas",
+              "Chemical properties are determined almost entirely by valence electrons",
+              "The table is a map of electron configurations, not just a list"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/classification-of-elements/periodic-trends": {
+    "centralConcept": "Periodic trends — how size, energy and character change",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the two directions",
+        "subtopics": [
+          {
+            "name": "Across a period",
+            "points": [
+              "Nuclear charge increases while electrons enter the same shell",
+              "Effective nuclear charge rises, so the atom contracts",
+              "Atomic radius decreases left to right"
+            ]
+          },
+          {
+            "name": "Down a group",
+            "points": [
+              "A new shell is added each period",
+              "Shielding increases faster than nuclear charge",
+              "Atomic radius increases down the group"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the trends",
+        "subtopics": [
+          {
+            "name": "Ionisation energy and electron affinity",
+            "points": [
+              "Ionisation energy increases across a period, decreases down a group",
+              "Electron affinity becomes more negative across a period",
+              "Exceptions: Be > B and N > O in ionisation energy, due to filled or half-filled subshells"
+            ]
+          },
+          {
+            "name": "Electronegativity and metallic character",
+            "points": [
+              "Electronegativity increases across a period, decreases down a group",
+              "Fluorine is the most electronegative element at 3.98",
+              "Metallic character decreases across a period, increases down a group"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: explaining the exceptions",
+        "subtopics": [
+          {
+            "name": "Why anomalies occur",
+            "points": [
+              "Half-filled and fully-filled subshells are extra stable, raising ionisation energy",
+              "N has 2p3 half-filled, so its ionisation energy exceeds O's",
+              "Be has 2s2 filled, so it exceeds B's"
+            ]
+          },
+          {
+            "name": "Ionic versus atomic radius",
+            "points": [
+              "Cations are smaller than their parent atoms; anions are larger",
+              "Isoelectronic species: more protons means smaller radius (Na+ < F- < O2-)",
+              "Across an isoelectronic series, radius falls as nuclear charge rises"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/classification-of-elements-and-periodic-table/modern-periodic-law-and-modern-periodic-table": {
+    "centralConcept": "Modern periodic law and the long-form table",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Law and basis",
+            "points": [
+              "Properties are periodic functions of atomic number (Moseley, 1913)",
+              "Atomic number is the number of protons, which fixes the electron configuration",
+              "The arrangement is therefore electronic, not mass-based"
+            ]
+          },
+          {
+            "name": "Table structure",
+            "points": [
+              "Seven periods and eighteen groups in the long form",
+              "Period number equals the highest principal quantum number occupied",
+              "Groups are numbered 1 to 18 under IUPAC convention"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: blocks and families",
+        "subtopics": [
+          {
+            "name": "Four blocks",
+            "points": [
+              "s-block: groups 1-2 plus helium, filling ns",
+              "p-block: groups 13-18, filling np",
+              "d-block: groups 3-12, filling (n-1)d; f-block: filling (n-2)f"
+            ]
+          },
+          {
+            "name": "Named families",
+            "points": [
+              "Alkali metals (group 1), alkaline earth metals (group 2)",
+              "Halogens (group 17), noble gases (group 18)",
+              "Coinage metals (Cu, Ag, Au), volatile metals, metalloids along the B-Si-Ge-As-Sb-Te diagonal"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Reading the table as configurations",
+            "points": [
+              "Group number for main-group elements relates to valence electron count",
+              "Anomalous configurations (Cr 3d5 4s1, Cu 3d10 4s1) arise from extra stability of half-filled and filled subshells",
+              "The table predicts chemistry before any experiment is done"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/classification-of-elements-and-periodic-table/classification-of-elements-into-different-groups-periods-and-blocks": {
+    "centralConcept": "Classifying elements by group, period and block",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Three axes of classification",
+            "points": [
+              "Group: vertical column, shared valence configuration",
+              "Period: horizontal row, shared outermost shell",
+              "Block: the subshell being filled"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the blocks in detail",
+        "subtopics": [
+          {
+            "name": "s and p blocks",
+            "points": [
+              "s-block: highly reactive metals, low ionisation energy, form basic oxides",
+              "p-block: metals, metalloids and non-metals together, most varied chemistry",
+              "Metalloids sit on the diagonal and show both metallic and non-metallic behaviour"
+            ]
+          },
+          {
+            "name": "d and f blocks",
+            "points": [
+              "d-block: transition metals with variable oxidation states and coloured ions",
+              "f-block: lanthanides and actinides, filling inner f orbitals",
+              "Inner transition elements are chemically similar because f orbitals are shielded"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why blocks matter",
+            "points": [
+              "Block position predicts which subshell is chemically active",
+              "Explains why d-block elements show variable valency — s and d electrons are close in energy",
+              "Explains the lanthanide contraction and its effect on later transition metal radii"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/classification-of-elements-and-periodic-table/iupac-classification-of-elements": {
+    "centralConcept": "IUPAC naming and numbering of the periodic table",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The 1-18 convention",
+            "points": [
+              "IUPAC replaced the old IA-VIIIA and IB-VIIB labels with groups 1 to 18",
+              "Removes ambiguity between American and European conventions",
+              "Groups 1-2 and 13-18 are main group; 3-12 are transition"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Naming rules",
+            "points": [
+              "New elements get a systematic name from their atomic number until confirmed",
+              "Roots: nil, un, bi, tri, quad, pent, hex, sept, oct, enn, plus the ending -ium",
+              "Example: element 118 was ununoctium before being named oganesson"
+            ]
+          },
+          {
+            "name": "Group naming",
+            "points": [
+              "Trivial names persist: alkali metals, halogens, noble gases, chalcogens",
+              "IUPAC accepts both numeric and trivial names",
+              "Group 3 membership (Sc, Y, La/Ac versus Lu/Lr) remains debated"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why standardisation matters",
+            "points": [
+              "A single numbering allows unambiguous cross-referencing in literature",
+              "Systematic naming prevents priority disputes over new elements",
+              "IUPAC also sets atomic weight and isotope conventions"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/classification-of-elements-and-periodic-table/nuclear-charge-and-effective-nuclear-charge": {
+    "centralConcept": "Effective nuclear charge — the pull an electron actually feels",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Two charges",
+            "points": [
+              "Nuclear charge Z is the actual number of protons",
+              "Effective nuclear charge Zeff is the net positive charge experienced by an electron after shielding",
+              "Zeff = Z - sigma, where sigma is the shielding constant"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: shielding and penetration",
+        "subtopics": [
+          {
+            "name": "Shielding",
+            "points": [
+              "Inner electrons repel outer electrons and reduce the nuclear pull they feel",
+              "Core electrons shield almost completely; same-shell electrons shield poorly",
+              "Slater's rules give a practical way to estimate sigma"
+            ]
+          },
+          {
+            "name": "Penetration",
+            "points": [
+              "s electrons penetrate closer to the nucleus than p, which penetrates more than d",
+              "Greater penetration means less shielding and a lower energy for that orbital",
+              "Explains the order of orbital filling: 4s fills before 3d"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: consequences",
+        "subtopics": [
+          {
+            "name": "Explaining trends",
+            "points": [
+              "Zeff increases across a period because Z rises while shielding stays roughly constant",
+              "Zeff increases only slightly down a group because shielding rises with Z",
+              "Atomic radius, ionisation energy and electronegativity all follow from Zeff"
+            ]
+          },
+          {
+            "name": "Quantitative anchors",
+            "points": [
+              "For hydrogen Zeff = Z = 1, with no shielding",
+              "For a 2s electron in lithium, Zeff is about 1.3 rather than 3",
+              "Sodium's 3s electron feels Zeff of roughly 2.2, not 11"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/chemistry/classification-of-elements-and-periodic-table/periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec": {
+    "centralConcept": "Periodic trends across the table",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: radii",
+        "subtopics": [
+          {
+            "name": "Atomic radius",
+            "points": [
+              "Decreases across a period as Zeff rises",
+              "Increases down a group as new shells are added",
+              "Measured as covalent, metallic or van der Waals radius depending on the element"
+            ]
+          },
+          {
+            "name": "Ionic radius",
+            "points": [
+              "Cations are smaller than the parent atom; anions are larger",
+              "Isoelectronic series: radius falls as nuclear charge rises (Na+ < F- < O2-)",
+              "Higher charge on the same ion means smaller radius (Fe3+ < Fe2+)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: energies and character",
+        "subtopics": [
+          {
+            "name": "Ionisation energy",
+            "points": [
+              "Energy to remove the most loosely bound electron from a gaseous atom",
+              "Increases across a period, decreases down a group",
+              "Successive ionisation energies always increase; large jumps reveal shell structure"
+            ]
+          },
+          {
+            "name": "Electron affinity and electronegativity",
+            "points": [
+              "Electron affinity is the energy change on adding an electron; more negative across a period",
+              "Electronegativity is the tendency to attract a shared pair; Pauling scale",
+              "Both increase across a period and decrease down a group"
+            ]
+          },
+          {
+            "name": "Metallic character",
+            "points": [
+              "Decreases across a period, increases down a group",
+              "Metals lose electrons readily; non-metals gain them",
+              "Metalloids show intermediate behaviour"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: the exceptions",
+        "subtopics": [
+          {
+            "name": "Anomalies to memorise",
+            "points": [
+              "IE of Be > B and N > O because of filled and half-filled subshell stability",
+              "IE of Mg > Al and P > S for the same reason",
+              "Electron affinity of F is less negative than Cl because of small size and electron repulsion"
+            ]
+          },
+          {
+            "name": "Unifying explanation",
+            "points": [
+              "Every trend traces back to Zeff and to the distance of the valence electron from the nucleus",
+              "Subshell stability explains the exceptions",
+              "Learn the cause, not the list — the exceptions follow from it"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

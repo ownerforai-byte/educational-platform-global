@@ -161,5 +161,65 @@
       "answer": "C"
     }
   ],
-  "summary": "EMF and Internal Resistance is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics."
+  "summary": "EMF and Internal Resistance is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "mindmap": {
+    "centralConcept": "EMF and internal resistance",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definitions",
+            "points": [
+              "EMF is the total energy per unit charge supplied by the source",
+              "Terminal potential difference is the voltage actually available to the external circuit",
+              "Internal resistance r is the resistance within the source itself"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the circuit equation",
+        "subtopics": [
+          {
+            "name": "The key relation",
+            "points": [
+              "V = E - Ir, where E is EMF and r internal resistance",
+              "Terminal voltage falls as current rises",
+              "When no current flows, terminal voltage equals EMF"
+            ]
+          },
+          {
+            "name": "Power",
+            "points": [
+              "Total power E I splits into I^2 R (external) and I^2 r (internal loss)",
+              "Maximum power transfer to the load occurs when R = r",
+              "At maximum power transfer the efficiency is only 50%"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: combinations",
+        "subtopics": [
+          {
+            "name": "Cells in series",
+            "points": [
+              "EMFs add; internal resistances add",
+              "Useful when a higher voltage is needed",
+              "One reversed cell subtracts its EMF"
+            ]
+          },
+          {
+            "name": "Cells in parallel",
+            "points": [
+              "EMF stays the same; internal resistance falls",
+              "Useful when a higher current is needed",
+              "Only identical cells should be paralleled, or circulating currents arise"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -234,5 +234,73 @@
       "**NEB 2024 (3m): State Fajan's rules and use them to compare the covalent character of LiCl and NaCl.** — **Rules:** (i) smaller cation → more polarising; (ii) larger anion → more easily polarised; (iii) higher charges on either ion → more polarisation; (iv) cations with 18-electron (pseudo-noble-gas) configurations polarise more than 8-electron ones of equal size. **Application:** Li⁺ (76 pm) vs Na⁺ (102 pm) — the smaller Li⁺ has higher charge density and distorts the Cl⁻ electron cloud more strongly, so **LiCl has greater covalent character** than NaCl. Evidence: LiCl dissolves in organic solvents (ethanol, acetone) and melts about 200 °C below NaCl.",
       "**NEB-style (3m): Explain the following properties of NaCl on the basis of its bonding: (a) high melting point, (b) conduction in molten state only, (c) brittleness.** — **(a)** Strong, non-directional electrostatic attraction runs throughout the 3D lattice; melting requires disrupting the entire array (801 °C). **(b)** In the solid, ions are fixed at lattice points — no mobile carriers. Molten NaCl has free Na⁺ and Cl⁻ that migrate under a field, carrying current. **(c)** Sliding one lattice layer displaces like charges into contact; the sudden repulsion cleaves the crystal along a plane."
     ]
+  },
+  "mindmap": {
+    "centralConcept": "Ionic bonding — electrostatic attraction after electron transfer",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: formation",
+        "subtopics": [
+          {
+            "name": "Electron transfer",
+            "points": [
+              "A metal with low ionisation energy loses electrons to form a cation",
+              "A non-metal with high electron affinity gains them to form an anion",
+              "The ions are held by electrostatic attraction in a giant lattice"
+            ]
+          },
+          {
+            "name": "Energetics",
+            "points": [
+              "Lattice enthalpy is the energy released when gaseous ions form the solid",
+              "Born-Haber cycle accounts for the full energy balance",
+              "High lattice enthalpy means a high melting point"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: properties explained",
+        "subtopics": [
+          {
+            "name": "Physical properties",
+            "points": [
+              "High melting and boiling points — strong electrostatic forces must be broken",
+              "Hard and brittle — a shift brings like charges together and the crystal cleaves",
+              "Usually soluble in polar solvents such as water, insoluble in non-polar solvents"
+            ]
+          },
+          {
+            "name": "Electrical behaviour",
+            "points": [
+              "Solid does not conduct — ions are locked in the lattice",
+              "Molten or aqueous state conducts — ions become mobile",
+              "This is the classic test distinguishing ionic from covalent compounds"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: polarisation and character",
+        "subtopics": [
+          {
+            "name": "Fajans' rules",
+            "points": [
+              "Small, highly charged cations polarise anions strongly, adding covalent character",
+              "LiCl and BeCl2 are more covalent than NaCl and MgCl2 for this reason",
+              "No bond is purely ionic — all have some covalent character"
+            ]
+          },
+          {
+            "name": "Real examples",
+            "points": [
+              "NaCl: melting point 801 degrees Celsius, conducts when molten",
+              "MgO: very high lattice enthalpy, melting point ~2852 degrees Celsius",
+              "Ionic liquids are salts molten near room temperature — a modern exception"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

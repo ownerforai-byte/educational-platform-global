@@ -513,5 +513,57 @@
       ],
       "answer": "B"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Satellite motion and orbital mechanics",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The centripetal condition",
+            "points": [
+              "Gravitational force equals the required centripetal force",
+              "This single condition yields both orbital speed and period",
+              "Assumes a circular orbit; elliptical orbits need Kepler's laws"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Key results",
+            "points": [
+              "v = sqrt(GM/r), T = 2 pi sqrt(r^3/GM)",
+              "v_e = sqrt(2) v_o",
+              "Total energy = -GMm/2r"
+            ]
+          },
+          {
+            "name": "Weightlessness",
+            "points": [
+              "Astronauts in orbit are not free of gravity — they are in free fall",
+              "Apparent weightlessness arises because everything falls together",
+              "g at the ISS altitude is still about 8.7 m/s^2"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Orbit types",
+            "points": [
+              "Low Earth orbit (200-2000 km) for observation and the ISS",
+              "Geostationary (36,000 km) for communication",
+              "Polar and sun-synchronous orbits for imaging and remote sensing"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

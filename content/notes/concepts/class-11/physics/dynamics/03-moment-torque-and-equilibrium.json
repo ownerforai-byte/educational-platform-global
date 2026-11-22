@@ -256,5 +256,73 @@
     "practiceQuestions": [
       "**Numerical (3m): A uniform 200 N ladder of 5 m rests against a smooth wall at 60° to the ground. Find the wall's reaction.** — Taking moments about the foot: N_wall × 5 sin 60° = 200 × 2.5 cos 60° → N_wall = (500 × 0.5)/(5 × 0.866) = 57.7 N; the ground supplies the friction balancing it."
     ]
+  },
+  "mindmap": {
+    "centralConcept": "Moment, torque and rotational equilibrium",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Moment of a force",
+            "points": [
+              "Torque = force x perpendicular distance from the pivot",
+              "Unit newton metre",
+              "Torque is a vector, given by the cross product of r and F"
+            ]
+          },
+          {
+            "name": "Couple",
+            "points": [
+              "Two equal, opposite, parallel forces with different lines of action",
+              "Produces pure rotation with no net translational force",
+              "Torque of a couple = force x perpendicular separation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: equilibrium",
+        "subtopics": [
+          {
+            "name": "Conditions for equilibrium",
+            "points": [
+              "Net force must be zero (translational equilibrium)",
+              "Net torque about any point must be zero (rotational equilibrium)",
+              "Both conditions are required for complete equilibrium"
+            ]
+          },
+          {
+            "name": "Principle of moments",
+            "points": [
+              "Sum of clockwise moments equals sum of anticlockwise moments",
+              "Used to solve lever, beam and balance problems",
+              "Choose the pivot to eliminate an unknown force"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Types of equilibrium",
+            "points": [
+              "Stable: displaced slightly, returns — centre of gravity rises",
+              "Unstable: displaced slightly, moves further away — centre of gravity falls",
+              "Neutral: no tendency to return or move away"
+            ]
+          },
+          {
+            "name": "Applications",
+            "points": [
+              "Levers, seesaws and wheelbarrows are moment problems",
+              "Ladder problems combine moments with friction",
+              "Torque is the rotational analogue of force, with I as the analogue of mass"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -603,5 +603,49 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Variation of g with altitude and depth",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Base relation",
+            "points": [
+              "g = GM/R^2 at the surface",
+              "Any change in effective distance or enclosed mass changes g",
+              "Altitude changes distance; depth changes enclosed mass"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Formulas",
+            "points": [
+              "g_h = g(1 - 2h/R) for small h",
+              "g_d = g(1 - d/R)",
+              "Equating them gives the classic result that the decrease at depth d equals the decrease at altitude 2d"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Exam application",
+            "points": [
+              "A common question asks at what depth g falls to half its surface value — answer d = R/2",
+              "Another asks where g is the same at altitude and depth — answer h = d/2",
+              "Always state whether the Earth is assumed uniform"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

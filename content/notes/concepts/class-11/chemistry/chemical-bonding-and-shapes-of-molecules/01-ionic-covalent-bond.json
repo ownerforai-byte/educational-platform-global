@@ -201,5 +201,57 @@
     "component": "MoleculeViewer",
     "desc": "3D molecular structure viewer with VSEPR prediction"
   },
-  "visualType": "avogadros-law-deduction"
+  "visualType": "avogadros-law-deduction",
+  "mindmap": {
+    "centralConcept": "Ionic versus covalent bonding",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Two mechanisms",
+            "points": [
+              "Ionic: complete transfer of electrons, giving discrete ions",
+              "Covalent: sharing of electron pairs between atoms",
+              "The choice depends on ionisation energy and electron affinity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: comparison",
+        "subtopics": [
+          {
+            "name": "Contrasting properties",
+            "points": [
+              "Ionic compounds: high melting point, conduct when molten, usually water-soluble",
+              "Covalent compounds: low melting point, non-conducting, usually non-polar solvents",
+              "Ionic bonds form between metal and non-metal; covalent between non-metals"
+            ]
+          },
+          {
+            "name": "The continuum",
+            "points": [
+              "Bonding is a continuum, not a binary",
+              "Electronegativity difference above ~1.7 gives predominantly ionic character",
+              "Below that, the bond is polar covalent"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Intermediate cases",
+            "points": [
+              "HF has significant ionic character yet is a covalent molecule",
+              "BeCl2 is covalent despite being metal plus non-metal, because of high polarising power",
+              "Fajans' rules predict the drift toward covalency"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

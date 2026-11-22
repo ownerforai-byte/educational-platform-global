@@ -292,5 +292,65 @@
       "answer": "A",
       "explanation": "Per-nucleus rate."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Atomic mass, isotopes and nuclear notation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Atomic mass unit",
+            "points": [
+              "1 u is one twelfth the mass of a carbon-12 atom",
+              "1 u = 1.66 x 10^-27 kg = 931.5 MeV/c^2",
+              "Atomic masses are measured relative to carbon-12 by definition"
+            ]
+          },
+          {
+            "name": "Isotopes",
+            "points": [
+              "Same number of protons, different number of neutrons",
+              "Chemically almost identical, physically different in mass and stability",
+              "Example: U-235 and U-238"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Average atomic mass",
+            "points": [
+              "Weighted average over natural isotopic abundances",
+              "Chlorine's 35.5 arises from 75% Cl-35 and 25% Cl-37",
+              "Not an integer because it is an abundance-weighted mean"
+            ]
+          },
+          {
+            "name": "Isobars and isotones",
+            "points": [
+              "Isobars: same mass number A, different Z",
+              "Isotones: same number of neutrons N",
+              "Isomers: same nucleus in different energy states"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why isotopes matter",
+            "points": [
+              "U-235 is fissile while U-238 is not — enrichment separates them",
+              "Carbon-14 dating relies on the fixed ratio of C-14 to C-12 in living things",
+              "Medical isotopes such as Tc-99m are chosen for half-life and decay mode"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

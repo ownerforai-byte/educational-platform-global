@@ -241,5 +241,73 @@
       "answer": "C",
       "explanation": "2021 paper."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Series and parallel combinations of resistors",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Series",
+            "points": [
+              "Same current through every resistor",
+              "Total voltage divides among them",
+              "R_eq = R1 + R2 + R3"
+            ]
+          },
+          {
+            "name": "Parallel",
+            "points": [
+              "Same voltage across every resistor",
+              "Total current divides among them",
+              "1/R_eq = 1/R1 + 1/R2 + 1/R3"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: consequences",
+        "subtopics": [
+          {
+            "name": "Behaviour of the equivalent resistance",
+            "points": [
+              "Series equivalent is always larger than the largest individual resistance",
+              "Parallel equivalent is always smaller than the smallest individual resistance",
+              "Two equal resistors in parallel give half the value"
+            ]
+          },
+          {
+            "name": "Power and division",
+            "points": [
+              "Series: larger resistance dissipates more power (P = I^2 R)",
+              "Parallel: smaller resistance dissipates more power (P = V^2/R)",
+              "Potential divider: V1 = V x R1/(R1+R2)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why houses use parallel",
+            "points": [
+              "Parallel connection gives each appliance the full supply voltage",
+              "Each device can be switched independently",
+              "A failure in one branch does not break the others"
+            ]
+          },
+          {
+            "name": "Symmetry shortcuts",
+            "points": [
+              "A balanced Wheatstone bridge has no current through the galvanometer",
+              "Infinite resistor chains and cube networks reduce by symmetry",
+              "Always redraw before calculating — most errors are drawing errors"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -16,8 +16,10 @@ import { HIGH_YIELD_TOPIC_BANK_BIOLOGY } from "./high-yield-topic-facts-biology"
 import { HIGH_YIELD_TOPIC_BANK_BIOLOGY_CELL } from "./high-yield-topic-facts-biology-cell";
 import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY } from "./high-yield-topic-facts-chemistry";
 import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC } from "./high-yield-topic-facts-chemistry-organic";
+import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY_BONDING } from "./high-yield-topic-facts-chemistry-bonding";
 import { HIGH_YIELD_TOPIC_BANK_LANGUAGES } from "./high-yield-topic-facts-languages";
 import { HIGH_YIELD_TOPIC_BANK_MATHEMATICS } from "./high-yield-topic-facts-mathematics";
+import { HIGH_YIELD_TOPIC_BANK_MATHEMATICS_CALCULUS } from "./high-yield-topic-facts-mathematics-calculus";
 import { HIGH_YIELD_TOPIC_BANK_PHYSICS } from "./high-yield-topic-facts-physics";
 import { HIGH_YIELD_TOPIC_BANK_PHYSICS_2 } from "./high-yield-topic-facts-physics-2";
 import {
@@ -45,7 +47,9 @@ export const ALL_HIGH_YIELD_TOPICS: HighYieldTopicData[] = [
   ...HIGH_YIELD_TOPIC_BANK_PHYSICS_2,
   ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY,
   ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC,
+  ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY_BONDING,
   ...HIGH_YIELD_TOPIC_BANK_MATHEMATICS,
+  ...HIGH_YIELD_TOPIC_BANK_MATHEMATICS_CALCULUS,
   ...HIGH_YIELD_TOPIC_BANK_BIOLOGY,
   ...HIGH_YIELD_TOPIC_BANK_BIOLOGY_CELL,
   ...HIGH_YIELD_TOPIC_BANK_LANGUAGES,
@@ -62,12 +66,16 @@ registerHighYieldSubjectBank("physics", [
 registerHighYieldSubjectBank("chemistry", [
   ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY,
   ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC,
+  ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY_BONDING,
 ]);
 registerHighYieldSubjectBank("biology", [
   ...HIGH_YIELD_TOPIC_BANK_BIOLOGY,
   ...HIGH_YIELD_TOPIC_BANK_BIOLOGY_CELL,
 ]);
-registerHighYieldSubjectBank("mathematics", HIGH_YIELD_TOPIC_BANK_MATHEMATICS);
+registerHighYieldSubjectBank("mathematics", [
+  ...HIGH_YIELD_TOPIC_BANK_MATHEMATICS,
+  ...HIGH_YIELD_TOPIC_BANK_MATHEMATICS_CALCULUS,
+]);
 registerHighYieldSubjectBank("nepali", HIGH_YIELD_TOPIC_BANK_LANGUAGES);
 registerHighYieldSubjectBank("english", HIGH_YIELD_TOPIC_BANK_LANGUAGES);
 

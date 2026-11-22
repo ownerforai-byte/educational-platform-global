@@ -33,5 +33,65 @@
   "importantConcepts": [
     "Definition and significance of Angle Bisector — Verifying with the tan θ Method."
   ],
-  "visualType": "angle-bisector-formula"
+  "visualType": "angle-bisector-formula",
+  "mindmap": {
+    "centralConcept": "Pair of straight lines from a second-degree equation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "General second-degree equation",
+            "points": [
+              "ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0",
+              "Represents a pair of straight lines when a specific condition holds",
+              "The condition is abc + 2fgh - af^2 - bg^2 - ch^2 = 0"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: homogeneous case",
+        "subtopics": [
+          {
+            "name": "Homogeneous equation",
+            "points": [
+              "ax^2 + 2hxy + by^2 = 0 always represents two lines through the origin",
+              "Divide by x^2 to get a quadratic in (y/x)",
+              "The two roots are the slopes of the two lines"
+            ]
+          },
+          {
+            "name": "Angle between the lines",
+            "points": [
+              "tan(theta) = 2 sqrt(h^2 - ab) / (a + b)",
+              "Lines are perpendicular when a + b = 0",
+              "Lines are coincident when h^2 = ab"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Bisectors and combined properties",
+            "points": [
+              "The bisectors of a homogeneous pair are given by h(x^2 - y^2) = (a - b)xy",
+              "Sum and product of slopes come from the quadratic in y/x",
+              "The non-homogeneous case factorises into two lines not necessarily through the origin"
+            ]
+          },
+          {
+            "name": "Exam technique",
+            "points": [
+              "Check the condition for a pair of lines before factorising",
+              "Factorise by treating the equation as a quadratic in one variable",
+              "Verify by expanding the factorised form back"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

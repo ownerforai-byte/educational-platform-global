@@ -1,0 +1,1797 @@
+{
+  "class-11/physics/gravitation/newton-s-law-of-gravitation": {
+    "centralConcept": "Newton's law of universal gravitation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the law",
+        "subtopics": [
+          {
+            "name": "Statement and form",
+            "points": [
+              "Every particle attracts every other with a force along the line joining them",
+              "F = G m1 m2 / r^2, where G = 6.674 x 10^-11 N m^2 kg^-2",
+              "The force is always attractive and acts on both bodies equally (Newton's third law)"
+            ]
+          },
+          {
+            "name": "Why G matters",
+            "points": [
+              "G is a universal constant, the same everywhere and for all masses",
+              "It is extremely small, which is why gravity is negligible between everyday objects",
+              "Cavendish first measured G in 1798 using a torsion balance"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: consequences",
+        "subtopics": [
+          {
+            "name": "Inverse square behaviour",
+            "points": [
+              "Doubling the separation reduces the force to one quarter",
+              "The law is an inverse square because the force spreads over a spherical surface of area 4 pi r^2",
+              "Valid for point masses and for uniform spheres treated as point masses at their centres"
+            ]
+          },
+          {
+            "name": "Superposition",
+            "points": [
+              "The net force on a mass is the vector sum of forces from all other masses",
+              "Forces from different bodies add independently",
+              "This is what makes n-body problems hard but tractable"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: limits and modern view",
+        "subtopics": [
+          {
+            "name": "Where the law breaks down",
+            "points": [
+              "Fails at very strong fields and high speeds — general relativity is required",
+              "Anomalous perihelion precession of Mercury was the first observed failure",
+              "Gravitational waves and black holes have no Newtonian description"
+            ]
+          },
+          {
+            "name": "Field formulation",
+            "points": [
+              "Gravity can be described as a field g = GM/r^2 rather than as action at a distance",
+              "Field lines point toward the mass and never cross",
+              "Field formulation is what generalises to relativity"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/newton-law-gravitation": {
+    "centralConcept": "Universal law of gravitation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The inverse square law",
+            "points": [
+              "F = G m1 m2 / r^2",
+              "Proportional to both masses, inversely proportional to the square of separation",
+              "Direction along the line joining the centres"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Deriving g",
+            "points": [
+              "Weight = mg and weight = GMm/R^2, so g = GM/R^2",
+              "g depends only on the planet's mass and radius, not on the falling body",
+              "Explains why all bodies fall at the same rate in vacuum"
+            ]
+          },
+          {
+            "name": "Kepler connection",
+            "points": [
+              "Newton showed Kepler's laws follow from the inverse square law",
+              "T^2 proportional to r^3 for circular orbits",
+              "Gives a way to measure planetary masses from orbital data"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Measurement of G",
+            "points": [
+              "Cavendish torsion balance measured the tiny attraction between lead spheres",
+              "Knowing G lets us weigh the Earth",
+              "Modern value 6.67430 x 10^-11, with the weakest precision of any fundamental constant"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/variation-in-value-of-g-due-to-altitude-and-depth": {
+    "centralConcept": "How g changes with height and depth",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "At the surface",
+            "points": [
+              "g = GM/R^2, about 9.8 m/s^2 on Earth",
+              "R is the Earth's radius, about 6400 km",
+              "g is maximum at the surface, not at the centre"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the two formulas",
+        "subtopics": [
+          {
+            "name": "Altitude",
+            "points": [
+              "g_h = g (1 - 2h/R) for h much smaller than R",
+              "Exact form: g_h = GM/(R+h)^2",
+              "g decreases with height, falling to zero at infinity"
+            ]
+          },
+          {
+            "name": "Depth",
+            "points": [
+              "g_d = g (1 - d/R) for depth d",
+              "g decreases linearly with depth inside a uniform Earth",
+              "At the centre g = 0 because the mass pulls equally in all directions"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: comparisons and traps",
+        "subtopics": [
+          {
+            "name": "Altitude versus depth",
+            "points": [
+              "For the same small distance, the decrease with depth is twice the decrease with altitude",
+              "Reason: at depth only the inner sphere attracts; at altitude the whole mass attracts from farther away",
+              "g falls off as 1/r^2 outside but linearly inside"
+            ]
+          },
+          {
+            "name": "Other variations",
+            "points": [
+              "g is less at the equator than the poles because of rotation and equatorial bulge",
+              "g decreases slightly with latitude-independent factors such as local rock density",
+              "Rotation contributes a centrifugal term that reduces apparent g at the equator"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/variation-g-altitude-depth": {
+    "centralConcept": "Variation of g with altitude and depth",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Base relation",
+            "points": [
+              "g = GM/R^2 at the surface",
+              "Any change in effective distance or enclosed mass changes g",
+              "Altitude changes distance; depth changes enclosed mass"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Formulas",
+            "points": [
+              "g_h = g(1 - 2h/R) for small h",
+              "g_d = g(1 - d/R)",
+              "Equating them gives the classic result that the decrease at depth d equals the decrease at altitude 2d"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Exam application",
+            "points": [
+              "A common question asks at what depth g falls to half its surface value — answer d = R/2",
+              "Another asks where g is the same at altitude and depth — answer h = d/2",
+              "Always state whether the Earth is assumed uniform"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/escape-velocity": {
+    "centralConcept": "Escape velocity — the speed to break free",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "The minimum speed needed to escape a gravitational field without further propulsion",
+              "Derived by setting total mechanical energy to zero at infinity",
+              "Independent of the direction of projection and of the projectile's mass"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the formula",
+        "subtopics": [
+          {
+            "name": "Derivation and value",
+            "points": [
+              "Kinetic energy at surface equals magnitude of potential energy: 1/2 m v^2 = GMm/R",
+              "v_e = sqrt(2GM/R) = sqrt(2gR)",
+              "For Earth: about 11.2 km/s"
+            ]
+          },
+          {
+            "name": "Scaling",
+            "points": [
+              "v_e is proportional to sqrt(M/R)",
+              "Moon's escape velocity is about 2.4 km/s because of its small mass",
+              "Escape velocity from a black hole's event horizon exceeds the speed of light"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: related speeds",
+        "subtopics": [
+          {
+            "name": "Orbital versus escape",
+            "points": [
+              "Orbital velocity v_o = sqrt(GM/r) at radius r",
+              "v_e = sqrt(2) x v_o — escape is always 1.414 times orbital speed",
+              "This ratio holds for any body and any circular orbit"
+            ]
+          },
+          {
+            "name": "Atmospheric and practical limits",
+            "points": [
+              "Escape velocity is a lower bound; atmospheric drag and Earth's rotation modify the practical requirement",
+              "Launching eastward from the equator gains about 460 m/s from rotation",
+              "Gas molecules escape a planet's atmosphere when their thermal speed approaches v_e"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/motion-of-a-satellite-orbital-velocity-and-time-period-of-the-satellite": {
+    "centralConcept": "Satellite motion — orbital velocity and period",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Why a satellite stays up",
+            "points": [
+              "Gravity provides exactly the centripetal force needed for circular motion",
+              "A satellite is in continuous free fall, but its tangential speed keeps it missing the Earth",
+              "No propulsion is needed once in a stable orbit"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the two key formulas",
+        "subtopics": [
+          {
+            "name": "Orbital velocity",
+            "points": [
+              "GMm/r^2 = mv^2/r gives v = sqrt(GM/r)",
+              "v decreases as orbital radius increases",
+              "For a low Earth orbit v is about 7.9 km/s"
+            ]
+          },
+          {
+            "name": "Time period",
+            "points": [
+              "T = 2 pi r / v = 2 pi sqrt(r^3/GM)",
+              "T^2 proportional to r^3 — this is Kepler's third law",
+              "Higher orbits are slower and take longer"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: energy and special orbits",
+        "subtopics": [
+          {
+            "name": "Energy of a satellite",
+            "points": [
+              "KE = GMm/2r, PE = -GMm/r, total E = -GMm/2r",
+              "Total energy is negative for a bound orbit",
+              "Total energy equals half the potential energy — a standard exam result"
+            ]
+          },
+          {
+            "name": "Geostationary orbit",
+            "points": [
+              "Period exactly 24 hours, equatorial, prograde, giving a fixed point above the ground",
+              "Radius about 42,000 km from the Earth's centre, altitude about 36,000 km",
+              "Used for communication and weather satellites"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/satellite-motion": {
+    "centralConcept": "Satellite motion and orbital mechanics",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The centripetal condition",
+            "points": [
+              "Gravitational force equals the required centripetal force",
+              "This single condition yields both orbital speed and period",
+              "Assumes a circular orbit; elliptical orbits need Kepler's laws"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Key results",
+            "points": [
+              "v = sqrt(GM/r), T = 2 pi sqrt(r^3/GM)",
+              "v_e = sqrt(2) v_o",
+              "Total energy = -GMm/2r"
+            ]
+          },
+          {
+            "name": "Weightlessness",
+            "points": [
+              "Astronauts in orbit are not free of gravity — they are in free fall",
+              "Apparent weightlessness arises because everything falls together",
+              "g at the ISS altitude is still about 8.7 m/s^2"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Orbit types",
+            "points": [
+              "Low Earth orbit (200-2000 km) for observation and the ISS",
+              "Geostationary (36,000 km) for communication",
+              "Polar and sun-synchronous orbits for imaging and remote sensing"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/geostationary-satellite": {
+    "centralConcept": "Geostationary satellite — a fixed point in the sky",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the conditions",
+        "subtopics": [
+          {
+            "name": "Three requirements",
+            "points": [
+              "Period must equal one sidereal day, about 23 h 56 min",
+              "Orbit must be equatorial, otherwise the satellite drifts north and south",
+              "Orbit must be prograde, moving in the same sense as Earth's rotation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the numbers",
+        "subtopics": [
+          {
+            "name": "Radius and altitude",
+            "points": [
+              "From T = 2 pi sqrt(r^3/GM) with T = 86400 s, r is about 4.22 x 10^7 m",
+              "Altitude above the surface is about 36,000 km",
+              "Orbital speed is about 3.07 km/s"
+            ]
+          },
+          {
+            "name": "Uses",
+            "points": [
+              "Communication and broadcasting — a fixed antenna can point permanently",
+              "Weather monitoring of a full hemisphere continuously",
+              "Three satellites 120 degrees apart cover most of the globe"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Geostationary versus geosynchronous",
+            "points": [
+              "Geosynchronous means matching the rotation period; the orbit may be inclined",
+              "Geostationary is a special case that is also equatorial and circular",
+              "An inclined geosynchronous satellite traces a figure-of-eight in the sky"
+            ]
+          },
+          {
+            "name": "Limitations",
+            "points": [
+              "High altitude means a long signal delay of about 0.24 s round trip",
+              "Poor coverage of polar regions",
+              "Slots in the equatorial belt are a finite and contested resource"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/gravitational-field-strength": {
+    "centralConcept": "Gravitational field strength",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "Field strength g is the force per unit mass experienced by a small test mass",
+              "g = F/m = GM/r^2",
+              "It is a vector, directed toward the attracting mass"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Field lines",
+            "points": [
+              "Lines point toward the mass; closer lines mean a stronger field",
+              "Lines never cross, because the field has one direction at each point",
+              "Uniform field is represented by parallel equally spaced lines"
+            ]
+          },
+          {
+            "name": "Field versus acceleration",
+            "points": [
+              "Numerically g equals the acceleration of a freely falling body",
+              "This equivalence is the weak equivalence principle",
+              "Units are N/kg or m/s^2, dimensionally identical"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Inside and outside a shell",
+            "points": [
+              "Outside a uniform spherical shell, the field is as if all mass were at the centre",
+              "Inside a uniform shell the field is exactly zero",
+              "This is Newton's shell theorem and it underpins the depth formula for g"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/gravitational-potential-and-potential-energy": {
+    "centralConcept": "Gravitational potential and potential energy",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Potential energy",
+            "points": [
+              "U = -GMm/r, with zero defined at infinity",
+              "Negative because gravity is attractive and work must be done to separate the masses",
+              "Near the surface this reduces to U = mgh"
+            ]
+          },
+          {
+            "name": "Potential",
+            "points": [
+              "V = U/m = -GM/r, the work per unit mass to bring a unit mass from infinity",
+              "Potential is a scalar, so it adds algebraically with no vector work",
+              "Units are J/kg"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Relation to field",
+            "points": [
+              "g = -dV/dr — field strength is the negative potential gradient",
+              "Potential decreases toward the mass; field points in the direction of decreasing potential",
+              "Equipotential surfaces are perpendicular to field lines"
+            ]
+          },
+          {
+            "name": "Work done",
+            "points": [
+              "Work done moving a mass between two points equals m times the potential difference",
+              "Work done along an equipotential is zero",
+              "Work done depends only on endpoints, not the path — gravity is conservative"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Escape and binding",
+            "points": [
+              "Total energy zero means the body just escapes",
+              "Binding energy is the energy needed to remove a mass to infinity",
+              "For a satellite, total energy is -GMm/2r and binding energy is +GMm/2r"
+            ]
+          },
+          {
+            "name": "Standard traps",
+            "points": [
+              "Potential at the centre of a uniform sphere is finite, not infinite",
+              "Potential inside a shell is constant and equals its surface value",
+              "Do not confuse potential (J/kg) with potential energy (J)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/gravitation/centre-of-mass-and-centre-of-gravity": {
+    "centralConcept": "Centre of mass and centre of gravity",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Centre of mass",
+            "points": [
+              "The point where the entire mass of a system may be considered concentrated for translational motion",
+              "For two masses, it divides the separation in inverse ratio to the masses",
+              "It is a property of the mass distribution alone"
+            ]
+          },
+          {
+            "name": "Centre of gravity",
+            "points": [
+              "The point where the total gravitational force may be considered to act",
+              "Coincides with the centre of mass in a uniform gravitational field",
+              "Differs from it only over distances where g varies appreciably"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Formulas",
+            "points": [
+              "x_cm = (m1 x1 + m2 x2)/(m1 + m2)",
+              "For a uniform body the centre of mass is at its geometric centre",
+              "For a hollow shape it may lie outside the material"
+            ]
+          },
+          {
+            "name": "Stability",
+            "points": [
+              "A body topples when its centre of gravity falls outside its base",
+              "Lower centre of gravity and wider base mean greater stability",
+              "Explains why racing cars are built low and wide"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Motion of the centre of mass",
+            "points": [
+              "The centre of mass moves as if all external forces acted on all the mass there",
+              "Internal forces cannot change the motion of the centre of mass",
+              "Explains why a exploding shell's fragments have a centre of mass continuing on the original parabola"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/dc-circuits/electric-current-drift-velocity": {
+    "centralConcept": "Electric current and drift velocity",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Current",
+            "points": [
+              "Current is the rate of flow of charge: I = Q/t",
+              "Conventional current flows opposite to electron flow",
+              "Unit ampere; 1 A = 1 C/s"
+            ]
+          },
+          {
+            "name": "Drift velocity",
+            "points": [
+              "Electrons drift slowly in the direction opposite the field, superimposed on random thermal motion",
+              "Typical drift speed is about 10^-4 m/s, far slower than the signal speed",
+              "The electric field propagates at nearly the speed of light, which is why a lamp lights instantly"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the relation",
+        "subtopics": [
+          {
+            "name": "I = nAev_d",
+            "points": [
+              "n is free electron density, A cross-sectional area, e electronic charge, v_d drift velocity",
+              "Current depends on drift velocity, not on the random thermal speed",
+              "Larger area or higher electron density gives more current for the same drift speed"
+            ]
+          },
+          {
+            "name": "Why drift is slow",
+            "points": [
+              "Electrons collide constantly with the lattice and lose directed momentum",
+              "The drift velocity is the small average velocity superimposed on thermal motion",
+              "Increasing temperature increases collisions and reduces drift velocity, raising resistivity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Current density and mobility",
+            "points": [
+              "J = I/A = n e v_d, a vector quantity",
+              "Mobility mu = v_d/E measures how easily carriers move",
+              "Conductivity sigma = n e mu"
+            ]
+          },
+          {
+            "name": "Numerical anchors",
+            "points": [
+              "For copper, n is about 8.5 x 10^28 per cubic metre",
+              "A 1 A current in a 1 mm^2 wire gives drift velocity of order 10^-4 m/s",
+              "Electron thermal speed at room temperature is about 10^5 m/s"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/dc-circuits/ohms-law-resistance": {
+    "centralConcept": "Ohm's law and resistance",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The law",
+            "points": [
+              "V = IR at constant temperature",
+              "Resistance is the opposition to current flow, measured in ohms",
+              "Ohm's law is empirical, not a fundamental law of nature"
+            ]
+          },
+          {
+            "name": "Resistivity",
+            "points": [
+              "R = rho L / A, where rho is resistivity, a material property",
+              "Resistivity depends on material and temperature, not on shape",
+              "Resistance depends on both material and geometry"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: temperature and conduction",
+        "subtopics": [
+          {
+            "name": "Temperature dependence",
+            "points": [
+              "For metals, rho increases with temperature: rho = rho_0 (1 + alpha dT)",
+              "For semiconductors, resistivity DECREASES with temperature as more carriers are freed",
+              "This opposite behaviour distinguishes metals from semiconductors"
+            ]
+          },
+          {
+            "name": "Ohmic versus non-ohmic",
+            "points": [
+              "Ohmic conductors give a straight V-I line through the origin",
+              "Non-ohmic devices (diodes, filament lamps, thermistors) give curved or asymmetric graphs",
+              "A filament lamp's resistance rises as it heats"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Microscopic origin",
+            "points": [
+              "Drude model: electrons accelerate in the field and lose momentum in collisions",
+              "R = rho L/A follows from I = nAev_d and v_d = eE tau/m",
+              "Explains why longer, thinner wires have more resistance"
+            ]
+          },
+          {
+            "name": "Superconductivity",
+            "points": [
+              "Below a critical temperature some materials drop to zero resistance",
+              "Persistent currents flow without energy loss",
+              "Used in MRI magnets and maglev systems"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/dc-circuits/resistances-in-series-and-parallel": {
+    "centralConcept": "Series and parallel combinations of resistors",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Series",
+            "points": [
+              "Same current through every resistor",
+              "Total voltage divides among them",
+              "R_eq = R1 + R2 + R3"
+            ]
+          },
+          {
+            "name": "Parallel",
+            "points": [
+              "Same voltage across every resistor",
+              "Total current divides among them",
+              "1/R_eq = 1/R1 + 1/R2 + 1/R3"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: consequences",
+        "subtopics": [
+          {
+            "name": "Behaviour of the equivalent resistance",
+            "points": [
+              "Series equivalent is always larger than the largest individual resistance",
+              "Parallel equivalent is always smaller than the smallest individual resistance",
+              "Two equal resistors in parallel give half the value"
+            ]
+          },
+          {
+            "name": "Power and division",
+            "points": [
+              "Series: larger resistance dissipates more power (P = I^2 R)",
+              "Parallel: smaller resistance dissipates more power (P = V^2/R)",
+              "Potential divider: V1 = V x R1/(R1+R2)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why houses use parallel",
+            "points": [
+              "Parallel connection gives each appliance the full supply voltage",
+              "Each device can be switched independently",
+              "A failure in one branch does not break the others"
+            ]
+          },
+          {
+            "name": "Symmetry shortcuts",
+            "points": [
+              "A balanced Wheatstone bridge has no current through the galvanometer",
+              "Infinite resistor chains and cube networks reduce by symmetry",
+              "Always redraw before calculating — most errors are drawing errors"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/dc-circuits/emf-internal-resistance": {
+    "centralConcept": "EMF and internal resistance",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definitions",
+            "points": [
+              "EMF is the total energy per unit charge supplied by the source",
+              "Terminal potential difference is the voltage actually available to the external circuit",
+              "Internal resistance r is the resistance within the source itself"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the circuit equation",
+        "subtopics": [
+          {
+            "name": "The key relation",
+            "points": [
+              "V = E - Ir, where E is EMF and r internal resistance",
+              "Terminal voltage falls as current rises",
+              "When no current flows, terminal voltage equals EMF"
+            ]
+          },
+          {
+            "name": "Power",
+            "points": [
+              "Total power E I splits into I^2 R (external) and I^2 r (internal loss)",
+              "Maximum power transfer to the load occurs when R = r",
+              "At maximum power transfer the efficiency is only 50%"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: combinations",
+        "subtopics": [
+          {
+            "name": "Cells in series",
+            "points": [
+              "EMFs add; internal resistances add",
+              "Useful when a higher voltage is needed",
+              "One reversed cell subtracts its EMF"
+            ]
+          },
+          {
+            "name": "Cells in parallel",
+            "points": [
+              "EMF stays the same; internal resistance falls",
+              "Useful when a higher current is needed",
+              "Only identical cells should be paralleled, or circulating currents arise"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/dc-circuits/work-and-power-in-electrical-circuits": {
+    "centralConcept": "Electrical work, power and energy",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Work done",
+            "points": [
+              "Work done moving charge Q through potential difference V is W = QV",
+              "Since Q = It, W = VIt",
+              "Unit joule"
+            ]
+          },
+          {
+            "name": "Power",
+            "points": [
+              "P = W/t = VI",
+              "Using Ohm's law: P = I^2 R = V^2/R",
+              "Unit watt; commercial unit is the kilowatt-hour"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Choosing the right form",
+            "points": [
+              "Use P = I^2 R when current is common (series)",
+              "Use P = V^2/R when voltage is common (parallel)",
+              "All three forms are equivalent only for an ohmic resistor"
+            ]
+          },
+          {
+            "name": "Heating effect",
+            "points": [
+              "Joule heating: H = I^2 R t",
+              "This is the basis of electric heaters, fuses and filament lamps",
+              "It is also the source of transmission loss"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why power is transmitted at high voltage",
+            "points": [
+              "Loss in cables is I^2 R, so reducing current cuts loss quadratically",
+              "Stepping up voltage reduces current for the same power",
+              "This is why national grids use high-voltage AC transmission"
+            ]
+          },
+          {
+            "name": "Units and billing",
+            "points": [
+              "1 kWh = 3.6 x 10^6 J",
+              "Domestic billing is in units of kWh",
+              "A 100 W bulb left on for 10 hours uses 1 unit"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/dynamics/01-newtons-laws-of-motion": {
+    "centralConcept": "Newton's three laws of motion",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the three laws",
+        "subtopics": [
+          {
+            "name": "First law — inertia",
+            "points": [
+              "A body remains at rest or in uniform motion unless acted on by a net external force",
+              "Defines force as the cause of change in motion",
+              "Inertia is the resistance to change in motion, measured by mass"
+            ]
+          },
+          {
+            "name": "Second law — F = ma",
+            "points": [
+              "Net force equals rate of change of momentum: F = dp/dt",
+              "For constant mass this reduces to F = ma",
+              "Force and acceleration are both vectors, in the same direction"
+            ]
+          },
+          {
+            "name": "Third law — action-reaction",
+            "points": [
+              "Every action has an equal and opposite reaction",
+              "The pair acts on DIFFERENT bodies, which is why they do not cancel",
+              "Explains walking, rocket propulsion and recoil"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: applying the laws",
+        "subtopics": [
+          {
+            "name": "Free body diagrams",
+            "points": [
+              "Draw every force acting ON the body, never forces it exerts",
+              "Choose axes along the likely acceleration",
+              "Resolve forces and apply F = ma along each axis"
+            ]
+          },
+          {
+            "name": "Common force types",
+            "points": [
+              "Weight mg downward, normal reaction perpendicular to the surface",
+              "Tension along the string, friction opposing relative motion",
+              "Spring force proportional to extension"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: frames and limits",
+        "subtopics": [
+          {
+            "name": "Inertial and non-inertial frames",
+            "points": [
+              "Newton's laws hold only in inertial (non-accelerating) frames",
+              "In an accelerating frame a pseudo force -ma must be added",
+              "Centrifugal force is a pseudo force of this kind"
+            ]
+          },
+          {
+            "name": "Limits of validity",
+            "points": [
+              "Fails at speeds near c — special relativity is required",
+              "Fails at atomic scales — quantum mechanics is required",
+              "Within its domain it is exact, which is why engineering still uses it"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/dynamics/02-momentum-impulse-and-conservation": {
+    "centralConcept": "Momentum, impulse and their conservation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Momentum",
+            "points": [
+              "p = mv, a vector in the direction of velocity",
+              "Unit kg m/s",
+              "Newton's second law in its general form is F = dp/dt"
+            ]
+          },
+          {
+            "name": "Impulse",
+            "points": [
+              "Impulse = F x t = change in momentum",
+              "Area under a force-time graph gives impulse",
+              "Explains why airbags and crumple zones reduce injury — longer time, smaller force"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: conservation",
+        "subtopics": [
+          {
+            "name": "Law of conservation of momentum",
+            "points": [
+              "Total momentum of an isolated system stays constant",
+              "Follows from Newton's third law — internal forces cancel in pairs",
+              "Applies to all collisions and explosions"
+            ]
+          },
+          {
+            "name": "Collisions",
+            "points": [
+              "Elastic: momentum and kinetic energy both conserved",
+              "Inelastic: momentum conserved, kinetic energy lost to heat and deformation",
+              "Perfectly inelastic: bodies stick together and move with common velocity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Coefficient of restitution",
+            "points": [
+              "e = relative velocity of separation / relative velocity of approach",
+              "e = 1 for elastic, e = 0 for perfectly inelastic",
+              "Energy loss relates directly to e"
+            ]
+          },
+          {
+            "name": "Centre of mass view",
+            "points": [
+              "In a collision the centre of mass continues unaffected by internal forces",
+              "Working in the centre-of-mass frame simplifies collision problems",
+              "Explains why total momentum is conserved even when energy is not"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/dynamics/03-moment-torque-and-equilibrium": {
+    "centralConcept": "Moment, torque and rotational equilibrium",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Moment of a force",
+            "points": [
+              "Torque = force x perpendicular distance from the pivot",
+              "Unit newton metre",
+              "Torque is a vector, given by the cross product of r and F"
+            ]
+          },
+          {
+            "name": "Couple",
+            "points": [
+              "Two equal, opposite, parallel forces with different lines of action",
+              "Produces pure rotation with no net translational force",
+              "Torque of a couple = force x perpendicular separation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: equilibrium",
+        "subtopics": [
+          {
+            "name": "Conditions for equilibrium",
+            "points": [
+              "Net force must be zero (translational equilibrium)",
+              "Net torque about any point must be zero (rotational equilibrium)",
+              "Both conditions are required for complete equilibrium"
+            ]
+          },
+          {
+            "name": "Principle of moments",
+            "points": [
+              "Sum of clockwise moments equals sum of anticlockwise moments",
+              "Used to solve lever, beam and balance problems",
+              "Choose the pivot to eliminate an unknown force"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Types of equilibrium",
+            "points": [
+              "Stable: displaced slightly, returns — centre of gravity rises",
+              "Unstable: displaced slightly, moves further away — centre of gravity falls",
+              "Neutral: no tendency to return or move away"
+            ]
+          },
+          {
+            "name": "Applications",
+            "points": [
+              "Levers, seesaws and wheelbarrows are moment problems",
+              "Ladder problems combine moments with friction",
+              "Torque is the rotational analogue of force, with I as the analogue of mass"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/dynamics/solid-friction": {
+    "centralConcept": "Friction between solid surfaces",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Types",
+            "points": [
+              "Static friction acts before motion starts",
+              "Kinetic friction acts during sliding",
+              "Rolling friction is much smaller than sliding friction"
+            ]
+          },
+          {
+            "name": "The laws",
+            "points": [
+              "Friction is proportional to the normal reaction: f = mu N",
+              "Friction is independent of the apparent area of contact",
+              "Static friction exceeds kinetic friction for the same surfaces"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: angles and coefficients",
+        "subtopics": [
+          {
+            "name": "Angle of friction",
+            "points": [
+              "tan(lambda) = mu, where lambda is the angle of friction",
+              "The resultant of normal reaction and limiting friction makes this angle with the normal",
+              "Angle of repose equals the angle of friction"
+            ]
+          },
+          {
+            "name": "Angle of repose",
+            "points": [
+              "The steepest angle at which a body rests without sliding",
+              "tan(theta) = mu_s",
+              "Independent of the mass of the body"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Microscopic origin",
+            "points": [
+              "Friction arises from adhesion at real contact points and surface roughness",
+              "Real contact area is far smaller than apparent area, which is why area does not matter",
+              "Lubrication works by separating surfaces with a fluid film"
+            ]
+          },
+          {
+            "name": "Necessary friction",
+            "points": [
+              "Walking, braking, belt drives and nails all depend on friction",
+              "Friction is not simply a nuisance to be eliminated",
+              "Anti-lock brakes exploit static friction by preventing skidding"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/work-energy-and-power/work-energy-theorem": {
+    "centralConcept": "Work-energy theorem",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Work",
+            "points": [
+              "W = F d cos(theta), the component of force along displacement",
+              "Work is zero when force is perpendicular to displacement",
+              "Unit joule; work can be negative when force opposes motion"
+            ]
+          },
+          {
+            "name": "The theorem",
+            "points": [
+              "Net work done on a body equals its change in kinetic energy",
+              "W_net = KE_final - KE_initial = 1/2 m v^2 - 1/2 m u^2",
+              "Holds for all forces, conservative or not"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: variable force",
+        "subtopics": [
+          {
+            "name": "Work by a variable force",
+            "points": [
+              "W = integral of F dx, the area under a force-displacement graph",
+              "For a spring, W = 1/2 k x^2",
+              "Graphical area is often the fastest route in exams"
+            ]
+          },
+          {
+            "name": "Kinetic energy",
+            "points": [
+              "KE = 1/2 m v^2, always positive",
+              "Scales with the square of speed, which is why braking distance quadruples when speed doubles",
+              "Momentum and kinetic energy are related by KE = p^2/2m"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why the theorem is powerful",
+            "points": [
+              "It converts a force problem into an energy accounting problem",
+              "Avoids needing the detailed path when only endpoints matter",
+              "Especially useful for friction and variable forces"
+            ]
+          },
+          {
+            "name": "Limits",
+            "points": [
+              "Requires an inertial frame",
+              "Kinetic energy is frame-dependent, so the theorem must be applied in one consistent frame",
+              "For rotational motion a rotational analogue exists with moment of inertia"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/work-energy-and-power/conservation-of-energy": {
+    "centralConcept": "Conservation of mechanical energy",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The principle",
+            "points": [
+              "Total mechanical energy stays constant when only conservative forces act",
+              "KE + PE = constant",
+              "Energy is transformed, never created or destroyed"
+            ]
+          },
+          {
+            "name": "Conservative forces",
+            "points": [
+              "Work done depends only on endpoints, not the path",
+              "Gravity and spring force are conservative",
+              "A closed loop gives zero net work"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Non-conservative forces",
+            "points": [
+              "Friction and air resistance are non-conservative",
+              "Work done by them removes mechanical energy as heat",
+              "Modified statement: KE + PE + work by friction = constant"
+            ]
+          },
+          {
+            "name": "Potential energy",
+            "points": [
+              "PE is defined only for conservative forces",
+              "Gravitational PE = mgh near the surface, -GMm/r in general",
+              "Spring PE = 1/2 k x^2"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Energy graphs",
+            "points": [
+              "Plot PE against position; KE is the gap up to total energy",
+              "Turning points occur where KE becomes zero",
+              "The negative gradient of the PE curve gives the force"
+            ]
+          },
+          {
+            "name": "Broader conservation",
+            "points": [
+              "Total energy including heat is always conserved",
+              "Mass-energy equivalence extends this to nuclear processes",
+              "Perpetual motion machines fail precisely because of this principle"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/work-energy-and-power/elastic-and-inelastic-collisions": {
+    "centralConcept": "Elastic and inelastic collisions",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "What is conserved",
+            "points": [
+              "Momentum is conserved in ALL collisions",
+              "Kinetic energy is conserved only in elastic collisions",
+              "Total energy is always conserved"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the two cases",
+        "subtopics": [
+          {
+            "name": "Elastic collision",
+            "points": [
+              "Both momentum and kinetic energy conserved",
+              "Relative speed of approach equals relative speed of separation",
+              "For equal masses in 1D, the bodies exchange velocities"
+            ]
+          },
+          {
+            "name": "Perfectly inelastic collision",
+            "points": [
+              "Bodies stick together and move with a common velocity",
+              "Maximum kinetic energy loss of any collision type",
+              "v = (m1 u1 + m2 u2)/(m1 + m2)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Coefficient of restitution",
+            "points": [
+              "e = (v2 - v1)/(u1 - u2)",
+              "e = 1 elastic, e = 0 perfectly inelastic, 0 < e < 1 partially elastic",
+              "Fractional energy loss = 1 - e^2"
+            ]
+          },
+          {
+            "name": "Frame of reference",
+            "points": [
+              "In the centre-of-mass frame, an elastic collision simply reverses both velocities",
+              "This makes elastic collision problems far simpler",
+              "Inelastic collisions look asymmetric in the lab frame but symmetric in the CM frame"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/nuclear-physics/nucleus-discovery-of-nucleus": {
+    "centralConcept": "Discovery and structure of the nucleus",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the experiments",
+        "subtopics": [
+          {
+            "name": "Rutherford's gold foil experiment",
+            "points": [
+              "Alpha particles fired at thin gold foil, 1911",
+              "Most passed straight through, some deflected sharply, a few bounced back",
+              "Conclusion: positive charge and nearly all mass are concentrated in a tiny central nucleus"
+            ]
+          },
+          {
+            "name": "Earlier discoveries",
+            "points": [
+              "Thomson discovered the electron in 1897 (cathode rays)",
+              "Goldstein discovered the proton in 1886 (canal rays)",
+              "Chadwick discovered the neutron in 1932"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: nuclear properties",
+        "subtopics": [
+          {
+            "name": "Composition and notation",
+            "points": [
+              "Nucleus contains protons (Z) and neutrons (N); mass number A = Z + N",
+              "Notation: A over Z before the element symbol",
+              "Isotopes have the same Z but different N"
+            ]
+          },
+          {
+            "name": "Size and density",
+            "points": [
+              "Nuclear radius R = R0 A^(1/3), with R0 about 1.2 x 10^-15 m",
+              "Nuclear density is roughly constant across all nuclei, about 2.3 x 10^17 kg/m^3",
+              "The nucleus is about 10^5 times smaller than the atom but holds almost all its mass"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Nuclear forces",
+            "points": [
+              "Strong nuclear force binds nucleons, is short-ranged and charge-independent",
+              "It is strongly attractive at about 1-2 fm and repulsive at very short range",
+              "Competes with electrostatic repulsion between protons, which limits nucleus size"
+            ]
+          },
+          {
+            "name": "Why heavy nuclei are unstable",
+            "points": [
+              "Coulomb repulsion grows as Z^2 while the strong force grows only as A",
+              "Beyond bismuth (Z = 83) no stable nucleus exists",
+              "Explains alpha decay and spontaneous fission in heavy elements"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/nuclear-physics/einstein-s-mass-energy-relation": {
+    "centralConcept": "Mass-energy equivalence",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The relation",
+            "points": [
+              "E = mc^2, proposed by Einstein in 1905",
+              "Mass and energy are two forms of the same quantity",
+              "1 kg of mass corresponds to about 9 x 10^16 J"
+            ]
+          },
+          {
+            "name": "Practical units",
+            "points": [
+              "1 u = 931.5 MeV of energy",
+              "Electron mass 0.511 MeV/c^2, proton 938.3 MeV/c^2",
+              "Using MeV makes nuclear calculations tractable"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mass defect",
+        "subtopics": [
+          {
+            "name": "Mass defect",
+            "points": [
+              "The mass of a nucleus is less than the sum of its constituent nucleons",
+              "Delta m = (Z m_p + N m_n) - M_nucleus",
+              "The missing mass appears as binding energy"
+            ]
+          },
+          {
+            "name": "Binding energy",
+            "points": [
+              "BE = Delta m x c^2",
+              "Binding energy per nucleon measures nuclear stability",
+              "Peaks at about 8.8 MeV per nucleon near iron-56"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why fission and fusion both release energy",
+            "points": [
+              "Fission splits heavy nuclei toward the iron peak, increasing BE per nucleon",
+              "Fusion combines light nuclei toward the peak, also increasing BE per nucleon",
+              "Both move the system toward maximum stability"
+            ]
+          },
+          {
+            "name": "Packing fraction",
+            "points": [
+              "Packing fraction = (M - A)/A, a measure of departure from A units",
+              "Negative packing fraction means the nucleus is bound and stable",
+              "A curve of packing fraction against mass number reveals the same iron peak"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/nuclear-physics/nuclear-fission-and-fusion": {
+    "centralConcept": "Nuclear fission and fusion",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Fission",
+            "points": [
+              "A heavy nucleus splits into two lighter nuclei plus neutrons",
+              "Example: U-235 + n gives Ba-141 + Kr-92 + 3n",
+              "Releases about 200 MeV per fission event"
+            ]
+          },
+          {
+            "name": "Fusion",
+            "points": [
+              "Two light nuclei combine into a heavier one",
+              "Example: four protons fuse to helium in the Sun",
+              "Releases more energy per unit mass than fission"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mechanisms",
+        "subtopics": [
+          {
+            "name": "Chain reaction",
+            "points": [
+              "Each fission releases neutrons that can trigger further fissions",
+              "Critical mass is the minimum mass needed to sustain the chain",
+              "Controlled in a reactor by moderators and control rods"
+            ]
+          },
+          {
+            "name": "Fusion conditions",
+            "points": [
+              "Requires extremely high temperature to overcome Coulomb repulsion",
+              "Requires high density and sufficient confinement time",
+              "Lawson criterion sets the threshold for net energy gain"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Energy comparison",
+            "points": [
+              "Fusion releases about 4 times more energy per kilogram than fission",
+              "Fusion fuel (deuterium) is abundant in seawater",
+              "Fusion produces far less long-lived radioactive waste"
+            ]
+          },
+          {
+            "name": "Practical status",
+            "points": [
+              "Fission is commercially mature and supplies about 10% of world electricity",
+              "Fusion remains experimental; ITER is the flagship project",
+              "The Sun is the only proven sustained fusion reactor"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/nuclear-physics/creation-and-annihilation": {
+    "centralConcept": "Pair production and annihilation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Pair production",
+            "points": [
+              "A high-energy photon converts into an electron-positron pair",
+              "Requires a nearby nucleus to conserve momentum",
+              "Threshold energy is 2 x 0.511 = 1.022 MeV"
+            ]
+          },
+          {
+            "name": "Annihilation",
+            "points": [
+              "An electron and positron combine and disappear, producing two photons",
+              "Two photons are needed to conserve momentum",
+              "Each photon carries 0.511 MeV"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Conservation laws",
+            "points": [
+              "Charge, momentum, angular momentum and total energy are conserved",
+              "Mass number and lepton number are conserved",
+              "Energy and mass are interconverted via E = mc^2"
+            ]
+          },
+          {
+            "name": "Threshold condition",
+            "points": [
+              "Photon energy must be at least 2 m_e c^2",
+              "Excess energy becomes kinetic energy of the pair",
+              "Cannot occur in empty space without a third body for momentum balance"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Applications",
+            "points": [
+              "PET scans detect the two 511 keV photons from positron annihilation",
+              "Annihilation explains why antimatter cannot persist in ordinary matter",
+              "Pair production sets an upper limit on gamma-ray propagation across the universe"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/physics/nuclear-physics/atomic-mass-isotopes": {
+    "centralConcept": "Atomic mass, isotopes and nuclear notation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Atomic mass unit",
+            "points": [
+              "1 u is one twelfth the mass of a carbon-12 atom",
+              "1 u = 1.66 x 10^-27 kg = 931.5 MeV/c^2",
+              "Atomic masses are measured relative to carbon-12 by definition"
+            ]
+          },
+          {
+            "name": "Isotopes",
+            "points": [
+              "Same number of protons, different number of neutrons",
+              "Chemically almost identical, physically different in mass and stability",
+              "Example: U-235 and U-238"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Average atomic mass",
+            "points": [
+              "Weighted average over natural isotopic abundances",
+              "Chlorine's 35.5 arises from 75% Cl-35 and 25% Cl-37",
+              "Not an integer because it is an abundance-weighted mean"
+            ]
+          },
+          {
+            "name": "Isobars and isotones",
+            "points": [
+              "Isobars: same mass number A, different Z",
+              "Isotones: same number of neutrons N",
+              "Isomers: same nucleus in different energy states"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Why isotopes matter",
+            "points": [
+              "U-235 is fissile while U-238 is not — enrichment separates them",
+              "Carbon-14 dating relies on the fixed ratio of C-14 to C-12 in living things",
+              "Medical isotopes such as Tc-99m are chosen for half-life and decay mode"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -112,5 +112,81 @@
     "**4. [Idea: a parametric curve whose parameter cancels, with a vertical-tangent check]** A curve is $x = 3t - t^3$, $y = 3t^2$. Find $\\frac{dy}{dx}$ and where the tangent is vertical.\\newline\\newline**Solution:**$^{\\bullet}$ $\\dfrac{dx}{dt} = 3 - 3t^2$ and $\\dfrac{dy}{dt} = 6t$.$^{\\bullet}$ $\\dfrac{dy}{dx} = \\dfrac{6t}{3-3t^2} = \\dfrac{2t}{1-t^2}$.\\newline\\newline**Horizontal tangent** ($\\frac{dy}{dx}=0$): $2t=0 \\Rightarrow t=0$, giving the point $(0,0)$.\\newline\\newline**Vertical tangent** ($\\frac{dx}{dt}=0$): $3-3t^2=0 \\Rightarrow t=\\pm1$, giving points $(2,3)$ and $(-2,3)$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=\\frac{2t}{1-t^2}$; horizontal tangent at $t=0$, vertical at $t=\\pm1$. **Trap:** finding a vertical tangent by setting $\\frac{dy}{dx}$ infinite without checking that $\\frac{dx}{dt}$ is genuinely zero.",
     "**5. [Idea: a second implicit derivative needs the original relation substituted at the end]** For $x^2+y^2 = 25$, obtain $\\frac{d^2y}{dx^2}$ in terms of $y$ alone.\\newline\\newline**Solution:** From part 3, $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$. Differentiate this fraction — do NOT re-derive from scratch:$^{\\bullet}$ $\\dfrac{d}{dx}\\left(-xy^{-1}\\right) = -\\left[\\left(\\frac{dx}{dx}\\right)y^{-1} + x\\left(\\frac{d}{dx}y^{-1}\\right)\\right]$.\\newline\\newline$^{\\bullet}$ Since $\\frac{d}{dx}y^{-1} = -y^{-2}\\dfrac{dy}{dx} = -y^{-2}\\left(-\\frac{x}{y}\\right) = \\dfrac{x}{y^3}$:$\\newline\\frac{d^2y}{dx^2} = -\\left[\\frac{1}{y} + x\\cdot\\frac{x}{y^3}\\right] = -\\frac{y^2 + x^2}{y^3}$.\\newline\\newline$^{\\bullet}$ Finally substitute $x^2+y^2=25$ to remove $x$: $\\dfrac{d^2y}{dx^2} = -\\dfrac{25}{y^3}$.\\newline\\newline**Answer:** $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}=-\\frac{25}{y^3}$ for a circle of radius $r=5$.\\newline\\newline**Check at the top $(0,5)$:** $-\\frac{25}{125}=-\\frac15$, so the top of the circle is concave down with $|f''|=\\frac{1}{5}$ — exactly $\\frac1r$, as a circle of curvature $r$ requires. **Trap:** writing $625$ by squaring $25$ again; the $25$ is already $r^2$.",
     "**6. [Idea: logarithmic differentiation for a variable exponent]** Differentiate $y = x^x$ and hence find the stationary point of $y=\\dfrac{x^x}{e^x}$ for $x>0$.\\newline\\newline**Solution:** Differentiate $y=x^x$ by taking logs:$^{\\bullet}$ $\\ln y = x\\ln x$, so $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$.$^{\\bullet}$ Hence $\\dfrac{dy}{dx} = x^x(\\ln x + 1)$.\\newline\\newline**Now** $g(x)=\\dfrac{x^x}{e^x} = x^x e^{-x}$, so $\\dfrac{d}{dx}\\ln g = (\\ln x + 1) - 1 = \\ln x$.\\newline\\newlineSo $g'(x) = g(x)\\ln x$, which vanishes when $\\ln x = 0$, i.e. $x=1$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=x^x(\\ln x+1)$; the stationary point of $g$ is $x=1$. **Verification:** $g(1)=1\\cdot e^{-1}=e^{-1}$, and $g' = g\\ln x$ changes from negative ($x<1$) to positive ($x>1$), confirming a minimum."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Rules for differentiating combinations of functions",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the basic rules",
+        "subtopics": [
+          {
+            "name": "Power and constant rules",
+            "points": [
+              "d/dx (x^n) = n x^(n-1) for any real n",
+              "Derivative of a constant is zero",
+              "Derivative of a constant multiple is the constant times the derivative"
+            ]
+          },
+          {
+            "name": "Sum and difference",
+            "points": [
+              "The derivative of a sum is the sum of derivatives",
+              "Same for difference",
+              "Differentiation is linear"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: product, quotient, chain",
+        "subtopics": [
+          {
+            "name": "Product rule",
+            "points": [
+              "d/dx (uv) = u dv/dx + v du/dx",
+              "First times derivative of second plus second times derivative of first",
+              "Extends to three factors by repeated application"
+            ]
+          },
+          {
+            "name": "Quotient rule",
+            "points": [
+              "d/dx (u/v) = (v du/dx - u dv/dx) / v^2",
+              "Order matters — reversing the numerator sign is the classic error",
+              "Memory aid: low d-high minus high d-low over low squared"
+            ]
+          },
+          {
+            "name": "Chain rule",
+            "points": [
+              "d/dx f(g(x)) = f'(g(x)) x g'(x)",
+              "Differentiate the outside, keep the inside, multiply by the inside's derivative",
+              "The most used rule in the whole course"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Standard derivatives to memorise",
+            "points": [
+              "d/dx (tan x) = sec^2 x, d/dx (cot x) = -cosec^2 x",
+              "d/dx (sec x) = sec x tan x, d/dx (cosec x) = -cosec x cot x",
+              "d/dx (sin^-1 x) = 1/sqrt(1-x^2), d/dx (tan^-1 x) = 1/(1+x^2)"
+            ]
+          },
+          {
+            "name": "Logarithmic differentiation",
+            "points": [
+              "Take log of both sides before differentiating when the function is a variable power",
+              "Essential for f(x)^g(x) forms",
+              "Also simplifies long products and quotients"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

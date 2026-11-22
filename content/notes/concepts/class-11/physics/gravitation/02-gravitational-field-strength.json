@@ -498,5 +498,57 @@
       "answer": "B",
       "explanation": "Radially inward."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Gravitational field strength",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "Field strength g is the force per unit mass experienced by a small test mass",
+              "g = F/m = GM/r^2",
+              "It is a vector, directed toward the attracting mass"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Field lines",
+            "points": [
+              "Lines point toward the mass; closer lines mean a stronger field",
+              "Lines never cross, because the field has one direction at each point",
+              "Uniform field is represented by parallel equally spaced lines"
+            ]
+          },
+          {
+            "name": "Field versus acceleration",
+            "points": [
+              "Numerically g equals the acceleration of a freely falling body",
+              "This equivalence is the weak equivalence principle",
+              "Units are N/kg or m/s^2, dimensionally identical"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Inside and outside a shell",
+            "points": [
+              "Outside a uniform spherical shell, the field is as if all mass were at the centre",
+              "Inside a uniform shell the field is exactly zero",
+              "This is Newton's shell theorem and it underpins the depth formula for g"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
