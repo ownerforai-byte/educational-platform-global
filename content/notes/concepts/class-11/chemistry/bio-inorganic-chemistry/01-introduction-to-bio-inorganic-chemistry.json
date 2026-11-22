@@ -7,19 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "Biological inorganic chemistry: metals in biology.",
-    "Hemoglobin: Fe²⁺ transports O₂.",
-    "Chlorophyll: Mg²⁺ in photosynthesis.",
-    "Enzymes: metal ion cofactors (Zn, Fe, Cu).",
-    "# Introduction to Bio-inorganic Chemistry\n\n## 1. Introduction\nChemical picture of **Introduction to Bio-inorganic Chemistry** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Bio-inorganic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Introduction to Bio-inorganic Chemistry\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and reagent sheet**\n\n| Transformation | Reagent + conditions | Product | Note or trap |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Introduction to Bio-inorganic Chemistry — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Introduction to Bio-inorganic Chemistry — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Introduction to Bio-inorganic Chemistry — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Introduction to Bio-inorganic Chemistry — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Where Inorganic Chemistry Meets Life\n\nBio-inorganic chemistry is the bridge subject of the syllabus: it studies the **role of inorganic elements — especially metal ions — in living systems**. Life is often pictured as organic chemistry, but every heartbeat, every breath of oxygen carried by blood, every green leaf depends on metal ions: iron in haemoglobin, magnesium in chlorophyll, zinc in enzymes, sodium and potassium in nerves. This topic sets the vocabulary for the whole unit.",
+    "## 2. Fundamental Concepts\n\n### 2.1 What bio-inorganic chemistry studies\n\n- **Definition:** the branch of chemistry that deals with the **role and behaviour of inorganic elements and their ions (mainly metal ions) in biological systems**.\n- Of the ~90 naturally occurring elements, only about **25 are essential** for life; the rest are either inert or toxic.\n- The essential elements fall into three tiers:\n  - **Bulk elements** (C, H, O, N) — ~99 % of body mass; build carbohydrates, proteins, fats, water.\n  - **Macro (mineral) elements** — Ca, P, K, S, Na, Cl, Mg: needed in gram quantities; electrolytes and structure.\n  - **Trace (micro) elements** — Fe, Zn, Cu, I, Co, Mn, Mo, Cr, Se, F: needed in milligram or microgram amounts, but indispensable.\n\n### 2.2 The jobs metal ions do\n\n- **Transport:** Fe²⁺ in haemoglobin carries O₂; Fe³⁺/Fe²⁺ cycling in cytochromes carries electrons.\n- **Structure:** Ca²⁺ (with phosphate) builds bones and teeth as hydroxyapatite, Ca₁₀(PO₄)₆(OH)₂.\n- **Catalysis:** metal ions at the active sites of **metalloenzymes** — Zn²⁺ in carbonic anhydrase, Fe in catalase, Mo and Fe in nitrogenase.\n- **Light capture:** Mg²⁺ sits at the centre of the chlorophyll porphyrin ring.\n- **Signalling and balance:** Ca²⁺ triggers muscle contraction; Na⁺/K⁺ maintain nerve impulses and osmotic balance.\n\n### 2.3 Metalloenzymes and chelation\n\n- A **metalloenzyme** is an enzyme containing a tightly bound metal ion at its active site that performs the catalysis. Classic example: **carbonic anhydrase (Zn²⁺)**, which interconverts CO₂ and bicarbonate in blood.\n- Many biological metal centres are held inside **chelate rings** — organic ligands (the porphyrin ring of chlorophyll and haem, the corrin ring of vitamin B₁₂) grip the metal ion like claws. Chelation is why these complexes are so stable.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Bio-inorganic chemistry** | Study of inorganic elements/ions in biological systems | Fe in haemoglobin |\n| **Essential element** | Element without which an organism cannot complete its life cycle | Fe, Mg, Zn |\n| **Trace element** | Essential element needed in very small amounts | I (~150 µg/day) |\n| **Metalloenzyme** | Enzyme with a metal ion at the active site | Carbonic anhydrase (Zn²⁺) |\n| **Chelate** | Complex in which a ligand grips a metal through several donor atoms | Chlorophyll (Mg²⁺ in porphyrin) |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why small amounts, big consequences\n\n- Trace elements act as **catalysts and switches**, not building material: a few grams of iron carry all the oxygen in your blood; a few milligrams of iodine set your metabolic rate through thyroxine. This is why deficiencies of things needed \"only in traces\" still cause overt disease (anaemia, goitre, pernicious anaemia).\n\n### 4.2 Essential versus toxic — the dose makes the poison\n\n- Every essential metal has a **window of safety**: too little causes deficiency disease, too much causes toxicity. Cu and Zn are essential in micrograms but poisonous in grams; even Na⁺, essential for nerves, raises blood pressure in excess. Elements such as Pb, Hg, Cd and As have **no known biological role** in humans and are toxic at any useful concentration — the subject of the last topic of this unit.\n\n### 4.3 The two flagship complexes\n\n- **Chlorophyll:** Mg²⁺ chelated in a chlorin (porphyrin-type) ring; absorbs red and blue light for photosynthesis. Formula of chlorophyll *a*: **C₅₅H₇₂O₅N₄Mg**.\n- **Haemoglobin:** Fe²⁺ chelated in the **haem** porphyrin ring, bound inside the globin protein; each of the four haem groups binds one O₂ molecule.",
+    "## 5. Comparison Tables\n\n**Tiers of essential elements**\n\n| Tier | Elements | Daily need | Main job |\n|---|---|---|---|\n| Bulk | C, H, O, N | ~99 % of mass | body framework, water, fuels |\n| Macro-mineral | Ca, P, K, S, Na, Cl, Mg | grams | bones, electrolytes, enzymes |\n| Trace | Fe, Zn, Cu, I, Co, Mn, Mo, Cr, Se, F | mg–µg | catalysts, hormones, O₂ carrier |",
+    "## 6. Common Confusions\n\n**\"Trace\" does not mean \"unimportant\":** iodine is needed at ~150 µg/day, yet its absence causes goitre. Trace refers to quantity, not significance.",
+    "**Haemoglobin carries O₂, it does not \"use\" it:** Fe²⁺ binds O₂ reversibly for transport; the oxygen is released in tissues, not consumed by the iron.",
+    "**Chlorophyll's metal is magnesium, not iron:** students swap the two flagship metals — Mg²⁺ is chlorophyll (plants), Fe²⁺ is haemoglobin (blood).",
+    "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): What are metalloenzymes? Explain with the example of carbonic anhydrase.** — A **metalloenzyme** is an enzyme that contains a **metal ion firmly bound at its active site**, where the metal performs the catalytic act. The metal may polarise a substrate, act as a Lewis acid, or shuttle electrons. **Example — carbonic anhydrase:** a Zn²⁺-containing enzyme of red blood cells that catalyses the reversible hydration of carbon dioxide, CO₂ + H₂O ⇌ H₂CO₃ ⇌ HCO₃⁻ + H⁺, at a rate millions of times faster than the uncatalysed reaction. The Zn²⁺ (held by histidine residues) activates a water molecule by lowering its pKa, and the resulting hydroxide attacks CO₂. This reaction lets blood carry CO₂ as bicarbonate and releases it in the lungs — without carbonic anhydrase, CO₂ transport would fail. Other metalloenzymes: carboxypeptidase (Zn²⁺), catalase (Fe), nitrogenase (Fe–Mo).",
+    "**NEB-style (2m): Define bio-inorganic chemistry and name two metal ions essential for life with their biological roles.** — Bio-inorganic chemistry is the branch of chemistry that studies the **role of inorganic elements and metal ions in biological systems**. Examples: **Fe²⁺** — the oxygen-carrying centre of haemoglobin; **Mg²⁺** — the central ion of chlorophyll, essential for photosynthesis. (Also acceptable: Ca²⁺ in bones, Zn²⁺ in carbonic anhydrase, Co in vitamin B₁₂.)",
+    "**NEB-style (2m): Distinguish between macro-minerals and trace elements with one example of each.** — **Macro-minerals** are essential elements required in gram quantities per day (e.g. **Ca** — bones and teeth, blood clotting). **Trace elements** are essential elements required in only milligram or microgram amounts (e.g. **I** — needed at ~150 µg/day for thyroxine). Both are indispensable; only the daily quantity differs."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -67,94 +65,23 @@
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups.",
-    "Practice drawing structural and condensed formulas."
+    "Define bio-inorganic chemistry and classify the essential elements into bulk, macro-mineral and trace tiers with examples.",
+    "What is a metalloenzyme? Explain the catalytic action of carbonic anhydrase with an equation.",
+    "List four different jobs that metal ions perform in biological systems with one example each."
   ],
   "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+    "About 25 of the ~90 natural elements are essential for life; iron is the most abundant trace metal in the human body (~4 g), most of it locked in haemoglobin."
   ],
   "examples": [
-    "Hemoglobin: heme group with Fe",
-    "Vitamin B₁₂: Co-containing"
+    "***Carbonic anhydrase, the fastest enzyme in blood*** — one Zn2+ ion per active site lets a red blood cell convert its CO2 to bicarbonate in milliseconds; the same Zn2+ trick powers carboxypeptidase in the gut."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups."
+    "**NEB 2024 (verified PYQ): What are metalloenzymes? Explain with the example of carbonic anhydrase.** — A **metalloenzyme** is an enzyme containing a **metal ion tightly bound at its active site**, where the metal performs the catalysis — by polarising the substrate, acting as a Lewis acid, or transferring electrons. **Example — carbonic anhydrase:** a **Zn²⁺ enzyme** abundant in red blood cells that catalyses the reversible hydration of carbon dioxide, **CO₂ + H₂O ⇌ H₂CO₃ ⇌ HCO₃⁻ + H⁺**, millions of times faster than the uncatalysed reaction. The Zn²⁺ ion, anchored by histidine side chains, activates a bound water molecule so that the hydroxide formed attacks CO₂. This is how blood loads CO₂ as bicarbonate in the tissues and unloads it as CO₂ in the lungs. Other examples: carboxypeptidase (Zn²⁺), catalase (Fe), nitrogenase (Fe–Mo).",
+    "**NEB-style (2m): Name the metal ion and the biological molecule in each of the following: (i) oxygen transport in blood, (ii) photosynthesis, (iii) vitamin B₁₂.** — (i) **Fe²⁺** in **haemoglobin** (haem group) — reversibly binds O₂ for transport from lungs to tissues. (ii) **Mg²⁺** in **chlorophyll** — the light-absorbing centre of photosynthesis. (iii) **Co** in **vitamin B₁₂ (cyanocobalamin)** — essential for red blood cell formation.",
+    "**NEB-style (2m): Why are trace elements essential even though the body needs only microgram quantities?** — Trace elements work as **catalysts and control elements, not building material**: a few grams of iron carry all the blood's oxygen, micrograms of iodine set the metabolic rate through thyroxine, and Zn²⁺ sits at the heart of enzymes like carbonic anhydrase. Because they act catalytically — used over and over, not consumed in bulk — tiny amounts suffice; but since the body cannot synthesise them, even these tiny amounts must come from the diet, and their absence produces deficiency diseases (anaemia, goitre, pernicious anaemia)."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- Chlorophyll a: C₅₅H₇₂O₅N₄Mg\n- Hydroxyapatite (bone): Ca₁₀(PO₄)₆(OH)₂\n- Carbonic anhydrase: CO₂ + H₂O ⇌ H₂CO₃ ⇌ HCO₃⁻ + H⁺ (Zn²⁺ active site)"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -162,9 +89,9 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Introduction to Bio-inorganic Chemistry"
+    "Bio-inorganic chemistry = role of inorganic elements/metal ions in living systems. ~25 essential elements: bulk C,H,O,N (~99% mass); macro-minerals Ca,P,K,S,Na,Cl,Mg (grams/day); trace Fe,Zn,Cu,I,Co,Mn,Mo,Cr,Se,F (mg-mug/day). Metal jobs: transport (Fe2+ in Hb carries O2), structure (Ca2+ hydroxyapatite Ca10(PO4)6(OH)2), catalysis (metalloenzymes), light capture (Mg2+ chlorophyll), signalling (Ca2+). Metalloenzyme = enzyme with metal at active site; carbonic anhydrase (Zn2+): CO2+H2O <-> H2CO3. Chelation: porphyrin ring grips metal — chlorophyll a C55H72O5N4Mg, haem Fe2+, B12 Co."
   ],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nCarbon forms 4 covalent bonds in all stable compounds.\n\nIsomerism increases molecular diversity enormously.",
+  "summary": "Bio-inorganic chemistry studies the **inorganic side of life**: of ~90 natural elements about **25 are essential**, arranged in three tiers — bulk C/H/O/N (~99 % of mass), macro-minerals Ca/P/K/S/Na/Cl/Mg in gram amounts, and trace elements Fe/Zn/Cu/I/Co/Mn/Mo/Cr/Se/F in milligram-to-microgram amounts. Metal ions do four great jobs: **transport** (Fe²⁺ in haemoglobin carries O₂), **structure** (Ca²⁺ as hydroxyapatite in bone), **catalysis** (metalloenzymes — Zn²⁺ carbonic anhydrase hydrating CO₂, Fe catalase, Fe–Mo nitrogenase) and **light capture** (Mg²⁺ in chlorophyll, C₅₅H₇₂O₅N₄Mg). Biology grips these metals with chelate rings — porphyrin for Mg and Fe, corrin for Co. Every essential metal obeys the dose rule: deficiency disease below the window, toxicity above it; Pb, Hg, Cd and As have no window at all.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Introduction to Bio-inorganic Chemistry\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -177,13 +104,13 @@
     }
   ],
   "importantNotes": [
-    "Important note regarding 01 introduction to bio inorganic chemistry micro and macro nutrients importance of metal ions in biological systems."
+    "Verified PYQ available: NEB 2024 metalloenzymes/carbonic anhydrase (assigned here); NEB 2022 trace-element MCQ and NEB 2024 iodine question are assigned to Micro and Macro Nutrients."
   ],
   "examShortTricks": [
-    "Recall the formula for Bio-inorganic Chemistry — Metal Ions in Biological Systems."
+    "Three tiers: bulk CHON, macro Ca-P-K-S-Na-Cl-Mg, trace Fe-Zn-Cu-I-Co-Mn-Mo-Cr-Se-F. Flagship complexes: Mg chlorophyll C55H72O5N4Mg, Fe haemoglobin, Co B12. Metalloenzyme example: carbonic anhydrase Zn2+."
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 introduction to bio inorganic chemistry micro and macro nutrients importance of metal ions in biological systems."
+    "The dose makes the biology: every essential metal has a window of safety — too little gives deficiency disease, too much gives toxicity — and elements like Pb, Hg, Cd, As have no useful role at all."
   ],
   "importantTasks": [
     "Task for studying 01 introduction to bio inorganic chemistry micro and macro nutrients importance of metal ions in biological systems."
@@ -194,14 +121,68 @@
     "Specialized insight for 01 introduction to bio inorganic chemistry micro and macro nutrients importance of metal ions in biological systems."
   ],
   "importantStatements": [
-    "Key statement for 01 introduction to bio inorganic chemistry micro and macro nutrients importance of metal ions in biological systems."
+    "\"Bio-inorganic chemistry is the study of the role of inorganic elements, particularly metal ions, in biological systems.\""
   ],
-  "examNotes": [],
+  "examNotes": [
+    "The metalloenzyme answer must name the metal (Zn2+), the reaction (CO2 hydration) and the biological context (blood CO2 transport) — one of the three loses a mark."
+  ],
   "exercises": [],
   "visualization": {
     "type": "3d-model",
     "component": "BioinorganicViewer",
     "desc": "Metal-centered biomolecule viewer"
   },
-  "visualType": "bioinorganic-chemistry"
+  "visualType": "bioinorganic-chemistry",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Where Inorganic Chemistry Meets Life\n\nBio-inorganic chemistry is the bridge subject of the syllabus: it studies the **role of inorganic elements — especially metal ions — in living systems**. Life is often pictured as organic chemistry, but every heartbeat, every breath of oxygen carried by blood, every green leaf depends on metal ions: iron in haemoglobin, magnesium in chlorophyll, zinc in enzymes, sodium and potassium in nerves. This topic sets the vocabulary for the whole unit.",
+      "## 2. Fundamental Concepts\n\n### 2.1 What bio-inorganic chemistry studies\n\n- **Definition:** the branch of chemistry that deals with the **role and behaviour of inorganic elements and their ions (mainly metal ions) in biological systems**.\n- Of the ~90 naturally occurring elements, only about **25 are essential** for life; the rest are either inert or toxic.\n- The essential elements fall into three tiers:\n  - **Bulk elements** (C, H, O, N) — ~99 % of body mass; build carbohydrates, proteins, fats, water.\n  - **Macro (mineral) elements** — Ca, P, K, S, Na, Cl, Mg: needed in gram quantities; electrolytes and structure.\n  - **Trace (micro) elements** — Fe, Zn, Cu, I, Co, Mn, Mo, Cr, Se, F: needed in milligram or microgram amounts, but indispensable.\n\n### 2.2 The jobs metal ions do\n\n- **Transport:** Fe²⁺ in haemoglobin carries O₂; Fe³⁺/Fe²⁺ cycling in cytochromes carries electrons.\n- **Structure:** Ca²⁺ (with phosphate) builds bones and teeth as hydroxyapatite, Ca₁₀(PO₄)₆(OH)₂.\n- **Catalysis:** metal ions at the active sites of **metalloenzymes** — Zn²⁺ in carbonic anhydrase, Fe in catalase, Mo and Fe in nitrogenase.\n- **Light capture:** Mg²⁺ sits at the centre of the chlorophyll porphyrin ring.\n- **Signalling and balance:** Ca²⁺ triggers muscle contraction; Na⁺/K⁺ maintain nerve impulses and osmotic balance.\n\n### 2.3 Metalloenzymes and chelation\n\n- A **metalloenzyme** is an enzyme containing a tightly bound metal ion at its active site that performs the catalysis. Classic example: **carbonic anhydrase (Zn²⁺)**, which interconverts CO₂ and bicarbonate in blood.\n- Many biological metal centres are held inside **chelate rings** — organic ligands (the porphyrin ring of chlorophyll and haem, the corrin ring of vitamin B₁₂) grip the metal ion like claws. Chelation is why these complexes are so stable.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Bio-inorganic chemistry** | Study of inorganic elements/ions in biological systems | Fe in haemoglobin |\n| **Essential element** | Element without which an organism cannot complete its life cycle | Fe, Mg, Zn |\n| **Trace element** | Essential element needed in very small amounts | I (~150 µg/day) |\n| **Metalloenzyme** | Enzyme with a metal ion at the active site | Carbonic anhydrase (Zn²⁺) |\n| **Chelate** | Complex in which a ligand grips a metal through several donor atoms | Chlorophyll (Mg²⁺ in porphyrin) |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why small amounts, big consequences\n\n- Trace elements act as **catalysts and switches**, not building material: a few grams of iron carry all the oxygen in your blood; a few milligrams of iodine set your metabolic rate through thyroxine. This is why deficiencies of things needed \"only in traces\" still cause overt disease (anaemia, goitre, pernicious anaemia).\n\n### 4.2 Essential versus toxic — the dose makes the poison\n\n- Every essential metal has a **window of safety**: too little causes deficiency disease, too much causes toxicity. Cu and Zn are essential in micrograms but poisonous in grams; even Na⁺, essential for nerves, raises blood pressure in excess. Elements such as Pb, Hg, Cd and As have **no known biological role** in humans and are toxic at any useful concentration — the subject of the last topic of this unit.\n\n### 4.3 The two flagship complexes\n\n- **Chlorophyll:** Mg²⁺ chelated in a chlorin (porphyrin-type) ring; absorbs red and blue light for photosynthesis. Formula of chlorophyll *a*: **C₅₅H₇₂O₅N₄Mg**.\n- **Haemoglobin:** Fe²⁺ chelated in the **haem** porphyrin ring, bound inside the globin protein; each of the four haem groups binds one O₂ molecule.",
+      "## 5. Comparison Tables\n\n**Tiers of essential elements**\n\n| Tier | Elements | Daily need | Main job |\n|---|---|---|---|\n| Bulk | C, H, O, N | ~99 % of mass | body framework, water, fuels |\n| Macro-mineral | Ca, P, K, S, Na, Cl, Mg | grams | bones, electrolytes, enzymes |\n| Trace | Fe, Zn, Cu, I, Co, Mn, Mo, Cr, Se, F | mg–µg | catalysts, hormones, O₂ carrier |",
+      "## 6. Common Confusions\n\n**\"Trace\" does not mean \"unimportant\":** iodine is needed at ~150 µg/day, yet its absence causes goitre. Trace refers to quantity, not significance.",
+      "**Haemoglobin carries O₂, it does not \"use\" it:** Fe²⁺ binds O₂ reversibly for transport; the oxygen is released in tissues, not consumed by the iron.",
+      "**Chlorophyll's metal is magnesium, not iron:** students swap the two flagship metals — Mg²⁺ is chlorophyll (plants), Fe²⁺ is haemoglobin (blood).",
+      "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): What are metalloenzymes? Explain with the example of carbonic anhydrase.** — A **metalloenzyme** is an enzyme that contains a **metal ion firmly bound at its active site**, where the metal performs the catalytic act. The metal may polarise a substrate, act as a Lewis acid, or shuttle electrons. **Example — carbonic anhydrase:** a Zn²⁺-containing enzyme of red blood cells that catalyses the reversible hydration of carbon dioxide, CO₂ + H₂O ⇌ H₂CO₃ ⇌ HCO₃⁻ + H⁺, at a rate millions of times faster than the uncatalysed reaction. The Zn²⁺ (held by histidine residues) activates a water molecule by lowering its pKa, and the resulting hydroxide attacks CO₂. This reaction lets blood carry CO₂ as bicarbonate and releases it in the lungs — without carbonic anhydrase, CO₂ transport would fail. Other metalloenzymes: carboxypeptidase (Zn²⁺), catalase (Fe), nitrogenase (Fe–Mo).",
+      "**NEB-style (2m): Define bio-inorganic chemistry and name two metal ions essential for life with their biological roles.** — Bio-inorganic chemistry is the branch of chemistry that studies the **role of inorganic elements and metal ions in biological systems**. Examples: **Fe²⁺** — the oxygen-carrying centre of haemoglobin; **Mg²⁺** — the central ion of chlorophyll, essential for photosynthesis. (Also acceptable: Ca²⁺ in bones, Zn²⁺ in carbonic anhydrase, Co in vitamin B₁₂.)",
+      "**NEB-style (2m): Distinguish between macro-minerals and trace elements with one example of each.** — **Macro-minerals** are essential elements required in gram quantities per day (e.g. **Ca** — bones and teeth, blood clotting). **Trace elements** are essential elements required in only milligram or microgram amounts (e.g. **I** — needed at ~150 µg/day for thyroxine). Both are indispensable; only the daily quantity differs."
+    ],
+    "keyPoints": [
+      "Bio-inorganic chemistry = role of inorganic elements/metal ions in living systems. ~25 essential elements: bulk C,H,O,N (~99% mass); macro-minerals Ca,P,K,S,Na,Cl,Mg (grams/day); trace Fe,Zn,Cu,I,Co,Mn,Mo,Cr,Se,F (mg-mug/day). Metal jobs: transport (Fe2+ in Hb carries O2), structure (Ca2+ hydroxyapatite Ca10(PO4)6(OH)2), catalysis (metalloenzymes), light capture (Mg2+ chlorophyll), signalling (Ca2+). Metalloenzyme = enzyme with metal at active site; carbonic anhydrase (Zn2+): CO2+H2O <-> H2CO3. Chelation: porphyrin ring grips metal — chlorophyll a C55H72O5N4Mg, haem Fe2+, B12 Co."
+    ],
+    "importantConcepts": [
+      "The dose makes the biology: every essential metal has a window of safety — too little gives deficiency disease, too much gives toxicity — and elements like Pb, Hg, Cd, As have no useful role at all."
+    ],
+    "examples": [
+      "***Carbonic anhydrase, the fastest enzyme in blood*** — one Zn2+ ion per active site lets a red blood cell convert its CO2 to bicarbonate in milliseconds; the same Zn2+ trick powers carboxypeptidase in the gut."
+    ],
+    "universalFacts": [
+      "About 25 of the ~90 natural elements are essential for life; iron is the most abundant trace metal in the human body (~4 g), most of it locked in haemoglobin."
+    ],
+    "importantStatements": [
+      "\"Bio-inorganic chemistry is the study of the role of inorganic elements, particularly metal ions, in biological systems.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ available: NEB 2024 metalloenzymes/carbonic anhydrase (assigned here); NEB 2022 trace-element MCQ and NEB 2024 iodine question are assigned to Micro and Macro Nutrients."
+    ],
+    "examShortTricks": [
+      "Three tiers: bulk CHON, macro Ca-P-K-S-Na-Cl-Mg, trace Fe-Zn-Cu-I-Co-Mn-Mo-Cr-Se-F. Flagship complexes: Mg chlorophyll C55H72O5N4Mg, Fe haemoglobin, Co B12. Metalloenzyme example: carbonic anhydrase Zn2+."
+    ],
+    "examNotes": [
+      "The metalloenzyme answer must name the metal (Zn2+), the reaction (CO2 hydration) and the biological context (blood CO2 transport) — one of the three loses a mark."
+    ],
+    "formulas": [
+      "- Chlorophyll a: C₅₅H₇₂O₅N₄Mg\n- Hydroxyapatite (bone): Ca₁₀(PO₄)₆(OH)₂\n- Carbonic anhydrase: CO₂ + H₂O ⇌ H₂CO₃ ⇌ HCO₃⁻ + H⁺ (Zn²⁺ active site)"
+    ],
+    "practice": [
+      "Define bio-inorganic chemistry and classify the essential elements into bulk, macro-mineral and trace tiers with examples.",
+      "What is a metalloenzyme? Explain the catalytic action of carbonic anhydrase with an equation.",
+      "List four different jobs that metal ions perform in biological systems with one example each."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (verified PYQ): What are metalloenzymes? Explain with the example of carbonic anhydrase.** — A **metalloenzyme** is an enzyme containing a **metal ion tightly bound at its active site**, where the metal performs the catalysis — by polarising the substrate, acting as a Lewis acid, or transferring electrons. **Example — carbonic anhydrase:** a **Zn²⁺ enzyme** abundant in red blood cells that catalyses the reversible hydration of carbon dioxide, **CO₂ + H₂O ⇌ H₂CO₃ ⇌ HCO₃⁻ + H⁺**, millions of times faster than the uncatalysed reaction. The Zn²⁺ ion, anchored by histidine side chains, activates a bound water molecule so that the hydroxide formed attacks CO₂. This is how blood loads CO₂ as bicarbonate in the tissues and unloads it as CO₂ in the lungs. Other examples: carboxypeptidase (Zn²⁺), catalase (Fe), nitrogenase (Fe–Mo).",
+      "**NEB-style (2m): Name the metal ion and the biological molecule in each of the following: (i) oxygen transport in blood, (ii) photosynthesis, (iii) vitamin B₁₂.** — (i) **Fe²⁺** in **haemoglobin** (haem group) — reversibly binds O₂ for transport from lungs to tissues. (ii) **Mg²⁺** in **chlorophyll** — the light-absorbing centre of photosynthesis. (iii) **Co** in **vitamin B₁₂ (cyanocobalamin)** — essential for red blood cell formation.",
+      "**NEB-style (2m): Why are trace elements essential even though the body needs only microgram quantities?** — Trace elements work as **catalysts and control elements, not building material**: a few grams of iron carry all the blood's oxygen, micrograms of iodine set the metabolic rate through thyroxine, and Zn²⁺ sits at the heart of enzymes like carbonic anhydrase. Because they act catalytically — used over and over, not consumed in bulk — tiny amounts suffice; but since the body cannot synthesise them, even these tiny amounts must come from the diet, and their absence produces deficiency diseases (anaemia, goitre, pernicious anaemia)."
+    ]
+  }
 }
