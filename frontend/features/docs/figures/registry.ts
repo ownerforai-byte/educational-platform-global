@@ -990,6 +990,90 @@ import { ScreeningVsPenetration } from "./screening-vs-penetration";
 import { CoreValenceSplit } from "./core-valence-split";
 import { RadiusTypesTrio } from "./radius-types-trio";
 import { MetallicCharacterLadder } from "./metallic-character-ladder";
+import { BranchesOfChemistryMap } from "./branches-of-chemistry-map";
+import { MatterClassificationTree } from "./matter-classification-tree";
+import { PureVsMixturePanel } from "./pure-vs-mixture-panel";
+import { HomogeneousHeterogeneousContrast } from "./homogeneous-heterogeneous-contrast";
+import { ElementCompoundMoleculeTrio } from "./element-compound-molecule-trio";
+import { SolutionComponentsPanel } from "./solution-components-panel";
+import { ChemistryInDailyLife } from "./chemistry-in-daily-life";
+import { ChemistryContributionMap } from "./chemistry-contribution-map";
+import { MedicineChemistryPanel } from "./medicine-chemistry-panel";
+import { FoodChemistryPanel } from "./food-chemistry-panel";
+import { EnergyChemistryPanel } from "./energy-chemistry-panel";
+import { EnvironmentDoubleEdge } from "./environment-double-edge";
+import { AgricultureChemistryPanel } from "./agriculture-chemistry-panel";
+import { DetergentChemistryPanel } from "./detergent-chemistry-panel";
+import { AtomMoleculeContrast } from "./atom-molecule-contrast";
+import { RadicalTypesPanel } from "./radical-types-panel";
+import { AmuScalePanel } from "./amu-scale-panel";
+import { EmpiricalVsMolecularFlow } from "./empirical-vs-molecular-flow";
+import { RelativeMassLadder } from "./relative-mass-ladder";
+import { IonFormationPanel } from "./ion-formation-panel";
+import { AvogadroNumberPanel } from "./avogadro-number-panel";
+import { PercentCompositionFormula } from "./percent-composition-formula";
+import { UreaPercentDrill } from "./urea-percent-drill";
+import { MolarMassAssembly } from "./molar-mass-assembly";
+import { PercentFromFormulaSteps } from "./percent-from-formula-steps";
+import { NitrogenFertilizerDrill } from "./nitrogen-fertilizer-drill";
+import { MolePercentBridge } from "./mole-percent-bridge";
+import { LimestoneAssayDrill } from "./limestone-assay-drill";
+import { DaltonPostulatesLadder } from "./dalton-postulates-ladder";
+import { IndivisibleVsModern } from "./indivisible-vs-modern";
+import { IsotopeChallengePanel } from "./isotope-challenge-panel";
+import { CombineRatioPanel } from "./combine-ratio-panel";
+import { DaltonLimitationsTable } from "./dalton-limitations-table";
+import { ConservationFromPostulate } from "./conservation-from-postulate";
+import { ElectronDiscoveryTimeline } from "./electron-discovery-timeline";
+import { FiveLawsMap } from "./five-laws-map";
+import { ConservationLavoisierDrill } from "./conservation-lavoisier-drill";
+import { DefiniteProportionDrill } from "./definite-proportion-drill";
+import { MultipleProportionDrill } from "./multiple-proportion-drill";
+import { ReciprocalProportionPanel } from "./reciprocal-proportion-panel";
+import { GayLussacVolumePanel } from "./gay-lussac-volume-panel";
+import { LawsVsAtomicTheoryLink } from "./laws-vs-atomic-theory-link";
+import { AvogadroLawStatement } from "./avogadro-law-statement";
+import { VapourDensityDrill } from "./vapour-density-drill";
+import { StpMolarVolumePanel } from "./stp-molar-volume-panel";
+import { StpVolumeDrill } from "./stp-volume-drill";
+import { AvogadroVsDaltonReconcile } from "./avogadro-vs-dalton-reconcile";
+import { AvogadroDeductionsLadder } from "./avogadro-deductions-ladder";
+import { GasDensityDrill } from "./gas-density-drill";
+import { MoleConceptTriangle } from "./mole-concept-triangle";
+import { MoleConversionDrill } from "./mole-conversion-drill";
+import { ParticleCountPanel } from "./particle-count-panel";
+import { MolarMassTablePanel } from "./molar-mass-table-panel";
+import { MoleStpVolumePanel } from "./mole-stp-volume-panel";
+import { NumberOfParticlesDrill } from "./number-of-particles-drill";
+import { GramAtomMoleTerms } from "./gram-atom-mole-terms";
+import { ConcentrationUnitsPanel } from "./concentration-units-panel";
+import { MolarityDrill } from "./molarity-drill";
+import { MolalityVsMolarity } from "./molality-vs-molarity";
+import { DilutionFormulaDrill } from "./dilution-formula-drill";
+import { NormalityEquivalentsPanel } from "./normality-equivalents-panel";
+import { MassPercentDrill } from "./mass-percent-drill";
+import { SolutionPrepSteps } from "./solution-prep-steps";
+import { LimitingReactantConcept } from "./limiting-reactant-concept";
+import { LimitingReactantSteps } from "./limiting-reactant-steps";
+import { LimitingReactantDrill } from "./limiting-reactant-drill";
+import { ExcessLeftoverPanel } from "./excess-leftover-panel";
+import { LimitingReagentRecipeDrill } from "./limiting-reagent-recipe-drill";
+import { LimitingVsExcessTable } from "./limiting-vs-excess-table";
+import { LimitingReagentStoichiometryFlow } from "./limiting-reagent-stoichiometry-flow";
+import { YieldTypesTrio } from "./yield-types-trio";
+import { YieldCalculationDrill } from "./yield-calculation-drill";
+import { YieldLossCauses } from "./yield-loss-causes";
+import { AtomEconomyPanel } from "./atom-economy-panel";
+import { TheoreticalYieldLadder } from "./theoretical-yield-ladder";
+import { YieldImprovementPanel } from "./yield-improvement-panel";
+import { YieldVsAtomEconomy } from "./yield-vs-atom-economy";
+import { EmpiricalFormulaSteps } from "./empirical-formula-steps";
+import { EmpiricalFormulaDrill } from "./empirical-formula-drill";
+import { CombustionAnalysisPanel } from "./combustion-analysis-panel";
+import { MolecularFromEmpiricalDrill } from "./molecular-from-empirical-drill";
+import { HydrationFormulaDrill } from "./hydration-formula-drill";
+import { RatioClearingPanel } from "./ratio-clearing-panel";
+import { PercentToFormulaFlow } from "./percent-to-formula-flow";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -8214,6 +8298,654 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "The derivative at P is the slope of the tangent; the normal is perpendicular to it (product of slopes = −1).",
         alt: "Curve with a tangent line touching at point P and a normal line perpendicular to it",
         keyword: "tangent",
+      },
+    ],
+  },
+  "general-introduction-of-chemistry": {
+    title: "Foundations of chemistry",
+    figures: [
+      {
+        Component: BranchesOfChemistryMap,
+        caption:
+          "The five main branches of chemistry with the questions each one answers - organic for carbon compounds, inorganic for the rest, physical for energy and rates, analytical for identification and biochemistry for life.",
+        alt: "Five branches of chemistry organic inorganic physical analytical and biochemistry with example topics",
+        keyword: "branch",
+      },
+      {
+        Component: MatterClassificationTree,
+        caption:
+          "Every sample of matter sorts into pure substances (elements and compounds) or mixtures (homogeneous and heterogeneous) - one tree, four leaves.",
+        alt: "Classification of matter tree elements compounds homogeneous and heterogeneous mixtures",
+        keyword: "matter",
+      },
+      {
+        Component: PureVsMixturePanel,
+        caption:
+          "Four decisive tests separate a pure substance from a mixture: composition, separation method, sharpness of melting or boiling point and energy change on mixing.",
+        alt: "Pure substance versus mixture comparison fixed composition separation melting point tests",
+        keyword: "pure",
+      },
+      {
+        Component: HomogeneousHeterogeneousContrast,
+        caption:
+          "A salt solution looks uniform everywhere (homogeneous); sand and water shows a visible boundary (heterogeneous). Fog and smoke fool the eye but are heterogeneous.",
+        alt: "Homogeneous mixture salt solution versus heterogeneous sand water with visible boundary",
+        keyword: "homogeneous",
+      },
+      {
+        Component: ElementCompoundMoleculeTrio,
+        caption:
+          "Element means one kind of atom, compound means different atoms in a fixed ratio, molecule means any bonded group - water's properties unlike hydrogen or oxygen prove compounds are new substances.",
+        alt: "Element compound and molecule comparison with examples hydrogen oxygen water carbon dioxide",
+        keyword: "element",
+      },
+      {
+        Component: SolutionComponentsPanel,
+        caption:
+          "A solution spreads solute particles evenly through the solvent as one phase; saturated means the solvent holds all it can at that temperature.",
+        alt: "Solution components solute solvent homogeneous solution saturated unsaturated states",
+        keyword: "solution",
+      },
+      {
+        Component: ChemistryInDailyLife,
+        caption:
+          "Fuels, clothes, food and medicines are all built on catenated carbon chains - the property that makes organic chemistry a branch of its own.",
+        alt: "Organic chemistry in daily life fuels clothes food medicines carbon compounds",
+        keyword: "daily",
+      },
+    ],
+  },
+  "importance-and-scope-of-chemistry": {
+    title: "Chemistry across industries and life",
+    figures: [
+      {
+        Component: ChemistryContributionMap,
+        caption:
+          "Chemical knowledge feeds four industries at once - fertilisers, pharmaceuticals, petroleum and textiles - each with a named product to quote in answers.",
+        alt: "Chemistry contribution to fertiliser pharmaceutical petroleum and textile industries",
+        keyword: "industry",
+      },
+      {
+        Component: MedicineChemistryPanel,
+        caption:
+          "From aspirin synthesis to cisplatin's platinum complex and glucose test strips, medicine runs on designed molecules and measured reactions.",
+        alt: "Chemistry in medicine drug synthesis anaesthetics diagnostics cisplatin aspirin",
+        keyword: "medicine",
+      },
+      {
+        Component: FoodChemistryPanel,
+        caption:
+          "Preservation, ripening control, additives and food tests are all chemistry - and adulteration detection is applied analytical chemistry.",
+        alt: "Chemistry in food preservatives ripening additives nutrition testing",
+        keyword: "food",
+      },
+      {
+        Component: EnergyChemistryPanel,
+        caption:
+          "Combustion, fuel cells, lithium-ion electrodes and biogas digesters are all electron-transfer stories - electrochemistry in disguise.",
+        alt: "Chemistry in energy fossil fuels fuel cells solar biogas reactions",
+        keyword: "energy",
+      },
+      {
+        Component: EnvironmentDoubleEdge,
+        caption:
+          "CFCs thinned ozone and carbon dioxide warms the planet, but the fixes - catalytic converters, CFC replacements, effluent treatment - are also chemistry.",
+        alt: "Chemistry double edge benefits versus pollution problems green chemistry solutions",
+        keyword: "pollution",
+      },
+      {
+        Component: AgricultureChemistryPanel,
+        caption:
+          "Fertilisers supply NPK, soil testing sets the dose, pesticides protect the crop - all chemistry, all dose-dependent.",
+        alt: "Chemistry in agriculture fertilisers pesticides soil testing NPK",
+        keyword: "agriculture",
+      },
+      {
+        Component: DetergentChemistryPanel,
+        caption:
+          "A detergent's hydrophilic head loves water while its hydrophobic tail buries into grease; micelles lift the grease into the wash water.",
+        alt: "Detergent molecule hydrophilic head hydrophobic tail micelle grease cleaning action",
+        keyword: "detergent",
+      },
+    ],
+  },
+  "basic-concepts-of-chemistry-atoms-molecules-relative-masses-of-atoms-and-molecules-atomic-mass-u": {
+    title: "Basic concepts: atoms, ions, radicals, amu",
+    figures: [
+      {
+        Component: AtomMoleculeContrast,
+        caption:
+          "An atom is the smallest particle of an element taking part in a reaction; a molecule is the smallest free particle of an element or compound - H2 versus H is the classic trap.",
+        alt: "Atom versus molecule smallest particle definitions with examples hydrogen oxygen water",
+        keyword: "atom",
+      },
+      {
+        Component: RadicalTypesPanel,
+        caption:
+          "Basic radicals are positive cations (Na+, Ca2+, NH4+), acidic radicals are negative anions (Cl-, SO4 2-); criss-crossing their charges builds every formula.",
+        alt: "Radical panel cationic basic and anionic acidic radicals with valencies ammonium sulphate nitrate carbonate",
+        keyword: "radical",
+      },
+      {
+        Component: AmuScalePanel,
+        caption:
+          "One amu is one twelfth of a carbon-12 atom's mass, 1.66 x 10^-24 g - relative masses make atomic-scale arithmetic human-sized.",
+        alt: "Atomic mass unit scale one twelfth carbon twelve hydrogen oxygen iron comparisons",
+        keyword: "amu",
+      },
+      {
+        Component: EmpiricalVsMolecularFlow,
+        caption:
+          "The molecular formula is the empirical formula multiplied by n, where n is molecular mass divided by empirical formula mass - HO times 2 gives H2O2.",
+        alt: "Empirical formula to molecular formula flowchart with n multiplier hydrogen peroxide benzene glucose",
+        keyword: "empirical",
+      },
+      {
+        Component: RelativeMassLadder,
+        caption:
+          "Multiply each element's atomic mass by its subscript and add: H2O is 18, CO2 is 44 - bracketed groups count the whole bracket.",
+        alt: "Relative mass ladder from atomic masses to molecular mass water carbon dioxide",
+        keyword: "relative",
+      },
+      {
+        Component: IonFormationPanel,
+        caption:
+          "Metals lose electrons to become cations, non-metals gain them to become anions; both can end isoelectronic with a noble gas.",
+        alt: "Ion formation sodium cation chlorine anion octet electron transfer",
+        keyword: "ion",
+      },
+      {
+        Component: AvogadroNumberPanel,
+        caption:
+          "One mole is 6.022 x 10^23 particles - the same number counts atoms in 12 g of carbon-12, molecules in 22.4 L of any gas at STP and electrons in one faraday.",
+        alt: "Avogadro number six point zero two two times ten twenty three particles per mole",
+        keyword: "avogadro",
+      },
+    ],
+  },
+  "percentage-composition-from-molecular-formula": {
+    title: "Percentage composition",
+    figures: [
+      {
+        Component: PercentCompositionFormula,
+        caption:
+          "Percentage of an element equals its mass in one mole divided by the molar mass, times 100 - subscripts count before the division.",
+        alt: "Percentage composition formula element mass over molar mass times hundred",
+        keyword: "percentage",
+      },
+      {
+        Component: UreaPercentDrill,
+        caption:
+          "Urea CO(NH2)2: molar mass 60, nitrogen 28, so 46.6 percent N - the strongest solid nitrogen fertiliser in common use.",
+        alt: "Solved percentage of nitrogen in urea forty six point six percent",
+        keyword: "urea",
+      },
+      {
+        Component: MolarMassAssembly,
+        caption:
+          "Four worked molar masses - water 18, ammonia 17, sulphuric acid 98, calcium carbonate 100 - plus the hydrate trap of copper sulphate pentahydrate.",
+        alt: "Molar mass assembly worked examples water ammonia sulphuric acid calcium carbonate hydrate",
+        keyword: "molar",
+      },
+      {
+        Component: PercentFromFormulaSteps,
+        caption:
+          "The four-step method: correct formula, molar mass, element mass over molar mass times 100, then check the percentages sum to 100.",
+        alt: "Percentage composition four step method with calcium hydroxide bracket trap",
+        keyword: "steps",
+      },
+      {
+        Component: NitrogenFertilizerDrill,
+        caption:
+          "Urea 46.6 percent N beats ammonium nitrate 35 and ammonium sulphate 21 - the same method ranks fertilisers by nitrogen per kilogram.",
+        alt: "Nitrogen percentage comparison of fertilisers urea ammonium nitrate ammonium sulphate",
+        keyword: "nitrogen",
+      },
+      {
+        Component: MolePercentBridge,
+        caption:
+          "Computing on a one-mole basis makes grams cancel and the mass fraction read directly as a percentage - and feeds empirical-formula problems too.",
+        alt: "Mole to percentage composition bridge one mole basis sodium bicarbonate example",
+        keyword: "mole",
+      },
+      {
+        Component: LimestoneAssayDrill,
+        caption:
+          "Pure limestone is 40 percent calcium by mass (40 over 100); run backwards, a 2 g calcium yield from 5 g ore means 40 percent purity.",
+        alt: "Solved limestone assay calcium carbonate forty percent calcium content",
+        keyword: "limestone",
+      },
+    ],
+  },
+  "dalton-s-atomic-theory-and-its-postulates": {
+    title: "Dalton's atomic theory",
+    figures: [
+      {
+        Component: DaltonPostulatesLadder,
+        caption:
+          "Five postulates in order: indivisible atoms, identical atoms per element, different atoms across elements, simple whole-number ratios, and rearrangement without creation or destruction.",
+        alt: "Dalton atomic theory five postulates ladder with explanations",
+        keyword: "postulate",
+      },
+      {
+        Component: IndivisibleVsModern,
+        caption:
+          "Dalton's solid billiard ball gave way to a nucleus of protons and neutrons with electrons outside - the atom turned out to be divisible.",
+        alt: "Dalton indivisible billiard ball atom versus modern atom with nucleus and electrons",
+        keyword: "indivisible",
+      },
+      {
+        Component: IsotopeChallengePanel,
+        caption:
+          "Chlorine-35 and chlorine-37 break the identical-atoms claim, but the weighted average 35.5 preserves every stoichiometric law.",
+        alt: "Isotopes challenge identical atoms postulate chlorine thirty five thirty seven weighted average",
+        keyword: "isotope",
+      },
+      {
+        Component: CombineRatioPanel,
+        caption:
+          "H2O, NH3, CH4 and CO2 all show simple whole-number atom ratios - postulate 4 is the ancestor of the law of definite proportions.",
+        alt: "Atoms combine in simple whole number ratios water ammonia methane carbon dioxide",
+        keyword: "ratio",
+      },
+      {
+        Component: DaltonLimitationsTable,
+        caption:
+          "Five Dalton claims against their modern corrections - from subatomic particles to isotopes to non-stoichiometric compounds.",
+        alt: "Dalton postulate versus modern correction comparison table limitations",
+        keyword: "limitation",
+      },
+      {
+        Component: ConservationFromPostulate,
+        caption:
+          "Because atoms are only rearranged, total mass is fixed: 4 g hydrogen plus 32 g oxygen gives exactly 36 g water - balancing is bookkeeping.",
+        alt: "Conservation of mass from Dalton postulate five hydrogen oxygen water mass balance",
+        keyword: "conservation",
+      },
+      {
+        Component: ElectronDiscoveryTimeline,
+        caption:
+          "Electron 1897, nucleus 1911, proton 1919, neutron 1932 - thirty-five years that dismantled indivisibility one discovery at a time.",
+        alt: "Subatomic particle discovery timeline Thomson Rutherford Chadwick electron proton neutron",
+        keyword: "electron",
+      },
+    ],
+  },
+  "laws-of-stoichiometry": {
+    title: "The five laws of stoichiometry",
+    figures: [
+      {
+        Component: FiveLawsMap,
+        caption:
+          "Conservation, definite proportions, multiple proportions, reciprocal proportions and Gay-Lussac's gaseous volumes - five laws, one map.",
+        alt: "Five laws of stoichiometry map with discoverers Lavoisier Proust Dalton Richter Gay-Lussac",
+        keyword: "law",
+      },
+      {
+        Component: ConservationLavoisierDrill,
+        caption:
+          "10 g calcium carbonate decomposes to 5.6 g calcium oxide and 4.4 g carbon dioxide - the sum is exactly 10 g, mass conserved.",
+        alt: "Solved conservation of mass numerical calcium carbonate decomposition",
+        keyword: "conservation",
+      },
+      {
+        Component: DefiniteProportionDrill,
+        caption:
+          "Two different copper oxide samples both give copper to oxygen ratio 4 to 1 - fixed composition whatever the source.",
+        alt: "Solved definite proportions copper oxide samples same four to one ratio",
+        keyword: "definite",
+      },
+      {
+        Component: MultipleProportionDrill,
+        caption:
+          "With 12 g of carbon fixed, the oxygen masses in CO and CO2 stand in the ratio 1 to 2 - simple whole numbers.",
+        alt: "Solved multiple proportions carbon monoxide carbon dioxide oxygen ratio one to two",
+        keyword: "multiple",
+      },
+      {
+        Component: ReciprocalProportionPanel,
+        caption:
+          "From CH4 (3 to 1) and CO2 (3 to 8), the reciprocal law predicts hydrogen to oxygen in water as 1 to 8 - exactly what H2O shows.",
+        alt: "Reciprocal proportions law methane carbon dioxide water exchange ratio prediction",
+        keyword: "reciprocal",
+      },
+      {
+        Component: GayLussacVolumePanel,
+        caption:
+          "Two volumes of hydrogen combine with one of chlorine to give two of hydrogen chloride - 2 to 1 to 2, simple whole numbers at fixed temperature and pressure.",
+        alt: "Gay lussac law of combining volumes hydrogen chlorine hydrogen chloride two one two",
+        keyword: "gay",
+      },
+      {
+        Component: LawsVsAtomicTheoryLink,
+        caption:
+          "Each law leans on a Dalton postulate: conservation on rearrangement, definite proportions on fixed ratios - the mapping exam answers reward.",
+        alt: "Laws of stoichiometry linked to Dalton postulates mapping table",
+        keyword: "link",
+      },
+    ],
+  },
+  "avogadro-s-law-and-some-deductions-molecular-mass-and-vapour-density-molecular-mass-and-volume-o": {
+    title: "Avogadro's law and deductions",
+    figures: [
+      {
+        Component: AvogadroLawStatement,
+        caption:
+          "Equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules - leading straight to V proportional to n and the 22.4 L molar volume.",
+        alt: "Avogadro law statement equal volumes equal molecules deduction molar volume",
+        keyword: "avogadro",
+      },
+      {
+        Component: VapourDensityDrill,
+        caption:
+          "Vapour density 22 means molecular mass 44 (M = 2 x VD) - the factor 2 comes from hydrogen's diatomic molecule.",
+        alt: "Solved vapour density to molecular mass factor two gas twenty two forty four",
+        keyword: "vapour",
+      },
+      {
+        Component: StpMolarVolumePanel,
+        caption:
+          "Hydrogen, oxygen and carbon dioxide fill the same 22.4 L box at STP with the same 6.022 x 10^23 molecules - mass differs, count does not.",
+        alt: "Molar volume twenty two point four litres at STP one mole any gas same count",
+        keyword: "stp",
+      },
+      {
+        Component: StpVolumeDrill,
+        caption:
+          "8.8 g of carbon dioxide is 0.2 mol, occupying 4.48 L at STP - the n times 22.4 conversion used in nearly every gaseous numerical.",
+        alt: "Solved STP volume of carbon dioxide eight point eight grams four point four eight litres",
+        keyword: "volume",
+      },
+      {
+        Component: AvogadroVsDaltonReconcile,
+        caption:
+          "Avogadro's molecule concept resolved Dalton versus Gay-Lussac: oxygen travels as O2, so one volume of O2 can furnish two half-units to two volumes of water.",
+        alt: "Avogadro hypothesis reconciles Dalton and Gay lussac diatomic oxygen molecule explanation",
+        keyword: "molecule",
+      },
+      {
+        Component: AvogadroDeductionsLadder,
+        caption:
+          "Five deductions: molar volume, M from density, M from vapour density, diatomic gas formulae, and the explanation of Gay-Lussac.",
+        alt: "Five deductions from Avogadro law molar volume density vapour density diatomic",
+        keyword: "deduction",
+      },
+      {
+        Component: GasDensityDrill,
+        caption:
+          "Density 1.965 g per litre at STP times 22.4 gives molecular mass 44 - but density alone cannot distinguish CO2 from C3H8.",
+        alt: "Solved gas density to molecular mass one point nine six five forty four",
+        keyword: "density",
+      },
+    ],
+  },
+  "mole-and-its-relation-with-mass-volume-and-number-of-particles": {
+    title: "The mole concept",
+    figures: [
+      {
+        Component: MoleConceptTriangle,
+        caption:
+          "One mole connects three doors: molar mass in grams, 22.4 L at STP for gases, and 6.022 x 10^23 particles - every stoichiometry problem walks this triangle.",
+        alt: "Mole concept triangle mass volume particles conversions",
+        keyword: "mole",
+      },
+      {
+        Component: MoleConversionDrill,
+        caption:
+          "18 g of water is 1 mol: 6.022 x 10^23 molecules, 1.807 x 10^24 atoms, 22.4 L as steam - four answers from one mass.",
+        alt: "Solved mole conversions for eighteen grams water molecules atoms volume",
+        keyword: "conversion",
+      },
+      {
+        Component: ParticleCountPanel,
+        caption:
+          "One mole of H2 (2 g), O2 (32 g) and Na (23 g) all hold 6.022 x 10^23 particles - the mole counts, grams weigh.",
+        alt: "Particle counts in one mole of hydrogen oxygen sodium same number different masses",
+        keyword: "particle",
+      },
+      {
+        Component: MolarMassTablePanel,
+        caption:
+          "Eight molar masses worth memorising - water 18, carbon dioxide 44, sodium chloride 58.5, sulphuric acid 98 and more - cover most NEB numericals.",
+        alt: "Molar mass quick reference table common compounds",
+        keyword: "table",
+      },
+      {
+        Component: MoleStpVolumePanel,
+        caption:
+          "The volume ladder n times 22.4: half a mole is 11.2 L, one mole 22.4 L, two moles 44.8 L - used in both directions.",
+        alt: "Mole and volume relationship ladder half one two three moles litres STP",
+        keyword: "volume",
+      },
+      {
+        Component: NumberOfParticlesDrill,
+        caption:
+          "4.4 g of carbon dioxide is 0.1 mol, so 6.022 x 10^22 molecules or 1.807 x 10^23 atoms - always name the particle counted.",
+        alt: "Solved number of molecules in carbon dioxide four point four grams",
+        keyword: "particles",
+      },
+      {
+        Component: GramAtomMoleTerms,
+        caption:
+          "Gram atom, gram molecule and gram ion are older names for one mole of atoms, molecules or ions - all 6.022 x 10^23 of the named particle.",
+        alt: "Gram atom gram molecule gram ion terminology one mole equivalents",
+        keyword: "gram",
+      },
+    ],
+  },
+  "calculations-based-on-mole-concept": {
+    title: "Mole-based calculations",
+    figures: [
+      {
+        Component: ConcentrationUnitsPanel,
+        caption:
+          "Molarity, molality, normality and mass percent each express concentration - the denominator (litre of solution vs kilogram of solvent) decides temperature dependence.",
+        alt: "Concentration units molarity molality normality mass percent definitions",
+        keyword: "molarity",
+      },
+      {
+        Component: MolarityDrill,
+        caption:
+          "4 g of sodium hydroxide in 500 mL is 0.1 mol in 0.5 L, hence 0.2 M - grams to grams, litres to litres.",
+        alt: "Solved molarity of sodium hydroxide four grams five hundred millilitres zero point two",
+        keyword: "molarity",
+      },
+      {
+        Component: MolalityVsMolarity,
+        caption:
+          "Molarity uses solution volume (temperature-sensitive); molality uses solvent mass (temperature-proof) - dilute aqueous solutions make them numerically close.",
+        alt: "Molality versus molarity comparison solvent mass solution volume temperature",
+        keyword: "molality",
+      },
+      {
+        Component: DilutionFormulaDrill,
+        caption:
+          "M1V1 = M2V2: making 500 mL of 0.5 M from 2 M stock needs 125 mL of stock diluted to the mark - moles are conserved, only water is added.",
+        alt: "Solved dilution M one V one equals M two V two stock solution",
+        keyword: "dilution",
+      },
+      {
+        Component: NormalityEquivalentsPanel,
+        caption:
+          "Normality equals molarity times the n-factor: sulphuric acid is 2 N per 1 M, sodium hydroxide 1 N per 1 M - and N1V1 = N2V2 settles titrations.",
+        alt: "Normality equals molarity times n factor equivalents sulphuric acid sodium hydroxide",
+        keyword: "normality",
+      },
+      {
+        Component: MassPercentDrill,
+        caption:
+          "10 g of salt in 90 g water is a 100 g solution, hence 10 percent by mass - divide by the solution, never the solvent.",
+        alt: "Solved mass percent ten gram salt ninety gram water ten percent",
+        keyword: "percent",
+      },
+      {
+        Component: SolutionPrepSteps,
+        caption:
+          "Weigh, dissolve, transfer with rinsings, make up to the mark, mix - preparing 250 mL of 0.1 M sodium carbonate needs exactly 2.65 g.",
+        alt: "Standard solution preparation steps volumetric flask technique sodium carbonate",
+        keyword: "solution",
+      },
+    ],
+  },
+  "limiting-reactant-and-excess-reactant": {
+    title: "Limiting and excess reactants",
+    figures: [
+      {
+        Component: LimitingReactantConcept,
+        caption:
+          "Ten slices of bread and seven of cheese make only five sandwiches - the exhausted ingredient rules. In chemistry, the reactant giving the smaller quotient is limiting.",
+        alt: "Limiting reactant sandwich analogy bread cheese runs out first controls product",
+        keyword: "limiting",
+      },
+      {
+        Component: LimitingReactantSteps,
+        caption:
+          "Balance, convert to moles, divide by coefficients, compare - the smaller quotient marks the limiting reactant every time.",
+        alt: "Limiting reactant four step method balance moles coefficients compare",
+        keyword: "steps",
+      },
+      {
+        Component: LimitingReactantDrill,
+        caption:
+          "4 mol H2 with 3 mol O2: hydrogen's quotient 2.0 beats oxygen's 3.0, so 4 mol water form and 1 mol oxygen (32 g) remains.",
+        alt: "Solved limiting reactant hydrogen oxygen water four mole product leftover",
+        keyword: "limiting",
+      },
+      {
+        Component: ExcessLeftoverPanel,
+        caption:
+          "Leftover equals initial minus consumed, converted through the equation ratio - and never subtract moles from grams.",
+        alt: "Excess reactant leftover calculation initial minus consumed remaining",
+        keyword: "excess",
+      },
+      {
+        Component: LimitingReagentRecipeDrill,
+        caption:
+          "28 g N2 with 9 g H2: nitrogen's quotient 1.0 is smaller, so 34 g ammonia form and 3 g hydrogen remains - Haber logic in one table.",
+        alt: "Solved limiting reagent ammonia synthesis nitrogen hydrogen yield thirty four grams",
+        keyword: "reagent",
+      },
+      {
+        Component: LimitingVsExcessTable,
+        caption:
+          "The limiting reactant is fully consumed and sets the yield; the excess reactant is partly left over and has no say in the product amount.",
+        alt: "Limiting versus excess reactant comparison table consumption yield leftover",
+        keyword: "excess",
+      },
+      {
+        Component: LimitingReagentStoichiometryFlow,
+        caption:
+          "In every calculation the limiting branch sits between mole conversion and product computation - single-reactant problems skip straight through.",
+        alt: "Stoichiometry flowchart limiting reactant branch moles coefficients product",
+        keyword: "flow",
+      },
+    ],
+  },
+  "theoretical-yield-experimental-yield-and-yield": {
+    title: "Yield calculations",
+    figures: [
+      {
+        Component: YieldTypesTrio,
+        caption:
+          "Theoretical yield comes from the equation, experimental from the flask, and percentage yield is their ratio times 100 - actual can never exceed theoretical.",
+        alt: "Yield types theoretical experimental percentage yield relationship",
+        keyword: "yield",
+      },
+      {
+        Component: YieldCalculationDrill,
+        caption:
+          "50 g calcium carbonate promises 28 g calcium oxide; the lab gave 21 g, so the percentage yield is 75 percent.",
+        alt: "Solved percentage yield calcium oxide fifty gram calcium carbonate seventy five percent",
+        keyword: "yield",
+      },
+      {
+        Component: YieldLossCauses,
+        caption:
+          "Side reactions, reversibility, mechanical transfer losses and purification losses each shave the yield - name two causes and one remedy for full marks.",
+        alt: "Causes of yield loss side reactions reversibility mechanical purification",
+        keyword: "loss",
+      },
+      {
+        Component: AtomEconomyPanel,
+        caption:
+          "Atom economy measures how much reactant mass the equation places in the desired product - a design score, independent of lab skill.",
+        alt: "Atom economy green chemistry desired product mass percentage",
+        keyword: "atom",
+      },
+      {
+        Component: TheoreticalYieldLadder,
+        caption:
+          "Given mass to moles, mole ratio, product mass, report - the four-rung ladder that ends at the 100 percent benchmark.",
+        alt: "Theoretical yield computation ladder moles ratio product mass",
+        keyword: "theoretical",
+      },
+      {
+        Component: YieldImprovementPanel,
+        caption:
+          "Push the equilibrium with excess reactant, remove product as it forms, catalyse, transfer quantitatively and recycle unreacted material - the Haber plant does all five.",
+        alt: "Improving yield strategies equilibrium catalysts technique recycling Haber",
+        keyword: "improve",
+      },
+      {
+        Component: YieldVsAtomEconomy,
+        caption:
+          "Percentage yield judges the lab; atom economy judges the route - a 100 percent yield can still waste atoms, and vice versa.",
+        alt: "Percentage yield versus atom economy comparison lab versus design efficiency",
+        keyword: "economy",
+      },
+    ],
+  },
+  "calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble": {
+    title: "Empirical and molecular formulae",
+    figures: [
+      {
+        Component: EmpiricalFormulaSteps,
+        caption:
+          "Assume 100 g, convert to moles, divide by the smallest, clear fractions, write the ratio - the five-step machine for empirical formulae.",
+        alt: "Empirical formula determination five steps percentages moles whole number ratio",
+        keyword: "empirical",
+      },
+      {
+        Component: EmpiricalFormulaDrill,
+        caption:
+          "40 percent C, 6.7 percent H, 53.3 percent O gives mole ratio 1 to 2 to 1, hence CH2O - and with M = 180, glucose C6H12O6.",
+        alt: "Solved empirical formula forty percent carbon hydrogen oxygen CH2O",
+        keyword: "empirical",
+      },
+      {
+        Component: CombustionAnalysisPanel,
+        caption:
+          "Burning a compound and absorbing the water in calcium chloride and the carbon dioxide in potassium hydroxide recovers carbon and hydrogen masses directly.",
+        alt: "Combustion analysis apparatus water carbon dioxide absorbers calcium chloride potassium hydroxide",
+        keyword: "combustion",
+      },
+      {
+        Component: MolecularFromEmpiricalDrill,
+        caption:
+          "Empirical CH2O with molar mass 60: formula mass 30, multiplier n = 2, molecular formula C2H4O2 (acetic acid) - and M = 180 would give glucose.",
+        alt: "Solved molecular formula from empirical CH2O molar mass sixty acetic acid",
+        keyword: "molecular",
+      },
+      {
+        Component: HydrationFormulaDrill,
+        caption:
+          "Copper sulphate pentahydrate loses 90 g of its 250 g as water - 36 percent exactly; the same ratio method finds x in any hydrate.",
+        alt: "Solved water of crystallisation copper sulphate pentahydrate thirty six percent",
+        keyword: "water",
+      },
+      {
+        Component: RatioClearingPanel,
+        caption:
+          "Fractional mole ratios are cleared by multiplying every element by the same factor - 0.5 means times 2, 0.33 times 3, 0.25 times 4.",
+        alt: "Ratio clearing fractional mole ratios multiply whole numbers empirical formula",
+        keyword: "ratio",
+      },
+      {
+        Component: PercentToFormulaFlow,
+        caption:
+          "Percentages give the empirical formula; molar mass from vapour density or STP density gives n; the product is the molecular formula - the most examined chain in stoichiometry.",
+        alt: "Percentage data to molecular formula flowchart empirical molar mass multiplier",
+        keyword: "formula",
       },
     ],
   },
