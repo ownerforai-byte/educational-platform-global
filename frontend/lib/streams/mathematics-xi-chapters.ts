@@ -13,6 +13,7 @@
 
 export const MATH_XI_WORKBOOK_BASE = "/resources/mathematics-xi/chapters";
 export const MATH_XI_QUESTIONS_PER_SHEET = 12;
+export const MATH_XI_HARD_PER_SHEET = 6;
 
 export interface MathXiChapter {
   /** URL and file slug. */
@@ -30,6 +31,10 @@ export interface MathXiChapter {
   questionCount: number;
   /** A4 sheets (12 questions each) produced for the chapter. */
   sheetCount: number;
+  /** Hardest-question problems (hint ladder + full solution). 0 when unauthored. */
+  hardCount: number;
+  /** A4 hard sheets (6 problems each). */
+  hardSheetCount: number;
 }
 
 export const MATH_XI_CHAPTERS: MathXiChapter[] = [
@@ -43,6 +48,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Statements and connectives","Truth values","Sets and Venn diagrams","Cardinality"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "real-numbers-modulus",
@@ -54,6 +61,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Modulus and distance","Intervals","Surds and rationalisation","Inequalities"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "functions",
@@ -65,6 +74,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Domain and range","Composite functions","Inverse functions","Graphs and extrema"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "curve-sketching",
@@ -76,6 +87,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Odd and even functions","Periodicity","Standard curves","Transformations"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "sequence-and-series",
@@ -87,6 +100,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Arithmetic progression","Geometric progression","Sums to n and to infinity","Means"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "matrices-and-determinants",
@@ -98,6 +113,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Algebra of matrices","Determinants","Inverse of a matrix","Solving systems"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "quadratic-equations",
@@ -109,6 +126,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Roots and coefficients","Nature of roots","Forming equations","Applications"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "complex-numbers",
@@ -120,6 +139,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Algebra of complex numbers","Modulus and argument","Polar form","Roots and equations"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "inverse-circular-functions",
@@ -131,6 +152,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Principal values","Inverse identities","Composition with trig functions","Simple equations"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "combination-formulae",
@@ -142,6 +165,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Addition and subtraction","Double and half angles","Product-to-sum","Conditional identities"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "general-values",
@@ -153,6 +178,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["sin θ = k","cos θ = k","tan θ = k","Equations reducible to quadratics"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "interval-equations",
@@ -164,6 +191,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Linear equations","Quadratic equations","Multiple angles","Mixed equations"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "distance-and-bisectors",
@@ -175,6 +204,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Perpendicular distance","Distance between parallel lines","Angle bisectors","Bisector of a given region"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "pair-of-straight-lines",
@@ -186,6 +217,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Homogeneous pairs","Angle between a pair","Condition for a real pair","Slopes and special cases"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "coordinates-in-space",
@@ -197,6 +230,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Distance and section formulae","Direction cosines and ratios","Angle between lines","Parallel and perpendicular tests"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "vector-algebra-products",
@@ -208,6 +243,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Magnitude and unit vector","Dot product","Cross product","Area, angle and projection"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "collinear-coplanar",
@@ -219,6 +256,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Collinearity","Coplanarity by triple product","Perpendicular and unit vectors","Volume applications"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "linear-combination",
@@ -230,6 +269,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Linear combination","Dependence and independence","Basis in the plane and in space","Vector proofs"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "dispersion-cv-skewness",
@@ -241,6 +282,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Range and mean deviation","Variance and standard deviation","Coefficient of variation","Skewness"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "probability-basics",
@@ -252,6 +295,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Sample space","Classical probability","Complementary events","Empirical probability"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "addition-multiplication-laws",
@@ -263,6 +308,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Addition law","Multiplication law","Independence","Conditional probability"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "limits",
@@ -274,6 +321,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Direct substitution","Indeterminate forms","Standard limits","Limits at infinity"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "continuity",
@@ -285,6 +334,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Continuity at a point","Types of discontinuity","Finding constants","Continuity and differentiability"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "first-principles",
@@ -296,6 +347,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["The definition","Polynomials","Rational and root functions","Trigonometric functions"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "differentiation-rules",
@@ -307,6 +360,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Power and sum","Product and quotient","Chain rule","Exponential, log and trig"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "implicit-parametric-higher",
@@ -318,6 +373,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Implicit differentiation","Parametric differentiation","Second derivatives","Motion and rates"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "extrema-tangents",
@@ -329,6 +386,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Increasing and decreasing","Maxima and minima","Tangents and normals","Concavity and absolute extrema"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "anti-derivatives",
@@ -340,6 +399,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Standard integrals","Substitution","By parts","Trigonometric integrals"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "definite-integrals-area",
@@ -351,6 +412,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Evaluation","Properties","Area under a curve","Area between curves"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 6,
+    hardSheetCount: 1,
   },
   {
     slug: "bisection-method",
@@ -362,6 +425,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Sign-change test","Bisection steps","Iteration tables","Accuracy and error"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "newton-raphson-method",
@@ -373,6 +438,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["The formula","Iteration steps","Convergence","Comparison with bisection"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "trapezoidal-rule",
@@ -384,6 +451,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["The formula","Building the table","Error behaviour","Comparing with the exact value"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "simpson-rule",
@@ -395,6 +464,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["The formula","Odd/even strip requirement","Error order","Comparing with the trapezoidal rule"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "statics-forces",
@@ -406,6 +477,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["Resolution of a force","Resultant of two forces","Equilibrium","Applied problems"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
   {
     slug: "dynamics-kinematics",
@@ -417,6 +490,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     topics: ["The three equations","Free fall","Retardation","Multi-stage motion"],
     questionCount: 24,
     sheetCount: 2,
+    hardCount: 0,
+    hardSheetCount: 0,
   },
 ];
 
@@ -426,7 +501,23 @@ export const MATH_XI_WORKBOOK_TOTALS = {
   questions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.questionCount, 0),
   sheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.sheetCount, 0),
   perSheet: MATH_XI_QUESTIONS_PER_SHEET,
+  hardChapters: MATH_XI_CHAPTERS.filter((chapter) => chapter.hardCount > 0).length,
+  hardQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardCount, 0),
+  hardSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardSheetCount, 0),
+  hardPerSheet: MATH_XI_HARD_PER_SHEET,
 };
+
+export function mathXiHardUrl(chapter: Pick<MathXiChapter, "slug">): string {
+  return `${MATH_XI_WORKBOOK_BASE}/hard/${chapter.slug}.html`;
+}
+
+export function mathXiHardPath(chapter: Pick<MathXiChapter, "slug">): string {
+  return `public/resources/mathematics-xi/chapters/hard/${chapter.slug}.html`;
+}
+
+export function mathXiHardChapters(): MathXiChapter[] {
+  return MATH_XI_CHAPTERS.filter((chapter) => chapter.hardCount > 0);
+}
 
 export function mathXiChapterUrl(chapter: Pick<MathXiChapter, "slug">): string {
   return `${MATH_XI_WORKBOOK_BASE}/${chapter.slug}.html`;

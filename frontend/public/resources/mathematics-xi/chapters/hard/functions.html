@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.3 Functions: Domain, Range, Composite and Inverse — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Functions: Domain, Range, Composite and Inverse — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Functions: Domain, Range, Composite and Inverse — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>1.3 · Functions: Domain, Range, Composite and Inverse — hardest questions</h1>
+<p class="topics"><b>Topics</b> Domain and range · Composite functions · Inverse functions · Graphs and extrema</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Domain and range</span> <span class="kind">Domain and range</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Find the domain and range of f(x) = √(x² − 4).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> A square root needs a non-negative radicand.</li>
+<li><b>H2.</b> x² ≥ 4 gives |x| ≥ 2 — two separate pieces of the line.</li>
+<li><b>H3.</b> The output of a square root is never negative and is unbounded above.</li>
+</ol>
+<p class="work">x² − 4 ≥ 0 ⇒ x ≤ −2 or x ≥ 2
+f(x) ≥ 0 and f(x) → ∞ as |x| → ∞</p>
+<p class="ans">domain (−∞, −2] ∪ [2, ∞); range [0, ∞)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Composite functions</span> <span class="kind">Composite</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>If f(x) = 2x + 3 and g(x) = x², find (g∘f)(x) and (f∘g)(x) and show they are different.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> (g∘f)(x) means g(f(x)): the inner function is f.</li>
+<li><b>H2.</b> Substitute 2x + 3 into x² for one, and x² into 2x + 3 for the other.</li>
+<li><b>H3.</b> Expand the first result and compare term by term.</li>
+</ol>
+<p class="work">(g∘f)(x) = (2x + 3)² = 4x² + 12x + 9
+(f∘g)(x) = 2x² + 3</p>
+<p class="ans">they differ (4x² + 12x + 9 ≠ 2x² + 3): composition is not commutative</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Inverse functions</span> <span class="kind">Inverse function</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Show that f(x) = (x + 1)/(x − 1) is its own inverse.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write y = (x + 1)/(x − 1) and solve for x in terms of y.</li>
+<li><b>H2.</b> Cross-multiply: y(x − 1) = x + 1.</li>
+<li><b>H3.</b> Collect the x terms on one side and divide.</li>
+</ol>
+<p class="work">yx − y = x + 1
+x(y − 1) = y + 1
+x = (y + 1)/(y − 1)</p>
+<p class="ans">f⁻¹(x) = (x + 1)/(x − 1) = f(x) — an involution</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Domain and range</span> <span class="kind">Domain</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Find the domain of f(x) = log(x − 1) + √(5 − x).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> A logarithm needs a strictly positive argument.</li>
+<li><b>H2.</b> A square root needs a non-negative argument.</li>
+<li><b>H3.</b> The domain is the intersection of x &gt; 1 and x ≤ 5.</li>
+</ol>
+<p class="work">x − 1 &gt; 0 ⇒ x &gt; 1
+5 − x ≥ 0 ⇒ x ≤ 5
+intersection: 1 &lt; x ≤ 5</p>
+<p class="ans">domain (1, 5]</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Composite functions</span> <span class="kind">Composite</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>If f(x) = x/(x + 1), find and simplify f(f(x)).&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Replace every x in the formula by x/(x + 1).</li>
+<li><b>H2.</b> The new denominator is x/(x + 1) + 1.</li>
+<li><b>H3.</b> Clear the compound fraction by multiplying by (x + 1).</li>
+</ol>
+<p class="work">f(f(x)) = [x/(x+1)] / [x/(x+1) + 1]
+= [x/(x+1)] / [(x + x + 1)/(x+1)]
+= x/(2x + 1)</p>
+<p class="ans">f(f(x)) = x/(2x + 1), with x ≠ −1, −1/2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Inverse functions</span> <span class="kind">Bijection</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Show that f(x) = x³ is one-one and onto on ℝ, then write f⁻¹.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> One-one: suppose f(a) = f(b) and take cube roots.</li>
+<li><b>H2.</b> Onto: given any real y, name an x with x³ = y.</li>
+<li><b>H3.</b> For the inverse, swap x and y and solve.</li>
+</ol>
+<p class="work">a³ = b³ ⇒ a = b (one-one)
+for every y ∈ ℝ, f(y^{1/3}) = y (onto)
+y = x³ ⇒ x = y^{1/3}</p>
+<p class="ans">bijective; f⁻¹(x) = x^{1/3}</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 1 · Algebra</span>
+<span class="mid">Functions: Domain, Range, Composite and Inverse · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

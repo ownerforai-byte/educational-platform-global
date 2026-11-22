@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.3 Derivatives from First Principles — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Derivatives from First Principles — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Derivatives from First Principles — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>6.3 · Derivatives from First Principles — hardest questions</h1>
+<p class="topics"><b>Topics</b> The definition · Polynomials · Rational and root functions · Trigonometric functions</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Polynomials</span> <span class="kind">Polynomial</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Differentiate y = x² + 3x − 2 from first principles.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write f(x + h) − f(x) and expand the square.</li>
+<li><b>H2.</b> Cancel every term that is free of h.</li>
+<li><b>H3.</b> Divide by h, then let h → 0.</li>
+</ol>
+<p class="work">[(x+h)² + 3(x+h) − 2 − (x² + 3x − 2)]/h
+= (2xh + h² + 3h)/h
+= 2x + 3 + h → 2x + 3</p>
+<p class="ans">dy/dx = 2x + 3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Rational and root functions</span> <span class="kind">Root function</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Differentiate y = 1/√x from first principles.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Form the difference quotient and put it over a common denominator.</li>
+<li><b>H2.</b> Rationalise the numerator √x − √(x + h).</li>
+<li><b>H3.</b> After cancelling h the denominator contains 2x√x.</li>
+</ol>
+<p class="work">[√x − √(x+h)]/[h√x√(x+h)] · [√x + √(x+h)]/[√x + √(x+h)]
+= −1/[√x√(x+h)(√x + √(x+h))]
+→ −1/(2x√x)</p>
+<p class="ans">dy/dx = −1/(2x^{3/2})</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Trigonometric functions</span> <span class="kind">Trigonometric</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Differentiate y = sin 2x from first principles.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Expand sin(2x + 2h) with the addition formula.</li>
+<li><b>H2.</b> Group into sin2x(cos2h − 1) + cos2x sin2h.</li>
+<li><b>H3.</b> Use (cos2h − 1)/h → 0 and sin2h/h → 2.</li>
+</ol>
+<p class="work">[sin2x(cos2h − 1) + cos2x sin2h]/h
+→ sin2x·0 + cos2x·2</p>
+<p class="ans">dy/dx = 2 cos 2x</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Rational and root functions</span> <span class="kind">Root function</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Differentiate y = √(2x + 1) from first principles.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Rationalise √(2x + 2h + 1) − √(2x + 1).</li>
+<li><b>H2.</b> The numerator becomes 2h after rationalising.</li>
+<li><b>H3.</b> Divide by h and let h → 0 in the surviving denominator.</li>
+</ol>
+<p class="work">2h/[h(√(2x+2h+1) + √(2x+1))]
+→ 2/[2√(2x+1)]</p>
+<p class="ans">dy/dx = 1/√(2x + 1)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Trigonometric functions</span> <span class="kind">Trigonometric</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Differentiate y = cos x from first principles.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Expand cos(x + h) = cosx cosh − sinx sinh.</li>
+<li><b>H2.</b> Separate the two standard limits (cosh − 1)/h and sinh/h.</li>
+<li><b>H3.</b> The first tends to 0 and the second to 1.</li>
+</ol>
+<p class="work">[cosx(cosh − 1) − sinx sinh]/h
+→ cosx·0 − sinx·1</p>
+<p class="ans">dy/dx = −sin x</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Polynomials</span> <span class="kind">Polynomial</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Differentiate y = (2x + 1)² from first principles and check the answer by expanding first.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Treat the quotient as a difference of squares and factor.</li>
+<li><b>H2.</b> One factor is 2h; divide it out.</li>
+<li><b>H3.</b> Expand (2x + 1)² and differentiate term by term as a check.</li>
+</ol>
+<p class="work">[(2x + 2h + 1)² − (2x + 1)²]/h
+= 4(2x + 1) + 4h → 4(2x + 1)
+check: y = 4x² + 4x + 1 ⇒ y′ = 8x + 4</p>
+<p class="ans">dy/dx = 8x + 4</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 6 · Calculus</span>
+<span class="mid">Derivatives from First Principles · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

@@ -3,11 +3,15 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   MATH_XI_CHAPTERS,
+  MATH_XI_HARD_PER_SHEET,
   MATH_XI_QUESTIONS_PER_SHEET,
   MATH_XI_WORKBOOK_TOTALS,
   mathXiChapterPath,
   mathXiChapterUrl,
   mathXiChaptersByUnit,
+  mathXiHardChapters,
+  mathXiHardPath,
+  mathXiHardUrl,
 } from "@/lib/streams/mathematics-xi-chapters";
 import { MATHEMATICS_XI_UNITS } from "@/lib/streams/mathematics-xi-solutions";
 
@@ -161,6 +165,60 @@ describe("Mathematics XI — A4 chapter workbook", () => {
       // layout lives in the shared sheet — no per-document page styling
       expect(html).not.toContain("<style");
     }
+  });
+});
+
+describe("Mathematics XI — hard sets with hint ladders", () => {
+  it("prints 6 problems per A4 sheet, each with three escalating hints", () => {
+    expect(MATH_XI_HARD_PER_SHEET).toBe(6);
+
+    let problems = 0;
+    let sheets = 0;
+
+    for (const chapter of mathXiHardChapters()) {
+      const html = read(mathXiHardPath(chapter));
+      const sectionCount = (html.match(/<section class="sheet"/g) ?? []).length;
+      const cells = html.match(/<div class="cell">/g) ?? [];
+      const answerLines = html.match(/<p class="ans">/g) ?? [];
+      const workLines = html.match(/<p class="work">/g) ?? [];
+      const hintItems = html.match(/<li><b>H\d+\.<\/b>/g) ?? [];
+
+      expect(sectionCount, `${chapter.slug}: hard sheets`).toBe(chapter.hardSheetCount);
+      expect(cells.length, `${chapter.slug}: hard problems`).toBe(chapter.hardCount);
+      expect(answerLines.length).toBe(chapter.hardCount);
+      expect(workLines.length).toBe(chapter.hardCount);
+      expect(hintItems.length, `${chapter.slug}: one hint per step`).toBe(chapter.hardCount * 3);
+      expect(cells.length % MATH_XI_HARD_PER_SHEET).toBe(0);
+      expect(html).toContain("/resources/mathematics-xi/a4/hard.css");
+      expect(html).not.toContain("<style");
+
+      problems += chapter.hardCount;
+      sheets += chapter.hardSheetCount;
+    }
+
+    expect(problems).toBe(MATH_XI_WORKBOOK_TOTALS.hardQuestions);
+    expect(sheets).toBe(MATH_XI_WORKBOOK_TOTALS.hardSheets);
+    expect(problems).toBeGreaterThan(0);
+  });
+
+  it("covers both heavy-mark units and links back from the chapter sheet", () => {
+    const units = new Set(mathXiHardChapters().map((chapter) => chapter.unitNo));
+    expect([...units].sort((a, b) => a - b)).toEqual([1, 6]);
+
+    for (const chapter of mathXiHardChapters()) {
+      expect(existsSync(resolve(ROOT, mathXiHardPath(chapter)))).toBe(true);
+      expect(mathXiHardUrl(chapter)).toBe(`/resources/mathematics-xi/chapters/hard/${chapter.slug}.html`);
+      expect(read(mathXiChapterPath(chapter))).toContain(mathXiHardUrl(chapter));
+    }
+  });
+
+  it("lists every hard set on the generated hard contents sheet", () => {
+    const index = read("public/resources/mathematics-xi/chapters/hard/index.html");
+    for (const chapter of mathXiHardChapters()) {
+      expect(index).toContain(`/resources/mathematics-xi/chapters/hard/${chapter.slug}.html`);
+      expect(index).toContain(`${chapter.hardCount} hard Q`);
+    }
+    expect(index).toContain("3 hints each");
   });
 });
 

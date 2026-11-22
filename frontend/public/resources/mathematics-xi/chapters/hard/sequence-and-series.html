@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.5 Sequence and Series — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Sequence and Series — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Sequence and Series — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>1.5 · Sequence and Series — hardest questions</h1>
+<p class="topics"><b>Topics</b> Arithmetic progression · Geometric progression · Sums to n and to infinity · Means</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Sums to n and to infinity</span> <span class="kind">Series summation</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Find the sum of n terms of the series 3 + 33 + 333 + …&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write each term as 3(1 + 10 + … + 10^{k−1}) = (10^k − 1)/3.</li>
+<li><b>H2.</b> Split into two sums: a geometric sum of 10^k and n copies of 1.</li>
+<li><b>H3.</b> Add the geometric progression 10 + 10² + … + 10ⁿ.</li>
+</ol>
+<p class="work">S = Σ(10^k − 1)/3 = (1/3)[10(10ⁿ − 1)/9 − n]
+= (10^{n+1} − 10 − 9n)/27</p>
+<p class="ans">Sₙ = (10^{n+1} − 9n − 10)/27</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Geometric progression</span> <span class="kind">Geometric progression</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>In a GP the third term is 4 and the fifth term is 16. Find a and r and the sum of eight terms.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write the terms as ar² = 4 and ar⁴ = 16.</li>
+<li><b>H2.</b> Divide the second equation by the first to isolate r².</li>
+<li><b>H3.</b> With r known, recover a, then use Sₙ = a(rⁿ − 1)/(r − 1).</li>
+</ol>
+<p class="work">ar² = 4, ar⁴ = 16 ⇒ r² = 4 ⇒ r = 2
+a·4 = 4 ⇒ a = 1
+S₈ = (2⁸ − 1)/(2 − 1) = 255</p>
+<p class="ans">a = 1, r = 2, S₈ = 255</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Sums to n and to infinity</span> <span class="kind">Telescoping</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Sum the series 1/(1·2) + 1/(2·3) + … + 1/(n(n+1)).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Split each term by partial fractions.</li>
+<li><b>H2.</b> 1/(k(k+1)) = 1/k − 1/(k+1).</li>
+<li><b>H3.</b> Write the sum out and watch the adjacent terms cancel.</li>
+</ol>
+<p class="work">S = (1 − 1/2) + (1/2 − 1/3) + … + (1/n − 1/(n+1))
+= 1 − 1/(n+1)</p>
+<p class="ans">Sₙ = n/(n+1)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Means</span> <span class="kind">Means</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>For the numbers 4 and 9, write the AM, GM and HM and verify GM² = AM · HM.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> AM = (a + b)/2, GM = √(ab), HM = 2ab/(a + b).</li>
+<li><b>H2.</b> Compute each value for a = 4, b = 9.</li>
+<li><b>H3.</b> Multiply AM by HM and compare with GM squared.</li>
+</ol>
+<p class="work">AM = 13/2 = 6.5
+GM = √36 = 6
+HM = 72/13 ≈ 5.538
+AM·HM = 6.5 × 72/13 = 36 = GM²</p>
+<p class="ans">AM = 6.5, GM = 6, HM = 72/13, and G² = A·H holds</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Arithmetic progression</span> <span class="kind">Arithmetic progression</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>How many terms of the series 1 + 3 + 5 + … are needed to reach the sum 400?&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The nth term is 2n − 1, so this is an AP with a = 1, d = 2.</li>
+<li><b>H2.</b> The sum of the first n odd numbers is n².</li>
+<li><b>H3.</b> Solve n² = 400 and keep the positive integer root.</li>
+</ol>
+<p class="work">Sₙ = n² = 400 ⇒ n = 20
+last term = 2(20) − 1 = 39</p>
+<p class="ans">20 terms (1 + 3 + … + 39 = 400)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Sums to n and to infinity</span> <span class="kind">Infinite GP</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Express the recurring decimal 0.444… as a fraction using a geometric series.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write 0.444… = 4/10 + 4/100 + 4/1000 + ….</li>
+<li><b>H2.</b> This is an infinite GP with a = 0.4 and r = 0.1.</li>
+<li><b>H3.</b> Use S∞ = a/(1 − r).</li>
+</ol>
+<p class="work">S∞ = 0.4/(1 − 0.1) = 0.4/0.9</p>
+<p class="ans">0.4̄ = 4/9</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 1 · Algebra</span>
+<span class="mid">Sequence and Series · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

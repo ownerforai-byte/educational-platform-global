@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.4 Rules of Differentiation — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Rules of Differentiation — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Rules of Differentiation — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>6.4 · Rules of Differentiation — hardest questions</h1>
+<p class="topics"><b>Topics</b> Power and sum · Product and quotient · Chain rule · Exponential, log and trig</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Product and quotient</span> <span class="kind">Product rule</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Differentiate y = x² e^{3x}.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Use the product rule with u = x² and v = e^{3x}.</li>
+<li><b>H2.</b> Differentiate v by the chain rule: v′ = 3e^{3x}.</li>
+<li><b>H3.</b> Factor e^{3x} out of the two terms.</li>
+</ol>
+<p class="work">y′ = 2x·e^{3x} + x²·3e^{3x}</p>
+<p class="ans">dy/dx = e^{3x}(3x² + 2x)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Exponential, log and trig</span> <span class="kind">Logarithm</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Differentiate y = ln(sin x).&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> This is ln u with u = sin x.</li>
+<li><b>H2.</b> dy/dx = (1/u)·du/dx.</li>
+<li><b>H3.</b> cos x/sin x simplifies to cot x.</li>
+</ol>
+<p class="work">y′ = (1/sinx)·cosx</p>
+<p class="ans">dy/dx = cot x</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Product and quotient</span> <span class="kind">Quotient rule</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Differentiate y = sin x/(1 + cos x).&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Apply the quotient rule with u = sinx, v = 1 + cosx.</li>
+<li><b>H2.</b> The numerator becomes cosx(1 + cosx) + sin²x.</li>
+<li><b>H3.</b> Use sin²x + cos²x = 1 and factor (1 + cosx).</li>
+</ol>
+<p class="work">y′ = [cosx(1 + cosx) + sin²x]/(1 + cosx)²
+= (1 + cosx)/(1 + cosx)²</p>
+<p class="ans">dy/dx = 1/(1 + cos x)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Chain rule</span> <span class="kind">Chain rule</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Differentiate y = tan⁻¹(2x/(1 − x²)).&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Substitute x = tan θ so the argument becomes tan 2θ.</li>
+<li><b>H2.</b> For |x| &lt; 1 the function is 2θ = 2 tan⁻¹x.</li>
+<li><b>H3.</b> Differentiate the simplified form.</li>
+</ol>
+<p class="work">x = tanθ ⇒ 2x/(1 − x²) = tan2θ
+y = 2tan⁻¹x ⇒ y′ = 2/(1 + x²)</p>
+<p class="ans">dy/dx = 2/(1 + x²)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Product and quotient</span> <span class="kind">Product rule</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Differentiate y = e^{x²} ln x.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Product rule with u = e^{x²} and v = ln x.</li>
+<li><b>H2.</b> u′ = 2x e^{x²} by the chain rule.</li>
+<li><b>H3.</b> Write the result over a common denominator if you wish.</li>
+</ol>
+<p class="work">y′ = 2x e^{x²}·lnx + e^{x²}·(1/x)</p>
+<p class="ans">dy/dx = e^{x²}(2x ln x + 1/x)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Product and quotient</span> <span class="kind">Quotient rule</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Find dy/dx at x = 2 for y = (1 + x²)/(1 − x²).&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Quotient rule: (u′v − uv′)/v² with u = 1 + x², v = 1 − x².</li>
+<li><b>H2.</b> At x = 2: u′ = 4, v = −3, v′ = −4.</li>
+<li><b>H3.</b> Substitute carefully, keeping the signs.</li>
+</ol>
+<p class="work">y′ = [4(−3) − 5(−4)]/9
+= (−12 + 20)/9</p>
+<p class="ans">dy/dx at x = 2 is 8/9</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 6 · Calculus</span>
+<span class="mid">Rules of Differentiation · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.1 Limits and Indeterminate Forms — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Limits and Indeterminate Forms — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Limits and Indeterminate Forms — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>6.1 · Limits and Indeterminate Forms — hardest questions</h1>
+<p class="topics"><b>Topics</b> Direct substitution · Indeterminate forms · Standard limits · Limits at infinity</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Indeterminate forms</span> <span class="kind">Rationalisation</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Evaluate lim(x→0) (√(1 + x) − 1)/x.&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Direct substitution gives 0/0, so the form is indeterminate.</li>
+<li><b>H2.</b> Rationalise the numerator by multiplying by its conjugate over itself.</li>
+<li><b>H3.</b> The numerator then collapses to x, which cancels with the denominator.</li>
+</ol>
+<p class="work">[(1 + x) − 1]/[x(√(1 + x) + 1)]
+= x/[x(√(1 + x) + 1)]
+= 1/(√(1 + x) + 1) → 1/2</p>
+<p class="ans">1/2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Standard limits</span> <span class="kind">Standard limits</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Evaluate lim(x→0) (tan x − sin x)/x³.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write tan x = sin x/cos x and take sin x out as a common factor.</li>
+<li><b>H2.</b> The bracket becomes (1 − cos x)/cos x.</li>
+<li><b>H3.</b> Split into three standard limits: sinx/x → 1, (1 − cosx)/x² → 1/2, 1/cosx → 1.</li>
+</ol>
+<p class="work">sinx(1 − cosx)/(x³ cosx)
+= (sinx/x)·[(1 − cosx)/x²]·(1/cosx)
+→ 1 · 1/2 · 1</p>
+<p class="ans">1/2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Limits at infinity</span> <span class="kind">Limits at infinity</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Evaluate lim(x→∞) (√(x² + x) − x).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Multiply and divide by the conjugate √(x² + x) + x.</li>
+<li><b>H2.</b> The numerator becomes (x² + x) − x² = x.</li>
+<li><b>H3.</b> Divide numerator and denominator by x before letting x → ∞.</li>
+</ol>
+<p class="work">x/[√(x² + x) + x]
+= 1/[√(1 + 1/x) + 1] → 1/2</p>
+<p class="ans">1/2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Indeterminate forms</span> <span class="kind">Factorising</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Evaluate lim(x→1) (x³ − 1)/(x² − 1).&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Both numerator and denominator vanish at x = 1.</li>
+<li><b>H2.</b> Factor x³ − 1 = (x − 1)(x² + x + 1) and x² − 1 = (x − 1)(x + 1).</li>
+<li><b>H3.</b> Cancel (x − 1), then substitute x = 1.</li>
+</ol>
+<p class="work">(x² + x + 1)/(x + 1) → 3/2</p>
+<p class="ans">3/2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Standard limits</span> <span class="kind">Standard limits</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Evaluate lim(x→0) (1 − cos 4x)/x².&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Use 1 − cos 2u = 2 sin²u with u = 2x.</li>
+<li><b>H2.</b> Write sin²2x/x² as 4·(sin2x/2x)².</li>
+<li><b>H3.</b> Use sinθ/θ → 1 as θ → 0.</li>
+</ol>
+<p class="work">1 − cos4x = 2sin²2x
+2sin²2x/x² = 2·4·(sin2x/2x)² → 8</p>
+<p class="ans">8</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Indeterminate forms</span> <span class="kind">Proof</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Using first principles of limits, show that lim(x→a) (x³ − a³)/(x − a) = 3a².&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Factor the difference of cubes.</li>
+<li><b>H2.</b> x³ − a³ = (x − a)(x² + ax + a²).</li>
+<li><b>H3.</b> Cancel and substitute x = a.</li>
+</ol>
+<p class="work">(x − a)(x² + ax + a²)/(x − a) = x² + ax + a²
+→ a² + a² + a²</p>
+<p class="ans">3a² — the n = 3 case of lim (xⁿ − aⁿ)/(x − a) = n a^{n−1}</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 6 · Calculus</span>
+<span class="mid">Limits and Indeterminate Forms · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

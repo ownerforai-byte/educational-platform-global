@@ -314,3 +314,12 @@ body {
     break-inside: avoid;
   }
 }
+
+/* deep link from a chapter sheet to its hard set */
+.masthead .note .hardlink {
+  color: #b45309;
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 0.2mm dotted #b45309;
+}

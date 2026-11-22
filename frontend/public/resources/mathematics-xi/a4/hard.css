@@ -1,0 +1,305 @@
+/* Mathematics XI — hard-question sheets ("hint ladder").
+ *
+ * One A4 sheet per chapter: 2 columns × 3 rows = 6 hard problems.
+ * Each cell carries the statement, three escalating hints, the full
+ * NEB-style solution and the answer line.
+ *
+ * Print: Ctrl/⌘ + P → A4, portrait, no margins ("Default" scale).
+ */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+:root {
+  --ink: #14181f;
+  --muted: #5b6472;
+  --line: #c7ccd6;
+  --hint: #7a5a00;
+  --hint-bg: #fff8e6;
+  --work-bg: #f3f6f9;
+  --accent: #1f4e79;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #e9ebef;
+  color: var(--ink);
+  font-family: "Segoe UI", "Noto Sans", Arial, sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.sheet {
+  width: 210mm;
+  height: 297mm;
+  padding: 9mm 10mm 7mm;
+  margin: 0 auto 8mm;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 1mm 3mm rgba(0, 0, 0, 0.18);
+}
+
+.sheet + .sheet {
+  page-break-before: always;
+}
+
+/* ---------------- masthead ---------------- */
+
+.masthead .stream {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  font-size: 6.6pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 0.3mm solid var(--line);
+  padding-bottom: 1.2mm;
+}
+
+.masthead h1 {
+  margin: 1.6mm 0 0.6mm;
+  font-size: 12.5pt;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.masthead .topics {
+  margin: 0;
+  font-size: 6.9pt;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+.masthead .topics b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.masthead .note {
+  margin: 1.2mm 0 0;
+  font-size: 6.6pt;
+  font-style: italic;
+  color: var(--accent);
+  border-top: 0.2mm dotted var(--line);
+  padding-top: 0.9mm;
+}
+
+/* ---------------- hard grid ---------------- */
+
+.grid {
+  flex: 1;
+  display: grid;
+  gap: 3.2mm;
+  margin-top: 2.6mm;
+  min-height: 0;
+}
+
+.grid.hard {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  border: 0.3mm solid var(--line);
+  border-radius: 1.4mm;
+  padding: 2mm 2.4mm 2.2mm;
+  background: #fff;
+}
+
+.cell .tag {
+  margin: 0 0 0.8mm;
+  font-size: 5.9pt;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm;
+  align-items: center;
+}
+
+.cell .kind {
+  border: 0.2mm solid #b9c0cc;
+  border-radius: 0.8mm;
+  padding: 0.1mm 0.9mm;
+  font-size: 5.6pt;
+  color: #3b4453;
+  background: #f3f5f8;
+}
+
+.cell .level {
+  border: 0.2mm solid #b45309;
+  border-radius: 0.8mm;
+  padding: 0.1mm 0.9mm;
+  font-size: 5.6pt;
+  color: #b45309;
+  background: #fff5e9;
+}
+
+.cell .q {
+  margin: 0;
+  font-size: 8.5pt;
+  line-height: 1.28;
+  font-weight: 600;
+}
+
+.cell .q .n {
+  font-weight: 700;
+  margin-right: 1mm;
+  color: var(--accent);
+}
+
+.cell .mk {
+  font-weight: 600;
+  font-size: 7pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.hints {
+  list-style: none;
+  margin: 1.1mm 0 0;
+  padding: 1mm 1.4mm;
+  background: var(--hint-bg);
+  border-left: 0.6mm solid #d9a441;
+  border-radius: 0.8mm;
+  font-size: 7pt;
+  line-height: 1.24;
+  color: #4a3a10;
+}
+
+.hints li {
+  margin: 0.25mm 0;
+  padding-left: 4.6mm;
+  text-indent: -4.6mm;
+}
+
+.hints li b {
+  color: var(--hint);
+  font-weight: 700;
+}
+
+.hints li:last-child b {
+  color: #8a3d00;
+}
+
+.cell .work {
+  margin: 1.1mm 0 0;
+  padding: 1mm 1.4mm;
+  background: var(--work-bg);
+  border-radius: 0.8mm;
+  font-size: 7.2pt;
+  line-height: 1.26;
+  white-space: pre-wrap;
+  font-family: "Cascadia Mono", "Consolas", "Segoe UI", monospace;
+}
+
+.cell .ans {
+  margin: auto 0 0;
+  padding-top: 1mm;
+  font-size: 7.8pt;
+  line-height: 1.2;
+  font-weight: 700;
+  border-top: 0.2mm dotted var(--line);
+}
+
+.cell .ans::before {
+  content: "Ans. ";
+  color: var(--accent);
+}
+
+/* ---------------- footer ---------------- */
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  margin-top: 2mm;
+  padding-top: 1.2mm;
+  border-top: 0.3mm solid var(--line);
+  font-size: 6.2pt;
+  color: var(--muted);
+}
+
+.foot .mid {
+  flex: 1;
+  text-align: center;
+  color: var(--ink);
+}
+
+/* ---------------- contents sheet ---------------- */
+
+.index {
+  display: block;
+}
+
+.index h2 {
+  margin: 3.4mm 0 1mm;
+  font-size: 10pt;
+  color: var(--accent);
+  border-bottom: 0.2mm solid var(--line);
+  padding-bottom: 0.6mm;
+}
+
+.index ol {
+  margin: 0;
+  padding-left: 5mm;
+  font-size: 8pt;
+  line-height: 1.5;
+  columns: 2;
+  column-gap: 8mm;
+}
+
+.index ol li {
+  break-inside: avoid;
+}
+
+.index a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.index a:hover {
+  text-decoration: underline;
+}
+
+.index span {
+  color: var(--muted);
+  font-size: 7pt;
+}
+
+/* ---------------- print ---------------- */
+
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  .sheet {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .sheet:last-of-type {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}

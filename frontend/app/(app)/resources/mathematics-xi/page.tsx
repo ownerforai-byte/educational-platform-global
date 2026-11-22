@@ -13,6 +13,7 @@ import {
   MATH_XI_WORKBOOK_TOTALS,
   mathXiChapterUrl,
   mathXiChaptersByUnit,
+  mathXiHardUrl,
 } from "@/lib/mathematics-xi-chapters";
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default function MathematicsXiSolutionsPage() {
             { label: "Long answers", value: MATHEMATICS_XI_TOTALS.longAnswers },
             { label: "Reasoning drills", value: MATHEMATICS_XI_TOTALS.drills },
             { label: "A4 sheets", value: MATH_XI_WORKBOOK_TOTALS.sheets },
+            { label: "Hard + hints", value: MATH_XI_WORKBOOK_TOTALS.hardQuestions },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -120,12 +122,12 @@ export default function MathematicsXiSolutionsPage() {
                 </p>
                 <ul className="mt-2 space-y-1">
                   {chapters.map((chapter) => (
-                    <li key={chapter.slug}>
+                    <li key={chapter.slug} className="flex items-baseline gap-1">
                       <a
                         href={mathXiChapterUrl(chapter)}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-baseline justify-between gap-2 rounded px-1 py-0.5 text-sm hover:bg-primary/10"
+                        className="flex min-w-0 flex-1 items-baseline gap-2 rounded px-1 py-0.5 text-sm hover:bg-primary/10"
                       >
                         <span className="truncate">
                           <span className="mr-1.5 font-mono text-[11px] text-muted-foreground">
@@ -134,6 +136,17 @@ export default function MathematicsXiSolutionsPage() {
                           {chapter.title}
                         </span>
                       </a>
+                      {chapter.hardCount > 0 ? (
+                        <a
+                          href={mathXiHardUrl(chapter)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="shrink-0 rounded border border-amber-500/40 px-1 text-[11px] font-semibold text-amber-700 hover:bg-amber-500/10 dark:text-amber-400"
+                          title={`${chapter.hardCount} hardest questions with hints`}
+                        >
+                          hard
+                        </a>
+                      ) : null}
                     </li>
                   ))}
                 </ul>
@@ -145,6 +158,30 @@ export default function MathematicsXiSolutionsPage() {
           {MATH_XI_CHAPTERS.length} chapter sheets · every syllabus topic covered ·{" "}
           {MATH_XI_WORKBOOK_TOTALS.perSheet} questions per sheet.
         </p>
+
+        <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4">
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold">
+              Hardest questions — {MATH_XI_WORKBOOK_TOTALS.hardQuestions} problems with a hint
+              ladder
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {MATH_XI_WORKBOOK_TOTALS.hardChapters} chapters ·{" "}
+              {MATH_XI_WORKBOOK_TOTALS.hardSheets} A4 sheets ·{" "}
+              {MATH_XI_WORKBOOK_TOTALS.hardPerSheet} problems per sheet. Each one gives three
+              escalating hints (H1 → H2 → H3), then the complete NEB-style solution.
+            </p>
+          </div>
+          <a
+            href={`${MATH_XI_WORKBOOK_BASE}/hard/index.html`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-amber-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-amber-700"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Open hard sets
+          </a>
+        </div>
       </section>
 
       <ol className="space-y-5">

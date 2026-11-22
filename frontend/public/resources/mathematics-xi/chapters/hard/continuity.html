@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.2 Continuity and Discontinuity — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Continuity and Discontinuity — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Continuity and Discontinuity — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>6.2 · Continuity and Discontinuity — hardest questions</h1>
+<p class="topics"><b>Topics</b> Continuity at a point · Types of discontinuity · Finding constants · Continuity and differentiability</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Finding constants</span> <span class="kind">Finding a constant</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Find k so that f(x) = (1 − cos 2x)/(x sin x) for x ≠ 0, f(0) = k is continuous at x = 0.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Use the identity 1 − cos 2x = 2 sin²x.</li>
+<li><b>H2.</b> Cancel one factor of sin x with the denominator.</li>
+<li><b>H3.</b> Then 2 sin x/x → 2.</li>
+</ol>
+<p class="work">2sin²x/(x sinx) = 2 sinx/x
+→ 2</p>
+<p class="ans">k = 2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Continuity and differentiability</span> <span class="kind">Continuity vs differentiability</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Show that f(x) = |x − 2| is continuous but not differentiable at x = 2.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Continuity: check that the two one-sided limits equal f(2) = 0.</li>
+<li><b>H2.</b> Differentiability: compute the left and right difference quotients.</li>
+<li><b>H3.</b> They give the slopes −1 and +1, which differ.</li>
+</ol>
+<p class="work">lim(x→2⁻)|x−2| = 0 = lim(x→2⁺)|x−2| = f(2)
+f′₋ = −1, f′₊ = +1</p>
+<p class="ans">continuous at 2, not differentiable there (a corner)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Finding constants</span> <span class="kind">Smooth join</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Find a and b so that f(x) = ax + b for x &lt; 1 and f(x) = x² for x ≥ 1 is both continuous and differentiable at x = 1.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Continuity gives a·1 + b = 1².</li>
+<li><b>H2.</b> Differentiability gives the left slope a equal to the right slope 2x at x = 1.</li>
+<li><b>H3.</b> Substitute a into the first equation to get b.</li>
+</ol>
+<p class="work">continuity: a + b = 1
+differentiability: a = 2x|₁ = 2
+⇒ 2 + b = 1 ⇒ b = −1</p>
+<p class="ans">a = 2, b = −1</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Finding constants</span> <span class="kind">Finding a constant</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Find k if f(x) = (sin 9x)/(sin 3x) for x ≠ 0 and f(0) = k is continuous at 0.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Divide numerator and denominator by x.</li>
+<li><b>H2.</b> Use sin9x/x → 9 and sin3x/x → 3.</li>
+<li><b>H3.</b> The ratio of the two standard limits is k.</li>
+</ol>
+<p class="work">[9·(sin9x/9x)]/[3·(sin3x/3x)] → 9/3</p>
+<p class="ans">k = 3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Continuity and differentiability</span> <span class="kind">Piecewise function</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>For f(x) = x² when x &lt; 1 and f(x) = 2x − 1 when x ≥ 1, test continuity and differentiability at x = 1.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Evaluate both branches at x = 1.</li>
+<li><b>H2.</b> Compare the one-sided derivatives: 2x and 2.</li>
+<li><b>H3.</b> Equal values and equal slopes mean the function is differentiable.</li>
+</ol>
+<p class="work">f(1) = 1 and both one-sided limits are 1
+f′₋ = 2x|₁ = 2, f′₊ = 2</p>
+<p class="ans">continuous and differentiable at 1, with f′(1) = 2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Types of discontinuity</span> <span class="kind">Classification</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Classify the discontinuity of f(x) = (x² − 1)/(x − 1) at x = 1.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Substitution gives 0/0, so look at the limit rather than the value.</li>
+<li><b>H2.</b> Factor and cancel for x ≠ 1.</li>
+<li><b>H3.</b> The limit exists but f(1) is undefined — a missing point.</li>
+</ol>
+<p class="work">(x − 1)(x + 1)/(x − 1) = x + 1 → 2
+f(1) is not defined</p>
+<p class="ans">removable discontinuity: define f(1) = 2 to repair it</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 6 · Calculus</span>
+<span class="mid">Continuity and Discontinuity · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.1 Logic and Sets — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Logic and Sets — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Logic and Sets — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>1.1 · Logic and Sets — hardest questions</h1>
+<p class="topics"><b>Topics</b> Statements and connectives · Truth values · Sets and Venn diagrams · Cardinality</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Cardinality</span> <span class="kind">Venn / cardinality</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>In a survey of 100 students, 60 like mathematics, 45 like physics and 20 like both. Find how many like exactly one subject and how many like neither.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Draw two overlapping circles and write 20 in the overlap.</li>
+<li><b>H2.</b> Subtract 20 from each single count to get the exclusive parts: 40 and 25.</li>
+<li><b>H3.</b> Everything inside the circles is 40 + 20 + 25; subtract that from 100.</li>
+</ol>
+<p class="work">only maths = 60 − 20 = 40
+only physics = 45 − 20 = 25
+at least one = 40 + 20 + 25 = 85
+neither = 100 − 85 = 15</p>
+<p class="ans">exactly one = 65 students; neither = 15 students</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Sets and Venn diagrams</span> <span class="kind">Set proof</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Prove by set laws that A − (B ∪ C) = (A − B) ∩ (A − C).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Rewrite every set difference using intersection and complement.</li>
+<li><b>H2.</b> Apply De Morgan's law to (B ∪ C)′.</li>
+<li><b>H3.</b> Use idempotence to split A ∩ A into the two pieces you need.</li>
+</ol>
+<p class="work">A − (B ∪ C) = A ∩ (B ∪ C)′
+= A ∩ (B′ ∩ C′)
+= (A ∩ B′) ∩ (A ∩ C′)
+= (A − B) ∩ (A − C)</p>
+<p class="ans">proved: the two set expressions are identical for every A, B, C</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Truth values</span> <span class="kind">Truth table</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Show that (p → q) ↔ (¬q → ¬p) is a tautology.&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Build a truth table with columns p, q, p → q, ¬q, ¬p, ¬q → ¬p.</li>
+<li><b>H2.</b> Compare the two implication columns row by row.</li>
+<li><b>H3.</b> A biconditional is true exactly when its two sides agree.</li>
+</ol>
+<p class="work">p q | p→q | ¬q→¬p
+T T |  T  |  T
+T F |  F  |  F
+F T |  T  |  T
+F F |  T  |  T
+the two columns are identical, so the biconditional is always T</p>
+<p class="ans">tautology — the contrapositive is logically equivalent to the implication</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Cardinality</span> <span class="kind">Counting</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>A set A has 7 elements. Find (i) the number of subsets, (ii) the number containing a fixed element x, (iii) the number with exactly 3 elements.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Every element is either in or out, so the total is a power of 2.</li>
+<li><b>H2.</b> Fix x inside, then each of the other 6 elements is still free.</li>
+<li><b>H3.</b> Choosing exactly 3 means choosing 3 from 7.</li>
+</ol>
+<p class="work">(i) 2⁷ = 128
+(ii) 2⁶ = 64
+(iii) C(7,3) = 7·6·5/3·2·1 = 35</p>
+<p class="ans">(i) 128  (ii) 64  (iii) 35</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Truth values</span> <span class="kind">Logic proof</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Prove that p → (q ∧ r) ≡ (p → q) ∧ (p → r).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Replace each implication using A → B ≡ ¬A ∨ B.</li>
+<li><b>H2.</b> The left side becomes ¬p ∨ (q ∧ r).</li>
+<li><b>H3.</b> Distribute the disjunction over the conjunction.</li>
+</ol>
+<p class="work">p → (q ∧ r) ≡ ¬p ∨ (q ∧ r)
+≡ (¬p ∨ q) ∧ (¬p ∨ r)
+≡ (p → q) ∧ (p → r)</p>
+<p class="ans">equivalent — ∨ distributes over ∧</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Cardinality</span> <span class="kind">Word problem</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>In a class of 40 students, 25 play football, 20 play cricket and 8 play neither game. How many play both?&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Students playing at least one game = 40 − 8.</li>
+<li><b>H2.</b> Apply inclusion–exclusion: |F ∪ C| = |F| + |C| − |F ∩ C|.</li>
+<li><b>H3.</b> Solve 32 = 25 + 20 − both.</li>
+</ol>
+<p class="work">at least one = 40 − 8 = 32
+both = 25 + 20 − 32 = 13</p>
+<p class="ans">13 students play both games</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 1 · Algebra</span>
+<span class="mid">Logic and Sets · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

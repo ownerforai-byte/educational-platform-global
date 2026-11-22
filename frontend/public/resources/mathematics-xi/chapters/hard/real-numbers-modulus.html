@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.2 Real Numbers, Intervals and Modulus — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Real Numbers, Intervals and Modulus — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Real Numbers, Intervals and Modulus — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>1.2 · Real Numbers, Intervals and Modulus — hardest questions</h1>
+<p class="topics"><b>Topics</b> Modulus and distance · Intervals · Surds and rationalisation · Inequalities</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Modulus and distance</span> <span class="kind">Modulus equation</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Solve |x − 2| + |x + 3| = 7.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The two moduli change behaviour at x = −3 and x = 2, so split the line into three pieces.</li>
+<li><b>H2.</b> On the middle piece test any value: the left side is constant there.</li>
+<li><b>H3.</b> On each outer piece you get a linear equation; keep the root only if it lies in that piece.</li>
+</ol>
+<p class="work">x &lt; −3: −(x−2) − (x+3) = 7 ⇒ −2x − 1 = 7 ⇒ x = −4 ✓
+−3 ≤ x &lt; 2: (x−2 is negative, x+3 positive) ⇒ 5 = 7 ✗
+x ≥ 2: (x−2) + (x+3) = 7 ⇒ 2x + 1 = 7 ⇒ x = 3 ✓</p>
+<p class="ans">x = −4 or x = 3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Surds and rationalisation</span> <span class="kind">Proof by contradiction</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Prove that √2 is irrational.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Assume the opposite: √2 = p/q with p, q coprime positive integers.</li>
+<li><b>H2.</b> Square both sides to get p² = 2q², so p² is even.</li>
+<li><b>H3.</b> Show q must also be even, contradicting coprimality.</li>
+</ol>
+<p class="work">√2 = p/q ⇒ p² = 2q² ⇒ 2 | p² ⇒ 2 | p ⇒ p = 2k
+4k² = 2q² ⇒ q² = 2k² ⇒ 2 | q
+p and q both even contradicts gcd(p, q) = 1</p>
+<p class="ans">√2 cannot be written as a ratio of integers — it is irrational</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Intervals</span> <span class="kind">Modulus inequality</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Solve |2x − 1| &lt; 5 and give the answer as an interval.&nbsp;<span class="mk">[3]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Use |u| &lt; a ⇔ −a &lt; u &lt; a.</li>
+<li><b>H2.</b> Write the double inequality −5 &lt; 2x − 1 &lt; 5.</li>
+<li><b>H3.</b> Add 1 throughout, then divide by 2.</li>
+</ol>
+<p class="work">−5 &lt; 2x − 1 &lt; 5
+−4 &lt; 2x &lt; 6
+−2 &lt; x &lt; 3</p>
+<p class="ans">x ∈ (−2, 3)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Inequalities</span> <span class="kind">Inequality proof</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Prove that for a &gt; 0 and b &gt; 0, (a + b)/2 ≥ √(ab).&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Start from a square that cannot be negative: (√a − √b)² ≥ 0.</li>
+<li><b>H2.</b> Expand it to a − 2√(ab) + b ≥ 0.</li>
+<li><b>H3.</b> Rearrange and divide by 2; check when equality holds.</li>
+</ol>
+<p class="work">(√a − √b)² ≥ 0
+a − 2√(ab) + b ≥ 0
+a + b ≥ 2√(ab)
+(a + b)/2 ≥ √(ab)</p>
+<p class="ans">AM ≥ GM, with equality exactly when a = b</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Modulus and distance</span> <span class="kind">Modulus equation</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Solve |x|² − 5|x| + 6 = 0.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Notice that |x|² = x², and substitute t = |x| with t ≥ 0.</li>
+<li><b>H2.</b> Factor t² − 5t + 6 = (t − 2)(t − 3).</li>
+<li><b>H3.</b> Each positive t gives two values of x.</li>
+</ol>
+<p class="work">t = |x| ⇒ t² − 5t + 6 = 0 ⇒ t = 2 or t = 3
+t = 2 ⇒ x = ±2
+t = 3 ⇒ x = ±3</p>
+<p class="ans">x = ±2, ±3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Inequalities</span> <span class="kind">Greatest integer</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Find all x for which [2x − 3] = 4, where [ ] denotes the greatest integer function.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Translate: [y] = 4 means 4 ≤ y &lt; 5.</li>
+<li><b>H2.</b> Put y = 2x − 3 into that double inequality.</li>
+<li><b>H3.</b> Solve 7 ≤ 2x &lt; 8 and keep the half-open end.</li>
+</ol>
+<p class="work">4 ≤ 2x − 3 &lt; 5
+7 ≤ 2x &lt; 8
+3.5 ≤ x &lt; 4</p>
+<p class="ans">x ∈ [3.5, 4)</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 1 · Algebra</span>
+<span class="mid">Real Numbers, Intervals and Modulus · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

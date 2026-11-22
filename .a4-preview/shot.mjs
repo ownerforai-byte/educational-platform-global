@@ -1,13 +1,14 @@
 import { chromium } from "playwright";
 import fs from "node:fs";
+import path from "node:path";
 
 const target = process.argv[2] ?? "frontend/public/resources/mathematics-xi/chapters/limits.html";
 const out = process.argv[3] ?? ".a4-preview/math-xi-chapter-limits.png";
 
-const css = fs.readFileSync("frontend/public/resources/mathematics-xi/a4/workbook.css", "utf8");
-const html = fs
-  .readFileSync(target, "utf8")
-  .replace(/<link rel="stylesheet"[^>]*>/, () => `<style>${css}</style>`);
+const html = fs.readFileSync(target, "utf8").replace(/<link rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/, (_, href) => {
+  const file = path.join("frontend/public", href.replace(/^\//, ""));
+  return `<style>${fs.readFileSync(file, "utf8")}</style>`;
+});
 
 let browser;
 try {

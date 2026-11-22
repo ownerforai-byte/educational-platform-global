@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.8 Definite Integrals and Area — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Definite Integrals and Area — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Definite Integrals and Area — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>6.8 · Definite Integrals and Area — hardest questions</h1>
+<p class="topics"><b>Topics</b> Evaluation · Properties · Area under a curve · Area between curves</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Evaluation</span> <span class="kind">Evaluation</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Evaluate ∫₀^{π/2} sin²x dx.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Linearise the integrand with the half-angle identity.</li>
+<li><b>H2.</b> An antiderivative is x/2 − sin2x/4.</li>
+<li><b>H3.</b> Substitute the limits; sin π = 0 removes the second term.</li>
+</ol>
+<p class="work">[x/2 − sin2x/4]₀^{π/2} = π/4 − 0</p>
+<p class="ans">π/4</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Evaluation</span> <span class="kind">Evaluation</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Evaluate ∫₀¹ x eˣ dx.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Integrate by parts with u = x, dv = eˣ dx.</li>
+<li><b>H2.</b> The antiderivative is x eˣ − eˣ = eˣ(x − 1).</li>
+<li><b>H3.</b> Evaluate at 1 and at 0.</li>
+</ol>
+<p class="work">[eˣ(x − 1)]₀¹ = e⁰(0) − e⁰(−1)</p>
+<p class="ans">1</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Evaluation</span> <span class="kind">Evaluation</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Evaluate ∫₁^e ln x dx.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Integrate by parts with u = ln x, dv = dx.</li>
+<li><b>H2.</b> The antiderivative is x lnx − x.</li>
+<li><b>H3.</b> Use ln e = 1 and ln 1 = 0.</li>
+</ol>
+<p class="work">[x lnx − x]₁^e = (e − e) − (0 − 1)</p>
+<p class="ans">1</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Area under a curve</span> <span class="kind">Area under a curve</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Use integration to find the area of the circle x² + y² = a².&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> The upper semicircle is y = √(a² − x²) for −a ≤ x ≤ a.</li>
+<li><b>H2.</b> By symmetry the area is 4∫₀^a √(a² − x²) dx.</li>
+<li><b>H3.</b> Substitute x = a sin θ: the integrand becomes a²cos²θ and the limits 0 to π/2.</li>
+</ol>
+<p class="work">A = 4∫₀^a √(a² − x²)dx
+= 4·(πa²/4)</p>
+<p class="ans">area = πa² square units</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Area between curves</span> <span class="kind">Area between curves</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Find the area enclosed between y = x² and y = x + 2.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Solve x² = x + 2 to get the intersection abscissae.</li>
+<li><b>H2.</b> On −1 &lt; x &lt; 2 the line lies above the parabola.</li>
+<li><b>H3.</b> Integrate (x + 2) − x² between those limits.</li>
+</ol>
+<p class="work">x² − x − 2 = 0 ⇒ x = −1, 2
+∫₋₁² (x + 2 − x²)dx = [x²/2 + 2x − x³/3]₋₁²
+= (2 + 4 − 8/3) − (1/2 − 2 + 1/3) = 9/2</p>
+<p class="ans">9/2 square units</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Properties</span> <span class="kind">Substitution</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Evaluate ∫₀^{π/2} sin x/(1 + cos²x) dx.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Substitute u = cos x, du = −sin x dx.</li>
+<li><b>H2.</b> The limits become 1 and 0, which flips to ∫₀¹ du/(1 + u²).</li>
+<li><b>H3.</b> That is the standard tan⁻¹ integral.</li>
+</ol>
+<p class="work">= ∫₀¹ du/(1 + u²)
+= [tan⁻¹u]₀¹
+= tan⁻¹1 − tan⁻¹0
+= π/4 − 0</p>
+<p class="ans">π/4</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 6 · Calculus</span>
+<span class="mid">Definite Integrals and Area · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

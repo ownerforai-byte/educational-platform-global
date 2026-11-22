@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.6 Monotonicity, Extrema, Tangents and Concavity — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Monotonicity, Extrema, Tangents and Concavity — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Monotonicity, Extrema, Tangents and Concavity — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>6.6 · Monotonicity, Extrema, Tangents and Concavity — hardest questions</h1>
+<p class="topics"><b>Topics</b> Increasing and decreasing · Maxima and minima · Tangents and normals · Concavity and absolute extrema</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Increasing and decreasing</span> <span class="kind">Monotonicity</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>For f(x) = x³ − 3x² + 4 find the intervals of increase and decrease and the local extrema.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> f′(x) = 3x² − 6x = 3x(x − 2).</li>
+<li><b>H2.</b> Test the sign of f′ on the three intervals split by 0 and 2.</li>
+<li><b>H3.</b> Evaluate f at the turning points to get the extreme values.</li>
+</ol>
+<p class="work">f′ &gt; 0 on (−∞,0) ∪ (2,∞), f′ &lt; 0 on (0,2)
+f(0) = 4, f(2) = 0</p>
+<p class="ans">increasing outside (0,2); local max 4 at x = 0, local min 0 at x = 2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Maxima and minima</span> <span class="kind">Maxima and minima</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Find the local maxima and minima of f(x) = 2x³ − 15x² + 36x + 1.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> f′ = 6x² − 30x + 36 = 6(x − 2)(x − 3).</li>
+<li><b>H2.</b> Use f″ = 12x − 30 at each stationary point to classify it.</li>
+<li><b>H3.</b> Evaluate f at x = 2 and x = 3.</li>
+</ol>
+<p class="work">f′(2) = 0, f″(2) = −6 &lt; 0 ⇒ local max f(2) = 29
+f′(3) = 0, f″(3) = 6 &gt; 0 ⇒ local min f(3) = 28</p>
+<p class="ans">local max 29 at x = 2; local min 28 at x = 3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Tangents and normals</span> <span class="kind">Tangent and normal</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Find the equation of the tangent and the normal to xy = 4 at the point (2, 2).&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Differentiate implicitly: y + x y′ = 0.</li>
+<li><b>H2.</b> The tangent slope at (2, 2) is −y/x = −1.</li>
+<li><b>H3.</b> The normal slope is the negative reciprocal, +1.</li>
+</ol>
+<p class="work">tangent: y − 2 = −1(x − 2) ⇒ x + y = 4
+normal: y − 2 = 1(x − 2) ⇒ y = x</p>
+<p class="ans">tangent x + y = 4; normal y = x</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Maxima and minima</span> <span class="kind">Optimisation</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Show that among all rectangles with perimeter 40 cm, the square has the greatest area.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> If one side is x, the other is 20 − x.</li>
+<li><b>H2.</b> Write A(x) = x(20 − x) and differentiate.</li>
+<li><b>H3.</b> Show the stationary point is a maximum with A″ &lt; 0.</li>
+</ol>
+<p class="work">A = 20x − x²
+A′ = 20 − 2x = 0 ⇒ x = 10
+A″ = −2 &lt; 0 ⇒ maximum
+A(10) = 100 cm²</p>
+<p class="ans">the 10 cm × 10 cm square, area 100 cm²</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Concavity and absolute extrema</span> <span class="kind">Absolute extrema</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Find the absolute maximum and minimum of f(x) = x³ − 12x on [−3, 3].&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Stationary points come from 3x² − 12 = 0, i.e. x = ±2.</li>
+<li><b>H2.</b> Evaluate f at the stationary points and at both endpoints.</li>
+<li><b>H3.</b> Compare the four values — the interval forces the endpoints in.</li>
+</ol>
+<p class="work">f(−3) = 9, f(−2) = 16, f(2) = −16, f(3) = −9</p>
+<p class="ans">absolute max 16 at x = −2; absolute min −16 at x = 2</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Concavity and absolute extrema</span> <span class="kind">Inequality</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Show that x + 1/x ≥ 2 for every x &gt; 0.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Find the minimum of f(x) = x + 1/x on x &gt; 0.</li>
+<li><b>H2.</b> f′ = 1 − 1/x² = 0 gives x = 1.</li>
+<li><b>H3.</b> f″ = 2/x³ &gt; 0 confirms a minimum there.</li>
+</ol>
+<p class="work">f′(1) = 0 and f″(1) = 2 &gt; 0 ⇒ minimum
+f(1) = 2</p>
+<p class="ans">minimum value 2 at x = 1, hence x + 1/x ≥ 2</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 6 · Calculus</span>
+<span class="mid">Monotonicity, Extrema, Tangents and Concavity · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

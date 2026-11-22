@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.8 Complex Numbers — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Complex Numbers — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Complex Numbers — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>1.8 · Complex Numbers — hardest questions</h1>
+<p class="topics"><b>Topics</b> Algebra of complex numbers · Modulus and argument · Polar form · Roots and equations</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Algebra of complex numbers</span> <span class="kind">Powers of i</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Simplify (1 + i)/(1 − i) and hence evaluate (1 + i)⁸.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Multiply numerator and denominator by the conjugate 1 + i.</li>
+<li><b>H2.</b> The quotient collapses to i.</li>
+<li><b>H3.</b> Use (1 + i)² = 2i and raise that to the fourth power.</li>
+</ol>
+<p class="work">(1 + i)²/(1 + 1) = 2i/2 = i
+(1 + i)⁸ = [(1 + i)²]⁴ = (2i)⁴ = 16i⁴</p>
+<p class="ans">(1 + i)/(1 − i) = i and (1 + i)⁸ = 16</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Modulus and argument</span> <span class="kind">Modulus–argument</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>Find the modulus and argument of z = −1 + i√3.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> |z| = √(x² + y²).</li>
+<li><b>H2.</b> The point is in the second quadrant, so the argument is π minus the reference angle.</li>
+<li><b>H3.</b> The reference angle satisfies tan α = √3.</li>
+</ol>
+<p class="work">|z| = √(1 + 3) = 2
+α = tan⁻¹(√3) = π/3
+arg z = π − π/3</p>
+<p class="ans">|z| = 2, arg z = 2π/3</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Roots and equations</span> <span class="kind">Square roots</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>Find the square roots of 3 + 4i.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Let √(3 + 4i) = x + iy, so x² − y² = 3 and 2xy = 4.</li>
+<li><b>H2.</b> Also x² + y² = |3 + 4i| = 5.</li>
+<li><b>H3.</b> Solve for x² and y², then keep the signs that make xy positive.</li>
+</ol>
+<p class="work">x² + y² = 5 and x² − y² = 3 ⇒ x² = 4, y² = 1
+2xy = 4 &gt; 0 ⇒ (x, y) = (2, 1) or (−2, −1)</p>
+<p class="ans">√(3 + 4i) = ±(2 + i)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Polar form</span> <span class="kind">De Moivre</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>Prove that (cos θ + i sin θ)³ = cos 3θ + i sin 3θ.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Expand the cube with the binomial theorem.</li>
+<li><b>H2.</b> Use i² = −1 and i³ = −i, then separate real and imaginary parts.</li>
+<li><b>H3.</b> Apply the triple-angle identities.</li>
+</ol>
+<p class="work">cos³θ + 3i cos²θ sinθ − 3cosθ sin²θ − i sin³θ
+= (4cos³θ − 3cosθ) + i(3sinθ − 4sin³θ)</p>
+<p class="ans">= cos 3θ + i sin 3θ (De Moivre's theorem for n = 3)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Modulus and argument</span> <span class="kind">Proof</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>Prove that |z₁z₂| = |z₁||z₂| for any two complex numbers.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Write each number in polar form r cis θ.</li>
+<li><b>H2.</b> Multiply the moduli and add the arguments.</li>
+<li><b>H3.</b> Read off the modulus of the product.</li>
+</ol>
+<p class="work">z₁z₂ = r₁r₂ cis(θ₁ + θ₂)
+modulus = r₁r₂ = |z₁||z₂|</p>
+<p class="ans">|z₁z₂| = |z₁||z₂|; the arguments add</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Polar form</span> <span class="kind">Polar form</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>Express 1 + i in polar form and hence evaluate (1 + i)⁶.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Compute |1 + i| = √2 and arg = tan⁻¹1.</li>
+<li><b>H2.</b> Raise to the sixth power: modulus (√2)⁶, argument 6π/4.</li>
+<li><b>H3.</b> Reduce 3π/2 to the standard position and write the value.</li>
+</ol>
+<p class="work">1 + i = √2 cis(π/4)
+(1 + i)⁶ = (√2)⁶ cis(3π/2) = 8(−i)</p>
+<p class="ans">(1 + i)⁶ = −8i</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 1 · Algebra</span>
+<span class="mid">Complex Numbers · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>

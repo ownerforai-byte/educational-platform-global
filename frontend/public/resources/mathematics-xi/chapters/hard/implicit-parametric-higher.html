@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.5 Implicit, Parametric and Higher-Order Derivatives — hardest questions (Mathematics XI)</title>
+<meta name="description" content="Implicit, Parametric and Higher-Order Derivatives — 6 hardest NEB-style problems with a three-step hint ladder, worked solution and answer.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+</head>
+<body>
+<section class="sheet" aria-label="Implicit, Parametric and Higher-Order Derivatives — hard sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · hard set</span></div>
+<h1>6.5 · Implicit, Parametric and Higher-Order Derivatives — hardest questions</h1>
+<p class="topics"><b>Topics</b> Implicit differentiation · Parametric differentiation · Second derivatives · Motion and rates</p>
+<p class="note">NEB answer style. Each problem gives three escalating hints, then the full solution: given → statement → working → answer. 6 problems per sheet, 2 per row.</p>
+</header>
+<div class="grid hard" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Implicit differentiation</span> <span class="kind">Implicit</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H1.</span>Find dy/dx if x² + y² + xy = 3.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Differentiate every term with respect to x, remembering y is a function of x.</li>
+<li><b>H2.</b> The xy term needs the product rule: y + x y′.</li>
+<li><b>H3.</b> Collect all y′ terms on one side.</li>
+</ol>
+<p class="work">2x + 2y y′ + y + x y′ = 0
+y′(2y + x) = −(2x + y)</p>
+<p class="ans">dy/dx = −(2x + y)/(2y + x)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Parametric differentiation</span> <span class="kind">Parametric</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H2.</span>For x = a(θ − sin θ), y = a(1 − cos θ) find dy/dx.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Compute dx/dθ and dy/dθ first.</li>
+<li><b>H2.</b> Then dy/dx = (dy/dθ)/(dx/dθ) = sinθ/(1 − cosθ).</li>
+<li><b>H3.</b> Use the half-angle identities to simplify.</li>
+</ol>
+<p class="work">dx/dθ = a(1 − cosθ), dy/dθ = a sinθ
+sinθ/(1 − cosθ) = 2sin(θ/2)cos(θ/2) / 2sin²(θ/2)</p>
+<p class="ans">dy/dx = cot(θ/2)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Second derivatives</span> <span class="kind">Second derivative</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H3.</span>If y = e^{2x} sin 3x, find y″.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> First derivative by the product rule, with e^{2x} factored out.</li>
+<li><b>H2.</b> Differentiate again, applying the product rule to each of the two terms.</li>
+<li><b>H3.</b> Collect the sin 3x and cos 3x coefficients.</li>
+</ol>
+<p class="work">y′ = e^{2x}(2sin3x + 3cos3x)
+y″ = 2e^{2x}(2sin3x + 3cos3x) + e^{2x}(6cos3x − 9sin3x)
+= e^{2x}(12cos3x − 5sin3x)</p>
+<p class="ans">y″ = e^{2x}(12 cos 3x − 5 sin 3x)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Parametric differentiation</span> <span class="kind">Parametric</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H4.</span>For x = t + 1/t and y = t − 1/t find dy/dx.&nbsp;<span class="mk">[4]</span></p>
+<ol class="hints">
+<li><b>H1.</b> Differentiate both with respect to t.</li>
+<li><b>H2.</b> dx/dt = 1 − 1/t² and dy/dt = 1 + 1/t².</li>
+<li><b>H3.</b> Divide and multiply through by t².</li>
+</ol>
+<p class="work">(1 + 1/t²)/(1 − 1/t²)
+= (t² + 1)/(t² − 1)</p>
+<p class="ans">dy/dx = (t² + 1)/(t² − 1)</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Second derivatives</span> <span class="kind">Second derivative</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H5.</span>For x² + y² = 25 find d²y/dx² at the point (3, 4).&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> From the first derivative, dy/dx = −x/y.</li>
+<li><b>H2.</b> Differentiate again using the quotient rule: d²y/dx² = −(y − x y′)/y².</li>
+<li><b>H3.</b> Substitute x = 3, y = 4 and y′ = −3/4.</li>
+</ol>
+<p class="work">y′ = −3/4
+y″ = −(4 − 3(−3/4))/16
+= −(4 + 9/4)/16</p>
+<p class="ans">d²y/dx² = −25/64</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Motion and rates</span> <span class="kind">Motion</span> <span class="level">hard</span></p>
+<p class="q"><span class="n">H6.</span>A particle moves with s = 2t³ − 9t² + 12t. Find the times when it is at rest and its acceleration at those times.&nbsp;<span class="mk">[5]</span></p>
+<ol class="hints">
+<li><b>H1.</b> At rest means v = ds/dt = 0.</li>
+<li><b>H2.</b> v = 6t² − 18t + 12 = 6(t − 1)(t − 2).</li>
+<li><b>H3.</b> Acceleration is a = dv/dt = 12t − 18; evaluate at each root.</li>
+</ol>
+<p class="work">v = 6(t − 1)(t − 2) = 0 ⇒ t = 1, 2
+a = 12t − 18 ⇒ a(1) = −6, a(2) = 6</p>
+<p class="ans">at rest at t = 1 s and t = 2 s; a = −6 and a = 6 units/s²</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 6 · Calculus</span>
+<span class="mid">Implicit, Parametric and Higher-Order Derivatives · hard set</span>
+<span>Sheet 1 of 1 · 6 problems with hints</span>
+</footer>
+</section>
+</body>
+</html>
