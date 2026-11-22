@@ -2995,7 +2995,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Three filament families, three diameters: hollow tubulin microtubules (25 nm) build spindles and cilia, actin microfilaments (7 nm) contract muscle and pinch cells, and keratin intermediate filaments (10 nm) anchor and armour.",
         alt: "Cytoskeleton three types: microtubules, actin microfilaments and intermediate filaments with functions",
-        keyword: "microtubules",
+        keyword: "microtubule",
       },
     ],
   },
@@ -3159,7 +3159,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Shape is the first ID step: cocci named by arrangement (single, diplo-, strepto-, staphylo-), rods (bacilli), commas (vibrio) and spirals (spirillum) — combined with the Gram reaction for lab identification.",
         alt: "Bacterial shapes and arrangements: cocci in singles pairs chains and clusters, bacilli, vibrio and spirillum",
-        keyword: "cocci",
+        keyword: "coccus",
       },
       {
         Component: BacterialNutritionModes,
@@ -8134,7 +8134,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Four views of life's origin: special creation (not testable), spontaneous generation (disproved by Pasteur), panspermia (cosmic seeding) and chemical evolution — the only testable, experiment-supported account.",
         alt: "Theories of origin of life compared special creation spontaneous generation panspermia abiogenesis",
-        keyword: "panspermia",
+        keyword: "oparin",
       },
       {
         Component: ReducingAtmosphereChemistry,
@@ -8148,7 +8148,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Abiogenesis vs biogenesis: claim, champions, test and verdict — biogenesis won for today, but chemical evolution happened once under the early atmosphere.",
         alt: "Abiogenesis versus biogenesis debate table Pasteur Redi",
-        keyword: "abiogenesis",
+        keyword: "first cell",
       },
       {
         Component: RNAWorldHypothesis,

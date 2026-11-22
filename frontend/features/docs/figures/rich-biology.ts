@@ -45,7 +45,7 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       "plasma membrane", // fluid-mosaic model
       "cellulose", // cell-wall layers
       "diffusion", // membrane transport modes
-      "microtubules", // cytoskeleton types
+      "microtubule", // cytoskeleton types
     ],
   },
   "cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-sign": {
@@ -128,9 +128,9 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       "reducing atmosphere", // early-Earth conditions
       "hot dilute soup", // Oparin–Haldane flow
       "stromatolite", // origin grand timeline
-      "panspermia", // origin theories
+      "oparin", // origin theories
       "methane", // reducing-atmosphere chemistry
-      "abiogenesis", // abiogenesis vs biogenesis
+      "first cell", // abiogenesis vs biogenesis
       "RNA", // RNA world hypothesis
       "coacervate", // coacervate/protobiont
       "amino acid", // yield chart
@@ -175,7 +175,7 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
     ],
     keepSvg: [
       // classification-style diagrams the raster plate does not supersede
-      "cocci", // bacterial shapes and arrangements
+      "coccus", // bacterial shapes and arrangements
       "cyanobacteria", // nutrition-mode tree
       "growth curve", // batch growth curve
       "binary fission", // fission + recombination routes

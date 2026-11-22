@@ -69,7 +69,7 @@ describe("rich figure registry (biology, from scratch)", () => {
     const entry = getTopicFigures(EUKARYOTIC_CELLS);
     expect(entry).toBeDefined();
     expect(entry!.figures[0].src).toMatch(/organelle-ultrastructure\.jpg$/);
-    for (const keyword of ["plasma membrane", "cellulose", "diffusion", "microtubules"]) {
+    for (const keyword of ["plasma membrane", "cellulose", "diffusion", "microtubule"]) {
       expect(entry!.figures.some((f) => f.keyword === keyword)).toBe(true);
     }
     // The shallow single-organelle cutaways stay replaced.
