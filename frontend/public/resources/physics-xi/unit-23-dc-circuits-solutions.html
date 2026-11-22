@@ -38,6 +38,7 @@
 <li>Exercise 23.8 — The potentiometer</li>
 <li>Exercise 23.9 — Heating effect and electrical power</li>
 <li>Exercise 23.10 — Current–voltage characteristics and the potential divider</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -521,6 +522,143 @@ V_4k = I R = 2 × 10⁻³ × 4000 = 8.0 V
 V_2k = 2 × 10⁻³ × 2000 = 4.0 V
 Check: 8 + 4 = 12 V ✓</p>
 <p class="ans">8 V across the 4 kΩ resistor and 4 V across the 2 kΩ — the voltage divides in the ratio 2 : 1, matching the resistances.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>DC circuits are solved by two rules and one accounting habit: Kirchhoff's laws, the series/parallel shorthand, and the internal-resistance term. The eight shapes below run from a full network to the potentiometer limit.</p>
+
+<div class="item">
+<p class="q"><b>Q38.</b> [Multi-step numerical] A battery of emf 12 V and internal resistance 0.50 Ω drives 4.0 Ω and 6.0 Ω resistors in parallel. Find the current through each resistor, the terminal voltage and the power wasted inside the cell.</p>
+<div class="sol">
+<p class="work">Parallel pair: R_p = (4 × 6)/(4 + 6) = 2.4 Ω
+Total: R = 2.4 + 0.50 = 2.9 Ω
+Current from the cell: I = 12/2.9 = 4.1 A
+
+Terminal voltage: V = ε − Ir = 12 − 4.1 × 0.50 = 9.9 V
+
+Across the parallel pair: I₄ = 9.9/4.0 = 2.5 A,  I₆ = 9.9/6.0 = 1.7 A
+  check: 2.5 + 1.7 = 4.2 ≈ 4.1 A ✓
+
+Power wasted in the cell: P = I²r = (4.1)² × 0.50 = 8.4 W</p>
+<p>The internal resistance costs 8.4 W out of a total 49 W — about 17% — which is why a car battery (very low r) is needed for a starter motor while a dry cell is fine for a calculator. The parallel pair shares the current in inverse proportion to resistance, and both resistors see the terminal voltage, not the emf.</p>
+<p class="ans">I = 4.1 A from the cell; 2.5 A and 1.7 A in the branches; V_terminal = 9.9 V; 8.4 W wasted internally.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q39.</b> [Derivation] Derive the formula for two cells in parallel with internal resistances, and state the condition for maximum current.</p>
+<div class="sol">
+<p class="work">Two cells (ε₁, r₁) and (ε₂, r₂) in parallel supplying external R.
+Let the terminal p.d. be V. For each cell:
+  I₁ = (ε₁ − V)/r₁,   I₂ = (ε₂ − V)/r₂,   I = I₁ + I₂ = V/R
+
+Adding:  V/R = ε₁/r₁ + ε₂/r₂ − V(1/r₁ + 1/r₂)
+  ⇒  V[(1/R) + (1/r₁) + (1/r₂)] = ε₁/r₁ + ε₂/r₂
+
+For identical cells (ε, r):  ε_eq = ε,  r_eq = r/2  ⇒  I = ε/(R + r/2)</p>
+<p>So parallel connection halves the internal resistance and leaves the emf unchanged — the right choice when the external resistance is small (a starter motor). Series connection adds the emfs and adds the resistances — the right choice when R is large. This is the practical answer to “why connect cells in series or in parallel”, and it follows from the two limits R ≫ r and R ≪ r.</p>
+<p class="ans">ε_eq = (Σε/r)/(Σ1/r) and r_eq = 1/(Σ1/r); for n identical cells r_eq = r/n with ε unchanged — best when R is small.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q40.</b> [Graph reading] A graph of terminal voltage against current for a cell is a straight line of slope −0.50 V A⁻¹ and intercept 6.0 V. Find the emf, the internal resistance and the short-circuit current.</p>
+<div class="sol">
+<p class="work">V = ε − Ir, so intercept = ε = 6.0 V and slope = −r = −0.50
+  ⇒  r = 0.50 Ω
+
+Short circuit (V = 0):  I = ε/r = 6.0/0.50 = 12 A</p>
+<p>The same line is the “load line” of the cell: the graphical method for finding the operating point of a circuit, because the load draws a current where its own V–I characteristic crosses the line. Note that a real cell does not survive 12 A for long — the short-circuit current is an idealisation of the model, since r usually rises as the cell heats and the emf falls.</p>
+<p class="ans">ε = 6.0 V, r = 0.50 Ω, short-circuit current 12 A (the intercept and slope of the V–I line).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q41.</b> [Combined concept] A 12 V battery of internal resistance 0.50 Ω is used to light a 24 W, 12 V lamp. Find the actual power delivered and explain why it is less than 24 W.</p>
+<div class="sol">
+<p class="work">Lamp resistance: R_L = V²/P = 144/24 = 6.0 Ω
+
+The load is a potential divider:
+  I = ε/(R_L + r) = 12/6.5 = 1.85 A
+  V_lamp = IR_L = 1.85 × 6.0 = 11.1 V
+  P = V²/R_L = (11.1)²/6.0 = 20.5 W   (85% of the rated 24 W)
+
+Lost internally: I²r = 1.85² × 0.50 = 1.7 W</p>
+<p>The lamp is dimmer than its rating because the cell's internal resistance takes a share of the emf — a visible example of a potential divider. Over a long cable the same thing happens: the cable resistance and the load form a divider, which is why a 100 m extension lead makes a kettle slow to boil, and why mains wiring uses thick conductors.</p>
+<p class="ans">P ≈ 21 W (11.1 V across 6.0 Ω), not 24 W — the internal 0.5 Ω takes 1.7 W of the supply.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q42.</b> [Assertion–reason] <b>Assertion (A):</b> A voltmeter is always connected in parallel with the component being measured. <b>Reason (R):</b> A voltmeter has a very high resistance, so it draws almost no current and does not disturb the circuit.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Voltmeter in parallel sees the SAME p.d. as the component — that is what is being measured.
+High resistance matters: if R_V were comparable to R_load, the meter would divert current.
+Example: 6.0 Ω load, 60 Ω voltmeter → parallel combination 5.45 Ω, a 9% error.
+With 6000 Ω the error is 0.1% — negligible.</p>
+<p>The mirror-image statement for an ammeter is worth learning as a pair: it is connected in series and must have very low resistance, since any resistance would reduce the current it is trying to measure. A voltmeter with finite resistance and an ammeter with finite resistance are the two systematic errors of every school measurement.</p>
+<p class="ans">Both true, R explains A: parallel connection measures the p.d. and a high resistance keeps the disturbance negligible.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q43.</b> [Experiment/observation table] In a potentiometer experiment a cell gives a balance length of 60.0 cm, and a standard cell of 1.02 V gives 51.0 cm. Complete the table for a third reading and find the unknown emf.</p>
+<table>
+<tr><th>Cell</th><th>Balance length (cm)</th><th>ε/ℓ (V cm⁻¹)</th></tr>
+<tr><td>Standard, 1.02 V</td><td>51.0</td><td>?</td></tr>
+<tr><td>Unknown</td><td>60.0</td><td>?</td></tr>
+<tr><td>Same unknown, with 4.0 Ω across it</td><td>55.0</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">Calibration: 1.02/51.0 = 0.0200 V cm⁻¹
+  ε_unknown = 0.0200 × 60.0 = 1.20 V
+  terminal p.d. with the 4.0 Ω load = 0.0200 × 55.0 = 1.10 V
+
+Then ε = I(R + r) with V = IR:
+  1.20 = I(4.0 + r) and 1.10 = 4.0I  ⇒  I = 0.275 A
+  1.20 = 0.275(4.0 + r)  ⇒  4.0 + r = 4.36  ⇒  r = 0.36 Ω</p>
+<p>The potentiometer measures emf with no current drawn (at balance the cell supplies nothing), which is why it is superior to a voltmeter — a voltmeter always reads the terminal p.d., never the emf, because it must draw some current. The drop from 1.20 V to 1.10 V when the load is connected is the direct measurement of internal resistance.</p>
+<p class="ans">ε = 1.20 V with r = 0.36 Ω; the loaded reading of 1.10 V reveals the internal drop.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q44.</b> [Estimation and limiting case] Show that a battery delivers maximum power to an external resistance equal to its internal resistance, and state the efficiency at that point.</p>
+<div class="sol">
+<p class="work">P = I²R = ε²R/(R + r)²
+
+Differentiate with respect to R and set to zero:
+  dP/dR = ε²[(R + r)² − 2R(R + r)]/(R + r)⁴ = 0
+  ⇒ (R + r) − 2R = 0  ⇒  R = r
+
+Maximum power: P_max = ε²/(4r)
+Efficiency at that point: P_load/P_total = R/(R + r) = 1/2  (50%)</p>
+<p><b>Limiting cases:</b> R → 0 gives P → 0 (no p.d. across the load) and R → ∞ gives P → 0 (no current) — so the maximum must be in between, and the algebra locates it at R = r. The efficiency result is the practical lesson: maximum power transfer is only 50% efficient, which is why power stations operate with R_load ≫ r (high efficiency) rather than at the maximum-power point. The rule matters for matching a loudspeaker to an amplifier, not for the grid.</p>
+<p class="ans">dP/dR = 0 at R = r, giving P_max = ε²/4r and 50% efficiency — maximum power is not maximum efficiency.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q45.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Kirchhoff's junction rule is a statement about energy conservation.”<br>
+(ii) “An ammeter should be connected in parallel and have a high resistance.”<br>
+(iii) “The emf of a cell is the same as the potential difference across its terminals.”<br>
+(iv) “Resistivity depends on the length and cross-section of the wire.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — the junction rule (ΣI = 0) is CHARGE conservation; the loop rule (Σε = ΣIR)
+     is energy conservation. Swapping them is the usual slip.
+(ii) FALSE — an ammeter goes in SERIES with a LOW resistance, so that it does not change the
+     current it is measuring.
+(iii) FALSE — they differ by the internal drop: V = ε − Ir. They are equal only when no current
+     flows (an open circuit, or at the balance point of a potentiometer).
+(iv) FALSE — resistivity ρ is a material property, independent of size; it is the RESISTANCE
+     R = ρL/A that depends on length and cross-section.</p>
+<p>Statements (i) and (iii) pair the two most common mistakes in the whole unit; statement (iv) is the direct analogue of the “thermal conductivity depends on thickness” trap in the heat chapters.</p>
+<p class="ans">(i) junction rule = charge conservation, loop rule = energy; (ii) series, low resistance; (iii) V = ε − Ir; (iv) ρ is a material constant.</p>
 </div>
 </div>
 

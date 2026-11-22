@@ -33,6 +33,7 @@
 <li>Exercise 25.3 — Intrinsic semiconductors</li>
 <li>Exercise 25.4 — Extrinsic semiconductors and doping</li>
 <li>Exercise 25.5 — Temperature, conductivity and applications</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -275,6 +276,147 @@ with n_i rising exponentially with T.</p>
 <div class="sol">
 <p>At 0 K a metal still has a partly filled conduction band, so its electrons remain free to move — it stays a conductor (superconductors aside, its conductivity is high). An intrinsic semiconductor at 0 K has a completely full valence band and a completely empty conduction band, so there are no mobile carriers at all — it becomes a perfect insulator. Doped semiconductors at 0 K have their carriers frozen onto the dopant atoms and are also insulating.</p>
 <p class="ans">Metal: still conducting (partly filled band). Pure semiconductor: perfect insulator (full band, empty band, no carriers).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Solids questions use three different models on the same material — elastic (stress and strain), structural (unit cells and density) and transport (conductivity and band gaps). The eight shapes below exercise each model and then join them.</p>
+
+<div class="item">
+<p class="q"><b>Q22.</b> [Multi-step numerical] A wire 2.0 m long and 0.50 mm in diameter stretches by 1.0 mm under a load. Find the strain, the stress if Y = 2.0 × 10¹¹ Pa, the force, and the elastic energy stored.</p>
+<div class="sol">
+<p class="work">Area: A = πr² = π(0.25 × 10⁻³)² = 1.96 × 10⁻⁷ m²
+Strain: e = ΔL/L = 1.0 × 10⁻³/2.0 = 5.0 × 10⁻⁴
+Stress: σ = Y e = 2.0 × 10¹¹ × 5.0 × 10⁻⁴ = 1.0 × 10⁸ Pa
+Force: F = σA = 1.0 × 10⁸ × 1.96 × 10⁻⁷ = 19.6 N ≈ 20 N
+Energy: U = ½FΔL = ½ × 19.6 × 1.0 × 10⁻³ = 9.8 × 10⁻³ J ≈ 1.0 × 10⁻² J</p>
+<p>Two orders of magnitude are worth noticing: a 20 N load (2 kg) on a steel wire produces a stress of 10⁸ Pa, only about 0.2% of steel's breaking stress, which is why a steel cable can support tonnes. The energy ½FΔL is the same ½ke² form as a spring, with k = YA/L — the wire is a spring of stiffness 2 × 10⁴ N m⁻¹.</p>
+<p class="ans">e = 5.0 × 10⁻⁴; σ = 1.0 × 10⁸ Pa; F ≈ 20 N; U ≈ 1.0 × 10⁻² J.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> [Derivation] Derive the relation between the density of a cubic crystal, the unit-cell edge a and the number of atoms per cell n.</p>
+<div class="sol">
+<p class="work">For the cell:  volume = a³,  mass = n m_atom = n(M/N_A)
+
+  ρ = n M/(N_A a³)
+
+  ⇒  a³ = n M/(N_A ρ)   and   a = [nM/(N_A ρ)]^(1/3)
+
+where M is the molar mass and n the number of atoms per unit cell
+(n = 1 simple cubic, 2 bcc, 4 fcc).</p>
+<p>This one formula answers the standard NEB question in either direction: given a and ρ, find the lattice type (the calculated n identifies simple, bcc or fcc); given the lattice type, find a. For copper (fcc, M = 0.0635 kg mol⁻¹, ρ = 8960 kg m⁻³): a³ = 4 × 0.0635/(6.02 × 10²³ × 8960) = 4.71 × 10⁻²⁹ m³, so a = 3.61 × 10⁻¹⁰ m — the accepted value.</p>
+<p class="ans">ρ = nM/(N_A a³), so a = [nM/(N_Aρ)]^(1/3), with n = 1, 2 or 4 for simple, bcc or fcc.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> [Graph reading] The stress–strain graph of a metal rises linearly to 2.5 × 10⁸ Pa at a strain of 1.2 × 10⁻³, then curves to a maximum of 4.0 × 10⁸ Pa at 0.15 before breaking. Find Young's modulus, the yield strength and the ductility.</p>
+<div class="sol">
+<p class="work">Linear region:  Y = stress/strain = 2.5 × 10⁸/1.2 × 10⁻³ = 2.1 × 10¹¹ Pa
+
+Yield strength ≈ 2.5 × 10⁸ Pa (where the curve departs from the straight line)
+Ultimate strength = 4.0 × 10⁸ Pa
+Ductility = strain at break = 0.15 = 15%
+
+Energy absorbed per unit volume ≈ area under the curve ≈ ½(2.5 × 10⁸)(1.2 × 10⁻³)
+  + 4.0 × 10⁸ × 0.15 ≈ 1.5 × 10⁵ + 6.0 × 10⁷ ≈ 6 × 10⁷ J m⁻³</p>
+<p>The three regions visible on any such graph are elastic (recoverable, linear), plastic (permanent, work-hardening) and fracture. A large plastic region before break is what makes a material ductile and tough — the energy absorbed per unit volume is the area under the curve, which is why a tough metal (mild steel) is safer than a strong but brittle one (cast iron) in a structure subject to impact.</p>
+<p class="ans">Y = 2.1 × 10¹¹ Pa; yield 2.5 × 10⁸ Pa; ultimate 4.0 × 10⁸ Pa; ductility 15%, so the metal is tough rather than brittle.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> [Combined concept] Silicon has a band gap of 1.1 eV. Find the minimum wavelength of light it can absorb, and explain why a silicon solar cell responds poorly to red light.</p>
+<div class="sol">
+<p class="work">E = hc/λ  ⇒  λ = hc/E
+  = (6.63 × 10⁻³⁴)(3.0 × 10⁸)/(1.1 × 1.6 × 10⁻¹⁹)
+  = 1.99 × 10⁻²⁵/1.76 × 10⁻¹⁹
+  = 1.1 × 10⁻⁶ m = 1100 nm</p>
+<p>So silicon absorbs all wavelengths shorter than 1100 nm (visible to the edge of the infrared)
+and is transparent to longer ones. Red light at 700 nm has E = 1.8 eV — above the gap, so it
+IS absorbed, but only just: the excess 0.7 eV becomes heat.
+
+Infrared beyond 1100 nm is not absorbed at all — the photon cannot promote an electron
+across the gap.</p>
+<p>Two effects limit the cell: photons with less than 1.1 eV pass straight through (about 25% of the solar spectrum), and photons with much more than 1.1 eV waste the excess as heat. The Shockley–Queisser limit — around 33% for a single-junction cell — comes from exactly these two loss channels, and it is the reason tandem cells with several gaps are used in high-efficiency panels.</p>
+<p class="ans">λ_max ≈ 1.1 μm (1100 nm); red light is absorbed but inefficiently, and longer-wavelength infrared passes straight through.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Assertion–reason] <b>Assertion (A):</b> The electrical conductivity of a semiconductor increases with temperature, while that of a metal decreases. <b>Reason (R):</b> In a semiconductor the number of charge carriers increases with temperature, and this outweighs the reduced mobility.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">METAL: n is fixed (≈ 10²⁸ m⁻³), and lattice vibrations grow with T, so τ falls:
+  σ = ne²τ/m  ⇒  σ decreases with T  (roughly as 1/T)
+
+SEMICONDUCTOR: n ∝ exp(−E_g/2kT) grows exponentially, far faster than τ falls:
+  σ = ne²τ/m  ⇒  σ INCREASES with T
+For silicon, σ roughly doubles for every 8 K near room temperature.</p>
+<p>The exponential wins because it is exponential — the same reason a thermistor is so much more sensitive than a metal resistance thermometer. This contrast (negative temperature coefficient for semiconductors, positive for metals) is one of the most examinable single facts in the chapter, and it is the whole basis of the thermistor and of the temperature drift in a transistor.</p>
+<p class="ans">Both true, R explains A: for a semiconductor the exponential rise in carrier number dominates the fall in mobility, reversing the sign of dσ/dT.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Experiment/observation table] In a Young's-modulus experiment the extension is measured for different loads on a 1.5 m wire of diameter 0.40 mm. Complete the table and find Y.</p>
+<table>
+<tr><th>Load (N)</th><th>Extension (mm)</th><th>Stress (× 10⁷ Pa)</th><th>Strain (× 10⁻⁴)</th></tr>
+<tr><td>10</td><td>0.30</td><td>?</td><td>?</td></tr>
+<tr><td>20</td><td>0.60</td><td>?</td><td>?</td></tr>
+<tr><td>30</td><td>0.90</td><td>?</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">A = π(0.20 × 10⁻³)² = 1.26 × 10⁻⁷ m²
+Stress = F/A:  10/1.26 × 10⁻⁷ = 7.9 × 10⁷ Pa  (and 15.9, 23.9 × 10⁷)
+Strain = ΔL/L: 0.30 × 10⁻³/1.5 = 2.0 × 10⁻⁴  (and 4.0, 6.0 × 10⁻⁴)
+
+Y = stress/strain = 7.9 × 10⁷/2.0 × 10⁻⁴ = 3.9 × 10¹¹ Pa  …
+    and 15.9/4.0, 23.9/6.0 give the same 4.0 × 10¹¹ Pa</p>
+<p>The extension is proportional to the load, which is Hooke's law for the wire — a straight-line graph of extension against load has slope FL/YA, so Y can be found from the slope rather than a single pair. A value near 4 × 10¹¹ Pa is about twice steel's 2 × 10¹¹ Pa, so the wire is a stiff specimen (tungsten is 3.4 × 10¹¹ Pa); the marks here are for the method and the constant Y across the three rows.</p>
+<p class="ans">Stress 7.9, 15.9, 23.9 × 10⁷ Pa; strain 2.0, 4.0, 6.0 × 10⁻⁴; Y ≈ 4.0 × 10¹¹ Pa.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Estimation and limiting case] Estimate the interatomic spacing in copper from its density and molar mass, and state what the result implies about the size of an atom.</p>
+<div class="sol">
+<p class="work">Volume per atom = M/(N_A ρ)
+  = 0.0635/(6.02 × 10²³ × 8960)
+  = 1.18 × 10⁻²⁹ m³
+
+Spacing ≈ (V)^(1/3) = 2.3 × 10⁻¹⁰ m = 0.23 nm
+(For the fcc lattice, a = 0.361 nm and the nearest-neighbour distance is a/√2 = 0.255 nm.)</p>
+<p><b>Limiting case:</b> as the atoms are squeezed closer, the repulsive core of the interatomic potential eventually dominates — which is why solids are nearly incompressible and why the spacing cannot fall much below 0.2 nm without enormous pressure. This same length is what sets the wavelength of X-rays used in crystallography (0.1 nm) and the resolution of any microscope: you cannot see detail smaller than the wavelength you probe with.</p>
+<p>Compare with the gas result earlier in the course: molecules in air at STP are about 3 nm apart, roughly ten times the solid spacing — which is the quantitative meaning of “a gas is mostly empty space”.</p>
+<p class="ans">Spacing ≈ 0.23 nm (nearest-neighbour 0.26 nm in the fcc lattice); repulsion at that core radius makes solids nearly incompressible.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Young's modulus has the unit N.”<br>
+(ii) “A material with a high Young's modulus is necessarily strong.”<br>
+(iii) “Adding impurity atoms to a metal always increases its conductivity.”<br>
+(iv) “A semiconductor and an insulator differ only in how they are made.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — Y = stress/strain, so its unit is N m⁻² (Pa), like stress. Stress has the unit
+     of pressure; strain is dimensionless.
+(ii) FALSE — the modulus measures STIFFNESS, not strength. Glass has a high Y but breaks at low
+     stress (brittle); rubber has a tiny Y but stretches enormously. Stiffness, strength and
+     toughness are three different properties.
+(iii) FALSE — impurities generally SCATTER electrons and raise resistivity (that is why copper
+     wire is 99.99% pure). The exception is deliberate doping of a semiconductor, where the
+     carrier number increases enormously and conductivity does rise — but that is not a metal.
+(iv) FALSE — they differ in the SIZE OF THE BAND GAP: roughly 1 eV for a semiconductor and
+     5 eV or more for an insulator. At ordinary temperatures a 1 eV gap puts a measurable
+     number of electrons in the conduction band; a 5 eV gap puts essentially none.</p>
+<p>Statement (ii) and (iii) are the two ideas most often collapsed: stiffness is not strength, and a dopant that helps a semiconductor ruins a metal.</p>
+<p class="ans">(i) Y is in Pa; (ii) stiffness ≠ strength; (iii) impurities raise a metal's resistivity; (iv) the band gap is what separates the two.</p>
 </div>
 </div>
 

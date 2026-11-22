@@ -36,6 +36,7 @@
 <li>Exercise 24.6 — The decay law and half-life</li>
 <li>Exercise 24.7 — Nuclear fission and fusion</li>
 <li>Exercise 24.8 — Discovery of the nucleus, packing fraction, creation and annihilation</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -469,6 +470,150 @@ Ratio ≈ 8.2 × 10¹³/3 × 10⁷ ≈ 2.7 × 10⁶</p>
 <p class="work">e⁻ + e⁺ → 2γ   (each photon 0.511 MeV when the pair is at rest)</p>
 <p>Two photons are produced rather than one, so that momentum can be conserved. Both processes conserve charge, energy, momentum and lepton number, and both are routinely observed in PET scanners and in cosmic-ray showers.</p>
 <p class="ans">Creation: a photon above 1.02 MeV becomes an electron–positron pair. Annihilation: an electron and positron vanish into two 0.511 MeV photons. Both conserve charge, energy, momentum and lepton number.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Nuclear questions combine three toolkits: mass–energy conversion (E = Δm c², 1 u = 931 MeV), decay/activity exponentials, and conservation bookkeeping in reactions. The eight shapes below cover all three.</p>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Multi-step numerical] In the reaction ²³⁵U + n → ¹⁴¹Ba + ⁹²Kr + 3n, the masses are 235.0439 u, 1.0087 u, 140.9144 u and 91.9262 u. Find the energy released in MeV, and the energy per nucleon of uranium.</p>
+<div class="sol">
+<p class="work">Mass before = 235.0439 + 1.0087 = 236.0526 u
+Mass after  = 140.9144 + 91.9262 + 3(1.0087) = 235.8667 u
+
+Δm = 236.0526 − 235.8667 = 0.1859 u
+E = 0.1859 × 931.5 = 173 MeV
+
+Per nucleon of uranium: 173/236 = 0.73 MeV per nucleon
+(compare fusion: about 6 MeV per nucleon — see the estimation item below)</p>
+<p>About 3 × 10⁻¹¹ J per fission, which sounds minute but is enormous per atom: 1 kg of ²³⁵U contains 2.6 × 10²⁴ nuclei and so releases about 8 × 10¹³ J — the energy of 20 kilotonnes of TNT. Note that the reaction conserves nucleon number (236 = 141 + 92 + 3) and charge (92 = 56 + 36), which are the two checks that catch a mis-typed equation.</p>
+<p class="ans">Δm = 0.1859 u → E = 173 MeV per fission (0.73 MeV per nucleon).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q35.</b> [Derivation] Derive the decay law N = N₀e^(−λt) from the statement that the decay rate is proportional to the number of undecayed nuclei.</p>
+<div class="sol">
+<p class="work">Rate law:  dN/dt = −λN
+
+Separate and integrate from N₀ at t = 0 to N at time t:
+  ∫ dN/N = −λ ∫ dt
+  ln N − ln N₀ = −λt
+
+  N = N₀ e^(−λt)
+
+Activity:  A = −dN/dt = λN = λN₀e^(−λt) = A₀e^(−λt)
+Half-life:  N₀/2 = N₀e^(−λT)  ⇒  T = ln2/λ = 0.693/λ
+Mean life:  τ = 1/λ = T/ln2 = 1.44T</p>
+<p>The exponential is not an extra assumption: it is the unique solution of “the more nuclei there are, the more decay per second”, which is why every radionuclide follows the same curve with its own λ. The three constants λ, T and τ carry the same information, and the 1.44 conversion factor appears in nearly every numerical question.</p>
+<p class="ans">Integrating dN/dt = −λN gives N = N₀e^(−λt), hence A = A₀e^(−λt), T = 0.693/λ and τ = 1.44T.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q36.</b> [Graph reading] A decay curve passes through 8.0 × 10¹⁰ nuclei at t = 0 and 1.0 × 10¹⁰ at t = 90 days. Find the half-life, the decay constant and the activity at t = 0.</p>
+<div class="sol">
+<p class="work">The count falls from 8.0 to 1.0 × 10¹⁰, a factor of 8 = 2³, in 90 days:
+  three half-lives in 90 days  ⇒  T = 30 days
+
+λ = 0.693/T = 0.693/30 = 0.0231 day⁻¹ = 2.7 × 10⁻⁷ s⁻¹
+
+A₀ = λN₀ = 2.7 × 10⁻⁷ × 8.0 × 10¹⁰ = 2.2 × 10⁴ Bq</p>
+<p>Reading a decay curve is a matter of spotting powers of two — every drop to half takes the same time, which is the defining property of exponential decay. Converting λ to s⁻¹ is compulsory before quoting activity in becquerels, and the conversion is where most marks are lost.</p>
+<p class="ans">T = 30 days; λ = 2.7 × 10⁻⁷ s⁻¹; A₀ = 2.2 × 10⁴ Bq.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q37.</b> [Combined concept] A 1.0 g sample of ²²⁶Ra (half-life 1600 years, molar mass 226 g mol⁻¹) — find the number of atoms, the activity, and the fraction remaining after 4800 years.</p>
+<div class="sol">
+<p class="work">N = (1.0/226) × 6.02 × 10²³ = 2.66 × 10²¹ atoms
+
+λ = 0.693/(1600 × 3.15 × 10⁷ s) = 0.693/5.05 × 10¹⁰ = 1.37 × 10⁻¹¹ s⁻¹
+
+A = λN = 1.37 × 10⁻¹¹ × 2.66 × 10²¹ = 3.6 × 10¹⁰ Bq
+
+4800 years = 3 half-lives  ⇒  remaining fraction = (½)³ = 1/8 = 12.5%</p>
+<p>Note that the activity of 1 g of radium is 3.7 × 10¹⁰ Bq — the historical definition of the curie, chosen because this sample was the standard source. The three-step structure (atoms → λ → activity) is the standard NEB numerical, and every step costs a mark if omitted.</p>
+<p class="ans">N = 2.7 × 10²¹ atoms; A = 3.6 × 10¹⁰ Bq; 12.5% remains after 4800 years.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q38.</b> [Assertion–reason] <b>Assertion (A):</b> The mass of a nucleus is less than the sum of the masses of its constituent nucleons. <b>Reason (R):</b> The missing mass appears as binding energy, which must be supplied to separate the nucleons.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Mass defect:  Δm = [Zm_p + (A − Z)m_n] − M_nucleus
+Binding energy:  BE = Δm c² = Δm × 931.5 MeV (with Δm in u)
+
+Example (⁴He):  Δm = 2(1.00728) + 2(1.00867) − 4.00151 = 0.03037 u
+  BE = 0.03037 × 931.5 = 28.3 MeV  →  7.1 MeV per nucleon</p>
+<p>The per-nucleon value is the useful quantity: it peaks near ⁵⁶Fe at about 8.8 MeV, rises steeply for light nuclei and falls slowly for heavy ones. That single curve explains both fission (heavy nuclei split towards the peak) and fusion (light nuclei combine towards it) — the two reactions that release energy are the two directions of approach to the same maximum.</p>
+<p class="ans">Both true, R explains A: Δm c² is the binding energy, and it peaks at about 8.8 MeV per nucleon near iron.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q39.</b> [Experiment/observation table] A Geiger counter records the count rate from a source at intervals. Complete the table, find the half-life, and explain the correction that should be applied.</p>
+<table>
+<tr><th>t (h)</th><th>count rate (s⁻¹)</th><th>N/N₀</th></tr>
+<tr><td>0</td><td>640</td><td>?</td></tr>
+<tr><td>2</td><td>320</td><td>?</td></tr>
+<tr><td>4</td><td>160</td><td>?</td></tr>
+<tr><td>6</td><td>80</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">N/N₀ = 1, 0.50, 0.25, 0.125
+
+The count halves every 2 h  ⇒  half-life = 2.0 h
+
+Correction needed: subtract the BACKGROUND count rate (typically 0.5–1 s⁻¹ from cosmic
+rays and natural radioactivity) before halving. If the background were 20 s⁻¹ the true
+values would be 620, 300, 140, 60 — and the half-life would be slightly less than 2 h.</p>
+<p>Two further corrections in a real experiment: the dead time of the counter (it cannot count while recovering, so high rates are underestimated) and the geometry (only a fraction of the emitted radiation enters the window). The background subtraction is the one NEB expects, and it introduces the standard caution that a count rate must always be quoted net of background.</p>
+<p class="ans">N/N₀ = 1, 0.5, 0.25, 0.125 → T = 2.0 h; background must be subtracted before the ratio is formed.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q40.</b> [Estimation and limiting case] Estimate the energy released per nucleon in the fusion of four protons into helium, and compare it with fission. Then state why fusion is hard to achieve on Earth.</p>
+<div class="sol">
+<p class="work">4p → ⁴He + 2e⁺ + 2ν
+Mass of 4 protons: 4 × 1.00728 = 4.02912 u
+Mass of ⁴He:       4.00151 u
+Δm ≈ 0.0276 u  (neglecting the positron masses, which largely cancel the electron binding)
+
+E = 0.0276 × 931.5 ≈ 25.7 MeV for 4 nucleons
+  ⇒  about 6.4 MeV per nucleon
+
+Compare fission: 173/236 ≈ 0.73 MeV per nucleon — fusion yields about 9× more.</p>
+<p><b>Why it is hard:</b> the protons must approach within about 10⁻¹⁵ m, where the Coulomb barrier is ~1 MeV while thermal energies at 10⁷ K are only ~1 keV. Only the high-energy tail of the Maxwell distribution can tunnel through, which is why the Sun burns slowly (it takes ~10⁹ years for a given proton) and why a terrestrial reactor needs 10⁸ K and magnetic or inertial confinement.</p>
+<p class="ans">About 26 MeV per helium nucleus, 6.4 MeV per nucleon — nine times fission's yield, but the Coulomb barrier demands 10⁸ K.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q41.</b> [Error-hunting] Correct each false statement.<br>
+(i) “In beta decay the atomic number stays the same.”<br>
+(ii) “Half-life is the time for half the atoms of a sample to disappear completely.”<br>
+(iii) “Alpha particles penetrate further than beta particles because they are heavier.”<br>
+(iv) “Nuclear force is a form of gravitational attraction between nucleons.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — β⁻ decay converts a neutron to a proton, so Z increases by 1 (and A is
+     unchanged). For β⁺ decay Z decreases by 1.
+(ii) FALSE — the atoms do not disappear, they TRANSMUTE into a different nuclide. Half-life is
+     the time for half the parent nuclei to decay; the daughter nuclei remain.
+(iii) FALSE — alpha particles are the LEAST penetrating (stopped by paper) because they are
+     heavy and doubly charged, so they ionise densely and lose energy fast. Beta penetrates a
+     few mm of aluminium, gamma several cm of lead.
+(iv) FALSE — the nuclear force is a short-range strong interaction (attractive at ~1 fm,
+     repulsive below ~0.5 fm), not gravity. It is roughly 10³⁸ times stronger than gravity
+     at nucleon separations.</p>
+<p>Statement (ii) is the one that most often loses a mark: “disappear” versus “decay into something else” is a real physical distinction, and the daughter products are what make dating methods work.</p>
+<p class="ans">(i) β⁻ raises Z by 1; (ii) nuclei transmute, they do not vanish; (iii) alpha is least penetrating; (iv) the nuclear force is the short-range strong force.</p>
 </div>
 </div>
 

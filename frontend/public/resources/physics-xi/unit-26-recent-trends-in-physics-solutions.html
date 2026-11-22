@@ -37,6 +37,7 @@
 <li>Exercise 26.7 — Dark matter and dark energy</li>
 <li>Exercise 26.8 — Black holes</li>
 <li>Exercise 26.9 — Gravitational waves</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -472,6 +473,146 @@ As r → r_s the denominator → 0 and the far-away time interval → ∞.</p>
 </ul>
 <p>Even so, meaningful signals are rare — the first detection came only after decades of development.</p>
 <p class="ans">Because the strain is only ~10⁻²¹ (a length change of 10⁻¹⁸ m over 4 km), so seismic, thermal and quantum noise must all be suppressed and multiple detectors used in coincidence.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>This unit is conceptual, but it still carries numericals: quark charges, annihilation energies, Hubble's law, binding energies of a black hole. The eight shapes below are the ones NEB actually sets.</p>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Multi-step numerical] A proton is made of uud quarks. Verify the charge of the proton, the antiproton, and the neutron (udd), and find the charge of a Σ⁺ (uus) and a Δ⁰ (udd).</p>
+<div class="sol">
+<p class="work">Quark charges:  u = +2/3 e,  d = −1/3 e,  s = −1/3 e
+Antiquarks carry the opposite sign.
+
+  p  = uud: 2/3 + 2/3 − 1/3 = +1 e ✓
+  n  = udd: 2/3 − 1/3 − 1/3 = 0 ✓
+  p̄  = ūūd̄: −2/3 − 2/3 + 1/3 = −1 e ✓
+  Σ⁺ = uus: 2/3 + 2/3 − 1/3 = +1 e ✓
+  Δ⁰ = udd: 0 ✓</p>
+<p>Note that all three quark charges are thirds of e, so a free quark would have a non-integer charge — which is one reason free quarks are never observed (confinement). The fractional values are not a bookkeeping trick: they are measured from the ratio of production cross-sections in e⁺e⁻ collisions, and they fit the 2/3 : 1/3 pattern exactly.</p>
+<p class="ans">uud = +1e, udd = 0, ūūd̄ = −1e, uus = +1e; all charges are built from ±2/3e and ±1/3e.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Derivation] Show that a particle and its antiparticle can annihilate into two photons, and find the minimum energy of each photon for an electron–positron pair at rest.</p>
+<div class="sol">
+<p class="work">Conservation laws: charge 0 = 0, momentum needs two photons travelling in opposite
+ directions, energy: 2m_e c² = 2hν
+
+  hν = m_e c² = 0.511 MeV
+  λ = hc/E = (6.63 × 10⁻³⁴)(3.0 × 10⁸)/(0.511 × 1.6 × 10⁻¹³)
+    = 2.4 × 10⁻¹² m
+
+Each photon gets exactly the rest energy; the pair cannot annihilate into ONE photon,
+because momentum could not then be conserved in the centre-of-mass frame.</p>
+<p>The two-photon result is the basis of PET scanning: a positron emitted by a radiotracer annihilates within millimetres and emits two 511 keV photons back to back, and a ring of detectors records the coincidence line — locating the tumour on the line between them. The same number — 1.02 MeV total — is the threshold for pair production in a heavy nucleus's field.</p>
+<p class="ans">Two photons of 511 keV each (λ ≈ 2.4 pm), back to back; one photon is forbidden by momentum conservation.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q35.</b> [Graph reading] A graph of recession speed against distance for galaxies is a straight line through the origin with slope 70 km s⁻¹ Mpc⁻¹. Find the Hubble constant, the age of the universe in years, and the speed of a galaxy at 100 Mpc.</p>
+<div class="sol">
+<p class="work">Slope = H₀ = 70 km s⁻¹ Mpc⁻¹
+= 70 × 10³ m s⁻¹/(3.09 × 10²² m) = 2.27 × 10⁻¹⁸ s⁻¹
+
+Age t ≈ 1/H₀ = 1/2.27 × 10⁻¹⁸ = 4.4 × 10¹⁷ s
+  = 4.4 × 10¹⁷/(3.15 × 10⁷) = 1.4 × 10¹⁰ years ≈ 14 billion years
+
+At 100 Mpc:  v = 70 × 100 = 7000 km s⁻¹ = 7.0 × 10⁶ m s⁻¹ (2.3% of c)</p>
+<p>The straight line is Hubble's law, v = H₀d, and its slope is the constant itself — the most important number in cosmology. The reciprocal 1/H₀ gives the age only if the expansion has been uniform; the actual age (13.8 Gyr) is slightly less because the expansion was faster in the past, so 1/H₀ is the “Hubble time”, an upper estimate.</p>
+<p class="ans">H₀ = 70 km s⁻¹ Mpc⁻¹ = 2.3 × 10⁻¹⁸ s⁻¹; t ≈ 1/H₀ ≈ 1.4 × 10¹⁰ years; v = 7000 km s⁻¹ at 100 Mpc.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q36.</b> [Combined concept] Find the Schwarzschild radius of a 10 M☉ black hole, and explain why a black hole formed from a massive star cannot be observed directly but is detected through its effects.</p>
+<div class="sol">
+<p class="work">R_s = 2GM/c²
+  = 2(6.67 × 10⁻¹¹)(10 × 2.0 × 10³⁰)/(3.0 × 10⁸)²
+  = 2.67 × 10²¹/9.0 × 10¹⁶
+  = 2.96 × 10⁴ m ≈ 30 km</p>
+<p><b>Why it cannot be seen:</b> light emitted inside R_s cannot escape, so the object emits nothing. <b>Why it is detected:</b> the accretion disc outside the horizon is heated to millions of kelvin and shines in X-rays; the gravitational pull on a companion star produces a measurable orbit; and merging black holes emit gravitational waves (LIGO, 2015). The 30 km radius for 10 solar masses is a useful scale: a black hole of stellar mass is the size of a small town, yet contains ten suns.</p>
+<p class="ans">R_s ≈ 30 km for 10 M☉; it is invisible directly but revealed by X-ray emission, companion-star orbits and gravitational waves.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q37.</b> [Assertion–reason] <b>Assertion (A):</b> The four fundamental forces were unified in stages as the early universe cooled. <b>Reason (R):</b> Higher temperatures correspond to higher particle energies, allowing the symmetries between forces to be restored.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Approximate unification sequence going back in time:
+  ~10¹⁵ K (10⁻¹² s):  electroweak force separates into electromagnetic + weak
+  ~10²⁷ K (10⁻³⁶ s):  strong force separates (GUT transition)
+  ~10³² K (Planck era): gravity separates from the rest
+
+Higher T means higher kT, so particles can reach the energy where the symmetry holds.
+Today the electroweak symmetry is hidden because kT ≪ 100 GeV.</p>
+<p>The logic is the same as a phase transition in matter: ice and water are the same substance, but the symmetry is broken at low temperature. Here the “substance” is the force, which is why particle accelerators are time machines — each new energy frontier looks further back into the cooling universe.</p>
+<p class="ans">Both true, R explains A: high kT restores broken symmetries, so the forces appear unified at high temperature and separate as the universe cools.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q38.</b> [Experiment/observation table] The following data are given for a particle-physics detector recording e⁺e⁻ collisions. Complete the table and state what it confirms.</p>
+<table>
+<tr><th>Event</th><th>Final state</th><th>Charge</th><th>Baryon number</th></tr>
+<tr><td>p + p̄</td><td>π⁺ + π⁻</td><td>?</td><td>?</td></tr>
+<tr><td>n</td><td>p + e⁻ + ν̄ₑ</td><td>?</td><td>?</td></tr>
+<tr><td>π⁻</td><td>μ⁻ + ν̄_μ</td><td>?</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">p + p̄ → π⁺ + π⁻:   charge 0 = +1 − 1 ✓   baryon 0 = 0 + 0 ✓
+                       (note: baryon number is NOT conserved here — p+p̄ has B = 0)
+n → p + e⁻ + ν̄ₑ:   charge 0 = +1 − 1 + 0 ✓   baryon 1 = 1 + 0 + 0 ✓
+n → ...: lepton number 0 = +1 − 1 ✓  (electron and antineutrino)
+π⁻ → μ⁻ + ν̄_μ:    charge −1 = −1 + 0 ✓   lepton 0 = +1 − 1 ✓
+                       (this is a meson decaying to a lepton pair — allowed)</p>
+<p>Every row conserves charge; the second and third also conserve baryon and lepton number respectively. The first row looks like it violates conservation but does not: proton and antiproton have B = +1 and −1, summing to zero, so a pair of pions (B = 0) is permitted. Verifying conservation is the standard way to decide whether a proposed reaction can occur at all.</p>
+<p class="ans">Charge is conserved in every row, with baryon number in β-decay and lepton number in pion decay; the p + p̄ row is allowed because its net baryon number is zero.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q39.</b> [Estimation and limiting case] Estimate the energy density of the cosmic microwave background today (T = 2.7 K) and compare it with the energy density of matter.</p>
+<div class="sol">
+<p class="work">Radiation energy density: u = aT⁴ with a = 7.57 × 10⁻¹⁶ J m⁻³ K⁻⁴
+  u = 7.57 × 10⁻¹⁶ × (2.7)⁴ = 7.57 × 10⁻¹⁶ × 53.1
+    = 4.0 × 10⁻¹⁴ J m⁻³
+
+Matter: ρ_crit = 3H₀²/8πG ≈ 9 × 10⁻²⁷ kg m⁻³, times c²
+  ⇒ 8 × 10⁻¹⁰ J m⁻³ (with only ~5% in ordinary baryonic matter: 4 × 10⁻¹¹ J m⁻³)
+
+So radiation is smaller than matter by roughly 10³–10⁴ today.</p>
+<p><b>Limiting case:</b> going back in time, matter density grows as (1+z)³ while radiation grows as (1+z)⁴, so radiation DOMINATED in the early universe — the two were equal at z ≈ 3400, about 50,000 years after the Big Bang. That is why the early universe is described as a radiation epoch, and why the CMB, which is the relic of that era, still carries a near-perfect blackbody spectrum.</p>
+<p class="ans">u_CBM ≈ 4 × 10⁻¹⁴ J m⁻³, far below the matter density today; in the past radiation grew as (1+z)⁴ and dominated until z ≈ 3400.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q40.</b> [Error-hunting] Correct each false statement.<br>
+(i) “The Higgs boson is the particle that carries the strong force.”<br>
+(ii) “Dark matter and dark energy are the same thing seen at different distances.”<br>
+(iii) “The Big Bang was an explosion of matter into pre-existing space.”<br>
+(iv) “Gravitational waves carry electric charge.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — the Higgs boson is the quantum of the Higgs FIELD, which gives particles mass.
+     The strong force is carried by GLUONS; the weak by W⁺, W⁻ and Z⁰; the electromagnetic
+     by photons; gravity (hypothetically) by gravitons.
+(ii) FALSE — dark matter ATTRACTS (it clusters and explains galactic rotation curves), while
+     dark energy REPELS (it accelerates the expansion, w ≈ −1). They are separate components:
+     about 27% and 68% of the energy budget.
+(iii) FALSE — there was no outside: space itself expanded, carrying matter with it. The correct
+     picture is a stretching of the metric, not matter flying into a void.
+(iv) FALSE — gravitational waves are ripples in spacetime and carry energy and angular
+     momentum, but no charge. They are quadrupole (not dipole) waves, which is why they are
+     so weak: the amplitude falls as 1/r and requires an accelerating asymmetric mass.</p>
+<p>Statement (i) and (ii) are the two most frequent mix-ups: the Higgs gives mass (it is not the strong force), and dark matter clumps while dark energy stretches.</p>
+<p class="ans">(i) Higgs gives mass; gluons carry the strong force; (ii) dark matter attracts, dark energy repels; (iii) space itself expanded; (iv) gravitational waves carry energy, not charge.</p>
 </div>
 </div>
 
