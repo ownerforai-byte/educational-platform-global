@@ -7,20 +7,12 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Fertilizers: chemical fertilizers, types of chemical fert… — Modern Chemical Manufactures, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: fertilizers, chemical fertilizers, types of chemical fertilizers, production of urea with flow-sheet diagram · one worked example · one misconception each.",
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "**Chemical fertilizers.** one-line definition + one-line exam use.",
-    "**Types of chemical fertilizers.** one-line definition + one-line exam use.",
-    "**Production of urea with flow-sheet diagram.** one-line definition + one-line exam use.",
-    "# Fertilizers: chemical fertilizers, types of chemical fertilizers, production of urea with flow-sheet diagram\n\n## 1. Introduction\nChemical picture of **Fertilizers** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Modern Chemical Manufactures fill pass.\n\n## 2. Concepts and definitions\n### Fertilizers: chemical fertilizers\n### types of chemical fertilizers\n### production of urea with flow-sheet diagram\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Fertilizers — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Fertilizers — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Fertilizers — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Fertilizers — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Chemical Fertilizers and the Urea Flow Sheet\n\nPlants remove nitrogen, phosphorus and potassium from soil with every harvest; fertilizers return them. The three **primary nutrients (N, P, K)** define the fertilizer types — nitrogenous, phosphatic, potassic — and the **NPK grade notation** (e.g. 15:15:15) summarises a mixed fertilizer's strengths. **Urea, CO(NH₂)₂, is the world's leading nitrogen fertilizer**, made from ammonia and carbon dioxide in a two-step synthesis.",
+    "## 2. Theorem Mirror\n\n- **Nitrogenous fertilizers:** ammonium sulphate (NH₄)₂SO₄ (21% N), ammonium nitrate NH₄NO₃ (35% N), **urea CO(NH₂)₂ (46% N — the highest)**, ammonia itself.\n- **Phosphatic fertilizers:** superphosphate (rock phosphate Ca₃(PO₄)₂ + H₂SO₄ → soluble Ca(H₂PO₄)₂ + CaSO₄), triple superphosphate (with H₃PO₄); the treatment converts insoluble phosphate into plant-available soluble phosphate.\n- **Potassic fertilizers:** muriate of potash KCl (from sylvinite deposits), potassium sulphate.\n- **NPK notation:** the grade numbers are the percentage of N, P₂O₅-equivalent and K₂O-equivalent; a 15:15:15 mixed fertilizer supplies all three.\n- **Urea synthesis:** 2NH₃ + CO₂ → NH₂COONH₄ (ammonium carbamate) → CO(NH₂)₂ + H₂O — the first step at high pressure (~140–200 atm, ~180–200 °C), the second by decomposition; excess NH₃ is recovered and recycled.",
+    "## 3. Deep Conceptual — Why Urea Wins: The Nutrient-Density Argument\n\n- **Nitrogen content is the currency:** per tonne of product, urea delivers 46% N against ammonium nitrate's 35% and ammonium sulphate's 21% — every shipment carries the least ballast. Add non-explosive handling (unlike AN), solid prill form, easy blending, and soil chemistry that releases N gradually via hydrolysis (urease → NH₃), and urea's dominance is a *logistics* victory as much as a chemical one.\n- **The synthesis's elegance:** its only inputs are **the two products of two processes this unit already studied** — NH₃ from the Haber plant and CO₂ recovered from the reformer's shifted gas — so an integrated fertilizer complex makes urea from air, water and natural gas with near-zero carbon waste. **Urea is the Haber process's commercial terminus:** the ammonia plant's economics are often written in urea.",
+    "## 4. Deep Conceptual — What Each Nutrient Actually Does\n\n- **N:** builds amino acids, proteins, chlorophyll — drives leafy vegetative growth; deficiency shows as **general yellowing (chlorosis), oldest leaves first**; excess causes lodging (weak stems) and delayed maturity.\n- **P:** nucleic acids, ATP, phospholipids — root development, flowering, energy transfer; deficiency shows as **purple/reddish tints** on older leaves and stunted roots.\n- **K:** enzyme activation, stomatal regulation, sugar transport — stem strength, disease resistance, fruit quality; deficiency shows as **leaf-edge scorching**.\n- **The diagnostic logic:** each nutrient's deficiency signature appears in the tissue that *has least of it* — mobile nutrients (N, P, K are all mobile in the plant) are scavenged from old leaves for new growth, so **deficiency always reads on the oldest leaves first.**",
+    "## 5. Worked Example Types\n\n- **Type A — classify and quantify:** fertilizer types with N% comparison.\n- **Type B — the urea flow sheet:** reactions, conditions, recycle.\n- **Type C — deficiency diagnosis:** match symptom to nutrient with the mobile-nutrient logic.\n- **Type D — NPK grade reading:** interpret a grade and compute nutrient supply.",
+    "## 6. Common Confusions\n\n**\"NPK means equal parts of elements\":** the numbers are N : P₂O₅ : K₂O *equivalents* — not elemental P and K. **\"Urea is ammonium\":** it is an organic amide; the soil's urease converts it to ammonium before roots absorb it."
   ],
   "confusion": [],
   "bounds": [
@@ -29,22 +21,25 @@
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  "practice": [
+    "Classify the fertilizer types with one example and its N% each.",
+    "Describe urea manufacture with equations, conditions and recycle.",
+    "Diagnose a deficiency from leaf symptoms using the mobile-nutrient rule."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Nutrient density is the currency: 46% vs 35% vs 21% N per tonne shipped decides the market."
+  ],
+  "examples": [
+    "***The oldest-leaves-first rule*** - N, P and K are all mobile in the plant, so every deficiency reads on the oldest leaves - the single most useful diagnostic in the topic."
+  ],
   "practiceQuestions": [
-    "Q. Classify chemical fertilisers with one example of each type. (3 marks) — nitrogenous (urea), phosphatic (superphosphate), potassic (KCl).",
-    "Q. Write the two reactions of urea manufacture. (2 marks) — carbamate formation then decomposition to urea + water."
+    "**NEB 2024 (2m): What is NPK fertilizer? How is urea produced?** — **NPK fertilizer:** a **mixed fertilizer** supplying the three primary nutrients in one product — its grade numbers give the percentage of **N, P₂O₅-equivalent and K₂O-equivalent** (e.g. 15:15:15 contains 15% N, 15% P₂O₅, 15% K₂O); it is made by blending/compounding nitrogenous, phosphatic and potassic carriers. **Urea production:** ammonia (from the Haber plant) and carbon dioxide (recovered from the reforming section) are compressed and reacted at **high pressure (~140–200 atm) and ~180–200 °C** to form **ammonium carbamate**: 2NH₃ + CO₂ → NH₂COONH₄. The carbamate is then decomposed (by lowering pressure/heat) to **urea**: NH₂COONH₄ → CO(NH₂)₂ + H₂O. The urea solution is concentrated, and the melt is **prilled** into solid granules; unreacted NH₃ and CO₂ are **recycled** to the synthesiser. **Deep point:** the flow sheet's elegance is its inputs — both come from within the same complex (NH₃ synthesis, CO₂ by-product of reforming), making urea the Haber process's commercial terminus and the reason ammonia and urea plants share a fence.",
+    "**NEB-style (5m): Draw the urea flow sheet and write the two reactions with conditions. Why is the excess ammonia recycled rather than vented?** — **Flow sheet:** NH₃ + CO₂ (compressed) → **urea synthesiser** (carbamate formation + decomposition, ~140–200 atm, 180–200 °C) → **decomposer/flash** (unreacted carbamate splits) → **recycle loop** (NH₃ + CO₂ back to the synthesiser) and urea solution forward → **evaporator/concentrator** → **prilling tower** → solid urea. **Reactions:** 2NH₃ + CO₂ → NH₂COONH₄ (ammonium carbamate — exothermic, high pressure drives it); NH₂COONH₄ → CO(NH₂)₂ + H₂O (decomposition — heat, moderate pressure). **Why recycle:** the synthesis reaches only partial conversion per pass (the equilibrium is unfavourable at synthesis temperature); venting the excess NH₃ would waste both the Haber plant's most expensive product and the CO₂ feed — recycling lifts overall conversion to ~95%+ at the cost only of recompression, exactly the logic of the Haber loop itself. **Deep point:** the recycle-loop pattern appears in three of this unit's processes (Haber, urea, Solvay's ammonia) — the general principle is that a moderate per-pass equilibrium plus a cheap separation equals an excellent overall yield, and the exam answer that names the loop names the economics.",
+    "**NEB-style (6m): A farmer's maize shows yellowing of the older leaves and purple-tinged stunted seedlings in another field. Diagnose the deficiencies, justify using nutrient mobility, and state one suitable fertilizer for each.** — **Diagnosis 1 — nitrogen:** general **yellowing (chlorosis) of the older, lower leaves** is the classic N deficiency — nitrogen is a constituent of chlorophyll and amino acids, and its shortage shows first where the plant has least of it. **Diagnosis 2 — phosphorus:** **purple/reddish tints with stunted roots** indicate P deficiency — phosphorus drives root development and energy transfer (ATP), and its shortage pigments the old leaves anthocyanin-red. **The mobility justification:** N, P and K are all **mobile nutrients** — the plant scavenges them from old tissues to feed new growth, so **deficiency always appears on the oldest leaves first** (immobile nutrients like Fe and Ca, by contrast, show on the youngest). Both symptoms sit on old tissue ⟹ mobile-nutrient deficiencies, consistent with N and P. **Fertilizers:** N — **urea** (46% N) or ammonium sulphate; P — **superphosphate** (rock phosphate treated with H₂SO₄ to give plant-available Ca(H₂PO₄)₂). **Deep point:** the oldest-leaves-first rule is the topic's one-line diagnostic engine — it converts a symptom chart into a reasoning chain, and quoting the mobility principle (not just the symptom table) is what separates a diagnosis from a guess.",
+    "**NEB-style (6m): Compare urea, ammonium nitrate and ammonium sulphate as nitrogen fertilizers on nitrogen content, handling safety and soil behaviour, and state why urea dominates the world market.** — **Nitrogen content:** urea CO(NH₂)₂ = 28/60 = **46% N** (highest); ammonium nitrate NH₄NO₃ = 28/80 = **35% N**; ammonium sulphate (NH₄)₂SO₄ = 28/132 = **21% N** (lowest — but it also supplies sulphur). **Handling safety:** urea is **non-explosive** and thermally stable — safe to store, ship and blend; ammonium nitrate is an **oxidiser/explosive** (stored under strict regulation after industrial disasters); ammonium sulphate is safe but heavy per unit N. **Soil behaviour:** urea is an **amide** — soil urease hydrolyses it to ammonium carbonate over days, releasing N gradually (slower acting, some volatilisation loss if surface-applied unincorporated); both ammonium salts act immediately as NH₄⁺, with nitrate also supplying NO₃⁻ directly; ammonium sulphate acidifies the soil over time. **Why urea dominates:** highest nutrient density (least ballast per tonne shipped), cheapest manufacture (two commodity inputs from the same complex), safe handling, solid prill form suited to mechanised spreading and blending. **Deep point:** the market share follows from logistics arithmetic — a fertilizer is a *shipped* commodity before it is a *soil* chemistry, and the 46%-vs-21% density gap plus the explosives problem decide the ranking long before agronomy is consulted."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- 2NH₃ + CO₂ → NH₂COONH₄ → CO(NH₂)₂ + H₂O\n- Superphosphate: Ca₃(PO₄)₂ + 2H₂SO₄ → Ca(H₂PO₄)₂ + 2CaSO₄\n- Urea N% = 28/60 × 100 = 46.7%"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -52,12 +47,9 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Fertilizers",
-    "• Chemical fertilizers",
-    "• Types of chemical fertilizers",
-    "• Production of urea with flow-sheet diagram"
+    "Types: nitrogenous ((NH4)2SO4 21% N, NH4NO3 35%, urea 46% - highest), phosphatic (superphosphate: rock phosphate + H2SO4 -> soluble Ca(H2PO4)2 + CaSO4), potassic (KCl, K2SO4). NPK grade = N : P2O5 : K2O equivalents. Urea: 2NH3 + CO2 -> NH2COONH4 (carbamate, ~140-200 atm, 180-200 C) -> CO(NH2)2 + H2O; excess NH3 recycled; prilled. Urea wins on N density (46%), safety (non-explosive), handling, slow release via urease hydrolysis. Inputs = Haber NH3 + reformer CO2 - integrated complex. N: chlorosis, oldest leaves first; P: purple tint, roots; K: edge scorch, stems - all mobile, so deficiency reads on old leaves."
   ],
-  "summary": "Fertilizers: chemical fertilizers, types of chemical fert… (Modern Chemical Manufactures, Chemistry, class-11-notes) covers Fertilizers, chemical fertilizers, types of chemical fertilizers. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Fertilizers return the three nutrients every harvest removes: nitrogenous carriers ranked by N density (urea 46%, nitrate 35%, sulphate 21%), phosphatic superphosphate made plant-available by acid treatment, and potassic KCl — combined in NPK grades whose numbers are P₂O₅/K₂O equivalents. Urea rules the market as the Haber process's commercial terminus: carbamate at high pressure, decomposition to CO(NH₂)₂, recycle of excess ammonia, and a soil release governed by urease. Its dominance is logistics arithmetic — and every deficiency diagnosis in the field runs on the same one-line engine: mobile nutrients read on the oldest leaves first.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Fertilizers: chemical fertilizers, types of chemical fert…\"?",
@@ -81,8 +73,66 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Three fertiliser types with one example each — nitrogenous (urea, ammonium sulphate), phosphatic (superphosphate, DAP), potassic (KCl/muriate of potash); NPK is the combined grade.",
-    "Trick 2: Urea manufacture two steps: 2NH3 + CO2 → NH2COONH4 (ammonium carbamate, 200 atm, 180 °C); carbamate → NH2CONH2 + H2O (decomposition, lower pressure).",
-    "Trick 3: Urea is the highest-N solid fertiliser (46% N) and releases N slowly after soil hydrolysis — quote for the merit mark."
+    "Urea answer = two equations + two conditions + 46% - the skeleton scores itself."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Chemical Fertilizers and the Urea Flow Sheet\n\nPlants remove nitrogen, phosphorus and potassium from soil with every harvest; fertilizers return them. The three **primary nutrients (N, P, K)** define the fertilizer types — nitrogenous, phosphatic, potassic — and the **NPK grade notation** (e.g. 15:15:15) summarises a mixed fertilizer's strengths. **Urea, CO(NH₂)₂, is the world's leading nitrogen fertilizer**, made from ammonia and carbon dioxide in a two-step synthesis.",
+      "## 2. Theorem Mirror\n\n- **Nitrogenous fertilizers:** ammonium sulphate (NH₄)₂SO₄ (21% N), ammonium nitrate NH₄NO₃ (35% N), **urea CO(NH₂)₂ (46% N — the highest)**, ammonia itself.\n- **Phosphatic fertilizers:** superphosphate (rock phosphate Ca₃(PO₄)₂ + H₂SO₄ → soluble Ca(H₂PO₄)₂ + CaSO₄), triple superphosphate (with H₃PO₄); the treatment converts insoluble phosphate into plant-available soluble phosphate.\n- **Potassic fertilizers:** muriate of potash KCl (from sylvinite deposits), potassium sulphate.\n- **NPK notation:** the grade numbers are the percentage of N, P₂O₅-equivalent and K₂O-equivalent; a 15:15:15 mixed fertilizer supplies all three.\n- **Urea synthesis:** 2NH₃ + CO₂ → NH₂COONH₄ (ammonium carbamate) → CO(NH₂)₂ + H₂O — the first step at high pressure (~140–200 atm, ~180–200 °C), the second by decomposition; excess NH₃ is recovered and recycled.",
+      "## 3. Deep Conceptual — Why Urea Wins: The Nutrient-Density Argument\n\n- **Nitrogen content is the currency:** per tonne of product, urea delivers 46% N against ammonium nitrate's 35% and ammonium sulphate's 21% — every shipment carries the least ballast. Add non-explosive handling (unlike AN), solid prill form, easy blending, and soil chemistry that releases N gradually via hydrolysis (urease → NH₃), and urea's dominance is a *logistics* victory as much as a chemical one.\n- **The synthesis's elegance:** its only inputs are **the two products of two processes this unit already studied** — NH₃ from the Haber plant and CO₂ recovered from the reformer's shifted gas — so an integrated fertilizer complex makes urea from air, water and natural gas with near-zero carbon waste. **Urea is the Haber process's commercial terminus:** the ammonia plant's economics are often written in urea.",
+      "## 4. Deep Conceptual — What Each Nutrient Actually Does\n\n- **N:** builds amino acids, proteins, chlorophyll — drives leafy vegetative growth; deficiency shows as **general yellowing (chlorosis), oldest leaves first**; excess causes lodging (weak stems) and delayed maturity.\n- **P:** nucleic acids, ATP, phospholipids — root development, flowering, energy transfer; deficiency shows as **purple/reddish tints** on older leaves and stunted roots.\n- **K:** enzyme activation, stomatal regulation, sugar transport — stem strength, disease resistance, fruit quality; deficiency shows as **leaf-edge scorching**.\n- **The diagnostic logic:** each nutrient's deficiency signature appears in the tissue that *has least of it* — mobile nutrients (N, P, K are all mobile in the plant) are scavenged from old leaves for new growth, so **deficiency always reads on the oldest leaves first.**",
+      "## 5. Worked Example Types\n\n- **Type A — classify and quantify:** fertilizer types with N% comparison.\n- **Type B — the urea flow sheet:** reactions, conditions, recycle.\n- **Type C — deficiency diagnosis:** match symptom to nutrient with the mobile-nutrient logic.\n- **Type D — NPK grade reading:** interpret a grade and compute nutrient supply.",
+      "## 6. Common Confusions\n\n**\"NPK means equal parts of elements\":** the numbers are N : P₂O₅ : K₂O *equivalents* — not elemental P and K. **\"Urea is ammonium\":** it is an organic amide; the soil's urease converts it to ammonium before roots absorb it."
+    ],
+    "keyPoints": [
+      "Types: nitrogenous ((NH4)2SO4 21% N, NH4NO3 35%, urea 46% - highest), phosphatic (superphosphate: rock phosphate + H2SO4 -> soluble Ca(H2PO4)2 + CaSO4), potassic (KCl, K2SO4). NPK grade = N : P2O5 : K2O equivalents. Urea: 2NH3 + CO2 -> NH2COONH4 (carbamate, ~140-200 atm, 180-200 C) -> CO(NH2)2 + H2O; excess NH3 recycled; prilled. Urea wins on N density (46%), safety (non-explosive), handling, slow release via urease hydrolysis. Inputs = Haber NH3 + reformer CO2 - integrated complex. N: chlorosis, oldest leaves first; P: purple tint, roots; K: edge scorch, stems - all mobile, so deficiency reads on old leaves."
+    ],
+    "importantConcepts": [
+      "Urea is the Haber process's commercial terminus - the ammonia plant's economics are often written in urea."
+    ],
+    "examples": [
+      "***The oldest-leaves-first rule*** - N, P and K are all mobile in the plant, so every deficiency reads on the oldest leaves - the single most useful diagnostic in the topic."
+    ],
+    "universalFacts": [
+      "Nutrient density is the currency: 46% vs 35% vs 21% N per tonne shipped decides the market."
+    ],
+    "importantStatements": [
+      "The soil's urease, not the bag's chemistry, releases urea's nitrogen."
+    ],
+    "importantNotes": [
+      "Verified PYQ recorded here: NEB 2024 (2m) on NPK fertilizer/urea production. (The NEB 2024 cement question is recorded on the chemical-industry row.)"
+    ],
+    "examShortTricks": [
+      "Urea answer = two equations + two conditions + 46% - the skeleton scores itself."
+    ],
+    "examNotes": [
+      "Quote the P2O5/K2O equivalence when reading NPK grades - the qualifier is the distinction mark."
+    ],
+    "formulas": [
+      "- 2NH₃ + CO₂ → NH₂COONH₄ → CO(NH₂)₂ + H₂O\n- Superphosphate: Ca₃(PO₄)₂ + 2H₂SO₄ → Ca(H₂PO₄)₂ + 2CaSO₄\n- Urea N% = 28/60 × 100 = 46.7%"
+    ],
+    "practice": [
+      "Classify the fertilizer types with one example and its N% each.",
+      "Describe urea manufacture with equations, conditions and recycle.",
+      "Diagnose a deficiency from leaf symptoms using the mobile-nutrient rule."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (2m): What is NPK fertilizer? How is urea produced?** — **NPK fertilizer:** a **mixed fertilizer** supplying the three primary nutrients in one product — its grade numbers give the percentage of **N, P₂O₅-equivalent and K₂O-equivalent** (e.g. 15:15:15 contains 15% N, 15% P₂O₅, 15% K₂O); it is made by blending/compounding nitrogenous, phosphatic and potassic carriers. **Urea production:** ammonia (from the Haber plant) and carbon dioxide (recovered from the reforming section) are compressed and reacted at **high pressure (~140–200 atm) and ~180–200 °C** to form **ammonium carbamate**: 2NH₃ + CO₂ → NH₂COONH₄. The carbamate is then decomposed (by lowering pressure/heat) to **urea**: NH₂COONH₄ → CO(NH₂)₂ + H₂O. The urea solution is concentrated, and the melt is **prilled** into solid granules; unreacted NH₃ and CO₂ are **recycled** to the synthesiser. **Deep point:** the flow sheet's elegance is its inputs — both come from within the same complex (NH₃ synthesis, CO₂ by-product of reforming), making urea the Haber process's commercial terminus and the reason ammonia and urea plants share a fence.",
+      "**NEB-style (5m): Draw the urea flow sheet and write the two reactions with conditions. Why is the excess ammonia recycled rather than vented?** — **Flow sheet:** NH₃ + CO₂ (compressed) → **urea synthesiser** (carbamate formation + decomposition, ~140–200 atm, 180–200 °C) → **decomposer/flash** (unreacted carbamate splits) → **recycle loop** (NH₃ + CO₂ back to the synthesiser) and urea solution forward → **evaporator/concentrator** → **prilling tower** → solid urea. **Reactions:** 2NH₃ + CO₂ → NH₂COONH₄ (ammonium carbamate — exothermic, high pressure drives it); NH₂COONH₄ → CO(NH₂)₂ + H₂O (decomposition — heat, moderate pressure). **Why recycle:** the synthesis reaches only partial conversion per pass (the equilibrium is unfavourable at synthesis temperature); venting the excess NH₃ would waste both the Haber plant's most expensive product and the CO₂ feed — recycling lifts overall conversion to ~95%+ at the cost only of recompression, exactly the logic of the Haber loop itself. **Deep point:** the recycle-loop pattern appears in three of this unit's processes (Haber, urea, Solvay's ammonia) — the general principle is that a moderate per-pass equilibrium plus a cheap separation equals an excellent overall yield, and the exam answer that names the loop names the economics.",
+      "**NEB-style (6m): A farmer's maize shows yellowing of the older leaves and purple-tinged stunted seedlings in another field. Diagnose the deficiencies, justify using nutrient mobility, and state one suitable fertilizer for each.** — **Diagnosis 1 — nitrogen:** general **yellowing (chlorosis) of the older, lower leaves** is the classic N deficiency — nitrogen is a constituent of chlorophyll and amino acids, and its shortage shows first where the plant has least of it. **Diagnosis 2 — phosphorus:** **purple/reddish tints with stunted roots** indicate P deficiency — phosphorus drives root development and energy transfer (ATP), and its shortage pigments the old leaves anthocyanin-red. **The mobility justification:** N, P and K are all **mobile nutrients** — the plant scavenges them from old tissues to feed new growth, so **deficiency always appears on the oldest leaves first** (immobile nutrients like Fe and Ca, by contrast, show on the youngest). Both symptoms sit on old tissue ⟹ mobile-nutrient deficiencies, consistent with N and P. **Fertilizers:** N — **urea** (46% N) or ammonium sulphate; P — **superphosphate** (rock phosphate treated with H₂SO₄ to give plant-available Ca(H₂PO₄)₂). **Deep point:** the oldest-leaves-first rule is the topic's one-line diagnostic engine — it converts a symptom chart into a reasoning chain, and quoting the mobility principle (not just the symptom table) is what separates a diagnosis from a guess.",
+      "**NEB-style (6m): Compare urea, ammonium nitrate and ammonium sulphate as nitrogen fertilizers on nitrogen content, handling safety and soil behaviour, and state why urea dominates the world market.** — **Nitrogen content:** urea CO(NH₂)₂ = 28/60 = **46% N** (highest); ammonium nitrate NH₄NO₃ = 28/80 = **35% N**; ammonium sulphate (NH₄)₂SO₄ = 28/132 = **21% N** (lowest — but it also supplies sulphur). **Handling safety:** urea is **non-explosive** and thermally stable — safe to store, ship and blend; ammonium nitrate is an **oxidiser/explosive** (stored under strict regulation after industrial disasters); ammonium sulphate is safe but heavy per unit N. **Soil behaviour:** urea is an **amide** — soil urease hydrolyses it to ammonium carbonate over days, releasing N gradually (slower acting, some volatilisation loss if surface-applied unincorporated); both ammonium salts act immediately as NH₄⁺, with nitrate also supplying NO₃⁻ directly; ammonium sulphate acidifies the soil over time. **Why urea dominates:** highest nutrient density (least ballast per tonne shipped), cheapest manufacture (two commodity inputs from the same complex), safe handling, solid prill form suited to mechanised spreading and blending. **Deep point:** the market share follows from logistics arithmetic — a fertilizer is a *shipped* commodity before it is a *soil* chemistry, and the 46%-vs-21% density gap plus the explosives problem decide the ranking long before agronomy is consulted."
+    ]
+  },
+  "importantConcepts": [
+    "Urea is the Haber process's commercial terminus - the ammonia plant's economics are often written in urea."
+  ],
+  "importantStatements": [
+    "The soil's urease, not the bag's chemistry, releases urea's nitrogen."
+  ],
+  "importantNotes": [
+    "Verified PYQ recorded here: NEB 2024 (2m) on NPK fertilizer/urea production. (The NEB 2024 cement question is recorded on the chemical-industry row.)"
+  ],
+  "examNotes": [
+    "Quote the P2O5/K2O equivalence when reading NPK grades - the qualifier is the distinction mark."
   ]
 }
