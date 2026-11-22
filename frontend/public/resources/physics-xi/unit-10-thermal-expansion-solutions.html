@@ -33,6 +33,7 @@
 <li>Exercise 10.3 — Real and apparent expansion of liquids</li>
 <li>Exercise 10.4 — Measurement of expansivity: Dulong and Petit's method</li>
 <li>Exercise 10.5 — Applications and consequences</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -263,6 +264,139 @@ gap = 20 × 1.2 × 10⁻⁵ × 50 = 0.012 m = 1.2 cm</p>
 The tape is 0.024% longer, so every reading is 0.024% too small.
 Over 30 m the error is 30 × 2.4 × 10⁻⁴ = 7.2 × 10⁻³ m = 7.2 mm</p>
 <p class="ans">0.024% low; 7.2 mm short over 30 m — small per metre but significant in surveying, which is why tapes are calibrated at a stated temperature.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Expansion numericals are short, so the marks go to the reasoning items: β = 2α, γ = 3α, real versus apparent expansion, and the water anomaly. All eight shapes follow.</p>
+
+<div class="item">
+<p class="q"><b>Q21.</b> [Multi-step numerical] Steel rails 10 m long are laid at 15 °C. What expansion gap must be left if the maximum temperature is 55 °C? (α = 1.2 × 10⁻⁵ K⁻¹) And how much does a 2.0 m brass rod expand over the same range (α = 1.8 × 10⁻⁵ K⁻¹)?</p>
+<div class="sol">
+<p class="work">Δθ = 55 − 15 = 40 K
+
+steel: ΔL = L₀αΔθ = 10 × 1.2 × 10⁻⁵ × 40 = 4.8 × 10⁻³ m = 4.8 mm
+brass: ΔL = 2.0 × 1.8 × 10⁻⁵ × 40 = 1.4 × 10⁻³ m = 1.4 mm</p>
+<p>The gap must be <em>at least</em> 4.8 mm — a rail with no gap buckles (the classic “sun kink”), which is why modern track uses continuous welded rail with expansion joints at intervals and a pre-stress at a reference temperature. Note that Δθ appears in kelvin and in °C with the same number: a temperature difference converts 1 : 1.</p>
+<p class="ans">Gap ≥ 4.8 mm for the 10 m steel rail; the 2 m brass rod expands 1.4 mm over the same 40 K rise.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> [Derivation] Show that the coefficient of superficial expansion is twice, and the coefficient of cubical expansion three times, the coefficient of linear expansion.</p>
+<div class="sol">
+<p class="work">Linear:  L = L₀(1 + αΔθ)
+Area of a square of side L:
+  A = L² = L₀²(1 + αΔθ)² = A₀(1 + 2αΔθ + α²Δθ²)
+  α ≈ 10⁻⁵ so α²Δθ² ≈ 10⁻¹⁰ — negligible
+  A ≈ A₀(1 + 2αΔθ)   ⇒  β = 2α
+
+Volume of a cube of side L:
+  V = L³ = V₀(1 + 3αΔθ + 3α²Δθ² + α³Δθ³) ≈ V₀(1 + 3αΔθ)
+  ⇒  γ = 3α</p>
+<p>The approximation is legitimate because αΔθ is of order 10⁻³ at most, so its square is 10⁻⁶ — well below the precision of any school measurement. The relations also explain the design of the bimetallic strip and of a compensated pendulum: two materials with different α expand differently, and the 1 : 2 : 3 ratio lets you convert a linear measurement into an area or a volume without new data.</p>
+<p class="ans">Expanding (1 + αΔθ)² and (1 + αΔθ)³ and dropping α², α³ terms gives β = 2α and γ = 3α.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> [Graph reading] A metal rod is 1.0000 m at 0 °C and 1.0024 m at 100 °C. (a) Find α from the graph of length against temperature. (b) What is its length at 40 °C?</p>
+<div class="sol">
+<p class="work">(a) slope = ΔL/Δθ = (1.0024 − 1.0000)/100 = 2.4 × 10⁻⁵ m K⁻¹
+    L = L₀(1 + αθ)  ⇒  slope = L₀α
+    α = slope/L₀ = 2.4 × 10⁻⁵/1.0000 = 2.4 × 10⁻⁵ K⁻¹
+
+(b) L(40) = 1.0000 + 2.4 × 10⁻⁵ × 40 = 1.00096 m ≈ 1.0010 m</p>
+<p>Aluminium is 2.4 × 10⁻⁵ K⁻¹, so the rod is aluminium. Reading α from a slope is more reliable than from a single pair of readings, because the intercept also tells you the length at 0 °C and any zero error in the length measurement shows up there rather than corrupting α.</p>
+<p class="ans">α = 2.4 × 10⁻⁵ K⁻¹ (aluminium); L(40 °C) = 1.0010 m.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> [Combined concept] A liquid of real expansivity 1.80 × 10⁻⁴ K⁻¹ is held in a vessel of linear expansivity 1.8 × 10⁻⁵ K⁻¹. Find (a) the apparent expansivity, and (b) the overflow when 500 cm³ is heated through 60 K.</p>
+<div class="sol">
+<p class="work">(a) γ_vessel = 3α = 3(1.8 × 10⁻⁵) = 5.4 × 10⁻⁵ K⁻¹
+    γ_apparent = γ_liquid − γ_vessel = 1.80 × 10⁻⁴ − 0.54 × 10⁻⁴
+              = 1.26 × 10⁻⁴ K⁻¹
+
+(b) overflow = V γ_app Δθ = 500 × 1.26 × 10⁻⁴ × 60
+             = 3.8 cm³
+    real expansion of the liquid = 500 × 1.80 × 10⁻⁴ × 60 = 5.4 cm³
+    expansion of the vessel      = 500 × 0.54 × 10⁻⁴ × 60 = 1.6 cm³
+    check: 5.4 − 1.6 = 3.8 cm³ ✓</p>
+<p>The liquid really expands by 5.4 cm³ — you simply cannot see 1.6 cm³ of that, because the vessel grew to accommodate it. This is the whole content of “real versus apparent”: the observable overflow is always the difference, and it is smaller than the true expansion for any liquid in any solid vessel.</p>
+<p class="ans">γ_apparent = 1.26 × 10⁻⁴ K⁻¹; overflow 3.8 cm³ out of a true expansion of 5.4 cm³ (the vessel absorbed 1.6 cm³).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> [Assertion–reason] <b>Assertion (A):</b> A bimetallic strip bends when heated. <b>Reason (R):</b> The two metals have different coefficients of linear expansion, so they expand by different amounts and cannot stay straight.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Brass α = 1.9 × 10⁻⁵, iron α = 1.2 × 10⁻⁵
+For a 10 cm strip heated 100 K:
+  brass expands 1.9 × 10⁻⁴ m, iron 1.2 × 10⁻⁴ m
+  difference = 0.7 × 10⁻⁴ m over 10 cm — the strip must curve, brass on the outside.
+
+On cooling the curvature reverses — the same strip is a thermometer and a thermostat.</p>
+<p>The strip is bonded, so the two metals share one length; the one that wants to be longer forces the pair to bend, putting the brass in compression and the iron in tension. This is the mechanism of the bimetallic thermostat, the fire alarm, and the compensating balance wheel of a watch.</p>
+<p class="ans">Both true, R explains A: unequal expansions in a bonded strip force it to curve, with the higher-α metal on the outside of the bend.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Experiment/observation table] In a Dulong–Petit experiment on a metal bar, the shift of the microscope per 10 °C rise is recorded. Complete the last column and estimate α.</p>
+<table>
+<tr><th>Temperature rise Δθ (K)</th><th>Shift Δh (mm)</th><th>Δh/Δθ (mm K⁻¹)</th></tr>
+<tr><td>10</td><td>0.024</td><td>?</td></tr>
+<tr><td>20</td><td>0.048</td><td>?</td></tr>
+<tr><td>30</td><td>0.073</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">Δh/Δθ = 2.4 × 10⁻³, 2.4 × 10⁻³, 2.4 × 10⁻³ mm K⁻¹ (constant ⇒ uniform expansion)
+
+Dulong and Petit: h = L α Δθ where L = half the bar length between the supports.
+With L = 500 mm:
+  α = (Δh/Δθ)/L = 2.4 × 10⁻³/500 = 4.8 × 10⁻⁶ K⁻¹</p>
+<p>Laplace's correction matters here because the bar is supported at its ends and expands symmetrically about the centre, so the microscope at the end sees only half the total expansion; the full NEB form is α = (Δh/Δθ)/(L) where L is the distance from the fixed end to the microscope, and the correction term 2L₁/L is added when the supports are not exactly at the ends.</p>
+<p>The measured value is between those of platinum and iron, and the important examinable point is that the microscope tube is kept in a water jacket at the end of the bar: without it, the tube also expands and the shift measured is the <em>difference</em> of two expansions, not the bar's alone.</p>
+<p class="ans">Δh/Δθ = 2.4 × 10⁻³ mm K⁻¹; α ≈ 4.8 × 10⁻⁶ K⁻¹, consistent with iron-group metals.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Estimation and limiting case] A pendulum clock is accurate at 20 °C but runs at 45 °C. Estimate the daily error (α = 1.2 × 10⁻⁵ K⁻¹) and state what happens in the limiting case of a perfectly compensated pendulum.</p>
+<div class="sol">
+<p class="work">T = 2π√(L/g)  ⇒  ΔT/T = ½ΔL/L = ½αΔθ
+  = ½ × 1.2 × 10⁻⁵ × 25 = 1.5 × 10⁻⁴
+
+Fractional time error per day = 1.5 × 10⁻⁴ × 86 400 s = 13 s
+So the clock LOSES 13 s per day (longer pendulum, longer period).</p>
+<p><b>Limiting case:</b> a compensated pendulum uses two materials (or a bar with a mercury cell) whose expansions cancel, so ΔL → 0 and ΔT/T → 0: the period becomes independent of temperature. The compensated grid-iron pendulum and the invar alloy (α ≈ 1 × 10⁻⁶ K⁻¹) are the two practical realisations — invar's α is small enough that a one-day error becomes 1 s rather than 13 s.</p>
+<p class="ans">About 13 s lost per day at 45 °C; a compensated pendulum cancels the expansions so the error tends to zero.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Water expands continuously as it is heated from 0 °C.”<br>
+(ii) “The coefficient of linear expansion has the unit of length.”<br>
+(iii) “If a liquid overflows from a vessel, the real expansion of the liquid equals the overflow.”<br>
+(iv) “A hole in a metal plate becomes smaller when the plate is heated.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — between 0 °C and 4 °C water CONTRACTS (its density increases to a maximum
+     at 4 °C); above 4 °C it expands. This anomaly is why lakes freeze from the top.
+(ii) FALSE — α has unit K⁻¹ (or °C⁻¹): α = ΔL/(L₀Δθ) is a length divided by a length
+     times a temperature, so the length cancels.
+(iii) FALSE — real expansion = overflow + expansion of the vessel. The overflow is the
+     APPARENT expansion and is always smaller.
+(iv) FALSE — every dimension grows in proportion, holes included. A hole in a plate
+     behaves exactly like a disc of the same metal: it expands too, which is why a
+     metal washer's bore widens on heating.</p>
+<p>The hole question (iv) is the classic one-mark trap: heating expands the plate's outline and its voids alike, because expansion is a scaling of the whole shape.</p>
+<p class="ans">(i) water contracts 0–4 °C; (ii) α is in K⁻¹; (iii) real = overflow + vessel expansion; (iv) the hole gets larger.</p>
 </div>
 </div>
 

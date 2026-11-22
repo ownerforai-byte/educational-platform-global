@@ -33,6 +33,7 @@
 <li>Exercise 9.3 — Thermal equilibrium and the zeroth law</li>
 <li>Exercise 9.4 — The mercury thermometer</li>
 <li>Exercise 9.5 — Temperature scales and thermometric properties</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -253,6 +254,138 @@ unknown temperature θ, then for a linear scale:
 <p><b>Specific heat capacity</b> c = Q/(mΔT): the heat needed per unit mass per kelvin, in J kg⁻¹ K⁻¹. It is a property of the material only, independent of mass.</p>
 <p class="work">Relation: Q = mcΔT, and C = mc</p>
 <p class="ans">C is a property of the object (J K⁻¹), c of the substance (J kg⁻¹ K⁻¹); c = C/m, and water has an unusually large c = 4200 J kg⁻¹ K⁻¹.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>This unit is examined by reasoning and by scale conversion, not by heavy algebra. The eight shapes below include the calibration sum and the “heat vs temperature” reasoning that decides the 2-mark questions.</p>
+
+<div class="item">
+<p class="q"><b>Q21.</b> [Multi-step numerical] (a) At what temperature do the Celsius and Fahrenheit readings agree? (b) At what Celsius temperature is the Kelvin reading double the Celsius reading?</p>
+<div class="sol">
+<p class="work">(a) Set C = F = x in F = 1.8C + 32:
+    x = 1.8x + 32  ⇒  −0.8x = 32  ⇒  x = −40
+    so −40 °C = −40 °F
+
+(b) K = 2C and K = C + 273:
+    C + 273 = 2C  ⇒  C = 273 °C  (K = 546 K)</p>
+<p>Both results come from the conversion relation, not from memorised numbers. The −40 answer is the standard sanity check on the two scales; the doubling answer requires only that you write the Kelvin offset (273) explicitly rather than treating K as “C with a different name”.</p>
+<p class="ans">(a) −40 °C = −40 °F; (b) 273 °C = 546 K.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> [Derivation] Derive the relation between the Celsius, Fahrenheit and Kelvin scales from the two fixed points.</p>
+<div class="sol">
+<p class="work">Let the thermometric property be x (say the length of the mercury column).
+Between ice point x₀ and steam point x₁₀₀ the scale is linear:
+
+  (x − x₀)/(x₁₀₀ − x₀) = C/100 = (F − 32)/180 = (K − 273.15)/100
+
+Hence:
+  F = 1.8C + 32        C = (F − 32)/1.8
+  K = C + 273.15        C = K − 273.15</p>
+<p>Fahrenheit uses 180 divisions between the same two fixed points where Celsius uses 100, which is where the factor 180/100 = 9/5 comes from; the +32 is the offset of Fahrenheit's ice point. Kelvin keeps the Celsius degree size but shifts the zero to absolute zero, which is why no degree symbol is used. The derivation makes it clear that any thermometric property — length, resistance, pressure, emf — produces a valid scale as long as it varies linearly between the fixed points.</p>
+<p class="ans">C/100 = (F − 32)/180 = (K − 273.15)/100, giving F = 1.8C + 32 and K = C + 273.15.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> [Graph reading] A platinum resistance thermometer reads 5.00 Ω in melting ice and 6.50 Ω in steam. (a) Find the temperature when the resistance is 5.90 Ω. (b) What is the sensitivity of the thermometer?</p>
+<div class="sol">
+<p class="work">(a) Linear scale:  θ/100 = (R − R₀)/(R₁₀₀ − R₀)
+    θ = 100(5.90 − 5.00)/(6.50 − 5.00)
+      = 100(0.90/1.50) = 60 °C
+
+(b) sensitivity = dR/dθ = (6.50 − 5.00)/100 = 0.015 Ω °C⁻¹
+    (the slope of the R–θ graph)</p>
+<p>The graph of R against θ is a straight line of slope 0.015 Ω °C⁻¹ with intercept 5.00 Ω; any unknown temperature is then read off by inverting the line. The sensitivity is what makes a thermometer useful: 0.015 Ω per degree means a resistance measurement good to 0.001 Ω gives 0.07 °C resolution — which is why platinum resistance thermometers are used as standards and mercury-in-glass ones are not.</p>
+<p class="ans">(a) 60 °C; (b) sensitivity 0.015 Ω °C⁻¹, the slope of the calibration line.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> [Combined concept] Two bodies at 80 °C and 20 °C are placed in contact inside an insulated box. Describe the energy transfer and the final state, and explain why the final temperature is not the average of the two in general.</p>
+<div class="sol">
+<p class="work">Heat flows from 80 °C to 20 °C because the direction is fixed by temperature,
+not by the amount of heat each body contains.
+
+At equilibrium:   Q_lost = Q_gained
+  m₁c₁(80 − θ) = m₂c₂(θ − 20)
+  θ = (m₁c₁ × 80 + m₂c₂ × 20)/(m₁c₁ + m₂c₂)
+
+If m₁c₁ = m₂c₂ then θ = 50 °C; otherwise θ is a WEIGHTED mean, pulled towards
+the body with the larger heat capacity.</p>
+<p>For example 1 kg of water (c = 4200) and 1 kg of copper (c = 385): θ = (4200 × 80 + 385 × 20)/(4200 + 385) = 77 °C — almost the water's original temperature. The zeroth law guarantees that equilibrium is reached; the first law (energy conservation) fixes where.</p>
+<p class="ans">Heat flows from 80 °C to 20 °C until both reach θ = (m₁c₁T₁ + m₂c₂T₂)/(m₁c₁ + m₂c₂), a heat-capacity-weighted mean — 50 °C only when the heat capacities are equal.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> [Assertion–reason] <b>Assertion (A):</b> Heat and temperature are different physical quantities. <b>Reason (R):</b> Heat is energy in transit between bodies at different temperatures, while temperature measures the average kinetic energy of the molecules.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Heat Q:   energy transferred, measured in joules; extensive (depends on mass)
+Temperature θ: a state property, measured in K; intensive (independent of mass)
+
+A bathtub at 40 °C and a cup at 40 °C have the same temperature but the bathtub
+contains (and can transfer) far more heat: Q = mcΔθ depends on m.</p>
+<p>Three consequences are examinable: a spark at 1000 °C carries almost no heat because its mass is tiny; a large body of water at 20 °C can melt more ice than a small flame at 500 °C; and “heat” is not a substance stored in a body — the correct term for the energy stored is internal energy.</p>
+<p class="ans">Both true, R explains A: heat is energy in transit (J, extensive), temperature is a state variable (K, intensive) tied to mean molecular KE.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Experiment/observation table] An uncalibrated mercury thermometer reads 2.0 °C in melting ice and 102.0 °C in steam at standard pressure. (a) Write its correction formula. (b) What is the true temperature when it reads 50 °C?</p>
+<div class="sol">
+<p class="work">(a) The scale is linear but wrongly placed:
+    true θ = 100(x − 2.0)/(102.0 − 2.0) = (x − 2.0)
+    so the thermometer reads 2 °C too high everywhere → correction = −2.0 °C
+
+(b) x = 50 °C  ⇒  θ_true = 50 − 2.0 = 48 °C
+
+General form for a scale with ice point x₀ and steam point x₁₀₀:
+    θ = 100 (x − x₀)/(x₁₀₀ − x₀)</p>
+<p>Both a zero error (wrong ice point) and a scale error (wrong steam point) are handled by the same two-point calibration, which is why every laboratory thermometer is checked at both fixed points and not just one. A thermometer with ice point 2 °C and steam point 100 °C would have a scale error rather than an offset, and the formula above still applies.</p>
+<p class="ans">θ = (x − 2.0) °C, i.e. a −2.0 °C zero correction; a reading of 50 °C corresponds to a true 48 °C.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Estimation and limiting case] Convert normal body temperature 37 °C to kelvin and to Fahrenheit. Then state the limiting case of the temperature scale and what happens there.</p>
+<div class="sol">
+<p class="work">K: 37 + 273 = 310 K
+F: 1.8(37) + 32 = 66.6 + 32 = 98.6 °F
+
+Estimates for context:
+  room temperature  20 °C = 293 K
+  boiling water    100 °C = 373 K
+  liquid nitrogen −196 °C =  77 K
+  surface of the Sun ≈ 5800 K</p>
+<p><b>Limiting case — absolute zero:</b> at 0 K (−273.15 °C) the translational kinetic energy of molecules reaches its minimum, and no further cooling by heat transfer is possible (the third law of thermodynamics). Classical molecular motion stops, but quantum zero-point motion remains, so “all motion stops” is the classical answer and “kinetic energy is minimum, not zero” is the modern one. Negative kelvin temperatures are not colder than 0 K — they describe population-inverted systems, not ordinary matter.</p>
+<p class="ans">37 °C = 310 K = 98.6 °F; at 0 K molecular translational KE is at its minimum and no heat can be extracted, though quantum zero-point motion persists.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Temperature measures the total heat contained in a body.”<br>
+(ii) “A body with more internal energy is always hotter.”<br>
+(iii) “0 °C is the same as 0 K.”<br>
+(iv) “A refrigerator cools food by creating cold.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — temperature measures the AVERAGE molecular kinetic energy, not the total
+     energy. Total internal energy also depends on mass and on phase.
+(ii) FALSE — a 10 kg block of ice at 0 °C has far more internal energy than a spark at
+     1000 °C but is much colder; temperature and total energy are different quantities.
+(iii) FALSE — 0 °C = 273 K. 0 K = −273.15 °C is absolute zero and has never been reached.
+(iv) FALSE — a refrigerator creates no cold; it removes heat from the interior and
+     dumps it into the room (plus the work done by the compressor), which is why the
+     back of a fridge is warm. “Cold” is not a substance that can be added.</p>
+<p>All four are variants of the same confusion: temperature (intensive, average) with heat or internal energy (extensive, total).</p>
+<p class="ans">(i) average, not total; (ii) more energy ≠ hotter; (iii) 0 °C = 273 K; (iv) a fridge moves heat outward, it does not make cold.</p>
 </div>
 </div>
 
