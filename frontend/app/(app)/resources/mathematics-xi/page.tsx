@@ -93,8 +93,10 @@ export default function MathematicsXiSolutionsPage() {
             <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
               One printable document per chapter. Every page is a real A4 sheet holding{" "}
               {MATH_XI_WORKBOOK_TOTALS.perSheet} solved questions in a 3 × 4 grid — question,
-              working and answer line — in {MATH_XI_WORKBOOK_TOTALS.sheets} sheets total. Open any
-              sheet and print (Ctrl/⌘ + P) for a PDF that keeps the page layout.
+              working and answer line — in {MATH_XI_WORKBOOK_TOTALS.sheets} sheets total. The
+              second sheet of every chapter switches format: MCQ, true/false, fill in the blank,
+              spot the error, assertion–reason, explain why, match and case study. Open any sheet
+              and print (Ctrl/⌘ + P) for a PDF that keeps the page layout.
             </p>
           </div>
           <a

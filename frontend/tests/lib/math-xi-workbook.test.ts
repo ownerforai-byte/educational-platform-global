@@ -113,6 +113,32 @@ describe("Mathematics XI — A4 chapter workbook", () => {
     }
   });
 
+  it("gives every chapter a second sheet of mixed question types", () => {
+    const known = [
+      "MCQ",
+      "True/False",
+      "Fill in",
+      "Spot the error",
+      "Assertion–reason",
+      "Explain",
+      "Match",
+      "Word problem",
+      "Case study",
+    ];
+
+    for (const chapter of MATH_XI_CHAPTERS) {
+      const html = read(mathXiChapterPath(chapter));
+      const kinds = [...html.matchAll(/<span class="kind">(.*?)<\/span>/g)].map((m) => m[1]);
+
+      expect(chapter.sheetCount, `${chapter.slug}: sheets`).toBe(2);
+      expect(kinds.length, `${chapter.slug}: typed questions`).toBeGreaterThanOrEqual(12);
+      for (const kind of kinds) {
+        expect(known, `${chapter.slug}: unknown type ${kind}`).toContain(kind);
+      }
+      expect(new Set(kinds).size, `${chapter.slug}: type variety`).toBeGreaterThanOrEqual(6);
+    }
+  });
+
   it("links every chapter from the generated contents sheet", () => {
     const index = read("public/resources/mathematics-xi/chapters/index.html");
 
