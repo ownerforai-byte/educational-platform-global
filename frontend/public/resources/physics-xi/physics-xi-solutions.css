@@ -1,0 +1,144 @@
+/* Physics XI — Exercise Solutions & Conceptual Bank
+   Shared stylesheet for every unit solution file in this folder.
+   Self-contained, print-friendly, no external fonts or scripts. */
+
+:root {
+  --ink: #14161a;
+  --muted: #565d68;
+  --rule: #d3d8e0;
+  --accent: #0b4f9c;
+  --wash: #f5f7fb;
+  --warn: #7a3b00;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background: #fff;
+  max-width: 54em;
+  margin: 0 auto;
+  padding: 2em 1.4em 4em;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1 { font-size: 1.75em; line-height: 1.25; margin: 0 0 .25em; }
+h2 {
+  font-size: 1.22em;
+  margin: 2.1em 0 .6em;
+  padding-bottom: .25em;
+  border-bottom: 1px solid var(--rule);
+}
+h3 { font-size: 1.02em; margin: 1.5em 0 .4em; color: #22262d; }
+h4 { font-size: .95em; margin: 1.1em 0 .3em; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+
+p { margin: .55em 0; }
+a { color: var(--accent); }
+
+.meta { color: var(--muted); font-size: .92em; }
+.lede { font-size: 1.04em; color: #2b3038; }
+.crumb { font-size: .85em; color: var(--muted); margin-bottom: 1.4em; }
+
+/* ---------- question / solution blocks ---------- */
+
+.item {
+  border-left: 3px solid var(--rule);
+  padding: .1em 0 .1em .95em;
+  margin: .95em 0 1.15em;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.q { margin: 0 0 .35em; }
+.q b { color: var(--accent); }
+
+.tags {
+  font-size: .78em;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 0 0 .3em;
+}
+
+.sol { margin: .25em 0 0; }
+
+.work {
+  font-family: "Consolas", "SF Mono", Menlo, monospace;
+  font-size: .9em;
+  background: var(--wash);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: .55em .75em;
+  margin: .45em 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.ans {
+  font-weight: 700;
+  font-family: "Consolas", "SF Mono", Menlo, monospace;
+  font-size: .92em;
+  border-left: 3px solid var(--accent);
+  padding-left: .6em;
+  margin: .5em 0 0;
+}
+
+ol.step { margin: .35em 0 .4em; padding-left: 1.5em; }
+ol.step > li { margin: .3em 0; }
+ul { margin: .35em 0 .5em; padding-left: 1.4em; }
+ul.tight li { margin: .18em 0; }
+
+/* ---------- call-outs ---------- */
+
+.tip {
+  border-left: 3px solid #6b7f99;
+  background: var(--wash);
+  padding: .55em .8em;
+  margin: .9em 0;
+  font-size: .95em;
+}
+
+.warn {
+  border-left: 3px solid #b45f00;
+  padding: .5em .8em;
+  margin: .9em 0;
+  font-size: .95em;
+  color: var(--warn);
+}
+
+.exam {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: .8em 1em;
+  background: var(--wash);
+  margin: 1.2em 0;
+}
+
+/* ---------- tables ---------- */
+
+table { border-collapse: collapse; width: 100%; margin: .5em 0 1em; font-size: .93em; }
+th, td { border: 1px solid #9aa3b0; padding: .4em .55em; text-align: left; vertical-align: top; }
+th { background: #eceff4; }
+td.c, th.c { text-align: center; }
+
+/* ---------- footer ---------- */
+
+.note {
+  font-size: .87em;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+  margin-top: 2.6em;
+  padding-top: .8em;
+}
+
+.toc { font-size: .95em; }
+.toc li { margin: .2em 0; }
+
+@media print {
+  body { max-width: none; padding: 0; font-size: 10.5pt; }
+  .item, .tip, .warn, .exam, table { page-break-inside: avoid; }
+  h2 { page-break-after: avoid; }
+  a { color: var(--ink); text-decoration: none; }
+}

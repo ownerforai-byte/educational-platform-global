@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 5 Work, Energy and Power: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 5 Work, Energy and Power: worked solutions for work by constant and variable forces, the work-energy theorem, kinetic and potential energy, conservation of energy, conservative forces, power and efficiency, and elastic and inelastic collisions, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 5</p>
+
+<h1>Unit 5 — Work, Energy and Power</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 6 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">This unit is where the paper's numericals are cheapest to score and easiest to lose: one wrong sign or a forgotten cosθ and the whole 4-mark item collapses. Every exercise type is worked below with the energy statement written out in full.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define one joule and one watt; state the work–energy theorem; distinguish conservative from non-conservative forces; which collision conserves momentum but not energy.</li>
+<li><b>4 marks</b> — work done by a variable force (area or integral); power and efficiency numerical; energy conversion for a falling body or a compressed spring.</li>
+<li><b>5–6 marks</b> — prove that total mechanical energy is conserved for a freely falling body; derive the final velocities in a one-dimensional elastic collision; show equal masses exchange velocities.</li>
+</ul>
+<p>Rule that keeps losing students marks: state the system, the initial energy and the final energy in words before the algebra. NEB awards the "energy statement" mark separately from the substitution.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 5.1 — Work done by constant and variable forces</li>
+<li>Exercise 5.2 — Kinetic energy, potential energy and the work–energy theorem</li>
+<li>Exercise 5.3 — Power and efficiency</li>
+<li>Exercise 5.4 — Conservation of mechanical energy</li>
+<li>Exercise 5.5 — Conservative and non-conservative forces</li>
+<li>Exercise 5.6 — Elastic and inelastic collisions</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.1 — Work done by constant and variable forces</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Define work. A force of 50 N acts at 60° to the horizontal and moves a body 10 m horizontally. Find the work done.</p>
+<div class="sol">
+<p>Work done by a constant force is W = F·s = Fs cosθ, where θ is the angle between force and displacement.</p>
+<p class="work">W = Fs cosθ = 50 × 10 × cos60° = 500 × 0.5 = 250 J</p>
+<p class="ans">W = 250 J</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Under what conditions is the work done (a) zero, (b) negative, (c) maximum?</p>
+<div class="sol">
+<ul class="tight">
+<li><b>Zero:</b> θ = 90° (force perpendicular to displacement — a porter carrying a load horizontally, or the centripetal force in circular motion).</li>
+<li><b>Negative:</b> 90° &lt; θ ≤ 180° (friction, air resistance, a braking force — energy is removed).</li>
+<li><b>Maximum:</b> θ = 0° (force along the displacement), W = Fs.</li>
+</ul>
+<p class="ans">W = Fs cosθ: zero at 90°, negative for obtuse angles, maximum at 0°.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A force F = 3x² N acts along the x-axis. Find the work done in moving a body from x = 0 to x = 2 m.</p>
+<div class="sol">
+<p class="work">W = ∫F dx from 0 to 2 = ∫3x² dx = [x³]₀² = 8 − 0 = 8 J</p>
+<p>Graphically this is the area under the F–x graph from 0 to 2 m.</p>
+<p class="ans">W = 8 J</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> A spring of force constant 200 N m⁻¹ is stretched by 10 cm. Find the work done and the energy stored.</p>
+<div class="sol">
+<p class="work">Extension x = 0.10 m
+W = ∫kx dx = ½kx² = ½(200)(0.10)² = ½(200)(0.01) = 1.0 J</p>
+<p>All of this work is stored in the spring as elastic potential energy (assuming it stays within the elastic limit and Hooke's law holds).</p>
+<p class="ans">W = 1.0 J = elastic PE stored</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> A porter carries a 20 kg load on his head and walks 50 m horizontally. What work does he do against gravity? What work does he do on the load in the direction of motion?</p>
+<div class="sol">
+<p>The load moves horizontally while gravity acts vertically, so the angle between weight and displacement is 90°:</p>
+<p class="work">W_gravity = mgs cos90° = 0 J</p>
+<p>The porter exerts an upward force balancing the weight, also perpendicular to the displacement, so its work on the load is zero; his muscles nevertheless spend energy internally because of the repeated action of muscle fibres.</p>
+<p class="ans">Zero work against gravity and zero work along the path — the muscular effort is internal energy expenditure, not mechanical work on the load.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> A car of mass 1000 kg moving at 10 m s⁻¹ is accelerated to 20 m s⁻¹. Find the work done by the engine (ignoring friction).</p>
+<div class="sol">
+<p class="work">W = ΔKE = ½m(v² − u²) = ½(1000)(400 − 100)
+  = 500 × 300 = 1.5 × 10⁵ J</p>
+<p class="ans">W = 1.5 × 10⁵ J (150 kJ)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.2 — Kinetic energy, potential energy and the work–energy theorem</h2>
+
+<div class="item">
+<p class="q"><b>Q7.</b> State and prove the work–energy theorem.</p>
+<div class="sol">
+<p><b>Statement:</b> the net work done on a body by all forces equals the change in its kinetic energy, W_net = ΔKE.</p>
+<p><b>Proof</b> for a constant force along the displacement:</p>
+<p class="work">F = ma, and v² = u² + 2as  ⇒  s = (v² − u²)/(2a)
+W = Fs = ma × (v² − u²)/(2a) = ½mv² − ½mu² = KE_f − KE_i</p>
+<p>For a variable force the same result follows from W = ∫F dx with v dv = a dx.</p>
+<p class="ans">W_net = ½mv² − ½mu²: the net work always shows up as a change of kinetic energy, and it applies whatever the nature of the force.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> A bullet of mass 20 g moving at 400 m s⁻¹ penetrates 10 cm into a wooden block and stops. Find the average resistive force.</p>
+<div class="sol">
+<p class="work">Work–energy theorem: −F·d = 0 − ½mu²
+F × 0.10 = ½(0.020)(400)² = ½(0.020)(160000) = 1600 J
+F = 1600/0.10 = 16 000 N = 1.6 × 10⁴ N</p>
+<p class="ans">F = 1.6 × 10⁴ N (opposing the motion)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Show that KE = p²/2m, and use it to explain why a heavy body and a light body with the same momentum have different kinetic energies.</p>
+<div class="sol">
+<p class="work">p = mv ⇒ v = p/m
+KE = ½mv² = ½m(p/m)² = p²/2m</p>
+<p>For fixed p, KE ∝ 1/m: the lighter body has the larger kinetic energy because it needs the larger speed to carry the same momentum, and KE depends on v².</p>
+<p class="ans">KE = p²/2m; at equal momentum the lighter body carries more kinetic energy.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Define gravitational potential energy and derive an expression for it near the Earth's surface.</p>
+<div class="sol">
+<p>Gravitational PE of a body is the energy it possesses by virtue of its position in the Earth's gravitational field — the work done in lifting it there against gravity.</p>
+<p class="work">For a small height h (g constant):
+W = force × distance = mg × h
+⇒ PE = mgh   (taking the reference level as zero at h = 0)</p>
+<p class="note" style="border:0;margin:.3em 0">The reference level is arbitrary: only changes of PE enter the energy equations, so any convenient zero may be chosen.</p>
+<p class="ans">PE = mgh, valid for h ≪ R_E where g is constant; the value is relative to the chosen zero.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> A body of mass 2 kg is raised to a height of 5 m and then allowed to fall. Find its KE and PE at the start, at 3 m and just before hitting the ground.</p>
+<div class="sol">
+<table>
+<tr><th>Height</th><th>PE = mgh</th><th>KE</th><th>Total</th></tr>
+<tr><td>5 m (start)</td><td>2(9.8)(5) = 98 J</td><td>0</td><td>98 J</td></tr>
+<tr><td>3 m</td><td>2(9.8)(3) = 58.8 J</td><td>98 − 58.8 = 39.2 J</td><td>98 J</td></tr>
+<tr><td>0 m</td><td>0</td><td>98 J</td><td>98 J</td></tr>
+</table>
+<p class="ans">The total stays 98 J: PE converts into KE, and the sum is constant.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.3 — Power and efficiency</h2>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Define power and its unit. A pump lifts 200 kg of water through 10 m in 20 s. Find its output power, and its input power if the efficiency is 70%.</p>
+<div class="sol">
+<p>Power is the rate of doing work, P = W/t = F·v; the SI unit is the watt (1 W = 1 J s⁻¹).</p>
+<p class="work">W = mgh = 200(9.8)(10) = 19 600 J
+P_out = 19 600/20 = 980 W
+
+Efficiency η = P_out/P_in ⇒ P_in = 980/0.70 = 1400 W</p>
+<p class="ans">Output 980 W; input 1.4 kW (the remaining 420 W is lost to friction and turbulence)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> A car moves at a steady 20 m s⁻¹ against a total resistive force of 500 N. Find the power developed by the engine.</p>
+<div class="sol">
+<p class="work">At constant speed the driving force equals the resistance: F = 500 N
+P = Fv = 500 × 20 = 10 000 W = 10 kW</p>
+<p class="ans">P = 10 kW</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Express 1 horsepower in watts and 1 kWh in joules.</p>
+<div class="sol">
+<p class="work">1 hp = 746 W (British engineering horsepower)
+1 kWh = 1000 W × 3600 s = 3.6 × 10⁶ J</p>
+<p class="ans">1 hp = 746 W; 1 kWh = 3.6 × 10⁶ J (the unit on an electricity bill)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> A machine raises a load of 500 N through 12 m in 4 s using 3 kW of power. Find its efficiency.</p>
+<div class="sol">
+<p class="work">Useful work = 500 × 12 = 6000 J
+Useful power = 6000/4 = 1500 W
+η = 1500/3000 × 100% = 50%</p>
+<p class="ans">50% — half the input power is lost, typically to friction in the machine</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Why can the efficiency of a real machine never be 100%?</p>
+<div class="sol">
+<p>Because some input energy is always converted into forms you cannot use — heat from friction, sound, deformation and air resistance. The second law of thermodynamics forbids a cyclic device from turning all its heat input into work, so η &lt; 1 always. Ideal (frictionless, massless) machines are an idealisation.</p>
+<p class="ans">Part of every input is dissipated as heat and sound by friction, so output is always less than input; η = 100% requires a frictionless idealisation.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.4 — Conservation of mechanical energy</h2>
+
+<div class="item">
+<p class="q"><b>Q17.</b> State the law of conservation of energy and prove that total mechanical energy is conserved for a body falling freely from height h.</p>
+<div class="sol">
+<p><b>Statement:</b> energy can neither be created nor destroyed; it changes from one form to another, the total of an isolated system remaining constant.</p>
+<p class="work">At the top (height h):  v = 0
+   PE = mgh, KE = 0, total E = mgh
+
+At height y (fallen h − y):  v² = 2g(h − y)
+   PE = mgy, KE = ½m·2g(h − y) = mg(h − y)
+   total E = mgy + mg(h − y) = mgh
+
+At the ground (y = 0):  v² = 2gh
+   PE = 0, KE = ½m(2gh) = mgh, total E = mgh</p>
+<p class="ans">Total mechanical energy = mgh at every stage; PE converts to KE and back but the sum is constant when only gravity does work.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> A stone is thrown vertically upward at 19.6 m s⁻¹. Using energy conservation, find the greatest height reached.</p>
+<div class="sol">
+<p class="work">At launch: KE = ½mu², PE = 0
+At the top:  KE = 0,   PE = mgh
+½mu² = mgh ⇒ h = u²/(2g) = 384.16/19.6 = 19.6 m</p>
+<p class="ans">h = 19.6 m — the same result as the kinematic equation, obtained without using time.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> A ball is dropped from 20 m and rebounds to 5 m. What fraction of its energy is lost in the impact?</p>
+<div class="sol">
+<p class="work">Energy at release ∝ h₁ = 20 m
+Energy after impact ∝ h₂ = 5 m
+Fraction retained = 5/20 = 0.25
+Fraction lost = 1 − 0.25 = 0.75 = 75%</p>
+<p class="ans">75% of the mechanical energy is lost as heat, sound and deformation of the ball and floor</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> A pendulum bob is released from a height of 0.45 m above its lowest point. Find its speed at the lowest point.</p>
+<div class="sol">
+<p class="work">mgh = ½mv²  ⇒  v = √(2gh) = √(2 × 9.8 × 0.45) = √8.82 = 2.97 m s⁻¹</p>
+<p class="ans">v ≈ 3.0 m s⁻¹ at the lowest point — the mass cancels, so the answer is independent of the bob's mass.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.5 — Conservative and non-conservative forces</h2>
+
+<div class="item">
+<p class="q"><b>Q21.</b> Distinguish between conservative and non-conservative forces with examples.</p>
+<div class="sol">
+<table>
+<tr><th>Conservative</th><th>Non-conservative</th></tr>
+<tr><td>Work depends only on the initial and final positions, not the path</td><td>Work depends on the path taken</td></tr>
+<tr><td>Work around a closed loop is zero</td><td>Work around a closed loop is not zero</td></tr>
+<tr><td>Can be derived from a potential energy function</td><td>No potential energy function exists</td></tr>
+<tr><td>Mechanical energy is conserved</td><td>Mechanical energy is dissipated</td></tr>
+<tr><td>Gravity, spring force, electrostatic force</td><td>Friction, air resistance, viscous drag, applied push</td></tr>
+</table>
+<p class="ans">Conservative forces store and return energy without loss; non-conservative forces convert mechanical energy irreversibly into heat.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> A 2 kg block is pushed 5 m up a rough incline of 30° (μ = 0.2). Find the work done against friction and the change in mechanical energy.</p>
+<div class="sol">
+<p class="work">N = mg cosθ = 2(9.8)(0.866) = 16.97 N
+f = μN = 0.2(16.97) = 3.39 N
+W_friction = −f d = −3.39 × 5 = −17.0 J
+
+ΔPE = mgh = mg d sinθ = 2(9.8)(5)(0.5) = 49 J
+ΔKE = 0 (constant speed) ⇒ ΔE_mech = 49 J
+Work by the applied force = 49 + 17 = 66 J</p>
+<p class="ans">17 J is dissipated by friction; the applied force must supply 66 J, of which 49 J is stored as PE and 17 J is lost.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Show that the work done by gravity in moving a body from A to B is independent of the path.</p>
+<div class="sol">
+<p class="work">For any path, only the vertical displacement changes the work:
+W = ∫F·ds = −mg ∫dy = −mg(y_B − y_A) = mg(y_A − y_B)</p>
+<p>The horizontal parts of the path contribute nothing because gravity is perpendicular to them. The work depends only on the height difference, so gravity is conservative and a potential energy mgh exists.</p>
+<p class="ans">W = −mgΔy for any route; path-independence is exactly what makes PE = mgh meaningful.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.6 — Elastic and inelastic collisions</h2>
+
+<div class="item">
+<p class="q"><b>Q24.</b> Distinguish between elastic and inelastic collisions, and state which conservation laws apply to each.</p>
+<div class="sol">
+<table>
+<tr><th></th><th>Elastic</th><th>Inelastic</th></tr>
+<tr><td>Momentum</td><td>Conserved</td><td>Conserved</td></tr>
+<tr><td>Kinetic energy</td><td>Conserved</td><td>Not conserved</td></tr>
+<tr><td>Deformation</td><td>Perfectly temporary (rebound)</td><td>Permanent or partly permanent</td></tr>
+<tr><td>Example</td><td>Collision between hard billiard balls, gas molecules</td><td>Two lumps of clay sticking, a bullet embedding in wood</td></tr>
+</table>
+<p class="ans">Momentum is conserved in both; kinetic energy is conserved only in the elastic case, the loss appearing as heat, sound and deformation.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> A 4 kg body moving at 6 m s⁻¹ collides head-on elastically with a stationary 2 kg body. Find their velocities after the collision.</p>
+<div class="sol">
+<p class="work">v₁ = [(m₁ − m₂)u₁ + 2m₂u₂]/(m₁ + m₂)
+   = [(4 − 2)(6) + 0]/6 = 12/6 = 2 m s⁻¹
+
+v₂ = [(m₂ − m₁)u₂ + 2m₁u₁]/(m₁ + m₂)
+   = [0 + 2(4)(6)]/6 = 48/6 = 8 m s⁻¹
+
+Check momentum: 4(6) = 24; 4(2) + 2(8) = 24 ✓
+Check KE: 72 J before; ½(4)(4) + ½(2)(64) = 8 + 64 = 72 J ✓</p>
+<p class="ans">v₁ = 2 m s⁻¹ (same direction), v₂ = 8 m s⁻¹ (same direction)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> Show that in a one-dimensional elastic collision between two bodies of equal mass, the velocities are exchanged.</p>
+<div class="sol">
+<p class="work">Momentum:        mu₁ + mu₂ = mv₁ + mv₂  ⇒ v₁ + v₂ = u₁ + u₂   ...(i)
+Energy:          ½mu₁² + ½mu₂² = ½mv₁² + ½mv₂² ⇒ v₁² + v₂² = u₁² + u₂² ...(ii)
+From (i): v₁ = u₁ + u₂ − v₂
+Substituting in (ii) and simplifying gives:
+  (v₂ − u₁)(v₂ − u₂) = 0
+⇒ either v₂ = u₁ (which gives v₁ = u₂ — the exchange) or v₂ = u₂ (no collision).</p>
+<p class="ans">v₁ = u₂ and v₂ = u₁ — the bodies simply swap velocities (a billiard-ball head-on hit or Newton's cradle).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> A bullet of mass 10 g moving at 500 m s⁻¹ embeds in a 990 g block at rest. Find the common velocity and the kinetic energy lost.</p>
+<div class="sol">
+<p class="work">Momentum: 0.010(500) = (1.000)v  ⇒ v = 5 m s⁻¹
+
+KE before = ½(0.010)(500)² = 1250 J
+KE after  = ½(1.000)(5)²   = 12.5 J
+loss = 1237.5 J ≈ 99%</p>
+<p class="ans">v = 5 m s⁻¹; about 1.24 kJ (99%) of the kinetic energy becomes heat and deformation — the classic perfectly inelastic collision.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> Derive the general expressions for the final velocities in a one-dimensional elastic collision.</p>
+<div class="sol">
+<p class="work">Momentum: m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂
+Energy:   ½m₁u₁² + ½m₂u₂² = ½m₁v₁² + ½m₂v₂²
+
+From the energy equation (divided by the momentum equation):
+  u₁ + v₁ = u₂ + v₂   ...(iii)  (relative velocity reverses: u₁ − u₂ = −(v₁ − v₂))
+
+Solving (i) and (iii):
+v₁ = [(m₁ − m₂)u₁ + 2m₂u₂]/(m₁ + m₂)
+v₂ = [(m₂ − m₁)u₂ + 2m₁u₁]/(m₁ + m₂)</p>
+<p class="ans">v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₂−m₁)u₂ + 2m₁u₁]/(m₁+m₂). Special cases: m₁ = m₂ (exchange), m₂ ≫ m₁ (v₁ ≈ −u₁, rebound), m₁ ≫ m₂ (v₁ ≈ u₁, v₂ ≈ 2u₁).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define one joule and one watt.</p>
+<div class="sol"><p class="ans">One joule is the work done by a force of 1 N when its point of application moves 1 m in the direction of the force. One watt is the power of a device that does 1 J of work per second (1 W = 1 J s⁻¹).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Can work be done without any displacement? Justify.</p>
+<div class="sol"><p class="ans">No. W = Fs cosθ, so if s = 0 the work is zero — pushing a wall as hard as you like does no mechanical work on it. Muscular energy is still spent internally, but no work is done on the object.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Why is it easier to carry a load on a level road than to lift it?</p>
+<div class="sol"><p class="ans">Carrying horizontally requires no work against gravity because the force is perpendicular to the displacement (cos90° = 0). Lifting raises the load through a height, doing work mgh which becomes its potential energy. The effort felt while carrying is internal muscular work, not work on the load.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> State the work–energy theorem and give one use of it.</p>
+<div class="sol"><p class="ans">The net work done on a body equals the change in its kinetic energy: W_net = ΔKE. It is used to find a stopping distance or a resistive force without knowing the time — e.g. the force that stops a bullet in a block.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Why is potential energy always defined relative to a reference level?</p>
+<div class="sol"><p class="ans">Because only the <em>change</em> in potential energy has physical meaning; the absolute value depends on which height you call zero. Any choice of reference is valid and cancels in energy equations, so PE = mgh is a difference from the chosen level.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Is mechanical energy always conserved? Explain.</p>
+<div class="sol"><p class="ans">No. It is conserved only when the forces doing work are conservative. With friction or air resistance present, mechanical energy decreases and appears as heat; the <em>total</em> energy is still conserved, but the mechanical part is not.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why is friction a non-conservative force?</p>
+<div class="sol"><p class="ans">Because the work it does depends on the path length and it does negative work around a closed loop — the energy is converted into heat and cannot be recovered. No potential energy function can describe it.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> A light body and a heavy body have the same kinetic energy. Which has greater momentum?</p>
+<div class="sol"><p class="ans">Keep KE = p²/2m fixed: p = √(2m·KE), so p ∝ √m. The heavier body has the greater momentum. Equivalently, at equal momentum the lighter body has the greater KE.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> What is a perfectly inelastic collision? Give one example.</p>
+<div class="sol"><p class="ans">A collision in which the bodies stick together and move with a common velocity, so the kinetic energy loss is maximum while momentum is still conserved. Example: a bullet embedding in a block, or two clay balls colliding and sticking.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Is momentum conserved when a ball bounces off a wall? Explain.</p>
+<div class="sol"><p class="ans">Not for the ball alone — its momentum reverses. It is conserved for the (ball + wall + Earth) system: the Earth gains an equal and opposite momentum. Never apply momentum conservation to a single body that is acted on by an external force.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why is kinetic energy not conserved in an inelastic collision, although momentum is?</p>
+<div class="sol"><p class="ans">Momentum is a vector and depends on velocity to the first power, so equal and opposite internal impulses preserve it. Kinetic energy depends on v² and part of it is converted into heat, sound and permanent deformation, forms that momentum conservation does not forbid.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Distinguish between power and energy.</p>
+<div class="sol"><p class="ans">Energy is the capacity to do work and is measured in joules; it is a quantity, not a rate. Power is the rate at which energy is transferred or work is done, P = W/t, measured in watts. A 1 kW heater and a 100 W bulb can deliver the same total energy — the heater simply delivers it ten times faster.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> What is the significance of the area under an F–x graph?</p>
+<div class="sol"><p class="ans">It is the work done by the force over that displacement, W = ∫F dx. Above the axis the work is positive (energy added); below the axis it is negative (energy removed). This is how work by a variable force is found graphically.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why does a rubber ball bounce higher than a lump of clay dropped from the same height?</p>
+<div class="sol"><p class="ans">Rubber deforms elastically and returns most of the stored strain energy, so KE is largely recovered (an almost elastic collision). Clay deforms plastically, dissipating nearly all the energy as heat, so almost no KE remains for the rebound (inelastic).</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [5]</b> A 1500 kg car travelling at 20 m s⁻¹ brakes to rest over 40 m. Find the braking force and the distance it would need at 30 m s⁻¹ (same force).</p>
+<div class="sol">
+<p class="work">W = ΔKE: −F(40) = 0 − ½(1500)(400) = −300 000 J
+F = 300 000/40 = 7500 N
+
+At 30 m s⁻¹: KE = ½(1500)(900) = 675 000 J
+d = KE/F = 675 000/7500 = 90 m</p>
+<p class="ans">Braking force 7.5 kN; at 30 m s⁻¹ the stopping distance is 90 m — the distance scales with v², which is why speeding is so dangerous.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [6]</b> A 2 kg block slides from rest down a 5 m long incline of 30° with μ = 0.25. Find its speed at the bottom by the energy method, and verify with kinematics.</p>
+<div class="sol">
+<p class="work">Energy method:
+  loss of PE = mgL sinθ = 2(9.8)(5)(0.5) = 49 J
+  work against friction = μmg cosθ × L = 0.25(2)(9.8)(0.866)(5) = 21.2 J
+  KE at the bottom = 49 − 21.2 = 27.8 J
+  ½(2)v² = 27.8 ⇒ v = √27.8 = 5.27 m s⁻¹
+
+Kinematics check:
+  a = g(sinθ − μcosθ) = 9.8(0.5 − 0.25×0.866) = 9.8(0.2835) = 2.78 m s⁻²
+  v² = 2aL = 2(2.78)(5) = 27.8 ⇒ v = 5.27 m s⁻¹ ✓</p>
+<p class="ans">v ≈ 5.3 m s⁻¹; the two methods agree, and 21 J is the energy dissipated by friction.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Show that when a body of mass m compresses a spring by x and is then released on a smooth horizontal surface, the speed it acquires is v = x√(k/m).</p>
+<div class="sol">
+<p class="work">Energy stored in the spring = ½kx²
+On release this becomes the body's kinetic energy:
+  ½kx² = ½mv²
+  v² = kx²/m ⇒ v = x√(k/m)</p>
+<p>The spring force is conservative, so no energy is lost on a smooth surface; the block oscillates with this maximum speed at the equilibrium position.</p>
+<p class="ans">v = x√(k/m) — maximum at the natural length, zero at maximum compression.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [6]</b> A 3 kg ball moving at 8 m s⁻¹ collides head-on with a 5 kg ball at rest. After the collision the 3 kg ball moves at 2 m s⁻¹ in the opposite direction. Find the velocity of the 5 kg ball and determine whether the collision is elastic.</p>
+<div class="sol">
+<p class="work">Momentum: 3(8) + 0 = 3(−2) + 5v₂
+24 = −6 + 5v₂ ⇒ v₂ = 6 m s⁻¹
+
+KE before = ½(3)(64) = 96 J
+KE after  = ½(3)(4) + ½(5)(36) = 6 + 90 = 96 J</p>
+<p class="ans">v₂ = 6 m s⁻¹ in the original direction, and KE is unchanged (96 J before and after), so the collision is elastic.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [4]</b> A pump lifts water from a 10 m deep well at 5 kg s⁻¹ and delivers it at 4 m s⁻¹. Find the power required.</p>
+<div class="sol">
+<p class="work">Power to raise: P₁ = (dm/dt)gh = 5(9.8)(10) = 490 W
+Power to give speed: P₂ = ½(dm/dt)v² = ½(5)(16) = 40 W
+Total = 530 W</p>
+<p class="ans">≈ 530 W (plus friction losses in a real pump)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Work</td><td>W = Fs cosθ = F·s; variable force W = ∫F dx (area under F–x)</td></tr>
+<tr><td>Work–energy theorem</td><td>W_net = ½mv² − ½mu²</td></tr>
+<tr><td>KE</td><td>½mv² = p²/2m</td></tr>
+<tr><td>PE</td><td>mgh (near Earth); spring ½kx²</td></tr>
+<tr><td>Conservation</td><td>½mu² + mgh₁ = ½mv² + mgh₂ (conservative forces only)</td></tr>
+<tr><td>Power</td><td>P = W/t = Fv; 1 hp = 746 W; 1 kWh = 3.6×10⁶ J</td></tr>
+<tr><td>Elastic collision</td><td>v₁ = [(m₁−m₂)u₁+2m₂u₂]/(m₁+m₂); v₂ = [(m₂−m₁)u₂+2m₁u₁]/(m₁+m₂)</td></tr>
+<tr><td>Perfectly inelastic</td><td>v = (m₁u₁ + m₂u₂)/(m₁+m₂)</td></tr>
+<tr><td>Friction work</td><td>W_f = −μN d = −μmg cosθ · d (on an incline)</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 5</h3>
+<div class="warn">
+<p><b>1. Dropping cosθ.</b> A force at 60° to the displacement does half the work of the same force along it (250 J not 500 J).</p>
+<p><b>2. Applying energy conservation with friction present.</b> Write "loss of PE = gain in KE + work against friction" explicitly; setting ½mv² = mgh with friction on gives an answer that is too large.</p>
+<p><b>3. Forgetting that momentum is a vector.</b> In a head-on collision a rebounding ball has a negative velocity; using +2 instead of −2 in L4 flips the answer.</p>
+<p><b>4. Mixing PE references.</b> Choose one zero level for the whole problem and state it. A pendulum problem with the zero at the top instead of the bottom changes every sign.</p>
+<p><b>5. Assuming kinetic energy is conserved "because collisions are elastic".</b> Check it: compute KE before and after and state the comparison. That calculation is the mark.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Name the system and the forces doing work, write the energy statement in words, substitute, then answer with the unit. For collisions: momentum equation, energy equation, check line.</div>
+
+<p class="note">Physics XI · Unit 5 Work, Energy and Power · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

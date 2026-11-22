@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 15 Refraction at Plane Surfaces: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 15 Refraction at Plane Surfaces: worked solutions for the laws of refraction and refractive index, real and apparent depth, the relation between refractive indices, lateral shift and total internal reflection with its applications, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 15</p>
+
+<h1>Unit 15 — Refraction at Plane Surfaces</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 4 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Four formulas cover the whole unit: n = sin i/sin r, n = c/v, the real/apparent depth ratio, and sin C = 1/n. Every exercise below is one of those four applied, with the two ray-diagram questions NEB asks most often.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — state the laws of refraction; define refractive index; state the conditions for total internal reflection; why does a pool look shallower than it is.</li>
+<li><b>4 marks</b> — calculate n, or the critical angle, or the real/apparent depth; lateral shift numerical; explain an application of total internal reflection.</li>
+<li><b>5–6 marks</b> — derive the relation between the refractive indices of two media; explain total internal reflection with a ray diagram and give two applications (optical fibre, mirage, prism periscope).</li>
+</ul>
+<p>Rule that keeps losing students marks: the angle of refraction is measured from the <em>normal</em>, not the surface. Every diagram must show the normal, or the ray-diagram mark is lost even if the calculation is right.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 15.1 — Laws of refraction and refractive index</li>
+<li>Exercise 15.2 — Refractive index and the speed of light</li>
+<li>Exercise 15.3 — Real and apparent depth</li>
+<li>Exercise 15.4 — Relation between refractive indices of two media</li>
+<li>Exercise 15.5 — Lateral shift</li>
+<li>Exercise 15.6 — Total internal reflection and its applications</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 15.1 — Laws of refraction and refractive index</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> State the laws of refraction of light.</p>
+<div class="sol">
+<ol class="step">
+<li>The incident ray, the refracted ray and the normal at the point of incidence all lie in the same plane.</li>
+<li>For a given pair of media and a given colour of light, the ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant (Snell's law): sin i/sin r = ₁n₂ = constant.</li>
+</ol>
+<p>Equivalently, the product n sin θ is constant across the boundary (n₁ sin i = n₂ sin r), which is the form in which the law is actually used in numericals.</p>
+<p class="ans">Coplanarity plus Snell's law: sin i/sin r = n₂/n₁, or n₁ sin i = n₂ sin r.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Define the absolute refractive index of a medium and state its range of values.</p>
+<div class="sol">
+<p>The absolute refractive index of a medium is the ratio of the speed of light in vacuum to the speed of light in that medium:</p>
+<p class="work">n = c/v  (≥ 1 always, since v ≤ c)</p>
+<p>It can also be written n = sin i/sin r for light entering from air, or n = 1/sin C where C is the critical angle. Values: air 1.0003, water 1.33, glass 1.5, diamond 2.42.</p>
+<p class="ans">n = c/v, dimensionless and always ≥ 1; a larger n means a denser (optically) medium and slower light.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A ray of light passes from air into water (n = 4/3) at an angle of incidence of 45°. Find the angle of refraction.</p>
+<div class="sol">
+<p class="work">n = sin i/sin r  ⇒  sin r = sin i/n
+sin r = sin45°/1.333 = 0.7071/1.333 = 0.530
+r = sin⁻¹(0.530) = 32.0°</p>
+<p class="ans">r ≈ 32° — the ray bends toward the normal on entering the denser medium</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Light travels from glass (n = 1.5) into air at 30° to the normal. Find the angle of refraction, and state what happens if the angle of incidence becomes 50°.</p>
+<div class="sol">
+<p class="work">At 30°: n₁ sin i = n₂ sin r ⇒ 1.5 × 0.5 = 1 × sin r
+sin r = 0.75 ⇒ r = 48.6°
+
+Critical angle: sin C = 1/1.5 = 0.667 ⇒ C = 41.8°
+Since 50° &gt; C, total internal reflection occurs — no refracted ray emerges.</p>
+<p class="ans">r = 48.6° at 30° incidence; at 50° incidence the ray is totally internally reflected (because 50° &gt; C = 41.8°).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Explain why a coin lying at the bottom of a pool appears raised.</p>
+<div class="sol">
+<p>Light from the coin travels upward through water and refracts away from the normal as it enters the air. To an observer above, these rays appear to come from a point higher than the coin. In the paraxial approximation the apparent depth is</p>
+<p class="work">apparent depth = real depth/n</p>
+<p>For a pool 2 m deep with n = 1.33, the coin appears at 2/1.33 = 1.5 m — half a metre too shallow.</p>
+<p class="ans">Rays from the coin bend away from the normal on leaving the water, so they appear to diverge from a virtual image above the coin; apparent depth = real depth/n.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 15.2 — Refractive index and the speed of light</h2>
+
+<div class="item">
+<p class="q"><b>Q6.</b> The refractive index of glass is 1.5. Find the speed of light in glass and the refractive index of glass with respect to water (n_water = 4/3).</p>
+<div class="sol">
+<p class="work">v = c/n = 3 × 10⁸/1.5 = 2.0 × 10⁸ m s⁻¹
+
+w_n_g = n_g/n_w = 1.5/1.333 = 1.125</p>
+<p class="ans">v = 2.0 × 10⁸ m s⁻¹; the refractive index of glass with respect to water is 1.125</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Why does a medium with a higher refractive index bend light more?</p>
+<div class="sol">
+<p>Because the speed of light falls more in that medium. Light crossing a boundary must keep its frequency (the source's frequency is unchanged) but its wavelength and speed change; a smaller speed means a smaller wavelength in the medium. Refraction occurs to keep the wavefront continuous along the boundary, and the greater the change of speed, the greater the bending. Quantitatively, sin i/sin r = v₁/v₂ = n₂/n₁.</p>
+<p class="ans">Higher n ⇒ slower light ⇒ larger change of speed at the boundary ⇒ more bending; sin i/sin r = v₁/v₂.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> A ray of light of wavelength 600 nm in air enters glass of n = 1.5. Find its speed, frequency and wavelength in glass.</p>
+<div class="sol">
+<p class="work">f = c/λ_air = 3 × 10⁸/(600 × 10⁻⁹) = 5.0 × 10¹⁴ Hz  (unchanged in glass)
+v = c/n = 2.0 × 10⁸ m s⁻¹
+λ_glass = λ_air/n = 600/1.5 = 400 nm
+(check: v = fλ = 5 × 10¹⁴ × 400 × 10⁻⁹ = 2.0 × 10⁸ ✓)</p>
+<p class="ans">v = 2.0 × 10⁸ m s⁻¹; f = 5.0 × 10¹⁴ Hz (unchanged); λ = 400 nm. Colour, which is set by frequency, does not change.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 15.3 — Real and apparent depth</h2>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Derive the relation apparent depth = real depth/n for an object viewed from above through a parallel-sided transparent medium.</p>
+<div class="sol">
+<p>Let an object O be at a real depth d below a plane surface. A ray from O strikes the surface at a point close to the normal and refracts into the air. For small angles (paraxial rays):</p>
+<p class="work">From the geometry of the two right triangles sharing the same surface distance x:
+  tan i ≈ sin i ≈ x/real depth
+  tan r ≈ sin r ≈ x/apparent depth
+
+Dividing:  sin i/sin r = apparent depth/real depth... with i the angle in the medium
+and r in air:  n = sin r/sin i  (light goes from medium to air)
+⇒ apparent depth = real depth/n</p>
+<p>The derivation uses the paraxial approximation (small angles, looking nearly straight down); at oblique viewing the image is also displaced sideways and the expression is only approximate.</p>
+<p class="ans">apparent depth = real depth/n, valid for near-normal viewing; the object appears raised by a fraction (1 − 1/n) of its real depth.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> A glass slab of thickness 6 cm and n = 1.5 is placed over a coin. At what depth does the coin appear?</p>
+<div class="sol">
+<p class="work">apparent depth = real depth/n = 6/1.5 = 4 cm</p>
+<p class="ans">The coin appears 4 cm below the top surface — raised by 2 cm, i.e. by one third of the slab thickness (t(1 − 1/n) = 6 × 0.333 = 2 cm).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> A water tank is 4 m deep. What is the apparent depth of its bottom when viewed from above? (n = 4/3) By how much does the bottom appear raised?</p>
+<div class="sol">
+<p class="work">apparent depth = 4/(4/3) = 3 m
+raised by 4 − 3 = 1 m</p>
+<p class="ans">It appears 3 m deep — a full metre shallower, which is why a swimming pool always looks deeper on entry than from the side.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 15.4 — Relation between refractive indices of two media</h2>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Show that ₁n₂ = 1/₂n₁ = n₂/n₁, and use it to find the refractive index of water with respect to glass (n_w = 1.33, n_g = 1.5).</p>
+<div class="sol">
+<p class="work">Snell's law across a boundary:
+  n₁ sin i = n₂ sin r  ⇒  sin i/sin r = n₂/n₁ = ₁n₂
+Reversing the direction of the ray (reversibility):
+  sin r/sin i = n₁/n₂ = ₂n₁
+Hence  ₁n₂ = 1/₂n₁ = n₂/n₁.
+
+w_n_g = n_g/n_w = 1.5/1.33 = 1.128
+g_n_w = n_w/n_g = 0.887</p>
+<p class="ans">₁n₂ = n₂/n₁ = 1/₂n₁; water with respect to glass = 1.128, glass with respect to water = 0.887.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> Why is the refractive index of a medium with respect to air called its absolute refractive index, and why is it always greater than 1?</p>
+<div class="sol">
+<p>Because air's refractive index is very nearly 1 (1.0003) and light's reference speed is its speed in vacuum, so n_medium/n_air ≈ n_medium/vacuum = c/v. Since light is slowed by any material medium (v &lt; c), the ratio c/v is always greater than 1. Only vacuum has exactly n = 1.</p>
+<p class="ans">n = c/v with v ≤ c for all matter, so the absolute refractive index is ≥ 1, equality holding only for vacuum.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 15.5 — Lateral shift</h2>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Derive the expression for the lateral shift of a ray passing through a parallel-sided glass slab: shift = t sin(i − r)/cos r.</p>
+<div class="sol">
+<p>A ray enters a slab of thickness t at incidence i, refracts at r, and emerges parallel to its original direction but displaced sideways by a distance d (the perpendicular distance between the incident and emergent rays).</p>
+<p class="work">In the right triangle formed by the slab thickness t, the refracted ray and the
+normal, the path length of the ray inside the slab is L = t/cos r.
+The angle between the emergent ray and the original direction is (i − r).
+Therefore the perpendicular displacement:
+  d = L sin(i − r) = t sin(i − r)/cos r</p>
+<p class="ans">d = t sin(i − r)/cos r; the shift grows with thickness, with i and with n (since a larger n gives a smaller r).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> A ray is incident at 45° on a glass slab 5 cm thick (n = 1.5). Find the lateral shift.</p>
+<div class="sol">
+<p class="work">sin r = sin45°/1.5 = 0.7071/1.5 = 0.4714 ⇒ r = 28.1°
+i − r = 16.9°
+d = 5 × sin16.9°/cos28.1° = 5 × 0.2907/0.8816 = 5 × 0.3297 = 1.65 cm</p>
+<p class="ans">Lateral shift ≈ 1.6 cm</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> What happens to a ray that passes through a parallel-sided slab at normal incidence? What is the net deviation for any other angle?</p>
+<div class="sol">
+<p>At normal incidence (i = 0) the ray enters undeviated, travels straight through and emerges undeviated, so the lateral shift is zero. For any other incidence the ray is deviated at the first surface and deviated back by the same amount at the second, so the emergent ray is parallel to the incident ray: the net angular deviation is zero, but the ray is displaced sideways.</p>
+<p class="ans">Zero deviation in every case; the only effect is a lateral shift, which is zero at normal incidence.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> Why does a printed word seen through a glass slab appear raised but not otherwise distorted?</p>
+<div class="sol">
+<p>Each point of the word is viewed through the slab, so each appears raised by the apparent-depth effect (apparent depth = real depth/n). Since the slab has parallel faces and uniform thickness, every point is raised by the same amount and the emergent rays are parallel to the incident ones, so the letters keep their shape and size.</p>
+<p class="ans">A uniform parallel slab raises every point equally; there is no magnification because the emergent rays stay parallel.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 15.6 — Total internal reflection and its applications</h2>
+
+<div class="item">
+<p class="q"><b>Q18.</b> Define the critical angle and derive sin C = 1/n. State the two conditions for total internal reflection.</p>
+<div class="sol">
+<p><b>Critical angle:</b> the angle of incidence in the denser medium for which the angle of refraction in the rarer medium is exactly 90°.</p>
+<p class="work">Snell's law at the critical angle (medium → air):
+  n sin C = 1 × sin 90°
+  ⇒ sin C = 1/n</p>
+<p><b>Conditions for TIR:</b> (i) light must travel from a denser to a rarer medium; (ii) the angle of incidence must exceed the critical angle.</p>
+<p class="ans">sin C = 1/n; TIR needs denser → rarer travel with i &gt; C. For glass C ≈ 42°, for water ≈ 49°, for diamond ≈ 24°.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Find the critical angle for glass (n = 1.5), water (n = 4/3) and diamond (n = 2.42).</p>
+<div class="sol">
+<p class="work">Glass:   sin C = 1/1.5 = 0.667  ⇒ C = 41.8°
+Water:   sin C = 1/(4/3) = 0.75 ⇒ C = 48.6°
+Diamond: sin C = 1/2.42 = 0.413 ⇒ C = 24.4°</p>
+<p class="ans">41.8°, 48.6° and 24.4° — the smaller the critical angle, the easier it is to trap light, which is why diamond sparkles.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Explain total internal reflection with a ray diagram in words, and explain why the reflected ray brightens as i approaches C.</p>
+<div class="sol">
+<p>As a ray in the denser medium approaches the boundary at increasing angles, refraction bends it further from the normal and a smaller fraction of the energy is transmitted; the reflected ray correspondingly brightens. At i = C the refracted ray grazes the surface (r = 90°) and carries almost no energy; for i &gt; C no refracted ray exists at all and 100% of the energy is reflected back into the denser medium — total internal reflection.</p>
+<p class="ans">Beyond the critical angle no refracted ray can satisfy Snell's law, so all the light is reflected; the approach to C shows the transmitted ray fading and the reflected ray brightening.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> Explain the working of an optical fibre.</p>
+<div class="sol">
+<p>An optical fibre consists of a fine core of high refractive index surrounded by a cladding of lower refractive index. Light entering one end at a small angle to the axis strikes the core–cladding boundary at an angle greater than the critical angle, so it undergoes total internal reflection. Since no light is lost at each reflection (in an ideal fibre), the light is guided along the fibre, following bends, with very little attenuation — provided the bend radius is not so small that the angle falls below C.</p>
+<p class="ans">Light is trapped by repeated total internal reflection at the core–cladding boundary; used for communication, endoscopy and sensors because there is almost no loss per reflection.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> Explain the formation of a mirage.</p>
+<div class="sol">
+<p>On a hot day the air near the ground is much hotter and therefore less dense (lower n) than the air above. Light from the sky travelling downward bends gradually toward the normal in the denser upper air and away from the normal in the hotter lower layers, until at a shallow grazing angle it exceeds the critical angle and is totally internally reflected upward. The observer sees an image of the sky appearing to come from the ground, which looks like a pool of water.</p>
+<p class="ans">Continuous refraction through layers of decreasing n, then total internal reflection in the hot air near the ground, redirects sky light into the eye — the "water" is an inverted image of the sky.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Explain how a right-angled prism is used to turn a light beam through 90° (prism periscope).</p>
+<div class="sol">
+<p>A right-angled isosceles glass prism (n = 1.5, C = 41.8°) is used with light entering one of the short faces at normal incidence, so it reaches the hypotenuse internally at 45°. Since 45° &gt; 41.8°, total internal reflection occurs and the beam leaves through the other short face at 90° to its original direction. Two such prisms form a periscope or binocular erecting system.</p>
+<p class="ans">The 45° incidence on the hypotenuse exceeds the glass critical angle, so TIR turns the beam through 90° with no silvering and almost no loss.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> Why does a diamond sparkle more than glass of the same shape?</p>
+<div class="sol">
+<p>Diamond's refractive index is very high (2.42), so its critical angle is only 24.4° — a very wide range of internal angles is therefore totally internally reflected. Light entering the diamond bounces several times inside before emerging through the top facets, and because the facets are cut at specific angles it emerges in concentrated flashes. Diamond also has high dispersion, so the flashes are split into colours.</p>
+<p class="ans">A small critical angle (24°) traps light through many internal reflections and the high dispersion splits it into colours — sparkle plus fire.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> State Snell's law.</p>
+<div class="sol"><p class="ans">For a given pair of media and a given colour, the ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant: sin i/sin r = n₂/n₁, the incident ray, refracted ray and normal being coplanar.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Define refractive index in two ways.</p>
+<div class="sol"><p class="ans">Absolutely: n = c/v, the ratio of the speed of light in vacuum to that in the medium. Relative to another medium: ₁n₂ = sin i/sin r = v₁/v₂, the ratio of the speeds and the inverse of the sine ratio across that boundary.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> State the conditions for total internal reflection.</p>
+<div class="sol"><p class="ans">(i) The light must be travelling from an optically denser medium to a rarer one. (ii) The angle of incidence in the denser medium must be greater than the critical angle, where sin C = 1/n. Both conditions are required.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Define the critical angle.</p>
+<div class="sol"><p class="ans">The angle of incidence in the denser medium for which the refracted ray grazes the boundary at 90° in the rarer medium, given by sin C = 1/n. Beyond it no refracted ray exists.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Why does light bend when it enters a new medium?</p>
+<div class="sol"><p class="ans">Because its speed changes. The frequency stays the same, so the wavelength adjusts to v/f; the wavefronts must stay continuous along the boundary, and this forces the direction of travel to change. The greater the change in speed, the greater the bending.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Why does a stick held obliquely in water appear bent at the surface?</p>
+<div class="sol"><p class="ans">Light from the submerged part bends away from the normal on leaving the water, so each point of the stick appears displaced upward from its real position. The part above the water is seen directly, so the two halves seem to meet at an angle — the stick looks bent at the water line.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why does a swimming pool look shallower than it is?</p>
+<div class="sol"><p class="ans">Because of refraction: rays from the bottom bend away from the normal on leaving the water and appear to come from a shallower point. Apparent depth = real depth/n, so with n = 1.33 a 4 m pool looks about 3 m deep.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> What is lateral shift and on what does it depend?</p>
+<div class="sol"><p class="ans">The perpendicular displacement between the incident and emergent rays after passing through a parallel-sided slab: d = t sin(i − r)/cos r. It increases with the slab thickness t, with the angle of incidence i, and with the refractive index n; it is zero at normal incidence.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Give two applications of total internal reflection.</p>
+<div class="sol"><p class="ans">Optical fibres for communication and endoscopy (light guided by repeated TIR), and the prism periscope or binocular erecting prism (TIR at the hypotenuse turns the beam). Other examples: mirage, diamond sparkle, and the "light pipe" in decorative fountains.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Why is a prism periscope preferred to a mirror periscope?</p>
+<div class="sol"><p class="ans">Because total internal reflection reflects essentially 100% of the light with no metallic coating to tarnish or absorb. A silvered mirror loses several percent at each reflection and its coating can degrade.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why is the refractive index of a medium quoted with respect to a particular wavelength?</p>
+<div class="sol"><p class="ans">Because the speed of light in the medium (and hence n) depends on wavelength — dispersion. Values such as n = 1.5 for glass refer to yellow sodium light unless otherwise stated; violet light has a slightly larger n than red in the same glass.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Does the frequency of light change when it enters a new medium? Explain.</p>
+<div class="sol"><p class="ans">No. Frequency is set by the source and is the number of wavefronts crossing a point per second; the boundary cannot create or destroy wavefronts. Speed and wavelength change (v = c/n, λ = λ_air/n), but f remains constant, which is why colour is unchanged.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> What is meant by an optically denser medium?</p>
+<div class="sol"><p class="ans">A medium with a larger refractive index, in which light travels more slowly. "Denser" here is an optical statement, not a statement about mass density — alcohol (n = 1.36) is optically denser than some oils despite lower mass density.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why does a drop of water on a page make the print look larger and brighter?</p>
+<div class="sol"><p class="ans">The drop is a small plano-convex lens: light from the print is refracted at the curved surface and magnified before reaching the eye, so the lettering appears enlarged. The brightness increases because the drop also collects more light and reduces diffused scattering from the paper.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Why is the Sun visible a few minutes before actual sunrise and after sunset?</p>
+<div class="sol"><p class="ans">Because the atmosphere is a refracting medium of decreasing density with height; the Sun's rays bend gradually downward as they travel through it, so the Sun appears above the horizon before it geometrically is, and remains visible for a few minutes after it has set.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Explain total internal reflection with a diagram in words, derive sin C = 1/n, and show why 45° incidence in a glass prism causes TIR.</p>
+<div class="sol">
+<p>As i increases inside the denser medium, the refracted ray bends further from the normal and the transmitted intensity falls; at i = C the refracted ray is along the boundary (r = 90°), and for i &gt; C Snell's law has no real solution for r, so all the light is reflected internally.</p>
+<p class="work">At i = C: n sin C = 1 · sin 90° = 1  ⇒  sin C = 1/n
+For glass n = 1.5: C = sin⁻¹(0.667) = 41.8°
+In a right-angled isosceles prism the ray strikes the hypotenuse at 45°
+45° &gt; 41.8° ⇒ total internal reflection, the beam is turned by 90°.</p>
+<p class="ans">sin C = 1/n; glass C = 41.8° &lt; 45°, so the hypotenuse of a right-angled prism always reflects totally — the basis of the prism periscope and binocular erecting system.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> A ray of light strikes the surface of water at 40°. The resulting angle of refraction of the ray in the water is 28.9°. Find n_water from these data and calculate the speed of light in water.</p>
+<div class="sol">
+<p class="work">n = sin i/sin r = sin40°/sin28.9° = 0.6428/0.4830 = 1.331
+
+v = c/n = 3 × 10⁸/1.331 = 2.25 × 10⁸ m s⁻¹</p>
+<p class="ans">n = 1.33; v = 2.25 × 10⁸ m s⁻¹ — the standard values for water.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> A glass slab of thickness 8 cm and n = 1.5 is placed in air. A ray strikes its top surface at 50°. Find the angle of refraction at the first surface, the angle of incidence on the second surface, the emergent angle, and the lateral shift.</p>
+<div class="sol">
+<p class="work">1st surface: sin r = sin50°/1.5 = 0.766/1.5 = 0.511 ⇒ r = 30.7°
+2nd surface: the faces are parallel, so the normal is parallel and the incidence angle there is
+   equal to r = 30.7° (alternate angles)
+Emergent angle: sin e = n sin(30.7°) = 1.5 × 0.511 = 0.766 ⇒ e = 50° (same as i)
+
+Lateral shift: d = t sin(i − r)/cos r
+  = 8 × sin(50 − 30.7)/cos30.7
+  = 8 × 0.3305/0.8601 = 8 × 0.3843 = 3.07 cm</p>
+<p class="ans">r = 30.7°, incidence at the second surface 30.7°, emergence 50°, lateral shift ≈ 3.1 cm. The emergent ray is parallel to the incident ray.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> A tank contains water (n = 4/3) to a depth of 2 m and a layer of oil (n = 1.5) 1 m deep on top. At what depth does the bottom of the tank appear when viewed from above?</p>
+<div class="sol">
+<p class="work">Apparent depth is the sum of the apparent depths of each layer:
+  oil:   1/1.5 = 0.667 m
+  water: 2/(4/3) = 1.500 m
+  total apparent depth = 2.167 m</p>
+<p>The bottom appears about 2.17 m below the surface instead of 3 m — each layer raises the image in proportion to (1 − 1/n).</p>
+<p class="ans">Apparent depth ≈ 2.2 m (raised by about 0.83 m from the true 3 m).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Snell's law</td><td>n₁ sin i = n₂ sin r; sin i/sin r = n₂/n₁</td></tr>
+<tr><td>Refractive index</td><td>n = c/v = sin i/sin r (from air) = 1/sin C</td></tr>
+<tr><td>Relative index</td><td>₁n₂ = n₂/n₁ = 1/₂n₁ = v₁/v₂</td></tr>
+<tr><td>Apparent depth</td><td>apparent depth = real depth/n (near-normal viewing)</td></tr>
+<tr><td>Lateral shift</td><td>d = t sin(i − r)/cos r; zero at normal incidence</td></tr>
+<tr><td>Critical angle</td><td>sin C = 1/n; glass 41.8°, water 48.6°, diamond 24.4°</td></tr>
+<tr><td>Medium relations</td><td>v = c/n; λ_medium = λ_air/n; f unchanged</td></tr>
+<tr><td>Slab</td><td>Emergent ray parallel to incident ray; net deviation zero</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 15</h3>
+<div class="warn">
+<p><b>1. Angles from the surface instead of the normal.</b> Every refraction formula uses the angle with the normal. A ray at 40° to the surface is at 50° incidence.</p>
+<p><b>2. Using n < 1 or sin r > 1.</b> If a calculation gives sin r &gt; 1, the ray is undergoing total internal reflection, not refraction. Recognise it and say so instead of forcing a number.</p>
+<p><b>3. Inverting the refractive index.</b> Going from air to glass, sin r = sin i/n. Going from glass to air, sin r = n sin i. Decide the direction first and write it down.</p>
+<p><b>4. Apparent depth multiplied instead of divided.</b> Apparent = real/n; a denser medium raises the object, so apparent depth must be <em>smaller</em>.</p>
+<p><b>5. Saying frequency changes with medium.</b> Frequency is fixed by the source; only v and λ change. Colour is set by frequency.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Draw the boundary, the normal and both rays; label i and r between ray and normal; state which medium is denser before substituting; finish with the direction of bending ("toward/away from the normal").</div>
+
+<p class="note">Physics XI · Unit 15 Refraction at Plane Surfaces · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

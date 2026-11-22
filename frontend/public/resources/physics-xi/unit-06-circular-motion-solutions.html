@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 6 Circular Motion: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 6 Circular Motion: worked solutions for angular displacement, velocity and acceleration, the v = rω relation, centripetal force, conical pendulum, motion in a vertical circle and banking of roads, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 6</p>
+
+<h1>Unit 6 — Circular Motion</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 6 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Circular motion questions are formula-driven but the marks live in three places: the direction of the centripetal force, the difference between the top and bottom of a vertical circle, and the condition for skidding on a banked road. All three are worked out below.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define angular velocity and give its unit; derive v = rω; why is centripetal force called a centre-seeking force; condition for maximum safe speed on an unbanked curve.</li>
+<li><b>4 marks</b> — angular kinematics (rev → rad s⁻¹ → v); centripetal acceleration and the friction needed; banking angle numerical.</li>
+<li><b>5–6 marks</b> — conical pendulum derivation; motion in a vertical circle with the minimum speed at the top and the tension at the bottom.</li>
+</ul>
+<p>Rule that keeps losing students marks: the direction. Centripetal acceleration is always <em>toward the centre</em>, tangential acceleration acts along the path, and the radial and tangential directions must be kept separate in every answer.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 6.1 — Angular displacement, velocity and acceleration</li>
+<li>Exercise 6.2 — Relation between angular and linear quantities</li>
+<li>Exercise 6.3 — Centripetal acceleration and centripetal force</li>
+<li>Exercise 6.4 — Conical pendulum</li>
+<li>Exercise 6.5 — Motion in a vertical circle</li>
+<li>Exercise 6.6 — Banking of roads</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.1 — Angular displacement, velocity and acceleration</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Define angular displacement, angular velocity and angular acceleration, with units and dimensions.</p>
+<div class="sol">
+<table>
+<tr><th>Quantity</th><th>Definition</th><th>Unit</th><th>Dimensions</th></tr>
+<tr><td>Angular displacement θ</td><td>Angle swept by the radius vector, Δθ</td><td>rad</td><td>dimensionless [M⁰L⁰T⁰]</td></tr>
+<tr><td>Angular velocity ω</td><td>Rate of change of angular displacement, dθ/dt</td><td>rad s⁻¹</td><td>[T⁻¹]</td></tr>
+<tr><td>Angular acceleration α</td><td>Rate of change of angular velocity, dω/dt</td><td>rad s⁻²</td><td>[T⁻²]</td></tr>
+</table>
+<p class="ans">θ (rad), ω = dθ/dt (rad s⁻¹, [T⁻¹]), α = dω/dt (rad s⁻², [T⁻²]); all are pseudo-vectors along the axis of rotation by the right-hand rule.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> A wheel rotates at 300 revolutions per minute. Express its angular velocity in rad s⁻¹ and find the linear speed of a point 20 cm from the axis.</p>
+<div class="sol">
+<p class="work">ω = 300 rpm = 300 × 2π/60 rad s⁻¹ = 31.4 rad s⁻¹
+v = rω = 0.20 × 31.4 = 6.28 m s⁻¹</p>
+<p class="ans">ω = 31.4 rad s⁻¹; v = 6.28 m s⁻¹</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A wheel starting from rest reaches 20 rad s⁻¹ in 5 s with uniform angular acceleration. Find α, the angular displacement and the number of revolutions.</p>
+<div class="sol">
+<p class="work">α = (ω − ω₀)/t = (20 − 0)/5 = 4 rad s⁻²
+θ = ω₀t + ½αt² = 0 + ½(4)(25) = 50 rad
+revolutions = 50/(2π) = 7.96 rev</p>
+<p class="ans">α = 4 rad s⁻²; θ = 50 rad ≈ 8 revolutions</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Write down the three equations of angular motion and state their linear counterparts.</p>
+<div class="sol">
+<table>
+<tr><th>Angular</th><th>Linear</th></tr>
+<tr><td>ω = ω₀ + αt</td><td>v = u + at</td></tr>
+<tr><td>θ = ω₀t + ½αt²</td><td>s = ut + ½at²</td></tr>
+<tr><td>ω² = ω₀² + 2αθ</td><td>v² = u² + 2as</td></tr>
+</table>
+<p>The correspondence is exact under s = rθ, v = rω, a = rα, so any linear-motion problem can be converted to an angular one by dividing out the radius.</p>
+<p class="ans">Same three equations with (θ, ω, α) replacing (s, v, a); valid for uniform angular acceleration.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.2 — Relation between angular and linear quantities</h2>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Derive the relation v = rω and state the relation between linear and angular acceleration for circular motion.</p>
+<div class="sol">
+<p class="work">Arc length s = rθ, with θ in radians.
+Differentiate with respect to time (r constant):
+  ds/dt = r dθ/dt   ⇒   v = rω
+
+Differentiating v = rω (speed along the path):
+  dv/dt = r dω/dt   ⇒   a_t = rα   (tangential acceleration)</p>
+<p>In addition, the direction of v turns, giving a radial (centripetal) acceleration a_r = v²/r = rω². The total acceleration is the vector sum of the two components, of magnitude √(a_t² + a_r²).</p>
+<p class="ans">v = rω, tangential a = rα, radial a = v²/r = rω²; the resultant is √(a_t² + a_r²) = r√(α² + ω⁴).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Two points on a rotating disc are at 5 cm and 15 cm from the axis. Compare their angular velocities, linear speeds and centripetal accelerations.</p>
+<div class="sol">
+<p class="work">Angular velocity: the same for a rigid body ⇒ ω₁ = ω₂  (ratio 1 : 1)
+Linear speed: v = rω ⇒ v₁ : v₂ = 5 : 15 = 1 : 3
+Centripetal acceleration: a = rω² ⇒ a₁ : a₂ = 5 : 15 = 1 : 3</p>
+<p class="ans">ω equal; v and a both in the ratio 1 : 3 — each of those is proportional to the radius.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Explain the difference between tangential acceleration and centripetal acceleration.</p>
+<div class="sol">
+<p><b>Tangential acceleration</b> (a_t = rα) is along the tangent: it changes the <em>magnitude</em> of the velocity (the speed). It is zero for uniform circular motion.</p>
+<p><b>Centripetal acceleration</b> (a_r = v²/r) is along the radius toward the centre: it changes the <em>direction</em> of the velocity. It is never zero for circular motion, even at constant speed.</p>
+<p class="ans">Tangential changes speed, centripetal changes direction; uniform circular motion has a_t = 0 but a_r = v²/r ≠ 0.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.3 — Centripetal acceleration and centripetal force</h2>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Define centripetal force and derive F = mv²/r. Why is the work done by it zero?</p>
+<div class="sol">
+<p><b>Definition:</b> the net force directed toward the centre of a circular path, needed to keep a body moving in that circle; it is not a new kind of force but is provided by tension, friction, gravity or a normal reaction.</p>
+<p class="work">For uniform circular motion the acceleration is a = v²/r toward the centre,
+so by Newton's second law:
+  F = ma = mv²/r = mrω² = 4π²mr/T²</p>
+<p>Work done = F·s = Fs cos90° = 0 because the force is always perpendicular to the displacement (the velocity is tangential). Hence the speed stays constant.</p>
+<p class="ans">F = mv²/r = mrω² = 4π²mr/T² directed toward the centre; it does zero work because it is perpendicular to the velocity.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> A car of mass 800 kg takes a curve of radius 50 m at 20 m s⁻¹. Find the centripetal force and the minimum coefficient of friction needed.</p>
+<div class="sol">
+<p class="work">F = mv²/r = 800(400)/50 = 6400 N
+
+This must be supplied by static friction:
+μmg = mv²/r ⇒ μ = v²/(rg) = 400/(50 × 9.8) = 0.816</p>
+<p class="ans">F = 6400 N; μ_min ≈ 0.82 — a very high value, which is why such a curve would be banked in practice</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Find the maximum safe speed of a car on an unbanked curve of radius 100 m if μ = 0.5.</p>
+<div class="sol">
+<p class="work">Friction provides the centripetal force:
+μmg = mv²/r
+v = √(μrg) = √(0.5 × 100 × 9.8) = √490 = 22.1 m s⁻¹</p>
+<p class="ans">v_max ≈ 22 m s⁻¹ (≈ 80 km h⁻¹); above this the car skids outward</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> A stone tied to a string 1 m long is whirled at 2 rev s⁻¹ in a horizontal circle. Find the tension if the mass of the stone is 0.5 kg.</p>
+<div class="sol">
+<p class="work">ω = 2 × 2π = 12.57 rad s⁻¹
+T = mrω² = 0.5 × 1 × (12.57)² = 0.5 × 158 = 79 N</p>
+<p class="ans">T ≈ 79 N (gravity neglected in the horizontal-circle approximation; the string in reality sags slightly)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Explain how a centrifuge separates cream from milk.</p>
+<div class="sol">
+<p>In a rotating vessel each particle needs a centripetal force proportional to its mass and to rω². The denser particles (cream/water droplets of higher density, or the heavier sediment) cannot be held on the circular path and move outward to the wall, while the lighter phase is displaced inward. Since a_r = rω² can be thousands of times g, separation that would take hours under gravity happens in minutes.</p>
+<p class="ans">Denser particles move to the outer wall because the available inward force is insufficient for them at that radius; ω² replaces and multiplies g, so separation is fast.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.4 — Conical pendulum</h2>
+
+<div class="item">
+<p class="q"><b>Q13.</b> A conical pendulum has a string of length 1.0 m making 30° with the vertical. Find its angular speed, period and the tension in the string for a bob of mass 0.2 kg.</p>
+<div class="sol">
+<p class="work">Radius of the circle: r = L sinθ = 1.0 × 0.5 = 0.5 m
+Vertical: T cosθ = mg  ⇒ T = mg/cosθ = 0.2(9.8)/0.866 = 2.26 N
+Horizontal: T sinθ = mrω²
+  ⇒ ω² = g tanθ/(L sinθ) = g/(L cosθ)
+  ω = √(9.8/(1.0 × 0.866)) = √11.32 = 3.36 rad s⁻¹
+Period T_p = 2π/ω = 6.28/3.36 = 1.87 s</p>
+<p class="ans">ω = 3.36 rad s⁻¹, period 1.87 s, tension 2.26 N</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Derive the expression for the time period of a conical pendulum.</p>
+<div class="sol">
+<p class="work">For a bob moving in a horizontal circle of radius r = L sinθ:
+Vertical equilibrium:   T cosθ = mg            ...(i)
+Centripetal:            T sinθ = mrω² = m(L sinθ)ω²   ...(ii)
+Dividing (ii) by (i):   tanθ = (L sinθ)ω²/g
+  ⇒ ω² = g/(L cosθ)  ⇒  ω = √(g/(L cosθ))
+Period: T_p = 2π/ω = 2π√(L cosθ/g)</p>
+<p class="ans">T_p = 2π√(L cosθ/g), which reduces to the simple pendulum 2π√(L/g) as θ → 0.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Why does the period of a conical pendulum decrease as the angle θ increases?</p>
+<div class="sol">
+<p>From T_p = 2π√(L cosθ/g), as θ increases cosθ decreases, so the period decreases. Physically the bob circles a larger radius at a larger angle, requiring a larger centripetal force; the horizontal component of the tension grows, so the bob must move faster and complete the circle in less time.</p>
+<p class="ans">Larger θ ⇒ smaller L cosθ ⇒ shorter period, because a wider cone needs a larger horizontal force and hence a larger ω.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.5 — Motion in a vertical circle</h2>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Find the minimum speed at the highest point and at the lowest point for a body to complete a vertical circle of radius 1.5 m.</p>
+<div class="sol">
+<p class="work">At the top, the minimum condition is that gravity alone provides the centripetal force:
+mg = mv_top²/r  ⇒  v_top = √(gr) = √(9.8 × 1.5) = √14.7 = 3.83 m s⁻¹
+
+Energy conservation from bottom to top (height 2r):
+½mv_b² = ½mv_t² + mg(2r)
+v_b² = v_t² + 4gr = gr + 4gr = 5gr
+v_b = √(5gr) = √(5 × 9.8 × 1.5) = √73.5 = 8.57 m s⁻¹</p>
+<p class="ans">v_top,min = √(gr) = 3.8 m s⁻¹; v_bottom,min = √(5gr) = 8.6 m s⁻¹</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> A 0.5 kg ball is whirled in a vertical circle of radius 1 m at a constant speed of 5 m s⁻¹. Find the tension at the top and at the bottom.</p>
+<div class="sol">
+<p class="work">At the top (both T and mg point down, toward the centre):
+T_top + mg = mv²/r
+T_top = mv²/r − mg = 0.5(25)/1 − 0.5(9.8) = 12.5 − 4.9 = 7.6 N
+
+At the bottom (T up toward the centre, mg down):
+T_bot − mg = mv²/r
+T_bot = mv²/r + mg = 12.5 + 4.9 = 17.4 N</p>
+<p class="ans">T_top = 7.6 N, T_bot = 17.4 N — the string is most likely to break at the bottom</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> What happens if the speed at the highest point is less than √(gr)?</p>
+<div class="sol">
+<p>Then mg alone exceeds the centripetal force needed, so the body cannot stay on the circular path: the string goes slack (or the body leaves the track) and the motion becomes a projectile inside the circle. It will fall away from the circle before reaching the top.</p>
+<p class="ans">The string slackens and the body leaves the circular path, moving as a projectile — the condition for completing the loop is v_top ≥ √(gr).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Show that the difference in tension between the lowest and highest points of a vertical circle is 6mg (for constant speed this is 2mv²/r; for a freely swinging body show 6mg).</p>
+<div class="sol">
+<p>For a body <em>freely</em> moving in the vertical circle (energy conserved, not constant speed):</p>
+<p class="work">At the bottom: T_b − mg = mv_b²/r
+At the top:    T_t + mg = mv_t²/r
+Subtract:  T_b − T_t = mv_b²/r − mv_t²/r + 2mg
+
+Energy: v_b² = v_t² + 4gr  ⇒  (v_b² − v_t²)/r = 4g
+⇒ T_b − T_t = 4mg + 2mg = 6mg</p>
+<p class="ans">T_b − T_t = 6mg, the standard result — the tension at the bottom exceeds that at the top by six times the weight.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.6 — Banking of roads</h2>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Derive the expression tanθ = v²/(rg) for the banking angle of a road, and find θ for v = 30 m s⁻¹ and r = 200 m.</p>
+<div class="sol">
+<p class="work">On a frictionless banked road the normal reaction N is perpendicular to the road:
+Vertical:    N cosθ = mg
+Horizontal:  N sinθ = mv²/r  (centripetal)
+Dividing:    tanθ = v²/(rg)
+
+tanθ = 900/(200 × 9.8) = 900/1960 = 0.459
+θ = 24.7°</p>
+<p class="ans">tanθ = v²/(rg); θ ≈ 25° for a 30 m s⁻¹ design speed on a 200 m radius</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> Why are roads banked? Give two advantages over an unbanked curve.</p>
+<div class="sol">
+<p>Banking tilts the surface so that the normal reaction itself has a horizontal component toward the centre. Advantages:</p>
+<ul class="tight">
+<li>The centripetal force no longer depends entirely on friction, so the curve can be taken safely at higher speed — important on highways and racetracks.</li>
+<li>Reduced reliance on friction means far less tyre wear and lower risk of skidding in rain or on ice.</li>
+</ul>
+<p class="ans">The normal reaction supplies part (or all) of the centripetal force, allowing higher safe speeds and reducing the dependence on friction.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> A curve of radius 80 m is banked at 15°. Find the maximum speed for which it is safe with μ = 0.3. (Use the friction-aided result.)</p>
+<div class="sol">
+<p class="work">With friction assisting:
+v_max² = rg(μ + tanθ)/(1 − μ tanθ)
+      = 80(9.8)(0.3 + 0.268)/(1 − 0.3 × 0.268)
+      = 784(0.568)/(1 − 0.0804)
+      = 445/0.9196 = 484
+v_max = 22 m s⁻¹</p>
+<p class="ans">v_max ≈ 22 m s⁻¹ (≈ 79 km h⁻¹); without banking the same friction would allow only √(0.3×80×9.8) = 15.3 m s⁻¹</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> What is the optimum (design) speed of a banked curve and why is no friction needed at that speed?</p>
+<div class="sol">
+<p>The optimum speed is v₀ = √(rg tanθ). At this speed the horizontal component of the normal reaction equals exactly the required centripetal force, so friction is neither needed nor called upon — the car neither tends to slide up nor down the bank. At lower speeds friction must act up the bank; at higher speeds, down the bank.</p>
+<p class="ans">v₀ = √(rg tanθ); there the normal reaction alone provides mv²/r, so friction plays no part and tyre wear is minimal.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Can a body move in a circle with constant speed and still have an acceleration? Explain.</p>
+<div class="sol"><p class="ans">Yes. The speed is constant but the direction of the velocity changes continuously, so the velocity (a vector) changes and there is a centripetal acceleration v²/r directed toward the centre.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Why is centripetal force not a new kind of force?</p>
+<div class="sol"><p class="ans">It is only a name for the net inward force needed for circular motion; whatever real force plays that role is the centripetal force — tension for a whirled stone, friction for a turning car, gravity for a satellite, electrostatic attraction for an electron in an atom.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Define angular velocity and give its relation to linear velocity.</p>
+<div class="sol"><p class="ans">Angular velocity is the rate of change of angular displacement, ω = dθ/dt, in rad s⁻¹. Its relation to linear velocity is v = rω, where r is the perpendicular distance from the axis of rotation.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Why does a cyclist lean inward when taking a turn?</p>
+<div class="sol"><p class="ans">Leaning tilts the normal reaction from the ground so that its horizontal component points toward the centre and supplies (or helps supply) the centripetal force, while the torque of the weight is balanced. Without leaning the friction alone would be insufficient and the cycle would skid outward.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> What is centrifugal force? Is it real?</p>
+<div class="sol"><p class="ans">It is a pseudo-force of magnitude mv²/r directed away from the centre, which appears only in a rotating (non-inertial) frame. In an inertial frame there is no outward force; the observed outward tendency is simply inertia — the body tends to move in a straight line while the frame turns.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> State the condition for a car to negotiate an unbanked curve without skidding.</p>
+<div class="sol"><p class="ans">The friction must be able to supply the centripetal force: μmg ≥ mv²/r, so v ≤ √(μrg). The maximum safe speed is √(μrg) and is independent of the mass of the car.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why is the tension in a vertical circle greatest at the lowest point?</p>
+<div class="sol"><p class="ans">At the bottom the tension must both support the weight and provide the centripetal force, T = mv²/r + mg, and the speed is also greatest there by energy conservation. At the top the weight itself helps: T = mv²/r − mg, so the tension is least.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Why does a pilot feel heavier at the bottom of a loop?</p>
+<div class="sol"><p class="ans">The seat reaction must exceed the pilot's weight to provide the upward centripetal force at the bottom: N = mg + mv²/r. The pilot therefore feels an apparent weight larger than mg; at the top the seat pushes down and the apparent weight is mg − mv²/r.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Why is a stone whirled in a vertical circle released tangentially when the string breaks?</p>
+<div class="sol"><p class="ans">Because the centripetal force disappears at the instant the string breaks. With no inward force, the stone continues with the velocity it had at that instant, and the velocity is always tangential to the circle. It then follows a projectile path.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Distinguish between rotary and circular motion.</p>
+<div class="sol"><p class="ans">In circular motion the body as a whole moves along a circular path (a stone on a string, a car on a curve). In rotary motion the body spins about an axis through itself, so different points have different radii and speeds (a spinning top, a wheel about its axle).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why is the speed of a satellite independent of its mass?</p>
+<div class="sol"><p class="ans">Gravity supplies the centripetal force: GMm/r² = mv²/r. The mass m cancels, leaving v = √(GM/r), which depends only on the central mass and the orbital radius — so all satellites at the same height orbit at the same speed.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> What is the angle of banking? On what factors does it depend?</p>
+<div class="sol"><p class="ans">The angle the road surface makes with the horizontal, chosen so that the normal reaction can supply the centripetal force. From tanθ = v²/(rg) it depends on the design speed squared and inversely on the radius of the curve and g; it is independent of the vehicle's mass.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Why does a body in a vertical circle not have uniform speed even if the string is pulled evenly?</p>
+<div class="sol"><p class="ans">Gravity has a tangential component along the circular path (mg sinφ), so the speed changes continuously: maximum at the bottom, minimum at the top. Uniform circular motion in a vertical plane is impossible without an external tangential drive, because gravity does work along the path.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Give the dimensions of angular velocity, angular acceleration and centripetal acceleration.</p>
+<div class="sol"><p class="ans">ω = dθ/dt: [T⁻¹]; α = dω/dt: [T⁻²]; a_c = v²/r: [LT⁻²], the same as linear acceleration.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Derive the minimum speed required at the bottom of a vertical circle, using energy conservation, and state the condition at the top.</p>
+<div class="sol">
+<p class="work">Condition at the top: gravity alone just provides the centripetal force
+  mg = mv_t²/r  ⇒ v_t² = gr
+
+Energy from bottom (height 0) to top (height 2r):
+  ½mv_b² = ½mv_t² + mg(2r)
+  v_b² = v_t² + 4gr = gr + 4gr = 5gr
+  ⇒ v_b,min = √(5gr)</p>
+<p>If v_b &lt; √(5gr) the body fails to reach the top with v_t ≥ √(gr) and the string slackens.</p>
+<p class="ans">v_top,min = √(gr), v_bottom,min = √(5gr); the square-root-five factor is the classic NEB result.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> A car of 1200 kg takes a banked curve of radius 150 m at 25 m s⁻¹. Find the required banking angle for frictionless turning and the normal reaction.</p>
+<div class="sol">
+<p class="work">tanθ = v²/(rg) = 625/(150 × 9.8) = 625/1470 = 0.425
+θ = 23.0°
+
+N = mg/cosθ = 1200(9.8)/0.9205 = 12 780 N</p>
+<p class="ans">θ ≈ 23°; N ≈ 1.28 × 10⁴ N, about 9% larger than the weight because the normal reaction also has the horizontal centripetal component.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Explain, with derivation, why a satellite in a circular orbit has a centripetal acceleration equal to g at that height.</p>
+<div class="sol">
+<p class="work">Gravitational force = centripetal requirement:
+  GMm/r² = mv²/r  ⇒ a = v²/r = GM/r²
+But GM/r² is exactly the gravitational field strength at radius r:
+  g(r) = GM/r² = g₀R²/r² (for height above the surface)</p>
+<p>So the centripetal acceleration of a satellite is the local value of g; the satellite is in continuous free fall, which is why the astronauts feel weightless.</p>
+<p class="ans">a_c = GM/r² = g at that height — orbital motion is free fall with the right tangential speed to miss the Earth.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> A wheel of radius 0.4 m starts from rest and accelerates uniformly to 10 rad s⁻¹ in 2 s. Find α, the tangential and centripetal accelerations of a point on the rim at t = 2 s, and the resultant acceleration.</p>
+<div class="sol">
+<p class="work">α = (10 − 0)/2 = 5 rad s⁻²
+a_t = rα = 0.4 × 5 = 2.0 m s⁻²
+a_r = rω² = 0.4 × 100 = 40 m s⁻²
+a = √(a_t² + a_r²) = √(4 + 1600) = 40.05 m s⁻²</p>
+<p class="ans">α = 5 rad s⁻²; a_t = 2 m s⁻², a_r = 40 m s⁻², resultant ≈ 40 m s⁻² — at this speed the radial part completely dominates.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Angular kinematics</td><td>ω = ω₀ + αt; θ = ω₀t + ½αt²; ω² = ω₀² + 2αθ</td></tr>
+<tr><td>Linear ↔ angular</td><td>s = rθ; v = rω; a_t = rα</td></tr>
+<tr><td>Centripetal acceleration</td><td>a = v²/r = rω² = 4π²r/T² = 4π²rn²</td></tr>
+<tr><td>Centripetal force</td><td>F = mv²/r = mrω² = 4π²mr/T²</td></tr>
+<tr><td>Unbanked curve</td><td>v_max = √(μrg)</td></tr>
+<tr><td>Banking</td><td>tanθ = v²/(rg); v₀ = √(rg tanθ)</td></tr>
+<tr><td>Banking with friction</td><td>v_max = √[rg(μ + tanθ)/(1 − μ tanθ)]</td></tr>
+<tr><td>Conical pendulum</td><td>ω = √(g/(L cosθ)); T_p = 2π√(L cosθ/g); T = mg/cosθ</td></tr>
+<tr><td>Vertical circle</td><td>v_top ≥ √(gr); v_bottom ≥ √(5gr); T_b − T_t = 6mg</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 6</h3>
+<div class="warn">
+<p><b>1. Radians.</b> ω = 2πn requires n in revolutions per second; using rpm directly gives answers wrong by 60. Convert first, write the conversion in the answer.</p>
+<p><b>2. Forgetting which force is centripetal.</b> On the top of a vertical circle gravity and tension act in the same direction: T + mg = mv²/r. At the bottom they oppose: T − mg = mv²/r. Reversing the sign is the commonest error.</p>
+<p><b>3. Using g instead of v²/r for the acceleration.</b> In a vertical circle the acceleration is (v²/r) toward the centre, not g; g only enters through energy conservation and the vertical force balance.</p>
+<p><b>4. Saying centripetal force does work.</b> It is perpendicular to the velocity at every instant, so W = 0 and the speed in uniform circular motion is unchanged. Writing "work = Fs" for it is marked wrong.</p>
+<p><b>5. Mass in the banking formula.</b> tanθ = v²/(rg) and v_max = √(μrg) contain no m — mass cancels. Answering "depends on the mass of the car" loses the mark.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Draw the circle, mark the centre, draw the force arrows from the body toward the centre, then write ΣF_toward centre = mv²/r. One equation per direction; the direction statement earns its own mark.</div>
+
+<p class="note">Physics XI · Unit 6 Circular Motion · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

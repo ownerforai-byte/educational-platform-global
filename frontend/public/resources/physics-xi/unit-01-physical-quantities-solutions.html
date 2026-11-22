@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 1 Physical Quantities: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 1 Physical Quantities: every exercise type worked out (dimensions, dimensional analysis, unit conversion, significant figures, errors, vernier caliper and screw gauge) plus a conceptual question bank with model answers in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 1</p>
+
+<h1>Unit 1 — Physical Quantities</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 3 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">This is the Unit 1 solution file: every exercise type of the unit (dimensions, dimensional analysis, unit conversion, significant figures, error combination, vernier caliper and screw gauge) worked out line by line, followed by the short conceptual questions NEB actually asks, each with a model answer you can reproduce in the exam.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b> Physical Quantities is a small unit with a fixed question menu:</p>
+<ul class="tight">
+<li><b>1–2 marks</b> — write the dimensions of a given quantity; state the number of significant figures; define least count; distinguish precision from accuracy.</li>
+<li><b>4 marks</b> — check or derive a formula by dimensional analysis; convert a physical quantity from one system of units to another; combine percentage errors.</li>
+<li><b>5–6 marks</b> — derive the relation for the time period of a simple pendulum (or similar) by dimensions, and state the limitations of the method.</li>
+</ul>
+<p>Rule that keeps losing students marks: a dimensional answer is only complete when the <em>reason</em> is written — "the dimensions on both sides are equal, therefore the equation may be correct" — and a numerical answer is only complete with the unit and the correct number of significant figures.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 1.1 — Units, dimensions of derived quantities</li>
+<li>Exercise 1.2 — Checking and deriving formulae by dimensions</li>
+<li>Exercise 1.3 — Conversion between systems of units</li>
+<li>Exercise 1.4 — Precision, accuracy and significant figures</li>
+<li>Exercise 1.5 — Errors and their combination</li>
+<li>Exercise 1.6 — Vernier caliper and screw gauge</li>
+<li>Exercise 1.7 — Order of magnitude and estimation</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.1 — Units, dimensions of derived quantities</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Write the dimensional formula of: (a) force, (b) work, (c) power, (d) pressure, (e) impulse, (f) surface tension, (g) coefficient of viscosity, (h) Planck's constant.</p>
+<div class="sol">
+<p class="work">(a) F = ma            = [M][L T⁻²]        = [M L T⁻²]
+(b) W = F·s           = [M L T⁻²][L]       = [M L² T⁻²]
+(c) P = W/t           = [M L² T⁻²]/[T]     = [M L² T⁻³]
+(d) p = F/A           = [M L T⁻²]/[L²]     = [M L⁻¹ T⁻²]
+(e) I = F·t           = [M L T⁻²][T]       = [M L T⁻¹]
+(f) T = F/l           = [M L T⁻²]/[L]      = [M T⁻²]
+(g) η = F/(A dv/dx)   = [M L T⁻²]/[L²·T⁻¹] = [M L⁻¹ T⁻¹]
+(h) h = E/ν           = [M L² T⁻²]/[T⁻¹]   = [M L² T⁻¹]</p>
+<p class="ans">force [MLT⁻²]; work &amp; energy [ML²T⁻²]; power [ML²T⁻³]; pressure [ML⁻¹T⁻²]; impulse &amp; momentum [MLT⁻¹]; surface tension [MT⁻²]; viscosity [ML⁻¹T⁻¹]; Planck constant &amp; angular momentum [ML²T⁻¹]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Name the physical quantities having dimensions: (a) [ML²T⁻²], (b) [MLT⁻¹], (c) [ML⁻¹T⁻²], (d) [MT⁻²], (e) [M⁰L⁰T⁻¹], (f) [ML²T⁻³A⁻¹].</p>
+<div class="sol">
+<p>(a) work, energy, torque, heat, moment of force; (b) momentum, impulse; (c) pressure, stress, Young modulus, energy density; (d) surface tension, force constant of a spring, spring constant k; (e) frequency, angular frequency, decay constant; (f) this is power per ampere = volt, so electric potential, emf, potential difference.</p>
+<p class="ans">(a) work/energy/torque (b) momentum/impulse (c) pressure/stress/modulus (d) surface tension/spring constant (e) frequency/decay constant (f) potential/emf/voltage</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> What are the dimensions of the universal gravitational constant G and of the permittivity of free space ε₀?</p>
+<div class="sol">
+<p class="work">F = G m₁m₂/r²  ⇒  G = F r²/(m₁m₂)
+  = [M L T⁻²][L²]/[M²] = [M⁻¹ L³ T⁻²]
+
+F = q₁q₂/(4πε₀ r²)  ⇒  ε₀ = q₁q₂/(4π F r²)
+  = [A T]²/([M L T⁻²][L²]) = [M⁻¹ L⁻³ T⁴ A²]</p>
+<p class="ans">G: [M⁻¹L³T⁻²] &nbsp;•&nbsp; ε₀: [M⁻¹L⁻³T⁴A²]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Why are angle, strain and refractive index called dimensionless quantities?</p>
+<div class="sol">
+<p>Each is defined as the ratio of two quantities of the same kind, so the dimensions cancel:</p>
+<ul class="tight">
+<li>plane angle θ = arc/radius = [L]/[L] = 1</li>
+<li>strain = change in length/original length = [L]/[L] = 1</li>
+<li>refractive index μ = c/v = [LT⁻¹]/[LT⁻¹] = 1</li>
+</ul>
+<p class="ans">They are ratios of like quantities, so all base dimensions cancel — they are pure numbers with no unit (radian and steradian are only supplementary units).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.2 — Checking and deriving formulae by dimensions</h2>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Check the correctness of (a) v² = u² + 2as and (b) s = ut + ½at² by the principle of homogeneity.</p>
+<div class="sol">
+<p class="work">(a) [v²] = [LT⁻¹]² = [L²T⁻²]
+    [u²] = [L²T⁻²]
+    [2as] = [LT⁻²][L] = [L²T⁻²]
+    → every term has the same dimensions ⇒ dimensionally correct.
+
+(b) [s]  = [L]
+    [ut] = [LT⁻¹][T] = [L]
+    [½at²] = [LT⁻²][T²] = [L]
+    → all three terms are [L] ⇒ dimensionally correct.</p>
+<p class="ans">Both equations are dimensionally correct; note that this does not prove the factor ½ or 2 — dimensional analysis fixes powers, not numerical constants.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Derive the expression for the time period T of a simple pendulum using dimensional analysis, assuming T depends on the length l, the acceleration due to gravity g and the mass m of the bob.</p>
+<div class="sol">
+<p>Let T = k lᵃ gᵇ mᶜ. Writing dimensions:</p>
+<p class="work">[T] = [L]ᵃ [LT⁻²]ᵇ [M]ᶜ
+[T¹] = [Mᶜ L^(a+b) T^(−2b)]
+
+Compare powers:   M: 0 = c
+                  T: 1 = −2b   ⇒ b = −1/2
+                  L: 0 = a + b ⇒ a = +1/2</p>
+<p>So T = k l<sup>1/2</sup> g<sup>−1/2</sup> m⁰ = k √(l/g). The constant k is dimensionless and cannot be found by dimensions.</p>
+<p class="ans">T = k √(l/g); experiment fixes k = 2π, so T = 2π√(l/g). The mass drops out — a pendulum's period is independent of the bob's mass.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> The frequency n of a stretched string depends on its length l, tension F and mass per unit length m. Show by dimensions that n ∝ (1/l)√(F/m).</p>
+<div class="sol">
+<p class="work">n = k lᵃ Fᵇ mᶜ
+[T⁻¹] = [L]ᵃ [MLT⁻²]ᵇ [ML⁻¹]ᶜ
+      = [M^(b+c) L^(a+b−c) T^(−2b)]
+
+M: 0 = b + c      ⇒ c = −b
+T: −1 = −2b       ⇒ b = 1/2,  c = −1/2
+L: 0 = a + b − c  ⇒ a = c − b = −1/2 − 1/2 = −1</p>
+<p class="ans">n = k l⁻¹ F^½ m^−½ = (k/l)√(F/m) — the well-known law of a vibrating string (k = ½ for the fundamental).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Can you derive the equation v = u + at by dimensional analysis? Give a reason.</p>
+<div class="sol">
+<p>No. The method cannot be applied when an equation is a sum of terms, and it can never fix a dimensionless constant. Here u and v have the same dimensions, at has the same dimensions, and the constant 1 is dimensionless — so the equation is <em>consistent</em> whatever the coefficient of at happens to be. Dimensional analysis can only confirm the equation; it cannot produce it.</p>
+<p class="ans">Not derivable — dimensional analysis cannot determine numerical constants or handle a sum of terms; it can only test dimensional homogeneity.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Show that the equation P + ½ρv² + ρgh = constant (Bernoulli) is dimensionally consistent (energy per unit volume).</p>
+<div class="sol">
+<p class="work">[P]        = [MLT⁻²]/[L²]  = [ML⁻¹T⁻²]
+[½ρv²]     = [ML⁻³][L²T⁻²]  = [ML⁻¹T⁻²]
+[ρgh]      = [ML⁻³][LT⁻²][L] = [ML⁻¹T⁻²]</p>
+<p class="ans">Each term has the dimensions of pressure = energy per unit volume [ML⁻¹T⁻²], so the sum is meaningful and the equation is dimensionally consistent.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.3 — Conversion between systems of units</h2>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Show that 1 newton = 10⁵ dyne.</p>
+<div class="sol">
+<p class="work">1 N = 1 kg × 1 m s⁻²
+    = (10³ g) × (10² cm) s⁻²
+    = 10⁵ g cm s⁻²
+    = 10⁵ dyne</p>
+<p class="ans">1 N = 10⁵ dyne</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Convert 1 joule into erg and 1 watt into erg s⁻¹.</p>
+<div class="sol">
+<p class="work">1 J = 1 kg m² s⁻² = (10³ g)(10² cm)² s⁻²
+    = 10³ × 10⁴ g cm² s⁻² = 10⁷ erg
+
+1 W = 1 J s⁻¹ = 10⁷ erg s⁻¹</p>
+<p class="ans">1 J = 10⁷ erg; 1 W = 10⁷ erg s⁻¹</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> The density of a metal is 2.7 g cm⁻³. Express it in SI units. State the result to two significant figures.</p>
+<div class="sol">
+<p class="work">1 g cm⁻³ = 10⁻³ kg / (10⁻² m)³ = 10⁻³/10⁻⁶ kg m⁻³ = 10³ kg m⁻³
+∴ 2.7 g cm⁻³ = 2.7 × 10³ kg m⁻³ = 2700 kg m⁻³</p>
+<p class="ans">2.7 × 10³ kg m⁻³ (= 2700 kg m⁻³), which is the density of aluminium.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> A force of 100 dyne acts on 5 g for 2 s. Express the impulse in SI units.</p>
+<div class="sol">
+<p class="work">Impulse = F t = 100 dyne × 2 s = 200 dyne s
+1 dyne = 10⁻⁵ N  ⇒  200 dyne s = 200 × 10⁻⁵ N s = 2 × 10⁻³ N s</p>
+<p class="ans">2 × 10⁻³ N s</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> If the unit of length is doubled and the unit of time is halved, what happens to the numerical value of (i) a speed and (ii) an acceleration?</p>
+<div class="sol">
+<p class="work">n₂ = n₁ (L₁/L₂)ᵃ (T₂/T₁)ᵇ ... with L₂ = 2L₁ and T₂ = T₁/2.
+Speed: [LT⁻¹] ⇒ n₂ = n₁ (L₁/2L₁)( (T₁/2)/T₁ )⁻¹ = n₁ (½)(½)⁻¹ = n₁
+Acceleration: [LT⁻²] ⇒ n₂ = n₁ (½)(½)⁻² = n₁ × ½ × 4 = 2n₁</p>
+<p class="ans">A speed's numerical value is unchanged; an acceleration's numerical value doubles.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.4 — Precision, accuracy and significant figures</h2>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Distinguish between precision and accuracy, and state which one a systematic error damages.</p>
+<div class="sol">
+<ul class="tight">
+<li><b>Precision</b> = how close repeated readings are to each other; it is a statement about the instrument's resolution and the observer's consistency.</li>
+<li><b>Accuracy</b> = how close a reading is to the true value; it is a statement about the total error.</li>
+</ul>
+<p>A badly zeroed (but fine-reading) vernier is precise but not accurate. Systematic error (zero error, calibration, personal bias) destroys accuracy; random error destroys precision.</p>
+<p class="ans">Precision is reproducibility, accuracy is trueness; systematic error spoils accuracy, random error spoils precision.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> State the number of significant figures: (a) 0.00340, (b) 2.0450, (c) 1.2 × 10³, (d) 500, (e) 6.02 × 10²³.</p>
+<div class="sol">
+<p>(a) three (the leading zeros are not significant; the trailing zero after the 4 is significant because of the 4 → 3,4,0). (b) five (2, 0, 4, 5, 0). (c) two. (d) ambiguous, one significant figure unless written 500. (trailing zeros in a whole number with no decimal point are not significant) — write it as 5.00 × 10² for three. (e) three.</p>
+<p class="ans">(a) 3 (b) 5 (c) 2 (d) 1 (ambiguous, write 5.00×10² for 3) (e) 3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> Evaluate and give the answer to the correct number of significant figures: (a) 4.5 × 2.33, (b) 12.63 + 1.2, (c) 84.7 ÷ 3.1.</p>
+<div class="sol">
+<p class="work">(a) 4.5 × 2.33 = 10.485 → 11   (limited by 4.5, two s.f.)
+(b) 12.63 + 1.2 = 13.83 → 13.8 (limited by one decimal place in 1.2)
+(c) 84.7 ÷ 3.1 = 27.32 → 27    (limited by 3.1, two s.f.)</p>
+<p class="ans">(a) 11 (b) 13.8 (c) 27</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> The length of a table is measured as 1.25 m with a metre scale. Write it in (i) mm, (ii) cm, (iii) scientific notation keeping the same significance.</p>
+<div class="sol">
+<p class="work">1.25 m = 1.25 × 10³ mm = 1250 mm   (3 s.f. preserved by writing 1.25 × 10³)
+       = 125 cm
+       = 1.25 × 10⁰ m</p>
+<p class="ans">1.25 × 10³ mm; 1.25 × 10² cm; 1.25 m</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.5 — Errors and their combination</h2>
+
+<div class="item">
+<p class="q"><b>Q19.</b> The mass of a body is (5.00 ± 0.05) kg and its volume is (2.00 ± 0.02) m³. Find the density with its maximum percentage error.</p>
+<div class="sol">
+<p class="work">ρ = m/V = 5.00/2.00 = 2.50 kg m⁻³
+
+Δρ/ρ = Δm/m + ΔV/V            (quotient → relative errors add)
+     = 0.05/5.00 + 0.02/2.00
+     = 0.010 + 0.010 = 0.020
+
+%error = 2.0%
+Δρ = 0.020 × 2.50 = 0.05 kg m⁻³</p>
+<p class="ans">ρ = (2.50 ± 0.05) kg m⁻³, percentage error 2%</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> For the formula Z = A²B³/C, the percentage errors in A, B and C are 1%, 2% and 3% respectively. Find the maximum percentage error in Z.</p>
+<div class="sol">
+<p class="work">ΔZ/Z = 2(ΔA/A) + 3(ΔB/B) + 1(ΔC/C)
+     = 2(1%) + 3(2%) + 3% = 2 + 6 + 3 = 11%</p>
+<p class="ans">Maximum percentage error in Z is 11%</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> Two resistances are measured as R₁ = (10 ± 1) Ω and R₂ = (20 ± 2) Ω. Find the limits of error when they are connected (a) in series and (b) in parallel.</p>
+<div class="sol">
+<p class="work">(a) Series: R = R₁ + R₂ = 30 Ω,  ΔR = 1 + 2 = 3 Ω  ⇒ R = (30 ± 3) Ω  (10% error)
+
+(b) Parallel: R = R₁R₂/(R₁+R₂) = (10×20)/30 = 6.67 Ω
+    ΔR/R = ΔR₁/R₁ + ΔR₂/R₂ + Δ(R₁+R₂)/(R₁+R₂)
+         = 1/10 + 2/20 + 3/30 = 0.10 + 0.10 + 0.10 = 0.30
+    ΔR = 0.30 × 6.67 = 2.0 Ω</p>
+<p class="ans">Series (30 ± 3) Ω; parallel (6.7 ± 2.0) Ω — the parallel combination is far less reliable, which is the classic NEB point about combined errors.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> A physical quantity is measured as P = (4.0 ± 0.2) and Q = (3.0 ± 0.1). Find (P − Q) with the error, and explain why the percentage error is large.</p>
+<div class="sol">
+<p class="work">P − Q = 4.0 − 3.0 = 1.0
+Δ(P − Q) = ΔP + ΔQ = 0.2 + 0.1 = 0.3    (errors add in a difference)
+%error = 0.3/1.0 × 100% = 30%</p>
+<p class="ans">(1.0 ± 0.3), i.e. 30% — in a difference the absolute errors add while the result shrinks, so the relative error blows up.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.6 — Vernier caliper and screw gauge</h2>
+
+<div class="item">
+<p class="q"><b>Q23.</b> A vernier caliper has 10 vernier divisions coinciding with 9 main-scale divisions of 1 mm. Find its least count. A reading shows main scale 2.3 cm and the 4th vernier division coinciding. What is the observed length?</p>
+<div class="sol">
+<p class="work">LC = 1 MSD − 1 VSD = 1 mm − 0.9 mm = 0.1 mm = 0.01 cm
+
+Observed length = MSR + (VSD coinciding) × LC
+                 = 2.3 cm + 4 × 0.01 cm = 2.34 cm</p>
+<p class="ans">LC = 0.01 cm; length = 2.34 cm (a positive zero error would have to be subtracted).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> A screw gauge has a pitch of 0.5 mm and 50 circular-scale divisions. Find its least count. A wire reads 2 mm on the main scale and 22 divisions on the circular scale, with a zero error of −0.02 mm. Find the corrected diameter.</p>
+<div class="sol">
+<p class="work">LC = pitch/number of circular divisions = 0.5 mm/50 = 0.01 mm
+
+Observed = 2 mm + 22 × 0.01 mm = 2.22 mm
+Zero error = −0.02 mm ⇒ correction = +0.02 mm
+True diameter = 2.22 + 0.02 = 2.24 mm</p>
+<p class="ans">LC = 0.01 mm; corrected diameter = 2.24 mm</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> Why is a vernier caliper more precise than a metre scale, and why is a screw gauge more precise than a vernier?</p>
+<div class="sol">
+<p class="work">Metre scale      LC = 1 mm     = 0.1 cm
+Vernier caliper  LC = 0.1 mm    = 0.01 cm   (10× finer)
+Screw gauge      LC = 0.01 mm   = 0.001 cm  (10× finer than the vernier)</p>
+<p>The vernier improves on the scale by comparing a 9-division length with a 10-division length; the screw gauge improves further by converting one full rotation (one pitch) into 50 or 100 circular-scale divisions, so a fraction of a turn reads directly.</p>
+<p class="ans">Smaller least count ⇒ finer precision: 1 mm (scale) &gt; 0.1 mm (vernier) &gt; 0.01 mm (screw gauge).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.7 — Order of magnitude and estimation</h2>
+
+<div class="item">
+<p class="q"><b>Q26.</b> Estimate the order of magnitude of the number of water molecules in 1 g of water, and of the diameter of a water molecule.</p>
+<div class="sol">
+<p class="work">1 mol of water = 18 g contains 6.02 × 10²³ molecules
+1 g contains 6.02 × 10²³/18 ≈ 3.3 × 10²² molecules  ⇒ order 10²²
+
+Density 1000 kg m⁻³ and molar mass 0.018 kg mol⁻¹:
+volume per molecule = (0.018/6.02×10²³)/1000 ≈ 3 × 10⁻²⁹ m³
+diameter ≈ (3 × 10⁻²⁹)^(1/3) ≈ 3 × 10⁻¹⁰ m  ⇒ order 10⁻¹⁰ m</p>
+<p class="ans">About 3 × 10²² molecules (order 10²²); molecular size ≈ 3 × 10⁻¹⁰ m (order 10⁻¹⁰ m, i.e. an ångström).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> What is the difference between a fundamental and a derived unit?</p>
+<div class="sol"><p class="ans">A fundamental unit is defined independently of all others (metre, kilogram, second, ampere, kelvin, mole, candela); a derived unit is built from fundamental units by multiplication or division (newton = kg m s⁻², joule = kg m² s⁻²).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Why is it wrong to add two quantities of different dimensions?</p>
+<div class="sol"><p class="ans">Because a physical quantity is a number times a unit, and only like units may be counted together — adding a length to a time would mean the sum changes value when the unit system changes, so it could not represent any physical quantity. This is the principle of homogeneity.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> State any two limitations of dimensional analysis.</p>
+<div class="sol"><p class="ans">(i) It cannot determine a dimensionless constant (e.g. the ½ in s = ut + ½at² or the 2π in T = 2π√(l/g)). (ii) It fails for equations containing trigonometric, exponential or logarithmic functions, and cannot verify an equation that is a sum of terms with the same dimensions (e.g. v = u + at).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Define least count. Give the least count of a metre scale and a vernier caliper.</p>
+<div class="sol"><p class="ans">Least count is the smallest measurement an instrument can read with certainty. A metre scale reads 0.1 cm (1 mm) and a vernier caliper 0.01 cm (0.1 mm) = 1 MSD − 1 VSD.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Distinguish between random and systematic error, with one example each.</p>
+<div class="sol"><p class="ans">Random error varies unpredictably from reading to reading (e.g. judging the position of a moving pointer, fluctuations in a digital display) and is reduced by repeating and averaging. Systematic error has a fixed cause and shifts every reading the same way (e.g. a zero error in a screw gauge, a miscalibrated thermometer) and is removed by correction, not averaging.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> What is meant by zero error? How is it corrected?</p>
+<div class="sol"><p class="ans">The reading shown when the jaws of a vernier (or the anvils of a screw gauge) are closed is the zero error. If the zero of the vernier is to the right of the main-scale zero the error is positive and is subtracted from every reading; if it is to the left the error is negative and its magnitude is added.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why do we keep only one uncertain (estimated) digit in a measurement?</p>
+<div class="sol"><p class="ans">The last digit carries the uncertainty of the instrument; any further digits are guesses and carry no information. Reporting more digits than the least count supports is false precision and misleads anyone reading the result.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Can a measurement be precise but not accurate? Give an example.</p>
+<div class="sol"><p class="ans">Yes. A screw gauge whose zero has shifted by 0.05 mm gives identical readings every time (high precision) that are all 0.05 mm too large (low accuracy). Precision concerns scatter, accuracy concerns the offset from the true value.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> What is the significance of a dimensionally consistent equation?</p>
+<div class="sol"><p class="ans">It means the equation is not obviously wrong: every term has the same dimensions, so it does not mix unlike quantities. It is a necessary but not sufficient test of correctness — a consistent equation can still be wrong by a factor, a sign, or a missing dimensionless constant.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Why is the angle a dimensionless quantity yet told in degrees?</p>
+<div class="sol"><p class="ans">Angle is defined as arc/radius, a ratio of two lengths, so it has no dimensions. The degree is a convenient sub-unit of the radian (the SI derived unit of angle, 1 rad = 57.3°); it is a unit of a dimensionless quantity, not a base unit.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Write the dimensions of the coefficient of thermal conductivity and of specific heat capacity.</p>
+<div class="sol"><p class="ans">Thermal conductivity: from Q/t = kA(dT/dx), k = Q dx/(A t dT) = [M L T⁻³ K⁻¹]. Specific heat: c = Q/(m ΔT) = [L² T⁻² K⁻¹].</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Name two uses of dimensional analysis.</p>
+<div class="sol"><p class="ans">(i) To test whether an equation is correct (homogeneity check). (ii) To derive the form of a physical relation and to convert a quantity from one system of units to another. A third use is to fix the units of a constant in a new formula.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> What is the difference between mass and weight in terms of dimensions?</p>
+<div class="sol"><p class="ans">Mass is a base quantity with dimension [M] and SI unit kg; weight is a force with dimension [MLT⁻²] and SI unit N. They are different kinds of quantity and cannot be added or equated without g.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why is the redefinition of SI base units (2019) significant?</p>
+<div class="sol"><p class="ans">Before 2019, the kilogram was defined by a platinum–iridium artefact; after, all seven base units are fixed by exact values of constants (c, h, e, k, N_A, K_cd, ΔνCs). This makes the standards reproducible anywhere in the universe without a physical object and removes drift of the artefact.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [4]</b> A physical quantity X depends on mass m, velocity v and time t as X = m v² t⁻¹. Find its dimensions and name it. Then state whether the relation is dimensionally possible.</p>
+<div class="sol">
+<p class="work">[X] = [M][LT⁻¹]²[T⁻¹] = [M L² T⁻³]</p>
+<p>These are the dimensions of power (or of energy per unit time). The expression m v²/t is kinetic-energy-like over time, so it is dimensionally an energy rate.</p>
+<p class="ans">[ML²T⁻³] = power; the relation is dimensionally correct and equals 2×(kinetic energy/time).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> The volume of a sphere is calculated from its measured diameter d = (2.00 ± 0.01) cm as V = πd³/6. Find V and the maximum percentage error.</p>
+<div class="sol">
+<p class="work">V = π(2.00)³/6 = 3.1416 × 8/6 = 4.19 cm³
+
+ΔV/V = 3(Δd/d) = 3(0.01/2.00) = 0.015 = 1.5%
+ΔV = 0.015 × 4.19 = 0.06 cm³</p>
+<p class="ans">V = (4.19 ± 0.06) cm³; error 1.5%. Note the cube triples the relative error — measuring a diameter is three times more punishing than measuring a length.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [6]</b> Derive the time period of a simple pendulum by dimensional analysis, then explain why the method cannot give the factor 2π, and what that failure tells you about the limits of the method.</p>
+<div class="sol">
+<p>Assume T = k lᵃ gᵇ mᶜ. Comparing powers of M, L and T as in Q6 gives a = ½, b = −½, c = 0, so T = k√(l/g).</p>
+<p>The constant k is dimensionless, and dimensions only fix <em>dimensioned</em> powers; a dimensionless number is invisible to the method. Only the exact solution of the equation of motion (SHM, or experiment) gives k = 2π.</p>
+<p class="ans">T = k√(l/g) with k dimensionless; 2π comes from experiment/theory, not dimensions. Dimensional analysis gives the <em>form</em>, never the constants — state that in the exam.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [5]</b> A student measures the length of a rod with a metre scale, a vernier caliper and a screw gauge and gets 5.4 cm, 5.42 cm and 5.421 cm. Explain the difference and state which is the most reliable and why.</p>
+<div class="sol">
+<p class="work">Metre scale: LC 0.1 cm → 5.4 cm (2 s.f.)
+Vernier:     LC 0.01 cm → 5.42 cm (3 s.f.)
+Screw gauge: LC 0.001 cm → 5.421 cm (4 s.f.)</p>
+<p>All three are precise to their own least count; the screw gauge is most reliable because its least count is smallest, so its uncertainty (±0.001 cm) is smallest. Reliability is set by the least count, not by the number of digits written.</p>
+<p class="ans">5.421 cm from the screw gauge is most reliable; precision improves as the least count falls.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Item</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Homogeneity</td><td>Every term of a correct equation has the same dimensions</td></tr>
+<tr><td>Force / energy / power</td><td>[MLT⁻²] / [ML²T⁻²] / [ML²T⁻³]</td></tr>
+<tr><td>Pressure / viscosity</td><td>[ML⁻¹T⁻²] / [ML⁻¹T⁻¹]</td></tr>
+<tr><td>Impulse / Planck h</td><td>[MLT⁻¹] / [ML²T⁻¹]</td></tr>
+<tr><td>G / ε₀</td><td>[M⁻¹L³T⁻²] / [M⁻¹L⁻³T⁴A²]</td></tr>
+<tr><td>Conversion</td><td>1 N = 10⁵ dyne; 1 J = 10⁷ erg; 1 g cm⁻³ = 10³ kg m⁻³</td></tr>
+<tr><td>Combination of errors</td><td>Product/quotient → relative errors add; powers multiply the relative error; difference → absolute errors add</td></tr>
+<tr><td>Vernier</td><td>LC = 1 MSD − 1 VSD</td></tr>
+<tr><td>Screw gauge</td><td>LC = pitch / number of circular divisions</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 1</h3>
+<div class="warn">
+<p><b>1. Writing "dimensionally correct ⇒ correct".</b> It is only a consistency test. Always write "may be correct; the method cannot decide the constant".</p>
+<p><b>2. Forgetting the unit after a number.</b> "2.7" scores nothing; "2.7 × 10³ kg m⁻³" scores the mark.</p>
+<p><b>3. Adding errors in a quotient instead of adding relative errors.</b> For ρ = m/V, the two percentage errors add; for R = R₁ + R₂ the two absolute errors add. Mixing them up inverts the answer.</p>
+<p><b>4. Ignoring the sign of zero error.</b> A negative zero error must be <em>added</em> to the observed reading. Write the correction line explicitly.</p>
+<p><b>5. Too many significant figures.</b> A calculator answer of 10.485 from 4.5 × 2.33 must be reported as 11, not 10.485. The number of s.f. is set by the least precise input.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Dimensions first as a formula, then a bracket substitution, then a comparison of powers, then the answer line with the unit. In a 4-mark question this is exactly four visible marks: statement, substitution, comparison, answer.</div>
+
+<p class="note">Physics XI · Unit 1 Physical Quantities · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 12 Rate of Heat Flow: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 12 Rate of Heat Flow: worked solutions for conduction and thermal conductivity with Searle's and Lees' methods, convection, radiation, ideal and black-body radiators and the Stefan-Boltzmann law, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 12</p>
+
+<h1>Unit 12 — Rate of Heat Flow</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 5 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Three mechanisms, three sets of formulas, and one law that NEB asks for again and again: the Stefan–Boltzmann law. Every exercise type of the unit is worked below, including the two standard measurement methods and the derivation of Newton's law of cooling from Stefan's law.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define thermal conductivity and state its unit; why does convection need gravity; define a black body; state Kirchhoff's law.</li>
+<li><b>4 marks</b> — conduction numerical through a rod or slab; Stefan–Boltzmann law numerical (power radiated or net loss); distinguish the three modes of heat transfer.</li>
+<li><b>5–6 marks</b> — describe Searle's (or Lees') method for thermal conductivity; state and explain the Stefan–Boltzmann law and derive Newton's law of cooling from it.</li>
+</ul>
+<p>Rule that keeps losing students marks: the Stefan law uses <em>absolute</em> temperature, T⁴ in kelvin. Substituting 100 for 100 °C makes the answer wrong by a factor of about 10⁸.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 12.1 — Conduction and thermal conductivity</li>
+<li>Exercise 12.2 — Measurement of thermal conductivity</li>
+<li>Exercise 12.3 — Convection</li>
+<li>Exercise 12.4 — Radiation, absorptive and emissive power</li>
+<li>Exercise 12.5 — The Stefan–Boltzmann law</li>
+<li>Exercise 12.6 — Applications: thermos flask, greenhouse, insulation</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 12.1 — Conduction and thermal conductivity</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Define thermal conductivity, write the Fourier law and state the SI unit and dimensions.</p>
+<div class="sol">
+<p><b>Fourier's law:</b> the rate of heat flow through a solid is proportional to the area perpendicular to the flow and to the temperature gradient:</p>
+<p class="work">Q/t = −kA(dθ/dx)
+
+k = thermal conductivity: the heat conducted per second through unit area of unit
+thickness for unit temperature difference across it.
+SI unit: W m⁻¹ K⁻¹  •  Dimensions: [MLT⁻³K⁻¹]</p>
+<p class="ans">Q/t = kA(θ₁ − θ₂)/L for a uniform rod; k in W m⁻¹ K⁻¹, [MLT⁻³K⁻¹]. Copper ≈ 400, steel ≈ 50, glass ≈ 1, wood ≈ 0.1, air ≈ 0.026.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> A copper rod of length 1 m and cross-sectional area 1 cm² has its ends at 100 °C and 0 °C. Find the rate of heat flow. (k = 400 W m⁻¹ K⁻¹)</p>
+<div class="sol">
+<p class="work">A = 1 cm² = 1 × 10⁻⁴ m²
+Q/t = kA(θ₁ − θ₂)/L = 400 × 1 × 10⁻⁴ × 100/1 = 4.0 W</p>
+<p class="ans">4.0 W (4 J each second)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Two slabs of the same thickness are joined face to face. Their conductivities are k and 2k. Show that the equivalent conductivity of the composite is 4k/3.</p>
+<div class="sol">
+<p class="work">Let each slab have thickness L, area A, and let the interface be at θ.
+Slab 1: Q/t = kA(θ₁ − θ)/L
+Slab 2: Q/t = 2kA(θ − θ₂)/L
+
+Same steady heat flow through both:
+  k(θ₁ − θ) = 2k(θ − θ₂) ⇒ θ₁ − θ = 2θ − 2θ₂
+  ⇒ 3θ = θ₁ + 2θ₂ ⇒ θ = (θ₁ + 2θ₂)/3
+
+Then Q/t = kA[θ₁ − (θ₁ + 2θ₂)/3]/L = (2kA/3L)(θ₁ − θ₂)
+For the composite of thickness 2L:
+  Q/t = k_eq A(θ₁ − θ₂)/(2L)
+Equating: k_eq/(2L) = 2k/(3L) ⇒ k_eq = 4k/3</p>
+<p class="ans">k_eq = 4k/3 — the composite behaves like the harmonic mean, weighted by thickness, so it is always less than the arithmetic mean.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Why is the handle of a cooking pan made of wood or plastic, while the base is metal?</p>
+<div class="sol">
+<p>The metal base must conduct heat rapidly from the flame to the food: high k (aluminium ≈ 240, copper ≈ 400 W m⁻¹ K⁻¹) gives a fast, even transfer. The handle must <em>not</em> conduct heat to the hand, so a material with very low k is used — wood ≈ 0.1, plastic ≈ 0.2–0.5 W m⁻¹ K⁻¹ — so that very little heat reaches the hand in the same time.</p>
+<p class="ans">The base needs high k for fast transfer; the handle needs low k to keep the hand cool — the same conduction law with opposite design aims.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Why does a metal rod feel colder than a wooden rod of the same temperature on a winter morning?</p>
+<div class="sol">
+<p>Both are at room temperature, but the metal's k is thousands of times larger, so heat flows rapidly out of the skin into the metal. The skin temperature falls quickly and the nerve endings report "cold". The wood conducts too slowly to remove much heat, so it feels neutral. The sensation measures the rate of heat loss, not the temperature itself.</p>
+<p class="ans">The good conductor draws heat away from the skin faster, producing a stronger sensation of cold at the same actual temperature.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 12.2 — Measurement of thermal conductivity</h2>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Describe Searle's method for measuring the thermal conductivity of a good conductor.</p>
+<div class="sol">
+<p><b>Apparatus:</b> a cylindrical metal bar lagged with felt, a steam chamber at one end, a spiral tube carrying water around the other end, thermometers, a measuring cylinder and stopwatch.</p>
+<p class="work">1. Steam is passed through the chamber until the temperature gradient along the bar is steady
+   (readings at two thermometers θ₁ and θ₂, a distance x apart, stop changing).
+2. Water flows through the spiral at a steady rate; measure the mass m of water collected in
+   time t and its temperature rise (θ₃ → θ₄).
+3. Heat gained by the water per second = mc(θ₄ − θ₃)/t, which in the steady state equals the
+   heat conducted along the bar.
+4. k = [mc(θ₄ − θ₃)/t] × x / [A(θ₁ − θ₂)]
+   where A = πr² is the bar's cross-sectional area and x = θ₁–θ₂ thermometer separation.</p>
+<p>Precautions: lag the bar so lateral losses are small, wait for the steady state, keep the water flow slow enough for a measurable rise but fast enough to avoid boiling, and measure the diameter with a vernier.</p>
+<p class="ans">k = mc(θ₄ − θ₃)x/[t A(θ₁ − θ₂)] — the water's heat gain per second equals the conduction along the bar in the steady state.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Why is Lees' disc method used for poor conductors and Searle's method for good conductors?</p>
+<div class="sol">
+<p>For a poor conductor the conduction rate is so small that the water-flow method of Searle gives too small a temperature rise to measure accurately. Lees' disc uses a thin disc of the poor conductor clamped between a hot metal plate (steam chamber) and a good conducting brass base, and measures the steady temperature of the base with a thermocouple. The heat conducted through the poor conductor is found from the rate of cooling of the brass base (a separate calibration with the same base). Because the disc is thin and the temperature difference across it is large, the gradient is measurable.</p>
+<p class="ans">Searle needs a large heat flow to warm a water stream (good conductors); Lees' disc uses a thin specimen with a large gradient and a calibrated cooling rate, which suits poor conductors, and also allows measurements at different mean temperatures.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> In Searle's experiment, 200 g of water is collected in 5 minutes with a temperature rise of 8 K. The rod's area is 2 cm², the thermometers are 10 cm apart and read 90 °C and 70 °C. Find k. (c = 4200 J kg⁻¹ K⁻¹)</p>
+<div class="sol">
+<p class="work">Heat gained by the water per second:
+  P = mcΔθ/t = (0.200 × 4200 × 8)/(5 × 60) = 6720/300 = 22.4 W
+Gradient: (θ₁ − θ₂)/x = 20/0.10 = 200 K m⁻¹
+A = 2 × 10⁻⁴ m²
+
+k = P/(A × gradient) = 22.4/(2 × 10⁻⁴ × 200) = 22.4/0.04 = 560 W m⁻¹ K⁻¹</p>
+<p class="ans">k ≈ 5.6 × 10² W m⁻¹ K⁻¹ — the right order for copper (390) or a copper alloy, with some lateral loss in a real experiment.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 12.3 — Convection</h2>
+
+<div class="item">
+<p class="q"><b>Q9.</b> What is convection? Distinguish natural from forced convection with one example each.</p>
+<div class="sol">
+<p>Convection is the transfer of heat by the bulk movement of a fluid. Warmer fluid, being less dense, rises and carries its heat with it, while cooler fluid sinks to replace it — a circulation that transports heat.</p>
+<p><b>Natural convection:</b> driven by buoyancy alone — a room radiator warming air, boiling water circulating in a pan, land and sea breezes.</p>
+<p><b>Forced convection:</b> driven by an external pump or fan — a car radiator with a fan, central heating with a pump, or blood circulation driven by the heart.</p>
+<p class="ans">Convection moves heat with the fluid itself; natural convection is driven by density differences (buoyancy), forced convection by a pump, fan or other external work source.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Why does convection not occur in the absence of gravity? What happens on the International Space Station instead?</p>
+<div class="sol">
+<p>Convection depends on the buoyant rise of hot fluid, and buoyancy arises because weight differs between hot (less dense) and cold (denser) fluid. In free fall there is no effective weight, so no buoyancy and no natural convection. Hot air pockets simply stay where they are, and heat is transferred only by conduction and radiation; spacecraft use fans to force air circulation.</p>
+<p class="ans">Without gravity there is no buoyant force, so hot fluid does not rise — natural convection stops, and fans are needed to move air.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Explain the formation of a sea breeze and a land breeze.</p>
+<div class="sol">
+<p><b>Sea breeze (day):</b> land heats up faster than the sea because land has a much smaller specific heat capacity. The air over the land warms, expands and rises; cooler air from over the sea moves inland to replace it, producing a breeze from sea to land.</p>
+<p><b>Land breeze (night):</b> the land cools faster than the sea. The air over the sea is now warmer and rises, and the cooler air over the land flows out to sea, giving a breeze from land to sea.</p>
+<p class="ans">Day: land hot, air rises, cool sea air flows in (sea breeze). Night: land cool, sea warmer, air flows out (land breeze). The difference in specific heat capacity of land and water drives it.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Why is a room heated more efficiently by a radiator placed near the floor than near the ceiling?</p>
+<div class="sol">
+<p>Warm air rises from the radiator and cool air descends, so placing the radiator low sets up a circulation over the whole room. A radiator near the ceiling heats only the air already at the top, which stays there because it is the lightest, and the occupied lower part of the room stays cold. Positioning the heat source at the bottom exploits natural convection.</p>
+<p class="ans">A low radiator drives full-room convection; a high one stratifies the air with the heat stuck at the ceiling.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 12.4 — Radiation, absorptive and emissive power</h2>
+
+<div class="item">
+<p class="q"><b>Q13.</b> What is an ideal radiator (black body)? State its absorptive and emissive power.</p>
+<div class="sol">
+<p>A <b>black body</b> is an idealised object that absorbs all radiation incident on it at every wavelength and every angle (absorptivity a = 1, reflectance = 0, transmittance = 0), and consequently also emits the maximum possible radiation at any temperature (emissivity e = 1). Its emission spectrum depends only on its temperature, not on its material.</p>
+<p class="ans">A black body absorbs all incident radiation (a = 1) and is the best possible emitter (e = 1); a small hole in a hollow cavity is a good practical approximation.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> State Kirchhoff's law of radiation and give one consequence.</p>
+<div class="sol">
+<p><b>Law:</b> at a given temperature, the ratio of the emissive power to the absorptivity is the same for all bodies and equals the emissive power of a black body at that temperature:</p>
+<p class="work">e/a = constant = E_black</p>
+<p>Hence good absorbers are good emitters and poor absorbers are poor emitters. A shiny silver kettle stays hot longer than a blackened one because it radiates (and absorbs) poorly — and a black car heats up faster in the sun for the same reason.</p>
+<p class="ans">e/a is the same for all bodies at the same temperature; good absorbers are good emitters, so black surfaces both heat and cool faster than shiny ones.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Distinguish between conduction, convection and radiation.</p>
+<div class="sol">
+<table>
+<tr><th></th><th>Conduction</th><th>Convection</th><th>Radiation</th></tr>
+<tr><td>Medium needed?</td><td>Yes (solid, liquid or gas)</td><td>Yes (fluid only)</td><td>No — works through a vacuum</td></tr>
+<tr><td>Mechanism</td><td>Molecular collisions and free-electron diffusion, no bulk motion</td><td>Bulk movement of the heated fluid</td><td>Emission and absorption of electromagnetic waves</td></tr>
+<tr><td>Speed</td><td>Slow</td><td>Moderate</td><td>At the speed of light</td></tr>
+<tr><td>Rate law</td><td>Q/t = kAΔθ/L</td><td>Empirical (∝ Δθ^1.25 for natural, forced convection depends on flow)</td><td>Q/t = eσAT⁴</td></tr>
+<tr><td>Example</td><td>Metal spoon in hot tea</td><td>Sea breeze, boiling water</td><td>Heat from the Sun</td></tr>
+</table>
+<p class="ans">Conduction transfers by collisions without bulk motion, convection by moving fluid, radiation by electromagnetic waves needing no medium.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Why is air a poor conductor but still an effective insulator when trapped?</p>
+<div class="sol">
+<p>Air has a very low thermal conductivity (≈0.026 W m⁻¹ K⁻¹) because its molecules are widely separated and collide infrequently, so conduction is poor. When air is trapped in small cells (in foam, wool, double glazing, fur or feathers) convection cannot start either, since the cells are too small for circulation. Thus both conduction and convection are suppressed, and the material becomes an excellent insulator — while free air would carry heat away by convection.</p>
+<p class="ans">Air conducts poorly and, once trapped in small pockets, cannot convect — hence wool, foam and double glazing insulate, whereas moving air would convect heat away.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 12.5 — The Stefan–Boltzmann law</h2>
+
+<div class="item">
+<p class="q"><b>Q17.</b> State the Stefan–Boltzmann law and write the expression for the net rate of heat loss.</p>
+<div class="sol">
+<p><b>Law:</b> the total energy radiated per unit time per unit area by a black body is proportional to the fourth power of its absolute temperature:</p>
+<p class="work">E = σT⁴                    (black body, per unit area)
+P = eσAT⁴                  (real body, emissivity e)
+Net loss = eσA(T⁴ − T₀⁴)   (in surroundings at T₀)
+
+σ = 5.67 × 10⁻⁸ W m⁻² K⁻⁴  (Stefan's constant)</p>
+<p class="ans">P = eσAT⁴; net loss P = eσA(T⁴ − T₀⁴). The T⁴ dependence makes radiation rise very steeply with temperature.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> A black body of surface area 0.01 m² is at 500 K. Find the power radiated. What is the net loss if the surroundings are at 300 K?</p>
+<div class="sol">
+<p class="work">P = σAT⁴ = (5.67 × 10⁻⁸)(0.01)(500)⁴
+  = 5.67 × 10⁻¹⁰ × 6.25 × 10¹⁰ = 35.4 W
+
+Net = σA(T⁴ − T₀⁴) = (5.67 × 10⁻⁸)(0.01)(500⁴ − 300⁴)
+    = 5.67 × 10⁻¹⁰(62.5 − 8.1) × 10⁹ = 30.8 W</p>
+<p class="ans">Radiated 35 W; net loss 31 W — the surroundings themselves radiate back 4 W</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> A metal sphere of radius 5 cm and emissivity 0.5 is at 227 °C in surroundings at 27 °C. Find the net rate of heat loss by radiation.</p>
+<div class="sol">
+<p class="work">T = 227 + 273 = 500 K;  T₀ = 27 + 273 = 300 K
+A = 4πr² = 4π(0.05)² = 3.14 × 10⁻² m²
+
+P = eσA(T⁴ − T₀⁴)
+  = 0.5 × 5.67 × 10⁻⁸ × 3.14 × 10⁻² × (625 − 81) × 10⁸
+  = 0.5 × 5.67 × 3.14 × 10⁻¹⁰ × 544 × 10⁸
+  = 4.85 × 10¹ W ≈ 48 W</p>
+<p class="ans">≈ 48 W net loss by radiation (convection would add to this in air)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Derive Newton's law of cooling from the Stefan–Boltzmann law.</p>
+<div class="sol">
+<p class="work">Net loss:  P = eσA(T⁴ − T₀⁴),  with T = T₀ + ΔT, ΔT ≪ T₀
+Expand:  (T₀ + ΔT)⁴ = T₀⁴(1 + ΔT/T₀)⁴ ≈ T₀⁴(1 + 4ΔT/T₀)
+So T⁴ − T₀⁴ ≈ 4T₀³ΔT
+⇒ P ≈ 4eσAT₀³ ΔT ≡ kΔT</p>
+<p>Hence the rate of loss is proportional to the temperature excess, which is Newton's law of cooling. The constant k = 4eσAT₀³ is not truly constant for large excesses, which is why the law holds only for small differences.</p>
+<p class="ans">Linearising T⁴ − T₀⁴ = 4T₀³ΔT gives dQ/dt ∝ ΔT; the proportionality fails for large ΔT because the cubic and higher terms matter.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> How much power would a black body radiate if its absolute temperature is doubled? What if it is halved?</p>
+<div class="sol">
+<p class="work">P ∝ T⁴
+T doubled: P' = 2⁴P = 16P
+T halved:  P' = P/16</p>
+<p class="ans">Doubling T multiplies the radiated power by 16; halving it divides by 16. This extreme sensitivity is why a filament at 2500 K glows white but one at 800 K only feels hot.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 12.6 — Applications: thermos flask, greenhouse, insulation</h2>
+
+<div class="item">
+<p class="q"><b>Q22.</b> Explain how a thermos (vacuum) flask reduces heat loss by all three mechanisms.</p>
+<div class="sol">
+<ul class="tight">
+<li><b>Conduction:</b> the space between the double walls is evacuated, so there is almost no matter to conduct; the walls are thin and the stopper is of a poor conductor (cork/plastic).</li>
+<li><b>Convection:</b> with no air between the walls, no convection currents can form; the stopper prevents convection from the open top.</li>
+<li><b>Radiation:</b> the inner and outer wall surfaces are silvered, so their emissivity is very low — they radiate poorly, and the silvered surfaces also reflect radiation back.</li>
+</ul>
+<p class="ans">Vacuum stops conduction and convection; silvering suppresses radiation; the insulating stopper closes the last path.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Explain the greenhouse effect in terms of radiation.</p>
+<div class="sol">
+<p>Glass (and the atmospheric gases CO₂, H₂O, CH₄) is transparent to the short-wavelength visible radiation from the Sun but relatively opaque to the long-wavelength infra-red radiated by objects at ordinary temperatures. Sunlight therefore enters and is absorbed by the ground, which re-radiates in the infra-red; that radiation is trapped, and the temperature inside rises until the outgoing flux again balances the incoming energy.</p>
+<p class="ans">Short-wave solar radiation enters, long-wave terrestrial infra-red cannot escape, so the interior (or the planet) warms — the same physics as a glasshouse or a car parked in the sun.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> Why are cooking utensils blackened on the bottom but kept shiny on the sides?</p>
+<div class="sol">
+<p>The blackened bottom has high absorptivity, so it absorbs radiant heat from the flame efficiently (a good absorber is also a good emitter — Kirchhoff's law). The shiny sides have low emissivity and low absorptivity, so they radiate very little heat away to the surroundings and keep the contents hotter. The same object uses opposite surfaces to absorb in and to stop losing out.</p>
+<p class="ans">Black bottom: maximum absorption from the fire. Shiny sides: minimum re-radiation, so less heat is lost sideways.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> Why is a double-glazed window a better insulator than a single sheet of glass?</p>
+<div class="sol">
+<p>In a single glazing the air next to the glass conducts and convects heat away readily. In double glazing a layer of air (or argon) is trapped between two panes; since the trapped layer is thin and still, convection is suppressed and only the low conduction of air (k ≈ 0.026 W m⁻¹ K⁻¹) remains. The conduction through 12 mm of still air is far less than through the same thickness of ordinary convective loss, so the overall heat transfer is reduced.</p>
+<p class="ans">The trapped air layer cannot convect, and air conducts poorly — a much lower effective k than a single pane with free convection on both sides.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define thermal conductivity and give its SI unit.</p>
+<div class="sol"><p class="ans">The heat conducted per second through a unit area of a unit-thickness slab when the temperature difference across it is 1 K, from Q/t = kAΔθ/L; the SI unit is W m⁻¹ K⁻¹.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> What is a black body?</p>
+<div class="sol"><p class="ans">An idealised object that absorbs all the radiation incident on it, at every wavelength and angle, and therefore also emits the maximum possible radiation at any temperature (absorptivity = emissivity = 1). A small hole in a hollow cavity is a good practical approximation.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> State the Stefan–Boltzmann law.</p>
+<div class="sol"><p class="ans">The total energy radiated per second per unit area by a black body is directly proportional to the fourth power of its absolute temperature: E = σT⁴, with σ = 5.67 × 10⁻⁸ W m⁻² K⁻⁴. For a real surface P = eσAT⁴.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Why does convection require a gravitational field?</p>
+<div class="sol"><p class="ans">Because convection depends on buoyancy: warmer, less dense fluid rises only if weight exists. In a freely falling frame there is no effective weight, so no buoyancy, and heat must be carried by conduction or radiation alone.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> State Kirchhoff's law of radiation and draw one inference.</p>
+<div class="sol"><p class="ans">At a given temperature, the ratio of emissive power to absorptivity is the same for all bodies and equals that of a black body. Hence good absorbers are good emitters, which is why a blackened kettle both heats and cools fastest.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Why are the pipes of a solar water heater painted black?</p>
+<div class="sol"><p class="ans">Black surfaces have high absorptivity for solar radiation, so they absorb most of the incident energy and transfer it to the water. Kirchhoff's law also allows black surfaces to reradiate well, which is why such collectors are covered with glass to trap the infra-red.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why does the temperature of the Earth's surface stay roughly steady?</p>
+<div class="sol"><p class="ans">Because the Earth radiates energy to space at the same average rate that it absorbs solar energy. The balance (with the greenhouse effect raising the equilibrium temperature) fixes the mean surface temperature; a change in absorbed or emitted power shifts that equilibrium.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Why is the handle of a metal spoon used for stirring hot liquid wrapped in cloth?</p>
+<div class="sol"><p class="ans">To reduce the conduction of heat to the hand: the cloth traps air, and still air is a very poor conductor (k ≈ 0.026 W m⁻¹ K⁻¹), slowing the heat flow along the handle. A dry cloth will not conduct much because the air spaces carry almost no heat.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Give two differences between the emissive power and absorptive power of a surface.</p>
+<div class="sol"><p class="ans">Emissive power is the energy radiated per second per unit area by a body at temperature T; absorptive power is the fraction of the incident radiant energy absorbed at that surface. Both increase with temperature for emission, while absorptivity is a surface property; by Kirchhoff's law their ratio is fixed for a given temperature.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Why does the Earth receive heat from the Sun by radiation rather than by conduction or convection?</p>
+<div class="sol"><p class="ans">Because the space between the Sun and the Earth is essentially a vacuum. Conduction and convection both need a material medium, but electromagnetic radiation needs none and travels at the speed of light, so solar energy reaches us as radiation.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why is a vacuum flask not used to store ice cream in a fridge, and what happens if it is?</p>
+<div class="sol"><p class="ans">A vacuum flask keeps heat out but also keeps heat in — it prevents any heat transfer in either direction. In a fridge the flask would insulate the ice cream from the cold air, so the ice cream would melt more slowly than if it were exposed; a flask is only useful when you want to isolate the contents from the ambient changes.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Why do metal teapots have shiny surfaces while solar collectors are black?</p>
+<div class="sol"><p class="ans">A shiny metal teapot has low emissivity, so it loses little heat by radiation and keeps the tea hot. A solar collector needs maximum absorption, so its surface is black with absorptivity near 1. Both are direct applications of Kirchhoff's law.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> What is meant by steady-state conduction?</p>
+<div class="sol"><p class="ans">The condition in which the temperature at every point of the conductor stays constant in time, so the heat entering any section equals the heat leaving it and the rate of heat flow is the same at every cross-section. Only in this state is Q/t = kAΔθ/L valid with constant Δθ.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why is the thermal conductivity of a gas much smaller than that of a solid?</p>
+<div class="sol"><p class="ans">Because conduction in a solid occurs through lattice vibrations and, in metals, through free electrons that carry energy efficiently between close-packed atoms. In a gas, molecules are far apart and collide only occasionally, so energy is passed on slowly; k for air is about 0.026 W m⁻¹ K⁻¹ against 400 for copper.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> How does the rate of radiation depend on the nature of the surface?</p>
+<div class="sol"><p class="ans">Through the emissivity e (0 to 1): P = eσAT⁴. A blackened surface has e ≈ 1 and radiates the maximum; a polished silver surface has e ≈ 0.02–0.05 and radiates very little. The same factor governs absorption, so shiny surfaces are poor at both.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Describe Searle's method, and explain why the bar must be lagged and the steady state reached before readings are taken.</p>
+<div class="sol">
+<p>The bar is lagged with felt or asbestos so that heat can leave it only at the two ends — laterally, it would lose heat to the air and the flow along the bar would not be uniform. Readings of θ₁ and θ₂ at a measured separation are taken only when they stop changing, because the formula Q/t = kA(θ₁ − θ₂)/x assumes that every cross-section passes the same amount of heat per second.</p>
+<p class="work">Steady state:  kA(θ₁ − θ₂)/x = mc(θ₄ − θ₃)/t
+⇒ k = mc(θ₄ − θ₃) x/[t A(θ₁ − θ₂)]</p>
+<p>Before the steady state the bar is still warming, so part of the conducted heat is being stored in the metal and the water's heat gain is less than the conduction along the bar — the calculated k would be too small.</p>
+<p class="ans">Lagging prevents lateral loss and a steady gradient makes the flow uniform, which is exactly what the one-dimensional formula assumes.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Two rods of the same length and area, of conductivities k₁ and k₂, are joined in series with their ends at θ₁ and θ₂. Derive the temperature at the junction and the equivalent conductivity.</p>
+<div class="sol">
+<p class="work">Same heat flow: k₁(θ₁ − θ) = k₂(θ − θ₂)
+⇒ k₁θ₁ + k₂θ₂ = (k₁ + k₂)θ ⇒ θ = (k₁θ₁ + k₂θ₂)/(k₁ + k₂)
+
+Total: Q/t = (θ₁ − θ₂)/[L/(k₁A) + L/(k₂A)]
+Equivalent: 1/k_eq = ½(1/k₁ + 1/k₂) ⇒ k_eq = 2k₁k₂/(k₁ + k₂)</p>
+<p class="ans">θ = (k₁θ₁ + k₂θ₂)/(k₁ + k₂); k_eq = 2k₁k₂/(k₁ + k₂), the harmonic mean — always below the arithmetic mean, as for the k and 2k slabs (4k/3).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [6]</b> A 60 W filament lamp has a tungsten filament of area 1 mm² and emissivity 0.35. Estimate its operating temperature, and comment on the result.</p>
+<div class="sol">
+<p class="work">P = eσAT⁴
+60 = 0.35 × 5.67 × 10⁻⁸ × 1 × 10⁻⁶ × T⁴
+T⁴ = 60/(1.98 × 10⁻¹⁴) = 3.0 × 10¹⁵
+T = (3.0 × 10¹⁵)^(1/4) = 2.3 × 10³ K ≈ 2300 K</p>
+<p>The value is the right order for a tungsten filament (about 2500–2800 K in practice). The estimate is approximate because the filament loses heat also by conduction through its supports and by the gas filling, and because the emissivity of tungsten varies with wavelength and temperature.</p>
+<p class="ans">T ≈ 2300 K; the correspondence with real filaments is a strong confirmation of the T⁴ law.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> A wall of area 10 m² and thickness 0.2 m separates a room at 20 °C from the outside at 0 °C. Given k = 0.8 W m⁻¹ K⁻¹, find the heat loss per hour and the reduction if a layer of insulation of k = 0.04, thickness 0.05 m is added.</p>
+<div class="sol">
+<p class="work">Bare wall: Q/t = kAΔθ/L = 0.8 × 10 × 20/0.2 = 800 W
+Per hour: 800 × 3600 = 2.88 × 10⁶ J ≈ 2.9 MJ
+
+With insulation, treat the layers as series:
+  R_total = L₁/k₁ + L₂/k₂ = 0.2/0.8 + 0.05/0.04 = 0.25 + 1.25 = 1.50 m²K W⁻¹
+  UA = A/R_total = 10/1.5 = 6.67 W K⁻¹
+  Q/t = 6.67 × 20 = 133 W  (per hour 4.8 × 10⁵ J)
+
+Reduction = 800 − 133 = 667 W, i.e. 83%</p>
+<p class="ans">2.9 MJ h⁻¹ bare; 0.48 MJ h⁻¹ insulated — an 83% saving from 5 cm of insulation, because the insulation's resistance dominates.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Conduction</td><td>Q/t = kA(θ₁ − θ₂)/L; k in W m⁻¹ K⁻¹</td></tr>
+<tr><td>Series slabs</td><td>R = ΣLᵢ/kᵢ; k_eq from 1/k_eq = Σ(Lᵢ/L)/(kᵢ)</td></tr>
+<tr><td>Searle's method</td><td>k = mc(θ₄ − θ₃)x/[tA(θ₁ − θ₂)]</td></tr>
+<tr><td>Stefan–Boltzmann</td><td>P = eσAT⁴; net = eσA(T⁴ − T₀⁴); σ = 5.67 × 10⁻⁸</td></tr>
+<tr><td>Kirchhoff</td><td>e/a = constant = E_bb; good absorbers are good emitters</td></tr>
+<tr><td>Newton's cooling from Stefan</td><td>P ≈ 4eσAT₀³ΔT ⇒ P ∝ ΔT</td></tr>
+<tr><td>Absorptivity/emissivity</td><td>Black body: a = e = 1; shiny metal e ≈ 0.03</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 12</h3>
+<div class="warn">
+<p><b>1. Celsius in T⁴.</b> Use kelvin. 227 °C is 500 K, not 227. The error factor is enormous and unmistakable to an examiner.</p>
+<p><b>2. Using one temperature in the net formula.</b> Net radiation needs both T and T₀: P = eσA(T⁴ − T₀⁴). Using T⁴ alone gives the gross emission, not the net loss.</p>
+<p><b>3. Forgetting the area.</b> P = eσAT⁴, not eσT⁴. A sphere's area is 4πr², a cylinder's curved area is 2πrL — state which you used.</p>
+<p><b>4. Averaging conductivities for series slabs.</b> Series layers add <em>thermal resistances</em> (L/kA), not conductivities; using the arithmetic mean overestimates k_eq.</p>
+<p><b>5. Saying radiation needs air.</b> Radiation needs no medium and is the only mode that crosses a vacuum — that is why we get the Sun's heat.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Identify the mode first (conduction, convection or radiation), write the corresponding rate law, convert temperatures to kelvin for radiation, and give the answer as a power in watts plus the energy over a stated time.</div>
+
+<p class="note">Physics XI · Unit 12 Rate of Heat Flow · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

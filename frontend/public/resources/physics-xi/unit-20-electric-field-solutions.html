@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 20 Electric Field: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 20 Electric Field: worked solutions for electric field intensity and field lines, the field of a point charge and of a charged sphere, superposition, the electric dipole and the torque on a dipole in a uniform field, electrostatic shielding and the field between parallel plates, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 20</p>
+
+<h1>Unit 20 — Electric Field</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 3 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">The unit is built on three formulas — E = F/q, E = kQ/r² and τ = pE sin θ — and on one diagram: the field lines of a dipole. Field-line questions are almost free marks if the six rules are memorised.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define electric field intensity and give its unit; state any three properties of electric field lines; why do field lines never intersect; define electric dipole moment.</li>
+<li><b>4 marks</b> — field at a point due to one or two charges; field at the midpoint of a dipole; torque on a dipole.</li>
+<li><b>5–6 marks</b> — draw and explain the field lines of an isolated charge, a dipole and two like charges; derive the torque on a dipole in a uniform field; explain electrostatic shielding and its use.</li>
+</ul>
+<p>Rule that keeps losing students marks: the electric field is a <b>vector</b>. Two fields at a point must be added as vectors — drawing the arrows first prevents the common mistake of adding magnitudes when the fields are perpendicular.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 20.1 — Electric field intensity</li>
+<li>Exercise 20.2 — Field due to a point charge and a charged sphere</li>
+<li>Exercise 20.3 — Electric field lines</li>
+<li>Exercise 20.4 — Superposition and numerical field problems</li>
+<li>Exercise 20.5 — The electric dipole</li>
+<li>Exercise 20.6 — Torque on a dipole in a uniform field</li>
+<li>Exercise 20.7 — Conductors, shielding and parallel plates</li>
+<li>Exercise 20.8 — Electric flux and Gauss's law</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 20.1 — Electric field intensity</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Define electric field intensity. Give its unit and dimensions.</p>
+<div class="sol">
+<p>The electric field intensity at a point is the electric force experienced per unit positive test charge placed at that point:</p>
+<p class="work">E = F/q₀   (vector quantity, directed along F for a positive test charge)
+Unit: N C⁻¹ = V m⁻¹
+Dimensions: [M L T⁻³ A⁻¹]</p>
+<p>The test charge must be small enough not to disturb the source charges. Because it is defined as positive, E points away from positive source charges and toward negative ones.</p>
+<p class="ans">E = F/q₀, in N C⁻¹ or V m⁻¹; a vector pointing away from positive charge and toward negative charge.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> A charge of 5 µC experiences a force of 0.02 N at a point. Find the electric field intensity there.</p>
+<div class="sol">
+<p class="work">E = F/q = 0.02/(5 × 10⁻⁶) = 4.0 × 10³ N C⁻¹</p>
+<p class="ans">E = 4.0 × 10³ N C⁻¹ in the direction of the force</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Distinguish between electric field and electric force.</p>
+<div class="sol">
+<table>
+<tr><th>Electric field</th><th>Electric force</th></tr>
+<tr><td>Property of the space around a charge</td><td>Interaction between two charges</td></tr>
+<tr><td>E = F/q₀, independent of the test charge</td><td>F = qE, depends on the charge placed there</td></tr>
+<tr><td>Exists at a point whether or not a charge is there</td><td>Exists only when a charge is present</td></tr>
+<tr><td>Unit N C⁻¹</td><td>Unit N</td></tr>
+</table>
+<p class="ans">The field describes the space and is fixed by the source charges; the force is what a particular charge in that space actually feels.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 20.2 — Field due to a point charge and a charged sphere</h2>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Derive E = kQ/r² for the field due to a point charge.</p>
+<div class="sol">
+<p class="work">Place a test charge q₀ at distance r from a source charge Q.
+Coulomb's law:  F = kQq₀/r²
+By definition:  E = F/q₀ = kQ/r²
+
+Vector form:  E = kQ r̂/r²,  r̂ being the unit vector from Q to the point.
+The field is radial: outward if Q &gt; 0, inward if Q &lt; 0.</p>
+<p class="ans">E = kQ/r² = Q/(4πε₀r²), radial, decreasing as 1/r².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Find the electric field at a point 20 cm from a charge of 4 µC in air. What force would a −2 µC charge feel there?</p>
+<div class="sol">
+<p class="work">E = kQ/r² = (9 × 10⁹ × 4 × 10⁻⁶)/(0.20)²
+  = (3.6 × 10⁴)/0.04 = 9.0 × 10⁵ N C⁻¹
+
+F = qE = 2 × 10⁻⁶ × 9.0 × 10⁵ = 1.8 N</p>
+<p class="ans">E = 9.0 × 10⁵ N C⁻¹ directed away from the +4 µC charge; a −2 µC charge there feels 1.8 N toward the source charge.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> What is the electric field inside and outside a charged conducting sphere?</p>
+<div class="sol">
+<p>Outside a uniformly charged conducting sphere of radius R and charge Q, the field is the same as if all the charge were concentrated at the centre:</p>
+<p class="work">E_out = kQ/r²  (r &gt; R)
+At the surface:  E = kQ/R²
+Inside (r &lt; R):  E = 0</p>
+<p>Since all the charge resides on the outer surface and the inside encloses no net charge, there is no field inside. This is the field-theory statement of the Faraday ice pail result, and the basis of electrostatic shielding.</p>
+<p class="ans">E = kQ/r² outside (r &gt; R), maximum at the surface, and exactly zero everywhere inside.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Why is the electric field zero inside a conductor in electrostatic equilibrium?</p>
+<div class="sol">
+<p>If a field existed inside the conductor, the free electrons would be driven by it and would move until the field was cancelled. Equilibrium therefore requires zero field inside. A consequence is that any excess charge must reside on the surface: charges inside would create a field that would move them. Another consequence is that the surface of a conductor in equilibrium is an equipotential.</p>
+<p class="ans">Any internal field would move the free charges until it was neutralised; equilibrium therefore forces E = 0 inside and puts all excess charge on the surface.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 20.3 — Electric field lines</h2>
+
+<div class="item">
+<p class="q"><b>Q8.</b> State the properties of electric field lines.</p>
+<div class="sol">
+<ol class="step">
+<li>They originate on positive charges and terminate on negative charges (or come from/go to infinity).</li>
+<li>The tangent at any point gives the direction of the field there; the arrows point the way a positive test charge would move.</li>
+<li>They never intersect, because the field has a unique direction at each point.</li>
+<li>Their density (number per unit area perpendicular to the field) is proportional to the field strength — crowded lines mean a strong field.</li>
+<li>They are continuous curves, starting and ending on charges, never forming closed loops in electrostatics.</li>
+<li>They are always perpendicular to the surface of a conductor, because a tangential component would move surface charges.</li>
+<li>They do not pass through a conductor; the field inside is zero.</li>
+</ol>
+<p class="ans">Radial from + to −, non-intersecting, density ∝ field strength, perpendicular to conductors, and absent inside conductors.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Why do electric field lines never intersect?</p>
+<div class="sol">
+<p>Because the electric field at a point has a single, unique direction. If two field lines crossed, then at the crossing point the field would have two directions at once, which is impossible — a test charge there cannot be pushed two ways simultaneously. (Field lines may appear to meet at the location of a point charge, where the field is singular, but that is an idealisation and not a genuine crossing.)</p>
+<p class="ans">The field has one direction at each point; intersecting lines would imply two directions, which is impossible.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Describe the field lines for (a) an isolated positive charge, (b) an electric dipole, (c) two equal positive charges.</p>
+<div class="sol">
+<table>
+<tr><th>Configuration</th><th>Field-line pattern</th></tr>
+<tr><td>Isolated +Q</td><td>Straight radial lines pointing outward, uniformly spaced in angle, terminating at infinity; density falls as 1/r²</td></tr>
+<tr><td>Dipole (+Q and −Q)</td><td>Curves leaving +Q and entering −Q; near each charge the lines are almost radial, far away they close into large loops; a strong field in the gap between the charges</td></tr>
+<tr><td>Two equal + charges</td><td>Lines leave both and bend away from each other; there is a neutral point at the midpoint where no lines exist and the field is zero</td></tr>
+</table>
+<p class="ans">A single charge gives straight radial lines; a dipole gives connected loops from + to −; two like charges repel each other's lines and leave a neutral point between them.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Why are field lines perpendicular to the surface of a conductor?</p>
+<div class="sol">
+<p>If the field had a component along the surface, the free charges on the surface would experience a tangential force and would move, so the conductor would not be in equilibrium. Equilibrium therefore requires the field at the surface to have no tangential component — it must be normal to the surface. In terms of potential, the whole surface of a conductor is at one potential, and field lines are perpendicular to equipotentials.</p>
+<p class="ans">A tangential component would drive surface charges and break equilibrium; hence the field, and the field lines, meet the surface at 90°.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 20.4 — Superposition and numerical field problems</h2>
+
+<div class="item">
+<p class="q"><b>Q12.</b> State the superposition principle for electric fields and apply it to two charges.</p>
+<div class="sol">
+<p>The net electric field at a point due to a system of charges is the vector sum of the fields produced by each charge individually:</p>
+<p class="work">E_net = E₁ + E₂ + E₃ + …  (vector addition)
+E_i = kQ_i/r_i²  directed along the line from Q_i to the point</p>
+<p>For two charges on a line, the fields add if they point the same way and subtract if they oppose. For charges not on a line, resolve into components and combine by Pythagoras.</p>
+<p class="ans">E_net is the vector sum of the individual fields; add directions before magnitudes.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> Two charges of +4 µC and −4 µC are 20 cm apart. Find the field at the midpoint.</p>
+<div class="sol">
+<p class="work">At the midpoint each charge is 0.10 m away.
+Field due to +4 µC: E₁ = (9 × 10⁹ × 4 × 10⁻⁶)/0.01 = 3.6 × 10⁶ N C⁻¹,
+  directed away from the positive charge (toward the negative one)
+Field due to −4 µC: E₂ = (9 × 10⁹ × 4 × 10⁻⁶)/0.01 = 3.6 × 10⁶ N C⁻¹,
+  directed toward the negative charge (the same direction)
+E_net = 7.2 × 10⁶ N C⁻¹, from the positive toward the negative charge</p>
+<p class="ans">E = 7.2 × 10⁶ N C⁻¹, pointing from +4 µC toward −4 µC (the two fields add).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Two equal positive charges of 2 µC are 10 cm apart. Find the field at a point 10 cm from each, on the perpendicular bisector.</p>
+<div class="sol">
+<p class="work">The point and the two charges form an equilateral triangle of side 0.10 m.
+Each field: E = kQ/r² = (9 × 10⁹ × 2 × 10⁻⁶)/0.01 = 1.8 × 10⁶ N C⁻¹
+Each field makes 30° with the perpendicular bisector (60° between the two fields).
+Components along the bisector add: 2E cos30° = 2 × 1.8 × 10⁶ × 0.866
+Components perpendicular cancel.
+E_net = 3.1 × 10⁶ N C⁻¹, directed away from the midpoint of the two charges.</p>
+<p class="ans">E_net ≈ 3.1 × 10⁶ N C⁻¹ along the bisector, pointing away from the charges.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Sketch the field of two parallel plates carrying equal and opposite charges.</p>
+<div class="sol">
+<p>Between the plates the fields of the two sheets point the same way, so they add to a uniform field: parallel, equally spaced, straight lines from the positive to the negative plate. Outside the plates the two fields are opposite and equal, so they cancel almost exactly (exactly for infinite plates), giving zero field. Near the edges the lines bulge outward — the fringing field.</p>
+<p class="work">E = σ/ε₀  between the plates, where σ = Q/A is the surface charge density.</p>
+<p class="ans">Uniform parallel field E = σ/ε₀ inside, zero outside, with fringing at the edges — the field used in a parallel-plate capacitor.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 20.5 — The electric dipole</h2>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Define electric dipole and dipole moment. Give the magnitude and direction of p.</p>
+<div class="sol">
+<p>An electric dipole is a pair of equal and opposite charges separated by a small distance. Its dipole moment is defined as the product of the charge and the separation:</p>
+<p class="work">p = q(2a), where 2a is the separation between the charges
+Unit: C m
+Direction: from the negative charge toward the positive charge (the "axis" of the dipole)</p>
+<p>Dipole moment is a vector; it is the quantity that determines the torque a dipole feels in an external field and the field the dipole itself produces at a distance. Examples: a water molecule (p ≈ 6 × 10⁻³⁰ C m), HCl, and the molecule pairs in a dielectric.</p>
+<p class="ans">p = q × 2a, in C m, directed from −q to +q along the axis.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> Two charges of ±3 µC are separated by 4 cm. Find the dipole moment.</p>
+<div class="sol">
+<p class="work">p = qd = 3 × 10⁻⁶ × 0.04 = 1.2 × 10⁻⁷ C m</p>
+<p class="ans">p = 1.2 × 10⁻⁷ C m, directed from the negative charge to the positive charge</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> What is the field at a point on the axial line of a dipole? On the equatorial line?</p>
+<div class="sol">
+<p>For a short dipole (separation much smaller than the distance r):</p>
+<p class="work">Axial point:     E = 2kp/r³  (directed along p)
+Equatorial point: E = kp/r³   (directed opposite to p)
+Ratio:  E_axial : E_equatorial = 2 : 1</p>
+<p>Both fall as 1/r³, faster than the 1/r² of a point charge, because the two charges partially cancel at a distance. This is why the field of a neutral molecule falls off so rapidly.</p>
+<p class="ans">E_axial = 2kp/r³ along p; E_equatorial = kp/r³ opposite to p; the axial field is twice the equatorial field at the same distance.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> What is the net force on a dipole in a uniform electric field? What about in a non-uniform field?</p>
+<div class="sol">
+<p>In a uniform field the forces on the two charges are equal in magnitude and opposite in direction, so the net force is <b>zero</b> — but they form a couple, so there is a torque that tends to align the dipole with the field. In a non-uniform field the two forces are unequal, so there is a net force in addition to the torque, and the dipole is pulled toward the region of stronger field (if it is aligned with the field).</p>
+<p class="ans">Zero net force but a torque in a uniform field; both a net force and a torque in a non-uniform field (the basis of dielectrophoresis).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 20.6 — Torque on a dipole in a uniform field</h2>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Derive τ = pE sin θ for the torque on a dipole in a uniform field.</p>
+<div class="sol">
+<p class="work">Charges +q and −q are separated by 2a, and the dipole axis makes an angle θ
+with the uniform field E.
+
+Force on +q: F = qE, along E
+Force on −q: F = qE, opposite to E
+These two equal and opposite forces form a couple.
+
+Torque = one force × perpendicular distance between the lines of action
+The perpendicular distance between the two forces is (2a) sin θ.
+  τ = qE × 2a sin θ = (q · 2a)E sin θ = pE sin θ
+
+Vector form:  τ = p × E,  |τ| = pE sin θ</p>
+<p>The torque is maximum at θ = 90° (τ = pE) and zero at θ = 0° and 180°, where the dipole is aligned or anti-aligned with the field. The torque always acts to rotate p toward E, i.e. to align the dipole with the field.</p>
+<p class="ans">τ = pE sin θ = |p × E|; maximum when the dipole is perpendicular to the field, zero when it is aligned.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> A dipole of moment 2 × 10⁻⁸ C m is placed in a uniform field of 5 × 10⁴ N C⁻¹ at 30°. Find the torque.</p>
+<div class="sol">
+<p class="work">τ = pE sin θ = (2 × 10⁻⁸)(5 × 10⁴) sin30°
+  = 1 × 10⁻³ × 0.5 = 5 × 10⁻⁴ N m</p>
+<p class="ans">τ = 5 × 10⁻⁴ N m, tending to rotate the dipole toward alignment with the field</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> At what orientation is the torque on a dipole (a) maximum, (b) zero? What is the potential energy in each case?</p>
+<div class="sol">
+<p class="work">τ = pE sin θ:  maximum at θ = 90°, zero at θ = 0° and 180°
+
+Potential energy:  U = −pE cos θ
+  θ = 0°   → U = −pE  (minimum energy, stable equilibrium, aligned with E)
+  θ = 90°  → U = 0
+  θ = 180° → U = +pE  (maximum energy, unstable equilibrium, anti-aligned)</p>
+<p>So the dipole is stable when aligned with the field and unstable when anti-aligned; the torque always pushes it toward the stable position.</p>
+<p class="ans">Torque is maximum at 90° (U = 0) and zero at 0° (U = −pE, stable) and 180° (U = +pE, unstable).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> How much work is needed to rotate a dipole from alignment with the field to perpendicular to it?</p>
+<div class="sol">
+<p class="work">W = U_final − U_initial = (−pE cos 90°) − (−pE cos 0°)
+  = 0 − (−pE) = pE</p>
+<p>The work done equals pE, the maximum potential energy gained. Rotating it further to 180° needs a further pE, giving a total of 2pE from the aligned position.</p>
+<p class="ans">W = pE to reach 90°, and 2pE to reach full anti-alignment.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 20.7 — Conductors, shielding and parallel plates</h2>
+
+<div class="item">
+<p class="q"><b>Q24.</b> What is electrostatic shielding? Give one practical use.</p>
+<div class="sol">
+<p>Because the field inside a hollow conductor is zero, a conducting enclosure shields its interior from external electric fields: the free charges on the conductor redistribute until their own field exactly cancels the applied field inside. This is electrostatic shielding, and the enclosure is called a Faraday cage.</p>
+<p>Uses: a car or an aircraft protects its occupants from lightning; a coaxial cable's braided shield prevents external pickup; electronic instruments are housed in metal cases; a sensitive electrometer is placed inside a metal box.</p>
+<p class="ans">A conducting enclosure keeps its interior field-free by charge redistribution on its surface; used for lightning protection, cable shielding and instrument housing.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> Derive E = σ/ε₀ for the field between two oppositely charged parallel plates.</p>
+<div class="sol">
+<p class="work">Each sheet of charge density σ produces a field σ/(2ε₀) on either side.
+Between the plates the two fields point the same way and add:
+  E = σ/(2ε₀) + σ/(2ε₀) = σ/ε₀
+Outside the plates they point in opposite directions and cancel:
+  E = 0</p>
+<p class="ans">E = σ/ε₀ between the plates (uniform), zero outside — the result used for capacitors.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> Why is the field near the surface of a charged conductor E = σ/ε₀, not σ/2ε₀?</p>
+<div class="sol">
+<p>For an isolated sheet of charge the field on each side is σ/(2ε₀). But at the surface of a conductor the charge resides on the outer surface, and just outside, the field is due to the whole conductor's charge distribution. A Gaussian pillbox with one face just outside and one just inside (where E = 0) gives E·A = σA/ε₀, hence E = σ/ε₀. The apparent factor-of-two difference is because the conductor's charges are not an isolated sheet: the rest of the conductor contributes to the field at the surface.</p>
+<p class="ans">Inside the conductor E = 0, so a Gaussian pillbox gives E = σ/ε₀ just outside; the factor 2 disappears because only the outer face contributes flux.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 20.8 — Electric flux and Gauss's law</h2>
+
+<div class="item">
+<p class="q"><b>Q27.</b> Define electric flux and state Gauss's law.</p>
+<div class="sol">
+<p><b>Electric flux</b> through a surface is the number of field lines crossing it, defined as</p>
+<p class="work">Φ = E·A = EA cos θ   (unit: N m² C⁻¹ = V m)
+For a closed surface:  Φ = ∮E·dA</p>
+<p><b>Gauss's law:</b> the total electric flux through any closed surface equals 1/ε₀ times the net charge enclosed by that surface:</p>
+<p class="work">∮E·dA = Q_enclosed/ε₀</p>
+<p>The law follows from the inverse-square nature of Coulomb's law. Its power is that a well-chosen Gaussian surface turns a hard integral into a one-line calculation whenever the symmetry is high.</p>
+<p class="ans">Φ = EA cos θ; ∮E·dA = Q_enclosed/ε₀ — the flux through a closed surface depends only on the charge inside it.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> Use Gauss's law to find the field of a uniformly charged sphere outside and inside.</p>
+<div class="sol">
+<p class="work">Choose a concentric Gaussian sphere of radius r.
+
+(i) r &gt; R (outside): the enclosed charge is the whole Q.
+  E(4πr²) = Q/ε₀  ⇒  E = Q/(4πε₀r²) = kQ/r²
+
+(ii) r &lt; R (inside a uniformly charged insulating sphere):
+  enclosed charge = Q × (r³/R³)  (proportional to the volume enclosed)
+  E(4πr²) = Qr³/(ε₀R³)  ⇒  E = kQr/R³
+  The field rises linearly from zero at the centre to kQ/R² at the surface.
+
+(iii) Inside a hollow conducting shell: no charge is enclosed, so E = 0.</p>
+<p class="ans">Outside: E = kQ/r², exactly as for a point charge. Inside a uniformly charged sphere: E = kQr/R³, rising linearly. Inside a conducting shell: E = 0.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> Use Gauss's law to find the field of (a) a long straight charged wire and (b) a large charged plane sheet.</p>
+<div class="sol">
+<p class="work">(a) Line charge of linear density λ: choose a coaxial cylindrical Gaussian surface of
+radius r and length L. The flux is only through the curved surface, and the enclosed
+charge is λL:
+  E(2πrL) = λL/ε₀
+  ⇒  E = λ/(2πε₀r) = 2kλ/r     (falls as 1/r, not 1/r²)
+
+(b) Plane sheet of surface density σ: choose a pillbox straddling the sheet. Flux leaves
+through both faces:
+  2EA = σA/ε₀
+  ⇒  E = σ/(2ε₀)     (uniform, independent of distance)
+
+(c) For a charged conducting surface, E = σ/ε₀ just outside and 0 inside, because only the
+outer face of the pillbox contributes flux.</p>
+<p class="ans">Wire: E = λ/(2πε₀r), falling as 1/r. Sheet: E = σ/(2ε₀), uniform. Conductor surface: E = σ/ε₀, with E = 0 inside.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> A charge of 4 µC sits at the centre of a cube of side 10 cm. Find the flux through the whole cube and through one face.</p>
+<div class="sol">
+<p class="work">Total flux through any closed surface enclosing the charge:
+  Φ = Q/ε₀ = 4 × 10⁻⁶/8.85 × 10⁻¹² = 4.52 × 10⁵ N m² C⁻¹
+
+By symmetry the flux divides equally among the six faces:
+  Φ_face = Φ/6 = 7.5 × 10⁴ N m² C⁻¹</p>
+<p>Note that the flux depends only on the enclosed charge, not on the size of the cube or on where inside it the charge sits.</p>
+<p class="ans">Φ_total = 4.5 × 10⁵ N m² C⁻¹; each face carries one sixth, 7.5 × 10⁴ N m² C⁻¹.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define electric field intensity and give its unit.</p>
+<div class="sol"><p class="ans">E = F/q₀, the force per unit positive test charge at a point; a vector in N C⁻¹ (equivalently V m⁻¹). It points away from positive charge and toward negative charge.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Write the field due to a point charge.</p>
+<div class="sol"><p class="ans">E = kQ/r² = Q/(4πε₀r²), directed radially outward for positive Q and inward for negative Q; it follows the inverse-square law.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> State any three properties of electric field lines.</p>
+<div class="sol"><p class="ans">They start on positive and end on negative charges; they never intersect; their density is proportional to the field strength. (Also: they are perpendicular to conductor surfaces and continuous, without closed loops.)</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Why do field lines never intersect?</p>
+<div class="sol"><p class="ans">Because the field direction at any point is unique; two crossing lines would give two directions at the same point, which is impossible for a vector field.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Define electric dipole moment.</p>
+<div class="sol"><p class="ans">p = q × (separation), a vector from the negative to the positive charge, in C m. It determines the torque a dipole feels in an external field and the field the dipole produces at a distance.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Write the expression for the torque on a dipole in a uniform field.</p>
+<div class="sol"><p class="ans">τ = pE sin θ = |p × E|, maximum at θ = 90° and zero when the dipole is aligned (θ = 0°) or anti-aligned (180°). The torque tends to align p with E.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> What is the net force on a dipole in a uniform field?</p>
+<div class="sol"><p class="ans">Zero. The forces on the two charges are equal in magnitude and opposite in direction, so they cancel as a translational force but form a couple, producing a torque.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Why is the electric field inside a conductor zero?</p>
+<div class="sol"><p class="ans">Because any internal field would drive the free charges, which would keep moving until their own field cancelled the applied one. Equilibrium therefore requires zero internal field, and consequently all excess charge resides on the surface.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> What is electrostatic shielding and what is it used for?</p>
+<div class="sol"><p class="ans">The absence of field inside a hollow conductor, which protects its interior from external fields. It is used in Faraday cages for lightning protection, in shielded cables and in metal housings for sensitive instruments.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> What is a uniform electric field, and how can one be produced?</p>
+<div class="sol"><p class="ans">A field whose magnitude and direction are the same at every point. It is produced between two large parallel plates carrying equal and opposite charges, where E = σ/ε₀ away from the edges.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why is E = 0 at the neutral point between two equal positive charges?</p>
+<div class="sol"><p class="ans">Because at the midpoint the fields of the two equal charges have equal magnitudes and opposite directions, so their vector sum is zero. No field line passes through that point, and a test charge placed there feels no force.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Why does the field of a dipole fall as 1/r³ rather than 1/r²?</p>
+<div class="sol"><p class="ans">Because at a distant point the fields of the two equal and opposite charges nearly cancel, leaving only a residual that depends on their separation. That partial cancellation introduces an extra factor of (separation/distance), turning the 1/r² law into 1/r³.</p></div>
+</div>
+
+<div class="item">
+<p><b>C13.</b> What is the direction of the electric field at a point on the axial line of a dipole?</p>
+<div class="sol"><p class="ans">Along the dipole moment, i.e. from the negative toward the positive charge on the axis (the field of the nearer positive charge wins). On the equatorial line the field is anti-parallel to p.</p></div>
+</div>
+
+<div class="item">
+<p><b>C14.</b> Why is the electric field always normal to an equipotential surface?</p>
+<div class="sol"><p class="ans">Because no work is done in moving a charge along an equipotential, so the field can have no component along the surface. It must therefore be perpendicular to it. The surface of a conductor in equilibrium is an equipotential, which is why field lines meet it at 90°.</p></div>
+</div>
+
+<div class="item">
+<p><b>C15.</b> Give two examples of electric dipoles in nature.</p>
+<div class="sol"><p class="ans">The water molecule (permanent dipole moment ≈ 6 × 10⁻³⁰ C m, which is why water has a high dielectric constant and dissolves salts) and the HCl molecule. Induced dipoles in any atom or molecule placed in an external field are the microscopic basis of polarisation in dielectrics.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Derive the torque on an electric dipole in a uniform electric field and discuss the cases θ = 0°, 90° and 180°.</p>
+<div class="sol">
+<p>The derivation is given in Q20. In summary:</p>
+<p class="work">τ = qE × perpendicular distance = qE(2a sin θ) = pE sin θ
+Vector form: τ = p × E
+
+θ = 0°   → τ = 0,   U = −pE  (stable, aligned)
+θ = 90°  → τ = pE,  U = 0    (maximum torque)
+θ = 180° → τ = 0,   U = +pE  (unstable, anti-aligned)</p>
+<p>The torque vanishes at both 0° and 180°, but only at 0° is the equilibrium stable: a small displacement at 0° produces a torque that restores alignment, while at 180° the torque drives the dipole further away.</p>
+<p class="ans">τ = pE sin θ = |p × E|; maximum at 90°, zero (stable) at 0°, zero (unstable) at 180°.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Two charges +5 µC and −5 µC are placed 0.2 m apart. Find the field at a point on the axis 0.3 m from the positive charge, outside the pair.</p>
+<div class="sol">
+<p class="work">The point is 0.30 m from +5 µC and 0.50 m from −5 µC, both fields along the same line
+but in opposite directions (the positive charge pushes away, the negative pulls back
+toward the pair).
+
+E₊ = (9 × 10⁹ × 5 × 10⁻⁶)/(0.30)² = 4.5 × 10⁴/0.09 = 5.0 × 10⁵ N C⁻¹ (outward)
+E₋ = (9 × 10⁹ × 5 × 10⁻⁶)/(0.50)² = 4.5 × 10⁴/0.25 = 1.8 × 10⁵ N C⁻¹ (inward)
+
+Net E = 5.0 × 10⁵ − 1.8 × 10⁵ = 3.2 × 10⁵ N C⁻¹, directed away from the pair.</p>
+<p class="ans">E_net ≈ 3.2 × 10⁵ N C⁻¹, pointing away from the dipole along the axis — as expected for the axial point of a dipole, where the field is along p.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Draw and explain the electric field lines for a dipole and for two equal positive charges, and state two differences.</p>
+<div class="sol">
+<p><b>Dipole:</b> lines leave the positive charge and curve round to enter the negative charge; near each charge the lines are nearly radial, while far away they close into big loops. The field is strongest in the gap between the charges, where the lines are most crowded.</p>
+<p><b>Two equal positive charges:</b> lines leave both charges and bend away from each other, never crossing; between them there is a neutral point (field zero) with no lines passing through. Far away the pattern approaches that of a single charge 2Q.</p>
+<table>
+<tr><th>Dipole</th><th>Two like charges</th></tr>
+<tr><td>Lines connect + to −; closed loops at a distance</td><td>Lines do not connect; they repel and go to infinity</td></tr>
+<tr><td>No neutral point on the axis between them</td><td>A neutral point exists at the midpoint</td></tr>
+</table>
+<p class="ans">Dipole lines run from + into −; like-charge lines diverge with a neutral point between. The connecting loops and the neutral point are the key distinguishing features.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> A charge of 1 µC is placed at a point where the field is 2 × 10⁵ N C⁻¹. Find the force on it. What if the charge were −1 µC and instead the point were inside a hollow metal sphere enclosing the source charge?</p>
+<div class="sol">
+<p class="work">F = qE = 1 × 10⁻⁶ × 2 × 10⁵ = 0.2 N, along E.
+
+For −1 µC: F = 0.2 N, opposite to E.
+
+Inside a hollow metal sphere enclosing the charge: the field inside the metal is zero,
+so E = 0 and F = 0. The conductor shields its interior from the field of the enclosed charge
+(the charge appears entirely on the outer surface).</p>
+<p class="ans">0.2 N along the field for +1 µC, 0.2 N opposite for −1 µC; zero inside the metal because the conductor shields its interior.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Field definition</td><td>E = F/q₀, N C⁻¹ = V m⁻¹</td></tr>
+<tr><td>Point charge</td><td>E = kQ/r² = Q/(4πε₀r²), radial</td></tr>
+<tr><td>Charged sphere</td><td>Outside kQ/r²; inside 0</td></tr>
+<tr><td>Superposition</td><td>E_net = E₁ + E₂ + … (vectors)</td></tr>
+<tr><td>Dipole moment</td><td>p = q × 2a, C m, from −q to +q</td></tr>
+<tr><td>Dipole field</td><td>E_axial = 2kp/r³; E_equatorial = kp/r³</td></tr>
+<tr><td>Torque on dipole</td><td>τ = pE sin θ = |p × E|</td></tr>
+<tr><td>Dipole energy</td><td>U = −pE cos θ; W = pE to rotate from 0° to 90°</td></tr>
+<tr><td>Parallel plates</td><td>E = σ/ε₀ between, 0 outside</td></tr>
+<tr><td>Conductor surface</td><td>E = σ/ε₀ normal to the surface; E = 0 inside</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 20</h3>
+<div class="warn">
+<p><b>1. Adding field magnitudes when the fields are not parallel.</b> E is a vector; at a general point resolve into components and use Pythagoras, or use the cosine rule.</p>
+<p><b>2. Confusing the sign conventions.</b> E points away from positive charge and toward negative charge; force on a negative charge is opposite to E. Write the direction explicitly in every answer.</p>
+<p><b>3. Using 1/r² for a dipole.</b> A dipole's field falls as 1/r³ and the axial field is twice the equatorial one; 1/r² is for a single point charge only.</p>
+<p><b>4. Saying the net force on a dipole in a uniform field is non-zero.</b> The translational force is zero; only the torque acts. In a non-uniform field there is a net force as well.</p>
+<p><b>5. Drawing field lines that cross or that enter a conductor.</b> Lines never cross and never penetrate a conductor; they meet its surface at right angles.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> For every field problem: mark the point, draw the arrow of each individual field, decide whether they add or oppose, then compute. For field-line questions, sketch first (charge positions, arrows, spacing) and write the explanation around the sketch.</div>
+
+<p class="note">Physics XI · Unit 20 Electric Field · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 16 Refraction through Prisms: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 16 Refraction through Prisms: worked solutions for the prism formula, the minimum deviation condition and the relation between prism angle, minimum deviation and refractive index, the small-angle prism, and the i–D curve, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 16</p>
+
+<h1>Unit 16 — Refraction through Prisms</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 4 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">The prism unit is four equations and one graph. Once A = r₁ + r₂, D = i₁ + i₂ − A, the minimum-deviation condition and n = sin[(A + Dm)/2]/sin(A/2) are in place, every question in this unit is a substitution — and the i–D curve explains why.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define the angle of minimum deviation; write the prism formula; why is deviation minimum when the ray passes symmetrically; what is a thin prism.</li>
+<li><b>4 marks</b> — refractive index from A and Dm; find i or e given the other; thin-prism deviation.</li>
+<li><b>5–6 marks</b> — derive n = sin[(A + Dm)/2]/sin(A/2) from the prism geometry; sketch and explain the i–D curve.</li>
+</ul>
+<p>Rule that keeps losing students marks: the angles in a prism are always measured <em>from the normals</em> at the two faces, and D is the total deviation between the incident ray produced and the emergent ray. Label A, i₁, r₁, r₂, i₂ and D on the diagram before writing any formula.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 16.1 — Prism geometry: A, i, r and D</li>
+<li>Exercise 16.2 — The prism formula</li>
+<li>Exercise 16.3 — Minimum deviation and the refractive index</li>
+<li>Exercise 16.4 — The i–D curve</li>
+<li>Exercise 16.5 — The small-angle (thin) prism</li>
+<li>Exercise 16.6 — Grazing emergence and total internal reflection</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 16.1 — Prism geometry: A, i, r and D</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Define the angle of the prism, the angle of deviation and the angle of minimum deviation.</p>
+<div class="sol">
+<ul class="tight">
+<li><b>Angle of prism (A):</b> the angle between the two refracting faces (the apex angle).</li>
+<li><b>Angle of deviation (D):</b> the angle between the direction of the incident ray produced and the direction of the emergent ray, i.e. the total bend the ray suffers.</li>
+<li><b>Angle of minimum deviation (D<sub>m</sub>):</b> the smallest value of D as the angle of incidence is varied; it occurs when the ray passes symmetrically through the prism (i₁ = i₂ and r₁ = r₂).</li>
+</ul>
+<p class="ans">A is the apex angle, D the total bend, and Dm the minimum bend, reached when the ray travels symmetrically inside the prism.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Show that for a prism A = r₁ + r₂ and D = i₁ + i₂ − A.</p>
+<div class="sol">
+<p class="work">In the quadrilateral formed by the two normals and the two refracting faces,
+the angles at the normals are 90° each, so the angle between the normals is
+  180° − A.
+In the triangle formed by the ray inside the prism and the two normals:
+  r₁ + r₂ + (180° − A) = 180°  ⇒  A = r₁ + r₂
+
+Total deviation at the two faces:
+  D = (i₁ − r₁) + (i₂ − r₂)
+    = i₁ + i₂ − (r₁ + r₂)
+    = i₁ + i₂ − A</p>
+<p class="ans">A = r₁ + r₂ (from the normals' triangle) and D = i₁ + i₂ − A (deviations at the two faces add).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A ray passes through a prism of angle 60° with i₁ = 50° and i₂ = 45°. Find D, and the two refraction angles inside the prism given n = 1.5.</p>
+<div class="sol">
+<p class="work">D = i₁ + i₂ − A = 50 + 45 − 60 = 35°
+
+First face: sin r₁ = sin50°/1.5 = 0.766/1.5 = 0.5107 ⇒ r₁ = 30.7°
+Second face: r₂ = A − r₁ = 60 − 30.7 = 29.3°
+Check: n sin r₂ = 1.5 × 0.4894 = 0.734 ⇒ i₂ = 47.2° (close to the stated 45°;
+the given values are approximate)</p>
+<p class="ans">D = 35°; r₁ ≈ 30.7°, r₂ ≈ 29.3°. The check shows the given i₂ is consistent with a slightly different n (about 1.45).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 16.2 — The prism formula</h2>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Derive the relation between the angle of minimum deviation, the prism angle and the refractive index.</p>
+<div class="sol">
+<p class="work">General relations:  A = r₁ + r₂   and   D = i₁ + i₂ − A
+
+At minimum deviation the ray passes symmetrically:
+  i₁ = i₂ = i   and   r₁ = r₂ = r
+
+Then:
+  A = 2r            ⇒ r = A/2
+  D_m = 2i − A      ⇒ i = (A + D_m)/2
+
+Snell's law at the first face (air → prism):
+  n = sin i/sin r = sin[(A + D_m)/2] / sin(A/2)</p>
+<p class="ans">n = sin[(A + Dm)/2]/sin(A/2); at minimum deviation the ray is parallel to the base of the prism, with equal angles on both faces.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Why is the deviation minimum when the ray passes symmetrically through the prism?</p>
+<div class="sol">
+<p>By the principle of reversibility, if a ray enters at i₁ and emerges at i₂, a ray entering at i₂ leaves at i₁ with the same deviation. The deviation is therefore the same for that pair of angles, and between them it must pass through a minimum (the curve is smooth). That minimum lies at the midpoint of the pair, i₁ = i₂. Physically, the ray then travels parallel to the base, traversing the two faces symmetrically.</p>
+<p class="ans">Reversibility makes D(i₁) = D(i₂) for every pair, so a smooth curve through equal values has its minimum where i₁ = i₂ — the symmetric passage.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> A prism of angle 60° gives a minimum deviation of 30°. Find its refractive index.</p>
+<div class="sol">
+<p class="work">n = sin[(A + D_m)/2]/sin(A/2)
+  = sin[(60 + 30)/2]/sin(60/2)
+  = sin45°/sin30°
+  = 0.7071/0.5 = 1.414</p>
+<p class="ans">n = √2 ≈ 1.41 (a typical crown glass)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> A prism has A = 60° and n = 1.5. Find its angle of minimum deviation.</p>
+<div class="sol">
+<p class="work">n sin(A/2) = sin[(A + D_m)/2]
+1.5 × sin30° = sin[(60 + D_m)/2]
+0.75 = sin[(60 + D_m)/2]
+(60 + D_m)/2 = sin⁻¹(0.75) = 48.59°
+60 + D_m = 97.18  ⇒  D_m = 37.2°</p>
+<p class="ans">D_m ≈ 37° — the standard value for a 60° glass prism with n = 1.5</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> A prism of angle 60° and refractive index 1.5 is placed in water (n = 4/3). Find its minimum deviation.</p>
+<div class="sol">
+<p class="work">Relative refractive index: ₁n₂ = 1.5/1.333 = 1.125
+sin[(60 + D_m)/2] = 1.125 × sin30° = 0.5625
+(60 + D_m)/2 = 34.23°  ⇒  D_m = 8.5°</p>
+<p class="ans">D_m ≈ 8.5° — much smaller than in air (37°), because the relative refractive index between glass and water is only 1.125.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 16.3 — Minimum deviation and the refractive index</h2>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Describe how the refractive index of the material of a prism is determined experimentally with a spectrometer.</p>
+<div class="sol">
+<p class="work">1. Level the prism table and place the prism so that light from the collimator passes through it.
+2. Focus the telescope on the emergent ray and record the prism angle A by measuring the
+   angle between the two reflected images from the faces (A = ½ × angle between reflections).
+3. Rotate the prism table slowly; the image swings in one direction and then turns back.
+   The turning point is the position of minimum deviation.
+4. Measure D_m as the angle between the direct image and the image at minimum deviation.
+5. n = sin[(A + D_m)/2]/sin(A/2).</p>
+<p>Precautions: the prism must be set for minimum deviation (the image reverses direction), the collimator and telescope must be focused on infinity, and readings should be taken on both sides and averaged to cancel collimation error.</p>
+<p class="ans">Measure A and D_m with the spectrometer, then compute n = sin[(A + Dm)/2]/sin(A/2).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> A prism of angle 60° produces a minimum deviation of 38°. Find n, and the angle of incidence at minimum deviation.</p>
+<div class="sol">
+<p class="work">n = sin[(60 + 38)/2]/sin30° = sin49°/0.5 = 0.7547/0.5 = 1.509
+
+At minimum deviation: i = (A + D_m)/2 = 49°</p>
+<p class="ans">n ≈ 1.51; the angle of incidence is 49°, equal to the emergent angle.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Can a prism produce a minimum deviation for any incident angle? What is the limiting condition?</p>
+<div class="sol">
+<p>No. At minimum deviation the ray must be able to travel through the prism and emerge, which requires that r₂ = A/2 does not exceed the critical angle. Since sin r = sin(A/2) must satisfy n sin(A/2) ≤ 1, the condition is</p>
+<p class="work">A/2 ≤ C  ⇒  A ≤ 2C = 2 sin⁻¹(1/n)</p>
+<p>For n = 1.5, 2C = 83.6°, so a 60° prism works but a 90° prism does not transmit at minimum deviation — the ray would be totally internally reflected at the second face.</p>
+<p class="ans">The prism angle must satisfy A ≤ 2C, i.e. n sin(A/2) ≤ 1; otherwise no emergent ray exists at minimum deviation.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 16.4 — The i–D curve</h2>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Sketch the i–D curve and explain its shape, especially near the minimum.</p>
+<div class="sol">
+<p>Plotting the angle of deviation D against the angle of incidence i for a fixed prism gives a curve that is:</p>
+<ul class="tight">
+<li><b>High at small i</b> — a ray at grazing incidence inside the first face bends sharply.</li>
+<li><b>Falls to a minimum</b> at one particular i, where i₁ = i₂ and the ray is symmetric.</li>
+<li><b>Rises again at large i.</b></li>
+<li><b>Flat near the minimum</b>: dD/di = 0 there, so the curve is locally horizontal and readings are insensitive to small errors — the reason measurements at minimum deviation are the most accurate.</li>
+</ul>
+<p>The curve is not symmetric about the minimum in i (only about i = i_min in the sense that the two branches correspond to the incident and emergent angles).</p>
+<p class="ans">U-shaped with a broad, flat minimum where the ray is symmetric; the flatness is why the minimum-deviation method is used for precision measurements.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> What is the angle through which a ray is deviated when it passes through a prism symmetrically? Express D in terms of A and i.</p>
+<div class="sol">
+<p class="work">At symmetry i₁ = i₂ = i, so
+  D_m = 2i − A  ⇒  i = (A + D_m)/2
+The deviation is smallest there; any other path gives a larger D.</p>
+<p class="ans">D = 2i − A at the symmetric passage, and that value is D_m, the smallest deviation for the prism.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 16.5 — The small-angle (thin) prism</h2>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Derive D = (n − 1)A for a thin prism.</p>
+<div class="sol">
+<p>For a thin prism (A small, so i, r are all small), use the small-angle approximation sin θ ≈ θ:</p>
+<p class="work">n = sin i/sin r ≈ i/r  ⇒  i ≈ nr
+Also  A = r₁ + r₂ ≈ nr₁ + nr₂ = n(r₁ + r₂)... applied at both faces:
+  i₁ ≈ n r₁,  i₂ ≈ n r₂
+
+D = i₁ + i₂ − A = n(r₁ + r₂) − A = nA − A = (n − 1)A</p>
+<p class="ans">D = (n − 1)A for a thin prism: the deviation is independent of the angle of incidence and is proportional to the prism angle.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> A thin prism of angle 8° is made of glass of n = 1.5. Find the deviation it produces.</p>
+<div class="sol">
+<p class="work">D = (n − 1)A = (1.5 − 1) × 8° = 4°</p>
+<p class="ans">D = 4° — independent of the angle of incidence, which is why thin prisms are used to make small fixed deviations in optical instruments.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Give two uses of a thin prism.</p>
+<div class="sol">
+<p>(i) To produce a small, controlled deviation without dispersion being dominant — a simple "deviation prism" in an optical bench. (ii) As the erecting prism combination or the compensating prism in spectrometers, and in the ophthalmoscope/optometer to measure small refractive errors. Thin prisms also form the basis of the Fresnel prism used to correct double vision.</p>
+<p class="ans">Small fixed deviation with little dispersion (deviation prisms, Fresnel prisms for vision correction), and compensation of residual deviation in instruments.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 16.6 — Grazing emergence and total internal reflection</h2>
+
+<div class="item">
+<p class="q"><b>Q17.</b> A 60° glass prism (n = 1.5) is used so that the emergent ray just grazes the second face. Find the angle of incidence on the first face.</p>
+<div class="sol">
+<p class="work">Grazing emergence: i₂ = 90°, so r₂ = C (critical angle)
+sin C = 1/1.5 = 0.667 ⇒ C = 41.8°
+
+Then r₁ = A − r₂ = 60 − 41.8 = 18.2°
+Snell's law: sin i₁ = n sin r₁ = 1.5 sin18.2° = 1.5 × 0.3123 = 0.4685
+i₁ = 27.9°</p>
+<p class="ans">i₁ ≈ 28°; the emergent ray then travels along the second face. Any smaller angle of incidence leads to total internal reflection at the second face.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> Why does total internal reflection sometimes occur inside a prism, and how is it avoided?</p>
+<div class="sol">
+<p>Inside the prism the ray strikes the second face at r₂, which can exceed the critical angle if the prism angle is large or the incident angle is small. Then no light emerges from the second face and the prism behaves like a mirror. It is avoided by keeping the prism angle below 2C (about 84° for glass), by choosing an angle of incidence near the minimum-deviation value, and by surrounding the prism with a medium of higher refractive index (which raises C).</p>
+<p class="ans">When r₂ &gt; C the second face reflects totally; avoid it with A &lt; 2C and by working near minimum deviation.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> A ray enters a 60° prism at 45°. If n = 1.5, does the ray emerge? Show by calculation.</p>
+<div class="sol">
+<p class="work">First face: sin r₁ = sin45°/1.5 = 0.4714 ⇒ r₁ = 28.1°
+Second face: r₂ = A − r₁ = 60 − 28.1 = 31.9°
+Critical angle: C = sin⁻¹(1/1.5) = 41.8°
+Since r₂ = 31.9° &lt; C, the ray does emerge.
+sin i₂ = 1.5 sin31.9° = 1.5 × 0.5284 = 0.7926 ⇒ i₂ = 52.4°</p>
+<p class="ans">Yes, it emerges at 52.4°, with total deviation D = i₁ + i₂ − A = 45 + 52.4 − 60 = 37.4°.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Write the prism formula and define its symbols.</p>
+<div class="sol"><p class="ans">A = r₁ + r₂ and D = i₁ + i₂ − A, where A is the prism angle, i₁ and i₂ are the angles of incidence and emergence measured from the normals at the two faces, r₁ and r₂ the corresponding refraction angles, and D the total deviation.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> State the condition for minimum deviation.</p>
+<div class="sol"><p class="ans">The angle of incidence equals the angle of emergence (i₁ = i₂) and the ray travels inside the prism parallel to the base, so r₁ = r₂ = A/2. The deviation is then the smallest possible for the prism, and dD/di = 0.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Write the expression for the refractive index in terms of A and Dm.</p>
+<div class="sol"><p class="ans">n = sin[(A + Dm)/2]/sin(A/2), obtained by applying Snell's law at minimum deviation where i = (A + Dm)/2 and r = A/2.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Why is the prism able to disperse white light while a parallel slab cannot?</p>
+<div class="sol"><p class="ans">Because the prism's two faces are inclined, so the dispersion of the first refraction is not cancelled by the second. A parallel slab deviates each colour back by the same amount, so the emergent rays are parallel and white light stays white; the prism's second face adds to the spread instead of undoing it.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> What is a thin prism and what is its deviation formula?</p>
+<div class="sol"><p class="ans">A prism whose angle A is small (a few degrees), so all angles remain small and sin θ ≈ θ. Its deviation is D = (n − 1)A, independent of the angle of incidence.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Why does a prism in water produce a smaller deviation than the same prism in air?</p>
+<div class="sol"><p class="ans">Because the relevant refractive index is the relative one between the prism and its surroundings: n_rel = n_glass/n_water ≈ 1.125 instead of 1.5. A smaller relative index means less bending at each face and therefore a smaller deviation.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> What happens if the angle of the prism is increased beyond 2C?</p>
+<div class="sol"><p class="ans">No ray can pass through with minimum deviation: the angle r₂ = A/2 would exceed the critical angle, so the light undergoes total internal reflection at the second face and the prism acts as a mirror. For glass, 2C ≈ 84°.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Why is the ray parallel to the base of the prism at minimum deviation?</p>
+<div class="sol"><p class="ans">Because at minimum deviation r₁ = r₂ = A/2, so the ray crosses the prism symmetrically and the angle it makes with the two faces is the same; for a prism resting on its base, that direction is parallel to the base.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Give one practical use of a prism.</p>
+<div class="sol"><p class="ans">A right-angled prism uses total internal reflection to turn a beam through 90° (periscope, binoculars); dispersing prisms are used in a spectrometer, and thin prisms in optical instruments and vision correction.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> What is meant by angle of deviation?</p>
+<div class="sol"><p class="ans">The angle between the direction of the incident ray produced forward and the direction of the emergent ray. It measures the total bend produced by the prism and is the sum of the deviations at the two faces, D = (i₁ − r₁) + (i₂ − r₂).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why is the i–D curve flat near the minimum, and why does that matter experimentally?</p>
+<div class="sol"><p class="ans">Because at minimum deviation dD/di = 0, so over a small range of i the deviation hardly changes. Experimentally, the position of the prism is insensitive to small angular errors, so A and Dm can be measured to high precision by finding the point where the image reverses direction.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Can a prism produce deviation without dispersion? Give an example.</p>
+<div class="sol"><p class="ans">Yes — a combination of two prisms of different materials with their deviating angles in opposition. If the dispersions cancel but the mean deviations do not, the combination deviates light without splitting it into colours (a direct-vision spectroscope prism). The reverse case, equal deviation with zero dispersion, is the basis of an achromatic prism.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> What is the relation between deviation and the angle of the prism for a thin prism made of a given glass?</p>
+<div class="sol"><p class="ans">D = (n − 1)A, so the deviation is directly proportional to the prism angle A and to the refractive index minus one. Doubling A doubles D; using a denser glass increases D at the same A.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why does a prism show a spectrum of colours while a parallel slab does not?</p>
+<div class="sol"><p class="ans">In a slab the emergent rays of all colours are parallel and overlap again, so no separation survives. In a prism the rays leave in different directions, because each colour suffers a different total deviation (a different n), and the colours fan out as a spectrum.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Derive n = sin[(A + Dm)/2]/sin(A/2) from the prism geometry and the two refraction equations.</p>
+<div class="sol">
+<p class="work">Geometry inside the prism: A = r₁ + r₂
+Total deviation:              D = i₁ + i₂ − A
+
+At minimum deviation the path is symmetric:
+  i₁ = i₂ = i,  r₁ = r₂ = r
+⇒ A = 2r ⇒ r = A/2
+⇒ D_m = 2i − A ⇒ i = (A + Dm)/2
+
+Snell's law at the first face (air → prism, n_air = 1):
+  n = sin i/sin r = sin[(A + Dm)/2] / sin(A/2)</p>
+<p>The relation requires that the prism angle be less than 2C, otherwise the ray cannot pass through with minimum deviation.</p>
+<p class="ans">n = sin[(A + Dm)/2]/sin(A/2), valid for light entering from air and for A &lt; 2C.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> A 60° prism of glass (n = 1.5) is placed in air. Find the angle of incidence for minimum deviation and the emergent angle, then compute the deviation.</p>
+<div class="sol">
+<p class="work">At minimum deviation:
+  r = A/2 = 30°
+  sin i = n sin r = 1.5 × 0.5 = 0.75 ⇒ i = 48.6°
+  i₂ = i₁ = 48.6° (symmetric)
+  D_m = 2i − A = 97.2 − 60 = 37.2°</p>
+<p class="ans">i = 48.6°, emergent angle 48.6°, Dm = 37.2° — the standard numbers that should be memorised for a 60° glass prism.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Explain the i–D curve for a prism, and use it to justify why the prism is set at minimum deviation when measuring the refractive index.</p>
+<div class="sol">
+<p>For a fixed prism the deviation passes through a minimum as the angle of incidence increases from grazing. The curve is a shallow, smooth U: steep at small i (because r₂ approaches the critical angle and the emergent ray is very oblique), minimum at the symmetric passage, then rising again for large i.</p>
+<p>At the minimum dD/di = 0, so a small error in setting the angle of incidence changes D by a second-order amount. The position of the image also reverses direction there, which is a sharp, easily identified condition. Together these make the minimum-deviation setting the most precise way to determine Dm and hence n.</p>
+<p class="ans">The flat minimum makes Dm insensitive to angular error, and the image-reversal marks it sharply — hence the standard procedure.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> A thin prism of glass (n = 1.5) produces a deviation of 3°. Find its angle. What deviation would a prism of the same angle but n = 1.6 produce?</p>
+<div class="sol">
+<p class="work">A = D/(n − 1) = 3/(0.5) = 6°
+For n = 1.6: D = (n − 1)A = 0.6 × 6 = 3.6°</p>
+<p class="ans">A = 6°; the denser-glass prism deviates by 3.6°, i.e. 20% more for the same angle.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Prism geometry</td><td>A = r₁ + r₂; D = i₁ + i₂ − A</td></tr>
+<tr><td>Refraction at faces</td><td>sin i₁ = n sin r₁; n sin r₂ = sin i₂</td></tr>
+<tr><td>Minimum deviation</td><td>i₁ = i₂ = i; r₁ = r₂ = A/2; Dm = 2i − A</td></tr>
+<tr><td>Refractive index</td><td>n = sin[(A + Dm)/2]/sin(A/2)</td></tr>
+<tr><td>Thin prism</td><td>D = (n − 1)A (independent of i)</td></tr>
+<tr><td>Limiting condition</td><td>A/2 &lt; C, i.e. A &lt; 2 sin⁻¹(1/n); glass ≈ 84°</td></tr>
+<tr><td>Grazing emergence</td><td>i₂ = 90° ⇒ r₂ = C ⇒ r₁ = A − C</td></tr>
+<tr><td>In a liquid</td><td>Use n_rel = n_prism/n_liquid in all formulas</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 16</h3>
+<div class="warn">
+<p><b>1. Using n = 1.5 when the prism is in water.</b> The formulas need the <em>relative</em> index n_prism/n_liquid; using the absolute 1.5 quadruples the computed deviation.</p>
+<p><b>2. Mixing i and r at the two faces.</b> Write the subscripts i₁, r₁, r₂, i₂ along the ray from entry to exit, and use r₂ = A − r₁ before reaching for Snell's law at the second face.</p>
+<p><b>3. Forgetting to check r₂ against the critical angle.</b> If r₂ &gt; C there is no emergent ray. A sensible answer must state whether emergence is possible.</p>
+<p><b>4. Using the thin-prism formula for a 60° prism.</b> D = (n − 1)A is valid only for small angles; for a 60° prism it gives 30° instead of the correct 37°.</p>
+<p><b>5. Reporting Dm as D from a general incidence.</b> The minimum-deviation formula applies only at the symmetric setting. In a general case, use D = i₁ + i₂ − A.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Draw the prism, mark the two normals, label A, i₁, r₁, r₂, i₂ and D, then write the geometry equations before Snell's law. At minimum deviation, state "i₁ = i₂ and r₁ = r₂ = A/2" explicitly — that sentence carries a mark.</div>
+
+<p class="note">Physics XI · Unit 16 Refraction through Prisms · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

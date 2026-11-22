@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 3 Kinematics: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 3 Kinematics: worked solutions for instantaneous velocity, equations of motion from graphs, freely falling bodies, relative velocity and projectile motion, plus a conceptual bank with model answers in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 3</p>
+
+<h1>Unit 3 — Kinematics</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 5 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Kinematics is examined almost entirely as computation: read a graph, choose an equation, substitute, answer. Here every exercise type is worked with the graph derivations NEB asks for, then the short conceptual questions with model answers.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define instantaneous velocity; distinguish distance from displacement; state the condition for maximum range; average speed of a round trip.</li>
+<li><b>4 marks</b> — equations of motion from a v–t graph; a free-fall or retardation numerical; relative velocity of two trains or of rain and a walker.</li>
+<li><b>5–6 marks</b> — projectile motion: derive the equation of the trajectory, then find time of flight, maximum height and range for given values.</li>
+</ul>
+<p>Rule that keeps losing students marks: NEB gives marks for the <em>sign convention</em>. Write "taking upward as positive, a = −g" before substituting, or the height and time marks are lost even with the right numbers.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 3.1 — Distance, displacement, speed, velocity, acceleration</li>
+<li>Exercise 3.2 — Equations of motion and their graphical derivation</li>
+<li>Exercise 3.3 — Motion of a freely falling body</li>
+<li>Exercise 3.4 — Relative velocity</li>
+<li>Exercise 3.5 — Projectile motion</li>
+<li>Exercise 3.6 — Mixed numericals</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.1 — Distance, displacement, speed, velocity, acceleration</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Distinguish between distance and displacement, and between speed and velocity.</p>
+<div class="sol">
+<table>
+<tr><th>Distance</th><th>Displacement</th></tr>
+<tr><td>Total length of path travelled</td><td>Shortest straight-line change of position from initial to final point</td></tr>
+<tr><td>Scalar, always positive</td><td>Vector, can be positive, negative or zero</td></tr>
+<tr><td>Never decreases with time</td><td>Can decrease if the body turns back</td></tr>
+</table>
+<p>Speed is the rate of covering distance (scalar); velocity is the rate of change of displacement (vector). For a body returning to its start, average velocity is zero while average speed is not.</p>
+<p class="ans">Distance and speed are scalars with no direction; displacement and velocity are vectors with direction. Displacement ≤ distance always.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> The position of a particle is x = 3t² + 2t + 5 (x in m, t in s). Find its velocity and acceleration at t = 2 s.</p>
+<div class="sol">
+<p class="work">v = dx/dt = 6t + 2  ⇒ v(2) = 12 + 2 = 14 m s⁻¹
+a = dv/dt = 6 m s⁻² (constant)</p>
+<p class="ans">v = 14 m s⁻¹, a = 6 m s⁻² at t = 2 s</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A car travels the first half of a distance at 30 km h⁻¹ and the second half at 60 km h⁻¹. Find its average speed.</p>
+<div class="sol">
+<p class="work">Let total distance = 2d. Time = d/30 + d/60 = (2d + d)/60 = 3d/60 = d/20
+Average speed = 2d/(d/20) = 40 km h⁻¹
+
+(For equal distances: v_avg = 2v₁v₂/(v₁ + v₂) = 2(30)(60)/90 = 40)</p>
+<p class="ans">40 km h⁻¹ — not the arithmetic mean 45, because the slower half takes longer</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> A body moves 4 m east, then 3 m north in 7 s. Find the distance, displacement and average velocity.</p>
+<div class="sol">
+<p class="work">Distance = 4 + 3 = 7 m
+Displacement = √(4² + 3²) = 5 m, at tan⁻¹(3/4) = 37° north of east
+Average velocity = 5/7 = 0.714 m s⁻¹ along that direction
+Average speed = 7/7 = 1 m s⁻¹</p>
+<p class="ans">Distance 7 m; displacement 5 m at 37° N of E; average velocity 0.71 m s⁻¹, average speed 1 m s⁻¹</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.2 — Equations of motion and their graphical derivation</h2>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Derive v = u + at from a velocity–time graph.</p>
+<div class="sol">
+<p>A body starts with velocity u at t = 0 and reaches v at t, with uniform acceleration a. On the v–t graph the acceleration is the slope:</p>
+<p class="work">a = (v − u)/(t − 0)
+⇒ v = u + at</p>
+<p class="ans">The slope of a v–t graph is the acceleration; rearranged it gives v = u + at.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Derive s = ut + ½at² from a velocity–time graph.</p>
+<div class="sol">
+<p>The area under the v–t graph between 0 and t is the displacement. It splits into a rectangle of height u and width t, plus a triangle of height (v − u) = at and width t:</p>
+<p class="work">s = area of rectangle + area of triangle
+  = ut + ½ t(at)
+  = ut + ½at²</p>
+<p class="ans">Displacement = area under the v–t graph = ut + ½at².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Derive v² = u² + 2as using the velocity–time graph.</p>
+<div class="sol">
+<p class="work">Displacement s = area of trapezium = ½(u + v)t        ...(i)
+Acceleration  a = (v − u)/t  ⇒  t = (v − u)/a         ...(ii)
+Substituting (ii) in (i):
+s = ½(u + v)(v − u)/a = (v² − u²)/(2a)
+⇒ v² = u² + 2as</p>
+<p class="ans">v² = u² + 2as — the "no time" equation, used whenever t is neither given nor asked.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> A car starting from rest accelerates uniformly at 2 m s⁻² for 10 s. Find its final velocity and the distance covered. Then it brakes to rest in 5 s; find the retardation and the braking distance.</p>
+<div class="sol">
+<p class="work">Acceleration: v = u + at = 0 + 2(10) = 20 m s⁻¹
+s₁ = ½at² = ½(2)(100) = 100 m
+
+Braking: u = 20, v = 0, t = 5
+a = (v − u)/t = (0 − 20)/5 = −4 m s⁻²   (retardation 4 m s⁻²)
+s₂ = (u + v)t/2 = (20)(5)/2 = 50 m</p>
+<p class="ans">v = 20 m s⁻¹, s₁ = 100 m; retardation 4 m s⁻², braking distance 50 m</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> A body covers 40 m in the 5th second and 60 m in the 7th second of uniformly accelerated motion. Find its initial velocity and acceleration.</p>
+<div class="sol">
+<p class="work">s_n = u + a(2n − 1)/2
+5th second: 40 = u + a(9)/2  ⇒ u + 4.5a = 40     ...(i)
+7th second: 60 = u + a(13)/2 ⇒ u + 6.5a = 60     ...(ii)
+(ii) − (i): 2a = 20 ⇒ a = 10 m s⁻²
+From (i): u = 40 − 45 = −5 m s⁻¹</p>
+<p class="ans">a = 10 m s⁻², u = −5 m s⁻¹ (the body was initially moving backward and reversed)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.3 — Motion of a freely falling body</h2>
+
+<div class="item">
+<p class="q"><b>Q10.</b> A stone is dropped from the top of a tower 45 m high. Find the time to reach the ground and the velocity on impact. (g = 9.8 m s⁻²)</p>
+<div class="sol">
+<p class="work">Taking downward as positive, u = 0, a = g = 9.8, s = 45:
+s = ut + ½gt² ⇒ 45 = 0 + ½(9.8)t²
+t² = 90/9.8 = 9.18  ⇒ t = 3.03 s
+v = u + gt = 0 + 9.8(3.03) = 29.7 m s⁻¹</p>
+<p class="ans">t ≈ 3.0 s; v ≈ 29.7 m s⁻¹ downward</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> A ball is thrown vertically upward with 19.6 m s⁻¹. Find the maximum height, the time to reach it and the total time of flight.</p>
+<div class="sol">
+<p class="work">Upward positive, a = −9.8 m s⁻². At the top v = 0:
+v² = u² − 2gH ⇒ 0 = (19.6)² − 2(9.8)H
+H = 384.16/19.6 = 19.6 m
+t_up = u/g = 19.6/9.8 = 2.0 s
+Total time = 2t_up = 4.0 s</p>
+<p class="ans">H = 19.6 m; time up 2.0 s; total flight 4.0 s (the descent mirrors the ascent)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Why is the acceleration of a freely falling body independent of its mass? What is meant by g?</p>
+<div class="sol">
+<p>Weight = mg, and Newton's second law gives a = F/m = mg/m = g. The mass cancels, so all bodies fall with the same acceleration in the absence of air resistance (the observation Galileo made; verified on the Moon with a feather and a hammer, and in a vacuum tube).</p>
+<p>g is the acceleration due to gravity, ≈ 9.8 m s⁻² near the Earth's surface, directed vertically downward (toward the centre of the Earth).</p>
+<p class="ans">Because F = mg and m cancels from a = F/m; g is the gravitational acceleration, 9.8 m s⁻² downward, independent of the body's mass.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> A body falls freely from rest. Show that the distances covered in successive seconds are in the ratio 1 : 3 : 5 : 7.</p>
+<div class="sol">
+<p class="work">Distance in n seconds: s_n = ½gn²
+Distance in (n−1) seconds: s_(n−1) = ½g(n−1)²
+Distance in the nth second = ½g[n² − (n−1)²] = ½g(2n − 1)
+n = 1,2,3,4 → ½g(1, 3, 5, 7)  ⇒ ratio 1:3:5:7</p>
+<p class="ans">s ∝ (2n − 1): the odd-number ratio, Galileo's law of odd numbers.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> A body dropped from a height h reaches the ground with speed v. Find the height at which its speed is v/2.</p>
+<div class="sol">
+<p class="work">v² = 2gh ⇒ h = v²/2g  (total height)
+Let the speed be v/2 at height y above the ground, so it has fallen h − y:
+(v/2)² = 2g(h − y) ⇒ v²/4 = 2g(h − y)
+Substituting v² = 2gh:  2gh/4 = 2g(h − y)
+h/2 = h − y ⇒ y = h/2</p>
+<p class="ans">At half the original height (y = h/2), since speed ∝ √(distance fallen).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.4 — Relative velocity</h2>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Two trains of length 100 m each move in opposite directions at 54 km h⁻¹ and 36 km h⁻¹. How long do they take to cross each other?</p>
+<div class="sol">
+<p class="work">Relative speed (opposite directions) = 54 + 36 = 90 km h⁻¹ = 90 × 1000/3600 = 25 m s⁻¹
+Total distance to clear = 100 + 100 = 200 m
+t = 200/25 = 8 s</p>
+<p class="ans">8 s</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Rain is falling vertically at 10 m s⁻¹. A man walks east at 5 m s⁻¹. At what angle to the vertical must he hold his umbrella?</p>
+<div class="sol">
+<p class="work">Velocity of rain relative to man: v_rm = v_r − v_m
+= (0, −10) − (5, 0) = (−5, −10) m s⁻¹
+tanθ = 5/10 = 0.5  ⇒ θ = 26.6° from the vertical, tilted forward (toward the east)</p>
+<p class="ans">26.6° from the vertical, leaning forward in the direction of walking; the relative speed of rain is √125 = 11.2 m s⁻¹</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> A man can swim at 4 km h⁻¹ in still water. A river 1 km wide flows at 3 km h⁻¹. Find the minimum time to cross and the shortest path time.</p>
+<div class="sol">
+<p class="work">Minimum time — head straight across: t = 1/4 h = 15 min, drift = 3 × 0.25 = 0.75 km.
+
+Shortest path — head upstream so the resultant is perpendicular to the bank:
+sinφ = 3/4 = 0.75 ⇒ φ = 48.6° upstream of the perpendicular
+resultant speed = √(4² − 3²) = √7 = 2.65 km h⁻¹
+t = 1/2.65 = 0.378 h = 22.7 min</p>
+<p class="ans">Minimum time 15 min (with 0.75 km drift); shortest path 22.7 min by heading 48.6° upstream</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.5 — Projectile motion</h2>
+
+<div class="item">
+<p class="q"><b>Q18.</b> A ball is projected at 50 m s⁻¹ at 30° to the horizontal. Find (a) the time of flight, (b) the maximum height, (c) the range. (g = 9.8 m s⁻²)</p>
+<div class="sol">
+<p class="work">ux = 50 cos30° = 43.3 m s⁻¹,  uy = 50 sin30° = 25 m s⁻¹
+
+(a) T = 2u sinθ/g = 2(25)/9.8 = 5.10 s
+(b) H = u²sin²θ/(2g) = (25)²/(2×9.8) = 625/19.6 = 31.9 m
+(c) R = u² sin2θ/g = (2500)(sin60°)/9.8 = 2500(0.866)/9.8 = 221 m</p>
+<p class="ans">T = 5.1 s, H = 31.9 m, R = 221 m</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Show that the path of a projectile is a parabola.</p>
+<div class="sol">
+<p class="work">Horizontal: x = u cosθ · t  ⇒  t = x/(u cosθ)
+Vertical:   y = u sinθ · t − ½gt²
+Substituting t:
+y = u sinθ · x/(u cosθ) − ½g x²/(u²cos²θ)
+y = x tanθ − (g x²)/(2u²cos²θ)</p>
+<p>This is of the form y = ax − bx², the equation of a parabola. The first term is the straight-line aim; the second is the fall below that line.</p>
+<p class="ans">y = x tanθ − gx²/(2u²cos²θ), a downward-opening parabola.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Show that the range of a projectile is maximum at 45° and that two angles of projection give the same range.</p>
+<div class="sol">
+<p class="work">R = u² sin2θ/g
+R is maximum when sin2θ = 1 ⇒ 2θ = 90° ⇒ θ = 45°, and then R_max = u²/g.
+
+Also, sin2θ = sin(180° − 2θ) = sin[2(90° − θ)]
+⇒ R(θ) = R(90° − θ).</p>
+<p class="ans">R_max = u²/g at 45°; complementary angles give equal ranges (e.g. 30° and 60°), the smaller angle giving the flatter, faster path.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> A projectile has a range of 40 m and a maximum height of 10 m. Find its angle of projection and initial speed.</p>
+<div class="sol">
+<p class="work">H = u²sin²θ/(2g),  R = u²sin2θ/g
+Dividing:  H/R = [sin²θ/(2g)]/[sin2θ/g] = sin²θ/(2 sin2θ)
+          = sin²θ/(4 sinθ cosθ) = tanθ/4
+10/40 = tanθ/4 ⇒ tanθ = 1 ⇒ θ = 45°
+
+R = u²/g ⇒ 40 = u²/9.8 ⇒ u = √392 = 19.8 m s⁻¹</p>
+<p class="ans">θ = 45°, u ≈ 19.8 m s⁻¹</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> A stone is thrown horizontally from a cliff 80 m high at 15 m s⁻¹. Find the time to reach the ground, the horizontal distance and the velocity on landing.</p>
+<div class="sol">
+<p class="work">Vertical (u_y = 0): 80 = ½(9.8)t² ⇒ t = √(160/9.8) = 4.04 s
+Horizontal: x = 15 × 4.04 = 60.6 m
+vy = gt = 9.8 × 4.04 = 39.6 m s⁻¹
+v = √(15² + 39.6²) = √(225 + 1568) = 42.3 m s⁻¹
+direction: tanα = 39.6/15 = 2.64 ⇒ α = 69.3° below the horizontal</p>
+<p class="ans">t = 4.0 s; horizontal distance 60.6 m; v = 42.3 m s⁻¹ at 69° below the horizontal</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Why is the horizontal component of a projectile's velocity constant while the vertical component changes?</p>
+<div class="sol">
+<p>Gravity acts vertically, so it has no horizontal component. With no horizontal force (air resistance neglected), there is no horizontal acceleration, and the horizontal velocity u cosθ stays constant. The vertical velocity changes at the rate g, so it decreases to zero at the top and then increases downward.</p>
+<p class="ans">No horizontal force ⇒ no horizontal acceleration ⇒ u cosθ is constant; the whole of g acts on the vertical component.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.6 — Mixed numericals</h2>
+
+<div class="item">
+<p class="q"><b>Q24.</b> A car moving at 20 m s⁻¹ is brought to rest in 50 m. Find the retardation and the stopping time.</p>
+<div class="sol">
+<p class="work">v² = u² + 2as ⇒ 0 = 400 + 2a(50) ⇒ a = −4 m s⁻²
+t = (v − u)/a = (0 − 20)/(−4) = 5 s</p>
+<p class="ans">Retardation 4 m s⁻², stopping time 5 s</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> Can a body have zero velocity and non-zero acceleration at the same instant? Give an example.</p>
+<div class="sol">
+<p>Yes. At the highest point of a vertical throw the velocity is zero, but the acceleration is g downward throughout. A body released from rest also has v = 0 with a = g. Velocity and acceleration are independent quantities.</p>
+<p class="ans">Yes — at the top of a vertical throw v = 0 while a = g downward.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define instantaneous velocity and mean velocity.</p>
+<div class="sol"><p class="ans">Mean velocity = total displacement/total time. Instantaneous velocity is the limit of the mean velocity as the time interval shrinks to zero, v = dx/dt — the velocity at a single instant, equal to the slope of the x–t graph at that point.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Can the average velocity of a body be zero while its average speed is not? Explain.</p>
+<div class="sol"><p class="ans">Yes. If a body returns to its starting point, the displacement is zero, so average velocity is zero, while the distance travelled (and hence average speed) is not. A runner completing a lap of a circular track is the standard example.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> What does the slope of a displacement–time graph represent? What does its area represent?</p>
+<div class="sol"><p class="ans">The slope gives the velocity (dx/dt). A displacement–time graph has no meaningful area; it is the velocity–time graph whose slope gives acceleration and whose area gives displacement.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Sketch the shape of a v–t graph for (a) uniform velocity, (b) uniform acceleration, (c) uniformly retarded motion.</p>
+<div class="sol"><p class="ans">(a) a horizontal straight line; (b) a straight line rising from the initial velocity with slope a; (c) a straight line falling with negative slope, cutting the time axis when the body stops.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Why is the acceleration due to gravity taken negative when a body is thrown upward?</p>
+<div class="sol"><p class="ans">Because g always acts downward while the upward displacement is taken positive. With the sign convention "upward positive", the downward acceleration enters every equation as −g, which correctly reduces the upward velocity.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> State the two conditions needed to treat projectile motion with the standard formulas.</p>
+<div class="sol"><p class="ans">(i) Air resistance is negligible, so the only force is weight (constant g, downward). (ii) The motion takes place near the Earth's surface, where g is constant in magnitude and direction, and the range is small compared with the Earth's radius.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Can a projectile have the same range for two different angles of projection? Give an example.</p>
+<div class="sol"><p class="ans">Yes — complementary angles: 30° and 60° both give R = u²sin60°/g. The flatter angle reaches the target sooner with a lower peak; the steeper one stays in the air longer. Both cover the same horizontal distance.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Why does the time of flight of a projectile not depend on the horizontal component of velocity?</p>
+<div class="sol"><p class="ans">Because the vertical motion is independent of the horizontal: the time of flight is fixed by the vertical component u sinθ and g alone, T = 2u sinθ/g. Changing u cosθ only changes how far the body travels in that fixed time.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> What is relative velocity? Write the expression for the velocity of A relative to B.</p>
+<div class="sol"><p class="ans">Relative velocity is the velocity of one body as measured from another moving body: v_AB = v_A − v_B. Its magnitude for two bodies moving along the same line in opposite directions is the sum of the speeds, for the same direction it is the difference.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Distinguish between uniform and non-uniform acceleration with one example each.</p>
+<div class="sol"><p class="ans">Uniform acceleration means equal changes of velocity in equal times (e.g. a freely falling body, where a = g). Non-uniform acceleration means the rate of change of velocity itself changes (e.g. a car braking to a stop, where the retardation grows as the brake efficiency falls, or any motion with air resistance).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> A body moves with constant speed in a circle. Is its velocity constant? Is its acceleration zero?</p>
+<div class="sol"><p class="ans">Neither. The speed is constant but the direction changes continuously, so the velocity changes and there is an acceleration of magnitude v²/r directed toward the centre (centripetal acceleration). Constant speed does not imply zero acceleration.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> What is the significance of the 45° angle in projectile motion?</p>
+<div class="sol"><p class="ans">At 45°, sin2θ = 1 and the range reaches its maximum u²/g for a given initial speed. It balances the time in the air against the horizontal speed; above or below 45° one of the two falls and the range decreases.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Why does a body dropped from a moving train fall vertically as seen from the train but along a parabola as seen from the ground?</p>
+<div class="sol"><p class="ans">The body shares the train's horizontal velocity at release. In the train's frame this horizontal velocity is zero, so only the vertical fall is seen. On the ground the body has a constant horizontal velocity plus a vertical acceleration — a projectile path, a parabola.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> State the limitations of the equations of motion.</p>
+<div class="sol"><p class="ans">They hold only for motion in a straight line with uniform acceleration. They fail for variable acceleration (where calculus is needed), for motion along a curved path without resolution into components, and for speeds comparable to the speed of light (relativistic effects).</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Derive the three equations of motion from a velocity–time graph, and state the assumption behind each.</p>
+<div class="sol">
+<p class="work">Graph: initial velocity u at t = 0, final v at t; straight line ⇒ uniform acceleration.
+Slope: a = (v − u)/t                 ⇒ v = u + at
+Area:  s = ut + ½(v − u)t = ut + ½at²
+Area = trapezium = (u + v)t/2; with t = (v − u)/a:
+       s = (u + v)(v − u)/(2a) = (v² − u²)/(2a)
+                                  ⇒ v² = u² + 2as</p>
+<p>The assumption is that the acceleration is constant, which makes the v–t graph a straight line — only then are the slope and trapezium area formulas exact.</p>
+<p class="ans">v = u + at, s = ut + ½at², v² = u² + 2as, all valid only for uniform acceleration in a straight line.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [6]</b> A ball thrown upward from the top of a 25 m tower at 20 m s⁻¹ is caught by a person on the ground. Find (a) the greatest height above the tower, (b) the total time of flight, (c) the velocity just before being caught.</p>
+<div class="sol">
+<p class="work">(a) Above the tower: v² = u² − 2gh ⇒ 0 = 400 − 19.6h ⇒ h = 20.4 m
+(b) Full journey: taking upward positive from the launch point,
+    s = −25 m, u = +20, a = −9.8
+    −25 = 20t − 4.9t²  ⇒  4.9t² − 20t − 25 = 0
+    t = [20 ± √(400 + 490)]/9.8 = [20 ± 29.83]/9.8
+    t = 5.08 s   (rejecting the negative root)
+(c) v = u + at = 20 − 9.8(5.08) = −29.8 m s⁻¹, i.e. 29.8 m s⁻¹ downward.</p>
+<p class="ans">20.4 m above the tower; 5.1 s; 29.8 m s⁻¹ downward</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Derive expressions for the time of flight, maximum height and range of a projectile launched at speed u and angle θ, and show that the velocity at any instant is the vector sum of a constant horizontal part and a changing vertical part.</p>
+<div class="sol">
+<p class="work">T: vertical displacement zero ⇒ 0 = (u sinθ)T − ½gT²
+   ⇒ T = 2u sinθ/g
+H: at the top v_y = 0 ⇒ 0 = u²sin²θ − 2gH
+   ⇒ H = u²sin²θ/(2g)
+R: R = u cosθ · T = u cosθ (2u sinθ/g) = u² sin2θ/g
+v(t) = (u cosθ)î + (u sinθ − gt)ĵ</p>
+<p class="ans">T = 2u sinθ/g, H = u²sin²θ/2g, R = u²sin2θ/g; the î component of v is constant, the ĵ component falls linearly with time.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> Two cars A and B start from the same point. A moves east at 15 m s⁻¹ and B moves north at 20 m s⁻¹. Find the velocity of A relative to B and the distance between them after 10 s.</p>
+<div class="sol">
+<p class="work">v_AB = v_A − v_B = 15î − 20ĵ
+|v_AB| = √(225 + 400) = 25 m s⁻¹
+direction: 53° south of east
+
+Separation after 10 s = |v_AB| × t = 25 × 10 = 250 m
+(check: √(150² + 200²) = 250 m ✓)</p>
+<p class="ans">25 m s⁻¹ at 53° south of east; separation 250 m</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Equations of motion</td><td>v = u + at; s = ut + ½at²; v² = u² + 2as; s = (u+v)t/2</td></tr>
+<tr><td>Distance in nth second</td><td>s_n = u + a(2n − 1)/2</td></tr>
+<tr><td>Free fall</td><td>v = gt, h = ½gt², v² = 2gh; odd-number ratio 1:3:5…</td></tr>
+<tr><td>Average speed (equal distances)</td><td>2v₁v₂/(v₁ + v₂)</td></tr>
+<tr><td>Relative velocity</td><td>v_AB = v_A − v_B; same direction subtract, opposite directions add</td></tr>
+<tr><td>Projectile</td><td>T = 2u sinθ/g; H = u²sin²θ/2g; R = u²sin2θ/g; R_max = u²/g at 45°</td></tr>
+<tr><td>Trajectory</td><td>y = x tanθ − gx²/(2u²cos²θ)</td></tr>
+<tr><td>Horizontal projection</td><td>x = ut, y = ½gt², v = √(u² + g²t²)</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 3</h3>
+<div class="warn">
+<p><b>1. No sign convention stated.</b> Write "<em>upward positive, a = −g</em>" before you substitute. Most lost marks in free-fall questions are sign marks.</p>
+<p><b>2. Using the horizontal speed in vertical equations.</b> The vertical and horizontal motions must be handled in separate columns; mixing u and u cosθ in one equation is the commonest projectile error.</p>
+<p><b>3. Averaging speeds arithmetically.</b> Equal <em>distances</em> at different speeds need 2v₁v₂/(v₁+v₂), not (v₁+v₂)/2. Equal <em>times</em> do give the arithmetic mean.</p>
+<p><b>4. Forgetting the initial height.</b> A body thrown from a tower does not start at s = 0; set the origin and the final displacement (−h) explicitly. See L2.</p>
+<p><b>5. Reporting a vector as a scalar.</b> "v = 29.8 m s⁻¹" without "downward" loses a mark; the sign of v_y carries the direction.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> List the givens with symbols, choose the equation that contains exactly one unknown, substitute with units, then state magnitude and direction separately.</div>
+
+<p class="note">Physics XI · Unit 3 Kinematics · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

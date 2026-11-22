@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 7 Gravitation: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 7 Gravitation: worked solutions for Newton's law of gravitation, gravitational field and potential, variation of g with altitude and depth, centre of mass, orbital velocity, escape velocity, satellite energy, geostationary satellites and GPS, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 7</p>
+
+<h1>Unit 7 — Gravitation</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 10 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Gravitation is the longest unit in Mechanics and the paper's favourite source of a 5–6 mark derivation. The whole unit rests on one law plus one potential, and every derivation below is built from them.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — state Newton's law of gravitation; define gravitational field strength and potential; why is gravitational potential negative; what is a geostationary satellite.</li>
+<li><b>4 marks</b> — variation of g with altitude or depth; orbital velocity and period numerical; energy of a satellite; escape velocity.</li>
+<li><b>5–6 marks</b> — derive escape velocity from energy conservation; show that the total energy of an orbiting satellite is −GMm/2r; derive Kepler's third law from the centripetal force.</li>
+</ul>
+<p>Rule that keeps losing students marks: gravitational potential and potential energy are always <em>negative</em> (zero at infinity). Writing U = +GMm/r loses the sign mark and every subsequent energy answer.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 7.1 — Newton's law of gravitation</li>
+<li>Exercise 7.2 — Gravitational field strength</li>
+<li>Exercise 7.3 — Gravitational potential and potential energy</li>
+<li>Exercise 7.4 — Variation of g with altitude and depth</li>
+<li>Exercise 7.5 — Centre of mass and centre of gravity</li>
+<li>Exercise 7.6 — Satellite motion: orbital velocity and period</li>
+<li>Exercise 7.7 — Escape velocity</li>
+<li>Exercise 7.8 — Energy of a satellite</li>
+<li>Exercise 7.9 — Geostationary satellites and GPS</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.1 — Newton's law of gravitation</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> State Newton's law of universal gravitation and define G with its SI unit and dimensions.</p>
+<div class="sol">
+<p><b>Law:</b> every particle attracts every other particle with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between them, acting along the line joining them.</p>
+<p class="work">F = G m₁m₂/r²
+
+G = Fr²/(m₁m₂): the force between two 1 kg masses 1 m apart
+Unit: N m² kg⁻²  •  Value: 6.67 × 10⁻¹¹ N m² kg⁻²
+Dimensions: [M⁻¹L³T⁻²]</p>
+<p class="ans">F = Gm₁m₂/r²; G = 6.67 × 10⁻¹¹ N m² kg⁻², [M⁻¹L³T⁻²] — a universal constant, the same everywhere.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Calculate the gravitational force between two bodies of 1 kg each separated by 1 m. Comment on the result.</p>
+<div class="sol">
+<p class="work">F = G(1)(1)/1² = 6.67 × 10⁻¹¹ N</p>
+<p>This is about a million-millionth of a newton — far too small to detect with ordinary apparatus. Gravity becomes noticeable only when at least one mass is astronomically large, which is why Cavendish's torsion-balance measurement (1798) was needed to find G at all.</p>
+<p class="ans">F = 6.67 × 10⁻¹¹ N: gravity is the weakest of the four fundamental forces, dominating only because it is always attractive and never cancels over large masses.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> The mass of the Earth is 6 × 10²⁴ kg and its radius 6.4 × 10⁶ m. Find the force on a 70 kg person standing on its surface.</p>
+<div class="sol">
+<p class="work">F = GMm/R² = (6.67 × 10⁻¹¹)(6 × 10²⁴)(70)/(6.4 × 10⁶)²
+  = (6.67 × 6 × 70 × 10¹³)/(4.096 × 10¹³)
+  = 2801/4.096 × 10¹³ /10¹³ ≈ 686 N</p>
+<p>Check: mg = 70 × 9.8 = 686 N ✓ — the weight is just the gravitational attraction.</p>
+<p class="ans">≈ 686 N toward the Earth's centre</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> If the distance between two masses is halved, what happens to the force? If each mass is doubled and the distance is doubled, what happens?</p>
+<div class="sol">
+<p class="work">F ∝ m₁m₂/r²
+Distance halved:  F' = F × (r/(r/2))² = 4F
+Masses doubled, distance doubled: F' = F × (2×2)/2² = F  (unchanged)</p>
+<p class="ans">Halving the distance quadruples the force; doubling both masses and the distance leaves the force unchanged.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Why do we not notice the gravitational attraction between two students sitting side by side?</p>
+<div class="sol">
+<p>For two 50 kg students 1 m apart, F = G(50)(50)/1² = 1.67 × 10⁻⁷ N. The friction between the students and their chairs is thousands of times larger, so the mutual attraction is completely masked. Gravity is only significant when one of the masses is planetary.</p>
+<p class="ans">About 1.7 × 10⁻⁷ N — a million times smaller than the friction in the chair, so it is unobservable.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.2 — Gravitational field strength</h2>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Define gravitational field strength and derive g = GM/R² at the Earth's surface.</p>
+<div class="sol">
+<p><b>Definition:</b> the gravitational field strength at a point is the gravitational force per unit mass on a small test mass placed there, g = F/m; unit N kg⁻¹ (= m s⁻²).</p>
+<p class="work">F = GMm/r² ⇒ g = F/m = GM/r²
+At the surface r = R: g = GM/R²</p>
+<p class="ans">g = GM/R², directed toward the centre; it is a vector field (radial, inward) whose magnitude falls as 1/r².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find the gravitational field strength at a height equal to the Earth's radius above the surface.</p>
+<div class="sol">
+<p class="work">r = R + h = 2R
+g' = GM/(2R)² = GM/4R² = g/4 = 9.8/4 = 2.45 N kg⁻¹</p>
+<p class="ans">g' = g/4 = 2.45 N kg⁻¹ (a 70 kg person would weigh only 172 N there)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> The gravitational field strength at the Moon's surface is 1.6 N kg⁻¹. If the Moon's radius is 1.74 × 10⁶ m, find its mass.</p>
+<div class="sol">
+<p class="work">g = GM/R² ⇒ M = gR²/G
+M = (1.6)(1.74 × 10⁶)²/(6.67 × 10⁻¹¹)
+  = (1.6)(3.03 × 10¹²)/(6.67 × 10⁻¹¹)
+  = 4.85 × 10¹²/6.67 × 10⁻¹¹ = 7.3 × 10²² kg</p>
+<p class="ans">M ≈ 7.3 × 10²² kg, about 1.2% of the Earth's mass</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Sketch how g varies from the centre of the Earth to a great height, and explain both halves of the graph.</p>
+<div class="sol">
+<p class="work">Inside (depth d):   g_d = g(1 − d/R)   — linear fall to zero at the centre
+At the surface:     g = GM/R²         — maximum
+Outside (height h): g_h = g R²/(R + h)² — falls as 1/r²</p>
+<p>Inside, only the mass in the sphere of radius (R − d) attracts, and that mass falls as r³, so g ∝ r. Outside, all the mass acts as though concentrated at the centre, so g ∝ 1/r². The curve peaks at the surface.</p>
+<p class="ans">g rises linearly from zero at the centre to a maximum at the surface, then falls as 1/r² — the maximum is at the surface, not at the centre.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.3 — Gravitational potential and potential energy</h2>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Define gravitational potential and derive V = −GM/r. Why is it negative?</p>
+<div class="sol">
+<p><b>Definition:</b> the gravitational potential at a point is the work done per unit mass in bringing a small test mass from infinity to that point.</p>
+<p class="work">Work done by gravity in bringing m from infinity to r:
+W = ∫∞^r (−GMm/x²) dx = −GMm/r
+Potential V = W/m = −GM/r</p>
+<p>It is negative because gravity is attractive: the field does positive work as the mass comes in from infinity, so the potential energy (and potential) at r is <em>less</em> than at infinity, where we defined both to be zero. The magnitude |V| is the energy per unit mass that must be supplied to escape.</p>
+<p class="ans">V = −GM/r; negative because work is done by the field on the way in, with the zero fixed at infinity.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Calculate the gravitational potential at the Earth's surface and the potential energy of a 100 kg satellite there.</p>
+<div class="sol">
+<p class="work">V = −GM/R = −(6.67 × 10⁻¹¹)(6 × 10²⁴)/(6.4 × 10⁶)
+  = −(4.0 × 10¹⁴)/(6.4 × 10⁶) = −6.26 × 10⁷ J kg⁻¹
+
+U = mV = 100 × (−6.26 × 10⁷) = −6.26 × 10⁹ J</p>
+<p class="ans">V = −6.3 × 10⁷ J kg⁻¹; U = −6.3 × 10⁹ J for the 100 kg satellite</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Show that the gravitational potential energy of two masses is U = −Gm₁m₂/r, and explain why U = mgh is only an approximation.</p>
+<div class="sol">
+<p class="work">U = −Gm₁m₂/r  (zero at infinity)
+
+For a small height h above the surface, r = R + h:
+U_h − U_surface = −GMm/(R + h) + GMm/R
+                = GMm[R − (R + h)]/[R(R + h)]
+                = −GMmh/[R(R + h)]
+For h ≪ R, R(R + h) ≈ R², and GM/R² = g:
+                ≈ −GMmh/R² = −mgh  (taking downward as decreasing U)
+so the change is +mgh when the body is raised by h.</p>
+<p class="ans">U = −Gm₁m₂/r is exact; mgh is its small-height limit, valid only when h ≪ R (which is why the flat-Earth formulas fail for satellites).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> A body is taken from the Earth's surface to a height R above it. Find the change in its potential energy per unit mass, and compare with the mgh estimate.</p>
+<div class="sol">
+<p class="work">Exact: ΔV = −GM/(2R) − (−GM/R) = GM/2R
+     = (6.67 × 10⁻¹¹ × 6 × 10²⁴)/(2 × 6.4 × 10⁶)
+     = 4.0 × 10¹⁴/1.28 × 10⁷ = 3.13 × 10⁷ J kg⁻¹
+
+Approximate: gh = 9.8 × 6.4 × 10⁶ = 6.27 × 10⁷ J kg⁻¹</p>
+<p class="ans">Exact change 3.1 × 10⁷ J kg⁻¹; the mgh estimate gives 6.3 × 10⁷ J kg⁻¹ — a factor of two too large, because g is not constant over a distance of one Earth radius.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.4 — Variation of g with altitude and depth</h2>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Derive g_h = g(R/(R + h))² for a height h above the surface, and g_d = g(1 − d/R) for a depth d.</p>
+<div class="sol">
+<p class="work">ALTITUDE:
+  g = GM/R²,  g_h = GM/(R + h)²
+  g_h/g = R²/(R + h)²  ⇒ g_h = g[R/(R + h)]²
+  For h ≪ R: g_h ≈ g(1 − 2h/R)
+
+DEPTH:
+  At depth d the attracting mass is only the sphere of radius (R − d):
+  M' = (4/3)π(R − d)³ ρ, with M = (4/3)πR³ρ
+  g_d = GM'/(R − d)² = (4/3)πGρ(R − d)
+  g_d/g = (R − d)/R  ⇒ g_d = g(1 − d/R)</p>
+<p class="ans">g_h = g[R/(R+h)]² ≈ g(1 − 2h/R) for small h; g_d = g(1 − d/R), which falls linearly to zero at the centre.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> At what height above the Earth's surface does g become 1/4 of its surface value? At what depth does the same happen?</p>
+<div class="sol">
+<p class="work">Altitude: g/4 = g[R/(R + h)]² ⇒ R/(R + h) = 1/2
+  ⇒ R + h = 2R ⇒ h = R = 6.4 × 10⁶ m
+
+Depth: g/4 = g(1 − d/R) ⇒ d/R = 3/4 ⇒ d = 3R/4 = 4.8 × 10⁶ m</p>
+<p class="ans">h = R = 6400 km above the surface; d = 3R/4 = 4800 km below it — the depth needed is smaller, because g falls linearly inward but as the inverse square outward.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Why is g slightly less at the equator than at the poles?</p>
+<div class="sol">
+<p>Two effects, both making g smaller at the equator:</p>
+<ul class="tight">
+<li>The Earth is not a perfect sphere — it bulges at the equator, so R_equator &gt; R_pole, and g = GM/R² is smaller where R is larger.</li>
+<li>The Earth's rotation gives a larger centripetal acceleration at the equator (rω² is largest there), which reduces the effective weight: g_eff = g − Rω²cos²λ.</li>
+</ul>
+<p class="ans">The equatorial radius is about 21 km larger and the rotational term subtracts about 0.034 m s⁻², giving g ≈ 9.78 at the equator against 9.83 at the poles.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.5 — Centre of mass and centre of gravity</h2>
+
+<div class="item">
+<p class="q"><b>Q17.</b> Distinguish between centre of mass and centre of gravity.</p>
+<div class="sol">
+<table>
+<tr><th>Centre of mass</th><th>Centre of gravity</th></tr>
+<tr><td>The point where the whole mass of a body may be assumed concentrated</td><td>The point where the whole weight of a body may be assumed to act</td></tr>
+<tr><td>Depends only on the mass distribution</td><td>Depends on the mass distribution <em>and</em> on the gravitational field</td></tr>
+<tr><td>Exists even where g = 0</td><td>Undefined where g = 0 (no weight)</td></tr>
+</table>
+<p class="ans">They coincide in a uniform gravitational field (all ordinary bodies) and differ only when the field varies appreciably across the body — e.g. a very long rod in orbit.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> Where do the centre of mass and centre of gravity of the Earth–Moon system lie?</p>
+<div class="sol">
+<p>The centre of mass lies at the barycentre, on the line joining their centres, at a distance from the Earth's centre of</p>
+<p class="work">r = m_moon × d/(M_Earth + m_moon)
+  = (7.35 × 10²² × 3.84 × 10⁸)/(6.0 × 10²⁴ + 7.35 × 10²²)
+  ≈ 4.67 × 10⁶ m from the Earth's centre</p>
+<p>That is about 4600 km from the Earth's centre, i.e. still inside the Earth (radius 6400 km) but 1700 km below its surface.</p>
+<p class="ans">≈ 4670 km from the Earth's centre, inside the Earth — which is why both bodies orbit this barycentre, not each other's centres.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.6 — Satellite motion: orbital velocity and period</h2>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Derive the orbital velocity of a satellite and find its value for a near-Earth orbit.</p>
+<div class="sol">
+<p class="work">Gravity supplies the centripetal force:
+GMm/r² = mv²/r  ⇒  v = √(GM/r)
+
+For r ≈ R: v = √(GM/R) = √(gR) = √(9.8 × 6.4 × 10⁶)
+  = √(6.27 × 10⁷) = 7.9 × 10³ m s⁻¹</p>
+<p class="ans">v_orb = √(GM/r) = √(gR) for a near-Earth orbit = 7.9 km s⁻¹ (28 400 km h⁻¹), independent of the satellite's mass.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Derive the time period of a satellite and show that T² ∝ r³ (Kepler's third law).</p>
+<div class="sol">
+<p class="work">v = 2πr/T  and  v = √(GM/r)
+⇒ 2πr/T = √(GM/r)  ⇒  T = 2π√(r³/GM)
+Squaring: T² = (4π²/GM) r³  ⇒  T² ∝ r³</p>
+<p class="ans">T = 2π√(r³/GM); squaring gives T² ∝ r³, Kepler's third law, with the constant set by the central mass.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> A satellite orbits at 600 km above the Earth's surface. Find its orbital speed and period. (R = 6400 km)</p>
+<div class="sol">
+<p class="work">r = 6.4 × 10⁶ + 0.6 × 10⁶ = 7.0 × 10⁶ m
+v = √(GM/r) = √(4.0 × 10¹⁴/7.0 × 10⁶) = √(5.71 × 10⁷) = 7.56 km s⁻¹
+T = 2πr/v = 2π(7.0 × 10⁶)/(7.56 × 10³) = 5.82 × 10³ s = 97 min</p>
+<p class="ans">v ≈ 7.56 km s⁻¹; T ≈ 5.8 × 10³ s ≈ 1 h 37 min</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> Explain why a satellite does not fall to the Earth even though gravity pulls it down.</p>
+<div class="sol">
+<p>Because it has the right tangential speed. Gravity provides exactly the centripetal force needed to curve its path into a circle of radius r; as the satellite falls toward the Earth, the surface itself curves away by the same amount. It is in continuous free fall that never reaches the ground.</p>
+<p class="ans">It is falling continuously, but with a tangential speed high enough that the Earth's surface falls away beneath it at the same rate — a perpetual free fall that circles the planet.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.7 — Escape velocity</h2>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Define escape velocity and derive v_e = √(2GM/R) from energy conservation. Evaluate it for the Earth.</p>
+<div class="sol">
+<p><b>Definition:</b> the minimum speed with which a body must be projected from a planet's surface to escape to infinity, never to return.</p>
+<p class="work">At the surface: total energy = ½mv_e² − GMm/R
+At infinity the body just stops: total energy = 0 (PE → 0, KE = 0)
+
+Conservation: ½mv_e² − GMm/R = 0
+⇒ v_e = √(2GM/R) = √(2gR)
+
+Numerically: v_e = √(2 × 9.8 × 6.4 × 10⁶) = √(1.25 × 10⁸) = 1.12 × 10⁴ m s⁻¹</p>
+<p class="ans">v_e = √(2GM/R) = √(2gR) ≈ 11.2 km s⁻¹ for the Earth, independent of the body's mass and direction of projection.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> Compare the escape velocity of the Moon with that of the Earth, and explain why the Moon has no atmosphere.</p>
+<div class="sol">
+<p class="work">v_e(Moon) = √(2g_m R_m) = √(2 × 1.6 × 1.74 × 10⁶) = √(5.57 × 10⁶) = 2.36 km s⁻¹
+v_e(Earth) = 11.2 km s⁻¹</p>
+<p>Gas molecules at ordinary temperatures have rms speeds of about 0.5 km s⁻¹ (H₂) to 0.6 km s⁻¹ (N₂), which is a sizeable fraction of the Moon's escape speed, and the high-speed tail of the distribution exceeds it. Over geological time the lighter gases escaped.</p>
+<p class="ans">v_e(Moon) ≈ 2.4 km s⁻¹ against 11.2 km s⁻¹ for the Earth; the Moon's low escape speed let atmospheric molecules, especially the lighter ones, leak away.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> Show that the escape velocity is √2 times the orbital velocity for a satellite near the surface.</p>
+<div class="sol">
+<p class="work">v_orb = √(GM/R)
+v_e   = √(2GM/R)
+v_e/v_orb = √2 ≈ 1.414
+11.2/7.9 = 1.42 ✓</p>
+<p class="ans">v_e = √2 v_orb — about 41% more speed than a low orbit is needed to leave entirely.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> A body is projected with a speed equal to half the escape velocity. How high does it rise (in terms of R)?</p>
+<div class="sol">
+<p class="work">Energy: ½m(v_e/2)² − GMm/R = −GMm/r_max
+½m(2GM/R)/4 = GMm/(4R)
+⇒ GMm/(4R) − GMm/R = −GMm/r_max
+   −3GMm/(4R) = −GMm/r_max
+   r_max = 4R/3
+So the height above the surface = 4R/3 − R = R/3.</p>
+<p class="ans">It rises R/3 ≈ 2130 km above the surface, then falls back — less than half the escape speed gets you surprisingly far, but not away.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.8 — Energy of a satellite</h2>
+
+<div class="item">
+<p class="q"><b>Q27.</b> Derive the kinetic, potential and total energy of a satellite in a circular orbit, and show that the total energy is −GMm/2r.</p>
+<div class="sol">
+<p class="work">Orbital speed:      v² = GM/r
+Kinetic energy:     KE = ½mv² = GMm/2r
+Potential energy:   PE = −GMm/r
+Total energy:       E = KE + PE = GMm/2r − GMm/r = −GMm/2r</p>
+<p>So E = −KE, and PE = 2E. The negative sign means the satellite is bound; the magnitude |E| = GMm/2r is the energy that must be added to remove the satellite to infinity.</p>
+<p class="ans">KE = +GMm/2r, PE = −GMm/r, E = −GMm/2r; since E = −KE, adding energy increases r and <em>decreases</em> the orbital speed.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> Why does the speed of a satellite decrease when it moves to a higher orbit, even though its total energy increases?</p>
+<div class="sol">
+<p>Total energy E = −GMm/2r becomes less negative (larger) as r increases, so energy must be supplied to raise the orbit. But the orbital speed v = √(GM/r) falls as 1/√r: the kinetic energy gained is only half of the potential energy added, so KE decreases while PE increases by twice as much. The satellites lower their speed by firing engines in the direction of motion (which removes KE) — a counter-intuitive but real manoeuvre.</p>
+<p class="ans">v ∝ 1/√r while E = −GMm/2r increases with r; PE rises by 2 units for every 1 unit of KE lost, so total energy increases while speed falls.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> Find the energy required to move a 500 kg satellite from a 600 km orbit to a 1200 km orbit.</p>
+<div class="sol">
+<p class="work">r₁ = 6.4 × 10⁶ + 0.6 × 10⁶ = 7.0 × 10⁶ m
+r₂ = 6.4 × 10⁶ + 1.2 × 10⁶ = 7.6 × 10⁶ m
+E = −GMm/2r
+
+ΔE = −GMm/2 (1/r₂ − 1/r₁)
+   = −(4.0 × 10¹⁴)(500)/2 × (1/7.6×10⁶ − 1/7.0×10⁶)
+   = −1.0 × 10¹⁷ × (1.316 − 1.429) × 10⁻⁶
+   = −1.0 × 10¹⁷ × (−1.13 × 10⁻⁷) = 1.13 × 10¹⁰ J</p>
+<p class="ans">≈ 1.1 × 10¹⁰ J (11 GJ) must be supplied — the work the rocket's engine has to do, not including the fuel mass penalty.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.9 — Geostationary satellites and GPS</h2>
+
+<div class="item">
+<p class="q"><b>Q30.</b> What is a geostationary satellite? Find its height above the Earth's surface.</p>
+<div class="sol">
+<p>A satellite that orbits in the equatorial plane, west to east, with a period equal to the Earth's rotation (24 h = 86 400 s), so it appears fixed over one point on the equator. Uses: communication, weather imaging, TV broadcasting.</p>
+<p class="work">T = 2π√(r³/GM) ⇒ r³ = GMT²/4π²
+r³ = (3.98 × 10¹⁴)(86 400)²/(4π²)
+   = (3.98 × 10¹⁴)(7.46 × 10⁹)/39.48
+   = 7.52 × 10²² m³
+r = 4.22 × 10⁷ m
+h = r − R = 4.22 × 10⁷ − 6.4 × 10⁶ = 3.58 × 10⁷ m</p>
+<p class="ans">r ≈ 42 200 km from the Earth's centre, so h ≈ 35 800 km above the surface — about one-tenth of the way to the Moon.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> State three conditions a satellite must satisfy to be geostationary.</p>
+<div class="sol">
+<ol class="step">
+<li>Its period must equal the Earth's rotational period, 24 h (one sidereal day).</li>
+<li>It must orbit in the plane of the equator, directly above it, moving west to east in the direction of the Earth's rotation.</li>
+<li>Its height must be exactly that for which this period occurs, about 35 800 km, and its orbit must be circular.</li>
+</ol>
+<p class="ans">Equatorial plane, west-to-east direction, 24 h period at 35 800 km. (A satellite with a 24 h period over the poles is geosynchronous but not geostationary.)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> What is GPS? Explain its working principle briefly and give its orbital parameters.</p>
+<div class="sol">
+<p><b>GPS</b> (Global Positioning System) is a satellite navigation system of about 24–31 satellites in six orbital planes at a height of about 20 200 km (period ≈ 12 h), each broadcasting its position and the precise time from an atomic clock.</p>
+<p>A receiver measures the travel time of signals from at least four satellites; each time gives a sphere of possible positions (distance = c × Δt), and the intersection of four spheres fixes the receiver's latitude, longitude, altitude and the receiver's clock error. This is <em>trilateration</em>.</p>
+<p class="ans">GPS uses ≥4 satellites, timing signals at c and trilateration; satellites orbit at ≈20 200 km with a 12 h period. Accuracy needs relativistic clock corrections, which is one of the everyday proofs of relativity.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> Give the differences between an artificial satellite and a natural satellite.</p>
+<div class="sol">
+<table>
+<tr><th>Artificial satellite</th><th>Natural satellite</th></tr>
+<tr><td>Made and launched by humans</td><td>Formed naturally (the Moon)</td></tr>
+<tr><td>Carries instruments, power and transmitters; orbit can be chosen and corrected</td><td>No instruments; orbit is fixed except for slow tidal evolution</td></tr>
+<tr><td>Can be in a geostationary, polar or low orbit</td><td>Generally orbits close to the planet's equatorial plane</td></tr>
+<tr><td>Lifetime limited by fuel and drag</td><td>Exists for billions of years</td></tr>
+</table>
+<p class="ans">Artificial satellites are engineered with selectable orbits and lifetimes; natural satellites form with the planet and their orbit is essentially fixed.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> State Kepler's three laws of planetary motion.</p>
+<div class="sol"><p class="ans">(i) Law of orbits: every planet moves in an ellipse with the Sun at one focus. (ii) Law of areas: the radius vector sweeps equal areas in equal times (angular momentum is conserved). (iii) Law of periods: T² ∝ a³, the square of the period is proportional to the cube of the semi-major axis.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Why is gravitational potential negative?</p>
+<div class="sol"><p class="ans">Because the zero of potential is fixed at infinity and gravity is attractive. Bringing a mass in from infinity requires no work by an external agent — the field does the work itself — so the potential energy at a finite distance is less than at infinity, i.e. negative.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Define gravitational field strength and give its SI unit.</p>
+<div class="sol"><p class="ans">The gravitational force per unit mass on a small test mass at a point, g = F/m; SI unit N kg⁻¹ (equivalently m s⁻²). It is a vector pointing toward the centre of the attracting mass.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Why is G called a universal constant?</p>
+<div class="sol"><p class="ans">Because its value (6.67 × 10⁻¹¹ N m² kg⁻²) is the same everywhere and for every pair of masses — it does not depend on the medium, the temperature, the masses or the distance. It is a property of the gravitational interaction itself.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Why does a satellite in a low orbit need a booster to stay up?</p>
+<div class="sol"><p class="ans">Because of residual atmospheric drag. A small drag force removes orbital energy, so E becomes more negative and r decreases; the satellite spirals in and eventually burns up. A booster restores the lost energy, as the ISS does periodically.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Why are astronauts inside an orbiting spacecraft weightless?</p>
+<div class="sol"><p class="ans">Because the spacecraft and everything in it fall toward the Earth with the same centripetal acceleration. With no relative acceleration, the normal reaction between the astronaut and the floor is zero, so the astronaut feels no weight — a condition of continuous free fall, not the absence of gravity.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Escape velocity depends on the mass of the escaping body. True or false?</p>
+<div class="sol"><p class="ans">False. v_e = √(2GM/R) contains only the mass of the planet and its radius; the mass of the escaping body cancels in the energy equation. It is also independent of the direction of projection (ignoring the atmosphere and the Earth's rotation).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Why is it easier to launch a rocket from the equator than from the poles?</p>
+<div class="sol"><p class="ans">Because the Earth's surface at the equator already carries a westward-to-eastward speed of Rω ≈ 465 m s⁻¹ from rotation. Launching eastward from the equator adds this to the rocket's own speed, reducing the Δv needed by about 4%.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> What is the significance of a negative total energy for an orbiting body?</p>
+<div class="sol"><p class="ans">It means the body is bound to the central mass: it cannot escape to infinity without an additional input of energy equal to |E|. Positive total energy means an unbound hyperbolic path and zero means a parabolic escape path.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> State two differences between g and G.</p>
+<div class="sol"><p class="ans">(i) g is the gravitational field strength at a place, variable with height, depth and latitude (unit N kg⁻¹); G is a universal constant (unit N m² kg⁻²). (ii) g is a vector with a direction; G is a scalar constant whose value never changes.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why does the weight of a body decrease at the equator?</p>
+<div class="sol"><p class="ans">Because part of the Earth's gravitational pull must supply the centripetal force for the body's rotation with the Earth: mg_eff = mg − mRω²cos²λ. At the equator this term is maximum (about 0.034 m s⁻²), so the apparent weight is least. The equatorial bulge also makes R larger there, reducing g further.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> What would happen to the length of a day if the Earth shrank without losing mass?</p>
+<div class="sol"><p class="ans">The day would shorten. Angular momentum is conserved, Iω = constant; shrinking reduces the moment of inertia I ∝ MR², so ω increases. The Earth would spin faster while its rotation period fell, exactly as a spinning skater speeds up when the arms are pulled in.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Why does the Moon always keep the same face toward the Earth?</p>
+<div class="sol"><p class="ans">Because it is tidally locked: its rotation period about its own axis equals its orbital period around the Earth (both about 27.3 days). The same hemisphere therefore always faces the Earth.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> What is a parking orbit?</p>
+<div class="sol"><p class="ans">A low, circular temporary orbit in which a satellite is placed immediately after launch, before transferring to its final higher orbit. It lets controllers check the satellite's systems and time the transfer burn.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Why is the centre of gravity of a body not always at its centre of mass?</p>
+<div class="sol"><p class="ans">Because the centre of gravity is defined by the weight distribution, and weight depends on the local g. If g varies appreciably across the body (a very long object in a strong non-uniform field, such as a tether in orbit), the weight acts effectively at a point slightly different from the centre of mass.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> Give two uses of artificial satellites.</p>
+<div class="sol"><p class="ans">(i) Communication and broadcasting — geostationary satellites relay TV and telephone signals over continents. (ii) Weather monitoring and remote sensing — polar orbiters image clouds, crops and oceans; navigation (GPS) and Earth observation are further uses.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Show that the total energy of a satellite in a circular orbit is negative and equal to half its potential energy; hence find the additional energy needed to escape.</p>
+<div class="sol">
+<p class="work">v² = GM/r  ⇒ KE = ½mv² = GMm/2r
+PE = −GMm/r
+E = KE + PE = GMm/2r − GMm/r = −GMm/2r = PE/2
+
+To escape, the satellite must reach E = 0, so the extra energy needed is
+ΔE = 0 − E = +GMm/2r = |E| = KE</p>
+<p class="ans">E = −GMm/2r = PE/2; the energy needed to escape equals the kinetic energy the satellite already has (or half the magnitude of its PE).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Derive the variation of g with height, and calculate g at the top of Mount Everest (8848 m).</p>
+<div class="sol">
+<p class="work">g_h = g[R/(R + h)]²
+For h = 8848 m and R = 6.4 × 10⁶ m:
+h/R = 9.24 × 10⁻⁴
+g_h ≈ g(1 − 2h/R) = 9.8(1 − 1.85 × 10⁻³) = 9.8(0.99815) = 9.78 m s⁻²</p>
+<p class="ans">g ≈ 9.78 m s⁻², only 0.02 m s⁻² lower than at sea level — altitude affects g far more slowly than students expect; a 100 km height would still give 9.5 m s⁻².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [6]</b> Two satellites of masses m and 2m orbit at the same radius. Compare their orbital speeds, periods, kinetic energies and total energies.</p>
+<div class="sol">
+<p class="work">v = √(GM/r): independent of satellite mass ⇒ speeds equal
+T = 2πr/v: equal periods
+KE = GMm/2r ⇒ KE(2m) = 2 × KE(m)
+E = −GMm/2r ⇒ E(2m) = 2 × E(m) (more negative)</p>
+<p class="ans">Same speed and period; the heavier satellite has twice the kinetic and twice the (negative) total energy — so it needs twice as much energy to remove.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [5]</b> Why does the escape velocity from the Earth not depend on the direction of projection? What practical effect does the atmosphere have?</p>
+<div class="sol">
+<p>Energy is a scalar: at the surface the total energy is ½mv² − GMm/R whatever the direction, and escaping to infinity requires that this be at least zero. Only the magnitude of v enters, so the direction is irrelevant.</p>
+<p>In practice a vertical launch suffers least air resistance over the shortest path through the dense lower atmosphere, while an eastward launch exploits the Earth's rotation. Air resistance removes energy, so the launch speed must exceed the theoretical 11.2 km s⁻¹.</p>
+<p class="ans">Energy conservation depends only on the speed, not the direction; the atmosphere makes the real launch speed slightly larger and favours an eastward launch.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [4]</b> Find the position of a geostationary satellite's orbit relative to a low Earth orbit of 400 km, and explain why three geostationary satellites can cover most of the Earth.</p>
+<div class="sol">
+<p class="work">r_low ≈ 6.8 × 10⁶ m, T ≈ 92 min
+r_geo ≈ 4.22 × 10⁷ m, T = 24 h
+ratio r_geo/r_low ≈ 6.2 ; ratio T = (6.2)^1.5 ≈ 15.4</p>
+<p>Each geostationary satellite sees about one third of the Earth's surface (a cone of half-angle ≈ 17.4° from 35 800 km), because the horizon limits the view. Three spaced by 120° in longitude therefore give near-global coverage except for the polar caps.</p>
+<p class="ans">The geostationary orbit is about 6 times the radius of a low orbit and 15 times longer in period; three satellites give almost global coverage, but never the poles.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Newton's law</td><td>F = Gm₁m₂/r²; G = 6.67 × 10⁻¹¹ N m² kg⁻²</td></tr>
+<tr><td>Field strength</td><td>g = GM/r²; g_h = g[R/(R+h)]²; g_d = g(1 − d/R)</td></tr>
+<tr><td>Potential</td><td>V = −GM/r; U = −GMm/r</td></tr>
+<tr><td>Orbital velocity</td><td>v = √(GM/r) = √(gR) = 7.9 km s⁻¹ near the surface</td></tr>
+<tr><td>Period</td><td>T = 2π√(r³/GM); T² ∝ r³</td></tr>
+<tr><td>Escape velocity</td><td>v_e = √(2GM/R) = √(2gR) = 11.2 km s⁻¹ = √2 v_orb</td></tr>
+<tr><td>Satellite energy</td><td>KE = GMm/2r; PE = −GMm/r; E = −GMm/2r</td></tr>
+<tr><td>Geostationary</td><td>r = 42 200 km, h = 35 800 km, T = 24 h, equatorial, west → east</td></tr>
+<tr><td>Kepler</td><td>Ellipse with Sun at focus; equal areas in equal times; T² ∝ a³</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 7</h3>
+<div class="warn">
+<p><b>1. Positive potential.</b> Gravitational potential and PE are negative with the zero at infinity. Every energy answer inherits the sign; get it wrong and E = +GMm/2r appears, which is physically impossible for a bound orbit.</p>
+<p><b>2. Using h instead of r.</b> The inverse-square law uses the distance from the <em>centre</em>, r = R + h. Substituting h = 600 km directly gives a nonsense answer.</p>
+<p><b>3. Thinking g is maximum at the centre.</b> g is zero at the centre, rises linearly, peaks at the surface and falls outside. Drawing a peak at the centre loses the graph mark.</p>
+<p><b>4. Confusing escape and orbital speed.</b> v_e = √2 v_orb; the √2 comes from the potential, not from a measurement error. Write the factor explicitly.</p>
+<p><b>5. Saying geostationary satellites cover the poles.</b> They sit over the equator and cannot see latitudes much beyond ±81°; the poles need polar-orbiting satellites.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> For every derivation start from the two master relations, F = Gm₁m₂/r² and U = −GMm/r, and say which one supplies the centripetal force or the energy. For every numerical, convert h to r = R + h in the first line.</div>
+
+<p class="note">Physics XI · Unit 7 Gravitation · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

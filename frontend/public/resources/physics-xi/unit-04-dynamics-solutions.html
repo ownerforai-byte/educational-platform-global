@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 4 Dynamics: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 4 Dynamics: worked solutions for Newton's laws, linear momentum and impulse, conservation of momentum, recoil, Atwood machine, moments and equilibrium, and solid friction with its verification, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 4</p>
+
+<h1>Unit 4 — Dynamics</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 6 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Dynamics carries the second-largest share of the Mechanics questions. Every exercise type is worked here: momentum and impulse, conservation and recoil, Newton's-law applications (lift, pulley, incline), moment and equilibrium, and solid friction including its experimental verification.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define impulse and give its dimensions; state the law of conservation of momentum; why friction is called a necessary evil; define angle of repose.</li>
+<li><b>4 marks</b> — impulse–momentum numerical (ball rebounding off a wall); friction numerical on a horizontal plane or incline; moment/see-saw problem.</li>
+<li><b>5–6 marks</b> — state and verify the laws of solid friction; derive Newton's second law from the momentum definition; pulley or lift problem with a full free-body diagram.</li>
+</ul>
+<p>Rule that keeps losing students marks: every dynamics answer begins with a <em>free-body diagram</em>. Without it the friction and pulley marks are not awarded however correct the algebra is.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 4.1 — Newton's laws, momentum and impulse</li>
+<li>Exercise 4.2 — Conservation of linear momentum</li>
+<li>Exercise 4.3 — Applications of Newton's laws: lift, pulley, incline</li>
+<li>Exercise 4.4 — Moment, torque and equilibrium</li>
+<li>Exercise 4.5 — Solid friction and its verification</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 4.1 — Newton's laws, momentum and impulse</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> State Newton's three laws of motion and show that the second law reduces to F = ma for constant mass.</p>
+<div class="sol">
+<p><b>First law:</b> a body continues in its state of rest or uniform motion in a straight line unless acted on by a net external force (the law of inertia).</p>
+<p><b>Second law:</b> the rate of change of momentum of a body is directly proportional to the applied force and takes place in the direction of the force.</p>
+<p><b>Third law:</b> to every action there is an equal and opposite reaction, acting on a different body.</p>
+<p class="work">F = dp/dt = d(mv)/dt
+For constant m: F = m dv/dt = ma</p>
+<p class="ans">F = dp/dt; with m constant this is F = ma. The momentum form is more general — it also covers rockets and variable-mass systems.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Define impulse and show that impulse equals the change in momentum. Give its SI unit and dimensions.</p>
+<div class="sol">
+<p class="work">Impulse J = F × t = (dp/dt) × t = Δp
+Units: N s (= kg m s⁻¹)
+Dimensions: [MLT⁻²][T] = [MLT⁻¹]</p>
+<p>Graphically, the impulse is the area under an F–t graph.</p>
+<p class="ans">J = Ft = Δp = mv − mu; SI unit N s; dimensions [MLT⁻¹] — the same as momentum, which is why impulse is called the "momentum change".</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A ball of mass 0.2 kg moving at 10 m s⁻¹ rebounds with 8 m s⁻¹ after striking a wall for 0.02 s. Find the impulse and the average force on the ball.</p>
+<div class="sol">
+<p class="work">Taking the initial direction as positive:
+u = +10, v = −8
+Δp = m(v − u) = 0.2(−8 − 10) = 0.2(−18) = −3.6 N s
+J = −3.6 N s  (3.6 N s away from the wall)
+
+F = J/t = −3.6/0.02 = −180 N  (180 N away from the wall)</p>
+<p class="ans">Impulse 3.6 N s away from the wall; average force 180 N</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> A force of 20 N acts on a body of mass 5 kg for 3 s. If the body started from rest, find its final velocity.</p>
+<div class="sol">
+<p class="work">F t = mv − mu = m v (since u = 0)
+20 × 3 = 5v ⇒ v = 12 m s⁻¹
+
+Check by acceleration: a = F/m = 4 m s⁻², v = at = 12 m s⁻¹ ✓</p>
+<p class="ans">v = 12 m s⁻¹</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Explain, using impulse, why a cricketer draws his hands back while catching a fast ball, and why cars have crumple zones.</p>
+<div class="sol">
+<p>The ball's change of momentum Δp is fixed by its mass and speed. Since F = Δp/t, increasing the contact time t reduces the force. Drawing the hands back lengthens the time over which the ball is stopped; a crumple zone lengthens the collision time of a car, reducing the force on the passengers for the same change of momentum.</p>
+<p class="ans">Same Δp, larger t ⇒ smaller F. Both the fielder's hands and the crumple zone trade time for force, keeping F below the damage threshold.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Distinguish between momentum and kinetic energy.</p>
+<div class="sol">
+<table>
+<tr><th>Momentum</th><th>Kinetic energy</th></tr>
+<tr><td>p = mv, a vector</td><td>KE = ½mv², a scalar</td></tr>
+<tr><td>Dimensions [MLT⁻¹], unit kg m s⁻¹</td><td>Dimensions [ML²T⁻²], unit J</td></tr>
+<tr><td>Change caused by impulse Ft</td><td>Change caused by work Fs</td></tr>
+<tr><td>Conserved in every collision</td><td>Conserved only in elastic collisions</td></tr>
+</table>
+<p class="ans">Momentum is a vector, conserved in all collisions; kinetic energy is a scalar, conserved only in elastic collisions. Relation: KE = p²/2m.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 4.2 — Conservation of linear momentum</h2>
+
+<div class="item">
+<p class="q"><b>Q7.</b> State the law of conservation of linear momentum and derive it from Newton's third law.</p>
+<div class="sol">
+<p><b>Statement:</b> if no net external force acts on a system, its total linear momentum remains constant.</p>
+<p class="work">Two bodies collide for time t. By the third law the force on A equals and opposes the force on B: F_AB = −F_BA.
+Multiply by t: F_AB t = −F_BA t
+Impulse = change of momentum: Δp_A = −Δp_B
+⇒ Δp_A + Δp_B = 0 ⇒ p_total is constant</p>
+<p class="ans">Total momentum before collision = total momentum after collision, provided no external force acts.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> A 2 kg body moving at 5 m s⁻¹ collides with a stationary 3 kg body and they move together. Find their common velocity and the fraction of kinetic energy lost.</p>
+<div class="sol">
+<p class="work">m₁u₁ + m₂u₂ = (m₁ + m₂)v
+2(5) + 3(0) = 5v ⇒ v = 2 m s⁻¹
+
+KE before = ½(2)(25) = 25 J
+KE after  = ½(5)(4)  = 10 J
+loss = 15 J = 60% of the initial KE</p>
+<p class="ans">v = 2 m s⁻¹; 15 J (60%) of the kinetic energy is lost as heat, sound and deformation</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> A bullet of mass 20 g is fired from a gun of mass 5 kg with a muzzle speed of 400 m s⁻¹. Find the recoil speed of the gun.</p>
+<div class="sol">
+<p class="work">Initial momentum = 0
+0 = m_b v_b + m_g v_g
+0 = 0.020(400) + 5 v_g
+v_g = −8/5 = −1.6 m s⁻¹</p>
+<p class="ans">1.6 m s⁻¹ in the direction opposite to the bullet</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Two bodies of equal mass approach each other with equal speeds and stick together. What happens to the momentum and the kinetic energy?</p>
+<div class="sol">
+<p class="work">u₁ = +u, u₂ = −u, m₁ = m₂ = m
+p_total = mu + m(−u) = 0 ⇒ v = 0 after the collision
+KE before = ½mu² + ½mu² = mu²
+KE after = 0  ⇒ 100% of the kinetic energy is lost</p>
+<p class="ans">Total momentum is zero before and after (both bodies stop); all the kinetic energy is converted into heat and deformation — a perfectly inelastic collision.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Explain how a rocket moves in space where there is nothing to push against.</p>
+<div class="sol">
+<p>The rocket and its expelled gases form a single system with no external force, so the total momentum stays zero. When the gases are ejected backward with momentum p, the rocket gains forward momentum −p. Thrust is the rate of change of momentum of the gases, F = v_rel(dm/dt).</p>
+<p class="ans">The rocket pushes against its own exhaust: momentum conservation, not the presence of air, provides thrust.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 4.3 — Applications of Newton's laws: lift, pulley, incline</h2>
+
+<div class="item">
+<p class="q"><b>Q12.</b> A person of mass 60 kg stands on a weighing machine in a lift. Find the reading when the lift is (a) at rest, (b) accelerating upward at 2 m s⁻², (c) accelerating downward at 2 m s⁻², (d) in free fall.</p>
+<div class="sol">
+<p class="work">The machine reads the normal reaction N. Taking upward positive:
+N − mg = ma  ⇒  N = m(g + a)
+
+(a) a = 0:    N = 60(9.8)        = 588 N
+(b) a = +2:   N = 60(11.8)       = 708 N  (apparent weight increases)
+(c) a = −2:   N = 60(7.8)        = 468 N  (apparent weight decreases)
+(d) a = −g:   N = 60(0)          = 0 N    (weightlessness)</p>
+<p class="ans">588 N; 708 N; 468 N; zero (apparent weightlessness in free fall)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> Two masses of 5 kg and 3 kg are connected by a string over a frictionless pulley. Find the acceleration of the system and the tension.</p>
+<div class="sol">
+<p class="work">For 5 kg (moving down): 5g − T = 5a
+For 3 kg (moving up):    T − 3g = 3a
+Adding: (5 − 3)g = 8a  ⇒  a = 2(9.8)/8 = 2.45 m s⁻²
+T = 3(g + a) = 3(9.8 + 2.45) = 36.8 N
+
+General: a = (m₁ − m₂)g/(m₁ + m₂); T = 2m₁m₂g/(m₁ + m₂)</p>
+<p class="ans">a = 2.45 m s⁻²; T = 36.8 N</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> A block of mass 10 kg is pulled along a horizontal surface by a force of 40 N at 30° above the horizontal. If μ = 0.2, find the acceleration.</p>
+<div class="sol">
+<p class="work">Pulling force components: Fx = 40cos30° = 34.6 N, Fy = 40sin30° = 20 N (up)
+
+Normal reaction: N = mg − Fy = 98 − 20 = 78 N
+Friction: f = μN = 0.2(78) = 15.6 N
+Net horizontal force = 34.6 − 15.6 = 19.0 N
+a = 19.0/10 = 1.9 m s⁻²</p>
+<p class="ans">a = 1.9 m s⁻² — pulling upward reduces N and therefore reduces friction</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> A block slides down a 30° incline with a = 3.5 m s⁻². Find the coefficient of kinetic friction.</p>
+<div class="sol">
+<p class="work">Along the incline: mg sinθ − f = ma,  f = μ mg cosθ
+⇒ g sinθ − μ g cosθ = a
+9.8(0.5) − μ(9.8)(0.866) = 3.5
+4.9 − 8.49μ = 3.5  ⇒  μ = 1.4/8.49 = 0.165</p>
+<p class="ans">μ ≈ 0.17</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> A body of mass 4 kg is pushed up a rough 30° incline at constant velocity by a force parallel to the incline. If μ = 0.25, find the pushing force.</p>
+<div class="sol">
+<p class="work">Constant velocity ⇒ net force zero.
+F = mg sinθ + μ mg cosθ
+  = 4(9.8)(0.5) + 0.25(4)(9.8)(0.866)
+  = 19.6 + 8.49 = 28.1 N</p>
+<p class="ans">28.1 N up the incline</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 4.4 — Moment, torque and equilibrium</h2>
+
+<div class="item">
+<p class="q"><b>Q17.</b> Define moment of a force and state the principle of moments. A see-saw of negligible mass has a 40 kg child 1.5 m from the pivot. Where must a 60 kg child sit to balance it?</p>
+<div class="sol">
+<p>Moment = force × perpendicular distance from the pivot (τ = r × F, dimensions [ML²T⁻²]). <b>Principle of moments:</b> for a body in rotational equilibrium the sum of clockwise moments about any point equals the sum of anticlockwise moments.</p>
+<p class="work">40g × 1.5 = 60g × d
+d = 60/60 = 1.0 m</p>
+<p class="ans">The 60 kg child sits 1.0 m from the pivot on the other side</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> A uniform metre rule of mass 50 g is pivoted at the 50 cm mark. A 20 g mass hangs at the 10 cm mark. Where must a 30 g mass be hung to balance the rule?</p>
+<div class="sol">
+<p class="work">Moments about the 50 cm mark (distances in cm):
+20 g at 40 cm to the left: 20 × 40 = 800 g cm (anticlockwise)
+Let the 30 g hang d cm to the right: 30 × d (clockwise)
+30d = 800  ⇒  d = 26.7 cm</p>
+<p class="ans">At the 50 + 26.7 = 76.7 cm mark</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> State the two conditions for equilibrium of a rigid body.</p>
+<div class="sol">
+<ul class="tight">
+<li><b>Translational equilibrium:</b> the vector sum of all external forces is zero, ΣF = 0 (so ΣFx = 0 and ΣFy = 0).</li>
+<li><b>Rotational equilibrium:</b> the sum of all moments about any point is zero, Στ = 0.</li>
+</ul>
+<p>For concurrent forces the second condition is automatically satisfied, so only ΣF = 0 is needed — which is why three-force problems can be solved with Lami's theorem.</p>
+<p class="ans">ΣF = 0 and Στ = 0; for concurrent forces only ΣF = 0 is required.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Distinguish between a couple and a moment of a force.</p>
+<div class="sol">
+<p>A moment is produced by a single force about a point; its magnitude depends on the choice of point. A couple is a pair of equal, opposite and parallel forces whose lines of action are separated by a distance d; its moment is F × d and is the same about every point, producing pure rotation with no translation.</p>
+<p class="ans">A moment needs one force and a chosen point; a couple needs two equal opposite forces and gives a point-independent turning effect Fd (e.g. turning a steering wheel).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 4.5 — Solid friction and its verification</h2>
+
+<div class="item">
+<p class="q"><b>Q21.</b> State the laws of solid friction.</p>
+<div class="sol">
+<ol class="step">
+<li>Friction always opposes the relative motion (or the tendency of relative motion) and acts along the surfaces in contact.</li>
+<li>The limiting friction is directly proportional to the normal reaction: f_max = μN.</li>
+<li>For a given pair of surfaces the coefficient of friction is independent of the area of contact, provided the normal reaction is unchanged.</li>
+<li>The kinetic friction is nearly independent of the relative speed (over ordinary speeds) and is slightly less than the limiting friction.</li>
+</ol>
+<p class="ans">Opposes motion; ∝ normal reaction; independent of contact area; nearly independent of speed and smaller once sliding starts.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> Describe how the laws of friction are verified using an inclined plane.</p>
+<div class="sol">
+<p><b>Apparatus:</b> a wooden block with a plane that can be tilted, a protractor, a spring balance.</p>
+<p class="work">1. Place the block on the horizontal plane, add weights one at a time and note the
+   pull P needed to just start sliding. Repeat: P/N is constant ⇒ law 2.
+2. Turn the block onto a different face (area changed, weight same): P/N unchanged ⇒ law 3.
+3. Raise the plane gradually; the angle θ at which the block just begins to slide gives
+   μ = tanθ (angle of repose), independent of the block's mass.
+4. Compare the pull needed to start motion with the pull needed to keep it moving at
+   constant speed: P_kinetic < P_limiting ⇒ law 4.</p>
+<p>Graphs of f against N are straight lines through the origin with slope μ; graphs of f against contact area are horizontal lines.</p>
+<p class="ans">Verified by four observations: f ∝ N (straight line), f independent of area, μ = tanθ at the angle of repose, and f_k &lt; f_s.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Define angle of friction and angle of repose. Show that they are equal.</p>
+<div class="sol">
+<p><b>Angle of friction (λ):</b> the angle between the normal reaction and the resultant of the normal reaction and limiting friction, tanλ = f_max/N = μ.</p>
+<p><b>Angle of repose (θ):</b> the steepest angle of an incline on which a body remains at rest; at that angle mg sinθ = f_max = μ mg cosθ, so tanθ = μ.</p>
+<p class="work">tanλ = μ and tanθ = μ  ⇒  tanλ = tanθ  ⇒  λ = θ</p>
+<p class="ans">Both satisfy tan(angle) = μ, so the angle of friction equals the angle of repose.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> A block just starts to slide on an incline of 30°. Find μ and the acceleration if it is then released on a 45° incline of the same material.</p>
+<div class="sol">
+<p class="work">μ = tan30° = 0.577
+
+On the 45° incline:
+a = g(sinθ − μ cosθ) = 9.8(0.7071 − 0.577 × 0.7071)
+  = 9.8(0.7071)(1 − 0.577) = 9.8 × 0.7071 × 0.423 = 2.93 m s⁻²</p>
+<p class="ans">μ = 0.58; a ≈ 2.9 m s⁻² down the 45° incline</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> Why is friction called a "necessary evil"? Give two advantages and two disadvantages.</p>
+<div class="sol">
+<p><b>Evil:</b> it wastes energy as heat, wears out machine parts and reduces efficiency — up to 30% of engine output can go into overcoming friction.</p>
+<p><b>Necessary:</b> without friction we could not walk (the ground could not push us forward), vehicles could not brake or steer, a nail would not hold, a belt could not drive a pulley, and we could not hold a pen.</p>
+<p class="ans">Necessary for walking, braking, holding and driving belts; evil because it dissipates energy, causes wear and limits efficiency.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> Distinguish between static, limiting and kinetic friction.</p>
+<div class="sol">
+<p class="work">Static friction     — adjusts itself up to a maximum, acting while the body is at rest.
+Limiting friction   — the maximum static friction, f_max = μ_s N, at the point of slipping.
+Kinetic friction    — fixed value f_k = μ_k N, acting while the body slides; μ_k &lt; μ_s.</p>
+<p class="ans">Static friction is self-adjusting and ≤ limiting friction; kinetic friction is constant once sliding begins and slightly smaller than limiting friction.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Why does a passenger fall forward when a bus stops suddenly?</p>
+<div class="sol"><p class="ans">Because of inertia: the body of the passenger is in motion at the bus's speed and continues forward when the bus decelerates, since the only horizontal force available (friction from the seat) is not enough to decelerate the upper body at the same rate.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Action and reaction are equal and opposite — why do they not cancel?</p>
+<div class="sol"><p class="ans">Because they act on two <em>different</em> bodies. The force of the horse on the cart and the cart on the horse are equal and opposite but act on separate objects, so each body responds to the force on it. Forces can cancel only when they act on the same body.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Define the newton.</p>
+<div class="sol"><p class="ans">One newton is the force which produces an acceleration of 1 m s⁻² in a body of mass 1 kg: 1 N = 1 kg m s⁻².</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Why is it easier to pull a lawn roller than to push it?</p>
+<div class="sol"><p class="ans">When pulling, the applied force has an upward component that reduces the normal reaction and hence friction; when pushing, the same force has a downward component that increases N and friction. Same effort, more friction when pushing.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Can a body be in motion with zero net force acting on it?</p>
+<div class="sol"><p class="ans">Yes — by the first law, a body with zero net force moves with constant velocity (which includes moving in a straight line at steady speed). Zero net force means zero acceleration, not zero velocity.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> State the law of conservation of momentum and give one example of it in daily life.</p>
+<div class="sol"><p class="ans">When no external force acts on a system, its total linear momentum stays constant. Examples: the recoil of a gun, the backward motion of a boat when a passenger jumps forward, or a rocket gaining forward momentum by ejecting gases.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why does a gun recoil with a small speed although the bullet leaves with a large speed?</p>
+<div class="sol"><p class="ans">Momentum is conserved: m_b v_b = m_g v_g. The gun's mass is far larger than the bullet's, so for the same momentum the gun's speed is correspondingly smaller (v_g = m_b v_b/m_g).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> What is inertia? On what does it depend?</p>
+<div class="sol"><p class="ans">Inertia is the property of a body by which it resists any change in its state of rest or uniform motion. It depends only on the mass of the body: a more massive body has greater inertia (mass is the measure of inertia).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Distinguish between limiting friction and kinetic friction, and state which is larger.</p>
+<div class="sol"><p class="ans">Limiting friction is the maximum static friction at the instant of slipping; kinetic friction acts during actual sliding. Limiting (static) friction is larger than kinetic friction, which is why a sliding block needs less force to keep moving than to start.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Why is the coefficient of friction dimensionless?</p>
+<div class="sol"><p class="ans">It is the ratio of two forces, μ = f/N, so the dimensions cancel and it is a pure number. It therefore has no unit and is independent of the units in which the forces are measured.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Give two methods of reducing friction.</p>
+<div class="sol"><p class="ans">(i) Lubrication — a fluid film separates the surfaces so that solid friction becomes viscous (fluid) friction, which is much smaller. (ii) Using ball bearings or rollers — rolling friction is far smaller than sliding friction. Polishing the surfaces also helps.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Is friction a contact force? Explain.</p>
+<div class="sol"><p class="ans">Yes. Friction arises from intermolecular adhesion and interlocking of irregularities at the surfaces in contact, so it acts at the contact surface. It vanishes if the surfaces are separated, which is why a lubricating film removes most of it.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> What is the physical significance of the area under an F–t graph?</p>
+<div class="sol"><p class="ans">It is the impulse delivered, which equals the change in momentum. For a variable force, Δp = ∫F dt, the area under the curve between the two times.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why does a rocket's mass decrease as it moves, and why is F = ma not directly applicable?</p>
+<div class="sol"><p class="ans">It burns fuel and ejects gases, so its mass changes with time. For a variable-mass system the correct law is F = dp/dt = m(dv/dt) + v(dm/dt); the second term is the thrust from the escaping gases, which F = ma omits.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [5]</b> A 100 g ball hits a wall horizontally at 12 m s⁻¹ and rebounds along the same line at 8 m s⁻¹, the contact lasting 0.01 s. Find the impulse and the force, and compare the force with the weight of the ball.</p>
+<div class="sol">
+<p class="work">u = +12, v = −8, m = 0.1
+Δp = m(v − u) = 0.1(−8 − 12) = −2.0 N s
+F = Δp/t = −2.0/0.01 = −200 N
+
+weight = mg = 0.1 × 9.8 = 0.98 N
+ratio = 200/0.98 ≈ 204</p>
+<p class="ans">Impulse 2.0 N s away from the wall; force 200 N, about 200 times the weight — a large force for short time, which is exactly why the contact time matters.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [6]</b> Two blocks of 6 kg and 4 kg on a horizontal frictionless surface are joined by a string. A horizontal force of 30 N pulls the 6 kg block. Find the acceleration, the tension and the force the 4 kg block exerts on the string.</p>
+<div class="sol">
+<p class="work">Whole system: a = F/(m₁ + m₂) = 30/10 = 3 m s⁻²
+On the 4 kg block the only horizontal force is the tension:
+T = m₂a = 4(3) = 12 N
+The 6 kg block: 30 − T = 6(3) = 18 ⇒ T = 12 N ✓ (consistent)</p>
+<p class="ans">a = 3 m s⁻²; T = 12 N. The tension is always less than the applied force; if the force were applied to the 4 kg block instead, T would become 18 N.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> A 5 kg block rests on a horizontal table with μ_s = 0.4. A horizontal force is applied. (a) What force is needed to just start the block moving? (b) Once moving, μ_k = 0.3 — what is the acceleration under the same force?</p>
+<div class="sol">
+<p class="work">(a) N = mg = 49 N; f_s,max = 0.4 × 49 = 19.6 N
+The applied force must exceed 19.6 N to start motion.
+
+(b) With F = 19.6 N and f_k = 0.3 × 49 = 14.7 N:
+net force = 19.6 − 14.7 = 4.9 N
+a = 4.9/5 = 0.98 m s⁻²</p>
+<p class="ans">(a) just over 19.6 N; (b) a ≈ 0.98 m s⁻² — static friction is greater than kinetic, so the block accelerates as soon as it starts to slide.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [6]</b> A uniform beam of length 4 m and mass 20 kg rests on two supports at its ends. A 60 kg load is placed 1 m from the left end. Find the reactions at the two supports.</p>
+<div class="sol">
+<p class="work">Take moments about the left support L:
+Clockwise: load 60g at 1 m → 60g(1)
+           beam weight 20g at its centre, 2 m → 20g(2)
+Anticlockwise: R_R at 4 m → R_R(4)
+
+R_R(4) = 60(9.8)(1) + 20(9.8)(2) = 588 + 392 = 980
+R_R = 245 N
+
+Vertical equilibrium: R_L + R_R = (60 + 20)(9.8) = 784 N
+R_L = 784 − 245 = 539 N</p>
+<p class="ans">Left support 539 N, right support 245 N (check: the load sits nearer the left end, so that reaction is larger)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [4]</b> Explain why μ does not depend on the area of contact, using the molecular theory of friction.</p>
+<div class="sol">
+<p>Friction between dry surfaces comes mainly from adhesion at the points where the asperities of the two surfaces are actually touching. The real area of contact A_r is not the apparent area: it grows only with the normal reaction, because the asperities deform plastically until their total contact area can support the load, so A_r ∝ N. Friction is proportional to the area actually welded, f ∝ A_r, hence f ∝ N and independent of the apparent area.</p>
+<p class="ans">Only the real (microscopic) contact area matters, and that is set by the load, not by the apparent area — hence f = μN with μ independent of area.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Newton's second law</td><td>F = dp/dt = ma (m constant)</td></tr>
+<tr><td>Impulse</td><td>J = Ft = Δp = mv − mu; area under F–t graph</td></tr>
+<tr><td>Momentum</td><td>p = mv, [MLT⁻¹]; KE = p²/2m</td></tr>
+<tr><td>Conservation</td><td>m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</td></tr>
+<tr><td>Recoil</td><td>m_b v_b = m_g v_g (opposite directions)</td></tr>
+<tr><td>Atwood machine</td><td>a = (m₁−m₂)g/(m₁+m₂); T = 2m₁m₂g/(m₁+m₂)</td></tr>
+<tr><td>Lift</td><td>N = m(g ± a); free fall ⇒ N = 0</td></tr>
+<tr><td>Incline</td><td>a = g(sinθ − μcosθ) down; F = mg sinθ + μmg cosθ up</td></tr>
+<tr><td>Friction</td><td>f_max = μN; tanλ = tanθ_repose = μ</td></tr>
+<tr><td>Moments</td><td>Σ anticlockwise moments = Σ clockwise moments; τ = Fd = r×F</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 4</h3>
+<div class="warn">
+<p><b>1. Sign of the rebound.</b> In an impulse question a ball that reverses must have v negative. Using Δp = m(v − u) with both positive gives 0.4 N s instead of 3.6 N s.</p>
+<p><b>2. Writing N = mg on a rough incline or when a force acts at an angle.</b> N = mg cosθ on an incline; N = mg − F sinθ when pulled upward. Every friction mark depends on this.</p>
+<p><b>3. Forgetting the string is not massless in reality.</b> In the standard NEB model the string is ideal (massless, inextensible) and the pulley frictionless; state that assumption, then T is the same on both sides.</p>
+<p><b>4. Taking moments about the wrong point.</b> Choose the point through which the unknown you do not want acts; that is what makes the equation solvable in one line.</p>
+<p><b>5. Saying "action and reaction cancel".</b> They act on different bodies. Written as a cancellation, the statement is marked wrong even if the impulse idea behind it is right.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Free-body diagram → resolve along and normal to the surface → write ΣF = ma in each direction → substitute → answer with unit and direction. The diagram is worth a mark on its own.</div>
+
+<p class="note">Physics XI · Unit 4 Dynamics · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

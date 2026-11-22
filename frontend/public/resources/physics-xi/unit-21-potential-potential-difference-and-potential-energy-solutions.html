@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 21 Potential, Potential Difference and Potential Energy: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 21 Potential, Potential Difference and Potential Energy: worked solutions for electric potential and potential difference, potential due to point charges and charged spheres, equipotential surfaces, the relation E = −dV/dr, potential energy of a system of charges and the electron volt, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 21</p>
+
+<h1>Unit 21 — Potential, Potential Difference and Potential Energy</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 4 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">The big idea is that potential is a <em>scalar</em>. That single fact makes this unit easier than Unit 20 and is the reason potential problems are marked so generously: no vector triangles, only algebraic sums with signs.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define electric potential and potential difference; what is an equipotential surface; define 1 volt; what is an electron volt; why is the work done along an equipotential zero.</li>
+<li><b>4 marks</b> — potential at a point due to one or more charges; work done in moving a charge between two points; potential energy of a pair of charges; eV conversions.</li>
+<li><b>5–6 marks</b> — derive V = kQ/r and the relation E = −dV/dr; explain the potential of a charged sphere inside and outside; discuss why potential can be zero where the field is not.</li>
+</ul>
+<p>Rule that keeps losing students marks: potential is a scalar, and the sign of each charge must be carried through the sum. Writing V = kQ/r with Q unsigned for a negative charge inverts the answer.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 21.1 — Electric potential and potential difference</li>
+<li>Exercise 21.2 — Potential due to a point charge</li>
+<li>Exercise 21.3 — Potential due to several charges</li>
+<li>Exercise 21.4 — Potential of a charged sphere</li>
+<li>Exercise 21.5 — Equipotential surfaces and the relation E = −dV/dr</li>
+<li>Exercise 21.6 — Potential energy of a system of charges</li>
+<li>Exercise 21.7 — The electron volt and accelerated charges</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 21.1 — Electric potential and potential difference</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Define electric potential at a point and state its unit.</p>
+<div class="sol">
+<p>The electric potential at a point is the work done per unit positive charge in bringing a small positive test charge from infinity to that point, without acceleration:</p>
+<p class="work">V = W/q₀   (scalar)
+Unit: volt (V) = joule per coulomb (J C⁻¹)
+1 V = 1 J C⁻¹</p>
+<p>The reference point (zero potential) is taken at infinity, so V represents the work done against the field in assembling the charge from infinity. Potential is a scalar: it has magnitude and sign but no direction, and potentials simply add algebraically.</p>
+<p class="ans">V = W/q₀, in volts (J C⁻¹); the work per unit charge in bringing a positive charge from infinity to the point.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Define potential difference between two points and explain its sign.</p>
+<div class="sol">
+<p>The potential difference between two points A and B is the work done per unit positive charge in moving a charge from A to B:</p>
+<p class="work">V_B − V_A = W_AB/q₀</p>
+<p>If V_B &gt; V_A the potential rises from A to B and external work must be done (positive W). If V_B &lt; V_A the charge falls to a lower potential and the field does the work (negative W by an external agent). A positive charge moves spontaneously from high to low potential; a negative charge moves the other way.</p>
+<p class="ans">V_B − V_A = W_AB/q₀: the work per unit charge from A to B; positive charges move naturally from high to low potential.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Define the volt.</p>
+<div class="sol">
+<p>One volt is the potential difference between two points when one joule of work is done in moving a charge of one coulomb from one point to the other:</p>
+<p class="work">1 V = 1 J C⁻¹</p>
+<p>Equivalently, a point is at 1 V if one joule of work is needed to bring 1 C of positive charge from infinity to that point.</p>
+<p class="ans">1 V = 1 J C⁻¹: one joule per coulomb of charge moved between the points.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Distinguish between electric potential and electric potential energy.</p>
+<div class="sol">
+<table>
+<tr><th>Electric potential</th><th>Electric potential energy</th></tr>
+<tr><td>Work per unit charge, V = W/q₀</td><td>Total work done on a particular charge, U = qV</td></tr>
+<tr><td>A property of the point (of the field)</td><td>A property of the charge–field system</td></tr>
+<tr><td>Unit volt (J C⁻¹)</td><td>Unit joule (J)</td></tr>
+<tr><td>Independent of the test charge</td><td>Proportional to the charge placed there</td></tr>
+</table>
+<p class="ans">Potential is energy per unit charge at a point; potential energy is the energy of a specific charge at that point, U = qV.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 21.2 — Potential due to a point charge</h2>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Derive V = kQ/r for the potential at a distance r from a point charge Q.</p>
+<div class="sol">
+<p>The work done in bringing a unit positive charge from infinity to a point at distance r, against the field of Q, is the integral of the force over the path (the result is path-independent):</p>
+<p class="work">Work done against the field in moving a unit charge:
+  W = −∫(from ∞ to r) E·dr = −∫ kQ/r² dr  = kQ/r
+
+Therefore:  V = kQ/r = Q/(4πε₀r)
+
+For Q &gt; 0, V is positive everywhere and falls as 1/r.
+For Q &lt; 0, V is negative everywhere and rises toward zero as 1/r.</p>
+<p>Note that potential falls as 1/r while the field falls as 1/r², and that V → 0 as r → ∞, which is why infinity is chosen as the zero.</p>
+<p class="ans">V = kQ/r = Q/(4πε₀r), a scalar with the sign of Q, falling as 1/r.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Find the potential at 30 cm from a charge of 3 µC in air.</p>
+<div class="sol">
+<p class="work">V = kQ/r = (9 × 10⁹ × 3 × 10⁻⁶)/0.30
+  = 2.7 × 10⁴/0.30 = 9.0 × 10⁴ V</p>
+<p class="ans">V = 9.0 × 10⁴ V = 90 kV (positive, because the charge is positive)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> What is the potential at 30 cm from a charge of −3 µC? What is the potential difference between the points at 30 cm and 60 cm?</p>
+<div class="sol">
+<p class="work">V₁ = kQ/r₁ = (9 × 10⁹)(−3 × 10⁻⁶)/0.30 = −9.0 × 10⁴ V
+V₂ = kQ/r₂ = (9 × 10⁹)(−3 × 10⁻⁶)/0.60 = −4.5 × 10⁴ V
+
+V₂ − V₁ = (−4.5 × 10⁴) − (−9.0 × 10⁴) = +4.5 × 10⁴ V</p>
+<p class="ans">V(30 cm) = −90 kV, V(60 cm) = −45 kV; the potential rises by 45 kV as we move away from the negative charge.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Why is the potential due to a point charge taken as zero at infinity?</p>
+<div class="sol">
+<p>Because V = kQ/r tends to zero as r tends to infinity, so infinity is the natural reference point where the field has no effect. Choosing infinity as zero makes V at any point equal to the work per unit charge needed to bring a charge from far away, which is the physically meaningful quantity. Any other reference would simply add a constant to every potential, leaving differences unchanged.</p>
+<p class="ans">V = kQ/r → 0 as r → ∞, so infinity is the natural zero; potential differences, which are what matter physically, are unaffected by the choice.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 21.3 — Potential due to several charges</h2>
+
+<div class="item">
+<p class="q"><b>Q9.</b> State the principle of superposition for electric potential and show how it differs from that for the field.</p>
+<div class="sol">
+<p>The total potential at a point due to several charges is the algebraic sum of the individual potentials:</p>
+<p class="work">V = V₁ + V₂ + V₃ + … = k(q₁/r₁ + q₂/r₂ + q₃/r₃ + …)</p>
+<p>Because potential is a scalar, the signs of the charges are carried in the arithmetic — no directions or components are involved. For the field, by contrast, the individual vectors must be added geometrically. This is the practical reason potentials are used to solve many-charge problems.</p>
+<p class="ans">V is the algebraic sum of kq_i/r_i with signs; the field would need vector addition instead.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Two charges +5 µC and −5 µC are 1 m apart. Find the potential at the midpoint. Is the field zero there?</p>
+<div class="sol">
+<p class="work">Each charge is 0.5 m from the midpoint.
+V = k(5 × 10⁻⁶)/0.5 + k(−5 × 10⁻⁶)/0.5
+  = 9 × 10⁴ − 9 × 10⁴ = 0 V</p>
+<p>The potential is zero, but the <b>field is not</b>: both field vectors point from the positive toward the negative charge, so they add to E = 2 × k(5 × 10⁻⁶)/0.5² = 3.6 × 10⁵ N C⁻¹. Zero potential does not imply zero field — this is the single most-tested idea in the unit.</p>
+<p class="ans">V = 0 at the midpoint, but E = 3.6 × 10⁵ N C⁻¹ pointing from + to −. Potential and field are independent quantities.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Charges of +2 µC, −3 µC and +4 µC are placed at the corners of an equilateral triangle of side 20 cm. Find the potential at the centre.</p>
+<div class="sol">
+<p class="work">The centre of an equilateral triangle is at distance r = a/√3 from each vertex:
+r = 0.20/1.732 = 0.1155 m
+
+V = k(q₁ + q₂ + q₃)/r
+  = (9 × 10⁹)(2 − 3 + 4) × 10⁻⁶/0.1155
+  = (9 × 10⁹)(3 × 10⁻⁶)/0.1155
+  = 2.7 × 10⁴/0.1155 = 2.34 × 10⁵ V</p>
+<p class="ans">V ≈ 2.3 × 10⁵ V — the equal distances let the charges be summed algebraically first.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Where is the potential zero on the line joining a +4 µC and a −1 µC charge placed 1 m apart?</p>
+<div class="sol">
+<p class="work">Let x be the distance from the +4 µC charge toward the −1 µC charge.
+k(4)/x + k(−1)/(1 − x) = 0
+4/x = 1/(1 − x)
+4(1 − x) = x  ⇒  4 = 5x  ⇒  x = 0.8 m
+
+Second possibility: outside the pair on the −1 µC side, at distance y beyond it:
+4/(1 + y) = 1/y  ⇒  4y = 1 + y  ⇒  y = 1/3 m beyond the −1 µC charge.</p>
+<p class="ans">Two points: 0.8 m from the +4 µC charge (between the charges) and 0.33 m beyond the −1 µC charge. Both give V = 0 because the potentials cancel.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 21.4 — Potential of a charged sphere</h2>
+
+<div class="item">
+<p class="q"><b>Q13.</b> Describe the potential of a charged conducting sphere inside and outside.</p>
+<div class="sol">
+<p class="work">Outside (r &gt; R):  V = kQ/r, falling as 1/r
+At the surface (r = R):  V = kQ/R
+Inside (r &lt; R):   V = kQ/R, constant — the same as at the surface
+
+Because E = 0 inside, no work is done in moving a charge from the surface to
+any interior point, so the potential does not change inside.</p>
+<p>The whole conductor is therefore an equipotential volume. This is why a person inside a car struck by lightning is unharmed: the entire metal body rises to a high potential together, with no potential difference across the interior.</p>
+<p class="ans">V = kQ/r outside, constant at kQ/R throughout the interior; the conductor is a single equipotential volume.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> A conducting sphere of radius 10 cm carries 2 µC. Find the potential at its surface and at its centre.</p>
+<div class="sol">
+<p class="work">At the surface: V = kQ/R = (9 × 10⁹ × 2 × 10⁻⁶)/0.10 = 1.8 × 10⁵ V
+At the centre: the same, V = 1.8 × 10⁵ V (no field inside, so no change of potential)</p>
+<p class="ans">V = 1.8 × 10⁵ V both at the surface and everywhere inside, including the centre.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Why is the potential inside a hollow charged conductor constant even though charge lies on the surface?</p>
+<div class="sol">
+<p>Because the field inside is zero: the contributions to the field from all the surface elements cancel exactly at every interior point (this is the content of the shell theorem for a uniform spherical shell). With E = 0 along any path inside, no work is done in moving a charge from the surface inward, so V cannot change. The potential inside therefore equals the surface potential.</p>
+<p class="ans">E = 0 throughout the interior implies no work along any internal path, so V stays constant and equal to the surface value.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 21.5 — Equipotential surfaces and the relation E = −dV/dr</h2>
+
+<div class="item">
+<p class="q"><b>Q16.</b> What is an equipotential surface? Give two examples and state its relation to field lines.</p>
+<div class="sol">
+<p>An equipotential surface is a surface every point of which is at the same electric potential, so no work is done in moving a charge along it.</p>
+<ul class="tight">
+<li>For an isolated point charge: concentric spheres centred on the charge.</li>
+<li>For a uniform field (parallel plates): planes perpendicular to the field.</li>
+<li>The surface of any conductor in electrostatic equilibrium is an equipotential.</li>
+</ul>
+<p>Field lines are always perpendicular to equipotential surfaces, because a component of E along the surface would do work and contradict the definition.</p>
+<p class="ans">A surface of constant V; spheres around a point charge, planes in a uniform field; field lines always cross it at 90°.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> Derive the relation E = −dV/dr between field and potential.</p>
+<div class="sol">
+<p class="work">The work done by the field in moving a unit positive charge through a small
+displacement dr is E·dr. This equals the fall in potential, −dV:
+  dV = −E·dr
+⇒ E = −dV/dr   (in one dimension)
+In vector form:  E = −∇V
+
+The minus sign means the field points in the direction of <em>decreasing</em> potential:
+positive charges run downhill in potential.</p>
+<p>The unit of E follows from this relation: V m⁻¹, identical to N C⁻¹.</p>
+<p class="ans">E = −dV/dr: the field is the negative gradient of the potential, pointing toward decreasing potential.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> Show that E = −dV/dr gives E = kQ/r² for a point charge.</p>
+<div class="sol">
+<p class="work">V = kQ/r
+dV/dr = −kQ/r²
+E = −dV/dr = +kQ/r²</p>
+<p>The field points radially outward for positive Q, consistent with the sign convention. This check is a common 4-mark question: it demonstrates that the two descriptions of the field are equivalent.</p>
+<p class="ans">Differentiating V = kQ/r and applying the minus sign returns E = kQ/r², confirming the two formulations are consistent.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> In a uniform field of 500 V m⁻¹, what is the potential difference between two points 4 cm apart along the field? What if they are 4 cm apart perpendicular to the field?</p>
+<div class="sol">
+<p class="work">Along the field:  dV = −E dr ⇒ |ΔV| = 500 × 0.04 = 20 V
+Perpendicular:    dr is along an equipotential, so ΔV = 0</p>
+<p class="ans">20 V between the points along the field; 0 V if they are displaced perpendicular to it (they lie on the same equipotential).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Why is the work done in moving a charge along an equipotential surface zero?</p>
+<div class="sol">
+<p>Because the potential is the same at every point of the surface, so ΔV = 0 and W = qΔV = 0. Physically the field has no component along the surface (it is perpendicular), so the force is everywhere perpendicular to the displacement and does no work — just as gravity does no work on a mass moving horizontally.</p>
+<p class="ans">ΔV = 0 along the surface, so W = qΔV = 0; the field is perpendicular to the displacement everywhere.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 21.6 — Potential energy of a system of charges</h2>
+
+<div class="item">
+<p class="q"><b>Q21.</b> Derive the potential energy of a system of two point charges.</p>
+<div class="sol">
+<p class="work">Bring q₁ to its position first: no work is needed (nothing to work against).
+Then bring q₂ from infinity to a distance r from q₁: the potential there is V = kq₁/r,
+so the work done is
+  U = q₂V = kq₁q₂/r
+
+For like charges (q₁q₂ &gt; 0), U &gt; 0: work must be supplied to assemble them.
+For unlike charges (q₁q₂ &lt; 0), U &lt; 0: the system releases energy on assembly.</p>
+<p>The same expression gives the energy needed to separate the charges to infinity. It is the electrostatic potential energy of the pair, not of either charge alone.</p>
+<p class="ans">U = kq₁q₂/r; positive for like charges (bound state needs energy to assemble), negative for unlike charges.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> Two charges of +2 µC and +3 µC are 30 cm apart. Find the potential energy of the system.</p>
+<div class="sol">
+<p class="work">U = kq₁q₂/r = (9 × 10⁹ × 2 × 10⁻⁶ × 3 × 10⁻⁶)/0.30
+  = (9 × 10⁹ × 6 × 10⁻¹²)/0.30
+  = 0.054/0.30 = 0.18 J</p>
+<p class="ans">U = +0.18 J — positive, so 0.18 J of external work would be needed to separate them to infinity</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Find the potential energy of a system of three charges of 1 µC each placed at the corners of an equilateral triangle of side 10 cm.</p>
+<div class="sol">
+<p class="work">There are three pairs, each with r = 0.10 m:
+U = 3 × kq²/r = 3 × (9 × 10⁹ × (1 × 10⁻⁶)²/0.10)
+  = 3 × (9 × 10⁹ × 10⁻¹²/0.10)
+  = 3 × (9 × 10⁻³/0.10)
+  = 3 × 0.09 = 0.27 J</p>
+<p class="ans">U = +0.27 J (three positive pair energies add)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q24.</b> A charge of 5 µC is moved from a point at 100 V to a point at 300 V. Find the work done by the external agent and by the field.</p>
+<div class="sol">
+<p class="work">W_external = q(V_B − V_A) = 5 × 10⁻⁶ × (300 − 100)
+  = 5 × 10⁻⁶ × 200 = 1.0 × 10⁻³ J
+
+W_field = −W_external = −1.0 × 10⁻³ J</p>
+<p>A positive charge moved to a higher potential needs external work; the field does negative work, i.e. it opposes the motion.</p>
+<p class="ans">External work +1.0 × 10⁻³ J; work done by the field −1.0 × 10⁻³ J (the field resists).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 21.7 — The electron volt and accelerated charges</h2>
+
+<div class="item">
+<p class="q"><b>Q25.</b> Define the electron volt and express it in joules.</p>
+<div class="sol">
+<p>One electron volt is the kinetic energy gained by an electron when it is accelerated through a potential difference of one volt:</p>
+<p class="work">1 eV = e × 1 V = (1.6 × 10⁻¹⁹ C)(1 V) = 1.6 × 10⁻¹⁹ J
+1 keV = 1.6 × 10⁻¹⁶ J;  1 MeV = 1.6 × 10⁻¹³ J</p>
+<p>The eV is the natural unit in atomic and nuclear physics because the energies involved are of that order: a visible photon carries about 2 eV, an X-ray photon tens of keV, and a nuclear transition about 1 MeV.</p>
+<p class="ans">1 eV = 1.6 × 10⁻¹⁹ J: the energy gained by an electron accelerated through 1 V.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> An electron is accelerated from rest through 100 V. Find its kinetic energy, speed and the work done on it.</p>
+<div class="sol">
+<p class="work">KE = eV = 1 × 100 eV = 100 × 1.6 × 10⁻¹⁹ = 1.6 × 10⁻¹⁷ J
+
+½mv² = 1.6 × 10⁻¹⁷
+v² = 2(1.6 × 10⁻¹⁷)/(9.11 × 10⁻³¹) = 3.51 × 10¹³
+v = 5.9 × 10⁶ m s⁻¹
+
+Work done by the field = gain in KE = 1.6 × 10⁻¹⁷ J</p>
+<p class="ans">KE = 100 eV = 1.6 × 10⁻¹⁷ J; v ≈ 5.9 × 10⁶ m s⁻¹; the field does 1.6 × 10⁻¹⁷ J of work.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> Why does a positive charge accelerate toward lower potential while an electron accelerates toward higher potential?</p>
+<div class="sol">
+<p>Because the force on a charge is F = qE, and E points toward decreasing potential. For a positive charge F is along E, so it moves toward lower potential; for a negative charge F is opposite to E, so it moves toward higher potential. In both cases the charge moves in the direction that lowers its potential energy U = qV, which is the energetically favourable direction.</p>
+<p class="ans">The force is qE; the sign of q decides the direction, but in both cases the charge moves so as to reduce its potential energy.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define electric potential.</p>
+<div class="sol"><p class="ans">The work done per unit positive charge in bringing a test charge from infinity to the point: V = W/q₀, a scalar measured in volts (J C⁻¹).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Define potential difference.</p>
+<div class="sol"><p class="ans">The work done per unit positive charge in moving a charge from one point to another: V_B − V_A = W_AB/q₀. It is the quantity a voltmeter measures and the quantity that drives current.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Define one volt.</p>
+<div class="sol"><p class="ans">The potential difference between two points when one joule of work moves one coulomb of charge between them: 1 V = 1 J C⁻¹.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Write the potential due to a point charge and state its sign for positive and negative charges.</p>
+<div class="sol"><p class="ans">V = kQ/r. Positive for Q &gt; 0 (work is needed to bring a positive charge near it), negative for Q &lt; 0 (the field does the work), and zero at infinity.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Why is potential a scalar while the field is a vector?</p>
+<div class="sol"><p class="ans">Because potential is defined from work, which is a scalar quantity (force × displacement along the path). The field comes from force, which has direction. Therefore potentials add algebraically while fields must be added as vectors.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Can the potential at a point be zero while the field there is not? Give an example.</p>
+<div class="sol"><p class="ans">Yes. At the midpoint between a +5 µC and −5 µC charge the potentials cancel to zero, but both fields point the same way, giving a large net field. Potential and field are independent quantities linked only by a gradient.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Can the field at a point be zero while the potential there is not? Give an example.</p>
+<div class="sol"><p class="ans">Yes. At the neutral point between two equal positive charges the field is zero, but the potential is positive and finite (twice kq/r). Similarly, the field is zero everywhere inside a charged hollow conductor while the potential there is kQ/R.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Define an equipotential surface and state its two properties.</p>
+<div class="sol"><p class="ans">A surface of constant potential, so no work is done moving a charge along it (W = qΔV = 0). Field lines are perpendicular to it everywhere, and no two equipotential surfaces can intersect.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> State the relation between electric field and potential.</p>
+<div class="sol"><p class="ans">E = −dV/dr: the field is the negative gradient of the potential. The minus sign shows the field points toward decreasing potential, and it explains why the unit V m⁻¹ is the same as N C⁻¹.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Define the electron volt.</p>
+<div class="sol"><p class="ans">The kinetic energy gained by an electron accelerated through a potential difference of 1 V: 1 eV = 1.6 × 10⁻¹⁹ J. It is the convenient energy unit for atomic and nuclear processes.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> What is the potential inside a charged hollow conductor?</p>
+<div class="sol"><p class="ans">Constant and equal to kQ/R, the surface value. Since the field inside is zero, no work is done on any internal path, so the potential cannot vary — the interior is an equipotential volume.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Write the potential energy of a pair of charges and explain its sign.</p>
+<div class="sol"><p class="ans">U = kq₁q₂/r. Positive for like charges (energy must be supplied to bring them together), negative for unlike charges (energy is released as they approach, so the pair is bound).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Why is the surface of a conductor an equipotential?</p>
+<div class="sol"><p class="ans">Because the field just outside is perpendicular to the surface, so moving a charge along the surface involves no work. With no work along any surface path, the potential is the same everywhere on it. If it were not, surface charges would move until it was.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why is the potential at infinity taken as zero?</p>
+<div class="sol"><p class="ans">Because the field of any localised charge distribution falls to zero at infinity, so the work done in bringing a charge from infinity is a well-defined finite quantity. Taking V(∞) = 0 makes V at a point equal to that work per unit charge, without an arbitrary constant.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> A charge is moved along a closed path in an electric field. What is the net work done?</p>
+<div class="sol"><p class="ans">Zero. The electrostatic force is conservative, so the work depends only on the endpoints; for a closed path the endpoints coincide and the total work vanishes. Equivalently, the potential returns to its starting value.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> Why does a bird sitting on a high-voltage wire survive?</p>
+<div class="sol"><p class="ans">Because both its feet are at nearly the same potential — the potential difference across its small body is tiny, so almost no current flows through it. The danger arises only when there is a large potential difference, as when the bird touches another wire or the ground. It is potential difference, not potential, that drives current.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Derive V = kQ/r for a point charge and hence show that E = −dV/dr. Draw the graphs of V and E against r.</p>
+<div class="sol">
+<p class="work">Bring a unit positive charge from infinity to r against the field of Q:
+  W = −∫(∞→r) E dr = −∫(∞→r) (kQ/r²) dr = kQ/r
+⇒ V = kQ/r
+
+Differentiating:
+  dV/dr = −kQ/r²
+⇒ E = −dV/dr = kQ/r²</p>
+<p><b>Graphs:</b> V against r is a hyperbola decaying as 1/r, positive for Q &gt; 0 and approaching zero asymptotically. E against r falls more steeply as 1/r² and is the negative slope of the V curve at every point. The area under the E–r graph between two radii equals the potential difference between them.</p>
+<p class="ans">V = kQ/r from the work integral; E = −dV/dr = kQ/r². The V curve is a 1/r hyperbola and the E curve a steeper 1/r², equal to minus its slope.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Two charges, +3 µC and −2 µC, are 50 cm apart. Find the potential at a point 20 cm from the positive charge on the line joining them, between the charges.</p>
+<div class="sol">
+<p class="work">The point is 0.20 m from +3 µC and 0.30 m from −2 µC.
+V = k(3 × 10⁻⁶)/0.20 + k(−2 × 10⁻⁶)/0.30
+  = (9 × 10⁹)(1.5 × 10⁻⁵) + (9 × 10⁹)(−6.67 × 10⁻⁶)
+  = 1.35 × 10⁵ − 6.0 × 10⁴
+  = 7.5 × 10⁴ V</p>
+<p class="ans">V = 7.5 × 10⁴ V (positive, because the positive charge is nearer). The fields, not the potentials, would partly cancel here.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Calculate the work done in bringing a charge of 4 µC from infinity to a point 20 cm from a 6 µC charge. What is the potential energy of the pair?</p>
+<div class="sol">
+<p class="work">Potential at the point due to the 6 µC charge:
+  V = kQ/r = (9 × 10⁹ × 6 × 10⁻⁶)/0.20 = 2.7 × 10⁵ V
+
+Work done (external) = qV = 4 × 10⁻⁶ × 2.7 × 10⁵ = 1.08 J
+Potential energy of the pair:  U = kq₁q₂/r = 1.08 J (the same number)</p>
+<p>The work done in assembling the system equals its potential energy: 1.08 J. Releasing the charge would return that energy as kinetic energy.</p>
+<p class="ans">W = U = 1.08 J, positive because both charges are positive and the assembly is energetically uphill.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> An electron is accelerated through 500 V. Find its final kinetic energy in eV and in joules, and its speed (assume non-relativistic motion).</p>
+<div class="sol">
+<p class="work">KE = 500 eV = 500 × 1.6 × 10⁻¹⁹ = 8.0 × 10⁻¹⁷ J
+
+½mv² = 8.0 × 10⁻¹⁷
+v² = 2(8.0 × 10⁻¹⁷)/(9.11 × 10⁻³¹) = 1.76 × 10¹⁴
+v = 1.33 × 10⁷ m s⁻¹</p>
+<p>At 1.3 × 10⁷ m s⁻¹ the electron is at about 4.4% of c, so the non-relativistic formula is accurate to better than 0.2% — a useful check on whether relativity is needed.</p>
+<p class="ans">KE = 500 eV = 8.0 × 10⁻¹⁷ J; v ≈ 1.3 × 10⁷ m s⁻¹, safely non-relativistic.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Potential</td><td>V = W/q₀ (J C⁻¹); V(∞) = 0</td></tr>
+<tr><td>Point charge</td><td>V = kQ/r = Q/(4πε₀r)</td></tr>
+<tr><td>Several charges</td><td>V = Σ kq_i/r_i (algebraic sum, with signs)</td></tr>
+<tr><td>Potential difference</td><td>V_B − V_A = W_AB/q₀; W = qΔV</td></tr>
+<tr><td>Field and potential</td><td>E = −dV/dr; units V m⁻¹ = N C⁻¹</td></tr>
+<tr><td>Potential energy</td><td>U = kq₁q₂/r; U = qV</td></tr>
+<tr><td>Charged sphere</td><td>Outside kQ/r; inside constant kQ/R</td></tr>
+<tr><td>Electron volt</td><td>1 eV = 1.6 × 10⁻¹⁹ J; KE = eV for an accelerated electron</td></tr>
+<tr><td>Equipotential</td><td>W = qΔV = 0 along the surface; E perpendicular to it</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 21</h3>
+<div class="warn">
+<p><b>1. Dropping the signs.</b> Potential is a scalar but each term carries the sign of its charge. Writing V = k|Q|/r for an electron gives the wrong sign and often the wrong answer.</p>
+<p><b>2. Assuming zero potential means zero field.</b> At the midpoint of a dipole V = 0 but E is large; the two quantities are linked only by a gradient, not by proportionality.</p>
+<p><b>3. Confusing potential with potential energy.</b> V is per unit charge (volts); U = qV is the energy of a particular charge (joules). A question asking for energy wants U, not V.</p>
+<p><b>4. Adding potentials as vectors.</b> Potentials add algebraically; only fields need vector addition. Adding them as vectors loses the whole advantage of this unit.</p>
+<p><b>5. Forgetting the electron volt conversion.</b> Answers quoted in eV must be multiplied by 1.6 × 10⁻¹⁹ to become joules before using ½mv².</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Write "V is a scalar" at the top of any multi-charge problem, list each kq/r term with its sign, add algebraically, then state whether the potential is positive or negative and what that means physically.</div>
+
+<p class="note">Physics XI · Unit 21 Potential, Potential Difference and Potential Energy · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

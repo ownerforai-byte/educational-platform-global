@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 2 Vectors: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 2 Vectors: worked solutions for resultant of two vectors (triangle and parallelogram laws), resolution, unit vectors, scalar product and vector product, equilibrium and relative velocity, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 2</p>
+
+<h1>Unit 2 — Vectors</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 4 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Every exercise of the unit — three laws of combination, resolution and unit vectors, scalar and vector products, condition of equilibrium — solved with the formulas NEB expects to see written, plus the short conceptual questions with model answers.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — dimensions of a vector product; state the condition of perpendicularity; define unit vector; find the angle between two vectors from their dot product.</li>
+<li><b>4 marks</b> — resultant of two vectors by the parallelogram law (magnitude and direction); resolve a force into components and find the balancing force; compute work as F·d or torque as r×F.</li>
+<li><b>5–6 marks</b> — prove the relation |A×B|² + (A·B)² = |A|²|B|², or derive tanα = Q sinθ/(P + Q cosθ) for the direction of a resultant.</li>
+</ul>
+<p>Rule that keeps losing students marks: every vector answer is incomplete without its direction (an angle measured from a named reference) or, in 3-D, without the î, ĵ, k̂ components written out.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 2.1 — Resultant of two vectors: triangle and parallelogram laws</li>
+<li>Exercise 2.2 — Resolution of vectors and resultant of many vectors</li>
+<li>Exercise 2.3 — Unit vectors and vector addition in components</li>
+<li>Exercise 2.4 — Scalar (dot) product</li>
+<li>Exercise 2.5 — Vector (cross) product</li>
+<li>Exercise 2.6 — Equilibrium and applications</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 2.1 — Resultant of two vectors: triangle and parallelogram laws</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Two forces of 3 N and 4 N act at right angles to each other. Find the magnitude and direction of the resultant.</p>
+<div class="sol">
+<p class="work">R = √(P² + Q² + 2PQ cosθ), with θ = 90° ⇒ cosθ = 0
+R = √(3² + 4²) = √25 = 5 N
+
+tanα = Q sinθ/(P + Q cosθ) = 4(1)/(3 + 0) = 1.333
+α = tan⁻¹(1.333) = 53.1° from the 3 N force</p>
+<p class="ans">R = 5 N, 53° from the 3 N force (i.e. 37° from the 4 N force)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Two equal forces of magnitude P act at an angle of 120°. Show that their resultant has magnitude P.</p>
+<div class="sol">
+<p class="work">R = √(P² + P² + 2P² cos120°), cos120° = −½
+  = √(2P² − P²) = √(P²) = P
+
+tanα = P sin120°/(P + P cos120°) = (0.866P)/(P − 0.5P) = 1.732
+α = 60°  → the resultant bisects the 120° angle.</p>
+<p class="ans">R = P, bisecting the angle between the two forces — three equal forces at 120° are in equilibrium.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Two vectors of magnitudes 4 units and 3 units act at 60°. Find the magnitude of their resultant and the angle it makes with the 4-unit vector.</p>
+<div class="sol">
+<p class="work">R = √(16 + 9 + 2×4×3×cos60°)
+  = √(25 + 24 × 0.5) = √37 = 6.08 units
+
+tanα = 3 sin60°/(4 + 3 cos60°) = 2.598/(4 + 1.5) = 2.598/5.5 = 0.4724
+α = 25.3°</p>
+<p class="ans">R ≈ 6.08 units at 25° to the 4-unit vector</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> At what angle must two forces of 5 N and 8 N act so that their resultant is 10 N?</p>
+<div class="sol">
+<p class="work">R² = P² + Q² + 2PQ cosθ
+100 = 25 + 64 + 2(5)(8) cosθ
+100 − 89 = 80 cosθ
+cosθ = 11/80 = 0.1375
+θ = 82.1°</p>
+<p class="ans">θ ≈ 82°</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> State and explain the triangle law of vector addition. What is the polygon law?</p>
+<div class="sol">
+<p><b>Triangle law:</b> if two vectors are represented in magnitude and direction by the two sides of a triangle taken in order, their resultant is represented by the third side taken in the opposite order.</p>
+<p><b>Polygon law:</b> if several vectors are represented by the sides of a polygon taken in order, the resultant is represented by the closing side taken in the opposite direction. It follows from applying the triangle law repeatedly.</p>
+<p class="ans">Closed polygon ⇒ zero resultant (equilibrium); the closing side reversed is the resultant.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> The resultant of two equal forces is √3 times one of them. Find the angle between them.</p>
+<div class="sol">
+<p class="work">R = √(P² + P² + 2P²cosθ) = P√(2 + 2cosθ)
+√3P = P√(2 + 2cosθ)  ⇒  3 = 2 + 2cosθ  ⇒  cosθ = ½  ⇒  θ = 60°</p>
+<p class="ans">θ = 60°</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 2.2 — Resolution of vectors and resultant of many vectors</h2>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Resolve a force of 50 N acting at 30° above the horizontal into horizontal and vertical components.</p>
+<div class="sol">
+<p class="work">Fx = F cosθ = 50 cos30° = 50 × 0.866 = 43.3 N
+Fy = F sinθ = 50 sin30° = 50 × 0.5  = 25.0 N
+
+Check: √(43.3² + 25²) = √(1875 + 625) = √2500 = 50 N ✓</p>
+<p class="ans">Fx = 43.3 N, Fy = 25 N</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> A body is acted on by three forces: 10 N along the x-axis, 20 N at 120° and 30 N at 240°. Find the resultant.</p>
+<div class="sol">
+<p class="work">Fx = 10 + 20 cos120° + 30 cos240°
+   = 10 − 10 − 15 = −15 N
+Fy = 0 + 20 sin120° + 30 sin240°
+   = 17.32 − 25.98 = −8.66 N
+
+R = √(225 + 75) = √300 = 17.3 N
+tanα = |−8.66|/|−15| = 0.577 ⇒ α = 30° measured from the −x axis toward −y,
+i.e. the resultant points at 210° from +x.</p>
+<p class="ans">R = 17.3 N at 210° from the +x axis (or 30° below the −x axis)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> A man can swim at 5 km h⁻¹ in still water and rows straight across a river flowing at 3 km h⁻¹. Find his resultant velocity and the direction in which he must head to land directly opposite.</p>
+<div class="sol">
+<p class="work">Crossing straight across: velocities are perpendicular
+v = √(5² + 3²) = √34 = 5.83 km h⁻¹, 
+drifting downstream, tanα = 3/5 ⇒ α = 31° downstream.
+
+To land opposite, he must head upstream at angle φ such that
+5 sinφ = 3 ⇒ sinφ = 0.6 ⇒ φ = 36.9° upstream of the perpendicular,
+and the crossing speed becomes 5 cosφ = 4 km h⁻¹.</p>
+<p class="ans">Heading straight across: 5.83 km h⁻¹ at 31° downstream. To land opposite: head 37° upstream, crossing at 4 km h⁻¹.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Explain why the maximum resultant of two vectors P and Q is P + Q and the minimum is |P − Q|.</p>
+<div class="sol">
+<p>R² = P² + Q² + 2PQ cosθ. Since −1 ≤ cosθ ≤ 1:</p>
+<ul class="tight">
+<li>θ = 0° ⇒ R² = (P + Q)², so R = P + Q (maximum, parallel).</li>
+<li>θ = 180° ⇒ R² = (P − Q)², so R = |P − Q| (minimum, antiparallel).</li>
+</ul>
+<p class="ans">R lies between |P − Q| and P + Q; equality holds for parallel and antiparallel vectors respectively.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 2.3 — Unit vectors and vector addition in components</h2>
+
+<div class="item">
+<p class="q"><b>Q11.</b> If A = 3î + 4ĵ, find its magnitude, direction and unit vector.</p>
+<div class="sol">
+<p class="work">|A| = √(3² + 4²) = 5
+θ = tan⁻¹(4/3) = 53.1° with the x-axis
+Â = A/|A| = (3î + 4ĵ)/5 = 0.6î + 0.8ĵ
+
+Check: |Â| = √(0.36 + 0.64) = 1 ✓</p>
+<p class="ans">|A| = 5, direction 53° from +x, Â = 0.6î + 0.8ĵ</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Given A = 2î + 3ĵ and B = î − ĵ, find A + B, A − B, |A + B| and the unit vector along A − B.</p>
+<div class="sol">
+<p class="work">A + B = (2+1)î + (3−1)ĵ = 3î + 2ĵ        |A + B| = √13 = 3.61
+A − B = (2−1)î + (3+1)ĵ = î + 4ĵ          |A − B| = √17 = 4.12
+unit vector along A − B = (î + 4ĵ)/√17 = 0.243î + 0.970ĵ</p>
+<p class="ans">A+B = 3î+2ĵ (3.61 units); A−B = î+4ĵ (4.12 units); û = (î+4ĵ)/√17</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> Find a vector of magnitude 10 units parallel to the vector 3î + 4ĵ.</p>
+<div class="sol">
+<p class="work">Direction of 3î + 4ĵ: Â = (3î + 4ĵ)/5
+Required = 10Â = 10(3î + 4ĵ)/5 = 6î + 8ĵ
+
+Check: √(36 + 64) = 10 ✓</p>
+<p class="ans">6î + 8ĵ</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Show that if A + B is perpendicular to A − B, then |A| = |B|.</p>
+<div class="sol">
+<p class="work">(A + B)·(A − B) = 0
+A·A − A·B + B·A − B·B = 0
+|A|² − |B|² = 0        (since A·B = B·A)
+⇒ |A| = |B|</p>
+<p class="ans">Perpendicularity of the sum and difference forces equal magnitudes — the diagonals of a rhombus are perpendicular.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 2.4 — Scalar (dot) product</h2>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Find the angle between A = î + ĵ and B = î − ĵ.</p>
+<div class="sol">
+<p class="work">A·B = (1)(1) + (1)(−1) = 0
+|A| = √2, |B| = √2
+cosθ = A·B/(|A||B|) = 0  ⇒  θ = 90°</p>
+<p class="ans">θ = 90° (they are perpendicular)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> A force F = 3î + 2ĵ − k̂ N displaces a body through d = 2î − 3ĵ + 4k̂ m. Find the work done.</p>
+<div class="sol">
+<p class="work">W = F·d = (3)(2) + (2)(−3) + (−1)(4)
+  = 6 − 6 − 4 = −4 J</p>
+<p class="ans">W = −4 J; the negative sign means the force removes energy from the body (the force is partly opposed to the displacement).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> If |A| = 3, |B| = 4 and A·B = 6, find the angle between them and |A × B|.</p>
+<div class="sol">
+<p class="work">cosθ = 6/(3×4) = 0.5  ⇒  θ = 60°
+|A × B| = AB sinθ = 3 × 4 × sin60° = 12 × 0.866 = 10.39</p>
+<p class="ans">θ = 60°, |A×B| = 10.4 units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> For what value of p are the vectors 2î + pĵ + k̂ and 4î − 2ĵ + 2k̂ perpendicular?</p>
+<div class="sol">
+<p class="work">A·B = 0
+(2)(4) + (p)(−2) + (1)(2) = 0
+8 − 2p + 2 = 0  ⇒  2p = 10  ⇒  p = 5</p>
+<p class="ans">p = 5</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Find the projection of A = 2î + 3ĵ on B = î + ĵ.</p>
+<div class="sol">
+<p class="work">Component of A along B = A·B̂ = (A·B)/|B|
+A·B = 2 + 3 = 5;   |B| = √2
+projection = 5/√2 = 3.54 units</p>
+<p class="ans">3.54 units along B</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 2.5 — Vector (cross) product</h2>
+
+<div class="item">
+<p class="q"><b>Q20.</b> If A = 2î + ĵ and B = î + 3ĵ, find A × B and the area of the triangle formed by them.</p>
+<div class="sol">
+<p class="work">A × B = | î  ĵ  k̂ |
+        | 2  1  0 |
+        | 1  3  0 |
+      = î(1×0 − 0×3) − ĵ(2×0 − 0×1) + k̂(2×3 − 1×1)
+      = 0î − 0ĵ + 5k̂ = 5k̂
+
+Area of triangle = ½|A × B| = 2.5 square units
+Area of parallelogram = |A × B| = 5 square units</p>
+<p class="ans">A × B = 5k̂; triangle area 2.5 units², parallelogram area 5 units²</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> A force F = 2î + 3ĵ N acts at the point (1, 2) m. Find the torque about the origin.</p>
+<div class="sol">
+<p class="work">r = î + 2ĵ
+τ = r × F = | î  ĵ  k̂ |
+            | 1  2  0 |
+            | 2  3  0 |
+          = k̂(1×3 − 2×2) = (3 − 4)k̂ = −k̂ N m</p>
+<p class="ans">τ = −k̂ N m, i.e. 1 N m clockwise in the xy-plane</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> Show that î × ĵ = k̂, ĵ × k̂ = î, k̂ × î = ĵ, and that î × î = 0.</p>
+<div class="sol">
+<p>For unit vectors at right angles, |î × ĵ| = 1·1·sin90° = 1, and the direction is perpendicular to both, i.e. along k̂ by the right-hand rule. The cyclic order î → ĵ → k̂ reproduces the same rule; reversing the order reverses the sign (ĵ × î = −k̂).</p>
+<p>For î × î, sin0 = 0, so the product vanishes.</p>
+<p class="ans">Mutually perpendicular unit vectors in cyclic order give the next unit vector; a vector crossed with itself is the null vector.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Two vectors of magnitude 5 and 6 have a vector product of magnitude 15. Find the angle between them and the dot product.</p>
+<div class="sol">
+<p class="work">|A × B| = AB sinθ = 30 sinθ = 15 ⇒ sinθ = 0.5 ⇒ θ = 30° or 150°
+A·B = AB cosθ = 30 cos30° = 25.98  (if θ = 30°)
+    or 30 cos150° = −25.98          (if θ = 150°)</p>
+<p class="ans">θ = 30° or 150°; A·B = ±26.0 — the dot product distinguishes the two cases by its sign.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 2.6 — Equilibrium and applications</h2>
+
+<div class="item">
+<p class="q"><b>Q24.</b> State the condition for a body to be in equilibrium under three concurrent forces, and use it to find the force that balances 6 N and 8 N acting at 90°.</p>
+<div class="sol">
+<p>Three concurrent forces are in equilibrium when their vector sum is zero: the resultant of any two is equal and opposite to the third. (Equivalently, by Lami's theorem, P/sinα = Q/sinβ = R/sinγ.)</p>
+<p class="work">Resultant of 6 N and 8 N at 90° = √(36 + 64) = 10 N
+Balancing force = 10 N, opposite in direction to the resultant
+i.e. at 180° + tan⁻¹(8/6) = 180° + 53° = 233° from the 6 N force</p>
+<p class="ans">10 N acting along the line opposite the resultant (equilibrant)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> A body of weight 20 N hangs from two strings making 30° and 60° with the vertical. Find the tensions.</p>
+<div class="sol">
+<p class="work">Resolving horizontally: T₁ sin30° = T₂ sin60°
+  ⇒ T₁(0.5) = T₂(0.866)  ⇒ T₁ = 1.732 T₂
+Resolving vertically: T₁ cos30° + T₂ cos60° = 20
+  1.732T₂(0.866) + 0.5T₂ = 20
+  1.5T₂ + 0.5T₂ = 20  ⇒ T₂ = 10 N, T₁ = 17.32 N</p>
+<p class="ans">T₁ = 17.3 N (string at 30°) and T₂ = 10 N (string at 60°)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Can the magnitude of the resultant of two vectors be greater than the sum of their magnitudes?</p>
+<div class="sol"><p class="ans">No. R² = P² + Q² + 2PQcosθ is largest when cosθ = 1, giving R = P + Q. The magnitude of a sum can never exceed the sum of magnitudes (the triangle inequality).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> What is a unit vector and what is its use?</p>
+<div class="sol"><p class="ans">A unit vector has magnitude exactly 1 and is used to give a direction only: Â = A/|A|. Any vector can then be written A = |A|Â, separating magnitude from direction.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Why is the dot product a scalar while the cross product is a vector?</p>
+<div class="sol"><p class="ans">The dot product measures the product of magnitudes and the cosine of the angle between them — a pure number times a unit, so it has no direction (work = F·d). The cross product measures the product of magnitudes and the sine, and its direction is perpendicular to the plane of the two vectors by the right-hand rule (torque = r×F).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> What is the physical meaning of A·B = 0 and A × B = 0?</p>
+<div class="sol"><p class="ans">A·B = 0 means the vectors are perpendicular (cosθ = 0); A × B = 0 means they are parallel or antiparallel (sinθ = 0), including the case where one is the null vector.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Can three vectors of equal magnitude placed at 120° sum to zero? What is this result used for?</p>
+<div class="sol"><p class="ans">Yes. Each pair has resultant P, and the third vector cancels it: P + P cos120° + ... = 0. It is the standard result for three equal forces in equilibrium (e.g. a body pulled by three symmetric strings).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> State any two examples where resolution of vectors is essential.</p>
+<div class="sol"><p class="ans">(i) Projectile motion: the velocity is resolved into horizontal (uniform) and vertical (accelerated) parts. (ii) A body on an inclined plane: the weight is resolved into mg sinθ along the incline and mg cosθ normal to it.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why is displacement a vector while distance is a scalar?</p>
+<div class="sol"><p class="ans">Distance is the total path length, a pure magnitude. Displacement is the straight-line change of position from start to finish and needs a direction as well as a length; that is why a round trip has a non-zero distance but zero displacement.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Give the dimensions of a vector product and of the area of a parallelogram in vector form.</p>
+<div class="sol"><p class="ans">A vector product has the dimensions of the product of the two vectors: for r × F, [L][MLT⁻²] = [ML²T⁻²], the dimensions of torque (same as energy but a different kind of quantity). The area of a parallelogram is ½... — |A×B| has the dimensions of the product of the two vectors, e.g. [L²] for two lengths.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> What is the condition for a particle to be in equilibrium under several coplanar forces?</p>
+<div class="sol"><p class="ans">Both the vector sum and the total moment must vanish: ΣF = 0 (so ΣFx = 0 and ΣFy = 0) and Στ = 0 about any point. For concurrent forces the moment condition is automatic, so only ΣF = 0 is needed.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Two vectors have unequal magnitudes. Can their resultant have the same magnitude as one of them? Give an example.</p>
+<div class="sol"><p class="ans">Yes. 5 N and 5 N give 5 N at 120° (Q2). More generally R = P when Q² + 2PQcosθ = 0, i.e. cosθ = −Q/(2P), which is possible whenever Q ≤ 2P.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> What is a null vector? Give one situation in which it appears.</p>
+<div class="sol"><p class="ans">A null vector has zero magnitude and an undefined (or arbitrary) direction. It appears as the resultant of two equal and opposite vectors (a body in equilibrium) and as A × A.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Is the vector product commutative? Justify.</p>
+<div class="sol"><p class="ans">No. A × B = −(B × A), because reversing the order reverses the right-hand-rule direction while the magnitude AB sinθ is unchanged. It is anticommutative.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> What does the magnitude of the vector product represent geometrically?</p>
+<div class="sol"><p class="ans">|A × B| = AB sinθ is the area of the parallelogram whose adjacent sides are A and B; half of it is the area of the triangle formed by them.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why can components of a vector be treated independently?</p>
+<div class="sol"><p class="ans">Because mutually perpendicular directions do not interfere: an acceleration along x produces no change of the y-component of velocity. This independence is what lets a projectile's horizontal uniform motion and vertical acceleration be solved separately.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [5]</b> Derive the expression for the magnitude and direction of the resultant of two vectors P and Q inclined at an angle θ.</p>
+<div class="sol">
+<p>Place P along the x-axis. Resolving Q:</p>
+<p class="work">Rx = P + Q cosθ,   Ry = Q sinθ
+R = √(Rx² + Ry²) = √[P² + 2PQcosθ + Q²cos²θ + Q²sin²θ]
+  = √(P² + Q² + 2PQ cosθ)
+tanα = Ry/Rx = Q sinθ/(P + Q cosθ)</p>
+<p class="ans">R = √(P² + Q² + 2PQcosθ); α = tan⁻¹[Q sinθ/(P + Qcosθ)] measured from P. Special cases: θ = 0 → P + Q; θ = 90° → √(P²+Q²); θ = 180° → |P − Q|.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [6]</b> Prove that |A × B|² + (A·B)² = |A|²|B|².</p>
+<div class="sol">
+<p class="work">|A × B| = AB sinθ  ⇒  |A × B|² = A²B² sin²θ
+A·B = AB cosθ       ⇒  (A·B)² = A²B² cos²θ
+
+Adding:  A²B²(sin²θ + cos²θ) = A²B² = |A|²|B|²</p>
+<p>Both products depend on θ only through sinθ and cosθ, and these combine to 1.</p>
+<p class="ans">Proved — the identity shows why a cross product and dot product are "complementary" measures of the same pair of vectors.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> A boat crosses a 1 km wide river at 4 km h⁻¹ heading perpendicular to the current, which flows at 3 km h⁻¹. How long does it take, and how far downstream does it land?</p>
+<div class="sol">
+<p class="work">Crossing component = 4 km h⁻¹ (unchanged by the current)
+t = d/v = 1/4 h = 15 min
+Drift = (current)(t) = 3 × 0.25 = 0.75 km</p>
+<p>Resultant speed = √(4² + 3²) = 5 km h⁻¹, along a path 37° downstream of the perpendicular.</p>
+<p class="ans">15 min; 0.75 km downstream (resultant velocity 5 km h⁻¹ at 37° to the perpendicular)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> If A = 2î − 3ĵ + 4k̂ and B = î + 2ĵ − k̂, find A + B, A − B, A·B, and the angle between them.</p>
+<div class="sol">
+<p class="work">A + B = 3î − ĵ + 3k̂
+A − B = î − 5ĵ + 5k̂
+A·B = (2)(1) + (−3)(2) + (4)(−1) = 2 − 6 − 4 = −8
+|A| = √(4 + 9 + 16) = √29 = 5.39
+|B| = √(1 + 4 + 1)  = √6  = 2.45
+cosθ = −8/(5.39 × 2.45) = −8/13.2 = −0.606  ⇒  θ = 127°</p>
+<p class="ans">A+B = 3î−ĵ+3k̂; A−B = î−5ĵ+5k̂; A·B = −8; θ ≈ 127° (obtuse — the negative dot product signals an angle greater than 90°)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Parallelogram law</td><td>R = √(P²+Q²+2PQcosθ); tanα = Q sinθ/(P + Qcosθ)</td></tr>
+<tr><td>Limits</td><td>|P − Q| ≤ R ≤ P + Q</td></tr>
+<tr><td>Resolution</td><td>Rx = R cosθ, Ry = R sinθ, R = √(Rx²+Ry²), θ = tan⁻¹(Ry/Rx)</td></tr>
+<tr><td>Unit vector</td><td>Â = A/|A|, |Â| = 1</td></tr>
+<tr><td>Dot product</td><td>A·B = AB cosθ = AxBx + AyBy + AzBz; A·B = 0 ⇔ perpendicular</td></tr>
+<tr><td>Cross product</td><td>|A×B| = AB sinθ; direction by right-hand rule; A×B = −B×A</td></tr>
+<tr><td>Area</td><td>parallelogram = |A×B|; triangle = ½|A×B|</td></tr>
+<tr><td>Equilibrium</td><td>ΣF = 0 (ΣFx = ΣFy = 0); Lami: P/sinα = Q/sinβ = R/sinγ</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 2</h3>
+<div class="warn">
+<p><b>1. Forgetting the direction.</b> "R = 6.08 units" loses the second mark; "6.08 units at 25° to the 4-unit vector" earns it.</p>
+<p><b>2. Using cosθ when the formula needs 2PQcosθ.</b> The parallelogram law has the factor 2; the cosine rule for a triangle with included angle 180° − θ does not. Write the formula before substituting.</p>
+<p><b>3. Sign errors in components.</b> Always sketch the axes and write each component with its sign; the third-quadrant resultant of Q8 is a classic place to lose a sign.</p>
+<p><b>4. Crossing in the wrong order.</b> r × F and F × r differ by a minus sign; torque is r × F. State the point about which the moment is taken.</p>
+<p><b>5. Treating dot and cross product answers as interchangeable.</b> Work is F·d (scalar); torque is r×F (vector). A scalar answer to a torque question is marked wrong even if the magnitude is right.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Sketch → formula → components with signs → magnitude → direction. In a 4-mark question the sketch itself usually carries a mark.</div>
+
+<p class="note">Physics XI · Unit 2 Vectors · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

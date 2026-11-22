@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 23 DC Circuits: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 23 DC Circuits: worked solutions for Ohm's law and resistivity, drift velocity, series and parallel resistors, emf and internal resistance, Kirchhoff's laws, the Wheatstone bridge, meter bridge and potentiometer, and Joule heating, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 23</p>
+
+<h1>Unit 23 — DC Circuits</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 10 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">The longest electricity unit and the most heavily numerical. Ohm's law, the resistor rules, emf and internal resistance, Kirchhoff's laws and Joule heating account for nearly every mark; the Bridge, meter bridge and potentiometer supply the standard 5–6 mark derivation.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — state Ohm's law and its limitations; define resistivity; define emf and terminal voltage; state Kirchhoff's laws; what is drift velocity.</li>
+<li><b>4 marks</b> — resistivity or resistance numerical; internal-resistance numerical; equivalent resistance of a network; Joule heating and power.</li>
+<li><b>5–6 marks</b> — derive the balance condition of a Wheatstone bridge; explain the meter bridge or potentiometer experiment; derive I = nAev_d; solve a two-loop Kirchhoff problem.</li>
+</ul>
+<p>Rule that keeps losing students marks: for resistors, <b>series adds resistance and parallel divides</b> — the opposite of capacitors. And terminal voltage is <b>V = ε − Ir</b>, not ε, whenever current flows.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 23.1 — Ohm's law and resistance</li>
+<li>Exercise 23.2 — Resistivity and conductivity</li>
+<li>Exercise 23.3 — Drift velocity and current</li>
+<li>Exercise 23.4 — Resistors in series and parallel</li>
+<li>Exercise 23.5 — EMF, internal resistance and terminal voltage</li>
+<li>Exercise 23.6 — Kirchhoff's laws</li>
+<li>Exercise 23.7 — The Wheatstone bridge and meter bridge</li>
+<li>Exercise 23.8 — The potentiometer</li>
+<li>Exercise 23.9 — Heating effect and electrical power</li>
+<li>Exercise 23.10 — Current–voltage characteristics and the potential divider</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.1 — Ohm's law and resistance</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> State Ohm's law, give its mathematical form and state its limitations.</p>
+<div class="sol">
+<p><b>Ohm's law:</b> at constant temperature, the current through a conductor is directly proportional to the potential difference across its ends:</p>
+<p class="work">V ∝ I  ⇒  V = IR
+R = V/I is the resistance, unit ohm (Ω) = V A⁻¹</p>
+<p><b>Limitations:</b> it applies only to metallic conductors at constant temperature; it fails for semiconductors, diodes, thermistors, electrolytes and gases, and it fails for metals when the current is large enough to heat them (R then increases). It is not a universal law of nature but an empirical rule for ohmic conductors.</p>
+<p class="ans">V = IR at constant temperature; valid for ohmic metallic conductors only, with R constant.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Define resistance and state the factors on which it depends.</p>
+<div class="sol">
+<p>Resistance is the opposition a conductor offers to the flow of electric current, defined as the ratio of potential difference to current: R = V/I.</p>
+<p>For a uniform wire it depends on:</p>
+<p class="work">R = ρL/A
+  • length L — directly proportional
+  • area of cross-section A — inversely proportional
+  • the material, through its resistivity ρ
+  • temperature (for metals, R increases with T)</p>
+<p class="ans">R = ρL/A: longer wires resist more, thicker wires resist less, and the material sets ρ.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A wire of resistance 8 Ω is stretched to twice its length. What is its new resistance?</p>
+<div class="sol">
+<p class="work">Stretching keeps the volume constant: L A = constant
+If L doubles, A halves.
+
+R = ρL/A ∝ L/A ∝ L² (since A ∝ 1/L)
+R' = R × (2)² = 4R = 32 Ω</p>
+<p class="ans">32 Ω — stretching to twice the length quadruples the resistance, because the wire is also twice as thin.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.2 — Resistivity and conductivity</h2>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Define resistivity and conductivity, and give their units.</p>
+<div class="sol">
+<p>Resistivity ρ is the resistance of a conductor of unit length and unit cross-sectional area, numerically ρ = RA/L. It is a property of the material, independent of shape or size.</p>
+<p class="work">ρ = RA/L,  unit: ohm metre (Ω m)
+Conductivity σ = 1/ρ,  unit: Ω⁻¹ m⁻¹ = S m⁻¹ (siemens per metre)</p>
+<p>Order of magnitude: copper 1.7 × 10⁻⁸ Ω m, nichrome 1.1 × 10⁻⁶ Ω m, glass 10¹⁰–10¹⁴ Ω m. Metals have low resistivity because of their free electrons; insulators have very few.</p>
+<p class="ans">ρ = RA/L in Ω m (material property); σ = 1/ρ in S m⁻¹ — the reciprocal measure of how well a material conducts.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> A copper wire of length 2 m and cross-sectional area 1 × 10⁻⁶ m² has resistivity 1.7 × 10⁻⁸ Ω m. Find its resistance.</p>
+<div class="sol">
+<p class="work">R = ρL/A = (1.7 × 10⁻⁸ × 2)/(1 × 10⁻⁶)
+  = 3.4 × 10⁻⁸/10⁻⁶ = 3.4 × 10⁻² Ω</p>
+<p class="ans">R = 0.034 Ω — very low, which is why copper is used for connecting wires</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Why does the resistivity of a metal increase with temperature while that of a semiconductor decreases?</p>
+<div class="sol">
+<p>In a metal the number of free electrons is essentially fixed; raising the temperature increases the amplitude of lattice vibrations, so the electrons collide more frequently with the ions and the resistivity rises (approximately linearly at ordinary temperatures).</p>
+<p>In a semiconductor the carrier density is thermally generated: raising the temperature frees many more electron–hole pairs, and this increase in the number of carriers outweighs the extra scattering, so the resistivity falls sharply (roughly exponentially).</p>
+<p class="ans">Metals: fixed carrier number, more scattering ⇒ ρ rises. Semiconductors: exponentially more carriers ⇒ ρ falls.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.3 — Drift velocity and current</h2>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Derive I = nAev_d.</p>
+<div class="sol">
+<p class="work">Let a conductor of cross-section A contain n free electrons per unit volume,
+each with drift velocity v_d.
+
+In time t the electrons advance a distance v_d t, so all the electrons in the
+cylinder of volume A v_d t cross a given section in that time:
+  number crossing = n A v_d t
+  charge crossing   = n A v_d t × e
+
+Therefore:  I = charge/time = n A e v_d</p>
+<p>The drift velocity is the small average velocity superimposed on the random thermal motion; it is typically 10⁻⁴ m s⁻¹, yet the current appears almost instantly because the electric field propagates along the wire at nearly the speed of light.</p>
+<p class="ans">I = nAev_d, where n is the free-electron density, A the area, e the electronic charge and v_d the drift velocity.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> A copper wire of cross-section 1 × 10⁻⁶ m² carries 2 A. If n = 8.5 × 10²⁸ m⁻³, find the drift velocity.</p>
+<div class="sol">
+<p class="work">v_d = I/(nAe) = 2/(8.5 × 10²⁸ × 1 × 10⁻⁶ × 1.6 × 10⁻¹⁹)
+  = 2/(8.5 × 1.6 × 10³)
+  = 2/(1.36 × 10⁴)
+  = 1.47 × 10⁻⁴ m s⁻¹</p>
+<p class="ans">v_d ≈ 1.5 × 10⁻⁴ m s⁻¹ — about 0.15 mm per second, an astonishingly slow drift</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Why does a lamp light immediately when switched on, even though the drift velocity is only 10⁻⁴ m s⁻¹?</p>
+<div class="sol">
+<p>Because when the switch closes, the electric field is established throughout the circuit almost at the speed of light (the field propagates along the wire at a speed set by the surrounding medium, close to c). All the free electrons in the wire therefore start to drift almost simultaneously, so the filament current begins at once. The slow quantity is the drift velocity of each electron; the fast quantity is the propagation of the field that sets them moving.</p>
+<p class="ans">The field reaches every electron at nearly light speed; the electrons themselves drift slowly but everywhere at once.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Explain the relation between current density J and drift velocity.</p>
+<div class="sol">
+<p class="work">J = I/A = nev_d,  unit A m⁻²</p>
+<p>The current density is the current per unit area, and it depends only on the local carrier density, charge and drift velocity. For a fixed current, a thinner wire has a larger current density and therefore a larger drift velocity. Ohm's law in microscopic form is J = σE = E/ρ.</p>
+<p class="ans">J = I/A = nev_d; a given current in a thinner wire means a larger J and a faster drift.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.4 — Resistors in series and parallel</h2>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Derive the rules for resistors in series and in parallel.</p>
+<div class="sol">
+<p><b>Series:</b> the same current flows through each resistor, and the voltages add:</p>
+<p class="work">V = V₁ + V₂ + V₃ = IR₁ + IR₂ + IR₃
+⇒ R = R₁ + R₂ + R₃</p>
+<p><b>Parallel:</b> each resistor has the same voltage, and the currents add:</p>
+<p class="work">I = I₁ + I₂ + I₃ = V/R₁ + V/R₂ + V/R₃
+⇒ 1/R = 1/R₁ + 1/R₂ + 1/R₃</p>
+<p>The equivalent resistance in series is always larger than the largest resistor; in parallel it is always smaller than the smallest.</p>
+<p class="ans">Series: R = ΣR_i, same current. Parallel: 1/R = Σ(1/R_i), same voltage.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Two resistors of 6 Ω and 3 Ω are connected (a) in series and (b) in parallel. Find the equivalent resistance in each case.</p>
+<div class="sol">
+<p class="work">(a) Series: R = 6 + 3 = 9 Ω
+(b) Parallel: 1/R = 1/6 + 1/3 = (1 + 2)/6 = 3/6  ⇒  R = 2 Ω</p>
+<p class="ans">Series 9 Ω; parallel 2 Ω — the parallel result is smaller than the smaller resistor, as it must be.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> A 12 V battery of negligible internal resistance is connected to a 4 Ω resistor in series with the parallel combination of 6 Ω and 3 Ω. Find the total current and the current in each parallel branch.</p>
+<div class="sol">
+<p class="work">Parallel section: 1/R_p = 1/6 + 1/3 = 1/2  ⇒  R_p = 2 Ω
+Total resistance: R = 4 + 2 = 6 Ω
+Total current:    I = 12/6 = 2 A
+
+Voltage across the parallel section: V_p = I R_p = 2 × 2 = 4 V
+Current in 6 Ω: 4/6 = 0.67 A
+Current in 3 Ω: 4/3 = 1.33 A
+Check: 0.67 + 1.33 = 2 A ✓</p>
+<p class="ans">I_total = 2 A; 0.67 A in the 6 Ω branch and 1.33 A in the 3 Ω branch (current divides inversely with resistance).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Why does a parallel connection reduce the total resistance?</p>
+<div class="sol">
+<p>Because it provides additional paths for the current. Each added branch carries its own current at the same voltage, so the total current for a given voltage increases, which by R = V/I means the equivalent resistance falls. In effect the parallel combination has a larger total cross-sectional area for conduction, and R ∝ 1/A.</p>
+<p class="ans">More parallel paths mean more current at the same voltage, so the equivalent resistance drops below the smallest branch.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Domestic appliances are connected in parallel. Why?</p>
+<div class="sol">
+<p>Because in parallel each appliance receives the full supply voltage independently of the others, so a 220 V lamp works correctly whether or not the heater is on. Each can be switched on or off without affecting the others, and a fault in one does not break the circuit for the rest. Each appliance also draws the current it needs, so a high-power device does not reduce the voltage available to the others.</p>
+<p class="ans">Parallel connection gives each appliance the full supply voltage and independent operation; series would drop the voltage and switch everything together.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.5 — EMF, internal resistance and terminal voltage</h2>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Define emf and terminal potential difference, and derive V = ε − Ir.</p>
+<div class="sol">
+<p><b>EMF (ε)</b> is the work done by the source per unit charge in driving charge around the complete circuit — the total energy supplied per coulomb. <b>Terminal voltage (V)</b> is the potential difference actually available across the external circuit.</p>
+<p class="work">A cell of emf ε and internal resistance r drives current I through external resistance R.
+Total resistance = R + r, so
+  I = ε/(R + r)
+
+Terminal voltage = IR = ε − Ir
+(when I = 0, V = ε; when the cell is short-circuited, V = 0)</p>
+<p>The difference ε − V = Ir is the "lost volts" dropped inside the cell.</p>
+<p class="ans">ε = I(R + r); V = ε − Ir = IR. The terminal voltage falls below the emf as the current increases.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> A cell of emf 12 V and internal resistance 1 Ω is connected to a 5 Ω resistor. Find the current, terminal voltage and power wasted inside the cell.</p>
+<div class="sol">
+<p class="work">I = ε/(R + r) = 12/(5 + 1) = 2 A
+V = ε − Ir = 12 − 2(1) = 10 V
+P_internal = I²r = 4 × 1 = 4 W
+P_external = I²R = 4 × 5 = 20 W
+Total power = 24 W = εI = 12 × 2 ✓</p>
+<p class="ans">I = 2 A; V = 10 V; 4 W is dissipated inside the cell and 20 W in the external resistor.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> When a cell is connected to a 4 Ω resistor the terminal voltage is 8 V; with a 9 Ω resistor it is 9 V. Find the emf and internal resistance.</p>
+<div class="sol">
+<p class="work">V = ε − Ir and I = V/R:
+
+First case: I₁ = 8/4 = 2 A
+  8 = ε − 2r   … (1)
+Second case: I₂ = 9/9 = 1 A
+  9 = ε − r    … (2)
+
+Subtracting (1) from (2):  1 = r  ⇒  r = 1 Ω
+From (2):  ε = 9 + 1 = 10 V</p>
+<p class="ans">ε = 10 V, r = 1 Ω</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Why does a voltmeter read less than the emf of a cell?</p>
+<div class="sol">
+<p>Because a real voltmeter has a finite resistance, so when connected across the cell a small current flows through it. That current also passes through the cell's internal resistance, causing a lost volt Ir inside the cell. The voltmeter therefore reads V = ε − Ir, slightly less than ε. Only an ideal voltmeter of infinite resistance would draw no current and read the emf exactly.</p>
+<p class="ans">The voltmeter draws a small current, so Ir is dropped internally and the reading is ε − Ir.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> What is the condition for maximum power transfer from a cell to an external resistor?</p>
+<div class="sol">
+<p class="work">P_external = I²R = ε²R/(R + r)²
+Differentiating with respect to R and setting dP/dR = 0 gives
+  R = r
+
+The maximum power is then P = ε²/(4r).</p>
+<p>Half the total power is then dissipated inside the cell, so this condition maximises power delivered rather than efficiency (which is only 50% at that point).</p>
+<p class="ans">Maximum power is transferred when the external resistance equals the internal resistance, R = r, with P_max = ε²/4r at 50% efficiency.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.6 — Kirchhoff's laws</h2>
+
+<div class="item">
+<p class="q"><b>Q21.</b> State Kirchhoff's two laws and explain their physical basis.</p>
+<div class="sol">
+<p><b>Junction (current) law:</b> the algebraic sum of the currents meeting at a junction is zero — the total current entering equals the total leaving:</p>
+<p class="work">ΣI = 0  (in = out)</p>
+<p>It follows from the conservation of charge: charge cannot accumulate at a junction in a steady state.</p>
+<p><b>Loop (voltage) law:</b> around any closed loop in a circuit, the algebraic sum of the potential differences is zero:</p>
+<p class="work">Σε = ΣIR  (or Σ(ε − IR) = 0)</p>
+<p>It follows from the conservation of energy: a charge returning to its starting point must have the same energy, so the emfs supplied equal the potential drops around the loop.</p>
+<p class="ans">ΣI = 0 at a junction (charge conservation); Σε = ΣIR around a loop (energy conservation).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> Two cells of emf 6 V and 4 V with internal resistances 1 Ω and 0.5 Ω are connected in parallel across a 3 Ω resistor. Find the current through the 3 Ω resistor.</p>
+<div class="sol">
+<p class="work">Apply the loop rule to each cell–resistor loop and the junction rule.
+
+Let I₁ flow from the 6 V cell, I₂ from the 4 V cell, both into the junction,
+and I = I₁ + I₂ through the 3 Ω resistor. Let V be the potential at the junction.
+
+For each cell:  V = ε − Ir
+  6 − 1 I₁ = V   ⇒  I₁ = (6 − V)/1
+  4 − 0.5 I₂ = V ⇒  I₂ = (4 − V)/0.5 = 8 − 2V
+  V = 3I = 3(I₁ + I₂)
+
+Substituting:
+  V = 3[(6 − V) + (8 − 2V)] = 3(14 − 3V) = 42 − 9V
+  10V = 42  ⇒  V = 4.2 V
+  I = V/3 = 1.4 A</p>
+<p>Check: I₁ = 6 − 4.2 = 1.8 A; I₂ = 8 − 8.4 = −0.4 A (this cell is being charged, current driven backwards); I = 1.8 − 0.4 = 1.4 A ✓</p>
+<p class="ans">I = 1.4 A through the 3 Ω resistor; the 6 V cell supplies 1.8 A, the 4 V cell is charged with 0.4 A, and 1.4 A flows in the resistor.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Three resistors of 2 Ω, 3 Ω and 6 Ω are in parallel across a 6 V supply. Verify the junction rule.</p>
+<div class="sol">
+<p class="work">Each branch: I = V/R
+  I₁ = 6/2 = 3 A
+  I₂ = 6/3 = 2 A
+  I₃ = 6/6 = 1 A
+Total entering = 6 A
+
+Equivalent resistance: 1/R = 1/2 + 1/3 + 1/6 = (3 + 2 + 1)/6 = 1 ⇒ R = 1 Ω
+Total current from the supply: I = 6/1 = 6 A ✓</p>
+<p class="ans">3 A + 2 A + 1 A = 6 A, exactly the current delivered by the source — the junction rule holds.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.7 — The Wheatstone bridge and meter bridge</h2>
+
+<div class="item">
+<p class="q"><b>Q24.</b> Draw a Wheatstone bridge and derive its balance condition.</p>
+<div class="sol">
+<p>Four resistances P, Q, R and S form a quadrilateral ABCD; a cell is connected across A and C and a galvanometer across B and D.</p>
+<p class="work">At balance the galvanometer reads zero, so no current flows through BD and
+B and D are at the same potential.
+
+Then the current I₁ through P also flows through Q, and I₂ through R also through S:
+  V_AB = V_AD  ⇒  I₁P = I₂R
+  V_BC = V_DC  ⇒  I₁Q = I₂S
+
+Dividing the first by the second:
+  P/Q = R/S   ⇔   P/Q = R/S   (balance condition)
+
+Equivalently, the bridge is balanced when P/R = Q/S,
+i.e. the ratio of the two resistances in one branch equals that in the other.</p>
+<p>The balance condition is independent of the cell's emf and of the galvanometer's resistance — which is why the bridge is such a precise instrument.</p>
+<p class="ans">P/Q = R/S at balance; with no galvanometer current, the potential drops across the two arms are in the same ratio.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> In a meter bridge, a 6 Ω resistor in the left gap balances against an unknown in the right gap at 40 cm from the left. Find the unknown resistance.</p>
+<div class="sol">
+<p class="work">Balance condition:  R/X = l/(100 − l)
+  6/X = 40/60
+  X = 6 × 60/40 = 9 Ω</p>
+<p class="ans">X = 9 Ω. Note that the balance length is measured from the same end as the known resistor; swapping the two gaps would give 4 Ω instead, a classic error.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> Why is a meter bridge less accurate near the ends of the wire, and how is this avoided?</p>
+<div class="sol">
+<p>Because the resistance of a wire is proportional to its length, so a small error in reading the balance point produces a larger relative error when l is very small or very near 100 cm. The sensitivity also falls because the bridge approaches the condition where the galvanometer deflection changes very slowly with position.</p>
+<p>It is avoided by choosing resistances that bring the balance point near the middle of the wire (40–60 cm), either by selecting a suitable known resistance or by interchanging the gaps.</p>
+<p class="ans">Relative error in l/(100 − l) grows near the ends; keep the balance point near the middle by choosing the known resistance appropriately.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> What are the end corrections in a meter bridge and why are they needed?</p>
+<div class="sol">
+<p>The balance length is not measured from the exact ends of the wire: the brass strips and terminals at each end have some resistance and add to the effective wire length. The zero mark of the scale therefore does not coincide with the electrical end of the wire. An end correction e (usually a few millimetres) is added to or subtracted from the measured lengths so that the true ratio is (l + e)/(100 − l − e).</p>
+<p>It is determined by repeating the experiment with the two known gaps interchanged and solving the two balance equations simultaneously.</p>
+<p class="ans">The strips and terminals add small extra lengths; the correction e accounts for them and is found by repeating with the gaps interchanged.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.8 — The potentiometer</h2>
+
+<div class="item">
+<p class="q"><b>Q28.</b> Describe the principle of a potentiometer and explain how it compares two emfs.</p>
+<div class="sol">
+<p>A potentiometer consists of a uniform resistance wire stretched along a scale, with a driver cell maintaining a steady current through it. The potential difference across any length l of the wire is proportional to l:</p>
+<p class="work">V ∝ l   ⇒   V = kl   (k = potential gradient, V m⁻¹)</p>
+<p>To compare two cells, each is connected in turn between one end of the wire and a sliding jockey, with a galvanometer in the circuit. The jockey is moved until the galvanometer shows no deflection — the cell's emf then exactly balances the potential drop across that length:</p>
+<p class="work">ε₁ = k l₁  and  ε₂ = k l₂
+⇒ ε₁/ε₂ = l₁/l₂</p>
+<p>No current is drawn from the cell at balance, so the reading is the true emf, not the terminal voltage — the key advantage over a voltmeter.</p>
+<p class="ans">ε ∝ balancing length; ε₁/ε₂ = l₁/l₂, measured at zero galvanometer current so that the emfs are compared exactly.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> How can a potentiometer be used to measure the internal resistance of a cell?</p>
+<div class="sol">
+<p class="work">1. With the cell on open circuit (no external resistor), find the balancing length l₁.
+   Then  ε = k l₁.
+2. Connect a known resistance R across the cell and find the new balancing length l₂.
+   At balance the terminal voltage is  V = k l₂.
+3. Since V = IR = εR/(R + r):
+   k l₂ = k l₁ R/(R + r)
+   ⇒ r = R(l₁ − l₂)/l₂</p>
+<p>Because nothing is drawn from the cell at balance, V is measured while current flows through R under normal conditions, so the internal resistance is obtained accurately.</p>
+<p class="ans">r = R(l₁ − l₂)/l₂, where l₁ balances the emf and l₂ the terminal voltage with R connected.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> Why is a potentiometer preferred to a voltmeter for measuring emf?</p>
+<div class="sol">
+<p>Because at balance the potentiometer draws <em>no</em> current from the cell under test, so there is no Ir drop inside the cell and the measured value is the true emf. A voltmeter always draws some current, so it reads the terminal voltage V = ε − Ir, which is always less than the emf. The potentiometer is also a null method, so its accuracy depends on the galvanometer's sensitivity rather than on its calibration.</p>
+<p class="ans">It is a null method that draws no current, so it measures the true emf; a voltmeter always draws current and under-reads by Ir.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.9 — Heating effect and electrical power</h2>
+
+<div class="item">
+<p class="q"><b>Q31.</b> Derive the expression for Joule heating in a resistor and state the power formulas.</p>
+<div class="sol">
+<p class="work">Work done by the source in driving charge Q through a potential difference V:
+  W = QV = (It)V = VIt
+All of this appears as heat in a resistor, so
+  H = VIt = I²Rt = V²t/R
+
+Power:  P = H/t = VI = I²R = V²/R</p>
+<p>These are three equivalent forms linked by Ohm's law; for heating elements I²R is used (current is fixed), for lamps V²/R (voltage is fixed).</p>
+<p class="ans">H = I²Rt = VIt = V²t/R; P = VI = I²R = V²/R.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> An electric heater of 1000 W runs for 2 hours. Find the energy consumed in joules and in kWh.</p>
+<div class="sol">
+<p class="work">E = Pt = 1000 × (2 × 3600) = 1000 × 7200 = 7.2 × 10⁶ J
+In kWh: 1 kW × 2 h = 2 kWh</p>
+<p class="ans">7.2 × 10⁶ J = 2 kWh (two "units" of electricity)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> Two resistors of 4 Ω and 6 Ω are connected in series across 20 V. Find the power dissipated in each. What if they are in parallel?</p>
+<div class="sol">
+<p class="work">Series: I = 20/10 = 2 A
+  P₄ = I²R = 4 × 4 = 16 W
+  P₆ = 4 × 6 = 24 W
+  Total = 40 W (= VI = 20 × 2 ✓)
+
+Parallel: each has the full 20 V
+  P₄ = V²/R = 400/4 = 100 W
+  P₆ = 400/6 = 66.7 W
+  Total ≈ 167 W</p>
+<p class="ans">Series: 16 W and 24 W (40 W total). Parallel: 100 W and 66.7 W (167 W total) — the parallel connection draws much more power because each resistor sees the full voltage.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> Why is a fuse connected in series with an appliance, and why does it have a low melting point?</p>
+<div class="sol">
+<p>Because in series the whole appliance current passes through the fuse. If the current exceeds the rated value (short circuit or overload), the heat generated I²R in the fuse wire raises it above its melting point, and it melts, breaking the circuit before the wiring or the appliance is damaged. A low melting point (and a suitable resistivity and thin gauge) ensures it melts quickly at the rated current without overheating in normal use.</p>
+<p class="ans">The series connection ensures the full current passes through it; the low melting point makes it fail safely on overload, breaking the circuit.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 23.10 — Current–voltage characteristics and the potential divider</h2>
+
+<div class="item">
+<p class="q"><b>Q35.</b> Draw and explain the I–V characteristics of an ohmic conductor, a filament lamp and a semiconductor diode.</p>
+<div class="sol">
+<table>
+<tr><th>Device</th><th>I–V graph</th><th>Reason</th></tr>
+<tr><td>Ohmic resistor (metal at constant T)</td><td>Straight line through the origin; slope = 1/R</td><td>R is constant, so I ∝ V</td></tr>
+<tr><td>Filament lamp</td><td>Curve bending over toward the V-axis (slope decreases as V grows)</td><td>The filament heats up, lattice scattering increases and R rises with temperature</td></tr>
+<tr><td>Semiconductor diode</td><td>Almost zero current in reverse bias; in forward bias negligible until about 0.7 V (silicon), then rising steeply</td><td>The junction barrier must be overcome; beyond it the resistance collapses</td></tr>
+<tr><td>Thermistor (NTC)</td><td>Current rises faster than linearly as V increases</td><td>Self-heating frees more carriers, so R falls</td></tr>
+<tr><td>Electrolyte</td><td>Non-ohmic; may show a back emf</td><td>Ionic conduction and polarisation at the electrodes</td></tr>
+</table>
+<p>A device is <b>ohmic</b> if its I–V graph is a straight line through the origin (R independent of V), and <b>non-ohmic</b> otherwise. The resistance at any point is R = V/I (static), while the slope dV/dI gives the dynamic resistance.</p>
+<p class="ans">Ohmic: straight line through the origin. Filament lamp: bends because R rises with temperature. Diode: a threshold at ~0.7 V and near-zero reverse current. Non-ohmic behaviour means R depends on V or on temperature.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q36.</b> What is a potential divider? Derive the output voltage of two resistors in series.</p>
+<div class="sol">
+<p>A potential divider is a series arrangement of two resistors across a supply, used to obtain a fraction of the supply voltage across one of them.</p>
+<p class="work">The same current flows through both:  I = V_in/(R₁ + R₂)
+Output across R₂:  V_out = I R₂ = V_in R₂/(R₁ + R₂)
+
+Ratio form:  V_out/V_in = R₂/(R₁ + R₂)</p>
+<p>The output is proportional to the resistance across which it is taken. A variable resistor (potentiometer) used this way gives a continuously adjustable output from 0 to V_in; a thermistor or light-dependent resistor in one arm converts a temperature or light change into a voltage change, which is the basis of most sensor circuits.</p>
+<p class="ans">V_out = V_in R₂/(R₁ + R₂): the supply voltage divides in the ratio of the resistances, the larger resistor taking the larger share.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q37.</b> A 12 V supply is connected across a 4 kΩ and a 2 kΩ resistor in series. Find the voltage across each.</p>
+<div class="sol">
+<p class="work">I = 12/(4000 + 2000) = 2.0 × 10⁻³ A
+V_4k = I R = 2 × 10⁻³ × 4000 = 8.0 V
+V_2k = 2 × 10⁻³ × 2000 = 4.0 V
+Check: 8 + 4 = 12 V ✓</p>
+<p class="ans">8 V across the 4 kΩ resistor and 4 V across the 2 kΩ — the voltage divides in the ratio 2 : 1, matching the resistances.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> State Ohm's law.</p>
+<div class="sol"><p class="ans">At constant temperature the current through a conductor is directly proportional to the potential difference across it: V = IR, where R is the resistance in ohms. It holds for ohmic metallic conductors.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Define resistivity and give its unit.</p>
+<div class="sol"><p class="ans">ρ = RA/L, the resistance of unit length and unit area of the material; unit Ω m. It is a property of the material alone, independent of the conductor's dimensions.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Define emf and terminal voltage.</p>
+<div class="sol"><p class="ans">EMF is the work done per unit charge by the source in driving charge round the whole circuit. Terminal voltage is the potential difference across the external circuit, V = ε − Ir, which is less than the emf whenever current flows.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> State Kirchhoff's two laws.</p>
+<div class="sol"><p class="ans">Junction law: ΣI = 0 at a junction (charge conservation). Loop law: Σε = ΣIR around any closed loop (energy conservation).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Define drift velocity.</p>
+<div class="sol"><p class="ans">The small average velocity with which free electrons move along a conductor under the influence of an applied field, superimposed on their random thermal motion. It is given by v_d = I/(nAe) and is typically of order 10⁻⁴ m s⁻¹.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Write the balance condition of a Wheatstone bridge.</p>
+<div class="sol"><p class="ans">P/Q = R/S, i.e. the ratio of the resistances in one arm equals that in the other. At balance no current flows through the galvanometer and the condition is independent of the cell's emf.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why is a potentiometer better than a voltmeter for measuring emf?</p>
+<div class="sol"><p class="ans">Because at the balance point it draws no current from the cell, so there is no internal Ir drop and the reading is the true emf. A voltmeter always draws current and therefore reads ε − Ir.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Write the three forms of electrical power.</p>
+<div class="sol"><p class="ans">P = VI = I²R = V²/R. The first is general; I²R suits a fixed current (series), V²/R a fixed voltage (parallel).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Why are domestic appliances connected in parallel?</p>
+<div class="sol"><p class="ans">So that each receives the full supply voltage, can be switched independently, and a fault in one does not interrupt the others. Each draws the current appropriate to its own resistance.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Why does the resistance of a metal increase with temperature?</p>
+<div class="sol"><p class="ans">Because raising the temperature increases the amplitude of lattice vibrations, so the free electrons collide more frequently with the ions and are impeded more. The carrier density is essentially unchanged, so the resistivity rises.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why is an ammeter connected in series and a voltmeter in parallel?</p>
+<div class="sol"><p class="ans">An ammeter must carry the whole current being measured, so it is in series and has very low resistance to avoid altering the circuit. A voltmeter must experience the potential difference being measured, so it is in parallel and has very high resistance to draw negligible current.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> What is the potential gradient of a potentiometer and why should it be small?</p>
+<div class="sol"><p class="ans">The potential drop per unit length of the wire, k = V/l. A small gradient (long wire, small current) means a large length corresponds to a given emf, so the balance point can be located precisely and the measurement is more accurate.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Why does the terminal voltage of a cell fall when a heavy current is drawn?</p>
+<div class="sol"><p class="ans">Because V = ε − Ir, and the lost volts Ir grow in proportion to the current. Car headlights dimming when the starter motor runs is the familiar example: the large starter current causes a big Ir drop inside the battery.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> What is the difference between resistance and resistivity?</p>
+<div class="sol"><p class="ans">Resistance (Ω) is a property of a particular conductor and depends on its length and area as well as its material. Resistivity (Ω m) is a property of the material alone, defined by ρ = RA/L, and does not depend on the size or shape.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Why is copper used for connecting wires but nichrome for heating elements?</p>
+<div class="sol"><p class="ans">Copper has very low resistivity (1.7 × 10⁻⁸ Ω m), so it carries current with minimal loss and heating. Nichrome has high resistivity (about 1.1 × 10⁻⁶ Ω m) and resists oxidation at high temperature, so it produces the required heat without melting or corroding.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> State the condition for maximum power transfer and comment on the efficiency.</p>
+<div class="sol"><p class="ans">The external resistance should equal the internal resistance, R = r, giving P_max = ε²/4r. The efficiency is then only 50%, since half the power is dissipated inside the source — maximum power is not the same as maximum efficiency.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Derive the balance condition of a Wheatstone bridge and explain why the result does not depend on the emf of the cell.</p>
+<div class="sol">
+<p>Derivation as in Q24: with the galvanometer showing no deflection, B and D are at the same potential, so the current through P equals that through Q and the current through R equals that through S. Equating the potential drops gives I₁P = I₂R and I₁Q = I₂S, and dividing yields</p>
+<p class="work">P/Q = R/S</p>
+<p>The cell's emf does not appear because at balance the same current flows through both arms of each branch; the emf merely sets the overall current, and it cancels in the ratio. Likewise the galvanometer's resistance does not appear, since no current flows through it. This is what makes the bridge a null method of high accuracy: only the ratio of the resistances matters.</p>
+<p class="ans">P/Q = R/S from the equality of the two potential drops; the emf cancels because only ratios of currents at balance matter.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> A cell of emf 6 V and internal resistance 2 Ω is connected to a 4 Ω resistor in series with a parallel pair of 6 Ω and 12 Ω. Find the total current, the terminal voltage and the current in each parallel branch.</p>
+<div class="sol">
+<p class="work">Parallel pair: 1/R_p = 1/6 + 1/12 = 3/12  ⇒  R_p = 4 Ω
+Total external resistance: R = 4 + 4 = 8 Ω
+Total current: I = ε/(R + r) = 6/(8 + 2) = 0.6 A
+
+Terminal voltage: V = ε − Ir = 6 − 0.6(2) = 4.8 V
+Voltage across the parallel pair: V_p = I R_p = 0.6 × 4 = 2.4 V
+  I₆ = 2.4/6 = 0.4 A
+  I₁₂ = 2.4/12 = 0.2 A
+Check: 0.4 + 0.2 = 0.6 A ✓
+Check the series 4 Ω: drop = 0.6 × 4 = 2.4 V; total external 2.4 + 2.4 = 4.8 V ✓</p>
+<p class="ans">I = 0.6 A; V = 4.8 V; the parallel branch carries 0.4 A through 6 Ω and 0.2 A through 12 Ω.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Explain, with the necessary equations, how a potentiometer measures the internal resistance of a cell.</p>
+<div class="sol">
+<p>The method is set out in Q29. In full:</p>
+<p class="work">Potential gradient k = V/l (constant, since the wire carries a steady current)
+Open circuit:      ε = k l₁
+With resistance R: V = k l₂
+Since V = εR/(R + r):
+  k l₂ = k l₁ R/(R + r)
+  l₂(R + r) = l₁R
+  l₂R + l₂r = l₁R
+  r = R(l₁ − l₂)/l₂</p>
+<p>The key experimental point is that at balance no current is drawn from the cell under test, so the emf (open circuit) and the terminal voltage (with R connected) are both measured without disturbing the circuit. Repeating with different R and averaging improves the result.</p>
+<p class="ans">ε = kl₁ and V = kl₂, so r = R(l₁ − l₂)/l₂; the null method makes both readings true open-circuit and on-load values.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> A 60 W lamp and a 100 W lamp, both rated at 220 V, are connected in series across 220 V. Which glows more brightly, and why?</p>
+<div class="sol">
+<p class="work">From P = V²/R, the resistances are
+  R₆₀ = 220²/60 = 806.7 Ω
+  R₁₀₀ = 220²/100 = 484 Ω
+
+In series the current is the same:
+  I = 220/(806.7 + 484) = 220/1290.7 = 0.1705 A
+
+Power actually dissipated:
+  P₆₀ = I²R = (0.1705)² × 806.7 = 23.5 W
+  P₁₀₀ = (0.1705)² × 484 = 14.1 W</p>
+<p>The 60 W lamp glows more brightly in series, because it has the larger resistance and in a series circuit the power goes as I²R. Each lamp runs well below its rating, so both are dim compared with normal operation.</p>
+<p class="ans">The 60 W lamp (23.5 W) is brighter than the 100 W lamp (14.1 W) in series, since the higher-resistance lamp dissipates more when the current is common.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Ohm's law</td><td>V = IR; R = V/I (Ω)</td></tr>
+<tr><td>Resistivity</td><td>R = ρL/A; ρ = RA/L (Ω m); σ = 1/ρ</td></tr>
+<tr><td>Current</td><td>I = nAev_d; J = I/A = nev_d</td></tr>
+<tr><td>Series resistors</td><td>R = R₁ + R₂ + …; same I</td></tr>
+<tr><td>Parallel resistors</td><td>1/R = 1/R₁ + 1/R₂ + …; same V</td></tr>
+<tr><td>EMF and terminal voltage</td><td>I = ε/(R + r); V = ε − Ir</td></tr>
+<tr><td>Kirchhoff</td><td>ΣI = 0; Σε = ΣIR</td></tr>
+<tr><td>Wheatstone bridge</td><td>P/Q = R/S at balance</td></tr>
+<tr><td>Meter bridge</td><td>R/X = l/(100 − l)</td></tr>
+<tr><td>Potentiometer</td><td>ε₁/ε₂ = l₁/l₂; r = R(l₁ − l₂)/l₂</td></tr>
+<tr><td>Power and heat</td><td>P = VI = I²R = V²/R; H = I²Rt</td></tr>
+<tr><td>Max power transfer</td><td>R = r; P_max = ε²/4r</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 23</h3>
+<div class="warn">
+<p><b>1. Using the capacitor rules for resistors.</b> Resistors in series ADD; in parallel their reciprocals add. This is the reverse of Unit 22 and the most common slip.</p>
+<p><b>2. Reporting the emf as the terminal voltage.</b> Always use V = ε − Ir when current flows. If a cell is on open circuit, only then does V = ε.</p>
+<p><b>3. Ignoring internal resistance.</b> In a circuit with a real cell, the total resistance is R + r, not R. Omitting r overstates the current.</p>
+<p><b>4. Reading the meter-bridge length from the wrong end.</b> R/X = l/(100 − l) requires l measured from the end adjacent to the known resistance R. Swapping gives the reciprocal answer.</p>
+<p><b>5. Forgetting to square the current in I²R.</b> Power is quadratic in current; doubling the current quadruples the heating, which is the whole reason a fuse melts on overload.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Label the circuit with currents before writing any equation; mark the assumed direction; apply the junction law first and the loop law second. For Wheatstone and potentiometer answers, state the null condition ("no current through the galvanometer, so the two points are at the same potential") in words — it carries marks.</div>
+
+<p class="note">Physics XI · Unit 23 DC Circuits · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

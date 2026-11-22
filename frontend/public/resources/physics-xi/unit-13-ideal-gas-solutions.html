@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 13 Ideal Gas: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 13 Ideal Gas: worked solutions for the ideal gas equation, the kinetic-molecular model and the derivation of pressure, average translational kinetic energy, Boltzmann constant, rms speed, degrees of freedom and the heat capacities of gases and solids, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 13</p>
+
+<h1>Unit 13 — Ideal Gas</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 8 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">This is the longest unit of the Heat section and the one that carries the paper's only full kinetic-theory derivation. The kinematic derivation, the rms speed and the Cp − Cv relation are all worked out in full below.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — state the assumptions of kinetic theory; define rms speed; what is Boltzmann's constant; why does Cp exceed Cv; state Dulong and Petit's law.</li>
+<li><b>4 marks</b> — ideal gas equation numerical; rms speed of a gas at a given temperature; average translational KE; degree-of-freedom counting.</li>
+<li><b>5–6 marks</b> — derive P = (1/3)ρ⟨c²⟩ from the kinetic model; derive Cp − Cv = R; relate absolute temperature to molecular kinetic energy.</li>
+</ul>
+<p>Rule that keeps losing students marks: T must be in kelvin, and molar mass in <em>kg mol⁻¹</em> (32 g mol⁻¹ = 0.032 kg mol⁻¹) whenever R = 8.31 J mol⁻¹ K⁻¹ is used in the rms formula.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 13.1 — The ideal gas equation</li>
+<li>Exercise 13.2 — Molecular properties and the kinetic model</li>
+<li>Exercise 13.3 — Derivation of the pressure of a gas</li>
+<li>Exercise 13.4 — Average translational kinetic energy and temperature</li>
+<li>Exercise 13.5 — Boltzmann constant and rms speed</li>
+<li>Exercise 13.6 — Degrees of freedom and heat capacities</li>
+<li>Exercise 13.7 — Heat capacities of solids</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 13.1 — The ideal gas equation</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Derive the ideal gas equation pV = nRT from the combined gas laws, and state its two equivalent forms.</p>
+<div class="sol">
+<p class="work">Boyle:   pV = constant at constant T
+Charles: V/T = constant at constant p
+Gay-Lussac: p/T = constant at constant V
+
+Combining: pV/T = constant for a fixed mass of gas.
+Evaluating the constant for one mole at standard conditions gives R = 8.31 J mol⁻¹ K⁻¹:
+  pV = nRT   (n = number of moles)
+With N molecules and N_A = 6.02 × 10²³ mol⁻¹:
+  nR = (N/N_A)R = Nk,  k = R/N_A = 1.38 × 10⁻²³ J K⁻¹
+⇒ pV = NkT</p>
+<p class="ans">pV = nRT = NkT; R = 8.31 J mol⁻¹ K⁻¹ (universal), k = 1.38 × 10⁻²³ J K⁻¹ (Boltzmann constant).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Calculate the volume occupied by 2 moles of an ideal gas at 27 °C and 1.0 × 10⁵ Pa.</p>
+<div class="sol">
+<p class="work">T = 27 + 273 = 300 K
+V = nRT/p = (2 × 8.31 × 300)/(1.0 × 10⁵)
+  = 4986/10⁵ = 4.99 × 10⁻² m³</p>
+<p class="ans">V ≈ 5.0 × 10⁻² m³ = 50 litres (22.4 L per mole at STP, and more at 27 °C)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A gas at 27 °C and 1 atm is heated at constant volume to 327 °C. Find the new pressure.</p>
+<div class="sol">
+<p class="work">p₁/T₁ = p₂/T₂   (constant V)
+T₁ = 300 K, T₂ = 600 K
+p₂ = p₁T₂/T₁ = 1 × 600/300 = 2 atm</p>
+<p class="ans">2 atm — doubling the absolute temperature doubles the pressure at constant volume</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> State Avogadro's law and Dalton's law of partial pressures.</p>
+<div class="sol">
+<p><b>Avogadro's law:</b> equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules; at STP, one mole occupies 22.4 L and contains 6.02 × 10²³ molecules.</p>
+<p><b>Dalton's law:</b> the total pressure exerted by a mixture of non-reacting gases is the sum of the partial pressures each would exert if it alone occupied the whole volume: p = p₁ + p₂ + …</p>
+<p class="ans">Equal volumes ⇒ equal molecules (Avogadro); total pressure = sum of partial pressures for a mixture of ideal gases (Dalton).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Under what conditions does a real gas deviate from ideal behaviour?</p>
+<div class="sol">
+<p>The ideal gas model assumes (i) negligible molecular volume and (ii) no intermolecular forces. These fail at <b>high pressure</b> (molecules are pushed close together so their own volume and mutual attraction matter) and at <b>low temperature</b> (slow molecules are captured by attractive forces and may condense). At low pressure and high temperature the deviations become negligible and real gases approach ideal behaviour.</p>
+<p class="ans">High pressure and low temperature — that is, near condensation — break the two ideal-gas assumptions; the gas obeys van der Waals' equation instead.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 13.2 — Molecular properties and the kinetic model</h2>
+
+<div class="item">
+<p class="q"><b>Q6.</b> State the assumptions of the kinetic-molecular theory of gases.</p>
+<div class="sol">
+<ol class="step">
+<li>A gas consists of a very large number of identical molecules, each of negligible volume compared with the volume of the container.</li>
+<li>The molecules move randomly in all directions with a spread of speeds; their average behaviour is what we measure.</li>
+<li>There are no intermolecular forces except during collisions; between collisions the molecules move in straight lines.</li>
+<li>Collisions with each other and with the walls are perfectly elastic, so kinetic energy is conserved.</li>
+<li>The duration of a collision is negligible compared with the time between collisions.</li>
+<li>The molecules obey Newton's laws of motion.</li>
+</ol>
+<p class="ans">Tiny molecules, random motion, no forces between collisions, elastic impacts, short collision times, Newtonian mechanics — these six assumptions underlie every derivation in the unit.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> What is meant by molecular properties of matter? Name three measurable consequences of molecular motion.</p>
+<div class="sol">
+<p>Matter is made of molecules in ceaseless random motion; their kinetic energy, collisions and intermolecular forces explain the macroscopic properties of a substance.</p>
+<ul class="tight">
+<li><b>Pressure:</b> molecular impacts on a surface exert a steady force per unit area.</li>
+<li><b>Temperature:</b> proportional to the average translational kinetic energy of the molecules.</li>
+<li><b>Diffusion:</b> the random migration of molecules mixes gases and dissolves solutes.</li>
+</ul>
+<p>Brownian motion (jitter of smoke particles) is the direct visual evidence for molecular motion, first analysed by Einstein in 1905.</p>
+<p class="ans">Macroscopic behaviour follows from molecular motion; pressure, temperature and diffusion are the three directly measurable consequences, with Brownian motion as the visual proof.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Explain why a gas exerts pressure on the walls of its container, using the kinetic model.</p>
+<div class="sol">
+<p>Each molecule that strikes the wall rebounds with its momentum reversed, so the wall must supply an impulse and, by Newton's third law, the molecule exerts an equal and opposite impulse on the wall. Over an enormous number of impacts per second, the many tiny impulses combine into a steady force, and the force per unit area is the pressure. The wall's area being fixed, the pressure rises with (i) the number of molecules per unit volume and (ii) the mean square molecular speed:</p>
+<p class="work">p = (1/3)(N/V)m⟨c²⟩ = (1/3)ρ⟨c²⟩</p>
+<p class="ans">Continuous elastic impacts deliver momentum to the wall at a steady rate; the momentum delivered per second per unit area is the pressure.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 13.3 — Derivation of the pressure of a gas</h2>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Derive p = (1/3)ρ⟨c²⟩ for an ideal gas from the kinetic model.</p>
+<div class="sol">
+<p>Consider a cubical box of side L containing N molecules, each of mass m. Take one molecule moving with velocity component u along the x-axis.</p>
+<p class="work">Momentum change per impact on the x-face = 2mu
+Time between impacts on that same face = 2L/u
+Rate of change of momentum  = 2mu/(2L/u) = mu²/L
+
+Summing over all N molecules with components u₁, u₂, …, u_N:
+Force on the face = (m/L)(u₁² + u₂² + … + u_N²) = (mN/L)⟨u²⟩
+Pressure = force/area = (mN/L³)⟨u²⟩ = (mN/V)⟨u²⟩
+
+No direction is preferred, so ⟨u²⟩ = ⟨v²⟩ = ⟨w²⟩ and
+⟨c²⟩ = ⟨u²⟩ + ⟨v²⟩ + ⟨w²⟩ = 3⟨u²⟩  ⇒  ⟨u²⟩ = ⟨c²⟩/3
+
+Therefore  p = (1/3)(mN/V)⟨c²⟩ = (1/3)(Nm/V)⟨c²⟩ = (1/3)ρ⟨c²⟩</p>
+<p class="ans">p = (1/3)ρ⟨c²⟩ = (1/3)(N/V)m⟨c²⟩ — the fundamental result of kinetic theory.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Using p = (1/3)ρ⟨c²⟩ and pV = NkT, show that ½m⟨c²⟩ = (3/2)kT.</p>
+<div class="sol">
+<p class="work">p = (1/3)(Nm/V)⟨c²⟩  and  p = NkT/V
+Equating:  (1/3)Nm⟨c²⟩ = NkT
+⇒ m⟨c²⟩ = 3kT
+⇒ ½m⟨c²⟩ = (3/2)kT</p>
+<p>The average translational kinetic energy of one molecule depends only on the absolute temperature and not at all on the mass or identity of the molecule — all gases have the same molecular kinetic energy at the same temperature.</p>
+<p class="ans">½m⟨c²⟩ = (3/2)kT; temperature is a direct measure of the average translational kinetic energy.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Find the average translational kinetic energy of a gas molecule at 300 K, and its total translational kinetic energy in one mole.</p>
+<div class="sol">
+<p class="work">per molecule:  ½m⟨c²⟩ = (3/2)kT = 1.5 × 1.38 × 10⁻²³ × 300 = 6.21 × 10⁻²¹ J
+per mole:      (3/2)RT = 1.5 × 8.31 × 300 = 3.74 × 10³ J</p>
+<p class="ans">6.2 × 10⁻²¹ J per molecule; 3.74 kJ per mole. Note this is the translational part only — a diatomic gas stores more in rotation.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 13.4 — Average translational kinetic energy and temperature</h2>
+
+<div class="item">
+<p class="q"><b>Q12.</b> What is absolute zero on the kinetic scale? Why is it the lowest attainable temperature?</p>
+<div class="sol">
+<p>From ½m⟨c²⟩ = (3/2)kT, the absolute temperature is proportional to the mean translational kinetic energy. Absolute zero (0 K = −273.15 °C) is the temperature at which that translational kinetic energy would be minimum. Since kinetic energy cannot be negative, T cannot fall below zero, so 0 K is a genuine lower bound.</p>
+<p class="ans">0 K is the state of minimum molecular translational energy; negative kinetic energy is impossible, so no lower temperature exists (and the third law forbids reaching it exactly).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> Two gases, hydrogen and oxygen, are at the same temperature. Compare their average molecular kinetic energies and their rms speeds.</p>
+<div class="sol">
+<p class="work">Same T ⇒ same average translational KE:
+  ½m_H⟨c_H²⟩ = ½m_O⟨c_O²⟩ = (3/2)kT
+
+rms speed:  c_rms = √(3kT/m) ⇒ c ∝ 1/√m
+c_H/c_O = √(m_O/m_H) = √(32/2) = √16 = 4</p>
+<p class="ans">Equal average kinetic energies; hydrogen molecules move 4 times faster than oxygen molecules at the same temperature, because they are 16 times lighter.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> At what temperature does the rms speed of a nitrogen molecule equal 500 m s⁻¹? (M = 28 g mol⁻¹)</p>
+<div class="sol">
+<p class="work">c_rms = √(3RT/M)
+500² = 3 × 8.31 × T/0.028
+250 000 = 890.4 T ⇒ T = 281 K</p>
+<p class="ans">T ≈ 281 K (≈ 8 °C) — remarkably close to room temperature, which is why nitrogen molecules at room temperature move at about the speed of sound.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 13.5 — Boltzmann constant and rms speed</h2>
+
+<div class="item">
+<p class="q"><b>Q15.</b> Define Boltzmann's constant, give its value and its relation to R and N_A.</p>
+<div class="sol">
+<p>Boltzmann's constant is the gas constant per molecule: k = R/N_A = 8.31/(6.02 × 10²³) = 1.38 × 10⁻²³ J K⁻¹. In the expression ½m⟨c²⟩ = (3/2)kT it plays the role of R for a single molecule, and it is the constant that connects temperature with energy at the microscopic level.</p>
+<p class="ans">k = 1.38 × 10⁻²³ J K⁻¹ = R/N_A; it is the energy per molecule per kelvin.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> Write the three molecular speeds (average, rms and most probable) and state their order.</p>
+<div class="sol">
+<p class="work">c_rms = √(3RT/M) = √(3kT/m)
+c_avg = √(8RT/πM)
+c_mp  = √(2RT/M)
+
+Order:  c_mp &lt; c_avg &lt; c_rms   (ratio 1 : 1.128 : 1.225)</p>
+<p>The distribution of speeds (Maxwell–Boltzmann) has a long tail of fast molecules, so the root-mean-square speed is the largest of the three.</p>
+<p class="ans">c_rms = √(3RT/M), c_avg = √(8RT/πM), c_mp = √(2RT/M); c_mp &lt; c_avg &lt; c_rms.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> Find the rms speed of oxygen molecules at 300 K. (M = 32 g mol⁻¹)</p>
+<div class="sol">
+<p class="work">c_rms = √(3RT/M) = √(3 × 8.31 × 300/0.032)
+  = √(7479/0.032) = √233 700 = 483 m s⁻¹</p>
+<p class="ans">≈ 4.8 × 10² m s⁻¹ (about 1700 km h⁻¹ — comparable to the speed of sound in air)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> Why does the rms speed of a gas increase with temperature but not depend on pressure?</p>
+<div class="sol">
+<p>From c_rms = √(3RT/M), the speed depends only on T and M. Raising the temperature increases the average kinetic energy, so the speed rises as √T. Pressure is not in the formula because compressing a gas at constant temperature raises its pressure (more impacts per second) without changing the speed of individual molecules.</p>
+<p class="ans">c_rms ∝ √T and ∝ 1/√M only; pressure affects the collision rate with the walls, not the molecular speeds.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 13.6 — Degrees of freedom and heat capacities</h2>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Explain degrees of freedom and state the number for monatomic, diatomic and polyatomic gases.</p>
+<div class="sol">
+<p>A degree of freedom is an independent mode in which a molecule can store energy — a way it can move or rotate.</p>
+<table>
+<tr><th>Gas type</th><th>Degrees of freedom (f)</th><th>Basis</th></tr>
+<tr><td>Monatomic (He, Ne, Ar)</td><td>3</td><td>Three translational directions only</td></tr>
+<tr><td>Diatomic (O₂, N₂, H₂) at ordinary T</td><td>5</td><td>3 translational + 2 rotational (rotation about the bond axis stores nothing)</td></tr>
+<tr><td>Polyatomic (CO₂, NH₃)</td><td>6</td><td>3 translational + 3 rotational (plus vibrational modes at high T)</td></tr>
+</table>
+<p>By the law of equipartition, each degree of freedom carries ½kT per molecule (½RT per mole) of energy in thermal equilibrium.</p>
+<p class="ans">f = 3 (monatomic), 5 (diatomic), 6 (polyatomic); each active degree holds ½kT per molecule.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Derive Cp − Cv = R and hence the expressions for the molar heat capacities.</p>
+<div class="sol">
+<p class="work">Cv = heat needed at constant volume = ΔU/ΔT = (f/2)R  (all energy goes into internal energy)
+
+Cp: at constant pressure the gas also does work pΔV = RΔT per mole:
+  Cp = Cv + R = (f/2)R + R = R(f/2 + 1)
+
+⇒ Cp − Cv = R,  and  γ = Cp/Cv = (f + 2)/f
+
+Monatomic (f = 3): Cv = 1.5R, Cp = 2.5R, γ = 5/3 = 1.67
+Diatomic  (f = 5): Cv = 2.5R, Cp = 3.5R, γ = 7/5 = 1.40
+Polyatomic (f = 6): Cv = 3R,  Cp = 4R,  γ = 4/3 = 1.33</p>
+<p class="ans">Cp − Cv = R (Mayer's relation); γ = (f+2)/f = 1.67, 1.40, 1.33 for monatomic, diatomic and polyatomic gases.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> Why is Cp always greater than Cv for a gas?</p>
+<div class="sol">
+<p>At constant volume all the heat supplied raises the internal energy (temperature) only. At constant pressure the gas expands as it is heated, doing external work pΔV on its surroundings. The same temperature rise therefore needs an extra amount of heat equal to that work, which for one mole is R. Hence Cp = Cv + R.</p>
+<p class="ans">At constant pressure part of the heat becomes expansion work pΔV, so more heat is needed for the same ΔT: Cp = Cv + R.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> What is the internal energy of 2 moles of a monatomic ideal gas at 300 K?</p>
+<div class="sol">
+<p class="work">U = (f/2)nRT = (3/2)(2)(8.31)(300) = 7479 J</p>
+<p class="ans">U ≈ 7.5 × 10³ J — for an ideal gas the internal energy depends only on T, not on volume or pressure.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> A gas has γ = 1.40. Identify its atomicity and find Cv and Cp.</p>
+<div class="sol">
+<p class="work">γ = Cp/Cv = 1.40 = 7/5  ⇒ f = 5 (diatomic)
+Cv = (f/2)R = 2.5 × 8.31 = 20.8 J mol⁻¹ K⁻¹
+Cp = γCv = 1.40 × 20.8 = 29.1 J mol⁻¹ K⁻¹  (= 3.5R ✓)</p>
+<p class="ans">Diatomic; Cv ≈ 20.8, Cp ≈ 29.1 J mol⁻¹ K⁻¹</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 13.7 — Heat capacities of solids</h2>
+
+<div class="item">
+<p class="q"><b>Q24.</b> State Dulong and Petit's law for solids and explain it with the equipartition theorem.</p>
+<div class="sol">
+<p><b>Law:</b> the molar heat capacity of most simple crystalline solids is approximately the same at high temperature, about 3R ≈ 25 J mol⁻¹ K⁻¹ (6 cal mol⁻¹ K⁻¹).</p>
+<p>Each atom in a solid can vibrate in three independent directions. For a vibrating atom, each direction has both kinetic and potential energy, contributing kT (not ½kT); with three directions this gives 3kT per atom, i.e. 3R per mole. Since Cv = dU/dT, Cv ≈ 3R.</p>
+<p class="ans">C ≈ 3R ≈ 25 J mol⁻¹ K⁻¹: three vibrational directions × kT each = 3kT per atom. The law fails at low temperature, where the vibrational modes are frozen out (Einstein/Debye theory).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> Why do solids have only one molar heat capacity while gases have two?</p>
+<div class="sol">
+<p>A gas can be heated at constant volume (no expansion work) or at constant pressure (expanding while doing work), giving two different values Cv and Cp. A solid is held by its own rigidity: its volume changes only very slightly on heating (γ ≈ 10⁻⁵ K⁻¹), so the expansion work is negligible and Cv ≈ Cp. Effectively there is only one measurable heat capacity, and Dulong and Petit's 3R applies to it.</p>
+<p class="ans">The expansion work of a solid is negligible, so Cp ≈ Cv and a single value is quoted; a gas does significant pΔV work, so Cp − Cv = R.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> State the ideal gas equation and explain the symbols.</p>
+<div class="sol"><p class="ans">pV = nRT, where p is pressure, V volume, n the number of moles, R = 8.31 J mol⁻¹ K⁻¹ the universal gas constant and T the absolute temperature. In molecular form pV = NkT, with N the number of molecules and k = R/N_A.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Define rms speed of a gas molecule.</p>
+<div class="sol"><p class="ans">The square root of the mean of the squares of the molecular speeds: c_rms = √[(c₁² + c₂² + … + c_N²)/N] = √(3RT/M) = √(3kT/m). It is used rather than the average speed because kinetic energy depends on c².</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Why is temperature proportional to average molecular kinetic energy?</p>
+<div class="sol"><p class="ans">Because the kinetic model gives ½m⟨c²⟩ = (3/2)kT: the pressure a gas exerts depends on the molecular speeds, and equating the kinetic expression to pV = NkT shows that the mean translational kinetic energy is set by T alone. Temperature is therefore a direct measure of molecular agitation.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> What is meant by the mean free path?</p>
+<div class="sol"><p class="ans">The average distance a gas molecule travels between successive collisions with other molecules. It is inversely proportional to the number density and the collision cross-section, and at ordinary pressures it is of order 10⁻⁷ m — thousands of molecular diameters.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Why do different gases have the same average molecular kinetic energy at the same temperature but different rms speeds?</p>
+<div class="sol"><p class="ans">Because the kinetic energy ½m⟨c²⟩ = (3/2)kT depends only on T, so at equal temperatures all molecules have equal mean kinetic energy. But c_rms = √(3kT/m) depends on the molecular mass, so lighter molecules must move faster to carry the same energy.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> State Mayer's relation.</p>
+<div class="sol"><p class="ans">Cp − Cv = R for one mole of an ideal gas. It follows because the extra heat at constant pressure supplies the expansion work pΔV = RΔT in addition to raising the internal energy.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why does a monatomic gas have γ = 1.67 while a diatomic gas has γ = 1.40?</p>
+<div class="sol"><p class="ans">Because γ = (f + 2)/f, and f = 3 for a monatomic gas (translation only) against f = 5 for a diatomic gas (translation plus two rotations). The extra rotational degrees of freedom absorb energy without doing work, lowering the ratio Cp/Cv.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Why is the internal energy of an ideal gas independent of its volume?</p>
+<div class="sol"><p class="ans">Because ideal gas molecules have no intermolecular forces, so there is no potential energy term depending on separation. The internal energy is purely kinetic and depends only on T: U = (f/2)nRT.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Give two pieces of evidence for the kinetic theory of gases.</p>
+<div class="sol"><p class="ans">(i) Brownian motion: smoke or pollen grains jitter as a result of unequal molecular impacts. (ii) The measured ratio of specific heats of monatomic gases is close to the predicted 1.67, and the observed gas pressure matches p = (1/3)ρ⟨c²⟩.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> What happens to the rms speed of a gas if its absolute temperature is quadrupled?</p>
+<div class="sol"><p class="ans">c_rms ∝ √T, so quadrupling T doubles the rms speed. The average kinetic energy, however, quadruples, since it is proportional to T rather than √T.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why does a gas fill its container completely?</p>
+<div class="sol"><p class="ans">Because the molecules have negligible intermolecular attraction and move in straight lines between random collisions, so they travel until they strike a wall. Only gravity (very weakly) or attractive forces would confine them, and for an ideal gas neither is significant.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Define the degree of freedom and state the law of equipartition of energy.</p>
+<div class="sol"><p class="ans">A degree of freedom is an independent mode of storing energy (a way a molecule can translate or rotate). The equipartition law states that in thermal equilibrium each active degree of freedom carries an average energy of ½kT per molecule (½RT per mole).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> What is the physical significance of Boltzmann's constant?</p>
+<div class="sol"><p class="ans">It is the gas constant per molecule, k = R/N_A = 1.38 × 10⁻²³ J K⁻¹, and it is the conversion factor between temperature and molecular energy: each degree of freedom carries ½kT. It appears in every microscopic thermal expression, from kinetic energy to entropy.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why is an ideal gas assumed to have no intermolecular forces?</p>
+<div class="sol"><p class="ans">Because at low pressure and moderate temperature the molecules are so far apart that attractive forces are negligible and potential energy can be ignored. This makes the internal energy purely kinetic and the gas law pV = nRT exact, which is what makes the model tractable and accurate for real gases near ambient conditions.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Why is the specific heat of a gas at constant volume independent of the amount of gas but its heat capacity is not?</p>
+<div class="sol"><p class="ans">Cv is a molar (or specific) quantity — the value per mole (or per kg) — so it is a property of the gas itself. The heat capacity of a particular sample is nCv, which depends on how many moles are present. Compare specific heat capacity with heat capacity in calorimetry.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Derive p = (1/3)ρ⟨c²⟩ and deduce pV = (1/3)Nm⟨c²⟩, then use it to show that the kinetic energy of translation per mole is (3/2)RT.</p>
+<div class="sol">
+<p>See Q9 for the derivation of p = (1/3)(Nm/V)⟨c²⟩, obtained by summing the momentum delivered to one face by all N molecules in a cubical box.</p>
+<p class="work">Multiplying by V:  pV = (1/3)Nm⟨c²⟩ = (2/3)N × ½m⟨c²⟩ = (2/3)E_trans
+Measured gas law:    pV = nRT = (2/3)E_trans
+⇒ E_trans = (3/2)nRT     (per mole: 3/2 RT; per molecule: 3/2 kT)</p>
+<p class="ans">p = (1/3)ρ⟨c²⟩ ⇒ pV = (2/3)E_trans; comparing with pV = nRT gives E_trans = (3/2)nRT, so average translational KE per molecule is (3/2)kT.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> 0.05 m³ of a gas at 300 K and 1.0 × 10⁵ Pa is compressed adiabatically to 0.02 m³. Find the final pressure and the work done if γ = 1.4.</p>
+<div class="sol">
+<p class="work">Adiabatic: p₁V₁^γ = p₂V₂^γ
+p₂ = p₁(V₁/V₂)^1.4 = 1.0 × 10⁵ × (0.05/0.02)^1.4
+   = 1.0 × 10⁵ × (2.5)^1.4
+(2.5)^1.4 = e^(1.4 ln 2.5) = e^(1.4 × 0.916) = e^1.283 = 3.61
+p₂ = 3.61 × 10⁵ Pa
+
+Work done on the gas:
+W = (p₂V₂ − p₁V₁)/(γ − 1)
+  = (3.61 × 10⁵ × 0.02 − 1.0 × 10⁵ × 0.05)/0.4
+  = (7220 − 5000)/0.4 = 2220/0.4 = 5550 J</p>
+<p class="ans">p₂ ≈ 3.6 × 10⁵ Pa; about 5.6 kJ of work is done on the gas, and its temperature rises accordingly.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Show that the average translational kinetic energy of a molecule of any ideal gas at 27 °C is the same, and calculate it. Why does a mole of hydrogen contain the same translational energy as a mole of oxygen at that temperature?</p>
+<div class="sol">
+<p class="work">½m⟨c²⟩ = (3/2)kT = 1.5(1.38 × 10⁻²³)(300) = 6.21 × 10⁻²¹ J
+per mole: (3/2)RT = 1.5(8.31)(300) = 3740 J</p>
+<p>The expression contains only k and T — the mass m cancels when ⟨c²⟩ = 3kT/m is substituted. So every gas has the same mean translational energy per molecule (and per mole) at the same temperature, even though the lighter molecules move faster.</p>
+<p class="ans">6.2 × 10⁻²¹ J per molecule (3.74 kJ per mole) for every gas at 300 K; the mass affects only the speed, not the energy.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> A cylinder contains 2 g of hydrogen at 27 °C. Find the number of molecules, the total translational kinetic energy and the rms speed. (M = 2 g mol⁻¹)</p>
+<div class="sol">
+<p class="work">n = 2/2 = 1 mol ⇒ N = 6.02 × 10²³ molecules
+E_trans = (3/2)nRT = 1.5 × 1 × 8.31 × 300 = 3.74 × 10³ J
+c_rms = √(3RT/M) = √(3 × 8.31 × 300/0.002)
+      = √(7479/0.002) = √3.74 × 10⁶ = 1934 m s⁻¹</p>
+<p class="ans">N = 6.02 × 10²³; E = 3.7 kJ; c_rms ≈ 1.9 × 10³ m s⁻¹ (about 4 times that of oxygen at the same temperature, as √(32/2) predicts)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [5]</b> Explain why the measured value of γ for a diatomic gas falls from 1.40 towards 1.30 at high temperature.</p>
+<div class="sol">
+<p>At high temperature the vibrational modes of the molecule become thermally excited. Vibration adds two degrees of freedom (one kinetic and one potential), so f rises from 5 towards 7. Then</p>
+<p class="work">γ = (f + 2)/f:  f = 5 → 1.40;  f = 7 → 9/7 = 1.29</p>
+<p>The measured value therefore decreases towards about 1.3. At low temperature the rotations may also freeze out, driving γ towards 1.67 as only translation remains. The temperature dependence of γ is one of the clearest experimental proofs of quantised molecular energy levels.</p>
+<p class="ans">Vibrational modes activate at high T, increasing f and lowering γ = (f+2)/f from 1.40 towards 1.29; the effect is direct evidence of quantisation.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Gas equation</td><td>pV = nRT = NkT; R = 8.31, k = 1.38 × 10⁻²³</td></tr>
+<tr><td>Kinetic pressure</td><td>p = (1/3)ρ⟨c²⟩ = (1/3)(Nm/V)⟨c²⟩</td></tr>
+<tr><td>Kinetic energy</td><td>½m⟨c²⟩ = (3/2)kT; E_trans = (3/2)nRT</td></tr>
+<tr><td>rms speed</td><td>c_rms = √(3RT/M) = √(3kT/m); c_mp &lt; c_avg &lt; c_rms</td></tr>
+<tr><td>Heat capacities</td><td>Cv = (f/2)R; Cp = Cv + R; γ = (f+2)/f</td></tr>
+<tr><td>Degrees of freedom</td><td>f = 3 (monatomic), 5 (diatomic), 6 (polyatomic)</td></tr>
+<tr><td>γ values</td><td>5/3 = 1.67; 7/5 = 1.40; 4/3 = 1.33</td></tr>
+<tr><td>Solids</td><td>Dulong–Petit: C ≈ 3R ≈ 25 J mol⁻¹ K⁻¹</td></tr>
+<tr><td>Gas laws</td><td>p₁V₁/T₁ = p₂V₂/T₂; adiabatic pV^γ = const</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 13</h3>
+<div class="warn">
+<p><b>1. Molar mass in grams.</b> c_rms = √(3RT/M) needs M in kg mol⁻¹. Using 32 instead of 0.032 makes the speed 31.6 times too small.</p>
+<p><b>2. Celsius temperatures.</b> The kinetic relations use absolute temperature; 27 °C must become 300 K, and the gas laws also require T in kelvin.</p>
+<p><b>3. Mixing Cv and Cp.</b> Cv = (f/2)R and Cp = Cv + R. Using Cv where Cp is required (or assigning the rotational energy to Cp alone) breaks Mayer's relation.</p>
+<p><b>4. Saying the rms speed depends on pressure.</b> It depends on T and M only; pressure affects collision frequency, not molecular speed.</p>
+<p><b>5. Forgetting γ = Cp/Cv is a ratio of molar quantities.</b> Specific (per kg) heat capacities give the same γ, since the mass factor cancels — but C_p − C_v = R holds for <em>molar</em> capacities only; per kg the difference is R/M.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> For derivations, draw the cubical box and label u, v, w; state "no direction is preferred" before writing ⟨u²⟩ = ⟨c²⟩/3. For numericals, convert T to K and M to kg mol⁻¹ in the first line.</div>
+
+<p class="note">Physics XI · Unit 13 Ideal Gas · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

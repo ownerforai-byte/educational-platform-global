@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 22 Capacitor: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 22 Capacitor: worked solutions for capacitance and the parallel-plate capacitor, the effect of a dielectric, series and parallel combinations, energy stored in a capacitor and the energy lost when capacitors are connected, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 22</p>
+
+<h1>Unit 22 — Capacitor</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 5 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Three formulas — C = ε₀A/d, the series/parallel rules and U = ½CV² — carry the whole unit. The subtle mark comes from the dielectric questions: what stays constant depends on whether the battery is still connected.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define capacitance and give its unit; what is a dielectric; why does inserting a dielectric increase capacitance; state the energy stored in a capacitor.</li>
+<li><b>4 marks</b> — capacitance of a parallel-plate capacitor; series and parallel combinations; energy stored; effect of a dielectric with the battery connected or disconnected.</li>
+<li><b>5–6 marks</b> — derive C = ε₀A/d; derive the expression for the energy stored; explain the effect of a dielectric in detail and account for the energy lost when two charged capacitors are connected.</li>
+</ul>
+<p>Rule that keeps losing students marks: <b>series and parallel are the opposite way round from resistors</b>. Capacitors in parallel add (C = C₁ + C₂); in series their reciprocals add. Getting this backwards inverts almost every combination problem.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 22.1 — Capacitance and the capacitor</li>
+<li>Exercise 22.2 — The parallel-plate capacitor</li>
+<li>Exercise 22.3 — Dielectrics</li>
+<li>Exercise 22.4 — Capacitors in series and parallel</li>
+<li>Exercise 22.5 — Energy stored in a capacitor</li>
+<li>Exercise 22.6 — Energy lost when capacitors are connected</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 22.1 — Capacitance and the capacitor</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Define capacitance and state its unit. On what does it depend?</p>
+<div class="sol">
+<p>The capacitance of a conductor is the ratio of the charge on it to its potential:</p>
+<p class="work">C = Q/V
+Unit: farad (F) = coulomb per volt (C V⁻¹)
+1 F = 1 C V⁻¹;  practical units: 1 µF = 10⁻⁶ F, 1 pF = 10⁻¹² F</p>
+<p>For a parallel-plate capacitor, C depends only on geometry and the medium between the plates: the area of the plates, their separation and the dielectric. It does <em>not</em> depend on the charge or the voltage — those simply scale together so that Q/V stays constant.</p>
+<p class="ans">C = Q/V, in farads; fixed by plate area, separation and the medium, independent of Q and V.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> What is a capacitor? Describe its construction and one use.</p>
+<div class="sol">
+<p>A capacitor is a device that stores electric charge and hence electrical energy. It consists of two conductors (plates) separated by an insulator (the dielectric), often rolled or stacked to give a large area in a small volume.</p>
+<p>When a potential difference V is applied, the plates acquire charges +Q and −Q; the charge is stored on the facing surfaces and the field between them holds the energy. Uses: smoothing the output of a rectifier, tuning a radio circuit, flash lamps in cameras, storing energy in defibrillators, and touch screens (which sense a change of capacitance).</p>
+<p class="ans">Two conductors separated by a dielectric, storing charge ±Q and energy when a voltage is applied; used for filtering, tuning, flash and energy storage.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A capacitor of 4 µF is charged to 100 V. Find the charge stored.</p>
+<div class="sol">
+<p class="work">Q = CV = 4 × 10⁻⁶ × 100 = 4.0 × 10⁻⁴ C</p>
+<p class="ans">Q = 4.0 × 10⁻⁴ C = 400 µC (i.e. +400 µC on one plate, −400 µC on the other)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Why does a capacitor store charge on its plates rather than in the dielectric?</p>
+<div class="sol">
+<p>The charge resides on the conducting plates, where free electrons can accumulate. The dielectric cannot conduct, so no charge passes through it; it is polarised instead, which reduces the field between the plates. The energy of a charged capacitor is stored in the <em>electric field in the space between the plates</em>, including inside the dielectric, not on the plates themselves.</p>
+<p class="ans">Charge is on the plates (the only conductors); energy is stored in the field in the gap, with the dielectric merely polarised.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 22.2 — The parallel-plate capacitor</h2>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Derive C = ε₀A/d for a parallel-plate capacitor in air.</p>
+<div class="sol">
+<p class="work">Between two large plates carrying ±Q with surface charge density σ = Q/A:
+  E = σ/ε₀ = Q/(ε₀A)   (uniform, from E = σ/ε₀ for a parallel-plate field)
+
+The potential difference between the plates (separated by d) is
+  V = Ed = Qd/(ε₀A)
+
+By definition:
+  C = Q/V = Q/[Qd/(ε₀A)] = ε₀A/d</p>
+<p>With a dielectric of constant K filling the gap, the field is reduced by K, so the capacitance increases by the same factor: C = Kε₀A/d = εA/d.</p>
+<p class="ans">C = ε₀A/d in air, C = Kε₀A/d with a dielectric; capacitance grows with area and dielectric constant and falls with separation.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> A parallel-plate capacitor has plates of area 0.02 m² separated by 2 mm of air. Find its capacitance.</p>
+<div class="sol">
+<p class="work">C = ε₀A/d = (8.85 × 10⁻¹² × 0.02)/(2 × 10⁻³)
+  = (1.77 × 10⁻¹³)/(2 × 10⁻³)
+  = 8.85 × 10⁻¹¹ F</p>
+<p class="ans">C ≈ 8.9 × 10⁻¹¹ F = 89 pF — small, because air has ε_r = 1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> How does the capacitance change if (a) the plate area is doubled, (b) the separation is halved, (c) a dielectric of K = 5 fills the gap?</p>
+<div class="sol">
+<p class="work">C = Kε₀A/d
+(a) A → 2A:  C doubles
+(b) d → d/2: C doubles
+(c) K = 5:   C becomes 5 times larger
+All three together: 2 × 2 × 5 = 20 times the original</p>
+<p class="ans">(a) doubles, (b) doubles, (c) five times; combined, twenty times.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Why must the plates of a capacitor be close together and of large area?</p>
+<div class="sol">
+<p>Because C = ε₀A/d: capacitance is proportional to area and inversely proportional to separation. Large plates hold more charge at the same voltage, and a small gap means a strong field for a modest potential difference, so more charge is stored per volt. Practical capacitors therefore use thin dielectric films and large plate areas (rolled or stacked) to obtain microfarads in a small package.</p>
+<p class="ans">C grows with A and with 1/d, so large area and thin dielectric give high capacitance in a compact device.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 22.3 — Dielectrics</h2>
+
+<div class="item">
+<p class="q"><b>Q9.</b> What is a dielectric? Explain how it increases the capacitance.</p>
+<div class="sol">
+<p>A dielectric is an insulating material placed between the plates — air, mica, ceramic, polyester, paper, oil. Its molecules are polarised by the field between the plates: their positive charges shift slightly toward the negative plate and their negative charges toward the positive plate.</p>
+<p>This polarisation produces an opposing field inside the dielectric, so the net field between the plates is reduced from E₀ to E₀/K. For the same charge the potential difference is reduced by K, and since C = Q/V the capacitance rises by K.</p>
+<p class="ans">A dielectric is an insulator that polarises and reduces the internal field by K, so V falls by K at fixed Q and C = Q/V rises by K.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> A 2 µF air capacitor is filled with a dielectric of K = 4. What is its new capacitance? What happens to the charge at 100 V if the battery stays connected?</p>
+<div class="sol">
+<p class="work">C' = KC = 4 × 2 = 8 µF
+
+Battery still connected ⇒ V stays 100 V
+Q' = C'V = 8 × 10⁻⁶ × 100 = 8 × 10⁻⁴ C  (was 2 × 10⁻⁴ C)</p>
+<p class="ans">C' = 8 µF; the charge rises from 200 µC to 800 µC because V is held constant by the battery.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> A charged capacitor is disconnected from its battery and then a dielectric is inserted. What happens to Q, V, C and U?</p>
+<div class="sol">
+<table>
+<tr><th>Quantity</th><th>Change</th><th>Reason</th></tr>
+<tr><td>Charge Q</td><td>Unchanged</td><td>Isolated plates have nowhere to send charge</td></tr>
+<tr><td>Capacitance C</td><td>Increases ×K</td><td>C = Kε₀A/d</td></tr>
+<tr><td>Voltage V</td><td>Falls to V/K</td><td>V = Q/C, Q fixed</td></tr>
+<tr><td>Energy U</td><td>Falls to U/K</td><td>U = Q²/2C, C increased</td></tr>
+<tr><td>Field E</td><td>Falls to E/K</td><td>E = V/d</td></tr>
+</table>
+<p>The dielectric is drawn into the gap by the field, and the energy lost (U − U/K) is converted into the mechanical work of pulling the slab in.</p>
+<p class="ans">Q constant, C × K, V ÷ K, U ÷ K, E ÷ K; the lost energy appears as work done drawing the dielectric in.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Contrast the battery-connected and battery-disconnected cases for inserting a dielectric.</p>
+<div class="sol">
+<table>
+<tr><th>Quantity</th><th>Battery connected (V fixed)</th><th>Battery disconnected (Q fixed)</th></tr>
+<tr><td>C</td><td>×K</td><td>×K</td></tr>
+<tr><td>Q</td><td>×K</td><td>unchanged</td></tr>
+<tr><td>V</td><td>unchanged</td><td>÷K</td></tr>
+<tr><td>E</td><td>unchanged (V/d)</td><td>÷K</td></tr>
+<tr><td>U</td><td>×K (½CV²)</td><td>÷K (Q²/2C)</td></tr>
+</table>
+<p>In the connected case the battery supplies the extra charge and therefore also the extra energy; in the disconnected case the energy must fall, and it appears as mechanical work.</p>
+<p class="ans">Connected: V and E unchanged, Q and U rise ×K. Disconnected: Q unchanged, V, E and U fall ÷K. C rises ×K in both.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 22.4 — Capacitors in series and parallel</h2>
+
+<div class="item">
+<p class="q"><b>Q13.</b> Derive the relations for capacitors in series and in parallel.</p>
+<div class="sol">
+<p><b>Series:</b> the same charge Q flows onto each capacitor (there is only one path), and the voltages add:</p>
+<p class="work">V = V₁ + V₂ + V₃
+Q/C = Q/C₁ + Q/C₂ + Q/C₃
+⇒ 1/C = 1/C₁ + 1/C₂ + 1/C₃</p>
+<p><b>Parallel:</b> each capacitor has the same voltage V and the charges add:</p>
+<p class="work">Q = Q₁ + Q₂ + Q₃
+CV = C₁V + C₂V + C₃V
+⇒ C = C₁ + C₂ + C₃</p>
+<p class="ans">Series: 1/C = Σ(1/C_i), same Q, voltages add. Parallel: C = ΣC_i, same V, charges add. The opposite of resistors.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Two capacitors of 2 µF and 3 µF are connected in series with a 12 V battery. Find the equivalent capacitance, the charge on each and the voltage across each.</p>
+<div class="sol">
+<p class="work">1/C = 1/2 + 1/3 = (3 + 2)/6 = 5/6  ⇒  C = 1.2 µF
+
+Q = CV = 1.2 × 10⁻⁶ × 12 = 1.44 × 10⁻⁵ C   (same on both)
+
+V₁ = Q/C₁ = 14.4/2 = 7.2 V
+V₂ = Q/C₂ = 14.4/3 = 4.8 V
+Check: 7.2 + 4.8 = 12 V ✓</p>
+<p class="ans">C = 1.2 µF; Q = 14.4 µC on each; V₁ = 7.2 V, V₂ = 4.8 V — the smaller capacitor takes the larger share of voltage.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> The same two capacitors are connected in parallel across 12 V. Find the total capacitance and the total charge.</p>
+<div class="sol">
+<p class="work">C = 2 + 3 = 5 µF
+Q_total = CV = 5 × 10⁻⁶ × 12 = 6.0 × 10⁻⁵ C
+Individual: Q₁ = 24 µC, Q₂ = 36 µC (sum 60 µC ✓)</p>
+<p class="ans">C = 5 µF; total charge 60 µC, shared in proportion to the capacitances.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q16.</b> A 2 µF capacitor is in parallel with a 3 µF capacitor, and the pair is in series with a 5 µF capacitor. Find the equivalent capacitance, and the total charge when connected to 10 V.</p>
+<div class="sol">
+<p class="work">Parallel part: C_p = 2 + 3 = 5 µF
+In series with 5 µF: 1/C = 1/5 + 1/5 = 2/5  ⇒  C = 2.5 µF
+
+Q_total = CV = 2.5 × 10⁻⁶ × 10 = 2.5 × 10⁻⁵ C</p>
+<p class="ans">C = 2.5 µF; total charge 25 µC (the same 25 µC is on the series element, and it divides between the parallel pair).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> Why is the charge the same on capacitors in series but the voltage the same in parallel?</p>
+<div class="sol">
+<p>In series there is only one conducting path, so any charge that leaves the battery must be displaced through each capacitor in turn: the same charge Q is separated in each. The total potential difference is shared between them, in inverse proportion to their capacitances.</p>
+<p>In parallel each capacitor is connected directly across the same two nodes of the battery, so the same potential difference is applied to all. They then store charges in proportion to their capacitances, and the total charge is the sum.</p>
+<p class="ans">Series: one path, so Q is common. Parallel: common terminals, so V is common.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> Two capacitors in series have equal capacitance. Compare the equivalent capacitance with one of them, and explain why the energy stored is less than a single capacitor at the same voltage.</p>
+<div class="sol">
+<p class="work">1/C = 1/C₀ + 1/C₀ = 2/C₀  ⇒  C = C₀/2
+
+U_single = ½C₀V²
+U_series = ½(C₀/2)V² = ¼C₀V²  — half of a single capacitor's energy</p>
+<p>The series pair holds only half the charge of one capacitor at the same total voltage (Q = CV = C₀V/2), so it stores half the energy. The rest of the voltage is dropped across the other capacitor, which also stores energy, but the total is less because the equivalent capacitance is smaller.</p>
+<p class="ans">C = C₀/2 and the pair stores half the energy of one capacitor at the same applied voltage.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 22.5 — Energy stored in a capacitor</h2>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Derive the expression for the energy stored in a charged capacitor.</p>
+<div class="sol">
+<p class="work">Consider charging a capacitor to a final voltage V. At an intermediate stage the
+charge is q and the voltage is q/C. The work done in adding the next dq is
+  dW = V dq = (q/C) dq
+
+Integrating from q = 0 to q = Q:
+  U = ∫(0→Q) (q/C) dq = Q²/(2C)
+
+Since Q = CV:
+  U = ½CV² = ½QV = Q²/2C</p>
+<p>The energy is stored in the electric field between the plates. For a parallel-plate capacitor, substituting C = ε₀A/d and V = Ed gives U = ½ε₀E²(Ad), so the energy density is u = ½ε₀E² — a result valid for any electric field.</p>
+<p class="ans">U = ½CV² = ½QV = Q²/2C, stored in the field with density ½ε₀E².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Find the energy stored in a 4 µF capacitor charged to 100 V.</p>
+<div class="sol">
+<p class="work">U = ½CV² = ½ × 4 × 10⁻⁶ × (100)²
+  = 0.5 × 4 × 10⁻⁶ × 10⁴ = 2.0 × 10⁻² J</p>
+<p class="ans">U = 2.0 × 10⁻² J = 20 mJ (check: ½QV = ½ × 4 × 10⁻⁴ × 100 = 0.02 J ✓)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> A capacitor stores 0.1 J at 200 V. Find its capacitance and the charge stored.</p>
+<div class="sol">
+<p class="work">U = ½CV² ⇒ C = 2U/V² = 2(0.1)/(200)² = 0.2/4 × 10⁴ = 5.0 × 10⁻⁶ F
+Q = CV = 5 × 10⁻⁶ × 200 = 1.0 × 10⁻³ C</p>
+<p class="ans">C = 5 µF; Q = 1.0 mC</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> How does the stored energy change if the voltage is doubled? If the charge is doubled?</p>
+<div class="sol">
+<p class="work">U = ½CV²: doubling V quadruples U (energy ∝ V²)
+U = Q²/2C: doubling Q quadruples U as well (energy ∝ Q²)
+
+Doubling both is impossible at fixed C, since Q and V are tied by Q = CV: doubling V
+automatically doubles Q, and the energy rises by 4 in either expression.</p>
+<p class="ans">Both quadruple the energy; energy depends on the square of either quantity, but at fixed capacitance they cannot be varied independently.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> Show that the energy density of an electric field is ½ε₀E².</p>
+<div class="sol">
+<p class="work">U = ½CV² with C = ε₀A/d and V = Ed:
+  U = ½(ε₀A/d)(Ed)² = ½ε₀E²(Ad)
+
+The volume of the field region between the plates is Ad, so
+  u = U/(Ad) = ½ε₀E²</p>
+<p>Although derived for a parallel-plate capacitor, u = ½ε₀E² is a general result: any region of space containing an electric field E contains this energy per unit volume (times ε_r in a dielectric).</p>
+<p class="ans">u = U/(Ad) = ½ε₀E², independent of the plate geometry — energy resides in the field itself.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 22.6 — Energy lost when capacitors are connected</h2>
+
+<div class="item">
+<p class="q"><b>Q24.</b> A 4 µF capacitor charged to 100 V is connected across an uncharged 2 µF capacitor. Find the common voltage, the final energy and the energy lost.</p>
+<div class="sol">
+<p class="work">Initial charge: Q = C₁V₁ = 4 × 10⁻⁶ × 100 = 4.0 × 10⁻⁴ C
+Total capacitance after connection: C = 4 + 2 = 6 µF
+Common voltage: V = Q/C = 4 × 10⁻⁴ / 6 × 10⁻⁶ = 66.7 V
+
+Initial energy: U_i = ½C₁V₁² = ½ × 4 × 10⁻⁶ × 10⁴ = 0.0200 J
+Final energy:   U_f = ½CV² = ½ × 6 × 10⁻⁶ × (66.7)² = 0.01334 J
+Energy lost = 0.0200 − 0.0133 = 6.7 × 10⁻³ J</p>
+<p class="ans">V = 66.7 V; U_f = 13.3 mJ; 6.7 mJ is lost — one third of the original energy.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> Where does the "lost" energy go in the previous question?</p>
+<div class="sol">
+<p>It is dissipated as heat and electromagnetic radiation in the connecting wires and in the spark or current that flows while the charges redistribute. The charge is conserved throughout, but the energy is not: some of it is necessarily converted because the redistribution happens through a finite resistance. If the connection were made through an ideal inductor, the energy would oscillate between the capacitor and the inductor and ultimately still be radiated away.</p>
+<p>For two equal capacitors C, the loss is exactly half the initial energy: U_f = ½CV² and U_i = CV², so 50% is dissipated irrespective of the resistance value.</p>
+<p class="ans">The energy is dissipated as heat and radiation in the leads while the charge redistributes; charge is conserved, energy is not.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> Show that for two identical capacitors, connecting a charged one to an uncharged one always loses exactly half the energy.</p>
+<div class="sol">
+<p class="work">Initial: one charged to V, charge Q = CV, energy U_i = ½CV²
+After connection: total capacitance 2C, total charge Q (conserved)
+  V' = Q/(2C) = V/2
+  U_f = ½(2C)(V/2)² = ½ × 2C × V²/4 = ¼CV² = U_i/2</p>
+<p>So exactly half is lost, for any value of V and any value of C, and independently of the resistance in the connecting wire.</p>
+<p class="ans">V halves and U_f = U_i/2, so 50% is always dissipated — an intrinsic result of charge sharing between equal capacitors.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define capacitance and give its unit.</p>
+<div class="sol"><p class="ans">C = Q/V, the charge stored per unit potential difference; measured in farads (1 F = 1 C V⁻¹). It depends only on the geometry and the dielectric, not on Q or V.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Write the capacitance of a parallel-plate capacitor.</p>
+<div class="sol"><p class="ans">C = ε₀A/d in air, and C = Kε₀A/d with a dielectric of constant K between the plates. It is proportional to the area and inversely proportional to the separation.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> What is a dielectric and why does it increase capacitance?</p>
+<div class="sol"><p class="ans">An insulating material placed between the plates. Its molecules polarise, producing an opposing field that reduces the net field by the factor K. At fixed charge the voltage falls by K, so C = Q/V increases by K.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Define the dielectric constant.</p>
+<div class="sol"><p class="ans">K = ε/ε₀, the ratio of the permittivity of the material to that of free space, equivalently C_medium/C_air for the same capacitor. It is dimensionless and always ≥ 1 (air ≈ 1, mica ≈ 6, water ≈ 80).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Write the formulas for capacitors in series and in parallel.</p>
+<div class="sol"><p class="ans">Series: 1/C = 1/C₁ + 1/C₂ + … (same charge, voltages add). Parallel: C = C₁ + C₂ + … (same voltage, charges add). This is the opposite arrangement to resistors.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Write the three expressions for the energy stored in a capacitor.</p>
+<div class="sol"><p class="ans">U = ½CV² = ½QV = Q²/2C, all equivalent through Q = CV. The energy is stored in the electric field between the plates.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> What is the energy density of an electric field?</p>
+<div class="sol"><p class="ans">u = ½ε₀E² per unit volume (times ε_r in a dielectric). It follows from dividing ½CV² by the field volume Ad of a parallel-plate capacitor, but it applies to any field configuration.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Why does the capacitance not change when the charge on a capacitor changes?</p>
+<div class="sol"><p class="ans">Because C = ε₀A/d depends only on geometry and the medium. Doubling the charge also doubles the voltage, so the ratio Q/V — the capacitance — remains the same.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> What happens to the stored energy when a dielectric is inserted with the battery disconnected?</p>
+<div class="sol"><p class="ans">It decreases to 1/K of its value, since U = Q²/2C and C rises by K at constant Q. The difference appears as mechanical work done by the field in drawing the dielectric into the gap.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> What happens to the stored energy when a dielectric is inserted with the battery connected?</p>
+<div class="sol"><p class="ans">It increases by the factor K, since U = ½CV² with V fixed and C multiplied by K. The extra energy comes from the battery, which also supplies the additional charge KQ.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Why is a capacitor said to block direct current but pass alternating current?</p>
+<div class="sol"><p class="ans">Because its plates are separated by an insulator, so no steady current can flow through it — in a DC circuit it charges once and then stops the current. For alternating current the charge is continually reversing, so the capacitor repeatedly charges and discharges and an alternating current appears to flow in the external circuit.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Why are capacitors in a camera flash able to deliver a large burst of energy?</p>
+<div class="sol"><p class="ans">Because energy can be stored slowly over seconds (low power from the battery) and then released in milliseconds: P = U/t. A 100 µF capacitor at 300 V stores 4.5 J, which released in 1 ms gives a power of 4.5 kW — far beyond what the battery could supply directly.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Two capacitors of different capacitance are in series. Which has the larger voltage, and why?</p>
+<div class="sol"><p class="ans">The smaller capacitance has the larger voltage, since Q is common and V = Q/C. This is why a small capacitor in series with a large one can be damaged by over-voltage, and why equalising resistors are used in series capacitor banks.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why is the farad an impractically large unit?</p>
+<div class="sol"><p class="ans">Because a 1 F parallel-plate capacitor in air would need an enormous plate area: with d = 1 mm, A = Cd/ε₀ ≈ 10⁸ m². Practical capacitors therefore use thin dielectrics with high K and are rated in microfarads, nanofarads and picofarads.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Distinguish between the charge on a capacitor and the charge stored in it.</p>
+<div class="sol"><p class="ans">The capacitor as a whole is neutral: one plate carries +Q and the other −Q. "The charge on a capacitor" conventionally means the magnitude Q on either plate, not the net charge of the device, which is zero.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> What is the effect of a dielectric on the breakdown voltage of a capacitor?</p>
+<div class="sol"><p class="ans">A solid dielectric generally has a much higher breakdown strength than air (megavolts per metre rather than about 3 MV m⁻¹), so the capacitor can be operated at a higher voltage for the same separation. It also raises the capacitance, which is why practical capacitors are filled with solid or liquid dielectrics.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Derive C = ε₀A/d, and hence derive the energy stored in a charged capacitor.</p>
+<div class="sol">
+<p class="work">Field between the plates: E = σ/ε₀ = Q/(ε₀A)
+Potential difference:      V = Ed = Qd/(ε₀A)
+Capacitance:               C = Q/V = ε₀A/d
+
+Energy: charge the capacitor from 0 to Q, the voltage at charge q being q/C.
+  dW = (q/C) dq
+  U = ∫(0→Q) q/C dq = Q²/(2C) = ½CV² = ½QV</p>
+<p>With C = ε₀A/d and V = Ed, the energy becomes U = ½ε₀E²(Ad), so the field stores ½ε₀E² per unit volume.</p>
+<p class="ans">C = ε₀A/d from E = σ/ε₀; U = ½CV² from integrating the charging work, with energy density ½ε₀E².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Three capacitors of 2 µF, 3 µF and 6 µF are connected in series across 12 V. Find the equivalent capacitance, the charge and the voltage across each.</p>
+<div class="sol">
+<p class="work">1/C = 1/2 + 1/3 + 1/6 = (3 + 2 + 1)/6 = 6/6 = 1
+C = 1.0 µF
+
+Q = CV = 1 × 10⁻⁶ × 12 = 1.2 × 10⁻⁵ C  (same on each)
+
+V₁ = 12/2 = 6.0 V
+V₂ = 12/3 = 4.0 V
+V₃ = 12/6 = 2.0 V
+Check: 6 + 4 + 2 = 12 V ✓</p>
+<p class="ans">C = 1 µF; Q = 12 µC on each; voltages 6 V, 4 V and 2 V — the smallest capacitor takes the largest voltage.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [6]</b> A 6 µF capacitor is charged to 200 V, disconnected, and then connected across an uncharged 3 µF capacitor. Find the final voltage, the energies before and after, and account for the difference.</p>
+<div class="sol">
+<p class="work">Initial charge: Q = 6 × 10⁻⁶ × 200 = 1.2 × 10⁻³ C
+Final capacitance: 6 + 3 = 9 µF
+Final voltage: V = 1.2 × 10⁻³/9 × 10⁻⁶ = 133.3 V
+
+Initial energy:  U_i = ½ × 6 × 10⁻⁶ × 200² = 0.120 J
+Final energy:    U_f = ½ × 9 × 10⁻⁶ × (133.3)² = 0.080 J
+Loss:            0.040 J  (= one third of the initial energy)</p>
+<p>The lost energy is dissipated as heat and radiation in the connecting wires while the charge redistributes. The charge itself is completely conserved: 1.2 mC before and after.</p>
+<p>General result: for C₁ charged and C₂ initially uncharged, the fraction lost is C₂/(C₁ + C₂) = 3/9 = 1/3 ✓</p>
+<p class="ans">V = 133 V; energy falls from 120 mJ to 80 mJ, and 40 mJ (C₂/(C₁+C₂) of the initial) is dissipated in the leads.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [5]</b> A parallel-plate capacitor of area 0.01 m² and separation 1 mm is filled with a dielectric of K = 6 and connected to 50 V. Find C, Q, E in the dielectric and the energy stored.</p>
+<div class="sol">
+<p class="work">C = Kε₀A/d = 6 × 8.85 × 10⁻¹² × 0.01/1 × 10⁻³
+  = 6 × 8.85 × 10⁻¹⁴/10⁻³
+  = 5.31 × 10⁻¹⁰ F ≈ 0.53 nF
+
+Q = CV = 5.31 × 10⁻¹⁰ × 50 = 2.66 × 10⁻⁸ C
+E = V/d = 50/10⁻³ = 5 × 10⁴ V m⁻¹
+U = ½CV² = ½ × 5.31 × 10⁻¹⁰ × 2500 = 6.6 × 10⁻⁷ J</p>
+<p class="ans">C ≈ 0.53 nF; Q ≈ 2.7 × 10⁻⁸ C; E = 5 × 10⁴ V m⁻¹; U ≈ 6.6 × 10⁻⁷ J (0.66 µJ)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Definition</td><td>C = Q/V, unit farad (C V⁻¹)</td></tr>
+<tr><td>Parallel plate</td><td>C = ε₀A/d; with dielectric C = Kε₀A/d</td></tr>
+<tr><td>Series</td><td>1/C = 1/C₁ + 1/C₂ + …; Q common</td></tr>
+<tr><td>Parallel</td><td>C = C₁ + C₂ + …; V common</td></tr>
+<tr><td>Energy</td><td>U = ½CV² = ½QV = Q²/2C</td></tr>
+<tr><td>Energy density</td><td>u = ½ε₀E² (×ε_r in a dielectric)</td></tr>
+<tr><td>Field between plates</td><td>E = V/d = σ/ε₀</td></tr>
+<tr><td>Dielectric, battery connected</td><td>V constant; Q and U rise ×K</td></tr>
+<tr><td>Dielectric, disconnected</td><td>Q constant; V, E and U fall ÷K</td></tr>
+<tr><td>Charge sharing</td><td>V_final = (C₁V₁ + C₂V₂)/(C₁ + C₂); loss = C₁C₂(V₁−V₂)²/2(C₁+C₂)</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 22</h3>
+<div class="warn">
+<p><b>1. Using the resistor rules.</b> Capacitors in parallel ADD (C = C₁ + C₂); in series their reciprocals add. Reversing this is the commonest error in the whole unit.</p>
+<p><b>2. Mixing the two dielectric cases.</b> Decide at once whether the battery is connected (V fixed) or disconnected (Q fixed). All four quantities follow from that single choice.</p>
+<p><b>3. Forgetting that the series charge is common.</b> In series every capacitor carries the <em>same</em> Q; the voltages differ. In parallel every capacitor has the same V; the charges differ.</p>
+<p><b>4. Squaring the wrong quantity in ½CV².</b> It is V², not C². Also keep C in farads — 4 µF is 4 × 10⁻⁶, and forgetting the micro gives answers off by 10⁶.</p>
+<p><b>5. Expecting the "lost" energy to vanish without explanation.</b> When capacitors are connected, charge is conserved but energy is not: the difference is dissipated as heat and radiation in the leads. State this explicitly.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> For every combination problem, redraw the network, reduce it step by step to one equivalent capacitance, find the total charge, then work backwards to the individual charges and voltages. State the series/parallel rule you are using at each step.</div>
+
+<p class="note">Physics XI · Unit 22 Capacitor · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

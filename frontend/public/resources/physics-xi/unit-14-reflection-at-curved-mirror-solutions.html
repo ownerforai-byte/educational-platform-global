@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics XI — Unit 14 Reflection at Curved Mirrors: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Physics Unit 14 Reflection at Curved Mirror: worked solutions for real and virtual images, ray diagrams, the mirror formula and magnification for concave and convex mirrors, sign conventions and applications, plus a conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="physics-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/physics-xi">Physics XI</a> &rsaquo; Unit 14</p>
+
+<h1>Unit 14 — Reflection at Curved Mirrors</h1>
+<p class="meta">Physics XI (Phy. 101) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 2 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Only two hours in the syllabus, but almost every year's paper has one mirror-formula numerical. Nine times out of ten the errors are sign conventions, not physics, so the convention is fixed at the top of this file and used consistently below.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — define the principal focus and focal length; why is a convex mirror used as a rear-view mirror; state the mirror formula; distinguish real from virtual images.</li>
+<li><b>4 marks</b> — mirror-formula numerical with the magnification; draw a ray diagram for a given case and describe the image.</li>
+<li><b>5–6 marks</b> — derive the mirror formula from similar triangles; explain the image formation by a concave mirror for all object positions.</li>
+</ul>
+<p><b>Sign convention used throughout (New Cartesian):</b> all distances are measured from the pole toward the object side (in front of the mirror) as <em>negative</em> and behind the mirror as <em>positive</em>. Therefore u is always negative, f and R are negative for a concave mirror and positive for a convex mirror, and m = −v/u with a positive m meaning an erect (virtual) image.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 14.1 — Terms and sign convention</li>
+<li>Exercise 14.2 — Ray diagrams and image formation</li>
+<li>Exercise 14.3 — Mirror formula and magnification</li>
+<li>Exercise 14.4 — Concave mirror numericals</li>
+<li>Exercise 14.5 — Convex mirror numericals</li>
+<li>Exercise 14.6 — Real vs virtual images and applications</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 14.1 — Terms and sign convention</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Define the pole, centre of curvature, radius of curvature, principal axis, principal focus and focal length of a spherical mirror.</p>
+<div class="sol">
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Pole (P)</td><td>The mid-point (geometric centre) of the reflecting surface</td></tr>
+<tr><td>Centre of curvature (C)</td><td>The centre of the sphere of which the mirror is a part</td></tr>
+<tr><td>Radius of curvature (R)</td><td>The distance PC; R = 2f for a small-aperture mirror</td></tr>
+<tr><td>Principal axis</td><td>The straight line through P and C, normal to the mirror at P</td></tr>
+<tr><td>Principal focus (F)</td><td>The point on the principal axis where rays parallel to the axis converge (concave) or appear to diverge from (convex) after reflection</td></tr>
+<tr><td>Focal length (f)</td><td>The distance PF</td></tr>
+</table>
+<p class="ans">P is the pole, C the centre of curvature, R the radius, F the focus and f = R/2 the focal length, all measured along the principal axis.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> State the sign convention for spherical mirrors and write the mirror formula with it.</p>
+<div class="sol">
+<p><b>Convention (New Cartesian):</b> distances are measured from the pole along the principal axis; positive in the direction of the incident light (i.e. behind the mirror, on the side opposite the object) and negative in the opposite direction (in front, where the object is). Heights above the axis are positive, below negative.</p>
+<p class="work">Mirror formula:  1/f = 1/v + 1/u
+Magnification:    m = h'/h = −v/u
+
+For a concave mirror: f, R negative (F and C in front)
+For a convex mirror:  f, R positive (F and C behind)
+Object distance u is always negative.</p>
+<p class="ans">1/f = 1/v + 1/u with m = −v/u; u always negative; f negative for concave, positive for convex.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Why is the focal length of a spherical mirror equal to half its radius of curvature?</p>
+<div class="sol">
+<p>For a ray parallel to the principal axis, incident close to the pole (paraxial ray), the radius to the point of incidence is normal to the surface. The law of reflection gives the angle of reflection equal to the angle of incidence, and a simple geometry of isosceles triangles shows that the reflected ray crosses the axis at the mid-point between the pole and the centre of curvature:</p>
+<p class="work">In triangle FMC, angle FMC = angle MCF (law of reflection + alternate angles),
+so FM = FC. For small apertures FM ≈ FP, hence
+FP = FC = ½ PC  ⇒  f = R/2</p>
+<p class="ans">f = R/2, valid for paraxial rays (small aperture) only; for wide mirrors spherical aberration makes the marginal rays cross closer to the pole.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> A concave mirror has a radius of curvature of 30 cm. What is its focal length and where is the focus?</p>
+<div class="sol">
+<p class="work">f = R/2 = 15 cm, and since the mirror is concave, f = −15 cm by the sign convention.
+The focus lies 15 cm in front of the mirror, on the principal axis.</p>
+<p class="ans">f = 15 cm (negative in the convention), focus 15 cm in front of the pole</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 14.2 — Ray diagrams and image formation</h2>
+
+<div class="item">
+<p class="q"><b>Q5.</b> State the three rays used to construct an image in a spherical mirror.</p>
+<div class="sol">
+<ol class="step">
+<li>A ray parallel to the principal axis reflects through the principal focus (concave) or appears to come from it (convex).</li>
+<li>A ray through the focus (or directed toward it) reflects parallel to the principal axis.</li>
+<li>A ray through the centre of curvature (or directed toward it) strikes the mirror normally and retraces its path.</li>
+</ol>
+<p>Any two of these suffice; the third serves as a check. A ray striking the pole reflects with the axis at equal angles.</p>
+<p class="ans">Parallel → through F; through F → parallel; through C → retraced. Two rays intersect at the image point.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Tabulate the image formed by a concave mirror for all object positions.</p>
+<div class="sol">
+<table>
+<tr><th>Object position</th><th>Image position</th><th>Nature</th></tr>
+<tr><td>At infinity</td><td>At F</td><td>Real, inverted, highly diminished (point)</td></tr>
+<tr><td>Beyond C</td><td>Between F and C</td><td>Real, inverted, diminished</td></tr>
+<tr><td>At C</td><td>At C</td><td>Real, inverted, same size</td></tr>
+<tr><td>Between C and F</td><td>Beyond C</td><td>Real, inverted, magnified</td></tr>
+<tr><td>At F</td><td>At infinity</td><td>Real, inverted, highly magnified (parallel beam)</td></tr>
+<tr><td>Between F and P</td><td>Behind the mirror</td><td>Virtual, erect, magnified</td></tr>
+</table>
+<p class="ans">As the object moves from infinity toward the mirror, the image moves from F outward, growing; once the object is inside the focus the image becomes virtual, erect and magnified.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Describe the image formed by a convex mirror for any object position.</p>
+<div class="sol">
+<p>For a convex mirror the image is always formed <em>behind</em> the mirror, between the pole and the focus, and is always virtual, erect and diminished, whatever the object distance. As the object approaches the mirror, the image also approaches the pole and becomes slightly larger, but it never exceeds the object's size and never becomes real.</p>
+<p class="ans">Always virtual, erect and diminished, located between P and F behind the mirror — the widest possible field of view.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> An object is placed at the centre of curvature of a concave mirror of focal length 20 cm. Find the image position and magnification.</p>
+<div class="sol">
+<p class="work">u = −40 cm (= R = 2f), f = −20 cm
+1/v = 1/f − 1/u = −1/20 + 1/40 = (−2 + 1)/40 = −1/40
+v = −40 cm
+m = −v/u = −(−40)/(−40) = −1</p>
+<p class="ans">Image at C (40 cm in front), real, inverted and the same size (m = −1)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 14.3 — Mirror formula and magnification</h2>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Derive the mirror formula 1/f = 1/v + 1/u for a concave mirror.</p>
+<div class="sol">
+<p>An object AB stands on the axis at a distance u from the pole P; the image A'B' forms at v. Using the ray parallel to the axis (reflected through F) and the ray through C (retraced):</p>
+<p class="work">Triangles A'B'F and (mirror point) M F are similar:
+  A'B'/MN = PF/(u − f)... In the standard treatment with the two similar pairs:
+
+1. ΔABP and ΔA'B'P are similar (both right-angled at B, equal angles at P):
+   A'B'/AB = v/u
+
+2. ΔA'B'F and Δ (point of incidence)F are similar, giving
+   A'B'/AB = f/(u − f)... combining and substituting R = 2f gives:
+
+  (v − f)/f = v/u  ⇒  fv = uv − uf  ⇒  1/f = 1/v + 1/u</p>
+<p>The same algebra applied with the sign convention produces the formula valid for both concave and convex mirrors.</p>
+<p class="ans">1/f = 1/v + 1/u, derived from two pairs of similar triangles; magnification m = −v/u follows from the first pair.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Define linear magnification and state its relation to the image and object distances.</p>
+<div class="sol">
+<p>Linear magnification is the ratio of the image height to the object height:</p>
+<p class="work">m = h'/h = −v/u</p>
+<p>A negative m means the image is inverted (and, for a mirror, real); a positive m means it is erect (virtual). |m| &gt; 1 means magnified, |m| &lt; 1 diminished.</p>
+<p class="ans">m = h'/h = −v/u; sign gives orientation, magnitude gives size relative to the object.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 14.4 — Concave mirror numericals</h2>
+
+<div class="item">
+<p class="q"><b>Q11.</b> An object 5 cm tall is placed 30 cm from a concave mirror of focal length 10 cm. Find the image position, its size and nature.</p>
+<div class="sol">
+<p class="work">u = −30 cm, f = −10 cm
+1/v = 1/f − 1/u = −1/10 + 1/30 = (−3 + 1)/30 = −2/30
+v = −15 cm
+
+m = −v/u = −(−15)/(−30) = −0.5
+h' = m h = −0.5 × 5 = −2.5 cm</p>
+<p class="ans">Image 15 cm in front of the mirror, real, inverted, 2.5 cm tall (diminished and inverted)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> An object is placed 5 cm from a concave mirror of focal length 10 cm. Find the image position and magnification. Why is the image virtual here?</p>
+<div class="sol">
+<p class="work">u = −5 cm, f = −10 cm
+1/v = 1/f − 1/u = −1/10 + 1/5 = (−1 + 2)/10 = 1/10
+v = +10 cm
+
+m = −v/u = −(10)/(−5) = +2</p>
+<p>The positive v places the image <em>behind</em> the mirror, so the reflected rays only appear to meet there — the image is virtual, erect and twice the size. It occurs whenever the object is inside the focal length, which is exactly the shaving-mirror case.</p>
+<p class="ans">v = +10 cm (virtual, behind the mirror); m = +2 (erect, magnified)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q13.</b> A concave mirror forms a real image three times the size of the object. If the focal length is 15 cm, find the object and image distances.</p>
+<div class="sol">
+<p class="work">Real inverted image ⇒ m = −3 = −v/u ⇒ v = 3u (both negative: v = 3u)
+Mirror formula: 1/f = 1/v + 1/u
+−1/15 = 1/(3u) + 1/u = (1 + 3)/(3u) = 4/(3u)
+⇒ 3u = −60 ⇒ u = −20 cm
+v = 3u = −60 cm</p>
+<p class="ans">Object 20 cm in front of the mirror; image 60 cm in front, real, inverted, 3× magnified</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q14.</b> Where must an object be placed in front of a concave mirror of focal length 20 cm so that the image is the same size as the object but inverted?</p>
+<div class="sol">
+<p class="work">Same size and inverted ⇒ m = −1 = −v/u ⇒ v = u
+1/f = 1/v + 1/u = 2/u ⇒ u = 2f = −40 cm</p>
+<p class="ans">At the centre of curvature, 40 cm in front of the mirror — the only position giving an inverted image of the same size.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q15.</b> A concave mirror of focal length 12 cm forms an image 24 cm from the mirror. Find two possible object positions and explain the ambiguity.</p>
+<div class="sol">
+<p class="work">Case (a) real image, v = −24 cm:
+1/u = 1/f − 1/v = −1/12 + 1/24 = (−2 + 1)/24 = −1/24
+u = −24 cm
+
+Case (b) virtual image, v = +24 cm:
+1/u = 1/f − 1/v = −1/12 − 1/24 = −3/24 = −1/8
+u = −8 cm</p>
+<p>Both are valid: a real image at 24 cm arises from an object at 24 cm (beyond F), while a virtual image at 24 cm arises from an object inside the focus at 8 cm. The mirror formula alone does not fix which; the nature of the image does.</p>
+<p class="ans">u = 24 cm (real image) or u = 8 cm (virtual image); the sign of v decides which case applies.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 14.5 — Convex mirror numericals</h2>
+
+<div class="item">
+<p class="q"><b>Q16.</b> An object is placed 20 cm in front of a convex mirror of focal length 15 cm. Find the image position and magnification.</p>
+<div class="sol">
+<p class="work">u = −20 cm, f = +15 cm
+1/v = 1/f − 1/u = 1/15 + 1/20 = (4 + 3)/60 = 7/60
+v = +8.57 cm
+
+m = −v/u = −(8.57)/(−20) = +0.43</p>
+<p class="ans">Image 8.6 cm behind the mirror, virtual, erect and 0.43 times the object size — always between P and F for a convex mirror</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q17.</b> A convex mirror has a radius of curvature of 40 cm. A car 2 m tall is 5 m behind it. Find the image height.</p>
+<div class="sol">
+<p class="work">f = R/2 = +20 cm;  u = −500 cm
+1/v = 1/20 + 1/500 = (25 + 1)/500 = 26/500
+v = +19.2 cm
+m = −v/u = −19.2/(−500) = +0.0385
+h' = m h = 0.0385 × 200 cm = 7.7 cm</p>
+<p class="ans">Image 19 cm behind the mirror, erect and 7.7 cm tall — a small, wide-field image, exactly what a rear-view mirror must give.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q18.</b> Why can a convex mirror never form a real image of a real object?</p>
+<div class="sol">
+<p>Its reflecting surface curves outward, so reflected rays always diverge. The reflected rays never actually intersect in front of the mirror; they can only be produced backward to meet behind it, where no light actually goes. Since a real image requires the actual convergence of light, a convex mirror can give only virtual images of real objects.</p>
+<p class="ans">Reflected rays diverge, so they meet only when extended backward — the image is always virtual, erect and diminished.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 14.6 — Real vs virtual images and applications</h2>
+
+<div class="item">
+<p class="q"><b>Q19.</b> Distinguish between a real and a virtual image.</p>
+<div class="sol">
+<table>
+<tr><th>Real image</th><th>Virtual image</th></tr>
+<tr><td>Formed by the actual intersection of reflected rays</td><td>Formed when reflected rays only appear to meet (extended backward)</td></tr>
+<tr><td>Can be taken on a screen</td><td>Cannot be taken on a screen</td></tr>
+<tr><td>Always inverted for a single mirror</td><td>Always erect for a single mirror</td></tr>
+<tr><td>v is negative (concave mirror, object beyond F)</td><td>v is positive (behind the mirror)</td></tr>
+<tr><td>m is negative</td><td>m is positive</td></tr>
+</table>
+<p class="ans">Real: rays actually converge, screen-able, inverted. Virtual: rays appear to diverge from a point behind the mirror, not screen-able, erect.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q20.</b> Why is a convex mirror used as a rear-view mirror and as a security mirror?</p>
+<div class="sol">
+<p>Because a convex mirror has a wider field of view than a plane or concave mirror of the same size, and it always gives an erect, diminished virtual image. The driver therefore sees a larger area of the road behind, and a watchman sees the whole corridor in a small mirror. The disadvantage is that objects appear smaller and farther away than they are, which is why cars carry the warning "objects in the mirror are closer than they appear".</p>
+<p class="ans">Wide field of view with an erect, diminished virtual image — ideal for surveillance and rear-view use, at the cost of apparent distance.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q21.</b> Why is a concave mirror used as a shaving mirror and in a dentist's mouth mirror?</p>
+<div class="sol">
+<p>When the face is held inside the focal length of the concave mirror, the image is virtual, erect and magnified (m &gt; 1), so a small area is seen enlarged in detail. The dentist's mirror works the same way: the tooth is within the focal length and appears larger and upright. Used at a greater distance the same mirror would give an inverted, diminished image, which is why the user must be close to it.</p>
+<p class="ans">The object lies inside the focus, so the image is virtual, erect and magnified — the exact opposite of the reduced image from a convex mirror.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q22.</b> How is a concave mirror used in a headlight or a searchlight?</p>
+<div class="sol">
+<p>The bulb is placed at the principal focus of a concave (parabolic) reflector. Rays from a source at the focus, after reflection, emerge parallel to the principal axis, producing a narrow, intense beam that carries far. A parabolic surface is used rather than spherical because a sphere suffers spherical aberration and the outer part of the beam would not be parallel.</p>
+<p class="ans">Source at the focus ⇒ reflected beam parallel to the axis; a parabolic profile avoids spherical aberration and keeps the beam tight.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q23.</b> What is spherical aberration? How can it be reduced?</p>
+<div class="sol">
+<p>For a mirror of large aperture, rays parallel to the axis but far from it (marginal rays) do not converge at the same point as paraxial rays — the outer rays focus closer to the pole. The image is therefore blurred rather than a sharp point.</p>
+<p>It is reduced by using a small aperture (a stop), by covering the outer zone of the mirror, or by using a parabolic mirror, which brings all parallel rays to a single focus.</p>
+<p class="ans">Marginal and paraxial rays focus at different points, blurring the image; use a small aperture or a parabolic surface.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define the principal focus of a concave and of a convex mirror.</p>
+<div class="sol"><p class="ans">For a concave mirror it is the point on the principal axis where rays parallel to the axis actually converge after reflection. For a convex mirror it is the point from which such reflected rays appear to diverge (behind the mirror).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Write the mirror formula and state its sign convention.</p>
+<div class="sol"><p class="ans">1/f = 1/v + 1/u, with all distances measured from the pole, negative in front of the mirror (object side) and positive behind it. Object distance is always negative; f is negative for concave and positive for convex.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Why is a convex mirror called a diverging mirror?</p>
+<div class="sol"><p class="ans">Because its surface curves outward, so a parallel beam falling on it is reflected as a diverging beam that appears to come from a virtual focus behind the mirror. A concave mirror, by contrast, converges parallel rays to a real focus.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> What is the relation between f and R? State the condition.</p>
+<div class="sol"><p class="ans">f = R/2, valid only for paraxial rays, i.e. when the aperture of the mirror is small compared with its radius of curvature. For a wide mirror, spherical aberration makes the effective focal length shorter.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> An object is at the focus of a concave mirror. Where is the image?</p>
+<div class="sol"><p class="ans">At infinity. The rays after reflection are parallel to the principal axis, so they never meet; in practice the image is formed at a very large distance and is real, inverted and highly magnified. This is the arrangement used in searchlights, reversed.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Why does a plane mirror give an image of the same size but a curved mirror can magnify?</p>
+<div class="sol"><p class="ans">A plane mirror has an infinite radius of curvature (f = ∞), so 1/v = −1/u and |m| = 1 exactly. A curved mirror changes the convergence of the reflected rays, so v can differ from |u|, giving |m| = |v/u| ≠ 1 — magnification (or reduction).</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why is the magnification negative for a real image?</p>
+<div class="sol"><p class="ans">Because a real image formed by a single mirror is inverted relative to the object. With m = h'/h = −v/u, a negative v (real image in front of the mirror) with a negative u gives m negative, which corresponds to the image being below the axis while the object is above it.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Can a concave mirror form an erect image? Under what condition?</p>
+<div class="sol"><p class="ans">Yes, when the object is placed between the pole and the principal focus. The image is then behind the mirror, virtual, erect and magnified — the arrangement used in a shaving mirror.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Give one advantage and one disadvantage of a convex rear-view mirror.</p>
+<div class="sol"><p class="ans">Advantage: a much wider field of view than a plane mirror of the same size, so more of the road behind is visible and blind spots shrink. Disadvantage: the image is diminished, so distances appear larger than they really are, which can mislead the driver about how close a following vehicle is.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Why is the aperture of a spherical mirror kept small?</p>
+<div class="sol"><p class="ans">To keep the paraxial approximation valid and reduce spherical aberration; with a large aperture the marginal rays focus closer to the pole and the image is blurred. A small aperture also keeps the simple f = R/2 relation accurate.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> What happens to the image formed by a concave mirror as the object moves from infinity toward the mirror?</p>
+<div class="sol"><p class="ans">The image moves from the focus outward toward the mirror and grows: real, inverted and tiny at infinity; real and diminished beyond C; same size at C; real and magnified between C and F; at infinity when the object is at F; and finally virtual, erect and magnified once the object is inside F.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Why is a dentist's mirror not plane?</p>
+<div class="sol"><p class="ans">A plane mirror would show the tooth the same size, which is too small to examine comfortably in the mouth. A concave mirror with the tooth inside its focal length gives a magnified, erect virtual image, letting the dentist see detail clearly.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> State two uses of a concave mirror and two of a convex mirror.</p>
+<div class="sol"><p class="ans">Concave: shaving/dentist mirror (magnified virtual image); headlight and searchlight reflector (source at F gives a parallel beam); also a solar furnace. Convex: rear-view and security mirrors (wide field), and the corners of shop aisles or road bends to show hidden traffic.</p></div>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Why is the pole of a spherical mirror the only point where the mirror does not deviate a ray through the axis?</p>
+<div class="sol"><p class="ans">At the pole the mirror surface is perpendicular to the principal axis, so a ray along the axis strikes it normally and is reflected back along its own path (angle of incidence zero). Off the axis, the normal points toward the centre of curvature, and the ray is deflected.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [5]</b> An object 2 cm high is placed 15 cm from a concave mirror of radius of curvature 20 cm. Find the image position, size and nature, and check your answer with the magnification.</p>
+<div class="sol">
+<p class="work">f = R/2 = −10 cm;  u = −15 cm
+1/v = 1/f − 1/u = −1/10 + 1/15 = (−3 + 2)/30 = −1/30
+v = −30 cm  (real, in front of the mirror)
+
+m = −v/u = −(−30)/(−15) = −2
+h' = m h = −2 × 2 = −4 cm</p>
+<p class="ans">Image 30 cm in front of the mirror, real, inverted, 4 cm tall (magnified ×2). Check: the object is between C (20 cm) and F (10 cm), so the image should be beyond C and magnified — consistent.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Derive the mirror formula and use it to show that a plane mirror always gives an image of the same size at the same distance.</p>
+<div class="sol">
+<p>For a plane mirror R → ∞, so f → ∞ and 1/f → 0.</p>
+<p class="work">1/f = 1/v + 1/u ⇒ 0 = 1/v + 1/u
+⇒ v = −u (the image is as far behind the mirror as the object is in front)
+
+m = −v/u = −(−u)/u = +1</p>
+<p>The image is virtual (behind the mirror), erect and of the same size. The derivation of 1/f = 1/v + 1/u itself comes from the two pairs of similar triangles formed by a ray parallel to the axis and a ray through the centre of curvature (Q9).</p>
+<p class="ans">With f = ∞ the formula reduces to v = −u and m = +1, the plane-mirror result.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [6]</b> A concave mirror is used as a shaving mirror with a magnification of 3. If the focal length is 20 cm, how far is the face from the mirror, and what is the nature of the image?</p>
+<div class="sol">
+<p class="work">Erect, magnified virtual image ⇒ m = +3 = −v/u ⇒ v = −3u (and v positive, u negative ⇒ v = −3u with u &lt; 0 gives v &gt; 0 ✓)
+
+1/f = 1/v + 1/u
+−1/20 = 1/(−3u) + 1/u = (−1 + 3)/(3u) = 2/(3u)
+⇒ 3u = −40 ⇒ u = −13.3 cm
+
+v = −3(−13.3) = +40 cm</p>
+<p>Check: u = 13.3 cm &lt; |f| = 20 cm, so the face is inside the focus, which is exactly the condition for an erect magnified virtual image at 40 cm behind the mirror.</p>
+<p class="ans">The face is 13.3 cm from the mirror; the image is virtual, erect and three times magnified, formed 40 cm behind the mirror.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [5]</b> A convex mirror of focal length 25 cm produces an image 10 cm behind it. Find the object distance and the magnification, and state the object's nature.</p>
+<div class="sol">
+<p class="work">f = +25 cm, v = +10 cm
+1/u = 1/f − 1/v = 1/25 − 1/10 = (2 − 5)/50 = −3/50
+u = −16.7 cm
+
+m = −v/u = −(10)/(−16.7) = +0.60</p>
+<p class="ans">Object 16.7 cm in front of the mirror; virtual, erect image 0.6 times the object size. In a convex mirror the image is always inside the focus (|v| &lt; 25 cm), as expected.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Mirror formula</td><td>1/f = 1/v + 1/u</td></tr>
+<tr><td>Focal length</td><td>f = R/2 (paraxial)</td></tr>
+<tr><td>Magnification</td><td>m = h'/h = −v/u</td></tr>
+<tr><td>Sign convention</td><td>u negative; f, R negative (concave), positive (convex); v negative = real, positive = virtual</td></tr>
+<tr><td>Plane mirror</td><td>f = ∞, v = −u, m = +1</td></tr>
+<tr><td>Concave cases</td><td>Object at ∞ → image at F; at C → at C, m = −1; between F and P → virtual, magnified</td></tr>
+<tr><td>Convex mirror</td><td>Always virtual, erect, diminished, between P and F</td></tr>
+</table>
+
+<h3>The five traps that cost the most marks in Unit 14</h3>
+<div class="warn">
+<p><b>1. Mixed sign conventions.</b> Decide once — "all distances measured from the pole, positive behind the mirror" — and write u as negative from the start. Inconsistent signs produce impossible answers.</p>
+<p><b>2. Using R instead of f.</b> The mirror formula needs f = R/2. Substituting the radius of curvature directly halves the image distance.</p>
+<p><b>3. Reading positive v as real.</b> Positive v means the image is behind the mirror and therefore virtual. State the nature in words, not just the number.</p>
+<p><b>4. Forgetting that m = −v/u, not v/u.</b> The minus sign carries the inversion; omitting it makes an inverted image look erect.</p>
+<p><b>5. Expecting a real image from a convex mirror.</b> Reflected rays diverge, so only a virtual image is possible — an answer with a negative v for a convex mirror should be treated as a red flag.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Sketch the mirror, mark P, F and C with their signs, write u and f with signs, solve for v, then give the nature in words plus m and the image size. The statement of nature carries a mark on its own.</div>
+
+<p class="note">Physics XI · Unit 14 Reflection at Curved Mirrors · NEB (Phy. 101). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>
