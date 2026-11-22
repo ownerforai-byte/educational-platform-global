@@ -35,6 +35,7 @@
 <li>Exercise 21.5 — Equipotential surfaces and the relation E = −dV/dr</li>
 <li>Exercise 21.6 — Potential energy of a system of charges</li>
 <li>Exercise 21.7 — The electron volt and accelerated charges</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -368,6 +369,142 @@ Work done by the field = gain in KE = 1.6 × 10⁻¹⁷ J</p>
 <div class="sol">
 <p>Because the force on a charge is F = qE, and E points toward decreasing potential. For a positive charge F is along E, so it moves toward lower potential; for a negative charge F is opposite to E, so it moves toward higher potential. In both cases the charge moves in the direction that lowers its potential energy U = qV, which is the energetically favourable direction.</p>
 <p class="ans">The force is qE; the sign of q decides the direction, but in both cases the charge moves so as to reduce its potential energy.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Potential is a scalar, which makes it easier than field — until you have to convert between the two. The eight shapes below cover the conversion, the equipotential logic and the standard sign traps.</p>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Multi-step numerical] Charges +2.0 μC and −2.0 μC are 0.20 m apart. Find the potential at the midpoint, the potential energy of a +1.0 nC charge placed there, and the work needed to bring that charge from infinity.</p>
+<div class="sol">
+<p class="work">Midpoint, r = 0.10 m from each:
+  V = k(2.0 × 10⁻⁶)/0.10 + k(−2.0 × 10⁻⁶)/0.10 = 0
+
+Potential energy of +1.0 nC there:
+  U = qV = 0
+
+Work to bring it from infinity:
+  W = q(V − V_∞) = 0</p>
+<p>Zero potential does <em>not</em> mean zero field: at the midpoint the two fields point the same way and add to 7.2 × 10⁶ N C⁻¹. The reverse is also true — the field can be zero where the potential is not (between two like charges). Confusing a scalar sum with a vector sum is the central error in this unit, and the exam usually asks exactly this pair.</p>
+<p class="ans">V = 0 at the midpoint, so U = 0 and no work is needed — although the field there is 7.2 × 10⁶ N C⁻¹, not zero.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Derivation] Show that the electric field is the negative gradient of the potential, and use it to find the field between two plates 2.0 mm apart at 12 V.</p>
+<div class="sol">
+<p class="work">Work done by the field on a test charge q moved through dℓ is dW = F·dℓ = qE·dℓ.
+The potential difference is the work done per unit charge AGAINST the field:
+  dV = −E·dℓ
+
+In one dimension:
+  E = −dV/dx
+
+Parallel plates (uniform field):
+  E = V/d = 12/(2.0 × 10⁻³) = 6.0 × 10³ V m⁻¹</p>
+<p>The minus sign is the physics: the field points from high to low potential, i.e. down the potential gradient. That is why a positive charge accelerates towards lower potential while an electron accelerates towards higher potential. For a point charge V = kQ/r, the same relation gives E = −dV/dr = kQ/r², recovering Coulomb's law from the potential.</p>
+<p class="ans">E = −dV/dx gives E = 6.0 × 10³ V m⁻¹ (from high to low potential) for the plates.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Graph reading] A graph of potential V against distance r from a point charge is a hyperbola passing through 90 V at r = 0.20 m. Find the charge, the potential at 0.60 m, and the field at 0.20 m.</p>
+<div class="sol">
+<p class="work">V = kQ/r  ⇒  Q = Vr/k = 90 × 0.20/(9 × 10⁹) = 2.0 × 10⁻⁹ C = 2.0 nC
+
+At 0.60 m (three times as far):  V = 90/3 = 30 V
+
+Field at 0.20 m:  E = V/r = 90/0.20 = 4.5 × 10² V m⁻¹  (= kQ/r², same answer)</p>
+<p>Two scalings to remember from the shape of the curve: V ∝ 1/r while E ∝ 1/r², so the potential falls more slowly than the field. That is why “far away the potential is still significant but the field is negligible” — the reason the reference point for potential is taken at infinity and why a charged body still affects distant objects electrostatically even when the force on them is tiny.</p>
+<p class="ans">Q = 2.0 nC; V = 30 V at 0.60 m; E = 4.5 × 10² V m⁻¹ at 0.20 m.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Combined concept] An electron is accelerated from rest through 500 V. Find its kinetic energy in eV and joules, its speed, and the potential at the point where it stops if it then enters a retarding field.</p>
+<div class="sol">
+<p class="work">KE = eV = 500 eV = 500 × 1.6 × 10⁻¹⁹ = 8.0 × 10⁻¹⁷ J
+
+½mv² = 8.0 × 10⁻¹⁷
+v = √(2 × 8.0 × 10⁻¹⁷/9.11 × 10⁻³¹)
+  = √(1.76 × 10¹⁴) = 1.3 × 10⁷ m s⁻¹
+
+It stops when all 500 eV is converted back to potential energy:
+  the retarding potential must be 500 V (i.e. it climbs back to the potential it started from).</p>
+<p>Note the speed is only 4% of c, so the classical formula is adequate — a useful check before reaching for relativity. The 500 eV energy is tiny by macroscopic standards (8 × 10⁻¹⁷ J) but enormous per electron, which is why a 500 V supply can make an electron beam that lights a screen.</p>
+<p class="ans">500 eV = 8.0 × 10⁻¹⁷ J; v = 1.3 × 10⁷ m s⁻¹; it stops after climbing 500 V back.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Assertion–reason] <b>Assertion (A):</b> No work is done in moving a charge along an equipotential surface. <b>Reason (R):</b> The potential difference between any two points on the surface is zero.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">W = q(V_B − V_A) = q × 0 = 0
+
+Geometrically: the field is perpendicular to the equipotential surface, so F·dℓ = 0
+for motion along the surface. Equipotentials are therefore always perpendicular to
+the field lines, and for a point charge they are concentric spheres.</p>
+<p>Consequences worth a mark each: the surface of a conductor in equilibrium is an equipotential (so no current flows along it); two equipotentials never intersect (a point cannot have two potentials); and the spacing of equipotentials indicates field strength — closely spaced means a strong field.</p>
+<p class="ans">Both true, R explains A: V_B − V_A = 0 on the surface, and the field is perpendicular to it, so W = 0.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Experiment/observation table] In a parallel-plate experiment the potential difference is varied and the field is computed. Complete the table and state the relation it verifies.</p>
+<table>
+<tr><th>V (V)</th><th>d (mm)</th><th>E = V/d (V m⁻¹)</th></tr>
+<tr><td>6.0</td><td>2.0</td><td>?</td></tr>
+<tr><td>12.0</td><td>2.0</td><td>?</td></tr>
+<tr><td>12.0</td><td>4.0</td><td>?</td></tr>
+<tr><td>24.0</td><td>4.0</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">6.0/2.0 × 10⁻³ = 3.0 × 10³ V m⁻¹
+12.0/2.0 × 10⁻³ = 6.0 × 10³ V m⁻¹
+12.0/4.0 × 10⁻³ = 3.0 × 10³ V m⁻¹
+24.0/4.0 × 10⁻³ = 6.0 × 10³ V m⁻¹</p>
+<p>Doubling V doubles E; doubling d halves E. That is the uniform-field relation E = V/d, and it holds only well away from the edges of the plates, where the field fringes. The two rows with E = 3.0 × 10³ show that the same field can be produced by different V–d combinations — the practical reason a thick sample in a dielectric test needs a higher voltage for the same field.</p>
+<p class="ans">E = 3.0, 6.0, 3.0, 6.0 (× 10³) V m⁻¹ — the table verifies E ∝ V and E ∝ 1/d, i.e. E = V/d.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Estimation and limiting case] Estimate the potential at the surface of a nucleus of charge +Ze and radius 1.2 × 10⁻¹⁵ m for Z = 26, and state what the result implies about accelerating particles with electric fields.</p>
+<div class="sol">
+<p class="work">V = kQ/R = (9 × 10⁹)(26 × 1.6 × 10⁻¹⁹)/(1.2 × 10⁻¹⁵)
+  = 3.74 × 10⁻⁸/1.2 × 10⁻¹⁵
+  = 3.1 × 10⁷ V</p>
+<p>A proton brought from infinity to that surface would gain 31 MeV, so any electrostatic
+accelerator working below about 30 MV cannot even reach the nucleus of iron.</p>
+<p><b>Limiting case:</b> as R → 0 the potential diverges, which is why the classical point charge model of the electron gives infinite self-energy — one of the historical motivations for renormalisation in quantum field theory. This estimate is also the reason high-energy physics uses cyclotrons and synchrotrons (repeated small pushes) instead of a single huge voltage, which would break down in air long before 30 MV.</p>
+<p class="ans">V ≈ 3.1 × 10⁷ V (≈ 31 MV), so a single electrostatic stage cannot reach a nucleus — hence repeated acceleration in circular machines.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q35.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Electric potential is a vector quantity.”<br>
+(ii) “If the potential at a point is zero, the field there must be zero.”<br>
+(iii) “An electron moves from low potential to high potential and loses energy.”<br>
+(iv) “The potential energy of two like charges is negative.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — potential is a SCALAR (energy per unit charge); potentials add algebraically,
+     which is why they can cancel at a point where the fields do not.
+(ii) FALSE — between two opposite charges the potential is zero at the midpoint while the
+     field is at its maximum. Conversely the field is zero between two like charges where
+     the potential is not.
+(iii) FALSE in its second half — an electron does move towards higher potential (it is
+     negatively charged) but it GAINS kinetic energy as it falls through the potential
+     difference; the potential energy decreases, the total energy is conserved.
+(iv) FALSE — for like charges U = kq₁q₂/r is positive, which is why they repel and why
+     work must be done to push them together. The negative potential energy belongs to
+     unlike charges, bound together.</p>
+<p>The pair (ii) is the most examinable mistake in the whole unit: potential and field are related by a derivative, and a zero value of one says nothing about the other.</p>
+<p class="ans">(i) potential is a scalar; (ii) V = 0 does not imply E = 0; (iii) an electron gains KE climbing to higher V; (iv) like charges have positive U.</p>
 </div>
 </div>
 

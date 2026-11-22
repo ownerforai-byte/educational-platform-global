@@ -34,6 +34,7 @@
 <li>Exercise 22.4 — Capacitors in series and parallel</li>
 <li>Exercise 22.5 — Energy stored in a capacitor</li>
 <li>Exercise 22.6 — Energy lost when capacitors are connected</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -355,6 +356,144 @@ After connection: total capacitance 2C, total charge Q (conserved)
   U_f = ½(2C)(V/2)² = ½ × 2C × V²/4 = ¼CV² = U_i/2</p>
 <p>So exactly half is lost, for any value of V and any value of C, and independently of the resistance in the connecting wire.</p>
 <p class="ans">V halves and U_f = U_i/2, so 50% is always dissipated — an intrinsic result of charge sharing between equal capacitors.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Capacitor questions turn on one relation, Q = CV, plus the two combination rules and the energy ½CV². The eight shapes below include the 50%-loss result that NEB asks about repeatedly.</p>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Multi-step numerical] A 4.0 μF capacitor is charged to 200 V and then connected across an uncharged 6.0 μF capacitor. Find the common potential, the initial and final energies, and the energy lost.</p>
+<div class="sol">
+<p class="work">Charge before: Q = CV = 4.0 × 10⁻⁶ × 200 = 8.0 × 10⁻⁴ C
+
+Common potential: V′ = Q/(C₁ + C₂)
+  = 8.0 × 10⁻⁴/10.0 × 10⁻⁶ = 80 V
+
+Initial energy: U₁ = ½C₁V² = ½ × 4.0 × 10⁻⁶ × (200)² = 8.0 × 10⁻² J
+Final energy:  U₂ = ½(C₁+C₂)V′² = ½ × 10 × 10⁻⁶ × (80)² = 3.2 × 10⁻² J
+
+Lost: 8.0 − 3.2 = 4.8 × 10⁻² J</p>
+<p>The loss is 60% here, not the 50% of the equal-capacitance case: if the uncharged capacitor has capacitance C₂ and the charged one C₁, the fraction lost is C₂/(C₁ + C₂), so it depends on the ratio. All the lost energy appears as heat and electromagnetic radiation in the connecting wires — the circuit cannot avoid it, because the current that equalises the potentials has to flow through some resistance.</p>
+<p class="ans">V′ = 80 V; U₁ = 8.0 × 10⁻² J, U₂ = 3.2 × 10⁻² J; 4.8 × 10⁻² J is dissipated.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Derivation] Derive the energy stored in a charged capacitor, and show that half of the energy supplied by a battery charging a capacitor is wasted.</p>
+<div class="sol">
+<p class="work">Work to add charge dq at potential v = q/C:
+  dW = v dq = (q/C) dq
+Total work to reach Q:
+  W = ∫₀^Q (q/C) dq = Q²/(2C) = ½CV² = ½QV
+
+Battery energy supplied:
+  W_bat = QV = CV²   (the battery pushes Q through a constant V)
+Energy stored: ½CV²   →  exactly half of what the battery supplied.
+The other half is dissipated in the charging resistance, independent of R.</p>
+<p>The “independent of R” is the surprising part and worth stating: making R small does not reduce the loss, it only makes the charging faster. This apparent paradox is resolved by treating the circuit as an LC oscillator with resistance — the missing energy appears as radiation if R → 0. It is the reason switched-mode power supplies exist: charging a capacitor through a resistor is intrinsically 50% efficient.</p>
+<p class="ans">U = ∫(q/C)dq = Q²/2C = ½CV²; a battery supplies CV², so exactly half is dissipated regardless of R.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Graph reading] A graph of charge Q against potential difference V for a capacitor is a straight line through the origin with slope 4.0 × 10⁻⁶ C V⁻¹. Find C and the energy stored at 150 V, and explain what the area under the line represents.</p>
+<div class="sol">
+<p class="work">Slope = C = 4.0 × 10⁻⁶ F = 4.0 μF
+
+At V = 150 V:  Q = 4.0 × 10⁻⁶ × 150 = 6.0 × 10⁻⁴ C
+  U = ½QV = ½ × 6.0 × 10⁻⁴ × 150 = 4.5 × 10⁻² J
+
+Area under the Q–V line up to 150 V = ½Q V = 4.5 × 10⁻² J — the stored energy.</p>
+<p>The Q–V graph is the capacitor's analogue of a force–extension graph: the slope is the capacitance, and the triangular area is the energy. A nonlinear Q–V curve would mean the capacitance changes with voltage — which is exactly what happens with a dielectric whose permittivity depends on the field, and is the principle of a varicap diode tuning a radio.</p>
+<p class="ans">C = 4.0 μF; Q = 6.0 × 10⁻⁴ C and U = 4.5 × 10⁻² J at 150 V; the triangular area under the line is the energy.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Combined concept] A parallel-plate capacitor has C = 8.0 μF in air. Find the new capacitance when a dielectric of κ = 5 fully fills the gap, and explain what happens to the stored energy if the battery stays connected and if it is disconnected first.</p>
+<div class="sol">
+<p class="work">C′ = κC = 5 × 8.0 = 40 μF
+
+Battery connected (V constant):
+  U = ½CV² → U increases 5×   (the battery supplies extra charge)
+
+Disconnected (Q constant):
+  U = Q²/2C → U falls to 1/5 of its value  (the dielectric is pulled in, doing work)
+
+The attracting force pulls the slab in; the mechanical work done shows up as the
+reduction of stored energy in the isolated case.</p>
+<p>One numerical fact and one conceptual one: κ multiplies the capacitance always, but the direction of the energy change flips with the electrical constraint. This is the same logic as a gas: at constant pressure, heating increases the volume and the internal energy; at constant volume, the same heat raises the temperature instead. NEB likes this pairing.</p>
+<p class="ans">C′ = 40 μF; with the battery connected U rises 5×, isolated from the battery U falls to 1/5 — same capacitance, opposite energy change.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Assertion–reason] <b>Assertion (A):</b> When two identical capacitors, one charged and one uncharged, are joined, half the stored energy is lost. <b>Reason (R):</b> The final potential is half the initial potential, while the total charge is unchanged.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Q is conserved, C doubles:  V′ = Q/2C = V/2
+  U₁ = ½CV²,   U₂ = ½(2C)(V/2)² = ¼CV²
+  ratio U₂/U₁ = ½  ⇒  half the energy is lost</p>
+<p>The loss is not an error: equalising the potentials requires a current through the connecting wires, and that current dissipates energy. For unequal capacitors the fraction lost is C₂/(C₁ + C₂), where C₂ is the initially uncharged one; it reduces to ½ when C₁ = C₂ — a quick way to check the algebra in the exam.</p>
+<p class="ans">Both true, R explains A: charge is conserved but the potential halves, so ½(2C)(V/2)² = ½ × ½CV².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Experiment/observation table] In a capacitor experiment the charge is measured for different potentials with and without a dielectric. Complete the table and find κ.</p>
+<table>
+<tr><th>V (V)</th><th>Q in air (μC)</th><th>Q with dielectric (μC)</th><th>κ</th></tr>
+<tr><td>50</td><td>2.0</td><td>6.0</td><td>?</td></tr>
+<tr><td>100</td><td>4.0</td><td>12.0</td><td>?</td></tr>
+<tr><td>150</td><td>6.0</td><td>18.0</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">κ = Q_dielectric/Q_air at the same V = C′/C:
+  6.0/2.0 = 3.0
+  12.0/4.0 = 3.0
+  18.0/6.0 = 3.0
+
+C_air = 2.0 × 10⁻⁶/50 = 4.0 × 10⁻⁸ F = 40 nF
+C′ = 1.2 × 10⁻⁷ F = 120 nF</p>
+<p>κ is constant across the three rows, which is the expected behaviour for a good dielectric in moderate fields: the permittivity is a material property, so the capacitance multiplies by the same factor at every voltage. A drift in κ with V would indicate a nonlinear dielectric — which is a real effect in ceramic capacitors and a useful one in sensors.</p>
+<p class="ans">κ = 3.0 at every voltage; C = 40 nF in air and 120 nF with the dielectric.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Estimation and limiting case] Estimate the capacitance of a parallel-plate capacitor with plates of area 0.010 m² separated by 0.10 mm of air, and state what happens as the separation tends to zero and as the area tends to infinity.</p>
+<div class="sol">
+<p class="work">C = ε₀A/d = (8.85 × 10⁻¹² × 0.010)/(1.0 × 10⁻⁴)
+  = 8.85 × 10⁻¹⁴/1.0 × 10⁻⁴
+  = 8.9 × 10⁻¹⁰ F ≈ 0.89 nF</p>
+<p>About 1 nF for a 10 cm × 10 cm pair 0.1 mm apart — small, which is why practical capacitors use
+(1) dielectric materials (κ up to 10⁴ for ceramics), (2) very thin layers, and
+(3) large folded or rolled areas.</p>
+<p><b>Limiting cases:</b> as d → 0, C → ∞ — but the breakdown field limits the usable V, so the stored energy ½CV² stays finite; in practice 0.1 μm is close to the manufacturable limit. As A → ∞, C → ∞ too, which is why the earth itself is treated as an infinite reservoir of charge at zero potential: adding or removing charge does not change its potential.</p>
+<p class="ans">C ≈ 0.89 nF; larger area and smaller separation both increase C, but breakdown sets the practical limit on the separation.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Capacitance is measured in coulombs.”<br>
+(ii) “Capacitors in series add like resistors in series.”<br>
+(iii) “The dielectric in a capacitor increases the charge it can hold by reducing the leakage current only.”<br>
+(iv) “A capacitor stores charge, so it can supply energy indefinitely.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — capacitance is measured in FARADS (C V⁻¹); the coulomb measures charge.
+(ii) FALSE — capacitors in series add as RECIPROCALS, 1/C = 1/C₁ + 1/C₂ (the opposite of
+     resistors), because the same charge sits on each and the p.d.s add.
+(iii) FALSE — the dielectric reduces the field for the same charge, so the voltage falls and
+     C = Q/V rises by κ. Reduced leakage is a bonus, not the mechanism.
+(iv) FALSE — ½CV² is finite, and the energy is delivered in a short burst as the capacitor
+     discharges (an exponential decay). A capacitor is a small reservoir with a short
+     delivery time, unlike a battery whose chemical store is far larger.</p>
+<p>Statement (ii) is the pairing most often confused: series resistors carry the same current and add in voltage, while series capacitors carry the same charge and add in voltage — so the algebra of one is the inverse of the other.</p>
+<p class="ans">(i) farads; (ii) series capacitors add reciprocally; (iii) the dielectric reduces the field, raising C by κ; (iv) the stored energy ½CV² is finite.</p>
 </div>
 </div>
 

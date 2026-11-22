@@ -36,6 +36,7 @@
 <li>Exercise 20.6 — Torque on a dipole in a uniform field</li>
 <li>Exercise 20.7 — Conductors, shielding and parallel plates</li>
 <li>Exercise 20.8 — Electric flux and Gauss's law</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -417,6 +418,145 @@ By symmetry the flux divides equally among the six faces:
   Φ_face = Φ/6 = 7.5 × 10⁴ N m² C⁻¹</p>
 <p>Note that the flux depends only on the enclosed charge, not on the size of the cube or on where inside it the charge sits.</p>
 <p class="ans">Φ_total = 4.5 × 10⁵ N m² C⁻¹; each face carries one sixth, 7.5 × 10⁴ N m² C⁻¹.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Electric-field questions come in two families: superposition of point-charge fields (vectors), and Gauss's law for symmetric distributions (scalars). The eight shapes below cover both families plus the standard traps.</p>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Multi-step numerical] Two charges, +4.0 μC at A and −4.0 μC at B, are 0.20 m apart. Find the field at the midpoint, and at a point 0.10 m from A on the far side from B.</p>
+<div class="sol">
+<p class="work">At the midpoint (0.10 m from each, opposite charges): both fields point from + to −,
+so they ADD:
+  E = 2 × (9 × 10⁹ × 4.0 × 10⁻⁶)/(0.10)²
+    = 2 × 3.6 × 10⁴/0.010 = 7.2 × 10⁶ N C⁻¹ towards B
+
+At 0.10 m from A on the far side (0.30 m from B, same direction as before):
+  E_A = 9 × 10⁹ × 4.0 × 10⁻⁶/0.010 = 3.6 × 10⁶  (away from A)
+  E_B = 9 × 10⁹ × 4.0 × 10⁻⁶/0.090 = 4.0 × 10⁵  (towards B, i.e. same direction)
+  E = 4.0 × 10⁶ N C⁻¹ towards B</p>
+<p>Both answers point towards B; the difference is the magnitude. In a dipole-like pair the fields add between the charges and subtract outside — the opposite of what happens for two like charges. Sketching the arrows first prevents the sign error.</p>
+<p class="ans">E = 7.2 × 10⁶ N C⁻¹ at the midpoint; 4.0 × 10⁶ N C⁻¹ at 0.10 m beyond the +4 μC charge — both towards the negative charge.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Derivation] Use Gauss's law to derive the field of an infinite uniformly charged plane sheet.</p>
+<div class="sol">
+<p class="work">Take a cylinder (pillbox) of cross-section A piercing the sheet, with one face
+each side. By symmetry E is perpendicular to the sheet and equal on both faces.
+
+  flux through the two faces = 2EA   (the curved surface contributes nothing:
+                                      E is parallel to it)
+  enclosed charge = σA
+
+Gauss:  2EA = σA/ε₀
+  ⇒  E = σ/(2ε₀)   — independent of the distance from the sheet</p>
+<p>Two features are examinable. First, the 2 in the denominator comes from the two faces — omit it and you get the conductor's answer by mistake. Second, the field is <em>uniform</em>, which is why two parallel oppositely charged sheets (a capacitor) give E = σ/ε₀: the fields of the two sheets add between them and cancel outside.</p>
+<p class="ans">2EA = σA/ε₀ gives E = σ/2ε₀, uniform and normal to the sheet.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Graph reading] A graph of E against r for a uniformly charged solid sphere rises linearly to 4.0 × 10⁵ N C⁻¹ at R = 0.10 m, then falls as 1/r². Find the sphere's charge and the field at r = 0.30 m.</p>
+<div class="sol">
+<p class="work">At the surface: E = kQ/R²
+  4.0 × 10⁵ = 9 × 10⁹ Q/(0.10)²
+  Q = 4.0 × 10⁵ × 0.010/(9 × 10⁹) = 4.4 × 10⁻⁷ C
+
+At r = 0.30 m (outside, so act as if all charge is at the centre):
+  E = 4.0 × 10⁵ × (0.10/0.30)² = 4.0 × 10⁵/9 = 4.4 × 10⁴ N C⁻¹</p>
+<p>The linear rise inside (E = kQr/R³) and the 1/r² fall outside meet at the surface with the same value — a continuous graph with a kink in slope, not in value. That continuity is a favourite one-mark question: the field cannot jump at a charge layer of zero thickness unless the layer is a surface of charge.</p>
+<p class="ans">Q = 4.4 × 10⁻⁷ C; E = 4.4 × 10⁴ N C⁻¹ at 0.30 m (one-ninth of the surface value, from the squared distance ratio).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Combined concept] A charge of 8.0 μC sits at the centre of a cube of side 0.20 m. Find the flux through the cube and through one face. What happens if the charge is moved off-centre but kept inside?</p>
+<div class="sol">
+<p class="work">Gauss's law: total flux = q_enclosed/ε₀
+  Φ = 8.0 × 10⁻⁶/8.85 × 10⁻¹² = 9.0 × 10⁵ N m² C⁻¹
+
+One face (by symmetry, all six share equally):
+  Φ_face = 9.0 × 10⁵/6 = 1.5 × 10⁵ N m² C⁻¹</p>
+<p>If the charge is moved off-centre, the total flux is unchanged (still q/ε₀) but the six faces no longer share equally — the nearer faces receive more. The problem therefore tests two ideas at once: the flux through a closed surface depends only on the enclosed charge and not on its position or the shape of the surface, while the flux through any <em>one</em> face does depend on position.</p>
+<p class="ans">Total flux 9.0 × 10⁵ N m² C⁻¹; 1.5 × 10⁵ through each face while centred; off-centre leaves the total unchanged but re-divides it.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q35.</b> [Assertion–reason] <b>Assertion (A):</b> A point charge placed inside a hollow conducting sphere induces a charge on the inner surface. <b>Reason (R):</b> The field inside the conductor material must be zero, so by Gauss's law the enclosed charge for a surface within the metal must be zero.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">Draw a Gaussian surface inside the metal, surrounding the cavity. E = 0 there, so Φ = 0 and
+  q_enclosed = q_inside + q_inner_surface = 0
+  ⇒  q_inner_surface = −q_inside
+
+The outer surface then carries +q_inside (charge is conserved overall).
+
+This is electrostatic shielding: the outside world sees only the outer charge, and
+a cavity is shielded from external fields — the principle of the Faraday cage.</p>
+<p>The result is exact regardless of where the charge sits in the cavity, which is why a sensitive instrument can be protected by a metal enclosure. Note the two separate statements: the inner surface charge is determined by the cavity charge (−q), the outer surface charge is determined by the total charge on the conductor.</p>
+<p class="ans">Both true, R explains A: E = 0 in the metal gives q_inner = −q_inside and q_outer = q_inside.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q36.</b> [Experiment/observation table] A small test charge is moved along a line away from a charged sphere and the force on it is measured. Complete the table and find the charge on the sphere.</p>
+<table>
+<tr><th>r (m)</th><th>F on 1.0 nC (N)</th><th>E = F/q (N C⁻¹)</th><th>E r² (N m² C⁻¹)</th></tr>
+<tr><td>0.10</td><td>9.0 × 10⁻⁴</td><td>?</td><td>?</td></tr>
+<tr><td>0.20</td><td>2.25 × 10⁻⁴</td><td>?</td><td>?</td></tr>
+<tr><td>0.30</td><td>1.0 × 10⁻⁴</td><td>?</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">E = F/1.0 × 10⁻⁹:
+  9.0 × 10⁻⁴/10⁻⁹ = 9.0 × 10⁵ N C⁻¹
+  2.25 × 10⁻⁴/10⁻⁹ = 2.25 × 10⁵ N C⁻¹
+  1.0 × 10⁻⁴/10⁻⁹ = 1.0 × 10⁵ N C⁻¹
+
+E r² = 9.0 × 10³, 9.0 × 10³, 9.0 × 10³ N m² C⁻¹  →  constant
+
+Q = E r²/k = 9.0 × 10³/9 × 10⁹ = 1.0 × 10⁻⁶ C = 1.0 μC</p>
+<p>Er² is constant, so E ∝ 1/r² and the sphere behaves as a point charge of 1.0 μC at its centre. The test charge must be small enough not to disturb the sphere's own charge distribution; a 1 nC probe is safe, a 1 μC probe would not be.</p>
+<p class="ans">E = 9.0, 2.25 and 1.0 (× 10⁵) N C⁻¹; Er² constant at 9.0 × 10³, giving Q = 1.0 μC.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q37.</b> [Estimation and limiting case] Estimate the field needed to ionise dry air (breakdown ≈ 3 × 10⁶ V m⁻¹) and hence the maximum charge a 1.0 cm radius sphere can hold in air.</p>
+<div class="sol">
+<p class="work">At the surface of a sphere: E = kQ/R²
+  Q_max = E_max R²/k
+        = (3 × 10⁶)(1.0 × 10⁻²)²/(9 × 10⁹)
+        = (3 × 10⁶)(1.0 × 10⁻⁴)/9 × 10⁹
+        = 3.3 × 10⁻⁸ C = 33 nC</p>
+<p><b>Limiting cases:</b> as R → 0 the maximum charge falls as R², so a fine point cannot hold charge at all — the field at a sharp tip always reaches breakdown first, which is the principle of the lightning conductor run in reverse. As R → ∞ the charge limit rises without bound while the surface field falls, so a large van de Graaff dome holds a few microcoulombs where a 1 cm sphere holds tens of nanocoulombs.</p>
+<p>This calculation also sets the practical limit on electrostatic demonstrations: a 30 cm dome at 3 × 10⁶ V m⁻¹ holds about 0.3 mC, which is why school machines work in microcoulomb ranges.</p>
+<p class="ans">Q_max ≈ 3.3 × 10⁻⁸ C (33 nC) for a 1 cm sphere; the limit scales as R², so sharp points discharge first.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q38.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Electric field lines can cross at a point where two charges cancel.”<br>
+(ii) “The electric flux through a closed surface depends on the shape of the surface.”<br>
+(iii) “Field lines start on negative charges and end on positive charges.”<br>
+(iv) “A charged conductor has the same surface charge density everywhere.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — lines can never cross, because the field would then have two directions at one
+     point. Where two fields cancel the magnitude is zero and no line is drawn at all.
+(ii) FALSE — by Gauss's law the flux is q_enclosed/ε₀ and depends only on the enclosed charge,
+     not on the size or shape of the closed surface.
+(iii) FALSE — the convention is the reverse: lines begin on POSITIVE charge and end on
+     NEGATIVE charge (the direction of the force on a positive test charge).
+(iv) FALSE — σ varies with curvature: it is largest at sharp points and smallest on flat or
+     concave regions, and it vanishes inside a hollow (the Faraday cage effect).</p>
+<p>Statement (ii) is the conceptual heart of Gauss's law, and (iii) is the most common sign slip: reversing the convention costs a mark in almost every electrostatics paper.</p>
+<p class="ans">(i) lines never cross; (ii) flux depends only on q_enclosed; (iii) positive to negative; (iv) σ is largest at sharp points.</p>
 </div>
 </div>
 

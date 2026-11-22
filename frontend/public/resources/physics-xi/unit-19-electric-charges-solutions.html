@@ -35,6 +35,7 @@
 <li>Exercise 19.5 — Coulomb's law numericals</li>
 <li>Exercise 19.6 — Force in a medium and the superposition principle</li>
 <li>Exercise 19.7 — The Faraday ice pail experiment</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -357,6 +358,146 @@ F_medium = F_air/K = 5.4/5 = 1.08 N</p>
 <div class="sol">
 <p>First charge the bucket with a known sign (say positive) using a known charged rod, and note the direction of the electroscope's deflection. Discharge everything, then introduce the unknown charge into the bucket. If the electroscope deflects in the same direction as before, the unknown charge is positive (it induces the same sign on the outside of the bucket); if it deflects the opposite way, the charge is negative.</p>
 <p class="ans">Compare the direction of deflection produced by a known charge with that produced by the unknown: the same direction means the same sign.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Electrostatics questions mix three tools: Coulomb's law, the field of a configuration, and the logic of charge sharing and induction. The eight shapes below are built from those three.</p>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Multi-step numerical] Three charges are placed on a line: +4.0 μC at x = 0, −2.0 μC at x = 0.30 m, +1.0 μC at x = 0.60 m. Find the net force on the middle charge.</p>
+<div class="sol">
+<p class="work">Force on the −2 μC from the +4 μC (0.30 m away, attractive, towards −x):
+  F₁ = 9 × 10⁹ × 4 × 10⁻⁶ × 2 × 10⁻⁶/(0.30)²
+     = 7.2 × 10⁻²/0.09 = 0.80 N towards −x
+
+Force on the −2 μC from the +1 μC (0.30 m away, attractive, towards +x):
+  F₂ = 9 × 10⁹ × 1 × 10⁻⁶ × 2 × 10⁻⁶/(0.30)²
+     = 6.0 × 10⁻³ = 0.20 N towards +x
+
+Net force = 0.80 − 0.20 = 0.60 N towards the +4 μC charge (towards −x).</p>
+<p>The middle charge is pulled both ways, so the net force is a difference — the standard trap is to add the magnitudes. Note also that the two forces act at the same point, so once the directions are settled the problem is one-dimensional bookkeeping.</p>
+<p class="ans">Net force 0.60 N on the middle charge, directed towards the +4.0 μC charge.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Derivation] Show from Coulomb's law that the electric field inside a uniformly charged spherical shell is zero.</p>
+<div class="sol">
+<p class="work">Consider the point P inside a uniformly charged shell of radius R.
+Draw a double cone through P with its apex at P. The two caps cut from the shell
+have areas A₁ and A₂ at distances r₁ and r₂ from P.
+
+By similar triangles (or the solid angle):
+  A₁/r₁² = A₂/r₂²
+
+Charge on each cap ∝ area, and its field at P ∝ q/r²:
+  E₁ ∝ (A₁/r₁²)σ,   E₂ ∝ (A₂/r₂²)σ
+
+These are equal because A₁/r₁² = A₂/r₂². The two caps push in OPPOSITE directions
+and cancel. Since every such pair cancels, the net field at P is zero.</p>
+<p>This is the same argument that makes Newton's shell theorem work for gravity, and it is the reason a conductor's charge resides entirely on its outer surface: if any charge were inside, the field at a point in the cavity wall would not vanish. Note the contrast with a <em>solid</em> charged sphere, where the field inside is not zero but grows linearly from the centre.</p>
+<p class="ans">Opposite caps subtend equal A/r², so their fields cancel pairwise and E = 0 everywhere inside a uniform shell.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Graph reading] The graph of force between two small charged spheres against separation 1/r² is a straight line of slope 2.7 × 10⁻² N m². Find the product of the charges.</p>
+<div class="sol">
+<p class="work">F = kq₁q₂/r², so a graph of F against 1/r² has slope kq₁q₂:
+  kq₁q₂ = 2.7 × 10⁻² N m²
+  q₁q₂ = 2.7 × 10⁻²/9 × 10⁹
+       = 3.0 × 10⁻¹² C²
+
+So, for example, q₁ = q₂ = √(3.0 × 10⁻¹²) = 1.7 × 10⁻⁶ C = 1.7 μC each.</p>
+<p>A straight line through the origin is the verification of the inverse-square law; its slope gives the product of the charges, never the individual charges — that is why the question asks for the product. Curvature in the plotted points would signal either that the spheres are too close (charge redistribution) or that a background charge is present.</p>
+<p class="ans">q₁q₂ = 3.0 × 10⁻¹² C² (e.g. 1.7 μC each); the straight line verifies F ∝ 1/r².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Combined concept] Two identical conducting spheres carrying +5.0 μC and −1.0 μC are touched and then separated by 0.10 m. Find the final force between them.</p>
+<div class="sol">
+<p class="work">Touching: total charge = +5.0 − 1.0 = +4.0 μC, shared equally:
+  q = +2.0 μC on each
+
+Separated by 0.10 m:
+  F = 9 × 10⁹ × (2.0 × 10⁻⁶)²/(0.10)²
+    = 9 × 10⁹ × 4.0 × 10⁻¹²/0.010
+    = 3.6 × 10⁻²/0.010 = 3.6 N  (repulsive)</p>
+<p>Two steps, two ideas: charge conservation decides the total, and symmetry (identical spheres) decides the share. The force changes sign from attractive to repulsive, which is the interesting part of the question — a student who computes only the magnitude misses the physics. Inside a conductor the charges redistribute so that the field is zero, which is why the spheres equalise.</p>
+<p class="ans">+2.0 μC each after touching; F = 3.6 N repulsive at 0.10 m.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Assertion–reason] <b>Assertion (A):</b> The charge on a conductor resides on its outer surface. <b>Reason (R):</b> Inside a conductor in electrostatic equilibrium the field must be zero, and like charges repel as far apart as possible.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">If E were not zero inside, free electrons would keep moving — not equilibrium.
+Gauss's law with a surface just inside the conductor gives enclosed charge = 0,
+so all the charge lies on the surface. Like charges then repel to the outermost
+possible positions, which is the surface itself.
+
+Consequences: the field just outside is σ/ε₀ and perpendicular to the surface;
+charge collects at points of high curvature (the lightning rod).</p>
+<p>The curvature point deserves a line of its own: at a sharp point the surface charge density is largest, so the local field is strongest and can ionise the air — the mechanism of action of a lightning conductor as well as the reason a charged balloon crackles near a sharp edge.</p>
+<p class="ans">Both true, R explains A: E = 0 inside forces all charge to the surface, where mutual repulsion spreads it outward.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Experiment/observation table] In a Coulomb's-law experiment with two identical spheres, the force is measured for different separations. Complete the last column and state what a graph of F against 1/r² would show.</p>
+<table>
+<tr><th>r (m)</th><th>F (N)</th><th>1/r² (m⁻²)</th><th>F r² (N m²)</th></tr>
+<tr><td>0.10</td><td>3.6</td><td>?</td><td>?</td></tr>
+<tr><td>0.20</td><td>0.90</td><td>?</td><td>?</td></tr>
+<tr><td>0.30</td><td>0.40</td><td>?</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">1/r² = 100, 25.0, 11.1 m⁻²
+F r² = 3.6 × 0.010 = 3.6 × 10⁻² N m²
+       0.90 × 0.040 = 3.6 × 10⁻² N m²
+       0.40 × 0.090 = 3.6 × 10⁻² N m²   (allowing for reading error)</p>
+<p>Fr² is constant, so F ∝ 1/r². A graph of F against 1/r² is a straight line through the origin with slope 3.6 × 10⁻² N m² = kq₁q₂. This is the standard presentation: plotting against 1/r² converts the inverse-square law into a straight line, which is much easier to verify than a curve.</p>
+<p class="ans">Fr² = 3.6 × 10⁻² N m² throughout; the F vs 1/r² graph is a straight line through the origin with that slope.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Estimation and limiting case] Estimate the ratio of the electric force to the gravitational force between two protons, and state what the result implies for atomic structure.</p>
+<div class="sol">
+<p class="work">F_e/F_g = kq²/(Gm²)
+  = (9 × 10⁹)(1.6 × 10⁻¹⁹)²/[(6.67 × 10⁻¹¹)(1.67 × 10⁻²⁷)²]
+  = (9 × 10⁹)(2.56 × 10⁻³⁸)/[(6.67 × 10⁻¹¹)(2.79 × 10⁻⁵⁴)]
+  = 2.3 × 10⁻²⁸/1.86 × 10⁻⁶⁴
+  ≈ 1.2 × 10³⁶</p>
+<p><b>Implication:</b> the electric repulsion between protons is 10³⁶ times their gravitational attraction — utterly dominant. Nuclei are held together by the strong nuclear force, which is why gravity is irrelevant in atoms and why heavy nuclei eventually fission. Conversely, gravity only wins on astronomical scales because matter is almost exactly neutral: the residual charge imbalance of the universe is smaller than one part in 10³⁰.</p>
+<p>The limiting case worth stating: if the electric force were only slightly stronger relative to the strong force, no nucleus heavier than hydrogen would exist; if it were much weaker, atoms would not form before collapsing.</p>
+<p class="ans">F_e/F_g ≈ 10³⁶ — electromagnetism rules the atom and gravity only rules bulk neutral matter.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Coulomb's law applies to charged spheres of any size at any separation.”<br>
+(ii) “The electric force between two charges changes if a third charge is placed nearby.”<br>
+(iii) “A body can have a charge of 1.6 × 10⁻²⁰ C.”<br>
+(iv) “Charging by induction requires contact between the bodies.”</p>
+<div class="sol">
+<p class="work">(i)  PARTLY FALSE — Coulomb's law holds for POINT charges or for uniformly charged spheres
+     ONLY when their separation is much greater than their radii. Close up, the charge
+     redistributes and the inverse square fails.
+(ii) FALSE — the force between two charges is pairwise; a third charge adds a third force
+     vector but does not alter the original pair. (Superposition.)
+(iii) FALSE — 1.6 × 10⁻²⁰ C is one hundredth of the elementary charge; charge is quantised
+     in units of e = 1.6 × 10⁻¹⁹ C, so only integer multiples are possible.
+(iv) FALSE — induction is charging WITHOUT contact: bring a charged rod near an isolated
+     conductor, earth it briefly, then remove the earth and the rod.</p>
+<p>Statement (iii) is the quantisation trap: any free charge must be N e with N an integer, so 1.6 × 10⁻²⁰ C (0.1 e) is impossible.</p>
+<p class="ans">(i) point charges or far-separated spheres; (ii) forces superpose, the pair is unaffected; (iii) charge is quantised in units of e; (iv) induction needs no contact.</p>
 </div>
 </div>
 
