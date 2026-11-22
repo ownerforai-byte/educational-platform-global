@@ -7,16 +7,16 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Metals: electropositive, form cations.",
-    "Activity series: K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Ag > Au.",
-    "Extraction: smelting, electrolysis.",
-    "Alloys: mixtures of metals.",
-    "# Metals and metallurgical principles: definition of metallurgy and its types (hydrometallurgy, pyrometallurgy, electrometallurgy)\n\n## 1. Introduction\nChemical picture of **Metals and metallurgical principles** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Metals fill pass.\n\n## 2. Concepts and definitions\n### Metals and metallurgical principles: definition of metallurgy and its types (hydrometallurgy, pyrometallurgy, electrometallurgy)\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Metals and metallurgical principles — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Metals and metallurgical principles — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Metals and metallurgical principles — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Metals and metallurgical principles — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Where Metals Come From\n\nOnly a handful of metals — gold, platinum, some copper and silver — occur native. Everything else sits in the crust as **ores**: ionic compounds (oxides, sulphides, carbonates, chlorides) from which the metal must be won. **Metallurgy** is the whole science of that winning: concentrate the ore, convert it to a reducible form, reduce it, refine it. The three broad routes — **hydrometallurgy** (aqueous chemistry), **pyrometallurgy** (heat), **electrometallurgy** (electricity) — are the map for this entire unit.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Metallurgy and its types\n\n- **Metallurgy** = the science and technology of extracting metals from their ores and preparing them for use.\n- **Hydrometallurgy** — extraction through aqueous solution chemistry: leaching the ore with a solvent (acid, cyanide), then precipitating or displacing the metal. Example: gold and silver by cyanide leaching (MacArthur–Forrest), copper by leaching with dilute H₂SO₄ followed by displacement with scrap iron.\n- **Pyrometallurgy** — extraction at high temperature: roasting, smelting, reduction in a blast furnace, converting. Example: iron from haematite in the blast furnace; copper from copper pyrites.\n- **Electrometallurgy** — extraction or refining by electrolysis: the most active metals (Na, K, Mg, Ca, Al) cannot be reduced by carbon or hydrogen and are won by electrolysis of their molten salts. Example: Downs cell for sodium, Hall–Héroult for aluminium.\n\n### 2.2 The steps common to all routes\n\n1. **Mining and crushing** of the ore.\n2. **Concentration (dressing)** — separate the wanted mineral from gangue: gravity washing, magnetic separation (magnetite), froth flotation (sulphides).\n3. **Conversion to a reducible compound** — calcination or roasting.\n4. **Reduction** to the metal — carbon (coke), thermite, or electrolysis.\n5. **Refining** — poling, liquation, electrolytic refinement.\n\n### 2.3 Why the route depends on reactivity\n\n- Metals high in the activity series (Na, K, Ca, Mg, Al): strong affinity for oxygen, carbon cannot reduce their oxides → **electrometallurgy**.\n- Middle of the series (Zn, Fe, Pb, Cu): oxides reducible by carbon at furnace temperature → **pyrometallurgy**.\n- Low in the series (Ag, Au, Pt): occur native or are won by solution chemistry → **hydrometallurgy**.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Metallurgy** | Science of extracting metals from ores and refining them | Iron from haematite |\n| **Hydrometallurgy** | Extraction via aqueous solution chemistry | Au by cyanide leaching |\n| **Pyrometallurgy** | Extraction by high-temperature processes | Blast-furnace iron |\n| **Electrometallurgy** | Extraction or refining by electrolysis | Na in the Downs cell |\n| **Ore** | Mineral from which a metal is extracted profitably | Haematite Fe₂O₃ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why active metals demand electricity\n\n- ΔG for M + ½O₂ → MO is strongly negative for Na, Mg, Al — carbon reduction would need temperatures at which carbides form and the oxide still wins. Electrolysis forces the reaction backwards by electrical work: at the cathode the metal ion is reduced directly from the **molten salt** (water would hydrogen-evolve first).\n- Aluminium is the boundary case: its oxide is reducible in principle (thermite proves it — Al takes oxygen from Fe₂O₃), but carbon reduction of Al₂O₃ needs ~2000 °C and forms Al₄C₃, so industry uses electrolysis of Al₂O₃ dissolved in molten cryolite at ~950 °C.\n\n### 4.2 Why sulphide ores get roasted and carbonate ores get calcined\n\n- A sulphide is not directly reducible by carbon; roasting turns it into the oxide (which is): 2ZnS + 3O₂ → 2ZnO + 2SO₂.\n- A carbonate releases CO₂ on heating, leaving the porous oxide: ZnCO₃ → ZnO + CO₂. Both products — the oxide — then reduce with coke.\n\n### 4.3 The economic meaning of \"ore\"\n\n- A mineral becomes an **ore** only when extraction is profitable: bauxite is an ore of aluminium, clay (also Al₂O₃·2SiO₂·2H₂O chemistry) is not — the separation cost is too high. Grade, location and the price of the metal all enter.",
+    "## 5. Comparison Tables\n\n**The three branches of metallurgy**\n\n| Basis | Hydrometallurgy | Pyrometallurgy | Electrometallurgy |\n|---|---|---|---|\n| Agent | Aqueous solvent + displacer | Heat, coke, flux | Electric current |\n| Temperature | Room to ~100 °C | 500–2000 °C | 600–950 °C (molten salt) |\n| Typical metals | Au, Ag, Cu (leaching) | Fe, Cu, Zn, Pb | Na, K, Mg, Ca, Al |\n| Example equation | 2Au + 4CN⁻ + O₂ + 2H₂O → 2[Au(CN)₂]⁻ + 4OH⁻ | Fe₂O₃ + 3CO → 2Fe + 3CO₂ | 2NaCl(l) → 2Na + Cl₂ |",
+    "## 6. Common Confusions\n\n**Ore vs mineral:** every ore is a mineral, but not every mineral is an ore — bauxite is an ore of Al, clay is a mineral of Al but not an ore, because extraction is not profitable.",
+    "**Electrometallurgy is not electrorefining:** extraction electrolysis pulls the metal out of a molten salt (Downs, Hall–Héroult); electrorefining purifies an already-extracted metal from an aqueous solution (copper). Both are electrolysis, different steps of metallurgy.",
+    "**Aluminium is not \"too reactive for electrolysis\":** it is too reactive for *carbon* reduction at practical temperatures; the thermite reaction shows Al reduces Fe₂O₃ violently. The choice of electrolysis is economic and chemical (carbide formation), not a absolutes statement.",
+    "## 7. Exam Application\n\n**NEB-style (3m): What is metallurgy? Name its three types with one example of each.** — **Metallurgy** is the science of the processes by which a metal is extracted from its ore and refined for use. **Hydrometallurgy** extracts the metal through aqueous solution chemistry — gold is leached with dilute NaCN with air present, 2Au + 4CN⁻ + O₂ + 2H₂O → 2[Au(CN)₂]⁻ + 4OH⁻, and the complex is displaced with zinc. **Pyrometallurgy** extracts the metal at high temperature — iron is won by reducing roasted haematite with CO in the blast furnace, Fe₂O₃ + 3CO → 2Fe + 3CO₂. **Electrometallurgy** extracts (or refines) the metal by electrolysis — sodium is obtained by electrolysis of molten NaCl in the Downs cell, 2NaCl(l) → 2Na(cathode) + Cl₂(anode).",
+    "**NEB-style (2m): Why are alkali metals extracted by electrometallurgy and not by carbon reduction?** — Alkali metals sit at the very top of the activity series: their oxides/chlorides are extremely stable (very negative ΔG of formation), so carbon cannot reduce them at any practical temperature — the metal would rather stay bonded. Their ions also cannot be reduced from aqueous solution, because water is reduced to H₂ first. Hence the metal is won by electrolysis of the **molten** salt, where the cation is discharged directly at the cathode (Downs cell for Na: 2NaCl(l) → 2Na + Cl₂)."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -62,93 +62,24 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "Classify copper extraction (leaching + displacement) into its type of metallurgy and write the equations.",
+    "Explain why the choice of extraction route follows the activity series.",
+    "List the five common steps of metallurgy in order."
   ],
   "universalFacts": [
-    "answer pattern for \"Metals and metallurgical principles: definition of metall…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "About 90% of the world's gold was leached with cyanide solutions; a heap-leach pad can extract a gram of gold from a tonne of ore and still turn a profit."
   ],
   "examples": [
-    "Iron from hematite: Fe₂O₃ + 3CO → 2Fe + 3CO₂",
-    "Aluminum by Hall-Héroult process"
+    "***Gold on a zinc shovel*** — cyanide leaching dissolves gold as [Au(CN)₂]⁻ even from ore worth grams per tonne; stirring with zinc shavings precipitates the gold: 2[Au(CN)₂]⁻ + Zn → 2Au + [Zn(CN)₄]²⁻ — hydrometallurgy turning tonnes of rock into a button of metal."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "**NEB-style (3m): What is metallurgy? Name its three types with one example of each.** — **Metallurgy** is the science of extracting metals from their ores and preparing the pure metal for use; it covers concentration of the ore, conversion to a reducible compound, reduction and refining. **Hydrometallurgy** — extraction through aqueous solution chemistry: gold ore is leached with dilute NaCN in the presence of air, 2Au + 4CN⁻ + O₂ + 2H₂O → 2[Au(CN)₂]⁻ + 4OH⁻, and gold is then displaced from the complex by zinc, 2[Au(CN)₂]⁻ + Zn → 2Au + [Zn(CN)₄]²⁻. **Pyrometallurgy** — extraction at high temperature with coke and flux: roasted haematite is reduced in the blast furnace, Fe₂O₃ + 3CO → 2Fe + 3CO₂. **Electrometallurgy** — extraction or refining by electrolysis: sodium is liberated from molten NaCl in the Downs cell, 2NaCl(l) → 2Na(cathode) + Cl₂(anode), because carbon cannot reduce so stable a chloride.",
+    "**NEB-style (2m): Why is aluminium extracted by electrolysis although aluminium is a strong reducing agent in the thermite reaction?** — In the thermite reaction aluminium takes oxygen from iron(III) oxide, 2Al + Fe₂O₃ → Al₂O₃ + 2Fe, showing Al has greater affinity for oxygen than iron. But to reduce **its own** oxide Al₂O₃, carbon would have to compete with one of the most negative free energies of formation known, needing ~2000 °C, at which the product aluminium forms carbide Al₄C₃ and the process is uneconomic. Therefore the oxide is dissolved in molten cryolite (Na₃AlF₆, which lowers the melting point to ~950 °C) and aluminium is deposited at the cathode by electrolysis — the electrical work replaces the impossible chemical reduction."
   ],
   "keyPoints": [
-    "• Metals",
-    "• Metallurgical principles: definition of metallurgy",
-    "• Its types",
-    "• Hydrometallurgy",
-    "• Pyrometallurgy",
-    "• Electrometallurgy"
+    "Metallurgy = extracting + refining metals from ores. Three types: hydrometallurgy (aqueous; Au cyanide leaching 2Au + 4CN- + O2 + 2H2O -> 2[Au(CN)2]- + 4OH-, displacement with Zn), pyrometallurgy (heat/coke; blast furnace Fe2O3 + 3CO -> 2Fe + 3CO2), electrometallurgy (electrolysis of molten salts; Downs Na, Hall-Heroult Al). Route follows activity series: very active Na/K/Mg/Ca/Al -> electrolysis; middle Zn/Fe/Pb/Cu -> carbon reduction; noble Ag/Au/Pt -> native or hydrometallurgy. Steps: crushing -> concentration -> calcination/roasting -> reduction -> refining. Ore = profitable mineral (bauxite yes, clay no). Al boundary case: thermite shows Al reduces Fe2O3, but carbon reduction of Al2O3 impractical (2000 C, Al4C3) -> electrolysis in cryolite."
   ],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.",
+  "summary": "**Metallurgy** is the science of winning a metal from its ore and refining it; its three branches map onto the activity series. **Hydrometallurgy** uses aqueous chemistry — gold is dissolved by cyanide leaching (2Au + 4CN⁻ + O₂ + 2H₂O → 2[Au(CN)₂]⁻ + 4OH⁻) and knocked out of solution by zinc. **Pyrometallurgy** uses heat and coke — the blast furnace reduces roasted haematite with carbon monoxide (Fe₂O₃ + 3CO → 2Fe + 3CO₂). **Electrometallurgy** uses electrolysis of molten salts for the metals carbon cannot touch — sodium in the Downs cell, aluminium in Hall–Héroult cryolite melt. The five common steps are crushing, concentration, calcination/roasting, reduction and refining; and an ore is defined economically — a mineral becomes an ore only when its extraction pays (bauxite yes, clay no).",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Metals and metallurgical principles: definition of metall…\"?",
@@ -172,13 +103,13 @@
     }
   ],
   "importantNotes": [
-    "Important note regarding 01 metals and metallurgical principles."
+    "Verified PYQs in the bank for this unit belong to rows 80-84 (NEB 2024 froth flotation, calcination vs roasting, Hall-Heroult, alloys, electrorefining Cu; NEB 2022 aluminium; NEB 2023/2024 Down's process); no PYQ on the general definition of metallurgy, so items here are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Metallurgy — Principles and Extraction Methods."
+    "Three routes by height in the activity series: top -> electrolysis, middle -> coke, bottom -> leaching/native. One equation per route: Au+CN-, Fe2O3+CO, NaCl(l) electrolysis. Ore = profitable mineral."
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 metals and metallurgical principles."
+    "The activity series is really a ΔG ladder: the more negative the oxide's free energy of formation, the harder carbon must fight to take the oxygen away — electrometallurgy is simply paying for the reversal with electrons instead of coke."
   ],
   "importantTasks": [
     "Task for studying 01 metals and metallurgical principles."
@@ -186,20 +117,72 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 metals and metallurgical principles)"
+    "- 2Au + 4CN⁻ + O₂ + 2H₂O → 2[Au(CN)₂]⁻ + 4OH⁻ (leaching)\n- 2[Au(CN)₂]⁻ + Zn → 2Au + [Zn(CN)₄]²⁻ (displacement)\n- Fe₂O₃ + 3CO → 2Fe + 3CO₂ (pyrometallurgy)\n- 2NaCl(l) —electrolysis→ 2Na + Cl₂ (electrometallurgy)"
   ],
   "specialNotes": [
     "Specialized insight for 01 metals and metallurgical principles."
   ],
   "importantStatements": [
-    "Key statement for 01 metals and metallurgical principles."
+    "\"Metals high in the activity series are extracted by electrolysis of their molten salts, middle metals by carbon reduction, and noble metals occur native or are won by hydrometallurgy.\""
   ],
-  "examNotes": [],
+  "examNotes": [
+    "When asked to \"name the types of metallurgy\", give all three with one concrete example equation each — a bare list of names usually scores half."
+  ],
   "exercises": [],
   "visualization": {
     "type": "simulation",
     "component": "MetalExtractionSim",
     "desc": "Metal extraction process visualizer"
   },
-  "visualType": "metallurgy"
+  "visualType": "metallurgy",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Where Metals Come From\n\nOnly a handful of metals — gold, platinum, some copper and silver — occur native. Everything else sits in the crust as **ores**: ionic compounds (oxides, sulphides, carbonates, chlorides) from which the metal must be won. **Metallurgy** is the whole science of that winning: concentrate the ore, convert it to a reducible form, reduce it, refine it. The three broad routes — **hydrometallurgy** (aqueous chemistry), **pyrometallurgy** (heat), **electrometallurgy** (electricity) — are the map for this entire unit.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Metallurgy and its types\n\n- **Metallurgy** = the science and technology of extracting metals from their ores and preparing them for use.\n- **Hydrometallurgy** — extraction through aqueous solution chemistry: leaching the ore with a solvent (acid, cyanide), then precipitating or displacing the metal. Example: gold and silver by cyanide leaching (MacArthur–Forrest), copper by leaching with dilute H₂SO₄ followed by displacement with scrap iron.\n- **Pyrometallurgy** — extraction at high temperature: roasting, smelting, reduction in a blast furnace, converting. Example: iron from haematite in the blast furnace; copper from copper pyrites.\n- **Electrometallurgy** — extraction or refining by electrolysis: the most active metals (Na, K, Mg, Ca, Al) cannot be reduced by carbon or hydrogen and are won by electrolysis of their molten salts. Example: Downs cell for sodium, Hall–Héroult for aluminium.\n\n### 2.2 The steps common to all routes\n\n1. **Mining and crushing** of the ore.\n2. **Concentration (dressing)** — separate the wanted mineral from gangue: gravity washing, magnetic separation (magnetite), froth flotation (sulphides).\n3. **Conversion to a reducible compound** — calcination or roasting.\n4. **Reduction** to the metal — carbon (coke), thermite, or electrolysis.\n5. **Refining** — poling, liquation, electrolytic refinement.\n\n### 2.3 Why the route depends on reactivity\n\n- Metals high in the activity series (Na, K, Ca, Mg, Al): strong affinity for oxygen, carbon cannot reduce their oxides → **electrometallurgy**.\n- Middle of the series (Zn, Fe, Pb, Cu): oxides reducible by carbon at furnace temperature → **pyrometallurgy**.\n- Low in the series (Ag, Au, Pt): occur native or are won by solution chemistry → **hydrometallurgy**.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Metallurgy** | Science of extracting metals from ores and refining them | Iron from haematite |\n| **Hydrometallurgy** | Extraction via aqueous solution chemistry | Au by cyanide leaching |\n| **Pyrometallurgy** | Extraction by high-temperature processes | Blast-furnace iron |\n| **Electrometallurgy** | Extraction or refining by electrolysis | Na in the Downs cell |\n| **Ore** | Mineral from which a metal is extracted profitably | Haematite Fe₂O₃ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why active metals demand electricity\n\n- ΔG for M + ½O₂ → MO is strongly negative for Na, Mg, Al — carbon reduction would need temperatures at which carbides form and the oxide still wins. Electrolysis forces the reaction backwards by electrical work: at the cathode the metal ion is reduced directly from the **molten salt** (water would hydrogen-evolve first).\n- Aluminium is the boundary case: its oxide is reducible in principle (thermite proves it — Al takes oxygen from Fe₂O₃), but carbon reduction of Al₂O₃ needs ~2000 °C and forms Al₄C₃, so industry uses electrolysis of Al₂O₃ dissolved in molten cryolite at ~950 °C.\n\n### 4.2 Why sulphide ores get roasted and carbonate ores get calcined\n\n- A sulphide is not directly reducible by carbon; roasting turns it into the oxide (which is): 2ZnS + 3O₂ → 2ZnO + 2SO₂.\n- A carbonate releases CO₂ on heating, leaving the porous oxide: ZnCO₃ → ZnO + CO₂. Both products — the oxide — then reduce with coke.\n\n### 4.3 The economic meaning of \"ore\"\n\n- A mineral becomes an **ore** only when extraction is profitable: bauxite is an ore of aluminium, clay (also Al₂O₃·2SiO₂·2H₂O chemistry) is not — the separation cost is too high. Grade, location and the price of the metal all enter.",
+      "## 5. Comparison Tables\n\n**The three branches of metallurgy**\n\n| Basis | Hydrometallurgy | Pyrometallurgy | Electrometallurgy |\n|---|---|---|---|\n| Agent | Aqueous solvent + displacer | Heat, coke, flux | Electric current |\n| Temperature | Room to ~100 °C | 500–2000 °C | 600–950 °C (molten salt) |\n| Typical metals | Au, Ag, Cu (leaching) | Fe, Cu, Zn, Pb | Na, K, Mg, Ca, Al |\n| Example equation | 2Au + 4CN⁻ + O₂ + 2H₂O → 2[Au(CN)₂]⁻ + 4OH⁻ | Fe₂O₃ + 3CO → 2Fe + 3CO₂ | 2NaCl(l) → 2Na + Cl₂ |",
+      "## 6. Common Confusions\n\n**Ore vs mineral:** every ore is a mineral, but not every mineral is an ore — bauxite is an ore of Al, clay is a mineral of Al but not an ore, because extraction is not profitable.",
+      "**Electrometallurgy is not electrorefining:** extraction electrolysis pulls the metal out of a molten salt (Downs, Hall–Héroult); electrorefining purifies an already-extracted metal from an aqueous solution (copper). Both are electrolysis, different steps of metallurgy.",
+      "**Aluminium is not \"too reactive for electrolysis\":** it is too reactive for *carbon* reduction at practical temperatures; the thermite reaction shows Al reduces Fe₂O₃ violently. The choice of electrolysis is economic and chemical (carbide formation), not a absolutes statement.",
+      "## 7. Exam Application\n\n**NEB-style (3m): What is metallurgy? Name its three types with one example of each.** — **Metallurgy** is the science of the processes by which a metal is extracted from its ore and refined for use. **Hydrometallurgy** extracts the metal through aqueous solution chemistry — gold is leached with dilute NaCN with air present, 2Au + 4CN⁻ + O₂ + 2H₂O → 2[Au(CN)₂]⁻ + 4OH⁻, and the complex is displaced with zinc. **Pyrometallurgy** extracts the metal at high temperature — iron is won by reducing roasted haematite with CO in the blast furnace, Fe₂O₃ + 3CO → 2Fe + 3CO₂. **Electrometallurgy** extracts (or refines) the metal by electrolysis — sodium is obtained by electrolysis of molten NaCl in the Downs cell, 2NaCl(l) → 2Na(cathode) + Cl₂(anode).",
+      "**NEB-style (2m): Why are alkali metals extracted by electrometallurgy and not by carbon reduction?** — Alkali metals sit at the very top of the activity series: their oxides/chlorides are extremely stable (very negative ΔG of formation), so carbon cannot reduce them at any practical temperature — the metal would rather stay bonded. Their ions also cannot be reduced from aqueous solution, because water is reduced to H₂ first. Hence the metal is won by electrolysis of the **molten** salt, where the cation is discharged directly at the cathode (Downs cell for Na: 2NaCl(l) → 2Na + Cl₂)."
+    ],
+    "keyPoints": [
+      "Metallurgy = extracting + refining metals from ores. Three types: hydrometallurgy (aqueous; Au cyanide leaching 2Au + 4CN- + O2 + 2H2O -> 2[Au(CN)2]- + 4OH-, displacement with Zn), pyrometallurgy (heat/coke; blast furnace Fe2O3 + 3CO -> 2Fe + 3CO2), electrometallurgy (electrolysis of molten salts; Downs Na, Hall-Heroult Al). Route follows activity series: very active Na/K/Mg/Ca/Al -> electrolysis; middle Zn/Fe/Pb/Cu -> carbon reduction; noble Ag/Au/Pt -> native or hydrometallurgy. Steps: crushing -> concentration -> calcination/roasting -> reduction -> refining. Ore = profitable mineral (bauxite yes, clay no). Al boundary case: thermite shows Al reduces Fe2O3, but carbon reduction of Al2O3 impractical (2000 C, Al4C3) -> electrolysis in cryolite."
+    ],
+    "importantConcepts": [
+      "The activity series is really a ΔG ladder: the more negative the oxide's free energy of formation, the harder carbon must fight to take the oxygen away — electrometallurgy is simply paying for the reversal with electrons instead of coke."
+    ],
+    "examples": [
+      "***Gold on a zinc shovel*** — cyanide leaching dissolves gold as [Au(CN)₂]⁻ even from ore worth grams per tonne; stirring with zinc shavings precipitates the gold: 2[Au(CN)₂]⁻ + Zn → 2Au + [Zn(CN)₄]²⁻ — hydrometallurgy turning tonnes of rock into a button of metal."
+    ],
+    "universalFacts": [
+      "About 90% of the world's gold was leached with cyanide solutions; a heap-leach pad can extract a gram of gold from a tonne of ore and still turn a profit."
+    ],
+    "importantStatements": [
+      "\"Metals high in the activity series are extracted by electrolysis of their molten salts, middle metals by carbon reduction, and noble metals occur native or are won by hydrometallurgy.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs in the bank for this unit belong to rows 80-84 (NEB 2024 froth flotation, calcination vs roasting, Hall-Heroult, alloys, electrorefining Cu; NEB 2022 aluminium; NEB 2023/2024 Down's process); no PYQ on the general definition of metallurgy, so items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Three routes by height in the activity series: top -> electrolysis, middle -> coke, bottom -> leaching/native. One equation per route: Au+CN-, Fe2O3+CO, NaCl(l) electrolysis. Ore = profitable mineral."
+    ],
+    "examNotes": [
+      "When asked to \"name the types of metallurgy\", give all three with one concrete example equation each — a bare list of names usually scores half."
+    ],
+    "formulas": [
+      "- 2Au + 4CN⁻ + O₂ + 2H₂O → 2[Au(CN)₂]⁻ + 4OH⁻ (leaching)\n- 2[Au(CN)₂]⁻ + Zn → 2Au + [Zn(CN)₄]²⁻ (displacement)\n- Fe₂O₃ + 3CO → 2Fe + 3CO₂ (pyrometallurgy)\n- 2NaCl(l) —electrolysis→ 2Na + Cl₂ (electrometallurgy)"
+    ],
+    "practice": [
+      "Classify copper extraction (leaching + displacement) into its type of metallurgy and write the equations.",
+      "Explain why the choice of extraction route follows the activity series.",
+      "List the five common steps of metallurgy in order."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): What is metallurgy? Name its three types with one example of each.** — **Metallurgy** is the science of extracting metals from their ores and preparing the pure metal for use; it covers concentration of the ore, conversion to a reducible compound, reduction and refining. **Hydrometallurgy** — extraction through aqueous solution chemistry: gold ore is leached with dilute NaCN in the presence of air, 2Au + 4CN⁻ + O₂ + 2H₂O → 2[Au(CN)₂]⁻ + 4OH⁻, and gold is then displaced from the complex by zinc, 2[Au(CN)₂]⁻ + Zn → 2Au + [Zn(CN)₄]²⁻. **Pyrometallurgy** — extraction at high temperature with coke and flux: roasted haematite is reduced in the blast furnace, Fe₂O₃ + 3CO → 2Fe + 3CO₂. **Electrometallurgy** — extraction or refining by electrolysis: sodium is liberated from molten NaCl in the Downs cell, 2NaCl(l) → 2Na(cathode) + Cl₂(anode), because carbon cannot reduce so stable a chloride.",
+      "**NEB-style (2m): Why is aluminium extracted by electrolysis although aluminium is a strong reducing agent in the thermite reaction?** — In the thermite reaction aluminium takes oxygen from iron(III) oxide, 2Al + Fe₂O₃ → Al₂O₃ + 2Fe, showing Al has greater affinity for oxygen than iron. But to reduce **its own** oxide Al₂O₃, carbon would have to compete with one of the most negative free energies of formation known, needing ~2000 °C, at which the product aluminium forms carbide Al₄C₃ and the process is uneconomic. Therefore the oxide is dissolved in molten cryolite (Na₃AlF₆, which lowers the melting point to ~950 °C) and aluminium is deposited at the cathode by electrolysis — the electrical work replaces the impossible chemical reduction."
+    ]
+  }
 }
