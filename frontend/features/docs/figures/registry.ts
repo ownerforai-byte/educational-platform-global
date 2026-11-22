@@ -1303,6 +1303,94 @@ import { No3ResonancePanel } from "./no3-resonance-panel";
 import { AquaRegiaPanel } from "./aqua-regia-panel";
 import { PassivityFilmPanel } from "./passivity-film-panel";
 import { Hno2DualRedox } from "./hno2-dual-redox";
+import { Hno3ReactionMatrix } from "./hno3-reaction-matrix";
+import { ConcentrationCodeLadder } from "./concentration-code-ladder";
+import { NonmetalOxyacidMap } from "./nonmetal-oxyacid-map";
+import { BrownRingJunction } from "./brown-ring-junction";
+import { Hno3LabPrepPanel } from "./hno3-lab-prep-panel";
+import { Hno3UseMap } from "./hno3-use-map";
+import { HalogenTrendLadder } from "./halogen-trend-ladder";
+import { HalogenDisplacementSeries } from "./halogen-displacement-series";
+import { ChlorineWaterEquilibrium } from "./chlorine-water-equilibrium";
+import { DisproportionationSplit } from "./disproportionation-split";
+import { OxoacidStrengthOrder } from "./oxoacid-strength-order";
+import { HalogenPrepRoutes } from "./halogen-prep-routes";
+import { HalogenUseMap } from "./halogen-use-map";
+import { HalogenFingerprintTable } from "./halogen-fingerprint-table";
+import { StarchHelixComplex } from "./starch-helix-complex";
+import { AgxColourLadder } from "./agx-colour-ladder";
+import { BleachingSpeedContrast } from "./bleaching-speed-contrast";
+import { IodineSublimationPanel } from "./iodine-sublimation-panel";
+import { HalideTestFlowchart } from "./halide-test-flowchart";
+import { HalideBondLadder } from "./halide-bond-ladder";
+import { H2so4VsH3po4Prep } from "./h2so4-vs-h3po4-prep";
+import { HiReducesH2so4 } from "./hi-reduces-h2so4";
+import { AcidityStabilityScissors } from "./acidity-stability-scissors";
+import { HclGastricPickling } from "./hcl-gastric-pickling";
+import { FumingHxMist } from "./fuming-hx-mist";
+import { HalideReducingLadder } from "./halide-reducing-ladder";
+import { CarbonHybridisationTrio } from "./carbon-hybridisation-trio";
+import { FullereneFootball } from "./fullerene-football";
+import { CatenationChampion } from "./catenation-champion";
+import { AmorphousAdsorptionPower } from "./amorphous-adsorption-power";
+import { CarbonUseMap } from "./carbon-use-map";
+import { C14DatingPanel } from "./c14-dating-panel";
+import { CoPrepRoutes } from "./co-prep-routes";
+import { CoBlueFlame } from "./co-blue-flame";
+import { CoBlastFurnaceReduction } from "./co-blast-furnace-reduction";
+import { CarboxyhaemoglobinHijack } from "./carboxyhaemoglobin-hijack";
+import { MondProcessLoop } from "./mond-process-loop";
+import { CoVsCo2Contrast } from "./co-vs-co2-contrast";
+import { CoUseMap } from "./co-use-map";
+import { P4StrainTetrahedron } from "./p4-strain-tetrahedron";
+import { WhiteVsRedPContrast } from "./white-vs-red-p-contrast";
+import { AllotropeConversionCycle } from "./allotrope-conversion-cycle";
+import { PGlowChemiluminescence } from "./p-glow-chemiluminescence";
+import { SafetyMatchAnatomy } from "./safety-match-anatomy";
+import { BlackPLayers } from "./black-p-layers";
+import { PUseMap } from "./p-use-map";
+import { Nh3VsPh3Contrast } from "./nh3-vs-ph3-contrast";
+import { Ph3PrepRoutes } from "./ph3-prep-routes";
+import { Ph3MetalSaltTests } from "./ph3-metal-salt-tests";
+import { HolmesSignalSequence } from "./holmes-signal-sequence";
+import { Ph4SaltFormation } from "./ph4-salt-formation";
+import { Ph3CombustionH3po4 } from "./ph3-combustion-h3po4";
+import { P2h4SelfIgnition } from "./p2h4-self-ignition";
+import { S8CrownRing } from "./s8-crown-ring";
+import { SulphurAllotropeLadder } from "./sulphur-allotrope-ladder";
+import { ViscosityMountainCurve } from "./viscosity-mountain-curve";
+import { PlasticSulphurQuench } from "./plastic-sulphur-quench";
+import { VulcanisationCrosslinks } from "./vulcanisation-crosslinks";
+import { FineSulphurForms } from "./fine-sulphur-forms";
+import { SulphurUseMap } from "./sulphur-use-map";
+import { KippsApparatus3bulb } from "./kipps-apparatus-3bulb";
+import { H2sDibasicLadder } from "./h2s-dibasic-ladder";
+import { H2sReducerYellowS } from "./h2s-reducer-yellow-s";
+import { SulphideGroupSplit } from "./sulphide-group-split";
+import { H2sCombustionSplit } from "./h2s-combustion-split";
+import { H2sHazardPanel } from "./h2s-hazard-panel";
+import { H2sPrepRoutes } from "./h2s-prep-routes";
+import { So2DualRedoxMap } from "./so2-dual-redox-map";
+import { So2PrepRoutes } from "./so2-prep-routes";
+import { So2BleachVsCl2 } from "./so2-bleach-vs-cl2";
+import { SulphurFogDemo } from "./sulphur-fog-demo";
+import { So2MoleculeShape } from "./so2-molecule-shape";
+import { So2AcidAnhydride } from "./so2-acid-anhydride";
+import { So2UseMap } from "./so2-use-map";
+import { H2so4PersonalityTrio } from "./h2so4-personality-trio";
+import { DilVsConcSwitch } from "./dil-vs-conc-switch";
+import { NonvolatileDisplacer } from "./nonvolatile-displacer";
+import { SugarSnakeDehydration } from "./sugar-snake-dehydration";
+import { AcidToWaterRule } from "./acid-to-water-rule";
+import { H2so4OxidationEqs } from "./h2so4-oxidation-eqs";
+import { H2so4UseMap } from "./h2so4-use-map";
+import { ThiosulphateAnatomy } from "./thiosulphate-anatomy";
+import { IodometryEndpoint } from "./iodometry-endpoint";
+import { PhotoFixerComplex } from "./photo-fixer-complex";
+import { AntichlorAction } from "./antichlor-action";
+import { HypoAcidDecomposition } from "./hypo-acid-decomposition";
+import { CyanideAntidotePath } from "./cyanide-antidote-path";
+import { HypoUseMap } from "./hypo-use-map";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -10357,6 +10445,162 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       { Component: AquaRegiaPanel, caption: "Aqua regia: the king-dissolver", alt: "Aqua regia three parts hydrochloric acid to one part nitric acid dissolving gold and platinum", keyword: "aqua regia" },
       { Component: PassivityFilmPanel, caption: "Passivity: the acid that builds its own wall", alt: "Concentrated nitric acid passivating iron aluminium and chromium with a thin oxide film", keyword: "passivity" },
       { Component: Hno2DualRedox, caption: "HNO2 at +3: can go up or down", alt: "Nitrous acid acting as oxidant with hydrogen iodide and as reductant with acidified permanganate", keyword: "nitrites" },
+    ],
+  },
+  "chemical-properties-of-nitric-acid-hno3-as-an-acid-and-oxidizing-agent-action-with-zinc-magnesiu": {
+    title: "HNO3: acid, oxidant, and the brown ring",
+    figures: [
+      { Component: Hno3ReactionMatrix, caption: "HNO3 reaction matrix", alt: "Matrix of nitric acid reactions with copper zinc and non-metals at different concentrations showing the reduction product", keyword: "nitric acid" },
+      { Component: ConcentrationCodeLadder, caption: "The deeper the dilution, the deeper the cut", alt: "Ladder of nitric acid concentration against reduction product from nitrogen dioxide to ammonium nitrate", keyword: "dilute" },
+      { Component: NonmetalOxyacidMap, caption: "No cation? Then the oxyacid gets made", alt: "Non-metals sulphur carbon and phosphorus oxidised by concentrated nitric acid to their highest oxyacids", keyword: "oxidis" },
+      { Component: BrownRingJunction, caption: "The brown ring at the junction", alt: "Test tube with layered sulphuric acid and ferrous sulphate showing the brown nitrosyl ring at the junction", keyword: "brown ring" },
+      { Component: Hno3LabPrepPanel, caption: "Lab HNO3: distil, don't exceed 200 C", alt: "Laboratory preparation of nitric acid distilling potassium nitrate with concentrated sulphuric acid below 200 degrees", keyword: "nitrate" },
+      { Component: Hno3UseMap, caption: "Where the +5 state goes to work", alt: "Four uses of nitric acid in fertilisers explosives nylon and metal pickling", keyword: "nitric acid" },
+      { Component: PassivityFilmPanel, caption: "Passivity: the acid that builds its own wall", alt: "Concentrated nitric acid passivating iron aluminium and chromium with a thin oxide film", keyword: "passivity" },
+    ],
+  },
+  "halogens-general-characteristics-of-halogens-comparative-study-on-preparation-chemical-propertie": {
+    title: "Halogens: the family portrait",
+    figures: [
+      { Component: HalogenTrendLadder, caption: "Down the group: bigger, softer, weaker", alt: "Ladder of halogens with state colour electronegativity and oxidising power from fluorine to iodine", keyword: "fluorine" },
+      { Component: HalogenDisplacementSeries, caption: "The bully always wins", alt: "Displacement series showing lighter halogens liberating heavier halides with observed colours", keyword: "displacement" },
+      { Component: ChlorineWaterEquilibrium, caption: "Chlorine water is HOCl in disguise", alt: "Chlorine water equilibrium forming hydrochloric and hypochlorous acids with nascent oxygen bleaching", keyword: "hypochlorous" },
+      { Component: DisproportionationSplit, caption: "Same reagents, temperature picks the product", alt: "Chlorine disproportionation in cold dilute alkali stopping at plus one and in hot concentrated alkali reaching plus five", keyword: "disproportionation" },
+      { Component: OxoacidStrengthOrder, caption: "More oxygen, stronger acid (NEB 2024)", alt: "Acid strength order of chlorine oxoacids from hypochlorous to perchloric explained by conjugate base charge delocalisation", keyword: "perchloric" },
+      { Component: HalogenPrepRoutes, caption: "Making the halogens", alt: "Preparation routes for chlorine bromine and iodine in laboratory and industry", keyword: "mno2" },
+      { Component: HalogenUseMap, caption: "Three halogens, three industries", alt: "Uses of chlorine bromine and iodine", keyword: "photographic" },
+    ],
+  },
+  "test-for-cl2-br2-and-i2": {
+    title: "Tests for Cl2, Br2 and I2",
+    figures: [
+      { Component: HalogenFingerprintTable, caption: "Three gases, three fingerprints", alt: "Fingerprint table for chlorine bromine and iodine covering colour litmus starch and ammonia tests", keyword: "starch" },
+      { Component: StarchHelixComplex, caption: "The guest in the helix", alt: "Iodine molecules inside the amylose helix forming the blue-black charge transfer complex reversible with heat", keyword: "blue" },
+      { Component: AgxColourLadder, caption: "The AgX colour ladder", alt: "Silver halide colour ladder white cream yellow with ammonia solubility", keyword: "agno" },
+      { Component: BleachingSpeedContrast, caption: "Bleaching power tracks oxidising power", alt: "Bleaching speed on moist litmus fast for chlorine slow for bromine and none for iodine", keyword: "bleach" },
+      { Component: IodineSublimationPanel, caption: "Sublimation: solid to violet cloud and back", alt: "Iodine subliming from grey black crystals to violet vapour and depositing back on the cold surface", keyword: "sublim" },
+      { Component: HalideTestFlowchart, caption: "Which halide? Follow the ladder", alt: "Flowchart for identifying chloride bromide and iodide using silver nitrate colour and ammonia solubility", keyword: "ammonia" },
+      { Component: WhiteFumesTest, caption: "Two rods, one white cloud", alt: "Ammonia and hydrogen chloride gases meeting to form dense white fumes of ammonium chloride", keyword: "nh4cl" },
+    ],
+  },
+  "haloacids-hcl-hbr-and-hi-comparative-study-on-preparation-properties-reducing-strength-acidic-na": {
+    title: "Haloacids: HCl, HBr, HI",
+    figures: [
+      { Component: HalideBondLadder, caption: "The bond weakens, everything follows", alt: "Bond energy ladder of hydrogen halides 431 366 and 299 kilojoules per mole", keyword: "bond" },
+      { Component: H2so4VsH3po4Prep, caption: "Pick the acid to match the halide", alt: "Choice of sulphuric acid for hydrogen chloride and phosphoric acid for hydrogen bromide and iodide", keyword: "h3po4" },
+      { Component: HiReducesH2so4, caption: "The acid that eats its own product", alt: "Hydrogen iodide reducing concentrated sulphuric acid to iodine and sulphur dioxide contaminating its own preparation", keyword: "sulphuric acid" },
+      { Component: AcidityStabilityScissors, caption: "One bond, two opposite arrows", alt: "Opposing trends of increasing acidity and decreasing thermal stability down the hydrogen halides", keyword: "acidity" },
+      { Component: HclGastricPickling, caption: "The same acid digests lunch and de-scales steel", alt: "Hydrochloric acid in the stomach at pH 1.5 to 3.5 and in steel pickling baths", keyword: "stomach" },
+      { Component: FumingHxMist, caption: "Why the bottle mouth smokes", alt: "Hydrogen halide gas meeting moist air to form white acidic mist of hydrohalic acid droplets", keyword: "fumes" },
+      { Component: HalideReducingLadder, caption: "Reducing power climbs as the ion grows", alt: "Reducing power ladder of halides increasing from chloride to iodide", keyword: "reducing" },
+    ],
+  },
+  "carbon-allotropes-of-carbon-crystalline-and-amorphous-including-fullerenes-structure-general-pro": {
+    title: "Carbon: allotropes and uses",
+    figures: [
+      { Component: CarbonHybridisationTrio, caption: "Hybridisation is destiny", alt: "Three hybridisations of carbon building diamond graphite and fullerene", keyword: "diamond" },
+      { Component: DiamondGraphiteContrast, caption: "Same element, opposite characters", alt: "Comparison of diamond and graphite in bonding hardness conductivity and lubrication", keyword: "graphite" },
+      { Component: FullereneFootball, caption: "C60: the football molecule", alt: "Buckminsterfullerene C60 football of twenty hexagons and twelve pentagons with endohedral doping", keyword: "fullerene" },
+      { Component: CatenationChampion, caption: "Why carbon chains and silicon doesn't", alt: "Carbon carbon bond 355 versus silicon silicon 222 kilojoules per mole explaining catenation", keyword: "catenation" },
+      { Component: AmorphousAdsorptionPower, caption: "A tennis court folded into a sugar cube", alt: "Activated charcoal with enormous internal surface area about 1000 square metres per gram adsorbing gases and impurities", keyword: "adsorption" },
+      { Component: CarbonUseMap, caption: "One element, four industries", alt: "Uses of carbon allotropes and amorphous forms", keyword: "lubricant" },
+      { Component: C14DatingPanel, caption: "C14: the radioactive clock", alt: "Carbon fourteen dating with 5730 year half-life decay curve", keyword: "radioactive" },
+    ],
+  },
+  "properties-reducing-action-reaction-with-metals-and-nonmetals-and-uses-of-carbon-monoxide": {
+    title: "Carbon monoxide",
+    figures: [
+      { Component: CoPrepRoutes, caption: "Four doors into CO", alt: "Four routes to carbon monoxide from formic acid dehydration to fuel gases", keyword: "formic" },
+      { Component: CoBlueFlame, caption: "The blue flame test", alt: "Carbon monoxide burning with characteristic blue flame to carbon dioxide releasing 283 kilojoules per mole", keyword: "blue" },
+      { Component: CoBlastFurnaceReduction, caption: "The blast furnace's quiet worker", alt: "Blast furnace reduction of iron oxide by carbon monoxide", keyword: "blast furnace" },
+      { Component: CarboxyhaemoglobinHijack, caption: "The hijacking ligand", alt: "Carbon monoxide binding haemoglobin iron 200 times more strongly than oxygen forming carboxyhaemoglobin", keyword: "haemoglobin" },
+      { Component: MondProcessLoop, caption: "Mond: nickel travels as a vapour", alt: "Mond process loop forming nickel tetracarbonyl at 50 degrees and decomposing at 230 degrees", keyword: "nickel" },
+      { Component: CoVsCo2Contrast, caption: "One oxygen apart, worlds apart", alt: "Five row comparison of carbon monoxide and carbon dioxide", keyword: "co2" },
+      { Component: CoUseMap, caption: "The formal anhydride earns its keep", alt: "Four uses of carbon monoxide as fuel reducer synthesis feedstock and nickel refining", keyword: "phosgene" },
+    ],
+  },
+  "phosphorus-allotropes-of-phosphorus-name-only": {
+    title: "Phosphorus allotropes",
+    figures: [
+      { Component: P4StrainTetrahedron, caption: "P4: a spring compressed into a tetrahedron", alt: "White phosphorus P4 tetrahedron with 60 degree bond angles versus normal 109.5 degrees showing strain", keyword: "tetra" },
+      { Component: WhiteVsRedPContrast, caption: "Same element, different danger", alt: "Six row comparison of white and red phosphorus", keyword: "white" },
+      { Component: AllotropeConversionCycle, caption: "Heat one way, heat further the other", alt: "Reversible conversion between white and red phosphorus at 250 to 300 degrees and above 400 degrees", keyword: "red" },
+      { Component: PGlowChemiluminescence, caption: "Why white phosphorus glows", alt: "White phosphorus glowing in dark air by slow oxidation with phosphorus trioxide and ozone products", keyword: "glow" },
+      { Component: SafetyMatchAnatomy, caption: "Safety match: the reaction needs both sides", alt: "Safety match head of potassium chlorate and antimony sulphide striking on red phosphorus side of the box", keyword: "match" },
+      { Component: BlackPLayers, caption: "Black P: the calm sibling", alt: "Black phosphorus puckered layered structure most stable allotrope made under high pressure", keyword: "black" },
+      { Component: PUseMap, caption: "Phosphorus at work", alt: "Uses of phosphorus in fertilisers matches pesticides and military applications", keyword: "match" },
+    ],
+  },
+  "phosphine-preparation-properties-basic-nature-reducing-nature-action-with-halogens-and-oxygen-an": {
+    title: "Phosphine",
+    figures: [
+      { Component: Nh3VsPh3Contrast, caption: "Same shape, weaker grip", alt: "Six row comparison of ammonia and phosphine", keyword: "93.6" },
+      { Component: Ph3PrepRoutes, caption: "Two prep routes, both from P3-", alt: "Preparation of phosphine from white phosphorus with sodium hydroxide and from calcium phosphide with water", keyword: "sodium hydroxide" },
+      { Component: Ph3MetalSaltTests, caption: "Black precipitates and a mirror", alt: "Phosphine tests with copper mercury and silver salts giving black phosphides and silver mirror", keyword: "copper" },
+      { Component: HolmesSignalSequence, caption: "Holme's signal: the sea's flare", alt: "Holmes signal of spontaneously burning phosphine used by wrecked ships", keyword: "signal" },
+      { Component: Ph4SaltFormation, caption: "A base, but barely", alt: "Phosphonium salts formed by phosphine with hydrogen iodide and hydrobromic acid", keyword: "phosphonium" },
+      { Component: Ph3CombustionH3po4, caption: "PH3 burns where NH3 won't", alt: "Phosphine burning in air to phosphoric acid with white smoke of metaphosphoric acid", keyword: "phosphoric" },
+      { Component: P2h4SelfIgnition, caption: "The P2H4 troublemaker", alt: "Diphosphine P2H4 impurity spontaneously igniting phosphine air mixture in the preparation flask", keyword: "spontaneous" },
+    ],
+  },
+  "sulphur-allotropes-of-sulphur-name-only-and-uses-of-sulphur": {
+    title: "Sulphur: allotropes and uses",
+    figures: [
+      { Component: S8CrownRing, caption: "S8: the puckered crown", alt: "S8 puckered crown ring of eight sulphur atoms in rhombic and monoclinic sulphur", keyword: "rhombic" },
+      { Component: SulphurAllotropeLadder, caption: "Three sulphurs, one 96 C border", alt: "Three allotropes of sulphur with temperature stability ranges and the 96 degree transition point", keyword: "monoclinic" },
+      { Component: ViscosityMountainCurve, caption: "The viscosity mountain", alt: "Viscosity of molten sulphur rising to a maximum near 200 degrees then falling as chains break", keyword: "viscosity" },
+      { Component: PlasticSulphurQuench, caption: "Making plastic sulphur", alt: "Molten sulphur boiled and poured into cold water forming plastic amorphous sulphur that slowly reverts to rhombic", keyword: "plastic" },
+      { Component: VulcanisationCrosslinks, caption: "Sulphur as the bridge-builder", alt: "Vulcanisation adding 3 to 5 percent sulphur crosslinks between rubber chains versus 30 percent for ebonite", keyword: "vulcanis" },
+      { Component: FineSulphurForms, caption: "Powder, milk and colloid", alt: "Three fine forms of sulphur flowers milk and colloidal with preparation", keyword: "milk" },
+      { Component: SulphurUseMap, caption: "Brimstone's resume", alt: "Uses of sulphur in acid manufacture vulcanisation pyrotechnics and agriculture", keyword: "gunpowder" },
+    ],
+  },
+  "hydrogen-sulphide-preparation-from-kipp-s-apparatus-with-diagram-properties-acidic-nature-reduci": {
+    title: "Hydrogen sulphide",
+    figures: [
+      { Component: KippsApparatus3bulb, caption: "Kipp's apparatus: gas on demand", alt: "Kipps apparatus three bulbs with acid reservoir marble and ferrous sulphide lumps stopcock and pressure valve action", keyword: "Kipp" },
+      { Component: H2sDibasicLadder, caption: "Weak, dibasic, two steps", alt: "Hydrogen sulphide as weak dibasic acid losing two protons in steps", keyword: "dibasic" },
+      { Component: H2sReducerYellowS, caption: "H2S gives electrons, S rains out", alt: "Hydrogen sulphide reducing oxidants to precipitated yellow sulphur with equations", keyword: "reducing" },
+      { Component: SulphideGroupSplit, caption: "The qualitative-analysis split", alt: "Qualitative analysis split of metal sulphides into acid insoluble group two and acid soluble group four", keyword: "group" },
+      { Component: H2sCombustionSplit, caption: "How much air decides the product", alt: "Hydrogen sulphide burning with limited air to sulphur and excess air to sulphur dioxide", keyword: "combustion" },
+      { Component: H2sHazardPanel, caption: "The smell that switches itself off", alt: "Hydrogen sulphide hazard rotten egg smell paralysis of olfactory nerves making high concentrations odourless", keyword: "rotten" },
+      { Component: H2sPrepRoutes, caption: "FeS + acid, dried over P2O5", alt: "Hydrogen sulphide preparation from ferrous sulphide with dilute sulphuric acid dried by phosphorus pentoxide", keyword: "fes" },
+    ],
+  },
+  "sulphur-dioxide-properties-acidic-nature-reducing-nature-oxidising-nature-and-bleaching-action-a": {
+    title: "Sulphur dioxide",
+    figures: [
+      { Component: So2DualRedoxMap, caption: "+4: high enough to give, low enough to take", alt: "Sulphur dioxide dual redox nature as reducer to sulphate and oxidiser to sulphur", keyword: "reducing" },
+      { Component: So2PrepRoutes, caption: "Four doors into SO2", alt: "Four routes to sulphur dioxide in laboratory and industry", keyword: "sodium sulphite" },
+      { Component: So2BleachVsCl2, caption: "Two chemistries, two fates for colour", alt: "Temporary reduction bleaching by sulphur dioxide versus permanent oxidation bleaching by chlorine", keyword: "bleach" },
+      { Component: SulphurFogDemo, caption: "The sulphur fog demo", alt: "Sulphur fog demonstration mixing hydrogen sulphide and sulphur dioxide to precipitate fine sulphur", keyword: "sulphur" },
+      { Component: So2MoleculeShape, caption: "Bent, 119 degrees, resonating", alt: "Bent sulphur dioxide molecule with 119 degree bond angle and resonance structures", keyword: "angle" },
+      { Component: So2AcidAnhydride, caption: "Acidic oxide: anhydride of H2SO3", alt: "Sulphur dioxide as acid anhydride of sulphurous acid forming bisulphite and sulphite in alkali", keyword: "sulphurous" },
+      { Component: So2UseMap, caption: "From the acid plant to the raisin packet", alt: "Four uses of sulphur dioxide from sulphuric acid to food preservative", keyword: "preservative" },
+    ],
+  },
+  "sulphuric-acid-properties-acidic-nature-oxidising-nature-dehydrating-nature-and-uses": {
+    title: "Sulphuric acid: three personalities",
+    figures: [
+      { Component: H2so4PersonalityTrio, caption: "One molecule, three jobs", alt: "Three personalities of sulphuric acid as acid oxidant and dehydrating agent with equations", keyword: "dehydrating" },
+      { Component: DilVsConcSwitch, caption: "Same metal, different gas", alt: "Dilute sulphuric acid acting as ordinary acid releasing hydrogen and concentrated sulphuric acid acting as oxidant releasing sulphur dioxide", keyword: "dilute" },
+      { Component: NonvolatileDisplacer, caption: "The acid that makes other acids", alt: "Concentrated sulphuric acid as high boiling nonvolatile acid displacing more volatile acids from their salts", keyword: "volatile" },
+      { Component: SugarSnakeDehydration, caption: "The sugar snake experiment", alt: "Concentrated sulphuric acid poured on sugar producing black carbon column steam and heat", keyword: "sugar" },
+      { Component: AcidToWaterRule, caption: "Dilution is a heat bomb", alt: "Always add acid to water slowly with stirring never water to acid because dilution is highly exothermic", keyword: "water" },
+      { Component: H2so4OxidationEqs, caption: "Hot conc. H2SO4 always ends at SO2", alt: "Hot concentrated sulphuric acid oxidising copper carbon sulphur and mercury with sulphur dioxide evolution", keyword: "oxidising" },
+      { Component: H2so4UseMap, caption: "King of chemicals: production as GDP proxy", alt: "Four major uses of sulphuric acid", keyword: "batter" },
+    ],
+  },
+  "sodium-thiosulphate-formula-and-uses": {
+    title: "Sodium thiosulphate (hypo)",
+    figures: [
+      { Component: ThiosulphateAnatomy, caption: "S2O3 2-: two sulphurs, two jobs", alt: "Thiosulphate ion structure sulphate-like sulphur plus sulfane sulphur with two different oxidation states", keyword: "thiosulphate" },
+      { Component: IodometryEndpoint, caption: "Iodometry: watch the blue vanish", alt: "Iodometric titration with thiosulphate reducing iodine to iodide with starch endpoint fading from blue black to colourless", keyword: "iodine" },
+      { Component: PhotoFixerComplex, caption: "Why the fixer is called hypo", alt: "Hypo fixing unexposed silver halide in photographic film by forming soluble silver thiosulphate complex", keyword: "photograph" },
+      { Component: AntichlorAction, caption: "Antichlor: undoing the bleach", alt: "Sodium thiosulphate as antichlor removing excess chlorine after bleaching in textile mills", keyword: "antichlor" },
+      { Component: HypoAcidDecomposition, caption: "Acid + hypo = the milky test", alt: "Thiosulphate with dilute acid giving sulphur dioxide precipitated sulphur and water with milkiness", keyword: "sulphur" },
+      { Component: CyanideAntidotePath, caption: "The cyanide antidote", alt: "Thiosulphate as cyanide antidote converting cyanide to harmless thiocyanate by trans-sulphuration enzyme rhodanese", keyword: "cyanide" },
+      { Component: HypoUseMap, caption: "One salt, four careers", alt: "Four uses of sodium thiosulphate in photography titration textiles and medicine", keyword: "titration" },
     ],
   },
 };
