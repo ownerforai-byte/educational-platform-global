@@ -6,84 +6,294 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:23.489Z",
   "notes": [
-    "# Gaseous state: Kinetic theory of gas and its postulates\n\n## 1. Introduction\nChemical picture of **Gaseous state** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the States of Matter fill pass.\n\n## 2. Concepts and definitions\n### Gaseous state: Kinetic theory of gas and its postulates\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Gaseous state — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Gaseous state — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Gaseous state — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Gaseous state — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Why Gases Are the Simplest State\n\nSolids have shape, liquids have surface, gases have **nothing but motion**. The kinetic molecular theory explains every gas law from five postulates about point particles in random flight — and it succeeds because gas molecules are so far apart that they barely interact. This topic supplies the model; the next topics supply its equations.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The five postulates (NEB 2024 verified list)\n\n1. **Tiny particles:** gases consist of a very large number of molecules, tiny compared with the distances between them — the molecular volume is negligible against the container volume.\n2. **Random motion:** molecules move in all directions in straight lines with high speeds, colliding with each other and the walls; their paths change direction at every collision.\n3. **No forces:** intermolecular attractions and repulsions are negligible — molecules are independent except during instant collisions.\n4. **Perfectly elastic collisions:** collisions (molecule–molecule and molecule–wall) conserve kinetic energy; no energy is lost.\n5. **Kinetic energy and temperature:** the average kinetic energy of molecules is **directly proportional to the absolute temperature** (KE = 3/2 kT per molecule); at a given T, all gases have the same average KE regardless of mass.\n\n### 2.2 How the postulates generate pressure\n\n- Pressure is the **rate and force of wall collisions**: each wall impact transfers momentum 2mv; billions per second per cm² give a steady macroscopic pressure.\n- Heavier molecules move slower at the same T (same average KE), so pressure depends only on number density and T — not on the gas's identity.\n\n### 2.3 Molecular speeds\n\n- **Root mean square speed:** u(rms) = √(3RT/M) — rises with T, falls with molar mass.\n- **Average speed:** u(av) = √(8RT/πM); **most probable speed:** u(mp) = √(2RT/M); ratio u(mp) : u(av) : u(rms) = 1 : 1.128 : 1.225.\n- At 25 °C, O₂ molecules average about 480 m/s — faster than sound.\n\n### 2.4 Kinetic gas equation\n\n- PV = ⅓ nMu²(rms) — connects the macroscopic (PV) with the microscopic (molecular speeds); combined with PV = nRT it yields the speed formulas above.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Formula |\n|---|---|---|\n| **Kinetic molecular theory** | Model: point particles, random elastic motion, no forces | 5 postulates |\n| **Pressure (kinetic view)** | Momentum transfer rate to walls | PV = ⅓ nMu² |\n| **Root mean square speed** | Square root of mean of squared speeds | √(3RT/M) |\n| **Average speed** | Arithmetic mean of molecular speeds | √(8RT/πM) |\n| **Most probable speed** | Speed possessed by the largest fraction | √(2RT/M) |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why the model works only for gases\n\n- Gas molecules occupy ~0.01 % of the container volume and attract each other negligibly — the two idealisations (negligible volume, negligible forces) are excellent for gases, poor for liquids and meaningless for solids.\n- This is also the seed of real-gas deviation (topic 46): both idealisations fail at high pressure and low temperature.\n\n### 4.2 Temperature is a speed dial\n\n- Doubling absolute temperature multiplies u(rms) by √2, and multiplies collision force and frequency so that P ∝ T at constant V — Charles's law emerges from postulate 5.\n- At absolute zero, translational motion ceases — the model's natural floor.\n\n### 4.3 Verified PYQ (NEB 2024): the postulates as an exam answer\n\n- Quote the five postulates of section 2.1 verbatim, then add the pay-off line: \"these assumptions explain the gas laws and define an ideal gas.\" Marks sit in the completeness — omitting elastic collisions or the KE–T proportionality loses the tail marks.",
+    "## 5. Comparison Tables\n\n**The three molecular speeds**\n\n| Speed | Formula | Relative value | Use |\n|---|---|---|---|\n| Most probable | √(2RT/M) | 1 | Peak of Maxwell curve |\n| Average | √(8RT/πM) | 1.128 | Mean of distribution |\n| RMS | √(3RT/M) | 1.225 | Kinetic energy, effusion |\n\n**Macroscopic laws from microscopic postulates**\n\n| Observation | Postulate responsible |\n|---|---|\n| Boyle's law (P ∝ 1/V) | Fixed KE at fixed T; halving V doubles collision rate |\n| Charles's law (V ∝ T) | KE ∝ T — hotter molecules hit harder, gas must expand |\n| Dalton's law | No forces — each gas contributes independently |\n| Graham's law | Speed ∝ 1/√M at the same T |",
+    "## 6. Common Confusions\n\n**Elastic does not mean \"bouncy\" in the everyday sense:** elastic collisions conserve kinetic energy — the gas does not cool as its molecules collide, which is why a sealed bottle stays at room temperature.",
+    "**Same KE, different speeds:** at 25 °C helium and oxygen molecules have the same average kinetic energy; helium simply moves ~2.8× faster (√(32/4)) — students conflate energy with speed.",
+    "**RMS, not average, enters the equations:** the kinetic gas equation uses u(rms) because pressure depends on the mean of v², not the mean of v.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): Write the postulates of the kinetic molecular theory of gases.** — (1) A gas consists of a very large number of tiny molecules whose volume is negligible compared with the container. (2) The molecules move randomly in straight lines at high speed, colliding with one another and with the walls. (3) Intermolecular forces of attraction and repulsion are negligible. (4) All collisions are perfectly elastic — kinetic energy is conserved. (5) The average kinetic energy of the molecules is directly proportional to the absolute temperature and is the same for all gases at that temperature. Consequence: pressure is the collective effect of wall collisions, and the model reproduces Boyle's, Charles's and Dalton's laws.",
+    "**NEB-style (2m): Calculate the ratio of u(rms) for H₂ and O₂ at the same temperature.** — u(rms) ∝ 1/√M: ratio = √(32/2) = √16 = **4 : 1** — hydrogen molecules move four times faster than oxygen molecules at the same temperature, the same arithmetic Graham's law uses.",
+    "**NEB-style (2m): Why does a gas fill its container completely while a liquid does not?** — Gas molecules have negligible intermolecular attraction (postulate 3) and high random speeds, so nothing restrains expansion until walls stop them; liquid molecules attract strongly enough to maintain a fixed volume with a surface."
   ],
   "practice": [
-    "State the postulates of the kinetic theory and identify the idealisations among them.",
-    "Derive PV = (1/3)mnc̄² and use it to obtain the ideal gas equation.",
-    "Obtain expressions for rms, average and most probable speeds and arrange them in order.",
-    "Calculate the rms speed of oxygen molecules at 300 K (M = 32 g mol⁻¹).",
-    "Explain why hydrogen escapes the Earth's atmosphere more easily than oxygen.",
-    "State the limitations of the kinetic theory of gases.",
-    "List the four measurable properties of a gas and their SI units.",
-    "State three characteristics that distinguish gases from liquids and solids.",
-    "Convert 750 mm Hg into Pa and bar.",
-    "Why do gases fill the entire container while liquids do not?",
-    "State the postulates of the kinetic theory and identify the two idealisations responsible for real-gas deviation.",
-    "Show how PV = (1/3)mnc̄² leads to PV = nRT.",
-    "Map each gas law to the postulates that explain it.",
-    "Why does the kinetic theory fail for polyatomic gases' specific heats?"
+    "List the postulates of the kinetic molecular theory and explain how any two of them produce Boyle's law.",
+    "Compute u(rms) for N₂ at 300 K (R = 8.314, M = 0.028 kg/mol).",
+    "Why must collisions be elastic for a gas held at constant temperature?"
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Gaseous state: Kinetic theory of gas and its postulates\"?",
+      "question": "According to kinetic theory, the average kinetic energy of gas molecules is proportional to:",
       "options": [
-        "Gaseous state",
-        "Kinetic theory of gas",
-        "Unrelated topic",
-        "None of the above"
+        "Pressure",
+        "Volume",
+        "Absolute temperature",
+        "Molar mass"
       ],
-      "answer": "A",
-      "explanation": "Gaseous state is listed among the official sub-ideas of Gaseous state: Kinetic theory of gas and its postulates; the others are not part of this topic."
+      "answer": "C",
+      "explanation": "KE = 3/2 kT - same for all gases at a given T."
     },
     {
-      "question": "A common examiner point on \"Gaseous state: Kinetic theory of gas and its postulates\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Collisions between gas molecules are assumed to be:",
       "options": [
-        "True",
-        "False"
+        "Inelastic",
+        "Perfectly elastic",
+        "Sticky",
+        "Rare"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Kinetic energy is conserved - the gas does not self-heat."
     },
     {
-      "question": "1 atmosphere equals:",
+      "question": "Which speed is largest for a given gas at fixed T?",
       "options": [
-        "10⁵ Pa",
-        "101325 Pa",
-        "760 Pa",
-        "1 bar exactly"
+        "Most probable",
+        "Average",
+        "Root mean square",
+        "All equal"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "Ratio 1 : 1.128 : 1.225 - RMS wins."
     },
     {
-      "question": "In kinetic theory, the pressure of a gas is proportional to:",
+      "question": "u(rms) of a gas at constant T is proportional to:",
       "options": [
-        "c̄",
-        "c̄²",
-        "1/c̄²",
-        "√c̄"
+        "M",
+        "1/M",
+        "1/sqrt(M)",
+        "sqrt(M)"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "u = sqrt(3RT/M)."
+    },
+    {
+      "question": "The kinetic gas equation is:",
+      "options": [
+        "PV = nRT",
+        "PV = 1/3 nMu2",
+        "PV = RT",
+        "P = nRT/V2"
+      ],
+      "answer": "B",
+      "explanation": "Links macroscopic PV with molecular speeds."
+    },
+    {
+      "question": "At the same temperature, He molecules move faster than O2 molecules by a factor of about:",
+      "options": [
+        "2",
+        "2.8",
+        "4",
+        "8"
+      ],
+      "answer": "B",
+      "explanation": "sqrt(32/4) = 2.83."
+    },
+    {
+      "question": "Intermolecular forces in the ideal gas model are:",
+      "options": [
+        "Strong",
+        "Negligible",
+        "Repulsive only",
+        "Temperature dependent"
+      ],
+      "answer": "B",
+      "explanation": "Postulate 3 - independence of molecules."
+    },
+    {
+      "question": "Gas pressure in kinetic theory is:",
+      "options": [
+        "Molecular weight",
+        "Wall collision momentum transfer",
+        "Empty space",
+        "Gravity"
+      ],
+      "answer": "B",
+      "explanation": "Each wall impact transfers momentum 2mv."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Quote postulates in pairs — (1) tiny molecules, huge empty space; (2) random motion, elastic collisions; (3) no attraction (ideal); (4) pressure = molecular bombardment; (5) KE ∝ T.",
-    "Trick 2: 'KE ∝ absolute temperature' is the postulate that links temperature to molecular speed — always cite it for 'why pressure rises with T'.",
-    "Trick 3: Ideal-gas behaviour follows from 'no intermolecular attraction' — real gases deviate exactly when that fails (high P, low T)."
+    "Postulate mnemonic: \"Tiny, Random, Free, Elastic, KE–T\". Speed ladder: \"most probable < average < RMS\". Ratio u(rms) gases = √(M₂/M₁)."
   ],
   "keyPoints": [
-    "Gas molecules are point masses with large intermolecular spaces.",
-    "Molecular collisions are perfectly elastic; pressure arises from wall bombardment.",
-    "Average kinetic energy is directly proportional to absolute temperature.",
-    "No significant intermolecular forces in an ideal gas."
+    "Five postulates: negligible molecular volume; random straight-line motion with collisions; negligible intermolecular forces; perfectly elastic collisions; average KE ∝ absolute T (same for all gases at a T). Pressure = wall-collision momentum transfer; PV = ⅓nMu²(rms). Speeds: u(mp) √(2RT/M) < u(av) √(8RT/πM) < u(rms) √(3RT/M), ratio 1 : 1.128 : 1.225. O₂ at 25 °C ≈ 480 m/s; u(rms) H₂ : O₂ = 4 : 1."
   ],
   "practiceQuestions": [
-    "Q. State any four postulates of the kinetic theory of gases. (2 marks) — pick the four above in compact form.",
-    "Q. Why does a gas exert pressure? (1 mark) — molecules bombard the walls; rate × momentum change per collision gives pressure."
+    "**NEB 2024 (4m): Write the postulates of the kinetic molecular theory of gases.** — The kinetic molecular theory describes a gas by five postulates: **(1)** A gas consists of a very large number of tiny particles (molecules) whose actual volume is negligible compared with the volume of the container — most of a gas is empty space. **(2)** The molecules are in continuous random motion, travelling in straight lines with high speeds and changing direction at every collision with one another or with the walls. **(3)** The forces of intermolecular attraction and repulsion are negligible — molecules move independently except at the instant of collision. **(4)** All collisions — molecule–molecule and molecule–wall — are perfectly elastic, so the total kinetic energy of the gas remains constant at a fixed temperature. **(5)** The average kinetic energy of the molecules is directly proportional to the absolute temperature (KE = 3/2 kT) and is the same for all gases at the same temperature, regardless of molar mass. **Consequence:** pressure is the cumulative momentum transfer of wall collisions, and from these assumptions Boyle's law, Charles's law and Dalton's law of partial pressures all follow; a gas obeying them exactly is an ideal gas.",
+    "**NEB-style (2m): Calculate the ratio of the root mean square speeds of hydrogen and oxygen molecules at the same temperature.** — From the kinetic gas equation, u(rms) = √(3RT/M), so at the same temperature u(rms) ∝ 1/√M. For H₂ (M = 2) and O₂ (M = 32): ratio = √(32/2) = √16 = **4 : 1**. Hydrogen molecules move four times faster than oxygen molecules at the same temperature — which is also why hydrogen effuses four times faster (Graham's law).",
+    "**NEB-style (2m): Explain why a gas exerts pressure on the walls of its container according to the kinetic theory.** — Gas molecules move randomly at high speeds and collide with the walls (postulate 2). Each collision transfers momentum 2mv to the wall (the molecule reverses its momentum component). Billions of such collisions per second per square centimetre produce a steady average force per unit area — the **pressure**. At constant temperature the molecular speeds are constant, so pressure rises only when collisions become more frequent (smaller volume) or harder (higher temperature) — the microscopic origin of Boyle's and Charles's laws."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Why Gases Are the Simplest State\n\nSolids have shape, liquids have surface, gases have **nothing but motion**. The kinetic molecular theory explains every gas law from five postulates about point particles in random flight — and it succeeds because gas molecules are so far apart that they barely interact. This topic supplies the model; the next topics supply its equations.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The five postulates (NEB 2024 verified list)\n\n1. **Tiny particles:** gases consist of a very large number of molecules, tiny compared with the distances between them — the molecular volume is negligible against the container volume.\n2. **Random motion:** molecules move in all directions in straight lines with high speeds, colliding with each other and the walls; their paths change direction at every collision.\n3. **No forces:** intermolecular attractions and repulsions are negligible — molecules are independent except during instant collisions.\n4. **Perfectly elastic collisions:** collisions (molecule–molecule and molecule–wall) conserve kinetic energy; no energy is lost.\n5. **Kinetic energy and temperature:** the average kinetic energy of molecules is **directly proportional to the absolute temperature** (KE = 3/2 kT per molecule); at a given T, all gases have the same average KE regardless of mass.\n\n### 2.2 How the postulates generate pressure\n\n- Pressure is the **rate and force of wall collisions**: each wall impact transfers momentum 2mv; billions per second per cm² give a steady macroscopic pressure.\n- Heavier molecules move slower at the same T (same average KE), so pressure depends only on number density and T — not on the gas's identity.\n\n### 2.3 Molecular speeds\n\n- **Root mean square speed:** u(rms) = √(3RT/M) — rises with T, falls with molar mass.\n- **Average speed:** u(av) = √(8RT/πM); **most probable speed:** u(mp) = √(2RT/M); ratio u(mp) : u(av) : u(rms) = 1 : 1.128 : 1.225.\n- At 25 °C, O₂ molecules average about 480 m/s — faster than sound.\n\n### 2.4 Kinetic gas equation\n\n- PV = ⅓ nMu²(rms) — connects the macroscopic (PV) with the microscopic (molecular speeds); combined with PV = nRT it yields the speed formulas above.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Formula |\n|---|---|---|\n| **Kinetic molecular theory** | Model: point particles, random elastic motion, no forces | 5 postulates |\n| **Pressure (kinetic view)** | Momentum transfer rate to walls | PV = ⅓ nMu² |\n| **Root mean square speed** | Square root of mean of squared speeds | √(3RT/M) |\n| **Average speed** | Arithmetic mean of molecular speeds | √(8RT/πM) |\n| **Most probable speed** | Speed possessed by the largest fraction | √(2RT/M) |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why the model works only for gases\n\n- Gas molecules occupy ~0.01 % of the container volume and attract each other negligibly — the two idealisations (negligible volume, negligible forces) are excellent for gases, poor for liquids and meaningless for solids.\n- This is also the seed of real-gas deviation (topic 46): both idealisations fail at high pressure and low temperature.\n\n### 4.2 Temperature is a speed dial\n\n- Doubling absolute temperature multiplies u(rms) by √2, and multiplies collision force and frequency so that P ∝ T at constant V — Charles's law emerges from postulate 5.\n- At absolute zero, translational motion ceases — the model's natural floor.\n\n### 4.3 Verified PYQ (NEB 2024): the postulates as an exam answer\n\n- Quote the five postulates of section 2.1 verbatim, then add the pay-off line: \"these assumptions explain the gas laws and define an ideal gas.\" Marks sit in the completeness — omitting elastic collisions or the KE–T proportionality loses the tail marks.",
+      "## 5. Comparison Tables\n\n**The three molecular speeds**\n\n| Speed | Formula | Relative value | Use |\n|---|---|---|---|\n| Most probable | √(2RT/M) | 1 | Peak of Maxwell curve |\n| Average | √(8RT/πM) | 1.128 | Mean of distribution |\n| RMS | √(3RT/M) | 1.225 | Kinetic energy, effusion |\n\n**Macroscopic laws from microscopic postulates**\n\n| Observation | Postulate responsible |\n|---|---|\n| Boyle's law (P ∝ 1/V) | Fixed KE at fixed T; halving V doubles collision rate |\n| Charles's law (V ∝ T) | KE ∝ T — hotter molecules hit harder, gas must expand |\n| Dalton's law | No forces — each gas contributes independently |\n| Graham's law | Speed ∝ 1/√M at the same T |",
+      "## 6. Common Confusions\n\n**Elastic does not mean \"bouncy\" in the everyday sense:** elastic collisions conserve kinetic energy — the gas does not cool as its molecules collide, which is why a sealed bottle stays at room temperature.",
+      "**Same KE, different speeds:** at 25 °C helium and oxygen molecules have the same average kinetic energy; helium simply moves ~2.8× faster (√(32/4)) — students conflate energy with speed.",
+      "**RMS, not average, enters the equations:** the kinetic gas equation uses u(rms) because pressure depends on the mean of v², not the mean of v.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): Write the postulates of the kinetic molecular theory of gases.** — (1) A gas consists of a very large number of tiny molecules whose volume is negligible compared with the container. (2) The molecules move randomly in straight lines at high speed, colliding with one another and with the walls. (3) Intermolecular forces of attraction and repulsion are negligible. (4) All collisions are perfectly elastic — kinetic energy is conserved. (5) The average kinetic energy of the molecules is directly proportional to the absolute temperature and is the same for all gases at that temperature. Consequence: pressure is the collective effect of wall collisions, and the model reproduces Boyle's, Charles's and Dalton's laws.",
+      "**NEB-style (2m): Calculate the ratio of u(rms) for H₂ and O₂ at the same temperature.** — u(rms) ∝ 1/√M: ratio = √(32/2) = √16 = **4 : 1** — hydrogen molecules move four times faster than oxygen molecules at the same temperature, the same arithmetic Graham's law uses.",
+      "**NEB-style (2m): Why does a gas fill its container completely while a liquid does not?** — Gas molecules have negligible intermolecular attraction (postulate 3) and high random speeds, so nothing restrains expansion until walls stop them; liquid molecules attract strongly enough to maintain a fixed volume with a surface."
+    ],
+    "confusion": [
+      "**\"Elastic\" collisions conserve energy — they do not stop motion:** a common answer loses marks by saying molecules \"come to rest\" after collisions.",
+      "**Speeds are a distribution, not a single value:** u(mp), u(av), u(rms) describe one Maxwell–Boltzmann population; quoting one formula for \"the speed\" is imprecise."
+    ],
+    "keyPoints": [
+      "Five postulates: negligible molecular volume; random straight-line motion with collisions; negligible intermolecular forces; perfectly elastic collisions; average KE ∝ absolute T (same for all gases at a T). Pressure = wall-collision momentum transfer; PV = ⅓nMu²(rms). Speeds: u(mp) √(2RT/M) < u(av) √(8RT/πM) < u(rms) √(3RT/M), ratio 1 : 1.128 : 1.225. O₂ at 25 °C ≈ 480 m/s; u(rms) H₂ : O₂ = 4 : 1."
+    ],
+    "importantConcepts": [
+      "The kinetic model is the bridge between the gas laws (topics 44–45) and real-gas deviation (topic 46): every deviation is one of the five idealisations failing."
+    ],
+    "examples": [
+      "***Perfume across a room*** — no fan, yet the scent arrives: random molecular flight at hundreds of m/s plus countless collisions spreads it — diffusion as postulate 2 in action."
+    ],
+    "universalFacts": [
+      "The interstellar medium is a kinetic-theory laboratory: hydrogen atoms at 10⁶ K in nebulae move at ~10 km/s, and the same √(3RT/M) arithmetic sizes stellar winds."
+    ],
+    "importantStatements": [
+      "\"The average kinetic energy of gas molecules is directly proportional to the absolute temperature and is independent of the nature of the gas.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2024 — postulates of the kinetic molecular theory (solved above). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Postulate mnemonic: \"Tiny, Random, Free, Elastic, KE–T\". Speed ladder: \"most probable < average < RMS\". Ratio u(rms) gases = √(M₂/M₁)."
+    ],
+    "examNotes": [
+      "Number the postulates 1–5 and keep each to one sentence — examiners tick them individually. Adding the consequence line (explains gas laws; defines ideal gas) earns the synthesis mark."
+    ],
+    "formulas": [
+      "- PV = ⅓ nMu²(rms)\n- u(rms) = √(3RT/M); u(av) = √(8RT/πM); u(mp) = √(2RT/M)\n- KE per molecule = 3/2 kT; per mole = 3/2 RT\n- u(rms) ratio for two gases = √(M₂/M₁)"
+    ],
+    "practice": [
+      "List the postulates of the kinetic molecular theory and explain how any two of them produce Boyle's law.",
+      "Compute u(rms) for N₂ at 300 K (R = 8.314, M = 0.028 kg/mol).",
+      "Why must collisions be elastic for a gas held at constant temperature?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (4m): Write the postulates of the kinetic molecular theory of gases.** — The kinetic molecular theory describes a gas by five postulates: **(1)** A gas consists of a very large number of tiny particles (molecules) whose actual volume is negligible compared with the volume of the container — most of a gas is empty space. **(2)** The molecules are in continuous random motion, travelling in straight lines with high speeds and changing direction at every collision with one another or with the walls. **(3)** The forces of intermolecular attraction and repulsion are negligible — molecules move independently except at the instant of collision. **(4)** All collisions — molecule–molecule and molecule–wall — are perfectly elastic, so the total kinetic energy of the gas remains constant at a fixed temperature. **(5)** The average kinetic energy of the molecules is directly proportional to the absolute temperature (KE = 3/2 kT) and is the same for all gases at the same temperature, regardless of molar mass. **Consequence:** pressure is the cumulative momentum transfer of wall collisions, and from these assumptions Boyle's law, Charles's law and Dalton's law of partial pressures all follow; a gas obeying them exactly is an ideal gas.",
+      "**NEB-style (2m): Calculate the ratio of the root mean square speeds of hydrogen and oxygen molecules at the same temperature.** — From the kinetic gas equation, u(rms) = √(3RT/M), so at the same temperature u(rms) ∝ 1/√M. For H₂ (M = 2) and O₂ (M = 32): ratio = √(32/2) = √16 = **4 : 1**. Hydrogen molecules move four times faster than oxygen molecules at the same temperature — which is also why hydrogen effuses four times faster (Graham's law).",
+      "**NEB-style (2m): Explain why a gas exerts pressure on the walls of its container according to the kinetic theory.** — Gas molecules move randomly at high speeds and collide with the walls (postulate 2). Each collision transfers momentum 2mv to the wall (the molecule reverses its momentum component). Billions of such collisions per second per square centimetre produce a steady average force per unit area — the **pressure**. At constant temperature the molecular speeds are constant, so pressure rises only when collisions become more frequent (smaller volume) or harder (higher temperature) — the microscopic origin of Boyle's and Charles's laws."
+    ]
+  },
+  "confusion": [
+    "**\"Elastic\" collisions conserve energy — they do not stop motion:** a common answer loses marks by saying molecules \"come to rest\" after collisions.",
+    "**Speeds are a distribution, not a single value:** u(mp), u(av), u(rms) describe one Maxwell–Boltzmann population; quoting one formula for \"the speed\" is imprecise."
+  ],
+  "importantConcepts": [
+    "The kinetic model is the bridge between the gas laws (topics 44–45) and real-gas deviation (topic 46): every deviation is one of the five idealisations failing."
+  ],
+  "examples": [
+    "***Perfume across a room*** — no fan, yet the scent arrives: random molecular flight at hundreds of m/s plus countless collisions spreads it — diffusion as postulate 2 in action."
+  ],
+  "universalFacts": [
+    "The interstellar medium is a kinetic-theory laboratory: hydrogen atoms at 10⁶ K in nebulae move at ~10 km/s, and the same √(3RT/M) arithmetic sizes stellar winds."
+  ],
+  "importantStatements": [
+    "\"The average kinetic energy of gas molecules is directly proportional to the absolute temperature and is independent of the nature of the gas.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2024 — postulates of the kinetic molecular theory (solved above). Other items are NEB-style practice."
+  ],
+  "examNotes": [
+    "Number the postulates 1–5 and keep each to one sentence — examiners tick them individually. Adding the consequence line (explains gas laws; defines ideal gas) earns the synthesis mark."
+  ],
+  "formulas": [
+    "- PV = ⅓ nMu²(rms)\n- u(rms) = √(3RT/M); u(av) = √(8RT/πM); u(mp) = √(2RT/M)\n- KE per molecule = 3/2 kT; per mole = 3/2 RT\n- u(rms) ratio for two gases = √(M₂/M₁)"
+  ],
+  "summary": "The kinetic molecular theory rebuilds a whole gas from five sentences: molecules are **tiny points** in vast empty space, flying **randomly** in straight lines, feeling **no forces** between collisions, bouncing **perfectly elastically**, and carrying **average kinetic energy proportional to absolute temperature** — the same for every gas. From these, pressure emerges as the drumbeat of wall collisions (PV = ⅓nMu²(rms)), temperature becomes a molecular speed dial, and Boyle's, Charles's and Dalton's laws stop being empirical rules and become theorems. The three speeds of the Maxwell distribution — most probable √(2RT/M), average √(8RT/πM), root-mean-square √(3RT/M) in the ratio 1 : 1.128 : 1.225 — set up Graham's law and every speed comparison: hydrogen's √(32/2) = 4× speed advantage over oxygen at the same temperature. The model's two idealisations (negligible volume, negligible forces) are precisely the assumptions real gases will break at high pressure and low temperature — the story of topic 46.",
+  "mcs": [
+    {
+      "question": "According to kinetic theory, the average kinetic energy of gas molecules is proportional to:",
+      "options": [
+        "Pressure",
+        "Volume",
+        "Absolute temperature",
+        "Molar mass"
+      ],
+      "answer": "C",
+      "explanation": "KE = 3/2 kT - same for all gases at a given T."
+    },
+    {
+      "question": "Collisions between gas molecules are assumed to be:",
+      "options": [
+        "Inelastic",
+        "Perfectly elastic",
+        "Sticky",
+        "Rare"
+      ],
+      "answer": "B",
+      "explanation": "Kinetic energy is conserved - the gas does not self-heat."
+    },
+    {
+      "question": "Which speed is largest for a given gas at fixed T?",
+      "options": [
+        "Most probable",
+        "Average",
+        "Root mean square",
+        "All equal"
+      ],
+      "answer": "C",
+      "explanation": "Ratio 1 : 1.128 : 1.225 - RMS wins."
+    },
+    {
+      "question": "u(rms) of a gas at constant T is proportional to:",
+      "options": [
+        "M",
+        "1/M",
+        "1/sqrt(M)",
+        "sqrt(M)"
+      ],
+      "answer": "C",
+      "explanation": "u = sqrt(3RT/M)."
+    },
+    {
+      "question": "The kinetic gas equation is:",
+      "options": [
+        "PV = nRT",
+        "PV = 1/3 nMu2",
+        "PV = RT",
+        "P = nRT/V2"
+      ],
+      "answer": "B",
+      "explanation": "Links macroscopic PV with molecular speeds."
+    },
+    {
+      "question": "At the same temperature, He molecules move faster than O2 molecules by a factor of about:",
+      "options": [
+        "2",
+        "2.8",
+        "4",
+        "8"
+      ],
+      "answer": "B",
+      "explanation": "sqrt(32/4) = 2.83."
+    },
+    {
+      "question": "Intermolecular forces in the ideal gas model are:",
+      "options": [
+        "Strong",
+        "Negligible",
+        "Repulsive only",
+        "Temperature dependent"
+      ],
+      "answer": "B",
+      "explanation": "Postulate 3 - independence of molecules."
+    },
+    {
+      "question": "Gas pressure in kinetic theory is:",
+      "options": [
+        "Molecular weight",
+        "Wall collision momentum transfer",
+        "Empty space",
+        "Gravity"
+      ],
+      "answer": "B",
+      "explanation": "Each wall impact transfers momentum 2mv."
+    }
   ]
 }

@@ -1151,6 +1151,62 @@ import { BandTheoryPanel } from "./band-theory-panel";
 import { MpLadderMetals } from "./mp-ladder-metals";
 import { AlloyTypesPanel } from "./alloy-types-panel";
 import { ConductivityDrill } from "./conductivity-drill";
+import { KineticPostulatesPanel } from "./kinetic-postulates-panel";
+import { WallCollisionPressure } from "./wall-collision-pressure";
+import { MaxwellSpeedDistribution } from "./maxwell-speed-distribution";
+import { SpeedFormulaLadder } from "./speed-formula-ladder";
+import { KeTemperatureLine } from "./ke-temperature-line";
+import { RmsSpeedDrill } from "./rms-speed-drill";
+import { KineticEquationBridge } from "./kinetic-equation-bridge";
+import { BoyleLawHyperbola } from "./boyle-law-hyperbola";
+import { CharlesLawLine } from "./charles-law-line";
+import { AvogadroVolumeDrill } from "./avogadro-volume-drill";
+import { CombinedGasFlow } from "./combined-gas-flow";
+import { DaltonPartialSum } from "./dalton-partial-sum";
+import { AqueousTensionCorrection } from "./aqueous-tension-correction";
+import { GrahamDiffusionRace } from "./graham-diffusion-race";
+import { IdealEquationDerivation } from "./ideal-equation-derivation";
+import { RUnitTablePanel } from "./r-unit-table-panel";
+import { PvNrtSolveFlow } from "./pv-nrt-solve-flow";
+import { BoltzmannBridgePanel } from "./boltzmann-bridge-panel";
+import { IdealVsRealZone } from "./ideal-vs-real-zone";
+import { TyrePressureCharles } from "./tyre-pressure-charles";
+import { VdwEquationAnatomy } from "./vdw-equation-anatomy";
+import { ZFactorCurve } from "./z-factor-curve";
+import { DeviationRegimesPanel } from "./deviation-regimes-panel";
+import { AConstantLadder } from "./a-constant-ladder";
+import { BoyleTemperaturePanel } from "./boyle-temperature-panel";
+import { RealGasCompressDrill } from "./real-gas-compress-drill";
+import { LiquefactionEasePanel } from "./liquefaction-ease-panel";
+import { EvaporationCoolingCycle } from "./evaporation-cooling-cycle";
+import { VapourPressureEquilibrium } from "./vapour-pressure-equilibrium";
+import { BoilingPressureRule } from "./boiling-pressure-rule";
+import { SurfaceTensionAnatomy } from "./surface-tension-anatomy";
+import { CapillaryRisePanel } from "./capillary-rise-panel";
+import { ViscosityLayerFlow } from "./viscosity-layer-flow";
+import { EvapVsBoilingContrast } from "./evap-vs-boiling-contrast";
+import { MesophaseOrderLadder } from "./mesophase-order-ladder";
+import { NematicSmecticCholesteric } from "./nematic-smectic-cholesteric";
+import { ThermoLyotropicSplit } from "./thermo-lyotropic-split";
+import { LcdPixelSwitch } from "./lcd-pixel-switch";
+import { CholestericThermometry } from "./cholesteric-thermometry";
+import { ReinitzerTransitionPanel } from "./reinitzer-transition-panel";
+import { LcApplicationsMap } from "./lc-applications-map";
+import { CrystalVsAmorphousOrder } from "./crystal-vs-amorphous-order";
+import { FourSolidTypesGrid } from "./four-solid-types-grid";
+import { MpLadderSolids } from "./mp-ladder-solids";
+import { DiamondGraphiteContrast } from "./diamond-graphite-contrast";
+import { SolidSlidingTest } from "./solid-sliding-test";
+import { IsotropyAnisotropyDrill } from "./isotropy-anisotropy-drill";
+import { SupercooledLiquidPanel } from "./supercooled-liquid-panel";
+import { WaterVapourGradient } from "./water-vapour-gradient";
+import { ThreeBehaviourTable } from "./three-behaviour-table";
+import { WatersOfCrystallisation } from "./waters-of-crystallisation";
+import { Cuso4WaterTest } from "./cuso4-water-test";
+import { DesiccatorPanel } from "./desiccator-panel";
+import { CrystallisationStages } from "./crystallisation-stages";
+import { VpRuleDrill } from "./vp-rule-drill";
+import { StpMolarVolumeCheck } from "./stp-molar-volume-check";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -9602,6 +9658,439 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
           "Who carries the charge: electrons in copper, ions only when salt is molten or dissolved - solid NaCl conducts nothing.",
         alt: "Conductivity drill copper molten aqueous solid sodium chloride charge carriers",
         keyword: "conduction",
+      },
+    ],
+  },
+
+  "gaseous-state-kinetic-theory-of-gas-and-its-postulates": {
+    title: "Kinetic theory: the gas in five sentences",
+    figures: [
+      {
+        Component: KineticPostulatesPanel,
+        caption:
+          "Five postulates do all the work: tiny point molecules, random straight-line flight, no intermolecular forces, perfectly elastic collisions, and average kinetic energy proportional to absolute temperature (NEB 2024).",
+        alt: "Five postulates of kinetic molecular theory tiny random elastic kinetic energy temperature",
+        keyword: "postulates",
+      },
+      {
+        Component: WallCollisionPressure,
+        caption:
+          "Pressure is a drumbeat: every wall impact transfers momentum 2mv, and billions of collisions per second average into the steady pressure a gauge reads.",
+        alt: "Gas molecules colliding with container walls transferring momentum pressure",
+        keyword: "collision",
+      },
+      {
+        Component: MaxwellSpeedDistribution,
+        caption:
+          "The Maxwell curve: most molecules cluster near the most probable speed, with average and RMS trailing right - a distribution, not a single value.",
+        alt: "Maxwell Boltzmann speed distribution curve most probable average rms speeds",
+        keyword: "distribution",
+      },
+      {
+        Component: SpeedFormulaLadder,
+        caption:
+          "The three speeds ranked: most probable sqrt(2RT/M), average sqrt(8RT/pi M), root mean square sqrt(3RT/M) - relative sizes 1 : 1.128 : 1.225.",
+        alt: "Three molecular speeds most probable average root mean square formulas",
+        keyword: "speed",
+      },
+      {
+        Component: KeTemperatureLine,
+        caption:
+          "One line, three gases: average kinetic energy plotted against absolute temperature is the same straight line for He, O2 and CO2 - KE depends on T alone.",
+        alt: "Average kinetic energy versus absolute temperature same line all gases",
+        keyword: "kinetic",
+      },
+      {
+        Component: RmsSpeedDrill,
+        caption:
+          "Speed drill at one temperature: hydrogen's M = 2 outruns oxygen's M = 32 by sqrt(32/2) = 4 times - heavier is slower.",
+        alt: "Root mean square speed comparison hydrogen helium oxygen carbon dioxide",
+        keyword: "rms",
+      },
+      {
+        Component: KineticEquationBridge,
+        caption:
+          "The bridge equation PV = one-third nMu(rms) squared links the lab dials (P, V) with the invisible molecular world - and yields u(rms) = sqrt(3RT/M).",
+        alt: "Kinetic gas equation bridging macroscopic pressure volume with molecular speeds",
+        keyword: "bridge",
+      },
+    ],
+  },
+  "gas-laws-boyle-s-law-charles-law-avogadro-s-law-combined-gas-equation-dalton-s-law-of-partial-pr": {
+    title: "Five laws, one toolkit",
+    figures: [
+      {
+        Component: BoyleLawHyperbola,
+        caption:
+          "Boyle's law as a curve: P against V at constant temperature traces a hyperbola - halve the volume, double the pressure.",
+        alt: "Boyle's law pressure volume hyperbola at constant temperature",
+        keyword: "hyperbola",
+      },
+      {
+        Component: CharlesLawLine,
+        caption:
+          "Charles's law as a line: every gas extrapolates to zero volume at -273.15 C, the origin of the absolute scale - and Kelvin first, always.",
+        alt: "Charles's law volume temperature line extrapolating to absolute zero",
+        keyword: "charles",
+      },
+      {
+        Component: AvogadroVolumeDrill,
+        caption:
+          "Avogadro's law in three flasks: equal volumes of H2, O2 and CO2 at STP hold equal numbers of molecules - 22.4 L each.",
+        alt: "Equal volumes of different gases at STP contain equal molecules Avogadro law",
+        keyword: "avogadro",
+      },
+      {
+        Component: CombinedGasFlow,
+        caption:
+          "The state changer: P1V1/T1 = P2V2/T2 handles any two-step change - and collapses to Boyle or Charles when one variable holds still.",
+        alt: "Combined gas equation P1V1 T1 equals P2V2 T2 with branch cases",
+        keyword: "combined",
+      },
+      {
+        Component: DaltonPartialSum,
+        caption:
+          "Air adds up: nitrogen 0.78 plus oxygen 0.21 plus argon and CO2 0.01 atm - Dalton's law sums the partial pressures to one atmosphere.",
+        alt: "Dalton's law partial pressures of air nitrogen oxygen argon sum",
+        keyword: "dalton",
+      },
+      {
+        Component: AqueousTensionCorrection,
+        caption:
+          "Gas over water: the collected gas shares its flask with water vapour, so the dry gas pressure is the wet reading minus the aqueous tension.",
+        alt: "Gas collected over water correcting for aqueous tension Dalton's law",
+        keyword: "aqueous",
+      },
+      {
+        Component: GrahamDiffusionRace,
+        caption:
+          "The diffusion race: rates fall as one over square root of molar mass - hydrogen outruns O2 fourfold and unmasks an unknown gas as M = 32 (NEB 2024).",
+        alt: "Graham's law diffusion rates versus molar mass hydrogen fastest",
+        keyword: "graham",
+      },
+    ],
+  },
+  "ideal-gas-and-ideal-gas-equation-universal-gas-constant-and-its-significance": {
+    title: "One equation to rule the gas laws",
+    figures: [
+      {
+        Component: IdealEquationDerivation,
+        caption:
+          "The derivation in five moves: Boyle's V proportional to 1/P, Charles's V proportional to T, Avogadro's V proportional to n, combined into V proportional to nT/P, then PV = nRT (NEB 2023 and 2024).",
+        alt: "Derivation of ideal gas equation from Boyle Charles and Avogadro laws",
+        keyword: "boyle",
+      },
+      {
+        Component: RUnitTablePanel,
+        caption:
+          "R in three costumes: 0.0821 L atm per mol K for laboratory units, 8.314 J per mol K in SI, 1.987 calories per mol K - match the constant to your data.",
+        alt: "Universal gas constant values in litre atmosphere joule and calorie units",
+        keyword: "constant",
+      },
+      {
+        Component: StpMolarVolumeCheck,
+        caption:
+          "The molar volume is R's fingerprint: one mole at 1 atm and 273 K fills 22.4 L, giving R = 22.4/273 = 0.0821 L atm per mol K.",
+        alt: "Molar volume 22.4 litres at STP confirming the gas constant",
+        keyword: "molar",
+      },
+      {
+        Component: PvNrtSolveFlow,
+        caption:
+          "Four working forms: n = PV/RT for moles, m = nM for mass, d = PM/RT for density, M = dRT/P for identity - one equation, four answers.",
+        alt: "Working forms of ideal gas equation moles mass density molar mass",
+        keyword: "forms",
+      },
+      {
+        Component: BoltzmannBridgePanel,
+        caption:
+          "R shrinks to k: dividing by Avogadro's number turns the molar constant into Boltzmann's 1.38e-23 J per K - the same dial at single-molecule size.",
+        alt: "Boltzmann constant as gas constant per molecule bridge",
+        keyword: "boltzmann",
+      },
+      {
+        Component: IdealVsRealZone,
+        caption:
+          "Where the equation works: hot and dilute is the ideal zone; crowded and cold is where real gases break rank - the preview of topic 46.",
+        alt: "Ideal behaviour zone low pressure high temperature versus real gas zone",
+        keyword: "ideal",
+      },
+      {
+        Component: TyrePressureCharles,
+        caption:
+          "Charles's law on the road: a tyre reading 32 psi at 20 C climbs near 35 psi after an hour of driving - volume fixed, pressure tracks Kelvin temperature.",
+        alt: "Tyre pressure rising with temperature Charles's law example",
+        keyword: "psi",
+      },
+    ],
+  },
+  "deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws": {
+    title: "When gases stop being ideal",
+    figures: [
+      {
+        Component: VdwEquationAnatomy,
+        caption:
+          "The van der Waals equation dissected: a n squared over V squared patches the softened pressure from attraction, V minus nb patches the lost free volume.",
+        alt: "Van der Waals equation anatomy attraction and volume correction terms",
+        keyword: "waals",
+      },
+      {
+        Component: ZFactorCurve,
+        caption:
+          "The Z curve dips then rises: attraction pulls Z below 1 at moderate pressure, molecular volume pushes it above 1 at high pressure - the real gas signature.",
+        alt: "Compressibility factor Z versus pressure curve dip and rise",
+        keyword: "compressibility",
+      },
+      {
+        Component: DeviationRegimesPanel,
+        caption:
+          "Three regimes: high pressure means Z above 1 (harder to compress), low temperature means Z below 1 (easier), hot and dilute returns Z to 1 (NEB 2024).",
+        alt: "Deviation regimes high pressure low temperature ideal conditions compressibility",
+        keyword: "dominates",
+      },
+      {
+        Component: AConstantLadder,
+        caption:
+          "The a-ladder ranks stickiness: water 5.46, ammonia 4.17, CO2 3.59 down to helium 0.034 - large a means easy liquefaction.",
+        alt: "Van der Waals attraction constants ranked water ammonia carbon dioxide helium",
+        keyword: "attraction",
+      },
+      {
+        Component: BoyleTemperaturePanel,
+        caption:
+          "The Boyle temperature is the cancellation point: there the attraction and volume effects balance, so Z stays near 1 across a wide pressure range.",
+        alt: "Boyle temperature where attraction and volume corrections cancel",
+        keyword: "boyle",
+      },
+      {
+        Component: RealGasCompressDrill,
+        caption:
+          "The compression test: ideal points shrink to nothing, real molecules keep their size - which is why high pressure resists compression beyond Boyle's law.",
+        alt: "Compression test ideal point molecules versus real finite molecules",
+        keyword: "compress",
+      },
+      {
+        Component: LiquefactionEasePanel,
+        caption:
+          "Liquefaction tracks a: ammonia condenses at 8 atm at room temperature, nitrogen needs 77 K, helium resists to 4 K - attraction decides.",
+        alt: "Liquefaction ease ammonia nitrogen helium van der Waals attraction",
+        keyword: "77",
+      },
+    ],
+  },
+  "liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boi": {
+    title: "The in-between state, measured",
+    figures: [
+      {
+        Component: EvaporationCoolingCycle,
+        caption:
+          "Evaporation is selective: only the fastest surface molecules escape, so the average kinetic energy of those left falls - the liquid cools.",
+        alt: "Evaporation removing fastest molecules cooling remaining liquid",
+        keyword: "evaporation",
+      },
+      {
+        Component: VapourPressureEquilibrium,
+        caption:
+          "In a closed flask escape and return balance: the vapour's steady pressure depends only on the liquid and the temperature - not on how much liquid sits there.",
+        alt: "Dynamic equilibrium vapour pressure closed flask evaporation condensation",
+        keyword: "vapour",
+      },
+      {
+        Component: BoilingPressureRule,
+        caption:
+          "Boiling is an appointment with the external pressure: about 70 C on Everest, 100 C at sea level, about 120 C in a pressure cooker - same water, three boiling points.",
+        alt: "Boiling point versus external pressure Everest sea level pressure cooker",
+        keyword: "boiling",
+      },
+      {
+        Component: SurfaceTensionAnatomy,
+        caption:
+          "Surface molecules feel a net inward pull - the surface contracts like a stretched membrane, pulling drops into spheres (water 0.072 N/m, mercury nearly seven times more).",
+        alt: "Surface tension unbalanced inward force on surface molecules",
+        keyword: "surface",
+      },
+      {
+        Component: CapillaryRisePanel,
+        caption:
+          "Capillarity cuts both ways: water's concave meniscus climbs the tube, mercury's convex meniscus sinks - adhesion versus cohesion.",
+        alt: "Capillary rise of water and depression of mercury in glass tubes",
+        keyword: "meniscus",
+      },
+      {
+        Component: ViscosityLayerFlow,
+        caption:
+          "Viscosity is layers that rub: intermolecular attraction resists sliding - water near 1 centipoise, glycerine a thousand times thicker, both loosened by heat.",
+        alt: "Viscosity as friction between flowing liquid layers",
+        keyword: "viscosity",
+      },
+      {
+        Component: EvapVsBoilingContrast,
+        caption:
+          "Same escape, different arenas: evaporation works at the surface at any temperature and cools; boiling needs the whole bulk at the VP-equals-external-P temperature.",
+        alt: "Evaporation versus boiling comparison surface bulk temperature",
+        keyword: "evap",
+      },
+    ],
+  },
+  "liquid-crystals-and-their-applications": {
+    title: "Matter between order and melt",
+    figures: [
+      {
+        Component: MesophaseOrderLadder,
+        caption:
+          "The order ladder: crystal keeps everything, liquid keeps nothing, and the mesophases between trade order for mobility step by step.",
+        alt: "Order ladder crystal smectic nematic liquid decreasing order",
+        keyword: "mesophase",
+      },
+      {
+        Component: NematicSmecticCholesteric,
+        caption:
+          "Three textures: nematic lines up parallel, smectic adds layers, cholesteric twists the alignment into a helix - each with its own application.",
+        alt: "Nematic smectic and cholesteric liquid crystal molecular arrangements",
+        keyword: "nematic",
+      },
+      {
+        Component: ThermoLyotropicSplit,
+        caption:
+          "Two doors into the mesophase: thermotropic systems answer temperature (cholesteryl benzoate, 145.5 to 178.5 C), lyotropic ones answer solvent concentration (soaps).",
+        alt: "Thermotropic temperature driven versus lyotropic concentration driven liquid crystals",
+        keyword: "thermotropic",
+      },
+      {
+        Component: LcdPixelSwitch,
+        caption:
+          "The LCD pixel: with no voltage the nematic rods twist light through crossed polarisers (bright); with voltage they align and the twist fails (dark).",
+        alt: "LCD pixel switching bright and dark by voltage reorienting molecules",
+        keyword: "lcd",
+      },
+      {
+        Component: CholestericThermometry,
+        caption:
+          "The cholesteric thermometer: helix pitch answers temperature, so the reflected colour walks the spectrum - fever strips read to a tenth of a degree.",
+        alt: "Cholesteric liquid crystal colour changes with temperature fever strip",
+        keyword: "cholesteric",
+      },
+      {
+        Component: ReinitzerTransitionPanel,
+        caption:
+          "Reinitzer's 1888 observation: cholesteryl benzoate melts at 145.5 C into a milky flowing state and clears at 178.5 C - the first liquid crystal seen.",
+        alt: "Cholesteryl benzoate transitions crystal mesophase clear liquid 1888",
+        keyword: "reinitzer",
+      },
+      {
+        Component: LcApplicationsMap,
+        caption:
+          "The application map: displays and smart windows answer voltage, thermography and fault-mapping answer temperature - one mesophase, two dials.",
+        alt: "Applications of liquid crystals displays thermography smart windows",
+        keyword: "application",
+      },
+    ],
+  },
+  "solid-state-types-of-solids-amorphous-and-crystalline-solids": {
+    title: "Order you can hold",
+    figures: [
+      {
+        Component: CrystalVsAmorphousOrder,
+        caption:
+          "The architecture test: a crystal repeats its pattern across the whole solid, an amorphous solid knows only its neighbourhood - quartz versus glass, same SiO2.",
+        alt: "Crystalline long range order versus amorphous short range order lattice",
+        keyword: "crystalline",
+      },
+      {
+        Component: FourSolidTypesGrid,
+        caption:
+          "Four families: ionic (NaCl, hard and brittle), molecular (ice, soft), covalent network (diamond, hardest), metallic (copper, malleable) - bonding predicts behaviour.",
+        alt: "Four types of solids ionic molecular covalent network metallic with properties",
+        keyword: "ionic",
+      },
+      {
+        Component: MpLadderSolids,
+        caption:
+          "Melting points rank the glue: iodine 114 C (molecular), copper 1083 (metallic), NaCl 801 and MgO 2852 (ionic), diamond near 3550 C (network).",
+        alt: "Melting point ladder iodine copper sodium chloride magnesium oxide diamond",
+        keyword: "melting",
+      },
+      {
+        Component: DiamondGraphiteContrast,
+        caption:
+          "Same carbon, opposite worlds: diamond's sp3 network is the hardest insulator; graphite's sp2 sheets slide and conduct through delocalised pi electrons.",
+        alt: "Diamond sp3 network versus graphite sp2 layers structure contrast",
+        keyword: "diamond",
+      },
+      {
+        Component: SolidSlidingTest,
+        caption:
+          "The sliding test: ionic layers slip, like charges meet and the crystal shatters; metal layers slide and the electron sea forgives - brittleness versus malleability.",
+        alt: "Sliding layer test sodium chloride shatters copper bends",
+        keyword: "shatter",
+      },
+      {
+        Component: IsotropyAnisotropyDrill,
+        caption:
+          "Direction matters: a crystal's properties change with the direction you measure (anisotropic); glass is the same every way (isotropic) because randomness averages out.",
+        alt: "Anisotropic crystal versus isotropic glass property directions",
+        keyword: "anisotropy",
+      },
+      {
+        Component: SupercooledLiquidPanel,
+        caption:
+          "The glass curve softens instead of dropping: no lattice, no sharp melting point - an amorphous solid is a liquid frozen before it could order.",
+        alt: "Volume temperature curve glass softening range versus crystal sharp melt",
+        keyword: "glass",
+      },
+    ],
+  },
+  "efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-cry": {
+    title: "Solids that fight the air",
+    figures: [
+      {
+        Component: WaterVapourGradient,
+        caption:
+          "One rule decides everything: water migrates from higher to lower vapour pressure - hydrates above the air's moisture dry out, salts whose solutions sit below it keep drinking.",
+        alt: "Water vapour pressure gradient efflorescence deliquescence rule",
+        keyword: "vapour",
+      },
+      {
+        Component: ThreeBehaviourTable,
+        caption:
+          "The trio compared: efflorescent loses lattice water to a powder, hygroscopic dampens without dissolving, deliquescent dissolves into its own puddle.",
+        alt: "Efflorescent hygroscopic deliquescent comparison water movement examples",
+        keyword: "efflorescent",
+      },
+      {
+        Component: WatersOfCrystallisation,
+        caption:
+          "Lattice water is stoichiometric: five waters in blue vitriol, seven in green vitriol and Epsom salt, ten in washing soda, two in gypsum.",
+        alt: "Waters of crystallisation copper sulphate iron sulphate washing soda gypsum",
+        keyword: "crystallisation",
+      },
+      {
+        Component: Cuso4WaterTest,
+        caption:
+          "The water test: white anhydrous CuSO4 turns blue the moment it meets water, re-forming the pentahydrate - sharp, reversible, standard.",
+        alt: "Anhydrous copper sulphate white to blue water test",
+        keyword: "blue",
+      },
+      {
+        Component: DesiccatorPanel,
+        caption:
+          "The desiccator: a floor of silica gel, CaCl2 or P2O5 holds a dry atmosphere - cool hot crucibles weight-free, store damp-shy samples safe.",
+        alt: "Desiccator vessel with drying agent layers silica gel calcium chloride",
+        keyword: "desiccator",
+      },
+      {
+        Component: CrystallisationStages,
+        caption:
+          "Crystal growth in four stages: dissolve hot, saturate by cooling, nucleate on a seed, grow the lattice layer by layer - the reverse of efflorescence's decay.",
+        alt: "Crystallisation stages dissolve saturate nucleate grow crystals",
+        keyword: "crystallisation",
+      },
+      {
+        Component: VpRuleDrill,
+        caption:
+          "Classify by the rule: washing soda effloresces, CaO absorbs and reacts, CaCl2.6H2O and FeCl3 deliquesce - one vapour-pressure comparison sorts them all.",
+        alt: "Classifying salts by vapour pressure rule efflorescent deliquescent hygroscopic",
+        keyword: "rule",
       },
     ],
   },
