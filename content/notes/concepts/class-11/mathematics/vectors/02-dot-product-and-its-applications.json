@@ -5,31 +5,116 @@
   "topicTitle": "Dot product (scalar product) and its applications",
   "relevance": 100,
   "notes": [
-    "**Definition.** a · b = |a||b| cos θ = a₁b₁ + a₂b₂ + a₃b₃, where θ is the angle between the vectors; the result is a scalar, not a vector.",
-    "**Angle between vectors.** cos θ = (a · b)/(|a||b|), so two non-zero vectors are perpendicular exactly when a · b = 0 and parallel when |a · b| = |a||b|.",
-    "**Projection.** The scalar projection of a on b is (a · b)/|b| and the vector projection is [(a · b)/|b|²] b.",
-    "**Work done.** A constant force F moving a body through displacement d does work W = F · d; only the component of force along the motion contributes.",
-    "**Worked example.** For a = (1, 2, 3) and b = (4, −2, 0), a·b = 4 − 4 + 0 = 0, so the vectors are orthogonal.",
-    "**Exam caution.** a · b = 0 does not imply one vector is zero; state the non-zero condition before concluding perpendicularity."
+    "## 1. Topic Introduction — The Projection Machine\n\nThe **dot (scalar) product** a·b = |a||b|cos θ multiplies two vectors into a scalar. Its theorems: commutativity, distributivity over addition, perpendicularity criterion a·b = 0, and the **projection** interpretation — the dot product is \"how much of a lies along b\".",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition and component form\n\n- **a·b = |a||b| cos θ**, 0 ≤ θ ≤ π.\n- **Component form:** a·b = a₁b₁ + a₂b₂ + a₃a₃... i.e. a₁b₁ + a₂b₂ + a₃b₃ (from î·î = ĵ·ĵ = k̂·k̂ = 1 and mixed products 0).\n- **a·a = |a|²** — magnitude from the dot product: |a| = √(a·a).\n\n### 2.2 Algebraic laws\n\n- **Commutative:** a·b = b·a (cos θ is even).\n- **Distributive:** a·(b + c) = a·b + a·c.\n- **Scalar associative:** λ(a·b) = (λa)·b = a·(λb).\n- **No cancellation:** a·b = a·c does **not** imply b = c (the product loses directional information).\n\n### 2.3 The perpendicularity theorem\n\n- **Theorem:** a ⊥ b ⟺ **a·b = 0** (non-zero vectors), since cos 90° = 0.\n- Consequence: î, ĵ, k̂ are mutually perpendicular (pairwise dot products 0) and unit (self products 1) — the orthonormal basis.\n\n### 2.4 Angle and projection\n\n- **cos θ = a·b/(|a||b|)** — the angle theorem.\n- **Scalar projection of a on b:** a·b̂ = a·b/|b| = (a₁b₁ + a₂b₂ + a₃b₃)/|b|.\n- **Vector projection:** (a·b/|b|²) b.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Dot product** | |a||b|cos θ — a scalar | î·ĵ = 0 |\n| **Scalar projection** | Component of a along b: a·b/|b| | can be negative (obtuse θ) |\n| **Orthonormal basis** | Mutually perpendicular unit vectors | î, ĵ, k̂ |\n| **Work (preview)** | F·d — force dotted with displacement | the physical face of the dot product |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why cos θ\n\n- The dot product measures agreement of directions: aligned (θ = 0) gives the full product of magnitudes, perpendicular gives zero, opposed gives negative. cos θ is the agreement meter.\n\n### 4.2 Reading the component form\n\n- a·b = a₁b₁ + a₂b₂ + a₃b₃ says: multiply matching components and add — the projection of a onto each axis, weighted by b's components.\n\n### 4.3 The projection sign\n\n- The scalar projection is **signed**: positive for acute θ, negative for obtuse. \"How much of a points along b\" can be a debt, not a credit.",
+    "## 5. Comparison Tables\n\n**Dot product sign atlas**\n\n| θ | cos θ | a·b | geometry |\n|---|---|---|---|\n| 0° | 1 | +|a||b| | parallel, same way |\n| 90° | 0 | 0 | perpendicular |\n| 180° | −1 | −|a||b| | antiparallel |",
+    "## 6. Common Confusions\n\n**a·b = 0 needs non-zero vectors:** the zero vector is perpendicular to everything by convention — state the non-zero hypothesis in proofs.",
+    "**Projection divides by |b|, not |b|²:** scalar projection a·b/|b|; the vector projection is the one carrying |b|².",
+    "**No cancellation law:** from a·b = a·c conclude a·(b − c) = 0 (b − c ⊥ a), never b = c.",
+    "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find a·b. (part of 3m)** — **a·b = (2)(1) + (3)(−1) + (−1)(2) = 2 − 3 − 2 = −3.** The negative sign says the angle between the vectors is obtuse (cos θ < 0).",
+    "**NEB 2024 (verified PYQ): Find the scalar projection of a = 2î + ĵ on b = î + 2ĵ. (3m)** — **a·b** = (2)(1) + (1)(2) = 4; **|b|** = √(1 + 4) = √5. **Scalar projection = a·b/|b| = 4/√5** = 4√5/5 ≈ 1.79. (Positive ⟹ the projection points along b.)",
+    "**NEB 2023 (verified PYQ): The scalar projection of a = (2, −1, 4) on b = (1, 2, −2) is: (1m MCQ)** — a·b = 2 − 2 − 8 = −8; |b| = √(1 + 4 + 4) = 3; projection = **−8/3 → option (a)**. The negative value flags an obtuse angle between the vectors.",
+    "**NEB 2024 (verified PYQ): Find the angle between a = î + ĵ and b = ĵ + k̂. (2m)** — a·b = (1)(0) + (1)(1) + (0)(1) = 1; |a| = √2, |b| = √2. cos θ = 1/(√2·√2) = 1/2 ⟹ **θ = 60° (π/3)**."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Compute a·b for a = 2î + 3ĵ − k̂, b = î − ĵ + 2k̂ and interpret the sign.",
+    "Find the scalar projection of a = (2, −1, 4) on b = (1, 2, −2).",
+    "Prove the perpendicularity criterion and use it to find the angle between î + ĵ and ĵ + k̂."
+  ],
+  "universalFacts": [
+    "Work = F.d is the dot product's day job: only the force component along the motion earns energy."
+  ],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "The dot product a·b = |a||b| cos θ is a scalar that measures alignment; it gives angles, projections, work and an orthogonality test.",
+  "examples": [
+    "***The signed shadow*** — scalar projection is a's shadow on b's line, and shadows can fall backwards: negative projection means the angle is obtuse."
+  ],
+  "practiceQuestions": [
+    "**NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find a·b. (3m with |a×b|)** — **Component form:** a·b = a₁b₁ + a₂b₂ + a₃b₃ = (2)(1) + (3)(−1) + (−1)(2) = 2 − 3 − 2 = **−3**. **Interpretation:** the negative dot product means cos θ < 0 — the angle between the vectors is **obtuse** (between 90° and 180°). (The companion |a × b| computation belongs to the cross-product row; together they give cos θ and sin θ and hence θ itself.)",
+    "**NEB 2023 (verified PYQ): The scalar projection of the vector a = (2, −1, 4) on the vector b = (1, 2, −2) is: (1m)** — **Dot product:** a·b = (2)(1) + (−1)(2) + (4)(−2) = 2 − 2 − 8 = −8. **Magnitude of b:** |b| = √(1² + 2² + (−2)²) = √9 = 3. **Scalar projection:** a·b/|b| = **−8/3 — option (a)**. The negative sign is meaningful: the angle between a and b is obtuse, so a's component along b points against b.",
+    "**NEB 2024 (verified PYQ): Find the angle between a = î + ĵ and b = ĵ + k̂. (2m)** — **Dot product:** a·b = (1)(0) + (1)(1) + (0)(1) = 1. **Magnitudes:** |a| = √(1 + 1) = √2; |b| = √(1 + 1) = √2. **Angle theorem:** cos θ = a·b/(|a||b|) = 1/(√2·√2) = 1/2. Hence **θ = 60° (π/3)** — a standard cosine match, no calculator needed."
+  ],
+  "formulas": [
+    "- a·b = |a||b|cos θ = a₁b₁ + a₂b₂ + a₃b₃; |a| = √(a·a)\n- a ⊥ b ⟺ a·b = 0; cos θ = a·b/(|a||b|)\n- scalar projection of a on b: a·b/|b|; vector projection: (a·b/|b|²)b"
+  ],
+  "keyPoints": [
+    "Dot product: a.b = |a||b| cos th = a1b1 + a2b2 + a3b3. a.a = |a|^2. Laws: commutative, distributive, scalar associative; NO cancellation. Perpendicularity theorem: a perp b (non-zero) iff a.b = 0. Angle theorem: cos th = a.b/(|a||b|). Scalar projection of a on b: a.b/|b| (signed); vector projection: (a.b/|b|^2) b. i, j, k orthonormal: self products 1, cross products 0. Sign atlas: acute positive, right zero, obtuse negative."
+  ],
+  "summary": "The **dot product** a·b = |a||b|cos θ = a₁b₁ + a₂b₂ + a₃b₃ turns two vectors into one number — an **agreement meter**: +|a||b| when aligned, 0 when perpendicular, negative when opposed. Its algebra is commutative and distributive but has **no cancellation**; its geometry gives the theorems: **a ⊥ b ⟺ a·b = 0**, **cos θ = a·b/(|a||b|)**, and the **projection** family — scalar projection a·b/|b| (signed shadow) and vector projection (a·b/|b|²)b. Verified PYQs: a·b = **−3** for (2î+3ĵ−k̂)·(î−ĵ+2k̂) (NEB 2024, obtuse angle signalled); scalar projection **4/√5** of 2î+ĵ on î+2ĵ (NEB 2024) and **−8/3** of (2,−1,4) on (1,2,−2) (NEB 2023); angle **60°** between î+ĵ and ĵ+k̂ (NEB 2024). One formula, three jobs: perpendicularity, angles, projections.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"a perp b iff a.b = 0 (non-zero vectors); cos th = a.b/(|a||b|); scalar projection of a on b = a.b/|b|.\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2024 (a.b = -3; scalar projection 4/sqrt5; angle 60 degrees), NEB 2023 (MCQ -8/3) — assigned to this row."
+  ],
+  "examShortTricks": [
+    "Component multiply-and-add. |a| = sqrt(a.a). Perpendicular iff dot = 0. Projection: dot divided by |b|. Angle: dot over product of magnitudes, then compare with standard cosines."
+  ],
+  "examNotes": [
+    "For angle questions, finish with the degree/radian value — cos th = 1/2 alone is half the answer."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "The dot product is an agreement meter: cos th rewards alignment, punishes opposition, and stays silent at right angles."
+  ],
   "importantTasks": [],
   "duplicateType": 1,
-  "visualType": "dot-product-vectors"
+  "visualType": "dot-product-vectors",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Projection Machine\n\nThe **dot (scalar) product** a·b = |a||b|cos θ multiplies two vectors into a scalar. Its theorems: commutativity, distributivity over addition, perpendicularity criterion a·b = 0, and the **projection** interpretation — the dot product is \"how much of a lies along b\".",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition and component form\n\n- **a·b = |a||b| cos θ**, 0 ≤ θ ≤ π.\n- **Component form:** a·b = a₁b₁ + a₂b₂ + a₃a₃... i.e. a₁b₁ + a₂b₂ + a₃b₃ (from î·î = ĵ·ĵ = k̂·k̂ = 1 and mixed products 0).\n- **a·a = |a|²** — magnitude from the dot product: |a| = √(a·a).\n\n### 2.2 Algebraic laws\n\n- **Commutative:** a·b = b·a (cos θ is even).\n- **Distributive:** a·(b + c) = a·b + a·c.\n- **Scalar associative:** λ(a·b) = (λa)·b = a·(λb).\n- **No cancellation:** a·b = a·c does **not** imply b = c (the product loses directional information).\n\n### 2.3 The perpendicularity theorem\n\n- **Theorem:** a ⊥ b ⟺ **a·b = 0** (non-zero vectors), since cos 90° = 0.\n- Consequence: î, ĵ, k̂ are mutually perpendicular (pairwise dot products 0) and unit (self products 1) — the orthonormal basis.\n\n### 2.4 Angle and projection\n\n- **cos θ = a·b/(|a||b|)** — the angle theorem.\n- **Scalar projection of a on b:** a·b̂ = a·b/|b| = (a₁b₁ + a₂b₂ + a₃b₃)/|b|.\n- **Vector projection:** (a·b/|b|²) b.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Dot product** | |a||b|cos θ — a scalar | î·ĵ = 0 |\n| **Scalar projection** | Component of a along b: a·b/|b| | can be negative (obtuse θ) |\n| **Orthonormal basis** | Mutually perpendicular unit vectors | î, ĵ, k̂ |\n| **Work (preview)** | F·d — force dotted with displacement | the physical face of the dot product |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why cos θ\n\n- The dot product measures agreement of directions: aligned (θ = 0) gives the full product of magnitudes, perpendicular gives zero, opposed gives negative. cos θ is the agreement meter.\n\n### 4.2 Reading the component form\n\n- a·b = a₁b₁ + a₂b₂ + a₃b₃ says: multiply matching components and add — the projection of a onto each axis, weighted by b's components.\n\n### 4.3 The projection sign\n\n- The scalar projection is **signed**: positive for acute θ, negative for obtuse. \"How much of a points along b\" can be a debt, not a credit.",
+      "## 5. Comparison Tables\n\n**Dot product sign atlas**\n\n| θ | cos θ | a·b | geometry |\n|---|---|---|---|\n| 0° | 1 | +|a||b| | parallel, same way |\n| 90° | 0 | 0 | perpendicular |\n| 180° | −1 | −|a||b| | antiparallel |",
+      "## 6. Common Confusions\n\n**a·b = 0 needs non-zero vectors:** the zero vector is perpendicular to everything by convention — state the non-zero hypothesis in proofs.",
+      "**Projection divides by |b|, not |b|²:** scalar projection a·b/|b|; the vector projection is the one carrying |b|².",
+      "**No cancellation law:** from a·b = a·c conclude a·(b − c) = 0 (b − c ⊥ a), never b = c.",
+      "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find a·b. (part of 3m)** — **a·b = (2)(1) + (3)(−1) + (−1)(2) = 2 − 3 − 2 = −3.** The negative sign says the angle between the vectors is obtuse (cos θ < 0).",
+      "**NEB 2024 (verified PYQ): Find the scalar projection of a = 2î + ĵ on b = î + 2ĵ. (3m)** — **a·b** = (2)(1) + (1)(2) = 4; **|b|** = √(1 + 4) = √5. **Scalar projection = a·b/|b| = 4/√5** = 4√5/5 ≈ 1.79. (Positive ⟹ the projection points along b.)",
+      "**NEB 2023 (verified PYQ): The scalar projection of a = (2, −1, 4) on b = (1, 2, −2) is: (1m MCQ)** — a·b = 2 − 2 − 8 = −8; |b| = √(1 + 4 + 4) = 3; projection = **−8/3 → option (a)**. The negative value flags an obtuse angle between the vectors.",
+      "**NEB 2024 (verified PYQ): Find the angle between a = î + ĵ and b = ĵ + k̂. (2m)** — a·b = (1)(0) + (1)(1) + (0)(1) = 1; |a| = √2, |b| = √2. cos θ = 1/(√2·√2) = 1/2 ⟹ **θ = 60° (π/3)**."
+    ],
+    "keyPoints": [
+      "Dot product: a.b = |a||b| cos th = a1b1 + a2b2 + a3b3. a.a = |a|^2. Laws: commutative, distributive, scalar associative; NO cancellation. Perpendicularity theorem: a perp b (non-zero) iff a.b = 0. Angle theorem: cos th = a.b/(|a||b|). Scalar projection of a on b: a.b/|b| (signed); vector projection: (a.b/|b|^2) b. i, j, k orthonormal: self products 1, cross products 0. Sign atlas: acute positive, right zero, obtuse negative."
+    ],
+    "importantConcepts": [
+      "The dot product is an agreement meter: cos th rewards alignment, punishes opposition, and stays silent at right angles."
+    ],
+    "examples": [
+      "***The signed shadow*** — scalar projection is a's shadow on b's line, and shadows can fall backwards: negative projection means the angle is obtuse."
+    ],
+    "universalFacts": [
+      "Work = F.d is the dot product's day job: only the force component along the motion earns energy."
+    ],
+    "importantStatements": [
+      "\"a perp b iff a.b = 0 (non-zero vectors); cos th = a.b/(|a||b|); scalar projection of a on b = a.b/|b|.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 (a.b = -3; scalar projection 4/sqrt5; angle 60 degrees), NEB 2023 (MCQ -8/3) — assigned to this row."
+    ],
+    "examShortTricks": [
+      "Component multiply-and-add. |a| = sqrt(a.a). Perpendicular iff dot = 0. Projection: dot divided by |b|. Angle: dot over product of magnitudes, then compare with standard cosines."
+    ],
+    "examNotes": [
+      "For angle questions, finish with the degree/radian value — cos th = 1/2 alone is half the answer."
+    ],
+    "formulas": [
+      "- a·b = |a||b|cos θ = a₁b₁ + a₂b₂ + a₃b₃; |a| = √(a·a)\n- a ⊥ b ⟺ a·b = 0; cos θ = a·b/(|a||b|)\n- scalar projection of a on b: a·b/|b|; vector projection: (a·b/|b|²)b"
+    ],
+    "practice": [
+      "Compute a·b for a = 2î + 3ĵ − k̂, b = î − ĵ + 2k̂ and interpret the sign.",
+      "Find the scalar projection of a = (2, −1, 4) on b = (1, 2, −2).",
+      "Prove the perpendicularity criterion and use it to find the angle between î + ĵ and ĵ + k̂."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find a·b. (3m with |a×b|)** — **Component form:** a·b = a₁b₁ + a₂b₂ + a₃b₃ = (2)(1) + (3)(−1) + (−1)(2) = 2 − 3 − 2 = **−3**. **Interpretation:** the negative dot product means cos θ < 0 — the angle between the vectors is **obtuse** (between 90° and 180°). (The companion |a × b| computation belongs to the cross-product row; together they give cos θ and sin θ and hence θ itself.)",
+      "**NEB 2023 (verified PYQ): The scalar projection of the vector a = (2, −1, 4) on the vector b = (1, 2, −2) is: (1m)** — **Dot product:** a·b = (2)(1) + (−1)(2) + (4)(−2) = 2 − 2 − 8 = −8. **Magnitude of b:** |b| = √(1² + 2² + (−2)²) = √9 = 3. **Scalar projection:** a·b/|b| = **−8/3 — option (a)**. The negative sign is meaningful: the angle between a and b is obtuse, so a's component along b points against b.",
+      "**NEB 2024 (verified PYQ): Find the angle between a = î + ĵ and b = ĵ + k̂. (2m)** — **Dot product:** a·b = (1)(0) + (1)(1) + (0)(1) = 1. **Magnitudes:** |a| = √(1 + 1) = √2; |b| = √(1 + 1) = √2. **Angle theorem:** cos θ = a·b/(|a||b|) = 1/(√2·√2) = 1/2. Hence **θ = 60° (π/3)** — a standard cosine match, no calculator needed."
+    ]
+  }
 }

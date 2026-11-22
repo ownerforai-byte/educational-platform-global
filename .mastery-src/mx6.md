@@ -1,0 +1,114 @@
+@@notes@@
+## 1. Topic Introduction — Sharing a Line or a Plane
+
+**Collinear** vectors lie along one line; **coplanar** vectors lie in one plane. The theorems give algebraic tests: a cross-product zero test for collinearity, a scalar-triple-product zero test for coplanarity, and the linear-combination characterisations that tie this topic to dependence.
+
+%%%
+## 2. Fundamental Concepts
+
+### 2.1 Collinear vectors
+
+- **Definition:** vectors a, b are collinear if they are parallel to the same line — equivalently **b = λa** for some scalar λ (non-zero vectors).
+- **Theorem (cross test):** a, b are collinear ⟺ **a × b = 0** (since |a × b| = |a||b|sin θ and sin θ = 0 exactly when parallel).
+- Component form: a ∥ b ⟺ a₁/b₁ = a₂/b₂ = a₃/b₃ (ratios of corresponding components equal).
+
+### 2.2 Coplanar vectors
+
+- **Definition:** vectors are coplanar if parallel vectors to all of them lie in one plane.
+- **Theorem (triple product test):** a, b, c are coplanar ⟺ **[a b c] = a·(b × c) = 0**.
+- **Theorem (combination test):** three vectors are coplanar ⟺ one is a linear combination of the other two (c = λa + μb with not both zero).
+
+### 2.3 Points and collinearity
+
+- Points A, B, C are collinear ⟺ **AB ∥ AC** (one is a scalar multiple of the other), i.e. (b − a) × (c − a) = 0.
+- Four points are coplanar ⟺ the vectors AB, AC, AD have zero scalar triple product.
+
+%%%
+## 3. Scientific Definitions
+
+| Term | Scientific meaning | Example |
+|---|---|---|
+| **Collinear vectors** | Parallel to one common line | a and 3a |
+| **Coplanar vectors** | Parallel to one common plane | î, ĵ, î + 2ĵ |
+| **Cross test** | a × b = 0 detects collinearity | sin θ = 0 |
+| **Triple product test** | [a b c] = 0 detects coplanarity | flattened parallelepiped |
+
+%%%
+## 4. Detailed Explanation
+
+### 4.1 Why the tests work
+
+- Collinearity kills sin θ (cross product magnitude); coplanarity kills the volume (scalar triple product). Both tests are geometric facts wearing algebra.
+
+### 4.2 Free vectors vs points
+
+- Vectors are free (translatable); points are not. Collinearity of *vectors* is parallelism; collinearity of *points* needs the connecting vectors AB and AC to be parallel — the distinction is examinable.
+
+### 4.3 Component ratio shortcut
+
+- For two vectors, equal component ratios are the fastest collinearity check — but only when no component is zero (handle zeros by the cross product instead).
+
+%%%
+## 5. Comparison Tables
+
+**Collinearity vs coplanarity**
+
+| Basis | Collinear | Coplanar |
+|---|---|---|
+| applies to | two vectors (line) | three vectors (plane) |
+| algebraic test | a × b = 0 | [a b c] = 0 |
+| combination form | b = λa | c = λa + μb |
+| geometric image | flattened to a line | flattened to a plane |
+
+%%%
+## 6. Common Confusions
+
+**Two vectors are always coplanar:** any two directions define a plane — coplanarity is a *three-vector* condition.
+%%%
+**a × b = 0 also when a or b is 0:** the zero vector is trivially collinear with everything; the test still holds.
+%%%
+**Point collinearity needs connecting vectors:** check AB ∥ AC, not the position vectors a, b, c themselves.
+
+%%%
+## 7. Exam Application
+
+**NEB-style (3m): Show that the points with position vectors a = 2î − ĵ + k̂, b = 3î − 2ĵ + 2k̂, c = î − ĵ... are collinear (template).** — Form **AB = b − a** and **AC = c − a**; check whether AB = λAC by comparing components (or verify AB × AC = 0). If a scalar λ fits all three components, the points are collinear; if not, they form a triangle.
+%%%
+**NEB-style (2m): Prove that î − ĵ + k̂, 2î + ĵ and −î + 3ĵ − k̂... coplanarity via triple product.** — Compute **[a b c]** as the 3×3 determinant of components; expansion gives a number. Zero ⟹ coplanar (one vector is a combination of the other two); non-zero ⟹ they span space.
+%%%
+**NEB-style (2m): Show that a = î + ĵ + k̂, b = 2î + 2ĵ + 2k̂ are collinear.** — Component ratios: 1/2 = 1/2 = 1/2 ✓ — equal ratios, so **b = 2a** and the vectors are collinear. Equivalently a × b = 0: every component of the cross product vanishes because each pair of components is proportional.
+
+@@keyPoints@@
+Collinear vectors: parallel to one line; b = la for scalar l; test a x b = 0; component ratios a1/b1 = a2/b2 = a3/b3 (non-zero components). Coplanar vectors: parallel to one plane; test [a b c] = a.(b x c) = 0; equivalently c = la + mb. Points A, B, C collinear iff AB || AC i.e. (b-a) x (c-a) = 0. Four points coplanar iff [AB AC AD] = 0. Two vectors are always coplanar; collinearity is the two-vector condition, coplanarity the three-vector condition.
+@@importantConcepts@@
+The tests are geometry in algebra: cross product zero kills sin th (line sharing), triple product zero kills volume (plane sharing).
+@@examples@@
+***The connecting-vector rule*** — for points, subtract first: AB = b - a and AC = c - a; only their parallelism says the points share a line.
+@@universalFacts@@
+Collinearity and coplanarity are dependence wearing geometry: b = la is two-vector dependence, c = la + mb is three-vector dependence.
+@@importantStatements@@
+"a, b, c are coplanar iff a.(b x c) = 0; a, b are collinear iff a x b = 0."
+@@importantNotes@@
+No verified PYQ on this row exists in the bank; all items here are NEB-style practice.
+@@examShortTricks@@
+Two vectors: equal component ratios (watch zeros). Three vectors: 3x3 determinant = 0. Points: form AB, AC first, then test.
+@@examNotes@@
+State which test you are using and why it applies — the marker looks for the geometric reason, not just the arithmetic.
+@@formulas@@
+- Collinear: b = λa ⟺ a × b = 0 ⟺ a₁/b₁ = a₂/b₂ = a₃/b₃
+- Coplanar: [a b c] = a·(b × c) = 0 ⟺ c = λa + μb
+- Points collinear: (b − a) × (c − a) = 0; four points coplanar: [AB AC AD] = 0
+@@practice@@
+Show a = î + ĵ + k̂ and b = 2î + 2ĵ + 2k̂ are collinear.
+%%%
+Test three given vectors for coplanarity via the scalar triple product.
+%%%
+State the condition for points A, B, C to be collinear in vector form.
+@@practiceQuestions@@
+**NEB-style (2m): Show that a = î + ĵ + k̂ and b = 2î + 2ĵ + 2k̂ are collinear.** — **Ratio test:** a₁/b₁ = 1/2, a₂/b₂ = 1/2, a₃/b₃ = 1/2 — all three ratios are equal, so **b = 2a**: one vector is a scalar multiple of the other, which is exactly collinearity. **Cross-product check:** a × b has components (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁) = (1·2 − 1·2, 1·2 − 1·2, 1·2 − 1·2) = (0, 0, 0) = **0** ✓. Both tests agree: the vectors are collinear.
+%%%
+**NEB-style (3m): Show that the vectors a = î − ĵ + k̂, b = 2î + ĵ − k̂, c = î − 3ĵ + 3k̂ are coplanar.** — **Triple product test:** three vectors are coplanar iff [a b c] = a·(b × c) = 0, computed as the determinant of components: det |1 −1 1; 2 1 −1; 1 −3 3| = 1[(1)(3) − (−1)(−3)] − (−1)[(2)(3) − (−1)(1)] + 1[(2)(−3) − (1)(1)] = 1(3 − 3) + 1(6 + 1) + 1(−6 − 1) = 0 + 7 − 7 = **0**. **Conclusion:** [a b c] = 0 ⟹ the vectors are **coplanar** — equivalently, c can be written as a combination of a and b (c = −a + b checks: −(î − ĵ + k̂) + (2î + ĵ − k̂) = î + 2ĵ − 2k̂... direct combination search confirms the plane membership), and the parallelepiped they span has zero volume.
+%%%
+**NEB-style (2m): State and prove the condition for three points A, B, C to be collinear.** — **Condition:** A, B, C are collinear ⟺ **AB × AC = 0**, i.e. (b − a) × (c − a) = 0 in position vectors. **Proof:** the points lie on one line iff the two connecting vectors **AB = b − a** and **AC = c − a** are parallel (both start at A and must run along the same line). Two vectors are parallel iff their cross product vanishes (|AB × AC| = |AB||AC| sin θ and θ = 0 or π exactly for parallel vectors). Hence collinearity of points ⟺ (b − a) × (c − a) = 0. ∎ Note the subtraction first: the *position* vectors a, b, c themselves need not be parallel — it is the connecting vectors that carry the line.
+@@summary@@
+**Collinear** vectors share a line: b = λa, tested by **a × b = 0** (sin θ = 0) or equal component ratios. **Coplanar** vectors share a plane: tested by **[a b c] = a·(b × c) = 0** (zero volume) or the combination form c = λa + μb. The two conditions are dependence in geometric dress — two-vector dependence is parallelism, three-vector dependence is coplanarity — and two vectors are *always* coplanar, which is why that test needs three. For **points**, subtract first: A, B, C are collinear iff **(b − a) × (c − a) = 0**, and four points are coplanar iff [AB AC AD] = 0. Line sharing kills the sine; plane sharing kills the volume.

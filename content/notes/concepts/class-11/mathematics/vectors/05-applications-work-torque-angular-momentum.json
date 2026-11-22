@@ -7,53 +7,109 @@
   "animation3D": "vectors",
   "motionGraphics": "vectors",
   "keyPoints": [
-    "Connection of Applications of Vectors â€” Work, Torque and Angular Momentum to other topics",
-    "Connection of Applications of Vectors — Work, Torque, Angular Momentum to other topics"
+    "Work: W = F.d = F d cos th; scalar, unit joule; zero when F perp d; negative when opposing. Torque: tau = r x F; magnitude r F sin th = moment arm x force; axial vector by right-hand rule; unit N.m; zero when force line passes through the pivot. Angular momentum: L = r x p; conserved when net torque is zero (tau = dL/dt). Parallelogram law of forces: resultant magnitude sqrt(F1^2 + F2^2 + 2F1F2 cos alpha). Component route: torque from determinant |i j k; rx ry rz; Fx Fy Fz|."
   ],
-  "summary": "Applications of Vectors â€” Work, Torque and Angular Momentum covers essential principles and applications. Applications of Vectors — Work, Torque, Angular Momentum covers essential principles and applications.",
+  "summary": "Vectors run mechanics. **Work** is the dot product **W = F·d = Fd cos θ** — a signed scalar, zero for perpendicular force, measured in joules (10 N at 60° over 5 m gives 25 J). **Torque** is the cross product **τ = r × F**, magnitude **rF sin θ** = moment arm × force, an axial vector in N·m, zero when the force's line passes through the pivot (the hinge principle); computed from components as a determinant (3î+4ĵ N at 2î+ĵ gives 5k̂ N·m). **Angular momentum** L = r × p is conserved whenever net torque vanishes — the theorem behind Kepler's second law. The parallelogram law √(F₁² + F₂² + 2F₁F₂cos α) closes the statics bridge. Dot for along, cross for across: the whole topic in six words.",
   "importantStatements": [
-    "Statement 1: Definition of Applications: work, torque, angular momentum",
-    "Statement 2: Theorem related to Applications: work, torque, angular momentum",
-    "Statement 3: Condition for Applications: work, torque, angular momentum to be valid",
-    "Statement 4: Principle governing Applications: work, torque, angular momentum",
-    "Statement 5: Corollary or consequence of Applications: work, torque, angular momentum",
-    "Statement 1: Definition of Applications of Vectors — Work, Torque, Angular Momentum",
-    "Statement 2: Theorem related to Applications of Vectors — Work, Torque, Angular Momentum",
-    "Statement 3: Condition for Applications of Vectors — Work, Torque, Angular Momentum to be valid",
-    "Statement 4: Principle governing Applications of Vectors — Work, Torque, Angular Momentum",
-    "Statement 5: Corollary or consequence of Applications of Vectors — Work, Torque, Angular Momentum"
+    "\"W = F.d; tau = r x F with magnitude = moment arm x force; L = r x p is conserved when net torque vanishes.\""
   ],
   "importantNotes": [
-    "Applications of Vectors â€” Work, Torque and Angular Momentum is based on fundamental principles.",
-    "Applications of Vectors — Work, Torque, Angular Momentum is based on fundamental principles."
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Applications of Vectors â€” Work, Torque and Angular Momentum.",
-    "Recall the formula for Applications of Vectors — Work, Torque, Angular Momentum."
+    "Work: F d cos th. Torque magnitude: r F sin th. Component torque: determinant, keep the k-hat for planar forces. Zero cases: perpendicular force (work), force through pivot (torque)."
   ],
   "importantConcepts": [
-    "Definition and significance of Applications of Vectors â€” Work, Torque and Angular Momentum.",
-    "Definition and significance of Applications of Vectors — Work, Torque, Angular Momentum."
+    "The two products split mechanics: projections (dot) earn energy, perpendiculars (cross) turn things - cos th and sin th are the physics."
   ],
   "notes": [
-    "**Work.** Work done by a constant force is the dot product W = F·s = Fs cosθ; it is maximum when force and displacement are parallel and zero when they are perpendicular.",
-    "**Torque.** The moment of a force about a point is τ = r × F, with magnitude rF sinθ and direction given by the right-hand rule; torque measures the turning effect.",
-    "**Angular momentum.** The angular momentum of a particle is L = r × p = r × mv, and for a rigid body rotating about a fixed axis L = Iω.",
-    "**Newton's law for rotation.** The net external torque equals the rate of change of angular momentum, τ = dL/dt, in exact analogy with F = dp/dt.",
-    "**Conservation.** If the net external torque on a system is zero, its angular momentum stays constant — a spinning skater speeds up when pulling in their arms."
+    "## 1. Topic Introduction — Vectors at Work (Literally)\n\nPhysics runs on the vector products: **work** W = F·d (dot), **torque** τ = r × F (cross), **angular momentum** L = r × p (cross). Each formula is a theorem about components — and each has a syllabus-standard numerical type.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Work — the dot product\n\n- **Theorem:** W = **F·d** = |F||d|cos θ = F d cos θ, where θ is the angle between force and displacement.\n- Only the force component **along** the displacement earns work: W = (F cos θ)d. Perpendicular force does **zero** work (θ = 90°).\n- SI unit: joule (J = N·m). Sign: positive (assisting), zero (perpendicular), negative (opposing — friction).\n\n### 2.2 Torque — the cross product\n\n- **Theorem:** τ = **r × F**, magnitude τ = r F sin θ = (moment arm) × force; direction by the right-hand rule (along the rotation axis).\n- **Moment arm:** the perpendicular distance from the pivot to the force's line of action — d = r sin θ. Force along the line through the pivot (θ = 0) gives **zero torque**.\n- SI unit: newton-metre (N·m) — dimensionally a joule, but never called one: torque is a vector about an axis.\n\n### 2.3 Angular momentum — the cross product\n\n- **Theorem:** L = **r × p** = r p sin θ n̂, for position r and momentum p = mv.\n- **Conservation theorem:** if the net torque is zero, L is **constant** (τ = dL/dt) — planetary orbits and spinning skaters live here.\n\n### 2.4 The parallelogram law of forces (statics bridge)\n\n- Two forces at a point have resultant **R = F₁ + F₂** with magnitude √(F₁² + F₂² + 2F₁F₂cos α), α the angle between them — the vector triangle in magnitudes.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Work** | F·d — energy transferred by a force along a displacement | 1 J = 1 N through 1 m |\n| **Torque** | r × F — turning effect about an axis | moment arm × force |\n| **Moment arm** | Perpendicular distance from pivot to force's line | r sin θ |\n| **Angular momentum** | r × p — rotational inertia of motion | conserved when τ = 0 |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why dot for work, cross for torque\n\n- Work asks \"how much force along the motion\" — a projection (cos θ, dot). Torque asks \"how much force across the lever\" — a perpendicular measure (sin θ, cross). The two products split physics between them.\n\n### 4.2 The zero cases are the examiners' favourites\n\n- Force perpendicular to displacement: zero work (circular motion's centripetal force). Force through the pivot: zero torque (door pushed at the hinge). Both are direct theorem readings.\n\n### 4.3 Sign and direction discipline\n\n- Work is a scalar with sign; torque and angular momentum are axial vectors — their direction (into/out of the page) is chosen by the right-hand rule and matters in stated answers.",
+    "## 5. Comparison Tables\n\n**The three applications**\n\n| Quantity | Formula | Product | Zero when |\n|---|---|---|---|\n| Work | F·d | dot | F ⊥ d |\n| Torque | r × F | cross | F along r |\n| Angular momentum | r × p | cross | p along r |",
+    "## 6. Common Confusions\n\n**N·m for torque is not a joule:** same dimensions, different quantity — torque is a vector about an axis, energy a scalar.",
+    "**Moment arm is perpendicular distance:** r sin θ, not r — the full radius only works at θ = 90°.",
+    "**Negative work is real:** friction doing negative work removes kinetic energy; the sign is information.",
+    "## 7. Exam Application\n\n**NEB-style (3m): A force of 10 N acts at 60° to a displacement of 5 m. Find the work done.** — W = F d cos θ = 10 × 5 × cos 60° = 10 × 5 × ½ = **25 J**. Only the component F cos θ = 5 N along the displacement contributes; the perpendicular 5√3 N component does nothing.",
+    "**NEB-style (3m): A force F = 3î + 4ĵ N acts at the point r = 2î + ĵ m relative to a pivot. Find the torque about the pivot.** — τ = r × F = |î ĵ k̂; 2 1 0; 3 4 0| = k̂[(2)(4) − (1)(3)] = **5k̂ N·m** — magnitude 5 N·m, direction out of the plane (right-hand rule). The z-zero components make the cross product a pure k̂ vector: the rotation is about the z-axis.",
+    "**NEB-style (2m): Why does a door open easiest when pushed at the edge farthest from the hinge?** — Torque τ = r F sin θ: for a fixed force applied perpendicular to the door (sin θ = 1), τ is proportional to **r**, the distance from the hinge. The far edge maximises r, hence the torque — the moment-arm theorem in everyday mechanics."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Compute the work done by 10 N at 60° over 5 m.",
+    "Find the torque of F = 3î + 4ĵ N acting at r = 2î + ĵ m.",
+    "Explain why centripetal force does no work in circular motion."
+  ],
+  "universalFacts": [
+    "A planet keeps orbiting because the Sun's force points along r: zero torque, conserved angular momentum - Kepler's second law in one line."
+  ],
   "examples": [
-    "Application of Applications of Vectors — Work, Torque, Angular Momentum"
+    "***The hinge theorem*** — a door's handle is far from the hinge because torque scales with r: same push, more turn."
   ],
   "practiceQuestions": [
-    "Q1. Define Applications of Vectors — Work, Torque, Angular Momentum.",
-    "Q3. Problem on Applications of Vectors — Work, Torque, Angular Momentum."
+    "**NEB-style (3m): A force of 10 N acts at 60° to a displacement of 5 m. Find the work done.** — **Formula:** W = **F·d** = F d cos θ, the dot product of force and displacement. **Substitute:** W = 10 × 5 × cos 60° = 50 × ½ = **25 J**. **Reading:** the force component along the displacement is F cos θ = 10 cos 60° = 5 N; only this component earns energy, while the perpendicular component F sin θ = 5√3 N does zero work (θ = 90° case of the theorem). The answer is positive because the force assists the motion.",
+    "**NEB-style (3m): A force F = 3î + 4ĵ N acts at a point with position vector r = 2î + ĵ m from the pivot. Find the torque about the pivot.** — **Formula:** τ = **r × F**. **Determinant:** |î ĵ k̂; 2 1 0; 3 4 0| = î[(1)(0) − (0)(4)] − ĵ[(2)(0) − (0)(3)] + k̂[(2)(4) − (1)(3)] = 0î − 0ĵ + **5k̂**. **Answer:** τ = **5k̂ N·m** — magnitude 5 N·m directed along the positive z-axis (out of the plane), by the right-hand rule. Since all r and F vectors lie in the xy-plane, the torque is purely axial about z — the determinant's î and ĵ components vanish exactly because rz = Fz = 0.",
+    "**NEB-style (2m): Explain why a force directed along the line joining the pivot to its point of application produces no torque.** — Torque is **τ = r × F** with magnitude rF sin θ, where θ is the angle between the position vector r and the force F. If F points **along the line through the pivot**, then θ = 0° or 180° and **sin θ = 0**, so |τ| = 0 — the force's line of action passes through the pivot and its **moment arm** (perpendicular distance r sin θ) is zero. Physically: pushing a door directly at the hinge cannot rotate it, no matter how hard you push. The same theorem explains why central forces (gravity along r) give planets zero torque and conserved angular momentum."
   ],
-  "formulas": [],
+  "formulas": [
+    "- W = F·d = Fd cos θ (J)\n- τ = r × F, |τ| = rF sin θ (N·m); L = r × p; τ_net = 0 ⟹ L conserved\n- Resultant of two forces: √(F₁² + F₂² + 2F₁F₂cos α)"
+  ],
   "specialNotes": [],
-  "examNotes": [],
-  "importantTasks": []
+  "examNotes": [
+    "Quote units: joules for work, N·m for torque - mixing them is a real mark loss."
+  ],
+  "importantTasks": [],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Vectors at Work (Literally)\n\nPhysics runs on the vector products: **work** W = F·d (dot), **torque** τ = r × F (cross), **angular momentum** L = r × p (cross). Each formula is a theorem about components — and each has a syllabus-standard numerical type.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Work — the dot product\n\n- **Theorem:** W = **F·d** = |F||d|cos θ = F d cos θ, where θ is the angle between force and displacement.\n- Only the force component **along** the displacement earns work: W = (F cos θ)d. Perpendicular force does **zero** work (θ = 90°).\n- SI unit: joule (J = N·m). Sign: positive (assisting), zero (perpendicular), negative (opposing — friction).\n\n### 2.2 Torque — the cross product\n\n- **Theorem:** τ = **r × F**, magnitude τ = r F sin θ = (moment arm) × force; direction by the right-hand rule (along the rotation axis).\n- **Moment arm:** the perpendicular distance from the pivot to the force's line of action — d = r sin θ. Force along the line through the pivot (θ = 0) gives **zero torque**.\n- SI unit: newton-metre (N·m) — dimensionally a joule, but never called one: torque is a vector about an axis.\n\n### 2.3 Angular momentum — the cross product\n\n- **Theorem:** L = **r × p** = r p sin θ n̂, for position r and momentum p = mv.\n- **Conservation theorem:** if the net torque is zero, L is **constant** (τ = dL/dt) — planetary orbits and spinning skaters live here.\n\n### 2.4 The parallelogram law of forces (statics bridge)\n\n- Two forces at a point have resultant **R = F₁ + F₂** with magnitude √(F₁² + F₂² + 2F₁F₂cos α), α the angle between them — the vector triangle in magnitudes.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Work** | F·d — energy transferred by a force along a displacement | 1 J = 1 N through 1 m |\n| **Torque** | r × F — turning effect about an axis | moment arm × force |\n| **Moment arm** | Perpendicular distance from pivot to force's line | r sin θ |\n| **Angular momentum** | r × p — rotational inertia of motion | conserved when τ = 0 |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why dot for work, cross for torque\n\n- Work asks \"how much force along the motion\" — a projection (cos θ, dot). Torque asks \"how much force across the lever\" — a perpendicular measure (sin θ, cross). The two products split physics between them.\n\n### 4.2 The zero cases are the examiners' favourites\n\n- Force perpendicular to displacement: zero work (circular motion's centripetal force). Force through the pivot: zero torque (door pushed at the hinge). Both are direct theorem readings.\n\n### 4.3 Sign and direction discipline\n\n- Work is a scalar with sign; torque and angular momentum are axial vectors — their direction (into/out of the page) is chosen by the right-hand rule and matters in stated answers.",
+      "## 5. Comparison Tables\n\n**The three applications**\n\n| Quantity | Formula | Product | Zero when |\n|---|---|---|---|\n| Work | F·d | dot | F ⊥ d |\n| Torque | r × F | cross | F along r |\n| Angular momentum | r × p | cross | p along r |",
+      "## 6. Common Confusions\n\n**N·m for torque is not a joule:** same dimensions, different quantity — torque is a vector about an axis, energy a scalar.",
+      "**Moment arm is perpendicular distance:** r sin θ, not r — the full radius only works at θ = 90°.",
+      "**Negative work is real:** friction doing negative work removes kinetic energy; the sign is information.",
+      "## 7. Exam Application\n\n**NEB-style (3m): A force of 10 N acts at 60° to a displacement of 5 m. Find the work done.** — W = F d cos θ = 10 × 5 × cos 60° = 10 × 5 × ½ = **25 J**. Only the component F cos θ = 5 N along the displacement contributes; the perpendicular 5√3 N component does nothing.",
+      "**NEB-style (3m): A force F = 3î + 4ĵ N acts at the point r = 2î + ĵ m relative to a pivot. Find the torque about the pivot.** — τ = r × F = |î ĵ k̂; 2 1 0; 3 4 0| = k̂[(2)(4) − (1)(3)] = **5k̂ N·m** — magnitude 5 N·m, direction out of the plane (right-hand rule). The z-zero components make the cross product a pure k̂ vector: the rotation is about the z-axis.",
+      "**NEB-style (2m): Why does a door open easiest when pushed at the edge farthest from the hinge?** — Torque τ = r F sin θ: for a fixed force applied perpendicular to the door (sin θ = 1), τ is proportional to **r**, the distance from the hinge. The far edge maximises r, hence the torque — the moment-arm theorem in everyday mechanics."
+    ],
+    "keyPoints": [
+      "Work: W = F.d = F d cos th; scalar, unit joule; zero when F perp d; negative when opposing. Torque: tau = r x F; magnitude r F sin th = moment arm x force; axial vector by right-hand rule; unit N.m; zero when force line passes through the pivot. Angular momentum: L = r x p; conserved when net torque is zero (tau = dL/dt). Parallelogram law of forces: resultant magnitude sqrt(F1^2 + F2^2 + 2F1F2 cos alpha). Component route: torque from determinant |i j k; rx ry rz; Fx Fy Fz|."
+    ],
+    "importantConcepts": [
+      "The two products split mechanics: projections (dot) earn energy, perpendiculars (cross) turn things - cos th and sin th are the physics."
+    ],
+    "examples": [
+      "***The hinge theorem*** — a door's handle is far from the hinge because torque scales with r: same push, more turn."
+    ],
+    "universalFacts": [
+      "A planet keeps orbiting because the Sun's force points along r: zero torque, conserved angular momentum - Kepler's second law in one line."
+    ],
+    "importantStatements": [
+      "\"W = F.d; tau = r x F with magnitude = moment arm x force; L = r x p is conserved when net torque vanishes.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Work: F d cos th. Torque magnitude: r F sin th. Component torque: determinant, keep the k-hat for planar forces. Zero cases: perpendicular force (work), force through pivot (torque)."
+    ],
+    "examNotes": [
+      "Quote units: joules for work, N·m for torque - mixing them is a real mark loss."
+    ],
+    "formulas": [
+      "- W = F·d = Fd cos θ (J)\n- τ = r × F, |τ| = rF sin θ (N·m); L = r × p; τ_net = 0 ⟹ L conserved\n- Resultant of two forces: √(F₁² + F₂² + 2F₁F₂cos α)"
+    ],
+    "practice": [
+      "Compute the work done by 10 N at 60° over 5 m.",
+      "Find the torque of F = 3î + 4ĵ N acting at r = 2î + ĵ m.",
+      "Explain why centripetal force does no work in circular motion."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): A force of 10 N acts at 60° to a displacement of 5 m. Find the work done.** — **Formula:** W = **F·d** = F d cos θ, the dot product of force and displacement. **Substitute:** W = 10 × 5 × cos 60° = 50 × ½ = **25 J**. **Reading:** the force component along the displacement is F cos θ = 10 cos 60° = 5 N; only this component earns energy, while the perpendicular component F sin θ = 5√3 N does zero work (θ = 90° case of the theorem). The answer is positive because the force assists the motion.",
+      "**NEB-style (3m): A force F = 3î + 4ĵ N acts at a point with position vector r = 2î + ĵ m from the pivot. Find the torque about the pivot.** — **Formula:** τ = **r × F**. **Determinant:** |î ĵ k̂; 2 1 0; 3 4 0| = î[(1)(0) − (0)(4)] − ĵ[(2)(0) − (0)(3)] + k̂[(2)(4) − (1)(3)] = 0î − 0ĵ + **5k̂**. **Answer:** τ = **5k̂ N·m** — magnitude 5 N·m directed along the positive z-axis (out of the plane), by the right-hand rule. Since all r and F vectors lie in the xy-plane, the torque is purely axial about z — the determinant's î and ĵ components vanish exactly because rz = Fz = 0.",
+      "**NEB-style (2m): Explain why a force directed along the line joining the pivot to its point of application produces no torque.** — Torque is **τ = r × F** with magnitude rF sin θ, where θ is the angle between the position vector r and the force F. If F points **along the line through the pivot**, then θ = 0° or 180° and **sin θ = 0**, so |τ| = 0 — the force's line of action passes through the pivot and its **moment arm** (perpendicular distance r sin θ) is zero. Physically: pushing a door directly at the hinge cannot rotate it, no matter how hard you push. The same theorem explains why central forces (gravity along r) give planets zero torque and conserved angular momentum."
+    ]
+  }
 }

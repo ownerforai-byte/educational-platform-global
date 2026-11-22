@@ -33,13 +33,13 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 
 | # | Unit | Topic | File | Status |
 |---|---|---|---|---|
-| 4 | Vectors | Vector algebra: types, addition, scalar multiplication | `vectors/01-vector-algebra-types-addition-and-scalar-multiplication.json` | Pending |
-| 5 | Vectors | Linear combination, dependent and independent vectors | `vectors/02-linear-combination-of-vectors-linearly-dependent-and-independent-vectors.json` | Pending |
-| 6 | Vectors | Collinear and coplanar vectors | `vectors/01-collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors.json` | Pending |
-| 7 | Vectors | Dot product and its applications | `vectors/02-dot-product-and-its-applications.json` | Pending |
-| 8 | Vectors | Cross product and its applications | `vectors/03-cross-product-and-its-applications.json` | Pending |
-| 9 | Vectors | Scalar and vector triple products | `vectors/04-scalar-and-vector-triple-products.json` | Pending |
-| 10 | Vectors | Applications: work, torque, angular momentum | `vectors/05-applications-work-torque-angular-momentum.json` | Pending |
+| 4 | Vectors | Vector algebra: types, addition, scalar multiplication | `vectors/01-vector-algebra-types-addition-and-scalar-multiplication.json` | Completed |
+| 5 | Vectors | Linear combination, dependent and independent vectors | `vectors/02-linear-combination-of-vectors-linearly-dependent-and-independent-vectors.json` | Completed |
+| 6 | Vectors | Collinear and coplanar vectors | `vectors/01-collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors.json` | Completed |
+| 7 | Vectors | Dot product and its applications | `vectors/02-dot-product-and-its-applications.json` | Completed |
+| 8 | Vectors | Cross product and its applications | `vectors/03-cross-product-and-its-applications.json` | Completed |
+| 9 | Vectors | Scalar and vector triple products | `vectors/04-scalar-and-vector-triple-products.json` | Completed |
+| 10 | Vectors | Applications: work, torque, angular momentum | `vectors/05-applications-work-torque-angular-momentum.json` | Completed |
 
 ## Statistics and probability (2 topics)
 
@@ -158,6 +158,8 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 | 96 | Mechanics | Dynamics: straight-line motion, uniform acceleration | `computational-methods-or-mechanics/04-mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-accelerati.json` | Pending |
 
 ## Progress log
+
+- Session 2 - Vectors (rows 4-10, 7/7): vector algebra (triangle/parallelogram laws, scalar multiplication, section formula; NEB 2024 verified PYQ unit vector, NEB 2022 verified PYQ internal division 2:3); linear combination and dependence (determinant test, zero-vector lemma); collinear/coplanar (cross and triple-product tests, connecting-vector rule for points); dot product (perpendicularity criterion, angle theorem, projections; NEB 2024 verified PYQs a.b=-3, projection 4/sqrt5, angle 60 deg; NEB 2023 verified PYQ -8/3 MCQ); cross product (anticommutativity, parallel criterion, area theorems, Lagrange identity; NEB 2024 verified PYQs |a x b|=5sqrt3 + parallelogram area 5, NEB 2020 verified PYQ unit perpendicular (i-j)/sqrt2, NEB 2021 verified PYQ 2sqrt42 via Lagrange); scalar/vector triple products (volume theorem, cyclic invariance, BAC-CAB; NEB 2024 verified PYQ definition+significance); applications (work F.d, torque r x F, angular momentum conservation). Nine verified PYQs assigned. Build 101 entries, validator 0 broken.
 
 - Session 1 - Trigonometry (rows 1-3, 3/3): ratios and identities (fundamental identity family, addition/double/half-angle theorems, transformation formulas, conditional r-identity; NEB 2021 verified PYQ standard values, NEB 2020 verified PYQ cosine-series telescoping proof); equations and general values (general value theorems sin/cos/tan, principal values, filtering, squaring trap; NEB 2024 verified PYQ 2sin^2-sin-1=0, NEB 2022 verified PYQ cos2th=costh); inverse circular functions (principal branches, compositions, complement theorems, tan^-1 addition theorem; NEB 2024 verified PYQ sin^-1(-1/2), NEB 2023 verified PYQ cos^-1+sin^-1). Four verified PYQs assigned. Build 101 entries, validator 0 broken.
 

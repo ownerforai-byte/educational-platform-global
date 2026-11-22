@@ -7,84 +7,64 @@
   "animation3D": "vectors",
   "motionGraphics": "vectors",
   "notes": [
-    "**Definition.** a × b = |a||b| sin θ n̂, where θ is the angle from a to b (0 ≤ θ ≤ π) and n̂ is the unit vector given by the right-hand rule, perpendicular to the plane of a and b.",
-    "**Determinant form.** a × b = (a₂b₃ − a₃b₂) i − (a₁b₃ − a₃b₁) j + (a₁b₂ − a₂b₁) k, equivalently the formal determinant with rows i, j, k; a; b.",
-    "**Anti-commutative.** b × a = −(a × b). Swapping the order reverses the direction while preserving magnitude, so the order must always be stated.",
-    "**Worked example.** a = (1, 2, 3), b = (4, 5, 6): a × b = (2·6 − 3·5, 3·4 − 1·6, 1·5 − 2·4) = (−3, 6, −3), and dotting with a gives −3 + 12 − 9 = 0, confirming perpendicularity.",
-    "**Parallel and perpendicular.** a × b = 0 iff a and b are parallel (or one is zero); for perpendicular unit vectors |a × b| = 1, while i × j = k, j × k = i, k × i = j.",
-    "**Area.** The area of the parallelogram with adjacent sides a, b is |a × b|; the area of triangle ABC is ½ |AB × AC|, which is zero exactly when A, B, C are collinear.",
-    "**Scalar triple product.** [a b c] = a · (b × c) is the (signed) volume of the parallelepiped on a, b, c; the tetrahedron's volume is one sixth of it.",
-    "**Coplanarity.** Three vectors are coplanar iff [a b c] = 0. This also gives the condition for four points A, B, C, D to be coplanar via AB, AC, AD.",
-    "**Moment of a force.** The moment (torque) of force F about a point O is M = r × F, where r runs from O to the point of application; |M| = |r||F| sin θ is the turning effect.",
-    "**Unit normal.** n̂ = (a × b)/|a × b| gives a unit normal to the plane containing a and b, used to write the plane's equation in vector form r · n̂ = d.",
-    "**Distributivity.** a × (b + c) = a × b + a × c and (k a) × b = k(a × b); the cross product is NOT associative, so a × (b × c) ≠ (a × b) × c in general.",
-    "**Vector triple product.** a × (b × c) = (a · c) b − (a · b) c, the 'BAC − CAB' identity; it is a vector lying in the plane of b and c.",
-    "**Exam caution.** a × b is a VECTOR, while a · b is a scalar; a mixed expression such as (a × b) · c is valid but a × (b · c) is not defined."
+    "## 1. Topic Introduction — The Area Machine\n\nThe **cross (vector) product** a × b returns a **vector**: magnitude |a||b|sin θ, direction perpendicular to both by the right-hand rule. Its theorems: anticommutativity, the parallel criterion a × b = 0, the area theorems (triangle and parallelogram), and the component determinant formula.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition and component form\n\n- **a × b = |a||b| sin θ n̂**, n̂ perpendicular to both by the right-hand rule.\n- **Component form:** a × b = determinant |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃ − a₃b₂)î + (a₃b₁ − a₁b₃)ĵ + (a₁b₂ − a₂b₁)k̂.\n- Cyclic basis products: î × ĵ = k̂, ĵ × k̂ = î, k̂ × î = ĵ; reversed order gives the negative.\n\n### 2.2 Algebraic laws\n\n- **Anticommutative:** a × b = −(b × a) — order matters.\n- **Distributive:** a × (b + c) = a × b + a × c; **λ(a × b) = (λa) × b**.\n- **No associativity with dot:** a × (b × c) ≠ (a × b) × c in general — bracketing matters.\n- **No cancellation:** a × b = a × c does not give b = c.\n\n### 2.3 The parallel criterion\n\n- **Theorem:** a ∥ b ⟺ **a × b = 0** (non-zero vectors), since sin θ = 0 exactly for θ = 0 or π.\n- Consequence: a × a = 0 for every vector.\n\n### 2.4 Area theorems\n\n- **Theorem:** |a × b| = area of the **parallelogram** with adjacent sides a, b; **half** of it is the triangle's area: Δ = ½|a × b|.\n- For a triangle with vertices A, B, C: Δ = ½|AB × AC|.\n- **Lagrange's identity:** |a × b|² = |a|²|b|² − (a·b)² — computing |a × b| without the angle.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Cross product** | |a||b|sin θ n̂ — a vector | î × ĵ = k̂ |\n| **Anticommutativity** | Swapping order flips the sign | b × a = −a × b |\n| **Right-hand rule** | Curl fingers a→b; thumb gives n̂ | fixes the perpendicular's direction |\n| **Parallelogram area** | |a × b| with adjacent sides a, b | the geometric face |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why sin θ\n\n- The cross product measures *perpendicular cooperation*: full strength at right angles (sin 90° = 1), nothing when parallel (sin 0 = 0). It is the dot product's complement.\n\n### 4.2 Reading the determinant\n\n- Expand along the top row with cofactor signs + − +; each 2×2 minor deletes one component column. The formula is mechanical but sign-hungry — the middle term carries the minus.\n\n### 4.3 Direction is half the answer\n\n- |a × b| gives size; the right-hand rule gives which of the two perpendicular directions. In exams, quote the vector, not just its magnitude, when the question asks for a × b.",
+    "## 5. Comparison Tables\n\n**Dot vs cross**\n\n| Basis | a·b | a × b |\n|---|---|---|\n| result | scalar | vector |\n| angle function | cos θ | sin θ |\n| commutative? | yes | no (anti) |\n| zero when | perpendicular | parallel |\n| measures | agreement | perpendicular strength / area |",
+    "## 6. Common Confusions\n\n**Anticommutative, not commutative:** swapping inputs negates the output — a sign error here poisons every downstream result.",
+    "**The middle component's sign:** (a₃b₁ − a₁b₃) — students write a₁b₃ − a₃b₁ and lose the ĵ component.",
+    "**Area of triangle = half the parallelogram:** Δ = ½|a × b| — forgetting the ½ doubles the answer.",
+    "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find |a × b|. (part of 3m)** — a × b = |î ĵ k̂; 2 3 −1; 1 −1 2| = î[(3)(2) − (−1)(−1)] − ĵ[(2)(2) − (−1)(1)] + k̂[(2)(−1) − (3)(1)] = î(6 − 1) − ĵ(4 + 1) + k̂(−2 − 3) = **5î − 5ĵ − 5k̂**. |a × b| = √(25 + 25 + 25) = **5√3**.",
+    "**NEB 2024 (verified PYQ): Find the area of the parallelogram with adjacent sides a = 2î + ĵ and b = î + 3ĵ. (3m)** — a × b = (a₁b₂ − a₂b₁)k̂ = (2·3 − 1·1)k̂ = **5k̂** (2D shortcut: only the k̂ component survives). **Area = |a × b| = 5 square units.**",
+    "**NEB 2020 (verified PYQ): Find a unit vector perpendicular to the plane containing a = î + ĵ and b = ĵ + k̂. (part of 4m)** — A perpendicular to the plane is parallel to **a × b**: a × b = î[(1)(1) − (0)(1)] − ĵ[(1)(1) − (0)(1)] + k̂[(1)(1) − (1)(1)] = î − ĵ + 0k̂ = **î − ĵ**. |î − ĵ| = √2. **Unit perpendicular: (î − ĵ)/√2** (its negative serves equally — both directions are perpendicular).",
+    "**NEB 2021 (verified PYQ): Given a = î − 2ĵ + 3k̂ and b = 3î + 4ĵ − k̂, find a·b and |a × b|. (3m)** — a·b = 3 − 8 − 3 = −14. For |a × b| without the full vector, use **Lagrange**: |a|² = 1 + 4 + 9 = 14; |b|² = 9 + 16 + 1 = 26; |a × b|² = (14)(26) − (−14)² = 364 − 196 = 168 ⟹ **|a × b| = √168 = 2√42**."
   ],
   "keyPoints": [
-    "Right-hand rule",
-    "Determinant form",
-    "Area and volume",
-    "Moment of a force"
+    "Cross product: a x b = |a||b| sin th n-hat (right-hand rule) = determinant |i j k; a1 a2 a3; b1 b2 b3|. Anticommutative: a x b = -(b x a); distributive; NOT associative with dot. Parallel criterion: a || b iff a x b = 0; a x a = 0. Area theorems: |a x b| = parallelogram area; triangle area = (1/2)|a x b| = (1/2)|AB x AC|. Lagrange identity: |a x b|^2 = |a|^2|b|^2 - (a.b)^2. Cyclic products: i x j = k, j x k = i, k x i = j. 2D shortcut: (a1, a2) x (b1, b2) = (a1b2 - a2b1) k."
   ],
-  "summary": "The cross product a × b is a vector perpendicular to both a and b with magnitude |a||b| sin θ, equal to the area of the parallelogram they span. Its determinant form drives area, volume, moment and collinearity calculations throughout Class 11 vector algebra.",
+  "summary": "The **cross product** a × b = |a||b|sin θ n̂ returns a vector perpendicular to both inputs (right-hand rule), computed mechanically as the 3×3 determinant with +−+ cofactor signs. It is **anticommutative** (order flips sign), distributive, and **zero exactly for parallel** vectors — the mirror of the dot product's perpendicularity criterion. Its geometric cargo: **|a × b| is the parallelogram area**, half of it the triangle's area (Δ = ½|AB × AC|), and **Lagrange's identity** |a × b|² = |a|²|b|² − (a·b)² computes the magnitude without the angle. Verified PYQs: |a × b| = **5√3** for (2î+3ĵ−k̂, î−ĵ+2k̂) and parallelogram area **5** for (2î+ĵ, î+3ĵ) (NEB 2024); unit perpendicular **(î − ĵ)/√2** (NEB 2020); |a × b| = 2√42 via Lagrange (NEB 2021). Parallel kills it; area is its day job.",
   "importantStatements": [
-    "a × b is perpendicular to both a and b.",
-    "|a × b| equals the area of the parallelogram with adjacent sides a and b.",
-    "The scalar triple product vanishes if and only if the three vectors are coplanar."
+    "\"a x b = |a||b| sin th n-hat; |a x b| is the parallelogram area; a || b iff a x b = 0.\""
   ],
   "importantNotes": [
-    "The cross product is anti-commutative: b × a = −(a × b).",
-    "A zero cross product signals parallel vectors, not necessarily a zero vector.",
-    "Lagrange's identity: |a × b|² + (a · b)² = |a|²|b|²."
+    "Verified PYQs: NEB 2024 (|a x b| = 5 sqrt3; parallelogram area 5), NEB 2023 (a.b and |a x b| pair), NEB 2021 (Lagroute route 2 sqrt42), NEB 2020 (unit perpendicular (i - j)/sqrt2) — assigned to this row."
   ],
   "examShortTricks": [
-    "Compute a × b with the 3 × 3 determinant, then dot it with a and with b as a one-line accuracy check.",
-    "For triangle area use ½|AB × AC|; if the result is zero the three points are collinear.",
-    "Use |a × b| = |a||b| when the vectors are given perpendicular, avoiding component arithmetic."
+    "Determinant expansion: + - + cofactor signs. 2D cross: single k-hat component a1b2 - a2b1. Unit perpendicular to a plane: a x b normalised. |a x b| without angle: Lagrange sqrt(|a|^2|b|^2 - (a.b)^2)."
   ],
   "importantConcepts": [
-    "Cross product",
-    "Right-hand rule",
-    "Scalar triple product",
-    "Torque",
-    "Unit normal"
+    "The cross product is the dot product's complement: cos th measures agreement, sin th measures perpendicular cooperation — and sin th doubles as the area ratio."
   ],
   "formulas": [
-    "a × b = |a||b| sin θ n̂",
-    "a × b = (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁)",
-    "Area of parallelogram = |a × b|;  Area of triangle = ½|a × b|",
-    "[a b c] = a · (b × c);  Volume of parallelepiped = |[a b c]|",
-    "M = r × F;  a × (b × c) = (a·c)b − (a·b)c"
+    "- a × b = |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃−a₃b₂, a₃b₁−a₁b₃, a₁b₂−a₂b₁)\n- a ∥ b ⟺ a × b = 0; a × b = −(b × a)\n- parallelogram area |a × b|; triangle area ½|a × b|; Lagrange: |a × b|² = |a|²|b|² − (a·b)²"
   ],
   "examples": [
-    "Find the area of the triangle with vertices A(1, 0, 0), B(0, 1, 0), C(0, 0, 1). AB = (−1, 1, 0), AC = (−1, 0, 1); AB × AC = (1, 1, 1), so area = ½√3.",
-    "Find a unit vector perpendicular to both a = (1, 1, 0) and b = (0, 1, 1). a × b = (1, −1, 1), |a × b| = √3, so n̂ = (1, −1, 1)/√3."
+    "***Half a parallelogram*** — the triangle with sides a, b is exactly half the parallelogram they span: Delta = (1/2)|a x b|; forgetting the half doubles every triangle-area answer."
   ],
   "practiceQuestions": [
-    "Compute a × b for a = (2, −1, 3), b = (1, 4, −2) and verify it is perpendicular to both.",
-    "Find the area of the parallelogram with diagonals (3, 1, −1) and (1, −2, 1).",
-    "Show that (1, 2, 3), (2, 3, 4) and (3, 4, 5) are coplanar."
+    "**NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find |a × b|. (3m with a·b)** — **Determinant form:** a × b = |î ĵ k̂; 2 3 −1; 1 −1 2|. **Expand:** î[(3)(2) − (−1)(−1)] − ĵ[(2)(2) − (−1)(1)] + k̂[(2)(−1) − (3)(1)] = î(6 − 1) − ĵ(4 + 1) + k̂(−2 − 3) = **5î − 5ĵ − 5k̂**. **Magnitude:** |a × b| = √(5² + 5² + 5²) = √75 = **5√3**. (Combined with a·b = −3 from the dot-product row, cos θ = −3/(7·√14) and sin θ = 5√3/(7√14) — the pair pins the angle completely.)",
+    "**NEB 2024 (verified PYQ): Find the area of the parallelogram with adjacent sides a = 2î + ĵ and b = î + 3ĵ. (3m)** — **2D shortcut:** with no k̂ components, the cross product reduces to its k̂ part: a × b = (a₁b₂ − a₂b₁)k̂ = (2·3 − 1·1)k̂ = **5k̂**. **Area theorem:** the parallelogram spanned by a and b has area |a × b| = |5k̂| = **5 square units**. (The corresponding triangle would have area 5/2 — the half factor belongs to triangles only.)",
+    "**NEB 2020 (verified PYQ): Find a unit vector perpendicular to the plane containing a = î + ĵ and b = ĵ + k̂. (4m with part ii)** — **Key fact:** a × b is perpendicular to **both** a and b, hence to their plane. **Compute:** a × b = î[(1)(1) − (0)(1)] − ĵ[(1)(1) − (0)(1)] + k̂[(1)(1) − (1)(1)] = î(1) − ĵ(1) + k̂(0) = **î − ĵ**. **Normalise:** |î − ĵ| = √2, so the required unit vector is **(î − ĵ)/√2** — or its negative (î − ĵ)(−1)/√2; both directions are perpendicular to the plane, and either answer is accepted unless a handedness is specified."
   ],
   "confusion": [
     "Treating the cross product as commutative; reversing the order negates the result.",
     "Confusing |a × b| with a · b: the former uses sin θ and is an area, the latter uses cos θ and is a scalar projection."
   ],
   "practice": [
-    "Compute three cross products and verify each with a dot-product check.",
-    "Derive the area of a triangle from a cross product for two different vertex orderings."
+    "Compute a × b and |a × b| for a = 2î + 3ĵ − k̂, b = î − ĵ + 2k̂.",
+    "Find the area of the parallelogram with sides 2î + ĵ and î + 3ĵ.",
+    "Find a unit vector perpendicular to the plane of î + ĵ and ĵ + k̂."
   ],
   "universalFacts": [
-    "The cross product is defined for 3-D vectors (and as a scalar curl in 2-D).",
-    "|a × b|² + (a · b)² = |a|² |b|² holds for all vectors a, b."
+    "Torque = r x F and angular momentum = r x p are cross products in physics clothing: perpendicular levers, right-hand directions."
   ],
   "specialNotes": [
     "The direction of a × b follows the right-hand rule: curl the fingers from a to b, the thumb gives n̂.",
     "A plane through a point p with direction vectors u and v has normal u × v and equation (r − p) · (u × v) = 0."
   ],
   "examNotes": [
-    "Write the determinant expansion explicitly; sign errors on the j component are the most common loss of marks.",
-    "Include units for area and moment in applied problems."
+    "For |a x b| questions, compute the full cross product then its magnitude — the intermediate vector earns method marks even if only the length is asked."
   ],
   "importantTasks": [
     "Solve four area problems by cross product",
@@ -115,5 +95,58 @@
     }
   ],
   "visualType": "cross-product",
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Area Machine\n\nThe **cross (vector) product** a × b returns a **vector**: magnitude |a||b|sin θ, direction perpendicular to both by the right-hand rule. Its theorems: anticommutativity, the parallel criterion a × b = 0, the area theorems (triangle and parallelogram), and the component determinant formula.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition and component form\n\n- **a × b = |a||b| sin θ n̂**, n̂ perpendicular to both by the right-hand rule.\n- **Component form:** a × b = determinant |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃ − a₃b₂)î + (a₃b₁ − a₁b₃)ĵ + (a₁b₂ − a₂b₁)k̂.\n- Cyclic basis products: î × ĵ = k̂, ĵ × k̂ = î, k̂ × î = ĵ; reversed order gives the negative.\n\n### 2.2 Algebraic laws\n\n- **Anticommutative:** a × b = −(b × a) — order matters.\n- **Distributive:** a × (b + c) = a × b + a × c; **λ(a × b) = (λa) × b**.\n- **No associativity with dot:** a × (b × c) ≠ (a × b) × c in general — bracketing matters.\n- **No cancellation:** a × b = a × c does not give b = c.\n\n### 2.3 The parallel criterion\n\n- **Theorem:** a ∥ b ⟺ **a × b = 0** (non-zero vectors), since sin θ = 0 exactly for θ = 0 or π.\n- Consequence: a × a = 0 for every vector.\n\n### 2.4 Area theorems\n\n- **Theorem:** |a × b| = area of the **parallelogram** with adjacent sides a, b; **half** of it is the triangle's area: Δ = ½|a × b|.\n- For a triangle with vertices A, B, C: Δ = ½|AB × AC|.\n- **Lagrange's identity:** |a × b|² = |a|²|b|² − (a·b)² — computing |a × b| without the angle.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Cross product** | |a||b|sin θ n̂ — a vector | î × ĵ = k̂ |\n| **Anticommutativity** | Swapping order flips the sign | b × a = −a × b |\n| **Right-hand rule** | Curl fingers a→b; thumb gives n̂ | fixes the perpendicular's direction |\n| **Parallelogram area** | |a × b| with adjacent sides a, b | the geometric face |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why sin θ\n\n- The cross product measures *perpendicular cooperation*: full strength at right angles (sin 90° = 1), nothing when parallel (sin 0 = 0). It is the dot product's complement.\n\n### 4.2 Reading the determinant\n\n- Expand along the top row with cofactor signs + − +; each 2×2 minor deletes one component column. The formula is mechanical but sign-hungry — the middle term carries the minus.\n\n### 4.3 Direction is half the answer\n\n- |a × b| gives size; the right-hand rule gives which of the two perpendicular directions. In exams, quote the vector, not just its magnitude, when the question asks for a × b.",
+      "## 5. Comparison Tables\n\n**Dot vs cross**\n\n| Basis | a·b | a × b |\n|---|---|---|\n| result | scalar | vector |\n| angle function | cos θ | sin θ |\n| commutative? | yes | no (anti) |\n| zero when | perpendicular | parallel |\n| measures | agreement | perpendicular strength / area |",
+      "## 6. Common Confusions\n\n**Anticommutative, not commutative:** swapping inputs negates the output — a sign error here poisons every downstream result.",
+      "**The middle component's sign:** (a₃b₁ − a₁b₃) — students write a₁b₃ − a₃b₁ and lose the ĵ component.",
+      "**Area of triangle = half the parallelogram:** Δ = ½|a × b| — forgetting the ½ doubles the answer.",
+      "## 7. Exam Application\n\n**NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find |a × b|. (part of 3m)** — a × b = |î ĵ k̂; 2 3 −1; 1 −1 2| = î[(3)(2) − (−1)(−1)] − ĵ[(2)(2) − (−1)(1)] + k̂[(2)(−1) − (3)(1)] = î(6 − 1) − ĵ(4 + 1) + k̂(−2 − 3) = **5î − 5ĵ − 5k̂**. |a × b| = √(25 + 25 + 25) = **5√3**.",
+      "**NEB 2024 (verified PYQ): Find the area of the parallelogram with adjacent sides a = 2î + ĵ and b = î + 3ĵ. (3m)** — a × b = (a₁b₂ − a₂b₁)k̂ = (2·3 − 1·1)k̂ = **5k̂** (2D shortcut: only the k̂ component survives). **Area = |a × b| = 5 square units.**",
+      "**NEB 2020 (verified PYQ): Find a unit vector perpendicular to the plane containing a = î + ĵ and b = ĵ + k̂. (part of 4m)** — A perpendicular to the plane is parallel to **a × b**: a × b = î[(1)(1) − (0)(1)] − ĵ[(1)(1) − (0)(1)] + k̂[(1)(1) − (1)(1)] = î − ĵ + 0k̂ = **î − ĵ**. |î − ĵ| = √2. **Unit perpendicular: (î − ĵ)/√2** (its negative serves equally — both directions are perpendicular).",
+      "**NEB 2021 (verified PYQ): Given a = î − 2ĵ + 3k̂ and b = 3î + 4ĵ − k̂, find a·b and |a × b|. (3m)** — a·b = 3 − 8 − 3 = −14. For |a × b| without the full vector, use **Lagrange**: |a|² = 1 + 4 + 9 = 14; |b|² = 9 + 16 + 1 = 26; |a × b|² = (14)(26) − (−14)² = 364 − 196 = 168 ⟹ **|a × b| = √168 = 2√42**."
+    ],
+    "keyPoints": [
+      "Cross product: a x b = |a||b| sin th n-hat (right-hand rule) = determinant |i j k; a1 a2 a3; b1 b2 b3|. Anticommutative: a x b = -(b x a); distributive; NOT associative with dot. Parallel criterion: a || b iff a x b = 0; a x a = 0. Area theorems: |a x b| = parallelogram area; triangle area = (1/2)|a x b| = (1/2)|AB x AC|. Lagrange identity: |a x b|^2 = |a|^2|b|^2 - (a.b)^2. Cyclic products: i x j = k, j x k = i, k x i = j. 2D shortcut: (a1, a2) x (b1, b2) = (a1b2 - a2b1) k."
+    ],
+    "importantConcepts": [
+      "The cross product is the dot product's complement: cos th measures agreement, sin th measures perpendicular cooperation — and sin th doubles as the area ratio."
+    ],
+    "examples": [
+      "***Half a parallelogram*** — the triangle with sides a, b is exactly half the parallelogram they span: Delta = (1/2)|a x b|; forgetting the half doubles every triangle-area answer."
+    ],
+    "universalFacts": [
+      "Torque = r x F and angular momentum = r x p are cross products in physics clothing: perpendicular levers, right-hand directions."
+    ],
+    "importantStatements": [
+      "\"a x b = |a||b| sin th n-hat; |a x b| is the parallelogram area; a || b iff a x b = 0.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 (|a x b| = 5 sqrt3; parallelogram area 5), NEB 2023 (a.b and |a x b| pair), NEB 2021 (Lagroute route 2 sqrt42), NEB 2020 (unit perpendicular (i - j)/sqrt2) — assigned to this row."
+    ],
+    "examShortTricks": [
+      "Determinant expansion: + - + cofactor signs. 2D cross: single k-hat component a1b2 - a2b1. Unit perpendicular to a plane: a x b normalised. |a x b| without angle: Lagrange sqrt(|a|^2|b|^2 - (a.b)^2)."
+    ],
+    "examNotes": [
+      "For |a x b| questions, compute the full cross product then its magnitude — the intermediate vector earns method marks even if only the length is asked."
+    ],
+    "formulas": [
+      "- a × b = |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃−a₃b₂, a₃b₁−a₁b₃, a₁b₂−a₂b₁)\n- a ∥ b ⟺ a × b = 0; a × b = −(b × a)\n- parallelogram area |a × b|; triangle area ½|a × b|; Lagrange: |a × b|² = |a|²|b|² − (a·b)²"
+    ],
+    "practice": [
+      "Compute a × b and |a × b| for a = 2î + 3ĵ − k̂, b = î − ĵ + 2k̂.",
+      "Find the area of the parallelogram with sides 2î + ĵ and î + 3ĵ.",
+      "Find a unit vector perpendicular to the plane of î + ĵ and ĵ + k̂."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find |a × b|. (3m with a·b)** — **Determinant form:** a × b = |î ĵ k̂; 2 3 −1; 1 −1 2|. **Expand:** î[(3)(2) − (−1)(−1)] − ĵ[(2)(2) − (−1)(1)] + k̂[(2)(−1) − (3)(1)] = î(6 − 1) − ĵ(4 + 1) + k̂(−2 − 3) = **5î − 5ĵ − 5k̂**. **Magnitude:** |a × b| = √(5² + 5² + 5²) = √75 = **5√3**. (Combined with a·b = −3 from the dot-product row, cos θ = −3/(7·√14) and sin θ = 5√3/(7√14) — the pair pins the angle completely.)",
+      "**NEB 2024 (verified PYQ): Find the area of the parallelogram with adjacent sides a = 2î + ĵ and b = î + 3ĵ. (3m)** — **2D shortcut:** with no k̂ components, the cross product reduces to its k̂ part: a × b = (a₁b₂ − a₂b₁)k̂ = (2·3 − 1·1)k̂ = **5k̂**. **Area theorem:** the parallelogram spanned by a and b has area |a × b| = |5k̂| = **5 square units**. (The corresponding triangle would have area 5/2 — the half factor belongs to triangles only.)",
+      "**NEB 2020 (verified PYQ): Find a unit vector perpendicular to the plane containing a = î + ĵ and b = ĵ + k̂. (4m with part ii)** — **Key fact:** a × b is perpendicular to **both** a and b, hence to their plane. **Compute:** a × b = î[(1)(1) − (0)(1)] − ĵ[(1)(1) − (0)(1)] + k̂[(1)(1) − (1)(1)] = î(1) − ĵ(1) + k̂(0) = **î − ĵ**. **Normalise:** |î − ĵ| = √2, so the required unit vector is **(î − ĵ)/√2** — or its negative (î − ĵ)(−1)/√2; both directions are perpendicular to the plane, and either answer is accepted unless a handedness is specified."
+    ]
+  }
 }
