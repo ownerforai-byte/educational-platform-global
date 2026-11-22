@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — Unit 6 Calculus: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Mathematics Unit 6 Calculus: limits, continuity, derivatives from first principles and rules, implicit, parametric and higher-order derivatives, monotonicity and extrema, integration by substitution and parts, definite integrals and area — worked exercise solutions plus a 2-mark conceptual bank.">
+<link rel="stylesheet" href="math-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/mathematics-xi">Mathematics XI</a> &rsaquo; Unit 6</p>
+
+<h1>Unit 6 — Calculus</h1>
+<p class="meta">Mathematics XI (Mat. 007) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 48 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">The largest unit and the one that decides most grades. It runs in one direction (limit → continuity → derivative → applications) and then reverses (anti-derivative → definite integral → area). Each exercise below is written in the exact form NEB expects: state the form, remove the indeterminacy, then quote the answer.</p>
+
+<div class="exam">
+<p><b>Where the 48 hours are examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — a standard limit, a derivative of a simple function, or a continuity verdict.</li>
+<li><b>4 marks</b> — first-principles derivative, product/quotient/chain combination, monotonicity interval, one integration.</li>
+<li><b>5–6 marks</b> — maxima/minima with the second-derivative test and a conclusion sentence, integration by parts, or area between two curves.</li>
+</ul>
+<p>The three most valuable habits: name the indeterminate form (0/0, ∞/∞, 1^∞) before simplifying; write +C for every indefinite integral; and finish optimisation questions with a sentence that answers the question asked.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 6.1 — Limits and indeterminate forms</li>
+<li>Exercise 6.2 — Continuity and discontinuity</li>
+<li>Exercise 6.3 — Derivatives from first principles</li>
+<li>Exercise 6.4 — Rules of differentiation</li>
+<li>Exercise 6.5 — Implicit, parametric and higher-order derivatives</li>
+<li>Exercise 6.6 — Monotonicity, extrema, tangents and concavity</li>
+<li>Exercise 6.7 — Anti-derivatives: standard integrals, substitution, by parts</li>
+<li>Exercise 6.8 — Definite integrals and area</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks</li>
+<li>Formula sheet and traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.1 — Limits and indeterminate forms</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Evaluate lim<sub>x→2</sub> (x² − 4)/(x − 2).</p>
+<div class="sol">
+<p>At x = 2 the expression is 0/0, an indeterminate form. Factor and cancel (valid for x ≠ 2):</p>
+<p class="work">(x² − 4)/(x − 2) = (x−2)(x+2)/(x−2) = x + 2 → 4</p>
+<p class="ans">lim = 4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Evaluate lim<sub>x→0</sub> sin 3x / x and lim<sub>x→0</sub> sin 5x / sin 2x.</p>
+<div class="sol">
+<p>Use the standard limit lim<sub>θ→0</sub> sinθ/θ = 1.</p>
+<p class="work">sin3x/x = 3·(sin3x)/(3x) → 3(1) = 3
+sin5x/sin2x = (sin5x/5x)(2x/sin2x)(5/2) → 1·1·(5/2) = 5/2</p>
+<p class="ans">3 and 5/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Evaluate lim<sub>x→0</sub> (1 − cos 2x)/x².</p>
+<div class="sol">
+<p class="work">1 − cos2x = 2sin²x
+⇒ (1 − cos2x)/x² = 2(sinx/x)² → 2(1)² = 2</p>
+<p class="ans">lim = 2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Evaluate lim<sub>x→∞</sub> (3x² + 2x + 1)/(5x² − x).</p>
+<div class="sol">
+<p>Divide numerator and denominator by the highest power x²:</p>
+<p class="work">(3 + 2/x + 1/x²)/(5 − 1/x) → 3/5 as x → ∞</p>
+<p class="ans">lim = 3/5</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Evaluate lim<sub>x→0</sub> (√(1+x) − 1)/x.</p>
+<div class="sol">
+<p>Rationalise the numerator by multiplying by the conjugate:</p>
+<p class="work">[(√(1+x) − 1)(√(1+x) + 1)] / [x(√(1+x) + 1)]
+= (1 + x − 1)/[x(√(1+x)+1)]
+= x/[x(√(1+x)+1)] = 1/(√(1+x)+1) → 1/2</p>
+<p class="ans">lim = 1/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Evaluate lim<sub>x→1</sub> (x³ − 1)/(x − 1).</p>
+<div class="sol">
+<p class="work">x³ − 1 = (x−1)(x² + x + 1)
+⇒ limit = x² + x + 1 at x = 1 = 3</p>
+<p class="ans">lim = 3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Evaluate lim<sub>x→0</sub> (e<sup>x</sup> − 1)/x and lim<sub>x→0</sub> log(1+x)/x.</p>
+<div class="sol">
+<p>Both are standard limits quoted in the syllabus:</p>
+<p class="work">lim (eˣ − 1)/x = 1
+lim log(1+x)/x = 1</p>
+<p class="ans">Both limits equal 1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Evaluate lim<sub>x→3</sub> (x² − 9)/(x² − 5x + 6).</p>
+<div class="sol">
+<p>0/0 form. Factor both quadratics:</p>
+<p class="work">(x−3)(x+3) / [(x−3)(x−2)] = (x+3)/(x−2) → 6/1 = 6</p>
+<p class="ans">lim = 6</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Evaluate lim<sub>x→∞</sub> (1 + 1/x)<sup>x</sup>.</p>
+<div class="sol">
+<p>This is the standard 1<sup>∞</sup> form whose value is the base of natural logarithms.</p>
+<p class="ans">lim = e &nbsp;(and lim (1 + a/x)<sup>x</sup> = e<sup>a</sup>)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Evaluate lim<sub>x→0</sub> (tan x)/x and lim<sub>x→0</sub> (1 − cos x)/x.</p>
+<div class="sol">
+<p class="work">tanx/x = (sinx/x)(1/cosx) → 1·1 = 1
+(1 − cosx)/x = [2sin²(x/2)]/x = sin(x/2)·[sin(x/2)/(x/2)] → 0·1 = 0</p>
+<p class="ans">1 and 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Evaluate lim<sub>x→0</sub> (√(3+x) − √3)/x.</p>
+<div class="sol">
+<p class="work">Multiply by the conjugate:
+(3 + x − 3) / [x(√(3+x) + √3)] = 1/(√(3+x) + √3) → 1/(2√3)</p>
+<p class="ans">lim = 1/(2√3)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Evaluate lim<sub>x→2</sub> (x³ − 8)/(x² − 4).</p>
+<div class="sol">
+<p class="work">x³ − 8 = (x−2)(x² + 2x + 4);  x² − 4 = (x−2)(x+2)
+⇒ (x² + 2x + 4)/(x + 2) → (4 + 4 + 4)/4 = 3</p>
+<p class="ans">lim = 3</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.2 — Continuity and discontinuity</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Test f(x) = (x² − 1)/(x − 1) for x ≠ 1, f(1) = 2, at x = 1.</p>
+<div class="sol">
+<p>Continuity at a needs three things: f(a) exists, the limit exists, and they are equal.</p>
+<p class="work">f(1) = 2
+lim(x→1) (x²−1)/(x−1) = lim (x+1) = 2</p>
+<p class="ans">The limit equals the value, so f is continuous at x = 1.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Show that f(x) = |x| is continuous at x = 0.</p>
+<div class="sol">
+<p class="work">Left limit: lim(x→0⁻) |x| = lim(−x) = 0
+Right limit: lim(x→0⁺) |x| = lim(x) = 0
+f(0) = 0</p>
+<p>Left limit = right limit = f(0).</p>
+<p class="ans">f is continuous at x = 0 (but not differentiable there, because the slopes differ).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> The function f(x) = (x² − 4)/(x − 2) is undefined at x = 2. What kind of discontinuity is it and how is it removed?</p>
+<div class="sol">
+<p class="work">lim(x→2) (x²−4)/(x−2) = lim(x+2) = 4 (finite)</p>
+<p>The limit exists but f(2) is not defined, so the discontinuity is removable. Define f(2) = 4 to make the function continuous.</p>
+<p class="ans">Removable discontinuity; repair by setting f(2) = 4.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Discuss the continuity of f(x) = 1/x at x = 0.</p>
+<div class="sol">
+<p>f(0) is undefined and |f(x)| → ∞ as x → 0 from either side, so there is no finite limit.</p>
+<p class="ans">Infinite discontinuity at x = 0.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Find k so that f(x) = (x² − 9)/(x − 3) for x ≠ 3 and f(3) = k is continuous at x = 3.</p>
+<div class="sol">
+<p class="work">lim(x→3) (x²−9)/(x−3) = lim(x+3) = 6
+For continuity, k = 6</p>
+<p class="ans">k = 6</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Find k so that f(x) = sin x/x for x ≠ 0, f(0) = k is continuous at 0.</p>
+<div class="sol">
+<p class="work">lim(x→0) sinx/x = 1 ⇒ k = 1</p>
+<p class="ans">k = 1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Is the greatest-integer function f(x) = [x] continuous at x = 1?</p>
+<div class="sol">
+<p class="work">lim(x→1⁻) [x] = 0,  lim(x→1⁺) [x] = 1,  [1] = 1</p>
+<p>The one-sided limits differ, so the limit does not exist.</p>
+<p class="ans">Discontinuous at x = 1 — a jump discontinuity of size 1.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Show that a function that is differentiable at a point must be continuous there.</p>
+<div class="sol">
+<p>Differentiability means f′(a) = lim<sub>h→0</sub> [f(a+h) − f(a)]/h exists. Then</p>
+<p class="work">lim(h→0) [f(a+h) − f(a)] = lim h · [f(a+h) − f(a)]/h = 0 · f′(a) = 0</p>
+<p class="ans">So f(a+h) → f(a): differentiability implies continuity. The converse fails (|x| at 0).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> For which x is f(x) = 1/(x² − 4) discontinuous?</p>
+<div class="sol">
+<p>The denominator vanishes at x² = 4, i.e. x = ±2, where the function is undefined and blows up.</p>
+<p class="ans">Discontinuous at x = 2 and x = −2 (infinite discontinuity); continuous on ℝ − {−2, 2}.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Sketch the graph of a function with a removable discontinuity at x = 1 and describe it.</p>
+<div class="sol">
+<p>Example: y = (x² − 1)/(x − 1) is the line y = x + 1 with a hole at (1, 2). The graph is a straight line missing a single point.</p>
+<p class="ans">A straight line with one open circle — the missing point is the removable discontinuity.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.3 — Derivatives from first principles</h2>
+
+<div class="tip"><b>The one definition to write every time.</b> f′(x) = lim<sub>h→0</sub> [f(x+h) − f(x)]/h. For a first-principles question the marks are for expanding f(x+h), cancelling the h, and only then letting h → 0 — never for quoting the answer.</div>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Find the derivative of f(x) = x² from first principles.</p>
+<div class="sol">
+<p class="work">f′(x) = lim(h→0) [(x+h)² − x²]/h
+= lim [x² + 2xh + h² − x²]/h
+= lim [2xh + h²]/h
+= lim (2x + h) = 2x</p>
+<p class="ans">f′(x) = 2x</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find the derivative of f(x) = √x from first principles.</p>
+<div class="sol">
+<p class="work">f′(x) = lim(h→0) [√(x+h) − √x]/h
+Multiply by the conjugate:
+= lim [ (x+h) − x ] / [ h(√(x+h) + √x) ]
+= lim h / [ h(√(x+h) + √x) ]
+= 1/(2√x)</p>
+<p class="ans">f′(x) = 1/(2√x), x &gt; 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Differentiate f(x) = 1/x from first principles.</p>
+<div class="sol">
+<p class="work">f′(x) = lim(h→0) [1/(x+h) − 1/x]/h
+= lim [ (x − (x+h)) / (x(x+h)) ] / h
+= lim [ −h / (x(x+h)) ] / h
+= lim −1/(x(x+h)) = −1/x²</p>
+<p class="ans">f′(x) = −1/x², x ≠ 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Differentiate sin x from first principles.</p>
+<div class="sol">
+<p class="work">f′(x) = lim(h→0) [sin(x+h) − sinx]/h
+Using sinA − sinB = 2cos((A+B)/2)sin((A−B)/2):
+= lim [2cos(x + h/2) sin(h/2)]/h
+= lim cos(x + h/2) · [sin(h/2)/(h/2)]
+= cosx · 1 = cosx</p>
+<p class="ans">d/dx (sinx) = cosx</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Differentiate x³ from first principles.</p>
+<div class="sol">
+<p class="work">[(x+h)³ − x³]/h = [x³ + 3x²h + 3xh² + h³ − x³]/h
+= 3x² + 3xh + h² → 3x²</p>
+<p class="ans">d/dx (x³) = 3x²</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Differentiate e<sup>x</sup> from first principles.</p>
+<div class="sol">
+<p class="work">f′(x) = lim(h→0) [e^(x+h) − eˣ]/h
+= eˣ lim(h→0) (e^h − 1)/h
+= eˣ · 1 = eˣ</p>
+<p class="ans">d/dx (eˣ) = eˣ — the exponential is its own derivative</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.4 — Rules of differentiation</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Differentiate y = x³ + 2x² − 5x + 7.</p>
+<div class="sol">
+<p class="work">dy/dx = 3x² + 4x − 5   (constant differentiates to 0)</p>
+<p class="ans">dy/dx = 3x² + 4x − 5</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Differentiate y = x² sin x (product rule).</p>
+<div class="sol">
+<p class="work">(uv)′ = u′v + uv′ with u = x², v = sinx
+dy/dx = 2x sinx + x² cosx</p>
+<p class="ans">dy/dx = 2x sinx + x² cosx</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Differentiate y = (x + 1)/(x − 1) (quotient rule).</p>
+<div class="sol">
+<p class="work">dy/dx = [ (x−1)(1) − (x+1)(1) ] / (x−1)²
+= (x − 1 − x − 1)/(x−1)² = −2/(x−1)²</p>
+<p class="ans">dy/dx = −2/(x−1)², x ≠ 1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Differentiate y = (3x + 1)⁵ and y = sin(x³) (chain rule).</p>
+<div class="sol">
+<p class="work">y = (3x+1)⁵: dy/dx = 5(3x+1)⁴ · 3 = 15(3x+1)⁴
+y = sin(x³): dy/dx = cos(x³) · 3x² = 3x² cos(x³)</p>
+<p class="ans">15(3x+1)⁴ and 3x²cos(x³)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Differentiate y = e<sup>2x</sup> and y = ln(x² + 1).</p>
+<div class="sol">
+<p class="work">d/dx e^(2x) = e^(2x) · 2 = 2e^(2x)
+d/dx ln(x²+1) = (2x)/(x²+1)</p>
+<p class="ans">2e<sup>2x</sup> and 2x/(x²+1)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Differentiate y = tan⁻¹(x²).</p>
+<div class="sol">
+<p class="work">d/dx tan⁻¹u = u′/(1+u²) with u = x², u′ = 2x
+dy/dx = 2x/(1 + x⁴)</p>
+<p class="ans">dy/dx = 2x/(1 + x⁴)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Differentiate y = a<sup>x</sup> and y = ln(sin x).</p>
+<div class="sol">
+<p class="work">d/dx aˣ = aˣ ln a
+d/dx ln(sinx) = (cosx)/(sinx) = cotx</p>
+<p class="ans">a<sup>x</sup> ln a and cot x</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Differentiate y = sin²x.</p>
+<div class="sol">
+<p>Chain rule with u = sinx:</p>
+<p class="work">dy/dx = 2 sinx cosx = sin2x</p>
+<p class="ans">dy/dx = sin 2x</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Differentiate y = x e<sup>x</sup> and y = √(x² + 1).</p>
+<div class="sol">
+<p class="work">d/dx (xeˣ) = eˣ + xeˣ = eˣ(1 + x)
+d/dx √(x²+1) = (1/2)(x²+1)^(−1/2) · 2x = x/√(x²+1)</p>
+<p class="ans">e<sup>x</sup>(1+x) and x/√(x²+1)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Differentiate y = x²/√(x+1) using the quotient and chain rules.</p>
+<div class="sol">
+<p class="work">u = x², u′ = 2x;  v = (x+1)^(1/2), v′ = 1/(2√(x+1))
+dy/dx = [2x√(x+1) − x²/(2√(x+1))] / (x+1)
+= [4x(x+1) − x²] / [2(x+1)^(3/2)]
+= x(3x + 4) / [2(x+1)^(3/2)]</p>
+<p class="ans">dy/dx = x(3x+4)/[2(x+1)<sup>3/2</sup>]</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.5 — Implicit, parametric, logarithmic and higher-order</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Find dy/dx for x² + y² = 25.</p>
+<div class="sol">
+<p class="work">Differentiate both sides with respect to x, treating y as a function of x:
+2x + 2y(dy/dx) = 0 ⇒ dy/dx = −x/y</p>
+<p class="ans">dy/dx = −x/y</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find dy/dx for x³ + y³ = 3xy.</p>
+<div class="sol">
+<p class="work">3x² + 3y²(dy/dx) = 3y + 3x(dy/dx)
+3x² − 3y = 3x(dy/dx) − 3y²(dy/dx)
+dy/dx = (x² − y)/(x − y²)  = (y − x²)/(y² − x)</p>
+<p class="ans">dy/dx = (y − x²)/(y² − x)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find dy/dx for the parametric curve x = at², y = 2at.</p>
+<div class="sol">
+<p class="work">dx/dt = 2at,  dy/dt = 2a
+dy/dx = (dy/dt)/(dx/dt) = 2a/(2at) = 1/t</p>
+<p class="ans">dy/dx = 1/t</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find dy/dx for x = a cosθ, y = b sinθ.</p>
+<div class="sol">
+<p class="work">dx/dθ = −a sinθ,  dy/dθ = b cosθ
+dy/dx = (b cosθ)/(−a sinθ) = −(b/a)cotθ</p>
+<p class="ans">dy/dx = −(b/a)cotθ</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Find dy/dx for y = x<sup>x</sup> using logarithmic differentiation.</p>
+<div class="sol">
+<p class="work">ln y = x ln x
+Differentiate implicitly:
+(1/y)(dy/dx) = ln x + x(1/x) = ln x + 1
+⇒ dy/dx = y(1 + ln x) = xˣ(1 + ln x)</p>
+<p class="ans">dy/dx = x<sup>x</sup>(1 + ln x)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Find the second derivative of y = x⁴ − 2x³.</p>
+<div class="sol">
+<p class="work">y′ = 4x³ − 6x²
+y″ = 12x² − 12x = 12x(x − 1)</p>
+<p class="ans">y″ = 12x(x−1)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find y″ for y = e<sup>2x</sup> and y = sin x.</p>
+<div class="sol">
+<p class="work">y = e^(2x): y′ = 2e^(2x), y″ = 4e^(2x)
+y = sinx: y′ = cosx, y″ = −sinx</p>
+<p class="ans">4e<sup>2x</sup> and −sin x</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> If y = x ln x, show that y″ = 1/x.</p>
+<div class="sol">
+<p class="work">y′ = ln x + x(1/x) = ln x + 1
+y″ = 1/x</p>
+<p class="ans">y″ = 1/x &nbsp;(proved)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Find the third derivative of y = x⁴ − 2x³.</p>
+<div class="sol">
+<p class="work">y′ = 4x³ − 6x², y″ = 12x² − 12x, y‴ = 24x − 12</p>
+<p class="ans">y‴ = 24x − 12</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> If x = 2t², y = t³, find dy/dx and d²y/dx².</p>
+<div class="sol">
+<p class="work">dx/dt = 4t, dy/dt = 3t² ⇒ dy/dx = 3t²/(4t) = 3t/4
+d²y/dx² = (d/dt)(3t/4) ÷ (dx/dt) = (3/4)/(4t) = 3/(16t)</p>
+<p class="ans">dy/dx = 3t/4, d²y/dx² = 3/(16t)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.6 — Monotonicity, extrema, tangents and concavity</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Find the intervals where f(x) = x³ − 3x + 2 is increasing or decreasing, and its extreme values.</p>
+<div class="sol">
+<p class="work">f′(x) = 3x² − 3 = 3(x−1)(x+1) = 0 ⇒ x = ±1
+Sign of f′: + on (−∞,−1), − on (−1,1), + on (1,∞)
+f(−1) = −1 + 3 + 2 = 4,  f(1) = 1 − 3 + 2 = 0</p>
+<p class="ans">Increasing on (−∞,−1) ∪ (1,∞), decreasing on (−1,1); local maximum 4 at x = −1, local minimum 0 at x = 1.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find the local extreme values of f(x) = 2x³ − 9x² + 12x.</p>
+<div class="sol">
+<p class="work">f′(x) = 6x² − 18x + 12 = 6(x−1)(x−2) = 0 ⇒ x = 1, 2
+f(1) = 2 − 9 + 12 = 5,  f(2) = 16 − 36 + 24 = 4</p>
+<p>Second derivative test: f″ = 12x − 18; f″(1) = −6 &lt; 0 (max), f″(2) = 6 &gt; 0 (min).</p>
+<p class="ans">Local maximum 5 at x = 1; local minimum 4 at x = 2.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find the tangent to y = x² at (2, 4).</p>
+<div class="sol">
+<p class="work">dy/dx = 2x ⇒ slope at x = 2 is 4
+y − 4 = 4(x − 2) ⇒ y = 4x − 4</p>
+<p class="ans">y = 4x − 4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the normal to y = x² at (1, 1).</p>
+<div class="sol">
+<p class="work">Tangent slope = 2(1) = 2 ⇒ normal slope = −1/2
+y − 1 = −(1/2)(x − 1) ⇒ 2y − 2 = −x + 1</p>
+<p class="ans">x + 2y = 3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Discuss the concavity of y = x³ and find its point of inflection.</p>
+<div class="sol">
+<p class="work">y′ = 3x², y″ = 6x
+y″ &gt; 0 for x &gt; 0 (concave up), y″ &lt; 0 for x &lt; 0 (concave down)
+y″ = 0 at x = 0, where the concavity changes sign</p>
+<p class="ans">Concave down on (−∞,0), concave up on (0,∞); inflection at (0,0).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Show that f(x) = x + 1/x has a minimum value 2 for x &gt; 0.</p>
+<div class="sol">
+<p class="work">f′(x) = 1 − 1/x² = 0 ⇒ x² = 1 ⇒ x = 1 (positive branch)
+f″(x) = 2/x³ &gt; 0 for x &gt; 0 ⇒ minimum
+f(1) = 1 + 1 = 2</p>
+<p class="ans">Minimum value 2 at x = 1 (proved)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> A rectangle has perimeter 40. Find its maximum area.</p>
+<div class="sol">
+<p class="work">Let sides be x and 20 − x (since 2(x + y) = 40)
+A = x(20 − x) = 20x − x²
+dA/dx = 20 − 2x = 0 ⇒ x = 10
+d²A/dx² = −2 &lt; 0 ⇒ maximum
+A = 10 × 10 = 100</p>
+<p class="ans">Maximum area = 100 square units, attained by the square 10 × 10.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Find the rate of change of the area of a circle with respect to its radius, and evaluate it at r = 5.</p>
+<div class="sol">
+<p class="work">A = πr² ⇒ dA/dr = 2πr
+At r = 5: dA/dr = 10π</p>
+<p class="ans">dA/dr = 2πr; at r = 5 it is 10π square units per unit increase in r.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Find the points of inflection of y = x³ − 3x².</p>
+<div class="sol">
+<p class="work">y′ = 3x² − 6x, y″ = 6x − 6 = 0 ⇒ x = 1
+y(1) = 1 − 3 = −2; y″ changes sign at x = 1</p>
+<p class="ans">Point of inflection (1, −2)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Find the greatest and least values of f(x) = x³ − 12x on [0, 3].</p>
+<div class="sol">
+<p class="work">f′(x) = 3x² − 12 = 0 ⇒ x = ±2; only x = 2 lies in [0,3]
+f(0) = 0, f(2) = 8 − 24 = −16, f(3) = 27 − 36 = −9</p>
+<p class="ans">Greatest value 0 (at x = 0); least value −16 (at x = 2).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.7 — Anti-derivatives: standard, substitution, by parts</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Integrate x⁵ and (3x² + 2x + 1).</p>
+<div class="sol">
+<p class="work">∫x⁵ dx = x⁶/6 + C
+∫(3x² + 2x + 1)dx = x³ + x² + x + C</p>
+<p class="ans">x<sup>6</sup>/6 + C and x<sup>3</sup> + x<sup>2</sup> + x + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Integrate 1/x², √x and 1/x.</p>
+<div class="sol">
+<p class="work">∫x⁻² dx = x⁻¹/(−1) + C = −1/x + C
+∫x^(1/2) dx = x^(3/2)/(3/2) + C = (2/3)x^(3/2) + C
+∫(1/x)dx = ln|x| + C</p>
+<p class="ans">−1/x + C; (2/3)x<sup>3/2</sup> + C; ln|x| + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Integrate sin 3x, cos 2x and e<sup>5x</sup>.</p>
+<div class="sol">
+<p class="work">∫sin3x dx = −cos3x/3 + C
+∫cos2x dx = sin2x/2 + C
+∫e^(5x) dx = e^(5x)/5 + C</p>
+<p class="ans">−cos3x/3 + C; sin2x/2 + C; e<sup>5x</sup>/5 + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Evaluate ∫2x(x² + 1)⁵ dx by substitution.</p>
+<div class="sol">
+<p class="work">Put u = x² + 1 ⇒ du = 2x dx
+∫u⁵ du = u⁶/6 + C = (x²+1)⁶/6 + C</p>
+<p class="ans">(x²+1)<sup>6</sup>/6 + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Evaluate ∫x/(x² + 1) dx.</p>
+<div class="sol">
+<p class="work">u = x² + 1, du = 2x dx ⇒ x dx = du/2
+∫(1/u)(du/2) = ½ ln|u| + C = ½ ln(x²+1) + C</p>
+<p class="ans">½ ln(x² + 1) + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Evaluate ∫sin²x cos x dx and ∫e<sup>x²</sup>·2x dx.</p>
+<div class="sol">
+<p class="work">u = sinx ⇒ du = cosx dx
+∫u² du = u³/3 + C = sin³x/3 + C
+
+u = x² ⇒ du = 2x dx
+∫e^u du = e^u + C = e^(x²) + C</p>
+<p class="ans">sin<sup>3</sup>x/3 + C and e<sup>x²</sup> + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Evaluate ∫x e<sup>x</sup> dx by parts.</p>
+<div class="sol">
+<p class="work">∫u dv = uv − ∫v du; take u = x, dv = eˣdx ⇒ du = dx, v = eˣ
+= xeˣ − ∫eˣ dx = xeˣ − eˣ + C</p>
+<p class="ans">e<sup>x</sup>(x − 1) + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Evaluate ∫x cos x dx.</p>
+<div class="sol">
+<p class="work">u = x, dv = cosx dx ⇒ du = dx, v = sinx
+= x sinx − ∫sinx dx = x sinx + cosx + C</p>
+<p class="ans">x sinx + cosx + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Evaluate ∫x sin x dx.</p>
+<div class="sol">
+<p class="work">u = x, dv = sinx dx ⇒ du = dx, v = −cosx
+= −x cosx + ∫cosx dx = −x cosx + sinx + C</p>
+<p class="ans">sin x − x cos x + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Evaluate ∫ln x dx.</p>
+<div class="sol">
+<p class="work">u = lnx, dv = dx ⇒ du = dx/x, v = x
+= x lnx − ∫x(1/x)dx = x lnx − ∫1 dx = x lnx − x + C</p>
+<p class="ans">x ln x − x + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Evaluate ∫x² ln x dx.</p>
+<div class="sol">
+<p class="work">u = lnx, dv = x²dx ⇒ du = dx/x, v = x³/3
+= (x³/3)lnx − ∫(x³/3)(1/x)dx
+= (x³/3)lnx − (1/3)∫x²dx
+= (x³/3)lnx − x³/9 + C</p>
+<p class="ans">(x<sup>3</sup>/3)ln x − x<sup>3</sup>/9 + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Evaluate ∫(2x + 3)⁴ dx.</p>
+<div class="sol">
+<p class="work">u = 2x + 3 ⇒ du = 2dx ⇒ dx = du/2
+∫u⁴(du/2) = u⁵/10 + C = (2x+3)⁵/10 + C</p>
+<p class="ans">(2x+3)<sup>5</sup>/10 + C</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.8 — Definite integrals and area</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Evaluate ∫₀² x² dx.</p>
+<div class="sol">
+<p class="work">∫₀² x² dx = [x³/3]₀² = 8/3 − 0 = 8/3</p>
+<p class="ans">8/3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Evaluate ∫₀<sup>π/2</sup> sin x dx and ∫₀<sup>π/2</sup> cos x dx.</p>
+<div class="sol">
+<p class="work">∫₀^(π/2) sinx dx = [−cosx]₀^(π/2) = 0 + 1 = 1
+∫₀^(π/2) cosx dx = [sinx]₀^(π/2) = 1 − 0 = 1</p>
+<p class="ans">Both equal 1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Evaluate ∫₁² (1/x) dx and ∫₀¹ e<sup>x</sup> dx.</p>
+<div class="sol">
+<p class="work">∫₁² dx/x = [ln|x|]₁² = ln2 − ln1 = ln2
+∫₀¹ eˣ dx = [eˣ]₀¹ = e − 1</p>
+<p class="ans">ln 2 and e − 1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Evaluate ∫₀² (3x² + 2x) dx.</p>
+<div class="sol">
+<p class="work">[x³ + x²]₀² = (8 + 4) − 0 = 12</p>
+<p class="ans">12</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Evaluate ∫₋₁¹ x³ dx and explain the answer geometrically.</p>
+<div class="sol">
+<p>x³ is an odd function integrated over a symmetric interval, so the signed areas above and below the axis cancel:</p>
+<p class="work">[x⁴/4]₋₁¹ = 1/4 − 1/4 = 0</p>
+<p class="ans">0 — the two signed areas cancel exactly.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Evaluate ∫₀<sup>π</sup> sin x dx.</p>
+<div class="sol">
+<p class="work">[−cosx]₀^π = −cosπ + cos0 = 1 + 1 = 2</p>
+<p class="ans">2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find the area under y = x² between x = 0 and x = 2.</p>
+<div class="sol">
+<p class="work">Area = ∫₀² x² dx = [x³/3]₀² = 8/3</p>
+<p class="ans">Area = 8/3 square units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Find the area between y = x and y = x² from x = 0 to x = 1.</p>
+<div class="sol">
+<p>On [0,1], x ≥ x², so the upper curve is y = x.</p>
+<p class="work">Area = ∫₀¹ (x − x²)dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = 1/6</p>
+<p class="ans">Area = 1/6 square units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Find the area under y = 1/x from x = 1 to x = e.</p>
+<div class="sol">
+<p class="work">∫₁^e (1/x)dx = [ln x]₁^e = ln e − ln 1 = 1</p>
+<p class="ans">Area = 1 square unit</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Find the area enclosed between y = 4 and y = x².</p>
+<div class="sol">
+<p>The curves meet where x² = 4, i.e. x = ±2. Between them, 4 ≥ x².</p>
+<p class="work">Area = ∫₋₂² (4 − x²)dx = [4x − x³/3]₋₂²
+= (8 − 8/3) − (−8 + 8/3) = 16 − 16/3 = 32/3</p>
+<p class="ans">Area = 32/3 square units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Evaluate ∫₁⁴ √x dx.</p>
+<div class="sol">
+<p class="work">∫x^(1/2)dx = (2/3)x^(3/2)
+(2/3)[4^(3/2) − 1^(3/2)] = (2/3)(8 − 1) = 14/3</p>
+<p class="ans">14/3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Evaluate ∫₀¹ x e<sup>x</sup> dx.</p>
+<div class="sol">
+<p>From Exercise 6.7 Q7, an anti-derivative is e<sup>x</sup>(x − 1).</p>
+<p class="work">[eˣ(x−1)]₀¹ = e(0) − 1(−1) = 1</p>
+<p class="ans">1</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define the limit of a function at a point.</p>
+<p class="sol">lim<sub>x→a</sub> f(x) = L means that as x approaches a (from either side, without reaching a), f(x) can be made as close to L as we wish. The value f(a) itself plays no part in the limit.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> State the three conditions for continuity of f at x = a.</p>
+<p class="sol">(i) f(a) is defined, (ii) lim<sub>x→a</sub> f(x) exists (left and right limits agree), (iii) the limit equals f(a).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Name the standard indeterminate forms.</p>
+<p class="sol">0/0, ∞/∞, 0·∞, ∞ − ∞, 1<sup>∞</sup>, 0<sup>0</sup>, ∞<sup>0</sup>. Each needs algebraic work, a standard limit, or a logarithm before it can be evaluated.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Why is lim<sub>x→0</sub> (sin x)/x = 1 important?</p>
+<p class="sol">It is the standard limit that makes every trigonometric derivative work: d/dx sinx and d/dx cosx both reduce to it in first principles, and limits like sin(kx)/x follow from it.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> What is the geometric meaning of dy/dx at a point?</p>
+<p class="sol">It is the slope of the tangent to the curve at that point, i.e. the instantaneous rate at which y changes with x.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Distinguish Δy/Δx from dy/dx.</p>
+<p class="sol">Δy/Δx is the average rate of change over a finite chord; dy/dx is the limit of that ratio as Δx → 0, the instantaneous rate — the slope of the tangent rather than the chord.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> When is a differentiable function increasing on an interval?</p>
+<p class="sol">When f′(x) ≥ 0 throughout the interval (strictly increasing where f′(x) &gt; 0). Decreasing corresponds to f′(x) ≤ 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> State the second derivative test for a local extremum at a stationary point.</p>
+<p class="sol">At f′(a) = 0: if f″(a) &lt; 0 there is a local maximum; if f″(a) &gt; 0 a local minimum; if f″(a) = 0 the test fails and the first-derivative sign change must be checked.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Why does every indefinite integral carry + C?</p>
+<p class="sol">Because anti-differentiation is not unique: constants differentiate to zero, so all primitives differ by an additive constant. The +C records the whole family of curves.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Distinguish a definite from an indefinite integral.</p>
+<p class="sol">An indefinite integral is a function (family of primitives) with +C; a definite integral is a number obtained by evaluating the primitive between the two limits, with the constants cancelling.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> What does a definite integral represent geometrically?</p>
+<p class="sol">The signed area between the curve, the x-axis and the two vertical lines x = a, x = b — areas below the axis count as negative.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Evaluate ∫₋<sub>a</sub><sup>a</sup> x³ dx and state the general rule used.</p>
+<p class="sol">Because x³ is odd and the interval is symmetric, the integral is 0. Rule: ∫₋ₐᵃ f(x)dx = 0 for any odd f.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Does continuity imply differentiability?</p>
+<p class="sol">No. f(x) = |x| is continuous at 0 but has no derivative there because the left and right slopes are −1 and +1. Differentiability does imply continuity.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> What is a point of inflection?</p>
+<p class="sol">A point where the concavity changes sign, normally where f″(x) = 0 and f″ changes sign across it.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Differentiate a constant and explain the result.</p>
+<p class="sol">d/dx (c) = 0, because a constant function is a horizontal line whose slope is zero (and its rate of change is zero).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> What does concave upward mean, and what does it imply about f″?</p>
+<p class="sol">The tangent lies below the curve and the slope is increasing; algebraically f″(x) &gt; 0 on the interval.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C17.</b> State the product rule and the quotient rule.</p>
+<p class="sol">(uv)′ = u′v + uv′; &nbsp; (u/v)′ = (u′v − uv′)/v², v ≠ 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C18.</b> Why do we prefer substitution for ∫2x(x²+1)⁵dx instead of expanding?</p>
+<p class="sol">Substitution recognises 2x as the derivative of the inner function, reducing the integral to ∫u⁵du. Expanding a fifth power would be long and error-prone; the substitution does it in two lines.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C19.</b> Distinguish a left-hand from a right-hand limit.</p>
+<p class="sol">lim(x→a⁻) f(x) uses values of x just below a; lim(x→a⁺) uses values just above. Both are one-sided limits.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C20.</b> When does lim(x→a) f(x) exist?</p>
+<p class="sol">Only when the two one-sided limits exist and are equal. If they differ, the limit does not exist — as with |x|/x at 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C21.</b> Define the derivative as a rate of change.</p>
+<p class="sol">f′(x) = lim(h→0) [f(x + h) − f(x)]/h measures how fast the output changes per unit change in the input. Geometrically it is the slope of the tangent.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C22.</b> What does dy/dx mean, and is it a fraction?</p>
+<p class="sol">It is the derivative of y with respect to x — a single symbol for the limit of Δy/Δx. It can be manipulated like a fraction in the chain rule but is not literally one.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C23.</b> Why is f(x) = |x| not differentiable at x = 0?</p>
+<p class="sol">The left derivative is −1 and the right derivative is +1. They are unequal, so no unique tangent slope exists and the graph has a sharp corner.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C24.</b> State the chain rule.</p>
+<p class="sol">If y = f(u) and u = g(x), then dy/dx = f′(u) · g′(x) = (dy/du)(du/dx). It is used for every composite function.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C25.</b> Is the derivative of a product the product of the derivatives?</p>
+<p class="sol">No. (uv)′ = u′v + uv′. Taking u = v = x shows the difference at once: correct answer 2x, wrong answer 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C26.</b> What is a stationary point?</p>
+<p class="sol">A point where f′(x) = 0 — the tangent is horizontal. It may be a maximum, a minimum, or a point of inflexion.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C27.</b> Distinguish a local from an absolute extremum.</p>
+<p class="sol">A local extremum is highest/lowest near that point; an absolute extremum is highest/lowest over the whole stated interval. On a closed interval, absolute extrema occur at stationary points or endpoints.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C28.</b> State the second-derivative test for a stationary point.</p>
+<p class="sol">At f′(c) = 0: f″(c) &lt; 0 gives a local maximum, f″(c) &gt; 0 a local minimum, and f″(c) = 0 is inconclusive (use the first-derivative test).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C29.</b> What is a point of inflexion?</p>
+<p class="sol">A point where the concavity changes sign; f″ passes through zero there. It is not necessarily stationary — e.g. x³ at the origin, or the middle of a cubic in general.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C30.</b> Define an antiderivative.</p>
+<p class="sol">F is an antiderivative of f if F′ = f. All antiderivatives differ by a constant, which is why an indefinite integral carries + C.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C31.</b> What does the fundamental theorem of calculus give you?</p>
+<p class="sol">It links the two operations: ∫ₐᵇ f(x)dx = F(b) − F(a), where F is any antiderivative of f. So a definite integral is evaluated by antidifferentiation.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C32.</b> State two basic properties of definite integrals.</p>
+<p class="sol">∫ₐᵇ f = −∫ᵦᵃ f (reversing the limits changes the sign) and ∫ₐᵃ f = 0. Also ∫ₐᵇ = ∫ₐᶜ + ∫꜀ᵇ for a point c between a and b.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C33.</b> Why does ∫(1/x)dx = ln|x| + C and not ln x + C?</p>
+<p class="sol">Because 1/x is defined for negative x too. The absolute value keeps the antiderivative valid on both sides of the discontinuity at 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C34.</b> Why is ∫eˣ dx = eˣ + C?</p>
+<p class="sol">Because the derivative of eˣ is eˣ, so eˣ is its own antiderivative — the only function (up to a constant factor) with that property.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C35.</b> State the integration-by-parts formula and when to use it.</p>
+<p class="sol">∫u dv = uv − ∫v du. Use it for a product of unlike functions, choosing u by the order inverse-trig, log, algebraic, trig, exponential.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C36.</b> How do you convert the indeterminate form 0 × ∞?</p>
+<p class="sol">Rewrite the product as a quotient, e.g. f·g = f/(1/g), turning it into 0/0 or ∞/∞ so the limit rules apply.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C37.</b> Define continuity on an interval.</p>
+<p class="sol">f is continuous on (a, b) if it is continuous at every point of it, and on [a, b] if in addition the right limit at a and the left limit at b match the function values.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C38.</b> What is a removable discontinuity?</p>
+<p class="sol">A point where the limit exists but differs from (or is undefined at) the function value, as in (x² − 1)/(x − 1) at x = 1. Redefining f(1) = 2 removes it.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C39.</b> What does a negative definite integral mean?</p>
+<p class="sol">That the region lies below the x-axis over that interval. A definite integral gives signed area, not just geometric area.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C40.</b> State the derivative of sin x, cos x and tan x.</p>
+<p class="sol">(sin x)′ = cos x, (cos x)′ = −sin x, (tan x)′ = sec²x. The sign on cos x is the standard place where marks are lost.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C41.</b> Why does the derivative of a constant vanish?</p>
+<p class="sol">A constant does not change, so its rate of change is zero; geometrically its graph is horizontal, giving slope 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C42.</b> What is the relation between differentiability and continuity?</p>
+<p class="sol">Differentiable ⇒ continuous, but not conversely: |x| is continuous at 0 and not differentiable there. So continuity is necessary but not sufficient.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks</h2>
+
+<div class="item">
+<p class="q"><b>L1. [5]</b> Evaluate lim<sub>x→0</sub> (1 − cos 4x)/(1 − cos 2x).</p>
+<div class="sol">
+<p class="work">Using 1 − cos θ = 2sin²(θ/2):
+1 − cos4x = 2sin²2x,  1 − cos2x = 2sin²x
+⇒ ratio = sin²2x/sin²x = (sin2x/sinx)²
+Now sin2x = 2sinx cosx ⇒ sin2x/sinx = 2cosx
+⇒ ratio = (2cosx)² = 4cos²x → 4 as x → 0</p>
+<p class="ans">Limit = 4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Show that f(x) = |x − 2| is continuous but not differentiable at x = 2.</p>
+<div class="sol">
+<p><b>Continuity:</b></p>
+<p class="work">lim(x→2⁻) |x−2| = lim(2−x) = 0
+lim(x→2⁺) |x−2| = lim(x−2) = 0
+f(2) = 0</p>
+<p>One-sided limits agree and equal f(2), so f is continuous at 2.</p>
+<p><b>Differentiability:</b> compare one-sided derivatives.</p>
+<p class="work">Left:  lim(h→0⁻) [|2+h−2| − 0]/h = |h|/h = −1
+Right: lim(h→0⁺) |h|/h = +1</p>
+<p>The one-sided derivatives differ, so no derivative exists at x = 2.</p>
+<p class="ans">Continuous but not differentiable at x = 2 — the graph has a corner (proved).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [6]</b> Find the local extreme values of f(x) = x³ − 6x² + 9x + 1, using the second-derivative test.</p>
+<div class="sol">
+<p class="work">f′(x) = 3x² − 12x + 9 = 3(x² − 4x + 3) = 3(x−1)(x−3) = 0 ⇒ x = 1, 3
+f″(x) = 6x − 12
+f″(1) = −6 &lt; 0 ⇒ local maximum
+f″(3) = +6 &gt; 0 ⇒ local minimum
+f(1) = 1 − 6 + 9 + 1 = 5
+f(3) = 27 − 54 + 27 + 1 = 1</p>
+<p class="ans">Local maximum 5 at x = 1; local minimum 1 at x = 3.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [6]</b> Evaluate ∫x² sin x dx.</p>
+<div class="sol">
+<p><b>First application of parts</b> (u = x², dv = sinx dx):</p>
+<p class="work">= −x²cosx + ∫2x cosx dx</p>
+<p><b>Second application</b> (u = 2x, dv = cosx dx):</p>
+<p class="work">∫2x cosx dx = 2x sinx − ∫2 sinx dx = 2x sinx + 2cosx</p>
+<p class="work">Total: −x²cosx + 2x sinx + 2cosx + C</p>
+<p>Check by differentiating: −2x cosx + x² sinx + 2sinx + 2x cosx − 2sinx = x² sinx ✓</p>
+<p class="ans">−x²cos x + 2x sin x + 2cos x + C</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [6]</b> Find the area enclosed between y = x² and y = 2x.</p>
+<div class="sol">
+<p class="work">Intersections: x² = 2x ⇒ x(x − 2) = 0 ⇒ x = 0, 2
+On (0,2): 2x &gt; x², so the upper curve is y = 2x</p>
+<p class="work">Area = ∫₀² (2x − x²)dx
+= [x² − x³/3]₀²
+= (4 − 8/3) − 0
+= 4/3</p>
+<p class="ans">Area = 4/3 square units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L6. [5]</b> A wire of length 36 cm is bent into a rectangle. Find the dimensions giving the maximum area.</p>
+<div class="sol">
+<p class="work">Let length = x, then breadth = 18 − x (since 2(x + b) = 36)
+A(x) = x(18 − x) = 18x − x²
+A′(x) = 18 − 2x = 0 ⇒ x = 9
+A″(x) = −2 &lt; 0 ⇒ maximum
+Breadth = 18 − 9 = 9; A = 81</p>
+<p class="ans">A 9 cm × 9 cm square gives the maximum area of 81 cm².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L7. [5]</b> Find the tangent to x² + y² = 25 at the point (3, 4).</p>
+<div class="sol">
+<p class="work">Differentiating implicitly: 2x + 2y(dy/dx) = 0 ⇒ dy/dx = −x/y
+At (3,4): slope = −3/4
+y − 4 = −(3/4)(x − 3) ⇒ 4y − 16 = −3x + 9</p>
+<p class="ans">3x + 4y = 25</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L8. [6]</b> If x = a(θ − sinθ) and y = a(1 − cosθ), find dy/dx.</p>
+<div class="sol">
+<p class="work">dx/dθ = a(1 − cosθ)
+dy/dθ = a sinθ
+⇒ dy/dx = a sinθ / a(1 − cosθ)
+= sinθ/(1 − cosθ)
+Using sinθ = 2sin(θ/2)cos(θ/2) and 1 − cosθ = 2sin²(θ/2):
+= [2sin(θ/2)cos(θ/2)]/[2sin²(θ/2)]
+= cot(θ/2)</p>
+<p class="ans">dy/dx = cot(θ/2)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and traps</h2>
+
+<table>
+<tr><th>Category</th><th>Formula</th></tr>
+<tr><td>Definition</td><td>f′(x) = lim<sub>h→0</sub>[f(x+h) − f(x)]/h</td></tr>
+<tr><td>Standard limits</td><td>sinx/x → 1; tanx/x → 1; (1−cosx)/x → 0; (eˣ−1)/x → 1; log(1+x)/x → 1; (1+1/x)<sup>x</sup> → e</td></tr>
+<tr><td>Power rule</td><td>d/dx xⁿ = nxⁿ⁻¹</td></tr>
+<tr><td>Trig</td><td>sin→cos; cos→−sin; tan→sec²; cot→−cosec²; sec→sec·tan; cosec→−cosec·cot</td></tr>
+<tr><td>Inverse trig</td><td>sin⁻¹x → 1/√(1−x²); cos⁻¹x → −1/√(1−x²); tan⁻¹x → 1/(1+x²)</td></tr>
+<tr><td>Exp / log</td><td>eˣ → eˣ; aˣ → aˣ ln a; lnx → 1/x; log<sub>a</sub>x → 1/(x ln a)</td></tr>
+<tr><td>Rules</td><td>(uv)′ = u′v + uv′; (u/v)′ = (u′v − uv′)/v²; dy/dx = (dy/du)(du/dx)</td></tr>
+<tr><td>Parametric</td><td>dy/dx = (dy/dt)/(dx/dt)</td></tr>
+<tr><td>Monotonicity</td><td>Increasing ⇔ f′ ≥ 0; decreasing ⇔ f′ ≤ 0</td></tr>
+<tr><td>Extrema</td><td>f′ = 0 and f″ &lt; 0 max; f″ &gt; 0 min</td></tr>
+<tr><td>Tangent / normal</td><td>y − y₁ = m(x − x₁); normal slope = −1/m</td></tr>
+<tr><td>Standard integrals</td><td>∫xⁿ = xⁿ⁺¹/(n+1); ∫1/x = ln|x|; ∫eˣ = eˣ; ∫sinx = −cosx; ∫cosx = sinx</td></tr>
+<tr><td>By parts</td><td>∫u dv = uv − ∫v du</td></tr>
+<tr><td>Area</td><td>∫<sub>a</sub><sup>b</sup> f(x)dx; between curves ∫<sub>a</sub><sup>b</sup>(upper − lower)dx</td></tr>
+</table>
+
+<div class="warn">
+<p><b>Trap 1 — dropping +C.</b> A missing +C in an indefinite integral is a guaranteed mark loss; it is not optional.</p>
+<p><b>Trap 2 — separating a fraction across a limit.</b> (x²−4)/(x−2) is not x²/(x−2) − 4/(x−2); factor the numerator first.</p>
+<p><b>Trap 3 — assuming f′(a) = 0 means an extremum.</b> y = x³ has f′(0) = 0 but no extremum — always check the sign change or f″.</p>
+<p><b>Trap 4 — saying "continuous ⇒ differentiable".</b> |x − 2| is the standard counterexample; continuity is necessary but not sufficient.</p>
+<p><b>Trap 5 — subtracting the limits in the wrong order.</b> ∫ₐᵇ = F(b) − F(a); a reversed order flips the sign.</p>
+<p><b>Trap 6 — ignoring which curve is on top.</b> In an area question, test a point in the interval: ∫(upper − lower), not ∫(lower − upper).</p>
+<p><b>Trap 7 — forgetting the chain rule's inner derivative.</b> d/dx sin(x³) = 3x²cos(x³), not cos(x³).</p>
+</div>
+
+<div class="tip"><b>Answer template for this unit.</b> Limit: form → simplification → value. Derivative: rule named → apply → simplify. Optimisation: derivative → stationary points → second-derivative test → value → interpretation sentence. Integration: method named → primitive → +C (or limits substituted).</div>
+
+<p class="note">Mathematics XI · Unit 6 Calculus · NEB (Mat. 007). Every limit answer names the form first; every indefinite integral carries +C.</p>
+</body>
+</html>

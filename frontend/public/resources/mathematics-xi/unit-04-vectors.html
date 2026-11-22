@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — Unit 4 Vectors: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Mathematics Unit 4 Vectors: collinear and coplanar vectors, linear combination, linear dependence and independence — worked exercise solutions plus a 2-mark conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="math-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/mathematics-xi">Mathematics XI</a> &rsaquo; Unit 4</p>
+
+<h1>Unit 4 — Vectors</h1>
+<p class="meta">Mathematics XI (Mat. 007) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 12 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">The unit is about one question asked five ways: are these vectors pointing the same way (collinear), lying in one plane (coplanar), or able to be built from each other (linear dependence)? The scalar triple product answers all three, which is why it dominates the exercises.</p>
+
+<div class="exam">
+<p><b>What is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — a definition check, a magnitude, a unit vector, or a yes/no collinearity verdict.</li>
+<li><b>4 marks</b> — express one vector as a linear combination of two others; test collinearity/coplanarity of points.</li>
+<li><b>5–6 marks</b> — prove a set is linearly independent, or find λ so that three vectors are coplanar, with the reason written out.</li>
+</ul>
+<p>Keep the three decision tools distinct: <b>collinear</b> ⇔ one is a scalar multiple of the other; <b>coplanar</b> ⇔ a·(b × c) = 0; <b>linearly dependent</b> ⇔ a non-trivial combination gives the zero vector. For three vectors coplanar and dependent are the same statement; for two vectors, always coplanar.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 4.1 — Vector algebra: components, magnitude, dot and cross products</li>
+<li>Exercise 4.2 — Collinear and coplanar vectors</li>
+<li>Exercise 4.3 — Linear combination, dependence and independence</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks</li>
+<li>Formula sheet and traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 4.1 — Vector algebra</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> If a = 2i + 3j − k and b = i − j + 2k, find a + b, a − b and 2a + 3b.</p>
+<div class="sol">
+<p class="work">a + b = (2+1)i + (3−1)j + (−1+2)k = 3i + 2j + k
+a − b = (2−1)i + (3+1)j + (−1−2)k = i + 4j − 3k
+2a = 4i + 6j − 2k,  3b = 3i − 3j + 6k
+2a + 3b = 7i + 3j + 4k</p>
+<p class="ans">a+b = 3i+2j+k; a−b = i+4j−3k; 2a+3b = 7i+3j+4k</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find the magnitude of a = 3i − 4j + 12k.</p>
+<div class="sol">
+<p class="work">|a| = √(3² + (−4)² + 12²) = √(9 + 16 + 144) = √169 = 13</p>
+<p class="ans">|a| = 13</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find the unit vector along a = 2i − j + 2k.</p>
+<div class="sol">
+<p class="work">|a| = √(4 + 1 + 4) = 3
+â = a/|a| = (2i − j + 2k)/3</p>
+<p class="ans">â = (2/3)i − (1/3)j + (2/3)k</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> If |a| = 3, |b| = 4 and the angle between them is 60°, find |a + b|.</p>
+<div class="sol">
+<p class="work">|a+b|² = |a|² + |b|² + 2|a||b|cosθ
+= 9 + 16 + 2(3)(4)(1/2) = 25 + 12 = 37</p>
+<p class="ans">|a+b| = √37</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Show that a = 2i + 3j + k and b = i − 2j + 4k are perpendicular.</p>
+<div class="sol">
+<p class="work">a·b = (2)(1) + (3)(−2) + (1)(4) = 2 − 6 + 4 = 0</p>
+<p class="ans">a·b = 0, so the vectors are perpendicular.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Find the angle between a = i + j and b = j + k.</p>
+<div class="sol">
+<p class="work">a·b = 0 + 1 + 0 = 1
+|a| = √2, |b| = √2
+cosθ = 1/(√2·√2) = 1/2</p>
+<p class="ans">θ = 60°</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find a × b for a = i + j + k and b = i − j + k.</p>
+<div class="sol">
+<p class="work">a × b = |i  j  k|
+        |1  1  1|
+        |1 −1  1|
+= i(1·1 − 1·(−1)) − j(1·1 − 1·1) + k(1·(−1) − 1·1)
+= i(2) − j(0) + k(−2) = 2i − 2k</p>
+<p class="ans">a × b = 2i − 2k</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Find the area of the triangle whose two sides are a = i + j and b = j + k.</p>
+<div class="sol">
+<p class="work">a × b = |i j k; 1 1 0; 0 1 1| = i(1−0) − j(1−0) + k(1−0) = i − j + k
+|a × b| = √(1 + 1 + 1) = √3
+Area = ½|a × b| = √3/2</p>
+<p class="ans">Area = √3/2 square units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Find the scalar triple product of a = i + j, b = j + k, c = k + i and interpret it.</p>
+<div class="sol">
+<p class="work">a·(b × c) = |1 1 0|
+            |0 1 1|
+            |1 0 1|
+= 1(1·1 − 1·0) − 1(0·1 − 1·1) + 0
+= 1(1) − 1(−1) = 2</p>
+<p>Non-zero, so the three vectors are non-coplanar and form a parallelepiped of volume |2| = 2.</p>
+<p class="ans">a·(b × c) = 2; the vectors are non-coplanar (volume 2 cubic units).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Show that the points A(1, 2, 3), B(3, 4, 5) and C(2, 3, 4) are collinear.</p>
+<div class="sol">
+<p class="work">AB = (3−1)i + (4−2)j + (5−3)k = 2i + 2j + 2k = 2(i + j + k)
+AC = (2−1)i + (3−2)j + (4−3)k = i + j + k</p>
+<p>AB = 2·AC, so the vectors are parallel and share A; the three points lie on one line.</p>
+<p class="ans">A, B, C are collinear.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Find λ if a = 3i + 2j − k and b = λi + 4j − 2k are parallel.</p>
+<div class="sol">
+<p>Parallel vectors have proportional components:</p>
+<p class="work">3/λ = 2/4 = (−1)/(−2) = 1/2  ⇒ λ = 6</p>
+<p class="ans">λ = 6 (indeed b = 2a)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> If a = 2i + 3j and b = i − j, find the component of a along b and the projection of a on b.</p>
+<div class="sol">
+<p class="work">a·b = 2(1) + 3(−1) = −1
+|b| = √2
+Component of a along b = (a·b)/|b| = −1/√2
+Vector projection = [(a·b)/|b|²] b = (−1/2)(i − j) = −i/2 + j/2</p>
+<p class="ans">Scalar component −1/√2; vector projection −i/2 + j/2</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 4.2 — Collinear and coplanar vectors</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Show that a = 2i + 3j and b = 4i + 6j are collinear.</p>
+<div class="sol">
+<p class="work">b = 2(2i + 3j) = 2a</p>
+<p class="ans">b is a scalar multiple of a, so the vectors are collinear.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> If the position vectors of P, Q, R are i + j, 3i + 2j and 5i + 3j, show that P, Q, R are collinear.</p>
+<div class="sol">
+<p class="work">PQ = (3−1)i + (2−1)j = 2i + j
+PR = (5−1)i + (3−1)j = 4i + 2j = 2(2i + j) = 2PQ</p>
+<p class="ans">PQ and PR are parallel and share P, so the three points are collinear.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Are the vectors a = i + 2j + 3k, b = 2i + 3j + 4k and c = 3i + 4j + 5k coplanar?</p>
+<div class="sol">
+<p class="work">c = a + b = (1+2)i + (2+3)j + (3+4)k</p>
+<p>One vector is a linear combination of the other two, so they are linearly dependent.</p>
+<p class="ans">Coplanar (a·(b × c) = 0).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Show that any two vectors are always coplanar.</p>
+<div class="sol">
+<p>Two vectors determine at most one plane through a common origin: take the plane containing both directions. Formally, with c = 0 the triple product a·(b × 0) = 0.</p>
+<p class="ans">Two vectors span a plane, so they are always coplanar — coplanarity is a restriction only from three vectors onward.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Find λ so that a = i + 2j + 3k, b = 2i + 3j + 4k, c = i + λj + 5k are coplanar.</p>
+<div class="sol">
+<p>Coplanar ⇔ scalar triple product zero:</p>
+<p class="work">|1 2 3|
+|2 3 4| = 1(15 − 4λ) − 2(10 − 4) + 3(2λ − 3)
+|1 λ 5|
+= 15 − 4λ − 12 + 6λ − 9
+= 2λ − 6 = 0 ⇒ λ = 3</p>
+<p class="ans">λ = 3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Show that the points A(1, 2, 3), B(2, 3, 4), C(3, 4, 5) and D(0, 1, 2) are coplanar.</p>
+<div class="sol">
+<p class="work">AB = i + j + k, AC = 2i + 2j + 2k, AD = −i − j − k</p>
+<p>AB and AD are already parallel (AD = −AB), so all four points lie on a single line, and a line is contained in any plane through it.</p>
+<p class="ans">Coplanar — in fact collinear.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Prove that if a, b, c are non-coplanar then a + b, b + c and c + a are non-coplanar.</p>
+<div class="sol">
+<p>Suppose a combination gives zero:</p>
+<p class="work">x(a+b) + y(b+c) + z(c+a) = 0
+⇒ (x + z)a + (x + y)b + (y + z)c = 0</p>
+<p>Since a, b, c are non-coplanar they are linearly independent, so each coefficient vanishes:</p>
+<p class="work">x + z = 0,  x + y = 0,  y + z = 0
+⇒ x = y = z = 0</p>
+<p class="ans">Only the trivial combination gives zero, so a+b, b+c, c+a are linearly independent, hence non-coplanar (proved).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Show that i, j, k are linearly independent.</p>
+<div class="sol">
+<p class="work">Suppose xi + yj + zk = 0. Comparing components: x = 0, y = 0, z = 0.
+Alternatively |i·(j × k)| = |1| ≠ 0.</p>
+<p class="ans">Only the trivial combination vanishes, so i, j, k are linearly independent and form a basis of space.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> If a·b = 0 and a × b = 0 simultaneously, what can be concluded?</p>
+<div class="sol">
+<p>a × b = 0 means the vectors are parallel (or one is zero); a·b = 0 means they are perpendicular (or one is zero). Parallel and perpendicular can only both hold when at least one vector is the zero vector.</p>
+<p class="ans">At least one of a, b is the zero vector.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Find the volume of the parallelepiped whose edges are a = i + j, b = j + k, c = k + i.</p>
+<div class="sol">
+<p>From Exercise 4.1 Q9, a·(b × c) = 2.</p>
+<p class="ans">Volume = |a·(b × c)| = 2 cubic units</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 4.3 — Linear combination, dependence and independence</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Express d = 3i + 5j as a linear combination of a = i + j and b = i − j.</p>
+<div class="sol">
+<p>Let d = xa + yb. Comparing components:</p>
+<p class="work">x + y = 3   (i-components)
+x − y = 5   (j-components)
+Adding: 2x = 8 ⇒ x = 4; then y = −1</p>
+<p>Check: 4(i+j) − (i−j) = 4i + 4j − i + j = 3i + 5j ✓</p>
+<p class="ans">d = 4a − b</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Express c = 5i + 6j as a linear combination of a = 2i + j and b = i + 3j.</p>
+<div class="sol">
+<p class="work">2x + y = 5     … (i)
+x + 3y = 6     … (ii)
+From (ii): x = 6 − 3y. Substitute in (i):
+2(6 − 3y) + y = 5 ⇒ 12 − 6y + y = 5 ⇒ −5y = −7 ⇒ y = 7/5
+Then x = 6 − 21/5 = 9/5</p>
+<p>Check: (9/5)(2i+j) + (7/5)(i+3j) = (18/5 + 7/5)i + (9/5 + 21/5)j = 5i + 6j ✓</p>
+<p class="ans">c = (9/5)a + (7/5)b</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Show that (1, 0, 0), (0, 1, 0) and (0, 0, 1) are linearly independent.</p>
+<div class="sol">
+<p class="work">x(1,0,0) + y(0,1,0) + z(0,0,1) = (x, y, z) = (0,0,0)
+⇒ x = y = z = 0</p>
+<p class="ans">Only the trivial combination vanishes, so the three vectors are linearly independent (they are the standard basis).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Are a = i + 2j and b = 2i + 4j independent?</p>
+<div class="sol">
+<p class="work">b = 2a ⇒ b − 2a = 0 with coefficients (1, −2) not both zero</p>
+<p class="ans">Linearly dependent (collinear).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Show that (1, 1, 0), (0, 1, 1) and (1, 0, 1) are linearly independent.</p>
+<div class="sol">
+<p>Their scalar triple product is the determinant of the coefficient matrix:</p>
+<p class="work">|1 1 0|
+|0 1 1| = 1(1·1 − 1·0) − 1(0·1 − 1·1) + 0 = 1 + 1 = 2 ≠ 0
+|1 0 1|</p>
+<p class="ans">Non-zero triple product ⇒ the vectors are non-coplanar ⇒ linearly independent.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Express (1, 1, 1) as a linear combination of (1, 1, 0), (0, 1, 1) and (1, 0, 1).</p>
+<div class="sol">
+<p class="work">x(1,1,0) + y(0,1,1) + z(1,0,1) = (1,1,1)
+⇒ x + z = 1,  x + y = 1,  y + z = 1
+Adding all three: 2(x+y+z) = 3 ⇒ x+y+z = 3/2
+Subtracting each equation from this sum:
+y = 1/2,  z = 1/2,  x = 1/2</p>
+<p>Check: (1/2)(1,1,0) + (1/2)(0,1,1) + (1/2)(1,0,1) = (1, 1, 1) ✓</p>
+<p class="ans">(1,1,1) = ½(1,1,0) + ½(0,1,1) + ½(1,0,1)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find a linear relation connecting a = (1, 2, 3), b = (2, 3, 4) and c = (3, 5, 7).</p>
+<div class="sol">
+<p class="work">a + b = (1+2, 2+3, 3+4) = (3, 5, 7) = c
+⇒ a + b − c = 0  with coefficients (1, 1, −1) ≠ 0</p>
+<p class="ans">a + b − c = 0 — a non-trivial relation, so the three vectors are linearly dependent and coplanar.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Prove that a set of vectors is linearly dependent if and only if one of them is a linear combination of the others.</p>
+<div class="sol">
+<p><b>⇒</b> If dependent, there are scalars k₁,…,kₙ not all zero with k₁v₁ + … + kₙvₙ = 0. Suppose kᵢ ≠ 0; then</p>
+<p class="work">vᵢ = −(1/kᵢ)(k₁v₁ + … + kₙvₙ), omitting the vᵢ term</p>
+<p>so vᵢ is a combination of the rest.</p>
+<p><b>⇐</b> If vᵢ = Σⱼ≠ᵢ cⱼvⱼ, then vᵢ − Σcⱼvⱼ = 0 is a non-trivial relation (coefficient of vᵢ is 1).</p>
+<p class="ans">The two conditions are equivalent (proved).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> If a, b, c are non-coplanar, show that any vector r has a unique expression r = xa + yb + zc.</p>
+<div class="sol">
+<p><b>Existence:</b> non-coplanar a, b, c span all of space, so r is in their span.</p>
+<p><b>Uniqueness:</b> suppose r = xa + yb + zc = x′a + y′b + z′c. Subtracting,</p>
+<p class="work">(x − x′)a + (y − y′)b + (z − z′)c = 0</p>
+<p>Independence forces x − x′ = y − y′ = z − z′ = 0, so the representation is unique. The coefficients are found by solving the 3×3 system, or by Cramer's rule with the triple-product determinant.</p>
+<p class="ans">Existence and uniqueness both hold — a, b, c form a basis (proved).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Show that (1, 2) and (2, 4) are linearly dependent, while (1, 2) and (2, 1) are independent.</p>
+<div class="sol">
+<p class="work">(2, 4) = 2(1, 2) ⇒ dependent
+For (1,2), (2,1): x(1,2) + y(2,1) = (0,0)
+⇒ x + 2y = 0, 2x + y = 0 ⇒ x = y = 0 ⇒ independent</p>
+<p class="ans">(1,2), (2,4) dependent; (1,2), (2,1) independent. In 2-D, independence is exactly "not parallel".</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define collinear vectors.</p>
+<p class="sol">Two or more vectors are collinear if they are parallel to the same line, i.e. one is a non-zero scalar multiple of the other.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Define coplanar vectors.</p>
+<p class="sol">Vectors are coplanar if they are parallel to the same plane. For three vectors this is equivalent to a·(b × c) = 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Why are any two vectors always coplanar?</p>
+<p class="sol">Two directions determine at most one plane through a common point, so both vectors can be drawn parallel to that plane; there is no third direction to escape it.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> State the condition for three vectors to be coplanar.</p>
+<p class="sol">Their scalar triple product must vanish: a·(b × c) = 0 (equivalently the 3×3 determinant of their components is zero).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> What is a linear combination of vectors?</p>
+<p class="sol">Any expression of the form xa + yb + zc with scalar coefficients. The set of all such combinations is the span of the vectors.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Distinguish linearly dependent from linearly independent vectors.</p>
+<p class="sol">Dependent: some non-trivial combination equals the zero vector (one vector is a combination of the others). Independent: only the trivial combination x = y = z = 0 gives zero.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> When does a unit vector exist for a given vector, and how is it found?</p>
+<p class="sol">For any non-zero a, the unit vector is â = a/|a|. It points the same way with length 1. The zero vector has no direction, so it has no unit vector.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Distinguish a·b from a × b in one line each.</p>
+<p class="sol">a·b is a scalar = |a||b|cosθ (measures alignment; zero when perpendicular). a × b is a vector = |a||b|sinθ n̂ (measures perpendicularity; zero when parallel).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> What does |a × b| represent geometrically, and what does |a·(b × c)| represent?</p>
+<p class="sol">|a × b| is the area of the parallelogram with sides a, b (half of it for a triangle). |a·(b × c)| is the volume of the parallelepiped with edges a, b, c.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> If two vectors are perpendicular and both non-zero, can they be linearly dependent?</p>
+<p class="sol">No. Dependent would mean parallel (one a scalar multiple of the other), and parallel vectors cannot be perpendicular unless one is zero.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> State the triangle inequality for vectors.</p>
+<p class="sol">|a + b| ≤ |a| + |b|, with equality only when a and b are parallel and in the same direction.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Can three vectors in a plane be linearly independent?</p>
+<p class="sol">No. A plane is 2-dimensional, so any three vectors lying in it are necessarily dependent — at most two can be independent.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Find the value of i·j and i × j.</p>
+<p class="sol">i·j = 0 (perpendicular unit vectors); i × j = k (right-handed set), with |i × j| = 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> If a + b + c = 0, what can you say about a, b, c?</p>
+<p class="sol">They are linearly dependent, hence coplanar (all three lie in one plane), and they can be arranged as the sides of a triangle.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Distinguish a scalar from a vector quantity.</p>
+<p class="sol">A scalar has magnitude only (mass, time, work); a vector has both magnitude and direction (displacement, velocity, force).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> Name the main types of vectors.</p>
+<p class="sol">Zero (null), unit, equal, negative, collinear/parallel, and co-initial/co-terminus vectors — classified by magnitude, direction or starting point.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C17.</b> What is the direction of the zero vector?</p>
+<p class="sol">It is indeterminate — the zero vector has magnitude 0, so no direction can be assigned. It is taken as parallel to every vector.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C18.</b> If two vectors are equal, must they be parallel?</p>
+<p class="sol">Yes. Equal vectors have the same magnitude and the same direction, so they are parallel (in fact identical) and their components are equal.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C19.</b> State the triangle law of vector addition.</p>
+<p class="sol">If two vectors are represented by two sides of a triangle taken in order, their sum is represented by the third side taken in the reverse order.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C20.</b> State the parallelogram law and its relation to the triangle law.</p>
+<p class="sol">If two vectors act at a point and form adjacent sides of a parallelogram, the diagonal through that point is the resultant. It is the same result as the triangle law applied to the two sides in succession.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C21.</b> Distinguish a position vector from a displacement vector.</p>
+<p class="sol">A position vector fixes a point relative to a fixed origin (OP); a displacement vector gives the change of position between two points (AB = OB − OA) and is independent of the origin.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C22.</b> Write the dot product in component form.</p>
+<p class="sol">For a = a₁i + a₂j + a₃k and b = b₁i + b₂j + b₃k, a·b = a₁b₁ + a₂b₂ + a₃b₃ = |a||b|cosθ.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C23.</b> What is a·a and what does it tell you?</p>
+<p class="sol">a·a = |a|², since the angle is zero and cos0 = 1. Hence |a| = √(a·a), the standard way of finding a magnitude from components.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C24.</b> Is the cross product commutative?</p>
+<p class="sol">No — it is anti-commutative: a × b = −(b × a). Reversing the order reverses the direction given by the right-hand rule.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C25.</b> State the right-hand rule for a × b.</p>
+<p class="sol">Curl the fingers of the right hand from a towards b; the thumb then points along a × b. It fixes the direction perpendicular to the plane of a and b.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C26.</b> What is i × i, and what is i × j?</p>
+<p class="sol">i × i = 0 because a vector crossed with itself gives zero. i × j = k, j × k = i, k × i = j, while reversing any of these changes the sign.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C27.</b> When is a × b = 0 without either vector being zero?</p>
+<p class="sol">Exactly when a and b are parallel or anti-parallel, i.e. collinear. Then the included angle is 0 or π and sinθ = 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C28.</b> When is a·b = 0 for non-zero a and b?</p>
+<p class="sol">When θ = 90°, i.e. the vectors are perpendicular. The dot product is the test for orthogonality.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C29.</b> Give the geometric meaning of |a × b|.</p>
+<p class="sol">It is the area of the parallelogram with a and b as adjacent sides; half of it is the area of the triangle they span.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C30.</b> What is the scalar triple product and what does it measure?</p>
+<p class="sol">[a b c] = a·(b × c) gives the volume of the parallelepiped with a, b, c as edges. It is zero exactly when the three vectors are coplanar.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C31.</b> Which properties does the scalar triple product have?</p>
+<p class="sol">It is unchanged by cyclic permutation — a·(b×c) = b·(c×a) = c·(a×b) — and changes sign under an odd swap of two vectors.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C32.</b> How do you test whether four points are coplanar?</p>
+<p class="sol">Form three vectors from a common vertex, e.g. AB, AC, AD, and check that their scalar triple product is zero.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C33.</b> Do two collinear vectors form a basis of the plane?</p>
+<p class="sol">No. A basis needs two non-collinear (linearly independent) vectors; collinear vectors span only a line.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C34.</b> State the condition for three vectors to form a basis of three-dimensional space.</p>
+<p class="sol">They must be non-coplanar, i.e. linearly independent, so that their scalar triple product is non-zero.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C35.</b> State the identity linking |a × b|, a·b and the magnitudes.</p>
+<p class="sol">|a × b|² + (a·b)² = |a|²|b|², which follows from sin²θ + cos²θ = 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C36.</b> Write the projection of a on b and explain its sign.</p>
+<p class="sol">The scalar projection is (a·b)/|b|, and the vector projection is ((a·b)/|b|²)b. The projection is negative when a points away from b, i.e. θ is obtuse.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks</h2>
+
+<div class="item">
+<p class="q"><b>L1. [4]</b> Express r = 4i − j + 3k as a linear combination of a = i + j, b = j + k, c = k + i.</p>
+<div class="sol">
+<p class="work">x(i+j) + y(j+k) + z(k+i) = (x+z)i + (x+y)j + (y+z)k
+Comparing with 4i − j + 3k:
+x + z = 4,  x + y = −1,  y + z = 3</p>
+<p class="work">Adding: 2(x+y+z) = 6 ⇒ x+y+z = 3
+x = 3 − (y+z) = 3 − 3 = 0
+y = 3 − (x+z) = 3 − 4 = −1
+z = 3 − (x+y) = 3 − (−1) = 4</p>
+<p>Check: 0(i+j) − (j+k) + 4(k+i) = 4i − j + 3k ✓</p>
+<p class="ans">r = −b + 4c</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> If a, b, c are non-coplanar, prove that a − b, b − c, c − a are coplanar.</p>
+<div class="sol">
+<p>Look for a non-trivial combination giving the zero vector:</p>
+<p class="work">1(a − b) + 1(b − c) + 1(c − a)
+= a − b + b − c + c − a = 0</p>
+<p>The coefficients (1, 1, 1) are all non-zero, so the three vectors are linearly dependent; in 3-D, dependence of three vectors is equivalent to coplanarity.</p>
+<p class="ans">a − b, b − c, c − a are linearly dependent, hence coplanar (proved).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Find λ so that the points A(1, 2, 3), B(2, 3, 4), C(3, 4, 5), D(λ, 5, 6) are coplanar.</p>
+<div class="sol">
+<p class="work">AB = (1,1,1), AC = (2,2,2), AD = (λ−1, 3, 3)</p>
+<p>Since AC = 2AB, the points A, B, C are already collinear, so the four points lie in a plane for every λ. The coplanarity condition AB·(AC × AD) = 0 is automatically satisfied because AC is parallel to AB:</p>
+<p class="work">AB × AC = 0 ⇒ AB·(AC × AD) = 0 for all λ</p>
+<p class="ans">Every λ works; the four points are always coplanar (they lie in a plane through the line ABC).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [5]</b> Show that the points A(1, 1, 1), B(2, 2, 0), C(3, 1, 2) and D(0, 1, 3) are coplanar, and find the volume they would span if they were not.</p>
+<div class="sol">
+<p class="work">AB = (1, 1, −1),  AC = (2, 0, 1),  AD = (−1, 0, 2)</p>
+<p class="work">AB·(AC × AD) = |1  1 −1|
+               |2  0  1|
+               |−1 0  2|
+= 1(0·2 − 1·0) − 1(2·2 − 1·(−1)) + (−1)(0 − 0)
+= 0 − 1(5) + 0 = −5</p>
+<p>The triple product is −5 ≠ 0, so the four points are <b>not</b> coplanar; the volume of the parallelepiped they span is |−5| = 5 cubic units (and the tetrahedron ABCD has volume 5/6).</p>
+<p class="ans">Not coplanar; spanned volume = 5 cubic units.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [4]</b> If a = 2i + j − k and b = i − j + 2k, find the angle between them and the unit vector perpendicular to both.</p>
+<div class="sol">
+<p class="work">a·b = 2 − 1 − 2 = −1
+|a| = √6, |b| = √6
+cosθ = −1/6 ⇒ θ = cos⁻¹(−1/6) ≈ 99.6°</p>
+<p class="work">a × b = |i j k; 2 1 −1; 1 −1 2|
+= i(2−1) − j(4+1) + k(−2−1)
+= i − 5j − 3k
+|a × b| = √(1 + 25 + 9) = √35</p>
+<p class="ans">θ ≈ 99.6°; n̂ = (i − 5j − 3k)/√35</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and traps</h2>
+
+<table>
+<tr><th>Item</th><th>Formula / condition</th></tr>
+<tr><td>Magnitude</td><td>|a| = √(x² + y² + z²)</td></tr>
+<tr><td>Unit vector</td><td>â = a/|a|</td></tr>
+<tr><td>Dot product</td><td>a·b = x₁x₂ + y₁y₂ + z₁z₂ = |a||b|cosθ</td></tr>
+<tr><td>Cross product</td><td>|a × b| = |a||b|sinθ; direction by right-hand rule</td></tr>
+<tr><td>Collinear</td><td>b = ka, or a × b = 0</td></tr>
+<tr><td>Coplanar</td><td>a·(b × c) = 0</td></tr>
+<tr><td>Dependence</td><td>some non-trivial k₁v₁ + k₂v₂ + k₃v₃ = 0</td></tr>
+<tr><td>Triangle area</td><td>½|a × b|</td></tr>
+<tr><td>Parallelepiped volume</td><td>|a·(b × c)|</td></tr>
+</table>
+
+<div class="warn">
+<p><b>Trap 1 — proving collinearity with equal lengths.</b> Equal magnitudes prove nothing about direction. Collinearity needs proportionality of components, not equality of moduli.</p>
+<p><b>Trap 2 — forgetting that coplanarity needs three vectors.</b> Saying "a and b are coplanar because the triple product vanishes" is meaningless; the triple product requires three vectors.</p>
+<p><b>Trap 3 — losing the −1 in cross products.</b> Write the determinant with the j-term negated: −j(x₁z₂ − x₂z₁). This is the most common arithmetic slip in the unit.</p>
+<p><b>Trap 4 — claiming dependence from a single zero coefficient.</b> The relation must be non-trivial, i.e. at least one coefficient non-zero. 0·a + 0·b = 0 proves nothing.</p>
+<p><b>Trap 5 — dividing by a vector.</b> There is no division by a vector; solve component equations instead.</p>
+</div>
+
+<div class="tip"><b>Exam habit.</b> State the test before using it: "collinear ⇔ b = ka", "coplanar ⇔ a·(b × c) = 0", "dependent ⇔ non-trivial combination = 0". Then compute. NEB awards the method mark even when the arithmetic slips, provided the test is named correctly.</div>
+
+<p class="note">Mathematics XI · Unit 4 Vectors · NEB (Mat. 007). A collinearity claim needs a scalar multiple; a coplanarity claim needs a zero triple product.</p>
+</body>
+</html>

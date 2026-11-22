@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — Unit 3 Analytic Geometry: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Mathematics Unit 3 Analytic Geometry: distance of a point from a line, angle bisectors, pair of straight lines and coordinates in space — worked exercise solutions plus a 2-mark conceptual bank in NEB marking style.">
+<link rel="stylesheet" href="math-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/mathematics-xi">Mathematics XI</a> &rsaquo; Unit 3</p>
+
+<h1>Unit 3 — Analytic Geometry</h1>
+<p class="meta">Mathematics XI (Mat. 007) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 20 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Three examinable layers: the distance from a point to a line and the two angle bisectors; pairs of straight lines (a second-degree equation split into two factors); and 3-D coordinates with direction cosines and ratios. Every question in this unit is a formula applied with correct signs — which is why sign slips dominate the lost marks.</p>
+
+<div class="exam">
+<p><b>Marks pattern.</b> Expect one 2-mark distance or direction-cosine item, one 4-mark bisector or pair-of-lines item, and one 4–5 mark question combining a condition (find k, prove perpendicular) with the geometry.</p>
+<p>Keep the two normalised forms separate in your head:</p>
+<ul class="tight">
+<li>Distance: d = |a₁x₁ + b₁y₁ + c₁| / √(a₁² + b₁²) — one line, one point.</li>
+<li>Bisector: (a₁x+b₁y+c₁)/√(a₁²+b₁²) = ±(a₂x+b₂y+c₂)/√(a₂²+b₂²) — two lines, both signs.</li>
+</ul>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 3.1 — Straight line: perpendicular distance and angle bisectors</li>
+<li>Exercise 3.2 — Pair of straight lines</li>
+<li>Exercise 3.3 — Coordinates in space, direction cosines and ratios</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks</li>
+<li>Formula sheet and traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.1 — Straight line: distance and bisectors</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Find the length of the perpendicular from (3, 4) to the line 3x + 4y − 5 = 0.</p>
+<div class="sol">
+<p class="work">d = |ax₁ + by₁ + c| / √(a² + b²)
+= |3(3) + 4(4) − 5| / √(9 + 16)
+= |9 + 16 − 5| / 5 = 20/5 = 4</p>
+<p class="ans">d = 4 units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find the distance of (−2, 3) from 4x − 3y + 5 = 0.</p>
+<div class="sol">
+<p class="work">d = |4(−2) − 3(3) + 5| / √(16 + 9) = |−8 − 9 + 5| / 5 = 12/5</p>
+<p class="ans">d = 12/5 = 2.4 units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find the distance of the origin from 3x − 4y + 10 = 0.</p>
+<div class="sol">
+<p>For the origin (0,0) only the constant term survives in the numerator:</p>
+<p class="work">d = |0 + 0 + 10| / √(9 + 16) = 10/5 = 2</p>
+<p class="ans">d = 2 units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the distance between the parallel lines 3x + 4y = 7 and 3x + 4y = 12.</p>
+<div class="sol">
+<p>Rewrite with the same left side: 3x + 4y − 7 = 0 and 3x + 4y − 12 = 0. Two parallel lines give</p>
+<p class="work">d = |c₁ − c₂| / √(a² + b²) = |−7 + 12| / 5 = 5/5 = 1</p>
+<p class="ans">d = 1 unit</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Find the equations of the two bisectors of the angles between 3x + 4y − 5 = 0 and 5x − 12y + 7 = 0.</p>
+<div class="sol">
+<p>Normalise each line by its own √(a²+b²): 5 for the first, 13 for the second.</p>
+<p class="work">(3x + 4y − 5)/5 = ± (5x − 12y + 7)/13</p>
+<p><b>Taking + :</b></p>
+<p class="work">13(3x+4y−5) = 5(5x−12y+7)
+39x + 52y − 65 = 25x − 60y + 35
+14x + 112y − 100 = 0 ⇒ 7x + 56y − 50 = 0</p>
+<p><b>Taking − :</b></p>
+<p class="work">13(3x+4y−5) = −5(5x−12y+7)
+39x + 52y − 65 = −25x + 60y − 35
+64x − 8y − 30 = 0 ⇒ 32x − 4y − 15 = 0</p>
+<p class="ans">7x + 56y − 50 = 0 &nbsp;and&nbsp; 32x − 4y − 15 = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Find the acute angle between 2x − y + 3 = 0 and x − 3y + 2 = 0.</p>
+<div class="sol">
+<p class="work">Slopes: m₁ = 2 (from y = 2x + 3), m₂ = 1/3 (from y = x/3 + 2/3)
+tanθ = |(m₁ − m₂)/(1 + m₁m₂)|
+= |(2 − 1/3)/(1 + 2/3)| = |(5/3)/(5/3)| = 1</p>
+<p class="ans">θ = 45° &nbsp;(acute angle)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find k if 2x + ky = 5 is perpendicular to 3x − 4y = 7.</p>
+<div class="sol">
+<p class="work">Slopes: −2/k and 3/4
+Perpendicular ⇒ (−2/k)(3/4) = −1 ⇒ −6/(4k) = −1 ⇒ 4k = 6 ⇒ k = 3/2</p>
+<p class="ans">k = 3/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Find the equation of the line through (1, 2) parallel to 3x + 4y = 7.</p>
+<div class="sol">
+<p>A parallel line keeps the same normal (a,b) and changes only the constant:</p>
+<p class="work">3(x−1) + 4(y−2) = 0 ⇒ 3x + 4y − 11 = 0</p>
+<p class="ans">3x + 4y − 11 = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Do the origin and the point (5, 0) lie on the same side of 3x + 4y − 10 = 0?</p>
+<div class="sol">
+<p>Substitute both points into the left side; the signs of the results decide the side.</p>
+<p class="work">At (0,0): −10 &lt; 0
+At (5,0): 15 − 10 = 5 &gt; 0</p>
+<p class="ans">Opposite signs ⇒ the two points lie on opposite sides of the line.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Find the length of the perpendicular from (2, −1) to 3x − 4y + 5 = 0 and state its geometric meaning.</p>
+<div class="sol">
+<p class="work">d = |3(2) − 4(−1) + 5| / 5 = |6 + 4 + 5|/5 = 15/5 = 3</p>
+<p>The point is 3 units from the line; the perpendicular segment has length 3 and meets the line at its foot.</p>
+<p class="ans">d = 3 units — the shortest (perpendicular) distance from the point to the line.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.2 — Pair of straight lines</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Separate x² − 5xy + 6y² = 0 into its two lines.</p>
+<div class="sol">
+<p class="work">x² − 5xy + 6y² = (x − 2y)(x − 3y) = 0</p>
+<p class="ans">The pair is x = 2y and x = 3y.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find the angle between the pair x² − 4xy + y² = 0.</p>
+<div class="sol">
+<p>For ax² + 2hxy + by² = 0: a = 1, 2h = −4 ⇒ h = −2, b = 1.</p>
+<p class="work">tanθ = 2√(h² − ab)/(a + b) = 2√(4 − 1)/(1 + 1) = 2√3/2 = √3</p>
+<p class="ans">θ = 60° (and its supplement 120° for the other pair of arms)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Show that 2x² + 3xy − 2y² = 0 represents a pair of perpendicular lines.</p>
+<div class="sol">
+<p class="work">2x² + 3xy − 2y² = (2x − y)(x + 2y) = 0
+Lines: y = 2x and y = −x/2
+Product of slopes: 2 × (−1/2) = −1</p>
+<p class="ans">The lines are perpendicular; notice a + b = 2 + (−2) = 0, which is the perpendicularity condition.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the condition for ax² + 2hxy + by² = 0 to represent two perpendicular lines, and prove it.</p>
+<div class="sol">
+<p class="work">Let the lines be y = m₁x and y = m₂x. Then
+ax² + 2hxy + by² = b(y − m₁x)(y − m₂x)
+Comparing coefficients: m₁ + m₂ = −2h/b, m₁m₂ = a/b
+Perpendicular ⇔ m₁m₂ = −1 ⇔ a/b = −1 ⇔ a + b = 0</p>
+<p class="ans">The pair is perpendicular ⇔ a + b = 0 &nbsp;(proved)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Find k so that kx² + 8xy + 4y² = 0 represents (i) real distinct lines, (ii) coincident lines.</p>
+<div class="sol">
+<p>Here a = k, h = 4, b = 4. The lines are real when h² ≥ ab:</p>
+<p class="work">16 ≥ 4k ⇒ k ≤ 4
+Distinct and real: k &lt; 4
+Coincident: k = 4, giving 4x² + 8xy + 4y² = 4(x + y)² = 0</p>
+<p class="ans">(i) k &lt; 4 &nbsp; (ii) k = 4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Show that x² + 2xy + y² − 4 = 0 represents a pair of parallel lines and find them.</p>
+<div class="sol">
+<p class="work">x² + 2xy + y² = (x+y)² ⇒ (x+y)² = 4 ⇒ x + y = 2 or x + y = −2</p>
+<p>Both lines have slope −1, so they are parallel; the distance between them is |2 − (−2)|/√2 = 4/√2 = 2√2.</p>
+<p class="ans">x + y = 2 and x + y = −2 — parallel lines.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find the joint equation of the two lines through the origin with slopes 2 and −3.</p>
+<div class="sol">
+<p class="work">y = 2x ⇒ (2x − y) is a factor
+y = −3x ⇒ (3x + y) is a factor
+(2x − y)(3x + y) = 6x² + 2xy − 3xy − y² = 6x² − xy − y² = 0</p>
+<p class="ans">6x² − xy − y² = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Verify the condition abc + 2fgh − af² − bg² − ch² = 0 for the pair x² + 2xy + y² − 4 = 0.</p>
+<div class="sol">
+<p>Compare with ax² + by² + 2hxy + 2gx + 2fy + c = 0: a = 1, b = 1, h = 1, g = 0, f = 0, c = −4.</p>
+<p class="work">abc = 1·1·(−4) = −4
+2fgh = 0
+−af² = 0,  −bg² = 0
+−ch² = −(−4)(1) = 4
+Sum: −4 + 0 + 0 + 0 + 4 = 0 ✓</p>
+<p class="ans">The condition is satisfied, consistent with the pair found in Q6.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Find k if one of the lines of 3x² + kxy − 2y² = 0 is x = y.</p>
+<div class="sol">
+<p>If x = y is a line of the pair, then (x − y) is a factor, so the equation vanishes when x = y. Substitute x = y:</p>
+<p class="work">3x² + kx² − 2x² = (3 + k − 2)x² = (1 + k)x² = 0 ⇒ k = −1</p>
+<p>Check: 3x² − xy − 2y² = (3x + 2y)(x − y) ⇒ lines x = y and y = −3x/2 ✓</p>
+<p class="ans">k = −1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Find the separate equations of 6x² + 5xy − 6y² = 0.</p>
+<div class="sol">
+<p class="work">6x² + 5xy − 6y² = (3x − 2y)(2x + 3y) = 0</p>
+<p>Check by expansion: 6x² + 9xy − 4xy − 6y² = 6x² + 5xy − 6y² ✓. Note a + b = 6 + (−6) = 0, so the pair is perpendicular.</p>
+<p class="ans">3x − 2y = 0 and 2x + 3y = 0</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 3.3 — Coordinates in space</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Find the distance between (1, 2, 3) and (4, 6, 3).</p>
+<div class="sol">
+<p class="work">d = √[(4−1)² + (6−2)² + (3−3)²] = √(9 + 16 + 0) = 5</p>
+<p class="ans">d = 5 units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Show that (1, 2, 3), (2, 3, 4) and (0, 1, 2) are collinear.</p>
+<div class="sol">
+<p class="work">AB = (2−1, 3−2, 4−3) = (1, 1, 1)
+AC = (0−1, 1−2, 2−3) = (−1, −1, −1)</p>
+<p>AC = −AB, so the two vectors are parallel and share the point A.</p>
+<p class="ans">The three points are collinear.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find the direction cosines of the line joining (1, 2, 3) and (4, 6, 3).</p>
+<div class="sol">
+<p class="work">DRs = (4−1, 6−2, 3−3) = (3, 4, 0)
+|dr| = √(9 + 16 + 0) = 5
+l = 3/5, m = 4/5, n = 0</p>
+<p>Check: l² + m² + n² = 9/25 + 16/25 + 0 = 1 ✓</p>
+<p class="ans">l = 3/5, m = 4/5, n = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the direction cosines of a line which makes equal angles with the three coordinate axes.</p>
+<div class="sol">
+<p>Equal angles ⇒ l = m = n. Using l² + m² + n² = 1:</p>
+<p class="work">3l² = 1 ⇒ l = ±1/√3</p>
+<p class="ans">l = m = n = ±1/√3 (both signs allowed; the line makes equal angles with all axes)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Find the distance of (3, 4, 5) from the origin.</p>
+<div class="sol">
+<p class="work">d = √(3² + 4² + 5²) = √50 = 5√2</p>
+<p class="ans">d = 5√2 ≈ 7.07 units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> A line has direction cosines (1/√3, 1/√3, k). Find k.</p>
+<div class="sol">
+<p class="work">l² + m² + n² = 1 ⇒ 1/3 + 1/3 + k² = 1 ⇒ k² = 1/3 ⇒ k = ±1/√3</p>
+<p class="ans">k = ±1/√3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Show that (1, 0, 0), (0, 1, 0) and (0, 0, 1) form an equilateral triangle.</p>
+<div class="sol">
+<p class="work">AB = √[(0−1)² + (1−0)² + 0] = √2
+BC = √[0 + (0−1)² + (1−0)²] = √2
+CA = √[(1−0)² + 0 + (0−1)²] = √2</p>
+<p class="ans">All three sides are √2, so the triangle is equilateral.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Find the centroid of the triangle with vertices (1, 2, 3), (2, 3, 4) and (3, 4, 5).</p>
+<div class="sol">
+<p class="work">G = ((1+2+3)/3, (2+3+4)/3, (3+4+5)/3) = (2, 3, 4)</p>
+<p class="ans">Centroid = (2, 3, 4)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Write the direction ratios and direction cosines of the X-axis.</p>
+<div class="sol">
+<p>The X-axis is the line through the origin in the direction (1, 0, 0), whose magnitude is 1.</p>
+<p class="ans">DRs (1, 0, 0); direction cosines l = 1, m = 0, n = 0.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Find the distance between (2, −1, 3) and (−1, 3, 2).</p>
+<div class="sol">
+<p class="work">d = √[(−1−2)² + (3+1)² + (2−3)²] = √(9 + 16 + 1) = √26</p>
+<p class="ans">d = √26 ≈ 5.10 units</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Why is the distance formula written with a modulus?</p>
+<p class="sol">Because a₁x₁ + b₁y₁ + c₁ can be negative depending on which side of the line the point lies, whereas length cannot. The modulus keeps d ≥ 0, so d measures distance, not signed displacement.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Why does the bisector formula have a ± sign?</p>
+<p class="sol">Two lines form four angles, and the bisectors of the two pairs are distinct lines. Taking + gives one bisector and − gives the other; the ± records the fact that a point can be equidistant from the lines in two different directions.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> What does the equation ax² + 2hxy + by² = 0 represent geometrically?</p>
+<p class="sol">Two straight lines through the origin (real when h² ≥ ab), because every term is of degree two, so (0,0) satisfies it for all coefficients.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> State the condition for ax² + 2hxy + by² = 0 to give two real distinct lines, and for two perpendicular lines.</p>
+<p class="sol">Real and distinct: h² − ab &gt; 0. Perpendicular: a + b = 0 (since m₁m₂ = a/b must equal −1). Coincident lines occur when h² = ab with the equation a perfect square.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> State the condition for the general second-degree equation to represent a pair of straight lines.</p>
+<p class="sol">abc + 2fgh − af² − bg² − ch² = 0, together with h² ≥ ab. This is the determinant condition on the 3×3 symmetric coefficient matrix.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Distinguish direction ratios from direction cosines.</p>
+<p class="sol">Direction ratios are any three numbers proportional to the direction of the line; direction cosines are the unique cosines of the angles the line makes with the positive axes, obtained by dividing the ratios by their magnitude, so l² + m² + n² = 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why must l² + m² + n² = 1 for direction cosines?</p>
+<p class="sol">The point (l, m, n) lies on the unit sphere (the line direction is a unit vector), so its distance from the origin is 1. Equivalently cos²α + cos²β + cos²γ = 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Give the distance between two parallel lines ax + by + c₁ = 0 and ax + by + c₂ = 0.</p>
+<p class="sol">d = |c₁ − c₂|/√(a² + b²). The coefficients of x and y must be made identical first, otherwise the formula does not apply.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> How do you decide whether two points lie on the same side of a line?</p>
+<p class="sol">Substitute each point into the left side. If the two values have the same sign, the points are on the same side; opposite signs mean opposite sides; zero means the point is on the line.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Find the angle between the X-axis and the line joining (0,0,0) to (1,1,0).</p>
+<p class="sol">Direction cosines of the line: (1/√2, 1/√2, 0). The X-axis has l = 1. Then cosθ = l = 1/√2, so θ = 45°.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> What does the pair of lines 4x² − y² = 0 look like, and what is the angle between them?</p>
+<p class="sol">4x² − y² = (2x − y)(2x + y) = 0, i.e. y = 2x and y = −2x. Here a = 4, b = −1, h = 0, so tanθ = 2√(0 + 4)/(4 − 1) = 4/3, giving θ ≈ 53.13°.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Can a second-degree equation in x and y represent a circle and a pair of lines at the same time?</p>
+<p class="sol">No. A circle needs a = b and h = 0 with a non-zero constant term; a pair of lines through the origin needs no linear or constant terms at all (unless the lines are translated). The two conditions cannot both hold, so the classification is exclusive.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Write the slope of the line ax + by + c = 0.</p>
+<p class="sol">m = −a/b (b ≠ 0). A vertical line has b = 0 and no finite slope.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> State the conditions for two lines to be parallel and perpendicular, in terms of a, b and slope.</p>
+<p class="sol">Slopes: m₁ = m₂ for parallel, m₁m₂ = −1 for perpendicular. Coefficients: a₁b₂ = a₂b₁ for parallel, a₁a₂ + b₁b₂ = 0 for perpendicular.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Write the equation of the line through (x₁, y₁) and (x₂, y₂).</p>
+<p class="sol">Two-point form: (y − y₁)/(y₂ − y₁) = (x − x₁)/(x₂ − x₁), with slope m = (y₂ − y₁)/(x₂ − x₁).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> What is the normal form of a straight line?</p>
+<p class="sol">x cos α + y sin α = p, where p is the perpendicular distance from the origin and α is the angle that perpendicular makes with the positive x-axis.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C17.</b> Why does the perpendicular-distance formula use √(a² + b²) in the denominator?</p>
+<p class="sol">Because √(a² + b²) is the length of the normal vector (a, b). Dividing by it converts the line to normal form, so the constant term becomes the actual distance.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C18.</b> What is the locus of points equidistant from two lines?</p>
+<p class="sol">Two straight lines through the point of intersection — the bisectors of the two angles formed. Their equations come from equating the two normalised distances.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C19.</b> What does a homogeneous second-degree equation a x² + 2hxy + b y² = 0 represent?</p>
+<p class="sol">A pair of straight lines through the origin. Every term has the same total degree, so (0, 0) satisfies it and the two lines pass through the origin.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C20.</b> Why does the general second-degree pair-of-lines equation have no constant term?</p>
+<p class="sol">Because the two lines meet at the origin. If a constant were present the lines would still cross, but at some non-zero point, which is obtained by shifting the origin.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C21.</b> What does h² = ab mean for ax² + 2hxy + by² = 0?</p>
+<p class="sol">h² = ab makes the equation a perfect square, so the two lines coincide — the equation represents a single line counted twice.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C22.</b> Write the distance between two parallel lines.</p>
+<p class="sol">For ax + by + c₁ = 0 and ax + by + c₂ = 0, the distance is |c₁ − c₂|/√(a² + b²). The coefficients must be made identical first.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C23.</b> Write the direction cosines of the x-, y- and z-axes.</p>
+<p class="sol">x-axis: (1, 0, 0); y-axis: (0, 1, 0); z-axis: (0, 0, 1). Each satisfies l² + m² + n² = 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C24.</b> Can a direction cosine equal 2? Why?</p>
+<p class="sol">No. Direction cosines are the cosines of the angles made with the axes, so each lies in [−1, 1], and l² + m² + n² = 1 forces every |l| ≤ 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C25.</b> A line makes 90° with the x-axis and 45° with the y-axis. Find its angle with the z-axis.</p>
+<p class="sol">l² + m² + n² = 1 ⇒ 0 + 1/2 + n² = 1 ⇒ n = ±1/√2, so the angle is 45° or 135°.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C26.</b> Give the formula for the angle between two lines in terms of direction ratios.</p>
+<p class="sol">cos θ = (l₁l₂ + m₁m₂ + n₁n₂) after normalising, or a₁a₂ + b₁b₂ + c₁c₂ over the product of the two vector lengths when using direction ratios.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C27.</b> What is the section formula for a point dividing a segment internally in 3D?</p>
+<p class="sol">If P divides A(x₁, y₁, z₁) and B(x₂, y₂, z₂) in ratio m : n, then P = ((mx₂ + nx₁)/(m+n), (my₂ + ny₁)/(m+n), (mz₂ + nz₁)/(m+n)).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C28.</b> How do you test whether three points in space are collinear?</p>
+<p class="sol">Find the direction ratios of AB and BC; the points are collinear exactly when these ratios are proportional, i.e. one vector is a scalar multiple of the other.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C29.</b> What is the equation of the XY-plane, and what does z = 0 mean?</p>
+<p class="sol">z = 0 is the XY-plane; every point on it has zero height above (or below) that plane. Similarly y = 0 is the ZX-plane and x = 0 the YZ-plane.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C30.</b> Why must both sides of a distance equation be divided by the same normalising factor?</p>
+<p class="sol">Because the distance formula only works for a line written in normalised form; scaling only one side changes the equality and therefore gives wrong bisectors and distances.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C31.</b> Give the equations of the angle bisectors of the pair ax² + 2hxy + by² = 0.</p>
+<p class="sol">The bisectors are (x² − y²)/(a − b) = xy/h. They are always perpendicular to each other and pass through the point where the two given lines meet.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C32.</b> What does it mean for two lines to be concurrent?</p>
+<p class="sol">All three lines pass through one common point. For a₁x + b₁y + c₁ = 0 (i = 1, 2, 3) the condition is that the 3×3 determinant of coefficients vanishes.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C33.</b> State the general equation of a circle and the meaning of its centre and radius.</p>
+<p class="sol">x² + y² + 2gx + 2fy + c = 0 has centre (−g, −f) and radius √(g² + f² − c), real only when g² + f² − c &gt; 0.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks</h2>
+
+<div class="item">
+<p class="q"><b>L1. [4]</b> Find the distance between the parallel lines 3x − 4y + 7 = 0 and 6x − 8y = 21.</p>
+<div class="sol">
+<p>The coefficient sets must match before the formula can be used. Divide the second line by 2:</p>
+<p class="work">6x − 8y − 21 = 0 ⇒ 3x − 4y − 21/2 = 0</p>
+<p class="work">d = |c₁ − c₂|/√(a²+b²) = |7 − (−21/2)| / 5 = (7 + 10.5)/5 = 17.5/5 = 3.5</p>
+<p class="ans">d = 7/2 = 3.5 units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Find the bisector of the acute angle between 3x + 4y − 5 = 0 and 5x − 12y + 7 = 0.</p>
+<div class="sol">
+<p>From Exercise 3.1 Q5 the two bisectors are</p>
+<p class="work">7x + 56y − 50 = 0   and   32x − 4y − 15 = 0</p>
+<p>To pick the acute-angle bisector, test the origin in each numerator: for the first line the origin gives −5 (inside), for the second +7. The origin lies in the obtuse region, so its bisector 7x + 56y − 50 = 0 bisects the obtuse angle, and the other one bisects the acute angle.</p>
+<p class="ans">Acute-angle bisector: 32x − 4y − 15 = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Show that 2x² − 5xy − 3y² = 0 represents two lines through the origin, find both, and find the angle between them.</p>
+<div class="sol">
+<p class="work">2x² − 5xy − 3y² = (2x + y)(x − 3y) = 0
+⇒ y = −2x  and  y = x/3</p>
+<p class="work">a = 2, 2h = −5 ⇒ h = −5/2, b = −3
+tanθ = 2√(h² − ab)/(a + b) = 2√(25/4 + 6)/(−1) = 2(7/2)/(−1) = −7</p>
+<p>The negative sign means the obtuse angle is 180° − tan⁻¹7; the acute angle is tan⁻¹7 ≈ 81.87°.</p>
+<p class="ans">Lines: 2x + y = 0 and x − 3y = 0; acute angle ≈ 81.9°</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [5]</b> Find the value of k for which the equation 2x² + kxy − 3y² = 0 represents a pair of perpendicular lines; is such a k possible?</p>
+<div class="sol">
+<p>Perpendicularity for a homogeneous pair requires a + b = 0. Here a = 2 and b = −3, so</p>
+<p class="work">a + b = 2 − 3 = −1 ≠ 0   regardless of k</p>
+<p>Hence no value of k makes this particular pair perpendicular — k only controls the angle, not the a + b sum.</p>
+<p>For reference, real distinct lines need h² − ab &gt; 0: k²/4 + 6 &gt; 0, true for all k, so every k gives a real pair.</p>
+<p class="ans">No such k exists; the pair is perpendicular only when a + b = 0, which here fails identically.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [5]</b> Find the direction cosines of the line joining A(2, −1, 3) and B(−1, 3, 2), and find the distance AB.</p>
+<div class="sol">
+<p class="work">DRs of AB = (−1−2, 3+1, 2−3) = (−3, 4, −1)
+|AB| = √(9 + 16 + 1) = √26
+l = −3/√26, m = 4/√26, n = −1/√26</p>
+<p>Check: (9 + 16 + 1)/26 = 26/26 = 1 ✓</p>
+<p class="ans">d = √26; direction cosines (−3/√26, 4/√26, −1/√26)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L6. [6]</b> Find the equations of the lines represented by x² − 4xy + y² = 0 and their angle bisectors.</p>
+<div class="sol">
+<p>Solving for y/x = m from x² − 4xy + y² = 0 (divide by x²):</p>
+<p class="work">m² − 4m + 1 = 0 ⇒ m = (4 ± √12)/2 = 2 ± √3
+Lines: y = (2 + √3)x and y = (2 − √3)x</p>
+<p>For the bisectors of a homogeneous pair, use (x² − y²)/(a − b) = xy/h:</p>
+<p class="work">a = 1, b = 1, h = −2
+a − b = 0 ⇒ x² − y² = 0 ⇒ x = ±y</p>
+<p>The bisectors are x = y and x = −y — perpendicular to each other, as bisectors of a perpendicular-free pair always are (here the lines are symmetric about y = x).</p>
+<p class="ans">Lines: y = (2 ± √3)x; bisectors: x = y and x = −y</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and traps</h2>
+
+<table>
+<tr><th>Quantity</th><th>Formula</th></tr>
+<tr><td>Distance point → line</td><td>d = |ax₁ + by₁ + c|/√(a² + b²)</td></tr>
+<tr><td>Distance between parallels</td><td>d = |c₁ − c₂|/√(a² + b²) &nbsp;(coefficients identical)</td></tr>
+<tr><td>Angle bisectors</td><td>(a₁x+b₁y+c₁)/√(a₁²+b₁²) = ±(a₂x+b₂y+c₂)/√(a₂²+b₂²)</td></tr>
+<tr><td>Angle between lines</td><td>tanθ = |(m₁ − m₂)/(1 + m₁m₂)|</td></tr>
+<tr><td>Pair from origin</td><td>ax² + 2hxy + by² = 0; tanθ = 2√(h²−ab)/(a+b)</td></tr>
+<tr><td>Perpendicular pair</td><td>a + b = 0</td></tr>
+<tr><td>General pair condition</td><td>abc + 2fgh − af² − bg² − ch² = 0</td></tr>
+<tr><td>Bisectors of a pair</td><td>(x² − y²)/(a − b) = xy/h</td></tr>
+<tr><td>3-D distance</td><td>√[(x₂−x₁)² + (y₂−y₁)² + (z₂−z₁)²]</td></tr>
+<tr><td>Direction cosines</td><td>l = a/√(a²+b²+c²), etc.; l² + m² + n² = 1</td></tr>
+</table>
+
+<div class="warn">
+<p><b>Trap 1 — unnormalised bisectors.</b> Dividing the differentials without dividing by √(a²+b²) gives a wrong bisector. Normalise both lines first.</p>
+<p><b>Trap 2 — mismatched parallel coefficients.</b> 3x − 4y + 7 = 0 and 6x − 8y = 21 are not yet in comparable form; scale one until the x and y coefficients agree.</p>
+<p><b>Trap 3 — losing one bisector.</b> A 4-mark bisector question expects two equations. Dropping the − branch loses half the marks.</p>
+<p><b>Trap 4 — treating direction ratios as cosines.</b> DRs may be any proportional triple; only after dividing by the magnitude do you get cosines, and only then does l² + m² + n² = 1.</p>
+<p><b>Trap 5 — forgetting the ± in oblique-pair angles.</b> tanθ from a pair of lines can come out negative; report the acute angle as tan⁻¹|value| and note the obtuse supplement.</p>
+</div>
+
+<div class="tip"><b>Three-line discipline.</b> State the formula, substitute with explicit signs, then interpret (units, angle, or the pair of lines). In this unit the interpretation line is often worth a mark on its own.</div>
+
+<p class="note">Mathematics XI · Unit 3 Analytic Geometry · NEB (Mat. 007). Distances are always positive; a bisector answer must contain two equations.</p>
+</body>
+</html>

@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — Unit 1 Algebra: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Mathematics Unit 1 Algebra: worked solutions to every exercise type — logic and sets, real numbers and absolute value, functions, curve sketching, sequences and series, matrices and determinants, quadratic equations and complex numbers — plus a 2-mark conceptual question bank with model answers in NEB marking style.">
+<link rel="stylesheet" href="math-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/mathematics-xi">Mathematics XI</a> &rsaquo; Unit 1</p>
+
+<h1>Unit 1 — Algebra</h1>
+<p class="meta">Mathematics XI (Mat. 007) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 44 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">This is the Unit 1 solution bank: every exercise of the unit worked out step by step, then the short conceptual questions that NEB actually asks (2-mark "answer in two or three sentences" items), each with a model answer you can reproduce in an exam.</p>
+
+<div class="exam">
+<p><b>How the unit is examined.</b> Algebra carries the largest share of the paper, and it is examined in three shapes:</p>
+<ul class="tight">
+<li><b>2 marks</b> — one-line conceptual or a short computation (domain, nature of roots, modulus, truth table row).</li>
+<li><b>4 marks</b> — a two-stage problem: set up, then solve (sequence problem, matrix solve, pair-of-roots problem, complex number simplification).</li>
+<li><b>5–6 marks</b> — a proof plus a check (De Morgan by truth table, |x| inequality, composite/inverse function chain, quadratic condition on a parameter).</li>
+</ul>
+<p>Rule that keeps losing students marks: NEB marks the <em>reason</em>, not only the answer. A correct number with no shown step in a 4-mark question typically earns 1–2. Always write the given, the statement you use, and the answer line.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 1.1 — Logic and sets</li>
+<li>Exercise 1.2 — Real numbers, intervals and absolute value</li>
+<li>Exercise 1.3 — Functions: domain, range, composite, inverse</li>
+<li>Exercise 1.4 — Curve sketching, odd/even and periodicity</li>
+<li>Exercise 1.5 — Sequence and series (AP, GP, HP, means)</li>
+<li>Exercise 1.6 — Matrices and determinants</li>
+<li>Exercise 1.7 — Quadratic equations</li>
+<li>Exercise 1.8 — Complex numbers</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks, fully worked</li>
+<li>Formula sheet and exam traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.1 — Logic and sets</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Let U = {1,2,3,4,5,6,7,8,9,10}, A = {1,2,3,4,5}, B = {4,5,6,7}. Find A∪B, A∩B, A−B, B−A, A′ and (A∩B)′.</p>
+<div class="sol">
+<p class="work">A∪B  = {1,2,3,4,5,6,7}      (all elements of either set, written once)
+A∩B  = {4,5}                  (common elements only)
+A−B  = {1,2,3}                (in A but not in B)
+B−A  = {6,7}                  (in B but not in A)
+A′   = U−A = {6,7,8,9,10}
+(A∩B)′ = U−{4,5} = {1,2,3,6,7,8,9,10}</p>
+<p class="ans">A∪B={1,2,3,4,5,6,7}; A∩B={4,5}; A−B={1,2,3}; B−A={6,7}; A′={6,7,8,9,10}; (A∩B)′={1,2,3,6,7,8,9,10}</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> In a survey n(U) = 50, n(A) = 28, n(B) = 19 and n(A∩B) = 7. Find n(A∪B), n(A−B) and n(A′∩B′).</p>
+<div class="sol">
+<ol class="step">
+<li>n(A∪B) = n(A) + n(B) − n(A∩B) = 28 + 19 − 7 = 40.</li>
+<li>n(A−B) = n(A) − n(A∩B) = 28 − 7 = 21.</li>
+<li>By De Morgan, A′∩B′ = (A∪B)′, so n(A′∩B′) = n(U) − n(A∪B) = 50 − 40 = 10.</li>
+</ol>
+<p class="ans">n(A∪B)=40, n(A−B)=21, n(A′∩B′)=10</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> In a class of 60 students, 35 play football, 25 play cricket and 10 play both. Find the number who play (i) at least one game, (ii) football only, (iii) neither game.</p>
+<div class="sol">
+<ol class="step">
+<li>At least one: n(F∪C) = 35 + 25 − 10 = 50.</li>
+<li>Football only: n(F−C) = 35 − 10 = 25.</li>
+<li>Neither: n(F∪C)′ = 60 − 50 = 10.</li>
+</ol>
+<p class="ans">(i) 50 &nbsp; (ii) 25 &nbsp; (iii) 10</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Prove that A − (B∪C) = (A−B) ∩ (A−C).</p>
+<div class="sol">
+<p>Take any element x. Then</p>
+<p class="work">x ∈ A−(B∪C)
+⇔ x ∈ A and x ∉ (B∪C)
+⇔ x ∈ A and (x ∉ B and x ∉ C)          [definition of union]
+⇔ (x ∈ A and x ∉ B) and (x ∈ A and x ∉ C)
+⇔ x ∈ (A−B) and x ∈ (A−C)
+⇔ x ∈ (A−B) ∩ (A−C)</p>
+<p>Since every element of the left side is in the right side and conversely, the two sets are equal.</p>
+<p class="ans">∴ A − (B∪C) = (A−B) ∩ (A−C) &nbsp; (proved)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Verify De Morgan's law (A∪B)′ = A′∩B′ for U = {1,…,8}, A = {2,4,6}, B = {4,5,6,7}.</p>
+<div class="sol">
+<p class="work">A∪B = {2,4,5,6,7}      ⇒ (A∪B)′ = {1,3,8}
+A′  = {1,3,5,7,8}, B′ = {1,2,3,8}
+A′∩B′ = {1,3,8}</p>
+<p>Both sides give {1,3,8}, so the law holds for this example.</p>
+<p class="ans">(A∪B)′ = A′∩B′ = {1,3,8} — verified</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Show that (p → q) ↔ (¬p ∨ q) is a tautology.</p>
+<div class="sol">
+<table>
+<tr><th class="c">p</th><th class="c">q</th><th class="c">p→q</th><th class="c">¬p</th><th class="c">¬p∨q</th><th class="c">(p→q)↔(¬p∨q)</th></tr>
+<tr><td class="c">T</td><td class="c">T</td><td class="c">T</td><td class="c">F</td><td class="c">T</td><td class="c">T</td></tr>
+<tr><td class="c">T</td><td class="c">F</td><td class="c">F</td><td class="c">F</td><td class="c">F</td><td class="c">T</td></tr>
+<tr><td class="c">F</td><td class="c">T</td><td class="c">T</td><td class="c">T</td><td class="c">T</td><td class="c">T</td></tr>
+<tr><td class="c">F</td><td class="c">F</td><td class="c">T</td><td class="c">T</td><td class="c">T</td><td class="c">T</td></tr>
+</table>
+<p>The last column has T in every row, so the statement is true for all truth values of p and q.</p>
+<p class="ans">The given statement is a tautology, and p→q ≡ ¬p∨q.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Verify ¬(p ∧ q) ≡ ¬p ∨ ¬q by truth table.</p>
+<div class="sol">
+<table>
+<tr><th class="c">p</th><th class="c">q</th><th class="c">p∧q</th><th class="c">¬(p∧q)</th><th class="c">¬p</th><th class="c">¬q</th><th class="c">¬p∨¬q</th></tr>
+<tr><td class="c">T</td><td class="c">T</td><td class="c">T</td><td class="c">F</td><td class="c">F</td><td class="c">F</td><td class="c">F</td></tr>
+<tr><td class="c">T</td><td class="c">F</td><td class="c">F</td><td class="c">T</td><td class="c">F</td><td class="c">T</td><td class="c">T</td></tr>
+<tr><td class="c">F</td><td class="c">T</td><td class="c">F</td><td class="c">T</td><td class="c">T</td><td class="c">F</td><td class="c">T</td></tr>
+<tr><td class="c">F</td><td class="c">F</td><td class="c">F</td><td class="c">T</td><td class="c">T</td><td class="c">T</td><td class="c">T</td></tr>
+</table>
+<p>Columns 4 and 7 are identical in every row.</p>
+<p class="ans">∴ ¬(p∧q) ≡ ¬p ∨ ¬q — verified (De Morgan's law of logic)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Write the negation of: (a) "All natural numbers are even", (b) ∀x∈ℝ, x² ≥ 0, (c) "3 is prime and 4 is odd".</p>
+<div class="sol">
+<ol class="step">
+<li>(a) "Some natural numbers are not even." (¬∀ becomes ∃¬.)</li>
+<li>(b) ∃x∈ℝ such that x² &lt; 0.</li>
+<li>(c) ¬(p∧q) ≡ ¬p∨¬q, so: "3 is not prime or 4 is not odd".</li>
+</ol>
+<p class="ans">(a) Some natural numbers are not even. (b) ∃x∈ℝ, x²&lt;0. (c) 3 is not prime or 4 is not odd.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Prove that A ⊆ B if and only if A ∪ B = B.</p>
+<div class="sol">
+<p><b>Part 1 (⇒).</b> Suppose A ⊆ B. Every element of A is in B, so A∪B ⊆ B. Also B ⊆ A∪B always. Hence A∪B = B.</p>
+<p><b>Part 2 (⇐).</b> Suppose A∪B = B. Let x ∈ A. Then x ∈ A∪B = B, so x ∈ B. Hence A ⊆ B.</p>
+<p class="ans">Both directions hold, so A ⊆ B ⇔ A∪B = B.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> (a) Write symbolically: "For every real x there is a real y with x + y = 0", and decide its truth. (b) Compare with "there is a real y such that for every real x, x + y = 0".</p>
+<div class="sol">
+<ol class="step">
+<li>(a) ∀x∈ℝ ∃y∈ℝ : x+y = 0. True — for each x choose y = −x.</li>
+<li>(b) ∃y∈ℝ ∀x∈ℝ : x+y = 0. False — one fixed y cannot cancel every x. (If it worked for x = 0 and x = 1 we would need y = 0 and y = −1.)</li>
+</ol>
+<p class="ans">(a) true, (b) false: the order of quantifiers changes the meaning.</p>
+</div>
+</div>
+
+<div class="tip"><b>Exam note.</b> For set proofs NEB accepts two forms: element chasing (as in Q4, Q9) or a truth-table/membership table. Element chasing with explicit "⇔" lines is faster and less error-prone; keep the arrow chain readable and write the conclusion sentence.</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.2 — Real numbers, intervals and absolute value</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Solve |x − 3| = 5.</p>
+<div class="sol">
+<p class="work">|x−3| = 5 ⇒ x−3 = 5 or x−3 = −5
+⇒ x = 8 or x = −2</p>
+<p class="ans">x = 8, −2 &nbsp; (solution set {−2, 8})</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Solve |2x + 1| &lt; 7.</p>
+<div class="sol">
+<p class="work">−7 &lt; 2x+1 &lt; 7
+−8 &lt; 2x &lt; 6
+−4 &lt; x &lt; 3</p>
+<p class="ans">x ∈ (−4, 3)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Solve |x − 1| ≥ 3.</p>
+<div class="sol">
+<p class="work">x−1 ≥ 3  or  x−1 ≤ −3
+x ≥ 4    or  x ≤ −2</p>
+<p class="ans">x ∈ (−∞, −2] ∪ [4, ∞)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Solve |x + 3| = |2x − 1|.</p>
+<div class="sol">
+<p>Equal moduli means equal values or opposite values:</p>
+<p class="work">Case 1: x+3 = 2x−1   ⇒ x = 4
+Case 2: x+3 = −(2x−1) ⇒ x+3 = −2x+1 ⇒ 3x = −2 ⇒ x = −2/3</p>
+<p>Check: at x = 4, |7| = |7| ✓; at x = −2/3, |7/3| = |−7/3| ✓.</p>
+<p class="ans">x = 4 or x = −2/3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Write in interval notation: (a) {x : −2 ≤ x &lt; 5}, (b) {x : x &lt; 3}, (c) {x : |x − 1| ≤ 4}.</p>
+<div class="sol">
+<ol class="step">
+<li>(a) [−2, 5) — closed at −2, open at 5.</li>
+<li>(b) (−∞, 3).</li>
+<li>(c) −4 ≤ x−1 ≤ 4 ⇒ −3 ≤ x ≤ 5 ⇒ [−3, 5].</li>
+</ol>
+<p class="ans">(a) [−2,5) &nbsp; (b) (−∞,3) &nbsp; (c) [−3,5]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Solve x² − 5x + 6 ≤ 0.</p>
+<div class="sol">
+<p class="work">x²−5x+6 = (x−2)(x−3) ≤ 0</p>
+<p>Critical points 2 and 3. The parabola opens upward, so it is negative between the roots.</p>
+<p class="ans">2 ≤ x ≤ 3, i.e. x ∈ [2, 3]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Solve (x + 1)/(x − 2) &gt; 0, x ≠ 2.</p>
+<div class="sol">
+<p>Critical points: x = −1 (numerator) and x = 2 (denominator). Test one value in each region:</p>
+<table>
+<tr><th>x &lt; −1</th><th>−1 &lt; x &lt; 2</th><th>x &gt; 2</th></tr>
+<tr><td>x = −2: (−1)/(−4) = +0.25 &gt; 0 ✓</td><td>x = 0: 1/(−2) = −0.5 ✗</td><td>x = 3: 4/1 = +4 &gt; 0 ✓</td></tr>
+</table>
+<p class="ans">x ∈ (−∞, −1) ∪ (2, ∞)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Prove |x + y| ≤ |x| + |y|, and state when equality holds.</p>
+<div class="sol">
+<p>For any real x, −|x| ≤ x ≤ |x|; likewise −|y| ≤ y ≤ |y|. Adding the two inequalities term by term:</p>
+<p class="work">−(|x|+|y|) ≤ x+y ≤ |x|+|y|</p>
+<p>For any real t, −k ≤ t ≤ k is equivalent to |t| ≤ k. Taking t = x+y and k = |x|+|y|:</p>
+<p class="ans">|x+y| ≤ |x|+|y|. Equality holds when x and y have the same sign or one is zero (xy ≥ 0) — the triangle inequality.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Show that |x − 2| &lt; 1 is equivalent to 1 &lt; x &lt; 3.</p>
+<div class="sol">
+<p>|x−2|&lt;1 means the distance of x from 2 is less than 1, so x lies in the open interval of radius 1 about 2:</p>
+<p class="work">−1 &lt; x−2 &lt; 1 ⇒ 1 &lt; x &lt; 3</p>
+<p class="ans">|x−2| &lt; 1 ⇔ x ∈ (1,3) — the two statements describe the same set.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Evaluate |−7| + |3 − 9| − |−2|.</p>
+<div class="sol">
+<p class="work">= 7 + |−6| − 2 = 7 + 6 − 2 = 11</p>
+<p class="ans">11</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.3 — Functions: domain, range, composite, inverse</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> If f(x) = 2x + 3 and g(x) = x², find (f∘g)(x), (g∘f)(x) and (f∘g)(2). Are the two composites equal?</p>
+<div class="sol">
+<p class="work">(f∘g)(x) = f(g(x)) = f(x²) = 2x² + 3
+(g∘f)(x) = g(f(x)) = (2x+3)² = 4x² + 12x + 9
+(f∘g)(2) = 2(4) + 3 = 11</p>
+<p>At x = 1: (f∘g)(1) = 5 but (g∘f)(1) = 25.</p>
+<p class="ans">f∘g = 2x²+3, g∘f = 4x²+12x+9, (f∘g)(2) = 11, and f∘g ≠ g∘f (composition is not commutative).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> If f(x) = (x + 1)/(x − 1), x ≠ 1, find f⁻¹ and verify that f is its own inverse.</p>
+<div class="sol">
+<ol class="step">
+<li>Put y = (x+1)/(x−1) and solve for x: y(x−1) = x+1 ⇒ yx − y = x + 1 ⇒ x(y−1) = y+1.</li>
+<li>So x = (y+1)/(y−1), giving f⁻¹(x) = (x+1)/(x−1).</li>
+<li>Verification by direct substitution:
+<p class="work">f(f(x)) = [ (x+1)/(x−1) + 1 ] / [ (x+1)/(x−1) − 1 ]
+= [ (x+1+x−1)/(x−1) ] / [ (x+1−x+1)/(x−1) ]
+= (2x)/(2) = x</p></li>
+</ol>
+<p class="ans">f⁻¹(x) = (x+1)/(x−1) = f(x); f is an involution (self-inverse).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find the domain and range of f(x) = √(x − 2).</p>
+<div class="sol">
+<p>A square root is real only when the radicand is non-negative: x − 2 ≥ 0 ⇒ x ≥ 2.</p>
+<p>For x ≥ 2 the output √(x−2) runs through every non-negative value.</p>
+<p class="ans">Domain = [2, ∞), Range = [0, ∞)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the domain of (a) f(x) = 1/(x² − 9), (b) g(x) = √(4 − x²).</p>
+<div class="sol">
+<ol class="step">
+<li>(a) Denominator cannot vanish: x² − 9 ≠ 0 ⇒ x ≠ ±3. Domain = ℝ − {−3, 3}.</li>
+<li>(b) 4 − x² ≥ 0 ⇒ x² ≤ 4 ⇒ −2 ≤ x ≤ 2. Domain = [−2, 2], and range = [0, 2].</li>
+</ol>
+<p class="ans">(a) ℝ−{−3,3} &nbsp; (b) [−2,2]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Find the domain and range of f(x) = (2x + 1)/(x − 3).</p>
+<div class="sol">
+<ol class="step">
+<li>Domain: x − 3 ≠ 0 ⇒ x ≠ 3, so D = ℝ − {3}.</li>
+<li>For the range put y = (2x+1)/(x−3) ⇒ y(x−3) = 2x+1 ⇒ yx − 3y = 2x + 1 ⇒ x(y−2) = 3y+1.</li>
+<li>x = (3y+1)/(y−2) needs y ≠ 2. Every y ≠ 2 gives a real x.</li>
+</ol>
+<p class="ans">Domain = ℝ−{3}, Range = ℝ−{2}</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> If f(x) = x² − 1 and g(x) = √x, find (g∘f)(x) and its domain.</p>
+<div class="sol">
+<p class="work">(g∘f)(x) = g(f(x)) = √(x²−1)</p>
+<p>Need x² − 1 ≥ 0 ⇒ x ≤ −1 or x ≥ 1.</p>
+<p class="ans">(g∘f)(x) = √(x²−1), domain = (−∞,−1] ∪ [1,∞)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find the inverse of f(x) = (3x + 2)/5.</p>
+<div class="sol">
+<p class="work">y = (3x+2)/5 ⇒ 5y = 3x+2 ⇒ 3x = 5y−2 ⇒ x = (5y−2)/3</p>
+<p class="ans">f⁻¹(x) = (5x − 2)/3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Show that f : ℝ → ℝ, f(x) = 2x + 1 is one–one and onto, hence invertible, and find f⁻¹(5).</p>
+<div class="sol">
+<ol class="step">
+<li><b>One–one:</b> f(x₁) = f(x₂) ⇒ 2x₁+1 = 2x₂+1 ⇒ x₁ = x₂.</li>
+<li><b>Onto:</b> for any y ∈ ℝ take x = (y−1)/2 ∈ ℝ, then f(x) = y.</li>
+<li>So f is bijective and f⁻¹(x) = (x−1)/2. Then f⁻¹(5) = (5−1)/2 = 2, and indeed f(2) = 5.</li>
+</ol>
+<p class="ans">f is bijective, f⁻¹(x) = (x−1)/2, f⁻¹(5) = 2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Why is f(x) = x², x ∈ ℝ, not invertible? How is it repaired?</p>
+<div class="sol">
+<p>f is many–one on ℝ: f(2) = f(−2) = 4, so f⁻¹ would have to send 4 to both 2 and −2, which is not a function. Restrict the domain so that the graph passes the horizontal line test, e.g. f : [0,∞) → [0,∞).</p>
+<p class="ans">On [0,∞), f(x) = x² is bijective and f⁻¹(x) = √x.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> For f(x) = 3x − 4, find f(2) and f⁻¹(2) and comment.</p>
+<div class="sol">
+<p class="work">f(2) = 6 − 4 = 2
+y = 3x−4 ⇒ x = (y+4)/3 ⇒ f⁻¹(x) = (x+4)/3
+f⁻¹(2) = 6/3 = 2</p>
+<p>Both equal 2 because f(2) = 2 means 2 is a fixed point, and f(a) = b ⇔ f⁻¹(b) = a.</p>
+<p class="ans">f(2) = 2, f⁻¹(2) = 2</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.4 — Curve sketching, odd/even and periodicity</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Test f(x) = x³ + x for symmetry.</p>
+<div class="sol">
+<p class="work">f(−x) = (−x)³ + (−x) = −x³ − x = −(x³+x) = −f(x)</p>
+<p class="ans">f is an odd function; its graph is symmetric about the origin.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Test g(x) = x⁴ + x² for symmetry.</p>
+<div class="sol">
+<p class="work">g(−x) = (−x)⁴ + (−x)² = x⁴ + x² = g(x)</p>
+<p class="ans">g is even; its graph is symmetric about the Y-axis.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Classify h(x) = x² + x.</p>
+<div class="sol">
+<p class="work">h(−x) = x² − x
+h(1) = 2, h(−1) = 0 ⇒ h(−1) ≠ h(1) and h(−1) ≠ −h(1)</p>
+<p class="ans">h is neither even nor odd — no symmetry about the Y-axis or the origin.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the period of sin 3x and of tan(x/2).</p>
+<div class="sol">
+<p>For sin(kx) the period is 2π/|k|, and for tan(kx) it is π/|k|:</p>
+<p class="work">sin 3x : T = 2π/3
+tan(x/2) : T = π/(1/2) = 2π</p>
+<p class="ans">Period of sin 3x is 2π/3; period of tan(x/2) is 2π.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Sketch y = |x − 2| by writing it as a piecewise function.</p>
+<div class="sol">
+<p class="work">y = x − 2   for x ≥ 2
+y = −(x − 2) for x &lt; 2</p>
+<p>The graph is a V with vertex at (2, 0): a line of slope +1 to the right of x = 2 and slope −1 to the left. Range is [0, ∞).</p>
+<p class="ans">Vertex (2,0), V-shape, range [0,∞), y-intercept (0,2).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Discuss the symmetry of y = x/(x² + 1).</p>
+<div class="sol">
+<p class="work">f(−x) = (−x)/(x²+1) = −f(x)</p>
+<p>f is odd, so the curve is unchanged by a half-turn about the origin.</p>
+<p class="ans">Odd function: origin symmetry.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find the intervals of monotonicity and the extreme value of f(x) = x² − 4x + 1.</p>
+<div class="sol">
+<p class="work">f′(x) = 2x − 4 = 0 ⇒ x = 2
+f′(x) &lt; 0 for x &lt; 2 (decreasing)
+f′(x) &gt; 0 for x &gt; 2 (increasing)
+f(2) = 4 − 8 + 1 = −3</p>
+<p class="ans">Decreasing on (−∞,2), increasing on (2,∞); minimum value −3 at x = 2.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Compare the graphs of y = 2 sin x and y = sin 2x.</p>
+<div class="sol">
+<p>In y = a sin(bx), a is the amplitude and 2π/b is the period.</p>
+<table>
+<tr><th>Curve</th><th class="c">Amplitude</th><th class="c">Period</th></tr>
+<tr><td>y = 2 sin x</td><td class="c">2</td><td class="c">2π</td></tr>
+<tr><td>y = sin 2x</td><td class="c">1</td><td class="c">π</td></tr>
+</table>
+<p class="ans">Multiplying outside the sine changes the height; multiplying inside the argument compresses the graph horizontally.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> State the asymptotes of y = 1/x and sketch its behaviour.</p>
+<div class="sol">
+<p>x = 0 is a vertical asymptote (the function is undefined there and grows without bound as x → 0), and y = 0 is a horizontal asymptote (1/x → 0 as x → ±∞). The curve is odd, with branches in the first and third quadrants.</p>
+<p class="ans">Vertical asymptote x = 0; horizontal asymptote y = 0; branches in quadrants I and III.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Is y² = x a function of x? Explain with a sketch argument.</p>
+<div class="sol">
+<p>Solving gives y = ±√x, so a single x &gt; 0 gives two outputs. Its graph is a parabola opening to the right, and a vertical line cuts it twice, so it fails the vertical line test.</p>
+<p class="ans">No — it is a relation, not a function (unless one branch y = √x is chosen).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.5 — Sequence and series</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> The 7th term of an AP is 34 and the 12th term is 59. Find a, d and the 20th term.</p>
+<div class="sol">
+<p class="work">a + 6d = 34   … (i)
+a + 11d = 59  … (ii)
+(ii) − (i): 5d = 25 ⇒ d = 5
+From (i): a = 34 − 30 = 4
+t₂₀ = a + 19d = 4 + 95 = 99</p>
+<p class="ans">a = 4, d = 5, t₂₀ = 99</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find the sum of 20 terms of 3 + 7 + 11 + …</p>
+<div class="sol">
+<p class="work">a = 3, d = 4, n = 20
+Sₙ = n/2 [2a + (n−1)d] = 20/2 [6 + 19(4)] = 10(82) = 820</p>
+<p class="ans">S₂₀ = 820</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> In a GP the 3rd term is 24 and the 6th term is 192. Find r, the first term and S₈.</p>
+<div class="sol">
+<p class="work">t₃ = ar² = 24,  t₆ = ar⁵ = 192
+Dividing: r³ = 192/24 = 8 ⇒ r = 2
+a·4 = 24 ⇒ a = 6
+S₈ = a(r⁸−1)/(r−1) = 6(256−1)/1 = 1530</p>
+<p class="ans">r = 2, a = 6, S₈ = 1530</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the sum to infinity of 1 + 1/3 + 1/9 + …</p>
+<div class="sol">
+<p class="work">a = 1, r = 1/3, |r| &lt; 1 ⇒ S∞ = a/(1−r) = 1/(1−1/3) = 3/2</p>
+<p class="ans">S∞ = 3/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> The arithmetic mean of two positive numbers is 10 and their geometric mean is 8. Find the numbers.</p>
+<div class="sol">
+<p class="work">(a+b)/2 = 10 ⇒ a+b = 20
+√(ab) = 8 ⇒ ab = 64</p>
+<p>So a and b are the roots of x² − 20x + 64 = 0 = (x−16)(x−4).</p>
+<p class="ans">The numbers are 16 and 4.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> For the same two numbers (AM = 10, GM = 8) find the harmonic mean and check AM ≥ GM ≥ HM.</p>
+<div class="sol">
+<p class="work">HM = GM²/AM = 64/10 = 6.4
+Direct check: HM = 2ab/(a+b) = 2(64)/20 = 6.4 ✓</p>
+<p class="ans">HM = 6.4, and 10 ≥ 8 ≥ 6.4 as required.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Three numbers in AP have sum 15 and product 80. Find them.</p>
+<div class="sol">
+<p class="work">Let the numbers be a−d, a, a+d.
+Sum: 3a = 15 ⇒ a = 5
+Product: (a−d)a(a+d) = a(a²−d²) = 5(25−d²) = 80
+⇒ 25 − d² = 16 ⇒ d² = 9 ⇒ d = ±3</p>
+<p class="ans">The numbers are 2, 5, 8 (or 8, 5, 2).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> If a, b, c are in GP prove b² = ac; state the corresponding AP condition.</p>
+<div class="sol">
+<p>In a GP each term is the previous times a fixed r: b = ar, c = ar². Then</p>
+<p class="work">b² = a²r² and ac = a·ar² = a²r² ⇒ b² = ac</p>
+<p class="ans">b² = ac for a GP; for an AP the condition is 2b = a + c. (Equivalently a, b, c in AP ⇔ a+c = 2b.)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> The sum to infinity of a GP is 8 and its first term is 4. Find the common ratio.</p>
+<div class="sol">
+<p class="work">S∞ = a/(1−r) ⇒ 8 = 4/(1−r) ⇒ 1−r = 1/2 ⇒ r = 1/2</p>
+<p class="ans">r = 1/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Insert three arithmetic means between 2 and 18.</p>
+<div class="sol">
+<p>Five terms in AP: a = 2, t₅ = 18.</p>
+<p class="work">2 + 4d = 18 ⇒ d = 4
+The terms are 2, 6, 10, 14, 18.</p>
+<p class="ans">The three means are 6, 10, 14.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Find the 10th term of the HP 1/2, 1/5, 1/8, …</p>
+<div class="sol">
+<p>The reciprocals 2, 5, 8, … form an AP with a = 2, d = 3.</p>
+<p class="work">10th term of the AP = 2 + 9(3) = 29
+The 10th term of the HP is its reciprocal.</p>
+<p class="ans">t₁₀ = 1/29</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> Find the sum of n terms of 5 + 55 + 555 + …</p>
+<div class="sol">
+<p class="work">Sₙ = 5(1 + 11 + 111 + … n terms)
+   = (5/9)(9 + 99 + 999 + … n terms)
+   = (5/9)[(10−1) + (10²−1) + … + (10ⁿ−1)]
+   = (5/9)[(10 + 10² + … + 10ⁿ) − n]
+   = (5/9)[ 10(10ⁿ−1)/9 − n ]</p>
+<p>Check n = 1: (5/9)[10·9/9 − 1] = (5/9)(9) = 5 ✓</p>
+<p class="ans">Sₙ = (5/9)[ 10(10ⁿ−1)/9 − n ] = (10/81)(10ⁿ−1) − 5n/9</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.6 — Matrices and determinants</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> For A = [[1,2],[3,4]] and B = [[5,6],[7,8]], find AB and BA and comment.</p>
+<div class="sol">
+<p class="work">AB = [[1·5+2·7, 1·6+2·8], [3·5+4·7, 3·6+4·8]] = [[19, 22], [43, 50]]
+BA = [[5·1+6·3, 5·2+6·4], [7·1+8·3, 7·2+8·4]] = [[23, 34], [31, 46]]</p>
+<p class="ans">AB = [[19,22],[43,50]] ≠ BA = [[23,34],[31,46]] — matrix multiplication is not commutative.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find the inverse of A = [[2,3],[1,2]].</p>
+<div class="sol">
+<p class="work">|A| = ad − bc = 2·2 − 3·1 = 1 ≠ 0 (A is non-singular)
+adj A = [[d, −b], [−c, a]] = [[2, −3], [−1, 2]]
+A⁻¹ = (1/|A|) adj A = [[2, −3], [−1, 2]]</p>
+<p>Check: A·A⁻¹ = [[2·2+3(−1), 2(−3)+3·2], [1·2+2(−1), 1(−3)+2·2]] = [[1,0],[0,1]] ✓</p>
+<p class="ans">A⁻¹ = [[2, −3], [−1, 2]]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Solve by the matrix method: 2x + 3y = 13, x + 2y = 8.</p>
+<div class="sol">
+<p>In matrix form AX = B with A = [[2,3],[1,2]], X = [x,y]ᵀ, B = [13,8]ᵀ. From Q2, A⁻¹ = [[2,−3],[−1,2]], so</p>
+<p class="work">X = A⁻¹B = [[2,−3],[−1,2]]·[13,8]ᵀ
+x = 26 − 24 = 2
+y = −13 + 16 = 3</p>
+<p>Check in the second equation: 2 + 6 = 8 ✓</p>
+<p class="ans">x = 2, y = 3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Evaluate det [[1,2,3],[2,4,6],[1,1,1]] and interpret the result.</p>
+<div class="sol">
+<p>Row 2 is exactly 2 × row 1, so two rows are proportional. If R₂ → R₂ − 2R₁ the second row becomes all zeros, and a determinant with a zero row is 0.</p>
+<p class="ans">Determinant = 0; the matrix is singular and has no inverse.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> For A = [[1,2],[3,4]] find A², adj A and A⁻¹.</p>
+<div class="sol">
+<p class="work">A² = [[1,2],[3,4]]·[[1,2],[3,4]] = [[1+6, 2+8],[3+12, 6+16]] = [[7,10],[15,22]]
+|A| = 4 − 6 = −2
+adj A = [[4,−2],[−3,1]]
+A⁻¹ = (1/−2)[[4,−2],[−3,1]] = [[−2, 1],[3/2, −1/2]]</p>
+<p class="ans">A² = [[7,10],[15,22]], adj A = [[4,−2],[−3,1]], A⁻¹ = [[−2,1],[3/2,−1/2]]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Verify (AB)ᵀ = BᵀAᵀ for A = [[1,2],[3,4]], B = [[0,1],[1,0]].</p>
+<div class="sol">
+<p class="work">AB = [[1·0+2·1, 1·1+2·0],[3·0+4·1, 3·1+4·0]] = [[2,1],[4,3]]
+(AB)ᵀ = [[2,4],[1,3]]
+BᵀAᵀ = [[0,1],[1,0]]·[[1,3],[2,4]] = [[2,4],[1,3]]</p>
+<p class="ans">Both sides equal [[2,4],[1,3]] — the reversal law holds.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Evaluate det [[2,3,1],[4,1,2],[3,5,3]] by expansion along the first row.</p>
+<div class="sol">
+<p class="work">= 2(1·3 − 2·5) − 3(4·3 − 2·3) + 1(4·5 − 1·3)
+= 2(3 − 10) − 3(12 − 6) + 1(20 − 3)
+= 2(−7) − 3(6) + 17
+= −14 − 18 + 17 = −15</p>
+<p class="ans">Determinant = −15</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> For any square matrix A, show A + Aᵀ is symmetric and A − Aᵀ is skew-symmetric.</p>
+<div class="sol">
+<p class="work">(A + Aᵀ)ᵀ = Aᵀ + (Aᵀ)ᵀ = Aᵀ + A = A + Aᵀ        ⇒ symmetric
+(A − Aᵀ)ᵀ = Aᵀ − A = −(A − Aᵀ)                    ⇒ skew-symmetric</p>
+<p class="ans">Hence every square matrix splits as A = ½(A+Aᵀ) + ½(A−Aᵀ), a symmetric part plus a skew part.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Find k if [[k,2],[8,4]] is singular.</p>
+<div class="sol">
+<p class="work">|A| = 4k − 16 = 0 ⇒ k = 4</p>
+<p class="ans">k = 4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Solve by Cramer's rule: x + y = 5, 2x − y = 1.</p>
+<div class="sol">
+<p class="work">D = |1 1; 2 −1| = −1 − 2 = −3
+Dₓ = |5 1; 1 −1| = −5 − 1 = −6 ⇒ x = Dₓ/D = 2
+D_y = |1 5; 2 1| = 1 − 10 = −9 ⇒ y = D_y/D = 3</p>
+<p class="ans">x = 2, y = 3</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.7 — Quadratic equations</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Solve 2x² − 7x + 3 = 0.</p>
+<div class="sol">
+<p class="work">2x² − 6x − x + 3 = 0
+2x(x−3) − 1(x−3) = 0
+(2x−1)(x−3) = 0</p>
+<p class="ans">x = 1/2 or x = 3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Discuss the nature of the roots of 3x² + 4x − 2 = 0.</p>
+<div class="sol">
+<p class="work">D = b² − 4ac = 16 − 4(3)(−2) = 40 &gt; 0, and 40 is not a perfect square.</p>
+<p class="ans">The roots are real, distinct and irrational (D &gt; 0, not a perfect square).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find k so that 2x² + kx + 8 = 0 has equal roots.</p>
+<div class="sol">
+<p class="work">Equal roots ⇔ D = 0: k² − 4(2)(8) = 0 ⇒ k² = 64 ⇒ k = ±8</p>
+<p class="ans">k = 8 or k = −8</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> If α, β are the roots of 3x² − 5x + 2 = 0, find α + β, αβ, α² + β² and 1/α + 1/β.</p>
+<div class="sol">
+<p class="work">α+β = 5/3,  αβ = 2/3
+α²+β² = (α+β)² − 2αβ = 25/9 − 4/3 = 25/9 − 12/9 = 13/9
+1/α + 1/β = (α+β)/(αβ) = (5/3)/(2/3) = 5/2</p>
+<p class="ans">Sum 5/3, product 2/3, α²+β² = 13/9, 1/α+1/β = 5/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Form the quadratic equation whose roots are 2 + √3 and 2 − √3.</p>
+<div class="sol">
+<p class="work">Sum = 4, Product = (2)² − (√3)² = 4 − 3 = 1
+x² − (sum)x + product = 0 ⇒ x² − 4x + 1 = 0</p>
+<p class="ans">x² − 4x + 1 = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> One root of x² + kx + 12 = 0 is 3. Find k and the other root.</p>
+<div class="sol">
+<p class="work">Put x = 3: 9 + 3k + 12 = 0 ⇒ 3k = −21 ⇒ k = −7
+Product of roots = 12 ⇒ 3β = 12 ⇒ β = 4</p>
+<p>Check: 3 + 4 = 7 = −k ✓</p>
+<p class="ans">k = −7, other root = 4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Find the equation whose roots are the reciprocals of the roots of 2x² + 3x + 4 = 0.</p>
+<div class="sol">
+<p>If the roots are α, β then the new roots are 1/α, 1/β. Replace x by 1/x in the original and clear denominators:</p>
+<p class="work">2(1/x)² + 3(1/x) + 4 = 0 ⇒ 2 + 3x + 4x² = 0</p>
+<p class="ans">4x² + 3x + 2 = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> If x² + ax + b = 0 and x² + bx + a = 0 (a ≠ b) have a common root, find it and show a + b = −1.</p>
+<div class="sol">
+<p>Subtracting the equations eliminates x²:</p>
+<p class="work">(a−b)x + (b−a) = 0 ⇒ (a−b)(x−1) = 0 ⇒ x = 1   (since a ≠ b)</p>
+<p>Substituting x = 1 in either equation: 1 + a + b = 0.</p>
+<p class="ans">The common root is x = 1 and a + b = −1.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> If the roots of x² − px + q = 0 differ by 1, prove p² − 4q = 1.</p>
+<div class="sol">
+<p class="work">(α − β)² = (α+β)² − 4αβ = p² − 4q
+Given α − β = 1 ⇒ 1 = p² − 4q</p>
+<p class="ans">p² − 4q = 1, i.e. D = 1 &nbsp;(proved)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Solve x + 1/x = 5/2, x ≠ 0.</p>
+<div class="sol">
+<p class="work">2x² + 2 = 5x ⇒ 2x² − 5x + 2 = 0 ⇒ (2x−1)(x−2) = 0</p>
+<p class="ans">x = 2 or x = 1/2 &nbsp;(both satisfy the original equation)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.8 — Complex numbers</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Evaluate i²⁰²⁶.</p>
+<div class="sol">
+<p class="work">2026 = 4(506) + 2 ⇒ i²⁰²⁶ = i² = −1</p>
+<p class="ans">−1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Simplify (3 + 4i)(2 − 3i).</p>
+<div class="sol">
+<p class="work">= 6 − 9i + 8i − 12i² = 6 − i + 12 = 18 − i</p>
+<p class="ans">18 − i</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Express (2 − 3i)/(1 + i) in the form a + ib and find its modulus and conjugate.</p>
+<div class="sol">
+<p class="work">Multiply numerator and denominator by the conjugate 1 − i:
+(2−3i)(1−i) / (1+i)(1−i) = (2 − 2i − 3i + 3i²)/2 = (−1 − 5i)/2 = −1/2 − (5/2)i</p>
+<p class="work">|z| = √((1/2)² + (5/2)²) = √26/2
+z̄ = −1/2 + (5/2)i</p>
+<p class="ans">z = −1/2 − (5/2)i, |z| = √26/2, z̄ = −1/2 + (5/2)i</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the square roots of 3 + 4i.</p>
+<div class="sol">
+<p>Let √(3+4i) = x + iy, so (x+iy)² = (x²−y²) + 2xyi. Comparing parts:</p>
+<p class="work">x² − y² = 3  and  2xy = 4 ⇒ xy = 2
+Also |z|² = x² + y² = √(3²+4²) = 5</p>
+<p>Adding: 2x² = 8 ⇒ x² = 4 ⇒ x = ±2; then y² = 1 ⇒ y = ±1, with xy = 2 &gt; 0 giving matching signs.</p>
+<p>Check: (2+i)² = 4 + 4i + i² = 3 + 4i ✓</p>
+<p class="ans">√(3+4i) = ±(2 + i)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> For z = 1 + i, find z + 1/z.</p>
+<div class="sol">
+<p class="work">1/z = 1/(1+i) = (1−i)/2
+z + 1/z = 1 + i + 1/2 − i/2 = 3/2 + i/2</p>
+<p class="ans">3/2 + (1/2)i</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Find real x and y if (x + iy)(2 − 3i) = 4 + i.</p>
+<div class="sol">
+<p class="work">LHS = 2x − 3xi + 2yi − 3i²y = (2x + 3y) + i(2y − 3x)
+Equating real and imaginary parts:
+2x + 3y = 4    … (i)
+−3x + 2y = 1   … (ii)
+2×(i) − 3×(ii): 4x + 6y + 9x − 6y = 8 − 3 ⇒ 13x = 5 ⇒ x = 5/13
+From (i): 10/13 + 3y = 4 ⇒ 3y = 42/13 ⇒ y = 14/13</p>
+<p class="ans">x = 5/13, y = 14/13</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Show that (1 + i)/(1 − i) is purely imaginary.</p>
+<div class="sol">
+<p class="work">(1+i)/(1−i) = (1+i)²/((1)²+1²) = (1 + 2i + i²)/2 = 2i/2 = i</p>
+<p class="ans">The value is i, whose real part is 0 — purely imaginary &nbsp;(proved).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> Verify |z₁z₂| = |z₁||z₂| for z₁ = 3 + 4i, z₂ = 5 + 12i.</p>
+<div class="sol">
+<p class="work">|z₁| = 5, |z₂| = 13 ⇒ |z₁||z₂| = 65
+z₁z₂ = (3+4i)(5+12i) = 15 + 36i + 20i + 48i² = −33 + 56i
+|z₁z₂| = √(1089 + 3136) = √4225 = 65</p>
+<p class="ans">Both sides equal 65 — the product rule for moduli holds.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> If z = 2 − 3i, find z·z̄ and show it equals |z|².</p>
+<div class="sol">
+<p class="work">z z̄ = (2−3i)(2+3i) = 4 + 6i − 6i − 9i² = 4 + 9 = 13
+|z|² = 2² + 3² = 13</p>
+<p class="ans">z z̄ = 13 = |z|²</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Solve x² + 4 = 0 in ℂ.</p>
+<div class="sol">
+<p class="work">x² = −4 = 4i² ⇒ x = ±2i</p>
+<p class="ans">x = 2i or x = −2i</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Modulus and argument of z = −1 + i√3.</p>
+<div class="sol">
+<p class="work">|z| = √(1 + 3) = 2
+The point (−1, √3) lies in the second quadrant, so
+arg z = π − tan⁻¹(√3/1) = π − π/3 = 2π/3  (120°)</p>
+<p class="ans">|z| = 2, arg z = 2π/3 &nbsp;(polar form z = 2(cos 120° + i sin 120°))</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+<p>These are the shapes NEB uses for short algebra questions. The model answer is the amount of writing that earns full marks; do not write a paragraph where two sentences will do.</p>
+
+<div class="item">
+<p class="q"><b>C1.</b> What is the difference between a relation and a function?</p>
+<p class="sol">A relation is any set of ordered pairs. A function is a relation in which every element of the domain has exactly one image. Example: R₁ = {(1,2),(1,3)} is a relation but not a function, while R₂ = {(1,2),(2,3)} is a function.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Why is y² = x not a function on ℝ?</p>
+<p class="sol">For x = 4 it gives y = 2 and y = −2, so one input has two outputs. A vertical line cuts the graph twice, so the vertical line test fails.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> If f and g are both odd, what is f∘g?</p>
+<p class="sol">(f∘g)(−x) = f(g(−x)) = f(−g(x)) = −f(g(x)) = −(f∘g)(x), so f∘g is odd.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> A set has n elements. How many subsets does it have, and how many proper subsets?</p>
+<p class="sol">Each element is either taken or not, so there are 2ⁿ subsets; proper subsets are 2ⁿ − 1 (excluding the set itself).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> State the addition principle for two sets and say when n(A∪B) = n(A) + n(B).</p>
+<p class="sol">n(A∪B) = n(A) + n(B) − n(A∩B). It reduces to n(A) + n(B) exactly when A and B are disjoint, i.e. n(A∩B) = 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Distinguish A − B from B − A.</p>
+<p class="sol">A − B = {x : x ∈ A and x ∉ B}, the part of A outside B; B − A is the part of B outside A. They are equal only when the two sets are identical.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Is p → q the same as q → p?</p>
+<p class="sol">No. q → p is the converse. p → q is false only when p is true and q is false; the converse can differ. E.g. "if it rains the ground is wet" is not the same as "if the ground is wet it rained".</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Write the negation of "some students are lazy".</p>
+<p class="sol">The negation of ∃ is ∀¬: "no student is lazy" (every student is not lazy).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> Solve |x| = 3 and |x| &lt; 3 in one line each.</p>
+<p class="sol">|x| = 3 ⇒ x = ±3. |x| &lt; 3 ⇒ −3 &lt; x &lt; 3.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> When does a function have an inverse?</p>
+<p class="sol">When it is one–one and onto (bijective) on its stated domain — equivalently, when every horizontal line meets its graph at most once.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> What is the range of f(x) = |x| and of f(x) = 1/x²?</p>
+<p class="sol">|x| ≥ 0 for all real x, so the range is [0, ∞). 1/x² &gt; 0 always, so the range is (0, ∞) — zero is excluded because 1/x² never vanishes.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> Why is the arithmetic mean never smaller than the geometric mean for positive numbers?</p>
+<p class="sol">(√a − √b)² ≥ 0 ⇒ a + b − 2√(ab) ≥ 0 ⇒ (a+b)/2 ≥ √(ab). Equality holds only when a = b.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> For a quadratic with discriminant D, state the nature of the roots in all three cases.</p>
+<p class="sol">D &gt; 0: two distinct real roots; D = 0: two equal real roots; D &lt; 0: no real roots (a conjugate pair of complex roots).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> If α, β are roots of ax² + bx + c = 0, write α + β and αβ.</p>
+<p class="sol">α + β = −b/a and αβ = c/a.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> When is a square matrix singular, and what is the consequence?</p>
+<p class="sol">When its determinant is zero. Then no inverse exists, so the matrix equation AX = B either has no solution or infinitely many.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> What is the value of i⁴ⁿ and of z·z̄?</p>
+<p class="sol">i⁴ⁿ = (i⁴)ⁿ = 1. And z·z̄ = |z|², a non-negative real number.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C17.</b> Can two complex numbers be compared with &lt;?</p>
+<p class="sol">No. ℂ is not ordered, so z₁ &lt; z₂ is meaningless; we can compare only their moduli, which are real.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C18.</b> State the relation between AM, GM and HM of two positive numbers.</p>
+<p class="sol">GM² = AM × HM, and AM ≥ GM ≥ HM with equality only when the two numbers are equal.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C19.</b> Define a set and its cardinality.</p>
+<p class="sol">A set is a well-defined collection of distinct objects, e.g. the vowels {a,e,i,o,u}. Its cardinality n(A) is the number of elements it contains.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C20.</b> Write the power set of {1, 2} and explain the count.</p>
+<p class="sol">P(A) = {∅, {1}, {2}, {1,2}}. A set with n elements has 2ⁿ subsets, here 2² = 4.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C21.</b> Distinguish A ⊆ B from A ⊂ B.</p>
+<p class="sol">A ⊆ B means every element of A is in B, equality allowed. A ⊂ B (proper subset) means A ⊆ B and A ≠ B, so B has at least one element outside A.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C22.</b> What is a universal set, and why is it needed?</p>
+<p class="sol">The universal set U contains every element under discussion in that context. Complements A′ = U − A are meaningful only relative to a stated universal set.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C23.</b> State the contrapositive of p → q and show it is equivalent.</p>
+<p class="sol">The contrapositive is ¬q → ¬p. Both are false in exactly one case — p true and q false — so their truth tables coincide and the statements are logically equivalent.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C24.</b> Is the converse of a true implication always true?</p>
+<p class="sol">No. "If it rains, the ground is wet" is true but its converse "if the ground is wet, it rained" can fail (a tap could have been left on).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C25.</b> Why is "if 2 + 2 = 5 then 1 = 0" a true statement?</p>
+<p class="sol">p → q is false only when p is true and q is false. Here the antecedent is false, so the implication is vacuously true — a useful reminder that implication is not causation.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C26.</b> What is an interval? Name the four types.</p>
+<p class="sol">An interval is the set of real numbers between two endpoints. Open (a,b), closed [a,b], and the two half-open forms [a,b), (a,b); unbounded forms use ±∞.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C27.</b> Solve |x − 1| = |x + 3|.</p>
+<p class="sol">The distances from x to 1 and to −3 are equal only at the midpoint of 1 and −3, so x = (1 − 3)/2 = −1. Check: |−2| = |2| ✓.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C28.</b> Define a one–one (injective) function.</p>
+<p class="sol">f is one–one if f(x₁) = f(x₂) implies x₁ = x₂ — distinct inputs never share an output, so every horizontal line meets the graph at most once.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C29.</b> Define an onto (surjective) function.</p>
+<p class="sol">f : A → B is onto if every element of the codomain B is the image of at least one element of A, i.e. range = codomain.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C30.</b> Describe the identity function and its inverse.</p>
+<p class="sol">I(x) = x for all x; its graph is the line y = x. It is its own inverse, I⁻¹ = I, because applying it changes nothing.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C31.</b> Is f(x) = x² + 1 even, odd or neither?</p>
+<p class="sol">f(−x) = x² + 1 = f(x), so f is even and its graph is symmetric about the Y-axis.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C32.</b> For y = a sin(bx), state the amplitude, period and range.</p>
+<p class="sol">Amplitude |a|, period 2π/|b|, range [−|a|, |a|]. Changing a stretches vertically; changing b compresses horizontally.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C33.</b> Define an AP and write its nth term.</p>
+<p class="sol">A sequence with a constant difference d between consecutive terms: tₙ = a + (n − 1)d, where a is the first term.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C34.</b> Define a GP and state when its infinite sum exists.</p>
+<p class="sol">Each term is the previous multiplied by a fixed ratio r, so tₙ = arⁿ⁻¹. The sum to infinity S∞ = a/(1 − r) exists only when |r| &lt; 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C35.</b> What is a harmonic sequence?</p>
+<p class="sol">A sequence whose reciprocals form an arithmetic sequence, e.g. 1/2, 1/5, 1/8, … (reciprocals 2, 5, 8 are in AP).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C36.</b> State the relation connecting AM, GM and HM for two positive numbers.</p>
+<p class="sol">GM² = AM × HM and AM ≥ GM ≥ HM, with equality throughout only when the two numbers are equal.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C37.</b> If three numbers are simultaneously in AP and GP, what are they?</p>
+<p class="sol">They must be equal. AP gives 2b = a + c and GP gives b² = ac; combining them yields (a − c)² = 0, so a = b = c.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C38.</b> What is a singular matrix?</p>
+<p class="sol">A square matrix whose determinant is zero. It has no inverse, and its rows/columns are linearly dependent.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C39.</b> When is A⁻¹ defined?</p>
+<p class="sol">Only for a square matrix with |A| ≠ 0. Then A⁻¹ = adj A/|A|, and A A⁻¹ = A⁻¹A = I.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C40.</b> Can a 2×3 matrix be multiplied by a 3×2 matrix?</p>
+<p class="sol">Yes — the inner dimensions 3 and 3 match, giving a 2×2 product. Reversing the order (3×2)(2×3) gives a 3×3 product instead.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C41.</b> What is the discriminant of a quadratic and what does it decide?</p>
+<p class="sol">D = b² − 4ac for ax² + bx + c = 0. It decides the nature of the roots: D &gt; 0 real and distinct, D = 0 real and equal, D &lt; 0 complex conjugates.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C42.</b> If D = 0, how does the parabola y = ax² + bx + c meet the x-axis?</p>
+<p class="sol">It touches the axis at exactly one point (the repeated root), so the vertex lies on the x-axis.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C43.</b> For ax² + bx + c = 0, write α + β and αβ.</p>
+<p class="sol">α + β = −b/a and αβ = c/a; the equation can be rebuilt as x² − (α+β)x + αβ = 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C44.</b> What is i and what is its power cycle?</p>
+<p class="sol">i = √(−1), so i² = −1, i³ = −i and i⁴ = 1; the values repeat with period 4, which is why iⁿ depends only on n mod 4.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C45.</b> What is the conjugate of a complex number and what is z + z̄?</p>
+<p class="sol">For z = a + ib the conjugate is z̄ = a − ib. Then z + z̄ = 2a = 2Re(z), always real.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C46.</b> What does |z| represent geometrically?</p>
+<p class="sol">The distance of the point representing z from the origin in the Argand plane: |a + ib| = √(a² + b²).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C47.</b> Can a quadratic with real coefficients have exactly one complex root?</p>
+<p class="sol">No. Real coefficients force complex roots to appear in conjugate pairs, so a non-real root always brings its partner along.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C48.</b> What does it mean if the product of the roots of a quadratic is zero?</p>
+<p class="sol">c/a = 0, so c = 0 and one root is zero — the equation is x(ax + b) = 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C49.</b> State the reversal law for transposes and explain why it matters.</p>
+<p class="sol">(AB)ᵀ = BᵀAᵀ. It matters because the order reverses: naive left-to-right transposition of a product is a standard exam error.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C50.</b> Why is division by a matrix never written?</p>
+<p class="sol">Because there is no general division operation. We multiply by an inverse instead, and that inverse exists only when the determinant is non-zero.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks, fully worked</h2>
+
+<div class="item">
+<p class="q"><b>L1. [4]</b> Prove that A − (B ∩ C) = (A − B) ∪ (A − C).</p>
+<div class="sol">
+<p class="work">x ∈ A − (B∩C)
+⇔ x ∈ A and x ∉ (B∩C)
+⇔ x ∈ A and not (x ∈ B and x ∈ C)
+⇔ x ∈ A and (x ∉ B or x ∉ C)      [De Morgan in logic]
+⇔ (x ∈ A and x ∉ B) or (x ∈ A and x ∉ C)
+⇔ x ∈ (A−B) or x ∈ (A−C)
+⇔ x ∈ (A−B) ∪ (A−C)</p>
+<p class="ans">Hence A − (B∩C) = (A−B) ∪ (A−C).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Solve |2x − 3| ≤ |x + 1|.</p>
+<div class="sol">
+<p>Both sides are non-negative, so we may square without changing the truth of the inequality:</p>
+<p class="work">(2x−3)² ≤ (x+1)²
+4x² − 12x + 9 ≤ x² + 2x + 1
+3x² − 14x + 8 ≤ 0
+(3x − 2)(x − 4) ≤ 0</p>
+<p>Critical points 2/3 and 4; the upward parabola is ≤ 0 between them.</p>
+<p>Check at x = 0: |−3| = 3 ≤ |1| = 1 is false, and 0 is outside [2/3, 4] ✓. At x = 2: |1| ≤ |3| ✓.</p>
+<p class="ans">x ∈ [2/3, 4]</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> For f(x) = (4x + 3)/(2x − 1), find the domain, the range and f⁻¹.</p>
+<div class="sol">
+<p class="work">Domain: 2x − 1 ≠ 0 ⇒ x ≠ 1/2, so D = ℝ − {1/2}
+
+y = (4x+3)/(2x−1) ⇒ y(2x−1) = 4x+3
+⇒ 2xy − y = 4x + 3
+⇒ x(2y − 4) = y + 3
+⇒ x = (y+3)/(2y−4), needs 2y − 4 ≠ 0 ⇒ y ≠ 2</p>
+<p>The range is therefore ℝ − {2}, and the same algebra gives the inverse function.</p>
+<p class="ans">Domain ℝ−{1/2}, range ℝ−{2}, f⁻¹(x) = (x+3)/(2x−4)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [4]</b> Find the sum of n terms of the series 5 + 55 + 555 + …</p>
+<div class="sol">
+<p class="work">Sₙ = 5[1 + 11 + 111 + … n terms]
+   = (5/9)[9 + 99 + 999 + … n terms]
+   = (5/9)[(10−1) + (10²−1) + … + (10ⁿ−1)]
+   = (5/9)[(10 + 10² + … + 10ⁿ) − n]
+   = (5/9)[10(10ⁿ−1)/9 − n]</p>
+<p class="ans">Sₙ = (10/81)(10ⁿ − 1) − 5n/9</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [5]</b> Solve using matrices: 3x + 2y = 11, 2x + 3y = 9.</p>
+<div class="sol">
+<p class="work">A = [[3,2],[2,3]], |A| = 9 − 4 = 5 ≠ 0
+adj A = [[3,−2],[−2,3]]
+A⁻¹ = (1/5)[[3,−2],[−2,3]]
+X = A⁻¹B = (1/5)[[3,−2],[−2,3]]·[11,9]ᵀ
+x = (33 − 18)/5 = 3
+y = (−22 + 27)/5 = 1</p>
+<p>Check: 3(3) + 2(1) = 11 ✓ and 2(3) + 3(1) = 9 ✓</p>
+<p class="ans">x = 3, y = 1</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L6. [4]</b> Express (3 + 2i)/(1 − i) in the form a + ib and find its modulus.</p>
+<div class="sol">
+<p class="work">Multiply by the conjugate 1 + i:
+(3+2i)(1+i) / (1−i)(1+i) = (3 + 3i + 2i + 2i²)/2
+= (3 + 5i − 2)/2 = (1 + 5i)/2 = 1/2 + (5/2)i
+|z| = √(1/4 + 25/4) = √26/2</p>
+<p class="ans">z = 1/2 + (5/2)i, |z| = √26/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L7. [5]</b> If α, β are the roots of 2x² − 4x + 1 = 0, find α² + β² and α³ + β³.</p>
+<div class="sol">
+<p class="work">α + β = 2, αβ = 1/2
+α² + β² = (α+β)² − 2αβ = 4 − 1 = 3
+α³ + β³ = (α+β)³ − 3αβ(α+β) = 8 − 3(1/2)(2) = 8 − 3 = 5</p>
+<p class="ans">α² + β² = 3, α³ + β³ = 5</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L8. [5]</b> In a survey of 500 readers, 300 read paper A, 250 read paper B and 180 read both. Find how many read exactly one paper and how many read neither.</p>
+<div class="sol">
+<p class="work">n(A∪B) = 300 + 250 − 180 = 370
+Only A = 300 − 180 = 120
+Only B = 250 − 180 = 70
+Exactly one = 120 + 70 = 190
+Neither = 500 − 370 = 130</p>
+<p class="ans">Exactly one: 190 &nbsp; Neither: 130</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L9. [6]</b> Prove by truth table that (p ∧ q) → (p ∨ q) is a tautology, and that its negation is a contradiction.</p>
+<div class="sol">
+<table>
+<tr><th class="c">p</th><th class="c">q</th><th class="c">p∧q</th><th class="c">p∨q</th><th class="c">(p∧q)→(p∨q)</th></tr>
+<tr><td class="c">T</td><td class="c">T</td><td class="c">T</td><td class="c">T</td><td class="c">T</td></tr>
+<tr><td class="c">T</td><td class="c">F</td><td class="c">F</td><td class="c">T</td><td class="c">T</td></tr>
+<tr><td class="c">F</td><td class="c">T</td><td class="c">F</td><td class="c">T</td><td class="c">T</td></tr>
+<tr><td class="c">F</td><td class="c">F</td><td class="c">F</td><td class="c">F</td><td class="c">T</td></tr>
+</table>
+<p>The implication column is all T, so it is a tautology; its negation is all F, a contradiction.</p>
+<p class="ans">Tautology proved; the negation (p∧q) ∧ ¬(p∨q) is a contradiction.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and exam traps</h2>
+
+<table>
+<tr><th>Topic</th><th>What you must be able to write instantly</th></tr>
+<tr><td>Sets</td><td>n(A∪B) = n(A)+n(B)−n(A∩B); (A∪B)′ = A′∩B′; A−(B∪C) = (A−B)∩(A−C); subsets = 2ⁿ</td></tr>
+<tr><td>Logic</td><td>¬(p∧q) ≡ ¬p∨¬q; ¬(p∨q) ≡ ¬p∧¬q; p→q ≡ ¬p∨q</td></tr>
+<tr><td>Modulus</td><td>|x|&lt;a ⇔ −a&lt;x&lt;a; |x|&gt;a ⇔ x&lt;−a or x&gt;a; |x+y| ≤ |x|+|y|</td></tr>
+<tr><td>AP</td><td>tₙ = a+(n−1)d; Sₙ = n/2[2a+(n−1)d]</td></tr>
+<tr><td>GP</td><td>tₙ = arⁿ⁻¹; Sₙ = a(rⁿ−1)/(r−1); S∞ = a/(1−r), |r|&lt;1</td></tr>
+<tr><td>Means</td><td>AM = (a+b)/2; GM = √(ab); HM = 2ab/(a+b); GM² = AM·HM</td></tr>
+<tr><td>Matrices</td><td>A⁻¹ = adj A/|A|; (AB)ᵀ = BᵀAᵀ; singular ⇔ |A| = 0</td></tr>
+<tr><td>Quadratics</td><td>α+β = −b/a; αβ = c/a; D = b²−4ac; x²−(α+β)x+αβ = 0</td></tr>
+<tr><td>Complex</td><td>i² = −1, i⁴ = 1; z z̄ = |z|²; (a+ib)/(c+id) → multiply by c−id</td></tr>
+</table>
+
+<h3>The four traps that cost the most marks in Unit 1</h3>
+<div class="warn">
+<p><b>1. Dropping the exclusion.</b> For (2x+1)/(x−3) the domain answer "all real x" is wrong — x = 3 must be excluded, and the range excludes 2. Write the exclusion explicitly.</p>
+<p><b>2. Squaring an inequality without checking signs.</b> Squaring |A| ≤ |B| is safe because moduli are non-negative; squaring an inequality like 3x &lt; 4 is not. State the reason.</p>
+<p><b>3. Matrix order.</b> In X = A⁻¹B the inverse is always written on the left. AB ≠ BA, so B A⁻¹ is a different (generally wrong) computation.</p>
+<p><b>4. Verifying nothing.</b> For inverse functions, always check one value: if f⁻¹(5) = 2 then f(2) must be 5. NEB examiners look for that check line.</p>
+</div>
+
+<div class="tip"><b>Answer-writing habit for this unit.</b> Two lines of theory, one block of algebra, one answer line with units or set notation. In a 4-mark question this is exactly four visible marks: setup, method, working, answer.</div>
+
+<p class="note">Mathematics XI · Unit 1 Algebra · NEB (Mat. 007). Solutions written in NEB answer style: given → statement → working → answer line. Use the printed answer to check, never as a substitute for the working.</p>
+<!-- FOOT -->
+</body>
+</html>

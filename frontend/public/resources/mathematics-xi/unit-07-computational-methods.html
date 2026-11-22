@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — Unit 7 Computational Methods and Mechanics: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Mathematics Unit 7 Computational Methods or Mechanics: bisection and Newton-Raphson root finding, trapezoidal and Simpson's rules, plus statics and dynamics — worked exercise solutions with full tables and a 2-mark conceptual bank.">
+<link rel="stylesheet" href="math-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/mathematics-xi">Mathematics XI</a> &rsaquo; Unit 7</p>
+
+<h1>Unit 7 — Computational Methods or Mechanics</h1>
+<p class="meta">Mathematics XI (Mat. 007) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 12 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Two optional halves of one unit. The computational half is pure procedure — bisection, Newton-Raphson, trapezoidal, Simpson's — and rewards a clean table more than cleverness. The mechanics half is force resolution and uniform acceleration, the same problems physics asks but marked as mathematics.</p>
+
+<div class="exam">
+<p><b>What is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — one iteration of a method, a resultant force, or one kinematics substitution.</li>
+<li><b>4 marks</b> — a two-iteration bisection or Newton-Raphson, or a trapezoidal/Simpson evaluation with n = 4.</li>
+<li><b>5–6 marks</b> — a fully tabulated numerical integration compared against the exact value, or a statics/dynamics problem in two stages.</li>
+</ul>
+<p>Marks are concentrated in the table: correct x-values, correct f(x)-values, correct weights (1-4-2-4-…-1 for Simpson, 1-2-2-…-1 for trapezoidal), correct h. Write h explicitly before the table.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 7.1 — Bisection method</li>
+<li>Exercise 7.2 — Newton-Raphson method</li>
+<li>Exercise 7.3 — Trapezoidal rule</li>
+<li>Exercise 7.4 — Simpson's one-third rule</li>
+<li>Exercise 7.5 — Statics: resultant and resolution of forces</li>
+<li>Exercise 7.6 — Dynamics: motion under uniform acceleration</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks</li>
+<li>Formula sheet and traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.1 — Bisection method</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Find a root of x³ − x − 1 = 0 by the bisection method, correct to two decimal places.</p>
+<div class="sol">
+<p class="work">f(x) = x³ − x − 1
+f(1) = 1 − 1 − 1 = −1 &lt; 0
+f(2) = 8 − 2 − 1 = 5 &gt; 0
+⇒ a root lies in (1, 2)</p>
+<table>
+<tr><th class="c">Iteration</th><th class="c">a</th><th class="c">b</th><th class="c">x = (a+b)/2</th><th class="c">f(x)</th><th class="c">New interval</th></tr>
+<tr><td class="c">1</td><td class="c">1</td><td class="c">2</td><td class="c">1.5</td><td class="c">0.875</td><td class="c">(1, 1.5)</td></tr>
+<tr><td class="c">2</td><td class="c">1</td><td class="c">1.5</td><td class="c">1.25</td><td class="c">−0.297</td><td class="c">(1.25, 1.5)</td></tr>
+<tr><td class="c">3</td><td class="c">1.25</td><td class="c">1.5</td><td class="c">1.375</td><td class="c">0.225</td><td class="c">(1.25, 1.375)</td></tr>
+<tr><td class="c">4</td><td class="c">1.25</td><td class="c">1.375</td><td class="c">1.3125</td><td class="c">−0.051</td><td class="c">(1.3125, 1.375)</td></tr>
+<tr><td class="c">5</td><td class="c">1.3125</td><td class="c">1.375</td><td class="c">1.34375</td><td class="c">0.083</td><td class="c">(1.3125, 1.34375)</td></tr>
+</table>
+<p>The root is bracketed between 1.3125 and 1.34375, so to two decimal places x ≈ 1.32. (The exact value is 1.3247…)</p>
+<p class="ans">x ≈ 1.32</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Show that x³ − 4x − 9 = 0 has a root between 2 and 3, and perform two bisection steps.</p>
+<div class="sol">
+<p class="work">f(2) = 8 − 8 − 9 = −9 &lt; 0
+f(3) = 27 − 12 − 9 = 6 &gt; 0
+⇒ root in (2, 3)</p>
+<table>
+<tr><th class="c">Step</th><th class="c">Interval</th><th class="c">Midpoint</th><th class="c">f(mid)</th></tr>
+<tr><td class="c">1</td><td class="c">(2, 3)</td><td class="c">2.5</td><td class="c">15.625 − 10 − 9 = −3.375</td></tr>
+<tr><td class="c">2</td><td class="c">(2.5, 3)</td><td class="c">2.75</td><td class="c">20.797 − 11 − 9 = 0.797</td></tr>
+</table>
+<p class="ans">Root lies in (2.5, 2.75); a third step gives midpoint 2.625 with f ≈ −1.73, narrowing to ≈ 2.70.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Use the bisection method to locate a root of x² − 5 = 0 in (2, 3) to two decimals.</p>
+<div class="sol">
+<p class="work">f(2) = −1 &lt; 0, f(3) = 4 &gt; 0
+Midpoints: 2.5 → 1.25 &gt; 0 ⇒ (2, 2.5)
+2.25 → 0.0625 &gt; 0 ⇒ (2, 2.25)
+2.125 → −0.484 &lt; 0 ⇒ (2.125, 2.25)
+2.1875 → −0.215 ⇒ (2.1875, 2.25)
+2.21875 → −0.077 ⇒ (2.21875, 2.25)</p>
+<p>The root is trapped near 2.24 (true value 2.2361).</p>
+<p class="ans">x ≈ 2.24</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> How many bisection steps are needed to reduce the interval (2, 3) to width less than 0.01?</p>
+<div class="sol">
+<p>Each step halves the interval: width after n steps = (b − a)/2ⁿ.</p>
+<p class="work">1/2ⁿ &lt; 0.01 ⇒ 2ⁿ &gt; 100 ⇒ n &gt; log₂100 ≈ 6.64 ⇒ n = 7</p>
+<p class="ans">7 iterations</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.2 — Newton-Raphson method</h2>
+
+<div class="tip"><b>The iteration.</b> x<sub>n+1</sub> = x<sub>n</sub> − f(x<sub>n</sub>)/f′(x<sub>n</sub>). It converges much faster than bisection but fails when f′(x<sub>n</sub>) = 0 or the starting guess is far from the root.</div>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Using Newton-Raphson with x₀ = 2, find √5 correct to three decimal places.</p>
+<div class="sol">
+<p>The root satisfies f(x) = x² − 5 = 0, f′(x) = 2x.</p>
+<p class="work">x₁ = 2 − (4 − 5)/(2·2) = 2 + 1/4 = 2.25
+x₂ = 2.25 − (5.0625 − 5)/4.5 = 2.25 − 0.01389 = 2.23611
+x₃ = 2.23611 − (5.00019 − 5)/4.47222 ≈ 2.23607</p>
+<p class="ans">√5 ≈ 2.236</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Use Newton-Raphson twice on x³ − 2x − 5 = 0 starting from x₀ = 2.</p>
+<div class="sol">
+<p class="work">f(x) = x³ − 2x − 5, f′(x) = 3x² − 2
+x₁ = 2 − (8 − 4 − 5)/(12 − 2) = 2 − (−1/10) = 2.1
+x₂ = 2.1 − (9.261 − 4.2 − 5)/(13.23 − 2)
+= 2.1 − 0.061/11.23 ≈ 2.0946</p>
+<p class="ans">x₁ = 2.1, x₂ ≈ 2.0946 (true root 2.09455…)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Find a root of x² − 7 = 0 by Newton's method from x₀ = 3, correct to 4 decimals.</p>
+<div class="sol">
+<p class="work">x₁ = 3 − (9 − 7)/6 = 3 − 0.3333 = 2.6667
+x₂ = 2.6667 − (7.1111 − 7)/5.3333 = 2.6667 − 0.0208 = 2.6458
+x₃ = 2.6458 − (6.9996 − 7)/5.2916 ≈ 2.6458</p>
+<p class="ans">√7 ≈ 2.6458</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Why does Newton-Raphson fail for f(x) = x³ − 3x + 2 starting at x₀ = 1?</p>
+<div class="sol">
+<p class="work">f′(x) = 3x² − 3 ⇒ f′(1) = 0</p>
+<p>The iteration divides by f′(x₀), which is zero, so the formula is undefined. (Here x = 1 is a double root, where the tangent is horizontal.)</p>
+<p class="ans">Because f′(x₀) = 0 — Newton-Raphson requires a non-zero derivative at the current estimate.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.3 — Trapezoidal rule</h2>
+
+<div class="tip"><b>The rule.</b> ∫<sub>a</sub><sup>b</sup> f(x)dx ≈ (h/2)[f₀ + 2(f₁ + f₂ + … + f<sub>n−1</sub>) + f<sub>n</sub>], where h = (b − a)/n. End values get weight 1, all interior values weight 2. Trapezoidal accepts any n.</div>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Evaluate ∫₀¹ x² dx by the trapezoidal rule with n = 4, and compare with the exact value.</p>
+<div class="sol">
+<p class="work">h = (1 − 0)/4 = 0.25</p>
+<table>
+<tr><th class="c">x</th><td class="c">0</td><td class="c">0.25</td><td class="c">0.5</td><td class="c">0.75</td><td class="c">1</td></tr>
+<tr><th class="c">f = x²</th><td class="c">0</td><td class="c">0.0625</td><td class="c">0.25</td><td class="c">0.5625</td><td class="c">1</td></tr>
+</table>
+<p class="work">T = (0.25/2)[0 + 2(0.0625 + 0.25 + 0.5625) + 1]
+= 0.125[0 + 2(0.875) + 1]
+= 0.125(2.75) = 0.34375
+Exact: ∫₀¹x²dx = 1/3 ≈ 0.33333
+Error ≈ 0.0104 (trapezoidal over-estimates a convex curve)</p>
+<p class="ans">T ≈ 0.344 vs exact 0.333</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Evaluate ∫₀¹ dx/(1 + x²) by the trapezoidal rule with n = 4.</p>
+<div class="sol">
+<p class="work">h = 0.25</p>
+<table>
+<tr><th class="c">x</th><td class="c">0</td><td class="c">0.25</td><td class="c">0.5</td><td class="c">0.75</td><td class="c">1</td></tr>
+<tr><th class="c">f</th><td class="c">1</td><td class="c">0.9412</td><td class="c">0.8000</td><td class="c">0.6400</td><td class="c">0.5000</td></tr>
+</table>
+<p class="work">T = 0.125[1 + 2(0.9412 + 0.8 + 0.64) + 0.5]
+= 0.125[1.5 + 4.7624] = 0.125(6.2624) = 0.7828</p>
+<p>Exact value = π/4 ≈ 0.7854, so the error is about 0.0026.</p>
+<p class="ans">T ≈ 0.7828 (exact 0.7854)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Evaluate ∫₁² dx/x by the trapezoidal rule with n = 4.</p>
+<div class="sol">
+<p class="work">h = 0.25</p>
+<table>
+<tr><th class="c">x</th><td class="c">1</td><td class="c">1.25</td><td class="c">1.5</td><td class="c">1.75</td><td class="c">2</td></tr>
+<tr><th class="c">1/x</th><td class="c">1.0000</td><td class="c">0.8000</td><td class="c">0.6667</td><td class="c">0.5714</td><td class="c">0.5000</td></tr>
+</table>
+<p class="work">T = 0.125[1 + 2(0.8 + 0.6667 + 0.5714) + 0.5]
+= 0.125[1.5 + 4.0762] = 0.125(5.5762) = 0.6970</p>
+<p>Exact: ln 2 ≈ 0.6931.</p>
+<p class="ans">T ≈ 0.6970</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Evaluate ∫₀<sup>π/2</sup> sin x dx by the trapezoidal rule with n = 4.</p>
+<div class="sol">
+<p class="work">h = (π/2)/4 = π/8 ≈ 0.3927
+x values: 0, π/8, π/4, 3π/8, π/2
+f values: 0, 0.3827, 0.7071, 0.9239, 1</p>
+<p class="work">T = (π/16)[0 + 2(0.3827 + 0.7071 + 0.9239) + 1]
+= 0.19635[1 + 2(2.0137)]
+= 0.19635(5.0274) ≈ 0.9871</p>
+<p>Exact value = 1.</p>
+<p class="ans">T ≈ 0.987</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.4 — Simpson's one-third rule</h2>
+
+<div class="tip"><b>The rule.</b> For even n, ∫<sub>a</sub><sup>b</sup> f(x)dx ≈ (h/3)[f₀ + 4(f₁ + f₃ + …) + 2(f₂ + f₄ + …) + f<sub>n</sub>]. Odd-indexed points get weight 4, even interior points weight 2. <b>n must be even</b> — a question with n = 5 is a trick: subdivide into more intervals or state that Simpson does not apply.</div>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Evaluate ∫₀¹ x² dx by Simpson's rule with n = 4.</p>
+<div class="sol">
+<p class="work">h = 0.25
+S = (h/3)[f₀ + 4(f₁ + f₃) + 2f₂ + f₄]
+= (0.25/3)[0 + 4(0.0625 + 0.5625) + 2(0.25) + 1]
+= 0.08333[4(0.625) + 0.5 + 1]
+= 0.08333[2.5 + 1.5]
+= 0.08333(4) = 1/3</p>
+<p class="ans">S = 1/3 — exact, because Simpson is exact for polynomials up to degree 3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Evaluate ∫₀¹ dx/(1 + x²) by Simpson's rule with n = 4.</p>
+<div class="sol">
+<p class="work">h = 0.25, f values as in 7.3 Q2
+S = 0.08333[1 + 4(0.9412 + 0.6400) + 2(0.8000) + 0.5]
+= 0.08333[1 + 6.3248 + 1.6 + 0.5]
+= 0.08333(9.4248)
+= 0.7854</p>
+<p>Exact = π/4 ≈ 0.785398 — agreement to four decimals.</p>
+<p class="ans">S ≈ 0.7854</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Evaluate ∫₁² dx/x by Simpson's rule with n = 4.</p>
+<div class="sol">
+<p class="work">h = 0.25
+S = 0.08333[1 + 4(0.8000 + 0.5714) + 2(0.6667) + 0.5]
+= 0.08333[1.5 + 5.4856 + 1.3334]
+= 0.08333(8.3190) = 0.6933</p>
+<p>Exact: ln 2 = 0.6931.</p>
+<p class="ans">S ≈ 0.6933</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Evaluate ∫₀² x³ dx by Simpson's rule with n = 4 and verify the result.</p>
+<div class="sol">
+<p class="work">h = 0.5
+x: 0, 0.5, 1.0, 1.5, 2.0
+f = x³: 0, 0.125, 1, 3.375, 8
+S = (0.5/3)[0 + 4(0.125 + 3.375) + 2(1) + 8]
+= 0.16667[14 + 2 + 8] = 0.16667(24) = 4</p>
+<p>Exact: [x⁴/4]₀² = 16/4 = 4 ✓</p>
+<p class="ans">S = 4, exact</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.5 — Statics: resultant and resolution</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Two forces of 3 N and 4 N act at right angles. Find their resultant and its direction.</p>
+<div class="sol">
+<p class="work">R = √(3² + 4²) = 5 N
+tanθ = 4/3 ⇒ θ = 53.13° from the 3 N force</p>
+<p class="ans">R = 5 N at 53.13° to the 3 N force</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Two forces 5 N and 8 N act at 60° to each other. Find the resultant.</p>
+<div class="sol">
+<p>Parallelogram law: R = √(P² + Q² + 2PQcosθ)</p>
+<p class="work">R = √(25 + 64 + 2(5)(8)(1/2))
+= √(25 + 64 + 40) = √129 ≈ 11.36 N</p>
+<p class="ans">R ≈ 11.36 N</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Resolve a force of 10 N acting at 30° to the horizontal into horizontal and vertical components.</p>
+<div class="sol">
+<p class="work">Fx = 10 cos30° = 10(√3/2) ≈ 8.66 N
+Fy = 10 sin30° = 10(1/2) = 5 N</p>
+<p class="ans">8.66 N horizontal, 5 N vertical</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Two equal forces P act at 120°. Show that their resultant equals P.</p>
+<div class="sol">
+<p class="work">R = √(P² + P² + 2P²cos120°)
+cos120° = −1/2
+R = √(2P² − P²) = √P² = P</p>
+<p class="ans">R = P &nbsp;(proved) — a classic result worth remembering</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> The resultant of two perpendicular forces is 13 N and one force is 5 N. Find the other force and the angle the resultant makes with it.</p>
+<div class="sol">
+<p class="work">13² = 5² + Q² ⇒ Q² = 169 − 25 = 144 ⇒ Q = 12 N
+tanθ = 5/12 ⇒ θ = tan⁻¹(5/12) ≈ 22.62° from the 12 N force</p>
+<p class="ans">Q = 12 N; resultant at ≈ 22.6° to the 12 N force</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> Three forces of 3 N, 4 N and 5 N act at a point. Under what arrangement is the system in equilibrium?</p>
+<div class="sol">
+<p>3 N and 4 N perpendicular have resultant 5 N. If the given 5 N force acts in the exactly opposite direction to that resultant, the three forces cancel.</p>
+<p class="ans">Equilibrium when the 5 N force acts opposite to the resultant of the 3 N and 4 N forces (which has magnitude 5 N).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.6 — Dynamics: uniform acceleration</h2>
+
+<div class="tip"><b>The three equations.</b> v = u + at; s = ut + ½at²; v² = u² + 2as. Choose by what is missing: no s ⇒ first; no v ⇒ second; no t ⇒ third.</div>
+
+<div class="item">
+<p class="q"><b>Q1.</b> A body starts with 5 m/s and accelerates at 2 m/s² for 4 s. Find its final velocity and distance travelled.</p>
+<div class="sol">
+<p class="work">v = u + at = 5 + 2(4) = 13 m/s
+s = ut + ½at² = 5(4) + ½(2)(16) = 20 + 16 = 36 m</p>
+<p class="ans">v = 13 m/s, s = 36 m</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> A body starts from rest with acceleration 4 m/s² for 5 s. Find v and s.</p>
+<div class="sol">
+<p class="work">v = 0 + 4(5) = 20 m/s
+s = 0 + ½(4)(25) = 50 m</p>
+<p class="ans">v = 20 m/s, s = 50 m</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> A stone is dropped from a height of 45 m. Taking g = 10 m/s², find the time to reach the ground and the striking speed.</p>
+<div class="sol">
+<p class="work">s = ut + ½gt² with u = 0: 45 = ½(10)t² ⇒ t² = 9 ⇒ t = 3 s
+v = gt = 10(3) = 30 m/s</p>
+<p class="ans">t = 3 s, v = 30 m/s</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> A car moving at 20 m/s stops in 50 m. Find the retardation and the time taken.</p>
+<div class="sol">
+<p class="work">v² = u² + 2as ⇒ 0 = 400 + 2a(50) ⇒ a = −4 m/s²
+v = u + at ⇒ 0 = 20 − 4t ⇒ t = 5 s</p>
+<p class="ans">Retardation 4 m/s², time 5 s</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> A body slides down a smooth plane inclined at 30°. Taking g = 9.8 m/s², find its acceleration and the distance covered in 2 s from rest.</p>
+<div class="sol">
+<p class="work">a = g sinθ = 9.8 × 0.5 = 4.9 m/s²
+s = ½at² = ½(4.9)(4) = 9.8 m</p>
+<p class="ans">a = 4.9 m/s², s = 9.8 m</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> A body starts from rest with acceleration 2 m/s². Find the distance covered in the 3rd second.</p>
+<div class="sol">
+<p>Distance in the nth second: s<sub>n</sub> = u + (a/2)(2n − 1).</p>
+<p class="work">s₃ = 0 + (2/2)(2·3 − 1) = 1(5) = 5 m</p>
+<p>Check by totals: s(3 s) = 9 m, s(2 s) = 4 m, difference 5 m ✓</p>
+<p class="ans">5 m</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> State the condition the bisection method needs before it can start.</p>
+<p class="sol">A continuous f and an interval [a, b] with f(a) and f(b) of opposite signs, so that by the intermediate value theorem at least one root lies inside.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Why does bisection always converge?</p>
+<p class="sol">Each iteration halves the bracketing interval while keeping a sign change, so the interval width (b−a)/2ⁿ → 0. A root is trapped in a shrinking interval, hence the approximations converge.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> Why is Newton-Raphson faster than bisection?</p>
+<p class="sol">Bisection halves the error each step (linear, error ×½); Newton uses the tangent and roughly squares the accuracy (quadratic convergence), typically gaining two correct decimals per iteration.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> Write the Newton-Raphson iteration formula.</p>
+<p class="sol">x<sub>n+1</sub> = x<sub>n</sub> − f(x<sub>n</sub>)/f′(x<sub>n</sub>), provided f′(x<sub>n</sub>) ≠ 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> When does Newton-Raphson break down?</p>
+<p class="sol">When f′(x<sub>n</sub>) = 0 (horizontal tangent), when the starting guess is far from the root, or when the iterates cycle — bisection is safer but slower.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Why must the number of intervals n be even in Simpson's one-third rule?</p>
+<p class="sol">The rule is built by pairing consecutive strips with weights 1-4-1; a pair needs two strips, so n must be a multiple of 2. With odd n the last strip cannot be paired and the formula does not apply.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Which is more accurate for the same n — trapezoidal or Simpson's rule?</p>
+<p class="sol">Simpson's. Trapezoidal is exact only for straight lines (error O(h²)); Simpson's is exact for cubics (error O(h⁴)), so it is dramatically better for curved integrands.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> Define the step size h in a numerical integration.</p>
+<p class="sol">h = (b − a)/n, the width of each subinterval when [a,b] is divided into n equal parts.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> For a curve that is concave upward, does the trapezoidal rule over- or under-estimate the integral?</p>
+<p class="sol">It over-estimates: each trapezium lies above the curve when the curve is convex (concave up), so the sum of trapezium areas exceeds the true area.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> Define the resultant of a system of forces.</p>
+<p class="sol">The single force that produces the same effect on a body as the whole system — same translation and same rotation tendency.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> State the parallelogram law of forces.</p>
+<p class="sol">If two forces acting at a point are represented in magnitude and direction by the adjacent sides of a parallelogram, their resultant is the diagonal through that point, with R = √(P² + Q² + 2PQcosθ).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> When is a particle acted on by several forces in equilibrium?</p>
+<p class="sol">When the vector sum of the forces is zero — equivalently, the resultant has zero magnitude (the force polygon closes).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> Write the three equations of motion under uniform acceleration.</p>
+<p class="sol">v = u + at; s = ut + ½at²; v² = u² + 2as. They hold only for constant acceleration.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> What is retardation, and how does it appear in the equations?</p>
+<p class="sol">Retardation is negative acceleration (deceleration); a is taken with a minus sign, e.g. a = −4 m/s².</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Give the formula for the distance covered in the nth second.</p>
+<p class="sol">s<sub>n</sub> = u + (a/2)(2n − 1), obtained as s(n) − s(n−1).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> What acceleration does a body of mass m experience sliding down a smooth incline of angle θ?</p>
+<p class="sol">a = g sinθ down the plane (the normal reaction g cosθ has no component along the plane, and the plane is smooth so there is no friction).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C17.</b> What is a numerical root of an equation?</p>
+<p class="sol">A value of x (found by iteration, to a stated accuracy) at which f(x) ≈ 0. Numerical methods are used when the exact algebraic solution is unavailable or awkward.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C18.</b> How many bisection steps are needed to reach an error below a given bound?</p>
+<p class="sol">After n steps the interval length is (b − a)/2ⁿ, so n must satisfy (b − a)/2ⁿ &lt; ε. Each step halves the bracket, giving a guaranteed but slow convergence.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C19.</b> Why does Newton–Raphson need a good initial approximation?</p>
+<p class="sol">The method uses the tangent at the current point; near a root the tangent points at it, but far away it can overshoot, oscillate or diverge, especially where f′ is small.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C20.</b> Compare the order of convergence of bisection and Newton–Raphson.</p>
+<p class="sol">Bisection is linear (error roughly halves each step); Newton–Raphson is quadratic when it converges, so the number of correct digits roughly doubles. Newton is faster but less reliable.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C21.</b> What is the geometric meaning of the trapezoidal rule?</p>
+<p class="sol">The area under the curve is approximated by the sum of trapeziums whose parallel sides are the ordinates and whose width is h.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C22.</b> Why is Simpson's rule called the one-third rule?</p>
+<p class="sol">Because the combined weight of each pair of strips is h/3 — the formula is (h/3)[(first + last) + 4(sum of odd) + 2(sum of even)].</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C23.</b> What restriction does Simpson's rule place on the number of intervals?</p>
+<p class="sol">n must be even, so that the ordinates pair up into parabolic arcs. With an odd n the last interval must be handled separately.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C24.</b> Which is more accurate, and why?</p>
+<p class="sol">Simpson's rule, because it fits parabolas (quadratic through three points) rather than straight lines, so its error falls far faster as h shrinks.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C25.</b> Define numerical integration and say when it is needed.</p>
+<p class="sol">It approximates ∫ₐᵇ f(x)dx using sampled ordinates. It is needed when f has no elementary antiderivative or exists only as a table of values.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C26.</b> What is a transcendental equation? Give an example.</p>
+<p class="sol">An equation mixing algebraic and non-algebraic functions, e.g. cos x = x or x eˣ = 1. Such equations have no closed algebraic solution, so numerical methods are used.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C27.</b> If f(a)f(b) &gt; 0, is it certain that no root lies in [a, b]?</p>
+<p class="sol">No. An even number of roots (or a root where f does not change sign, as in a tangency) can hide in the interval. A sign change guarantees a root, but its absence does not rule roots out.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C28.</b> Why does the bisection method rely on continuity?</p>
+<p class="sol">The existence of a root follows from the intermediate value theorem, which needs f continuous on [a, b]. Without continuity a sign change proves nothing.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C29.</b> Distinguish statics from dynamics.</p>
+<p class="sol">Statics deals with bodies at rest or in equilibrium (net force and net moment both zero); dynamics deals with bodies in motion and the forces producing it.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C30.</b> State the conditions for equilibrium of a body.</p>
+<p class="sol">ΣFx = 0, ΣFy = 0 and the net moment about any point is zero. Three non-parallel forces in equilibrium meet at a point.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C31.</b> Distinguish distance from displacement.</p>
+<p class="sol">Distance is the total path length (a scalar, never decreasing); displacement is the straight-line change of position (a vector, which can decrease to zero).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C32.</b> What is uniform acceleration and what does it preserve?</p>
+<p class="sol">Acceleration of constant magnitude and direction, so velocity changes linearly with time and the standard equations v = u + at, s = ut + ½at², v² = u² + 2as apply.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C33.</b> State the sign convention used in kinematics.</p>
+<p class="sol">Pick one direction as positive; then velocity, acceleration and displacement along the opposite direction all carry a negative sign. Mixing signs is the commonest source of wrong answers.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C34.</b> On a smooth incline of angle θ, how does the acceleration depend on θ?</p>
+<p class="sol">a = g sin θ. It increases with the inclination, since the component of gravity along the plane grows; at θ = 90° it equals free fall.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C35.</b> What happens to the range if the launch speed doubles?</p>
+<p class="sol">Horizontal range R = u²sin2θ/g is proportional to u², so doubling u quadruples the range for the same angle.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C36.</b> Why is the error in the trapezoidal rule usually one-sided?</p>
+<p class="sol">Straight chords lie wholly above the curve for convex (concave-up) functions and wholly below for concave-down ones, so the approximation is consistently an over- or under-estimate rather than random.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks</h2>
+
+<div class="item">
+<p class="q"><b>L1. [6]</b> Evaluate ∫₀² x³ dx by the trapezoidal rule and by Simpson's rule with n = 4, and compare both with the exact value.</p>
+<div class="sol">
+<p class="work">h = (2 − 0)/4 = 0.5</p>
+<table>
+<tr><th class="c">x</th><td class="c">0</td><td class="c">0.5</td><td class="c">1.0</td><td class="c">1.5</td><td class="c">2.0</td></tr>
+<tr><th class="c">x³</th><td class="c">0</td><td class="c">0.125</td><td class="c">1</td><td class="c">3.375</td><td class="c">8</td></tr>
+</table>
+<p class="work">Trapezoidal:
+T = (0.5/2)[0 + 2(0.125 + 1 + 3.375) + 8]
+= 0.25[2(4.5) + 8] = 0.25(17) = 4.25
+
+Simpson:
+S = (0.5/3)[0 + 4(0.125 + 3.375) + 2(1) + 8]
+= 0.16667[14 + 2 + 8] = 0.16667(24) = 4
+
+Exact: ∫₀²x³dx = [x⁴/4]₀² = 4</p>
+<p class="ans">Trapezoidal 4.25 (error 0.25); Simpson 4.0 (exact) — Simpson wins because it is exact for cubics.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [5]</b> Solve cos x = x by Newton-Raphson starting from x₀ = 0.5, performing two iterations.</p>
+<div class="sol">
+<p class="work">f(x) = cosx − x, f′(x) = −sinx − 1
+x₀ = 0.5: f(0.5) = 0.8776 − 0.5 = 0.3776
+f′(0.5) = −0.4794 − 1 = −1.4794
+x₁ = 0.5 − 0.3776/(−1.4794) = 0.5 + 0.2553 = 0.7553
+
+f(0.7553) = 0.7289 − 0.7553 = −0.0264
+f′(0.7553) = −0.6851 − 1 = −1.6851
+x₂ = 0.7553 − (−0.0264)/(−1.6851) = 0.7553 − 0.0157 = 0.7396</p>
+<p class="ans">x ≈ 0.7396 (true root 0.73909…)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Use the bisection method to solve x³ + x − 1 = 0 correct to two decimal places.</p>
+<div class="sol">
+<p class="work">f(0) = −1 &lt; 0, f(1) = 1 &gt; 0 ⇒ root in (0,1)</p>
+<table>
+<tr><th class="c">Step</th><th class="c">Interval</th><th class="c">Midpoint</th><th class="c">f(midpoint)</th></tr>
+<tr><td class="c">1</td><td class="c">(0, 1)</td><td class="c">0.5</td><td class="c">−0.375</td></tr>
+<tr><td class="c">2</td><td class="c">(0.5, 1)</td><td class="c">0.75</td><td class="c">+0.172</td></tr>
+<tr><td class="c">3</td><td class="c">(0.5, 0.75)</td><td class="c">0.625</td><td class="c">−0.131</td></tr>
+<tr><td class="c">4</td><td class="c">(0.625, 0.75)</td><td class="c">0.6875</td><td class="c">+0.012</td></tr>
+</table>
+<p class="ans">Root ≈ 0.68 (true value 0.6823…)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [5]</b> Two forces of 6 N and 8 N act at 60°. Find the magnitude and direction of the resultant.</p>
+<div class="sol">
+<p class="work">R = √(36 + 64 + 2(6)(8)cos60°)
+= √(100 + 96(0.5))
+= √148 ≈ 12.17 N
+
+Direction (from the 6 N force):
+tanα = Q sinθ/(P + Q cosθ) = 8 sin60°/(6 + 8 cos60°)
+= 6.928/(6 + 4) = 0.6928
+α = tan⁻¹(0.6928) ≈ 34.7°</p>
+<p class="ans">R ≈ 12.17 N at ≈ 34.7° to the 6 N force</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [5]</b> A stone is thrown vertically upward with 20 m/s (g = 10 m/s²). Find the maximum height, the total time of flight, and the speed on returning to the thrower's hand.</p>
+<div class="sol">
+<p class="work">At the top v = 0: 0 = 400 − 2(10)h ⇒ h = 20 m
+Time to top: 0 = 20 − 10t ⇒ t = 2 s; total flight = 4 s
+Return speed: by symmetry |v| = u = 20 m/s (or v² = 0 + 2(10)(20) ⇒ v = 20)</p>
+<p class="ans">Max height 20 m, time of flight 4 s, return speed 20 m/s</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L6. [4]</b> A train moving at 30 m/s is brought to rest uniformly in 15 s. Find the retardation and the distance covered.</p>
+<div class="sol">
+<p class="work">a = (v − u)/t = (0 − 30)/15 = −2 m/s²
+s = ut + ½at² = 30(15) + ½(−2)(225) = 450 − 225 = 225 m
+Check: v² = u² + 2as ⇒ 0 = 900 − 900 ✓</p>
+<p class="ans">Retardation 2 m/s², stopping distance 225 m</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and traps</h2>
+
+<table>
+<tr><th>Method</th><th>Formula / condition</th></tr>
+<tr><td>Bisection</td><td>Needs f(a)f(b) &lt; 0; x = (a+b)/2; interval halves each step</td></tr>
+<tr><td>Newton-Raphson</td><td>x<sub>n+1</sub> = x<sub>n</sub> − f(x<sub>n</sub>)/f′(x<sub>n</sub>); needs f′ ≠ 0</td></tr>
+<tr><td>Step size</td><td>h = (b − a)/n</td></tr>
+<tr><td>Trapezoidal</td><td>(h/2)[f₀ + 2Σ interior + f<sub>n</sub>]; any n</td></tr>
+<tr><td>Simpson's 1/3</td><td>(h/3)[f₀ + 4(odd-index sum) + 2(even-index sum) + f<sub>n</sub>]; n even</td></tr>
+<tr><td>Resultant (parallelogram)</td><td>R = √(P² + Q² + 2PQ cosθ); tanα = Q sinθ/(P + Q cosθ)</td></tr>
+<tr><td>Perpendicular forces</td><td>R = √(P² + Q²); tanθ = Q/P</td></tr>
+<tr><td>Resolution</td><td>F<sub>x</sub> = F cosθ, F<sub>y</sub> = F sinθ</td></tr>
+<tr><td>Equilibrium</td><td>ΣF = 0 (vector sum)</td></tr>
+<tr><td>Kinematics</td><td>v = u + at; s = ut + ½at²; v² = u² + 2as</td></tr>
+<tr><td>nth second</td><td>s<sub>n</sub> = u + (a/2)(2n − 1)</td></tr>
+<tr><td>Smooth incline</td><td>a = g sinθ</td></tr>
+</table>
+
+<div class="warn">
+<p><b>Trap 1 — starting bisection without a sign change.</b> If f(a) and f(b) have the same sign there may be no root, or two roots, in the interval; the method's guarantee is lost.</p>
+<p><b>Trap 2 — using Simpson with odd n.</b> A 5-interval Simpson question is deliberately wrong; n must be even. Use n = 4 or 6, or switch to trapezoidal.</p>
+<p><b>Trap 3 — wrong weights.</b> Trapezoidal: 1-2-2-…-2-1. Simpson: 1-4-2-4-…-1. Swapping them is the single most common error in this unit.</p>
+<p><b>Trap 4 — rounding too early.</b> Keep four decimals in intermediate f(x) values; rounding to one decimal destroys the accuracy claim.</p>
+<p><b>Trap 5 — using v² = u² + 2as with changing acceleration.</b> These equations are valid only while a is constant; for two stages, solve each stage separately.</p>
+<p><b>Trap 6 — sign of g.</b> Take upward positive and g negative, or downward positive and g positive — but keep the choice consistent through the whole solution.</p>
+<p><b>Trap 7 — reporting a resultant without a direction.</b> A force has magnitude and direction; a numerical answer alone is incomplete.</p>
+</div>
+
+<div class="tip"><b>Table-first habit.</b> In every numerical method question, draw the table before computing anything else: x-row, f(x)-row, then the weighted sum. This earns the method marks even if the final arithmetic slips, and it makes errors visible.</div>
+
+<p class="note">Mathematics XI · Unit 7 Computational Methods and Mechanics · NEB (Mat. 007). Bisection needs a sign change; Newton needs a non-zero derivative.</p>
+</body>
+</html>

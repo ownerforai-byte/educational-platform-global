@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — Unit 5 Statistics and Probability: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
+<meta name="description" content="NEB Grade 11 Mathematics Unit 5 Statistics and Probability: range, variance, standard deviation, coefficient of variation, Karl Pearson's skewness, and probability laws with independent cases — worked exercise solutions plus a 2-mark conceptual bank.">
+<link rel="stylesheet" href="math-xi-solutions.css">
+</head>
+<body>
+
+<p class="crumb"><a href="/resources/mathematics-xi">Mathematics XI</a> &rsaquo; Unit 5</p>
+
+<h1>Unit 5 — Statistics and Probability</h1>
+<p class="meta">Mathematics XI (Mat. 007) &nbsp;•&nbsp; NEB Grade 11 &nbsp;•&nbsp; 12 teaching hours &nbsp;•&nbsp; Exercise solutions + conceptual bank</p>
+
+<p class="lede">Two halves: measuring spread (variance, standard deviation, coefficient of variation, Karl Pearson's coefficient of skewness) and measuring chance (mathematical and empirical probability, the addition and multiplication laws, independent cases). Both halves are numerical — the marks come from correct arithmetic in the right order, not from prose.</p>
+
+<div class="exam">
+<p><b>What is examined.</b></p>
+<ul class="tight">
+<li><b>2 marks</b> — one coefficient (CV or skewness), one probability (dice, cards, complement), or a definition.</li>
+<li><b>4 marks</b> — full mean/SD/CV computation for raw or grouped data; a two-stage probability (draws from a bag, sum of two dice).</li>
+<li><b>5–6 marks</b> — comparisons of consistency between two series, skewness interpretation, or a probability question combining the addition law with independence.</li>
+</ul>
+<p>Two answer conventions NEB accepts: population SD (divide by n) and sample SD (divide by n − 1). <b>State which one you are using.</b> The coefficient of variation and coefficient of skewness are dimensionless — never attach a unit to them.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Exercise 5.1 — Range, variance, standard deviation, coefficient of variation and skewness</li>
+<li>Exercise 5.2 — Mathematical and empirical probability</li>
+<li>Exercise 5.3 — Addition, multiplication, independence and conditional cases</li>
+<li>Conceptual bank — 2-mark questions with model answers</li>
+<li>Long-answer set — 4 to 6 marks</li>
+<li>Formula sheet and traps</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.1 — Dispersion: range, variance, SD, CV and skewness</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> Find the range, variance and standard deviation of 4, 7, 8, 9, 12.</p>
+<div class="sol">
+<p class="work">Range = max − min = 12 − 4 = 8
+Mean x̄ = (4+7+8+9+12)/5 = 40/5 = 8</p>
+<table>
+<tr><th class="c">x</th><td class="c">4</td><td class="c">7</td><td class="c">8</td><td class="c">9</td><td class="c">12</td></tr>
+<tr><th class="c">x − x̄</th><td class="c">−4</td><td class="c">−1</td><td class="c">0</td><td class="c">1</td><td class="c">4</td></tr>
+<tr><th class="c">(x − x̄)²</th><td class="c">16</td><td class="c">1</td><td class="c">0</td><td class="c">1</td><td class="c">16</td></tr>
+</table>
+<p class="work">Σ(x−x̄)² = 34
+Variance (population) σ² = 34/5 = 6.8
+SD σ = √6.8 ≈ 2.61</p>
+<p>With the sample convention σ² = 34/4 = 8.5, σ ≈ 2.92.</p>
+<p class="ans">Range 8; σ² = 6.8, σ ≈ 2.61 units</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Find the variance and standard deviation of 2, 4, 6, 8, 10.</p>
+<div class="sol">
+<p class="work">x̄ = 30/5 = 6
+Deviations: −4, −2, 0, 2, 4
+Squares: 16, 4, 0, 4, 16 ⇒ Σ = 40
+σ² = 40/5 = 8 ⇒ σ = 2√2 ≈ 2.83</p>
+<p class="ans">σ² = 8, σ = 2√2 ≈ 2.83</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> The values 1, 2, 3, 4, 5 occur with frequencies 2, 3, 4, 3, 2. Find the mean and standard deviation.</p>
+<div class="sol">
+<table>
+<tr><th class="c">x</th><th class="c">f</th><th class="c">fx</th><th class="c">x − x̄</th><th class="c">f(x−x̄)²</th></tr>
+<tr><td class="c">1</td><td class="c">2</td><td class="c">2</td><td class="c">−2</td><td class="c">8</td></tr>
+<tr><td class="c">2</td><td class="c">3</td><td class="c">6</td><td class="c">−1</td><td class="c">3</td></tr>
+<tr><td class="c">3</td><td class="c">4</td><td class="c">12</td><td class="c">0</td><td class="c">0</td></tr>
+<tr><td class="c">4</td><td class="c">3</td><td class="c">12</td><td class="c">1</td><td class="c">3</td></tr>
+<tr><td class="c">5</td><td class="c">2</td><td class="c">10</td><td class="c">2</td><td class="c">8</td></tr>
+<tr><th class="c">Total</th><th class="c">N = 14</th><th class="c">42</th><th class="c">—</th><th class="c">22</th></tr>
+</table>
+<p class="work">x̄ = 42/14 = 3
+σ² = 22/14 = 1.571 ⇒ σ ≈ 1.25</p>
+<p class="ans">Mean 3, σ² ≈ 1.57, σ ≈ 1.25</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Find the standard deviation of the first 10 natural numbers.</p>
+<div class="sol">
+<p>For 1, 2, …, n the standard deviation is √((n² − 1)/12). Derivation check for n = 10:</p>
+<p class="work">x̄ = 55/10 = 5.5
+Σx² = 385
+σ² = Σx²/n − x̄² = 38.5 − 30.25 = 8.25
+σ = √8.25 ≈ 2.87</p>
+<p>Formula check: (100 − 1)/12 = 8.25 ✓</p>
+<p class="ans">σ ≈ 2.87 (σ² = 8.25)</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> The mean of a distribution is 20 and its standard deviation is 4. Find the coefficient of variation.</p>
+<div class="sol">
+<p class="work">CV = (σ/x̄) × 100 = (4/20) × 100 = 20%</p>
+<p class="ans">CV = 20%</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> What happens to the mean, variance and standard deviation if (a) 5 is added to every observation, (b) every observation is multiplied by 3?</p>
+<div class="sol">
+<p><b>(a) Adding a constant.</b> The mean increases by 5; deviations x − x̄ are unchanged, so variance and SD are unchanged.</p>
+<p><b>(b) Multiplying by 3.</b> Mean becomes 3x̄; deviations are tripled, so variance becomes 9σ² and SD becomes 3σ.</p>
+<p class="ans">(a) mean +5, σ² and σ unchanged &nbsp; (b) mean ×3, σ² ×9, σ ×3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Two series have (mean, SD) = (50, 5) and (80, 6). Which is more consistent?</p>
+<div class="sol">
+<p class="work">Series 1: CV = 5/50 × 100 = 10%
+Series 2: CV = 6/80 × 100 = 7.5%</p>
+<p>The smaller coefficient of variation indicates greater relative consistency.</p>
+<p class="ans">Series 2 is more consistent (CV 7.5% &lt; 10%).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> A distribution has mean 40, mode 36 and SD 10. Find Karl Pearson's coefficient of skewness.</p>
+<div class="sol">
+<p class="work">Sk = (mean − mode)/SD = (40 − 36)/10 = 0.4</p>
+<p>Positive value ⇒ the distribution is positively (right) skewed.</p>
+<p class="ans">Sk = 0.4, positively skewed</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> If mean = 45, median = 48 and SD = 12, find the coefficient of skewness and interpret the sign.</p>
+<div class="sol">
+<p class="work">Sk = 3(mean − median)/SD = 3(45 − 48)/12 = −9/12 = −0.75</p>
+<p>Negative ⇒ negatively (left) skewed: the tail runs towards the smaller values.</p>
+<p class="ans">Sk = −0.75, negatively skewed</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> Compute the variance and SD of 5, 5, 5, 5.</p>
+<div class="sol">
+<p class="work">x̄ = 5, every deviation is 0, so Σ(x−x̄)² = 0
+σ² = 0, σ = 0</p>
+<p class="ans">σ² = 0, σ = 0 — a zero standard deviation means there is no variability at all.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.2 — Mathematical and empirical probability</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> A fair die is thrown once. Find the probability of (a) an even number, (b) a number greater than 4, (c) a prime number.</p>
+<div class="sol">
+<p class="work">S = {1,2,3,4,5,6}, n(S) = 6
+(a) Even: {2,4,6} ⇒ 3/6 = 1/2
+(b) &gt;4: {5,6} ⇒ 2/6 = 1/3
+(c) Prime: {2,3,5} ⇒ 3/6 = 1/2</p>
+<p class="ans">(a) 1/2 &nbsp; (b) 1/3 &nbsp; (c) 1/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> Two coins are tossed. Find the probability of (a) two heads, (b) at least one head.</p>
+<div class="sol">
+<p class="work">S = {HH, HT, TH, TT}, n(S) = 4
+(a) {HH} ⇒ 1/4
+(b) {HH, HT, TH} ⇒ 3/4   (equivalently 1 − P(TT) = 1 − 1/4)</p>
+<p class="ans">(a) 1/4 &nbsp; (b) 3/4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> Two dice are thrown. Find the probability that (a) the sum is 7, (b) the sum is 9, (c) a doublet appears.</p>
+<div class="sol">
+<p class="work">n(S) = 36
+(a) Sum 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) ⇒ 6/36 = 1/6
+(b) Sum 9: (3,6),(4,5),(5,4),(6,3) ⇒ 4/36 = 1/9
+(c) Doublets: (1,1),…,(6,6) ⇒ 6/36 = 1/6</p>
+<p class="ans">(a) 1/6 &nbsp; (b) 1/9 &nbsp; (c) 1/6</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> One card is drawn from a well-shuffled pack of 52. Find the probability that it is (a) a king, (b) red or a king.</p>
+<div class="sol">
+<p class="work">(a) P(king) = 4/52 = 1/13
+(b) P(red) = 26/52, P(king) = 4/52, P(red king) = 2/52
+P(red ∪ king) = 26/52 + 4/52 − 2/52 = 28/52 = 7/13</p>
+<p class="ans">(a) 1/13 &nbsp; (b) 7/13</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> A bag holds 5 red and 3 white balls. Two balls are drawn one after another without replacement. Find the probability that both are red.</p>
+<div class="sol">
+<p class="work">P(first red) = 5/8
+P(second red | first red) = 4/7
+P(both red) = (5/8)(4/7) = 20/56 = 5/14</p>
+<p class="ans">P(both red) = 5/14</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> In 100 births recorded at a hospital, 52 were boys. Estimate the empirical probability of a boy, and compare with the mathematical value.</p>
+<div class="sol">
+<p class="work">Empirical: P(boy) = 52/100 = 0.52
+Mathematical (equally likely sexes): 1/2 = 0.50</p>
+<p class="ans">Empirical 0.52 vs mathematical 0.50 — close, and the gap shrinks as the number of trials grows (the empirical value tends to the mathematical one).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> Three coins are tossed. Find the probability of at least one head.</p>
+<div class="sol">
+<p>Use the complement: the only outcome with no head is TTT.</p>
+<p class="work">n(S) = 2³ = 8, P(TTT) = 1/8
+P(at least one head) = 1 − 1/8 = 7/8</p>
+<p class="ans">7/8</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> State the mathematical definition of probability and apply it to drawing an ace from 52 cards.</p>
+<div class="sol">
+<p>Mathematical (classical) probability: if a sample space has n equally likely outcomes and an event A contains m of them, then P(A) = m/n.</p>
+<p class="work">m = 4 aces, n = 52 ⇒ P(ace) = 4/52 = 1/13</p>
+<p class="ans">P(A) = m/n; P(ace) = 1/13</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> Two dice are thrown. Find P(sum ≤ 3).</p>
+<div class="sol">
+<p class="work">Favourable: (1,1), (1,2), (2,1) ⇒ 3 outcomes
+P = 3/36 = 1/12</p>
+<p class="ans">1/12</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> A card is drawn. Find the probability that it is neither a king nor a queen.</p>
+<div class="sol">
+<p class="work">P(king or queen) = (4 + 4)/52 = 8/52 = 2/13
+P(neither) = 1 − 2/13 = 11/13</p>
+<p class="ans">11/13</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 5.3 — Addition, multiplication, independence and conditional cases</h2>
+
+<div class="item">
+<p class="q"><b>Q1.</b> If P(A) = 0.5, P(B) = 0.4 and P(A∩B) = 0.2, find P(A∪B), P(A only) and P(A′∩B′).</p>
+<div class="sol">
+<p class="work">P(A∪B) = 0.5 + 0.4 − 0.2 = 0.7
+P(A only) = P(A) − P(A∩B) = 0.5 − 0.2 = 0.3
+P(A′∩B′) = P((A∪B)′) = 1 − 0.7 = 0.3</p>
+<p class="ans">0.7, 0.3, 0.3</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q2.</b> A and B are independent with P(A) = 1/3 and P(B) = 1/4. Find P(A∩B) and P(A∪B).</p>
+<div class="sol">
+<p class="work">P(A∩B) = P(A)P(B) = (1/3)(1/4) = 1/12
+P(A∪B) = 1/3 + 1/4 − 1/12 = 4/12 + 3/12 − 1/12 = 6/12 = 1/2</p>
+<p class="ans">1/12 and 1/2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q3.</b> If P(A) = 0.6 and P(B) = 0.5 with A and B independent, find P(neither A nor B).</p>
+<div class="sol">
+<p class="work">P(A′) = 0.4, P(B′) = 0.5
+Independence extends to complements: P(A′∩B′) = 0.4 × 0.5 = 0.2</p>
+<p class="ans">0.2</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q4.</b> Given P(A∩B) = 0.2 and P(B) = 0.5, find P(A | B).</p>
+<div class="sol">
+<p class="work">P(A|B) = P(A∩B)/P(B) = 0.2/0.5 = 0.4</p>
+<p class="ans">P(A|B) = 0.4</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q5.</b> Are the events A and B independent if P(A) = 0.4, P(B) = 0.5 and P(A∩B) = 0.2?</p>
+<div class="sol">
+<p class="work">P(A)P(B) = 0.4 × 0.5 = 0.2 = P(A∩B)</p>
+<p class="ans">Yes — the product condition holds, so A and B are independent.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q6.</b> A and B are mutually exclusive with P(A) = 0.3 and P(B) = 0.4. Find P(A∪B) and P(A∩B).</p>
+<div class="sol">
+<p class="work">Mutually exclusive ⇒ P(A∩B) = 0
+P(A∪B) = 0.3 + 0.4 = 0.7</p>
+<p class="ans">P(A∪B) = 0.7, P(A∩B) = 0</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q7.</b> A die is rolled. Let A = "even number" and B = "multiple of 3". Are A and B independent?</p>
+<div class="sol">
+<p class="work">A = {2,4,6}, B = {3,6}, A∩B = {6}
+P(A) = 1/2, P(B) = 1/3, P(A∩B) = 1/6
+P(A)P(B) = (1/2)(1/3) = 1/6 = P(A∩B)</p>
+<p class="ans">Independent — though not mutually exclusive (they share the outcome 6).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q8.</b> With P(A) = 0.8, P(B) = 0.5 and A, B independent, find P(exactly one occurs).</p>
+<div class="sol">
+<p class="work">P(A only) = 0.8 × 0.5 = 0.4
+P(B only) = 0.2 × 0.5 = 0.1
+P(exactly one) = 0.4 + 0.1 = 0.5</p>
+<p>Cross-check: P(A∪B) = 0.8 + 0.5 − 0.4 = 0.9, and P(both) = 0.4, so exactly one = 0.9 − 0.4 = 0.5 ✓</p>
+<p class="ans">0.5</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q9.</b> From a bag of 5 red and 3 white balls, two are drawn with replacement. Find P(both red).</p>
+<div class="sol">
+<p>With replacement the draws are independent, so the probabilities multiply unchanged:</p>
+<p class="work">P = (5/8)(5/8) = 25/64</p>
+<p class="ans">25/64</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q10.</b> A fair die is thrown twice. Find the probability of at least one six.</p>
+<div class="sol">
+<p class="work">P(no six in one throw) = 5/6
+P(no six in two throws) = (5/6)² = 25/36
+P(at least one six) = 1 − 25/36 = 11/36</p>
+<p class="ans">11/36</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q11.</b> Two events satisfy P(A) = 1/2, P(B) = 1/3. Can they be mutually exclusive? Can they be independent?</p>
+<div class="sol">
+<p>Mutually exclusive requires P(A∪B) = 1/2 + 1/3 = 5/6 ≤ 1 — possible.</p>
+<p>Independent requires P(A∩B) = 1/6. But mutually exclusive forces P(A∩B) = 0.</p>
+<p class="ans">They can be mutually exclusive only, or independent only — never both, since independence would need P(A∩B) = 1/6 ≠ 0.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q12.</b> In a class, 60% pass Mathematics, 50% pass Physics and 30% pass both. Find the probability that a randomly chosen student passes at least one subject.</p>
+<div class="sol">
+<p class="work">P(M∪P) = 0.6 + 0.5 − 0.3 = 0.8</p>
+<p>Also P(neither) = 0.2.</p>
+<p class="ans">0.8</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Conceptual bank — 2-mark questions with model answers</h2>
+
+<div class="item">
+<p class="q"><b>C1.</b> Define mathematical probability.</p>
+<p class="sol">If a random experiment has n equally likely, mutually exclusive and exhaustive outcomes and an event A occurs in m of them, then P(A) = m/n, with 0 ≤ m ≤ n.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C2.</b> Define empirical probability.</p>
+<p class="sol">Empirical (relative frequency) probability is the ratio of the number of times an event occurred to the total number of trials: P(E) ≈ f/n. It is estimated from data rather than assumed.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C3.</b> State the two basic laws of probability.</p>
+<p class="sol">Addition law: P(A∪B) = P(A) + P(B) − P(A∩B). Multiplication law: P(A∩B) = P(A)P(B|A), which becomes P(A)P(B) when A and B are independent.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C4.</b> What is a complementary event and what is its probability?</p>
+<p class="sol">A′ is the event that A does not occur; A and A′ are exhaustive and mutually exclusive, so P(A) + P(A′) = 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C5.</b> Distinguish mutually exclusive from independent events.</p>
+<p class="sol">Mutually exclusive: they cannot occur together, P(A∩B) = 0. Independent: the occurrence of one does not change the probability of the other, P(A∩B) = P(A)P(B). Two non-impossible events cannot be both.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C6.</b> Define variance and standard deviation.</p>
+<p class="sol">Variance is the mean of the squared deviations from the mean, σ² = Σ(x−x̄)²/n. Standard deviation is its positive square root, σ, and it carries the same unit as the data.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C7.</b> Why is standard deviation preferred to range as a measure of dispersion?</p>
+<p class="sol">Range uses only the two extreme observations and ignores everything between, so one outlier can hide or fake variability. Standard deviation uses every observation and is stable under sampling.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C8.</b> What does a coefficient of variation of 15% mean?</p>
+<p class="sol">The standard deviation is 15% of the mean. Because it is scale-free, CV lets you compare variability between series measured in different units or with different means.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C9.</b> What does a negative Karl Pearson coefficient of skewness indicate?</p>
+<p class="sol">Mean &lt; mode (or mean &lt; median): the distribution has a longer tail to the left, so it is negatively skewed. A zero value means symmetry.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C10.</b> What is the effect of adding a constant to every observation on variance?</p>
+<p class="sol">None. Adding c shifts the mean by c, so each deviation x − x̄ is unchanged and therefore σ² is unchanged.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C11.</b> Can a probability be 1.2 or negative?</p>
+<p class="sol">No. For any event E, 0 ≤ P(E) ≤ 1; 1 means certainty and 0 means impossibility, so a value outside this range signals an error in the computation.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C12.</b> What does P(A∪B) reduce to when A and B are mutually exclusive?</p>
+<p class="sol">P(A∪B) = P(A) + P(B), because P(A∩B) = 0 and the overlap term disappears.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C13.</b> If σ = 0, what does the data look like?</p>
+<p class="sol">Every observation is equal to the mean — the data set is constant with no dispersion.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C14.</b> Give an example of two events that are independent but not mutually exclusive.</p>
+<p class="sol">Roll a die: A = even, B = multiple of 3. Both hold for 6, so they can occur together (not mutually exclusive), yet P(A)P(B) = 1/6 = P(A∩B), so they are independent.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C15.</b> Define range and state its weakness.</p>
+<p class="sol">Range = largest value − smallest value. It is easy to compute but uses only two observations, so a single outlier can distort it completely.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C16.</b> Distinguish population standard deviation from sample standard deviation.</p>
+<p class="sol">The population SD divides by N (σ = √(Σ(x − x̄)²/N)); the sample SD divides by n − 1 to correct for using the sample mean, which makes it slightly larger and unbiased.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C17.</b> Can variance be negative?</p>
+<p class="sol">No. It is a mean of squared deviations, so every term is non-negative and variance is ≥ 0, equalling zero only when all observations are identical.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C18.</b> What are the units of variance and of standard deviation?</p>
+<p class="sol">Variance has squared units of the data (e.g. cm²); the SD has the original units (cm), which is why SD is easier to interpret.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C19.</b> What does a large coefficient of variation indicate?</p>
+<p class="sol">High relative variability — the data are widely spread compared with their mean, so the series is less consistent (more risky) than one with a smaller CV.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C20.</b> Two batsmen have CV 4% and 9%. Who is more consistent?</p>
+<p class="sol">The one with CV 4%, because CV is unit-free relative dispersion and smaller CV means less variation about the mean.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C21.</b> What happens to CV if every observation is multiplied by a constant k?</p>
+<p class="sol">Both mean and SD are multiplied by |k|, so the ratio CV = 100σ/x̄ is unchanged. CV is invariant under change of scale.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C22.</b> Define skewness and state what it measures.</p>
+<p class="sol">Skewness measures asymmetry of a distribution. Karl Pearson's coefficient is (mean − mode)/SD; negative means a longer left tail, positive a longer right tail.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C23.</b> For a symmetric distribution, what is the skewness?</p>
+<p class="sol">Zero, and mean = median = mode. Any non-zero skewness signals that the two tails differ in length.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C24.</b> Define a random experiment and a sample space.</p>
+<p class="sol">A random experiment has outcomes that cannot be predicted with certainty; the sample space S is the set of all possible outcomes, e.g. {1,2,3,4,5,6} for a die.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C25.</b> Define an event and an elementary event.</p>
+<p class="sol">An event is a subset of the sample space; an elementary event is a single outcome, i.e. a one-element subset.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C26.</b> Distinguish mutually exclusive from exhaustive events.</p>
+<p class="sol">Mutually exclusive events cannot occur together (A ∩ B = ∅); exhaustive events together cover the whole sample space (A ∪ B = S). Both can hold at once, when they are complements.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C27.</b> What are equally likely outcomes?</p>
+<p class="sol">Outcomes with the same probability of occurrence, as in a fair coin or an unbiased die. Classical probability P(A) = favourable/total applies only then.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C28.</b> What are the probabilities of a sure event and an impossible event?</p>
+<p class="sol">P(S) = 1 and P(∅) = 0. Every probability satisfies 0 ≤ P(A) ≤ 1.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C29.</b> What is P(A ∩ B) when A and B are mutually exclusive?</p>
+<p class="sol">Zero, because the events cannot happen simultaneously; the addition law then reduces to P(A ∪ B) = P(A) + P(B).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C30.</b> Can P(A) = 0.7 and P(B) = 0.6 be mutually exclusive?</p>
+<p class="sol">No. Mutual exclusivity would require P(A) + P(B) ≤ 1, but 1.3 &gt; 1, which is impossible.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C31.</b> Define conditional probability.</p>
+<p class="sol">P(A|B) = P(A ∩ B)/P(B), P(B) &gt; 0 — the probability of A when it is already known that B occurred, evaluated on the reduced sample space B.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C32.</b> State the test for independence of two events.</p>
+<p class="sol">A and B are independent iff P(A ∩ B) = P(A)P(B), equivalently P(A|B) = P(A) or P(B|A) = P(B).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C33.</b> Are mutually exclusive events with non-zero probability independent?</p>
+<p class="sol">No. If A and B cannot occur together then P(A ∩ B) = 0, whereas independence would need P(A)P(B) &gt; 0.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C34.</b> Distinguish drawing with replacement from drawing without replacement.</p>
+<p class="sol">With replacement the composition is restored each time and trials are independent; without replacement the total and the favourable counts both change, so the trials are dependent.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C35.</b> How do you find the probability of "at least one"?</p>
+<p class="sol">Use the complement: P(at least one) = 1 − P(none). This is usually far quicker than adding the many cases directly.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C36.</b> Two fair dice are thrown. What is P(sum = 12)?</p>
+<p class="sol">Only (6,6) works out of 36 equally likely outcomes, so P = 1/36. P(sum = 7) is 6/36 = 1/6, the most likely total.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C37.</b> A coin is tossed n times. What is the probability of at least one head?</p>
+<p class="sol">1 − (1/2)ⁿ, from the complement "all tails", whose probability is (1/2)ⁿ.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C38.</b> What does the multiplication theorem state for dependent events?</p>
+<p class="sol">P(A ∩ B) = P(A) · P(B|A). When the events are independent this reduces to P(A)P(B).</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C39.</b> Why is CV preferred to SD when comparing two different units?</p>
+<p class="sol">Because CV = 100σ/x̄ is dimensionless and expressed as a percentage, so series in kg and in cm can be compared directly, whereas SDs in different units cannot.</p>
+</div>
+
+<div class="item">
+<p class="q"><b>C40.</b> What is the effect of adding a constant to every observation on mean and SD?</p>
+<p class="sol">The mean increases by that constant, but the SD is unchanged — shifting all data does not alter their spread.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>Long-answer set — 4 to 6 marks</h2>
+
+<div class="item">
+<p class="q"><b>L1. [5]</b> For the data 10, 12, 14, 16, 18 find the mean, variance, standard deviation and coefficient of variation.</p>
+<div class="sol">
+<p class="work">x̄ = (10+12+14+16+18)/5 = 70/5 = 14
+Deviations: −4, −2, 0, 2, 4
+Squares: 16, 4, 0, 4, 16 ⇒ Σ = 40
+σ² = 40/5 = 8
+σ = √8 = 2√2 ≈ 2.83
+CV = (2.83/14) × 100 ≈ 20.2%</p>
+<p class="ans">Mean 14, σ² = 8, σ ≈ 2.83, CV ≈ 20.2%</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L2. [6]</b> Find the mean and standard deviation of the grouped data: class 0–10, 10–20, 20–30, 30–40 with frequencies 3, 5, 7, 5.</p>
+<div class="sol">
+<table>
+<tr><th class="c">Class</th><th class="c">Mid x</th><th class="c">f</th><th class="c">fx</th><th class="c">x − x̄</th><th class="c">f(x−x̄)²</th></tr>
+<tr><td class="c">0–10</td><td class="c">5</td><td class="c">3</td><td class="c">15</td><td class="c">−17</td><td class="c">867</td></tr>
+<tr><td class="c">10–20</td><td class="c">15</td><td class="c">5</td><td class="c">75</td><td class="c">−7</td><td class="c">245</td></tr>
+<tr><td class="c">20–30</td><td class="c">25</td><td class="c">7</td><td class="c">175</td><td class="c">3</td><td class="c">63</td></tr>
+<tr><td class="c">30–40</td><td class="c">35</td><td class="c">5</td><td class="c">175</td><td class="c">13</td><td class="c">845</td></tr>
+<tr><th class="c">Total</th><th class="c">—</th><th class="c">20</th><th class="c">440</th><th class="c">—</th><th class="c">2020</th></tr>
+</table>
+<p class="work">x̄ = 440/20 = 22
+σ² = 2020/20 = 101
+σ = √101 ≈ 10.05</p>
+<p class="ans">Mean 22, σ² = 101, σ ≈ 10.05</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L3. [5]</b> Two dice are thrown. Given that the sum is even, find the probability that the sum is 8.</p>
+<div class="sol">
+<p>Restrict the sample space to even sums: for each first die there are exactly 3 second-die values giving an even sum, so n(even) = 18.</p>
+<p class="work">Sum 8: (2,6), (3,5), (4,4), (5,3), (6,2) ⇒ 5 outcomes
+P(sum 8 | sum even) = 5/18</p>
+<p class="ans">5/18</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L4. [5]</b> A and B are independent with P(A) = 0.3 and P(B) = 0.6. Find P(A∪B) and P(exactly one of A, B).</p>
+<div class="sol">
+<p class="work">P(A∩B) = 0.3 × 0.6 = 0.18
+P(A∪B) = 0.3 + 0.6 − 0.18 = 0.72
+P(A only) = 0.3 × 0.4 = 0.12
+P(B only) = 0.7 × 0.6 = 0.42
+P(exactly one) = 0.12 + 0.42 = 0.54</p>
+<p>Check: P(A∪B) − P(A∩B) = 0.72 − 0.18 = 0.54 ✓</p>
+<p class="ans">P(A∪B) = 0.72; P(exactly one) = 0.54</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L5. [6]</b> Two batsmen have the following records. Who is the more consistent scorer, and which distribution is more skewed?</p>
+<table>
+<tr><th></th><th class="c">Mean</th><th class="c">SD</th><th class="c">Mode</th></tr>
+<tr><td>A</td><td class="c">60</td><td class="c">9</td><td class="c">54</td></tr>
+<tr><td>B</td><td class="c">45</td><td class="c">6</td><td class="c">39</td></tr>
+</table>
+<div class="sol">
+<p class="work">CV: A = 9/60 × 100 = 15%,  B = 6/45 × 100 ≈ 13.3%
+Sk: A = (60 − 54)/9 = 0.67,  B = (45 − 39)/6 = 1.0</p>
+<p>Smaller CV ⇒ more consistent; larger positive Sk ⇒ more positively skewed.</p>
+<p class="ans">B is more consistent (13.3% &lt; 15%); B's distribution is more skewed (1.0 &gt; 0.67).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>L6. [4]</b> A bag has 4 red and 6 black balls. Two are drawn without replacement. Find P(both same colour).</p>
+<div class="sol">
+<p class="work">P(RR) = (4/10)(3/9) = 12/90
+P(BB) = (6/10)(5/9) = 30/90
+Same colour = 12/90 + 30/90 = 42/90 = 7/15</p>
+<p class="ans">P(both same colour) = 7/15</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Formula sheet and traps</h2>
+
+<table>
+<tr><th>Quantity</th><th>Formula</th></tr>
+<tr><td>Mean</td><td>x̄ = Σfx/Σf &nbsp; (Σx/n for raw data)</td></tr>
+<tr><td>Variance</td><td>σ² = Σ(x−x̄)²/n = Σx²/n − x̄²</td></tr>
+<tr><td>Standard deviation</td><td>σ = √σ²</td></tr>
+<tr><td>Coefficient of variation</td><td>CV = (σ/x̄) × 100%</td></tr>
+<tr><td>Karl Pearson skewness</td><td>Sk = (mean − mode)/SD = 3(mean − median)/SD</td></tr>
+<tr><td>Classical probability</td><td>P(A) = m/n (equally likely outcomes)</td></tr>
+<tr><td>Empirical probability</td><td>P(A) ≈ f/n (relative frequency)</td></tr>
+<tr><td>Addition law</td><td>P(A∪B) = P(A) + P(B) − P(A∩B)</td></tr>
+<tr><td>Multiplication law</td><td>P(A∩B) = P(A)P(B|A); = P(A)P(B) if independent</td></tr>
+<tr><td>Complement</td><td>P(A′) = 1 − P(A)</td></tr>
+<tr><td>Conditional</td><td>P(A|B) = P(A∩B)/P(B), P(B) ≠ 0</td></tr>
+<tr><td>Sample space counts</td><td>2 coins: 4; 3 coins: 8; 2 dice: 36; 52 cards</td></tr>
+</table>
+
+<div class="warn">
+<p><b>Trap 1 — using the addition law without subtracting the overlap.</b> P(A∪B) = P(A) + P(B) only for mutually exclusive events; otherwise the intersection is counted twice.</p>
+<p><b>Trap 2 — treating "without replacement" as independent.</b> The second draw's denominator changes: 5/8 then 4/7, not 5/8 twice.</p>
+<p><b>Trap 3 — forgetting to take the square root.</b> Variance is in squared units; a question asking for standard deviation wants σ, not σ².</p>
+<p><b>Trap 4 — dividing by n−1 without saying so.</b> State the convention. NEB's default in this unit is the population form (divide by n).</p>
+<p><b>Trap 5 — attaching a unit to CV or CV% twice.</b> CV is already a percentage; write CV = 20%, never "20% units".</p>
+<p><b>Trap 6 — calling independent events mutually exclusive.</b> The two ideas are different and, for non-impossible events, incompatible.</p>
+</div>
+
+<div class="tip"><b>Order of work that earns full marks.</b> Statistics: table → mean → deviations → squares → variance → SD → coefficient. Probability: define the sample space and count it, list the favourable outcomes, then apply the law. Writing the count n(S) explicitly is often the difference between 3 and 4 marks.</div>
+
+<p class="note">Mathematics XI · Unit 5 Statistics and Probability · NEB (Mat. 007). Coefficients are percentages or pure numbers — never write units.</p>
+</body>
+</html>
