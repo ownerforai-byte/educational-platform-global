@@ -7,16 +7,12 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Chemical industry: fertilizers, pharmaceuticals, dyes.",
-    "Fuel chemistry: combustion, engines.",
-    "Water treatment: purification, desalination.",
-    "Materials science: ceramics, composites.",
-    "# Stages in producing a new product\n\n## 1. Introduction\nChemical picture of **Stages in producing a new product** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Fundamentals of Applied Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Stages in producing a new product\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Stages in producing a new product — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Stages in producing a new product — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Stages in producing a new product — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Stages in producing a new product — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — From Idea to Product: The Stages of a New Chemical Product\n\nA new chemical product reaches the market through a fixed sequence: **idea → research (laboratory) → feasibility study → development (process design) → pilot plant → full-scale production → marketing and feedback.** Each stage answers a different question and costs an order of magnitude more than the last — the sequence is as much about money as chemistry.",
+    "## 2. Theorem Mirror\n\n- **1. Idea/need identification:** a market need or a laboratory observation; the cheapest stage and the most uncertain.\n- **2. Research (lab scale, grams):** proves the chemistry works — reaction, yield, purity; generates the patent basis.\n- **3. Feasibility study:** is it *worth* doing? Technical feasibility (raw materials, energy, equipment exists?) × economic feasibility (cost vs expected price × volume).\n- **4. Development/process design:** flowsheet, mass and energy balances, choice of route and conditions; grams → kilograms.\n- **5. Pilot plant (kilograms to tonnes):** a miniature plant that tests the process at intermediate scale — the risk-reduction step before committing capital.\n- **6. Full-scale production and marketing:** the plant is built; quality control and customer feedback loop back into improvement.",
+    "## 3. Deep Conceptual — Why the Pilot Plant Exists: Scale-Up Is Not Arithmetic\n\n- Doubling a beaker is arithmetic; doubling a reactor is not. On scale-up, **volume grows as L³ while surface area grows as L²** — heat generation outpaces heat removal, so a reaction safe in a flask can run away in a plant vessel. Mixing times lengthen; materials of construction face new corrosion regimes; distillation columns behave differently from lab columns.\n- **The pilot plant is where these surprises are bought cheaply:** it reproduces the *geometry and dynamics* (not just the stoichiometry) of the full plant at a fraction of the capital. Its product is not the chemical — it is the *design data* (heat-transfer coefficients, residence times, yield at real mixing) that make the full-scale design calculable. Skipping it is how companies lose plants.",
+    "## 4. Deep Conceptual — The Cost Ladder and the Kill Points\n\n- Each stage costs roughly an order of magnitude more than the previous: an idea is free, research is thousands, development is hundreds of thousands, a pilot plant is millions, a full plant is tens to hundreds of millions. **The economics of the sequence is option-buying:** each stage is a relatively cheap option on the next, and the feasibility study's real job is to *kill* bad projects before the expensive stages.\n- **Feedback is the seventh stage:** customer use and quality data feed back to research — the sequence is a loop, not a line; products that skip the loop (no post-launch improvement) lose to those that iterate.",
+    "## 5. Worked Example Types\n\n- **Type A — list and describe:** the stages in order with one sentence each.\n- **Type B — stage purpose:** what question each stage answers and what kills the project there.\n- **Type C — scale-up reasoning:** the L³/L² heat argument for why a pilot plant is needed.\n- **Type D — cost sequencing:** arrange stages by cost and justify the order-of-magnitude ladder.",
+    "## 6. Common Confusions\n\n**\"The pilot plant is a small production line\":** its output is design data, not product — production is incidental. **\"Feasibility is a formality\":** it is the stage designed to say no; a feasibility study that never kills a project is not doing its job."
   ],
   "confusion": [
     "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
@@ -57,89 +53,24 @@
   ],
   "bounds": [],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice identifying plant specimens to family level.",
-    "Practice describing reproductive structures of angiosperms."
+    "List the stages of producing a new product in order with one purpose each.",
+    "Explain why a reaction that is safe in the laboratory may be dangerous at plant scale.",
+    "State what a feasibility study must establish and what its \"no\" output means."
   ],
   "universalFacts": [
-    "answer pattern for \"Stages in producing a new product\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "Feedback from customers re-opens research - the stage sequence is a loop, not a line."
   ],
   "examples": [
-    "Urea: NH₂CONH₂ (fertilizer)",
-    "Aspirin: C₉H₈O₄ (pharmaceutical)"
+    "***The L^3/L^2 trap*** - a doubling of linear size gives 8x the heat generation but only 4x the cooling surface - the reason flask-safe reactions can run away in plant vessels."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice identifying plant specimens to family level."
+    "**NEB-style (6m): Describe the stages involved in producing a new chemical product, from idea to market.** — **1. Idea:** a market need or laboratory observation is identified. **2. Research (lab scale):** the chemistry is proven at gram scale — reaction route, yield, purity; patents filed. **3. Feasibility study:** both technical (are raw materials, energy, equipment available?) and economic (does expected price × volume exceed cost?) feasibility are assessed — this stage is designed to *kill* weak projects cheaply. **4. Development/process design:** the process flowsheet, mass and energy balances, choice of route, conditions and materials are fixed; scale moves to kilograms. **5. Pilot plant:** an intermediate-scale plant tests the real dynamics — heat transfer, mixing, materials — and produces the design data for the full plant. **6. Full-scale production and marketing:** the plant is built, quality control runs, and the product reaches the market. **Feedback:** customer and quality data loop back into research and improvement. **Deep point:** the stages are cost-ordered — each is an option on the next; naming the order *and* the purpose of each is what separates a list from an answer.",
+    "**NEB-style (6m): A reaction that proceeds safely in a 1-litre laboratory flask shows a runaway risk in a 10,000-litre plant reactor. Explain why using scaling arguments.** — **The geometric mismatch:** linear dimensions scale by factor k; **volume (and hence heat-generating reactant mass) grows as k³** while **vessel surface area (the heat-removal path through the jacket) grows only as k²**. For k = 21.5 (1 L → 10,000 L): volume ×10,000 but surface ×~460 — the heat generated per unit of cooling surface rises ~21-fold. **Consequences:** the same exothermic reaction that the flask's surface kept at temperature overwhelms the reactor's jacket; temperature rises, the reaction rate rises exponentially with temperature (Arrhenius), and the runaway cascade begins. **Contributing factors:** mixing time lengthens (local hot spots), and heat-transfer coefficients degrade with fouling. **Remedy:** the pilot plant measures the real heat-removal data; plant designs add external heat exchangers, semi-batch addition (dose the reactant in slowly), or dilution. **Deep point:** the L³/L² argument is the single most examinable fact of scale-up — it converts \"bigger is different\" from a slogan into arithmetic, and every control measure (semi-batch, external cooling) is a direct answer to it.",
+    "**NEB-style (5m): What is a pilot plant? Explain why it is built even though it produces too little product to be profitable.** — **Definition:** a small-scale version of the proposed production plant — typically producing kilograms to a few tonnes — built after process development and before the full-scale plant. **Its real product is information:** the pilot plant measures what the laboratory cannot — heat-transfer coefficients at plant geometry, mixing and residence-time behaviour, corrosion and materials performance, catalyst life under real cycling, and the yield actually achievable at scale. **Why not skip it:** the full plant costs tens of millions; a design error discovered at full scale is unfixable, while the same error discovered at pilot scale costs a fraction and is fixable. **Profitability is the wrong metric:** the pilot plant is capital spent on *risk reduction* — it converts unknowns into design data, which is exactly what the full-scale investment needs. **Deep point:** the pilot plant is the stage where the project's questions change from \"does the chemistry work?\" to \"does the *plant* work?\" — the shift from chemistry to engineering is the stage's whole purpose.",
+    "**NEB-style (6m): Arrange the stages of new-product production in order of increasing cost, and explain why the feasibility study is placed where it is.** — **Cost order:** idea (nearly free) → laboratory research (thousands — glassware, chemists' time) → feasibility study (thousands to tens of thousands — analysis, market survey) → development/process design (hundreds of thousands — engineers, pilot equipment design) → pilot plant (millions — construction, operation) → full-scale plant (tens to hundreds of millions). **Why feasibility sits third:** it is the last cheap stage — positioned immediately before the expensive engineering stages, its function is to evaluate technical × economic viability and *stop* the project if either fails. **The option logic:** each stage buys the right to proceed to the next; feasibility is the checkpoint where the option is exercised or abandoned — after it, every further stage is committed capital. **Deep point:** the placement is the economics: a \"no\" at feasibility costs weeks; the same \"no\" discovered after the pilot plant costs the pilot plant. The stage order is risk management expressed as a timeline."
   ],
   "keyPoints": [
-    "• Stages in producing a new product"
+    "Stages: idea -> research (grams) -> feasibility (technical x economic) -> development/process design -> pilot plant -> full production -> marketing + feedback loop. Each stage costs ~10x the previous - the sequence is option-buying, and feasibility exists to kill bad projects cheaply. Scale-up is not arithmetic: volume ~ L^3, surface ~ L^2 - heat removal falls behind generation; mixing and materials change too. The pilot plant's product is design data, not chemical."
   ],
   "mcqs": [
     {
@@ -153,26 +84,83 @@
     }
   ],
   "importantNotes": [
-    "Important note regarding 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact."
+    "NEB-style practice beyond the verified PYQs recorded on the manufactures rows (135-140)."
   ],
-  "examShortTricks": [],
+  "examShortTricks": [
+    "Name the six stages in order first, then elaborate - the ordered list is the skeleton of the full answer."
+  ],
   "importantConcepts": [
-    "Key concept 1 for 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact."
+    "The pilot plant buys the full-scale plant's surprises at pilot-plant prices."
   ],
   "importantTasks": [
     "Task for studying 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "formulas": [],
+  "formulas": [
+    "- Volume ∝ L³; surface ∝ L² ⟹ heat generation/removal ratio grows ∝ L on scale-up\n- Cost ladder: idea < research < development < pilot plant < full plant (each ~10×)"
+  ],
   "specialNotes": [],
-  "importantStatements": [],
-  "examNotes": [],
+  "importantStatements": [
+    "A feasibility study that never kills a project is not doing its job."
+  ],
+  "examNotes": [
+    "Include the feedback loop in the diagram - a straight-line answer misses the iteration mark."
+  ],
   "exercises": [],
   "visualization": {
     "type": "simulation",
     "component": "IndustrySim",
     "desc": "Industrial chemistry processes"
   },
-  "visualType": "chemical-industry"
+  "visualType": "chemical-industry",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — From Idea to Product: The Stages of a New Chemical Product\n\nA new chemical product reaches the market through a fixed sequence: **idea → research (laboratory) → feasibility study → development (process design) → pilot plant → full-scale production → marketing and feedback.** Each stage answers a different question and costs an order of magnitude more than the last — the sequence is as much about money as chemistry.",
+      "## 2. Theorem Mirror\n\n- **1. Idea/need identification:** a market need or a laboratory observation; the cheapest stage and the most uncertain.\n- **2. Research (lab scale, grams):** proves the chemistry works — reaction, yield, purity; generates the patent basis.\n- **3. Feasibility study:** is it *worth* doing? Technical feasibility (raw materials, energy, equipment exists?) × economic feasibility (cost vs expected price × volume).\n- **4. Development/process design:** flowsheet, mass and energy balances, choice of route and conditions; grams → kilograms.\n- **5. Pilot plant (kilograms to tonnes):** a miniature plant that tests the process at intermediate scale — the risk-reduction step before committing capital.\n- **6. Full-scale production and marketing:** the plant is built; quality control and customer feedback loop back into improvement.",
+      "## 3. Deep Conceptual — Why the Pilot Plant Exists: Scale-Up Is Not Arithmetic\n\n- Doubling a beaker is arithmetic; doubling a reactor is not. On scale-up, **volume grows as L³ while surface area grows as L²** — heat generation outpaces heat removal, so a reaction safe in a flask can run away in a plant vessel. Mixing times lengthen; materials of construction face new corrosion regimes; distillation columns behave differently from lab columns.\n- **The pilot plant is where these surprises are bought cheaply:** it reproduces the *geometry and dynamics* (not just the stoichiometry) of the full plant at a fraction of the capital. Its product is not the chemical — it is the *design data* (heat-transfer coefficients, residence times, yield at real mixing) that make the full-scale design calculable. Skipping it is how companies lose plants.",
+      "## 4. Deep Conceptual — The Cost Ladder and the Kill Points\n\n- Each stage costs roughly an order of magnitude more than the previous: an idea is free, research is thousands, development is hundreds of thousands, a pilot plant is millions, a full plant is tens to hundreds of millions. **The economics of the sequence is option-buying:** each stage is a relatively cheap option on the next, and the feasibility study's real job is to *kill* bad projects before the expensive stages.\n- **Feedback is the seventh stage:** customer use and quality data feed back to research — the sequence is a loop, not a line; products that skip the loop (no post-launch improvement) lose to those that iterate.",
+      "## 5. Worked Example Types\n\n- **Type A — list and describe:** the stages in order with one sentence each.\n- **Type B — stage purpose:** what question each stage answers and what kills the project there.\n- **Type C — scale-up reasoning:** the L³/L² heat argument for why a pilot plant is needed.\n- **Type D — cost sequencing:** arrange stages by cost and justify the order-of-magnitude ladder.",
+      "## 6. Common Confusions\n\n**\"The pilot plant is a small production line\":** its output is design data, not product — production is incidental. **\"Feasibility is a formality\":** it is the stage designed to say no; a feasibility study that never kills a project is not doing its job."
+    ],
+    "keyPoints": [
+      "Stages: idea -> research (grams) -> feasibility (technical x economic) -> development/process design -> pilot plant -> full production -> marketing + feedback loop. Each stage costs ~10x the previous - the sequence is option-buying, and feasibility exists to kill bad projects cheaply. Scale-up is not arithmetic: volume ~ L^3, surface ~ L^2 - heat removal falls behind generation; mixing and materials change too. The pilot plant's product is design data, not chemical."
+    ],
+    "importantConcepts": [
+      "The pilot plant buys the full-scale plant's surprises at pilot-plant prices."
+    ],
+    "examples": [
+      "***The L^3/L^2 trap*** - a doubling of linear size gives 8x the heat generation but only 4x the cooling surface - the reason flask-safe reactions can run away in plant vessels."
+    ],
+    "universalFacts": [
+      "Feedback from customers re-opens research - the stage sequence is a loop, not a line."
+    ],
+    "importantStatements": [
+      "A feasibility study that never kills a project is not doing its job."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the manufactures rows (135-140)."
+    ],
+    "examShortTricks": [
+      "Name the six stages in order first, then elaborate - the ordered list is the skeleton of the full answer."
+    ],
+    "examNotes": [
+      "Include the feedback loop in the diagram - a straight-line answer misses the iteration mark."
+    ],
+    "formulas": [
+      "- Volume ∝ L³; surface ∝ L² ⟹ heat generation/removal ratio grows ∝ L on scale-up\n- Cost ladder: idea < research < development < pilot plant < full plant (each ~10×)"
+    ],
+    "practice": [
+      "List the stages of producing a new product in order with one purpose each.",
+      "Explain why a reaction that is safe in the laboratory may be dangerous at plant scale.",
+      "State what a feasibility study must establish and what its \"no\" output means."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Describe the stages involved in producing a new chemical product, from idea to market.** — **1. Idea:** a market need or laboratory observation is identified. **2. Research (lab scale):** the chemistry is proven at gram scale — reaction route, yield, purity; patents filed. **3. Feasibility study:** both technical (are raw materials, energy, equipment available?) and economic (does expected price × volume exceed cost?) feasibility are assessed — this stage is designed to *kill* weak projects cheaply. **4. Development/process design:** the process flowsheet, mass and energy balances, choice of route, conditions and materials are fixed; scale moves to kilograms. **5. Pilot plant:** an intermediate-scale plant tests the real dynamics — heat transfer, mixing, materials — and produces the design data for the full plant. **6. Full-scale production and marketing:** the plant is built, quality control runs, and the product reaches the market. **Feedback:** customer and quality data loop back into research and improvement. **Deep point:** the stages are cost-ordered — each is an option on the next; naming the order *and* the purpose of each is what separates a list from an answer.",
+      "**NEB-style (6m): A reaction that proceeds safely in a 1-litre laboratory flask shows a runaway risk in a 10,000-litre plant reactor. Explain why using scaling arguments.** — **The geometric mismatch:** linear dimensions scale by factor k; **volume (and hence heat-generating reactant mass) grows as k³** while **vessel surface area (the heat-removal path through the jacket) grows only as k²**. For k = 21.5 (1 L → 10,000 L): volume ×10,000 but surface ×~460 — the heat generated per unit of cooling surface rises ~21-fold. **Consequences:** the same exothermic reaction that the flask's surface kept at temperature overwhelms the reactor's jacket; temperature rises, the reaction rate rises exponentially with temperature (Arrhenius), and the runaway cascade begins. **Contributing factors:** mixing time lengthens (local hot spots), and heat-transfer coefficients degrade with fouling. **Remedy:** the pilot plant measures the real heat-removal data; plant designs add external heat exchangers, semi-batch addition (dose the reactant in slowly), or dilution. **Deep point:** the L³/L² argument is the single most examinable fact of scale-up — it converts \"bigger is different\" from a slogan into arithmetic, and every control measure (semi-batch, external cooling) is a direct answer to it.",
+      "**NEB-style (5m): What is a pilot plant? Explain why it is built even though it produces too little product to be profitable.** — **Definition:** a small-scale version of the proposed production plant — typically producing kilograms to a few tonnes — built after process development and before the full-scale plant. **Its real product is information:** the pilot plant measures what the laboratory cannot — heat-transfer coefficients at plant geometry, mixing and residence-time behaviour, corrosion and materials performance, catalyst life under real cycling, and the yield actually achievable at scale. **Why not skip it:** the full plant costs tens of millions; a design error discovered at full scale is unfixable, while the same error discovered at pilot scale costs a fraction and is fixable. **Profitability is the wrong metric:** the pilot plant is capital spent on *risk reduction* — it converts unknowns into design data, which is exactly what the full-scale investment needs. **Deep point:** the pilot plant is the stage where the project's questions change from \"does the chemistry work?\" to \"does the *plant* work?\" — the shift from chemistry to engineering is the stage's whole purpose.",
+      "**NEB-style (6m): Arrange the stages of new-product production in order of increasing cost, and explain why the feasibility study is placed where it is.** — **Cost order:** idea (nearly free) → laboratory research (thousands — glassware, chemists' time) → feasibility study (thousands to tens of thousands — analysis, market survey) → development/process design (hundreds of thousands — engineers, pilot equipment design) → pilot plant (millions — construction, operation) → full-scale plant (tens to hundreds of millions). **Why feasibility sits third:** it is the last cheap stage — positioned immediately before the expensive engineering stages, its function is to evaluate technical × economic viability and *stop* the project if either fails. **The option logic:** each stage buys the right to proceed to the next; feasibility is the checkpoint where the option is exercised or abandoned — after it, every further stage is committed capital. **Deep point:** the placement is the economics: a \"no\" at feasibility costs weeks; the same \"no\" discovered after the pilot plant costs the pilot plant. The stage order is risk management expressed as a timeline."
+    ]
+  },
+  "summary": "A new chemical product climbs a fixed ladder — idea, research, feasibility, development, pilot plant, full production, marketing — with feedback closing the loop. The ladder's economics is option-buying: each stage costs ~10× the last, and the feasibility study exists to kill weak projects while they are still cheap. The pilot plant is the hinge: scale-up is not arithmetic (volume ∝ L³, cooling ∝ L²), and the pilot's product is the design data that makes the full plant calculable — bought at pilot prices instead of plant prices."
 }

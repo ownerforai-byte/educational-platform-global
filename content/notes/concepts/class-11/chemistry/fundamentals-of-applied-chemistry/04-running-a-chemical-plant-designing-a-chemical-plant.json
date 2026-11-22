@@ -7,18 +7,12 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Running a chemical plant; designing a chemical plant — Fundamentals of Applied Chemistry, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: running a chemical plant, designing a chemical plant · one worked example · one misconception each.",
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "**Designing a chemical plant.** one-line definition + one-line exam use.",
-    "# Running a chemical plant; designing a chemical plant\n\n## 1. Introduction\nChemical picture of **Running a chemical plant; designing a chemical plant** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Fundamentals of Applied Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Running a chemical plant\n### designing a chemical plant\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Running a chemical plant; designing a chemical plant — plant or apparatus flow with conditions labelled (authored SVG)\n- **D2** — Running a chemical plant; designing a chemical plant — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Running a chemical plant; designing a chemical plant — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Running a chemical plant; designing a chemical plant — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Designing and Running a Chemical Plant\n\nA chemical plant is a **network of unit operations** — reactors, absorbers, distillation columns, heat exchangers, filters, pumps — arranged by a process flowsheet. Designing one means choosing the operations, sizing them by mass and energy balances, selecting materials, and engineering safety in; running one means keeping that network at its designed operating point, safely, for years.",
+    "## 2. Theorem Mirror\n\n- **Design sequence:** (1) process flowsheet — the reaction route drawn as connected unit operations; (2) mass balance — atoms in = atoms out for every unit; (3) energy balance — heat duties for every exchanger, reactor, column; (4) equipment selection and sizing; (5) materials of construction (corrosion, temperature, pressure); (6) safety engineering (relief, containment, control interlocks); (7) plant layout and siting.\n- **Unit operations:** physical steps (distillation, filtration, absorption, drying, crystallisation, heat exchange) — distinguished from *unit processes* (chemical transformations: nitration, sulphonation, hydrogenation).\n- **Running the plant:** steady-state monitoring (flow, T, P, composition), quality control, scheduled maintenance, safety drills, log-keeping, and continuous optimisation.\n- **Siting factors:** raw material and energy supply, water, transport links, labour, waste-disposal capacity, distance from population, climate.",
+    "## 3. Deep Conceptual — The Plant as a Balanced Network, Not a Machine\n\n- The flowsheet's discipline is the **balance**: every unit operation obeys \"in = out\" for mass and energy, and the design arithmetic is these balances applied unit by unit. A plant is therefore *verifiable on paper before it exists* — the mass balance of the whole plant is the sum of the units', and any discrepancy in operation (unaccounted loss) is a leak, a side reaction, or an instrument error — diagnosable by the balance itself.\n- **Unit operation vs unit process is the design's grammar:** chemical transformations set *what* must happen; unit operations set *how* it is arranged — the reactor is surrounded by the physical machinery that feeds, separates, heats, and recycles. Most of a plant's volume and cost is unit operations, not reaction — the chemistry is done in a few cubic metres; the separations occupy the rest.",
+    "## 4. Deep Conceptual — Safety Is Designed In, Not Bolted On\n\n- The design sequence places safety after materials but *before layout* deliberately: relief valves, containment, interlocks, and inherently safer choices (less hazardous solvent, milder conditions, smaller inventory) are cheapest at the flowsheet stage and impossible to retrofit cheaply. **Inherent safety** — minimise inventory of hazardous material, substitute, moderate conditions, simplify — outranks protective equipment in the hierarchy.\n- **Running is the design's continuation:** a plant at steady state is a balance being satisfied every second; operators watch the variables whose drift signals balance failure (temperature creep, pressure rise, composition shift). The log-book is the plant's memory and the accident investigation's first document.",
+    "## 5. Worked Example Types\n\n- **Type A — flowsheet reading:** identify unit operations and unit processes in a given scheme.\n- **Type B — mass balance arithmetic:** simple in–out with recycle.\n- **Type C — siting argument:** justify a plant location against the factor list.\n- **Type D — safety hierarchy:** order protective measures by the inherent-safety principle.",
+    "## 6. Common Confusions\n\n**\"Unit operation and unit process are synonyms\":** operations are physical, processes are chemical — distillation vs nitration. **\"Safety means alarms\":** alarms are the last layer; inherent safety (less hazardous inventory) is the first."
   ],
   "confusion": [],
   "bounds": [
@@ -27,22 +21,25 @@
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  "practice": [
+    "Draw a simple flowsheet for ammonia synthesis and label the unit operations.",
+    "Classify a list of plant steps into unit operations and unit processes.",
+    "List the siting factors for a new fertiliser plant and rank the top three."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Inherent safety outranks protective equipment: the safest plant is the one with the least hazard to protect against."
+  ],
+  "examples": [
+    "***The separations share*** - the reactor is a few cubic metres; the distillation train, exchangers and filters occupy the rest - most of the plant is physical, not chemical."
+  ],
   "practiceQuestions": [
-    "Q. List four factors for selecting a plant site. (2 marks) — raw material, power, water, transport, labour, waste disposal (any four).",
-    "Q. Why is a flow sheet prepared before construction? (1 mark) — it fixes the process sequence, balances and equipment list."
+    "**NEB-style (6m): Distinguish unit operations from unit processes, giving three examples of each, and state which occupies most of a plant's volume.** — **Unit operations (physical):** steps that change physical state or separation without chemical change — **distillation** (separation by volatility), **filtration** (solid–liquid separation), **absorption** (gas into liquid, e.g. SO₂ scrubbing); also drying, crystallisation, heat exchange. **Unit processes (chemical):** steps that transform substances by reaction — **nitration** (HNO₃/H₂SO₄ onto the ring), **hydrogenation** (H₂/Ni addition), **sulphonation** (SO₃ onto the ring); also oxidation, halogenation. **Volume:** unit operations dominate — a reactor may occupy a few cubic metres while the distillation columns, heat exchangers, absorbers, filters, pumps and tanks that feed, separate and recycle around it occupy the great majority of the plant's volume, cost and control loops. **Deep point:** the distinction is the design's grammar — the route's chemistry (unit processes) fixes *what* equipment is needed; the operations fix *how it is arranged*, and since separations usually outnumber reactions, the plant engineer's work is mostly physical, not chemical.",
+    "**NEB-style (6m): A mixer receives 100 kg/h of solution containing 20% salt and evaporates water to produce a 50% salt solution. Find the product rate and the water evaporated per hour.** — **Salt balance (salt is conserved):** in: 100 × 0.20 = 20 kg/h salt. Product P at 50% salt: 0.50 P = 20 ⟹ **P = 40 kg/h**. **Water evaporated:** total mass balance: 100 = P + W ⟹ W = 100 − 40 = **60 kg/h**. **Check by water:** in: 80 kg; out in product: 40 × 0.50 = 20 kg; evaporated 80 − 20 = 60 ✓. **Deep point:** the two-balances method (conserved component + total) solves every simple evaporation/mixing problem — pick the component that passes through unchanged, fix its flow, and the total balance hands over the removed stream; the check is free and confirms both numbers.",
+    "**NEB-style (5m): List the factors governing the siting of a chemical plant and explain why \"distance from population\" conflicts with \"transport links\".** — **Factors:** (1) raw material and energy supply; (2) water availability (cooling and process); (3) transport links — road, rail, port for feed-in and product-out; (4) labour availability; (5) waste-disposal capacity (effluent, emissions); (6) distance from dense population (safety buffer); (7) climate and natural-hazard exposure; (8) land cost and regulations. **The conflict:** transport links and labour concentrate *near* cities, while safety and environmental buffers demand *distance* from them — every siting decision is a compromise along this axis, typically resolved by industrial zones: close enough for logistics, far enough for the hazard footprint, with the buffer zoned for non-residential use. **Deep point:** siting is the design stage where economics and safety meet in one map — ranking the factors honestly (raw materials and water usually first for a chemical plant) matters more than listing them all.",
+    "**NEB-style (6m): State the hierarchy of safety measures for a plant handling a toxic gas, from most to least preferred, and justify the ordering.** — **1. Inherent safety (most preferred):** eliminate or minimise the hazard itself — use a less toxic solvent, reduce the inventory of gas held on site, moderate the temperature/pressure so less energy is available for release. **2. Engineered (passive/active) protection:** contain what cannot be eliminated — sealed systems, relief valves to scrubbers, double-walled tanks, automatic interlocks that shut down on drift. **3. Procedural controls:** operating procedures, permits to work, training, maintenance schedules. **4. Alarms and emergency response (least preferred):** gas detectors, alarms, evacuation plans — they act *after* the release has begun. **Justification:** the hierarchy is ordered by *reliability* — inherent safety cannot fail (the hazard is absent), engineered barriers fail rarely and passively, procedures depend on human compliance, alarms depend on detection plus human response under stress. **Deep point:** each layer is cheaper to install and more certain to work than the next; the exam question \"why is inherent safety first?\" is answered by that single sentence — you cannot have a release of what you never stored."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- Mass balance: Σ inputs = Σ outputs + accumulation (= 0 at steady state)\n- Energy balance: Σ heat in = Σ heat out + duty removed/added"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -50,10 +47,9 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Running a chemical plant",
-    "• Designing a chemical plant"
+    "Design sequence: flowsheet -> mass balance -> energy balance -> equipment sizing -> materials -> safety -> layout/siting. Unit operations (physical: distillation, filtration, absorption, drying) vs unit processes (chemical: nitration, hydrogenation). Most plant volume and cost is separations, not reaction. Safety hierarchy: inherent safety (less inventory, substitution, milder conditions) before engineered protections before alarms. Running = keeping the balance at steady state; the log-book is the plant's memory. Siting: materials, energy, water, transport, labour, waste, population distance."
   ],
-  "summary": "Running a chemical plant; designing a chemical plant (Fundamentals of Applied Chemistry, Chemistry, class-11-notes) covers Running a chemical plant, designing a chemical plant. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "A chemical plant is a network of unit operations arranged around a few unit processes, sized by mass and energy balances that make it verifiable on paper and diagnosable in operation. Design runs flowsheet → balances → equipment → materials → safety → siting, with inherent safety placed before engineered protection and alarms — ordered by reliability, not gadgetry. Running the plant is keeping the balance at steady state; most of its volume is separations, not reaction, and every siting decision negotiates the transport-versus-population compromise.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Running a chemical plant; designing a chemical plant\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -66,8 +62,66 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Design sequence: market survey → site selection (raw materials, power, water, transport, labour, waste disposal) → process flow sheet → material & energy balance → safety/environment clearance.",
-    "Trick 2: Running the plant: quality control of feed and product, maintenance schedule, pollution control, worker safety (PPE) — four duties for the 2-mark answer.",
-    "Trick 3: 'Site near raw material and market' — quote the twin criterion for the location mark."
+    "Sort every step into unit operation or unit process first - the classification organises the whole answer."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Designing and Running a Chemical Plant\n\nA chemical plant is a **network of unit operations** — reactors, absorbers, distillation columns, heat exchangers, filters, pumps — arranged by a process flowsheet. Designing one means choosing the operations, sizing them by mass and energy balances, selecting materials, and engineering safety in; running one means keeping that network at its designed operating point, safely, for years.",
+      "## 2. Theorem Mirror\n\n- **Design sequence:** (1) process flowsheet — the reaction route drawn as connected unit operations; (2) mass balance — atoms in = atoms out for every unit; (3) energy balance — heat duties for every exchanger, reactor, column; (4) equipment selection and sizing; (5) materials of construction (corrosion, temperature, pressure); (6) safety engineering (relief, containment, control interlocks); (7) plant layout and siting.\n- **Unit operations:** physical steps (distillation, filtration, absorption, drying, crystallisation, heat exchange) — distinguished from *unit processes* (chemical transformations: nitration, sulphonation, hydrogenation).\n- **Running the plant:** steady-state monitoring (flow, T, P, composition), quality control, scheduled maintenance, safety drills, log-keeping, and continuous optimisation.\n- **Siting factors:** raw material and energy supply, water, transport links, labour, waste-disposal capacity, distance from population, climate.",
+      "## 3. Deep Conceptual — The Plant as a Balanced Network, Not a Machine\n\n- The flowsheet's discipline is the **balance**: every unit operation obeys \"in = out\" for mass and energy, and the design arithmetic is these balances applied unit by unit. A plant is therefore *verifiable on paper before it exists* — the mass balance of the whole plant is the sum of the units', and any discrepancy in operation (unaccounted loss) is a leak, a side reaction, or an instrument error — diagnosable by the balance itself.\n- **Unit operation vs unit process is the design's grammar:** chemical transformations set *what* must happen; unit operations set *how* it is arranged — the reactor is surrounded by the physical machinery that feeds, separates, heats, and recycles. Most of a plant's volume and cost is unit operations, not reaction — the chemistry is done in a few cubic metres; the separations occupy the rest.",
+      "## 4. Deep Conceptual — Safety Is Designed In, Not Bolted On\n\n- The design sequence places safety after materials but *before layout* deliberately: relief valves, containment, interlocks, and inherently safer choices (less hazardous solvent, milder conditions, smaller inventory) are cheapest at the flowsheet stage and impossible to retrofit cheaply. **Inherent safety** — minimise inventory of hazardous material, substitute, moderate conditions, simplify — outranks protective equipment in the hierarchy.\n- **Running is the design's continuation:** a plant at steady state is a balance being satisfied every second; operators watch the variables whose drift signals balance failure (temperature creep, pressure rise, composition shift). The log-book is the plant's memory and the accident investigation's first document.",
+      "## 5. Worked Example Types\n\n- **Type A — flowsheet reading:** identify unit operations and unit processes in a given scheme.\n- **Type B — mass balance arithmetic:** simple in–out with recycle.\n- **Type C — siting argument:** justify a plant location against the factor list.\n- **Type D — safety hierarchy:** order protective measures by the inherent-safety principle.",
+      "## 6. Common Confusions\n\n**\"Unit operation and unit process are synonyms\":** operations are physical, processes are chemical — distillation vs nitration. **\"Safety means alarms\":** alarms are the last layer; inherent safety (less hazardous inventory) is the first."
+    ],
+    "keyPoints": [
+      "Design sequence: flowsheet -> mass balance -> energy balance -> equipment sizing -> materials -> safety -> layout/siting. Unit operations (physical: distillation, filtration, absorption, drying) vs unit processes (chemical: nitration, hydrogenation). Most plant volume and cost is separations, not reaction. Safety hierarchy: inherent safety (less inventory, substitution, milder conditions) before engineered protections before alarms. Running = keeping the balance at steady state; the log-book is the plant's memory. Siting: materials, energy, water, transport, labour, waste, population distance."
+    ],
+    "importantConcepts": [
+      "The mass balance makes the plant verifiable on paper - and makes operational losses diagnosable in operation."
+    ],
+    "examples": [
+      "***The separations share*** - the reactor is a few cubic metres; the distillation train, exchangers and filters occupy the rest - most of the plant is physical, not chemical."
+    ],
+    "universalFacts": [
+      "Inherent safety outranks protective equipment: the safest plant is the one with the least hazard to protect against."
+    ],
+    "importantStatements": [
+      "A plant at steady state is a mass and energy balance being satisfied every second."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the manufactures rows (135-140)."
+    ],
+    "examShortTricks": [
+      "Sort every step into unit operation or unit process first - the classification organises the whole answer."
+    ],
+    "examNotes": [
+      "Quote the safety hierarchy in order (inherent -> engineered -> procedural -> alarms) - the order is the mark."
+    ],
+    "formulas": [
+      "- Mass balance: Σ inputs = Σ outputs + accumulation (= 0 at steady state)\n- Energy balance: Σ heat in = Σ heat out + duty removed/added"
+    ],
+    "practice": [
+      "Draw a simple flowsheet for ammonia synthesis and label the unit operations.",
+      "Classify a list of plant steps into unit operations and unit processes.",
+      "List the siting factors for a new fertiliser plant and rank the top three."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (6m): Distinguish unit operations from unit processes, giving three examples of each, and state which occupies most of a plant's volume.** — **Unit operations (physical):** steps that change physical state or separation without chemical change — **distillation** (separation by volatility), **filtration** (solid–liquid separation), **absorption** (gas into liquid, e.g. SO₂ scrubbing); also drying, crystallisation, heat exchange. **Unit processes (chemical):** steps that transform substances by reaction — **nitration** (HNO₃/H₂SO₄ onto the ring), **hydrogenation** (H₂/Ni addition), **sulphonation** (SO₃ onto the ring); also oxidation, halogenation. **Volume:** unit operations dominate — a reactor may occupy a few cubic metres while the distillation columns, heat exchangers, absorbers, filters, pumps and tanks that feed, separate and recycle around it occupy the great majority of the plant's volume, cost and control loops. **Deep point:** the distinction is the design's grammar — the route's chemistry (unit processes) fixes *what* equipment is needed; the operations fix *how it is arranged*, and since separations usually outnumber reactions, the plant engineer's work is mostly physical, not chemical.",
+      "**NEB-style (6m): A mixer receives 100 kg/h of solution containing 20% salt and evaporates water to produce a 50% salt solution. Find the product rate and the water evaporated per hour.** — **Salt balance (salt is conserved):** in: 100 × 0.20 = 20 kg/h salt. Product P at 50% salt: 0.50 P = 20 ⟹ **P = 40 kg/h**. **Water evaporated:** total mass balance: 100 = P + W ⟹ W = 100 − 40 = **60 kg/h**. **Check by water:** in: 80 kg; out in product: 40 × 0.50 = 20 kg; evaporated 80 − 20 = 60 ✓. **Deep point:** the two-balances method (conserved component + total) solves every simple evaporation/mixing problem — pick the component that passes through unchanged, fix its flow, and the total balance hands over the removed stream; the check is free and confirms both numbers.",
+      "**NEB-style (5m): List the factors governing the siting of a chemical plant and explain why \"distance from population\" conflicts with \"transport links\".** — **Factors:** (1) raw material and energy supply; (2) water availability (cooling and process); (3) transport links — road, rail, port for feed-in and product-out; (4) labour availability; (5) waste-disposal capacity (effluent, emissions); (6) distance from dense population (safety buffer); (7) climate and natural-hazard exposure; (8) land cost and regulations. **The conflict:** transport links and labour concentrate *near* cities, while safety and environmental buffers demand *distance* from them — every siting decision is a compromise along this axis, typically resolved by industrial zones: close enough for logistics, far enough for the hazard footprint, with the buffer zoned for non-residential use. **Deep point:** siting is the design stage where economics and safety meet in one map — ranking the factors honestly (raw materials and water usually first for a chemical plant) matters more than listing them all.",
+      "**NEB-style (6m): State the hierarchy of safety measures for a plant handling a toxic gas, from most to least preferred, and justify the ordering.** — **1. Inherent safety (most preferred):** eliminate or minimise the hazard itself — use a less toxic solvent, reduce the inventory of gas held on site, moderate the temperature/pressure so less energy is available for release. **2. Engineered (passive/active) protection:** contain what cannot be eliminated — sealed systems, relief valves to scrubbers, double-walled tanks, automatic interlocks that shut down on drift. **3. Procedural controls:** operating procedures, permits to work, training, maintenance schedules. **4. Alarms and emergency response (least preferred):** gas detectors, alarms, evacuation plans — they act *after* the release has begun. **Justification:** the hierarchy is ordered by *reliability* — inherent safety cannot fail (the hazard is absent), engineered barriers fail rarely and passively, procedures depend on human compliance, alarms depend on detection plus human response under stress. **Deep point:** each layer is cheaper to install and more certain to work than the next; the exam question \"why is inherent safety first?\" is answered by that single sentence — you cannot have a release of what you never stored."
+    ]
+  },
+  "importantConcepts": [
+    "The mass balance makes the plant verifiable on paper - and makes operational losses diagnosable in operation."
+  ],
+  "importantStatements": [
+    "A plant at steady state is a mass and energy balance being satisfied every second."
+  ],
+  "importantNotes": [
+    "NEB-style practice beyond the verified PYQs recorded on the manufactures rows (135-140)."
+  ],
+  "examNotes": [
+    "Quote the safety hierarchy in order (inherent -> engineered -> procedural -> alarms) - the order is the mark."
   ]
 }

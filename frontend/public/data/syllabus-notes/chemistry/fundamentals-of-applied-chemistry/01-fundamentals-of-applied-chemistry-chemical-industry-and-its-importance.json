@@ -7,19 +7,12 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "Chemical industry: fertilizers, pharmaceuticals, dyes.",
-    "Fuel chemistry: combustion, engines.",
-    "Water treatment: purification, desalination.",
-    "Materials science: ceramics, composites.",
-    "# Fundamentals of Applied Chemistry: chemical industry and its importance\n\n## 1. Introduction\nChemical picture of **Fundamentals of Applied Chemistry** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Fundamentals of Applied Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Fundamentals of Applied Chemistry: chemical industry and its importance\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Fundamentals of Applied Chemistry — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Fundamentals of Applied Chemistry — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Fundamentals of Applied Chemistry — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Fundamentals of Applied Chemistry — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Chemical Industry: What It Is and Why It Matters\n\nThe chemical industry converts raw materials — minerals, crude oil, biomass, air, water — into useful products by chemical transformation. It is the *upstream supplier to nearly every other industry*: fertilisers feed agriculture, polymers feed packaging and textiles, medicinals feed health care, cement and metals feed construction. Its importance is measured in employment, value addition, exports, and the fact that no modern sector runs without it.",
+    "## 2. Theorem Mirror\n\n- **Definition:** the industry whose primary activity is the large-scale chemical conversion of raw materials into products with higher value.\n- **Classification by scale and value:** heavy chemicals (bulk, cheap, tonnage — sulphuric acid, ammonia, caustic soda); fine/specialty chemicals (small volume, high value — pharmaceuticals, dyes, reagents); consumer products (soaps, paints, fertilisers).\n- **Importance chain:** agriculture (fertilisers, pesticides) ⟶ food; textiles (fibres, dyes); construction (cement, paints, plastics); health (pharmaceuticals); energy (refining, petrochemicals); exports and employment.\n- **The conversion principle:** value is created by transformation — sulphuric acid costs little per kilo yet multiplies into nearly every manufactured good (the \"barometer of industry\").",
+    "## 3. Deep Conceptual — Value Is Created at Each Transformation Step\n\n- Raw ore is worth little; the metal extracted from it is worth more; the alloy shaped from the metal more still. The chemical industry's economic function is precisely this ladder: each step consumes energy, knowledge, and capital, and each step adds value disproportionate to its mass. **Sulphuric acid is the classic witness** — a cheap commodity whose national consumption level tracks a country's industrial development, because it touches fertilisers (phosphoric acid), steel (pickling), textiles, and petrochemicals at once.\n- **Why \"heavy\" vs \"fine\" is an economic split, not a chemical one:** heavy chemicals compete on cost per tonne (continuous plants, economies of scale, catalysts); fine chemicals compete on efficacy per gram (batch plants, purity, patents). The same flask-scale reaction may belong to both worlds — the economics, not the chemistry, decides the plant.",
+    "## 4. Deep Conceptual — The Industry as the Economy's Multiplier\n\n- Every tonne of fertiliser multiplies into grain; every kilo of polymer multiplies into packaging, pipes, textiles; every drug molecule multiplies into treated patients. The chemical industry's importance is best stated as a *multiplier*: it is rarely the final product's brand, but it is present in the supply chain of almost everything.\n- **The dependency cuts both ways:** the industry consumes the economy's energy and feedstocks (petrochemicals ≈ a large fraction of oil use) and generates its characteristic environmental burdens — which is why the modern syllabus pairs \"importance\" with \"environmental impact\" (row 134): the multiplier and the footprint are the same coin.",
+    "## 5. Worked Example Types\n\n- **Type A — define and classify:** heavy vs fine vs consumer chemicals with examples.\n- **Type B — importance argument:** trace one product's multiplier through three downstream industries.\n- **Type C — the barometer argument:** why sulphuric acid consumption indicates industrialisation.\n- **Type D — value ladder:** raw material → intermediate → product with value added at each step.",
+    "## 6. Common Confusions\n\n**\"Chemical industry means laboratories\":** it means plants — tonnage, reactors, distillation columns; the laboratory is where the chemistry is *discovered*, not made. **\"Fine chemicals are purer, therefore heavier\":** the split is by volume and value, not purity alone."
   ],
   "confusion": [
     "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
@@ -61,91 +54,23 @@
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Trace the multiplier of ammonium sulphate fertiliser through two downstream sectors.",
+    "Explain why sulphuric acid consumption is called the barometer of industrialisation."
   ],
   "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+    "Every modern sector - food, clothing, shelter, health - sits downstream of at least one chemical process."
   ],
   "examples": [
-    "Urea: NH₂CONH₂ (fertilizer)",
-    "Aspirin: C₉H₈O₄ (pharmaceutical)"
+    "***The barometer*** - national sulphuric acid consumption tracks industrial development: one cheap commodity, four downstream industries."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB-style (5m): Define the chemical industry and distinguish heavy chemicals from fine chemicals, giving two examples of each.** — **Definition:** the industry that converts raw materials (minerals, crude oil, air, water, biomass) into useful products by large-scale chemical transformation, adding value at each step. **Heavy chemicals:** produced and consumed in bulk (tonnes), low unit price, compete on cost — continuous plants, economies of scale; examples: **sulphuric acid** (~200 Mt/yr globally), **ammonia** (fertiliser feedstock); also caustic soda, cement. **Fine/specialty chemicals:** produced in small volumes, high unit price, compete on performance and purity — batch plants, quality control; examples: **pharmaceuticals** (aspirin, paracetamol), **dyes and pigments**; also agrochemicals, reagents. **Deep point:** the split is economic, not chemical — the same esterification is fine-chemistry in a flavour lab and heavy-chemistry in a biodiesel plant; volume and value per unit, not the reaction, assign the class.",
+    "**NEB-style (6m): \"The chemical industry is the economy's multiplier, not its showcase.\" Explain this statement with two worked examples.** — **Meaning:** chemical products are rarely the consumer's final purchase, yet they enter the supply chain of nearly every final good — the industry's importance is upstream and multiplied. **Example 1 — fertiliser:** ammonia (Haber) → ammonium sulphate/urea → cereal yield increase → food security; the fertiliser's value is multiplied through every downstream food product. **Example 2 — styrene:** benzene + ethene → ethylbenzene → styrene → polystyrene → packaging, insulation, disposable ware; one petrochemical chain multiplies into a consumer goods sector. **Employment and exports follow the same logic:** each plant supports logistics, engineering, and export revenue beyond its gate. **Deep point:** the multiplier framing also explains the industry's political visibility — a disruption in one commodity (say, ammonia) propagates through agriculture within a season, which is why fertiliser supply is treated as strategic, not commercial.",
+    "**NEB-style (5m): Explain why per-capita consumption of sulphuric acid is used as an indicator of a country's industrial development.** — **Reach:** sulphuric acid is the highest-volume commodity chemical and touches an unmatched range of downstream processes: phosphate fertiliser manufacture (H₂SO₄ + rock phosphate), steel pickling (oxide removal), petroleum refining (alkylation), textiles, detergents (sulphonation), batteries, and titanium dioxide pigment. **Logic:** a country that consumes much H₂SO₄ is necessarily running several of these industries simultaneously — the consumption figure aggregates agriculture, metals, refining, and consumer-goods production into one number. **Cheapness reinforces it:** because it is cheap, it is bought in proportion to genuine need, not speculation — the number tracks real activity. **Deep point:** an indicator must be both *widespread* and *un-substitutable* to work — sulphuric acid satisfies both; the \"barometer\" is a supply-chain argument dressed as a statistic, and saying so is the understanding mark.",
+    "**NEB-style (6m): A new country wants to build its first chemical industry. Argue which should be built first - a heavy-chemical plant or a fine-chemical plant - and justify with the economics of each.** — **Case for heavy first:** heavy chemicals (ammonia/urea for agriculture, chlor-alkali for soap and water treatment, sulphuric acid for fertiliser and mining) supply the *domestic* needs of a developing economy — agriculture and construction demand them immediately; continuous plants scale to national demand and build the infrastructure (power, water, rail, skilled operators) that everything else reuses. **Case for fine first:** low capital cost, high value per tonne, exportable without heavy infrastructure — but they need trained chemists, regulatory quality systems, and a market niche. **Verdict:** for a developing economy, **heavy chemicals first** — the demand is domestic and immediate, the multiplier is largest (food, construction), and the infrastructure built serves the fine-chemical phase later. **Deep point:** the sequencing argument is the industrialisation pattern history actually shows — commodity chemicals before specialties, substitution of imports before export of high-value goods; the answer is economic reasoning, not chemistry preference, which is exactly what the question tests."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- Value added = value of product − value of inputs (raw materials, energy)\n- Heavy chemicals: ~tonne scale, low unit price; fine chemicals: ~kg scale, high unit price"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -153,8 +78,7 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Fundamentals of Applied Chemistry: chemical industry",
-    "• Its importance"
+    "Chemical industry: large-scale conversion of raw materials into higher-value products. Classes: heavy (bulk, cheap: H2SO4, NH3, NaOH), fine/specialty (small volume, high value: pharma, dyes), consumer (soaps, fertilisers). Importance: agriculture, textiles, construction, health, energy, employment, exports - the economy's multiplier. Sulphuric acid consumption is the industrial barometer. Heavy competes per tonne (continuous plants); fine competes per gram (batch plants) - economics, not chemistry, picks the plant."
   ],
   "mcqs": [
     {
@@ -168,11 +92,13 @@
     }
   ],
   "importantNotes": [
-    "Important note regarding 01 fundamentals of applied chemistry."
+    "NEB-style practice beyond the verified PYQs recorded on the manufactures rows (135-140)."
   ],
-  "examShortTricks": [],
+  "examShortTricks": [
+    "Answer \"importance\" questions by industry sector with one example each - the sector list is the marks map."
+  ],
   "importantConcepts": [
-    "Key concept 1 for 01 fundamentals of applied chemistry."
+    "Value is created at each transformation step - the industry's function is the value ladder, not the molecule."
   ],
   "importantTasks": [
     "Task for studying 01 fundamentals of applied chemistry."
@@ -180,13 +106,65 @@
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "specialNotes": [],
-  "importantStatements": [],
-  "examNotes": [],
+  "importantStatements": [
+    "The same reaction can be a tonnage business or a gram business - the economics decides the plant type."
+  ],
+  "examNotes": [
+    "Distinguish heavy vs fine chemicals by volume AND value - quoting only one axis loses the mark."
+  ],
   "exercises": [],
   "visualization": {
     "type": "simulation",
     "component": "IndustrySim",
     "desc": "Industrial chemistry processes"
   },
-  "visualType": "applied-chemistry"
+  "visualType": "applied-chemistry",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Chemical Industry: What It Is and Why It Matters\n\nThe chemical industry converts raw materials — minerals, crude oil, biomass, air, water — into useful products by chemical transformation. It is the *upstream supplier to nearly every other industry*: fertilisers feed agriculture, polymers feed packaging and textiles, medicinals feed health care, cement and metals feed construction. Its importance is measured in employment, value addition, exports, and the fact that no modern sector runs without it.",
+      "## 2. Theorem Mirror\n\n- **Definition:** the industry whose primary activity is the large-scale chemical conversion of raw materials into products with higher value.\n- **Classification by scale and value:** heavy chemicals (bulk, cheap, tonnage — sulphuric acid, ammonia, caustic soda); fine/specialty chemicals (small volume, high value — pharmaceuticals, dyes, reagents); consumer products (soaps, paints, fertilisers).\n- **Importance chain:** agriculture (fertilisers, pesticides) ⟶ food; textiles (fibres, dyes); construction (cement, paints, plastics); health (pharmaceuticals); energy (refining, petrochemicals); exports and employment.\n- **The conversion principle:** value is created by transformation — sulphuric acid costs little per kilo yet multiplies into nearly every manufactured good (the \"barometer of industry\").",
+      "## 3. Deep Conceptual — Value Is Created at Each Transformation Step\n\n- Raw ore is worth little; the metal extracted from it is worth more; the alloy shaped from the metal more still. The chemical industry's economic function is precisely this ladder: each step consumes energy, knowledge, and capital, and each step adds value disproportionate to its mass. **Sulphuric acid is the classic witness** — a cheap commodity whose national consumption level tracks a country's industrial development, because it touches fertilisers (phosphoric acid), steel (pickling), textiles, and petrochemicals at once.\n- **Why \"heavy\" vs \"fine\" is an economic split, not a chemical one:** heavy chemicals compete on cost per tonne (continuous plants, economies of scale, catalysts); fine chemicals compete on efficacy per gram (batch plants, purity, patents). The same flask-scale reaction may belong to both worlds — the economics, not the chemistry, decides the plant.",
+      "## 4. Deep Conceptual — The Industry as the Economy's Multiplier\n\n- Every tonne of fertiliser multiplies into grain; every kilo of polymer multiplies into packaging, pipes, textiles; every drug molecule multiplies into treated patients. The chemical industry's importance is best stated as a *multiplier*: it is rarely the final product's brand, but it is present in the supply chain of almost everything.\n- **The dependency cuts both ways:** the industry consumes the economy's energy and feedstocks (petrochemicals ≈ a large fraction of oil use) and generates its characteristic environmental burdens — which is why the modern syllabus pairs \"importance\" with \"environmental impact\" (row 134): the multiplier and the footprint are the same coin.",
+      "## 5. Worked Example Types\n\n- **Type A — define and classify:** heavy vs fine vs consumer chemicals with examples.\n- **Type B — importance argument:** trace one product's multiplier through three downstream industries.\n- **Type C — the barometer argument:** why sulphuric acid consumption indicates industrialisation.\n- **Type D — value ladder:** raw material → intermediate → product with value added at each step.",
+      "## 6. Common Confusions\n\n**\"Chemical industry means laboratories\":** it means plants — tonnage, reactors, distillation columns; the laboratory is where the chemistry is *discovered*, not made. **\"Fine chemicals are purer, therefore heavier\":** the split is by volume and value, not purity alone."
+    ],
+    "keyPoints": [
+      "Chemical industry: large-scale conversion of raw materials into higher-value products. Classes: heavy (bulk, cheap: H2SO4, NH3, NaOH), fine/specialty (small volume, high value: pharma, dyes), consumer (soaps, fertilisers). Importance: agriculture, textiles, construction, health, energy, employment, exports - the economy's multiplier. Sulphuric acid consumption is the industrial barometer. Heavy competes per tonne (continuous plants); fine competes per gram (batch plants) - economics, not chemistry, picks the plant."
+    ],
+    "importantConcepts": [
+      "Value is created at each transformation step - the industry's function is the value ladder, not the molecule."
+    ],
+    "examples": [
+      "***The barometer*** - national sulphuric acid consumption tracks industrial development: one cheap commodity, four downstream industries."
+    ],
+    "universalFacts": [
+      "Every modern sector - food, clothing, shelter, health - sits downstream of at least one chemical process."
+    ],
+    "importantStatements": [
+      "The same reaction can be a tonnage business or a gram business - the economics decides the plant type."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the manufactures rows (135-140)."
+    ],
+    "examShortTricks": [
+      "Answer \"importance\" questions by industry sector with one example each - the sector list is the marks map."
+    ],
+    "examNotes": [
+      "Distinguish heavy vs fine chemicals by volume AND value - quoting only one axis loses the mark."
+    ],
+    "formulas": [
+      "- Value added = value of product − value of inputs (raw materials, energy)\n- Heavy chemicals: ~tonne scale, low unit price; fine chemicals: ~kg scale, high unit price"
+    ],
+    "practice": [
+      "Trace the multiplier of ammonium sulphate fertiliser through two downstream sectors.",
+      "Explain why sulphuric acid consumption is called the barometer of industrialisation."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Define the chemical industry and distinguish heavy chemicals from fine chemicals, giving two examples of each.** — **Definition:** the industry that converts raw materials (minerals, crude oil, air, water, biomass) into useful products by large-scale chemical transformation, adding value at each step. **Heavy chemicals:** produced and consumed in bulk (tonnes), low unit price, compete on cost — continuous plants, economies of scale; examples: **sulphuric acid** (~200 Mt/yr globally), **ammonia** (fertiliser feedstock); also caustic soda, cement. **Fine/specialty chemicals:** produced in small volumes, high unit price, compete on performance and purity — batch plants, quality control; examples: **pharmaceuticals** (aspirin, paracetamol), **dyes and pigments**; also agrochemicals, reagents. **Deep point:** the split is economic, not chemical — the same esterification is fine-chemistry in a flavour lab and heavy-chemistry in a biodiesel plant; volume and value per unit, not the reaction, assign the class.",
+      "**NEB-style (6m): \"The chemical industry is the economy's multiplier, not its showcase.\" Explain this statement with two worked examples.** — **Meaning:** chemical products are rarely the consumer's final purchase, yet they enter the supply chain of nearly every final good — the industry's importance is upstream and multiplied. **Example 1 — fertiliser:** ammonia (Haber) → ammonium sulphate/urea → cereal yield increase → food security; the fertiliser's value is multiplied through every downstream food product. **Example 2 — styrene:** benzene + ethene → ethylbenzene → styrene → polystyrene → packaging, insulation, disposable ware; one petrochemical chain multiplies into a consumer goods sector. **Employment and exports follow the same logic:** each plant supports logistics, engineering, and export revenue beyond its gate. **Deep point:** the multiplier framing also explains the industry's political visibility — a disruption in one commodity (say, ammonia) propagates through agriculture within a season, which is why fertiliser supply is treated as strategic, not commercial.",
+      "**NEB-style (5m): Explain why per-capita consumption of sulphuric acid is used as an indicator of a country's industrial development.** — **Reach:** sulphuric acid is the highest-volume commodity chemical and touches an unmatched range of downstream processes: phosphate fertiliser manufacture (H₂SO₄ + rock phosphate), steel pickling (oxide removal), petroleum refining (alkylation), textiles, detergents (sulphonation), batteries, and titanium dioxide pigment. **Logic:** a country that consumes much H₂SO₄ is necessarily running several of these industries simultaneously — the consumption figure aggregates agriculture, metals, refining, and consumer-goods production into one number. **Cheapness reinforces it:** because it is cheap, it is bought in proportion to genuine need, not speculation — the number tracks real activity. **Deep point:** an indicator must be both *widespread* and *un-substitutable* to work — sulphuric acid satisfies both; the \"barometer\" is a supply-chain argument dressed as a statistic, and saying so is the understanding mark.",
+      "**NEB-style (6m): A new country wants to build its first chemical industry. Argue which should be built first - a heavy-chemical plant or a fine-chemical plant - and justify with the economics of each.** — **Case for heavy first:** heavy chemicals (ammonia/urea for agriculture, chlor-alkali for soap and water treatment, sulphuric acid for fertiliser and mining) supply the *domestic* needs of a developing economy — agriculture and construction demand them immediately; continuous plants scale to national demand and build the infrastructure (power, water, rail, skilled operators) that everything else reuses. **Case for fine first:** low capital cost, high value per tonne, exportable without heavy infrastructure — but they need trained chemists, regulatory quality systems, and a market niche. **Verdict:** for a developing economy, **heavy chemicals first** — the demand is domestic and immediate, the multiplier is largest (food, construction), and the infrastructure built serves the fine-chemical phase later. **Deep point:** the sequencing argument is the industrialisation pattern history actually shows — commodity chemicals before specialties, substitution of imports before export of high-value goods; the answer is economic reasoning, not chemistry preference, which is exactly what the question tests."
+    ]
+  },
+  "summary": "The chemical industry is the economy's upstream multiplier: raw materials in, value-added products out, and every sector — agriculture, textiles, construction, health — downstream of at least one process. Heavy chemicals compete per tonne in continuous plants; fine chemicals compete per gram in batch plants — economics, not chemistry, assigns the class. Sulphuric acid's consumption is the industrial barometer because it is both everywhere and irreplaceable; and the multiplier's other face — energy use and environmental burden — is why importance and impact are taught as one lesson."
 }

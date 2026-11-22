@@ -7,17 +7,12 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Economics of production asks whether a chemical process can be run at a cost the selling price will cover: raw materials, energy, labour, and the capital tied up in the plant.",
-    "Fixed costs, such as the plant and its depreciation, do not change with the day's output. Variable costs, such as feedstock and fuel, rise as more product is made.",
-    "The break-even output is the amount at which sales revenue equals fixed cost plus variable cost. Below that output the plant loses money even if the chemistry works.",
-    "Cash flow in the production cycle is the money moving out when materials are bought and moving in when the product is sold.",
-    "A long gap between purchase and sale locks cash in inventory and in unpaid invoices. A process can be chemically possible and still be rejected if energy and waste treatment cost more than the sales bring in.",
-    "# Economics of production; cash flow in the production cycle\n\n## 1. Introduction\nChemical picture of **Economics of production; cash flow in the production cycle** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Fundamentals of Applied Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Economics of production\n### cash flow in the production cycle\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Economics of production; cash flow in the production cycle — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Economics of production; cash flow in the production cycle — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Economics of production; cash flow in the production cycle — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Economics of production; cash flow in the production cycle — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Economics of Production: Where the Money Flows\n\nA chemical plant is a cash machine with a loop: **capital invested → raw materials, energy, labour purchased → product made → product sold → revenue returns → part reinvested, part repays capital, part is profit.** The economics of production is the study of this loop — its costs, its timing, and the break-even point where revenue first covers cost.",
+    "## 2. Theorem Mirror\n\n- **Cash-flow cycle:** capital → inputs (raw materials, energy, labour, overheads) → product → sales → revenue → (reinvest + repay + profit) → back to inputs. The cycle has *time lags*: inventory and credit terms delay the return.\n- **Fixed costs:** independent of output — plant depreciation, salaries, rent, insurance, interest. **Variable costs:** proportional to output — raw materials, energy, packaging, some labour.\n- **Total cost = fixed + variable × output.** **Revenue = price × output.**\n- **Break-even point:** output where total revenue = total cost; below it loss, above it profit. Break-even output = fixed costs / (price − variable cost per unit).\n- **Unit cost** falls as output rises (fixed costs spread over more units) — the origin of economies of scale.",
+    "## 3. Deep Conceptual — Why Raw Materials Dominate Chemical Costs\n\n- In most chemical processes the **variable cost is 60–80% of total cost, and raw materials are the largest slice** — energy second, labour a distant third in automated plants. This is why yield is an economic variable, not just a laboratory one: every percentage point of yield is raw material not wasted, and a route change (cheaper feedstock, fewer steps) can beat a better catalyst.\n- **The break-even frame explains industry structure:** high fixed costs (plants) + low variable cost per tonne ⟹ profit arrives only above a large output ⟹ continuous bulk production and economies of scale. This is *why* heavy chemicals run continuously and why the industry consolidates into few, large plants — the cost structure, not the chemistry, demands it.",
+    "## 4. Deep Conceptual — Time Is a Cost: The Cash-Flow Cycle's Lags\n\n- Money spent on raw materials today becomes revenue only after processing, storage, delivery, and the customer's payment terms — weeks to months of lag. During the lag the firm finances the gap (working capital); **the faster the cycle turns, the less capital is tied up per unit of annual profit.** Inventory is cash wearing a costume.\n- **Yield, throughput and cycle time are the three levers management actually pulls:** yield cuts variable cost, throughput spreads fixed cost, cycle time releases working capital. Every economic decision in the plant maps to one of these three.",
+    "## 5. Worked Example Types\n\n- **Type A — draw and label:** the cash-flow cycle with its lags.\n- **Type B — fixed vs variable classification:** sort a cost list into the two bins.\n- **Type C — break-even calculation:** given fixed costs, price, variable cost — find break-even output.\n- **Type D — economies of scale argument:** why unit cost falls with output.",
+    "## 6. Common Confusions\n\n**\"Depreciation is a cash outflow\":** it is a fixed *accounting* cost — no cash leaves; the cash left when the plant was bought. **\"Break-even means no profit and no loss on every unit\":** it means total revenue = total cost *at that output* — each unit above it contributes (price − variable cost) toward fixed costs and then profit."
   ],
   "confusion": [],
   "bounds": [
@@ -25,20 +20,27 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Economics of production; cash flow in the production cycle\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Draw the cash-flow cycle of a chemical firm and mark the time lags.",
+    "Classify a list of plant costs into fixed and variable.",
+    "Compute the break-even output for given fixed costs, price and variable cost."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Inventory is cash wearing a costume - the cash-flow cycle's lag is financed as working capital."
+  ],
+  "examples": [
+    "***The yield dividend*** - every yield percentage point is raw material not wasted; a cheaper route can beat a better catalyst."
+  ],
   "practiceQuestions": [
-    "Q. Distinguish fixed and variable costs with examples. (2 marks) — plant rent vs raw materials.",
-    "Q. What is the break-even point? (1 mark) — production level where revenue equals total cost."
+    "**NEB-style (5m): Describe the cash-flow cycle in the production of a chemical product, indicating where time lags occur.** — **The cycle:** (1) **capital invested** in plant and working capital; (2) **inputs purchased** — raw materials, energy, labour; (3) **production** converts inputs into product; (4) **storage and distribution**; (5) **sales** generate revenue, often on credit terms; (6) **revenue returns** and is split — reinvestment, repayment of capital/interest, profit — closing the loop to (2). **Time lags:** between purchase and sale lie processing time, warehousing, delivery, and the customer's payment period — weeks to months during which the firm's money is tied up in inventory and receivables (working capital). **Deep point:** the cycle is a loop with inertia — the faster it turns (shorter lags, faster turnover), the less capital is needed for the same annual profit, which is why just-in-time inventory and short credit terms are economic decisions, not just logistical ones.",
+    "**NEB-style (5m): Classify the following costs of a sulphuric acid plant as fixed or variable: plant depreciation, sulphur raw material, plant manager's salary, electricity for the blower, insurance premium, packaging sacks. Justify each.** — **Fixed (output-independent):** plant depreciation — the plant ages with time, not with tonnes; plant manager's salary — a salaried post regardless of output; insurance premium — quoted annually on the asset. **Variable (output-proportional):** sulphur raw material — each tonne of acid consumes a fixed mass of sulphur (stoichiometry!); electricity for the blower — air compression scales with production rate; packaging sacks — one sack per unit shipped. **Deep point:** the stoichiometric link is the giveaway for variable costs in chemistry — anything that appears as a coefficient in the process equation is variable by nature; anything that ages or is contracted per year is fixed. Borderline cases (maintenance, some labour) are *semi-variable* and usually split.",
+    "**NEB-style (6m): A fertiliser plant has fixed costs of Rs 12,000,000 per year, a variable cost of Rs 8,000 per tonne of product, and a selling price of Rs 14,000 per tonne. Find the break-even output and the profit at 4,000 tonnes per year.** — **Contribution per tonne:** price − variable cost = 14,000 − 8,000 = **Rs 6,000 per tonne**. **Break-even output:** fixed ÷ contribution = 12,000,000 ÷ 6,000 = **2,000 tonnes per year** — below this, loss; above, profit. **Profit at 4,000 t:** contribution total = 4,000 × 6,000 = Rs 24,000,000; minus fixed 12,000,000 ⟹ **profit = Rs 12,000,000 per year**. **Cross-check:** unit cost at 4,000 t = (12,000,000 + 4,000×8,000)/4,000 = 44,000,000/4,000 = Rs 11,000 < price 14,000 ⟹ profit = 3,000 × 4,000 = 12,000,000 ✓. **Deep point:** the two routes (contribution arithmetic vs unit-cost arithmetic) must agree — and the unit-cost route also shows the economies-of-scale effect: unit cost fell from Rs 14,000 (at break-even) to Rs 11,000 purely because fixed costs spread over more tonnes.",
+    "**NEB-style (6m): Explain why chemical plants are built large and few rather than small and many, using the structure of costs.** — **Cost structure:** chemical plants have **high fixed costs** (capital, depreciation, staff) and **low variable cost per tonne** (raw materials at bulk prices, automated operation). **Consequence — economies of scale:** unit cost = fixed/output + variable; as output rises, the fixed portion per unit shrinks toward the variable floor — a plant at 10% of capacity has a unit cost several times that of the same plant at full capacity. **Market logic:** since one large plant can typically supply the national demand for a commodity (ammonia, sulphuric acid), building two would leave both half-idle with doubled fixed costs per unit ⟹ the industry consolidates into **few large continuous plants**, often serving regions by ship and rail. **The exception proves the rule:** fine chemicals (pharma) have high *variable* costs (purity, quality control) and modest fixed costs — hence small batch plants, many of them. **Deep point:** \"big and few vs small and many\" is not a management fashion — it is the fixed/variable ratio read as an architecture decision, and the fine-chemical counterexample is what proves the causality."
   ],
   "keyPoints": [
-    "• Economics of production",
-    "• Cash flow in the production cycle"
+    "Cash-flow cycle: capital -> inputs -> product -> sales -> revenue -> reinvest/repay/profit, with time lags (inventory, credit). Fixed costs: depreciation, salaries, rent, interest - output-independent. Variable: raw materials, energy, packaging - proportional. Break-even output = fixed cost / (price - variable cost per unit). Raw materials dominate variable cost (60-80%) - yield is an economic variable. High fixed + low variable -> economies of scale -> continuous bulk production. Working capital finances the cycle's lag; faster cycle = less tied-up cash."
   ],
-  "summary": "Economics of production; cash flow in the production cycle (Fundamentals of Applied Chemistry, Chemistry, class-11-notes) covers Economics of production, cash flow in the production cycle. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Production economics is a cash loop with lags: capital buys inputs, inputs become product, product becomes revenue, revenue splits into reinvestment, repayment and profit. Costs split into fixed (depreciation, salaries — output-blind) and variable (raw materials, energy — stoichiometry-driven), and break-even output = fixed ÷ contribution per unit. Raw materials dominate variable cost, making yield an economic lever; high fixed plus low variable is why bulk plants are big, few and continuous — while the fine-chemical cost structure builds the opposite.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Economics of production; cash flow in the production cycle\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -51,8 +53,69 @@
     }
   ],
   "examShortTricks": [
-    "Trick 1: Production cycle order: raw material → money spent (capital) → manufacture → product sale → revenue → reinvest — 'cash flow' means money moving IN and OUT over the cycle.",
-    "Trick 2: Cost split: fixed costs (plant, salaries — constant) vs variable costs (raw materials, power — with output); profit = revenue − total cost.",
-    "Trick 3: Break-even point: output where total revenue = total cost — quote as the decision tool for a plant."
+    "Break-even = fixed / (price - variable per unit) - one formula, one substitution, one mark."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Economics of Production: Where the Money Flows\n\nA chemical plant is a cash machine with a loop: **capital invested → raw materials, energy, labour purchased → product made → product sold → revenue returns → part reinvested, part repays capital, part is profit.** The economics of production is the study of this loop — its costs, its timing, and the break-even point where revenue first covers cost.",
+      "## 2. Theorem Mirror\n\n- **Cash-flow cycle:** capital → inputs (raw materials, energy, labour, overheads) → product → sales → revenue → (reinvest + repay + profit) → back to inputs. The cycle has *time lags*: inventory and credit terms delay the return.\n- **Fixed costs:** independent of output — plant depreciation, salaries, rent, insurance, interest. **Variable costs:** proportional to output — raw materials, energy, packaging, some labour.\n- **Total cost = fixed + variable × output.** **Revenue = price × output.**\n- **Break-even point:** output where total revenue = total cost; below it loss, above it profit. Break-even output = fixed costs / (price − variable cost per unit).\n- **Unit cost** falls as output rises (fixed costs spread over more units) — the origin of economies of scale.",
+      "## 3. Deep Conceptual — Why Raw Materials Dominate Chemical Costs\n\n- In most chemical processes the **variable cost is 60–80% of total cost, and raw materials are the largest slice** — energy second, labour a distant third in automated plants. This is why yield is an economic variable, not just a laboratory one: every percentage point of yield is raw material not wasted, and a route change (cheaper feedstock, fewer steps) can beat a better catalyst.\n- **The break-even frame explains industry structure:** high fixed costs (plants) + low variable cost per tonne ⟹ profit arrives only above a large output ⟹ continuous bulk production and economies of scale. This is *why* heavy chemicals run continuously and why the industry consolidates into few, large plants — the cost structure, not the chemistry, demands it.",
+      "## 4. Deep Conceptual — Time Is a Cost: The Cash-Flow Cycle's Lags\n\n- Money spent on raw materials today becomes revenue only after processing, storage, delivery, and the customer's payment terms — weeks to months of lag. During the lag the firm finances the gap (working capital); **the faster the cycle turns, the less capital is tied up per unit of annual profit.** Inventory is cash wearing a costume.\n- **Yield, throughput and cycle time are the three levers management actually pulls:** yield cuts variable cost, throughput spreads fixed cost, cycle time releases working capital. Every economic decision in the plant maps to one of these three.",
+      "## 5. Worked Example Types\n\n- **Type A — draw and label:** the cash-flow cycle with its lags.\n- **Type B — fixed vs variable classification:** sort a cost list into the two bins.\n- **Type C — break-even calculation:** given fixed costs, price, variable cost — find break-even output.\n- **Type D — economies of scale argument:** why unit cost falls with output.",
+      "## 6. Common Confusions\n\n**\"Depreciation is a cash outflow\":** it is a fixed *accounting* cost — no cash leaves; the cash left when the plant was bought. **\"Break-even means no profit and no loss on every unit\":** it means total revenue = total cost *at that output* — each unit above it contributes (price − variable cost) toward fixed costs and then profit."
+    ],
+    "keyPoints": [
+      "Cash-flow cycle: capital -> inputs -> product -> sales -> revenue -> reinvest/repay/profit, with time lags (inventory, credit). Fixed costs: depreciation, salaries, rent, interest - output-independent. Variable: raw materials, energy, packaging - proportional. Break-even output = fixed cost / (price - variable cost per unit). Raw materials dominate variable cost (60-80%) - yield is an economic variable. High fixed + low variable -> economies of scale -> continuous bulk production. Working capital finances the cycle's lag; faster cycle = less tied-up cash."
+    ],
+    "importantConcepts": [
+      "The cost structure picks the plant type: high fixed + low variable is why bulk chemicals run continuously."
+    ],
+    "examples": [
+      "***The yield dividend*** - every yield percentage point is raw material not wasted; a cheaper route can beat a better catalyst."
+    ],
+    "universalFacts": [
+      "Inventory is cash wearing a costume - the cash-flow cycle's lag is financed as working capital."
+    ],
+    "importantStatements": [
+      "Three levers run every plant: yield (variable cost), throughput (fixed cost spread), cycle time (working capital)."
+    ],
+    "importantNotes": [
+      "NEB-style practice beyond the verified PYQs recorded on the manufactures rows (135-140)."
+    ],
+    "examShortTricks": [
+      "Break-even = fixed / (price - variable per unit) - one formula, one substitution, one mark."
+    ],
+    "examNotes": [
+      "Classify depreciation as fixed and non-cash - both adjectives earn the mark."
+    ],
+    "formulas": [
+      "- Total cost = fixed + variable × output; Revenue = price × output\n- Break-even output = fixed cost ÷ (price − variable cost per unit)"
+    ],
+    "practice": [
+      "Draw the cash-flow cycle of a chemical firm and mark the time lags.",
+      "Classify a list of plant costs into fixed and variable.",
+      "Compute the break-even output for given fixed costs, price and variable cost."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (5m): Describe the cash-flow cycle in the production of a chemical product, indicating where time lags occur.** — **The cycle:** (1) **capital invested** in plant and working capital; (2) **inputs purchased** — raw materials, energy, labour; (3) **production** converts inputs into product; (4) **storage and distribution**; (5) **sales** generate revenue, often on credit terms; (6) **revenue returns** and is split — reinvestment, repayment of capital/interest, profit — closing the loop to (2). **Time lags:** between purchase and sale lie processing time, warehousing, delivery, and the customer's payment period — weeks to months during which the firm's money is tied up in inventory and receivables (working capital). **Deep point:** the cycle is a loop with inertia — the faster it turns (shorter lags, faster turnover), the less capital is needed for the same annual profit, which is why just-in-time inventory and short credit terms are economic decisions, not just logistical ones.",
+      "**NEB-style (5m): Classify the following costs of a sulphuric acid plant as fixed or variable: plant depreciation, sulphur raw material, plant manager's salary, electricity for the blower, insurance premium, packaging sacks. Justify each.** — **Fixed (output-independent):** plant depreciation — the plant ages with time, not with tonnes; plant manager's salary — a salaried post regardless of output; insurance premium — quoted annually on the asset. **Variable (output-proportional):** sulphur raw material — each tonne of acid consumes a fixed mass of sulphur (stoichiometry!); electricity for the blower — air compression scales with production rate; packaging sacks — one sack per unit shipped. **Deep point:** the stoichiometric link is the giveaway for variable costs in chemistry — anything that appears as a coefficient in the process equation is variable by nature; anything that ages or is contracted per year is fixed. Borderline cases (maintenance, some labour) are *semi-variable* and usually split.",
+      "**NEB-style (6m): A fertiliser plant has fixed costs of Rs 12,000,000 per year, a variable cost of Rs 8,000 per tonne of product, and a selling price of Rs 14,000 per tonne. Find the break-even output and the profit at 4,000 tonnes per year.** — **Contribution per tonne:** price − variable cost = 14,000 − 8,000 = **Rs 6,000 per tonne**. **Break-even output:** fixed ÷ contribution = 12,000,000 ÷ 6,000 = **2,000 tonnes per year** — below this, loss; above, profit. **Profit at 4,000 t:** contribution total = 4,000 × 6,000 = Rs 24,000,000; minus fixed 12,000,000 ⟹ **profit = Rs 12,000,000 per year**. **Cross-check:** unit cost at 4,000 t = (12,000,000 + 4,000×8,000)/4,000 = 44,000,000/4,000 = Rs 11,000 < price 14,000 ⟹ profit = 3,000 × 4,000 = 12,000,000 ✓. **Deep point:** the two routes (contribution arithmetic vs unit-cost arithmetic) must agree — and the unit-cost route also shows the economies-of-scale effect: unit cost fell from Rs 14,000 (at break-even) to Rs 11,000 purely because fixed costs spread over more tonnes.",
+      "**NEB-style (6m): Explain why chemical plants are built large and few rather than small and many, using the structure of costs.** — **Cost structure:** chemical plants have **high fixed costs** (capital, depreciation, staff) and **low variable cost per tonne** (raw materials at bulk prices, automated operation). **Consequence — economies of scale:** unit cost = fixed/output + variable; as output rises, the fixed portion per unit shrinks toward the variable floor — a plant at 10% of capacity has a unit cost several times that of the same plant at full capacity. **Market logic:** since one large plant can typically supply the national demand for a commodity (ammonia, sulphuric acid), building two would leave both half-idle with doubled fixed costs per unit ⟹ the industry consolidates into **few large continuous plants**, often serving regions by ship and rail. **The exception proves the rule:** fine chemicals (pharma) have high *variable* costs (purity, quality control) and modest fixed costs — hence small batch plants, many of them. **Deep point:** \"big and few vs small and many\" is not a management fashion — it is the fixed/variable ratio read as an architecture decision, and the fine-chemical counterexample is what proves the causality."
+    ]
+  },
+  "importantConcepts": [
+    "The cost structure picks the plant type: high fixed + low variable is why bulk chemicals run continuously."
+  ],
+  "importantStatements": [
+    "Three levers run every plant: yield (variable cost), throughput (fixed cost spread), cycle time (working capital)."
+  ],
+  "importantNotes": [
+    "NEB-style practice beyond the verified PYQs recorded on the manufactures rows (135-140)."
+  ],
+  "examNotes": [
+    "Classify depreciation as fixed and non-cash - both adjectives earn the mark."
+  ],
+  "formulas": [
+    "- Total cost = fixed + variable × output; Revenue = price × output\n- Break-even output = fixed cost ÷ (price − variable cost per unit)"
   ]
 }
