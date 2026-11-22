@@ -146,7 +146,10 @@ function docIframeSrc(item: ResourceItem): string {
 
 // Build unified item list
 const ALL_RESOURCE_ITEMS: ResourceItem[] = [
-  ...WEBNOTEE_DOCS.map((doc: WebnoteeDoc) => ({
+  // Owner report 2026-11-22: entries whose source died at origin (e.g. the
+  // Chemistry practical copy Drive file → 403) carry an empty driveUrl and
+  // must not appear as dead "Open" items — they are dropped here.
+  ...WEBNOTEE_DOCS.filter((doc: WebnoteeDoc) => doc.driveUrl.trim().length > 0).map((doc: WebnoteeDoc) => ({
     id: doc.id,
     title: doc.title,
     subject: doc.subject,

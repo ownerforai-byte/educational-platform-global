@@ -44,7 +44,11 @@ const esc = (value) =>
 
 const files = fs
   .readdirSync(DATA_DIR)
-  .filter((name) => name.endsWith(".mjs"))
+  .filter((name) => name.endsWith(".mjs") && !name.endsWith(".more.mjs"))
+  .sort();
+const extraFiles = fs
+  .readdirSync(DATA_DIR)
+  .filter((name) => name.endsWith(".more.mjs"))
   .sort();
 
 if (files.length === 0) fail("no data files found in content-tools/math-xi-workbook/data");
@@ -65,6 +69,29 @@ for (const chapter of chapters) {
   const list = indexByUnit.get(chapter.unitNo) ?? [];
   list.push(chapter);
   indexByUnit.set(chapter.unitNo, list);
+}
+
+/* extra sets: `*.more.mjs` exports EXTENSIONS keyed by chapter slug and is
+   appended after the core sheet, so a chapter grows to a second A4 page. */
+for (const file of extraFiles) {
+  const mod = await import(pathToFileURL(path.join(DATA_DIR, file)).href);
+  const list = mod.EXTENSIONS ?? mod.default;
+  if (!Array.isArray(list) || list.length === 0) {
+    fail(`${file}: expected an exported EXTENSIONS array`);
+    continue;
+  }
+  for (const extension of list) {
+    const chapter = chapters.find((candidate) => candidate.slug === extension.slug);
+    if (!chapter) {
+      fail(`${file}: no chapter with slug "${extension.slug}"`);
+      continue;
+    }
+    if (!Array.isArray(extension.items) || extension.items.length === 0) {
+      fail(`${file} → ${extension.slug}: items must be a non-empty array`);
+      continue;
+    }
+    chapter.items = [...chapter.items, ...extension.items];
+  }
 }
 
 for (const [unitNo, list] of [...indexByUnit.entries()].sort((a, b) => a[0] - b[0])) {
@@ -117,6 +144,9 @@ for (const chapter of chapters) {
     }
     if (marks !== undefined && ![1, 2, 3, 4, 5, 6, 7, 8].includes(marks))
       fail(`${at}: marks ${marks} is not a sensible NEB mark value`);
+    const kind = item[5];
+    if (kind !== undefined && (typeof kind !== "string" || kind.trim() === ""))
+      fail(`${at}: question type must be a non-empty string when present`);
   });
 }
 
@@ -133,10 +163,11 @@ if (errors.length) {
 const cellHtml = (cell, chapter, no) => {
   const topicIndex = cell.length > 3 ? cell[3] : 0;
   const marks = cell.length > 4 ? cell[4] : null;
+  const kind = cell.length > 5 ? cell[5] : null;
   const [q, work, ans] = cell;
   const topic = topicIndex === null ? "" : chapter.topics[topicIndex] ?? "";
   return `<div class="cell">
-<p class="tag">${esc(topic)}</p>
+<p class="tag">${esc(topic)}${kind ? ` <span class="kind">${esc(kind)}</span>` : ""}</p>
 <p class="q"><span class="n">${no}.</span>${esc(q)}${
     marks ? `&nbsp;<span class="mk">[${marks}]</span>` : ""
   }</p>

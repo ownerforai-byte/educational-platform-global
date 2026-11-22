@@ -6,7 +6,7 @@
 <title>Mathematics XI — Unit 7 Computational Methods and Mechanics: Exercise Solutions &amp; Conceptual Bank (NEB)</title>
 <meta name="description" content="NEB Grade 11 Mathematics Unit 7 Computational Methods or Mechanics: bisection and Newton-Raphson root finding, trapezoidal and Simpson's rules, plus statics and dynamics — worked exercise solutions with full tables and a 2-mark conceptual bank.">
 <link rel="stylesheet" href="math-xi-solutions.css">
-</head>
+<script src="../a4-paginate.js" defer></script></head>
 <body>
 
 <p class="crumb"><a href="/resources/mathematics-xi">Mathematics XI</a> &rsaquo; Unit 7</p>
@@ -1123,6 +1123,37 @@ Check: v² = u² + 2as ⇒ 0 = 900 − 900 ✓</p>
 </div>
 
 <!-- ============================================================ -->
+<h2>Rapid drill — three solved questions in one row</h2>
+<p class="lede">The three most common NEB question shapes for this unit, solved side by side. Each cell is a complete answer: the working is worth the marks, the answer line is only the check.</p>
+<div class="qgrid">
+<div class="cell">
+<span class="tag">Bisection</span>
+<p class="q"><span class="n">1.</span>Locate the root of x² − 2 = 0 on [1, 2] after one bisection step.<span class="mk">2 marks</span></p>
+<div class="work">f(1) = −1, f(2) = +2 ⇒ root in (1, 2)
+x₁ = (1 + 2)/2 = 1.5
+f(1.5) = 0.25 &gt; 0 ⇒ root in (1, 1.5)</div>
+<p class="ans">root ∈ (1, 1.5), error ≤ 0.5</p>
+</div>
+<div class="cell">
+<span class="tag">Newton–Raphson</span>
+<p class="q"><span class="n">2.</span>Find √5 by one Newton–Raphson step from x₀ = 2.<span class="mk">4 marks</span></p>
+<div class="work">f(x) = x² − 5, f′(x) = 2x
+x₁ = x₀ − f(x₀)/f′(x₀)
+   = 2 − (4 − 5)/4 = 2 + 0.25</div>
+<p class="ans">x₁ = 2.25 (√5 = 2.2360…)</p>
+</div>
+<div class="cell">
+<span class="tag">Simpson's rule</span>
+<p class="q"><span class="n">3.</span>Evaluate ∫₀² x² dx by Simpson's rule with n = 2.<span class="mk">3 marks</span></p>
+<div class="work">h = (2 − 0)/2 = 1; f = 0, 1, 4
+I ≈ (h/3)[f₀ + 4f₁ + f₂]
+  = (1/3)(0 + 4 + 4)</div>
+<p class="ans">I = 8/3 ≈ 2.667 (exact)</p>
+</div>
+</div>
+
+<p class="note">Marking note: the middle cell of each row is a full 4-mark question — set up, substitute, evaluate, answer. In the exam the working block earns 3 of those 4 marks, so never write only the final value.</p>
+
 <h2>Formula sheet and traps</h2>
 
 <table>

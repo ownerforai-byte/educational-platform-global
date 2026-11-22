@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { renderNoteHtml } from "@/lib/content/pipeline";
 
@@ -15,10 +17,22 @@ describe("renderNoteHtml — universal note pipeline", () => {
   });
 
   it("renders GFM tables", () => {
-    const html = renderNoteHtml("| Quantity | Unit |\n|---|---|\n| force | N |");
+    const html = renderNoteHtml("| Quantity | Unit |\n|---|---|\n| force | N |",);
     expect(html).toContain("<table>");
     expect(html).toContain("<th>Quantity</th>");
     expect(html).toContain("<td>force</td>");
+  });
+
+  /**
+   * OWNER REPORT 2026-11-22: "all tables are not working". The global
+   * fit-to-screen clamp (`table { max-width: 100% }`, commit 8f80c58d) also
+   * clamped tables INSIDE .table-scroll, so wide answer tables could never
+   * exceed their box — the scroll wrapper had nothing to scroll and every
+   * column got crushed. This guard keeps the natural-width override in place.
+   */
+  it("keeps wide tables scrollable: .table-scroll table escapes the global max-width clamp", () => {
+    const css = readFileSync(join(process.cwd(), "app", "globals.css"), "utf8");
+    expect(css).toMatch(/\.table-scroll\s+table\s*\{[^}]*max-width:\s*none/);
   });
 
   it("renders GFM strikethrough, task lists and autolinks", () => {

@@ -556,7 +556,10 @@ export const WEBNOTEE_DOCS: WebnoteeDoc[] = [
     subject: "Chemistry",
     unit: "Practical",
     exercise: "Lab",
-    driveUrl: "https://drive.google.com/file/d/1odhsHi6WZ-MRAiEeo5RgO89BTihAt1M9/preview",
+    // Owner report 2026-11-22: this Drive file returns 403 (access revoked at
+    // source) — it rendered an endless blank stream. Emptied so the pool drops
+    // it instead of framing a dead file; the entry stays for provenance.
+    driveUrl: "",
     description: "Complete chemistry practical copy with salt analysis, titrations, and lab procedures.",
     source: "WebNotee.com",
   },

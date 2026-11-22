@@ -143,4 +143,21 @@ describe("chapter resource classification", () => {
     expect(classifiedUnitIds()).toContain("trigonometry");
     expect(classifiedUnitIds()).toContain("algebra");
   });
+
+  /**
+   * OWNER REPORT 2026-11-22: "some of the docs in stream are not working".
+   * Every Drive id in the registry must still be a live, embeddable file —
+   * a revoked file renders an endless blank iframe. The one dead id found by
+   * the live audit (Nepali Gauko Maya, 403 at source) was emptied; its
+   * chapter keeps streaming via the live WebNotee exercise article.
+   */
+  it("streams a working document for the chapter whose Drive PDF died at source", () => {
+    const gauko = NEPALENOTES_CHAPTERS.find((r) => r.slug === "class-11-nepali-gauko-maya-notes.html");
+    expect(gauko).toBeDefined();
+    expect(gauko!.driveIds).toEqual([]); // the dead id must never come back
+    const streams = getChapterStreamPdfs(CLASS_11, "nepali", "sahitya-adhyayan");
+    expect(streams.length).toBeGreaterThan(0);
+    expect(streams.every((pdf) => pdf.src.length > 0)).toBe(true);
+    expect(streams.some((pdf) => pdf.src.includes("gauko-maya-class-11-nepali-exercise"))).toBe(true);
+  });
 });

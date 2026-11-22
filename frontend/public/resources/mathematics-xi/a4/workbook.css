@@ -131,6 +131,20 @@ body {
   color: var(--tag);
 }
 
+.cell .kind {
+  display: inline-block;
+  margin-left: 1mm;
+  padding: 0 1mm;
+  border: 0.5pt solid #c6cbd5;
+  border-radius: 0.8mm;
+  background: #f2f4f8;
+  font: 600 5pt/1.5 "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.06em;
+  color: #3c4450;
+  vertical-align: 0.2mm;
+  white-space: nowrap;
+}
+
 .cell .q {
   margin: 0;
   font-size: 7.6pt;

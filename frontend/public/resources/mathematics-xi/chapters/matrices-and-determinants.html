@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>1.6 Matrices and Determinants — Mathematics XI workbook</title>
-<meta name="description" content="Matrices and Determinants — 12 solved NEB-style questions covering Algebra of matrices, Determinants, Inverse of a matrix, Solving systems.">
+<meta name="description" content="Matrices and Determinants — 24 solved NEB-style questions covering Algebra of matrices, Determinants, Inverse of a matrix, Solving systems.">
 <link rel="stylesheet" href="/resources/mathematics-xi/a4/workbook.css">
 </head>
 <body>
@@ -94,7 +94,95 @@ x = Dx/D = 9/5, y = Dy/D = 4/5</p>
 <footer class="foot">
 <span>Unit 1 · Algebra</span>
 <span class="mid">Matrices and Determinants</span>
-<span>Sheet 1 of 1 · 12 solved questions</span>
+<span>Sheet 1 of 2 · 12 solved questions</span>
+</footer>
+</section>
+<section class="sheet" aria-label="Matrices and Determinants — sheet 2">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook</span></div>
+<h1>1.6 · Matrices and Determinants · continued</h1>
+<p class="topics"><b>Topics</b> Algebra of matrices · Determinants · Inverse of a matrix · Solving systems</p>
+<p class="note">NEB answer style — given → statement → working → answer. 12 questions per sheet, 3 per row.</p>
+</header>
+<div class="grid" data-cols="3" data-rows="4">
+<div class="cell">
+<p class="tag">Algebra of matrices <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q13.</span>A is 3 × 2 and B is 2 × 4. The order of AB is (A) 3 × 4 (B) 2 × 2 (C) 4 × 3 (D) not defined.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">Inner dimensions agree (2 = 2); the product takes the outer sizes.</p>
+<p class="ans">A — 3 × 4</p>
+</div>
+<div class="cell">
+<p class="tag">Determinants <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q14.</span>|[[2, 0], [0, 3]]| = (A) 5 (B) 6 (C) 0 (D) 1.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">2(3) − 0(0)</p>
+<p class="ans">B — 6</p>
+</div>
+<div class="cell">
+<p class="tag">Inverse of a matrix <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q15.</span>If |A| = 0 then A⁻¹ (A) equals A (B) equals 0 (C) does not exist (D) equals I.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">The inverse formula divides by |A|.</p>
+<p class="ans">C — it does not exist</p>
+</div>
+<div class="cell">
+<p class="tag">Algebra of matrices <span class="kind">True/False</span></p>
+<p class="q"><span class="n">Q16.</span>True or false: matrix multiplication is associative.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">(AB)C = A(BC) always.</p>
+<p class="ans">True</p>
+</div>
+<div class="cell">
+<p class="tag">Inverse of a matrix <span class="kind">True/False</span></p>
+<p class="q"><span class="n">Q17.</span>True or false: a singular matrix has an inverse.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">Singular means |A| = 0.</p>
+<p class="ans">False — the inverse needs |A| ≠ 0</p>
+</div>
+<div class="cell">
+<p class="tag">Determinants <span class="kind">Fill in</span></p>
+<p class="q"><span class="n">Q18.</span>For A = [[a, b], [c, d]] the determinant is ______.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">Cross products differ.</p>
+<p class="ans">ad − bc</p>
+</div>
+<div class="cell">
+<p class="tag">Algebra of matrices <span class="kind">Fill in</span></p>
+<p class="q"><span class="n">Q19.</span>(AB)ᵀ = ______.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">The order of multiplication reverses.</p>
+<p class="ans">BᵀAᵀ</p>
+</div>
+<div class="cell">
+<p class="tag">Determinants <span class="kind">Spot the error</span></p>
+<p class="q"><span class="n">Q20.</span>A student writes |2A| = 2|A| for a 3 × 3 matrix. Correct it.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">Each of the three rows is multiplied by 2.</p>
+<p class="ans">|kA| = k³|A|, so |2A| = 8|A|</p>
+</div>
+<div class="cell">
+<p class="tag">Inverse of a matrix <span class="kind">Assertion–reason</span></p>
+<p class="q"><span class="n">Q21.</span>Assertion: A·(adj A) = |A|·I. Reason: adj A is the transpose of the cofactor matrix.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">Expanding the product gives |A| on the diagonal and 0 elsewhere.</p>
+<p class="ans">Both true; the reason is how the identity is proved</p>
+</div>
+<div class="cell">
+<p class="tag">Algebra of matrices <span class="kind">Explain</span></p>
+<p class="q"><span class="n">Q22.</span>Why is AB not always equal to BA?&nbsp;<span class="mk">[2]</span></p>
+<p class="work">Rows of A meet columns of B in a fixed order; swapping changes which entries pair up.</p>
+<p class="ans">The products pair different entries, so the results differ in general</p>
+</div>
+<div class="cell">
+<p class="tag">Solving systems <span class="kind">Match</span></p>
+<p class="q"><span class="n">Q23.</span>Match (i) transpose, (ii) adjoint with (a) transpose of the cofactor matrix, (b) rows become columns.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">The adjoint is built on cofactors.</p>
+<p class="ans">(i) → (b), (ii) → (a)</p>
+</div>
+<div class="cell">
+<p class="tag">Solving systems <span class="kind">Case study</span></p>
+<p class="q"><span class="n">Q24.</span>Workshop P makes 2 items of type A and 3 of type B per hour; workshop Q makes 5 and 1. They run 6 and 4 hours. Find the total of each type.&nbsp;<span class="mk">[4]</span></p>
+<p class="work">Type A: 2(6) + 5(4) = 32
+Type B: 3(6) + 1(4) = 22</p>
+<p class="ans">32 of type A, 22 of type B</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 1 · Algebra</span>
+<span class="mid">Matrices and Determinants</span>
+<span>Sheet 2 of 2 · 12 solved questions</span>
 </footer>
 </section>
 </body>

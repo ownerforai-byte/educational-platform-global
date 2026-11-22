@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -13,11 +13,14 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MathMarkdown } from "@/components/content/math-markdown";
 import {
   downloadDoc,
   downloadFileName,
   frameSrcFor,
+  isMarkdownDoc,
   isViewableSrc,
+  isWordDoc,
   titleFromSrc,
 } from "@/lib/pdf-src";
 
@@ -43,6 +46,34 @@ function DocumentReader() {
   const allowed = isViewableSrc(src);
   const title = titleParam || titleFromSrc(src || "/");
   const [saving, setSaving] = useState(false);
+
+  // Owner report 2026-11-22: "some of the docs are not working". A .docx
+  // cannot render inside an iframe (blank frame), and a .md only showed raw
+  // bytes. Markdown is fetched and rendered through the note pipeline; Word
+  // documents get an explicit panel instead of a dead frame.
+  const markdownDoc = allowed && isMarkdownDoc(src);
+  const wordDoc = allowed && isWordDoc(src);
+  // State carries the src it belongs to, so a new document renders fresh
+  // without a synchronous setState inside the effect (lint: cascading renders).
+  const [md, setMd] = useState<{ src: string; text: string } | null>(null);
+  const [mdError, setMdError] = useState<string | null>(null);
+  const mdText = md && md.src === src ? md.text : null;
+  const mdFailed = markdownDoc && mdError === src;
+  useEffect(() => {
+    if (!markdownDoc) return;
+    let alive = true;
+    fetch(src)
+      .then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status)))))
+      .then((text) => {
+        if (alive) setMd({ src, text });
+      })
+      .catch(() => {
+        if (alive) setMdError(src);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [src, markdownDoc]);
 
   const onDownload = async () => {
     if (saving || !allowed) return;
@@ -126,13 +157,52 @@ function DocumentReader() {
       </div>
 
       <div className="overflow-hidden rounded-2xl border border-border/60 bg-white shadow-lg">
-        <iframe
-          key={src}
-          src={frameSrcFor(src)}
-          title={title}
-          className="h-[calc(100vh-14rem)] min-h-[480px] w-full"
-          style={{ border: 0 }}
-        />
+        {markdownDoc ? (
+          mdText === null ? (
+            <div className="flex min-h-[480px] items-center justify-center">
+              {mdFailed ? (
+                <p className="text-sm text-muted-foreground">Could not load this document.</p>
+              ) : (
+                <Loader2 className="h-7 w-7 animate-spin text-primary" />
+              )}
+            </div>
+          ) : (
+            <div className="max-h-[calc(100vh-14rem)] overflow-y-auto bg-background p-6">
+              <MathMarkdown content={mdText} className="mx-auto max-w-3xl" />
+            </div>
+          )
+        ) : wordDoc ? (
+          <div className="flex min-h-[480px] flex-col items-center justify-center gap-3 bg-background p-8 text-center">
+            <FileText className="h-10 w-10 text-primary" />
+            <p className="text-sm font-semibold text-foreground">
+              Word document — not displayable inside the reader
+            </p>
+            <p className="max-w-md text-xs leading-relaxed text-muted-foreground">
+              Browsers cannot render .docx files inline. Use Download to save it,
+              or Open externally to view it in another tab.
+            </p>
+            <div className="flex gap-2">
+              <Button size="sm" onClick={onDownload} disabled={saving}>
+                <Download className="mr-1.5 h-4 w-4" />
+                {saving ? "Saving…" : "Download"}
+              </Button>
+              <Button variant="outline" size="sm" asChild>
+                <a href={src} target="_blank" rel="noreferrer noopener">
+                  <ExternalLink className="mr-1.5 h-4 w-4" />
+                  Open externally
+                </a>
+              </Button>
+            </div>
+          </div>
+        ) : (
+          <iframe
+            key={src}
+            src={frameSrcFor(src)}
+            title={title}
+            className="h-[calc(100vh-14rem)] min-h-[480px] w-full"
+            style={{ border: 0 }}
+          />
+        )}
       </div>
     </div>
   );

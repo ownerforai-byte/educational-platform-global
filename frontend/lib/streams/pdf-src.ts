@@ -54,6 +54,22 @@ export function isInlinePdf(url: string): boolean {
   return bare.endsWith(".pdf") || isGoogleDrive(url);
 }
 
+/** Markdown documents — not iframe-renderable, but readable in-app as text. */
+export function isMarkdownDoc(url: string): boolean {
+  const bare = url.split("?")[0].toLowerCase();
+  return bare.endsWith(".md") || bare.endsWith(".markdown");
+}
+
+/**
+ * Word documents — a browser cannot render a .docx inside an iframe (owner
+ * report 2026-11-22: opening one showed a blank frame). These get an explicit
+ * download/external panel instead of a dead frame.
+ */
+export function isWordDoc(url: string): boolean {
+  const bare = url.split("?")[0].toLowerCase();
+  return bare.endsWith(".docx") || bare.endsWith(".doc");
+}
+
 /**
  * True when the viewer route may frame this source.
  *

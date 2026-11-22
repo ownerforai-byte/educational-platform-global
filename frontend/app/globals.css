@@ -2180,6 +2180,14 @@ canvas,
 table {
   max-width: 100%;
 }
+/* Owner report 2026-11-22: "all tables are not working". The clamp above
+   also clamped tables INSIDE .table-scroll, so a wide answer table could
+   never exceed its box — the scroll wrapper had nothing to scroll and every
+   column got crushed instead. Wide tables must keep their natural width;
+   the .table-scroll wrapper is the thing that stays inside the screen. */
+.table-scroll table {
+  max-width: none;
+}
 pre {
   max-width: 100%;
   overflow-x: auto;

@@ -4,7 +4,9 @@ import {
   downloadFileName,
   frameSrcFor,
   isInlinePdf,
+  isMarkdownDoc,
   isViewableSrc,
+  isWordDoc,
   pdfViewerHref,
   titleFromSrc,
 } from "@/lib/pdf-src";
@@ -109,5 +111,28 @@ describe("titleFromSrc", () => {
   it("turns a path into a readable heading", () => {
     expect(titleFromSrc("/pdfs/liquid-crystal.pdf")).toBe("liquid crystal");
     expect(titleFromSrc("/materials/cell_biology.md")).toBe("cell biology");
+  });
+});
+
+/**
+ * OWNER REPORT 2026-11-22: "some of the docs are not working". The catalog
+ * ships .docx and .md materials that a browser cannot render inside an
+ * iframe — opening one showed a blank frame. The reader now renders markdown
+ * through the note pipeline and gives Word documents an explicit panel; these
+ * classifiers drive that behaviour.
+ */
+describe("non-iframe document formats", () => {
+  it("recognises markdown documents", () => {
+    expect(isMarkdownDoc("/materials/cell-biology-masterclass-slides.md")).toBe(true);
+    expect(isMarkdownDoc("/materials/chemistry-mcq-test.md")).toBe(true);
+    expect(isMarkdownDoc("/materials/chemistry-mcq-test.md?x=1")).toBe(true);
+    expect(isMarkdownDoc("/pdfs/liquid-crystal.pdf")).toBe(false);
+    expect(isMarkdownDoc("/materials/STUDY_HUB.html")).toBe(false);
+  });
+
+  it("recognises Word documents", () => {
+    expect(isWordDoc("/materials/Math_XI_Unit_01_algebra.docx")).toBe(true);
+    expect(isWordDoc("/materials/biology-units-1to5-conceptual-notes.docx")).toBe(true);
+    expect(isWordDoc("/pdfs/liquid-crystal.pdf")).toBe(false);
   });
 });

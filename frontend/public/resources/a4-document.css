@@ -1,33 +1,43 @@
 /*
- * A4 document base — the single page geometry and typography source for every
- * static study document under public/resources/.
+ * A4 document base — page geometry, report typography and the page components
+ * shared by every static study document under public/resources/.
  *
- * The documents are served straight from public/, so this stylesheet IS their
- * renderer. It makes each file read like a printed A4 page on screen and print
- * as one continuous A4 document:
+ * The documents are served straight from public/, so this stylesheet plus
+ * a4-paginate.js IS their renderer. Together they turn one long HTML file into
+ * a vertical stack of real A4 pages, the way a PDF viewer shows them:
  *
- *   screen  a real 210mm × 297mm sheet, centred on a neutral desk, with the same
- *           margins the printer will leave.
- *   print   @page size A4 with 20/18/18 mm margins, no page chrome, no page
- *           shadow, and content-aware page breaks.
+ *   screen   discrete 210 × 297 mm sheets on a neutral desk, each with the same
+ *            20/18/14 mm margins the printer leaves, a running label and a
+ *            "page N of M" foot. Content added later simply flows onto the next
+ *            sheet — nothing needs to be re-authored.
+ *   print    @page size A4, margin 0, one .a4-page per physical sheet, so the
+ *            printout matches the screen page-for-page.
+ *   no JS    (or before a4-paginate.js runs) the document still reads as one
+ *            continuous 210 mm column — the page chrome is added, not required.
  *
- * Subjects keep their own file (physics-xi-solutions.css, math-xi-solutions.css)
- * which imports this base and only overrides --accent. Document markup may use:
+ * Markup contract:
  *
- *   .crumb .meta .lede            running label and standfirst
- *   .exam .tip .warn .note        call-outs
- *   .toc                          contents list
- *   .item .q .tags .sol .work .ans  one solved question
- *   .step .tight                  lists inside a solution
- *   table / th / td / td.c        data tables
- *   .page-break .no-break         explicit pagination control
+ *   .a4-page                one sheet (created by a4-paginate.js)
+ *   .a4-page__head          running label at the top of a sheet
+ *   .a4-page__body          the flow area the paginator fills
+ *   .a4-page__foot          "page N of M" strip
+ *
+ * Document content may use:
+ *
+ *   .crumb .meta .lede .summary .status      running label, standfirst, labels
+ *   .exam .tip .warn .note .mystery          call-outs
+ *   .toc                                     contents list
+ *   .item .q .tags .sol .work .ans           one solved question
+ *   .qgrid > .cell                           three solved questions in one row
+ *   table / th / td / td.c / td.r            data tables
+ *   .page-break .no-break                    explicit pagination control
  */
 
 /* ---------- page geometry ---------- */
 
 @page {
   size: A4;
-  margin: 20mm 18mm 18mm;
+  margin: 0;
 }
 
 :root {
@@ -42,11 +52,11 @@
   --desk: #e7eaef;
   --paper: #ffffff;
 
-  /* one A4 text block, shared by screen and print */
   --page-width: 210mm;
-  --page-margin-x: 18mm;
-  --page-margin-top: 20mm;
-  --page-margin-bottom: 18mm;
+  --page-height: 297mm;
+  --page-pad-x: 18mm;
+  --page-pad-top: 20mm;
+  --page-pad-bottom: 14mm;
 }
 
 * { box-sizing: border-box; }
@@ -57,57 +67,123 @@ html {
 }
 
 body {
-  /* the sheet */
-  width: var(--page-width);
-  max-width: none;
-  min-height: 297mm;
-  margin: 10mm auto;
-  padding: var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
-  background: var(--paper);
+  background: var(--desk);
   color: var(--ink);
-  box-shadow:
-    0 1px 2px rgba(16, 21, 28, 0.16),
-    0 14px 34px rgba(16, 21, 28, 0.13);
+  margin: 0;
 
-  /* paper typography: points, not pixels, so screen and print agree */
+  /* report type: small, tight, tabular — the proportions of a printed note */
   font-family: Georgia, "Times New Roman", "Liberation Serif", serif;
-  font-size: 10.5pt;
-  line-height: 1.55;
+  font-size: 9.6pt;
+  line-height: 1.5;
   font-variant-numeric: tabular-nums lining-nums;
   orphans: 3;
   widows: 3;
 }
 
+/* ---------- the sheet ---------- */
+
+.a4-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: var(--page-width);
+  height: var(--page-height);
+  margin: 8mm auto;
+  padding: var(--page-pad-top) var(--page-pad-x) var(--page-pad-bottom);
+  background: var(--paper);
+  box-shadow:
+    0 1px 2px rgba(16, 21, 28, 0.16),
+    0 12px 30px rgba(16, 21, 28, 0.13);
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.a4-page__head {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 6mm;
+  padding-bottom: 1.6mm;
+  margin-bottom: 3mm;
+  border-bottom: 0.5pt solid var(--rule);
+  font: 600 7pt/1.2 "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.a4-page__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  /* the paginator measures against this height; keep it explicit */
+}
+
+.a4-page__foot {
+  flex: 0 0 auto;
+  margin-top: 3mm;
+  padding-top: 1.6mm;
+  border-top: 0.5pt solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  gap: 6mm;
+  font: 400 7pt/1 "Helvetica Neue", Arial, sans-serif;
+  color: #6b7280;
+}
+
+/* a single element taller than a sheet: let that one page grow instead of
+   clipping the content. Everything else stays exactly A4. */
+.a4-page--tall,
+.a4-page--tall .a4-page__body {
+  height: auto;
+}
+
+.a4-page--tall { min-height: var(--page-height); }
+
+/* ---------- fallback: no pagination ---------- */
+
+html:not(.a4-paginated) body {
+  width: var(--page-width);
+  max-width: none;
+  min-height: var(--page-height);
+  margin: 8mm auto;
+  padding: var(--page-pad-top) var(--page-pad-x) var(--page-pad-bottom);
+  background: var(--paper);
+  box-shadow:
+    0 1px 2px rgba(16, 21, 28, 0.16),
+    0 12px 30px rgba(16, 21, 28, 0.13);
+}
+
 /* ---------- headings ---------- */
 
 h1 {
-  font-size: 17.5pt;
-  line-height: 1.2;
-  margin: 0 0 1.5mm;
+  font-size: 15.5pt;
+  line-height: 1.18;
+  margin: 0 0 1.4mm;
   letter-spacing: -0.01em;
 }
 
 h2 {
-  font-size: 12.5pt;
-  line-height: 1.25;
-  margin: 7mm 0 2.5mm;
-  padding-bottom: 1.2mm;
+  font-size: 11.4pt;
+  line-height: 1.22;
+  margin: 5.5mm 0 2mm;
+  padding-bottom: 1mm;
   border-bottom: 0.6pt solid var(--rule);
   break-after: avoid;
   page-break-after: avoid;
 }
 
 h3 {
-  font-size: 11pt;
-  margin: 5mm 0 1.5mm;
+  font-size: 10.2pt;
+  margin: 4mm 0 1.2mm;
   color: var(--ink-soft);
   break-after: avoid;
   page-break-after: avoid;
 }
 
 h4 {
-  font-size: 8.8pt;
-  margin: 4mm 0 1mm;
+  font-size: 8.2pt;
+  margin: 3.2mm 0 0.9mm;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -115,81 +191,79 @@ h4 {
   page-break-after: avoid;
 }
 
-p { margin: 1.6mm 0; }
+p { margin: 1.4mm 0; }
 a { color: var(--accent); }
 b, strong { color: inherit; }
-em { font-style: italic; }
 img { max-width: 100%; height: auto; }
 
 hr {
   border: 0;
   border-top: 0.6pt solid var(--rule);
-  margin: 5mm 0;
+  margin: 4mm 0;
 }
 
 /* ---------- running label and standfirst ---------- */
 
 .crumb {
-  font-size: 8.4pt;
+  font-size: 7.8pt;
   color: var(--muted);
   letter-spacing: 0.02em;
-  margin: 0 0 4mm;
+  margin: 0 0 3mm;
 }
 
 .meta {
   color: var(--muted);
-  font-size: 9.2pt;
-  margin: 0 0 2mm;
+  font-size: 8.4pt;
+  margin: 0 0 1.6mm;
 }
 
 .lede {
-  font-size: 10.8pt;
+  font-size: 9.9pt;
   color: var(--ink-soft);
-  margin: 2mm 0 3mm;
+  margin: 1.6mm 0 2.4mm;
 }
-
-/* companion-brief copy: standfirst, misconception block, status label */
 
 .summary {
-  font-size: 11pt;
+  font-size: 9.9pt;
   font-style: italic;
   color: var(--ink-soft);
-  margin: 1.5mm 0 3mm;
-}
-
-.mystery {
-  border-left: 2pt solid var(--rule-strong);
-  padding: 0 0 0 3.2mm;
-  margin: 3mm 0;
-  break-inside: avoid;
-  page-break-inside: avoid;
+  margin: 1.2mm 0 2.4mm;
 }
 
 .status {
-  font-size: 8pt;
+  font-size: 7.4pt;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  margin: 0 0 1mm;
+  margin: 0 0 0.8mm;
+}
+
+/* companion-brief misconception block */
+.mystery {
+  border-left: 2pt solid var(--rule-strong);
+  padding: 0 0 0 3mm;
+  margin: 2.6mm 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .academic-extension {
   border-left: 2pt solid #6b7f99;
   background: var(--wash);
-  padding: 2mm 2.8mm;
-  margin: 3mm 0;
+  padding: 1.8mm 2.6mm;
+  margin: 2.6mm 0;
 }
 
 /* ---------- one solved question ---------- */
 
 .item {
-  border-left: 1.6pt solid var(--rule);
-  padding: 0 0 0 3.4mm;
-  margin: 3.2mm 0 4mm;
+  border-left: 1.5pt solid var(--rule);
+  padding: 0 0 0 3.2mm;
+  margin: 2.6mm 0 3.4mm;
 }
 
 .q {
-  margin: 0 0 1.2mm;
+  margin: 0 0 1mm;
   break-after: avoid;
   page-break-after: avoid;
 }
@@ -201,25 +275,25 @@ hr {
 }
 
 .tags {
-  font-size: 8pt;
+  font-size: 7.4pt;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin: 0 0 1mm;
+  margin: 0 0 0.8mm;
 }
 
-.sol { margin: 0.6mm 0 0; }
+.sol { margin: 0.5mm 0 0; }
 
 /* working: monospace, wraps instead of scrolling, never wider than the block */
 .work {
   font-family: "Consolas", "SF Mono", "Liberation Mono", Menlo, monospace;
-  font-size: 9.1pt;
-  line-height: 1.5;
+  font-size: 8.3pt;
+  line-height: 1.45;
   background: var(--wash);
   border: 0.5pt solid var(--rule);
-  border-radius: 1.5mm;
-  padding: 1.8mm 2.4mm;
-  margin: 1.4mm 0;
+  border-radius: 1.2mm;
+  padding: 1.5mm 2.2mm;
+  margin: 1.2mm 0;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   tab-size: 2;
@@ -229,40 +303,118 @@ hr {
 
 .ans {
   font-family: "Consolas", "SF Mono", "Liberation Mono", Menlo, monospace;
-  font-size: 9.4pt;
+  font-size: 8.5pt;
   font-weight: 700;
-  border-left: 2.4pt solid var(--accent);
+  border-left: 2.2pt solid var(--accent);
   background: linear-gradient(90deg, rgba(11, 79, 156, 0.06), rgba(11, 79, 156, 0));
-  padding: 1mm 0 1mm 2.4mm;
-  margin: 1.6mm 0 0;
+  padding: 0.9mm 0 0.9mm 2.2mm;
+  margin: 1.3mm 0 0;
   break-before: avoid;
   page-break-before: avoid;
 }
 
-ol.step { margin: 1mm 0 1.2mm; padding-left: 6mm; }
-ol.step > li { margin: 0.9mm 0; }
-ul { margin: 1mm 0 1.6mm; padding-left: 5.5mm; }
-ul.tight li { margin: 0.5mm 0; }
+ol.step { margin: 0.9mm 0 1mm; padding-left: 5.5mm; }
+ol.step > li { margin: 0.8mm 0; }
+ul { margin: 0.9mm 0 1.4mm; padding-left: 5mm; }
+ul.tight li { margin: 0.4mm 0; }
 li { break-inside: avoid; }
+
+/* ---------- three solved questions in one row ---------- */
+
+.qgrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 0.5pt solid var(--rule-strong);
+  border-left: 0.5pt solid var(--rule-strong);
+  margin: 2mm 0 3.5mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.qgrid > .cell {
+  border-right: 0.5pt solid var(--rule-strong);
+  border-bottom: 0.5pt solid var(--rule-strong);
+  padding: 1.6mm 1.9mm 1.4mm;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.qgrid > .cell .tag {
+  display: block;
+  margin: 0 0 0.7mm;
+  font: 600 6.4pt/1.1 "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.qgrid > .cell .q {
+  margin: 0;
+  font-size: 8.4pt;
+  line-height: 1.32;
+  text-align: left;
+}
+
+.qgrid > .cell .q .n {
+  font-weight: 700;
+  margin-right: 1mm;
+  color: var(--accent);
+}
+
+.qgrid > .cell .q .mk {
+  font: 400 6.6pt/1 "Helvetica Neue", Arial, sans-serif;
+  color: var(--muted);
+  vertical-align: 0.4ex;
+  margin-left: 0.5mm;
+}
+
+.qgrid > .cell .work {
+  margin: 1mm 0 0;
+  padding: 0 0 0 1.6mm;
+  border: 0;
+  border-left: 1.2pt solid #c3cad6;
+  border-radius: 0;
+  background: none;
+  font-size: 7.9pt;
+  line-height: 1.36;
+}
+
+.qgrid > .cell .ans {
+  margin: 1mm 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: 700 8pt/1.3 "Helvetica Neue", Arial, sans-serif;
+  color: var(--accent);
+}
+
+.qgrid > .cell .ans::before {
+  content: "Ans  ";
+  font-size: 6.8pt;
+  letter-spacing: 0.06em;
+}
 
 /* ---------- call-outs ---------- */
 
 .tip {
-  border-left: 2.4pt solid #6b7f99;
+  border-left: 2.2pt solid #6b7f99;
   background: var(--wash);
-  padding: 2mm 2.8mm;
-  margin: 3mm 0;
-  font-size: 9.8pt;
+  padding: 1.8mm 2.6mm;
+  margin: 2.6mm 0;
+  font-size: 9pt;
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
 .warn {
-  border-left: 2.4pt solid #b45f00;
+  border-left: 2.2pt solid #b45f00;
   background: #fdf7f0;
-  padding: 2mm 2.8mm;
-  margin: 3mm 0;
-  font-size: 9.8pt;
+  padding: 1.8mm 2.6mm;
+  margin: 2.6mm 0;
+  font-size: 9pt;
   color: var(--warn);
   break-inside: avoid;
   page-break-inside: avoid;
@@ -270,10 +422,10 @@ li { break-inside: avoid; }
 
 .exam {
   border: 0.5pt solid var(--rule-strong);
-  border-radius: 1.5mm;
+  border-radius: 1.2mm;
   background: var(--wash);
-  padding: 2.6mm 3.2mm;
-  margin: 3.5mm 0;
+  padding: 2.2mm 2.8mm;
+  margin: 3mm 0;
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -286,9 +438,9 @@ li { break-inside: avoid; }
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 2mm 0 3.5mm;
-  font-size: 9.4pt;
-  line-height: 1.4;
+  margin: 1.8mm 0 3mm;
+  font-size: 8.6pt;
+  line-height: 1.38;
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -298,7 +450,7 @@ tfoot { display: table-footer-group; }
 
 th, td {
   border: 0.5pt solid var(--rule-strong);
-  padding: 1.4mm 1.8mm;
+  padding: 1.2mm 1.6mm;
   text-align: left;
   vertical-align: top;
   overflow-wrap: break-word;
@@ -307,7 +459,7 @@ th, td {
 th {
   background: #eceff4;
   font-weight: 700;
-  font-size: 9pt;
+  font-size: 8.3pt;
   letter-spacing: 0.01em;
 }
 
@@ -320,24 +472,24 @@ td.r, th.r { text-align: right; }
 /* ---------- contents ---------- */
 
 .toc {
-  font-size: 9.6pt;
-  margin: 1.5mm 0 3mm;
-  padding-left: 6mm;
+  font-size: 8.8pt;
+  margin: 1.2mm 0 2.6mm;
+  padding-left: 5.5mm;
 }
 
 .toc li {
-  margin: 0.7mm 0;
+  margin: 0.6mm 0;
   break-inside: avoid;
 }
 
 /* ---------- footer note ---------- */
 
 .note {
-  font-size: 8.8pt;
+  font-size: 8pt;
   color: var(--muted);
   border-top: 0.6pt solid var(--rule);
-  margin-top: 7mm;
-  padding-top: 2mm;
+  margin-top: 5mm;
+  padding-top: 1.8mm;
 }
 
 /* ---------- pagination helpers ---------- */
@@ -345,20 +497,25 @@ td.r, th.r { text-align: right; }
 .page-break { break-before: page; page-break-before: always; }
 .no-break { break-inside: avoid; page-break-inside: avoid; }
 
-/* ---------- screen only: narrow viewports drop the sheet ---------- */
+/* ---------- narrow viewports drop the sheet ---------- */
 
 @media screen and (max-width: 820px) {
   html { background: var(--paper); }
 
-  body {
+  .a4-page,
+  html:not(.a4-paginated) body {
     width: auto;
     min-height: 0;
     margin: 0;
-    padding: 18px 15px 32px;
+    padding: 16px 14px 26px;
     box-shadow: none;
-    font-size: 11.5px;
   }
 
+  .a4-page { height: auto; }
+  .a4-page__head { display: none; }
+  .a4-page__body { overflow: visible; }
+
+  body { font-size: 11.5px; }
   h1 { font-size: 19px; }
   h2 { font-size: 15px; }
   h3 { font-size: 13px; }
@@ -366,22 +523,37 @@ td.r, th.r { text-align: right; }
   .item { padding-left: 10px; }
   .work, .ans { font-size: 11px; }
   table { font-size: 11px; }
+  .qgrid { grid-template-columns: minmax(0, 1fr); }
 }
 
-/* ---------- print: A4, no chrome ---------- */
+/* ---------- print: one sheet per page, no chrome ---------- */
 
 @media print {
-  html {
+  html,
+  body {
     background: var(--paper);
   }
 
-  body {
+  .a4-page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .a4-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  html:not(.a4-paginated) body {
     width: auto;
     min-height: 0;
     margin: 0;
     padding: 0;
     box-shadow: none;
-    font-size: 10.5pt;
   }
 
   a {
@@ -389,16 +561,8 @@ td.r, th.r { text-align: right; }
     text-decoration: none;
   }
 
-  h1 { font-size: 17pt; }
-  h2 { font-size: 12.5pt; }
-  h3 { font-size: 11pt; }
-
-  .item, .exam, .tip, .warn, table { page-break-inside: avoid; }
-
-  /* keep the printed colour wash light enough to read in mono */
   .work { background: #f7f8fa; }
   .ans { background: none; }
 
-  /* never leave a heading or a question stem alone at the foot of a page */
   h1, h2, h3, h4, .q { break-after: avoid; page-break-after: avoid; }
 }
