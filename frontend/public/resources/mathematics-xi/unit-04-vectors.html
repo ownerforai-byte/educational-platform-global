@@ -32,6 +32,7 @@
 <li>Exercise 4.2 — Collinear and coplanar vectors</li>
 <li>Exercise 4.3 — Linear combination, dependence and independence</li>
 <li>Exercise 4.4 — Topic-by-topic extension</li>
+<li>Exercise 4.5 — Mixed question types, topic by topic</li>
 <li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks</li>
@@ -488,6 +489,114 @@ AB = BC ⇒ the vectors are parallel and share B</p>
 <div class="sol">
 <p>Suppose αi + βj + γk = 0. Comparing components gives α = β = γ = 0 directly, so the only representation of the zero vector is the trivial one.</p>
 <p class="ans">Independent; every vector of space has a unique αi + βj + γk form</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 4.5 — Mixed question types, topic by topic</h2>
+
+<p class="lede">Four NEB shapes per topic: a magnitude or dot-product computation, a “prove the identity” item, a condition on λ, and a geometry application.</p>
+
+<h3>Topic 1 — Vector algebra and products</h3>
+<div class="item">
+<p class="q"><b>Q1.</b> <i>2 marks.</i> Find |2i − 3j + 6k|.</p>
+<div class="sol">
+<p class="work">√(4 + 9 + 36) = √49</p>
+<p class="ans">7</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q2.</b> <i>4 marks.</i> Prove (a − b)·(a + b) = |a|² − |b|².</p>
+<div class="sol">
+<p>Expand by bilinearity, remembering a·b = b·a:</p>
+<p class="work">(a − b)·(a + b) = a·a + a·b − b·a − b·b
+= |a|² − |b|²</p>
+<p>The middle terms cancel exactly because the dot product is symmetric.</p>
+<p class="ans">Proved</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q3.</b> <i>4 marks.</i> Find λ if 2i + λj + k is perpendicular to i − 2j + 3k.</p>
+<div class="sol">
+<p class="work">2(1) + λ(−2) + 1(3) = 0 ⇒ 2 − 2λ + 3 = 0</p>
+<p class="ans">λ = 5/2</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q4.</b> <i>5 marks.</i> Find the projection of a = 2i + 3j + 2k on b = i + 2j + k.</p>
+<div class="sol">
+<p class="work">a·b = 2 + 6 + 2 = 10,  |b| = √6
+scalar projection = 10/√6 = 5√6/3
+vector projection = (10/6)(i + 2j + k) = (5/3)(i + 2j + k)</p>
+<p class="ans">Length 5√6/3 ≈ 4.08; vector (5/3)(i + 2j + k)</p>
+</div>
+</div>
+
+<h3>Topic 2 — Collinear and coplanar vectors</h3>
+<div class="item">
+<p class="q"><b>Q5.</b> <i>2 marks.</i> Are the points (1, 2, 3), (2, 3, 4), (3, 4, 5) collinear?</p>
+<div class="sol">
+<p>Successive differences are both (1, 1, 1), so the direction ratios are proportional.</p>
+<p class="ans">Yes, collinear</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q6.</b> <i>4 marks.</i> Prove that A(i + j), B(2i + 3j), C(3i + 5j) are collinear.</p>
+<div class="sol">
+<p class="work">AB = (2 − 1)i + (3 − 1)j = i + 2j
+BC = (3 − 2)i + (5 − 3)j = i + 2j
+AB = BC ⇒ parallel with B in common</p>
+<p class="ans">Collinear</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q7.</b> <i>4 marks.</i> Find λ so that (λ, −1, 2), (1, 2, 3), (2, 1, 1) are coplanar.</p>
+<div class="sol">
+<p class="work">|λ −1 2; 1 2 3; 2 1 1| = λ(2 − 3) + 1(1 − 6) + 2(1 − 4)
+= −λ − 5 − 6 = −λ − 11 = 0</p>
+<p class="ans">λ = −11</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q8.</b> <i>5 marks.</i> Prove that if a, b, c are non-coplanar, then a + b, b + c, c + a are also non-coplanar.</p>
+<div class="sol">
+<p>Compute the triple product of the new set:</p>
+<p class="work">[(a + b)(b + c)(c + a)] = 2[a b c]</p>
+<p>Expanding and cancelling the repeated terms leaves twice the original triple product, which is non-zero because a, b, c are non-coplanar.</p>
+<p class="ans">Non-zero volume ⇒ non-coplanar</p>
+</div>
+</div>
+
+<h3>Topic 3 — Linear combination, dependence and independence</h3>
+<div class="item">
+<p class="q"><b>Q9.</b> <i>2 marks.</i> Do (1, 0, 0), (0, 1, 0), (1, 1, 0) form a basis of ℝ³?</p>
+<div class="sol">
+<p>The third is the sum of the first two, so the set is dependent and spans only the xy-plane.</p>
+<p class="ans">No — not a basis</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q10.</b> <i>4 marks.</i> Express (5, 4) as a combination of (1, 1) and (1, −1).</p>
+<div class="sol">
+<p class="work">α + β = 5,  α − β = 4 ⇒ α = 9/2, β = 1/2</p>
+<p class="ans">(5, 4) = (9/2)(1, 1) + (1/2)(1, −1)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q11.</b> <i>4 marks.</i> Are (1, 1, 1), (1, 2, 3), (1, 4, 9) linearly independent?</p>
+<div class="sol">
+<p class="work">|1 1 1; 1 2 3; 1 4 9| = 1(18 − 12) − 1(9 − 3) + 1(4 − 2) = 6 − 6 + 2 = 2 ≠ 0</p>
+<p class="ans">Independent — they form a basis</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q12.</b> <i>5 marks.</i> Prove with vectors that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half its length.</p>
+<div class="sol">
+<p>Let the triangle have position vectors A, B, C. Midpoints of AB and AC are</p>
+<p class="work">M = (A + B)/2,  N = (A + C)/2
+MN = N − M = (C − B)/2 = ½ BC</p>
+<p>MN is a scalar multiple of BC, so MN ∥ BC, and |MN| = ½|BC|.</p>
+<p class="ans">Proved</p>
 </div>
 </div>
 

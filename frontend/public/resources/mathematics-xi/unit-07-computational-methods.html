@@ -35,6 +35,7 @@
 <li>Exercise 7.5 — Statics: resultant and resolution of forces</li>
 <li>Exercise 7.6 — Dynamics: motion under uniform acceleration</li>
 <li>Exercise 7.7 — Topic-by-topic extension</li>
+<li>Exercise 7.8 — Mixed question types, topic by topic</li>
 <li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks</li>
@@ -527,6 +528,158 @@ v = u − gt ⇒ 0 = 30 − 10t ⇒ t = 3 s</p>
 <p class="work">u + 5a/2 = 10,  u + 9a/2 = 16
 Subtracting: 2a = 6 ⇒ a = 3 m/s², then u = 2.5 m/s</p>
 <p class="ans">u = 2.5 m/s, a = 3 m/s²</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.8 — Mixed question types, topic by topic</h2>
+
+<p class="lede">Three NEB shapes per topic: a one-step numerical item, a table or accuracy question, and an applied mechanics problem.</p>
+
+<h3>Topic 1 — Bisection method</h3>
+<div class="item">
+<p class="q"><b>Q1.</b> <i>4 marks.</i> Show that x² − 5 = 0 has a root in [2, 3] and perform two bisection steps.</p>
+<div class="sol">
+<p class="work">f(2) = −1 &lt; 0, f(3) = 4 &gt; 0 ⇒ root in [2, 3]
+x₁ = 2.5: f = 1.25 &gt; 0 ⇒ [2, 2.5]
+x₂ = 2.25: f = 0.0625 &gt; 0 ⇒ [2, 2.25]</p>
+<p class="ans">Root lies in [2, 2.25] (true value √5 ≈ 2.236)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q2.</b> <i>2 marks.</i> How accurate is the bracket after 3 bisection steps on [2, 3]?</p>
+<div class="sol">
+<p class="work">width = 1/2³ = 1/8</p>
+<p class="ans">Error ≤ 0.125</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q3.</b> <i>4 marks.</i> Why is bisection guaranteed to work whenever f is continuous and f(a)f(b) &lt; 0?</p>
+<div class="sol">
+<p>Each step keeps the sign change by replacing the endpoint whose sign matches the midpoint, so the interval always contains a root while halving its width. The widths tend to zero, so the brackets converge to a point, and continuity forces that point to be a root.</p>
+<p class="ans">Guaranteed convergence by the intermediate value theorem</p>
+</div>
+</div>
+
+<h3>Topic 2 — Newton-Raphson method</h3>
+<div class="item">
+<p class="q"><b>Q4.</b> <i>4 marks.</i> Apply two Newton-Raphson steps to x² − 2 = 0 starting from x₀ = 1.</p>
+<div class="sol">
+<p class="work">x₁ = 1 − (1 − 2)/2 = 1.5
+x₂ = 1.5 − (0.25)/3 = 1.4167</p>
+<p class="ans">x₂ ≈ 1.4167 (true value 1.41421)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q5.</b> <i>2 marks.</i> Write the Newton-Raphson iteration formula.</p>
+<div class="sol">
+<p class="work">xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)</p>
+<p class="ans">Iterate until two successive values agree to the required decimals</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q6.</b> <i>4 marks.</i> Compare the work needed by bisection and Newton-Raphson to reach 4 decimal places.</p>
+<div class="sol">
+<p>Bisection gains about 0.3 decimal place per step, so roughly 13–14 steps. Newton-Raphson roughly doubles the correct digits each step, so about 4–5 steps from a good start.</p>
+<p class="ans">Newton is far faster, but needs a good starting value</p>
+</div>
+</div>
+
+<h3>Topic 3 — Trapezoidal rule</h3>
+<div class="item">
+<p class="q"><b>Q7.</b> <i>4 marks.</i> Use the trapezoidal rule with h = 0.5 to estimate ∫₀¹ eˣ dx.</p>
+<div class="sol">
+<p class="work">y₀ = 1, y₁ = 1.6487, y₂ = 2.7183
+I = (0.5/2)[(1 + 2.7183) + 2(1.6487)]
+= 0.25[3.7183 + 3.2974] = 0.25(7.0157)</p>
+<p class="ans">I ≈ 1.7539 (exact e − 1 ≈ 1.7183)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q8.</b> <i>2 marks.</i> Is this an over- or under-estimate, and why?</p>
+<div class="sol">
+<p>An over-estimate: eˣ is convex (concave upward), so each chord lies above the curve.</p>
+<p class="ans">Over-estimate</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q9.</b> <i>4 marks.</i> What happens to the trapezoidal error if h is made 4 times smaller?</p>
+<div class="sol">
+<p>Error ∝ h², so it becomes 1/16 of its former size — a 16-fold improvement for 4 times the ordinates.</p>
+<p class="ans">About 16 times smaller</p>
+</div>
+</div>
+
+<h3>Topic 4 — Simpson's one-third rule</h3>
+<div class="item">
+<p class="q"><b>Q10.</b> <i>4 marks.</i> Use Simpson's rule on the same data as Q7 and compare.</p>
+<div class="sol">
+<p class="work">I = (0.5/3)[(1 + 2.7183) + 4(1.6487)]
+= (0.5/3)(3.7183 + 6.5948) = (0.5/3)(10.3131)</p>
+<p class="ans">I ≈ 1.7189 — much closer to 1.7183 than the trapezoidal 1.7539</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q11.</b> <i>2 marks.</i> State the weight pattern of Simpson's rule for five ordinates.</p>
+<div class="sol">
+<p class="work">(h/3)[y₀ + 4y₁ + 2y₂ + 4y₃ + y₄]</p>
+<p class="ans">Ends 1, odd positions 4, even positions 2</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q12.</b> <i>4 marks.</i> A table has 6 ordinates (5 strips). Can Simpson's rule be applied directly?</p>
+<div class="sol">
+<p>No — five strips is odd, and the rule consumes ordinates in pairs. Apply Simpson to the first four strips and the trapezoidal rule to the last, or re-sample to give an even strip count.</p>
+<p class="ans">Not directly; split the last strip off</p>
+</div>
+</div>
+
+<h3>Topic 5 — Statics: resultant and resolution</h3>
+<div class="item">
+<p class="q"><b>Q13.</b> <i>2 marks.</i> Find the resultant of 3 N and 4 N acting at right angles.</p>
+<div class="sol">
+<p class="work">R = √(9 + 16) = 5</p>
+<p class="ans">5 N</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q14.</b> <i>4 marks.</i> Resolve a 100 N force acting at 60° to the horizontal.</p>
+<div class="sol">
+<p class="work">Fₓ = 100cos60° = 50 N
+F_y = 100sin60° = 50√3 ≈ 86.6 N</p>
+<p class="ans">50 N horizontal, 86.6 N vertical</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q15.</b> <i>5 marks.</i> Two forces of 5 N and 12 N act at 90°; a third force keeps the system in equilibrium. Find it.</p>
+<div class="sol">
+<p class="work">Resultant of the two = √(25 + 144) = 13 N
+The equilibrant is equal and opposite.</p>
+<p class="ans">13 N, opposite in direction to the resultant</p>
+</div>
+</div>
+
+<h3>Topic 6 — Dynamics: uniform acceleration</h3>
+<div class="item">
+<p class="q"><b>Q16.</b> <i>2 marks.</i> u = 5 m/s, a = 2 m/s², t = 5 s. Find v.</p>
+<div class="sol">
+<p class="work">v = 5 + 2(5)</p>
+<p class="ans">v = 15 m/s</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q17.</b> <i>4 marks.</i> For the same data, find the distance travelled.</p>
+<div class="sol">
+<p class="work">s = ut + ½at² = 5(5) + ½(2)(25) = 25 + 25</p>
+<p class="ans">s = 50 m</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q18.</b> <i>5 marks.</i> A car at 20 m/s brakes to rest in 4 s. Find the retardation and the stopping distance.</p>
+<div class="sol">
+<p class="work">a = (0 − 20)/4 = −5 m/s² (so retardation 5 m/s²)
+s = (u + v)t/2 = (20 + 0)(4)/2</p>
+<p class="ans">Retardation 5 m/s², stopping distance 40 m</p>
 </div>
 </div>
 

@@ -37,6 +37,7 @@
 <li>Exercise 1.7 — Quadratic equations</li>
 <li>Exercise 1.8 — Complex numbers</li>
 <li>Exercise 1.9 — Topic-by-topic extension</li>
+<li>Exercise 1.10 — Mixed question types, topic by topic</li>
 <li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
@@ -1125,6 +1126,228 @@ D = 49 − 24 = 25 &gt; 0 (two real roots, as found)</p>
 <p class="work">|z| = √(1 + 3) = 2
 tan θ = √3/(−1) with the point in quadrant II ⇒ θ = 2π/3</p>
 <p class="ans">|z| = 2, arg z = 2π/3</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 1.10 — Mixed question types, topic by topic</h2>
+
+<p class="lede">Each topic below carries four different NEB question types: a quick 2-mark skill item, a “prove / show” item, a condition-to-be-found item, and a longer multi-mark item. Answering only one type is how students plateau.</p>
+
+<h3>Topic 1 — Logic and sets</h3>
+<div class="item">
+<p class="q"><b>Q1.</b> <i>2 marks.</i> Is (p ∨ q) → p a tautology?</p>
+<div class="sol">
+<p>It fails when p is false and q is true: then p ∨ q is true, so the implication runs true → false.</p>
+<p class="ans">Not a tautology; false when p = F, q = T</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q2.</b> <i>4 marks.</i> In a survey of 100 students, 60 study maths, 45 physics and 30 both. Find (i) how many study neither, (ii) how many study exactly one.</p>
+<div class="sol">
+<p class="work">(i) n(M ∪ P) = 60 + 45 − 30 = 75 ⇒ neither = 100 − 75 = 25
+(ii) exactly one = n(M) + n(P) − 2n(M ∩ P) = 105 − 60 = 45</p>
+<p class="ans">25 study neither; 45 study exactly one</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q3.</b> <i>5 marks.</i> Prove by induction that 1 + 3 + 5 + … + (2n − 1) = n².</p>
+<div class="sol">
+<p><b>Base case</b> n = 1: LHS = 1, RHS = 1 ✓.</p>
+<p><b>Assume</b> true for k: 1 + 3 + … + (2k − 1) = k².</p>
+<p><b>For k + 1:</b></p>
+<p class="work">1 + 3 + … + (2k − 1) + (2k + 1) = k² + 2k + 1 = (k + 1)²</p>
+<p>By the principle of induction the statement holds for all n ∈ ℕ.</p>
+<p class="ans">Proved</p>
+</div>
+</div>
+
+<h3>Topic 2 — Real numbers, intervals and absolute value</h3>
+<div class="item">
+<p class="q"><b>Q4.</b> <i>2 marks.</i> Solve |x − 2| ≤ 4.</p>
+<div class="sol">
+<p class="work">−4 ≤ x − 2 ≤ 4 ⇒ −2 ≤ x ≤ 6</p>
+<p class="ans">x ∈ [−2, 6]</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q5.</b> <i>4 marks.</i> Solve |x| + |x − 3| = 5 by cases.</p>
+<div class="sol">
+<p class="work">x &lt; 0:      −x + (3 − x) = 5 ⇒ 3 − 2x = 5 ⇒ x = −1 ✓
+0 ≤ x ≤ 3:  x + 3 − x = 3 ≠ 5 ⇒ none
+x &gt; 3:      x + x − 3 = 5 ⇒ 2x = 8 ⇒ x = 4 ✓</p>
+<p class="ans">x = −1 or x = 4</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q6.</b> <i>4 marks.</i> Prove that for positive a and b, √(ab) ≤ (a + b)/2.</p>
+<div class="sol">
+<p>Start from a square, which is never negative:</p>
+<p class="work">(√a − √b)² ≥ 0
+a − 2√(ab) + b ≥ 0
+(a + b)/2 ≥ √(ab)</p>
+<p>Equality holds only when a = b, i.e. AM = GM.</p>
+<p class="ans">Proved</p>
+</div>
+</div>
+
+<h3>Topic 3 — Functions</h3>
+<div class="item">
+<p class="q"><b>Q7.</b> <i>2 marks.</i> f(x) = x², g(x) = 2x + 1. Find f(g(1)).</p>
+<div class="sol">
+<p class="work">g(1) = 3, f(3) = 9</p>
+<p class="ans">9</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q8.</b> <i>5 marks.</i> Find the range of f(x) = x/(1 + x²).</p>
+<div class="sol">
+<p>Let y = x/(1 + x²). Then y is in the range only if the equation has a real x:</p>
+<p class="work">y x² − x + y = 0 ⇒ discriminant ≥ 0
+1 − 4y² ≥ 0 ⇒ |y| ≤ 1/2</p>
+<p>Both endpoints occur: f(1) = 1/2 and f(−1) = −1/2.</p>
+<p class="ans">Range = [−1/2, 1/2]</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q9.</b> <i>5 marks.</i> Show that f : ℝ → ℝ, f(x) = 2x + 3 is one–one and onto, and find f⁻¹.</p>
+<div class="sol">
+<p><b>One–one:</b> f(x₁) = f(x₂) ⇒ 2x₁ + 3 = 2x₂ + 3 ⇒ x₁ = x₂.</p>
+<p><b>Onto:</b> for any y ∈ ℝ take x = (y − 3)/2, which is real, and f(x) = y.</p>
+<p><b>Inverse:</b></p>
+<p class="work">y = 2x + 3 ⇒ x = (y − 3)/2</p>
+<p class="ans">f⁻¹(x) = (x − 3)/2</p>
+</div>
+</div>
+
+<h3>Topic 4 — Curve sketching, odd/even, periodicity</h3>
+<div class="item">
+<p class="q"><b>Q10.</b> <i>2 marks.</i> Classify x², x³ and sin x as even or odd.</p>
+<div class="sol">
+<p class="ans">x² even, x³ odd, sin x odd (check f(−x) in each case)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q11.</b> <i>4 marks.</i> Sketch y = 1/x: state the asymptotes, symmetry and monotonic behaviour.</p>
+<div class="sol">
+<p>Odd function, so the graph is symmetric about the origin. Neither branch meets either axis: x = 0 and y = 0 are asymptotes.</p>
+<p>On (0, ∞) the derivative −1/x² is negative, so each branch is decreasing throughout.</p>
+<p class="ans">Two decreasing branches in quadrants I and III, asymptotes x = 0, y = 0</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q12.</b> <i>4 marks.</i> For y = x² − 4x + 3 find the vertex, axis, intercepts and range.</p>
+<div class="sol">
+<p class="work">y = (x − 2)² − 1 ⇒ vertex (2, −1), axis x = 2
+y = 0 at x = 1, 3; y-intercept = 3
+opens upward ⇒ range [−1, ∞)</p>
+<p class="ans">Vertex (2, −1); x-intercepts 1 and 3; range [−1, ∞)</p>
+</div>
+</div>
+
+<h3>Topic 5 — Sequence and series</h3>
+<div class="item">
+<p class="q"><b>Q13.</b> <i>2 marks.</i> In a GP the 3rd term is 12 and the 6th is 96. Find r.</p>
+<div class="sol">
+<p class="work">ar² = 12, ar⁵ = 96 ⇒ r³ = 8</p>
+<p class="ans">r = 2 (and a = 3)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q14.</b> <i>4 marks.</i> Insert three arithmetic means between 2 and 18.</p>
+<div class="sol">
+<p>Five terms in AP with a = 2 and t₅ = 18:</p>
+<p class="work">2 + 4d = 18 ⇒ d = 4</p>
+<p class="ans">The means are 6, 10, 14</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q15.</b> <i>5 marks.</i> An AP has t₃ = 7 and t₇ = 15. Find S₂₅.</p>
+<div class="sol">
+<p class="work">a + 2d = 7,  a + 6d = 15 ⇒ 4d = 8 ⇒ d = 2, a = 3
+S₂₅ = (25/2)[2(3) + 24(2)] = (25/2)(54)</p>
+<p class="ans">S₂₅ = 675</p>
+</div>
+</div>
+
+<h3>Topic 6 — Matrices and determinants</h3>
+<div class="item">
+<p class="q"><b>Q16.</b> <i>2 marks.</i> A = [[1, 2], [3, 4]], B = [[0, 1], [1, 0]]. Find AB.</p>
+<div class="sol">
+<p class="work">AB = [[(1)(0)+(2)(1), (1)(1)+(2)(0)], [(3)(0)+(4)(1), (3)(1)+(4)(0)]]</p>
+<p class="ans">AB = [[2, 1], [4, 3]]</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q17.</b> <i>4 marks.</i> Solve by the matrix method: 2x + y = 5, x + 3y = 10.</p>
+<div class="sol">
+<p class="work">|A| = 6 − 1 = 5 ≠ 0
+x = (5·3 − 1·10)/5 = 1
+y = (2·10 − 5·1)/5 = 3</p>
+<p class="ans">x = 1, y = 3</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q18.</b> <i>5 marks.</i> For A = [[2, 1], [1, 1]], show A² − 3A + I = 0 and hence find A⁻¹.</p>
+<div class="sol">
+<p class="work">A² = [[5, 3], [3, 2]],  3A = [[6, 3], [3, 3]]
+A² − 3A + I = [[5 − 6 + 1, 3 − 3], [3 − 3, 2 − 3 + 1]] = [[0, 0], [0, 0]]</p>
+<p>Multiply the identity by A⁻¹: A − 3I + A⁻¹ = 0 ⇒ A⁻¹ = 3I − A.</p>
+<p class="ans">A⁻¹ = [[1, −1], [−1, 2]]</p>
+</div>
+</div>
+
+<h3>Topic 7 — Quadratic equations</h3>
+<div class="item">
+<p class="q"><b>Q19.</b> <i>2 marks.</i> Form the quadratic whose roots are 2 + √3 and 2 − √3.</p>
+<div class="sol">
+<p class="work">sum = 4, product = 4 − 3 = 1
+x² − 4x + 1 = 0</p>
+<p class="ans">x² − 4x + 1 = 0</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q20.</b> <i>4 marks.</i> Solve the inequality x² − 2x − 15 ≤ 0.</p>
+<div class="sol">
+<p class="work">(x − 5)(x + 3) ≤ 0 ⇒ roots at −3 and 5
+The parabola opens upward, so it is ≤ 0 between the roots.</p>
+<p class="ans">x ∈ [−3, 5]</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q21.</b> <i>5 marks.</i> One root of x² − 5x + k = 0 is twice the other. Find k.</p>
+<div class="sol">
+<p>Let the roots be r and 2r.</p>
+<p class="work">r + 2r = 5 ⇒ r = 5/3
+r · 2r = k ⇒ k = 2(25/9)</p>
+<p class="ans">k = 50/9</p>
+</div>
+</div>
+
+<h3>Topic 8 — Complex numbers</h3>
+<div class="item">
+<p class="q"><b>Q22.</b> <i>2 marks.</i> Simplify i²⁰²⁵.</p>
+<div class="sol">
+<p class="work">2025 = 4(506) + 1 ⇒ i²⁰²⁵ = (i⁴)⁵⁰⁶ · i = i</p>
+<p class="ans">i</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q23.</b> <i>4 marks.</i> Find the square roots of −5 + 12i.</p>
+<div class="sol">
+<p>Let the root be a + bi. Then a² − b² = −5 and 2ab = 12, with a² + b² = |z| = 13.</p>
+<p class="work">a² = (13 − 5)/2 = 4 ⇒ a = ±2,  b² = (13 + 5)/2 = 9 ⇒ b = ±3
+Same signs required (2ab &gt; 0)</p>
+<p class="ans">±(2 + 3i) — check: (2 + 3i)² = −5 + 12i ✓</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q24.</b> <i>5 marks.</i> Solve x² + x + 1 = 0 and verify that each root satisfies x³ = 1.</p>
+<div class="sol">
+<p class="work">x = [−1 ± √(1 − 4)]/2 = (−1 ± i√3)/2</p>
+<p>Call either root ω. From x² + x + 1 = 0 multiply by (x − 1):</p>
+<p class="work">(x − 1)(x² + x + 1) = x³ − 1 = 0 ⇒ ω³ = 1 (ω ≠ 1)</p>
+<p class="ans">x = (−1 ± i√3)/2, and both satisfy x³ = 1, 1 + x + x² = 0</p>
 </div>
 </div>
 

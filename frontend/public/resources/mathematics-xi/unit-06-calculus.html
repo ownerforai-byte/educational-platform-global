@@ -37,6 +37,7 @@
 <li>Exercise 6.7 — Anti-derivatives: standard integrals, substitution, by parts</li>
 <li>Exercise 6.8 — Definite integrals and area</li>
 <li>Exercise 6.9 — Topic-by-topic extension</li>
+<li>Exercise 6.10 — Mixed question types, topic by topic</li>
 <li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks</li>
@@ -1032,6 +1033,216 @@ y(2) = 4 − 8 + 7 = 3</p>
 <div class="sol">
 <p class="work">A = ∫₀² x² dx = [x³/3]₀² = 8/3</p>
 <p class="ans">8/3 square units</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Exercise 6.10 — Mixed question types, topic by topic</h2>
+
+<p class="lede">Three NEB shapes per topic here, because this unit is wide: a short evaluation, a “prove or classify” item, and a longer technique question. Work them topic by topic rather than in one sitting.</p>
+
+<h3>Topic 1 — Limits and indeterminate forms</h3>
+<div class="item">
+<p class="q"><b>Q1.</b> <i>2 marks.</i> Evaluate lim(x→0) (1 − cos 2x)/x².</p>
+<div class="sol">
+<p>Use 1 − cos2x = 2sin²x:</p>
+<p class="work">= lim 2sin²x/x² = 2(lim sinx/x)² = 2(1)²</p>
+<p class="ans">2</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q2.</b> <i>2 marks.</i> Evaluate lim(x→∞) (3x² + 2)/(x² − 1).</p>
+<div class="sol">
+<p>Divide above and below by x²:</p>
+<p class="work">= lim (3 + 2/x²)/(1 − 1/x²) = 3/1</p>
+<p class="ans">3</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q3.</b> <i>4 marks.</i> Evaluate lim(x→3) (x² − 9)/(x − 3) and explain why direct substitution fails.</p>
+<div class="sol">
+<p>Direct substitution gives 0/0 — an indeterminate form, not an answer.</p>
+<p class="work">(x² − 9)/(x − 3) = (x − 3)(x + 3)/(x − 3) = x + 3 → 6</p>
+<p class="ans">6</p>
+</div>
+</div>
+
+<h3>Topic 2 — Continuity</h3>
+<div class="item">
+<p class="q"><b>Q4.</b> <i>2 marks.</i> Find k if f(x) = (x² − 1)/(x − 1) for x ≠ 1 and f(1) = k is continuous at 1.</p>
+<div class="sol">
+<p class="work">lim(x→1) = x + 1 → 2 ⇒ k = 2</p>
+<p class="ans">k = 2</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q5.</b> <i>4 marks.</i> Prove that f(x) = x² is continuous at x = 2.</p>
+<div class="sol">
+<p class="work">lim(x→2) x² = 4 = f(2)</p>
+<p>The limit exists, equals the function value, and both one-sided limits agree — all three conditions of continuity hold.</p>
+<p class="ans">Continuous at x = 2</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q6.</b> <i>4 marks.</i> Classify the discontinuity of f(x) = 1/(x − 2) at x = 2.</p>
+<div class="sol">
+<p class="work">lim(x→2⁻) f = −∞,  lim(x→2⁺) f = +∞</p>
+<p>Neither one-sided limit is finite, so the discontinuity is of the second kind (infinite) and cannot be removed by redefining one point.</p>
+<p class="ans">Infinite discontinuity (second kind)</p>
+</div>
+</div>
+
+<h3>Topic 3 — First principles</h3>
+<div class="item">
+<p class="q"><b>Q7.</b> <i>4 marks.</i> Differentiate x² from first principles.</p>
+<div class="sol">
+<p class="work">f′(x) = lim(h→0) [(x + h)² − x²]/h
+= lim (2xh + h²)/h = lim (2x + h)</p>
+<p class="ans">f′(x) = 2x</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q8.</b> <i>4 marks.</i> Differentiate 1/x from first principles.</p>
+<div class="sol">
+<p class="work">f′(x) = lim(h→0) [1/(x + h) − 1/x]/h
+= lim [x − (x + h)]/[h·x(x + h)]
+= lim −1/[x(x + h)]</p>
+<p class="ans">f′(x) = −1/x²</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q9.</b> <i>2 marks.</i> Differentiate 3x + 5 from first principles.</p>
+<div class="sol">
+<p class="work">f′(x) = lim [3(x + h) + 5 − (3x + 5)]/h = lim 3h/h</p>
+<p class="ans">f′(x) = 3 — the slope is constant, as expected for a line</p>
+</div>
+</div>
+
+<h3>Topic 4 — Rules of differentiation</h3>
+<div class="item">
+<p class="q"><b>Q10.</b> <i>4 marks.</i> Differentiate y = x³ eˣ.</p>
+<div class="sol">
+<p class="work">y′ = 3x²eˣ + x³eˣ = x²eˣ(3 + x)</p>
+<p class="ans">y′ = x²eˣ(x + 3)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q11.</b> <i>4 marks.</i> Differentiate y = ln(x² + 1).</p>
+<div class="sol">
+<p>Chain rule: outer 1/u, inner 2x.</p>
+<p class="work">y′ = 2x/(x² + 1)</p>
+<p class="ans">y′ = 2x/(x² + 1)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q12.</b> <i>4 marks.</i> Differentiate y = sin²x.</p>
+<div class="sol">
+<p class="work">y′ = 2sinx·cosx = sin 2x</p>
+<p class="ans">y′ = sin 2x</p>
+</div>
+</div>
+
+<h3>Topic 5 — Implicit, parametric, higher order</h3>
+<div class="item">
+<p class="q"><b>Q13.</b> <i>4 marks.</i> Find dy/dx for x² + xy + y² = 3.</p>
+<div class="sol">
+<p class="work">2x + (y + x·dy/dx) + 2y·dy/dx = 0
+dy/dx (x + 2y) = −(2x + y)</p>
+<p class="ans">dy/dx = −(2x + y)/(x + 2y)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q14.</b> <i>4 marks.</i> Find dy/dx for x = t + 1/t, y = t − 1/t.</p>
+<div class="sol">
+<p class="work">dx/dt = 1 − 1/t² = (t² − 1)/t²
+dy/dt = 1 + 1/t² = (t² + 1)/t²
+dy/dx = (t² + 1)/(t² − 1)</p>
+<p class="ans">dy/dx = (t² + 1)/(t² − 1)</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q15.</b> <i>2 marks.</i> If y = x³ − 2x, find y″.</p>
+<div class="sol">
+<p class="work">y′ = 3x² − 2,  y″ = 6x</p>
+<p class="ans">y″ = 6x</p>
+</div>
+</div>
+
+<h3>Topic 6 — Monotonicity, extrema, tangents, concavity</h3>
+<div class="item">
+<p class="q"><b>Q16.</b> <i>5 marks.</i> Find the local maximum and minimum of f(x) = 2x³ − 3x² − 12x.</p>
+<div class="sol">
+<p class="work">f′ = 6x² − 6x − 12 = 6(x − 2)(x + 1) ⇒ x = 2, −1
+f″ = 12x − 6: f″(−1) = −18 &lt; 0 (max), f″(2) = 18 &gt; 0 (min)
+f(−1) = 7, f(2) = −20</p>
+<p class="ans">Local max 7 at x = −1; local min −20 at x = 2</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q17.</b> <i>4 marks.</i> Show that x + 1/x ≥ 2 for x &gt; 0, and find where equality occurs.</p>
+<div class="sol">
+<p class="work">f′ = 1 − 1/x² = 0 ⇒ x = 1
+f″ = 2/x³ &gt; 0 for x &gt; 0 ⇒ minimum</p>
+<p>f(1) = 2, so the least value is 2 and it occurs at x = 1.</p>
+<p class="ans">Minimum 2 at x = 1, hence x + 1/x ≥ 2</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q18.</b> <i>4 marks.</i> Find the tangent to y = x³ at (1, 1).</p>
+<div class="sol">
+<p class="work">y′ = 3x² ⇒ slope at x = 1 is 3
+y − 1 = 3(x − 1)</p>
+<p class="ans">y = 3x − 2</p>
+</div>
+</div>
+
+<h3>Topic 7 — Anti-derivatives</h3>
+<div class="item">
+<p class="q"><b>Q19.</b> <i>4 marks.</i> Evaluate ∫(2x + 3)² dx.</p>
+<div class="sol">
+<p class="work">Expand: 4x² + 12x + 9
+= (4/3)x³ + 6x² + 9x + C</p>
+<p class="ans">(4/3)x³ + 6x² + 9x + C</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q20.</b> <i>2 marks.</i> Evaluate ∫(1/x²) dx.</p>
+<div class="sol">
+<p>Write as ∫x⁻² dx and use the power rule with n = −2.</p>
+<p class="work">= x⁻¹/(−1) + C</p>
+<p class="ans">−1/x + C</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q21.</b> <i>4 marks.</i> Evaluate ∫sin 2x dx.</p>
+<div class="sol">
+<p>Try cos2x: its derivative is −2sin2x, so divide by −2.</p>
+<p class="work">= −½cos 2x + C</p>
+<p class="ans">−½cos 2x + C</p>
+</div>
+</div>
+
+<h3>Topic 8 — Definite integrals and area</h3>
+<div class="item">
+<p class="q"><b>Q22.</b> <i>4 marks.</i> Evaluate ∫₁³ (2x + 1) dx.</p>
+<div class="sol">
+<p class="work">= [x² + x]₁³ = (9 + 3) − (1 + 1) = 12 − 2</p>
+<p class="ans">10</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q23.</b> <i>4 marks.</i> Evaluate ∫₀^(π/2) cos x dx.</p>
+<div class="sol">
+<p class="work">= [sin x]₀^(π/2) = 1 − 0</p>
+<p class="ans">1</p>
+</div>
+</div>
+<div class="item">
+<p class="q"><b>Q24.</b> <i>5 marks.</i> Find the area between y = x and y = x² from x = 0 to x = 1.</p>
+<div class="sol">
+<p>On (0, 1), x &gt; x², so the upper curve is the line.</p>
+<p class="work">A = ∫₀¹ (x − x²) dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3</p>
+<p class="ans">A = 1/6 square units</p>
 </div>
 </div>
 
