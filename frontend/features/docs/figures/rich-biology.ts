@@ -22,6 +22,18 @@
 import type { TopicFiguresEntry } from "./registry";
 
 export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
+  "detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-r": {
+    title: "Organelle ultrastructure — the powerhouse, the food factory and the protein line",
+    figures: [
+      {
+        src: "/docs/figures/biology/organelle-ultrastructure.jpg",
+        caption:
+          "Three organelles in cutaway, drawn the way an electron micrograph plus a model kit would show them. Mitochondrion (left): a smooth outer membrane and an inner membrane folded into cristae — the folds pack in far more ATP-synthase surface than a flat sac could; the grainy matrix holds its own circular DNA and ribosomes, the reason mitochondria inherit only from the mother. Chloroplast (centre): a double envelope around stacked green thylakoid discs (grana) threaded by stroma lamellae; the stacks are the photosynthetic membranes where light is captured, and the stroma around them fixes CO₂ into sugar, storing it first as a starch granule. Rough endoplasmic reticulum and Golgi (right): ribosome-studded sheets where proteins are threaded and folded, feeding vesicles to the Golgi's stacked cisternae, which finish, tag and ship them. One theme runs through all three: membrane folds and stacks multiply working surface inside a fixed volume.",
+        alt: "Detailed cutaway illustrations of a mitochondrion with cristae, a chloroplast with grana stacks and stroma, and rough endoplasmic reticulum with ribosomes leading to a Golgi apparatus with vesicles",
+        keyword: "mitochondria",
+      },
+    ],
+  },
   "cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-sign": {
     title: "Mitosis under the microscope",
     figures: [
