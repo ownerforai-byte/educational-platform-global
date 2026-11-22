@@ -23,6 +23,7 @@ const DATA_DIR = path.join(ROOT, "content-tools/math-xi-workbook/data");
 const OUT_DIR = path.join(ROOT, "frontend/public/resources/mathematics-xi/chapters");
 const HARD_OUT_DIR = path.join(OUT_DIR, "hard");
 const LONG_OUT_DIR = path.join(OUT_DIR, "long");
+const CONCEPT_OUT_DIR = path.join(OUT_DIR, "concept");
 const PAPER_OUT_DIR = path.join(OUT_DIR, "papers");
 const REGISTRY = path.join(ROOT, "frontend/lib/streams/mathematics-xi-chapters.ts");
 
@@ -34,6 +35,11 @@ const ROWS = 4;
 const HARD_PER_SHEET = 6;
 const HARD_COLS = 2;
 const HARD_ROWS = 3;
+
+/* concept sheets: 2 columns × 3 rows = 6 conceptual questions with answers */
+const CONCEPT_PER_SHEET = 6;
+const CONCEPT_COLS = 2;
+const CONCEPT_ROWS = 3;
 
 /* long-answer sheets: one full-length question per A4 page */
 const LONG_PER_SHEET = 1;
@@ -71,6 +77,7 @@ const files = fs
       !name.endsWith(".more.mjs") &&
       !name.endsWith(".hard.mjs") &&
       !name.endsWith(".long.mjs") &&
+      !name.endsWith(".concept.mjs") &&
       !name.endsWith(".paper.mjs"),
   )
   .sort();
@@ -85,6 +92,10 @@ const hardFiles = fs
 const longFiles = fs
   .readdirSync(DATA_DIR)
   .filter((name) => name.endsWith(".long.mjs"))
+  .sort();
+const conceptFiles = fs
+  .readdirSync(DATA_DIR)
+  .filter((name) => name.endsWith(".concept.mjs"))
   .sort();
 const paperFiles = fs
   .readdirSync(DATA_DIR)
@@ -184,6 +195,29 @@ for (const file of longFiles) {
       continue;
     }
     chapter.long = entry.items;
+  }
+}
+
+/* concept sheets: `*.concept.mjs` exports CONCEPT with two-mark questions and
+   their model answers, printed six to a sheet. */
+for (const file of conceptFiles) {
+  const mod = await import(pathToFileURL(path.join(DATA_DIR, file)).href);
+  const list = mod.CONCEPT ?? mod.default;
+  if (!Array.isArray(list) || list.length === 0) {
+    fail(`${file}: expected an exported CONCEPT array`);
+    continue;
+  }
+  for (const entry of list) {
+    const chapter = chapters.find((candidate) => candidate.slug === entry.slug);
+    if (!chapter) {
+      fail(`${file}: no chapter with slug "${entry.slug}"`);
+      continue;
+    }
+    if (!Array.isArray(entry.items) || entry.items.length === 0) {
+      fail(`${file} → ${entry.slug}: concept items must be a non-empty array`);
+      continue;
+    }
+    chapter.concept = entry.items;
   }
 }
 
@@ -300,6 +334,24 @@ for (const chapter of chapters) {
     if (pitfall !== undefined && typeof pitfall !== "string")
       fail(`${at}: pitfall must be a string when present`);
   });
+
+  if (chapter.concept === undefined) continue;
+
+  chapter.concept.forEach((item, i) => {
+    const at = `${chapter.slug} (concept) C${i + 1}`;
+    if (!Array.isArray(item) || item.length < 2) {
+      fail(`${at}: expected [question, answer, marks?, topicIndex?, kind?]`);
+      return;
+    }
+    const [q, a, marks = 2, topicIndex = 0, kind] = item;
+    if (typeof q !== "string" || q.trim() === "") fail(`${at}: empty question`);
+    if (typeof a !== "string" || a.trim() === "") fail(`${at}: empty answer`);
+    if (marks !== 2) fail(`${at}: conceptual answers are worth exactly 2 marks`);
+    if (Number.isInteger(topicIndex) && (topicIndex < 0 || topicIndex >= chapter.topics.length))
+      fail(`${at}: topicIndex ${topicIndex} out of range (${chapter.topics.length} topics)`);
+    if (kind !== undefined && (typeof kind !== "string" || kind.trim() === ""))
+      fail(`${at}: kind must be a non-empty string when present`);
+  });
 }
 
 if (errors.length) {
@@ -345,6 +397,10 @@ const sheetHtml = (chapter, sheetIndex, sheetCount) => {
   }${
     chapter.long
       ? ` <a class="hardlink" href="/resources/mathematics-xi/chapters/long/${chapter.slug}.html">Full-length answer →</a>`
+      : ""
+  }${
+    chapter.concept
+      ? ` <a class="hardlink" href="/resources/mathematics-xi/chapters/concept/${chapter.slug}.html">Conceptual answers →</a>`
       : ""
   }</p>
 </header>
@@ -682,6 +738,123 @@ const paperStem = (paper) =>
     ? `unit-${String(paper.unitNo).padStart(2, "0")}`
     : `unit-${String(paper.unitNo).padStart(2, "0")}-set-${paper.set.toLowerCase()}`;
 
+/* ── conceptual answer sheets ────────────────────────────────────────── */
+
+const conceptCellHtml = (cell, chapter, no) => {
+  const [q, a, marks = 2, topicIndex = 0, kind] = cell;
+  const topic = chapter.topics[topicIndex] ?? "";
+  return `<div class="cell">
+<p class="tag"><span>${esc(topic)}</span>${
+    kind ? ` <span class="kind">${esc(kind)}</span>` : ""
+  } <span class="level">${marks} marks</span></p>
+<p class="q"><span class="n">C${no}.</span> ${esc(q)}&nbsp;<span class="mk">[${marks}]</span></p>
+<p class="ansblock"><b>Ans.</b> ${esc(a)}</p>
+</div>`;
+};
+
+const conceptSheetHtml = (chapter, index, count, items) => {
+  const first = index * CONCEPT_PER_SHEET;
+  const cells = items
+    .slice(first, first + CONCEPT_PER_SHEET)
+    .map((cell, i) => conceptCellHtml(cell, chapter, first + i + 1))
+    .join("\n");
+  return `<section class="sheet" aria-label="${esc(chapter.title)} — conceptual answers ${index + 1}">
+<header class="masthead">
+<div class="stream"><span>${esc(STREAM)}</span><span>${esc(BOOK)} · conceptual answers</span></div>
+<h1>${esc(chapter.code)} · ${esc(chapter.title)} — two-mark conceptual answers${
+    count > 1 ? ` (${index + 1}/${count})` : ""
+  }</h1>
+<p class="topics"><b>Topics</b> ${chapter.topics.map(esc).join(" · ")}</p>
+<p class="note">Each question is the two-mark kind NEB asks at the start of the paper; the model answer is one or two precise sentences.</p>
+</header>
+<div class="grid hard concept" data-cols="${CONCEPT_COLS}" data-rows="${CONCEPT_ROWS}">
+${cells}
+</div>
+<footer class="foot">
+<span>Unit ${chapter.unitNo} · ${esc(chapter.unitName)}</span>
+<span class="mid">${esc(chapter.title)} · conceptual</span>
+<span>Page ${index + 1} of ${count}</span>
+</footer>
+</section>`;
+};
+
+const conceptChapterHtml = (chapter) => {
+  const count = Math.ceil(chapter.concept.length / CONCEPT_PER_SHEET);
+  const sheets = Array.from({ length: count }, (_, i) =>
+    conceptSheetHtml(chapter, i, count, chapter.concept),
+  );
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(chapter.code)} ${esc(chapter.title)} — conceptual answers (Mathematics XI)</title>
+<meta name="description" content="${esc(
+    chapter.title,
+  )} conceptual questions with model two-mark answers, six to an A4 sheet.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/concept.css">
+</head>
+<body>
+${sheets.join("\n")}
+</body>
+</html>
+`;
+};
+
+const conceptIndexHtml = () => {
+  const list = chapters.filter((chapter) => chapter.concept);
+  const units = [...new Set(list.map((chapter) => chapter.unitNo))].sort((a, b) => a - b);
+  const blocks = units
+    .map((unitNo) => {
+      const group = list.filter((chapter) => chapter.unitNo === unitNo);
+      const items = group
+        .map(
+          (chapter) =>
+            `<li><a href="/resources/mathematics-xi/chapters/concept/${chapter.slug}.html">${esc(
+              chapter.code,
+            )} ${esc(chapter.title)}</a> <span>· ${chapter.concept.length} Q&amp;A</span></li>`,
+        )
+        .join("\n");
+      return `<h2>Unit ${unitNo} · ${esc(group[0].unitName)}</h2>
+<ol>
+${items}
+</ol>`;
+    })
+    .join("\n");
+  const total = list.reduce((sum, chapter) => sum + chapter.concept.length, 0);
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — conceptual answers</title>
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/concept.css">
+</head>
+<body>
+<section class="sheet index">
+<header class="masthead">
+<div class="stream"><span>${esc(STREAM)}</span><span>${esc(BOOK)} · conceptual answers</span></div>
+<h1>Conceptual answers — contents</h1>
+<p class="topics"><b>Coverage</b> ${list.length} chapters · ${total} two-mark questions · ${list.reduce(
+    (sum, chapter) => sum + Math.ceil(chapter.concept.length / CONCEPT_PER_SHEET),
+    0,
+  )} A4 sheets</p>
+<p class="note">Six questions per sheet with the model answer underneath, in the wording a two-mark answer needs.</p>
+</header>
+${blocks}
+<footer class="foot">
+<span>Units ${units.join(", ")}</span>
+<span class="mid">${list.length} chapters</span>
+<span>${total} Q&amp;A</span>
+</footer>
+</section>
+</body>
+</html>
+`;
+};
+
 /* ── NEB model papers ─────────────────────────────────────────────────── */
 
 const PAPER_LETTERS = ["a", "b", "c", "d"];
@@ -872,6 +1045,10 @@ const indexHtml = () => {
               chapter.long
                 ? ` <span>· <a href="/resources/mathematics-xi/chapters/long/${chapter.slug}.html">full-length answer</a></span>`
                 : ""
+            }${
+              chapter.concept
+                ? ` <span>· <a href="/resources/mathematics-xi/chapters/concept/${chapter.slug}.html">conceptual</a></span>`
+                : ""
             }</li>`,
         )
         .join("\n");
@@ -930,6 +1107,8 @@ const registrySource = () => {
     hardSheetCount: ${chapter.hard ? Math.ceil(chapter.hard.length / HARD_PER_SHEET) : 0},
     longCount: ${chapter.long ? chapter.long.length : 0},
     longSheetCount: ${chapter.long ? Math.ceil(chapter.long.length / LONG_PER_SHEET) : 0},
+    conceptCount: ${chapter.concept ? chapter.concept.length : 0},
+    conceptSheetCount: ${chapter.concept ? Math.ceil(chapter.concept.length / CONCEPT_PER_SHEET) : 0},
   },`,
     )
     .join("\n");
@@ -961,6 +1140,7 @@ export const MATH_XI_WORKBOOK_BASE = "/resources/mathematics-xi/chapters";
 export const MATH_XI_QUESTIONS_PER_SHEET = ${PER_SHEET};
 export const MATH_XI_HARD_PER_SHEET = ${HARD_PER_SHEET};
 export const MATH_XI_LONG_PER_SHEET = ${LONG_PER_SHEET};
+export const MATH_XI_CONCEPT_PER_SHEET = ${CONCEPT_PER_SHEET};
 export const MATH_XI_PAPER_MARKS = ${PAPER_MARKS};
 
 /** Shape of the NEB paper — 11 × 1, 8 × 5, 3 × 8 marks. */
@@ -1007,6 +1187,9 @@ export interface MathXiChapter {
   /** Full-length NEB answers (one per A4 page). 0 when unauthored. */
   longCount: number;
   longSheetCount: number;
+  /** Two-mark conceptual questions with model answers. 0 when unauthored. */
+  conceptCount: number;
+  conceptSheetCount: number;
 }
 
 export const MATH_XI_CHAPTERS: MathXiChapter[] = [
@@ -1023,6 +1206,10 @@ export const MATH_XI_WORKBOOK_TOTALS = {
   hardQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardCount, 0),
   hardSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardSheetCount, 0),
   hardPerSheet: MATH_XI_HARD_PER_SHEET,
+  conceptChapters: MATH_XI_CHAPTERS.filter((chapter) => chapter.conceptCount > 0).length,
+  conceptQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.conceptCount, 0),
+  conceptSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.conceptSheetCount, 0),
+  conceptPerSheet: MATH_XI_CONCEPT_PER_SHEET,
   longChapters: MATH_XI_CHAPTERS.filter((chapter) => chapter.longCount > 0).length,
   longQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.longCount, 0),
   longSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.longSheetCount, 0),
@@ -1047,6 +1234,18 @@ export function mathXiLongUrl(chapter: Pick<MathXiChapter, "slug">): string {
 
 export function mathXiLongPath(chapter: Pick<MathXiChapter, "slug">): string {
   return \`public/resources/mathematics-xi/chapters/long/\${chapter.slug}.html\`;
+}
+
+export function mathXiConceptUrl(chapter: Pick<MathXiChapter, "slug">): string {
+  return \`\${MATH_XI_WORKBOOK_BASE}/concept/\${chapter.slug}.html\`;
+}
+
+export function mathXiConceptPath(chapter: Pick<MathXiChapter, "slug">): string {
+  return \`public/resources/mathematics-xi/chapters/concept/\${chapter.slug}.html\`;
+}
+
+export function mathXiConceptChapters(): MathXiChapter[] {
+  return MATH_XI_CHAPTERS.filter((chapter) => chapter.conceptCount > 0);
 }
 
 export function mathXiLongChapters(): MathXiChapter[] {
@@ -1121,6 +1320,29 @@ if (longChapters.length > 0) {
   fs.writeFileSync(path.join(LONG_OUT_DIR, "index.html"), longIndexHtml(), "utf8");
 }
 
+const conceptChapters = chapters.filter((chapter) => chapter.concept);
+if (conceptChapters.length > 0) {
+  fs.mkdirSync(CONCEPT_OUT_DIR, { recursive: true });
+  for (const chapter of conceptChapters) {
+    fs.writeFileSync(
+      path.join(CONCEPT_OUT_DIR, `${chapter.slug}.html`),
+      conceptChapterHtml(chapter),
+      "utf8",
+    );
+  }
+  fs.writeFileSync(path.join(CONCEPT_OUT_DIR, "index.html"), conceptIndexHtml(), "utf8");
+}
+
+if (conceptChapters.length > 0) {
+  const conceptTotal = conceptChapters.reduce((sum, chapter) => sum + chapter.concept.length, 0);
+  const conceptSheets = conceptChapters.reduce(
+    (sum, chapter) => sum + Math.ceil(chapter.concept.length / CONCEPT_PER_SHEET),
+    0,
+  );
+  console.log(
+    `✓ ${conceptChapters.length} concept sheets · ${conceptTotal} two-mark Q&A · ${conceptSheets} A4 pages`,
+  );
+}
 if (papers.length > 0) {
   fs.mkdirSync(PAPER_OUT_DIR, { recursive: true });
   for (const paper of papers) {

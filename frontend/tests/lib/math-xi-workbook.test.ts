@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   MATH_XI_CHAPTERS,
+  MATH_XI_CONCEPT_PER_SHEET,
   MATH_XI_HARD_PER_SHEET,
   MATH_XI_LONG_PER_SHEET,
   MATH_XI_PAPERS,
@@ -13,6 +14,9 @@ import {
   mathXiChapterPath,
   mathXiChapterUrl,
   mathXiChaptersByUnit,
+  mathXiConceptChapters,
+  mathXiConceptPath,
+  mathXiConceptUrl,
   mathXiHardChapters,
   mathXiHardPath,
   mathXiHardUrl,
@@ -257,6 +261,49 @@ describe("Mathematics XI — hard sets with hint ladders", () => {
     }
     expect(answers).toBe(MATH_XI_WORKBOOK_TOTALS.longQuestions);
     expect(mathXiLongChapters().length).toBe(MATH_XI_CHAPTERS.length);
+  });
+
+  it("pairs every chapter with six two-mark conceptual answers on one A4 sheet", () => {
+    let total = 0;
+    for (const chapter of MATH_XI_CHAPTERS) {
+      expect(chapter.conceptCount, `${chapter.slug}: concept Q&A`).toBe(6);
+      expect(chapter.conceptSheetCount).toBe(
+        Math.ceil(chapter.conceptCount / MATH_XI_CONCEPT_PER_SHEET),
+      );
+
+      const html = read(mathXiConceptPath(chapter));
+      const blame = `${chapter.slug}: `;
+      expect((html.match(/<section class="sheet"/g) ?? []).length, blame).toBe(
+        chapter.conceptSheetCount,
+      );
+      expect((html.match(/<p class="q"><span class="n">C\d+\.<\/span>/g) ?? []).length, blame).toBe(
+        chapter.conceptCount,
+      );
+      expect((html.match(/<p class="ansblock">/g) ?? []).length, blame).toBe(chapter.conceptCount);
+      expect(html).toContain("2 marks");
+      expect(html).toContain('data-cols="2"');
+      expect(html).toContain('data-rows="3"');
+      expect(html).toContain("/resources/mathematics-xi/a4/concept.css");
+      expect(html).not.toContain("<style");
+      expect(html).not.toContain("<script");
+
+      total += chapter.conceptCount;
+    }
+    expect(total).toBe(MATH_XI_WORKBOOK_TOTALS.conceptQuestions);
+    expect(mathXiConceptChapters().length).toBe(MATH_XI_CHAPTERS.length);
+  });
+
+  it("links the concept sheet from the chapter sheet and from its contents page", () => {
+    const index = read("public/resources/mathematics-xi/chapters/concept/index.html");
+    for (const chapter of mathXiConceptChapters()) {
+      expect(existsSync(resolve(ROOT, mathXiConceptPath(chapter)))).toBe(true);
+      expect(mathXiConceptUrl(chapter)).toBe(
+        `/resources/mathematics-xi/chapters/concept/${chapter.slug}.html`,
+      );
+      expect(read(mathXiChapterPath(chapter))).toContain(mathXiConceptUrl(chapter));
+      expect(index).toContain(mathXiConceptUrl(chapter));
+    }
+    expect(index).toContain("Q&amp;A");
   });
 
   it("links the long answer from its chapter sheet and from the contents pages", () => {

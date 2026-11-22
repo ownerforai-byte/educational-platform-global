@@ -15,6 +15,7 @@ export const MATH_XI_WORKBOOK_BASE = "/resources/mathematics-xi/chapters";
 export const MATH_XI_QUESTIONS_PER_SHEET = 12;
 export const MATH_XI_HARD_PER_SHEET = 6;
 export const MATH_XI_LONG_PER_SHEET = 1;
+export const MATH_XI_CONCEPT_PER_SHEET = 6;
 export const MATH_XI_PAPER_MARKS = 75;
 
 /** Shape of the NEB paper — 11 × 1, 8 × 5, 3 × 8 marks. */
@@ -65,6 +66,9 @@ export interface MathXiChapter {
   /** Full-length NEB answers (one per A4 page). 0 when unauthored. */
   longCount: number;
   longSheetCount: number;
+  /** Two-mark conceptual questions with model answers. 0 when unauthored. */
+  conceptCount: number;
+  conceptSheetCount: number;
 }
 
 export const MATH_XI_CHAPTERS: MathXiChapter[] = [
@@ -82,6 +86,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "real-numbers-modulus",
@@ -97,6 +103,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "functions",
@@ -112,6 +120,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "curve-sketching",
@@ -127,6 +137,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "sequence-and-series",
@@ -142,6 +154,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "matrices-and-determinants",
@@ -157,6 +171,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "quadratic-equations",
@@ -172,6 +188,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "complex-numbers",
@@ -187,6 +205,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "inverse-circular-functions",
@@ -202,6 +222,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "combination-formulae",
@@ -217,6 +239,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "general-values",
@@ -232,6 +256,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "interval-equations",
@@ -247,6 +273,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "distance-and-bisectors",
@@ -262,6 +290,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "pair-of-straight-lines",
@@ -277,6 +307,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "coordinates-in-space",
@@ -292,6 +324,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "vector-algebra-products",
@@ -307,6 +341,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "collinear-coplanar",
@@ -322,6 +358,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "linear-combination",
@@ -337,6 +375,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "dispersion-cv-skewness",
@@ -352,6 +392,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "probability-basics",
@@ -367,6 +409,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "addition-multiplication-laws",
@@ -382,6 +426,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "limits",
@@ -397,6 +443,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "continuity",
@@ -412,6 +460,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "first-principles",
@@ -427,6 +477,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "differentiation-rules",
@@ -442,6 +494,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "implicit-parametric-higher",
@@ -457,6 +511,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "extrema-tangents",
@@ -472,6 +528,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "anti-derivatives",
@@ -487,6 +545,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "definite-integrals-area",
@@ -502,6 +562,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "bisection-method",
@@ -517,6 +579,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "newton-raphson-method",
@@ -532,6 +596,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "trapezoidal-rule",
@@ -547,6 +613,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "simpson-rule",
@@ -562,6 +630,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "statics-forces",
@@ -577,6 +647,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
   {
     slug: "dynamics-kinematics",
@@ -592,6 +664,8 @@ export const MATH_XI_CHAPTERS: MathXiChapter[] = [
     hardSheetCount: 1,
     longCount: 1,
     longSheetCount: 1,
+    conceptCount: 6,
+    conceptSheetCount: 1,
   },
 ];
 
@@ -605,6 +679,10 @@ export const MATH_XI_WORKBOOK_TOTALS = {
   hardQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardCount, 0),
   hardSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.hardSheetCount, 0),
   hardPerSheet: MATH_XI_HARD_PER_SHEET,
+  conceptChapters: MATH_XI_CHAPTERS.filter((chapter) => chapter.conceptCount > 0).length,
+  conceptQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.conceptCount, 0),
+  conceptSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.conceptSheetCount, 0),
+  conceptPerSheet: MATH_XI_CONCEPT_PER_SHEET,
   longChapters: MATH_XI_CHAPTERS.filter((chapter) => chapter.longCount > 0).length,
   longQuestions: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.longCount, 0),
   longSheets: MATH_XI_CHAPTERS.reduce((sum, chapter) => sum + chapter.longSheetCount, 0),
@@ -629,6 +707,18 @@ export function mathXiLongUrl(chapter: Pick<MathXiChapter, "slug">): string {
 
 export function mathXiLongPath(chapter: Pick<MathXiChapter, "slug">): string {
   return `public/resources/mathematics-xi/chapters/long/${chapter.slug}.html`;
+}
+
+export function mathXiConceptUrl(chapter: Pick<MathXiChapter, "slug">): string {
+  return `${MATH_XI_WORKBOOK_BASE}/concept/${chapter.slug}.html`;
+}
+
+export function mathXiConceptPath(chapter: Pick<MathXiChapter, "slug">): string {
+  return `public/resources/mathematics-xi/chapters/concept/${chapter.slug}.html`;
+}
+
+export function mathXiConceptChapters(): MathXiChapter[] {
+  return MATH_XI_CHAPTERS.filter((chapter) => chapter.conceptCount > 0);
 }
 
 export function mathXiLongChapters(): MathXiChapter[] {

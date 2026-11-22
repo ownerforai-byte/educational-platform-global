@@ -17,6 +17,7 @@ import {
   mathXiChapterUrl,
   mathXiChaptersByUnit,
   mathXiHardUrl,
+  mathXiConceptUrl,
   mathXiLongUrl,
   mathXiPaperUrl,
 } from "@/lib/mathematics-xi-chapters";
@@ -66,6 +67,7 @@ export default function MathematicsXiSolutionsPage() {
             { label: "A4 sheets", value: MATH_XI_WORKBOOK_TOTALS.sheets },
             { label: "Hard + hints", value: MATH_XI_WORKBOOK_TOTALS.hardQuestions },
             { label: "Long answers", value: MATH_XI_WORKBOOK_TOTALS.longQuestions },
+            { label: "Concept Q&A", value: MATH_XI_WORKBOOK_TOTALS.conceptQuestions },
             { label: "Model papers", value: MATH_XI_PAPERS.length },
           ].map((stat) => (
             <div
@@ -143,6 +145,17 @@ export default function MathematicsXiSolutionsPage() {
                           {chapter.title}
                         </span>
                       </a>
+                      {chapter.conceptCount > 0 ? (
+                        <a
+                          href={mathXiConceptUrl(chapter)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="shrink-0 rounded border border-emerald-500/40 px-1 text-[11px] font-semibold text-emerald-700 hover:bg-emerald-500/10 dark:text-emerald-400"
+                          title={`${chapter.conceptCount} two-mark conceptual questions with model answers`}
+                        >
+                          Q&amp;A
+                        </a>
+                      ) : null}
                       {chapter.longCount > 0 ? (
                         <a
                           href={mathXiLongUrl(chapter)}
@@ -176,6 +189,29 @@ export default function MathematicsXiSolutionsPage() {
           {MATH_XI_CHAPTERS.length} chapter sheets · every syllabus topic covered ·{" "}
           {MATH_XI_WORKBOOK_TOTALS.perSheet} questions per sheet.
         </p>
+
+        <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4">
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold">
+              Conceptual answers — {MATH_XI_WORKBOOK_TOTALS.conceptQuestions} two-mark questions
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {MATH_XI_WORKBOOK_TOTALS.conceptChapters} chapters ·{" "}
+              {MATH_XI_WORKBOOK_TOTALS.conceptSheets} A4 sheets ·{" "}
+              {MATH_XI_WORKBOOK_TOTALS.conceptPerSheet} questions per sheet. The short “why / what /
+              where” questions that open a NEB paper, each with its model answer underneath.
+            </p>
+          </div>
+          <a
+            href={`${MATH_XI_WORKBOOK_BASE}/concept/index.html`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-emerald-700"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Open concept answers
+          </a>
+        </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4">
           <div className="min-w-0 flex-1">

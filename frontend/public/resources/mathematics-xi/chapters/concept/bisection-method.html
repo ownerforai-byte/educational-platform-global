@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.1 Bisection Method — conceptual answers (Mathematics XI)</title>
+<meta name="description" content="Bisection Method conceptual questions with model two-mark answers, six to an A4 sheet.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/concept.css">
+</head>
+<body>
+<section class="sheet" aria-label="Bisection Method — conceptual answers 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · conceptual answers</span></div>
+<h1>7.1 · Bisection Method — two-mark conceptual answers</h1>
+<p class="topics"><b>Topics</b> Sign-change test · Bisection steps · Iteration tables · Accuracy and error</p>
+<p class="note">Each question is the two-mark kind NEB asks at the start of the paper; the model answer is one or two precise sentences.</p>
+</header>
+<div class="grid hard concept" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>Sign-change test</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C1.</span> What is the idea of the bisection method?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> If f(a) and f(b) have opposite signs, the continuous curve crosses the axis between them; halving the interval repeatedly traps the root in a smaller and smaller bracket.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Sign-change test</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C2.</span> Why must f be continuous for the method to work?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> The intermediate value theorem, which guarantees the crossing, requires continuity on the closed interval.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Bisection steps</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C3.</span> How fast does the bisection method converge?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> Linearly: the error is at least halved at every step, so each iteration gains one binary digit of accuracy.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Bisection steps</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C4.</span> How do you bound the error after n steps?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> The root lies in an interval of width (b − a)/2ⁿ, so the error is at most that width, or half of it from the midpoint.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Iteration tables</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C5.</span> When does the bisection method fail?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> When the function does not change sign across the interval, or when a root has even multiplicity and only touches the axis.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Accuracy and error</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C6.</span> What does the midpoint of the final bracket estimate?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> The root itself, with an error no larger than half the width of that final bracket.</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Bisection Method · conceptual</span>
+<span>Page 1 of 1</span>
+</footer>
+</section>
+</body>
+</html>

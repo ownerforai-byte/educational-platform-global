@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.2 Newton–Raphson Method — conceptual answers (Mathematics XI)</title>
+<meta name="description" content="Newton–Raphson Method conceptual questions with model two-mark answers, six to an A4 sheet.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/hard.css">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/concept.css">
+</head>
+<body>
+<section class="sheet" aria-label="Newton–Raphson Method — conceptual answers 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook · conceptual answers</span></div>
+<h1>7.2 · Newton–Raphson Method — two-mark conceptual answers</h1>
+<p class="topics"><b>Topics</b> The formula · Iteration steps · Convergence · Comparison with bisection</p>
+<p class="note">Each question is the two-mark kind NEB asks at the start of the paper; the model answer is one or two precise sentences.</p>
+</header>
+<div class="grid hard concept" data-cols="2" data-rows="3">
+<div class="cell">
+<p class="tag"><span>The formula</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C1.</span> What is the geometric idea of the Newton–Raphson method?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> Draw the tangent at the current estimate and take its intersection with the x-axis as the next estimate; repeat until the values stop changing.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>The formula</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C2.</span> Write the Newton–Raphson iteration formula.&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ), which comes from the tangent line at xₙ.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Iteration steps</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C3.</span> When does Newton–Raphson fail?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> When f′(xₙ) = 0 (horizontal tangent), or when the starting value is too far from the root so the iterates wander or oscillate.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Iteration steps</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C4.</span> How fast does Newton–Raphson converge near a simple root?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> Quadratically: the number of correct decimals roughly doubles each step, which is why two or three steps often suffice.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Convergence</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C5.</span> What is its advantage over bisection?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> Much faster convergence for the same number of evaluations, and it needs only one starting value rather than a sign-changing bracket.</p>
+</div>
+<div class="cell">
+<p class="tag"><span>Comparison with bisection</span> <span class="level">2 marks</span></p>
+<p class="q"><span class="n">C6.</span> Why does the method require f′(x) ≠ 0 near the root?&nbsp;<span class="mk">[2]</span></p>
+<p class="ansblock"><b>Ans.</b> The correction divides by the derivative; a small derivative makes the step enormous and throws the next estimate far away.</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Newton–Raphson Method · conceptual</span>
+<span>Page 1 of 1</span>
+</footer>
+</section>
+</body>
+</html>
