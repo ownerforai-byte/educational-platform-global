@@ -7,19 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).",
-    "**Fact.** Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds.",
-    "**Fact.** Functional group priority (high → low) governs the suffix; others become prefixes with locants.",
-    "Organic chemistry: study of carbon compounds.",
-    "Carbon: tetravalent, forms 4 bonds.",
-    "Functional groups: -OH (alcohol), -COOH (carboxylic acid), etc.",
-    "Homologous series: same functional group, differ by CH₂.",
-    "# Reasons for the separate study of organic compounds from inorganic compounds\n\n## 1. Introduction\nChemical picture of **Reasons for the separate study of organic compounds from inorganic compounds** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Basic Concept of Organic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Reasons for the separate study of organic compounds from inorganic compounds\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and reagent sheet**\n\n| Transformation | Reagent + conditions | Product | Note or trap |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Reasons for the separate study of organic compounds from inorganic compounds — curve or trend plot (authored SVG, plotted from note data)\n- **D2** — Reasons for the separate study of organic compounds from inorganic compounds — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Reasons for the separate study of organic compounds from inorganic compounds — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Reasons for the separate study of organic compounds from inorganic compounds — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Why Carbon Gets Its Own Shelf\n\nOrganic chemistry is not studied separately by tradition but by necessity. Three facts force the separation: organic compounds are **vastly more numerous**, they behave **differently** (covalent, flammable, low-melting, isomer-rich), and they must be **studied by different methods**. This topic builds the full organic-vs-inorganic comparison and shows how Wöhler's urea blurred the border without erasing it.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Reason 1 — sheer numbers\n\n- More organic compounds are known than compounds of **all the other elements combined** (tens of millions).\n- The cause is **carbon's self-linking (catenation)** plus **isomerism**: one molecular formula can hide many compounds, and chains of any length can carry any functional group.\n\n### 2.2 Reason 2 — different properties\n\n- Organic compounds are **covalent molecules**: low melting/boiling points, volatile, flammable, non-conducting, soluble in organic solvents.\n- Inorganic compounds are frequently **ionic lattices**: crystalline, high-melting, non-flammable, conducting when molten or dissolved, water-soluble.\n- Organic reactions run **between molecules**, so they are slow and often need catalysts; ionic reactions meet in solution and finish in seconds.\n\n### 2.3 Reason 3 — different methods of study\n\n- Organic work demands its own toolkit: **extraction, purification by crystallisation/distillation/chromatography**, structure determination, and synthesis routes built step-by-step on the carbon skeleton.\n- Reaction mechanisms (bond breaking/formation in neutral molecules) differ fundamentally from ionic double-displacement chemistry.\n\n### 2.4 The border is conventional, not absolute\n\n- Wöhler's **NH₄OCN → urea** showed inorganic materials can build organic molecules; today urea, acetic acid and most organic families are made industrially from inorganic feedstocks (CO₂, NH₃, etc.).\n- The boundary that remains is about **chemistry, not origin**: compounds with the C–H, chain-building character are organic; carbonates, carbides, cyanides and carbon oxides behave as inorganic salts and oxides whatever their source.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Catenation** | Self-linking of atoms of an element into chains/rings | C–C–C… in alkanes |\n| **Isomerism** | Same molecular formula, different compounds | C₂H₆O: ethanol, dimethyl ether |\n| **Molecular compound** | Discrete covalent molecules with weak intermolecular forces | CH₄, C₂H₅OH |",
+    "## 4. Detailed Explanation\n\n### 4.1 The full comparison table\n\n- Bonding, melting behaviour, flammability, conductivity, solubility, isomerism and reaction speed all move together — because they all follow from **molecular covalent structure versus ionic lattice structure**. Learn the table as one causal chain, not seven unrelated rows.\n\n### 4.2 Why the numbers differ so wildly\n\n- Every other element's chains top out quickly (Si–Si bonds are weak, so silanes stop at a few units). Carbon's C–C bond is strong enough for chains of unlimited length, and each carbon still has bonds left over for functional groups — combinatorial explosion.\n\n### 4.3 What Wöhler did and did not prove\n\n- He proved **synthesis is possible** — no vital force needed. He did not prove organic and inorganic chemistry are identical: the two families still differ in bonding and behaviour, which is exactly why they are still studied separately.",
+    "## 5. Comparison Tables\n\n**Organic vs inorganic compounds**\n\n| Basis | Organic compounds | Inorganic compounds |\n|---|---|---|\n| number known | tens of millions | far fewer |\n| bonding | covalent, molecular | often ionic |\n| m.p./b.p. | low; many volatile | high; crystalline solids |\n| flammability | burn to CO₂ + H₂O | mostly non-flammable |\n| conductivity | non-conductors | conduct (molten/aqueous) |\n| solubility | organic solvents | water |\n| isomerism | common | rare |\n| reactions | slow, molecular, catalysed | fast, ionic |\n| study methods | extraction, chromatography, synthesis | mostly aqueous analysis |",
+    "## 6. Common Confusions\n\n**\"Separate study\" survives Wöhler:** the vital force theory died, but the *practical* separation (different numbers, properties, methods) remains fully valid — do not answer \"because organic compounds come from living things\".",
+    "**Slow reactions are not weak reactions:** organic molecules react slowly because bonds must be broken in neutral molecules with a high activation barrier — the products can be perfectly stable.",
+    "**Solubility follows polarity, not \"organic-ness\":** small alcohols and acids (ethanol, acetic acid) dissolve in water because –OH/–COOH hydrogen-bond; the rule is like dissolves like.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Give reasons for the separate study of organic compounds from inorganic compounds.** — (i) **Number:** organic compounds outnumber all inorganic compounds combined, because carbon catenates into chains and rings of unlimited length and each carbon carries functional groups — plus isomerism multiplies every formula. (ii) **Properties:** organic compounds are covalent molecules — low melting/boiling points, flammable, non-conducting, soluble in organic solvents — while inorganic compounds are largely ionic: crystalline, high-melting, conducting in solution, water-soluble. (iii) **Methods:** organic chemistry needs its own techniques — extraction, purification by distillation/crystallisation/chromatography, structural determination and stepwise synthesis — and its reactions are slow molecular processes with mechanisms, unlike fast ionic reactions. For these three reasons the two branches are studied as separate subjects.",
+    "**NEB-style (2m): \"Wöhler's urea synthesis removed the distinction between organic and inorganic chemistry.\" Comment.** — The claim is only partly true. Wöhler's **NH₄OCN → NH₂CONH₂** destroyed the **vital force theory** — organic compounds can indeed be synthesised from inorganic materials, so the *origin* distinction is gone. But the **practical distinction remains**: organic compounds are still far more numerous, covalent, low-melting, flammable and isomer-rich, and they are still studied by different methods. So the border moved from \"where they come from\" to \"how they behave\" — and on behaviour the separate study continues.",
+    "**NEB-style (2m): Why do organic compounds generally have low melting and boiling points while inorganic compounds have high values?** — Organic compounds exist as **discrete covalent molecules** held to each other only by weak intermolecular forces (van der Waals, dipole, hydrogen bonds), so little energy separates the molecules — low m.p./b.p. Inorganic compounds are usually **ionic lattices** held by strong electrostatic attraction between oppositely charged ions throughout the crystal, so large energy is needed to melt or boil them — high m.p./b.p."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -64,98 +62,31 @@
     "Limit to remember: iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…)."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups.",
-    "Practice drawing structural and condensed formulas."
+    "Write the organic-vs-inorganic comparison table with eight bases of comparison.",
+    "Explain why carbon catenation makes organic chemistry the largest branch of chemistry.",
+    "Comment on the statement that Wöhler's synthesis merged organic and inorganic chemistry."
   ],
   "universalFacts": [
-    "IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).",
-    "Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds.",
-    "Functional group priority (high → low) governs the suffix; others become prefixes with locants."
+    "Tens of millions of organic compounds are registered — more than all other chemistry combined — and the count grows by millions per decade."
   ],
   "examples": [
-    "Methane CH₄, Ethane C₂H₆, Ethene C₂H₄"
+    "***Silane stops, hexane continues*** — Si–Si bonds are too weak for long chains, so silicon's hydrides end at a few atoms; carbon's strong C–C bond lets chains run to millions of units — the numeric root of the separate study."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups."
+    "**NEB-style (3m): Give reasons for the separate study of organic compounds from inorganic compounds.** — (i) **Number:** organic compounds outnumber the compounds of all other elements combined — carbon **catenates** into chains and rings of unlimited length (strong C–C bond ≈ 348 kJ/mol), each carbon still carries functional groups, and **isomerism** multiplies every molecular formula into several compounds. (ii) **Properties:** organic compounds are **covalent molecules** — low melting and boiling points, flammable, non-conducting, generally soluble in organic solvents, slow molecular reactions needing catalysts — whereas inorganic compounds are largely **ionic**: crystalline, high-melting, conducting when molten or dissolved, water-soluble, fast ionic reactions. (iii) **Methods of study:** organic chemistry requires its own toolkit — extraction, purification by **crystallisation, distillation and chromatography**, structural determination, stepwise **synthesis** on the carbon skeleton, and the study of reaction **mechanisms** — quite different from aqueous ionic analysis. These three reasons justify the separate study.",
+    "**NEB-style (2m): \"Wöhler's urea synthesis removed the distinction between organic and inorganic chemistry.\" Comment.** — Only the **origin-based** distinction died. Wöhler's conversion of inorganic ammonium cyanate into organic urea (**NH₄OCN → NH₂CONH₂**, 1828) refuted the **vital force theory**: organic compounds can be synthesised in the laboratory, and today most are. But the **behavioural distinction survives** — organic compounds remain vastly more numerous, covalent and molecular (low m.p./b.p., flammable, non-conducting, isomer-rich, slow-reacting), while inorganic compounds are largely ionic and fast-reacting, and the two are still studied by different methods. So the border moved from *where compounds come from* to *how they behave* — and the separate study continues on that new border.",
+    "**NEB-style (2m): Why do organic compounds generally have low melting and boiling points while inorganic compounds have high values?** — Organic compounds exist as **discrete covalent molecules**; between the molecules act only weak intermolecular forces (van der Waals, dipole–dipole, hydrogen bonds), so a small amount of energy separates them — low m.p./b.p., many volatile liquids or gases. Inorganic compounds are usually **ionic crystals** in which every ion is held by strong electrostatic attraction to its neighbours throughout the lattice; melting must break this three-dimensional ionic bonding, so high temperatures are needed — high m.p./b.p."
   ],
   "formulas": [
-    "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name"
+    "- Wöhler: NH₄OCN → NH₂CONH₂\n- C–C bond energy ≈ 348 kJ/mol (strong → unlimited catenation); Si–Si ≈ 226 kJ/mol (weak → short silanes)"
   ],
   "numericals": [
     "Use  Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Reasons for the separate study of organic compounds from …"
+    "Three reasons for separate study: (1) numbers — organic compounds outnumber all others (catenation + isomerism); (2) properties — covalent molecular: low mp/bp, flammable, non-conductors, organic-solvent soluble, isomerism common, slow molecular reactions vs ionic fast reactions; (3) methods — extraction, crystallisation, distillation, chromatography, stepwise synthesis, mechanisms. Wohler's NH4OCN -> urea removed the origin distinction (vital force) but the behavioural distinction remains. Border compounds: carbonates, bicarbonates, carbides, cyanides, CO/CO2 stay inorganic."
   ],
-  "summary": "Stoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nCarbon forms 4 covalent bonds in all stable compounds.\n\nIsomerism increases molecular diversity enormously.",
+  "summary": "Carbon gets its own shelf for **three reasons**. **Numbers:** catenation plus isomerism has produced tens of millions of organic compounds — more than all other chemistry combined. **Properties:** organic compounds are covalent molecules — low m.p./b.p., flammable, non-conducting, organic-solvent soluble, isomer-rich, slow-reacting — while inorganic compounds are largely ionic lattices with the opposite profile in every row. **Methods:** extraction, crystallisation, distillation, chromatography, stepwise synthesis and mechanism study belong to the organic toolkit. **Wöhler's NH₄OCN → urea** (1828) killed the vital force theory and removed the distinction of *origin* — but the distinction of *behaviour* stands, and that is what still justifies the separate study.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Reasons for the separate study of organic compounds from …\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -178,16 +109,16 @@
     }
   ],
   "importantNotes": [
-    "Important note regarding 02 reasons for separate study of organic compounds."
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice. NEB 2022 (functional group/homologous series) belongs to row 100; NEB 2024/2023 IUPAC items to row 103."
   ],
   "examShortTricks": [
-    "Trick 1"
+    "Three reasons in order: numbers (catenation + isomerism), properties (covalent vs ionic table), methods (purification + synthesis + mechanisms). Wohler: origin distinction dead, behaviour distinction alive."
   ],
   "examNotes": [
-    "Exam note 1."
+    "The \"comment on Wohler\" question wants a balanced verdict — one sentence on what died (vital force), one on what survived (the practical separation)."
   ],
   "importantConcepts": [
-    "Key concept 1 for 02 reasons for separate study of organic compounds."
+    "The organic/inorganic border is behavioural, not geographical: what separates the shelves is molecular covalency versus ionic lattices — and that single cause drives every row of the comparison table."
   ],
   "importantTasks": [
     "Task for studying 02 reasons for separate study of organic compounds."
@@ -206,7 +137,9 @@
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "importantStatements": [],
+  "importantStatements": [
+    "\"Organic compounds are studied separately from inorganic compounds because of their far greater number, their distinct properties, and the special methods required for their study.\""
+  ],
   "specialNotes": [],
   "exercises": [],
   "visualization": {
@@ -214,5 +147,57 @@
     "component": "OrganicMoleculeViewer",
     "desc": "3D organic molecule explorer"
   },
-  "visualType": "avogadros-law-deduction"
+  "visualType": "avogadros-law-deduction",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Why Carbon Gets Its Own Shelf\n\nOrganic chemistry is not studied separately by tradition but by necessity. Three facts force the separation: organic compounds are **vastly more numerous**, they behave **differently** (covalent, flammable, low-melting, isomer-rich), and they must be **studied by different methods**. This topic builds the full organic-vs-inorganic comparison and shows how Wöhler's urea blurred the border without erasing it.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Reason 1 — sheer numbers\n\n- More organic compounds are known than compounds of **all the other elements combined** (tens of millions).\n- The cause is **carbon's self-linking (catenation)** plus **isomerism**: one molecular formula can hide many compounds, and chains of any length can carry any functional group.\n\n### 2.2 Reason 2 — different properties\n\n- Organic compounds are **covalent molecules**: low melting/boiling points, volatile, flammable, non-conducting, soluble in organic solvents.\n- Inorganic compounds are frequently **ionic lattices**: crystalline, high-melting, non-flammable, conducting when molten or dissolved, water-soluble.\n- Organic reactions run **between molecules**, so they are slow and often need catalysts; ionic reactions meet in solution and finish in seconds.\n\n### 2.3 Reason 3 — different methods of study\n\n- Organic work demands its own toolkit: **extraction, purification by crystallisation/distillation/chromatography**, structure determination, and synthesis routes built step-by-step on the carbon skeleton.\n- Reaction mechanisms (bond breaking/formation in neutral molecules) differ fundamentally from ionic double-displacement chemistry.\n\n### 2.4 The border is conventional, not absolute\n\n- Wöhler's **NH₄OCN → urea** showed inorganic materials can build organic molecules; today urea, acetic acid and most organic families are made industrially from inorganic feedstocks (CO₂, NH₃, etc.).\n- The boundary that remains is about **chemistry, not origin**: compounds with the C–H, chain-building character are organic; carbonates, carbides, cyanides and carbon oxides behave as inorganic salts and oxides whatever their source.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Catenation** | Self-linking of atoms of an element into chains/rings | C–C–C… in alkanes |\n| **Isomerism** | Same molecular formula, different compounds | C₂H₆O: ethanol, dimethyl ether |\n| **Molecular compound** | Discrete covalent molecules with weak intermolecular forces | CH₄, C₂H₅OH |",
+      "## 4. Detailed Explanation\n\n### 4.1 The full comparison table\n\n- Bonding, melting behaviour, flammability, conductivity, solubility, isomerism and reaction speed all move together — because they all follow from **molecular covalent structure versus ionic lattice structure**. Learn the table as one causal chain, not seven unrelated rows.\n\n### 4.2 Why the numbers differ so wildly\n\n- Every other element's chains top out quickly (Si–Si bonds are weak, so silanes stop at a few units). Carbon's C–C bond is strong enough for chains of unlimited length, and each carbon still has bonds left over for functional groups — combinatorial explosion.\n\n### 4.3 What Wöhler did and did not prove\n\n- He proved **synthesis is possible** — no vital force needed. He did not prove organic and inorganic chemistry are identical: the two families still differ in bonding and behaviour, which is exactly why they are still studied separately.",
+      "## 5. Comparison Tables\n\n**Organic vs inorganic compounds**\n\n| Basis | Organic compounds | Inorganic compounds |\n|---|---|---|\n| number known | tens of millions | far fewer |\n| bonding | covalent, molecular | often ionic |\n| m.p./b.p. | low; many volatile | high; crystalline solids |\n| flammability | burn to CO₂ + H₂O | mostly non-flammable |\n| conductivity | non-conductors | conduct (molten/aqueous) |\n| solubility | organic solvents | water |\n| isomerism | common | rare |\n| reactions | slow, molecular, catalysed | fast, ionic |\n| study methods | extraction, chromatography, synthesis | mostly aqueous analysis |",
+      "## 6. Common Confusions\n\n**\"Separate study\" survives Wöhler:** the vital force theory died, but the *practical* separation (different numbers, properties, methods) remains fully valid — do not answer \"because organic compounds come from living things\".",
+      "**Slow reactions are not weak reactions:** organic molecules react slowly because bonds must be broken in neutral molecules with a high activation barrier — the products can be perfectly stable.",
+      "**Solubility follows polarity, not \"organic-ness\":** small alcohols and acids (ethanol, acetic acid) dissolve in water because –OH/–COOH hydrogen-bond; the rule is like dissolves like.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Give reasons for the separate study of organic compounds from inorganic compounds.** — (i) **Number:** organic compounds outnumber all inorganic compounds combined, because carbon catenates into chains and rings of unlimited length and each carbon carries functional groups — plus isomerism multiplies every formula. (ii) **Properties:** organic compounds are covalent molecules — low melting/boiling points, flammable, non-conducting, soluble in organic solvents — while inorganic compounds are largely ionic: crystalline, high-melting, conducting in solution, water-soluble. (iii) **Methods:** organic chemistry needs its own techniques — extraction, purification by distillation/crystallisation/chromatography, structural determination and stepwise synthesis — and its reactions are slow molecular processes with mechanisms, unlike fast ionic reactions. For these three reasons the two branches are studied as separate subjects.",
+      "**NEB-style (2m): \"Wöhler's urea synthesis removed the distinction between organic and inorganic chemistry.\" Comment.** — The claim is only partly true. Wöhler's **NH₄OCN → NH₂CONH₂** destroyed the **vital force theory** — organic compounds can indeed be synthesised from inorganic materials, so the *origin* distinction is gone. But the **practical distinction remains**: organic compounds are still far more numerous, covalent, low-melting, flammable and isomer-rich, and they are still studied by different methods. So the border moved from \"where they come from\" to \"how they behave\" — and on behaviour the separate study continues.",
+      "**NEB-style (2m): Why do organic compounds generally have low melting and boiling points while inorganic compounds have high values?** — Organic compounds exist as **discrete covalent molecules** held to each other only by weak intermolecular forces (van der Waals, dipole, hydrogen bonds), so little energy separates the molecules — low m.p./b.p. Inorganic compounds are usually **ionic lattices** held by strong electrostatic attraction between oppositely charged ions throughout the crystal, so large energy is needed to melt or boil them — high m.p./b.p."
+    ],
+    "keyPoints": [
+      "Three reasons for separate study: (1) numbers — organic compounds outnumber all others (catenation + isomerism); (2) properties — covalent molecular: low mp/bp, flammable, non-conductors, organic-solvent soluble, isomerism common, slow molecular reactions vs ionic fast reactions; (3) methods — extraction, crystallisation, distillation, chromatography, stepwise synthesis, mechanisms. Wohler's NH4OCN -> urea removed the origin distinction (vital force) but the behavioural distinction remains. Border compounds: carbonates, bicarbonates, carbides, cyanides, CO/CO2 stay inorganic."
+    ],
+    "importantConcepts": [
+      "The organic/inorganic border is behavioural, not geographical: what separates the shelves is molecular covalency versus ionic lattices — and that single cause drives every row of the comparison table."
+    ],
+    "examples": [
+      "***Silane stops, hexane continues*** — Si–Si bonds are too weak for long chains, so silicon's hydrides end at a few atoms; carbon's strong C–C bond lets chains run to millions of units — the numeric root of the separate study."
+    ],
+    "universalFacts": [
+      "Tens of millions of organic compounds are registered — more than all other chemistry combined — and the count grows by millions per decade."
+    ],
+    "importantStatements": [
+      "\"Organic compounds are studied separately from inorganic compounds because of their far greater number, their distinct properties, and the special methods required for their study.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice. NEB 2022 (functional group/homologous series) belongs to row 100; NEB 2024/2023 IUPAC items to row 103."
+    ],
+    "examShortTricks": [
+      "Three reasons in order: numbers (catenation + isomerism), properties (covalent vs ionic table), methods (purification + synthesis + mechanisms). Wohler: origin distinction dead, behaviour distinction alive."
+    ],
+    "examNotes": [
+      "The \"comment on Wohler\" question wants a balanced verdict — one sentence on what died (vital force), one on what survived (the practical separation)."
+    ],
+    "formulas": [
+      "- Wöhler: NH₄OCN → NH₂CONH₂\n- C–C bond energy ≈ 348 kJ/mol (strong → unlimited catenation); Si–Si ≈ 226 kJ/mol (weak → short silanes)"
+    ],
+    "practice": [
+      "Write the organic-vs-inorganic comparison table with eight bases of comparison.",
+      "Explain why carbon catenation makes organic chemistry the largest branch of chemistry.",
+      "Comment on the statement that Wöhler's synthesis merged organic and inorganic chemistry."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Give reasons for the separate study of organic compounds from inorganic compounds.** — (i) **Number:** organic compounds outnumber the compounds of all other elements combined — carbon **catenates** into chains and rings of unlimited length (strong C–C bond ≈ 348 kJ/mol), each carbon still carries functional groups, and **isomerism** multiplies every molecular formula into several compounds. (ii) **Properties:** organic compounds are **covalent molecules** — low melting and boiling points, flammable, non-conducting, generally soluble in organic solvents, slow molecular reactions needing catalysts — whereas inorganic compounds are largely **ionic**: crystalline, high-melting, conducting when molten or dissolved, water-soluble, fast ionic reactions. (iii) **Methods of study:** organic chemistry requires its own toolkit — extraction, purification by **crystallisation, distillation and chromatography**, structural determination, stepwise **synthesis** on the carbon skeleton, and the study of reaction **mechanisms** — quite different from aqueous ionic analysis. These three reasons justify the separate study.",
+      "**NEB-style (2m): \"Wöhler's urea synthesis removed the distinction between organic and inorganic chemistry.\" Comment.** — Only the **origin-based** distinction died. Wöhler's conversion of inorganic ammonium cyanate into organic urea (**NH₄OCN → NH₂CONH₂**, 1828) refuted the **vital force theory**: organic compounds can be synthesised in the laboratory, and today most are. But the **behavioural distinction survives** — organic compounds remain vastly more numerous, covalent and molecular (low m.p./b.p., flammable, non-conducting, isomer-rich, slow-reacting), while inorganic compounds are largely ionic and fast-reacting, and the two are still studied by different methods. So the border moved from *where compounds come from* to *how they behave* — and the separate study continues on that new border.",
+      "**NEB-style (2m): Why do organic compounds generally have low melting and boiling points while inorganic compounds have high values?** — Organic compounds exist as **discrete covalent molecules**; between the molecules act only weak intermolecular forces (van der Waals, dipole–dipole, hydrogen bonds), so a small amount of energy separates them — low m.p./b.p., many volatile liquids or gases. Inorganic compounds are usually **ionic crystals** in which every ion is held by strong electrostatic attraction to its neighbours throughout the lattice; melting must break this three-dimensional ionic bonding, so high temperatures are needed — high m.p./b.p."
+    ]
+  }
 }

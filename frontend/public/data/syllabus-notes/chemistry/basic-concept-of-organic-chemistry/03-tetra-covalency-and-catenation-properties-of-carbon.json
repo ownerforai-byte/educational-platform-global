@@ -7,16 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Organic chemistry: study of carbon compounds.",
-    "Carbon: tetravalent, forms 4 bonds.",
-    "Functional groups: -OH (alcohol), -COOH (carboxylic acid), etc.",
-    "Homologous series: same functional group, differ by CH₂.",
-    "# Tetra-covalency and catenation properties of carbon\n\n## 1. Introduction\nChemical picture of **Tetra-covalency and catenation properties of carbon** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Basic Concept of Organic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Tetra-covalency and catenation properties of carbon\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Tetra-covalency and catenation properties of carbon — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Tetra-covalency and catenation properties of carbon — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Tetra-covalency and catenation properties of carbon — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Tetra-covalency and catenation properties of carbon — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Four Bonds and a Chain\n\nTwo properties of carbon build the entire organic world: **tetravalency** (four bonds per atom) and **catenation** (self-linking into chains and rings). This topic shows where the fourth bond comes from (the excited state), why C–C bonds are strong enough for unlimited chains, and what catenation costs the neighbours — silicon tries and fails.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Tetravalency — the excited-state story\n\n- Carbon: **1s² 2s² 2p²** — ground state has only **2 unpaired electrons**, which would suggest valency 2.\n- On excitation, one 2s electron jumps to the empty 2p orbital: **2s¹ 2p³** — **4 unpaired electrons** → valency **4**.\n- The excitation cost (~406 kJ/mol) is repaid many times over by forming **two extra strong bonds**; that is why carbon is tetravalent in virtually every compound.\n- The four bonds are equivalent in methane (via hybridisation — sp³, treated fully in bonding) — four identical C–H bonds.\n\n### 2.2 Catenation — self-linking\n\n- **Catenation:** the property of an element's atoms to link **with each other** forming chains and rings.\n- **Carbon is the champion:** small size + high C–C bond energy (≈ **348 kJ/mol**) → stable chains of any length (from ethane's two carbons to polymer chains of hundreds of thousands).\n- Chains may be **straight, branched or cyclic**; each carbon still bonds to H or other groups with its remaining valencies.\n\n### 2.3 Why the neighbours fail\n\n- **Silicon** (same group) catenates weakly: Si–Si ≈ **226 kJ/mol**, so silanes run to only a few units and are reactive; silicon prefers Si–O bonds (the silicate minerals).\n- **Boron, sulphur** catenate to limited rings/chains; **nitrogen** barely at all (N–N weak, lone-pair repulsion).\n- Only carbon combines tetravalency + strong self-bonds + bonds to H, O, N, halogens — the full organic toolkit.\n\n### 2.4 Consequences\n\n- **Isomerism:** same formula, many skeletons (C₄H₁₀ has two; C₅H₁₂ three; the count explodes upward).\n- **Allotropes** (diamond, graphite, fullerenes) display carbon's bonding versatility in elemental form.\n- **Functional groups** can be hung on any position of any chain — the combinatorial engine of the tens of millions.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Tetravalency** | Forming four covalent bonds per atom | CH₄, CCl₄ |\n| **Excited state** | Electron promoted to higher orbital before bonding | 2s²2p² → 2s¹2p³ |\n| **Catenation** | Self-linking of atoms into chains/rings | C–C–C in hexane |\n| **Hybridisation** | Mixing of orbitals to give equivalent bonding orbitals | sp³ in CH₄ |",
+    "## 4. Detailed Explanation\n\n### 4.1 The energy ledger of tetravalency\n\n- Excitation costs ~406 kJ/mol but buys two extra bonds; a C–H bond releases ~413 kJ/mol, so the investment repays itself within the reaction that forms the compound. Thermodynamics, not mystery, makes carbon four-handed.\n\n### 4.2 Chain stability and the bond-energy ladder\n\n- C–C ≈ 348 kJ/mol vs Si–Si ≈ 226 kJ/mol: the silicon chain earns less per link while the atoms are bigger and bonds longer, so attack (by water, oxygen) wins easily. Carbon's small radius holds its shared pairs close — strong, unreactive backbones.\n\n### 4.3 Isomerism grows explosively\n\n- C₄H₁₀: 2 isomers (butane, isobutane). C₅H₁₂: 3. C₆H₁₄: 5. C₁₀H₂₂: 75. C₂₀H₄₂: over 300,000. Catenation + branching = the combinatorial root of organic chemistry's size.",
+    "## 5. Comparison Tables\n\n**Catenation down Group IVA**\n\n| Element | Self-bond energy | Chain length achieved |\n|---|---|---|\n| C | ≈ 348 kJ/mol | unlimited (millions in polymers) |\n| Si | ≈ 226 kJ/mol | a few units (silanes reactive) |\n| Ge, Sn, Pb | lower still | essentially none |",
+    "## 6. Common Confusions\n\n**Ground state does not decide valency:** carbon's ground state predicts valency 2, but bonding happens through the **excited state** — the excitation energy is an investment repaid by bond formation.",
+    "**Catenation is not the same as allotropy:** catenation is self-linking in compounds (chains/rings); allotropes are different elemental forms — related ideas, different words.",
+    "**Tetravalency is not tetrahedral geometry by definition:** four bonds is the valency; the tetrahedral shape comes from sp³ hybridisation minimising repulsion — valency and shape are separate statements.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Describe tetravalency of carbon. How does the excited state explain the four valency of carbon?** — Carbon's ground-state electronic configuration is **1s² 2s² 2p²**, with only **two unpaired 2p electrons** — apparently valency 2. Before bonding, one of the 2s electrons is **promoted to the empty 2p orbital**, giving the excited state **2s¹ 2p³** with **four unpaired electrons**. Carbon now forms **four covalent bonds** — its tetravalency (CH₄, CCl₄, and every organic skeleton). **Why the promotion pays:** excitation costs about 406 kJ/mol, but forming two additional strong bonds (each C–H ≈ 413 kJ/mol) releases far more energy, so the excited-state bonding is energetically favourable — the atom borrows energy to earn more. In methane the four bonds are equivalent (sp³ hybridisation), pointing to the corners of a tetrahedron.",
+    "**NEB-style (3m): What is catenation? Why does carbon show maximum catenation?** — **Catenation** is the ability of atoms of an element to **link with one another**, forming chains and rings. **Carbon shows the maximum catenation** because: (i) the **C–C bond is very strong** (≈ 348 kJ/mol) — among the strongest element–element single bonds; (ii) carbon is **small**, so the shared electron pairs are close to the nuclei and well held; (iii) carbon is **tetravalent**, so each atom in the chain still has bonds available for hydrogen or functional groups. Hence carbon forms stable straight, branched and cyclic chains of unlimited length — the basis of the millions of organic compounds. Silicon, the next element in the group, catenates only weakly (Si–Si ≈ 226 kJ/mol), so its hydrides stop at a few units.",
+    "**NEB-style (2m): Why does silicon show poor catenation compared with carbon?** — Silicon atoms are **larger**, so the Si–Si bond is longer and weaker (≈ 226 kJ/mol vs 348 kJ/mol for C–C); the shared pairs are farther from the nuclei and easily attacked. Silicon chains (silanes) are therefore limited to a few units and are reactive, whereas carbon's small size and strong self-bonds support chains of unlimited length."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -59,91 +60,24 @@
   ],
   "bounds": [],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups.",
-    "Practice drawing structural and condensed formulas."
+    "Explain tetravalency of carbon using the excited state and the energy argument.",
+    "Tabulate the number of isomers of C4H10, C5H12 and C10H22 and connect the growth to catenation."
   ],
   "universalFacts": [
-    "answer pattern for \"Tetra-covalency and catenation properties of carbon\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "Polyethylene chains contain hundreds of thousands of carbon atoms linked head to tail — catenation operating at industrial scale in a plastic bag."
   ],
   "examples": [
-    "Methane CH₄, Ethane C₂H₆, Ethene C₂H₄"
+    "***The isomer explosion*** — C4H10 has 2 isomers, C10H22 has 75, C20H42 has over 300,000: catenation plus branching turns one formula into a library, and that library is organic chemistry."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups."
+    "**NEB-style (3m): How does the excited state explain the tetravalency of carbon?** — Carbon's ground state is **1s² 2s² 2p²**: the 2p sub-shell holds two unpaired electrons, which would limit carbon to valency 2. During bond formation, however, one 2s electron is **promoted to the vacant 2p orbital**, giving the excited configuration **1s² 2s¹ 2p³** with **four unpaired electrons**. Carbon can now share all four, forming **four covalent bonds** — its **tetravalency** (CH₄, CCl₄, every organic skeleton). **The energy ledger makes it profitable:** the promotion costs about **406 kJ/mol**, but the two additional bonds formed repay it — each C–H bond releases about **413 kJ/mol** — so the excited state is the state in which carbon actually bonds. In methane the four bonds are equivalent (sp³ hybridised, tetrahedral, 109.5°).",
+    "**NEB-style (3m): What is catenation? Why does carbon show maximum catenation in its group?** — **Catenation** is the property by which atoms of an element **link with one another** to form chains and rings. **Carbon shows the maximum catenation** because: (i) its **C–C single bond is very strong** (≈ 348 kJ/mol) — the strongest element–element single bonds among the common elements; (ii) carbon is **small**, so the bonding pairs are held close to the nuclei; (iii) carbon is **tetravalent**, so every chain atom still has spare valencies for hydrogen or functional groups. The result is stable **straight, branched and cyclic chains of unlimited length** — the foundation of the millions of organic compounds. Silicon, below carbon in Group IVA, has a much weaker Si–Si bond (≈ 226 kJ/mol) because of its larger atoms, so its catenated hydrides (silanes) stop at a few units and are reactive.",
+    "**NEB-style (2m): Why is the number of organic compounds so large? Connect your answer to catenation and isomerism.** — Carbon **catenates** into chains and rings of unlimited length (strong C–C bonds, small atoms, tetravalency), and every carbon in the chain can carry a **functional group** (–OH, –CHO, –COOH, halogen, etc.). Additionally, the same molecular formula can be arranged into several different skeletons — **isomerism** (butane has 2 isomers, pentane 3, decane 75, and the numbers grow explosively). Unlimited chain lengths × many functional groups × many isomeric arrangements = the tens of millions of known organic compounds."
   ],
   "keyPoints": [
-    "• Tetra-covalency",
-    "• Catenation properties of carbon"
+    "Carbon ground state 1s2 2s2 2p2 = 2 unpaired -> valency would be 2; excitation 2s1 2p3 gives 4 unpaired -> tetravalency; excitation cost ~406 kJ/mol repaid by two extra bonds (C-H ~413 kJ/mol each). Tetravalency + equivalent bonds (sp3 tetrahedral in CH4). Catenation = self-linking into chains/rings; carbon champion: small size + strong C-C ~348 kJ/mol -> unlimited chains (straight, branched, cyclic); Si-Si only ~226 kJ/mol -> silanes stop at few units. Consequences: isomerism (C4H10: 2; C5H12: 3; C10H22: 75), allotropes, functional groups on any chain position."
   ],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nCarbon forms 4 covalent bonds in all stable compounds.\n\nIsomerism increases molecular diversity enormously.",
+  "summary": "Carbon's chemistry rests on two properties. **Tetravalency:** the ground state 1s²2s²2p² has only two unpaired electrons, but promotion to the excited state **2s¹2p³** provides four; the ~406 kJ/mol excitation cost is repaid twice over by two extra strong bonds, so carbon forms four equivalent covalent bonds everywhere (sp³ tetrahedral in methane). **Catenation:** carbon's small size and strong C–C bond (≈348 kJ/mol) let its atoms link into straight, branched and cyclic chains of unlimited length, while silicon's weak Si–Si bond (≈226 kJ/mol) limits silanes to a few units. Together the two properties generate the isomer explosion (C₄H₁₀: 2; C₁₀H₂₂: 75; C₂₀H₄₂: >300,000) and the functional-group variety that make organic chemistry the largest branch of the subject.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Tetra-covalency and catenation properties of carbon\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -166,16 +100,16 @@
     }
   ],
   "importantNotes": [
-    "Important note regarding 03 tetra covalency and catenation properties of carbon classification of organic compounds."
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
   ],
   "examShortTricks": [
-    "Trick 1"
+    "Excitation: 2s2 2p2 -> 2s1 2p3, cost ~406 kJ/mol, repaid by 2 extra bonds. Catenation ladder: C-C 348 vs Si-Si 226 kJ/mol. Isomer counts: C4H10=2, C5H12=3, C10H22=75."
   ],
   "examNotes": [
-    "Exam note 1."
+    "The tetravalency answer must show both configurations (ground and excited) and the energy-repayment argument — configuration alone scores half."
   ],
   "importantConcepts": [
-    "Key concept 1 for 03 tetra covalency and catenation properties of carbon classification of organic compounds."
+    "Tetravalency is a thermodynamic investment: carbon borrows ~406 kJ/mol to promote one electron and earns it back twice over in two extra strong bonds — four-handedness is profitable, so it is universal."
   ],
   "importantTasks": [
     "Task for studying 03 tetra covalency and catenation properties of carbon classification of organic compounds."
@@ -194,8 +128,12 @@
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "formulas": [],
-  "importantStatements": [],
+  "formulas": [
+    "- Ground state: 1s² 2s² 2p² → excited state: 1s² 2s¹ 2p³ (4 unpaired)\n- Excitation energy ≈ 406 kJ/mol; C–H bond ≈ 413 kJ/mol; C–C ≈ 348 kJ/mol; Si–Si ≈ 226 kJ/mol\n- Isomers: C₄H₁₀ → 2; C₅H₁₂ → 3; C₆H₁₄ → 5; C₁₀H₂₂ → 75"
+  ],
+  "importantStatements": [
+    "\"Carbon shows tetravalency through its excited state 2s1 2p3 and maximum catenation because of its small size and the high strength of the C-C bond.\""
+  ],
   "specialNotes": [],
   "exercises": [],
   "visualization": {
@@ -203,5 +141,56 @@
     "component": "OrganicMoleculeViewer",
     "desc": "3D organic molecule explorer"
   },
-  "visualType": "carbon-catenation"
+  "visualType": "carbon-catenation",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Four Bonds and a Chain\n\nTwo properties of carbon build the entire organic world: **tetravalency** (four bonds per atom) and **catenation** (self-linking into chains and rings). This topic shows where the fourth bond comes from (the excited state), why C–C bonds are strong enough for unlimited chains, and what catenation costs the neighbours — silicon tries and fails.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Tetravalency — the excited-state story\n\n- Carbon: **1s² 2s² 2p²** — ground state has only **2 unpaired electrons**, which would suggest valency 2.\n- On excitation, one 2s electron jumps to the empty 2p orbital: **2s¹ 2p³** — **4 unpaired electrons** → valency **4**.\n- The excitation cost (~406 kJ/mol) is repaid many times over by forming **two extra strong bonds**; that is why carbon is tetravalent in virtually every compound.\n- The four bonds are equivalent in methane (via hybridisation — sp³, treated fully in bonding) — four identical C–H bonds.\n\n### 2.2 Catenation — self-linking\n\n- **Catenation:** the property of an element's atoms to link **with each other** forming chains and rings.\n- **Carbon is the champion:** small size + high C–C bond energy (≈ **348 kJ/mol**) → stable chains of any length (from ethane's two carbons to polymer chains of hundreds of thousands).\n- Chains may be **straight, branched or cyclic**; each carbon still bonds to H or other groups with its remaining valencies.\n\n### 2.3 Why the neighbours fail\n\n- **Silicon** (same group) catenates weakly: Si–Si ≈ **226 kJ/mol**, so silanes run to only a few units and are reactive; silicon prefers Si–O bonds (the silicate minerals).\n- **Boron, sulphur** catenate to limited rings/chains; **nitrogen** barely at all (N–N weak, lone-pair repulsion).\n- Only carbon combines tetravalency + strong self-bonds + bonds to H, O, N, halogens — the full organic toolkit.\n\n### 2.4 Consequences\n\n- **Isomerism:** same formula, many skeletons (C₄H₁₀ has two; C₅H₁₂ three; the count explodes upward).\n- **Allotropes** (diamond, graphite, fullerenes) display carbon's bonding versatility in elemental form.\n- **Functional groups** can be hung on any position of any chain — the combinatorial engine of the tens of millions.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Tetravalency** | Forming four covalent bonds per atom | CH₄, CCl₄ |\n| **Excited state** | Electron promoted to higher orbital before bonding | 2s²2p² → 2s¹2p³ |\n| **Catenation** | Self-linking of atoms into chains/rings | C–C–C in hexane |\n| **Hybridisation** | Mixing of orbitals to give equivalent bonding orbitals | sp³ in CH₄ |",
+      "## 4. Detailed Explanation\n\n### 4.1 The energy ledger of tetravalency\n\n- Excitation costs ~406 kJ/mol but buys two extra bonds; a C–H bond releases ~413 kJ/mol, so the investment repays itself within the reaction that forms the compound. Thermodynamics, not mystery, makes carbon four-handed.\n\n### 4.2 Chain stability and the bond-energy ladder\n\n- C–C ≈ 348 kJ/mol vs Si–Si ≈ 226 kJ/mol: the silicon chain earns less per link while the atoms are bigger and bonds longer, so attack (by water, oxygen) wins easily. Carbon's small radius holds its shared pairs close — strong, unreactive backbones.\n\n### 4.3 Isomerism grows explosively\n\n- C₄H₁₀: 2 isomers (butane, isobutane). C₅H₁₂: 3. C₆H₁₄: 5. C₁₀H₂₂: 75. C₂₀H₄₂: over 300,000. Catenation + branching = the combinatorial root of organic chemistry's size.",
+      "## 5. Comparison Tables\n\n**Catenation down Group IVA**\n\n| Element | Self-bond energy | Chain length achieved |\n|---|---|---|\n| C | ≈ 348 kJ/mol | unlimited (millions in polymers) |\n| Si | ≈ 226 kJ/mol | a few units (silanes reactive) |\n| Ge, Sn, Pb | lower still | essentially none |",
+      "## 6. Common Confusions\n\n**Ground state does not decide valency:** carbon's ground state predicts valency 2, but bonding happens through the **excited state** — the excitation energy is an investment repaid by bond formation.",
+      "**Catenation is not the same as allotropy:** catenation is self-linking in compounds (chains/rings); allotropes are different elemental forms — related ideas, different words.",
+      "**Tetravalency is not tetrahedral geometry by definition:** four bonds is the valency; the tetrahedral shape comes from sp³ hybridisation minimising repulsion — valency and shape are separate statements.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Describe tetravalency of carbon. How does the excited state explain the four valency of carbon?** — Carbon's ground-state electronic configuration is **1s² 2s² 2p²**, with only **two unpaired 2p electrons** — apparently valency 2. Before bonding, one of the 2s electrons is **promoted to the empty 2p orbital**, giving the excited state **2s¹ 2p³** with **four unpaired electrons**. Carbon now forms **four covalent bonds** — its tetravalency (CH₄, CCl₄, and every organic skeleton). **Why the promotion pays:** excitation costs about 406 kJ/mol, but forming two additional strong bonds (each C–H ≈ 413 kJ/mol) releases far more energy, so the excited-state bonding is energetically favourable — the atom borrows energy to earn more. In methane the four bonds are equivalent (sp³ hybridisation), pointing to the corners of a tetrahedron.",
+      "**NEB-style (3m): What is catenation? Why does carbon show maximum catenation?** — **Catenation** is the ability of atoms of an element to **link with one another**, forming chains and rings. **Carbon shows the maximum catenation** because: (i) the **C–C bond is very strong** (≈ 348 kJ/mol) — among the strongest element–element single bonds; (ii) carbon is **small**, so the shared electron pairs are close to the nuclei and well held; (iii) carbon is **tetravalent**, so each atom in the chain still has bonds available for hydrogen or functional groups. Hence carbon forms stable straight, branched and cyclic chains of unlimited length — the basis of the millions of organic compounds. Silicon, the next element in the group, catenates only weakly (Si–Si ≈ 226 kJ/mol), so its hydrides stop at a few units.",
+      "**NEB-style (2m): Why does silicon show poor catenation compared with carbon?** — Silicon atoms are **larger**, so the Si–Si bond is longer and weaker (≈ 226 kJ/mol vs 348 kJ/mol for C–C); the shared pairs are farther from the nuclei and easily attacked. Silicon chains (silanes) are therefore limited to a few units and are reactive, whereas carbon's small size and strong self-bonds support chains of unlimited length."
+    ],
+    "keyPoints": [
+      "Carbon ground state 1s2 2s2 2p2 = 2 unpaired -> valency would be 2; excitation 2s1 2p3 gives 4 unpaired -> tetravalency; excitation cost ~406 kJ/mol repaid by two extra bonds (C-H ~413 kJ/mol each). Tetravalency + equivalent bonds (sp3 tetrahedral in CH4). Catenation = self-linking into chains/rings; carbon champion: small size + strong C-C ~348 kJ/mol -> unlimited chains (straight, branched, cyclic); Si-Si only ~226 kJ/mol -> silanes stop at few units. Consequences: isomerism (C4H10: 2; C5H12: 3; C10H22: 75), allotropes, functional groups on any chain position."
+    ],
+    "importantConcepts": [
+      "Tetravalency is a thermodynamic investment: carbon borrows ~406 kJ/mol to promote one electron and earns it back twice over in two extra strong bonds — four-handedness is profitable, so it is universal."
+    ],
+    "examples": [
+      "***The isomer explosion*** — C4H10 has 2 isomers, C10H22 has 75, C20H42 has over 300,000: catenation plus branching turns one formula into a library, and that library is organic chemistry."
+    ],
+    "universalFacts": [
+      "Polyethylene chains contain hundreds of thousands of carbon atoms linked head to tail — catenation operating at industrial scale in a plastic bag."
+    ],
+    "importantStatements": [
+      "\"Carbon shows tetravalency through its excited state 2s1 2p3 and maximum catenation because of its small size and the high strength of the C-C bond.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Excitation: 2s2 2p2 -> 2s1 2p3, cost ~406 kJ/mol, repaid by 2 extra bonds. Catenation ladder: C-C 348 vs Si-Si 226 kJ/mol. Isomer counts: C4H10=2, C5H12=3, C10H22=75."
+    ],
+    "examNotes": [
+      "The tetravalency answer must show both configurations (ground and excited) and the energy-repayment argument — configuration alone scores half."
+    ],
+    "formulas": [
+      "- Ground state: 1s² 2s² 2p² → excited state: 1s² 2s¹ 2p³ (4 unpaired)\n- Excitation energy ≈ 406 kJ/mol; C–H bond ≈ 413 kJ/mol; C–C ≈ 348 kJ/mol; Si–Si ≈ 226 kJ/mol\n- Isomers: C₄H₁₀ → 2; C₅H₁₂ → 3; C₆H₁₄ → 5; C₁₀H₂₂ → 75"
+    ],
+    "practice": [
+      "Explain tetravalency of carbon using the excited state and the energy argument.",
+      "Tabulate the number of isomers of C4H10, C5H12 and C10H22 and connect the growth to catenation."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): How does the excited state explain the tetravalency of carbon?** — Carbon's ground state is **1s² 2s² 2p²**: the 2p sub-shell holds two unpaired electrons, which would limit carbon to valency 2. During bond formation, however, one 2s electron is **promoted to the vacant 2p orbital**, giving the excited configuration **1s² 2s¹ 2p³** with **four unpaired electrons**. Carbon can now share all four, forming **four covalent bonds** — its **tetravalency** (CH₄, CCl₄, every organic skeleton). **The energy ledger makes it profitable:** the promotion costs about **406 kJ/mol**, but the two additional bonds formed repay it — each C–H bond releases about **413 kJ/mol** — so the excited state is the state in which carbon actually bonds. In methane the four bonds are equivalent (sp³ hybridised, tetrahedral, 109.5°).",
+      "**NEB-style (3m): What is catenation? Why does carbon show maximum catenation in its group?** — **Catenation** is the property by which atoms of an element **link with one another** to form chains and rings. **Carbon shows the maximum catenation** because: (i) its **C–C single bond is very strong** (≈ 348 kJ/mol) — the strongest element–element single bonds among the common elements; (ii) carbon is **small**, so the bonding pairs are held close to the nuclei; (iii) carbon is **tetravalent**, so every chain atom still has spare valencies for hydrogen or functional groups. The result is stable **straight, branched and cyclic chains of unlimited length** — the foundation of the millions of organic compounds. Silicon, below carbon in Group IVA, has a much weaker Si–Si bond (≈ 226 kJ/mol) because of its larger atoms, so its catenated hydrides (silanes) stop at a few units and are reactive.",
+      "**NEB-style (2m): Why is the number of organic compounds so large? Connect your answer to catenation and isomerism.** — Carbon **catenates** into chains and rings of unlimited length (strong C–C bonds, small atoms, tetravalency), and every carbon in the chain can carry a **functional group** (–OH, –CHO, –COOH, halogen, etc.). Additionally, the same molecular formula can be arranged into several different skeletons — **isomerism** (butane has 2 isomers, pentane 3, decane 75, and the numbers grow explosively). Unlimited chain lengths × many functional groups × many isomeric arrangements = the tens of millions of known organic compounds."
+    ]
+  }
 }

@@ -5,16 +5,17 @@
   "topicTitle": "Introduction to organic chemistry and organic compounds",
   "relevance": 100,
   "notes": [
-    "Organic chemistry: study of carbon compounds.",
-    "Carbon: tetravalent, forms 4 bonds.",
-    "Functional groups: -OH (alcohol), -COOH (carboxylic acid), etc.",
-    "Homologous series: same functional group, differ by CH₂.",
-    "# Introduction to organic chemistry and organic compounds\n\n## 1. Introduction\nChemical picture of **Introduction to organic chemistry and organic compounds** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Basic Concept of Organic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Introduction to organic chemistry and organic compounds\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and reagent sheet**\n\n| Transformation | Reagent + conditions | Product | Note or trap |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Introduction to organic chemistry and organic compounds — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Introduction to organic chemistry and organic compounds — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Introduction to organic chemistry and organic compounds — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Introduction to organic chemistry and organic compounds — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Chemistry of Carbon\n\n**Organic chemistry** is the chemistry of carbon compounds — hydrocarbons and their derivatives. Carbon is the only element that builds chains, rings and branches of itself in endless variety, which is why organic compounds outnumber all the compounds of every other element combined. This opening topic sets the definition, the historical birth (Wöhler's urea), the sources, and the characteristic properties that make organic compounds a world of their own.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition and scope\n\n- **Organic compounds:** compounds of **carbon** (almost always with hydrogen, and often with O, N, S, halogens, P).\n- **Organic chemistry:** the branch of chemistry dealing with these compounds — their structure, properties, preparation and reactions.\n- Exceptions kept in mind: carbonates (CO₃²⁻), bicarbonates, carbides, cyanides (CN⁻) and oxides of carbon (CO, CO₂) are studied under inorganic chemistry even though they contain carbon.\n\n### 2.2 The death of the vital force theory\n\n- **Berzelius (early 1800s):** organic compounds could be made only by living things under the influence of a **\"vital force\"** — hence they could never be synthesised in the laboratory.\n- **Wöhler (1828):** heated ammonium cyanate, an *inorganic* salt, and obtained **urea**, an organic compound found in urine: **NH₄OCN → NH₂CONH₂ (urea)**. The vital force theory collapsed, and synthesis of organic compounds began.\n\n### 2.3 Sources of organic compounds\n\n- **Plants and animals** — carbohydrates, oils, proteins, dyes, medicines.\n- **Coal** (coal tar → benzene, phenol, dyes), **petroleum and natural gas** — the great industrial feedstocks.\n- **Laboratory/industrial synthesis** — from simple molecules upward.\n\n### 2.4 Characteristic properties of organic compounds\n\n- **Covalent** bonding; exist as discrete molecules.\n- **Low melting and boiling points** (weak intermolecular forces); many are gases or volatile liquids.\n- **Flammable** — burn to CO₂ and H₂O (carbon + hydrogen skeleton).\n- **Non-conductors** of electricity (no ions).\n- **Generally insoluble in water, soluble in organic solvents** (like dissolves like).\n- **Show isomerism** — same molecular formula, different compounds.\n- **Reactions are slow** — molecular reactions need activation energy; often need catalysts.\n- **Numbers:** several tens of millions known — more than all inorganic compounds together.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Organic compound** | Covalent compound of carbon (with H and often O, N, halogens, S) | CH₄, C₂H₅OH, CH₃COOH |\n| **Vital force theory** | Berzelius's idea that organic compounds need a life force to be made | refuted by Wöhler |\n| **Wöhler's synthesis** | First laboratory synthesis of an organic compound from inorganic material | NH₄OCN → urea |\n| **Isomerism** | Different compounds with the same molecular formula | C₂H₆O: ethanol and dimethyl ether |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why carbon is unique\n\n- Carbon sits at the middle of the second period: neither too small to bond with itself nor too large to form strong bonds. Its **four valence electrons** let it form four strong covalent bonds, and its atoms **link to each other** in chains, branches and rings — catenation. This twin gift (tetravalency + catenation) is the whole reason organic chemistry is a separate subject (developed in the next two topics).\n\n### 4.2 Reading Wöhler's experiment correctly\n\n- Ammonium cyanate and urea have the **same composition** (CH₄N₂O) but are entirely different compounds — an early, dramatic example of **isomerism**. One rearrangement of atoms destroyed a philosophical doctrine: the same elements obey the same chemistry inside and outside a living cell.\n\n### 4.3 Organic versus inorganic — a first pass\n\n- Organic compounds are **molecular** (covalent, low formula mass units), so they melt and boil low, burn, and dissolve in non-polar solvents. Inorganic compounds are frequently **ionic**, so they are crystalline solids with high melting points, conduct when molten/dissolved, and resist burning. The full comparison table is the next topic's business.",
+    "## 5. Comparison Tables\n\n**Organic vs inorganic — first look**\n\n| Basis | Organic | Inorganic |\n|---|---|---|\n| bonding | covalent, molecular | often ionic |\n| m.p./b.p. | low | high |\n| flammability | burn readily | mostly do not burn |\n| conductivity | non-conductors | conduct when molten/aqueous |\n| solubility | organic solvents | water |\n| isomerism | common | rare |\n| reaction speed | slow, need catalysts | often fast (ionic) |",
+    "## 6. Common Confusions\n\n**\"Organic\" does not mean \"grown without chemicals\":** the advertising sense and the chemistry sense are different. In chemistry, organic = carbon-based covalent compound, whether from a leaf or a factory.",
+    "**CO₂ and carbonates are not organic:** despite containing carbon, their chemistry is that of inorganic salts and oxides; the conventional boundary excludes them.",
+    "**Wöhler made urea from ammonium cyanate, not from ammonia and cyanic acid directly in a cell:** the point is inorganic → organic in one flask, ending vitalism.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Define organic chemistry. Why are carbonates and cyanides excluded from it despite containing carbon?** — **Organic chemistry** is the chemistry of the compounds of carbon — hydrocarbons and their derivatives — studied together because of their common covalent, molecular character. **Exclusion:** carbonates, bicarbonates, carbides, cyanides and the oxides of carbon (CO, CO₂) retain the ionic/salt-like chemistry of inorganic substances and lack the C–H framework and catenation characteristic of organic compounds, so by convention they are treated as inorganic.",
+    "**NEB-style (3m): Describe Wöhler's synthesis of urea and state its historical significance.** — In 1828 **Friedrich Wöhler** heated the inorganic salt **ammonium cyanate (NH₄OCN)** and obtained **urea (NH₂CONH₂)**, an organic compound excreted in urine: **NH₄OCN → NH₂CONH₂**. **Significance:** (i) it refuted Berzelius's **vital force theory**, which claimed organic compounds could only be made by living organisms; (ii) it proved that the same chemical laws govern compounds inside and outside living cells; (iii) it opened the era of synthetic organic chemistry — today most organic compounds are made, not extracted. The two compounds also have the same molecular formula (CH₄N₂O) but different structures — an early example of isomerism.",
+    "**NEB-style (2m): State four characteristic properties of organic compounds.** — (i) They are **covalent molecular** compounds, so they have **low melting and boiling points**. (ii) They are **flammable**, burning to CO₂ and H₂O. (iii) They are **non-conductors of electricity** (no ions) and are generally **insoluble in water but soluble in organic solvents**. (iv) They commonly show **isomerism** and their reactions are comparatively **slow**, often requiring catalysts."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -56,61 +57,35 @@
     "❌ All carbon compounds are organic. ✅ CO, CO₂, carbonates, and carbides are inorganic despite containing carbon."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups.",
-    "Practice drawing structural and condensed formulas."
+    "Describe Wöhler's urea synthesis and explain why it destroyed the vital force theory.",
+    "List six characteristic properties of organic compounds with one consequence of each."
   ],
-  "universalFacts": [],
+  "universalFacts": [
+    "More organic compounds are known than compounds of all other elements put together — tens of millions — because carbon catenates into chains and rings and every chain can carry functional groups."
+  ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
   "duplicateType": 2,
   "tabGroup": "01-introduction-to-organic-chemistry-and-organic-compounds",
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nCarbon forms 4 covalent bonds in all stable compounds.\n\nIsomerism increases molecular diversity enormously.",
+  "formulas": [
+    "- Wöhler: NH₄OCN → NH₂CONH₂ (urea)\n- Both have molecular formula CH₄N₂O (isomerism)\n- Combustion: CₓHᵧ + O₂ → x CO₂ + y/2 H₂O"
+  ],
+  "keyPoints": [
+    "Organic chemistry = chemistry of carbon compounds (hydrocarbons + derivatives); excludes carbonates, bicarbonates, carbides, cyanides, CO/CO2 (inorganic by convention). Vital force theory (Berzelius): organic compounds need living force; refuted by Wohler 1828: NH4OCN (inorganic) heated -> NH2CONH2 urea (organic) — same formula CH4N2O, isomerism. Sources: plants, animals, coal/petroleum/natural gas, synthesis. Properties: covalent molecular, low mp/bp, flammable, non-conductors, insoluble in water/soluble in organic solvents, isomerism common, slow reactions, tens of millions known."
+  ],
+  "summary": "**Organic chemistry is the chemistry of carbon compounds** — hydrocarbons and their derivatives, with carbonates, carbides, cyanides and the carbon oxides left to inorganic chemistry by convention. The subject was born when **Wöhler (1828)** converted the inorganic salt **ammonium cyanate (NH₄OCN) into urea (NH₂CONH₂)**, destroying **Berzelius's vital force theory** and proving one chemistry for the living and the non-living world — while accidentally demonstrating isomerism, since both substances are CH₄N₂O. Organic compounds come from plants, animals, coal, petroleum, natural gas and the laboratory, and they behave as a family: **covalent molecules** with **low melting and boiling points**, **flammable**, **non-conducting**, **soluble in organic solvents rather than water**, rich in **isomers**, and slow-reacting — tens of millions of them, all because carbon can bond to itself.",
   "examples": [
-    "Methane CH₄, Ethane C₂H₆, Ethene C₂H₄"
+    "***Ammonium cyanate into urea*** — one gentle heating rearranged an inorganic salt into the organic molecule of urine: same composition (CH4N2O), different compound — vitalism refuted and isomerism introduced in a single experiment."
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 introduction to organic chemistry and organic compounds."
+    "The vital force theory died in one flask: the same atoms obey the same chemistry inside and outside a living cell — Wöhler's urea is the boundary stone of the whole subject."
   ],
   "importantNotes": [
-    "Important note regarding 01 introduction to organic chemistry and organic compounds."
+    "No verified PYQ on the introduction/reasons/tetra-covalency rows exists in this unit's bank (the NEB 2024 and 2023 IUPAC-naming PYQs belong to row 103 nomenclature, and NEB 2022 to row 100); all items here are NEB-style practice."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"Organic chemistry is the chemistry of carbon compounds; Wöhler's synthesis of urea from ammonium cyanate in 1828 refuted the vital force theory.\""
+  ],
   "importantTasks": [
     "Task for studying 01 introduction to organic chemistry and organic compounds."
   ],
@@ -127,48 +102,16 @@
     }
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice naming organic compounds with various functional groups."
+    "**NEB-style (2m): Define organic chemistry. Why are carbonates, bicarbonates, carbides and cyanides excluded from it despite containing carbon?** — **Organic chemistry** is the branch of chemistry dealing with the **compounds of carbon — hydrocarbons and their derivatives** — their structures, properties, preparation and reactions. **Exclusion:** carbonates (CO₃²⁻), bicarbonates, carbides, cyanides (CN⁻) and the oxides of carbon (CO, CO₂) are ionic or salt-like, lack the **C–H framework** and the chain-building character of organic molecules, and their chemistry belongs with the inorganic family; by convention they are therefore treated as inorganic compounds.",
+    "**NEB-style (3m): Describe Wöhler's synthesis of urea and state its historical significance.** — In 1828 **Friedrich Wöhler** heated the inorganic salt **ammonium cyanate (NH₄OCN)** and obtained **urea (NH₂CONH₂)**, the organic compound of urine: **NH₄OCN → NH₂CONH₂**. **Significance:** (i) it refuted **Berzelius's vital force theory**, which held that organic compounds could be produced only by living organisms through a special \"vital force\"; (ii) it showed that the same chemical laws apply inside and outside living cells; (iii) it launched synthetic organic chemistry — most organic compounds today are synthesised, not extracted. Since NH₄OCN and urea share the molecular formula CH₄N₂O but differ in structure, the experiment also introduced **isomerism** to chemistry.",
+    "**NEB-style (2m): State four characteristic properties of organic compounds.** — (i) They are **covalent, molecular compounds** — hence low melting and boiling points compared with ionic solids. (ii) They are **flammable**, burning in air to CO₂ and H₂O. (iii) They are **non-conductors of electricity** and are generally **insoluble in water but soluble in organic solvents** (like dissolves like). (iv) They commonly show **isomerism** — the same molecular formula giving several distinct compounds — and their reactions are comparatively **slow**, frequently requiring catalysts."
   ],
   "specialNotes": [],
   "examShortTricks": [
-    "Trick 1"
+    "Definition = carbon compounds (minus carbonates/carbides/cyanides/CO-CO2). Wohler 1828: NH4OCN -> urea, killed vital force theory. Property list: covalent, low mp/bp, flammable, non-conductor, organic-solvent soluble, isomerism, slow."
   ],
   "examNotes": [
-    "Exam note 1."
+    "When asked to define organic chemistry, add the exclusion list — the carbonate/cyanide boundary is the discriminating clause examiners look for."
   ],
   "mcqs": [
     {
@@ -189,5 +132,56 @@
     "desc": "3D organic molecule explorer"
   },
   "visualType": "organic-chemistry-intro",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Chemistry of Carbon\n\n**Organic chemistry** is the chemistry of carbon compounds — hydrocarbons and their derivatives. Carbon is the only element that builds chains, rings and branches of itself in endless variety, which is why organic compounds outnumber all the compounds of every other element combined. This opening topic sets the definition, the historical birth (Wöhler's urea), the sources, and the characteristic properties that make organic compounds a world of their own.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition and scope\n\n- **Organic compounds:** compounds of **carbon** (almost always with hydrogen, and often with O, N, S, halogens, P).\n- **Organic chemistry:** the branch of chemistry dealing with these compounds — their structure, properties, preparation and reactions.\n- Exceptions kept in mind: carbonates (CO₃²⁻), bicarbonates, carbides, cyanides (CN⁻) and oxides of carbon (CO, CO₂) are studied under inorganic chemistry even though they contain carbon.\n\n### 2.2 The death of the vital force theory\n\n- **Berzelius (early 1800s):** organic compounds could be made only by living things under the influence of a **\"vital force\"** — hence they could never be synthesised in the laboratory.\n- **Wöhler (1828):** heated ammonium cyanate, an *inorganic* salt, and obtained **urea**, an organic compound found in urine: **NH₄OCN → NH₂CONH₂ (urea)**. The vital force theory collapsed, and synthesis of organic compounds began.\n\n### 2.3 Sources of organic compounds\n\n- **Plants and animals** — carbohydrates, oils, proteins, dyes, medicines.\n- **Coal** (coal tar → benzene, phenol, dyes), **petroleum and natural gas** — the great industrial feedstocks.\n- **Laboratory/industrial synthesis** — from simple molecules upward.\n\n### 2.4 Characteristic properties of organic compounds\n\n- **Covalent** bonding; exist as discrete molecules.\n- **Low melting and boiling points** (weak intermolecular forces); many are gases or volatile liquids.\n- **Flammable** — burn to CO₂ and H₂O (carbon + hydrogen skeleton).\n- **Non-conductors** of electricity (no ions).\n- **Generally insoluble in water, soluble in organic solvents** (like dissolves like).\n- **Show isomerism** — same molecular formula, different compounds.\n- **Reactions are slow** — molecular reactions need activation energy; often need catalysts.\n- **Numbers:** several tens of millions known — more than all inorganic compounds together.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Organic compound** | Covalent compound of carbon (with H and often O, N, halogens, S) | CH₄, C₂H₅OH, CH₃COOH |\n| **Vital force theory** | Berzelius's idea that organic compounds need a life force to be made | refuted by Wöhler |\n| **Wöhler's synthesis** | First laboratory synthesis of an organic compound from inorganic material | NH₄OCN → urea |\n| **Isomerism** | Different compounds with the same molecular formula | C₂H₆O: ethanol and dimethyl ether |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why carbon is unique\n\n- Carbon sits at the middle of the second period: neither too small to bond with itself nor too large to form strong bonds. Its **four valence electrons** let it form four strong covalent bonds, and its atoms **link to each other** in chains, branches and rings — catenation. This twin gift (tetravalency + catenation) is the whole reason organic chemistry is a separate subject (developed in the next two topics).\n\n### 4.2 Reading Wöhler's experiment correctly\n\n- Ammonium cyanate and urea have the **same composition** (CH₄N₂O) but are entirely different compounds — an early, dramatic example of **isomerism**. One rearrangement of atoms destroyed a philosophical doctrine: the same elements obey the same chemistry inside and outside a living cell.\n\n### 4.3 Organic versus inorganic — a first pass\n\n- Organic compounds are **molecular** (covalent, low formula mass units), so they melt and boil low, burn, and dissolve in non-polar solvents. Inorganic compounds are frequently **ionic**, so they are crystalline solids with high melting points, conduct when molten/dissolved, and resist burning. The full comparison table is the next topic's business.",
+      "## 5. Comparison Tables\n\n**Organic vs inorganic — first look**\n\n| Basis | Organic | Inorganic |\n|---|---|---|\n| bonding | covalent, molecular | often ionic |\n| m.p./b.p. | low | high |\n| flammability | burn readily | mostly do not burn |\n| conductivity | non-conductors | conduct when molten/aqueous |\n| solubility | organic solvents | water |\n| isomerism | common | rare |\n| reaction speed | slow, need catalysts | often fast (ionic) |",
+      "## 6. Common Confusions\n\n**\"Organic\" does not mean \"grown without chemicals\":** the advertising sense and the chemistry sense are different. In chemistry, organic = carbon-based covalent compound, whether from a leaf or a factory.",
+      "**CO₂ and carbonates are not organic:** despite containing carbon, their chemistry is that of inorganic salts and oxides; the conventional boundary excludes them.",
+      "**Wöhler made urea from ammonium cyanate, not from ammonia and cyanic acid directly in a cell:** the point is inorganic → organic in one flask, ending vitalism.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Define organic chemistry. Why are carbonates and cyanides excluded from it despite containing carbon?** — **Organic chemistry** is the chemistry of the compounds of carbon — hydrocarbons and their derivatives — studied together because of their common covalent, molecular character. **Exclusion:** carbonates, bicarbonates, carbides, cyanides and the oxides of carbon (CO, CO₂) retain the ionic/salt-like chemistry of inorganic substances and lack the C–H framework and catenation characteristic of organic compounds, so by convention they are treated as inorganic.",
+      "**NEB-style (3m): Describe Wöhler's synthesis of urea and state its historical significance.** — In 1828 **Friedrich Wöhler** heated the inorganic salt **ammonium cyanate (NH₄OCN)** and obtained **urea (NH₂CONH₂)**, an organic compound excreted in urine: **NH₄OCN → NH₂CONH₂**. **Significance:** (i) it refuted Berzelius's **vital force theory**, which claimed organic compounds could only be made by living organisms; (ii) it proved that the same chemical laws govern compounds inside and outside living cells; (iii) it opened the era of synthetic organic chemistry — today most organic compounds are made, not extracted. The two compounds also have the same molecular formula (CH₄N₂O) but different structures — an early example of isomerism.",
+      "**NEB-style (2m): State four characteristic properties of organic compounds.** — (i) They are **covalent molecular** compounds, so they have **low melting and boiling points**. (ii) They are **flammable**, burning to CO₂ and H₂O. (iii) They are **non-conductors of electricity** (no ions) and are generally **insoluble in water but soluble in organic solvents**. (iv) They commonly show **isomerism** and their reactions are comparatively **slow**, often requiring catalysts."
+    ],
+    "keyPoints": [
+      "Organic chemistry = chemistry of carbon compounds (hydrocarbons + derivatives); excludes carbonates, bicarbonates, carbides, cyanides, CO/CO2 (inorganic by convention). Vital force theory (Berzelius): organic compounds need living force; refuted by Wohler 1828: NH4OCN (inorganic) heated -> NH2CONH2 urea (organic) — same formula CH4N2O, isomerism. Sources: plants, animals, coal/petroleum/natural gas, synthesis. Properties: covalent molecular, low mp/bp, flammable, non-conductors, insoluble in water/soluble in organic solvents, isomerism common, slow reactions, tens of millions known."
+    ],
+    "importantConcepts": [
+      "The vital force theory died in one flask: the same atoms obey the same chemistry inside and outside a living cell — Wöhler's urea is the boundary stone of the whole subject."
+    ],
+    "examples": [
+      "***Ammonium cyanate into urea*** — one gentle heating rearranged an inorganic salt into the organic molecule of urine: same composition (CH4N2O), different compound — vitalism refuted and isomerism introduced in a single experiment."
+    ],
+    "universalFacts": [
+      "More organic compounds are known than compounds of all other elements put together — tens of millions — because carbon catenates into chains and rings and every chain can carry functional groups."
+    ],
+    "importantStatements": [
+      "\"Organic chemistry is the chemistry of carbon compounds; Wöhler's synthesis of urea from ammonium cyanate in 1828 refuted the vital force theory.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on the introduction/reasons/tetra-covalency rows exists in this unit's bank (the NEB 2024 and 2023 IUPAC-naming PYQs belong to row 103 nomenclature, and NEB 2022 to row 100); all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Definition = carbon compounds (minus carbonates/carbides/cyanides/CO-CO2). Wohler 1828: NH4OCN -> urea, killed vital force theory. Property list: covalent, low mp/bp, flammable, non-conductor, organic-solvent soluble, isomerism, slow."
+    ],
+    "examNotes": [
+      "When asked to define organic chemistry, add the exclusion list — the carbonate/cyanide boundary is the discriminating clause examiners look for."
+    ],
+    "formulas": [
+      "- Wöhler: NH₄OCN → NH₂CONH₂ (urea)\n- Both have molecular formula CH₄N₂O (isomerism)\n- Combustion: CₓHᵧ + O₂ → x CO₂ + y/2 H₂O"
+    ],
+    "practice": [
+      "Describe Wöhler's urea synthesis and explain why it destroyed the vital force theory.",
+      "List six characteristic properties of organic compounds with one consequence of each."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Define organic chemistry. Why are carbonates, bicarbonates, carbides and cyanides excluded from it despite containing carbon?** — **Organic chemistry** is the branch of chemistry dealing with the **compounds of carbon — hydrocarbons and their derivatives** — their structures, properties, preparation and reactions. **Exclusion:** carbonates (CO₃²⁻), bicarbonates, carbides, cyanides (CN⁻) and the oxides of carbon (CO, CO₂) are ionic or salt-like, lack the **C–H framework** and the chain-building character of organic molecules, and their chemistry belongs with the inorganic family; by convention they are therefore treated as inorganic compounds.",
+      "**NEB-style (3m): Describe Wöhler's synthesis of urea and state its historical significance.** — In 1828 **Friedrich Wöhler** heated the inorganic salt **ammonium cyanate (NH₄OCN)** and obtained **urea (NH₂CONH₂)**, the organic compound of urine: **NH₄OCN → NH₂CONH₂**. **Significance:** (i) it refuted **Berzelius's vital force theory**, which held that organic compounds could be produced only by living organisms through a special \"vital force\"; (ii) it showed that the same chemical laws apply inside and outside living cells; (iii) it launched synthetic organic chemistry — most organic compounds today are synthesised, not extracted. Since NH₄OCN and urea share the molecular formula CH₄N₂O but differ in structure, the experiment also introduced **isomerism** to chemistry.",
+      "**NEB-style (2m): State four characteristic properties of organic compounds.** — (i) They are **covalent, molecular compounds** — hence low melting and boiling points compared with ionic solids. (ii) They are **flammable**, burning in air to CO₂ and H₂O. (iii) They are **non-conductors of electricity** and are generally **insoluble in water but soluble in organic solvents** (like dissolves like). (iv) They commonly show **isomerism** — the same molecular formula giving several distinct compounds — and their reactions are comparatively **slow**, frequently requiring catalysts."
+    ]
+  }
 }

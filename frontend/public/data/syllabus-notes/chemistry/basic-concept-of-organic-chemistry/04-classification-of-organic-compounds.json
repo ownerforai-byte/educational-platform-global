@@ -7,40 +7,48 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Open-chain compounds.** Aliphatic compounds have open carbon chains — straight-chain (n-butane) or branched-chain (isobutane) — and may be saturated or unsaturated.",
-    "**Cyclic compounds.** Closed-ring compounds divide into carbocycles (alicyclic like cyclohexane; aromatic like benzene) and heterocycles (furan, pyridine) that contain non-carbon atoms in the ring.",
-    "**Functional group classes.** Compounds are grouped by their functional group: halides (—X), alcohols (—OH), aldehydes (—CHO), ketones (>C=O), carboxylic acids (—COOH) and amines (—NH₂).",
-    "**Saturated vs unsaturated.** Compounds with only single C—C bonds are saturated; those with double or triple bonds are unsaturated and decolourise bromine water.",
-    "**Why classification matters.** Members of one class show similar chemical properties, so classifying a compound immediately predicts its reactions and its name.",
-    "# Classification of organic compounds\n\n## 1. Introduction\nChemical picture of **Classification of organic compounds** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Basic Concept of Organic Chemistry fill pass.\n\n## 2. Concepts and definitions\n### Classification of organic compounds\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and reagent sheet**\n\n| Transformation | Reagent + conditions | Product | Note or trap |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Classification of organic compounds — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Classification of organic compounds — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Classification of organic compounds — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Classification of organic compounds — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — A Family Tree for Millions\n\nWith tens of millions of organic compounds, chemistry would be impossible without classification. The tree has two great branches — **open-chain (acyclic/aliphatic)** and **closed-chain (cyclic)** — and the cyclic branch splits into **homocyclic** (alicyclic + aromatic) and **heterocyclic**. Learn the tree once and every new compound has an address.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Open-chain (acyclic / aliphatic) compounds\n\n- Chains of carbon atoms, straight or branched, **no ring**.\n- **Saturated (alkanes):** only single bonds — CH₄, C₂H₆, C₃H₈.\n- **Unsaturated:** at least one multiple bond — **alkenes** (C=C, ethene CH₂=CH₂), **alkynes** (C≡C, ethyne HC≡CH).\n\n### 2.2 Closed-chain (cyclic) compounds\n\n- **Homocyclic:** ring made only of carbon atoms.\n  - **Alicyclic:** ring with aliphatic properties — cyclopropane (CH₂–CH₂–CH₂), cyclohexane.\n  - **Aromatic:** ring with special stability based on the benzene ring (delocalised π electrons) — benzene C₆H₆, naphthalene, toluene. (Non-benzene aromatics like azulene are rare extras.)\n- **Heterocyclic:** ring contains **at least one atom other than carbon** (N, O, S) — pyridine (N), furan (O), pyrrole (N). Many drugs and dyes are heterocyclic.\n\n### 2.3 Functional-group classes cut across the tree\n\n- Wherever the skeleton, the **functional group** defines the family: alcohols (–OH), aldehydes (–CHO), ketones (C=O), carboxylic acids (–COOH), esters (–COOR), ethers (–O–), amines (–NH₂), halides (–X), nitro (–NO₂).\n- A compound can be aliphatic or aromatic **and** an alcohol at the same time (ethanol vs phenol).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Aliphatic** | Open-chain (or non-aromatic) organic compound | hexane, ethene |\n| **Alicyclic** | Carbon ring with aliphatic (non-aromatic) character | cyclohexane |\n| **Aromatic** | Compound based on a benzene ring with delocalised π stability | benzene, naphthalene |\n| **Heterocyclic** | Ring containing at least one non-carbon atom | pyridine, furan |\n| **Saturated / unsaturated** | Only single bonds / contains multiple bonds | ethane / ethene, ethyne |",
+    "## 4. Detailed Explanation\n\n### 4.1 The tree in one diagram-logic\n\n- Organic compounds → **open chain** (saturated alkanes; unsaturated alkenes/alkynes) and **closed chain** → homocyclic (**alicyclic**; **aromatic** — benzenoid) and **heterocyclic** (with N/O/S in the ring). Every named compound drops into exactly one leaf.\n\n### 4.2 Aromatic is a stability statement, not a smell statement\n\n- The name survives from early fragrance discoveries, but modern \"aromatic\" means **extra stability from the delocalised π-electron ring** of benzene — different reactivity (substitution preferred over addition) from the aliphatic family.\n\n### 4.3 Heterocycles are everywhere in medicine\n\n- Pyridine rings in vitamins (niacin), furan in sugars' furanose forms, pyrrole units in chlorophyll and haem — the heterocyclic leaf of the tree is the biological leaf.",
+    "## 5. Comparison Tables\n\n**The classification tree**\n\n| Branch | Sub-branch | Defining feature | Example |\n|---|---|---|---|\n| Open chain | alkanes | single bonds only | propane |\n| Open chain | alkenes | one C=C | ethene |\n| Open chain | alkynes | one C≡C | ethyne |\n| Closed chain | alicyclic | carbon ring, aliphatic behaviour | cyclohexane |\n| Closed chain | aromatic | benzene-ring π stability | benzene, toluene |\n| Closed chain | heterocyclic | N/O/S in the ring | pyridine, furan |",
+    "## 6. Common Confusions\n\n**Alicyclic ≠ aromatic:** cyclohexane's ring is just a chain bent shut — no delocalised π stability. Only the benzene-type ring is aromatic.",
+    "**Heterocyclic means the ring atom, not a substituent:** ethanol has an O but it is not in a ring and is not heterocyclic; pyridine's N is in the ring — that is the criterion.",
+    "**Saturated refers to bonds, not to fat:** saturated = no multiple bonds (maximum hydrogen per carbon); unsaturated = at least one C=C or C≡C.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Classify organic compounds with suitable examples.** — Organic compounds divide into **open-chain (acyclic, aliphatic)** and **closed-chain (cyclic)**. **Open-chain** compounds have no ring: **saturated** compounds with only single bonds (alkanes — methane, ethane, propane) and **unsaturated** compounds with double or triple bonds (alkenes — ethene CH₂=CH₂; alkynes — ethyne HC≡CH). **Closed-chain** compounds contain rings and split into **homocyclic**, whose rings are made only of carbon, and **heterocyclic**, whose rings contain another atom (N, O, S). Homocyclic rings are further **alicyclic** — carbon rings with aliphatic character (cyclopropane, cyclohexane) — or **aromatic** — containing the specially stable benzene ring (benzene C₆H₆, toluene, naphthalene). Heterocyclic examples: pyridine (N), furan (O), pyrrole (N).",
+    "**NEB-style (2m): Distinguish between alicyclic and aromatic compounds with one example each.** — **Alicyclic compounds** contain a ring of carbon atoms but show ordinary aliphatic (non-aromatic) behaviour — addition reactions, no special π stabilisation; example: **cyclohexane**. **Aromatic compounds** contain a benzene-type ring whose delocalised π electrons give extra stability; they prefer substitution over addition; example: **benzene** (also toluene, naphthalene).",
+    "**NEB-style (2m): What are heterocyclic compounds? Give two examples.** — **Heterocyclic compounds** are cyclic compounds whose ring contains, besides carbon, **at least one atom of another element** — usually nitrogen, oxygen or sulphur. Examples: **pyridine** (six-membered ring with one N), **furan** (five-membered ring with one O); also pyrrole (N). Many vitamins, drugs and natural products (chlorophyll, haem) contain heterocyclic rings."
   ],
   "confusion": [],
   "bounds": [
     "Limit to remember: iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…)."
   ],
-  "practice": [],
-  "universalFacts": [
-    "IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).",
-    "Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds.",
-    "Functional group priority (high → low) governs the suffix; others become prefixes with locants."
+  "practice": [
+    "Draw the complete classification tree of organic compounds with one example at each leaf.",
+    "Distinguish alicyclic from aromatic and homocyclic from heterocyclic with examples.",
+    "Assign each of cyclohexane, pyridine, ethyne and naphthalene to its correct class."
   ],
-  "examples": [],
-  "practiceQuestions": [],
+  "universalFacts": [
+    "Most drugs and natural products are heterocyclic — pyridine appears in the vitamin niacin, pyrrole rings in chlorophyll and haem, furan in the furanose form of sugars."
+  ],
+  "examples": [
+    "***Cyclohexane vs benzene, ring vs ring*** — both are six-membered carbon rings, but one adds hydrogen readily while the other refuses and substitutes instead: the difference is delocalised pi electrons, i.e. aromaticity."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): Classify organic compounds with suitable examples.** — Organic compounds fall into **open-chain (acyclic or aliphatic)** and **closed-chain (cyclic)** families. **Open-chain** compounds have no ring: **saturated** compounds with only single bonds — the alkanes (methane CH₄, ethane, propane) — and **unsaturated** compounds with at least one multiple bond — alkenes with C=C (ethene CH₂=CH₂) and alkynes with C≡C (ethyne HC≡CH). **Closed-chain** compounds contain rings and divide into **homocyclic**, whose rings consist only of carbon atoms, and **heterocyclic**, whose rings contain one or more atoms of N, O or S. Homocyclic rings are either **alicyclic** — carbon rings with aliphatic character (cyclopropane, cyclohexane) — or **aromatic** — containing the specially stable, delocalised benzene ring (benzene C₆H₆, toluene, naphthalene). Heterocyclic examples: **pyridine** (N in ring), **furan** (O in ring), **pyrrole** (N in ring).",
+    "**NEB-style (2m): Distinguish between alicyclic and aromatic compounds with one example each.** — **Alicyclic compounds** have a ring built only of carbon atoms but behave like ordinary aliphatic compounds: no special π stability, they undergo addition reactions (example: **cyclohexane**, also cyclopropane). **Aromatic compounds** contain a benzene-type ring whose **delocalised π electrons** confer extra stability; they resist addition and prefer **substitution** reactions (examples: **benzene**, toluene, naphthalene). The test is the ring's π-electron stabilisation, not merely the presence of a ring.",
+    "**NEB-style (2m): What are heterocyclic compounds? Give two examples with the hetero atom named.** — **Heterocyclic compounds** are cyclic compounds in which the ring contains, in addition to carbon, **at least one atom of another element** — typically nitrogen, oxygen or sulphur. Examples: **pyridine** — a six-membered ring containing one **nitrogen** atom; **furan** — a five-membered ring containing one **oxygen** atom (pyrrole, with ring N, is another). Heterocyclic rings are the structural heart of many natural products and drugs, including chlorophyll, haem and the vitamin niacin."
+  ],
   "formulas": [
-    "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name"
+    "- Alkanes CₙH₂ₙ₊₂; alkenes CₙH₂ₙ; alkynes CₙH₂ₙ₋₂\n- Benzene C₆H₆; cyclohexane C₆H₁₂\n- Pyridine C₅H₅N; furan C₄H₄O; pyrrole C₄H₅N"
   ],
   "numericals": [
     "Use  Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Classification of organic compounds"
+    "Classification: open-chain (acyclic/aliphatic) — saturated alkanes (CH4, C2H6), unsaturated alkenes (C=C, ethene CH2=CH2) and alkynes (C=C triple, ethyne); closed-chain (cyclic) — homocyclic (all-carbon ring): alicyclic (cyclopropane, cyclohexane) and aromatic (benzene C6H6, toluene, naphthalene — delocalised pi stability, substitution preferred); heterocyclic (ring has N/O/S): pyridine (N), furan (O), pyrrole (N). Functional groups cut across: -OH alcohols, -CHO aldehydes, C=O ketones, -COOH acids, -COOR esters, -NH2 amines, -X halides."
   ],
-  "summary": "Classification of organic compounds (Basic Concept of Organic Chemistry, Chemistry, class-11-notes) covers Classification of organic compounds. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Classification gives every organic compound an address on one tree. **Open-chain (aliphatic):** saturated **alkanes** (single bonds), unsaturated **alkenes** (C=C) and **alkynes** (C≡C). **Closed-chain (cyclic):** **homocyclic** rings of pure carbon — **alicyclic** (cyclopropane, cyclohexane; ordinary aliphatic behaviour) and **aromatic** (benzene, toluene, naphthalene; delocalised π stability, substitution over addition) — and **heterocyclic** rings carrying N, O or S in the ring itself (pyridine, furan, pyrrole; the rings of chlorophyll, haem and most drugs). Functional groups (–OH, –CHO, C=O, –COOH, –NH₂, –X) cut across the whole tree, defining chemical families within each branch.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Classification of organic compounds\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -51,5 +59,72 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — A Family Tree for Millions\n\nWith tens of millions of organic compounds, chemistry would be impossible without classification. The tree has two great branches — **open-chain (acyclic/aliphatic)** and **closed-chain (cyclic)** — and the cyclic branch splits into **homocyclic** (alicyclic + aromatic) and **heterocyclic**. Learn the tree once and every new compound has an address.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Open-chain (acyclic / aliphatic) compounds\n\n- Chains of carbon atoms, straight or branched, **no ring**.\n- **Saturated (alkanes):** only single bonds — CH₄, C₂H₆, C₃H₈.\n- **Unsaturated:** at least one multiple bond — **alkenes** (C=C, ethene CH₂=CH₂), **alkynes** (C≡C, ethyne HC≡CH).\n\n### 2.2 Closed-chain (cyclic) compounds\n\n- **Homocyclic:** ring made only of carbon atoms.\n  - **Alicyclic:** ring with aliphatic properties — cyclopropane (CH₂–CH₂–CH₂), cyclohexane.\n  - **Aromatic:** ring with special stability based on the benzene ring (delocalised π electrons) — benzene C₆H₆, naphthalene, toluene. (Non-benzene aromatics like azulene are rare extras.)\n- **Heterocyclic:** ring contains **at least one atom other than carbon** (N, O, S) — pyridine (N), furan (O), pyrrole (N). Many drugs and dyes are heterocyclic.\n\n### 2.3 Functional-group classes cut across the tree\n\n- Wherever the skeleton, the **functional group** defines the family: alcohols (–OH), aldehydes (–CHO), ketones (C=O), carboxylic acids (–COOH), esters (–COOR), ethers (–O–), amines (–NH₂), halides (–X), nitro (–NO₂).\n- A compound can be aliphatic or aromatic **and** an alcohol at the same time (ethanol vs phenol).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Aliphatic** | Open-chain (or non-aromatic) organic compound | hexane, ethene |\n| **Alicyclic** | Carbon ring with aliphatic (non-aromatic) character | cyclohexane |\n| **Aromatic** | Compound based on a benzene ring with delocalised π stability | benzene, naphthalene |\n| **Heterocyclic** | Ring containing at least one non-carbon atom | pyridine, furan |\n| **Saturated / unsaturated** | Only single bonds / contains multiple bonds | ethane / ethene, ethyne |",
+      "## 4. Detailed Explanation\n\n### 4.1 The tree in one diagram-logic\n\n- Organic compounds → **open chain** (saturated alkanes; unsaturated alkenes/alkynes) and **closed chain** → homocyclic (**alicyclic**; **aromatic** — benzenoid) and **heterocyclic** (with N/O/S in the ring). Every named compound drops into exactly one leaf.\n\n### 4.2 Aromatic is a stability statement, not a smell statement\n\n- The name survives from early fragrance discoveries, but modern \"aromatic\" means **extra stability from the delocalised π-electron ring** of benzene — different reactivity (substitution preferred over addition) from the aliphatic family.\n\n### 4.3 Heterocycles are everywhere in medicine\n\n- Pyridine rings in vitamins (niacin), furan in sugars' furanose forms, pyrrole units in chlorophyll and haem — the heterocyclic leaf of the tree is the biological leaf.",
+      "## 5. Comparison Tables\n\n**The classification tree**\n\n| Branch | Sub-branch | Defining feature | Example |\n|---|---|---|---|\n| Open chain | alkanes | single bonds only | propane |\n| Open chain | alkenes | one C=C | ethene |\n| Open chain | alkynes | one C≡C | ethyne |\n| Closed chain | alicyclic | carbon ring, aliphatic behaviour | cyclohexane |\n| Closed chain | aromatic | benzene-ring π stability | benzene, toluene |\n| Closed chain | heterocyclic | N/O/S in the ring | pyridine, furan |",
+      "## 6. Common Confusions\n\n**Alicyclic ≠ aromatic:** cyclohexane's ring is just a chain bent shut — no delocalised π stability. Only the benzene-type ring is aromatic.",
+      "**Heterocyclic means the ring atom, not a substituent:** ethanol has an O but it is not in a ring and is not heterocyclic; pyridine's N is in the ring — that is the criterion.",
+      "**Saturated refers to bonds, not to fat:** saturated = no multiple bonds (maximum hydrogen per carbon); unsaturated = at least one C=C or C≡C.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Classify organic compounds with suitable examples.** — Organic compounds divide into **open-chain (acyclic, aliphatic)** and **closed-chain (cyclic)**. **Open-chain** compounds have no ring: **saturated** compounds with only single bonds (alkanes — methane, ethane, propane) and **unsaturated** compounds with double or triple bonds (alkenes — ethene CH₂=CH₂; alkynes — ethyne HC≡CH). **Closed-chain** compounds contain rings and split into **homocyclic**, whose rings are made only of carbon, and **heterocyclic**, whose rings contain another atom (N, O, S). Homocyclic rings are further **alicyclic** — carbon rings with aliphatic character (cyclopropane, cyclohexane) — or **aromatic** — containing the specially stable benzene ring (benzene C₆H₆, toluene, naphthalene). Heterocyclic examples: pyridine (N), furan (O), pyrrole (N).",
+      "**NEB-style (2m): Distinguish between alicyclic and aromatic compounds with one example each.** — **Alicyclic compounds** contain a ring of carbon atoms but show ordinary aliphatic (non-aromatic) behaviour — addition reactions, no special π stabilisation; example: **cyclohexane**. **Aromatic compounds** contain a benzene-type ring whose delocalised π electrons give extra stability; they prefer substitution over addition; example: **benzene** (also toluene, naphthalene).",
+      "**NEB-style (2m): What are heterocyclic compounds? Give two examples.** — **Heterocyclic compounds** are cyclic compounds whose ring contains, besides carbon, **at least one atom of another element** — usually nitrogen, oxygen or sulphur. Examples: **pyridine** (six-membered ring with one N), **furan** (five-membered ring with one O); also pyrrole (N). Many vitamins, drugs and natural products (chlorophyll, haem) contain heterocyclic rings."
+    ],
+    "keyPoints": [
+      "Classification: open-chain (acyclic/aliphatic) — saturated alkanes (CH4, C2H6), unsaturated alkenes (C=C, ethene CH2=CH2) and alkynes (C=C triple, ethyne); closed-chain (cyclic) — homocyclic (all-carbon ring): alicyclic (cyclopropane, cyclohexane) and aromatic (benzene C6H6, toluene, naphthalene — delocalised pi stability, substitution preferred); heterocyclic (ring has N/O/S): pyridine (N), furan (O), pyrrole (N). Functional groups cut across: -OH alcohols, -CHO aldehydes, C=O ketones, -COOH acids, -COOR esters, -NH2 amines, -X halides."
+    ],
+    "importantConcepts": [
+      "Aromatic is a stability statement: the benzene ring's delocalised pi electrons make substitution preferred over addition — that reactivity signature, not any smell, defines the aromatic branch."
+    ],
+    "examples": [
+      "***Cyclohexane vs benzene, ring vs ring*** — both are six-membered carbon rings, but one adds hydrogen readily while the other refuses and substitutes instead: the difference is delocalised pi electrons, i.e. aromaticity."
+    ],
+    "universalFacts": [
+      "Most drugs and natural products are heterocyclic — pyridine appears in the vitamin niacin, pyrrole rings in chlorophyll and haem, furan in the furanose form of sugars."
+    ],
+    "importantStatements": [
+      "\"Organic compounds are classified into open-chain (aliphatic) and closed-chain (cyclic) compounds; cyclic compounds are homocyclic (alicyclic and aromatic) or heterocyclic.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Tree: open (alkane/alkene/alkyne) vs closed; closed -> homocyclic (alicyclic vs aromatic) + heterocyclic (N/O/S in ring). Aromatic = benzene-ring pi stability. Heterocyclic examples: pyridine, furan, pyrrole."
+    ],
+    "examNotes": [
+      "The classification answer needs the full tree with one example per leaf — a partial tree (only aliphatic/aromatic) loses the heterocyclic marks."
+    ],
+    "formulas": [
+      "- Alkanes CₙH₂ₙ₊₂; alkenes CₙH₂ₙ; alkynes CₙH₂ₙ₋₂\n- Benzene C₆H₆; cyclohexane C₆H₁₂\n- Pyridine C₅H₅N; furan C₄H₄O; pyrrole C₄H₅N"
+    ],
+    "practice": [
+      "Draw the complete classification tree of organic compounds with one example at each leaf.",
+      "Distinguish alicyclic from aromatic and homocyclic from heterocyclic with examples.",
+      "Assign each of cyclohexane, pyridine, ethyne and naphthalene to its correct class."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Classify organic compounds with suitable examples.** — Organic compounds fall into **open-chain (acyclic or aliphatic)** and **closed-chain (cyclic)** families. **Open-chain** compounds have no ring: **saturated** compounds with only single bonds — the alkanes (methane CH₄, ethane, propane) — and **unsaturated** compounds with at least one multiple bond — alkenes with C=C (ethene CH₂=CH₂) and alkynes with C≡C (ethyne HC≡CH). **Closed-chain** compounds contain rings and divide into **homocyclic**, whose rings consist only of carbon atoms, and **heterocyclic**, whose rings contain one or more atoms of N, O or S. Homocyclic rings are either **alicyclic** — carbon rings with aliphatic character (cyclopropane, cyclohexane) — or **aromatic** — containing the specially stable, delocalised benzene ring (benzene C₆H₆, toluene, naphthalene). Heterocyclic examples: **pyridine** (N in ring), **furan** (O in ring), **pyrrole** (N in ring).",
+      "**NEB-style (2m): Distinguish between alicyclic and aromatic compounds with one example each.** — **Alicyclic compounds** have a ring built only of carbon atoms but behave like ordinary aliphatic compounds: no special π stability, they undergo addition reactions (example: **cyclohexane**, also cyclopropane). **Aromatic compounds** contain a benzene-type ring whose **delocalised π electrons** confer extra stability; they resist addition and prefer **substitution** reactions (examples: **benzene**, toluene, naphthalene). The test is the ring's π-electron stabilisation, not merely the presence of a ring.",
+      "**NEB-style (2m): What are heterocyclic compounds? Give two examples with the hetero atom named.** — **Heterocyclic compounds** are cyclic compounds in which the ring contains, in addition to carbon, **at least one atom of another element** — typically nitrogen, oxygen or sulphur. Examples: **pyridine** — a six-membered ring containing one **nitrogen** atom; **furan** — a five-membered ring containing one **oxygen** atom (pyrrole, with ring N, is another). Heterocyclic rings are the structural heart of many natural products and drugs, including chlorophyll, haem and the vitamin niacin."
+    ]
+  },
+  "importantConcepts": [
+    "Aromatic is a stability statement: the benzene ring's delocalised pi electrons make substitution preferred over addition — that reactivity signature, not any smell, defines the aromatic branch."
+  ],
+  "importantStatements": [
+    "\"Organic compounds are classified into open-chain (aliphatic) and closed-chain (cyclic) compounds; cyclic compounds are homocyclic (alicyclic and aromatic) or heterocyclic.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Tree: open (alkane/alkene/alkyne) vs closed; closed -> homocyclic (alicyclic vs aromatic) + heterocyclic (N/O/S in ring). Aromatic = benzene-ring pi stability. Heterocyclic examples: pyridine, furan, pyrrole."
+  ],
+  "examNotes": [
+    "The classification answer needs the full tree with one example per leaf — a partial tree (only aliphatic/aromatic) loses the heterocyclic marks."
   ]
 }
