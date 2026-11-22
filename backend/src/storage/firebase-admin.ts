@@ -93,7 +93,7 @@ function loadAdmin(): AdminNamespace | null {
     // here so every call site keeps the v13 shape (`admin.auth(app)`), and
     // neither SDK version can silently break auth again.
     const admin = { ...mod } as AdminNamespace & Record<string, unknown>;
-    const sub = (p: string): { getAuth?: unknown; getFirestore?: unknown; getStorage?: unknown; getMessaging?: unknown } | null => {
+    const sub = (p: string): Record<string, unknown> | null => {
       try {
         return require(p) as Record<string, unknown>;
       } catch {
@@ -118,6 +118,38 @@ function loadAdmin(): AdminNamespace | null {
     if (typeof admin.messaging !== "function") {
       const m = sub("firebase-admin/messaging");
       if (typeof m?.getMessaging === "function") admin.messaging = (app?: AdminApp) => (m.getMessaging as (a?: AdminApp) => unknown)(app);
+    }
+    // v13 keeps initializeApp/app/apps as PROTOTYPE getters on the namespace
+    // class (own-property spread copies miss them — verified against
+    // firebase-admin 13.10.0: own props are only __esModule/credential/
+    // SDK_VERSION/Promise/INTERNAL/default). Delegate to the live module so
+    // app lifecycle (initializeApp/app/apps) stays live on the copy.
+    if (typeof admin.initializeApp !== "function" && typeof (mod as { initializeApp?: unknown }).initializeApp !== "function") {
+      const appMod = sub("firebase-admin/app");
+      if (typeof appMod?.initializeApp === "function") {
+        admin.initializeApp = appMod.initializeApp as unknown as typeof admin.initializeApp;
+        if (typeof admin.getApps !== "function" && typeof appMod.getApps === "function") {
+          admin.getApps = appMod.getApps as unknown as typeof admin.getApps;
+        }
+      }
+    }
+    if (typeof admin.initializeApp !== "function") {
+      // Fall back to the prototype chain of the required module (v13 keeps
+      // initializeApp there) — bind to the module so `this` stays correct.
+      const proto = Object.getPrototypeOf(mod) as Record<string, unknown>;
+      if (proto && typeof proto.initializeApp === "function") {
+        admin.initializeApp = (proto.initializeApp as (...a: unknown[]) => AdminApp).bind(mod);
+      }
+      if (typeof admin.app !== "function" && proto && typeof proto.app === "function") {
+        admin.app = (proto.app as (...a: unknown[]) => AdminApp).bind(mod);
+      }
+      if (!Array.isArray(admin.apps) && typeof admin.getApps !== "function" && proto && typeof proto.apps !== "undefined") {
+        Object.defineProperty(admin, "apps", {
+          get: () => (mod as { apps?: AdminApp[] }).apps,
+          enumerable: true,
+          configurable: true,
+        });
+      }
     }
     adminNs = admin as AdminNamespace;
     return adminNs;
