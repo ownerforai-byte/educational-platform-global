@@ -7,19 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "Non-metals: electronegative, form anions.",
-    "Halogen reactivity decreases down group.",
-    "Nitrogen: N₂ triple bond, very stable.",
-    "Oxygen: O₂ paramagnetic, supports combustion.",
-    "# Hydrogen: chemistry of atomic and nascent hydrogen; isotopes of hydrogen and their uses\n\n## 1. Introduction\nChemical picture of **Hydrogen** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Hydrogen: chemistry of atomic and nascent hydrogen\n### isotopes of hydrogen and their uses\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Hydrogen — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Hydrogen — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Hydrogen — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Hydrogen — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The First Element, Three Personalities\n\nHydrogen is chemistry's shape-shifter: the lightest element, but with three isotopes (protium, deuterium, tritium) and two reactive personalities — **atomic hydrogen** (nascent, born at the moment of reaction, ferociously reducing) and ordinary **molecular hydrogen** (tame by comparison). Its position above Group IA is a permanent exam debate.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Isotopes of hydrogen\n\n| Isotope | Symbol | Neutrons | Abundance | Key fact |\n|---|---|---|---|---|\n| Protium (ordinary hydrogen) | ¹H | 0 | ~99.98 % | the common isotope |\n| Deuterium (heavy hydrogen) | ²H or D | 1 | ~0.015 % | D₂O = heavy water, moderator in nuclear reactors |\n| Tritium (radioactive hydrogen) | ³H or T | 2 | trace (10⁻¹⁸) | β-emitter, t½ ≈ 12.3 y, thermonuclear fusion fuel |\n\n- All three have **1 proton and 1 electron**; only neutron count differs — hence identical chemical behaviour, different physical properties (D₂O: mp 3.8 °C, bp 101.4 °C, density 1.108 g/mL vs H₂O).\n\n### 2.2 Atomic (nascent) hydrogen\n\n- **Nascent hydrogen** = hydrogen at the instant of its generation in a reaction mixture, before atoms pair into H₂ molecules. Written [H] or H in brackets.\n- Generated in situ: Zn + dil. H₂SO₄, or Zn + CuSO₄ solution, or Fe + HCl.\n- **Far more powerful a reducing agent than molecular H₂**: molecular H₂ reduces only heated metal oxides (CuO, Fe₂O₃ at high T), while nascent [H] reduces permanganate, dichromate, nitrobenzene (to aniline), and even some ions cold.\n- Explanation: atoms carry the bond energy of formation (H → ½H₂ releases 218 kJ/mol) which is spent on reduction the instant the molecule would form.\n\n### 2.3 Position in the periodic table — the debate\n\n- **Resemblance to Group IA:** one valence electron, forms H⁺, good reducing agent, +1 oxidation state.\n- **Resemblance to Group VIIA (halogens):** one electron short of a duplet, exists as diatomic H₂, forms H⁻ (hydrides), replaced by more active halogens.\n- **Unique element argument:** its properties fit neither family fully — hence hydrogen is placed separately above Group IA with a question mark.\n\n### 2.4 Uses of the isotopes\n\n- **Protium:** fuel cells, hydrogenation of oils, ammonia synthesis, oxy-hydrogen flame.\n- **Deuterium:** heavy water (D₂O) as neutron moderator and coolant in nuclear reactors; deuterated drugs; tracer studies.\n- **Tritium:** tracer in biology, self-luminous watch dials, fusion research (D–T reaction releases 17.6 MeV).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Isotopes** | Same Z, different neutron number | ¹H, ²H, ³H |\n| **Nascent hydrogen** | Hydrogen at the instant of liberation, atomic state | Zn + dil. H₂SO₄ → [H] |\n| **Heavy water** | Deuterium oxide, D₂O | Nuclear reactor moderator |\n| **Reducing agent** | Species that donates electrons | [H] reduces KMnO₄ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why nascent hydrogen out-reduces molecular hydrogen\n\n- The H–H bond energy is 436 kJ/mol. Molecular H₂ must first spend energy splitting into atoms before reducing anything — hence it needs heat and only works on easily reducible oxides.\n- Nascent [H] never pays that cost: it is born as atoms and reduces instantly, spending its would-be bond energy on the substrate. Evidence: KMnO₄ is decolourised by Zn/dil. H₂SO₄ even in the cold, but H₂ gas bubbled through does nothing.\n\n### 4.2 Preparation routes for atomic hydrogen\n\n- Zn + dilute H₂SO₄ (the classic), Zn + CuSO₄ (displacement in solution), Al + NaOH, and electrical discharge (Wood's bridge experiment separates atomic from molecular hydrogen: H₂ passed through a discharge tube gives atomic H which recombines exothermically at the far end — the \"third flame\").\n\n### 4.3 Heavy water in the reactor\n\n- D₂O's extra neutron makes it a **poorer neutron absorber** than H₂O — it slows (moderates) neutrons without eating them, allowing natural-uranium reactors to run. It is also the reason deuterium-labelled compounds trace reaction mechanisms.",
+    "## 5. Comparison Tables\n\n**Molecular vs nascent hydrogen**\n\n| Basis | Molecular H₂ | Nascent [H] |\n|---|---|---|\n| State | Diatomic molecules | Free atoms, instant of birth |\n| Reducing power | Weak; heated oxides only | Strong; reduces KMnO₄, K₂Cr₂O₇, nitrobenzene cold |\n| Preparation | Electrolysis, Zn + acid (collected) | In situ, never stored |\n| Bond energy | Spent holding H₂ together | Spent on reduction immediately |\n\n**H₂O vs D₂O**\n\n| Property | H₂O | D₂O |\n|---|---|---|\n| Molar mass | 18 | 20 |\n| Melting point | 0 °C | 3.8 °C |\n| Boiling point | 100 °C | 101.4 °C |\n| Density | 1.000 g/mL | 1.108 g/mL |\n| Reactor role | — (absorbs neutrons) | moderator + coolant |",
+    "## 6. Common Confusions\n\n**Nascent hydrogen cannot be stored:** it exists only in the reaction mixture at the moment of generation — any answer describing \"a bottle of atomic hydrogen\" is wrong.",
+    "**Isotopes differ in neutrons, not chemistry:** ¹H, ²H, ³H react identically chemically; their differences are physical (mass, radioactivity, density of compounds).",
+    "**Hydrogen's position is a compromise:** claiming it \"belongs to Group IA\" ignores the halogen-side evidence; the exam-safe answer presents both sides and the unique-element verdict.",
+    "## 7. Exam Application\n\n**NEB-style (3m): What is nascent hydrogen? How does it differ from molecular hydrogen in reducing action? Illustrate with one reaction.** — **Nascent hydrogen** is hydrogen at the instant of its liberation in a chemical reaction, before its atoms combine into diatomic molecules; it is generated in situ, for example by the action of zinc on dilute sulphuric acid: Zn + H₂SO₄ → ZnSO₄ + 2[H]. **Difference:** molecular hydrogen is a mild reducing agent that reduces only easily reducible metal oxides on heating (CuO + H₂ → Cu + H₂O), whereas nascent hydrogen is a much stronger reducing agent because its atoms spend the energy of H–H bond formation at the moment of reduction; it decolourises acidified KMnO₄ and converts nitrobenzene to aniline even in the cold. **Illustration:** 2KMnO₄ + 5H₂SO₄ + 5[H from Zn/dil.H₂SO₄] → 2MnSO₄ + K₂SO₄ + 8H₂O — the pink colour is discharged by nascent hydrogen but not by bubbled H₂ gas at room temperature.",
+    "**NEB-style (2m): Name the three isotopes of hydrogen with neutron counts, and state one use of deuterium.** — **Protium (¹H):** no neutrons, ~99.98 % abundant. **Deuterium (²H, D):** one neutron, ~0.015 %. **Tritium (³H, T):** two neutrons, trace, radioactive (β-emitter, half-life ≈ 12.3 years). **Use of deuterium:** as heavy water (D₂O) — the neutron moderator and coolant in nuclear reactors, because D₂O slows fast neutrons while absorbing far fewer of them than ordinary water.",
+    "**NEB-style (2m): Give two points of resemblance of hydrogen with alkali metals and two with halogens.** — **With alkali metals (Group IA):** (1) one valence electron and it can lose it to form the +1 ion H⁺; (2) it acts as a good reducing agent. **With halogens (Group VIIA):** (1) it exists as a diatomic molecule H₂ like Cl₂, F₂; (2) it gains one electron to form the hydride ion H⁻ (in NaH, CaH₂), matching the halide ion, and is displaced from its compounds by more active elements."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -102,162 +100,23 @@
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles.",
-    "Practice calculating energy of photon from frequency and wavelength.",
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Write equations for three ways of generating nascent hydrogen.",
+    "Compare the reducing action of molecular and nascent hydrogen on acidified KMnO4.",
+    "List three physical properties in which D2O differs measurably from H2O."
   ],
   "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+    "The D–T fusion reaction powers experimental fusion reactors and thermonuclear weapons; tritium's 12.3-year half-life makes it both a tracer and a time bomb that must be bred continuously."
   ],
   "examples": [
-    "Cl₂ + 2NaBr → 2NaCl + Br₂",
-    "N₂ + 3H₂ → 2NH₃ (Haber process)"
+    "***The Wood's bridge*** — hydrogen streamed through a discharge tube becomes atomic at the arc and recombines with a burst of heat at the far end: the \"third flame\" burning where no gas is fed — atomic hydrogen made visible."
   ],
   "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles.",
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB-style (3m): What is nascent hydrogen? How does it differ from molecular hydrogen in reducing action? Illustrate with one reaction.** — **Definition:** nascent hydrogen is hydrogen at the instant of its liberation in a chemical reaction, existing as free atoms before they combine into diatomic H₂ molecules; it is written [H] and can only be generated in situ (for example Zn + dilute H₂SO₄ → ZnSO₄ + 2[H]), never stored. **Difference in reducing action:** molecular hydrogen is a mild reducing agent — it must first spend energy breaking the strong H–H bond (436 kJ/mol), so it reduces only easily reducible oxides and only on heating (CuO + H₂ → Cu + H₂O; Fe₂O₃ + 3H₂ → 2Fe + 3H₂O). Nascent hydrogen is far stronger: its atoms reduce substrates instantly, spending the bond-formation energy at the moment of reduction, so it decolourises acidified KMnO₄, reduces acidified K₂Cr₂O₇, and converts nitrobenzene to aniline even in the cold. **Illustration:** the pink colour of acidified KMnO₄ is discharged by hydrogen generated in contact with zinc (2KMnO₄ + 3H₂SO₄ + 5[H] → 2MnSO₄ + K₂SO₄ + 8H₂O), while ordinary hydrogen gas bubbled through the same solution at room temperature produces no change.",
+    "**NEB-style (2m): Name the three isotopes of hydrogen, give the number of neutrons in each, and state one important use of deuterium.** — **Protium (¹H):** zero neutrons, about 99.98 % of natural hydrogen. **Deuterium (²H or D):** one neutron, about 0.015 %. **Tritium (³H or T):** two neutrons, present only in traces and radioactive, a beta-emitter with half-life about 12.3 years. **Use of deuterium:** combined with oxygen it forms heavy water (D₂O), used as the neutron moderator and coolant in nuclear reactors — D₂O slows fast neutrons to thermal speeds while absorbing very few of them, letting natural-uranium reactors sustain a chain reaction.",
+    "**NEB-style (2m): Give two points of resemblance of hydrogen with alkali metals and two with halogens. What conclusion follows?** — **With alkali metals (Group IA):** (1) hydrogen has one valence electron and can lose it to form the H⁺ ion, showing the +1 oxidation state; (2) it behaves as a good reducing agent, like the active metals. **With halogens (Group VIIA):** (1) it exists as a diatomic molecule (H₂), like F₂ and Cl₂; (2) it can gain one electron to form the hydride ion H⁻ (in NaH, CaH₂), just as halogens form halide ions, and it is displaced from its compounds by more reactive elements. **Conclusion:** hydrogen resembles both families but fits neither completely — it is best treated as a **unique element** placed separately above Group IA in the periodic table."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- Zn + H₂SO₄(dil) → ZnSO₄ + 2[H] (nascent)\n- CuO + H₂ → Cu + H₂O (molecular H₂, heated)\n- 2KMnO₄ + 3H₂SO₄ + 5[H] → 2MnSO₄ + K₂SO₄ + 8H₂O\n- D₂O: mp 3.8 °C, bp 101.4 °C, d = 1.108 g/mL\n- ²H + ³H → ⁴He + n + 17.6 MeV (fusion)"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -265,46 +124,107 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Hydrogen",
-    "• Chemistry of atomic",
-    "• Nascent hydrogen",
-    "• Isotopes of hydrogen",
-    "• Their uses"
+    "Isotopes: protium 1H (0 n, 99.98%), deuterium 2H/D (1 n, 0.015%, D2O heavy water), tritium 3H/T (2 n, trace, beta emitter t1/2 12.3 y). Same chemistry, different physical properties (D2O: mp 3.8 C, bp 101.4 C, density 1.108). Nascent hydrogen [H]: born in situ (Zn + dil H2SO4, Zn + CuSO4), never stored; stronger reducer than molecular H2 - reduces KMnO4, K2Cr2O7, nitrobenzene cold; reason: spends bond-formation energy instantly. Molecular H2 reduces only heated oxides (CuO, Fe2O3). Position debate: Group IA side (1 valence e, H+, reducer) vs VIIA side (diatomic, H-, displaced); verdict: unique element. Uses: D2O reactor moderator/coolant; T in fusion and tracers."
   ],
-  "summary": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental.\n\nStoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.\n\nQuantum numbers fully describe electron state; Aufbau, Pauli, and Hund guide electron configuration.\n\nHeisenberg uncertainty is a fundamental limit, not measurement error.",
+  "summary": "Hydrogen wears three isotopic masks — **protium** (0 neutrons, 99.98 %), **deuterium** (1 neutron, the heavy-water isotope, D₂O with mp 3.8 °C, bp 101.4 °C, density 1.108 g/mL, the nuclear reactor's moderator-coolant) and **tritium** (2 neutrons, trace, β-active, t½ 12.3 years, fusion fuel) — while chemically staying one and the same element. Its reactive double life is the topic's heart: **molecular H₂** is a tame reducer that must first pay the 436 kJ/mol H–H bond cost and therefore only touches heated, easily reduced oxides, whereas **nascent hydrogen [H]** — born in situ from Zn + dilute H₂SO₄ or Zn + CuSO₄, never storable — spends that bond energy at the instant of its birth and decolourises KMnO₄, strips K₂Cr₂O₇ and converts nitrobenzene to aniline cold. The periodic-table placement is a standing debate: Group IA (one valence electron, H⁺, reducer) versus Group VIIA (diatomic H₂, hydride H⁻, displacement) — resolved by declaring hydrogen a unique element seated above Group IA with a question mark. Applications run from hydrogenation and fuel cells through heavy-water reactors to the 17.6 MeV D–T fusion reaction.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Hydrogen: chemistry of atomic and nascent hydrogen; isoto…\"?",
+      "question": "The number of neutrons in tritium is:",
       "options": [
-        "Hydrogen",
-        "Chemistry of atomic",
-        "Unrelated topic",
-        "None of the above"
+        "0",
+        "1",
+        "2",
+        "3"
       ],
-      "answer": "Hydrogen",
-      "explanation": "Hydrogen is listed among the official sub-ideas of Hydrogen: chemistry of atomic and nascent hydrogen; isoto…; the others are not part of this topic."
+      "answer": "C",
+      "explanation": "3H - one proton, two neutrons."
     },
     {
-      "question": "A common examiner point on \"Hydrogen: chemistry of atomic and nascent hydrogen; isoto…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Heavy water is:",
       "options": [
-        "True",
-        "False"
+        "H2O2",
+        "D2O",
+        "H2O at 4 C",
+        "T2O"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Deuterium oxide - reactor moderator."
+    },
+    {
+      "question": "Nascent hydrogen is:",
+      "options": [
+        "Stored in cylinders",
+        "Generated in situ at the moment of reaction",
+        "Ordinary H2 gas",
+        "Ionised hydrogen"
+      ],
+      "answer": "B",
+      "explanation": "Atomic hydrogen at the instant of liberation."
+    },
+    {
+      "question": "Nascent hydrogen reduces acidified KMnO4:",
+      "options": [
+        "Only on heating",
+        "Even in the cold",
+        "Never",
+        "Only with catalyst"
+      ],
+      "answer": "B",
+      "explanation": "Bond energy spent instantly - cold reduction works."
+    },
+    {
+      "question": "The boiling point of D2O is:",
+      "options": [
+        "100 C",
+        "101.4 C",
+        "98 C",
+        "105 C"
+      ],
+      "answer": "B",
+      "explanation": "Slightly higher than ordinary water."
+    },
+    {
+      "question": "Hydrogen resembles halogens in:",
+      "options": [
+        "Forming H+",
+        "Diatomic H2 and hydride H-",
+        "Metallic lustre",
+        "Losing electrons"
+      ],
+      "answer": "B",
+      "explanation": "One electron short of a duplet, like halogens."
+    },
+    {
+      "question": "The half-life of tritium is about:",
+      "options": [
+        "12.3 years",
+        "5700 years",
+        "1600 years",
+        "1 year"
+      ],
+      "answer": "A",
+      "explanation": "Short-lived beta emitter."
+    },
+    {
+      "question": "D2O in nuclear reactors acts as:",
+      "options": [
+        "Fuel",
+        "Moderator and coolant",
+        "Shield",
+        "Catalyst"
+      ],
+      "answer": "B",
+      "explanation": "Slows neutrons without absorbing many."
     }
   ],
   "importantNotes": [
-    "Important note regarding 01 hydrogen chemistry of atomic and nascent hydrogen isotopes and their uses application of hydrogen as fuel heavy water and its applications.",
-    "Important note regarding 01 hydrogen."
+    "No verified PYQ on hydrogen exists in the current bank (NEB 2022's ozone question is solved in topic 61; NEB 2021's Ostwald process in topic 65); all items above are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Hydrogen — Chemistry and Uses.",
-    "Recall the formula for Hydrogen."
+    "Isotope ladder: 0-1-2 neutrons, 99.98-0.015-trace. Nascent = in situ + instant + strong reducer. D2O numbers: 3.8 / 101.4 / 1.108. Debate answer: two resemblances each side + \"unique element\" verdict."
   ],
   "importantConcepts": [
-    "Key concept 1 for 01 hydrogen chemistry of atomic and nascent hydrogen isotopes and their uses application of hydrogen as fuel heavy water and its applications.",
-    "Key concept 1 for 01 hydrogen."
+    "Nascent hydrogen's secret is accounting: the 436 kJ/mol of H–H bond energy that molecular hydrogen must pay to react is exactly the energy atomic hydrogen spends on the substrate — that is the whole difference in reducing power."
   ],
   "importantTasks": [
     "Task for studying 01 hydrogen chemistry of atomic and nascent hydrogen isotopes and their uses application of hydrogen as fuel heavy water and its applications.",
@@ -316,14 +236,158 @@
     "Specialized insight for 01 hydrogen chemistry of atomic and nascent hydrogen isotopes and their uses application of hydrogen as fuel heavy water and its applications."
   ],
   "importantStatements": [
-    "Key statement for 01 hydrogen chemistry of atomic and nascent hydrogen isotopes and their uses application of hydrogen as fuel heavy water and its applications."
+    "\"Nascent hydrogen is more powerful than molecular hydrogen as a reducing agent because it is produced in the atomic state at the moment of use.\""
   ],
-  "examNotes": [],
+  "examNotes": [
+    "For the position-in-periodic-table question, examiners want the two-sided argument explicitly — one mark per side plus one for the verdict; a one-sided answer caps at two."
+  ],
   "exercises": [],
   "visualization": {
     "type": "simulation",
     "component": "NonmetalReactSim",
     "desc": "Non-metal reactivity simulator"
   },
-  "visualType": "hydrogen"
+  "visualType": "hydrogen",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The First Element, Three Personalities\n\nHydrogen is chemistry's shape-shifter: the lightest element, but with three isotopes (protium, deuterium, tritium) and two reactive personalities — **atomic hydrogen** (nascent, born at the moment of reaction, ferociously reducing) and ordinary **molecular hydrogen** (tame by comparison). Its position above Group IA is a permanent exam debate.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Isotopes of hydrogen\n\n| Isotope | Symbol | Neutrons | Abundance | Key fact |\n|---|---|---|---|---|\n| Protium (ordinary hydrogen) | ¹H | 0 | ~99.98 % | the common isotope |\n| Deuterium (heavy hydrogen) | ²H or D | 1 | ~0.015 % | D₂O = heavy water, moderator in nuclear reactors |\n| Tritium (radioactive hydrogen) | ³H or T | 2 | trace (10⁻¹⁸) | β-emitter, t½ ≈ 12.3 y, thermonuclear fusion fuel |\n\n- All three have **1 proton and 1 electron**; only neutron count differs — hence identical chemical behaviour, different physical properties (D₂O: mp 3.8 °C, bp 101.4 °C, density 1.108 g/mL vs H₂O).\n\n### 2.2 Atomic (nascent) hydrogen\n\n- **Nascent hydrogen** = hydrogen at the instant of its generation in a reaction mixture, before atoms pair into H₂ molecules. Written [H] or H in brackets.\n- Generated in situ: Zn + dil. H₂SO₄, or Zn + CuSO₄ solution, or Fe + HCl.\n- **Far more powerful a reducing agent than molecular H₂**: molecular H₂ reduces only heated metal oxides (CuO, Fe₂O₃ at high T), while nascent [H] reduces permanganate, dichromate, nitrobenzene (to aniline), and even some ions cold.\n- Explanation: atoms carry the bond energy of formation (H → ½H₂ releases 218 kJ/mol) which is spent on reduction the instant the molecule would form.\n\n### 2.3 Position in the periodic table — the debate\n\n- **Resemblance to Group IA:** one valence electron, forms H⁺, good reducing agent, +1 oxidation state.\n- **Resemblance to Group VIIA (halogens):** one electron short of a duplet, exists as diatomic H₂, forms H⁻ (hydrides), replaced by more active halogens.\n- **Unique element argument:** its properties fit neither family fully — hence hydrogen is placed separately above Group IA with a question mark.\n\n### 2.4 Uses of the isotopes\n\n- **Protium:** fuel cells, hydrogenation of oils, ammonia synthesis, oxy-hydrogen flame.\n- **Deuterium:** heavy water (D₂O) as neutron moderator and coolant in nuclear reactors; deuterated drugs; tracer studies.\n- **Tritium:** tracer in biology, self-luminous watch dials, fusion research (D–T reaction releases 17.6 MeV).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Isotopes** | Same Z, different neutron number | ¹H, ²H, ³H |\n| **Nascent hydrogen** | Hydrogen at the instant of liberation, atomic state | Zn + dil. H₂SO₄ → [H] |\n| **Heavy water** | Deuterium oxide, D₂O | Nuclear reactor moderator |\n| **Reducing agent** | Species that donates electrons | [H] reduces KMnO₄ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why nascent hydrogen out-reduces molecular hydrogen\n\n- The H–H bond energy is 436 kJ/mol. Molecular H₂ must first spend energy splitting into atoms before reducing anything — hence it needs heat and only works on easily reducible oxides.\n- Nascent [H] never pays that cost: it is born as atoms and reduces instantly, spending its would-be bond energy on the substrate. Evidence: KMnO₄ is decolourised by Zn/dil. H₂SO₄ even in the cold, but H₂ gas bubbled through does nothing.\n\n### 4.2 Preparation routes for atomic hydrogen\n\n- Zn + dilute H₂SO₄ (the classic), Zn + CuSO₄ (displacement in solution), Al + NaOH, and electrical discharge (Wood's bridge experiment separates atomic from molecular hydrogen: H₂ passed through a discharge tube gives atomic H which recombines exothermically at the far end — the \"third flame\").\n\n### 4.3 Heavy water in the reactor\n\n- D₂O's extra neutron makes it a **poorer neutron absorber** than H₂O — it slows (moderates) neutrons without eating them, allowing natural-uranium reactors to run. It is also the reason deuterium-labelled compounds trace reaction mechanisms.",
+      "## 5. Comparison Tables\n\n**Molecular vs nascent hydrogen**\n\n| Basis | Molecular H₂ | Nascent [H] |\n|---|---|---|\n| State | Diatomic molecules | Free atoms, instant of birth |\n| Reducing power | Weak; heated oxides only | Strong; reduces KMnO₄, K₂Cr₂O₇, nitrobenzene cold |\n| Preparation | Electrolysis, Zn + acid (collected) | In situ, never stored |\n| Bond energy | Spent holding H₂ together | Spent on reduction immediately |\n\n**H₂O vs D₂O**\n\n| Property | H₂O | D₂O |\n|---|---|---|\n| Molar mass | 18 | 20 |\n| Melting point | 0 °C | 3.8 °C |\n| Boiling point | 100 °C | 101.4 °C |\n| Density | 1.000 g/mL | 1.108 g/mL |\n| Reactor role | — (absorbs neutrons) | moderator + coolant |",
+      "## 6. Common Confusions\n\n**Nascent hydrogen cannot be stored:** it exists only in the reaction mixture at the moment of generation — any answer describing \"a bottle of atomic hydrogen\" is wrong.",
+      "**Isotopes differ in neutrons, not chemistry:** ¹H, ²H, ³H react identically chemically; their differences are physical (mass, radioactivity, density of compounds).",
+      "**Hydrogen's position is a compromise:** claiming it \"belongs to Group IA\" ignores the halogen-side evidence; the exam-safe answer presents both sides and the unique-element verdict.",
+      "## 7. Exam Application\n\n**NEB-style (3m): What is nascent hydrogen? How does it differ from molecular hydrogen in reducing action? Illustrate with one reaction.** — **Nascent hydrogen** is hydrogen at the instant of its liberation in a chemical reaction, before its atoms combine into diatomic molecules; it is generated in situ, for example by the action of zinc on dilute sulphuric acid: Zn + H₂SO₄ → ZnSO₄ + 2[H]. **Difference:** molecular hydrogen is a mild reducing agent that reduces only easily reducible metal oxides on heating (CuO + H₂ → Cu + H₂O), whereas nascent hydrogen is a much stronger reducing agent because its atoms spend the energy of H–H bond formation at the moment of reduction; it decolourises acidified KMnO₄ and converts nitrobenzene to aniline even in the cold. **Illustration:** 2KMnO₄ + 5H₂SO₄ + 5[H from Zn/dil.H₂SO₄] → 2MnSO₄ + K₂SO₄ + 8H₂O — the pink colour is discharged by nascent hydrogen but not by bubbled H₂ gas at room temperature.",
+      "**NEB-style (2m): Name the three isotopes of hydrogen with neutron counts, and state one use of deuterium.** — **Protium (¹H):** no neutrons, ~99.98 % abundant. **Deuterium (²H, D):** one neutron, ~0.015 %. **Tritium (³H, T):** two neutrons, trace, radioactive (β-emitter, half-life ≈ 12.3 years). **Use of deuterium:** as heavy water (D₂O) — the neutron moderator and coolant in nuclear reactors, because D₂O slows fast neutrons while absorbing far fewer of them than ordinary water.",
+      "**NEB-style (2m): Give two points of resemblance of hydrogen with alkali metals and two with halogens.** — **With alkali metals (Group IA):** (1) one valence electron and it can lose it to form the +1 ion H⁺; (2) it acts as a good reducing agent. **With halogens (Group VIIA):** (1) it exists as a diatomic molecule H₂ like Cl₂, F₂; (2) it gains one electron to form the hydride ion H⁻ (in NaH, CaH₂), matching the halide ion, and is displaced from its compounds by more active elements."
+    ],
+    "keyPoints": [
+      "Isotopes: protium 1H (0 n, 99.98%), deuterium 2H/D (1 n, 0.015%, D2O heavy water), tritium 3H/T (2 n, trace, beta emitter t1/2 12.3 y). Same chemistry, different physical properties (D2O: mp 3.8 C, bp 101.4 C, density 1.108). Nascent hydrogen [H]: born in situ (Zn + dil H2SO4, Zn + CuSO4), never stored; stronger reducer than molecular H2 - reduces KMnO4, K2Cr2O7, nitrobenzene cold; reason: spends bond-formation energy instantly. Molecular H2 reduces only heated oxides (CuO, Fe2O3). Position debate: Group IA side (1 valence e, H+, reducer) vs VIIA side (diatomic, H-, displaced); verdict: unique element. Uses: D2O reactor moderator/coolant; T in fusion and tracers."
+    ],
+    "importantConcepts": [
+      "Nascent hydrogen's secret is accounting: the 436 kJ/mol of H–H bond energy that molecular hydrogen must pay to react is exactly the energy atomic hydrogen spends on the substrate — that is the whole difference in reducing power."
+    ],
+    "examples": [
+      "***The Wood's bridge*** — hydrogen streamed through a discharge tube becomes atomic at the arc and recombines with a burst of heat at the far end: the \"third flame\" burning where no gas is fed — atomic hydrogen made visible."
+    ],
+    "universalFacts": [
+      "The D–T fusion reaction powers experimental fusion reactors and thermonuclear weapons; tritium's 12.3-year half-life makes it both a tracer and a time bomb that must be bred continuously."
+    ],
+    "importantStatements": [
+      "\"Nascent hydrogen is more powerful than molecular hydrogen as a reducing agent because it is produced in the atomic state at the moment of use.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on hydrogen exists in the current bank (NEB 2022's ozone question is solved in topic 61; NEB 2021's Ostwald process in topic 65); all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Isotope ladder: 0-1-2 neutrons, 99.98-0.015-trace. Nascent = in situ + instant + strong reducer. D2O numbers: 3.8 / 101.4 / 1.108. Debate answer: two resemblances each side + \"unique element\" verdict."
+    ],
+    "examNotes": [
+      "For the position-in-periodic-table question, examiners want the two-sided argument explicitly — one mark per side plus one for the verdict; a one-sided answer caps at two."
+    ],
+    "formulas": [
+      "- Zn + H₂SO₄(dil) → ZnSO₄ + 2[H] (nascent)\n- CuO + H₂ → Cu + H₂O (molecular H₂, heated)\n- 2KMnO₄ + 3H₂SO₄ + 5[H] → 2MnSO₄ + K₂SO₄ + 8H₂O\n- D₂O: mp 3.8 °C, bp 101.4 °C, d = 1.108 g/mL\n- ²H + ³H → ⁴He + n + 17.6 MeV (fusion)"
+    ],
+    "practice": [
+      "Write equations for three ways of generating nascent hydrogen.",
+      "Compare the reducing action of molecular and nascent hydrogen on acidified KMnO4.",
+      "List three physical properties in which D2O differs measurably from H2O."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): What is nascent hydrogen? How does it differ from molecular hydrogen in reducing action? Illustrate with one reaction.** — **Definition:** nascent hydrogen is hydrogen at the instant of its liberation in a chemical reaction, existing as free atoms before they combine into diatomic H₂ molecules; it is written [H] and can only be generated in situ (for example Zn + dilute H₂SO₄ → ZnSO₄ + 2[H]), never stored. **Difference in reducing action:** molecular hydrogen is a mild reducing agent — it must first spend energy breaking the strong H–H bond (436 kJ/mol), so it reduces only easily reducible oxides and only on heating (CuO + H₂ → Cu + H₂O; Fe₂O₃ + 3H₂ → 2Fe + 3H₂O). Nascent hydrogen is far stronger: its atoms reduce substrates instantly, spending the bond-formation energy at the moment of reduction, so it decolourises acidified KMnO₄, reduces acidified K₂Cr₂O₇, and converts nitrobenzene to aniline even in the cold. **Illustration:** the pink colour of acidified KMnO₄ is discharged by hydrogen generated in contact with zinc (2KMnO₄ + 3H₂SO₄ + 5[H] → 2MnSO₄ + K₂SO₄ + 8H₂O), while ordinary hydrogen gas bubbled through the same solution at room temperature produces no change.",
+      "**NEB-style (2m): Name the three isotopes of hydrogen, give the number of neutrons in each, and state one important use of deuterium.** — **Protium (¹H):** zero neutrons, about 99.98 % of natural hydrogen. **Deuterium (²H or D):** one neutron, about 0.015 %. **Tritium (³H or T):** two neutrons, present only in traces and radioactive, a beta-emitter with half-life about 12.3 years. **Use of deuterium:** combined with oxygen it forms heavy water (D₂O), used as the neutron moderator and coolant in nuclear reactors — D₂O slows fast neutrons to thermal speeds while absorbing very few of them, letting natural-uranium reactors sustain a chain reaction.",
+      "**NEB-style (2m): Give two points of resemblance of hydrogen with alkali metals and two with halogens. What conclusion follows?** — **With alkali metals (Group IA):** (1) hydrogen has one valence electron and can lose it to form the H⁺ ion, showing the +1 oxidation state; (2) it behaves as a good reducing agent, like the active metals. **With halogens (Group VIIA):** (1) it exists as a diatomic molecule (H₂), like F₂ and Cl₂; (2) it can gain one electron to form the hydride ion H⁻ (in NaH, CaH₂), just as halogens form halide ions, and it is displaced from its compounds by more reactive elements. **Conclusion:** hydrogen resembles both families but fits neither completely — it is best treated as a **unique element** placed separately above Group IA in the periodic table."
+    ]
+  },
+  "mcs": [
+    {
+      "question": "The number of neutrons in tritium is:",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer": "C",
+      "explanation": "3H - one proton, two neutrons."
+    },
+    {
+      "question": "Heavy water is:",
+      "options": [
+        "H2O2",
+        "D2O",
+        "H2O at 4 C",
+        "T2O"
+      ],
+      "answer": "B",
+      "explanation": "Deuterium oxide - reactor moderator."
+    },
+    {
+      "question": "Nascent hydrogen is:",
+      "options": [
+        "Stored in cylinders",
+        "Generated in situ at the moment of reaction",
+        "Ordinary H2 gas",
+        "Ionised hydrogen"
+      ],
+      "answer": "B",
+      "explanation": "Atomic hydrogen at the instant of liberation."
+    },
+    {
+      "question": "Nascent hydrogen reduces acidified KMnO4:",
+      "options": [
+        "Only on heating",
+        "Even in the cold",
+        "Never",
+        "Only with catalyst"
+      ],
+      "answer": "B",
+      "explanation": "Bond energy spent instantly - cold reduction works."
+    },
+    {
+      "question": "The boiling point of D2O is:",
+      "options": [
+        "100 C",
+        "101.4 C",
+        "98 C",
+        "105 C"
+      ],
+      "answer": "B",
+      "explanation": "Slightly higher than ordinary water."
+    },
+    {
+      "question": "Hydrogen resembles halogens in:",
+      "options": [
+        "Forming H+",
+        "Diatomic H2 and hydride H-",
+        "Metallic lustre",
+        "Losing electrons"
+      ],
+      "answer": "B",
+      "explanation": "One electron short of a duplet, like halogens."
+    },
+    {
+      "question": "The half-life of tritium is about:",
+      "options": [
+        "12.3 years",
+        "5700 years",
+        "1600 years",
+        "1 year"
+      ],
+      "answer": "A",
+      "explanation": "Short-lived beta emitter."
+    },
+    {
+      "question": "D2O in nuclear reactors acts as:",
+      "options": [
+        "Fuel",
+        "Moderator and coolant",
+        "Shield",
+        "Catalyst"
+      ],
+      "answer": "B",
+      "explanation": "Slows neutrons without absorbing many."
+    }
+  ]
 }

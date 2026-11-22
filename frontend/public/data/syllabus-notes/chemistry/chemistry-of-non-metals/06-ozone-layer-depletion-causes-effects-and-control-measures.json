@@ -7,16 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Non-metals: electronegative, form anions.",
-    "Halogen reactivity decreases down group.",
-    "Nitrogen: N₂ triple bond, very stable.",
-    "Oxygen: O₂ paramagnetic, supports combustion.",
-    "# Ozone layer depletion: causes, effects and control measures\n\n## 1. Introduction\nChemical picture of **Ozone layer depletion** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Ozone layer depletion: causes\n### effects and control measures\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Ozone layer depletion — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Ozone layer depletion — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Ozone layer depletion — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Ozone layer depletion — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Hole We Made and Are Closing\n\nThe ozone layer's depletion is chemistry's best-known environmental lesson: CFCs — once celebrated as miracle refrigerants — drift to the stratosphere, surrender chlorine atoms to UV, and each chlorine atom destroys tens of thousands of ozone molecules. This topic covers the causes, the Antarctic hole's mechanism, the effects, and the Montreal Protocol's control measures.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The natural ozone balance\n\n- Formation: O₂ + UV (< 242 nm) → 2O; O + O₂ → O₃.\n- Destruction: O₃ + UV → O₂ + O; O₃ + O → 2O₂.\n- In the unpolluted stratosphere formation and destruction balance — a steady ~300 DU (Dobson units) column.\n\n### 2.2 Causes of depletion\n\n- **CFCs (chlorofluorocarbons, freons: CFCl₃, CF₂Cl₂):** inert in the troposphere (that was their selling point), but UV in the stratosphere breaks the C–Cl bond: CFCl₃ + UV → CFCl₂• + Cl•.\n- **The catalytic cycle:** Cl• + O₃ → ClO• + O₂; ClO• + O → Cl• + O₂. Net: O₃ + O → 2O₂ — the chlorine atom is **regenerated**, so one Cl destroys ~100,000 O₃ molecules before it is sequestered (as ClONO₂ reservoirs).\n- **Other culprits:** halons (bromine — even more efficient per atom), methyl bromide (pesticides), N₂O (nitrous oxide from fertilisers → NO catalytic cycle), carbon tetrachloride, methyl chloroform.\n\n### 2.3 The Antarctic ozone hole\n\n- **Polar stratospheric clouds (PSCs)** form in the Antarctic winter's −80 °C vortex; they convert inactive reservoirs (ClONO₂, HCl) into active Cl₂; spring sunlight (September–October) photolyses Cl₂ → 2Cl• — the hole opens.\n- Discovered by Farman et al. (1985, British Antarctic Survey); column ozone fell below 100 DU at the minimum.\n\n### 2.4 Effects\n\n- **Human health:** more UV-B → skin cancers (melanoma), cataracts, immune suppression.\n- **Ecosystems:** phytoplankton damage (marine food web base), crop yield losses, polymer degradation.\n- **Climate interaction:** CFCs are also potent greenhouse gases (thousands of times CO₂'s warming power per kg).\n\n### 2.5 Control measures\n\n- **Montreal Protocol (1987):** phase-out schedule for CFCs and halons — universally ratified; amended (London, Copenhagen, Kigali) to cover HCFCs and HFCs.\n- **Replacements:** HCFCs (transitional, lower ozone depletion potential), HFCs (zero ODP but greenhouse — Kigali 2016 phases them down), and newer options (HFO-1234yf, hydrocarbons, CO₂ systems, ammonia in industry).\n- **Individual/national measures:** recover and recycle CFC refrigerants, ban CFC production, monitor with satellites (TOMS/OMI), halon banking.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **CFC** | Chlorofluorocarbon, fully halogenated alkane | CF₂Cl₂ (freon-12) |\n| **ODP** | Ozone depletion potential relative to CFC-11 | CFC-11 = 1.0 |\n| **Dobson unit** | Column ozone measure; 300 DU ≈ 3 mm pure O₃ at STP | Hole < 100 DU |\n| **Polar stratospheric cloud** | Ice/nitric-acid clouds at −80 °C activating chlorine | Antarctic winter |\n| **Reservoir species** | Inactive chlorine stores | ClONO₂, HCl |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why the catalytic cycle is so lethal\n\n- The Cl• + O₃ and ClO• + O steps are both fast and both regenerate the chlorine radical — a true catalyst of ozone destruction. Compare: natural cycles destroy ozone slowly; each chlorine atom multiplies the destruction by ~100,000× over its stratospheric lifetime (1–2 years before conversion to HCl reservoirs).\n\n### 4.2 Why the hole is Antarctic\n\n- Only the Antarctic gets the cold isolated vortex + PSCs + spring sunlight sequence. The Arctic's vortex is weaker and warmer, so depletion there is milder (though 2011 and 2020 saw Arctic \"mini-holes\").\n\n### 4.3 The recovery scoreboard\n\n- CFC atmospheric concentrations peaked ~1994 and are declining; the hole's September minimum shows slow healing (projected full recovery ~2066 for Antarctica); the 2023-published confirmation of declining CFC-11 attributed a bump to illegal East Asian production (now curbed).",
+    "## 5. Comparison Tables\n\n**CFC vs HFC vs HCFC**\n\n| Property | CFC | HCFC | HFC |\n|---|---|---|---|\n| Chlorine | Yes | Yes (weaker C–Cl) | None |\n| ODP | 1.0 | ~0.05 | 0 |\n| GWP | High | High | High (Kigali target) |\n| Status | Banned | Phasing out | Phasing down |\n\n**Causes ranked**\n\n| Source | Active agent | Note |\n|---|---|---|\n| CFCs (refrigerants, aerosols, foam) | Cl• | Dominant cause |\n| Halons (fire extinguishers) | Br• | ~45× more potent per atom |\n| Methyl bromide (fumigant) | Br• | Agricultural |\n| N₂O (fertilisers) | NO• cycle | Also greenhouse gas |",
+    "## 6. Common Confusions\n\n**The chlorine atom is recycled, not consumed:** the classic error is writing Cl• + O₃ → ClO• + O₂ as the end — the second step regenerating Cl• is what makes the cycle catalytic.",
+    "**The hole is thinning, not a literal hole:** \"hole\" means column ozone below ~220 DU — the layer thins dramatically; it does not vanish to zero.",
+    "**Ozone depletion ≠ global warming:** different mechanisms, though CFCs contribute to both; HFCs warm without depleting — conflating them loses analytical marks.",
+    "## 7. Exam Application\n\n**NEB-style (3m): What are CFCs? Explain with equations how they deplete the ozone layer.** — **CFCs (chlorofluorocarbons, freons)** such as CFCl₃ and CF₂Cl₂ are fully halogenated organic compounds once used as refrigerants, aerosol propellants and foam-blowing agents; they are chemically inert in the lower atmosphere and therefore survive to reach the stratosphere. **Depletion:** intense UV there breaks the C–Cl bond: CFCl₃ + UV → CFCl₂• + Cl•. The chlorine radical then destroys ozone catalytically: Cl• + O₃ → ClO• + O₂, and ClO• + O → Cl• + O₂. Summing: O₃ + O → 2O₂ — ozone is destroyed while the chlorine atom is **regenerated**, so a single Cl atom can destroy tens of thousands of ozone molecules before being locked away in reservoirs such as ClONO₂.",
+    "**NEB-style (2m): State three harmful effects of ozone depletion and two control measures.** — **Effects:** (1) increased UV-B reaching the ground raises skin cancers (including melanoma) and eye cataracts; (2) damage to phytoplankton disturbs marine food chains and lowers crop yields; (3) faster degradation of plastics, paints and polymers outdoors. **Control measures:** (1) the **Montreal Protocol (1987)** and its amendments — international phase-out of CFC and halon production; (2) substitution by safe alternatives — HCFCs/HFCs transitionally and now HFOs, hydrocarbons, CO₂ or ammonia systems — plus recovery and recycling of old refrigerants rather than venting.",
+    "**NEB-style (2m): Why is the ozone hole found over Antarctica?** — The Antarctic winter creates an isolated, extremely cold (−80 °C) circumpolar vortex in which **polar stratospheric clouds** form; their ice surfaces convert the inactive chlorine reservoirs (ClONO₂, HCl) into molecular chlorine (Cl₂). When spring sunlight returns (September–October), Cl₂ is rapidly photolysed into chlorine radicals, which destroy ozone in the catalytic cycle — hence the deep, seasonal hole appears over Antarctica and not elsewhere."
   ],
   "confusion": [
     "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
@@ -56,132 +57,286 @@
   ],
   "bounds": [],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Write the two-step chlorine catalytic cycle and the net reaction.",
+    "Why are bromine atoms more destructive per atom than chlorine?",
+    "List the refrigerant generations: CFC -> HCFC -> HFC -> HFO with their ODP values."
   ],
   "universalFacts": [
-    "answer pattern for \"Ozone layer depletion: causes, effects and control measures\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "The Montreal Protocol is the only treaty ratified by every UN member state — and the 2016 Kigali Amendment extended it to HFCs for their climate effect."
   ],
   "examples": [
-    "Cl₂ + 2NaBr → 2NaCl + Br₂",
-    "N₂ + 3H₂ → 2NH₃ (Haber process)"
+    "***The September hole*** — every Antarctic spring the same sequence replays: dark winter clouds bank Cl₂, the sun returns, and the column ozone collapses below 100 DU within weeks."
   ],
   "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "**NEB-style (3m): What are CFCs? Explain, with equations, how they deplete the ozone layer.** — **CFCs (chlorofluorocarbons or freons)** — compounds such as CFCl₃ (freon-11) and CF₂Cl₂ (freon-12) in which hydrogen of the alkane is fully replaced by chlorine and fluorine — were widely used as refrigerants, aerosol propellants, foam-blowing agents and solvents. Their very chemical inertness in the lower atmosphere lets them survive unreacted for years and slowly diffuse up to the stratosphere. **Depletion mechanism:** in the stratosphere, intense ultraviolet radiation breaks the weakest bond, C–Cl: **CFCl₃ + UV → CFCl₂• + Cl•**. The chlorine radical then destroys ozone in a two-step catalytic cycle: **Cl• + O₃ → ClO• + O₂**, followed by **ClO• + O → Cl• + O₂**. Adding the two steps gives the net destruction **O₃ + O → 2O₂**. The chlorine atom is **regenerated** in the second step, so it acts as a catalyst: a single Cl atom destroys on the order of 100,000 ozone molecules before it is finally locked into inactive reservoirs such as ClONO₂ or HCl. Bromine radicals from halons and methyl bromide act through an analogous, even more efficient cycle.",
+    "**NEB-style (2m): State three harmful effects of ozone depletion and two measures to control it.** — **Effects:** (1) **Human health:** increased UV-B at the surface raises the incidence of skin cancers (including malignant melanoma), eye cataracts and suppression of the immune system. (2) **Ecosystems:** UV-B damages phytoplankton — the base of marine food chains — and reduces yields of sensitive crops such as rice and soybean. (3) **Materials:** outdoor plastics, paints, rubber and polymers degrade faster, shortening their service life. **Control measures:** (1) **International regulation:** the Montreal Protocol (1987) and its amendments, which mandated the phase-out of CFC and halon production — the first treaty ratified by every country. (2) **Substitution and recovery:** replacing CFCs first with HCFCs (lower ozone-depletion potential) and then with zero-ODP alternatives (HFCs, and now low-GWP HFOs, hydrocarbons, CO₂ or ammonia systems), while recovering and recycling refrigerant from old equipment instead of venting it.",
+    "**NEB-style (2m): Why is severe ozone depletion observed over Antarctica rather than over the tropics, where most CFCs were released?** — Depletion requires not just chlorine but a mechanism to **activate** it. During the Antarctic winter, a circumpolar wind vortex isolates the stratosphere and cools it below −80 °C, allowing **polar stratospheric clouds** to form. Reactions on their ice surfaces convert the inactive chlorine reservoirs (ClONO₂ and HCl) into molecular chlorine: ClONO₂ + HCl → Cl₂ + HNO₃. When the spring sun returns (September–October), Cl₂ is rapidly split into chlorine radicals, which destroy ozone in the catalytic cycle — producing the dramatic seasonal \"hole\". The tropics lack these cold, isolated clouds, so chlorine there stays mostly locked in reservoirs; the CFCs' origin is irrelevant — stratospheric circulation delivers them everywhere."
   ],
   "keyPoints": [
-    "• Ozone layer depletion: causes",
-    "• Effects",
-    "• Control measures"
+    "Natural balance: O2 + UV -> 2O; O + O2 -> O3 vs O3 + UV -> O2 + O; steady ~300 DU. Cause: CFCs (CFCl3, CF2Cl2) inert below, UV splits C-Cl: CFCl3 + UV -> CFCl2. + Cl.; cycle: Cl. + O3 -> ClO. + O2; ClO. + O -> Cl. + O2; net O3 + O -> 2O2 - Cl regenerated, one Cl kills ~100,000 O3. Others: halons (Br, ~45x), methyl bromide, N2O, CCl4. Antarctic hole: PSCs at -80 C convert ClONO2/HCl -> Cl2; spring light -> 2Cl.; discovered 1985 (Farman); < 100 DU minima. Effects: skin cancer/melanoma, cataracts, immunity; phytoplankton and crops; polymer damage; CFCs also GHGs. Control: Montreal Protocol 1987 (universal ratification, amendments London/Copenhagen/Kigali); HCFC -> HFC (0 ODP, GHG) -> HFO/hydrocarbon/CO2/NH3; refrigerant recovery; satellite monitoring; recovery projected ~2066."
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Ozone layer depletion: causes, effects and control measures\"?",
+      "question": "The catalytic cycle regenerates:",
       "options": [
-        "Ozone layer depletion: causes",
-        "Effects",
-        "Unrelated topic",
-        "None of the above"
+        "Ozone",
+        "Chlorine radical",
+        "CFC",
+        "ClO radical only"
       ],
-      "answer": "A",
-      "explanation": "Ozone layer depletion: causes is listed among the official sub-ideas of Ozone layer depletion: causes, effects and control measures; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "ClO. + O -> Cl. + O2 closes the loop."
     },
     {
-      "question": "A common examiner point on \"Ozone layer depletion: causes, effects and control measures\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "One chlorine atom can destroy about:",
       "options": [
-        "True",
-        "False"
+        "10 O3",
+        "1000 O3",
+        "100,000 O3",
+        "10^9 O3"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C",
+      "explanation": "Catalytic multiplication over its lifetime."
+    },
+    {
+      "question": "CFCs reach the stratosphere because they are:",
+      "options": [
+        "Heavy",
+        "Chemically inert in the troposphere",
+        "Radioactive",
+        "Soluble"
+      ],
+      "answer": "B",
+      "explanation": "Inertness - their virtue below, their vice above."
+    },
+    {
+      "question": "The Antarctic hole opens in:",
+      "options": [
+        "December",
+        "September-October spring",
+        "June",
+        "January"
+      ],
+      "answer": "B",
+      "explanation": "Spring light photolyses the winter-stored Cl2."
+    },
+    {
+      "question": "Polar stratospheric clouds convert reservoirs to:",
+      "options": [
+        "Ozone",
+        "Molecular chlorine Cl2",
+        "ClO radicals",
+        "CFCs"
+      ],
+      "answer": "B",
+      "explanation": "ClONO2 + HCl -> Cl2 on ice surfaces."
+    },
+    {
+      "question": "The Montreal Protocol was signed in:",
+      "options": [
+        "1972",
+        "1987",
+        "1997",
+        "2016"
+      ],
+      "answer": "B",
+      "explanation": "Kigali 2016 amended it for HFCs."
+    },
+    {
+      "question": "HFCs have ozone depletion potential:",
+      "options": [
+        "1.0",
+        "0.05",
+        "0",
+        "2.0"
+      ],
+      "answer": "C",
+      "explanation": "No chlorine - but high GWP."
+    },
+    {
+      "question": "The ozone hole means column ozone below about:",
+      "options": [
+        "300 DU",
+        "220 DU",
+        "500 DU",
+        "50 DU"
+      ],
+      "answer": "B",
+      "explanation": "Thinning threshold, not literal zero."
     }
   ],
   "importantNotes": [
-    "Important note regarding 04 ozone layer depletion causes effects and control measures."
+    "No verified PYQ on ozone depletion exists in the current bank; all items above are NEB-style practice."
   ],
-  "examShortTricks": [],
+  "examShortTricks": [
+    "Cycle pair: Cl. + O3 -> ClO. + O2 then ClO. + O -> Cl. + O2. One Cl = ~100,000 O3. Hole recipe: winter PSCs + spring light. Treaty chain: Montreal 1987 -> Kigali 2016. ODP: CFC 1.0, HCFC 0.05, HFC 0."
+  ],
   "importantConcepts": [
-    "Key concept 1 for 04 ozone layer depletion causes effects and control measures."
+    "One radical, one hundred thousand victims: the catalytic cycle's regeneration step (ClO• + O → Cl• + O₂) is the entire reason a few thousand tonnes of CFC chlorine could thin a planetary shield."
   ],
   "importantTasks": [
     "Task for studying 04 ozone layer depletion causes effects and control measures."
   ],
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "formulas": [],
+  "formulas": [
+    "- CFCl₃ + UV → CFCl₂• + Cl•\n- Cl• + O₃ → ClO• + O₂\n- ClO• + O → Cl• + O₂\n- Net: O₃ + O → 2O₂\n- ClONO₂ + HCl →(PSC) Cl₂ + HNO₃; Cl₂ + UV → 2Cl•"
+  ],
   "specialNotes": [],
-  "importantStatements": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"One chlorine radical can destroy about one hundred thousand ozone molecules before it is removed from the stratosphere.\""
+  ],
+  "examNotes": [
+    "Always write both cycle steps and the word \"regenerated\" — the catalytic nature is the analytical mark; a single equation answer caps at half."
+  ],
   "exercises": [],
   "visualization": {
     "type": "simulation",
     "component": "NonmetalReactSim",
     "desc": "Non-metal reactivity simulator"
   },
-  "visualType": "ozone-layer"
+  "visualType": "ozone-layer",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Hole We Made and Are Closing\n\nThe ozone layer's depletion is chemistry's best-known environmental lesson: CFCs — once celebrated as miracle refrigerants — drift to the stratosphere, surrender chlorine atoms to UV, and each chlorine atom destroys tens of thousands of ozone molecules. This topic covers the causes, the Antarctic hole's mechanism, the effects, and the Montreal Protocol's control measures.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The natural ozone balance\n\n- Formation: O₂ + UV (< 242 nm) → 2O; O + O₂ → O₃.\n- Destruction: O₃ + UV → O₂ + O; O₃ + O → 2O₂.\n- In the unpolluted stratosphere formation and destruction balance — a steady ~300 DU (Dobson units) column.\n\n### 2.2 Causes of depletion\n\n- **CFCs (chlorofluorocarbons, freons: CFCl₃, CF₂Cl₂):** inert in the troposphere (that was their selling point), but UV in the stratosphere breaks the C–Cl bond: CFCl₃ + UV → CFCl₂• + Cl•.\n- **The catalytic cycle:** Cl• + O₃ → ClO• + O₂; ClO• + O → Cl• + O₂. Net: O₃ + O → 2O₂ — the chlorine atom is **regenerated**, so one Cl destroys ~100,000 O₃ molecules before it is sequestered (as ClONO₂ reservoirs).\n- **Other culprits:** halons (bromine — even more efficient per atom), methyl bromide (pesticides), N₂O (nitrous oxide from fertilisers → NO catalytic cycle), carbon tetrachloride, methyl chloroform.\n\n### 2.3 The Antarctic ozone hole\n\n- **Polar stratospheric clouds (PSCs)** form in the Antarctic winter's −80 °C vortex; they convert inactive reservoirs (ClONO₂, HCl) into active Cl₂; spring sunlight (September–October) photolyses Cl₂ → 2Cl• — the hole opens.\n- Discovered by Farman et al. (1985, British Antarctic Survey); column ozone fell below 100 DU at the minimum.\n\n### 2.4 Effects\n\n- **Human health:** more UV-B → skin cancers (melanoma), cataracts, immune suppression.\n- **Ecosystems:** phytoplankton damage (marine food web base), crop yield losses, polymer degradation.\n- **Climate interaction:** CFCs are also potent greenhouse gases (thousands of times CO₂'s warming power per kg).\n\n### 2.5 Control measures\n\n- **Montreal Protocol (1987):** phase-out schedule for CFCs and halons — universally ratified; amended (London, Copenhagen, Kigali) to cover HCFCs and HFCs.\n- **Replacements:** HCFCs (transitional, lower ozone depletion potential), HFCs (zero ODP but greenhouse — Kigali 2016 phases them down), and newer options (HFO-1234yf, hydrocarbons, CO₂ systems, ammonia in industry).\n- **Individual/national measures:** recover and recycle CFC refrigerants, ban CFC production, monitor with satellites (TOMS/OMI), halon banking.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **CFC** | Chlorofluorocarbon, fully halogenated alkane | CF₂Cl₂ (freon-12) |\n| **ODP** | Ozone depletion potential relative to CFC-11 | CFC-11 = 1.0 |\n| **Dobson unit** | Column ozone measure; 300 DU ≈ 3 mm pure O₃ at STP | Hole < 100 DU |\n| **Polar stratospheric cloud** | Ice/nitric-acid clouds at −80 °C activating chlorine | Antarctic winter |\n| **Reservoir species** | Inactive chlorine stores | ClONO₂, HCl |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why the catalytic cycle is so lethal\n\n- The Cl• + O₃ and ClO• + O steps are both fast and both regenerate the chlorine radical — a true catalyst of ozone destruction. Compare: natural cycles destroy ozone slowly; each chlorine atom multiplies the destruction by ~100,000× over its stratospheric lifetime (1–2 years before conversion to HCl reservoirs).\n\n### 4.2 Why the hole is Antarctic\n\n- Only the Antarctic gets the cold isolated vortex + PSCs + spring sunlight sequence. The Arctic's vortex is weaker and warmer, so depletion there is milder (though 2011 and 2020 saw Arctic \"mini-holes\").\n\n### 4.3 The recovery scoreboard\n\n- CFC atmospheric concentrations peaked ~1994 and are declining; the hole's September minimum shows slow healing (projected full recovery ~2066 for Antarctica); the 2023-published confirmation of declining CFC-11 attributed a bump to illegal East Asian production (now curbed).",
+      "## 5. Comparison Tables\n\n**CFC vs HFC vs HCFC**\n\n| Property | CFC | HCFC | HFC |\n|---|---|---|---|\n| Chlorine | Yes | Yes (weaker C–Cl) | None |\n| ODP | 1.0 | ~0.05 | 0 |\n| GWP | High | High | High (Kigali target) |\n| Status | Banned | Phasing out | Phasing down |\n\n**Causes ranked**\n\n| Source | Active agent | Note |\n|---|---|---|\n| CFCs (refrigerants, aerosols, foam) | Cl• | Dominant cause |\n| Halons (fire extinguishers) | Br• | ~45× more potent per atom |\n| Methyl bromide (fumigant) | Br• | Agricultural |\n| N₂O (fertilisers) | NO• cycle | Also greenhouse gas |",
+      "## 6. Common Confusions\n\n**The chlorine atom is recycled, not consumed:** the classic error is writing Cl• + O₃ → ClO• + O₂ as the end — the second step regenerating Cl• is what makes the cycle catalytic.",
+      "**The hole is thinning, not a literal hole:** \"hole\" means column ozone below ~220 DU — the layer thins dramatically; it does not vanish to zero.",
+      "**Ozone depletion ≠ global warming:** different mechanisms, though CFCs contribute to both; HFCs warm without depleting — conflating them loses analytical marks.",
+      "## 7. Exam Application\n\n**NEB-style (3m): What are CFCs? Explain with equations how they deplete the ozone layer.** — **CFCs (chlorofluorocarbons, freons)** such as CFCl₃ and CF₂Cl₂ are fully halogenated organic compounds once used as refrigerants, aerosol propellants and foam-blowing agents; they are chemically inert in the lower atmosphere and therefore survive to reach the stratosphere. **Depletion:** intense UV there breaks the C–Cl bond: CFCl₃ + UV → CFCl₂• + Cl•. The chlorine radical then destroys ozone catalytically: Cl• + O₃ → ClO• + O₂, and ClO• + O → Cl• + O₂. Summing: O₃ + O → 2O₂ — ozone is destroyed while the chlorine atom is **regenerated**, so a single Cl atom can destroy tens of thousands of ozone molecules before being locked away in reservoirs such as ClONO₂.",
+      "**NEB-style (2m): State three harmful effects of ozone depletion and two control measures.** — **Effects:** (1) increased UV-B reaching the ground raises skin cancers (including melanoma) and eye cataracts; (2) damage to phytoplankton disturbs marine food chains and lowers crop yields; (3) faster degradation of plastics, paints and polymers outdoors. **Control measures:** (1) the **Montreal Protocol (1987)** and its amendments — international phase-out of CFC and halon production; (2) substitution by safe alternatives — HCFCs/HFCs transitionally and now HFOs, hydrocarbons, CO₂ or ammonia systems — plus recovery and recycling of old refrigerants rather than venting.",
+      "**NEB-style (2m): Why is the ozone hole found over Antarctica?** — The Antarctic winter creates an isolated, extremely cold (−80 °C) circumpolar vortex in which **polar stratospheric clouds** form; their ice surfaces convert the inactive chlorine reservoirs (ClONO₂, HCl) into molecular chlorine (Cl₂). When spring sunlight returns (September–October), Cl₂ is rapidly photolysed into chlorine radicals, which destroy ozone in the catalytic cycle — hence the deep, seasonal hole appears over Antarctica and not elsewhere."
+    ],
+    "keyPoints": [
+      "Natural balance: O2 + UV -> 2O; O + O2 -> O3 vs O3 + UV -> O2 + O; steady ~300 DU. Cause: CFCs (CFCl3, CF2Cl2) inert below, UV splits C-Cl: CFCl3 + UV -> CFCl2. + Cl.; cycle: Cl. + O3 -> ClO. + O2; ClO. + O -> Cl. + O2; net O3 + O -> 2O2 - Cl regenerated, one Cl kills ~100,000 O3. Others: halons (Br, ~45x), methyl bromide, N2O, CCl4. Antarctic hole: PSCs at -80 C convert ClONO2/HCl -> Cl2; spring light -> 2Cl.; discovered 1985 (Farman); < 100 DU minima. Effects: skin cancer/melanoma, cataracts, immunity; phytoplankton and crops; polymer damage; CFCs also GHGs. Control: Montreal Protocol 1987 (universal ratification, amendments London/Copenhagen/Kigali); HCFC -> HFC (0 ODP, GHG) -> HFO/hydrocarbon/CO2/NH3; refrigerant recovery; satellite monitoring; recovery projected ~2066."
+    ],
+    "importantConcepts": [
+      "One radical, one hundred thousand victims: the catalytic cycle's regeneration step (ClO• + O → Cl• + O₂) is the entire reason a few thousand tonnes of CFC chlorine could thin a planetary shield."
+    ],
+    "examples": [
+      "***The September hole*** — every Antarctic spring the same sequence replays: dark winter clouds bank Cl₂, the sun returns, and the column ozone collapses below 100 DU within weeks."
+    ],
+    "universalFacts": [
+      "The Montreal Protocol is the only treaty ratified by every UN member state — and the 2016 Kigali Amendment extended it to HFCs for their climate effect."
+    ],
+    "importantStatements": [
+      "\"One chlorine radical can destroy about one hundred thousand ozone molecules before it is removed from the stratosphere.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on ozone depletion exists in the current bank; all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Cycle pair: Cl. + O3 -> ClO. + O2 then ClO. + O -> Cl. + O2. One Cl = ~100,000 O3. Hole recipe: winter PSCs + spring light. Treaty chain: Montreal 1987 -> Kigali 2016. ODP: CFC 1.0, HCFC 0.05, HFC 0."
+    ],
+    "examNotes": [
+      "Always write both cycle steps and the word \"regenerated\" — the catalytic nature is the analytical mark; a single equation answer caps at half."
+    ],
+    "formulas": [
+      "- CFCl₃ + UV → CFCl₂• + Cl•\n- Cl• + O₃ → ClO• + O₂\n- ClO• + O → Cl• + O₂\n- Net: O₃ + O → 2O₂\n- ClONO₂ + HCl →(PSC) Cl₂ + HNO₃; Cl₂ + UV → 2Cl•"
+    ],
+    "practice": [
+      "Write the two-step chlorine catalytic cycle and the net reaction.",
+      "Why are bromine atoms more destructive per atom than chlorine?",
+      "List the refrigerant generations: CFC -> HCFC -> HFC -> HFO with their ODP values."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): What are CFCs? Explain, with equations, how they deplete the ozone layer.** — **CFCs (chlorofluorocarbons or freons)** — compounds such as CFCl₃ (freon-11) and CF₂Cl₂ (freon-12) in which hydrogen of the alkane is fully replaced by chlorine and fluorine — were widely used as refrigerants, aerosol propellants, foam-blowing agents and solvents. Their very chemical inertness in the lower atmosphere lets them survive unreacted for years and slowly diffuse up to the stratosphere. **Depletion mechanism:** in the stratosphere, intense ultraviolet radiation breaks the weakest bond, C–Cl: **CFCl₃ + UV → CFCl₂• + Cl•**. The chlorine radical then destroys ozone in a two-step catalytic cycle: **Cl• + O₃ → ClO• + O₂**, followed by **ClO• + O → Cl• + O₂**. Adding the two steps gives the net destruction **O₃ + O → 2O₂**. The chlorine atom is **regenerated** in the second step, so it acts as a catalyst: a single Cl atom destroys on the order of 100,000 ozone molecules before it is finally locked into inactive reservoirs such as ClONO₂ or HCl. Bromine radicals from halons and methyl bromide act through an analogous, even more efficient cycle.",
+      "**NEB-style (2m): State three harmful effects of ozone depletion and two measures to control it.** — **Effects:** (1) **Human health:** increased UV-B at the surface raises the incidence of skin cancers (including malignant melanoma), eye cataracts and suppression of the immune system. (2) **Ecosystems:** UV-B damages phytoplankton — the base of marine food chains — and reduces yields of sensitive crops such as rice and soybean. (3) **Materials:** outdoor plastics, paints, rubber and polymers degrade faster, shortening their service life. **Control measures:** (1) **International regulation:** the Montreal Protocol (1987) and its amendments, which mandated the phase-out of CFC and halon production — the first treaty ratified by every country. (2) **Substitution and recovery:** replacing CFCs first with HCFCs (lower ozone-depletion potential) and then with zero-ODP alternatives (HFCs, and now low-GWP HFOs, hydrocarbons, CO₂ or ammonia systems), while recovering and recycling refrigerant from old equipment instead of venting it.",
+      "**NEB-style (2m): Why is severe ozone depletion observed over Antarctica rather than over the tropics, where most CFCs were released?** — Depletion requires not just chlorine but a mechanism to **activate** it. During the Antarctic winter, a circumpolar wind vortex isolates the stratosphere and cools it below −80 °C, allowing **polar stratospheric clouds** to form. Reactions on their ice surfaces convert the inactive chlorine reservoirs (ClONO₂ and HCl) into molecular chlorine: ClONO₂ + HCl → Cl₂ + HNO₃. When the spring sun returns (September–October), Cl₂ is rapidly split into chlorine radicals, which destroy ozone in the catalytic cycle — producing the dramatic seasonal \"hole\". The tropics lack these cold, isolated clouds, so chlorine there stays mostly locked in reservoirs; the CFCs' origin is irrelevant — stratospheric circulation delivers them everywhere."
+    ]
+  },
+  "summary": "The ozone story is a catalytic horror story with a happy regulatory ending. CFCs — prized precisely for their inertness — ride to the stratosphere where UV cracks their C–Cl bonds; the freed **Cl•** strips ozone (Cl• + O₃ → ClO• + O₂) and is **regenerated** by ClO• + O → Cl• + O₂, so each atom destroys ~100,000 ozone molecules — net O₃ + O → 2O₂. Halons' bromine is ~45× worse per atom; N₂O runs an NO• cousin cycle. The **Antarctic hole** is geography's amplifier: winter polar stratospheric clouds (−80 °C vortex) convert reservoirs ClONO₂/HCl into Cl₂, and spring sunlight detonates it, collapsing the column below 100 DU (discovered 1985, Farman). The costs: melanoma and cataracts, phytoplankton and crop losses, crumbling polymers — with CFCs doubling as potent greenhouse gases. The **Montreal Protocol (1987)** — universally ratified, amended through **Kigali 2016** — phased out CFCs and halons, marched through HCFCs (ODP ~0.05) to HFCs (ODP 0, but high GWP) and onward to HFOs, hydrocarbons, CO₂ and ammonia; refrigerant recovery, satellite monitoring and even the catching of illegal CFC-11 production have the layer healing toward full recovery near 2066. Thin, not gone — and mending.",
+  "mcs": [
+    {
+      "question": "The catalytic cycle regenerates:",
+      "options": [
+        "Ozone",
+        "Chlorine radical",
+        "CFC",
+        "ClO radical only"
+      ],
+      "answer": "B",
+      "explanation": "ClO. + O -> Cl. + O2 closes the loop."
+    },
+    {
+      "question": "One chlorine atom can destroy about:",
+      "options": [
+        "10 O3",
+        "1000 O3",
+        "100,000 O3",
+        "10^9 O3"
+      ],
+      "answer": "C",
+      "explanation": "Catalytic multiplication over its lifetime."
+    },
+    {
+      "question": "CFCs reach the stratosphere because they are:",
+      "options": [
+        "Heavy",
+        "Chemically inert in the troposphere",
+        "Radioactive",
+        "Soluble"
+      ],
+      "answer": "B",
+      "explanation": "Inertness - their virtue below, their vice above."
+    },
+    {
+      "question": "The Antarctic hole opens in:",
+      "options": [
+        "December",
+        "September-October spring",
+        "June",
+        "January"
+      ],
+      "answer": "B",
+      "explanation": "Spring light photolyses the winter-stored Cl2."
+    },
+    {
+      "question": "Polar stratospheric clouds convert reservoirs to:",
+      "options": [
+        "Ozone",
+        "Molecular chlorine Cl2",
+        "ClO radicals",
+        "CFCs"
+      ],
+      "answer": "B",
+      "explanation": "ClONO2 + HCl -> Cl2 on ice surfaces."
+    },
+    {
+      "question": "The Montreal Protocol was signed in:",
+      "options": [
+        "1972",
+        "1987",
+        "1997",
+        "2016"
+      ],
+      "answer": "B",
+      "explanation": "Kigali 2016 amended it for HFCs."
+    },
+    {
+      "question": "HFCs have ozone depletion potential:",
+      "options": [
+        "1.0",
+        "0.05",
+        "0",
+        "2.0"
+      ],
+      "answer": "C",
+      "explanation": "No chlorine - but high GWP."
+    },
+    {
+      "question": "The ozone hole means column ozone below about:",
+      "options": [
+        "300 DU",
+        "220 DU",
+        "500 DU",
+        "50 DU"
+      ],
+      "answer": "B",
+      "explanation": "Thinning threshold, not literal zero."
+    }
+  ]
 }

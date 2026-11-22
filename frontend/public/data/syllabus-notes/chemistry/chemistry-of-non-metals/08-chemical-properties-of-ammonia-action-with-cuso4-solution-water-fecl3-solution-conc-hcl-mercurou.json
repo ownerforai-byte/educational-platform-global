@@ -7,36 +7,40 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
-    "# Chemical properties of ammonia (action with CuSO4 solution, water, FeCl3 solution, conc. HCl, mercurous nitrate paper, O2); applications and harmful effects of ammonia\n\n## 1. Introduction\nChemical picture of **Chemical properties of ammonia (action with CuSO4 solution** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Chemical properties of ammonia (action with CuSO4 solution, water, FeCl3 solution, conc. HCl, mercurous nitrate paper, O2)\n### applications and harmful effects of ammonia\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Chemical properties of ammonia (action with CuSO4 solution — curve or trend plot (authored SVG, plotted from note data)\n- **D2** — Chemical properties of ammonia (action with CuSO4 solution — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Chemical properties of ammonia (action with CuSO4 solution — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Chemical properties of ammonia (action with CuSO4 solution — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Gas That Feeds and Chokes\n\nAmmonia is nitrogen's most useful compound — fertiliser feedstock, refrigerant, laboratory base — and its chemistry with CuSO₄, water, FeCl₃, concentrated HCl, mercurous nitrate paper and oxygen is a standard NEB checklist. This topic runs the reaction list, then weighs its applications against its hazards.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Preparation and structure\n\n- **Laboratory:** heating an ammonium salt with an alkali: 2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃ (dried over quicklime CaO — never conc. H₂SO₄, which absorbs it).\n- **Industrial (Haber):** N₂ + 3H₂ ⇌ 2NH₃, 450 °C, 200 atm, Fe catalyst.\n- **Structure:** pyramidal, sp³ nitrogen with one lone pair, bond angle 107°; the lone pair drives every reaction — basicity, complexation, hydrogen bonding (bp −33 °C, unusually high for its mass).\n\n### 2.2 The NEB reaction checklist\n\n| Reagent | Equation | Observation |\n|---|---|---|\n| **CuSO₄ solution (excess NH₃)** | CuSO₄ + 2NH₄OH → Cu(OH)₂↓ + (NH₄)₂SO₄; Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]SO₄ (dissolves) | pale blue ppt dissolving to deep blue solution |\n| **Water** | NH₃ + H₂O ⇌ NH₄OH ⇌ NH₄⁺ + OH⁻ | alkaline solution, turns red litmus blue; fountain experiment |\n| **FeCl₃ solution** | FeCl₃ + 3NH₄OH → Fe(OH)₃↓ + 3NH₄Cl | reddish-brown ppt, insoluble in excess |\n| **Conc. HCl** | NH₃ + HCl → NH₄Cl | white fumes/ring (glass rod dipped in NH₄OH) |\n| **Mercurous nitrate paper** | 2Hg₂(NO₃)₂ + 4NH₃ + H₂O → [NHg₂]₂O? — practical form: blackening due to Millon's base formation | paper turns black — test for NH₃ |\n| **O₂ (burning)** | 4NH₃ + 3O₂ → 2N₂ + 6H₂O (without catalyst); 4NH₃ + 5O₂ → 4NO + 6H₂O (Pt, 800 °C — Ostwald) | yellow-green flame; catalytic oxidation to NO |\n\n### 2.3 Applications\n\n- **Fertilisers:** urea, ammonium sulphate, ammonium nitrate, ammonium phosphate — the largest use (~80 % of production).\n- **Refrigerant:** large latent heat of vaporisation (1370 kJ/kg at bp), non-CFC — cold-storage plants and ice plants.\n- **Chemical feedstock:** nitric acid (Ostwald), ammonium nitrate (explosives), sodium carbonate (Solvay), nylon via caprolactam.\n- **Laboratory reagent:** NH₄OH in qualitative analysis (precipitating and complexing hydroxides).\n\n### 2.4 Harmful effects\n\n- **Toxicity:** irritates eyes and respiratory tract; 2500+ ppm life-threatening; suffocating in enclosed spaces.\n- **Environmental:** ammonia run-off from fertilisers causes eutrophication of water bodies; volatilised NH₃ contributes to acid deposition (NH₄⁺ → NOₓ chemistry) and PM2.5.\n- **Explosion risk:** NH₃–air mixtures (15–28 % NH₃) are flammable; refrigeration leaks dangerous.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Lewis base** | Lone-pair donor | NH₃ → H⁺; NH₃ → Cu²⁺ |\n| **Complex ion** | Central ion + ligands | [Cu(NH₃)₄]²⁺ deep blue |\n| **Fountain experiment** | NH₃'s extreme water solubility demonstrated | Water jet rises into flask |\n| **Ostwald oxidation** | Catalytic NH₃ → NO step of HNO₃ | Pt gauze, 800 °C |",
+    "## 4. Detailed Explanation\n\n### 4.1 The CuSO₄ two-step\n\n- NH₄OH first precipitates pale-blue Cu(OH)₂; **excess** ammonia then dissolves it as the deep-blue tetraammine complex [Cu(NH₃)₄]²⁺ — the solubility-in-excess is the distinguishing observation (contrast Fe(OH)₃, insoluble in excess).\n\n### 4.2 Why the HCl white ring works\n\n- NH₃ and HCl gases meet and form fine NH₄Cl particles — a solid aerosol, seen as white smoke. Glass rod dipped in concentrated NH₄OH near open HCl bottle: instant white fumes — the classic ammonia test.\n\n### 4.3 The two oxygen reactions\n\n- Without catalyst NH₃ burns in O₂ with a yellowish-green flame to **N₂**: 4NH₃ + 3O₂ → 2N₂ + 6H₂O.\n- Over heated platinum (Ostwald step), oxidation goes to **NO**: 4NH₃ + 5O₂ → 4NO + 6H₂O — the gateway to nitric acid (topic 65).\n\n### 4.4 The mercurous nitrate test\n\n- Ammonia blackens mercurous nitrate paper: Hg₂²⁺ is reduced/aminated to finely divided black nitrogen-containing mercury compounds (Millon's base chemistry, Hg₂N•H₂O related species) — a sensitive confirmatory test.",
+    "## 5. Comparison Tables\n\n**Fe(OH)₃ vs Cu(OH)₂ with excess NH₄OH**\n\n| Basis | Fe(OH)₃ | Cu(OH)₂ |\n|---|---|---|\n| Colour | Reddish-brown | Pale blue |\n| In excess NH₄OH | Insoluble | Dissolves → deep blue [Cu(NH₃)₄]²⁺ |\n| Complexation | No ammine complex | Strong ammine complex |\n\n**NH₃ as refrigerant vs CFCs**\n\n| Basis | NH₃ | CFCs |\n|---|---|---|\n| Latent heat | Very high (1370 kJ/kg) | Moderate |\n| Ozone impact | None | Depleting (now banned) |\n| Toxicity | Toxic, flammable | Safe but ozone-killer |\n| Use today | Industrial plants | Phased out |",
+    "## 6. Common Confusions\n\n**Excess reagent matters:** with CuSO₄, \"blue precipitate\" is only half the story — the deep-blue *solution* in excess NH₄OH is the observation that earns the complex-ion mark.",
+    "**Drying agent choice:** drying NH₃ over conc. H₂SO₄ or CaCl₂ destroys it (both absorb it); only **quicklime CaO** works — a permanent NEB trap.",
+    "**The two O₂ products:** uncatalysed burning gives N₂; catalytic (Pt) oxidation gives NO — quoting the wrong one for the wrong condition costs the equation.",
+    "## 7. Exam Application\n\n**NEB-style (3m): What happens when ammonia is passed into copper sulphate solution — first in limited and then in excess amount? Give equations.** — **Limited ammonia (as NH₄OH):** the hydroxide it generates precipitates pale-blue copper(II) hydroxide: CuSO₄ + 2NH₄OH → Cu(OH)₂↓ + (NH₄)₂SO₄. **Excess ammonia:** the precipitate dissolves because ammonia ligands replace water around Cu²⁺, forming the deep-blue soluble complex tetraamminecopper(II) sulphate: Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]SO₄. The final deep-blue clear solution is the diagnostic observation distinguishing copper from iron(III), whose brown hydroxide stays insoluble in excess.",
+    "**NEB-style (2m): A glass rod dipped in concentrated ammonium hydroxide brought near the mouth of a bottle of concentrated hydrochloric acid produces white fumes. Explain with equation.** — Ammonia vapour from the rod meets hydrogen chloride vapour from the bottle; they combine directly to form minute solid particles of ammonium chloride, seen as dense white fumes (and as the \"white ring\" in the gas-jar demonstration): **NH₃(g) + HCl(g) → NH₄Cl(s)**. This is a standard confirmatory test for ammonia gas.",
+    "**NEB-style (2m): Why is ammonia used as a refrigerant? State two of its harmful effects.** — **Refrigerant:** ammonia has a very **high latent heat of vaporisation** (about 1370 kJ/kg at its boiling point, −33 °C), so it absorbs large amounts of heat when it evaporates — ideal for the compression–expansion refrigeration cycle; it is also cheap and free of ozone-depleting chlorine, which is why cold-storage and ice plants still use it. **Harmful effects:** (1) it is **toxic and irritating** — even moderate concentrations attack the eyes and respiratory tract, and 15–28 % mixtures with air are flammable; (2) **environmentally**, ammonia run-off and volatilisation from fertilisers cause eutrophication of lakes and contribute to acidification and secondary particulate (PM2.5) formation."
   ],
   "confusion": [],
   "bounds": [
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
-  "practice": [],
-  "universalFacts": [
-    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
-    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  "practice": [
+    "Write the two-step CuSO4-ammonia sequence with observations.",
+    "Why can NH3 not be dried over conc. H2SO4 or CaCl2?",
+    "Give the two ammonia-oxygen equations with their conditions."
   ],
-  "examples": [],
+  "universalFacts": [
+    "Roughly 180 million tonnes of ammonia are made yearly — most of the world's nitrogen atoms in food passed through a Haber reactor first."
+  ],
+  "examples": [
+    "***The fountain experiment*** — a flask of dry NH₃ over water jets upward as the gas dissolves, dropping the pressure: solubility turned into a spectacle, and the phenolthin blue proves the alkali."
+  ],
   "practiceQuestions": [
-    "Q. What happens when ammonia is passed into CuSO4 solution? (2 marks) — pale blue Cu(OH)2 then deep blue complex [Cu(NH3)4]SO4 in excess.",
-    "Q. Give one test to identify NH3 gas. (1 mark) — white fumes with conc. HCl (rod dipped in HCl)."
+    "**NEB-style (3m): What happens when ammonia is passed into copper sulphate solution, first in limited amount and then in excess? Give equations and observations.** — **Limited ammonia (added as ammonium hydroxide):** the OH⁻ ions generated by NH₃ + H₂O ⇌ NH₄OH ⇌ NH₄⁺ + OH⁻ precipitate pale-blue copper(II) hydroxide: **CuSO₄ + 2NH₄OH → Cu(OH)₂↓ + (NH₄)₂SO₄** — a pale blue precipitate forms. **Excess ammonia:** ammonia molecules act as ligands, coordinating to Cu²⁺ and dissolving the hydroxide as the deep-blue complex **tetraamminecopper(II) sulphate: Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]SO₄** — the precipitate disappears and the solution turns an intense royal blue. This \"dissolves in excess to deep blue\" behaviour is diagnostic for copper(II) ions; by contrast, the reddish-brown Fe(OH)₃ obtained from FeCl₃ + 3NH₄OH → Fe(OH)₃↓ + 3NH₄Cl remains insoluble in excess ammonia.",
+    "**NEB-style (2m): A glass rod dipped in concentrated ammonium hydroxide and brought near the mouth of a bottle of concentrated hydrochloric acid produces dense white fumes. Explain with an equation.** — The rod releases **ammonia vapour** and the bottle releases **hydrogen chloride vapour**; where the two gases meet they combine directly to form extremely fine solid particles of **ammonium chloride**, which scatter light and appear as dense white fumes (in a gas jar the same chemistry draws the famous \"white ring\"): **NH₃(g) + HCl(g) → NH₄Cl(s)**. Because no other common gas gives this instant white smoke with HCl vapour, it serves as a confirmatory test for ammonia.",
+    "**NEB-style (2m): Why is ammonia used as a refrigerant in cold-storage plants? Mention two harmful effects of ammonia.** — **Refrigerant use:** ammonia has an exceptionally **high latent heat of vaporisation** — about 1370 kJ/kg at its normal boiling point of −33 °C — so each kilogram evaporating absorbs a large quantity of heat, making the compression–expansion cycle highly effective; it is also cheap, chemically stable in the cycle, and contains **no chlorine**, so unlike CFCs it does not deplete the ozone layer — reasons it remains the working fluid of industrial ice plants and cold storages. **Harmful effects:** (1) **Toxicity and flammability:** ammonia strongly irritates the eyes, skin and respiratory tract (concentrations above ~2500 ppm are life-threatening), and mixtures with air containing 15–28 % ammonia are flammable, so leaks are dangerous. (2) **Environmental damage:** ammonia lost from over-applied fertilisers runs into water bodies causing **eutrophication** (algal blooms, oxygen depletion), and volatilised NH₃ contributes to soil acidification and to secondary fine particulate (PM2.5) formation in the atmosphere."
   ],
   "formulas": [
-    "F = qvB sinθ",
-    "ε = −N dΦ/dt",
-    "F = BIL",
-    "L = NΦ/I"
+    "- CuSO₄ + 2NH₄OH → Cu(OH)₂↓ + (NH₄)₂SO₄; Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]SO₄\n- FeCl₃ + 3NH₄OH → Fe(OH)₃↓ + 3NH₄Cl\n- NH₃(g) + HCl(g) → NH₄Cl(s)\n- 4NH₃ + 3O₂ → 2N₂ + 6H₂O; 4NH₃ + 5O₂ →(Pt, 800 °C) 4NO + 6H₂O\n- 2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃"
   ],
   "numericals": [
     "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
@@ -44,39 +48,254 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Chemical properties of ammonia",
-    "• Action with CuSO4 solution",
-    "• Water",
-    "• FeCl3 solution",
-    "• Conc. HCl",
-    "• Mercurous nitrate paper"
+    "Preparation: 2NH4Cl + Ca(OH)2 -> CaCl2 + 2H2O + 2NH3 (dry over CaO only); Haber: N2 + 3H2 = 2NH3 at 450 C/200 atm/Fe. Structure: pyramidal sp3, lone pair, angle 107, bp -33 C, latent heat 1370 kJ/kg. Reactions: CuSO4 + 2NH4OH -> Cu(OH)2 (pale blue ppt) + (NH4)2SO4, then Cu(OH)2 + 4NH3 -> [Cu(NH3)4]SO4 (deep blue, dissolves in excess); FeCl3 + 3NH4OH -> Fe(OH)3 (brown ppt, insoluble in excess) + 3NH4Cl; NH3 + HCl -> NH4Cl white fumes; blackens mercurous nitrate paper (Millon's base); NH3 + H2O = NH4OH = NH4+ + OH- (fountain experiment); burning: 4NH3 + 3O2 -> 2N2 + 6H2O (yellow-green flame); catalytic: 4NH3 + 5O2 -> 4NO + 6H2O (Pt, 800 C, Ostwald). Uses: fertilisers (~80%), refrigerant (no CFC), Ostwald HNO3, Solvay, nylon. Harms: toxic/irritant (2500+ ppm), flammable 15-28% in air, eutrophication, PM2.5."
   ],
-  "summary": "Chemical properties of ammonia (action with CuSO4 solutio… (Chemistry of Non-metals, Chemistry, class-11-notes) covers Chemical properties of ammonia, action with CuSO4 solution, water. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Ammonia is the lone pair with a résumé. **Pyramidal, sp³, 107°**, with bp −33 °C and a refrigerant-grade latent heat of 1370 kJ/kg, it donates that pair to H⁺ (alkaline solution, fountain experiment, red-litmus-blue), to HCl vapour (the white NH₄Cl fumes of the rod-and-bottle test), and to Cu²⁺ — where the NEB checklist unfolds in two acts: **CuSO₄ + 2NH₄OH → Cu(OH)₂↓** (pale blue) then **Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]SO₄** (deep blue, dissolves in excess) — while **FeCl₃** gives its brown Fe(OH)₃ that stubbornly stays. It blackens **mercurous nitrate paper** (Millon's base chemistry) and meets oxygen twice: uncatalysed as the yellow-green flame to **N₂** (4NH₃ + 3O₂ → 2N₂ + 6H₂O), catalysed over platinum at 800 °C to **NO** (4NH₃ + 5O₂ → 4NO + 6H₂O) — the Ostwald gateway to nitric acid. Made in the lab from NH₄Cl + Ca(OH)₂ (dried over **quicklime only** — H₂SO₄ and CaCl₂ eat it) and industrially by Haber, its uses span fertilisers (~80 %), refrigeration, Solvay soda and nylon; its harms are toxicity and flammability (15–28 % in air) plus eutrophication and PM2.5 — the gas that feeds and chokes in the same breath.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Chemical properties of ammonia (action with CuSO4 solutio…\"?",
+      "question": "With excess ammonia, Cu(OH)2 dissolves giving:",
       "options": [
-        "Chemical properties of ammonia",
-        "Action with CuSO4 solution",
-        "Unrelated topic",
-        "None of the above"
+        "Colourless solution",
+        "Deep blue [Cu(NH3)4]2+",
+        "Brown ppt",
+        "Green solution"
       ],
-      "answer": "A",
-      "explanation": "Chemical properties of ammonia is listed among the official sub-ideas of Chemical properties of ammonia (action with CuSO4 solutio…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "The tetraammine complex - diagnostic for Cu2+."
     },
     {
-      "question": "A common examiner point on \"Chemical properties of ammonia (action with CuSO4 solutio…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Fe(OH)3 in excess NH4OH:",
       "options": [
-        "True",
-        "False"
+        "Dissolves",
+        "Remains insoluble",
+        "Turns blue",
+        "Becomes green"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "No ammine complex for iron(III)."
+    },
+    {
+      "question": "Ammonia is dried over:",
+      "options": [
+        "Conc. H2SO4",
+        "CaCl2",
+        "Quicklime CaO",
+        "P2O5"
+      ],
+      "answer": "C",
+      "explanation": "The others absorb NH3 chemically."
+    },
+    {
+      "question": "White fumes with HCl gas are:",
+      "options": [
+        "NH4OH",
+        "NH4Cl solid particles",
+        "NH3 solution",
+        "Water vapour"
+      ],
+      "answer": "B",
+      "explanation": "Direct gas-phase salt formation."
+    },
+    {
+      "question": "Catalytic oxidation of ammonia over Pt gives:",
+      "options": [
+        "N2",
+        "NO",
+        "N2O5",
+        "NH2OH"
+      ],
+      "answer": "B",
+      "explanation": "The Ostwald step - 4NH3 + 5O2 -> 4NO + 6H2O."
+    },
+    {
+      "question": "Ammonia suits refrigeration because of its:",
+      "options": [
+        "Low density",
+        "High latent heat of vaporisation",
+        "Colour",
+        "Smell"
+      ],
+      "answer": "B",
+      "explanation": "~1370 kJ/kg at -33 C."
+    },
+    {
+      "question": "The bond angle in NH3 is:",
+      "options": [
+        "109.5",
+        "107",
+        "104.5",
+        "120"
+      ],
+      "answer": "B",
+      "explanation": "Lone pair compresses the tetrahedral angle."
+    },
+    {
+      "question": "NH3-air mixtures are flammable between:",
+      "options": [
+        "1-5%",
+        "15-28%",
+        "50-70%",
+        "0.1-1%"
+      ],
+      "answer": "B",
+      "explanation": "The safety range for leaks."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Colour-change table for the 3-mark answer — CuSO4: pale blue → deep blue (tetraammine complex); FeCl3: yellow → brown (Fe(OH)3); Hg2Cl2: black (amido-mercury).",
-    "Trick 2: With conc. HCl: white fumes of NH4Cl (fountain/fuming test); with water: NH3 + H2O ⇌ NH4+ + OH− shows basic nature.",
-    "Trick 3: Always write NH3 + HCl → NH4Cl (white fumes) — it is both a property AND a test for ammonia."
+    "CuSO4 ladder: pale-blue ppt -> deep-blue solution in excess (complex); Fe stays brown. Dry NH3 over CaO only. White fumes = NH4Cl. Two O2 equations: no catalyst -> N2; Pt -> NO. Fridge numbers: -33 C bp, 1370 kJ/kg."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Gas That Feeds and Chokes\n\nAmmonia is nitrogen's most useful compound — fertiliser feedstock, refrigerant, laboratory base — and its chemistry with CuSO₄, water, FeCl₃, concentrated HCl, mercurous nitrate paper and oxygen is a standard NEB checklist. This topic runs the reaction list, then weighs its applications against its hazards.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Preparation and structure\n\n- **Laboratory:** heating an ammonium salt with an alkali: 2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃ (dried over quicklime CaO — never conc. H₂SO₄, which absorbs it).\n- **Industrial (Haber):** N₂ + 3H₂ ⇌ 2NH₃, 450 °C, 200 atm, Fe catalyst.\n- **Structure:** pyramidal, sp³ nitrogen with one lone pair, bond angle 107°; the lone pair drives every reaction — basicity, complexation, hydrogen bonding (bp −33 °C, unusually high for its mass).\n\n### 2.2 The NEB reaction checklist\n\n| Reagent | Equation | Observation |\n|---|---|---|\n| **CuSO₄ solution (excess NH₃)** | CuSO₄ + 2NH₄OH → Cu(OH)₂↓ + (NH₄)₂SO₄; Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]SO₄ (dissolves) | pale blue ppt dissolving to deep blue solution |\n| **Water** | NH₃ + H₂O ⇌ NH₄OH ⇌ NH₄⁺ + OH⁻ | alkaline solution, turns red litmus blue; fountain experiment |\n| **FeCl₃ solution** | FeCl₃ + 3NH₄OH → Fe(OH)₃↓ + 3NH₄Cl | reddish-brown ppt, insoluble in excess |\n| **Conc. HCl** | NH₃ + HCl → NH₄Cl | white fumes/ring (glass rod dipped in NH₄OH) |\n| **Mercurous nitrate paper** | 2Hg₂(NO₃)₂ + 4NH₃ + H₂O → [NHg₂]₂O? — practical form: blackening due to Millon's base formation | paper turns black — test for NH₃ |\n| **O₂ (burning)** | 4NH₃ + 3O₂ → 2N₂ + 6H₂O (without catalyst); 4NH₃ + 5O₂ → 4NO + 6H₂O (Pt, 800 °C — Ostwald) | yellow-green flame; catalytic oxidation to NO |\n\n### 2.3 Applications\n\n- **Fertilisers:** urea, ammonium sulphate, ammonium nitrate, ammonium phosphate — the largest use (~80 % of production).\n- **Refrigerant:** large latent heat of vaporisation (1370 kJ/kg at bp), non-CFC — cold-storage plants and ice plants.\n- **Chemical feedstock:** nitric acid (Ostwald), ammonium nitrate (explosives), sodium carbonate (Solvay), nylon via caprolactam.\n- **Laboratory reagent:** NH₄OH in qualitative analysis (precipitating and complexing hydroxides).\n\n### 2.4 Harmful effects\n\n- **Toxicity:** irritates eyes and respiratory tract; 2500+ ppm life-threatening; suffocating in enclosed spaces.\n- **Environmental:** ammonia run-off from fertilisers causes eutrophication of water bodies; volatilised NH₃ contributes to acid deposition (NH₄⁺ → NOₓ chemistry) and PM2.5.\n- **Explosion risk:** NH₃–air mixtures (15–28 % NH₃) are flammable; refrigeration leaks dangerous.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Lewis base** | Lone-pair donor | NH₃ → H⁺; NH₃ → Cu²⁺ |\n| **Complex ion** | Central ion + ligands | [Cu(NH₃)₄]²⁺ deep blue |\n| **Fountain experiment** | NH₃'s extreme water solubility demonstrated | Water jet rises into flask |\n| **Ostwald oxidation** | Catalytic NH₃ → NO step of HNO₃ | Pt gauze, 800 °C |",
+      "## 4. Detailed Explanation\n\n### 4.1 The CuSO₄ two-step\n\n- NH₄OH first precipitates pale-blue Cu(OH)₂; **excess** ammonia then dissolves it as the deep-blue tetraammine complex [Cu(NH₃)₄]²⁺ — the solubility-in-excess is the distinguishing observation (contrast Fe(OH)₃, insoluble in excess).\n\n### 4.2 Why the HCl white ring works\n\n- NH₃ and HCl gases meet and form fine NH₄Cl particles — a solid aerosol, seen as white smoke. Glass rod dipped in concentrated NH₄OH near open HCl bottle: instant white fumes — the classic ammonia test.\n\n### 4.3 The two oxygen reactions\n\n- Without catalyst NH₃ burns in O₂ with a yellowish-green flame to **N₂**: 4NH₃ + 3O₂ → 2N₂ + 6H₂O.\n- Over heated platinum (Ostwald step), oxidation goes to **NO**: 4NH₃ + 5O₂ → 4NO + 6H₂O — the gateway to nitric acid (topic 65).\n\n### 4.4 The mercurous nitrate test\n\n- Ammonia blackens mercurous nitrate paper: Hg₂²⁺ is reduced/aminated to finely divided black nitrogen-containing mercury compounds (Millon's base chemistry, Hg₂N•H₂O related species) — a sensitive confirmatory test.",
+      "## 5. Comparison Tables\n\n**Fe(OH)₃ vs Cu(OH)₂ with excess NH₄OH**\n\n| Basis | Fe(OH)₃ | Cu(OH)₂ |\n|---|---|---|\n| Colour | Reddish-brown | Pale blue |\n| In excess NH₄OH | Insoluble | Dissolves → deep blue [Cu(NH₃)₄]²⁺ |\n| Complexation | No ammine complex | Strong ammine complex |\n\n**NH₃ as refrigerant vs CFCs**\n\n| Basis | NH₃ | CFCs |\n|---|---|---|\n| Latent heat | Very high (1370 kJ/kg) | Moderate |\n| Ozone impact | None | Depleting (now banned) |\n| Toxicity | Toxic, flammable | Safe but ozone-killer |\n| Use today | Industrial plants | Phased out |",
+      "## 6. Common Confusions\n\n**Excess reagent matters:** with CuSO₄, \"blue precipitate\" is only half the story — the deep-blue *solution* in excess NH₄OH is the observation that earns the complex-ion mark.",
+      "**Drying agent choice:** drying NH₃ over conc. H₂SO₄ or CaCl₂ destroys it (both absorb it); only **quicklime CaO** works — a permanent NEB trap.",
+      "**The two O₂ products:** uncatalysed burning gives N₂; catalytic (Pt) oxidation gives NO — quoting the wrong one for the wrong condition costs the equation.",
+      "## 7. Exam Application\n\n**NEB-style (3m): What happens when ammonia is passed into copper sulphate solution — first in limited and then in excess amount? Give equations.** — **Limited ammonia (as NH₄OH):** the hydroxide it generates precipitates pale-blue copper(II) hydroxide: CuSO₄ + 2NH₄OH → Cu(OH)₂↓ + (NH₄)₂SO₄. **Excess ammonia:** the precipitate dissolves because ammonia ligands replace water around Cu²⁺, forming the deep-blue soluble complex tetraamminecopper(II) sulphate: Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]SO₄. The final deep-blue clear solution is the diagnostic observation distinguishing copper from iron(III), whose brown hydroxide stays insoluble in excess.",
+      "**NEB-style (2m): A glass rod dipped in concentrated ammonium hydroxide brought near the mouth of a bottle of concentrated hydrochloric acid produces white fumes. Explain with equation.** — Ammonia vapour from the rod meets hydrogen chloride vapour from the bottle; they combine directly to form minute solid particles of ammonium chloride, seen as dense white fumes (and as the \"white ring\" in the gas-jar demonstration): **NH₃(g) + HCl(g) → NH₄Cl(s)**. This is a standard confirmatory test for ammonia gas.",
+      "**NEB-style (2m): Why is ammonia used as a refrigerant? State two of its harmful effects.** — **Refrigerant:** ammonia has a very **high latent heat of vaporisation** (about 1370 kJ/kg at its boiling point, −33 °C), so it absorbs large amounts of heat when it evaporates — ideal for the compression–expansion refrigeration cycle; it is also cheap and free of ozone-depleting chlorine, which is why cold-storage and ice plants still use it. **Harmful effects:** (1) it is **toxic and irritating** — even moderate concentrations attack the eyes and respiratory tract, and 15–28 % mixtures with air are flammable; (2) **environmentally**, ammonia run-off and volatilisation from fertilisers cause eutrophication of lakes and contribute to acidification and secondary particulate (PM2.5) formation."
+    ],
+    "keyPoints": [
+      "Preparation: 2NH4Cl + Ca(OH)2 -> CaCl2 + 2H2O + 2NH3 (dry over CaO only); Haber: N2 + 3H2 = 2NH3 at 450 C/200 atm/Fe. Structure: pyramidal sp3, lone pair, angle 107, bp -33 C, latent heat 1370 kJ/kg. Reactions: CuSO4 + 2NH4OH -> Cu(OH)2 (pale blue ppt) + (NH4)2SO4, then Cu(OH)2 + 4NH3 -> [Cu(NH3)4]SO4 (deep blue, dissolves in excess); FeCl3 + 3NH4OH -> Fe(OH)3 (brown ppt, insoluble in excess) + 3NH4Cl; NH3 + HCl -> NH4Cl white fumes; blackens mercurous nitrate paper (Millon's base); NH3 + H2O = NH4OH = NH4+ + OH- (fountain experiment); burning: 4NH3 + 3O2 -> 2N2 + 6H2O (yellow-green flame); catalytic: 4NH3 + 5O2 -> 4NO + 6H2O (Pt, 800 C, Ostwald). Uses: fertilisers (~80%), refrigerant (no CFC), Ostwald HNO3, Solvay, nylon. Harms: toxic/irritant (2500+ ppm), flammable 15-28% in air, eutrophication, PM2.5."
+    ],
+    "importantConcepts": [
+      "One lone pair runs ammonia's chemistry: it grabs H⁺ (basicity), grabs Cu²⁺ (the deep-blue complex), and hydrogen-bonds to itself (the anomalously high boiling point and the refrigerant-grade latent heat)."
+    ],
+    "examples": [
+      "***The fountain experiment*** — a flask of dry NH₃ over water jets upward as the gas dissolves, dropping the pressure: solubility turned into a spectacle, and the phenolthin blue proves the alkali."
+    ],
+    "universalFacts": [
+      "Roughly 180 million tonnes of ammonia are made yearly — most of the world's nitrogen atoms in food passed through a Haber reactor first."
+    ],
+    "importantStatements": [
+      "\"Ammonia turns moist red litmus blue and forms dense white fumes with hydrogen chloride gas.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on ammonia reactions exists in the current bank; all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "CuSO4 ladder: pale-blue ppt -> deep-blue solution in excess (complex); Fe stays brown. Dry NH3 over CaO only. White fumes = NH4Cl. Two O2 equations: no catalyst -> N2; Pt -> NO. Fridge numbers: -33 C bp, 1370 kJ/kg."
+    ],
+    "examNotes": [
+      "In reaction-list answers, state the observation AND the equation — NEB awards them separately; \"deep blue solution in excess\" is the copper-specific phrase."
+    ],
+    "formulas": [
+      "- CuSO₄ + 2NH₄OH → Cu(OH)₂↓ + (NH₄)₂SO₄; Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]SO₄\n- FeCl₃ + 3NH₄OH → Fe(OH)₃↓ + 3NH₄Cl\n- NH₃(g) + HCl(g) → NH₄Cl(s)\n- 4NH₃ + 3O₂ → 2N₂ + 6H₂O; 4NH₃ + 5O₂ →(Pt, 800 °C) 4NO + 6H₂O\n- 2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃"
+    ],
+    "practice": [
+      "Write the two-step CuSO4-ammonia sequence with observations.",
+      "Why can NH3 not be dried over conc. H2SO4 or CaCl2?",
+      "Give the two ammonia-oxygen equations with their conditions."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): What happens when ammonia is passed into copper sulphate solution, first in limited amount and then in excess? Give equations and observations.** — **Limited ammonia (added as ammonium hydroxide):** the OH⁻ ions generated by NH₃ + H₂O ⇌ NH₄OH ⇌ NH₄⁺ + OH⁻ precipitate pale-blue copper(II) hydroxide: **CuSO₄ + 2NH₄OH → Cu(OH)₂↓ + (NH₄)₂SO₄** — a pale blue precipitate forms. **Excess ammonia:** ammonia molecules act as ligands, coordinating to Cu²⁺ and dissolving the hydroxide as the deep-blue complex **tetraamminecopper(II) sulphate: Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]SO₄** — the precipitate disappears and the solution turns an intense royal blue. This \"dissolves in excess to deep blue\" behaviour is diagnostic for copper(II) ions; by contrast, the reddish-brown Fe(OH)₃ obtained from FeCl₃ + 3NH₄OH → Fe(OH)₃↓ + 3NH₄Cl remains insoluble in excess ammonia.",
+      "**NEB-style (2m): A glass rod dipped in concentrated ammonium hydroxide and brought near the mouth of a bottle of concentrated hydrochloric acid produces dense white fumes. Explain with an equation.** — The rod releases **ammonia vapour** and the bottle releases **hydrogen chloride vapour**; where the two gases meet they combine directly to form extremely fine solid particles of **ammonium chloride**, which scatter light and appear as dense white fumes (in a gas jar the same chemistry draws the famous \"white ring\"): **NH₃(g) + HCl(g) → NH₄Cl(s)**. Because no other common gas gives this instant white smoke with HCl vapour, it serves as a confirmatory test for ammonia.",
+      "**NEB-style (2m): Why is ammonia used as a refrigerant in cold-storage plants? Mention two harmful effects of ammonia.** — **Refrigerant use:** ammonia has an exceptionally **high latent heat of vaporisation** — about 1370 kJ/kg at its normal boiling point of −33 °C — so each kilogram evaporating absorbs a large quantity of heat, making the compression–expansion cycle highly effective; it is also cheap, chemically stable in the cycle, and contains **no chlorine**, so unlike CFCs it does not deplete the ozone layer — reasons it remains the working fluid of industrial ice plants and cold storages. **Harmful effects:** (1) **Toxicity and flammability:** ammonia strongly irritates the eyes, skin and respiratory tract (concentrations above ~2500 ppm are life-threatening), and mixtures with air containing 15–28 % ammonia are flammable, so leaks are dangerous. (2) **Environmental damage:** ammonia lost from over-applied fertilisers runs into water bodies causing **eutrophication** (algal blooms, oxygen depletion), and volatilised NH₃ contributes to soil acidification and to secondary fine particulate (PM2.5) formation in the atmosphere."
+    ]
+  },
+  "importantConcepts": [
+    "One lone pair runs ammonia's chemistry: it grabs H⁺ (basicity), grabs Cu²⁺ (the deep-blue complex), and hydrogen-bonds to itself (the anomalously high boiling point and the refrigerant-grade latent heat)."
+  ],
+  "importantStatements": [
+    "\"Ammonia turns moist red litmus blue and forms dense white fumes with hydrogen chloride gas.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on ammonia reactions exists in the current bank; all items above are NEB-style practice."
+  ],
+  "examNotes": [
+    "In reaction-list answers, state the observation AND the equation — NEB awards them separately; \"deep blue solution in excess\" is the copper-specific phrase."
+  ],
+  "mcs": [
+    {
+      "question": "With excess ammonia, Cu(OH)2 dissolves giving:",
+      "options": [
+        "Colourless solution",
+        "Deep blue [Cu(NH3)4]2+",
+        "Brown ppt",
+        "Green solution"
+      ],
+      "answer": "B",
+      "explanation": "The tetraammine complex - diagnostic for Cu2+."
+    },
+    {
+      "question": "Fe(OH)3 in excess NH4OH:",
+      "options": [
+        "Dissolves",
+        "Remains insoluble",
+        "Turns blue",
+        "Becomes green"
+      ],
+      "answer": "B",
+      "explanation": "No ammine complex for iron(III)."
+    },
+    {
+      "question": "Ammonia is dried over:",
+      "options": [
+        "Conc. H2SO4",
+        "CaCl2",
+        "Quicklime CaO",
+        "P2O5"
+      ],
+      "answer": "C",
+      "explanation": "The others absorb NH3 chemically."
+    },
+    {
+      "question": "White fumes with HCl gas are:",
+      "options": [
+        "NH4OH",
+        "NH4Cl solid particles",
+        "NH3 solution",
+        "Water vapour"
+      ],
+      "answer": "B",
+      "explanation": "Direct gas-phase salt formation."
+    },
+    {
+      "question": "Catalytic oxidation of ammonia over Pt gives:",
+      "options": [
+        "N2",
+        "NO",
+        "N2O5",
+        "NH2OH"
+      ],
+      "answer": "B",
+      "explanation": "The Ostwald step - 4NH3 + 5O2 -> 4NO + 6H2O."
+    },
+    {
+      "question": "Ammonia suits refrigeration because of its:",
+      "options": [
+        "Low density",
+        "High latent heat of vaporisation",
+        "Colour",
+        "Smell"
+      ],
+      "answer": "B",
+      "explanation": "~1370 kJ/kg at -33 C."
+    },
+    {
+      "question": "The bond angle in NH3 is:",
+      "options": [
+        "109.5",
+        "107",
+        "104.5",
+        "120"
+      ],
+      "answer": "B",
+      "explanation": "Lone pair compresses the tetrahedral angle."
+    },
+    {
+      "question": "NH3-air mixtures are flammable between:",
+      "options": [
+        "1-5%",
+        "15-28%",
+        "50-70%",
+        "0.1-1%"
+      ],
+      "answer": "B",
+      "explanation": "The safety range for leaks."
+    }
   ]
 }

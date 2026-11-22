@@ -7,19 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Ozone: occurrence, preparation of ozone from oxygen, stru… — Chemistry of Non-metals, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: ozone, occurrence, preparation of ozone from oxygen, structure of ozone · one worked example · one misconception each.",
-    "**Occurrence.** one-line definition + one-line exam use.",
-    "**Preparation of ozone from oxygen.** one-line definition + one-line exam use.",
-    "**Structure of ozone.** one-line definition + one-line exam use.",
-    "**Test for ozone.** one-line definition + one-line exam use.",
-    "**Uses of ozone.** one-line definition + one-line exam use.",
-    "# Ozone: occurrence, preparation of ozone from oxygen, structure of ozone, test for ozone, uses of ozone\n\n## 1. Introduction\nChemical picture of **Ozone** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Chemistry of Non-metals fill pass.\n\n## 2. Concepts and definitions\n### Ozone: occurrence\n### preparation of ozone from oxygen\n### structure of ozone\n### test for ozone\n### uses of ozone\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Ozone — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Ozone — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Ozone — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Ozone — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Sharp-Smelling Shield\n\nOzone (O₃) is oxygen's aggressive allotrope: made by lightning and ozonisers, decomposing back to O₂ with nascent oxygen in hand. This topic covers its occurrence, preparation, bent resonance structure, the starch-iodide test, and its uses — from sterilising water to the stratospheric shield whose depletion is topic 62.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Occurrence\n\n- **Stratosphere:** the ozone layer (~15–35 km altitude) absorbs most solar UV-B/UV-C — life's sunscreen.\n- **Trace ground-level:** after thunderstorms (lightning discharge), around electric motors and copiers, in smog (a pollutant there).\n\n### 2.2 Preparation\n\n- **Silent electric discharge ozoniser:** 3O₂ ⇌ 2O₃, ΔH = +142 kJ. Dry, pure O₂ streams through an annular gap between electrodes cooled in dilute H₂SO₄; ~10 % ozone at steady state (higher conversion blocked by O₃'s own decomposition under the discharge).\n- Conditions matter: **silent** discharge (no sparking — sparks heat the gas and destroy ozone); dry oxygen (moisture aids decomposition); low temperature favours yield (exothermic product side is disfavoured... actually the forward reaction is endothermic, but O₃ decomposes faster when hot — cooling protects the product).\n\n### 2.3 Structure\n\n- **Bent molecule**, bond angle ≈ 117°, O–O bond length 128 pm (between single 148 and double 121 pm).\n- **Resonance:** two equivalent structures with one single and one double bond; the real molecule has both bonds equivalent, bond order 1.5; central O carries +, terminal O's carry − formally.\n- **Diamagnetic** — all electrons paired (contrast O₂'s paramagnetism).\n\n### 2.4 Test for ozone\n\n- **Starch–iodide paper:** O₃ oxidises iodide to iodine, which turns starch blue-black: 2KI + H₂O + O₃ → 2KOH + I₂ + O₂. (H₂O₂ does the same, so moist litmus/peroxide interference is checked by the turpentine test: ozone decolourises turpentine's violet colour.)\n- Ozone also turns **turpentine blue** and liberates iodine from iodides — the classic pair of confirmatory tests.\n\n### 2.5 Uses\n\n- **Water sterilisation** (no chlorinated taste or residue); **bleaching** delicate fabrics, oils, waxes, ivory, flour; **air purification** in closed spaces; **oxidant** in organic synthesis (ozonolysis locating C=C positions); **medical** disinfection of operating rooms; stratospheric UV shield.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Ozoniser** | Apparatus making O₃ by silent discharge | Siemen's ozoniser |\n| **Resonance** | Real structure = hybrid of contributing structures | O₃'s two equivalent forms |\n| **Ozonolysis** | Cleaving C=C by ozone to locate double bonds | Alkene → ozonide → carbonyls |\n| **Starch-iodide test** | Blue-black starch with I₂ released by O₃ | Confirmatory test |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why the ozoniser yields only ~10 % O₃\n\n- The discharge that builds O₃ also decomposes it; a steady state (~10 % by volume) is reached where formation rate equals decomposition rate. Cooling the electrodes and using dry O₂ pushes the balance toward more O₃.\n\n### 4.2 The bond-angle story\n\n- Central oxygen is sp²-hybridised: two sigma bonds plus one lone pair → bent, ~117° (slightly compressed from 120° by the lone pair). The delocalised π system across three atoms gives the 1.5 bond order and the 128 pm compromise bond length.\n\n### 4.3 Ozone as an oxidant — equations bank\n\n- 2KI + H₂O + O₃ → 2KOH + I₂ + O₂ (test)\n- PbS + 4O₃ → PbSO₄ + 4O₂ (oxidises sulphide to sulphate)\n- 2Hg + O₃ → Hg₂O + O₂ (tailings mirror loses lustre — old test)\n- K₂MnO₄ + O₃ + H₂O → 2KMnO₄ + 2KOH + O₃? (careful — manganate to permanganate: 2K₂MnO₄ + H₂O + O₃ → 2KMnO₄ + 2KOH + O₂)",
+    "## 5. Comparison Tables\n\n**Ozone vs oxygen (recap with structure emphasis)**\n\n| Property | O₂ | O₃ |\n|---|---|---|\n| Shape | Linear | Bent, 117° |\n| Bond order | 2 | 1.5 (resonance) |\n| Bond length | 121 pm | 128 pm |\n| Magnetism | Paramagnetic | Diamagnetic |\n| Oxidising action | Moderate | Powerful (nascent O) |\n\n**Tests distinguishing O₃ from H₂O₂**\n\n| Test | O₃ | H₂O₂ |\n|---|---|---|\n| Starch-iodide | Positive (blue) | Positive (blue) |\n| Turpentine colour | Decolourises (violet → colourless) | No effect |\n| BaCl₂ + H₂SO₄ route | No BaO₂ | Gives BaO₂ with Ba(OH)₂ |",
+    "## 6. Common Confusions\n\n**Ozone's bonds are equal:** drawing one single and one double O–O bond as literal is wrong — resonance makes both bonds identical at 128 pm, order 1.5.",
+    "**The starch-iodide test is not ozone-exclusive:** H₂O₂ also liberates iodine; the **turpentine decolourisation** is the discriminating test.",
+    "**Ozone is good up high, bad down low:** stratospheric O₃ protects; ground-level O₃ is a respiratory irritant and smog component — same molecule, opposite reputations.",
+    "## 7. Exam Application\n\n**Verified NEB 2022 (2m): Write the structure and properties of ozone (O₃).** — **Structure:** ozone is a bent (angular) molecule with the central oxygen sp²-hybridised and one lone pair, giving an O–O–O bond angle of about 117°. Its bonding is best described by **resonance** between two equivalent structures, so the two O–O bonds are identical, with length 128 pm (intermediate between a single bond, 148 pm, and a double bond, 121 pm) and bond order 1.5; the molecule is diamagnetic. **Properties:** ozone is a pale blue gas with a characteristic pungent smell, thermally unstable and decomposing to oxygen (2O₃ → 3O₂), a very powerful oxidising agent — it liberates nascent oxygen (O₃ → O₂ + [O]) and oxidises iodide to iodine (2KI + H₂O + O₃ → 2KOH + I₂ + O₂, the starch-iodide test), bleaches dyes, sterilises water, and absorbs harmful UV radiation in the stratosphere.",
+    "**NEB-style (2m): How is ozone prepared in the laboratory? Why is only about 10 % ozone obtained?** — Ozone is prepared by passing dry, pure oxygen through a **Siemen's ozoniser** — silent (corona) electric discharge between two glass electrodes cooled in dilute sulphuric acid: 3O₂ ⇌ 2O₃ (ΔH = +142 kJ). Only about **10 %** ozone is obtained because the same electric discharge that forms ozone also decomposes it back to oxygen; a steady state is reached where the rates of formation and decomposition are equal. The yield is improved by keeping the electrodes cool and the oxygen dry, but sparking (which heats the gas) must be avoided.",
+    "**NEB-style (2m): Describe the starch-iodide test for ozone with equation.** — Bring starch–iodide paper (potassium iodide + starch) into contact with the suspected ozone. Ozone oxidises iodide ions to iodine, which is immediately trapped by starch as the blue-black complex: **2KI + H₂O + O₃ → 2KOH + I₂ + O₂**. A blue-black colouration confirms an oxidant; to confirm it is specifically ozone (since H₂O₂ gives the same test), shake the gas with turpentine — ozone decolourises the violet turpentine solution while H₂O₂ does not."
   ],
   "confusion": [],
   "bounds": [
@@ -27,49 +25,274 @@
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [],
-  "universalFacts": [
-    "answer pattern for \"Ozone: occurrence, preparation of ozone from oxygen, stru…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  "practice": [
+    "Sketch the resonance structures of O3 and predict the bond angle.",
+    "Write the equation for ozone oxidising PbS to PbSO4.",
+    "Why must the discharge in an ozoniser be silent rather than sparking?"
   ],
-  "examples": [],
+  "universalFacts": [
+    "The Montreal Protocol (1987) phased out CFCs to save the ozone layer — the first universally ratified environmental treaty, and the stratosphere is slowly recovering."
+  ],
+  "examples": [
+    "***The after-storm smell*** — lightning's discharge converts a sliver of air's O₂ to O₃; the pungent freshness is the molecule announcing its own preparation method."
+  ],
   "practiceQuestions": [
-    "Q. Write the preparation of ozone with conditions. (2 marks) — 3O2 → 2O3 by silent electric discharge (endothermic).",
-    "Q. Give the test for ozone. (1 mark) — turns starch–iodide paper blue due to I2 liberation."
+    "**Verified NEB 2022 (2m): Write the structure and properties of ozone (O₃).** — **Structure:** the ozone molecule is **bent (angular)** — the central oxygen atom is sp²-hybridised and carries one lone pair, compressing the O–O–O angle to about **117°**. Its π bonding is delocalised: the real molecule is a **resonance hybrid** of two equivalent structures (one O–O single and one O–O double bond interchanged), so the two bonds are experimentally identical, **128 pm** long — between a normal single bond (148 pm) and double bond (121 pm) — with bond order 1.5. All electrons are paired: ozone is **diamagnetic**. **Properties:** (1) pale blue gas with a characteristic pungent, fishy smell; (2) thermally unstable — decomposes to oxygen, 2O₃ → 3O₂, especially on heating or with catalysts; (3) a very powerful oxidising agent, readily releasing nascent oxygen (O₃ → O₂ + [O]): it oxidises iodide to iodine (2KI + H₂O + O₃ → 2KOH + I₂ + O₂ — the starch-iodide test turns blue-black), converts PbS to PbSO₄, bleaches vegetable dyes and sterilises drinking water without leaving a taste; (4) in the stratosphere it absorbs harmful ultraviolet radiation, forming the ozone shield.",
+    "**NEB-style (2m): How is ozone prepared in the laboratory? Why is only about 10 % ozone obtained?** — Ozone is prepared by passing **dry, pure oxygen** through a **Siemen's ozoniser**, which consists of two coaxial glass tubes with tin-foil electrodes; a **silent (corona) electric discharge** is applied while the apparatus is cooled in dilute sulphuric acid. The discharge converts oxygen to ozone: **3O₂ ⇌ 2O₃, ΔH = +142 kJ**. Only about **10 %** ozone is obtained because the same discharge that creates ozone also decomposes it back to oxygen — a dynamic steady state is reached in which the rate of formation equals the rate of decomposition. The yield improves with cooling and dry oxygen; **sparking must be avoided** because the local heating destroys ozone faster than it forms.",
+    "**NEB-style (2m): Describe the starch-iodide test for ozone, giving the equation. How would you distinguish ozone from hydrogen peroxide, which gives the same test?** — Take a strip of **starch–iodide paper** (potassium iodide soaked in starch solution) and expose it to the gas. Ozone oxidises the iodide ions to iodine, and the liberated iodine is immediately held by the starch as its characteristic **blue-black** adsorption complex: **2KI + H₂O + O₃ → 2KOH + I₂ + O₂**. A positive test shows an oxidising gas is present. Since hydrogen peroxide vapour also liberates iodine and passes this test, the **distinguishing test** is to shake the gas with **turpentine**: ozone decolourises the violet-coloured turpentine solution (oxidising it), whereas hydrogen peroxide has no effect on it."
   ],
   "keyPoints": [
-    "• Ozone",
-    "• Occurrence",
-    "• Preparation of ozone from oxygen",
-    "• Structure of ozone",
-    "• Test for ozone",
-    "• Uses of ozone"
+    "Occurrence: stratospheric ozone layer (15-35 km, UV shield); traces after lightning, in smog. Preparation: silent electric discharge ozoniser, dry O2, cooled electrodes; 3O2 = 2O3, dH = +142 kJ; ~10% steady state (discharge also decomposes O3). Structure: bent, angle 117, central O sp2 with lone pair; resonance - both bonds equal, 128 pm, bond order 1.5; diamagnetic. Tests: starch-iodide paper blue-black (2KI + H2O + O3 -> 2KOH + I2 + O2); turpentine decolourised (discriminates from H2O2). Uses: water sterilisation, bleaching delicate fabrics/oils, air purification, ozonolysis in synthesis, UV shield."
   ],
-  "summary": "Ozone: occurrence, preparation of ozone from oxygen, stru… (Chemistry of Non-metals, Chemistry, class-11-notes) covers Ozone, occurrence, preparation of ozone from oxygen. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Ozone is oxygen with an edge. It occurs as the **stratospheric shield** (15–35 km up, swallowing UV-B/UV-C) and as lightning's after-scent at ground level; the laboratory makes it the same way the sky does — **silent electric discharge** through dry O₂ in a cooled Siemen's ozoniser, 3O₂ ⇌ 2O₃ (+142 kJ), where formation and decomposition fight to a ~10 % steady state. The molecule is **bent at 117°** (sp² central oxygen, one lone pair), a **resonance hybrid** whose two bonds are identical at **128 pm**, bond order 1.5, and **diamagnetic** — all contrasts with its linear, paramagnetic, double-bonded sibling. Its power is one weak bond: O₃ → O₂ + [O], and the nascent oxygen does everything — blue-blackening starch–iodide paper (2KI + H₂O + O₃ → 2KOH + I₂ + O₂), oxidising PbS to PbSO₄, bleaching dyes, sterilising water without chlorine taste — with **turpentine decolourisation** separating ozone from H₂O₂, which shares the iodide test. Uses span water treatment, delicate bleaching, air purification, and ozonolysis that locates double bonds in organic synthesis; overhead, the same molecule remains the only thing standing between sunlight's UV and our skin.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Ozone: occurrence, preparation of ozone from oxygen, stru…\"?",
+      "question": "The bond angle in ozone is about:",
       "options": [
-        "Ozone",
-        "Occurrence",
-        "Unrelated topic",
-        "None of the above"
+        "180",
+        "120",
+        "117",
+        "104.5"
       ],
-      "answer": "Ozone",
-      "explanation": "Ozone is listed among the official sub-ideas of Ozone: occurrence, preparation of ozone from oxygen, stru…; the others are not part of this topic."
+      "answer": "C",
+      "explanation": "Bent, sp2 central O with lone pair."
     },
     {
-      "question": "A common examiner point on \"Ozone: occurrence, preparation of ozone from oxygen, stru…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The bond order of each O-O bond in O3 is:",
       "options": [
-        "True",
-        "False"
+        "1",
+        "1.5",
+        "2",
+        "2.5"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Resonance hybrid of two equivalent forms."
+    },
+    {
+      "question": "Ozone is prepared by:",
+      "options": [
+        "Sparking O2",
+        "Silent electric discharge on dry O2",
+        "Heating O2",
+        "UV on liquid O2"
+      ],
+      "answer": "B",
+      "explanation": "Siemen's ozoniser - silent, cool, dry."
+    },
+    {
+      "question": "The laboratory ozoniser yields about:",
+      "options": [
+        "100% O3",
+        "50% O3",
+        "10% O3",
+        "0.1% O3"
+      ],
+      "answer": "C",
+      "explanation": "Discharge builds and destroys O3 - steady state."
+    },
+    {
+      "question": "The starch-iodide test works because ozone:",
+      "options": [
+        "Is blue",
+        "Oxidises iodide to iodine",
+        "Reduces iodine",
+        "Dissolves starch"
+      ],
+      "answer": "B",
+      "explanation": "2KI + H2O + O3 -> 2KOH + I2 + O2."
+    },
+    {
+      "question": "Which test distinguishes O3 from H2O2?",
+      "options": [
+        "Starch-iodide",
+        "Turpentine decolourisation",
+        "Both give same result",
+        "Litmus"
+      ],
+      "answer": "B",
+      "explanation": "Only ozone bleaches violet turpentine."
+    },
+    {
+      "question": "Ozone is diamagnetic because:",
+      "options": [
+        "It is blue",
+        "All electrons are paired",
+        "It has 3 atoms",
+        "It is unstable"
+      ],
+      "answer": "B",
+      "explanation": "Contrast with paramagnetic O2."
+    },
+    {
+      "question": "Stratospheric ozone protects life by absorbing:",
+      "options": [
+        "Visible light",
+        "UV-B and UV-C radiation",
+        "Infrared",
+        "Radio waves"
+      ],
+      "answer": "B",
+      "explanation": "The planetary sunscreen."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Preparation equation to memorise: 3O2 —(silent electric discharge)→ 2O3; 'silent discharge' and 'endothermic' are the scoring keywords.",
-    "Trick 2: Structure: bent molecule, bond angle ~117°, resonance between two O–O=O forms; average bond order 1.5 — draw the resonance pair.",
-    "Trick 3: Test: ozone turns starch–iodide paper blue (liberates I2 from KI); uses: sterilising water, bleaching oils, absorbing UV in the stratosphere."
+    "Numbers: 117 degrees, 128 pm, bond order 1.5, +142 kJ, ~10% yield. Bent + resonance + diamagnetic. Test pair: starch-iodide (any oxidant) + turpentine (ozone only). Silent discharge, dry O2, cool electrodes."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Sharp-Smelling Shield\n\nOzone (O₃) is oxygen's aggressive allotrope: made by lightning and ozonisers, decomposing back to O₂ with nascent oxygen in hand. This topic covers its occurrence, preparation, bent resonance structure, the starch-iodide test, and its uses — from sterilising water to the stratospheric shield whose depletion is topic 62.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Occurrence\n\n- **Stratosphere:** the ozone layer (~15–35 km altitude) absorbs most solar UV-B/UV-C — life's sunscreen.\n- **Trace ground-level:** after thunderstorms (lightning discharge), around electric motors and copiers, in smog (a pollutant there).\n\n### 2.2 Preparation\n\n- **Silent electric discharge ozoniser:** 3O₂ ⇌ 2O₃, ΔH = +142 kJ. Dry, pure O₂ streams through an annular gap between electrodes cooled in dilute H₂SO₄; ~10 % ozone at steady state (higher conversion blocked by O₃'s own decomposition under the discharge).\n- Conditions matter: **silent** discharge (no sparking — sparks heat the gas and destroy ozone); dry oxygen (moisture aids decomposition); low temperature favours yield (exothermic product side is disfavoured... actually the forward reaction is endothermic, but O₃ decomposes faster when hot — cooling protects the product).\n\n### 2.3 Structure\n\n- **Bent molecule**, bond angle ≈ 117°, O–O bond length 128 pm (between single 148 and double 121 pm).\n- **Resonance:** two equivalent structures with one single and one double bond; the real molecule has both bonds equivalent, bond order 1.5; central O carries +, terminal O's carry − formally.\n- **Diamagnetic** — all electrons paired (contrast O₂'s paramagnetism).\n\n### 2.4 Test for ozone\n\n- **Starch–iodide paper:** O₃ oxidises iodide to iodine, which turns starch blue-black: 2KI + H₂O + O₃ → 2KOH + I₂ + O₂. (H₂O₂ does the same, so moist litmus/peroxide interference is checked by the turpentine test: ozone decolourises turpentine's violet colour.)\n- Ozone also turns **turpentine blue** and liberates iodine from iodides — the classic pair of confirmatory tests.\n\n### 2.5 Uses\n\n- **Water sterilisation** (no chlorinated taste or residue); **bleaching** delicate fabrics, oils, waxes, ivory, flour; **air purification** in closed spaces; **oxidant** in organic synthesis (ozonolysis locating C=C positions); **medical** disinfection of operating rooms; stratospheric UV shield.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Ozoniser** | Apparatus making O₃ by silent discharge | Siemen's ozoniser |\n| **Resonance** | Real structure = hybrid of contributing structures | O₃'s two equivalent forms |\n| **Ozonolysis** | Cleaving C=C by ozone to locate double bonds | Alkene → ozonide → carbonyls |\n| **Starch-iodide test** | Blue-black starch with I₂ released by O₃ | Confirmatory test |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why the ozoniser yields only ~10 % O₃\n\n- The discharge that builds O₃ also decomposes it; a steady state (~10 % by volume) is reached where formation rate equals decomposition rate. Cooling the electrodes and using dry O₂ pushes the balance toward more O₃.\n\n### 4.2 The bond-angle story\n\n- Central oxygen is sp²-hybridised: two sigma bonds plus one lone pair → bent, ~117° (slightly compressed from 120° by the lone pair). The delocalised π system across three atoms gives the 1.5 bond order and the 128 pm compromise bond length.\n\n### 4.3 Ozone as an oxidant — equations bank\n\n- 2KI + H₂O + O₃ → 2KOH + I₂ + O₂ (test)\n- PbS + 4O₃ → PbSO₄ + 4O₂ (oxidises sulphide to sulphate)\n- 2Hg + O₃ → Hg₂O + O₂ (tailings mirror loses lustre — old test)\n- K₂MnO₄ + O₃ + H₂O → 2KMnO₄ + 2KOH + O₃? (careful — manganate to permanganate: 2K₂MnO₄ + H₂O + O₃ → 2KMnO₄ + 2KOH + O₂)",
+      "## 5. Comparison Tables\n\n**Ozone vs oxygen (recap with structure emphasis)**\n\n| Property | O₂ | O₃ |\n|---|---|---|\n| Shape | Linear | Bent, 117° |\n| Bond order | 2 | 1.5 (resonance) |\n| Bond length | 121 pm | 128 pm |\n| Magnetism | Paramagnetic | Diamagnetic |\n| Oxidising action | Moderate | Powerful (nascent O) |\n\n**Tests distinguishing O₃ from H₂O₂**\n\n| Test | O₃ | H₂O₂ |\n|---|---|---|\n| Starch-iodide | Positive (blue) | Positive (blue) |\n| Turpentine colour | Decolourises (violet → colourless) | No effect |\n| BaCl₂ + H₂SO₄ route | No BaO₂ | Gives BaO₂ with Ba(OH)₂ |",
+      "## 6. Common Confusions\n\n**Ozone's bonds are equal:** drawing one single and one double O–O bond as literal is wrong — resonance makes both bonds identical at 128 pm, order 1.5.",
+      "**The starch-iodide test is not ozone-exclusive:** H₂O₂ also liberates iodine; the **turpentine decolourisation** is the discriminating test.",
+      "**Ozone is good up high, bad down low:** stratospheric O₃ protects; ground-level O₃ is a respiratory irritant and smog component — same molecule, opposite reputations.",
+      "## 7. Exam Application\n\n**Verified NEB 2022 (2m): Write the structure and properties of ozone (O₃).** — **Structure:** ozone is a bent (angular) molecule with the central oxygen sp²-hybridised and one lone pair, giving an O–O–O bond angle of about 117°. Its bonding is best described by **resonance** between two equivalent structures, so the two O–O bonds are identical, with length 128 pm (intermediate between a single bond, 148 pm, and a double bond, 121 pm) and bond order 1.5; the molecule is diamagnetic. **Properties:** ozone is a pale blue gas with a characteristic pungent smell, thermally unstable and decomposing to oxygen (2O₃ → 3O₂), a very powerful oxidising agent — it liberates nascent oxygen (O₃ → O₂ + [O]) and oxidises iodide to iodine (2KI + H₂O + O₃ → 2KOH + I₂ + O₂, the starch-iodide test), bleaches dyes, sterilises water, and absorbs harmful UV radiation in the stratosphere.",
+      "**NEB-style (2m): How is ozone prepared in the laboratory? Why is only about 10 % ozone obtained?** — Ozone is prepared by passing dry, pure oxygen through a **Siemen's ozoniser** — silent (corona) electric discharge between two glass electrodes cooled in dilute sulphuric acid: 3O₂ ⇌ 2O₃ (ΔH = +142 kJ). Only about **10 %** ozone is obtained because the same electric discharge that forms ozone also decomposes it back to oxygen; a steady state is reached where the rates of formation and decomposition are equal. The yield is improved by keeping the electrodes cool and the oxygen dry, but sparking (which heats the gas) must be avoided.",
+      "**NEB-style (2m): Describe the starch-iodide test for ozone with equation.** — Bring starch–iodide paper (potassium iodide + starch) into contact with the suspected ozone. Ozone oxidises iodide ions to iodine, which is immediately trapped by starch as the blue-black complex: **2KI + H₂O + O₃ → 2KOH + I₂ + O₂**. A blue-black colouration confirms an oxidant; to confirm it is specifically ozone (since H₂O₂ gives the same test), shake the gas with turpentine — ozone decolourises the violet turpentine solution while H₂O₂ does not."
+    ],
+    "keyPoints": [
+      "Occurrence: stratospheric ozone layer (15-35 km, UV shield); traces after lightning, in smog. Preparation: silent electric discharge ozoniser, dry O2, cooled electrodes; 3O2 = 2O3, dH = +142 kJ; ~10% steady state (discharge also decomposes O3). Structure: bent, angle 117, central O sp2 with lone pair; resonance - both bonds equal, 128 pm, bond order 1.5; diamagnetic. Tests: starch-iodide paper blue-black (2KI + H2O + O3 -> 2KOH + I2 + O2); turpentine decolourised (discriminates from H2O2). Uses: water sterilisation, bleaching delicate fabrics/oils, air purification, ozonolysis in synthesis, UV shield."
+    ],
+    "importantConcepts": [
+      "Ozone's chemistry is one weak bond: the third oxygen leaves as nascent [O], and every use — sterilising, bleaching, the iodide test — is that leaving in action."
+    ],
+    "examples": [
+      "***The after-storm smell*** — lightning's discharge converts a sliver of air's O₂ to O₃; the pungent freshness is the molecule announcing its own preparation method."
+    ],
+    "universalFacts": [
+      "The Montreal Protocol (1987) phased out CFCs to save the ozone layer — the first universally ratified environmental treaty, and the stratosphere is slowly recovering."
+    ],
+    "importantStatements": [
+      "\"Ozone is an allotropic form of oxygen, a powerful oxidising agent that decomposes to give molecular oxygen and nascent oxygen.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2022 (structure and properties of ozone) solved above; remaining items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Numbers: 117 degrees, 128 pm, bond order 1.5, +142 kJ, ~10% yield. Bent + resonance + diamagnetic. Test pair: starch-iodide (any oxidant) + turpentine (ozone only). Silent discharge, dry O2, cool electrodes."
+    ],
+    "examNotes": [
+      "In the NEB 2022-style answer, structure and properties both earn marks — draw the bent resonance pair and give at least two chemical properties with equations."
+    ],
+    "formulas": [
+      "- 3O₂ ⇌ 2O₃, ΔH = +142 kJ\n- 2KI + H₂O + O₃ → 2KOH + I₂ + O₂\n- PbS + 4O₃ → PbSO₄ + 4O₂\n- 2Hg + O₃ → Hg₂O + O₂ (tailings test)\n- O₃: bent, 117°, O–O 128 pm, bond order 1.5"
+    ],
+    "practice": [
+      "Sketch the resonance structures of O3 and predict the bond angle.",
+      "Write the equation for ozone oxidising PbS to PbSO4.",
+      "Why must the discharge in an ozoniser be silent rather than sparking?"
+    ],
+    "practiceQuestions": [
+      "**Verified NEB 2022 (2m): Write the structure and properties of ozone (O₃).** — **Structure:** the ozone molecule is **bent (angular)** — the central oxygen atom is sp²-hybridised and carries one lone pair, compressing the O–O–O angle to about **117°**. Its π bonding is delocalised: the real molecule is a **resonance hybrid** of two equivalent structures (one O–O single and one O–O double bond interchanged), so the two bonds are experimentally identical, **128 pm** long — between a normal single bond (148 pm) and double bond (121 pm) — with bond order 1.5. All electrons are paired: ozone is **diamagnetic**. **Properties:** (1) pale blue gas with a characteristic pungent, fishy smell; (2) thermally unstable — decomposes to oxygen, 2O₃ → 3O₂, especially on heating or with catalysts; (3) a very powerful oxidising agent, readily releasing nascent oxygen (O₃ → O₂ + [O]): it oxidises iodide to iodine (2KI + H₂O + O₃ → 2KOH + I₂ + O₂ — the starch-iodide test turns blue-black), converts PbS to PbSO₄, bleaches vegetable dyes and sterilises drinking water without leaving a taste; (4) in the stratosphere it absorbs harmful ultraviolet radiation, forming the ozone shield.",
+      "**NEB-style (2m): How is ozone prepared in the laboratory? Why is only about 10 % ozone obtained?** — Ozone is prepared by passing **dry, pure oxygen** through a **Siemen's ozoniser**, which consists of two coaxial glass tubes with tin-foil electrodes; a **silent (corona) electric discharge** is applied while the apparatus is cooled in dilute sulphuric acid. The discharge converts oxygen to ozone: **3O₂ ⇌ 2O₃, ΔH = +142 kJ**. Only about **10 %** ozone is obtained because the same discharge that creates ozone also decomposes it back to oxygen — a dynamic steady state is reached in which the rate of formation equals the rate of decomposition. The yield improves with cooling and dry oxygen; **sparking must be avoided** because the local heating destroys ozone faster than it forms.",
+      "**NEB-style (2m): Describe the starch-iodide test for ozone, giving the equation. How would you distinguish ozone from hydrogen peroxide, which gives the same test?** — Take a strip of **starch–iodide paper** (potassium iodide soaked in starch solution) and expose it to the gas. Ozone oxidises the iodide ions to iodine, and the liberated iodine is immediately held by the starch as its characteristic **blue-black** adsorption complex: **2KI + H₂O + O₃ → 2KOH + I₂ + O₂**. A positive test shows an oxidising gas is present. Since hydrogen peroxide vapour also liberates iodine and passes this test, the **distinguishing test** is to shake the gas with **turpentine**: ozone decolourises the violet-coloured turpentine solution (oxidising it), whereas hydrogen peroxide has no effect on it."
+    ]
+  },
+  "importantConcepts": [
+    "Ozone's chemistry is one weak bond: the third oxygen leaves as nascent [O], and every use — sterilising, bleaching, the iodide test — is that leaving in action."
+  ],
+  "importantStatements": [
+    "\"Ozone is an allotropic form of oxygen, a powerful oxidising agent that decomposes to give molecular oxygen and nascent oxygen.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: NEB 2022 (structure and properties of ozone) solved above; remaining items are NEB-style practice."
+  ],
+  "examNotes": [
+    "In the NEB 2022-style answer, structure and properties both earn marks — draw the bent resonance pair and give at least two chemical properties with equations."
+  ],
+  "formulas": [
+    "- 3O₂ ⇌ 2O₃, ΔH = +142 kJ\n- 2KI + H₂O + O₃ → 2KOH + I₂ + O₂\n- PbS + 4O₃ → PbSO₄ + 4O₂\n- 2Hg + O₃ → Hg₂O + O₂ (tailings test)\n- O₃: bent, 117°, O–O 128 pm, bond order 1.5"
+  ],
+  "mcs": [
+    {
+      "question": "The bond angle in ozone is about:",
+      "options": [
+        "180",
+        "120",
+        "117",
+        "104.5"
+      ],
+      "answer": "C",
+      "explanation": "Bent, sp2 central O with lone pair."
+    },
+    {
+      "question": "The bond order of each O-O bond in O3 is:",
+      "options": [
+        "1",
+        "1.5",
+        "2",
+        "2.5"
+      ],
+      "answer": "B",
+      "explanation": "Resonance hybrid of two equivalent forms."
+    },
+    {
+      "question": "Ozone is prepared by:",
+      "options": [
+        "Sparking O2",
+        "Silent electric discharge on dry O2",
+        "Heating O2",
+        "UV on liquid O2"
+      ],
+      "answer": "B",
+      "explanation": "Siemen's ozoniser - silent, cool, dry."
+    },
+    {
+      "question": "The laboratory ozoniser yields about:",
+      "options": [
+        "100% O3",
+        "50% O3",
+        "10% O3",
+        "0.1% O3"
+      ],
+      "answer": "C",
+      "explanation": "Discharge builds and destroys O3 - steady state."
+    },
+    {
+      "question": "The starch-iodide test works because ozone:",
+      "options": [
+        "Is blue",
+        "Oxidises iodide to iodine",
+        "Reduces iodine",
+        "Dissolves starch"
+      ],
+      "answer": "B",
+      "explanation": "2KI + H2O + O3 -> 2KOH + I2 + O2."
+    },
+    {
+      "question": "Which test distinguishes O3 from H2O2?",
+      "options": [
+        "Starch-iodide",
+        "Turpentine decolourisation",
+        "Both give same result",
+        "Litmus"
+      ],
+      "answer": "B",
+      "explanation": "Only ozone bleaches violet turpentine."
+    },
+    {
+      "question": "Ozone is diamagnetic because:",
+      "options": [
+        "It is blue",
+        "All electrons are paired",
+        "It has 3 atoms",
+        "It is unstable"
+      ],
+      "answer": "B",
+      "explanation": "Contrast with paramagnetic O2."
+    },
+    {
+      "question": "Stratospheric ozone protects life by absorbing:",
+      "options": [
+        "Visible light",
+        "UV-B and UV-C radiation",
+        "Infrared",
+        "Radio waves"
+      ],
+      "answer": "B",
+      "explanation": "The planetary sunscreen."
+    }
   ]
 }
