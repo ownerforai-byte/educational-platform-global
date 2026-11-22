@@ -939,5 +939,59 @@
       ],
       "answer": "Guanine = 30%"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Biomolecules — composition and biological roles",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The four classes at a glance",
+            "points": [
+              "Carbohydrates: immediate energy and structure",
+              "Proteins: catalysis, transport, structure, defence",
+              "Lipids: energy storage, membranes, hormones",
+              "Nucleic acids: information storage and transfer"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: functional assignment",
+        "subtopics": [
+          {
+            "name": "Why each class exists",
+            "points": [
+              "Carbohydrates are easily oxidised, giving rapid ATP without oxygen debt",
+              "Proteins are the only class that catalyses reactions, so they carry regulation",
+              "Lipids store the most energy per gram and form the only barrier that makes a cell a cell",
+              "Nucleic acids are the only class that can be copied with high fidelity"
+            ]
+          },
+          {
+            "name": "Minerals and water",
+            "points": [
+              "Macro-minerals are needed in gram quantities; micro-minerals in milligram or microgram quantities",
+              "Deficiency diseases map to specific minerals: iodine -> goitre, iron -> anaemia, calcium -> rickets",
+              "Water makes up the majority of protoplasm and is the solvent for all metabolism"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: integration",
+        "subtopics": [
+          {
+            "name": "Metabolic interconnection",
+            "points": [
+              "Excess carbohydrate converts to glycogen, then to fat — the classes interconvert",
+              "Amino acids can enter respiration as keto acids after deamination",
+              "Nucleotides are built from amino acid, sugar and phosphate precursors"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -571,5 +571,81 @@
       ],
       "answer": "Guanine = 30%"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Biomolecules and enzymes — the chemistry of the living cell",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: classification",
+        "subtopics": [
+          {
+            "name": "Micromolecules vs macromolecules",
+            "points": [
+              "Micromolecules: small, low molecular weight, soluble — sugars, amino acids, nucleotides, minerals, water",
+              "Macromolecules: large, high molecular weight — polysaccharides, proteins, nucleic acids",
+              "Acid-insoluble pool (macromolecules) vs acid-soluble pool (micromolecules) is the classical operational split"
+            ]
+          },
+          {
+            "name": "Elemental composition",
+            "points": [
+              "C, H, O, N are the dominant elements of life; S and P are next",
+              "Carbon is tetravalent and forms stable chains and rings — the backbone of organic chemistry",
+              "Water is the most abundant molecule in any cell (60-90% of fresh mass)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: enzymes in depth",
+        "subtopics": [
+          {
+            "name": "Enzyme fundamentals",
+            "points": [
+              "Almost all enzymes are proteins; ribozymes are catalytic RNA exceptions",
+              "They lower activation energy without changing the equilibrium position",
+              "Specificity comes from active site complementarity to the substrate"
+            ]
+          },
+          {
+            "name": "Factors affecting enzyme activity",
+            "points": [
+              "Temperature: rate rises to an optimum then falls sharply as denaturation begins",
+              "pH: each enzyme has an optimum; extremes denature",
+              "Substrate concentration saturates at Vmax; inhibitors (competitive, non-competitive) change Km or Vmax differently"
+            ]
+          },
+          {
+            "name": "Coenzymes and cofactors",
+            "points": [
+              "Cofactors are non-protein helpers: metal ions (Mg2+, Zn2+, Fe2+) or organic coenzymes",
+              "NAD, FAD and coenzyme A are organic coenzymes derived from vitamins",
+              "Apoenzyme + cofactor = holoenzyme (the active form)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: modern framing",
+        "subtopics": [
+          {
+            "name": "Beyond the lock-and-key",
+            "points": [
+              "Induced fit: the active site reshapes on binding, explaining broad substrate tolerance",
+              "Allosteric regulation lets a distant site control activity — the basis of metabolic feedback",
+              "Enzyme cascades amplify signals (blood clotting, complement, hormone action)"
+            ]
+          },
+          {
+            "name": "Water as a biomolecule",
+            "points": [
+              "High specific heat stabilises body temperature; high latent heat of vaporisation powers cooling",
+              "Cohesion and adhesion drive transpiration pull in xylem",
+              "Water is the medium for every biochemical reaction and a reactant in hydrolysis"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -200,5 +200,57 @@
   "bounds": [
     "Stay inside this class 11 topic.",
     "Do not add an unsupported count."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Homeostasis — keeping the internal environment stable",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "Homeostasis maintains internal conditions within narrow limits despite external change",
+              "Controlled variables include temperature, pH, blood glucose, water and ion balance",
+              "Failure of homeostasis is the basis of most disease"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: control systems",
+        "subtopics": [
+          {
+            "name": "Negative feedback",
+            "points": [
+              "A deviation triggers a response that reverses it",
+              "Receptor -> control centre -> effector loop",
+              "Examples: thermoregulation, blood glucose via insulin and glucagon, osmoregulation via ADH"
+            ]
+          },
+          {
+            "name": "Positive feedback",
+            "points": [
+              "Amplifies a deviation rather than reversing it",
+              "Examples: oxytocin in childbirth, blood clotting cascade",
+              "Usually self-limiting and tied to a definite endpoint"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "System integration",
+            "points": [
+              "Nervous control is fast and short-lived; endocrine control is slower and sustained",
+              "Liver, kidney, lungs and skin are the main homeostatic organs",
+              "Set points can be reset (fever raises the hypothalamic set point)"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -782,5 +782,87 @@
       ],
       "answer": "Metaphase I: 4 chromosomes, 8 chromatids; Metaphase II: 2 chromosomes, 4 chromatids"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Cell cycle, mitosis and meiosis — and why both exist",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The cycle",
+            "points": [
+              "Interphase: G1 (growth), S (DNA replication), G2 (preparation)",
+              "M phase: nuclear division (karyokinesis) then cytoplasmic division (cytokinesis)",
+              "Duration varies by cell type; human epithelial cells cycle in roughly 24 hours"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mitosis vs meiosis",
+        "subtopics": [
+          {
+            "name": "Mitosis",
+            "points": [
+              "One division, two diploid daughter cells identical to the parent",
+              "Homologous chromosomes do not pair; no crossing over",
+              "Purpose: growth, repair, asexual reproduction"
+            ]
+          },
+          {
+            "name": "Meiosis",
+            "points": [
+              "Two successive divisions, four haploid daughter cells",
+              "Meiosis I is reductional: homologous chromosomes pair, cross over and separate",
+              "Meiosis II is equational: sister chromatids separate",
+              "Purpose: gamete formation and generation of genetic variation"
+            ]
+          },
+          {
+            "name": "Sources of variation in meiosis",
+            "points": [
+              "Crossing over in prophase I recombines maternal and paternal segments",
+              "Independent assortment of homologues at metaphase I gives 2^n combinations",
+              "Random fertilisation adds a further layer of variation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: significance and numbers",
+        "subtopics": [
+          {
+            "name": "Why both are necessary",
+            "points": [
+              "Mitosis preserves; meiosis varies — a species needs both stability and diversity",
+              "Without meiosis, chromosome number would double every generation in sexual reproduction",
+              "Variation from meiosis is the raw material natural selection acts on"
+            ]
+          },
+          {
+            "name": "Quantitative anchors",
+            "points": [
+              "Human diploid number 2n = 46; haploid n = 23",
+              "Independent assortment in humans gives 2^23 = 8,388,608 combinations before crossing over",
+              "Meiosis produces four cells; mitosis produces two"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Exam traps",
+        "subtopics": [
+          {
+            "name": "Frequently missed",
+            "points": [
+              "DNA replicates once but the cell divides twice in meiosis",
+              "Crossing over happens in prophase I, not prophase II",
+              "Sister chromatids separate in anaphase of mitosis AND anaphase II of meiosis — homologues separate in anaphase I"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -212,5 +212,81 @@
   "bounds": [
     "Stay inside this class 11 topic.",
     "Do not add an unsupported count."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Organelles — division of labour inside the eukaryotic cell",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the organelle inventory",
+        "subtopics": [
+          {
+            "name": "Single-membrane organelles",
+            "points": [
+              "Endoplasmic reticulum (rough and smooth), Golgi apparatus, lysosomes, vacuoles, peroxisomes",
+              "These form the endomembrane system and handle synthesis, modification, transport and digestion",
+              "Vesicles shuttle cargo between them"
+            ]
+          },
+          {
+            "name": "Double-membrane organelles",
+            "points": [
+              "Mitochondria — aerobic respiration, cristae increase surface area",
+              "Plastids in plants — chloroplasts for photosynthesis, leucoplasts for storage, chromoplasts for pigment",
+              "Nuclear envelope with pores is also double"
+            ]
+          },
+          {
+            "name": "Non-membrane organelles",
+            "points": [
+              "Ribosomes (protein synthesis), centrioles (spindle formation in animal cells)",
+              "Cytoskeleton: microtubules, microfilaments, intermediate filaments",
+              "Cilia and flagella built on the 9+2 microtubule arrangement"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: function of each",
+        "subtopics": [
+          {
+            "name": "Protein pathway",
+            "points": [
+              "Rough ER -> transport vesicle -> Golgi (modification, sorting, packaging) -> vesicle -> destination",
+              "Signal peptide directs a ribosome to the rough ER",
+              "Lysosomes are the terminal digestive compartment, formed from Golgi vesicles"
+            ]
+          },
+          {
+            "name": "Energy organelles",
+            "points": [
+              "Mitochondrion: outer membrane, inner membrane folded into cristae, matrix with Krebs enzymes and own DNA",
+              "Chloroplast: thylakoid stacks (grana) for light reactions, stroma for Calvin cycle",
+              "Both are semi-autonomous: own circular DNA and 70S ribosomes"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: structure-function coupling",
+        "subtopics": [
+          {
+            "name": "Surface area engineering",
+            "points": [
+              "Cristae fold the inner mitochondrial membrane to pack in electron transport chain complexes",
+              "Thylakoid stacking packs photosystems into a small volume",
+              "Microvilli and ER folding follow the same principle: maximise membrane area in fixed volume"
+            ]
+          },
+          {
+            "name": "Cell-type specialisation",
+            "points": [
+              "Pancreatic cells are rich in rough ER; muscle cells are rich in mitochondria",
+              "Mature mammalian red blood cells lose nucleus and organelles to maximise haemoglobin capacity",
+              "Organelle abundance is a diagnostic clue to cell function"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

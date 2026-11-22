@@ -840,5 +840,65 @@
       ],
       "answer": "Metaphase I: 4 chromosomes, 8 chromatids; Metaphase II: 2 chromosomes, 4 chromatids"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Cell cycle and the three modes of division",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: amitosis",
+        "subtopics": [
+          {
+            "name": "Direct division",
+            "points": [
+              "Nucleus constricts and splits without spindle formation or chromosome condensation",
+              "Seen in prokaryotes and some lower eukaryotes and in pathological conditions",
+              "Produces genetically imprecise results compared with mitosis"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mitosis and meiosis stages",
+        "subtopics": [
+          {
+            "name": "Mitosis in order",
+            "points": [
+              "Prophase: condensation, spindle formation, nuclear envelope breakdown",
+              "Metaphase: alignment at the metaphase plate",
+              "Anaphase: chromatid separation; Telophase: nuclear reformation and cytokinesis"
+            ]
+          },
+          {
+            "name": "Meiosis I and II",
+            "points": [
+              "Prophase I has five substages: leptotene, zygotene, pachytene, diplotene, diakinesis",
+              "Pachytene is where crossing over occurs, forming chiasmata",
+              "Meiosis II mirrors mitosis but starts from haploid cells"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: significance",
+        "subtopics": [
+          {
+            "name": "Biological roles",
+            "points": [
+              "Mitosis maintains genetic constancy and enables repair",
+              "Meiosis halves chromosome number and generates variation",
+              "Amitosis is a simple but error-prone alternative"
+            ]
+          },
+          {
+            "name": "Applied relevance",
+            "points": [
+              "Cancer is a failure of mitotic control",
+              "Down syndrome arises from meiotic non-disjunction of chromosome 21",
+              "Tissue culture and cloning depend on controlled mitosis"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -199,5 +199,73 @@
   "bounds": [
     "Stay inside this class 11 topic.",
     "Do not add an unsupported count."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Mendelian inheritance",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Terminology",
+            "points": [
+              "Gene, allele, genotype, phenotype, homozygous, heterozygous",
+              "Dominant allele masks recessive in the heterozygote",
+              "Mendel's pea experiments established quantitative inheritance"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the laws",
+        "subtopics": [
+          {
+            "name": "Law of segregation",
+            "points": [
+              "Two alleles of a gene separate during gamete formation",
+              "Each gamete carries only one allele",
+              "Explains the 3:1 monohybrid phenotypic ratio"
+            ]
+          },
+          {
+            "name": "Law of independent assortment",
+            "points": [
+              "Alleles of different genes assort independently when on different chromosomes",
+              "Explains the 9:3:3:1 dihybrid ratio",
+              "Fails for linked genes on the same chromosome"
+            ]
+          },
+          {
+            "name": "Deviation: incomplete dominance and codominance",
+            "points": [
+              "Incomplete dominance gives an intermediate phenotype (1:2:1)",
+              "Codominance expresses both alleles fully (AB blood group)",
+              "Multiple alleles and polygenic traits add further complexity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Beyond Mendel",
+            "points": [
+              "Linkage and crossing over break independent assortment",
+              "Sex-linked inheritance explains X-linked disorders such as haemophilia",
+              "Epistasis and polygenic inheritance explain continuous traits"
+            ]
+          },
+          {
+            "name": "Quantitative anchors",
+            "points": [
+              "Monohybrid F2 phenotypic ratio 3:1, genotypic 1:2:1",
+              "Dihybrid F2 phenotypic ratio 9:3:3:1",
+              "Test cross with a homozygous recessive reveals an unknown genotype"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

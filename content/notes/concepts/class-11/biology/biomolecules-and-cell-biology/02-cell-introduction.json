@@ -547,5 +547,87 @@
       ],
       "answer": "Plant cell"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "The cell — structural and functional unit of life",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: cell theory",
+        "subtopics": [
+          {
+            "name": "Historical development",
+            "points": [
+              "Robert Hooke (1665) coined 'cell' after observing cork under a compound microscope",
+              "Anton van Leeuwenhoek first saw living cells (bacteria, protozoa)",
+              "Schleiden and Schwann (1838-39) proposed that plants and animals are made of cells; Virchow (1855) added omnis cellula e cellula"
+            ]
+          },
+          {
+            "name": "Modern cell theory",
+            "points": [
+              "All living organisms are composed of one or more cells",
+              "The cell is the basic unit of structure and function",
+              "All cells arise from pre-existing cells by division",
+              "Cells contain hereditary material passed to daughter cells"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: prokaryote vs eukaryote",
+        "subtopics": [
+          {
+            "name": "Prokaryotic cell",
+            "points": [
+              "No membrane-bound nucleus; DNA is a single circular chromosome in the nucleoid",
+              "No membrane-bound organelles; ribosomes are 70S",
+              "Cell wall usually present (peptidoglycan in bacteria); may have capsule, flagella, pili, plasmids"
+            ]
+          },
+          {
+            "name": "Eukaryotic cell",
+            "points": [
+              "True nucleus bounded by a double membrane with pores",
+              "Membrane-bound organelles: mitochondria, ER, Golgi, lysosomes, plastids",
+              "Ribosomes are 80S; extensive internal membrane system allows compartmentalised chemistry"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: size, shape and scale",
+        "subtopics": [
+          {
+            "name": "Dimensions",
+            "points": [
+              "Typical prokaryote 1-10 micrometre; typical eukaryote 10-100 micrometre",
+              "Surface area to volume ratio limits cell size — larger cells must divide or become flattened",
+              "Human red blood cell ~7 micrometre; a frog egg ~1 mm is near the practical single-cell ceiling"
+            ]
+          },
+          {
+            "name": "Cell as an open system",
+            "points": [
+              "Cells exchange matter and energy continuously with the environment",
+              "Compartmentalisation lets incompatible reactions run simultaneously",
+              "The endosymbiotic theory explains mitochondria and chloroplasts as captured prokaryotes"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Exam traps",
+        "subtopics": [
+          {
+            "name": "Frequently missed",
+            "points": [
+              "Prokaryotes DO have ribosomes — they lack membrane-bound organelles, not all organelles",
+              "Viruses are not cells: no cytoplasm, no metabolism, no independent reproduction",
+              "Cell theory's classical form predates the discovery of viruses and does not cover them"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

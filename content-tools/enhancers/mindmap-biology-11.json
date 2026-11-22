@@ -1,0 +1,1513 @@
+{
+  "class-11/biology/introduction-to-biology/introduction-to-biology-scope-and-fields-of-biology": {
+    "centralConcept": "Biology — the science of life, from molecule to biosphere",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: what biology is",
+        "subtopics": [
+          {
+            "name": "Etymology and definition",
+            "points": [
+              "From Greek bios (life) + logos (study): the study of living organisms and their interactions",
+              "A living thing is defined by a set of properties, not by one feature alone",
+              "Biology is a natural science built on observation, hypothesis, experiment and theory"
+            ]
+          },
+          {
+            "name": "Defining properties of life",
+            "points": [
+              "Growth, reproduction, metabolism, response to stimuli, homeostasis, cellular organisation",
+              "Viruses sit outside the definition: they reproduce only inside a host cell",
+              "Organisation is hierarchical: molecule -> organelle -> cell -> tissue -> organ -> organism -> population -> community -> ecosystem -> biosphere"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the branches of biology",
+        "subtopics": [
+          {
+            "name": "Structural and functional branches",
+            "points": [
+              "Morphology (external form), anatomy (internal structure), histology (tissues), cytology (cells)",
+              "Physiology (functions), biochemistry (chemical basis), genetics (heredity), embryology (development)",
+              "Taxonomy (classification), ecology (organism-environment relations), evolution (descent with modification)"
+            ]
+          },
+          {
+            "name": "Applied and interdisciplinary branches",
+            "points": [
+              "Biotechnology, microbiology, immunology, pathology, pharmacology, agriculture, horticulture",
+              "Bioinformatics, biophysics, biomathematics, bioethics as modern interfaces",
+              "Nepal context: forestry, fisheries, apiculture and sericulture are applied branches of direct economic value"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: how biology is actually done",
+        "subtopics": [
+          {
+            "name": "Scientific method as a loop",
+            "points": [
+              "Observation -> question -> hypothesis -> prediction -> controlled experiment -> analysis -> revision",
+              "A hypothesis must be falsifiable; a theory is a well-tested explanatory framework, not a guess",
+              "Controls and variables: independent (manipulated), dependent (measured), controlled (held constant)"
+            ]
+          },
+          {
+            "name": "Modern scale of the field",
+            "points": [
+              "About 8.7 million eukaryotic species estimated; roughly 1.5-2 million described so far",
+              "Genomics, CRISPR and single-cell sequencing moved biology from description to engineering",
+              "Model organisms (E. coli, yeast, Drosophila, Arabidopsis, zebrafish, mouse) carry most mechanistic work"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Exam traps and distinctions",
+        "subtopics": [
+          {
+            "name": "Common confusions",
+            "points": [
+              "Botany/zoology are kingdom-scoped; microbiology cuts across kingdoms (bacteria, viruses, protozoa, fungi)",
+              "Anatomy is structure, physiology is function — do not swap them in a definition question",
+              "A theory is not weaker than a law: laws describe, theories explain"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/introduction-to-biology/relation-of-biology-with-other-sciences": {
+    "centralConcept": "Biology as a hub science — borrowing methods from every other discipline",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: why the connections exist",
+        "subtopics": [
+          {
+            "name": "Shared physical and chemical basis",
+            "points": [
+              "All life obeys the same physics and chemistry: diffusion, osmosis, thermodynamics, bonding",
+              "Water's polarity and hydrogen bonding explain almost every transport and solvent property in cells",
+              "Carbon's tetravalency underwrites the whole diversity of organic molecules"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the interface map",
+        "subtopics": [
+          {
+            "name": "Biology with physical sciences",
+            "points": [
+              "Biochemistry: reaction pathways, enzyme kinetics, energetics of ATP",
+              "Biophysics: membrane potentials, muscle mechanics, X-ray crystallography of DNA and proteins",
+              "Physical chemistry explains pH, buffers, colligative properties and osmosis in living systems"
+            ]
+          },
+          {
+            "name": "Biology with formal sciences",
+            "points": [
+              "Biomathematics: population growth models, epidemic curves, genetic ratios, statistical tests",
+              "Bioinformatics: sequence alignment, phylogenetics, database mining of genomes",
+              "Statistics is essential because biological variation is the norm, not the exception"
+            ]
+          },
+          {
+            "name": "Biology with social and earth sciences",
+            "points": [
+              "Geography and geology: biogeography, fossil record, soil formation, plate tectonics and species distribution",
+              "Psychology and neuroscience: behaviour, learning, reflex pathways",
+              "Economics and ethics: agriculture, conservation policy, bioethics of gene editing"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: convergence and its consequences",
+        "subtopics": [
+          {
+            "name": "From reduction to systems",
+            "points": [
+              "Reductionism explains parts; systems biology explains how parts interact as networks",
+              "Omics layers stack: genome -> transcriptome -> proteome -> metabolome -> phenotype",
+              "Emergent properties (consciousness, ecosystem stability) cannot be read off a single molecule"
+            ]
+          },
+          {
+            "name": "Ethical boundary",
+            "points": [
+              "Recombinant DNA safety debate crystallised at the 1975 Asilomar conference",
+              "Bioethics now governs gene therapy, cloning, GMO release and human subject research",
+              "Scientific capability and social permission are separate questions"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/introduction-to-biology/scope-fields-biology": {
+    "centralConcept": "Scope of biology — breadth of scale and depth of specialisation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the scale ladder",
+        "subtopics": [
+          {
+            "name": "Sub-cellular to organism",
+            "points": [
+              "Molecular biology and biochemistry sit at the smallest scale",
+              "Cell biology, histology and anatomy build upward in organisation",
+              "Physiology and developmental biology explain function and formation of the whole organism"
+            ]
+          },
+          {
+            "name": "Population to biosphere",
+            "points": [
+              "Genetics and evolution explain variation and change across generations",
+              "Ecology spans organism, population, community, ecosystem and biosphere",
+              "Conservation biology applies ecological theory to preventing loss"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: classical vs modern scope",
+        "subtopics": [
+          {
+            "name": "Classical fields",
+            "points": [
+              "Taxonomy, morphology, anatomy, embryology, palaeontology — largely descriptive origins",
+              "Systematics organises diversity into a predictive phylogenetic framework",
+              "Economic botany and zoology catalogued useful species"
+            ]
+          },
+          {
+            "name": "Modern fields",
+            "points": [
+              "Molecular biology, genomics, proteomics, metabolomics",
+              "Immunology, neurobiology, stem cell biology, synthetic biology",
+              "Bioinformatics and computational biology as the analysis layer over all of the above"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: where the frontier is",
+        "subtopics": [
+          {
+            "name": "Engineering life",
+            "points": [
+              "CRISPR-Cas9 made targeted genome editing routine and cheap",
+              "Synthetic biology designs circuits and organisms rather than only studying them",
+              "mRNA platform technology compressed vaccine development from years to months"
+            ]
+          },
+          {
+            "name": "Scope limits",
+            "points": [
+              "Biology cannot yet predict phenotype from genotype in most complex traits",
+              "Ecosystem-level prediction remains weak because interactions are nonlinear",
+              "Ethical and regulatory scope always trails technical scope"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/introduction-to-biology/relation-other-sciences": {
+    "centralConcept": "Interdependence of biology with other sciences",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "No science is isolated",
+            "points": [
+              "Living systems are physical-chemical systems, so biology inherits their laws",
+              "Measurement, modelling and statistics come from mathematics",
+              "Earth processes set the stage on which evolution and ecology operate"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: paired interfaces",
+        "subtopics": [
+          {
+            "name": "Chemistry interface",
+            "points": [
+              "Organic chemistry explains biomolecule structure and reactivity",
+              "Enzyme catalysis, pH and buffers are applied physical chemistry",
+              "Analytical chemistry (chromatography, spectroscopy) supplies the measurement tools"
+            ]
+          },
+          {
+            "name": "Physics interface",
+            "points": [
+              "Optics underlies microscopy; electron microscopy resolved organelles",
+              "Mechanics and fluid dynamics explain circulation, locomotion and plant water transport",
+              "Radioisotopes and radiation are both tools (tracers, imaging) and hazards (mutation)"
+            ]
+          },
+          {
+            "name": "Mathematics and computing interface",
+            "points": [
+              "Mendelian ratios are probability; population genetics is algebra and calculus",
+              "Sequence alignment and phylogenetics are algorithmic problems",
+              "Epidemiological models (SIR-type) guide public health decisions"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: convergence in practice",
+        "subtopics": [
+          {
+            "name": "Convergence examples",
+            "points": [
+              "X-ray crystallography (physics) plus chemistry solved the DNA double helix in 1953",
+              "PCR (chemistry) plus computation built modern diagnostics and forensics",
+              "Optogenetics combines optics, genetics and neurophysiology"
+            ]
+          },
+          {
+            "name": "Why it matters for exams",
+            "points": [
+              "Interdisciplinary questions are increasingly common in entrance papers",
+              "Answer with the mechanism from the borrowing science, then the biological consequence",
+              "Naming the interface explicitly earns marks that a vague answer does not"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/biomolecules-functions": {
+    "centralConcept": "Biomolecules — structure dictates function",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the four macromolecule classes",
+        "subtopics": [
+          {
+            "name": "Carbohydrates",
+            "points": [
+              "Monosaccharides (glucose, fructose), disaccharides (sucrose, lactose), polysaccharides (starch, glycogen, cellulose)",
+              "Primary quick energy source; cellulose is structural and indigestible to humans",
+              "General formula (CH2O)n; glycosidic bonds link monomers"
+            ]
+          },
+          {
+            "name": "Proteins",
+            "points": [
+              "Built from 20 amino acids joined by peptide bonds",
+              "Four structure levels: primary sequence, secondary (alpha helix, beta sheet), tertiary (3D fold), quaternary (subunits)",
+              "Functions: enzymes, transport, structure, signalling, immunity, movement"
+            ]
+          },
+          {
+            "name": "Lipids",
+            "points": [
+              "Fats, oils, phospholipids, steroids, waxes; hydrophobic or amphipathic",
+              "Highest energy density per gram; phospholipids form the bilayer",
+              "Cholesterol modulates membrane fluidity and is a steroid hormone precursor"
+            ]
+          },
+          {
+            "name": "Nucleic acids",
+            "points": [
+              "DNA stores information; RNA transmits and executes it",
+              "Nucleotides = pentose sugar + phosphate + nitrogenous base",
+              "DNA is double-stranded with A-T and G-C pairing; RNA is usually single-stranded with uracil"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: structure-function logic",
+        "subtopics": [
+          {
+            "name": "How shape creates function",
+            "points": [
+              "Enzyme active site geometry gives substrate specificity (lock-and-key, induced fit)",
+              "Protein denaturation destroys function by destroying tertiary shape, not primary sequence",
+              "Saturated vs unsaturated fatty acid tails change membrane packing and fluidity"
+            ]
+          },
+          {
+            "name": "Minerals and water",
+            "points": [
+              "Water: universal solvent, high specific heat, high latent heat, cohesion and adhesion",
+              "Macro-minerals (Ca, P, K, Na, Mg, S, Cl) and micro-minerals (Fe, Zn, Cu, I, Mn) in trace amounts",
+              "Iron in haemoglobin, iodine in thyroxine, calcium in bone and clotting"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: quantitative and modern view",
+        "subtopics": [
+          {
+            "name": "Energetics",
+            "points": [
+              "Carbohydrate ~4 kcal/g, protein ~4 kcal/g, lipid ~9 kcal/g",
+              "ATP is the universal energy currency; ~30.5 kJ/mol released on hydrolysis under standard conditions",
+              "Energy is transferred, never created — the whole chain traces back to photosynthesis"
+            ]
+          },
+          {
+            "name": "Tests and identification",
+            "points": [
+              "Benedict's test: reducing sugars give brick-red precipitate on heating",
+              "Biuret test: proteins give violet; Sudan III stains lipids red",
+              "Iodine test: starch turns blue-black"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Exam traps",
+        "subtopics": [
+          {
+            "name": "Frequently missed",
+            "points": [
+              "Cellulose and starch are both glucose polymers but differ in glycosidic linkage and digestibility",
+              "Lipids are not polymers in the strict sense — they are not built from repeating identical units",
+              "DNA and RNA differ in sugar (deoxyribose vs ribose) and one base (thymine vs uracil)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water": {
+    "centralConcept": "Biomolecules and enzymes — the chemistry of the living cell",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: classification",
+        "subtopics": [
+          {
+            "name": "Micromolecules vs macromolecules",
+            "points": [
+              "Micromolecules: small, low molecular weight, soluble — sugars, amino acids, nucleotides, minerals, water",
+              "Macromolecules: large, high molecular weight — polysaccharides, proteins, nucleic acids",
+              "Acid-insoluble pool (macromolecules) vs acid-soluble pool (micromolecules) is the classical operational split"
+            ]
+          },
+          {
+            "name": "Elemental composition",
+            "points": [
+              "C, H, O, N are the dominant elements of life; S and P are next",
+              "Carbon is tetravalent and forms stable chains and rings — the backbone of organic chemistry",
+              "Water is the most abundant molecule in any cell (60-90% of fresh mass)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: enzymes in depth",
+        "subtopics": [
+          {
+            "name": "Enzyme fundamentals",
+            "points": [
+              "Almost all enzymes are proteins; ribozymes are catalytic RNA exceptions",
+              "They lower activation energy without changing the equilibrium position",
+              "Specificity comes from active site complementarity to the substrate"
+            ]
+          },
+          {
+            "name": "Factors affecting enzyme activity",
+            "points": [
+              "Temperature: rate rises to an optimum then falls sharply as denaturation begins",
+              "pH: each enzyme has an optimum; extremes denature",
+              "Substrate concentration saturates at Vmax; inhibitors (competitive, non-competitive) change Km or Vmax differently"
+            ]
+          },
+          {
+            "name": "Coenzymes and cofactors",
+            "points": [
+              "Cofactors are non-protein helpers: metal ions (Mg2+, Zn2+, Fe2+) or organic coenzymes",
+              "NAD, FAD and coenzyme A are organic coenzymes derived from vitamins",
+              "Apoenzyme + cofactor = holoenzyme (the active form)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: modern framing",
+        "subtopics": [
+          {
+            "name": "Beyond the lock-and-key",
+            "points": [
+              "Induced fit: the active site reshapes on binding, explaining broad substrate tolerance",
+              "Allosteric regulation lets a distant site control activity — the basis of metabolic feedback",
+              "Enzyme cascades amplify signals (blood clotting, complement, hormone action)"
+            ]
+          },
+          {
+            "name": "Water as a biomolecule",
+            "points": [
+              "High specific heat stabilises body temperature; high latent heat of vaporisation powers cooling",
+              "Cohesion and adhesion drive transpiration pull in xylem",
+              "Water is the medium for every biochemical reaction and a reactant in hydrolysis"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-": {
+    "centralConcept": "Biomolecules — composition and biological roles",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The four classes at a glance",
+            "points": [
+              "Carbohydrates: immediate energy and structure",
+              "Proteins: catalysis, transport, structure, defence",
+              "Lipids: energy storage, membranes, hormones",
+              "Nucleic acids: information storage and transfer"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: functional assignment",
+        "subtopics": [
+          {
+            "name": "Why each class exists",
+            "points": [
+              "Carbohydrates are easily oxidised, giving rapid ATP without oxygen debt",
+              "Proteins are the only class that catalyses reactions, so they carry regulation",
+              "Lipids store the most energy per gram and form the only barrier that makes a cell a cell",
+              "Nucleic acids are the only class that can be copied with high fidelity"
+            ]
+          },
+          {
+            "name": "Minerals and water",
+            "points": [
+              "Macro-minerals are needed in gram quantities; micro-minerals in milligram or microgram quantities",
+              "Deficiency diseases map to specific minerals: iodine -> goitre, iron -> anaemia, calcium -> rickets",
+              "Water makes up the majority of protoplasm and is the solvent for all metabolism"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: integration",
+        "subtopics": [
+          {
+            "name": "Metabolic interconnection",
+            "points": [
+              "Excess carbohydrate converts to glycogen, then to fat — the classes interconvert",
+              "Amino acids can enter respiration as keto acids after deamination",
+              "Nucleotides are built from amino acid, sugar and phosphate precursors"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/cell-introduction": {
+    "centralConcept": "The cell — structural and functional unit of life",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: cell theory",
+        "subtopics": [
+          {
+            "name": "Historical development",
+            "points": [
+              "Robert Hooke (1665) coined 'cell' after observing cork under a compound microscope",
+              "Anton van Leeuwenhoek first saw living cells (bacteria, protozoa)",
+              "Schleiden and Schwann (1838-39) proposed that plants and animals are made of cells; Virchow (1855) added omnis cellula e cellula"
+            ]
+          },
+          {
+            "name": "Modern cell theory",
+            "points": [
+              "All living organisms are composed of one or more cells",
+              "The cell is the basic unit of structure and function",
+              "All cells arise from pre-existing cells by division",
+              "Cells contain hereditary material passed to daughter cells"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: prokaryote vs eukaryote",
+        "subtopics": [
+          {
+            "name": "Prokaryotic cell",
+            "points": [
+              "No membrane-bound nucleus; DNA is a single circular chromosome in the nucleoid",
+              "No membrane-bound organelles; ribosomes are 70S",
+              "Cell wall usually present (peptidoglycan in bacteria); may have capsule, flagella, pili, plasmids"
+            ]
+          },
+          {
+            "name": "Eukaryotic cell",
+            "points": [
+              "True nucleus bounded by a double membrane with pores",
+              "Membrane-bound organelles: mitochondria, ER, Golgi, lysosomes, plastids",
+              "Ribosomes are 80S; extensive internal membrane system allows compartmentalised chemistry"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: size, shape and scale",
+        "subtopics": [
+          {
+            "name": "Dimensions",
+            "points": [
+              "Typical prokaryote 1-10 micrometre; typical eukaryote 10-100 micrometre",
+              "Surface area to volume ratio limits cell size — larger cells must divide or become flattened",
+              "Human red blood cell ~7 micrometre; a frog egg ~1 mm is near the practical single-cell ceiling"
+            ]
+          },
+          {
+            "name": "Cell as an open system",
+            "points": [
+              "Cells exchange matter and energy continuously with the environment",
+              "Compartmentalisation lets incompatible reactions run simultaneously",
+              "The endosymbiotic theory explains mitochondria and chloroplasts as captured prokaryotes"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Exam traps",
+        "subtopics": [
+          {
+            "name": "Frequently missed",
+            "points": [
+              "Prokaryotes DO have ribosomes — they lack membrane-bound organelles, not all organelles",
+              "Viruses are not cells: no cytoplasm, no metabolism, no independent reproduction",
+              "Cell theory's classical form predates the discovery of viruses and does not cover them"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells": {
+    "centralConcept": "Prokaryotic and eukaryotic organisation compared",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the dividing line",
+        "subtopics": [
+          {
+            "name": "The single decisive difference",
+            "points": [
+              "A membrane-bound nucleus is the defining eukaryotic feature",
+              "Everything else (organelles, size, chromosome number) follows from that compartmentalisation",
+              "Prokaryotes = Bacteria and Archaea; eukaryotes = Protista, Fungi, Plantae, Animalia"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: feature-by-feature comparison",
+        "subtopics": [
+          {
+            "name": "Genetic apparatus",
+            "points": [
+              "Prokaryote: single circular DNA, no histones (archaea have histone-like proteins), no nucleolus",
+              "Eukaryote: multiple linear chromosomes with histones, organised into chromatin, distinct nucleolus",
+              "Prokaryotes often carry plasmids — small extrachromosomal circular DNA"
+            ]
+          },
+          {
+            "name": "Membranes and organelles",
+            "points": [
+              "Prokaryote: plasma membrane only, no ER/Golgi/lysosome/mitochondrion",
+              "Eukaryote: extensive endomembrane system plus double-membrane organelles",
+              "Both have ribosomes, but 70S vs 80S — the basis of antibiotic selectivity"
+            ]
+          },
+          {
+            "name": "Division and reproduction",
+            "points": [
+              "Prokaryote: binary fission, no mitosis or meiosis, no spindle",
+              "Eukaryote: mitosis for growth, meiosis for gametes",
+              "Prokaryotes exchange genes by transformation, transduction and conjugation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: consequences",
+        "subtopics": [
+          {
+            "name": "Why it matters medically",
+            "points": [
+              "70S vs 80S ribosome difference lets antibiotics (streptomycin, tetracycline) hit bacteria without harming human cells",
+              "Peptidoglycan cell wall is the target of penicillin — absent in human cells",
+              "Rapid binary fission plus horizontal gene transfer drives antibiotic resistance"
+            ]
+          },
+          {
+            "name": "Evolutionary reading",
+            "points": [
+              "Prokaryotes appeared ~3.5 billion years ago; eukaryotes ~1.5-2 billion years ago",
+              "Endosymbiosis converted engulfed bacteria into mitochondria and chloroplasts",
+              "Prokaryotes still dominate biomass and biochemical diversity"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/cell-structure-and-organelles": {
+    "centralConcept": "Organelles — division of labour inside the eukaryotic cell",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the organelle inventory",
+        "subtopics": [
+          {
+            "name": "Single-membrane organelles",
+            "points": [
+              "Endoplasmic reticulum (rough and smooth), Golgi apparatus, lysosomes, vacuoles, peroxisomes",
+              "These form the endomembrane system and handle synthesis, modification, transport and digestion",
+              "Vesicles shuttle cargo between them"
+            ]
+          },
+          {
+            "name": "Double-membrane organelles",
+            "points": [
+              "Mitochondria — aerobic respiration, cristae increase surface area",
+              "Plastids in plants — chloroplasts for photosynthesis, leucoplasts for storage, chromoplasts for pigment",
+              "Nuclear envelope with pores is also double"
+            ]
+          },
+          {
+            "name": "Non-membrane organelles",
+            "points": [
+              "Ribosomes (protein synthesis), centrioles (spindle formation in animal cells)",
+              "Cytoskeleton: microtubules, microfilaments, intermediate filaments",
+              "Cilia and flagella built on the 9+2 microtubule arrangement"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: function of each",
+        "subtopics": [
+          {
+            "name": "Protein pathway",
+            "points": [
+              "Rough ER -> transport vesicle -> Golgi (modification, sorting, packaging) -> vesicle -> destination",
+              "Signal peptide directs a ribosome to the rough ER",
+              "Lysosomes are the terminal digestive compartment, formed from Golgi vesicles"
+            ]
+          },
+          {
+            "name": "Energy organelles",
+            "points": [
+              "Mitochondrion: outer membrane, inner membrane folded into cristae, matrix with Krebs enzymes and own DNA",
+              "Chloroplast: thylakoid stacks (grana) for light reactions, stroma for Calvin cycle",
+              "Both are semi-autonomous: own circular DNA and 70S ribosomes"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: structure-function coupling",
+        "subtopics": [
+          {
+            "name": "Surface area engineering",
+            "points": [
+              "Cristae fold the inner mitochondrial membrane to pack in electron transport chain complexes",
+              "Thylakoid stacking packs photosystems into a small volume",
+              "Microvilli and ER folding follow the same principle: maximise membrane area in fixed volume"
+            ]
+          },
+          {
+            "name": "Cell-type specialisation",
+            "points": [
+              "Pancreatic cells are rich in rough ER; muscle cells are rich in mitochondria",
+              "Mature mammalian red blood cells lose nucleus and organelles to maximise haemoglobin capacity",
+              "Organelle abundance is a diagnostic clue to cell function"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/eukaryotic-cell-structure": {
+    "centralConcept": "Eukaryotic cell architecture",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the boundary system",
+        "subtopics": [
+          {
+            "name": "Plasma membrane",
+            "points": [
+              "Fluid mosaic model (Singer and Nicolson, 1972): phospholipid bilayer with embedded proteins",
+              "Selectively permeable; controls what enters and leaves",
+              "Cholesterol and unsaturated tails tune fluidity"
+            ]
+          },
+          {
+            "name": "Cell wall (plants, fungi)",
+            "points": [
+              "Plant cell wall is mainly cellulose; fungal walls are chitin",
+              "Provides rigidity, prevents bursting under osmotic pressure",
+              "Middle lamella, primary wall and secondary wall layers"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the interior",
+        "subtopics": [
+          {
+            "name": "Nucleus",
+            "points": [
+              "Nuclear envelope with pores controls nucleocytoplasmic traffic",
+              "Nucleolus is the ribosome assembly site",
+              "Chromatin is DNA plus histone proteins"
+            ]
+          },
+          {
+            "name": "Cytoplasm and cytoskeleton",
+            "points": [
+              "Cytosol is the aqueous matrix for glycolysis and many reactions",
+              "Microtubules give tracks for vesicle transport; microfilaments drive shape change and cytokinesis",
+              "Cytoskeleton maintains polarity and organelle positioning"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: plant vs animal",
+        "subtopics": [
+          {
+            "name": "Diagnostic differences",
+            "points": [
+              "Plant cells: cellulose wall, large central vacuole, chloroplasts, no centrioles in most higher plants",
+              "Animal cells: no wall, no chloroplasts, centrioles present, small temporary vacuoles",
+              "Both share nucleus, mitochondria, ER, Golgi, ribosomes, cytoskeleton"
+            ]
+          },
+          {
+            "name": "Transport across membranes",
+            "points": [
+              "Passive: simple diffusion and facilitated diffusion (no ATP)",
+              "Active: pumps such as Na+/K+-ATPase move ions against gradients using ATP",
+              "Bulk transport: endocytosis and exocytosis via vesicles"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/detail-structure-of-eukaryotic-cells": {
+    "centralConcept": "Detailed organelle structure and function",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: membranes and walls",
+        "subtopics": [
+          {
+            "name": "Cell membrane detail",
+            "points": [
+              "Phospholipid bilayer ~7-8 nm thick; hydrophilic heads outward, hydrophobic tails inward",
+              "Integral proteins span the bilayer; peripheral proteins sit on one face",
+              "Glycoproteins and glycolipids on the outer surface form the glycocalyx used in recognition"
+            ]
+          },
+          {
+            "name": "Cell wall detail",
+            "points": [
+              "Cellulose microfibrils in a hemicellulose and pectin matrix",
+              "Primary wall is thin and extensible; secondary wall is thick and lignified",
+              "Plasmodesmata are channels through walls connecting adjacent plant cells"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: organelle by organelle",
+        "subtopics": [
+          {
+            "name": "Mitochondria and plastids",
+            "points": [
+              "Mitochondrion: outer membrane, inner membrane with cristae, intermembrane space, matrix",
+              "Chloroplast: outer and inner membrane, stroma, thylakoid membranes stacked into grana",
+              "Both contain circular DNA and 70S ribosomes — evidence of endosymbiotic origin"
+            ]
+          },
+          {
+            "name": "Endomembrane organelles",
+            "points": [
+              "Rough ER studded with ribosomes for protein synthesis; smooth ER for lipid synthesis and detoxification",
+              "Golgi: cis and trans faces, glycosylation and sorting",
+              "Lysosomes contain hydrolytic enzymes at acidic pH; peroxisomes handle hydrogen peroxide"
+            ]
+          },
+          {
+            "name": "Nucleus and chromosomes",
+            "points": [
+              "Nuclear envelope is double with pores; nucleolus makes rRNA",
+              "Chromatin is nucleosomes (DNA wound on histone octamers)",
+              "Chromosome number is species-specific and constant"
+            ]
+          },
+          {
+            "name": "Cilia and flagella",
+            "points": [
+              "9+2 microtubule arrangement: nine doublets around a central pair",
+              "Dynein motors generate sliding that produces bending",
+              "Cilia are short and numerous; flagella are long and few"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: functional integration",
+        "subtopics": [
+          {
+            "name": "Compartment logic",
+            "points": [
+              "Each organelle maintains a distinct internal pH and enzyme set",
+              "Lysosomal enzymes work at ~pH 5, protecting the cytosol at pH ~7.2",
+              "Membrane identity is set by lipid composition and surface protein markers"
+            ]
+          },
+          {
+            "name": "Cell inclusions",
+            "points": [
+              "Non-living accumulations: starch grains, oil droplets, pigment granules, crystals",
+              "Glycogen granules in liver and muscle",
+              "Inclusions are storage or waste, not organelles"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-r": {
+    "centralConcept": "Eukaryotic organelles — structure and function in detail",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Boundary and framework",
+            "points": [
+              "Cell wall gives shape and osmotic protection; membrane controls exchange",
+              "Cytoskeleton provides internal architecture and movement",
+              "Compartmentalisation is the organising principle of the eukaryotic cell"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: organelle functions",
+        "subtopics": [
+          {
+            "name": "Energy transduction",
+            "points": [
+              "Mitochondria convert chemical energy of glucose into ATP via Krebs cycle and oxidative phosphorylation",
+              "Chloroplasts convert light energy into chemical energy in photosynthesis",
+              "Both use chemiosmosis across a membrane to make ATP"
+            ]
+          },
+          {
+            "name": "Synthesis and secretion",
+            "points": [
+              "Ribosomes translate mRNA into polypeptide",
+              "ER folds and modifies; Golgi sorts and packages",
+              "Secretory vesicles fuse with the plasma membrane in exocytosis"
+            ]
+          },
+          {
+            "name": "Digestion and recycling",
+            "points": [
+              "Lysosomes digest worn organelles (autophagy) and ingested material (heterophagy)",
+              "Peroxisomes neutralise hydrogen peroxide and oxidise fatty acids",
+              "Autophagy recycles components under starvation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Disease links",
+            "points": [
+              "Mitochondrial DNA mutations cause maternally inherited disorders (e.g. MELAS)",
+              "Lysosomal storage diseases follow from a single defective hydrolytic enzyme",
+              "Defects in cilia (ciliopathies) impair mucus clearance and development"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/cell-division": {
+    "centralConcept": "Cell division — continuity of life",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: cell cycle",
+        "subtopics": [
+          {
+            "name": "Phases",
+            "points": [
+              "Interphase (G1, S, G2) occupies most of the cycle; M phase is short",
+              "S phase is where DNA replicates",
+              "G0 is a non-dividing resting state some cells enter permanently"
+            ]
+          },
+          {
+            "name": "Types of division",
+            "points": [
+              "Amitosis: direct division without spindle, seen in prokaryotes and some lower eukaryotes",
+              "Mitosis: equational division producing two genetically identical diploid cells",
+              "Meiosis: reductional division producing four haploid gametes"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mitosis stages",
+        "subtopics": [
+          {
+            "name": "Prophase to telophase",
+            "points": [
+              "Prophase: chromosomes condense, spindle forms, nuclear envelope breaks down",
+              "Metaphase: chromosomes align at the equator; anaphase: sister chromatids separate to poles",
+              "Telophase: nuclear envelopes reform; cytokinesis divides the cytoplasm"
+            ]
+          },
+          {
+            "name": "Significance",
+            "points": [
+              "Maintains chromosome number across generations of somatic cells",
+              "Underlies growth, repair and asexual reproduction",
+              "Genetic constancy is preserved because DNA is replicated before division"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: control and failure",
+        "subtopics": [
+          {
+            "name": "Regulation",
+            "points": [
+              "Cyclins and cyclin-dependent kinases drive cell cycle progression",
+              "Checkpoints at G1/S, G2/M and metaphase verify DNA integrity and spindle attachment",
+              "Loss of checkpoint control leads to uncontrolled proliferation"
+            ]
+          },
+          {
+            "name": "Consequences of error",
+            "points": [
+              "Non-disjunction produces aneuploid gametes (e.g. trisomy 21)",
+              "Uncontrolled mitosis is the cellular basis of cancer",
+              "Apoptosis is programmed death that removes damaged cells"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances": {
+    "centralConcept": "Cell cycle, mitosis and meiosis — and why both exist",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "The cycle",
+            "points": [
+              "Interphase: G1 (growth), S (DNA replication), G2 (preparation)",
+              "M phase: nuclear division (karyokinesis) then cytoplasmic division (cytokinesis)",
+              "Duration varies by cell type; human epithelial cells cycle in roughly 24 hours"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mitosis vs meiosis",
+        "subtopics": [
+          {
+            "name": "Mitosis",
+            "points": [
+              "One division, two diploid daughter cells identical to the parent",
+              "Homologous chromosomes do not pair; no crossing over",
+              "Purpose: growth, repair, asexual reproduction"
+            ]
+          },
+          {
+            "name": "Meiosis",
+            "points": [
+              "Two successive divisions, four haploid daughter cells",
+              "Meiosis I is reductional: homologous chromosomes pair, cross over and separate",
+              "Meiosis II is equational: sister chromatids separate",
+              "Purpose: gamete formation and generation of genetic variation"
+            ]
+          },
+          {
+            "name": "Sources of variation in meiosis",
+            "points": [
+              "Crossing over in prophase I recombines maternal and paternal segments",
+              "Independent assortment of homologues at metaphase I gives 2^n combinations",
+              "Random fertilisation adds a further layer of variation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: significance and numbers",
+        "subtopics": [
+          {
+            "name": "Why both are necessary",
+            "points": [
+              "Mitosis preserves; meiosis varies — a species needs both stability and diversity",
+              "Without meiosis, chromosome number would double every generation in sexual reproduction",
+              "Variation from meiosis is the raw material natural selection acts on"
+            ]
+          },
+          {
+            "name": "Quantitative anchors",
+            "points": [
+              "Human diploid number 2n = 46; haploid n = 23",
+              "Independent assortment in humans gives 2^23 = 8,388,608 combinations before crossing over",
+              "Meiosis produces four cells; mitosis produces two"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Exam traps",
+        "subtopics": [
+          {
+            "name": "Frequently missed",
+            "points": [
+              "DNA replicates once but the cell divides twice in meiosis",
+              "Crossing over happens in prophase I, not prophase II",
+              "Sister chromatids separate in anaphase of mitosis AND anaphase II of meiosis — homologues separate in anaphase I"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-sign": {
+    "centralConcept": "Cell cycle and the three modes of division",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: amitosis",
+        "subtopics": [
+          {
+            "name": "Direct division",
+            "points": [
+              "Nucleus constricts and splits without spindle formation or chromosome condensation",
+              "Seen in prokaryotes and some lower eukaryotes and in pathological conditions",
+              "Produces genetically imprecise results compared with mitosis"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: mitosis and meiosis stages",
+        "subtopics": [
+          {
+            "name": "Mitosis in order",
+            "points": [
+              "Prophase: condensation, spindle formation, nuclear envelope breakdown",
+              "Metaphase: alignment at the metaphase plate",
+              "Anaphase: chromatid separation; Telophase: nuclear reformation and cytokinesis"
+            ]
+          },
+          {
+            "name": "Meiosis I and II",
+            "points": [
+              "Prophase I has five substages: leptotene, zygotene, pachytene, diplotene, diakinesis",
+              "Pachytene is where crossing over occurs, forming chiasmata",
+              "Meiosis II mirrors mitosis but starts from haploid cells"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: significance",
+        "subtopics": [
+          {
+            "name": "Biological roles",
+            "points": [
+              "Mitosis maintains genetic constancy and enables repair",
+              "Meiosis halves chromosome number and generates variation",
+              "Amitosis is a simple but error-prone alternative"
+            ]
+          },
+          {
+            "name": "Applied relevance",
+            "points": [
+              "Cancer is a failure of mitotic control",
+              "Down syndrome arises from meiotic non-disjunction of chromosome 21",
+              "Tissue culture and cloning depend on controlled mitosis"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/ecology-and-ecosystems": {
+    "centralConcept": "Ecology and ecosystems — organisms in context",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definitions",
+            "points": [
+              "Ecology studies interactions between organisms and their environment",
+              "An ecosystem is a functional unit of biotic and abiotic components interacting",
+              "Levels: organism -> population -> community -> ecosystem -> biosphere"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Structure and function",
+            "points": [
+              "Structural: producers, consumers, decomposers, trophic levels",
+              "Functional: energy flow (unidirectional) and nutrient cycling (biogeochemical)",
+              "Food chains and webs map the transfer pathways"
+            ]
+          },
+          {
+            "name": "Ecosystem types",
+            "points": [
+              "Aquatic: pond, lake, river, ocean",
+              "Terrestrial: forest, grassland, desert, tundra",
+              "Nepal spans Terai, hill and alpine ecosystems with distinct communities"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Energy and matter",
+            "points": [
+              "Energy flows one way and is lost as heat at each transfer (~10% rule)",
+              "Matter cycles repeatedly through biogeochemical pathways",
+              "Productivity (GPP, NPP) measures the rate of energy capture"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/environmental-science-and-sustainability": {
+    "centralConcept": "Environmental science — managing the human-nature interface",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Scope",
+            "points": [
+              "Interdisciplinary study of the environment and human impact on it",
+              "Draws on ecology, chemistry, geology, economics and policy",
+              "Sustainability means meeting present needs without compromising future capacity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Major issues",
+            "points": [
+              "Pollution of air, water and soil",
+              "Climate change from greenhouse gas accumulation",
+              "Biodiversity loss and habitat fragmentation",
+              "Resource depletion: water, soil, fossil fuels"
+            ]
+          },
+          {
+            "name": "Responses",
+            "points": [
+              "Reduce, reuse, recycle; waste segregation and treatment",
+              "Renewable energy transition and energy efficiency",
+              "Protected areas, environmental legislation and EIA"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Nepal-specific",
+            "points": [
+              "Glacier retreat threatens Himalayan water security",
+              "Community forestry is a globally cited success in forest recovery",
+              "Rapid urbanisation strains waste and water systems in the Kathmandu valley"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/evolution-and-natural-selection": {
+    "centralConcept": "Evolution by natural selection",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Darwin's logic",
+            "points": [
+              "Individuals vary; more offspring are produced than can survive",
+              "Variants with advantageous traits survive and reproduce more",
+              "Over generations the population's trait distribution shifts"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core",
+        "subtopics": [
+          {
+            "name": "Mechanisms",
+            "points": [
+              "Natural selection, sexual selection, mutation, gene flow, genetic drift",
+              "Selection acts on phenotypes, changing allele frequencies",
+              "Speciation follows reproductive isolation"
+            ]
+          },
+          {
+            "name": "Evidence",
+            "points": [
+              "Fossil record, comparative anatomy (homologous and analogous structures)",
+              "Embryology, biogeography, molecular homology",
+              "Observed contemporary evolution: antibiotic resistance, industrial melanism"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Modern synthesis",
+            "points": [
+              "Neo-Darwinism fuses selection with Mendelian genetics and population genetics",
+              "Hardy-Weinberg equilibrium describes conditions under which allele frequencies do not change",
+              "Fitness is relative reproductive success, not strength"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/genetics-inheritance-and-mendelian-laws": {
+    "centralConcept": "Mendelian inheritance",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Terminology",
+            "points": [
+              "Gene, allele, genotype, phenotype, homozygous, heterozygous",
+              "Dominant allele masks recessive in the heterozygote",
+              "Mendel's pea experiments established quantitative inheritance"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the laws",
+        "subtopics": [
+          {
+            "name": "Law of segregation",
+            "points": [
+              "Two alleles of a gene separate during gamete formation",
+              "Each gamete carries only one allele",
+              "Explains the 3:1 monohybrid phenotypic ratio"
+            ]
+          },
+          {
+            "name": "Law of independent assortment",
+            "points": [
+              "Alleles of different genes assort independently when on different chromosomes",
+              "Explains the 9:3:3:1 dihybrid ratio",
+              "Fails for linked genes on the same chromosome"
+            ]
+          },
+          {
+            "name": "Deviation: incomplete dominance and codominance",
+            "points": [
+              "Incomplete dominance gives an intermediate phenotype (1:2:1)",
+              "Codominance expresses both alleles fully (AB blood group)",
+              "Multiple alleles and polygenic traits add further complexity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "Beyond Mendel",
+            "points": [
+              "Linkage and crossing over break independent assortment",
+              "Sex-linked inheritance explains X-linked disorders such as haemophilia",
+              "Epistasis and polygenic inheritance explain continuous traits"
+            ]
+          },
+          {
+            "name": "Quantitative anchors",
+            "points": [
+              "Monohybrid F2 phenotypic ratio 3:1, genotypic 1:2:1",
+              "Dihybrid F2 phenotypic ratio 9:3:3:1",
+              "Test cross with a homozygous recessive reveals an unknown genotype"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/human-physiology-and-homeostasis": {
+    "centralConcept": "Homeostasis — keeping the internal environment stable",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "Definition",
+            "points": [
+              "Homeostasis maintains internal conditions within narrow limits despite external change",
+              "Controlled variables include temperature, pH, blood glucose, water and ion balance",
+              "Failure of homeostasis is the basis of most disease"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: control systems",
+        "subtopics": [
+          {
+            "name": "Negative feedback",
+            "points": [
+              "A deviation triggers a response that reverses it",
+              "Receptor -> control centre -> effector loop",
+              "Examples: thermoregulation, blood glucose via insulin and glucagon, osmoregulation via ADH"
+            ]
+          },
+          {
+            "name": "Positive feedback",
+            "points": [
+              "Amplifies a deviation rather than reversing it",
+              "Examples: oxytocin in childbirth, blood clotting cascade",
+              "Usually self-limiting and tied to a definite endpoint"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded",
+        "subtopics": [
+          {
+            "name": "System integration",
+            "points": [
+              "Nervous control is fast and short-lived; endocrine control is slower and sustained",
+              "Liver, kidney, lungs and skin are the main homeostatic organs",
+              "Set points can be reset (fever raises the hypothalamic set point)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "class-11/biology/biomolecules-and-cell-biology/biotechnology-applications-and-ethical-considerations": {
+    "centralConcept": "Biotechnology applications and their ethical limits",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "What biotechnology is",
+            "points": [
+              "Using living organisms or their components to make useful products",
+              "Traditional (fermentation, selective breeding) vs modern (recombinant DNA, gene editing)",
+              "Core tools: restriction enzymes, vectors, host cells, transformation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: applications",
+        "subtopics": [
+          {
+            "name": "Medicine",
+            "points": [
+              "Recombinant insulin, growth hormone, interferons, vaccines",
+              "Gene therapy for monogenic disorders",
+              "Monoclonal antibodies for diagnosis and treatment"
+            ]
+          },
+          {
+            "name": "Agriculture",
+            "points": [
+              "Bt crops with built-in pest resistance",
+              "Golden rice as biofortification",
+              "Tissue culture and micropropagation for rapid clonal multiplication"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: ethics",
+        "subtopics": [
+          {
+            "name": "Ethical concerns",
+            "points": [
+              "GMO release: gene flow to wild relatives and effects on non-target species",
+              "Germline gene editing is heritable and widely considered off-limits",
+              "Equity of access: patented medicines and smallholder dependence on seed companies",
+              "Biosafety regulation and informed consent are the governance responses"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

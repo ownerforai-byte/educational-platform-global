@@ -541,5 +541,73 @@
       ],
       "answer": "Mitochondria and chloroplast; evidence: own DNA, 70S ribosomes, double membrane, independent division."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Eukaryotic cell architecture",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the boundary system",
+        "subtopics": [
+          {
+            "name": "Plasma membrane",
+            "points": [
+              "Fluid mosaic model (Singer and Nicolson, 1972): phospholipid bilayer with embedded proteins",
+              "Selectively permeable; controls what enters and leaves",
+              "Cholesterol and unsaturated tails tune fluidity"
+            ]
+          },
+          {
+            "name": "Cell wall (plants, fungi)",
+            "points": [
+              "Plant cell wall is mainly cellulose; fungal walls are chitin",
+              "Provides rigidity, prevents bursting under osmotic pressure",
+              "Middle lamella, primary wall and secondary wall layers"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: the interior",
+        "subtopics": [
+          {
+            "name": "Nucleus",
+            "points": [
+              "Nuclear envelope with pores controls nucleocytoplasmic traffic",
+              "Nucleolus is the ribosome assembly site",
+              "Chromatin is DNA plus histone proteins"
+            ]
+          },
+          {
+            "name": "Cytoplasm and cytoskeleton",
+            "points": [
+              "Cytosol is the aqueous matrix for glycolysis and many reactions",
+              "Microtubules give tracks for vesicle transport; microfilaments drive shape change and cytokinesis",
+              "Cytoskeleton maintains polarity and organelle positioning"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: plant vs animal",
+        "subtopics": [
+          {
+            "name": "Diagnostic differences",
+            "points": [
+              "Plant cells: cellulose wall, large central vacuole, chloroplasts, no centrioles in most higher plants",
+              "Animal cells: no wall, no chloroplasts, centrioles present, small temporary vacuoles",
+              "Both share nucleus, mitochondria, ER, Golgi, ribosomes, cytoskeleton"
+            ]
+          },
+          {
+            "name": "Transport across membranes",
+            "points": [
+              "Passive: simple diffusion and facilitated diffusion (no ATP)",
+              "Active: pumps such as Na+/K+-ATPase move ions against gradients using ATP",
+              "Bulk transport: endocytosis and exocytosis via vesicles"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

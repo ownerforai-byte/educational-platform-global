@@ -555,5 +555,73 @@
   "bounds": [
     "Stay inside this class 11 topic.",
     "Do not add an unsupported count."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Scope of biology — breadth of scale and depth of specialisation",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: the scale ladder",
+        "subtopics": [
+          {
+            "name": "Sub-cellular to organism",
+            "points": [
+              "Molecular biology and biochemistry sit at the smallest scale",
+              "Cell biology, histology and anatomy build upward in organisation",
+              "Physiology and developmental biology explain function and formation of the whole organism"
+            ]
+          },
+          {
+            "name": "Population to biosphere",
+            "points": [
+              "Genetics and evolution explain variation and change across generations",
+              "Ecology spans organism, population, community, ecosystem and biosphere",
+              "Conservation biology applies ecological theory to preventing loss"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: classical vs modern scope",
+        "subtopics": [
+          {
+            "name": "Classical fields",
+            "points": [
+              "Taxonomy, morphology, anatomy, embryology, palaeontology — largely descriptive origins",
+              "Systematics organises diversity into a predictive phylogenetic framework",
+              "Economic botany and zoology catalogued useful species"
+            ]
+          },
+          {
+            "name": "Modern fields",
+            "points": [
+              "Molecular biology, genomics, proteomics, metabolomics",
+              "Immunology, neurobiology, stem cell biology, synthetic biology",
+              "Bioinformatics and computational biology as the analysis layer over all of the above"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: where the frontier is",
+        "subtopics": [
+          {
+            "name": "Engineering life",
+            "points": [
+              "CRISPR-Cas9 made targeted genome editing routine and cheap",
+              "Synthetic biology designs circuits and organisms rather than only studying them",
+              "mRNA platform technology compressed vaccine development from years to months"
+            ]
+          },
+          {
+            "name": "Scope limits",
+            "points": [
+              "Biology cannot yet predict phenotype from genotype in most complex traits",
+              "Ecosystem-level prediction remains weak because interactions are nonlinear",
+              "Ethical and regulatory scope always trails technical scope"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

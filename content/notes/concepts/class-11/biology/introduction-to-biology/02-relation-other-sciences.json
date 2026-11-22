@@ -556,5 +556,73 @@
       ],
       "answer": "X-ray crystallography (a physics technique) provided the key diffraction pattern that revealed the DNA structure"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Interdependence of biology with other sciences",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation",
+        "subtopics": [
+          {
+            "name": "No science is isolated",
+            "points": [
+              "Living systems are physical-chemical systems, so biology inherits their laws",
+              "Measurement, modelling and statistics come from mathematics",
+              "Earth processes set the stage on which evolution and ecology operate"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: paired interfaces",
+        "subtopics": [
+          {
+            "name": "Chemistry interface",
+            "points": [
+              "Organic chemistry explains biomolecule structure and reactivity",
+              "Enzyme catalysis, pH and buffers are applied physical chemistry",
+              "Analytical chemistry (chromatography, spectroscopy) supplies the measurement tools"
+            ]
+          },
+          {
+            "name": "Physics interface",
+            "points": [
+              "Optics underlies microscopy; electron microscopy resolved organelles",
+              "Mechanics and fluid dynamics explain circulation, locomotion and plant water transport",
+              "Radioisotopes and radiation are both tools (tracers, imaging) and hazards (mutation)"
+            ]
+          },
+          {
+            "name": "Mathematics and computing interface",
+            "points": [
+              "Mendelian ratios are probability; population genetics is algebra and calculus",
+              "Sequence alignment and phylogenetics are algorithmic problems",
+              "Epidemiological models (SIR-type) guide public health decisions"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: convergence in practice",
+        "subtopics": [
+          {
+            "name": "Convergence examples",
+            "points": [
+              "X-ray crystallography (physics) plus chemistry solved the DNA double helix in 1953",
+              "PCR (chemistry) plus computation built modern diagnostics and forensics",
+              "Optogenetics combines optics, genetics and neurophysiology"
+            ]
+          },
+          {
+            "name": "Why it matters for exams",
+            "points": [
+              "Interdisciplinary questions are increasingly common in entrance papers",
+              "Answer with the mechanism from the borrowing science, then the biological consequence",
+              "Naming the interface explicitly earns marks that a vague answer does not"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

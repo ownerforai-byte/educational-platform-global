@@ -13,6 +13,7 @@
 
 import { HIGH_YIELD_TOPIC_BANK } from "./high-yield-topic-facts-core";
 import { HIGH_YIELD_TOPIC_BANK_BIOLOGY } from "./high-yield-topic-facts-biology";
+import { HIGH_YIELD_TOPIC_BANK_BIOLOGY_CELL } from "./high-yield-topic-facts-biology-cell";
 import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY } from "./high-yield-topic-facts-chemistry";
 import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC } from "./high-yield-topic-facts-chemistry-organic";
 import { HIGH_YIELD_TOPIC_BANK_LANGUAGES } from "./high-yield-topic-facts-languages";
@@ -46,6 +47,7 @@ export const ALL_HIGH_YIELD_TOPICS: HighYieldTopicData[] = [
   ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC,
   ...HIGH_YIELD_TOPIC_BANK_MATHEMATICS,
   ...HIGH_YIELD_TOPIC_BANK_BIOLOGY,
+  ...HIGH_YIELD_TOPIC_BANK_BIOLOGY_CELL,
   ...HIGH_YIELD_TOPIC_BANK_LANGUAGES,
 ];
 
@@ -61,7 +63,10 @@ registerHighYieldSubjectBank("chemistry", [
   ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY,
   ...HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC,
 ]);
-registerHighYieldSubjectBank("biology", HIGH_YIELD_TOPIC_BANK_BIOLOGY);
+registerHighYieldSubjectBank("biology", [
+  ...HIGH_YIELD_TOPIC_BANK_BIOLOGY,
+  ...HIGH_YIELD_TOPIC_BANK_BIOLOGY_CELL,
+]);
 registerHighYieldSubjectBank("mathematics", HIGH_YIELD_TOPIC_BANK_MATHEMATICS);
 registerHighYieldSubjectBank("nepali", HIGH_YIELD_TOPIC_BANK_LANGUAGES);
 registerHighYieldSubjectBank("english", HIGH_YIELD_TOPIC_BANK_LANGUAGES);

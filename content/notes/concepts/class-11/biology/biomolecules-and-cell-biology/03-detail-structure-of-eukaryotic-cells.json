@@ -595,5 +595,89 @@
       ],
       "answer": "Ribosome (RER) → RER → Golgi → secretory vesicle → plasma membrane → exocytosis"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Detailed organelle structure and function",
+    "branches": [
+      {
+        "topic": "Level 1 — Foundation: membranes and walls",
+        "subtopics": [
+          {
+            "name": "Cell membrane detail",
+            "points": [
+              "Phospholipid bilayer ~7-8 nm thick; hydrophilic heads outward, hydrophobic tails inward",
+              "Integral proteins span the bilayer; peripheral proteins sit on one face",
+              "Glycoproteins and glycolipids on the outer surface form the glycocalyx used in recognition"
+            ]
+          },
+          {
+            "name": "Cell wall detail",
+            "points": [
+              "Cellulose microfibrils in a hemicellulose and pectin matrix",
+              "Primary wall is thin and extensible; secondary wall is thick and lignified",
+              "Plasmodesmata are channels through walls connecting adjacent plant cells"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 2 — Core: organelle by organelle",
+        "subtopics": [
+          {
+            "name": "Mitochondria and plastids",
+            "points": [
+              "Mitochondrion: outer membrane, inner membrane with cristae, intermembrane space, matrix",
+              "Chloroplast: outer and inner membrane, stroma, thylakoid membranes stacked into grana",
+              "Both contain circular DNA and 70S ribosomes — evidence of endosymbiotic origin"
+            ]
+          },
+          {
+            "name": "Endomembrane organelles",
+            "points": [
+              "Rough ER studded with ribosomes for protein synthesis; smooth ER for lipid synthesis and detoxification",
+              "Golgi: cis and trans faces, glycosylation and sorting",
+              "Lysosomes contain hydrolytic enzymes at acidic pH; peroxisomes handle hydrogen peroxide"
+            ]
+          },
+          {
+            "name": "Nucleus and chromosomes",
+            "points": [
+              "Nuclear envelope is double with pores; nucleolus makes rRNA",
+              "Chromatin is nucleosomes (DNA wound on histone octamers)",
+              "Chromosome number is species-specific and constant"
+            ]
+          },
+          {
+            "name": "Cilia and flagella",
+            "points": [
+              "9+2 microtubule arrangement: nine doublets around a central pair",
+              "Dynein motors generate sliding that produces bending",
+              "Cilia are short and numerous; flagella are long and few"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Level 3 — Upgraded: functional integration",
+        "subtopics": [
+          {
+            "name": "Compartment logic",
+            "points": [
+              "Each organelle maintains a distinct internal pH and enzyme set",
+              "Lysosomal enzymes work at ~pH 5, protecting the cytosol at pH ~7.2",
+              "Membrane identity is set by lipid composition and surface protein markers"
+            ]
+          },
+          {
+            "name": "Cell inclusions",
+            "points": [
+              "Non-living accumulations: starch grains, oil droplets, pigment granules, crystals",
+              "Glycogen granules in liver and muscle",
+              "Inclusions are storage or waste, not organelles"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
