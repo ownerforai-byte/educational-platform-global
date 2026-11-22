@@ -334,7 +334,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Algebra · Full Notes",
     description:
-      "106 exercises solved in NEB answer style, 50 conceptual 2-mark questions, 12 reasoning drills (why/what/where), 9 fully worked long answers, formula sheet and traps.",
+      "130 exercises solved in NEB answer style, 50 conceptual 2-mark questions, 12 reasoning drills (why/what/where), 9 fully worked long answers, formula sheet and traps.",
     href: "/resources/mathematics-xi/unit-01-algebra.html",
     kind: "html",
   },
@@ -344,7 +344,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Trigonometry · Full Notes",
     description:
-      "50 inverse-circular and trigonometric-equation exercises solved, 46 conceptual questions, 12 reasoning drills, 7 long answers in general-value form (n ∈ ℤ).",
+      "66 inverse-circular and trigonometric-equation exercises solved, 46 conceptual questions, 12 reasoning drills, 7 long answers in general-value form (n ∈ ℤ).",
     href: "/resources/mathematics-xi/unit-02-trigonometry.html",
     kind: "html",
   },
@@ -354,7 +354,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Analytic Geometry · Full Notes",
     description:
-      "42 distance, bisector, pair-of-lines and 3-D coordinate exercises solved, 33 conceptual questions, 12 reasoning drills, 6 long answers.",
+      "54 distance, bisector, pair-of-lines and 3-D coordinate exercises solved, 33 conceptual questions, 12 reasoning drills, 6 long answers.",
     href: "/resources/mathematics-xi/unit-03-analytic-geometry.html",
     kind: "html",
   },
@@ -364,7 +364,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Vectors · Full Notes",
     description:
-      "44 dot/cross-product, collinearity, coplanarity and linear-independence exercises solved, 36 conceptual questions, 12 reasoning drills, 5 long answers.",
+      "56 dot/cross-product, collinearity, coplanarity and linear-independence exercises solved, 36 conceptual questions, 12 reasoning drills, 5 long answers.",
     href: "/resources/mathematics-xi/unit-04-vectors.html",
     kind: "html",
   },
@@ -374,7 +374,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Statistics & Probability · Full Notes",
     description:
-      "45 dispersion, skewness and probability exercises solved, 40 conceptual questions, 12 reasoning drills, 6 long answers.",
+      "58 dispersion, skewness and probability exercises solved, 40 conceptual questions, 12 reasoning drills, 6 long answers.",
     href: "/resources/mathematics-xi/unit-05-statistics-probability.html",
     kind: "html",
   },
@@ -384,7 +384,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Calculus · Full Notes",
     description:
-      "102 limit, continuity, differentiation, extrema and integration exercises solved, 42 conceptual questions, 12 reasoning drills, 8 long answers.",
+      "126 limit, continuity, differentiation, extrema and integration exercises solved, 42 conceptual questions, 12 reasoning drills, 8 long answers.",
     href: "/resources/mathematics-xi/unit-06-calculus.html",
     kind: "html",
   },
@@ -394,7 +394,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Computational Methods · Full Notes",
     description:
-      "42 bisection, Newton-Raphson, trapezoidal, Simpson, statics and dynamics exercises solved, 36 conceptual questions, 12 reasoning drills, 6 long answers.",
+      "60 bisection, Newton-Raphson, trapezoidal, Simpson, statics and dynamics exercises solved, 36 conceptual questions, 12 reasoning drills, 6 long answers.",
     href: "/resources/mathematics-xi/unit-07-computational-methods.html",
     kind: "html",
   },
