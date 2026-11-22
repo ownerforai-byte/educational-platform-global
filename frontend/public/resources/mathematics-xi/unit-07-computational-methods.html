@@ -36,6 +36,7 @@
 <li>Exercise 7.6 — Dynamics: motion under uniform acceleration</li>
 <li>Exercise 7.7 — Topic-by-topic extension</li>
 <li>Exercise 7.8 — Mixed question types, topic by topic</li>
+<li>Exercise 7.9 — Speed set, short answers for all topics</li>
 <li>Concept drills — why, what, where</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks</li>
@@ -682,6 +683,71 @@ s = (u + v)t/2 = (20 + 0)(4)/2</p>
 <p class="ans">Retardation 5 m/s², stopping distance 40 m</p>
 </div>
 </div>
+
+<!-- ============================================================ -->
+<h2>Exercise 7.9 — Speed set: 24 short answers, all topics</h2>
+
+<p class="lede">Formula-recall and one-step numerical items across all six topics. In the paper these are the marks that must take under a minute each.</p>
+
+<h3>Topic 1 — Bisection method</h3>
+<div class="item"><p class="q"><b>Q1.</b> f(x) = x² − 2. Find f(0) and f(2).</p>
+<div class="sol"><p class="work">0 − 2 and 4 − 2</p><p class="ans">−2 and 2</p></div></div>
+<div class="item"><p class="q"><b>Q2.</b> First midpoint of [1, 2].</p>
+<div class="sol"><p class="work">(1 + 2)/2</p><p class="ans">1.5</p></div></div>
+<div class="item"><p class="q"><b>Q3.</b> Bracket width after 4 bisection steps on [0, 1].</p>
+<div class="sol"><p class="work">1/2⁴</p><p class="ans">1/16 = 0.0625</p></div></div>
+<div class="item"><p class="q"><b>Q4.</b> What condition must the endpoints satisfy?</p>
+<div class="sol"><p class="work">f(a)f(b) &lt; 0</p><p class="ans">A sign change (with f continuous)</p></div></div>
+
+<h3>Topic 2 — Newton-Raphson method</h3>
+<div class="item"><p class="q"><b>Q5.</b> State the iteration formula.</p>
+<div class="sol"><p class="work">xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)</p><p class="ans">As written</p></div></div>
+<div class="item"><p class="q"><b>Q6.</b> For x² − 9 = 0 with x₀ = 4, find x₁.</p>
+<div class="sol"><p class="work">4 − (16 − 9)/8 = 4 − 0.875</p><p class="ans">3.125</p></div></div>
+<div class="item"><p class="q"><b>Q7.</b> What fails if f′(x₀) = 0?</p>
+<div class="sol"><p>The update divides by zero — the tangent is horizontal.</p><p class="ans">The method breaks down</p></div></div>
+<div class="item"><p class="q"><b>Q8.</b> Order of convergence of Newton-Raphson?</p>
+<div class="sol"><p class="work">error roughly squares each step</p><p class="ans">Quadratic</p></div></div>
+
+<h3>Topic 3 — Trapezoidal rule</h3>
+<div class="item"><p class="q"><b>Q9.</b> Write the trapezoidal formula.</p>
+<div class="sol"><p class="work">(h/2)[(y₀ + yₙ) + 2(y₁ + … + yₙ₋₁)]</p><p class="ans">As written</p></div></div>
+<div class="item"><p class="q"><b>Q10.</b> How does the error change if h doubles?</p>
+<div class="sol"><p class="work">error ∝ h²</p><p class="ans">It becomes 4 times larger</p></div></div>
+<div class="item"><p class="q"><b>Q11.</b> For 4 equal strips, how many ordinates are needed?</p>
+<div class="sol"><p class="work">n + 1</p><p class="ans">5 ordinates</p></div></div>
+<div class="item"><p class="q"><b>Q12.</b> Estimate ∫₀² 1 dx by the trapezoidal rule.</p>
+<div class="sol"><p class="work">constant function → exact</p><p class="ans">2</p></div></div>
+
+<h3>Topic 4 — Simpson's one-third rule</h3>
+<div class="item"><p class="q"><b>Q13.</b> Write Simpson's formula for 5 ordinates.</p>
+<div class="sol"><p class="work">(h/3)[y₀ + 4y₁ + 2y₂ + 4y₃ + y₄]</p><p class="ans">As written</p></div></div>
+<div class="item"><p class="q"><b>Q14.</b> Must n be odd or even?</p>
+<div class="sol"><p>Strips are paired to fit parabolas.</p><p class="ans">n must be even</p></div></div>
+<div class="item"><p class="q"><b>Q15.</b> Which polynomials does Simpson's rule integrate exactly?</p>
+<div class="sol"><p>It fits a parabola through three points.</p><p class="ans">All polynomials up to degree 3</p></div></div>
+<div class="item"><p class="q"><b>Q16.</b> Compare the error orders of the two rules.</p>
+<div class="sol"><p class="work">trapezoidal ∝ h², Simpson ∝ h⁴</p><p class="ans">Simpson's error shrinks far faster</p></div></div>
+
+<h3>Topic 5 — Statics: resultant and resolution</h3>
+<div class="item"><p class="q"><b>Q17.</b> Resultant of two 10 N forces at 90°.</p>
+<div class="sol"><p class="work">√(100 + 100)</p><p class="ans">10√2 ≈ 14.1 N</p></div></div>
+<div class="item"><p class="q"><b>Q18.</b> Components of 20 N at 45°.</p>
+<div class="sol"><p class="work">20cos45° = 20sin45° = 10√2</p><p class="ans">10√2 N each ≈ 14.1 N</p></div></div>
+<div class="item"><p class="q"><b>Q19.</b> State the equilibrium conditions for a point.</p>
+<div class="sol"><p class="work">ΣFₓ = 0 and ΣF_y = 0</p><p class="ans">As written</p></div></div>
+<div class="item"><p class="q"><b>Q20.</b> Cite the general resultant formula for an angle θ between two forces.</p>
+<div class="sol"><p class="work">R = √(P² + Q² + 2PQcosθ)</p><p class="ans">As written</p></div></div>
+
+<h3>Topic 6 — Dynamics: uniform acceleration</h3>
+<div class="item"><p class="q"><b>Q21.</b> State the three kinematic equations.</p>
+<div class="sol"><p class="work">v = u + at;  s = ut + ½at²;  v² = u² + 2as</p><p class="ans">As written</p></div></div>
+<div class="item"><p class="q"><b>Q22.</b> A body is dropped and falls 5 s (g = 10). Find the distance.</p>
+<div class="sol"><p class="work">s = ½(10)(25)</p><p class="ans">125 m</p></div></div>
+<div class="item"><p class="q"><b>Q23.</b> u = 10, a = −2, t = 3. Find v.</p>
+<div class="sol"><p class="work">10 − 6</p><p class="ans">4 m/s</p></div></div>
+<div class="item"><p class="q"><b>Q24.</b> What does a negative acceleration mean?</p>
+<div class="sol"><p>Velocity is decreasing along the chosen positive direction.</p><p class="ans">Retardation (deceleration)</p></div></div>
 
 <!-- ============================================================ -->
 <h2>Concept drills — why, what, where</h2>
