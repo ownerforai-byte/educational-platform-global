@@ -19,7 +19,10 @@ describe("assetlinks.json route", () => {
     expect(fingerprints).toContain(
       "5BF3921CD99DC1E7EB31CDCB26923857F66733EA609C29D747E1A7ED85C5E390",
     );
-    expect(fingerprints).toHaveLength(4);
+    expect(fingerprints).toContain(
+      "9DFE46804D11F96C5215E163AC063DE39A54B02294079EC03FFB3E4A441A0169",
+    );
+    expect(fingerprints).toHaveLength(5);
     expect(body[0]?.target?.package_name).toBe("com.ravikisan.platform");
     const raw = body[0]?.target?.sha256_cert_fingerprints ?? [];
     expect(raw.every((f: string) => /^[0-9A-Fa-f]{2}(:[0-9A-Fa-f]{2}){31}$/.test(f))).toBe(true);
