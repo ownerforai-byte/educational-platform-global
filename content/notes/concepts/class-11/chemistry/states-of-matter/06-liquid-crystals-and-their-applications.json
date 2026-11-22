@@ -6,43 +6,280 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:23.508Z",
   "notes": [
-    "# Liquid crystals and their applications\n\n## 1. Introduction\nChemical picture of **Liquid crystals and their applications** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the States of Matter fill pass.\n\n## 2. Concepts and definitions\n### Liquid crystals and their applications\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Liquid crystals and their applications — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Liquid crystals and their applications — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Liquid crystals and their applications — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Liquid crystals and their applications — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Matter Between Order and Melt\n\nLiquid crystals flow like liquids but order like crystals — and they answer to voltage. Discovered in 1888 (Reinitzer's cholesteryl benzoate), they now run every phone, laptop and TV screen: the same molecules that swirl in a beaker twist light on command.",
+    "## 2. Fundamental Concepts\n\n### 2.1 What a liquid crystal is\n\n- A **mesophase**: between solid crystal (full 3-D positional + orientational order) and isotropic liquid (no order) — molecules keep **orientational order** (roughly parallel long axes) while gaining **translational freedom**.\n- Formed by **thermotropic** liquid crystals (temperature-driven; e.g. cholesteryl benzoate, PAA) and **lyotropic** ones (concentration-driven in solvents; e.g. soap in water, DNA solutions).\n- Typically long, rod-like, rigid molecules with polar groups at the ends.\n\n### 2.2 The three mesophase types\n\n- **Nematic:** molecules aligned parallel but positions random — \"threadlike\"; the workhorse of LCDs (least ordered).\n- **Smectic:** molecules aligned **and** arranged in layers — \"soap-like\"; more ordered, can slide layer over layer.\n- **Cholesteric (chiral nematic):** nematic layers whose alignment direction **rotates** layer to layer in a helix — selective reflection of colours; used in temperature sensors.\n\n### 2.3 Optical and electro-optical behaviour\n\n- Liquid crystals are **anisotropic** (birefringent): refractive index differs along and across the molecular axis — they rotate polarised light.\n- **Electro-optical switching:** an applied electric field reorients the molecules (they are polar or become polarised), changing the optical texture — the operating principle of the LCD: voltage turns pixels dark or clear between crossed polarisers.\n\n### 2.4 Applications\n\n- **LCD displays:** watches, calculators, phones, laptops, TVs — low power, voltage-controlled pixels.\n- **Thermography:** cholesteric films reflect wavelength set by helix pitch, which shifts with temperature — liquid-crystal thermometers, fever strips, stress maps, \"mood\" rings.\n- **Other:** smart windows, optical switches, medical imaging contrast research, display of circuit faults (hot spots glow through a cholesteric film).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Liquid crystal (mesophase)** | State with orientational but not full positional order | Cholesteryl benzoate |\n| **Thermotropic** | Mesophase driven by temperature | PAA, cholesteryl esters |\n| **Lyotropic** | Mesophase driven by concentration in solvent | Soap-water systems |\n| **Nematic** | Parallel alignment, random positions | LCD workhorse |\n| **Cholesteric** | Helically rotating nematic layers | Temperature indicators |",
+    "## 4. Detailed Explanation\n\n### 4.1 The order ladder\n\n- Crystal (full order) → smectic (layers) → nematic (alignment only) → isotropic liquid (none). Heating cholesteryl benzoate walks down this ladder: crystal → smectic at 145.5 °C → nematic → clear liquid at 178.5 °C — the milky intermediate range Reinitzer noticed.\n\n### 4.2 Why displays work\n\n- Between two crossed polarisers, an untwisted nematic cell either twists the light 90° (transparent) or, under voltage, aligns with the field and stops rotating it (dark). Each pixel is a tiny sandwich; a thin-film transistor addresses millions of them 60 times a second.\n\n### 4.3 Why temperature sensing works\n\n- The cholesteric helix pitch depends delicately on temperature; the reflected colour shifts through the spectrum as pitch changes — a visual thermometer with ~0.1 °C resolution.",
+    "## 5. Comparison Tables\n\n**The three mesophases**\n\n| Mesophase | Order | Mobility | Signature use |\n|---|---|---|---|\n| Smectic | Aligned + layered | Layers slide | Soaps, model systems |\n| Nematic | Aligned only | Free flow | LCDs |\n| Cholesteric | Aligned + helix twist | Free flow | Thermography |\n\n**Liquid crystal vs true liquid vs crystal**\n\n| Basis | Crystal | Liquid crystal | Liquid |\n|---|---|---|---|\n| Orientational order | Yes | Yes | No |\n| Positional order | Yes | Partial (smectic) / none | No |\n| Flow | No | Yes | Yes |\n| Optical behaviour | Anisotropic | Anisotropic | Isotropic |",
+    "## 6. Common Confusions\n\n**Liquid crystals are not liquids with crystals suspended:** they are a genuine thermodynamic phase of the pure substance — the milkiness of the mesophase is scattering by ordered domains, not particles.",
+    "**Nematic ≠ cholesteric:** the cholesteric adds a helical superstructure; only it shows the colour-play thermometry.",
+    "## 7. Exam Application\n\n**NEB-style (3m): What are liquid crystals? Name the types of mesophases and state two applications.** — Liquid crystals are substances that flow like liquids yet retain some molecular order like crystals (a mesophase between solid and liquid), typically formed by long rod-like molecules; they can be thermotropic (temperature-driven, e.g. cholesteryl benzoate) or lyotropic (concentration-driven, e.g. soap solutions). Mesophase types: **nematic** (parallel alignment, random positions), **smectic** (aligned layers), **cholesteric** (helically twisting layers). Applications: **LCD displays** (voltage reorients molecules between polarisers, switching pixels in watches, phones, TVs) and **thermography** (cholesteric films reflect temperature-dependent colours — fever strips, circuit hot-spot detection).",
+    "**NEB-style (2m): Why is cholesteryl benzoate called a thermotropic liquid crystal?** — Its mesophase appears purely as a function of temperature: on heating, the crystal melts at 145.5 °C into a milky smectic/nematic mesophase which clears to an isotropic liquid at 178.5 °C — the phase transitions are temperature-driven, hence \"thermotropic\" (contrast lyotropic, where solvent concentration drives the mesophase)."
   ],
   "practice": [
-    "Distinguish thermotropic from lyotropic liquid crystals and describe nematic, smectic and cholesteric mesophases.",
-    "Explain the working of a twisted-nematic liquid crystal display.",
-    "List four applications of liquid crystals in everyday life and industry.",
-    "Explain how liquid crystals measure temperature and map thermal hot spots.",
-    "State the limitations of liquid-crystal materials in devices."
+    "Distinguish nematic, smectic and cholesteric mesophases by their molecular order.",
+    "Explain how an LCD pixel switches between bright and dark.",
+    "Why do soap solutions form lyotropic mesophases while PAA does not?"
   ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"Liquid crystals and their applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "A liquid crystal is a state that:",
       "options": [
-        "True",
-        "False"
+        "Is fully crystalline",
+        "Flows like a liquid with some crystal order",
+        "Is a gas",
+        "Is a solution"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "The mesophase - orientational order plus mobility."
+    },
+    {
+      "question": "Thermotropic liquid crystals are driven by:",
+      "options": [
+        "Solvent concentration",
+        "Temperature",
+        "Pressure",
+        "Light"
+      ],
+      "answer": "B",
+      "explanation": "Lyotropic ones are concentration-driven."
+    },
+    {
+      "question": "The mesophase used in LCDs is:",
+      "options": [
+        "Smectic",
+        "Nematic",
+        "Cholesteric",
+        "Isotropic"
+      ],
+      "answer": "B",
+      "explanation": "Aligned, mobile, voltage-responsive."
+    },
+    {
+      "question": "Cholesteric mesophases show temperature-dependent:",
+      "options": [
+        "Density",
+        "Colour",
+        "Conductivity",
+        "Odour"
+      ],
+      "answer": "B",
+      "explanation": "Helix pitch shifts the reflected wavelength."
+    },
+    {
+      "question": "In a nematic phase, molecules:",
+      "options": [
+        "Form layers",
+        "Align parallel with random positions",
+        "Lock in a lattice",
+        "Tumble randomly"
+      ],
+      "answer": "B",
+      "explanation": "Orientation without positional order."
+    },
+    {
+      "question": "Cholesteryl benzoate becomes mesophase between:",
+      "options": [
+        "100-120 C",
+        "145.5-178.5 C",
+        "200-250 C",
+        "0-50 C"
+      ],
+      "answer": "B",
+      "explanation": "Reinitzer's classic observation."
+    },
+    {
+      "question": "An LCD pixel switches by:",
+      "options": [
+        "Melting",
+        "Voltage reorienting molecules",
+        "Heating",
+        "Freezing"
+      ],
+      "answer": "B",
+      "explanation": "Field alignment changes light rotation between polarisers."
+    },
+    {
+      "question": "Soap in water forms which type of liquid crystal?",
+      "options": [
+        "Thermotropic",
+        "Lyotropic",
+        "Cholesteric only",
+        "None"
+      ],
+      "answer": "B",
+      "explanation": "Concentration-driven mesophase."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Two orderings define liquid crystals — positional disorder with orientational order; they flow like liquids but diffract like crystals.",
-    "Trick 2: Two classic examples: cholesteryl benzoate (thermotropic, first discovered) and soap/water mixtures (lyotropic) — name both with their class.",
-    "Trick 3: Applications list for 2 marks: LCD displays, temperature sensors (colour change), medical thermography for tumours."
+    "Order ladder: \"smectic layers, nematic lines, cholesteric spiral\". Thermotropic = temperature; lyotropic = soap. LCD = nematic + voltage; thermometry = cholesteric."
   ],
   "keyPoints": [
-    "Liquid crystals: intermediate state with liquid flow and crystal-like optical order.",
-    "Thermotropic: order changes with temperature; lyotropic: with concentration.",
-    "Used in LCDs, digital thermometers and thermal mapping of the body."
+    "Mesophase: orientational order kept, positional freedom gained; rod-like molecules. Thermotropic (T-driven: cholesteryl benzoate 145.5–178.5 °C, PAA) vs lyotropic (concentration: soaps). Nematic (alignment only, LCDs), smectic (layers), cholesteric (helix, thermometry). Anisotropic optics; voltage reorients molecules — LCD principle. Applications: displays, thermography (fever strips, hot-spot maps), smart windows."
   ],
   "practiceQuestions": [
-    "Q. What are liquid crystals? Give one example. (2 marks) — states with orientational order but liquid mobility; cholesteryl benzoate.",
-    "Q. Give two applications of liquid crystals. (1 mark) — LCD screens; colour-change thermometry."
+    "**NEB-style (3m): What are liquid crystals? Name the types of mesophases with one characteristic of each, and state two applications.** — **Liquid crystals** are substances that flow like liquids but retain some of the molecular order of crystals — a mesophase between solid and liquid, usually built from long, rigid, rod-like molecules that keep their long axes roughly parallel while their centres move freely. They may be **thermotropic** (mesophase driven by temperature, e.g. cholesteryl benzoate, PAA) or **lyotropic** (driven by concentration in a solvent, e.g. soap in water). **Mesophase types:** **nematic** — molecules aligned parallel but positions random (\"thread-like\"); the least ordered and the most fluid, used in LCDs. **Smectic** — molecules aligned and arranged in layers that can slide over one another (\"soap-like\"); more ordered. **Cholesteric** — nematic layers whose alignment direction rotates in a helix from layer to layer; reflects selective colours. **Applications:** (1) **LCD displays** — an applied voltage reorients the nematic molecules, changing how they rotate polarised light between crossed polarisers, switching watch, phone and TV pixels; (2) **thermography** — cholesteric films reflect a colour determined by helix pitch, which shifts with temperature, giving liquid-crystal thermometers, fever strips and circuit hot-spot detectors.",
+    "**NEB-style (2m): Why is cholesteryl benzoate called a thermotropic liquid crystal?** — Because its mesophase is produced purely by **temperature**: on heating, solid cholesteryl benzoate melts at 145.5 °C into a turbid, fluid mesophase (smectic then nematic) and clears into an isotropic liquid at 178.5 °C. The ordered-flowing state exists only within that temperature interval — no solvent concentration is involved — hence \"thermotropic\". This contrasts with lyotropic systems like soap in water, where the mesophase depends on solvent concentration."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Matter Between Order and Melt\n\nLiquid crystals flow like liquids but order like crystals — and they answer to voltage. Discovered in 1888 (Reinitzer's cholesteryl benzoate), they now run every phone, laptop and TV screen: the same molecules that swirl in a beaker twist light on command.",
+      "## 2. Fundamental Concepts\n\n### 2.1 What a liquid crystal is\n\n- A **mesophase**: between solid crystal (full 3-D positional + orientational order) and isotropic liquid (no order) — molecules keep **orientational order** (roughly parallel long axes) while gaining **translational freedom**.\n- Formed by **thermotropic** liquid crystals (temperature-driven; e.g. cholesteryl benzoate, PAA) and **lyotropic** ones (concentration-driven in solvents; e.g. soap in water, DNA solutions).\n- Typically long, rod-like, rigid molecules with polar groups at the ends.\n\n### 2.2 The three mesophase types\n\n- **Nematic:** molecules aligned parallel but positions random — \"threadlike\"; the workhorse of LCDs (least ordered).\n- **Smectic:** molecules aligned **and** arranged in layers — \"soap-like\"; more ordered, can slide layer over layer.\n- **Cholesteric (chiral nematic):** nematic layers whose alignment direction **rotates** layer to layer in a helix — selective reflection of colours; used in temperature sensors.\n\n### 2.3 Optical and electro-optical behaviour\n\n- Liquid crystals are **anisotropic** (birefringent): refractive index differs along and across the molecular axis — they rotate polarised light.\n- **Electro-optical switching:** an applied electric field reorients the molecules (they are polar or become polarised), changing the optical texture — the operating principle of the LCD: voltage turns pixels dark or clear between crossed polarisers.\n\n### 2.4 Applications\n\n- **LCD displays:** watches, calculators, phones, laptops, TVs — low power, voltage-controlled pixels.\n- **Thermography:** cholesteric films reflect wavelength set by helix pitch, which shifts with temperature — liquid-crystal thermometers, fever strips, stress maps, \"mood\" rings.\n- **Other:** smart windows, optical switches, medical imaging contrast research, display of circuit faults (hot spots glow through a cholesteric film).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Liquid crystal (mesophase)** | State with orientational but not full positional order | Cholesteryl benzoate |\n| **Thermotropic** | Mesophase driven by temperature | PAA, cholesteryl esters |\n| **Lyotropic** | Mesophase driven by concentration in solvent | Soap-water systems |\n| **Nematic** | Parallel alignment, random positions | LCD workhorse |\n| **Cholesteric** | Helically rotating nematic layers | Temperature indicators |",
+      "## 4. Detailed Explanation\n\n### 4.1 The order ladder\n\n- Crystal (full order) → smectic (layers) → nematic (alignment only) → isotropic liquid (none). Heating cholesteryl benzoate walks down this ladder: crystal → smectic at 145.5 °C → nematic → clear liquid at 178.5 °C — the milky intermediate range Reinitzer noticed.\n\n### 4.2 Why displays work\n\n- Between two crossed polarisers, an untwisted nematic cell either twists the light 90° (transparent) or, under voltage, aligns with the field and stops rotating it (dark). Each pixel is a tiny sandwich; a thin-film transistor addresses millions of them 60 times a second.\n\n### 4.3 Why temperature sensing works\n\n- The cholesteric helix pitch depends delicately on temperature; the reflected colour shifts through the spectrum as pitch changes — a visual thermometer with ~0.1 °C resolution.",
+      "## 5. Comparison Tables\n\n**The three mesophases**\n\n| Mesophase | Order | Mobility | Signature use |\n|---|---|---|---|\n| Smectic | Aligned + layered | Layers slide | Soaps, model systems |\n| Nematic | Aligned only | Free flow | LCDs |\n| Cholesteric | Aligned + helix twist | Free flow | Thermography |\n\n**Liquid crystal vs true liquid vs crystal**\n\n| Basis | Crystal | Liquid crystal | Liquid |\n|---|---|---|---|\n| Orientational order | Yes | Yes | No |\n| Positional order | Yes | Partial (smectic) / none | No |\n| Flow | No | Yes | Yes |\n| Optical behaviour | Anisotropic | Anisotropic | Isotropic |",
+      "## 6. Common Confusions\n\n**Liquid crystals are not liquids with crystals suspended:** they are a genuine thermodynamic phase of the pure substance — the milkiness of the mesophase is scattering by ordered domains, not particles.",
+      "**Nematic ≠ cholesteric:** the cholesteric adds a helical superstructure; only it shows the colour-play thermometry.",
+      "## 7. Exam Application\n\n**NEB-style (3m): What are liquid crystals? Name the types of mesophases and state two applications.** — Liquid crystals are substances that flow like liquids yet retain some molecular order like crystals (a mesophase between solid and liquid), typically formed by long rod-like molecules; they can be thermotropic (temperature-driven, e.g. cholesteryl benzoate) or lyotropic (concentration-driven, e.g. soap solutions). Mesophase types: **nematic** (parallel alignment, random positions), **smectic** (aligned layers), **cholesteric** (helically twisting layers). Applications: **LCD displays** (voltage reorients molecules between polarisers, switching pixels in watches, phones, TVs) and **thermography** (cholesteric films reflect temperature-dependent colours — fever strips, circuit hot-spot detection).",
+      "**NEB-style (2m): Why is cholesteryl benzoate called a thermotropic liquid crystal?** — Its mesophase appears purely as a function of temperature: on heating, the crystal melts at 145.5 °C into a milky smectic/nematic mesophase which clears to an isotropic liquid at 178.5 °C — the phase transitions are temperature-driven, hence \"thermotropic\" (contrast lyotropic, where solvent concentration drives the mesophase)."
+    ],
+    "keyPoints": [
+      "Mesophase: orientational order kept, positional freedom gained; rod-like molecules. Thermotropic (T-driven: cholesteryl benzoate 145.5–178.5 °C, PAA) vs lyotropic (concentration: soaps). Nematic (alignment only, LCDs), smectic (layers), cholesteric (helix, thermometry). Anisotropic optics; voltage reorients molecules — LCD principle. Applications: displays, thermography (fever strips, hot-spot maps), smart windows."
+    ],
+    "importantConcepts": [
+      "The order ladder — crystal → smectic → nematic → liquid — is entropy's staircase: each step trades a little order for a little mobility, and applications pick the step they need."
+    ],
+    "examples": [
+      "***The fever strip*** — a cholesteric film on a child's forehead reads 37 vs 39 °C as a colour shift: helix pitch responds to 0.1 °C changes."
+    ],
+    "universalFacts": [
+      "Cell membranes are lyotropic liquid crystals — lipid bilayers flow like fluids while keeping their molecular orientation; life runs on a mesophase."
+    ],
+    "importantStatements": [
+      "\"Liquid crystals possess some of the order of a crystal and some of the mobility of a liquid — a state intermediate between the two.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on liquid crystals exists in the current bank; all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Order ladder: \"smectic layers, nematic lines, cholesteric spiral\". Thermotropic = temperature; lyotropic = soap. LCD = nematic + voltage; thermometry = cholesteric."
+    ],
+    "examNotes": [
+      "Name all three mesophases with one-line descriptions and give two applications with their working principle — the principle (voltage reorientation; helix pitch vs T) is what separates a 3-mark answer from a list."
+    ],
+    "formulas": [
+      "- Cholesteryl benzoate transitions: crystal 145.5 °C → mesophase → 178.5 °C clear liquid\n- LCD: voltage reorients nematic molecules between crossed polarisers\n- Cholesteric: reflected colour set by helix pitch, pitch f(T)"
+    ],
+    "practice": [
+      "Distinguish nematic, smectic and cholesteric mesophases by their molecular order.",
+      "Explain how an LCD pixel switches between bright and dark.",
+      "Why do soap solutions form lyotropic mesophases while PAA does not?"
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): What are liquid crystals? Name the types of mesophases with one characteristic of each, and state two applications.** — **Liquid crystals** are substances that flow like liquids but retain some of the molecular order of crystals — a mesophase between solid and liquid, usually built from long, rigid, rod-like molecules that keep their long axes roughly parallel while their centres move freely. They may be **thermotropic** (mesophase driven by temperature, e.g. cholesteryl benzoate, PAA) or **lyotropic** (driven by concentration in a solvent, e.g. soap in water). **Mesophase types:** **nematic** — molecules aligned parallel but positions random (\"thread-like\"); the least ordered and the most fluid, used in LCDs. **Smectic** — molecules aligned and arranged in layers that can slide over one another (\"soap-like\"); more ordered. **Cholesteric** — nematic layers whose alignment direction rotates in a helix from layer to layer; reflects selective colours. **Applications:** (1) **LCD displays** — an applied voltage reorients the nematic molecules, changing how they rotate polarised light between crossed polarisers, switching watch, phone and TV pixels; (2) **thermography** — cholesteric films reflect a colour determined by helix pitch, which shifts with temperature, giving liquid-crystal thermometers, fever strips and circuit hot-spot detectors.",
+      "**NEB-style (2m): Why is cholesteryl benzoate called a thermotropic liquid crystal?** — Because its mesophase is produced purely by **temperature**: on heating, solid cholesteryl benzoate melts at 145.5 °C into a turbid, fluid mesophase (smectic then nematic) and clears into an isotropic liquid at 178.5 °C. The ordered-flowing state exists only within that temperature interval — no solvent concentration is involved — hence \"thermotropic\". This contrasts with lyotropic systems like soap in water, where the mesophase depends on solvent concentration."
+    ]
+  },
+  "importantConcepts": [
+    "The order ladder — crystal → smectic → nematic → liquid — is entropy's staircase: each step trades a little order for a little mobility, and applications pick the step they need."
+  ],
+  "examples": [
+    "***The fever strip*** — a cholesteric film on a child's forehead reads 37 vs 39 °C as a colour shift: helix pitch responds to 0.1 °C changes."
+  ],
+  "universalFacts": [
+    "Cell membranes are lyotropic liquid crystals — lipid bilayers flow like fluids while keeping their molecular orientation; life runs on a mesophase."
+  ],
+  "importantStatements": [
+    "\"Liquid crystals possess some of the order of a crystal and some of the mobility of a liquid — a state intermediate between the two.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on liquid crystals exists in the current bank; all items above are NEB-style practice."
+  ],
+  "examNotes": [
+    "Name all three mesophases with one-line descriptions and give two applications with their working principle — the principle (voltage reorientation; helix pitch vs T) is what separates a 3-mark answer from a list."
+  ],
+  "formulas": [
+    "- Cholesteryl benzoate transitions: crystal 145.5 °C → mesophase → 178.5 °C clear liquid\n- LCD: voltage reorients nematic molecules between crossed polarisers\n- Cholesteric: reflected colour set by helix pitch, pitch f(T)"
+  ],
+  "summary": "Liquid crystals are matter's compromise: **flow like a liquid, order like a crystal**. Long rod-like molecules keep their parallel alignment while surrendering their lattice positions — a mesophase reachable by heat (**thermotropic**: cholesteryl benzoate milky between 145.5 and 178.5 °C) or by solvent concentration (**lyotropic**: soaps). The order ladder runs **smectic** (aligned layers) → **nematic** (alignment alone — the LCD workhorse) → **cholesteric** (alignment with a helical twist — the colour-shifting thermometer), each step trading order for mobility. Their anisotropic optics make them light-benders, and their polar rods answer voltage: an electric field reorients the molecules between crossed polarisers, flipping pixels in every watch, phone and television. Cholesteric helix pitch answers temperature instead, reflecting colours fine enough to read fevers and find hot solder joints. From Reinitzer's cloudy benzoate to the screen this text may be read on, the mesophase turned order into an on/off switch.",
+  "mcs": [
+    {
+      "question": "A liquid crystal is a state that:",
+      "options": [
+        "Is fully crystalline",
+        "Flows like a liquid with some crystal order",
+        "Is a gas",
+        "Is a solution"
+      ],
+      "answer": "B",
+      "explanation": "The mesophase - orientational order plus mobility."
+    },
+    {
+      "question": "Thermotropic liquid crystals are driven by:",
+      "options": [
+        "Solvent concentration",
+        "Temperature",
+        "Pressure",
+        "Light"
+      ],
+      "answer": "B",
+      "explanation": "Lyotropic ones are concentration-driven."
+    },
+    {
+      "question": "The mesophase used in LCDs is:",
+      "options": [
+        "Smectic",
+        "Nematic",
+        "Cholesteric",
+        "Isotropic"
+      ],
+      "answer": "B",
+      "explanation": "Aligned, mobile, voltage-responsive."
+    },
+    {
+      "question": "Cholesteric mesophases show temperature-dependent:",
+      "options": [
+        "Density",
+        "Colour",
+        "Conductivity",
+        "Odour"
+      ],
+      "answer": "B",
+      "explanation": "Helix pitch shifts the reflected wavelength."
+    },
+    {
+      "question": "In a nematic phase, molecules:",
+      "options": [
+        "Form layers",
+        "Align parallel with random positions",
+        "Lock in a lattice",
+        "Tumble randomly"
+      ],
+      "answer": "B",
+      "explanation": "Orientation without positional order."
+    },
+    {
+      "question": "Cholesteryl benzoate becomes mesophase between:",
+      "options": [
+        "100-120 C",
+        "145.5-178.5 C",
+        "200-250 C",
+        "0-50 C"
+      ],
+      "answer": "B",
+      "explanation": "Reinitzer's classic observation."
+    },
+    {
+      "question": "An LCD pixel switches by:",
+      "options": [
+        "Melting",
+        "Voltage reorienting molecules",
+        "Heating",
+        "Freezing"
+      ],
+      "answer": "B",
+      "explanation": "Field alignment changes light rotation between polarisers."
+    },
+    {
+      "question": "Soap in water forms which type of liquid crystal?",
+      "options": [
+        "Thermotropic",
+        "Lyotropic",
+        "Cholesteric only",
+        "None"
+      ],
+      "answer": "B",
+      "explanation": "Concentration-driven mesophase."
+    }
   ]
 }

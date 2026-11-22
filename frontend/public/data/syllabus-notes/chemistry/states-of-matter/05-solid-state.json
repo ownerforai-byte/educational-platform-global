@@ -5,28 +5,17 @@
   "topicTitle": "Solid state: types of solids, amorphous and crystalline solids",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning of the solid state",
-    "A solid has a definite shape and volume because its constituent particles are held in fixed mean positions by strong intermolecular (or interatomic/ionic) forces. The particles can only vibrate about their positions, so solids are rigid, practically incompressible and diffuse extremely slowly. Solids are classified by the *arrangement* of particles (crystalline vs amorphous) and by the *nature of the binding force* (ionic, covalent, molecular, metallic, hydrogen-bonded).",
-    "### 2. Crystalline solids",
-    "The particles are arranged in a regular, repeating three-dimensional pattern called a **crystal lattice**, which extends over a long range (long-range order). Properties: definite geometrical shape (crystal habit), sharp melting point, cleavage along definite planes, anisotropic physical properties (refractive index, thermal expansion, conductivity differ along different directions) and a characteristic X-ray diffraction pattern. Examples: NaCl, KCl, sugar, quartz, diamond, ice, alum, copper.",
-    "### 3. Types of crystalline solids (by binding force)",
-    "• **Ionic:** ions held by strong electrostatic forces (NaCl, CaF₂) — hard, brittle, high melting point, non-conducting as solids but conducting when molten or in solution, soluble in polar solvents.",
-    "• **Covalent (network/atomic):** atoms joined by a continuous network of covalent bonds (diamond, graphite, SiC, quartz) — extremely hard, very high melting point, usually insulators or semiconductors (graphite conducts).",
-    "• **Molecular:** molecules held by weak van der Waals forces or hydrogen bonds (iodine, dry ice, naphthalene, sugar, ice) — soft, low melting point, volatile, poor conductors.",
-    "• **Metallic:** positive ion cores in a sea of delocalised electrons (Na, Cu, Fe) — lustrous, malleable, ductile, good conductors of heat and electricity, melting points from very low (Hg, Ga) to very high (W).",
-    "### 4. Amorphous solids",
-    "Amorphous solids have only short-range order — the particles are randomly arranged over long distances, so there is no definite lattice. Properties: no definite geometrical shape, no sharp melting point (they soften gradually over a temperature range and have a glass-transition temperature Tg), isotropic properties, irregular cleavage and a broad diffuse X-ray pattern. They are described as pseudo-solids or **supercooled liquids** because their particles can flow very slowly. Examples: glass, rubber, plastics, amorphous sulfur and selenium, cellophane.",
-    "### 5. Crystalline versus amorphous (comparison points)",
-    "Melting point: sharp vs gradual; order: long-range vs short-range; shape: definite geometry vs irregular; cleavage: definite planes vs irregular; physical properties: anisotropic vs isotropic; X-ray diffraction: sharp lines vs broad halos; thermodynamic stability: stable vs metastable; examples: NaCl, diamond vs glass, rubber.",
-    "### 6. Isotropy and anisotropy",
-    "A substance is isotropic when a physical property has the same value in all directions (amorphous solids, liquids, gases) and anisotropic when the property depends on direction (single crystals). For example the refractive index of quartz differs along different crystallographic axes, and graphite conducts electricity along its layers but not across them.",
-    "### 7. Applications",
-    "• **Single crystals** are grown for technology — Czochralski-pulled silicon and germanium for semiconductors, quartz for oscillators and watches, sapphire for optical windows, and organic crystals for lasers and detectors.",
-    "• Ionic and molecular crystals are the basis of the salt, sugar, fertiliser and pharmaceutical industries (recrystallisation is the standard purification method; crystal polymorphism controls drug dissolution).",
-    "• Amorphous solids find wide use precisely because of their isotropic, easy-to-shape nature — window and container glass, optical fibres, plastics, rubber, amorphous silicon solar cells and metallic glasses.",
-    "• Diamond, SiC and quartz illustrate structure-property relations: giant covalent lattices give extreme hardness and high melting points used in abrasives, cutting tools and refractories.",
-    "### 8. Limitations",
-    "The crystalline/amorphous division is not sharp: most materials are polycrystalline or semi-crystalline (plastics, silk, cotton, metals) with both ordered and disordered regions, so the perfect crystal is an idealisation. Anisotropy appears only in single crystals — a polycrystalline aggregate usually behaves isotropically in bulk. The classification by binding force is itself approximate, since many crystals show mixed bonding (graphite: covalent + van der Waals; ice: covalent + hydrogen bonding), and amorphous solids are **metastable**, so their properties drift with time (glass devitrification) and depend on thermal history rather than on composition alone."
+    "## 1. Topic Introduction — Order You Can Hold\n\nSolids resist: fixed shape, fixed volume, molecules locked in place. But \"solid\" hides two architectures — the repeating lattice of crystals and the frozen chaos of glasses — and the classification by bonding (ionic, molecular, covalent, metallic) explains why diamond scratches glass, ice floats, and copper wires bend without breaking.",
+    "## 2. Fundamental Concepts\n\n### 2.1 What makes a solid\n\n- Particles (atoms, ions or molecules) are packed in **fixed positions** with only vibrational motion about them; strong cohesive forces give **definite shape and volume**, negligible compressibility, and high density compared with gases.\n\n### 2.2 Crystalline vs amorphous\n\n- **Crystalline:** long-range **repeating order** (lattice); sharp melting point; anisotropic (properties differ with direction); cleave along flat faces. Examples: NaCl, quartz, diamond, metals, sugar.\n- **Amorphous (supercooled liquid):** only short-range order; melts (softens) over a **range of temperature**; **isotropic** (same properties in all directions); irregular fracture. Examples: glass, plastic, rubber, amorphous silica, coal.\n- Quartz vs glass is the classic pair: same composition (SiO₂), different architecture.\n\n### 2.3 Classification by bonding (four types)\n\n| Type | Units | Bonding | Properties | Examples |\n|---|---|---|---|---|\n| **Ionic** | Cations + anions | Electrostatic | Hard, brittle, high mp, conduct when molten/aqueous | NaCl, MgO, CaF₂ |\n| **Molecular** | Molecules | vdW / H-bonds / dipole | Soft, low mp, non-conducting | Ice, I₂, dry ice, naphthalene |\n| **Covalent (network)** | Atoms | Directional covalent bonds | Very hard, very high mp, non-conducting (except graphite) | Diamond, SiO₂, SiC |\n| **Metallic** | Cations + electron sea | Metallic bonding | Malleable, ductile, conducting, lustrous | Cu, Fe, Al, Ag |\n\n### 2.4 Isotropy vs anisotropy\n\n- **Anisotropic (crystals):** refractive index, conductivity etc. differ along different lattice directions — the ordered array is directional.\n- **Isotropic (amorphous + liquids + gases):** properties identical in every direction — random arrangement averages out.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Crystalline solid** | Long-range periodic order; sharp mp | NaCl, quartz |\n| **Amorphous solid** | Short-range order only; softening range | Glass, plastic |\n| **Anisotropy** | Direction-dependent properties | Quartz conductivity |\n| **Isotropy** | Direction-independent properties | Glass |\n| **Network solid** | Atoms joined by covalent bonds throughout | Diamond, SiO₂ |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why glass is called a supercooled liquid\n\n- Amorphous solids lack a lattice; on heating they soften progressively rather than melt sharply — the behaviour of an extremely viscous liquid frozen before it could order. Old cathedral windows are (marginally) thicker at the bottom for this reason.\n\n### 4.2 Reading properties off the bonding table\n\n- **NaCl shatters** (ionic: sliding layers bring like charges together) but **copper bends** (metallic: electron sea adjusts) — the sliding test from topic 37.\n- **Diamond vs graphite:** both pure carbon; diamond is a 3-D network (hardest natural solid, insulator), graphite has layered sheets with mobile π electrons (conductor, lubricant) — bonding geometry alone flips every property.\n\n### 4.3 Melting points as evidence\n\n- Sharp mp: crystal order breaks all at once (NaCl 801 °C, diamond ~3550 °C). Softening range: amorphous bonds break statistically (glass ~500–700 °C range).",
+    "## 5. Comparison Tables\n\n**Crystalline vs amorphous — the master table**\n\n| Basis | Crystalline | Amorphous |\n|---|---|---|\n| Order | Long-range repeating | Short-range only |\n| Melting | Sharp point | Softening range |\n| Geometry | Regular faces, cleavage | Irregular fracture |\n| Isotropy | Anisotropic | Isotropic |\n| Nature | True solid | Supercooled liquid |\n| Examples | NaCl, quartz, diamond | Glass, plastic, rubber |\n\n**Four solid types ranked by melting point**\n\n| Type | Example | mp (°C) |\n|---|---|---|\n| Covalent network | Diamond | ~3550 |\n| Ionic | MgO | 2852 |\n| Metallic | Cu | 1083 |\n| Molecular | I₂ | 114 |",
+    "## 6. Common Confusions\n\n**\"Amorphous\" does not mean disordered entirely:** short-range order persists (a glass molecule's nearest neighbours are still regular) — it is the long range that fails.",
+    "**Graphite is the exception that proves the network rule:** covalent solids are usually insulators, but graphite's delocalised π electrons conduct — quote it as the standard counterexample.",
+    "**Allotropes differ in bonding arrangement, not composition:** diamond and graphite are both carbon; their property gulf is architectural.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Distinguish crystalline and amorphous solids on the basis of order, melting, and isotropy, with two examples of each.** — **Crystalline solids** possess long-range repeating order (a lattice), melt sharply at a definite temperature, show anisotropy (properties vary with direction), and cleave along flat faces — e.g. NaCl, quartz, diamond. **Amorphous solids** have only short-range order, soften over a temperature range instead of melting sharply, are isotropic (same properties in all directions), and fracture irregularly; they are regarded as supercooled liquids — e.g. glass, plastic, rubber.",
+    "**NEB-style (3m): Classify solids into four types based on bonding, giving one property and one example of each.** — **Ionic:** ions held electrostatically; hard, brittle, high mp, conduct when molten or dissolved — NaCl, MgO. **Molecular:** molecules held by van der Waals forces or hydrogen bonds; soft, low mp, non-conducting — ice, iodine, naphthalene. **Covalent network:** atoms joined by covalent bonds in a giant lattice; extremely hard, very high mp, non-conducting (graphite excepted) — diamond, SiO₂, SiC. **Metallic:** cations in an electron sea; malleable, ductile, conducting, lustrous — Cu, Al, Fe.",
+    "**NEB-style (2m): Diamond and graphite are both carbon. Explain their opposite properties.** — Diamond: each sp³ carbon bonds to four others in a rigid 3-D network — hardest natural solid, very high mp, electrical insulator. Graphite: each sp² carbon bonds to three others in flat sheets held by weak van der Waals forces, with the fourth electron delocalised — layers slide (lubricant) and the delocalised electrons conduct. Same element, different bonding geometry: architecture decides properties."
   ],
   "confusion": [
     "❌ Amorphous solids are true solids with a very high viscosity. ✅ They are regarded as pseudo-solids or supercooled liquids because they lack long-range order and flow over long times.",
@@ -36,63 +25,277 @@
     "❌ Metals melt at high temperature because they are covalently bonded. ✅ Metallic bonding strength varies widely; Hg melts at −39 °C while W melts at 3422 °C."
   ],
   "practice": [
-    "Distinguish between crystalline and amorphous solids on any six points.",
-    "Classify crystalline solids according to the nature of the binding force and give two examples of each type.",
-    "Explain why diamond is extremely hard and why glass softens over a range of temperature.",
-    "Compare the melting behaviour and X-ray diffraction patterns of crystalline and amorphous solids.",
-    "State the limitations of the crystalline/amorphous classification."
+    "Why is glass considered a supercooled liquid rather than a true solid?",
+    "Predict the solid type and two properties of CaF₂, SiC, and solid CO₂.",
+    "Explain the sliding test result for NaCl versus copper using bonding."
   ],
   "formulas": [
-    "$$\\text{Glass-transition temperature }T_{g}:\\ \\text{softening region of an amorphous solid}$$",
-    "$$\\text{Bragg's law (X-ray identification of crystals): }n\\lambda=2d\\sin\\theta$$"
+    "- NaCl mp 801 °C; MgO 2852 °C; Cu 1083 °C; diamond ~3550 °C; I₂ 114 °C\n- Diamond: sp³, 3-D network, insulator\n- Graphite: sp², layered, conductor + lubricant"
   ],
   "universalFacts": [
-    "Quartz, diamond and graphite are allotropic forms of giant covalent crystals; graphite is anisotropic (conducts along layers).",
-    "Glass is a supercooled liquid — very old window glass is measurably thicker at the bottom because of slow flow.",
-    "Amorphous silicon is used in thin-film solar cells and LCD backplanes, where its cheaper deposition outweighs its lower efficiency.",
-    "answer pattern for \"Solid state: types of solids, amorphous and crystalline s…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "Silicon's amorphous form (a-Si) coats cheap solar panels precisely because it can be deposited on glass without crystallising — disorder as a manufacturing feature."
   ],
   "examples": [
-    "**Problem:** Why does glass not show a sharp melting point on heating? **Solution:** amorphous solids lack a periodic lattice, so bonds break over a range of energies — the material softens gradually between the glass-transition and melting regions instead of melting at one temperature.",
-    "**Problem:** Graphite conducts electricity while diamond does not, though both are carbon. **Solution:** in graphite each carbon uses three of four valence electrons in σ bonds; the fourth electron is delocalised between layers enabling conduction, whereas in diamond all four electrons are localised in σ bonds."
+    "***Quartz vs glass*** — identical SiO₂ chemistry; one is a crystalline solid with a sharp 1610 °C melt, the other a supercooled liquid that softens gradually — architecture is destiny."
   ],
   "importantNotes": [
-    "Answer the crystalline vs amorphous question as a six-point comparison — order, melting point, shape, cleavage, isotropy, X-ray pattern.",
-    "For each type of crystalline solid, link the binding force to at least two consequences (hardness, melting point, conductivity, solubility).",
-    "Mention that amorphous solids are metastable and that polycrystalline materials lie between the two extremes."
+    "No verified PYQ on the solid state exists in the current bank; all items above are NEB-style practice."
   ],
   "visualType": "solid-state",
   "keyPoints": [
-    "• Solid state",
-    "• Types of solids",
-    "• Amorphous",
-    "• Crystalline solids"
+    "Solids: fixed positions, vibrational motion only; definite shape/volume. Crystalline: long-range order, sharp mp, anisotropic, cleaves (NaCl, quartz, diamond). Amorphous: short-range order, softening range, isotropic, supercooled liquid (glass, plastic, rubber). Four bonding types: ionic (NaCl — hard, brittle, conducts molten), molecular (ice, I₂ — soft, low mp), covalent network (diamond ~3550 °C, SiO₂ — hardest; graphite conducts), metallic (Cu — malleable, conducting). Diamond vs graphite: sp³ 3-D vs sp² layered with delocalised electrons."
   ],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "**NEB-style (3m): Distinguish between crystalline and amorphous solids with reference to molecular order, melting behaviour and isotropy, giving two examples of each.** — **Crystalline solids** are characterised by **long-range repeating order**: the constituent particles occupy fixed positions in a regular three-dimensional lattice. They melt **sharply** at a definite temperature (e.g. NaCl at 801 °C), because the ordered structure breaks down all at once. They are **anisotropic** — physical properties such as refractive index and electrical conductivity differ along different directions of the crystal — and they cleave along flat, regular faces. Examples: **NaCl, quartz, diamond, sucrose**. **Amorphous solids** possess only **short-range order**; the arrangement is regular over a few molecular distances but random overall. They do not melt sharply but **soften over a range of temperature**, like extremely viscous liquids — hence they are called supercooled liquids. They are **isotropic** (identical properties in all directions) and fracture irregularly. Examples: **glass, plastic, rubber, amorphous silica**.",
+    "**NEB-style (3m): Classify crystalline solids into four types on the basis of bonding, giving one example and one characteristic property of each.** — **(1) Ionic solids:** units are cations and anions held by strong electrostatic attraction; hard, brittle, high melting points, conduct electricity when molten or in aqueous solution but not as solids — e.g. **NaCl, MgO**. **(2) Molecular solids:** units are molecules held by van der Waals forces, dipole forces or hydrogen bonds; soft, low melting points, non-conducting — e.g. **ice, solid iodine, naphthalene, dry ice**. **(3) Covalent network (giant covalent) solids:** atoms joined throughout by strong directional covalent bonds; extremely hard, very high melting points, non-conducting (graphite is the exception, conducting via delocalised electrons) — e.g. **diamond, quartz (SiO₂), silicon carbide**. **(4) Metallic solids:** metal cations immersed in a sea of delocalised electrons; malleable, ductile, excellent conductors, lustrous — e.g. **copper, aluminium, iron**.",
+    "**NEB-style (2m): Diamond and graphite are both allotropes of carbon, yet diamond is an insulator and graphite conducts. Explain.** — In **diamond**, every carbon is sp³-hybridised and bonded covalently to four neighbours in a rigid three-dimensional network; all electrons are locked in σ bonds, so no charge carriers are free — an electrical **insulator** and the hardest natural solid. In **graphite**, each carbon is sp²-hybridised, bonded to three neighbours in planar sheets; the fourth electron occupies a delocalised π system spread over the whole sheet, providing mobile charge carriers — graphite **conducts** along the sheets. The weak van der Waals forces between sheets also let them slide, making graphite a lubricant. Same element, different hybridisation and architecture: completely opposite properties."
+  ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Solid state: types of solids, amorphous and crystalline s…\"?",
+      "question": "A solid with long-range order and a sharp melting point is:",
       "options": [
-        "Solid state",
-        "Types of solids",
-        "Unrelated topic",
-        "None of the above"
+        "Amorphous",
+        "Crystalline",
+        "Liquid",
+        "Glass"
       ],
-      "answer": "A",
-      "explanation": "Solid state is listed among the official sub-ideas of Solid state: types of solids, amorphous and crystalline s…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "The lattice melts all at once."
     },
     {
-      "question": "A common examiner point on \"Solid state: types of solids, amorphous and crystalline s…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Glass is regarded as:",
       "options": [
-        "True",
-        "False"
+        "A crystalline solid",
+        "A supercooled liquid",
+        "An ionic solid",
+        "A gas"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Short-range order, softening range."
+    },
+    {
+      "question": "Amorphous solids are isotropic, meaning:",
+      "options": [
+        "They melt sharply",
+        "Properties are the same in all directions",
+        "They conduct",
+        "They are hard"
+      ],
+      "answer": "B",
+      "explanation": "Random arrangement averages properties."
+    },
+    {
+      "question": "Which solid type has the highest melting point?",
+      "options": [
+        "Ionic",
+        "Molecular",
+        "Covalent network",
+        "Metallic"
+      ],
+      "answer": "C",
+      "explanation": "Diamond near 3550 C."
+    },
+    {
+      "question": "Solid NaCl conducts electricity:",
+      "options": [
+        "Always",
+        "When molten or aqueous",
+        "Never",
+        "Only when cold"
+      ],
+      "answer": "B",
+      "explanation": "Ions must be mobile."
+    },
+    {
+      "question": "Graphite conducts electricity because it has:",
+      "options": [
+        "Ionic bonds",
+        "Delocalised pi electrons",
+        "Free protons",
+        "High density"
+      ],
+      "answer": "B",
+      "explanation": "sp2 sheets with mobile pi system."
+    },
+    {
+      "question": "Diamond and graphite differ in:",
+      "options": [
+        "Composition",
+        "Bonding arrangement",
+        "Colour only",
+        "Mass"
+      ],
+      "answer": "B",
+      "explanation": "sp3 network vs sp2 layers - allotropy."
+    },
+    {
+      "question": "I2 is an example of a:",
+      "options": [
+        "Ionic solid",
+        "Molecular solid",
+        "Network solid",
+        "Metallic solid"
+      ],
+      "answer": "B",
+      "explanation": "Molecules held by van der Waals forces."
     }
   ],
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "bounds": [],
-  "summary": "Solid state: types of solids, amorphous and crystalline s… (States of Matter, Chemistry, class-11-notes) covers Solid state, types of solids, amorphous. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
+  "summary": "A solid is a society of fixed addresses. **Crystalline** solids repeat their addresses across the whole crystal — long-range order, sharp melting points, anisotropic properties, flat cleavage; **amorphous** solids know only their street — short-range order, a softening range instead of a melt, isotropy, irregular fracture, and the nickname \"supercooled liquid\" (glass, plastic, rubber). Four bonding families explain every solid's temper: **ionic** lattices (NaCl, MgO) are hard, brittle and conduct only when molten; **molecular** solids (ice, iodine) are soft and low-melting under weak intermolecular glue; **covalent networks** (diamond ~3550 °C, SiO₂) are the hardest, with graphite the conducting, sliding exception; **metallic** solids (Cu, Al) bend and conduct because the electron sea forgives. Diamond versus graphite — same carbon, sp³ network versus sp² sheets — is the topic's thesis in one pair: bonding architecture, not composition, writes the properties.",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Order You Can Hold\n\nSolids resist: fixed shape, fixed volume, molecules locked in place. But \"solid\" hides two architectures — the repeating lattice of crystals and the frozen chaos of glasses — and the classification by bonding (ionic, molecular, covalent, metallic) explains why diamond scratches glass, ice floats, and copper wires bend without breaking.",
+      "## 2. Fundamental Concepts\n\n### 2.1 What makes a solid\n\n- Particles (atoms, ions or molecules) are packed in **fixed positions** with only vibrational motion about them; strong cohesive forces give **definite shape and volume**, negligible compressibility, and high density compared with gases.\n\n### 2.2 Crystalline vs amorphous\n\n- **Crystalline:** long-range **repeating order** (lattice); sharp melting point; anisotropic (properties differ with direction); cleave along flat faces. Examples: NaCl, quartz, diamond, metals, sugar.\n- **Amorphous (supercooled liquid):** only short-range order; melts (softens) over a **range of temperature**; **isotropic** (same properties in all directions); irregular fracture. Examples: glass, plastic, rubber, amorphous silica, coal.\n- Quartz vs glass is the classic pair: same composition (SiO₂), different architecture.\n\n### 2.3 Classification by bonding (four types)\n\n| Type | Units | Bonding | Properties | Examples |\n|---|---|---|---|---|\n| **Ionic** | Cations + anions | Electrostatic | Hard, brittle, high mp, conduct when molten/aqueous | NaCl, MgO, CaF₂ |\n| **Molecular** | Molecules | vdW / H-bonds / dipole | Soft, low mp, non-conducting | Ice, I₂, dry ice, naphthalene |\n| **Covalent (network)** | Atoms | Directional covalent bonds | Very hard, very high mp, non-conducting (except graphite) | Diamond, SiO₂, SiC |\n| **Metallic** | Cations + electron sea | Metallic bonding | Malleable, ductile, conducting, lustrous | Cu, Fe, Al, Ag |\n\n### 2.4 Isotropy vs anisotropy\n\n- **Anisotropic (crystals):** refractive index, conductivity etc. differ along different lattice directions — the ordered array is directional.\n- **Isotropic (amorphous + liquids + gases):** properties identical in every direction — random arrangement averages out.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Crystalline solid** | Long-range periodic order; sharp mp | NaCl, quartz |\n| **Amorphous solid** | Short-range order only; softening range | Glass, plastic |\n| **Anisotropy** | Direction-dependent properties | Quartz conductivity |\n| **Isotropy** | Direction-independent properties | Glass |\n| **Network solid** | Atoms joined by covalent bonds throughout | Diamond, SiO₂ |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why glass is called a supercooled liquid\n\n- Amorphous solids lack a lattice; on heating they soften progressively rather than melt sharply — the behaviour of an extremely viscous liquid frozen before it could order. Old cathedral windows are (marginally) thicker at the bottom for this reason.\n\n### 4.2 Reading properties off the bonding table\n\n- **NaCl shatters** (ionic: sliding layers bring like charges together) but **copper bends** (metallic: electron sea adjusts) — the sliding test from topic 37.\n- **Diamond vs graphite:** both pure carbon; diamond is a 3-D network (hardest natural solid, insulator), graphite has layered sheets with mobile π electrons (conductor, lubricant) — bonding geometry alone flips every property.\n\n### 4.3 Melting points as evidence\n\n- Sharp mp: crystal order breaks all at once (NaCl 801 °C, diamond ~3550 °C). Softening range: amorphous bonds break statistically (glass ~500–700 °C range).",
+      "## 5. Comparison Tables\n\n**Crystalline vs amorphous — the master table**\n\n| Basis | Crystalline | Amorphous |\n|---|---|---|\n| Order | Long-range repeating | Short-range only |\n| Melting | Sharp point | Softening range |\n| Geometry | Regular faces, cleavage | Irregular fracture |\n| Isotropy | Anisotropic | Isotropic |\n| Nature | True solid | Supercooled liquid |\n| Examples | NaCl, quartz, diamond | Glass, plastic, rubber |\n\n**Four solid types ranked by melting point**\n\n| Type | Example | mp (°C) |\n|---|---|---|\n| Covalent network | Diamond | ~3550 |\n| Ionic | MgO | 2852 |\n| Metallic | Cu | 1083 |\n| Molecular | I₂ | 114 |",
+      "## 6. Common Confusions\n\n**\"Amorphous\" does not mean disordered entirely:** short-range order persists (a glass molecule's nearest neighbours are still regular) — it is the long range that fails.",
+      "**Graphite is the exception that proves the network rule:** covalent solids are usually insulators, but graphite's delocalised π electrons conduct — quote it as the standard counterexample.",
+      "**Allotropes differ in bonding arrangement, not composition:** diamond and graphite are both carbon; their property gulf is architectural.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Distinguish crystalline and amorphous solids on the basis of order, melting, and isotropy, with two examples of each.** — **Crystalline solids** possess long-range repeating order (a lattice), melt sharply at a definite temperature, show anisotropy (properties vary with direction), and cleave along flat faces — e.g. NaCl, quartz, diamond. **Amorphous solids** have only short-range order, soften over a temperature range instead of melting sharply, are isotropic (same properties in all directions), and fracture irregularly; they are regarded as supercooled liquids — e.g. glass, plastic, rubber.",
+      "**NEB-style (3m): Classify solids into four types based on bonding, giving one property and one example of each.** — **Ionic:** ions held electrostatically; hard, brittle, high mp, conduct when molten or dissolved — NaCl, MgO. **Molecular:** molecules held by van der Waals forces or hydrogen bonds; soft, low mp, non-conducting — ice, iodine, naphthalene. **Covalent network:** atoms joined by covalent bonds in a giant lattice; extremely hard, very high mp, non-conducting (graphite excepted) — diamond, SiO₂, SiC. **Metallic:** cations in an electron sea; malleable, ductile, conducting, lustrous — Cu, Al, Fe.",
+      "**NEB-style (2m): Diamond and graphite are both carbon. Explain their opposite properties.** — Diamond: each sp³ carbon bonds to four others in a rigid 3-D network — hardest natural solid, very high mp, electrical insulator. Graphite: each sp² carbon bonds to three others in flat sheets held by weak van der Waals forces, with the fourth electron delocalised — layers slide (lubricant) and the delocalised electrons conduct. Same element, different bonding geometry: architecture decides properties."
+    ],
+    "keyPoints": [
+      "Solids: fixed positions, vibrational motion only; definite shape/volume. Crystalline: long-range order, sharp mp, anisotropic, cleaves (NaCl, quartz, diamond). Amorphous: short-range order, softening range, isotropic, supercooled liquid (glass, plastic, rubber). Four bonding types: ionic (NaCl — hard, brittle, conducts molten), molecular (ice, I₂ — soft, low mp), covalent network (diamond ~3550 °C, SiO₂ — hardest; graphite conducts), metallic (Cu — malleable, conducting). Diamond vs graphite: sp³ 3-D vs sp² layered with delocalised electrons."
+    ],
+    "importantConcepts": [
+      "The bonding-type table is predictive: read the bonding, predict hardness, melting point, conduction and brittleness — four properties from one classification."
+    ],
+    "examples": [
+      "***Quartz vs glass*** — identical SiO₂ chemistry; one is a crystalline solid with a sharp 1610 °C melt, the other a supercooled liquid that softens gradually — architecture is destiny."
+    ],
+    "universalFacts": [
+      "Silicon's amorphous form (a-Si) coats cheap solar panels precisely because it can be deposited on glass without crystallising — disorder as a manufacturing feature."
+    ],
+    "importantStatements": [
+      "\"Crystalline solids have a sharp melting point and anisotropic character, while amorphous solids soften over a range of temperature and are isotropic.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on the solid state exists in the current bank; all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Crystal checklist: \"order, sharp melt, anisotropy, cleavage\". Amorphous = \"supercooled liquid\". mp ladder: diamond > MgO > Cu > I₂. Graphite = the conducting exception."
+    ],
+    "examNotes": [
+      "For the four-type classification, give units + bonding + one property + one example in a table — one missing column is one lost mark."
+    ],
+    "formulas": [
+      "- NaCl mp 801 °C; MgO 2852 °C; Cu 1083 °C; diamond ~3550 °C; I₂ 114 °C\n- Diamond: sp³, 3-D network, insulator\n- Graphite: sp², layered, conductor + lubricant"
+    ],
+    "practice": [
+      "Why is glass considered a supercooled liquid rather than a true solid?",
+      "Predict the solid type and two properties of CaF₂, SiC, and solid CO₂.",
+      "Explain the sliding test result for NaCl versus copper using bonding."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Distinguish between crystalline and amorphous solids with reference to molecular order, melting behaviour and isotropy, giving two examples of each.** — **Crystalline solids** are characterised by **long-range repeating order**: the constituent particles occupy fixed positions in a regular three-dimensional lattice. They melt **sharply** at a definite temperature (e.g. NaCl at 801 °C), because the ordered structure breaks down all at once. They are **anisotropic** — physical properties such as refractive index and electrical conductivity differ along different directions of the crystal — and they cleave along flat, regular faces. Examples: **NaCl, quartz, diamond, sucrose**. **Amorphous solids** possess only **short-range order**; the arrangement is regular over a few molecular distances but random overall. They do not melt sharply but **soften over a range of temperature**, like extremely viscous liquids — hence they are called supercooled liquids. They are **isotropic** (identical properties in all directions) and fracture irregularly. Examples: **glass, plastic, rubber, amorphous silica**.",
+      "**NEB-style (3m): Classify crystalline solids into four types on the basis of bonding, giving one example and one characteristic property of each.** — **(1) Ionic solids:** units are cations and anions held by strong electrostatic attraction; hard, brittle, high melting points, conduct electricity when molten or in aqueous solution but not as solids — e.g. **NaCl, MgO**. **(2) Molecular solids:** units are molecules held by van der Waals forces, dipole forces or hydrogen bonds; soft, low melting points, non-conducting — e.g. **ice, solid iodine, naphthalene, dry ice**. **(3) Covalent network (giant covalent) solids:** atoms joined throughout by strong directional covalent bonds; extremely hard, very high melting points, non-conducting (graphite is the exception, conducting via delocalised electrons) — e.g. **diamond, quartz (SiO₂), silicon carbide**. **(4) Metallic solids:** metal cations immersed in a sea of delocalised electrons; malleable, ductile, excellent conductors, lustrous — e.g. **copper, aluminium, iron**.",
+      "**NEB-style (2m): Diamond and graphite are both allotropes of carbon, yet diamond is an insulator and graphite conducts. Explain.** — In **diamond**, every carbon is sp³-hybridised and bonded covalently to four neighbours in a rigid three-dimensional network; all electrons are locked in σ bonds, so no charge carriers are free — an electrical **insulator** and the hardest natural solid. In **graphite**, each carbon is sp²-hybridised, bonded to three neighbours in planar sheets; the fourth electron occupies a delocalised π system spread over the whole sheet, providing mobile charge carriers — graphite **conducts** along the sheets. The weak van der Waals forces between sheets also let them slide, making graphite a lubricant. Same element, different hybridisation and architecture: completely opposite properties."
+    ]
+  },
+  "importantConcepts": [
+    "The bonding-type table is predictive: read the bonding, predict hardness, melting point, conduction and brittleness — four properties from one classification."
+  ],
+  "importantStatements": [
+    "\"Crystalline solids have a sharp melting point and anisotropic character, while amorphous solids soften over a range of temperature and are isotropic.\""
+  ],
+  "examShortTricks": [
+    "Crystal checklist: \"order, sharp melt, anisotropy, cleavage\". Amorphous = \"supercooled liquid\". mp ladder: diamond > MgO > Cu > I₂. Graphite = the conducting exception."
+  ],
+  "examNotes": [
+    "For the four-type classification, give units + bonding + one property + one example in a table — one missing column is one lost mark."
+  ],
+  "mcs": [
+    {
+      "question": "A solid with long-range order and a sharp melting point is:",
+      "options": [
+        "Amorphous",
+        "Crystalline",
+        "Liquid",
+        "Glass"
+      ],
+      "answer": "B",
+      "explanation": "The lattice melts all at once."
+    },
+    {
+      "question": "Glass is regarded as:",
+      "options": [
+        "A crystalline solid",
+        "A supercooled liquid",
+        "An ionic solid",
+        "A gas"
+      ],
+      "answer": "B",
+      "explanation": "Short-range order, softening range."
+    },
+    {
+      "question": "Amorphous solids are isotropic, meaning:",
+      "options": [
+        "They melt sharply",
+        "Properties are the same in all directions",
+        "They conduct",
+        "They are hard"
+      ],
+      "answer": "B",
+      "explanation": "Random arrangement averages properties."
+    },
+    {
+      "question": "Which solid type has the highest melting point?",
+      "options": [
+        "Ionic",
+        "Molecular",
+        "Covalent network",
+        "Metallic"
+      ],
+      "answer": "C",
+      "explanation": "Diamond near 3550 C."
+    },
+    {
+      "question": "Solid NaCl conducts electricity:",
+      "options": [
+        "Always",
+        "When molten or aqueous",
+        "Never",
+        "Only when cold"
+      ],
+      "answer": "B",
+      "explanation": "Ions must be mobile."
+    },
+    {
+      "question": "Graphite conducts electricity because it has:",
+      "options": [
+        "Ionic bonds",
+        "Delocalised pi electrons",
+        "Free protons",
+        "High density"
+      ],
+      "answer": "B",
+      "explanation": "sp2 sheets with mobile pi system."
+    },
+    {
+      "question": "Diamond and graphite differ in:",
+      "options": [
+        "Composition",
+        "Bonding arrangement",
+        "Colour only",
+        "Mass"
+      ],
+      "answer": "B",
+      "explanation": "sp3 network vs sp2 layers - allotropy."
+    },
+    {
+      "question": "I2 is an example of a:",
+      "options": [
+        "Ionic solid",
+        "Molecular solid",
+        "Network solid",
+        "Metallic solid"
+      ],
+      "answer": "B",
+      "explanation": "Molecules held by van der Waals forces."
+    }
+  ]
 }

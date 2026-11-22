@@ -5,79 +5,47 @@
   "topicTitle": "Deviation of real gas from ideality (solving related numerical problems based on gas laws)",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning of deviation",
-    "A real gas obeys PV = nRT only approximately; the departure from that equation is called deviation from ideal behaviour. It arises because the two postulates of the kinetic theory are only idealisations — molecules do occupy volume, and intermolecular attractive forces do exist (otherwise no gas could ever be liquefied). Deviation is largest at **high pressure and low temperature**, and smallest for small, non-polar molecules such as H₂ and He.",
-    "### 2. Compressibility factor Z",
-    "$Z=\\frac{PV}{nRT}$ (or Z = PV/RT for one mole) measures deviation: Z = 1 for an ideal gas, **Z < 1** when attraction dominates (moderate pressure, gas easier to compress than ideal), **Z > 1** when the finite molecular volume dominates (high pressure, gas harder to compress than ideal). Plotting Z against P shows that H₂ stays above 1 and rises steadily, while CO₂ dips below 1, crosses 1 and then rises — the classic experimental proof of deviation.",
-    "### 3. Explanation of the two effects",
-    "• **Attraction effect:** neighbouring molecules pull a molecule away from the wall, so it strikes with less momentum — the observed pressure is less than the ideal value (P_obs < P_ideal), which makes Z < 1.",
-    "• **Volume effect:** the molecules themselves and their excluded volume reduce the free space, so the observed volume is greater than ideal (V_obs > V_ideal), making Z > 1.",
-    "These two competing effects explain why Z may be less than 1 at moderate pressure and greater than 1 at high pressure, and why there is a temperature (Boyle temperature) at which Z ≈ 1 over a wide range of moderate pressures.",
-    "### 4. van der Waals equation (corrections applied)",
-    "$\\left(P+\\frac{an^{2}}{V^{2}}\\right)(V-nb)=nRT$ for n moles, or $\\left(P+\\frac{a}{V^{2}}\\right)(V-b)=RT$ for one mole. The constant **a** measures the strength of intermolecular attraction (pressure correction an²/V²) and **b** is the effective (excluded) molar volume due to finite molecular size — roughly four times the actual molecular volume. Larger a means easier liquefaction; larger b means a bulkier molecule.",
-    "### 5. Critical constants and continuity of state",
-    "Above the critical temperature Tc a gas cannot be liquefied by pressure alone; at the critical point the densities of liquid and vapour become equal. For a van der Waals gas: $V_{c}=3b$, $P_{c}=\\frac{a}{27b^{2}}$, $T_{c}=\\frac{8a}{27Rb}$ and the predicted critical compressibility factor $Z_{c}=\\frac{P_{c}V_{c}}{RT_{c}}=\\frac{3}{8}=0.375$. The reduced variables $P_{r}=P/P_{c}$, $V_{r}=V/V_{c}$, $T_{r}=T/T_{c}$ give the principle of corresponding states: all gases with the same reduced T and P have the same reduced volume.",
-    "### 6. Other equations of state",
-    "Dieterici's equation $P(V-b)=RT\\,e^{-a/RTV}$ and the virial equation $PV=RT(1+B/V+C/V^{2}+\\dots)$ improve the description; the virial coefficients are obtained from experiment. The van der Waals equation remains the standard NEB-level treatment because it explains liquefaction and the critical point qualitatively with only two constants.",
-    "### 7. Applications",
-    "• **Liquefaction and refrigeration:** below Tc, attractive forces (the 'a' term) allow liquefaction; the Joule–Thomson effect and Linde's method produce liquid N₂, O₂, He and LPG/CNG storage systems.",
-    "• **Comparing gases:** a and b from tables rank gases by ease of liquefaction (SO₂ > CO₂ > N₂ > H₂), and Z charts guide compressor and pipeline design.",
-    "• **Supercritical fluids:** above Tc and Pc, CO₂ becomes a supercritical solvent used for decaffeination and dry cleaning — an application of critical constants.",
-    "• **Safety and storage:** knowing Tc explains why cylinders must be kept cool and why liquefied petroleum gas remains liquid under pressure.",
-    "### 8. Numerical work",
-    "Typical problems: compute Z from P, V, T; compare gases for near-ideal behaviour (smallest a and b, e.g. He); use the van der Waals equation to find P or V; and obtain Tc, Pc, Vc from a and b (or vice versa).",
-    "### 9. Limitations of the van der Waals equation",
-    "It is a qualitative improvement, not an exact theory: a and b are treated as constants although they vary with temperature; molecular shape, polarity and association (hydrogen bonding in water, ammonia) are ignored; the predicted Zc = 0.375 exceeds the measured values (0.23–0.31 for most gases); the equation does not reproduce isotherms precisely near the critical point and has no term for attractive forces acting over different ranges. Better results need more elaborate equations of state or computer simulation.",
-    "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
-    "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
-    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
+    "## 1. Topic Introduction — When Gases Stop Being Ideal\n\nReal molecules have size and attraction — the two things the kinetic theory waved away. Compress a gas enough and the molecules' own volume matters; cool it enough and attraction condenses it. Van der Waals patched PV = nRT with two corrections, and the conditions of maximum deviation (high pressure, low temperature) follow from exactly those two failures (NEB 2024).",
+    "## 2. Fundamental Concepts\n\n### 2.1 The two idealisations and how they fail\n\n- **Negligible molecular volume:** at high pressure the molecules are squeezed into a significant fraction of the container — free volume is less than V. Correction: (V − nb).\n- **Negligible intermolecular attraction:** at low temperature the molecules are slow enough that attraction pulls inbound molecules back, softening their wall impact — measured pressure is less than ideal. Correction: +(an²/V²) — the \"attractive drag\" term.\n\n### 2.2 Van der Waals equation\n\n- **(P + an²/V²)(V − nb) = nRT** (for n moles); per mole: **(P + a/V²)(V − b) = RT**.\n- **a:** attraction correction — larger for easily liquefied, polarisable gases (NH₃, CO₂, H₂O ≫ He, H₂); units atm·L²/mol².\n- **b:** volume (co-volume) correction — larger for bulky molecules; roughly 4× the actual molecular volume per mole; units L/mol.\n\n### 2.3 Conditions of maximum deviation (NEB 2024)\n\n- **High pressure:** molecules crowd; b-term dominates → observed V > ideal V (positive deviation, Z > 1).\n- **Low temperature:** molecules slow; attraction dominates → observed P < ideal P (negative deviation, Z < 1).\n- **High T and low P:** both corrections shrink — ideal behaviour recovered; every gas is ideal in the dilute-hot limit.\n\n### 2.4 Compressibility factor Z\n\n- **Z = PV/nRT**; Z = 1 ideal; Z < 1 attraction wins (easier to compress); Z > 1 repulsion/volume wins (harder to compress).\n- H₂ and He (a ≈ 0) show Z > 1 at practically all pressures — attraction too weak to ever pull Z below 1.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Effect |\n|---|---|---|\n| **Real gas** | Molecules with volume and mutual attraction | Deviates from PV = nRT |\n| **Van der Waals a** | Attraction correction constant | Lowers observed P |\n| **Van der Waals b** | Volume correction constant | Raises observed V |\n| **Compressibility factor** | Z = PV/nRT | Z = 1 ideal |\n| **Boyle temperature** | T at which Z ≈ 1 over a wide P range | Gas behaves ideally |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): when does a real gas deviate most; explain with van der Waals\n\n- **Most deviation: high pressure and low temperature** (near condensation). At high P the molecules' own volume is no longer negligible against the compressed V — the free space is (V − nb), so the observed volume exceeds the ideal prediction (Z > 1). At low T the molecules move slowly enough for attraction to act: incoming molecules are pulled back by the bulk, hitting the walls with less momentum, so the observed pressure is less than ideal — van der Waals writes this as an added term a(n/V)², giving **(P + an²/V²)(V − nb) = nRT**. At high T and low P both corrections vanish and PV = nRT is recovered.\n\n### 4.2 The a-table: attraction ranks the gases\n\n| Gas | a (atm·L²/mol²) | Character |\n|---|---|---|\n| H₂O | 5.46 | Strong H-bonding |\n| NH₃ | 4.17 | Polar, H-bonding |\n| CO₂ | 3.59 | Polarisable, liquefies easily |\n| O₂ | 1.36 | Nonpolar |\n| H₂ | 0.244 | Tiny, barely attracts |\n| He | 0.034 | Nearly ideal |\n\n- Liquefaction ease tracks a: NH₃ and CO₂ compress to liquids at room temperature (a large); He resists liquefaction down to 4 K (a tiny).\n\n### 4.3 Boyle temperature\n\n- Each gas has a temperature where the a and b effects cancel over a pressure range — Z stays ≈ 1: the gas behaves most ideally (e.g. N₂ ≈ 323 K, He ≈ 23 K).",
+    "## 5. Comparison Tables\n\n**Ideal vs real gas**\n\n| Basis | Ideal gas | Real gas |\n|---|---|---|\n| Molecular volume | Negligible | Finite (b correction) |\n| Intermolecular forces | None | Attractive (a correction) |\n| Equation | PV = nRT | (P + an²/V²)(V − nb) = nRT |\n| Obeys gas laws | At all T, P | Only at high T, low P |\n| Exists? | Hypothetical | All actual gases |\n\n**Deviation regimes**\n\n| Condition | Dominant correction | Z | Observed vs ideal |\n|---|---|---|---|\n| High P | b (volume) | > 1 | Harder to compress |\n| Low T | a (attraction) | < 1 | Easier to compress |\n| High T, low P | Neither | ≈ 1 | Ideal |",
+    "## 6. Common Confusions\n\n**Deviation has two directions:** high pressure inflates volume (Z > 1) while low temperature deflates pressure (Z < 1) — \"deviates\" does not mean one sign.",
+    "**a and b are gas-specific constants, not universal:** R is universal; a and b must be looked up per gas — quoting R's value for a is a mark-losing slip.",
+    "**Liquefaction needs attraction, not just pressure:** a large a means the gas can be liquefied near room temperature; a tiny a (He) demands extreme cooling first.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): Under what conditions does a real gas deviate most from ideal behaviour? Explain using van der Waals' equation.** — **Conditions: high pressure and low temperature.** Van der Waals modified the ideal equation to (P + an²/V²)(V − nb) = nRT, where a corrects for intermolecular attraction and b for finite molecular volume. At **high pressure** the molecules occupy an appreciable fraction of the container, so the free volume is less than the measured V — the (V − nb) term — and the gas is harder to compress than ideal (Z > 1). At **low temperature** the molecules move slowly enough for attraction to matter: each molecule approaching the wall is pulled back by the others, so it strikes with less momentum and the observed pressure falls short — compensated by the added term a(n/V)² (Z < 1). At high temperature and low pressure both corrections become negligible and the gas obeys PV = nRT.",
+    "**NEB-style (2m): Why do H₂ and He show Z > 1 at almost all pressures?** — Their a values are tiny (0.244 and 0.034 atm·L²/mol²): intermolecular attraction is too weak to ever make the observed pressure fall below ideal, so the volume (b) effect dominates and Z stays above 1 — they are the most \"permanently ideal\" gases.",
+    "**NEB-style (2m): Account for the observation that NH₃ liquefies under pressure at room temperature while N₂ does not.** — NH₃'s large a (4.17) reflects strong dipole–dipole (and hydrogen-bond) attraction: compression alone lets attraction condense it. N₂'s a is small (1.39) with weak London forces, so room-temperature compression cannot liquefy it — it must first be cooled below its critical-region temperatures."
   ],
   "confusion": [
-    "❌ A real gas always has Z > 1. ✅ Z < 1 at moderate pressure (attraction dominates) and Z > 1 at high pressure (molecular volume dominates); hydrogen is a special case with Z > 1 throughout.",
-    "❌ Deviation from ideality increases as temperature rises. ✅ It decreases with rising temperature and increases at high pressure and low temperature.",
-    "❌ The constant b is the molecular volume. ✅ b is the excluded volume per mole, about four times the actual molecular volume.",
-    "❌ Gases can always be liquefied by increasing pressure. ✅ Above the critical temperature no amount of pressure can liquefy a gas.",
-    "❌ Zc = 0.375 is exact for all gases. ✅ It is the van der Waals *prediction*; experiment gives 0.23–0.31, which is a limitation of the equation."
+    "**b is roughly four times the actual molecular volume, not equal to it:** the excluded sphere around each molecule doubles its radius — a detail examiners like to probe."
   ],
   "practice": [
-    "What is meant by deviation of a real gas from ideality? Explain with a graph of Z versus P.",
-    "Explain the two corrections applied by van der Waals and write the corrected equation.",
-    "Calculate Z for 1 mol of a gas occupying 0.5 L at 300 K and 50 atm and comment on the deviation.",
-    "Which of H₂, N₂ and SO₂ is closest to ideal behaviour and why?",
-    "State the limitations of the van der Waals equation."
+    "Derive the van der Waals equation by applying volume and pressure corrections to PV = nRT.",
+    "Why does the compressibility factor of N₂ first fall below 1, then rise above 1, as pressure increases at room temperature?",
+    "Compare the a and b values of CO₂ and H₂ and predict which liquefies more easily."
   ],
   "formulas": [
-    "$$Z=\\frac{PV}{nRT}\\ \\ (Z=1\\ \\text{ideal},\\ Z<1\\ \\text{attraction},\\ Z>1\\ \\text{finite volume})$$",
-    "$$\\left(P+\\frac{an^{2}}{V^{2}}\\right)(V-nb)=nRT$$",
-    "$$V_{c}=3b,\\quad P_{c}=\\frac{a}{27b^{2}},\\quad T_{c}=\\frac{8a}{27Rb},\\quad Z_{c}=\\frac{P_{c}V_{c}}{RT_{c}}=\\frac{3}{8}$$",
-    "$$P_{r}=\\frac{P}{P_{c}},\\quad V_{r}=\\frac{V}{V_{c}},\\quad T_{r}=\\frac{T}{T_{c}}$$",
-    "PV = nRT",
-    "c_rms = √(3RT/M)",
-    "KE_mole = 3RT/2"
+    "- (P + an²/V²)(V − nb) = nRT\n- Per mole: (P + a/V²)(V − b) = RT\n- Z = PV/nRT (Z = 1 ideal)\n- Boyle temperature: Z ≈ 1 over wide P range"
   ],
   "universalFacts": [
-    "Zc(observed) for most gases lies between 0.23 and 0.31, below the van der Waals value 0.375.",
-    "Hydrogen and helium have the smallest a and b values and stay closest to ideal behaviour; SO₂ and CO₂ deviate most among common gases.",
-    "Critical temperatures: He −268 °C, N₂ −147 °C, CO₂ 31 °C, water 374 °C — the reason He is the hardest gas to liquefy.",
-    "Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
-    "r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
-    "Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
+    "Helium's near-zero a is why it stays liquid only at 4 K and why it escapes Earth's gravity — the least sticky, most elusive gas in the atmosphere."
   ],
   "examples": [
-    "**Problem:** Compute Z for 1 mol of gas at 300 K occupying 0.5 L at 50 atm. **Solution:** Z = PV/RT = (50 × 0.5)/(0.0821 × 300) ≈ 1.015 → slightly greater than 1, so the finite molecular volume effect dominates.",
-    "**Problem:** For a gas with a = 3.6 L² atm mol⁻² and b = 0.043 L mol⁻¹, find Tc and Pc. **Solution:** Tc = 8a/27Rb = (8 × 3.6)/(27 × 0.0821 × 0.043) ≈ 302 K; Pc = a/27b² = 3.6/(27 × 0.043²) ≈ 72 atm."
+    "***The CO₂ fire extinguisher*** — CO₂ liquefies at ~60 atm room temperature (a = 3.59): attraction plus pressure does what cooling does for nitrogen."
   ],
   "importantNotes": [
-    "Explain the sign of Z before quoting numbers: Z < 1 means attraction dominates, Z > 1 means molecular volume dominates.",
-    "Keep a in L² atm mol⁻² (or Pa m⁶ mol⁻²) with matching R; unit mismatch is the commonest numerical error.",
-    "State that the van der Waals equation explains the critical point only approximately — Zc = 0.375 versus experimental 0.23–0.31."
+    "Verified PYQ: NEB 2024 — conditions of maximum deviation explained via van der Waals' equation (solved above). Other items are NEB-style practice."
   ],
   "visualType": "real-gas-deviation",
   "keyPoints": [
-    "• Deviation of real gas from ideality",
-    "• Solving related numerical problems based on gas laws"
+    "Real gases: finite molecular volume + intermolecular attraction. Van der Waals: (P + an²/V²)(V − nb) = nRT; a = attraction (large for NH₃ 4.17, CO₂ 3.59, H₂O 5.46; tiny for He 0.034, H₂ 0.244); b = volume ≈ 4× molecular volume. Max deviation: high P (Z > 1, volume term) and low T (Z < 1, attraction term). Z = PV/nRT; ideal Z = 1. H₂/He: Z > 1 always. Boyle temperature: Z ≈ 1 region. Ideal limit: high T, low P."
   ],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "**NEB 2024 (3m): Under what conditions does a real gas deviate most from ideal behaviour? Explain using van der Waals' equation.** — A real gas deviates most at **high pressure and low temperature**. Van der Waals corrected the ideal equation for the two failed idealisations: **(P + an²/V²)(V − nb) = nRT**, where **a** accounts for intermolecular attraction and **b** for the finite volume of the molecules. **At high pressure**, the molecules' own volume becomes a significant fraction of the container, so the volume actually available for motion is (V − nb) — less than the measured V — and the gas is harder to compress than the ideal law predicts (compressibility factor Z > 1). **At low temperature**, molecular speeds drop until intermolecular attraction becomes effective: a molecule nearing the wall is pulled backwards by the attraction of the bulk, strikes with reduced momentum, and the observed pressure is lower than ideal — compensated by the added term a(n/V)² (Z < 1). At high temperature and low pressure both corrections vanish, and the gas behaves ideally (Z ≈ 1). The deviation is therefore largest exactly where the gas approaches condensation — high P, low T.",
+    "**NEB-style (2m): Explain why hydrogen and helium show positive deviation (Z > 1) at almost all pressures.** — The van der Waals attraction constant **a** of H₂ (0.244) and He (0.034) is extremely small: their molecules are tiny, light and nearly non-polarisable, so intermolecular attraction never becomes strong enough to pull the observed pressure below the ideal value. The only operative correction is therefore the volume term **b** — the excluded space around each molecule — which makes the gas harder to compress than ideal, so Z = PV/nRT stays **greater than 1** at essentially all pressures. They approach ideality only at very low pressures where even the b effect fades.",
+    "**NEB-style (2m): Ammonia liquefies under pressure at room temperature but nitrogen does not. Explain using van der Waals constants.** — Ammonia's attraction constant **a = 4.17 atm·L²/mol²** is among the largest for common gases because its polar N–H bonds and hydrogen bonding create strong intermolecular attraction; applying pressure alone brings the molecules close enough for this attraction to condense them. Nitrogen's **a = 1.39** is much smaller (nonpolar, weak London forces only), so at room temperature compression cannot overcome the molecules' thermal kinetic energy — N₂ must be cooled far down (to about 77 K at 1 atm) before liquefaction becomes possible. The contrast is a direct read-out of the a values."
+  ],
   "numericals": [
     "Use  PV = nRT  — pick reasonable values, solve, and check the units.",
     "Use  c_rms = √(3RT/M)  — pick reasonable values, solve, and check the units.",
@@ -85,13 +53,92 @@
   ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"Deviation of real gas from ideality (solving related nume…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "A real gas deviates most from ideal behaviour at:",
       "options": [
-        "True",
-        "False"
+        "Low P, high T",
+        "High P, low T",
+        "Low P, low T",
+        "High P, high T"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Volume and attraction corrections peak together near condensation."
+    },
+    {
+      "question": "The van der Waals constant a measures:",
+      "options": [
+        "Molecular volume",
+        "Intermolecular attraction",
+        "Temperature",
+        "Mass"
+      ],
+      "answer": "B",
+      "explanation": "b measures volume; a measures attraction."
+    },
+    {
+      "question": "At high pressure a real gas is compressed:",
+      "options": [
+        "More easily than ideal",
+        "Less easily than ideal",
+        "Identically",
+        "Not at all"
+      ],
+      "answer": "B",
+      "explanation": "Z > 1 - molecules' own volume resists compression."
+    },
+    {
+      "question": "Z = PV/nRT equals 1 for:",
+      "options": [
+        "All real gases",
+        "An ideal gas",
+        "Gases at 0 C",
+        "Heavy gases"
+      ],
+      "answer": "B",
+      "explanation": "Z = 1 defines ideality."
+    },
+    {
+      "question": "Which gas has the largest van der Waals a?",
+      "options": [
+        "He",
+        "H2",
+        "CO2",
+        "NH3"
+      ],
+      "answer": "D",
+      "explanation": "4.17 - strong polarity and hydrogen bonding."
+    },
+    {
+      "question": "H2 shows Z > 1 at most pressures because:",
+      "options": [
+        "Its a is large",
+        "Its a is very small",
+        "Its b is zero",
+        "It is light"
+      ],
+      "answer": "B",
+      "explanation": "Attraction too weak - volume effect dominates."
+    },
+    {
+      "question": "In the van der Waals equation, the term (V - nb) represents:",
+      "options": [
+        "Total volume",
+        "Free volume available to molecules",
+        "Attractive volume",
+        "Critical volume"
+      ],
+      "answer": "B",
+      "explanation": "Excluded volume subtracted from container volume."
+    },
+    {
+      "question": "A gas behaves most ideally at its:",
+      "options": [
+        "Critical point",
+        "Boyle temperature",
+        "Boiling point",
+        "Triple point"
+      ],
+      "answer": "B",
+      "explanation": "Z stays about 1 over a wide pressure range there."
     }
   ],
   "source": "generated",
@@ -102,5 +149,162 @@
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩."
   ],
-  "summary": "Deviation of real gas from ideality (solving related nume… (States of Matter, Chemistry, class-11-notes) covers Deviation of real gas from ideality, solving related numerical problems based on gas laws. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
+  "summary": "Real gases break the kinetic theory's two idealisations, and van der Waals priced each break: molecular **volume** shrinks the free space to (V − nb), and intermolecular **attraction** softens wall impacts, adding a(n/V)² to the pressure — together, **(P + an²/V²)(V − nb) = nRT**. The constants are fingerprints: a ranks stickiness (H₂O 5.46 > NH₃ 4.17 > CO₂ 3.59 > O₂ 1.36 > H₂ 0.244 > He 0.034) and predicts liquefaction ease; b runs about four times the true molecular volume. Deviation peaks at **high pressure** (volume term dominates, Z > 1, harder to compress) and **low temperature** (attraction dominates, Z < 1, easier to compress), while hot dilute gases of any species slide back to Z = 1 — and H₂ and He, with attraction too feeble to matter, ride above 1 everywhere. The compressibility factor Z = PV/nRT turns the story into one number, and the Boyle temperature marks where the two errors cancel.",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — When Gases Stop Being Ideal\n\nReal molecules have size and attraction — the two things the kinetic theory waved away. Compress a gas enough and the molecules' own volume matters; cool it enough and attraction condenses it. Van der Waals patched PV = nRT with two corrections, and the conditions of maximum deviation (high pressure, low temperature) follow from exactly those two failures (NEB 2024).",
+      "## 2. Fundamental Concepts\n\n### 2.1 The two idealisations and how they fail\n\n- **Negligible molecular volume:** at high pressure the molecules are squeezed into a significant fraction of the container — free volume is less than V. Correction: (V − nb).\n- **Negligible intermolecular attraction:** at low temperature the molecules are slow enough that attraction pulls inbound molecules back, softening their wall impact — measured pressure is less than ideal. Correction: +(an²/V²) — the \"attractive drag\" term.\n\n### 2.2 Van der Waals equation\n\n- **(P + an²/V²)(V − nb) = nRT** (for n moles); per mole: **(P + a/V²)(V − b) = RT**.\n- **a:** attraction correction — larger for easily liquefied, polarisable gases (NH₃, CO₂, H₂O ≫ He, H₂); units atm·L²/mol².\n- **b:** volume (co-volume) correction — larger for bulky molecules; roughly 4× the actual molecular volume per mole; units L/mol.\n\n### 2.3 Conditions of maximum deviation (NEB 2024)\n\n- **High pressure:** molecules crowd; b-term dominates → observed V > ideal V (positive deviation, Z > 1).\n- **Low temperature:** molecules slow; attraction dominates → observed P < ideal P (negative deviation, Z < 1).\n- **High T and low P:** both corrections shrink — ideal behaviour recovered; every gas is ideal in the dilute-hot limit.\n\n### 2.4 Compressibility factor Z\n\n- **Z = PV/nRT**; Z = 1 ideal; Z < 1 attraction wins (easier to compress); Z > 1 repulsion/volume wins (harder to compress).\n- H₂ and He (a ≈ 0) show Z > 1 at practically all pressures — attraction too weak to ever pull Z below 1.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Effect |\n|---|---|---|\n| **Real gas** | Molecules with volume and mutual attraction | Deviates from PV = nRT |\n| **Van der Waals a** | Attraction correction constant | Lowers observed P |\n| **Van der Waals b** | Volume correction constant | Raises observed V |\n| **Compressibility factor** | Z = PV/nRT | Z = 1 ideal |\n| **Boyle temperature** | T at which Z ≈ 1 over a wide P range | Gas behaves ideally |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): when does a real gas deviate most; explain with van der Waals\n\n- **Most deviation: high pressure and low temperature** (near condensation). At high P the molecules' own volume is no longer negligible against the compressed V — the free space is (V − nb), so the observed volume exceeds the ideal prediction (Z > 1). At low T the molecules move slowly enough for attraction to act: incoming molecules are pulled back by the bulk, hitting the walls with less momentum, so the observed pressure is less than ideal — van der Waals writes this as an added term a(n/V)², giving **(P + an²/V²)(V − nb) = nRT**. At high T and low P both corrections vanish and PV = nRT is recovered.\n\n### 4.2 The a-table: attraction ranks the gases\n\n| Gas | a (atm·L²/mol²) | Character |\n|---|---|---|\n| H₂O | 5.46 | Strong H-bonding |\n| NH₃ | 4.17 | Polar, H-bonding |\n| CO₂ | 3.59 | Polarisable, liquefies easily |\n| O₂ | 1.36 | Nonpolar |\n| H₂ | 0.244 | Tiny, barely attracts |\n| He | 0.034 | Nearly ideal |\n\n- Liquefaction ease tracks a: NH₃ and CO₂ compress to liquids at room temperature (a large); He resists liquefaction down to 4 K (a tiny).\n\n### 4.3 Boyle temperature\n\n- Each gas has a temperature where the a and b effects cancel over a pressure range — Z stays ≈ 1: the gas behaves most ideally (e.g. N₂ ≈ 323 K, He ≈ 23 K).",
+      "## 5. Comparison Tables\n\n**Ideal vs real gas**\n\n| Basis | Ideal gas | Real gas |\n|---|---|---|\n| Molecular volume | Negligible | Finite (b correction) |\n| Intermolecular forces | None | Attractive (a correction) |\n| Equation | PV = nRT | (P + an²/V²)(V − nb) = nRT |\n| Obeys gas laws | At all T, P | Only at high T, low P |\n| Exists? | Hypothetical | All actual gases |\n\n**Deviation regimes**\n\n| Condition | Dominant correction | Z | Observed vs ideal |\n|---|---|---|---|\n| High P | b (volume) | > 1 | Harder to compress |\n| Low T | a (attraction) | < 1 | Easier to compress |\n| High T, low P | Neither | ≈ 1 | Ideal |",
+      "## 6. Common Confusions\n\n**Deviation has two directions:** high pressure inflates volume (Z > 1) while low temperature deflates pressure (Z < 1) — \"deviates\" does not mean one sign.",
+      "**a and b are gas-specific constants, not universal:** R is universal; a and b must be looked up per gas — quoting R's value for a is a mark-losing slip.",
+      "**Liquefaction needs attraction, not just pressure:** a large a means the gas can be liquefied near room temperature; a tiny a (He) demands extreme cooling first.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): Under what conditions does a real gas deviate most from ideal behaviour? Explain using van der Waals' equation.** — **Conditions: high pressure and low temperature.** Van der Waals modified the ideal equation to (P + an²/V²)(V − nb) = nRT, where a corrects for intermolecular attraction and b for finite molecular volume. At **high pressure** the molecules occupy an appreciable fraction of the container, so the free volume is less than the measured V — the (V − nb) term — and the gas is harder to compress than ideal (Z > 1). At **low temperature** the molecules move slowly enough for attraction to matter: each molecule approaching the wall is pulled back by the others, so it strikes with less momentum and the observed pressure falls short — compensated by the added term a(n/V)² (Z < 1). At high temperature and low pressure both corrections become negligible and the gas obeys PV = nRT.",
+      "**NEB-style (2m): Why do H₂ and He show Z > 1 at almost all pressures?** — Their a values are tiny (0.244 and 0.034 atm·L²/mol²): intermolecular attraction is too weak to ever make the observed pressure fall below ideal, so the volume (b) effect dominates and Z stays above 1 — they are the most \"permanently ideal\" gases.",
+      "**NEB-style (2m): Account for the observation that NH₃ liquefies under pressure at room temperature while N₂ does not.** — NH₃'s large a (4.17) reflects strong dipole–dipole (and hydrogen-bond) attraction: compression alone lets attraction condense it. N₂'s a is small (1.39) with weak London forces, so room-temperature compression cannot liquefy it — it must first be cooled below its critical-region temperatures."
+    ],
+    "confusion": [
+      "**b is roughly four times the actual molecular volume, not equal to it:** the excluded sphere around each molecule doubles its radius — a detail examiners like to probe."
+    ],
+    "keyPoints": [
+      "Real gases: finite molecular volume + intermolecular attraction. Van der Waals: (P + an²/V²)(V − nb) = nRT; a = attraction (large for NH₃ 4.17, CO₂ 3.59, H₂O 5.46; tiny for He 0.034, H₂ 0.244); b = volume ≈ 4× molecular volume. Max deviation: high P (Z > 1, volume term) and low T (Z < 1, attraction term). Z = PV/nRT; ideal Z = 1. H₂/He: Z > 1 always. Boyle temperature: Z ≈ 1 region. Ideal limit: high T, low P."
+    ],
+    "importantConcepts": [
+      "Van der Waals' two corrections are the kinetic theory's failed postulates 1 and 3 made quantitative — the equation is the ideal law plus honest accounting."
+    ],
+    "examples": [
+      "***The CO₂ fire extinguisher*** — CO₂ liquefies at ~60 atm room temperature (a = 3.59): attraction plus pressure does what cooling does for nitrogen."
+    ],
+    "universalFacts": [
+      "Helium's near-zero a is why it stays liquid only at 4 K and why it escapes Earth's gravity — the least sticky, most elusive gas in the atmosphere."
+    ],
+    "importantStatements": [
+      "\"A real gas deviates most from ideal behaviour at high pressure and low temperature, where molecular volume and intermolecular attraction can no longer be neglected.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2024 — conditions of maximum deviation explained via van der Waals' equation (solved above). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Deviation dial: \"high P pushes Z up, low T pulls Z down\". a ladder: H₂O > NH₃ > CO₂ > O₂ > H₂ > He. b ≈ 4 × molecular volume. Ideal zone: hot and dilute."
+    ],
+    "examNotes": [
+      "Name both corrections with their symbols and the Z consequence (Z > 1 at high P, Z < 1 at low T) — the Z values convert a descriptive answer into an analytical one."
+    ],
+    "formulas": [
+      "- (P + an²/V²)(V − nb) = nRT\n- Per mole: (P + a/V²)(V − b) = RT\n- Z = PV/nRT (Z = 1 ideal)\n- Boyle temperature: Z ≈ 1 over wide P range"
+    ],
+    "practice": [
+      "Derive the van der Waals equation by applying volume and pressure corrections to PV = nRT.",
+      "Why does the compressibility factor of N₂ first fall below 1, then rise above 1, as pressure increases at room temperature?",
+      "Compare the a and b values of CO₂ and H₂ and predict which liquefies more easily."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (3m): Under what conditions does a real gas deviate most from ideal behaviour? Explain using van der Waals' equation.** — A real gas deviates most at **high pressure and low temperature**. Van der Waals corrected the ideal equation for the two failed idealisations: **(P + an²/V²)(V − nb) = nRT**, where **a** accounts for intermolecular attraction and **b** for the finite volume of the molecules. **At high pressure**, the molecules' own volume becomes a significant fraction of the container, so the volume actually available for motion is (V − nb) — less than the measured V — and the gas is harder to compress than the ideal law predicts (compressibility factor Z > 1). **At low temperature**, molecular speeds drop until intermolecular attraction becomes effective: a molecule nearing the wall is pulled backwards by the attraction of the bulk, strikes with reduced momentum, and the observed pressure is lower than ideal — compensated by the added term a(n/V)² (Z < 1). At high temperature and low pressure both corrections vanish, and the gas behaves ideally (Z ≈ 1). The deviation is therefore largest exactly where the gas approaches condensation — high P, low T.",
+      "**NEB-style (2m): Explain why hydrogen and helium show positive deviation (Z > 1) at almost all pressures.** — The van der Waals attraction constant **a** of H₂ (0.244) and He (0.034) is extremely small: their molecules are tiny, light and nearly non-polarisable, so intermolecular attraction never becomes strong enough to pull the observed pressure below the ideal value. The only operative correction is therefore the volume term **b** — the excluded space around each molecule — which makes the gas harder to compress than ideal, so Z = PV/nRT stays **greater than 1** at essentially all pressures. They approach ideality only at very low pressures where even the b effect fades.",
+      "**NEB-style (2m): Ammonia liquefies under pressure at room temperature but nitrogen does not. Explain using van der Waals constants.** — Ammonia's attraction constant **a = 4.17 atm·L²/mol²** is among the largest for common gases because its polar N–H bonds and hydrogen bonding create strong intermolecular attraction; applying pressure alone brings the molecules close enough for this attraction to condense them. Nitrogen's **a = 1.39** is much smaller (nonpolar, weak London forces only), so at room temperature compression cannot overcome the molecules' thermal kinetic energy — N₂ must be cooled far down (to about 77 K at 1 atm) before liquefaction becomes possible. The contrast is a direct read-out of the a values."
+    ]
+  },
+  "importantConcepts": [
+    "Van der Waals' two corrections are the kinetic theory's failed postulates 1 and 3 made quantitative — the equation is the ideal law plus honest accounting."
+  ],
+  "importantStatements": [
+    "\"A real gas deviates most from ideal behaviour at high pressure and low temperature, where molecular volume and intermolecular attraction can no longer be neglected.\""
+  ],
+  "examShortTricks": [
+    "Deviation dial: \"high P pushes Z up, low T pulls Z down\". a ladder: H₂O > NH₃ > CO₂ > O₂ > H₂ > He. b ≈ 4 × molecular volume. Ideal zone: hot and dilute."
+  ],
+  "examNotes": [
+    "Name both corrections with their symbols and the Z consequence (Z > 1 at high P, Z < 1 at low T) — the Z values convert a descriptive answer into an analytical one."
+  ],
+  "mcs": [
+    {
+      "question": "A real gas deviates most from ideal behaviour at:",
+      "options": [
+        "Low P, high T",
+        "High P, low T",
+        "Low P, low T",
+        "High P, high T"
+      ],
+      "answer": "B",
+      "explanation": "Volume and attraction corrections peak together near condensation."
+    },
+    {
+      "question": "The van der Waals constant a measures:",
+      "options": [
+        "Molecular volume",
+        "Intermolecular attraction",
+        "Temperature",
+        "Mass"
+      ],
+      "answer": "B",
+      "explanation": "b measures volume; a measures attraction."
+    },
+    {
+      "question": "At high pressure a real gas is compressed:",
+      "options": [
+        "More easily than ideal",
+        "Less easily than ideal",
+        "Identically",
+        "Not at all"
+      ],
+      "answer": "B",
+      "explanation": "Z > 1 - molecules' own volume resists compression."
+    },
+    {
+      "question": "Z = PV/nRT equals 1 for:",
+      "options": [
+        "All real gases",
+        "An ideal gas",
+        "Gases at 0 C",
+        "Heavy gases"
+      ],
+      "answer": "B",
+      "explanation": "Z = 1 defines ideality."
+    },
+    {
+      "question": "Which gas has the largest van der Waals a?",
+      "options": [
+        "He",
+        "H2",
+        "CO2",
+        "NH3"
+      ],
+      "answer": "D",
+      "explanation": "4.17 - strong polarity and hydrogen bonding."
+    },
+    {
+      "question": "H2 shows Z > 1 at most pressures because:",
+      "options": [
+        "Its a is large",
+        "Its a is very small",
+        "Its b is zero",
+        "It is light"
+      ],
+      "answer": "B",
+      "explanation": "Attraction too weak - volume effect dominates."
+    },
+    {
+      "question": "In the van der Waals equation, the term (V - nb) represents:",
+      "options": [
+        "Total volume",
+        "Free volume available to molecules",
+        "Attractive volume",
+        "Critical volume"
+      ],
+      "answer": "B",
+      "explanation": "Excluded volume subtracted from container volume."
+    },
+    {
+      "question": "A gas behaves most ideally at its:",
+      "options": [
+        "Critical point",
+        "Boyle temperature",
+        "Boiling point",
+        "Triple point"
+      ],
+      "answer": "B",
+      "explanation": "Z stays about 1 over a wide pressure range there."
+    }
+  ]
 }

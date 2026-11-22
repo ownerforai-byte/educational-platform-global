@@ -6,56 +6,292 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:23.497Z",
   "notes": [
-    "# Ideal gas and ideal gas equation; universal gas constant and its significance\n\n## 1. Introduction\nChemical picture of **Ideal gas and ideal gas equation; universal gas constant and its significance** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the States of Matter fill pass.\n\n## 2. Concepts and definitions\n### Ideal gas and ideal gas equation\n### universal gas constant and its significance\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Ideal gas and ideal gas equation; universal gas constant and its significance — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Ideal gas and ideal gas equation; universal gas constant and its significance — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Ideal gas and ideal gas equation; universal gas constant and its significance — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Ideal gas and ideal gas equation; universal gas constant and its significance — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — One Equation to Rule the Gas Laws\n\nPV = nRT compresses Boyle, Charles and Avogadro into four symbols, and its constant R is the most travelled number in physical chemistry — the same 8.314 J/mol·K (or 0.0821 L·atm/mol·K) that later powers entropy, equilibrium and electrochemistry. Deriving it from the partial laws is a standard NEB question (2023 and 2024 both asked it), and every gas numerical reduces to choosing the right units for R.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The derivation (Boyle + Charles + Avogadro)\n\n- Let n moles of gas occupy volume V at pressure P and temperature T.\n- **Boyle:** V ∝ 1/P (T, n fixed). **Charles:** V ∝ T (P, n fixed). **Avogadro:** V ∝ n (T, P fixed).\n- Combining all three: **V ∝ nT/P** → V = R·nT/P → **PV = nRT**.\n- R is the proportionality constant — the **universal gas constant** — experimentally the same for every gas.\n\n### 2.2 The universal gas constant R and its units\n\n- **R = PV/nT**; its units follow from the units chosen for P and V.\n- **R = 0.0821 L·atm/mol·K** — for volumes in litres and pressures in atmospheres.\n- **R = 8.314 J/mol·K** — SI (P in Pa, V in m³); also 8.314 kPa·dm³/mol·K.\n- **R = 1.987 cal/mol·K ≈ 2 cal/mol·K** — thermochemistry contexts.\n- Numerical check: 1 mol at STP → R = (1 atm × 22.4 L)/(1 mol × 273 K) = 0.0821 L·atm/mol·K.\n\n### 2.3 Significance of R\n\n- R is universal — same value for H₂, O₂, CO₂, any ideal gas; it converts the proportionalities of the partial laws into an exact equation.\n- In energy form, R per molecule is the **Boltzmann constant** k = R/N_A = 1.38 × 10⁻²³ J/K — the bridge from moles to molecules.\n\n### 2.4 Using PV = nRT\n\n- **n = PV/RT** — mass from m = n × M.\n- **Density:** d = PM/RT; **molar mass from vapour density:** M = dRT/P.\n- Numerical: 0.5 mol gas at 300 K in 5 L → P = nRT/V = 0.5 × 0.0821 × 300/5 = **2.46 atm**.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value |\n|---|---|---|\n| **Ideal gas** | Obeys PV = nRT at all T and P | Hypothetical |\n| **Universal gas constant** | Proportionality constant of the ideal equation | 0.0821 L·atm/mol·K |\n| **R in SI** | Energy per mole per kelvin | 8.314 J/mol·K |\n| **Boltzmann constant** | R per molecule | 1.38 × 10⁻²³ J/K |\n| **Ideal gas equation** | Combined form of the three gas laws | PV = nRT |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2023 + 2024): state Boyle's and Charles's laws; derive the ideal gas equation\n\n- **Boyle's law:** at constant temperature, the volume of a fixed mass of gas is inversely proportional to its pressure (P₁V₁ = P₂V₂).\n- **Charles's law:** at constant pressure, the volume of a fixed mass of gas is directly proportional to its absolute temperature (V₁/T₁ = V₂/T₂).\n- **Derivation:** with n fixed, V ∝ 1/P (Boyle) and V ∝ T (Charles); combining, V ∝ T/P; introducing Avogadro's proportionality to n gives V ∝ nT/P. Writing the proportionality as equality with constant R: V = RnT/P → **PV = nRT**. Each of Boyle, Charles and Avogadro is recovered by holding the other variables constant — the equation is their common parent.\n\n### 4.2 Unit discipline\n\n- Match R to the data: P in atm with V in L → R = 0.0821; P in Pa with V in m³ → R = 8.314. Mixing them is the classic numerical error; a quick dimensional check (L·atm vs J) catches it.\n\n### 4.3 What \"ideal\" buys and costs\n\n- The equation assumes negligible molecular volume and no intermolecular forces — exact at low P and high T, increasingly wrong otherwise (topic 46 quantifies the failure).",
+    "## 5. Comparison Tables\n\n**R in its three costumes**\n\n| Form | Value | Use when |\n|---|---|---|\n| L·atm/mol·K | 0.0821 | P in atm, V in litres |\n| J/mol·K | 8.314 | SI: Pa and m³; energy contexts |\n| cal/mol·K | 1.987 | Thermochemistry |\n\n**From partial laws to full equation**\n\n| Law | Contribution | Recovered by holding |\n|---|---|---|\n| Boyle | V ∝ 1/P | T, n constant |\n| Charles | V ∝ T | P, n constant |\n| Avogadro | V ∝ n | T, P constant |\n| Combined | PV = nRT | — |",
+    "## 6. Common Confusions\n\n**R is not \"8.314 always\":** the value must match the pressure–volume units; 0.0821 with atm–litres, 8.314 with Pa–m³.",
+    "**Temperature in Kelvin again:** PV = nRT inherits Charles's absolute scale; a Celsius slip scales the answer by 273/300 or worse.",
+    "**Ideal gases do not exist:** the equation is a limiting model; real gases approach it at low pressure and high temperature but never coincide.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2023/2024): State Boyle's law and Charles's law. Derive the ideal gas equation.** — Boyle: V ∝ 1/P at constant T and n. Charles: V ∝ T at constant P and n. Combining: V ∝ T/P for fixed n; adding Avogadro's V ∝ n: V ∝ nT/P. Introducing the constant R: V = RnT/P, hence **PV = nRT**. Setting the other variables constant recovers each partial law, confirming the combination.",
+    "**NEB-style (2m): Calculate the pressure exerted by 0.5 mol of an ideal gas occupying 5 L at 300 K (R = 0.0821).** — P = nRT/V = (0.5 × 0.0821 × 300)/5 = 12.315/5 = **2.46 atm**.",
+    "**NEB-style (2m): Find the molar mass of a gas whose density is 1.96 g/L at 1 atm and 273 K.** — M = dRT/P = (1.96 × 0.0821 × 273)/1 ≈ **44 g/mol** — carbon dioxide."
   ],
   "practice": [
-    "Explain why R is called universal and give its value in three sets of units.",
-    "Calculate the molar mass of a gas of density 1.25 g L⁻¹ at 27 °C and 1 atm.",
-    "Find the volume occupied by 8 g of oxygen at 27 °C and 750 mm Hg.",
-    "Discuss the significance of R in the kinetic theory and in thermodynamics.",
-    "State the limitations of the ideal gas equation."
+    "Derive PV = nRT from Boyle's and Charles's laws and state the value of R in two unit systems.",
+    "A 10 L flask holds 2 mol gas at 27 °C; find the pressure in atm.",
+    "A gas has density 3.17 g/L at STP; identify it from its molar mass."
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Ideal gas and ideal gas equation; universal gas constant …\"?",
+      "question": "The ideal gas equation is:",
       "options": [
-        "Ideal gas",
-        "Ideal gas equation",
-        "Unrelated topic",
-        "None of the above"
+        "PV = RT",
+        "PV = nRT",
+        "PVT = nR",
+        "P = nRT"
       ],
-      "answer": "Ideal gas",
-      "explanation": "Ideal gas is listed among the official sub-ideas of Ideal gas and ideal gas equation; universal gas constant …; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "Four variables, one universal constant."
     },
     {
-      "question": "A common examiner point on \"Ideal gas and ideal gas equation; universal gas constant …\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "R in L atm/mol K is:",
       "options": [
-        "True",
-        "False"
+        "8.314",
+        "0.0821",
+        "1.987",
+        "6.022"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "8.314 belongs to J/mol K with Pa and m3."
+    },
+    {
+      "question": "The value of R is the same for:",
+      "options": [
+        "All ideal gases",
+        "Only monatomic gases",
+        "Only real gases",
+        "Each gas differs"
+      ],
+      "answer": "A",
+      "explanation": "Universality - the experimental basis of Avogadro's law."
+    },
+    {
+      "question": "The Boltzmann constant equals:",
+      "options": [
+        "R/NA",
+        "NA/R",
+        "R x NA",
+        "R2"
+      ],
+      "answer": "A",
+      "explanation": "1.38e-23 J/K - R per molecule."
+    },
+    {
+      "question": "0.5 mol gas in 5 L at 300 K exerts about:",
+      "options": [
+        "1.23 atm",
+        "2.46 atm",
+        "4.92 atm",
+        "0.62 atm"
+      ],
+      "answer": "B",
+      "explanation": "P = nRT/V = 0.5 x 0.0821 x 300/5."
+    },
+    {
+      "question": "The density form of the ideal gas equation is:",
+      "options": [
+        "d = M/RT",
+        "d = PM/RT",
+        "d = RT/PM",
+        "d = PRT/M"
+      ],
+      "answer": "B",
+      "explanation": "Substitute n = m/M into PV = nRT."
+    },
+    {
+      "question": "In the ideal gas equation, temperature must be in:",
+      "options": [
+        "Celsius",
+        "Kelvin",
+        "Fahrenheit",
+        "Any scale"
+      ],
+      "answer": "B",
+      "explanation": "Inherited from Charles's law."
+    },
+    {
+      "question": "An ideal gas is one that obeys PV = nRT:",
+      "options": [
+        "At high pressure only",
+        "At all T and P",
+        "At low T only",
+        "Never"
+      ],
+      "answer": "B",
+      "explanation": "The definition - real gases only approximate it."
     }
   ],
   "examShortTricks": [
-    "Trick 1: PV = nRT with R = 0.0821 L atm K^-1 mol^-1 when P in atm and V in litres; SI value 8.314 J K^-1 mol^-1 — pick R to match the units given.",
-    "Trick 2: Same-gas comparison: P1V1/T1 = P2V2/T2 (n cancels); different-gas comparison: use PV = nRT and solve for the missing variable.",
-    "Trick 3: Density form: PM = dRT — molar mass from density, or density from M, in one substitution.",
-    "Trick 4: Significance of R: work done per mole per kelvin — same for ALL gases (universal)."
+    "Derivation chain: \"Boyle + Charles + Avogadro → PV = nRT\". R table: 0.0821 (L·atm), 8.314 (J), 2 (cal). Density trick: d = PM/RT. Kelvin check before plugging."
   ],
   "keyPoints": [
-    "Ideal gas equation: PV = nRT.",
-    "R = 8.314 J K^-1 mol^-1 = 0.0821 L atm K^-1 mol^-1 = 2 cal K^-1 mol^-1.",
-    "Universal gas constant has the same value for every gas.",
-    "PM = dRT links density and molar mass."
+    "Derivation: Boyle (V ∝ 1/P) + Charles (V ∝ T) + Avogadro (V ∝ n) → V ∝ nT/P → PV = nRT. R = 0.0821 L·atm/mol·K = 8.314 J/mol·K = 1.987 cal/mol·K; universal for all ideal gases. Check: 1 atm × 22.4 L / (1 mol × 273 K) = 0.0821. Boltzmann k = R/N_A = 1.38 × 10⁻²³ J/K. Forms: n = PV/RT; d = PM/RT; M = dRT/P. Worked: 0.5 mol, 5 L, 300 K → 2.46 atm; d = 1.96 g/L at STP → M = 44."
   ],
   "practiceQuestions": [
-    "Q. 2 g of a gas occupies 1.12 L at STP. Find M. (2 marks) — n = 1.12/22.4 = 0.05; M = 2/0.05 = 40 g/mol.",
-    "Q. Find the pressure of 0.5 mol gas in 10 L at 27 °C. (2 marks) — P = nRT/V = 0.5 × 0.0821 × 300/10 = 1.23 atm."
+    "**NEB 2023/2024 (4m): State Boyle's law and Charles's law. Derive the ideal gas equation from them.** — **Boyle's law:** at constant temperature, the volume of a given mass of gas is inversely proportional to its pressure — V ∝ 1/P, or P₁V₁ = P₂V₂. **Charles's law:** at constant pressure, the volume of a given mass of gas is directly proportional to its absolute temperature — V ∝ T, or V₁/T₁ = V₂/T₂. **Derivation:** consider n moles of gas at pressure P, volume V, temperature T. From Boyle, V ∝ 1/P; from Charles, V ∝ T; combining these proportionalities for the same gas, V ∝ T/P. Avogadro's law adds V ∝ n at fixed T and P, so overall V ∝ nT/P. Converting the proportionality into an equation introduces a constant R: V = R·nT/P, which rearranges to **PV = nRT** — the ideal gas equation. Consistency check: holding T and n constant returns Boyle's law, holding P and n constant returns Charles's law, and holding T and P constant returns Avogadro's law — each partial law is a special case of the combined equation.",
+    "**NEB-style (2m): Calculate the pressure exerted by 0.5 mol of an ideal gas occupying a 5 L vessel at 300 K (R = 0.0821 L atm/mol K).** — From PV = nRT: P = nRT/V = (0.5 mol × 0.0821 L·atm/mol·K × 300 K)/5 L = 12.315/5 = **2.46 atm**. (Unit check: mol cancels mol, K cancels K, litres divide litres — leaving atm.)",
+    "**NEB-style (2m): The density of a gas is 1.96 g/L at 1 atm and 273 K. Calculate its molar mass and identify the gas.** — From the density form of the ideal gas equation, d = PM/RT, so M = dRT/P. Substituting: M = (1.96 g/L × 0.0821 L·atm/mol·K × 273 K)/1 atm = **44 g/mol**. A molar mass of 44 identifies the gas as **carbon dioxide (CO₂)**."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — One Equation to Rule the Gas Laws\n\nPV = nRT compresses Boyle, Charles and Avogadro into four symbols, and its constant R is the most travelled number in physical chemistry — the same 8.314 J/mol·K (or 0.0821 L·atm/mol·K) that later powers entropy, equilibrium and electrochemistry. Deriving it from the partial laws is a standard NEB question (2023 and 2024 both asked it), and every gas numerical reduces to choosing the right units for R.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The derivation (Boyle + Charles + Avogadro)\n\n- Let n moles of gas occupy volume V at pressure P and temperature T.\n- **Boyle:** V ∝ 1/P (T, n fixed). **Charles:** V ∝ T (P, n fixed). **Avogadro:** V ∝ n (T, P fixed).\n- Combining all three: **V ∝ nT/P** → V = R·nT/P → **PV = nRT**.\n- R is the proportionality constant — the **universal gas constant** — experimentally the same for every gas.\n\n### 2.2 The universal gas constant R and its units\n\n- **R = PV/nT**; its units follow from the units chosen for P and V.\n- **R = 0.0821 L·atm/mol·K** — for volumes in litres and pressures in atmospheres.\n- **R = 8.314 J/mol·K** — SI (P in Pa, V in m³); also 8.314 kPa·dm³/mol·K.\n- **R = 1.987 cal/mol·K ≈ 2 cal/mol·K** — thermochemistry contexts.\n- Numerical check: 1 mol at STP → R = (1 atm × 22.4 L)/(1 mol × 273 K) = 0.0821 L·atm/mol·K.\n\n### 2.3 Significance of R\n\n- R is universal — same value for H₂, O₂, CO₂, any ideal gas; it converts the proportionalities of the partial laws into an exact equation.\n- In energy form, R per molecule is the **Boltzmann constant** k = R/N_A = 1.38 × 10⁻²³ J/K — the bridge from moles to molecules.\n\n### 2.4 Using PV = nRT\n\n- **n = PV/RT** — mass from m = n × M.\n- **Density:** d = PM/RT; **molar mass from vapour density:** M = dRT/P.\n- Numerical: 0.5 mol gas at 300 K in 5 L → P = nRT/V = 0.5 × 0.0821 × 300/5 = **2.46 atm**.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Value |\n|---|---|---|\n| **Ideal gas** | Obeys PV = nRT at all T and P | Hypothetical |\n| **Universal gas constant** | Proportionality constant of the ideal equation | 0.0821 L·atm/mol·K |\n| **R in SI** | Energy per mole per kelvin | 8.314 J/mol·K |\n| **Boltzmann constant** | R per molecule | 1.38 × 10⁻²³ J/K |\n| **Ideal gas equation** | Combined form of the three gas laws | PV = nRT |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2023 + 2024): state Boyle's and Charles's laws; derive the ideal gas equation\n\n- **Boyle's law:** at constant temperature, the volume of a fixed mass of gas is inversely proportional to its pressure (P₁V₁ = P₂V₂).\n- **Charles's law:** at constant pressure, the volume of a fixed mass of gas is directly proportional to its absolute temperature (V₁/T₁ = V₂/T₂).\n- **Derivation:** with n fixed, V ∝ 1/P (Boyle) and V ∝ T (Charles); combining, V ∝ T/P; introducing Avogadro's proportionality to n gives V ∝ nT/P. Writing the proportionality as equality with constant R: V = RnT/P → **PV = nRT**. Each of Boyle, Charles and Avogadro is recovered by holding the other variables constant — the equation is their common parent.\n\n### 4.2 Unit discipline\n\n- Match R to the data: P in atm with V in L → R = 0.0821; P in Pa with V in m³ → R = 8.314. Mixing them is the classic numerical error; a quick dimensional check (L·atm vs J) catches it.\n\n### 4.3 What \"ideal\" buys and costs\n\n- The equation assumes negligible molecular volume and no intermolecular forces — exact at low P and high T, increasingly wrong otherwise (topic 46 quantifies the failure).",
+      "## 5. Comparison Tables\n\n**R in its three costumes**\n\n| Form | Value | Use when |\n|---|---|---|\n| L·atm/mol·K | 0.0821 | P in atm, V in litres |\n| J/mol·K | 8.314 | SI: Pa and m³; energy contexts |\n| cal/mol·K | 1.987 | Thermochemistry |\n\n**From partial laws to full equation**\n\n| Law | Contribution | Recovered by holding |\n|---|---|---|\n| Boyle | V ∝ 1/P | T, n constant |\n| Charles | V ∝ T | P, n constant |\n| Avogadro | V ∝ n | T, P constant |\n| Combined | PV = nRT | — |",
+      "## 6. Common Confusions\n\n**R is not \"8.314 always\":** the value must match the pressure–volume units; 0.0821 with atm–litres, 8.314 with Pa–m³.",
+      "**Temperature in Kelvin again:** PV = nRT inherits Charles's absolute scale; a Celsius slip scales the answer by 273/300 or worse.",
+      "**Ideal gases do not exist:** the equation is a limiting model; real gases approach it at low pressure and high temperature but never coincide.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2023/2024): State Boyle's law and Charles's law. Derive the ideal gas equation.** — Boyle: V ∝ 1/P at constant T and n. Charles: V ∝ T at constant P and n. Combining: V ∝ T/P for fixed n; adding Avogadro's V ∝ n: V ∝ nT/P. Introducing the constant R: V = RnT/P, hence **PV = nRT**. Setting the other variables constant recovers each partial law, confirming the combination.",
+      "**NEB-style (2m): Calculate the pressure exerted by 0.5 mol of an ideal gas occupying 5 L at 300 K (R = 0.0821).** — P = nRT/V = (0.5 × 0.0821 × 300)/5 = 12.315/5 = **2.46 atm**.",
+      "**NEB-style (2m): Find the molar mass of a gas whose density is 1.96 g/L at 1 atm and 273 K.** — M = dRT/P = (1.96 × 0.0821 × 273)/1 ≈ **44 g/mol** — carbon dioxide."
+    ],
+    "confusion": [
+      "**Density form vs moles form:** d = PM/RT needs M in g/mol and d in g/L; using n where M belongs doubles the error."
+    ],
+    "keyPoints": [
+      "Derivation: Boyle (V ∝ 1/P) + Charles (V ∝ T) + Avogadro (V ∝ n) → V ∝ nT/P → PV = nRT. R = 0.0821 L·atm/mol·K = 8.314 J/mol·K = 1.987 cal/mol·K; universal for all ideal gases. Check: 1 atm × 22.4 L / (1 mol × 273 K) = 0.0821. Boltzmann k = R/N_A = 1.38 × 10⁻²³ J/K. Forms: n = PV/RT; d = PM/RT; M = dRT/P. Worked: 0.5 mol, 5 L, 300 K → 2.46 atm; d = 1.96 g/L at STP → M = 44."
+    ],
+    "importantConcepts": [
+      "R's universality is the experimental fact behind Avogadro's law: one constant for all gases means equal n gives equal V at the same P and T."
+    ],
+    "examples": [
+      "***The tyre pressure gauge*** — a tyre reading 32 psi at 20 °C climbs near 35 psi after highway driving: PV = nRT with V, n fixed makes P ∝ T — Charles's law wearing rubber."
+    ],
+    "universalFacts": [
+      "Planetary atmospheres are ideal-gas territory: the same PV = nRT with Mars's 6 mbar CO₂ and Earth's 1 bar N₂ explains why density, not composition, sets scale heights."
+    ],
+    "importantStatements": [
+      "\"The ideal gas equation PV = nRT combines Boyle's law, Charles's law and Avogadro's law; the constant R has the same value for all gases.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2023 and NEB 2024 — state Boyle's and Charles's laws and derive the ideal gas equation (solved above). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Derivation chain: \"Boyle + Charles + Avogadro → PV = nRT\". R table: 0.0821 (L·atm), 8.314 (J), 2 (cal). Density trick: d = PM/RT. Kelvin check before plugging."
+    ],
+    "examNotes": [
+      "In the derivation, state each contributing law with its constant variables, then combine in one line — examiners look for the three proportionalities explicitly before PV = nRT appears."
+    ],
+    "formulas": [
+      "- PV = nRT\n- R = 0.0821 L·atm/mol·K = 8.314 J/mol·K = 1.987 cal/mol·K\n- n = PV/RT; m = nM\n- d = PM/RT; M = dRT/P\n- k = R/N_A = 1.38 × 10⁻²³ J/K"
+    ],
+    "practice": [
+      "Derive PV = nRT from Boyle's and Charles's laws and state the value of R in two unit systems.",
+      "A 10 L flask holds 2 mol gas at 27 °C; find the pressure in atm.",
+      "A gas has density 3.17 g/L at STP; identify it from its molar mass."
+    ],
+    "practiceQuestions": [
+      "**NEB 2023/2024 (4m): State Boyle's law and Charles's law. Derive the ideal gas equation from them.** — **Boyle's law:** at constant temperature, the volume of a given mass of gas is inversely proportional to its pressure — V ∝ 1/P, or P₁V₁ = P₂V₂. **Charles's law:** at constant pressure, the volume of a given mass of gas is directly proportional to its absolute temperature — V ∝ T, or V₁/T₁ = V₂/T₂. **Derivation:** consider n moles of gas at pressure P, volume V, temperature T. From Boyle, V ∝ 1/P; from Charles, V ∝ T; combining these proportionalities for the same gas, V ∝ T/P. Avogadro's law adds V ∝ n at fixed T and P, so overall V ∝ nT/P. Converting the proportionality into an equation introduces a constant R: V = R·nT/P, which rearranges to **PV = nRT** — the ideal gas equation. Consistency check: holding T and n constant returns Boyle's law, holding P and n constant returns Charles's law, and holding T and P constant returns Avogadro's law — each partial law is a special case of the combined equation.",
+      "**NEB-style (2m): Calculate the pressure exerted by 0.5 mol of an ideal gas occupying a 5 L vessel at 300 K (R = 0.0821 L atm/mol K).** — From PV = nRT: P = nRT/V = (0.5 mol × 0.0821 L·atm/mol·K × 300 K)/5 L = 12.315/5 = **2.46 atm**. (Unit check: mol cancels mol, K cancels K, litres divide litres — leaving atm.)",
+      "**NEB-style (2m): The density of a gas is 1.96 g/L at 1 atm and 273 K. Calculate its molar mass and identify the gas.** — From the density form of the ideal gas equation, d = PM/RT, so M = dRT/P. Substituting: M = (1.96 g/L × 0.0821 L·atm/mol·K × 273 K)/1 atm = **44 g/mol**. A molar mass of 44 identifies the gas as **carbon dioxide (CO₂)**."
+    ]
+  },
+  "confusion": [
+    "**Density form vs moles form:** d = PM/RT needs M in g/mol and d in g/L; using n where M belongs doubles the error."
+  ],
+  "importantConcepts": [
+    "R's universality is the experimental fact behind Avogadro's law: one constant for all gases means equal n gives equal V at the same P and T."
+  ],
+  "examples": [
+    "***The tyre pressure gauge*** — a tyre reading 32 psi at 20 °C climbs near 35 psi after highway driving: PV = nRT with V, n fixed makes P ∝ T — Charles's law wearing rubber."
+  ],
+  "universalFacts": [
+    "Planetary atmospheres are ideal-gas territory: the same PV = nRT with Mars's 6 mbar CO₂ and Earth's 1 bar N₂ explains why density, not composition, sets scale heights."
+  ],
+  "importantStatements": [
+    "\"The ideal gas equation PV = nRT combines Boyle's law, Charles's law and Avogadro's law; the constant R has the same value for all gases.\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2023 and NEB 2024 — state Boyle's and Charles's laws and derive the ideal gas equation (solved above). Other items are NEB-style practice."
+  ],
+  "examNotes": [
+    "In the derivation, state each contributing law with its constant variables, then combine in one line — examiners look for the three proportionalities explicitly before PV = nRT appears."
+  ],
+  "formulas": [
+    "- PV = nRT\n- R = 0.0821 L·atm/mol·K = 8.314 J/mol·K = 1.987 cal/mol·K\n- n = PV/RT; m = nM\n- d = PM/RT; M = dRT/P\n- k = R/N_A = 1.38 × 10⁻²³ J/K"
+  ],
+  "summary": "Three empirical laws fold into one equation. Boyle contributes V ∝ 1/P, Charles contributes V ∝ T, Avogadro contributes V ∝ n; multiplied together they give V ∝ nT/P, and the constant that makes it an equality is **R — the universal gas constant**, 0.0821 L·atm/mol·K in laboratory units, 8.314 J/mol·K in SI, 1.987 cal/mol·K in thermochemistry, and identical for every gas — the experimental soul of Avogadro's law. Per molecule, R shrinks to Boltzmann's k = 1.38 × 10⁻²³ J/K. The equation's working forms — n = PV/RT for moles, d = PM/RT for density, M = dRT/P for molar mass — turn state data into identity answers (1.96 g/L at STP reads 44: carbon dioxide). \"Ideal\" is the price: negligible molecular volume and no intermolecular forces hold only at low pressure and high temperature, and the next topic prices the failure.",
+  "mcs": [
+    {
+      "question": "The ideal gas equation is:",
+      "options": [
+        "PV = RT",
+        "PV = nRT",
+        "PVT = nR",
+        "P = nRT"
+      ],
+      "answer": "B",
+      "explanation": "Four variables, one universal constant."
+    },
+    {
+      "question": "R in L atm/mol K is:",
+      "options": [
+        "8.314",
+        "0.0821",
+        "1.987",
+        "6.022"
+      ],
+      "answer": "B",
+      "explanation": "8.314 belongs to J/mol K with Pa and m3."
+    },
+    {
+      "question": "The value of R is the same for:",
+      "options": [
+        "All ideal gases",
+        "Only monatomic gases",
+        "Only real gases",
+        "Each gas differs"
+      ],
+      "answer": "A",
+      "explanation": "Universality - the experimental basis of Avogadro's law."
+    },
+    {
+      "question": "The Boltzmann constant equals:",
+      "options": [
+        "R/NA",
+        "NA/R",
+        "R x NA",
+        "R2"
+      ],
+      "answer": "A",
+      "explanation": "1.38e-23 J/K - R per molecule."
+    },
+    {
+      "question": "0.5 mol gas in 5 L at 300 K exerts about:",
+      "options": [
+        "1.23 atm",
+        "2.46 atm",
+        "4.92 atm",
+        "0.62 atm"
+      ],
+      "answer": "B",
+      "explanation": "P = nRT/V = 0.5 x 0.0821 x 300/5."
+    },
+    {
+      "question": "The density form of the ideal gas equation is:",
+      "options": [
+        "d = M/RT",
+        "d = PM/RT",
+        "d = RT/PM",
+        "d = PRT/M"
+      ],
+      "answer": "B",
+      "explanation": "Substitute n = m/M into PV = nRT."
+    },
+    {
+      "question": "In the ideal gas equation, temperature must be in:",
+      "options": [
+        "Celsius",
+        "Kelvin",
+        "Fahrenheit",
+        "Any scale"
+      ],
+      "answer": "B",
+      "explanation": "Inherited from Charles's law."
+    },
+    {
+      "question": "An ideal gas is one that obeys PV = nRT:",
+      "options": [
+        "At high pressure only",
+        "At all T and P",
+        "At low T only",
+        "Never"
+      ],
+      "answer": "B",
+      "explanation": "The definition - real gases only approximate it."
+    }
   ]
 }

@@ -6,55 +6,286 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:23.517Z",
   "notes": [
-    "# Efflorescent, deliquescent and hygroscopic solids; crystallization and crystal growth; water of crystallization\n\n## 1. Introduction\nChemical picture of **Efflorescent** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the States of Matter fill pass.\n\n## 2. Concepts and definitions\n### Efflorescent\n### deliquescent and hygroscopic solids\n### crystallization and crystal growth\n### water of crystallization\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Efflorescent — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Efflorescent — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Efflorescent — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Efflorescent — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Solids That Fight the Air\n\nSome solids stay dry forever, some soak the air dry, some crumble into solution without a drop of water added. Efflorescent, hygroscopic and deliquescent solids sit at three points on one water-vapour gradient — and knowing which is which saves experiments, reagents and exam marks.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The three behaviours\n\n- **Efflorescent:** a hydrated solid that **loses** its water of crystallisation to the air at room temperature, crusting to a powder. Examples: Na₂CO₃·10H₂O (washing soda), Na₂SO₄·10H₂O (Glauber's salt), CuSO₄·5H₂O (partially, to the trihydrate), MgSO₄·7H₂O. Condition: the salt's **aqueous tension (vapour pressure of its hydrate) exceeds atmospheric water-vapour pressure**.\n- **Hygroscopic:** a solid that **absorbs moisture** from the air and stays physically damp — surface adsorption, the solid does not dissolve. Examples: NaOH (solid), quicklime CaO, anhydrous CaCl₂ (mildly), silica gel, conc. H₂SO₄ (a hygroscopic liquid), P₂O₅.\n- **Deliquescent:** a solid that absorbs so much moisture it **dissolves in the absorbed water**, forming a concentrated solution. Examples: CaCl₂·6H₂O, MgCl₂·6H₂O, ZnCl₂, FeCl₃, NaOH (fully deliquescent), KOH. Condition: the solution formed has **vapour pressure below atmospheric water-vapour pressure**, so it keeps drawing water.\n\n### 2.2 Water of crystallisation\n\n- Water molecules fixed in the crystal lattice in definite stoichiometric ratios: CuSO₄·5H₂O (blue), FeSO₄·7H₂O (green vitriol), Na₂CO₃·10H₂O (washing soda), CaSO₄·2H₂O (gypsum), MgSO₄·7H₂O (Epsom salt).\n- **Crystallisation:** crystals grow from saturated solutions (or melts) as solvent evaporates or cools — nucleation followed by growth; seed crystals direct the habit.\n- Heating removes water of crystallisation: blue CuSO₄·5H₂O → white CuSO₄ + steam; re-wetting restores the blue — the classic reversible hydration test.\n\n### 2.3 The vapour-pressure logic (the deciding rule)\n\n- Compare the **vapour pressure of the solid's saturated solution (or hydrate)** with the **partial pressure of water vapour in the air**:\n  - Solid VP > air moisture → solid dries the air around it → **efflorescence** (loses water).\n  - Solid VP < air moisture → air feeds the solid → **deliquescence** (dissolves) or **hygroscopicity** (adsorbs without dissolving).\n- Deliquescence vs hygroscopicity is thus a matter of **degree and solubility**: deliquescent salts are highly soluble; hygroscopic ones adsorb without forming a solution (or form one too slowly).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Efflorescent** | Hydrated salt loses water of crystallisation to air | Na₂CO₃·10H₂O |\n| **Hygroscopic** | Absorbs moisture without dissolving | CaO, silica gel |\n| **Deliquescent** | Absorbs moisture and dissolves into solution | CaCl₂·6H₂O, KOH |\n| **Water of crystallisation** | Stoichiometric lattice water | CuSO₄·5H₂O |\n| **Crystallisation** | Crystal growth from saturated solution | CuSO₄ crystals |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why washing soda crumbles and CaCl₂ puddles\n\n- Na₂CO₃·10H₂O's hydrate vapour pressure exceeds the water vapour normally in air, so it effloresces to the monohydrate/powder. CaCl₂·6H₂O's saturated solution has vapour pressure below air's moisture content, so water flows inward until the salt dissolves completely — a puddle of concentrated solution. Two directions, one rule.\n\n### 4.2 The blue–white copper cycle\n\n- CuSO₄·5H₂O (blue) —heat→ CuSO₄ (white) + 5H₂O; CuSO₄ —water→ blue again. Anhydrous CuSO₄ is therefore a water-detecting agent (turns blue in presence of water) — the standard test in organic chemistry practicals.\n\n### 4.3 Desiccators and drying agents\n\n- Desiccators pack hygroscopic/deliquescent agents (silica gel, CaCl₂, P₂O₅, conc. H₂SO₄) to hold a dry atmosphere for cooling and storing hygroscopic samples. Choice by strength: silica gel (mild, reusable), CaCl₂ (moderate), P₂O₅/conc. H₂SO₄ (strong).",
+    "## 5. Comparison Tables\n\n**The three behaviours side by side**\n\n| Basis | Efflorescent | Hygroscopic | Deliquescent |\n|---|---|---|---|\n| Water movement | Loses lattice water | Absorbs on surface | Absorbs and dissolves |\n| Final state | Powder (lower hydrate) | Damp solid | Solution puddle |\n| VP rule | Solid VP > air moisture | — | Solution VP < air moisture |\n| Examples | Na₂CO₃·10H₂O, Glauber's salt | CaO, silica gel, P₂O₅ | CaCl₂·6H₂O, MgCl₂·6H₂O, KOH, FeCl₃ |\n\n**Common waters of crystallisation**\n\n| Salt | Common name | Water |\n|---|---|---|\n| CuSO₄·5H₂O | Blue vitriol | 5 |\n| FeSO₄·7H₂O | Green vitriol | 7 |\n| Na₂CO₃·10H₂O | Washing soda | 10 |\n| CaSO₄·2H₂O | Gypsum | 2 |\n| MgSO₄·7H₂O | Epsom salt | 7 |",
+    "## 6. Common Confusions\n\n**Hygroscopic vs deliquescent — the solution decides:** both absorb water; only the deliquescent salt *dissolves* in what it absorbs. CaO absorbs (stays solid, becomes Ca(OH)₂ by reaction); CaCl₂·6H₂O dissolves.",
+    "**Efflorescence needs a hydrate:** anhydrous solids cannot effloresce — there is no lattice water to lose.",
+    "**Water of crystallisation is not \"wetness\":** it is stoichiometric, structural water — CuSO₄·5H₂O is a dry, powdery crystal holding five waters per formula unit inside its lattice.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Define efflorescent, hygroscopic and deliquescent substances with two examples of each.** — **Efflorescent:** hydrated salts that spontaneously lose their water of crystallisation to the atmosphere at ordinary temperature, crumbling to a powder — e.g. washing soda Na₂CO₃·10H₂O, Glauber's salt Na₂SO₄·10H₂O. **Hygroscopic:** substances that absorb moisture from the air without dissolving in it — e.g. quicklime CaO, silica gel, anhydrous P₂O₅, solid NaOH (partially). **Deliquescent:** substances that absorb moisture so abundantly that they dissolve in it, forming a solution — e.g. calcium chloride CaCl₂·6H₂O, magnesium chloride MgCl₂·6H₂O, ferric chloride FeCl₃, KOH.",
+    "**NEB-style (2m): Explain efflorescence and deliquescence in terms of vapour pressure.** — Each behaviour follows from comparing the **vapour pressure of the solid (or its saturated solution)** with the **partial pressure of water vapour in the air**. If the hydrate's vapour pressure is **greater** than the air's moisture pressure, water flows out of the crystal — efflorescence (Na₂CO₃·10H₂O). If the saturated solution's vapour pressure is **less** than the air's moisture pressure, water flows into the solid until it dissolves — deliquescence (CaCl₂·6H₂O). Water always migrates from higher to lower vapour pressure.",
+    "**NEB-style (2m): Anhydrous copper sulphate is used to test for water. Why?** — Anhydrous CuSO₄ is white; on contact with water it re-forms the blue pentahydrate CuSO₄·5H₂O. The sharp, reversible colour change (white → blue) signals water's presence even in small amounts — the standard test that a distillate or organic liquid is dry or wet."
   ],
   "practice": [
-    "Distinguish efflorescent, deliquescent and hygroscopic substances with two examples of each.",
-    "Explain water of crystallisation and describe how it is determined experimentally.",
-    "Why does washing soda turn to powder on standing in dry air? Write the equation.",
-    "Give four applications of crystallisation and crystal growth in industry and the laboratory.",
-    "State the limitations of the efflorescent/deliquescent/hygroscopic classification."
+    "Classify: anhydrous CaCl₂, washing soda, silica gel, FeCl₃, gypsum — with reasons.",
+    "Why does a bottle of KOH left open end up half-full of liquid?",
+    "Design a test to show that gypsum contains water of crystallisation."
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Efflorescent, deliquescent and hygroscopic solids; crysta…\"?",
+      "question": "Washing soda left in air crumbles because it is:",
       "options": [
-        "Efflorescent",
+        "Hygroscopic",
         "Deliquescent",
-        "Unrelated topic",
-        "None of the above"
+        "Efflorescent",
+        "Volatile"
       ],
-      "answer": "A",
-      "explanation": "Efflorescent is listed among the official sub-ideas of Efflorescent, deliquescent and hygroscopic solids; crysta…; the others are not part of this topic."
+      "answer": "C",
+      "explanation": "It loses its 10 waters of crystallisation."
     },
     {
-      "question": "A common examiner point on \"Efflorescent, deliquescent and hygroscopic solids; crysta…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "CaCl2.6H2O left in air forms a puddle because it is:",
       "options": [
-        "True",
-        "False"
+        "Efflorescent",
+        "Hygroscopic",
+        "Deliquescent",
+        "Sublimable"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C",
+      "explanation": "Absorbs moisture and dissolves in it."
+    },
+    {
+      "question": "Silica gel is:",
+      "options": [
+        "Deliquescent",
+        "Hygroscopic",
+        "Efflorescent",
+        "Volatile"
+      ],
+      "answer": "B",
+      "explanation": "Adsorbs moisture without dissolving - reusable desiccant."
+    },
+    {
+      "question": "Water of crystallisation in blue vitriol is:",
+      "options": [
+        "2",
+        "5",
+        "7",
+        "10"
+      ],
+      "answer": "B",
+      "explanation": "CuSO4.5H2O."
+    },
+    {
+      "question": "Anhydrous CuSO4 detects water by turning:",
+      "options": [
+        "Blue",
+        "White",
+        "Green",
+        "Black"
+      ],
+      "answer": "A",
+      "explanation": "White to blue on hydration."
+    },
+    {
+      "question": "Deliquescence occurs when the solution's vapour pressure is:",
+      "options": [
+        "Above air's moisture",
+        "Below air's moisture",
+        "Zero",
+        "Equal"
+      ],
+      "answer": "B",
+      "explanation": "Air keeps feeding water until the solid dissolves."
+    },
+    {
+      "question": "Which is efflorescent?",
+      "options": [
+        "CaO",
+        "Na2SO4.10H2O",
+        "FeCl3",
+        "KOH"
+      ],
+      "answer": "B",
+      "explanation": "Glauber's salt loses its 10 waters."
+    },
+    {
+      "question": "Water of crystallisation is:",
+      "options": [
+        "Surface moisture",
+        "Stoichiometric lattice water",
+        "Impurity",
+        "Steam"
+      ],
+      "answer": "B",
+      "explanation": "Definite ratio built into the crystal."
     }
   ],
   "examShortTricks": [
-    "Trick 1: One-word trio — efflorescent: LOSE water to air (Na2CO3·10H2O); deliquescent: absorb water and DISSOLVE (CaCl2, NaOH); hygroscopic: absorb water but stay solid (silica gel).",
-    "Trick 2: Water of crystallisation count: CuSO4·5H2O (blue vitriol, 5), FeSO4·7H2O (green vitriol, 7), Na2CO3·10H2O (washing soda, 10) — quote salt + n for the 1-marker.",
-    "Trick 3: Crystal growth needs a seed crystal and a saturated solution — slow cooling gives large crystals."
+    "Direction mnemonic: \"efflorescent = exhalation (loses); deliquescent = drinks and dissolves; hygroscopic = humects (damp only)\". Waters: blue vitriol 5, green 7, washing soda 10, gypsum 2. Blue→white→blue = CuSO₄ water test."
   ],
   "keyPoints": [
-    "Efflorescence: loss of water of crystallisation to the atmosphere.",
-    "Deliquescence: absorption of moisture until the solid dissolves.",
-    "Hygroscopic: absorbs moisture without dissolving.",
-    "Water of crystallisation: stoichiometric water in the crystal lattice."
+    "Efflorescent: hydrate loses lattice water (VP of hydrate > air moisture): Na₂CO₃·10H₂O, Na₂SO₄·10H₂O. Hygroscopic: absorbs moisture, stays solid: CaO, silica gel, P₂O₅, conc. H₂SO₄. Deliquescent: absorbs and dissolves (solution VP < air moisture): CaCl₂·6H₂O, MgCl₂·6H₂O, ZnCl₂, FeCl₃, KOH. Water of crystallisation: CuSO₄·5H₂O (blue→white test), FeSO₄·7H₂O, Na₂CO₃·10H₂O, gypsum 2H₂O. Crystallisation: nucleation + growth from saturated solution. Rule: water moves high VP → low VP."
   ],
   "practiceQuestions": [
-    "Q. Classify: CaCl2, silica gel, washing soda. (2 marks) — deliquescent; hygroscopic; efflorescent.",
-    "Q. Write the formula of blue vitriol with its water of crystallisation. (1 mark) — CuSO4·5H2O."
+    "**NEB-style (3m): Define efflorescent, hygroscopic and deliquescent substances, giving two examples of each.** — **Efflorescent substances** are hydrated salts that spontaneously **lose their water of crystallisation** to the atmosphere at ordinary temperature, crumbling into a lower hydrate or powder — e.g. **washing soda (Na₂CO₃·10H₂O)** and **Glauber's salt (Na₂SO₄·10H₂O)**. **Hygroscopic substances** absorb moisture from the air and remain **damp solids without dissolving** — e.g. **quicklime (CaO)** and **silica gel** (also anhydrous P₂O₅, concentrated H₂SO₄). **Deliquescent substances** absorb moisture so abundantly that they **dissolve in the absorbed water**, forming a concentrated solution — e.g. **calcium chloride (CaCl₂·6H₂O)** and **potassium hydroxide (KOH)** (also MgCl₂·6H₂O, FeCl₃, ZnCl₂).",
+    "**NEB-style (2m): Explain efflorescence and deliquescence on the basis of vapour pressure.** — Water vapour always migrates from a region of **higher vapour pressure to lower**. **Efflorescence:** the vapour pressure of the hydrated crystal is **higher** than the partial pressure of water vapour in the surrounding air, so the crystal loses its lattice water to the air and crumbles (Na₂CO₃·10H₂O). **Deliquescence:** the vapour pressure of the substance's saturated solution is **lower** than the moisture pressure of the air, so water vapour keeps condensing onto the solid, diluting the surface solution, which never reaches equilibrium until the whole solid has dissolved (CaCl₂·6H₂O). Hygroscopicity is the intermediate case — moisture is adsorbed but the solid never dissolves.",
+    "**NEB-style (2m): Why is anhydrous copper sulphate used to test for the presence of water?** — Anhydrous copper sulphate is **white**; when it contacts water it re-forms the hydrated salt **CuSO₄·5H₂O, which is blue**: CuSO₄ (white) + 5H₂O → CuSO₄·5H₂O (blue). The colour change is sharp, rapid and reversible, so a drop of any liquid that contains water turns the white powder blue — the standard laboratory test for water (used, for example, to check whether an organic distillate is dry)."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Solids That Fight the Air\n\nSome solids stay dry forever, some soak the air dry, some crumble into solution without a drop of water added. Efflorescent, hygroscopic and deliquescent solids sit at three points on one water-vapour gradient — and knowing which is which saves experiments, reagents and exam marks.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The three behaviours\n\n- **Efflorescent:** a hydrated solid that **loses** its water of crystallisation to the air at room temperature, crusting to a powder. Examples: Na₂CO₃·10H₂O (washing soda), Na₂SO₄·10H₂O (Glauber's salt), CuSO₄·5H₂O (partially, to the trihydrate), MgSO₄·7H₂O. Condition: the salt's **aqueous tension (vapour pressure of its hydrate) exceeds atmospheric water-vapour pressure**.\n- **Hygroscopic:** a solid that **absorbs moisture** from the air and stays physically damp — surface adsorption, the solid does not dissolve. Examples: NaOH (solid), quicklime CaO, anhydrous CaCl₂ (mildly), silica gel, conc. H₂SO₄ (a hygroscopic liquid), P₂O₅.\n- **Deliquescent:** a solid that absorbs so much moisture it **dissolves in the absorbed water**, forming a concentrated solution. Examples: CaCl₂·6H₂O, MgCl₂·6H₂O, ZnCl₂, FeCl₃, NaOH (fully deliquescent), KOH. Condition: the solution formed has **vapour pressure below atmospheric water-vapour pressure**, so it keeps drawing water.\n\n### 2.2 Water of crystallisation\n\n- Water molecules fixed in the crystal lattice in definite stoichiometric ratios: CuSO₄·5H₂O (blue), FeSO₄·7H₂O (green vitriol), Na₂CO₃·10H₂O (washing soda), CaSO₄·2H₂O (gypsum), MgSO₄·7H₂O (Epsom salt).\n- **Crystallisation:** crystals grow from saturated solutions (or melts) as solvent evaporates or cools — nucleation followed by growth; seed crystals direct the habit.\n- Heating removes water of crystallisation: blue CuSO₄·5H₂O → white CuSO₄ + steam; re-wetting restores the blue — the classic reversible hydration test.\n\n### 2.3 The vapour-pressure logic (the deciding rule)\n\n- Compare the **vapour pressure of the solid's saturated solution (or hydrate)** with the **partial pressure of water vapour in the air**:\n  - Solid VP > air moisture → solid dries the air around it → **efflorescence** (loses water).\n  - Solid VP < air moisture → air feeds the solid → **deliquescence** (dissolves) or **hygroscopicity** (adsorbs without dissolving).\n- Deliquescence vs hygroscopicity is thus a matter of **degree and solubility**: deliquescent salts are highly soluble; hygroscopic ones adsorb without forming a solution (or form one too slowly).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Efflorescent** | Hydrated salt loses water of crystallisation to air | Na₂CO₃·10H₂O |\n| **Hygroscopic** | Absorbs moisture without dissolving | CaO, silica gel |\n| **Deliquescent** | Absorbs moisture and dissolves into solution | CaCl₂·6H₂O, KOH |\n| **Water of crystallisation** | Stoichiometric lattice water | CuSO₄·5H₂O |\n| **Crystallisation** | Crystal growth from saturated solution | CuSO₄ crystals |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why washing soda crumbles and CaCl₂ puddles\n\n- Na₂CO₃·10H₂O's hydrate vapour pressure exceeds the water vapour normally in air, so it effloresces to the monohydrate/powder. CaCl₂·6H₂O's saturated solution has vapour pressure below air's moisture content, so water flows inward until the salt dissolves completely — a puddle of concentrated solution. Two directions, one rule.\n\n### 4.2 The blue–white copper cycle\n\n- CuSO₄·5H₂O (blue) —heat→ CuSO₄ (white) + 5H₂O; CuSO₄ —water→ blue again. Anhydrous CuSO₄ is therefore a water-detecting agent (turns blue in presence of water) — the standard test in organic chemistry practicals.\n\n### 4.3 Desiccators and drying agents\n\n- Desiccators pack hygroscopic/deliquescent agents (silica gel, CaCl₂, P₂O₅, conc. H₂SO₄) to hold a dry atmosphere for cooling and storing hygroscopic samples. Choice by strength: silica gel (mild, reusable), CaCl₂ (moderate), P₂O₅/conc. H₂SO₄ (strong).",
+      "## 5. Comparison Tables\n\n**The three behaviours side by side**\n\n| Basis | Efflorescent | Hygroscopic | Deliquescent |\n|---|---|---|---|\n| Water movement | Loses lattice water | Absorbs on surface | Absorbs and dissolves |\n| Final state | Powder (lower hydrate) | Damp solid | Solution puddle |\n| VP rule | Solid VP > air moisture | — | Solution VP < air moisture |\n| Examples | Na₂CO₃·10H₂O, Glauber's salt | CaO, silica gel, P₂O₅ | CaCl₂·6H₂O, MgCl₂·6H₂O, KOH, FeCl₃ |\n\n**Common waters of crystallisation**\n\n| Salt | Common name | Water |\n|---|---|---|\n| CuSO₄·5H₂O | Blue vitriol | 5 |\n| FeSO₄·7H₂O | Green vitriol | 7 |\n| Na₂CO₃·10H₂O | Washing soda | 10 |\n| CaSO₄·2H₂O | Gypsum | 2 |\n| MgSO₄·7H₂O | Epsom salt | 7 |",
+      "## 6. Common Confusions\n\n**Hygroscopic vs deliquescent — the solution decides:** both absorb water; only the deliquescent salt *dissolves* in what it absorbs. CaO absorbs (stays solid, becomes Ca(OH)₂ by reaction); CaCl₂·6H₂O dissolves.",
+      "**Efflorescence needs a hydrate:** anhydrous solids cannot effloresce — there is no lattice water to lose.",
+      "**Water of crystallisation is not \"wetness\":** it is stoichiometric, structural water — CuSO₄·5H₂O is a dry, powdery crystal holding five waters per formula unit inside its lattice.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Define efflorescent, hygroscopic and deliquescent substances with two examples of each.** — **Efflorescent:** hydrated salts that spontaneously lose their water of crystallisation to the atmosphere at ordinary temperature, crumbling to a powder — e.g. washing soda Na₂CO₃·10H₂O, Glauber's salt Na₂SO₄·10H₂O. **Hygroscopic:** substances that absorb moisture from the air without dissolving in it — e.g. quicklime CaO, silica gel, anhydrous P₂O₅, solid NaOH (partially). **Deliquescent:** substances that absorb moisture so abundantly that they dissolve in it, forming a solution — e.g. calcium chloride CaCl₂·6H₂O, magnesium chloride MgCl₂·6H₂O, ferric chloride FeCl₃, KOH.",
+      "**NEB-style (2m): Explain efflorescence and deliquescence in terms of vapour pressure.** — Each behaviour follows from comparing the **vapour pressure of the solid (or its saturated solution)** with the **partial pressure of water vapour in the air**. If the hydrate's vapour pressure is **greater** than the air's moisture pressure, water flows out of the crystal — efflorescence (Na₂CO₃·10H₂O). If the saturated solution's vapour pressure is **less** than the air's moisture pressure, water flows into the solid until it dissolves — deliquescence (CaCl₂·6H₂O). Water always migrates from higher to lower vapour pressure.",
+      "**NEB-style (2m): Anhydrous copper sulphate is used to test for water. Why?** — Anhydrous CuSO₄ is white; on contact with water it re-forms the blue pentahydrate CuSO₄·5H₂O. The sharp, reversible colour change (white → blue) signals water's presence even in small amounts — the standard test that a distillate or organic liquid is dry or wet."
+    ],
+    "keyPoints": [
+      "Efflorescent: hydrate loses lattice water (VP of hydrate > air moisture): Na₂CO₃·10H₂O, Na₂SO₄·10H₂O. Hygroscopic: absorbs moisture, stays solid: CaO, silica gel, P₂O₅, conc. H₂SO₄. Deliquescent: absorbs and dissolves (solution VP < air moisture): CaCl₂·6H₂O, MgCl₂·6H₂O, ZnCl₂, FeCl₃, KOH. Water of crystallisation: CuSO₄·5H₂O (blue→white test), FeSO₄·7H₂O, Na₂CO₃·10H₂O, gypsum 2H₂O. Crystallisation: nucleation + growth from saturated solution. Rule: water moves high VP → low VP."
+    ],
+    "importantConcepts": [
+      "One vapour-pressure gradient explains all three behaviours — the same rule that drives evaporation (topic 47) drives every drying agent and every crumbling hydrate."
+    ],
+    "examples": [
+      "***The desiccator*** — a glass vessel over silica gel or CaCl₂ keeps tongs-dry samples and cools red-hot crucibles without them gaining weight — humidity control by deliquescence."
+    ],
+    "universalFacts": [
+      "Roads are salted with NaCl/CaCl₂ in winter partly because deliquescence keeps a brine film active below 0 °C — the same chemistry that ruins untightened salt bags."
+    ],
+    "importantStatements": [
+      "\"Efflorescent substances lose their water of crystallisation to the atmosphere; deliquescent substances absorb moisture from the atmosphere and dissolve in it.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this topic exists in the current bank; all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Direction mnemonic: \"efflorescent = exhalation (loses); deliquescent = drinks and dissolves; hygroscopic = humects (damp only)\". Waters: blue vitriol 5, green 7, washing soda 10, gypsum 2. Blue→white→blue = CuSO₄ water test."
+    ],
+    "examNotes": [
+      "In definitions, include the *observable outcome* (powder / damp solid / solution) plus one example each — a definition without an example loses the second mark."
+    ],
+    "formulas": [
+      "- Na₂CO₃·10H₂O → Na₂CO₃·H₂O + 9H₂O (efflorescence)\n- CuSO₄·5H₂O → CuSO₄ + 5H₂O (heat); CuSO₄ + 5H₂O → blue (test)\n- CaCl₂·6H₂O → CaCl₂ solution (deliquescence)\n- CaO + H₂O → Ca(OH)₂ (hygroscopic reaction)"
+    ],
+    "practice": [
+      "Classify: anhydrous CaCl₂, washing soda, silica gel, FeCl₃, gypsum — with reasons.",
+      "Why does a bottle of KOH left open end up half-full of liquid?",
+      "Design a test to show that gypsum contains water of crystallisation."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Define efflorescent, hygroscopic and deliquescent substances, giving two examples of each.** — **Efflorescent substances** are hydrated salts that spontaneously **lose their water of crystallisation** to the atmosphere at ordinary temperature, crumbling into a lower hydrate or powder — e.g. **washing soda (Na₂CO₃·10H₂O)** and **Glauber's salt (Na₂SO₄·10H₂O)**. **Hygroscopic substances** absorb moisture from the air and remain **damp solids without dissolving** — e.g. **quicklime (CaO)** and **silica gel** (also anhydrous P₂O₅, concentrated H₂SO₄). **Deliquescent substances** absorb moisture so abundantly that they **dissolve in the absorbed water**, forming a concentrated solution — e.g. **calcium chloride (CaCl₂·6H₂O)** and **potassium hydroxide (KOH)** (also MgCl₂·6H₂O, FeCl₃, ZnCl₂).",
+      "**NEB-style (2m): Explain efflorescence and deliquescence on the basis of vapour pressure.** — Water vapour always migrates from a region of **higher vapour pressure to lower**. **Efflorescence:** the vapour pressure of the hydrated crystal is **higher** than the partial pressure of water vapour in the surrounding air, so the crystal loses its lattice water to the air and crumbles (Na₂CO₃·10H₂O). **Deliquescence:** the vapour pressure of the substance's saturated solution is **lower** than the moisture pressure of the air, so water vapour keeps condensing onto the solid, diluting the surface solution, which never reaches equilibrium until the whole solid has dissolved (CaCl₂·6H₂O). Hygroscopicity is the intermediate case — moisture is adsorbed but the solid never dissolves.",
+      "**NEB-style (2m): Why is anhydrous copper sulphate used to test for the presence of water?** — Anhydrous copper sulphate is **white**; when it contacts water it re-forms the hydrated salt **CuSO₄·5H₂O, which is blue**: CuSO₄ (white) + 5H₂O → CuSO₄·5H₂O (blue). The colour change is sharp, rapid and reversible, so a drop of any liquid that contains water turns the white powder blue — the standard laboratory test for water (used, for example, to check whether an organic distillate is dry)."
+    ]
+  },
+  "importantConcepts": [
+    "One vapour-pressure gradient explains all three behaviours — the same rule that drives evaporation (topic 47) drives every drying agent and every crumbling hydrate."
+  ],
+  "examples": [
+    "***The desiccator*** — a glass vessel over silica gel or CaCl₂ keeps tongs-dry samples and cools red-hot crucibles without them gaining weight — humidity control by deliquescence."
+  ],
+  "universalFacts": [
+    "Roads are salted with NaCl/CaCl₂ in winter partly because deliquescence keeps a brine film active below 0 °C — the same chemistry that ruins untightened salt bags."
+  ],
+  "importantStatements": [
+    "\"Efflorescent substances lose their water of crystallisation to the atmosphere; deliquescent substances absorb moisture from the atmosphere and dissolve in it.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this topic exists in the current bank; all items above are NEB-style practice."
+  ],
+  "examNotes": [
+    "In definitions, include the *observable outcome* (powder / damp solid / solution) plus one example each — a definition without an example loses the second mark."
+  ],
+  "formulas": [
+    "- Na₂CO₃·10H₂O → Na₂CO₃·H₂O + 9H₂O (efflorescence)\n- CuSO₄·5H₂O → CuSO₄ + 5H₂O (heat); CuSO₄ + 5H₂O → blue (test)\n- CaCl₂·6H₂O → CaCl₂ solution (deliquescence)\n- CaO + H₂O → Ca(OH)₂ (hygroscopic reaction)"
+  ],
+  "summary": "Three solids, one gradient of water vapour. **Efflorescent** hydrates sit above the air's moisture pressure and bleed their lattice water out — washing soda and Glauber's salt powder themselves on the shelf. **Hygroscopic** solids sip moisture and stay whole — quicklime, silica gel, P₂O₅, the desiccator's residents. **Deliquescent** salts drink past the saturation point and dissolve into their own drink — CaCl₂·6H₂O, MgCl₂·6H₂O, KOH, FeCl₃, ending as puddles. The deciding rule is vapour pressure: water always flows high → low, so a hydrate with higher VP than the air dries out while a salt whose saturated solution has lower VP never stops absorbing. Inside the lattice, **water of crystallisation** is stoichiometric architecture — five waters in blue vitriol, ten in washing soda, two in gypsum — and the blue→white→blue copper cycle turns that hidden water into the standard test for moisture itself.",
+  "mcs": [
+    {
+      "question": "Washing soda left in air crumbles because it is:",
+      "options": [
+        "Hygroscopic",
+        "Deliquescent",
+        "Efflorescent",
+        "Volatile"
+      ],
+      "answer": "C",
+      "explanation": "It loses its 10 waters of crystallisation."
+    },
+    {
+      "question": "CaCl2.6H2O left in air forms a puddle because it is:",
+      "options": [
+        "Efflorescent",
+        "Hygroscopic",
+        "Deliquescent",
+        "Sublimable"
+      ],
+      "answer": "C",
+      "explanation": "Absorbs moisture and dissolves in it."
+    },
+    {
+      "question": "Silica gel is:",
+      "options": [
+        "Deliquescent",
+        "Hygroscopic",
+        "Efflorescent",
+        "Volatile"
+      ],
+      "answer": "B",
+      "explanation": "Adsorbs moisture without dissolving - reusable desiccant."
+    },
+    {
+      "question": "Water of crystallisation in blue vitriol is:",
+      "options": [
+        "2",
+        "5",
+        "7",
+        "10"
+      ],
+      "answer": "B",
+      "explanation": "CuSO4.5H2O."
+    },
+    {
+      "question": "Anhydrous CuSO4 detects water by turning:",
+      "options": [
+        "Blue",
+        "White",
+        "Green",
+        "Black"
+      ],
+      "answer": "A",
+      "explanation": "White to blue on hydration."
+    },
+    {
+      "question": "Deliquescence occurs when the solution's vapour pressure is:",
+      "options": [
+        "Above air's moisture",
+        "Below air's moisture",
+        "Zero",
+        "Equal"
+      ],
+      "answer": "B",
+      "explanation": "Air keeps feeding water until the solid dissolves."
+    },
+    {
+      "question": "Which is efflorescent?",
+      "options": [
+        "CaO",
+        "Na2SO4.10H2O",
+        "FeCl3",
+        "KOH"
+      ],
+      "answer": "B",
+      "explanation": "Glauber's salt loses its 10 waters."
+    },
+    {
+      "question": "Water of crystallisation is:",
+      "options": [
+        "Surface moisture",
+        "Stoichiometric lattice water",
+        "Impurity",
+        "Steam"
+      ],
+      "answer": "B",
+      "explanation": "Definite ratio built into the crystal."
+    }
   ]
 }

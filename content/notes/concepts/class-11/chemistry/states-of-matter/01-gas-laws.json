@@ -5,85 +5,50 @@
   "topicTitle": "Gas laws: Boyle's law, Charles' law, Avogadro's law, combined gas equation, Dalton's law of partial pressure, Graham's law of diffusion",
   "relevance": 100,
   "notes": [
-    "### 1. Meaning",
-    "The gas laws are the experimentally established relations between the pressure (P), volume (V), absolute temperature (T) and amount (n) of a fixed mass of gas. They hold for an ideal gas, i.e. at low pressure and high temperature where molecular volume and intermolecular forces are negligible.",
-    "### 2. Boyle's law (1662)",
-    "At constant temperature the volume of a fixed mass of gas is inversely proportional to its pressure: V ∝ 1/P, so PV = constant (P₁V₁ = P₂V₂). Graphically, P versus V is a rectangular hyperbola and P versus 1/V is a straight line through the origin; each curve is called an isotherm. Molecular meaning: compressing the gas raises the number of collisions per unit area per unit time, which increases pressure.",
-    "### 3. Charles' law (1787; published 1802)",
-    "At constant pressure the volume of a fixed mass of gas is directly proportional to its absolute temperature: V ∝ T, so V₁/T₁ = V₂/T₂ (isobar). A V–t(°C) plot is a straight line meeting the temperature axis at −273.15 °C, the origin of the absolute (Kelvin) scale. The same logic at constant **volume** gives the pressure law (Gay-Lussac): P ∝ T, P₁/T₁ = P₂/T₂ (isochore).",
-    "### 4. Avogadro's law (1811)",
-    "Equal volumes of all gases under the same conditions of temperature and pressure contain equal numbers of molecules: V ∝ n at constant T and P. Consequences: molar volume of any gas at STP = 22.4 dm³ (22.4 L) and at RTP ≈ 24 dm³; 1 mol contains 6.022 × 10²³ molecules; vapour density and molecular mass can be calculated from gas volumes.",
-    "### 5. Combined gas equation and the ideal gas equation",
-    "Combining Boyle, Charles and Avogadro for a fixed mass: $\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}}$ and finally $PV=nRT$, where R = 8.314 J K⁻¹ mol⁻¹ = 0.0821 L atm K⁻¹ mol⁻¹ = 2 cal K⁻¹ mol⁻¹. R is the work done by one mole of an ideal gas per kelvin of expansion at constant pressure (universal gas constant).",
-    "### 6. Dalton's law of partial pressures (1801)",
-    "The total pressure of a mixture of non-reacting gases is the sum of the partial pressures each gas would exert alone in the same volume: P_total = P₁ + P₂ + P₃ + …; and P_i = x_i P_total where x_i is the mole fraction. Applications: gases collected over water (P_dry = P_total − aqueous tension), scuba and anaesthetic gas mixtures, and vapour-pressure corrections in the laboratory.",
-    "### 7. Graham's law of diffusion (1833)",
-    "The rate of diffusion (or effusion) of a gas is inversely proportional to the square root of its density or molar mass at the same T and P: $\\frac{r_{1}}{r_{2}}=\\sqrt{\\frac{d_{2}}{d_{1}}}=\\sqrt{\\frac{M_{2}}{M_{1}}}$. Applications: separation of isotopes (²³⁵UF₆/²³⁸UF₆ diffusion), leak detection, determination of molar mass, and explaining why a balloon filled with H₂ deflates faster than one with O₂.",
-    "### 8. Applications",
-    "• Calculating unknown P, V, T in experiments and industry (gas cylinders, LPG pressure, tyre pressure with temperature change, weather balloons, airbags).",
-    "• Dalton's law is used for gases collected over water, in scuba-diving and anaesthesia gas mixtures, and in atmospheric humidity calculations; the combined gas equation underlies gas-flow and compression-ratio engineering.",
-    "• Graham's law is used industrially to separate isotopes (²³⁵UF₆ from ²³⁸UF₆) and in the laboratory to determine molar masses and to detect leaks; Avogadro's law is the basis of molar-volume calculations and hence of all volumetric analysis of gases.",
-    "### 9. Limitations",
-    "• All the laws are **ideal-gas** laws: they are obeyed closely only at low pressure and high temperature; real gases deviate (and the deviation is strongest near the critical temperature, which is why gases cannot be liquefied merely by compression above T_c).",
-    "• Each law needs a fixed mass of gas and holds P, or V, or T constant — applying two at once to a changing mass gives wrong answers.",
-    "• Dalton's law applies only to non-reacting, non-associated ideal gases; it fails for reacting mixtures (NH₃ + HCl → NH₄Cl) and for gases that dissolve appreciably in the liquid present.",
-    "• Graham's law is strictly valid for gases at equal temperature and pressure and for effusion through a small hole; it needs correction for high pressures, for heavier/polyatomic molecules and for diffusion through porous media.",
-    "• Avogadro's law assumes equal molecular behaviour, though real molecules of different size and polarity behave differently; and the combined equation cannot represent a real gas — the van der Waals equation is required.",
-    "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
-    "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
-    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
+    "## 1. Topic Introduction — Four Laws, One Gas\n\nBoyle, Charles, Avogadro, Dalton and Graham each measured one slice of gas behaviour; together they form the toolkit for every gas numerical. This topic carries the heaviest PYQ load in the unit — a 2024 set alone tested Boyle's law, Graham's law, and Dalton's law with aqueous tension — so the worked numericals below are the exam's own patterns.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Boyle's law (T, n constant)\n\n- **V ∝ 1/P**, or **P₁V₁ = P₂V₂** — doubling the pressure halves the volume.\n- Graph: P vs V is a hyperbola; PV = constant is a straight horizontal line.\n\n### 2.2 Charles's law (P, n constant)\n\n- **V ∝ T (absolute)**, or **V₁/T₁ = V₂/T₂** — every gas extrapolates to zero volume at −273.15 °C, the origin of the absolute scale.\n- V_t = V₀(1 + t/273) at constant pressure.\n\n### 2.3 Avogadro's law\n\n- **V ∝ n** at constant T and P — equal volumes of all gases at the same T and P contain equal numbers of molecules; molar volume = 22.4 L at STP (0 °C, 1 atm).\n\n### 2.4 Combined gas equation and Dalton's law\n\n- **P₁V₁/T₁ = P₂V₂/T₂** — the workhorse for \"state changed\" problems.\n- **Dalton's law of partial pressures:** total pressure of a non-reacting gas mixture equals the sum of the partial pressures each gas would exert alone: **P(total) = p₁ + p₂ + p₃ …**\n- **Aqueous tension:** a gas collected over water is saturated with water vapour; the water vapour contributes its own pressure, so **P(dry gas) = P(total) − aqueous tension** at the collection temperature (NEB 2024).\n\n### 2.5 Graham's law of diffusion\n\n- **Rate of diffusion ∝ 1/√M** at constant T and P; for two gases **r₁/r₂ = √(M₂/M₁)**.\n- Diffusion = spreading through a porous space; effusion = escape through a tiny hole — the same law governs both.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Equation |\n|---|---|---|\n| **Boyle's law** | V inversely proportional to P at constant T, n | P₁V₁ = P₂V₂ |\n| **Charles's law** | V proportional to absolute T at constant P | V₁/T₁ = V₂/T₂ |\n| **Dalton's law** | Total P = sum of partial pressures | P = p₁ + p₂ + … |\n| **Aqueous tension** | Vapour pressure of water at collection T | P(dry) = P(wet) − a.t. |\n| **Graham's law** | Diffusion rate inversely proportional to √M | r₁/r₂ = √(M₂/M₁) |",
+    "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): Boyle's law numerical — 2 L at 3 atm expands to 1 atm\n\n- Boyle: P₁V₁ = P₂V₂ → 3 × 2 = 1 × V₂ → **V₂ = 6 L** (isothermal expansion).\n\n### 4.2 Verified PYQ (NEB 2021): combined law — 500 cm³ at 27 °C to 127 °C\n\n- Kelvin first: 300 K → 400 K. V₂ = V₁T₂/T₁ = 500 × 400/300 = **666.7 cm³** (pressure constant per the question).\n\n### 4.3 Verified PYQ (NEB 2024): Graham's law — hydrogen 4× faster than unknown gas\n\n- r(H₂)/r(x) = √(M(x)/M(H₂)) → 4 = √(M(x)/2) → M(x) = 16 × 2 = **32** — the gas is oxygen (or an M = 32 species).\n\n### 4.4 Verified PYQ (NEB 2024): Dalton's law and aqueous tension\n\n- State the law (section 2.4). Why subtract aqueous tension: the collected gas is a **mixture** of the dry gas and water vapour; by Dalton's law each component contributes its own pressure, so the dry gas's share is total minus the water vapour's contribution (aqueous tension, e.g. 17.5 mmHg at 20 °C). Using the wet reading would overestimate the dry gas pressure.\n\n### 4.5 Diffusion numerical template\n\n- Time ratio form: t₁/t₂ = √(M₁/M₂) (equal volumes); volume ratio form uses r = V/t. Oxygen–hydrogen: r(H₂)/r(O₂) = √(32/2) = 4.",
+    "## 5. Comparison Tables\n\n**The gas laws at a glance**\n\n| Law | Variables held constant | Relation | Graph shape |\n|---|---|---|---|\n| Boyle | T, n | P₁V₁ = P₂V₂ | Hyperbola (P–V) |\n| Charles | P, n | V₁/T₁ = V₂/T₂ | Straight line (V–T, extrapolates to −273 °C) |\n| Avogadro | T, P | V ∝ n | Straight line (V–n) |\n| Dalton | T, V | P = Σpᵢ | Additive |\n| Graham | T, P | r₁/r₂ = √(M₂/M₁) | Inverse-√ in M |\n\n**Dry vs wet gas pressure**\n\n| Situation | Pressure used |\n|---|---|\n| Gas collected over water | P(dry) = P(total) − aqueous tension |\n| Gas collected over mercury | P(dry) = P(total) — no correction |\n| Gas mixture in a flask | Dalton's sum of partial pressures |",
+    "## 6. Common Confusions\n\n**Celsius must become Kelvin before any gas-law algebra:** using 27 °C directly in Charles's law gives nonsense; add 273 first — the single most common numerical error.",
+    "**Aqueous tension is subtracted, not the other way:** the water vapour adds pressure to the wet gas; the dry gas's share is what remains.",
+    "**Diffusion rate ratios invert with molar mass:** the lighter gas is faster — writing r ∝ √M reverses the law.",
+    "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): State Graham's law. Hydrogen diffuses 4 times faster than an unknown gas; find its molar mass.** — Graham's law: at constant temperature and pressure, the rate of diffusion of a gas is inversely proportional to the square root of its molar mass; r₁/r₂ = √(M₂/M₁). Given r(H₂)/r(x) = 4: 4 = √(M(x)/2) → M(x) = 16 × 2 = **32 g/mol** — the unknown gas is oxygen.",
+    "**Verified PYQ (NEB 2024): State Dalton's law of partial pressures. Why is aqueous tension subtracted when a gas is collected over water?** — Dalton's law: the total pressure exerted by a mixture of non-reacting gases equals the sum of the partial pressures each gas would exert if it alone occupied the vessel. A gas collected over water is saturated with water vapour, so the measured pressure is the sum of the dry gas's pressure and the aqueous tension (water vapour's own partial pressure at that temperature). Since only the dry gas is wanted, its true pressure is **P(dry) = P(wet) − aqueous tension**; ignoring the correction overstates the gas pressure and every downstream calculation.",
+    "**Verified PYQ (NEB 2021): A gas occupies 500 cm³ at 27 °C and 1 atm. Find its volume at 127 °C (pressure constant).** — Convert: 300 K → 400 K. Charles's law: V₁/T₁ = V₂/T₂ → V₂ = 500 × 400/300 = **666.7 cm³**.",
+    "**Verified PYQ (NEB 2024): 2 L of gas at 3 atm expands isothermally to 1 atm. Find the new volume.** — Boyle's law: P₁V₁ = P₂V₂ → V₂ = (3 × 2)/1 = **6 L**."
   ],
   "confusion": [
-    "❌ Boyle's law means PV is always constant. ✅ Only for a *fixed mass* at *constant temperature*; PV changes when T or n changes.",
-    "❌ Doubling the Celsius temperature doubles the volume. ✅ Charles' law uses kelvin: 10 °C → 40 °C is a 293 → 313 K change, not a ×4 change.",
-    "❌ Dalton's law works for any gas mixture. ✅ It requires non-reacting gases; NH₃ and HCl react, so partial pressures are not additive.",
-    "❌ Graham's law compares diffusion rates directly with molar masses. ✅ Rates compare as the inverse square root of molar mass (or density).",
-    "❌ Gases obey PV = nRT exactly. ✅ Real gases obey it only at low P and high T; deviation is measured by the compressibility factor Z."
+    "**STP means 0 °C and 1 atm** (molar volume 22.4 L) — not room temperature; quoting 24 L at \"STP\" confuses NTP/room conditions.",
+    "**Boyle's law needs constant temperature, Charles's needs constant pressure:** mixing the constraints (or forgetting which variable is held) derails the choice of equation."
   ],
   "practice": [
-    "State Boyle's, Charles' and Avogadro's laws and sketch their graphical representations.",
-    "A gas occupies 500 cm³ at 27 °C and 700 mm Hg. Find its volume at STP.",
-    "Derive the combined gas equation from Boyle's, Charles' and Avogadro's laws and hence obtain PV = nRT.",
-    "State Dalton's law of partial pressures and explain how it is used when a gas is collected over water.",
-    "State Graham's law of diffusion and use it to find the ratio of diffusion rates of O₂ and H₂.",
-    "State the limitations of the gas laws."
+    "A gas occupies 600 cm³ at 750 mmHg; find the volume at 1.5 atm (T constant).",
+    "Oxygen effuses through a pinhole in 200 s; how long does SO₂ take for the same volume?",
+    "A gas collected over water at 25 °C reads 745 mmHg (aqueous tension 23.8 mmHg); find the dry gas pressure."
   ],
   "formulas": [
-    "$$\\text{Boyle: }P_{1}V_{1}=P_{2}V_{2};\\qquad \\text{Charles: }\\frac{V_{1}}{T_{1}}=\\frac{V_{2}}{T_{2}};\\qquad \\text{Gay-Lussac: }\\frac{P_{1}}{T_{1}}=\\frac{P_{2}}{T_{2}}$$",
-    "$$\\text{Combined: }\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}};\\qquad \\text{Ideal: }PV=nRT$$",
-    "$$P_{\\text{total}}=P_{1}+P_{2}+\\dots;\\qquad P_{i}=x_{i}P_{\\text{total}}$$",
-    "$$\\frac{r_{1}}{r_{2}}=\\sqrt{\\frac{d_{2}}{d_{1}}}=\\sqrt{\\frac{M_{2}}{M_{1}}}$$",
-    "PV = nRT",
-    "c_rms = √(3RT/M)",
-    "KE_mole = 3RT/2"
+    "- P₁V₁ = P₂V₂; V₁/T₁ = V₂/T₂; P₁V₁/T₁ = P₂V₂/T₂\n- P(total) = p₁ + p₂ + …; P(dry) = P(wet) − aqueous tension\n- r₁/r₂ = √(M₂/M₁); t₁/t₂ = √(M₁/M₂)\n- Molar volume at STP = 22.4 L"
   ],
   "universalFacts": [
-    "Molar volume of any gas = 22.4 L at STP (0 °C, 1 atm) and ≈24 L at RTP (25 °C, 1 bar).",
-    "R = 8.314 J K⁻¹ mol⁻¹ = 0.0821 L atm K⁻¹ mol⁻¹ = 1.987 cal K⁻¹ mol⁻¹.",
-    "Absolute zero = −273.15 °C = 0 K; Charles' plot extrapolates to zero volume there.",
-    "Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
-    "r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
-    "Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
+    "Airplane cabins are pressurised to about 0.75 atm — Boyle's law sets how much air passengers carry per breath, and Dalton's law says the oxygen share of that thinner air is what matters."
   ],
   "examples": [
-    "**Problem:** 500 cm³ of a gas at 27 °C and 700 mm Hg — find the volume at STP. **Solution:** V₂ = P₁V₁T₂/(P₂T₁) = (700 × 500 × 273)/(760 × 300) ≈ 419 cm³.",
-    "**Problem:** Ratio of diffusion rates of H₂ and O₂. **Solution:** r(H₂)/r(O₂) = √(32/2) = 4, i.e. hydrogen diffuses four times faster."
+    "***The rising dough of bread*** — CO₂ from yeast obeys Charles's law: oven heat expands each bubble in exact T proportion, doubling the dough's gas volume from 30 °C to 180 °C... wait — from 303 K to 453 K, a 1.5× lift."
   ],
   "importantNotes": [
-    "Always convert temperature to kelvin and keep pressure units consistent before substituting in the combined gas equation.",
-    "State the three conditions in every law: fixed mass, one variable constant, ideal-gas behaviour.",
-    "Cite the limitation near the critical point — liquefaction by compression alone fails above T_c."
+    "Verified PYQs: NEB 2024 — Graham's law numerical (M = 32), Dalton's law with aqueous tension, Boyle's 2 L/3 atm numerical; NEB 2021 — combined-law 500 cm³ → 666.7 cm³; NEB 2023 — Boyle + Charles with derivation of the ideal gas equation (solved in topic 45). Other items are NEB-style practice."
   ],
   "visualType": "gas-laws",
   "keyPoints": [
-    "• Gas laws",
-    "• Boyle's law",
-    "• Charles' law",
-    "• Avogadro's law",
-    "• Combined gas equation",
-    "• Dalton's law of partial pressure"
+    "Boyle: P₁V₁ = P₂V₂ (T, n fixed; hyperbola). Charles: V₁/T₁ = V₂/T₂ (Kelvin!; extrapolates to −273.15 °C). Avogadro: V ∝ n; 22.4 L/mol at STP. Combined: P₁V₁/T₁ = P₂V₂/T₂. Dalton: P = p₁ + p₂ + …; aqueous tension subtracted for gas over water. Graham: r₁/r₂ = √(M₂/M₁); H₂ 4× faster than M = 32 gas. Worked: 2 L/3 atm → 6 L; 500 cm³ 300 K → 400 K = 666.7 cm³."
   ],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "**NEB 2024 (2m): 2 L of a gas at 3 atm pressure expands isothermally. What volume will it occupy at 1 atm?** — Isothermal means temperature is constant, so **Boyle's law** applies: P₁V₁ = P₂V₂. Substituting: 3 atm × 2 L = 1 atm × V₂, giving V₂ = 6/1 = **6 L**. When pressure falls to one-third, volume triples — the inverse proportionality of Boyle's law.",
+    "**NEB 2021 (2m): A sample of gas occupies 500 cm³ at 27 °C and 1 atm. Calculate the volume at 127 °C at the same pressure.** — Convert temperatures to Kelvin first: T₁ = 27 + 273 = 300 K; T₂ = 127 + 273 = 400 K. Pressure is constant, so **Charles's law** applies: V₁/T₁ = V₂/T₂. Therefore V₂ = V₁ × T₂/T₁ = 500 × 400/300 = **666.7 cm³** (approximately 667 cm³). The volume grows in direct proportion to absolute temperature.",
+    "**NEB 2024 (2m): State Graham's law of diffusion. Hydrogen diffuses 4 times faster than an unknown gas under identical conditions; find the molar mass of the unknown gas.** — **Graham's law:** at constant temperature and pressure, the rate of diffusion (or effusion) of a gas is inversely proportional to the square root of its density or molar mass: r₁/r₂ = √(M₂/M₁). Given r(H₂)/r(x) = 4 and M(H₂) = 2: 4 = √(M(x)/2). Squaring: 16 = M(x)/2, so **M(x) = 32 g/mol** — the unknown gas is oxygen (or another species of molar mass 32).",
+    "**NEB 2024 (3m): State Dalton's law of partial pressures. Why is aqueous tension subtracted when a gas is collected over water?** — **Dalton's law:** the total pressure exerted by a mixture of non-reacting gases is the sum of the partial pressures each gas would exert if it alone occupied the container at the same temperature: P(total) = p₁ + p₂ + p₃ + … **Aqueous tension:** a gas collected over water becomes saturated with water vapour, so the measured pressure is a mixture pressure — the dry gas plus the water vapour. By Dalton's law each component contributes its own partial pressure, and the water vapour's contribution at the collection temperature is the **aqueous tension**. The dry gas's true pressure is therefore P(dry) = P(wet) − aqueous tension; omitting the correction would credit the water vapour's pressure to the gas and inflate all calculations (e.g. molar masses from vapour-density data)."
+  ],
   "numericals": [
     "Use  PV = nRT  — pick reasonable values, solve, and check the units.",
     "Use  c_rms = √(3RT/M)  — pick reasonable values, solve, and check the units.",
@@ -91,24 +56,92 @@
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…\"?",
+      "question": "Boyle's law holds when which are constant?",
       "options": [
-        "Gas laws",
-        "Boyle's law",
-        "Unrelated topic",
-        "None of the above"
+        "P and V",
+        "T and n",
+        "T and P",
+        "n and V"
       ],
-      "answer": "Gas laws",
-      "explanation": "Gas laws is listed among the official sub-ideas of Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "Temperature and moles fixed - V inversely proportional to P."
     },
     {
-      "question": "A common examiner point on \"Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "A gas at 27 C is heated to 327 C at constant P; its volume:",
       "options": [
-        "True",
-        "False"
+        "Doubles",
+        "Triples",
+        "Halves",
+        "Unchanged"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A",
+      "explanation": "300 K to 600 K - Charles's law doubles V."
+    },
+    {
+      "question": "Molar volume of an ideal gas at STP is:",
+      "options": [
+        "22.4 L",
+        "24.4 L",
+        "11.2 L",
+        "2.24 L"
+      ],
+      "answer": "A",
+      "explanation": "STP = 0 C, 1 atm."
+    },
+    {
+      "question": "A gas collected over water at total pressure P has dry-gas pressure:",
+      "options": [
+        "P",
+        "P + aq. tension",
+        "P - aq. tension",
+        "P/2"
+      ],
+      "answer": "C",
+      "explanation": "Water vapour contributes its own partial pressure."
+    },
+    {
+      "question": "Hydrogen diffuses 4 times faster than gas X; M(X) =",
+      "options": [
+        "4",
+        "8",
+        "16",
+        "32"
+      ],
+      "answer": "D",
+      "explanation": "4 = sqrt(M/2) gives M = 32."
+    },
+    {
+      "question": "Dalton's law applies to gases that:",
+      "options": [
+        "React vigorously",
+        "Do not react",
+        "Are isotopes",
+        "Are at 0 C"
+      ],
+      "answer": "B",
+      "explanation": "Non-reacting mixture - each gas acts independently."
+    },
+    {
+      "question": "Which gas diffuses fastest at the same T and P?",
+      "options": [
+        "CO2 (44)",
+        "O2 (32)",
+        "CH4 (16)",
+        "H2 (2)"
+      ],
+      "answer": "D",
+      "explanation": "Lightest - fastest; r is proportional to 1/sqrt(M)."
+    },
+    {
+      "question": "P1V1/T1 = P2V2/T2 is used when:",
+      "options": [
+        "Only P changes",
+        "Only T changes",
+        "All three state variables change",
+        "n changes"
+      ],
+      "answer": "C",
+      "explanation": "The combined gas equation for full state changes."
     }
   ],
   "source": "generated",
@@ -119,5 +152,165 @@
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩."
   ],
-  "summary": "Gas laws: Boyle's law, Charles' law, Avogadro's law, comb… (States of Matter, Chemistry, class-11-notes) covers Gas laws, Boyle's law, Charles' law. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
+  "summary": "Five laws, one toolkit. **Boyle** (P₁V₁ = P₂V₂) compresses isothermally — 3 atm on 2 L relaxes to 6 L at 1 atm. **Charles** (V₁/T₁ = V₂/T₂) demands Kelvin: 500 cm³ at 300 K swells to 666.7 cm³ at 400 K, and every gas extrapolates to nothing at −273.15 °C. **Avogadro** equalises molecules per litre (22.4 L at STP). **Dalton** adds partial pressures — and its immediate corollary, the aqueous-tension correction, is why every gas-over-water reading loses its water-vapour share. **Graham** runs diffusion on mass: rates ∝ 1/√M, so hydrogen's 4× head start over an unknown unmasks M = 32. The combined equation P₁V₁/T₁ = P₂V₂/T₂ chains the state-change problems, and all of it collapses into PV = nRT in the next topic. Kelvin first, constraints identified, square roots squared — the laws are generous to the careful.",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Four Laws, One Gas\n\nBoyle, Charles, Avogadro, Dalton and Graham each measured one slice of gas behaviour; together they form the toolkit for every gas numerical. This topic carries the heaviest PYQ load in the unit — a 2024 set alone tested Boyle's law, Graham's law, and Dalton's law with aqueous tension — so the worked numericals below are the exam's own patterns.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Boyle's law (T, n constant)\n\n- **V ∝ 1/P**, or **P₁V₁ = P₂V₂** — doubling the pressure halves the volume.\n- Graph: P vs V is a hyperbola; PV = constant is a straight horizontal line.\n\n### 2.2 Charles's law (P, n constant)\n\n- **V ∝ T (absolute)**, or **V₁/T₁ = V₂/T₂** — every gas extrapolates to zero volume at −273.15 °C, the origin of the absolute scale.\n- V_t = V₀(1 + t/273) at constant pressure.\n\n### 2.3 Avogadro's law\n\n- **V ∝ n** at constant T and P — equal volumes of all gases at the same T and P contain equal numbers of molecules; molar volume = 22.4 L at STP (0 °C, 1 atm).\n\n### 2.4 Combined gas equation and Dalton's law\n\n- **P₁V₁/T₁ = P₂V₂/T₂** — the workhorse for \"state changed\" problems.\n- **Dalton's law of partial pressures:** total pressure of a non-reacting gas mixture equals the sum of the partial pressures each gas would exert alone: **P(total) = p₁ + p₂ + p₃ …**\n- **Aqueous tension:** a gas collected over water is saturated with water vapour; the water vapour contributes its own pressure, so **P(dry gas) = P(total) − aqueous tension** at the collection temperature (NEB 2024).\n\n### 2.5 Graham's law of diffusion\n\n- **Rate of diffusion ∝ 1/√M** at constant T and P; for two gases **r₁/r₂ = √(M₂/M₁)**.\n- Diffusion = spreading through a porous space; effusion = escape through a tiny hole — the same law governs both.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Equation |\n|---|---|---|\n| **Boyle's law** | V inversely proportional to P at constant T, n | P₁V₁ = P₂V₂ |\n| **Charles's law** | V proportional to absolute T at constant P | V₁/T₁ = V₂/T₂ |\n| **Dalton's law** | Total P = sum of partial pressures | P = p₁ + p₂ + … |\n| **Aqueous tension** | Vapour pressure of water at collection T | P(dry) = P(wet) − a.t. |\n| **Graham's law** | Diffusion rate inversely proportional to √M | r₁/r₂ = √(M₂/M₁) |",
+      "## 4. Detailed Explanation\n\n### 4.1 Verified PYQ (NEB 2024): Boyle's law numerical — 2 L at 3 atm expands to 1 atm\n\n- Boyle: P₁V₁ = P₂V₂ → 3 × 2 = 1 × V₂ → **V₂ = 6 L** (isothermal expansion).\n\n### 4.2 Verified PYQ (NEB 2021): combined law — 500 cm³ at 27 °C to 127 °C\n\n- Kelvin first: 300 K → 400 K. V₂ = V₁T₂/T₁ = 500 × 400/300 = **666.7 cm³** (pressure constant per the question).\n\n### 4.3 Verified PYQ (NEB 2024): Graham's law — hydrogen 4× faster than unknown gas\n\n- r(H₂)/r(x) = √(M(x)/M(H₂)) → 4 = √(M(x)/2) → M(x) = 16 × 2 = **32** — the gas is oxygen (or an M = 32 species).\n\n### 4.4 Verified PYQ (NEB 2024): Dalton's law and aqueous tension\n\n- State the law (section 2.4). Why subtract aqueous tension: the collected gas is a **mixture** of the dry gas and water vapour; by Dalton's law each component contributes its own pressure, so the dry gas's share is total minus the water vapour's contribution (aqueous tension, e.g. 17.5 mmHg at 20 °C). Using the wet reading would overestimate the dry gas pressure.\n\n### 4.5 Diffusion numerical template\n\n- Time ratio form: t₁/t₂ = √(M₁/M₂) (equal volumes); volume ratio form uses r = V/t. Oxygen–hydrogen: r(H₂)/r(O₂) = √(32/2) = 4.",
+      "## 5. Comparison Tables\n\n**The gas laws at a glance**\n\n| Law | Variables held constant | Relation | Graph shape |\n|---|---|---|---|\n| Boyle | T, n | P₁V₁ = P₂V₂ | Hyperbola (P–V) |\n| Charles | P, n | V₁/T₁ = V₂/T₂ | Straight line (V–T, extrapolates to −273 °C) |\n| Avogadro | T, P | V ∝ n | Straight line (V–n) |\n| Dalton | T, V | P = Σpᵢ | Additive |\n| Graham | T, P | r₁/r₂ = √(M₂/M₁) | Inverse-√ in M |\n\n**Dry vs wet gas pressure**\n\n| Situation | Pressure used |\n|---|---|\n| Gas collected over water | P(dry) = P(total) − aqueous tension |\n| Gas collected over mercury | P(dry) = P(total) — no correction |\n| Gas mixture in a flask | Dalton's sum of partial pressures |",
+      "## 6. Common Confusions\n\n**Celsius must become Kelvin before any gas-law algebra:** using 27 °C directly in Charles's law gives nonsense; add 273 first — the single most common numerical error.",
+      "**Aqueous tension is subtracted, not the other way:** the water vapour adds pressure to the wet gas; the dry gas's share is what remains.",
+      "**Diffusion rate ratios invert with molar mass:** the lighter gas is faster — writing r ∝ √M reverses the law.",
+      "## 7. Exam Application\n\n**Verified PYQ (NEB 2024): State Graham's law. Hydrogen diffuses 4 times faster than an unknown gas; find its molar mass.** — Graham's law: at constant temperature and pressure, the rate of diffusion of a gas is inversely proportional to the square root of its molar mass; r₁/r₂ = √(M₂/M₁). Given r(H₂)/r(x) = 4: 4 = √(M(x)/2) → M(x) = 16 × 2 = **32 g/mol** — the unknown gas is oxygen.",
+      "**Verified PYQ (NEB 2024): State Dalton's law of partial pressures. Why is aqueous tension subtracted when a gas is collected over water?** — Dalton's law: the total pressure exerted by a mixture of non-reacting gases equals the sum of the partial pressures each gas would exert if it alone occupied the vessel. A gas collected over water is saturated with water vapour, so the measured pressure is the sum of the dry gas's pressure and the aqueous tension (water vapour's own partial pressure at that temperature). Since only the dry gas is wanted, its true pressure is **P(dry) = P(wet) − aqueous tension**; ignoring the correction overstates the gas pressure and every downstream calculation.",
+      "**Verified PYQ (NEB 2021): A gas occupies 500 cm³ at 27 °C and 1 atm. Find its volume at 127 °C (pressure constant).** — Convert: 300 K → 400 K. Charles's law: V₁/T₁ = V₂/T₂ → V₂ = 500 × 400/300 = **666.7 cm³**.",
+      "**Verified PYQ (NEB 2024): 2 L of gas at 3 atm expands isothermally to 1 atm. Find the new volume.** — Boyle's law: P₁V₁ = P₂V₂ → V₂ = (3 × 2)/1 = **6 L**."
+    ],
+    "confusion": [
+      "**STP means 0 °C and 1 atm** (molar volume 22.4 L) — not room temperature; quoting 24 L at \"STP\" confuses NTP/room conditions.",
+      "**Boyle's law needs constant temperature, Charles's needs constant pressure:** mixing the constraints (or forgetting which variable is held) derails the choice of equation."
+    ],
+    "keyPoints": [
+      "Boyle: P₁V₁ = P₂V₂ (T, n fixed; hyperbola). Charles: V₁/T₁ = V₂/T₂ (Kelvin!; extrapolates to −273.15 °C). Avogadro: V ∝ n; 22.4 L/mol at STP. Combined: P₁V₁/T₁ = P₂V₂/T₂. Dalton: P = p₁ + p₂ + …; aqueous tension subtracted for gas over water. Graham: r₁/r₂ = √(M₂/M₁); H₂ 4× faster than M = 32 gas. Worked: 2 L/3 atm → 6 L; 500 cm³ 300 K → 400 K = 666.7 cm³."
+    ],
+    "importantConcepts": [
+      "All four partial laws are special cases of PV = nRT (topic 45); recognising which variables are constant in a problem selects the right law instantly."
+    ],
+    "examples": [
+      "***The rising dough of bread*** — CO₂ from yeast obeys Charles's law: oven heat expands each bubble in exact T proportion, doubling the dough's gas volume from 30 °C to 180 °C... wait — from 303 K to 453 K, a 1.5× lift."
+    ],
+    "universalFacts": [
+      "Airplane cabins are pressurised to about 0.75 atm — Boyle's law sets how much air passengers carry per breath, and Dalton's law says the oxygen share of that thinner air is what matters."
+    ],
+    "importantStatements": [
+      "\"The total pressure exerted by a mixture of non-reacting gases is equal to the sum of the partial pressures which each gas would exert if it alone occupied the whole volume.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2024 — Graham's law numerical (M = 32), Dalton's law with aqueous tension, Boyle's 2 L/3 atm numerical; NEB 2021 — combined-law 500 cm³ → 666.7 cm³; NEB 2023 — Boyle + Charles with derivation of the ideal gas equation (solved in topic 45). Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"Kelvin before anything\". Boyle: multiply, divide (P₁V₁ = P₂V₂). Graham: heavier is slower; square both sides. Over water: subtract aqueous tension. STP = 0 °C, 1 atm, 22.4 L."
+    ],
+    "examNotes": [
+      "State the law in words before the equation — both carry marks. For Graham's numericals, show the squaring step; for aqueous tension, name the temperature at which the tension applies."
+    ],
+    "formulas": [
+      "- P₁V₁ = P₂V₂; V₁/T₁ = V₂/T₂; P₁V₁/T₁ = P₂V₂/T₂\n- P(total) = p₁ + p₂ + …; P(dry) = P(wet) − aqueous tension\n- r₁/r₂ = √(M₂/M₁); t₁/t₂ = √(M₁/M₂)\n- Molar volume at STP = 22.4 L"
+    ],
+    "practice": [
+      "A gas occupies 600 cm³ at 750 mmHg; find the volume at 1.5 atm (T constant).",
+      "Oxygen effuses through a pinhole in 200 s; how long does SO₂ take for the same volume?",
+      "A gas collected over water at 25 °C reads 745 mmHg (aqueous tension 23.8 mmHg); find the dry gas pressure."
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (2m): 2 L of a gas at 3 atm pressure expands isothermally. What volume will it occupy at 1 atm?** — Isothermal means temperature is constant, so **Boyle's law** applies: P₁V₁ = P₂V₂. Substituting: 3 atm × 2 L = 1 atm × V₂, giving V₂ = 6/1 = **6 L**. When pressure falls to one-third, volume triples — the inverse proportionality of Boyle's law.",
+      "**NEB 2021 (2m): A sample of gas occupies 500 cm³ at 27 °C and 1 atm. Calculate the volume at 127 °C at the same pressure.** — Convert temperatures to Kelvin first: T₁ = 27 + 273 = 300 K; T₂ = 127 + 273 = 400 K. Pressure is constant, so **Charles's law** applies: V₁/T₁ = V₂/T₂. Therefore V₂ = V₁ × T₂/T₁ = 500 × 400/300 = **666.7 cm³** (approximately 667 cm³). The volume grows in direct proportion to absolute temperature.",
+      "**NEB 2024 (2m): State Graham's law of diffusion. Hydrogen diffuses 4 times faster than an unknown gas under identical conditions; find the molar mass of the unknown gas.** — **Graham's law:** at constant temperature and pressure, the rate of diffusion (or effusion) of a gas is inversely proportional to the square root of its density or molar mass: r₁/r₂ = √(M₂/M₁). Given r(H₂)/r(x) = 4 and M(H₂) = 2: 4 = √(M(x)/2). Squaring: 16 = M(x)/2, so **M(x) = 32 g/mol** — the unknown gas is oxygen (or another species of molar mass 32).",
+      "**NEB 2024 (3m): State Dalton's law of partial pressures. Why is aqueous tension subtracted when a gas is collected over water?** — **Dalton's law:** the total pressure exerted by a mixture of non-reacting gases is the sum of the partial pressures each gas would exert if it alone occupied the container at the same temperature: P(total) = p₁ + p₂ + p₃ + … **Aqueous tension:** a gas collected over water becomes saturated with water vapour, so the measured pressure is a mixture pressure — the dry gas plus the water vapour. By Dalton's law each component contributes its own partial pressure, and the water vapour's contribution at the collection temperature is the **aqueous tension**. The dry gas's true pressure is therefore P(dry) = P(wet) − aqueous tension; omitting the correction would credit the water vapour's pressure to the gas and inflate all calculations (e.g. molar masses from vapour-density data)."
+    ]
+  },
+  "importantConcepts": [
+    "All four partial laws are special cases of PV = nRT (topic 45); recognising which variables are constant in a problem selects the right law instantly."
+  ],
+  "importantStatements": [
+    "\"The total pressure exerted by a mixture of non-reacting gases is equal to the sum of the partial pressures which each gas would exert if it alone occupied the whole volume.\""
+  ],
+  "examShortTricks": [
+    "\"Kelvin before anything\". Boyle: multiply, divide (P₁V₁ = P₂V₂). Graham: heavier is slower; square both sides. Over water: subtract aqueous tension. STP = 0 °C, 1 atm, 22.4 L."
+  ],
+  "examNotes": [
+    "State the law in words before the equation — both carry marks. For Graham's numericals, show the squaring step; for aqueous tension, name the temperature at which the tension applies."
+  ],
+  "mcs": [
+    {
+      "question": "Boyle's law holds when which are constant?",
+      "options": [
+        "P and V",
+        "T and n",
+        "T and P",
+        "n and V"
+      ],
+      "answer": "B",
+      "explanation": "Temperature and moles fixed - V inversely proportional to P."
+    },
+    {
+      "question": "A gas at 27 C is heated to 327 C at constant P; its volume:",
+      "options": [
+        "Doubles",
+        "Triples",
+        "Halves",
+        "Unchanged"
+      ],
+      "answer": "A",
+      "explanation": "300 K to 600 K - Charles's law doubles V."
+    },
+    {
+      "question": "Molar volume of an ideal gas at STP is:",
+      "options": [
+        "22.4 L",
+        "24.4 L",
+        "11.2 L",
+        "2.24 L"
+      ],
+      "answer": "A",
+      "explanation": "STP = 0 C, 1 atm."
+    },
+    {
+      "question": "A gas collected over water at total pressure P has dry-gas pressure:",
+      "options": [
+        "P",
+        "P + aq. tension",
+        "P - aq. tension",
+        "P/2"
+      ],
+      "answer": "C",
+      "explanation": "Water vapour contributes its own partial pressure."
+    },
+    {
+      "question": "Hydrogen diffuses 4 times faster than gas X; M(X) =",
+      "options": [
+        "4",
+        "8",
+        "16",
+        "32"
+      ],
+      "answer": "D",
+      "explanation": "4 = sqrt(M/2) gives M = 32."
+    },
+    {
+      "question": "Dalton's law applies to gases that:",
+      "options": [
+        "React vigorously",
+        "Do not react",
+        "Are isotopes",
+        "Are at 0 C"
+      ],
+      "answer": "B",
+      "explanation": "Non-reacting mixture - each gas acts independently."
+    },
+    {
+      "question": "Which gas diffuses fastest at the same T and P?",
+      "options": [
+        "CO2 (44)",
+        "O2 (32)",
+        "CH4 (16)",
+        "H2 (2)"
+      ],
+      "answer": "D",
+      "explanation": "Lightest - fastest; r is proportional to 1/sqrt(M)."
+    },
+    {
+      "question": "P1V1/T1 = P2V2/T2 is used when:",
+      "options": [
+        "Only P changes",
+        "Only T changes",
+        "All three state variables change",
+        "n changes"
+      ],
+      "answer": "C",
+      "explanation": "The combined gas equation for full state changes."
+    }
+  ]
 }
