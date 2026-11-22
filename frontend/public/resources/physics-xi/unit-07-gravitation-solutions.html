@@ -37,6 +37,7 @@
 <li>Exercise 7.7 — Escape velocity</li>
 <li>Exercise 7.8 — Energy of a satellite</li>
 <li>Exercise 7.9 — Geostationary satellites and GPS</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -447,6 +448,148 @@ h = r − R = 4.22 × 10⁷ − 6.4 × 10⁶ = 3.58 × 10⁷ m</p>
 <tr><td>Lifetime limited by fuel and drag</td><td>Exists for billions of years</td></tr>
 </table>
 <p class="ans">Artificial satellites are engineered with selectable orbits and lifetimes; natural satellites form with the planet and their orbit is essentially fixed.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Gravitation numericals share one pattern: write the force or the energy for the given radius, then substitute. The eight shapes below include the two that decide most of the marks — Kepler's third law read from a graph, and the energy bookkeeping of an orbit.</p>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Multi-step numerical] Find g at an altitude of 1600 km and the weight of a 70 kg astronaut there. Take R = 6400 km, g₀ = 9.8 m s⁻².</p>
+<div class="sol">
+<p class="work">r = R + h = 6400 + 1600 = 8000 km, so r/R = 1.25
+
+g' = g₀ (R/r)² = 9.8 (1/1.25)² = 9.8/1.5625 = 6.27 m s⁻²
+
+Weight = mg' = 70 × 6.27 = 4.4 × 10² N
+(compared with 686 N on the surface — a 36% reduction)</p>
+<p>An altitude of only a quarter of the Earth's radius has already cut g by more than a third, because the inverse-square law works against the small change in radius: (1/1.25)² = 0.64. The astronaut's mass is still 70 kg — only the weight changes.</p>
+<p class="ans">g' = 6.3 m s⁻²; weight 4.4 × 10² N (mass unchanged at 70 kg).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q35.</b> [Derivation] Derive the orbital speed of a satellite and show that T² ∝ r³.</p>
+<div class="sol">
+<p class="work">Gravity supplies the centripetal force:
+  GMm/r² = mv²/r
+  ⇒  v = √(GM/r)          (orbital speed)
+
+Period:
+  T = 2πr/v = 2πr √(r/GM)
+  T² = 4π²r³/(GM)         ⇒  T² ∝ r³  (Kepler's third law)</p>
+<p>Two consequences follow immediately. First, v is independent of the satellite's mass, so a bolt and a space station orbit together. Second, near the surface (r ≈ R) the speed is v = √(gR) ≈ √(9.8 × 6.4 × 10⁶) ≈ 7.9 km s⁻¹ — the “first cosmic velocity” — and the corresponding period is about 84 minutes, the fastest possible low orbit.</p>
+<p class="ans">v = √(GM/r); T² = 4π²r³/(GM), so T² ∝ r³, with v ≈ 7.9 km s⁻¹ and T ≈ 84 min for a surface-grazing orbit.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q36.</b> [Graph reading] A graph of T² against r³ for the planets of the Sun has slope 3.0 × 10⁻¹⁹ s² m⁻³. Find the mass of the Sun.</p>
+<div class="sol">
+<p class="work">T² = (4π²/GM) r³, so slope = 4π²/(GM)
+
+M = 4π²/(G × slope)
+  = 39.48/(6.67 × 10⁻¹¹ × 3.0 × 10⁻¹⁹)
+  = 39.48/(2.00 × 10⁻²⁹)
+  = 1.97 × 10³⁰ kg ≈ 2 × 10³⁰ kg</p>
+<p>This is how every astronomical mass is measured: the slope of a T²–r³ graph gives the central mass, whether it is the Sun, a planet or a black hole. Plotting the straight line rather than using one planet averages out observation errors.</p>
+<p class="ans">M = 4π²/(G × slope) ≈ 2 × 10³⁰ kg — the mass of the Sun, obtained without ever “weighing” it.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q37.</b> [Combined concept] Calculate the escape velocity from the Moon (M = 7.35 × 10²² kg, R = 1.74 × 10⁶ m) and explain why the Moon has no atmosphere.</p>
+<div class="sol">
+<p class="work">v_e = √(2GM/R)
+    = √(2 × 6.67 × 10⁻¹¹ × 7.35 × 10²²/1.74 × 10⁶)
+    = √(9.81 × 10¹²/1.74 × 10⁶)
+    = √(5.64 × 10⁶) = 2.37 × 10³ m s⁻¹ ≈ 2.4 km s⁻¹
+
+Compare: Earth 11.2 km s⁻¹, Moon 2.4 km s⁻¹ — a factor of about 4.7.
+RMS speed of hydrogen at 300 K: √(3RT/M) ≈ 1.9 km s⁻¹ — comparable to the
+Moon's escape speed, so a large fraction of H₂ molecules simply leave.</p>
+<p>Gas molecules whose speeds exceed v_e escape permanently, and the Maxwell distribution always has a high-speed tail. The Moon's escape speed is low enough that hydrogen and helium (and much of the water vapour produced by impacts) leaked away over billions of years, leaving essentially no atmosphere; Earth, with v_e = 11.2 km s⁻¹, retained its nitrogen and oxygen.</p>
+<p class="ans">v_e ≈ 2.4 km s⁻¹ for the Moon (vs 11.2 km s⁻¹ for Earth); the thermal speeds of light gases approach it, so they escaped — which is why the Moon is airless.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q38.</b> [Assertion–reason] <b>Assertion (A):</b> An astronaut inside an orbiting satellite experiences weightlessness. <b>Reason (R):</b> The satellite and everything in it are in free fall with the same acceleration, so no normal reaction is needed.</p>
+<div class="sol">
+<p>Both statements are true and R explains A.</p>
+<p class="work">In orbit: gravity provides the centripetal force for BOTH the astronaut and the cabin
+  g_orbit = v²/r, identical for both, and both have “weight” mg_orbit
+  relative acceleration between astronaut and floor = 0
+  ⇒ normal reaction N = 0  ⇒  the sensation of weightlessness
+
+This is free fall, not absence of gravity: at the ISS altitude g is still about 8.7 m s⁻¹.</p>
+<p>The same effect can be reproduced in a falling lift or a parabolic flight, which is how astronauts train. It is not caused by being “beyond gravity” — a common exam error — but by everything falling together.</p>
+<p class="ans">Both true, R explains A: weightlessness is free fall in a shared gravitational field, with g still 8.7 m s⁻² at ISS altitude.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q39.</b> [Experiment/observation table] In a simple-pendulum experiment the following lengths and periods are recorded. Compute g for each and the mean.</p>
+<table>
+<tr><th>L (m)</th><th>T (s)</th><th>g = 4π²L/T² (m s⁻²)</th></tr>
+<tr><td>0.40</td><td>1.27</td><td>?</td></tr>
+<tr><td>0.60</td><td>1.55</td><td>?</td></tr>
+<tr><td>0.80</td><td>1.79</td><td>?</td></tr>
+<tr><td>1.00</td><td>2.01</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">g = 4π²L/T² = 39.48 L/T²
+
+L = 0.40: 39.48 × 0.40/1.613 = 9.79 m s⁻²
+L = 0.60: 39.48 × 0.60/2.403 = 9.86
+L = 0.80: 39.48 × 0.80/3.204 = 9.86
+L = 1.00: 39.48 × 1.00/4.040 = 9.77
+
+mean = (9.79 + 9.86 + 9.86 + 9.77)/4 = 9.82 m s⁻²</p>
+<p>The mean, 9.82 m s⁻², is within 0.1% of the accepted 9.81 — and the straight-line plot of T² against L would give the same value from its slope with a smaller random error. Two experimental precautions are examinable: time 20 oscillations and divide (to cut reaction-time error) and keep the amplitude below 10° (so the small-angle approximation holds).</p>
+<p class="ans">9.79, 9.86, 9.86, 9.77 m s⁻²; mean g = 9.82 m s⁻², agreeing with the accepted value to 0.1%.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q40.</b> [Estimation and limiting case] Estimate the mass of the Earth from g and R alone, then state the limiting behaviour of g and v_e at the centre and far from the Earth.</p>
+<div class="sol">
+<p class="work">g = GM/R²  ⇒  M = gR²/G
+  M = 9.8 × (6.4 × 10⁶)²/6.67 × 10⁻¹¹
+    = 9.8 × 4.10 × 10¹³/6.67 × 10⁻¹¹
+    = 4.02 × 10¹⁴/6.67 × 10⁻¹¹ = 6.0 × 10²⁴ kg</p>
+<p><b>Limiting cases:</b></p>
+<p class="work">r → ∞      g → 0 (inverse square), v_e → 0
+r = R      g = 9.8, v_e = 11.2 km s⁻¹
+r → 0      g → 0 INSIDE a uniform sphere (g = g₀ r/R), v_e → 0 at the exact centre
+v → c      the Newtonian escape formula fails; general relativity is required
+           (v_e = c at r = 2GM/c² — the Schwarzschild radius)</p>
+<p>The two “zero” limits are different in kind: far away g → 0 because the field weakens, while at the centre g → 0 because the mass outside the point pulls equally in all directions. Both are standard one-mark questions.</p>
+<p class="ans">M ≈ 6.0 × 10²⁴ kg from gR²/G; g → 0 both at infinity and at the centre (for different reasons), and the Newtonian v_e fails as v → c.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q41.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Escape velocity depends on the direction of projection.”<br>
+(ii) “A satellite stays in orbit because there is no gravity in space.”<br>
+(iii) “The Moon is a geostationary satellite of the Earth.”<br>
+(iv) “g is zero on the Moon's surface.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — v_e = √(2GM/R) contains no direction. (Direction decides whether the
+     projectile hits the ground first, not the speed needed; ignoring the atmosphere
+     a vertical launch is the least efficient because it gains no orbital motion.)
+(ii) FALSE — gravity is what keeps it in orbit; “no gravity” would make it fly off
+     in a straight line along the tangent.
+(iii) FALSE — the Moon's period is 27.3 days and its plane is tilted; geostationary
+     requires T = 24 h, equatorial plane, west-to-east, at r ≈ 42 000 km.
+(iv) FALSE — g on the Moon is 1.6 m s⁻² (about 1/6 of Earth's); it is not zero.
+      A satellite in orbit experiences weightlessness, but the Moon is not weightless
+      in its own frame — it is simply in free fall around the Earth.</p>
+<p>All four errors arise from confusing “weightless in free fall” with “no gravity”, or from treating an orbital period as if it were arbitrary.</p>
+<p class="ans">(i) no direction dependence; (ii) gravity provides the centripetal force; (iii) the Moon's period is 27.3 d, not 24 h; (iv) g_Moon = 1.6 m s⁻², not zero.</p>
 </div>
 </div>
 

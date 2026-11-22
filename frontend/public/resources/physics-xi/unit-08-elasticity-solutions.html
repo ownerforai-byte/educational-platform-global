@@ -35,6 +35,7 @@
 <li>Exercise 8.5 — Poisson's ratio</li>
 <li>Exercise 8.6 — Elastic potential energy</li>
 <li>Exercise 8.7 — The stress–strain curve</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -301,6 +302,146 @@ On release: ½kx² = ½mv²
 <div class="sol">
 <p>In bending, the stress is greatest at the outer surface and zero at the neutral axis, so the material near the axis contributes little to the bending strength. Removing it and placing the same mass farther out increases the second moment of area (and the polar moment for torsion), which raises the stiffness roughly as r² for the same mass. That is why bicycle frames, bones and drill shafts are hollow tubes.</p>
 <p class="ans">The outer material does most of the work, so a hollow tube of equal mass has a larger radius and a much larger moment of area — greater strength and stiffness with no extra weight.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Elasticity questions test one formula — stress over strain — plus the meaning of the curve. The eight shapes below run from the standard Young-modulus sum to the energy density read off a graph.</p>
+
+<div class="item">
+<p class="q"><b>Q24.</b> [Multi-step numerical] A steel wire 2.0 m long and 0.50 mm in diameter stretches 2.0 mm under a 5.0 kg load. Find the stress, the strain and Young's modulus.</p>
+<div class="sol">
+<p class="work">r = 0.25 mm = 2.5 × 10⁻⁴ m
+A = πr² = π(2.5 × 10⁻⁴)² = 1.96 × 10⁻⁷ m²
+F = mg = 5.0 × 9.8 = 49 N
+
+stress = F/A = 49/1.96 × 10⁻⁷ = 2.5 × 10⁸ Pa
+strain = e/L = 2.0 × 10⁻³/2.0 = 1.0 × 10⁻³
+
+Y = stress/strain = 2.5 × 10⁸/1.0 × 10⁻³ = 2.5 × 10¹¹ Pa</p>
+<p>The value matches steel (2 × 10¹¹ Pa), which is the only “check” the examiner wants. The two common slips are using the diameter as the radius (a factor of 4 in area, hence in Y) and mixing millimetres with metres.</p>
+<p class="ans">Stress 2.5 × 10⁸ Pa, strain 1.0 × 10⁻³, Y = 2.5 × 10¹¹ Pa — consistent with steel.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> [Derivation] Derive the elastic potential energy stored in a stretched wire as ½kx², and show that the energy density is ½ × stress × strain.</p>
+<div class="sol">
+<p class="work">Work done stretching from 0 to x against F = kx:
+  W = ∫₀ˣ kx dx = ½kx²      (area of the F–x triangle)
+
+Energy density (energy per unit volume):
+  u = ½kx²/(AL),  with k = YA/L
+    = ½(YA/L)x²/(AL) = ½Y(x/L)²
+    = ½ Y × strain² = ½ × stress × strain</p>
+<p>Both forms are examinable and they answer different questions: ½kx² gives the energy in one spring or wire, while ½ × stress × strain gives the energy per cubic metre of any material — the quantity plotted as the area under the stress–strain curve, and the reason a rubber band at the same stress stores far more energy than a steel wire. It also explains why the elastic region of the curve is a triangle: the area under a straight line through the origin.</p>
+<p class="ans">W = ½kx² = ½YAx²/L; per unit volume u = ½ × stress × strain = ½Y(strain)².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Graph reading] On a stress–strain curve of a metal, the straight portion ends at stress 2.0 × 10⁸ Pa with strain 8.0 × 10⁻⁴; the curve then bends, yields at 3.0 × 10⁸ Pa, and fractures at 5.0 × 10⁸ Pa with strain 0.15. Find Young's modulus, the yield strength and the energy per unit volume stored at the proportional limit.</p>
+<div class="sol">
+<p class="work">Y = slope of the straight part
+  = (2.0 × 10⁸ − 0)/(8.0 × 10⁻⁴ − 0) = 2.5 × 10¹¹ Pa
+
+yield strength = 3.0 × 10⁸ Pa  (the stress at which plastic flow begins)
+breaking stress = 5.0 × 10⁸ Pa
+
+Energy density up to the proportional limit:
+  u = ½ × stress × strain = ½(2.0 × 10⁸)(8.0 × 10⁻⁴) = 8.0 × 10⁴ J m⁻³</p>
+<p>The total area under the whole curve (including the plastic tail out to strain 0.15) is the toughness — the energy absorbed before fracture — and is far larger than 8 × 10⁴ J m⁻³ because the plastic region is wide. A brittle material such as glass has almost no plastic region, which is why it shatters instead of bending: high strength, low toughness.</p>
+<p class="ans">Y = 2.5 × 10¹¹ Pa; yield strength 3.0 × 10⁸ Pa, breaking stress 5.0 × 10⁸ Pa; elastic energy density 8.0 × 10⁴ J m⁻³ up to the proportional limit.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Combined concept] A wire of cross-section 1.0 mm² has a breaking stress of 4.0 × 10⁸ Pa. Find the maximum load it can carry and the safe load with a factor of safety of 5.</p>
+<div class="sol">
+<p class="work">A = 1.0 mm² = 1.0 × 10⁻⁶ m²
+
+breaking load = breaking stress × A = 4.0 × 10⁸ × 1.0 × 10⁻⁶ = 4.0 × 10² N
+equivalent mass = 400/9.8 = 41 kg
+
+safe load = 400/5 = 80 N  (≈ 8 kg)</p>
+<p>The factor of safety covers what the calculation does not: fatigue from repeated loading, corrosion, small flaws that concentrate stress, and overloads. It is a design decision, not a physical constant — lifts use 5–10, aircraft cables 5, and a crane hook may use 4. Quoting a result equal to the breaking load is a fail, because the wire is then at the point of fracture, not carrying a load.</p>
+<p class="ans">Breaking load 4.0 × 10² N (41 kg); safe working load 80 N (8 kg) with a safety factor of 5.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Assertion–reason] <b>Assertion (A):</b> Steel is more elastic than rubber. <b>Reason (R):</b> Under the same stress, steel undergoes a much smaller strain than rubber.</p>
+<div class="sol">
+<p>Both statements are true, and R is the reason for A.</p>
+<p class="work">Y_steel ≈ 2 × 10¹¹ Pa,  Y_rubber ≈ 5 × 10⁶ Pa — a factor of 4 × 10⁴
+strain = stress/Y, so at equal stress:
+  strain_steel/strain_rubber = Y_rubber/Y_steel ≈ 2.5 × 10⁻⁵</p>
+<p>In physics “elastic” means “resists deformation”, not “stretches a lot”: the better the material returns to its shape with the least strain, the greater its modulus and the more elastic it is. Everyday language reverses the meaning — a “very elastic” rubber band is, in the technical sense, a poorly elastic material.</p>
+<p class="ans">Both true, R explains A: Y_steel ≫ Y_rubber means far less strain at the same stress, so steel is the more elastic material.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Experiment/observation table] In a Searle-type experiment on a wire of length 2.0 m and diameter 0.40 mm, the following extensions are recorded. Complete the table and find Y.</p>
+<table>
+<tr><th>Load (kg)</th><th>Load (N)</th><th>Extension (mm)</th><th>Stress (Pa)</th></tr>
+<tr><td>1.0</td><td>?</td><td>0.80</td><td>?</td></tr>
+<tr><td>2.0</td><td>?</td><td>1.60</td><td>?</td></tr>
+<tr><td>3.0</td><td>?</td><td>2.40</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">A = π(0.20 × 10⁻³)² = 1.26 × 10⁻⁷ m²
+
+Loads:   1.0 kg → 9.8 N,  2.0 kg → 19.6 N,  3.0 kg → 29.4 N
+Stresses: 9.8/1.26 × 10⁻⁷ = 7.8 × 10⁷ Pa
+          19.6/1.26 × 10⁻⁷ = 1.6 × 10⁸ Pa
+          29.4/1.26 × 10⁻⁷ = 2.3 × 10⁸ Pa
+
+Strains: 0.80 × 10⁻³/2.0 = 4.0 × 10⁻⁴
+         1.60 × 10⁻³/2.0 = 8.0 × 10⁻⁴
+         2.40 × 10⁻³/2.0 = 1.2 × 10⁻³
+
+Y = 7.8 × 10⁷/4.0 × 10⁻⁴ = 2.0 × 10¹¹ Pa  (same from each row)</p>
+<p>The extension is exactly proportional to the load, which is the verification of Hooke's law, and the constant ratio stress/strain is Y. Searle's method uses two wires so that both stretch by the same amount on loading — one carries the load, the other compensates for temperature and for the sag of the support, which is why the reading is the <em>difference</em> in extensions.</p>
+<p class="ans">Stresses 7.8 × 10⁷, 1.6 × 10⁸, 2.3 × 10⁸ Pa; Y = 2.0 × 10¹¹ Pa, constant across the three loads (Hooke's law verified).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Estimation and limiting case] Estimate the extension of a 1.0 m vertical steel wire caused by its own weight (ρ = 7800 kg m⁻³, Y = 2.0 × 10¹¹ Pa), and state the limits of Hooke's law.</p>
+<div class="sol">
+<p class="work">The weight below a point at distance x from the top is ρAg(L − x), so
+  de = ρg(L − x)dx/Y
+  e = ρgL²/(2Y) = 7800 × 9.8 × 1.0/2(2.0 × 10¹¹)
+    = 7.6 × 10⁴/4.0 × 10¹¹ = 1.9 × 10⁻⁷ m
+
+About 0.2 µm — invisible, and 10⁴ times smaller than the extension produced by a
+1 kg load on a 1 mm² wire. A 10 m wire would extend 100 times more (e ∝ L²).</p>
+<p><b>Limits of Hooke's law:</b> the proportionality stress ∝ strain holds only up to the proportional limit; beyond it strain grows faster than stress (yield), and beyond the elastic limit the wire takes a permanent set. Past the breaking stress it fractures. Hooke's law also fails for large extensions of rubber (a non-linear, S-shaped curve) even though rubber returns to its original length — elasticity and linearity are separate properties.</p>
+<p class="ans">e ≈ 1.9 × 10⁻⁷ m for 1 m of steel (scales as L²); Hooke's law holds only below the proportional limit, and elasticity without linearity is the case of rubber.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Error-hunting] Correct each false statement.<br>
+(i) “Young's modulus depends on the length and area of the wire.”<br>
+(ii) “A material that stretches a lot is highly elastic.”<br>
+(iii) “Stress is a vector because force is a vector.”<br>
+(iv) “When the load is removed from a wire strained beyond the elastic limit, it regains its original length.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — Y is a property of the MATERIAL (like density). Length and area affect
+     the extension e = FL/(AY), not Y itself.
+(ii) FALSE — in physics, elastic = resists deformation = large Y. Rubber stretches a lot
+     precisely because its Y is small (about 5 × 10⁶ Pa).
+(iii) FALSE — stress = F/A is a scalar ratio (pressure-like); only its direction through
+     a surface makes it useful as a tensor. In NEB terms, stress is quoted as a
+     magnitude in Pa, and strain is dimensionless.
+(iv) FALSE — beyond the elastic limit there is a permanent (plastic) set, so the wire
+     stays longer than its original length; that is the definition of the elastic limit.</p>
+<p>Statement (i) is the single most common error in the unit: students confidently “correct” Y by dividing by the length that was already used in the strain.</p>
+<p class="ans">(i) Y is a material constant; (ii) elastic means small strain, i.e. large Y; (iii) stress is a scalar magnitude; (iv) past the elastic limit the deformation is permanent.</p>
 </div>
 </div>
 
