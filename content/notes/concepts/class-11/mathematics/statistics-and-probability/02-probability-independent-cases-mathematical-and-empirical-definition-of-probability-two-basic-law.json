@@ -7,17 +7,18 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Mathematical probability of an event E is P(E) = n(E)/n(S), where n(E) is the number of favourable outcomes and n(S) is the number of equally likely outcomes in the sample space.",
-    "**Fact.** Empirical probability uses observed frequency: P(E) is approximately the number of times E occurred divided by the number of trials. It approaches the mathematical value only as the number of trials grows.",
-    "**Fact.** Addition law: P(A∪B) = P(A) + P(B) − P(A∩B). When A and B are mutually exclusive, P(A∩B) = 0, so P(A∪B) = P(A) + P(B).",
-    "**Fact.** Multiplication law: P(A∩B) = P(A) P(B|A). If A and B are independent, P(B|A) = P(B), so P(A∩B) = P(A) P(B). Independence is not the same as being mutually exclusive.",
-    "**Fact.** The complement satisfies P(A') = 1 − P(A). For a discrete experiment the probabilities of all outcomes add to 1.",
-    "# Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)\n\n## 1. Introduction and motivation\nWhat the tool **Probability** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Statistics and Probability fill pass.\n\n## 2. Definitions and theorems\n### Probability: independent cases\n### mathematical and empirical definition of probability\n### two basic laws of probability (without proof)\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
-    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
-    "## 4. Methods and standard forms\n**Table 2 — Counts and distributions**\n\n| Case | Rule or formula | Worked example | Trap |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 5. Figures and graphs\n- **F1** — Probability — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Probability — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Probability — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
-    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
-    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+    "## 1. Topic Introduction — The Arithmetic of Chance\n\nProbability measures uncertainty on a 0–1 scale. The theorem set: the **classical (Laplace) definition** m/n, the **addition law** with the mutually-exclusive special case, the **conditional probability** P(A|B), the **multiplication law**, **independence**, and **Bayes' theorem**.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Classical definition and its axioms\n\n- **P(A) = m/n**: m favourable outcomes among n equally likely ones.\n- **Axioms:** 0 ≤ P(A) ≤ 1; P(φ) = 0; P(S) = 1; and P(A) + P(A′) = **1** (the complement law — the \"at least one\" workhorse: P(at least one) = 1 − P(none)).\n\n### 2.2 Addition law\n\n- **Theorem:** P(A∪B) = P(A) + P(B) − P(A∩B) — the overlap counted twice must be subtracted once.\n- **Mutually exclusive special case:** A∩B = φ ⟹ P(A∪B) = P(A) + P(B).\n\n### 2.3 Conditional probability and multiplication\n\n- **Definition:** P(A|B) = P(A∩B)/P(B), P(B) > 0 — probability of A given B happened.\n- **Multiplication law:** P(A∩B) = P(A)·P(B|A) = P(B)·P(A|B).\n\n### 2.4 Independence and Bayes\n\n- **Independent events:** P(A∩B) = P(A)·P(B) — knowledge of one changes nothing about the other. (Do not confuse with mutually exclusive: exclusive events with positive probabilities are **dependent** — one excludes the other.)\n- **Bayes' theorem:** P(Aᵢ|B) = P(Aᵢ)P(B|Aᵢ) / Σⱼ P(Aⱼ)P(B|Aⱼ) — inverting conditional probabilities from effect back to cause.\n- **Theorem (total probability):** if A₁, A₂ partition S, P(B) = P(A₁)P(B|A₁) + P(A₂)P(B|A₂).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Sample space S** | Set of all outcomes | two dice: 36 ordered pairs |\n| **Mutually exclusive** | A∩B = φ | head and tail on one toss |\n| **Conditional probability** | P(A|B) = P(A∩B)/P(B) | draw given a red came first |\n| **Independent events** | P(A∩B) = P(A)P(B) | two separate coins |",
+    "## 4. Detailed Explanation\n\n### 4.1 The complement trick\n\n- \"At least one success\" is the complement of \"no successes\". Counting at-least-one directly is error-prone; 1 − P(none) is one line. The single most useful probability shortcut.\n\n### 4.2 With and without replacement\n\n- Without replacement, the second draw's probability is **conditional** — the deck remembers. With replacement, draws are independent — the deck forgets. Naming which case you are in is half the answer.\n\n### 4.3 Bayes in words\n\n- Prior (before the evidence) × likelihood (evidence given cause) ∝ posterior (cause given evidence). The theorem re-weights beliefs by the data.",
+    "## 5. Comparison Tables\n\n**Key distinctions**\n\n| Pair | Difference |\n|---|---|\n| exclusive vs independent | exclusive: cannot co-occur; independent: no influence |\n| P(A|B) vs P(B|A) | different conditionals; Bayes converts between them |\n| with vs without replacement | independent vs conditional draws |",
+    "## 6. Common Confusions\n\n**Mutually exclusive ≠ independent:** if A and B are exclusive and P(A), P(B) > 0, then P(A∩B) = 0 ≠ P(A)P(B) — exclusive events are maximally dependent.",
+    "**Addition law needs the overlap:** forgetting −P(A∩B) overcounts; only the exclusive case drops it.",
+    "**P(A|B) ≠ P(B|A):** the probability of disease given a positive test is not the test's accuracy — Bayes exists because these differ.",
+    "## 7. Exam Application\n\n**NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5 and P(A∩B) = 0.3, then P(A∪B) = ? (1m)** — Addition law: P(A∪B) = 0.6 + 0.5 − 0.3 = **0.8**. Note P(A∩B) = 0.3 ≠ P(A)P(B) = 0.30... here they coincide, so A and B happen to be independent as well — but the union answer needs only the addition law.",
+    "**NEB-style (3m): A bag contains 4 red and 6 black balls. Two balls are drawn one after the other without replacement. Find the probability that both are red.** — **Conditional multiplication:** P(1st red) = 4/10; P(2nd red | 1st red) = 3/9. P(both red) = (4/10)(3/9) = **12/90 = 2/15**. Without replacement the deck remembers — the second factor is conditional.",
+    "**NEB-style (2m): A card is drawn from a pack of 52. Find the probability that it is a king or a heart.** — P(king) = 4/52; P(heart) = 13/52; P(king ∩ heart) = 1/52 (the king of hearts is counted twice otherwise). Addition law: 4/52 + 13/52 − 1/52 = **16/52 = 4/13**.",
+    "**NEB-style (3m): In a factory, machine A produces 60% of items with 2% defectives, machine B 40% with 5% defectives. An item is found defective. Find the probability it came from A. (Bayes)** — P(defective) = (0.6)(0.02) + (0.4)(0.05) = 0.012 + 0.020 = 0.032 (total probability). **Bayes:** P(A | defective) = (0.6)(0.02)/0.032 = 0.012/0.032 = **3/8 = 0.375**."
   ],
   "confusion": [
     "❌ answer with no steps → ✅ show each step and box the result.",
@@ -30,26 +31,24 @@
     "Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b)."
   ],
   "practice": [
-    "one worked example for \"Probability: independent cases, mathematical and empirica…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "If P(A) = 0.6, P(B) = 0.5, P(A∩B) = 0.3, find P(A∪B).",
+    "Two balls drawn without replacement from 4 red, 6 black: probability both red?",
+    "A king or a heart is drawn from 52 cards - find the probability."
   ],
   "universalFacts": [
-    "P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
-    "Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
-    "Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
+    "Medical screening misleads intuition precisely because P(positive | disease) and P(disease | positive) differ - Bayes' theorem is the correction."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "***The deck remembers*** — without replacement the second draw is conditional on the first (3/9 after a red); with replacement it is independent (4/10 again)."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Probability: independent cases, mathematical and empirica…\" with one example.",
-    "compare \"Probability\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Probability: independent cases, mathematical and empirica…\" and verify the answer is plausible."
+    "**NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5 and P(A∩B) = 0.3, then P(A∪B) is: (1m)** — **Addition law:** P(A∪B) = P(A) + P(B) − P(A∩B) — the intersection must be subtracted because the individual probabilities count it twice. **Substitute:** P(A∪B) = 0.6 + 0.5 − 0.3 = **0.8**. **Bonus observation:** P(A∩B) = 0.3 = P(A)P(B) = (0.6)(0.5), so A and B are in fact independent here — but the union computation itself needs only the addition law, and the overlap term cannot be dropped (the events are not mutually exclusive).",
+    "**NEB-style (3m): A bag contains 4 red and 6 black balls. Two balls are drawn one after the other without replacement. Find the probability that both are red.** — **Case named:** without replacement ⟹ conditional (the deck remembers). **Step 1:** P(first red) = 4/10 = 2/5. **Step 2:** after one red leaves, 3 red among 9 remain: P(second red | first red) = 3/9 = 1/3. **Multiplication law:** P(both red) = (2/5)(1/3) = **2/15 ≈ 0.133**. (With replacement the answer would be (4/10)² = 4/25 = 0.16 — larger, because the red count is never depleted.)",
+    "**NEB-style (2m): One card is drawn from a well-shuffled pack of 52. Find the probability that it is a king or a heart.** — **Sets:** kings (4 cards), hearts (13 cards), and their intersection (king of hearts, 1 card). **Addition law:** P(king ∪ heart) = 4/52 + 13/52 − 1/52 = 16/52 = **4/13**. The subtraction is essential: without it, the king of hearts would be counted in both sets and the probability overcounted — this is exactly the non-exclusive case of the addition theorem.",
+    "**NEB-style (3m): Machine A produces 60% of a factory's items with 2% defective rate; machine B produces 40% with 5% defective rate. An item chosen at random is found defective. Find the probability that it was produced by machine A.** — **Total probability:** P(D) = P(A)P(D|A) + P(B)P(D|B) = (0.6)(0.02) + (0.4)(0.05) = 0.012 + 0.020 = **0.032**. **Bayes' theorem:** P(A|D) = P(A)P(D|A)/P(D) = 0.012/0.032 = **3/8 = 0.375**. **Reading:** although A makes more items and has fewer defects, the evidence \"defective\" shifts the probability toward B — the posterior 0.375 is below the prior 0.6, exactly the re-weighting Bayes formalises."
   ],
   "formulas": [
-    "P(A∪B) = P(A)+P(B)−P(A∩B)",
-    "P(A∩B) = P(A)P(B|A)",
-    "P(A') = 1 − P(A)"
+    "- P(A) = m/n; P(A′) = 1 − P(A)\n- P(A∪B) = P(A) + P(B) − P(A∩B); exclusive: P(A) + P(B)\n- P(A|B) = P(A∩B)/P(B); P(A∩B) = P(A)P(B|A)\n- Bayes: P(Aᵢ|B) = P(Aᵢ)P(B|Aᵢ)/Σⱼ P(Aⱼ)P(B|Aⱼ)"
   ],
   "numericals": [
     "Use  P(A∪B) = P(A)+P(B)−P(A∩B)  — pick reasonable values, solve, and check the units.",
@@ -57,16 +56,9 @@
     "Use  P(A') = 1 − P(A)  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Probability",
-    "• Independent cases",
-    "• Mathematical",
-    "• Empirical definition of probability",
-    "• Two basic laws of probability",
-    "• Without proof",
-    "Connection of Probability to other topics",
-    "Connection of Probability â€” Definitions and Basic Laws to other topics"
+    "Classical definition: P(A) = m/n for equally likely outcomes. Axioms: 0 <= P <= 1; P(S) = 1; complement law P(A) + P(A') = 1, so P(at least one) = 1 - P(none). Addition law: P(A u B) = P(A) + P(B) - P(A n B); mutually exclusive case drops the intersection. Conditional probability: P(A|B) = P(A n B)/P(B). Multiplication law: P(A n B) = P(A) P(B|A). Independent: P(A n B) = P(A) P(B); mutually exclusive events with positive probabilities are NOT independent. Total probability and Bayes' theorem invert conditionals. With replacement = independent draws; without = conditional draws."
   ],
-  "summary": "Probability covers essential principles and applications. Probability â€” Definitions and Basic Laws covers essential principles and applications.",
+  "summary": "Probability quantifies chance: **P(A) = m/n** on equally likely outcomes, bounded by the axioms with the **complement law** P(A) + P(A′) = 1 powering the \"at least one = 1 − none\" shortcut. The **addition law** P(A∪B) = P(A) + P(B) − P(A∩B) subtracts the double-counted overlap (NEB 2022: 0.6 + 0.5 − 0.3 = **0.8**), collapsing to a sum only for mutually exclusive events — which are emphatically **not** independent. **Conditional probability** P(A|B) = P(A∩B)/P(B) and the **multiplication law** handle dependent sequences: without replacement, the deck remembers (both red from 4R/6B: 2/5 × 1/3 = 2/15). **Independence** is P(A∩B) = P(A)P(B); **Bayes' theorem** inverts conditionals — prior × likelihood over total probability — turning \"defective ⟹ machine A\" into 3/8. Exclusive, independent, conditional: name the case, then compute.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Probability: independent cases, mathematical and empirica…\"?",
@@ -90,32 +82,76 @@
     }
   ],
   "importantStatements": [
-    "Statement 1: Definition of Probability",
-    "Statement 2: Theorem related to Probability",
-    "Statement 3: Condition for Probability to be valid",
-    "Statement 4: Principle governing Probability",
-    "Statement 5: Corollary or consequence of Probability",
-    "Statement 1: Definition of Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)",
-    "Statement 2: Theorem related to Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)",
-    "Statement 3: Condition for Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof) to be valid",
-    "Statement 4: Principle governing Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)",
-    "Statement 5: Corollary or consequence of Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)"
+    "\"P(A u B) = P(A) + P(B) - P(A n B); P(A|B) = P(A n B)/P(B); Bayes: P(Ai|B) = P(Ai)P(B|Ai) / sum P(Aj)P(B|Aj).\""
   ],
   "importantNotes": [
-    "Probability is based on fundamental principles.",
-    "Probability â€” Definitions and Basic Laws is based on fundamental principles."
+    "Verified PYQ: NEB 2022 (addition law MCQ, P(A u B) = 0.8) - assigned to this row. Other items are NEB-style practice."
   ],
   "examShortTricks": [
-    "Recall the formula for Probability.",
-    "Recall the formula for Probability â€” Definitions and Basic Laws."
+    "At least one: 1 - P(none). King or heart: add then subtract the overlap. Both-red without replacement: multiply conditionals. Bayes: prior x likelihood over total probability."
   ],
   "importantConcepts": [
-    "Definition and significance of Probability.",
-    "Definition and significance of Probability â€” Definitions and Basic Laws."
+    "The complement trick converts \"at least one\" questions into one subtraction; Bayes converts evidence about effects back into probabilities of causes."
   ],
   "animation3D": "statistics-and-probability",
   "motionGraphics": "statistics-and-probability",
   "specialNotes": [],
-  "examNotes": [],
-  "importantTasks": []
+  "examNotes": [
+    "Name the case (with/without replacement, exclusive/independent) before computing - the naming is the method mark."
+  ],
+  "importantTasks": [],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Arithmetic of Chance\n\nProbability measures uncertainty on a 0–1 scale. The theorem set: the **classical (Laplace) definition** m/n, the **addition law** with the mutually-exclusive special case, the **conditional probability** P(A|B), the **multiplication law**, **independence**, and **Bayes' theorem**.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Classical definition and its axioms\n\n- **P(A) = m/n**: m favourable outcomes among n equally likely ones.\n- **Axioms:** 0 ≤ P(A) ≤ 1; P(φ) = 0; P(S) = 1; and P(A) + P(A′) = **1** (the complement law — the \"at least one\" workhorse: P(at least one) = 1 − P(none)).\n\n### 2.2 Addition law\n\n- **Theorem:** P(A∪B) = P(A) + P(B) − P(A∩B) — the overlap counted twice must be subtracted once.\n- **Mutually exclusive special case:** A∩B = φ ⟹ P(A∪B) = P(A) + P(B).\n\n### 2.3 Conditional probability and multiplication\n\n- **Definition:** P(A|B) = P(A∩B)/P(B), P(B) > 0 — probability of A given B happened.\n- **Multiplication law:** P(A∩B) = P(A)·P(B|A) = P(B)·P(A|B).\n\n### 2.4 Independence and Bayes\n\n- **Independent events:** P(A∩B) = P(A)·P(B) — knowledge of one changes nothing about the other. (Do not confuse with mutually exclusive: exclusive events with positive probabilities are **dependent** — one excludes the other.)\n- **Bayes' theorem:** P(Aᵢ|B) = P(Aᵢ)P(B|Aᵢ) / Σⱼ P(Aⱼ)P(B|Aⱼ) — inverting conditional probabilities from effect back to cause.\n- **Theorem (total probability):** if A₁, A₂ partition S, P(B) = P(A₁)P(B|A₁) + P(A₂)P(B|A₂).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Sample space S** | Set of all outcomes | two dice: 36 ordered pairs |\n| **Mutually exclusive** | A∩B = φ | head and tail on one toss |\n| **Conditional probability** | P(A|B) = P(A∩B)/P(B) | draw given a red came first |\n| **Independent events** | P(A∩B) = P(A)P(B) | two separate coins |",
+      "## 4. Detailed Explanation\n\n### 4.1 The complement trick\n\n- \"At least one success\" is the complement of \"no successes\". Counting at-least-one directly is error-prone; 1 − P(none) is one line. The single most useful probability shortcut.\n\n### 4.2 With and without replacement\n\n- Without replacement, the second draw's probability is **conditional** — the deck remembers. With replacement, draws are independent — the deck forgets. Naming which case you are in is half the answer.\n\n### 4.3 Bayes in words\n\n- Prior (before the evidence) × likelihood (evidence given cause) ∝ posterior (cause given evidence). The theorem re-weights beliefs by the data.",
+      "## 5. Comparison Tables\n\n**Key distinctions**\n\n| Pair | Difference |\n|---|---|\n| exclusive vs independent | exclusive: cannot co-occur; independent: no influence |\n| P(A|B) vs P(B|A) | different conditionals; Bayes converts between them |\n| with vs without replacement | independent vs conditional draws |",
+      "## 6. Common Confusions\n\n**Mutually exclusive ≠ independent:** if A and B are exclusive and P(A), P(B) > 0, then P(A∩B) = 0 ≠ P(A)P(B) — exclusive events are maximally dependent.",
+      "**Addition law needs the overlap:** forgetting −P(A∩B) overcounts; only the exclusive case drops it.",
+      "**P(A|B) ≠ P(B|A):** the probability of disease given a positive test is not the test's accuracy — Bayes exists because these differ.",
+      "## 7. Exam Application\n\n**NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5 and P(A∩B) = 0.3, then P(A∪B) = ? (1m)** — Addition law: P(A∪B) = 0.6 + 0.5 − 0.3 = **0.8**. Note P(A∩B) = 0.3 ≠ P(A)P(B) = 0.30... here they coincide, so A and B happen to be independent as well — but the union answer needs only the addition law.",
+      "**NEB-style (3m): A bag contains 4 red and 6 black balls. Two balls are drawn one after the other without replacement. Find the probability that both are red.** — **Conditional multiplication:** P(1st red) = 4/10; P(2nd red | 1st red) = 3/9. P(both red) = (4/10)(3/9) = **12/90 = 2/15**. Without replacement the deck remembers — the second factor is conditional.",
+      "**NEB-style (2m): A card is drawn from a pack of 52. Find the probability that it is a king or a heart.** — P(king) = 4/52; P(heart) = 13/52; P(king ∩ heart) = 1/52 (the king of hearts is counted twice otherwise). Addition law: 4/52 + 13/52 − 1/52 = **16/52 = 4/13**.",
+      "**NEB-style (3m): In a factory, machine A produces 60% of items with 2% defectives, machine B 40% with 5% defectives. An item is found defective. Find the probability it came from A. (Bayes)** — P(defective) = (0.6)(0.02) + (0.4)(0.05) = 0.012 + 0.020 = 0.032 (total probability). **Bayes:** P(A | defective) = (0.6)(0.02)/0.032 = 0.012/0.032 = **3/8 = 0.375**."
+    ],
+    "keyPoints": [
+      "Classical definition: P(A) = m/n for equally likely outcomes. Axioms: 0 <= P <= 1; P(S) = 1; complement law P(A) + P(A') = 1, so P(at least one) = 1 - P(none). Addition law: P(A u B) = P(A) + P(B) - P(A n B); mutually exclusive case drops the intersection. Conditional probability: P(A|B) = P(A n B)/P(B). Multiplication law: P(A n B) = P(A) P(B|A). Independent: P(A n B) = P(A) P(B); mutually exclusive events with positive probabilities are NOT independent. Total probability and Bayes' theorem invert conditionals. With replacement = independent draws; without = conditional draws."
+    ],
+    "importantConcepts": [
+      "The complement trick converts \"at least one\" questions into one subtraction; Bayes converts evidence about effects back into probabilities of causes."
+    ],
+    "examples": [
+      "***The deck remembers*** — without replacement the second draw is conditional on the first (3/9 after a red); with replacement it is independent (4/10 again)."
+    ],
+    "universalFacts": [
+      "Medical screening misleads intuition precisely because P(positive | disease) and P(disease | positive) differ - Bayes' theorem is the correction."
+    ],
+    "importantStatements": [
+      "\"P(A u B) = P(A) + P(B) - P(A n B); P(A|B) = P(A n B)/P(B); Bayes: P(Ai|B) = P(Ai)P(B|Ai) / sum P(Aj)P(B|Aj).\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: NEB 2022 (addition law MCQ, P(A u B) = 0.8) - assigned to this row. Other items are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "At least one: 1 - P(none). King or heart: add then subtract the overlap. Both-red without replacement: multiply conditionals. Bayes: prior x likelihood over total probability."
+    ],
+    "examNotes": [
+      "Name the case (with/without replacement, exclusive/independent) before computing - the naming is the method mark."
+    ],
+    "formulas": [
+      "- P(A) = m/n; P(A′) = 1 − P(A)\n- P(A∪B) = P(A) + P(B) − P(A∩B); exclusive: P(A) + P(B)\n- P(A|B) = P(A∩B)/P(B); P(A∩B) = P(A)P(B|A)\n- Bayes: P(Aᵢ|B) = P(Aᵢ)P(B|Aᵢ)/Σⱼ P(Aⱼ)P(B|Aⱼ)"
+    ],
+    "practice": [
+      "If P(A) = 0.6, P(B) = 0.5, P(A∩B) = 0.3, find P(A∪B).",
+      "Two balls drawn without replacement from 4 red, 6 black: probability both red?",
+      "A king or a heart is drawn from 52 cards - find the probability."
+    ],
+    "practiceQuestions": [
+      "**NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5 and P(A∩B) = 0.3, then P(A∪B) is: (1m)** — **Addition law:** P(A∪B) = P(A) + P(B) − P(A∩B) — the intersection must be subtracted because the individual probabilities count it twice. **Substitute:** P(A∪B) = 0.6 + 0.5 − 0.3 = **0.8**. **Bonus observation:** P(A∩B) = 0.3 = P(A)P(B) = (0.6)(0.5), so A and B are in fact independent here — but the union computation itself needs only the addition law, and the overlap term cannot be dropped (the events are not mutually exclusive).",
+      "**NEB-style (3m): A bag contains 4 red and 6 black balls. Two balls are drawn one after the other without replacement. Find the probability that both are red.** — **Case named:** without replacement ⟹ conditional (the deck remembers). **Step 1:** P(first red) = 4/10 = 2/5. **Step 2:** after one red leaves, 3 red among 9 remain: P(second red | first red) = 3/9 = 1/3. **Multiplication law:** P(both red) = (2/5)(1/3) = **2/15 ≈ 0.133**. (With replacement the answer would be (4/10)² = 4/25 = 0.16 — larger, because the red count is never depleted.)",
+      "**NEB-style (2m): One card is drawn from a well-shuffled pack of 52. Find the probability that it is a king or a heart.** — **Sets:** kings (4 cards), hearts (13 cards), and their intersection (king of hearts, 1 card). **Addition law:** P(king ∪ heart) = 4/52 + 13/52 − 1/52 = 16/52 = **4/13**. The subtraction is essential: without it, the king of hearts would be counted in both sets and the probability overcounted — this is exactly the non-exclusive case of the addition theorem.",
+      "**NEB-style (3m): Machine A produces 60% of a factory's items with 2% defective rate; machine B produces 40% with 5% defective rate. An item chosen at random is found defective. Find the probability that it was produced by machine A.** — **Total probability:** P(D) = P(A)P(D|A) + P(B)P(D|B) = (0.6)(0.02) + (0.4)(0.05) = 0.012 + 0.020 = **0.032**. **Bayes' theorem:** P(A|D) = P(A)P(D|A)/P(D) = 0.012/0.032 = **3/8 = 0.375**. **Reading:** although A makes more items and has fewer defects, the evidence \"defective\" shifts the probability toward B — the posterior 0.375 is below the prior 0.6, exactly the re-weighting Bayes formalises."
+    ]
+  }
 }

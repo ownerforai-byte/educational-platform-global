@@ -45,8 +45,8 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 
 | # | Unit | Topic | File | Status |
 |---|---|---|---|---|
-| 11 | Statistics | Measures of dispersion, SD, variance, CV, skewness | `statistics-and-probability/01-measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearson.json` | Pending |
-| 12 | Probability | Probability: definitions and basic laws | `statistics-and-probability/02-probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-law.json` | Pending |
+| 11 | Statistics | Measures of dispersion, SD, variance, CV, skewness | `statistics-and-probability/01-measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearson.json` | Completed |
+| 12 | Probability | Probability: definitions and basic laws | `statistics-and-probability/02-probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-law.json` | Completed |
 
 ## Algebra (14 topics)
 
@@ -158,6 +158,8 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 | 96 | Mechanics | Dynamics: straight-line motion, uniform acceleration | `computational-methods-or-mechanics/04-mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-accelerati.json` | Pending |
 
 ## Progress log
+
+- Session 3 - Statistics and Probability (rows 11-12, 2/2): dispersion (range, mean deviation, variance via computational identity sigma^2 = sum xi^2/n - xbar^2, SD, shift invariance, C.V., Karl Pearson skewness; NEB 2024 verified PYQ mean 25 / SD 9.41 of 10 marks, NEB 2023 verified PYQ variance of first 10 naturals 8.25) and probability (classical definition, axioms, addition law, conditional probability, multiplication law, independence, total probability, Bayes; NEB 2022 verified PYQ P(A u B) = 0.8). Build 101 entries, validator 0 broken.
 
 - Session 2 - Vectors (rows 4-10, 7/7): vector algebra (triangle/parallelogram laws, scalar multiplication, section formula; NEB 2024 verified PYQ unit vector, NEB 2022 verified PYQ internal division 2:3); linear combination and dependence (determinant test, zero-vector lemma); collinear/coplanar (cross and triple-product tests, connecting-vector rule for points); dot product (perpendicularity criterion, angle theorem, projections; NEB 2024 verified PYQs a.b=-3, projection 4/sqrt5, angle 60 deg; NEB 2023 verified PYQ -8/3 MCQ); cross product (anticommutativity, parallel criterion, area theorems, Lagrange identity; NEB 2024 verified PYQs |a x b|=5sqrt3 + parallelogram area 5, NEB 2020 verified PYQ unit perpendicular (i-j)/sqrt2, NEB 2021 verified PYQ 2sqrt42 via Lagrange); scalar/vector triple products (volume theorem, cyclic invariance, BAC-CAB; NEB 2024 verified PYQ definition+significance); applications (work F.d, torque r x F, angular momentum conservation). Nine verified PYQs assigned. Build 101 entries, validator 0 broken.
 
