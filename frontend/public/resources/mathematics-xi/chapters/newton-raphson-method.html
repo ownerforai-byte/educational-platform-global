@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>7.2 Newton–Raphson Method — Mathematics XI workbook</title>
-<meta name="description" content="Newton–Raphson Method — 12 solved NEB-style questions covering The formula, Iteration steps, Convergence, Comparison with bisection.">
+<meta name="description" content="Newton–Raphson Method — 24 solved NEB-style questions covering The formula, Iteration steps, Convergence, Comparison with bisection.">
 <link rel="stylesheet" href="/resources/mathematics-xi/a4/workbook.css">
 </head>
 <body>
@@ -92,7 +92,94 @@
 <footer class="foot">
 <span>Unit 7 · Computational Methods or Mechanics</span>
 <span class="mid">Newton–Raphson Method</span>
-<span>Sheet 1 of 1 · 12 solved questions</span>
+<span>Sheet 1 of 2 · 12 solved questions</span>
+</footer>
+</section>
+<section class="sheet" aria-label="Newton–Raphson Method — sheet 2">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook</span></div>
+<h1>7.2 · Newton–Raphson Method · continued</h1>
+<p class="topics"><b>Topics</b> The formula · Iteration steps · Convergence · Comparison with bisection</p>
+<p class="note">NEB answer style — given → statement → working → answer. 12 questions per sheet, 3 per row.</p>
+</header>
+<div class="grid" data-cols="3" data-rows="4">
+<div class="cell">
+<p class="tag">The formula <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q13.</span>Newton–Raphson updates x by (A) xₙ + f/f′ (B) xₙ − f/f′ (C) xₙ − f′/f (D) xₙ·f/f′.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">The tangent meets the axis at the new point.</p>
+<p class="ans">B — xₙ − f/f′</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q14.</span>For x² − 16 = 0 from x₀ = 5, x₁ = (A) 4.1 (B) 4.5 (C) 3.9 (D) 4.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">5 − (25 − 16)/10</p>
+<p class="ans">A — 4.1</p>
+</div>
+<div class="cell">
+<p class="tag">Convergence <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q15.</span>The convergence of Newton–Raphson is (A) linear (B) quadratic (C) cubic (D) logarithmic.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">The error is squared at each step.</p>
+<p class="ans">B — quadratic</p>
+</div>
+<div class="cell">
+<p class="tag">The formula <span class="kind">True/False</span></p>
+<p class="q"><span class="n">Q16.</span>True or false: Newton–Raphson needs the derivative.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">The update divides by f′.</p>
+<p class="ans">True</p>
+</div>
+<div class="cell">
+<p class="tag">Comparison with bisection <span class="kind">True/False</span></p>
+<p class="q"><span class="n">Q17.</span>True or false: Newton–Raphson always converges.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">A poor start or a flat tangent can send it away.</p>
+<p class="ans">False</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps <span class="kind">Fill in</span></p>
+<p class="q"><span class="n">Q18.</span>For x² − 2 = 0 from x₀ = 2, x₁ = ______.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">2 − 2/4</p>
+<p class="ans">1.5</p>
+</div>
+<div class="cell">
+<p class="tag">Convergence <span class="kind">Fill in</span></p>
+<p class="q"><span class="n">Q19.</span>In Newton–Raphson the new error is roughly the ______ of the old one.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">That is what quadratic convergence means.</p>
+<p class="ans">square</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps <span class="kind">Spot the error</span></p>
+<p class="q"><span class="n">Q20.</span>A student writes xₙ₊₁ = xₙ − f′(xₙ)/f(xₙ). Correct it.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">The ratio is inverted.</p>
+<p class="ans">xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)</p>
+</div>
+<div class="cell">
+<p class="tag">Comparison with bisection <span class="kind">Assertion–reason</span></p>
+<p class="q"><span class="n">Q21.</span>Assertion: Newton–Raphson needs fewer steps than bisection. Reason: its error squares each step.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">That is precisely why it accelerates.</p>
+<p class="ans">Both true, and the reason explains the comparison</p>
+</div>
+<div class="cell">
+<p class="tag">The formula <span class="kind">Explain</span></p>
+<p class="q"><span class="n">Q22.</span>Why does a horizontal tangent break the method?&nbsp;<span class="mk">[2]</span></p>
+<p class="work">The update would divide by zero.</p>
+<p class="ans">Because f′ = 0 makes the step infinite, so the iteration fails</p>
+</div>
+<div class="cell">
+<p class="tag">Convergence <span class="kind">Match</span></p>
+<p class="q"><span class="n">Q23.</span>Match Newton–Raphson and bisection with (a) slow but guaranteed, (b) fast but start-sensitive.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">One brackets, the other linearises.</p>
+<p class="ans">Newton → (b), bisection → (a)</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps <span class="kind">Case study</span></p>
+<p class="q"><span class="n">Q24.</span>Solve x³ − 8 = 0 with one Newton step from x₀ = 3.&nbsp;<span class="mk">[4]</span></p>
+<p class="work">3 − (27 − 8)/27 = 3 − 0.7037</p>
+<p class="ans">x₁ ≈ 2.2963</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Newton–Raphson Method</span>
+<span>Sheet 2 of 2 · 12 solved questions</span>
 </footer>
 </section>
 </body>

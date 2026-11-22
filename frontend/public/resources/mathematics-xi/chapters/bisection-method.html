@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>7.1 Bisection Method — Mathematics XI workbook</title>
-<meta name="description" content="Bisection Method — 12 solved NEB-style questions covering Sign-change test, Bisection steps, Iteration tables, Accuracy and error.">
+<meta name="description" content="Bisection Method — 24 solved NEB-style questions covering Sign-change test, Bisection steps, Iteration tables, Accuracy and error.">
 <link rel="stylesheet" href="/resources/mathematics-xi/a4/workbook.css">
 </head>
 <body>
@@ -93,7 +93,94 @@ x₂ = 1.25, f = −0.297 &lt; 0 ⇒ [1.25, 1.5]</p>
 <footer class="foot">
 <span>Unit 7 · Computational Methods or Mechanics</span>
 <span class="mid">Bisection Method</span>
-<span>Sheet 1 of 1 · 12 solved questions</span>
+<span>Sheet 1 of 2 · 12 solved questions</span>
+</footer>
+</section>
+<section class="sheet" aria-label="Bisection Method — sheet 2">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook</span></div>
+<h1>7.1 · Bisection Method · continued</h1>
+<p class="topics"><b>Topics</b> Sign-change test · Bisection steps · Iteration tables · Accuracy and error</p>
+<p class="note">NEB answer style — given → statement → working → answer. 12 questions per sheet, 3 per row.</p>
+</header>
+<div class="grid" data-cols="3" data-rows="4">
+<div class="cell">
+<p class="tag">Sign-change test <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q13.</span>Bisection needs (A) f′ only (B) a sign change with f continuous (C) a table of squares (D) f″ ≠ 0.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">It only compares signs of function values.</p>
+<p class="ans">B — sign change with continuity</p>
+</div>
+<div class="cell">
+<p class="tag">Bisection steps <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q14.</span>The first midpoint of an interval [2, 3] is (A) 2.25 (B) 2.5 (C) 2.75 (D) 3.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">(2 + 3)/2</p>
+<p class="ans">B — 2.5</p>
+</div>
+<div class="cell">
+<p class="tag">Accuracy and error <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q15.</span>After n bisection steps on an interval of width w, the error is at most (A) w/n (B) w/2ⁿ (C) w/2 (D) w·n.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">The width halves every step.</p>
+<p class="ans">B — w/2ⁿ</p>
+</div>
+<div class="cell">
+<p class="tag">Sign-change test <span class="kind">True/False</span></p>
+<p class="q"><span class="n">Q16.</span>True or false: bisection requires the derivative.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">Only signs of f are used.</p>
+<p class="ans">False</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration tables <span class="kind">True/False</span></p>
+<p class="q"><span class="n">Q17.</span>True or false: each bisection step produces one row of the iteration table.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">Each row records the bracket and midpoint.</p>
+<p class="ans">True</p>
+</div>
+<div class="cell">
+<p class="tag">Accuracy and error <span class="kind">Fill in</span></p>
+<p class="q"><span class="n">Q18.</span>The error after 3 steps on an interval of width 1 is at most ______.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">1/2³</p>
+<p class="ans">1/8 = 0.125</p>
+</div>
+<div class="cell">
+<p class="tag">Bisection steps <span class="kind">Fill in</span></p>
+<p class="q"><span class="n">Q19.</span>The new bracket always contains ______.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">The sign change is preserved by construction.</p>
+<p class="ans">a root of f</p>
+</div>
+<div class="cell">
+<p class="tag">Bisection steps <span class="kind">Spot the error</span></p>
+<p class="q"><span class="n">Q20.</span>For f(x) = x² − 2 on [1, 2] a student takes x₁ = 1.5 with f &gt; 0 and keeps [1.5, 2]. Correct it.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">Replace the endpoint that has the same sign as f(x₁).</p>
+<p class="ans">Keep [1, 1.5]</p>
+</div>
+<div class="cell">
+<p class="tag">Accuracy and error <span class="kind">Assertion–reason</span></p>
+<p class="q"><span class="n">Q21.</span>Assertion: bisection converges for any continuous f with f(a)f(b) &lt; 0. Reason: each bracket halves and always contains a root.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">Halving widths tend to zero.</p>
+<p class="ans">Both true, and the reason is the proof</p>
+</div>
+<div class="cell">
+<p class="tag">Sign-change test <span class="kind">Explain</span></p>
+<p class="q"><span class="n">Q22.</span>Why does bisection need continuity?&nbsp;<span class="mk">[2]</span></p>
+<p class="work">Without it the graph may jump over the axis.</p>
+<p class="ans">Only continuity guarantees the root stays inside the sign-changing bracket</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration tables <span class="kind">Match</span></p>
+<p class="q"><span class="n">Q23.</span>Match f(a)f(b) &lt; 0 and f(a)f(b) &gt; 0 with (a) a root lies inside, (b) nothing can be concluded.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">The product's sign tells whether the graph crosses the axis.</p>
+<p class="ans">&lt; 0 → (a), &gt; 0 → (b)</p>
+</div>
+<div class="cell">
+<p class="tag">Accuracy and error <span class="kind">Case study</span></p>
+<p class="q"><span class="n">Q24.</span>An interval has width 2. How many bisection steps give an error below 0.001?&nbsp;<span class="mk">[4]</span></p>
+<p class="work">2/2ⁿ &lt; 0.001 ⇒ 2ⁿ &gt; 2000</p>
+<p class="ans">n = 11 steps</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Bisection Method</span>
+<span>Sheet 2 of 2 · 12 solved questions</span>
 </footer>
 </section>
 </body>

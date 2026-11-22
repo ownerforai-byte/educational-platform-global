@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>7.4 Simpson's One-Third Rule — Mathematics XI workbook</title>
-<meta name="description" content="Simpson's One-Third Rule — 12 solved NEB-style questions covering The formula, Odd/even strip requirement, Error order, Comparing with the trapezoidal rule.">
+<meta name="description" content="Simpson's One-Third Rule — 24 solved NEB-style questions covering The formula, Odd/even strip requirement, Error order, Comparing with the trapezoidal rule.">
 <link rel="stylesheet" href="/resources/mathematics-xi/a4/workbook.css">
 </head>
 <body>
@@ -94,7 +94,95 @@
 <footer class="foot">
 <span>Unit 7 · Computational Methods or Mechanics</span>
 <span class="mid">Simpson's One-Third Rule</span>
-<span>Sheet 1 of 1 · 12 solved questions</span>
+<span>Sheet 1 of 2 · 12 solved questions</span>
+</footer>
+</section>
+<section class="sheet" aria-label="Simpson's One-Third Rule — sheet 2">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook</span></div>
+<h1>7.4 · Simpson's One-Third Rule · continued</h1>
+<p class="topics"><b>Topics</b> The formula · Odd/even strip requirement · Error order · Comparing with the trapezoidal rule</p>
+<p class="note">NEB answer style — given → statement → working → answer. 12 questions per sheet, 3 per row.</p>
+</header>
+<div class="grid" data-cols="3" data-rows="4">
+<div class="cell">
+<p class="tag">The formula <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q13.</span>Simpson's rule for four strips is (A) (h/3)[y₀ + 4y₁ + 2y₂ + 4y₃ + y₄] (B) (h/2)[…] (C) h[y₀ + y₄] (D) (h/4)[…].&nbsp;<span class="mk">[1]</span></p>
+<p class="work">One third of h, alternating weights.</p>
+<p class="ans">A</p>
+</div>
+<div class="cell">
+<p class="tag">Odd/even strip requirement <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q14.</span>The number of strips for Simpson's rule must be (A) odd (B) even (C) prime (D) any.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">Strips are consumed two at a time.</p>
+<p class="ans">B — even</p>
+</div>
+<div class="cell">
+<p class="tag">Error order <span class="kind">MCQ</span></p>
+<p class="q"><span class="n">Q15.</span>The error of Simpson's rule is of order (A) h (B) h² (C) h³ (D) h⁴.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">It fits parabolas rather than chords.</p>
+<p class="ans">D — h⁴</p>
+</div>
+<div class="cell">
+<p class="tag">Comparing with the trapezoidal rule <span class="kind">True/False</span></p>
+<p class="q"><span class="n">Q16.</span>True or false: Simpson's rule integrates every cubic exactly.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">Its error vanishes for cubics.</p>
+<p class="ans">True</p>
+</div>
+<div class="cell">
+<p class="tag">Error order <span class="kind">True/False</span></p>
+<p class="q"><span class="n">Q17.</span>True or false: halving h reduces the error by about 16.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">Error ∝ h⁴.</p>
+<p class="ans">True</p>
+</div>
+<div class="cell">
+<p class="tag">The formula <span class="kind">Fill in</span></p>
+<p class="q"><span class="n">Q18.</span>The weight pattern of Simpson's rule is ______.&nbsp;<span class="mk">[1]</span></p>
+<p class="work">Ends once, odd positions 4, even positions 2.</p>
+<p class="ans">1, 4, 2, 4, …, 4, 1</p>
+</div>
+<div class="cell">
+<p class="tag">Odd/even strip requirement <span class="kind">Fill in</span></p>
+<p class="q"><span class="n">Q19.</span>Six ordinates give five strips, which is ______ (usable / not directly usable).&nbsp;<span class="mk">[1]</span></p>
+<p class="work">The count must be even.</p>
+<p class="ans">not directly usable</p>
+</div>
+<div class="cell">
+<p class="tag">The formula <span class="kind">Spot the error</span></p>
+<p class="q"><span class="n">Q20.</span>A student computes ∫₀¹ x² with h = 0.5 as 0.5[0 + 1 + 4(0.25)]. Correct it.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">The multiplier is h/3.</p>
+<p class="ans">(0.5/3)(2) = 1/3</p>
+</div>
+<div class="cell">
+<p class="tag">The formula <span class="kind">Assertion–reason</span></p>
+<p class="q"><span class="n">Q21.</span>Assertion: Simpson's rule gives the exact value for ∫₀¹ x² dx. Reason: the rule fits a parabola through three points.&nbsp;<span class="mk">[2]</span></p>
+<p class="work">x² is itself a parabola.</p>
+<p class="ans">Both true, and the reason explains the exactness</p>
+</div>
+<div class="cell">
+<p class="tag">Comparing with the trapezoidal rule <span class="kind">Explain</span></p>
+<p class="q"><span class="n">Q22.</span>Why is Simpson's rule usually better than the trapezoidal rule?&nbsp;<span class="mk">[2]</span></p>
+<p class="work">Parabolic arcs follow curvature far better than chords.</p>
+<p class="ans">Because it uses parabolas instead of straight lines, so its error falls as h⁴ rather than h²</p>
+</div>
+<div class="cell">
+<p class="tag">Comparing with the trapezoidal rule <span class="kind">Match</span></p>
+<p class="q"><span class="n">Q23.</span>Match the trapezoidal and Simpson errors with (a) h⁴, (b) h².&nbsp;<span class="mk">[2]</span></p>
+<p class="work">Compare the orders.</p>
+<p class="ans">Trapezoidal → (b), Simpson → (a)</p>
+</div>
+<div class="cell">
+<p class="tag">The formula <span class="kind">Case study</span></p>
+<p class="q"><span class="n">Q24.</span>Estimate ∫₀¹ x⁴ dx with h = 0.5 using Simpson's rule.&nbsp;<span class="mk">[4]</span></p>
+<p class="work">y = 0, 0.0625, 1
+(0.5/3)[0 + 1 + 4(0.0625)]</p>
+<p class="ans">≈ 0.2083 (exact 0.2)</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Simpson's One-Third Rule</span>
+<span>Sheet 2 of 2 · 12 solved questions</span>
 </footer>
 </section>
 </body>
