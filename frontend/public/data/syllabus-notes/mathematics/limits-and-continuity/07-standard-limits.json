@@ -6,30 +6,113 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-standard",
   "notes": [
-    "**Limit laws.** If lim f = L and lim g = M, then lim(f ± g) = L ± M, lim(fg) = LM and lim(f/g) = L/M provided M ≠ 0; these justify term-by-term evaluation.",
-    "**Power formula.** lim(x→a) (xⁿ − aⁿ)/(x − a) = n aⁿ⁻¹ for positive integer n; it follows by factoring xⁿ − aⁿ = (x − a)(xⁿ⁻¹ + a xⁿ⁻² + … + aⁿ⁻¹).",
-    "**Worked example.** lim(x→2) (x³ − 8)/(x − 2) = 3·2² = 12, since x³ − 8 = (x − 2)(x² + 2x + 4) and the quotient tends to 4 + 4 + 4 = 12.",
-    "**Rationalization.** For lim(x→0) (√(1 + x) − 1)/x, multiply by the conjugate to get 1/(√(1 + x) + 1) → 1/2.",
-    "**Polynomials and rationals.** Polynomials are continuous everywhere, so their limits come from substitution; a rational function is continuous wherever its denominator is non-zero.",
-    "**Exam caution.** Apply limit laws only after confirming each individual limit exists and is finite; splitting an indeterminate ∞ − ∞ into two limits is invalid."
+    "## 1. Topic Introduction — The Limit Hall of Fame\n\n**Standard limits** are the pre-computed results every other limit reduces to: lim sin x/x = 1, lim (1+x)^{1/x} = e, lim (xⁿ − aⁿ)/(x − a) = naⁿ⁻¹, and their kin. Memorise the statements; understand the reductions.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The trigonometric star\n\n- **lim_{x→0} sin x/x = 1** (x in radians — the radian is what makes it true).\n- **Companion:** lim_{x→0} tan x/x = 1; lim_{x→0} (1 − cos x)/x² = 1/2.\n\n### 2.2 The exponential star\n\n- **lim_{x→0} (1 + x)^{1/x} = e** and the twin **lim_{x→∞} (1 + 1/x)^x = e**.\n- **lim_{x→0} (eˣ − 1)/x = 1** — the exponential's rate at 0, the seed of its derivative.\n- **lim_{x→0} (aˣ − 1)/x = ln a** (general base).\n- **lim_{x→0} ln(1 + x)/x = 1.**\n\n### 2.3 The algebraic star\n\n- **lim_{x→a} (xⁿ − aⁿ)/(x − a) = n·aⁿ⁻¹** — valid for all rational n; the factorisation theorem wearing a limit.\n- **lim_{x→0} (1 + x)ᵏ... ((1+x)ⁿ − 1)/x = n** — the binomial baby case.\n\n### 2.4 Reduction discipline\n\n- Any 0/0 candidate: try to rewrite into a standard form via substitution (u = g(x) → 0), algebraic identity, or multiplication by 1. The standard limits are the *targets* of every transformation.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Standard limit** | Pre-proved fundamental limit | sin x/x → 1 |\n| **Reduction** | Rewriting to a standard form | substitute, factor, ×1 |\n| **Radian requirement** | sin x/x = 1 holds in radians | degrees break it |\n| **e** | lim (1+x)^{1/x} | the natural base |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why radians\n\n- sin x/x → 1 is a *geometry* statement: arc length ≈ chord length for tiny angles — true only when x measures arc in radius units. Degrees smuggle in a factor π/180.\n\n### 4.2 The (xⁿ − aⁿ)/(x − a) theorem as a bridge\n\n- For integer n it is factoring; for general rational n it is the derivative of xⁿ at a in disguise — the standard limit that calculus will generalise.\n\n### 4.3 e's double definition\n\n- (1 + x)^{1/x} at 0 and (1 + 1/x)^x at ∞ are the same limit seen from the two ends of u = 1/x — compound interest's continuous limit.",
+    "## 5. Comparison Tables\n\n**The standard limit shelf**\n\n| Limit | Value | Domain of use |\n|---|---|---|\n| sin x/x (x→0) | 1 | radians |\n| tan x/x (x→0) | 1 | via sin/cos |\n| (1 − cos x)/x² | 1/2 | half-angle route |\n| (eˣ − 1)/x | 1 | exponential rate |\n| (aˣ − 1)/x | ln a | general base |\n| ln(1+x)/x | 1 | log rate |\n| (xⁿ−aⁿ)/(x−a) (x→a) | naⁿ⁻¹ | algebraic |\n| (1+x)^{1/x} (x→0) | e | compound limit |",
+    "## 6. Common Confusions\n\n**Degrees break sin x/x:** always check the angle unit; convert degrees to radians first.",
+    "**(1 − cos x)/x² = 1/2, not 1:** the half-angle identity sin²(x/2) = (1 − cos x)/2 supplies the factor.",
+    "**(aˣ − 1)/x → ln a:** specialising a = e gives 1; the general base keeps the ln a factor.",
+    "## 7. Exam Application\n\n**NEB 2022 (verified PYQ): lim_{x→0} (eˣ − 1)/x equals: (a) 0 (b) 1 (c) e (d) ∞ (1m)** — This is the **standard limit**: lim_{x→0} (eˣ − 1)/x = **1 → option (b)**. It is the definition of eˣ's instantaneous rate at 0 — the fact that makes (eˣ)′ = eˣ true.",
+    "**NEB 2024 (verified PYQ): Evaluate (i) lim_{x→0} (sin x − x cos x)/x³, (ii) lim_{x→0} (x − sin x)/x³. (4m)** — **(i)** Write (sin x − x cos x)/x³ = [sin x/x − cos x]/x². Now sin x/x → 1 and cos x → 1, giving 0/0 again — refine: sin x − x cos x = x[sin x/x − cos x]; using the standard-limit toolkit (sin x = x − x³/6 + ⋯, cos x = 1 − x²/2 + ⋯): sin x − x cos x = (x − x³/6) − x(1 − x²/2) = x − x³/6 − x + x³/2 = **x³/3**. **(i) = 1/3.** **(ii)** x − sin x = x − (x − x³/6) = **x³/6** ⟹ **(ii) = 1/6**. (Series route is the clean one; equivalently apply the standard limits twice with the compound-angle identity sin x − x cos x = x²·(sin x/x)′-type reductions.)",
+    "**NEB 2021 (verified PYQ): Evaluate lim_{x→2} (√(7+x) − 3)/(x − 2). (3m)** — 0/0 ⟹ **rationalise:** multiply by (√(7+x) + 3)/(√(7+x) + 3): numerator = (7 + x) − 9 = x − 2, cancelling the denominator (x ≠ 2): 1/(√(7+x) + 3). Limit: 1/(√9 + 3) = **1/6**. (Standard-limit thinking: the conjugate reduction is the root version of the (xⁿ − aⁿ)/(x − a) theorem with n = 1/2, a = 2: (1/2)·2^{−1/2} = 1/(2√2)... here the shifted form gives 1/6 — the rationalisation is the honest working.)"
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "State lim_{x→0} (eˣ − 1)/x and identify it as a standard limit.",
+    "Evaluate lim_{x→0} (sin x − x cos x)/x³ and lim_{x→0} (x − sin x)/x³.",
+    "Evaluate lim_{x→2} (√(7+x) − 3)/(x − 2)."
+  ],
+  "universalFacts": [
+    "Compound interest converging to continuous compounding is (1 + 1/n)^n -> e - the exponential star discovered by bankers."
+  ],
   "animation3D": "limits-and-continuity-standard",
   "motionGraphics": "limits-and-continuity-standard",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Standard algebraic limits and the factor theorem let 0/0 forms be reduced to direct substitution without a full epsilon argument.",
+  "examples": [
+    "***The radian contract*** - sin x/x -> 1 is arc-versus-chord geometry, valid only in radians; degrees smuggle a pi/180 factor into every trig limit."
+  ],
+  "practiceQuestions": [
+    "**NEB 2022 (verified PYQ): lim_{x→0} (eˣ − 1)/x equals: (a) 0 (b) 1 (c) e (d) ∞ (1m)** — **Recognition:** this is the exponential standard limit: **lim_{x→0} (eˣ − 1)/x = 1 — option (b)**. **Why it is true:** eˣ = 1 + x + x²/2 + ⋯, so eˣ − 1 = x + x²/2 + ⋯ = x(1 + x/2 + ⋯), and dividing by x leaves 1 + x/2 + ⋯ → 1. **Significance:** this limit *is* the statement that eˣ has instantaneous rate 1 at x = 0 — the seed of (eˣ)′ = eˣ, the defining perk of the natural base. (For general base a, (aˣ − 1)/x → ln a; a = e gives ln e = 1.)",
+    "**NEB 2024 (verified PYQ): Evaluate (i) lim_{x→0} (sin x − x cos x)/x³ and (ii) lim_{x→0} (x − sin x)/x³. (4m)** — **Series route (small-x expansions, radians):** sin x = x − x³/6 + O(x⁵) and cos x = 1 − x²/2 + O(x⁴). **(i):** sin x − x cos x = (x − x³/6) − x(1 − x²/2) = x − x³/6 − x + x³/2 = x³(1/2 − 1/6) = **x³/3** ⟹ the limit is **1/3**. **(ii):** x − sin x = x − (x − x³/6) = **x³/6** ⟹ the limit is **1/6**. **Standard-limit cross-check for (ii):** x − sin x = x(1 − sin x/x); with sin x/x = 1 − x²/6 + ⋯ (from the half-angle identity 1 − sin x/x... equivalently the cubic term), 1 − sin x/x ~ x²/6, so x(1 − sin x/x)/x³ → 1/6 ✓. Both are higher-order refinements of sin x/x → 1: the leading x-terms cancel, exposing the cubic layer.",
+    "**NEB 2021 (verified PYQ): Evaluate lim_{x→2} (√(7+x) − 3)/(x − 2). (3m)** — **Substitution:** (√9 − 3)/0 = **0/0** ⟹ transform. **Rationalise:** multiply by the conjugate (√(7+x) + 3)/(√(7+x) + 3): numerator = (7 + x) − 9 = **x − 2**, which cancels the denominator (licensed for x ≠ 2): the expression becomes **1/(√(7+x) + 3)**. **Substitute:** 1/(√9 + 3) = **1/6**. **Connection:** this is the (xⁿ − aⁿ)/(x − a) standard limit with a fractional power — equivalently the derivative of √(7+x) at x = 2, which the chain rule will later confirm as 1/(2√9) = 1/6 ✓. The conjugate is the honest algebraic route before calculus tools are available."
+  ],
+  "formulas": [
+    "- lim_{x→0} sin x/x = 1; tan x/x = 1; (1 − cos x)/x² = 1/2\n- lim_{x→0} (eˣ−1)/x = 1; (aˣ−1)/x = ln a; ln(1+x)/x = 1\n- lim_{x→a} (xⁿ−aⁿ)/(x−a) = naⁿ⁻¹; lim_{x→0} (1+x)^{1/x} = e\n- x − sin x ~ x³/6; sin x − x cos x ~ x³/3 (small x)"
+  ],
+  "keyPoints": [
+    "Standard limits (x in radians): sin x/x -> 1; tan x/x -> 1; (1 - cos x)/x^2 -> 1/2; (e^x - 1)/x -> 1; (a^x - 1)/x -> ln a; ln(1+x)/x -> 1; (x^n - a^n)/(x - a) -> n a^(n-1) as x -> a; (1 + x)^(1/x) -> e as x -> 0; (1 + 1/x)^x -> e as x -> inf; ((1+x)^n - 1)/x -> n. Reduction discipline: substitute u -> 0, factor, multiply by 1 to reach a standard form. Radians are mandatory for the trig star. The algebraic star is the derivative of x^n at a in disguise."
+  ],
+  "summary": "**Standard limits** are the pre-proved stars every 0/0 reduces to. The **trigonometric shelf** (radians mandatory): sin x/x → 1, tan x/x → 1, (1 − cos x)/x² → 1/2. The **exponential shelf**: (eˣ − 1)/x → 1 (NEB 2022's MCQ — the seed of (eˣ)′ = eˣ), (aˣ − 1)/x → ln a, ln(1+x)/x → 1, and the double definition of **e**: (1+x)^{1/x} → 0⁺... → e as x → 0 and (1 + 1/x)^x → e as x → ∞. The **algebraic star**: (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹ — factoring for integers, a derivative in disguise for fractional powers (√(7+x) − 3 over x − 2 rationalises to 1/6, NEB 2021). Reduction discipline: substitute, factor, multiply by 1 — steer the unknown into a star. When cancellations run deep, series finish the job: x − sin x ~ x³/6 and sin x − x cos x ~ x³/3 (NEB 2024's paired 1/6 and 1/3). Memorise the shelf; master the steering.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"sin x/x -> 1; (e^x - 1)/x -> 1; (x^n - a^n)/(x - a) -> n a^(n-1); (1 + x)^(1/x) -> e.\""
+  ],
+  "importantNotes": [
+    "Verified PYQs: NEB 2022 ((e^x - 1)/x MCQ), NEB 2024 (sin x - x cos x and x - sin x over x^3), NEB 2021 (sqrt(7+x) - 3 over x - 2) - assigned to this row."
+  ],
+  "examShortTricks": [
+    "0/0: hunt for a standard form. Roots: conjugate. Trig: force sin u/u. Exponentials: force (e^u - 1)/u. Series fallback: x - sin x ~ x^3/6, sin x - x cos x ~ x^3/3."
+  ],
+  "examNotes": [
+    "Quote the standard limit by name when using it - the citation is the method mark; keep radians explicit in trig limits."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "Standard limits are the targets of every transformation: reduce the unknown 0/0 to a known star by substitution, factoring, or multiplying by 1."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Limit Hall of Fame\n\n**Standard limits** are the pre-computed results every other limit reduces to: lim sin x/x = 1, lim (1+x)^{1/x} = e, lim (xⁿ − aⁿ)/(x − a) = naⁿ⁻¹, and their kin. Memorise the statements; understand the reductions.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The trigonometric star\n\n- **lim_{x→0} sin x/x = 1** (x in radians — the radian is what makes it true).\n- **Companion:** lim_{x→0} tan x/x = 1; lim_{x→0} (1 − cos x)/x² = 1/2.\n\n### 2.2 The exponential star\n\n- **lim_{x→0} (1 + x)^{1/x} = e** and the twin **lim_{x→∞} (1 + 1/x)^x = e**.\n- **lim_{x→0} (eˣ − 1)/x = 1** — the exponential's rate at 0, the seed of its derivative.\n- **lim_{x→0} (aˣ − 1)/x = ln a** (general base).\n- **lim_{x→0} ln(1 + x)/x = 1.**\n\n### 2.3 The algebraic star\n\n- **lim_{x→a} (xⁿ − aⁿ)/(x − a) = n·aⁿ⁻¹** — valid for all rational n; the factorisation theorem wearing a limit.\n- **lim_{x→0} (1 + x)ᵏ... ((1+x)ⁿ − 1)/x = n** — the binomial baby case.\n\n### 2.4 Reduction discipline\n\n- Any 0/0 candidate: try to rewrite into a standard form via substitution (u = g(x) → 0), algebraic identity, or multiplication by 1. The standard limits are the *targets* of every transformation.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Standard limit** | Pre-proved fundamental limit | sin x/x → 1 |\n| **Reduction** | Rewriting to a standard form | substitute, factor, ×1 |\n| **Radian requirement** | sin x/x = 1 holds in radians | degrees break it |\n| **e** | lim (1+x)^{1/x} | the natural base |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why radians\n\n- sin x/x → 1 is a *geometry* statement: arc length ≈ chord length for tiny angles — true only when x measures arc in radius units. Degrees smuggle in a factor π/180.\n\n### 4.2 The (xⁿ − aⁿ)/(x − a) theorem as a bridge\n\n- For integer n it is factoring; for general rational n it is the derivative of xⁿ at a in disguise — the standard limit that calculus will generalise.\n\n### 4.3 e's double definition\n\n- (1 + x)^{1/x} at 0 and (1 + 1/x)^x at ∞ are the same limit seen from the two ends of u = 1/x — compound interest's continuous limit.",
+      "## 5. Comparison Tables\n\n**The standard limit shelf**\n\n| Limit | Value | Domain of use |\n|---|---|---|\n| sin x/x (x→0) | 1 | radians |\n| tan x/x (x→0) | 1 | via sin/cos |\n| (1 − cos x)/x² | 1/2 | half-angle route |\n| (eˣ − 1)/x | 1 | exponential rate |\n| (aˣ − 1)/x | ln a | general base |\n| ln(1+x)/x | 1 | log rate |\n| (xⁿ−aⁿ)/(x−a) (x→a) | naⁿ⁻¹ | algebraic |\n| (1+x)^{1/x} (x→0) | e | compound limit |",
+      "## 6. Common Confusions\n\n**Degrees break sin x/x:** always check the angle unit; convert degrees to radians first.",
+      "**(1 − cos x)/x² = 1/2, not 1:** the half-angle identity sin²(x/2) = (1 − cos x)/2 supplies the factor.",
+      "**(aˣ − 1)/x → ln a:** specialising a = e gives 1; the general base keeps the ln a factor.",
+      "## 7. Exam Application\n\n**NEB 2022 (verified PYQ): lim_{x→0} (eˣ − 1)/x equals: (a) 0 (b) 1 (c) e (d) ∞ (1m)** — This is the **standard limit**: lim_{x→0} (eˣ − 1)/x = **1 → option (b)**. It is the definition of eˣ's instantaneous rate at 0 — the fact that makes (eˣ)′ = eˣ true.",
+      "**NEB 2024 (verified PYQ): Evaluate (i) lim_{x→0} (sin x − x cos x)/x³, (ii) lim_{x→0} (x − sin x)/x³. (4m)** — **(i)** Write (sin x − x cos x)/x³ = [sin x/x − cos x]/x². Now sin x/x → 1 and cos x → 1, giving 0/0 again — refine: sin x − x cos x = x[sin x/x − cos x]; using the standard-limit toolkit (sin x = x − x³/6 + ⋯, cos x = 1 − x²/2 + ⋯): sin x − x cos x = (x − x³/6) − x(1 − x²/2) = x − x³/6 − x + x³/2 = **x³/3**. **(i) = 1/3.** **(ii)** x − sin x = x − (x − x³/6) = **x³/6** ⟹ **(ii) = 1/6**. (Series route is the clean one; equivalently apply the standard limits twice with the compound-angle identity sin x − x cos x = x²·(sin x/x)′-type reductions.)",
+      "**NEB 2021 (verified PYQ): Evaluate lim_{x→2} (√(7+x) − 3)/(x − 2). (3m)** — 0/0 ⟹ **rationalise:** multiply by (√(7+x) + 3)/(√(7+x) + 3): numerator = (7 + x) − 9 = x − 2, cancelling the denominator (x ≠ 2): 1/(√(7+x) + 3). Limit: 1/(√9 + 3) = **1/6**. (Standard-limit thinking: the conjugate reduction is the root version of the (xⁿ − aⁿ)/(x − a) theorem with n = 1/2, a = 2: (1/2)·2^{−1/2} = 1/(2√2)... here the shifted form gives 1/6 — the rationalisation is the honest working.)"
+    ],
+    "keyPoints": [
+      "Standard limits (x in radians): sin x/x -> 1; tan x/x -> 1; (1 - cos x)/x^2 -> 1/2; (e^x - 1)/x -> 1; (a^x - 1)/x -> ln a; ln(1+x)/x -> 1; (x^n - a^n)/(x - a) -> n a^(n-1) as x -> a; (1 + x)^(1/x) -> e as x -> 0; (1 + 1/x)^x -> e as x -> inf; ((1+x)^n - 1)/x -> n. Reduction discipline: substitute u -> 0, factor, multiply by 1 to reach a standard form. Radians are mandatory for the trig star. The algebraic star is the derivative of x^n at a in disguise."
+    ],
+    "importantConcepts": [
+      "Standard limits are the targets of every transformation: reduce the unknown 0/0 to a known star by substitution, factoring, or multiplying by 1."
+    ],
+    "examples": [
+      "***The radian contract*** - sin x/x -> 1 is arc-versus-chord geometry, valid only in radians; degrees smuggle a pi/180 factor into every trig limit."
+    ],
+    "universalFacts": [
+      "Compound interest converging to continuous compounding is (1 + 1/n)^n -> e - the exponential star discovered by bankers."
+    ],
+    "importantStatements": [
+      "\"sin x/x -> 1; (e^x - 1)/x -> 1; (x^n - a^n)/(x - a) -> n a^(n-1); (1 + x)^(1/x) -> e.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: NEB 2022 ((e^x - 1)/x MCQ), NEB 2024 (sin x - x cos x and x - sin x over x^3), NEB 2021 (sqrt(7+x) - 3 over x - 2) - assigned to this row."
+    ],
+    "examShortTricks": [
+      "0/0: hunt for a standard form. Roots: conjugate. Trig: force sin u/u. Exponentials: force (e^u - 1)/u. Series fallback: x - sin x ~ x^3/6, sin x - x cos x ~ x^3/3."
+    ],
+    "examNotes": [
+      "Quote the standard limit by name when using it - the citation is the method mark; keep radians explicit in trig limits."
+    ],
+    "formulas": [
+      "- lim_{x→0} sin x/x = 1; tan x/x = 1; (1 − cos x)/x² = 1/2\n- lim_{x→0} (eˣ−1)/x = 1; (aˣ−1)/x = ln a; ln(1+x)/x = 1\n- lim_{x→a} (xⁿ−aⁿ)/(x−a) = naⁿ⁻¹; lim_{x→0} (1+x)^{1/x} = e\n- x − sin x ~ x³/6; sin x − x cos x ~ x³/3 (small x)"
+    ],
+    "practice": [
+      "State lim_{x→0} (eˣ − 1)/x and identify it as a standard limit.",
+      "Evaluate lim_{x→0} (sin x − x cos x)/x³ and lim_{x→0} (x − sin x)/x³.",
+      "Evaluate lim_{x→2} (√(7+x) − 3)/(x − 2)."
+    ],
+    "practiceQuestions": [
+      "**NEB 2022 (verified PYQ): lim_{x→0} (eˣ − 1)/x equals: (a) 0 (b) 1 (c) e (d) ∞ (1m)** — **Recognition:** this is the exponential standard limit: **lim_{x→0} (eˣ − 1)/x = 1 — option (b)**. **Why it is true:** eˣ = 1 + x + x²/2 + ⋯, so eˣ − 1 = x + x²/2 + ⋯ = x(1 + x/2 + ⋯), and dividing by x leaves 1 + x/2 + ⋯ → 1. **Significance:** this limit *is* the statement that eˣ has instantaneous rate 1 at x = 0 — the seed of (eˣ)′ = eˣ, the defining perk of the natural base. (For general base a, (aˣ − 1)/x → ln a; a = e gives ln e = 1.)",
+      "**NEB 2024 (verified PYQ): Evaluate (i) lim_{x→0} (sin x − x cos x)/x³ and (ii) lim_{x→0} (x − sin x)/x³. (4m)** — **Series route (small-x expansions, radians):** sin x = x − x³/6 + O(x⁵) and cos x = 1 − x²/2 + O(x⁴). **(i):** sin x − x cos x = (x − x³/6) − x(1 − x²/2) = x − x³/6 − x + x³/2 = x³(1/2 − 1/6) = **x³/3** ⟹ the limit is **1/3**. **(ii):** x − sin x = x − (x − x³/6) = **x³/6** ⟹ the limit is **1/6**. **Standard-limit cross-check for (ii):** x − sin x = x(1 − sin x/x); with sin x/x = 1 − x²/6 + ⋯ (from the half-angle identity 1 − sin x/x... equivalently the cubic term), 1 − sin x/x ~ x²/6, so x(1 − sin x/x)/x³ → 1/6 ✓. Both are higher-order refinements of sin x/x → 1: the leading x-terms cancel, exposing the cubic layer.",
+      "**NEB 2021 (verified PYQ): Evaluate lim_{x→2} (√(7+x) − 3)/(x − 2). (3m)** — **Substitution:** (√9 − 3)/0 = **0/0** ⟹ transform. **Rationalise:** multiply by the conjugate (√(7+x) + 3)/(√(7+x) + 3): numerator = (7 + x) − 9 = **x − 2**, which cancels the denominator (licensed for x ≠ 2): the expression becomes **1/(√(7+x) + 3)**. **Substitute:** 1/(√9 + 3) = **1/6**. **Connection:** this is the (xⁿ − aⁿ)/(x − a) standard limit with a fractional power — equivalently the derivative of √(7+x) at x = 2, which the chain rule will later confirm as 1/(2√9) = 1/6 ✓. The conjugate is the honest algebraic route before calculus tools are available."
+    ]
+  }
 }

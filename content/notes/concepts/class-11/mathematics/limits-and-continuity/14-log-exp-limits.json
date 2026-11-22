@@ -6,30 +6,113 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-logexp",
   "notes": [
-    "**Exponential base limit.** lim(x→0) (eˣ − 1)/x = 1 and, more generally, lim(x→0) (aˣ − 1)/x = ln a for a > 0.",
-    "**Logarithmic limit.** lim(x→0) ln(1 + x)/x = 1, which is the same statement inverted since ln and exp are inverse functions.",
-    "**Worked example.** lim(x→0) (e^(3x) − 1)/x = 3·lim(u→0)(eᵘ − 1)/u = 3, using u = 3x.",
-    "**Standard form.** lim(x→0) (1 + x)^(1/x) = e and lim(n→∞) (1 + 1/n)ⁿ = e define the natural base through a limit.",
-    "**Log of a limit.** For a positive continuous f with lim f = L > 0, lim ln f(x) = ln L; exponentiate the result to recover the original limit.",
-    "**Exam caution.** Keep the argument of ln positive throughout; ln(1 + x) requires x > −1, so only the right-hand limit exists at x = −1."
+    "## 1. Topic Introduction — e, ln and the Exponential Star\n\n**Logarithmic and exponential limits** revolve around e: (1 + x)^{1/x} → e, (eˣ − 1)/x → 1, ln(1+x)/x → 1, and the 1^∞ form resolved by the exponential bridge **lim f^g = e^{lim g·ln f}**.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The e-limits\n\n- **lim_{x→0} (1 + x)^{1/x} = e**; twin: **lim_{x→∞} (1 + 1/x)^x = e** (u = 1/x bridges them).\n- General power: **lim_{x→0} (1 + kx)^{1/x} = eᵏ** — insert kx/kx.\n- **lim_{x→0} (aˣ − 1)/x = ln a**; a = e gives 1. **lim_{x→0} ln(1 + x)/x = 1.**\n\n### 2.2 The 1^∞ form and the bridge\n\n- **1^∞ is indeterminate** (not 1!): f → 1, g → ∞ makes f^g undecided.\n- **Bridge theorem:** lim f(x)^{g(x)} = **e^{lim g(x)·ln f(x)}** whenever the exponent limit exists — because f^g = e^{g ln f} identically.\n- Standard resolution: for lim (1 + u)^{v} with u → 0, v → ∞: the limit is **e^{lim uv}**.\n\n### 2.3 Growth comparisons (theorems)\n\n- **ln x ≪ xᵃ ≪ aˣ ≪ x! ≪ xˣ** as x → ∞: logarithms lose to powers, powers to exponentials. Consequences: lim ln x/x = 0, lim xᵏ/eˣ = 0, lim x^{1/x} = 1.\n\n### 2.4 Reduction discipline\n\n- Rewrite exponentials via e and logs via ln (natural), then steer into the three stars: (eᵘ − 1)/u, ln(1+u)/u, (1+u)^{1/u}.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **e** | lim (1+x)^{1/x} | the natural base |\n| **1^∞ form** | Indeterminate power | (1 + 1/n)ⁿ |\n| **Exponential bridge** | f^g = e^{g ln f} | resolves 1^∞ |\n| **Growth ladder** | ln ≪ power ≪ exponential | ln x/x → 0 |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why (1+x)^{1/x} defines e\n\n- Compound interest compounded ever more finely: (1 + 1/n)ⁿ climbs to e ≈ 2.71828. The limit *is* the definition — e is the answer to continuous compounding.\n\n### 4.2 The bridge in action\n\n- Any f^g with f → 1, g → ∞: write f = 1 + u, so f^g = [(1+u)^{1/u}]^{uv} → e^{lim uv}. The whole 1^∞ technology is one exponent bookkeeping.\n\n### 4.3 The growth ladder as a limit generator\n\n- The ordering ln x ≪ xᵃ ≪ aˣ is a theorem (comparative growth rates); every \"which dominates\" limit is read off it: ln x/x → 0, x¹⁰⁰/eˣ → 0, x^{1/x} → 1.",
+    "## 5. Comparison Tables\n\n**Exponential limit shelf**\n\n| Limit | Value |\n|---|---|\n| (1 + x)^{1/x} (x→0) | e |\n| (1 + 1/x)^x (x→∞) | e |\n| (1 + kx)^{1/x} | eᵏ |\n| (eˣ − 1)/x | 1 |\n| (aˣ − 1)/x | ln a |\n| ln(1+x)/x | 1 |\n| ln x/x, xᵏ/eˣ, x^{1/x} (∞) | 0, 0, 1 |",
+    "## 6. Common Confusions\n\n**1^∞ ≠ 1:** the form is indeterminate — (1 + 1/n)ⁿ → e ≈ 2.718, not 1.",
+    "**(aˣ − 1)/x keeps ln a:** only a = e kills the factor; general bases keep it.",
+    "**Bridge needs natural logs:** f^g = e^{g ln f} uses ln — converting log bases first is mandatory.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Evaluate lim_{x→0} (1 + 3x)^{1/x}.** — **1^∞ form** (base → 1, exponent → ∞). **Bridge:** = e^{lim (1/x)·ln(1+3x)}; ln(1+3x) ~ 3x ⟹ exponent limit = 3x·(1/x)... lim (ln(1+3x)/x) = 3. **Answer: e³.** (Shortcut: (1 + kx)^{1/x} → eᵏ with k = 3.)",
+    "**NEB-style (3m): Evaluate lim_{x→∞} (x + 1/x)^x... lim_{x→∞} ((x+1)/(x−1))^x.** — Base → 1, exponent → ∞ ⟹ **1^∞**. Write base = 1 + 2/(x−1); then u = 2/(x−1) → 0 and exponent x·u = 2x/(x−1) → 2. **Limit = e².** (Bridge: e^{lim x·ln((x+1)/(x−1))} with ln(1+u) ~ u gives the same e².)",
+    "**NEB-style (2m): Evaluate lim_{x→∞} x^{1/x}.** — **Bridge:** x^{1/x} = e^{(ln x)/x}; by the growth ladder ln x/x → 0 ⟹ limit = **e⁰ = 1**. Powers beat logs even at the 1/x power."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Evaluate lim_{x→0} (1 + 3x)^{1/x}.",
+    "Evaluate lim_{x→∞} ((x+1)/(x−1))^x.",
+    "Evaluate lim_{x→∞} x^{1/x} via the growth ladder."
+  ],
+  "universalFacts": [
+    "Radioactive decay and capacitor discharge run on e^(-t/RC): the exponential's self-rate (e^x - 1)/x -> 1 is why e is nature's base."
+  ],
   "animation3D": "limits-and-continuity-logexp",
   "motionGraphics": "limits-and-continuity-logexp",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Exponential and logarithmic limits follow from lim(x→0) (eˣ − 1)/x = 1 and lim(x→0) ln(1 + x)/x = 1.",
+  "examples": [
+    "***The compound-interest constant*** - (1 + 1/n)^n climbing to e is continuous compounding: e is not invented, it is discovered by bankers."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): Evaluate lim_{x→0} (1 + 3x)^{1/x}.** — **Form recognition:** the base → 1 and the exponent 1/x → ∞ — the **1^∞ indeterminate form** (not 1!). **Bridge route:** (1 + 3x)^{1/x} = e^{(1/x)·ln(1+3x)} identically, so the limit is **e^L** with L = lim_{x→0} ln(1+3x)/x. **Compute L:** ln(1 + u) ~ u with u = 3x gives ln(1+3x) ~ 3x, so L = lim 3x/x = **3** (equivalently by the standard limit ln(1+u)/u → 1 with the kx/kx insertion). **Answer: e³.** **Shortcut confirmed:** the general theorem (1 + kx)^{1/x} → eᵏ with k = 3 — the bridge and the shortcut agree.",
+    "**NEB-style (3m): Evaluate lim_{x→∞} ((x + 1)/(x − 1))^x.** — **Form:** base (x+1)/(x−1) = 1 + 2/(x−1) → 1 and exponent x → ∞ ⟹ **1^∞**. **Bridge:** with u = 2/(x−1) → 0, the expression is (1 + u)^x, and the theorem (1+u)^v → e^{lim uv} applies with v = x: compute **lim x·u = lim 2x/(x−1) = 2**. **Answer: e².** **Cross-check by the full bridge:** x·ln((x+1)/(x−1)) = x·ln(1 + 2/(x−1)) ~ x·2/(x−1) → 2, so e² ✓. The entire 1^∞ technology reduces to exponent bookkeeping: find lim uv.",
+    "**NEB-style (2m): Evaluate lim_{x→∞} x^{1/x}.** — **Bridge:** x^{1/x} = **e^{(ln x)/x}** identically — the exponent is the contest between log and power. **Growth ladder:** ln x ≪ xᵃ for any a > 0; in particular ln x/x → 0 as x → ∞ (logs lose to powers). **Conclusion:** the exponent → 0, so the limit is **e⁰ = 1**. **Reading:** even the tiniest positive power of x outgrows the logarithm, so taking the 1/x-th power of x flattens it to 1 — the growth ladder settles infinity contests without any ε-work."
+  ],
+  "formulas": [
+    "- lim_{x→0} (1+x)^{1/x} = e; (1+kx)^{1/x} = eᵏ; (1+1/x)^x = e (x→∞)\n- lim_{x→0} (eˣ−1)/x = 1; (aˣ−1)/x = ln a; ln(1+x)/x = 1\n- bridge: lim f^g = e^{lim g·ln f}; (1+u)^v → e^{lim uv}\n- growth: ln x/x → 0; xᵏ/eˣ → 0; x^{1/x} → 1"
+  ],
+  "keyPoints": [
+    "e-limits: (1 + x)^(1/x) -> e (x -> 0); (1 + 1/x)^x -> e (x -> inf); (1 + kx)^(1/x) -> e^k; (e^x - 1)/x -> 1; (a^x - 1)/x -> ln a; ln(1+x)/x -> 1. 1^infinity is indeterminate; bridge theorem: lim f^g = e^(lim g ln f) since f^g = e^(g ln f); for (1 + u)^v with u -> 0, v -> inf: limit = e^(lim uv). Growth ladder: ln x << x^a << a^x << x! << x^x; consequences ln x/x -> 0, x^k/e^x -> 0, x^(1/x) -> 1. Reduction: convert to natural exp/log, steer into the three stars."
+  ],
+  "summary": "**Exponential and logarithmic limits** orbit e. The **e-limits**: (1+x)^{1/x} → e (x → 0), its twin (1 + 1/x)^x → e (x → ∞), the rescaled (1 + kx)^{1/x} → **eᵏ** (NEB-style: k = 3 gives e³), (eˣ − 1)/x → 1, (aˣ − 1)/x → **ln a**, ln(1+x)/x → 1. The **1^∞ form** is indeterminate — and the **bridge theorem** f^g = e^{g ln f} resolves it: for (1+u)^v with u → 0, v → ∞ the limit is **e^{lim uv}** (((x+1)/(x−1))^x → e² since 2x/(x−1) → 2). The **growth ladder** ln x ≪ xᵃ ≪ aˣ ≪ x! ≪ xˣ reads off every dominance contest: ln x/x → 0, xᵏ/eˣ → 0, and **x^{1/x} → 1** (the log loses even at fractional power). Convert to natural exp and log, steer into the stars, bridge the powers: the whole topic is e's biography.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"(1 + x)^(1/x) -> e; (a^x - 1)/x -> ln a; lim f^g = e^(lim g ln f); ln x << x^a << a^x.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice (the (e^x - 1)/x MCQ is logged on the standard-limits row)."
+  ],
+  "examShortTricks": [
+    "1^inf: write base as 1 + u, answer e^(lim uv). (1 + kx)^(1/x) -> e^k. (a^x - 1)/x -> ln a. Growth ladder settles infinity contests instantly."
+  ],
+  "examNotes": [
+    "Name the form (1^infinity) before applying the bridge - the recognition plus the bridge statement are the method marks."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "The bridge f^g = e^(g ln f) is the identity that makes every 1^infinity question bookkeeping: the battle moves to the exponent uv."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — e, ln and the Exponential Star\n\n**Logarithmic and exponential limits** revolve around e: (1 + x)^{1/x} → e, (eˣ − 1)/x → 1, ln(1+x)/x → 1, and the 1^∞ form resolved by the exponential bridge **lim f^g = e^{lim g·ln f}**.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The e-limits\n\n- **lim_{x→0} (1 + x)^{1/x} = e**; twin: **lim_{x→∞} (1 + 1/x)^x = e** (u = 1/x bridges them).\n- General power: **lim_{x→0} (1 + kx)^{1/x} = eᵏ** — insert kx/kx.\n- **lim_{x→0} (aˣ − 1)/x = ln a**; a = e gives 1. **lim_{x→0} ln(1 + x)/x = 1.**\n\n### 2.2 The 1^∞ form and the bridge\n\n- **1^∞ is indeterminate** (not 1!): f → 1, g → ∞ makes f^g undecided.\n- **Bridge theorem:** lim f(x)^{g(x)} = **e^{lim g(x)·ln f(x)}** whenever the exponent limit exists — because f^g = e^{g ln f} identically.\n- Standard resolution: for lim (1 + u)^{v} with u → 0, v → ∞: the limit is **e^{lim uv}**.\n\n### 2.3 Growth comparisons (theorems)\n\n- **ln x ≪ xᵃ ≪ aˣ ≪ x! ≪ xˣ** as x → ∞: logarithms lose to powers, powers to exponentials. Consequences: lim ln x/x = 0, lim xᵏ/eˣ = 0, lim x^{1/x} = 1.\n\n### 2.4 Reduction discipline\n\n- Rewrite exponentials via e and logs via ln (natural), then steer into the three stars: (eᵘ − 1)/u, ln(1+u)/u, (1+u)^{1/u}.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **e** | lim (1+x)^{1/x} | the natural base |\n| **1^∞ form** | Indeterminate power | (1 + 1/n)ⁿ |\n| **Exponential bridge** | f^g = e^{g ln f} | resolves 1^∞ |\n| **Growth ladder** | ln ≪ power ≪ exponential | ln x/x → 0 |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why (1+x)^{1/x} defines e\n\n- Compound interest compounded ever more finely: (1 + 1/n)ⁿ climbs to e ≈ 2.71828. The limit *is* the definition — e is the answer to continuous compounding.\n\n### 4.2 The bridge in action\n\n- Any f^g with f → 1, g → ∞: write f = 1 + u, so f^g = [(1+u)^{1/u}]^{uv} → e^{lim uv}. The whole 1^∞ technology is one exponent bookkeeping.\n\n### 4.3 The growth ladder as a limit generator\n\n- The ordering ln x ≪ xᵃ ≪ aˣ is a theorem (comparative growth rates); every \"which dominates\" limit is read off it: ln x/x → 0, x¹⁰⁰/eˣ → 0, x^{1/x} → 1.",
+      "## 5. Comparison Tables\n\n**Exponential limit shelf**\n\n| Limit | Value |\n|---|---|\n| (1 + x)^{1/x} (x→0) | e |\n| (1 + 1/x)^x (x→∞) | e |\n| (1 + kx)^{1/x} | eᵏ |\n| (eˣ − 1)/x | 1 |\n| (aˣ − 1)/x | ln a |\n| ln(1+x)/x | 1 |\n| ln x/x, xᵏ/eˣ, x^{1/x} (∞) | 0, 0, 1 |",
+      "## 6. Common Confusions\n\n**1^∞ ≠ 1:** the form is indeterminate — (1 + 1/n)ⁿ → e ≈ 2.718, not 1.",
+      "**(aˣ − 1)/x keeps ln a:** only a = e kills the factor; general bases keep it.",
+      "**Bridge needs natural logs:** f^g = e^{g ln f} uses ln — converting log bases first is mandatory.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Evaluate lim_{x→0} (1 + 3x)^{1/x}.** — **1^∞ form** (base → 1, exponent → ∞). **Bridge:** = e^{lim (1/x)·ln(1+3x)}; ln(1+3x) ~ 3x ⟹ exponent limit = 3x·(1/x)... lim (ln(1+3x)/x) = 3. **Answer: e³.** (Shortcut: (1 + kx)^{1/x} → eᵏ with k = 3.)",
+      "**NEB-style (3m): Evaluate lim_{x→∞} (x + 1/x)^x... lim_{x→∞} ((x+1)/(x−1))^x.** — Base → 1, exponent → ∞ ⟹ **1^∞**. Write base = 1 + 2/(x−1); then u = 2/(x−1) → 0 and exponent x·u = 2x/(x−1) → 2. **Limit = e².** (Bridge: e^{lim x·ln((x+1)/(x−1))} with ln(1+u) ~ u gives the same e².)",
+      "**NEB-style (2m): Evaluate lim_{x→∞} x^{1/x}.** — **Bridge:** x^{1/x} = e^{(ln x)/x}; by the growth ladder ln x/x → 0 ⟹ limit = **e⁰ = 1**. Powers beat logs even at the 1/x power."
+    ],
+    "keyPoints": [
+      "e-limits: (1 + x)^(1/x) -> e (x -> 0); (1 + 1/x)^x -> e (x -> inf); (1 + kx)^(1/x) -> e^k; (e^x - 1)/x -> 1; (a^x - 1)/x -> ln a; ln(1+x)/x -> 1. 1^infinity is indeterminate; bridge theorem: lim f^g = e^(lim g ln f) since f^g = e^(g ln f); for (1 + u)^v with u -> 0, v -> inf: limit = e^(lim uv). Growth ladder: ln x << x^a << a^x << x! << x^x; consequences ln x/x -> 0, x^k/e^x -> 0, x^(1/x) -> 1. Reduction: convert to natural exp/log, steer into the three stars."
+    ],
+    "importantConcepts": [
+      "The bridge f^g = e^(g ln f) is the identity that makes every 1^infinity question bookkeeping: the battle moves to the exponent uv."
+    ],
+    "examples": [
+      "***The compound-interest constant*** - (1 + 1/n)^n climbing to e is continuous compounding: e is not invented, it is discovered by bankers."
+    ],
+    "universalFacts": [
+      "Radioactive decay and capacitor discharge run on e^(-t/RC): the exponential's self-rate (e^x - 1)/x -> 1 is why e is nature's base."
+    ],
+    "importantStatements": [
+      "\"(1 + x)^(1/x) -> e; (a^x - 1)/x -> ln a; lim f^g = e^(lim g ln f); ln x << x^a << a^x.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice (the (e^x - 1)/x MCQ is logged on the standard-limits row)."
+    ],
+    "examShortTricks": [
+      "1^inf: write base as 1 + u, answer e^(lim uv). (1 + kx)^(1/x) -> e^k. (a^x - 1)/x -> ln a. Growth ladder settles infinity contests instantly."
+    ],
+    "examNotes": [
+      "Name the form (1^infinity) before applying the bridge - the recognition plus the bridge statement are the method marks."
+    ],
+    "formulas": [
+      "- lim_{x→0} (1+x)^{1/x} = e; (1+kx)^{1/x} = eᵏ; (1+1/x)^x = e (x→∞)\n- lim_{x→0} (eˣ−1)/x = 1; (aˣ−1)/x = ln a; ln(1+x)/x = 1\n- bridge: lim f^g = e^{lim g·ln f}; (1+u)^v → e^{lim uv}\n- growth: ln x/x → 0; xᵏ/eˣ → 0; x^{1/x} → 1"
+    ],
+    "practice": [
+      "Evaluate lim_{x→0} (1 + 3x)^{1/x}.",
+      "Evaluate lim_{x→∞} ((x+1)/(x−1))^x.",
+      "Evaluate lim_{x→∞} x^{1/x} via the growth ladder."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Evaluate lim_{x→0} (1 + 3x)^{1/x}.** — **Form recognition:** the base → 1 and the exponent 1/x → ∞ — the **1^∞ indeterminate form** (not 1!). **Bridge route:** (1 + 3x)^{1/x} = e^{(1/x)·ln(1+3x)} identically, so the limit is **e^L** with L = lim_{x→0} ln(1+3x)/x. **Compute L:** ln(1 + u) ~ u with u = 3x gives ln(1+3x) ~ 3x, so L = lim 3x/x = **3** (equivalently by the standard limit ln(1+u)/u → 1 with the kx/kx insertion). **Answer: e³.** **Shortcut confirmed:** the general theorem (1 + kx)^{1/x} → eᵏ with k = 3 — the bridge and the shortcut agree.",
+      "**NEB-style (3m): Evaluate lim_{x→∞} ((x + 1)/(x − 1))^x.** — **Form:** base (x+1)/(x−1) = 1 + 2/(x−1) → 1 and exponent x → ∞ ⟹ **1^∞**. **Bridge:** with u = 2/(x−1) → 0, the expression is (1 + u)^x, and the theorem (1+u)^v → e^{lim uv} applies with v = x: compute **lim x·u = lim 2x/(x−1) = 2**. **Answer: e².** **Cross-check by the full bridge:** x·ln((x+1)/(x−1)) = x·ln(1 + 2/(x−1)) ~ x·2/(x−1) → 2, so e² ✓. The entire 1^∞ technology reduces to exponent bookkeeping: find lim uv.",
+      "**NEB-style (2m): Evaluate lim_{x→∞} x^{1/x}.** — **Bridge:** x^{1/x} = **e^{(ln x)/x}** identically — the exponent is the contest between log and power. **Growth ladder:** ln x ≪ xᵃ for any a > 0; in particular ln x/x → 0 as x → ∞ (logs lose to powers). **Conclusion:** the exponent → 0, so the limit is **e⁰ = 1**. **Reading:** even the tiniest positive power of x outgrows the logarithm, so taking the 1/x-th power of x flattens it to 1 — the growth ladder settles infinity contests without any ε-work."
+    ]
+  }
 }

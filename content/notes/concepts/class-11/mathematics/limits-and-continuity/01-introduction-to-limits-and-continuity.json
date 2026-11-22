@@ -6,30 +6,113 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-introduction",
   "notes": [
-    "**Meaning of a limit.** lim(x→a) f(x) = L means f(x) can be made arbitrarily close to L by taking x sufficiently close to a, from either side, without ever requiring x = a.",
-    "**Approach, not substitution.** The limit depends on values of f near a, so f(a) may be undefined or different from L; a hole in the graph does not by itself remove the limit.",
-    "**One-sided limits.** x → a⁻ approaches a from below and x → a⁺ from above; these are the left-hand and right-hand limits, written LHL and RHL.",
-    "**Existence.** A two-sided limit exists exactly when LHL = RHL = L with L finite; if the two disagree the function has a jump at a and no limit there.",
-    "**Continuity link.** f is continuous at a when the limit exists and equals f(a); limits are therefore the language used to define continuity, derivatives and integrals.",
-    "**Exam caution.** Never write x = a inside a 0/0 expression; simplify, factor or rationalize first and only then take the limit."
+    "## 1. Topic Introduction — The Idea of Approaching\n\nA **limit** asks what value f(x) approaches as x nears a — not what it reaches. This opening topic installs the intuition, the notation, and the one-sided/existence scaffolding the whole calculus unit stands on.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The limit idea\n\n- **lim_{x→a} f(x) = L** means f(x) can be made arbitrarily close to L by taking x sufficiently close to a (from either side), **x ≠ a**.\n- The value at a is irrelevant: f may be undefined at a (the hole case) or take a different value — the limit reads the *neighbourhood*, not the point.\n\n### 2.1b Notation and reading\n\n- x → a⁺ (from the right), x → a⁻ (from the left); the two-sided limit exists only if both one-sided limits agree (row 32's theorem).\n- **Indeterminate forms** 0/0, ∞/∞, 0·∞ signal *work needed*, not an answer: factor, rationalise, or use standard limits.\n\n### 2.2 Continuity preview\n\n- A function is **continuous at a** when three things line up: f(a) exists, lim_{x→a} f(x) exists, and the two are **equal**. Graphically: pen never lifts.\n\n### 2.3 Why limits matter\n\n- Derivatives are limits of difference quotients; integrals are limits of sums; asymptotes are limits at infinity. Limits are calculus's atomic operation.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Limit** | Value approached, not attained | lim_{x→2} (x²−4)/(x−2) = 4 |\n| **One-sided limit** | Approach from one direction only | x → a⁺, x → a⁻ |\n| **Indeterminate form** | 0/0 etc. — needs transformation | (x²−4)/(x−2) at 2 |\n| **Continuity** | f(a) = lim_{x→a} f(x) | pen never lifts |",
+    "## 4. Detailed Explanation\n\n### 4.1 The hole is the point\n\n- (x² − 4)/(x − 2) is undefined at x = 2 yet approaches 4: factoring to x + 2 (valid since x ≠ 2) exposes the approach value. Limits see through holes.\n\n### 4.2 Indeterminate ≠ undefined\n\n- 0/0 is *indeterminate*: many values possible, decided only by transforming the expression. 5/0 is not indeterminate — it signals blow-up (infinite limit or DNE).\n\n### 4.3 The three-part continuity test\n\n- Memorise as a checklist: exists at a; limit exists; they match. Each can fail independently — and each failure mode is a named discontinuity (rows 36–38).",
+    "## 5. Comparison Tables\n\n**Limit vs value**\n\n| Situation | f(a) | lim_{x→a} f(x) | Verdict |\n|---|---|---|---|\n| continuous | 4 | 4 | continuous |\n| removable hole | undefined | 4 | limit exists |\n| redefined point | 7 | 4 | discontinuous |\n| blow-up | undefined | ±∞ | discontinuous |",
+    "## 6. Common Confusions\n\n**Limit ≠ value:** lim can exist where f(a) doesn't — the neighbourhood decides, not the point.",
+    "**0/0 is not 1 or 0:** it is a request for transformation, never an answer.",
+    "**x ≠ a is part of the definition:** the approach excludes the destination by design.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Evaluate lim_{x→2} (x² − 4)/(x − 2).** — Direct substitution gives **0/0** (indeterminate — transform, don't conclude). Factor: (x−2)(x+2)/(x−2) = **x + 2 for x ≠ 2**. Limit: 2 + 2 = **4**. The cancellation is licensed precisely because x ≠ 2 in the limiting process.",
+    "**NEB-style (2m): Evaluate lim_{x→3} (2x + 1).** — Polynomials are **continuous everywhere**: the limit equals the value by direct substitution — 2(3) + 1 = **7**. The general theorem: for any polynomial P, lim_{x→a} P(x) = P(a); the same holds for |x| and roots at interior points.",
+    "**NEB-style (2m): The function f(x) = (x² − 1)/(x − 1) for x ≠ 1, f(1) = 3. Discuss continuity at x = 1.** — **Limit:** factoring gives x + 1 for x ≠ 1, so lim_{x→1} f(x) = 2. **Value:** f(1) = 3. **Test:** limit exists (2) but ≠ value (3) ⟹ **discontinuous at x = 1** — a *removable* discontinuity: redefining f(1) = 2 would repair it (row 36's theme)."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Evaluate lim_{x→2} (x² − 4)/(x − 2).",
+    "Evaluate lim_{x→3} (2x + 1) and justify by the polynomial theorem.",
+    "Discuss the continuity of f(x) = (x²−1)/(x−1) (x≠1), f(1) = 3 at x = 1."
+  ],
+  "universalFacts": [
+    "Speedometers compute limits: instantaneous speed is the limit of average speeds over shrinking time windows - before any derivative notation exists."
+  ],
   "animation3D": "limits-and-continuity-introduction",
   "motionGraphics": "limits-and-continuity-introduction",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "A limit describes the value f(x) approaches as x approaches a, whether or not f is defined at a; continuity requires the limit to equal f(a).",
+  "examples": [
+    "***Seeing through the hole*** - (x^2 - 4)/(x - 2) is undefined at 2 yet limits to 4: factoring is legal because the definition excludes x = 2."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (2m): Evaluate lim_{x→2} (x² − 4)/(x − 2).** — **Step 1 — substitute:** (4 − 4)/(2 − 2) = **0/0** — an indeterminate form, which demands transformation rather than a verdict. **Step 2 — factor:** x² − 4 = (x − 2)(x + 2), so the expression is (x − 2)(x + 2)/(x − 2) = **x + 2 for x ≠ 2** — the cancellation is licensed because the limiting process never uses x = 2 itself. **Step 3 — substitute again:** lim = 2 + 2 = **4**. The function has a hole at (2, 4): the limit exists even though f(2) does not — the neighbourhood, not the point, decides.",
+    "**NEB-style (2m): Evaluate lim_{x→3} (2x + 1), citing the relevant theorem.** — **Theorem:** every polynomial P is continuous on all of ℝ, so **lim_{x→a} P(x) = P(a)** — direct substitution is licensed. **Compute:** P(3) = 2(3) + 1 = **7**. The same theorem covers roots and |x| at interior points of their domains; substitution fails only at the special spots (denominator zeros, radicand boundaries, piecewise joints) where the machinery of indeterminate forms and one-sided limits takes over.",
+    "**NEB-style (2m): The function f is given by f(x) = (x² − 1)/(x − 1) for x ≠ 1 and f(1) = 3. Discuss the continuity of f at x = 1.** — **Three-part test.** **Part 1:** f(1) = 3 exists ✓. **Part 2:** the limit — factoring (x² − 1)/(x − 1) = x + 1 for x ≠ 1 gives lim_{x→1} f(x) = 2 ✓. **Part 3:** f(1) = 3 ≠ 2 = limit ✗ — the test fails at the third step, so **f is discontinuous at x = 1**. **Classification:** since the limit exists, the failure is purely at the point's value — a **removable discontinuity**: redefining f(1) = 2 would make f continuous there (the \"pen lift\" is a single detached dot, easily re-attached)."
+  ],
+  "formulas": [
+    "- lim_{x→a} f(x) = L ⟺ lim_{x→a⁻} = lim_{x→a⁺} = L\n- (x² − a²)/(x − a) = x + a (x ≠ a) ⟹ limit 2a\n- continuity at a: f(a) = lim_{x→a} f(x) (both exist)"
+  ],
+  "keyPoints": [
+    "Limit: lim_{x->a} f(x) = L means f(x) approaches L as x approaches a from either side, x != a; the value at a is irrelevant. One-sided notation x -> a+, x -> a-. Indeterminate forms 0/0, inf/inf demand transformation (factor, rationalise, standard limits); 5/0 signals blow-up, not indeterminate. Continuity at a (three-part test): f(a) exists, limit exists, and they are equal - pen never lifts. Polynomial theorem: lim P(x) at a = P(a). Hole example: (x^2-4)/(x-2) -> x + 2 -> limit 4. Limits are the atomic operation behind derivatives, integrals and asymptotes."
+  ],
+  "summary": "The **limit** lim_{x→a} f(x) = L is the value f(x) approaches as x nears a from both sides — with **x ≠ a built into the definition**, so holes and redefinitions at a don't block the approach: (x²−4)/(x−2) limits to 4 through its hole, and (x²−1)/(x−1) with f(1) = 3 fails continuity only because value 3 ≠ limit 2 (a **removable** break). One-sided notation x → a⁺, a⁻ sets up the existence theorem (both sides must agree). **Indeterminate forms** — 0/0 chief among them — are *work orders*, not answers: factor, rationalise, or invoke standard limits, then substitute. **Continuity at a** is the three-part checklist: f(a) exists, the limit exists, they're equal — the pen never lifts. Polynomials pass everywhere (lim P(x) = P(a)), making substitution the default and transformation the exception that proves the rule. Limits are calculus's atom: derivatives, integrals and asymptotes are all limits in costume.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"lim_{x->a} f(x) = L iff both one-sided limits equal L; continuity at a requires f(a) = lim_{x->a} f(x).\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Substitute first; 0/0 means transform. Factor or rationalise, cancel (x != a licensed), then substitute. Continuity: check the three parts in order."
+  ],
+  "examNotes": [
+    "Write \"0/0 (indeterminate)\" explicitly before transforming - the recognition line carries a method mark."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "The limit reads the neighbourhood, not the point: holes, redefinitions and blow-ups at a are invisible to or decisive for the approach depending on the sides' agreement."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Idea of Approaching\n\nA **limit** asks what value f(x) approaches as x nears a — not what it reaches. This opening topic installs the intuition, the notation, and the one-sided/existence scaffolding the whole calculus unit stands on.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The limit idea\n\n- **lim_{x→a} f(x) = L** means f(x) can be made arbitrarily close to L by taking x sufficiently close to a (from either side), **x ≠ a**.\n- The value at a is irrelevant: f may be undefined at a (the hole case) or take a different value — the limit reads the *neighbourhood*, not the point.\n\n### 2.1b Notation and reading\n\n- x → a⁺ (from the right), x → a⁻ (from the left); the two-sided limit exists only if both one-sided limits agree (row 32's theorem).\n- **Indeterminate forms** 0/0, ∞/∞, 0·∞ signal *work needed*, not an answer: factor, rationalise, or use standard limits.\n\n### 2.2 Continuity preview\n\n- A function is **continuous at a** when three things line up: f(a) exists, lim_{x→a} f(x) exists, and the two are **equal**. Graphically: pen never lifts.\n\n### 2.3 Why limits matter\n\n- Derivatives are limits of difference quotients; integrals are limits of sums; asymptotes are limits at infinity. Limits are calculus's atomic operation.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Limit** | Value approached, not attained | lim_{x→2} (x²−4)/(x−2) = 4 |\n| **One-sided limit** | Approach from one direction only | x → a⁺, x → a⁻ |\n| **Indeterminate form** | 0/0 etc. — needs transformation | (x²−4)/(x−2) at 2 |\n| **Continuity** | f(a) = lim_{x→a} f(x) | pen never lifts |",
+      "## 4. Detailed Explanation\n\n### 4.1 The hole is the point\n\n- (x² − 4)/(x − 2) is undefined at x = 2 yet approaches 4: factoring to x + 2 (valid since x ≠ 2) exposes the approach value. Limits see through holes.\n\n### 4.2 Indeterminate ≠ undefined\n\n- 0/0 is *indeterminate*: many values possible, decided only by transforming the expression. 5/0 is not indeterminate — it signals blow-up (infinite limit or DNE).\n\n### 4.3 The three-part continuity test\n\n- Memorise as a checklist: exists at a; limit exists; they match. Each can fail independently — and each failure mode is a named discontinuity (rows 36–38).",
+      "## 5. Comparison Tables\n\n**Limit vs value**\n\n| Situation | f(a) | lim_{x→a} f(x) | Verdict |\n|---|---|---|---|\n| continuous | 4 | 4 | continuous |\n| removable hole | undefined | 4 | limit exists |\n| redefined point | 7 | 4 | discontinuous |\n| blow-up | undefined | ±∞ | discontinuous |",
+      "## 6. Common Confusions\n\n**Limit ≠ value:** lim can exist where f(a) doesn't — the neighbourhood decides, not the point.",
+      "**0/0 is not 1 or 0:** it is a request for transformation, never an answer.",
+      "**x ≠ a is part of the definition:** the approach excludes the destination by design.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Evaluate lim_{x→2} (x² − 4)/(x − 2).** — Direct substitution gives **0/0** (indeterminate — transform, don't conclude). Factor: (x−2)(x+2)/(x−2) = **x + 2 for x ≠ 2**. Limit: 2 + 2 = **4**. The cancellation is licensed precisely because x ≠ 2 in the limiting process.",
+      "**NEB-style (2m): Evaluate lim_{x→3} (2x + 1).** — Polynomials are **continuous everywhere**: the limit equals the value by direct substitution — 2(3) + 1 = **7**. The general theorem: for any polynomial P, lim_{x→a} P(x) = P(a); the same holds for |x| and roots at interior points.",
+      "**NEB-style (2m): The function f(x) = (x² − 1)/(x − 1) for x ≠ 1, f(1) = 3. Discuss continuity at x = 1.** — **Limit:** factoring gives x + 1 for x ≠ 1, so lim_{x→1} f(x) = 2. **Value:** f(1) = 3. **Test:** limit exists (2) but ≠ value (3) ⟹ **discontinuous at x = 1** — a *removable* discontinuity: redefining f(1) = 2 would repair it (row 36's theme)."
+    ],
+    "keyPoints": [
+      "Limit: lim_{x->a} f(x) = L means f(x) approaches L as x approaches a from either side, x != a; the value at a is irrelevant. One-sided notation x -> a+, x -> a-. Indeterminate forms 0/0, inf/inf demand transformation (factor, rationalise, standard limits); 5/0 signals blow-up, not indeterminate. Continuity at a (three-part test): f(a) exists, limit exists, and they are equal - pen never lifts. Polynomial theorem: lim P(x) at a = P(a). Hole example: (x^2-4)/(x-2) -> x + 2 -> limit 4. Limits are the atomic operation behind derivatives, integrals and asymptotes."
+    ],
+    "importantConcepts": [
+      "The limit reads the neighbourhood, not the point: holes, redefinitions and blow-ups at a are invisible to or decisive for the approach depending on the sides' agreement."
+    ],
+    "examples": [
+      "***Seeing through the hole*** - (x^2 - 4)/(x - 2) is undefined at 2 yet limits to 4: factoring is legal because the definition excludes x = 2."
+    ],
+    "universalFacts": [
+      "Speedometers compute limits: instantaneous speed is the limit of average speeds over shrinking time windows - before any derivative notation exists."
+    ],
+    "importantStatements": [
+      "\"lim_{x->a} f(x) = L iff both one-sided limits equal L; continuity at a requires f(a) = lim_{x->a} f(x).\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Substitute first; 0/0 means transform. Factor or rationalise, cancel (x != a licensed), then substitute. Continuity: check the three parts in order."
+    ],
+    "examNotes": [
+      "Write \"0/0 (indeterminate)\" explicitly before transforming - the recognition line carries a method mark."
+    ],
+    "formulas": [
+      "- lim_{x→a} f(x) = L ⟺ lim_{x→a⁻} = lim_{x→a⁺} = L\n- (x² − a²)/(x − a) = x + a (x ≠ a) ⟹ limit 2a\n- continuity at a: f(a) = lim_{x→a} f(x) (both exist)"
+    ],
+    "practice": [
+      "Evaluate lim_{x→2} (x² − 4)/(x − 2).",
+      "Evaluate lim_{x→3} (2x + 1) and justify by the polynomial theorem.",
+      "Discuss the continuity of f(x) = (x²−1)/(x−1) (x≠1), f(1) = 3 at x = 1."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Evaluate lim_{x→2} (x² − 4)/(x − 2).** — **Step 1 — substitute:** (4 − 4)/(2 − 2) = **0/0** — an indeterminate form, which demands transformation rather than a verdict. **Step 2 — factor:** x² − 4 = (x − 2)(x + 2), so the expression is (x − 2)(x + 2)/(x − 2) = **x + 2 for x ≠ 2** — the cancellation is licensed because the limiting process never uses x = 2 itself. **Step 3 — substitute again:** lim = 2 + 2 = **4**. The function has a hole at (2, 4): the limit exists even though f(2) does not — the neighbourhood, not the point, decides.",
+      "**NEB-style (2m): Evaluate lim_{x→3} (2x + 1), citing the relevant theorem.** — **Theorem:** every polynomial P is continuous on all of ℝ, so **lim_{x→a} P(x) = P(a)** — direct substitution is licensed. **Compute:** P(3) = 2(3) + 1 = **7**. The same theorem covers roots and |x| at interior points of their domains; substitution fails only at the special spots (denominator zeros, radicand boundaries, piecewise joints) where the machinery of indeterminate forms and one-sided limits takes over.",
+      "**NEB-style (2m): The function f is given by f(x) = (x² − 1)/(x − 1) for x ≠ 1 and f(1) = 3. Discuss the continuity of f at x = 1.** — **Three-part test.** **Part 1:** f(1) = 3 exists ✓. **Part 2:** the limit — factoring (x² − 1)/(x − 1) = x + 1 for x ≠ 1 gives lim_{x→1} f(x) = 2 ✓. **Part 3:** f(1) = 3 ≠ 2 = limit ✗ — the test fails at the third step, so **f is discontinuous at x = 1**. **Classification:** since the limit exists, the failure is purely at the point's value — a **removable discontinuity**: redefining f(1) = 2 would make f continuous there (the \"pen lift\" is a single detached dot, easily re-attached)."
+    ]
+  }
 }

@@ -6,30 +6,113 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-removable",
   "notes": [
-    "**Definition.** f has a removable discontinuity at a when lim(x→a) f(x) = L exists and is finite, but f(a) ≠ L (including the case where f(a) is undefined).",
-    "**Worked example.** f(x) = (x² − 1)/(x − 1) equals x + 1 for x ≠ 1, so the limit at 1 is 2 while f(1) is undefined; defining f(1) = 2 removes the hole.",
-    "**Why removable.** Only one point of the graph is wrong or missing; changing that single value makes the function continuous without altering any other value.",
-    "**Contrast with a jump.** If LHL ≠ RHL, no choice of f(a) can make the function continuous, so that discontinuity is not removable.",
-    "**Common source.** Cancelling a common factor such as (x − a) from a numerator and denominator is exactly the algebraic signal of a removable hole.",
-    "**Exam caution.** After cancelling, state the restriction x ≠ a; the simplified expression describes the limit, not the original function at a."
+    "## 1. Topic Introduction — The Repairable Break\n\nA **removable discontinuity** is a break the limit ignores: the two-sided limit exists but f(a) is missing or mismatched. The repair is always the same — define or redefine f(a) to equal the limit.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition and detection\n\n- **Removable at a** ⟺ lim_{x→a} f(x) = L exists (finite) but f(a) ≠ L or f(a) is undefined.\n- **Detection protocol:** substitute (get 0/0 or undefined), compute the limit by transformation, compare with f(a).\n\n### 2.2 The two species\n\n- **Hole:** f(a) undefined, limit exists — (x²−4)/(x−2) at 2 with limit 4.\n- **Mismatch:** f(a) defined but ≠ limit — the redefined-point case (f(1) = 3 vs limit 2).\n\n### 2.3 The repair theorem\n\n- **Theorem:** defining (or redefining) **f(a) = L** makes f continuous at a — the discontinuity was removable precisely because one value fixes it.\n- After repair, the function is continuous; before repair, the graph shows an isolated open dot (hole) or a detached dot (mismatch).\n\n### 2.4 Common sources\n\n- Rational functions with cancelled common factors: (x²−9)/(x−3) → hole at 3 with limit 6.\n- Piecewise definitions with a deliberately wrong middle value.\n- Roots of numerators shared with denominators — the factor-and-cancel signature.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Removable discontinuity** | Limit exists, value missing/mismatched | hole at (2, 4) |\n| **Hole** | f(a) undefined, limit exists | open dot on graph |\n| **Repair** | Set f(a) = lim | one redefinition |\n| **Factor-and-cancel** | Common factor exposes the hole | (x²−9)/(x−3) |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why \"removable\"\n\n- The defect lives at a single point and the limit already knows the correct value: plugging it in removes the break entirely. Jumps and blow-ups need infinitely many point-changes or none works — they are not removable.\n\n### 4.2 The graph signature\n\n- A hole is an **open dot** on an otherwise continuous curve; a mismatch adds a **closed dot** floating elsewhere. Both are single-point defects — the visual fingerprint of removability.\n\n### 4.3 Simplification caution\n\n- Cancelling (x − a) changes the domain: the simplified expression is continuous at a but the **original** is not — always state the x ≠ a licence and report the hole.",
+    "## 5. Comparison Tables\n\n**Discontinuity triage**\n\n| Type | Limit exists? | Repair |\n|---|---|---|\n| removable (hole/mismatch) | yes | define f(a) = L |\n| jump | no (finite sides differ) | none |\n| infinite | no (blow-up) | none |",
+    "## 6. Common Confusions\n\n**Cancelled ≠ continuous:** the cancellation proves the limit, not the original function's continuity — the domain shrank.",
+    "**Removable needs a finite limit:** an infinite limit at a is an infinite discontinuity, never removable.",
+    "**Hole location:** the hole sits at (a, **L**) — at the limit's height, not at f(a)'s (which doesn't exist).",
+    "## 7. Exam Application\n\n**NEB-style (3m): Find the point of discontinuity of f(x) = (x² − 9)/(x − 3), classify it, and state the repair.** — Domain: x ≠ 3. **Limit:** factor (x−3)(x+3)/(x−3) = x + 3 (x ≠ 3) ⟹ lim_{x→3} = **6**. **Classification:** f(3) undefined with the limit existing ⟹ **removable discontinuity (hole)** at (3, 6). **Repair:** define f(3) = 6; the repaired f equals x + 3 everywhere and is continuous on ℝ.",
+    "**NEB-style (2m): For f(x) = (x² + x − 6)/(x − 2), find lim_{x→2} f(x) and the removable break.** — Factor: (x + 3)(x − 2)/(x − 2) = x + 3 (x ≠ 2) ⟹ limit **5**. f(2) undefined ⟹ **removable hole at (2, 5)**; repair f(2) = 5.",
+    "**NEB-style (2m): f(x) = (x + 2)/(x² − 4) at x = −2: removable or not?** — Factor denominator: (x + 2)/[(x−2)(x+2)] = 1/(x − 2) for x ≠ −2, ±... for x ≠ ±2. **Limit as x → −2:** 1/(−2 − 2) = **−1/4** — finite! So x = −2 is **removable** (hole at (−2, −1/4)); repair f(−2) = −1/4. But at x = 2 the simplified 1/(x−2) **blows up** ⟹ x = 2 is an **infinite** (non-removable) discontinuity. One function, two species — triage each point separately."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Classify and repair the discontinuity of (x² − 9)/(x − 3).",
+    "Find lim_{x→2} (x² + x − 6)/(x − 2) and the hole.",
+    "Triage (x + 2)/(x² − 4) at both suspicious points."
+  ],
+  "universalFacts": [
+    "Sensor dropouts are removable glitches: the trend (limit) is known, the missing sample (value) is interpolated - repair by redefinition."
+  ],
   "animation3D": "limits-and-continuity-removable",
   "motionGraphics": "limits-and-continuity-removable",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "A removable discontinuity is a hole: the two-sided limit exists but f(a) is undefined or has a different value; redefining f(a) repairs it.",
+  "examples": [
+    "***One function, two species*** - (x + 2)/(x^2 - 4) has a removable hole at -2 and an infinite break at 2: every suspicious point gets its own triage."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): Find and classify the discontinuity of f(x) = (x² − 9)/(x − 3), then state the repair.** — **Domain:** x ≠ 3 (the denominator ban). **Limit:** factor the numerator: (x − 3)(x + 3)/(x − 3) = **x + 3 for x ≠ 3** — the cancellation is licensed by the punctured neighbourhood. Hence lim_{x→3} f(x) = 3 + 3 = **6**. **Classification:** f(3) is undefined while the limit exists ⟹ a **removable discontinuity** — specifically a **hole** at the point **(3, 6)** (open dot at the limit's height). **Repair:** define f(3) = 6; the repaired function agrees with x + 3 on all of ℝ and is continuous everywhere. **Caution stated:** the cancellation changed the domain — the original f, not x + 3, is the function under discussion, and the hole is part of its graph.",
+    "**NEB-style (2m): Find lim_{x→2} (x² + x − 6)/(x − 2) and describe the removable break.** — **Substitution:** (4 + 2 − 6)/0 = **0/0** ⟹ transform. **Factor:** x² + x − 6 = (x + 3)(x − 2), so the expression = (x + 3)(x − 2)/(x − 2) = **x + 3 for x ≠ 2**. **Limit:** 2 + 3 = **5**. **Break:** f(2) undefined with limit 5 ⟹ **removable hole at (2, 5)**; the repair f(2) = 5 restores continuity. The factor-and-cancel signature — a shared linear factor — is the universal birthplace of removable rational breaks.",
+    "**NEB-style (3m): Triage f(x) = (x + 2)/(x² − 4) at each point of discontinuity.** — **Suspicious points:** zeros of x² − 4 = (x − 2)(x + 2), i.e. x = 2 and x = −2 — triage each separately. **At x = −2:** cancel the common factor: f(x) = 1/(x − 2) for x ≠ ±2; lim_{x→−2} f(x) = 1/(−4) = **−1/4** — finite ⟹ **removable** (hole at (−2, −1/4)); repair f(−2) = −1/4. **At x = 2:** the simplified form 1/(x − 2) has numerator 1 ≠ 0 with denominator → 0 ⟹ **blow-up**: lim_{x→2⁺} = +∞, lim_{x→2⁻} = −∞ ⟹ **infinite discontinuity** — not removable. **Verdict:** one function, two species — the cancelled factor's zero is always the removable candidate; the surviving denominator's zero is always the infinite one."
+  ],
+  "formulas": [
+    "- removable at a ⟺ lim_{x→a} f(x) = L ∈ ℝ and f(a) ≠ L (or undefined)\n- repair: f(a) := L\n- (x² − a²)/(x − a) → hole at (a, 2a)"
+  ],
+  "keyPoints": [
+    "Removable discontinuity: lim_{x->a} f(x) = L exists finite, but f(a) undefined (hole) or f(a) != L (mismatch). Detection: substitute, transform, compare. Repair theorem: set f(a) = L - one value fixes it. Sources: cancelled common factors ((x^2-9)/(x-3), hole at (3, 6)), piecewise mismatches. Graph: open dot at (a, L); mismatch adds a detached closed dot. Cancellation changes the domain - state the x != a licence. Triage per point: (x+2)/(x^2-4) is removable at -2 (limit -1/4) and infinite at 2."
+  ],
+  "summary": "A **removable discontinuity** is the repairable break: the two-sided limit **exists finitely** while f(a) is missing (a **hole**) or wrong (a **mismatch**). Detection is the standard loop — substitute, transform (factor-and-cancel is the signature: (x²−9)/(x−3) → x + 3 with hole at **(3, 6)**), compare — and the **repair theorem** is one line: set f(a) = L. The graph shows an open dot at (a, L) (plus a detached dot for mismatches), and the caution stands: cancelling a factor **shrinks the domain**, so the simplified expression's continuity doesn't transfer back automatically. Triage is per-point: (x+2)/(x²−4) is **removable at −2** (limit −1/4) and **infinite at 2** — the cancelled factor's zero is the cure-able candidate, the surviving denominator's zero is not. Limit exists, one value to fix: removability in a sentence.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"A discontinuity at a is removable iff lim_{x->a} f(x) exists finite; the repair is f(a) = lim.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "0/0 after factoring = candidate hole. Hole sits at (a, limit). Cancellation shrinks the domain - say so. Triage each suspicious point separately."
+  ],
+  "examNotes": [
+    "Always report the hole's coordinates (a, L) - the height is the limit, and stating it proves you computed the limit."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "Removable = single-point defect with a known cure: the limit already holds the correct value, so one redefinition repairs the break."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Repairable Break\n\nA **removable discontinuity** is a break the limit ignores: the two-sided limit exists but f(a) is missing or mismatched. The repair is always the same — define or redefine f(a) to equal the limit.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition and detection\n\n- **Removable at a** ⟺ lim_{x→a} f(x) = L exists (finite) but f(a) ≠ L or f(a) is undefined.\n- **Detection protocol:** substitute (get 0/0 or undefined), compute the limit by transformation, compare with f(a).\n\n### 2.2 The two species\n\n- **Hole:** f(a) undefined, limit exists — (x²−4)/(x−2) at 2 with limit 4.\n- **Mismatch:** f(a) defined but ≠ limit — the redefined-point case (f(1) = 3 vs limit 2).\n\n### 2.3 The repair theorem\n\n- **Theorem:** defining (or redefining) **f(a) = L** makes f continuous at a — the discontinuity was removable precisely because one value fixes it.\n- After repair, the function is continuous; before repair, the graph shows an isolated open dot (hole) or a detached dot (mismatch).\n\n### 2.4 Common sources\n\n- Rational functions with cancelled common factors: (x²−9)/(x−3) → hole at 3 with limit 6.\n- Piecewise definitions with a deliberately wrong middle value.\n- Roots of numerators shared with denominators — the factor-and-cancel signature.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Removable discontinuity** | Limit exists, value missing/mismatched | hole at (2, 4) |\n| **Hole** | f(a) undefined, limit exists | open dot on graph |\n| **Repair** | Set f(a) = lim | one redefinition |\n| **Factor-and-cancel** | Common factor exposes the hole | (x²−9)/(x−3) |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why \"removable\"\n\n- The defect lives at a single point and the limit already knows the correct value: plugging it in removes the break entirely. Jumps and blow-ups need infinitely many point-changes or none works — they are not removable.\n\n### 4.2 The graph signature\n\n- A hole is an **open dot** on an otherwise continuous curve; a mismatch adds a **closed dot** floating elsewhere. Both are single-point defects — the visual fingerprint of removability.\n\n### 4.3 Simplification caution\n\n- Cancelling (x − a) changes the domain: the simplified expression is continuous at a but the **original** is not — always state the x ≠ a licence and report the hole.",
+      "## 5. Comparison Tables\n\n**Discontinuity triage**\n\n| Type | Limit exists? | Repair |\n|---|---|---|\n| removable (hole/mismatch) | yes | define f(a) = L |\n| jump | no (finite sides differ) | none |\n| infinite | no (blow-up) | none |",
+      "## 6. Common Confusions\n\n**Cancelled ≠ continuous:** the cancellation proves the limit, not the original function's continuity — the domain shrank.",
+      "**Removable needs a finite limit:** an infinite limit at a is an infinite discontinuity, never removable.",
+      "**Hole location:** the hole sits at (a, **L**) — at the limit's height, not at f(a)'s (which doesn't exist).",
+      "## 7. Exam Application\n\n**NEB-style (3m): Find the point of discontinuity of f(x) = (x² − 9)/(x − 3), classify it, and state the repair.** — Domain: x ≠ 3. **Limit:** factor (x−3)(x+3)/(x−3) = x + 3 (x ≠ 3) ⟹ lim_{x→3} = **6**. **Classification:** f(3) undefined with the limit existing ⟹ **removable discontinuity (hole)** at (3, 6). **Repair:** define f(3) = 6; the repaired f equals x + 3 everywhere and is continuous on ℝ.",
+      "**NEB-style (2m): For f(x) = (x² + x − 6)/(x − 2), find lim_{x→2} f(x) and the removable break.** — Factor: (x + 3)(x − 2)/(x − 2) = x + 3 (x ≠ 2) ⟹ limit **5**. f(2) undefined ⟹ **removable hole at (2, 5)**; repair f(2) = 5.",
+      "**NEB-style (2m): f(x) = (x + 2)/(x² − 4) at x = −2: removable or not?** — Factor denominator: (x + 2)/[(x−2)(x+2)] = 1/(x − 2) for x ≠ −2, ±... for x ≠ ±2. **Limit as x → −2:** 1/(−2 − 2) = **−1/4** — finite! So x = −2 is **removable** (hole at (−2, −1/4)); repair f(−2) = −1/4. But at x = 2 the simplified 1/(x−2) **blows up** ⟹ x = 2 is an **infinite** (non-removable) discontinuity. One function, two species — triage each point separately."
+    ],
+    "keyPoints": [
+      "Removable discontinuity: lim_{x->a} f(x) = L exists finite, but f(a) undefined (hole) or f(a) != L (mismatch). Detection: substitute, transform, compare. Repair theorem: set f(a) = L - one value fixes it. Sources: cancelled common factors ((x^2-9)/(x-3), hole at (3, 6)), piecewise mismatches. Graph: open dot at (a, L); mismatch adds a detached closed dot. Cancellation changes the domain - state the x != a licence. Triage per point: (x+2)/(x^2-4) is removable at -2 (limit -1/4) and infinite at 2."
+    ],
+    "importantConcepts": [
+      "Removable = single-point defect with a known cure: the limit already holds the correct value, so one redefinition repairs the break."
+    ],
+    "examples": [
+      "***One function, two species*** - (x + 2)/(x^2 - 4) has a removable hole at -2 and an infinite break at 2: every suspicious point gets its own triage."
+    ],
+    "universalFacts": [
+      "Sensor dropouts are removable glitches: the trend (limit) is known, the missing sample (value) is interpolated - repair by redefinition."
+    ],
+    "importantStatements": [
+      "\"A discontinuity at a is removable iff lim_{x->a} f(x) exists finite; the repair is f(a) = lim.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "0/0 after factoring = candidate hole. Hole sits at (a, limit). Cancellation shrinks the domain - say so. Triage each suspicious point separately."
+    ],
+    "examNotes": [
+      "Always report the hole's coordinates (a, L) - the height is the limit, and stating it proves you computed the limit."
+    ],
+    "formulas": [
+      "- removable at a ⟺ lim_{x→a} f(x) = L ∈ ℝ and f(a) ≠ L (or undefined)\n- repair: f(a) := L\n- (x² − a²)/(x − a) → hole at (a, 2a)"
+    ],
+    "practice": [
+      "Classify and repair the discontinuity of (x² − 9)/(x − 3).",
+      "Find lim_{x→2} (x² + x − 6)/(x − 2) and the hole.",
+      "Triage (x + 2)/(x² − 4) at both suspicious points."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Find and classify the discontinuity of f(x) = (x² − 9)/(x − 3), then state the repair.** — **Domain:** x ≠ 3 (the denominator ban). **Limit:** factor the numerator: (x − 3)(x + 3)/(x − 3) = **x + 3 for x ≠ 3** — the cancellation is licensed by the punctured neighbourhood. Hence lim_{x→3} f(x) = 3 + 3 = **6**. **Classification:** f(3) is undefined while the limit exists ⟹ a **removable discontinuity** — specifically a **hole** at the point **(3, 6)** (open dot at the limit's height). **Repair:** define f(3) = 6; the repaired function agrees with x + 3 on all of ℝ and is continuous everywhere. **Caution stated:** the cancellation changed the domain — the original f, not x + 3, is the function under discussion, and the hole is part of its graph.",
+      "**NEB-style (2m): Find lim_{x→2} (x² + x − 6)/(x − 2) and describe the removable break.** — **Substitution:** (4 + 2 − 6)/0 = **0/0** ⟹ transform. **Factor:** x² + x − 6 = (x + 3)(x − 2), so the expression = (x + 3)(x − 2)/(x − 2) = **x + 3 for x ≠ 2**. **Limit:** 2 + 3 = **5**. **Break:** f(2) undefined with limit 5 ⟹ **removable hole at (2, 5)**; the repair f(2) = 5 restores continuity. The factor-and-cancel signature — a shared linear factor — is the universal birthplace of removable rational breaks.",
+      "**NEB-style (3m): Triage f(x) = (x + 2)/(x² − 4) at each point of discontinuity.** — **Suspicious points:** zeros of x² − 4 = (x − 2)(x + 2), i.e. x = 2 and x = −2 — triage each separately. **At x = −2:** cancel the common factor: f(x) = 1/(x − 2) for x ≠ ±2; lim_{x→−2} f(x) = 1/(−4) = **−1/4** — finite ⟹ **removable** (hole at (−2, −1/4)); repair f(−2) = −1/4. **At x = 2:** the simplified form 1/(x − 2) has numerator 1 ≠ 0 with denominator → 0 ⟹ **blow-up**: lim_{x→2⁺} = +∞, lim_{x→2⁻} = −∞ ⟹ **infinite discontinuity** — not removable. **Verdict:** one function, two species — the cancelled factor's zero is always the removable candidate; the surviving denominator's zero is always the infinite one."
+    ]
+  }
 }

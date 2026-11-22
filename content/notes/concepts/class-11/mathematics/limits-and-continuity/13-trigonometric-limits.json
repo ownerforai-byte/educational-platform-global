@@ -6,30 +6,111 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-trig",
   "notes": [
-    "**Fundamental limit.** lim(x→0) sin x/x = 1 and lim(x→0) tan x/x = 1; these follow from the squeeze theorem applied to the unit-circle sector areas.",
-    "**Cosine form.** lim(x→0) (1 − cos x)/x² = 1/2, obtained by writing 1 − cos x = 2 sin²(x/2) and applying the sine limit twice.",
-    "**Worked example.** lim(x→0) sin 5x / sin 3x = (5/3) · [lim sin 5x/(5x)] / [lim sin 3x/(3x)] = 5/3.",
-    "**Radian requirement.** These limits hold only when x is in radians; using degrees introduces a factor of π/180 and changes every result.",
-    "**General angles.** For lim(x→a) sin(x − a)/(x − a), substitute u = x − a so the limit reduces to lim(u→0) sin u/u = 1.",
-    "**Exam caution.** Convert expressions like 1 − cos²x to sin²x before taking the limit, and check that the argument of every sine tends to zero."
+    "## 1. Topic Introduction — Trigonometry Meets 0/0\n\n**Trigonometric limits** deploy the sin x/x star and its relatives: sin kx/x, tan kx/x, (1 − cos x)/x², and compound-angle constructions. The craft is steering every unknown 0/0 into a standard form.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The core star and its rescalings\n\n- **lim_{u→0} sin u/u = 1** (radians). **Rescaling theorem:** lim_{x→0} sin(kx)/x = k, since sin(kx)/x = k·sin(kx)/(kx) with kx → 0.\n- **lim_{x→0} sin(kx)/(mx) = k/m** — the general ratio form.\n- **lim_{x→0} tan(kx)/x = k** (tan u/u → 1 via sin/cos).\n\n### 2.2 The cosine-squared family\n\n- **lim_{x→0} (1 − cos x)/x² = 1/2** — via 1 − cos x = 2sin²(x/2): the expression becomes 2sin²(x/2)/x² = ½·[sin(x/2)/(x/2)]² → ½·1 = ½.\n- **lim_{x→0} (1 − cos kx)/x² = k²/2** — same route with the rescaling.\n\n### 2.3 Compound-angle steering\n\n- Expressions like sin 3x/sin 5x, (1 − cos 2x)/x sin x, sin(x + a) − sin a: rewrite with identities (sin A − sin B = 2 cos((A+B)/2) sin((A−B)/2)), split into standard ratios, and multiply by 1 (form kx/kx factors).\n\n### 2.4 The squeeze safety net\n\n- When steering stalls, squeeze: |sin u| ≤ |u| bounds the expression. The sandwich proof of sin x/x → 1 is the template: (cos x)·... sin x/x is trapped between cos x and 1.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Standard trig star** | sin u/u → 1 (radians) | the anchor |\n| **Rescaling** | sin(kx)/x → k | insert kx/kx |\n| **Half-angle route** | 1 − cos x = 2sin²(x/2) | powers the ½ |\n| **Squeeze** | Trap between two known limits | sin x/x proof |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why radians are non-negotiable\n\n- sin x/x → 1 equates arc and chord asymptotics; degrees carry π/180 in every derivative and limit. Convert first, compute second.\n\n### 4.2 The kx/kx insertion\n\n- The universal move: multiply and divide by the argument's coefficient. sin 5x/sin 3x = [5x·sin5x/(5x)]/[3x·sin3x/(3x)] → (5·1)/(3·1) = 5/3 — steering by bookkeeping.\n\n### 4.3 Identities as reducers\n\n- Compound angles and half-angles convert unfamiliar trig expressions into products of standard ratios. Keep the identity sheet beside every trig limit.",
+    "## 5. Comparison Tables\n\n**Trig limit shelf**\n\n| Limit | Value | Route |\n|---|---|---|\n| sin kx/x | k | kx/kx insertion |\n| tan kx/x | k | sin/cos split |\n| (1 − cos x)/x² | 1/2 | half-angle |\n| (1 − cos kx)/x² | k²/2 | half-angle + rescale |\n| sin kx/sin mx | k/m | double insertion |",
+    "## 6. Common Confusions\n\n**Degrees again:** every trig limit in this topic assumes radians — state it.\n%%**\n**Half-angle factor:** (1 − cos x)/x² is ½, not 1 — the 2sin²(x/2) identity carries the ½.",
+    "**sin kx/x vs sin x/x:** the coefficient k survives as a factor — forgetting it halves marks on rescaled forms.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Evaluate lim_{x→0} sin 5x/sin 3x.** — Insert the rescalings: sin 5x/sin 3x = [5x·(sin 5x/5x)]/[3x·(sin 3x/3x)] = (5/3)·[sin 5x/5x]/[sin 3x/3x]. As x → 0 both bracketed stars → 1 ⟹ limit = **5/3**. (General rule: sin kx/sin mx → k/m.)",
+    "**NEB-style (3m): Evaluate lim_{x→0} (1 − cos 4x)/x².** — Half-angle: 1 − cos 4x = 2sin²(2x). Expression = 2sin²(2x)/x² = 2·[sin 2x/(2x)]²·4 = 8·[sin 2x/2x]² → 8·1 = **8** — matching the formula k²/2 = 16/2 = 8 ✓.",
+    "**NEB-style (3m): Evaluate lim_{x→0} (x − sin x)/x³.** — Direct forms stall; use the cubic refinement **x − sin x ~ x³/6** (from sin x = x − x³/6 + ⋯): the limit is **1/6**. Derivation without series: x − sin x = x(1 − sin x/x), and 1 − sin x/x = [x − sin x]/x — circular; the honest elementary route applies the standard limits twice via sin x − sin y identities or accepts the known refinement — quote it as a standard result."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Evaluate lim_{x→0} sin 5x/sin 3x.",
+    "Evaluate lim_{x→0} (1 − cos 4x)/x².",
+    "Evaluate lim_{x→0} (x − sin x)/x³."
+  ],
+  "universalFacts": [
+    "Small-angle approximations in optics and pendulum motion (sin th ~ th) are sin x/x -> 1 in engineering clothing."
+  ],
   "animation3D": "limits-and-continuity-trig",
   "motionGraphics": "limits-and-continuity-trig",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Trigonometric limits rest on lim(x→0) sin x/x = 1 and lim(x→0) (1 − cos x)/x² = 1/2, with angles always measured in radians.",
+  "examples": [
+    "***The half-angle halving*** - 1 - cos x = 2 sin^2(x/2) is why the cosine family limits carry 1/2 and k^2/2: the identity does the arithmetic."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): Evaluate lim_{x→0} sin 5x/sin 3x.** — **Steering by insertion:** multiply and divide each sine by its own argument: sin 5x/sin 3x = [5x · (sin 5x)/(5x)] / [3x · (sin 3x)/(3x)] = (5/3) · [(sin 5x)/(5x)] / [(sin 3x)/(3x)]. **Apply the star:** as x → 0, both 5x → 0 and 3x → 0, so (sin 5x)/(5x) → 1 and (sin 3x)/(3x) → 1 (radians throughout). **Result:** (5/3)·(1/1) = **5/3**. **General rule harvested:** lim_{x→0} sin(kx)/sin(mx) = k/m — the double insertion turns any sine ratio into a coefficient ratio.",
+    "**NEB-style (3m): Evaluate lim_{x→0} (1 − cos 4x)/x².** — **Half-angle identity:** 1 − cos θ = 2sin²(θ/2), so 1 − cos 4x = **2sin²(2x)**. **Rewrite:** (1 − cos 4x)/x² = 2sin²(2x)/x² = 2 · [sin 2x/(2x)]² · (2x)²/x² = 2 · [sin 2x/(2x)]² · 4 = **8·[sin 2x/(2x)]²**. **Apply the star:** sin 2x/(2x) → 1 as x → 0 ⟹ the limit is 8·1² = **8**. **Formula check:** the general result (1 − cos kx)/x² → k²/2 gives 4²/2 = 16/2 = 8 ✓ — the half-angle identity is exactly where the ½ and the k² come from.",
+    "**NEB-style (3m): Evaluate lim_{x→0} (x − sin x)/x³.** — **Why steering stalls:** both x − sin x and x³ vanish to third order — the first-order standard limits cancel out, exposing the cubic layer. **Cubic refinement (standard result):** from the small-x expansion sin x = x − x³/6 + O(x⁵) (radians), **x − sin x = x³/6 + O(x⁵) ~ x³/6**. **Limit:** (x − sin x)/x³ → (x³/6)/x³ = **1/6**. **Consistency:** the companion limit (sin x − x cos x)/x³ = 1/3 (NEB 2024) satisfies the identity (x − sin x) + (sin x − x cos x) = x(1 − cos x) ~ x³/2, and 1/6 + 1/3 = 1/2 ✓ — the three refinements interlock. At this level the refinement is quoted as a standard result derived from the sin x/x machinery."
+  ],
+  "formulas": [
+    "- lim_{x→0} sin(kx)/x = k; sin(kx)/(mx) = k/m; tan(kx)/x = k\n- lim_{x→0} (1 − cos x)/x² = 1/2; (1 − cos kx)/x² = k²/2\n- 1 − cos x = 2sin²(x/2); x − sin x ~ x³/6"
+  ],
+  "keyPoints": [
+    "Core star: sin u/u -> 1 (radians). Rescalings: sin(kx)/x -> k; sin(kx)/(mx) -> k/m; tan(kx)/x -> k. Cosine family: (1 - cos x)/x^2 -> 1/2 via 1 - cos x = 2 sin^2(x/2); (1 - cos kx)/x^2 -> k^2/2. Steering: insert kx/kx factors, split via sin/cos, use compound/half-angle identities as reducers. Squeeze safety net: |sin u| <= |u|. Cubic refinements: x - sin x ~ x^3/6; sin x - x cos x ~ x^3/3. Degrees break every trig limit - convert first."
+  ],
+  "summary": "**Trigonometric limits** are the sin u/u star (radians mandatory) plus steering. The **rescaling theorem** — insert kx/kx — gives sin(kx)/x → k, sin(kx)/sin(mx) → k/m (sin 5x/sin 3x → 5/3), tan(kx)/x → k. The **cosine family** runs through the half-angle identity 1 − cos x = 2sin²(x/2): (1 − cos x)/x² → **1/2** and (1 − cos kx)/x² → **k²/2** (k = 4 gives 8). **Compound-angle identities** reduce unfamiliar differences to standard ratios, and the **squeeze** |sin u| ≤ |u| is the safety net. When first-order terms cancel, the **cubic refinements** finish the job: x − sin x ~ x³/6 (limit 1/6) and sin x − x cos x ~ x³/3 (limit 1/3) — interlocking through x(1 − cos x) ~ x³/2. Insert, halve, reduce, squeeze: the four moves that turn any trig 0/0 into a star.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"sin u/u -> 1 (radians); sin(kx)/x -> k; (1 - cos x)/x^2 -> 1/2; (1 - cos kx)/x^2 -> k^2/2.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice (the NEB 2024 x^3 pair is logged on the standard-limits row)."
+  ],
+  "examShortTricks": [
+    "Insert kx/kx. Half-angle for 1 - cos. Compound-angle identities for differences. Quote radians. Fallback: cubic refinements x - sin x ~ x^3/6."
+  ],
+  "examNotes": [
+    "Show the insertion step explicitly (write the kx/kx factors) - the steering, not just the answer, earns the method mark."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "The kx/kx insertion is the universal steering move: multiply and divide by the coefficient so every factor becomes a standard star."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Trigonometry Meets 0/0\n\n**Trigonometric limits** deploy the sin x/x star and its relatives: sin kx/x, tan kx/x, (1 − cos x)/x², and compound-angle constructions. The craft is steering every unknown 0/0 into a standard form.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The core star and its rescalings\n\n- **lim_{u→0} sin u/u = 1** (radians). **Rescaling theorem:** lim_{x→0} sin(kx)/x = k, since sin(kx)/x = k·sin(kx)/(kx) with kx → 0.\n- **lim_{x→0} sin(kx)/(mx) = k/m** — the general ratio form.\n- **lim_{x→0} tan(kx)/x = k** (tan u/u → 1 via sin/cos).\n\n### 2.2 The cosine-squared family\n\n- **lim_{x→0} (1 − cos x)/x² = 1/2** — via 1 − cos x = 2sin²(x/2): the expression becomes 2sin²(x/2)/x² = ½·[sin(x/2)/(x/2)]² → ½·1 = ½.\n- **lim_{x→0} (1 − cos kx)/x² = k²/2** — same route with the rescaling.\n\n### 2.3 Compound-angle steering\n\n- Expressions like sin 3x/sin 5x, (1 − cos 2x)/x sin x, sin(x + a) − sin a: rewrite with identities (sin A − sin B = 2 cos((A+B)/2) sin((A−B)/2)), split into standard ratios, and multiply by 1 (form kx/kx factors).\n\n### 2.4 The squeeze safety net\n\n- When steering stalls, squeeze: |sin u| ≤ |u| bounds the expression. The sandwich proof of sin x/x → 1 is the template: (cos x)·... sin x/x is trapped between cos x and 1.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Standard trig star** | sin u/u → 1 (radians) | the anchor |\n| **Rescaling** | sin(kx)/x → k | insert kx/kx |\n| **Half-angle route** | 1 − cos x = 2sin²(x/2) | powers the ½ |\n| **Squeeze** | Trap between two known limits | sin x/x proof |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why radians are non-negotiable\n\n- sin x/x → 1 equates arc and chord asymptotics; degrees carry π/180 in every derivative and limit. Convert first, compute second.\n\n### 4.2 The kx/kx insertion\n\n- The universal move: multiply and divide by the argument's coefficient. sin 5x/sin 3x = [5x·sin5x/(5x)]/[3x·sin3x/(3x)] → (5·1)/(3·1) = 5/3 — steering by bookkeeping.\n\n### 4.3 Identities as reducers\n\n- Compound angles and half-angles convert unfamiliar trig expressions into products of standard ratios. Keep the identity sheet beside every trig limit.",
+      "## 5. Comparison Tables\n\n**Trig limit shelf**\n\n| Limit | Value | Route |\n|---|---|---|\n| sin kx/x | k | kx/kx insertion |\n| tan kx/x | k | sin/cos split |\n| (1 − cos x)/x² | 1/2 | half-angle |\n| (1 − cos kx)/x² | k²/2 | half-angle + rescale |\n| sin kx/sin mx | k/m | double insertion |",
+      "## 6. Common Confusions\n\n**Degrees again:** every trig limit in this topic assumes radians — state it.\n%%**\n**Half-angle factor:** (1 − cos x)/x² is ½, not 1 — the 2sin²(x/2) identity carries the ½.",
+      "**sin kx/x vs sin x/x:** the coefficient k survives as a factor — forgetting it halves marks on rescaled forms.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Evaluate lim_{x→0} sin 5x/sin 3x.** — Insert the rescalings: sin 5x/sin 3x = [5x·(sin 5x/5x)]/[3x·(sin 3x/3x)] = (5/3)·[sin 5x/5x]/[sin 3x/3x]. As x → 0 both bracketed stars → 1 ⟹ limit = **5/3**. (General rule: sin kx/sin mx → k/m.)",
+      "**NEB-style (3m): Evaluate lim_{x→0} (1 − cos 4x)/x².** — Half-angle: 1 − cos 4x = 2sin²(2x). Expression = 2sin²(2x)/x² = 2·[sin 2x/(2x)]²·4 = 8·[sin 2x/2x]² → 8·1 = **8** — matching the formula k²/2 = 16/2 = 8 ✓.",
+      "**NEB-style (3m): Evaluate lim_{x→0} (x − sin x)/x³.** — Direct forms stall; use the cubic refinement **x − sin x ~ x³/6** (from sin x = x − x³/6 + ⋯): the limit is **1/6**. Derivation without series: x − sin x = x(1 − sin x/x), and 1 − sin x/x = [x − sin x]/x — circular; the honest elementary route applies the standard limits twice via sin x − sin y identities or accepts the known refinement — quote it as a standard result."
+    ],
+    "keyPoints": [
+      "Core star: sin u/u -> 1 (radians). Rescalings: sin(kx)/x -> k; sin(kx)/(mx) -> k/m; tan(kx)/x -> k. Cosine family: (1 - cos x)/x^2 -> 1/2 via 1 - cos x = 2 sin^2(x/2); (1 - cos kx)/x^2 -> k^2/2. Steering: insert kx/kx factors, split via sin/cos, use compound/half-angle identities as reducers. Squeeze safety net: |sin u| <= |u|. Cubic refinements: x - sin x ~ x^3/6; sin x - x cos x ~ x^3/3. Degrees break every trig limit - convert first."
+    ],
+    "importantConcepts": [
+      "The kx/kx insertion is the universal steering move: multiply and divide by the coefficient so every factor becomes a standard star."
+    ],
+    "examples": [
+      "***The half-angle halving*** - 1 - cos x = 2 sin^2(x/2) is why the cosine family limits carry 1/2 and k^2/2: the identity does the arithmetic."
+    ],
+    "universalFacts": [
+      "Small-angle approximations in optics and pendulum motion (sin th ~ th) are sin x/x -> 1 in engineering clothing."
+    ],
+    "importantStatements": [
+      "\"sin u/u -> 1 (radians); sin(kx)/x -> k; (1 - cos x)/x^2 -> 1/2; (1 - cos kx)/x^2 -> k^2/2.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice (the NEB 2024 x^3 pair is logged on the standard-limits row)."
+    ],
+    "examShortTricks": [
+      "Insert kx/kx. Half-angle for 1 - cos. Compound-angle identities for differences. Quote radians. Fallback: cubic refinements x - sin x ~ x^3/6."
+    ],
+    "examNotes": [
+      "Show the insertion step explicitly (write the kx/kx factors) - the steering, not just the answer, earns the method mark."
+    ],
+    "formulas": [
+      "- lim_{x→0} sin(kx)/x = k; sin(kx)/(mx) = k/m; tan(kx)/x = k\n- lim_{x→0} (1 − cos x)/x² = 1/2; (1 − cos kx)/x² = k²/2\n- 1 − cos x = 2sin²(x/2); x − sin x ~ x³/6"
+    ],
+    "practice": [
+      "Evaluate lim_{x→0} sin 5x/sin 3x.",
+      "Evaluate lim_{x→0} (1 − cos 4x)/x².",
+      "Evaluate lim_{x→0} (x − sin x)/x³."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Evaluate lim_{x→0} sin 5x/sin 3x.** — **Steering by insertion:** multiply and divide each sine by its own argument: sin 5x/sin 3x = [5x · (sin 5x)/(5x)] / [3x · (sin 3x)/(3x)] = (5/3) · [(sin 5x)/(5x)] / [(sin 3x)/(3x)]. **Apply the star:** as x → 0, both 5x → 0 and 3x → 0, so (sin 5x)/(5x) → 1 and (sin 3x)/(3x) → 1 (radians throughout). **Result:** (5/3)·(1/1) = **5/3**. **General rule harvested:** lim_{x→0} sin(kx)/sin(mx) = k/m — the double insertion turns any sine ratio into a coefficient ratio.",
+      "**NEB-style (3m): Evaluate lim_{x→0} (1 − cos 4x)/x².** — **Half-angle identity:** 1 − cos θ = 2sin²(θ/2), so 1 − cos 4x = **2sin²(2x)**. **Rewrite:** (1 − cos 4x)/x² = 2sin²(2x)/x² = 2 · [sin 2x/(2x)]² · (2x)²/x² = 2 · [sin 2x/(2x)]² · 4 = **8·[sin 2x/(2x)]²**. **Apply the star:** sin 2x/(2x) → 1 as x → 0 ⟹ the limit is 8·1² = **8**. **Formula check:** the general result (1 − cos kx)/x² → k²/2 gives 4²/2 = 16/2 = 8 ✓ — the half-angle identity is exactly where the ½ and the k² come from.",
+      "**NEB-style (3m): Evaluate lim_{x→0} (x − sin x)/x³.** — **Why steering stalls:** both x − sin x and x³ vanish to third order — the first-order standard limits cancel out, exposing the cubic layer. **Cubic refinement (standard result):** from the small-x expansion sin x = x − x³/6 + O(x⁵) (radians), **x − sin x = x³/6 + O(x⁵) ~ x³/6**. **Limit:** (x − sin x)/x³ → (x³/6)/x³ = **1/6**. **Consistency:** the companion limit (sin x − x cos x)/x³ = 1/3 (NEB 2024) satisfies the identity (x − sin x) + (sin x − x cos x) = x(1 − cos x) ~ x³/2, and 1/6 + 1/3 = 1/2 ✓ — the three refinements interlock. At this level the refinement is quoted as a standard result derived from the sin x/x machinery."
+    ]
+  }
 }

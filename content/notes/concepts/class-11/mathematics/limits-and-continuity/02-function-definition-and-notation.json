@@ -6,30 +6,113 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-function",
   "notes": [
-    "**Definition.** A function f: A → B assigns to every x ∈ A exactly one value f(x) ∈ B; A is the domain and the set of attained values is the range, a subset of B.",
-    "**Notation.** f(x) is the output at input x, not a product; f(a) means substitute a for x wherever the rule is valid at a.",
-    "**Domain restrictions.** Exclude zero denominators, negative even roots and non-positive logarithm arguments; the domain fixes which limits and one-sided approaches are meaningful.",
-    "**Piecewise rules.** When different formulas apply on different intervals, evaluate each branch separately and pay special attention to the boundary point where the rule changes.",
-    "**Worked example.** For f(x) = (x² − 1)/(x − 1), f(1) is undefined but the rule simplifies to x + 1 for x ≠ 1, so the graph is a line with a single hole at (1, 2).",
-    "**Exam caution.** A function is not fully specified until its domain is stated; f(x) = x² on ℝ and on [0, ∞) are different functions with different inverses."
+    "## 1. Topic Introduction — Notation Before Limits\n\nFunctions, their notation and their evaluation are the raw material limits will act on. This topic fixes the vocabulary: **f: A → B**, image, natural domain, evaluation at points, and the difference between an expression and a function.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition and notation\n\n- **f: A → B** assigns to each x ∈ A exactly one y ∈ B; x is the **independent variable**, y = f(x) the **dependent** one.\n- **Image** f(a); **pre-image** of y are the x's with f(x) = y; **range** = set of all images.\n- f and g are **equal** only when domains match and f(x) = g(x) on the whole domain.\n\n### 2.2 Evaluation mechanics\n\n- f(a) means \"substitute a for x everywhere\" — including inside absolute values, roots and piecewise branches.\n- **Difference quotient:** [f(x + h) − f(x)]/h — the object whose limit (row 44+) becomes the derivative; computing it is evaluation discipline.\n\n### 2.3 Natural domain\n\n- The largest set of real inputs where the formula is defined: the bans (denominator, even root, log) from the function topic apply unchanged.\n\n### 2.4 Piecewise functions\n\n- Different formulas on different intervals; **evaluation picks the branch containing the input** — the skill one-sided limits will formalise.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Function** | Exactly one image per input | f: ℝ → ℝ, f(x) = x² |\n| **Image** | f(a) — the output at a | f(2) = 4 |\n| **Difference quotient** | [f(x+h) − f(x)]/h | the derivative's seed |\n| **Piecewise** | Branch rules by interval | |x| = ±x by sign |",
+    "## 4. Detailed Explanation\n\n### 4.1 Notation is a contract\n\n- f: A → B declares domain and codomain; the range may be smaller. Writing f(x) without a domain invites the domain question — always ask it.\n\n### 4.2 The difference quotient as rehearsal\n\n- [f(x+h) − f(x)]/h requires composing f at x + h correctly — the algebraic fluency that derivatives will assume. Practice it here, before limits raise the stakes.\n\n### 4.3 Piecewise evaluation = one-sided thinking\n\n- |x| evaluated at negative inputs uses the −x branch; the same branch-selection reappears as left-hand limits. The habit starts here.",
+    "## 5. Comparison Tables\n\n**Expression vs function**\n\n| Basis | Expression | Function |\n|---|---|---|\n| identity | a formula | formula + domain + rule |\n| example | x² + 1 | f: [0, ∞) → ℝ, f(x) = x² + 1 |\n| equality test | algebraic | domain AND values |",
+    "## 6. Common Confusions\n\n**f(x + h) ≠ f(x) + h:** substitute the *whole* expression x + h into f — the classic expansion error.",
+    "**Range ≠ codomain:** the codomain is declared; the range is earned by the formula.",
+    "**Piecewise boundaries:** at a joint, both branches' formulas may be candidates — evaluation needs the interval containing the point.",
+    "## 7. Exam Application\n\n**NEB-style (3m): If f(x) = x² − 3x + 2, find f(0), f(2), f(x + h) − f(x) and simplify the difference quotient.** — f(0) = **2**; f(2) = 4 − 6 + 2 = **0**. f(x + h) = (x+h)² − 3(x+h) + 2 = x² + 2xh + h² − 3x − 3h + 2, so f(x+h) − f(x) = **2xh + h² − 3h = h(2x + h − 3)**. **Difference quotient:** h(2x + h − 3)/h = **2x + h − 3** — note the h cancels (h ≠ 0 licensed); its limit as h → 0 will be 2x − 3, the derivative.",
+    "**NEB-style (2m): Find the natural domain of f(x) = (x + 1)/(x² − 4) and evaluate f(3).** — Ban: x² − 4 ≠ 0 ⟹ x ≠ ±2; **domain = ℝ \\ {−2, 2}**. f(3) = 4/5.",
+    "**NEB-style (2m): For f(x) = { x + 1 if x < 2; x² − 1 if x ≥ 2 }, evaluate f(1), f(2), f(3).** — f(1): 1 < 2 ⟹ first branch ⟹ **2**. f(2): 2 ≥ 2 ⟹ second branch ⟹ **3**. f(3): second branch ⟹ **8**. The branch boundary x = 2 belongs to the second piece (≥) — boundary ownership is part of the definition."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "For f(x) = x² − 3x + 2, find f(0), f(2) and simplify [f(x+h) − f(x)]/h.",
+    "Find the natural domain of (x + 1)/(x² − 4) and evaluate f(3).",
+    "Evaluate the piecewise f at 1, 2, 3 for the branch rule given above."
+  ],
+  "universalFacts": [
+    "Tax brackets are piecewise functions: income picks the bracket branch, exactly like piecewise evaluation - and the joints are where disputes (discontinuities) live."
+  ],
   "animation3D": "limits-and-continuity-function",
   "motionGraphics": "limits-and-continuity-function",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "A function assigns exactly one output to each input in its domain; f(x) notation, domain, range and piecewise rules fix what a limit question is asking.",
+  "examples": [
+    "***The h that cancels*** - f(x+h) - f(x) always factors h out; the cancellation is legal because h != 0 in the difference quotient - the same exclusion logic as limits."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): If f(x) = x² − 3x + 2, find f(0), f(2), and simplify the difference quotient [f(x + h) − f(x)]/h.** — **Evaluations:** f(0) = 0 − 0 + 2 = **2**; f(2) = 4 − 6 + 2 = **0**. **Difference quotient:** first expand f(x + h) = (x + h)² − 3(x + h) + 2 = x² + 2xh + h² − 3x − 3h + 2 — substituting the *whole* input, not adding h to the output. Then f(x+h) − f(x) = 2xh + h² − 3h = **h(2x + h − 3)** — h factors out cleanly. **Quotient:** h(2x + h − 3)/h = **2x + h − 3**, the cancellation licensed because h ≠ 0 in the difference quotient. (Preview: letting h → 0 gives 2x − 3 — the derivative this quotient is rehearsing.)",
+    "**NEB-style (2m): Find the natural domain of f(x) = (x + 1)/(x² − 4) and evaluate f(3).** — **Domain:** the single ban is the denominator: x² − 4 ≠ 0 ⟹ (x−2)(x+2) ≠ 0 ⟹ **x ≠ 2 and x ≠ −2**. Domain = **ℝ \\ {−2, 2}** = (−∞, −2) ∪ (−2, 2) ∪ (2, ∞). No root or log bans apply. **Evaluation:** f(3) = (3 + 1)/(9 − 4) = **4/5** — a legal input since 3 ∉ {±2}.",
+    "**NEB-style (2m): Let f(x) = x + 1 for x < 2 and f(x) = x² − 1 for x ≥ 2. Evaluate f(1), f(2) and f(3).** — **f(1):** 1 < 2 ⟹ first branch: 1 + 1 = **2**. **f(2):** 2 ≥ 2 ⟹ second branch (the boundary belongs to the ≥ piece by the definition): 4 − 1 = **3**. **f(3):** second branch: 9 − 1 = **8**. **Note:** boundary ownership is part of the function's definition — here x = 2 is claimed by the second branch, which also means the two branches disagree at the joint (2 vs 3), a jump the one-sided limits of later rows will measure precisely."
+  ],
+  "formulas": [
+    "- f: A → B; range = {f(x) : x ∈ A}\n- difference quotient: [f(x + h) − f(x)]/h, h ≠ 0\n- piecewise: value = branch rule on the interval containing the input"
+  ],
+  "keyPoints": [
+    "f: A -> B assigns exactly one image to each input; range = set of images, may be smaller than codomain. Equality of functions: same domain AND same values. Evaluation: substitute the whole input, including inside roots and piecewise branches. Difference quotient [f(x+h) - f(x)]/h: expand f(x+h) fully, factor out h, cancel (h != 0 licensed) - the derivative's seed. Natural domain: the usual bans. Piecewise: pick the branch whose interval contains the input; boundary ownership is declared by the definition."
+  ],
+  "summary": "Before limits, the vocabulary: a **function** f: A → B assigns exactly one image to each input, with **range** = the images actually achieved (possibly smaller than the codomain) and equality of functions requiring matching domains *and* values. **Evaluation** is wholesale substitution — including inside roots and piecewise branches, where the branch whose interval contains the input decides (boundary ownership is declared, not guessed). The **difference quotient** [f(x+h) − f(x)]/h is the topic's real protagonist: expanding f(x+h) fully (x² − 3x + 2 gives h(2x + h − 3)/h = 2x + h − 3) and cancelling h — licensed by h ≠ 0 — is the exact muscle the derivative will demand. The **natural domain** follows the standing bans; piecewise joints preview one-sided limits. Functions are expressions plus contracts: domain declared, branch chosen, h cancelled.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"f: A -> B assigns exactly one image per input; [f(x+h) - f(x)]/h is the difference quotient; piecewise evaluation selects the branch containing the input.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Substitute wholesale. Factor h out of f(x+h) - f(x). Piecewise: check the interval first. Domain: the usual three bans."
+  ],
+  "examNotes": [
+    "Show the expansion of f(x + h) line by line - compressed jumps hide sign errors and lose method marks."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "Evaluation discipline is the hidden prerequisite of calculus: f(x + h) expanded correctly today is the difference quotient tomorrow."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Notation Before Limits\n\nFunctions, their notation and their evaluation are the raw material limits will act on. This topic fixes the vocabulary: **f: A → B**, image, natural domain, evaluation at points, and the difference between an expression and a function.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition and notation\n\n- **f: A → B** assigns to each x ∈ A exactly one y ∈ B; x is the **independent variable**, y = f(x) the **dependent** one.\n- **Image** f(a); **pre-image** of y are the x's with f(x) = y; **range** = set of all images.\n- f and g are **equal** only when domains match and f(x) = g(x) on the whole domain.\n\n### 2.2 Evaluation mechanics\n\n- f(a) means \"substitute a for x everywhere\" — including inside absolute values, roots and piecewise branches.\n- **Difference quotient:** [f(x + h) − f(x)]/h — the object whose limit (row 44+) becomes the derivative; computing it is evaluation discipline.\n\n### 2.3 Natural domain\n\n- The largest set of real inputs where the formula is defined: the bans (denominator, even root, log) from the function topic apply unchanged.\n\n### 2.4 Piecewise functions\n\n- Different formulas on different intervals; **evaluation picks the branch containing the input** — the skill one-sided limits will formalise.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Function** | Exactly one image per input | f: ℝ → ℝ, f(x) = x² |\n| **Image** | f(a) — the output at a | f(2) = 4 |\n| **Difference quotient** | [f(x+h) − f(x)]/h | the derivative's seed |\n| **Piecewise** | Branch rules by interval | |x| = ±x by sign |",
+      "## 4. Detailed Explanation\n\n### 4.1 Notation is a contract\n\n- f: A → B declares domain and codomain; the range may be smaller. Writing f(x) without a domain invites the domain question — always ask it.\n\n### 4.2 The difference quotient as rehearsal\n\n- [f(x+h) − f(x)]/h requires composing f at x + h correctly — the algebraic fluency that derivatives will assume. Practice it here, before limits raise the stakes.\n\n### 4.3 Piecewise evaluation = one-sided thinking\n\n- |x| evaluated at negative inputs uses the −x branch; the same branch-selection reappears as left-hand limits. The habit starts here.",
+      "## 5. Comparison Tables\n\n**Expression vs function**\n\n| Basis | Expression | Function |\n|---|---|---|\n| identity | a formula | formula + domain + rule |\n| example | x² + 1 | f: [0, ∞) → ℝ, f(x) = x² + 1 |\n| equality test | algebraic | domain AND values |",
+      "## 6. Common Confusions\n\n**f(x + h) ≠ f(x) + h:** substitute the *whole* expression x + h into f — the classic expansion error.",
+      "**Range ≠ codomain:** the codomain is declared; the range is earned by the formula.",
+      "**Piecewise boundaries:** at a joint, both branches' formulas may be candidates — evaluation needs the interval containing the point.",
+      "## 7. Exam Application\n\n**NEB-style (3m): If f(x) = x² − 3x + 2, find f(0), f(2), f(x + h) − f(x) and simplify the difference quotient.** — f(0) = **2**; f(2) = 4 − 6 + 2 = **0**. f(x + h) = (x+h)² − 3(x+h) + 2 = x² + 2xh + h² − 3x − 3h + 2, so f(x+h) − f(x) = **2xh + h² − 3h = h(2x + h − 3)**. **Difference quotient:** h(2x + h − 3)/h = **2x + h − 3** — note the h cancels (h ≠ 0 licensed); its limit as h → 0 will be 2x − 3, the derivative.",
+      "**NEB-style (2m): Find the natural domain of f(x) = (x + 1)/(x² − 4) and evaluate f(3).** — Ban: x² − 4 ≠ 0 ⟹ x ≠ ±2; **domain = ℝ \\ {−2, 2}**. f(3) = 4/5.",
+      "**NEB-style (2m): For f(x) = { x + 1 if x < 2; x² − 1 if x ≥ 2 }, evaluate f(1), f(2), f(3).** — f(1): 1 < 2 ⟹ first branch ⟹ **2**. f(2): 2 ≥ 2 ⟹ second branch ⟹ **3**. f(3): second branch ⟹ **8**. The branch boundary x = 2 belongs to the second piece (≥) — boundary ownership is part of the definition."
+    ],
+    "keyPoints": [
+      "f: A -> B assigns exactly one image to each input; range = set of images, may be smaller than codomain. Equality of functions: same domain AND same values. Evaluation: substitute the whole input, including inside roots and piecewise branches. Difference quotient [f(x+h) - f(x)]/h: expand f(x+h) fully, factor out h, cancel (h != 0 licensed) - the derivative's seed. Natural domain: the usual bans. Piecewise: pick the branch whose interval contains the input; boundary ownership is declared by the definition."
+    ],
+    "importantConcepts": [
+      "Evaluation discipline is the hidden prerequisite of calculus: f(x + h) expanded correctly today is the difference quotient tomorrow."
+    ],
+    "examples": [
+      "***The h that cancels*** - f(x+h) - f(x) always factors h out; the cancellation is legal because h != 0 in the difference quotient - the same exclusion logic as limits."
+    ],
+    "universalFacts": [
+      "Tax brackets are piecewise functions: income picks the bracket branch, exactly like piecewise evaluation - and the joints are where disputes (discontinuities) live."
+    ],
+    "importantStatements": [
+      "\"f: A -> B assigns exactly one image per input; [f(x+h) - f(x)]/h is the difference quotient; piecewise evaluation selects the branch containing the input.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Substitute wholesale. Factor h out of f(x+h) - f(x). Piecewise: check the interval first. Domain: the usual three bans."
+    ],
+    "examNotes": [
+      "Show the expansion of f(x + h) line by line - compressed jumps hide sign errors and lose method marks."
+    ],
+    "formulas": [
+      "- f: A → B; range = {f(x) : x ∈ A}\n- difference quotient: [f(x + h) − f(x)]/h, h ≠ 0\n- piecewise: value = branch rule on the interval containing the input"
+    ],
+    "practice": [
+      "For f(x) = x² − 3x + 2, find f(0), f(2) and simplify [f(x+h) − f(x)]/h.",
+      "Find the natural domain of (x + 1)/(x² − 4) and evaluate f(3).",
+      "Evaluate the piecewise f at 1, 2, 3 for the branch rule given above."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): If f(x) = x² − 3x + 2, find f(0), f(2), and simplify the difference quotient [f(x + h) − f(x)]/h.** — **Evaluations:** f(0) = 0 − 0 + 2 = **2**; f(2) = 4 − 6 + 2 = **0**. **Difference quotient:** first expand f(x + h) = (x + h)² − 3(x + h) + 2 = x² + 2xh + h² − 3x − 3h + 2 — substituting the *whole* input, not adding h to the output. Then f(x+h) − f(x) = 2xh + h² − 3h = **h(2x + h − 3)** — h factors out cleanly. **Quotient:** h(2x + h − 3)/h = **2x + h − 3**, the cancellation licensed because h ≠ 0 in the difference quotient. (Preview: letting h → 0 gives 2x − 3 — the derivative this quotient is rehearsing.)",
+      "**NEB-style (2m): Find the natural domain of f(x) = (x + 1)/(x² − 4) and evaluate f(3).** — **Domain:** the single ban is the denominator: x² − 4 ≠ 0 ⟹ (x−2)(x+2) ≠ 0 ⟹ **x ≠ 2 and x ≠ −2**. Domain = **ℝ \\ {−2, 2}** = (−∞, −2) ∪ (−2, 2) ∪ (2, ∞). No root or log bans apply. **Evaluation:** f(3) = (3 + 1)/(9 − 4) = **4/5** — a legal input since 3 ∉ {±2}.",
+      "**NEB-style (2m): Let f(x) = x + 1 for x < 2 and f(x) = x² − 1 for x ≥ 2. Evaluate f(1), f(2) and f(3).** — **f(1):** 1 < 2 ⟹ first branch: 1 + 1 = **2**. **f(2):** 2 ≥ 2 ⟹ second branch (the boundary belongs to the ≥ piece by the definition): 4 − 1 = **3**. **f(3):** second branch: 9 − 1 = **8**. **Note:** boundary ownership is part of the function's definition — here x = 2 is claimed by the second branch, which also means the two branches disagree at the joint (2 vs 3), a jump the one-sided limits of later rows will measure precisely."
+    ]
+  }
 }

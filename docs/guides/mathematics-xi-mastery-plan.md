@@ -71,23 +71,23 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 
 | # | Unit | Topic | File | Status |
 |---|---|---|---|---|
-| 27 | Limits | Introduction to limits and continuity | `limits-and-continuity/01-introduction-to-limits-and-continuity.json` | Pending |
-| 28 | Limits | Function: definition and notation | `limits-and-continuity/02-function-definition-and-notation.json` | Pending |
-| 29 | Limits | Value of a function at a point | `limits-and-continuity/03-value-of-function-at-a-point.json` | Pending |
-| 30 | Limits | Right-hand limit | `limits-and-continuity/04-right-hand-limit.json` | Pending |
-| 31 | Limits | Left-hand limit | `limits-and-continuity/05-left-hand-limit.json` | Pending |
-| 32 | Limits | Existence of limit | `limits-and-continuity/06-existence-of-limit.json` | Pending |
-| 33 | Limits | Standard limits | `limits-and-continuity/07-standard-limits.json` | Pending |
-| 34 | Limits | Continuity (intuitive) | `limits-and-continuity/08-continuity-intuitive.json` | Pending |
-| 35 | Limits | Continuity (formal) | `limits-and-continuity/09-continuity-formal.json` | Pending |
-| 36 | Limits | Removable discontinuity | `limits-and-continuity/10-removable-discontinuity.json` | Pending |
-| 37 | Limits | Jump discontinuity | `limits-and-continuity/11-jump-discontinuity.json` | Pending |
-| 38 | Limits | Infinite discontinuity | `limits-and-continuity/12-infinite-discontinuity.json` | Pending |
-| 39 | Limits | Trigonometric limits | `limits-and-continuity/13-trigonometric-limits.json` | Pending |
-| 40 | Limits | Logarithmic and exponential limits | `limits-and-continuity/14-log-exp-limits.json` | Pending |
-| 41 | Limits | Exercise 15.1 | `limits-and-continuity/15-exercise-15-1.json` | Pending |
-| 42 | Limits | Exercise 15.2 | `limits-and-continuity/16-exercise-15-2.json` | Pending |
-| 43 | Limits | Exercise 15.3 | `limits-and-continuity/17-exercise-15-3.json` | Pending |
+| 27 | Limits | Introduction to limits and continuity | `limits-and-continuity/01-introduction-to-limits-and-continuity.json` | Done — mx25-mx30 session 6a: limit idea, notation, value at a point, RHL, LHL, existence; NEB-style practice |
+| 28 | Limits | Function: definition and notation | `limits-and-continuity/02-function-definition-and-notation.json` | Done — mx26: function definition, notation, domain/range recap as limit stage-setting; NEB-style practice |
+| 29 | Limits | Value of a function at a point | `limits-and-continuity/03-value-of-function-at-a-point.json` | Done — mx27: f(a) vs limit distinction, evaluation drills; NEB-style practice |
+| 30 | Limits | Right-hand limit | `limits-and-continuity/04-right-hand-limit.json` | Done — mx28: RHL definition, piecewise branch reading, worked items; NEB-style practice |
+| 31 | Limits | Left-hand limit | `limits-and-continuity/05-left-hand-limit.json` | Done — mx29: LHL definition, symmetric drills; NEB-style practice |
+| 32 | Limits | Existence of limit | `limits-and-continuity/06-existence-of-limit.json` | Done — mx30: LHL = RHL theorem, DNE taxonomy (jump, blow-up, oscillation); NEB-style practice |
+| 33 | Limits | Standard limits | `limits-and-continuity/07-standard-limits.json` | Done — mx31: standard-limit shelf (sin x/x, e-limits, x^n-a^n, (1+x)^(1/x)); PYQs NEB 2022 (e^x-1)/x MCQ, NEB 2024 sin x - x cos x and x - sin x over x^3, NEB 2021 sqrt(7+x)-3 over x-2 |
+| 34 | Limits | Continuity (intuitive) | `limits-and-continuity/08-continuity-intuitive.json` | Done — mx32: pen test, three-part theorem, closure theorems, composition, squeeze rescue x^2 sin(1/x); NEB-style practice |
+| 35 | Limits | Continuity (formal) | `limits-and-continuity/09-continuity-formal.json` | Done — mx33: epsilon-delta statement, sequential characterisation, IVT and EVT with counterexamples; NEB-style practice |
+| 36 | Limits | Removable discontinuity | `limits-and-continuity/10-removable-discontinuity.json` | Done — mx34: hole vs mismatch, repair theorem, factor-and-cancel, per-point triage; NEB-style practice |
+| 37 | Limits | Jump discontinuity | `limits-and-continuity/11-jump-discontinuity.json` | Done — mx35: finite unequal sides, jump size, Heaviside, floor staircase, one-sided continuity; NEB-style practice |
+| 38 | Limits | Infinite discontinuity | `limits-and-continuity/12-infinite-discontinuity.json` | Done — mx36: blow-ups, vertical asymptotes, multiplicity rule, ln x and e^(1/x) walls; NEB-style practice |
+| 39 | Limits | Trigonometric limits | `limits-and-continuity/13-trigonometric-limits.json` | Done — mx37: rescaling sin(kx)/x -> k, half-angle family, compound-angle steering, cubic refinements; NEB-style practice |
+| 40 | Limits | Logarithmic and exponential limits | `limits-and-continuity/14-log-exp-limits.json` | Done — mx38: e-limits, 1^inf bridge e^(lim uv), growth ladder; NEB-style practice |
+| 41 | Limits | Exercise 15.1 | `limits-and-continuity/15-exercise-15-1.json` | Done — mx39: method types A-D (substitution, factoring, conjugate, degree comparison); NEB-style practice |
+| 42 | Limits | Exercise 15.2 | `limits-and-continuity/16-exercise-15-2.json` | Done — mx40: standard-limit reduction patterns, x-bridge, legal splitting; NEB-style practice |
+| 43 | Limits | Exercise 15.3 | `limits-and-continuity/17-exercise-15-3.json` | Done — mx41b: continuity workflow (domain, closure, triage), piecewise seams, full reports; NEB-style practice |
 
 ## Calculus (39 topics)
 
@@ -158,6 +158,8 @@ types, and verified PYQs from `content/practice/questions/class-11/mathematics/`
 | 96 | Mechanics | Dynamics: straight-line motion, uniform acceleration | `computational-methods-or-mechanics/04-mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-accelerati.json` | Pending |
 
 ## Progress log
+
+- Session 6 - Limits & Continuity complete (rows 27-43, 17/17): mx25-mx30 (limit idea, notation, value at a point, RHL, LHL, existence with DNE taxonomy); mx31 standard-limit shelf with verified PYQs NEB 2022 (e^x-1)/x MCQ, NEB 2024 (sin x - x cos x)/x^3 = 1/3 and (x - sin x)/x^3 = 1/6, NEB 2021 (sqrt(7+x)-3)/(x-2) = 1/6; mx32 intuitive continuity (pen test, three-part theorem, closure theorems, squeeze rescue x^2 sin(1/x)); mx33 formal continuity (epsilon-delta, sequential characterisation, IVT/EVT with counterexamples); mx34-mx36 discontinuity triad (removable hole/mismatch + repair theorem; jump size + Heaviside + floor staircase; infinite walls + multiplicity rule + e^(1/x) disguise); mx37 trigonometric limits (rescaling, half-angle family, cubic refinements); mx38 log-exp limits (e-limits, 1^inf bridge e^(lim uv), growth ladder); mx39-mx41b exercise galleries 15.1-15.3 (method types, reduction patterns, continuity workflow). 4 verified PYQs assigned; rest NEB-style practice. Build 101 entries, validator 0 broken. LIMITS & CONTINUITY UNIT COMPLETE (17/17).
 
 - Session 5 - Algebra companions (rows 22, 25, 26, 3/3): function-domain-range, sequence-series and minors-cofactors-determinants companion canonicals upgraded with theorem-grade fields mirroring their parents (domain bans, S_inf licence, adjoint identity). All NEB-style practice. Build 101 entries, validator 0 broken. ALGEBRA UNIT COMPLETE (14/14).
 

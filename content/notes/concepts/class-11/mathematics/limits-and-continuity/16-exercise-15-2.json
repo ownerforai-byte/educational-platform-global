@@ -6,29 +6,112 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-trig-ex",
   "notes": [
-    "**Core tool.** Rewrite every sine or tangent term so its argument tends to zero, then apply lim(u→0) sin u/u = 1 and lim(u→0) tan u/u = 1.",
-    "**Worked example.** lim(x→0) sin 4x / x = 4·lim(u→0) sin u/u = 4 with u = 4x.",
-    "**Cosine form.** Use 1 − cos x = 2 sin²(x/2) to get lim(x→0) (1 − cos x)/x² = 1/2.",
-    "**Identities first.** Convert tan x to sin x/cos x, 1 − cos²x to sin²x, and sin 2x to 2 sin x cos x before applying the standard limits.",
-    "**Non-zero target.** For lim(x→a) sin(x − a)/(x − a) with a ≠ 0, substitute u = x − a; the limit is still 1.",
-    "**Exam caution.** Angles must be in radians, and a factor such as sin 3x contributes 3, not 1, when divided by x."
+    "## 1. Topic Introduction — Drill Gallery 15.2\n\nExercise 15.2 is the **standard-limits drill**: every exercise reduces to sin u/u, (1 − cos u)/u², (eᵘ − 1)/u, ln(1+u)/u, or the e-powers. This canonical packages the reduction patterns with worked exemplars.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The reduction patterns\n\n- **Pattern 1 — coefficient extraction:** sin(ax)/x, tan(ax)/x, sin(ax)/sin(bx) ⟹ insert ax/ax, bx/bx.\n- **Pattern 2 — half-angle:** (1 − cos ax)/x² ⟹ 2sin²(ax/2) route ⟹ a²/2.\n- **Pattern 3 — exponential/log:** (e^{ax} − 1)/x → a; ln(1 + ax)/x → a.\n- **Pattern 4 — 1^∞ powers:** (1 + u)^v ⟹ e^{lim uv}.\n\n### 2.2 Mixed-form handling\n\n- Products/quotients of several 0/0 pieces: split the fraction into standard factors, evaluate each, multiply — limits respect products of existing limits.\n\n### 2.3 Substitution steering\n\n- Composite arguments (sin of something → 0): set u = the inner expression; as x → a, u → 0 and the standard limit applies in u. The chain rule's limit shadow.\n\n### 2.4 Sanity anchors\n\n- sin(ax)/x → a; (1 − cos ax)/x² → a²/2; (e^{ax} − 1)/x → a; ln(1+ax)/x → a — one coefficient a, memorised as \"the a survives, the argument dies\".",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Coefficient extraction** | Insert ax/ax | sin 3x/x → 3 |\n| **Half-angle route** | 1 − cos = 2sin²(θ/2) | (1−cos 2x)/x² → 2 |\n| **Split-and-multiply** | Factor into standard pieces | product of limits |\n| **u-substitution** | Inner argument → 0 | sin(x²)/x² |",
+    "## 4. Detailed Explanation\n\n### 4.1 The \"a survives\" mantra\n\n- In every standard limit with argument ax, the answer carries the coefficient a once (or a² for the cosine-square family): sin 3x/x → 3, (e^{5x} − 1)/x → 5, ln(1+2x)/x → 2, (1 − cos 3x)/x² → 9/2.\n\n### 4.2 Splitting discipline\n\n- Only split a limit into a product when **each factor's limit exists finitely** (the limit product theorem). If a factor's limit fails, the split is illegal — regroup first.\n\n### 4.3 Why substitution is legitimate\n\n- If u = g(x) → 0 as x → a (and u ≠ 0 near a), then lim_{u→0} F(u) = lim_{x→a} F(g(x)) — the composite limit theorem; steering through u is not a trick but a theorem.",
+    "## 5. Comparison Tables\n\n**15.2 pattern table**\n\n| Form | Reduction | Answer |\n|---|---|---|\n| sin(ax)/x | insert ax/ax | a |\n| tan(ax)/x | sin/cos split | a |\n| (1 − cos ax)/x² | half-angle | a²/2 |\n| (e^{ax} − 1)/x | star | a |\n| ln(1+ax)/x | star | a |\n| (1+u)^v | bridge | e^{lim uv} |",
+    "## 6. Common Confusions\n\n**Forgetting the a:** sin 3x/x is 3, not 1 — the insertion is the whole point.",
+    "**Illegal splits:** splitting when one factor's limit does not exist — check existence before multiplying.",
+    "**Degree slips in the cosine family:** (1 − cos ax)/x² carries a², not a — squaring doubles the exponent.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Evaluate lim_{x→0} (tan 3x − sin 3x)/x³.** — Factor: tan 3x − sin 3x = sin 3x(1/cos 3x − 1) = sin 3x(1 − cos 3x)/cos 3x. **Split (all factors have limits):** [sin 3x/x]·[(1 − cos 3x)/x²]·[1/cos 3x] → 3 · (9/2) · 1 = **27/2**. Three stars in one expression — the signature 15.2 compound.",
+    "**NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/ln(1 + 4x).** — **Split via 1:** multiply and divide by x: [(e^{2x} − 1)/x] / [ln(1+4x)/x] → 2/4 = **1/2**. The x-bridge converts both numerator and denominator into standard stars.",
+    "**NEB-style (3m): Evaluate lim_{x→0} sin(x²)/x·... lim_{x→0} sin(x²)/x.** — **Substitution:** u = x² → 0; sin(x²)/x = [sin(x²)/x²]·x → 1·0 = **0**. The star applies to u = x², and the leftover x → 0 kills the product — a star times zero is zero."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Evaluate lim_{x→0} (tan 3x − sin 3x)/x³.",
+    "Evaluate lim_{x→0} (e^{2x} − 1)/ln(1 + 4x).",
+    "Evaluate lim_{x→0} sin(x²)/x."
+  ],
+  "universalFacts": [
+    "Audio engineers match impedances like limit-splitters: each stage must resolve cleanly before the chain multiplies - illegal splits distort."
+  ],
   "animation3D": "limits-and-continuity-trig-ex",
   "motionGraphics": "limits-and-continuity-trig-ex",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Exercise 15.2 applies sin x/x, (1 − cos x)/x² and trigonometric identities to indeterminate trigonometric limits.",
+  "examples": [
+    "***The x-bridge*** - (e^(2x) - 1)/ln(1+4x) becomes a ratio of two stars by inserting x/x: 2 over 4 - one bridge, two stars, one answer."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): Evaluate lim_{x→0} (tan 3x − sin 3x)/x³.** — **Factor the difference:** tan 3x − sin 3x = sin 3x·(1/cos 3x − 1) = **sin 3x·(1 − cos 3x)/cos 3x**. **Rewrite the quotient:** (tan 3x − sin 3x)/x³ = [sin 3x/x] · [(1 − cos 3x)/x²] · [1/cos 3x] — three factors. **Legality check:** each factor's limit exists (stars and a continuous reciprocal) — the split is licensed. **Evaluate:** sin 3x/x → **3**; (1 − cos 3x)/x² → 3²/2 = **9/2** (half-angle route); 1/cos 3x → **1**. **Product:** 3 · (9/2) · 1 = **27/2**. **General form:** (tan ax − sin ax)/x³ → a³/2 — three standard stars chained in one exercise, the signature 15.2 compound.",
+    "**NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/ln(1 + 4x).** — **Form:** 0/0 with mismatched stars — exponential over logarithm. **The x-bridge:** multiply and divide by x: = [(e^{2x} − 1)/x] / [ln(1 + 4x)/x]. **Each star:** (e^{2x} − 1)/x → **2** (the exponential star with a = 2); ln(1 + 4x)/x → **4** (the logarithm star with a = 4). **Quotient:** 2/4 = **1/2**. **Mantra confirmed:** the coefficient survives (2 and 4), the arguments (2x, 4x) die into the stars — one bridge, two stars, one clean answer.",
+    "**NEB-style (3m): Evaluate lim_{x→0} sin(x²)/x.** — **Substitution steering:** set u = x²; as x → 0, u → 0 (composite limit theorem licenses the star in u). **Rewrite:** sin(x²)/x = [sin(x²)/(x²)] · x — inserting the x²/x² factor exposes the star. **Evaluate:** sin(x²)/(x²) → **1** (the star at u = x²); the leftover factor x → **0**. **Product:** 1 · 0 = **0**. **Moral:** a standard star times an explicit zero is zero — the star normalises the singular part, and whatever simple factor remains just gets substituted. Not every 0/0 is \"interesting\": this one is a star wearing a hat."
+  ],
+  "formulas": [
+    "- sin(ax)/x → a; tan(ax)/x → a; sin(ax)/sin(bx) → a/b\n- (1 − cos ax)/x² → a²/2; (e^{ax} − 1)/x → a; ln(1+ax)/x → a\n- (tan ax − sin ax)/x³ → a³/2\n- split rule: lim fg = lim f · lim g when both exist"
+  ],
+  "keyPoints": [
+    "Exercise 15.2 reduction patterns: (1) coefficient extraction - sin(ax)/x -> a, tan(ax)/x -> a, sin(ax)/sin(bx) -> a/b; (2) half-angle - (1 - cos ax)/x^2 -> a^2/2; (3) exp/log - (e^(ax) - 1)/x -> a, ln(1+ax)/x -> a; (4) 1^inf powers via the bridge e^(lim uv). Mantra: the coefficient a survives, the argument dies. Split only when every factor's limit exists (limit product theorem). u-substitution: inner argument -> 0 licenses the star in u (composite limit theorem). Signature compound: (tan 3x - sin 3x)/x^3 -> 27/2 via three stars."
+  ],
+  "summary": "Exercise 15.2 is the **standard-limits drill** — every item is a star in costume. **Pattern 1:** coefficient extraction, sin(ax)/x → a, tan(ax)/x → a, sin(ax)/sin(bx) → a/b — insert ax/ax. **Pattern 2:** the half-angle route, (1 − cos ax)/x² → **a²/2**. **Pattern 3:** exponential and logarithm stars, (e^{ax} − 1)/x → a, ln(1+ax)/x → a — and the **x-bridge** turns mixed ratios into star quotients ((e^{2x} − 1)/ln(1+4x) → 2/4 = 1/2). **Pattern 4:** 1^∞ powers through the bridge e^{lim uv}. **Split legally** — only when every factor's limit exists — then multiply (tan 3x − sin 3x over x³ chains three stars into 27/2). **Substitution** steers composite arguments into the star (sin(x²)/x = star × x → 0). The mantra carries the topic: *the coefficient a survives, the argument dies*.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"sin(ax)/x -> a; (1 - cos ax)/x^2 -> a^2/2; (e^(ax) - 1)/x -> a; ln(1+ax)/x -> a; (1+u)^v -> e^(lim uv).\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Insert ax/ax everywhere. Half-angle for 1 - cos. x-bridge for exp/log ratios. Check factor limits before splitting. Star times 0 = 0."
+  ],
+  "examNotes": [
+    "Write the insertion step for each star - examiners look for the kx/kx factors as evidence of method, not memorised answers."
+  ],
   "mcs": [],
-  "importantConcepts": [],
-  "importantTasks": []
+  "importantConcepts": [
+    "15.2 is pure reduction: every exercise is one or more standard stars glued by products, quotients and substitutions - split legally, multiply confidently."
+  ],
+  "importantTasks": [],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Drill Gallery 15.2\n\nExercise 15.2 is the **standard-limits drill**: every exercise reduces to sin u/u, (1 − cos u)/u², (eᵘ − 1)/u, ln(1+u)/u, or the e-powers. This canonical packages the reduction patterns with worked exemplars.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The reduction patterns\n\n- **Pattern 1 — coefficient extraction:** sin(ax)/x, tan(ax)/x, sin(ax)/sin(bx) ⟹ insert ax/ax, bx/bx.\n- **Pattern 2 — half-angle:** (1 − cos ax)/x² ⟹ 2sin²(ax/2) route ⟹ a²/2.\n- **Pattern 3 — exponential/log:** (e^{ax} − 1)/x → a; ln(1 + ax)/x → a.\n- **Pattern 4 — 1^∞ powers:** (1 + u)^v ⟹ e^{lim uv}.\n\n### 2.2 Mixed-form handling\n\n- Products/quotients of several 0/0 pieces: split the fraction into standard factors, evaluate each, multiply — limits respect products of existing limits.\n\n### 2.3 Substitution steering\n\n- Composite arguments (sin of something → 0): set u = the inner expression; as x → a, u → 0 and the standard limit applies in u. The chain rule's limit shadow.\n\n### 2.4 Sanity anchors\n\n- sin(ax)/x → a; (1 − cos ax)/x² → a²/2; (e^{ax} − 1)/x → a; ln(1+ax)/x → a — one coefficient a, memorised as \"the a survives, the argument dies\".",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Coefficient extraction** | Insert ax/ax | sin 3x/x → 3 |\n| **Half-angle route** | 1 − cos = 2sin²(θ/2) | (1−cos 2x)/x² → 2 |\n| **Split-and-multiply** | Factor into standard pieces | product of limits |\n| **u-substitution** | Inner argument → 0 | sin(x²)/x² |",
+      "## 4. Detailed Explanation\n\n### 4.1 The \"a survives\" mantra\n\n- In every standard limit with argument ax, the answer carries the coefficient a once (or a² for the cosine-square family): sin 3x/x → 3, (e^{5x} − 1)/x → 5, ln(1+2x)/x → 2, (1 − cos 3x)/x² → 9/2.\n\n### 4.2 Splitting discipline\n\n- Only split a limit into a product when **each factor's limit exists finitely** (the limit product theorem). If a factor's limit fails, the split is illegal — regroup first.\n\n### 4.3 Why substitution is legitimate\n\n- If u = g(x) → 0 as x → a (and u ≠ 0 near a), then lim_{u→0} F(u) = lim_{x→a} F(g(x)) — the composite limit theorem; steering through u is not a trick but a theorem.",
+      "## 5. Comparison Tables\n\n**15.2 pattern table**\n\n| Form | Reduction | Answer |\n|---|---|---|\n| sin(ax)/x | insert ax/ax | a |\n| tan(ax)/x | sin/cos split | a |\n| (1 − cos ax)/x² | half-angle | a²/2 |\n| (e^{ax} − 1)/x | star | a |\n| ln(1+ax)/x | star | a |\n| (1+u)^v | bridge | e^{lim uv} |",
+      "## 6. Common Confusions\n\n**Forgetting the a:** sin 3x/x is 3, not 1 — the insertion is the whole point.",
+      "**Illegal splits:** splitting when one factor's limit does not exist — check existence before multiplying.",
+      "**Degree slips in the cosine family:** (1 − cos ax)/x² carries a², not a — squaring doubles the exponent.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Evaluate lim_{x→0} (tan 3x − sin 3x)/x³.** — Factor: tan 3x − sin 3x = sin 3x(1/cos 3x − 1) = sin 3x(1 − cos 3x)/cos 3x. **Split (all factors have limits):** [sin 3x/x]·[(1 − cos 3x)/x²]·[1/cos 3x] → 3 · (9/2) · 1 = **27/2**. Three stars in one expression — the signature 15.2 compound.",
+      "**NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/ln(1 + 4x).** — **Split via 1:** multiply and divide by x: [(e^{2x} − 1)/x] / [ln(1+4x)/x] → 2/4 = **1/2**. The x-bridge converts both numerator and denominator into standard stars.",
+      "**NEB-style (3m): Evaluate lim_{x→0} sin(x²)/x·... lim_{x→0} sin(x²)/x.** — **Substitution:** u = x² → 0; sin(x²)/x = [sin(x²)/x²]·x → 1·0 = **0**. The star applies to u = x², and the leftover x → 0 kills the product — a star times zero is zero."
+    ],
+    "keyPoints": [
+      "Exercise 15.2 reduction patterns: (1) coefficient extraction - sin(ax)/x -> a, tan(ax)/x -> a, sin(ax)/sin(bx) -> a/b; (2) half-angle - (1 - cos ax)/x^2 -> a^2/2; (3) exp/log - (e^(ax) - 1)/x -> a, ln(1+ax)/x -> a; (4) 1^inf powers via the bridge e^(lim uv). Mantra: the coefficient a survives, the argument dies. Split only when every factor's limit exists (limit product theorem). u-substitution: inner argument -> 0 licenses the star in u (composite limit theorem). Signature compound: (tan 3x - sin 3x)/x^3 -> 27/2 via three stars."
+    ],
+    "importantConcepts": [
+      "15.2 is pure reduction: every exercise is one or more standard stars glued by products, quotients and substitutions - split legally, multiply confidently."
+    ],
+    "examples": [
+      "***The x-bridge*** - (e^(2x) - 1)/ln(1+4x) becomes a ratio of two stars by inserting x/x: 2 over 4 - one bridge, two stars, one answer."
+    ],
+    "universalFacts": [
+      "Audio engineers match impedances like limit-splitters: each stage must resolve cleanly before the chain multiplies - illegal splits distort."
+    ],
+    "importantStatements": [
+      "\"sin(ax)/x -> a; (1 - cos ax)/x^2 -> a^2/2; (e^(ax) - 1)/x -> a; ln(1+ax)/x -> a; (1+u)^v -> e^(lim uv).\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Insert ax/ax everywhere. Half-angle for 1 - cos. x-bridge for exp/log ratios. Check factor limits before splitting. Star times 0 = 0."
+    ],
+    "examNotes": [
+      "Write the insertion step for each star - examiners look for the kx/kx factors as evidence of method, not memorised answers."
+    ],
+    "formulas": [
+      "- sin(ax)/x → a; tan(ax)/x → a; sin(ax)/sin(bx) → a/b\n- (1 − cos ax)/x² → a²/2; (e^{ax} − 1)/x → a; ln(1+ax)/x → a\n- (tan ax − sin ax)/x³ → a³/2\n- split rule: lim fg = lim f · lim g when both exist"
+    ],
+    "practice": [
+      "Evaluate lim_{x→0} (tan 3x − sin 3x)/x³.",
+      "Evaluate lim_{x→0} (e^{2x} − 1)/ln(1 + 4x).",
+      "Evaluate lim_{x→0} sin(x²)/x."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Evaluate lim_{x→0} (tan 3x − sin 3x)/x³.** — **Factor the difference:** tan 3x − sin 3x = sin 3x·(1/cos 3x − 1) = **sin 3x·(1 − cos 3x)/cos 3x**. **Rewrite the quotient:** (tan 3x − sin 3x)/x³ = [sin 3x/x] · [(1 − cos 3x)/x²] · [1/cos 3x] — three factors. **Legality check:** each factor's limit exists (stars and a continuous reciprocal) — the split is licensed. **Evaluate:** sin 3x/x → **3**; (1 − cos 3x)/x² → 3²/2 = **9/2** (half-angle route); 1/cos 3x → **1**. **Product:** 3 · (9/2) · 1 = **27/2**. **General form:** (tan ax − sin ax)/x³ → a³/2 — three standard stars chained in one exercise, the signature 15.2 compound.",
+      "**NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/ln(1 + 4x).** — **Form:** 0/0 with mismatched stars — exponential over logarithm. **The x-bridge:** multiply and divide by x: = [(e^{2x} − 1)/x] / [ln(1 + 4x)/x]. **Each star:** (e^{2x} − 1)/x → **2** (the exponential star with a = 2); ln(1 + 4x)/x → **4** (the logarithm star with a = 4). **Quotient:** 2/4 = **1/2**. **Mantra confirmed:** the coefficient survives (2 and 4), the arguments (2x, 4x) die into the stars — one bridge, two stars, one clean answer.",
+      "**NEB-style (3m): Evaluate lim_{x→0} sin(x²)/x.** — **Substitution steering:** set u = x²; as x → 0, u → 0 (composite limit theorem licenses the star in u). **Rewrite:** sin(x²)/x = [sin(x²)/(x²)] · x — inserting the x²/x² factor exposes the star. **Evaluate:** sin(x²)/(x²) → **1** (the star at u = x²); the leftover factor x → **0**. **Product:** 1 · 0 = **0**. **Moral:** a standard star times an explicit zero is zero — the star normalises the singular part, and whatever simple factor remains just gets substituted. Not every 0/0 is \"interesting\": this one is a star wearing a hat."
+    ]
+  }
 }

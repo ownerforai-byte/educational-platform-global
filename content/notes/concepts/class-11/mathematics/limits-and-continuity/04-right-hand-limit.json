@@ -6,30 +6,113 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-rhl",
   "notes": [
-    "**Definition.** lim(x→a⁺) f(x) = L means f(x) → L as x approaches a from the right, i.e. through values x > a; it is also written f(a + 0) or RHL.",
-    "**Substitution trick.** Put x = a + h with h > 0 and h → 0; then lim(x→a⁺) f(x) becomes lim(h→0⁺) f(a + h), which is usually easier to simplify.",
-    "**Worked example.** lim(x→0⁺) |x|/x = lim(x→0⁺) x/x = 1, because |x| = x for every positive x.",
-    "**Sign functions.** For f(x) = [x] (greatest integer), lim(x→2⁺) [x] = 2 while lim(x→2⁻) [x] = 1, so the two-sided limit at 2 does not exist.",
-    "**Vertical asymptotes.** lim(x→0⁺) 1/x = +∞; an infinite one-sided limit is still a valid description of behaviour but is not a finite limit.",
-    "**Exam caution.** Keep the strict inequality x > a throughout; including x = a or using negative h silently converts the RHL into a different question."
+    "## 1. Topic Introduction — Approaching From the Right\n\nThe **right-hand limit** lim_{x→a⁺} f(x) reads the function's behaviour as x slides toward a from values **greater** than a. Piecewise functions, domain edges and blow-ups make one-sided thinking unavoidable.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition\n\n- **lim_{x→a⁺} f(x) = L** ⟺ f(x) → L as x takes values **a < x < a + δ** with δ → 0 — from the right side of a on the number line.\n- Graphically: follow the curve toward x = a moving **leftward** (from larger x); the y-height approached is L.\n\n### 2.2 When the right-hand limit is the whole story\n\n- **Domain edge:** √x at 0 exists only from the right (x ≥ 0) — lim_{x→0⁺} √x = 0 and no left approach is even defined.\n- **Piecewise boundary:** on [a, ∞) pieces, a⁺ reads the branch that owns the right neighbourhood.\n\n### 2.3 Computation\n\n- Substitute a value slightly greater than a into the **branch/rule governing the right side**; for blow-ups, track the sign of the denominator for x > a.\n\n### 2.4 The existence theorem (preview)\n\n- lim_{x→a} f(x) = L ⟺ **both** one-sided limits exist and equal L. One-sided limits are the atoms; two-sided limits are molecules.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Right-hand limit** | Approach from x > a | lim_{x→0⁺} √x = 0 |\n| **Domain edge** | a at the boundary of the domain | √x at 0 |\n| **Blow-up side** | Sign of denominator for x > a | 1/(x−2)⁺ → +∞ |\n| **Existence theorem** | Both sides must agree | fails for 1/x |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why one side at a time\n\n- Functions may behave differently on either side of a — different branch formulas, different signs, different rates. One-sided limits isolate each story before the existence test merges them.\n\n### 4.2 Reading the graph right-to-left\n\n- The finger traces the curve from the right toward a: the height it settles toward is lim_{x→a⁺}. Open dots, jumps and asymptotes all become readable.\n\n### 4.3 Blow-up signs\n\n- For 1/(x − 2): x > 2 ⟹ denominator positive ⟹ +∞; the right-hand limit is +∞ while the left is −∞ — sign bookkeeping done side by side.",
+    "## 5. Comparison Tables\n\n**Right-hand limit scenarios**\n\n| Case at a | Right-hand behaviour |\n|---|---|\n| continuous | equals f(a) |\n| piecewise branch | that branch's value approached |\n| domain edge | only side that exists |\n| c/0 with positive side | +∞ |",
+    "## 6. Common Confusions\n\n**a⁺ means x > a:** the plus is about *where x comes from*, not the sign of the limit.",
+    "**Domain edges are one-sided by nature:** √x at 0 has no left-hand limit because the left side isn't in the domain — not because it disagrees.",
+    "**∞ on one side still kills the two-sided limit:** the existence theorem needs finite agreement.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Evaluate lim_{x→2⁺} 1/(x − 2).** — For x slightly greater than 2, x − 2 is **positive and small** ⟹ 1/(x−2) is large positive: **lim = +∞**. (The left-hand limit would be −∞ — the sides disagree, so the two-sided limit does not exist.)",
+    "**NEB-style (2m): For f(x) = { x + 1 if x < 2; x² if x ≥ 2 }, evaluate lim_{x→2⁺} f(x).** — The right neighbourhood x > 2 belongs to the **second branch**: lim_{x→2⁺} x² = **4**. (The left-hand limit via the first branch is 3 — the mismatch at 2 is a jump discontinuity of size 1.)",
+    "**NEB-style (2m): Evaluate lim_{x→0⁺} √x and explain why no left-hand limit exists.** — √x is defined for x ≥ 0; approaching 0 from the right: √x → **0**. From the left, √x is **undefined** — not a disagreement but an absence: the left-hand limit cannot even be formed. Hence the two-sided limit equals the right-hand limit 0 by default (the domain's edge makes the one-sided value the whole story)."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Evaluate lim_{x→2⁺} 1/(x − 2).",
+    "For the piecewise f above, evaluate lim_{x→2⁺} f(x).",
+    "Evaluate lim_{x→0⁺} √x and explain the missing left side."
+  ],
+  "universalFacts": [
+    "Traffic lights are right-hand limits: approaching the junction from either direction meets different rules - the joint behaviour needs both stories."
+  ],
   "animation3D": "limits-and-continuity-rhl",
   "motionGraphics": "limits-and-continuity-rhl",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "The right-hand limit approaches a through values greater than a; substituting x = a + h with h → 0⁺ turns it into a one-variable limit.",
+  "examples": [
+    "***The domain edge*** - sqrt x at 0 has a right-hand limit of 0 and no left-hand story at all: the domain, not disagreement, makes it one-sided."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (2m): Evaluate lim_{x→2⁺} 1/(x − 2).** — **Side selection:** x → 2⁺ means x takes values slightly **greater** than 2, so x − 2 is **positive and shrinking**. **Behaviour:** 1/(small positive) = large positive ⟹ **lim_{x→2⁺} 1/(x − 2) = +∞**. **Twin fact:** from the left, x − 2 is negative and small, giving −∞ — the two one-sided limits are both infinite but of opposite signs, so the two-sided limit **does not exist**. The function's graph shows the classic hyperbola split by a vertical asymptote at x = 2.",
+    "**NEB-style (2m): For f(x) = x + 1 (x < 2) and f(x) = x² (x ≥ 2), evaluate lim_{x→2⁺} f(x) and lim_{x→2⁻} f(x), and describe the joint.** — **Right-hand:** the right neighbourhood x > 2 belongs to the second branch f(x) = x², which is continuous, so lim_{x→2⁺} f(x) = 2² = **4**. **Left-hand:** the left neighbourhood uses f(x) = x + 1: lim_{x→2⁻} f(x) = 2 + 1 = **3**. **Joint:** the one-sided limits both exist but **disagree** (3 ≠ 4) ⟹ the two-sided limit does not exist and f has a **jump discontinuity** at x = 2 of size 4 − 3 = 1 — the graph steps up by 1 as x crosses 2.",
+    "**NEB-style (2m): Evaluate lim_{x→0⁺} √x and explain why a left-hand limit does not exist.** — **Right-hand limit:** √x is defined for x ≥ 0, and as x → 0⁺, √x → **0** — substitution at the (right) edge works. **Why no left-hand limit:** for x < 0, √x is **undefined over the reals** — the left approach cannot even be attempted; this is an *absence of domain*, not a disagreement of values. **Consequence:** since the right-hand limit is the only one that exists, it serves as the two-sided limit relative to the domain — lim_{x→0⁺} √x = 0 is the complete story, and √x is continuous on its domain [0, ∞) (continuity at a domain endpoint needs only the one-sided test)."
+  ],
+  "formulas": [
+    "- lim_{x→a⁺} f(x) = L ⟺ f(x) → L for a < x < a + δ\n- existence: lim_{x→a} f = L ⟺ LHL = RHL = L (finite)\n- 1/(x − a) as x → a⁺ ⟹ +∞"
+  ],
+  "keyPoints": [
+    "Right-hand limit lim_{x->a+} f(x) = L: f(x) -> L as x -> a through values greater than a; read the graph moving leftward toward a. Domain edges (sqrt x at 0) are one-sided by nature. Piecewise: the branch owning the right neighbourhood decides. Blow-up sign: denominator's sign for x > a (+inf or -inf). Existence theorem: two-sided limit exists iff both one-sided limits exist and are equal; an infinite one-sided limit also kills the two-sided limit."
+  ],
+  "summary": "The **right-hand limit** lim_{x→a⁺} f(x) tracks f as x approaches a **from above** — reading the graph right-to-left. It is the whole story at **domain edges** (√x at 0 → 0, with no left approach defined at all), the branch-picker at **piecewise boundaries** (x² branch gives 4 while x + 1 gives 3 — a jump of size 1), and the sign-reader at **blow-ups** (1/(x−2) → +∞ from the right, −∞ from the left). Computation is branch selection plus substitution — or denominator-sign bookkeeping for c/0 forms. The **existence theorem** binds the atoms: a two-sided limit exists only when both one-sided limits exist **and agree** (finitely); one infinite side already kills it. One side at a time, then merge — the disciplined order that every piecewise and asymptote question demands.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"lim_{x->a+} f(x) uses x > a; the two-sided limit exists iff both one-sided limits agree.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Pick the branch owning the right side. Blow-up: sign of the denominator for x > a. Domain edges: one side only, by definition."
+  ],
+  "examNotes": [
+    "Write the branch-selection sentence before substituting - it shows the one-sided reasoning, not just the arithmetic."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "One-sided limits are the atoms: piecewise branches, domain edges and blow-up signs each tell their own story before the existence theorem merges or separates them."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Approaching From the Right\n\nThe **right-hand limit** lim_{x→a⁺} f(x) reads the function's behaviour as x slides toward a from values **greater** than a. Piecewise functions, domain edges and blow-ups make one-sided thinking unavoidable.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition\n\n- **lim_{x→a⁺} f(x) = L** ⟺ f(x) → L as x takes values **a < x < a + δ** with δ → 0 — from the right side of a on the number line.\n- Graphically: follow the curve toward x = a moving **leftward** (from larger x); the y-height approached is L.\n\n### 2.2 When the right-hand limit is the whole story\n\n- **Domain edge:** √x at 0 exists only from the right (x ≥ 0) — lim_{x→0⁺} √x = 0 and no left approach is even defined.\n- **Piecewise boundary:** on [a, ∞) pieces, a⁺ reads the branch that owns the right neighbourhood.\n\n### 2.3 Computation\n\n- Substitute a value slightly greater than a into the **branch/rule governing the right side**; for blow-ups, track the sign of the denominator for x > a.\n\n### 2.4 The existence theorem (preview)\n\n- lim_{x→a} f(x) = L ⟺ **both** one-sided limits exist and equal L. One-sided limits are the atoms; two-sided limits are molecules.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Right-hand limit** | Approach from x > a | lim_{x→0⁺} √x = 0 |\n| **Domain edge** | a at the boundary of the domain | √x at 0 |\n| **Blow-up side** | Sign of denominator for x > a | 1/(x−2)⁺ → +∞ |\n| **Existence theorem** | Both sides must agree | fails for 1/x |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why one side at a time\n\n- Functions may behave differently on either side of a — different branch formulas, different signs, different rates. One-sided limits isolate each story before the existence test merges them.\n\n### 4.2 Reading the graph right-to-left\n\n- The finger traces the curve from the right toward a: the height it settles toward is lim_{x→a⁺}. Open dots, jumps and asymptotes all become readable.\n\n### 4.3 Blow-up signs\n\n- For 1/(x − 2): x > 2 ⟹ denominator positive ⟹ +∞; the right-hand limit is +∞ while the left is −∞ — sign bookkeeping done side by side.",
+      "## 5. Comparison Tables\n\n**Right-hand limit scenarios**\n\n| Case at a | Right-hand behaviour |\n|---|---|\n| continuous | equals f(a) |\n| piecewise branch | that branch's value approached |\n| domain edge | only side that exists |\n| c/0 with positive side | +∞ |",
+      "## 6. Common Confusions\n\n**a⁺ means x > a:** the plus is about *where x comes from*, not the sign of the limit.",
+      "**Domain edges are one-sided by nature:** √x at 0 has no left-hand limit because the left side isn't in the domain — not because it disagrees.",
+      "**∞ on one side still kills the two-sided limit:** the existence theorem needs finite agreement.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Evaluate lim_{x→2⁺} 1/(x − 2).** — For x slightly greater than 2, x − 2 is **positive and small** ⟹ 1/(x−2) is large positive: **lim = +∞**. (The left-hand limit would be −∞ — the sides disagree, so the two-sided limit does not exist.)",
+      "**NEB-style (2m): For f(x) = { x + 1 if x < 2; x² if x ≥ 2 }, evaluate lim_{x→2⁺} f(x).** — The right neighbourhood x > 2 belongs to the **second branch**: lim_{x→2⁺} x² = **4**. (The left-hand limit via the first branch is 3 — the mismatch at 2 is a jump discontinuity of size 1.)",
+      "**NEB-style (2m): Evaluate lim_{x→0⁺} √x and explain why no left-hand limit exists.** — √x is defined for x ≥ 0; approaching 0 from the right: √x → **0**. From the left, √x is **undefined** — not a disagreement but an absence: the left-hand limit cannot even be formed. Hence the two-sided limit equals the right-hand limit 0 by default (the domain's edge makes the one-sided value the whole story)."
+    ],
+    "keyPoints": [
+      "Right-hand limit lim_{x->a+} f(x) = L: f(x) -> L as x -> a through values greater than a; read the graph moving leftward toward a. Domain edges (sqrt x at 0) are one-sided by nature. Piecewise: the branch owning the right neighbourhood decides. Blow-up sign: denominator's sign for x > a (+inf or -inf). Existence theorem: two-sided limit exists iff both one-sided limits exist and are equal; an infinite one-sided limit also kills the two-sided limit."
+    ],
+    "importantConcepts": [
+      "One-sided limits are the atoms: piecewise branches, domain edges and blow-up signs each tell their own story before the existence theorem merges or separates them."
+    ],
+    "examples": [
+      "***The domain edge*** - sqrt x at 0 has a right-hand limit of 0 and no left-hand story at all: the domain, not disagreement, makes it one-sided."
+    ],
+    "universalFacts": [
+      "Traffic lights are right-hand limits: approaching the junction from either direction meets different rules - the joint behaviour needs both stories."
+    ],
+    "importantStatements": [
+      "\"lim_{x->a+} f(x) uses x > a; the two-sided limit exists iff both one-sided limits agree.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Pick the branch owning the right side. Blow-up: sign of the denominator for x > a. Domain edges: one side only, by definition."
+    ],
+    "examNotes": [
+      "Write the branch-selection sentence before substituting - it shows the one-sided reasoning, not just the arithmetic."
+    ],
+    "formulas": [
+      "- lim_{x→a⁺} f(x) = L ⟺ f(x) → L for a < x < a + δ\n- existence: lim_{x→a} f = L ⟺ LHL = RHL = L (finite)\n- 1/(x − a) as x → a⁺ ⟹ +∞"
+    ],
+    "practice": [
+      "Evaluate lim_{x→2⁺} 1/(x − 2).",
+      "For the piecewise f above, evaluate lim_{x→2⁺} f(x).",
+      "Evaluate lim_{x→0⁺} √x and explain the missing left side."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Evaluate lim_{x→2⁺} 1/(x − 2).** — **Side selection:** x → 2⁺ means x takes values slightly **greater** than 2, so x − 2 is **positive and shrinking**. **Behaviour:** 1/(small positive) = large positive ⟹ **lim_{x→2⁺} 1/(x − 2) = +∞**. **Twin fact:** from the left, x − 2 is negative and small, giving −∞ — the two one-sided limits are both infinite but of opposite signs, so the two-sided limit **does not exist**. The function's graph shows the classic hyperbola split by a vertical asymptote at x = 2.",
+      "**NEB-style (2m): For f(x) = x + 1 (x < 2) and f(x) = x² (x ≥ 2), evaluate lim_{x→2⁺} f(x) and lim_{x→2⁻} f(x), and describe the joint.** — **Right-hand:** the right neighbourhood x > 2 belongs to the second branch f(x) = x², which is continuous, so lim_{x→2⁺} f(x) = 2² = **4**. **Left-hand:** the left neighbourhood uses f(x) = x + 1: lim_{x→2⁻} f(x) = 2 + 1 = **3**. **Joint:** the one-sided limits both exist but **disagree** (3 ≠ 4) ⟹ the two-sided limit does not exist and f has a **jump discontinuity** at x = 2 of size 4 − 3 = 1 — the graph steps up by 1 as x crosses 2.",
+      "**NEB-style (2m): Evaluate lim_{x→0⁺} √x and explain why a left-hand limit does not exist.** — **Right-hand limit:** √x is defined for x ≥ 0, and as x → 0⁺, √x → **0** — substitution at the (right) edge works. **Why no left-hand limit:** for x < 0, √x is **undefined over the reals** — the left approach cannot even be attempted; this is an *absence of domain*, not a disagreement of values. **Consequence:** since the right-hand limit is the only one that exists, it serves as the two-sided limit relative to the domain — lim_{x→0⁺} √x = 0 is the complete story, and √x is continuous on its domain [0, ∞) (continuity at a domain endpoint needs only the one-sided test)."
+    ]
+  }
 }

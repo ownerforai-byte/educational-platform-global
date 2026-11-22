@@ -6,30 +6,113 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-value",
   "notes": [
-    "**Direct substitution.** When a lies in the domain and the formula is continuous there, f(a) is found by replacing x with a; for f(x) = x² + 3x, f(2) = 4 + 6 = 10.",
-    "**Limit versus value.** lim(x→a) f(x) uses values NEAR a, while f(a) uses only the value AT a; the two may differ or the latter may not exist at all.",
-    "**Removable hole.** For f(x) = (x² − 4)/(x − 2), f(2) is undefined but lim(x→2) f(x) = 4, because the expression equals x + 2 for every x ≠ 2.",
-    "**Redefinition.** Defining f(2) = 4 fills the hole and makes f continuous at 2; defining f(2) = 7 keeps the same limit but leaves a removable discontinuity.",
-    "**Piecewise boundaries.** At a point where the rule changes, f(a) belongs to exactly one branch (usually the one with ≤ or ≥); read the inequality before substituting.",
-    "**Exam caution.** Substituting first into a 0/0 form gives no information; always simplify the expression before evaluating at the point."
+    "## 1. Topic Introduction — Substitution and Its Failure Modes\n\n\"Value of a function at a point\" is direct evaluation — and the diagnosis of when it **fails**. The topic classifies the outcomes: clean substitution, indeterminate 0/0, and blow-up — the three doors every limit question opens.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Direct substitution\n\n- **Theorem (continuity route):** if f is continuous at a, then lim_{x→a} f(x) = f(a) — substitution is not just a trick but a theorem-licensed method.\n- Polynomials, |x|, sin/cos, eˣ are continuous everywhere: substitution always works for them.\n\n### 2.2 The 0/0 door\n\n- f(a) = 0/0 ⟹ **indeterminate**: the limit may be any number, ±∞, or nonexistent — the form alone decides nothing. Transform: factor, rationalise, standard limits, or (later) L'Hôpital.\n\n### 2.3 The blow-up door\n\n- Denominator → 0 with numerator → c ≠ 0 ⟹ |f(x)| → ∞: the limit is **±∞ or does not exist** (sides may disagree in sign). Example: 1/(x−2) near 2 → +∞ from the right, −∞ from the left.\n\n### 2.4 Evaluation of defined functions\n\n- When f(a) exists, f(a) is just a number: compute it. The subtlety is only in knowing *which* function value the question wants — f(a) vs the limit.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Direct substitution** | lim = f(a) for continuous f | polynomials |\n| **Indeterminate** | 0/0 — undecided by form | (x²−4)/(x−2) at 2 |\n| **Blow-up** | Denominator → 0, numerator → c ≠ 0 | 1/(x−2) at 2 |\n| **DNE** | Sides disagree or grow without bound | step functions |",
+    "## 4. Detailed Explanation\n\n### 4.1 Substitution as the default\n\n- Always substitute first. Three outcomes: a number (done — cite continuity), 0/0 (transform), c/0 (blow-up analysis). The substitution is the diagnosis, not merely a guess.\n\n### 4.2 Why 0/0 is rich\n\n- Both numerator and denominator vanish together — their *rates* matter, which is precisely what the transformed expression measures. 0/0 is the doorway to derivatives.\n\n### 4.3 Sign analysis at blow-ups\n\n- Near a denominator zero, the sign of the denominator flips across a (unless the zero has even multiplicity): left and right limits may be −∞ and +∞ — then the two-sided limit **does not exist** even though each side is infinite.",
+    "## 5. Comparison Tables\n\n**The three substitution outcomes**\n\n| f(a) evaluates to | Meaning | Action |\n|---|---|---|\n| a number | continuous there | done |\n| 0/0 | indeterminate | transform |\n| c/0 (c ≠ 0) | blow-up | side/sign analysis |",
+    "## 6. Common Confusions\n\n**0/0 ≠ 1:** the form is indeterminate; \"anything over itself is 1\" fails when both are *approaching* 0 rather than being 0.",
+    "**∞ is not a limit value:** writing \"= ∞\" describes behaviour; the two-sided limit may still **not exist** if the sides disagree.",
+    "**f(a) existing doesn't end the story:** the limit question may still need side analysis if nearby behaviour is wild (e.g. piecewise joints).",
+    "## 7. Exam Application\n\n**NEB-style (2m): Evaluate lim_{x→1} (3x² + 2x − 4).** — Polynomial ⟹ continuous ⟹ substitution licensed: 3 + 2 − 4 = **1**.",
+    "**NEB-style (2m): Evaluate lim_{x→0} (1/x).** — Substitution gives 1/0 — numerator 1 ≠ 0 ⟹ **blow-up door**. Side analysis: x → 0⁺ ⟹ 1/x → +∞; x → 0⁻ ⟹ 1/x → −∞. Sides disagree ⟹ **the two-sided limit does not exist**.",
+    "**NEB-style (2m): Evaluate lim_{x→4} (√x − 2)/(x − 4).** — Substitution: (2 − 2)/0 = **0/0** ⟹ transform. **Rationalise:** multiply by (√x + 2)/(√x + 2): numerator becomes x − 4, cancelling the denominator: 1/(√x + 2) for x ≠ 4. Limit: 1/(2 + 2) = **1/4**. (The derivative of √x at 4 in disguise.)"
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Evaluate lim_{x→1} (3x² + 2x − 4).",
+    "Evaluate lim_{x→0} (1/x) with side analysis.",
+    "Evaluate lim_{x→4} (√x − 2)/(x − 4) by rationalising."
+  ],
+  "universalFacts": [
+    "Structural engineers read blow-ups: stress formulas diverging at a critical load flag failure - the c/0 door with physical consequences."
+  ],
   "animation3D": "limits-and-continuity-value",
   "motionGraphics": "limits-and-continuity-value",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "f(a) is obtained by direct substitution; the limit as x approaches a is independent of f(a) and can exist even when f(a) is undefined.",
+  "examples": [
+    "***The conjugate opener*** - (sqrt x - 2)/(x - 4) hides (x - 4) = (sqrt x - 2)(sqrt x + 2); multiplying by the conjugate reveals it and the limit falls to 1/4."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (2m): Evaluate lim_{x→1} (3x² + 2x − 4).** — **Substitution:** 3(1)² + 2(1) − 4 = 3 + 2 − 4 = **1**. **Justification:** the function is a polynomial, continuous at every real point, so the limit theorem lim_{x→a} f(x) = f(a) applies — substitution is a licensed method, not a guess. No transformation needed; the first substitution already landed on a number, closing the question.",
+    "**NEB-style (2m): Evaluate lim_{x→0} (1/x).** — **Substitution:** 1/0 with numerator 1 ≠ 0 ⟹ the **blow-up door** — not indeterminate. **Side analysis:** as x → 0⁺, 1/x is large positive ⟹ **+∞**; as x → 0⁻, 1/x is large negative ⟹ **−∞**. **Verdict:** the one-sided limits are both infinite but disagree in sign, so the **two-sided limit does not exist**. (Contrast 1/x², whose sides agree at +∞ — even multiplicity in the denominator unifies the blow-up; odd behaviour like 1/x splits it.)",
+    "**NEB-style (2m): Evaluate lim_{x→4} (√x − 2)/(x − 4).** — **Substitution:** (2 − 2)/(4 − 4) = **0/0** — indeterminate ⟹ transform. **Rationalise:** multiply by the conjugate (√x + 2)/(√x + 2): numerator (√x − 2)(√x + 2) = x − 4, which **cancels** the denominator (licensed since x ≠ 4): the expression becomes 1/(√x + 2) for x ≠ 4. **Substitute:** 1/(2 + 2) = **1/4**. (Recognition: this limit is exactly the derivative of √x at x = 4 — the difference quotient in root form; the conjugate trick is the standard key for every √-difference over a linear denominator.)"
+  ],
+  "formulas": [
+    "- continuous f: lim_{x→a} f(x) = f(a)\n- (√x − √a)/(x − a) = 1/(√x + √a) (x ≠ a)\n- c/0 (c ≠ 0): |f| → ∞; two-sided limit DNE if sides differ in sign"
+  ],
+  "keyPoints": [
+    "Substitute first. Three outcomes: (1) a number - f continuous at a, lim = f(a), done; (2) 0/0 - indeterminate, transform by factoring, rationalising or standard limits; (3) c/0 with c != 0 - blow-up: |f| -> inf, and the two-sided limit DNE if the sides' signs disagree (1/x at 0: +inf right, -inf left). Polynomials, |x|, sin, cos, e^x continuous everywhere - substitution always licensed. Rationalising trick: multiply by the conjugate to expose the common factor. 0/0 richness: the rates of vanishing decide, the doorway to derivatives."
+  ],
+  "summary": "Evaluating f at a point is the first move of every limit question, and its outcome routes the rest. **Clean number** ⟹ f is continuous there and lim f(x) = f(a) — a theorem, valid for all polynomials, |x|, sin, cos, eˣ (3x² + 2x − 4 at 1 gives 1). **0/0** ⟹ indeterminate, demanding transformation: factor, or rationalise root-differences via the conjugate — (√x − 2)/(x − 4) becomes 1/(√x + 2), limiting to **1/4** (the derivative of √x in disguise). **c/0 with c ≠ 0** ⟹ blow-up: |f| → ∞, and the two-sided limit **does not exist** when the sides' signs disagree (1/x: +∞ right, −∞ left; 1/x² would agree). Substitution is the diagnosis — done, transform, or side-analysis — and naming the outcome is part of the answer.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"If f is continuous at a then lim_{x->a} f(x) = f(a); 0/0 is indeterminate and demands transformation.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Substitute, classify, act. Rationalise root-differences. c/0: check each side's sign before writing DNE. 0/0: factor or conjugate."
+  ],
+  "examNotes": [
+    "Name the outcome (\"0/0, indeterminate\" or \"blow-up, sides disagree\") in words - classification is a mark."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "Substitution is the diagnosis: its outcome routes the problem to done, transform, or side-analysis - never skip the first substitution."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Substitution and Its Failure Modes\n\n\"Value of a function at a point\" is direct evaluation — and the diagnosis of when it **fails**. The topic classifies the outcomes: clean substitution, indeterminate 0/0, and blow-up — the three doors every limit question opens.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Direct substitution\n\n- **Theorem (continuity route):** if f is continuous at a, then lim_{x→a} f(x) = f(a) — substitution is not just a trick but a theorem-licensed method.\n- Polynomials, |x|, sin/cos, eˣ are continuous everywhere: substitution always works for them.\n\n### 2.2 The 0/0 door\n\n- f(a) = 0/0 ⟹ **indeterminate**: the limit may be any number, ±∞, or nonexistent — the form alone decides nothing. Transform: factor, rationalise, standard limits, or (later) L'Hôpital.\n\n### 2.3 The blow-up door\n\n- Denominator → 0 with numerator → c ≠ 0 ⟹ |f(x)| → ∞: the limit is **±∞ or does not exist** (sides may disagree in sign). Example: 1/(x−2) near 2 → +∞ from the right, −∞ from the left.\n\n### 2.4 Evaluation of defined functions\n\n- When f(a) exists, f(a) is just a number: compute it. The subtlety is only in knowing *which* function value the question wants — f(a) vs the limit.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Direct substitution** | lim = f(a) for continuous f | polynomials |\n| **Indeterminate** | 0/0 — undecided by form | (x²−4)/(x−2) at 2 |\n| **Blow-up** | Denominator → 0, numerator → c ≠ 0 | 1/(x−2) at 2 |\n| **DNE** | Sides disagree or grow without bound | step functions |",
+      "## 4. Detailed Explanation\n\n### 4.1 Substitution as the default\n\n- Always substitute first. Three outcomes: a number (done — cite continuity), 0/0 (transform), c/0 (blow-up analysis). The substitution is the diagnosis, not merely a guess.\n\n### 4.2 Why 0/0 is rich\n\n- Both numerator and denominator vanish together — their *rates* matter, which is precisely what the transformed expression measures. 0/0 is the doorway to derivatives.\n\n### 4.3 Sign analysis at blow-ups\n\n- Near a denominator zero, the sign of the denominator flips across a (unless the zero has even multiplicity): left and right limits may be −∞ and +∞ — then the two-sided limit **does not exist** even though each side is infinite.",
+      "## 5. Comparison Tables\n\n**The three substitution outcomes**\n\n| f(a) evaluates to | Meaning | Action |\n|---|---|---|\n| a number | continuous there | done |\n| 0/0 | indeterminate | transform |\n| c/0 (c ≠ 0) | blow-up | side/sign analysis |",
+      "## 6. Common Confusions\n\n**0/0 ≠ 1:** the form is indeterminate; \"anything over itself is 1\" fails when both are *approaching* 0 rather than being 0.",
+      "**∞ is not a limit value:** writing \"= ∞\" describes behaviour; the two-sided limit may still **not exist** if the sides disagree.",
+      "**f(a) existing doesn't end the story:** the limit question may still need side analysis if nearby behaviour is wild (e.g. piecewise joints).",
+      "## 7. Exam Application\n\n**NEB-style (2m): Evaluate lim_{x→1} (3x² + 2x − 4).** — Polynomial ⟹ continuous ⟹ substitution licensed: 3 + 2 − 4 = **1**.",
+      "**NEB-style (2m): Evaluate lim_{x→0} (1/x).** — Substitution gives 1/0 — numerator 1 ≠ 0 ⟹ **blow-up door**. Side analysis: x → 0⁺ ⟹ 1/x → +∞; x → 0⁻ ⟹ 1/x → −∞. Sides disagree ⟹ **the two-sided limit does not exist**.",
+      "**NEB-style (2m): Evaluate lim_{x→4} (√x − 2)/(x − 4).** — Substitution: (2 − 2)/0 = **0/0** ⟹ transform. **Rationalise:** multiply by (√x + 2)/(√x + 2): numerator becomes x − 4, cancelling the denominator: 1/(√x + 2) for x ≠ 4. Limit: 1/(2 + 2) = **1/4**. (The derivative of √x at 4 in disguise.)"
+    ],
+    "keyPoints": [
+      "Substitute first. Three outcomes: (1) a number - f continuous at a, lim = f(a), done; (2) 0/0 - indeterminate, transform by factoring, rationalising or standard limits; (3) c/0 with c != 0 - blow-up: |f| -> inf, and the two-sided limit DNE if the sides' signs disagree (1/x at 0: +inf right, -inf left). Polynomials, |x|, sin, cos, e^x continuous everywhere - substitution always licensed. Rationalising trick: multiply by the conjugate to expose the common factor. 0/0 richness: the rates of vanishing decide, the doorway to derivatives."
+    ],
+    "importantConcepts": [
+      "Substitution is the diagnosis: its outcome routes the problem to done, transform, or side-analysis - never skip the first substitution."
+    ],
+    "examples": [
+      "***The conjugate opener*** - (sqrt x - 2)/(x - 4) hides (x - 4) = (sqrt x - 2)(sqrt x + 2); multiplying by the conjugate reveals it and the limit falls to 1/4."
+    ],
+    "universalFacts": [
+      "Structural engineers read blow-ups: stress formulas diverging at a critical load flag failure - the c/0 door with physical consequences."
+    ],
+    "importantStatements": [
+      "\"If f is continuous at a then lim_{x->a} f(x) = f(a); 0/0 is indeterminate and demands transformation.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Substitute, classify, act. Rationalise root-differences. c/0: check each side's sign before writing DNE. 0/0: factor or conjugate."
+    ],
+    "examNotes": [
+      "Name the outcome (\"0/0, indeterminate\" or \"blow-up, sides disagree\") in words - classification is a mark."
+    ],
+    "formulas": [
+      "- continuous f: lim_{x→a} f(x) = f(a)\n- (√x − √a)/(x − a) = 1/(√x + √a) (x ≠ a)\n- c/0 (c ≠ 0): |f| → ∞; two-sided limit DNE if sides differ in sign"
+    ],
+    "practice": [
+      "Evaluate lim_{x→1} (3x² + 2x − 4).",
+      "Evaluate lim_{x→0} (1/x) with side analysis.",
+      "Evaluate lim_{x→4} (√x − 2)/(x − 4) by rationalising."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Evaluate lim_{x→1} (3x² + 2x − 4).** — **Substitution:** 3(1)² + 2(1) − 4 = 3 + 2 − 4 = **1**. **Justification:** the function is a polynomial, continuous at every real point, so the limit theorem lim_{x→a} f(x) = f(a) applies — substitution is a licensed method, not a guess. No transformation needed; the first substitution already landed on a number, closing the question.",
+      "**NEB-style (2m): Evaluate lim_{x→0} (1/x).** — **Substitution:** 1/0 with numerator 1 ≠ 0 ⟹ the **blow-up door** — not indeterminate. **Side analysis:** as x → 0⁺, 1/x is large positive ⟹ **+∞**; as x → 0⁻, 1/x is large negative ⟹ **−∞**. **Verdict:** the one-sided limits are both infinite but disagree in sign, so the **two-sided limit does not exist**. (Contrast 1/x², whose sides agree at +∞ — even multiplicity in the denominator unifies the blow-up; odd behaviour like 1/x splits it.)",
+      "**NEB-style (2m): Evaluate lim_{x→4} (√x − 2)/(x − 4).** — **Substitution:** (2 − 2)/(4 − 4) = **0/0** — indeterminate ⟹ transform. **Rationalise:** multiply by the conjugate (√x + 2)/(√x + 2): numerator (√x − 2)(√x + 2) = x − 4, which **cancels** the denominator (licensed since x ≠ 4): the expression becomes 1/(√x + 2) for x ≠ 4. **Substitute:** 1/(2 + 2) = **1/4**. (Recognition: this limit is exactly the derivative of √x at x = 4 — the difference quotient in root form; the conjugate trick is the standard key for every √-difference over a linear denominator.)"
+    ]
+  }
 }

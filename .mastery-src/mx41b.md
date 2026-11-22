@@ -1,0 +1,115 @@
+@@notes@@
+## 1. Topic Introduction — Continuity From Limits
+
+This exercise applies the **three-part continuity test** to concrete functions: find where f is continuous, classify every break, and repair the repairable. It is limits-and-continuity's integration drill.
+
+%%%
+## 2. Fundamental Concepts
+
+### 2.1 The workflow
+
+- **Step 1 — domain:** where is f defined? Undefined points are automatic discontinuity candidates.
+- **Step 2 — closure continuity:** on its domain pieces, is f built from continuous families (polynomials, rationals, roots, trig, exp, log, compositions)? If yes, continuous there by closure — no testing needed.
+- **Step 3 — triage the suspects:** at each candidate point, compute the limit (or both one-sided limits) and f(a); classify: continuous / removable / jump / infinite.
+
+### 2.2 Piecewise functions
+
+- At a junction a: compute **LHL from the left branch, RHL from the right branch**, and compare with the assigned f(a). Three outcomes: all equal (continuous), sides differ (jump), sides equal but ≠ f(a) (removable mismatch).
+
+### 2.3 Rational triage recap
+
+- Factor, cancel (holes at shared zeros), survivors are walls (odd split, even unified). The 15.3 rational items are exactly the row-36–38 taxonomy in action.
+
+### 2.4 Repairs
+
+- Removable breaks: define f(a) = L. Jumps and walls: report as non-removable — the honest conclusion.
+
+%%%
+## 3. Scientific Definitions
+
+| Term | Scientific meaning | Example |
+|---|---|---|
+| **Closure continuity** | Built from continuous families | rational off zeros |
+| **Junction triage** | LHL, RHL, f(a) compare | piecewise seam |
+| **Full report** | Type + point + repair | the exam answer |
+| **Continuity set** | Where all three parts hold | ℝ \ {breaks} |
+
+%%%
+## 4. Detailed Explanation
+
+### 4.1 Why closure first
+
+- Testing continuity at every point is impossible; closure theorems certify whole intervals at once, so testing is reserved for the finite suspect list — domain holes, denominator zeros, junctions.
+
+### 4.2 The piecewise seam as a three-way meeting
+
+- Left branch, right branch and the point's own value are three separate claims; continuity is their unanimous agreement. Each mismatch has its own name — the seam is the taxonomy's stage.
+
+### 4.3 Reporting discipline
+
+- A complete answer states: the continuity set, each break's location and type, and the repair where one exists. Partial answers ("discontinuous at 2") lose the classification marks.
+
+%%%
+## 5. Comparison Tables
+
+**Seam outcomes**
+
+| LHL | RHL | f(a) | Verdict |
+|---|---|---|---|
+| L | L | L | continuous |
+| L | M≠L | — | jump |
+| L | L | ≠L/undef | removable |
+| ±∞ | — | — | infinite |
+
+%%%
+## 6. Common Confusions
+
+**Testing where closure already certifies:** don't ε-test polynomials pointwise — quote the family.
+%%%
+**Forgetting f(a) in piecewise checks:** the assigned value is the third party; sides agreeing without it is still removable.
+%%%
+**Reporting without repair verdicts:** classify *and* state removability — the taxonomy's two halves.
+
+%%%
+## 7. Exam Application
+
+**NEB-style (3m): Find the points of discontinuity of f(x) = (x² − 4x + 3)/(x² − 9) and classify each.** — Factor: numerator (x−1)(x−3), denominator (x−3)(x+3). **Shared zero x = 3:** cancel ⟹ limit 2/6 = 1/3 ⟹ **removable hole at (3, 1/3)**. **Survivor x = −3:** numerator = 12 ≠ 0 ⟹ blow-up ⟹ **infinite discontinuity (wall)** at −3. **Continuity set:** ℝ \ {3, −3}.
+%%%
+**NEB-style (3m): For f(x) = { x² if x ≤ 1; 2x − 1 if x > 1 }, discuss continuity at x = 1.** — **LHL:** x² → **1**. **RHL:** 2x − 1 → **1**. **Value:** f(1) = 1² = **1**. All three agree ⟹ **continuous at 1** — the seam closes perfectly.
+%%%
+**NEB-style (3m): For f(x) = { x + 3 if x ≠ 2; 8 if x = 2 }, classify and repair.** — **Limit:** x + 3 → **5** (the branch is continuous). **Value:** f(2) = 8 ≠ 5 ⟹ **removable mismatch**. **Repair:** redefine f(2) = 5; continuity restored on all of ℝ. The original graph: the line y = x + 3 with a detached dot at (2, 8).
+
+@@keyPoints@@
+Exercise 15.3 workflow: (1) domain - undefined points are suspects; (2) closure continuity - polynomials, rationals off zeros, roots, trig, exp, log, compositions certify whole intervals; (3) triage suspects: compute limit(s) and f(a), classify continuous / removable / jump / infinite, state the repair. Piecewise seam: LHL from left branch, RHL from right branch, compare with f(a) - unanimous agreement = continuous; sides differ = jump; sides equal but value differs = removable mismatch. Rational triage: cancel shared zeros (holes), survivors are walls. Full report: continuity set + each break's type + repair verdict.
+@@importantConcepts@@
+Closure theorems make continuity cheap: certify intervals by family membership, spend testing effort only on the finite suspect list.
+@@examples@@
+***The closed seam*** - x^2 below 1 and 2x - 1 above meet at height 1 with f(1) = 1: three claims, unanimous - the seam is invisible.
+@@universalFacts@@
+Phase transitions are nature's discontinuities: water's density jumps at 0 degrees C - a jump discontinuity in the state function.
+@@importantStatements@@
+"f is continuous at a iff f(a), the limit, and their equality all hold; classify every break and state its repair."
+@@importantNotes@@
+No verified PYQ on this row exists in the bank; all items here are NEB-style practice.
+@@examShortTricks@@
+Domain, closure, triage. Piecewise: both branches, both sides, the value. Cancel-then-triage rationals. Report set + types + repairs.
+@@examNotes@@
+Give the continuity set explicitly (R minus the breaks) - the set statement is the answer's frame, not a footnote.
+@@formulas@@
+- seam test: LHL = RHL = f(a) ⟺ continuous at the junction
+- removable repair: f(a) := lim_{x→a} f(x)
+- rational: shared zeros → holes; surviving zeros → walls
+@@practice@@
+Classify the breaks of (x² − 4x + 3)/(x² − 9).
+%%%
+Check continuity of {x², x ≤ 1; 2x − 1, x > 1} at the seam.
+%%%
+Classify and repair {x + 3, x ≠ 2; 8, x = 2}.
+@@practiceQuestions@@
+**NEB-style (3m): Find the points of discontinuity of f(x) = (x² − 4x + 3)/(x² − 9), classify each, and state the continuity set.** — **Factor:** numerator (x − 1)(x − 3); denominator (x − 3)(x + 3). **Triage the suspects** (denominator zeros 3 and −3): **At x = 3** — a *shared* zero: cancel to get (x − 1)/(x + 3) for x ≠ 3; the limit is (3−1)/(3+3) = 2/6 = **1/3**, while f(3) is undefined ⟹ **removable discontinuity, hole at (3, 1/3)**; repair f(3) = 1/3. **At x = −3** — a *surviving* zero: numerator (−3)² − 4(−3) + 3 = 9 + 12 + 3 = 24 ≠ 0 with denominator → 0 ⟹ blow-up ⟹ **infinite discontinuity** (wall at x = −3; odd multiplicity ⟹ split sides); non-removable. **Elsewhere:** closure (rational off zeros) certifies continuity. **Continuity set: ℝ \ {−3, 3}.**
+%%%
+**NEB-style (3m): Discuss the continuity of f(x) = x² for x ≤ 1 and f(x) = 2x − 1 for x > 1 at the junction x = 1.** — **Left-hand limit** (left branch): lim_{x→1⁻} x² = **1**. **Right-hand limit** (right branch): lim_{x→1⁺} (2x − 1) = **1**. **Assigned value:** f(1) = 1² = **1** (the point belongs to the left branch). **Verdict:** LHL = RHL = f(1) = 1 — the three-way agreement holds ⟹ **f is continuous at x = 1**. **Elsewhere:** both branches are polynomials, continuous on their open pieces by closure ⟹ f is continuous on **all of ℝ**. The seam closes perfectly: the parabola hands over to the line at exactly the same height — the designed-to-continuous piecewise function.
+%%%
+**NEB-style (3m): For f(x) = x + 3 (x ≠ 2) and f(2) = 8, classify the discontinuity and state the repair.** — **Limit:** the branch x + 3 is continuous, so lim_{x→2} f(x) = 2 + 3 = **5**. **Value:** f(2) = **8**. **Comparison:** the limit exists but f(2) = 8 ≠ 5 ⟹ condition 3 of the three-part test fails ⟹ **removable discontinuity (mismatch type)**. **Graph:** the line y = x + 3 with a **detached closed dot** at (2, 8) floating above the missing point of the line. **Repair:** redefine f(2) = 5; the repaired function is the line itself, continuous on all of ℝ. One value, one line of repair — the mismatch is the taxonomy's mildest break.
+@@summary@@
+Exercise 15.3 is the **integration drill**: run the full continuity workflow. **Step 1**, the domain — undefined points head the suspect list. **Step 2**, **closure continuity**: polynomials, rationals off their zeros, roots, trig, exponentials, logs and compositions certify whole intervals without testing. **Step 3**, **triage the suspects**: compute the limit(s) and f(a), classify (continuous / removable / jump / infinite), and state the repair. **Piecewise seams** are three-way meetings — LHL from the left branch, RHL from the right, the assigned value as third party: unanimous (x² and 2x−1 meeting at height 1) is continuous; side-disagreement is a jump; value-disagreement is a removable mismatch (f(2) = 8 vs limit 5 — one redefinition repairs it). **Rationals**: cancel shared zeros into holes ((x²−4x+3)/(x²−9): hole at (3, 1/3)), triage survivors into walls (x = −3, infinite). Report the **continuity set**, every break's type, and every repair — the complete answer, every time.

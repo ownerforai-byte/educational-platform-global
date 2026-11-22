@@ -6,30 +6,113 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-infinite",
   "notes": [
-    "**Definition.** f has an infinite discontinuity at a when f(x) grows without bound as x → a from at least one side, so the graph has a vertical asymptote x = a.",
-    "**Worked example.** For f(x) = 1/(x − 2), lim(x→2⁻) = −∞ and lim(x→2⁺) = +∞; the two sides disagree in sign and neither is finite.",
-    "**Finding asymptotes.** In a rational function, cancel common factors first; the remaining zeros of the denominator give the vertical asymptotes, while cancelled zeros give holes.",
-    "**One-sided signs.** Determine the sign of the unbounded limit by testing a nearby value on each side rather than by assuming symmetry.",
-    "**Contrast.** A removable hole has a finite two-sided limit; an infinite discontinuity has no finite limit, so it cannot be repaired by redefining f(a).",
-    "**Exam caution.** Writing lim = ∞ is a description of unbounded growth, not a real number; a question asking whether the limit exists expects 'no finite limit'."
+    "## 1. Topic Introduction — The Vertical Wall\n\nAn **infinite discontinuity** occurs when f blows up at a: at least one one-sided limit is ±∞. The graph sprouts a **vertical asymptote** x = a — the line the curve approaches but never touches.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definition and detection\n\n- **Infinite discontinuity at a** ⟺ lim_{x→a⁻} f(x) or lim_{x→a⁺} f(x) is **+∞ or −∞**.\n- **Detection:** c/0 forms (numerator → c ≠ 0, denominator → 0); also log x at 0⁺, and unbounded growth like e^{1/x} compositions.\n\n### 2.2 The two species of blow-up\n\n- **Split asymptote:** sides infinite with **opposite** signs — 1/x at 0 (−∞ left, +∞ right); caused by **odd-multiplicity** zeros of the denominator.\n- **Unified blow-up:** both sides the same infinity — 1/x² at 0 (+∞ both); **even multiplicity** zeros.\n- Either way the two-sided limit **does not exist** — infinity is not a value.\n\n### 2.3 The vertical asymptote\n\n- **x = a is a vertical asymptote** ⟺ |f(x)| → ∞ as x → a from at least one side. The curve hugs the line without meeting it (or crosses it far away — asymptotes describe local behaviour).\n- Denominator zeros of rational functions (after cancelling common factors) are the standard asymptote factories.\n\n### 2.4 Non-removability\n\n- No redefinition helps: the neighbourhood values are unbounded, so no finite f(a) reconciles them. Infinite discontinuities are **non-removable** by nature.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Infinite discontinuity** | A one-sided limit is ±∞ | 1/x at 0 |\n| **Vertical asymptote** | \\|f\\| → ∞ at x = a | x = 0 for 1/x |\n| **Split vs unified** | Opposite vs same infinities | 1/x vs 1/x² |\n| **Multiplicity rule** | Odd zero splits, even unifies | (x−a)³ vs (x−a)² |",
+    "## 4. Detailed Explanation\n\n### 4.1 Multiplicity is the sign story\n\n- Near a, (x − a)ᵐ changes sign across a iff m is odd. Dividing c by it: odd m ⟹ the sides split (±∞); even m ⟹ they unify (+∞ after squaring). The multiplicity of the denominator zero is the entire classification.\n\n### 4.2 Cancel first, then triage\n\n- Cancel common factors (removable holes at those zeros), then the surviving denominator zeros give asymptotes. The (x+2)/(x²−4) pattern: hole at −2, wall at 2.\n\n### 4.3 Logs and composites\n\n- ln x → −∞ as x → 0⁺: a one-sided wall at the domain edge. Compositions inherit blow-ups: e^{1/x} → ∞ from the right, → 1·... → e^{−∞} = 0 from the left — walls can wear disguises.",
+    "## 5. Comparison Tables\n\n**Blow-up atlas**\n\n| Form | Left | Right | Asymptote |\n|---|---|---|---|\n| 1/(x−a) | −∞ | +∞ | split |\n| 1/(x−a)² | +∞ | +∞ | unified |\n| ln x (a=0) | — | −∞ | one-sided |\n| 1/sin x at 0 | +∞ | +∞... (csc near 0) | unified |",
+    "## 6. Common Confusions\n\n**∞ is not a limit value:** \"limit = ∞\" is shorthand for unbounded behaviour; the two-sided limit still DNE.",
+    "**Every denominator zero is an asymptote:** only after cancelling common factors — shared zeros are holes first.",
+    "**Asymptotes can be crossed:** the curve may cross x = a far from a; the asymptote constrains behaviour *near* a.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Find the vertical asymptotes of f(x) = (x + 1)/(x² − 3x + 2) and classify each.** — Factor: x² − 3x + 2 = (x − 1)(x − 2); numerator −1 at both ⟹ no cancellation. **At x = 1:** denominator (x−1)(x−2) ≈ (small)(−1) — sign flips across 1 (odd multiplicity) ⟹ **split asymptote**: −∞/∞ sides. **At x = 2:** (x−2) odd power ⟹ **split asymptote**. Both are infinite discontinuities; f → ±∞ near each.",
+    "**NEB-style (2m): Show that lim_{x→0⁺} ln x = −∞ and interpret graphically.** — For x → 0⁺, ln x = −|ln x| → **−∞**: the log dives without bound at its domain's left edge. **Graph:** x = 0 (the y-axis) is a **one-sided vertical asymptote** — the curve hugs it downward; no left side exists (domain x > 0), so the wall is visible only from the right.",
+    "**NEB-style (2m): Discuss lim_{x→0} e^{1/x}.** — **Right side:** x → 0⁺ ⟹ 1/x → +∞ ⟹ e^{1/x} → **+∞**. **Left side:** 1/x → −∞ ⟹ e^{1/x} → **e^{−∞} = 0**. **Verdict:** RHL = +∞ (infinite), LHL = 0 — the right side blows up ⟹ **infinite discontinuity at 0** (non-removable), with a disguised wall: the exponential turns the split of 1/x into a one-sided blow-up against a finite left approach."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Find and classify the vertical asymptotes of (x + 1)/(x² − 3x + 2).",
+    "Show lim_{x→0⁺} ln x = −∞ and interpret.",
+    "Discuss lim_{x→0} e^{1/x} from both sides."
+  ],
+  "universalFacts": [
+    "Resonance is an infinite discontinuity: driving frequency hitting a natural frequency sends amplitude to infinity - the wall is physical."
+  ],
   "animation3D": "limits-and-continuity-infinite",
   "motionGraphics": "limits-and-continuity-infinite",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "An infinite discontinuity occurs at a vertical asymptote where at least one one-sided limit is unbounded; no finite limit exists at that point.",
+  "examples": [
+    "***The disguised wall*** - e^(1/x) inherits 1/x's split and converts it: +inf from the right, a quiet 0 from the left - blow-ups wear costumes."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (3m): Find the vertical asymptotes of f(x) = (x + 1)/(x² − 3x + 2) and classify the behaviour at each.** — **Factor:** x² − 3x + 2 = (x − 1)(x − 2). **Cancellation check:** the numerator x + 1 vanishes at neither 1 nor 2 (x + 1 = 0 ⟹ x = −1, not a denominator zero) — no common factors, so both zeros survive as asymptote candidates. **At x = 1:** near 1, (x − 2) ≈ −1 (negative), so the denominator ≈ −(x − 1): an **odd power** of (x − 1) ⟹ the sign flips across 1 ⟹ **split asymptote**: lim_{x→1⁻} f = +∞ (small negative denominator over +2 numerator... numerator ≈ 2 > 0, denominator → 0⁻ ⟹ −∞; from the right +∞) — the sides are −∞ and +∞. **At x = 2:** numerator ≈ 3 > 0, denominator ≈ 3(x − 2) — again odd ⟹ **split asymptote** (−∞ left, +∞ right). **Verdict:** vertical asymptotes **x = 1 and x = 2**, both with split (odd-multiplicity) behaviour; both discontinuities infinite and non-removable.",
+    "**NEB-style (2m): Show that lim_{x→0⁺} ln x = −∞ and interpret the graph.** — **Computation:** for 0 < x < 1, ln x is negative, and as x shrinks, |ln x| grows without bound (e.g. ln 0.001 ≈ −6.9, ln 10⁻⁶ ≈ −13.8): hence **lim_{x→0⁺} ln x = −∞**. **Graphical interpretation:** the **y-axis (x = 0) is a one-sided vertical asymptote** — the curve plunges downward hugging the axis, never touching it. **Why one-sided:** ln x is defined only for x > 0; the left approach does not exist (a domain absence, not a disagreement), so the wall is visible only from the right — the log's wall stands at the edge of its world.",
+    "**NEB-style (2m): Discuss lim_{x→0} e^{1/x} using one-sided analysis.** — **Right side:** x → 0⁺ ⟹ 1/x → **+∞** ⟹ e^{1/x} → e^{+∞} = **+∞** — unbounded growth. **Left side:** x → 0⁻ ⟹ 1/x → **−∞** ⟹ e^{1/x} → **e^{−∞} = 0** — a quiet, finite approach. **Verdict:** the right-hand limit is infinite ⟹ f has an **infinite discontinuity at x = 0** (non-removable), and the two-sided limit does not exist — but note the disguise: 1/x alone splits into −∞/+∞, while its exponential **converts** the left side's −∞ into the finite 0 (e^{−∞} = 0) and amplifies the right side's +∞. The wall survives on one side only — composition can transmute but not always erase a blow-up."
+  ],
+  "formulas": [
+    "- infinite at a ⟺ lim_{x→a⁻} or lim_{x→a⁺} = ±∞\n- 1/(x−a)ᵐ: m odd ⟹ split; m even ⟹ unified +∞\n- ln x → −∞ as x → 0⁺; e^{1/x}: +∞ right, 0 left"
+  ],
+  "keyPoints": [
+    "Infinite discontinuity at a: at least one one-sided limit is +inf or -inf; two-sided limit DNE; non-removable. Vertical asymptote x = a: |f| -> inf near a from at least one side. Multiplicity rule: odd-power denominator zeros split the sides (+inf/-inf, like 1/x); even-power zeros unify (both +inf, like 1/x^2). Cancel common factors first - shared zeros are holes, survivors are walls. One-sided walls: ln x -> -inf as x -> 0+. Disguised walls: e^(1/x) -> +inf right, -> 0 left. Rational asymptote factories: surviving denominator zeros."
+  ],
+  "summary": "An **infinite discontinuity** is the wall: at least one one-sided limit is **±∞**, the two-sided limit does not exist, and no redefinition can help — the neighbourhood itself is unbounded. The visible signature is the **vertical asymptote** x = a, and the **multiplicity rule** tells the two species apart: **odd-power** denominator zeros **split** the sides (1/x: −∞ left, +∞ right), **even-power** zeros **unify** them (1/x²: +∞ both). Protocol: factor, **cancel common factors first** (shared zeros are removable holes), then triage the survivors — (x+1)/(x²−3x+2) has split walls at x = 1 and x = 2. Walls also appear at **domain edges** (ln x → −∞ at 0⁺, one-sided) and in **disguise** (e^{1/x}: +∞ right, 0 left — composition transmutes the split). Infinity is behaviour, not a value; the wall is approached, never touched.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"An infinite discontinuity has a one-sided limit of +-inf; x = a is a vertical asymptote; odd multiplicity splits, even unifies.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Factor, cancel, then triage survivors. Odd zero: split; even zero: unified. Check one-sided signs before writing the asymptote's story."
+  ],
+  "examNotes": [
+    "For asymptote questions, show the factorisation and the cancellation step - the triage logic (hole vs wall) is the analysis being tested."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "The multiplicity of a denominator zero is the whole sign story: odd splits the wall, even unifies it - and cancellation routes shared zeros to holes first."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Vertical Wall\n\nAn **infinite discontinuity** occurs when f blows up at a: at least one one-sided limit is ±∞. The graph sprouts a **vertical asymptote** x = a — the line the curve approaches but never touches.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definition and detection\n\n- **Infinite discontinuity at a** ⟺ lim_{x→a⁻} f(x) or lim_{x→a⁺} f(x) is **+∞ or −∞**.\n- **Detection:** c/0 forms (numerator → c ≠ 0, denominator → 0); also log x at 0⁺, and unbounded growth like e^{1/x} compositions.\n\n### 2.2 The two species of blow-up\n\n- **Split asymptote:** sides infinite with **opposite** signs — 1/x at 0 (−∞ left, +∞ right); caused by **odd-multiplicity** zeros of the denominator.\n- **Unified blow-up:** both sides the same infinity — 1/x² at 0 (+∞ both); **even multiplicity** zeros.\n- Either way the two-sided limit **does not exist** — infinity is not a value.\n\n### 2.3 The vertical asymptote\n\n- **x = a is a vertical asymptote** ⟺ |f(x)| → ∞ as x → a from at least one side. The curve hugs the line without meeting it (or crosses it far away — asymptotes describe local behaviour).\n- Denominator zeros of rational functions (after cancelling common factors) are the standard asymptote factories.\n\n### 2.4 Non-removability\n\n- No redefinition helps: the neighbourhood values are unbounded, so no finite f(a) reconciles them. Infinite discontinuities are **non-removable** by nature.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Infinite discontinuity** | A one-sided limit is ±∞ | 1/x at 0 |\n| **Vertical asymptote** | \\|f\\| → ∞ at x = a | x = 0 for 1/x |\n| **Split vs unified** | Opposite vs same infinities | 1/x vs 1/x² |\n| **Multiplicity rule** | Odd zero splits, even unifies | (x−a)³ vs (x−a)² |",
+      "## 4. Detailed Explanation\n\n### 4.1 Multiplicity is the sign story\n\n- Near a, (x − a)ᵐ changes sign across a iff m is odd. Dividing c by it: odd m ⟹ the sides split (±∞); even m ⟹ they unify (+∞ after squaring). The multiplicity of the denominator zero is the entire classification.\n\n### 4.2 Cancel first, then triage\n\n- Cancel common factors (removable holes at those zeros), then the surviving denominator zeros give asymptotes. The (x+2)/(x²−4) pattern: hole at −2, wall at 2.\n\n### 4.3 Logs and composites\n\n- ln x → −∞ as x → 0⁺: a one-sided wall at the domain edge. Compositions inherit blow-ups: e^{1/x} → ∞ from the right, → 1·... → e^{−∞} = 0 from the left — walls can wear disguises.",
+      "## 5. Comparison Tables\n\n**Blow-up atlas**\n\n| Form | Left | Right | Asymptote |\n|---|---|---|---|\n| 1/(x−a) | −∞ | +∞ | split |\n| 1/(x−a)² | +∞ | +∞ | unified |\n| ln x (a=0) | — | −∞ | one-sided |\n| 1/sin x at 0 | +∞ | +∞... (csc near 0) | unified |",
+      "## 6. Common Confusions\n\n**∞ is not a limit value:** \"limit = ∞\" is shorthand for unbounded behaviour; the two-sided limit still DNE.",
+      "**Every denominator zero is an asymptote:** only after cancelling common factors — shared zeros are holes first.",
+      "**Asymptotes can be crossed:** the curve may cross x = a far from a; the asymptote constrains behaviour *near* a.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Find the vertical asymptotes of f(x) = (x + 1)/(x² − 3x + 2) and classify each.** — Factor: x² − 3x + 2 = (x − 1)(x − 2); numerator −1 at both ⟹ no cancellation. **At x = 1:** denominator (x−1)(x−2) ≈ (small)(−1) — sign flips across 1 (odd multiplicity) ⟹ **split asymptote**: −∞/∞ sides. **At x = 2:** (x−2) odd power ⟹ **split asymptote**. Both are infinite discontinuities; f → ±∞ near each.",
+      "**NEB-style (2m): Show that lim_{x→0⁺} ln x = −∞ and interpret graphically.** — For x → 0⁺, ln x = −|ln x| → **−∞**: the log dives without bound at its domain's left edge. **Graph:** x = 0 (the y-axis) is a **one-sided vertical asymptote** — the curve hugs it downward; no left side exists (domain x > 0), so the wall is visible only from the right.",
+      "**NEB-style (2m): Discuss lim_{x→0} e^{1/x}.** — **Right side:** x → 0⁺ ⟹ 1/x → +∞ ⟹ e^{1/x} → **+∞**. **Left side:** 1/x → −∞ ⟹ e^{1/x} → **e^{−∞} = 0**. **Verdict:** RHL = +∞ (infinite), LHL = 0 — the right side blows up ⟹ **infinite discontinuity at 0** (non-removable), with a disguised wall: the exponential turns the split of 1/x into a one-sided blow-up against a finite left approach."
+    ],
+    "keyPoints": [
+      "Infinite discontinuity at a: at least one one-sided limit is +inf or -inf; two-sided limit DNE; non-removable. Vertical asymptote x = a: |f| -> inf near a from at least one side. Multiplicity rule: odd-power denominator zeros split the sides (+inf/-inf, like 1/x); even-power zeros unify (both +inf, like 1/x^2). Cancel common factors first - shared zeros are holes, survivors are walls. One-sided walls: ln x -> -inf as x -> 0+. Disguised walls: e^(1/x) -> +inf right, -> 0 left. Rational asymptote factories: surviving denominator zeros."
+    ],
+    "importantConcepts": [
+      "The multiplicity of a denominator zero is the whole sign story: odd splits the wall, even unifies it - and cancellation routes shared zeros to holes first."
+    ],
+    "examples": [
+      "***The disguised wall*** - e^(1/x) inherits 1/x's split and converts it: +inf from the right, a quiet 0 from the left - blow-ups wear costumes."
+    ],
+    "universalFacts": [
+      "Resonance is an infinite discontinuity: driving frequency hitting a natural frequency sends amplitude to infinity - the wall is physical."
+    ],
+    "importantStatements": [
+      "\"An infinite discontinuity has a one-sided limit of +-inf; x = a is a vertical asymptote; odd multiplicity splits, even unifies.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Factor, cancel, then triage survivors. Odd zero: split; even zero: unified. Check one-sided signs before writing the asymptote's story."
+    ],
+    "examNotes": [
+      "For asymptote questions, show the factorisation and the cancellation step - the triage logic (hole vs wall) is the analysis being tested."
+    ],
+    "formulas": [
+      "- infinite at a ⟺ lim_{x→a⁻} or lim_{x→a⁺} = ±∞\n- 1/(x−a)ᵐ: m odd ⟹ split; m even ⟹ unified +∞\n- ln x → −∞ as x → 0⁺; e^{1/x}: +∞ right, 0 left"
+    ],
+    "practice": [
+      "Find and classify the vertical asymptotes of (x + 1)/(x² − 3x + 2).",
+      "Show lim_{x→0⁺} ln x = −∞ and interpret.",
+      "Discuss lim_{x→0} e^{1/x} from both sides."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Find the vertical asymptotes of f(x) = (x + 1)/(x² − 3x + 2) and classify the behaviour at each.** — **Factor:** x² − 3x + 2 = (x − 1)(x − 2). **Cancellation check:** the numerator x + 1 vanishes at neither 1 nor 2 (x + 1 = 0 ⟹ x = −1, not a denominator zero) — no common factors, so both zeros survive as asymptote candidates. **At x = 1:** near 1, (x − 2) ≈ −1 (negative), so the denominator ≈ −(x − 1): an **odd power** of (x − 1) ⟹ the sign flips across 1 ⟹ **split asymptote**: lim_{x→1⁻} f = +∞ (small negative denominator over +2 numerator... numerator ≈ 2 > 0, denominator → 0⁻ ⟹ −∞; from the right +∞) — the sides are −∞ and +∞. **At x = 2:** numerator ≈ 3 > 0, denominator ≈ 3(x − 2) — again odd ⟹ **split asymptote** (−∞ left, +∞ right). **Verdict:** vertical asymptotes **x = 1 and x = 2**, both with split (odd-multiplicity) behaviour; both discontinuities infinite and non-removable.",
+      "**NEB-style (2m): Show that lim_{x→0⁺} ln x = −∞ and interpret the graph.** — **Computation:** for 0 < x < 1, ln x is negative, and as x shrinks, |ln x| grows without bound (e.g. ln 0.001 ≈ −6.9, ln 10⁻⁶ ≈ −13.8): hence **lim_{x→0⁺} ln x = −∞**. **Graphical interpretation:** the **y-axis (x = 0) is a one-sided vertical asymptote** — the curve plunges downward hugging the axis, never touching it. **Why one-sided:** ln x is defined only for x > 0; the left approach does not exist (a domain absence, not a disagreement), so the wall is visible only from the right — the log's wall stands at the edge of its world.",
+      "**NEB-style (2m): Discuss lim_{x→0} e^{1/x} using one-sided analysis.** — **Right side:** x → 0⁺ ⟹ 1/x → **+∞** ⟹ e^{1/x} → e^{+∞} = **+∞** — unbounded growth. **Left side:** x → 0⁻ ⟹ 1/x → **−∞** ⟹ e^{1/x} → **e^{−∞} = 0** — a quiet, finite approach. **Verdict:** the right-hand limit is infinite ⟹ f has an **infinite discontinuity at x = 0** (non-removable), and the two-sided limit does not exist — but note the disguise: 1/x alone splits into −∞/+∞, while its exponential **converts** the left side's −∞ into the finite 0 (e^{−∞} = 0) and amplifies the right side's +∞. The wall survives on one side only — composition can transmute but not always erase a blow-up."
+    ]
+  }
 }

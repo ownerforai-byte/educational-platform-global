@@ -6,30 +6,113 @@
   "relevance": 100,
   "simulation": "limits-and-continuity-continuity",
   "notes": [
-    "**Graphical idea.** A continuous graph has no break at the point: a tiny change in x produces only a tiny change in f(x), with no sudden leap or gap.",
-    "**Three conditions.** f is continuous at a exactly when (i) f(a) is defined, (ii) lim(x→a) f(x) exists, and (iii) the limit equals f(a); all three must hold.",
-    "**Common breaks.** A hole is removable, a step is a jump, and 1/(x − a) produces an infinite discontinuity at a; each violates a different one of the three conditions.",
-    "**Continuity on an interval.** f is continuous on [p, q] when it is continuous at every interior point, right-continuous at p and left-continuous at q.",
-    "**Worked example.** f(x) = x² is continuous at every real a because lim(x→a) x² = a² = f(a); polynomials are continuous on all of ℝ.",
-    "**Exam caution.** Drawing a smooth-looking curve is not a proof; state all three conditions explicitly when asked to justify continuity."
+    "## 1. Topic Introduction — Continuity You Can See\n\n**Intuitive continuity**: a function is continuous where its graph can be drawn **without lifting the pen**. This topic formalises the picture into the three-part test and surveys how it fails — the map of discontinuities.",
+    "## 2. Fundamental Concepts\n\n### 2.1 The pen test\n\n- **Continuous at a** ⟺ small changes in x produce small changes in f(x) — no jumps, holes or tears at a. Globally continuous on an interval ⟹ drawable in one stroke there.\n\n### 2.2 The three-part test (the theorem)\n\n- f is continuous at a ⟺ **(1)** f(a) exists, **(2)** lim_{x→a} f(x) exists, **(3)** f(a) = lim_{x→a} f(x).\n- Each condition can fail independently — and each failure has a name (rows 36–38): missing value, missing limit, mismatched value.\n\n### 2.3 Continuous families\n\n- **Theorems:** polynomials are continuous on ℝ; rational functions are continuous wherever the denominator ≠ 0; roots on their domains; sin, cos everywhere; sums, products, quotients (non-zero denominator) and **compositions** of continuous functions are continuous.\n- **Composition theorem:** g continuous at a and f continuous at g(a) ⟹ f∘g continuous at a — the chain rule's continuity shadow.\n\n### 2.4 Continuity on intervals\n\n- **Continuous on [a, b]** means continuous on (a, b) plus one-sided continuity at the endpoints — the hypothesis of the Extreme Value and Intermediate Value theorems that calculus will invoke.",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Pen test** | Graph drawable without lifting | polynomials |\n| **Three-part test** | value, limit, equality | the checklist |\n| **Composition theorem** | f∘g continuous if both are | sin(x²) |\n| **Continuity on [a,b]** | interior + one-sided ends | EVT hypothesis |",
+    "## 4. Detailed Explanation\n\n### 4.1 Small change, small response\n\n- Continuity is a stability contract: inputs perturbed slightly yield outputs perturbed slightly. Jumps violate it; holes violate it mildly (fixable); blow-ups violate it violently.\n\n### 4.2 Building continuity from parts\n\n- The closure theorems mean you rarely test continuity from scratch: build expressions from continuous families and quote the closure rules — the continuity analogue of \"well-formed formulas stay well-formed\".\n\n### 4.3 Why endpoints get one-sided treatment\n\n- At a domain edge only one neighbourhood exists; demanding two-sided agreement there would disqualify every endpoint. One-sided continuity is the honest localisation.",
+    "## 5. Comparison Tables\n\n**The three failures**\n\n| Failing part | Name | Repairable? |\n|---|---|---|\n| f(a) missing | removable (hole) | yes — define f(a) |\n| limit missing | jump / infinite | no (jump) / no (infinite) |\n| value ≠ limit | removable | yes — redefine |",
+    "## 6. Common Confusions\n\n**Existence of f(a) alone is not continuity:** the limit must also exist and match — three boxes, all needed.",
+    "**Continuous ≠ differentiable:** |x| is continuous everywhere but not differentiable at 0 — continuity is the weaker contract.",
+    "**Composition preserves continuity, not necessarily differentiability** at kinks — the same distinction one level up.",
+    "## 7. Exam Application\n\n**NEB-style (2m): Show that f(x) = x² sin(1/x) (x ≠ 0), f(0) = 0 is continuous at 0.** — **Limit:** |x² sin(1/x)| ≤ x²·1 = x² → 0 (squeeze: sin(1/x) is trapped in [−1, 1]), so lim_{x→0} f(x) = 0. **Value:** f(0) = 0. **Match:** 0 = 0 ⟹ **continuous at 0** — the composition/closure theorems fail here (sin(1/x) is discontinuous at 0), but the x² damping saves the day: continuity can be earned by squeeze, not only by closure.",
+    "**NEB-style (2m): State where f(x) = (x² − 1)/(x + 1) is continuous, and classify any break.** — Rational function: continuous wherever x + 1 ≠ 0, i.e. on **ℝ \\ {−1}**. At x = −1: f undefined (condition 1 fails) ⟹ discontinuous; but the limit exists — (x²−1)/(x+1) = x − 1 for x ≠ −1 gives lim = −2 ⟹ **removable** discontinuity (a hole at (−1, −2), repairable by defining f(−1) = −2).",
+    "**NEB-style (2m): Prove that the composition of continuous functions is continuous at a.** — Let g be continuous at a and f continuous at g(a). Take any sequence... (ε–δ sketch): given ε > 0, continuity of f at g(a) supplies δ₁ with |f(u) − f(g(a))| < ε whenever |u − g(a)| < δ₁; continuity of g at a supplies δ with |g(x) − g(a)| < δ₁ whenever |x − a| < δ. Chaining: |x − a| < δ ⟹ |f(g(x)) − f(g(a))| < ε. Hence f∘g is continuous at a ∎ — the neighbourhoods nest, which is all the proof needs."
   ],
   "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "practice": [
+    "Show f(x) = x² sin(1/x) (x≠0), f(0) = 0 is continuous at 0.",
+    "Locate and classify the discontinuity of (x² − 1)/(x + 1).",
+    "Prove the composition theorem for continuity."
+  ],
+  "universalFacts": [
+    "Thermostats and volume knobs are continuous controls: tiny turns make tiny changes - jumps (switches) are the discontinuous alternative."
+  ],
   "animation3D": "limits-and-continuity-continuity",
   "motionGraphics": "limits-and-continuity-continuity",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Intuitively a function is continuous when its graph can be drawn without lifting the pen; formally that means no hole, jump or vertical asymptote at the point.",
+  "examples": [
+    "***The damped wiggler*** - x^2 sin(1/x) fails every closure route at 0 yet is continuous there: the x^2 factor squeezes the wild oscillation to 0."
+  ],
+  "practiceQuestions": [
+    "**NEB-style (2m): Show that f(x) = x² sin(1/x) for x ≠ 0, with f(0) = 0, is continuous at x = 0.** — **The obstacle:** sin(1/x) has no limit at 0 (oscillation), so no closure theorem applies — continuity must be earned directly. **Squeeze argument:** −1 ≤ sin(1/x) ≤ 1 for every x ≠ 0, so multiplying by the non-negative x²: **−x² ≤ x² sin(1/x) ≤ x²**. Both bounds → 0 as x → 0, so by the **squeeze theorem** lim_{x→0} x² sin(1/x) = 0. **Three-part test:** (1) f(0) = 0 exists ✓; (2) the limit exists and equals 0 ✓; (3) f(0) = 0 = limit ✓ ⟹ **f is continuous at 0**. The moral: damping factors can tame oscillation — continuity by squeeze where composition fails.",
+    "**NEB-style (2m): Determine where f(x) = (x² − 1)/(x + 1) is continuous and classify the discontinuity.** — **Closure route:** f is a rational function, continuous wherever its denominator is non-zero: **continuous on ℝ \\ {−1}**. **At x = −1:** condition 1 of the three-part test fails — f(−1) is undefined (0/0). **Limit check:** factoring, (x² − 1)/(x + 1) = x − 1 for x ≠ −1, so lim_{x→−1} f(x) = −2 — the limit **exists**. **Classification:** missing value with existing limit ⟹ **removable discontinuity**: a hole at the point (−1, −2); defining f(−1) = −2 would make f continuous on all of ℝ. The factor-and-cancel pattern is the signature of every removable rational break.",
+    "**NEB-style (2m): Prove that if g is continuous at a and f is continuous at g(a), then f∘g is continuous at a.** — **Proof (ε–δ chaining).** Let ε > 0 be given. Since f is continuous at g(a), there is δ₁ > 0 such that |u − g(a)| < δ₁ ⟹ |f(u) − f(g(a))| < ε. Since g is continuous at a, there is δ > 0 such that |x − a| < δ ⟹ |g(x) − g(a)| < δ₁. **Chain the implications:** for |x − a| < δ, set u = g(x); then |u − g(a)| < δ₁, so |f(g(x)) − f(g(a))| < ε. This is precisely the ε–δ statement that f∘g is continuous at a. ∎ **Reading:** the neighbourhoods **nest** — f's tolerance δ₁ becomes g's target — which is the entire mechanism; the theorem is why sin(x²), e^{sin x} and √(1 + x²) inherit continuity for free."
+  ],
+  "formulas": [
+    "- continuity at a: f(a) = lim_{x→a} f(x), both existing\n- closure: f, g continuous ⟹ f ± g, f·g, f/g (g ≠ 0), f∘g continuous\n- rational p/q continuous on {q ≠ 0}; |x|, sin, cos, eˣ continuous on ℝ"
+  ],
+  "keyPoints": [
+    "Pen test: continuous where the graph draws without lifting. Three-part test: f(a) exists, lim exists, f(a) = lim - each failure independently named. Continuous families: polynomials (all R), rationals (denominator != 0), roots (domain), sin/cos (all R); sums, products, quotients, compositions of continuous functions are continuous (closure theorems). Composition theorem: g continuous at a and f at g(a) => f o g continuous at a. Continuity on [a, b]: interior two-sided + endpoint one-sided - the EVT/IVT hypothesis. Squeeze can certify continuity where closure fails (x^2 sin(1/x) at 0). Continuous does not imply differentiable (|x| at 0)."
+  ],
+  "summary": "**Intuitive continuity** is the pen test — drawable without lifting — and its formal face is the **three-part theorem**: f(a) exists, lim_{x→a} f(x) exists, and they are **equal**. Each part can fail alone, and the failure names the discontinuity (removable hole, jump, infinite). **Closure theorems** make continuity cheap: polynomials, rationals (off denominator zeros), roots, sin, cos are continuous, and sums, products, quotients and **compositions** inherit it — f∘g continuous by neighbourhood-nesting ε–δ chaining. Where closure fails, the **squeeze** can still certify continuity: x² sin(1/x) with f(0) = 0 is continuous at 0 because x² damps the oscillation to 0. **Continuity on [a, b]** adds one-sided endpoint tests — the hypothesis the Extreme Value and Intermediate Value theorems will demand. And continuity ≠ differentiability: |x| bends without breaking. Three boxes, closure shortcuts, squeeze rescues — the whole continuity toolkit.",
   "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
+  "importantStatements": [
+    "\"f is continuous at a iff f(a) = lim_{x->a} f(x) with both existing; compositions and sums/products/quotients of continuous functions are continuous.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+  ],
+  "examShortTricks": [
+    "Test the three parts in order. Build continuity by closure theorems. Rational functions: continuous off the denominator zeros. Endpoints: one-sided test."
+  ],
+  "examNotes": [
+    "Quote which part of the three-part test fails - naming the failing condition is the analysis the marker wants."
+  ],
   "mcs": [],
-  "importantConcepts": [],
+  "importantConcepts": [
+    "Continuity is a stability contract - small input changes, small output changes - and the closure theorems let you build continuous expressions without fresh tests."
+  ],
   "importantTasks": [],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Continuity You Can See\n\n**Intuitive continuity**: a function is continuous where its graph can be drawn **without lifting the pen**. This topic formalises the picture into the three-part test and surveys how it fails — the map of discontinuities.",
+      "## 2. Fundamental Concepts\n\n### 2.1 The pen test\n\n- **Continuous at a** ⟺ small changes in x produce small changes in f(x) — no jumps, holes or tears at a. Globally continuous on an interval ⟹ drawable in one stroke there.\n\n### 2.2 The three-part test (the theorem)\n\n- f is continuous at a ⟺ **(1)** f(a) exists, **(2)** lim_{x→a} f(x) exists, **(3)** f(a) = lim_{x→a} f(x).\n- Each condition can fail independently — and each failure has a name (rows 36–38): missing value, missing limit, mismatched value.\n\n### 2.3 Continuous families\n\n- **Theorems:** polynomials are continuous on ℝ; rational functions are continuous wherever the denominator ≠ 0; roots on their domains; sin, cos everywhere; sums, products, quotients (non-zero denominator) and **compositions** of continuous functions are continuous.\n- **Composition theorem:** g continuous at a and f continuous at g(a) ⟹ f∘g continuous at a — the chain rule's continuity shadow.\n\n### 2.4 Continuity on intervals\n\n- **Continuous on [a, b]** means continuous on (a, b) plus one-sided continuity at the endpoints — the hypothesis of the Extreme Value and Intermediate Value theorems that calculus will invoke.",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Pen test** | Graph drawable without lifting | polynomials |\n| **Three-part test** | value, limit, equality | the checklist |\n| **Composition theorem** | f∘g continuous if both are | sin(x²) |\n| **Continuity on [a,b]** | interior + one-sided ends | EVT hypothesis |",
+      "## 4. Detailed Explanation\n\n### 4.1 Small change, small response\n\n- Continuity is a stability contract: inputs perturbed slightly yield outputs perturbed slightly. Jumps violate it; holes violate it mildly (fixable); blow-ups violate it violently.\n\n### 4.2 Building continuity from parts\n\n- The closure theorems mean you rarely test continuity from scratch: build expressions from continuous families and quote the closure rules — the continuity analogue of \"well-formed formulas stay well-formed\".\n\n### 4.3 Why endpoints get one-sided treatment\n\n- At a domain edge only one neighbourhood exists; demanding two-sided agreement there would disqualify every endpoint. One-sided continuity is the honest localisation.",
+      "## 5. Comparison Tables\n\n**The three failures**\n\n| Failing part | Name | Repairable? |\n|---|---|---|\n| f(a) missing | removable (hole) | yes — define f(a) |\n| limit missing | jump / infinite | no (jump) / no (infinite) |\n| value ≠ limit | removable | yes — redefine |",
+      "## 6. Common Confusions\n\n**Existence of f(a) alone is not continuity:** the limit must also exist and match — three boxes, all needed.",
+      "**Continuous ≠ differentiable:** |x| is continuous everywhere but not differentiable at 0 — continuity is the weaker contract.",
+      "**Composition preserves continuity, not necessarily differentiability** at kinks — the same distinction one level up.",
+      "## 7. Exam Application\n\n**NEB-style (2m): Show that f(x) = x² sin(1/x) (x ≠ 0), f(0) = 0 is continuous at 0.** — **Limit:** |x² sin(1/x)| ≤ x²·1 = x² → 0 (squeeze: sin(1/x) is trapped in [−1, 1]), so lim_{x→0} f(x) = 0. **Value:** f(0) = 0. **Match:** 0 = 0 ⟹ **continuous at 0** — the composition/closure theorems fail here (sin(1/x) is discontinuous at 0), but the x² damping saves the day: continuity can be earned by squeeze, not only by closure.",
+      "**NEB-style (2m): State where f(x) = (x² − 1)/(x + 1) is continuous, and classify any break.** — Rational function: continuous wherever x + 1 ≠ 0, i.e. on **ℝ \\ {−1}**. At x = −1: f undefined (condition 1 fails) ⟹ discontinuous; but the limit exists — (x²−1)/(x+1) = x − 1 for x ≠ −1 gives lim = −2 ⟹ **removable** discontinuity (a hole at (−1, −2), repairable by defining f(−1) = −2).",
+      "**NEB-style (2m): Prove that the composition of continuous functions is continuous at a.** — Let g be continuous at a and f continuous at g(a). Take any sequence... (ε–δ sketch): given ε > 0, continuity of f at g(a) supplies δ₁ with |f(u) − f(g(a))| < ε whenever |u − g(a)| < δ₁; continuity of g at a supplies δ with |g(x) − g(a)| < δ₁ whenever |x − a| < δ. Chaining: |x − a| < δ ⟹ |f(g(x)) − f(g(a))| < ε. Hence f∘g is continuous at a ∎ — the neighbourhoods nest, which is all the proof needs."
+    ],
+    "keyPoints": [
+      "Pen test: continuous where the graph draws without lifting. Three-part test: f(a) exists, lim exists, f(a) = lim - each failure independently named. Continuous families: polynomials (all R), rationals (denominator != 0), roots (domain), sin/cos (all R); sums, products, quotients, compositions of continuous functions are continuous (closure theorems). Composition theorem: g continuous at a and f at g(a) => f o g continuous at a. Continuity on [a, b]: interior two-sided + endpoint one-sided - the EVT/IVT hypothesis. Squeeze can certify continuity where closure fails (x^2 sin(1/x) at 0). Continuous does not imply differentiable (|x| at 0)."
+    ],
+    "importantConcepts": [
+      "Continuity is a stability contract - small input changes, small output changes - and the closure theorems let you build continuous expressions without fresh tests."
+    ],
+    "examples": [
+      "***The damped wiggler*** - x^2 sin(1/x) fails every closure route at 0 yet is continuous there: the x^2 factor squeezes the wild oscillation to 0."
+    ],
+    "universalFacts": [
+      "Thermostats and volume knobs are continuous controls: tiny turns make tiny changes - jumps (switches) are the discontinuous alternative."
+    ],
+    "importantStatements": [
+      "\"f is continuous at a iff f(a) = lim_{x->a} f(x) with both existing; compositions and sums/products/quotients of continuous functions are continuous.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Test the three parts in order. Build continuity by closure theorems. Rational functions: continuous off the denominator zeros. Endpoints: one-sided test."
+    ],
+    "examNotes": [
+      "Quote which part of the three-part test fails - naming the failing condition is the analysis the marker wants."
+    ],
+    "formulas": [
+      "- continuity at a: f(a) = lim_{x→a} f(x), both existing\n- closure: f, g continuous ⟹ f ± g, f·g, f/g (g ≠ 0), f∘g continuous\n- rational p/q continuous on {q ≠ 0}; |x|, sin, cos, eˣ continuous on ℝ"
+    ],
+    "practice": [
+      "Show f(x) = x² sin(1/x) (x≠0), f(0) = 0 is continuous at 0.",
+      "Locate and classify the discontinuity of (x² − 1)/(x + 1).",
+      "Prove the composition theorem for continuity."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (2m): Show that f(x) = x² sin(1/x) for x ≠ 0, with f(0) = 0, is continuous at x = 0.** — **The obstacle:** sin(1/x) has no limit at 0 (oscillation), so no closure theorem applies — continuity must be earned directly. **Squeeze argument:** −1 ≤ sin(1/x) ≤ 1 for every x ≠ 0, so multiplying by the non-negative x²: **−x² ≤ x² sin(1/x) ≤ x²**. Both bounds → 0 as x → 0, so by the **squeeze theorem** lim_{x→0} x² sin(1/x) = 0. **Three-part test:** (1) f(0) = 0 exists ✓; (2) the limit exists and equals 0 ✓; (3) f(0) = 0 = limit ✓ ⟹ **f is continuous at 0**. The moral: damping factors can tame oscillation — continuity by squeeze where composition fails.",
+      "**NEB-style (2m): Determine where f(x) = (x² − 1)/(x + 1) is continuous and classify the discontinuity.** — **Closure route:** f is a rational function, continuous wherever its denominator is non-zero: **continuous on ℝ \\ {−1}**. **At x = −1:** condition 1 of the three-part test fails — f(−1) is undefined (0/0). **Limit check:** factoring, (x² − 1)/(x + 1) = x − 1 for x ≠ −1, so lim_{x→−1} f(x) = −2 — the limit **exists**. **Classification:** missing value with existing limit ⟹ **removable discontinuity**: a hole at the point (−1, −2); defining f(−1) = −2 would make f continuous on all of ℝ. The factor-and-cancel pattern is the signature of every removable rational break.",
+      "**NEB-style (2m): Prove that if g is continuous at a and f is continuous at g(a), then f∘g is continuous at a.** — **Proof (ε–δ chaining).** Let ε > 0 be given. Since f is continuous at g(a), there is δ₁ > 0 such that |u − g(a)| < δ₁ ⟹ |f(u) − f(g(a))| < ε. Since g is continuous at a, there is δ > 0 such that |x − a| < δ ⟹ |g(x) − g(a)| < δ₁. **Chain the implications:** for |x − a| < δ, set u = g(x); then |u − g(a)| < δ₁, so |f(g(x)) − f(g(a))| < ε. This is precisely the ε–δ statement that f∘g is continuous at a. ∎ **Reading:** the neighbourhoods **nest** — f's tolerance δ₁ becomes g's target — which is the entire mechanism; the theorem is why sin(x²), e^{sin x} and √(1 + x²) inherit continuity for free."
+    ]
+  }
 }
