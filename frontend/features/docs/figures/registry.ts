@@ -1481,6 +1481,41 @@ import { MgNo3Decomp } from "./mg-no3-decomp";
 import { LiMgDiagonal } from "./li-mg-diagonal";
 import { IaVsIiaCarbonates } from "./ia-vs-iia-carbonates";
 import { KilnTemperaturePanel } from "./kiln-temperature-panel";
+import { EssentialElementTiers } from "./essential-element-tiers";
+import { MetalJobsMap } from "./metal-jobs-map";
+import { TierNeedChart } from "./tier-need-chart";
+import { MetalloenzymePanel } from "./metalloenzyme-panel";
+import { ChelateRingPanel } from "./chelate-ring-panel";
+import { FlagshipComplexes } from "./flagship-complexes";
+import { DoseWindow } from "./dose-window";
+import { MacroSevenPanel } from "./macro-seven-panel";
+import { TraceElementRoster } from "./trace-element-roster";
+import { DeficiencyDiseaseTable } from "./deficiency-disease-table";
+import { IodineThyroxineFlow } from "./iodine-thyroxine-flow";
+import { TwoAnaemiasPanel } from "./two-anaemias-panel";
+import { ChlorosisPanel } from "./chlorosis-panel";
+import { MacroVsMicroTable } from "./macro-vs-micro-table";
+import { TenIonRoster } from "./ten-ion-roster";
+import { NaKPairPanel } from "./na-k-pair-panel";
+import { CalciumJobsPanel } from "./calcium-jobs-panel";
+import { HbVsChlorophyllFig } from "./hb-vs-chlorophyll-fig";
+import { CoHijackPanel } from "./co-hijack-panel";
+import { DBlockVsSBlock } from "./d-block-vs-s-block";
+import { ZincNiCrPanel } from "./zinc-ni-cr-panel";
+import { PassiveVsActive } from "./passive-vs-active";
+import { PrimaryVsSecondary } from "./primary-vs-secondary";
+import { NaKPumpCycle } from "./na-k-pump-cycle";
+import { PumpImportancePanel } from "./pump-importance-panel";
+import { NaGlucoseSymport } from "./na-glucose-symport";
+import { OrsPanel } from "./ors-panel";
+import { GradientEconomy } from "./gradient-economy";
+import { ToxicFiveTable } from "./toxic-five-table";
+import { SoftMetalSulphur } from "./soft-metal-sulphur";
+import { MimicryPanel } from "./mimicry-panel";
+import { MinamataStory } from "./minamata-story";
+import { LeadHaemBlock } from "./lead-haem-block";
+import { ArsenicGroundwater } from "./arsenic-groundwater";
+import { ChelationTherapyPanel } from "./chelation-therapy-panel";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -10848,6 +10883,67 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     { Component: LiMgDiagonal, caption: "The Li\u2013Mg diagonal similarity", alt: "Diagram: the li\u2013mg diagonal similarity", keyword: "diagonal" },
     { Component: IaVsIiaCarbonates, caption: "Why IA carbonates shrug off heat", alt: "Diagram: why ia carbonates shrug off heat", keyword: "851" },
     { Component: KilnTemperaturePanel, caption: "Two ores, two kilns", alt: "Diagram: two ores, two kilns", keyword: "limestone" },
+  ],
+  },
+
+  "introduction-to-bio-inorganic-chemistry": {
+    title: "Three tiers of essential elements",
+    figures: [
+    { Component: EssentialElementTiers, caption: "Three tiers of essential elements", alt: "Diagram: three tiers of essential elements", keyword: "essential elements" },
+    { Component: MetalJobsMap, caption: "Four jobs for a metal ion", alt: "Diagram: four jobs for a metal ion", keyword: "transport" },
+    { Component: TierNeedChart, caption: "Requirements span seven orders of magnitude", alt: "Diagram: requirements span seven orders of magnitude", keyword: "bulk" },
+    { Component: MetalloenzymePanel, caption: "Metalloenzyme: carbonic anhydrase", alt: "Diagram: metalloenzyme: carbonic anhydrase", keyword: "carbonic anhydrase" },
+    { Component: ChelateRingPanel, caption: "Chelation \u2014 the ring grips the metal", alt: "Diagram: chelation \u2014 the ring grips the metal", keyword: "porphyrin" },
+    { Component: FlagshipComplexes, caption: "Chlorophyll vs haemoglobin", alt: "Diagram: chlorophyll vs haemoglobin", keyword: "chlorophyll" },
+    { Component: DoseWindow, caption: "The window of safety", alt: "Diagram: the window of safety", keyword: "window of safety" },
+  ],
+  },
+  "micro-and-macro-nutrients": {
+    title: "The macro seven minerals",
+    figures: [
+    { Component: MacroSevenPanel, caption: "The macro seven minerals", alt: "Diagram: the macro seven minerals", keyword: "100 mg" },
+    { Component: TraceElementRoster, caption: "The trace ten elements", alt: "Diagram: the trace ten elements", keyword: "trace element" },
+    { Component: DeficiencyDiseaseTable, caption: "The deficiency disease table", alt: "Diagram: the deficiency disease table", keyword: "goitre" },
+    { Component: IodineThyroxineFlow, caption: "Iodine to thyroxine to goitre", alt: "Diagram: iodine to thyroxine to goitre", keyword: "iodised salt" },
+    { Component: TwoAnaemiasPanel, caption: "Two anaemias, two metals", alt: "Diagram: two anaemias, two metals", keyword: "pernicious" },
+    { Component: ChlorosisPanel, caption: "Chlorosis \u2014 the plant's anaemia", alt: "Diagram: chlorosis \u2014 the plant's anaemia", keyword: "chlorosis" },
+    { Component: MacroVsMicroTable, caption: "Macro vs micro nutrients", alt: "Diagram: macro vs micro nutrients", keyword: "macro-nutrients" },
+  ],
+  },
+  "importance-of-metal-ions-in-biological-systems-ions-of-na-k-mg-ca-fe-cu-zn-ni-co-cr": {
+    title: "Ten ions, ten one-line jobs",
+    figures: [
+    { Component: TenIonRoster, caption: "Ten ions, ten one-line jobs", alt: "Diagram: ten ions, ten one-line jobs", keyword: "haemocyanin" },
+    { Component: NaKPairPanel, caption: "Na outside, K inside", alt: "Diagram: na outside, k inside", keyword: "extracellular" },
+    { Component: CalciumJobsPanel, caption: "Calcium: four careers", alt: "Diagram: calcium: four careers", keyword: "hydroxyapatite" },
+    { Component: HbVsChlorophyllFig, caption: "Function picks the metal", alt: "Diagram: function picks the metal", keyword: "porphyrin" },
+    { Component: CoHijackPanel, caption: "CO hijacks the O2 seat", alt: "Diagram: co hijacks the o2 seat", keyword: "carboxyhaemoglobin" },
+    { Component: DBlockVsSBlock, caption: "s-block vs d-block toolkits", alt: "Diagram: s-block vs d-block toolkits", keyword: "coordination chemistry" },
+    { Component: ZincNiCrPanel, caption: "Zn, Ni and Cr specialists", alt: "Diagram: zn, ni and cr specialists", keyword: "urease" },
+  ],
+  },
+  "ion-pumps-sodium-potassium-and-sodium-glucose-pump": {
+    title: "Passive vs active transport",
+    figures: [
+    { Component: PassiveVsActive, caption: "Passive vs active transport", alt: "Diagram: passive vs active transport", keyword: "active transport" },
+    { Component: PrimaryVsSecondary, caption: "Primary vs secondary active transport", alt: "Diagram: primary vs secondary active transport", keyword: "secondary active transport" },
+    { Component: NaKPumpCycle, caption: "Na+/K+ ATPase: one ATP, five ions", alt: "Diagram: na+/k+ atpase: one atp, five ions", keyword: "atpase" },
+    { Component: PumpImportancePanel, caption: "Why the pump never clocks out", alt: "Diagram: why the pump never clocks out", keyword: "resting" },
+    { Component: NaGlucoseSymport, caption: "Na+-glucose symport", alt: "Diagram: na+-glucose symport", keyword: "symport" },
+    { Component: OrsPanel, caption: "ORS at the bedside", alt: "Diagram: ors at the bedside", keyword: "oral rehydration" },
+    { Component: GradientEconomy, caption: "The gradient is a currency", alt: "Diagram: the gradient is a currency", keyword: "gradient" },
+  ],
+  },
+  "metal-toxicity-toxicity-due-to-iron-arsenic-mercury-lead-and-cadmium": {
+    title: "The toxic five metals",
+    figures: [
+    { Component: ToxicFiveTable, caption: "The toxic five metals", alt: "Diagram: the toxic five metals", keyword: "itai-itai" },
+    { Component: SoftMetalSulphur, caption: "Soft metals love soft sulphur", alt: "Diagram: soft metals love soft sulphur", keyword: "thiol" },
+    { Component: MimicryPanel, caption: "Mimicry: wrong ion, right seat", alt: "Diagram: mimicry: wrong ion, right seat", keyword: "imitates" },
+    { Component: MinamataStory, caption: "Minamata: bioaccumulation", alt: "Diagram: minamata: bioaccumulation", keyword: "minamata" },
+    { Component: LeadHaemBlock, caption: "Lead blocks the haem line", alt: "Diagram: lead blocks the haem line", keyword: "ala dehydratase" },
+    { Component: ArsenicGroundwater, caption: "Arsenic in well water", alt: "Diagram: arsenic in well water", keyword: "10 ppb" },
+    { Component: ChelationTherapyPanel, caption: "Chelation therapy antidotes", alt: "Diagram: chelation therapy antidotes", keyword: "chelation therapy" },
   ],
   },
 
