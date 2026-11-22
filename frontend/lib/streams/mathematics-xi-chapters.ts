@@ -15,6 +15,25 @@ export const MATH_XI_WORKBOOK_BASE = "/resources/mathematics-xi/chapters";
 export const MATH_XI_QUESTIONS_PER_SHEET = 12;
 export const MATH_XI_HARD_PER_SHEET = 6;
 export const MATH_XI_LONG_PER_SHEET = 1;
+export const MATH_XI_PAPER_MARKS = 75;
+
+/** Shape of the NEB paper — 11 × 1, 8 × 5, 3 × 8 marks. */
+export const MATH_XI_PAPER_GROUPS = [
+  { key: "A", label: "Group A — Tick the correct option", per: 1, count: 11 },
+  { key: "B", label: "Group B — Short answer questions", per: 5, count: 8 },
+  { key: "C", label: "Group C — Long answer questions", per: 8, count: 3 },
+] as const;
+
+/** One NEB model paper per unit. */
+export const MATH_XI_PAPERS = [
+  { unitNo: 1, title: "Unit 1 — Algebra", unitName: "Algebra", questionCount: 22, marks: 75 },
+  { unitNo: 2, title: "Unit 2 — Trigonometry", unitName: "Trigonometry", questionCount: 22, marks: 75 },
+  { unitNo: 3, title: "Unit 3 — Analytic Geometry", unitName: "Analytic Geometry", questionCount: 22, marks: 75 },
+  { unitNo: 4, title: "Unit 4 — Vectors", unitName: "Vectors", questionCount: 22, marks: 75 },
+  { unitNo: 5, title: "Unit 5 — Statistics and Probability", unitName: "Statistics and Probability", questionCount: 22, marks: 75 },
+  { unitNo: 6, title: "Unit 6 — Calculus", unitName: "Calculus", questionCount: 22, marks: 75 },
+  { unitNo: 7, title: "Unit 7 — Computational Methods and Mechanics", unitName: "Computational Methods or Mechanics", questionCount: 22, marks: 75 },
+] as const;
 
 export interface MathXiChapter {
   /** URL and file slug. */
@@ -607,6 +626,14 @@ export function mathXiLongPath(chapter: Pick<MathXiChapter, "slug">): string {
 
 export function mathXiLongChapters(): MathXiChapter[] {
   return MATH_XI_CHAPTERS.filter((chapter) => chapter.longCount > 0);
+}
+
+export function mathXiPaperUrl(unitNo: number): string {
+  return `${MATH_XI_WORKBOOK_BASE}/papers/unit-${String(unitNo).padStart(2, "0")}.html`;
+}
+
+export function mathXiPaperPath(unitNo: number): string {
+  return `public/resources/mathematics-xi/chapters/papers/unit-${String(unitNo).padStart(2, "0")}.html`;
 }
 
 export function mathXiChapterUrl(chapter: Pick<MathXiChapter, "slug">): string {

@@ -9,12 +9,16 @@ import {
 } from "@/lib/mathematics-xi-solutions";
 import {
   MATH_XI_CHAPTERS,
+  MATH_XI_PAPERS,
+  MATH_XI_PAPER_GROUPS,
+  MATH_XI_PAPER_MARKS,
   MATH_XI_WORKBOOK_BASE,
   MATH_XI_WORKBOOK_TOTALS,
   mathXiChapterUrl,
   mathXiChaptersByUnit,
   mathXiHardUrl,
   mathXiLongUrl,
+  mathXiPaperUrl,
 } from "@/lib/mathematics-xi-chapters";
 
 export const metadata: Metadata = {
@@ -62,6 +66,7 @@ export default function MathematicsXiSolutionsPage() {
             { label: "A4 sheets", value: MATH_XI_WORKBOOK_TOTALS.sheets },
             { label: "Hard + hints", value: MATH_XI_WORKBOOK_TOTALS.hardQuestions },
             { label: "Long answers", value: MATH_XI_WORKBOOK_TOTALS.longQuestions },
+            { label: "Model papers", value: MATH_XI_PAPERS.length },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -218,6 +223,30 @@ export default function MathematicsXiSolutionsPage() {
             Open long answers
           </a>
         </div>
+
+        <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-rose-500/30 bg-rose-500/5 p-4">
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold">
+              NEB model papers — {MATH_XI_PAPERS.length} full papers with answer keys
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {MATH_XI_PAPER_MARKS} marks in 3 hours: Group A {MATH_XI_PAPER_GROUPS[0].count} ×{" "}
+              {MATH_XI_PAPER_GROUPS[0].per}, Group B {MATH_XI_PAPER_GROUPS[1].count} ×{" "}
+              {MATH_XI_PAPER_GROUPS[1].per}, Group C {MATH_XI_PAPER_GROUPS[2].count} ×{" "}
+              {MATH_XI_PAPER_GROUPS[2].per}. One paper per unit, each followed by the worked answer
+              key.
+            </p>
+          </div>
+          <a
+            href={`${MATH_XI_WORKBOOK_BASE}/papers/index.html`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-rose-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-rose-700"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Open model papers
+          </a>
+        </div>
       </section>
 
       <ol className="space-y-5">
@@ -233,9 +262,20 @@ export default function MathematicsXiSolutionsPage() {
                 </p>
                 <h2 className="mt-1 text-xl font-semibold tracking-tight">{unit.unitName}</h2>
               </div>
-              <p className="text-xs text-muted-foreground">
-                {unit.exerciseCount} exercises · {unit.conceptualCount} conceptual ·{" "}
-                {unit.longAnswerCount} long answers
+              <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
+                <span>
+                  {unit.exerciseCount} exercises · {unit.conceptualCount} conceptual ·{" "}
+                  {unit.longAnswerCount} long answers
+                </span>
+                <a
+                  href={mathXiPaperUrl(unit.unitNo)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded border border-rose-500/40 px-1 font-semibold text-rose-700 hover:bg-rose-500/10 dark:text-rose-400"
+                  title={`NEB model paper for unit ${unit.unitNo}`}
+                >
+                  model paper
+                </a>
               </p>
             </div>
 

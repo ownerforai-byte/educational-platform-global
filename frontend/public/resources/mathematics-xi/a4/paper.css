@@ -1,0 +1,340 @@
+/* Mathematics XI — NEB model question papers.
+ *
+ * One paper per unit: 75 marks in 3 hours, NEB split
+ *   Group A  11 × 1 = 11   multiple choice
+ *   Group B   8 × 5 = 40   short answer
+ *   Group C   3 × 8 = 24   long answer
+ * followed by the answer key and marking notes.
+ *
+ * Pages flow (unlike the fixed-grid chapter sheets): A4 portrait, 15 mm margins,
+ * group headings kept with their first question.
+ */
+
+@page {
+  size: A4 portrait;
+  margin: 15mm 14mm 14mm;
+}
+
+:root {
+  --ink: #17202a;
+  --muted: #5b6673;
+  --line: #c9d2dc;
+  --accent: #1f4e79;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #eef1f4;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10pt;
+  line-height: 1.45;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.paper {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 8mm auto;
+  padding: 15mm 14mm;
+  background: #fff;
+  box-shadow: 0 1mm 4mm rgb(15 30 45 / 18%);
+  break-after: page;
+}
+
+.paper:last-of-type {
+  break-after: auto;
+}
+
+/* ── header ─────────────────────────────────────────────── */
+
+.phead {
+  border-bottom: 0.5mm solid var(--accent);
+  padding-bottom: 2.4mm;
+  margin-bottom: 3.4mm;
+}
+
+.phead .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  font-size: 8pt;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.phead h1 {
+  margin: 1.4mm 0 0.6mm;
+  font-size: 15pt;
+  line-height: 1.15;
+}
+
+.phead .sub {
+  margin: 0;
+  font-size: 9pt;
+  color: var(--muted);
+}
+
+.phead .sub b {
+  color: var(--ink);
+}
+
+.phead .instructions {
+  margin: 2mm 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 8.2pt;
+  color: var(--muted);
+  columns: 2;
+  column-gap: 6mm;
+}
+
+.phead .instructions li {
+  margin: 0 0 0.5mm 0.2mm;
+  padding-left: 3mm;
+  position: relative;
+  break-inside: avoid;
+}
+
+.phead .instructions li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.pgrid {
+  margin-top: 2.4mm;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+}
+
+.pgrid th,
+.pgrid td {
+  border: 0.25mm solid var(--line);
+  padding: 0.7mm 1.4mm;
+  text-align: center;
+}
+
+.pgrid th {
+  background: #f2f6fa;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.pgrid td:first-child,
+.pgrid th:first-child {
+  text-align: left;
+}
+
+/* ── question groups ────────────────────────────────────── */
+
+.qgroup {
+  break-inside: auto;
+}
+
+.qgroup h2 {
+  margin: 3.6mm 0 1.8mm;
+  font-size: 10.5pt;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 0.25mm solid var(--line);
+  padding-bottom: 0.8mm;
+  break-after: avoid;
+}
+
+.qgroup h2 .marks {
+  float: right;
+  font-size: 8.5pt;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
+}
+
+.mcq {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 8mm;
+  column-rule: 0.2mm solid #e4e9ee;
+  counter-reset: mq;
+}
+
+.mcq li {
+  counter-increment: mq;
+  break-inside: avoid;
+  margin: 0 0 1.9mm;
+  padding-left: 7mm;
+  position: relative;
+  font-size: 9.2pt;
+  line-height: 1.36;
+}
+
+.mcq li::before {
+  content: counter(mq) ".";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.mcq .opts {
+  display: block;
+  margin-top: 0.5mm;
+  color: #2c3642;
+  overflow-wrap: break-word;
+}
+
+.mcq .opts span {
+  margin-right: 2.4mm;
+}
+
+.mcq .opts i {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.written {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: wq 11;
+}
+
+.written li {
+  counter-increment: wq;
+  break-inside: avoid;
+  margin: 0 0 2.4mm;
+  padding-left: 8mm;
+  position: relative;
+}
+
+.written li::before {
+  content: counter(wq) ".";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.written.long {
+  counter-reset: wq 19;
+}
+
+.written .qtext {
+  display: block;
+  white-space: pre-wrap;
+}
+
+.written .mk {
+  color: var(--muted);
+  font-size: 8.5pt;
+  white-space: nowrap;
+}
+
+/* ── answer key ─────────────────────────────────────────── */
+
+.key .phead h1 {
+  font-size: 13.5pt;
+}
+
+.keyopts {
+  margin: 0 0 2.6mm;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6mm 2mm;
+  font-size: 8.6pt;
+}
+
+.keyopts li {
+  border: 0.25mm solid var(--line);
+  border-radius: 1mm;
+  padding: 0.6mm 1.2mm;
+  background: #f7fafc;
+}
+
+.keyopts b {
+  color: var(--accent);
+}
+
+.keysol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.keysol li {
+  break-inside: avoid;
+  margin: 0 0 1.8mm;
+  padding-left: 7mm;
+  position: relative;
+  font-size: 8.6pt;
+  line-height: 1.36;
+}
+
+.keysol li::before {
+  content: "";
+}
+
+.keysol .num {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.keysol .ans {
+  font-weight: 700;
+}
+
+.keysol .body {
+  display: block;
+  white-space: pre-wrap;
+  color: #2c3642;
+}
+
+.foot {
+  margin-top: 4mm;
+  padding-top: 1.6mm;
+  border-top: 0.25mm solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  font-size: 7.6pt;
+  color: var(--muted);
+}
+
+.legend {
+  margin: 0 0 2.6mm;
+  font-size: 8.4pt;
+  color: var(--muted);
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  .paper {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}

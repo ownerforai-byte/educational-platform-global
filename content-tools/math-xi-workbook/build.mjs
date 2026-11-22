@@ -23,6 +23,7 @@ const DATA_DIR = path.join(ROOT, "content-tools/math-xi-workbook/data");
 const OUT_DIR = path.join(ROOT, "frontend/public/resources/mathematics-xi/chapters");
 const HARD_OUT_DIR = path.join(OUT_DIR, "hard");
 const LONG_OUT_DIR = path.join(OUT_DIR, "long");
+const PAPER_OUT_DIR = path.join(OUT_DIR, "papers");
 const REGISTRY = path.join(ROOT, "frontend/lib/streams/mathematics-xi-chapters.ts");
 
 const PER_SHEET = 12; // 3 columns × 4 rows
@@ -38,6 +39,14 @@ const HARD_ROWS = 3;
 const LONG_PER_SHEET = 1;
 const LONG_COLS = 1;
 const LONG_ROWS = 1;
+
+/* NEB model papers: 75 marks in 3 hours, split 11 × 1 + 8 × 5 + 3 × 8 */
+const PAPER_GROUPS = [
+  { key: "A", label: "Group A — Tick the correct option", per: 1, count: 11 },
+  { key: "B", label: "Group B — Short answer questions", per: 5, count: 8 },
+  { key: "C", label: "Group C — Long answer questions", per: 8, count: 3 },
+];
+const PAPER_MARKS = PAPER_GROUPS.reduce((sum, group) => sum + group.per * group.count, 0);
 const STREAM = "NEB Grade 11 · Mathematics (Mat. 007)";
 const BOOK = "Mathematics XI — Topic Workbook";
 
@@ -61,7 +70,8 @@ const files = fs
       name.endsWith(".mjs") &&
       !name.endsWith(".more.mjs") &&
       !name.endsWith(".hard.mjs") &&
-      !name.endsWith(".long.mjs"),
+      !name.endsWith(".long.mjs") &&
+      !name.endsWith(".paper.mjs"),
   )
   .sort();
 const extraFiles = fs
@@ -75,6 +85,10 @@ const hardFiles = fs
 const longFiles = fs
   .readdirSync(DATA_DIR)
   .filter((name) => name.endsWith(".long.mjs"))
+  .sort();
+const paperFiles = fs
+  .readdirSync(DATA_DIR)
+  .filter((name) => name.endsWith(".paper.mjs"))
   .sort();
 
 if (files.length === 0) fail("no data files found in content-tools/math-xi-workbook/data");
@@ -602,6 +616,216 @@ ${blocks}
 `;
 };
 
+/* ---- NEB model papers ---- */
+const papers = [];
+for (const file of paperFiles) {
+  const mod = await import(pathToFileURL(path.join(DATA_DIR, file)).href);
+  const list = mod.PAPERS ?? mod.default;
+  if (!Array.isArray(list) || list.length === 0) {
+    fail(`${file}: expected an exported PAPERS array`);
+    continue;
+  }
+  for (const paper of list) {
+    const at = `paper unit ${paper.unitNo}`;
+    const unitChapters = chapters.filter((chapter) => chapter.unitNo === paper.unitNo);
+    if (unitChapters.length === 0) {
+      fail(`${at}: no chapters registered for this unit`);
+      continue;
+    }
+    let order = 0;
+    for (const group of PAPER_GROUPS) {
+      const items = paper[group.key];
+      if (!Array.isArray(items) || items.length !== group.count) {
+        fail(`${at} group ${group.key}: expected ${group.count} questions`);
+        continue;
+      }
+      for (const item of items) {
+        order += 1;
+        if (!Array.isArray(item) || item.length < 3) {
+          fail(`${at} group ${group.key}: expected [question, work|options, answer]`);
+          continue;
+        }
+        const [q, second, third] = item;
+        if (typeof q !== "string" || q.trim() === "") fail(`${at} Q${order}: empty question`);
+        if (group.key === "A") {
+          if (!Array.isArray(second) || second.length !== 4)
+            fail(`${at} Q${order}: multiple-choice items need four options`);
+          if (![1, 2, 3, 4].includes(third))
+            fail(`${at} Q${order}: answer index must be 1-4`);
+        } else if (typeof second !== "string" || typeof third !== "string") {
+          fail(`${at} Q${order}: working and answer must be strings`);
+        }
+      }
+    }
+    papers.push({ ...paper, unitName: unitChapters[0].unitName, chapters: unitChapters });
+  }
+}
+
+/* ── NEB model papers ─────────────────────────────────────────────────── */
+
+const PAPER_LETTERS = ["a", "b", "c", "d"];
+const PAPER_INSTRUCTIONS = [
+  "Candidates are required to give their answers in their own words as far as practicable.",
+  "The figures in the margin indicate full marks.",
+  "Write the answers in a tidy order, and label every part (a), (b), (c).",
+];
+
+const mcqHtml = (item, no) => {
+  const [q, options, answer] = item;
+  const opts = options
+    .map((option, i) => `<span><i>(${PAPER_LETTERS[i]})</i> ${esc(option)}</span>`)
+    .join(" ");
+  return `<li><span class="qtext">${esc(q)}</span><span class="opts">${opts}</span></li>`;
+};
+
+const mcqKeyHtml = (item, no) => {
+  const [q, options, answer, why] = item;
+  return `<li><span class="ans">${no}. (${PAPER_LETTERS[answer - 1]}) ${esc(options[answer - 1])}</span>${
+    why ? ` — ${esc(why)}` : ""
+  }</li>`;
+};
+
+const writtenKeyHtml = (item, no) => {
+  const [q, work, ans] = item;
+  return `<li><span class="num">${no}.</span> <span class="body">${esc(work)}</span><span class="ans">Ans. ${esc(
+    ans,
+  )}</span></li>`;
+};
+
+const paperHtml = (paper) => {
+  const groups = PAPER_GROUPS.map((group) => {
+    const items = paper[group.key];
+    if (group.key === "A") {
+      return `<div class="qgroup">
+<h2>${esc(group.label)} <span class="marks">${group.count} × ${group.per} = ${group.count * group.per}</span></h2>
+<ol class="mcq">
+${items.map(mcqHtml).join("\n")}
+</ol>
+</div>`;
+    }
+    const cls = group.key === "C" ? "written long" : "written";
+    return `<div class="qgroup">
+<h2>${esc(group.label)} <span class="marks">${group.count} × ${group.per} = ${group.count * group.per}</span></h2>
+<ol class="${cls}">
+${items
+  .map(
+    ([q]) =>
+      `<li><span class="qtext">${esc(q)}</span> <span class="mk">[${group.per}]</span></li>`,
+  )
+  .join("\n")}
+</ol>
+</div>`;
+  }).join("\n");
+
+  const keyA = paper.A.map((item, i) => mcqKeyHtml(item, i + 1)).join("\n");
+  const keyB = paper.B.map((item, i) => writtenKeyHtml(item, i + 12)).join("\n");
+  const keyC = paper.C.map((item, i) => writtenKeyHtml(item, i + 20)).join("\n");
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit ${paper.unitNo} ${esc(paper.title ?? paper.unitName)} — NEB model paper (Mathematics XI)</title>
+<meta name="description" content="Model NEB question paper for Unit ${paper.unitNo} of Mathematics XI: 75 marks, 3 hours, with the full answer key and marking notes.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/paper.css">
+</head>
+<body>
+<section class="paper">
+<header class="phead">
+<div class="row"><span>NEB · Grade XI · Compulsory Mathematics</span><span>Model paper · Unit ${paper.unitNo}</span></div>
+<h1>${esc(paper.title ?? paper.unitName)}</h1>
+<p class="sub"><b>Time: 3 hours</b> · <b>Full marks: ${PAPER_MARKS}</b> · Pass marks: 27 · Code 0071 ‘M’</p>
+<ul class="instructions">
+${PAPER_INSTRUCTIONS.map((line) => `<li>${esc(line)}</li>`).join("\n")}
+</ul>
+<table class="pgrid">
+<thead><tr><th>Group</th><th>Type</th><th>Questions</th><th>Marks each</th><th>Total</th></tr></thead>
+<tbody>
+${PAPER_GROUPS.map(
+  (group) =>
+    `<tr><td>${group.key}</td><td>${esc(group.label.split("—")[1].trim())}</td><td>${group.count}</td><td>${group.per}</td><td>${group.count * group.per}</td></tr>`,
+).join("\n")}
+<tr><th colspan="4">Total</th><th>${PAPER_MARKS}</th></tr>
+</tbody>
+</table>
+</header>
+${groups}
+<footer class="foot">
+<span>Unit ${paper.unitNo} · ${esc(paper.unitName)}</span>
+<span>${paper.chapters.map((chapter) => esc(chapter.title)).join(" · ")}</span>
+</footer>
+</section>
+
+<section class="paper key">
+<header class="phead">
+<div class="row"><span>NEB · Grade XI · Compulsory Mathematics</span><span>Answer key · Unit ${paper.unitNo}</span></div>
+<h1>Answer key and marking notes — ${esc(paper.title ?? paper.unitName)}</h1>
+<p class="sub"><b>${PAPER_MARKS} marks</b> · Group A 1 mark each · Group B 5 marks each · Group C 8 marks each</p>
+</header>
+${paper.note ? `<p class="legend">${esc(paper.note)}</p>` : ""}
+<h2 class="keyhead">Group A</h2>
+<ol class="keysol">
+${keyA}
+</ol>
+<h2 class="keyhead">Group B</h2>
+<ol class="keysol">
+${keyB}
+</ol>
+<h2 class="keyhead">Group C</h2>
+<ol class="keysol long">
+${keyC}
+</ol>
+<footer class="foot">
+<span>Full marks ${PAPER_MARKS}</span>
+<span class="mid">marking: method 60% · accuracy 30% · presentation 10%</span>
+<span>Unit ${paper.unitNo}</span>
+</footer>
+</section>
+</body>
+</html>
+`;
+};
+
+const paperIndexHtml = () => {
+  const items = papers
+    .map(
+      (paper) =>
+        `<li><a href="/resources/mathematics-xi/chapters/papers/unit-${String(paper.unitNo).padStart(
+          2,
+          "0",
+        )}.html">Unit ${paper.unitNo} · ${esc(paper.title ?? paper.unitName)}</a> <span>· ${PAPER_GROUPS.map((g) => `${g.count}×${g.per}`).join(" + ")} = ${PAPER_MARKS} marks</span></li>`,
+    )
+    .join("\n");
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics XI — NEB model papers</title>
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/paper.css">
+</head>
+<body>
+<section class="paper">
+<header class="phead">
+<div class="row"><span>${esc(STREAM)}</span><span>${esc(BOOK)} · model papers</span></div>
+<h1>NEB model question papers — contents</h1>
+<p class="sub"><b>${papers.length} papers</b> · ${PAPER_MARKS} marks each · 3 hours each · full answer key included</p>
+</header>
+<ol class="written">
+${items}
+</ol>
+<footer class="foot">
+<span>Units ${papers.map((paper) => paper.unitNo).join(", ")}</span>
+<span class="mid">NEB split 11 × 1 + 8 × 5 + 3 × 8</span>
+<span>${papers.length} papers</span>
+</footer>
+</section>
+</body>
+</html>
+`;
+};
+
 const indexHtml = () => {
   const units = [...indexByUnit.entries()].sort((a, b) => a[0] - b[0]);
   const total = chapters.reduce((sum, chapter) => sum + chapter.items.length, 0);
@@ -713,6 +937,28 @@ export const MATH_XI_WORKBOOK_BASE = "/resources/mathematics-xi/chapters";
 export const MATH_XI_QUESTIONS_PER_SHEET = ${PER_SHEET};
 export const MATH_XI_HARD_PER_SHEET = ${HARD_PER_SHEET};
 export const MATH_XI_LONG_PER_SHEET = ${LONG_PER_SHEET};
+export const MATH_XI_PAPER_MARKS = ${PAPER_MARKS};
+
+/** Shape of the NEB paper — 11 × 1, 8 × 5, 3 × 8 marks. */
+export const MATH_XI_PAPER_GROUPS = [
+${PAPER_GROUPS.map(
+  (group) => `  { key: "${group.key}", label: ${JSON.stringify(group.label)}, per: ${group.per}, count: ${group.count} },`,
+).join("\n")}
+] as const;
+
+/** One NEB model paper per unit. */
+export const MATH_XI_PAPERS = [
+${papers
+  .map(
+    (paper) =>
+      `  { unitNo: ${paper.unitNo}, title: ${JSON.stringify(
+        paper.title ?? paper.unitName,
+      )}, unitName: ${JSON.stringify(paper.unitName)}, questionCount: ${
+        paper.A.length + paper.B.length + paper.C.length
+      }, marks: ${PAPER_MARKS} },`,
+  )
+  .join("\n")}
+] as const;
 
 export interface MathXiChapter {
   /** URL and file slug. */
@@ -783,6 +1029,14 @@ export function mathXiLongChapters(): MathXiChapter[] {
   return MATH_XI_CHAPTERS.filter((chapter) => chapter.longCount > 0);
 }
 
+export function mathXiPaperUrl(unitNo: number): string {
+  return \`\${MATH_XI_WORKBOOK_BASE}/papers/unit-\${String(unitNo).padStart(2, "0")}.html\`;
+}
+
+export function mathXiPaperPath(unitNo: number): string {
+  return \`public/resources/mathematics-xi/chapters/papers/unit-\${String(unitNo).padStart(2, "0")}.html\`;
+}
+
 export function mathXiChapterUrl(chapter: Pick<MathXiChapter, "slug">): string {
   return \`\${MATH_XI_WORKBOOK_BASE}/\${chapter.slug}.html\`;
 }
@@ -838,6 +1092,15 @@ if (longChapters.length > 0) {
   fs.writeFileSync(path.join(LONG_OUT_DIR, "index.html"), longIndexHtml(), "utf8");
 }
 
+if (papers.length > 0) {
+  fs.mkdirSync(PAPER_OUT_DIR, { recursive: true });
+  for (const paper of papers) {
+    const name = `unit-${String(paper.unitNo).padStart(2, "0")}.html`;
+    fs.writeFileSync(path.join(PAPER_OUT_DIR, name), paperHtml(paper), "utf8");
+  }
+  fs.writeFileSync(path.join(PAPER_OUT_DIR, "index.html"), paperIndexHtml(), "utf8");
+}
+
 fs.writeFileSync(REGISTRY, registrySource(), "utf8");
 
 const totalQuestions = chapters.reduce((sum, chapter) => sum + chapter.items.length, 0);
@@ -863,6 +1126,11 @@ if (longChapters.length > 0) {
   const longTotal = longChapters.reduce((sum, chapter) => sum + chapter.long.length, 0);
   console.log(
     `✓ ${longChapters.length} long answers · ${longTotal} full-mark questions · ${longTotal} A4 pages (formal scripts)`,
+  );
+}
+if (papers.length > 0) {
+  console.log(
+    `✓ ${papers.length} model papers · ${PAPER_GROUPS.map((group) => `${group.count}×${group.per}`).join(" + ")} = ${PAPER_MARKS} marks each`,
   );
 }
 for (const [unitNo, list] of [...indexByUnit.entries()].sort((a, b) => a[0] - b[0])) {

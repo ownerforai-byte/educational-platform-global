@@ -5,6 +5,9 @@ import {
   MATH_XI_CHAPTERS,
   MATH_XI_HARD_PER_SHEET,
   MATH_XI_LONG_PER_SHEET,
+  MATH_XI_PAPERS,
+  MATH_XI_PAPER_GROUPS,
+  MATH_XI_PAPER_MARKS,
   MATH_XI_QUESTIONS_PER_SHEET,
   MATH_XI_WORKBOOK_TOTALS,
   mathXiChapterPath,
@@ -16,6 +19,8 @@ import {
   mathXiLongChapters,
   mathXiLongPath,
   mathXiLongUrl,
+  mathXiPaperPath,
+  mathXiPaperUrl,
 } from "@/lib/streams/mathematics-xi-chapters";
 import { MATHEMATICS_XI_UNITS } from "@/lib/streams/mathematics-xi-solutions";
 
@@ -265,6 +270,39 @@ describe("Mathematics XI — hard sets with hint ladders", () => {
       expect(index).toContain(mathXiLongUrl(chapter));
     }
     expect(index).toContain("1 long answer");
+  });
+
+  it("publishes one 75-mark NEB model paper per unit, with a full answer key", () => {
+    expect(MATH_XI_PAPERS.length).toBe(MATHEMATICS_XI_UNITS.length);
+    expect(MATH_XI_PAPER_MARKS).toBe(75);
+    expect(MATH_XI_PAPER_GROUPS.map((group) => [group.count, group.per])).toEqual([
+      [11, 1],
+      [8, 5],
+      [3, 8],
+    ]);
+
+    const index = read("public/resources/mathematics-xi/chapters/papers/index.html");
+    for (const paper of MATH_XI_PAPERS) {
+      const html = read(mathXiPaperPath(paper.unitNo));
+      const mcq = html.match(/<ol class="mcq">([\s\S]*?)<\/ol>/)?.[1] ?? "";
+      const written = html.match(/<ol class="written">([\s\S]*?)<\/ol>/)?.[1] ?? "";
+      const long = html.match(/<ol class="written long">([\s\S]*?)<\/ol>/)?.[1] ?? "";
+      const keyed = html.match(/<li><span class="num">\d+\.<\/span>/g) ?? [];
+
+      expect((mcq.match(/<li>/g) ?? []).length, `unit ${paper.unitNo}: 11 mcq`).toBe(11);
+      expect((mcq.match(/<i>\([a-d]\)<\/i>/g) ?? []).length).toBe(44);
+      expect((written.match(/<li>/g) ?? []).length, `unit ${paper.unitNo}: 8 short`).toBe(8);
+      expect((long.match(/<li>/g) ?? []).length, `unit ${paper.unitNo}: 3 long`).toBe(3);
+      expect(keyed.length, `unit ${paper.unitNo}: keyed answers`).toBe(11);
+      expect((html.match(/<span class="ans">/g) ?? []).length).toBe(22);
+      expect(html).toContain("Full marks: 75");
+      expect(html).toContain("/resources/mathematics-xi/a4/paper.css");
+      expect(html).not.toContain("<style");
+      expect(index).toContain(mathXiPaperUrl(paper.unitNo));
+    }
+
+    expect(MATH_XI_PAPERS.every((paper) => paper.marks === 75)).toBe(true);
+    expect(MATH_XI_PAPERS.reduce((sum, paper) => sum + paper.questionCount, 0)).toBe(22 * 7);
   });
 });
 
