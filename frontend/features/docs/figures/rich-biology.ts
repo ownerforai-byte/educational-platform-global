@@ -59,6 +59,30 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       "crossing over", // chiasma diagram
     ],
   },
+  "frog-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respirato": {
+    title: "The frog heart — three chambers, two worlds of blood",
+    figures: [
+      {
+        src: "/docs/figures/biology/frog-heart-circulation.jpg",
+        caption:
+          "The amphibian compromise, drawn the way a museum wall chart would show it. Two thin-walled atria sit side by side above one single thick muscular ventricle — the three-chambered plan that separates frogs from both fish (one atrium) and mammals (two ventricles). The pale sinus venosus collects oxygen-poor blood from the body and delivers it to the right atrium, while a lung vein brings fresh oxygen-rich blood to the left atrium; both empty into the same ventricle, where the blood mixes only partially — the spongy interior and the timing of contraction keep the two streams mostly apart, which is why frog organs still receive blood richer than the average. From the ventricle the conus arteriosus carries the mixed load out through the arterial arches fanning upward — toward the head, the body, and the pulmocutaneous route that doubles as a gill-for-land, feeding both the lungs and the moist skin where a third of the oxygen uptake actually happens. The colour coding tells the story: crimson for oxygen-rich, blue-violet for oxygen-poor, meeting in one muscular pump.",
+        alt: "Illustration of a frog heart with two atria above a single muscular ventricle, a sinus venosus, and colour-coded red and blue vessel arches branching toward head, body, lung and skin",
+        keyword: "ventricle",
+      },
+    ],
+    keepSvg: [
+      // classification-style diagrams the raster plate does not supersede
+      "sinus venosus", // internal heart chambers
+      "nucleated", // frog blood composition
+      "pulmocutaneous", // circulation path map
+      "buccopharyngeal", // respiration modes
+      "portal", // portal systems
+      "heart", // spleen + lymph hearts
+      "cutaneous", // three respiration modes share
+      "buccal", // buccal pump mechanism
+      "oxygen", // cutaneous underwater respiration
+    ],
+  },
   "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano": {
     title: "Inside a bacterial cell — the cutaway",
     figures: [
