@@ -1,0 +1,11 @@
+import io, re
+p = "docs/guides/chemistry-xi-mastery-plan.md"
+s = io.open(p, encoding="utf-8").read()
+note = ("- Session 23 - Chemistry of Metals figures (rows 79-90): 84 theme-aware SVG figures (7 per topic x 12) via .mastery-src/figmetals_b1-b4.py + figreg_metals.py. "
+ "Highlights: metallurgy three routes, activity-series routing, cyanide-leaching loop, blast-furnace route, molten-salt electrolysis, ore-vs-mineral profit test, five steps; ore-gangue-flux-slag map, flux families, slag layer, alloy composition table (brass/bronze/stainless), amalgam panel, alloy-why-better, limestone journey; concentration three ways, froth-flotation cell, calcination-vs-roasting, carbon-reduction furnace, thermite, Hall-Heroult cell, reduction method map; refining picker, distillation, liquation hearth, poling green wood, copper electrorefining, anode-mud value, electrode-potential selectivity; alkali family/trend/water/flame/oxide-ladder/Li-exceptions/property table; Downs cell, why-CaCl2, sodium reaction map, sodium skates, Na2O2 bleach, sodium uses, NaCl-vs-MgCl2 cells; NaOH properties, precipitate colour chart, amphoteric dissolve, CO2 two stages, chlor-alkali cell, NaOH uses, NaOH-vs-Na2CO3; washing-soda efflorescence, carbonate hydrolysis pH ladder, Na2CO3 reaction map, water softening, NH4+ test, Solvay loop, Na2CO3 uses; alkaline-earth family, IIA trends, water escalation, flame colours, IA-vs-IIA table, sulphate ladder, nitrides/hydrides; lime cycle, Hasenclever plant, available chlorine, plaster make-and-set, magnesia panel, Epsom salt, five-compound table; two-energies balance, hydroxide rising ladder, sulphate collapsing ladder, carbonate ladder, anion-size rule, BaSO4 test/meal, hydration-energy chart; carbonate decomposition ladder, Fajans polarisation (fajans-carbonate-polarisation - renamed to avoid clobbering the bonding figure of the same name), nitrate split Mg/Ca, Mg(NO3)2 fumes, Li-Mg diagonal, IA-vs-IIA carbonates, kiln temperatures. cx85 also gained the missing namesake section: CO + NaOH -> HCOONa under pressure (sodium formate). All 84 keywords verified against first-entry canonical JSONs (0 misses); tsc clean; topic-doc-view 14/14.\n")
+anchor = "- Session 16 \u2014"
+i = s.find(anchor)
+assert i > 0
+s = s[:i] + note + s[i:]
+io.open(p, "w", encoding="utf-8", newline="").write(s)
+print("session 23 note inserted")

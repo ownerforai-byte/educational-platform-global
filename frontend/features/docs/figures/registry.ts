@@ -1397,6 +1397,90 @@ import { CellCountTrio } from "./cell-count-trio";
 import { RadiusEdgeRelations } from "./radius-edge-relations";
 import { CrystalSystemsSeven } from "./crystal-systems-seven";
 import { BraggLawPanel } from "./bragg-law-panel";
+import { MetallurgyThreeRoutes } from "./metallurgy-three-routes";
+import { ActivitySeriesRouting } from "./activity-series-routing";
+import { CyanideLeachingLoop } from "./cyanide-leaching-loop";
+import { BlastFurnaceRoute } from "./blast-furnace-route";
+import { MoltenSaltElectrolysis } from "./molten-salt-electrolysis";
+import { OreVsMineralTest } from "./ore-vs-mineral-test";
+import { FiveStepsOfMetallurgy } from "./five-steps-of-metallurgy";
+import { OreGangueFluxSlagMap } from "./ore-gangue-flux-slag-map";
+import { FluxFamiliesPanel } from "./flux-families-panel";
+import { BlastFurnaceSlagLayer } from "./blast-furnace-slag-layer";
+import { AlloyCompositionTable } from "./alloy-composition-table";
+import { AmalgamPanel } from "./amalgam-panel";
+import { AlloyWhyBetter } from "./alloy-why-better";
+import { LimestoneJourney } from "./limestone-journey";
+import { ConcentrationThreeWays } from "./concentration-three-ways";
+import { FrothFlotationCell } from "./froth-flotation-cell";
+import { CalcinationVsRoasting } from "./calcination-vs-roasting";
+import { CarbonReductionFurnace } from "./carbon-reduction-furnace";
+import { ThermiteReaction } from "./thermite-reaction";
+import { HallHeroultCell } from "./hall-heroult-cell";
+import { ReductionMethodMap } from "./reduction-method-map";
+import { RefiningMethodPicker } from "./refining-method-picker";
+import { DistillationRefining } from "./distillation-refining";
+import { LiquationHearth } from "./liquation-hearth";
+import { PolingGreenWood } from "./poling-green-wood";
+import { CopperElectrorefining } from "./copper-electrorefining";
+import { AnodeMudValue } from "./anode-mud-value";
+import { ElectrorefiningSelectivity } from "./electrorefining-selectivity";
+import { AlkaliMetalFamily } from "./alkali-metal-family";
+import { AlkaliTrendLadder } from "./alkali-trend-ladder";
+import { AlkaliWaterReaction } from "./alkali-water-reaction";
+import { AlkaliFlameColours } from "./alkali-flame-colours";
+import { OxideLadderIa } from "./oxide-ladder-ia";
+import { LithiumExceptions } from "./lithium-exceptions";
+import { AlkaliPropertyTable } from "./alkali-property-table";
+import { DownsCellDiagram } from "./downs-cell-diagram";
+import { DownsWhyCacl2 } from "./downs-why-cacl2";
+import { SodiumReactionsMap } from "./sodium-reactions-map";
+import { SodiumWaterSkate } from "./sodium-water-skate";
+import { Na2o2Bleach } from "./na2o2-bleach";
+import { SodiumUsesMap } from "./sodium-uses-map";
+import { NaclVsMgcl2Cells } from "./nacl-vs-mgcl2-cells";
+import { NaohPropertiesPanel } from "./naoh-properties-panel";
+import { NaohPrecipitationColours } from "./naoh-precipitation-colours";
+import { AmphotericDissolve } from "./amphoteric-dissolve";
+import { NaohCo2Stages } from "./naoh-co2-stages";
+import { ChlorAlkaliCell } from "./chlor-alkali-cell";
+import { NaohUsesMap } from "./naoh-uses-map";
+import { NaohVsNa2co3 } from "./naoh-vs-na2co3";
+import { WashingSodaAnatomy } from "./washing-soda-anatomy";
+import { CarbonateHydrolysisPh } from "./carbonate-hydrolysis-ph";
+import { Na2co3ReactionMap } from "./na2co3-reaction-map";
+import { WaterSofteningReaction } from "./water-softening-reaction";
+import { Na2co3VsNaohNh3 } from "./na2co3-vs-naoh-nh3";
+import { SolvayLoop } from "./solvay-loop";
+import { Na2co3UsesMap } from "./na2co3-uses-map";
+import { AlkalineEarthFamily } from "./alkaline-earth-family";
+import { IiaTrendPanel } from "./iia-trend-panel";
+import { IiaWaterReaction } from "./iia-water-reaction";
+import { IiaFlameColours } from "./iia-flame-colours";
+import { IiaVsIaTable } from "./iia-vs-ia-table";
+import { SulphateLadder } from "./sulphate-ladder";
+import { IiaCompoundsPanel } from "./iia-compounds-panel";
+import { QuickLimeCycle } from "./quick-lime-cycle";
+import { BleachingPowderPrep } from "./bleaching-powder-prep";
+import { AvailableChlorinePanel } from "./available-chlorine-panel";
+import { PlasterSettingPanel } from "./plaster-setting-panel";
+import { MagnesiaPanel } from "./magnesia-panel";
+import { EpsomSaltPanel } from "./epsom-salt-panel";
+import { FiveCompoundsTable } from "./five-compounds-table";
+import { TwoEnergiesBalance } from "./two-energies-balance";
+import { HydroxideLadder } from "./hydroxide-ladder";
+import { SulphateLadderDetail } from "./sulphate-ladder-detail";
+import { CarbonateLadder } from "./carbonate-ladder";
+import { AnionSizeRule } from "./anion-size-rule";
+import { Baso4TestPanel } from "./baso4-test-panel";
+import { HydrationEnergiesChart } from "./hydration-energies-chart";
+import { CarbonateDecompLadder } from "./carbonate-decomp-ladder";
+import { FajansCarbonatePolarisation } from "./fajans-carbonate-polarisation";
+import { NitrateSplitPanel } from "./nitrate-split-panel";
+import { MgNo3Decomp } from "./mg-no3-decomp";
+import { LiMgDiagonal } from "./li-mg-diagonal";
+import { IaVsIiaCarbonates } from "./ia-vs-iia-carbonates";
+import { KilnTemperaturePanel } from "./kiln-temperature-panel";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -10621,6 +10705,152 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       { Component: CrystalVsAmorphousOrder, caption: "Order versus chance", alt: "Comparison of the regular arrangement in crystals and the random arrangement in amorphous solids", keyword: "amorphous" },
     ],
   },
+
+  "metals-and-metallurgical-principles-definition-of-metallurgy-and-its-types-hydrometallurgy-pyrom": {
+    title: "Three routes to the metal",
+    figures: [
+    { Component: MetallurgyThreeRoutes, caption: "Three routes to the metal", alt: "Diagram: three routes to the metal", keyword: "hydrometallurgy" },
+    { Component: ActivitySeriesRouting, caption: "The activity series as a routing table", alt: "Diagram: the activity series as a routing table", keyword: "activity series" },
+    { Component: CyanideLeachingLoop, caption: "Hydrometallurgy: cyanide leaching of gold", alt: "Diagram: hydrometallurgy: cyanide leaching of gold", keyword: "cyanide" },
+    { Component: BlastFurnaceRoute, caption: "Pyrometallurgy: the blast furnace route", alt: "Diagram: pyrometallurgy: the blast furnace route", keyword: "blast furnace" },
+    { Component: MoltenSaltElectrolysis, caption: "Electrometallurgy: molten salt electrolysis", alt: "Diagram: electrometallurgy: molten salt electrolysis", keyword: "electrometallurgy" },
+    { Component: OreVsMineralTest, caption: "Is this mineral an ore? The profit test", alt: "Diagram: is this mineral an ore? the profit test", keyword: "profitable" },
+    { Component: FiveStepsOfMetallurgy, caption: "The five steps of metallurgy", alt: "Diagram: the five steps of metallurgy", keyword: "crushing" },
+  ],
+  },
+  "introduction-of-ores-gangue-or-matrix-flux-and-slag-alloy-and-amalgam": {
+    title: "Ore, gangue, flux, slag \u2014 one line",
+    figures: [
+    { Component: OreGangueFluxSlagMap, caption: "Ore, gangue, flux, slag \u2014 one line", alt: "Diagram: ore, gangue, flux, slag \u2014 one line", keyword: "gangue" },
+    { Component: FluxFamiliesPanel, caption: "Acidic and basic fluxes", alt: "Diagram: acidic and basic fluxes", keyword: "acidic flux" },
+    { Component: BlastFurnaceSlagLayer, caption: "Slag floating on molten iron", alt: "Diagram: slag floating on molten iron", keyword: "slag" },
+    { Component: AlloyCompositionTable, caption: "Brass, bronze, stainless steel", alt: "Diagram: brass, bronze, stainless steel", keyword: "brass" },
+    { Component: AmalgamPanel, caption: "Amalgams \u2014 mercury as the solvent metal", alt: "Diagram: amalgams \u2014 mercury as the solvent metal", keyword: "amalgam" },
+    { Component: AlloyWhyBetter, caption: "Why alloys outperform pure metals", alt: "Diagram: why alloys outperform pure metals", keyword: "alloying" },
+    { Component: LimestoneJourney, caption: "Limestone's journey through the furnace", alt: "Diagram: limestone's journey through the furnace", keyword: "limestone" },
+  ],
+  },
+  "general-principles-of-extraction-of-metals-concentration-calcination-and-roasting-smelting-carbo": {
+    title: "Three ways to concentrate an ore",
+    figures: [
+    { Component: ConcentrationThreeWays, caption: "Three ways to concentrate an ore", alt: "Diagram: three ways to concentrate an ore", keyword: "concentration" },
+    { Component: FrothFlotationCell, caption: "Froth flotation of sulphide ores", alt: "Diagram: froth flotation of sulphide ores", keyword: "froth flotation" },
+    { Component: CalcinationVsRoasting, caption: "Calcination vs roasting", alt: "Diagram: calcination vs roasting", keyword: "calcination" },
+    { Component: CarbonReductionFurnace, caption: "Carbon reduction in the furnace", alt: "Diagram: carbon reduction in the furnace", keyword: "carbon reduction" },
+    { Component: ThermiteReaction, caption: "The thermite reaction", alt: "Diagram: the thermite reaction", keyword: "thermite" },
+    { Component: HallHeroultCell, caption: "Hall\u2013H\u00e9roult cell for aluminium", alt: "Diagram: hall\u2013h\u00e9roult cell for aluminium", keyword: "cryolite" },
+    { Component: ReductionMethodMap, caption: "Choosing the reduction method", alt: "Diagram: choosing the reduction method", keyword: "electrochemical reduction" },
+  ],
+  },
+  "refining-of-metals-poling-and-electro-refinement": {
+    title: "Choosing the refining method",
+    figures: [
+    { Component: RefiningMethodPicker, caption: "Choosing the refining method", alt: "Diagram: choosing the refining method", keyword: "refining" },
+    { Component: DistillationRefining, caption: "Distillation: volatile zinc", alt: "Diagram: distillation: volatile zinc", keyword: "distillation" },
+    { Component: LiquationHearth, caption: "Liquation: tin on a sloping hearth", alt: "Diagram: liquation: tin on a sloping hearth", keyword: "liquation" },
+    { Component: PolingGreenWood, caption: "Poling with green wood", alt: "Diagram: poling with green wood", keyword: "poling" },
+    { Component: CopperElectrorefining, caption: "Electrorefining of copper", alt: "Diagram: electrorefining of copper", keyword: "electrolytic refining" },
+    { Component: AnodeMudValue, caption: "Anode mud \u2014 the profitable sludge", alt: "Diagram: anode mud \u2014 the profitable sludge", keyword: "anode mud" },
+    { Component: ElectrorefiningSelectivity, caption: "Why baser and noble impurities behave differently", alt: "Diagram: why baser and noble impurities behave differently", keyword: "electrode potentials" },
+  ],
+  },
+  "alkali-metals-general-characteristics-of-alkali-metals": {
+    title: "The alkali metal family",
+    figures: [
+    { Component: AlkaliMetalFamily, caption: "The alkali metal family", alt: "Diagram: the alkali metal family", keyword: "alkali metals" },
+    { Component: AlkaliTrendLadder, caption: "Trends down Group IA", alt: "Diagram: trends down group ia", keyword: "ionisation energy" },
+    { Component: AlkaliWaterReaction, caption: "Alkali metals and water", alt: "Diagram: alkali metals and water", keyword: "water" },
+    { Component: AlkaliFlameColours, caption: "Flame colours of alkali metals", alt: "Diagram: flame colours of alkali metals", keyword: "flame" },
+    { Component: OxideLadderIa, caption: "The oxide ladder: Li\u2082O, Na\u2082O\u2082, KO\u2082", alt: "Diagram: the oxide ladder: li\u2082o, na\u2082o\u2082, ko\u2082", keyword: "superoxide" },
+    { Component: LithiumExceptions, caption: "Lithium \u2014 the diagonal dissenter", alt: "Diagram: lithium \u2014 the diagonal dissenter", keyword: "lithium" },
+    { Component: AlkaliPropertyTable, caption: "Alkali metals: property numbers", alt: "Diagram: alkali metals: property numbers", keyword: "melting point" },
+  ],
+  },
+  "sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-am": {
+    title: "The Downs cell",
+    figures: [
+    { Component: DownsCellDiagram, caption: "The Downs cell", alt: "Diagram: the downs cell", keyword: "downs cell" },
+    { Component: DownsWhyCacl2, caption: "Why CaCl\u2082 is added in the Downs cell", alt: "Diagram: why cacl\u2082 is added in the downs cell", keyword: "600" },
+    { Component: SodiumReactionsMap, caption: "Sodium's reaction map", alt: "Diagram: sodium's reaction map", keyword: "sodamide" },
+    { Component: SodiumWaterSkate, caption: "Sodium skates on water", alt: "Diagram: sodium skates on water", keyword: "skates" },
+    { Component: Na2o2Bleach, caption: "Sodium peroxide as a bleaching agent", alt: "Diagram: sodium peroxide as a bleaching agent", keyword: "peroxide" },
+    { Component: SodiumUsesMap, caption: "Uses of sodium metal", alt: "Diagram: uses of sodium metal", keyword: "coolant" },
+    { Component: NaclVsMgcl2Cells, caption: "Downs cell vs fused MgCl\u2082 electrolysis", alt: "Diagram: downs cell vs fused mgcl\u2082 electrolysis", keyword: "magnesium" },
+  ],
+  },
+  "sodium-hydroxide-properties-precipitation-reaction-and-action-with-carbon-monoxide-and-uses": {
+    title: "NaOH \u2014 caustic soda",
+    figures: [
+    { Component: NaohPropertiesPanel, caption: "NaOH \u2014 caustic soda", alt: "Diagram: naoh \u2014 caustic soda", keyword: "deliquescent" },
+    { Component: NaohPrecipitationColours, caption: "The precipitate colour chart", alt: "Diagram: the precipitate colour chart", keyword: "pale blue" },
+    { Component: AmphotericDissolve, caption: "Amphoteric hydroxides dissolve in excess", alt: "Diagram: amphoteric hydroxides dissolve in excess", keyword: "excess" },
+    { Component: NaohCo2Stages, caption: "CO\u2082 into NaOH \u2014 two stages", alt: "Diagram: co\u2082 into naoh \u2014 two stages", keyword: "bicarbonate" },
+    { Component: ChlorAlkaliCell, caption: "The chlor-alkali cell", alt: "Diagram: the chlor-alkali cell", keyword: "chlor-alkali" },
+    { Component: NaohUsesMap, caption: "Uses of sodium hydroxide", alt: "Diagram: uses of sodium hydroxide", keyword: "saponification" },
+    { Component: NaohVsNa2co3, caption: "Caustic soda vs washing soda", alt: "Diagram: caustic soda vs washing soda", keyword: "washing soda" },
+  ],
+  },
+  "sodium-carbonate-properties-action-with-co2-so2-water-precipitation-reactions-and-uses": {
+    title: "Washing soda and efflorescence",
+    figures: [
+    { Component: WashingSodaAnatomy, caption: "Washing soda and efflorescence", alt: "Diagram: washing soda and efflorescence", keyword: "effloresc" },
+    { Component: CarbonateHydrolysisPh, caption: "Carbonate hydrolysis and pH", alt: "Diagram: carbonate hydrolysis and ph", keyword: "hydrolysis" },
+    { Component: Na2co3ReactionMap, caption: "Na\u2082CO\u2083 reaction checklist", alt: "Diagram: na\u2082co\u2083 reaction checklist", keyword: "sulphite" },
+    { Component: WaterSofteningReaction, caption: "Softening permanent hardness", alt: "Diagram: softening permanent hardness", keyword: "hardness" },
+    { Component: Na2co3VsNaohNh3, caption: "The test that separates NaOH and Na\u2082CO\u2083", alt: "Diagram: the test that separates naoh and na\u2082co\u2083", keyword: "ammonia" },
+    { Component: SolvayLoop, caption: "The Solvay process loop", alt: "Diagram: the solvay process loop", keyword: "solvay" },
+    { Component: Na2co3UsesMap, caption: "Uses of sodium carbonate", alt: "Diagram: uses of sodium carbonate", keyword: "glass" },
+  ],
+  },
+  "alkaline-earth-metals-general-characteristics-of-alkaline-earth-metals": {
+    title: "The alkaline earth family",
+    figures: [
+    { Component: AlkalineEarthFamily, caption: "The alkaline earth family", alt: "Diagram: the alkaline earth family", keyword: "alkaline earth metals" },
+    { Component: IiaTrendPanel, caption: "Trends down Group IIA", alt: "Diagram: trends down group iia", keyword: "ionisation energy" },
+    { Component: IiaWaterReaction, caption: "Water \u2014 the IIA escalation", alt: "Diagram: water \u2014 the iia escalation", keyword: "steam" },
+    { Component: IiaFlameColours, caption: "Flame colours of Group IIA", alt: "Diagram: flame colours of group iia", keyword: "apple-green" },
+    { Component: IiaVsIaTable, caption: "Group IA vs Group IIA", alt: "Diagram: group ia vs group iia", keyword: "alkali metals" },
+    { Component: SulphateLadder, caption: "The sulphate solubility ladder", alt: "Diagram: the sulphate solubility ladder", keyword: "sulphate" },
+    { Component: IiaCompoundsPanel, caption: "Nitrides and hydrides of Group IIA", alt: "Diagram: nitrides and hydrides of group iia", keyword: "hydrolith" },
+  ],
+  },
+  "molecular-formula-and-uses-of-quick-lime-bleaching-powder-magnesia-plaster-of-paris-and-epsom-sa": {
+    title: "The lime cycle",
+    figures: [
+    { Component: QuickLimeCycle, caption: "The lime cycle", alt: "Diagram: the lime cycle", keyword: "slaking" },
+    { Component: BleachingPowderPrep, caption: "Bleaching powder preparation", alt: "Diagram: bleaching powder preparation", keyword: "hasenclever" },
+    { Component: AvailableChlorinePanel, caption: "Available chlorine and the bleaching agent", alt: "Diagram: available chlorine and the bleaching agent", keyword: "available chlorine" },
+    { Component: PlasterSettingPanel, caption: "Plaster of Paris: make and set", alt: "Diagram: plaster of paris: make and set", keyword: "dead-burnt" },
+    { Component: MagnesiaPanel, caption: "Magnesia \u2014 MgO", alt: "Diagram: magnesia \u2014 mgo", keyword: "magnesite" },
+    { Component: EpsomSaltPanel, caption: "Epsom salt — MgSO₄·7H₂O", alt: "Diagram: epsom salt", keyword: "epsom" },
+    { Component: FiveCompoundsTable, caption: "Five compounds, five formulae, five jobs", alt: "Diagram: five compounds, five formulae, five jobs", keyword: "molecular formulae" },
+  ],
+  },
+  "solubility-of-hydroxides-carbonates-and-sulphates-of-alkaline-earth-metals-general-trend-with-ex": {
+    title: "Solubility: a two-bill balance",
+    figures: [
+    { Component: TwoEnergiesBalance, caption: "Solubility: a two-bill balance", alt: "Diagram: solubility: a two-bill balance", keyword: "lattice energy" },
+    { Component: HydroxideLadder, caption: "Hydroxides \u2014 the rising ladder", alt: "Diagram: hydroxides \u2014 the rising ladder", keyword: "56 g/l" },
+    { Component: SulphateLadderDetail, caption: "Sulphates \u2014 the collapsing ladder", alt: "Diagram: sulphates \u2014 the collapsing ladder", keyword: "2.4" },
+    { Component: CarbonateLadder, caption: "Carbonates \u2014 sinking gently", alt: "Diagram: carbonates \u2014 sinking gently", keyword: "practically insoluble" },
+    { Component: AnionSizeRule, caption: "The anion-size rule", alt: "Diagram: the anion-size rule", keyword: "anion" },
+    { Component: Baso4TestPanel, caption: "BaSO\u2084 \u2014 the test and the barium meal", alt: "Diagram: baso\u2084 \u2014 the test and the barium meal", keyword: "barium meal" },
+    { Component: HydrationEnergiesChart, caption: "Hydration energies fall fast", alt: "Diagram: hydration energies fall fast", keyword: "hydration" },
+  ],
+  },
+  "stability-of-carbonate-and-nitrate-of-alkaline-earth-metals-general-trend-with-explanation": {
+    title: "Carbonate decomposition temperature ladder",
+    figures: [
+    { Component: CarbonateDecompLadder, caption: "Carbonate decomposition temperature ladder", alt: "Diagram: carbonate decomposition temperature ladder", keyword: "below 100" },
+    { Component: FajansCarbonatePolarisation, caption: "Fajans polarisation", alt: "Diagram: fajans polarisation", keyword: "polaris" },
+    { Component: NitrateSplitPanel, caption: "Nitrates \u2014 two product families", alt: "Diagram: nitrates \u2014 two product families", keyword: "nitrite" },
+    { Component: MgNo3Decomp, caption: "Heating Mg(NO\u2083)\u2082 \u2014 read the fumes", alt: "Diagram: heating mg(no\u2083)\u2082 \u2014 read the fumes", keyword: "no\u2082" },
+    { Component: LiMgDiagonal, caption: "The Li\u2013Mg diagonal similarity", alt: "Diagram: the li\u2013mg diagonal similarity", keyword: "diagonal" },
+    { Component: IaVsIiaCarbonates, caption: "Why IA carbonates shrug off heat", alt: "Diagram: why ia carbonates shrug off heat", keyword: "851" },
+    { Component: KilnTemperaturePanel, caption: "Two ores, two kilns", alt: "Diagram: two ores, two kilns", keyword: "limestone" },
+  ],
+  },
+
 };
 
 /**
