@@ -28,11 +28,16 @@ export type Doc = {
   kind: Kind;
 };
 
+import {
+  PHYSICS_XI_SOLUTION_UNITS,
+  physicsXiSolutionDocKey,
+  physicsXiSolutionUrl,
+} from "./physics-xi-solutions";
+
 // Static study materials. PDFs live under /pdfs, everything else under /materials
 // (both served from frontend/public, so they need no backend / auth).
 export const PDFS_DIR = "/pdfs";
 export const MAT_DIR = "/materials";
-
 export const DOCS: Doc[] = [
   // ── Biology ───────────────────────────────────────────────────────────
   {
@@ -329,7 +334,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Algebra · Full Notes",
     description:
-      "83 exercises solved in NEB answer style (given → working → answer), 50 conceptual 2-mark questions with model answers, 9 fully worked long answers, formula sheet and traps.",
+      "106 exercises solved in NEB answer style, 50 conceptual 2-mark questions, 12 reasoning drills (why/what/where), 9 fully worked long answers, formula sheet and traps.",
     href: "/resources/mathematics-xi/unit-01-algebra.html",
     kind: "html",
   },
@@ -339,7 +344,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Trigonometry · Full Notes",
     description:
-      "38 inverse-circular and trigonometric-equation exercises solved, 46 conceptual 2-mark questions with model answers, 7 long answers in general-value form (n ∈ ℤ).",
+      "50 inverse-circular and trigonometric-equation exercises solved, 46 conceptual questions, 12 reasoning drills, 7 long answers in general-value form (n ∈ ℤ).",
     href: "/resources/mathematics-xi/unit-02-trigonometry.html",
     kind: "html",
   },
@@ -349,7 +354,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Analytic Geometry · Full Notes",
     description:
-      "30 distance, bisector, pair-of-lines and 3-D coordinate exercises solved, 33 conceptual questions with model answers, 6 long answers.",
+      "42 distance, bisector, pair-of-lines and 3-D coordinate exercises solved, 33 conceptual questions, 12 reasoning drills, 6 long answers.",
     href: "/resources/mathematics-xi/unit-03-analytic-geometry.html",
     kind: "html",
   },
@@ -359,7 +364,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Vectors · Full Notes",
     description:
-      "32 dot/cross-product, collinearity, coplanarity and linear-independence exercises solved, 36 conceptual questions with model answers, 5 long answers.",
+      "44 dot/cross-product, collinearity, coplanarity and linear-independence exercises solved, 36 conceptual questions, 12 reasoning drills, 5 long answers.",
     href: "/resources/mathematics-xi/unit-04-vectors.html",
     kind: "html",
   },
@@ -369,7 +374,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Statistics & Probability · Full Notes",
     description:
-      "32 dispersion, skewness and probability exercises solved, 40 conceptual questions with model answers on independence and conditional probability, 6 long answers.",
+      "45 dispersion, skewness and probability exercises solved, 40 conceptual questions, 12 reasoning drills, 6 long answers.",
     href: "/resources/mathematics-xi/unit-05-statistics-probability.html",
     kind: "html",
   },
@@ -379,7 +384,7 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Calculus · Full Notes",
     description:
-      "82 limit, continuity, differentiation, extrema and integration exercises solved, 42 conceptual questions with model answers, 8 long answers.",
+      "102 limit, continuity, differentiation, extrema and integration exercises solved, 42 conceptual questions, 12 reasoning drills, 8 long answers.",
     href: "/resources/mathematics-xi/unit-06-calculus.html",
     kind: "html",
   },
@@ -389,10 +394,18 @@ export const DOCS: Doc[] = [
     subject: "Mathematics",
     topic: "Computational Methods · Full Notes",
     description:
-      "28 bisection, Newton-Raphson, trapezoidal, Simpson, statics and dynamics exercises solved, 36 conceptual questions with model answers, 6 long answers.",
+      "42 bisection, Newton-Raphson, trapezoidal, Simpson, statics and dynamics exercises solved, 36 conceptual questions, 12 reasoning drills, 6 long answers.",
     href: "/resources/mathematics-xi/unit-07-computational-methods.html",
     kind: "html",
   },
+
+  // ── Physics XI · Exercise Solutions & Conceptual Bank ─────────────
+  // Generated from the registry in lib/streams/physics-xi-solutions.ts so a
+  // unit cannot be published and left out of the catalog: title, description
+  // (with the published counts) and href all come from the one source. The
+  // matching DOC_LOCATIONS entry files each document in its own syllabus
+  // unit's stream block, beside that unit's notes.
+  ...physicsXiSolutionDocs(),
 
   // English
   {
@@ -428,6 +441,23 @@ export const DOCS: Doc[] = [
     kind: "html",
   },
 ];
+
+/**
+ * The Physics XI exercise-solution documents, shaped as catalog entries.
+ * Derived from `PHYSICS_XI_SOLUTION_UNITS` so the catalog, the stream-block
+ * locations and the published files always agree.
+ */
+function physicsXiSolutionDocs(): Doc[] {
+  return PHYSICS_XI_SOLUTION_UNITS.map((unit) => ({
+    key: physicsXiSolutionDocKey(unit),
+    title: `Physics XI Unit ${unit.unitNo} — ${unit.unitName}: Exercise Solutions & Conceptual Bank`,
+    subject: "Physics",
+    topic: `${unit.unitName} · Exercise Solutions`,
+    description: `${unit.exerciseCount} exercises solved in NEB answer style (given → statement → working → answer), ${unit.conceptualCount} conceptual 2-mark questions with model answers, ${unit.longAnswerCount} fully worked long answers, formula sheet and the traps that cost the most marks.`,
+    href: physicsXiSolutionUrl(unit),
+    kind: "html",
+  }));
+}
 
 export const SUBJECT_ORDER: Subject[] = [
   "Biology",

@@ -606,6 +606,18 @@ export function getPhysicsXiSolutionUnit(
   return PHYSICS_XI_SOLUTION_UNITS.find((unit) => unit.unitId === unitId);
 }
 
+/**
+ * Catalog key of a unit document, used by `lib/docs-catalog.ts` and by the
+ * `DOC_LOCATIONS` table in `lib/streams/chapter-resources.ts`. Both sides are
+ * derived from this registry, so a document can never be registered in one
+ * place and forgotten in the other.
+ */
+export function physicsXiSolutionDocKey(
+  unit: Pick<PhysicsXiSolutionUnit, "unitNo" | "unitId">,
+): string {
+  return `physics-xi-u${unit.unitNo}-${unit.unitId}-solutions`;
+}
+
 export const PHYSICS_XI_SOLUTION_TOTALS = {
   units: PHYSICS_XI_SOLUTION_UNITS.length,
   hours: PHYSICS_XI_SOLUTION_UNITS.reduce((sum, unit) => sum + unit.hours, 0),

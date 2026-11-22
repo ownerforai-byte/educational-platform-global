@@ -43,6 +43,10 @@ import {
   type StreamSourceId,
 } from "@/lib/stream-sources";
 import { NEPALENOTES_CHAPTERS, nepalenotesPreviewUrl } from "@/lib/nepalenotes-streams";
+import {
+  PHYSICS_XI_SOLUTION_UNITS,
+  physicsXiSolutionDocKey,
+} from "@/lib/physics-xi-solutions";
 
 export const CLASS_11 = "class-11-notes";
 export const CLASS_12 = "class-12-notes";
@@ -99,6 +103,15 @@ const DOC_LOCATIONS: Record<string, readonly string[]> = {
   "math-xi-u5-statistics-probability-solutions": ["statistics-and-probability"],
   "math-xi-u6-calculus-solutions": ["calculus"],
   "math-xi-u7-computational-methods-solutions": ["computational-methods-or-mechanics"],
+  // Physics XI exercise solutions — one document per unit, filed in its own
+  // unit's stream block beside that unit's notes. Derived from the registry so
+  // a document can never be listed in the catalog but missing here.
+  ...Object.fromEntries(
+    PHYSICS_XI_SOLUTION_UNITS.map((unit) => [
+      physicsXiSolutionDocKey(unit),
+      [unit.unitId] as readonly string[],
+    ]),
+  ),
   "neb-essays-grade11-12": ["writing-and-composition"],
   "writing-hub": ["writing-and-composition"],
   "nepali-hub": [],

@@ -5,10 +5,12 @@ import {
   PHYSICS_XI_SOLUTION_TOTALS,
   PHYSICS_XI_SOLUTION_UNITS,
   getPhysicsXiSolutionUnit,
+  physicsXiSolutionDocKey,
   physicsXiSolutionPath,
   physicsXiSolutionUrl,
 } from "@/lib/physics-xi-solutions";
 import { SYLLABUS } from "@/lib/core/syllabus";
+import { CLASS_11, getChapterDocs } from "@/lib/chapter-resources";
 
 const ROOT = process.cwd();
 
@@ -88,6 +90,19 @@ describe("Physics XI exercise solutions registry", () => {
     for (const unit of PHYSICS_XI_SOLUTION_UNITS) {
       expect(read(unit)).toContain('href="physics-xi-solutions.css"');
     }
+  });
+
+  it("files each document in its own unit's stream block, with no leakage", () => {
+    for (const unit of PHYSICS_XI_SOLUTION_UNITS) {
+      const ids = getChapterDocs(CLASS_11, "physics", unit.unitId).map((doc) => doc.id);
+      expect(ids, `${unit.unitId} stream block`).toContain(
+        physicsXiSolutionDocKey(unit),
+      );
+    }
+
+    // The Gravitation document must never appear in the Vectors block.
+    const vectors = getChapterDocs(CLASS_11, "physics", "vectors").map((doc) => doc.id);
+    expect(vectors).not.toContain("physics-xi-u7-gravitation-solutions");
   });
 
   it("leaves no escaped-newline artefacts in the published documents", () => {
