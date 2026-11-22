@@ -6,44 +6,308 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:23.521Z",
   "notes": [
-    "# Introduction to unit crystal lattice and unit cell\n\n## 1. Introduction\nChemical picture of **Introduction to unit crystal lattice and unit cell** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the States of Matter fill pass.\n\n## 2. Concepts and definitions\n### Introduction to unit crystal lattice and unit cell\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
-    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
-    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
-    "## 5. Diagrams and figures\n- **D1** — Introduction to unit crystal lattice and unit cell — plant or apparatus flow with conditions labelled (authored SVG)\n- **D2** — Introduction to unit crystal lattice and unit cell — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Introduction to unit crystal lattice and unit cell — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Introduction to unit crystal lattice and unit cell — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
-    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
-    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Address System of Solids\n\nCrystalline solids are not random piles of atoms: they are **three-dimensional ordered arrays** whose every particle sits at a mathematically defined address. Two ideas describe that order completely — the **crystal lattice** (the infinite scaffolding of points) and the **unit cell** (the smallest repeating box from which the whole crystal can be rebuilt by stacking). Every crystal property — shape, cleavage, anisotropy — traces back to this geometry.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Crystalline vs amorphous solids (the backdrop)\n\n| Property | Crystalline | Amorphous |\n|---|---|---|\n| Particle arrangement | Long-range regular repeating pattern | Short-range order only, random |\n| Melting | Sharp melting point | Softens over a range (glass) |\n| Anisotropy | Anisotropic (properties vary with direction) | Isotropic (same in all directions) |\n| Examples | NaCl, diamond, CuSO₄ | Glass, plastic, rubber |\n\n### 2.2 Crystal lattice\n\n- A **crystal lattice** is a regular three-dimensional arrangement of points in space, each point representing one particle (atom, ion or molecule) of the crystal.\n- Each lattice point has **identical surroundings** — walking from any point in the same direction meets the same pattern at the same spacing.\n- The smallest repeat distance along each axis and the angles between axes define the **lattice parameters** (a, b, c, α, β, γ).\n\n### 2.3 Unit cell\n\n- The **unit cell** is the smallest three-dimensional portion of a crystal lattice which, when repeated in all three directions, generates the entire lattice.\n- It is the \"brick\" of the crystal wall: one brick, translated endlessly, builds the whole structure.\n- **Types of unit cells:** primitive (simple) — particles only at the corners; and centred — additional particles at body centre (body-centred) or face centres (face-centred).\n- **Seven crystal systems** are distinguished by lattice parameters: cubic, tetragonal, orthorhombic, monoclinic, hexagonal, rhombohedral (trigonal), triclinic.\n\n### 2.4 Coordination number\n\n- The **coordination number** of a particle = the number of nearest neighbours touching it. In a simple cubic lattice each particle touches 6 neighbours (4 in its plane, 1 above, 1 below).",
+    "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Crystal lattice** | Regular 3-D array of points representing particle positions | NaCl lattice |\n| **Unit cell** | Smallest repeating volume generating the lattice | Cubic cell of NaCl |\n| **Lattice point** | One position in the lattice holding a particle | Corner of unit cell |\n| **Primitive cell** | Unit cell with particles only at corners | Simple cubic |\n| **Coordination number** | Number of nearest neighbours of a particle | 6 in simple cubic |",
+    "## 4. Detailed Explanation\n\n### 4.1 Why the unit cell is the crystal's \"DNA\"\n\n- Take one unit cell, translate it along a, b and c by its own dimensions millions of times, and the entire crystal appears — edges, faces, cleavage planes and all. That is why crystallographers describe a whole crystal by one cell: the cell carries the full symmetry information.\n- Cell dimensions are measured by **X-ray diffraction** (Bragg's law nλ = 2d sinθ): the spacing d between lattice planes is read from diffraction angles.\n\n### 4.2 Counting particles in a cubic unit cell\n\n- **Corner particle:** shared by 8 cells → contributes 1/8.\n- **Face-centre particle:** shared by 2 cells → contributes 1/2.\n- **Body-centre particle:** belongs wholly to one cell → contributes 1.\n- Simple cubic: 8 × 1/8 = **1 particle** per cell.\n- Body-centred cubic (bcc): 8 × 1/8 + 1 = **2 particles**.\n- Face-centred cubic (fcc): 8 × 1/8 + 6 × 1/2 = **4 particles**.\n\n### 4.3 Relation between edge length and radius (cubic cells)\n\n- Simple cubic: atoms touch along the edge → **r = a/2**.\n- bcc: atoms touch along the body diagonal √3a → **r = √3a/4**.\n- fcc: atoms touch along the face diagonal √2a → **r = a/(2√2)**.",
+    "## 5. Comparison Tables\n\n**Primitive vs centred unit cells**\n\n| Basis | Primitive (simple) | Body-centred | Face-centred |\n|---|---|---|---|\n| Particle positions | 8 corners only | 8 corners + body centre | 8 corners + 6 face centres |\n| Particles per cell | 1 | 2 | 4 |\n| Touching direction | along edge | along body diagonal | along face diagonal |\n| r–a relation | r = a/2 | r = √3a/4 | r = a/(2√2) |\n| Example | Po | CsCl-type (bcc arrangement) | Cu, Ag, NaCl-type |\n\n**Seven crystal systems (essentials)**\n\n| System | Axes | Angles | Example |\n|---|---|---|---|\n| Cubic | a = b = c | α = β = γ = 90° | NaCl, diamond |\n| Tetragonal | a = b ≠ c | all 90° | SnO₂, TiO₂ |\n| Orthorhombic | a ≠ b ≠ c | all 90° | sulphur, KNO₃ |\n| Monoclinic | a ≠ b ≠ c | α = γ = 90°, β ≠ 90° | gypsum, monoclinic S |\n| Hexagonal | a = b ≠ c | α = β = 90°, γ = 120° | graphite, ZnO |\n| Rhombohedral | a = b = c | α = β = γ ≠ 90° | calcite, NaNO₃ |\n| Triclinic | a ≠ b ≠ c | all ≠ 90° | K₂Cr₂O₇, CuSO₄·5H₂O |",
+    "## 6. Common Confusions\n\n**Lattice vs unit cell:** the lattice is the infinite pattern of points; the unit cell is one repeat box of it. Saying \"the unit cell is the lattice\" loses the mark — one is the map, the other one tile of the map.",
+    "**Lattice points are positions, not atoms:** a lattice point marks where a particle *sits*; the particle may be an atom, a molecule or a whole ion pair. Do not write \"lattice points are atoms\".",
+    "**Shared particles are not counted whole:** a corner atom belongs to eight neighbouring cells, so only 1/8 of it lies in any one cell — counting it as 1 gives impossible particle counts.",
+    "## 7. Exam Application\n\n**NEB-style (3m): Define crystal lattice and unit cell. How are they related?** — A **crystal lattice** is the regular three-dimensional arrangement of points in space such that each point has identical surroundings, each point representing the position of one particle of the crystal. A **unit cell** is the smallest three-dimensional portion of that lattice which, when repeated again and again in the three directions of the lattice, generates the complete crystal. **Relation:** the unit cell is the building block — the crystal is the unit cell translated millions of times along the three axes, just as a wall is built by stacking identical bricks; hence the geometry of one cell (edge lengths a, b, c and angles α, β, γ) determines the entire crystal's shape and symmetry.",
+    "**NEB-style (2m): Calculate the number of particles per unit cell in simple cubic, body-centred and face-centred cubic cells.** — **Simple cubic:** 8 corner particles × 1/8 = **1**. **Body-centred:** 8 × 1/8 (corners) + 1 (body centre, wholly inside) = **2**. **Face-centred:** 8 × 1/8 + 6 face centres × 1/2 = 1 + 3 = **4**. The fractional contributions arise because corner particles are shared by 8 cells and face-centre particles by 2.",
+    "**NEB-style (2m): Distinguish crystalline and amorphous solids with two points and one example each.** — **(1) Order:** crystalline solids have long-range repeating order (NaCl, diamond); amorphous solids have only short-range order (glass, rubber). **(2) Melting:** crystalline solids melt sharply at a fixed temperature; amorphous solids soften gradually over a range. **Bonus:** crystalline solids are anisotropic, amorphous isotropic."
   ],
   "practice": [
-    "List the seven crystal systems and state the relationship between the number of Bravais lattices and them.",
-    "Calculate the number of atoms per unit cell for simple cubic, BCC and FCC lattices, showing the share of corner, face and body-centre particles.",
-    "Derive the relation between edge length and atomic radius for BCC and FCC cells.",
-    "The edge length of a FCC unit cell of copper is 361 pm; calculate the density of copper (M = 63.5 g mol⁻¹).",
-    "State the limitations of the ideal unit-cell model."
+    "Define crystal lattice and unit cell and state how one generates the other.",
+    "Calculate particles per unit cell for simple cubic, bcc and fcc lattices showing the sharing fractions.",
+    "Name the seven crystal systems with one example each."
   ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"Introduction to unit crystal lattice and unit cell\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The smallest repeating unit of a crystal lattice is called:",
       "options": [
-        "True",
-        "False"
+        "Lattice point",
+        "Unit cell",
+        "Space lattice",
+        "Crystal system"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "One box, translated, builds the whole crystal."
+    },
+    {
+      "question": "Each corner particle of a cubic unit cell is shared by:",
+      "options": [
+        "2 cells",
+        "4 cells",
+        "8 cells",
+        "6 cells"
+      ],
+      "answer": "C",
+      "explanation": "Contribution 1/8 per corner."
+    },
+    {
+      "question": "Number of particles per unit cell in fcc is:",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "6"
+      ],
+      "answer": "C",
+      "explanation": "8 x 1/8 + 6 x 1/2 = 4."
+    },
+    {
+      "question": "The relation between edge length a and radius r in bcc is:",
+      "options": [
+        "r = a/2",
+        "r = a/4",
+        "r = root3 a/4",
+        "r = a/(2 root2)"
+      ],
+      "answer": "C",
+      "explanation": "Atoms touch along the body diagonal."
+    },
+    {
+      "question": "A crystalline solid is characterised by:",
+      "options": [
+        "Sharp melting point",
+        "Softening over a range",
+        "Isotropy",
+        "Random arrangement"
+      ],
+      "answer": "A",
+      "explanation": "The lattice breaks at one temperature."
+    },
+    {
+      "question": "Which of the following is an amorphous solid?",
+      "options": [
+        "NaCl",
+        "Diamond",
+        "Glass",
+        "Copper sulphate"
+      ],
+      "answer": "C",
+      "explanation": "Short-range order only."
+    },
+    {
+      "question": "The number of crystal systems is:",
+      "options": [
+        "4",
+        "7",
+        "14",
+        "6"
+      ],
+      "answer": "B",
+      "explanation": "Seven systems; 14 is the number of Bravais lattices."
+    },
+    {
+      "question": "Coordination number in a simple cubic lattice is:",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "answer": "B",
+      "explanation": "4 in-plane + 1 above + 1 below."
+    },
+    {
+      "question": "Cell dimensions of a crystal are measured by:",
+      "options": [
+        "Polarimetry",
+        "X-ray diffraction",
+        "Titration",
+        "Spectrophotometry"
+      ],
+      "answer": "B",
+      "explanation": "Bragg's law gives interplanar spacing."
     }
   ],
   "examShortTricks": [
-    "Trick 1: Definitions in one line each — lattice: 3-D array of points; unit cell: smallest repeating unit that builds the whole crystal by translation.",
-    "Trick 2: Seven crystal systems by edge/angle parameters (a,b,c; α,β,γ); cubic is the exam default (a = b = c, α = β = γ = 90°).",
-    "Trick 3: Atom counts per cubic cell: simple = 1 (8 × 1/8), BCC = 2 (8 × 1/8 + 1), FCC = 4 (8 × 1/8 + 6 × 1/2)."
+    "Count particles: corners 1/8, faces 1/2, body 1 — simple 1, bcc 2, fcc 4. Radius drill: edge a/2, body diagonal root3a/4, face diagonal a/(2root2). Seven systems mnemonic: \"Cubic Tetra Ortho Mono Hexa Rhombo Tri\". Sharp melting point = crystalline; softening range = amorphous."
   ],
   "keyPoints": [
-    "Crystal lattice: regular 3-D arrangement of points representing the pattern of particles.",
-    "Unit cell: the smallest portion which, repeated in space, generates the whole lattice.",
-    "Seven primitive crystal systems; cubic, tetragonal, orthorhombic are common.",
-    "Particles per unit cell: sc = 1, bcc = 2, fcc = 4."
+    "Crystal lattice: regular 3-D array of points, identical surroundings at every point. Unit cell: smallest repeating volume; crystal = cell translated along a, b, c. Lattice parameters: a, b, c, alpha, beta, gamma. Primitive cell = corners only; bcc adds body centre; fcc adds 6 face centres. Particles per cell: simple 1 (8 x 1/8), bcc 2 (+1), fcc 4 (+6 x 1/2). Corner shared by 8 cells (1/8), face centre by 2 (1/2), body centre whole (1). r-a relations: simple r = a/2, bcc r = root3 a/4, fcc r = a/(2 root2). Coordination number 6 in simple cubic. Seven crystal systems: cubic, tetragonal, orthorhombic, monoclinic, hexagonal, rhombohedral, triclinic. Crystalline: sharp mp, anisotropic; amorphous: softening range, isotropic. Cell dimensions measured by X-ray diffraction (Bragg n lambda = 2d sin theta)."
   ],
   "practiceQuestions": [
-    "Q. Define unit cell with one example. (1 mark) — smallest repeating block; NaCl cubic unit cell.",
-    "Q. Calculate the number of atoms per BCC unit cell. (2 marks) — 8 corners × 1/8 + 1 body centre = 2."
+    "**NEB-style (3m): Define crystal lattice and unit cell. How are they related?** — **Crystal lattice:** the regular three-dimensional arrangement of points in space in which each point has identical surroundings, every point representing the site of one particle (atom, ion or molecule) of the crystal; for example the sodium chloride lattice. **Unit cell:** the smallest three-dimensional portion of the crystal lattice which, when repeated again and again in the three directions of the lattice, produces the complete crystal lattice; its size and shape are fixed by the lattice parameters a, b, c and the angles α, β, γ. **Relation:** the unit cell is the fundamental building block of the lattice — repeating (translating) one unit cell along the three crystallographic axes builds the entire crystal, exactly as stacking identical bricks builds a wall; therefore the geometry of a single unit cell determines the external shape, symmetry and properties of the whole crystal.",
+    "**NEB-style (2m): Calculate the number of particles per unit cell in simple cubic, body-centred cubic and face-centred cubic unit cells.** — **Simple cubic:** there are 8 particles at the corners, each shared by 8 unit cells, so each contributes 1/8; total = 8 × 1/8 = **1 particle**. **Body-centred cubic:** 8 corners × 1/8 = 1, plus one particle at the body centre belonging wholly to the cell; total = **2 particles**. **Face-centred cubic:** 8 corners × 1/8 = 1, plus 6 particles at the face centres each shared by 2 cells contributing 1/2 each = 3; total = 1 + 3 = **4 particles**.",
+    "**NEB-style (2m): Distinguish between crystalline and amorphous solids with two points and one example each.** — **(1) Arrangement:** crystalline solids possess a long-range, regularly repeating three-dimensional pattern of particles — e.g. NaCl, diamond, CuSO₄ — while amorphous solids have only short-range order with an irregular arrangement — e.g. glass, rubber, plastic. **(2) Melting behaviour:** crystalline solids melt sharply at a definite temperature because the whole lattice breaks down at once, whereas amorphous solids soften gradually over a range of temperature. Additionally, crystalline solids are anisotropic (physical properties differ with direction) while amorphous solids are isotropic."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Address System of Solids\n\nCrystalline solids are not random piles of atoms: they are **three-dimensional ordered arrays** whose every particle sits at a mathematically defined address. Two ideas describe that order completely — the **crystal lattice** (the infinite scaffolding of points) and the **unit cell** (the smallest repeating box from which the whole crystal can be rebuilt by stacking). Every crystal property — shape, cleavage, anisotropy — traces back to this geometry.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Crystalline vs amorphous solids (the backdrop)\n\n| Property | Crystalline | Amorphous |\n|---|---|---|\n| Particle arrangement | Long-range regular repeating pattern | Short-range order only, random |\n| Melting | Sharp melting point | Softens over a range (glass) |\n| Anisotropy | Anisotropic (properties vary with direction) | Isotropic (same in all directions) |\n| Examples | NaCl, diamond, CuSO₄ | Glass, plastic, rubber |\n\n### 2.2 Crystal lattice\n\n- A **crystal lattice** is a regular three-dimensional arrangement of points in space, each point representing one particle (atom, ion or molecule) of the crystal.\n- Each lattice point has **identical surroundings** — walking from any point in the same direction meets the same pattern at the same spacing.\n- The smallest repeat distance along each axis and the angles between axes define the **lattice parameters** (a, b, c, α, β, γ).\n\n### 2.3 Unit cell\n\n- The **unit cell** is the smallest three-dimensional portion of a crystal lattice which, when repeated in all three directions, generates the entire lattice.\n- It is the \"brick\" of the crystal wall: one brick, translated endlessly, builds the whole structure.\n- **Types of unit cells:** primitive (simple) — particles only at the corners; and centred — additional particles at body centre (body-centred) or face centres (face-centred).\n- **Seven crystal systems** are distinguished by lattice parameters: cubic, tetragonal, orthorhombic, monoclinic, hexagonal, rhombohedral (trigonal), triclinic.\n\n### 2.4 Coordination number\n\n- The **coordination number** of a particle = the number of nearest neighbours touching it. In a simple cubic lattice each particle touches 6 neighbours (4 in its plane, 1 above, 1 below).",
+      "## 3. Scientific Definitions\n\n| Term | Scientific meaning | Example |\n|---|---|---|\n| **Crystal lattice** | Regular 3-D array of points representing particle positions | NaCl lattice |\n| **Unit cell** | Smallest repeating volume generating the lattice | Cubic cell of NaCl |\n| **Lattice point** | One position in the lattice holding a particle | Corner of unit cell |\n| **Primitive cell** | Unit cell with particles only at corners | Simple cubic |\n| **Coordination number** | Number of nearest neighbours of a particle | 6 in simple cubic |",
+      "## 4. Detailed Explanation\n\n### 4.1 Why the unit cell is the crystal's \"DNA\"\n\n- Take one unit cell, translate it along a, b and c by its own dimensions millions of times, and the entire crystal appears — edges, faces, cleavage planes and all. That is why crystallographers describe a whole crystal by one cell: the cell carries the full symmetry information.\n- Cell dimensions are measured by **X-ray diffraction** (Bragg's law nλ = 2d sinθ): the spacing d between lattice planes is read from diffraction angles.\n\n### 4.2 Counting particles in a cubic unit cell\n\n- **Corner particle:** shared by 8 cells → contributes 1/8.\n- **Face-centre particle:** shared by 2 cells → contributes 1/2.\n- **Body-centre particle:** belongs wholly to one cell → contributes 1.\n- Simple cubic: 8 × 1/8 = **1 particle** per cell.\n- Body-centred cubic (bcc): 8 × 1/8 + 1 = **2 particles**.\n- Face-centred cubic (fcc): 8 × 1/8 + 6 × 1/2 = **4 particles**.\n\n### 4.3 Relation between edge length and radius (cubic cells)\n\n- Simple cubic: atoms touch along the edge → **r = a/2**.\n- bcc: atoms touch along the body diagonal √3a → **r = √3a/4**.\n- fcc: atoms touch along the face diagonal √2a → **r = a/(2√2)**.",
+      "## 5. Comparison Tables\n\n**Primitive vs centred unit cells**\n\n| Basis | Primitive (simple) | Body-centred | Face-centred |\n|---|---|---|---|\n| Particle positions | 8 corners only | 8 corners + body centre | 8 corners + 6 face centres |\n| Particles per cell | 1 | 2 | 4 |\n| Touching direction | along edge | along body diagonal | along face diagonal |\n| r–a relation | r = a/2 | r = √3a/4 | r = a/(2√2) |\n| Example | Po | CsCl-type (bcc arrangement) | Cu, Ag, NaCl-type |\n\n**Seven crystal systems (essentials)**\n\n| System | Axes | Angles | Example |\n|---|---|---|---|\n| Cubic | a = b = c | α = β = γ = 90° | NaCl, diamond |\n| Tetragonal | a = b ≠ c | all 90° | SnO₂, TiO₂ |\n| Orthorhombic | a ≠ b ≠ c | all 90° | sulphur, KNO₃ |\n| Monoclinic | a ≠ b ≠ c | α = γ = 90°, β ≠ 90° | gypsum, monoclinic S |\n| Hexagonal | a = b ≠ c | α = β = 90°, γ = 120° | graphite, ZnO |\n| Rhombohedral | a = b = c | α = β = γ ≠ 90° | calcite, NaNO₃ |\n| Triclinic | a ≠ b ≠ c | all ≠ 90° | K₂Cr₂O₇, CuSO₄·5H₂O |",
+      "## 6. Common Confusions\n\n**Lattice vs unit cell:** the lattice is the infinite pattern of points; the unit cell is one repeat box of it. Saying \"the unit cell is the lattice\" loses the mark — one is the map, the other one tile of the map.",
+      "**Lattice points are positions, not atoms:** a lattice point marks where a particle *sits*; the particle may be an atom, a molecule or a whole ion pair. Do not write \"lattice points are atoms\".",
+      "**Shared particles are not counted whole:** a corner atom belongs to eight neighbouring cells, so only 1/8 of it lies in any one cell — counting it as 1 gives impossible particle counts.",
+      "## 7. Exam Application\n\n**NEB-style (3m): Define crystal lattice and unit cell. How are they related?** — A **crystal lattice** is the regular three-dimensional arrangement of points in space such that each point has identical surroundings, each point representing the position of one particle of the crystal. A **unit cell** is the smallest three-dimensional portion of that lattice which, when repeated again and again in the three directions of the lattice, generates the complete crystal. **Relation:** the unit cell is the building block — the crystal is the unit cell translated millions of times along the three axes, just as a wall is built by stacking identical bricks; hence the geometry of one cell (edge lengths a, b, c and angles α, β, γ) determines the entire crystal's shape and symmetry.",
+      "**NEB-style (2m): Calculate the number of particles per unit cell in simple cubic, body-centred and face-centred cubic cells.** — **Simple cubic:** 8 corner particles × 1/8 = **1**. **Body-centred:** 8 × 1/8 (corners) + 1 (body centre, wholly inside) = **2**. **Face-centred:** 8 × 1/8 + 6 face centres × 1/2 = 1 + 3 = **4**. The fractional contributions arise because corner particles are shared by 8 cells and face-centre particles by 2.",
+      "**NEB-style (2m): Distinguish crystalline and amorphous solids with two points and one example each.** — **(1) Order:** crystalline solids have long-range repeating order (NaCl, diamond); amorphous solids have only short-range order (glass, rubber). **(2) Melting:** crystalline solids melt sharply at a fixed temperature; amorphous solids soften gradually over a range. **Bonus:** crystalline solids are anisotropic, amorphous isotropic."
+    ],
+    "keyPoints": [
+      "Crystal lattice: regular 3-D array of points, identical surroundings at every point. Unit cell: smallest repeating volume; crystal = cell translated along a, b, c. Lattice parameters: a, b, c, alpha, beta, gamma. Primitive cell = corners only; bcc adds body centre; fcc adds 6 face centres. Particles per cell: simple 1 (8 x 1/8), bcc 2 (+1), fcc 4 (+6 x 1/2). Corner shared by 8 cells (1/8), face centre by 2 (1/2), body centre whole (1). r-a relations: simple r = a/2, bcc r = root3 a/4, fcc r = a/(2 root2). Coordination number 6 in simple cubic. Seven crystal systems: cubic, tetragonal, orthorhombic, monoclinic, hexagonal, rhombohedral, triclinic. Crystalline: sharp mp, anisotropic; amorphous: softening range, isotropic. Cell dimensions measured by X-ray diffraction (Bragg n lambda = 2d sin theta)."
+    ],
+    "importantConcepts": [
+      "The unit cell is the crystal's DNA: one box carries the complete symmetry information of an infinite structure, which is why X-ray crystallography can describe a mountain of quartz from a measurement on a grain."
+    ],
+    "examples": [
+      "***Counting NaCl's cell*** — NaCl crystallises in an fcc arrangement of Cl⁻ with Na⁺ in octahedral holes: 4 Cl⁻ + 4 Na⁺ = 4 formula units per unit cell — the number 4 that every solid-state numerical starts from."
+    ],
+    "universalFacts": [
+      "Bragg's law (nλ = 2d sinθ), published 1915, won the Nobel Prize for father and son Bragg and remains the basis of every modern crystal-structure determination, from table salt to protein crystals."
+    ],
+    "importantStatements": [
+      "\"A unit cell is the smallest portion of the crystal lattice which, when repeated in three dimensions, generates the entire lattice.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ on crystal lattice/unit cell exists in the current bank (NEB 2022 ozone, NEB 2021 Ostwald, NEB 2023 He diving, NEB 2024 oxoacids are assigned elsewhere); all items above are NEB-style practice."
+    ],
+    "examShortTricks": [
+      "Count particles: corners 1/8, faces 1/2, body 1 — simple 1, bcc 2, fcc 4. Radius drill: edge a/2, body diagonal root3a/4, face diagonal a/(2root2). Seven systems mnemonic: \"Cubic Tetra Ortho Mono Hexa Rhombo Tri\". Sharp melting point = crystalline; softening range = amorphous."
+    ],
+    "examNotes": [
+      "For \"define and relate\" questions, define both terms separately (1 mark each) and give the translation relation explicitly (1 mark) — merging the two definitions loses a mark."
+    ],
+    "formulas": [
+      "- Particles per cell: simple cubic = 8 × 1/8 = 1\n- bcc = 8 × 1/8 + 1 = 2\n- fcc = 8 × 1/8 + 6 × 1/2 = 4\n- simple cubic: r = a/2\n- bcc: r = √3a/4\n- fcc: r = a/(2√2)\n- Bragg's law: nλ = 2d sinθ"
+    ],
+    "practice": [
+      "Define crystal lattice and unit cell and state how one generates the other.",
+      "Calculate particles per unit cell for simple cubic, bcc and fcc lattices showing the sharing fractions.",
+      "Name the seven crystal systems with one example each."
+    ],
+    "practiceQuestions": [
+      "**NEB-style (3m): Define crystal lattice and unit cell. How are they related?** — **Crystal lattice:** the regular three-dimensional arrangement of points in space in which each point has identical surroundings, every point representing the site of one particle (atom, ion or molecule) of the crystal; for example the sodium chloride lattice. **Unit cell:** the smallest three-dimensional portion of the crystal lattice which, when repeated again and again in the three directions of the lattice, produces the complete crystal lattice; its size and shape are fixed by the lattice parameters a, b, c and the angles α, β, γ. **Relation:** the unit cell is the fundamental building block of the lattice — repeating (translating) one unit cell along the three crystallographic axes builds the entire crystal, exactly as stacking identical bricks builds a wall; therefore the geometry of a single unit cell determines the external shape, symmetry and properties of the whole crystal.",
+      "**NEB-style (2m): Calculate the number of particles per unit cell in simple cubic, body-centred cubic and face-centred cubic unit cells.** — **Simple cubic:** there are 8 particles at the corners, each shared by 8 unit cells, so each contributes 1/8; total = 8 × 1/8 = **1 particle**. **Body-centred cubic:** 8 corners × 1/8 = 1, plus one particle at the body centre belonging wholly to the cell; total = **2 particles**. **Face-centred cubic:** 8 corners × 1/8 = 1, plus 6 particles at the face centres each shared by 2 cells contributing 1/2 each = 3; total = 1 + 3 = **4 particles**.",
+      "**NEB-style (2m): Distinguish between crystalline and amorphous solids with two points and one example each.** — **(1) Arrangement:** crystalline solids possess a long-range, regularly repeating three-dimensional pattern of particles — e.g. NaCl, diamond, CuSO₄ — while amorphous solids have only short-range order with an irregular arrangement — e.g. glass, rubber, plastic. **(2) Melting behaviour:** crystalline solids melt sharply at a definite temperature because the whole lattice breaks down at once, whereas amorphous solids soften gradually over a range of temperature. Additionally, crystalline solids are anisotropic (physical properties differ with direction) while amorphous solids are isotropic."
+    ]
+  },
+  "importantConcepts": [
+    "The unit cell is the crystal's DNA: one box carries the complete symmetry information of an infinite structure, which is why X-ray crystallography can describe a mountain of quartz from a measurement on a grain."
+  ],
+  "examples": [
+    "***Counting NaCl's cell*** — NaCl crystallises in an fcc arrangement of Cl⁻ with Na⁺ in octahedral holes: 4 Cl⁻ + 4 Na⁺ = 4 formula units per unit cell — the number 4 that every solid-state numerical starts from."
+  ],
+  "universalFacts": [
+    "Bragg's law (nλ = 2d sinθ), published 1915, won the Nobel Prize for father and son Bragg and remains the basis of every modern crystal-structure determination, from table salt to protein crystals."
+  ],
+  "importantStatements": [
+    "\"A unit cell is the smallest portion of the crystal lattice which, when repeated in three dimensions, generates the entire lattice.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ on crystal lattice/unit cell exists in the current bank (NEB 2022 ozone, NEB 2021 Ostwald, NEB 2023 He diving, NEB 2024 oxoacids are assigned elsewhere); all items above are NEB-style practice."
+  ],
+  "examNotes": [
+    "For \"define and relate\" questions, define both terms separately (1 mark each) and give the translation relation explicitly (1 mark) — merging the two definitions loses a mark."
+  ],
+  "formulas": [
+    "- Particles per cell: simple cubic = 8 × 1/8 = 1\n- bcc = 8 × 1/8 + 1 = 2\n- fcc = 8 × 1/8 + 6 × 1/2 = 4\n- simple cubic: r = a/2\n- bcc: r = √3a/4\n- fcc: r = a/(2√2)\n- Bragg's law: nλ = 2d sinθ"
+  ],
+  "summary": "A **crystal lattice** is the infinite, perfectly regular three-dimensional array of points — identical surroundings at every point — on which a crystalline solid is built, while the **unit cell** is its smallest repeating box: translate that one box (with lattice parameters a, b, c and angles α, β, γ) millions of times along the three axes and the whole crystal appears, which is why the cell is called the crystal's DNA. Counting particles uses sharing fractions — corner 1/8, face centre 1/2, body centre 1 — giving **1, 2 and 4 particles per cell** for simple cubic, body-centred and face-centred cubic lattices, with radius–edge relations r = a/2, √3a/4 and a/(2√2) respectively and coordination number 6 in the simple cube. The **seven crystal systems** (cubic, tetragonal, orthorhombic, monoclinic, hexagonal, rhombohedral, triclinic) classify all crystals by their parameters, and X-ray diffraction via **Bragg's law nλ = 2d sinθ** measures the cell dimensions themselves. The backdrop contrast: crystalline solids show sharp melting points and anisotropy; amorphous solids soften over a range and are isotropic.",
+  "mcs": [
+    {
+      "question": "The smallest repeating unit of a crystal lattice is called:",
+      "options": [
+        "Lattice point",
+        "Unit cell",
+        "Space lattice",
+        "Crystal system"
+      ],
+      "answer": "B",
+      "explanation": "One box, translated, builds the whole crystal."
+    },
+    {
+      "question": "Each corner particle of a cubic unit cell is shared by:",
+      "options": [
+        "2 cells",
+        "4 cells",
+        "8 cells",
+        "6 cells"
+      ],
+      "answer": "C",
+      "explanation": "Contribution 1/8 per corner."
+    },
+    {
+      "question": "Number of particles per unit cell in fcc is:",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "6"
+      ],
+      "answer": "C",
+      "explanation": "8 x 1/8 + 6 x 1/2 = 4."
+    },
+    {
+      "question": "The relation between edge length a and radius r in bcc is:",
+      "options": [
+        "r = a/2",
+        "r = a/4",
+        "r = root3 a/4",
+        "r = a/(2 root2)"
+      ],
+      "answer": "C",
+      "explanation": "Atoms touch along the body diagonal."
+    },
+    {
+      "question": "A crystalline solid is characterised by:",
+      "options": [
+        "Sharp melting point",
+        "Softening over a range",
+        "Isotropy",
+        "Random arrangement"
+      ],
+      "answer": "A",
+      "explanation": "The lattice breaks at one temperature."
+    },
+    {
+      "question": "Which of the following is an amorphous solid?",
+      "options": [
+        "NaCl",
+        "Diamond",
+        "Glass",
+        "Copper sulphate"
+      ],
+      "answer": "C",
+      "explanation": "Short-range order only."
+    },
+    {
+      "question": "The number of crystal systems is:",
+      "options": [
+        "4",
+        "7",
+        "14",
+        "6"
+      ],
+      "answer": "B",
+      "explanation": "Seven systems; 14 is the number of Bravais lattices."
+    },
+    {
+      "question": "Coordination number in a simple cubic lattice is:",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "answer": "B",
+      "explanation": "4 in-plane + 1 above + 1 below."
+    },
+    {
+      "question": "Cell dimensions of a crystal are measured by:",
+      "options": [
+        "Polarimetry",
+        "X-ray diffraction",
+        "Titration",
+        "Spectrophotometry"
+      ],
+      "answer": "B",
+      "explanation": "Bragg's law gives interplanar spacing."
+    }
   ]
 }

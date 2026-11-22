@@ -1391,6 +1391,12 @@ import { AntichlorAction } from "./antichlor-action";
 import { HypoAcidDecomposition } from "./hypo-acid-decomposition";
 import { CyanideAntidotePath } from "./cyanide-antidote-path";
 import { HypoUseMap } from "./hypo-use-map";
+import { CrystalLatticeGrid } from "./crystal-lattice-grid";
+import { UnitCellSharing } from "./unit-cell-sharing";
+import { CellCountTrio } from "./cell-count-trio";
+import { RadiusEdgeRelations } from "./radius-edge-relations";
+import { CrystalSystemsSeven } from "./crystal-systems-seven";
+import { BraggLawPanel } from "./bragg-law-panel";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -10601,6 +10607,18 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       { Component: HypoAcidDecomposition, caption: "Acid + hypo = the milky test", alt: "Thiosulphate with dilute acid giving sulphur dioxide precipitated sulphur and water with milkiness", keyword: "sulphur" },
       { Component: CyanideAntidotePath, caption: "The cyanide antidote", alt: "Thiosulphate as cyanide antidote converting cyanide to harmless thiocyanate by trans-sulphuration enzyme rhodanese", keyword: "cyanide" },
       { Component: HypoUseMap, caption: "One salt, four careers", alt: "Four uses of sodium thiosulphate in photography titration textiles and medicine", keyword: "titration" },
+    ],
+  },
+  "introduction-to-unit-crystal-lattice-and-unit-cell": {
+    title: "Crystal lattice and unit cell",
+    figures: [
+      { Component: CrystalLatticeGrid, caption: "Lattice — the map. Unit cell — one tile", alt: "Grid of lattice points with one unit cell highlighted and translation arrows building the crystal", keyword: "lattice" },
+      { Component: UnitCellSharing, caption: "A particle counts only its share", alt: "Sharing fractions of corner face and body centre particles between neighbouring unit cells", keyword: "shared" },
+      { Component: CellCountTrio, caption: "Particles per cell: 1, 2, 4", alt: "Particle count per unit cell for simple cubic body-centred and face-centred lattices", keyword: "particles per cell" },
+      { Component: RadiusEdgeRelations, caption: "Where atoms touch decides r(a)", alt: "Relations between atomic radius and edge length for simple cubic body-centred and face-centred cells", keyword: "body diagonal" },
+      { Component: CrystalSystemsSeven, caption: "Seven systems cover every crystal", alt: "Table of the seven crystal systems with lattice parameters and examples", keyword: "crystal systems" },
+      { Component: BraggLawPanel, caption: "Bragg: n lambda = 2d sin theta", alt: "Bragg diffraction X-rays reflecting off lattice planes with path difference 2d sin theta", keyword: "bragg" },
+      { Component: CrystalVsAmorphousOrder, caption: "Order versus chance", alt: "Comparison of the regular arrangement in crystals and the random arrangement in amorphous solids", keyword: "amorphous" },
     ],
   },
 };
