@@ -9,6 +9,41 @@
  * more robustly. Slugs verified against slugifySyllabusTopic() output.
  */
 
+import { EqRatesCross } from "./eq-rates-cross";
+import { PhysicalVsChemicalEq } from "./physical-vs-chemical-eq";
+import { TracerDynamismProof } from "./tracer-dynamism-proof";
+import { EitherSideArrival } from "./either-side-arrival";
+import { CatalystNoShift } from "./catalyst-no-shift";
+import { ClosedVsOpenVessel } from "./closed-vs-open-vessel";
+import { EqCharacteristicsPanel } from "./eq-characteristics-panel";
+import { ActiveMassAnatomy } from "./active-mass-anatomy";
+import { MassActionStatement } from "./mass-action-statement";
+import { KcDerivationSteps } from "./kc-derivation-steps";
+import { ExpressionGalleryEq } from "./expression-gallery-eq";
+import { SolidsOmittedRule } from "./solids-omitted-rule";
+import { FlipScaleRules } from "./flip-scale-rules";
+import { KcUnitsLadder } from "./kc-units-ladder";
+import { KcSizeLadder } from "./kc-size-ladder";
+import { QcDirectionCompass } from "./qc-direction-compass";
+import { Nh3KcNumerical } from "./nh3-kc-numerical";
+import { KcImportanceMap } from "./kc-importance-map";
+import { IceTableSteps } from "./ice-table-steps";
+import { DgKcBridge } from "./dg-kc-bridge";
+import { KcTemperatureRule } from "./kc-temperature-rule";
+import { KpExpressionAnatomy } from "./kp-expression-anatomy";
+import { PartialPressureIdea } from "./partial-pressure-idea";
+import { BridgeDerivationFlow } from "./bridge-derivation-flow";
+import { DnSignTable } from "./dn-sign-table";
+import { KpKcEqualityCases } from "./kp-kc-equality-cases";
+import { KpConversionDrill } from "./kp-conversion-drill";
+import { KpUnitsPanel } from "./kp-units-panel";
+import { LeChatelierStatement } from "./le-chatelier-statement";
+import { ConcentrationShiftMap } from "./concentration-shift-map";
+import { PressureMoleCount } from "./pressure-mole-count";
+import { TemperatureHeatSide } from "./temperature-heat-side";
+import { HaberConditionsPanel } from "./haber-conditions-panel";
+import { ContactProcessPanel } from "./contact-process-panel";
+import { N2o4ColorThermometer } from "./n2o4-color-thermometer";
 import type { ComponentType } from "react";
 import { SnellsLawRayDiagram } from "./snells-law-ray-diagram";
 import { OhmsLawCircuit } from "./ohms-law-circuit";
@@ -10095,6 +10130,66 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
     ],
   },
 
+  "physical-and-chemical-equilibrium-dynamic-nature-of-chemical-equilibrium": {
+    title: "Equilibrium: the dynamic tie",
+    figures: [
+      { Component: EqRatesCross, caption: "Rates cross: how equilibrium arrives", alt: "Graph of forward rate falling and reverse rate rising until they cross at the equilibrium point", keyword: "rates" },
+      { Component: PhysicalVsChemicalEq, caption: "Physical vs chemical equilibrium", alt: "Side-by-side comparison of physical equilibrium changing only state and chemical equilibrium forming new substances", keyword: "physical equilibrium" },
+      { Component: TracerDynamismProof, caption: "The tracer test proves dynamism", alt: "Radioactive tracer injected at equilibrium appears in the products while concentrations stay constant", keyword: "tracer" },
+      { Component: EitherSideArrival, caption: "One destination, two roads", alt: "Diagram showing the same equilibrium mixture is reached starting from pure reactants or pure products", keyword: "either side" },
+      { Component: CatalystNoShift, caption: "Catalyst: faster arrival, same destination", alt: "Concentration-time curves showing a catalyst shortens the time to equilibrium but leaves the plateau unchanged", keyword: "catalyst" },
+      { Component: ClosedVsOpenVessel, caption: "The lid decides the outcome", alt: "Closed flask where products accumulate and push back versus open dish where products escape and the reaction completes", keyword: "closed" },
+      { Component: EqCharacteristicsPanel, caption: "Five fingerprints of equilibrium", alt: "Panel listing constant composition, dynamic activity, either-side arrival, catalyst neutrality and condition sensitivity", keyword: "characteristics" },
+    ],
+  },
+  "law-of-mass-action": {
+    title: "Law of mass action and Kc",
+    figures: [
+      { Component: ActiveMassAnatomy, caption: "Active mass: who speaks in Kc", alt: "Table showing gases and solutes enter Kc while pure solids and liquids with constant active mass are omitted", keyword: "active mass" },
+      { Component: MassActionStatement, caption: "Guldberg and Waage, 1864", alt: "Statement panel of the law of mass action with the general rate equation rate equals k A to the a times B to the b", keyword: "law of mass action" },
+      { Component: KcDerivationSteps, caption: "From rate tie to Kc in four moves", alt: "Four derivation steps from equal forward and reverse rates to Kc equals kf over kr", keyword: "derive" },
+      { Component: ExpressionGalleryEq, caption: "The expression gallery", alt: "Gallery of equilibrium constant expressions for ammonia synthesis, nitrogen dioxide, phosphorus pentachloride and calcite decomposition", keyword: "expression" },
+      { Component: SolidsOmittedRule, caption: "Why the chalk drops out", alt: "Calcium carbonate decomposition with the two solids crossed out so Kc equals only the carbon dioxide concentration", keyword: "solids" },
+      { Component: FlipScaleRules, caption: "Rewrite the equation, rewrite the constant", alt: "Rules mapping reversing, doubling, halving coefficients and temperature change to their effect on Kc", keyword: "reverse" },
+      { Component: KcUnitsLadder, caption: "Units of Kc from delta n", alt: "Ladder showing units of Kc as mol per litre raised to delta n for three reactions", keyword: "units" },
+    ],
+  },
+  "expression-for-equilibrium-constant-and-its-importance": {
+    title: "Kc: reading and computing the constant",
+    figures: [
+      { Component: KcSizeLadder, caption: "What the number says", alt: "Ladder of Kc sizes from product-dominated through balanced to reactant-dominated with examples", keyword: "large" },
+      { Component: QcDirectionCompass, caption: "Qc: the compass needle", alt: "Compass diagram showing Qc below Kc drives forward, above Kc drives reverse, equal means equilibrium", keyword: "direction" },
+      { Component: Nh3KcNumerical, caption: "NEB 2024: the ammonia numerical", alt: "Step-by-step solution finding ammonia concentration 0.25 molar from Kc 0.5, nitrogen 1.0 and hydrogen 0.5 molar", keyword: "0.25" },
+      { Component: KcImportanceMap, caption: "Four jobs for one constant", alt: "Map of Kc uses: extent of reaction, direction prediction, thermodynamic bridge and industrial design", keyword: "importance" },
+      { Component: IceTableSteps, caption: "The five-line recipe", alt: "Five step recipe for equilibrium calculations from balancing the equation to checking the answer", keyword: "steps" },
+      { Component: DgKcBridge, caption: "The yield-energy bridge", alt: "Diagram linking equilibrium constant to standard free energy through dG equals minus RT ln K", keyword: "free energy" },
+      { Component: KcTemperatureRule, caption: "Who moves the position, who rewrites Kc", alt: "Panel separating concentration and pressure shifts from temperature being the only factor that changes Kc", keyword: "temperature" },
+    ],
+  },
+  "relationship-between-kp-and-kc": {
+    title: "Kp and Kc: one bridge",
+    figures: [
+      { Component: KpExpressionAnatomy, caption: "Kp: same fraction, pressure currency", alt: "Kp expression for ammonia synthesis written with partial pressures replacing concentrations", keyword: "partial pressure" },
+      { Component: PartialPressureIdea, caption: "Partial pressure: concentration in disguise", alt: "Diagram deriving partial pressure as molar concentration times RT from the ideal gas law", keyword: "partial pressure" },
+      { Component: BridgeDerivationFlow, caption: "One gas law builds the bridge", alt: "Five step derivation of Kp equals Kc times RT to the delta n starting from p equals i RT", keyword: "derive" },
+      { Component: DnSignTable, caption: "One sign decides the relationship", alt: "Table of delta n zero, positive and negative cases with example reactions and the resulting Kp-Kc relation", keyword: "gas moles" },
+      { Component: KpKcEqualityCases, caption: "Spot the dn, write the answer", alt: "Four reactions classified by delta n showing when Kp equals Kc or differs by an RT factor", keyword: "0" },
+      { Component: KpConversionDrill, caption: "Conversion drill: Kc to Kp", alt: "Worked conversion of Kc 0.16 at 300 kelvin to Kp 3.94 for the nitrogen dioxide equilibrium", keyword: "3.94" },
+      { Component: KpUnitsPanel, caption: "Units of Kp from delta n", alt: "Panel of Kp units as pressure raised to delta n for three reactions with R matching guidance", keyword: "units" },
+    ],
+  },
+  "le-chatelier-s-principle-numericals-not-required": {
+    title: "Le Chatelier: oppose the change",
+    figures: [
+      { Component: LeChatelierStatement, caption: "Le Chatelier, 1888", alt: "Statement panel of Le Chatelier's principle with the three levers of concentration, pressure and temperature", keyword: "le chatelier" },
+      { Component: ConcentrationShiftMap, caption: "Concentration levers", alt: "Map of concentration changes and their equilibrium shifts driven by the reaction quotient restoring Kc", keyword: "concentration" },
+      { Component: PressureMoleCount, caption: "Squeeze test: count the gas moles", alt: "Pressure effects on three equilibria decided by gas mole counts including the no-shift case", keyword: "pressure" },
+      { Component: TemperatureHeatSide, caption: "Write heat into the equation", alt: "Exothermic and endothermic equations with heat written on the appropriate side to predict temperature shifts", keyword: "temperature" },
+      { Component: HaberConditionsPanel, caption: "Haber: the principle as a factory manual", alt: "Haber process conditions of high pressure, moderate temperature, ammonia removal and iron catalyst explained by Le Chatelier", keyword: "haber" },
+      { Component: ContactProcessPanel, caption: "Contact process: 2SO2 + O2 ⇌ 2SO3", alt: "Contact process conditions of excess air, atmospheric pressure, moderate temperature and sulfur trioxide removal", keyword: "contact process" },
+      { Component: N2o4ColorThermometer, caption: "A visible equilibrium: the colour thermometer", alt: "Nitrogen dioxide equilibrium shown as a colour thermometer with heating deepening the brown and pressure paling it", keyword: "brown" },
+    ],
+  },
 };
 
 /**
