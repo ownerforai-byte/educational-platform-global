@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.2 Newton–Raphson Method — Mathematics XI workbook</title>
+<meta name="description" content="Newton–Raphson Method — 12 solved NEB-style questions covering The formula, Iteration steps, Convergence, Comparison with bisection.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/workbook.css">
+</head>
+<body>
+<section class="sheet" aria-label="Newton–Raphson Method — sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook</span></div>
+<h1>7.2 · Newton–Raphson Method</h1>
+<p class="topics"><b>Topics</b> The formula · Iteration steps · Convergence · Comparison with bisection</p>
+<p class="note">NEB answer style — given → statement → working → answer. 12 questions per sheet, 3 per row.</p>
+</header>
+<div class="grid" data-cols="3" data-rows="4">
+<div class="cell">
+<p class="tag">The formula</p>
+<p class="q"><span class="n">Q1.</span>State the Newton–Raphson iteration formula.<span class="mk">[2]</span></p>
+<p class="work">xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)</p>
+<p class="ans">As written</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps</p>
+<p class="q"><span class="n">Q2.</span>Apply one step to x² − 2 = 0 from x₀ = 1.<span class="mk">[4]</span></p>
+<p class="work">1 − (1 − 2)/2 = 1 + 0.5</p>
+<p class="ans">x₁ = 1.5</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps</p>
+<p class="q"><span class="n">Q3.</span>Apply the second step from x₁ = 1.5.<span class="mk">[4]</span></p>
+<p class="work">1.5 − (2.25 − 2)/3</p>
+<p class="ans">x₂ ≈ 1.4167</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps</p>
+<p class="q"><span class="n">Q4.</span>Apply one step to x³ − 10 = 0 from x₀ = 2.<span class="mk">[4]</span></p>
+<p class="work">2 − (8 − 10)/12 = 2 + 1/6</p>
+<p class="ans">x₁ ≈ 2.1667</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps</p>
+<p class="q"><span class="n">Q5.</span>Continue one more step.<span class="mk">[5]</span></p>
+<p class="work">f(2.1667) = 0.169, f′ = 14.083 ⇒ subtract 0.012</p>
+<p class="ans">x₂ ≈ 2.1547</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps</p>
+<p class="q"><span class="n">Q6.</span>Apply one step to x² − 9 = 0 from x₀ = 4.<span class="mk">[4]</span></p>
+<p class="work">4 − (16 − 9)/8</p>
+<p class="ans">x₁ = 3.125</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps</p>
+<p class="q"><span class="n">Q7.</span>Continue once more.<span class="mk">[4]</span></p>
+<p class="work">3.125 − (9.7656 − 9)/6.25 = 3.125 − 0.1225</p>
+<p class="ans">x₂ ≈ 3.002</p>
+</div>
+<div class="cell">
+<p class="tag">Convergence</p>
+<p class="q"><span class="n">Q8.</span>Why is Newton–Raphson called quadratically convergent?<span class="mk">[4]</span></p>
+<p class="work">The error satisfies eₙ₊₁ ≈ (f″/2f′)eₙ², so correct digits roughly double each step.</p>
+<p class="ans">Error squares each step</p>
+</div>
+<div class="cell">
+<p class="tag">Convergence</p>
+<p class="q"><span class="n">Q9.</span>What happens if f′(x₀) = 0?<span class="mk">[2]</span></p>
+<p class="work">The update divides by zero.</p>
+<p class="ans">The method fails — choose another start</p>
+</div>
+<div class="cell">
+<p class="tag">Comparison with bisection</p>
+<p class="q"><span class="n">Q10.</span>Compare the step count for 4-decimal accuracy with bisection.<span class="mk">[4]</span></p>
+<p class="work">Bisection needs about 13–14 steps; Newton about 4–5 from a good start.</p>
+<p class="ans">Newton needs far fewer steps</p>
+</div>
+<div class="cell">
+<p class="tag">Comparison with bisection</p>
+<p class="q"><span class="n">Q11.</span>Which method is guaranteed once a sign change is bracketed?<span class="mk">[2]</span></p>
+<p class="work">Bisection only needs continuity.</p>
+<p class="ans">Bisection</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration steps</p>
+<p class="q"><span class="n">Q12.</span>Apply one step to x² − 2x − 5 = 0 from x₀ = 2.<span class="mk">[5]</span></p>
+<p class="work">2 − (4 − 4 − 5)/2 = 2 + 2.5</p>
+<p class="ans">x₁ = 4.5 — a poor start, so convergence is slow</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Newton–Raphson Method</span>
+<span>Sheet 1 of 1 · 12 solved questions</span>
+</footer>
+</section>
+</body>
+</html>

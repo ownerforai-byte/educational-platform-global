@@ -1,0 +1,73 @@
+/**
+ * Unit 5 — Statistics and Probability. 3 chapters × 12 solved questions = 36.
+ * Item shape: [question, working, answer, topicIndex, marks]
+ */
+
+export const CHAPTERS = [
+  {
+    slug: "dispersion-cv-skewness",
+    unitId: "statistics-and-probability",
+    unitNo: 5,
+    unitName: "Statistics and Probability",
+    title: "Dispersion, Variation and Skewness",
+    topics: ["Range and mean deviation", "Variance and standard deviation", "Coefficient of variation", "Skewness"],
+    items: [
+      ["Find the range of 12, 7, 15, 9, 20.", "Largest − smallest = 20 − 7", "13", 0, 2],
+      ["Find the mean of 4, 6, 8, 10.", "28/4", "7", 0, 2],
+      ["Find the variance of 2, 4, 4, 6, 9.", "Mean = 5; Σ(x − x̄)² = 9 + 1 + 1 + 1 + 16 = 28\nσ² = 28/5", "5.6", 1, 5],
+      ["Find the standard deviation of the same data.", "σ = √5.6", "≈ 2.366", 1, 2],
+      ["Find the variance of 5, 5, 5, 5.", "Every deviation is zero", "0", 1, 2],
+      ["Find the mean deviation about the mean for 2, 4, 6, 8.", "Mean = 5; deviations 3, 1, 1, 3; Σ = 8", "8/4 = 2", 0, 4],
+      ["Find the SD of 3, 5, 7, 9.", "Mean 6; Σ(x − x̄)² = 9 + 1 + 1 + 9 = 20\nσ² = 20/4 = 5", "√5 ≈ 2.236", 1, 5],
+      ["Each observation is increased by 5. What happens to the SD?", "A shift does not change spreads.", "Unchanged", 1, 2],
+      ["Each observation is multiplied by 3. What happens to the SD?", "σ(kx) = |k|σ(x)", "It becomes 3 times larger", 1, 2],
+      ["Mean = 40, SD = 8. Find the coefficient of variation.", "CV = 100σ/x̄ = 800/40", "20%", 2, 2],
+      ["Two series have CV 15% and 20%. Which is more consistent?", "The smaller CV means less relative spread.", "The series with CV 15%", 2, 2],
+      ["Mean = 50, mode = 44, SD = 10. Find Karl Pearson's coefficient of skewness.", "Sk = (mean − mode)/SD = 6/10", "0.6", 3, 4],
+    ],
+  },
+  {
+    slug: "probability-basics",
+    unitId: "statistics-and-probability",
+    unitNo: 5,
+    unitName: "Statistics and Probability",
+    title: "Mathematical and Empirical Probability",
+    topics: ["Sample space", "Classical probability", "Complementary events", "Empirical probability"],
+    items: [
+      ["Write the sample space of tossing two coins.", "Each toss has two outcomes.", "HH, HT, TH, TT", 0, 2],
+      ["Find P(two tails) for two coins.", "1 favourable outcome out of 4", "1/4", 1, 2],
+      ["Find P(a prime number on a die).", "{2, 3, 5} ⇒ 3/6", "1/2", 1, 2],
+      ["Find P(a number greater than 4 on a die).", "{5, 6} ⇒ 2/6", "1/3", 1, 2],
+      ["Find P(a red card from a full deck).", "26 red cards in 52", "1/2", 1, 2],
+      ["Find P(a face card).", "12 face cards in 52", "3/13", 1, 2],
+      ["Find P(not an ace).", "1 − 4/52", "12/13", 2, 2],
+      ["Two cards are drawn with replacement. Find P(both kings).", "(4/52)(4/52) = (1/13)²", "1/169", 1, 4],
+      ["A coin shows 260 heads in 500 tosses. Find the empirical probability of a head.", "260/500", "0.52", 3, 2],
+      ["Find P(a total of 7 with two dice).", "Pairs (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) ⇒ 6/36", "1/6", 1, 4],
+      ["Find P(a total of 12 with two dice).", "Only (6, 6) works.", "1/36", 1, 2],
+      ["Two dice are thrown. Find P(the totals differ by 1).", "Pairs: 12 of them, e.g. (1,2), (2,1), (2,3) …", "12/36 = 1/3", 1, 4],
+    ],
+  },
+  {
+    slug: "addition-multiplication-laws",
+    unitId: "statistics-and-probability",
+    unitNo: 5,
+    unitName: "Statistics and Probability",
+    title: "Addition, Multiplication and Independence",
+    topics: ["Addition law", "Multiplication law", "Independence", "Conditional probability"],
+    items: [
+      ["P(A) = 0.5, P(B) = 0.4, A and B mutually exclusive. Find P(A ∪ B).", "0.5 + 0.4 (intersection is 0)", "0.9", 0, 2],
+      ["P(A) = 0.5, P(B) = 0.4, P(A ∩ B) = 0.2. Find P(A ∪ B).", "0.5 + 0.4 − 0.2", "0.7", 0, 2],
+      ["P(A ∪ B) = 0.8, P(A) = 0.5, P(B) = 0.4. Find P(A ∩ B).", "0.5 + 0.4 − 0.8", "0.1", 0, 4],
+      ["A and B are independent with P = 0.5 and 0.4. Find P(A ∩ B).", "Multiply for independent events", "0.2", 2, 2],
+      ["A and B are independent with P = 0.5 and 0.4. Find P(neither occurs).", "(1 − 0.5)(1 − 0.4) = 0.5 × 0.6", "0.3", 2, 4],
+      ["P(A ∩ B) = 0.24, P(B) = 0.6. Find P(A | B).", "P(A|B) = P(A ∩ B)/P(B) = 0.24/0.6", "0.4", 3, 2],
+      ["A and B are independent with P(A) = 0.3, P(B) = 0.5. Find P(A ∪ B).", "0.3 + 0.5 − 0.15", "0.65", 0, 4],
+      ["A family has two children and at least one is a boy. Find P(both are boys).", "Remaining equally likely cases: BB, BG, GB", "1/3", 3, 5],
+      ["Find P(at least one six in two throws of a die).", "1 − P(no six) = 1 − (5/6)²", "11/36", 1, 4],
+      ["Find P(head then tail) for two tosses.", "(1/2)(1/2)", "1/4", 1, 2],
+      ["Two cards are drawn without replacement. Find P(a king then a queen).", "(4/52)(4/51) = 16/2652", "4/663", 1, 4],
+      ["P(A) = 1/2, P(B) = 1/3, P(A ∩ B) = 1/6. Are A and B independent?", "P(A)P(B) = 1/6 = P(A ∩ B)", "Yes — independent", 2, 4],
+    ],
+  },
+];

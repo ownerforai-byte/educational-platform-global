@@ -1,0 +1,73 @@
+/**
+ * Unit 3 — Analytic Geometry. 3 chapters × 12 solved questions = 36.
+ * Item shape: [question, working, answer, topicIndex, marks]
+ */
+
+export const CHAPTERS = [
+  {
+    slug: "distance-and-bisectors",
+    unitId: "analytic-geometry",
+    unitNo: 3,
+    unitName: "Analytic Geometry",
+    title: "Perpendicular Distance and Angle Bisectors",
+    topics: ["Perpendicular distance", "Distance between parallel lines", "Angle bisectors", "Bisector of a given region"],
+    items: [
+      ["Find the distance of (3, 4) from 3x + 4y − 10 = 0.", "|9 + 16 − 10|/√(9 + 16) = 15/5", "3 units", 0, 2],
+      ["Find the distance of the origin from 4x − 3y + 10 = 0.", "|10|/√(16 + 9) = 10/5", "2 units", 0, 2],
+      ["Find the distance between 3x + 4y = 5 and 3x + 4y = 15.", "|15 − 5|/√(9 + 16) = 10/5", "2 units", 1, 4],
+      ["Find the distance between y = 2x + 3 and y = 2x − 7.", "2x − y + 3 = 0, 2x − y − 7 = 0 ⇒ 10/√5", "2√5 units", 1, 4],
+      ["Show that (1, 2) lies on x − y + 1 = 0.", "1 − 2 + 1 = 0", "Distance 0 ⇒ the point is on the line", 0, 2],
+      ["Find the distance of (2, −1) from 3x − 4y + 5 = 0.", "|6 + 4 + 5|/5 = 15/5", "3 units", 0, 2],
+      ["Find the distance between 2x − 3y + 7 = 0 and 4x − 6y = 9.", "Halve the second: 2x − 3y − 4.5 = 0\n|7 + 4.5|/√13 = 11.5/√13", "23/(2√13) units", 1, 5],
+      ["Find the bisectors of the angles between x + 2y − 3 = 0 and 2x − y + 1 = 0.", "(x + 2y − 3)/√5 = ±(2x − y + 1)/√5\n⇒ x + 2y − 3 = ±(2x − y + 1)", "x − 3y + 4 = 0 and 3x + y − 2 = 0", 2, 5],
+      ["Find the foot of the perpendicular from (2, 3) to x + y = 2.", "Perpendicular through (2,3): y = x + 1\nSolve with x + y = 2", "(1/2, 3/2)", 0, 5],
+      ["Find the distance between x + y = 1 and 2x + 2y = 7.", "Rewrite as x + y − 3.5 = 0 ⇒ |3.5 − 1|/√2", "5/(2√2) units", 1, 4],
+      ["Find the equation of the bisector of 3x + 4y − 5 = 0 and 5x − 12y + 7 = 0 that contains the origin.", "At O the signed values are −1 and +7/13 — opposite signs, so take the minus sign\n13(3x + 4y − 5) = −5(5x − 12y + 7)", "32x − 4y − 15 = 0", 3, 6],
+      ["Find the length of the perpendicular from the origin to the line joining (1, 0) and (0, 1).", "The line is x + y = 1 ⇒ |−1|/√2", "1/√2 units", 0, 4],
+    ],
+  },
+  {
+    slug: "pair-of-straight-lines",
+    unitId: "analytic-geometry",
+    unitNo: 3,
+    unitName: "Analytic Geometry",
+    title: "Pair of Straight Lines",
+    topics: ["Homogeneous pairs", "Angle between a pair", "Condition for a real pair", "Slopes and special cases"],
+    items: [
+      ["Separate the lines of x² − 5xy + 6y² = 0.", "Factorise: (x − 2y)(x − 3y) = 0", "x = 2y and x = 3y", 0, 4],
+      ["Separate the lines of x² − y² = 0.", "(x − y)(x + y) = 0", "y = x and y = −x", 0, 2],
+      ["What does xy = 0 represent?", "The product vanishes when either factor does.", "The two coordinate axes", 0, 2],
+      ["Separate 6x² + 5xy − 6y² = 0.", "(3x − 2y)(2x + 3y) = 0", "3x = 2y and 2x = −3y", 0, 4],
+      ["Separate x² + xy − 6y² = 0.", "(x + 3y)(x − 2y) = 0", "x = −3y and x = 2y", 0, 4],
+      ["Find the angle between the pair x² − 4xy + y² = 0.", "tanθ = 2√(h² − ab)/(a + b) = 2√(4 − 1)/2 = √3", "60°", 1, 5],
+      ["Find the angle between 6x² + 5xy − 6y² = 0.", "a + b = 6 − 6 = 0 ⇒ the lines are perpendicular", "90°", 1, 4],
+      ["Find the angle between x² − 2xy secα + y² = 0.", "tanθ = 2√(sec²α − 1)/(1 + 1) = tanα", "θ = α", 1, 5],
+      ["State the condition for ax² + 2hxy + by² = 0 to give two real lines.", "Solve for y/x: the quadratic in m has a real root pair when the discriminant is ≥ 0", "h² ≥ ab", 2, 2],
+      ["Find k if 2x² + kxy + 3y² = 0 represents coincident lines.", "h² = ab ⇒ (k/2)² = 6", "k = ±2√6", 2, 4],
+      ["Find the sum and product of the slopes of 3x² + 7xy + 2y² = 0.", "a = 3, b = 2, 2h = 7\nsum = −2h/b = −7/2, product = a/b", "Sum −7/2, product 3/2", 3, 4],
+      ["Show that x² + 2xy + y² = 0 represents one line only.", "(x + y)² = 0 gives x + y = 0 twice", "A single line counted twice", 3, 2],
+    ],
+  },
+  {
+    slug: "coordinates-in-space",
+    unitId: "analytic-geometry",
+    unitNo: 3,
+    unitName: "Analytic Geometry",
+    title: "Coordinates in Space",
+    topics: ["Distance and section formulae", "Direction cosines and ratios", "Angle between lines", "Parallel and perpendicular tests"],
+    items: [
+      ["Find the distance between (1, 2, 3) and (4, 6, 3).", "√(9 + 16 + 0)", "5 units", 0, 2],
+      ["Find the distance of (−1, 2, 3) from the origin.", "√(1 + 4 + 9)", "√14 units", 0, 2],
+      ["Find the point dividing (1, 2, 3) and (4, 5, 6) internally in 2 : 1.", "((2·4 + 1·1)/3, (2·5 + 1·2)/3, (2·6 + 1·3)/3)", "(3, 4, 5)", 0, 4],
+      ["Find the midpoint of (1, 0, 2) and (3, 4, 0).", "Average each coordinate", "(2, 2, 1)", 0, 2],
+      ["Find the direction ratios of the line through (2, −1, 3) and (5, 3, −1).", "(5 − 2, 3 + 1, −1 − 3)", "(3, 4, −4)", 1, 2],
+      ["Find the direction cosines of the line with direction ratios (2, 2, 1).", "|r| = √(4 + 4 + 1) = 3", "(2/3, 2/3, 1/3)", 1, 4],
+      ["Verify l² + m² + n² = 1 for those direction cosines.", "4/9 + 4/9 + 1/9 = 9/9", "= 1 ✔", 1, 2],
+      ["Find the angle between lines with direction ratios (1, 2, 2) and (2, −2, 1).", "Dot product: 2 − 4 + 2 = 0", "90°", 2, 4],
+      ["Find the angle between direction ratios (1, 1, 0) and (0, 1, 1).", "cosθ = (0 + 1 + 0)/(√2·√2) = 1/2", "60°", 2, 4],
+      ["State the condition for two lines with direction ratios (a₁, b₁, c₁) and (a₂, b₂, c₂) to be perpendicular.", "The dot product must vanish.", "a₁a₂ + b₁b₂ + c₁c₂ = 0", 3, 2],
+      ["State the condition for the same two lines to be parallel.", "Direction ratios must be proportional.", "a₁/a₂ = b₁/b₂ = c₁/c₂", 3, 2],
+      ["Write the direction cosines of the x-axis.", "It makes 0° with x and 90° with y and z", "(1, 0, 0)", 1, 2],
+    ],
+  },
+];

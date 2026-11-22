@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.1 Bisection Method — Mathematics XI workbook</title>
+<meta name="description" content="Bisection Method — 12 solved NEB-style questions covering Sign-change test, Bisection steps, Iteration tables, Accuracy and error.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/workbook.css">
+</head>
+<body>
+<section class="sheet" aria-label="Bisection Method — sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook</span></div>
+<h1>7.1 · Bisection Method</h1>
+<p class="topics"><b>Topics</b> Sign-change test · Bisection steps · Iteration tables · Accuracy and error</p>
+<p class="note">NEB answer style — given → statement → working → answer. 12 questions per sheet, 3 per row.</p>
+</header>
+<div class="grid" data-cols="3" data-rows="4">
+<div class="cell">
+<p class="tag">Sign-change test</p>
+<p class="q"><span class="n">Q1.</span>Show that x² − 2 = 0 has a root in [1, 2].<span class="mk">[2]</span></p>
+<p class="work">f(1) = −1 &lt; 0, f(2) = 2 &gt; 0</p>
+<p class="ans">Sign change ⇒ a root lies in [1, 2]</p>
+</div>
+<div class="cell">
+<p class="tag">Bisection steps</p>
+<p class="q"><span class="n">Q2.</span>Take the first bisection step for that root.<span class="mk">[4]</span></p>
+<p class="work">x₁ = 1.5, f(1.5) = 0.25 &gt; 0</p>
+<p class="ans">New bracket [1, 1.5]</p>
+</div>
+<div class="cell">
+<p class="tag">Bisection steps</p>
+<p class="q"><span class="n">Q3.</span>Continue one more step.<span class="mk">[4]</span></p>
+<p class="work">x₂ = 1.25, f(1.25) = −0.4375 &lt; 0</p>
+<p class="ans">New bracket [1.25, 1.5]</p>
+</div>
+<div class="cell">
+<p class="tag">Bisection steps</p>
+<p class="q"><span class="n">Q4.</span>Continue a third step.<span class="mk">[4]</span></p>
+<p class="work">x₃ = 1.375, f(1.375) = −0.109 &lt; 0</p>
+<p class="ans">New bracket [1.375, 1.5]</p>
+</div>
+<div class="cell">
+<p class="tag">Bisection steps</p>
+<p class="q"><span class="n">Q5.</span>Continue a fourth step.<span class="mk">[4]</span></p>
+<p class="work">x₄ = 1.4375, f = 0.066 &gt; 0</p>
+<p class="ans">New bracket [1.375, 1.4375] ≈ 1.41</p>
+</div>
+<div class="cell">
+<p class="tag">Sign-change test</p>
+<p class="q"><span class="n">Q6.</span>Show that x³ − x − 1 = 0 has a root in [1, 2].<span class="mk">[2]</span></p>
+<p class="work">f(1) = −1, f(2) = 5</p>
+<p class="ans">Sign change ⇒ root in [1, 2]</p>
+</div>
+<div class="cell">
+<p class="tag">Iteration tables</p>
+<p class="q"><span class="n">Q7.</span>Perform two bisection steps for that equation.<span class="mk">[5]</span></p>
+<p class="work">x₁ = 1.5, f = 0.875 &gt; 0 ⇒ [1, 1.5]
+x₂ = 1.25, f = −0.297 &lt; 0 ⇒ [1.25, 1.5]</p>
+<p class="ans">Root in [1.25, 1.5] ≈ 1.32</p>
+</div>
+<div class="cell">
+<p class="tag">Accuracy and error</p>
+<p class="q"><span class="n">Q8.</span>State the error after 5 bisection steps on an interval of width 1.<span class="mk">[2]</span></p>
+<p class="work">width/2ⁿ = 1/32</p>
+<p class="ans">0.03125</p>
+</div>
+<div class="cell">
+<p class="tag">Accuracy and error</p>
+<p class="q"><span class="n">Q9.</span>How many steps give an error below 0.01 from width 1?<span class="mk">[4]</span></p>
+<p class="work">2ⁿ &gt; 100 ⇒ n = 7</p>
+<p class="ans">7 steps</p>
+</div>
+<div class="cell">
+<p class="tag">Accuracy and error</p>
+<p class="q"><span class="n">Q10.</span>Why must f be continuous for bisection?<span class="mk">[2]</span></p>
+<p class="work">The intermediate value theorem supplies the root inside each sign-changing bracket.</p>
+<p class="ans">Continuity guarantees a root in the bracket</p>
+</div>
+<div class="cell">
+<p class="tag">Accuracy and error</p>
+<p class="q"><span class="n">Q11.</span>Does bisection need the derivative of f?<span class="mk">[2]</span></p>
+<p class="work">It only compares signs of function values.</p>
+<p class="ans">No</p>
+</div>
+<div class="cell">
+<p class="tag">Bisection steps</p>
+<p class="q"><span class="n">Q12.</span>Apply the first bisection step to x² − 5 = 0 on [2, 3].<span class="mk">[2]</span></p>
+<p class="work">x₁ = 2.5, f = 1.25 &gt; 0</p>
+<p class="ans">New bracket [2, 2.5]</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Bisection Method</span>
+<span>Sheet 1 of 1 · 12 solved questions</span>
+</footer>
+</section>
+</body>
+</html>

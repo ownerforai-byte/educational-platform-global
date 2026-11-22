@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.4 Simpson's One-Third Rule — Mathematics XI workbook</title>
+<meta name="description" content="Simpson's One-Third Rule — 12 solved NEB-style questions covering The formula, Odd/even strip requirement, Error order, Comparing with the trapezoidal rule.">
+<link rel="stylesheet" href="/resources/mathematics-xi/a4/workbook.css">
+</head>
+<body>
+<section class="sheet" aria-label="Simpson's One-Third Rule — sheet 1">
+<header class="masthead">
+<div class="stream"><span>NEB Grade 11 · Mathematics (Mat. 007)</span><span>Mathematics XI — Topic Workbook</span></div>
+<h1>7.4 · Simpson's One-Third Rule</h1>
+<p class="topics"><b>Topics</b> The formula · Odd/even strip requirement · Error order · Comparing with the trapezoidal rule</p>
+<p class="note">NEB answer style — given → statement → working → answer. 12 questions per sheet, 3 per row.</p>
+</header>
+<div class="grid" data-cols="3" data-rows="4">
+<div class="cell">
+<p class="tag">The formula</p>
+<p class="q"><span class="n">Q1.</span>State Simpson's rule for four strips.<span class="mk">[2]</span></p>
+<p class="work">(h/3)[y₀ + 4y₁ + 2y₂ + 4y₃ + y₄]</p>
+<p class="ans">As written</p>
+</div>
+<div class="cell">
+<p class="tag">The formula</p>
+<p class="q"><span class="n">Q2.</span>Estimate ∫₀¹ x² dx with h = 0.5 using Simpson's rule.<span class="mk">[4]</span></p>
+<p class="work">y = 0, 0.25, 1
+(0.5/3)[0 + 1 + 4(0.25)]</p>
+<p class="ans">1/3 — exact</p>
+</div>
+<div class="cell">
+<p class="tag">The formula</p>
+<p class="q"><span class="n">Q3.</span>Estimate ∫₀¹ x⁴ dx with h = 0.5.<span class="mk">[5]</span></p>
+<p class="work">y = 0, 0.0625, 1
+(1/6)[1 + 0.25]</p>
+<p class="ans">≈ 0.2083 (exact 0.2)</p>
+</div>
+<div class="cell">
+<p class="tag">Comparing with the trapezoidal rule</p>
+<p class="q"><span class="n">Q4.</span>Estimate ∫₀¹ eˣ dx with h = 0.5.<span class="mk">[5]</span></p>
+<p class="work">(0.5/3)[3.7183 + 4(1.6487)]</p>
+<p class="ans">≈ 1.7189 — closer than the trapezoidal 1.7539</p>
+</div>
+<div class="cell">
+<p class="tag">The formula</p>
+<p class="q"><span class="n">Q5.</span>Estimate ∫₀^(π/2) sin x dx with h = π/4.<span class="mk">[5]</span></p>
+<p class="work">(π/12)[0 + 1 + 4(0.7071)]</p>
+<p class="ans">≈ 1.0023</p>
+</div>
+<div class="cell">
+<p class="tag">Odd/even strip requirement</p>
+<p class="q"><span class="n">Q6.</span>Why must the number of strips be even?<span class="mk">[4]</span></p>
+<p class="work">Each parabolic panel consumes two strips.</p>
+<p class="ans">The rule pairs strips; odd counts leave a strip out</p>
+</div>
+<div class="cell">
+<p class="tag">Odd/even strip requirement</p>
+<p class="q"><span class="n">Q7.</span>A table has 6 ordinates. Can Simpson's rule be applied directly?<span class="mk">[4]</span></p>
+<p class="work">Five strips is odd.</p>
+<p class="ans">No — split off the last strip or re-sample</p>
+</div>
+<div class="cell">
+<p class="tag">Error order</p>
+<p class="q"><span class="n">Q8.</span>How does Simpson's error depend on h?<span class="mk">[2]</span></p>
+<p class="work">Error ∝ h⁴.</p>
+<p class="ans">Fourth order in h</p>
+</div>
+<div class="cell">
+<p class="tag">Error order</p>
+<p class="q"><span class="n">Q9.</span>What happens to the error if h is halved?<span class="mk">[2]</span></p>
+<p class="work">h⁴ becomes 1/16 of its value.</p>
+<p class="ans">About 16 times smaller</p>
+</div>
+<div class="cell">
+<p class="tag">Error order</p>
+<p class="q"><span class="n">Q10.</span>Which polynomials does the rule integrate exactly?<span class="mk">[2]</span></p>
+<p class="work">It fits a parabola through three points.</p>
+<p class="ans">All polynomials up to degree 3</p>
+</div>
+<div class="cell">
+<p class="tag">The formula</p>
+<p class="q"><span class="n">Q11.</span>State the weight pattern for six ordinates.<span class="mk">[2]</span></p>
+<p class="work">1, 4, 2, 4, 2, 4, 1 pattern applies to 7; for 6 the rule is not used directly</p>
+<p class="ans">Ends 1, odd positions 4, even positions 2</p>
+</div>
+<div class="cell">
+<p class="tag">Comparing with the trapezoidal rule</p>
+<p class="q"><span class="n">Q12.</span>Compare trapezoidal and Simpson values for ∫₀¹ eˣ dx.<span class="mk">[4]</span></p>
+<p class="work">Trapezoidal 1.7539, Simpson 1.7189, exact 1.7183</p>
+<p class="ans">Simpson is much closer</p>
+</div>
+</div>
+<footer class="foot">
+<span>Unit 7 · Computational Methods or Mechanics</span>
+<span class="mid">Simpson's One-Third Rule</span>
+<span>Sheet 1 of 1 · 12 solved questions</span>
+</footer>
+</section>
+</body>
+</html>

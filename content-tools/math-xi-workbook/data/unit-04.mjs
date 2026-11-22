@@ -1,0 +1,73 @@
+/**
+ * Unit 4 — Vectors. 3 chapters × 12 solved questions = 36.
+ * Item shape: [question, working, answer, topicIndex, marks]
+ */
+
+export const CHAPTERS = [
+  {
+    slug: "vector-algebra-products",
+    unitId: "vectors",
+    unitNo: 4,
+    unitName: "Vectors",
+    title: "Vector Algebra, Dot and Cross Products",
+    topics: ["Magnitude and unit vector", "Dot product", "Cross product", "Area, angle and projection"],
+    items: [
+      ["Find |2i + 3j|.", "√(4 + 9)", "√13", 0, 2],
+      ["Find the unit vector along 3i − 4j.", "|a| = √(9 + 16) = 5", "(3i − 4j)/5", 0, 2],
+      ["a = (1, 2, 3), b = (4, −1, 0). Find a + b.", "Add componentwise", "(5, 1, 3)", 0, 2],
+      ["a = (2, 1, −1), b = (3, −2, 1). Find a·b.", "6 − 2 − 1", "3", 1, 2],
+      ["Find the angle between a = (1, 0) and b = (1, 1).", "cosθ = 1/(1·√2)", "45°", 1, 4],
+      ["Find λ so that (1, λ, 2) is perpendicular to (2, 1, −1).", "2 + λ − 2 = 0", "λ = 0", 1, 4],
+      ["a = i + j, b = j + k. Find a × b.", "(1, 1, 0) × (0, 1, 1) = (1·1 − 0·1, 0·0 − 1·1, 1·1 − 1·0)", "(1, −1, 1)", 2, 4],
+      ["Find the area of the triangle on a = i and b = j.", "½|i × j| = ½|k|", "1/2 square unit", 3, 2],
+      ["Find the area of the parallelogram with a = (1, 2, 2), b = (2, 1, −2).", "a × b = (−6, 6, −3), |a × b| = √(36 + 36 + 9)", "9 square units", 3, 5],
+      ["Find the projection of a = (2, 3) on b = (1, 0).", "(a·b)/|b| = 2/1", "2", 3, 2],
+      ["Find the scalar projection of (1, 2, 2) on (0, 0, 1).", "Dot product with the unit z-vector", "2", 3, 2],
+      ["Prove (a + b)·(a − b) = |a|² − |b|².", "Expand: a·a − a·b + b·a − b·b", "= |a|² − |b|² ✔", 1, 4],
+    ],
+  },
+  {
+    slug: "collinear-coplanar",
+    unitId: "vectors",
+    unitNo: 4,
+    unitName: "Vectors",
+    title: "Collinear and Coplanar Vectors",
+    topics: ["Collinearity", "Coplanarity by triple product", "Perpendicular and unit vectors", "Volume applications"],
+    items: [
+      ["Show A(1, 2, 3), B(3, 6, 9), C(5, 10, 15) are collinear.", "AB = (2, 4, 6), AC = (4, 8, 12) = 2·AB", "The vectors are parallel, so the points are collinear", 0, 4],
+      ["Are (1, 2, 3), (2, 4, 6), (3, 6, 9) coplanar?", "All three are multiples of (1, 2, 3)", "Yes — they are parallel, hence coplanar", 1, 2],
+      ["Find λ if (1, 2, 3) and (2, 4, λ) are parallel.", "Each component must scale by the same factor 2", "λ = 6", 0, 2],
+      ["Evaluate [i j k].", "i·(j × k) = i·i", "1", 1, 2],
+      ["Show that (1, 2, 3), (1, 1, 1), (2, 3, 4) are coplanar.", "b × c = (1, −2, 1)\na·(b × c) = 1 − 4 + 3 = 0", "Triple product 0 ⇒ coplanar", 1, 5],
+      ["Find λ if (1, 2, 3), (2, 3, 4), (3, 4, λ) are coplanar.", "b × c = (3λ − 16, 12 − 2λ, −1)\na·(b × c) = −λ + 5 = 0", "λ = 5", 1, 6],
+      ["Find the volume of the parallelepiped with edges i, j, k.", "Volume = |[i j k]|", "1 cubic unit", 3, 2],
+      ["Find a unit vector perpendicular to both i + j and j + k.", "(1, 1, 0) × (0, 1, 1) = (1, −1, 1), magnitude √3", "(i − j + k)/√3", 2, 4],
+      ["If a·b = 0, |a| = 2 and |b| = 3, find |a + b|.", "|a + b|² = 4 + 0 + 9", "√13", 2, 4],
+      ["If |a + b| = |a − b|, show that a ⊥ b.", "Squaring: |a|² + 2a·b + |b|² = |a|² − 2a·b + |b|² ⇒ 4a·b = 0", "a·b = 0 ⇒ a ⊥ b ✔", 2, 4],
+      ["Find λ so that |λ(1, 2, 2)| = 3.", "|λ|·√9 = 3 ⇒ 3|λ| = 3", "λ = ±1", 0, 4],
+      ["Show that (1, 0, 0), (0, 1, 0), (1, 1, 0) are coplanar.", "The third is the sum of the first two", "Triple product 0 ⇒ coplanar", 1, 2],
+    ],
+  },
+  {
+    slug: "linear-combination",
+    unitId: "vectors",
+    unitNo: 4,
+    unitName: "Vectors",
+    title: "Linear Combination, Dependence and Independence",
+    topics: ["Linear combination", "Dependence and independence", "Basis in the plane and in space", "Vector proofs"],
+    items: [
+      ["Express (5, 7) using i and j.", "Componentwise", "5i + 7j", 0, 2],
+      ["Express (4, 5) as a combination of (1, 1) and (1, −1).", "a + b = 4, a − b = 5 ⇒ a = 4.5, b = −0.5", "4.5(1, 1) − 0.5(1, −1)", 0, 4],
+      ["Find x, y if x(1, 2) + y(2, 1) = (5, 4).", "x + 2y = 5, 2x + y = 4 ⇒ subtract: x = 1, y = 2", "x = 1, y = 2", 0, 4],
+      ["Are (1, 2) and (2, 4) independent?", "(2, 4) = 2(1, 2)", "No — dependent", 1, 2],
+      ["Are (1, 0, 0), (0, 1, 0), (0, 0, 1) independent?", "Determinant of the identity is 1 ≠ 0", "Yes — they form a basis of space", 2, 2],
+      ["Are i + j and i − j independent?", "Determinant = (1)(−1) − (1)(1) = −2 ≠ 0", "Yes", 1, 4],
+      ["Show (1, 1, 0), (1, 0, 1), (0, 1, 1) are independent.", "det = 1(0 − 1) − 1(1 − 0) + 0 = −2 ≠ 0", "Independent ✔", 1, 5],
+      ["Are (1, 2, 3), (2, 4, 6), (1, 1, 1) independent?", "The second is twice the first", "No — dependent", 1, 2],
+      ["Do (1, 2) and (3, 6) span the plane?", "They are parallel, so their span is only a line", "No", 2, 4],
+      ["Prove the midpoint theorem with vectors: if M is the midpoint of AB and O is any origin, then OM = (OA + OB)/2.", "OM = OA + AM = OA + ½AB = OA + ½(OB − OA)", "= (OA + OB)/2 ✔", 3, 4],
+      ["Show that the diagonals of a parallelogram bisect each other.", "Midpoint of AC is (a + c)/2 and of BD is (b + d)/2; with c = b + d − a both agree", "The same midpoint ⇒ bisection ✔", 3, 5],
+      ["What is the minimum number of independent vectors needed to span space?", "Three non-coplanar directions are required.", "Three — a basis of ℝ³", 2, 2],
+    ],
+  },
+];
