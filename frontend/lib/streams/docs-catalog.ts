@@ -319,6 +319,80 @@ export const DOCS: Doc[] = [
     href: `${MAT_DIR}/Math_XI_Unit_07_computational-mechanics.docx`,
     kind: "docx",
   },
+  // ── Mathematics XI · Exercise Solutions & Conceptual Bank ────────────
+  // These share the topic of the matching unit master guide above, so the
+  // Resources tab files them in the SAME unit (stream) block, right beside
+  // the notes for that unit. Source: public/resources/mathematics-xi/.
+  {
+    key: "math-xi-u1-algebra-solutions",
+    title: "Math XI Unit 1 — Algebra: Exercise Solutions & Conceptual Bank",
+    subject: "Mathematics",
+    topic: "Algebra · Full Notes",
+    description:
+      "83 exercises solved in NEB answer style (given → working → answer), 50 conceptual 2-mark questions with model answers, 9 fully worked long answers, formula sheet and traps.",
+    href: "/resources/mathematics-xi/unit-01-algebra.html",
+    kind: "html",
+  },
+  {
+    key: "math-xi-u2-trigonometry-solutions",
+    title: "Math XI Unit 2 — Trigonometry: Exercise Solutions & Conceptual Bank",
+    subject: "Mathematics",
+    topic: "Trigonometry · Full Notes",
+    description:
+      "38 inverse-circular and trigonometric-equation exercises solved, 46 conceptual 2-mark questions with model answers, 7 long answers in general-value form (n ∈ ℤ).",
+    href: "/resources/mathematics-xi/unit-02-trigonometry.html",
+    kind: "html",
+  },
+  {
+    key: "math-xi-u3-analytic-geometry-solutions",
+    title: "Math XI Unit 3 — Analytic Geometry: Exercise Solutions & Conceptual Bank",
+    subject: "Mathematics",
+    topic: "Analytic Geometry · Full Notes",
+    description:
+      "30 distance, bisector, pair-of-lines and 3-D coordinate exercises solved, 33 conceptual questions with model answers, 6 long answers.",
+    href: "/resources/mathematics-xi/unit-03-analytic-geometry.html",
+    kind: "html",
+  },
+  {
+    key: "math-xi-u4-vectors-solutions",
+    title: "Math XI Unit 4 — Vectors: Exercise Solutions & Conceptual Bank",
+    subject: "Mathematics",
+    topic: "Vectors · Full Notes",
+    description:
+      "32 dot/cross-product, collinearity, coplanarity and linear-independence exercises solved, 36 conceptual questions with model answers, 5 long answers.",
+    href: "/resources/mathematics-xi/unit-04-vectors.html",
+    kind: "html",
+  },
+  {
+    key: "math-xi-u5-statistics-probability-solutions",
+    title: "Math XI Unit 5 — Statistics & Probability: Exercise Solutions & Conceptual Bank",
+    subject: "Mathematics",
+    topic: "Statistics & Probability · Full Notes",
+    description:
+      "32 dispersion, skewness and probability exercises solved, 40 conceptual questions with model answers on independence and conditional probability, 6 long answers.",
+    href: "/resources/mathematics-xi/unit-05-statistics-probability.html",
+    kind: "html",
+  },
+  {
+    key: "math-xi-u6-calculus-solutions",
+    title: "Math XI Unit 6 — Calculus: Exercise Solutions & Conceptual Bank",
+    subject: "Mathematics",
+    topic: "Calculus · Full Notes",
+    description:
+      "82 limit, continuity, differentiation, extrema and integration exercises solved, 42 conceptual questions with model answers, 8 long answers.",
+    href: "/resources/mathematics-xi/unit-06-calculus.html",
+    kind: "html",
+  },
+  {
+    key: "math-xi-u7-computational-methods-solutions",
+    title: "Math XI Unit 7 — Computational Methods & Mechanics: Exercise Solutions & Conceptual Bank",
+    subject: "Mathematics",
+    topic: "Computational Methods · Full Notes",
+    description:
+      "28 bisection, Newton-Raphson, trapezoidal, Simpson, statics and dynamics exercises solved, 36 conceptual questions with model answers, 6 long answers.",
+    href: "/resources/mathematics-xi/unit-07-computational-methods.html",
+    kind: "html",
+  },
 
   // English
   {
