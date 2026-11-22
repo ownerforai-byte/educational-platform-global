@@ -145,8 +145,10 @@ async function resolveProfileKey(key: string): Promise<ProfileRow | null | "miss
   }
   if (byUser.data) return byUser.data as unknown as ProfileRow;
 
-  const uuidRe = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-  if (!uuidRe.test(key)) return null;
+  // Firebase Auth uids are opaque text (typically 28 chars), NOT uuids — the
+  // old uuid gate made every id-based profile link 404 ("Profile not found")
+  // for real users. Username lookup runs first; any other key falls through to
+  // an exact id match.
   const byId = await supabaseAdmin
     .from("profiles")
     .select(publicProfileFields())
@@ -313,7 +315,7 @@ router.get(
   requireAuth,
   asyncHandler(async (req, res) => {
     const user = (req as AuthedRequest).user;
-    const loaded = await loadHubProfile(user.id);
+    let loaded = await loadHubProfile(user.id);
     if (loaded.missing) {
       unavailable(res);
       return;
@@ -323,8 +325,33 @@ router.get(
       return;
     }
     if (!loaded.row) {
-      bad(res, "Profile not found", 404);
-      return;
+      // Self-heal: every signed-in user gets a profile on first touch, so a
+      // fresh device/login never lands on "Profile not found". The row is the
+      // cross-device source of truth (name, avatar, plan, stats).
+      const { error: insertError } = await supabaseAdmin.from("profiles").insert({
+        id: user.id,
+        full_name: user.fullName ?? null,
+        role: user.role ?? "member",
+        plan: user.plan ?? "member",
+        access_status: "ACTIVE",
+        premium_status: user.premiumStatus === true,
+      });
+      if (insertError) {
+        const msg = (insertError.message ?? "").toLowerCase();
+        if (!msg.includes("duplicate") && !msg.includes("unique")) {
+          serverError(res, insertError, "profile-hub");
+          return;
+        }
+      }
+      loaded = await loadHubProfile(user.id);
+      if (loaded.missing) {
+        unavailable(res);
+        return;
+      }
+      if (!loaded.row) {
+        bad(res, "Profile not found", 404);
+        return;
+      }
     }
     const stats = await loadStats(user.id);
     const snap = await getStorageSnapshot(user.id, user);
