@@ -33,6 +33,7 @@
 <li>Exercise 4.3 — Applications of Newton's laws: lift, pulley, incline</li>
 <li>Exercise 4.4 — Moment, torque and equilibrium</li>
 <li>Exercise 4.5 — Solid friction and its verification</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -347,6 +348,135 @@ a = g(sinθ − μ cosθ) = 9.8(0.7071 − 0.577 × 0.7071)
 Limiting friction   — the maximum static friction, f_max = μ_s N, at the point of slipping.
 Kinetic friction    — fixed value f_k = μ_k N, acting while the body slides; μ_k &lt; μ_s.</p>
 <p class="ans">Static friction is self-adjusting and ≤ limiting friction; kinetic friction is constant once sliding begins and slightly smaller than limiting friction.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Dynamics questions mix a free-body diagram with either momentum or energy. The eight shapes below each start from the diagram, because that is where the marks are awarded (and where they are most often lost).</p>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Multi-step numerical] A 60 kg person stands on a weighing machine in a lift. Find the reading when the lift (a) is at rest, (b) accelerates upward at 2 m s⁻², (c) accelerates downward at 2 m s⁻², (d) falls freely. Take g = 9.8 m s⁻².</p>
+<div class="sol">
+<p class="work">The machine reads the normal reaction N. From N − mg = ma (upward positive):
+
+(a) a = 0:    N = mg = 60 × 9.8 = 588 N
+(b) +2 m s⁻²:  N = m(g + a) = 60(11.8) = 708 N
+(c) −2 m s⁻²:  N = m(g − a) = 60(7.8)  = 468 N
+(d) a = −g:    N = m(g − g) = 0 N   (apparent weightlessness)</p>
+<p>The reading is a normal reaction, not the true weight: it changes because the floor must do more than support the person when the lift accelerates. In free fall the floor falls away at the same rate as the person, so no normal reaction is needed — the same reason astronauts float in orbit.</p>
+<p class="ans">(a) 588 N, (b) 708 N, (c) 468 N, (d) zero — apparent weight depends on acceleration, true weight does not.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Derivation] Derive the impulse–momentum theorem from Newton's second law, and use it to show that the total momentum of two colliding bodies is conserved.</p>
+<div class="sol">
+<p class="work">F = dp/dt  ⇒  F dt = dp
+Integrate over the interaction time:
+  ∫F dt = ∫dp = p_final − p_initial = Δp
+
+For two bodies during a collision, Newton's third law gives F₁₂ = −F₂₁, so
+  ∫F₁₂ dt = −∫F₂₁ dt  ⇒  Δp₂ = −Δp₁  ⇒  Δp₁ + Δp₂ = 0
+  ⇒  m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</p>
+<p>The theorem is just Newton's second law written for a force acting over a time rather than at an instant, and momentum conservation is just the third law integrated. This is why airbags work: the same Δp is delivered over a longer time, so the force is smaller.</p>
+<p class="ans">∫F dt = Δp from F = dp/dt; applying it to both bodies with equal and opposite forces gives Δp₁ + Δp₂ = 0, i.e. momentum conservation.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Graph reading] A force acting on a 2.0 kg body rises linearly from zero to 10 N in 2 s and falls linearly to zero over the next 2 s. Find the impulse delivered and the change in velocity.</p>
+<div class="sol">
+<p class="work">Impulse = area under the F–t graph
+        = ½ × base × height = ½ × 4 × 10 = 20 N s
+
+Impulse = Δp = mΔv  ⇒  Δv = 20/2.0 = 10 m s⁻¹</p>
+<p>The impulse does not depend on the shape of the pulse, only on the area — a square pulse of the same area would give the same Δv. The peak force (10 N) is twice the average force (area/base = 5 N), which is a frequent trap: the maximum force is not the force you use in impulse = FΔt unless F is constant.</p>
+<p class="ans">Impulse = 20 N s; Δv = 10 m s⁻¹ (with an average force of only 5 N over the 4 s).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Combined concept] A 20 g bullet travelling at 300 m s⁻¹ embeds in a 1.98 kg block resting on a rough floor (μ = 0.5). Find the common velocity, the kinetic energy lost in the collision, and how far the block slides before stopping. Take g = 9.8 m s⁻².</p>
+<div class="sol">
+<p class="work">Momentum (collision — momentum only, energy is lost):
+  0.020 × 300 = (0.020 + 1.98)v  ⇒  v = 6/2.00 = 3.0 m s⁻¹
+
+Energy lost:
+  before = ½(0.020)(300²) = 900 J
+  after  = ½(2.00)(3.0²)  = 9 J
+  lost   = 891 J  (99% — a perfectly inelastic collision)
+
+Sliding (energy now, momentum no longer conserved):
+  friction f = μmg = 0.5 × 2.0 × 9.8 = 9.8 N
+  a = f/m = 4.9 m s⁻²
+  s = v²/(2a) = 9.0/(2 × 4.9) = 0.92 m
+  check: work done by friction = 9.8 × 0.92 = 9.0 J = the remaining kinetic energy ✓</p>
+<p>Two different principles govern the two stages, and mixing them is the classic error. Momentum is conserved in the collision (external forces are negligible during it) but mechanical energy is not; during the slide the reverse is true — friction destroys energy, and momentum is not conserved because the floor exerts an external force.</p>
+<p class="ans">v = 3.0 m s⁻¹; 891 J lost (99%); the block slides 0.92 m against 9.8 N of friction.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Assertion–reason] <b>Assertion (A):</b> A body moving in a circle at constant speed has a non-zero net force acting on it. <b>Reason (R):</b> A force perpendicular to the velocity changes the direction of the velocity without changing its magnitude.</p>
+<div class="sol">
+<p>Both statements are true, and R is the correct explanation of A.</p>
+<p class="work">Acceleration = rate of change of velocity (vector):
+  |v| constant but direction changing  ⇒  a ≠ 0  ⇒  F_net = ma ≠ 0
+  direction of F_net: towards the centre = perpendicular to v</p>
+<p>The subtlety is that “constant speed” is not “constant velocity”. Work done by the centripetal force is zero (F ⊥ v), so kinetic energy stays constant while momentum changes every instant — a clean demonstration that force changes momentum, not necessarily speed.</p>
+<p class="ans">Both true, R explains A: F ⊥ v does no work, so speed is constant while momentum and hence acceleration are not.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Experiment/observation table] In verifying the laws of friction, a block is pulled with just enough force to start it moving. Complete the last column and state the coefficient of friction.</p>
+<table>
+<tr><th>Normal reaction N (N)</th><th>Limiting friction F (N)</th><th>F/N</th></tr>
+<tr><td>9.8</td><td>2.4</td><td>?</td></tr>
+<tr><td>19.6</td><td>4.9</td><td>?</td></tr>
+<tr><td>29.4</td><td>7.4</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">F/N = 2.4/9.8 = 0.245
+      4.9/19.6 = 0.250
+      7.4/29.4 = 0.252
+Mean μ = 0.249 ≈ 0.25</p>
+<p>F/N is constant, which is the statement of the first law of friction (F ∝ N), and the constant is μ — dimensionless, since it is a force divided by a force. The third law — friction is independent of the apparent area of contact — is tested by turning the block onto a different face and repeating: the readings are unchanged because the true contact area is set by microscopic asperities, which depends on the weight, not on the geometric face.</p>
+<p class="ans">F/N = 0.245, 0.250, 0.252; μ = 0.25, a dimensionless ratio, and it does not change when the block is turned over.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Estimation and limiting case] A fielder catches a 0.15 kg ball arriving at 20 m s⁻¹ and brings it to rest in 0.10 s. Estimate the average force, then explain what happens in the limiting case of a rigid catch.</p>
+<div class="sol">
+<p class="work">Impulse = Δp = mΔv = 0.15 × 20 = 3.0 N s
+F_avg = Δp/Δt = 3.0/0.10 = 30 N
+
+If the hands gave way 0.50 s instead:
+F_avg = 3.0/0.50 = 6 N  (five times less)</p>
+<p><b>Limiting case:</b> as Δt → 0 the force → ∞. A perfectly rigid catch would deliver the whole impulse in an instant and the force would exceed the strength of bone (about 10⁸ Pa of stress) — which is why catchers pull their hands back, cars have crumple zones and airbags, and why a fall onto concrete from a given height is far more dangerous than the same fall onto a mattress.</p>
+<p class="ans">≈ 30 N over 0.10 s (only 6 N if the stop takes 0.5 s); as Δt → 0 the force diverges, so cushioning the impact is the whole point of safety design.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Error-hunting] Identify the false statements and correct them.<br>
+(i) “Action and reaction act on the same body, so they cancel.”<br>
+(ii) “The coefficient of friction has the unit of newton.”<br>
+(iii) “Friction is independent of the area of contact.”<br>
+(iv) “Mass changes with the value of g.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — they act on DIFFERENT bodies, which is why they never cancel; the
+     net force on either body is not zero, which is why either can accelerate.
+(ii) FALSE — μ = F/N is a ratio of two forces, so it is dimensionless (0.25, not 0.25 N).
+(iii) TRUE — a stated law of friction; only the true area of contact (set by weight)
+     matters, not the geometric face area.
+(iv) FALSE — mass is the quantity of matter and is constant; g changes, so WEIGHT
+     changes (W = mg). A 60 kg person weighs 588 N on Earth and 98 N on the Moon but
+     is still 60 kg in both places.</p>
+<p class="ans">(i) false — different bodies; (ii) false — dimensionless; (iii) true; (iv) false — weight, not mass, depends on g.</p>
 </div>
 </div>
 

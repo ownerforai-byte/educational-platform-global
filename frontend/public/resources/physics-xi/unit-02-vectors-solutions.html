@@ -34,6 +34,7 @@
 <li>Exercise 2.4 — Scalar (dot) product</li>
 <li>Exercise 2.5 — Vector (cross) product</li>
 <li>Exercise 2.6 — Equilibrium and applications</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -333,6 +334,142 @@ Resolving vertically: T₁ cos30° + T₂ cos60° = 20
   1.732T₂(0.866) + 0.5T₂ = 20
   1.5T₂ + 0.5T₂ = 20  ⇒ T₂ = 10 N, T₁ = 17.32 N</p>
 <p class="ans">T₁ = 17.3 N (string at 30°) and T₂ = 10 N (string at 60°)</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Vectors is examined as much through reasoning as through arithmetic: the marks sit in parallelogram-law geometry, the dot–cross identity, and the “can these three forces close a triangle” argument. One worked example of each of the eight shapes follows.</p>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Multi-step numerical] Forces of 4 N at 0°, 6 N at 60° and 8 N at 150° act at a point. Find the magnitude and direction of the resultant.</p>
+<div class="sol">
+<p class="work">Resolve along x (0°) and y (90°):
+  4 N at 0°    →  (4.00, 0.00)
+  6 N at 60°   →  (6 cos60, 6 sin60) = (3.00, 5.196)
+  8 N at 150°  →  (8 cos150, 8 sin150) = (−6.928, 4.00)
+
+ΣFx = 4.00 + 3.00 − 6.928 = 0.072 N
+ΣFy = 0.00 + 5.196 + 4.00 = 9.196 N
+
+R = √(0.072² + 9.196²) = 9.20 N
+tan θ = 9.196/0.072 = 128  ⇒ θ = 89.6°</p>
+<p>With three or more forces, resolve first and combine second — never apply the parallelogram law pairwise, which multiplies rounding and loses the sign of each component.</p>
+<p class="ans">R ≈ 9.2 N acting at 89.6°, almost exactly along the positive y-axis.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Derivation] Prove that |A × B|² + (A · B)² = A²B².</p>
+<div class="sol">
+<p class="work">Write |A × B| = AB sin θ and A · B = AB cos θ, where θ is the angle between them.
+
+|A × B|² + (A · B)² = A²B² sin²θ + A²B² cos²θ
+                    = A²B² (sin²θ + cos²θ)
+                    = A²B² ✓</p>
+<p>This is the vector form of the Pythagorean identity, and it is the fastest way to find an angle without a calculator: compute the dot product for cos θ and the cross product for sin θ, then use sin² + cos² = 1 to check the answer. It also shows that the two products carry complementary information — the dot product measures parallel content, the cross product perpendicular content.</p>
+<p class="ans">A²B²(sin²θ + cos²θ) = A²B²; the identity is Pythagoras applied to the parallel and perpendicular parts of one vector.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Graph/geometry reading] A = 3i + 4j and B = 6i + 8j. Find the angle between them, and the area of the parallelogram they would span.</p>
+<div class="sol">
+<p class="work">A · B = (3)(6) + (4)(8) = 18 + 32 = 50
+|A| = 5, |B| = 10
+cos θ = 50/(5 × 10) = 1  ⇒ θ = 0°
+
+A × B = (3×8 − 4×6) k = (24 − 24) k = 0
+Area of parallelogram = |A × B| = 0</p>
+<p>B = 2A, so the vectors are parallel — their cross product vanishes and the “parallelogram” collapses to a line. A zero cross product is the test for parallel (collinear) vectors; a zero dot product is the test for perpendicular ones. The two tests together classify any pair completely.</p>
+<p class="ans">θ = 0° (B = 2A); |A × B| = 0, so the area is zero and the vectors are parallel, not perpendicular.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Combined concept] A force F = 3i + 4j − 5k N acts on a body that moves through d = 2i − j + 2k m. Find the work done, and the component of F perpendicular to d.</p>
+<div class="sol">
+<p class="work">W = F · d = (3)(2) + (4)(−1) + (−5)(2) = 6 − 4 − 10 = −8 J
+
+|F| = √(9 + 16 + 25) = 7.07 N,  |d| = √(4 + 1 + 4) = 3.00 m
+cos θ = W/(|F||d|) = −8/(7.07 × 3.00) = −0.377  ⇒ θ = 112°
+F∥ = F cos θ = 7.07 × (−0.377) = −2.67 N
+F⊥ = F sin θ = 7.07 × 0.926 = 6.55 N</p>
+<p>The negative work means the force opposes the displacement: the body loses 8 J of kinetic energy (or the force is doing work against it, as friction does). The parallel component alone transfers energy; the perpendicular component does no work at all but turns the velocity, which is exactly the physics of circular motion.</p>
+<p class="ans">W = −8 J (force opposes motion); F∥ = −2.67 N, F⊥ = 6.55 N — only the parallel part does work.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Assertion–reason] <b>Assertion (A):</b> Two vectors of equal magnitude a have a resultant of magnitude a only when the angle between them is 120°. <b>Reason (R):</b> R² = a² + a² + 2a²cos θ.</p>
+<div class="sol">
+<p>Both statements are true and R is the correct explanation of A.</p>
+<p class="work">Set R = a in R² = 2a²(1 + cos θ):
+  a² = 2a²(1 + cos θ)
+  1/2 = 1 + cos θ  ⇒  cos θ = −1/2  ⇒  θ = 120°</p>
+<p>This is the three-force equilibrium geometry: three equal forces at 120° to one another give zero resultant, which is why a knot pulled by three equal strings at 120° stays at rest, and why the 120° answer recurs in force-table experiments. The same algebra shows R = a√2 at 90° and R = 2a at 0°:</p>
+<p class="work">θ = 0°   → R = 2a
+θ = 90°  → R = a√2 ≈ 1.41a
+θ = 120° → R = a
+θ = 180° → R = 0</p>
+<p class="ans">A true; R true and explanatory: cos θ = −1/2 gives θ = 120° for R = a, the equal-force equilibrium angle.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Experiment/observation table] In a parallelogram-law experiment, P and Q are set at several angles and the resultant is measured. Complete the table, then state which row is most reliable and why.</p>
+<table>
+<tr><th>P (N)</th><th>Q (N)</th><th>θ</th><th>R calculated (N)</th><th>R measured (N)</th></tr>
+<tr><td>5.0</td><td>5.0</td><td>60°</td><td>?</td><td>8.7</td></tr>
+<tr><td>5.0</td><td>5.0</td><td>90°</td><td>?</td><td>7.1</td></tr>
+<tr><td>5.0</td><td>5.0</td><td>120°</td><td>?</td><td>5.0</td></tr>
+<tr><td>5.0</td><td>5.0</td><td>150°</td><td>?</td><td>2.6</td></tr>
+</table>
+<div class="sol">
+<p class="work">R = √(P² + Q² + 2PQ cos θ) with P = Q = 5.0:
+  R = 5.0 √(2 + 2 cos θ)
+
+θ = 60°:  R = 5.0 √(2 + 1.000) = 5.0 × 1.732 = 8.66 N  (measured 8.7) ✓
+θ = 90°:  R = 5.0 √(2 + 0)     = 5.0 × 1.414 = 7.07 N  (measured 7.1) ✓
+θ = 120°: R = 5.0 √(2 − 1.000) = 5.0 × 1.000 = 5.00 N  (measured 5.0) ✓
+θ = 150°: R = 5.0 √(2 − 1.732) = 5.0 × 0.518 = 2.59 N  (measured 2.6) ✓</p>
+<p>Agreement is within 0.03 N everywhere, so the law holds. The θ = 90° row is the most reliable: the two forces are perpendicular, so the parallelogram is a rectangle and both the drawing and the scale reading are least affected by angular error, and the sensitivity dR/dθ is smallest near 90°. Errors grow as θ → 0° or 180°, where a one-degree slip changes R very little but the vectors nearly overlap.</p>
+<p class="ans">8.66, 7.07, 5.00, 2.59 N — all within 0.03 N of measurement; the 90° row is cleanest because a rectangle is easiest to read and the result is least sensitive to angular error.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Estimation and limiting case] Can forces of 3 N, 5 N and 7 N acting at a point produce equilibrium? What about 3 N, 5 N and 9 N?</p>
+<div class="sol">
+<p class="work">Three vectors can close a triangle only if each magnitude lies between the
+other two combined and their difference:
+  |P − Q| ≤ R ≤ P + Q
+
+For 3, 5, 7:   |5 − 3| = 2 ≤ 7 ≤ 8  ✓  possible (angle between 3 and 5 ≈ 120°)
+For 3, 5, 9:   |5 − 3| = 2 ≤ 9 ≤ 8  ✗  impossible (9 > 3 + 5)</p>
+<p>The general criterion is that the largest magnitude must not exceed the sum of the other two; if it does, the two smaller forces cannot reach the tip of the largest however they are oriented. Conversely, equilibrium is always possible when the triangle inequality is satisfied, because the angle is then adjustable between 0° and 180°.</p>
+<p><b>Limiting cases:</b> if the largest equals the sum of the other two, the triangle degenerates and all three forces are collinear with zero resultant; if one magnitude exceeds that sum, the minimum possible resultant is (largest − sum of others), never zero.</p>
+<p class="ans">3, 5, 7 N can give equilibrium (7 &lt; 8); 3, 5, 9 N cannot, since 9 &gt; 3 + 5 — the triangle inequality must hold.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Error-hunting] Correct each false statement.<br>
+(i) “A unit vector can have any magnitude, provided its direction is fixed.”<br>
+(ii) “If A · B = 0 then at least one of the vectors must be zero.”<br>
+(iii) “|A + B| = |A| + |B| for all vectors.”<br>
+(iv) “The cross product is commutative.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — a unit vector has magnitude exactly 1; A/|A| is the unit vector along A.
+(ii) FALSE — the dot product also vanishes when the vectors are perpendicular
+     (θ = 90°), which is the far more common case in physics (work done by a
+     force perpendicular to motion is zero).
+(iii) FALSE — equality holds only when the vectors are parallel (θ = 0); otherwise
+     |A + B| ≤ |A| + |B| (triangle inequality), with |A + B| = ||A| − |B|| when antiparallel.
+(iv) FALSE — A × B = −(B × A): the cross product is anticommutative, which is why the
+     direction reverses when the order of the factors is changed (right-hand rule).</p>
+<p class="ans">(i) magnitude must be 1; (ii) perpendicular vectors also give zero; (iii) equality only for parallel vectors, otherwise ≤; (iv) A × B = −B × A.</p>
 </div>
 </div>
 

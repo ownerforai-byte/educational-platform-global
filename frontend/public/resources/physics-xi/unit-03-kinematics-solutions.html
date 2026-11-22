@@ -34,6 +34,7 @@
 <li>Exercise 3.4 — Relative velocity</li>
 <li>Exercise 3.5 — Projectile motion</li>
 <li>Exercise 3.6 — Mixed numericals</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -332,6 +333,153 @@ t = (v − u)/a = (0 − 20)/(−4) = 5 s</p>
 <div class="sol">
 <p>Yes. At the highest point of a vertical throw the velocity is zero, but the acceleration is g downward throughout. A body released from rest also has v = 0 with a = g. Velocity and acceleration are independent quantities.</p>
 <p class="ans">Yes — at the top of a vertical throw v = 0 while a = g downward.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Kinematics numericals are rarely single-formula. The exam prefers a body that rises and then falls, a graph with two or three slopes, or a boat that must also drift downstream. The eight shapes below are the recurring patterns.</p>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Multi-step numerical] A stone is thrown vertically upward at 20 m s⁻¹ from the top of a 45 m tower. Find (a) the maximum height above the ground, (b) the time to reach the ground, (c) the speed on impact. Take g = 10 m s⁻².</p>
+<div class="sol">
+<p class="work">Upward positive, origin at the top of the tower.
+
+(a) rise above the top = u²/2g = 20²/20 = 20 m
+    maximum height above ground = 45 + 20 = 65 m
+
+(b) displacement on landing s = −45 m:
+    −45 = 20t − 5t²  ⇒  5t² − 20t − 45 = 0  ⇒  t² − 4t − 9 = 0
+    t = [4 + √(16 + 36)]/2 = (4 + 7.21)/2 = 5.6 s
+
+(c) v = u + at = 20 − 10(5.6) = −36 m s⁻¹
+the minus sign means 36 m s⁻¹ downward</p>
+<p>The single quadratic handles the whole flight because displacement, not distance, is what the equation describes — the stone going up and coming down is already inside the −5t² term. Solving 45 = 20t − 5t² instead would give the 4.4 s at which it passes the top on the way down.</p>
+<p class="ans">(a) 65 m above the ground, (b) 5.6 s, (c) 36 m s⁻¹ downward.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Derivation] From v = u + at and s = ut + ½at², derive v² = u² + 2as, and state which equation to use when time is not given.</p>
+<div class="sol">
+<p class="work">From v = u + at:          t = (v − u)/a
+Substitute into s = ut + ½at²:
+
+s = u(v − u)/a + ½a(v − u)²/a²
+  = [2u(v − u) + (v − u)²]/(2a)
+  = (v − u)(2u + v − u)/(2a)
+  = (v − u)(v + u)/(2a)
+  = (v² − u²)/(2a)
+
+⇒ v² = u² + 2as</p>
+<p>All three equations come from the same two facts — constant acceleration and the definitions of velocity and displacement — so they are never independent. Use v² = u² + 2as whenever the question mentions a distance but gives no time (a braking distance, the height reached by a thrown ball, the length of a runway); use s = ut + ½at² whenever it mentions time but not final velocity.</p>
+<p class="ans">Eliminating t gives v² = u² + 2as; choose it whenever the data contain no time.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Graph reading] A car accelerates uniformly from rest to 20 m s⁻¹ in 10 s, holds that speed for 10 s, then brakes uniformly to rest in 5 s. Find the total distance, the average speed, and the acceleration in each stage.</p>
+<div class="sol">
+<p class="work">Distance = area under the v–t graph
+  stage 1: ½ × 10 × 20 = 100 m
+  stage 2: 10 × 20      = 200 m
+  stage 3: ½ × 5 × 20   = 50 m
+  total               = 350 m
+
+Average speed = 350/25 = 14 m s⁻¹
+
+Accelerations (slopes):
+  stage 1: (20 − 0)/10 = +2.0 m s⁻²
+  stage 2: 0 m s⁻² (horizontal line)
+  stage 3: (0 − 20)/5  = −4.0 m s⁻²</p>
+<p>Two marks are usually lost here: quoting 20 m s⁻¹ as the average speed (it is the maximum), and forgetting that the braking acceleration is four times the starting acceleration in magnitude even though the time is half. Area gives distance, slope gives acceleration, and the average speed is total area over total time.</p>
+<p class="ans">Total distance 350 m, average speed 14 m s⁻¹, accelerations +2.0, 0 and −4.0 m s⁻².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Combined concept] A boat can move at 4 m s⁻¹ in still water across a river 300 m wide flowing at 3 m s⁻¹. Find (a) the minimum crossing time and the drift, and (b) the heading needed to land directly opposite and the time it then takes.</p>
+<div class="sol">
+<p class="work">(a) Shortest time — head straight across:
+    t = 300/4 = 75 s
+    drift = 3 × 75 = 225 m
+    resultant speed = √(4² + 3²) = 5 m s⁻¹
+
+(b) Shortest path — head upstream at angle θ to the bank normal:
+    across component must be 4 cos θ, downstream component 3 − 4 sin θ = 0
+    4 sin θ = 3  ⇒  sin θ = 0.75  ⇒  θ = 48.6° upstream
+    crossing speed = 4 cos 48.6° = 2.65 m s⁻¹
+    t = 300/2.65 = 113 s</p>
+<p>The two answers answer two different questions: minimum time never minimises drift, and zero drift always costs time. Note that in (a) the boat's velocity relative to the ground is the vector sum v_boat + v_river, so its actual speed is 5 m s⁻¹, not 4.</p>
+<p class="ans">(a) 75 s with 225 m drift; (b) head 48.6° upstream, 113 s to land opposite.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Assertion–reason] <b>Assertion (A):</b> At the highest point of a vertical throw the velocity is zero but the acceleration is not. <b>Reason (R):</b> Gravity acts on the body throughout the flight, changing its velocity by 9.8 m s⁻¹ every second.</p>
+<div class="sol">
+<p>Both statements are true and R correctly explains A.</p>
+<p class="work">At the top:   v = 0,   a = g = 9.8 m s⁻¹ downward
+One second later v = −9.8 m s⁻¹ — the body has “fallen” from rest, so g never vanished.</p>
+<p>The misconception is that zero velocity implies zero acceleration. Velocity is the rate of change of position; acceleration is the rate of change of velocity. At the top, position is momentarily stationary but velocity is still changing. The same distinction explains why a car at the instant it starts from rest has maximum acceleration while its speed is still zero.</p>
+<p class="ans">Both true, R explains A: v = 0 and a = g at the top — acceleration is the derivative of velocity, not of speed.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Experiment/observation table] A ticker timer making 50 dots per second records a trolley moving down a runway. Successive intervals of 5 ticks measure 2.0, 6.0, 10.0 and 14.0 cm. Find the acceleration and the velocity at the start of the first interval.</p>
+<div class="sol">
+<p class="work">Time for 5 ticks = 5/50 = 0.1 s
+
+s₁ = 0.020 m, s₂ = 0.060, s₃ = 0.100, s₄ = 0.140
+Successive differences: 0.040, 0.040, 0.040 m — constant, so a is uniform
+
+Δs = aT²  ⇒  a = 0.040/(0.1)² = 4.0 m s⁻²
+
+Velocity at the middle of the first interval:
+v₁ = s₁/T = 0.020/0.1 = 0.20 m s⁻¹
+velocity at the start: u = v₁ − a(T/2) = 0.20 − 4.0(0.05) = 0.00 m s⁻¹
+(so the trolley started from rest at the first dot)</p>
+<p>For uniformly accelerated motion the successive intervals follow the odd-number rule 1 : 3 : 5 : 7 (here 2 : 6 : 10 : 14), and the constant difference Δs = aT² gives the acceleration directly. Dividing an interval by its time gives the velocity at the <em>midpoint</em> of that interval, not at its start — the reason the half-interval correction appears in the last step.</p>
+<p class="ans">a = 4.0 m s⁻² (from Δs = aT²); start velocity ≈ 0, so the trolley was released from rest.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Estimation and limiting case] A ruler is dropped between a friend's fingers and caught after falling 16 cm. Estimate the reaction time, and state the limiting case of the equations of motion when a = 0.</p>
+<div class="sol">
+<p class="work">s = ½gt²  ⇒  t = √(2s/g) = √(2 × 0.16/9.8) = √0.0327 = 0.18 s
+
+Reaction distance for a car at 60 km h⁻¹ (16.7 m s⁻¹):
+  s = vt = 16.7 × 0.18 = 3.0 m
+Braking distance at μ = 0.7:  s = v²/(2μg) = 279/13.7 = 20 m
+Total stopping distance ≈ 23 m — the reaction metre is added before braking even begins.</p>
+<p><b>Limiting cases of the equations of motion:</b></p>
+<p class="work">a = 0  →  v = u, s = ut          (uniform motion, constant velocity)
+u = 0  →  v = at, s = ½at², v² = 2as   (starting from rest)
+v = 0  →  u² = −2as                (body brought to rest)</p>
+<p>These four reductions cover most “special case” reasoning questions, and the reaction-time estimate is the standard order-of-magnitude justification for speed limits and following distances.</p>
+<p class="ans">Reaction time ≈ 0.18 s, giving about 3 m of travel before braking at 60 km h⁻¹; with a = 0 the equations collapse to v = u, s = ut.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Error-hunting] Mark each statement true or false and correct the false ones.<br>
+(i) “Distance is always greater than or equal to the magnitude of displacement.”<br>
+(ii) “A body with constant speed has zero acceleration.”<br>
+(iii) “At the highest point of a projectile the acceleration is zero.”<br>
+(iv) “Average velocity equals total distance divided by total time.”</p>
+<div class="sol">
+<p class="work">(i)  TRUE — for a closed path distance &gt; 0 while displacement = 0, so distance ≥ |displacement| always.
+(ii) FALSE — constant speed with changing direction means changing velocity, hence
+     non-zero acceleration (uniform circular motion is the standard example).
+(iii) FALSE — the horizontal velocity is unchanged and gravity still acts; only the
+     vertical component of velocity vanishes, so a = g downward the whole time.
+(iv) FALSE — that is the definition of average SPEED. Average velocity is total
+     displacement divided by total time, and is zero for a closed path.</p>
+<p>These four are the most frequently penalised statements in the unit. In every case the fix is the same: distinguish a scalar (speed, distance) from its vector partner (velocity, displacement).</p>
+<p class="ans">(i) true; (ii) false — direction change gives acceleration; (iii) false — a = g at the top; (iv) false — that is average speed, not average velocity.</p>
 </div>
 </div>
 
