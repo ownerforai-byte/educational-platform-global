@@ -34,6 +34,7 @@
 <li>Exercise 5.4 — Conservation of mechanical energy</li>
 <li>Exercise 5.5 — Conservative and non-conservative forces</li>
 <li>Exercise 5.6 — Elastic and inelastic collisions</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -373,6 +374,146 @@ Solving (i) and (iii):
 v₁ = [(m₁ − m₂)u₁ + 2m₂u₂]/(m₁ + m₂)
 v₂ = [(m₂ − m₁)u₂ + 2m₁u₁]/(m₁ + m₂)</p>
 <p class="ans">v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₂−m₁)u₂ + 2m₁u₁]/(m₁+m₂). Special cases: m₁ = m₂ (exchange), m₂ ≫ m₁ (v₁ ≈ −u₁, rebound), m₁ ≫ m₂ (v₁ ≈ u₁, v₂ ≈ 2u₁).</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Work–energy questions are almost always “energy in, energy out” with one loss term. The eight shapes below cover the losses (friction, collision, spring), the graphs, and the reasoning that separates work from power.</p>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Multi-step numerical] A 2.0 kg block slides 5.0 m down a 30° rough incline with μ = 0.2. Find its speed at the bottom and the energy lost to friction. Take g = 9.8 m s⁻².</p>
+<div class="sol">
+<p class="work">Height fallen h = 5.0 sin30° = 2.5 m
+PE lost = mgh = 2.0 × 9.8 × 2.5 = 49 J
+
+Friction force f = μmg cos30° = 0.2 × 2.0 × 9.8 × 0.866 = 3.39 N
+Work against friction = f × s = 3.39 × 5.0 = 17.0 J
+
+Energy left as KE = 49 − 17 = 32 J
+v = √(2 × 32/2.0) = √32 = 5.7 m s⁻¹</p>
+<p>Note that the friction force uses cos θ while the height uses sin θ — two different components of the same weight. Using mg instead of mg cos θ overstates the loss by a factor of 1/cos 30° = 1.15 and gives 4.9 m s⁻¹ instead of 5.7.</p>
+<p class="ans">v ≈ 5.7 m s⁻¹ at the bottom; 17 J (35% of the 49 J) lost to friction.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Derivation] Derive the work–energy theorem for a constant force, then extend it to a variable force.</p>
+<div class="sol">
+<p class="work">Constant force along the displacement:
+  W = Fs = (ma)s
+  v² = u² + 2as  ⇒  as = (v² − u²)/2
+  W = m(v² − u²)/2 = ½mv² − ½mu² = ΔKE
+
+Variable force:
+  dW = F dx  ⇒  W = ∫F dx = ΔKE  (still exact, with F(x) inside the integral)</p>
+<p>For a spring obeying F = kx, the integral gives W = ½kx², which is why the energy stored is quadratic in the extension and not linear. The theorem holds for the <em>net</em> work: if several forces act, compute the work of each and add — or equivalently use the net force.</p>
+<p class="ans">W = Fs = mas = ½mv² − ½mu²; for variable force W = ∫F dx, giving W = ½kx² for a spring.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Graph reading] A force on a 4.0 kg body rises uniformly from 0 to 20 N over the first 4.0 m, then stays at 20 N for the next 6.0 m. The body starts from rest. Find the total work and the final speed.</p>
+<div class="sol">
+<p class="work">Work = area under the F–x graph
+  first part (triangle): ½ × 4.0 × 20 = 40 J
+  second part (rectangle): 20 × 6.0     = 120 J
+  total                                 = 160 J
+
+W = ΔKE = ½mv²  ⇒  v = √(2W/m) = √(2 × 160/4.0) = √80 = 8.9 m s⁻¹</p>
+<p>Reading an F–x graph is the mirror of reading a v–t graph: there the area is distance and the slope is acceleration; here the area is work and the slope is the force's rate of change. A common error is to use the average force (10 N) over the whole 10 m, giving 100 J — correct only if the ramp continued.</p>
+<p class="ans">W = 160 J; v = 8.9 m s⁻¹ with the body starting from rest.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q32.</b> [Combined concept] A 0.50 kg ball on a 1.0 m string is released from the horizontal position. Find its speed at the lowest point and the tension in the string there.</p>
+<div class="sol">
+<p class="work">Energy (the only force doing work is gravity):
+  mgh = ½mv²,  h = L = 1.0 m
+  v = √(2gL) = √(2 × 9.8 × 1.0) = 4.4 m s⁻¹
+
+At the lowest point (Newton's second law, toward the centre):
+  T − mg = mv²/L
+  T = mg + mv²/L = 0.50 × 9.8 + 0.50 × 19.6/1.0
+    = 4.9 + 9.8 = 14.7 N = 3mg</p>
+<p>The result T = 3mg at the bottom (and T = 0 at the top edge of a full vertical circle) is worth memorising: it comes from combining energy conservation with the centripetal condition, and it is exactly the pair of equations the vertical-circle questions need.</p>
+<p class="ans">v = 4.4 m s⁻¹; T = 14.7 N = 3mg at the lowest point.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q33.</b> [Assertion–reason] <b>Assertion (A):</b> The work done by friction on a body is always negative. <b>Reason (R):</b> Friction always opposes the relative motion between the surfaces in contact.</p>
+<div class="sol">
+<p>A is false, R is true — and R is precisely why A fails.</p>
+<p class="work">Case where friction does NEGATIVE work:
+  block sliding on a fixed floor, friction acts backward  ⇒ W = −fs
+
+Case where friction does POSITIVE work:
+  a block resting on a conveyor belt that starts moving — the belt's friction
+  drags the block forward, in the direction of the block's displacement ⇒ W &gt; 0
+
+Case of zero work:
+  a block carried at constant speed on a horizontal belt ⇒ no relative motion ⇒ no friction</p>
+<p>Friction always opposes <em>relative</em> motion, not the motion of one chosen body. When the other surface is itself moving, the two can point the same way, so the sign of the work depends on the frame and on which body you are analysing.</p>
+<p class="ans">A is false, R is true: friction opposes relative motion, so on a moving belt it can do positive work on the block it drags.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q34.</b> [Experiment/observation table] A pulley system lifts a 20 N load through 0.10 m while the effort of 6.0 N moves 0.40 m. Complete the table and find the efficiency and mechanical advantage.</p>
+<table>
+<tr><th>Quantity</th><th>Value</th></tr>
+<tr><td>Load × load distance</td><td>?</td></tr>
+<tr><td>Effort × effort distance</td><td>?</td></tr>
+<tr><td>Efficiency</td><td>?</td></tr>
+<tr><td>Mechanical advantage</td><td>?</td></tr>
+</table>
+<div class="sol">
+<p class="work">Useful work out = 20 × 0.10 = 2.0 J
+Work put in    = 6.0 × 0.40 = 2.4 J
+Efficiency η   = 2.0/2.4 = 0.83 = 83%
+Mechanical advantage MA = load/effort = 20/6.0 = 3.3
+Velocity ratio VR = effort distance/load distance = 0.40/0.10 = 4.0
+Check: η = MA/VR = 3.3/4.0 = 0.83 ✓</p>
+<p>The missing 0.4 J is the work done lifting the movable block and against friction in the pulleys — an ideal machine would have η = 100% and MA = VR. The identity η = MA/VR is the standard cross-check and is itself worth a mark.</p>
+<p class="ans">2.0 J out, 2.4 J in, η = 83%, MA = 3.3, VR = 4.0, and η = MA/VR as required.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q35.</b> [Estimation and limiting case] Estimate the power a 60 kg student develops climbing 3.0 m of stairs in 5.0 s. Then state the limiting case in which the work done by a force is zero.</p>
+<div class="sol">
+<p class="work">W = mgh = 60 × 9.8 × 3.0 = 1.76 × 10³ J
+P = W/t = 1764/5.0 = 353 W ≈ 0.47 hp
+
+Sustained output of a fit adult is about 100–200 W, so this is a short burst.</p>
+<p><b>Limiting case:</b> W = Fs cos θ, so the work is zero whenever</p>
+<p class="work">θ = 90°  — force perpendicular to displacement (carrying a bag horizontally:
+           the force is vertical, the motion horizontal, so no work is done on the bag)
+F = 0    — no force
+s = 0    — no displacement (pushing a wall)</p>
+<p>That is why a satellite in a circular orbit does no work despite gravity acting on it, and why the centripetal force never changes the kinetic energy.</p>
+<p class="ans">≈ 3.5 × 10² W; work is zero when F ⊥ s, F = 0 or s = 0 — a perpendicular force changes direction, never speed.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q36.</b> [Error-hunting] Mark each statement true or false.<br>
+(i) “Power = work × time.”<br>
+(ii) “1 kW h = 3.6 × 10⁶ J.”<br>
+(iii) “Energy is a vector because force is a vector.”<br>
+(iv) “In an elastic collision both momentum and kinetic energy are conserved.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE — power is work per unit time, P = W/t; multiplying would give units of J s.
+(ii) TRUE — 1 kW h = 1000 W × 3600 s = 3.6 × 10⁶ J (the unit on an electricity bill).
+(iii) FALSE — work and energy are scalars: work is the dot product F · s, which is
+     a number, possibly negative. Energy has no direction.
+(iv) TRUE — that is the definition of elastic; in an inelastic collision momentum is
+     still conserved but kinetic energy is not.</p>
+<p>The distinction in (iii) matters because energy can be added as a plain number, whereas forces must be added as vectors — the reason energy methods usually solve problems that force methods make messy.</p>
+<p class="ans">(i) false — P = W/t; (ii) true; (iii) false — scalars; (iv) true — momentum always, KE only when elastic.</p>
 </div>
 </div>
 

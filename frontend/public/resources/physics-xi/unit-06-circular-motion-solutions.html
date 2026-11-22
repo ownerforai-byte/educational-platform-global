@@ -34,6 +34,7 @@
 <li>Exercise 6.4 — Conical pendulum</li>
 <li>Exercise 6.5 — Motion in a vertical circle</li>
 <li>Exercise 6.6 — Banking of roads</li>
+<li>Additional problem types — the eight NEB question shapes</li>
 <li>Conceptual bank — 2-mark questions with model answers</li>
 <li>Long-answer set — 4 to 6 marks, fully worked</li>
 <li>Formula sheet and exam traps</li>
@@ -314,6 +315,136 @@ v_max = 22 m s⁻¹</p>
 <div class="sol">
 <p>The optimum speed is v₀ = √(rg tanθ). At this speed the horizontal component of the normal reaction equals exactly the required centripetal force, so friction is neither needed nor called upon — the car neither tends to slide up nor down the bank. At lower speeds friction must act up the bank; at higher speeds, down the bank.</p>
 <p class="ans">v₀ = √(rg tanθ); there the normal reaction alone provides mv²/r, so friction plays no part and tyre wear is minimal.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Additional problem types — the eight NEB question shapes</h2>
+
+<p>Circular motion questions almost always reduce to “which force provides mv²/r?”. Decide that first and the algebra follows. The eight shapes below each begin from that question.</p>
+
+<div class="item">
+<p class="q"><b>Q24.</b> [Multi-step numerical] An 800 kg car takes a flat circular curve of radius 50 m on a road with μ = 0.6. Find the maximum safe speed and the maximum friction force available.</p>
+<div class="sol">
+<p class="work">Friction provides the centripetal force:
+  f_max = μmg = 0.6 × 800 × 9.8 = 4.7 × 10³ N
+
+  μmg = mv²/r  ⇒  v_max = √(μgr) = √(0.6 × 9.8 × 50)
+        = √294 = 17 m s⁻¹ ≈ 62 km h⁻¹</p>
+<p>Notice the mass cancels: a truck and a bicycle can take the same flat bend at the same speed, because both the friction available and the force required scale with mass. Doubling the radius raises the safe speed by only √2, and doubling μ does the same — that is why wet roads (μ ≈ 0.4) reduce the limit by only about 18%, but ice (μ ≈ 0.1) by more than half.</p>
+<p class="ans">v_max = 17 m s⁻¹ (62 km h⁻¹) from μmg = mv²/r; friction available 4.7 kN, independent of mass in the final speed.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q25.</b> [Derivation] Derive v = √(rg tan θ) for the design speed of a banked frictionless road, and explain what happens below and above that speed.</p>
+<div class="sol">
+<p class="work">Forces on the car: weight mg downward, normal reaction N perpendicular to the bank.
+Resolve N:
+  vertical:   N cos θ = mg          (no vertical acceleration)
+  horizontal: N sin θ = mv²/r      (centripetal)
+
+Divide: tan θ = v²/(rg)  ⇒  v = √(rg tan θ)</p>
+<p>At exactly this speed no friction is needed. Below it, the car tends to slide down the bank, so friction acts up the slope; above it, the car tends to slide up, so friction acts down the slope. The banking angle therefore fixes a comfortable design speed, which is why mountain roads and racetracks are banked — and why the design speed does not depend on the mass of the vehicle.</p>
+<p class="ans">tan θ = v²/(rg) from N cos θ = mg and N sin θ = mv²/r; at the design speed friction is zero, below it friction acts up-slope, above it down-slope.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q26.</b> [Graph/geometry reading] A conical pendulum has a string 1.0 m long making 30° with the vertical. Find the radius of the circle, the tension and the period.</p>
+<div class="sol">
+<p class="work">Geometry: r = L sin θ = 1.0 × 0.500 = 0.50 m
+
+Vertical:    T cos θ = mg  ⇒  T = mg/cos30° = 1.155 mg
+Horizontal:  T sin θ = mv²/r
+
+  v² = rg tan θ = 0.50 × 9.8 × 0.577 = 2.83  ⇒  v = 1.68 m s⁻¹
+  T_period = 2πr/v = 2π(0.50)/1.68 = 1.87 s
+  check: T = 2π√(L cos θ/g) = 2π√(0.866/9.8) = 1.87 s ✓</p>
+<p>For a 0.2 kg bob the tension is 1.155 × 0.2 × 9.8 = 2.26 N. Two results are worth recognising: the period shortens as θ grows (unlike a simple pendulum), and the tension always exceeds the weight because the string must both support the bob and turn it.</p>
+<p class="ans">r = 0.50 m, T = 1.155 mg, period 1.87 s (from 2π√(L cos θ/g)).</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q27.</b> [Combined concept] A 0.20 kg ball on a 1.6 m string is whirled in a vertical circle. Find the minimum speed at the top for the string to stay taut, the corresponding speed at the bottom, and the tension at the bottom.</p>
+<div class="sol">
+<p class="work">At the top, minimum case T = 0, so gravity alone provides the centripetal force:
+  mg = mv_top²/r  ⇒  v_top = √(gr) = √(9.8 × 1.6) = 3.96 m s⁻¹
+
+Energy from bottom to top (height 2r = 3.2 m):
+  ½v_b² = ½v_t² + g(2r)
+  v_b = √(v_t² + 4gr) = √(15.7 + 62.7) = √78.4 = 8.85 m s⁻¹
+
+Tension at the bottom:
+  T − mg = mv_b²/r  ⇒  T = m(g + v_b²/r)
+    = 0.20(9.8 + 78.4/1.6) = 0.20(9.8 + 49) = 11.8 N</p>
+<p>So T = 6mg at the bottom (not 3mg, because this is the minimum-speed case, where the top tension has just fallen to zero). The string is most likely to break at the bottom, not the top — the exact reverse of the usual guess.</p>
+<p class="ans">v_top = 3.96 m s⁻¹, v_bottom = 8.85 m s⁻¹, T_bottom = 11.8 N ≈ 6mg.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q28.</b> [Assertion–reason] <b>Assertion (A):</b> A body in uniform circular motion has constant kinetic energy but changing momentum. <b>Reason (R):</b> Its speed is constant while its direction of motion changes continuously.</p>
+<div class="sol">
+<p>Both statements are true, and R is the correct explanation of A.</p>
+<p class="work">KE = ½mv² — depends on the magnitude of velocity only  ⇒  constant
+p = mv — a vector, whose direction changes every instant  ⇒  changing
+Δp over one revolution = 0, but dp/dt ≠ 0 at every instant
+
+The change arises from the centripetal force: F = dp/dt = mv²/r toward the centre.</p>
+<p>This is the cleanest example of the scalar/vector split in mechanics, and it explains why the centripetal force does no work: the force is always perpendicular to the displacement, so it changes momentum without changing energy.</p>
+<p class="ans">Both true, R explains A: constant speed fixes KE, changing direction changes the vector p, which requires a perpendicular force.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q29.</b> [Experiment/observation table] A 50 g rubber stopper is whirled on a string of radius 0.80 m; 20 revolutions take 10.0 s. Find the period, the speed and the centripetal force, then state what is being measured.</p>
+<div class="sol">
+<p class="work">Period T = 10.0/20 = 0.50 s
+Speed v = 2πr/T = 2π(0.80)/0.50 = 10.1 m s⁻¹
+Force F = mv²/r = 0.050 × 101/0.80 = 6.3 N
+  equivalently F = 4π²mr/T² = 4π²(0.050)(0.80)/0.25 = 6.3 N</p>
+<p>The force is supplied by the tension in the string, which is measured by hanging known weights at the other end through a glass tube. Increasing the hanging weight until the radius stays steady at a fixed period is the standard verification of F = mv²/r, and it confirms both proportionalities: F ∝ m and F ∝ 1/T² at fixed r, and F ∝ r at fixed T.</p>
+<p class="ans">T = 0.50 s, v = 10.1 m s⁻¹, F = 6.3 N supplied by the string tension — the experiment verifies F = 4π²mr/T².</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q30.</b> [Estimation and limiting case] Estimate the centripetal acceleration of a satellite in a low orbit (r ≈ 6.6 × 10⁶ m, v ≈ 7.8 × 10³ m s⁻¹) and compare it with g. Then state the limiting cases of the flat-road cornering result v_max = √(μgr).</p>
+<div class="sol">
+<p class="work">a = v²/r = (7.8 × 10³)²/6.6 × 10⁶ = 6.1 × 10⁷/6.6 × 10⁶ = 9.2 m s⁻²
+
+Compare: g at that altitude = 9.8 × (6.4/6.6)² = 9.2 m s⁻² ✓
+The “centripetal” acceleration of an orbit IS gravity — that is what “orbit” means.</p>
+<p><b>Limiting cases of v_max = √(μgr):</b></p>
+<p class="work">μ → 0    ⇒  v_max → 0      no friction, no flat-road cornering at any speed
+r → ∞    ⇒  v_max → ∞      a straight road needs no cornering force
+μ → ∞    ⇒  v_max → ∞      the ideal (impossible) infinite-grip tyre
+θ = 90°  ⇒  v = √(rg tan θ) → ∞   vertical wall (wall-of-death stunt)</p>
+<p>The μ → 0 case is exactly why the flat-road formula fails on ice and why banked curves are designed into roads: banking provides the centripetal force geometrically, without needing friction at all.</p>
+<p class="ans">a ≈ 9.2 m s⁻², equal to local g (gravity is the centripetal force); as μ → 0 the flat-road maximum speed tends to zero, which is why banking exists.</p>
+</div>
+</div>
+
+<div class="item">
+<p class="q"><b>Q31.</b> [Error-hunting] Correct each false statement.<br>
+(i) “A centrifugal force pushes the body outward in circular motion.”<br>
+(ii) “In a vertical circle the tension is greatest at the highest point.”<br>
+(iii) “Angular velocity is measured in m s⁻¹.”<br>
+(iv) “If the string of a whirling stone breaks, the stone flies radially outward.”</p>
+<div class="sol">
+<p class="work">(i)  FALSE in an inertial frame — there is no outward force; the body moves in a circle
+     because the NET force (tension, friction, gravity) points inward. “Centrifugal”
+     is only a bookkeeping pseudo-force inside a rotating frame.
+(ii) FALSE — tension is greatest at the LOWEST point (T = mg + mv²/r) and least at the
+     top (T = mv²/r − mg, zero at the minimum speed).
+(iii) FALSE — angular velocity ω is rad s⁻¹ (or rev s⁻¹). m s⁻¹ measures the linear
+     speed v, related by v = ωr.
+(iv) FALSE — it flies off along the TANGENT to the circle at the instant of breaking,
+     because that is the direction of its velocity once the centripetal force vanishes.</p>
+<p>All four errors come from the same root: treating the rotating frame as if it were inertial, or confusing the radial force with a radial velocity.</p>
+<p class="ans">(i) no outward force in an inertial frame; (ii) tension is maximum at the bottom; (iii) ω is in rad s⁻¹; (iv) the stone leaves along the tangent.</p>
 </div>
 </div>
 
