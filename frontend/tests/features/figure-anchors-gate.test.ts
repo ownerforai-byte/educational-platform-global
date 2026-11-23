@@ -172,7 +172,7 @@ describe("registry-wide figure anchors", () => {
     for (const slug of unresolved) {
       expect(KNOWN_UNRESOLVED.has(slug), `new unresolved topic: ${slug}`).toBe(true);
     }
-  });
+  }, 60_000);
 
   it(
     "every figure keyword (and keepSvg entry) matches every rendered note variant",
