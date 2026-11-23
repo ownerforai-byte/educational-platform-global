@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { Heart, Loader2, MessageCircle, Repeat2, UserPlus, AtSign, Bell } from "lucide-react";
+import { AtSign, Award, Bell, Heart, Loader2, MessageCircle, Quote, Repeat2, UserPlus } from "lucide-react";
 import {
   listSocialNotifications,
   markSocialNotificationsRead,
@@ -21,6 +21,8 @@ const KIND_LABEL: Record<string, string> = {
   follow: "started following you",
   repost: "reposted your post",
   mention: "mentioned you",
+  accept: "accepted your answer",
+  quote: "quoted your post",
 };
 
 const KIND_ICON: Record<string, typeof Heart> = {
@@ -30,6 +32,8 @@ const KIND_ICON: Record<string, typeof Heart> = {
   follow: UserPlus,
   repost: Repeat2,
   mention: AtSign,
+  accept: Award,
+  quote: Quote,
 };
 
 const KIND_ICON_CLASS: Record<string, string> = {
@@ -39,6 +43,8 @@ const KIND_ICON_CLASS: Record<string, string> = {
   follow: "text-emerald-500",
   repost: "text-sky-500",
   mention: "text-violet-500",
+  accept: "text-amber-500",
+  quote: "text-cyan-500",
 };
 
 export function CommunityNotificationsView() {
@@ -104,7 +110,10 @@ export function CommunityNotificationsView() {
         {items.map((item) => {
           const href = item.postId ? sharePath(item.postId) : "/ai/community";
           const actorName = item.actor?.fullName ?? "Someone";
-          const label = KIND_LABEL[item.kind] ?? "sent you a notification";
+          const label =
+            item.kind === "like" && item.commentId
+              ? "liked your comment"
+              : KIND_LABEL[item.kind] ?? "sent you a notification";
           const Icon = KIND_ICON[item.kind] ?? Bell;
           const iconClass = KIND_ICON_CLASS[item.kind] ?? "text-muted-foreground";
           return (

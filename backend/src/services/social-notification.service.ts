@@ -35,6 +35,16 @@ const PUSH_COPY: Record<
     body: "Someone tagged your profile in the community.",
     deepLink: postId ? `/ai/community/posts/${postId}` : "/ai/community",
   }),
+  accept: ({ postId }) => ({
+    title: "Your answer was accepted",
+    body: "Your reply was marked as the accepted answer.",
+    deepLink: postId ? `/ai/community/posts/${postId}` : "/ai/community",
+  }),
+  quote: ({ postId }) => ({
+    title: "Your post was quoted",
+    body: "Someone quoted your post in a new discussion.",
+    deepLink: postId ? `/ai/community/posts/${postId}` : "/ai/community",
+  }),
 };
 
 export type SocialNotificationKind =
@@ -43,7 +53,9 @@ export type SocialNotificationKind =
   | "reply"
   | "follow"
   | "repost"
-  | "mention";
+  | "mention"
+  | "accept"
+  | "quote";
 
 /** Best-effort insert — never blocks the parent action. */
 export async function recordSocialNotification(opts: {

@@ -27,6 +27,12 @@ export function FollowButton({
   const [pending, setPending] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
 
+  // Real member profiles may not have a username yet (Firebase signup does not
+  // mint @handles), so fall back to the profile id — the backend resolves
+  // usernames and raw ids through the same lookup.
+  const followKey = username || targetUserId;
+  const handle = username ? `@${username}` : "this member";
+
   // Local opinion wins over the server value, but only for THIS target and
   // THIS incoming value — no state mirroring in an effect.
   const stateKey = `${targetUserId}:${String(initialFollowing)}`;
@@ -34,14 +40,14 @@ export function FollowButton({
   const following = override?.key === stateKey ? override.following : initialFollowing;
 
   const toggle = useCallback(async () => {
-    if (!username || pending) return;
+    if (!followKey || pending) return;
     const prev = following;
     setOverride({ key: stateKey, following: !prev });
     setPending(true);
     setNotice(null);
     try {
-      if (prev) await unfollowUser(username);
-      else await followUser(username);
+      if (prev) await unfollowUser(followKey);
+      else await followUser(followKey);
       onChange?.(!prev);
     } catch {
       setOverride({ key: stateKey, following: prev });
@@ -49,9 +55,9 @@ export function FollowButton({
     } finally {
       setPending(false);
     }
-  }, [username, pending, following, onChange, stateKey]);
+  }, [followKey, pending, following, onChange, stateKey]);
 
-  if (!viewerId || viewerId === targetUserId || !username) return null;
+  if (!viewerId || viewerId === targetUserId || !followKey) return null;
 
   const compact = size === "xs";
 
@@ -62,7 +68,7 @@ export function FollowButton({
         disabled={pending}
         onClick={() => void toggle()}
         aria-pressed={following}
-        aria-label={following ? `Unfollow @${username}` : `Follow @${username}`}
+        aria-label={following ? `Unfollow ${handle}` : `Follow ${handle}`}
         className={cn(
           "inline-flex min-h-11 min-w-11 shrink-0 items-center gap-1 rounded-full border font-medium transition-colors",
           compact ? "h-11 px-3 text-[11px]" : "h-11 px-3 text-xs",

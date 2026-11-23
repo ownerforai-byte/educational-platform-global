@@ -1150,6 +1150,7 @@ router.post(
     const now = new Date().toISOString();
     const id = randomUUID();
     let body = parsed.data.body;
+    let quotedAuthorId: string | null = null;
     if (parsed.data.quotedPostId) {
       const quoted = await findPost(parsed.data.quotedPostId);
       if ("missing" in quoted) {
@@ -1165,6 +1166,7 @@ router.post(
         return;
       }
       body = embedQuoteMarker(body, parsed.data.quotedPostId);
+      quotedAuthorId = quoted.row.author_id;
     }
     const { data, error } = await supabaseAdmin
       .from("community_feed_posts")
@@ -1200,6 +1202,15 @@ router.post(
       actorId: user.id,
       postId: id,
     });
+    // Notify the quoted post's author that their post sparked a new discussion.
+    if (quotedAuthorId && quotedAuthorId !== user.id) {
+      void recordSocialNotification({
+        userId: quotedAuthorId,
+        actorId: user.id,
+        kind: "quote",
+        postId: id,
+      });
+    }
     const presented = await presentMany([data as PostRow], user);
     if ("missing" in presented || "error" in presented || presented.posts.length === 0) {
       noStore(res);
@@ -1955,6 +1966,25 @@ router.patch(
       }
       serverError(res, error, "community-feed");
       return;
+    }
+    // Reward the answered question: notify the answer's author that their
+    // reply was accepted (fire-and-forget, never blocks the response).
+    if (parsed.data.commentId) {
+      const { data: acceptedRow } = await supabaseAdmin
+        .from("community_feed_comments")
+        .select("id, author_id")
+        .eq("id", parsed.data.commentId)
+        .maybeSingle();
+      const acceptedAuthor = (acceptedRow as { author_id?: string } | null)?.author_id;
+      if (acceptedAuthor && acceptedAuthor !== user.id) {
+        void recordSocialNotification({
+          userId: acceptedAuthor,
+          actorId: user.id,
+          kind: "accept",
+          postId,
+          commentId: parsed.data.commentId,
+        });
+      }
     }
     const refreshed = await findPost(postId);
     if (!("row" in refreshed) || !refreshed.row) {
