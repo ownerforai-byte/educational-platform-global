@@ -82,6 +82,18 @@ export function CommunityNotificationsView() {
     });
   }, []);
 
+  // Opening a notification marks just that one read and deep-links to the
+  // exact comment when the event was on a reply.
+  const openNotification = useCallback((id: string) => {
+    void markSocialNotificationsRead({ ids: [id] }).then(() => {
+      setItems((current) =>
+        current.map((row) => (row.id === id ? { ...row, readAt: row.readAt ?? new Date().toISOString() } : row)),
+      );
+      setUnreadCount((count) => Math.max(0, count - 1));
+      window.dispatchEvent(new Event(SOCIAL_NOTIFICATION_REFRESH_EVENT));
+    });
+  }, []);
+
   return (
     <div className="space-y-4">
       <header className="flex flex-wrap items-center justify-between gap-3">
@@ -108,7 +120,11 @@ export function CommunityNotificationsView() {
 
       <ul className="space-y-2">
         {items.map((item) => {
-          const href = item.postId ? sharePath(item.postId) : "/ai/community";
+          const href = item.postId
+            ? item.commentId
+              ? `${sharePath(item.postId)}#comment-${item.commentId}`
+              : sharePath(item.postId)
+            : "/ai/community";
           const actorName = item.actor?.fullName ?? "Someone";
           const label =
             item.kind === "like" && item.commentId
@@ -120,6 +136,9 @@ export function CommunityNotificationsView() {
             <li key={item.id}>
               <Link
                 href={href}
+                onClick={() => {
+                  if (!item.readAt) openNotification(item.id);
+                }}
                 className={cn(
                   surfaceCardFlat,
                   "flex items-start gap-3 rounded-xl px-4 py-3 text-sm transition-colors hover:bg-muted/40",

@@ -49,6 +49,8 @@ interface CommentRowProps {
   onToggleCommentLike?: (commentId: string) => void;
   /** Rendered as a threaded reply — lighter card, hugs the parent comment. */
   nested?: boolean;
+  /** Momentary ring when deep-linked from a notification. */
+  highlighted?: boolean;
 }
 
 const CommentRow = memo(function CommentRow({
@@ -66,6 +68,7 @@ const CommentRow = memo(function CommentRow({
   onAcceptAnswer,
   onToggleCommentLike,
   nested = false,
+  highlighted = false,
 }: CommentRowProps) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(comment.body);
@@ -132,6 +135,7 @@ const CommentRow = memo(function CommentRow({
         // Threaded replies: lighter, tighter — reads as part of the parent.
         nested && "border-border/60 bg-muted/30 px-2.5 py-2 shadow-none",
         followUpActive && "ring-1 ring-primary/25",
+        highlighted && "ring-2 ring-primary/40 border-primary/40",
         botComment && "border-primary/30 bg-primary/[0.03]",
         isAccepted &&
           "border-emerald-500/40 bg-emerald-500/[0.04] ring-1 ring-emerald-500/20 hover:border-emerald-500/50",
@@ -337,6 +341,7 @@ export function CommentList({
   acceptedCommentId,
   onAcceptAnswer,
   onToggleCommentLike,
+  highlightCommentId,
 }: {
   comments: FeedComment[];
   viewer: SessionUser | null;
@@ -354,6 +359,8 @@ export function CommentList({
   acceptedCommentId?: string | null;
   onAcceptAnswer?: (commentId: string) => void;
   onToggleCommentLike?: (commentId: string) => void;
+  /** Comment scrolled to from a notification deep-link (#comment-<id>). */
+  highlightCommentId?: string | null;
 }) {
   if (comments.length === 0 && !botTyping) {
     return <p className="px-1 py-2 text-sm text-muted-foreground">No replies yet.</p>;
@@ -371,11 +378,17 @@ export function CommentList({
       roots.push(comment);
     }
   }
+  // On question posts the accepted answer leads the thread — readers come for
+  // the solution, not the chronology.
+  if (acceptedCommentId) {
+    const acceptedIdx = roots.findIndex((comment) => comment.id === acceptedCommentId);
+    if (acceptedIdx > 0) roots.unshift(roots.splice(acceptedIdx, 1)[0]);
+  }
 
   function branch(comment: FeedComment, depth: number) {
     const nested = children.get(comment.id) ?? [];
     return (
-      <li key={comment.id}>
+      <li key={comment.id} id={`comment-${comment.id}`} className="scroll-mt-24">
         <CommentRow
           comment={comment}
           viewer={viewer}
@@ -391,6 +404,7 @@ export function CommentList({
           onAcceptAnswer={onAcceptAnswer}
           onToggleCommentLike={onToggleCommentLike}
           nested={depth > 0}
+          highlighted={highlightCommentId === comment.id}
         />
         {nested.length > 0 ? (
           // Replies hug the parent like Twitter/Reddit: a tight indent with a

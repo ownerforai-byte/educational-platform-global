@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Bookmark,
   Check,
@@ -51,6 +51,17 @@ import { cn } from "@/lib/utils";
 export function CommunityPostDetailView() {
   const [shareCopied, setShareCopied] = useState(false);
   const [shareCount, setShareCount] = useState<number | null>(null);
+  // Deep-link from a notification: /ai/community/posts/<id>#comment-<commentId>
+  // scrolls to that comment and rings it briefly so the reader lands on context.
+  const [highlightCommentId, setHighlightCommentId] = useState<string | null>(null);
+  useEffect(() => {
+    const match = /^#comment-([0-9a-f-]{36})$/i.exec(window.location.hash);
+    if (!match) return;
+    const commentId = match[1];
+    setHighlightCommentId(commentId);
+    const timer = window.setTimeout(() => setHighlightCommentId(null), 4000);
+    return () => window.clearTimeout(timer);
+  }, []);
   const {
     view,
     user,
@@ -81,6 +92,13 @@ export function CommunityPostDetailView() {
     handleAcceptAnswer,
     handleToggleCommentLike,
   } = useCommunityBoard();
+
+  // Scroll to the deep-linked comment once the post (and its comments) render.
+  useEffect(() => {
+    if (!post || !highlightCommentId) return;
+    const el = document.getElementById(`comment-${highlightCommentId}`);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [post, highlightCommentId]);
 
   return (
     <>
@@ -386,6 +404,7 @@ export function CommunityPostDetailView() {
               viewer={user}
               botTyping={botTypingIds.has(post.id)}
               followUpBotCommentId={followUpBotCommentId}
+              highlightCommentId={highlightCommentId}
               postKind={post.kind}
               postAuthorId={post.author.id}
               postAuthorName={post.author.fullName}
