@@ -61,6 +61,49 @@ export async function countUnreadSocialNotifications(userId: string): Promise<nu
   return typeof count === "number" ? count : 0;
 }
 
+export type NotificationActorProfile = {
+  fullName: string;
+  username: string | null;
+  avatarPath: string | null;
+};
+
+export async function loadNotificationActorProfiles(
+  actorIds: string[],
+): Promise<Map<string, NotificationActorProfile>> {
+  const actors = new Map<string, NotificationActorProfile>();
+  if (actorIds.length === 0) return actors;
+  const { data: actorRows } = await getAdminClient()
+    .from("profiles")
+    .select("id, full_name, username, avatar_path")
+    .in("id", actorIds);
+  for (const row of (actorRows ?? []) as Array<{
+    id: string;
+    full_name: string | null;
+    username: string | null;
+    avatar_path: string | null;
+  }>) {
+    actors.set(row.id, {
+      fullName: (row.full_name ?? "").trim() || "Student",
+      username: row.username ?? null,
+      avatarPath: row.avatar_path,
+    });
+  }
+  return actors;
+}
+
+export async function loadNotificationPostTitles(postIds: string[]): Promise<Map<string, string>> {
+  const postTitles = new Map<string, string>();
+  if (postIds.length === 0) return postTitles;
+  const { data: postRows } = await getAdminClient()
+    .from("community_feed_posts")
+    .select("id, title")
+    .in("id", postIds);
+  for (const row of (postRows ?? []) as Array<{ id: string; title: string }>) {
+    postTitles.set(row.id, row.title);
+  }
+  return postTitles;
+}
+
 export async function markSocialNotificationsRead(
   userId: string,
   opts: { all: boolean; ids: string[] },

@@ -2,11 +2,12 @@ import { Router } from "express";
 import { requireAuth, type AuthedRequest } from "../../middleware/auth.js";
 import { asyncHandler } from "../../middleware/asyncHandler.js";
 import { serverError } from "../../middleware/error-handler.js";
-import { supabaseAdmin } from "../../db/supabase.js";
 import { profileMediaPublicUrl } from "../../services/profile-media-url.js";
 import {
   countUnreadSocialNotifications,
   listSocialNotifications,
+  loadNotificationActorProfiles,
+  loadNotificationPostTitles,
   markSocialNotificationsRead,
 } from "../../db/repositories/social-notification.repository.js";
 
@@ -73,30 +74,16 @@ router.get(
     // "Nandu liked your post '…'" instead of a bare "liked your post".
     const actorIds = [...new Set(page.map((row) => row.actor_id).filter(Boolean))] as string[];
     const postIds = [...new Set(page.map((row) => row.post_id).filter(Boolean))] as string[];
+    const actorProfiles = await loadNotificationActorProfiles(actorIds);
     const actors = new Map<string, { fullName: string; username: string | null; avatarUrl: string | null }>();
-    if (actorIds.length > 0) {
-      const { data: actorRows } = await supabaseAdmin
-        .from("profiles")
-        .select("id, full_name, username, avatar_path")
-        .in("id", actorIds);
-      for (const row of (actorRows ?? []) as Array<{ id: string; full_name: string | null; username: string | null; avatar_path: string | null }>) {
-        actors.set(row.id, {
-          fullName: (row.full_name ?? "").trim() || "Student",
-          username: row.username ?? null,
-          avatarUrl: profileMediaPublicUrl(row.avatar_path),
-        });
-      }
+    for (const [id, profile] of actorProfiles) {
+      actors.set(id, {
+        fullName: profile.fullName,
+        username: profile.username,
+        avatarUrl: profileMediaPublicUrl(profile.avatarPath),
+      });
     }
-    const postTitles = new Map<string, string>();
-    if (postIds.length > 0) {
-      const { data: postRows } = await supabaseAdmin
-        .from("community_feed_posts")
-        .select("id, title")
-        .in("id", postIds);
-      for (const row of (postRows ?? []) as Array<{ id: string; title: string }>) {
-        postTitles.set(row.id, row.title);
-      }
-    }
+    const postTitles = await loadNotificationPostTitles(postIds);
 
     res.setHeader("Cache-Control", "no-store");
     res.json({
