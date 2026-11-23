@@ -162,6 +162,28 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       "oxygen", // cutaneous underwater respiration
     ],
   },
+  "concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem": {
+    title: "A pond ecosystem, cut open",
+    figures: [
+      {
+        src: "/docs/figures/biology/pond-ecosystem-cross-section.jpg",
+        caption:
+          "One pond, every job, cut from shore to mud. The littoral edge is the photosynthesis showroom: reeds and cattails anchor in the shallows, lily pads and a lotus ride the surface, waterweed stays submerged — all producers converting sunlight at full strength. The open limnetic water drifts with pinprick phytoplankton and the translucent zooplankton that graze them, a school of small silver fish feeding one level up, and a larger carp waiting a level above that; a dragonfly hunts across the surface film and a frog straddles the waterline, linking water to land. Down where light fails, the dark profundal water gives way to benthic mud: sunken leaves, snail shells, worm-like tubificids and a hazy bacterial-fungal film working the detritus, releasing minerals back into the water the producers at the top will use again. Structure on the left and right, function running through all of it — energy flowing one way from sun to carp, nutrients cycling forever in the mud.",
+        alt: "Pond ecosystem cross-section with vegetated littoral shore, open water with fish and plankton, and dark benthic mud with decomposers",
+        keyword: "littoral",
+      },
+    ],
+    keepSvg: [
+      // classification-style diagrams the raster plate does not supersede
+      "functional", // structure vs function split
+      "pond", // functional groups schematic
+      "littoral", // zonation diagram
+      "plankton", // plankton groups
+      "decomposer", // decomposition loop
+      "homeostasis", // self-regulation feedback
+      "forest", // forest ecosystem comparison
+    ],
+  },
   "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano": {
     title: "Inside a bacterial cell — the cutaway",
     figures: [
