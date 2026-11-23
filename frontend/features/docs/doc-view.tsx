@@ -1,24 +1,23 @@
 "use client";
 
 /**
- * TopicDocView — renders a topic's concept JSON as a paginated academic
- * document viewer with KaTeX math rendering, syntax highlighting, and reader
+ * TopicDocView — renders a topic's concept JSON as an A4-paper academic
+ * document with KaTeX math rendering, syntax highlighting, and reader
  * controls.
  *
- * Owner request (pagination): the document used to flow as one endless
- * article, which made long topics feel random and tiring. Every content
- * block is now expressed as bound paper pages via DocPager — a block that
- * does not fit on the current page moves to the next one, and headings are
- * never stranded at a page bottom. The block → page-item building lives in
- * doc-pages.tsx; the measuring/packing/print machinery lives in doc-pager.tsx.
+ * Owner request (A4 paper): the previous bound-page pager felt like a web
+ * widget — chunked sheets, page folios, card backgrounds. The document now
+ * reads like a real printout: ONE continuous A4-proportioned paper sheet on
+ * a desk surface, all content flowing on it like a book — justified
+ * paragraphs, small print-size letters, generous paper margins. The
+ * block → item building lives in doc-pages.tsx; the paper typography lives
+ * in the `.a4-paper` rules in app/globals.css.
  *
- * Persistent chrome (toolbar, metadata, outline) stays above the pages so
- * the reader controls are always reachable; the outline buttons jump
- * straight to the page holding that section.
- *
- * Every prose/math surface goes through <MathMarkdown>, which compiles
- * markdown + `$…$` / `$$…$$` / `\(…\)` / `\[…\]` LaTeX (and mhchem `\ce{}`)
- * to KaTeX.
+ * Persistent chrome (toolbar, outline) stays above the paper so the reader
+ * controls are always reachable; the outline buttons scroll the paper to
+ * the section anchor. Every prose/math surface goes through <MathMarkdown>,
+ * which compiles markdown + `$…$` / `$$…$$` / `\(…\)` / `\[…\]` LaTeX (and
+ * mhchem `\ce{}`) to KaTeX.
  */
 
 import { useMemo, useRef, useState } from "react";
@@ -34,7 +33,6 @@ import { parseNotes, readingMinutes } from "./doc-parser";
 import { getTopicFigures, type TopicFigure } from "./figures/registry";
 import { buildDocConceptMap, type RawMindmap } from "./doc-mindmap";
 import { buildDocPageItems } from "./doc-pages";
-import { DocPager, type DocPagerApi } from "./doc-pager";
 
 export interface TopicDocData {
   summary?: string;
@@ -98,7 +96,7 @@ export function TopicDocView({
 }: TopicDocViewProps) {
   const [fontSize, setFontSize] = useState<"sm" | "base" | "lg">("base");
   const [copied, setCopied] = useState(false);
-  const pagerApiRef = useRef<DocPagerApi | null>(null);
+  const paperRef = useRef<HTMLDivElement>(null);
 
   const notes = useMemo(() => data?.notes ?? [], [data]);
   const blocks = useMemo(() => parseNotes(notes), [notes]);
@@ -136,10 +134,10 @@ export function TopicDocView({
 
   const fontClass =
     fontSize === "sm"
-      ? "text-xs leading-6"
+      ? "text-[11.5px] leading-[1.7]"
       : fontSize === "lg"
-        ? "text-base leading-8"
-        : "text-sm leading-7";
+        ? "text-[15px] leading-[1.8]"
+        : "text-[13px] leading-[1.8]";
 
   const items = useMemo(
     () =>
@@ -172,17 +170,20 @@ export function TopicDocView({
   };
 
   const jumpToSection = (sectionId: string) => {
-    pagerApiRef.current?.goToSection(sectionId);
+    const el =
+      paperRef.current?.querySelector(`#${CSS.escape(sectionId)}`) ??
+      document.getElementById(sectionId);
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <article
-      className="doc-view doc-viewer-paper mx-auto max-w-4xl space-y-6 rounded-2xl border border-border/80 bg-card p-6 shadow-xs sm:p-10 print:border-none print:bg-white print:p-0 print:shadow-none"
+      className="doc-view"
       aria-label={`${topicTitle} document`}
     >
-      {/* ── Document Reader Toolbar ── */}
-      <header className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-5 sm:p-6 print:border-black print:bg-white">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-3 print:hidden">
+      {/* ── Document Reader Toolbar (desk chrome — never printed) ── */}
+      <header className="print:hidden">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <span className="flex h-6 w-6 items-center justify-center rounded-md bg-primary/20 text-primary">
               <FileText className="h-3.5 w-3.5" />
@@ -245,75 +246,85 @@ export function TopicDocView({
           </div>
         </div>
 
-        {/* Document Metadata Badges */}
-        <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] font-semibold">
-          <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-primary print:border print:border-black print:text-black">
-            {classSlug.replace(/-notes$/, "")}
-          </span>
-          <span className="rounded-full bg-primary/10 px-2.5 py-0.5 capitalize text-primary print:border print:border-black print:text-black">
-            {subjectSlug}
-          </span>
-          <span className="rounded-full bg-muted px-2.5 py-0.5 text-muted-foreground print:border print:border-black print:text-black">
-            {minutes} min read
-          </span>
-          <span className="rounded-full bg-sky-500/10 px-2.5 py-0.5 text-sky-600 dark:text-sky-400 print:border print:border-black print:text-black">
-            LaTeX / KaTeX Typeset
-          </span>
-          {formulas.length > 0 && (
-            <span className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-amber-600 dark:text-amber-400 print:hidden">
-              {formulas.length} equation{formulas.length === 1 ? "" : "s"}
-            </span>
-          )}
-          {figureCount > 0 && (
-            <span className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-emerald-600 dark:text-emerald-400 print:hidden">
-              {figureCount} diagram{figureCount === 1 ? "" : "s"}
-            </span>
-          )}
-        </div>
-
-        {/* Title */}
-        <h1 className="mt-3 text-2xl font-extrabold tracking-tight sm:text-3xl text-foreground print:text-black">
-          {topicTitle}
-        </h1>
-        <p className="mt-1 text-xs text-muted-foreground print:text-gray-700">
-          {branchCount > 0
-            ? `Structured academic document with ${branchCount} conceptual branches, formal derivations, exam shortcuts, and practice problems.`
-            : "Complete verified syllabus document with KaTeX mathematical formulas, definitions, and practice exercises."}
-        </p>
+        {/* ── Mini TOC / Outline — scrolls the paper to the section ── */}
+        <nav
+          aria-label="Document contents"
+          className="mt-3 rounded-xl border border-border/70 bg-muted/30 p-3"
+        >
+          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+            Document Outline
+          </p>
+          <ol className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+            {SECTIONS.map((s, i) => (
+              <li key={s.id}>
+                <button
+                  type="button"
+                  onClick={() => jumpToSection(s.id)}
+                  className="text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
+                >
+                  <span className="font-bold text-primary">{i + 1}.</span> {s.label}
+                </button>
+              </li>
+            ))}
+          </ol>
+        </nav>
       </header>
 
-      {/* ── Mini TOC / Outline — jumps straight to the page holding a section ── */}
-      <nav
-        aria-label="Document contents"
-        className="rounded-xl border border-border/70 bg-muted/30 p-3.5 print:hidden"
-      >
-        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-          Document Outline
-        </p>
-        <ol className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5 text-xs sm:text-sm">
-          {SECTIONS.map((s, i) => (
-            <li key={s.id}>
-              <button
-                type="button"
-                onClick={() => jumpToSection(s.id)}
-                className="text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
-              >
-                <span className="font-bold text-primary">{i + 1}.</span> {s.label}
-              </button>
-            </li>
-          ))}
-        </ol>
-      </nav>
+      {/* ── The desk the A4 sheet lies on ── */}
+      <div className="a4-desk mt-4 rounded-xl px-2 py-6 sm:px-6 sm:py-10 print:p-0">
+        {/* ── The A4 paper: one continuous sheet, all content printed on it ── */}
+        <div
+          ref={paperRef}
+          data-a4-paper=""
+          className="a4-paper"
+          role="document"
+        >
+          {/* Printed document head — badges, title, standfirst */}
+          <header className="a4-head mb-8 border-b-2 border-neutral-800 pb-5">
+            <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-500">
+              <span className="text-neutral-800">{classSlug.replace(/-notes$/, "")}</span>
+              <span aria-hidden>·</span>
+              <span className="capitalize">{subjectSlug}</span>
+              <span aria-hidden>·</span>
+              <span>{minutes} min read</span>
+              {formulas.length > 0 && (
+                <span>
+                  {formulas.length} equation{formulas.length === 1 ? "" : "s"}
+                </span>
+              )}
+              {figureCount > 0 && (
+                <span>
+                  {figureCount} diagram{figureCount === 1 ? "" : "s"}
+                </span>
+              )}
+            </div>
+            <h1 className="a4-title">{topicTitle}</h1>
+            <p className="a4-standfirst mt-2">
+              {branchCount > 0
+                ? `Structured academic document with ${branchCount} conceptual branches, formal derivations, exam shortcuts, and practice problems.`
+                : "Complete verified syllabus document with definitions, worked explanations, and practice exercises."}
+            </p>
+          </header>
 
-      {/* ── Paginated document body ── */}
-      <DocPager
-        items={items}
-        measureKey={fontSize}
-        ariaLabel={`${topicTitle} document`}
-        onApiReady={(api) => {
-          pagerApiRef.current = api;
-        }}
-      />
+          {/* The printed body: every block flows on the same sheet */}
+          <div className="flow-root">
+            {items.map((it) => (
+              <div
+                key={it.key}
+                data-doc-section={it.sectionId ?? undefined}
+                className="flow-root pb-4"
+              >
+                {it.node}
+              </div>
+            ))}
+          </div>
+
+          {/* Printed foot rule, like a book's end-of-document rule */}
+          <footer className="a4-foot mt-10 border-t border-neutral-300 pt-3 text-center text-[10px] uppercase tracking-[0.2em] text-neutral-400">
+            End of document · {topicTitle}
+          </footer>
+        </div>
+      </div>
     </article>
   );
 }

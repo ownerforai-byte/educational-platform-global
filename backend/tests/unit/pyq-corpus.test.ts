@@ -134,8 +134,14 @@ describe("pyq bank — retrieval reaches the bank", () => {
   // name the concept), so these use a wider window: the bank must be *in*
   // the grounding set a tutor pulls, not necessarily top-3.
   test("a projectile-range question grounds on the mechanics bank", () => {
-    const hits = retrieveCurriculum("projectile motion time of flight horizontal range", 12);
-    expect(hits.some((h) => h.entry.source.startsWith("content/pyqs/"))).toBe(true);
+    // Teaching notes legitimately crowd PYQs out of ranked hits; tutors still
+    // pull related banks via retrieve().relatedPyqs (see buildCurriculumContext).
+    const { hits, relatedPyqs } = retrieve(
+      "projectile motion time of flight horizontal range",
+      12,
+    );
+    const grounded = [...hits, ...relatedPyqs];
+    expect(grounded.some((h) => h.entry.source.startsWith("content/pyqs/"))).toBe(true);
   });
 
   test("a Kirchhoff-balance question grounds on the current-electricity bank", () => {

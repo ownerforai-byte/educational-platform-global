@@ -15,4 +15,7 @@ public interface CacheDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void put(CacheEntry entry);
+
+    @Query("DELETE FROM app_cache")
+    void clearAll();
 }

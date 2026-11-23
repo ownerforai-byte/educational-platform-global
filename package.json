@@ -48,6 +48,8 @@
     "lint:ratchet": "node scripts/ci/lint-ratchet.mjs",
     "lint:ratchet:baseline": "node scripts/ci/lint-ratchet.mjs --write-baseline",
     "ai:regression": "node scripts/ci/ai-regression.mjs --check",
+    "openapi:generate": "node backend/scripts/generate-openapi.mjs",
+    "openapi:check": "node backend/scripts/generate-openapi.mjs --check",
     "ai:regression:build": "node scripts/ci/ai-regression.mjs --build-set",
     "ai:regression:live": "node scripts/ci/ai-regression.mjs --live",
     "smoke:env": "node scripts/ci/check-smoke-env.mjs",

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ravikisan.platform.fcm.FcmRegistrar;
 import com.ravikisan.platform.net.ApiClient;
+import com.ravikisan.platform.security.SecureWindow;
 import com.ravikisan.platform.sync.SyncScheduler;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SecureWindow.apply(this);
         setContentView(R.layout.activity_main);
         FcmRegistrar.requestPermissionIfNeeded(this);
         FcmRegistrar.registerForSignedInUser(this);

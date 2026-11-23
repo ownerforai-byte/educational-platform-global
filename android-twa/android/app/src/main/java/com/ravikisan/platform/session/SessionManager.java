@@ -14,21 +14,19 @@ public class SessionManager {
     private final SharedPreferences prefs;
 
     public SessionManager(Context context) {
-        SharedPreferences stored;
         try {
             MasterKey masterKey = new MasterKey.Builder(context)
                     .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
                     .build();
-            stored = EncryptedSharedPreferences.create(
+            prefs = EncryptedSharedPreferences.create(
                     context,
                     PREFS,
                     masterKey,
                     EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
                     EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM);
         } catch (Exception e) {
-            stored = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
+            throw new IllegalStateException("Secure session storage is required on this device", e);
         }
-        prefs = stored;
     }
 
     public boolean isSignedIn() {
@@ -45,10 +43,10 @@ public class SessionManager {
     }
 
     public void saveSession(String token, String userJson) {
-        prefs.edit().putString(KEY_TOKEN, token).putString(KEY_USER_JSON, userJson).apply();
+        prefs.edit().putString(KEY_TOKEN, token).putString(KEY_USER_JSON, userJson).commit();
     }
 
     public void clear() {
-        prefs.edit().remove(KEY_TOKEN).remove(KEY_USER_JSON).apply();
+        prefs.edit().clear().commit();
     }
 }

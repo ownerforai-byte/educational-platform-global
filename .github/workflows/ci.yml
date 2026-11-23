@@ -97,6 +97,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
       - run: npm ci
+      - run: npm run openapi:check
       - run: npm run test:run --workspace=educational-platform-backend
 
   # Sentry sourcemaps (PHASE 1.2, 2026-10-27): the actual upload happens

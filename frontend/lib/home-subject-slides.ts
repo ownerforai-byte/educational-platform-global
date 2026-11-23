@@ -10,6 +10,32 @@ import {
   VSEPR_SHAPES,
 } from "./rail-diagrams";
 import {
+  ALANKARA_TREE,
+  ARGUMENT_MAP,
+  DERIVATIVE_CURVE,
+  EQUILIBRIUM_GRAPH,
+  ESSAY_STRUCTURE,
+  GRAVITATION_ORBITS,
+  HARDY_WEINBERG,
+  INDUCTIVE_EFFECT,
+  KARAK_CHART,
+  MOLE_MAP,
+  NIBANDHA_SKELETON,
+  OHM_NETWORK,
+  PROBABILITY_TREE,
+  RDNA_PCR_STEPS,
+  SAHITYA_VIDHA_TREE,
+  SANDHI_FLOW,
+  STRAIGHT_LINE_FORMS,
+  TENSE_TIMELINE,
+  VECTORS_DOT_CROSS,
+  VOICE_SPEECH_MAP,
+  WORD_FORMATION_TREE,
+  WORK_ENERGY_STOPPING,
+} from "./rail-diagrams-detailed";
+import { knowledgeTreeSvg, type KnowledgeTreeNode } from "./rail-knowledge-tree";
+import { RAIL_KNOWLEDGE_TREES } from "./rail-knowledge-trees";
+import {
   Atom,
   BookOpen,
   Calculator,
@@ -1688,3 +1714,133 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
     ],
   },
 ];
+
+/* ───────────────────────────────────────────────────────────────────────────
+ * 2026-11-24 rail upgrade — "their all knowledge": every curated card now
+ * carries (a) a detailed textbook-grade drawing at the concept that needs it
+ * and (b) a hierarchical Knowledge map figure, laid out from tree data by
+ * knowledgeTreeSvg(). Both go through the same note-visuals guard at render
+ * time, so an unusable drawing is dropped, never half-shown.
+ *
+ * Done as one post-processing pass over the declared rails instead of 60
+ * hand-edits inside the literals: every consumer of HOME_SUBJECT_RAILS
+ * (home page, SubjectRails previews, tests) sees the upgrade.
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+/** Detailed drawing per card, attached to the card's first row (its Concept). */
+const RAIL_CARD_DIAGRAMS: Record<string, { svg: string; caption: string }> = {
+  "Work–energy theorem and the stopping-distance family": {
+    svg: WORK_ENERGY_STOPPING,
+    caption: "Braking car: kinetic energy converted to heat by friction — d = v²/2μg and why doubling v quadruples d.",
+  },
+  "Universal gravitation, orbital and escape speed": {
+    svg: GRAVITATION_ORBITS,
+    caption: "Circular orbit (v_c), bound ellipse and the escape trajectory (v_esc) around a planet of mass M.",
+  },
+  "Ohm's law, drift velocity and network reduction": {
+    svg: OHM_NETWORK,
+    caption: "Series–parallel reduction: R₂ ∥ R₃ first, then series with R₁ and the cell's internal resistance r.",
+  },
+  "The mole concept — the bridge between mass and particles": {
+    svg: MOLE_MAP,
+    caption: "The mole as hub: mass (n = m/M), particles (n·N_A), solution (C·V) and gas volume (22.4 L at STP).",
+  },
+  "Kp, Kc and Le Chatelier's principle": {
+    svg: EQUILIBRIUM_GRAPH,
+    caption: "Rates equalise at equilibrium; a change in concentration, pressure or temperature shifts the balance.",
+  },
+  "Inductive effect, acidity order and IUPAC naming": {
+    svg: INDUCTIVE_EFFECT,
+    caption: "A −I group pulls electron density along the chain and strengthens the acid it sits on.",
+  },
+  "rDNA technology — insulin, PCR and the five steps": {
+    svg: RDNA_PCR_STEPS,
+    caption: "The five rDNA steps ending in marker screening, and one PCR temperature cycle (denature → anneal → extend).",
+  },
+  "Hardy–Weinberg equilibrium and carrier frequency": {
+    svg: HARDY_WEINBERG,
+    caption: "Genotype frequencies p², 2pq, q² drawn from allele frequencies p and q — carriers are the 2pq block.",
+  },
+  "Differentiation — first principles to maxima and minima": {
+    svg: DERIVATIVE_CURVE,
+    caption: "The derivative as tangent slope: rising, falling, and the stationary points where f′ = 0.",
+  },
+  "Straight line — slope, angle and distance forms": {
+    svg: STRAIGHT_LINE_FORMS,
+    caption: "One line, three equations: point-slope through P, intercept form with a and b, and the slope m = tan θ.",
+  },
+  "Dot and cross product — projection, angle, area": {
+    svg: VECTORS_DOT_CROSS,
+    caption: "Projection of b on a (the dot product) and the parallelogram whose area is |a × b| (the cross product).",
+  },
+  "Probability — addition rule, independence, Bayes": {
+    svg: PROBABILITY_TREE,
+    caption: "A two-stage tree: multiply along branches, add across outcomes, then invert with Bayes.",
+  },
+  "The twelve tenses — structure, use and time markers": {
+    svg: TENSE_TIMELINE,
+    caption: "The 3 × 4 tense grid on one timeline: past, present and future each in four aspects.",
+  },
+  "Passive voice and indirect speech without losing marks": {
+    svg: VOICE_SPEECH_MAP,
+    caption: "Voice: object becomes subject, verb becomes be + V3. Speech: backshift tense, pronouns and time words.",
+  },
+  "Essay and paragraph structure that earns full marks": {
+    svg: ESSAY_STRUCTURE,
+    caption: "The essay skeleton: thesis-bearing introduction, PEEL body paragraphs, full-circle conclusion.",
+  },
+  "Claims, evidence and the fallacies they ask you to spot": {
+    svg: ARGUMENT_MAP,
+    caption: "A sound argument joins evidence and warrant to its claim — the named fallacies each break one joint.",
+  },
+  "Word formation, idioms and the pairs that trap everyone": {
+    svg: WORD_FORMATION_TREE,
+    caption: "Words are built: prefix + root + suffix (un·predict·able), then used in idioms and collocations.",
+  },
+  "कारक — छ वटै कारक र चिन्ने उपाय": {
+    svg: KARAK_CHART,
+    caption: "छ वटै कारक तिनका चिन्ह र वाक्य-उदाहरणसहित — पहिचानको ट्रिकसहित।",
+  },
+  "सन्धि — स्वर र व्यंजनको मेल, विच्छेद र नियम": {
+    svg: SANDHI_FLOW,
+    caption: "सन्धिका दुई शाखा — स्वर (गुण, दीर्घ, यण्, वृद्धि) र व्यंजन (प्रथम, तृतीय, ङ्/ञ्) — नियमसहित।",
+  },
+  "अलंकार — उपमा, रूपक, यमक, अनुप्रास चिन्ने तरिका": {
+    svg: ALANKARA_TREE,
+    caption: "चार मुख्य अलंकार, प्रत्येकको पहिचान-कुञ्जी र एक-एक उदाहरण।",
+  },
+  "निबन्ध लेखन — ढाँचा, शब्दसीमा र गल्तीहरू": {
+    svg: NIBANDHA_SKELETON,
+    caption: "निबन्धको ढाँचा: भूमिका → तीन विषयवस्तु → निष्कर्ष, शब्दसीमा र साझा गल्तीहरूसहित।",
+  },
+  "कविता, गीत, कथा, उपन्यास र निबन्धको भेद": {
+    svg: SAHITYA_VIDHA_TREE,
+    caption: "पाँच विधा, तिनका भेद र एक-एक पहिचान विशेषता — परीक्षाको तीन-बुँदे उत्तर ढाँचासहित।",
+  },
+};
+
+for (const rail of HOME_SUBJECT_RAILS) {
+  for (const slide of rail.slides) {
+    if (slide.teaser || slide.unitDivider) continue;
+
+    // (a) the detailed drawing, at the concept that needs it
+    const firstRow = slide.rows[0];
+    const detail = RAIL_CARD_DIAGRAMS[slide.title];
+    if (firstRow && detail && !firstRow.figure) {
+      firstRow.figure = { svg: detail.svg, caption: detail.caption };
+    }
+
+    // (b) the hierarchical Knowledge map, laid out from the tree data
+    const tree: KnowledgeTreeNode | undefined = RAIL_KNOWLEDGE_TREES[slide.title];
+    if (tree) {
+      slide.rows.push({
+        label: "Knowledge map",
+        text: "The whole topic as one hierarchy: the root concept, its branches, and the leaves the board examines — read the tree first, then walk the rows.",
+        figure: {
+          svg: knowledgeTreeSvg(tree),
+          caption: "Knowledge map — how this topic's knowledge is organised.",
+        },
+      });
+    }
+  }
+}

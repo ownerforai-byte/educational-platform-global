@@ -7,6 +7,7 @@ import userRoutes from "./user/index.js";
 import socialRoutes from "./social/index.js";
 import adminRoutes from "./admin/index.js";
 import platformRoutes from "./platform/index.js";
+import v2Router from "./v2/index.js";
 import accessRequestsRoutes from "./access-requests.js";
 import periodicUnlockRouter from "./content/periodic-unlock.controller.js";
 import revealRouter from "./content/reveal.controller.js";
@@ -25,6 +26,8 @@ apiRouter.use("/user-state", stateRouter);
 apiRouter.use("/content", revealRouter);
 apiRouter.use("/access-requests", accessRequestsRoutes);
 apiRouter.use("/periodic-table/unlock", periodicUnlockRouter);
+
+apiRouter.use("/v2", v2Router);
 
 apiRouter.use("/auth", authRoutes);
 apiRouter.use("/ai", aiRoutes);

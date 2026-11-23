@@ -7,6 +7,8 @@ import { test, expect, type Page } from "@playwright/test";
  *   2. the signed-in owner path (/notes and /pyqs reachable + Veer opens),
  *   3. the Member-tier Plus gate (locked surface visible + /plans link).
  *
+ * Satisfies PLATFORM_UPGRADE_MASTER_PLAN T1.3 (Login → Content → Veer).
+ *
  * The auth tests skip themselves when the SMOKE_* env vars are absent, so a
  * bare local run (npx playwright test) still executes the guest test.
  * Required env: SMOKE_OWNER_EMAIL/PASSWORD, SMOKE_MEMBER_EMAIL/PASSWORD

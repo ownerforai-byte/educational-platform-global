@@ -32,8 +32,17 @@ import type { TopicFigure } from "./figures/registry";
 import { ZoomableFigure } from "./figures/zoomable-figure";
 import type { DocConceptMap } from "./doc-mindmap";
 import { DocMindMap } from "./doc-mindmap-view";
-import type { DocPagerItem } from "./doc-pager";
 import type { TopicDocData } from "./doc-view";
+
+/** One renderable block of the document flow (former pager item). */
+export interface DocPagerItem {
+  key: string;
+  node: React.ReactNode;
+  /** Never leave this item as the last block of a page (headings, labels). */
+  keepWithNext?: boolean;
+  /** First item of a logical section carries its anchor id (e.g. "doc-map"). */
+  sectionId?: string;
+}
 
 function FigureBlock({ figure }: { figure: TopicFigure }) {
   // Owner request 2026-11-21: diagrams must be zoomable — click opens the

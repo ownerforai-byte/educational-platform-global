@@ -3,6 +3,7 @@
 This folder builds the **standalone native Android app** (`com.ravikisan.platform`)
 that talks to `https://harindrasah.com.np/api` (auth, profile, community) with
 Room offline cache and FCM — **not** a URL-launching TWA. See `NATIVE_MIGRATION.md`.
+Data protection (encryption, backup block, MITM hardening): **`SECURITY.md`**.
 
 > A TWA is the Play-recommended way to ship a PWA: it's small, updates with
 > your site, gets badging/guaranteed-installed, and works offline. The PWA

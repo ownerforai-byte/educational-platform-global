@@ -82,3 +82,29 @@ export { BiologyFaunalDiversity3D } from "@/components/lab/biology-faunal-divers
 export { BiologyFloralDiversity3D } from "@/components/lab/biology-floral-diversity-3d";
 export { BiologyMicrobiology3D } from "@/components/lab/biology-microbiology-3d";
 export { CellOrganellesExplorer3D } from "@/components/lab/cell-organelles-explorer-3d";
+
+// Openings for previously unreferenced feature-local lab components
+export { LabPageBody } from "./lab-page-body";
+export { BiologyCell3D } from "./biology-cell-3d";
+export { BiologyEcology3D } from "./biology-ecology-3d";
+// NOTE: biology-evolution-3d.tsx exports BiologyEvolution3D, which collides with the
+// BiologyEvolution3D above (from components/lab/biology-3d). Aliased until the duplicate is resolved.
+export { BiologyEvolution3D as BiologyEvolution3DAlt } from "./biology-evolution-3d";
+export { OpticsInterferenceLab } from "./optics-interference-lab";
+export { PhysicsAdvancedMotionLab } from "./physics-advanced-motion";
+export { PhysicsMotionLab } from "./physics-motion-3d";
+export { Class11Biology3DPlus } from "./class11/class11-biology-3d-plus";
+export type {
+  VisualSchema,
+} from "./visual-schema";
+export {
+  VISUAL_SCHEMAS,
+  getVisualSchema,
+} from "./visual-schema";
+export {
+  TOPIC_VISUALS,
+  getTopicVisualKeyword,
+} from "./topic-visual-mapping";
+export * from "./topic-visuals";
+export { default as Chapter3D } from "./chapters/[chapterId]/chapters-3d";
+export { default as Topic3D } from "./topics/[topicId]/topics-3d";

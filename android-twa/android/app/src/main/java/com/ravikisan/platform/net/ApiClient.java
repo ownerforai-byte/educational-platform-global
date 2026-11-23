@@ -5,6 +5,8 @@ import android.content.Context;
 import com.ravikisan.platform.BuildConfig;
 import com.ravikisan.platform.data.AppDatabase;
 import com.ravikisan.platform.data.CacheEntry;
+import com.ravikisan.platform.security.FieldCipher;
+import com.ravikisan.platform.security.SecureStorageBootstrap;
 import com.ravikisan.platform.session.SessionManager;
 
 import org.json.JSONObject;
@@ -25,10 +27,17 @@ public class ApiClient {
 
     private final SessionManager session;
     private final AppDatabase db;
+    private final FieldCipher cipher;
 
     public ApiClient(Context context) {
+        SecureStorageBootstrap.runOnce(context);
         session = new SessionManager(context);
         db = AppDatabase.get(context);
+        try {
+            cipher = new FieldCipher();
+        } catch (Exception e) {
+            throw new IllegalStateException("Offline encryption unavailable", e);
+        }
     }
 
     public SessionManager session() {
@@ -102,6 +111,7 @@ public class ApiClient {
                 /* local sign-out still proceeds */
             } finally {
                 session.clear();
+                db.cache().clearAll();
                 if (done != null) done.run();
             }
         });
@@ -120,7 +130,7 @@ public class ApiClient {
             JSONObject live = request("GET", path, null, true);
             if (live != null) {
                 db.cache()
-                        .put(new CacheEntry(cacheKey, live.toString(), System.currentTimeMillis()));
+                        .put(new CacheEntry(cacheKey, seal(live.toString()), System.currentTimeMillis()));
                 cb.onResult(live, null);
                 return;
             }
@@ -128,7 +138,7 @@ public class ApiClient {
             String cached = db.cache().get(cacheKey);
             if (cached != null) {
                 try {
-                    cb.onResult(new JSONObject(cached), e);
+                    cb.onResult(new JSONObject(openSealed(cached)), e);
                     return;
                 } catch (Exception ignored) {
                     /* fall through */
@@ -186,6 +196,19 @@ public class ApiClient {
         String text = sb.toString().trim();
         if (text.isEmpty()) return new JSONObject();
         return new JSONObject(text);
+    }
+
+    private String seal(String json) throws Exception {
+        return cipher.encrypt(json);
+    }
+
+    private String openSealed(String stored) throws Exception {
+        try {
+            return cipher.decrypt(stored);
+        } catch (Exception notEncrypted) {
+            new JSONObject(stored);
+            return stored;
+        }
     }
 
     public interface Callback<T> {

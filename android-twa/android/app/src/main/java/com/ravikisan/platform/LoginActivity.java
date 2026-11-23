@@ -13,6 +13,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.ravikisan.platform.auth.FirebaseAuthGateway;
 import com.ravikisan.platform.fcm.FcmRegistrar;
 import com.ravikisan.platform.net.ApiClient;
+import com.ravikisan.platform.security.SecureWindow;
 import com.ravikisan.platform.sync.SyncScheduler;
 
 import org.json.JSONObject;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SecureWindow.apply(this);
         setContentView(R.layout.activity_login);
         api = new ApiClient(this);
         error = findViewById(R.id.error);
@@ -43,6 +45,15 @@ public class LoginActivity extends AppCompatActivity {
             error.setVisibility(View.GONE);
             attemptSignIn(em, pw);
         });
+    }
+
+    @Override
+    protected void onStop() {
+        TextInputEditText password = findViewById(R.id.password);
+        if (password != null) {
+            password.setText("");
+        }
+        super.onStop();
     }
 
     private void attemptSignIn(String email, String password) {
