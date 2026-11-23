@@ -41,6 +41,9 @@ export function CommunityPersonView() {
             onFollowChange={(following) => patchAuthorFollowing(person.profile!.id, following)}
           />
           <p className="text-[13px] text-muted-foreground">
+            {typeof person.profile.followerCount === "number"
+              ? `${person.profile.followerCount} ${person.profile.followerCount === 1 ? "follower" : "followers"} · `
+              : null}
             {person.posts.length} public {person.posts.length === 1 ? "post" : "posts"}
             {person.profile.role && person.profile.role !== "member" ? (
               <span> · {person.profile.role}</span>

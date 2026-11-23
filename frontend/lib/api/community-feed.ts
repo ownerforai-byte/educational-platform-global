@@ -33,6 +33,8 @@ export interface FeedAuthor {
   /** Author's self-set context for "Asking from …" lines. */
   location?: string | null;
   followingByYou?: boolean;
+  /** Followers of this member (populated on person/profile views only). */
+  followerCount?: number | null;
 }
 
 export interface FeedAttachment {

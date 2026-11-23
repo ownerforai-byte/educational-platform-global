@@ -300,6 +300,7 @@ function toAuthor(
   id: string,
   profile?: ProfileRow,
   followingByYou = false,
+  followerCount?: number | null,
 ) {
   if (isCommunityBotId(id)) {
     return communityBotAuthorOverlay(id, profile, followingByYou);
@@ -318,6 +319,7 @@ function toAuthor(
     avatarUrl: profileMediaPublicUrl(profile?.avatar_path ?? null),
     location: (profile?.location ?? "").trim() || null,
     followingByYou,
+    followerCount: typeof followerCount === "number" ? followerCount : null,
   };
 }
 
@@ -3209,11 +3211,18 @@ router.get(
       bad(res, parsed.error);
       return;
     }
+    // Follower count for the person header — best-effort, never blocks the page.
+    const { count: followerCount } = await supabaseAdmin
+      .from("profile_follows")
+      .select("follower_id", { count: "exact", head: true })
+      .eq("following_id", userId);
+    const author = toAuthor(profile.id, profile, false,
+      typeof followerCount === "number" ? followerCount : null);
     const loaded = await loadRecent(userId);
     if ("missing" in loaded) {
       noStore(res);
       res.json({
-        profile: toAuthor(profile.id, profile),
+        profile: author,
         posts: [],
         nextCursor: null,
         migrated: false,
@@ -3229,7 +3238,7 @@ router.get(
     const presented = await presentMany(slice, viewer);
     if ("missing" in presented) {
       noStore(res);
-      res.json({ profile: toAuthor(profile.id, profile), posts: [], nextCursor: null, migrated: false });
+      res.json({ profile: author, posts: [], nextCursor: null, migrated: false });
       return;
     }
     if ("error" in presented) {
@@ -3239,11 +3248,12 @@ router.get(
     const viewerId = viewer?.id ?? null;
     noStore(res);
     res.json({
-      profile: toAuthor(
-        profile.id,
-        profile,
-        viewerId ? (await followingByAuthor(viewerId, [profile.id])).has(profile.id) : false,
-      ),
+      profile: viewerId
+        ? {
+            ...author,
+            followingByYou: (await followingByAuthor(viewerId, [profile.id])).has(profile.id),
+          }
+        : author,
       posts: presented.posts,
       nextCursor,
       migrated: true,
