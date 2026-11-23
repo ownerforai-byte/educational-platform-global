@@ -3208,7 +3208,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "Bacteria at work: Lactobacillus sours milk into curd, Rhizobium feeds legumes nitrogen, Streptomyces yields antibiotics, and sewage plants run on bacterial digestion.",
         alt: "Useful bacteria curd Lactobacillus Rhizobium antibiotics sewage treatment",
-        keyword: "curd",
+        keyword: "antibiotic",
       },
       {
         Component: BacterialPlasmidMesosome,
@@ -3264,7 +3264,7 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
         caption:
           "TB's slow chain: airborne droplet nuclei from a cough → alveoli → latent pause (most people) → reactivation when immunity dips — the latent 25% is the world's reserve of future cases.",
         alt: "Tuberculosis transmission cycle latent and active TB",
-        keyword: "tuberculosis",
+        keyword: "pneumonia",
       },
     ],
   },

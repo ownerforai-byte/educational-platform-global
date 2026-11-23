@@ -11,7 +11,7 @@ import { render } from "@testing-library/react";
 
 import { getTopicFigures } from "@/features/docs/figures/registry";
 import { RICH_FIGURES } from "@/features/docs/figures/rich-biology";
-import { noteMatchesTopic } from "@/lib/note-topic-match";
+import { noteMatchesTopic, pickCanonicalNoteEntry } from "@/lib/note-topic-match";
 import { TopicDocView } from "@/features/docs/doc-view";
 
 const BIOLOGY_MANIFEST = join(
@@ -29,11 +29,37 @@ interface ManifestEntry {
 }
 
 function canonicalNotesFor(topicSlug: string): string[] {
+  // The loader prefers the class-correct corpus source (content/manifest.json),
+  // then falls back to the flat subject manifest — mirror that order here.
+  const corpusPath = join(process.cwd(), "public/data/content/manifest.json");
+  try {
+    const corpus = JSON.parse(readFileSync(corpusPath, "utf-8")) as Array<{
+      path: string;
+      data: { topicSlug?: string; notes?: string[] };
+    }>;
+    const corpusCands = corpus
+      .filter(
+        (it) =>
+          typeof it.path === "string" &&
+          it.path.startsWith("notes/concepts/") &&
+          typeof it.data?.topicSlug === "string" &&
+          Array.isArray(it.data.notes),
+      )
+      .map((it) => ({
+        topicSlug: it.data.topicSlug!,
+        filename: it.path.split("/").pop() ?? "",
+        notes: it.data.notes!,
+      }))
+      .filter((c) => noteMatchesTopic(c.topicSlug, c.filename, topicSlug));
+    const corpusWinner = pickCanonicalNoteEntry(corpusCands, topicSlug);
+    if (corpusWinner) return corpusWinner.notes;
+  } catch {
+    // corpus unavailable — fall through to the flat manifest
+  }
   const manifest = JSON.parse(readFileSync(BIOLOGY_MANIFEST, "utf-8")) as ManifestEntry[];
   const cands = manifest.filter((e) => noteMatchesTopic(e.topicSlug, e.filename, topicSlug));
   expect(cands.length).toBeGreaterThan(0);
-  cands.sort((a, b) => a.duplicateType - b.duplicateType);
-  const winner = cands[0];
+  const winner = pickCanonicalNoteEntry(manifest, topicSlug) ?? cands[0];
   const file = join(BIOLOGY_NOTES_DIR, winner.unitSlug, winner.filename);
   const data = JSON.parse(readFileSync(file, "utf-8")) as { notes: string[] };
   return data.notes;

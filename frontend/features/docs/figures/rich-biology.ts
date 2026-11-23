@@ -66,7 +66,7 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       "crossing over", // chiasma diagram
     ],
   },
-  "mendels-laws-of-inheritance": {
+  "mendel-s-laws-of-inheritance-monohybrid-and-dihybrid-cross": {
     title: "From DNA to trait — what a gene really is",
     figures: [
       {
@@ -78,7 +78,7 @@ export const RICH_FIGURES: Record<string, TopicFiguresEntry> = {
       },
     ],
   },
-  "immune-system-and-immunity": {
+  "immune-system-innate-and-adaptive-immunity": {
     title: "The adaptive immune response — antibodies and their cells",
     figures: [
       {

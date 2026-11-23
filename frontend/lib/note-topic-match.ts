@@ -72,7 +72,9 @@ export function noteMatchQuality(
 
 /**
  * Pick the canonical note entry for a syllabus topic from manifest candidates:
- * highest match quality first, then lowest duplicateType, then manifest order.
+ * highest match quality first, then richest content (total note characters,
+ * when provided — the corpus branch supplies it so a 7-block deep-dive beats a
+ * 14-line stub list), then lowest duplicateType, then manifest order.
  * Returns undefined when nothing matches.
  */
 export function pickCanonicalNoteEntry<
@@ -80,23 +82,29 @@ export function pickCanonicalNoteEntry<
     topicSlug?: string | null;
     filename?: string | null;
     duplicateType?: number;
+    noteChars?: number;
   },
 >(entries: readonly T[], topicSlug: string): T | undefined {
   let best: T | undefined;
   let bestQuality: NoteMatchQuality = 0;
+  let bestChars = Number.NEGATIVE_INFINITY;
   let bestDup = Number.POSITIVE_INFINITY;
   let bestIndex = Number.POSITIVE_INFINITY;
   entries.forEach((entry, index) => {
     const quality = noteMatchQuality(entry.topicSlug, entry.filename, topicSlug);
     if (quality === 0) return;
+    const chars = entry.noteChars ?? 0;
     const dup = entry.duplicateType ?? 1;
     const better =
       quality > bestQuality ||
       (quality === bestQuality &&
-        (dup < bestDup || (dup === bestDup && index < bestIndex)));
+        (chars > bestChars ||
+          (chars === bestChars &&
+            (dup < bestDup || (dup === bestDup && index < bestIndex)))));
     if (better) {
       best = entry;
       bestQuality = quality;
+      bestChars = chars;
       bestDup = dup;
       bestIndex = index;
     }

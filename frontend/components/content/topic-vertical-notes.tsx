@@ -46,7 +46,7 @@ import {
 import { resolveLabVisualEntry } from "@/lib/lab-visual-index";
 import { getLabVisualNode } from "@/lib/lab-visual-loaders";
 import { getActivityForTopic } from "@/lib/lab-manifest";
-import { noteMatchQuality, noteMatchesTopic } from "@/lib/note-topic-match";
+import { noteMatchQuality, noteMatchesTopic, pickCanonicalNoteEntry } from "@/lib/note-topic-match";
 import { resolveUnitSlug } from "@/lib/syllabus-notes-manifest";
 import { ActivityJourney } from "@/components/lab/activity-journey";
 
@@ -559,16 +559,26 @@ export function TopicVerticalNotes({
         }
         if (cancelled) return;
 
-        const match = supplementaryManifest.find((item) => {
-          const parsed = parseContentPath(item.path);
-          if (!parsed || parsed.classDir !== classDir || parsed.unitSlug !== unitId) return false;
-          const filename = filenameFromContentPath(item.path);
-          return noteMatchesTopic(
-            typeof item.data?.topicSlug === "string" ? item.data.topicSlug : undefined,
-            filename,
-            topicSlug,
-          );
-        });
+        // Rank corpus candidates exactly like the flat branch: match quality
+        // first, then content richness (total note characters — a 7-block
+        // deep-dive beats a 14-line stub list that history happened to place
+        // earlier in the corpus), then original corpus order.
+        const corpusCandidates = supplementaryManifest
+          .map((item, index) => {
+            const parsed = parseContentPath(item.path);
+            if (!parsed || parsed.classDir !== classDir || parsed.unitSlug !== unitId) return null;
+            const filename = filenameFromContentPath(item.path);
+            const topicSlugOfItem =
+              typeof item.data?.topicSlug === "string" ? item.data.topicSlug : undefined;
+            if (!noteMatchesTopic(topicSlugOfItem, filename, topicSlug)) return null;
+            const noteChars = Array.isArray(item.data?.notes)
+              ? item.data.notes.reduce((sum, n) => sum + (typeof n === "string" ? n.length : 0), 0)
+              : 0;
+            return { topicSlug: topicSlugOfItem, filename, noteChars, index, item };
+          })
+          .filter((c): c is NonNullable<typeof c> => c !== null);
+        const best = pickCanonicalNoteEntry(corpusCandidates, topicSlug);
+        const match = best?.item;
 
         if (match) {
           const parsed = parseContentPath(match.path);
