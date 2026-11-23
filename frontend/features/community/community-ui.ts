@@ -90,9 +90,9 @@ export function postKindLabel(id: string | undefined): string {
 }
 
 /**
- * Conversational context line for a post, like other platforms show under the
- * author row: "Questioning about Physics · Asking from Kathmandu · Questioning
- * to @name". Empty segments are skipped.
+ * Imperative context line for a post, shown under the author row like other
+ * platforms: "Ask about Physics · Ask from Kathmandu · Ask to @name". Empty
+ * segments are skipped.
  */
 export function postContextLine(post: {
   kind?: string;
@@ -104,18 +104,18 @@ export function postContextLine(post: {
   const segments: string[] = [];
   const subject = categoryLabel(post.category);
   const kind = post.kind ?? "discussion";
-  if (kind === "question") segments.push(`Questioning about ${subject}`);
-  else if (kind === "resource") segments.push(`Sharing ${subject} resources`);
-  else if (kind === "study_note") segments.push(`Sharing a ${subject} study note`);
-  else if (kind === "announcement") segments.push(`Announcement · ${subject}`);
-  else segments.push(`Discussing ${subject}`);
+  if (kind === "question") segments.push(`Ask about ${subject}`);
+  else if (kind === "resource") segments.push(`Share ${subject} resources`);
+  else if (kind === "study_note") segments.push(`Share a ${subject} study note`);
+  else if (kind === "announcement") segments.push(`Announce in ${subject}`);
+  else segments.push(`Discuss ${subject}`);
 
   const from = (post.author?.location ?? "").trim();
-  if (from) segments.push(`Asking from ${from}`);
+  if (from) segments.push(`Ask from ${from}`);
 
   const quotedName =
     post.quotedAuthorName ?? post.quotedPost?.author?.fullName ?? null;
-  if (quotedName) segments.push(`Questioning to @${quotedName}`);
+  if (quotedName) segments.push(`Ask to @${quotedName}`);
 
   return segments.join(" · ");
 }
