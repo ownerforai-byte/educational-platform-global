@@ -284,3 +284,7 @@ frontend/.logs/
 .mastery-src/
 backend/srch.tmp.mjs
 backend/backups/
+
+# Scratch output folders (generated previews / image tooling)
+/.a4-preview/
+/images/
