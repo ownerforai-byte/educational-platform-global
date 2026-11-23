@@ -283,7 +283,7 @@ export function CommunityFeed({
         <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Browse by category">
           <button
             type="button"
-            className={cn(chipBtn, "min-h-[22px] px-2 py-0.5 text-[10px]", chipActive(!category))}
+            className={cn(chipBtn, "min-h-7 px-2.5 py-0.5 text-[11px]", chipActive(!category))}
             onClick={() => onSelectCategory("")}
           >
             All
@@ -295,7 +295,7 @@ export function CommunityFeed({
               <button
                 key={item.id}
                 type="button"
-                className={cn(chipBtn, "min-h-[22px] px-2 py-0.5 text-[10px]", chipActive(category === item.id))}
+                className={cn(chipBtn, "min-h-7 px-2.5 py-0.5 text-[11px]", chipActive(category === item.id))}
                 onClick={() => onSelectCategory(item.id)}
               >
                 {visual ? <span aria-hidden>{visual.glyph}</span> : null}

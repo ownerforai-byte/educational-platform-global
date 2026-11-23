@@ -79,6 +79,7 @@ export function CommunityPostDetailView() {
     handleSaveCommentEdit,
     handleDeleteComment,
     handleAcceptAnswer,
+    handleToggleCommentLike,
   } = useCommunityBoard();
 
   return (
@@ -404,6 +405,7 @@ export function CommunityPostDetailView() {
                   ? (commentId) => handleAcceptAnswer(post.id, commentId)
                   : undefined
               }
+              onToggleCommentLike={(commentId) => handleToggleCommentLike(post.id, commentId)}
             />
           </section>
         </div>

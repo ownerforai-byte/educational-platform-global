@@ -62,6 +62,9 @@ export interface FeedComment {
   replyTo?: FeedCommentReplyTo | null;
   /** Parent comment id when this is a threaded reply; null/absent for top-level. */
   parentId?: string | null;
+  /** Twitter-style likes on comments. Optional for older payloads. */
+  likeCount?: number;
+  likedByYou?: boolean;
 }
 
 export interface FeedAssistantReply {
@@ -250,6 +253,13 @@ export function listTrending(): Promise<{ posts: FeedPost[]; migrated: boolean }
 
 export function sharePost(id: string): Promise<{ shareCount: number }> {
   return call(`${ROOT}/feed/${id}/share`, { method: "POST" });
+}
+
+/** Toggle the viewer's like on a comment (X-style heart). */
+export function toggleCommentLike(
+  commentId: string,
+): Promise<{ likeCount: number; likedByYou: boolean }> {
+  return call(`${ROOT}/feed/comments/${commentId}/like`, { method: "POST" });
 }
 
 export function toggleRepost(id: string): Promise<{ repostCount: number; repostedByYou: boolean }> {

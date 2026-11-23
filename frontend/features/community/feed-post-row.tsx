@@ -79,6 +79,7 @@ export interface FeedPostRowThreadProps {
   onSaveCommentEdit: (postId: string, commentId: string, nextBody: string) => Promise<{ ok: boolean; error?: string }>;
   onDeleteComment: (postId: string, commentId: string) => void;
   onAcceptAnswer?: (postId: string, commentId: string) => void;
+  onToggleCommentLike?: (postId: string, commentId: string) => void;
 }
 
 export interface FeedPostRowProps extends FeedPostRowThreadProps {
@@ -127,6 +128,7 @@ export const FeedPostRow = memo(function FeedPostRow({
   onSaveCommentEdit,
   onDeleteComment,
   onAcceptAnswer,
+  onToggleCommentLike,
 }: FeedPostRowProps) {
   const rowRef = useRef<HTMLElement | null>(null);
   const [shareCopied, setShareCopied] = useState(false);
@@ -490,6 +492,7 @@ export const FeedPostRow = memo(function FeedPostRow({
                   ? (commentId) => onAcceptAnswer?.(item.id, commentId)
                   : undefined
               }
+              onToggleCommentLike={(commentId) => onToggleCommentLike?.(item.id, commentId)}
             />
           )}
         </section>

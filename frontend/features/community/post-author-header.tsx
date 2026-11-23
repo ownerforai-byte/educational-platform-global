@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useMemo } from "react";
 import type { FeedAuthor } from "@/lib/api/community-feed";
 import { profilePath } from "@/lib/api/profile";
 import { FollowButton } from "@/features/profile/follow-button";
@@ -9,19 +10,8 @@ import { cn } from "@/lib/utils";
 import { isCommunityBot, resolveFeedAuthor } from "@/lib/community-bot";
 import { BotIdentityBadge } from "@/features/community/bot-identity-badge";
 import { CreatorIdentityBadge } from "@/features/community/creator-identity-badge";
-import { planLabel } from "@/features/community/community-ui";
+import { planLabel, relativeTime } from "@/features/community/community-ui";
 import { isCreatorAuthor } from "@/lib/owner";
-
-function formatPostWhen(iso: string): string {
-  try {
-    return new Intl.DateTimeFormat(undefined, {
-      dateStyle: "medium",
-      timeStyle: "short",
-    }).format(new Date(iso));
-  } catch {
-    return iso;
-  }
-}
 
 export function PostAuthorHeader({
   author,
@@ -43,7 +33,19 @@ export function PostAuthorHeader({
   const bot = isCommunityBot(resolved.id);
   const creator = !bot && isCreatorAuthor(resolved);
   const href = profilePath(resolved.username, resolved.id);
-  const handle = resolved.username ? `@${resolved.username}` : resolved.id.slice(0, 8);
+  // Twitter-style @handle — but never expose raw id prefixes when a profile has
+  // no username yet; omitting the slot reads better than showing `HoI3UrsD`.
+  const handle = resolved.username ? `@${resolved.username}` : null;
+  const absoluteWhen = useMemo(() => {
+    try {
+      return new Intl.DateTimeFormat(undefined, {
+        dateStyle: "medium",
+        timeStyle: "short",
+      }).format(new Date(createdAt as string));
+    } catch {
+      return createdAt ?? "";
+    }
+  }, [createdAt]);
 
   return (
     <div className={cn("flex items-start gap-2.5", compact && "gap-2")}>
@@ -119,9 +121,14 @@ export function PostAuthorHeader({
               {planLabel(resolved.plan)}
             </span>
           )}
-          <Link href={href} className="truncate text-xs text-muted-foreground hover:text-foreground hover:underline">
-            {handle}
-          </Link>
+          {handle ? (
+            <Link
+              href={href}
+              className="truncate text-xs text-muted-foreground hover:text-foreground hover:underline"
+            >
+              {handle}
+            </Link>
+          ) : null}
           {contextLabel ? (
             <span
               className={cn(
@@ -145,16 +152,26 @@ export function PostAuthorHeader({
           ) : null}
         </div>
         {createdAt ? (
-          <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] text-muted-foreground">
+          <p
+            className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] text-muted-foreground"
+            title={absoluteWhen}
+          >
             <span className="inline-flex items-center gap-1">
               <Clock3 className="h-3 w-3 shrink-0 opacity-70" aria-hidden />
-              <time dateTime={createdAt}>{formatPostWhen(createdAt)}</time>
+              <time dateTime={createdAt}>{relativeTime(createdAt)}</time>
             </span>
-            <span aria-hidden className="text-border">·</span>
-            <Link href={href} className="inline-flex items-center gap-0.5 font-medium text-primary hover:underline">
-              <UserRound className="h-3 w-3 shrink-0" aria-hidden />
-              View profile
-            </Link>
+            {!compact ? (
+              <>
+                <span aria-hidden className="text-border">·</span>
+                <Link
+                  href={href}
+                  className="inline-flex items-center gap-0.5 font-medium text-primary hover:underline"
+                >
+                  <UserRound className="h-3 w-3 shrink-0" aria-hidden />
+                  View profile
+                </Link>
+              </>
+            ) : null}
           </p>
         ) : (
           <Link

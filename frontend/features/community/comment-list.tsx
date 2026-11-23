@@ -1,11 +1,12 @@
 "use client";
 
-import { memo, useState } from "react";
+import { useEffect, memo, useState } from "react";
 import {
   AlertCircle,
   Award,
   Check,
   Ellipsis,
+  Heart,
   Loader2,
   MessageCircle,
   Pencil,
@@ -45,6 +46,7 @@ interface CommentRowProps {
   postAuthorName?: string;
   acceptedCommentId?: string | null;
   onAcceptAnswer?: (commentId: string) => void;
+  onToggleCommentLike?: (commentId: string) => void;
   /** Rendered as a threaded reply — lighter card, hugs the parent comment. */
   nested?: boolean;
 }
@@ -62,10 +64,20 @@ const CommentRow = memo(function CommentRow({
   postAuthorName,
   acceptedCommentId,
   onAcceptAnswer,
+  onToggleCommentLike,
   nested = false,
 }: CommentRowProps) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(comment.body);
+  // Twitter-style heart on replies. Local state gives instant feedback; the
+  // controller reconciles with the server count and reverts on failure.
+  const [like, setLike] = useState({
+    count: comment.likeCount ?? 0,
+    liked: Boolean(comment.likedByYou),
+  });
+  useEffect(() => {
+    setLike({ count: comment.likeCount ?? 0, liked: Boolean(comment.likedByYou) });
+  }, [comment.id, comment.likeCount, comment.likedByYou]);
   const [saving, setSaving] = useState(false);
   const [editError, setEditError] = useState<string | null>(null);
 
@@ -263,6 +275,27 @@ const CommentRow = memo(function CommentRow({
               <MessageCircle className="h-3.5 w-3.5" aria-hidden />
               Reply
             </button>
+            {onToggleCommentLike ? (
+              <button
+                type="button"
+                aria-pressed={like.liked}
+                aria-label={like.liked ? "Unlike reply" : "Like reply"}
+                onClick={() => {
+                  const next = { count: like.count + (like.liked ? -1 : 1), liked: !like.liked };
+                  setLike({ count: Math.max(0, next.count), liked: next.liked });
+                  onToggleCommentLike(comment.id);
+                }}
+                className={cn(
+                  "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[12px] font-medium transition-colors",
+                  like.liked
+                    ? "bg-rose-500/10 text-rose-600 dark:text-rose-400"
+                    : "text-muted-foreground hover:bg-rose-500/10 hover:text-rose-600 dark:hover:text-rose-400",
+                )}
+              >
+                <Heart className={cn("h-3.5 w-3.5", like.liked && "fill-current")} aria-hidden />
+                {like.count > 0 ? like.count : null}
+              </button>
+            ) : null}
             {postKind === "question" &&
             viewer.id === postAuthorId &&
             onAcceptAnswer &&
@@ -303,6 +336,7 @@ export function CommentList({
   postAuthorName,
   acceptedCommentId,
   onAcceptAnswer,
+  onToggleCommentLike,
 }: {
   comments: FeedComment[];
   viewer: SessionUser | null;
@@ -319,6 +353,7 @@ export function CommentList({
   postAuthorName?: string;
   acceptedCommentId?: string | null;
   onAcceptAnswer?: (commentId: string) => void;
+  onToggleCommentLike?: (commentId: string) => void;
 }) {
   if (comments.length === 0 && !botTyping) {
     return <p className="px-1 py-2 text-sm text-muted-foreground">No replies yet.</p>;
@@ -354,6 +389,7 @@ export function CommentList({
           postAuthorName={postAuthorName}
           acceptedCommentId={acceptedCommentId}
           onAcceptAnswer={onAcceptAnswer}
+          onToggleCommentLike={onToggleCommentLike}
           nested={depth > 0}
         />
         {nested.length > 0 ? (

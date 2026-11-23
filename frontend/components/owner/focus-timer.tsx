@@ -54,7 +54,7 @@ export function FocusTimer() {
       : "bg-muted-foreground/40";
 
   return (
-    <div className="fixed left-6 bottom-safe-panel z-50 flex flex-col items-start gap-2">
+    <div className="fixed left-6 bottom-safe-panel z-50 hidden flex-col items-start gap-2 sm:flex">
       {open && (
         <div className="w-72 rounded-2xl border border-border/60 bg-card p-4 shadow-xl">
           <div className="flex items-center justify-between">

@@ -18,6 +18,7 @@ import {
   toggleLike,
   toggleRepost,
   toggleSave as toggleSaveRequest,
+  toggleCommentLike as toggleCommentLikeRequest,
   updateComment,
   COMMUNITY_POST_KINDS,
   type CommunityFeedFilter,
@@ -962,6 +963,33 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     [knownPost, patchPostEverywhere],
   );
 
+  const handleToggleCommentLike = useCallback(
+    (postId: string, commentId: string) => {
+      const before = (knownPost(postId)?.comments ?? []).find((c) => c.id === commentId);
+      const wasLiked = Boolean(before?.likedByYou);
+      const likeComment = (item: FeedPost, liked: boolean, count?: number): FeedPost => ({
+        ...item,
+        comments: (item.comments ?? []).map((c) =>
+          c.id === commentId
+            ? {
+                ...c,
+                likedByYou: liked,
+                likeCount: count ?? Math.max(0, (c.likeCount ?? 0) + (liked ? 1 : -1)),
+              }
+            : c,
+        ),
+      });
+      patchPostEverywhere(postId, (item) => likeComment(item, !wasLiked));
+      void toggleCommentLikeRequest(commentId)
+        .then((result) => patchPostEverywhere(postId, (item) => likeComment(item, result.likedByYou, result.likeCount)))
+        .catch((err) => {
+          patchPostEverywhere(postId, (item) => likeComment(item, wasLiked, before?.likeCount));
+          setError(statusOf(err) === 401 ? "Sign in to like replies." : messageOf(err, "Could not save that like."));
+        });
+    },
+    [knownPost, patchPostEverywhere],
+  );
+
   const threadPropsForPost = useCallback((postId: string) => {
     const state = threadStates[postId];
     const threadPost = state?.post ?? knownPost(postId);
@@ -986,8 +1014,9 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
       onSaveCommentEdit: handleSaveCommentEdit,
       onDeleteComment: handleDeleteComment,
       onAcceptAnswer: handleAcceptAnswer,
+      onToggleCommentLike: handleToggleCommentLike,
     };
-  }, [botTypingIds, composerFocusTrigger, expandedPostId, followUpBotCommentId, handleAcceptAnswer, handleDeleteComment, handleSaveCommentEdit, handleSubmitComment, knownPost, patchAuthorFollowing, threadStates, toggleInlineComments, user]);
+  }, [botTypingIds, composerFocusTrigger, expandedPostId, followUpBotCommentId, handleAcceptAnswer, handleDeleteComment, handleSaveCommentEdit, handleToggleCommentLike, handleSubmitComment, knownPost, patchAuthorFollowing, threadStates, toggleInlineComments, user]);
 
   const onAssistantReply = useCallback(
     (target: FeedPost) => {
@@ -1135,6 +1164,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     handleSaveCommentEdit,
     handleDeleteComment,
     handleAcceptAnswer,
+    handleToggleCommentLike,
   };
 }
 

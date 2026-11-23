@@ -149,6 +149,29 @@ interface CommentRow {
   parent_comment_id?: string | null;
 }
 
+/** Batched comment-like lookup: counts per comment plus the viewer's own likes. */
+async function commentLikesFor(
+  commentIds: string[],
+  viewerId: string | null,
+): Promise<{ counts: Map<string, number>; mine: Set<string>; missingTable: boolean }> {
+  const counts = new Map<string, number>();
+  const mine = new Set<string>();
+  if (commentIds.length === 0) return { counts, mine, missingTable: false };
+  const { data, error } = await supabaseAdmin
+    .from("community_comment_likes")
+    .select("comment_id, user_id")
+    .in("comment_id", commentIds);
+  if (error) {
+    if (isMissingTable(error)) return { counts, mine, missingTable: true };
+    throw error;
+  }
+  for (const row of (data ?? []) as Array<{ comment_id: string; user_id: string }>) {
+    counts.set(row.comment_id, (counts.get(row.comment_id) ?? 0) + 1);
+    if (viewerId && row.user_id === viewerId) mine.add(row.comment_id);
+  }
+  return { counts, mine, missingTable: false };
+}
+
 const postSchema = z.object({
   title: z.string().trim().min(4).max(160),
   body: z.string().trim().min(1).max(20000),
@@ -1574,6 +1597,21 @@ router.get(
     );
     const assistantReply = await assistantReplyMeta(postId, found.row.author_id, viewer);
     const postAuthorId = found.row.author_id;
+    let likeCounts = new Map<string, number>();
+    let likedByYou = new Set<string>();
+    try {
+      const likes = await commentLikesFor(
+        comments.map((comment) => comment.id),
+        viewer?.id ?? null,
+      );
+      likeCounts = likes.counts;
+      likedByYou = likes.mine;
+    } catch (error) {
+      if (!isMissingTable(error as DbError)) {
+        serverError(res, error, "community-feed");
+        return;
+      }
+    }
     noStore(res);
     res.json({
       post: {
@@ -1599,6 +1637,8 @@ router.get(
             updatedAt: comment.updated_at,
             parentId: comment.parent_comment_id ?? null,
             replyTo,
+            likeCount: likeCounts.get(comment.id) ?? 0,
+            likedByYou: likedByYou.has(comment.id),
             author: toAuthor(
               comment.author_id,
               profiles.get(comment.author_id),
@@ -2157,6 +2197,110 @@ router.post(
     res.json({
       repostCount: rows.length,
       repostedByYou: rows.some((row) => row.user_id === user.id),
+    });
+  }),
+);
+
+router.post(
+  "/feed/comments/:commentId/like",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const commentId = param(req.params.commentId);
+    if (!isUuid(commentId)) {
+      bad(res, "Comment not found", 404);
+      return;
+    }
+    await ensureProfile(user);
+    const { data: commentRow, error: commentError } = await supabaseAdmin
+      .from("community_feed_comments")
+      .select("id, post_id, author_id")
+      .eq("id", commentId)
+      .maybeSingle();
+    if (commentError) {
+      if (isMissingTable(commentError)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, commentError, "community-feed");
+      return;
+    }
+    if (!commentRow) {
+      bad(res, "Comment not found", 404);
+      return;
+    }
+    const existing = await supabaseAdmin
+      .from("community_comment_likes")
+      .select("comment_id, user_id")
+      .eq("comment_id", commentId)
+      .eq("user_id", user.id)
+      .maybeSingle();
+    if (existing.error) {
+      if (isMissingTable(existing.error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, existing.error, "community-feed");
+      return;
+    }
+    let liked: boolean;
+    if (existing.data) {
+      const removed = await supabaseAdmin
+        .from("community_comment_likes")
+        .delete()
+        .eq("comment_id", commentId)
+        .eq("user_id", user.id);
+      if (removed.error) {
+        serverError(res, removed.error, "community-feed");
+        return;
+      }
+      liked = false;
+    } else {
+      const inserted = await supabaseAdmin.from("community_comment_likes").insert({
+        comment_id: commentId,
+        user_id: user.id,
+        created_at: new Date().toISOString(),
+      });
+      if (inserted.error) {
+        if (isMissingTable(inserted.error)) {
+          unavailable(res);
+          return;
+        }
+        const msg = (inserted.error.message ?? "").toLowerCase();
+        if (!msg.includes("duplicate") && !msg.includes("unique")) {
+          serverError(res, inserted.error, "community-feed");
+          return;
+        }
+      }
+      liked = true;
+    }
+    const { data: likes, error: countError } = await supabaseAdmin
+      .from("community_comment_likes")
+      .select("user_id")
+      .eq("comment_id", commentId);
+    if (countError) {
+      if (isMissingTable(countError)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, countError, "community-feed");
+      return;
+    }
+    const rows = (likes ?? []) as Array<{ user_id: string }>;
+    const comment = commentRow as { post_id: string; author_id: string };
+    if (liked && comment.author_id !== user.id) {
+      void recordSocialNotification({
+        userId: comment.author_id,
+        actorId: user.id,
+        kind: "like",
+        postId: comment.post_id,
+        commentId,
+      });
+    }
+    noStore(res);
+    res.json({
+      likeCount: rows.length,
+      likedByYou: rows.some((row) => row.user_id === user.id),
     });
   }),
 );
