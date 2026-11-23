@@ -26,6 +26,9 @@ export type Doc = {
   description: string;
   href: string;
   kind: Kind;
+  /** Which class track the document belongs to. Defaults to class 11 —
+   *  the historical behaviour — so existing entries need no change. */
+  classSlug?: string;
 };
 
 import {
@@ -38,6 +41,9 @@ import {
 // (both served from frontend/public, so they need no backend / auth).
 export const PDFS_DIR = "/pdfs";
 export const MAT_DIR = "/materials";
+/** Class-track slug for documents filed under class 12 (mirrors
+ *  chapter-resources.ts's CLASS_12; kept local to avoid an import cycle). */
+const CLASS_12_NOTES = "class-12-notes";
 export const DOCS: Doc[] = [
   // ── Biology ───────────────────────────────────────────────────────────
   {
@@ -440,6 +446,35 @@ export const DOCS: Doc[] = [
     href: `${MAT_DIR}/NEPALI_HUB.html`,
     kind: "html",
   },
+
+  // ── English XII — authored unit deep-dives (language development) ────
+  // One self-contained HTML study document per theme unit, generated from
+  // the authored notes (content-tools/build-english-unit-docs.mjs) and filed
+  // under the class-12 language-development unit so each chapter's Resources
+  // tab lists its own unit's deep-dive.
+  ...[
+    ["01-unit-1-critical-thinking", "Unit 1 — Critical Thinking", "Claims, evidence and assumptions; the six-move argument paragraph."],
+    ["02-unit-2-family", "Unit 2 — Family", "Family structures and Nepal's changing family; the comparison essay frame."],
+    ["03-unit-3-sports", "Unit 3 — Sports", "Sport's values tension; the match-report genre with passive-voice grammar."],
+    ["04-unit-4-technology", "Unit 4 — Technology", "Attention, privacy, the digital divide; the problem–solution frame."],
+    ["05-unit-5-education", "Unit 5 — Education", "Aims of education, reform debates; rote vs conceptual learning."],
+    ["06-unit-6-money-and-economy", "Unit 6 — Money and Economy", "Needs vs wants, Nepal's macro-story; the dialectical essay frame."],
+    ["07-unit-7-humour", "Unit 7 — Humour", "What makes things funny; satire's public job; explaining a joke."],
+    ["08-unit-8-human-culture", "Unit 8 — Human Culture", "Three layers of culture; preservation vs change, argued fairly."],
+    ["09-unit-9-ecology-and-environment", "Unit 9 — Ecology and Environment", "Weather vs climate, mitigation vs adaptation; Nepal's environmental file."],
+    ["10-unit-10-career-opportunities", "Unit 10 — Career Opportunities", "Career choice factors; CV, application letter and interview genres."],
+    ["11-unit-11-hobbies", "Unit 11 — Hobbies", "What free time builds; active vs passive leisure."],
+    ["12-unit-12-animal-world", "Unit 12 — Animal World", "Welfare vs rights; why species disappear; Nepal's tiger story."],
+  ].map(([file, title, description]) => ({
+    key: `english-xii-${file}`,
+    title: `English XII · ${title} — Deep Dive`,
+    subject: "English" as Subject,
+    topic: "Class 12 · Language development",
+    description,
+    href: `${MAT_DIR}/english/${file}.html`,
+    kind: "html" as Kind,
+    classSlug: CLASS_12_NOTES,
+  })),
 ];
 
 /**

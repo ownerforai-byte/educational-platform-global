@@ -115,6 +115,13 @@ const DOC_LOCATIONS: Record<string, readonly string[]> = {
   "neb-essays-grade11-12": ["writing-and-composition"],
   "writing-hub": ["writing-and-composition"],
   "nepali-hub": [],
+  // English XII authored unit deep-dives — one per theme unit, filed under the
+  // class-12 language-development unit (all 20 theme units share that unit id,
+  // so each chapter's Resources tab lists every unit deep-dive with its own
+  // unit named in the title). Docs carry classSlug "class-12-notes".
+  ...Object.fromEntries(
+    DOCS.filter((doc) => doc.classSlug === CLASS_12).map((doc) => [doc.key, ["language-development"] as readonly string[]]),
+  ),
 };
 
 /**
@@ -247,7 +254,8 @@ function streamPool(): PoolEntry[] {
         sourceLabel: "Platform document",
         scope: "chapter",
         source: "platform",
-        classSlug: CLASS_11,
+        // Docs may declare their class track; the historical default is class 11.
+        classSlug: doc.classSlug ?? CLASS_11,
         subject: doc.subject,
         unitId: DOC_LOCATIONS[doc.key]?.[0] ?? null,
       });
@@ -304,9 +312,11 @@ export function getChapterDocs(
   const isClass11 = classSlug === CLASS_11;
 
   const platform: ChapterDoc[] =
-    isClass11 && isStreamSourceEnabled("platform")
+    isStreamSourceEnabled("platform")
       ? DOCS.filter(
           (doc) =>
+            // Docs may declare their class track; the historical default is class 11.
+            (doc.classSlug ?? CLASS_11) === classSlug &&
             subjectMatches(doc.subject, subjectSlug) &&
             (DOC_LOCATIONS[doc.key] ?? []).includes(unitId),
         ).map((doc) => ({

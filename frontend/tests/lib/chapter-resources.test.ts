@@ -145,6 +145,41 @@ describe("chapter resource classification", () => {
   });
 
   /**
+   * OWNER REQUEST 2026-11-23 — wire the authored class-12 English unit
+   * deep-dives into their unit's Resources tab. Every generated unit doc
+   * must exist in the catalog, be filed under the class-12
+   * language-development unit, and surface on that chapter's tab — while
+   * class-11 chapters stay untouched by them.
+   */
+  it("wires the authored English XII unit deep-dives into their chapter tab", () => {
+    const unitDocs = DOCS.filter((doc) => doc.key.startsWith("english-xii-"));
+    expect(unitDocs.length).toBe(12);
+    for (const doc of unitDocs) {
+      expect(doc.classSlug).toBe(CLASS_12);
+      expect(doc.subject).toBe("English");
+      expect(doc.kind).toBe("html");
+      expect(doc.href.startsWith("/materials/english/")).toBe(true);
+    }
+    const class12Tab = getChapterDocs(CLASS_12, "english", "language-development");
+    const wired = class12Tab.filter((doc) => doc.id.startsWith("english-xii-"));
+    expect(wired.length).toBe(12);
+    // and they must NOT leak into class 11 or into other class-12 units
+    expect(
+      getChapterDocs(CLASS_11, "english", "writing-and-composition").filter((d) =>
+        d.id.startsWith("english-xii-"),
+      ).length,
+    ).toBe(0);
+    expect(
+      getChapterDocs(CLASS_12, "english", "literary-analysis").filter((d) =>
+        d.id.startsWith("english-xii-"),
+      ).length,
+    ).toBe(0);
+    // the stream pool serves them on the class-12 chapter page too
+    const streams = getChapterStreamPdfs(CLASS_12, "english", "language-development");
+    expect(streams.some((pdf) => pdf.id.startsWith("english-xii-"))).toBe(true);
+  });
+
+  /**
    * OWNER REPORT 2026-11-22: "some of the docs in stream are not working".
    * Every Drive id in the registry must still be a live, embeddable file —
    * a revoked file renders an endless blank iframe. The one dead id found by
