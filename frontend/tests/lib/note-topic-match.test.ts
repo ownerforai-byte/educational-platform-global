@@ -127,6 +127,19 @@ describe("noteMatchQuality + pickCanonicalNoteEntry", () => {
     expect(pickCanonicalNoteEntry(entries, topic)?.filename).toBe("b.json");
   });
 
+  it("breaks same-quality ties by richness (noteChars) before duplicateType", () => {
+    const topic = "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells";
+    // Corpus reality: two files share the exact slug; the deep-dive (15k chars)
+    // must beat the shallow stub list (1.7k chars) regardless of order.
+    const entries = [
+      { topicSlug: topic, filename: "02-cell-introduction-prokaryotic-and-eukaryotic.json", noteChars: 1769 },
+      { topicSlug: topic, filename: "02-cell-introduction-of-cell-concepts.json", noteChars: 15618 },
+    ];
+    expect(pickCanonicalNoteEntry(entries, topic)?.filename).toBe(
+      "02-cell-introduction-of-cell-concepts.json",
+    );
+  });
+
   it("returns undefined when nothing matches", () => {
     expect(pickCanonicalNoteEntry([{ topicSlug: "dna", filename: "01.json" }], "photosynthesis")).toBeUndefined();
   });
