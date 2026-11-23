@@ -42,6 +42,7 @@ interface CommentRowProps {
   onDelete: (commentId: string) => void;
   postKind?: CommunityPostKind;
   postAuthorId?: string;
+  postAuthorName?: string;
   acceptedCommentId?: string | null;
   onAcceptAnswer?: (commentId: string) => void;
   /** Rendered as a threaded reply — lighter card, hugs the parent comment. */
@@ -58,6 +59,7 @@ const CommentRow = memo(function CommentRow({
   onDelete,
   postKind,
   postAuthorId,
+  postAuthorName,
   acceptedCommentId,
   onAcceptAnswer,
   nested = false,
@@ -70,6 +72,22 @@ const CommentRow = memo(function CommentRow({
   const botComment =
     comment.author.role === "assistant" || isCommunityBot(comment.author.id);
   const pendingComment = comment.id.startsWith("pending-comment-");
+
+  // Twitter-style conversational label, inline after the handle:
+  // "Replying to @abc" / "Asking to @postAuthor" / "Commenting to @postAuthor".
+  const contextLabel = (() => {
+    const replyName = comment.replyTo
+      ? comment.replyTo.username?.trim() || comment.replyTo.fullName
+      : null;
+    if (replyName) return `Replying to @${replyName}`;
+    const postName = postAuthorName?.trim();
+    if (!postName || comment.author.id === postAuthorId) return null;
+    if (botComment) return `Answering to @${postName}`;
+    return postKind === "question"
+      ? `Asking to @${postName}`
+      : `Commenting to @${postName}`;
+  })();
+
   const canEdit = Boolean(viewer && viewer.id === comment.author.id && !botComment);
   const canDelete = Boolean(
     viewer &&
@@ -128,13 +146,9 @@ const CommentRow = memo(function CommentRow({
               createdAt={comment.createdAt}
               viewerId={viewer?.id}
               compact
+              contextLabel={contextLabel ?? undefined}
               onFollowChange={(following) => onFollowChange(comment.author.id, following)}
             />
-            {comment.replyTo ? (
-              <p className="rounded-md border border-border/60 bg-muted/40 px-2 py-1 text-xs font-medium text-muted-foreground">
-                Replying to @{comment.replyTo.username || comment.replyTo.fullName}
-              </p>
-            ) : null}
           </div>
 
           {(canEdit || canDelete) && !pendingComment ? (
@@ -286,6 +300,7 @@ export function CommentList({
   onDelete,
   postKind,
   postAuthorId,
+  postAuthorName,
   acceptedCommentId,
   onAcceptAnswer,
 }: {
@@ -301,6 +316,7 @@ export function CommentList({
   onDelete: (commentId: string) => void;
   postKind?: CommunityPostKind;
   postAuthorId?: string;
+  postAuthorName?: string;
   acceptedCommentId?: string | null;
   onAcceptAnswer?: (commentId: string) => void;
 }) {
@@ -335,6 +351,7 @@ export function CommentList({
           onDelete={onDelete}
           postKind={postKind}
           postAuthorId={postAuthorId}
+          postAuthorName={postAuthorName}
           acceptedCommentId={acceptedCommentId}
           onAcceptAnswer={onAcceptAnswer}
           nested={depth > 0}

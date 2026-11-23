@@ -89,37 +89,6 @@ export function postKindLabel(id: string | undefined): string {
   return COMMUNITY_POST_KINDS.find((item) => item.id === id)?.label ?? id;
 }
 
-/**
- * Imperative context line for a post, shown under the author row like other
- * platforms: "Ask about Physics · Ask from Kathmandu · Ask to @name". Empty
- * segments are skipped.
- */
-export function postContextLine(post: {
-  kind?: string;
-  category: string;
-  author?: { location?: string | null } | null;
-  quotedPost?: { author?: { fullName?: string; username?: string | null } | null } | null;
-  quotedAuthorName?: string | null;
-}): string {
-  const segments: string[] = [];
-  const subject = categoryLabel(post.category);
-  const kind = post.kind ?? "discussion";
-  if (kind === "question") segments.push(`Ask about ${subject}`);
-  else if (kind === "resource") segments.push(`Share ${subject} resources`);
-  else if (kind === "study_note") segments.push(`Share a ${subject} study note`);
-  else if (kind === "announcement") segments.push(`Announce in ${subject}`);
-  else segments.push(`Discuss ${subject}`);
-
-  const from = (post.author?.location ?? "").trim();
-  if (from) segments.push(`Ask from ${from}`);
-
-  const quotedName =
-    post.quotedAuthorName ?? post.quotedPost?.author?.fullName ?? null;
-  if (quotedName) segments.push(`Ask to @${quotedName}`);
-
-  return segments.join(" · ");
-}
-
 export function planLabel(plan: string | null | undefined): string {
   if (!plan) return "Member";
   return plan.charAt(0).toUpperCase() + plan.slice(1);

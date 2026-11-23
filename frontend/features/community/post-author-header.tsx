@@ -29,12 +29,15 @@ export function PostAuthorHeader({
   viewerId,
   compact = false,
   onFollowChange,
+  contextLabel,
 }: {
   author: FeedAuthor;
   createdAt?: string;
   viewerId?: string | null;
   compact?: boolean;
   onFollowChange?: (following: boolean) => void;
+  /** Inline conversational context, e.g. "Replying to @abc" — Twitter-style. */
+  contextLabel?: string;
 }) {
   const resolved = resolveFeedAuthor(author);
   const bot = isCommunityBot(resolved.id);
@@ -119,6 +122,17 @@ export function PostAuthorHeader({
           <Link href={href} className="truncate text-xs text-muted-foreground hover:text-foreground hover:underline">
             {handle}
           </Link>
+          {contextLabel ? (
+            <span
+              className={cn(
+                "max-w-full truncate text-xs text-muted-foreground",
+                compact && "text-[11px]",
+              )}
+            >
+              <span aria-hidden className="mr-1 text-border">·</span>
+              {contextLabel}
+            </span>
+          ) : null}
           {!bot ? (
             <FollowButton
               username={resolved.username}

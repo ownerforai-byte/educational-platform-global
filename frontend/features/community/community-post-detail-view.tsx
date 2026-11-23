@@ -44,7 +44,6 @@ import { CommunityCelebrationBanner } from "@/features/community/community-actio
 import {
   actionBtn,
   categoryLabel,
-  postContextLine,
   surfaceCardFlat,
 } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
@@ -206,16 +205,6 @@ export function CommunityPostDetailView() {
               viewerId={user?.id}
               onFollowChange={(following) => patchAuthorFollowing(post.author.id, following)}
             />
-
-            {/* Conversational context: "Questioning about Physics · Asking from … · Questioning to @…" */}
-            <p className="text-xs font-medium text-muted-foreground">
-              {postContextLine({
-                kind: post.kind,
-                category: post.category,
-                author: post.author,
-                quotedPost: post.quotedPost,
-              })}
-            </p>
 
             <MarkdownBody text={post.body} className="text-base leading-relaxed text-foreground" />
 
@@ -398,6 +387,7 @@ export function CommunityPostDetailView() {
               followUpBotCommentId={followUpBotCommentId}
               postKind={post.kind}
               postAuthorId={post.author.id}
+              postAuthorName={post.author.fullName}
               acceptedCommentId={post.acceptedCommentId}
               onSelectFollowUp={(commentId) => {
                 const next = followUpBotCommentId === commentId ? null : commentId;

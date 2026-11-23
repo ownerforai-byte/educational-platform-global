@@ -28,7 +28,6 @@ import { canDeleteCommunityFeed, looksLikeQuestion, plainExcerpt } from "@/featu
 import {
   actionBtn,
   categoryLabel,
-  postContextLine,
   postKindLabel,
   questionStatusClass,
   questionStatusLabel,
@@ -257,11 +256,6 @@ export const FeedPostRow = memo(function FeedPostRow({
             ) : null}
           </div>
 
-          {/* Conversational context: "Questioning about Physics · Asking from …" */}
-          <p className="text-[11px] font-medium text-muted-foreground/90">
-            {postContextLine({ kind: item.kind, category: item.category, author: item.author })}
-          </p>
-
           {/* Title + compact plain-text excerpt */}
           <h2
             className={cn(
@@ -484,6 +478,7 @@ export const FeedPostRow = memo(function FeedPostRow({
               followUpBotCommentId={followUpBotCommentId}
               postKind={item.kind}
               postAuthorId={item.author.id}
+              postAuthorName={item.author.fullName}
               acceptedCommentId={item.acceptedCommentId}
               onSelectFollowUp={onSelectFollowUp}
               onOpenComposer={() => undefined}
