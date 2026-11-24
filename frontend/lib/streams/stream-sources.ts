@@ -26,7 +26,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-export type StreamSourceId = "webnotee" | "platform" | "nepalenotes";
+export type StreamSourceId = "webnotee" | "platform" | "nepalenotes" | "noteswift";
 
 export type StreamSourceFlag = {
   /** true = this source's PDFs stream normally. Must stay true. */
@@ -55,6 +55,12 @@ export const STREAM_SOURCES: Readonly<Record<StreamSourceId, StreamSourceFlag>> 
     label: "Nepal Enotes chapter PDFs",
     registry: "lib/nepalenotes-streams.ts",
     note: "298 scraped nepalenotes.com chapter pages (science -> class 11/12 -> 6 subjects); 171 unique confirmed Drive PDF IDs collected on 2026-11-08 and every chapter classified to a syllabus unitId. Wired into the class 11 AND class 12 Direct Stream pool. Verified frameable: Drive /preview returns 200 with no X-Frame-Options and the live CSP already allows drive.google.com (nepalenotes.com article pages send X-Frame-Options: SAMEORIGIN, so only the Drive PDFs are framed).",
+  },
+  noteswift: {
+    enabled: true,
+    label: "NoteSwift chapter notes",
+    registry: "lib/streams/noteswift-catalog.ts",
+    note: "noteswift.in embedded Google Drive solution PDFs only (no article iframes); classified to syllabus units for the NoteSwift exercise-solutions stream block on Resources tabs.",
   },
 };
 

@@ -15,7 +15,8 @@ import {
 } from "lucide-react";
 import { PhysicsUnitResourceDoc } from "@/components/content/physics-unit-resource-doc";
 import { DirectStreamPdfBlocks } from "@/components/content/direct-stream-pdf-blocks";
-import { CLASS_12, getChapterStreamPdfs } from "@/lib/chapter-resources";
+import { CLASS_12, getChapterNoteswiftStreamPdfs, getChapterStreamPdfs } from "@/lib/chapter-resources";
+import { NoteswiftStreamBlocks } from "@/components/content/noteswift-stream-blocks";
 import { TopicSupplementalMaterials } from "@/components/content/topic-supplemental-materials";
 import { getUnitSupplementalContent } from "@/lib/content/topic-supplemental";
 
@@ -32,6 +33,7 @@ export async function ChapterDetailView({
 }) {
   const unit = getUnit(classSlug, subjectSlug, unitId);
   const streamPdfs = getChapterStreamPdfs(classSlug, subjectSlug, unitId);
+  const noteswiftPdfs = getChapterNoteswiftStreamPdfs(classSlug, subjectSlug, unitId);
   const classLabel = classSlug === CLASS_12 ? "Class 12" : "Class 11";
 
   if (!unit) {
@@ -194,10 +196,8 @@ export async function ChapterDetailView({
           role="tabpanel"
           aria-labelledby="chapter-resources-tab"
         >
-          <DirectStreamPdfBlocks
-            pdfs={streamPdfs}
-            unitTitle={unit.title}
-          />
+          <DirectStreamPdfBlocks pdfs={streamPdfs} unitTitle={unit.title} />
+          <NoteswiftStreamBlocks pdfs={noteswiftPdfs} unitTitle={unit.title} />
         </div>
       </section>
 

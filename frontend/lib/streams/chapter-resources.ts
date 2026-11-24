@@ -43,6 +43,7 @@ import {
   type StreamSourceId,
 } from "@/lib/stream-sources";
 import { NEPALENOTES_CHAPTERS, nepalenotesPreviewUrl } from "@/lib/nepalenotes-streams";
+import { noteswiftClassifiedUnitIds } from "@/lib/streams/noteswift-catalog";
 import {
   PHYSICS_XI_SOLUTION_UNITS,
   physicsXiSolutionDocKey,
@@ -472,6 +473,7 @@ export function classifiedUnitIds(): string[] {
     ...Object.values(DOC_LOCATIONS).flat(),
     ...Object.values(WEBNOTEE_LOCATIONS).filter((id): id is string => !!id),
     ...NEPALENOTES_CHAPTERS.map((record) => record.unitId),
+    ...noteswiftClassifiedUnitIds(),
   ];
 }
 

@@ -49,7 +49,13 @@ import type { SyllabusUnit } from "@/lib/core/syllabus";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { DirectStreamPdfBlocks } from "./direct-stream-pdf-blocks";
-import { getChapterDocs, getChapterStreamPdfs, type ChapterDoc } from "@/lib/chapter-resources";
+import { NoteswiftStreamBlocks } from "./noteswift-stream-blocks";
+import {
+  getChapterDocs,
+  getChapterNoteswiftStreamPdfs,
+  getChapterStreamPdfs,
+  type ChapterDoc,
+} from "@/lib/chapter-resources";
 import { pdfViewerHref, downloadDoc, downloadFileName } from "@/lib/pdf-src";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/core/access-level";
@@ -467,6 +473,7 @@ function TabPanel({
 
   if (tab.kind === "resources") {
     const streamPdfs = getChapterStreamPdfs(classSlug, subjectSlug, unitId);
+    const noteswiftPdfs = getChapterNoteswiftStreamPdfs(classSlug, subjectSlug, unitId);
     return (
       <div className="space-y-4">
         {/* ⚠️ IMPORTANT — RETAINED CODE, NOT DEAD CODE (lib/stream-sources.ts).
@@ -475,6 +482,7 @@ function TabPanel({
             badge. DO NOT remove this call or its imports — the renderer is
             doc-count driven with no fixed two-block cap. */}
         <DirectStreamPdfBlocks pdfs={streamPdfs} />
+        <NoteswiftStreamBlocks pdfs={noteswiftPdfs} />
         <RavikishanTopicResources
           classSlug={classSlug}
           subjectSlug={subjectSlug}

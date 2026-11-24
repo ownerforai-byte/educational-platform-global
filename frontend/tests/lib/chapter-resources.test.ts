@@ -15,6 +15,7 @@ import {
   STREAM_BLOCK_LIMIT,
   classifiedUnitIds,
   getChapterDocs,
+  getChapterNoteswiftStreamPdfs,
   getChapterStreamPdfs,
   nepalenotesPreviewUrlsFor,
   nepalenotesRecordsFor,
@@ -77,8 +78,8 @@ describe("chapter resource classification", () => {
    * hidden. All three sources must stay LIVE. If an agent disables a source or
    * "cleans up dead code" and deletes a registry, this test must fail loudly.
    */
-  it("keeps all three sources live while hiding only the source badge", () => {
-    expect(STREAM_SOURCE_IDS).toEqual(["webnotee", "platform", "nepalenotes"]);
+  it("keeps all stream sources live while hiding only the source badge", () => {
+    expect(STREAM_SOURCE_IDS).toEqual(["webnotee", "platform", "nepalenotes", "noteswift"]);
     expect(DIRECT_STREAM_ENABLED).toBe(true);
     expect(SHOW_SOURCE_BADGE).toBe(false);
     for (const id of STREAM_SOURCE_IDS) {
@@ -106,6 +107,15 @@ describe("chapter resource classification", () => {
     expect(nepalenotesPreviewUrlsFor(CLASS_11, "biology")[0]).toMatch(
       /^https:\/\/drive\.google\.com\/file\/d\/[A-Za-z0-9_-]+\/preview$/,
     );
+  });
+
+  it("streams NoteSwift solution PDFs only on the matching syllabus unit", () => {
+    const algebra = getChapterNoteswiftStreamPdfs(CLASS_11, "mathematics", "algebra");
+    expect(algebra.length).toBeGreaterThan(0);
+    const complex = algebra.find((b) => b.id.includes("complex-number"));
+    expect(complex?.articleUrl).toContain("noteswift.in/class-11-mathematics-complex-number");
+    expect(complex?.src).toContain("17D5T2_bJqv9FD-rGaXk8U0YKDQZpgh2m");
+    expect(algebra.every((p) => p.src.includes("drive.google.com"))).toBe(true);
   });
 
   it("streams real chapter PDFs from the live sources, not empty arrays", () => {
